@@ -1,6 +1,6 @@
 {
   "name": "peertube-plugin-quickstart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "PeerTube plugin quickstart",
   "engine": {
     "peertube": ">=1.3.0"
@@ -24,5 +24,8 @@
       "script": "client/common-client-plugin.js",
       "scopes": [ "common" ]
     }
-  ]
+  ],
+  "translations": {
+    "fr-FR": "./languages/fr.json"
+  }
 }
