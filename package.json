@@ -29,6 +29,9 @@
     "plugin"
   ],
   "library": "./main.js",
+  "scripts": {
+    "build": "webpack --mode=production"
+  },
   "staticDirs": {
     "images": "public/images"
   },
