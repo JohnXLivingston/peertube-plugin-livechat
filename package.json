@@ -1,30 +1,37 @@
 {
   "name": "peertube-plugin-quickstart",
-  "version": "0.0.2",
   "description": "PeerTube plugin quickstart",
+  "version": "0.0.2",
+  "author": "Chocobozzz",
+  "bugs": "https://framagit.org/framasoft/peertube/peertube-plugin-quickstart/issues",
+  "clientScripts": [
+    {
+      "script": "dist/common-client-plugin.js",
+      "scopes": [
+        "common"
+      ]
+    }
+  ],
+  "css": [
+    "assets/style.css"
+  ],
+  "devDependencies": {
+    "@purtuga/esm-webpack-plugin": "^1.1.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
   "engine": {
     "peertube": ">=1.3.0"
   },
+  "homepage": "https://framagit.org/framasoft/peertube/peertube-plugin-quickstart",
   "keywords": [
     "peertube",
     "plugin"
   ],
-  "homepage": "https://framagit.org/framasoft/peertube/peertube-plugin-quickstart",
-  "author": "Chocobozzz",
-  "bugs": "https://framagit.org/framasoft/peertube/peertube-plugin-quickstart/issues",
   "library": "./main.js",
   "staticDirs": {
     "images": "public/images"
   },
-  "css": [
-    "assets/style.css"
-  ],
-  "clientScripts": [
-    {
-      "script": "client/common-client-plugin.js",
-      "scopes": [ "common" ]
-    }
-  ],
   "translations": {
     "fr-FR": "./languages/fr.json"
   }
