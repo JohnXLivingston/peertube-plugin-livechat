@@ -30,6 +30,7 @@
   ],
   "library": "./main.js",
   "scripts": {
+    "prepare": "npm run build",
     "build": "webpack --mode=production"
   },
   "staticDirs": {
