@@ -6,9 +6,9 @@
   "bugs": "https://github.com/JohnXLivingston/peertube-plugin-livechat/issues",
   "clientScripts": [
     {
-      "script": "dist/common-client-plugin.js",
+      "script": "dist/videowatch-client-plugin.js",
       "scopes": [
-        "common"
+        "video-watch"
       ]
     }
   ],

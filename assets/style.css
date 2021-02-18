@@ -1,0 +1,5 @@
+iframe.peertube-plugin-livechat {
+  width: 100%;
+  height: 300px;
+  resize: vertical;
+}
