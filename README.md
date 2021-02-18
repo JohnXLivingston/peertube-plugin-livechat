@@ -1,3 +1,3 @@
-# PeerTube plugin Quickstart
+# PeerTube plugin livechat
 
-See https://docs.joinpeertube.org/#/contribute-plugins?id=write-a-plugintheme
+Work In Progress
