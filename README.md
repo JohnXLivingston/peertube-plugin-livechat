@@ -36,6 +36,8 @@ You have to place this file in /etc/prosody/conf.avail/your_domain.cfg.lua.
 
 Replace peertube.im.your_domain with the domain you want.
 
+Replace admin@im.your_domain with Jabber ids of users that you want to be admin for your server and public chatrooms.
+
 There must be a DNS record for that domain.
 
 NB : no need to have a DNS record for room.peertube.im.your_domain.
