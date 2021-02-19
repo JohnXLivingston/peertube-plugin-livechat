@@ -62,3 +62,5 @@ So your requests will be on the 443 port, and it will minimise cross domains con
 There is an example file [here](documentation/examples/nginx/site.conf).
 
 NB: this example files also serve the static html files with converseJS.
+
+NB: it is recommanded to change ```Access-Control-Allow-Origin``` to something else that ```"*"```.
