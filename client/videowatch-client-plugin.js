@@ -72,8 +72,8 @@ function displayChatButtons (peertubeHelpers, uuid) {
       displayButton(buttons, 'close', labelClose, () => closeChat())
 
       toggleShowHideButtons(null)
+      resolve()
     })
-    resolve()
   })
   return p
 }
@@ -81,10 +81,10 @@ function displayChatButtons (peertubeHelpers, uuid) {
 function toggleShowHideButtons (chatOpened) {
     // showing/hiding buttons...
   document.querySelectorAll('.peertube-plugin-livechat-button-open')
-    .forEach(button => button.style.display = (chatOpened === false || chatOpened === null ? 'none' : ''))
+    .forEach(button => button.style.display = (chatOpened === true || chatOpened === null ? 'none' : ''))
 
   document.querySelectorAll('.peertube-plugin-livechat-button-close')
-    .forEach(button => button.style.display = (chatOpened === true || chatOpened === null ? 'none' : ''))
+    .forEach(button => button.style.display = (chatOpened === false || chatOpened === null ? 'none' : ''))
 }
 
 function openChat () {
