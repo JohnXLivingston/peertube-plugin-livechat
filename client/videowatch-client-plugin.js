@@ -1,3 +1,16 @@
+function parseUUIDs (s) {
+  if (!s) {
+    return []
+  }
+  let a = s.split('\n')
+  a = a.map(line => {
+    return line.replace(/#.*$/, '')
+      .replace(/^\s+/, '')
+      .replace(/\s+$/, '')
+  })
+  return a.filter(line => line !== '')
+}
+
 function register ({ registerHook, peertubeHelpers }) {
   registerHook({
     target: 'action:video-watch.player.loaded',
@@ -5,7 +18,7 @@ function register ({ registerHook, peertubeHelpers }) {
       peertubeHelpers.getSettings().then(s => {
         const liveOn = !!s['chat-all-lives']
         const nonLiveOn = !!s['chat-all-non-lives']
-        const uuids = s['chat-videos-list'] ? s['chat-videos-list'].split('\n') : []
+        const uuids = parseUUIDs(s['chat-videos-list'])
         const iframeUri = s['chat-uri'] || ''
         if ( iframeUri === '' ) {
           console.log('[peertube-plugin-livechat] no uri, can\'t add chat.')
@@ -38,6 +51,8 @@ function register ({ registerHook, peertubeHelpers }) {
         const iframe = document.createElement('iframe')
         iframe.setAttribute('src', chatUrl)
         iframe.setAttribute('class', 'peertube-plugin-livechat')
+        iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups')
+        iframe.setAttribute('frameborder', '0')
         parent.prepend(iframe)
       })
     }
