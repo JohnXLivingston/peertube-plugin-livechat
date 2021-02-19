@@ -1,4 +1,4 @@
-# PeerTube plugin livechat * ALPHA VERSION *
+# PeerTube plugin livechat *ALPHA VERSION*
 
 Work In Progress
 

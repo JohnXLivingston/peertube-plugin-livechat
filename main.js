@@ -8,6 +8,13 @@ async function register ({
   videoLanguageManager
 }) {
   registerSetting({
+    name: 'chat-auto-display',
+    label: 'Automatically open the chat',
+    type: 'input-checkbox',
+    default: false,
+    private: false
+  })
+  registerSetting({
     name: 'chat-all-lives',
     label: 'Activate chat for all lives',
     type: 'input-checkbox',
@@ -44,7 +51,15 @@ async function register ({
       'Example : https://my_domain/conversejs.html?room=video_{{VIDEO_UUID}}.',
     private: false
   })
-  
+  registerSetting({
+    name: 'chat-style',
+    label: 'Webchat iframe style attribute',
+    type: 'input-textarea',
+    default: '',
+    descriptionHTML: 'Additional styles to be added on the iframe style attribute. <br>' +
+      'Example: height:400px;',
+    private: false
+  })
 }
 
 async function unregister () {
