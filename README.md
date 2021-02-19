@@ -6,8 +6,50 @@ Plugin that allows to integrated an iframe with an external webchat application.
 
 This is under development. It is not functional yet.
 
-For now, there is no documentation for how you can setup the webchat.
-It has to be setup by your own. For example with a XMPP Server and the ConverseJS Javascript.
+The webchat has to be setup by your own. For example with a XMPP Server and the ConverseJS Javascript.
+You will find in this repository example config files to setup this with [Prosody](https://prosody.im),
+[converseJS](https://conversejs.org/) and [nginx](https://www.nginx.com/).
+This documentation is Work In Progress.
+
+## Settings
+
+There are several options in the plugin settings page.
+
+### Automatically open the chat
+
+If checked, the chat will be loaded as soon as you are on the video page.
+
+### Activate chat for all lives
+
+The chat will be available for all Peertube Live on your instance.
+
+### Activate chat for all non-lives
+
+The chat will be available for all Peertube video that are not live.
+
+### Activate chat for specific videos
+
+You can choose some UUIDs for which the chat will be available.
+
+NB: this feature will probably soon disappear. I planned to add a checkbox in each video settings.
+
+### Webchat url
+
+You have to speficy here the url for you chat application.
+
+You can add the string {{VIDEO_UUID}} in the url, it will be replaced by the video UUID.
+
+It is possible to use a single chat for all your videos if you omit this parameter.
+
+Example:
+```https://peertube.im.your_domain?room={{VIDEO_UUID}}```
+
+### Webchat iframe style attribute
+
+You can add some custom styles that will be added to the iframe.
+For example a custom height:
+
+```height:400px;```
 
 ## XMPP backend with ConverseJS
 
