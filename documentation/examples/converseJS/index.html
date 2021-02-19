@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Converse</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Converse XMPP/Jabber Chat"/>
+    <link type="text/css" rel="stylesheet" media="screen" href="/conversejs/7.0.3/converse.min.css" />
+    <script src="/conversejs/7.0.3/converse.min.js"></script>
+    <style type="text/css">
+        #conversejs .chat-head {
+                display: none;
+        }
+    </style>
+</head>
+<body class="converse-fullscreen">
+<noscript>You need to enable JavaScript to run the Converse.js chat app.</noscript>
+<div id="conversejs-bg"></div>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var roomParam = urlParams.get('room');
+    var room = roomParam && /^[\w-]+$/.test(roomParam) ? 'public_' + roomParam : 'public';
+
+    converse.initialize({
+        assets_path: '/conversejs/7.0.3/',
+
+        authentication: 'anonymous',
+        auto_login: true,
+        auto_join_rooms: [
+            room + '@room.peertube.im.your_domain',
+        ],
+        bosh_service_url: 'https://peertube.im.your_domain/http-bind/',
+        jid: 'peertube.im.your_domain',
+        notify_all_room_messages: [
+            room + '@room.peertube.im.your_domain',
+        ],
+        singleton: true,
+        auto_focus: false,
+        hide_muc_participants: false,
+        keepalive: true,
+        play_sounds: false,
+        muc_mention_autocomplete_min_chars: 3,
+        muc_mention_autocomplete_filter: 'contains',
+        modtools_disable_assign: true,
+        muc_disable_slash_commands: ['admin', 'ban', 'clear', 'deop', 'destroy', 'kick', 'member', 'modtools', 'mute', 'op', 'owner', 'register', 'revoke', 'subject', 'topic', 'voice'],
+        muc_instant_rooms: true,
+        show_client_info: false,
+        allow_adhoc_commands: false,
+        allow_contact_requests: false,
+        show_controlbox_by_default: false,
+        view_mode: 'fullscreen',
+      });
+</script>
+</body>
+</html>
