@@ -115,7 +115,7 @@ function openChat () {
     const iframe = document.createElement('iframe')
     iframe.setAttribute('src', iframeUri)
     iframe.setAttribute('class', 'peertube-plugin-livechat peertube-plugin-livechat-stuff')
-    iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups')
+    iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
     iframe.setAttribute('frameborder', '0')
     if (additionalStyles) {
       iframe.setAttribute('style', additionalStyles)
