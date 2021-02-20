@@ -76,7 +76,7 @@ function register ({ registerHook, peertubeHelpers }) {
     buttons.prepend(button)
   }
 
-  function displayChatButtons (peertubeHelpers, uuid) {
+  function displayChatButtons (peertubeHelpers, uuid, showOpenBlank) {
     logger.log('Adding buttons in the DOM...')
     const p = new Promise((resolve, reject) => {
       Promise.all([
@@ -93,10 +93,12 @@ function register ({ registerHook, peertubeHelpers }) {
         if (!iframeUri) {
           return reject(new Error('No uri, cant display the buttons.'))
         }
-        displayButton(buttons, 'openblank', labelOpenBlank, () => {
-          closeChat()
-          window.open(iframeUri)
-        })
+        if (showOpenBlank) {
+          displayButton(buttons, 'openblank', labelOpenBlank, () => {
+            closeChat()
+            window.open(iframeUri)
+          })
+        }
         displayButton(buttons, 'open', labelOpen, () => openChat())
         displayButton(buttons, 'close', labelClose, () => closeChat())
 
@@ -212,7 +214,7 @@ function register ({ registerHook, peertubeHelpers }) {
         return
       }
 
-      displayChatButtons(peertubeHelpers, uuid).then(() => {
+      displayChatButtons(peertubeHelpers, uuid, !!settings['chat-open-blank']).then(() => {
         if (settings['chat-auto-display']) {
           openChat()
         } else {

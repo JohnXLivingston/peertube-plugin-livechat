@@ -6,6 +6,7 @@
 
 * Optional Builtin ConverseJS
 * Option for enabling live only on local videos
+* The «open in new window» button is optional
 
 ## v0.0.8
 

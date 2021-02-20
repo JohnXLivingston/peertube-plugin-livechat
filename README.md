@@ -24,6 +24,12 @@ There are several options in the plugin settings page.
 
 If checked, the chat will be loaded as soon as you are on the video page.
 
+### Show the «open in new window» button
+
+If your webchat can be opened in a full window, you can add a button to do so.
+
+NB: The builtin ConverseJS is compatible with this feature.
+
 ### Chats are only available for local videos
 
 Peertube is a federated service. Plugins are only available on the server you are browsing.

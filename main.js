@@ -20,6 +20,13 @@ async function register ({
     private: false
   })
   registerSetting({
+    name: 'chat-open-blank',
+    label: 'Show the «open in new window» button',
+    private: false,
+    type: 'input-checkbox',
+    default: false
+  })
+  registerSetting({
     name: 'chat-only-locals',
     label: 'Chats are only available for local videos.',
     type: 'input-checkbox',
