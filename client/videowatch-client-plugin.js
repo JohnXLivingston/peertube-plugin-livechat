@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 const logger = {
   log: (s) => console.log('[peertube-plugin-livechat] ' + s),
@@ -53,7 +53,7 @@ function displayButton (buttons, name, label, callback) {
 
 function displayChatButtons (peertubeHelpers, uuid) {
   logger.log('Adding buttons in the DOM...')
-  const p = new Promise((resolve, reject) => {
+  const p = new Promise((resolve) => {
     Promise.all([
       peertubeHelpers.translate('Open chat'),
       peertubeHelpers.translate('Open chat in a new window'),
@@ -79,12 +79,12 @@ function displayChatButtons (peertubeHelpers, uuid) {
 }
 
 function toggleShowHideButtons (chatOpened) {
-    // showing/hiding buttons...
+  // showing/hiding buttons...
   document.querySelectorAll('.peertube-plugin-livechat-button-open')
-    .forEach(button => button.style.display = (chatOpened === true || chatOpened === null ? 'none' : ''))
+    .forEach(button => (button.style.display = (chatOpened === true || chatOpened === null ? 'none' : '')))
 
   document.querySelectorAll('.peertube-plugin-livechat-button-close')
-    .forEach(button => button.style.display = (chatOpened === false || chatOpened === null ? 'none' : ''))
+    .forEach(button => (button.style.display = (chatOpened === false || chatOpened === null ? 'none' : '')))
 }
 
 function openChat () {
@@ -92,17 +92,17 @@ function openChat () {
     const uuid = lastUUID
     if (!uuid) {
       logger.log('No current uuid.')
-      return reject()
+      return reject(new Error('No current uuid.'))
     }
 
     logger.info('Trying to load the chat for video ' + uuid + '.')
     const iframeUri = getIframeUri(uuid)
     if (!iframeUri) {
       logger.error('Incorrect iframe uri')
-      return reject()
+      return reject(new Error('Incorrect iframe uri'))
     }
     const additionalStyles = settings['chat-style'] || ''
-    
+
     logger.info('Opening the chat...')
     const videoWrapper = document.querySelector('#video-wrapper')
 
@@ -127,6 +127,7 @@ function openChat () {
 
     resolve()
   })
+  return p
 }
 
 function closeChat () {
@@ -157,7 +158,7 @@ function register ({ registerHook, peertubeHelpers }) {
         const nonLiveOn = !!settings['chat-all-non-lives']
         const uuids = parseUUIDs(settings['chat-videos-list'])
         const iframeUri = settings['chat-uri'] || ''
-        if ( iframeUri === '' ) {
+        if (iframeUri === '') {
           logger.log('no uri, can\'t add chat.')
           return
         }
@@ -165,7 +166,7 @@ function register ({ registerHook, peertubeHelpers }) {
           logger.log('not activated.')
           return
         }
-  
+
         logger.log('Checking if this video should have a chat...')
         const uuid = lastUUID
         const video = videoCache[uuid]
@@ -183,7 +184,7 @@ function register ({ registerHook, peertubeHelpers }) {
           logger.log('This video will not have a chat.')
           return
         }
-  
+
         displayChatButtons(peertubeHelpers, uuid).then(() => {
           if (settings['chat-auto-display']) {
             openChat()

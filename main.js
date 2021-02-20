@@ -1,11 +1,11 @@
 async function register ({
-  registerHook,
+  _registerHook,
   registerSetting,
-  settingsManager,
-  storageManager,
-  videoCategoryManager,
-  videoLicenceManager,
-  videoLanguageManager
+  _settingsManager,
+  _storageManager,
+  _videoCategoryManager,
+  _videoLicenceManager,
+  _videoLanguageManager
 }) {
   registerSetting({
     name: 'chat-auto-display',
@@ -36,7 +36,7 @@ async function register ({
     type: 'input-textarea',
     default: '',
     descriptionHTML: 'Videos UUIDs for which we want a chat. ' +
-      'Can be non-live videos. One per line. <br />' + 
+      'Can be non-live videos. One per line. <br />' +
       'You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />' +
       'Don\'t add private videos, the UUIDs will be send to frontend.',
     private: false
@@ -63,7 +63,6 @@ async function register ({
 }
 
 async function unregister () {
-  return
 }
 
 module.exports = {
