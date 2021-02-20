@@ -44,7 +44,10 @@ function getIframeUri (uuid) {
 
 function displayButton (buttons, name, label, callback) {
   const button = document.createElement('button')
-  button.setAttribute('class', 'action-button peertube-plugin-livechat-button-' + name)
+  button.setAttribute(
+    'class',
+    'action-button peertube-plugin-livechat-stuff peertube-plugin-livechat-button-' + name
+  )
   button.setAttribute('type', 'button')
   button.textContent = label
   button.onclick = callback
@@ -108,13 +111,16 @@ function openChat () {
 
     // Adding a class=row element
     const row = document.createElement('div')
-    row.setAttribute('class', 'row peertube-plugin-livechat-stuff')
+    row.setAttribute('class', 'row peertube-plugin-livechat-stuff peertube-plugin-livechat-iframe-stuff')
     videoWrapper.after(row)
 
     // Creating the iframe...
     const iframe = document.createElement('iframe')
     iframe.setAttribute('src', iframeUri)
-    iframe.setAttribute('class', 'peertube-plugin-livechat peertube-plugin-livechat-stuff')
+    iframe.setAttribute(
+      'class',
+      'peertube-plugin-livechat peertube-plugin-livechat-stuff peertube-plugin-livechat-iframe-stuff'
+    )
     iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
     iframe.setAttribute('frameborder', '0')
     if (additionalStyles) {
@@ -131,11 +137,62 @@ function openChat () {
 }
 
 function closeChat () {
-  document.querySelectorAll('.peertube-plugin-livechat-stuff')
+  document.querySelectorAll('.peertube-plugin-livechat-iframe-stuff')
     .forEach(dom => dom.remove())
 
   // showing/hiding buttons...
   toggleShowHideButtons(false)
+}
+
+function initChat (peertubeHelpers) {
+  if (document.querySelector('TODO')) {
+    logger.log('The chat seems already initialized...')
+    return
+  }
+  // Adding a custom class in the dom, so we know initChat was already called.
+  // TODO
+
+  peertubeHelpers.getSettings().then(s => {
+    settings = s
+    const liveOn = !!settings['chat-all-lives']
+    const nonLiveOn = !!settings['chat-all-non-lives']
+    const uuids = parseUUIDs(settings['chat-videos-list'])
+    const iframeUri = settings['chat-uri'] || ''
+    if (iframeUri === '') {
+      logger.log('no uri, can\'t add chat.')
+      return
+    }
+    if (!uuids.length && !liveOn && !nonLiveOn) {
+      logger.log('not activated.')
+      return
+    }
+
+    logger.log('Checking if this video should have a chat...')
+    const uuid = lastUUID
+    const video = videoCache[uuid]
+    if (!video) {
+      logger.error('Can\'t find the video ' + uuid + ' in the videoCache')
+      return
+    }
+    if (uuids.indexOf(uuid) >= 0) {
+      logger.log('This video is in the list for chats.')
+    } else if (video.isLive && liveOn) {
+      logger.log('This video is live and we want all lives.')
+    } else if (!video.isLive && nonLiveOn) {
+      logger.log('This video is not live and we want all non-lives.')
+    } else {
+      logger.log('This video will not have a chat.')
+      return
+    }
+
+    displayChatButtons(peertubeHelpers, uuid).then(() => {
+      if (settings['chat-auto-display']) {
+        openChat()
+      } else {
+        toggleShowHideButtons(false)
+      }
+    })
+  })
 }
 
 function register ({ registerHook, peertubeHelpers }) {
@@ -146,55 +203,20 @@ function register ({ registerHook, peertubeHelpers }) {
       // So we store video objects in videoCache
       videoCache[video.uuid] = video
       lastUUID = video.uuid
+      // FIXME: this should be made in action:video-watch.video.loaded.
+      // But with Peertube 3.0.1, this hook is not called for lives
+      // in WAITING_FOR_LIVE and LIVE_ENDED states.
+      initChat(peertubeHelpers)
       return video
     }
   })
-  registerHook({
-    target: 'action:video-watch.video.loaded',
-    handler: () => {
-      peertubeHelpers.getSettings().then(s => {
-        settings = s
-        const liveOn = !!settings['chat-all-lives']
-        const nonLiveOn = !!settings['chat-all-non-lives']
-        const uuids = parseUUIDs(settings['chat-videos-list'])
-        const iframeUri = settings['chat-uri'] || ''
-        if (iframeUri === '') {
-          logger.log('no uri, can\'t add chat.')
-          return
-        }
-        if (!uuids.length && !liveOn && !nonLiveOn) {
-          logger.log('not activated.')
-          return
-        }
-
-        logger.log('Checking if this video should have a chat...')
-        const uuid = lastUUID
-        const video = videoCache[uuid]
-        if (!video) {
-          logger.error('Can\'t find the video ' + uuid + ' in the videoCache')
-          return
-        }
-        if (uuids.indexOf(uuid) >= 0) {
-          logger.log('This video is in the list for chats.')
-        } else if (video.isLive && liveOn) {
-          logger.log('This video is live and we want all lives.')
-        } else if (!video.isLive && nonLiveOn) {
-          logger.log('This video is not live and we want all non-lives.')
-        } else {
-          logger.log('This video will not have a chat.')
-          return
-        }
-
-        displayChatButtons(peertubeHelpers, uuid).then(() => {
-          if (settings['chat-auto-display']) {
-            openChat()
-          } else {
-            toggleShowHideButtons(false)
-          }
-        })
-      })
-    }
-  })
+  // FIXME: this should be the correct hook for initChat...
+  // registerHook({
+  //   target: 'action:video-watch.video.loaded',
+  //   handler: () => {
+  //     initChat(peertubeHelpers)
+  //   }
+  // })
 }
 
 export {

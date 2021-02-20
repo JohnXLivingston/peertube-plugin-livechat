@@ -3,6 +3,7 @@ const path = require("path")
 const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin")
 
 const clientFiles = [
+  'common-client-plugin.js',
   'videowatch-client-plugin.js'
 ]
 
