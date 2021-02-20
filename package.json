@@ -21,9 +21,11 @@
   "css": [
     "assets/style.css"
   ],
+  "dependencies": {
+    "converse.js": "7.0.3"
+  },
   "devDependencies": {
     "@purtuga/esm-webpack-plugin": "^1.1.1",
-    "converse.js": "^7.0.4",
     "eslint": "^7.20.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
