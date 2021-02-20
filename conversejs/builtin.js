@@ -1,20 +1,22 @@
-require('converse.js')
-
 window.initConverse = function initConverse ({
-  baseStaticUrl,
+  jid,
+  assetsPath,
   room,
-  boshServiceUrl
+  boshServiceUrl,
+  websocketServiceUrl
 }) {
   window.converse.initialize({
-    assets_path: baseStaticUrl,
+    assets_path: assetsPath,
 
     authentication: 'anonymous',
     auto_login: true,
     auto_join_rooms: [
       room
     ],
-    bosh_service_url: boshServiceUrl,
-    jid: 'peertube.im.your_domain',
+    discover_connection_methods: true,
+    bosh_service_url: boshServiceUrl === '' ? undefined : boshServiceUrl,
+    websocket_url: websocketServiceUrl === '' ? undefined : websocketServiceUrl,
+    jid: jid,
     notify_all_room_messages: [
       room
     ],

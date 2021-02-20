@@ -19,10 +19,10 @@ let config = clientFiles.map(f => ({
 }))
 
 config.push({
-  entry: "./conversejs/conversejs.js",
+  entry: "./conversejs/builtin.js",
   output: {
-    path: path.resolve(__dirname, "./dist/conversejs"),
-    filename: "./conversejs.js"
+    path: path.resolve(__dirname, "./dist/static"),
+    filename: "./builtin.js"
   }
 })
 

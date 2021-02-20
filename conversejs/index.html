@@ -5,7 +5,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Converse XMPP/Jabber Chat"/>
-    <script src="{{BASE_STATIC_URL}}/conversejs.js"></script>
+    <script src="{{BASE_STATIC_URL}}/conversejs/converse.min.js"></script>
+    <script src="{{BASE_STATIC_URL}}/static/builtin.js"></script>
     <style type="text/css">
         #conversejs .chat-head {
                 display: none;
@@ -17,9 +18,11 @@
 <div id="conversejs-bg"></div>
 <script>
   initConverse({
-    baseStaticUrl : '{{BASE_STATIC_URL}}',
+    jid: '{{JID}}',
+    assetsPath : '{{BASE_STATIC_URL}}/conversejs/',
     room: '{{ROOM}}',
-    boshServiceUrl: '{{BOSH_SERVICE_URL}}'
+    boshServiceUrl: '{{BOSH_SERVICE_URL}}',
+    websocketServiceUrl: '{{WS_SERVICE_URL}}',
   })
 </script>
 </body>

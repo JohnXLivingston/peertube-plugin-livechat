@@ -57,12 +57,24 @@ async function register ({
     'You still have to configure an external XMPP service. Please see the documentation.'
   })
   registerSetting({
-    name: 'chat-room-server',
-    label: 'Builtin webchat: XMPP room service server',
+    name: 'chat-server',
+    label: 'Builtin webchat: XMPP service server',
     type: 'input',
     default: '',
     descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
-      'Your XMPP room server. Example : room.peertube.im.your_domain.',
+      'Your XMPP server. Without any scheme. Example : peertube.im.your_domain.',
+    private: true
+  })
+  registerSetting({
+    name: 'chat-room',
+    label: 'Builtin webchat: XMPP room template',
+    type: 'input',
+    default: '',
+    descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
+      'Your XMPP room. You can use the placeholder {{VIDEO_UUID}} to add the video UUID.' +
+      'Without this placeholder, all videos will point to the same chat room.<br>' +
+      'Example: public@room.peertube.im.your_domain<br>' +
+      'Example: public_{{VIDEO_UUID}}@room.peertube.im.your_domain',
     private: true
   })
   registerSetting({
@@ -71,7 +83,18 @@ async function register ({
     type: 'input',
     default: '',
     descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
-      'URI of the external BOSH server. Please make sure it accept cross origin request from your domain.',
+      'URI of the external BOSH server. Please make sure it accept cross origin request from your domain.<br>' +
+      'You must at least have a BOSH or a Websocket uri.',
+    private: true
+  })
+  registerSetting({
+    name: 'chat-ws-uri',
+    label: 'Builtin webchat: WS uri',
+    type: 'input',
+    default: '',
+    descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
+      'URI of the external WS server. Please make sure it accept cross origin request from your domain.<br>' +
+      'You must at least have a BOSH or a Websocket uri.',
     private: true
   })
 
@@ -105,14 +128,21 @@ async function register ({
   router.get('/webchat', async (req, res, next) => {
     try {
       const settings = await settingsManager.getSettings([
-        'chat-use-builtin', 'chat-room-server', 'chat-bosh-uri'
+        'chat-use-builtin', 'chat-room', 'chat-server',
+        'chat-bosh-uri', 'chat-ws-uri'
       ])
 
       if (!settings['chat-use-builtin']) {
         throw new Error('Builtin chat disabled.')
       }
-      if (!settings['chat-room-server']) {
-        throw new Error('Missing chat-room-server settings.')
+      if (!settings['chat-server']) {
+        throw new Error('Missing chat-server settings.')
+      }
+      if (!settings['chat-room']) {
+        throw new Error('Missing chat-room settings.')
+      }
+      if (!settings['chat-bosh-uri'] && !settings['chat-ws-uri']) {
+        throw new Error('Missing BOSH or Websocket uri.')
       }
 
       // FIXME: with Peertube 3.0.1 the following method is not available...
@@ -137,10 +167,13 @@ async function register ({
 
       let page = '' + converseJSIndex
       // FIXME: Peertube should provide the static folder path. For now:
-      const staticRelative = '../static/conversejs'
+      const staticRelative = '../static'
       page = page.replace(/{{BASE_STATIC_URL}}/g, staticRelative)
-      page = page.replace(/{{ROOM}}/g, 'public_' + video.uuid + '@' + settings['chat-room-server'])
+      page = page.replace(/{{JID}}/g, settings['chat-server'])
+      const room = settings['chat-room'].replace(/{{VIDEO_UUID}}/g, video.uuid)
+      page = page.replace(/{{ROOM}}/g, room)
       page = page.replace(/{{BOSH_SERVICE_URL}}/g, settings['chat-bosh-uri'])
+      page = page.replace(/{{WS_SERVICE_URL}}/g, settings['chat-ws-uri'])
 
       res.status(200)
       res.send(page)
