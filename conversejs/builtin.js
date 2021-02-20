@@ -1,3 +1,11 @@
+function inIframe () {
+  try {
+    return window.self !== window.top
+  } catch (e) {
+    return true
+  }
+}
+
 window.initConverse = function initConverse ({
   jid,
   assetsPath,
@@ -22,7 +30,7 @@ window.initConverse = function initConverse ({
     ],
     singleton: true,
     auto_focus: false,
-    hide_muc_participants: false,
+    hide_muc_participants: inIframe,
     keepalive: true,
     play_sounds: false,
     muc_mention_autocomplete_min_chars: 3,

@@ -1,5 +1,11 @@
 # Changelog
 
+## v???
+
+### Features
+
+* Optional Builtin ConverseJS
+
 ## v0.0.8
 
 ### Features
