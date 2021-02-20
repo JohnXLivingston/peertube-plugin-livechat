@@ -120,7 +120,7 @@ function openChat () {
     if (additionalStyles) {
       iframe.setAttribute('style', additionalStyles)
     }
-    row.prepend(iframe)
+    row.after(iframe)
 
     // showing/hiding buttons...
     toggleShowHideButtons(true)
