@@ -6,7 +6,7 @@
 
 * Use eslint to lint the code
 
-### Fix
+### Bug fixes
 
 * Fix dom positionning
 * Chat should be displayed for waiting and ended lives
