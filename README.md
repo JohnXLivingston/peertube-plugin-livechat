@@ -1,15 +1,20 @@
-# PeerTube plugin livechat *ALPHA VERSION*
+# PeerTube plugin livechat
 
-Work In Progress
+This plugin can provide webchat for peertube videos.
 
-Plugin that allows to integrated an iframe with an external webchat application.
+Warning: the webchat is not provided by this plugin. You have to rely on an external tool.
+There are multiple way to provide such functionality:
 
-This is under development. It is not functional yet.
+* by having a Jabber/XMPP server with BOSH or Websocket and anonymous loggin
+* by having an external webchat tool, that will be included in an iframe
 
-The webchat has to be setup by your own. For example with a XMPP Server and the ConverseJS Javascript.
-You will find in this repository example config files to setup this with [Prosody](https://prosody.im),
-[converseJS](https://conversejs.org/) and [nginx](https://www.nginx.com/).
-This documentation is Work In Progress.
+The connection to a XMPP server is made with [converseJS](https://conversejs.org/).
+
+You will also find in this repository example config files to setup the XMPP server with [Prosody](https://prosody.im).
+
+If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).
+
+If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.
 
 ## Settings
 
@@ -19,9 +24,16 @@ There are several options in the plugin settings page.
 
 If checked, the chat will be loaded as soon as you are on the video page.
 
+### Chats are only available for local videos
+
+Peertube is a federated service. Plugins are only available on the server you are browsing.
+So, if you are watching a remote video, only you will have the webchat, not users from remote instances.
+Therefore, this options is checked by default and prevent displaying a webchat for remote videos.
+
 ### Activate chat for all lives
 
 The chat will be available for all Peertube Live on your instance.
+This is the main purpose of this plugin: providing a chatting experience to user watching a live video.
 
 ### Activate chat for all non-lives
 
@@ -30,12 +42,43 @@ The chat will be available for all Peertube video that are not live.
 ### Activate chat for specific videos
 
 You can choose some UUIDs for which the chat will be available.
+If you don't want te enable the feature for all videos, you can use this field to list videos UUIDs.
+You can add comments: everything rights to the # character will be stripped off, as for empty lines.
 
 NB: this feature will probably soon disappear. I planned to add a checkbox in each video settings.
 
+### Use builtin ConverseJS
+
+If you have an XMPP server, and don't want to provide a webchat application by yourself, you can use the builtin ConverseJS implementation.
+
+You have to fill the following parameters:
+
+#### Builtin webchat: XMPP service server (mandatory)
+
+The XMPP server. For example: ```peertube.im.your_domain```.
+
+#### Builtin webchat: XMPP room template (mandatory)
+
+The room to join on your XMPP server.
+You can have a single room for all webchats, or you can use the placeholder ```{{{VIDEO_UUID}}}``` to insert the video UUID and have a custom room for each video.
+
+Example: ```room_{{VIDEO_UUID}}@room.peertube.im.your_domain```
+
+#### Builtin webchat: BOSH uri OR Builtin webchat: WS uri
+
+You have to provide at least one of these two settings.
+
+Example for BOSH: ```https://peertube.im.yiny.org/http-bind```
+
+Example for Websocket: ```wss://peertube.im.yiny.org/xmpp-websocket```
+
+NB: ConverseJS can also use the ```/.well-known/host-meta``` file to discover services.
+See ConverseJS [documentation](https://conversejs.org/docs/html/configuration.html#discover-connection-methods)
+and XMPP [documentation](https://xmpp.org/extensions/xep-0156.html#httpexamples).
+
 ### Webchat url
 
-You have to speficy here the url for you chat application.
+If you are not using the builtin ConverseJS feature, you can speficy here the url for you chat application.
 
 You can add the string {{VIDEO_UUID}} in the url, it will be replaced by the video UUID.
 
@@ -47,13 +90,19 @@ Example:
 ### Webchat iframe style attribute
 
 You can add some custom styles that will be added to the iframe.
-For example a custom height:
+For example a custom width:
 
-```height:400px;```
+```width:400px;```
 
 ## XMPP backend with ConverseJS
 
 ### ConverseJS
+
+You can use the builtin ConverseJS implementation.
+
+#### Custom ConverseJS webchat
+
+If you want to setup your own webchat with converseJS, here is some tips.
 
 Once you have a XMPP server that allow anonymous authentication, with bosh
 (or websocket) enabled, you can - for example - setup a html page that looks like
