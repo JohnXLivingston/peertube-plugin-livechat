@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.0.7
+
+### Bug Fixes
+
+* Fix incomplete commit
+
 ## v0.0.6
 
 ### Features

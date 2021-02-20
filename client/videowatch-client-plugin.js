@@ -44,9 +44,10 @@ function getIframeUri (uuid) {
 
 function displayButton (buttons, name, label, callback) {
   const button = document.createElement('button')
-  button.setAttribute(
-    'class',
-    'action-button peertube-plugin-livechat-stuff peertube-plugin-livechat-button-' + name
+  button.classList.add(
+    'action-button',
+    'peertube-plugin-livechat-stuff',
+    'peertube-plugin-livechat-button-' + name
   )
   button.setAttribute('type', 'button')
   button.textContent = label
@@ -111,15 +112,20 @@ function openChat () {
 
     // Adding a class=row element
     const row = document.createElement('div')
-    row.setAttribute('class', 'row peertube-plugin-livechat-stuff peertube-plugin-livechat-iframe-stuff')
+    row.classList.add(
+      'row',
+      'peertube-plugin-livechat-stuff',
+      'peertube-plugin-livechat-iframe-stuff'
+    )
     videoWrapper.after(row)
 
     // Creating the iframe...
     const iframe = document.createElement('iframe')
     iframe.setAttribute('src', iframeUri)
-    iframe.setAttribute(
-      'class',
-      'peertube-plugin-livechat peertube-plugin-livechat-stuff peertube-plugin-livechat-iframe-stuff'
+    iframe.classList.add(
+      'peertube-plugin-livechat',
+      'peertube-plugin-livechat-stuff',
+      'peertube-plugin-livechat-iframe-stuff'
     )
     iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
     iframe.setAttribute('frameborder', '0')
@@ -145,12 +151,17 @@ function closeChat () {
 }
 
 function initChat (peertubeHelpers) {
-  if (document.querySelector('TODO')) {
+  const el = document.querySelector('#videojs-wrapper')
+  if (!el) {
+    logger.error('The required div is not present in the DOM.')
+    return
+  }
+  if (el.classList.contains('peertube-plugin-livechat-init')) {
     logger.log('The chat seems already initialized...')
     return
   }
   // Adding a custom class in the dom, so we know initChat was already called.
-  // TODO
+  el.classList.add('peertube-plugin-livechat-init')
 
   peertubeHelpers.getSettings().then(s => {
     settings = s
