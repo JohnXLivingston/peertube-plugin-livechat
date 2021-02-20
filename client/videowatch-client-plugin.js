@@ -110,15 +110,6 @@ function openChat () {
     logger.info('Opening the chat...')
     const videoWrapper = document.querySelector('#video-wrapper')
 
-    // Adding a class=row element
-    const row = document.createElement('div')
-    row.classList.add(
-      'row',
-      'peertube-plugin-livechat-stuff',
-      'peertube-plugin-livechat-iframe-stuff'
-    )
-    videoWrapper.after(row)
-
     // Creating the iframe...
     const iframe = document.createElement('iframe')
     iframe.setAttribute('src', iframeUri)
@@ -132,7 +123,7 @@ function openChat () {
     if (additionalStyles) {
       iframe.setAttribute('style', additionalStyles)
     }
-    row.after(iframe)
+    videoWrapper.append(iframe)
 
     // showing/hiding buttons...
     toggleShowHideButtons(true)

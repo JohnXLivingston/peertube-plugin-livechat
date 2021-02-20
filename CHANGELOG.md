@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.0.8
+
+### Features
+
+* The chat is displayed on the right of the video
+
 ## v0.0.7
 
 ### Bug Fixes
