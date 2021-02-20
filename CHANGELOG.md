@@ -5,6 +5,7 @@
 ### Features
 
 * Optional Builtin ConverseJS
+* Option for enabling live only on local videos
 
 ## v0.0.8
 

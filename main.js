@@ -20,6 +20,13 @@ async function register ({
     private: false
   })
   registerSetting({
+    name: 'chat-only-locals',
+    label: 'Chats are only available for local videos.',
+    type: 'input-checkbox',
+    default: true,
+    private: false
+  })
+  registerSetting({
     name: 'chat-all-lives',
     label: 'Activate chat for all lives',
     type: 'input-checkbox',

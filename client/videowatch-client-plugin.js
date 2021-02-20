@@ -185,7 +185,7 @@ function register ({ registerHook, peertubeHelpers }) {
       const nonLiveOn = !!settings['chat-all-non-lives']
       const uuids = parseUUIDs(settings['chat-videos-list'])
       if (!uuids.length && !liveOn && !nonLiveOn) {
-        logger.log('not activated.')
+        logger.log('Feature not activated.')
         return
       }
 
@@ -196,6 +196,11 @@ function register ({ registerHook, peertubeHelpers }) {
         logger.error('Can\'t find the video ' + uuid + ' in the videoCache')
         return
       }
+      if (settings['chat-only-locals' && !video.isLocal]) {
+        logger.log('This video is not local, and we dont want chats on non local videos.')
+        return
+      }
+
       if (uuids.indexOf(uuid) >= 0) {
         logger.log('This video is in the list for chats.')
       } else if (video.isLive && liveOn) {
