@@ -27,7 +27,10 @@ function register ({ registerHook, peertubeHelpers }) {
 
   function getBaseRoute () {
     // FIXME: should be provided by PeertubeHelpers (does not exists for now)
-    return '/plugins/livechat/router'
+    // We are guessing the route with the correct plugin version with this trick:
+    const staticBase = peertubeHelpers.getBaseStaticRoute()
+    // we can't use '/plugins/livechat/router', because the loaded html page needs correct relative paths.
+    return staticBase.replace(/\/static.*$/, '/router')
   }
 
   function getIframeUri (uuid) {
@@ -38,7 +41,7 @@ function register ({ registerHook, peertubeHelpers }) {
     let iframeUri = ''
     if (!settings['chat-use-builtin']) {
       iframeUri = settings['chat-uri'] || ''
-      iframeUri = iframeUri.replace('{{VIDEO_UUID}}', uuid)
+      iframeUri = iframeUri.replace(/{{VIDEO_UUID}}/g, uuid)
       if (!/^https?:\/\//.test(iframeUri)) {
         logger.error('The webchaturi must begin with https://')
         return null

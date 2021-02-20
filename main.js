@@ -1,7 +1,10 @@
+const path = require('path')
+const fs = require('fs').promises
+
 async function register ({
   _registerHook,
   registerSetting,
-  _settingsManager,
+  settingsManager,
   _storageManager,
   _videoCategoryManager,
   _videoLicenceManager,
@@ -54,10 +57,19 @@ async function register ({
     'You still have to configure an external XMPP service. Please see the documentation.'
   })
   registerSetting({
+    name: 'chat-room-server',
+    label: 'Builtin webchat: XMPP room service server',
+    type: 'input',
+    default: '',
+    descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
+      'Your XMPP room server. Example : room.peertube.im.your_domain.',
+    private: true
+  })
+  registerSetting({
     name: 'chat-bosh-uri',
     label: 'Builtin webchat: BOSH uri',
     type: 'input',
-    default: true,
+    default: '',
     descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
       'URI of the external BOSH server. Please make sure it accept cross origin request from your domain.',
     private: true
@@ -86,10 +98,23 @@ async function register ({
     private: false
   })
 
+  const converseJSIndex = await fs.readFile(path.resolve(__dirname, './conversejs/index.html'))
+
   const router = getRouter()
   router.get('/ping', (req, res) => res.json({ message: 'pong' }))
   router.get('/webchat', async (req, res, next) => {
     try {
+      const settings = await settingsManager.getSettings([
+        'chat-use-builtin', 'chat-room-server', 'chat-bosh-uri'
+      ])
+
+      if (!settings['chat-use-builtin']) {
+        throw new Error('Builtin chat disabled.')
+      }
+      if (!settings['chat-room-server']) {
+        throw new Error('Missing chat-room-server settings.')
+      }
+
       // FIXME: with Peertube 3.0.1 the following method is not available...
       // When loadByIdOrUUID is available, change the entry point to
       // be /webchat/:videoId
@@ -109,7 +134,16 @@ async function register ({
       if (!video) {
         throw new Error('Video not found')
       }
-      res.send('ok')
+
+      let page = '' + converseJSIndex
+      // FIXME: Peertube should provide the static folder path. For now:
+      const staticRelative = '../static/conversejs'
+      page = page.replace(/{{BASE_STATIC_URL}}/g, staticRelative)
+      page = page.replace(/{{ROOM}}/g, 'public_' + video.uuid + '@' + settings['chat-room-server'])
+      page = page.replace(/{{BOSH_SERVICE_URL}}/g, settings['chat-bosh-uri'])
+
+      res.status(200)
+      res.send(page)
     } catch (error) {
       return next(error)
     }

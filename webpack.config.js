@@ -18,4 +18,12 @@ let config = clientFiles.map(f => ({
   plugins: [ new EsmWebpackPlugin() ]
 }))
 
+config.push({
+  entry: "./conversejs/conversejs.js",
+  output: {
+    path: path.resolve(__dirname, "./dist/conversejs"),
+    filename: "./conversejs.js"
+  }
+})
+
 module.exports = config

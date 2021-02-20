@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-livechat",
   "description": "PeerTube plugin livechat",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "author": "John Livingston",
   "bugs": "https://github.com/JohnXLivingston/peertube-plugin-livechat/issues",
   "clientScripts": [
@@ -23,6 +23,7 @@
   ],
   "devDependencies": {
     "@purtuga/esm-webpack-plugin": "^1.1.1",
+    "converse.js": "^7.0.4",
     "eslint": "^7.20.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
@@ -45,7 +46,9 @@
     "build": "webpack --mode=production",
     "lint": "npx eslint --ext .js ."
   },
-  "staticDirs": {},
+  "staticDirs": {
+    "conversejs": "dist/conversejs"
+  },
   "translations": {
     "fr-FR": "./languages/fr.json"
   }
