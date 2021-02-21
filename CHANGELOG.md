@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.2
+
+### Bug fixes
+
+* Quick fix: add a min-height for the iframe, so that it is not too tiny when under the video.
+
 ## v1.0.1
 
 ### Bug fixes
