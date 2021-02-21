@@ -1,6 +1,12 @@
 # Changelog
 
-## v???
+## v1.0.1
+
+### Bug fixes
+
+* When installing the plugin from npm, the node_modules don't come with: copying converseJS to dist folder.
+
+## v1.0.0
 
 ### Features
 
