@@ -190,6 +190,7 @@ async function register ({
       page = page.replace(/{{WS_SERVICE_URL}}/g, settings['chat-ws-uri'])
 
       res.status(200)
+      res.type('html')
       res.send(page)
     } catch (error) {
       return next(error)

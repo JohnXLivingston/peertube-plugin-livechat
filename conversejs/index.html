@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Converse XMPP/Jabber Chat"/>
     <link type="text/css" rel="stylesheet" media="screen" href="{{BASE_STATIC_URL}}/conversejs/converse.min.css" />
-    <script src="{{BASE_STATIC_URL}}/conversejs/converse.min.js"></script>
-    <script src="{{BASE_STATIC_URL}}/static/builtin.js"></script>
+    <script type="text/javaScript" src="{{BASE_STATIC_URL}}/conversejs/converse.min.js"></script>
+    <script type="text/javascript" src="{{BASE_STATIC_URL}}/static/builtin.js"></script>
     <style type="text/css">
         #conversejs .chat-head {
                 display: none;
@@ -17,7 +17,7 @@
 <body class="converse-fullscreen">
 <noscript>You need to enable JavaScript to run the Converse.js chat app.</noscript>
 <div id="conversejs-bg"></div>
-<script>
+<script type="text/javascript">
   initConverse({
     jid: '{{JID}}',
     assetsPath : '{{BASE_STATIC_URL}}/conversejs/',
