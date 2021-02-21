@@ -5,8 +5,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Converse XMPP/Jabber Chat"/>
-    <link type="text/css" rel="stylesheet" media="screen" href="/conversejs/7.0.3/converse.min.css" />
-    <script src="/conversejs/7.0.3/converse.min.js"></script>
+    <link type="text/css" rel="stylesheet" media="screen" href="/conversejs/dist/converse.min.css" />
+    <script src="/conversejs/dist/converse.min.js"></script>
     <style type="text/css">
         #conversejs .chat-head {
                 display: none;
@@ -22,7 +22,7 @@
     var room = roomParam && /^[\w-]+$/.test(roomParam) ? 'public_' + roomParam : 'public';
 
     converse.initialize({
-        assets_path: '/conversejs/7.0.3/',
+        assets_path: '/conversejs/dist/',
 
         authentication: 'anonymous',
         auto_login: true,
@@ -30,6 +30,7 @@
             room + '@room.peertube.im.your_domain',
         ],
         bosh_service_url: 'https://peertube.im.your_domain/http-bind/',
+        websocket_url: 'wss://peertube.im.your_domain/xmpp-websocket',
         jid: 'peertube.im.your_domain',
         notify_all_room_messages: [
             room + '@room.peertube.im.your_domain',

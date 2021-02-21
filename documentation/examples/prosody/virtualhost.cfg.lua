@@ -1,5 +1,7 @@
 cross_domain_bosh = false;
 consider_bosh_secure = true;
+consider_websocket_secure = true;
+cross_domain_websocket = true;
 
 VirtualHost "peertube.im.your_domain"
         authentication = "anonymous"
@@ -12,7 +14,10 @@ VirtualHost "peertube.im.your_domain"
             "http";
             "bosh";
             "ping";
+            "websocket";
         }
+        http_host = "peertube.im.your_domain"
+	http_external_url = "http://peertube.im.your_domain"
         admins = { "admin@im.your_domain" }
 
 Component "room.peertube.im.your_domain" "muc"

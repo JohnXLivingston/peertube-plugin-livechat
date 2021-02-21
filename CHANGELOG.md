@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.3
+
+### Various changes
+
+* Using converseJS ^7.0.4
+* Updating documentation
+
 ## v1.0.2
 
 ### Bug fixes

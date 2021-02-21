@@ -21,7 +21,7 @@ window.initConverse = function initConverse ({
     auto_join_rooms: [
       room
     ],
-    discover_connection_methods: true,
+    discover_connection_methods: false, // this parameter seems buggy with converseJS 7.0.4
     bosh_service_url: boshServiceUrl === '' ? undefined : boshServiceUrl,
     websocket_url: websocketServiceUrl === '' ? undefined : websocketServiceUrl,
     jid: jid,

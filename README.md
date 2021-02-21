@@ -108,19 +108,16 @@ You can use the builtin ConverseJS implementation.
 
 #### Custom ConverseJS webchat
 
-If you want to setup your own webchat with converseJS, here is some tips.
+If you want to setup your own webchat with converseJS on a different webserver, here is some tips.
 
 Once you have a XMPP server that allow anonymous authentication, with bosh
 (or websocket) enabled, you can - for example - setup a html page that looks like
 [this one](documentation/examples/converseJS/index.html). You have of course to
-replace the path /conversejs/7.0.3 with your converseJS path, and replace your_domain
+replace the path /conversejs/dist with your converseJS path, and replace your_domain
 by your actual domain.
 
-NB : there is a bug in the converseJS 7.0.4 release. The dist files don't work.
-So if you are not building converseJS yourself, use version 7.0.3 instead.
-
-NB: for converseJS to find your server configuration (bosh, websocket, ...),
-you have to add a file [/.well-known/host-meta](documentation/examples/converseJS/host-meta).
+NB: converseJS has an option «discover_connection_methods» to find your server configuration (bosh, websocket, ...).
+To use it, you have to add a file [/.well-known/host-meta](documentation/examples/converseJS/host-meta).
 Please refer to the converseJS documentation.
 
 ### XMPP Server: Prosody
