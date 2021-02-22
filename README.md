@@ -67,6 +67,10 @@ You have to fill the following parameters:
 
 The XMPP server. For example: ```peertube.im.your_domain```.
 
+NB: If you have an existing Prosody server, you can use its address if it has anonymous authentication on.
+Otherwise, you can create a subdomain (see [the example file](documentation/examples/prosody/virtualhost.cfg.lua)).
+The ```peertube.im``` is part of the example, you have to replace the entire value.
+
 #### Builtin webchat: XMPP room template (mandatory)
 
 The room to join on your XMPP server.
@@ -117,7 +121,7 @@ If you want to setup your own webchat with converseJS on a different webserver, 
 Once you have a XMPP server that allow anonymous authentication, with bosh
 (or websocket) enabled, you can - for example - setup a html page that looks like
 [this one](documentation/examples/converseJS/index.html). You have of course to
-replace the path /conversejs/dist with your converseJS path, and replace your_domain
+replace the path /conversejs/dist with your converseJS path, and replace peertube.im.your_domain
 by your actual domain.
 
 NB: converseJS has an option «discover_connection_methods» to find your server configuration (bosh, websocket, ...).
@@ -130,11 +134,15 @@ You can use Prosody for the XMPP backend.
 
 You can find an example configuration file [here](documentation/examples/prosody/virtualhost.cfg.lua).
 
-You have to place this file in /etc/prosody/conf.avail/your_domain.cfg.lua.
+You have to place this file in /etc/prosody/conf.avail/peertube.im.your_domain.cfg.lua and create a symlink:
+```cd /etc/prosody/conf.d && ln -s /etc/prosody/conf.avail/peertube.im.your_domain.cfg.lua```
 
 Replace peertube.im.your_domain with the domain you want.
 
 Replace admin@im.your_domain with Jabber ids of users that you want to be admin for your server and public chatrooms.
+This user has to be on another virtualhost (which don't use anonymous authentication).
+It can even be on another XMPP server.
+If you have no XMPP account, remove the line (but you will not be able to moderate rooms).
 
 There must be a DNS record for that domain.
 
