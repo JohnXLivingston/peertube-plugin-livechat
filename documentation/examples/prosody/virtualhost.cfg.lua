@@ -18,10 +18,10 @@ VirtualHost "peertube.im.your_domain"
         }
         http_host = "peertube.im.your_domain"
 	http_external_url = "http://peertube.im.your_domain"
-        admins = { "admin@im.your_domain" }
+        admins = { "admin@your_xmpp_provider_domain" }
 
 Component "room.peertube.im.your_domain" "muc"
-        admins = { "admin@im.your_domain" }
+        admins = { "admin@your_xmpp_provider_domain" }
         restrict_room_creation = "local"
         muc_room_locking = false
         muc_tombstones = false

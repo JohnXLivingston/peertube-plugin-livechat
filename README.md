@@ -139,8 +139,8 @@ You have to place this file in /etc/prosody/conf.avail/peertube.im.your_domain.c
 
 Replace peertube.im.your_domain with the domain you want.
 
-Replace admin@im.your_domain with Jabber ids of users that you want to be admin for your server and public chatrooms.
-This user has to be on another virtualhost (which don't use anonymous authentication).
+Replace admin@your_xmpp_provider_domain with Jabber ids of users that you want to be admin for your server and public chatrooms.
+This users have to be on another domain/virtualhost (which don't use anonymous authentication).
 It can even be on another XMPP server.
 If you have no XMPP account, remove the line (but you will not be able to moderate rooms).
 
