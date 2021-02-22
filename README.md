@@ -8,7 +8,7 @@ There are multiple way to provide such functionality:
 * by having a Jabber/XMPP server with BOSH or Websocket and anonymous loggin
 * by having an external webchat tool, that will be included in an iframe
 
-The connection to a XMPP server is made with [converseJS](https://conversejs.org/).
+For the first solution, the connection to the XMPP server is made with [converseJS](https://conversejs.org/).
 
 You will also find in this repository example config files to setup the XMPP server with [Prosody](https://prosody.im).
 
@@ -16,9 +16,9 @@ If you have new feature requests, bugs, or difficulties to setup the plugin, you
 
 If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.
 
-## Join me
+## Contact me
 
-You can join this XMPP room with any Jabber client if you want to talk with me: plugin-livechat-support@room.im.yiny.org.
+If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: plugin-livechat-support@room.im.yiny.org.
 
 ## Settings
 
