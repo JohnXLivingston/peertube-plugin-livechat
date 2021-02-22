@@ -16,6 +16,10 @@ If you have new feature requests, bugs, or difficulties to setup the plugin, you
 
 If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.
 
+## Join me
+
+You can join this XMPP room with any Jabber client if you want to talk with me: plugin-livechat-support@room.im.yiny.org.
+
 ## Settings
 
 There are several options in the plugin settings page.
