@@ -63,21 +63,30 @@ function register ({ registerHook, peertubeHelpers }) {
     return iframeUri
   }
 
-  function displayButton (buttons, name, label, callback) {
+  function displayButton (buttonContainer, name, label, callback, icon) {
     const button = document.createElement('button')
     button.classList.add(
-      'action-button',
-      'peertube-plugin-livechat-stuff',
+      'peertube-plugin-livechat-button',
       'peertube-plugin-livechat-button-' + name
     )
-    button.setAttribute('type', 'button')
-    button.textContent = label
     button.onclick = callback
-    buttons.prepend(button)
+    if (icon) {
+      const iconUrl = peertubeHelpers.getBaseStaticRoute() + '/images/' + icon
+      const iconEl = document.createElement('span')
+      iconEl.classList.add('peertube-plugin-livechat-button-icon')
+      iconEl.setAttribute('style',
+        'background-image: url(\'' + iconUrl + '\');'
+      )
+      button.prepend(iconEl)
+      button.setAttribute('title', label)
+    } else {
+      button.textContent = label
+    }
+    buttonContainer.append(button)
   }
 
-  function displayChatButtons (peertubeHelpers, uuid, showOpenBlank) {
-    logger.log('Adding buttons in the DOM...')
+  function insertChatDom (container, peertubeHelpers, uuid, showOpenBlank) {
+    logger.log('Adding livechat in the DOM...')
     const p = new Promise((resolve, reject) => {
       Promise.all([
         peertubeHelpers.translate('Open chat'),
@@ -87,35 +96,29 @@ function register ({ registerHook, peertubeHelpers }) {
         const labelOpen = labels[0]
         const labelOpenBlank = labels[1]
         const labelClose = labels[2]
-        const buttons = document.querySelector('.video-actions')
 
         const iframeUri = getIframeUri(uuid)
         if (!iframeUri) {
           return reject(new Error('No uri, cant display the buttons.'))
         }
+
+        const buttonContainer = document.createElement('div')
+        buttonContainer.classList.add('peertube-plugin-livechat-buttons')
+        container.append(buttonContainer)
+
+        displayButton(buttonContainer, 'open', labelOpen, () => openChat(), 'talking.png')
         if (showOpenBlank) {
-          displayButton(buttons, 'openblank', labelOpenBlank, () => {
+          displayButton(buttonContainer, 'openblank', labelOpenBlank, () => {
             closeChat()
             window.open(iframeUri)
-          })
+          }, 'talking-new-window.png')
         }
-        displayButton(buttons, 'open', labelOpen, () => openChat())
-        displayButton(buttons, 'close', labelClose, () => closeChat())
+        displayButton(buttonContainer, 'close', labelClose, () => closeChat(), 'bye.png')
 
-        toggleShowHideButtons(null)
         resolve()
       })
     })
     return p
-  }
-
-  function toggleShowHideButtons (chatOpened) {
-    // showing/hiding buttons...
-    document.querySelectorAll('.peertube-plugin-livechat-button-open')
-      .forEach(button => (button.style.display = (chatOpened === true || chatOpened === null ? 'none' : '')))
-
-    document.querySelectorAll('.peertube-plugin-livechat-button-close')
-      .forEach(button => (button.style.display = (chatOpened === false || chatOpened === null ? 'none' : '')))
   }
 
   function openChat () {
@@ -135,25 +138,27 @@ function register ({ registerHook, peertubeHelpers }) {
       const additionalStyles = settings['chat-style'] || ''
 
       logger.info('Opening the chat...')
-      const videoWrapper = document.querySelector('#video-wrapper')
+      const container = document.getElementById('peertube-plugin-livechat-container')
+      if (!container) {
+        logger.error('Cant found the livechat container.')
+        return reject(new Error('Cant found the livechat container'))
+      }
+
+      if (container.querySelector('iframe')) {
+        logger.error('Seems that there is already an iframe in the container.')
+        return reject(new Error('Seems that there is already an iframe in the container.'))
+      }
 
       // Creating the iframe...
       const iframe = document.createElement('iframe')
       iframe.setAttribute('src', iframeUri)
-      iframe.classList.add(
-        'peertube-plugin-livechat',
-        'peertube-plugin-livechat-stuff',
-        'peertube-plugin-livechat-iframe-stuff'
-      )
       iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
       iframe.setAttribute('frameborder', '0')
       if (additionalStyles) {
         iframe.setAttribute('style', additionalStyles)
       }
-      videoWrapper.append(iframe)
-
-      // showing/hiding buttons...
-      toggleShowHideButtons(true)
+      container.append(iframe)
+      container.setAttribute('peertube-plugin-livechat-state', 'open')
 
       resolve()
     })
@@ -161,25 +166,32 @@ function register ({ registerHook, peertubeHelpers }) {
   }
 
   function closeChat () {
-    document.querySelectorAll('.peertube-plugin-livechat-iframe-stuff')
+    const container = document.getElementById('peertube-plugin-livechat-container')
+    if (!container) {
+      logger.error('Cant close livechat, container not found.')
+      return
+    }
+    container.querySelectorAll('iframe')
       .forEach(dom => dom.remove())
 
-    // showing/hiding buttons...
-    toggleShowHideButtons(false)
+    container.setAttribute('peertube-plugin-livechat-state', 'closed')
   }
 
   function initChat () {
-    const el = document.querySelector('#videojs-wrapper')
-    if (!el) {
+    const videoWrapper = document.querySelector('#video-wrapper')
+    if (!videoWrapper) {
       logger.error('The required div is not present in the DOM.')
       return
     }
-    if (el.classList.contains('peertube-plugin-livechat-init')) {
+    let container = videoWrapper.querySelector('#peertube-plugin-livechat-container')
+    if (container) {
       logger.log('The chat seems already initialized...')
       return
     }
-    // Adding a custom class in the dom, so we know initChat was already called.
-    el.classList.add('peertube-plugin-livechat-init')
+    container = document.createElement('div')
+    container.setAttribute('id', 'peertube-plugin-livechat-container')
+    container.setAttribute('peertube-plugin-livechat-state', 'initializing')
+    videoWrapper.append(container)
 
     peertubeHelpers.getSettings().then(s => {
       settings = s
@@ -214,11 +226,11 @@ function register ({ registerHook, peertubeHelpers }) {
         return
       }
 
-      displayChatButtons(peertubeHelpers, uuid, !!settings['chat-open-blank']).then(() => {
+      insertChatDom(container, peertubeHelpers, uuid, !!settings['chat-open-blank']).then(() => {
         if (settings['chat-auto-display']) {
           openChat()
         } else {
-          toggleShowHideButtons(false)
+          container.setAttribute('peertube-plugin-livechat-state', 'closed')
         }
       })
     })

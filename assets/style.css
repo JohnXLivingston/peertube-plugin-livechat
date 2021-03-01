@@ -1,4 +1,47 @@
-iframe.peertube-plugin-livechat {
+#peertube-plugin-livechat-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.peertube-plugin-livechat-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.peertube-plugin-livechat-button {
+  border: 1px solid black;
+  background-color: var(--mainBackgroundColor);
+  min-height: 32px;
+  min-width: 32px;
+  padding: 0;
+}
+
+.peertube-plugin-livechat-button-icon {
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center center;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+[peertube-plugin-livechat-state="initializing"] {
+  display: none;
+}
+
+[peertube-plugin-livechat-state="open"] .peertube-plugin-livechat-button-open {
+  display: none;
+}
+
+[peertube-plugin-livechat-state="closed"] .peertube-plugin-livechat-button-close {
+  display: none;
+}
+
+#peertube-plugin-livechat-container iframe {
   border: 1px solid black;
   min-height: 30vh;
+  height: 100%;
 }

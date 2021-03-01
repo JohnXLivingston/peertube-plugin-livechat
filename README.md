@@ -170,3 +170,7 @@ There is an example file [here](documentation/examples/nginx/site.conf).
 NB: this example files also serve the static html files with converseJS.
 
 NB: it is recommanded to change ```Access-Control-Allow-Origin``` to something else that ```"*"```.
+
+## Credits
+
+Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
