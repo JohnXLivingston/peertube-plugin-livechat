@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.0.4
+
+### Features
+
+* Translations for ca, eo, es and eu. Thanks to [Porrumentzio](https://github.com/Porrumentzio).
+* UX improvments. Buttons are now icons, and placed on top of the chat container.
+
+### Bug Fixes
+
+* Fix buttons disappearing when lives started of finished.
+
 ## v1.0.3
 
 ### Various changes
