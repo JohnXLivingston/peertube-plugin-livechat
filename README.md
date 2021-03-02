@@ -18,7 +18,7 @@ If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help i
 
 ## Contact me
 
-If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: plugin-livechat-support@room.im.yiny.org.
+If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: xmpp:plugin-livechat-support@room.im.yiny.org?join.
 
 ## Settings
 
