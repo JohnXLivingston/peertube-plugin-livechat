@@ -16,6 +16,8 @@ If you have new feature requests, bugs, or difficulties to setup the plugin, you
 
 If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.
 
+**Important note**: a tutorial for a quick setup of Prosody XMPP server on a Peertube instance is coming. It will probably be available by March 11th. 
+
 ## Contact me
 
 If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).
