@@ -30,7 +30,7 @@ async function register ({
     name: 'chat-only-locals',
     label: 'Chats are only available for local videos.',
     type: 'input-checkbox',
-    default: true,
+    default: false, // TODO: set to true when peertube has fixed https://github.com/Chocobozzz/PeerTube/issues/3838
     private: false
   })
   registerSetting({
@@ -65,7 +65,7 @@ async function register ({
     name: 'chat-use-builtin',
     label: 'Use builtin ConverseJS',
     type: 'input-checkbox',
-    default: true,
+    default: false, // TODO: set to true when peertube has fixed https://github.com/Chocobozzz/PeerTube/issues/3838
     private: false,
     descriptionHTML: 'If checked, use a builtin ConverseJS iframe.<br>' +
     'You still have to configure an external XMPP service. Please see the documentation.'

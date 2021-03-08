@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.5
+
+* Fix: changing default value to false for every checkbox settings (Peertube bug in <=3.0.1: https://github.com/Chocobozzz/PeerTube/issues/3838).
+
 ## v1.0.4
 
 ### Features
