@@ -13,9 +13,10 @@
 .peertube-plugin-livechat-button {
   border: 1px solid black;
   background-color: var(--mainBackgroundColor);
-  min-height: 32px;
-  min-width: 32px;
-  padding: 0;
+  margin: 5px;
+  min-height: 36px;
+  min-width: 36px;
+  padding: 2px;
 }
 
 .peertube-plugin-livechat-button-icon {

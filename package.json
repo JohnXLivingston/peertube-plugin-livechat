@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-livechat",
   "description": "PeerTube plugin livechat",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "John Livingston",
   "bugs": "https://github.com/JohnXLivingston/peertube-plugin-livechat/issues",
   "clientScripts": [
@@ -31,6 +31,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "npm-run-all": "^4.1.5",
+    "svgo": "^2.2.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
@@ -47,7 +48,7 @@
     "clean": "rm -rf dist/*",
     "prepare": "npm run build",
     "build:converse": "mkdir -p dist/conversejs && cp -r node_modules/converse.js/dist/* dist/conversejs/",
-    "build:images": "mkdir -p dist/images && cp public/images/* dist/images/",
+    "build:images": "mkdir -p dist/images && npx svgo -f public/images/ -o dist/images/",
     "build:webpack": "webpack --mode=production",
     "build": "npm-run-all -s clean -p build:converse build:images build:webpack",
     "lint": "npx eslint --ext .js ."

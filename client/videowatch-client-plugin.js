@@ -106,14 +106,14 @@ function register ({ registerHook, peertubeHelpers }) {
         buttonContainer.classList.add('peertube-plugin-livechat-buttons')
         container.append(buttonContainer)
 
-        displayButton(buttonContainer, 'open', labelOpen, () => openChat(), 'talking.png')
+        displayButton(buttonContainer, 'open', labelOpen, () => openChat(), 'talking.svg')
         if (showOpenBlank) {
           displayButton(buttonContainer, 'openblank', labelOpenBlank, () => {
             closeChat()
             window.open(iframeUri)
-          }, 'talking-new-window.png')
+          }, 'talking-new-window.svg')
         }
-        displayButton(buttonContainer, 'close', labelClose, () => closeChat(), 'bye.png')
+        displayButton(buttonContainer, 'close', labelClose, () => closeChat(), 'bye.svg')
 
         resolve()
       })
