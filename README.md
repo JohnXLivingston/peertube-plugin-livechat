@@ -175,5 +175,5 @@ NB: it is recommanded to change ```Access-Control-Allow-Origin``` to something e
 
 ## Credits
 
-Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
+Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  
 Some material icons from downloaded from this website where used for icons: [Material.io](https://material.io/resources/icons)
