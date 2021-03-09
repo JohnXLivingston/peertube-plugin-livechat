@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.6
+
+* New icons by [Porrumentzio](https://github.com/Porrumentzio)
+
 ## v1.0.5
 
 * New buttons and logo.
