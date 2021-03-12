@@ -68,7 +68,11 @@ async function register ({
     default: false, // TODO: set to true when peertube has fixed https://github.com/Chocobozzz/PeerTube/issues/3838
     private: false,
     descriptionHTML: 'If checked, use a builtin ConverseJS iframe.<br>' +
-    'You still have to configure an external XMPP service. Please see the documentation.'
+    'You still have to configure an external XMPP service. Please see the ' +
+    '<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat" target="_blank">documentation<a>.<br>' +
+    'If you have no running webchat service, you can follow this ' +
+    // eslint-disable-next-line max-len
+    '<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/tutorials/prosody.md" target="blank_">tutorial</a>.'
   })
   registerSetting({
     name: 'chat-server',
