@@ -1,5 +1,9 @@
 # Changelog
 
+## v...
+
+* New tutorial to setup [Prosody on the Peertube server](documentation/tutorials/prosody.md)
+
 ## v1.0.6
 
 * New icons by [Porrumentzio](https://github.com/Porrumentzio)

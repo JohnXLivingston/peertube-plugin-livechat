@@ -1,26 +1,31 @@
+-- these global settings can affect an existing Prosody installation.
+-- Use them with care.
+-- NB: prosody http will be behind the nginx reverse proxy.
 cross_domain_bosh = false;
 consider_bosh_secure = true;
+cross_domain_websocket = false;
 consider_websocket_secure = true;
-cross_domain_websocket = true;
+https_ports = {};
+trusted_proxies = { "127.0.0.1", "::1" }
 
-VirtualHost "peertube.im.your_domain"
+VirtualHost "your_domain"
         authentication = "anonymous"
         allow_anonymous_s2s = false
         ssl = {
-                key = "/etc/prosody/certs/peertube.im.your_domain.key";
-                certificate = "/etc/prosody/certs/peertube.im.your_domain.crt";
-                }
-        modules_enabled = {
-            "http";
-            "bosh";
-            "ping";
-            "websocket";
+                key = "/etc/prosody/certs/your_domain.key";
+                certificate = "/etc/prosody/certs/your_domain.crt";
         }
-        http_host = "peertube.im.your_domain"
-	http_external_url = "http://peertube.im.your_domain"
+        modules_enabled = {
+                "http";
+                "bosh";
+                "ping";
+                "websocket";
+        }
+        http_host = "your_domain"
+        http_external_url = "http://your_domain"
         admins = { "admin@your_xmpp_provider_domain" }
 
-Component "room.peertube.im.your_domain" "muc"
+Component "room.your_domain" "muc"
         admins = { "admin@your_xmpp_provider_domain" }
         restrict_room_creation = "local"
         muc_room_locking = false

@@ -10,13 +10,12 @@ There are multiple way to provide such functionality:
 
 For the first solution, the connection to the XMPP server is made with [converseJS](https://conversejs.org/).
 
-You will also find in this repository example config files to setup the XMPP server with [Prosody](https://prosody.im).
+**Important Note**: If you don't have a running XMPP server, here is a
+**[tutorial to install Prosody XMPP Server](documentation/tutorials/prosody.md) on your Peertube instance**. This is the simpliest way to make this plugin work.
 
 If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).
 
 If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.
-
-**Important note**: a tutorial for a quick setup of Prosody XMPP server on a Peertube instance is coming. It will probably be available by March 11th. 
 
 ## Contact me
 
@@ -62,6 +61,10 @@ NB: this feature will probably soon disappear. I planned to add a checkbox in ea
 ### Use builtin ConverseJS
 
 If you have an XMPP server, and don't want to provide a webchat application by yourself, you can use the builtin ConverseJS implementation.
+
+If you don't have a running XMPP server, you can use
+[this tutorial](documentation/tutorials/prosody.md) to setup Prosody Server
+on your Peertube's instance.
 
 You have to fill the following parameters:
 
@@ -134,31 +137,18 @@ Please refer to the converseJS documentation.
 
 You can use Prosody for the XMPP backend.
 
-You can find an example configuration file [here](documentation/examples/prosody/virtualhost.cfg.lua).
-
-You have to place this file in /etc/prosody/conf.avail/peertube.im.your_domain.cfg.lua and create a symlink:
-```cd /etc/prosody/conf.d && ln -s /etc/prosody/conf.avail/peertube.im.your_domain.cfg.lua```
-
-Replace peertube.im.your_domain with the domain you want.
+You can find an example configuration file [here](documentation/examples/prosody/virtualhost.cfg.lua) or use [this tutorial](documentation/tutorials/prosody.md)
+to setup Prosody from scratch.
 
 Replace admin@your_xmpp_provider_domain with Jabber ids of users that you want to be admin for your server and public chatrooms.
 This users have to be on another domain/virtualhost (which don't use anonymous authentication).
-It can even be on another XMPP server.
+It can even be on another XMPP server. Or you can add a virtualhost on the
+Peertube server's prosody config.
 If you have no XMPP account, remove the line (but you will not be able to moderate rooms).
 
-There must be a DNS record for that domain.
-
-NB : no need to have a DNS record for room.peertube.im.your_domain.
-
-To create the certificate, you can use certbot with letsencrypt:
-
-```certbot certonly --nginx --emailyour_email -d peertube.im.your_domain```
-
-Then:
-
-```prosodyctl --root cert import /etc/letsencrypt/live/```
-
-Please refer to the [Prosody documentation](https://prosody.im/doc/).
+Please refer to the [Prosody documentation](https://prosody.im/doc/) and to 
+[the tutorial](documentation/tutorials/prosody.md) for other modifications
+(how to get the ssl certificates, ...).
 
 NB : if you have not nginx on your server, please replace by the correct parameter.
 
@@ -171,7 +161,7 @@ There is an example file [here](documentation/examples/nginx/site.conf).
 
 NB: this example files also serve the static html files with converseJS.
 
-NB: it is recommanded to change ```Access-Control-Allow-Origin``` to something else that ```"*"```.
+NB: it is recommanded to change ```Access-Control-Allow-Origin``` to something else that ```"*"``` (your peertubes uri).
 
 ## Credits
 
