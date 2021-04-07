@@ -1,5 +1,9 @@
 # Changelog
 
+## ???
+
+* Code is now in Typescript
+
 ## v1.0.8
 
 * Fix: typo that can prevent settings chat-only-locals to work

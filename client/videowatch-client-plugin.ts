@@ -1,18 +1,20 @@
 'use strict'
 
-function register ({ registerHook, peertubeHelpers }) {
+interface VideoCache {[key: string]: Video}
+
+function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
   const logger = {
-    log: (s) => console.log('[peertube-plugin-livechat] ' + s),
-    info: (s) => console.info('[peertube-plugin-livechat] ' + s),
-    error: (s) => console.error('[peertube-plugin-livechat] ' + s),
-    warn: (s) => console.warn('[peertube-plugin-livechat] ' + s)
+    log: (s: string) => console.log('[peertube-plugin-livechat] ' + s),
+    info: (s: string) => console.info('[peertube-plugin-livechat] ' + s),
+    error: (s: string) => console.error('[peertube-plugin-livechat] ' + s),
+    warn: (s: string) => console.warn('[peertube-plugin-livechat] ' + s)
   }
 
-  const videoCache = {}
-  let lastUUID = null
-  let settings = {}
+  const videoCache: VideoCache = {}
+  let lastUUID: string | null = null
+  let settings: any = {}
 
-  function parseUUIDs (s) {
+  function parseUUIDs (s: string): string[] {
     if (!s) {
       return []
     }
@@ -25,7 +27,7 @@ function register ({ registerHook, peertubeHelpers }) {
     return a.filter(line => line !== '')
   }
 
-  function getBaseRoute () {
+  function getBaseRoute (): string {
     // FIXME: should be provided by PeertubeHelpers (does not exists for now)
     // We are guessing the route with the correct plugin version with this trick:
     const staticBase = peertubeHelpers.getBaseStaticRoute()
@@ -33,7 +35,7 @@ function register ({ registerHook, peertubeHelpers }) {
     return staticBase.replace(/\/static.*$/, '/router')
   }
 
-  function getIframeUri (uuid) {
+  function getIframeUri (uuid: string): string | null {
     if (!settings) {
       logger.error('Settings are not initialized, too soon to compute the iframeUri')
       return null
@@ -52,7 +54,7 @@ function register ({ registerHook, peertubeHelpers }) {
       // we need to pass the complete url.
       const video = videoCache[uuid]
       if (video) {
-        const url = video.originInstanceUrl + '/videos/watch/' + uuid
+        const url: string = video.originInstanceUrl + '/videos/watch/' + uuid
         iframeUri = getBaseRoute() + '/webchat?url=' + encodeURIComponent(url)
       }
     }
@@ -63,7 +65,13 @@ function register ({ registerHook, peertubeHelpers }) {
     return iframeUri
   }
 
-  function displayButton (buttonContainer, name, label, callback, icon) {
+  function displayButton (
+    buttonContainer: HTMLElement,
+    name: string,
+    label: string,
+    callback: () => void | boolean,
+    icon: string | null
+  ): void {
     const button = document.createElement('button')
     button.classList.add(
       'peertube-plugin-livechat-button',
@@ -71,7 +79,8 @@ function register ({ registerHook, peertubeHelpers }) {
     )
     button.onclick = callback
     if (icon) {
-      const iconUrl = peertubeHelpers.getBaseStaticRoute() + '/images/' + icon
+      // FIXME: remove «as string» when peertube types will be available
+      const iconUrl = (peertubeHelpers.getBaseStaticRoute() as string) + '/images/' + icon
       const iconEl = document.createElement('span')
       iconEl.classList.add('peertube-plugin-livechat-button-icon')
       iconEl.setAttribute('style',
@@ -85,9 +94,10 @@ function register ({ registerHook, peertubeHelpers }) {
     buttonContainer.append(button)
   }
 
-  function insertChatDom (container, peertubeHelpers, uuid, showOpenBlank) {
+  async function insertChatDom (container: HTMLElement, uuid: string, showOpenBlank: boolean): Promise<void> {
     logger.log('Adding livechat in the DOM...')
-    const p = new Promise((resolve, reject) => {
+    const p = new Promise<void>((resolve, reject) => {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       Promise.all([
         peertubeHelpers.translate('Open chat'),
         peertubeHelpers.translate('Open chat in a new window'),
@@ -121,51 +131,46 @@ function register ({ registerHook, peertubeHelpers }) {
     return p
   }
 
-  function openChat () {
-    const p = new Promise((resolve, reject) => {
-      const uuid = lastUUID
-      if (!uuid) {
-        logger.log('No current uuid.')
-        return reject(new Error('No current uuid.'))
-      }
+  function openChat (): void | boolean {
+    const uuid = lastUUID
+    if (!uuid) {
+      logger.log('No current uuid.')
+      return false
+    }
 
-      logger.info('Trying to load the chat for video ' + uuid + '.')
-      const iframeUri = getIframeUri(uuid)
-      if (!iframeUri) {
-        logger.error('Incorrect iframe uri')
-        return reject(new Error('Incorrect iframe uri'))
-      }
-      const additionalStyles = settings['chat-style'] || ''
+    logger.info('Trying to load the chat for video ' + uuid + '.')
+    const iframeUri = getIframeUri(uuid)
+    if (!iframeUri) {
+      logger.error('Incorrect iframe uri')
+      return false
+    }
+    const additionalStyles = settings['chat-style'] || ''
 
-      logger.info('Opening the chat...')
-      const container = document.getElementById('peertube-plugin-livechat-container')
-      if (!container) {
-        logger.error('Cant found the livechat container.')
-        return reject(new Error('Cant found the livechat container'))
-      }
+    logger.info('Opening the chat...')
+    const container = document.getElementById('peertube-plugin-livechat-container')
+    if (!container) {
+      logger.error('Cant found the livechat container.')
+      return false
+    }
 
-      if (container.querySelector('iframe')) {
-        logger.error('Seems that there is already an iframe in the container.')
-        return reject(new Error('Seems that there is already an iframe in the container.'))
-      }
+    if (container.querySelector('iframe')) {
+      logger.error('Seems that there is already an iframe in the container.')
+      return false
+    }
 
-      // Creating the iframe...
-      const iframe = document.createElement('iframe')
-      iframe.setAttribute('src', iframeUri)
-      iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
-      iframe.setAttribute('frameborder', '0')
-      if (additionalStyles) {
-        iframe.setAttribute('style', additionalStyles)
-      }
-      container.append(iframe)
-      container.setAttribute('peertube-plugin-livechat-state', 'open')
-
-      resolve()
-    })
-    return p
+    // Creating the iframe...
+    const iframe = document.createElement('iframe')
+    iframe.setAttribute('src', iframeUri)
+    iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
+    iframe.setAttribute('frameborder', '0')
+    if (additionalStyles) {
+      iframe.setAttribute('style', additionalStyles)
+    }
+    container.append(iframe)
+    container.setAttribute('peertube-plugin-livechat-state', 'open')
   }
 
-  function closeChat () {
+  function closeChat (): void {
     const container = document.getElementById('peertube-plugin-livechat-container')
     if (!container) {
       logger.error('Cant close livechat, container not found.')
@@ -177,7 +182,7 @@ function register ({ registerHook, peertubeHelpers }) {
     container.setAttribute('peertube-plugin-livechat-state', 'closed')
   }
 
-  function initChat () {
+  function initChat (): void {
     const videoWrapper = document.querySelector('#video-wrapper')
     if (!videoWrapper) {
       logger.error('The required div is not present in the DOM.')
@@ -193,7 +198,7 @@ function register ({ registerHook, peertubeHelpers }) {
     container.setAttribute('peertube-plugin-livechat-state', 'initializing')
     videoWrapper.append(container)
 
-    peertubeHelpers.getSettings().then(s => {
+    peertubeHelpers.getSettings().then((s: any) => {
       settings = s
       const liveOn = !!settings['chat-all-lives']
       const nonLiveOn = !!settings['chat-all-non-lives']
@@ -205,6 +210,10 @@ function register ({ registerHook, peertubeHelpers }) {
 
       logger.log('Checking if this video should have a chat...')
       const uuid = lastUUID
+      if (!uuid) {
+        logger.error('There is no lastUUID.')
+        return
+      }
       const video = videoCache[uuid]
       if (!video) {
         logger.error('Can\'t find the video ' + uuid + ' in the videoCache')
@@ -215,7 +224,7 @@ function register ({ registerHook, peertubeHelpers }) {
         return
       }
 
-      if (uuids.indexOf(uuid) >= 0) {
+      if (uuids.includes(uuid)) {
         logger.log('This video is in the list for chats.')
       } else if (video.isLive && liveOn) {
         logger.log('This video is live and we want all lives.')
@@ -226,10 +235,11 @@ function register ({ registerHook, peertubeHelpers }) {
         return
       }
 
-      insertChatDom(container, peertubeHelpers, uuid, !!settings['chat-open-blank']).then(() => {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      insertChatDom(container as HTMLElement, uuid, !!settings['chat-open-blank']).then(() => {
         if (settings['chat-auto-display']) {
           openChat()
-        } else {
+        } else if (container) {
           container.setAttribute('peertube-plugin-livechat-state', 'closed')
         }
       })
@@ -238,7 +248,7 @@ function register ({ registerHook, peertubeHelpers }) {
 
   registerHook({
     target: 'filter:api.video-watch.video.get.result',
-    handler: (video) => {
+    handler: (video: Video) => {
       // For now, hooks for action:video-watch... did not receive the video object
       // So we store video objects in videoCache
       videoCache[video.uuid] = video

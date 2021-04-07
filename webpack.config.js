@@ -3,15 +3,23 @@ const path = require("path")
 const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin")
 
 const clientFiles = [
-  'common-client-plugin.js',
-  'videowatch-client-plugin.js'
+  'common-client-plugin',
+  'videowatch-client-plugin'
 ]
 
 let config = clientFiles.map(f => ({
-  entry: "./client/" + f,
+  entry: "./client/" + f + ".ts",
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader'
+      }
+    ]
+  },
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "./" + f,
+    path: path.resolve(__dirname, "./dist/client"),
+    filename: "./" + f + ".js",
     library: "script",
     libraryTarget: "var"
   },
@@ -21,7 +29,7 @@ let config = clientFiles.map(f => ({
 config.push({
   entry: "./conversejs/builtin.js",
   output: {
-    path: path.resolve(__dirname, "./dist/static"),
+    path: path.resolve(__dirname, "./dist/client/static"),
     filename: "./builtin.js"
   }
 })
