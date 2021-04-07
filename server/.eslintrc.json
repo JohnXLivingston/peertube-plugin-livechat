@@ -7,11 +7,7 @@
   "extends": [
       "standard-with-typescript"
   ],
-  "globals": {
-      "Atomics": "readonly",
-      "SharedArrayBuffer": "readonly",
-      "BUILD": true
-  },
+  "globals": {},
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
       "ecmaVersion": 2018,
