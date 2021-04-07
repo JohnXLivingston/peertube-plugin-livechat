@@ -1,17 +1,31 @@
+import type { NextFunction, Request, Response } from 'express'
+
 const path = require('path')
 const fs = require('fs').promises
 
+type RegisterServerOptions = {
+  registerHook: any,
+  registerSetting: any,
+  settingsManager: any,
+  storageManager: any,
+  videoCategoryManager: any,
+  videoLicenceManager: any,
+  videoLanguageManager: any,
+  getRouter: any,
+  peertubeHelpers: any
+}
+
 async function register ({
-  _registerHook,
+  registerHook,
   registerSetting,
   settingsManager,
-  _storageManager,
-  _videoCategoryManager,
-  _videoLicenceManager,
-  _videoLanguageManager,
+  storageManager,
+  videoCategoryManager,
+  videoLicenceManager,
+  videoLanguageManager,
   getRouter,
   peertubeHelpers
-}) {
+}: RegisterServerOptions): Promise<any> {
   registerSetting({
     name: 'chat-auto-display',
     label: 'Automatically open the chat',
@@ -142,8 +156,8 @@ async function register ({
   const converseJSIndex = await fs.readFile(path.resolve(__dirname, './conversejs/index.html'))
 
   const router = getRouter()
-  router.get('/ping', (req, res) => res.json({ message: 'pong' }))
-  router.get('/webchat', async (req, res, next) => {
+  router.get('/ping', (req: Request, res: Response) => res.json({ message: 'pong' }))
+  router.get('/webchat', async (req: Request, res: Response, next: NextFunction) => {
     try {
       const settings = await settingsManager.getSettings([
         'chat-use-builtin', 'chat-room', 'chat-server',
@@ -168,7 +182,7 @@ async function register ({
       // be /webchat/:videoId
       // const id = req.param('videoId')
       // const video = await peertubeHelpers.videos.loadByIdOrUUID(id)
-      let url = req.query.url
+      let url: string = req.query.url as string || ''
       if (!url) {
         throw new Error('Missing url parameter)')
       }
