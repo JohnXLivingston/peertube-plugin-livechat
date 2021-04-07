@@ -3,26 +3,21 @@ import type { NextFunction, Request, Response } from 'express'
 const path = require('path')
 const fs = require('fs').promises
 
-type RegisterServerOptions = {
-  registerHook: any,
-  registerSetting: any,
-  settingsManager: any,
-  storageManager: any,
-  videoCategoryManager: any,
-  videoLicenceManager: any,
-  videoLanguageManager: any,
-  getRouter: any,
+interface RegisterServerOptions {
+  registerHook: any
+  registerSetting: any
+  settingsManager: any
+  storageManager: any
+  videoCategoryManager: any
+  videoLicenceManager: any
+  videoLanguageManager: any
+  getRouter: any
   peertubeHelpers: any
 }
 
 async function register ({
-  registerHook,
   registerSetting,
   settingsManager,
-  storageManager,
-  videoCategoryManager,
-  videoLicenceManager,
-  videoLanguageManager,
   getRouter,
   peertubeHelpers
 }: RegisterServerOptions): Promise<any> {
@@ -197,7 +192,7 @@ async function register ({
         throw new Error('Video not found')
       }
 
-      let page = '' + converseJSIndex
+      let page = '' + (converseJSIndex as string)
       // FIXME: Peertube should provide the static folder path. For now:
       const staticRelative = '../static'
       page = page.replace(/{{BASE_STATIC_URL}}/g, staticRelative)
@@ -216,7 +211,7 @@ async function register ({
   })
 }
 
-async function unregister () {
+async function unregister (): Promise<any> {
 }
 
 module.exports = {
