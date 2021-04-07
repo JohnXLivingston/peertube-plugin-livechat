@@ -10,7 +10,7 @@ const clientFiles = [
 let config = clientFiles.map(f => ({
   entry: "./client/" + f,
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "./dist/client"),
     filename: "./" + f,
     library: "script",
     libraryTarget: "var"
@@ -21,7 +21,7 @@ let config = clientFiles.map(f => ({
 config.push({
   entry: "./conversejs/builtin.js",
   output: {
-    path: path.resolve(__dirname, "./dist/static"),
+    path: path.resolve(__dirname, "./dist/client/static"),
     filename: "./builtin.js"
   }
 })

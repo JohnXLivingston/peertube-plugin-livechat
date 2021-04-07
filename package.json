@@ -6,13 +6,13 @@
   "bugs": "https://github.com/JohnXLivingston/peertube-plugin-livechat/issues",
   "clientScripts": [
     {
-      "script": "dist/videowatch-client-plugin.js",
+      "script": "dist/client/videowatch-client-plugin.js",
       "scopes": [
         "video-watch"
       ]
     },
     {
-      "script": "dist/common-client-plugin.js",
+      "script": "dist/client/common-client-plugin.js",
       "scopes": [
         "common"
       ]
@@ -43,20 +43,22 @@
     "peertube",
     "plugin"
   ],
-  "library": "./main.js",
+  "library": "./dist/server/main.js",
   "scripts": {
     "clean": "rm -rf dist/*",
     "prepare": "npm run build",
-    "build:converse": "mkdir -p dist/conversejs && cp -r node_modules/converse.js/dist/* dist/conversejs/",
-    "build:images": "mkdir -p dist/images && npx svgo -f public/images/ -o dist/images/",
+    "build:converse": "mkdir -p dist/client/conversejs && cp -r node_modules/converse.js/dist/* dist/client/conversejs/",
+    "build:images": "mkdir -p dist/client/images && npx svgo -f public/images/ -o dist/client/images/",
     "build:webpack": "webpack --mode=production",
-    "build": "npm-run-all -s clean -p build:converse build:images build:webpack",
+    "build:server": "mkdir -p dist/server && cp ./server/main.js dist/server/",
+    "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
+    "build": "npm-run-all -s clean -p build:converse build:images build:webpack build:server build:serverconverse",
     "lint": "npx eslint --ext .js ."
   },
   "staticDirs": {
-    "static": "dist/static",
-    "conversejs": "dist/conversejs/",
-    "images": "dist/images/"
+    "static": "dist/client/static",
+    "conversejs": "dist/client/conversejs/",
+    "images": "dist/client/images/"
   },
   "translations": {
     "fr-FR": "./languages/fr.json"
