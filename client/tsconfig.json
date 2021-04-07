@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+		"sourceMap": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"alwaysStrict": true, // should already be true because of strict:true
+		"noImplicitAny": true, // should already be true because of strict:true
+		"noImplicitThis": true, // should already be true because of strict:true
+		"noImplicitReturns": true,
+		"strictBindCallApply": true, // should already be true because of strict:true
+		"noUnusedLocals": true,
+    "outDir": "../dist/client",
+		"paths": {}
+	},
+	"include": ["./**/*"],
+	"exclude": []
+}

@@ -1,7 +1,7 @@
 
 'use strict'
 
-function register ({ registerHook, _peertubeHelpers }) {
+function register ({ registerHook }: RegisterOptions): void {
   registerHook({
     target: 'action:router.navigation-end',
     handler: () => {
