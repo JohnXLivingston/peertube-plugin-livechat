@@ -1,5 +1,9 @@
 # Changelog
 
+## ???
+
+* Fix: typo that can prevent settings chat-only-locals to work
+
 ## v1.0.7
 
 * New tutorial to setup [Prosody on the Peertube server](documentation/tutorials/prosody.md)

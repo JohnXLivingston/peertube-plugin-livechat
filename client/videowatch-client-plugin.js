@@ -210,7 +210,7 @@ function register ({ registerHook, peertubeHelpers }) {
         logger.error('Can\'t find the video ' + uuid + ' in the videoCache')
         return
       }
-      if (settings['chat-only-locals' && !video.isLocal]) {
+      if (settings['chat-only-locals'] && !video.isLocal) {
         logger.log('This video is not local, and we dont want chats on non local videos.')
         return
       }
