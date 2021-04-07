@@ -14,12 +14,7 @@
 		"removeComments": true,
 		"sourceMap": true,
 
-		// "composite": true,
-		// "declaration": true,
-		// "tsBuildInfoFile": "./dist/server/main.tsbuildinfo",
-		// "rootDir": "server",
 		"outDir": "../dist/server",
-		// "baseUrl": "./server/",
 		"paths": {},
 	},
 	"include": ["./**/*"],
