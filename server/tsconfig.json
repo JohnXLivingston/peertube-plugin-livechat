@@ -14,8 +14,9 @@
 		"removeComments": true,
 		"sourceMap": true,
 
+		"baseUrl": "./",
 		"outDir": "../dist/server",
-		"paths": {},
+		"paths": {}
 	},
 	"include": ["./**/*"],
 	"exclude": []
