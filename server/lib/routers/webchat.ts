@@ -1,4 +1,3 @@
-import type { InitRoutersOptions } from './index'
 import type { Router, Request, Response, NextFunction } from 'express'
 import * as path from 'path'
 const fs = require('fs').promises
@@ -7,7 +6,7 @@ async function initWebchatRouter ({
   getRouter,
   peertubeHelpers,
   settingsManager
-}: InitRoutersOptions): Promise<Router> {
+}: RegisterServerOptions): Promise<Router> {
   const converseJSIndex = await fs.readFile(path.resolve(__dirname, '../../conversejs/index.html'))
 
   const router = getRouter()

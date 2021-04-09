@@ -5,20 +5,13 @@ import decache from 'decache'
 
 let logger: Logger | undefined
 
-async function register ({
-  registerSetting,
-  settingsManager,
-  getRouter,
-  peertubeHelpers
-}: RegisterServerOptions): Promise<any> {
+async function register (options: RegisterServerOptions): Promise<any> {
+  const { peertubeHelpers } = options
+
   logger = peertubeHelpers.logger
 
-  await initSettings({ registerSetting })
-  await initRouters({
-    settingsManager,
-    getRouter,
-    peertubeHelpers
-  })
+  await initSettings(options)
+  await initRouters(options)
 }
 
 async function unregister (): Promise<any> {
