@@ -1,10 +1,8 @@
-interface InitSettingsOptions {
-  registerSetting: (options: RegisterServerSettingOptions) => void
-}
+import { getBaseRouter } from './helpers'
 
 export function initSettings ({
   registerSetting
-}: InitSettingsOptions): void {
+}: RegisterServerOptions): void {
   registerSetting({
     name: 'chat-auto-display',
     label: 'Automatically open the chat',
@@ -52,6 +50,18 @@ export function initSettings ({
       'You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />' +
       'Don\'t add private videos, the UUIDs will be send to frontend.',
     private: false
+  })
+
+  registerSetting({
+    name: 'chat-use-prosody',
+    label: 'Use builtin Prosody XMPP Server',
+    type: 'input-checkbox',
+    // /!\ dont auto-activate on existing settups. FIXME: how to do this?
+    default: false, // TODO: set to true when peertube has fixed https://github.com/Chocobozzz/PeerTube/issues/3838
+    private: false,
+    descriptionHTML: 'If checked, this will use a builtin XMPP server. This is the recommanded setup.<br>' +
+    'TODO: add link to documentation.<br>' +
+    '<a href="' + getBaseRouter() + 'settings/diagnostic" target="_blank">Launch diagnostic</a>.<br>'
   })
 
   registerSetting({

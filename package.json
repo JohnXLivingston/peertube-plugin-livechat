@@ -69,7 +69,8 @@
   "staticDirs": {
     "static": "dist/client/static",
     "conversejs": "dist/client/conversejs/",
-    "images": "dist/client/images/"
+    "images": "dist/client/images/",
+    "settings": "dist/client/settings"
   },
   "translations": {
     "fr-FR": "./languages/fr.json"
