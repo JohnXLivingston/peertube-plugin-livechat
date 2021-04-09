@@ -1,8 +1,8 @@
 import { initSettings } from './lib/settings'
 import { initRouters } from './lib/routers'
 import type { Logger } from 'winston'
+import decache from 'decache'
 
-const decache = require('decache')
 let logger: Logger | undefined
 
 async function register ({
