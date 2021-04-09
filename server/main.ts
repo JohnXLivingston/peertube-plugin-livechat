@@ -24,8 +24,10 @@ async function register ({
 async function unregister (): Promise<any> {
   const module = __filename
   logger?.info(`Unloading module ${module}...`)
+  // In peertube <= 3.1.0 sub modules are not removed from require.cache
   decache(module)
   logger?.info(`Successfully unloaded the module ${module}`)
+  logger = undefined
 }
 
 module.exports = {
