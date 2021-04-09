@@ -1,19 +1,17 @@
+import type { InitRoutersOptions } from './index'
+import type { Router, Request, Response, NextFunction } from 'express'
 import * as path from 'path'
-import type { NextFunction, Request, Response } from 'express'
 const fs = require('fs').promises
 
-type InitRoutersOptions = Pick<RegisterServerOptions, 'settingsManager' | 'getRouter' | 'peertubeHelpers'>
-
-export async function initRouters ({
-  settingsManager,
+async function initWebchatRouter ({
   getRouter,
-  peertubeHelpers
-}: InitRoutersOptions): Promise<void> {
-  const converseJSIndex = await fs.readFile(path.resolve(__dirname, '../conversejs/index.html'))
+  peertubeHelpers,
+  settingsManager
+}: InitRoutersOptions): Promise<Router> {
+  const converseJSIndex = await fs.readFile(path.resolve(__dirname, '../../conversejs/index.html'))
 
   const router = getRouter()
-  router.get('/ping', (req: Request, res: Response) => res.json({ message: 'pong' }))
-  router.get('/webchat', async (req: Request, res: Response, next: NextFunction) => {
+  router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     try {
       const settings = await settingsManager.getSettings([
         'chat-use-builtin', 'chat-room', 'chat-server',
@@ -70,4 +68,9 @@ export async function initRouters ({
       return next(error)
     }
   })
+  return router
+}
+
+export {
+  initWebchatRouter
 }

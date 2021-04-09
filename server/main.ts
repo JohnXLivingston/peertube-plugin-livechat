@@ -1,5 +1,5 @@
 import { initSettings } from './lib/settings'
-import { initRouters } from './lib/routers'
+import { initRouters } from './lib/routers/index'
 import type { Logger } from 'winston'
 import decache from 'decache'
 
