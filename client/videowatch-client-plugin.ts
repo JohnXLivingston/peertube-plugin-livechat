@@ -80,7 +80,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     button.onclick = callback
     if (icon) {
       // FIXME: remove «as string» when peertube types will be available
-      const iconUrl = (peertubeHelpers.getBaseStaticRoute() as string) + '/images/' + icon
+      const iconUrl = peertubeHelpers.getBaseStaticRoute() + '/images/' + icon
       const iconEl = document.createElement('span')
       iconEl.classList.add('peertube-plugin-livechat-button-icon')
       iconEl.setAttribute('style',
@@ -198,6 +198,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     container.setAttribute('peertube-plugin-livechat-state', 'initializing')
     videoWrapper.append(container)
 
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     peertubeHelpers.getSettings().then((s: any) => {
       settings = s
       const liveOn = !!settings['chat-all-lives']
