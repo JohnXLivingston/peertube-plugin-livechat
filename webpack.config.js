@@ -17,6 +17,9 @@ let config = clientFiles.map(f => ({
       }
     ]
   },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ],
+  },
   output: {
     path: path.resolve(__dirname, "./dist/client"),
     filename: "./" + f + ".js",
