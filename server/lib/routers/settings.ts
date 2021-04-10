@@ -1,6 +1,14 @@
 import type { Router, Request, Response, NextFunction } from 'express'
 import { getBaseStaticRoute } from '../helpers'
 
+interface Result {
+  label?: string
+  messages: string[]
+  next?: string
+  ok: boolean
+  test: string
+}
+
 async function initSettingsRouter ({
   peertubeHelpers,
   getRouter
@@ -30,11 +38,22 @@ async function initSettingsRouter ({
 
       const test: string = req.body.test || ''
       logger.info('Accessing peertube-plugin-livechat diagnostic tool, test "' + test + '".')
-      const result: any = {
-        test: test,
-        message: null,
-        next: null,
-        ok: false
+
+      let result: Result
+      if (test === 'backend') {
+        result = {
+          ok: true,
+          label: 'Backend connection',
+          test: test,
+          messages: []
+        }
+      } else {
+        result = {
+          label: test,
+          test: test,
+          messages: ['Unknown test'],
+          ok: false
+        }
       }
 
       res.status(200)
