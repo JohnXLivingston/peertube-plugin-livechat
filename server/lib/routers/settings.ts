@@ -1,5 +1,5 @@
 import type { Router, Request, Response, NextFunction } from 'express'
-import { getBaseStaticRoute } from '../helpers'
+import { getBaseStaticRoute, isUserAdmin } from '../helpers'
 
 interface Result {
   label?: string
@@ -33,8 +33,9 @@ async function initSettingsRouter ({
       if (!res.locals.authenticated) {
         return res.sendStatus(403)
       }
-      // FIXME: test that user is admin.
-      logger.error('FIXME: test that user is admin')
+      if (!isUserAdmin(res)) {
+        return res.sendStatus(403)
+      }
 
       const test: string = req.body.test || ''
       logger.info('Accessing peertube-plugin-livechat diagnostic tool, test "' + test + '".')

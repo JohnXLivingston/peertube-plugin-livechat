@@ -1,3 +1,5 @@
+import { Response } from 'express'
+
 const packagejson: any = require('../../../package.json')
 const version: string = packagejson.version || ''
 if (!/^\d+\.\d+\.\d+/.test(version)) {
@@ -19,7 +21,20 @@ function getBaseStaticRoute (): string {
   return '/plugins/' + shortName + '/' + version + '/static/'
 }
 
+// FIXME: Peertube <= 3.1.0 has no way to test that current user is admin
+// This is a hack.
+function isUserAdmin (res: Response): boolean {
+  if (!res.locals?.authenticated) {
+    return false
+  }
+  if (res.locals?.oauth?.token?.User?.role === 0) {
+    return true
+  }
+  return false
+}
+
 export {
   getBaseRouter,
-  getBaseStaticRoute
+  getBaseStaticRoute,
+  isUserAdmin
 }
