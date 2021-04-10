@@ -9,6 +9,7 @@ const clientFiles = [
 
 let config = clientFiles.map(f => ({
   entry: "./client/" + f + ".ts",
+  devtool: process.env.NODE_ENV === 'dev' ? 'eval-source-map' : false,
   module: {
     rules: [
       {
@@ -31,6 +32,7 @@ let config = clientFiles.map(f => ({
 
 config.push({
   entry: "./conversejs/builtin.js",
+  devtool: process.env.NODE_ENV === 'dev' ? 'eval-source-map' : false,
   output: {
     path: path.resolve(__dirname, "./dist/client/static"),
     filename: "./builtin.js"
@@ -39,6 +41,7 @@ config.push({
 
 config.push({
   entry: "./client/settings.ts",
+  devtool: process.env.NODE_ENV === 'dev' ? 'eval-source-map' : false,
   module: {
     rules: [
       {
