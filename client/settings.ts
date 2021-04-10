@@ -97,14 +97,14 @@ function launchTests (): void {
         test: test
       })
     })
-    const data = await response.json()
     if (!response.ok) {
       return {
         test: test,
-        messages: ['Unknown error'],
+        messages: [response.statusText ?? 'Unknown error'],
         ok: false
       }
     }
+    const data = await response.json()
     if ((typeof data) !== 'object') {
       return {
         test: test,
