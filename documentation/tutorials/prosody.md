@@ -93,7 +93,7 @@ Component "room.${PEERTUBE_DOMAIN}" "muc"
   -- admins = { "admin@your_xmpp_provider_domain" }
 
   -- if you want room persistence, uncomment these lines
-  -- (requires prosody>=11, for older version there is the mam_muc module)
+  -- (requires prosody>=0.11, for older version there is the mam_muc module)
   -- modules_enabled = { "muc_mam" }
   -- muc_log_by_default = true
   -- muc_log_presences = true
@@ -128,7 +128,7 @@ If you want to activate room persistence (chat room content will be kept even
 if there is no more users), uncomment the lines in the config file,
 and change the `muc_log_expires_after` parameter as you want. Please refer to
 the [muc_mam module documentation](https://prosody.im/doc/modules/mod_muc_mam).
-This requires Prosody >= 11. For older version, see
+This requires Prosody >= 0.11. For older version, see
 [mam_muc](https://modules.prosody.im/mod_mam_muc.html).
 
 We have now to activate this configuration file:

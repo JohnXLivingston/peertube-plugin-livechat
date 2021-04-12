@@ -73,6 +73,10 @@
     "settings": "dist/client/settings"
   },
   "translations": {
-    "fr-FR": "./languages/fr.json"
+    "ca-ES": "./languages/ca.json",
+    "fr-FR": "./languages/fr.json",
+    "eo": "./languages/eo.json",
+    "eu-ES": "./languages/eu.json",
+    "pl-PL": "./languages/pl.json"
   }
 }
