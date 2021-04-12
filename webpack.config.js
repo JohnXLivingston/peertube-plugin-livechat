@@ -1,6 +1,9 @@
-const path = require("path")
+const path = require('path')
+const webpack = require('webpack')
 
-const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin")
+const EsmWebpackPlugin = require('@purtuga/esm-webpack-plugin')
+
+const packagejson = require('./package.json')
 
 const clientFiles = [
   'common-client-plugin',
@@ -27,7 +30,12 @@ let config = clientFiles.map(f => ({
     library: "script",
     libraryTarget: "var"
   },
-  plugins: [ new EsmWebpackPlugin() ]
+  plugins: [
+    new webpack.DefinePlugin({
+      PLUGIN_CHAT_PACKAGE_NAME: JSON.stringify(packagejson.name)
+    }),
+    new EsmWebpackPlugin()
+  ]
 }))
 
 config.push({
