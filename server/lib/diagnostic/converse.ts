@@ -1,6 +1,6 @@
 import { newResult, TestResult } from './utils'
 
-export async function diagConverse (test: string, settingsManager: PluginSettingsManager): Promise<TestResult> {
+export async function diagConverse (test: string, { settingsManager }: RegisterServerOptions): Promise<TestResult> {
   const result = newResult(test)
   result.label = 'Builtin ConverseJS on XMPP service'
   const builtinSettings = await settingsManager.getSettings([

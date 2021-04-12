@@ -2,11 +2,8 @@ import type { Router, Request, Response, NextFunction } from 'express'
 import { diag } from '../diagnostic'
 import { getBaseStaticRoute, isUserAdmin } from '../helpers'
 
-async function initSettingsRouter ({
-  peertubeHelpers,
-  getRouter,
-  settingsManager
-}: RegisterServerOptions): Promise<Router> {
+async function initSettingsRouter (options: RegisterServerOptions): Promise<Router> {
+  const { peertubeHelpers, getRouter } = options
   const router = getRouter()
   const logger = peertubeHelpers.logger
 
@@ -34,7 +31,7 @@ async function initSettingsRouter ({
       const test: string = req.body.test || ''
       logger.info('Accessing peertube-plugin-livechat diagnostic tool, test "' + test + '".')
 
-      const result = await diag(test, settingsManager)
+      const result = await diag(test, options)
 
       res.status(200)
       res.json(result)

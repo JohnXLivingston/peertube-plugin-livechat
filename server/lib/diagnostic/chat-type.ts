@@ -1,6 +1,6 @@
 import { newResult, TestResult } from './utils'
 
-export async function diagChatType (test: string, settingsManager: PluginSettingsManager): Promise<TestResult> {
+export async function diagChatType (test: string, { settingsManager }: RegisterServerOptions): Promise<TestResult> {
   const result = newResult(test)
   const typeSettings = await settingsManager.getSettings([
     'chat-use-prosody',

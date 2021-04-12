@@ -1,6 +1,6 @@
 import { newResult, TestResult } from './utils'
 
-export async function diagUri (test: string, settingsManager: PluginSettingsManager): Promise<TestResult> {
+export async function diagUri (test: string, { settingsManager }: RegisterServerOptions): Promise<TestResult> {
   const result = newResult(test)
   result.label = 'External Webchat using an iframe'
   const settings = await settingsManager.getSettings([

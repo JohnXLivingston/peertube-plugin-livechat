@@ -1,6 +1,6 @@
 import { newResult, TestResult } from './utils'
 
-export async function diagVideo (test: string, settingsManager: PluginSettingsManager): Promise<TestResult> {
+export async function diagVideo (test: string, { settingsManager }: RegisterServerOptions): Promise<TestResult> {
   const result = newResult(test)
   result.label = 'Webchat activated on videos'
   const videoSettings = await settingsManager.getSettings([
