@@ -4,6 +4,24 @@ export function initSettings ({
   registerSetting
 }: RegisterServerOptions): void {
   registerSetting({
+    name: 'chat-read-documentation',
+    label: 'I have read the documentation',
+    type: 'input-checkbox',
+    default: false,
+    private: false, // not private so that I can check when doing support
+    descriptionHTML: 'Please read the ' +
+      '<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat" target="_blank">documentation<a> ' +
+      'before trying to use this plugin.<br>' +
+      'There is 3 way to use it: <ul>' +
+      '<li>By installing the Prosoxy XMPP server package on your server, ' +
+      'and using the «builtin Prosody XMPP Server» feature.</li>' +
+      '<li>By using an existing XMPP server, with anonymous authentication and rooms enabled.</li>' +
+      '<li>By using any external webchat that can be included in an iframe.</li>' +
+      '</ul><br>' +
+      'Before asking for help, please use this diagnostic tool: ' +
+      '<a href="' + getBaseRouter() + 'settings/diagnostic" target="_blank">Launch diagnostic</a>.<br>'
+  })
+  registerSetting({
     name: 'chat-auto-display',
     label: 'Automatically open the chat',
     type: 'input-checkbox',
@@ -59,9 +77,7 @@ export function initSettings ({
     // /!\ dont auto-activate on existing settups. FIXME: how to do this?
     default: false, // TODO: set to true when peertube has fixed https://github.com/Chocobozzz/PeerTube/issues/3838
     private: false,
-    descriptionHTML: 'If checked, this will use a builtin XMPP server. This is the recommanded setup.<br>' +
-    'TODO: add link to documentation.<br>' +
-    '<a href="' + getBaseRouter() + 'settings/diagnostic" target="_blank">Launch diagnostic</a>.<br>'
+    descriptionHTML: 'If checked, this will use a builtin XMPP server. This is the recommanded setup.'
   })
 
   registerSetting({
