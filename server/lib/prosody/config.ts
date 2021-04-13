@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import * as path from 'path'
 import { pluginName } from '../helpers'
 
 type LogMode = 'debug' | 'info'
@@ -13,10 +14,15 @@ async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServe
   const tmpBaseDir = '/tmp/'
   await fs.promises.access(tmpBaseDir, fs.constants.W_OK) // will throw an error if no access
   let value: string = await storageManager.getData('tempDirId')
+
+  function getPath (value: string): string {
+    return path.resolve(tmpBaseDir, pluginName + '-' + value)
+  }
+
   while (!value) {
     peertubeHelpers.logger.info('Generating an id for temp dir')
     value = Math.random().toString(36).slice(2, 12)
-    const name = tmpBaseDir + pluginName + '-' + value
+    const name = getPath(value)
     if (fs.existsSync(name)) {
       peertubeHelpers.logger.info('The folder ' + name + ' already exists, generating another name...')
       value = ''
@@ -25,7 +31,7 @@ async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServe
     await storageManager.storeData('tempDirId', value)
   }
 
-  const name = tmpBaseDir + pluginName + '-' + value
+  const name = getPath(value)
   if (!fs.existsSync(name)) {
     await fs.promises.mkdir(name)
   }
@@ -33,9 +39,25 @@ async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServe
   return name
 }
 
-async function getProsodyConfig (_options: RegisterServerOptions): Promise<string> {
+interface ProsodyFilePaths {
+  pid: string
+  error: string
+  log: string
+  config: string
+}
+async function getProsodyFilePaths (options: RegisterServerOptions): Promise<ProsodyFilePaths> {
+  const dir = await getWorkingDir(options)
+  return {
+    pid: path.resolve(dir, 'prosody.pid'),
+    error: path.resolve(dir, 'prosody.err'),
+    log: path.resolve(dir, 'prosody.log'),
+    config: path.resolve(dir, 'prosody.cfg.lua')
+  }
+}
+
+async function getProsodyConfigContent (options: RegisterServerOptions): Promise<string> {
   const peertubeDomain = 'localhost'
-  const workingDirectory = '/tmp/'
+  const paths = await getProsodyFilePaths(options)
   const logMode: LogMode = 'debug'
   return `
 
@@ -62,7 +84,7 @@ allow_registration = false
 
 daemonize = true;
 
-pidfile = "${workingDirectory}prosody.pid";
+pidfile = "${paths.pid}";
 
 c2s_require_encryption = false
 
@@ -70,8 +92,8 @@ archive_expires_after = "1w" -- Remove archived messages after 1 week
 
 log = {
   -- Log files (change 'info' to 'debug' for debug logs):
-  ${logMode} = "${workingDirectory}prosody.log";
-  error = "${workingDirectory}prosody.err";
+  ${logMode} = "${paths.log}";
+  error = "${paths.error}";
   -- Syslog:
   -- { levels = { "error" }; to = "syslog";  };
 }
@@ -110,7 +132,23 @@ Component "room.localhost" "muc"
 `
 }
 
+async function getProsodyConfigPath (options: RegisterServerOptions): Promise<string> {
+  const paths = await getProsodyFilePaths(options)
+  return paths.config
+}
+
+async function writeProsodyConfig (options: RegisterServerOptions): Promise<void> {
+  const logger = options.peertubeHelpers.logger
+  const content = await getProsodyConfigContent(options)
+  const fileName = await getProsodyConfigPath(options)
+  logger.info(`Writing prosody configuration file to ${fileName}`)
+  await fs.promises.writeFile(fileName, content)
+}
+
 export {
-  getProsodyConfig,
-  getWorkingDir
+  getProsodyConfigContent,
+  getWorkingDir,
+  getProsodyFilePaths,
+  getProsodyConfigPath,
+  writeProsodyConfig
 }

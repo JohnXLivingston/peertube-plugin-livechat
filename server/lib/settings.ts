@@ -1,8 +1,9 @@
 import { getBaseRouter } from './helpers'
+import { ensureProsodyRunning, ensureProsodyNotRunning } from './prosody/ctl'
 
-export function initSettings ({
-  registerSetting
-}: RegisterServerOptions): void {
+export function initSettings (options: RegisterServerOptions): void {
+  const { peertubeHelpers, registerSetting, settingsManager } = options
+
   registerSetting({
     name: 'chat-read-documentation',
     label: 'I have read the documentation',
@@ -156,5 +157,21 @@ export function initSettings ({
     descriptionHTML: 'Additional styles to be added on the iframe style attribute. <br>' +
       'Example: height:400px;',
     private: false
+  })
+
+  // settings changes management
+
+  // FIXME: Peertube <= 3.1.0 wrongly consider that the callback should not be async
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+  settingsManager.onSettingsChange(async (settings: any) => {
+    if ('chat-use-prosody' in settings) {
+      if (settings['chat-use-prosody'] === true) {
+        peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
+        await ensureProsodyRunning(options)
+      } else if (settings['chat-use-prody'] === false) {
+        peertubeHelpers.logger.info('Saving settings, ensuring prosody is not running')
+        await ensureProsodyNotRunning(options)
+      }
+    }
   })
 }
