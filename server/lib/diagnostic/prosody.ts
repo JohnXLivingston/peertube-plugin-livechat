@@ -1,4 +1,5 @@
 import { getProsodyConfigContent, getProsodyConfigPath, getWorkingDir } from '../prosody/config'
+import { testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
 import * as fs from 'fs'
 
@@ -14,6 +15,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     return result
   }
 
+  // FIXME: these tests should also be in testProsodyCorrectlyRunning
   // Testing the prosody config file.
   try {
     const filePath = await getProsodyConfigPath(options)
@@ -31,6 +33,14 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     }
   } catch (error) {
     result.messages.push('Error when requiring the prosody config file: ' + (error as string))
+    return result
+  }
+
+  const isCorrectlyRunning = await testProsodyCorrectlyRunning(options)
+  if (isCorrectlyRunning.messages.length) {
+    result.messages.push(...isCorrectlyRunning.messages)
+  }
+  if (!isCorrectlyRunning.ok) {
     return result
   }
 
