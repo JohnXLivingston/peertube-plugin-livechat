@@ -1,13 +1,14 @@
-import { getProsodyFilePaths, writeProsodyConfig } from './config'
+import { getProsodyConfigContent, getProsodyConfigPath, getProsodyFilePaths, writeProsodyConfig } from './config'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
 
-interface ProsodyRunning {
-  ok: boolean
-  messages: string[]
+interface ProsodyCtlResult {
+  code: number | null
+  stdout: string
+  sterr: string
+  message: string
 }
-
-async function prosodyCtl (options: RegisterServerOptions, command: string, failOnError: boolean): Promise<string> {
+async function prosodyCtl (options: RegisterServerOptions, command: string): Promise<ProsodyCtlResult> {
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling prosodyCtl with command ' + command)
 
@@ -15,9 +16,10 @@ async function prosodyCtl (options: RegisterServerOptions, command: string, fail
   if (!/^\w+$/.test(command)) {
     throw new Error(`Invalid prosodyctl command '${command}'`)
   }
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     let d: string = ''
     let e: string = ''
+    let m: string = ''
     const spawned = child_process.spawn('prosodyctl', [
       '--config',
       filePaths.config,
@@ -31,26 +33,33 @@ async function prosodyCtl (options: RegisterServerOptions, command: string, fail
     })
     spawned.stdout.on('data', (data) => {
       d += data as string
+      m += data as string
     })
     spawned.stderr.on('data', (data) => {
       options.peertubeHelpers.logger.error(`Spawned command ${command} has errors: ${data as string}`)
       e += data as string
+      m += data as string
     })
-    spawned.on('close', (code) => {
-      if (code !== 0 && failOnError) {
-        reject(e)
-      } else {
-        if (e !== '') { d += e }
-        resolve(d)
-      }
+    spawned.on('exit', (code) => {
+      resolve({
+        code: code,
+        stdout: d,
+        sterr: e,
+        message: m
+      })
     })
   })
 }
 
 async function getProsodyAbout (options: RegisterServerOptions): Promise<string> {
-  return prosodyCtl(options, 'about', true)
+  const ctl = await prosodyCtl(options, 'about')
+  return ctl.message
 }
 
+interface ProsodyRunning {
+  ok: boolean
+  messages: string[]
+}
 async function testProsodyRunning (options: RegisterServerOptions): Promise<ProsodyRunning> {
   const { peertubeHelpers } = options
   const logger = peertubeHelpers.logger
@@ -72,6 +81,12 @@ async function testProsodyRunning (options: RegisterServerOptions): Promise<Pros
     return result
   }
 
+  const status = await prosodyCtl(options, 'status')
+  result.messages.push('Prosodyctl status: ' + status.message)
+  if (status.code) {
+    return result
+  }
+
   result.ok = true
   return result
 }
@@ -83,8 +98,27 @@ async function testProsodyCorrectlyRunning (options: RegisterServerOptions): Pro
   if (!result.ok) { return result }
   result.ok = false // more tests to come
 
-  // TODO
-  peertubeHelpers.logger.error('testProsodyCorrectlyRunning not implemented yet.')
+  try {
+    const filePath = await getProsodyConfigPath(options)
+    await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
+    result.messages.push(`The prosody configuration file (${filePath}) exists`)
+    const actualContent = await fs.promises.readFile(filePath, {
+      encoding: 'utf-8'
+    })
+
+    const wantedContent = await getProsodyConfigContent(options)
+    if (actualContent === wantedContent) {
+      result.messages.push('Prosody configuration file content is correct.')
+    } else {
+      result.messages.push('Prosody configuration file content is not correct.')
+      return result
+    }
+  } catch (error) {
+    result.messages.push('Error when requiring the prosody config file: ' + (error as string))
+    return result
+  }
+
+  result.ok = true
   return result
 }
 
@@ -154,12 +188,12 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
     count++
     await sleep(500)
     logger.info('Verifying prosody is launched')
-    try {
-      const status = await prosodyCtl(options, 'status', true)
-      logger.info(`Prosody status: ${status}`)
+    const status = await prosodyCtl(options, 'status')
+    if (!status.code) {
+      logger.info(`Prosody status: ${status.stdout}`)
       processStarted = true
-    } catch (error) {
-      logger.warn(`Prosody status: ${error as string}`)
+    } else {
+      logger.warn(`Prosody status: ${status.message}`)
     }
   }
   if (!processStarted) {
@@ -183,8 +217,8 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
   }
 
   logger.debug('Calling prosodyctl to stop the process')
-  const m = await prosodyCtl(options, 'stop', false)
-  logger.info(`ProsodyCtl command returned: ${m}`)
+  const status = await prosodyCtl(options, 'stop')
+  logger.info(`ProsodyCtl command returned: ${status.message}`)
 }
 
 export {

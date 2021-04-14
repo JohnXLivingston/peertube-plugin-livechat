@@ -15,7 +15,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     return result
   }
 
-  // FIXME: these tests should also be in testProsodyCorrectlyRunning. Remove from here?
+  // FIXME: these tests are very similar to tests in testProsodyCorrectlyRunning. Remove from here?
   // Testing the prosody config file.
   try {
     const filePath = await getProsodyConfigPath(options)
