@@ -40,6 +40,7 @@ async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServe
 }
 
 interface ProsodyFilePaths {
+  dir: string
   pid: string
   error: string
   log: string
@@ -48,6 +49,7 @@ interface ProsodyFilePaths {
 async function getProsodyFilePaths (options: RegisterServerOptions): Promise<ProsodyFilePaths> {
   const dir = await getWorkingDir(options)
   return {
+    dir: dir,
     pid: path.resolve(dir, 'prosody.pid'),
     error: path.resolve(dir, 'prosody.err'),
     log: path.resolve(dir, 'prosody.log'),
@@ -82,7 +84,7 @@ modules_disabled = {
 
 allow_registration = false
 
-daemonize = true;
+daemonize = false;
 
 pidfile = "${paths.pid}";
 
