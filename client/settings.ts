@@ -1,6 +1,10 @@
 interface Result {
   label?: string
   messages: string[]
+  debug?: Array<{
+    title: string
+    message: string
+  }>
   next?: string | ((r: Result) => void)
   ok: boolean
   test: string
@@ -15,8 +19,12 @@ function launchTests (): void {
   if (!container) {
     throw new Error('Cant find main container')
   }
-  const ul = document.createElement('ul')
   container.innerHTML = ''
+
+  const title = document.createElement('h1')
+  title.textContent = 'Diagnostic'
+  container.append(title)
+  const ul = document.createElement('ul')
   container.append(ul)
 
   function appendMessages (result: Result): void {
@@ -47,6 +55,28 @@ function launchTests (): void {
     }
 
     ul.append(li)
+  }
+
+  let debugContainer: HTMLElement
+  function appendDebug (result: Result): void {
+    if (!result.debug?.length) { return }
+    if (!debugContainer) {
+      debugContainer = document.createElement('div')
+      const title = document.createElement('h2')
+      title.textContent = 'Additional debugging information'
+      debugContainer.append(title)
+      container?.append(debugContainer)
+    }
+    for (let i = 0; i < result.debug.length; i++) {
+      const debug = result.debug[i]
+      const title = document.createElement('h3')
+      title.textContent = debug.title
+      debugContainer.append(title)
+      const message = document.createElement('div')
+      message.setAttribute('style', 'white-space: pre;')
+      message.textContent = debug.message
+      debugContainer.append(message)
+    }
   }
 
   function testBrowser (): Result {
@@ -117,6 +147,7 @@ function launchTests (): void {
 
   async function machine (result: Result): Promise<void> {
     appendMessages(result)
+    appendDebug(result)
     if (!result.ok) {
       return
     }

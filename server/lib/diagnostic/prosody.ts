@@ -1,5 +1,5 @@
 import { getProsodyConfigContent, getProsodyConfigPath, getWorkingDir } from '../prosody/config'
-import { testProsodyCorrectlyRunning } from '../prosody/ctl'
+import { getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
 import * as fs from 'fs'
 
@@ -15,7 +15,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     return result
   }
 
-  // FIXME: these tests should also be in testProsodyCorrectlyRunning
+  // FIXME: these tests should also be in testProsodyCorrectlyRunning. Remove from here?
   // Testing the prosody config file.
   try {
     const filePath = await getProsodyConfigPath(options)
@@ -24,11 +24,21 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     const actualContent = await fs.promises.readFile(filePath, {
       encoding: 'utf-8'
     })
+
+    result.debug.push({
+      title: 'Current prosody configuration',
+      message: actualContent
+    })
+
     const wantedContent = await getProsodyConfigContent(options)
     if (actualContent === wantedContent) {
       result.messages.push('Prosody configuration file content is correct.')
     } else {
       result.messages.push('Prosody configuration file content is not correct.')
+      result.debug.push({
+        title: 'Prosody configuration should be',
+        message: wantedContent
+      })
       return result
     }
   } catch (error) {
@@ -40,6 +50,13 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   if (isCorrectlyRunning.messages.length) {
     result.messages.push(...isCorrectlyRunning.messages)
   }
+
+  const about = await getProsodyAbout(options)
+  result.debug.push({
+    title: 'Prosody version',
+    message: about
+  })
+
   if (!isCorrectlyRunning.ok) {
     return result
   }

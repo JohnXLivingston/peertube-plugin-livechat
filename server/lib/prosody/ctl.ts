@@ -1,12 +1,53 @@
 import { getProsodyFilePaths, writeProsodyConfig } from './config'
 import * as fs from 'fs'
 import * as util from 'util'
+import * as child_process from 'child_process'
 
-const exec = util.promisify(require('child_process').exec)
+const exec = util.promisify(child_process.exec)
 
 interface ProsodyRunning {
   ok: boolean
   messages: string[]
+}
+
+async function prosodyCtl (options: RegisterServerOptions, command: string): Promise<string> {
+  const filePaths = await getProsodyFilePaths(options)
+  if (!/^\w+$/.test(command)) {
+    throw new Error(`Invalid prosodyctl command '${command}'`)
+  }
+  return new Promise((resolve, reject) => {
+    let d: string = ''
+    let e: string = ''
+    const spawned = child_process.spawn('prosodyctl', [
+      '--config',
+      filePaths.config,
+      command
+    ], {
+      cwd: filePaths.dir,
+      env: {
+        ...process.env,
+        PROSODY_CONFIG: filePaths.config
+      }
+    })
+    spawned.stdout.on('data', (data) => {
+      d += data as string
+    })
+    spawned.stderr.on('data', (data) => {
+      options.peertubeHelpers.logger.error(`Spawned command ${command} has errors: ${data as string}`)
+      e += data as string
+    })
+    spawned.on('close', (code) => {
+      if (code !== 0) {
+        reject(e)
+      } else {
+        resolve(d)
+      }
+    })
+  })
+}
+
+async function getProsodyAbout (options: RegisterServerOptions): Promise<string> {
+  return prosodyCtl(options, 'about')
 }
 
 async function testProsodyRunning (options: RegisterServerOptions): Promise<ProsodyRunning> {
@@ -20,6 +61,7 @@ async function testProsodyRunning (options: RegisterServerOptions): Promise<Pros
   const filePaths = await getProsodyFilePaths(options)
   try {
     await fs.promises.access(filePaths.pid, fs.constants.R_OK)
+    result.messages.push(`Pid file ${filePaths.pid} found`)
   } catch (error) {
     result.messages.push(`Pid file ${filePaths.pid} not found`)
     return result
@@ -90,6 +132,7 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
 }
 
 export {
+  getProsodyAbout,
   testProsodyRunning,
   testProsodyCorrectlyRunning,
   ensureProsodyRunning,
