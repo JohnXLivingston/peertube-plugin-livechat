@@ -4,15 +4,11 @@ import { pluginName } from '../helpers'
 
 type LogMode = 'debug' | 'info'
 
-/**
- * Creates the working dir if needed, and returns it.
- * NB: for now, I try to create a directory in /tmp/.
- * To ensure that there is no conflict with another peertube instance,
- * I used a randomly generated id that will be stored in database.
- */
 async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServerOptions): Promise<string> {
+  const logger = peertubeHelpers.logger
+  logger.debug('Calling getWorkingDir')
+
   const tmpBaseDir = '/tmp/'
-  await fs.promises.access(tmpBaseDir, fs.constants.W_OK) // will throw an error if no access
   let value: string = await storageManager.getData('tempDirId')
 
   function getPath (value: string): string {
@@ -31,12 +27,31 @@ async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServe
     await storageManager.storeData('tempDirId', value)
   }
 
-  const name = getPath(value)
-  if (!fs.existsSync(name)) {
-    await fs.promises.mkdir(name)
+  const dir = getPath(value)
+  logger.debug('getWorkingDir will return ' + dir)
+  return dir
+}
+
+/**
+ * Creates the working dir if needed, and returns it.
+ * NB: for now, I try to create a directory in /tmp/.
+ * To ensure that there is no conflict with another peertube instance,
+ * I used a randomly generated id that will be stored in database.
+ */
+async function ensureWorkingDir (options: RegisterServerOptions): Promise<string> {
+  const logger = options.peertubeHelpers.logger
+  logger.debug('Calling ensureworkingDir')
+
+  const dir = await getWorkingDir(options)
+  if (!fs.existsSync(dir)) {
+    logger.info(`The working dir ${dir} does not exists, trying to create it`)
+    await fs.promises.mkdir(dir)
+    logger.debug(`Working dir ${dir} was created`)
   }
-  await fs.promises.access(name, fs.constants.W_OK) // will throw an error if no access
-  return name
+  logger.debug(`Testing write access on ${dir}`)
+  await fs.promises.access(dir, fs.constants.W_OK) // will throw an error if no access
+  logger.debug(`Write access ok on ${dir}`)
+  return dir
 }
 
 interface ProsodyFilePaths {
@@ -47,6 +62,9 @@ interface ProsodyFilePaths {
   config: string
 }
 async function getProsodyFilePaths (options: RegisterServerOptions): Promise<ProsodyFilePaths> {
+  const logger = options.peertubeHelpers.logger
+  logger.debug('Calling getProsodyFilePaths')
+
   const dir = await getWorkingDir(options)
   return {
     dir: dir,
@@ -58,6 +76,9 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
 }
 
 async function getProsodyConfigContent (options: RegisterServerOptions): Promise<string> {
+  const logger = options.peertubeHelpers.logger
+  logger.debug('Calling getProsodyConfigContent')
+
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
   const logMode: LogMode = 'debug'
@@ -135,21 +156,32 @@ Component "room.localhost" "muc"
 }
 
 async function getProsodyConfigPath (options: RegisterServerOptions): Promise<string> {
+  const logger = options.peertubeHelpers.logger
+  logger.debug('Calling getProsodyConfigPath')
+
   const paths = await getProsodyFilePaths(options)
   return paths.config
 }
 
 async function writeProsodyConfig (options: RegisterServerOptions): Promise<void> {
   const logger = options.peertubeHelpers.logger
+  logger.debug('Calling writeProsodyConfig')
+
+  logger.debug('Ensuring that the working dir exists')
+  await ensureWorkingDir(options)
+  logger.debug('Computing the Prosody config content')
   const content = await getProsodyConfigContent(options)
+
   const fileName = await getProsodyConfigPath(options)
   logger.info(`Writing prosody configuration file to ${fileName}`)
   await fs.promises.writeFile(fileName, content)
+  logger.debug('Prosody configuration file writen')
 }
 
 export {
   getProsodyConfigContent,
   getWorkingDir,
+  ensureWorkingDir,
   getProsodyFilePaths,
   getProsodyConfigPath,
   writeProsodyConfig
