@@ -122,12 +122,24 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
 
   // launch prosody
   logger.info('Going to launch prosody')
-  child_process.exec('prosody', {
+  const prosody = child_process.exec('prosody', {
     cwd: filePaths.dir,
     env: {
       ...process.env,
       PROSODY_CONFIG: filePaths.config
     }
+  })
+  prosody.stdout?.on('data', (data) => {
+    logger.debug(`Prosody stdout: ${data as string}`)
+  })
+  prosody.stderr?.on('data', (data) => {
+    logger.error(`Prosody stderr: ${data as string}`)
+  })
+  prosody.on('close', (code) => {
+    logger.info(`Prosody process closed all stdio with code ${code ?? 'null'}`)
+  })
+  prosody.on('exit', (code) => {
+    logger.info(`Prosody process exited with code ${code ?? 'null'}`)
   })
 
   async function sleep (ms: number): Promise<any> {
