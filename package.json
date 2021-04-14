@@ -77,6 +77,7 @@
     "fr-FR": "./languages/fr.json",
     "eo": "./languages/eo.json",
     "eu-ES": "./languages/eu.json",
-    "pl-PL": "./languages/pl.json"
+    "pl-PL": "./languages/pl.json",
+    "it-IT": "./languages/it.json"
   }
 }
