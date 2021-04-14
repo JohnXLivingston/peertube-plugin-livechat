@@ -1,4 +1,5 @@
 import type { Router, Request, Response, NextFunction } from 'express'
+import { getBaseRouter } from '../helpers'
 import * as path from 'path'
 const fs = require('fs').promises
 
@@ -13,21 +14,35 @@ async function initWebchatRouter ({
   router.get('/', async (req: Request, res: Response, next: NextFunction) => {
     try {
       const settings = await settingsManager.getSettings([
-        'chat-use-builtin', 'chat-room', 'chat-server',
+        'chat-use-prosody', 'chat-use-builtin', 'chat-room', 'chat-server',
         'chat-bosh-uri', 'chat-ws-uri'
       ])
 
-      if (!settings['chat-use-builtin']) {
+      let server: string
+      let room: string
+      let boshUri: string
+      let wsUri: string
+      if (settings['chat-use-prosody']) {
+        server = 'localhost'
+        room = '{{VIDEO_UUID}}@room.localhost'
+        boshUri = getBaseRouter() + 'http-bind'
+        wsUri = ''
+      } else if (settings['chat-use-builtin']) {
+        if (!settings['chat-server']) {
+          throw new Error('Missing chat-server settings.')
+        }
+        if (!settings['chat-room']) {
+          throw new Error('Missing chat-room settings.')
+        }
+        if (!settings['chat-bosh-uri'] && !settings['chat-ws-uri']) {
+          throw new Error('Missing BOSH or Websocket uri.')
+        }
+        server = settings['chat-server'] as string
+        room = settings['chat-room'] as string
+        boshUri = settings['chat-bosh-uri'] as string
+        wsUri = settings['chat-ws-uri'] as string
+      } else {
         throw new Error('Builtin chat disabled.')
-      }
-      if (!settings['chat-server']) {
-        throw new Error('Missing chat-server settings.')
-      }
-      if (!settings['chat-room']) {
-        throw new Error('Missing chat-room settings.')
-      }
-      if (!settings['chat-bosh-uri'] && !settings['chat-ws-uri']) {
-        throw new Error('Missing BOSH or Websocket uri.')
       }
 
       // FIXME: with Peertube 3.0.1 the following method is not available...
@@ -54,11 +69,11 @@ async function initWebchatRouter ({
       // FIXME: Peertube should provide the static folder path. For now:
       const staticRelative = '../static'
       page = page.replace(/{{BASE_STATIC_URL}}/g, staticRelative)
-      page = page.replace(/{{JID}}/g, settings['chat-server'] as string)
-      const room = (settings['chat-room'] as string).replace(/{{VIDEO_UUID}}/g, video.uuid)
+      page = page.replace(/{{JID}}/g, server)
+      room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
       page = page.replace(/{{ROOM}}/g, room)
-      page = page.replace(/{{BOSH_SERVICE_URL}}/g, settings['chat-bosh-uri'] as string)
-      page = page.replace(/{{WS_SERVICE_URL}}/g, settings['chat-ws-uri'] as string)
+      page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
+      page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
 
       res.status(200)
       res.type('html')

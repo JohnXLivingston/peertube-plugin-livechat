@@ -41,14 +41,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       return null
     }
     let iframeUri = ''
-    if (!settings['chat-use-builtin']) {
-      iframeUri = settings['chat-uri'] || ''
-      iframeUri = iframeUri.replace(/{{VIDEO_UUID}}/g, uuid)
-      if (!/^https?:\/\//.test(iframeUri)) {
-        logger.error('The webchaturi must begin with https://')
-        return null
-      }
-    } else {
+    if (settings['chat-use-prosody'] || settings['chat-use-builtin']) {
       // Using the builtin converseJS
       // FIXME: with Peertube 3.0.1 there is no loadByIdOrUUID method,
       // we need to pass the complete url.
@@ -57,6 +50,16 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         const url: string = video.originInstanceUrl + '/videos/watch/' + uuid
         iframeUri = getBaseRoute() + '/webchat?url=' + encodeURIComponent(url)
       }
+    } else if (!settings['chat-use-builtin']) {
+      iframeUri = settings['chat-uri'] || ''
+      iframeUri = iframeUri.replace(/{{VIDEO_UUID}}/g, uuid)
+      if (!/^https?:\/\//.test(iframeUri)) {
+        logger.error('The webchaturi must begin with https://')
+        return null
+      }
+    } else {
+      logger.error('Dont known which url use for the iframe.')
+      return null
     }
     if (iframeUri === '') {
       logger.error('No iframe uri')
