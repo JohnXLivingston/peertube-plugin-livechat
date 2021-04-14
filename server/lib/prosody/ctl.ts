@@ -1,9 +1,6 @@
 import { getProsodyFilePaths, writeProsodyConfig } from './config'
 import * as fs from 'fs'
-import * as util from 'util'
 import * as child_process from 'child_process'
-
-const exec = util.promisify(child_process.exec)
 
 interface ProsodyRunning {
   ok: boolean
@@ -125,16 +122,39 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
 
   // launch prosody
   logger.info('Going to launch prosody')
-  await exec('prosody', {
+  child_process.exec('prosody', {
     cwd: filePaths.dir,
     env: {
       ...process.env,
       PROSODY_CONFIG: filePaths.config
     }
   })
-  logger.info('Verifying prosody is launched')
-  const status = await prosodyCtl(options, 'status', true)
-  logger.info(`Prosody status: ${status}`)
+
+  async function sleep (ms: number): Promise<any> {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    })
+  }
+  logger.info('Waiting for the prosody process to launch')
+  let count: number = 0
+  let processStarted: boolean = false
+  while (!processStarted && count < 5) {
+    count++
+    await sleep(500)
+    logger.info('Verifying prosody is launched')
+    try {
+      const status = await prosodyCtl(options, 'status', true)
+      logger.info(`Prosody status: ${status}`)
+      processStarted = true
+    } catch (error) {
+      logger.warn(`Prosody status: ${error as string}`)
+    }
+  }
+  if (!processStarted) {
+    logger.error('It seems that the Prosody process is not up')
+  } else {
+    logger.info('Prosody is running')
+  }
 }
 
 async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise<void> {
