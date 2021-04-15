@@ -125,9 +125,9 @@ cross_domain_bosh = false;
 consider_bosh_secure = true;
 cross_domain_websocket = false;
 consider_websocket_secure = true;
+https_ports = {};
 
 VirtualHost "anon.localhost"
-  https_ports = {};
   trusted_proxies = { "127.0.0.1", "::1" }
 
   authentication = "anonymous"
