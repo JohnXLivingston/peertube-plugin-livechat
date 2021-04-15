@@ -75,14 +75,20 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   }
 }
 
-async function getProsodyConfigContent (options: RegisterServerOptions): Promise<string> {
+interface ProsodyConfig {
+  content: string
+  paths: ProsodyFilePaths
+  port: string
+}
+async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
-  logger.debug('Calling getProsodyConfigContent')
+  logger.debug('Calling getProsodyConfig')
 
+  const port = '5280'
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
   const logMode: LogMode = 'debug'
-  return `
+  const content = `
 
 admins = { }
 plugin_paths = { }
@@ -153,36 +159,35 @@ Component "room.localhost" "muc"
   muc_room_default_change_subject = false
   muc_room_default_history_length = 20
 `
+  return {
+    content,
+    paths,
+    port
+  }
 }
 
-async function getProsodyConfigPath (options: RegisterServerOptions): Promise<string> {
-  const logger = options.peertubeHelpers.logger
-  logger.debug('Calling getProsodyConfigPath')
-
-  const paths = await getProsodyFilePaths(options)
-  return paths.config
-}
-
-async function writeProsodyConfig (options: RegisterServerOptions): Promise<void> {
+async function writeProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling writeProsodyConfig')
 
   logger.debug('Ensuring that the working dir exists')
   await ensureWorkingDir(options)
   logger.debug('Computing the Prosody config content')
-  const content = await getProsodyConfigContent(options)
+  const config = await getProsodyConfig(options)
+  const content = config.content
+  const fileName = config.paths.config
 
-  const fileName = await getProsodyConfigPath(options)
   logger.info(`Writing prosody configuration file to ${fileName}`)
   await fs.promises.writeFile(fileName, content)
   logger.debug('Prosody configuration file writen')
+
+  return config
 }
 
 export {
-  getProsodyConfigContent,
+  getProsodyConfig,
   getWorkingDir,
   ensureWorkingDir,
   getProsodyFilePaths,
-  getProsodyConfigPath,
   writeProsodyConfig
 }

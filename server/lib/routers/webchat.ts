@@ -1,17 +1,23 @@
-import type { Router, Request, Response, NextFunction } from 'express'
+import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import { getBaseRouter } from '../helpers'
 import * as path from 'path'
 const fs = require('fs').promises
+// const httpProxy = require('http-proxy')
 
-async function initWebchatRouter ({
-  getRouter,
-  peertubeHelpers,
-  settingsManager
-}: RegisterServerOptions): Promise<Router> {
+let httpBindRoute: RequestHandler
+
+async function initWebchatRouter (options: RegisterServerOptions): Promise<Router> {
+  const {
+    getRouter,
+    peertubeHelpers,
+    settingsManager
+  } = options
+
   const converseJSIndex = await fs.readFile(path.resolve(__dirname, '../../conversejs/index.html'))
 
-  const router = getRouter()
-  router.get('/', async (req: Request, res: Response, next: NextFunction) => {
+  const router: Router = getRouter()
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+  router.get('/', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const settings = await settingsManager.getSettings([
         'chat-use-prosody', 'chat-use-builtin', 'chat-room', 'chat-server',
@@ -25,7 +31,7 @@ async function initWebchatRouter ({
       if (settings['chat-use-prosody']) {
         server = 'localhost'
         room = '{{VIDEO_UUID}}@room.localhost'
-        boshUri = getBaseRouter() + 'http-bind'
+        boshUri = getBaseRouter() + 'webchat/http-bind'
         wsUri = ''
       } else if (settings['chat-use-builtin']) {
         if (!settings['chat-server']) {
@@ -79,12 +85,42 @@ async function initWebchatRouter ({
       res.type('html')
       res.send(page)
     } catch (error) {
-      return next(error)
+      next(error)
     }
+  })
+
+  changeHttpBindRoute(options, null)
+  router.all('/http-bind', (req: Request, res: Response, next: NextFunction) => {
+    httpBindRoute(req, res, next)
   })
   return router
 }
 
+function changeHttpBindRoute ({ peertubeHelpers }: RegisterServerOptions, port: string | null): void {
+  const logger = peertubeHelpers.logger
+  logger.info('Changing http-bind port for ' + (port ?? 'null'))
+  if (port !== null && !/^\d+$/.test(port)) {
+    logger.error('Port is not valid. Replacing by null')
+    port = null
+  }
+  if (port === null) {
+    httpBindRoute = (_req: Request, res: Response, _next: NextFunction) => {
+      res.status(404)
+      res.send('Not found')
+    }
+  } else {
+    logger.error('Not implemented yet')
+    // const proxy = new httpProxy.HttpProxy()
+    // httpBindRoute = (req: Request, res: Response, _next: NextFunction) => {
+    //   proxy.proxyRequest(req, res, {
+    //     host: 'localhost',
+    //     port: port
+    //   })
+    // }
+  }
+}
+
 export {
-  initWebchatRouter
+  initWebchatRouter,
+  changeHttpBindRoute
 }

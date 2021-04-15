@@ -1,4 +1,4 @@
-import { getProsodyConfigContent, getProsodyConfigPath, getWorkingDir } from '../prosody/config'
+import { getProsodyConfig, getWorkingDir } from '../prosody/config'
 import { getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
 import * as fs from 'fs'
@@ -18,7 +18,9 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   // FIXME: these tests are very similar to tests in testProsodyCorrectlyRunning. Remove from here?
   // Testing the prosody config file.
   try {
-    const filePath = await getProsodyConfigPath(options)
+    const wantedConfig = await getProsodyConfig(options)
+    const filePath = wantedConfig.paths.config
+
     await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
     result.messages.push(`The prosody configuration file (${filePath}) exists`)
     const actualContent = await fs.promises.readFile(filePath, {
@@ -30,7 +32,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
       message: actualContent
     })
 
-    const wantedContent = await getProsodyConfigContent(options)
+    const wantedContent = wantedConfig.content
     if (actualContent === wantedContent) {
       result.messages.push('Prosody configuration file content is correct.')
     } else {

@@ -1,4 +1,5 @@
-import { getProsodyConfigContent, getProsodyConfigPath, getProsodyFilePaths, writeProsodyConfig } from './config'
+import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig } from './config'
+import { changeHttpBindRoute } from '../routers/webchat'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
 
@@ -99,14 +100,16 @@ async function testProsodyCorrectlyRunning (options: RegisterServerOptions): Pro
   result.ok = false // more tests to come
 
   try {
-    const filePath = await getProsodyConfigPath(options)
+    const wantedConfig = await getProsodyConfig(options)
+    const filePath = wantedConfig.paths.config
+
     await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
     result.messages.push(`The prosody configuration file (${filePath}) exists`)
     const actualContent = await fs.promises.readFile(filePath, {
       encoding: 'utf-8'
     })
 
-    const wantedContent = await getProsodyConfigContent(options)
+    const wantedContent = wantedConfig.content
     if (actualContent === wantedContent) {
       result.messages.push('Prosody configuration file content is correct.')
     } else {
@@ -150,9 +153,9 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
 
   // writing the configuration file
   logger.debug('Writing the configuration file')
-  await writeProsodyConfig(options)
+  const config = await writeProsodyConfig(options)
 
-  const filePaths = await getProsodyFilePaths(options)
+  const filePaths = config.paths
 
   // launch prosody
   logger.info('Going to launch prosody')
@@ -175,6 +178,9 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   prosody.on('exit', (code) => {
     logger.info(`Prosody process exited with code ${code ?? 'null'}`)
   })
+
+  // Set the http-bind route.
+  changeHttpBindRoute(options, config.port)
 
   async function sleep (ms: number): Promise<any> {
     return new Promise((resolve) => {
