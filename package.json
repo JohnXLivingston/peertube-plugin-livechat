@@ -21,11 +21,14 @@
   "css": [
     "assets/style.css"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "express-http-proxy": "^1.6.2"
+  },
   "devDependencies": {
     "@purtuga/esm-webpack-plugin": "^1.1.1",
     "@tsconfig/node12": "^1.0.7",
     "@types/express": "^4.17.11",
+    "@types/express-http-proxy": "^1.6.1",
     "@types/node": "^14.14.37",
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^4.21.0",

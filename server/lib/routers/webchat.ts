@@ -1,8 +1,9 @@
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
+import type { ProxyOptions } from 'express-http-proxy'
 import { getBaseRouter } from '../helpers'
 import * as path from 'path'
 const fs = require('fs').promises
-// const httpProxy = require('http-proxy')
+const proxy = require('express-http-proxy')
 
 let httpBindRoute: RequestHandler
 
@@ -109,14 +110,14 @@ function changeHttpBindRoute ({ peertubeHelpers }: RegisterServerOptions, port: 
       res.send('Not found')
     }
   } else {
-    logger.error('Not implemented yet')
-    // const proxy = new httpProxy.HttpProxy()
-    // httpBindRoute = (req: Request, res: Response, _next: NextFunction) => {
-    //   proxy.proxyRequest(req, res, {
-    //     host: 'localhost',
-    //     port: port
-    //   })
-    // }
+    const options: ProxyOptions = {
+      https: false,
+      proxyReqPathResolver: async (_req: Request): Promise<string> => {
+        return '/http-bind' // should not be able to access anything else
+      },
+      preserveHostHdr: false
+    }
+    httpBindRoute = proxy('http://localhost:' + port + '/http-bind', options)
   }
 }
 
