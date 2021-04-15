@@ -225,6 +225,9 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
   logger.debug('Calling prosodyctl to stop the process')
   const status = await prosodyCtl(options, 'stop')
   logger.info(`ProsodyCtl command returned: ${status.message}`)
+
+  logger.debug('Removing http-bind route')
+  changeHttpBindRoute(options, null)
 }
 
 export {
