@@ -2,7 +2,7 @@ import type { Router, RequestHandler, Request, Response, NextFunction } from 'ex
 import type { ProxyOptions } from 'express-http-proxy'
 import { getBaseRouter } from '../helpers'
 import * as path from 'path'
-import * as bodyParser from 'body-parser'
+const bodyParser = require('body-parser')
 
 const fs = require('fs').promises
 const proxy = require('express-http-proxy')
