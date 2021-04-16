@@ -22,6 +22,7 @@
     "assets/style.css"
   ],
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express-http-proxy": "^1.6.2"
   },
   "devDependencies": {

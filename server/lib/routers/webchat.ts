@@ -2,6 +2,8 @@ import type { Router, RequestHandler, Request, Response, NextFunction } from 'ex
 import type { ProxyOptions } from 'express-http-proxy'
 import { getBaseRouter } from '../helpers'
 import * as path from 'path'
+import * as bodyParser from 'body-parser'
+
 const fs = require('fs').promises
 const proxy = require('express-http-proxy')
 
@@ -91,7 +93,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
   })
 
   changeHttpBindRoute(options, null)
-  router.all('/http-bind', (req: Request, res: Response, next: NextFunction) => {
+  router.all('/http-bind', bodyParser.raw({ type: 'text/xml' }), (req: Request, res: Response, next: NextFunction) => {
     httpBindRoute(req, res, next)
   })
   return router
@@ -115,9 +117,11 @@ function changeHttpBindRoute ({ peertubeHelpers }: RegisterServerOptions, port: 
       proxyReqPathResolver: async (_req: Request): Promise<string> => {
         return '/http-bind' // should not be able to access anything else
       },
-      preserveHostHdr: false
+      // preserveHostHdr: false,
+      parseReqBody: true // Note that setting this to false overrides reqAsBuffer and reqBodyEncoding below.
+      // FIXME: should we remove cookies?
     }
-    httpBindRoute = proxy('http://localhost:' + port + '/http-bind', options)
+    httpBindRoute = proxy('http://localhost:' + port, options)
   }
 }
 
