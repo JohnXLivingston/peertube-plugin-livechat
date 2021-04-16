@@ -82,6 +82,17 @@ export function initSettings (options: RegisterServerOptions): void {
   })
 
   registerSetting({
+    name: 'prosody-port',
+    label: 'Builtin prosody: Prosody port',
+    type: 'input',
+    default: '52800',
+    private: true,
+    descriptionHTML: 'The port that will be used by the builtin Prosody server.<br>' +
+    'Change it if this port is already in use on your server.<br>' +
+    'You can close this port on your firewall, it will not be accessed from the outer world.'
+  })
+
+  registerSetting({
     name: 'chat-use-builtin',
     label: 'Use builtin ConverseJS',
     type: 'input-checkbox',

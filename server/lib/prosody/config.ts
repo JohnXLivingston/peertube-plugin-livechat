@@ -94,15 +94,30 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling getProsodyConfig')
 
-  const port = '5280'
+  const port = (await options.settingsManager.getSetting('prosody-port') as string) || '52800'
+  if (!/^\d+$/.test(port)) {
+    throw new Error('Invalid port')
+  }
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
   const logMode: LogMode = 'info'
   const content = `
 
-admins = { }
+daemonize = false
+pidfile = "${paths.pid}"
 plugin_paths = { }
 data_path = "${paths.data}"
+interfaces = { "127.0.0.1" }
+c2s_ports = { }
+c2s_interfaces = { "127.0.0.1" }
+s2s_ports = { }
+s2s_interfaces = { "127.0.0.1" }
+http_ports = { "${port}" }
+http_interfaces = { "127.0.0.1" }
+https_ports = { }
+https_interfaces = { "127.0.0.1" }
+
+admins = { }
 
 modules_enabled = {
   "roster"; -- Allow users to have a roster. Recommended ;)
@@ -123,10 +138,6 @@ modules_disabled = {
 
 allow_registration = false
 
-daemonize = false
-
-pidfile = "${paths.pid}"
-
 c2s_require_encryption = false
 
 archive_expires_after = "1w" -- Remove archived messages after 1 week
@@ -143,7 +154,6 @@ cross_domain_bosh = false
 consider_bosh_secure = true
 cross_domain_websocket = false
 consider_websocket_secure = true
-https_ports = { }
 
 VirtualHost "localhost"
   trusted_proxies = { "127.0.0.1", "::1" }
