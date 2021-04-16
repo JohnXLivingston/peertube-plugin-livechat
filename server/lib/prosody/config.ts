@@ -42,7 +42,8 @@ async function ensureWorkingDir (options: RegisterServerOptions): Promise<string
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling ensureworkingDir')
 
-  const dir = await getWorkingDir(options)
+  const paths = await getProsodyFilePaths(options)
+  const dir = paths.dir
   if (!fs.existsSync(dir)) {
     logger.info(`The working dir ${dir} does not exists, trying to create it`)
     await fs.promises.mkdir(dir)
@@ -51,6 +52,13 @@ async function ensureWorkingDir (options: RegisterServerOptions): Promise<string
   logger.debug(`Testing write access on ${dir}`)
   await fs.promises.access(dir, fs.constants.W_OK) // will throw an error if no access
   logger.debug(`Write access ok on ${dir}`)
+
+  if (!fs.existsSync(paths.data)) {
+    logger.info(`The data dir ${paths.data} does not exists, trying to create it`)
+    await fs.promises.mkdir(paths.data)
+    logger.debug(`Working dir ${paths.data} was created`)
+  }
+
   return dir
 }
 
@@ -60,6 +68,7 @@ interface ProsodyFilePaths {
   error: string
   log: string
   config: string
+  data: string
 }
 async function getProsodyFilePaths (options: RegisterServerOptions): Promise<ProsodyFilePaths> {
   const logger = options.peertubeHelpers.logger
@@ -71,7 +80,8 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     pid: path.resolve(dir, 'prosody.pid'),
     error: path.resolve(dir, 'prosody.err'),
     log: path.resolve(dir, 'prosody.log'),
-    config: path.resolve(dir, 'prosody.cfg.lua')
+    config: path.resolve(dir, 'prosody.cfg.lua'),
+    data: path.resolve(dir, 'data')
   }
 }
 
@@ -85,27 +95,30 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   logger.debug('Calling getProsodyConfig')
 
   const port = '5280'
+  const peertubePort = '9000' // FIXME
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
-  const logMode: LogMode = 'debug'
+  const logMode: LogMode = 'debug' // FIXME: remove debug mode, and use info
   const content = `
 
 admins = { }
 plugin_paths = { }
+data_path = "${paths.data}"
 
 modules_enabled = {
+  "roster"; -- Allow users to have a roster. Recommended ;)
+  "saslauth"; -- Authentication for clients and servers. Recommended if you want to log in.
   "version"; -- Replies to server version requests
   "uptime"; -- Report how long server has been running
   "ping"; -- Replies to XMPP pings with pongs
 
   "bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
-  -- "websocket"; -- XMPP over WebSockets
 
   "posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
 }
 modules_disabled = {
-    "offline"; -- Store offline messages
-    "c2s"; -- Handle client connections
+    -- "offline"; -- Store offline messages
+    -- "c2s"; -- Handle client connections
     "s2s"; -- Handle server-to-server connections
 }
 
@@ -133,7 +146,7 @@ cross_domain_websocket = false;
 consider_websocket_secure = true;
 https_ports = {};
 
-VirtualHost "anon.localhost"
+VirtualHost "localhost"
   trusted_proxies = { "127.0.0.1", "::1" }
 
   authentication = "anonymous"
@@ -144,7 +157,9 @@ VirtualHost "anon.localhost"
     "ping";
   }
   http_host = "${peertubeDomain}"
-  http_external_url = "http://${peertubeDomain}"
+  http_external_url = "http://${
+    peertubePort ? peertubeDomain + ':' + peertubePort : peertubeDomain
+  }"
 
 Component "room.localhost" "muc"
   restrict_room_creation = "local"
