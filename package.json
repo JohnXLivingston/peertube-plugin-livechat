@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "body-parser": "^1.19.0",
+    "decache": "^4.6.0",
     "express-http-proxy": "^1.6.2"
   },
   "devDependencies": {
@@ -35,7 +36,6 @@
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "converse.js": "^7.0.5",
-    "decache": "^4.6.0",
     "eslint": "^7.20.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-config-standard-with-typescript": "^20.0.0",
