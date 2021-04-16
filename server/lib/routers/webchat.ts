@@ -93,9 +93,12 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
   })
 
   changeHttpBindRoute(options, null)
-  router.all('/http-bind', bodyParser.raw({ type: 'text/xml' }), (req: Request, res: Response, next: NextFunction) => {
-    httpBindRoute(req, res, next)
-  })
+  router.all('/http-bind',
+    bodyParser.raw({ type: 'text/xml' }),
+    (req: Request, res: Response, next: NextFunction) => {
+      httpBindRoute(req, res, next)
+    }
+  )
   return router
 }
 
