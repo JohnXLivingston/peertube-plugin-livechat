@@ -95,10 +95,9 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   logger.debug('Calling getProsodyConfig')
 
   const port = '5280'
-  const peertubePort = '9000' // FIXME
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
-  const logMode: LogMode = 'debug' // FIXME: remove debug mode, and use info
+  const logMode: LogMode = 'info'
   const content = `
 
 admins = { }
@@ -124,9 +123,9 @@ modules_disabled = {
 
 allow_registration = false
 
-daemonize = false;
+daemonize = false
 
-pidfile = "${paths.pid}";
+pidfile = "${paths.pid}"
 
 c2s_require_encryption = false
 
@@ -140,11 +139,11 @@ log = {
   -- { levels = { "error" }; to = "syslog";  };
 }
 
-cross_domain_bosh = false;
-consider_bosh_secure = true;
-cross_domain_websocket = false;
-consider_websocket_secure = true;
-https_ports = {};
+cross_domain_bosh = false
+consider_bosh_secure = true
+cross_domain_websocket = false
+consider_websocket_secure = true
+https_ports = { }
 
 VirtualHost "localhost"
   trusted_proxies = { "127.0.0.1", "::1" }
@@ -157,9 +156,7 @@ VirtualHost "localhost"
     "ping";
   }
   http_host = "${peertubeDomain}"
-  http_external_url = "http://${
-    peertubePort ? peertubeDomain + ':' + peertubePort : peertubeDomain
-  }"
+  http_external_url = "http://${peertubeDomain}"
 
 Component "room.localhost" "muc"
   restrict_room_creation = "local"
