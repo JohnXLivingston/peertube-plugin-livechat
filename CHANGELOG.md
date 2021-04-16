@@ -3,6 +3,8 @@
 ## ???
 
 * Code is now in Typescript
+* Builtin Prosody server, for easy configuration
+* Diagnostic tools for helping admins to find misconfigurations
 
 ## v1.0.8
 
