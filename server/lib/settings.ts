@@ -10,17 +10,47 @@ export function initSettings (options: RegisterServerOptions): void {
     type: 'input-checkbox',
     default: false,
     private: false, // not private so that I can check when doing support
-    descriptionHTML: 'Please read the ' +
-      '<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat" target="_blank">documentation<a> ' +
-      'before trying to use this plugin.<br>' +
-      'There is 3 way to use it: <ul>' +
-      '<li>By installing the Prosoxy XMPP server package on your server, ' +
-      'and using the «builtin Prosody XMPP Server» feature.</li>' +
-      '<li>By using an existing XMPP server, with anonymous authentication and rooms enabled.</li>' +
-      '<li>By using any external webchat that can be included in an iframe.</li>' +
-      '</ul><br>' +
-      'Before asking for help, please use this diagnostic tool: ' +
-      '<a href="' + getBaseRouter() + 'settings/diagnostic" target="_blank">Launch diagnostic</a>.<br>'
+    descriptionHTML: `
+Please read the
+<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/README.md" target="_blank">
+  documentation
+</a>
+before trying to use this plugin.<br>
+There is 3 way to use it:
+<ul>
+  <li>
+    By installing the Prosoxy XMPP server package on your server,
+    and using the «builtin Prosody XMPP Server» feature.
+    <a
+      href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/prosody.md"
+      target="_blank"
+    >
+      See Documentation
+    </a>
+  </li>
+  <li>
+    By using an existing XMPP server, with anonymous authentication and rooms enabled.
+    <a
+      href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/conversejs.md"
+      target="_blank"
+    >
+      See Documentation
+    </a>
+  </li>
+  <li>
+    By using any external webchat that can be included in an iframe.
+    <a
+      href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/external.md"
+      target="_blank"
+    >
+      See Documentation
+    </a>
+  </li>
+</ul>
+<br>
+Before asking for help, please use this diagnostic tool:
+<a href="${getBaseRouter()}settings/diagnostic" target="_blank">Launch diagnostic</a>
+<br>`
   })
   registerSetting({
     name: 'chat-auto-display',

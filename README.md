@@ -2,16 +2,13 @@
 
 This plugin can provide webchat for peertube videos.
 
-Warning: the webchat is not provided by this plugin. You have to rely on an external tool.
 There are multiple way to provide such functionality:
 
-* by having a Jabber/XMPP server with BOSH or Websocket and anonymous loggin
-* by having an external webchat tool, that will be included in an iframe
+* **builtin prosody:** this plugin can launch a [Prosody](https://prosody.im) process and auto-configure it. [Documentation](documentation/prosody.md). Althought this is still experimental and under development, it is the recommanded setup.
+* **builtin converseJS:** you can use an external Jabber/XMPP server with BOSH or Websocket and anonymous loggin enabled. [Documentation](documentation/conversejs.md)
+* **external tool:** you can use any external webchat tool, that can be included in an iframe. [Documentation](documentation/external.md)
 
-For the first solution, the connection to the XMPP server is made with [converseJS](https://conversejs.org/).
-
-**Important Note**: If you don't have a running XMPP server, here is a
-**[tutorial to install Prosody XMPP Server](documentation/tutorials/prosody.md) on your Peertube instance**. This is the simpliest way to make this plugin work.
+For the two first solutions, the connection to the XMPP server is made with [converseJS](https://conversejs.org/).
 
 If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).
 
@@ -23,145 +20,13 @@ If you have any question, or if you want to talk about this plugin, you can join
 
 ## Settings
 
-There are several options in the plugin settings page.
+There are several common settings. Please see the documentation here: [common settings documentation](documentation/common.md).
 
-### Automatically open the chat
+Then, please refer to the documentation associated with the mode you are planning to use:
 
-If checked, the chat will be loaded as soon as you are on the video page.
-
-### Show the «open in new window» button
-
-If your webchat can be opened in a full window, you can add a button to do so.
-
-NB: The builtin ConverseJS is compatible with this feature.
-
-### Chats are only available for local videos
-
-Peertube is a federated service. Plugins are only available on the server you are browsing.
-So, if you are watching a remote video, only you will have the webchat, not users from remote instances.
-Therefore, this options is checked by default and prevent displaying a webchat for remote videos.
-
-### Activate chat for all lives
-
-The chat will be available for all Peertube Live on your instance.
-This is the main purpose of this plugin: providing a chatting experience to user watching a live video.
-
-### Activate chat for all non-lives
-
-The chat will be available for all Peertube video that are not live.
-
-### Activate chat for specific videos
-
-You can choose some UUIDs for which the chat will be available.
-If you don't want te enable the feature for all videos, you can use this field to list videos UUIDs.
-You can add comments: everything rights to the # character will be stripped off, as for empty lines.
-
-NB: this feature will probably soon disappear. I planned to add a checkbox in each video settings.
-
-### Use builtin ConverseJS
-
-If you have an XMPP server, and don't want to provide a webchat application by yourself, you can use the builtin ConverseJS implementation.
-
-If you don't have a running XMPP server, you can use
-[this tutorial](documentation/tutorials/prosody.md) to setup Prosody Server
-on your Peertube's instance.
-
-You have to fill the following parameters:
-
-#### Builtin webchat: XMPP service server (mandatory)
-
-The XMPP server. For example: ```peertube.im.your_domain```.
-
-NB: If you have an existing Prosody server, you can use its address if it has anonymous authentication on.
-Otherwise, you can create a subdomain (see [the example file](documentation/examples/prosody/virtualhost.cfg.lua)).
-The ```peertube.im``` is part of the example, you have to replace the entire value.
-
-#### Builtin webchat: XMPP room template (mandatory)
-
-The room to join on your XMPP server.
-You can have a single room for all webchats, or you can use the placeholder ```{{{VIDEO_UUID}}}``` to insert the video UUID and have a custom room for each video.
-
-Example: ```room_{{VIDEO_UUID}}@room.peertube.im.your_domain```
-
-#### Builtin webchat: BOSH uri OR Builtin webchat: WS uri
-
-You have to provide at least one of these two settings.
-
-Example for BOSH: ```https://peertube.im.yiny.org/http-bind```
-
-Example for Websocket: ```wss://peertube.im.yiny.org/xmpp-websocket```
-
-NB: ConverseJS can also use the ```/.well-known/host-meta``` file to discover services.
-See ConverseJS [documentation](https://conversejs.org/docs/html/configuration.html#discover-connection-methods)
-and XMPP [documentation](https://xmpp.org/extensions/xep-0156.html#httpexamples).
-
-### Webchat url
-
-If you are not using the builtin ConverseJS feature, you can speficy here the url for you chat application.
-
-You can add the string {{VIDEO_UUID}} in the url, it will be replaced by the video UUID.
-
-It is possible to use a single chat for all your videos if you omit this parameter.
-
-Example:
-```https://peertube.im.your_domain?room={{VIDEO_UUID}}```
-
-### Webchat iframe style attribute
-
-You can add some custom styles that will be added to the iframe.
-For example a custom width:
-
-```width:400px;```
-
-## XMPP backend with ConverseJS
-
-### ConverseJS
-
-You can use the builtin ConverseJS implementation.
-
-#### Custom ConverseJS webchat
-
-If you want to setup your own webchat with converseJS on a different webserver, here is some tips.
-
-Once you have a XMPP server that allow anonymous authentication, with bosh
-(or websocket) enabled, you can - for example - setup a html page that looks like
-[this one](documentation/examples/converseJS/index.html). You have of course to
-replace the path /conversejs/dist with your converseJS path, and replace peertube.im.your_domain
-by your actual domain.
-
-NB: converseJS has an option «discover_connection_methods» to find your server configuration (bosh, websocket, ...).
-To use it, you have to add a file [/.well-known/host-meta](documentation/examples/converseJS/host-meta).
-Please refer to the converseJS documentation.
-
-### XMPP Server: Prosody
-
-You can use Prosody for the XMPP backend.
-
-You can find an example configuration file [here](documentation/examples/prosody/virtualhost.cfg.lua) or use [this tutorial](documentation/tutorials/prosody.md)
-to setup Prosody from scratch.
-
-Replace admin@your_xmpp_provider_domain with Jabber ids of users that you want to be admin for your server and public chatrooms.
-This users have to be on another domain/virtualhost (which don't use anonymous authentication).
-It can even be on another XMPP server. Or you can add a virtualhost on the
-Peertube server's prosody config.
-If you have no XMPP account, remove the line (but you will not be able to moderate rooms).
-
-Please refer to the [Prosody documentation](https://prosody.im/doc/) and to 
-[the tutorial](documentation/tutorials/prosody.md) for other modifications
-(how to get the ssl certificates, ...).
-
-NB : if you have not nginx on your server, please replace by the correct parameter.
-
-### XMPP over HTTP: nginx
-
-You can use the reverse proxy nginx to server the Prosody Bosh server.
-So your requests will be on the 443 port, and it will minimise cross domains constraints.
-
-There is an example file [here](documentation/examples/nginx/site.conf).
-
-NB: this example files also serve the static html files with converseJS.
-
-NB: it is recommanded to change ```Access-Control-Allow-Origin``` to something else that ```"*"``` (your peertubes uri).
+* **builtin prosody:** this plugin can launch a [Prosody](https://prosody.im) process and auto-configure it. [Documentation](documentation/prosody.md)
+* **builtin converseJS:** you can use an external Jabber/XMPP server with BOSH or Websocket and anonymous loggin enabled. [Documentation](documentation/conversejs.md)
+* **external tool:** you can use any external webchat tool, that can be included in an iframe. [Documentation](documentation/external.md)
 
 ## Credits
 

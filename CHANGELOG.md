@@ -1,6 +1,6 @@
 # Changelog
 
-## ???
+## v2.0.0
 
 * Code is now in Typescript
 * Builtin Prosody server, for easy configuration
