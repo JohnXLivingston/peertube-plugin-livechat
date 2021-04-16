@@ -21,6 +21,8 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     const wantedConfig = await getProsodyConfig(options)
     const filePath = wantedConfig.paths.config
 
+    result.messages.push(`Prosody will run on port '${wantedConfig.port}'`)
+
     await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
     result.messages.push(`The prosody configuration file (${filePath}) exists`)
     const actualContent = await fs.promises.readFile(filePath, {
