@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.0.2
+
+* Trying to fix dependencies installation problems
+
+## v2.0.1
+
+* Trying to fix dependencies installation problems
+
 ## v2.0.0
 
 * Code is now in Typescript
