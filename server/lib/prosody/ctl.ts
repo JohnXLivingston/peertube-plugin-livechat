@@ -17,7 +17,7 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
   if (!/^\w+$/.test(command)) {
     throw new Error(`Invalid prosodyctl command '${command}'`)
   }
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     let d: string = ''
     let e: string = ''
     let m: string = ''
@@ -41,6 +41,7 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
       e += data as string
       m += data as string
     })
+    spawned.on('error', reject)
     spawned.on('exit', (code) => {
       resolve({
         code: code,
@@ -171,6 +172,9 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   })
   prosody.stderr?.on('data', (data) => {
     logger.error(`Prosody stderr: ${data as string}`)
+  })
+  prosody.on('error', (error) => {
+    logger.error(`Prosody exec error: ${JSON.stringify(error)}`)
   })
   prosody.on('close', (code) => {
     logger.info(`Prosody process closed all stdio with code ${code ?? 'null'}`)

@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.3
+
+* Fix Peertube server crash when prosody is not installed
+
 ## v2.0.2
 
 * Trying to fix dependencies installation problems
