@@ -35,7 +35,7 @@ The Prosody process launched by the plugin will listen on a specific port, and o
 
 First you have to configure [common settings](./common.md).
 
-Then, left settings related to the [builtin converseJS](./converseJS.md) blank, and fill following settings according to this page.
+Then, left settings related to the [builtin converseJS](./conversejs.md) blank, and fill following settings according to this page.
 
 ### Use the builtin Prosody XMPP Server
 
