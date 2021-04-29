@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { pluginName } from '../helpers'
+import { pluginName, getBaseRouter } from '../helpers'
 
 type LogMode = 'debug' | 'info'
 
@@ -114,15 +114,15 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
 
   const mucModules: ProsodyModuleConfig[] = []
 
-  // mucModules.push({
-  //   module: 'muc_http_defaults',
-  //   options: [
-  //     {
-  //       name: 'muc_create_api_url',
-  //       value: '' // FIXME
-  //     }
-  //   ]
-  // })
+  mucModules.push({
+    module: 'muc_http_defaults',
+    options: [
+      {
+        name: 'muc_create_api_url',
+        value: options.peertubeHelpers.config.getWebserverUrl() + getBaseRouter() + 'api/room'
+      }
+    ]
+  })
 
   const mucModulesEnabled: string = mucModules.map(m => '    "' + m.module + '";').join('\n')
   const mucModulesOptions: string = mucModules.map(m => {
