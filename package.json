@@ -67,7 +67,8 @@
     "build:webpack": "webpack --mode=production",
     "build:server": "npx tsc --build server/tsconfig.json",
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
-    "build": "npm-run-all -s clean -p build:converse build:images build:webpack build:server build:serverconverse",
+    "build:prosodymodules": "mkdir -p dist/server/prosody-modules && cp -r prosody-modules/* dist/server/prosody-modules/",
+    "build": "npm-run-all -s clean -p build:converse build:images build:webpack build:server build:serverconverse build:prosodymodules",
     "lint": "npx eslint --ext .js --ext .ts ."
   },
   "staticDirs": {

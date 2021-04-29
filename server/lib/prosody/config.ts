@@ -69,6 +69,7 @@ interface ProsodyFilePaths {
   log: string
   config: string
   data: string
+  modules: string
 }
 async function getProsodyFilePaths (options: RegisterServerOptions): Promise<ProsodyFilePaths> {
   const logger = options.peertubeHelpers.logger
@@ -81,8 +82,17 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     error: path.resolve(dir, 'prosody.err'),
     log: path.resolve(dir, 'prosody.log'),
     config: path.resolve(dir, 'prosody.cfg.lua'),
-    data: path.resolve(dir, 'data')
+    data: path.resolve(dir, 'data'),
+    modules: path.resolve(__dirname, '../../prosody-modules')
   }
+}
+
+interface ProsodyModuleConfig {
+  module: string
+  options: Array<{
+    name: string
+    value: string
+  }>
 }
 
 interface ProsodyConfig {
@@ -101,11 +111,31 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
   const logMode: LogMode = 'info'
+
+  const mucModules: ProsodyModuleConfig[] = []
+
+  // mucModules.push({
+  //   module: 'muc_http_defaults',
+  //   options: [
+  //     {
+  //       name: 'muc_create_api_url',
+  //       value: '' // FIXME
+  //     }
+  //   ]
+  // })
+
+  const mucModulesEnabled: string = mucModules.map(m => '    "' + m.module + '";').join('\n')
+  const mucModulesOptions: string = mucModules.map(m => {
+    return m.options.map(o => {
+      return '  ' + o.name + ' = "' + o.value + '"'
+    }).join('\n')
+  }).join('\n')
+
   const content = `
 
 daemonize = false
 pidfile = "${paths.pid}"
-plugin_paths = { }
+plugin_paths = { "${paths.modules}" }
 data_path = "${paths.data}"
 interfaces = { "127.0.0.1" }
 c2s_ports = { }
@@ -170,6 +200,9 @@ VirtualHost "localhost"
 
 Component "room.localhost" "muc"
   restrict_room_creation = "local"
+  modules_enabled = {
+${mucModulesEnabled}
+  }
   muc_room_locking = false
   muc_tombstones = false
   muc_room_default_language = "en"
@@ -180,7 +213,9 @@ Component "room.localhost" "muc"
   muc_room_default_public_jids = false
   muc_room_default_change_subject = false
   muc_room_default_history_length = 20
+${mucModulesOptions}
 `
+
   return {
     content,
     paths,

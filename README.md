@@ -35,3 +35,5 @@ Then, please refer to the documentation associated with the mode you are plannin
 Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
 
 Some material icons downloaded from this website where used for icons: [Material.io](https://material.io/resources/icons)
+
+Some Prosody Modules in the `prosody-modules` folder are under MIT license. Please refer to README files in each subfolder, and to the [COPYING](./prosody-modules/COPYING) file. For more informations, here is [the official Prosody Modules website](https://modules.prosody.im).
