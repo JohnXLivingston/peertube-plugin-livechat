@@ -110,7 +110,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   }
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
-  const logMode: LogMode = 'info'
+  const logMode: LogMode = process.env.NODE_ENV === 'test' ? 'debug' : 'info'
 
   const mucModules: ProsodyModuleConfig[] = []
 
