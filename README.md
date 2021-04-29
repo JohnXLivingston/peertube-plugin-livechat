@@ -12,6 +12,8 @@ For the two first solutions, the connection to the XMPP server is made with [con
 
 If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).
 
+Here is a roadmap for upcoming features: [roadmap](ROADMAP.md).
+
 If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.
 
 ## Contact me
