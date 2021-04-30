@@ -23,8 +23,9 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   const router = getRouter()
   const logger = peertubeHelpers.logger
 
-  router.get('/room', async (_req: Request, res: Response, _next: NextFunction) => {
-    logger.info('Requesting room information for room ...')
+  router.get('/room', async (req: Request, res: Response, _next: NextFunction) => {
+    const jid: string = req.query.jid as string || ''
+    logger.info(`Requesting room information for room '${jid}'.`)
     // TODO: check if room is legit and fill informations
     const roomDefaults: RoomDefaults = {
       name: 'name_of_the_room',

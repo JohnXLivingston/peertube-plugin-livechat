@@ -96,7 +96,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
 
   const roomApiUrl = options.peertubeHelpers.config.getWebserverUrl() +
     getBaseRouter() +
-    'api/room?{room.jid|jid_node}'
+    'api/room?jid={room.jid|jid_node}'
 
   const config = new ProsodyConfigContent(paths)
   config.usePeertubeBosh(peertubeDomain, port)
