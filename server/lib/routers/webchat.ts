@@ -20,7 +20,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
 
   const router: Router = getRouter()
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  router.get('/', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  router.get('/room/:videoUUID', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const settings = await settingsManager.getSettings([
         'chat-use-prosody', 'chat-use-builtin', 'chat-room', 'chat-server',
@@ -54,29 +54,15 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         throw new Error('Builtin chat disabled.')
       }
 
-      // FIXME: with Peertube 3.0.1 the following method is not available...
-      // When loadByIdOrUUID is available, change the entry point to
-      // be /webchat/:videoId
-      // const id = req.param('videoId')
-      // const video = await peertubeHelpers.videos.loadByIdOrUUID(id)
-      let url: string = req.query.url as string || ''
-      if (!url) {
-        throw new Error('Missing url parameter)')
-      }
-      let video = await peertubeHelpers.videos.loadByUrl(url)
-      if (!video) {
-        // FIXME: remove this when loadByIdOrUUID will be available...
-        // This is a dirty Hack for dev environnements...
-        url = url.replace(/^https:/, 'http:')
-        video = await peertubeHelpers.videos.loadByUrl(url)
-      }
+      const uuid = req.params.videoUUID
+      const video = await peertubeHelpers.videos.loadByIdOrUUID(uuid)
       if (!video) {
         throw new Error('Video not found')
       }
 
       let page = '' + (converseJSIndex as string)
       // FIXME: Peertube should provide the static folder path. For now:
-      const staticRelative = '../static'
+      const staticRelative = '../../../static'
       page = page.replace(/{{BASE_STATIC_URL}}/g, staticRelative)
       page = page.replace(/{{JID}}/g, server)
       room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)

@@ -57,7 +57,7 @@ interface PeerTubeHelpers {
   videos: {
     loadByUrl: (url: string) => Promise<MVideoThumbnail>
     // NB: loadByIdOrUUID was introduced in v3.1.0
-    loadByIdOrUUID?: (id: number | string) => Promise<MVideoThumbnail>
+    loadByIdOrUUID: (id: number | string) => Promise<MVideoThumbnail>
     removeVideo: (videoId: number) => Promise<void>
   }
   config: {

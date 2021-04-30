@@ -2,6 +2,12 @@
 
 ## ???
 
+### Important Notes
+
+* This version requires at least Peertube version 3.1.0. It is no more compatible with Peertube 3.0.1.
+
+### Features
+
 * Builtin Prosody: use mod_muc_http_defaults to set rooms properties and prevent unauthorized room creation.
 
 ## v2.0.3

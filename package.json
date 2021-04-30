@@ -51,7 +51,7 @@
     "webpack-cli": "^3.3.10"
   },
   "engine": {
-    "peertube": ">=3.0.1"
+    "peertube": ">=3.1.0"
   },
   "homepage": "https://github.com/JohnXLivingston/peertube-plugin-livechat",
   "keywords": [
