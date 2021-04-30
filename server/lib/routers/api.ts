@@ -23,17 +23,28 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   const router = getRouter()
   const logger = peertubeHelpers.logger
 
-  router.get('/room', async (req: Request, res: Response, _next: NextFunction) => {
-    const jid: string = req.query.jid as string || ''
-    logger.info(`Requesting room information for room '${jid}'.`)
-    // TODO: check if room is legit and fill informations
-    const roomDefaults: RoomDefaults = {
-      name: 'name_of_the_room',
-      description: 'room description',
-      public: false,
-      subject: 'subject'
+  router.get('/room', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const jid: string = req.query.jid as string || ''
+      logger.info(`Requesting room information for room '${jid}'.`)
+
+      const video = await peertubeHelpers.videos.loadByIdOrUUID(jid)
+      if (!video) {
+        throw new Error('Video not found')
+      }
+      // FIXME: check settings (chat enabled for this video)
+
+      // TODO: check if room is legit and fill informations
+      const roomDefaults: RoomDefaults = {
+        name: video.name,
+        description: '',
+        public: false,
+        subject: video.name
+      }
+      res.json(roomDefaults)
+    } catch (error) {
+      next(error)
     }
-    res.json(roomDefaults)
   })
 
   return router
