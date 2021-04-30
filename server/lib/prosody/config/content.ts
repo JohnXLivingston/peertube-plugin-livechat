@@ -117,6 +117,7 @@ class ProsodyConfigContent {
     this.global.set('pidfile', this.paths.pid)
     this.global.set('plugin_paths', [this.paths.modules])
     this.global.set('data_path', this.paths.data)
+    this.global.set('storage', 'internal')
 
     this.global.set('modules_enabled', [
       'roster', // Allow users to have a roster. Recommended ;)
