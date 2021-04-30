@@ -40,7 +40,42 @@ interface PluginVideoLanguageManager {
   deleteLanguage: (languageKey: string) => boolean
 }
 
-type MVideoThumbnail = any // FIXME
+enum VideoPrivacy {
+  PUBLIC = 1,
+  UNLISTED = 2,
+  PRIVATE = 3,
+  INTERNAL = 4
+}
+
+enum VideoState {
+  PUBLISHED = 1,
+  TO_TRANSCODE = 2,
+  TO_IMPORT = 3,
+  WAITING_FOR_LIVE = 4,
+  LIVE_ENDED = 5
+}
+
+interface MVideoThumbnail { // FIXME: this interface is not complete.
+  uuid: string
+  name: string
+  category: number
+  licence: number
+  language: string
+  privacy: VideoPrivacy
+  nsfw: boolean
+  description: string
+  support: string
+  duration: number
+  videos: number
+  likes: number
+  dislikes: number
+  remote: boolean
+  isLive: boolean
+  url: string
+  commentsEnabled: boolean
+  downloadEnabled: boolean
+  state: VideoState
+}
 
 interface VideoBlacklistCreate {
   reason?: string
