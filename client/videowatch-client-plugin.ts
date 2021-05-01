@@ -1,4 +1,4 @@
-import { parseConfigUUIDs } from 'shared/lib/config'
+import { videoHasWebchat } from 'shared/lib/video'
 
 interface VideoCache {[key: string]: Video}
 
@@ -184,13 +184,6 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
 
     peertubeHelpers.getSettings().then((s: any) => {
       settings = s
-      const liveOn = !!settings['chat-all-lives']
-      const nonLiveOn = !!settings['chat-all-non-lives']
-      const uuids = parseConfigUUIDs(settings['chat-videos-list'])
-      if (!uuids.length && !liveOn && !nonLiveOn) {
-        logger.log('Feature not activated.')
-        return
-      }
 
       logger.log('Checking if this video should have a chat...')
       const uuid = lastUUID
@@ -203,29 +196,20 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         logger.error('Can\'t find the video ' + uuid + ' in the videoCache')
         return
       }
-      if (settings['chat-only-locals'] && !video.isLocal) {
-        logger.log('This video is not local, and we dont want chats on non local videos.')
+
+      if (!videoHasWebchat(s, video)) {
+        logger.log('This video has no webchat')
         return
       }
 
-      if (uuids.includes(uuid)) {
-        logger.log('This video is in the list for chats.')
-      } else if (video.isLive && liveOn) {
-        logger.log('This video is live and we want all lives.')
-      } else if (!video.isLive && nonLiveOn) {
-        logger.log('This video is not live and we want all non-lives.')
-      } else {
-        logger.log('This video will not have a chat.')
-        return
-      }
-
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       insertChatDom(container as HTMLElement, uuid, !!settings['chat-open-blank']).then(() => {
         if (settings['chat-auto-display']) {
           openChat()
         } else if (container) {
           container.setAttribute('peertube-plugin-livechat-state', 'closed')
         }
+      }, () => {
+        logger.error('insertChatDom has failed')
       })
     }, () => {
       logger.error('Cant get settings')
