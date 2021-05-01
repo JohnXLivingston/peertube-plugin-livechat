@@ -1,4 +1,4 @@
-'use strict'
+import { parseConfigUUIDs } from 'shared/lib/config'
 
 interface VideoCache {[key: string]: Video}
 
@@ -13,19 +13,6 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
   const videoCache: VideoCache = {}
   let lastUUID: string | null = null
   let settings: any = {}
-
-  function parseUUIDs (s: string): string[] {
-    if (!s) {
-      return []
-    }
-    let a = s.split('\n')
-    a = a.map(line => {
-      return line.replace(/#.*$/, '')
-        .replace(/^\s+/, '')
-        .replace(/\s+$/, '')
-    })
-    return a.filter(line => line !== '')
-  }
 
   function getBaseRoute (): string {
     // FIXME: should be provided by PeertubeHelpers (does not exists for now)
@@ -195,12 +182,11 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     container.setAttribute('peertube-plugin-livechat-state', 'initializing')
     videoWrapper.append(container)
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     peertubeHelpers.getSettings().then((s: any) => {
       settings = s
       const liveOn = !!settings['chat-all-lives']
       const nonLiveOn = !!settings['chat-all-non-lives']
-      const uuids = parseUUIDs(settings['chat-videos-list'])
+      const uuids = parseConfigUUIDs(settings['chat-videos-list'])
       if (!uuids.length && !liveOn && !nonLiveOn) {
         logger.log('Feature not activated.')
         return
@@ -241,6 +227,8 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
           container.setAttribute('peertube-plugin-livechat-state', 'closed')
         }
       })
+    }, () => {
+      logger.error('Cant get settings')
     })
   }
 

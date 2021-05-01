@@ -13,8 +13,13 @@
 		"strictBindCallApply": true, // should already be true because of strict:true
 		"noUnusedLocals": true,
     "outDir": "../dist/client",
-		"paths": {}
+		"paths": {
+			"shared/*": ["../shared/*"]
+		}
 	},
-	"include": ["./**/*"],
+	"include": [
+		"./**/*",
+		"../shared/**/*"
+	],
 	"exclude": []
 }

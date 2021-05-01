@@ -22,6 +22,9 @@ let config = clientFiles.map(f => ({
     ]
   },
   resolve: {
+    alias: {
+      'shared': path.resolve(__dirname, 'shared/')
+    },
     extensions: [ '.tsx', '.ts', '.js' ],
   },
   output: {

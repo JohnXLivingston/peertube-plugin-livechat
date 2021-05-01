@@ -1,6 +1,4 @@
 
-'use strict'
-
 function register ({ registerHook }: RegisterOptions): void {
   registerHook({
     target: 'action:router.navigation-end',

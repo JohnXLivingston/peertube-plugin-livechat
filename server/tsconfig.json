@@ -15,9 +15,12 @@
 		"sourceMap": true,
 
 		"baseUrl": "./",
-		"outDir": "../dist/server",
+		"outDir": "../dist/",
 		"paths": {}
 	},
-	"include": ["./**/*"],
+	"include": [
+		"./**/*",
+		"../shared/**/*"
+	],
 	"exclude": []
 }

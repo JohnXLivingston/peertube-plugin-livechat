@@ -1,4 +1,5 @@
 import type { Router, Request, Response, NextFunction } from 'express'
+import { videoHasWebchat } from '../../../shared/lib/video'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -38,9 +39,23 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       if (!video) {
         throw new Error('Video not found')
       }
-      // FIXME: check settings (chat enabled for this video)
+      // check settings (chat enabled for this video?)
+      const settings = await options.settingsManager.getSettings([
+        'chat-only-locals',
+        'chat-all-lives',
+        'chat-all-non-lives',
+        'chat-videos-list'
+      ])
+      if (!videoHasWebchat({
+        'chat-only-locals': settings['chat-only-locals'] as boolean,
+        'chat-all-lives': settings['chat-all-lives'] as boolean,
+        'chat-all-non-lives': settings['chat-all-non-lives'] as boolean,
+        'chat-videos-list': settings['chat-videos-list'] as string
+      }, video)) {
+        throw new Error('Chat is not activated for this video')
+      }
 
-      // TODO: check if room is legit and fill informations
+      // TODO: fill missing informations
       const roomDefaults: RoomDefaults = {
         config: {
           name: video.name,
