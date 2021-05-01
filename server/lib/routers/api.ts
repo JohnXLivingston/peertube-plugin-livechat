@@ -17,7 +17,11 @@ interface RoomDefaults {
     // moderated: boolean
     // archiving: boolean
   }
-  // affiliations: RoomAffiliation[]
+  affiliations?: Array<{
+    jid: string
+    affiliation: 'outcast' | 'none' | 'member' | 'admin' | 'owner'
+    nick?: string
+  }>
 }
 
 async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
@@ -43,7 +47,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
           description: '',
           public: false,
           subject: video.name
-        }
+        },
+        affiliations: [] // so that the first user will not be moderator/admin
       }
       res.json(roomDefaults)
     } catch (error) {
