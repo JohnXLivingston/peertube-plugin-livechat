@@ -2,19 +2,21 @@ import type { Router, Request, Response, NextFunction } from 'express'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
-  name: string
-  description: string
-  // language: string
-  // persistent: boolean
-  public: boolean
-  // members_only: boolean
-  // allow_member_invites: boolean
-  // public_jids: boolean
-  subject: string
-  // changesubject: boolean
-  // // historylength: number
-  // moderated: boolean
-  // archiving: boolean
+  config: {
+    name: string
+    description: string
+    // language: string
+    // persistent: boolean
+    public: boolean
+    // members_only: boolean
+    // allow_member_invites: boolean
+    // public_jids: boolean
+    subject: string
+    // changesubject: boolean
+    // // historylength: number
+    // moderated: boolean
+    // archiving: boolean
+  }
   // affiliations: RoomAffiliation[]
 }
 
@@ -36,10 +38,12 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
       // TODO: check if room is legit and fill informations
       const roomDefaults: RoomDefaults = {
-        name: video.name,
-        description: '',
-        public: false,
-        subject: video.name
+        config: {
+          name: video.name,
+          description: '',
+          public: false,
+          subject: video.name
+        }
       }
       res.json(roomDefaults)
     } catch (error) {
