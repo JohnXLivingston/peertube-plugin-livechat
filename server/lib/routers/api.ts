@@ -37,7 +37,9 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
       const video = await peertubeHelpers.videos.loadByIdOrUUID(jid)
       if (!video) {
-        throw new Error('Video not found')
+        logger.warn(`Video ${jid} not found`)
+        res.sendStatus(403)
+        return
       }
       // check settings (chat enabled for this video?)
       const settings = await options.settingsManager.getSettings([
@@ -52,7 +54,9 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         'chat-all-non-lives': settings['chat-all-non-lives'] as boolean,
         'chat-videos-list': settings['chat-videos-list'] as string
       }, video)) {
-        throw new Error('Chat is not activated for this video')
+        logger.warn(`Video ${jid} has not chat activated`)
+        res.sendStatus(403)
+        return
       }
 
       // TODO: fill missing informations
