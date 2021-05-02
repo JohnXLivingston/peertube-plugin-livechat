@@ -107,7 +107,7 @@ class ProsodyConfigContent {
     this.paths = paths
     this.global = new ProsodyConfigGlobal()
     this.log = ''
-    this.anon = new ProsodyConfigVirtualHost('localhost')
+    this.anon = new ProsodyConfigVirtualHost('anon.localhost')
     this.muc = new ProsodyConfigComponent('muc', 'room.localhost')
 
     this.global.set('daemonize', false)
@@ -181,6 +181,10 @@ class ProsodyConfigContent {
   useMucHttpDefault (url: string): void {
     this.muc.add('modules_enabled', 'muc_http_defaults')
     this.muc.add('muc_create_api_url', url)
+
+    // restrict_room_creation: we can override the 'local' value.
+    // Indeed, when muc_http_default is used, room creation will be managed by api.
+    this.muc.set('restrict_room_creation', false)
   }
 
   setArchive (duration: string): void {

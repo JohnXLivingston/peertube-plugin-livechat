@@ -32,7 +32,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let boshUri: string
       let wsUri: string
       if (settings['chat-use-prosody']) {
-        server = 'localhost'
+        server = 'anon.localhost'
         room = '{{VIDEO_UUID}}@room.localhost'
         boshUri = getBaseRouter() + 'webchat/http-bind'
         wsUri = ''
