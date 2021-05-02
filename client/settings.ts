@@ -1,6 +1,11 @@
+interface MessageWithLevel {
+  level: 'info' | 'warning' | 'error'
+  message: string
+}
+
 interface Result {
   label?: string
-  messages: string[]
+  messages: Array<MessageWithLevel | string>
   debug?: Array<{
     title: string
     message: string
@@ -48,7 +53,19 @@ function launchTests (): void {
       const messageUl = document.createElement('ul')
       for (let i = 0; i < result.messages.length; i++) {
         const messageLi = document.createElement('li')
-        messageLi.textContent = result.messages[i]
+        const message = result.messages[i]
+        if (typeof message === 'string') {
+          messageLi.textContent = message
+        } else {
+          const messageSpan = document.createElement('span')
+          if (message.level === 'warning') {
+            messageSpan.style.color = 'orange'
+          } else if (message.level === 'error') {
+            messageSpan.style.color = 'red'
+          }
+          messageSpan.textContent = message.message
+          messageLi.append(messageSpan)
+        }
         messageUl.append(messageLi)
       }
       li.append(messageUl)

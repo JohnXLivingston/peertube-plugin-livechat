@@ -1,8 +1,12 @@
 type nextValue = 'backend' | 'webchat-video' | 'webchat-type' | 'prosody' | 'converse' | 'use-uri'
 
+interface MessageWithLevel {
+  level: 'info' | 'warning' | 'error'
+  message: string
+}
 export interface TestResult {
   label?: string
-  messages: string[]
+  messages: Array<string | MessageWithLevel>
   debug: Array<{
     title: string
     message: string

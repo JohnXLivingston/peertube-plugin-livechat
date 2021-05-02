@@ -67,6 +67,26 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     return result
   }
 
+  const versionMatches = about.match(/^Prosody\s*(\d+)\.(\d+)\.(\d+)\s*$/mi)
+  if (!versionMatches) {
+    result.messages.push({
+      level: 'error',
+      message: 'Errors: cant find prosody version.'
+    })
+    return result
+  } else {
+    const major = versionMatches[1]
+    const minor = versionMatches[2]
+    const patch = versionMatches[3]
+    result.messages.push(`Prosody version is ${major}.${minor}.${patch}`)
+    if (major !== '0' && minor !== '11') {
+      result.messages.push({
+        level: parseInt(minor) < 11 ? 'error' : 'warning',
+        message: 'Warning: recommended Prosody version is 0.11.x'
+      })
+    }
+  }
+
   result.ok = true
   return result
 }
