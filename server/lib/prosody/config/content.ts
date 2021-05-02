@@ -178,12 +178,9 @@ class ProsodyConfigContent {
     this.muc.set('restrict_room_creation', 'local')
   }
 
-  useMucHttpDefault (url: string, bearer?: string): void {
+  useMucHttpDefault (url: string): void {
     this.muc.add('modules_enabled', 'muc_http_defaults')
     this.muc.add('muc_create_api_url', url)
-    if (bearer) {
-      this.muc.add('muc_create_api_auth', bearer)
-    }
   }
 
   setArchive (duration: string): void {
