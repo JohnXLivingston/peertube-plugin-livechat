@@ -4,9 +4,9 @@
 
 This roadmap is given as an indication. It will be updated as we go along according to the constraints encountered.
 
-| Done | Needs Peertube 3.2 | Component | Feature
----|---|---|---
-[ ] | [ ] | Builtin Prosody | Check room creation permission, and set some metadata
+| Done | Needs Peertube 3.2 | Component | Feature | Released in version
+---|---|---|---|---
+[x] | [ ] | Builtin Prosody | Check room creation permission, and set some metadata
 [ ] | [ ] | Builtin Prosody | User authentication: if the user is logged in Peertube, use his nickname.
 [ ] | [ ] | Builtin ConverseJS | Check user langage. Should be automatic and/or depends on peertube's language. Check that converseJS translation files are available.
 [ ] | [ ] | Builtin Prosody | Grant moderation rights to instance admins and video owner. Activate moderations commands in ConverseJS.
