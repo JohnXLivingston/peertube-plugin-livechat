@@ -6,17 +6,17 @@ interface RoomDefaults {
   config: {
     name: string
     description: string
-    // language: string
-    // persistent: boolean
-    public: boolean
-    // members_only: boolean
-    // allow_member_invites: boolean
-    // public_jids: boolean
+    language?: string
+    persistent?: boolean
+    public?: boolean
+    members_only?: boolean
+    allow_member_invites?: boolean
+    public_jids?: boolean
     subject: string
-    // changesubject: boolean
-    // // historylength: number
-    // moderated: boolean
-    // archiving: boolean
+    changesubject?: boolean
+    // historylength: number
+    moderated?: boolean
+    archiving?: boolean
   }
   affiliations?: Array<{
     jid: string
@@ -59,12 +59,11 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         return
       }
 
-      // TODO: fill missing informations
       const roomDefaults: RoomDefaults = {
         config: {
           name: video.name,
           description: '',
-          public: false,
+          language: video.language,
           subject: video.name
         },
         affiliations: [] // so that the first user will not be moderator/admin

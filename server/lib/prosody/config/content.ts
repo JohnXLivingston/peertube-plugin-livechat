@@ -145,7 +145,7 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_locking', false)
     this.muc.set('muc_tombstones', false)
     this.muc.set('muc_room_default_language', 'en')
-    this.muc.set('muc_room_default_public', true)
+    this.muc.set('muc_room_default_public', false)
     this.muc.set('muc_room_default_persistent', false)
     this.muc.set('muc_room_default_members_only', false)
     this.muc.set('muc_room_default_moderated', false)
