@@ -10,6 +10,10 @@
 
 * Builtin Prosody: use mod_muc_http_defaults to set rooms properties and prevent unauthorized room creation.
 
+### Fixes
+
+* Fix converseJS: show the participant list when not in iframe
+
 ## v2.0.3
 
 * Fix Peertube server crash when prosody is not installed

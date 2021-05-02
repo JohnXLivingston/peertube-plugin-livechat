@@ -30,7 +30,7 @@ window.initConverse = function initConverse ({
     ],
     singleton: true,
     auto_focus: false,
-    hide_muc_participants: inIframe,
+    hide_muc_participants: inIframe(),
     keepalive: true,
     play_sounds: false,
     muc_mention_autocomplete_min_chars: 3,
