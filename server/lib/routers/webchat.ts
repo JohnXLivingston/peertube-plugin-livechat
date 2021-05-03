@@ -1,6 +1,7 @@
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import type { ProxyOptions } from 'express-http-proxy'
 import { getBaseRouter } from '../helpers'
+import { asyncMiddleware } from '../middlewares/async'
 import * as path from 'path'
 const bodyParser = require('body-parser')
 
@@ -20,8 +21,8 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
 
   const router: Router = getRouter()
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  router.get('/room/:videoUUID', async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    try {
+  router.get('/room/:videoUUID', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
       const settings = await settingsManager.getSettings([
         'chat-use-prosody', 'chat-use-builtin', 'chat-room', 'chat-server',
         'chat-bosh-uri', 'chat-ws-uri'
@@ -69,14 +70,13 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{ROOM}}/g, room)
       page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
       page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
+      page = page.replace(/{{TRY_AUTHENTICATED_MODE}}/g, settings['chat-use-prosody'] ? 'true' : 'false')
 
       res.status(200)
       res.type('html')
       res.send(page)
-    } catch (error) {
-      next(error)
     }
-  })
+  ))
 
   changeHttpBindRoute(options, null)
   router.all('/http-bind',

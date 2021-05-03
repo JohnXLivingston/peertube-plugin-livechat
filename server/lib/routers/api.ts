@@ -44,11 +44,17 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       }
       // check settings (chat enabled for this video?)
       const settings = await options.settingsManager.getSettings([
+        'chat-use-prosody',
         'chat-only-locals',
         'chat-all-lives',
         'chat-all-non-lives',
         'chat-videos-list'
       ])
+      if (!settings['chat-use-prosody']) {
+        logger.warn('Prosody chat is not active')
+        res.sendStatus(403)
+        return
+      }
       if (!videoHasWebchat({
         'chat-only-locals': settings['chat-only-locals'] as boolean,
         'chat-all-lives': settings['chat-all-lives'] as boolean,
@@ -70,6 +76,82 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         affiliations: [] // so that the first user will not be moderator/admin
       }
       res.json(roomDefaults)
+    }
+  ))
+
+  router.post('/user/register', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      res.sendStatus(501)
+    }
+  ))
+
+  router.get('/user/check_password', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      const settings = await options.settingsManager.getSettings([
+        'chat-use-prosody',
+        'chat-only-locals',
+        'chat-all-lives',
+        'chat-all-non-lives',
+        'chat-videos-list'
+      ])
+      if (!settings['chat-use-prosody']) {
+        logger.warn('Prosody chat is not active')
+        res.status(200).send('false')
+        return
+      }
+      const user = req.query.user
+      const server = req.query.server
+      const pass = req.query.pass
+      if (server !== 'localhost') {
+        logger.warn(`Cannot call check_password on user on server ${server as string}.`)
+        res.status(200).send('false')
+        return
+      }
+      if (user === 'john' && pass === 'password') {
+        res.status(200).send('true')
+        return
+      }
+      res.status(200).send('false')
+    }
+  ))
+
+  router.get('/user/user_exists', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      const settings = await options.settingsManager.getSettings([
+        'chat-use-prosody',
+        'chat-only-locals',
+        'chat-all-lives',
+        'chat-all-non-lives',
+        'chat-videos-list'
+      ])
+      if (!settings['chat-use-prosody']) {
+        logger.warn('Prosody chat is not active')
+        res.status(200).send('false')
+        return
+      }
+      const user = req.query.user
+      const server = req.query.server
+      if (server !== 'localhost') {
+        logger.warn(`Cannot call user_exists on user on server ${server as string}.`)
+        res.status(200).send('false')
+        return
+      }
+      if (user === 'john') {
+        res.status(200).send('true')
+      }
+      res.status(200).send('false')
+    }
+  ))
+
+  router.post('/user/set_password', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      res.sendStatus(501)
+    }
+  ))
+
+  router.post('/user/remove_user', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      res.sendStatus(501)
     }
   ))
 

@@ -94,11 +94,14 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
 
-  const roomApiUrl = options.peertubeHelpers.config.getWebserverUrl() +
+  const baseApiUrl = options.peertubeHelpers.config.getWebserverUrl() +
     getBaseRouter() +
-    'api/room?jid={room.jid|jid_node}'
+    'api/'
+  const authApiUrl = baseApiUrl + 'user'
+  const roomApiUrl = baseApiUrl + 'room?jid={room.jid|jid_node}'
 
   const config = new ProsodyConfigContent(paths)
+  config.useHttpAuthentication(authApiUrl)
   config.usePeertubeBosh(peertubeDomain, port)
   config.useMucHttpDefault(roomApiUrl)
   config.setArchive('1w') // Remove archived messages after 1 week

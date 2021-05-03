@@ -14,14 +14,43 @@ function inIframe (): boolean {
   }
 }
 
+function authenticatedMode (): boolean {
+  if (!window.fetch) {
+    console.error('Your browser has not the fetch api, we cant log you in')
+    return false
+  }
+  if (!window.localStorage) {
+    // FIXME: is the Peertube token always in localStorage?
+    console.error('Your browser has no localStorage, we cant log you in')
+    return false
+  }
+  const tokenType = window.localStorage.getItem('token_type') ?? ''
+  const accessToken = window.localStorage.getItem('access_token') ?? ''
+  const refreshToken = window.localStorage.getItem('refresh_token') ?? ''
+  if (tokenType === '' && accessToken === '' && refreshToken === '') {
+    console.info('User seems not to be logged in.')
+    return false
+  }
+  return true
+}
+
+interface InitConverseParams {
+  jid: string
+  assetsPath: string
+  room: string
+  boshServiceUrl: string
+  websocketServiceUrl: string
+  tryAuthenticatedMode: string
+}
 window.initConverse = function initConverse ({
   jid,
   assetsPath,
   room,
   boshServiceUrl,
-  websocketServiceUrl
-}) {
-  window.converse.initialize({
+  websocketServiceUrl,
+  tryAuthenticatedMode
+}: InitConverseParams) {
+  const params: any = {
     assets_path: assetsPath,
 
     authentication: 'anonymous',
@@ -53,7 +82,21 @@ window.initConverse = function initConverse ({
     show_client_info: false,
     allow_adhoc_commands: false,
     allow_contact_requests: false,
+    allow_logout: false,
     show_controlbox_by_default: false,
-    view_mode: 'fullscreen'
-  })
+    view_mode: 'fullscreen',
+    allow_message_corrections: true,
+    allow_message_retraction: 'all'
+  }
+
+  if (tryAuthenticatedMode === 'true' && authenticatedMode()) {
+    params.authentication = 'login'
+    params.auto_login = true
+    params.auto_reconnect = true
+    params.jid = 'john@localhost'
+    params.password = 'password'
+    // FIXME: use params.oauth_providers?
+  }
+
+  window.converse.initialize(params)
 }

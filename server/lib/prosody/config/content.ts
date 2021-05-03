@@ -99,6 +99,7 @@ type ProsodyLogLevel = 'debug' | 'info'
 class ProsodyConfigContent {
   paths: ProsodyFilePaths
   global: ProsodyConfigGlobal
+  authenticated?: ProsodyConfigVirtualHost
   anon: ProsodyConfigVirtualHost
   muc: ProsodyConfigComponent
   log: string
@@ -154,6 +155,15 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_history_length', 20)
   }
 
+  useHttpAuthentication (url: string): void {
+    this.authenticated = new ProsodyConfigVirtualHost('localhost')
+
+    this.authenticated.set('authentication', 'http')
+    this.authenticated.set('modules_enabled', ['ping', 'auth_http'])
+
+    this.authenticated.set('http_auth_url', url)
+  }
+
   usePeertubeBosh (peertubeDomain: string, port: string): void {
     this.global.set('c2s_require_encryption', false)
     this.global.set('interfaces', ['127.0.0.1', '::1'])
@@ -176,6 +186,15 @@ class ProsodyConfigContent {
     this.anon.set('http_external_url', 'http://' + peertubeDomain)
 
     this.muc.set('restrict_room_creation', 'local')
+
+    if (this.authenticated) {
+      this.authenticated.set('trusted_proxies', ['127.0.0.1', '::1'])
+      this.authenticated.set('allow_anonymous_s2s', false)
+      this.authenticated.add('modules_enabled', 'http')
+      this.authenticated.add('modules_enabled', 'bosh')
+      this.authenticated.set('http_host', peertubeDomain)
+      this.authenticated.set('http_external_url', 'http://' + peertubeDomain)
+    }
   }
 
   useMucHttpDefault (url: string): void {
@@ -208,6 +227,10 @@ class ProsodyConfigContent {
     content += this.global.write()
     content += this.log + '\n'
     content += '\n\n'
+    if (this.authenticated) {
+      content += this.authenticated.write()
+      content += '\n\n'
+    }
     content += this.anon.write()
     content += '\n\n'
     content += this.muc.write()
