@@ -1,4 +1,12 @@
-function inIframe () {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+interface Window {
+  converse: {
+    initialize: (args: any) => void
+  }
+  initConverse: (args: any) => void
+}
+
+function inIframe (): boolean {
   try {
     return window.self !== window.top
   } catch (e) {

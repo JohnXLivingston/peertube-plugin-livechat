@@ -42,8 +42,16 @@ let config = clientFiles.map(f => ({
 }))
 
 config.push({
-  entry: "./conversejs/builtin.js",
+  entry: "./conversejs/builtin.ts",
   devtool: process.env.NODE_ENV === 'dev' ? 'eval-source-map' : false,
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader'
+      }
+    ]
+  },
   output: {
     path: path.resolve(__dirname, "./dist/client/static"),
     filename: "./builtin.js"
