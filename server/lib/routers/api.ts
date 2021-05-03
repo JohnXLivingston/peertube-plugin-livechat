@@ -1,5 +1,6 @@
 import type { Router, Request, Response, NextFunction } from 'express'
 import { videoHasWebchat } from '../../../shared/lib/video'
+import { asyncMiddleware } from '../middlewares/async'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -30,8 +31,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   const router = getRouter()
   const logger = peertubeHelpers.logger
 
-  router.get('/room', async (req: Request, res: Response, next: NextFunction) => {
-    try {
+  router.get('/room', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
       const jid: string = req.query.jid as string || ''
       logger.info(`Requesting room information for room '${jid}'.`)
 
@@ -69,10 +70,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         affiliations: [] // so that the first user will not be moderator/admin
       }
       res.json(roomDefaults)
-    } catch (error) {
-      next(error)
     }
-  })
+  ))
 
   return router
 }
