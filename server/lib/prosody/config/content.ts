@@ -2,7 +2,7 @@ import type { ProsodyFilePaths } from './paths'
 
 type ConfigEntryValue = boolean | number | string | ConfigEntryValue[]
 
-interface ConfigEntries {[keys: string]: ConfigEntryValue}
+type ConfigEntries = Map<string, ConfigEntryValue>
 
 function writeValue (value: ConfigEntryValue): string {
   if (typeof value === 'boolean') {
@@ -31,30 +31,30 @@ abstract class ProsodyConfigBlock {
 
   constructor (prefix: string) {
     this.prefix = prefix
-    this.entries = {}
+    this.entries = new Map()
   }
 
   set (name: string, value: ConfigEntryValue): void {
-    this.entries[name] = value
+    this.entries.set(name, value)
   }
 
   add (name: string, value: ConfigEntryValue): void {
-    if (!(name in this.entries)) {
-      this.entries[name] = []
+    if (!this.entries.has(name)) {
+      this.entries.set(name, [])
     }
-    let entry = this.entries[name]
+    let entry = this.entries.get(name) as ConfigEntryValue
     if (!Array.isArray(entry)) {
       entry = [entry]
     }
     entry.push(value)
-    this.entries[name] = entry
+    this.entries.set(name, entry)
   }
 
   write (): string {
     let content = ''
-    // Using Reflect.ownKeys to keep order
-    Reflect.ownKeys(this.entries).forEach(key => {
-      content += this.prefix + (key as string) + ' = ' + writeValue(this.entries[key as string])
+    // Map keeps order :)
+    this.entries.forEach((value, key) => {
+      content += this.prefix + key + ' = ' + writeValue(value)
     })
     return content
   }
