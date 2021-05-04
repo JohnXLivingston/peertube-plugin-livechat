@@ -137,7 +137,7 @@ function launchTests (): void {
     const response = await window.fetch(testUrl, {
       method: 'POST',
       headers: new Headers({
-        Authorization: 'Bearer ' + accessToken,
+        Authorization: tokenType + ' ' + accessToken,
         'content-type': 'application/json;charset=UTF-8'
       }),
       body: JSON.stringify({
