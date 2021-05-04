@@ -31,7 +31,7 @@ function isUserAdmin (options: RegisterServerOptions, res: Response): boolean {
   if (user.blocked) {
     return false
   }
-  if (user.role !== UserRole.ADMINISTRATOR) {
+  if (user.role !== 0) {
     return false
   }
   return true
