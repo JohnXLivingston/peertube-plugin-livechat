@@ -48,11 +48,39 @@ function getAuthUser ({ peertubeHelpers }: RegisterServerOptions, res: Response)
   return res.locals.oauth?.token?.User
 }
 
+// FIXME: Peertube <= 3.1.0 has no way to obtain user nickname
+async function getUserNickname ({ peertubeHelpers }: RegisterServerOptions, id: number): Promise<string | undefined> {
+  const logger = peertubeHelpers.logger
+  if (!Number.isInteger(id)) {
+    logger.error('getUserNickname: Invalid User Id, should be an integer')
+    return undefined
+  }
+  const [results] = await peertubeHelpers.database.query(`SELECT name FROM "account" WHERE "userId" = ${id}`)
+  if (!Array.isArray(results)) {
+    logger.error('getUserNickname: query result is not an array.')
+    return undefined
+  }
+  if (!results[0]) {
+    logger.error(`getUserNickname: no result for id ${id}`)
+    return undefined
+  }
+  if (typeof results[0] !== 'object') {
+    logger.error('getUserNickname: query result is not an object')
+    return undefined
+  }
+  if (!('name' in results[0])) {
+    logger.error('getUserNickname: no name field in result')
+    return undefined
+  }
+  return results[0].name as string
+}
+
 export {
   getBaseRouter,
   getBaseStaticRoute,
   isUserAdmin,
   getAuthUser,
+  getUserNickname,
   pluginName,
   pluginShortName
 }

@@ -17,6 +17,7 @@ function inIframe (): boolean {
 interface AuthentInfos {
   jid: string
   password: string
+  nickname?: string
 }
 async function authenticatedMode (authenticationUrl: string): Promise<false | AuthentInfos> {
   try {
@@ -61,7 +62,8 @@ async function authenticatedMode (authenticationUrl: string): Promise<false | Au
     }
     return {
       jid: data.jid,
-      password: data.password
+      password: data.password,
+      nickname: data.nickname
     }
   } catch (error) {
     console.error(error)
@@ -132,7 +134,11 @@ window.initConverse = async function initConverse ({
       params.auto_reconnect = true
       params.jid = auth.jid
       params.password = auth.password
-      params.muc_nickname_from_jid = true
+      if (auth.nickname) {
+        params.nickname = auth.nickname
+      } else {
+        params.muc_nickname_from_jid = true
+      }
       // FIXME: use params.oauth_providers?
     }
   }
