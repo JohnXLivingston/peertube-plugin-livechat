@@ -123,6 +123,7 @@ class ProsodyConfigContent {
     this.global.set('modules_enabled', [
       'roster', // Allow users to have a roster. Recommended ;)
       'saslauth', // Authentication for clients and servers. Recommended if you want to log in.
+      'carbons', // Keep multiple clients in sync
       'version', // Replies to server version requests
       'uptime', // Report how long server has been running
       'ping', // Replies to XMPP pings with pongs
