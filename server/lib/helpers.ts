@@ -21,22 +21,38 @@ function getBaseStaticRoute (): string {
   return '/plugins/' + pluginShortName + '/' + version + '/static/'
 }
 
-// FIXME: Peertube <= 3.1.0 has no way to test that current user is admin
-// This is a hack.
-function isUserAdmin (res: Response): boolean {
-  if (!res.locals?.authenticated) {
+// Peertube <= 3.1.0 has no way to test that current user is admin
+// Peertube >= 3.2.0 has getAuthUser helper
+function isUserAdmin (options: RegisterServerOptions, res: Response): boolean {
+  const user = getAuthUser(options, res)
+  if (!user) {
     return false
   }
-  if (res.locals?.oauth?.token?.User?.role === 0) {
-    return true
+  if (user.blocked) {
+    return false
   }
-  return false
+  if (user.role !== UserRole.ADMINISTRATOR) {
+    return false
+  }
+  return true
+}
+
+// Peertube <= 3.1.0 has no way to get user informations.
+// This is a hack.
+// Peertube >= 3.2.0 has getAuthUser helper
+function getAuthUser ({ peertubeHelpers }: RegisterServerOptions, res: Response): MUserAccountUrl | undefined {
+  if (peertubeHelpers.user?.getAuthUser) {
+    return peertubeHelpers.user.getAuthUser(res)
+  }
+  peertubeHelpers.logger.debug('Peertube does not provide getAuthUser for now, fallback on hack')
+  return res.locals.oauth?.token?.User
 }
 
 export {
   getBaseRouter,
   getBaseStaticRoute,
   isUserAdmin,
+  getAuthUser,
   pluginName,
   pluginShortName
 }

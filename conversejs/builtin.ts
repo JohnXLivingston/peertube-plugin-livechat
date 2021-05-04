@@ -14,24 +14,59 @@ function inIframe (): boolean {
   }
 }
 
-function authenticatedMode (): boolean {
-  if (!window.fetch) {
-    console.error('Your browser has not the fetch api, we cant log you in')
+interface AuthentInfos {
+  jid: string
+  password: string
+}
+async function authenticatedMode (authenticationUrl: string): Promise<false | AuthentInfos> {
+  try {
+    if (!window.fetch) {
+      console.error('Your browser has not the fetch api, we cant log you in')
+      return false
+    }
+    if (!window.localStorage) {
+      // FIXME: is the Peertube token always in localStorage?
+      console.error('Your browser has no localStorage, we cant log you in')
+      return false
+    }
+    const tokenType = window.localStorage.getItem('token_type') ?? ''
+    const accessToken = window.localStorage.getItem('access_token') ?? ''
+    const refreshToken = window.localStorage.getItem('refresh_token') ?? ''
+    if (tokenType === '' && accessToken === '' && refreshToken === '') {
+      console.info('User seems not to be logged in.')
+      return false
+    }
+
+    const response = await window.fetch(authenticationUrl, {
+      method: 'GET',
+      headers: new Headers({
+        Authorization: tokenType + ' ' + accessToken,
+        'content-type': 'application/json;charset=UTF-8'
+      })
+    })
+
+    if (!response.ok) {
+      console.error('Failed fetching user informations')
+      return false
+    }
+    const data = await response.json()
+    if ((typeof data) !== 'object') {
+      console.error('Failed reading user informations')
+      return false
+    }
+
+    if (!data.jid || !data.password) {
+      console.error('User informations does not contain required fields')
+      return false
+    }
+    return {
+      jid: data.jid,
+      password: data.password
+    }
+  } catch (error) {
+    console.error(error)
     return false
   }
-  if (!window.localStorage) {
-    // FIXME: is the Peertube token always in localStorage?
-    console.error('Your browser has no localStorage, we cant log you in')
-    return false
-  }
-  const tokenType = window.localStorage.getItem('token_type') ?? ''
-  const accessToken = window.localStorage.getItem('access_token') ?? ''
-  const refreshToken = window.localStorage.getItem('refresh_token') ?? ''
-  if (tokenType === '' && accessToken === '' && refreshToken === '') {
-    console.info('User seems not to be logged in.')
-    return false
-  }
-  return true
 }
 
 interface InitConverseParams {
@@ -40,15 +75,15 @@ interface InitConverseParams {
   room: string
   boshServiceUrl: string
   websocketServiceUrl: string
-  tryAuthenticatedMode: string
+  authenticationUrl: string
 }
-window.initConverse = function initConverse ({
+window.initConverse = async function initConverse ({
   jid,
   assetsPath,
   room,
   boshServiceUrl,
   websocketServiceUrl,
-  tryAuthenticatedMode
+  authenticationUrl
 }: InitConverseParams) {
   const params: any = {
     assets_path: assetsPath,
@@ -89,13 +124,17 @@ window.initConverse = function initConverse ({
     allow_message_retraction: 'all'
   }
 
-  if (tryAuthenticatedMode === 'true' && authenticatedMode()) {
-    params.authentication = 'login'
-    params.auto_login = true
-    params.auto_reconnect = true
-    params.jid = 'john@localhost'
-    params.password = 'password'
-    // FIXME: use params.oauth_providers?
+  if (authenticationUrl !== '') {
+    const auth = await authenticatedMode(authenticationUrl)
+    if (auth) {
+      params.authentication = 'login'
+      params.auto_login = true
+      params.auto_reconnect = true
+      params.jid = auth.jid
+      params.password = auth.password
+      params.muc_nickname_from_jid = true
+      // FIXME: use params.oauth_providers?
+    }
   }
 
   window.converse.initialize(params)

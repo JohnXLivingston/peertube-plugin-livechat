@@ -77,6 +77,21 @@ interface MVideoThumbnail { // FIXME: this interface is not complete.
   state: VideoState
 }
 
+// Keep the order
+enum UserRole {
+  ADMINISTRATOR = 0,
+  MODERATOR = 1,
+  USER = 2
+}
+
+interface MUserAccountUrl { // FIXME: this interface is not complete
+  id?: string
+  username: string
+  email: string
+  blocked: boolean
+  role: UserRole
+}
+
 interface VideoBlacklistCreate {
   reason?: string
   unfederate?: boolean
@@ -110,6 +125,10 @@ interface PeerTubeHelpers {
   }
   server: {
     getServerActor: () => Promise<ActorModel>
+  }
+  // Added in Peertube 3.2.0
+  user?: {
+    getAuthUser: (res: express.Response) => MUserAccountUrl | undefined
   }
 }
 

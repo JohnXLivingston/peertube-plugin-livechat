@@ -1,6 +1,8 @@
 import type { Router, Request, Response, NextFunction } from 'express'
 import { videoHasWebchat } from '../../../shared/lib/video'
 import { asyncMiddleware } from '../middlewares/async'
+import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } from '../prosody/auth'
+import { getAuthUser } from '../helpers'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -79,6 +81,25 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
     }
   ))
 
+  router.get('/auth', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      const user = getAuthUser(options, res)
+      if (!user) {
+        res.sendStatus(403)
+        return
+      }
+      if (user.blocked) {
+        res.sendStatus(403)
+        return
+      }
+      const password: string = await prosodyRegisterUser(user.username)
+      res.status(200).json({
+        jid: user.username + '@localhost',
+        password: password
+      })
+    }
+  ))
+
   router.post('/user/register', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
       res.sendStatus(501)
@@ -107,7 +128,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         res.status(200).send('false')
         return
       }
-      if (user === 'john' && pass === 'password') {
+      if (user && pass && await prosodyCheckUserPassword(user as string, pass as string)) {
         res.status(200).send('true')
         return
       }
@@ -136,8 +157,9 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         res.status(200).send('false')
         return
       }
-      if (user === 'john') {
+      if (user && await prosodyUserRegistered(user as string)) {
         res.status(200).send('true')
+        return
       }
       res.status(200).send('false')
     }

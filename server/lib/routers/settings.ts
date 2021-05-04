@@ -24,7 +24,7 @@ async function initSettingsRouter (options: RegisterServerOptions): Promise<Rout
         res.sendStatus(403)
         return
       }
-      if (!isUserAdmin(res)) {
+      if (!isUserAdmin(options, res)) {
         res.sendStatus(403)
         return
       }
