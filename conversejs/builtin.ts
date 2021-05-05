@@ -133,6 +133,7 @@ window.initConverse = async function initConverse ({
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
 
+  let isAuthenticated: boolean = false
   if (authenticationUrl !== '') {
     const auth = await authenticatedMode(authenticationUrl)
     if (auth) {
@@ -145,8 +146,16 @@ window.initConverse = async function initConverse ({
       } else {
         params.muc_nickname_from_jid = true
       }
+      isAuthenticated = true
       // FIXME: use params.oauth_providers?
     }
+  }
+
+  if (!isAuthenticated) {
+    console.log('User is not authenticated.')
+    // TODO: try to make these params work
+    // params.auto_register_muc_nickname = true
+    // params.muc_show_logs_before_join = true
   }
 
   if (!advancedControls) {
