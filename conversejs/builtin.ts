@@ -114,7 +114,7 @@ window.initConverse = async function initConverse ({
       room
     ],
     singleton: true,
-    auto_focus: isInIframe,
+    auto_focus: !isInIframe,
     hide_muc_participants: isInIframe,
     keepalive: true,
     play_sounds: false,
