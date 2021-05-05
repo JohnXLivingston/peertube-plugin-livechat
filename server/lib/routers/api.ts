@@ -1,6 +1,7 @@
 import type { Router, Request, Response, NextFunction } from 'express'
 import { videoHasWebchat } from '../../../shared/lib/video'
 import { asyncMiddleware } from '../middlewares/async'
+import { getCheckAPIKeyMiddleware } from '../middlewares/apikey'
 import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } from '../prosody/auth'
 import { getAuthUser, getUserNickname } from '../helpers'
 import { Affiliations, getVideoAffiliations } from '../prosody/config/affiliations'
@@ -30,7 +31,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   const router = getRouter()
   const logger = peertubeHelpers.logger
 
-  router.get('/room', asyncMiddleware(
+  router.get('/room', asyncMiddleware([
+    getCheckAPIKeyMiddleware(options),
     async (req: Request, res: Response, _next: NextFunction) => {
       const jid: string = req.query.jid as string || ''
       logger.info(`Requesting room information for room '${jid}'.`)
@@ -85,7 +87,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       }
       res.json(roomDefaults)
     }
-  ))
+  ]))
 
   router.get('/auth', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {

@@ -3,6 +3,7 @@ import * as path from 'path'
 import { pluginName, getBaseRouter } from '../helpers'
 import { ProsodyFilePaths } from './config/paths'
 import { ProsodyConfigContent } from './config/content'
+import { getAPIKey } from '../apikey'
 
 async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServerOptions): Promise<string> {
   const logger = peertubeHelpers.logger
@@ -94,11 +95,12 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const peertubeDomain = 'localhost'
   const paths = await getProsodyFilePaths(options)
 
+  const apikey = await getAPIKey(options)
   const baseApiUrl = options.peertubeHelpers.config.getWebserverUrl() +
     getBaseRouter() +
     'api/'
-  const authApiUrl = baseApiUrl + 'user'
-  const roomApiUrl = baseApiUrl + 'room?jid={room.jid|jid_node}'
+  const authApiUrl = baseApiUrl + 'user' // FIXME: should be protected by apikey, but mod_auth_http cant handle params
+  const roomApiUrl = baseApiUrl + 'room?apikey=' + apikey + '&jid={room.jid|jid_node}'
 
   const config = new ProsodyConfigContent(paths)
   config.useHttpAuthentication(authApiUrl)
