@@ -131,6 +131,8 @@ window.initConverse = async function initConverse ({
     allow_message_retraction: 'all'
   }
 
+  // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
+
   if (authenticationUrl !== '') {
     const auth = await authenticatedMode(authenticationUrl)
     if (auth) {
