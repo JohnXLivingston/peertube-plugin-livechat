@@ -3,6 +3,7 @@ import { videoHasWebchat } from '../../../shared/lib/video'
 import { asyncMiddleware } from '../middlewares/async'
 import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } from '../prosody/auth'
 import { getAuthUser, getUserNickname } from '../helpers'
+import { Affiliations, getVideoAffiliations } from '../prosody/config/affiliations'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -21,11 +22,7 @@ interface RoomDefaults {
     moderated?: boolean
     archiving?: boolean
   }
-  affiliations?: Array<{
-    jid: string
-    affiliation: 'outcast' | 'none' | 'member' | 'admin' | 'owner'
-    nick?: string
-  }>
+  affiliations?: Affiliations
 }
 
 async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
@@ -68,6 +65,15 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         return
       }
 
+      let affiliations: Affiliations
+      try {
+        affiliations = await getVideoAffiliations(options, video)
+      } catch (error) {
+        logger.error(`Failed to get video affiliations for ${video.uuid}:`, error)
+        // affiliations: should at least be {}, so that the first user will not be moderator/admin
+        affiliations = {}
+      }
+
       const roomDefaults: RoomDefaults = {
         config: {
           name: video.name,
@@ -75,7 +81,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
           language: video.language,
           subject: video.name
         },
-        affiliations: [] // so that the first user will not be moderator/admin
+        affiliations: affiliations
       }
       res.json(roomDefaults)
     }
