@@ -90,6 +90,14 @@ window.initConverse = async function initConverse ({
   advancedControls
 }: InitConverseParams) {
   const isInIframe = inIframe()
+
+  if (isInIframe) {
+    const body = document.querySelector('body')
+    if (body) {
+      body.classList.add('livechat-iframe')
+    }
+  }
+
   const params: any = {
     assets_path: assetsPath,
 
