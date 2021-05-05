@@ -98,13 +98,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         res.sendStatus(403)
         return
       }
-      let userId: number | undefined
-      if (user.id) {
-        userId = parseInt(user.id)
-        if (Number.isNaN(userId)) { userId = undefined }
-      }
       const password: string = await prosodyRegisterUser(user.username)
-      const nickname: string | undefined = userId ? (await getUserNickname(options, userId)) : undefined
+      const nickname: string | undefined = await getUserNickname(options, user)
       res.status(200).json({
         jid: user.username + '@localhost',
         password: password,

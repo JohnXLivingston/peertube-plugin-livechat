@@ -85,13 +85,14 @@ enum UserRole {
 }
 
 interface MUserDefault { // FIXME: this interface is not complete
-  id?: string
+  id?: string | number // FIXME: type is not clear... Documentation says string, but it seems to be number
   username: string
   email: string
   blocked: boolean
   role: UserRole
-  Account: {
-    name: string
+  Account?: {
+    // Account.name comes in Peertube 3.2.0
+    name?: string
   }
 }
 
