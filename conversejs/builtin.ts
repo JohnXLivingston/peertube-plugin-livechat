@@ -127,7 +127,7 @@ window.initConverse = async function initConverse ({
     allow_logout: false,
     show_controlbox_by_default: false,
     view_mode: 'fullscreen',
-    allow_message_corrections: true,
+    allow_message_corrections: 'all',
     allow_message_retraction: 'all'
   }
 
