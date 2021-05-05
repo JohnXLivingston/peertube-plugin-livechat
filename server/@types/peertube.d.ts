@@ -75,6 +75,7 @@ interface MVideoThumbnail { // FIXME: this interface is not complete.
   commentsEnabled: boolean
   downloadEnabled: boolean
   state: VideoState
+  channelId: number
 }
 
 // Keep the order
