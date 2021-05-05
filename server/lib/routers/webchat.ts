@@ -33,6 +33,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let boshUri: string
       let wsUri: string
       let authenticationUrl: string = ''
+      let advancedControls: boolean = false
       if (settings['chat-use-prosody']) {
         server = 'anon.localhost'
         room = '{{VIDEO_UUID}}@room.localhost'
@@ -41,6 +42,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
           getBaseRouter() +
           'api/auth'
+        advancedControls = true
       } else if (settings['chat-use-builtin']) {
         if (!settings['chat-server']) {
           throw new Error('Missing chat-server settings.')
@@ -75,6 +77,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
       page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
+      page = page.replace(/{{ADVANCEDCONTROLS}}/g, advancedControls ? 'true' : 'false')
 
       res.status(200)
       res.type('html')

@@ -78,6 +78,7 @@ interface InitConverseParams {
   boshServiceUrl: string
   websocketServiceUrl: string
   authenticationUrl: string
+  advancedControls: 'true' | 'false'
 }
 window.initConverse = async function initConverse ({
   jid,
@@ -85,8 +86,10 @@ window.initConverse = async function initConverse ({
   room,
   boshServiceUrl,
   websocketServiceUrl,
-  authenticationUrl
+  authenticationUrl,
+  advancedControls
 }: InitConverseParams) {
+  const isInIframe = inIframe()
   const params: any = {
     assets_path: assetsPath,
 
@@ -103,18 +106,12 @@ window.initConverse = async function initConverse ({
       room
     ],
     singleton: true,
-    auto_focus: false,
-    hide_muc_participants: inIframe(),
+    auto_focus: isInIframe,
+    hide_muc_participants: isInIframe,
     keepalive: true,
     play_sounds: false,
     muc_mention_autocomplete_min_chars: 3,
     muc_mention_autocomplete_filter: 'contains',
-    modtools_disable_assign: true,
-    muc_disable_slash_commands: [
-      'admin', 'ban', 'clear', 'deop', 'destroy', 'kick',
-      'member', 'modtools', 'mute', 'op', 'owner', 'register',
-      'revoke', 'subject', 'topic', 'voice'
-    ],
     muc_instant_rooms: true,
     show_client_info: false,
     allow_adhoc_commands: false,
@@ -141,6 +138,19 @@ window.initConverse = async function initConverse ({
       }
       // FIXME: use params.oauth_providers?
     }
+  }
+
+  if (!advancedControls) {
+    // These params are for externals XMPP servers.
+    // NB: because we dont know if external servers have authentication mecanism,
+    // we disable all moderation functionnality.
+    // This is also done for backward compatibility with older installations.
+    params.muc_disable_slash_commands = [
+      'admin', 'ban', 'clear', 'deop', 'destroy', 'kick',
+      'member', 'modtools', 'mute', 'op', 'owner', 'register',
+      'revoke', 'subject', 'topic', 'voice'
+    ]
+    params.modtools_disable_assign = true
   }
 
   window.converse.initialize(params)
