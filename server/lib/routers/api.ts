@@ -89,7 +89,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
   router.get('/auth', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
-      const user = getAuthUser(options, res)
+      const user = await getAuthUser(options, res)
       if (!user) {
         res.sendStatus(403)
         return

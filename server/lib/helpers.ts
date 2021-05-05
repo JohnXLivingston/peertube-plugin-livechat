@@ -23,8 +23,8 @@ function getBaseStaticRoute (): string {
 
 // Peertube <= 3.1.0 has no way to test that current user is admin
 // Peertube >= 3.2.0 has getAuthUser helper
-function isUserAdmin (options: RegisterServerOptions, res: Response): boolean {
-  const user = getAuthUser(options, res)
+async function isUserAdmin (options: RegisterServerOptions, res: Response): Promise<boolean> {
+  const user = await getAuthUser(options, res)
   if (!user) {
     return false
   }
@@ -40,7 +40,8 @@ function isUserAdmin (options: RegisterServerOptions, res: Response): boolean {
 // Peertube <= 3.1.0 has no way to get user informations.
 // This is a hack.
 // Peertube >= 3.2.0 has getAuthUser helper
-function getAuthUser ({ peertubeHelpers }: RegisterServerOptions, res: Response): MUserAccountUrl | undefined {
+async function getAuthUser (options: RegisterServerOptions, res: Response): Promise<MUserDefault | undefined> {
+  const peertubeHelpers = options.peertubeHelpers
   if (peertubeHelpers.user?.getAuthUser) {
     return peertubeHelpers.user.getAuthUser(res)
   }

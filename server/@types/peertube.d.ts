@@ -84,12 +84,15 @@ enum UserRole {
   USER = 2
 }
 
-interface MUserAccountUrl { // FIXME: this interface is not complete
+interface MUserDefault { // FIXME: this interface is not complete
   id?: string
   username: string
   email: string
   blocked: boolean
   role: UserRole
+  Account: {
+    name: string
+  }
 }
 
 interface VideoBlacklistCreate {
@@ -128,7 +131,7 @@ interface PeerTubeHelpers {
   }
   // Added in Peertube 3.2.0
   user?: {
-    getAuthUser: (res: express.Response) => MUserAccountUrl | undefined
+    getAuthUser: (res: express.Response) => Promise<MUserDefault | undefined>
   }
 }
 
