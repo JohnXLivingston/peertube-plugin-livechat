@@ -136,7 +136,6 @@ window.initConverse = async function initConverse ({
     if (auth) {
       params.authentication = 'login'
       params.auto_login = true
-      params.auto_reconnect = true
       params.jid = auth.jid
       params.password = auth.password
       if (auth.nickname) {
