@@ -3,6 +3,7 @@ import * as path from 'path'
 import { pluginName, getBaseRouter } from '../helpers'
 import { ProsodyFilePaths } from './config/paths'
 import { ProsodyConfigContent } from './config/content'
+import { getProsodyDomain } from './config/domain'
 import { getAPIKey } from '../apikey'
 
 async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServerOptions): Promise<string> {
@@ -92,7 +93,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   if (!/^\d+$/.test(port)) {
     throw new Error('Invalid port')
   }
-  const peertubeDomain = 'localhost'
+  const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
 
   const apikey = await getAPIKey(options)
@@ -102,9 +103,9 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const authApiUrl = baseApiUrl + 'user' // FIXME: should be protected by apikey, but mod_auth_http cant handle params
   const roomApiUrl = baseApiUrl + 'room?apikey=' + apikey + '&jid={room.jid|jid_node}'
 
-  const config = new ProsodyConfigContent(paths)
+  const config = new ProsodyConfigContent(paths, prosodyDomain)
   config.useHttpAuthentication(authApiUrl)
-  config.usePeertubeBosh(peertubeDomain, port)
+  config.usePeertubeBosh(prosodyDomain, port)
   config.useMucHttpDefault(roomApiUrl)
   config.setArchive('1w') // Remove archived messages after 1 week
   config.setLog(process.env.NODE_ENV === 'test' ? 'debug' : 'info')

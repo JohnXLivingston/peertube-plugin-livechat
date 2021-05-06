@@ -1,7 +1,10 @@
+import { getProsodyDomain } from './domain'
+
 interface Affiliations { [jid: string]: 'outcast' | 'none' | 'member' | 'admin' | 'owner' }
 
 async function getVideoAffiliations (options: RegisterServerOptions, video: MVideoThumbnail): Promise<Affiliations> {
   const peertubeHelpers = options.peertubeHelpers
+  const prosodyDomain = await getProsodyDomain(options)
   // Get all admins and moderators
   const [results] = await peertubeHelpers.database.query(
     'SELECT "username" FROM "user"' +
@@ -19,7 +22,7 @@ async function getVideoAffiliations (options: RegisterServerOptions, video: MVid
     if (!('username' in result)) {
       throw new Error('getVideoAffiliations: no username field in result')
     }
-    const jid = (result.username as string) + '@localhost'
+    const jid = (result.username as string) + '@' + prosodyDomain
     r[jid] = 'owner'
   }
 
@@ -29,7 +32,7 @@ async function getVideoAffiliations (options: RegisterServerOptions, video: MVid
     if (!video.remote) {
       // don't add the video owner if it is a remote video!
       const userName = await _getVideoOwnerUsername(options, video)
-      const userJid = userName + '@localhost'
+      const userJid = userName + '@' + prosodyDomain
       r[userJid] = 'admin'
     }
   } catch (error) {

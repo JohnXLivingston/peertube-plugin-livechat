@@ -103,13 +103,15 @@ class ProsodyConfigContent {
   anon: ProsodyConfigVirtualHost
   muc: ProsodyConfigComponent
   log: string
+  prosodyDomain: string
 
-  constructor (paths: ProsodyFilePaths) {
+  constructor (paths: ProsodyFilePaths, prosodyDomain: string) {
     this.paths = paths
     this.global = new ProsodyConfigGlobal()
     this.log = ''
-    this.anon = new ProsodyConfigVirtualHost('anon.localhost')
-    this.muc = new ProsodyConfigComponent('muc', 'room.localhost')
+    this.prosodyDomain = prosodyDomain
+    this.anon = new ProsodyConfigVirtualHost('anon.' + prosodyDomain)
+    this.muc = new ProsodyConfigComponent('muc', 'room.' + prosodyDomain)
 
     this.global.set('daemonize', false)
     this.global.set('allow_registration', false)
@@ -157,7 +159,7 @@ class ProsodyConfigContent {
   }
 
   useHttpAuthentication (url: string): void {
-    this.authenticated = new ProsodyConfigVirtualHost('localhost')
+    this.authenticated = new ProsodyConfigVirtualHost(this.prosodyDomain)
 
     this.authenticated.set('authentication', 'http')
     this.authenticated.set('modules_enabled', ['ping', 'auth_http'])
@@ -165,7 +167,7 @@ class ProsodyConfigContent {
     this.authenticated.set('http_auth_url', url)
   }
 
-  usePeertubeBosh (peertubeDomain: string, port: string): void {
+  usePeertubeBosh (prosodyDomain: string, port: string): void {
     this.global.set('c2s_require_encryption', false)
     this.global.set('interfaces', ['127.0.0.1', '::1'])
     this.global.set('c2s_ports', [])
@@ -183,8 +185,8 @@ class ProsodyConfigContent {
     this.anon.set('allow_anonymous_s2s', false)
     this.anon.add('modules_enabled', 'http')
     this.anon.add('modules_enabled', 'bosh')
-    this.anon.set('http_host', peertubeDomain)
-    this.anon.set('http_external_url', 'http://' + peertubeDomain)
+    this.anon.set('http_host', prosodyDomain)
+    this.anon.set('http_external_url', 'http://' + prosodyDomain)
 
     this.muc.set('restrict_room_creation', 'local')
 
@@ -193,8 +195,8 @@ class ProsodyConfigContent {
       this.authenticated.set('allow_anonymous_s2s', false)
       this.authenticated.add('modules_enabled', 'http')
       this.authenticated.add('modules_enabled', 'bosh')
-      this.authenticated.set('http_host', peertubeDomain)
-      this.authenticated.set('http_external_url', 'http://' + peertubeDomain)
+      this.authenticated.set('http_host', prosodyDomain)
+      this.authenticated.set('http_external_url', 'http://' + prosodyDomain)
     }
   }
 

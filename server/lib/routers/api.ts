@@ -5,6 +5,7 @@ import { getCheckAPIKeyMiddleware } from '../middlewares/apikey'
 import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } from '../prosody/auth'
 import { getAuthUser, getUserNickname } from '../helpers'
 import { Affiliations, getVideoAffiliations } from '../prosody/config/affiliations'
+import { getProsodyDomain } from '../prosody/config/domain'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -100,10 +101,11 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         res.sendStatus(403)
         return
       }
+      const prosodyDomain = await getProsodyDomain(options)
       const password: string = await prosodyRegisterUser(user.username)
       const nickname: string | undefined = await getUserNickname(options, user)
       res.status(200).json({
-        jid: user.username + '@localhost',
+        jid: user.username + '@' + prosodyDomain,
         password: password,
         nickname: nickname
       })
@@ -130,10 +132,11 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         res.status(200).send('false')
         return
       }
+      const prosodyDomain = await getProsodyDomain(options)
       const user = req.query.user
       const server = req.query.server
       const pass = req.query.pass
-      if (server !== 'localhost') {
+      if (server !== prosodyDomain) {
         logger.warn(`Cannot call check_password on user on server ${server as string}.`)
         res.status(200).send('false')
         return
@@ -160,9 +163,10 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         res.status(200).send('false')
         return
       }
+      const prosodyDomain = await getProsodyDomain(options)
       const user = req.query.user
       const server = req.query.server
-      if (server !== 'localhost') {
+      if (server !== prosodyDomain) {
         logger.warn(`Cannot call user_exists on user on server ${server as string}.`)
         res.status(200).send('false')
         return
