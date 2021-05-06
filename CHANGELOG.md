@@ -1,12 +1,14 @@
 # Changelog
 
+## v2.1.3
+
+* Fix: 2.1.0 was in fact correct... Did not work on my preprod env because of... a Livebox bug...
+
 ## v2.1.2
 
 * Fix: revert 2.1.1, and revert using the real domain for prosody
 
 ## v2.1.1
-
-### Fixes
 
 * Fix bad proxy settings when not working on localhost
 
