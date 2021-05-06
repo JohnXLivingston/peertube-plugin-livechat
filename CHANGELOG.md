@@ -10,6 +10,7 @@
 
 * Builtin Prosody: use mod_muc_http_defaults to set rooms properties and prevent unauthorized room creation.
 * Builtin Prosody: use mod_auth_http to auto login peertube users
+* Builtin Prosody: instance's admins and moderators are owner of all created room. Video's owner is admin of the room.
 
 ### Fixes
 
