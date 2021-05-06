@@ -9,7 +9,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [x] | [ ] | Builtin Prosody | Check room creation permission, and set some metadata
 [x] | [ ] | Builtin Prosody | User authentication: if the user is logged in Peertube, use his nickname.
 [ ] | [ ] | Builtin ConverseJS | Check user langage. Should be automatic and/or depends on peertube's language. Check that converseJS translation files are available.
-[ ] | [ ] | Builtin Prosody | Grant moderation rights to instance admins and video owner. Activate moderations commands in ConverseJS.
+[x] | [ ] | Builtin Prosody | Grant moderation rights to instance admins and video owner. Activate moderations commands in ConverseJS.
 [ ] | [x] | Common | Chat should not be displayed in playlists
 [ ] | [x] | Builtin Prosody | Data Persistence
 [ ] | [x] | Common | Add a checkbox per video to activate livechat. Only on lives.
@@ -25,3 +25,4 @@ This roadmap is given as an indication. It will be updated as we go along accord
 | Done | Needs Peertube 3.2 | Component | Feature
 ---|---|---|---
 [ ] | [ ] | Common | There should be a settings to add terms & conditions in the Peertube's about page (for example if the webchat is hosted anywhere else).
+[ ] | [ ] | Builtin Prosody | Add a page with a non-singleton ConverseJS, to browser chat rooms for admins. Maybe allow direct chating between admins, and room creation?
