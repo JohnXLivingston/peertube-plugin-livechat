@@ -3,6 +3,7 @@
 ## v2.1.3
 
 * Fix: 2.1.0 was in fact correct... Did not work on my preprod env because of... a Livebox bug...
+* Fix: if the video owner is already owner of the chatroom, he should not be downgraded to admin.
 
 ## v2.1.2
 

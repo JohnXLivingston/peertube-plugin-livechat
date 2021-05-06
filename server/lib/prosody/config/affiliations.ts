@@ -33,7 +33,9 @@ async function getVideoAffiliations (options: RegisterServerOptions, video: MVid
       // don't add the video owner if it is a remote video!
       const userName = await _getVideoOwnerUsername(options, video)
       const userJid = userName + '@' + prosodyDomain
-      r[userJid] = 'admin'
+      if (!(userJid in r)) { // don't override if already owner!
+        r[userJid] = 'admin'
+      }
     }
   } catch (error) {
     peertubeHelpers.logger.error('Failed to get video owner informations:', error)
