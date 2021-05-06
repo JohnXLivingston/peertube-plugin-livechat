@@ -128,7 +128,13 @@ window.initConverse = async function initConverse ({
     show_controlbox_by_default: false,
     view_mode: 'fullscreen',
     allow_message_corrections: 'all',
-    allow_message_retraction: 'all'
+    allow_message_retraction: 'all',
+    visible_toolbar_buttons: {
+      call: false,
+      spoiler: true,
+      emoji: true,
+      toggle_occupants: true
+    }
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
@@ -158,7 +164,10 @@ window.initConverse = async function initConverse ({
     // params.muc_show_logs_before_join = true
   }
 
-  if (!advancedControls) {
+  if (advancedControls) {
+    // with the builtin prosody, no need to use this warning (except if we open to external clients?)
+    params.show_retraction_warning = false
+  } else {
     // These params are for externals XMPP servers.
     // NB: because we dont know if external servers have authentication mecanism,
     // we disable all moderation functionnality.
