@@ -26,9 +26,12 @@ async function getVideoAffiliations (options: RegisterServerOptions, video: MVid
   // Adding an 'admin' affiliation for video owner
   // NB: if it fails, we want previous results to be returned...
   try {
-    const userName = await _getVideoOwnerUsername(options, video)
-    const userJid = userName + '@localhost'
-    r[userJid] = 'admin'
+    if (!video.remote) {
+      // don't add the video owner if it is a remote video!
+      const userName = await _getVideoOwnerUsername(options, video)
+      const userJid = userName + '@localhost'
+      r[userJid] = 'admin'
+    }
   } catch (error) {
     peertubeHelpers.logger.error('Failed to get video owner informations:', error)
   }
