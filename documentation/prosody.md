@@ -44,3 +44,11 @@ Check this checkbox to activate this mode.
 #### Builtin prosody: Prosody port
 
 This is the port that the Prosody server will use. By default it is set to 52800. If you want to use another port, just change the value here.
+
+## Notes
+
+All instance moderators and admins will be owner for created chat rooms.
+If the video is local (not from a remote Peertube), the video owner will be admin in the chat room.
+
+You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.
+When you open the chat room in full screen, there will also be a menu with dedicated commands in the top right.
