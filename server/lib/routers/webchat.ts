@@ -115,7 +115,7 @@ function changeHttpBindRoute ({ peertubeHelpers }: RegisterServerOptions, port: 
       proxyReqPathResolver: async (_req: Request): Promise<string> => {
         return '/http-bind' // should not be able to access anything else
       },
-      // preserveHostHdr: false,
+      preserveHostHdr: true,
       parseReqBody: true // Note that setting this to false overrides reqAsBuffer and reqBodyEncoding below.
       // FIXME: should we remove cookies?
     }

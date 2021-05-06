@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.1
+
+### Fixes
+
+* Fix bad proxy settings when not working on localhost
+
 ## v2.1.0
 
 ### Important Notes
