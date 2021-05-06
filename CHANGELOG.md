@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.2
+
+* Fix: revert 2.1.1, and revert using the real domain for prosody
+
 ## v2.1.1
 
 ### Fixes
