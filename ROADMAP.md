@@ -10,7 +10,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [x] | [ ] | Builtin Prosody | User authentication: if the user is logged in Peertube, use his nickname. | v2.1.0
 [ ] | [ ] | Builtin ConverseJS | Check user langage. Should be automatic and/or depends on peertube's language. Check that converseJS translation files are available.
 [x] | [ ] | Builtin Prosody | Grant moderation rights to instance admins and video owner. Activate moderations commands in ConverseJS. | v2.1.0
-[ ] | [x] | Common | Chat should not be displayed in playlists
+[x] | [x] | Common | Chat should not be displayed in playlists | Not released yet
 [ ] | [x] | Builtin Prosody | Data Persistence
 [ ] | [x] | Common | Add a checkbox per video to activate livechat. Only on lives.
 [ ] | [x] | Builtin Prosody | Docker: check how to install and use Prosody on docker installations. Do the documenation.
