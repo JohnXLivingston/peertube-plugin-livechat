@@ -2,6 +2,12 @@ import { videoHasWebchat } from 'shared/lib/video'
 
 interface VideoCache {[key: string]: Video}
 
+interface VideoWatchLoadedHookOptions {
+  videojs: any
+  video?: Video // comes with Peertube 3.2.0
+  playlist?: any // comes with Peertube 3.2.0
+}
+
 function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
   const logger = {
     log: (s: string) => console.log('[peertube-plugin-livechat] ' + s),
@@ -10,8 +16,10 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     warn: (s: string) => console.warn('[peertube-plugin-livechat] ' + s)
   }
 
+  // This is for backward compatibility with Peertube < 3.2.0.
   const videoCache: VideoCache = {}
   let lastUUID: string | null = null
+
   let settings: any = {}
 
   function getBaseRoute (): string {
@@ -100,7 +108,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         buttonContainer.classList.add('peertube-plugin-livechat-buttons')
         container.append(buttonContainer)
 
-        displayButton(buttonContainer, 'open', labelOpen, () => openChat(), 'talking.svg')
+        displayButton(buttonContainer, 'open', labelOpen, () => openChat(uuid), 'talking.svg')
         if (showOpenBlank) {
           displayButton(buttonContainer, 'openblank', labelOpenBlank, () => {
             closeChat()
@@ -115,8 +123,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     return p
   }
 
-  function openChat (): void | boolean {
-    const uuid = lastUUID
+  function openChat (uuid: string): void | boolean {
     if (!uuid) {
       logger.log('No current uuid.')
       return false
@@ -166,7 +173,11 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     container.setAttribute('peertube-plugin-livechat-state', 'closed')
   }
 
-  function initChat (): void {
+  function initChat (video: Video): void {
+    if (!video) {
+      logger.error('No video provided')
+      return
+    }
     const videoWrapper = document.querySelector('#video-wrapper')
     if (!videoWrapper) {
       logger.error('The required div is not present in the DOM.')
@@ -186,25 +197,14 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       settings = s
 
       logger.log('Checking if this video should have a chat...')
-      const uuid = lastUUID
-      if (!uuid) {
-        logger.error('There is no lastUUID.')
-        return
-      }
-      const video = videoCache[uuid]
-      if (!video) {
-        logger.error('Can\'t find the video ' + uuid + ' in the videoCache')
-        return
-      }
-
       if (!videoHasWebchat(s, video)) {
         logger.log('This video has no webchat')
         return
       }
 
-      insertChatDom(container as HTMLElement, uuid, !!settings['chat-open-blank']).then(() => {
+      insertChatDom(container as HTMLElement, video.uuid, !!settings['chat-open-blank']).then(() => {
         if (settings['chat-auto-display']) {
-          openChat()
+          openChat(video.uuid)
         } else if (container) {
           container.setAttribute('peertube-plugin-livechat-state', 'closed')
         }
@@ -219,24 +219,39 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
   registerHook({
     target: 'filter:api.video-watch.video.get.result',
     handler: (video: Video) => {
-      // For now, hooks for action:video-watch... did not receive the video object
+      // For Peertube < 3.2.0, hooks for action:video-watch... did not receive the video object
       // So we store video objects in videoCache
       videoCache[video.uuid] = video
       lastUUID = video.uuid
-      // FIXME: this should be made in action:video-watch.video.loaded.
-      // But with Peertube 3.0.1, this hook is not called for lives
-      // in WAITING_FOR_LIVE and LIVE_ENDED states.
-      initChat()
       return video
     }
   })
-  // FIXME: this should be the correct hook for initChat...
-  // registerHook({
-  //   target: 'action:video-watch.video.loaded',
-  //   handler: () => {
-  //     initChat()
-  //   }
-  // })
+  registerHook({
+    target: 'action:video-watch.video.loaded',
+    handler: ({
+      video,
+      playlist
+    }: VideoWatchLoadedHookOptions) => {
+      if (!video) {
+        logger.info('It seems we are using Peertube < 3.2.0. Using a cache to get the video object')
+        const uuid = lastUUID
+        if (!uuid) {
+          logger.error('There is no lastUUID.')
+          return
+        }
+        video = videoCache[uuid]
+        if (!video) {
+          logger.error('Can\'t find the video ' + uuid + ' in the videoCache')
+          return
+        }
+      }
+      if (playlist) {
+        logger.info('We are in a playlist, we will not use the webchat')
+        return
+      }
+      initChat(video)
+    }
+  })
 }
 
 export {

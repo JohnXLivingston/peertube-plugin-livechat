@@ -2,6 +2,10 @@
 
 ## ???
 
+### Features
+
+* Don't display webchat when viewing a playlist.
+
 ### Fixes
 
 * Fix: starting with Peertube 3.2.0, there is a header 'X-Frame-Options'. Removing it on the iframe route.
