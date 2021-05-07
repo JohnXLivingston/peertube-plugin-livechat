@@ -56,7 +56,7 @@ Before asking for help, please use this diagnostic tool:
     name: 'chat-auto-display',
     label: 'Automatically open the chat',
     type: 'input-checkbox',
-    default: false,
+    default: true,
     private: false
   })
   registerSetting({
@@ -64,20 +64,20 @@ Before asking for help, please use this diagnostic tool:
     label: 'Show the «open in new window» button',
     private: false,
     type: 'input-checkbox',
-    default: false
+    default: true
   })
   registerSetting({
     name: 'chat-only-locals',
     label: 'Chats are only available for local videos.',
     type: 'input-checkbox',
-    default: false, // TODO: set to true when peertube has fixed https://github.com/Chocobozzz/PeerTube/issues/3838
+    default: true,
     private: false
   })
   registerSetting({
     name: 'chat-all-lives',
     label: 'Activate chat for all lives',
     type: 'input-checkbox',
-    default: false,
+    default: true,
     descriptionHTML: 'If checked, a chat will be added to all lives.',
     private: false
   })
@@ -106,7 +106,7 @@ Before asking for help, please use this diagnostic tool:
     label: 'Use builtin Prosody XMPP Server',
     type: 'input-checkbox',
     // /!\ dont auto-activate on existing settups. FIXME: how to do this?
-    default: false, // TODO: set to true when peertube has fixed https://github.com/Chocobozzz/PeerTube/issues/3838
+    default: false, // TODO: set to true when we have a way to know if the plugin was previously installed.
     private: false,
     descriptionHTML: 'If checked, this will use a builtin XMPP server. This is the recommanded setup.'
   })
@@ -126,7 +126,7 @@ Before asking for help, please use this diagnostic tool:
     name: 'chat-use-builtin',
     label: 'Use builtin ConverseJS',
     type: 'input-checkbox',
-    default: false, // TODO: set to true when peertube has fixed https://github.com/Chocobozzz/PeerTube/issues/3838
+    default: false,
     private: false,
     descriptionHTML: 'If checked, use a builtin ConverseJS iframe.<br>' +
     'You still have to configure an external XMPP service. Please see the ' +
