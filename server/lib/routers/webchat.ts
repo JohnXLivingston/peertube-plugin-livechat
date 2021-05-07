@@ -24,6 +24,8 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   router.get('/room/:videoUUID', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
+      res.removeHeader('X-Frame-Options') // this route can be opened in an iframe
+
       const settings = await settingsManager.getSettings([
         'chat-use-prosody', 'chat-use-builtin', 'chat-room', 'chat-server',
         'chat-bosh-uri', 'chat-ws-uri'
