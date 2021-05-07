@@ -19,6 +19,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [ ] | [ ] | ConverseJS | UI: make custom templates, for a better UI/UX. Autoshow muc participants depending on the chat window width.
 [ ] | [ ] | Builtin Prosody | Allow moderators to delete messages (mod_muc_moderation)
 [ ] | [ ] | ConverseJS | For anonymous user, automatically log in with a random nickname (and allow to change afterward)
+[ ] | [x] | JS | Modernise code to use new placeholders provided by Peertube 3.2.0 (with or without backward compatibility)
 
 ## Later / low priority modifications
 
