@@ -7,7 +7,8 @@ const packagejson = require('./package.json')
 
 const clientFiles = [
   'common-client-plugin',
-  'videowatch-client-plugin'
+  'videowatch-client-plugin',
+  'admin-plugin-client-plugin'
 ]
 
 let config = clientFiles.map(f => ({

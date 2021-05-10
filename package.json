@@ -16,6 +16,12 @@
       "scopes": [
         "common"
       ]
+    },
+    {
+      "script": "dist/client/admin-plugin-client-plugin.js",
+      "scopes": [
+        "admin-plugin"
+      ]
     }
   ],
   "css": [

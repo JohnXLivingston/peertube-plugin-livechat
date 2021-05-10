@@ -29,9 +29,26 @@ interface RegisterClientHelpers {
   translate: (toTranslate: string) => Promise<string>
 }
 
+interface RegisterClientFormFieldOptions {
+  name: string
+  label: string
+  type: 'input' | 'input-checkbox' | 'input-password' | 'input-textarea' | 'markdown-text' | 'markdown-enhanced'
+  descriptionHTML?: string
+  default?: string | boolean
+  private: boolean
+}
+interface RegisterClientSettingsScript {
+  isSettingHidden: (options: {
+    setting: RegisterClientFormFieldOptions
+    formValues: { [name: string]: any }
+  }) => boolean
+}
+
 interface RegisterOptions {
   registerHook: (options: RegisterClientHookOptions) => void
   peertubeHelpers: RegisterClientHelpers
+  // registerSettingsScript comes with Peertube 3.2.0.
+  registerSettingsScript?: (options: RegisterClientSettingsScript) => void
 }
 
 interface Video {

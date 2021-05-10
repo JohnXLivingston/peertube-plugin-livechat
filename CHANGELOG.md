@@ -6,6 +6,7 @@
 
 * Don't display webchat when viewing a playlist (requires Peertube 3.2.0).
 * Better default values for settings.
+* Settings: hide unnecessary settings depending on webchat mode (requires Peertube 3.2.0).
 
 ### Fixes
 
