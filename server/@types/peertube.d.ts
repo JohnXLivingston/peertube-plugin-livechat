@@ -104,6 +104,23 @@ interface VideoBlacklistCreate {
 
 type ActorModel = any // FIXME
 
+interface ServerConfig { // FIXME: this interface is not complete
+  serverVersion: string
+  serverCommit?: string
+
+  instance: {
+    name: string
+    shortDescription: string
+    isNSFW: boolean
+    // defaultNSFWPolicy: NSFWPolicyType
+    defaultClientRoute: string
+    customizations: {
+      javascript: string
+      css: string
+    }
+  }
+}
+
 interface PeerTubeHelpers {
   logger: Logger
   database: {
@@ -117,6 +134,8 @@ interface PeerTubeHelpers {
   }
   config: {
     getWebserverUrl: () => string
+    // getServerConfig comes with Peertube 3.2.0
+    getServerConfig?: () => Promise<ServerConfig>
   }
   moderation: {
     blockServer: (options: { byAccountId: number, hostToBlock: string }) => Promise<void>
