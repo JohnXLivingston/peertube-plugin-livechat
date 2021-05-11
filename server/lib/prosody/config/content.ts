@@ -120,6 +120,7 @@ class ProsodyConfigContent {
     this.global.set('pidfile', this.paths.pid)
     this.global.set('plugin_paths', [this.paths.modules])
     this.global.set('data_path', this.paths.data)
+    this.global.set('default_storage', 'internal')
     this.global.set('storage', 'internal')
 
     this.global.set('modules_enabled', [
@@ -222,6 +223,9 @@ class ProsodyConfigContent {
     this.muc.set('log_all_rooms', true)
     this.muc.set('muc_log_expires_after', duration)
     this.muc.set('muc_log_cleanup_interval', 4 * 60 * 60)
+
+    // We can also use mod_muc_moderation
+    this.muc.add('modules_enabled', 'muc_moderation')
   }
 
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
