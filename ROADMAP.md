@@ -30,3 +30,4 @@ This roadmap is given as an indication. It will be updated as we go along accord
 ---|---|---|---
 [ ] | [ ] | Common | There should be a settings to add terms & conditions in the Peertube's about page (for example if the webchat is hosted anywhere else).
 [ ] | [ ] | Builtin Prosody | Add a page with a non-singleton ConverseJS, to browser chat rooms for admins. Maybe allow direct chating between admins, and room creation?
+[ ] | [ ] | Builtin Prosody | Add a settings to enable the server to be accessed with XMPP clients.
