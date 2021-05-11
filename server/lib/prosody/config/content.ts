@@ -225,6 +225,8 @@ class ProsodyConfigContent {
     this.muc.set('muc_log_cleanup_interval', 4 * 60 * 60)
 
     // We can also use mod_muc_moderation
+    // NB: for now Prosody has a partial support of this feature with «internal» storage.
+    // It will be available in next version (0.11.8?).
     this.muc.add('modules_enabled', 'muc_moderation')
   }
 
