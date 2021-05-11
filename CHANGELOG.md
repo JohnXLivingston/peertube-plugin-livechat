@@ -1,5 +1,11 @@
 # Changelog
 
+## Not Released Yet
+
+### Features
+
+* Builtin prosody use a working dir provided by Peertube (needs Peertube >= 3.2.0)
+
 ## v2.2.0
 
 ### Features

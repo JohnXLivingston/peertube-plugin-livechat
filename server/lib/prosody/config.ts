@@ -6,10 +6,7 @@ import { ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
 import { getAPIKey } from '../apikey'
 
-async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServerOptions): Promise<string> {
-  const logger = peertubeHelpers.logger
-  logger.debug('Calling getWorkingDir')
-
+async function _getTemporaryWorkingDir ({ peertubeHelpers, storageManager }: RegisterServerOptions): Promise<string> {
   const tmpBaseDir = '/tmp/'
   let value: string = await storageManager.getData('tempDirId')
 
@@ -30,8 +27,32 @@ async function getWorkingDir ({ peertubeHelpers, storageManager }: RegisterServe
   }
 
   const dir = getPath(value)
-  logger.debug('getWorkingDir will return ' + dir)
   return dir
+}
+
+async function getWorkingDir (options: RegisterServerOptions): Promise<{
+  dir: string
+  permanent: boolean
+}> {
+  const peertubeHelpers = options.peertubeHelpers
+  const logger = peertubeHelpers.logger
+  logger.debug('Calling getWorkingDir')
+
+  if (peertubeHelpers.plugin?.getDataDirectoryPath) {
+    const dir = path.resolve(peertubeHelpers.plugin.getDataDirectoryPath(), 'prosody')
+    logger.debug('getWorkingDir will return the permanent dir ' + dir)
+    return {
+      dir: dir,
+      permanent: true
+    }
+  }
+
+  const dir = await _getTemporaryWorkingDir(options)
+  logger.debug('getWorkingDir will return the temporary dir ' + dir)
+  return {
+    dir: dir,
+    permanent: false
+  }
 }
 
 /**
@@ -68,9 +89,11 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling getProsodyFilePaths')
 
-  const dir = await getWorkingDir(options)
+  const workingDir = await getWorkingDir(options)
+  const dir = workingDir.dir
   return {
     dir: dir,
+    permanent: workingDir.permanent,
     pid: path.resolve(dir, 'prosody.pid'),
     error: path.resolve(dir, 'prosody.err'),
     log: path.resolve(dir, 'prosody.log'),

@@ -8,8 +8,13 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   result.label = 'Builtin Prosody and ConverseJS'
 
   try {
-    const dir = await getWorkingDir(options)
-    result.messages.push('The working dir is: ' + dir)
+    const workingDir = await getWorkingDir(options)
+    result.messages.push('The working dir is: ' + workingDir.dir)
+    if (workingDir.permanent) {
+      result.messages.push('The working dir is permanent')
+    } else {
+      result.messages.push('The working dir is a temporary directory')
+    }
   } catch (error) {
     result.messages.push('Error when requiring the working dir: ' + (error as string))
     return result

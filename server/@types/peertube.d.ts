@@ -154,6 +154,12 @@ interface PeerTubeHelpers {
   user?: {
     getAuthUser: (res: express.Response) => Promise<MUserDefault | undefined>
   }
+  // Added in Peertube 3.2.0
+  plugin?: {
+    getBaseStaticRoute: () => string
+    getBaseRouterRoute: () => string
+    getDataDirectoryPath: () => string
+  }
 }
 
 interface RegisterServerOptions {
