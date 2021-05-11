@@ -209,8 +209,19 @@ class ProsodyConfigContent {
     this.muc.set('restrict_room_creation', false)
   }
 
-  setArchive (duration: string): void {
-    this.global.set('archive_expires_after', duration)
+  /**
+   * Calling this method makes Prosody use mod_muc_mam to store rooms history.
+   * Should not be used when using a temporary dir.
+   * @param duration: how long the server must store messages. See https://prosody.im/doc/modules/mod_muc_mam
+   */
+  useMam (duration: string): void {
+    this.muc.add('modules_enabled', 'muc_mam')
+
+    this.muc.set('muc_log_by_default', true)
+    this.muc.set('muc_log_presences', true)
+    this.muc.set('log_all_rooms', true)
+    this.muc.set('muc_log_expires_after', duration)
+    this.muc.set('muc_log_cleanup_interval', 4 * 60 * 60)
   }
 
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {

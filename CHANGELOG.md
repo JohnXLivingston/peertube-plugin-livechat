@@ -5,6 +5,11 @@
 ### Features
 
 * Builtin prosody use a working dir provided by Peertube (needs Peertube >= 3.2.0)
+* Starting with Peertube 3.2.0, builtin prosody save room history on server. So when a user connects, he can get previously send messages.
+
+### Fixes
+
+* Builtin Prosody: settings archive_expires_after was useless without mod_mam
 
 ## v2.2.0
 

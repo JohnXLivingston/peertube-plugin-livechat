@@ -130,7 +130,10 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   config.useHttpAuthentication(authApiUrl)
   config.usePeertubeBosh(prosodyDomain, port)
   config.useMucHttpDefault(roomApiUrl)
-  config.setArchive('1w') // Remove archived messages after 1 week
+  if (paths.permanent) {
+    // TODO: add a settings so that admin can choose? (on/off and duration)
+    config.useMam('1w') // Remove archived messages after 1 week
+  }
   config.setLog(process.env.NODE_ENV === 'test' ? 'debug' : 'info')
   const content = config.write()
 
