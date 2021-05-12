@@ -94,7 +94,7 @@ class ProsodyConfigComponent extends ProsodyConfigBlock {
   }
 }
 
-type ProsodyLogLevel = 'debug' | 'info'
+type ProsodyLogLevel = 'debug' | 'info' | 'warn' | 'error'
 
 class ProsodyConfigContent {
   paths: ProsodyFilePaths
@@ -233,7 +233,10 @@ class ProsodyConfigContent {
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
     let log = ''
     log += 'log = {\n'
-    log += '  ' + level + ' = ' + writeValue(this.paths.log)
+    if (level !== 'error') {
+      log += '  ' + level + ' = ' + writeValue(this.paths.log)
+    }
+    // always log error level in a separate file.
     log += '  error = ' + writeValue(this.paths.error)
     if (syslog) {
       log += '  { to = "syslog"; levels = ' + writeValue(syslog) + ' };\n'
@@ -260,5 +263,6 @@ class ProsodyConfigContent {
 }
 
 export {
+  ProsodyLogLevel,
   ProsodyConfigContent
 }

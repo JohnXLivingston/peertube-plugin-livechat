@@ -5,6 +5,7 @@ import { ProsodyFilePaths } from './config/paths'
 import { ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
 import { getAPIKey } from '../apikey'
+import type { ProsodyLogLevel } from './config/content'
 
 async function _getTemporaryWorkingDir ({ peertubeHelpers, storageManager }: RegisterServerOptions): Promise<string> {
   const tmpBaseDir = '/tmp/'
@@ -134,7 +135,20 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     // TODO: add a settings so that admin can choose? (on/off and duration)
     config.useMam('1w') // Remove archived messages after 1 week
   }
-  config.setLog(process.env.NODE_ENV === 'test' ? 'debug' : 'info')
+  let logLevel: ProsodyLogLevel | undefined
+  if (logger.level && (typeof logger.level === 'string')) {
+    if (logger.level === 'error' || logger.level === 'info' || logger.level === 'debug') {
+      logLevel = logger.level
+    } else if (logger.level === 'warn' || logger.level === 'warning') {
+      // Should be 'warn', but just in case... (this value was buggy with peertube <= 3.2.0-rc1)
+      logLevel = 'warn'
+    }
+  }
+  if (logLevel === undefined) {
+    logger.info('No log level found in Peertube, will use default "info" for Prosody')
+    logLevel = 'info'
+  }
+  config.setLog(logLevel)
   const content = config.write()
 
   return {

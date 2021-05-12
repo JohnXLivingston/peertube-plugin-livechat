@@ -7,6 +7,7 @@
 * Builtin prosody use a working dir provided by Peertube (needs Peertube >= 3.2.0)
 * Starting with Peertube 3.2.0, builtin prosody save room history on server. So when a user connects, he can get previously send messages.
 * Starting with Peertube 3.2.0, builtin prosody also activate mod_muc_moderation, enabling moderators to moderate messages.
+* Prosody log level will be the same as the Peertube's one.
 
 ### Fixes
 
