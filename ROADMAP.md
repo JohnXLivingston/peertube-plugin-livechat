@@ -12,7 +12,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [x] | [x] | Common | Chat should not be displayed in playlists | v2.2.0
 [x] | [x] | Builtin Prosody | Do not use a temp folder, use the one provided by Peertube>=3.2.0. | Not Released Yet
 [x] | [ ] | Builtin Prosody | Use Peertube log level for prosody. | Not Released Yet
-[ ] | [x] | Builtin Prosody | Rotate prosody logs.
+[ ] | [x] | Builtin Prosody | Rotate prosody logs. | Not Released Yet
 [x] | [x] | Builtin Prosody | Data Persistence | Not Released Yet
 [ ] | [x] | Common | Add a checkbox per video to activate livechat. Only on lives.
 [ ] | [x] | Builtin Prosody | Docker: check how to install and use Prosody on docker installations. Do the documentation.

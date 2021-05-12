@@ -1,4 +1,5 @@
 import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig } from './config'
+import { startProsodyLogRotate, stopProsodyLogRotate } from './logrotate'
 import { changeHttpBindRoute } from '../routers/webchat'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
@@ -56,6 +57,15 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
 async function getProsodyAbout (options: RegisterServerOptions): Promise<string> {
   const ctl = await prosodyCtl(options, 'about')
   return ctl.message
+}
+
+async function reloadProsody (options: RegisterServerOptions): Promise<boolean> {
+  const reload = await prosodyCtl(options, 'reload')
+  if (reload.code) {
+    options.peertubeHelpers.logger.error('reloadProsody failed: ' + JSON.stringify(reload))
+    return false
+  }
+  return true
 }
 
 interface ProsodyRunning {
@@ -208,15 +218,18 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   }
   if (!processStarted) {
     logger.error('It seems that the Prosody process is not up')
-  } else {
-    logger.info('Prosody is running')
+    return
   }
+  logger.info('Prosody is running')
+  startProsodyLogRotate(options, filePaths, reloadProsody)
 }
 
 async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise<void> {
   const { peertubeHelpers } = options
   const logger = peertubeHelpers.logger
   logger.info('Checking if Prosody is running, and shutting it down if so')
+
+  stopProsodyLogRotate(options)
 
   // NB: this function is called on plugin unregister, even if prosody is not used
   // so we must avoid creating the working dir now
