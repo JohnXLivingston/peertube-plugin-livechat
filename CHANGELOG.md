@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.1
+
+### Fixes
+
+* Revert «Better default values for settings», because of a [bug in Peertube](https://github.com/Chocobozzz/PeerTube/issues/4106)
+
 ## v2.2.0
 
 ### Features
