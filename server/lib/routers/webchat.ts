@@ -1,6 +1,6 @@
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import type { ProxyOptions } from 'express-http-proxy'
-import { getBaseRouterRoute } from '../helpers'
+import { getBaseRouterRoute, getBaseStaticRoute } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
 import * as path from 'path'
@@ -72,9 +72,8 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       }
 
       let page = '' + (converseJSIndex as string)
-      // FIXME: Peertube should provide the static folder path. For now:
-      const staticRelative = '../../../static'
-      page = page.replace(/{{BASE_STATIC_URL}}/g, staticRelative)
+      const baseStaticUrl = getBaseStaticRoute(options)
+      page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
       page = page.replace(/{{JID}}/g, server)
       room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
       page = page.replace(/{{ROOM}}/g, room)
