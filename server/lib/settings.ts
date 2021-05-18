@@ -1,4 +1,4 @@
-import { getBaseRouter } from './helpers'
+import { getBaseRouterRoute } from './helpers'
 import { ensureProsodyRunning, ensureProsodyNotRunning } from './prosody/ctl'
 
 export function initSettings (options: RegisterServerOptions): void {
@@ -49,7 +49,7 @@ There is 3 way to use it:
 </ul>
 <br>
 Before asking for help, please use this diagnostic tool:
-<a href="${getBaseRouter()}settings/diagnostic" target="_blank">Launch diagnostic</a>
+<a href="${getBaseRouterRoute(options)}settings/diagnostic" target="_blank">Launch diagnostic</a>
 <br>`
   })
   registerSetting({

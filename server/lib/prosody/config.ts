@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { pluginName, getBaseRouter } from '../helpers'
+import { pluginName, getBaseRouterRoute } from '../helpers'
 import { ProsodyFilePaths } from './config/paths'
 import { ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
@@ -122,7 +122,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
 
   const apikey = await getAPIKey(options)
   const baseApiUrl = options.peertubeHelpers.config.getWebserverUrl() +
-    getBaseRouter() +
+    getBaseRouterRoute(options) +
     'api/'
   const authApiUrl = baseApiUrl + 'user' // FIXME: should be protected by apikey, but mod_auth_http cant handle params
   const roomApiUrl = baseApiUrl + 'room?apikey=' + apikey + '&jid={room.jid|jid_node}'

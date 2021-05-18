@@ -11,13 +11,21 @@ if (!/^peertube-plugin-[-a-z]+$/.test(pluginName)) {
 }
 const pluginShortName = pluginName.substring('peertube-plugin-'.length)
 
-// FIXME: in Peertube <= 3.1.0, PeertubeHelpers dont provide this function
-function getBaseRouter (): string {
-  return '/plugins/' + pluginShortName + '/router/'
+function getBaseRouterRoute (options: RegisterServerOptions): string {
+  // In Peertube <= 3.1.0, PeertubeHelpers dont provide this function
+  // Available in Peertube >= 3.2.0
+  if (options.peertubeHelpers.plugin) {
+    return options.peertubeHelpers.plugin.getBaseRouterRoute()
+  }
+  return '/plugins/' + pluginShortName + '/' + version + '/router/'
 }
 
-// FIXME: in Peertube <= 3.1.0, PeertubeHelpers dont provide this function
-function getBaseStaticRoute (): string {
+function getBaseStaticRoute (options: RegisterServerOptions): string {
+  // In Peertube <= 3.1.0, PeertubeHelpers dont provide this function.
+  // Available in Peertube >= 3.2.0
+  if (options.peertubeHelpers.plugin) {
+    return options.peertubeHelpers.plugin.getBaseStaticRoute()
+  }
   return '/plugins/' + pluginShortName + '/' + version + '/static/'
 }
 
@@ -49,7 +57,7 @@ async function getAuthUser (options: RegisterServerOptions, res: Response): Prom
   return res.locals.oauth?.token?.User
 }
 
-// FIXME: Peertube <= 3.1.0 has no way to obtain user nickname/
+// Peertube <= 3.1.0 has no way to obtain user nickname/
 // Peertube >= 3.2.0: getAuthUser has user.Account.name.
 async function getUserNickname (options: RegisterServerOptions, user: MUserDefault): Promise<string | undefined> {
   const peertubeHelpers = options.peertubeHelpers
@@ -101,7 +109,7 @@ async function getUserNickname (options: RegisterServerOptions, user: MUserDefau
 }
 
 export {
-  getBaseRouter,
+  getBaseRouterRoute,
   getBaseStaticRoute,
   isUserAdmin,
   getAuthUser,

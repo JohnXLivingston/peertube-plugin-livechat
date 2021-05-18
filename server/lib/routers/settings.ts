@@ -11,7 +11,7 @@ async function initSettingsRouter (options: RegisterServerOptions): Promise<Rout
   router.get('/diagnostic', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
       logger.info('Accessing peertube-plugin-livechat diagnostic tool.')
-      const src = getBaseStaticRoute() + 'settings/settings.js'
+      const src = getBaseStaticRoute(options) + 'settings/settings.js'
       res.status(200)
       res.type('html')
       res.send('<html><body><div>Loading...</div></body><script src="' + src + '"></script></html>')

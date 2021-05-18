@@ -10,6 +10,10 @@
 * Prosody log level will be the same as the Peertube's one.
 * Prosody log rotation every 24 hour.
 
+### Peertube 3.2.0
+
+* Use peertubeHelpers.plugin methods when available. Backward compatibility is maintained.
+
 ### Fixes
 
 * Builtin Prosody: settings archive_expires_after was useless without mod_mam
