@@ -178,12 +178,16 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       logger.error('No video provided')
       return
     }
-    const videoWrapper = document.querySelector('#video-wrapper')
-    if (!videoWrapper) {
-      logger.error('The required div is not present in the DOM.')
+    // Peertube >= 3.2.0 provide #plugin-placeholder-player-next
+    const placeholder =
+      document.getElementById('plugin-placeholder-player-next') ??
+      document.getElementById('video-wrapper')
+    if (!placeholder) {
+      logger.error('The required placeholder div is not present in the DOM.')
       return
     }
-    let container = videoWrapper.querySelector('#peertube-plugin-livechat-container')
+
+    let container = placeholder.querySelector('#peertube-plugin-livechat-container')
     if (container) {
       logger.log('The chat seems already initialized...')
       return
@@ -191,7 +195,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     container = document.createElement('div')
     container.setAttribute('id', 'peertube-plugin-livechat-container')
     container.setAttribute('peertube-plugin-livechat-state', 'initializing')
-    videoWrapper.append(container)
+    placeholder.append(container)
 
     peertubeHelpers.getSettings().then((s: any) => {
       settings = s
