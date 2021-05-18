@@ -133,7 +133,8 @@ window.initConverse = async function initConverse ({
       spoiler: true,
       emoji: true,
       toggle_occupants: true
-    }
+    },
+    persistent_store: 'sessionStorage'
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
