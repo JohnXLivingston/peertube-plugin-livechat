@@ -180,5 +180,9 @@ window.initConverse = async function initConverse ({
     params.modtools_disable_assign = true
   }
 
-  window.converse.initialize(params)
+  try {
+    window.converse.initialize(params)
+  } catch (error) {
+    console.error('Failed initializing converseJS', error)
+  }
 }
