@@ -116,7 +116,6 @@ window.initConverse = async function initConverse ({
     singleton: true,
     auto_focus: !isInIframe,
     hide_muc_participants: isInIframe,
-    keepalive: true,
     play_sounds: false,
     muc_mention_autocomplete_min_chars: 3,
     muc_mention_autocomplete_filter: 'contains',
@@ -152,6 +151,8 @@ window.initConverse = async function initConverse ({
       } else {
         params.muc_nickname_from_jid = true
       }
+      // We dont need the keepalive. And I suppose it is related to some bugs when opening a previous chat window.
+      params.keepalive = false
       isAuthenticated = true
       // FIXME: use params.oauth_providers?
     }
@@ -159,6 +160,7 @@ window.initConverse = async function initConverse ({
 
   if (!isAuthenticated) {
     console.log('User is not authenticated.')
+    params.keepalive = true
     // TODO: try to make these params work
     // params.auto_register_muc_nickname = true
     // params.muc_show_logs_before_join = true
