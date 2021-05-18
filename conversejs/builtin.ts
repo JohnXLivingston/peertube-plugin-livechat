@@ -106,6 +106,7 @@ window.initConverse = async function initConverse ({
     auto_join_rooms: [
       room
     ],
+    keepalive: true,
     discover_connection_methods: false, // this parameter seems buggy with converseJS 7.0.4
     bosh_service_url: boshServiceUrl === '' ? undefined : boshServiceUrl,
     websocket_url: websocketServiceUrl === '' ? undefined : websocketServiceUrl,
@@ -161,7 +162,6 @@ window.initConverse = async function initConverse ({
 
   if (!isAuthenticated) {
     console.log('User is not authenticated.')
-    params.keepalive = true
     // TODO: try to make these params work
     // params.auto_register_muc_nickname = true
     // params.muc_show_logs_before_join = true
