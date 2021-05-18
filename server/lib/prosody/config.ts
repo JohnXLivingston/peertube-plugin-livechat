@@ -134,6 +134,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   if (paths.permanent) {
     // TODO: add a settings so that admin can choose? (on/off and duration)
     config.useMam('1w') // Remove archived messages after 1 week
+    // TODO: add a settings to choose?
+    config.useDefaultPersistent()
   }
   let logLevel: ProsodyLogLevel | undefined
   if (logger.level && (typeof logger.level === 'string')) {

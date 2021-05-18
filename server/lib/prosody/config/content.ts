@@ -230,6 +230,14 @@ class ProsodyConfigContent {
     this.muc.add('modules_enabled', 'muc_moderation')
   }
 
+  /**
+   * Rooms will be persistent by default (they will not be deleted if no participant).
+   * Should not be used when using a temporary dir.
+   */
+  useDefaultPersistent (): void {
+    this.muc.set('muc_room_default_persistent', true)
+  }
+
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
     let log = ''
     log += 'log = {\n'
