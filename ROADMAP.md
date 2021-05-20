@@ -22,6 +22,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [x] | [ ] | Builtin Prosody | Allow moderators to delete messages (mod_muc_moderation). | Not Released Yet
 [ ] | [ ] | ConverseJS | For anonymous user, automatically log in with a random nickname (and allow to change afterward)
 [ ] | [x] | JS | Modernise code to use new placeholders provided by Peertube 3.2.0 (with or without backward compatibility)
+[ ] | [x] | Settings | Restore default values for some checkbox to true (see [this bug](https://github.com/Chocobozzz/PeerTube/issues/4106))
 [ ] | [x] | Settings | Replace some checkbox by a select (for the webchat mode). Migrate old checkbox values.
 [ ] | [x] | Settings | Dynamic settings screen. Inline help/documentation. | First changes in v2.2.0
 
