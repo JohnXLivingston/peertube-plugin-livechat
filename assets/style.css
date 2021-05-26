@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+/* For Peertube >= 3.2.0 */
+#plugin-placeholder-player-next #peertube-plugin-livechat-container {
+  height: 100%;
+}
+
 .peertube-plugin-livechat-buttons {
   display: flex;
   flex-direction: row;
