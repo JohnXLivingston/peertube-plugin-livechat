@@ -14,6 +14,7 @@
 ### Peertube 3.2.0
 
 * Use peertubeHelpers.plugin methods when available. Backward compatibility is maintained.
+* Use new DOM placeholder for webchat when available.
 
 ### Fixes
 
