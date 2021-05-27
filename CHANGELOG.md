@@ -1,6 +1,6 @@
 # Changelog
 
-## Not Released Yet
+## v2.3.0
 
 ### Features
 
