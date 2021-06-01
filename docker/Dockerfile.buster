@@ -1,0 +1,3 @@
+FROM chocobozzz/peertube:production-buster
+
+RUN apt -y update && apt install -y prosody && apt -y clean
