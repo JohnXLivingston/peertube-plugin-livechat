@@ -4,12 +4,9 @@ Althought this mode is still experimental and under heavy development, it is the
 
 Peertube will launch a [Prosody](https://prosody.im) process, with a custom configuration.
 
-## For Docker installations
-
-This mode is not yet compatible with a Docker Peertube installation.
-If you are using Docker and want to help to make this work, please contact me.
-
 ## Prerequisite
+
+### For standard Peertube installations
 
 You have to install [Prosody](https://prosody.im) on your server:
 
@@ -23,11 +20,20 @@ If you are not using prosody for anything else on your server, you can then disa
 sudo systemctl disable prosody && sudo systemctl stop prosody
 ```
 
-**NB:** the plugin will create a directory in the `/tmp/` folder. Please ensure that the `peertube` user has write access to this directory.
+**NB:** with Peertube prior to version 3.2.0, the plugin will create a directory in the `/tmp/` folder. Please ensure that the `peertube` user has write access to this directory.
 
 And that's it!
 
 The Prosody process launched by the plugin will listen on a specific port, and only on the localhost interface.
+
+### For Docker installations
+
+In the docker-compose.yml file, replace the peertube service image
+`image: chocobozzz/peertube:production-buster` by `image: johnxlivingston/peertubelivechat:production-buster`.
+
+And that's it!
+
+You can find the source for this Dockerfile [here](../docker/Dockerfile.buster).
 
 ## Settings
 
