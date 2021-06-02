@@ -1,5 +1,23 @@
 # Changelog
 
+## v3.0.0
+
+### Important Notes
+
+* This version requires at least Peertube version 3.2.0. It is no more compatible with previous Peertube versions.
+
+### Features
+
+* ...
+
+### Changes
+
+* Removed compatibility with Peertube previous to 3.2.0.
+
+### Fixes
+
+* ...
+
 ## v2.3.0
 
 ### Features
