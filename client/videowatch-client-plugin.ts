@@ -17,7 +17,10 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
   let settings: any = {}
 
   function getBaseRoute (): string {
-    // FIXME: should be provided by PeertubeHelpers (does not exists for now)
+    // NB: this will come with Peertube > 3.2.1 (3.3.0?)
+    if (peertubeHelpers.getBaseRouterRoute) {
+      return peertubeHelpers.getBaseRouterRoute()
+    }
     // We are guessing the route with the correct plugin version with this trick:
     const staticBase = peertubeHelpers.getBaseStaticRoute()
     // we can't use '/plugins/livechat/router', because the loaded html page needs correct relative paths.

@@ -8,6 +8,8 @@ interface RegisterClientHookOptions {
 
 interface RegisterClientHelpers {
   getBaseStaticRoute: () => string
+  // NB: getBaseRouterRoute will come with Peertube > 3.2.1 (3.3.0?)
+  getBaseRouterRoute?: () => string
   isLoggedIn: () => boolean
   getSettings: () => Promise<{ [ name: string ]: string }>
   notifier: {
