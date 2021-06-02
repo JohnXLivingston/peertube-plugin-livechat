@@ -12,21 +12,17 @@ if (!/^peertube-plugin-[-a-z]+$/.test(pluginName)) {
 const pluginShortName = pluginName.substring('peertube-plugin-'.length)
 
 function getBaseRouterRoute (options: RegisterServerOptions): string {
-  // In Peertube <= 3.1.0, PeertubeHelpers dont provide this function
-  // Available in Peertube >= 3.2.0
-  if (options.peertubeHelpers.plugin) {
-    return options.peertubeHelpers.plugin.getBaseRouterRoute()
+  if (!options.peertubeHelpers.plugin) {
+    throw new Error('Missing peertubeHelpers.plugin, have you the correct Peertube version?')
   }
-  return '/plugins/' + pluginShortName + '/' + version + '/router/'
+  return options.peertubeHelpers.plugin.getBaseRouterRoute()
 }
 
 function getBaseStaticRoute (options: RegisterServerOptions): string {
-  // In Peertube <= 3.1.0, PeertubeHelpers dont provide this function.
-  // Available in Peertube >= 3.2.0
-  if (options.peertubeHelpers.plugin) {
-    return options.peertubeHelpers.plugin.getBaseStaticRoute()
+  if (!options.peertubeHelpers.plugin) {
+    throw new Error('Missing peertubeHelpers.plugin, have you the correct Peertube version?')
   }
-  return '/plugins/' + pluginShortName + '/' + version + '/static/'
+  return options.peertubeHelpers.plugin.getBaseStaticRoute()
 }
 
 async function isUserAdmin (options: RegisterServerOptions, res: Response): Promise<boolean> {

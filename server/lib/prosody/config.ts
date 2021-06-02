@@ -12,8 +12,8 @@ async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const logger = peertubeHelpers.logger
   logger.debug('Calling getWorkingDir')
 
-  if (!peertubeHelpers.plugin?.getDataDirectoryPath) {
-    throw new Error('Cant get the plugin Data Directory')
+  if (!peertubeHelpers.plugin) {
+    throw new Error('Missing peertubeHelpers.plugin, have you the correct Peertube version?')
   }
   const dir = path.resolve(peertubeHelpers.plugin.getDataDirectoryPath(), 'prosody')
   logger.debug('getWorkingDir will return the dir ' + dir)
