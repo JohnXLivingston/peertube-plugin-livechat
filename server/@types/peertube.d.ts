@@ -91,9 +91,8 @@ interface MUserDefault { // FIXME: this interface is not complete
   email: string
   blocked: boolean
   role: UserRole
-  Account?: {
-    // Account.name comes in Peertube 3.2.0
-    name?: string
+  Account?: { // FIXME: can this be undefined?
+    name: string
   }
 }
 
