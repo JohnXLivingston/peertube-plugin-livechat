@@ -1,3 +1,4 @@
+import { migrateSettings } from './lib/migration/settings'
 import { initSettings } from './lib/settings'
 import { initRouters } from './lib/routers/index'
 import { ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
@@ -9,6 +10,8 @@ let OPTIONS: RegisterServerOptions | undefined
 
 async function register (options: RegisterServerOptions): Promise<any> {
   OPTIONS = options
+
+  await migrateSettings(options)
 
   await initSettings(options)
   await initRouters(options)

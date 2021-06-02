@@ -1,7 +1,9 @@
 import { getBaseRouterRoute } from './helpers'
 import { ensureProsodyRunning, ensureProsodyNotRunning } from './prosody/ctl'
 
-export function initSettings (options: RegisterServerOptions): void {
+type ChatType = 'disabled' | 'builtin-prosody' | 'builtin-converse' | 'external-uri'
+
+function initSettings (options: RegisterServerOptions): void {
   const { peertubeHelpers, registerSetting, settingsManager } = options
 
   registerSetting({
@@ -213,4 +215,9 @@ Before asking for help, please use this diagnostic tool:
       }
     }
   })
+}
+
+export {
+  ChatType,
+  initSettings
 }
