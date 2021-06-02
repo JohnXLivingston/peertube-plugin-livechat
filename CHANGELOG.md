@@ -19,6 +19,16 @@
 
 * ...
 
+## v2.3.1
+
+### Features
+
+* Added Dockerfile to use builtin prosody in Peertube docker installations.
+
+### Fixes
+
+* Fix typo: builtin prosody won't stop when desactivated.
+
 ## v2.3.0
 
 ### Features

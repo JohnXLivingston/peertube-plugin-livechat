@@ -207,7 +207,7 @@ Before asking for help, please use this diagnostic tool:
       if (settings['chat-use-prosody'] === true) {
         peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
         await ensureProsodyRunning(options)
-      } else if (settings['chat-use-prody'] === false) {
+      } else if (settings['chat-use-prosody'] === false) {
         peertubeHelpers.logger.info('Saving settings, ensuring prosody is not running')
         await ensureProsodyNotRunning(options)
       }
