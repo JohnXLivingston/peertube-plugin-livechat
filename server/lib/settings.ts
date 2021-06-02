@@ -202,8 +202,6 @@ Before asking for help, please use this diagnostic tool:
 
   // settings changes management
 
-  // FIXME: Peertube <= 3.1.0 wrongly consider that the callback should not be async
-  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   settingsManager.onSettingsChange(async (settings: any) => {
     if ('chat-use-prosody' in settings) {
       if (settings['chat-use-prosody'] === true) {
