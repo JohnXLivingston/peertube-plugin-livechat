@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.3.1
+
+### Fixes
+
+* Fix typo: builtin prosody won't stop when desactivated.
+
 ## v2.3.0
 
 ### Features
