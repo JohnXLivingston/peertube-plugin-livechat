@@ -1,7 +1,6 @@
 import { getBaseRouterRoute } from './helpers'
 import { ensureProsodyRunning, ensureProsodyNotRunning } from './prosody/ctl'
-
-type ChatType = 'disabled' | 'builtin-prosody' | 'builtin-converse' | 'external-uri'
+import type { ChatType } from '../../shared/lib/types'
 
 function initSettings (options: RegisterServerOptions): void {
   const { peertubeHelpers, registerSetting, settingsManager } = options
@@ -101,6 +100,66 @@ Before asking for help, please use this diagnostic tool:
       'You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />' +
       'Don\'t add private videos, the UUIDs will be send to frontend.',
     private: false
+  })
+
+  registerSetting({
+    name: 'chat-type',
+    label: 'Webchat mode',
+    type: 'select',
+    default: 'disabled' as ChatType,
+    private: false,
+    options: [
+      { value: 'disabled', label: 'Disabled' },
+      { value: 'builtin-prosody', label: 'Prosody server controlled by Peertube (recommended)' },
+      { value: 'builtin-converse', label: 'Connect to an existing XMPP server with ConverseJS' },
+      { value: 'external-uri', label: 'Use an external webchat' }
+    ] as Array<{value: ChatType, label: string}>,
+    descriptionHTML: 'Please choose the webchat mode you want to use.'
+  })
+
+  registerSetting({
+    name: 'chat-type-help-disabled',
+    type: 'html',
+    descriptionHTML: 'The chat is disabled.',
+    private: true
+  })
+  registerSetting({
+    name: 'chat-type-help-builtin-prosody',
+    type: 'html',
+    label: 'Prosody server controlled by Peertube (recommended)',
+    descriptionHTML: `
+      With this mode, the Peertube server will control a local Prosody XMPP server.
+      Please read the <a
+        href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/prosody.md"
+        target="_blank"
+      >documentation.</a>`,
+    private: true
+  })
+  registerSetting({
+    name: 'chat-type-help-builtin-converse',
+    type: 'html',
+    label: 'Connect to an existing XMPP server with ConverseJS',
+    descriptionHTML: `
+      With this mode, you can connect to an existing XMPP server, with anonymous authentication and rooms enabled.
+      Please read the
+      <a
+        href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/conversejs.md"
+        target="_blank"
+      >documentation</a>.`,
+    private: true
+  })
+  registerSetting({
+    name: 'chat-type-help-external-uri',
+    type: 'html',
+    label: 'Use an external webchat',
+    descriptionHTML: `
+      With this mode, you can use any external webchat that can be included in an iframe.
+      Please read the
+      <a
+        href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/external.md"
+        target="_blank"
+      >documentation</a>.`,
+    private: true
   })
 
   registerSetting({
@@ -218,6 +277,5 @@ Before asking for help, please use this diagnostic tool:
 }
 
 export {
-  ChatType,
   initSettings
 }

@@ -1,5 +1,5 @@
 import { pluginShortName } from '../helpers'
-import type { ChatType } from '../settings'
+import type { ChatType } from '../../../shared/lib/types'
 
 async function _migrateChatTypeSetting (options: RegisterServerOptions): Promise<void> {
   const peertubeHelpers = options.peertubeHelpers

@@ -4,13 +4,18 @@ interface RegisterServerHookOptions {
   priority?: number
 }
 
+type RegisterServerSettingOptionsType = 'input' | 'input-checkbox' | 'input-password' | 'input-textarea' |
+'markdown-text' | 'markdown-enhanced' |
+'select' | 'html'
+
 interface RegisterServerSettingOptions {
-  name: string
-  label: string
-  type: 'input' | 'input-checkbox' | 'input-password' | 'input-textarea' | 'markdown-text' | 'markdown-enhanced'
+  name?: string
+  label?: string
+  type: RegisterServerSettingOptionsType
   descriptionHTML?: string
   default?: string | boolean
   private: boolean
+  options?: Array<{ value: string, label: string }>
 }
 
 interface PluginSettingsManager {
