@@ -13,6 +13,7 @@
 ### Changes
 
 * Removed compatibility with Peertube previous to 3.2.0.
+* Restoring default values for checkboxes in settings (there was a bug with Peertube previous to 3.2.0)
 
 ### Fixes
 

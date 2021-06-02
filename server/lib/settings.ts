@@ -56,7 +56,7 @@ Before asking for help, please use this diagnostic tool:
     name: 'chat-auto-display',
     label: 'Automatically open the chat',
     type: 'input-checkbox',
-    default: false, // FIXME: set true when Peertube 3.2.0 is out (https://github.com/Chocobozzz/PeerTube/issues/4106)
+    default: true,
     private: false
   })
   registerSetting({
@@ -64,20 +64,20 @@ Before asking for help, please use this diagnostic tool:
     label: 'Show the «open in new window» button',
     private: false,
     type: 'input-checkbox',
-    default: false // FIXME: set true when Peertube 3.2.0 is out (https://github.com/Chocobozzz/PeerTube/issues/4106)
+    default: true
   })
   registerSetting({
     name: 'chat-only-locals',
     label: 'Chats are only available for local videos.',
     type: 'input-checkbox',
-    default: false, // FIXME: set true when Peertube 3.2.0 is out (https://github.com/Chocobozzz/PeerTube/issues/4106)
+    default: true,
     private: false
   })
   registerSetting({
     name: 'chat-all-lives',
     label: 'Activate chat for all lives',
     type: 'input-checkbox',
-    default: false, // FIXME: set true when Peertube 3.2.0 is out (https://github.com/Chocobozzz/PeerTube/issues/4106)
+    default: true,
     descriptionHTML: 'If checked, a chat will be added to all lives.',
     private: false
   })
