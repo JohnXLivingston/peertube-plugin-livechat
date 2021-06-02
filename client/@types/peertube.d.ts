@@ -47,8 +47,7 @@ interface RegisterClientSettingsScript {
 interface RegisterOptions {
   registerHook: (options: RegisterClientHookOptions) => void
   peertubeHelpers: RegisterClientHelpers
-  // registerSettingsScript comes with Peertube 3.2.0.
-  registerSettingsScript?: (options: RegisterClientSettingsScript) => void
+  registerSettingsScript: (options: RegisterClientSettingsScript) => void
 }
 
 interface Video {
