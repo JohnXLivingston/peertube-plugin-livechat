@@ -20,8 +20,6 @@ If you are not using prosody for anything else on your server, you can then disa
 sudo systemctl disable prosody && sudo systemctl stop prosody
 ```
 
-**NB:** with Peertube prior to version 3.2.0, the plugin will create a directory in the `/tmp/` folder. Please ensure that the `peertube` user has write access to this directory.
-
 And that's it!
 
 The Prosody process launched by the plugin will listen on a specific port, and only on the localhost interface.

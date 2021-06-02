@@ -212,7 +212,6 @@ class ProsodyConfigContent {
 
   /**
    * Calling this method makes Prosody use mod_muc_mam to store rooms history.
-   * Should not be used when using a temporary dir.
    * @param duration: how long the server must store messages. See https://prosody.im/doc/modules/mod_muc_mam
    */
   useMam (duration: string): void {
@@ -232,7 +231,6 @@ class ProsodyConfigContent {
 
   /**
    * Rooms will be persistent by default (they will not be deleted if no participant).
-   * Should not be used when using a temporary dir.
    */
   useDefaultPersistent (): void {
     this.muc.set('muc_room_default_persistent', true)

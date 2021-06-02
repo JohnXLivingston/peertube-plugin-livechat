@@ -9,12 +9,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
 
   try {
     const workingDir = await getWorkingDir(options)
-    result.messages.push('The working dir is: ' + workingDir.dir)
-    if (workingDir.permanent) {
-      result.messages.push('The working dir is permanent')
-    } else {
-      result.messages.push('The working dir is a temporary directory')
-    }
+    result.messages.push('The working dir is: ' + workingDir)
   } catch (error) {
     result.messages.push('Error when requiring the working dir: ' + (error as string))
     return result

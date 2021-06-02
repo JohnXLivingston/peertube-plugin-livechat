@@ -1,66 +1,27 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { pluginName, getBaseRouterRoute } from '../helpers'
+import { getBaseRouterRoute } from '../helpers'
 import { ProsodyFilePaths } from './config/paths'
 import { ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
 import { getAPIKey } from '../apikey'
 import type { ProsodyLogLevel } from './config/content'
 
-async function _getTemporaryWorkingDir ({ peertubeHelpers, storageManager }: RegisterServerOptions): Promise<string> {
-  const tmpBaseDir = '/tmp/'
-  let value: string = await storageManager.getData('tempDirId')
-
-  function getPath (value: string): string {
-    return path.resolve(tmpBaseDir, pluginName + '-' + value)
-  }
-
-  while (!value) {
-    peertubeHelpers.logger.info('Generating an id for temp dir')
-    value = Math.random().toString(36).slice(2, 12)
-    const name = getPath(value)
-    if (fs.existsSync(name)) {
-      peertubeHelpers.logger.info('The folder ' + name + ' already exists, generating another name...')
-      value = ''
-      continue
-    }
-    await storageManager.storeData('tempDirId', value)
-  }
-
-  const dir = getPath(value)
-  return dir
-}
-
-async function getWorkingDir (options: RegisterServerOptions): Promise<{
-  dir: string
-  permanent: boolean
-}> {
+async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
   const logger = peertubeHelpers.logger
   logger.debug('Calling getWorkingDir')
 
-  if (peertubeHelpers.plugin?.getDataDirectoryPath) {
-    const dir = path.resolve(peertubeHelpers.plugin.getDataDirectoryPath(), 'prosody')
-    logger.debug('getWorkingDir will return the permanent dir ' + dir)
-    return {
-      dir: dir,
-      permanent: true
-    }
+  if (!peertubeHelpers.plugin?.getDataDirectoryPath) {
+    throw new Error('Cant get the plugin Data Directory')
   }
-
-  const dir = await _getTemporaryWorkingDir(options)
-  logger.debug('getWorkingDir will return the temporary dir ' + dir)
-  return {
-    dir: dir,
-    permanent: false
-  }
+  const dir = path.resolve(peertubeHelpers.plugin.getDataDirectoryPath(), 'prosody')
+  logger.debug('getWorkingDir will return the dir ' + dir)
+  return dir
 }
 
 /**
  * Creates the working dir if needed, and returns it.
- * NB: for now, I try to create a directory in /tmp/.
- * To ensure that there is no conflict with another peertube instance,
- * I used a randomly generated id that will be stored in database.
  */
 async function ensureWorkingDir (options: RegisterServerOptions): Promise<string> {
   const logger = options.peertubeHelpers.logger
@@ -90,11 +51,9 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling getProsodyFilePaths')
 
-  const workingDir = await getWorkingDir(options)
-  const dir = workingDir.dir
+  const dir = await getWorkingDir(options)
   return {
     dir: dir,
-    permanent: workingDir.permanent,
     pid: path.resolve(dir, 'prosody.pid'),
     error: path.resolve(dir, 'prosody.err'),
     log: path.resolve(dir, 'prosody.log'),
@@ -131,12 +90,12 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   config.useHttpAuthentication(authApiUrl)
   config.usePeertubeBosh(prosodyDomain, port)
   config.useMucHttpDefault(roomApiUrl)
-  if (paths.permanent) {
-    // TODO: add a settings so that admin can choose? (on/off and duration)
-    config.useMam('1w') // Remove archived messages after 1 week
-    // TODO: add a settings to choose?
-    config.useDefaultPersistent()
-  }
+
+  // TODO: add a settings so that admin can choose? (on/off and duration)
+  config.useMam('1w') // Remove archived messages after 1 week
+  // TODO: add a settings to choose?
+  config.useDefaultPersistent()
+
   let logLevel: ProsodyLogLevel | undefined
   if (logger.level && (typeof logger.level === 'string')) {
     if (logger.level === 'error' || logger.level === 'info' || logger.level === 'debug') {
