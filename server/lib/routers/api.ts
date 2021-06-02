@@ -3,7 +3,7 @@ import { videoHasWebchat } from '../../../shared/lib/video'
 import { asyncMiddleware } from '../middlewares/async'
 import { getCheckAPIKeyMiddleware } from '../middlewares/apikey'
 import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } from '../prosody/auth'
-import { getAuthUser, getUserNickname } from '../helpers'
+import { getUserNickname } from '../helpers'
 import { Affiliations, getVideoAffiliations } from '../prosody/config/affiliations'
 import { getProsodyDomain } from '../prosody/config/domain'
 
@@ -92,7 +92,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
   router.get('/auth', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
-      const user = await getAuthUser(options, res)
+      const user = await peertubeHelpers.user.getAuthUser(res)
       if (!user) {
         res.sendStatus(403)
         return

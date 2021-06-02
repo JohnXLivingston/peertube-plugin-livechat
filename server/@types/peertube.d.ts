@@ -127,14 +127,12 @@ interface PeerTubeHelpers {
   }
   videos: {
     loadByUrl: (url: string) => Promise<MVideoThumbnail>
-    // NB: loadByIdOrUUID was introduced in v3.1.0
     loadByIdOrUUID: (id: number | string) => Promise<MVideoThumbnail>
     removeVideo: (videoId: number) => Promise<void>
   }
   config: {
     getWebserverUrl: () => string
-    // getServerConfig comes with Peertube 3.2.0
-    getServerConfig?: () => Promise<ServerConfig>
+    getServerConfig: () => Promise<ServerConfig>
   }
   moderation: {
     blockServer: (options: { byAccountId: number, hostToBlock: string }) => Promise<void>
@@ -149,8 +147,7 @@ interface PeerTubeHelpers {
   server: {
     getServerActor: () => Promise<ActorModel>
   }
-  // Added in Peertube 3.2.0
-  user?: {
+  user: {
     getAuthUser: (res: express.Response) => Promise<MUserDefault | undefined>
   }
   // Added in Peertube 3.2.0

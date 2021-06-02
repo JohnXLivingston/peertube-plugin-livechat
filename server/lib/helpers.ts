@@ -29,10 +29,8 @@ function getBaseStaticRoute (options: RegisterServerOptions): string {
   return '/plugins/' + pluginShortName + '/' + version + '/static/'
 }
 
-// Peertube <= 3.1.0 has no way to test that current user is admin
-// Peertube >= 3.2.0 has getAuthUser helper
 async function isUserAdmin (options: RegisterServerOptions, res: Response): Promise<boolean> {
-  const user = await getAuthUser(options, res)
+  const user = await options.peertubeHelpers.user.getAuthUser(res)
   if (!user) {
     return false
   }
@@ -43,18 +41,6 @@ async function isUserAdmin (options: RegisterServerOptions, res: Response): Prom
     return false
   }
   return true
-}
-
-// Peertube <= 3.1.0 has no way to get user informations.
-// This is a hack.
-// Peertube >= 3.2.0 has getAuthUser helper
-async function getAuthUser (options: RegisterServerOptions, res: Response): Promise<MUserDefault | undefined> {
-  const peertubeHelpers = options.peertubeHelpers
-  if (peertubeHelpers.user?.getAuthUser) {
-    return peertubeHelpers.user.getAuthUser(res)
-  }
-  peertubeHelpers.logger.debug('Peertube does not provide getAuthUser for now, fallback on hack')
-  return res.locals.oauth?.token?.User
 }
 
 async function getUserNickname (options: RegisterServerOptions, user: MUserDefault): Promise<string | undefined> {
@@ -72,7 +58,6 @@ export {
   getBaseRouterRoute,
   getBaseStaticRoute,
   isUserAdmin,
-  getAuthUser,
   getUserNickname,
   pluginName,
   pluginShortName
