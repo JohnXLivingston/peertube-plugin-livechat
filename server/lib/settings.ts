@@ -27,74 +27,6 @@ function initSettings (options: RegisterServerOptions): void {
 <br>`
   })
 
-  // ********** Chat behaviour
-  registerSetting({
-    type: 'html',
-    private: true,
-    descriptionHTML: '<h3>Chat behaviour</h3>'
-  })
-  registerSetting({
-    name: 'chat-auto-display',
-    label: 'Automatically open the chat',
-    descriptionHTML: 'When watching a video, the chatbox will automatically open',
-    type: 'input-checkbox',
-    default: true,
-    private: false
-  })
-  registerSetting({
-    name: 'chat-open-blank',
-    label: 'Show the «open in new window» button',
-    descriptionHTML: 'There will be a button for opening the webchat in a new window.',
-    private: false,
-    type: 'input-checkbox',
-    default: true
-  })
-  registerSetting({
-    name: 'chat-only-locals',
-    label: 'Chats are only available for local videos.',
-    descriptionHTML: 'If you uncheck this settings, the chat will also be enabled on remote videos.',
-    type: 'input-checkbox',
-    default: true,
-    private: false
-  })
-  registerSetting({
-    name: 'chat-only-locals-warning',
-    type: 'html',
-    private: true,
-    descriptionHTML: `
-<span class="peertube-plugin-livechat-warning">
-  The plugin is not compatible with video federation yet.
-  The webchat will only be accessible for people watching videos on your server.
-</span>`
-  })
-  registerSetting({
-    name: 'chat-all-lives',
-    label: 'Activate chat for all lives',
-    type: 'input-checkbox',
-    default: true,
-    descriptionHTML: 'If checked, the chat will be enabled for all lives.',
-    private: false
-  })
-  registerSetting({
-    name: 'chat-all-non-lives',
-    label: 'Activate chat for all non-lives',
-    type: 'input-checkbox',
-    default: false,
-    descriptionHTML: 'If checked, the chat will be enable for all video that are not lives.',
-    private: false
-  })
-  registerSetting({
-    name: 'chat-videos-list',
-    label: 'Activate chat for specific videos',
-    type: 'input-textarea',
-    default: '',
-    descriptionHTML: 'Videos UUIDs for which we want a chat. ' +
-      'Can be non-live videos. One per line. <br />' +
-      'You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />' +
-      'Don\'t add private videos, the UUIDs will be send to frontend.',
-    private: false
-  })
-
   // ********** Chat Mode
   registerSetting({
     type: 'html',
@@ -224,6 +156,74 @@ function initSettings (options: RegisterServerOptions): void {
     private: false
   })
 
+  // ********** Chat behaviour
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: '<h3>Chat behaviour</h3>'
+  })
+  registerSetting({
+    name: 'chat-auto-display',
+    label: 'Automatically open the chat',
+    descriptionHTML: 'When watching a video, the chatbox will automatically open',
+    type: 'input-checkbox',
+    default: true,
+    private: false
+  })
+  registerSetting({
+    name: 'chat-open-blank',
+    label: 'Show the «open in new window» button',
+    descriptionHTML: 'There will be a button for opening the webchat in a new window.',
+    private: false,
+    type: 'input-checkbox',
+    default: true
+  })
+  registerSetting({
+    name: 'chat-only-locals',
+    label: 'Chats are only available for local videos.',
+    descriptionHTML: 'If you uncheck this settings, the chat will also be enabled on remote videos.',
+    type: 'input-checkbox',
+    default: true,
+    private: false
+  })
+  registerSetting({
+    name: 'chat-only-locals-warning',
+    type: 'html',
+    private: true,
+    descriptionHTML: `
+<span class="peertube-plugin-livechat-warning">
+  The plugin is not compatible with video federation yet.
+  The webchat will only be accessible for people watching videos on your server.
+</span>`
+  })
+  registerSetting({
+    name: 'chat-all-lives',
+    label: 'Activate chat for all lives',
+    type: 'input-checkbox',
+    default: true,
+    descriptionHTML: 'If checked, the chat will be enabled for all lives.',
+    private: false
+  })
+  registerSetting({
+    name: 'chat-all-non-lives',
+    label: 'Activate chat for all non-lives',
+    type: 'input-checkbox',
+    default: false,
+    descriptionHTML: 'If checked, the chat will be enable for all video that are not lives.',
+    private: false
+  })
+  registerSetting({
+    name: 'chat-videos-list',
+    label: 'Activate chat for specific videos',
+    type: 'input-textarea',
+    default: '',
+    descriptionHTML: 'Videos UUIDs for which we want a chat. ' +
+      'Can be non-live videos. One per line. <br />' +
+      'You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />' +
+      'Don\'t add private videos, the UUIDs will be send to frontend.',
+    private: false
+  })
+
   registerSetting({
     name: 'chat-style',
     label: 'Webchat iframe style attribute',
@@ -234,8 +234,7 @@ function initSettings (options: RegisterServerOptions): void {
     private: false
   })
 
-  // settings changes management
-
+  // ********** settings changes management
   settingsManager.onSettingsChange(async (settings: any) => {
     if ('chat-type' in settings) {
       const chatType: ChatType = settings['chat-type'] ?? 'disabled'
