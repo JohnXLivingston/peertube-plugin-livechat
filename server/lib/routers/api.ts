@@ -6,6 +6,7 @@ import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } 
 import { getUserNickname } from '../helpers'
 import { Affiliations, getVideoAffiliations } from '../prosody/config/affiliations'
 import { getProsodyDomain } from '../prosody/config/domain'
+import type { ChatType } from '../../../shared/lib/types'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -46,13 +47,13 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       }
       // check settings (chat enabled for this video?)
       const settings = await options.settingsManager.getSettings([
-        'chat-use-prosody',
+        'chat-type',
         'chat-only-locals',
         'chat-all-lives',
         'chat-all-non-lives',
         'chat-videos-list'
       ])
-      if (!settings['chat-use-prosody']) {
+      if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
         logger.warn('Prosody chat is not active')
         res.sendStatus(403)
         return
@@ -121,13 +122,13 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   router.get('/user/check_password', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
       const settings = await options.settingsManager.getSettings([
-        'chat-use-prosody',
+        'chat-type',
         'chat-only-locals',
         'chat-all-lives',
         'chat-all-non-lives',
         'chat-videos-list'
       ])
-      if (!settings['chat-use-prosody']) {
+      if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
         logger.warn('Prosody chat is not active')
         res.status(200).send('false')
         return
@@ -152,13 +153,13 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   router.get('/user/user_exists', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
       const settings = await options.settingsManager.getSettings([
-        'chat-use-prosody',
+        'chat-type',
         'chat-only-locals',
         'chat-all-lives',
         'chat-all-non-lives',
         'chat-videos-list'
       ])
-      if (!settings['chat-use-prosody']) {
+      if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
         logger.warn('Prosody chat is not active')
         res.status(200).send('false')
         return

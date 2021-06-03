@@ -1,4 +1,5 @@
 import { videoHasWebchat } from 'shared/lib/video'
+import type { ChatType } from 'shared/lib/types'
 
 interface VideoWatchLoadedHookOptions {
   videojs: any
@@ -33,10 +34,11 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       return null
     }
     let iframeUri = ''
-    if (settings['chat-use-prosody'] || settings['chat-use-builtin']) {
+    const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
+    if (chatType === 'builtin-prosody' || chatType === 'builtin-converse') {
       // Using the builtin converseJS
       iframeUri = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid)
-    } else if (!settings['chat-use-builtin']) {
+    } else if (chatType === 'external-uri') {
       iframeUri = settings['chat-uri'] || ''
       iframeUri = iframeUri.replace(/{{VIDEO_UUID}}/g, encodeURIComponent(uuid))
       if (!/^https?:\/\//.test(iframeUri)) {
@@ -44,7 +46,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         return null
       }
     } else {
-      logger.error('Dont known which url use for the iframe.')
+      logger.error('Chat disabled.')
       return null
     }
     if (iframeUri === '') {

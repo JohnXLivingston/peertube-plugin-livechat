@@ -163,18 +163,8 @@ Before asking for help, please use this diagnostic tool:
   })
 
   registerSetting({
-    name: 'chat-use-prosody',
-    label: 'Use builtin Prosody XMPP Server',
-    type: 'input-checkbox',
-    // /!\ dont auto-activate on existing settups. FIXME: how to do this?
-    default: false, // TODO: set to true when we have a way to know if the plugin was previously installed.
-    private: false,
-    descriptionHTML: 'If checked, this will use a builtin XMPP server. This is the recommanded setup.'
-  })
-
-  registerSetting({
     name: 'prosody-port',
-    label: 'Builtin prosody: Prosody port',
+    label: 'Prosody port',
     type: 'input',
     default: '52800',
     private: true,
@@ -184,34 +174,19 @@ Before asking for help, please use this diagnostic tool:
   })
 
   registerSetting({
-    name: 'chat-use-builtin',
-    label: 'Use builtin ConverseJS',
-    type: 'input-checkbox',
-    default: false,
-    private: false,
-    descriptionHTML: 'If checked, use a builtin ConverseJS iframe.<br>' +
-    'You still have to configure an external XMPP service. Please see the ' +
-    '<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat" target="_blank">documentation<a>.<br>' +
-    'If you have no running webchat service, you can follow this ' +
-    // eslint-disable-next-line max-len
-    '<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/tutorials/prosody.md" target="blank_">tutorial</a>.'
-  })
-  registerSetting({
     name: 'chat-server',
-    label: 'Builtin webchat: XMPP service server',
+    label: 'XMPP service server',
     type: 'input',
     default: '',
-    descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
-      'Your XMPP server. Without any scheme. Example : peertube.im.your_domain.',
+    descriptionHTML: 'Your XMPP server. Without any scheme. Example : peertube.im.your_domain.',
     private: true
   })
   registerSetting({
     name: 'chat-room',
-    label: 'Builtin webchat: XMPP room template',
+    label: 'XMPP room template',
     type: 'input',
     default: '',
-    descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
-      'Your XMPP room. You can use the placeholder {{VIDEO_UUID}} to add the video UUID.' +
+    descriptionHTML: 'Your XMPP room. You can use the placeholder {{VIDEO_UUID}} to add the video UUID.' +
       'Without this placeholder, all videos will point to the same chat room.<br>' +
       'Example: public@room.peertube.im.your_domain<br>' +
       'Example: public_{{VIDEO_UUID}}@room.peertube.im.your_domain',
@@ -219,21 +194,21 @@ Before asking for help, please use this diagnostic tool:
   })
   registerSetting({
     name: 'chat-bosh-uri',
-    label: 'Builtin webchat: BOSH uri',
+    label: 'BOSH uri',
     type: 'input',
     default: '',
-    descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
-      'URI of the external BOSH server. Please make sure it accept cross origin request from your domain.<br>' +
+    descriptionHTML: 'URI of the external BOSH server. ' +
+      'Please make sure it accept cross origin request from your domain.<br>' +
       'You must at least have a BOSH or a Websocket uri.',
     private: true
   })
   registerSetting({
     name: 'chat-ws-uri',
-    label: 'Builtin webchat: WS uri',
+    label: 'Websocket uri',
     type: 'input',
     default: '',
-    descriptionHTML: 'When using the built-in converseJS webchat:<br>' +
-      'URI of the external WS server. Please make sure it accept cross origin request from your domain.<br>' +
+    descriptionHTML: 'URI of the external WS server. ' +
+      'Please make sure it accept cross origin request from your domain.<br>' +
       'You must at least have a BOSH or a Websocket uri.',
     private: true
   })
@@ -243,8 +218,7 @@ Before asking for help, please use this diagnostic tool:
     label: 'Webchat url',
     type: 'input',
     default: '',
-    descriptionHTML: '<b>If you dont want to use the builtin ConverseJS webchat:</b><br>' +
-      'Put here your webchat url. An iframe will be created pointing to this url. ' +
+    descriptionHTML: 'Put here your webchat url. An iframe will be created pointing to this url. ' +
       'The placeholder {{VIDEO_UUID}} will be replace by the video UUID if present. ' +
       'Example : https://my_domain/conversejs.html?room=video_{{VIDEO_UUID}}.<br>' +
       'If this field is empty, it will use the builtin ConverseJS webchat.',
@@ -264,11 +238,12 @@ Before asking for help, please use this diagnostic tool:
   // settings changes management
 
   settingsManager.onSettingsChange(async (settings: any) => {
-    if ('chat-use-prosody' in settings) {
-      if (settings['chat-use-prosody'] === true) {
+    if ('chat-type' in settings) {
+      const chatType: ChatType = settings['chat-type'] ?? 'disabled'
+      if (chatType === 'builtin-prosody') {
         peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
         await ensureProsodyRunning(options)
-      } else if (settings['chat-use-prosody'] === false) {
+      } else {
         peertubeHelpers.logger.info('Saving settings, ensuring prosody is not running')
         await ensureProsodyNotRunning(options)
       }

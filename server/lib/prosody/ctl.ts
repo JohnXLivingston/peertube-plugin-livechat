@@ -1,6 +1,7 @@
 import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig } from './config'
 import { startProsodyLogRotate, stopProsodyLogRotate } from './logrotate'
 import { changeHttpBindRoute } from '../routers/webchat'
+import type { ChatType } from '../../../shared/lib/types'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
 
@@ -142,9 +143,9 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   logger.debug('Calling ensureProsodyRunning')
 
   logger.debug('Checking if prosody should be active')
-  const setting = await settingsManager.getSetting('chat-use-prosody')
-  if (!setting) {
-    logger.info('Prosody is not activated, we wont launch it')
+  const setting = await settingsManager.getSetting('chat-type')
+  if (setting !== ('builtin-prosody' as ChatType)) {
+    logger.info('Chat type is not set to builtin-prosody, we wont launch it')
     return
   }
 

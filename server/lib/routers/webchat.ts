@@ -1,5 +1,6 @@
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import type { ProxyOptions } from 'express-http-proxy'
+import type { ChatType } from '../../../shared/lib/types'
 import { getBaseRouterRoute, getBaseStaticRoute } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
@@ -27,9 +28,10 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       res.removeHeader('X-Frame-Options') // this route can be opened in an iframe
 
       const settings = await settingsManager.getSettings([
-        'chat-use-prosody', 'chat-use-builtin', 'chat-room', 'chat-server',
+        'chat-type', 'chat-room', 'chat-server',
         'chat-bosh-uri', 'chat-ws-uri'
       ])
+      const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
 
       let server: string
       let room: string
@@ -37,7 +39,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let wsUri: string
       let authenticationUrl: string = ''
       let advancedControls: boolean = false
-      if (settings['chat-use-prosody']) {
+      if (chatType === 'builtin-prosody') {
         const prosodyDomain = await getProsodyDomain(options)
         server = 'anon.' + prosodyDomain
         room = '{{VIDEO_UUID}}@room.' + prosodyDomain
@@ -47,7 +49,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           getBaseRouterRoute(options) +
           'api/auth'
         advancedControls = true
-      } else if (settings['chat-use-builtin']) {
+      } else if (chatType === 'builtin-converse') {
         if (!settings['chat-server']) {
           throw new Error('Missing chat-server settings.')
         }
