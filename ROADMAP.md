@@ -24,7 +24,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [x] | [x] | JS | Modernise code to use new placeholders provided by Peertube 3.2.0 (with or without backward compatibility) | v2.3.0
 [x] | [x] | Settings | Restore default values for some checkbox to true (see [this bug](https://github.com/Chocobozzz/PeerTube/issues/4106)) | Not Released Yet
 [x] | [x] | Settings | Replace some checkbox by a select (for the webchat mode). Migrate old checkbox values. | Not Released Yet
-[ ] | [x] | Settings | Dynamic settings screen. Inline help/documentation. | First changes in v2.2.0
+[.] | [x] | Settings | Dynamic settings screen. Inline help/documentation. | First changes in v2.2.0. WORK IN PROGRESS
 
 ## Later / low priority modifications
 
