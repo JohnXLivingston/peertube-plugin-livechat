@@ -21,6 +21,8 @@ function register ({ registerSettingsScript }: RegisterOptions): void {
           return options.formValues['chat-type'] !== ('external-uri' as ChatType)
         case 'chat-style':
           return options.formValues['chat-type'] === 'disabled'
+        case 'chat-only-locals-warning':
+          return options.formValues['chat-only-locals'] === true
       }
 
       return false

@@ -50,3 +50,7 @@
   min-height: 30vh;
   height: 100%;
 }
+
+.peertube-plugin-livechat-warning {
+  color: orange;
+}

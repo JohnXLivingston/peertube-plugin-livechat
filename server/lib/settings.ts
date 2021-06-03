@@ -5,57 +5,38 @@ import type { ChatType } from '../../shared/lib/types'
 function initSettings (options: RegisterServerOptions): void {
   const { peertubeHelpers, registerSetting, settingsManager } = options
 
+  // ********** IMPORTANT NOTES
   registerSetting({
-    name: 'chat-read-documentation',
-    label: 'I have read the documentation',
-    type: 'input-checkbox',
-    default: false,
-    private: false, // not private so that I can check when doing support
-    descriptionHTML: `
-Please read the
+    type: 'html',
+    private: true,
+    descriptionHTML: '<h3>Important notes</h3>'
+  })
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: `Please read the
 <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/README.md" target="_blank">
   documentation
-</a>
-before trying to use this plugin.<br>
-There is 3 way to use it:
-<ul>
-  <li>
-    By installing the Prosoxy XMPP server package on your server,
-    and using the «builtin Prosody XMPP Server» feature.
-    <a
-      href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/prosody.md"
-      target="_blank"
-    >
-      See Documentation
-    </a>
-  </li>
-  <li>
-    By using an existing XMPP server, with anonymous authentication and rooms enabled.
-    <a
-      href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/conversejs.md"
-      target="_blank"
-    >
-      See Documentation
-    </a>
-  </li>
-  <li>
-    By using any external webchat that can be included in an iframe.
-    <a
-      href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/external.md"
-      target="_blank"
-    >
-      See Documentation
-    </a>
-  </li>
-</ul>
-<br>
-Before asking for help, please use this diagnostic tool:
+</a> before trying to use this plugin.`
+  })
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: `Before asking for help, please use the diagnostic tool:
 <a href="${getBaseRouterRoute(options)}settings/diagnostic" target="_blank">Launch diagnostic</a>
 <br>`
+  })
+
+  // ********** Chat behaviour
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: '<h3>Chat behaviour</h3>'
   })
   registerSetting({
     name: 'chat-auto-display',
     label: 'Automatically open the chat',
+    descriptionHTML: 'When watching a video, the chatbox will automatically open',
     type: 'input-checkbox',
     default: true,
     private: false
@@ -63,6 +44,7 @@ Before asking for help, please use this diagnostic tool:
   registerSetting({
     name: 'chat-open-blank',
     label: 'Show the «open in new window» button',
+    descriptionHTML: 'There will be a button for opening the webchat in a new window.',
     private: false,
     type: 'input-checkbox',
     default: true
@@ -70,16 +52,27 @@ Before asking for help, please use this diagnostic tool:
   registerSetting({
     name: 'chat-only-locals',
     label: 'Chats are only available for local videos.',
+    descriptionHTML: 'If you uncheck this settings, the chat will also be enabled on remote videos.',
     type: 'input-checkbox',
     default: true,
     private: false
+  })
+  registerSetting({
+    name: 'chat-only-locals-warning',
+    type: 'html',
+    private: true,
+    descriptionHTML: `
+<span class="peertube-plugin-livechat-warning">
+  The plugin is not compatible with video federation yet.
+  The webchat will only be accessible for people watching videos on your server.
+</span>`
   })
   registerSetting({
     name: 'chat-all-lives',
     label: 'Activate chat for all lives',
     type: 'input-checkbox',
     default: true,
-    descriptionHTML: 'If checked, a chat will be added to all lives.',
+    descriptionHTML: 'If checked, the chat will be enabled for all lives.',
     private: false
   })
   registerSetting({
@@ -87,7 +80,7 @@ Before asking for help, please use this diagnostic tool:
     label: 'Activate chat for all non-lives',
     type: 'input-checkbox',
     default: false,
-    descriptionHTML: 'If checked, a chat will be added to all video that are not lives.',
+    descriptionHTML: 'If checked, the chat will be enable for all video that are not lives.',
     private: false
   })
   registerSetting({
@@ -102,6 +95,12 @@ Before asking for help, please use this diagnostic tool:
     private: false
   })
 
+  // ********** Chat Mode
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: '<h3>Chat mode</h3>'
+  })
   registerSetting({
     name: 'chat-type',
     label: 'Webchat mode',
