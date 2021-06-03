@@ -59,7 +59,8 @@ function initSettings (options: RegisterServerOptions): void {
     type: 'html',
     label: 'Prosody server controlled by Peertube (recommended)',
     descriptionHTML: `
-      With this mode, the Peertube server will control a local Prosody XMPP server.
+      With this mode, the Peertube server will control a local Prosody XMPP server.<br>
+      Note: you have to install the Prosody XMPP server.
       Please read the <a
         href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/prosody.md"
         target="_blank"
