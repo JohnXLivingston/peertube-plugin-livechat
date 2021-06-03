@@ -11,6 +11,11 @@ let OPTIONS: RegisterServerOptions | undefined
 async function register (options: RegisterServerOptions): Promise<any> {
   OPTIONS = options
 
+  // This is a trick to check that peertube is at least in version 3.2.0
+  if (!options.peertubeHelpers.plugin) {
+    throw new Error('Your peertube version is not correct. This plugin is not compatible with Peertube < 3.2.0.')
+  }
+
   await migrateSettings(options)
 
   await initSettings(options)
