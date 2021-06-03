@@ -8,7 +8,7 @@
 
 ### Features
 
-* ...
+* New simpler settings screen.
 
 ### Changes
 
