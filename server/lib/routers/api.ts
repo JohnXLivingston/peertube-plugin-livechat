@@ -7,6 +7,7 @@ import { getUserNickname } from '../helpers'
 import { Affiliations, getVideoAffiliations } from '../prosody/config/affiliations'
 import { getProsodyDomain } from '../prosody/config/domain'
 import type { ChatType } from '../../../shared/lib/types'
+import { fillVideoCustomFields } from '../custom-fields'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -45,10 +46,15 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         res.sendStatus(403)
         return
       }
+
+      // Adding the custom fields:
+      await fillVideoCustomFields(options, video)
+
       // check settings (chat enabled for this video?)
       const settings = await options.settingsManager.getSettings([
         'chat-type',
         'chat-only-locals',
+        'chat-per-live-video',
         'chat-all-lives',
         'chat-all-non-lives',
         'chat-videos-list'
@@ -59,9 +65,10 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         return
       }
       if (!videoHasWebchat({
-        'chat-only-locals': settings['chat-only-locals'] as boolean,
-        'chat-all-lives': settings['chat-all-lives'] as boolean,
-        'chat-all-non-lives': settings['chat-all-non-lives'] as boolean,
+        'chat-only-locals': !!settings['chat-only-locals'],
+        'chat-per-live-video': !!settings['chat-per-live-video'],
+        'chat-all-lives': !!settings['chat-all-lives'],
+        'chat-all-non-lives': !!settings['chat-all-non-lives'],
         'chat-videos-list': settings['chat-videos-list'] as string
       }, video)) {
         logger.warn(`Video ${jid} has not chat activated`)
@@ -122,11 +129,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   router.get('/user/check_password', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
       const settings = await options.settingsManager.getSettings([
-        'chat-type',
-        'chat-only-locals',
-        'chat-all-lives',
-        'chat-all-non-lives',
-        'chat-videos-list'
+        'chat-type'
       ])
       if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
         logger.warn('Prosody chat is not active')
@@ -153,11 +156,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   router.get('/user/user_exists', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
       const settings = await options.settingsManager.getSettings([
-        'chat-type',
-        'chat-only-locals',
-        'chat-all-lives',
-        'chat-all-non-lives',
-        'chat-videos-list'
+        'chat-type'
       ])
       if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
         logger.warn('Prosody chat is not active')

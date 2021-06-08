@@ -9,11 +9,14 @@
 ### Features
 
 * New simpler settings screen.
+* New field in live video form, to activate the webchat per video. There is a setting for enabling this new feature.
 
 ### Changes
 
 * Removed compatibility with Peertube previous to 3.2.0.
 * Restoring default values for checkboxes in settings (there was a bug with Peertube previous to 3.2.0)
+* New settings
+* By default, the «activate chat for all lives» is disabled (now that we can enable the webchat per video)
 
 ### Fixes
 

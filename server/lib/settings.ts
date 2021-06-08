@@ -198,10 +198,28 @@ function initSettings (options: RegisterServerOptions): void {
 </span>`
   })
   registerSetting({
+    name: 'chat-per-live-video',
+    label: 'Users can activate the chat for their lives',
+    type: 'input-checkbox',
+    default: true,
+    descriptionHTML: 'If checked, all live videos will have a checkbox in there properties for enabling the webchat.',
+    private: false
+  })
+  registerSetting({
+    name: 'chat-per-live-video-warning',
+    type: 'html',
+    private: true,
+    descriptionHTML: `
+<span class="peertube-plugin-livechat-warning">
+  You have enabled the setting «Users can activate the chat for their lives».
+  It is redundant with the «Activate chat for all lives» setting.
+</span>`
+  })
+  registerSetting({
     name: 'chat-all-lives',
     label: 'Activate chat for all lives',
     type: 'input-checkbox',
-    default: true,
+    default: false,
     descriptionHTML: 'If checked, the chat will be enabled for all lives.',
     private: false
   })

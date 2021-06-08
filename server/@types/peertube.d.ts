@@ -61,6 +61,7 @@ enum VideoState {
 }
 
 interface MVideoThumbnail { // FIXME: this interface is not complete.
+  id?: number
   uuid: string
   name: string
   category: number
@@ -81,6 +82,7 @@ interface MVideoThumbnail { // FIXME: this interface is not complete.
   downloadEnabled: boolean
   state: VideoState
   channelId: number
+  pluginData?: any
 }
 
 // Keep the order

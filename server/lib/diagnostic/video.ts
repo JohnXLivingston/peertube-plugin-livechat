@@ -7,6 +7,7 @@ export async function diagVideo (test: string, { settingsManager }: RegisterServ
     'chat-auto-display',
     'chat-open-blank',
     'chat-only-locals',
+    'chat-per-live-video',
     'chat-all-lives',
     'chat-all-non-lives',
     'chat-videos-list'
@@ -26,6 +27,10 @@ export async function diagVideo (test: string, { settingsManager }: RegisterServ
   }
 
   let atLeastOne: boolean = false
+  if (videoSettings['chat-per-live-video']) {
+    result.messages.push('Chat can be enabled on live videos.')
+    atLeastOne = true
+  }
   if (videoSettings['chat-all-lives']) {
     result.messages.push('Chat is enabled for all lives.')
     atLeastOne = true

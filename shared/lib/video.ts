@@ -2,6 +2,7 @@ import { parseConfigUUIDs } from './config'
 
 interface SharedSettings {
   'chat-only-locals': boolean
+  'chat-per-live-video': boolean
   'chat-all-lives': boolean
   'chat-all-non-lives': boolean
   'chat-videos-list': string
@@ -10,6 +11,9 @@ interface SharedSettings {
 interface SharedVideoBase {
   uuid: string
   isLive: boolean
+  pluginData?: {
+    'livechat-active'?: boolean
+  }
 }
 
 interface SharedVideoFrontend extends SharedVideoBase {
@@ -29,6 +33,10 @@ function videoHasWebchat (settings: SharedSettings, video: SharedVideo): boolean
     } else {
       if (video.remote) return false
     }
+  }
+
+  if (settings['chat-per-live-video'] && video.isLive && video.pluginData && video.pluginData['livechat-active']) {
+    return true
   }
 
   if (settings['chat-all-lives']) {

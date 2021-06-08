@@ -37,7 +37,7 @@ interface RegisterClientFormFieldOptions {
   type: 'input' | 'input-checkbox' | 'input-password' | 'input-textarea' | 'markdown-text' | 'markdown-enhanced'
   descriptionHTML?: string
   default?: string | boolean
-  private: boolean
+  hidden?: (options: any) => boolean
 }
 interface RegisterClientSettingsScript {
   isSettingHidden: (options: {
@@ -46,10 +46,18 @@ interface RegisterClientSettingsScript {
   }) => boolean
 }
 
+interface RegisterClientVideoFieldOptions {
+  type: 'update' | 'upload' | 'import-url' | 'import-torrent' | 'go-live'
+}
+
 interface RegisterOptions {
   registerHook: (options: RegisterClientHookOptions) => void
   peertubeHelpers: RegisterClientHelpers
   registerSettingsScript: (options: RegisterClientSettingsScript) => void
+  registerVideoField: (
+    commonOptions: RegisterClientFormFieldOptions,
+    videoFormOptions: RegisterClientVideoFieldOptions
+  ) => void
 }
 
 interface Video {

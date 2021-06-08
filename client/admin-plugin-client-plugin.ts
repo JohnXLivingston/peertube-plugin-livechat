@@ -23,6 +23,8 @@ function register ({ registerSettingsScript }: RegisterOptions): void {
           return options.formValues['chat-type'] === 'disabled'
         case 'chat-only-locals-warning':
           return options.formValues['chat-only-locals'] === true
+        case 'chat-per-live-video-warning':
+          return !(options.formValues['chat-all-lives'] === true && options.formValues['chat-per-live-video'] === true)
       }
 
       return false
