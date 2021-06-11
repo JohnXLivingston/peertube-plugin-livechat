@@ -1,6 +1,6 @@
 # PeerTube plugin livechat
 
-This plugin is meant to provide web chat for peertube videos.
+This plugin is meant to provide web chat for Peertube videos.
 
 The plugin has to rely on an external tool as web chat backend. There are multiple ways to provide such functionality:
 
