@@ -40,4 +40,4 @@ Some Prosody Modules in the `prosody-modules` folder are under MIT license. Plea
 
 Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, and for the support.
 
-Thanks to [RITIMO](https://www.ritimo.org/) for the financial support.
+Thanks to [ritimo](https://www.ritimo.org/) for the financial support.
