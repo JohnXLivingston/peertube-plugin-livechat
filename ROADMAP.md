@@ -26,7 +26,9 @@ This roadmap is given as an indication. It will be updated as we go along accord
 
 | Done | Component | Feature | Released in version
 ---|---|---|---
-[ ] | Documentation | Rewrite documentation for more clarity. Add screenshots. Separate user and admin documentation.
+[x] | Documentation | Rewrite documentation for more clarity.
+[ ] | Documentation | Add screenshots.
+[ ] | Documentation | User documentation.
 [ ] | Builtin Prosody | Room administration: add a button in the plugin settings to open a modal with existing rooms list.
 [ ] | Builtin Prosody | Check with yunohost how to integrate.
 [ ] | Settings | Translate settings page.

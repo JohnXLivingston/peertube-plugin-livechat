@@ -1,16 +1,16 @@
-# Use an external webchat tool
+# Use an external web chat tool
 
-You can use any webchat tool that can be included in an «iframe».
+You can use any webchat tool that can be included in an HTML «iframe».
 
-## Common settings
+## Settings
 
-First you have to configure [common settings](./common.md).
+### Chat mode
 
-Then, left settings related to the [builtin prosody](./prosody.md) and [builtin converseJS](./conversejs.md) blank, and fill following settings according to this page.
+Just select «Use an external web chat tool» as chat mode.
 
-## Webchat url
+### Webchat url
 
-If you are not using the builtin ConverseJS feature, you can speficy here the url for you chat application.
+Speficy here the url for you chat application.
 
 You can add the string {{VIDEO_UUID}} in the url, it will be replaced by the video UUID.
 
@@ -18,6 +18,11 @@ It is possible to use a single chat for all your videos if you omit this paramet
 
 Example:
 ```https://peertube.im.your_domain?room={{VIDEO_UUID}}```
+
+### Chat behaviour
+
+These settings are common with other chat modes.
+Here is the documentation: [common settings](./common.md).
 
 ## Tips: install your own XMPP webchat
 

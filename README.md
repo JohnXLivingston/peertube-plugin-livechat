@@ -1,14 +1,15 @@
 # PeerTube plugin livechat
 
-This plugin can provide webchat for peertube videos.
+This plugin is meant to provide web chat for peertube videos.
 
-There are multiple way to provide such functionality:
+The plugin has to rely on an external tool as web chat backend. There are multiple ways to provide such functionality:
 
-* **builtin prosody:** this plugin can launch a [Prosody](https://prosody.im) process and auto-configure it. [Documentation](documentation/prosody.md). Althought this is still experimental and under development, it is the recommanded setup.
-* **builtin converseJS:** you can use an external Jabber/XMPP server with BOSH or Websocket and anonymous loggin enabled. [Documentation](documentation/conversejs.md)
-* **external tool:** you can use any external webchat tool, that can be included in an iframe. [Documentation](documentation/external.md)
+* **Prosody server controlled by Peertube (recommended):** this plugin can launch a [Prosody](https://prosody.im) process and auto-configure it. [Documentation](documentation/prosody.md). **This is the recommanded setup, and is almost automatic to setup**.
+* **Connect to an existing XMPP server with ConverseJS:** you can use an external Jabber/XMPP server. This server has to provide BOSH or Websocket API, accept anonymous loggin, and accept room creation. [Documentation](documentation/conversejs.md)
+* **Use an external web chat tool:** you can use any external web chat tool, that can be included in an iframe. [Documentation](documentation/external.md)
 
-For the two first solutions, the connection to the XMPP server is made with [converseJS](https://conversejs.org/).
+For the two first solutions, the connection to the XMPP server is made with the [converseJS](https://conversejs.org/) Javascript library.
+XMPP is a protocol for chat applications. It is sometime known has Jabber.
 
 If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).
 
@@ -22,13 +23,12 @@ If you have any question, or if you want to talk about this plugin, you can join
 
 ## Settings
 
+For the chat mode, and related settings, please refer to the corresponding documentation:
+* [Prosody server controlled by Peertube (recommended)](documentation/prosody.md). **This is the recommanded setup**.
+* [Connect to an existing XMPP server with ConverseJS](documentation/conversejs.md)
+* [Use an external web chat tool](documentation/external.md)
+
 There are several common settings. Please see the documentation here: [common settings documentation](documentation/common.md).
-
-Then, please refer to the documentation associated with the mode you are planning to use:
-
-* **builtin prosody:** this plugin can launch a [Prosody](https://prosody.im) process and auto-configure it. [Documentation](documentation/prosody.md)
-* **builtin converseJS:** you can use an external Jabber/XMPP server with BOSH or Websocket and anonymous loggin enabled. [Documentation](documentation/conversejs.md)
-* **external tool:** you can use any external webchat tool, that can be included in an iframe. [Documentation](documentation/external.md)
 
 ## Credits
 
@@ -37,3 +37,7 @@ Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.dav
 Some material icons downloaded from this website where used for icons: [Material.io](https://material.io/resources/icons)
 
 Some Prosody Modules in the `prosody-modules` folder are under MIT license. Please refer to README files in each subfolder, and to the [COPYING](./prosody-modules/COPYING) file. For more informations, here is [the official Prosody Modules website](https://modules.prosody.im).
+
+Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, and for the support.
+
+Thanks to [Ritimo](https://www.ritimo.org/) for the financial support.
