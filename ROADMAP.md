@@ -26,10 +26,10 @@ This roadmap is given as an indication. It will be updated as we go along accord
 
 | Done | Component | Feature | Released in version
 ---|---|---|---
-[ ] | Settings | Translate settings page.
 [ ] | Documentation | Rewrite documentation for more clarity. Add screenshots. Separate user and admin documentation.
 [ ] | Builtin Prosody | Room administration: add a button in the plugin settings to open a modal with existing rooms list.
 [ ] | Builtin Prosody | Check with yunohost how to integrate.
+[ ] | Settings | Translate settings page.
 [ ] | ConverseJS | UI: make custom templates, for a better UI/UX. Autoshow muc participants depending on the chat window width.
 [ ] | Builtin Prosody | Add a settings to enable the server to be accessed with XMPP clients.
 [ ] | ConverseJS | For anonymous user, automatically log in with a random nickname (and allow to change afterward)
