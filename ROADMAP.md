@@ -14,7 +14,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [x] | [ ] | Builtin Prosody | Use Peertube log level for prosody. | v2.3.0
 [ ] | [x] | Builtin Prosody | Rotate prosody logs. | v2.3.0 (WIP)
 [x] | [x] | Builtin Prosody | Data Persistence | v2.3.0
-[ ] | [x] | Common | Add a checkbox per video to activate livechat. Only on lives.
+[x] | [x] | Common | Add a checkbox per video to activate livechat. Only on lives. | Not Released Yet
 [x] | [x] | Builtin Prosody | Docker: check how to install and use Prosody on docker installations. Do the documentation. | Not Released Yet
 [ ] | [ ] | Builtin Prosody | Check with yunohost how to integrate.
 [ ] | [ ] | Documentation | Rewrite documentation for more clarity. Add screenshots. Separate user and admin documentation.
