@@ -1,6 +1,38 @@
 import type { ChatType } from 'shared/lib/types'
 
-function register ({ registerSettingsScript }: RegisterOptions): void {
+interface ActionPluginSettingsParams {
+  npmName: string
+}
+
+function register ({ registerHook, registerSettingsScript, peertubeHelpers }: RegisterOptions): void {
+  function getBaseRoute (): string {
+    // NB: this will come with Peertube > 3.2.1 (3.3.0?)
+    if (peertubeHelpers.getBaseRouterRoute) {
+      return peertubeHelpers.getBaseRouterRoute()
+    }
+    // We are guessing the route with the correct plugin version with this trick:
+    const staticBase = peertubeHelpers.getBaseStaticRoute()
+    // we can't use '/plugins/livechat/router', because the loaded html page needs correct relative paths.
+    return staticBase.replace(/\/static.*$/, '/router')
+  }
+
+  registerHook({
+    target: 'action:admin-plugin-settings.init',
+    handler: ({ npmName }: ActionPluginSettingsParams) => {
+      if (npmName !== PLUGIN_CHAT_PACKAGE_NAME) {
+        console.log(`[peertube-plugin-livechat] Settings for ${npmName}, not ${PLUGIN_CHAT_PACKAGE_NAME}. Returning.`)
+        return
+      }
+      console.log('[peertube-plugin-livechat] Initializing diagnostic button')
+      const diagButtons = document.querySelectorAll('.peertube-plugin-livechat-launch-diagnostic')
+      diagButtons.forEach(diagButton => {
+        if (diagButton.hasAttribute('href')) { return }
+        // TODO: use a modal instead of a target=_blank
+        diagButton.setAttribute('href', getBaseRoute() + '/settings/diagnostic')
+        diagButton.setAttribute('target', '_blank')
+      })
+    }
+  })
   registerSettingsScript({
     isSettingHidden: options => {
       const name = options.setting.name

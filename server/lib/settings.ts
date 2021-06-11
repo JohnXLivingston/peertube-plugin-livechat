@@ -1,4 +1,3 @@
-import { getBaseRouterRoute } from './helpers'
 import { ensureProsodyRunning, ensureProsodyNotRunning } from './prosody/ctl'
 import type { ChatType } from '../../shared/lib/types'
 
@@ -17,14 +16,13 @@ function initSettings (options: RegisterServerOptions): void {
     descriptionHTML: `Please read the
 <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/README.md" target="_blank">
   documentation
-</a> before trying to use this plugin.`
+</a> first.`
   })
   registerSetting({
     type: 'html',
     private: true,
     descriptionHTML: `Before asking for help, please use the diagnostic tool:
-<a href="${getBaseRouterRoute(options)}settings/diagnostic" target="_blank">Launch diagnostic</a>
-<br>`
+<a class="peertube-plugin-livechat-launch-diagnostic">Launch diagnostic</a>`
   })
 
   // ********** Chat Mode

@@ -36,7 +36,8 @@ let config = clientFiles.map(f => ({
   },
   plugins: [
     new webpack.DefinePlugin({
-      PLUGIN_CHAT_PACKAGE_NAME: JSON.stringify(packagejson.name)
+      PLUGIN_CHAT_PACKAGE_NAME: JSON.stringify(packagejson.name),
+      PLUGIN_CHAT_SHORT_NAME: JSON.stringify(packagejson.name.replace(/^peertube-plugin-/, ''))
     }),
     new EsmWebpackPlugin()
   ]
