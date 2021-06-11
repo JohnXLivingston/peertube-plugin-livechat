@@ -26,7 +26,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 
 | Done | Component | Feature | Released in version
 ---|---|---|---
-[x] | Documentation | Rewrite documentation for more clarity.
+[x] | Documentation | Rewrite documentation for more clarity. | v3.0.0
 [ ] | Documentation | Add screenshots.
 [ ] | Documentation | User documentation.
 [ ] | Builtin Prosody | Room administration: add a button in the plugin settings to open a modal with existing rooms list.
