@@ -1,5 +1,7 @@
 {
   "Open chat": "Abrir el chat",
   "Open chat in a new window": "Abrir el chat en una venta nueva",
-  "Close chat": "Cerrar el chat"
+  "Close chat": "Cerrar el chat",
+  "Use chat": false,
+  "If enabled, there will be a chat next to the video.": false
 }

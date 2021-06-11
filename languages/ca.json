@@ -1,5 +1,7 @@
 {
   "Open chat": "Obre el xat",
   "Open chat in a new window": "Obre el xat en una finestra nova",
-  "Close chat": "Tanca el xat"
+  "Close chat": "Tanca el xat",
+  "Use chat": false,
+  "If enabled, there will be a chat next to the video.": false
 }

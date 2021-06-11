@@ -1,5 +1,7 @@
 {
   "Open chat": "Ireki txata",
   "Open chat in a new window": "Ireki txata leiho berri batean",
-  "Close chat": "Itxi txata"
+  "Close chat": "Itxi txata",
+  "Use chat": false,
+  "If enabled, there will be a chat next to the video.": false
 }

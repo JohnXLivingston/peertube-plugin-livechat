@@ -1,5 +1,7 @@
 {
   "Open chat": "Apri la chat",
   "Open chat in a new window": "Apri la chat in un nuova finestra",
-  "Close chat": "Chiudi la chat"
+  "Close chat": "Chiudi la chat",
+  "Use chat": false,
+  "If enabled, there will be a chat next to the video.": false
 }

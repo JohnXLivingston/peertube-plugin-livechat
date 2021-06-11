@@ -1,5 +1,7 @@
 {
   "Open chat": "Ouvrir le salon de discussion",
   "Open chat in a new window": "Ouvrir le salon de discussion dans une nouvelle fenêtre",
-  "Close chat": "Fermer le salon de discussion"
+  "Close chat": "Fermer le salon de discussion",
+  "Use chat": "Activer le salon de discussion",
+  "If enabled, there will be a chat next to the video.": "Si activé, un salon de discussion sera affiché à coté de la vidéo."
 }
