@@ -33,7 +33,7 @@ function initSettings (options: RegisterServerOptions): void {
   })
   registerSetting({
     name: 'chat-type',
-    label: 'Webchat mode',
+    label: 'Chat mode',
     type: 'select',
     default: 'disabled' as ChatType,
     private: false,
@@ -41,7 +41,7 @@ function initSettings (options: RegisterServerOptions): void {
       { value: 'disabled', label: 'Disabled' },
       { value: 'builtin-prosody', label: 'Prosody server controlled by Peertube (recommended)' },
       { value: 'builtin-converse', label: 'Connect to an existing XMPP server with ConverseJS' },
-      { value: 'external-uri', label: 'Use an external webchat' }
+      { value: 'external-uri', label: 'Use an external web chat tool' }
     ] as Array<{value: ChatType, label: string}>,
     descriptionHTML: 'Please choose the webchat mode you want to use.'
   })
@@ -56,39 +56,38 @@ function initSettings (options: RegisterServerOptions): void {
     name: 'chat-type-help-builtin-prosody',
     type: 'html',
     label: 'Prosody server controlled by Peertube (recommended)',
-    descriptionHTML: `
-      With this mode, the Peertube server will control a local Prosody XMPP server.<br>
-      Note: you have to install the Prosody XMPP server.
-      Please read the <a
-        href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/prosody.md"
-        target="_blank"
-      >documentation.</a>`,
+    descriptionHTML: `With this mode, the Peertube server will control a local Prosody XMPP server.<br>
+Note: you have to install the Prosody XMPP server.
+Please read the <a
+  href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/prosody.md"
+  target="_blank"
+>documentation</a>.`,
     private: true
   })
   registerSetting({
     name: 'chat-type-help-builtin-converse',
     type: 'html',
     label: 'Connect to an existing XMPP server with ConverseJS',
-    descriptionHTML: `
-      With this mode, you can connect to an existing XMPP server, with anonymous authentication and rooms enabled.
-      Please read the
-      <a
-        href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/conversejs.md"
-        target="_blank"
-      >documentation</a>.`,
+    descriptionHTML:
+`With this mode, you can connect to an existing XMPP server, that allow anonymous authentication and room creation.
+Please read the
+<a
+  href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/conversejs.md"
+  target="_blank"
+>documentation</a>.`,
     private: true
   })
   registerSetting({
     name: 'chat-type-help-external-uri',
     type: 'html',
     label: 'Use an external webchat',
-    descriptionHTML: `
-      With this mode, you can use any external webchat that can be included in an iframe.
-      Please read the
-      <a
-        href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/external.md"
-        target="_blank"
-      >documentation</a>.`,
+    descriptionHTML:
+`With this mode, you can use any external web chat that can be included in an iframe.
+Please read the
+<a
+  href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/external.md"
+  target="_blank"
+>documentation</a>.`,
     private: true
   })
 
@@ -98,9 +97,10 @@ function initSettings (options: RegisterServerOptions): void {
     type: 'input',
     default: '52800',
     private: true,
-    descriptionHTML: 'The port that will be used by the builtin Prosody server.<br>' +
-    'Change it if this port is already in use on your server.<br>' +
-    'You can close this port on your firewall, it will not be accessed from the outer world.'
+    descriptionHTML:
+`The port that will be used by the builtin Prosody server.<br>
+Change it if this port is already in use on your server.<br>
+You can close this port on your firewall, it will not be accessed from the outer world.`
   })
 
   registerSetting({
@@ -116,10 +116,11 @@ function initSettings (options: RegisterServerOptions): void {
     label: 'XMPP room template',
     type: 'input',
     default: '',
-    descriptionHTML: 'Your XMPP room. You can use the placeholder {{VIDEO_UUID}} to add the video UUID.' +
-      'Without this placeholder, all videos will point to the same chat room.<br>' +
-      'Example: public@room.peertube.im.your_domain<br>' +
-      'Example: public_{{VIDEO_UUID}}@room.peertube.im.your_domain',
+    descriptionHTML:
+`Your XMPP room. You can use the placeholder {{VIDEO_UUID}} to add the video UUID.
+Without this placeholder, all videos will point to the same chat room.<br>
+Example: public@room.peertube.im.your_domain<br>
+Example: public_{{VIDEO_UUID}}@room.peertube.im.your_domain`,
     private: true
   })
   registerSetting({
@@ -127,9 +128,10 @@ function initSettings (options: RegisterServerOptions): void {
     label: 'BOSH uri',
     type: 'input',
     default: '',
-    descriptionHTML: 'URI of the external BOSH server. ' +
-      'Please make sure it accept cross origin request from your domain.<br>' +
-      'You must at least have a BOSH or a Websocket uri.',
+    descriptionHTML:
+`URI of the external BOSH server.
+Please make sure it accept cross origin request from your domain.<br>
+You must at least have a BOSH or a Websocket uri.`,
     private: true
   })
   registerSetting({
@@ -137,9 +139,10 @@ function initSettings (options: RegisterServerOptions): void {
     label: 'Websocket uri',
     type: 'input',
     default: '',
-    descriptionHTML: 'URI of the external WS server. ' +
-      'Please make sure it accept cross origin request from your domain.<br>' +
-      'You must at least have a BOSH or a Websocket uri.',
+    descriptionHTML: `
+URI of the external WS server.
+Please make sure it accept cross origin request from your domain.<br>
+You must at least have a BOSH or a Websocket uri.`,
     private: true
   })
 
@@ -148,10 +151,11 @@ function initSettings (options: RegisterServerOptions): void {
     label: 'Webchat url',
     type: 'input',
     default: '',
-    descriptionHTML: 'Put here your webchat url. An iframe will be created pointing to this url. ' +
-      'The placeholder {{VIDEO_UUID}} will be replace by the video UUID if present. ' +
-      'Example : https://my_domain/conversejs.html?room=video_{{VIDEO_UUID}}.<br>' +
-      'If this field is empty, it will use the builtin ConverseJS webchat.',
+    descriptionHTML:
+`Put here your webchat url. An iframe will be created pointing to this url.
+The placeholder {{VIDEO_UUID}} will be replace by the video UUID if present.
+Example : https://my_domain/conversejs.html?room=video_{{VIDEO_UUID}}.<br>
+If this field is empty, it will use the builtin ConverseJS webchat.`,
     private: false
   })
 
@@ -172,7 +176,7 @@ function initSettings (options: RegisterServerOptions): void {
   registerSetting({
     name: 'chat-open-blank',
     label: 'Show the «open in new window» button',
-    descriptionHTML: 'There will be a button for opening the webchat in a new window.',
+    descriptionHTML: 'There will be a button for opening the web chat in a new window.',
     private: false,
     type: 'input-checkbox',
     default: true
@@ -189,8 +193,8 @@ function initSettings (options: RegisterServerOptions): void {
     name: 'chat-only-locals-warning',
     type: 'html',
     private: true,
-    descriptionHTML: `
-<span class="peertube-plugin-livechat-warning">
+    descriptionHTML:
+`<span class="peertube-plugin-livechat-warning">
   The plugin is not compatible with video federation yet.
   The webchat will only be accessible for people watching videos on your server.
 </span>`
@@ -200,15 +204,15 @@ function initSettings (options: RegisterServerOptions): void {
     label: 'Users can activate the chat for their lives',
     type: 'input-checkbox',
     default: true,
-    descriptionHTML: 'If checked, all live videos will have a checkbox in there properties for enabling the webchat.',
+    descriptionHTML: 'If checked, all live videos will have a checkbox in their properties for enabling the web chat.',
     private: false
   })
   registerSetting({
     name: 'chat-per-live-video-warning',
     type: 'html',
     private: true,
-    descriptionHTML: `
-<span class="peertube-plugin-livechat-warning">
+    descriptionHTML:
+`<span class="peertube-plugin-livechat-warning">
   You have enabled the setting «Users can activate the chat for their lives».
   It is redundant with the «Activate chat for all lives» setting.
 </span>`
@@ -231,13 +235,14 @@ function initSettings (options: RegisterServerOptions): void {
   })
   registerSetting({
     name: 'chat-videos-list',
-    label: 'Activate chat for specific videos',
+    label: 'Activate chat for these videos',
     type: 'input-textarea',
     default: '',
-    descriptionHTML: 'Videos UUIDs for which we want a chat. ' +
-      'Can be non-live videos. One per line. <br />' +
-      'You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />' +
-      'Don\'t add private videos, the UUIDs will be send to frontend.',
+    descriptionHTML:
+`Videos UUIDs for which we want a web chat.
+Can be non-live videos. One per line. <br />
+You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />
+Don't add private videos, the UUIDs will be send to frontend.`,
     private: false
   })
 
@@ -246,8 +251,9 @@ function initSettings (options: RegisterServerOptions): void {
     label: 'Webchat iframe style attribute',
     type: 'input-textarea',
     default: '',
-    descriptionHTML: 'Additional styles to be added on the iframe style attribute. <br>' +
-      'Example: height:400px;',
+    descriptionHTML:
+`Additional styles to be added on the iframe style attribute. <br>
+Example: height:400px;`,
     private: false
   })
 
