@@ -54,3 +54,7 @@
 .peertube-plugin-livechat-warning {
   color: orange;
 }
+
+.peertube-plugin-livechat-error {
+  color: red;
+}

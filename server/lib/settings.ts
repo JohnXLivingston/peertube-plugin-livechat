@@ -92,6 +92,13 @@ Please read the
   })
 
   registerSetting({
+    name: 'prosody-list-rooms',
+    label: 'List existing rooms',
+    type: 'html',
+    descriptionHTML: '<a class="peertube-plugin-livechat-prosody-list-rooms">List rooms</a>',
+    private: true
+  })
+  registerSetting({
     name: 'prosody-port',
     label: 'Prosody port',
     type: 'input',

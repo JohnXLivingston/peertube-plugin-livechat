@@ -1,4 +1,5 @@
 import type { Router, Request, Response, NextFunction } from 'express'
+import type { ChatType, ProsodyListRoomsResult } from '../../../shared/lib/types'
 import { diag } from '../diagnostic'
 import { getBaseStaticRoute, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
@@ -36,6 +37,38 @@ async function initSettingsRouter (options: RegisterServerOptions): Promise<Rout
 
       res.status(200)
       res.json(result)
+    }
+  ))
+
+  router.get('/prosody-list-rooms', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      if (!res.locals.authenticated) {
+        res.sendStatus(403)
+        return
+      }
+      if (!await isUserAdmin(options, res)) {
+        res.sendStatus(403)
+        return
+      }
+
+      const chatType: ChatType = await options.settingsManager.getSetting('chat-type') as ChatType
+      if (chatType !== 'builtin-prosody') {
+        const message = 'Please save the settings first.' // TODO: translate?
+        res.status(200)
+        const r: ProsodyListRoomsResult = {
+          ok: false,
+          error: message
+        }
+        res.json(r)
+        return
+      }
+
+      res.status(200)
+      const r: ProsodyListRoomsResult = {
+        ok: true,
+        rooms: [] // TODO: get room list from Prosody
+      }
+      res.json(r)
     }
   ))
 
