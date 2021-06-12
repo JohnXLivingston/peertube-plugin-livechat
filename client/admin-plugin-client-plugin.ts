@@ -51,7 +51,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
             container.textContent = '...'
             listRoomsButton.after(container)
 
-            const response = await fetch(getBaseRoute() + '/settings/prosody-list-rooms', {
+            const response = await fetch(getBaseRoute() + '/webchat/prosody-list-rooms', {
               method: 'GET',
               headers: peertubeHelpers.getAuthHeader()
             })
@@ -63,18 +63,36 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               container.textContent = json.error
               container.classList.add('peertube-plugin-livechat-error')
             } else {
+              const rooms = json.rooms.sort((a, b) => a.name.localeCompare(b.name))
+
               container.textContent = ''
               const table = document.createElement('table')
+              table.classList.add('peertube-plugin-livechat-prosody-list-rooms')
               container.append(table)
-              json.rooms.forEach(room => {
+              // TODO: translate labels.
+              const titleLineEl = document.createElement('tr')
+              const titleNameEl = document.createElement('th')
+              titleNameEl.textContent = 'Name'
+              const titleDescriptionEl = document.createElement('th')
+              titleDescriptionEl.textContent = 'Description'
+              titleLineEl.append(titleNameEl)
+              titleLineEl.append(titleDescriptionEl)
+              table.append(titleLineEl)
+              rooms.forEach(room => {
+                // TODO: get some informations about the video.
+                const uuid = room.localpart
+                const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid)
                 const lineEl = document.createElement('tr')
                 const nameEl = document.createElement('td')
                 const aEl = document.createElement('a')
                 aEl.textContent = room.name
-                aEl.href = room.href
+                aEl.href = href
                 aEl.target = '_blank'
+                const descriptionEl = document.createElement('td')
+                descriptionEl.textContent = room.description
                 nameEl.append(aEl)
                 lineEl.append(nameEl)
+                lineEl.append(descriptionEl)
                 table.append(lineEl)
               })
             }

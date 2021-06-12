@@ -58,3 +58,7 @@
 .peertube-plugin-livechat-error {
   color: red;
 }
+
+table.peertube-plugin-livechat-prosody-list-rooms {
+  border: 1px solid black;
+}

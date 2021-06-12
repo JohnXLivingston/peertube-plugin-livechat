@@ -96,6 +96,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   // TODO: add a settings to choose?
   config.useDefaultPersistent()
 
+  config.useListRoomsApi(apikey)
+
   let logLevel: ProsodyLogLevel | undefined
   if (logger.level && (typeof logger.level === 'string')) {
     if (logger.level === 'error' || logger.level === 'info' || logger.level === 'debug') {

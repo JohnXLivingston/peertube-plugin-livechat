@@ -10,6 +10,7 @@
 
 * New simpler settings screen.
 * New field in live video form, to activate the webchat per video. There is a setting for enabling this new feature.
+* When using the builtin prosody, there is a button to list existing chatrooms in the settings screen.
 
 ### Changes
 
@@ -18,9 +19,6 @@
 * New settings
 * By default, the «activate chat for all lives» is disabled (now that we can enable the webchat per video)
 
-### Fixes
-
-* ...
 
 ## v2.3.1
 

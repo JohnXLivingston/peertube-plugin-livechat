@@ -1,16 +1,19 @@
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import type { ProxyOptions } from 'express-http-proxy'
-import type { ChatType } from '../../../shared/lib/types'
-import { getBaseRouterRoute, getBaseStaticRoute } from '../helpers'
+import type { ChatType, ProsodyListRoomsResult } from '../../../shared/lib/types'
+import { getBaseRouterRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
+import { getAPIKey } from '../apikey'
 import * as path from 'path'
 const bodyParser = require('body-parser')
+const got = require('got')
 
 const fs = require('fs').promises
 const proxy = require('express-http-proxy')
 
 let httpBindRoute: RequestHandler
+let prosodyPort: string | undefined
 
 async function initWebchatRouter (options: RegisterServerOptions): Promise<Router> {
   const {
@@ -97,6 +100,54 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       httpBindRoute(req, res, next)
     }
   )
+
+  router.get('/prosody-list-rooms', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      if (!res.locals.authenticated) {
+        res.sendStatus(403)
+        return
+      }
+      if (!await isUserAdmin(options, res)) {
+        res.sendStatus(403)
+        return
+      }
+
+      const chatType: ChatType = await options.settingsManager.getSetting('chat-type') as ChatType
+      if (chatType !== 'builtin-prosody') {
+        const message = 'Please save the settings first.' // TODO: translate?
+        res.status(200)
+        const r: ProsodyListRoomsResult = {
+          ok: false,
+          error: message
+        }
+        res.json(r)
+        return
+      }
+
+      if (!prosodyPort) {
+        throw new Error('It seems that prosody is not binded... Cant list rooms.')
+      }
+      // FIXME: can the api be on http://localhost instead of http://room.localhost?
+      const apiUrl = `http://room.localhost:${prosodyPort}/peertubelivechat_list_rooms/list-rooms`
+      peertubeHelpers.logger.debug('Calling list rooms API on url: ' + apiUrl)
+      const rooms = await got(apiUrl, {
+        method: 'GET',
+        headers: {
+          authorization: 'Bearer ' + await getAPIKey(options)
+        },
+        responseType: 'json',
+        resolveBodyOnly: true
+      })
+
+      res.status(200)
+      const r: ProsodyListRoomsResult = {
+        ok: true,
+        rooms: rooms
+      }
+      res.json(r)
+    }
+  ))
+
   return router
 }
 
@@ -108,6 +159,7 @@ function changeHttpBindRoute ({ peertubeHelpers }: RegisterServerOptions, port: 
     port = null
   }
   if (port === null) {
+    prosodyPort = undefined
     httpBindRoute = (_req: Request, res: Response, _next: NextFunction) => {
       res.status(404)
       res.send('Not found')
@@ -122,6 +174,7 @@ function changeHttpBindRoute ({ peertubeHelpers }: RegisterServerOptions, port: 
       parseReqBody: true // Note that setting this to false overrides reqAsBuffer and reqBodyEncoding below.
       // FIXME: should we remove cookies?
     }
+    prosodyPort = port
     httpBindRoute = proxy('http://localhost:' + port, options)
   }
 }

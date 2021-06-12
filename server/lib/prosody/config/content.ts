@@ -236,6 +236,11 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_persistent', true)
   }
 
+  useListRoomsApi (apikey: string): void {
+    this.muc.add('modules_enabled', 'http_peertubelivechat_list_rooms')
+    this.muc.set('peertubelivechat_list_rooms_apikey', apikey)
+  }
+
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
     let log = ''
     log += 'log = {\n'

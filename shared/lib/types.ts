@@ -8,8 +8,11 @@ interface ProsodyListRoomsResultError {
 interface ProsodyListRoomsResultSuccess {
   ok: true
   rooms: Array<{
+    jid: string
+    localpart: string
     name: string
-    href: string
+    lang: string
+    description: string
   }>
 }
 

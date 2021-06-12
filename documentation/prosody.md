@@ -61,6 +61,12 @@ This is the port that the Prosody server will use. By default it is set to 52800
 These settings are common with other chat modes.
 Here is the documentation: [common settings](./common.md).
 
+## Moderation
+
+You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».
+
+You can delete old rooms: join the room, and use the menu on the top to destroy the room.
+
 ## Notes
 
 All instance moderators and admins will be owner for created chat rooms.
