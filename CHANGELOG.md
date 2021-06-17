@@ -18,10 +18,6 @@
 * New settings
 * By default, the «activate chat for all lives» is disabled (now that we can enable the webchat per video)
 
-### Fixes
-
-* ...
-
 ## v2.3.1
 
 ### Features
