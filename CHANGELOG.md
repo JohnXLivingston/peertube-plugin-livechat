@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.1.0
+
+...
+
 ## v3.0.0
 
 ### Important Notes
@@ -18,7 +22,6 @@
 * Restoring default values for checkboxes in settings (there was a bug with Peertube previous to 3.2.0)
 * New settings
 * By default, the «activate chat for all lives» is disabled (now that we can enable the webchat per video)
-
 
 ## v2.3.1
 
