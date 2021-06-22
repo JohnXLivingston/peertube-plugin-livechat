@@ -74,7 +74,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     return result
   }
 
-  const versionMatches = about.match(/^Prosody\s*(\d+)\.(\d+)\.(\d+)\s*$/mi)
+  const versionMatches = about.match(/^Prosody\s*(\d+)\.(\d+)(?:\.(\d+)| (nightly build \d+.*))\s*$/mi)
   if (!versionMatches) {
     result.messages.push({
       level: 'error',
@@ -84,7 +84,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   } else {
     const major = versionMatches[1]
     const minor = versionMatches[2]
-    const patch = versionMatches[3]
+    const patch = versionMatches[3] ?? versionMatches[4]
     result.messages.push(`Prosody version is ${major}.${minor}.${patch}`)
     if (major !== '0' && minor !== '11') {
       result.messages.push({
