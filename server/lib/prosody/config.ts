@@ -67,6 +67,7 @@ interface ProsodyConfig {
   content: string
   paths: ProsodyFilePaths
   port: string
+  baseApiUrl: string
 }
 async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
@@ -80,11 +81,18 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const paths = await getProsodyFilePaths(options)
 
   const apikey = await getAPIKey(options)
-  const baseApiUrl = options.peertubeHelpers.config.getWebserverUrl() +
-    getBaseRouterRoute(options) +
-    'api/'
+  let baseApiUrl = await options.settingsManager.getSetting('prosody-peertube-uri') as string
+  if (baseApiUrl && !/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(baseApiUrl)) {
+    throw new Error('Invalid prosody-peertube-uri')
+  }
+  if (!baseApiUrl) {
+    baseApiUrl = options.peertubeHelpers.config.getWebserverUrl()
+  }
+  baseApiUrl += getBaseRouterRoute(options) + 'api/'
+
   const authApiUrl = baseApiUrl + 'user' // FIXME: should be protected by apikey, but mod_auth_http cant handle params
   const roomApiUrl = baseApiUrl + 'room?apikey=' + apikey + '&jid={room.jid|jid_node}'
+  const testApiUrl = baseApiUrl + 'test?apikey=' + apikey
 
   const config = new ProsodyConfigContent(paths, prosodyDomain)
   config.useHttpAuthentication(authApiUrl)
@@ -97,6 +105,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   config.useDefaultPersistent()
 
   config.useListRoomsApi(apikey)
+
+  config.useTestModule(apikey, testApiUrl)
 
   let logLevel: ProsodyLogLevel | undefined
   if (logger.level && (typeof logger.level === 'string')) {
@@ -117,7 +127,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   return {
     content,
     paths,
-    port
+    port,
+    baseApiUrl
   }
 }
 

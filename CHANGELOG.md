@@ -1,8 +1,17 @@
 # Changelog
 
-## v3.1.0
+## v3.2.0
 
 ...
+
+## v3.1.0
+
+### Features
+
+* Builtin Prosody: optional settings to change the url for Prosody's API calls.
+* Diagnostic tool: testing API communication from Peertube to Prosody.
+* Diagnostic tool: testing API communication from Prosody to Peertube.
+* Diagnostic tool: correctly parse Prosody nightly build versions.
 
 ## v3.0.0
 

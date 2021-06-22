@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve
 title: ''
 labels: ''
-assignees: ''
+assignees: JohnXLivingston
 
 ---
 
@@ -22,6 +22,16 @@ A clear and concise description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
+
+
+**Server (please complete the following information):**
+ - OS version [e.g. Debian 10, ...]: 
+ - Peertube version: 
+ - Peertube installation type [e.g. standard, docker, ...]: 
+ - peertube-plugin-livechat version: 
+
+**Plugin diagnostic:**
+If this is a server setup issue, please go to the plugin settings, click on «launch diagnostic», and copy/paste the result.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]

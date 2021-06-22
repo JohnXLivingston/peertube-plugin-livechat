@@ -34,6 +34,14 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   const router = getRouter()
   const logger = peertubeHelpers.logger
 
+  router.get('/test', asyncMiddleware([
+    getCheckAPIKeyMiddleware(options),
+    async (req: Request, res: Response, _next: NextFunction) => {
+      logger.info('Test api call')
+      res.json({ ok: true })
+    }
+  ]))
+
   router.get('/room', asyncMiddleware([
     getCheckAPIKeyMiddleware(options),
     async (req: Request, res: Response, _next: NextFunction) => {

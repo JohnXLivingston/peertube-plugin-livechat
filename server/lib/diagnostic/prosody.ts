@@ -1,7 +1,10 @@
 import { getProsodyConfig, getWorkingDir } from '../prosody/config'
 import { getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
+import { getAPIKey } from '../apikey'
 import * as fs from 'fs'
+
+const got = require('got')
 
 export async function diagProsody (test: string, options: RegisterServerOptions): Promise<TestResult> {
   const result = newResult(test)
@@ -17,11 +20,15 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
 
   // FIXME: these tests are very similar to tests in testProsodyCorrectlyRunning. Remove from here?
   // Testing the prosody config file.
+  let prosodyPort: string
   try {
     const wantedConfig = await getProsodyConfig(options)
     const filePath = wantedConfig.paths.config
 
     result.messages.push(`Prosody will run on port '${wantedConfig.port}'`)
+    prosodyPort = wantedConfig.port
+
+    result.messages.push(`Prosody will use ${wantedConfig.baseApiUrl} as base uri from api calls`)
 
     result.messages.push(`Prosody modules path will be '${wantedConfig.paths.modules}'`)
 
@@ -67,7 +74,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     return result
   }
 
-  const versionMatches = about.match(/^Prosody\s*(\d+)\.(\d+)\.(\d+)\s*$/mi)
+  const versionMatches = about.match(/^Prosody\s*(\d+)\.(\d+)(?:\.(\d+)| (nightly build \d+.*))\s*$/mi)
   if (!versionMatches) {
     result.messages.push({
       level: 'error',
@@ -77,7 +84,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   } else {
     const major = versionMatches[1]
     const minor = versionMatches[2]
-    const patch = versionMatches[3]
+    const patch = versionMatches[3] ?? versionMatches[4]
     result.messages.push(`Prosody version is ${major}.${minor}.${patch}`)
     if (major !== '0' && minor !== '11') {
       result.messages.push({
@@ -85,6 +92,48 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
         message: 'Warning: recommended Prosody version is 0.11.x'
       })
     }
+  }
+
+  try {
+    const apiUrl = `http://localhost:${prosodyPort}/peertubelivechat_test/test-peertube-prosody`
+    const testResult = await got(apiUrl, {
+      method: 'GET',
+      headers: {
+        authorization: 'Bearer ' + await getAPIKey(options)
+      },
+      responseType: 'json',
+      resolveBodyOnly: true
+    })
+    if (testResult.ok === true) {
+      result.messages.push('API Peertube -> Prosody is OK')
+    } else {
+      result.messages.push('API Peertube -> Prosody is KO. Response was: ' + JSON.stringify(testResult))
+      return result
+    }
+  } catch (error) {
+    result.messages.push('Error when calling Prosody test api (test-peertube-prosody): ' + (error as string))
+    return result
+  }
+
+  try {
+    const apiUrl = `http://localhost:${prosodyPort}/peertubelivechat_test/test-prosody-peertube`
+    const testResult = await got(apiUrl, {
+      method: 'GET',
+      headers: {
+        authorization: 'Bearer ' + await getAPIKey(options)
+      },
+      responseType: 'json',
+      resolveBodyOnly: true
+    })
+    if (testResult.ok === true) {
+      result.messages.push('API Prosody -> Peertube is OK')
+    } else {
+      result.messages.push('API Prosody -> Peertube is KO. Response was: ' + JSON.stringify(testResult))
+      return result
+    }
+  } catch (error) {
+    result.messages.push('Error when calling Prosody test api (test-prosody-peertube): ' + (error as string))
+    return result
   }
 
   result.ok = true
