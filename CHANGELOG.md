@@ -2,7 +2,9 @@
 
 ## v3.1.0
 
-...
+### Features
+
+* Diagnostic tool: testing API communication between Peertube and Prosody.
 
 ## v3.0.0
 

@@ -1,7 +1,10 @@
 import { getProsodyConfig, getWorkingDir } from '../prosody/config'
 import { getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
+import { getAPIKey } from '../apikey'
 import * as fs from 'fs'
+
+const got = require('got')
 
 export async function diagProsody (test: string, options: RegisterServerOptions): Promise<TestResult> {
   const result = newResult(test)
@@ -17,11 +20,13 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
 
   // FIXME: these tests are very similar to tests in testProsodyCorrectlyRunning. Remove from here?
   // Testing the prosody config file.
+  let prosodyPort: string
   try {
     const wantedConfig = await getProsodyConfig(options)
     const filePath = wantedConfig.paths.config
 
     result.messages.push(`Prosody will run on port '${wantedConfig.port}'`)
+    prosodyPort = wantedConfig.port
 
     result.messages.push(`Prosody modules path will be '${wantedConfig.paths.modules}'`)
 
@@ -85,6 +90,27 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
         message: 'Warning: recommended Prosody version is 0.11.x'
       })
     }
+  }
+
+  try {
+    const apiUrl = `http://localhost:${prosodyPort}/peertubelivechat_test/test-peertube-prosody`
+    const testResult = await got(apiUrl, {
+      method: 'GET',
+      headers: {
+        authorization: 'Bearer ' + await getAPIKey(options)
+      },
+      responseType: 'json',
+      resolveBodyOnly: true
+    })
+    if (testResult.ok === true) {
+      result.messages.push('API Peertube -> Prosody is OK')
+    } else {
+      result.messages.push('API Peertube -> Prosody is KO. Response was: ' + JSON.stringify(testResult))
+      return result
+    }
+  } catch (error) {
+    result.messages.push('Error when calling Prosody test api (test-peertube-prosody): ' + (error as string))
+    return result
   }
 
   result.ok = true
