@@ -128,6 +128,8 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         throw new Error('It seems that prosody is not binded... Cant list rooms.')
       }
       // FIXME: can the api be on http://localhost instead of http://room.localhost?
+      //   This won't work on production servers.
+      peertubeHelpers.logger.error('FIXME: the prosody url should be fixed before releasing this.')
       const apiUrl = `http://room.localhost:${prosodyPort}/peertubelivechat_list_rooms/list-rooms`
       peertubeHelpers.logger.debug('Calling list rooms API on url: ' + apiUrl)
       const rooms = await got(apiUrl, {
