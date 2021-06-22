@@ -113,6 +113,27 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     return result
   }
 
+  try {
+    const apiUrl = `http://localhost:${prosodyPort}/peertubelivechat_test/test-prosody-peertube`
+    const testResult = await got(apiUrl, {
+      method: 'GET',
+      headers: {
+        authorization: 'Bearer ' + await getAPIKey(options)
+      },
+      responseType: 'json',
+      resolveBodyOnly: true
+    })
+    if (testResult.ok === true) {
+      result.messages.push('API Prosody -> Peertube is OK')
+    } else {
+      result.messages.push('API Prosody -> Peertube is KO. Response was: ' + JSON.stringify(testResult))
+      return result
+    }
+  } catch (error) {
+    result.messages.push('Error when calling Prosody test api (test-prosody-peertube): ' + (error as string))
+    return result
+  }
+
   result.ok = true
   return result
 }

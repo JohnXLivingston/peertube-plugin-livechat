@@ -85,6 +85,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     'api/'
   const authApiUrl = baseApiUrl + 'user' // FIXME: should be protected by apikey, but mod_auth_http cant handle params
   const roomApiUrl = baseApiUrl + 'room?apikey=' + apikey + '&jid={room.jid|jid_node}'
+  const testApiUrl = baseApiUrl + 'test?apikey=' + apikey
 
   const config = new ProsodyConfigContent(paths, prosodyDomain)
   config.useHttpAuthentication(authApiUrl)
@@ -96,7 +97,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   // TODO: add a settings to choose?
   config.useDefaultPersistent()
 
-  config.useTestModule(apikey)
+  config.useTestModule(apikey, testApiUrl)
 
   let logLevel: ProsodyLogLevel | undefined
   if (logger.level && (typeof logger.level === 'string')) {

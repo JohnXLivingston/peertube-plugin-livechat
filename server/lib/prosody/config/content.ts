@@ -236,9 +236,10 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_persistent', true)
   }
 
-  useTestModule (apikey: string): void {
+  useTestModule (prosodyApikey: string, apiurl: string): void {
     this.global.add('modules_enabled', 'http_peertubelivechat_test')
-    this.global.set('peertubelivechat_test_apikey', apikey)
+    this.global.set('peertubelivechat_test_apikey', prosodyApikey)
+    this.global.set('peertubelivechat_test_peertube_api_url', apiurl)
   }
 
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
