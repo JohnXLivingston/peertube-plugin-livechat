@@ -4,6 +4,7 @@
 
 ### Features
 
+* Builtin Prosody: optional settings to change the url for Prosody's API calls.
 * Diagnostic tool: testing API communication from Peertube to Prosody.
 * Diagnostic tool: testing API communication from Prosody to Peertube.
 

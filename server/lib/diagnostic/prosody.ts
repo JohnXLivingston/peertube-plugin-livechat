@@ -28,6 +28,8 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     result.messages.push(`Prosody will run on port '${wantedConfig.port}'`)
     prosodyPort = wantedConfig.port
 
+    result.messages.push(`Prosody will use ${wantedConfig.baseApiUrl} as base uri from api calls`)
+
     result.messages.push(`Prosody modules path will be '${wantedConfig.paths.modules}'`)
 
     await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
