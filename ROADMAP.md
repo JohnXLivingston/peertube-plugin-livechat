@@ -36,3 +36,4 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [ ] | Builtin Prosody | Add a settings to enable the server to be accessed with XMPP clients.
 [ ] | ConverseJS | For anonymous user, automatically log in with a random nickname (and allow to change afterward)
 [ ] | Common | There should be a settings to add terms & conditions in the Peertube's about page (for example if the webchat is hosted anywhere else).
+[ ] | Builtin Prosody | Add on option to limit webchat to registered users.
