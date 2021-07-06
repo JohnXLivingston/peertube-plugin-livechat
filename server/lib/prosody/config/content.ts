@@ -190,6 +190,8 @@ class ProsodyConfigContent {
     this.anon.set('http_external_url', 'http://' + prosodyDomain)
 
     this.muc.set('restrict_room_creation', 'local')
+    this.muc.set('http_host', prosodyDomain)
+    this.muc.set('http_external_url', 'http://' + prosodyDomain)
 
     if (this.authenticated) {
       this.authenticated.set('trusted_proxies', ['127.0.0.1', '::1'])
