@@ -168,10 +168,14 @@ class ProsodyConfigContent {
     this.authenticated.set('http_auth_url', url)
   }
 
-  usePeertubeBosh (prosodyDomain: string, port: string): void {
+  usePeertubeBosh (prosodyDomain: string, port: string, enableC2s: boolean, c2sPort: string): void {
     this.global.set('c2s_require_encryption', false)
     this.global.set('interfaces', ['127.0.0.1', '::1'])
-    this.global.set('c2s_ports', [])
+    if (enableC2s) {
+      this.global.set('c2s_ports', [c2sPort])
+    } else {
+      this.global.set('c2s_ports', [])
+    }
     this.global.set('c2s_interfaces', ['127.0.0.1', '::1'])
     this.global.set('s2s_ports', [])
     this.global.set('s2s_interfaces', ['127.0.0.1', '::1'])

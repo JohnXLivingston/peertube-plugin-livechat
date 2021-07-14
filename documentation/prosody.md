@@ -68,3 +68,19 @@ If the video is local (not from a remote Peertube), the video owner will be admi
 
 You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.
 When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.
+
+
+### Prosody advanced settings
+
+#### Enable client to server connections
+
+This setting enable XMPP clients to connect to the builtin Prosody server.
+This option alone **only allows connections from localhost clients**.
+
+As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room.
+
+##### Prosody client to server port
+
+The port that will be used by the c2s module of the builtin Prosody server.
+XMPP clients shall use this port to connect.
+Change it if this port is already in use on your server.
