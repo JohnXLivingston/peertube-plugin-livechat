@@ -203,6 +203,10 @@ class ProsodyConfigContent {
     }
   }
 
+  useC2S (c2sPort: string): void {
+    this.global.set('c2s_ports', [c2sPort])
+  }
+
   useMucHttpDefault (url: string): void {
     this.muc.add('modules_enabled', 'muc_http_defaults')
     this.muc.add('muc_create_api_url', url)

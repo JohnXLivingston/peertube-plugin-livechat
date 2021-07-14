@@ -114,7 +114,14 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
         case 'prosody-peertube-uri':
         case 'chat-type-help-builtin-prosody':
         case 'prosody-list-rooms':
+        case 'prosody-advanced':
+        case 'prosody-c2s':
           return options.formValues['chat-type'] !== ('builtin-prosody' as ChatType)
+        case 'prosody-c2s-port':
+          return !(
+            options.formValues['chat-type'] === ('builtin-prosody' as ChatType) &&
+            options.formValues['prosody-c2s'] === true
+          )
         case 'chat-server':
         case 'chat-room':
         case 'chat-bosh-uri':

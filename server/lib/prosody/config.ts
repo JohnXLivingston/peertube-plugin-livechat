@@ -77,6 +77,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   if (!/^\d+$/.test(port)) {
     throw new Error('Invalid port')
   }
+  const enableC2s = (await options.settingsManager.getSetting('prosody-c2s') as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
 
@@ -98,6 +99,14 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   config.useHttpAuthentication(authApiUrl)
   config.usePeertubeBosh(prosodyDomain, port)
   config.useMucHttpDefault(roomApiUrl)
+
+  if (enableC2s) {
+    const c2sPort = (await options.settingsManager.getSetting('prosody-c2s-port') as string) || '52822'
+    if (!/^\d+$/.test(c2sPort)) {
+      throw new Error('Invalid c2s port')
+    }
+    config.useC2S(c2sPort)
+  }
 
   // TODO: add a settings so that admin can choose? (on/off and duration)
   config.useMam('1w') // Remove archived messages after 1 week

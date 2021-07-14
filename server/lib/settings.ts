@@ -276,6 +276,38 @@ Example: height:400px;`,
     private: false
   })
 
+  // ********** Built-in Prosody advanced settings
+  registerSetting({
+    name: 'prosody-advanced',
+    type: 'html',
+    private: true,
+    descriptionHTML: '<h3>Prosody advanced settings</h3>'
+  })
+
+  registerSetting({
+    name: 'prosody-c2s',
+    label: 'Enable client to server connections',
+    type: 'input-checkbox',
+    default: false,
+    private: true,
+    descriptionHTML:
+`Enable XMPP clients to connect to the builtin Prosody server.<br>
+This option alone only allows connections from localhost clients.`
+  })
+
+  registerSetting({
+    name: 'prosody-c2s-port',
+    label: 'Prosody client to server port',
+    type: 'input',
+    default: '52822',
+    private: true,
+    descriptionHTML:
+`The port that will be used by the c2s module of the builtin Prosody server.<br>
+XMPP clients shall use this port to connect.<br>
+Change it if this port is already in use on your server.<br>
+Keep it close this port on your firewall for now, it will not be accessed from the outer world.`
+  })
+
   // ********** settings changes management
   settingsManager.onSettingsChange(async (settings: any) => {
     if ('chat-type' in settings) {

@@ -61,6 +61,21 @@ This is the port that the Prosody server will use. By default it is set to 52800
 These settings are common with other chat modes.
 Here is the documentation: [common settings](./common.md).
 
+### Prosody advanced settings
+
+#### Enable client to server connections
+
+This setting enable XMPP clients to connect to the builtin Prosody server.
+For now, this option **only allows connections from localhost clients**.
+
+As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room.
+
+##### Prosody client to server port
+
+The port that will be used by the c2s module of the builtin Prosody server.
+XMPP clients shall use this port to connect.
+Change it if this port is already in use on your server.
+
 ## Moderation
 
 You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».
