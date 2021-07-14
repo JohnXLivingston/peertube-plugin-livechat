@@ -111,18 +111,6 @@ You can close this port on your firewall, it will not be accessed from the outer
   })
 
   registerSetting({
-    name: 'prosody-peertube-uri',
-    label: 'Peertube url for API calls',
-    type: 'input',
-    default: '',
-    private: true,
-    descriptionHTML:
-`Please let this settings empty if you don't know what you are doing.<br>
-In some rare case, Prosody can't call Peertube's API from its public URI.
-You can use this field to customise Peertube's URI for Prosody modules (for example with «http://localhost:9000»).`
-  })
-
-  registerSetting({
     name: 'chat-server',
     label: 'XMPP service server',
     type: 'input',
@@ -282,6 +270,18 @@ Example: height:400px;`,
     type: 'html',
     private: true,
     descriptionHTML: '<h3>Prosody advanced settings</h3>'
+  })
+
+  registerSetting({
+    name: 'prosody-peertube-uri',
+    label: 'Peertube url for API calls',
+    type: 'input',
+    default: '',
+    private: true,
+    descriptionHTML:
+`Please let this settings empty if you don't know what you are doing.<br>
+In some rare case, Prosody can't call Peertube's API from its public URI.
+You can use this field to customise Peertube's URI for Prosody modules (for example with «http://localhost:9000»).`
   })
 
   registerSetting({
