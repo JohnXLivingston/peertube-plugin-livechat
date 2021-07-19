@@ -8,7 +8,7 @@ local all_rooms = rawget(mod_muc, "all_rooms")
 module:depends"http";
 
 function check_auth(routes)
-	local function check_request_auth(event)
+  local function check_request_auth(event)
     local apikey = module:get_option_string("peertubelivechat_list_rooms_apikey", "")
     if apikey == "" then
       return false, 500;
@@ -16,25 +16,25 @@ function check_auth(routes)
     if event.request.headers.authorization ~= "Bearer " .. apikey then
       return false, 401;
     end
-		return true;
-	end
+    return true;
+  end
 
-	for route, handler in pairs(routes) do
-		routes[route] = function (event, ...)
-			local permit, code = check_request_auth(event);
-			if not permit then
-				return code;
-			end
-			return handler(event, ...);
-		end;
-	end
-	return routes;
+  for route, handler in pairs(routes) do
+    routes[route] = function (event, ...)
+      local permit, code = check_request_auth(event);
+      if not permit then
+        return code;
+      end
+      return handler(event, ...);
+    end;
+  end
+  return routes;
 end
 
 local function list_rooms(event)
   local request, response = event.request, event.response;
   local rooms_json = array();
-	for room in all_rooms() do
+  for room in all_rooms() do
     local localpart = jid_split(room.jid);
     rooms_json:push({
       jid = room.jid;
@@ -43,14 +43,14 @@ local function list_rooms(event)
       lang = room.get_language and room:get_language();
       description = room:get_description();
     })
-	end
+  end
 
   event.response.headers["Content-Type"] = "application/json";
-	return json.encode_array(rooms_json);
+  return json.encode_array(rooms_json);
 end
 
 module:provides("http", {
-	route = check_auth {
-		["GET /list-rooms"] = list_rooms;
-	};
+  route = check_auth {
+    ["GET /list-rooms"] = list_rooms;
+  };
 });
