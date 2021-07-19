@@ -64,6 +64,7 @@ interface RegisterOptions {
 interface Video {
   isLive: boolean
   isLocal: boolean
+  name: string
   originInstanceUrl: string
   uuid: string
 }

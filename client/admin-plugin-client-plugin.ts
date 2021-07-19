@@ -70,30 +70,66 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               table.classList.add('peertube-plugin-livechat-prosody-list-rooms')
               container.append(table)
               // TODO: translate labels.
+              const labels: any = {
+                Name: 'Name',
+                Description: 'Description',
+                NotFound: 'Not found',
+                Video: 'Video'
+              }
               const titleLineEl = document.createElement('tr')
               const titleNameEl = document.createElement('th')
-              titleNameEl.textContent = 'Name'
+              titleNameEl.textContent = labels.Name
               const titleDescriptionEl = document.createElement('th')
-              titleDescriptionEl.textContent = 'Description'
+              titleDescriptionEl.textContent = labels.Description
+              const titleVideoEl = document.createElement('th')
+              titleVideoEl.textContent = labels.Video
               titleLineEl.append(titleNameEl)
               titleLineEl.append(titleDescriptionEl)
+              titleLineEl.append(titleVideoEl)
               table.append(titleLineEl)
               rooms.forEach(room => {
-                // TODO: get some informations about the video.
                 const uuid = room.localpart
                 const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid)
                 const lineEl = document.createElement('tr')
                 const nameEl = document.createElement('td')
                 const aEl = document.createElement('a')
                 aEl.textContent = room.name
-                aEl.href = href
                 aEl.target = '_blank'
                 const descriptionEl = document.createElement('td')
                 descriptionEl.textContent = room.description
+                const videoEl = document.createElement('td')
                 nameEl.append(aEl)
                 lineEl.append(nameEl)
                 lineEl.append(descriptionEl)
+                lineEl.append(videoEl)
                 table.append(lineEl)
+
+                if (/^[a-zA-A0-9-]+$/.test(uuid)) {
+                  const p = fetch('/api/v1/videos/' + uuid, {
+                    method: 'GET',
+                    headers: peertubeHelpers.getAuthHeader()
+                  })
+                  p.then(async res => {
+                    if (!res.ok) {
+                      videoEl.textContent = labels.NotFound
+                      return
+                    }
+                    const video: Video | undefined = await res.json()
+                    if (!video) {
+                      videoEl.textContent = labels.NotFound
+                      return
+                    }
+
+                    aEl.href = href
+                    const aVideoEl = document.createElement('a')
+                    aVideoEl.textContent = video.name
+                    aVideoEl.target = '_blank'
+                    aVideoEl.href = '/videos/watch/' + uuid
+                    videoEl.append(aVideoEl)
+                  }, () => {
+                    console.error('[peertube-plugin-livechat] Failed to retrieve video ' + uuid)
+                  })
+                }
               })
             }
           } catch (error) {
