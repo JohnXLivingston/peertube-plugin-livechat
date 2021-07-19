@@ -61,4 +61,26 @@
 
 table.peertube-plugin-livechat-prosody-list-rooms {
   border: 1px solid black;
+  margin: 5px 0px;
+}
+
+table.peertube-plugin-livechat-prosody-list-rooms tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+table.peertube-plugin-livechat-prosody-list-rooms tr:nth-child(even) {
+  background-color: #fff;
+}
+
+table.peertube-plugin-livechat-prosody-list-rooms th {
+  background-color: var(--mainHoverColor);
+  border: 1px solid black;
+  color: var(--mainBackgroundColor);
+  padding: 4px 5px;
+}
+
+table.peertube-plugin-livechat-prosody-list-rooms td {
+  border: 1px solid #555;
+  color: black;
+  padding: 4px 5px;
 }
