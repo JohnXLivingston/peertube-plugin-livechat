@@ -29,7 +29,7 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [x] | Documentation | Rewrite documentation for more clarity. | v3.0.0
 [ ] | Documentation | Add screenshots.
 [ ] | Documentation | User documentation.
-[ ] | Builtin Prosody | Room administration: add a button in the plugin settings to open a modal with existing rooms list.
+[.] | Builtin Prosody | Room administration: add a button in the plugin settings to open a modal with existing rooms list. TODO: use a modal. | v3.2.0
 [ ] | Builtin Prosody | Check with yunohost how to integrate.
 [ ] | Settings | Translate settings page.
 [ ] | ConverseJS | UI: make custom templates, for a better UI/UX. Autoshow muc participants depending on the chat window width.
