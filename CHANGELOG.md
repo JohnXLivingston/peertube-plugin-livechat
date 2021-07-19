@@ -4,8 +4,8 @@
 
 ### Features
 
-* Builtin Prosody: new settings to enable local C2S. For example, can be used with Matterbridge (thanks https://github.com/tytan652)
 * Builtin Prosody: list existing rooms in the settings page
+* Builtin Prosody: new settings to enable local C2S. For example, can be used with Matterbridge (thanks https://github.com/tytan652)
 
 ## v3.1.0
 
@@ -26,7 +26,6 @@
 
 * New simpler settings screen.
 * New field in live video form, to activate the webchat per video. There is a setting for enabling this new feature.
-* When using the builtin prosody, there is a button to list existing chatrooms in the settings screen.
 
 ### Changes
 
