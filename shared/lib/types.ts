@@ -13,6 +13,7 @@ interface ProsodyListRoomsResultSuccess {
     name: string
     lang: string
     description: string
+    lasttimestamp?: number
   }>
 }
 

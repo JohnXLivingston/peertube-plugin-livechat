@@ -36,12 +36,18 @@ local function list_rooms(event)
   local rooms_json = array();
   for room in all_rooms() do
     local localpart = jid_split(room.jid);
+    local history = room._history;
+    local lasttimestamp;
+    if history ~= nil and #history > 0 then
+      lasttimestamp = history[#history].timestamp;
+    end
     rooms_json:push({
       jid = room.jid;
       localpart = localpart;
       name = room:get_name() or localpart;
       lang = room.get_language and room:get_language();
       description = room:get_description();
+      lasttimestamp = lasttimestamp;
     })
   end
 

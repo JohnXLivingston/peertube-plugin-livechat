@@ -63,7 +63,17 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               container.textContent = json.error
               container.classList.add('peertube-plugin-livechat-error')
             } else {
-              const rooms = json.rooms.sort((a, b) => a.name.localeCompare(b.name))
+              const rooms = json.rooms.sort((a, b) => {
+                const timestampA = a.lasttimestamp ?? 0
+                const timestampB = b.lasttimestamp ?? 0
+                if (timestampA === timestampB) {
+                  return a.name.localeCompare(b.name)
+                } else if (timestampA < timestampB) {
+                  return 1
+                } else {
+                  return -1
+                }
+              })
 
               container.textContent = ''
               const table = document.createElement('table')
@@ -74,8 +84,10 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                 RoomName: 'Room name',
                 RoomDescription: 'Room description',
                 NotFound: 'Not found',
-                Video: 'Video'
+                Video: 'Video',
+                LastActivity: 'Last activity'
               }
+
               const titleLineEl = document.createElement('tr')
               const titleNameEl = document.createElement('th')
               titleNameEl.textContent = labels.RoomName
@@ -83,9 +95,12 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               titleDescriptionEl.textContent = labels.RoomDescription
               const titleVideoEl = document.createElement('th')
               titleVideoEl.textContent = labels.Video
+              const titleLastActivityEl = document.createElement('th')
+              titleLastActivityEl.textContent = labels.LastActivity
               titleLineEl.append(titleNameEl)
               titleLineEl.append(titleDescriptionEl)
               titleLineEl.append(titleVideoEl)
+              titleLineEl.append(titleLastActivityEl)
               table.append(titleLineEl)
               rooms.forEach(room => {
                 const uuid = room.localpart
@@ -98,10 +113,16 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                 const descriptionEl = document.createElement('td')
                 descriptionEl.textContent = room.description
                 const videoEl = document.createElement('td')
+                const lastActivityEl = document.createElement('td')
+                if (room.lasttimestamp && (typeof room.lasttimestamp === 'number')) {
+                  const date = new Date(room.lasttimestamp * 1000)
+                  lastActivityEl.textContent = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
+                }
                 nameEl.append(aEl)
                 lineEl.append(nameEl)
                 lineEl.append(descriptionEl)
                 lineEl.append(videoEl)
+                lineEl.append(lastActivityEl)
                 table.append(lineEl)
 
                 if (/^[a-zA-A0-9-]+$/.test(uuid)) {
