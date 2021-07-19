@@ -71,16 +71,16 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               container.append(table)
               // TODO: translate labels.
               const labels: any = {
-                Name: 'Name',
-                Description: 'Description',
+                RoomName: 'Room name',
+                RoomDescription: 'Room description',
                 NotFound: 'Not found',
                 Video: 'Video'
               }
               const titleLineEl = document.createElement('tr')
               const titleNameEl = document.createElement('th')
-              titleNameEl.textContent = labels.Name
+              titleNameEl.textContent = labels.RoomName
               const titleDescriptionEl = document.createElement('th')
-              titleDescriptionEl.textContent = labels.Description
+              titleDescriptionEl.textContent = labels.RoomDescription
               const titleVideoEl = document.createElement('th')
               titleVideoEl.textContent = labels.Video
               titleLineEl.append(titleNameEl)
