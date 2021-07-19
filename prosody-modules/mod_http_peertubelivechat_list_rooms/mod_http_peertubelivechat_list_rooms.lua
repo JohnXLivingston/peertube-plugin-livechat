@@ -32,7 +32,7 @@ function check_auth(routes)
 end
 
 local function list_rooms(event)
-	local request, response = event.request, event.response;
+  local request, response = event.request, event.response;
   local rooms_json = array();
 	for room in all_rooms() do
     local localpart = jid_split(room.jid);
