@@ -21,12 +21,14 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   // FIXME: these tests are very similar to tests in testProsodyCorrectlyRunning. Remove from here?
   // Testing the prosody config file.
   let prosodyPort: string
+  let prosodyHost: string
   try {
     const wantedConfig = await getProsodyConfig(options)
     const filePath = wantedConfig.paths.config
 
     result.messages.push(`Prosody will run on port '${wantedConfig.port}'`)
     prosodyPort = wantedConfig.port
+    prosodyHost = wantedConfig.host
 
     result.messages.push(`Prosody will use ${wantedConfig.baseApiUrl} as base uri from api calls`)
 
@@ -99,7 +101,8 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     const testResult = await got(apiUrl, {
       method: 'GET',
       headers: {
-        authorization: 'Bearer ' + await getAPIKey(options)
+        authorization: 'Bearer ' + await getAPIKey(options),
+        host: prosodyHost
       },
       responseType: 'json',
       resolveBodyOnly: true
@@ -120,7 +123,8 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     const testResult = await got(apiUrl, {
       method: 'GET',
       headers: {
-        authorization: 'Bearer ' + await getAPIKey(options)
+        authorization: 'Bearer ' + await getAPIKey(options),
+        host: prosodyHost
       },
       responseType: 'json',
       resolveBodyOnly: true

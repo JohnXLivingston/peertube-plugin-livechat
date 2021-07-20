@@ -13,7 +13,11 @@ const fs = require('fs').promises
 const proxy = require('express-http-proxy')
 
 let httpBindRoute: RequestHandler
-let prosodyPort: string | undefined
+interface ProsodyHttpBindInfo {
+  host: string
+  port: string
+}
+let currentProsodyHttpBindInfo: ProsodyHttpBindInfo | null = null
 
 async function initWebchatRouter (options: RegisterServerOptions): Promise<Router> {
   const {
@@ -124,15 +128,16 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         return
       }
 
-      if (!prosodyPort) {
+      if (!currentProsodyHttpBindInfo) {
         throw new Error('It seems that prosody is not binded... Cant list rooms.')
       }
-      const apiUrl = `http://localhost:${prosodyPort}/peertubelivechat_list_rooms/list-rooms`
+      const apiUrl = `http://localhost:${currentProsodyHttpBindInfo.port}/peertubelivechat_list_rooms/list-rooms`
       peertubeHelpers.logger.debug('Calling list rooms API on url: ' + apiUrl)
       const rooms = await got(apiUrl, {
         method: 'GET',
         headers: {
-          authorization: 'Bearer ' + await getAPIKey(options)
+          authorization: 'Bearer ' + await getAPIKey(options),
+          host: currentProsodyHttpBindInfo.host
         },
         responseType: 'json',
         resolveBodyOnly: true
@@ -150,20 +155,25 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
   return router
 }
 
-function changeHttpBindRoute ({ peertubeHelpers }: RegisterServerOptions, port: string | null): void {
+function changeHttpBindRoute (
+  { peertubeHelpers }: RegisterServerOptions,
+  prosodyHttpBindInfo: ProsodyHttpBindInfo | null
+): void {
   const logger = peertubeHelpers.logger
-  logger.info('Changing http-bind port for ' + (port ?? 'null'))
-  if (port !== null && !/^\d+$/.test(port)) {
-    logger.error('Port is not valid. Replacing by null')
-    port = null
+  if (prosodyHttpBindInfo && !/^\d+$/.test(prosodyHttpBindInfo.port)) {
+    logger.error(`Port '${prosodyHttpBindInfo.port}' is not valid. Replacing by null`)
+    prosodyHttpBindInfo = null
   }
-  if (port === null) {
-    prosodyPort = undefined
+
+  if (!prosodyHttpBindInfo) {
+    logger.info('Changing http-bind port for null')
+    currentProsodyHttpBindInfo = null
     httpBindRoute = (_req: Request, res: Response, _next: NextFunction) => {
       res.status(404)
       res.send('Not found')
     }
   } else {
+    logger.info('Changing http-bind port for ' + prosodyHttpBindInfo.port + ', on host ' + prosodyHttpBindInfo.host)
     const options: ProxyOptions = {
       https: false,
       proxyReqPathResolver: async (_req: Request): Promise<string> => {
@@ -173,8 +183,8 @@ function changeHttpBindRoute ({ peertubeHelpers }: RegisterServerOptions, port: 
       parseReqBody: true // Note that setting this to false overrides reqAsBuffer and reqBodyEncoding below.
       // FIXME: should we remove cookies?
     }
-    prosodyPort = port
-    httpBindRoute = proxy('http://localhost:' + port, options)
+    currentProsodyHttpBindInfo = prosodyHttpBindInfo
+    httpBindRoute = proxy('http://localhost:' + prosodyHttpBindInfo.port, options)
   }
 }
 

@@ -66,6 +66,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
 interface ProsodyConfig {
   content: string
   paths: ProsodyFilePaths
+  host: string
   port: string
   baseApiUrl: string
 }
@@ -137,7 +138,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     content,
     paths,
     port,
-    baseApiUrl
+    baseApiUrl,
+    host: prosodyDomain
   }
 }
 

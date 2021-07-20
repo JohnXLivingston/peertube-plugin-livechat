@@ -7,6 +7,10 @@
 * Builtin Prosody: list existing rooms in the settings page
 * Builtin Prosody: new settings to enable local C2S. For example, can be used with Matterbridge (thanks https://github.com/tytan652)
 
+### Fixes
+
+* Fix broken API diagnostic.
+
 ## v3.1.0
 
 ### Features
