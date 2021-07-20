@@ -4,6 +4,8 @@ This plugin is meant to provide web chat for Peertube videos.
 
 The plugin has to rely on an external tool as web chat backend. There are multiple ways to provide such functionality:
 
+**For release notes and breaking changes list, please see the [CHANGELOG](CHANGELOG.md) before updating the plugin.**
+
 * **Prosody server controlled by Peertube (recommended):** this plugin can launch a [Prosody](https://prosody.im) process and auto-configure it. [Documentation](documentation/prosody.md). **This is the recommanded setup, and is almost automatic to setup**.
 * **Connect to an existing XMPP server with ConverseJS:** you can use an external Jabber/XMPP server. This server has to provide BOSH or Websocket API, accept anonymous loggin, and accept room creation. [Documentation](documentation/conversejs.md)
 * **Use an external web chat tool:** you can use any external web chat tool, that can be included in an iframe. [Documentation](documentation/external.md)
