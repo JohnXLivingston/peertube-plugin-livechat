@@ -24,6 +24,7 @@ If you have any question, or if you want to talk about this plugin, you can join
 ## Settings
 
 For the chat mode, and related settings, please refer to the corresponding documentation:
+
 * [Prosody server controlled by Peertube (recommended)](documentation/prosody.md). **This is the recommanded setup**.
 * [Connect to an existing XMPP server with ConverseJS](documentation/conversejs.md)
 * [Use an external web chat tool](documentation/external.md)

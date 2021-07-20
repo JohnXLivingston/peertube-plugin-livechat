@@ -11,6 +11,7 @@ interface RegisterClientHelpers {
   // NB: getBaseRouterRoute will come with Peertube > 3.2.1 (3.3.0?)
   getBaseRouterRoute?: () => string
   isLoggedIn: () => boolean
+  getAuthHeader: () => { 'Authorization': string } | undefined
   getSettings: () => Promise<{ [ name: string ]: string }>
   notifier: {
     info: (text: string, title?: string, timeout?: number) => void
@@ -63,6 +64,7 @@ interface RegisterOptions {
 interface Video {
   isLive: boolean
   isLocal: boolean
+  name: string
   originInstanceUrl: string
   uuid: string
 }

@@ -190,6 +190,8 @@ class ProsodyConfigContent {
     this.anon.set('http_external_url', 'http://' + prosodyDomain)
 
     this.muc.set('restrict_room_creation', 'local')
+    this.muc.set('http_host', prosodyDomain)
+    this.muc.set('http_external_url', 'http://' + prosodyDomain)
 
     if (this.authenticated) {
       this.authenticated.set('trusted_proxies', ['127.0.0.1', '::1'])
@@ -199,6 +201,10 @@ class ProsodyConfigContent {
       this.authenticated.set('http_host', prosodyDomain)
       this.authenticated.set('http_external_url', 'http://' + prosodyDomain)
     }
+  }
+
+  useC2S (c2sPort: string): void {
+    this.global.set('c2s_ports', [c2sPort])
   }
 
   useMucHttpDefault (url: string): void {
@@ -236,10 +242,15 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_persistent', true)
   }
 
+  useListRoomsApi (apikey: string): void {
+    this.muc.add('modules_enabled', 'http_peertubelivechat_list_rooms')
+    this.muc.set('peertubelivechat_list_rooms_apikey', apikey)
+  }
+
   useTestModule (prosodyApikey: string, apiurl: string): void {
-    this.global.add('modules_enabled', 'http_peertubelivechat_test')
-    this.global.set('peertubelivechat_test_apikey', prosodyApikey)
-    this.global.set('peertubelivechat_test_peertube_api_url', apiurl)
+    this.muc.add('modules_enabled', 'http_peertubelivechat_test')
+    this.muc.set('peertubelivechat_test_apikey', prosodyApikey)
+    this.muc.set('peertubelivechat_test_peertube_api_url', apiurl)
   }
 
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {

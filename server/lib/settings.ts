@@ -92,6 +92,13 @@ Please read the
   })
 
   registerSetting({
+    name: 'prosody-list-rooms',
+    label: 'List existing rooms',
+    type: 'html',
+    descriptionHTML: '<a class="peertube-plugin-livechat-prosody-list-rooms">List rooms</a>',
+    private: true
+  })
+  registerSetting({
     name: 'prosody-port',
     label: 'Prosody port',
     type: 'input',
@@ -101,18 +108,6 @@ Please read the
 `The port that will be used by the builtin Prosody server.<br>
 Change it if this port is already in use on your server.<br>
 You can close this port on your firewall, it will not be accessed from the outer world.`
-  })
-
-  registerSetting({
-    name: 'prosody-peertube-uri',
-    label: 'Peertube url for API calls',
-    type: 'input',
-    default: '',
-    private: true,
-    descriptionHTML:
-`Please let this settings empty if you don't know what you are doing.<br>
-In some rare case, Prosody can't call Peertube's API from its public URI.
-You can use this field to customise Peertube's URI for Prosody modules (for example with «http://localhost:9000»).`
   })
 
   registerSetting({
@@ -267,6 +262,50 @@ Don't add private videos, the UUIDs will be send to frontend.`,
 `Additional styles to be added on the iframe style attribute. <br>
 Example: height:400px;`,
     private: false
+  })
+
+  // ********** Built-in Prosody advanced settings
+  registerSetting({
+    name: 'prosody-advanced',
+    type: 'html',
+    private: true,
+    descriptionHTML: '<h3>Prosody advanced settings</h3>'
+  })
+
+  registerSetting({
+    name: 'prosody-peertube-uri',
+    label: 'Peertube url for API calls',
+    type: 'input',
+    default: '',
+    private: true,
+    descriptionHTML:
+`Please let this settings empty if you don't know what you are doing.<br>
+In some rare case, Prosody can't call Peertube's API from its public URI.
+You can use this field to customise Peertube's URI for Prosody modules (for example with «http://localhost:9000»).`
+  })
+
+  registerSetting({
+    name: 'prosody-c2s',
+    label: 'Enable client to server connections',
+    type: 'input-checkbox',
+    default: false,
+    private: true,
+    descriptionHTML:
+`Enable XMPP clients to connect to the builtin Prosody server.<br>
+This option alone only allows connections from localhost clients.`
+  })
+
+  registerSetting({
+    name: 'prosody-c2s-port',
+    label: 'Prosody client to server port',
+    type: 'input',
+    default: '52822',
+    private: true,
+    descriptionHTML:
+`The port that will be used by the c2s module of the builtin Prosody server.<br>
+XMPP clients shall use this port to connect.<br>
+Change it if this port is already in use on your server.<br>
+Keep it close this port on your firewall for now, it will not be accessed from the outer world.`
   })
 
   // ********** settings changes management

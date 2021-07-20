@@ -195,7 +195,10 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   })
 
   // Set the http-bind route.
-  changeHttpBindRoute(options, config.port)
+  changeHttpBindRoute(options, {
+    host: config.host,
+    port: config.port
+  })
 
   async function sleep (ms: number): Promise<any> {
     return new Promise((resolve) => {
