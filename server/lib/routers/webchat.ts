@@ -85,6 +85,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
       page = page.replace(/{{JID}}/g, server)
       room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
+      room = room.replace(/{{CHANNEL_ID}}/g, video.channelId)
       page = page.replace(/{{ROOM}}/g, room)
       page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
       page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
