@@ -23,6 +23,8 @@ If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help i
 
 If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).
 
+If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr.
+
 ## Settings
 
 For the chat mode, and related settings, please refer to the corresponding documentation:
@@ -32,6 +34,10 @@ For the chat mode, and related settings, please refer to the corresponding docum
 * [Use an external web chat tool](documentation/external.md)
 
 There are several common settings. Please see the documentation here: [common settings documentation](documentation/common.md).
+
+## Contribute
+
+Please refer to the page [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Credits
 
