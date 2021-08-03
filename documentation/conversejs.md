@@ -26,9 +26,9 @@ The ```peertube.im``` is part of the example, you have to replace the entire val
 The room to join on your XMPP server.
 You can have a single room for all webchats, or you can use any of there placeholders:
 
-- ```{{{VIDEO_UUID}}}``` to insert the video UUID and have a custom room for each video.
-- ```{{{CHANNEL_ID}}}``` to insert the channel numerical ID and have a custom room for each channel.
-- ```{{{CHANNEL_NAME}}}``` to insert the channel name (see the Peertube's documentation for possible characters) and have a custom room for each channel.
+- ```{{VIDEO_UUID}}``` to insert the video UUID and have a custom room for each video.
+- ```{{CHANNEL_ID}}``` to insert the channel numerical ID and have a custom room for each channel.
+- ```{{CHANNEL_NAME}}``` to insert the channel name (see the Peertube's documentation for possible characters) and have a custom room for each channel.
 
 You can mix several placeholder.
 
