@@ -1,4 +1,5 @@
 import { getProsodyDomain } from './domain'
+import { getUserNameByChannelId } from '../../database/channel'
 
 interface Affiliations { [jid: string]: 'outcast' | 'none' | 'member' | 'admin' | 'owner' }
 
@@ -45,30 +46,11 @@ async function getVideoAffiliations (options: RegisterServerOptions, video: MVid
 }
 
 async function _getVideoOwnerUsername (options: RegisterServerOptions, video: MVideoThumbnail): Promise<string> {
-  // checking type of video.channelId
-  if (!video.channelId) {
-    throw new Error('Missing channelId on video')
+  const username = await getUserNameByChannelId(options, video.channelId)
+  if (username === null) {
+    throw new Error('Username not found')
   }
-  if (!Number.isInteger(video.channelId)) {
-    throw new Error('Invalid channelId: not an integer')
-  }
-  const [results] = await options.peertubeHelpers.database.query(
-    'SELECT "user"."username"' +
-    ' FROM "videoChannel"' +
-    ' JOIN "account" ON "account"."id" = "videoChannel"."accountId"' +
-    ' JOIN "user" ON "account"."userId" = "user"."id" ' +
-    ' WHERE "videoChannel"."id" = ' + video.channelId.toString()
-  )
-  if (!Array.isArray(results)) {
-    throw new Error('_getVideoOwnerUsername: query result is not an array.')
-  }
-  if (!results[0]) {
-    throw new Error('_getVideoOwnerUsername: no user found')
-  }
-  if (!results[0].username) {
-    throw new Error('_getVideoOwnerUsername: no username in result')
-  }
-  return results[0].username as string
+  return username
 }
 
 export {
