@@ -32,7 +32,7 @@ export async function diagConverse (test: string, { settingsManager }: RegisterS
     result.messages.push('Missing chat room configuration')
     isBuiltinError = true
   } else if (
-    !/^(\w|{{VIDEO_UUID}})+@([a-z0-9.]+)+[a-z0-9]+$/
+    !/^(\w|{{(VIDEO_UUID|CHANNEL_ID|CHANNEL_NAME)}})+@([a-z0-9.]+)+[a-z0-9]+$/
       .test(chatRoom)
   ) {
     result.messages.push(

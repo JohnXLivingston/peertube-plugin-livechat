@@ -1,5 +1,11 @@
 # Changelog
 
+## ???
+
+### Features
+
+* Builtin ConverseJS on external XMPP server: new placeholders for the room name: CHANNEL_ID, CHANNEL_NAME.
+
 ## v3.2.0
 
 ### Features

@@ -124,8 +124,13 @@ You can close this port on your firewall, it will not be accessed from the outer
     type: 'input',
     default: '',
     descriptionHTML:
-`Your XMPP room. You can use the placeholder {{VIDEO_UUID}} to add the video UUID.
-Without this placeholder, all videos will point to the same chat room.<br>
+`Your XMPP room. You can use following placeholders to inject video metadata in the room name:
+<ul>
+  <li>{{VIDEO_UUID}} to add the video UUID.</li>
+  <li>{{CHANNEL_ID}} to add the CHANNEL numerical ID.</li>
+  <li>{{CHANNEL_NAME}} to add the channel name (see the Peertube's documentation for possible characters).</li>
+</ul>
+Without any placeholder, all videos will point to the same chat room.<br>
 Example: public@room.peertube.im.your_domain<br>
 Example: public_{{VIDEO_UUID}}@room.peertube.im.your_domain`,
     private: true

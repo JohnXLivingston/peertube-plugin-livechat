@@ -24,9 +24,17 @@ The ```peertube.im``` is part of the example, you have to replace the entire val
 #### XMPP room template (mandatory)
 
 The room to join on your XMPP server.
-You can have a single room for all webchats, or you can use the placeholder ```{{{VIDEO_UUID}}}``` to insert the video UUID and have a custom room for each video.
+You can have a single room for all webchats, or you can use any of there placeholders:
+
+- ```{{{VIDEO_UUID}}}``` to insert the video UUID and have a custom room for each video.
+- ```{{{CHANNEL_ID}}}``` to insert the channel numerical ID and have a custom room for each channel.
+- ```{{{CHANNEL_NAME}}}``` to insert the channel name (see the Peertube's documentation for possible characters) and have a custom room for each channel.
+
+You can mix several placeholder.
 
 Example: ```room_{{VIDEO_UUID}}@room.peertube.im.your_domain```
+
+NB: when using CHANNEL_ID or CHANNEL_NAME with remote videos, you can have unexpected results. You should consider disabling webchat for remote videos.
 
 #### BOSH uri OR Websocket uri
 

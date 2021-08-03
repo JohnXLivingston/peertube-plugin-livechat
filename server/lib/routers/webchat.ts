@@ -5,6 +5,7 @@ import { getBaseRouterRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getAPIKey } from '../apikey'
+import { getChannelNameById } from '../database/channel'
 import * as path from 'path'
 const bodyParser = require('body-parser')
 const got = require('got')
@@ -84,7 +85,22 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       const baseStaticUrl = getBaseStaticRoute(options)
       page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
       page = page.replace(/{{JID}}/g, server)
+      // Computing the room name...
       room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
+      room = room.replace(/{{CHANNEL_ID}}/g, `${video.channelId}`)
+      if (room.includes('CHANNEL_NAME')) {
+        const channelName = await getChannelNameById(options, video.channelId)
+        if (channelName === null) {
+          throw new Error('Channel not found')
+        }
+        if (!/^[a-zA-Z0-9_.]+$/.test(channelName)) {
+          // FIXME: see if there is a response here https://github.com/Chocobozzz/PeerTube/issues/4301 for allowed chars
+          peertubeHelpers.logger.error(`Invalid channel name, contains unauthorized chars: '${channelName}'`)
+          throw new Error('Invalid channel name, contains unauthorized chars')
+        }
+        room = room.replace(/{{CHANNEL_NAME}}/g, channelName)
+      }
+      // ... then inject it in the page.
       page = page.replace(/{{ROOM}}/g, room)
       page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
       page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
