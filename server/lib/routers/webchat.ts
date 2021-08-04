@@ -88,7 +88,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       // Computing the room name...
       room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
       room = room.replace(/{{CHANNEL_ID}}/g, `${video.channelId}`)
-      if (room.includes('CHANNEL_NAME')) {
+      if (room.includes('{{CHANNEL_NAME}}')) {
         const channelName = await getChannelNameById(options, video.channelId)
         if (channelName === null) {
           throw new Error('Channel not found')
