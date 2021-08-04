@@ -28,7 +28,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     return staticBase.replace(/\/static.*$/, '/router')
   }
 
-  function getIframeUri (uuid: string): string | null {
+  function getIframeUri (video: Video): string | null {
     if (!settings) {
       logger.error('Settings are not initialized, too soon to compute the iframeUri')
       return null
@@ -37,10 +37,17 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
     if (chatType === 'builtin-prosody' || chatType === 'builtin-converse') {
       // Using the builtin converseJS
-      iframeUri = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid)
+      iframeUri = getBaseRoute() + '/webchat/room/' + encodeURIComponent(video.uuid)
     } else if (chatType === 'external-uri') {
       iframeUri = settings['chat-uri'] || ''
-      iframeUri = iframeUri.replace(/{{VIDEO_UUID}}/g, encodeURIComponent(uuid))
+      iframeUri = iframeUri.replace(/{{VIDEO_UUID}}/g, encodeURIComponent(video.uuid))
+      if (iframeUri.includes('{{CHANNEL_ID}}')) {
+        if (!video.channel || !video.channel.id) {
+          logger.error('Missing channel info in video object.')
+          return null
+        }
+        iframeUri = iframeUri.replace(/{{CHANNEL_ID}}/g, encodeURIComponent(video.channel.id))
+      }
       if (!/^https?:\/\//.test(iframeUri)) {
         logger.error('The webchaturi must begin with https://')
         return null
@@ -85,7 +92,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     buttonContainer.append(button)
   }
 
-  async function insertChatDom (container: HTMLElement, uuid: string, showOpenBlank: boolean): Promise<void> {
+  async function insertChatDom (container: HTMLElement, video: Video, showOpenBlank: boolean): Promise<void> {
     logger.log('Adding livechat in the DOM...')
     const p = new Promise<void>((resolve, reject) => {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -98,7 +105,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         const labelOpenBlank = labels[1]
         const labelClose = labels[2]
 
-        const iframeUri = getIframeUri(uuid)
+        const iframeUri = getIframeUri(video)
         if (!iframeUri) {
           return reject(new Error('No uri, cant display the buttons.'))
         }
@@ -107,7 +114,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         buttonContainer.classList.add('peertube-plugin-livechat-buttons')
         container.append(buttonContainer)
 
-        displayButton(buttonContainer, 'open', labelOpen, () => openChat(uuid), 'talking.svg')
+        displayButton(buttonContainer, 'open', labelOpen, () => openChat(video), 'talking.svg')
         if (showOpenBlank) {
           displayButton(buttonContainer, 'openblank', labelOpenBlank, () => {
             closeChat()
@@ -122,14 +129,14 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     return p
   }
 
-  function openChat (uuid: string): void | boolean {
-    if (!uuid) {
-      logger.log('No current uuid.')
+  function openChat (video: Video): void | boolean {
+    if (!video) {
+      logger.log('No video.')
       return false
     }
 
-    logger.info('Trying to load the chat for video ' + uuid + '.')
-    const iframeUri = getIframeUri(uuid)
+    logger.info('Trying to load the chat for video ' + video.uuid + '.')
+    const iframeUri = getIframeUri(video)
     if (!iframeUri) {
       logger.error('Incorrect iframe uri')
       return false
@@ -202,9 +209,9 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         return
       }
 
-      insertChatDom(container as HTMLElement, video.uuid, !!settings['chat-open-blank']).then(() => {
+      insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank']).then(() => {
         if (settings['chat-auto-display']) {
-          openChat(video.uuid)
+          openChat(video)
         } else if (container) {
           container.setAttribute('peertube-plugin-livechat-state', 'closed')
         }

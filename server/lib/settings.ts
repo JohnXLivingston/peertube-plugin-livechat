@@ -165,9 +165,12 @@ You must at least have a BOSH or a Websocket uri.`,
     default: '',
     descriptionHTML:
 `Put here your webchat url. An iframe will be created pointing to this url.
-The placeholder {{VIDEO_UUID}} will be replace by the video UUID if present.
-Example : https://my_domain/conversejs.html?room=video_{{VIDEO_UUID}}.<br>
-If this field is empty, it will use the builtin ConverseJS webchat.`,
+You can use following placeholders to inject video metadata in the url:
+<ul>
+  <li>{{VIDEO_UUID}} to add the video UUID.</li>
+  <li>{{CHANNEL_ID}} to add the CHANNEL numerical ID.</li>
+</ul>
+Example : https://my_domain/conversejs.html?room=video_{{VIDEO_UUID}}.`,
     private: false
   })
 

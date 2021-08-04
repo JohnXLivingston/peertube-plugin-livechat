@@ -14,10 +14,16 @@ Speficy here the url for you chat application.
 
 You can add the string {{VIDEO_UUID}} in the url, it will be replaced by the video UUID.
 
-It is possible to use a single chat for all your videos if you omit this parameter.
+You can also use {{CHANNEL_ID}} to add the channel id, so you can group webchats per user channel.
+
+It is possible to use a single chat for all your videos if you omit these parameters.
 
 Example:
 ```https://peertube.im.your_domain?room={{VIDEO_UUID}}```
+or
+```https://peertube.im.your_domain?room={{CHANNEL_ID}}```
+
+NB: when using CHANNEL_ID with remote videos, you can have unexpected results. You should consider disabling webchat for remote videos.
 
 ### Chat behaviour
 

@@ -4,7 +4,9 @@
 
 ### Features
 
-* Builtin ConverseJS on external XMPP server: new placeholders for the room name: CHANNEL_ID, CHANNEL_NAME.
+* Possibility to have webchat per channel (see [this request](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/58))
+  * Builtin ConverseJS on external XMPP server: new placeholders for the room name: CHANNEL_ID, CHANNEL_NAME.
+  * External webchat tool: new placeholder CHANNEL_ID in the webchat url.
 
 ## v3.2.0
 

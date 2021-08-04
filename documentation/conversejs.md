@@ -30,7 +30,7 @@ You can have a single room for all webchats, or you can use any of there placeho
 - ```{{CHANNEL_ID}}``` to insert the channel numerical ID and have a custom room for each channel.
 - ```{{CHANNEL_NAME}}``` to insert the channel name (see the Peertube's documentation for possible characters) and have a custom room for each channel.
 
-You can mix several placeholder.
+You can mix several placeholders.
 
 Example: ```room_{{VIDEO_UUID}}@room.peertube.im.your_domain```
 

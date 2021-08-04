@@ -67,4 +67,13 @@ interface Video {
   name: string
   originInstanceUrl: string
   uuid: string
+  channel: Channel
+}
+
+interface Channel {
+  id: number
+  name: string
+  displayName: string
+  url: string
+  host: string
 }
