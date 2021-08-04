@@ -8,6 +8,7 @@ export async function diagUri (test: string, { settingsManager }: RegisterServer
   ])
   if (/^https:\/\//.test(settings['chat-uri'] as string)) {
     result.ok = true
+    result.messages.push('Chat url will be: ' + (settings['chat-uri'] as string))
   } else {
     result.messages.push('Incorrect value for the uri (it does not start with https://)')
   }

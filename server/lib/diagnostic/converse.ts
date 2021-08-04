@@ -42,7 +42,7 @@ export async function diagConverse (test: string, { settingsManager }: RegisterS
     )
     isBuiltinError = true
   } else {
-    result.messages.push('Chat room is correct')
+    result.messages.push('Chat room is correct and will be: ' + chatRoom)
   }
 
   const chatBoshUri: string = (builtinSettings['chat-bosh-uri'] as string) || ''
