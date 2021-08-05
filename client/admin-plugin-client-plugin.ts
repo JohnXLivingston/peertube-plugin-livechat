@@ -85,6 +85,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                 RoomDescription: 'Room description',
                 NotFound: 'Not found',
                 Video: 'Video',
+                Channel: 'Channel',
                 LastActivity: 'Last activity'
               }
 
@@ -94,7 +95,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               const titleDescriptionEl = document.createElement('th')
               titleDescriptionEl.textContent = labels.RoomDescription
               const titleVideoEl = document.createElement('th')
-              titleVideoEl.textContent = labels.Video
+              titleVideoEl.textContent = `${labels.Video as string} / ${labels.Channel as string}`
               const titleLastActivityEl = document.createElement('th')
               titleLastActivityEl.textContent = labels.LastActivity
               titleLineEl.append(titleNameEl)
@@ -103,8 +104,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               titleLineEl.append(titleLastActivityEl)
               table.append(titleLineEl)
               rooms.forEach(room => {
-                const uuid = room.localpart
-                const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid)
+                const localpart = room.localpart
                 const lineEl = document.createElement('tr')
                 const nameEl = document.createElement('td')
                 const aEl = document.createElement('a')
@@ -125,7 +125,24 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                 lineEl.append(lastActivityEl)
                 table.append(lineEl)
 
-                if (/^[a-zA-A0-9-]+$/.test(uuid)) {
+                const channelMatches = localpart.match(/^channel\.(\d+)$/)
+                if (channelMatches) {
+                  // Here we have a channel chat room
+                  // The backend should have added informations here
+                  // (because the Peertube API can't work with channelId...)
+                  const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(localpart)
+                  if (room.channel?.name) {
+                    aEl.href = href // here we know that the channel still exists, so we can open the webchat.
+                    const aVideoEl = document.createElement('a')
+                    aVideoEl.textContent = room.channel?.displayName ?? '-'
+                    aVideoEl.target = '_blank'
+                    aVideoEl.href = '/video-channels/' + room.channel.name
+                    videoEl.append(aVideoEl)
+                  }
+                } else if (/^[a-zA-A0-9-]+$/.test(localpart)) {
+                  // localpart must be a video uuid.
+                  const uuid = localpart
+                  const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid)
                   const p = fetch('/api/v1/videos/' + uuid, {
                     method: 'GET',
                     headers: peertubeHelpers.getAuthHeader()

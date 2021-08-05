@@ -60,7 +60,8 @@ async function getChannelInfosById (options: RegisterServerOptions, channelId: n
   }
   const [results] = await options.peertubeHelpers.database.query(
     'SELECT' +
-    ' "actor"."preferredUsername" as "channelName", ' +
+    ' "actor"."preferredUsername" as "channelName",' +
+    ' "videoChannel"."id" as "channelId",' +
     ' "videoChannel"."name" as "channelDisplayName"' +
     ' FROM "videoChannel"' +
     ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
@@ -74,7 +75,7 @@ async function getChannelInfosById (options: RegisterServerOptions, channelId: n
     return null
   }
   return {
-    id: channelId,
+    id: results[0].channelId,
     name: results[0].channelName ?? '',
     displayName: results[0].channelDisplayName ?? ''
   }

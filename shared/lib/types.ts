@@ -5,21 +5,29 @@ interface ProsodyListRoomsResultError {
   error: string
 }
 
+interface ProsodyListRoomsResultRoom {
+  jid: string
+  localpart: string
+  name: string
+  lang: string
+  description: string
+  lasttimestamp?: number
+  channel?: {
+    id: number
+    name: string
+    displayName: string
+  }
+}
+
 interface ProsodyListRoomsResultSuccess {
   ok: true
-  rooms: Array<{
-    jid: string
-    localpart: string
-    name: string
-    lang: string
-    description: string
-    lasttimestamp?: number
-  }>
+  rooms: ProsodyListRoomsResultRoom[]
 }
 
 type ProsodyListRoomsResult = ProsodyListRoomsResultError | ProsodyListRoomsResultSuccess
 
 export {
   ChatType,
-  ProsodyListRoomsResult
+  ProsodyListRoomsResult,
+  ProsodyListRoomsResultRoom
 }

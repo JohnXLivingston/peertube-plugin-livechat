@@ -1,11 +1,11 @@
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import type { ProxyOptions } from 'express-http-proxy'
-import type { ChatType, ProsodyListRoomsResult } from '../../../shared/lib/types'
+import type { ChatType, ProsodyListRoomsResult, ProsodyListRoomsResultRoom } from '../../../shared/lib/types'
 import { getBaseRouterRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getAPIKey } from '../apikey'
-import { getChannelNameById } from '../database/channel'
+import { getChannelInfosById, getChannelNameById } from '../database/channel'
 import * as path from 'path'
 const bodyParser = require('body-parser')
 const got = require('got')
@@ -31,10 +31,11 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
 
   const router: Router = getRouter()
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  router.get('/room/:videoUUID', asyncMiddleware(
+  router.get('/room/:roomKey', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
       res.removeHeader('X-Frame-Options') // this route can be opened in an iframe
 
+      const roomKey = req.params.roomKey
       const settings = await settingsManager.getSettings([
         'chat-type', 'chat-room', 'chat-server',
         'chat-bosh-uri', 'chat-ws-uri',
@@ -51,7 +52,9 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       if (chatType === 'builtin-prosody') {
         const prosodyDomain = await getProsodyDomain(options)
         jid = 'anon.' + prosodyDomain
-        if (settings['prosody-room-type'] === 'channel') {
+        if (settings['prosody-room-type'] === 'channel' || /^channel\.\d+$/.test(roomKey)) {
+          // NB: roomKey=~channel.\d+ should normally only happen when user
+          // comes from the room list in the plugin settings.
           room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
         } else {
           room = '{{VIDEO_UUID}}@room.' + prosodyDomain
@@ -80,10 +83,27 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         throw new Error('Builtin chat disabled.')
       }
 
-      const uuid = req.params.videoUUID
-      const video = await peertubeHelpers.videos.loadByIdOrUUID(uuid)
-      if (!video) {
-        throw new Error('Video not found')
+      let video: MVideoThumbnail | undefined
+      let channelId: number
+      const channelMatches = roomKey.match(/^channel\.(\d+)$/)
+      if (channelMatches?.[1]) {
+        channelId = parseInt(channelMatches[1])
+        // Here we are on a room... must be in prosody mode.
+        if (chatType !== 'builtin-prosody') {
+          throw new Error('Cant access a chat by a channel uri if chatType!==builtin-prosody')
+        }
+        const channelInfos = await getChannelInfosById(options, channelId)
+        if (!channelInfos) {
+          throw new Error('Channel not found')
+        }
+        channelId = channelInfos.id
+      } else {
+        const uuid = roomKey // must be a video UUID.
+        video = await peertubeHelpers.videos.loadByIdOrUUID(uuid)
+        if (!video) {
+          throw new Error('Video not found')
+        }
+        channelId = video.channelId
       }
 
       let page = '' + (converseJSIndex as string)
@@ -91,10 +111,15 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
       page = page.replace(/{{JID}}/g, jid)
       // Computing the room name...
-      room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
-      room = room.replace(/{{CHANNEL_ID}}/g, `${video.channelId}`)
+      if (room.includes('{{VIDEO_UUID}}')) {
+        if (!video) {
+          throw new Error('Missing video')
+        }
+        room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
+      }
+      room = room.replace(/{{CHANNEL_ID}}/g, `${channelId}`)
       if (room.includes('{{CHANNEL_NAME}}')) {
-        const channelName = await getChannelNameById(options, video.channelId)
+        const channelName = await getChannelNameById(options, channelId)
         if (channelName === null) {
           throw new Error('Channel not found')
         }
@@ -163,6 +188,24 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         responseType: 'json',
         resolveBodyOnly: true
       })
+
+      if (Array.isArray(rooms)) {
+        for (let i = 0; i < rooms.length; i++) {
+          const room: ProsodyListRoomsResultRoom = rooms[i]
+          const matches = room.localpart.match(/^channel\.(\d+)$/)
+          if (matches?.[1]) {
+            const channelId = parseInt(matches[1])
+            const channelInfos = await getChannelInfosById(options, channelId)
+            if (channelInfos) {
+              room.channel = {
+                id: channelInfos.id,
+                name: channelInfos.name,
+                displayName: channelInfos.displayName
+              }
+            }
+          }
+        }
+      }
 
       res.status(200)
       const r: ProsodyListRoomsResult = {
