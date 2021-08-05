@@ -5,6 +5,7 @@
 ### Features
 
 * Possibility to have webchat per channel (see [this request](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/58))
+  * Builtin Prosody: instance's admins can choose if rooms are per video, or grouped by channel. Only one settings for the whole instance.
   * Builtin ConverseJS on external XMPP server: new placeholders for the room name: CHANNEL_ID, CHANNEL_NAME.
   * External webchat tool: new placeholder CHANNEL_ID in the webchat url.
 
