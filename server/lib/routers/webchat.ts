@@ -52,7 +52,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       if (chatType === 'builtin-prosody') {
         const prosodyDomain = await getProsodyDomain(options)
         jid = 'anon.' + prosodyDomain
-        if (req.query.fromadmin === '1') {
+        if (req.query.forcetype === '1') {
           // We come from the room list in the settings page.
           // Here we don't read the prosody-room-type settings,
           // but use the roomKey format.
