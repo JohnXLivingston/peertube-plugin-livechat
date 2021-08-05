@@ -37,5 +37,5 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [ ] | ConverseJS | For anonymous user, automatically log in with a random nickname (and allow to change afterward)
 [ ] | Common | There should be a settings to add terms & conditions in the Peertube's about page (for example if the webchat is hosted anywhere else).
 [ ] | Builtin Prosody | Add on option to limit webchat to registered users.
-[ ] | Builtin Prosody (or all modes?) | Offer a way for users to have a webchat per channel. See [#59](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/58). | v4.0.0
+[x] | Builtin Prosody (or all modes?) | Offer a way for users to have a webchat per channel. See [#59](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/58). | v4.0.0
 [ ] | Common | Handle federation: if video is remote, then try to check if the plugin is installed on the instance, and open it.
