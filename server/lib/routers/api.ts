@@ -117,11 +117,16 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         res.sendStatus(403)
         return
       }
+      // NB 2021-08-05: Peertube usernames should be lowercase. But it seems that
+      // in some old installation, there can be uppercase letters in usernames.
+      // When Peertube checks username unicity, it does a lowercase search.
+      // So it feels safe to normalize usernames like so:
+      const normalizedUsername = user.username.toLowerCase()
       const prosodyDomain = await getProsodyDomain(options)
-      const password: string = await prosodyRegisterUser(user.username)
+      const password: string = await prosodyRegisterUser(normalizedUsername)
       const nickname: string | undefined = await getUserNickname(options, user)
       res.status(200).json({
-        jid: user.username + '@' + prosodyDomain,
+        jid: normalizedUsername + '@' + prosodyDomain,
         password: password,
         nickname: nickname
       })

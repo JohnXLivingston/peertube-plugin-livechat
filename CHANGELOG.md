@@ -8,12 +8,16 @@
   * Builtin ConverseJS on external XMPP server: new placeholders for the room name: CHANNEL_ID, CHANNEL_NAME.
   * External webchat tool: new placeholder CHANNEL_ID in the webchat url.
 
+### Fixes
+
+* Builtin Prosody: Fix [#63](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/63). On some old Peertube installations, there can be usernames with upper-case letters. Adding a toLowerCase() for the XMPP jid.
+
 ## v3.2.0
 
 ### Features
 
 * Builtin Prosody: list existing rooms in the settings page
-* Builtin Prosody: new settings to enable local C2S. For example, can be used with Matterbridge (thanks https://github.com/tytan652)
+* Builtin Prosody: new settings to enable local C2S. For example, can be used with Matterbridge (thanks [https://github.com/tytan652](https://github.com/tytan652))
 
 ### Fixes
 
@@ -158,7 +162,7 @@
 ## v1.0.5
 
 * New buttons and logo.
-* Fix: changing default value to false for every checkbox settings (Peertube bug in <=3.0.1: https://github.com/Chocobozzz/PeerTube/issues/3838).
+* Fix: changing default value to false for every checkbox settings (Peertube bug in <=3.0.1: [https://github.com/Chocobozzz/PeerTube/issues/3838](https://github.com/Chocobozzz/PeerTube/issues/3838)).
 
 ## v1.0.4
 
