@@ -130,7 +130,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                   // Here we have a channel chat room
                   // The backend should have added informations here
                   // (because the Peertube API can't work with channelId...)
-                  const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(localpart)
+                  const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(localpart) + '?fromadmin=1'
                   if (room.channel?.name) {
                     aEl.href = href // here we know that the channel still exists, so we can open the webchat.
                     const aVideoEl = document.createElement('a')
@@ -142,7 +142,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                 } else if (/^[a-zA-A0-9-]+$/.test(localpart)) {
                   // localpart must be a video uuid.
                   const uuid = localpart
-                  const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid)
+                  const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid) + '?fromadmin=1'
                   const p = fetch('/api/v1/videos/' + uuid, {
                     method: 'GET',
                     headers: peertubeHelpers.getAuthHeader()

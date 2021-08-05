@@ -52,12 +52,24 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       if (chatType === 'builtin-prosody') {
         const prosodyDomain = await getProsodyDomain(options)
         jid = 'anon.' + prosodyDomain
-        if (settings['prosody-room-type'] === 'channel' || /^channel\.\d+$/.test(roomKey)) {
-          // NB: roomKey=~channel.\d+ should normally only happen when user
-          // comes from the room list in the plugin settings.
-          room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
+        if (req.query.fromadmin === '1') {
+          // We come from the room list in the settings page.
+          // Here we don't read the prosody-room-type settings,
+          // but use the roomKey format.
+          // NB: there is no extra security. Any user can add this parameter.
+          //     This is not an issue: the setting will be tested at the room creation.
+          //     No room can be created in the wrong mode.
+          if (/^channel\.\d+$/.test(roomKey)) {
+            room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
+          } else {
+            room = '{{VIDEO_UUID}}@room.' + prosodyDomain
+          }
         } else {
-          room = '{{VIDEO_UUID}}@room.' + prosodyDomain
+          if (settings['prosody-room-type'] === 'channel') {
+            room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
+          } else {
+            room = '{{VIDEO_UUID}}@room.' + prosodyDomain
+          }
         }
         boshUri = getBaseRouterRoute(options) + 'webchat/http-bind'
         wsUri = ''
