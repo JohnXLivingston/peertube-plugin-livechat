@@ -52,6 +52,10 @@ You can find the source for this Dockerfile [here](../docker/Dockerfile.buster).
 
 Just select «Prosody server controlled by Peertube» as chat mode.
 
+### Room type
+
+You can choose here to have separate rooms for each video, or to group them by channel.
+
 #### Prosody port
 
 This is the port that the Prosody server will use. By default it is set to 52800. If you want to use another port, just change the value here.

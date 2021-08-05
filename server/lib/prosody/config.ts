@@ -69,6 +69,7 @@ interface ProsodyConfig {
   host: string
   port: string
   baseApiUrl: string
+  roomType: 'video' | 'channel'
 }
 async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
@@ -81,6 +82,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const enableC2s = (await options.settingsManager.getSetting('prosody-c2s') as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
+  const roomType = (await options.settingsManager.getSetting('prosody-room-type')) === 'channel' ? 'channel' : 'video'
 
   const apikey = await getAPIKey(options)
   let baseApiUrl = await options.settingsManager.getSetting('prosody-peertube-uri') as string
@@ -139,7 +141,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     paths,
     port,
     baseApiUrl,
-    host: prosodyDomain
+    host: prosodyDomain,
+    roomType
   }
 }
 

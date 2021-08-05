@@ -37,11 +37,12 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
 
       const settings = await settingsManager.getSettings([
         'chat-type', 'chat-room', 'chat-server',
-        'chat-bosh-uri', 'chat-ws-uri'
+        'chat-bosh-uri', 'chat-ws-uri',
+        'prosody-room-type'
       ])
       const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
 
-      let server: string
+      let jid: string
       let room: string
       let boshUri: string
       let wsUri: string
@@ -49,8 +50,12 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let advancedControls: boolean = false
       if (chatType === 'builtin-prosody') {
         const prosodyDomain = await getProsodyDomain(options)
-        server = 'anon.' + prosodyDomain
-        room = '{{VIDEO_UUID}}@room.' + prosodyDomain
+        jid = 'anon.' + prosodyDomain
+        if (settings['prosody-room-type'] === 'channel') {
+          room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
+        } else {
+          room = '{{VIDEO_UUID}}@room.' + prosodyDomain
+        }
         boshUri = getBaseRouterRoute(options) + 'webchat/http-bind'
         wsUri = ''
         authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
@@ -67,7 +72,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         if (!settings['chat-bosh-uri'] && !settings['chat-ws-uri']) {
           throw new Error('Missing BOSH or Websocket uri.')
         }
-        server = settings['chat-server'] as string
+        jid = settings['chat-server'] as string
         room = settings['chat-room'] as string
         boshUri = settings['chat-bosh-uri'] as string
         wsUri = settings['chat-ws-uri'] as string
@@ -84,7 +89,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let page = '' + (converseJSIndex as string)
       const baseStaticUrl = getBaseStaticRoute(options)
       page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
-      page = page.replace(/{{JID}}/g, server)
+      page = page.replace(/{{JID}}/g, jid)
       // Computing the room name...
       room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
       room = room.replace(/{{CHANNEL_ID}}/g, `${video.channelId}`)

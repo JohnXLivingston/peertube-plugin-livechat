@@ -98,6 +98,20 @@ Please read the
     descriptionHTML: '<a class="peertube-plugin-livechat-prosody-list-rooms">List rooms</a>',
     private: true
   })
+
+  registerSetting({
+    name: 'prosody-room-type',
+    label: 'Room type',
+    type: 'select',
+    descriptionHTML: 'You can choose here to have separate rooms for each video, or to group them by channel.',
+    private: false,
+    default: 'video',
+    options: [
+      { value: 'video', label: 'Each video has its own webchat room' },
+      { value: 'channel', label: 'Webchat rooms are grouped by channel' }
+    ]
+  })
+
   registerSetting({
     name: 'prosody-port',
     label: 'Prosody port',

@@ -4,10 +4,11 @@ import { asyncMiddleware } from '../middlewares/async'
 import { getCheckAPIKeyMiddleware } from '../middlewares/apikey'
 import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } from '../prosody/auth'
 import { getUserNickname } from '../helpers'
-import { Affiliations, getVideoAffiliations } from '../prosody/config/affiliations'
+import { Affiliations, getVideoAffiliations, getChannelAffiliations } from '../prosody/config/affiliations'
 import { getProsodyDomain } from '../prosody/config/domain'
 import type { ChatType } from '../../../shared/lib/types'
 import { fillVideoCustomFields } from '../custom-fields'
+import { getChannelInfosById } from '../database/channel'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -48,61 +49,106 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       const jid: string = req.query.jid as string || ''
       logger.info(`Requesting room information for room '${jid}'.`)
 
-      const video = await peertubeHelpers.videos.loadByIdOrUUID(jid)
-      if (!video) {
-        logger.warn(`Video ${jid} not found`)
-        res.sendStatus(403)
-        return
-      }
-
-      // Adding the custom fields:
-      await fillVideoCustomFields(options, video)
-
-      // check settings (chat enabled for this video?)
       const settings = await options.settingsManager.getSettings([
         'chat-type',
-        'chat-only-locals',
-        'chat-per-live-video',
-        'chat-all-lives',
-        'chat-all-non-lives',
-        'chat-videos-list'
+        'prosody-room-type'
       ])
       if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
         logger.warn('Prosody chat is not active')
         res.sendStatus(403)
         return
       }
-      if (!videoHasWebchat({
-        'chat-only-locals': !!settings['chat-only-locals'],
-        'chat-per-live-video': !!settings['chat-per-live-video'],
-        'chat-all-lives': !!settings['chat-all-lives'],
-        'chat-all-non-lives': !!settings['chat-all-non-lives'],
-        'chat-videos-list': settings['chat-videos-list'] as string
-      }, video)) {
-        logger.warn(`Video ${jid} has not chat activated`)
-        res.sendStatus(403)
-        return
-      }
+      // Now, we have two different room type: per video or per channel.
+      if (settings['prosody-room-type'] === 'channel') {
+        const matches = jid.match(/^channel\.(\d+)$/)
+        if (!matches || !matches[1]) {
+          logger.warn(`Invalid channel room jid '${jid}'.`)
+          res.sendStatus(403)
+          return
+        }
+        const channelId = parseInt(matches[1])
+        const channelInfos = await getChannelInfosById(options, channelId)
+        if (!channelInfos) {
+          logger.warn(`Channel ${channelId} not found`)
+          res.sendStatus(403)
+          return
+        }
 
-      let affiliations: Affiliations
-      try {
-        affiliations = await getVideoAffiliations(options, video)
-      } catch (error) {
-        logger.error(`Failed to get video affiliations for ${video.uuid}:`, error)
-        // affiliations: should at least be {}, so that the first user will not be moderator/admin
-        affiliations = {}
-      }
+        let affiliations: Affiliations
+        try {
+          affiliations = await getChannelAffiliations(options, channelId)
+        } catch (error) {
+          logger.error(`Failed to get channel affiliations for ${channelId}:`, error)
+          // affiliations: should at least be {}, so that the first user will not be moderator/admin
+          affiliations = {}
+        }
 
-      const roomDefaults: RoomDefaults = {
-        config: {
-          name: video.name,
-          description: '',
-          language: video.language,
-          subject: video.name
-        },
-        affiliations: affiliations
+        const roomDefaults: RoomDefaults = {
+          config: {
+            name: channelInfos.displayName,
+            description: '',
+            subject: channelInfos.displayName
+          },
+          affiliations: affiliations
+        }
+        res.json(roomDefaults)
+      } else {
+        const video = await peertubeHelpers.videos.loadByIdOrUUID(jid)
+        if (!video) {
+          logger.warn(`Video ${jid} not found`)
+          res.sendStatus(403)
+          return
+        }
+
+        // Adding the custom fields:
+        await fillVideoCustomFields(options, video)
+
+        // check settings (chat enabled for this video?)
+        const settings = await options.settingsManager.getSettings([
+          'chat-type',
+          'chat-only-locals',
+          'chat-per-live-video',
+          'chat-all-lives',
+          'chat-all-non-lives',
+          'chat-videos-list'
+        ])
+        if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
+          logger.warn('Prosody chat is not active')
+          res.sendStatus(403)
+          return
+        }
+        if (!videoHasWebchat({
+          'chat-only-locals': !!settings['chat-only-locals'],
+          'chat-per-live-video': !!settings['chat-per-live-video'],
+          'chat-all-lives': !!settings['chat-all-lives'],
+          'chat-all-non-lives': !!settings['chat-all-non-lives'],
+          'chat-videos-list': settings['chat-videos-list'] as string
+        }, video)) {
+          logger.warn(`Video ${jid} has not chat activated`)
+          res.sendStatus(403)
+          return
+        }
+
+        let affiliations: Affiliations
+        try {
+          affiliations = await getVideoAffiliations(options, video)
+        } catch (error) {
+          logger.error(`Failed to get video affiliations for ${video.uuid}:`, error)
+          // affiliations: should at least be {}, so that the first user will not be moderator/admin
+          affiliations = {}
+        }
+
+        const roomDefaults: RoomDefaults = {
+          config: {
+            name: video.name,
+            description: '',
+            language: video.language,
+            subject: video.name
+          },
+          affiliations: affiliations
+        }
+        res.json(roomDefaults)
       }
-      res.json(roomDefaults)
     }
   ]))
 

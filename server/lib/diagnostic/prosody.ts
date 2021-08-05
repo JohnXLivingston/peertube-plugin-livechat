@@ -34,6 +34,8 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
 
     result.messages.push(`Prosody modules path will be '${wantedConfig.paths.modules}'`)
 
+    result.messages.push(`Prosody rooms will be grouped by '${wantedConfig.roomType}'.`)
+
     await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
     result.messages.push(`The prosody configuration file (${filePath}) exists`)
     const actualContent = await fs.promises.readFile(filePath, {

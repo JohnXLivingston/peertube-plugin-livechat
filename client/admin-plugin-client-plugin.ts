@@ -167,6 +167,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
       switch (name) {
         case 'chat-type-help-disabled':
           return options.formValues['chat-type'] !== ('disabled' as ChatType)
+        case 'prosody-room-type':
         case 'prosody-port':
         case 'prosody-peertube-uri':
         case 'chat-type-help-builtin-prosody':

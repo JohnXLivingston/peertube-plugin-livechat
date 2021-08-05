@@ -3,11 +3,9 @@ import { getUserNameByChannelId } from '../../database/channel'
 
 interface Affiliations { [jid: string]: 'outcast' | 'none' | 'member' | 'admin' | 'owner' }
 
-async function getVideoAffiliations (options: RegisterServerOptions, video: MVideoThumbnail): Promise<Affiliations> {
-  const peertubeHelpers = options.peertubeHelpers
-  const prosodyDomain = await getProsodyDomain(options)
+async function _getCommonAffiliations (options: RegisterServerOptions, prosodyDomain: string): Promise<Affiliations> {
   // Get all admins and moderators
-  const [results] = await peertubeHelpers.database.query(
+  const [results] = await options.peertubeHelpers.database.query(
     'SELECT "username" FROM "user"' +
     ' WHERE "user"."role" IN (0, 1)'
   )
@@ -27,33 +25,57 @@ async function getVideoAffiliations (options: RegisterServerOptions, video: MVid
     r[jid] = 'owner'
   }
 
-  // Adding an 'admin' affiliation for video owner
+  return r
+}
+
+async function _addAffiliationByChannelId (
+  options: RegisterServerOptions,
+  prosodyDomain: string,
+  r: Affiliations,
+  channelId: number
+): Promise<void> {
   // NB: if it fails, we want previous results to be returned...
   try {
-    if (!video.remote) {
-      // don't add the video owner if it is a remote video!
-      const userName = await _getVideoOwnerUsername(options, video)
-      const userJid = userName + '@' + prosodyDomain
+    const username = await getUserNameByChannelId(options, channelId)
+    if (username === null) {
+      options.peertubeHelpers.logger.error(`Failed to get the username for channelId '${channelId}'.`)
+    } else {
+      const userJid = username + '@' + prosodyDomain
       if (!(userJid in r)) { // don't override if already owner!
         r[userJid] = 'admin'
       }
     }
   } catch (error) {
-    peertubeHelpers.logger.error('Failed to get video owner informations:', error)
+    options.peertubeHelpers.logger.error('Failed to get channel owner informations:', error)
+  }
+}
+
+async function getVideoAffiliations (options: RegisterServerOptions, video: MVideoThumbnail): Promise<Affiliations> {
+  const prosodyDomain = await getProsodyDomain(options)
+  const r = await _getCommonAffiliations(options, prosodyDomain)
+
+  // Adding an 'admin' affiliation for video owner
+  if (!video.remote) {
+    // don't add the video owner if it is a remote video!
+    await _addAffiliationByChannelId(options, prosodyDomain, r, video.channelId)
   }
 
   return r
 }
 
-async function _getVideoOwnerUsername (options: RegisterServerOptions, video: MVideoThumbnail): Promise<string> {
-  const username = await getUserNameByChannelId(options, video.channelId)
-  if (username === null) {
-    throw new Error('Username not found')
-  }
-  return username
+async function getChannelAffiliations (options: RegisterServerOptions, channelId: number): Promise<Affiliations> {
+  const prosodyDomain = await getProsodyDomain(options)
+  const r = await _getCommonAffiliations(options, prosodyDomain)
+
+  // Adding an 'admin' affiliation for channel owner
+  // NB: remote channel can't be found, there are not in the videoChannel table.
+  await _addAffiliationByChannelId(options, prosodyDomain, r, channelId)
+
+  return r
 }
 
 export {
   Affiliations,
-  getVideoAffiliations
+  getVideoAffiliations,
+  getChannelAffiliations
 }
