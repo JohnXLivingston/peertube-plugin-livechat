@@ -1,6 +1,10 @@
 # Changelog
 
-## ???
+## v4.0.0
+
+### Breaking changes
+
+* Removed the settings «Chats are only available for local videos». From now on, webchat can only be activated for local videos. It will never be displayed on remote videos. This is because an incompatibility with a new feature (webchat per channel). Moreover this feature was very limited: the webchat was not shared with the remote instance (this will probably be achieved in a future release).
 
 ### Features
 

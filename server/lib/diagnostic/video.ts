@@ -6,7 +6,6 @@ export async function diagVideo (test: string, { settingsManager }: RegisterServ
   const videoSettings = await settingsManager.getSettings([
     'chat-auto-display',
     'chat-open-blank',
-    'chat-only-locals',
     'chat-per-live-video',
     'chat-all-lives',
     'chat-all-non-lives',
@@ -20,10 +19,6 @@ export async function diagVideo (test: string, { settingsManager }: RegisterServ
 
   if (videoSettings['chat-open-blank']) {
     result.messages.push('Displaying «open in new window» button')
-  }
-
-  if (videoSettings['chat-only-locals']) {
-    result.messages.push('Chat will only be available for local videos')
   }
 
   let atLeastOne: boolean = false

@@ -106,7 +106,6 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         // check settings (chat enabled for this video?)
         const settings = await options.settingsManager.getSettings([
           'chat-type',
-          'chat-only-locals',
           'chat-per-live-video',
           'chat-all-lives',
           'chat-all-non-lives',
@@ -118,7 +117,6 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
           return
         }
         if (!videoHasWebchat({
-          'chat-only-locals': !!settings['chat-only-locals'],
           'chat-per-live-video': !!settings['chat-per-live-video'],
           'chat-all-lives': !!settings['chat-all-lives'],
           'chat-all-non-lives': !!settings['chat-all-non-lives'],

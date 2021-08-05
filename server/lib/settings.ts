@@ -211,24 +211,6 @@ Example : https://my_domain/conversejs.html?room=video_{{VIDEO_UUID}}.`,
     default: true
   })
   registerSetting({
-    name: 'chat-only-locals',
-    label: 'Chats are only available for local videos.',
-    descriptionHTML: 'If you uncheck this settings, the chat will also be enabled on remote videos.',
-    type: 'input-checkbox',
-    default: true,
-    private: false
-  })
-  registerSetting({
-    name: 'chat-only-locals-warning',
-    type: 'html',
-    private: true,
-    descriptionHTML:
-`<span class="peertube-plugin-livechat-warning">
-  The plugin is not compatible with video federation yet.
-  The webchat will only be accessible for people watching videos on your server.
-</span>`
-  })
-  registerSetting({
     name: 'chat-per-live-video',
     label: 'Users can activate the chat for their lives',
     type: 'input-checkbox',
