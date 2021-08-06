@@ -1,5 +1,11 @@
 # Changelog
 
+## ???
+
+### Minor changes and fixes
+
+* NPM dependencies update
+
 ## v4.0.0
 
 ### Breaking changes
