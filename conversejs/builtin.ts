@@ -163,8 +163,9 @@ window.initConverse = async function initConverse ({
   if (!isAuthenticated) {
     console.log('User is not authenticated.')
     // TODO: try to make these params work
-    // params.auto_register_muc_nickname = true
-    // params.muc_show_logs_before_join = true
+    // params.muc_nickname_from_jid = true => compute the muc nickname from the jid (will be random here)
+    // params.auto_register_muc_nickname = true => maybe not relevant here (dont do what i thought)
+    // params.muc_show_logs_before_join = true => displays muc history on top of nickname form. But it's not updated.
   }
 
   if (advancedControls) {
