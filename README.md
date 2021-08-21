@@ -23,7 +23,7 @@ If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help i
 
 If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).
 
-If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr.
+If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [liberapay profile](https://liberapay.com/JohnLivingston/).
 
 ## Settings
 
