@@ -65,6 +65,7 @@
     "peertube": ">=3.2.0"
   },
   "homepage": "https://github.com/JohnXLivingston/peertube-plugin-livechat",
+  "repository": "github:JohnXLivingston/peertube-plugin-livechat",
   "keywords": [
     "peertube",
     "plugin"
