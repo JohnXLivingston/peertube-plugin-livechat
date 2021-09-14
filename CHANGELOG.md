@@ -1,10 +1,11 @@
 # Changelog
 
-## ???
+## v4.0.1
 
 ### Minor changes and fixes
 
 * NPM dependencies update
+* Fix plugin register when Prosody enabled but not installed
 
 ## v4.0.0
 

@@ -23,7 +23,11 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await initCustomFields(options)
   await initRouters(options)
 
-  await ensureProsodyRunning(options)
+  try {
+    await ensureProsodyRunning(options)
+  } catch (error) {
+    options.peertubeHelpers.logger('Error when launching Prosody: ' + (error as string))
+  }
 }
 
 async function unregister (): Promise<any> {
