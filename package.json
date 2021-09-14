@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-livechat",
   "description": "PeerTube plugin livechat",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": "John Livingston",
   "bugs": "https://github.com/JohnXLivingston/peertube-plugin-livechat/issues",
   "clientScripts": [
