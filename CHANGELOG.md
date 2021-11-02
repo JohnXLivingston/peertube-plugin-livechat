@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.0.2
+
+### Minor changes dans fixes
+
+* Updating dependencies
+* Better package description
+
 ## v4.0.1
 
 ### Minor changes and fixes
