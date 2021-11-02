@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-livechat",
   "description": "PeerTube plugin livechat: offers a way to embed a chat system into Peertube.",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "author": "John Livingston",
   "bugs": "https://github.com/JohnXLivingston/peertube-plugin-livechat/issues",
   "clientScripts": [
