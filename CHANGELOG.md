@@ -1,8 +1,15 @@
 # Changelog
 
+## v???
+
+### Minor changes and fixes
+
+* Updating dependencies
+* Message near the diagnostic button to suggest to refresh the page if not working.
+
 ## v4.0.2
 
-### Minor changes dans fixes
+### Minor changes and fixes
 
 * Updating dependencies
 * Better package description

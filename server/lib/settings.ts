@@ -22,7 +22,8 @@ function initSettings (options: RegisterServerOptions): void {
     type: 'html',
     private: true,
     descriptionHTML: `Before asking for help, please use the diagnostic tool:
-<a class="peertube-plugin-livechat-launch-diagnostic">Launch diagnostic</a>`
+<a class="peertube-plugin-livechat-launch-diagnostic">Launch diagnostic</a>
+(if this button is not opening a new window, please try to refresh the page).`
   })
 
   // ********** Chat Mode
