@@ -12,9 +12,9 @@ This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat syste
 
 ## Documentation
 
-* [installation guide](documentation/installation.md)
-* [user guide](documentation/user.md)
-* [administrator guide](documentation/admin.md)
+* [Installation guide](documentation/installation.md)
+* [User guide](documentation/user.md)
+* [Administrator guide](documentation/admin.md)
 
 ## New features requests / Bug tracking
 
