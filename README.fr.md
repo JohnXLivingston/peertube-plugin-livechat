@@ -6,6 +6,8 @@ Ce plugin pour [Peertube](https://joinpeertube.org/) permet d'intégrer un syst�
 
 ![Chat screenshot](documentation/screenshots/chat.png)
 
+Voir une [démo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).
+
 **IMPORTANT :** ce plugin ne fonctionne malheureusement pas (encore) tout seul, il doit se reposer sur des outils externes. Merci de consulter la [documentation d'installation](documentation/installation.fr.md).
 
 **Avant de mettre à jour vers une nouvelle version majeure, merci de lire les notes de version, et la liste des éventuelless modifications non rétro-compatibles : [CHANGELOG](CHANGELOG.md).**
