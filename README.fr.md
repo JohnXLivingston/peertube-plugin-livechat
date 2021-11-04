@@ -22,7 +22,7 @@ Si vous avez des demandes de nouvelles fonctionnalités, des bugs, ou des diffic
 
 Pour la liste des fonctionnalités à venir, vous pouvez vous référer à la feuille de route (en anglais): [ROADMAP](ROADMAP.md).
 
-Si vous êtes webdesigner ou expert⋅e ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter.
+Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter.
 
 ## Me contacter
 
