@@ -2,6 +2,8 @@
 
 **IMPORTANT NOTE:** This tutorial is not the best way to use this plugin. If you want to use the recommanded Prosody setup, please refer to [this](../installation.md) and [this](../prosody.md).
 
+**IMPORTANT NOTE: if you are comming from the Framasoft blog post, the right link is [this one](../prosody.md).**
+
 ## Abstract
 
 This tutorial is meant to help you configure [Prosody](https://prosody.im)
