@@ -10,7 +10,7 @@ This plugin can be used in different ways:
 
 | Mode | Description | Documentation
 ---|---|---
-**Prosody server controlled by Peertube (recommended)** | This plugin can launch a [Prosody](https://prosody.im) process and auto-configure it | [Prosody+Peertube installation](./prosody.md). **This is the recommanded setup, and is almost automatic to setup**
+**Prosody server controlled by Peertube (recommended)** | This plugin can launch a [Prosody](https://prosody.im) process and auto-configure it | [Prosody+Peertube installation](./prosody.md). **This is the recommanded mode, and is almost automatic to setup**
 **Connect to an existing XMPP server with ConverseJS** | You can use an external Jabber/XMPP server. This server has to provide BOSH or Websocket API, accept anonymous login, and accept room creation. | [ConverseJS+XMPP installation](./conversejs.md)
 **Use an external web chat tool** | You can use any external web chat tool, that can be included in an iframe. | [External chat installation](./external.md)
 
