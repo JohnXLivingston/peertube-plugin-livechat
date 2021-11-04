@@ -4,6 +4,8 @@
 
 This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.
 
+![Chat screenshot](documentation/screenshots/chat.png)
+
 **IMPORTANT:** unfortunately this plugin does not (yet) work by itself, it must rely on external tools. Please read the [installation guide](documentation/installation.md).
 
 **Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](CHANGELOG.md)**.
