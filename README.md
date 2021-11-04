@@ -32,10 +32,6 @@ If you want to support the project financially, you can contact me by mail at gi
 
 ## Contribute
 
-Please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Contribute
-
 Please refer to the page [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Credits
