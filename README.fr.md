@@ -1,6 +1,6 @@
 # PeerTube plugin livechat 🇫🇷
 
-🇬🇧 English version [here](./README.md).
+🇬🇧 English version / version anglaise [here](./README.md).
 
 Ce plugin pour [Peertube](https://joinpeertube.org/) permet d'intégrer un système de «chat» (clavardage) à coté des vidéos.
 

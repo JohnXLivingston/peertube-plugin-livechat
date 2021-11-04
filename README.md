@@ -1,6 +1,6 @@
 # PeerTube plugin livechat 🇬🇧
 
-🇫🇷 Version française [ici](README.fr.md).
+🇫🇷 French version / Version française [ici](README.fr.md).
 
 This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.
 
