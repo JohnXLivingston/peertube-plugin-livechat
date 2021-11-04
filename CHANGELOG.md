@@ -1,6 +1,10 @@
 # Changelog
 
-## v???
+## v??? (not published yet)
+
+### Features
+
+* Brand new documentation, in french and english. (Work in Progress)
 
 ### Minor changes and fixes
 

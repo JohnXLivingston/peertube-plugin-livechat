@@ -2,29 +2,33 @@
 
 Interested in contributing? Awesome!
 
+## Code of conduct
+
+Please read the [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md).
+
 ## Translate
 
 You can help us to translate this PeerTube plugin by creating or modifying translation files in the `languages` folder.
 
 Please work on the `develop` branch, and do your commits and pull request on this branch.
 
-If the language you are interesting in does not exist yet, create a file `language_code.json` in the `languages` folder.
-The language code must be the same as the Peertube's langage code (see [peertube documentation](https://github.com/Chocobozzz/PeerTube/blob/develop/support/doc/translation.md)).
+If the language you are interesting in does not exist yet, create a file `code.json` in the `languages` folder, where `code` is the language code.
+The language code must be the same as the Peertube's langage code (see [Peertube documentation](https://github.com/Chocobozzz/PeerTube/blob/develop/support/doc/translation.md)).
 Then add the language file in the [package.json](package.json) file, under the key `translations`.
 
 Translation strings are set in the language file as follow:
 
-- files are in [json format](https://www.json.org)
-- the key is the english string (see existing keys in the [french translation file](languages/fr.json)).
-- the value is the translating string
+- files are in [JSON format](https://www.json.org)
+- the JSON key is the english string (see existing keys in the [french translation file](languages/fr.json)).
+- the JSON value is the translating string
 - NB: there is no english translation file (this is how translation works for peertube's plugins)
 
 ## Give your feedback
 
 You don't need to know how to code to start contributing to this plugin! Other
 contributions are very valuable too, among which: you can test the software and
-report bugs, you can give feedback on potential bugs, features that you are
-interested in, user interface, design, decentralized architecture...
+report bugs, you can give feedback, features that you are
+interested in, user interface, design, ...
 
 ## Develop
 

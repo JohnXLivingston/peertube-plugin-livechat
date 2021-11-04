@@ -1,5 +1,7 @@
 # Tutorial: quick setup for Prosody XMPP server on your Peertube's instance
 
+**IMPORTANT NOTE:** This tutorial is not the best way to use this plugin. If you want to use the recommanded Prosody setup, please refer to [this](../installation.md) and [this](../prosody.md).
+
 ## Abstract
 
 This tutorial is meant to help you configure [Prosody](https://prosody.im)
