@@ -20,7 +20,7 @@ This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat syste
 
 If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).
 
-Here is a roadmap for upcoming features: [roadmap](ROADMAP.md).
+Here is a roadmap for upcoming features: [ROADMAP](ROADMAP.md).
 
 If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.
 
