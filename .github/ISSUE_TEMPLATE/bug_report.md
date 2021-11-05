@@ -29,6 +29,7 @@ If applicable, add screenshots to help explain your problem.
  - Peertube version: 
  - Peertube installation type [e.g. standard, docker, ...]: 
  - peertube-plugin-livechat version: 
+ - Chat mode if relevant [disabled, Prosody, external XMPP, external]:
 
 **Plugin diagnostic:**
 If this is a server setup issue, please go to the plugin settings, click on «launch diagnostic», and copy/paste the result.
