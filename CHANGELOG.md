@@ -10,6 +10,7 @@
 
 * Updating dependencies
 * Message near the diagnostic button to suggest to refresh the page if not working.
+* New pl translations. Thanks [mkljczk](https://github.com/mkljczk)
 
 ## v4.0.2
 
