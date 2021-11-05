@@ -2,6 +2,6 @@
   "Open chat": "Otwórz czat",
   "Open chat in a new window": "Otwórz czat w nowym oknie",
   "Close chat": "Zamknij czat",
-  "Use chat": false,
-  "If enabled, there will be a chat next to the video.": false
+  "Use chat": "Użyj czatu",
+  "If enabled, there will be a chat next to the video.": "Jeśli włączono, czat pojawi się po lewej stronie filmu."
 }
