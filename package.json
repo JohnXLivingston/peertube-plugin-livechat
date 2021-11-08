@@ -49,7 +49,6 @@
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
-    "converse.js": "^7.0.6",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-config-standard-with-typescript": "^20.0.0",
@@ -75,15 +74,16 @@
   ],
   "library": "./dist/server/main.js",
   "scripts": {
-    "clean": "rm -rf dist/*",
+    "clean": "rm -rf dist/* build/*",
+    "clean:light": "rm -rf dist/*",
     "prepare": "npm run build",
-    "build:converse": "mkdir -p dist/client/conversejs && cp -r node_modules/converse.js/dist/* dist/client/conversejs/",
+    "build:converse": "bash conversejs/build-conversejs.sh",
     "build:images": "mkdir -p dist/client/images && npx svgo -f public/images/ -o dist/client/images/",
     "build:webpack": "webpack --mode=production",
     "build:server": "npx tsc --build server/tsconfig.json",
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
     "build:prosodymodules": "mkdir -p dist/server/prosody-modules && cp -r prosody-modules/* dist/server/prosody-modules/",
-    "build": "npm-run-all -s clean -p build:converse build:images build:webpack build:server build:serverconverse build:prosodymodules",
+    "build": "npm-run-all -s clean:light -p build:converse build:images build:webpack build:server build:serverconverse build:prosodymodules",
     "lint": "npx eslint --ext .js --ext .ts ."
   },
   "staticDirs": {
