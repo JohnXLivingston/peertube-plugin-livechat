@@ -28,9 +28,23 @@ else
   cp -R $converse_src_dir/* "$converse_build_dir"
 fi
 
-echo "Building ConverseJS"
+echo "Removing existing custom files...\n"
+rm -rf "$converse_build_dir/custom/"
+
+echo "Adding the custom files...\n"
+cp -r "$src_dir/custom/" "$converse_build_dir/custom/"
+mv "$converse_build_dir/custom/webpack.livechat.js" "$converse_build_dir/"
+
+if [[ ! -d "$converse_build_dir/node_modules" ]]; then
+  echo "Missing node_modules directory, seems we have to call the makefile...\n"
+  cd "$converse_build_dir"
+  make node_modules src/*
+  cd $rootdir
+fi
+
+echo "Building ConverseJS...\n"
 cd "$converse_build_dir"
-make dist
+npx webpack --config webpack.livechat.js
 cd $rootdir
 
 echo "Copying ConverseJS dist files...\n"

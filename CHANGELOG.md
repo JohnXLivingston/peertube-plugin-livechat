@@ -5,6 +5,7 @@
 ### Features
 
 * Brand new documentation, in french and english. (Work in Progress)
+* UI/UX improvements. Now using a custom ConverseJS build.
 
 ### Minor changes and fixes
 
