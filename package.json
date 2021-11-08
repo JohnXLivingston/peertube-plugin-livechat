@@ -84,7 +84,8 @@
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
     "build:prosodymodules": "mkdir -p dist/server/prosody-modules && cp -r prosody-modules/* dist/server/prosody-modules/",
     "build": "npm-run-all -s clean:light -p build:converse build:images build:webpack build:server build:serverconverse build:prosodymodules",
-    "lint": "npx eslint --ext .js --ext .ts ."
+    "lint": "npx eslint --ext .js --ext .ts .",
+    "show:npmfiles": "npx npm-packlist"
   },
   "staticDirs": {
     "static": "dist/client/static",
