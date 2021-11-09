@@ -1,11 +1,20 @@
 # Changelog
 
+## v5.0.0 (not published yet)
+
+### Features
+
+* UI/UX improvements. Now using a custom ConverseJS build.
+
+### Breaking changes
+
+* If you have some CSS customization for the plugin, it may be broken.
+
 ## v4.0.3
 
 ### Features
 
 * Brand new documentation, in french and english. (Work in Progress)
-* UI/UX improvements. Now using a custom ConverseJS build.
 
 ### Minor changes and fixes
 
