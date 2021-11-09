@@ -1,3 +1,5 @@
+@import "sass/converse";
+
 body.livechat-iframe #conversejs .chat-head {
   // Hidding the chat-head when the plugin is displayed in an iframe.
   display: none;
