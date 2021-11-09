@@ -135,6 +135,7 @@ window.initConverse = async function initConverse ({
       emoji: true,
       toggle_occupants: true
     },
+    theme: 'peertube',
     persistent_store: 'sessionStorage'
   }
 
