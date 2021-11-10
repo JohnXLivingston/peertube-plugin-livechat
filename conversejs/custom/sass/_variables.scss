@@ -1,72 +1,82 @@
+:root {
+  --peertube-main-foreground: #000;
+  --peertube-main-background: #fff;
+  --peertube-grey-foreground: #585858;
+  --peertube-grey-background: #e5e5e5;
+  --peertube-menu-foreground: #fff;
+  --peertube-menu-background: #000;
+  --peertube-input-foreground: #000;
+  --peertube-input-background: #fff;
+  --peertube-button-foreground: #fff;
+  --peertube-button-background: #f2690d;
+  --peertube-link: #000;
+  --peertube-link-hover: #000;
+}
+
 #conversejs.theme-peertube,
 #conversejs-bg.theme-peertube,
 .converse-fullscreen.theme-peertube {
   --subdued-color: #a8aba1;
-  --green: #3aa569;
-  --redder-orange: #e77051;
-  --orange: #e7a151;
-  --light-blue: #578ea9;
-  --lighter-blue: #85b47b;
+  --green: #3aa569; // only in this file
+  --redder-orange: #e77051; // only in this file
+  --orange: #e7a151; // only in this file
+  --light-blue: #578ea9; // only in this file
+  --lighter-blue: #85b47b; // only in this file
   --chat-status-online: var(--green);
   --chat-status-busy: var(--redder-orange);
   --chat-status-away: var(--orange);
-
-  // TODO: is brand-heading-color used?
-  --brand-heading-color: #387592; // $blue
-  --completion-light-color: #ffb9a7; // $lightest-red
-  --completion-normal-color: var(--redder-orange);
-  --completion-dark-color: #d24e2b; // $dark-red
-  --link-color: var(--light-blue);
-  --link-hover-color: var(--lighter-blue);
-  --link-color-lighten-10-percent: #79a5ba; // lighten($light-blue, 10%)
-  --dark-link-color: #206485; // $dark-blue
-  --global-background-color: #fff;
-  --inverse-link-color: white;
-  --text-shadow-color: #fafafa;
-  --text-color: #666;
-  --controlbox-text-color: #ddd;
-  --text-color-lighten-15-percent: #8c8c8c; // lighten(#666, 15%)
-  --message-text-color: #555;
+  --brand-heading-color: #387592; // TODO: is brand-heading-color used?
+  --completion-light-color: var(--peertube-button-background);
+  --completion-normal-color: var(--peertube-button-background);
+  --completion-dark-color: var(--peertube-button-background);
+  --link-color: var(--peertube-link);
+  --link-hover-color: var(--peertube-link-hover);
+  --link-color-lighten-10-percent: var(--peertube-main-foreground);
+  --global-background-color: var(--peertube-main-background);
+  --inverse-link-color: var(--peertube-button-foreground);
+  --text-shadow-color: var(--peertube-main-background); // FIXME: should be a little different from background
+  --text-color: var(--peertube-main-foreground);
+  --controlbox-text-color: var(--peertube-main-foreground); // Note: controlbox is not used
+  --text-color-lighten-15-percent: var(--peertube-main-foreground);
+  --message-text-color: var(--peertube-main-foreground);
   --message-receipt-color: var(--green);
   --save-button-color: var(--green);
   --message-avatar-width: 36px;
   --message-avatar-height: 36px;
-  --chat-textarea-color: #666;
-  --chat-textarea-background-color: #f6f6f6;
+  --chat-textarea-color: var(--peertube-input-foreground);
+  --chat-textarea-background-color: var(--peertube-input-background);
   --chat-textarea-height: 60px;
   --send-button-height: 27px;
   --send-button-margin: 3px;
-
-  // TODO: is inline-action-margin used?
   --inline-action-margin: 0.75em;
   --roster-height: 194px;
-  --chat-correcting-color: #ffffc0;
-  --chat-head-color-dark: #1e9652;
-  --chat-head-color-darker: #0e763b;
-  --chat-head-color-lighten-50-percent: #e7f7ee; // lighten($green, 50%)
+  --chat-correcting-color: var(--peertube-grey-background);
+  --chat-head-color-dark: #1e9652; // should not be used in this plugin
+  --chat-head-color-darker: #0e763b; // should not be used in this plugin
+  --chat-head-color-lighten-50-percent: #e7f7ee;  // should not be used in this plugin
   --chat-head-color: var(--green);
-  --chat-head-text-color: #aaa;
-  --chat-toolbar-btn-color: var(--green);
-  --chat-toolbar-btn-disabled-color: gray;
-  --chat-content-background-color: white;
-  --chat-info-color: var(--subdued-color);
-  --highlight-color: #dcf9f6;
-  --highlight-color-darker: #b0e8e2;
-  --primary-color: var(--light-blue);
-  --primary-color-dark: #397491;
-  --secondary-color: #818479; // gray
-  --secondary-color-dark: #585b51;
+  --chat-head-text-color: var(--peertube-main-foreground);
+  --chat-toolbar-btn-color: var(--peertube-button-background);
+  --chat-toolbar-btn-disabled-color: var(--peertube-grey-background);
+  --chat-content-background-color: var(--peertube-main-background);
+  --chat-info-color: var(--peertube-grey-foreground); // FIXME: dont know if it is used, and what it is.
+  --highlight-color: var(--peertube-grey-foreground); // FIXME: dont know if it is used, and what it is.
+  --highlight-color-darker: var(--peertube-grey-foreground); // FIXME: dont know if it is used, and what it is.
+  --primary-color: var(--peertube-button-background);
+  --primary-color-dark: var(--peertube-button-background);
+  --secondary-color: var(--peertube-grey-background);
+  --secondary-color-dark: var(--peertube-grey-background);
   --warning-color: var(--orange);
   --warning-color-dark: #d2842b;
-  --danger-color: #d24e2b; // dark-red
+  --danger-color: #d24e2b;
   --danger-color-dark: #a93415; // darker red
-  --light-background-color: #fcfdfd;
-  --error-color: #d24e2b; // dark-red
-  --info-color: #1e9652; // $dark-green
+  --light-background-color: var(--peertube-main-background);
+  --error-color: #d24e2b;
+  --info-color: #1e9652;
   --button-border-radius: 5px;
   --chatbox-border-radius: 0;
-  --groupchats-header-color: var(--redder-orange);
-  --groupchats-header-color-dark: var(--chatroom-head-bg-color-dark);
+  --groupchats-header-color: var(--peertube-button-background);
+  --groupchats-header-color-dark: var(--peertube-button-background);
   --controlbox-width: 250px;
   --controlbox-head-color: var(--light-blue);
   --controlbox-heading-color: #777;
@@ -79,18 +89,15 @@
   --minimized-chats-width: 130px;
   --mobile-chat-width: 100%;
   --mobile-chat-height: 400px;
-
-  // todo: figure out a way to concatenate custom properties with strings.
-  // --font-path: "webfonts/icomoon/fonts/";
-
-  --normal-font: "helvetica", "arial", sans-serif;
-  --heading-font: "muli", normal;
-  --branding-font: "baumans", cursive;
+  --normal-font: "Source Sans Pro", sans-serif;
+  --heading-font: "Source Sans Pro", sans-serif;
+  --branding-font: "Source Sans Pro", sans-serif;
   --heading-display: inline;
   --heading-color: #9b4d;
-  --chatroom-badge-color: var(--redder-orange);
-  --chatroom-badge-hover-color: #d24e2b; // $red
+  --chatroom-badge-color: var(--peertube-button-background);
+  --chatroom-badge-hover-color: var(--peertube-button-background);
   --chatroom-correcting-color: #ffffc0;
+  --chatroom-head-bg-color-dark: #d24e2b;
   --chatroom-head-bg-color: white;
   --chatroom-head-border-bottom: 1px solid #eee;
   --chatroom-head-button-color: #999;
@@ -103,8 +110,8 @@
   --chatroom-head-title-font-weight: bold;
   --chatroom-head-title-padding-right: 12px;
   --chatroom-width: 500px;
-  --muc-toolbar-btn-color: #7e7e7e;
-  --muc-toolbar-btn-disabled-color: lightgray;
+  --muc-toolbar-btn-color: var(--peertube-button-background);
+  --muc-toolbar-btn-disabled-color: var(--peertube-grey-background);
   --headline-head-color: var(--orange);
   --headline-message-color: #d2842b;
   --chatbox-button-size: 14px;
@@ -115,17 +122,17 @@
   --font-size-large: 16px;
   --font-size-huge: 20px;
   --message-font-size: var(--font-size);
-  --separator-text-color: #aaa;
-  --chat-separator-border-bottom: 1px solid #aaa;
+  --separator-text-color: var(--peertube-grey-foreground);
+  --chat-separator-border-bottom: 1px solid var(--peertube-grey-foreground);
   --chatroom-separator-border-bottom: 1px solid #aaa;
   --chatroom-message-input-border-top: 1px solid #ccc;
-  --chatbox-message-input-border-top: 1px solid #ccc;
+  --chatbox-message-input-border-top: 1px solid var(--peertube-menu-background);
   --line-height-small: 14px;
   --line-height: 16px;
   --line-height-large: 20px;
   --line-height-huge: 27px;
   --occupants-padding: 1em;
-  --occupants-background-color: #f3f3f3;
+  --occupants-background-color: var(--peertube-main-background);
   --occupants-border-left: 0;
   --occupants-border-bottom: 0;
   --embedded-emoji-picker-height: 300px;
@@ -142,15 +149,15 @@
   --overlayed-chatbox-hover-height: 1em;
   --overlayed-emoji-picker-height: 200px;
   --overlayed-max-chat-textarea-height: 200px;
-  --overlayed-badge-color: #818479; // $gray-color
-  --list-toggle-color: #818479; // $gray-color
-  --list-toggle-hover-color: #585b51; // $dark-gray-color
+  --overlayed-badge-color: #818479; // should not be used in this plugin
+  --list-toggle-color: #818479;
+  --list-toggle-hover-color: #585b51;
   --list-toggle-font-weight: bold;
   --list-item-hover-color: rgb(0 0 0 / 3.5%);
-  --list-item-action-color: #e3eef3; // lighten($lightest-blue, 25%)
+  --list-item-action-color: #e3eef3;
   --list-item-link-color: #f1f1f1;
   --list-item-link-hover-color: #ddd;
   --list-item-open-color: #444;
   --list-item-open-hover-color: #444;
-  --list-dot-circle-color: #f6dec1; // lighten($orange, 25%)
+  --list-dot-circle-color: #f6dec1;
 }
