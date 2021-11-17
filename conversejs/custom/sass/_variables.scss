@@ -99,7 +99,7 @@
   --chatroom-correcting-color: #ffffc0;
   --chatroom-head-bg-color-dark: #d24e2b;
   --chatroom-head-bg-color: white;
-  --chatroom-head-border-bottom: 1px solid #eee;
+  --chatroom-head-border-bottom: 1px solid var(--peertube-grey-foreground);
   --chatroom-head-button-color: #999;
   --chatroom-head-color: #7e7e7e;
   --chatroom-head-description-border-left: 1px solid #ddd;
@@ -133,8 +133,8 @@
   --line-height-huge: 27px;
   --occupants-padding: 1em;
   --occupants-background-color: var(--peertube-main-background);
-  --occupants-border-left: 0;
-  --occupants-border-bottom: 0;
+  --occupants-border-left: 1px solid var(--peertube-grey-foreground);
+  --occupants-border-bottom: 1px solid var(--peertube-grey-foreground);
   --embedded-emoji-picker-height: 300px;
   --avatar-border-radius: 10%;
   --avatar-border: 0;
