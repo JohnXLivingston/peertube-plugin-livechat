@@ -1,5 +1,6 @@
 @import "./variables";
 @import "sass/converse";
+@import "./peertubetheme";
 
 body.livechat-iframe #conversejs .chat-head {
   // Hidding the chat-head when the plugin is displayed in an iframe.
@@ -7,6 +8,7 @@ body.livechat-iframe #conversejs .chat-head {
 }
 
 #conversejs-bg {
+  // We are using a custom template that differs from the original, this is required.
   .converse-brand__heading {
     img {
       margin-top: 0.3em;

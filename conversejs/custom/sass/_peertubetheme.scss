@@ -1,0 +1,14 @@
+#conversejs.theme-peertube {
+  // hidding avatars when screen width is not big enough.
+  @media screen and (max-width: 576px) {
+    .message {
+      .chat-msg__content {
+        width: 100%;
+      }
+
+      .chat-msg__avatar {
+        display: none;
+      }
+    }
+  }
+}
