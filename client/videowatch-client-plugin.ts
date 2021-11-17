@@ -165,6 +165,9 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     }
     container.append(iframe)
     container.setAttribute('peertube-plugin-livechat-state', 'open')
+
+    // Hacking styles...
+    hackStyles(true)
   }
 
   function closeChat (): void {
@@ -177,6 +180,9 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       .forEach(dom => dom.remove())
 
     container.setAttribute('peertube-plugin-livechat-state', 'closed')
+
+    // Un-Hacking styles...
+    hackStyles(false)
   }
 
   function initChat (video: Video): void {
@@ -221,6 +227,27 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     }, () => {
       logger.error('Cant get settings')
     })
+  }
+
+  let savedMyPluginFlexGrow: string | undefined
+  function hackStyles (on: boolean): void {
+    try {
+      const myPluginPlaceholder: HTMLElement | null = document.querySelector('my-plugin-placeholder')
+      if (on) {
+        // Saving current style attributes and maximazing space for the chat
+        if (myPluginPlaceholder) {
+          savedMyPluginFlexGrow = myPluginPlaceholder.style.flexGrow // Should be "", but can be anything else.
+          myPluginPlaceholder.style.flexGrow = '1'
+        }
+      } else {
+        // restoring values...
+        if (savedMyPluginFlexGrow !== undefined && myPluginPlaceholder) {
+          myPluginPlaceholder.style.flexGrow = savedMyPluginFlexGrow
+        }
+      }
+    } catch (err) {
+      logger.error(`Failed hacking styles:  '${err as string}'`)
+    }
   }
 
   registerHook({
