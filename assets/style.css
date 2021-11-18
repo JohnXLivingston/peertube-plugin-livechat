@@ -18,8 +18,8 @@
   border: 1px solid black;
   background-color: var(--mainBackgroundColor);
   margin: 5px;
-  min-height: 36px;
-  min-width: 36px;
+  height: 36px;
+  width: 36px;
   padding: 2px;
 }
 
@@ -31,6 +31,17 @@
   display: inline-block;
   height: 100%;
   width: 100%;
+}
+
+.peertube-plugin-livechat-buttons-open .peertube-plugin-livechat-button {
+  margin: 1px;
+  height: 18px;
+  width: 18px;
+  padding: 1px;
+}
+
+.peertube-plugin-livechat-buttons-open .peertube-plugin-livechat-button-icon {
+  background-size: 16px 16px;
 }
 
 [peertube-plugin-livechat-state="initializing"] {

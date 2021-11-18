@@ -232,6 +232,13 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
   let savedMyPluginFlexGrow: string | undefined
   function hackStyles (on: boolean): void {
     try {
+      document.querySelectorAll('.peertube-plugin-livechat-buttons').forEach(buttons => {
+        if (on) {
+          buttons.classList.add('peertube-plugin-livechat-buttons-open')
+        } else {
+          buttons.classList.remove('peertube-plugin-livechat-buttons-open')
+        }
+      })
       const myPluginPlaceholder: HTMLElement | null = document.querySelector('my-plugin-placeholder')
       if (on) {
         // Saving current style attributes and maximazing space for the chat
