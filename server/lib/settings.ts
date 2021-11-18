@@ -96,7 +96,7 @@ Please read the
     name: 'prosody-list-rooms',
     label: 'List existing rooms',
     type: 'html',
-    descriptionHTML: '<a class="peertube-plugin-livechat-prosody-list-rooms">List rooms</a>',
+    descriptionHTML: '<a class="peertube-plugin-livechat-prosody-list-rooms-btn">List rooms</a>',
     private: true
   })
 

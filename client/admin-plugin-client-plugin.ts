@@ -33,12 +33,30 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
       })
       console.log('[peertube-plugin-livechat] Initializing prosody-list-rooms button')
       const listRoomsButtons: NodeListOf<HTMLAnchorElement> =
-        document.querySelectorAll('.peertube-plugin-livechat-prosody-list-rooms')
+        document.querySelectorAll('.peertube-plugin-livechat-prosody-list-rooms-btn')
+
+      try {
+        // Trying to copy Computed CSS for an input[type=submit] to the list rooms button
+        const tmpButton = document.querySelector('#content input[type=submit]')
+        if (window.getComputedStyle && tmpButton) {
+          const styles = window.getComputedStyle(tmpButton)
+          // Firerox has a bug: styles.cssText always returns "". https://bugzilla.mozilla.org/show_bug.cgi?id=137687
+          if (styles.cssText !== '') {
+            listRoomsButtons.forEach(listRoomsButton => { listRoomsButton.style.cssText = styles.cssText })
+          } else {
+            const cssText = Object.values(styles).reduce(
+              (css, propertyName) => `${css}${propertyName}:${styles.getPropertyValue(propertyName)};`
+            )
+            listRoomsButtons.forEach(listRoomsButton => { listRoomsButton.style.cssText = cssText })
+          }
+        }
+      } catch (err) {
+        console.error('[peertube-plugin-livechat] Failed applying styles on the «list rooms» button.', err)
+      }
+
       listRoomsButtons.forEach(listRoomsButton => {
-        if (listRoomsButton.classList.contains('btn')) { return }
-        listRoomsButton.classList.add('btn')
-        listRoomsButton.classList.add('action-button')
-        listRoomsButton.classList.add('orange-button')
+        if (listRoomsButton.classList.contains('peertube-plugin-livechat-prosody-list-rooms-btn-binded')) { return }
+        listRoomsButton.classList.add('peertube-plugin-livechat-prosody-list-rooms-btn-binded')
         listRoomsButton.onclick = async (): Promise<void> => {
           console.log('[peertube-plugin-livechat] Opening the room list...')
           // TODO: use showModal (seems buggy with Peertube 3.2.1)
