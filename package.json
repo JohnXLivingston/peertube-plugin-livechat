@@ -28,7 +28,7 @@
     }
   ],
   "css": [
-    "assets/style.css"
+    "dist/assets/style.css"
   ],
   "dependencies": {
     "async": "^3.2.2",
@@ -57,6 +57,7 @@
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-standard": "^5.0.0",
     "npm-run-all": "^4.1.5",
+    "sass": "^1.43.4",
     "stylelint": "^14.0.1",
     "stylelint-config-recommended-scss": "^5.0.1",
     "stylelint-config-standard-scss": "^2.0.1",
@@ -86,10 +87,11 @@
     "build:server": "npx tsc --build server/tsconfig.json",
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
     "build:prosodymodules": "mkdir -p dist/server/prosody-modules && cp -r prosody-modules/* dist/server/prosody-modules/",
-    "build": "npm-run-all -s clean:light -p build:converse build:images build:webpack build:server build:serverconverse build:prosodymodules",
+    "build:styles": "sass assets:dist/assets",
+    "build": "npm-run-all -s clean:light -p build:converse build:images build:webpack build:server build:serverconverse build:prosodymodules build:styles",
     "lint": "npm-run-all -s lint:script lint:styles",
     "lint:script": "npx eslint --ext .js --ext .ts .",
-    "lint:styles": "stylelint 'conversejs/**/*.scss'",
+    "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/**/*.css'",
     "show:npmfiles": "npx npm-packlist"
   },
   "staticDirs": {

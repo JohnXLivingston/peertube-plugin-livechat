@@ -9,8 +9,7 @@
 
 .peertube-plugin-livechat-buttons {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: flex-end;
 }
 
@@ -72,7 +71,7 @@
 
 table.peertube-plugin-livechat-prosody-list-rooms {
   border: 1px solid black;
-  margin: 5px 0px;
+  margin: 5px 0;
 }
 
 table.peertube-plugin-livechat-prosody-list-rooms tr:nth-child(odd) {
