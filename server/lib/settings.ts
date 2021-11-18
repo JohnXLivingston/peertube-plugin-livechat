@@ -1,5 +1,5 @@
 import { ensureProsodyRunning, ensureProsodyNotRunning } from './prosody/ctl'
-import type { ChatType } from '../../shared/lib/types'
+import type { ChatType, ConverseJSTheme } from '../../shared/lib/types'
 
 function initSettings (options: RegisterServerOptions): void {
   const { peertubeHelpers, registerSetting, settingsManager } = options
@@ -267,6 +267,28 @@ Don't add private videos, the UUIDs will be send to frontend.`,
 `Additional styles to be added on the iframe style attribute. <br>
 Example: height:400px;`,
     private: false
+  })
+
+  // ********** ConverseJS advanced settings
+  registerSetting({
+    name: 'converse-advanced',
+    type: 'html',
+    private: true,
+    descriptionHTML: '<h3>ConverseJS advanced settings</h3>'
+  })
+
+  registerSetting({
+    name: 'converse-theme',
+    label: 'ConverseJS theme',
+    type: 'select',
+    default: 'peertube' as ConverseJSTheme,
+    private: true,
+    options: [
+      { value: 'peertube', label: 'Peertube theme' },
+      { value: 'default', label: 'Default ConverseJS theme' },
+      { value: 'concord', label: 'ConverseJS concord theme' }
+    ] as Array<{value: ConverseJSTheme, label: string}>,
+    descriptionHTML: 'Please choose the converseJS theme you want to use.'
   })
 
   // ********** Built-in Prosody advanced settings

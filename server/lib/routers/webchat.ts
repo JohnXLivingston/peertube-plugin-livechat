@@ -1,6 +1,8 @@
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import type { ProxyOptions } from 'express-http-proxy'
-import type { ChatType, ProsodyListRoomsResult, ProsodyListRoomsResultRoom } from '../../../shared/lib/types'
+import type {
+  ChatType, ProsodyListRoomsResult, ProsodyListRoomsResultRoom
+} from '../../../shared/lib/types'
 import { getBaseRouterRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
@@ -39,7 +41,8 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       const settings = await settingsManager.getSettings([
         'chat-type', 'chat-room', 'chat-server',
         'chat-bosh-uri', 'chat-ws-uri',
-        'prosody-room-type'
+        'prosody-room-type',
+        'converse-theme'
       ])
       const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
 
@@ -49,6 +52,10 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let wsUri: string
       let authenticationUrl: string = ''
       let advancedControls: boolean = false
+      let converseJSTheme: string = settings['converse-theme'] as string
+      if (!/^\w+$/.test(converseJSTheme)) {
+        converseJSTheme = 'peertube'
+      }
       if (chatType === 'builtin-prosody') {
         const prosodyDomain = await getProsodyDomain(options)
         jid = 'anon.' + prosodyDomain
@@ -148,6 +155,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
       page = page.replace(/{{ADVANCEDCONTROLS}}/g, advancedControls ? 'true' : 'false')
+      page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
 
       res.status(200)
       res.type('html')

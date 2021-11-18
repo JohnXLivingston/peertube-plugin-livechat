@@ -45,3 +45,16 @@ You can add some custom styles that will be added to the iframe.
 For example a custom width:
 
 ```width:400px;```
+
+### ConverseJS advanced settings
+
+These settings are available if you are in mode «Prosody server controlled by Peertube»
+or «Connect to an existing XMPP server with ConverseJS».
+
+#### ConverseJS theme
+
+You can choose which theme to use for ConverseJS:
+
+- Peertube theme: this is a special theme, made especially for peertube's integration.
+- Default ConverseJS theme: this is the default ConverseJS theme.
+- ConverseJS concord theme: this is a theme provided by ConverseJS.

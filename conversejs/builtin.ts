@@ -79,6 +79,7 @@ interface InitConverseParams {
   websocketServiceUrl: string
   authenticationUrl: string
   advancedControls: 'true' | 'false'
+  theme: string
 }
 window.initConverse = async function initConverse ({
   jid,
@@ -87,7 +88,8 @@ window.initConverse = async function initConverse ({
   boshServiceUrl,
   websocketServiceUrl,
   authenticationUrl,
-  advancedControls
+  advancedControls,
+  theme
 }: InitConverseParams) {
   const isInIframe = inIframe()
 
@@ -135,7 +137,7 @@ window.initConverse = async function initConverse ({
       emoji: true,
       toggle_occupants: true
     },
-    theme: 'peertube',
+    theme: theme || 'peertube',
     persistent_store: 'sessionStorage'
   }
 
