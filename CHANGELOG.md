@@ -5,10 +5,12 @@
 ### Features
 
 * UI/UX improvements. Now using a custom ConverseJS build.
+* Auto color detection: when using ConverseJS, the plugin tries to guess colors to apply to its theme.
 
 ### Breaking changes
 
 * If you have some CSS customization for the plugin, it may be broken.
+* Auto color detection can have bad result for some Peertube theme. If so, you can disable it in the settings.
 
 ## v4.0.3
 

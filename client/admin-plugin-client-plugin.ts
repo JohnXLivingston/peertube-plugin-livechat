@@ -227,6 +227,14 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
             options.formValues['chat-type'] === ('builtin-converse' as ChatType) ||
             options.formValues['chat-type'] === ('builtin-prosody' as ChatType)
           )
+        case 'converse-autocolors':
+          return !(
+            (
+              options.formValues['chat-type'] === ('builtin-converse' as ChatType) ||
+              options.formValues['chat-type'] === ('builtin-prosody' as ChatType)
+            ) &&
+            options.formValues['converse-theme'] === 'peertube'
+          )
         case 'chat-uri':
         case 'chat-type-help-external-uri':
           return options.formValues['chat-type'] !== ('external-uri' as ChatType)

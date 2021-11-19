@@ -8,6 +8,7 @@ import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getAPIKey } from '../apikey'
 import { getChannelInfosById, getChannelNameById } from '../database/channel'
+import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../shared/lib/autocolors'
 import * as path from 'path'
 const bodyParser = require('body-parser')
 const got = require('got')
@@ -42,7 +43,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         'chat-type', 'chat-room', 'chat-server',
         'chat-bosh-uri', 'chat-ws-uri',
         'prosody-room-type',
-        'converse-theme'
+        'converse-theme', 'converse-autocolors'
       ])
       const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
 
@@ -149,6 +150,53 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         }
         room = room.replace(/{{CHANNEL_NAME}}/g, channelName)
       }
+
+      let autocolorsStyles = ''
+      if (
+        settings['converse-autocolors'] &&
+        isAutoColorsAvailable(settings['chat-type'] as ChatType, settings['converse-theme'] as string)
+      ) {
+        peertubeHelpers.logger.debug('Trying to load AutoColors...')
+        const autocolors: AutoColors = {
+          mainForeground: req.query._ac_mainForeground?.toString() ?? '',
+          mainBackground: req.query._ac_mainBackground?.toString() ?? '',
+          greyForeground: req.query._ac_greyForeground?.toString() ?? '',
+          greyBackground: req.query._ac_greyBackground?.toString() ?? '',
+          menuForeground: req.query._ac_menuForeground?.toString() ?? '',
+          menuBackground: req.query._ac_menuBackground?.toString() ?? '',
+          inputForeground: req.query._ac_inputForeground?.toString() ?? '',
+          inputBackground: req.query._ac_inputBackground?.toString() ?? '',
+          buttonForeground: req.query._ac_buttonForeground?.toString() ?? '',
+          buttonBackground: req.query._ac_buttonBackground?.toString() ?? '',
+          link: req.query._ac_link?.toString() ?? '',
+          linkHover: req.query._ac_linkHover?.toString() ?? ''
+        }
+        const autoColorsTest = areAutoColorsValid(autocolors)
+        if (autoColorsTest === true) {
+          autocolorsStyles = `
+          <style>
+            :root {
+              --peertube-main-foreground: ${autocolors.mainForeground};
+              --peertube-main-background: ${autocolors.mainBackground};
+              --peertube-grey-foreground: ${autocolors.greyForeground};
+              --peertube-grey-background: ${autocolors.greyBackground};
+              --peertube-menu-foreground: ${autocolors.menuForeground};
+              --peertube-menu-background: ${autocolors.menuBackground};
+              --peertube-input-foreground: ${autocolors.inputForeground};
+              --peertube-input-background: ${autocolors.inputBackground};
+              --peertube-button-foreground: ${autocolors.buttonForeground};
+              --peertube-button-background: ${autocolors.buttonBackground};
+              --peertube-link: ${autocolors.link};
+              --peertube-link-hover: ${autocolors.linkHover};
+            }
+          </style>
+          `
+        } else {
+          peertubeHelpers.logger.error('Provided AutoColors are invalid.', autoColorsTest)
+        }
+      } else {
+        peertubeHelpers.logger.debug('No AutoColors.')
+      }
       // ... then inject it in the page.
       page = page.replace(/{{ROOM}}/g, room)
       page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
@@ -156,6 +204,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
       page = page.replace(/{{ADVANCEDCONTROLS}}/g, advancedControls ? 'true' : 'false')
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
+      page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
 
       res.status(200)
       res.type('html')

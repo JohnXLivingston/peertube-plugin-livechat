@@ -282,13 +282,29 @@ Example: height:400px;`,
     label: 'ConverseJS theme',
     type: 'select',
     default: 'peertube' as ConverseJSTheme,
-    private: true,
+    private: false,
     options: [
       { value: 'peertube', label: 'Peertube theme' },
       { value: 'default', label: 'Default ConverseJS theme' },
       { value: 'concord', label: 'ConverseJS concord theme' }
     ] as Array<{value: ConverseJSTheme, label: string}>,
     descriptionHTML: 'Please choose the converseJS theme you want to use.'
+  })
+
+  registerSetting({
+    name: 'converse-autocolors',
+    label: 'Automatic color detection',
+    type: 'input-checkbox',
+    default: true,
+    private: false,
+    descriptionHTML:
+`Try to auto detect colors from user's current theme.<br>
+When this settings is enabled, the plugin tries to auto-detect colors to apply to the chat theme.<br>
+If this is not correctly working for some of your Peertube theme, you can disable this option.
+You can report the bug on the official
+<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
+  issue tracker
+</a>. Don't forget to specify which theme is not working.`
   })
 
   // ********** Built-in Prosody advanced settings

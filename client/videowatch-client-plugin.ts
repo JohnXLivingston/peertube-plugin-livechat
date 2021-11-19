@@ -1,5 +1,6 @@
-import { videoHasWebchat } from 'shared/lib/video'
 import type { ChatType } from 'shared/lib/types'
+import { videoHasWebchat } from 'shared/lib/video'
+import { AutoColors, isAutoColorsAvailable, areAutoColorsValid } from 'shared/lib/autocolors'
 
 interface VideoWatchLoadedHookOptions {
   videojs: any
@@ -60,7 +61,76 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       logger.error('No iframe uri')
       return null
     }
+
+    if (isAutoColorsAvailable(settings['chat-type'] as ChatType, settings['converse-theme'])) {
+      logger.info('We have to try to compute autocolors.')
+      try {
+        const autocolors = computeAutoColors()
+        if (autocolors) {
+          const url = new URL(iframeUri, window.location.origin)
+          for (const p in autocolors) {
+            url.searchParams.set('_ac_' + p, autocolors[p as keyof AutoColors])
+          }
+          iframeUri = url.href
+        }
+      } catch (err) {
+        logger.error(`Failed computing autocolors:  '${err as string}'`)
+      }
+    }
+
     return iframeUri
+  }
+
+  function computeAutoColors (): AutoColors | null {
+    if (!window.getComputedStyle) {
+      logger.warn('[AutoColors] getComputedStyle is not available, aborting.')
+      return null
+    }
+    // Searching for one of these button:
+    const button = document.querySelector('.publish-button, .peertube-button-link')
+    if (!button) {
+      logger.warn('[AutoColors] Cant find a button, aborting.')
+      return null
+    }
+    const buttonStyles = window.getComputedStyle(button)
+    logger.info('[AutoColors] found button styles')
+
+    const main = document.querySelector('#content')
+    if (!main) {
+      logger.warn('[AutoColors] Cant find main, aborting.')
+      return null
+    }
+    const mainStyles = window.getComputedStyle(main)
+    logger.info('[AutoColors] found main styles')
+
+    const menu = document.querySelector('.menu-link')
+    if (!menu) {
+      logger.warn('[AutoColors] Cant find menu, aborting.')
+      return null
+    }
+    const menuStyles = window.getComputedStyle(menu)
+    logger.info('[AutoColors] found menu styles')
+
+    const autocolors: AutoColors = {
+      mainForeground: mainStyles.color,
+      mainBackground: mainStyles.backgroundColor,
+      greyForeground: '#000',
+      greyBackground: '#000',
+      menuForeground: menuStyles.color,
+      menuBackground: menuStyles.backgroundColor,
+      inputForeground: '#000',
+      inputBackground: '#000',
+      buttonForeground: buttonStyles.color,
+      buttonBackground: buttonStyles.backgroundColor,
+      link: '#000',
+      linkHover: '#000'
+    }
+    const autoColorsTest = areAutoColorsValid(autocolors)
+    if (autoColorsTest !== true) {
+      logger.warn('[AutoColors] Computed colors are not valid, dropping. Invalid values: ' + autoColorsTest.join(', '))
+      return null
+    }
+    return autocolors
   }
 
   function displayButton (
