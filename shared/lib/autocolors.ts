@@ -1,4 +1,5 @@
 import type { ChatType } from './types'
+const validateColor = require('validate-color').default
 
 type AutoColorValue = string
 
@@ -38,12 +39,7 @@ function areAutoColorsValid (autocolors: AutoColors): true | string[] {
   for (const k in autocolors) {
     const color = autocolors[k as keyof AutoColors]
     // FIXME: there are missing cases. For now there are only basic values formats.
-    if (
-      !/^rgb\(\d{1,3},\s*\d{1,3},\s*\d{1,3}\)$/.test(color) &&
-      !/^rgba\(\d{1,3},\s*\d{1,3},\s*\d{1,3},\s*(1|0|0?.\d+)\)$/.test(color) &&
-      !/^#[0-9a-fA-F]{3,6}$/.test(color) &&
-      !/^[a-z]+$/
-    ) {
+    if (!validateColor(color)) {
       errors.push(color)
     }
   }
