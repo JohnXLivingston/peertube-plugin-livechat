@@ -86,44 +86,22 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       logger.warn('[AutoColors] getComputedStyle is not available, aborting.')
       return null
     }
-    // Searching for one of these button:
-    const button = document.querySelector('.publish-button, .peertube-button-link')
-    if (!button) {
-      logger.warn('[AutoColors] Cant find a button, aborting.')
-      return null
-    }
-    const buttonStyles = window.getComputedStyle(button)
-    logger.info('[AutoColors] found button styles')
 
-    const main = document.querySelector('#content')
-    if (!main) {
-      logger.warn('[AutoColors] Cant find main, aborting.')
-      return null
-    }
-    const mainStyles = window.getComputedStyle(main)
-    logger.info('[AutoColors] found main styles')
-
-    const menu = document.querySelector('.menu-link')
-    if (!menu) {
-      logger.warn('[AutoColors] Cant find menu, aborting.')
-      return null
-    }
-    const menuStyles = window.getComputedStyle(menu)
-    logger.info('[AutoColors] found menu styles')
+    const styles = window.getComputedStyle(document.body)
 
     const autocolors: AutoColors = {
-      mainForeground: mainStyles.color,
-      mainBackground: mainStyles.backgroundColor,
-      greyForeground: '#000',
-      greyBackground: '#000',
-      menuForeground: menuStyles.color,
-      menuBackground: menuStyles.backgroundColor,
-      inputForeground: '#000',
-      inputBackground: '#000',
-      buttonForeground: buttonStyles.color,
-      buttonBackground: buttonStyles.backgroundColor,
-      link: '#000',
-      linkHover: '#000'
+      mainForeground: styles.getPropertyValue('--mainColor'),
+      mainBackground: styles.getPropertyValue('--mainBackgroundColor'),
+      greyForeground: styles.getPropertyValue('--greyForegroundColor'),
+      greyBackground: styles.getPropertyValue('--greyBackgroundColor'),
+      menuForeground: styles.getPropertyValue('--menuForegroundColor'),
+      menuBackground: styles.getPropertyValue('--menuBackgroundColor'),
+      inputForeground: styles.getPropertyValue('--inputForegroundColor'),
+      inputBackground: styles.getPropertyValue('--inputBackgroundColor'),
+      buttonForeground: styles.getPropertyValue('--mainColor'),
+      buttonBackground: styles.getPropertyValue('--mainBackgroundColor'),
+      link: styles.getPropertyValue('--mainForegroundColor'),
+      linkHover: styles.getPropertyValue('--mainForegroundColor')
     }
     const autoColorsTest = areAutoColorsValid(autocolors)
     if (autoColorsTest !== true) {

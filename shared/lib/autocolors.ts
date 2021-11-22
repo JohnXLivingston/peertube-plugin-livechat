@@ -41,7 +41,8 @@ function areAutoColorsValid (autocolors: AutoColors): true | string[] {
     if (
       !/^rgb\(\d{1,3},\s*\d{1,3},\s*\d{1,3}\)$/.test(color) &&
       !/^rgba\(\d{1,3},\s*\d{1,3},\s*\d{1,3},\s*(1|0|0?.\d+)\)$/.test(color) &&
-      !/^#[0-9a-fA-F]{3,6}$/.test(color)
+      !/^#[0-9a-fA-F]{3,6}$/.test(color) &&
+      !/^[a-z]+$/
     ) {
       errors.push(color)
     }
