@@ -89,8 +89,18 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
 
     const styles = window.getComputedStyle(document.body)
 
+    // Peertube has no CSS variable for the button color...
+    // Computing by hand.
+    // Searching for one of these button:
+    const button = document.querySelector('.publish-button') ?? document.querySelector('.peertube-button-link')
+    if (!button) {
+      logger.warn('[AutoColors] Cant find a button, aborting.')
+      return null
+    }
+    const buttonStyles = window.getComputedStyle(button)
+
     const autocolors: AutoColors = {
-      mainForeground: styles.getPropertyValue('--mainColor'),
+      mainForeground: styles.getPropertyValue('--mainForegroundColor'),
       mainBackground: styles.getPropertyValue('--mainBackgroundColor'),
       greyForeground: styles.getPropertyValue('--greyForegroundColor'),
       greyBackground: styles.getPropertyValue('--greyBackgroundColor'),
@@ -98,8 +108,8 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       menuBackground: styles.getPropertyValue('--menuBackgroundColor'),
       inputForeground: styles.getPropertyValue('--inputForegroundColor'),
       inputBackground: styles.getPropertyValue('--inputBackgroundColor'),
-      buttonForeground: styles.getPropertyValue('--mainColor'),
-      buttonBackground: styles.getPropertyValue('--mainBackgroundColor'),
+      buttonForeground: buttonStyles.color,
+      buttonBackground: styles.getPropertyValue('--mainColor'),
       link: styles.getPropertyValue('--mainForegroundColor'),
       linkHover: styles.getPropertyValue('--mainForegroundColor')
     }
