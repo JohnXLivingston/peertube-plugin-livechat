@@ -38,7 +38,6 @@ function areAutoColorsValid (autocolors: AutoColors): true | string[] {
   const errors: string[] = []
   for (const k in autocolors) {
     const color = autocolors[k as keyof AutoColors]
-    // FIXME: there are missing cases. For now there are only basic values formats.
     if (!validateColor(color)) {
       errors.push(color)
     }
