@@ -2,12 +2,20 @@
   // hidding avatars when screen width is not big enough.
   @media screen and (max-width: 576px) {
     .message {
-      .chat-msg__content {
-        width: 100%;
-      }
+      &.chat-msg {
+        .chat-msg__content {
+          width: 100%;
+        }
 
-      .chat-msg__avatar {
-        display: none;
+        &.chat-msg--followup {
+          &.chat-msg--with-avatar .chat-msg__content {
+            margin-left: 0.5em;
+          }
+        }
+
+        .chat-msg__avatar {
+          display: none;
+        }
       }
     }
   }
