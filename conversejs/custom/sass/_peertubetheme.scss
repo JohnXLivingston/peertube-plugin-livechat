@@ -27,6 +27,11 @@
     }
   }
 
+  .list-group-item {
+    color: var(--peertube-main-foreground);
+    background-color: var(--peertube-main-background);
+  }
+
   // hidding avatars when screen width is not big enough.
   @media screen and (max-width: 576px) {
     .message {
