@@ -27,6 +27,10 @@
     }
   }
 
+  .chatroom .box-flyout .chatroom-body .chatroom-form-container {
+    background-color: var(--peertube-main-background);
+  }
+
   .list-group-item {
     color: var(--peertube-main-foreground);
     background-color: var(--peertube-main-background);
