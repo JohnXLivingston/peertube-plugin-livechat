@@ -10,6 +10,12 @@
     background-color: var(--peertube-main-background);
   }
 
+  .button-cancel,
+  .btn-secondary,
+  .badge-secondary {
+    color: var(--peertube-button-foreground);
+  }
+
   // hidding avatars when screen width is not big enough.
   @media screen and (max-width: 576px) {
     .message {
