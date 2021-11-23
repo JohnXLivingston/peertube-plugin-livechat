@@ -8,6 +8,10 @@
 
   .modal-content {
     background-color: var(--peertube-main-background);
+
+    .close {
+      color: var(--peertube-main-foreground);
+    }
   }
 
   .button-cancel,
