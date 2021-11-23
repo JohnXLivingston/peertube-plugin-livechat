@@ -17,7 +17,8 @@
   .button-cancel,
   .btn-secondary,
   .badge-secondary {
-    color: var(--peertube-button-foreground);
+    color: var(--peertube-grey-foreground);
+    background-color: var(--peertube-grey-background);
   }
 
   form {
