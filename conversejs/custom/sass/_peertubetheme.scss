@@ -36,6 +36,17 @@
     background-color: var(--peertube-main-background);
   }
 
+  .chat-msg__text {
+    // underline links in chat messages
+    a[href] {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   // hidding avatars when screen width is not big enough.
   @media screen and (max-width: 576px) {
     .message {
