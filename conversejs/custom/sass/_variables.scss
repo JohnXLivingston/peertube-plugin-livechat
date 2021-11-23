@@ -98,10 +98,10 @@
   --chatroom-badge-hover-color: var(--peertube-button-background);
   --chatroom-correcting-color: #ffffc0;
   --chatroom-head-bg-color-dark: #d24e2b;
-  --chatroom-head-bg-color: white;
+  --chatroom-head-bg-color: var(--peertube-menu-background);
   --chatroom-head-border-bottom: 1px solid var(--peertube-grey-foreground);
   --chatroom-head-button-color: #999;
-  --chatroom-head-color: #7e7e7e;
+  --chatroom-head-color: var(--peertube-menu-foreground);
   --chatroom-head-description-border-left: 1px solid #ddd;
   --chatroom-head-description-color: black;
   --chatroom-head-description-display: inline;
