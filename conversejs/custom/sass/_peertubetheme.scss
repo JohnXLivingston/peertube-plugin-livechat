@@ -4,6 +4,7 @@
     .message {
       &.chat-msg {
         .chat-msg__content {
+          margin-left: 0.5em;
           width: 100%;
         }
 
@@ -15,6 +16,10 @@
 
         .chat-msg__avatar {
           display: none;
+        }
+
+        .chat-msg__body {
+          margin-left: 1em;
         }
       }
     }
