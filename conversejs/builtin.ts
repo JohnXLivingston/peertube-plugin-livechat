@@ -140,7 +140,8 @@ window.initConverse = async function initConverse ({
       toggle_occupants: true
     },
     theme: theme || 'peertube',
-    persistent_store: 'sessionStorage'
+    persistent_store: 'sessionStorage',
+    show_images_inline: false // for security reason, and to avoid bugs when image is larger that iframe
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
