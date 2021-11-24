@@ -62,7 +62,10 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
       return null
     }
 
-    if (isAutoColorsAvailable(settings['chat-type'] as ChatType, settings['converse-theme'])) {
+    if (
+      settings['converse-autocolors'] &&
+      isAutoColorsAvailable(settings['chat-type'] as ChatType, settings['converse-theme'])
+    ) {
       logger.info('We have to try to compute autocolors.')
       try {
         const autocolors = computeAutoColors()
