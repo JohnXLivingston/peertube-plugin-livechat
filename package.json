@@ -81,7 +81,7 @@
   "scripts": {
     "clean": "rm -rf dist/* build/*",
     "clean:light": "rm -rf dist/*",
-    "prepare": "npm run build",
+    "prepare": "npm run clean && npm run build",
     "build:converse": "bash conversejs/build-conversejs.sh",
     "build:images": "mkdir -p dist/client/images && npx svgo -f public/images/ -o dist/client/images/",
     "build:webpack": "webpack --mode=production",
