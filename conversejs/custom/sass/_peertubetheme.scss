@@ -37,6 +37,12 @@
   }
 
   .chat-msg__text {
+    // spoiler content more visible.
+    &.spoiler {
+      color: var(--peertube-grey-foreground) !important;
+      background-color: var(--peertube-grey-background) !important;
+    }
+
     // underline links in chat messages
     a[href] {
       text-decoration: underline;
@@ -45,6 +51,12 @@
         text-decoration: underline;
       }
     }
+  }
+
+  .correcting {
+    // Fix color/background-color for correcting messages and textareas
+    color: var(--peertube-grey-foreground) !important;
+    background-color: var(--peertube-grey-background) !important;
   }
 
   // hidding avatars when screen width is not big enough.
