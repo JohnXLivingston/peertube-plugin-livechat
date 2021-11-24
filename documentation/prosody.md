@@ -82,6 +82,9 @@ Change it if this port is already in use on your server.
 
 ## Moderation
 
+You can access rooms settings and moderation tools by opening the chat in a new window,
+and using the dropdown menu at the top right.
+
 You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».
 
 You can delete old rooms: join the room, and use the menu on the top to destroy the room.
