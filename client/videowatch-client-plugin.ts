@@ -1,6 +1,7 @@
 import type { ChatType } from 'shared/lib/types'
 import { videoHasWebchat } from 'shared/lib/video'
 import { AutoColors, isAutoColorsAvailable, areAutoColorsValid } from 'shared/lib/autocolors'
+import { closeSVG, openBlankChatSVG, openChatSVG, SVGButton } from './videowatch/buttons'
 
 interface VideoWatchLoadedHookOptions {
   videojs: any
@@ -129,23 +130,34 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     name: string,
     label: string,
     callback: () => void | boolean,
-    icon: string | null
+    icon?: SVGButton,
+    additionalClasses?: string[]
   ): void {
-    const button = document.createElement('button')
+    const button = document.createElement('a')
     button.classList.add(
+      'orange-button', 'peertube-button-link',
       'peertube-plugin-livechat-button',
       'peertube-plugin-livechat-button-' + name
     )
+    if (additionalClasses) {
+      for (let i = 0; i < additionalClasses.length; i++) {
+        button.classList.add(additionalClasses[i])
+      }
+    }
     button.onclick = callback
     if (icon) {
-      // FIXME: remove «as string» when peertube types will be available
-      const iconUrl = peertubeHelpers.getBaseStaticRoute() + '/images/' + icon
-      const iconEl = document.createElement('span')
-      iconEl.classList.add('peertube-plugin-livechat-button-icon')
-      iconEl.setAttribute('style',
-        'background-image: url(\'' + iconUrl + '\');'
-      )
-      button.prepend(iconEl)
+      try {
+        const svg = icon()
+        const tmp = document.createElement('span')
+        tmp.innerHTML = svg.trim()
+        const svgDom = tmp.firstChild
+        if (svgDom) {
+          button.prepend(svgDom)
+        }
+      } catch (err) {
+        logger.error('Failed to generate the ' + name + ' button: ' + (err as string))
+      }
+
       button.setAttribute('title', label)
     } else {
       button.textContent = label
@@ -175,14 +187,26 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         buttonContainer.classList.add('peertube-plugin-livechat-buttons')
         container.append(buttonContainer)
 
-        displayButton(buttonContainer, 'open', labelOpen, () => openChat(video), 'talking.svg')
         if (showOpenBlank) {
-          displayButton(buttonContainer, 'openblank', labelOpenBlank, () => {
-            closeChat()
-            window.open(iframeUri)
-          }, 'talking-new-window.svg')
+          displayButton(
+            buttonContainer, 'open',
+            labelOpen, () => openChat(video),
+            openChatSVG,
+            ['peertube-plugin-livechat-multi-button-main']
+          )
+          displayButton(
+            buttonContainer, 'openblank',
+            labelOpenBlank, () => {
+              closeChat()
+              window.open(iframeUri)
+            },
+            openBlankChatSVG,
+            ['peertube-plugin-livechat-multi-button-secondary']
+          )
+        } else {
+          displayButton(buttonContainer, 'open', labelOpen, () => openChat(video), openChatSVG)
         }
-        displayButton(buttonContainer, 'close', labelClose, () => closeChat(), 'bye.svg')
+        displayButton(buttonContainer, 'close', labelClose, () => closeChat(), closeSVG)
 
         resolve()
       })

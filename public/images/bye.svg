@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="32"
-   height="32"
-   viewBox="0 0 8.4666664 8.4666669"
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333332 4.2333334"
    version="1.1"
    id="svg1428"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
@@ -32,9 +32,9 @@
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1854"
-     inkscape:window-height="1136"
-     inkscape:window-x="1920"
+     inkscape:window-width="1851"
+     inkscape:window-height="1016"
+     inkscape:window-x="1680"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      units="px" />
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -55,22 +55,22 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#7d7d7d;stroke:none;stroke-width:0.222527"
+       style="fill:#7d7d7d;stroke:#7d7d7d;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1026"
-       width="8.3277063"
-       height="0.84192604"
-       x="1.8229842"
-       y="-0.42096302"
+       width="4.2232938"
+       height="0.42697245"
+       x="0.8817718"
+       y="-0.21348622"
        transform="rotate(45)"
-       ry="0.42096302" />
+       ry="0.21348622" />
     <rect
-       style="fill:#7d7d7d;stroke:none;stroke-width:0.222527"
+       style="fill:#7d7d7d;stroke:#7d7d7d;stroke-width:0.529167;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1026-3"
-       width="8.3277063"
-       height="0.84192604"
-       x="-4.1638532"
-       y="5.5658746"
+       width="4.2232938"
+       height="0.42697245"
+       x="-2.1116469"
+       y="2.7799325"
        transform="matrix(-0.70710678,0.70710678,0.70710678,0.70710678,0,0)"
-       ry="0.42096302" />
+       ry="0.21348622" />
   </g>
 </svg>

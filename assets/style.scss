@@ -8,39 +8,29 @@
 }
 
 .peertube-plugin-livechat-buttons {
+  align-items: center;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: flex-end;
 }
 
 .peertube-plugin-livechat-button {
-  border: 0;
-  background-color: var(--mainBackgroundColor);
-  margin: 5px;
-  height: 36px;
-  width: 36px;
-  padding: 2px;
-}
+  display: inline;
+  height: 36px !important;
+  line-height: 0 !important; // override .peertube-button-link
+  margin: 5px !important;
+  padding: 2px !important;
 
-.peertube-plugin-livechat-button-icon {
-  background-size: 32px 32px;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-position: center center;
-  display: inline-block;
-  height: 100%;
-  width: 100%;
+  svg {
+    display: inline-block !important;
+    height: auto;
+  }
 }
 
 .peertube-plugin-livechat-buttons-open .peertube-plugin-livechat-button {
-  margin: 1px;
-  height: 18px;
-  width: 18px;
-  padding: 1px;
-}
-
-.peertube-plugin-livechat-buttons-open .peertube-plugin-livechat-button-icon {
-  background-size: 16px 16px;
+  height: 18px !important;
+  margin: 2px !important;
+  padding: 1px !important;
 }
 
 [peertube-plugin-livechat-state="initializing"] {
@@ -53,6 +43,21 @@
 
 [peertube-plugin-livechat-state="closed"] .peertube-plugin-livechat-button-close {
   display: none;
+}
+
+[peertube-plugin-livechat-state]:not([peertube-plugin-livechat-state="open"]) {
+  .peertube-plugin-livechat-multi-button-main {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .peertube-plugin-livechat-multi-button-secondary {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    margin-left: 0 !important;
+    border-left: 1px solid currentColor;
+  }
 }
 
 #peertube-plugin-livechat-container iframe {
