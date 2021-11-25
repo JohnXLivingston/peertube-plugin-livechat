@@ -15,15 +15,15 @@
 }
 
 .peertube-plugin-livechat-button {
-  display: inline;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   height: 36px !important;
-  line-height: 0 !important; // override .peertube-button-link
   margin: 5px !important;
   padding: 2px !important;
 
   svg {
-    display: inline-block !important;
-    height: auto;
+    height: auto; // override .peertube-button-link
   }
 }
 
