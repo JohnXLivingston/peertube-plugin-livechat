@@ -2,6 +2,9 @@
 interface Window {
   converse: {
     initialize: (args: any) => void
+    plugins: {
+      add: (name: string, plugin: any) => void
+    }
   }
   initConverse: (args: any) => void
 }
@@ -141,7 +144,8 @@ window.initConverse = async function initConverse ({
     },
     theme: theme || 'peertube',
     persistent_store: 'sessionStorage',
-    show_images_inline: false // for security reason, and to avoid bugs when image is larger that iframe
+    show_images_inline: false, // for security reason, and to avoid bugs when image is larger that iframe
+    whitelisted_plugins: ['livechatWindowTitlePlugin']
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
@@ -191,6 +195,25 @@ window.initConverse = async function initConverse ({
   }
 
   try {
+    window.converse.plugins.add('livechatWindowTitlePlugin', {
+      dependencies: ['converse-muc-views'],
+      overrides: {
+        ChatRoomView: {
+          renderHeading: function (this: any): any {
+            console.log('[livechatWindowTitlePlugin] updating the document title.')
+            try {
+              const title = this.model.getDisplayName()
+              if (document.title !== title) {
+                document.title = title
+              }
+            } catch (err) {
+              console.error('Failed updating the window title', err)
+            }
+            return this.__super__.renderHeading.apply(this, arguments)
+          }
+        }
+      }
+    })
     window.converse.initialize(params)
   } catch (error) {
     console.error('Failed initializing converseJS', error)
