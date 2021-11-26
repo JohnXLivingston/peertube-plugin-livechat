@@ -34,6 +34,8 @@ Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en 
 
 Merci d'utiliser la branche `develop`. La branche `main` est réservée aux versions publiées, pour que la documentation affichée reste synchronisée avec la version publiée du plugin.
 
+Pour mettre à jour votre dépôt, utilisez la commande `git pull --recurse-submodules`, car il y a des sous-modules dans le dossier `vendor`.
+
 Quand vous êtes prêt⋅e à montrer votre code pour avoir un retour, soumettez une Pull Request *draft*.
 Quand vous êtes prêt⋅e pour une relecture de code avant merge, soumettez une Pull Request. Dans tous les cas, merci de lier votre Pull Request au ticket concerné en utilisant la syntax de GitHub : «fixes #issue_number».
 

@@ -36,6 +36,9 @@ Always talk about features you want to develop by creating/finding and commentin
 before you start working on it, and inform the community that you begin coding by claiming the issue.
 
 Please use the `develop` branch. The `main` branch is reserved to released versions of the plugin, so that the documentation is always synchronized with the released version of the plugin.
+
+For updating your repository, use `git pull --recurse-submodules`, as there are submodules in the `vendor` folder.
+
 Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.
 Once you are ready for a code review before merge, submit a Pull Request. In any case, please
 link your PR to the issues it solves by using the GitHub syntax: "fixes #issue_number".
