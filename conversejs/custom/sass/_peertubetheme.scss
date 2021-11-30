@@ -4,6 +4,48 @@
       color: var(--peertube-main-foreground);
       background-color: var(--peertube-main-background);
     }
+
+    // Fixing emoji colors for some emoji like «motorcycle»
+    converse-emoji-picker {
+      .emoji-picker {
+        .insert-emoji {
+          a {
+            color: currentColor;
+          }
+        }
+      }
+
+      .emoji-picker__header {
+        color: var(--peertube-main-background);
+        background-color: var(--peertube-main-foreground);
+
+        ul {
+          .emoji-category {
+            color: var(--peertube-main-background);
+            background-color: var(--peertube-main-foreground);
+
+            a {
+              color: currentColor;
+            }
+
+            &.picked {
+              color: var(--peertube-main-foreground);
+              background-color: var(--peertube-main-background);
+
+              a {
+                color: currentColor;
+              }
+            }
+
+            &.selected a,
+            &:hover a {
+              color: var(--peertube-grey-foreground);
+              background-color: var(--peertube-grey-background);
+            }
+          }
+        }
+      }
+    }
   }
 
   .modal-content {
