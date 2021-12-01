@@ -67,6 +67,26 @@ Here is the documentation: [common settings](./common.md).
 
 ### Prosody advanced settings
 
+#### Peertube url for API calls
+
+In some rare cases, Prosody can't call Peertube's API from its public URI.
+If you have such issues (see the diagnostic tool result), you can try to set the value
+of this settings to `http://localhost:9000` or `http://127.0.0.1:9000`
+(supposing your Peertube is listening on port `9000`, check this in your Peertube `config/production.yaml` file).
+
+#### Log rooms content by default
+
+If checked, room content will be archived on the server by default.
+This means that users who join the chan will see messages send before then joined.
+
+Please note that it is always possible to enable/disable the content archiving for a specific room,
+by editing its properties.
+
+#### Room logs expiration
+
+You can set here the expiration delay for rooms archives.
+See the online help for accepted values.
+
 #### Enable client to server connections
 
 This setting enable XMPP clients to connect to the builtin Prosody server.
