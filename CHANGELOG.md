@@ -1,6 +1,6 @@
 # Changelog
 
-## v5.0.0
+## v5.0.1
 
 ### Breaking changes
 
