@@ -26,7 +26,7 @@ async function register (options: RegisterServerOptions): Promise<any> {
   try {
     await ensureProsodyRunning(options)
   } catch (error) {
-    options.peertubeHelpers.logger('Error when launching Prosody: ' + (error as string))
+    options.peertubeHelpers.logger.error('Error when launching Prosody: ' + (error as string))
   }
 }
 

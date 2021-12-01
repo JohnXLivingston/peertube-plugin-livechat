@@ -8,6 +8,10 @@
 * Auto color detection: when using ConverseJS, the plugin tries to guess colors to apply to its theme.
 * Builtin Prosody: new settings to choose how long the room's content is archived, and if it should be archived by default.
 
+### Fixes
+
+* Fix plugin register when Prosody enabled but not installed (again)
+
 ### Breaking changes
 
 * If you have some CSS customization for the plugin, it may be broken.
