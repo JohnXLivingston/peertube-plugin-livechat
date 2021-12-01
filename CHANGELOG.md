@@ -2,6 +2,11 @@
 
 ## v5.0.0 (not published yet)
 
+### Breaking changes
+
+* If you have some CSS customization for the plugin, it may be broken.
+* Auto color detection can have bad result for some Peertube themes. If so, you can disable it in the settings.
+
 ### Features
 
 * UI/UX improvements. Now using a custom ConverseJS build.
@@ -11,11 +16,6 @@
 ### Fixes
 
 * Fix plugin register when Prosody enabled but not installed (again)
-
-### Breaking changes
-
-* If you have some CSS customization for the plugin, it may be broken.
-* Auto color detection can have bad result for some Peertube theme. If so, you can disable it in the settings.
 
 ## v4.0.3
 
