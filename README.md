@@ -6,6 +6,8 @@ This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat syste
 
 ![Chat screenshot](documentation/screenshots/chat.png)
 
+![Fullscreen chat screenshot](documentation/screenshots/fullscreen.png)
+
 See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).
 
 **IMPORTANT:** unfortunately this plugin does not (yet) work by itself, it must rely on external tools. Please read the [installation guide](documentation/installation.md).
