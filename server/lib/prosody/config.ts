@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { getBaseRouterRoute } from '../helpers'
 import { ProsodyFilePaths } from './config/paths'
-import { ProsodyConfigContent } from './config/content'
+import { ConfigLogExpiration, ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
 import { getAPIKey } from '../apikey'
 import type { ProsodyLogLevel } from './config/content'
@@ -70,6 +70,8 @@ interface ProsodyConfig {
   port: string
   baseApiUrl: string
   roomType: 'video' | 'channel'
+  logByDefault: boolean
+  logExpiration: ConfigLogExpiration
 }
 async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
@@ -79,6 +81,9 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   if (!/^\d+$/.test(port)) {
     throw new Error('Invalid port')
   }
+  const logByDefault = (await options.settingsManager.getSetting('prosody-muc-log-by-default') as boolean) ?? true
+  const logExpirationSetting =
+    (await options.settingsManager.getSetting('prosody-muc-expiration') as string) ?? DEFAULTLOGEXPIRATION
   const enableC2s = (await options.settingsManager.getSetting('prosody-c2s') as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
@@ -111,8 +116,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     config.useC2S(c2sPort)
   }
 
-  // TODO: add a settings so that admin can choose? (on/off and duration)
-  config.useMam('1w') // Remove archived messages after 1 week
+  const logExpiration = readLogExpiration(options, logExpirationSetting)
+  config.useMam(logByDefault, logExpiration)
   // TODO: add a settings to choose?
   config.useDefaultPersistent()
 
@@ -142,7 +147,9 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     port,
     baseApiUrl,
     host: prosodyDomain,
-    roomType
+    roomType,
+    logByDefault,
+    logExpiration
   }
 }
 
@@ -162,6 +169,57 @@ async function writeProsodyConfig (options: RegisterServerOptions): Promise<Pros
   logger.debug('Prosody configuration file writen')
 
   return config
+}
+
+const DEFAULTLOGEXPIRATION = '1w'
+const DEFAULTLOGEXPIRATIONTYPE = 'period'
+function readLogExpiration (options: RegisterServerOptions, logExpiration: string): ConfigLogExpiration {
+  const logger = options.peertubeHelpers.logger
+  logExpiration = logExpiration?.trim()
+  if (logExpiration === 'never') {
+    return {
+      value: 'never',
+      type: 'never'
+    }
+  }
+  if (/^\d+$/.test(logExpiration)) {
+    if (logExpiration === '0') {
+      logger.error('Invalid prosody-muc-expiration value, cannot be 0.')
+      return {
+        value: DEFAULTLOGEXPIRATION,
+        type: DEFAULTLOGEXPIRATIONTYPE,
+        error: '0 is not an acceptable value.'
+      }
+    }
+    return {
+      value: logExpiration,
+      type: 'seconds',
+      seconds: parseInt(logExpiration)
+    }
+  }
+  const matches = logExpiration.match(/^(\d+)([d|w|m|y])$/)
+  if (matches) {
+    const d = matches[1]
+    if (d === '0') {
+      logger.error(`Invalid prosody-muc-expiration value, cannot be ${logExpiration}.`)
+      return {
+        value: DEFAULTLOGEXPIRATION,
+        type: DEFAULTLOGEXPIRATIONTYPE,
+        error: '0 is not an acceptable value.'
+      }
+    }
+    return {
+      value: logExpiration,
+      type: 'period'
+    }
+  }
+
+  logger.error(`Invalid prosody-muc-expiration value '${logExpiration}'.`)
+  return {
+    value: DEFAULTLOGEXPIRATION,
+    type: DEFAULTLOGEXPIRATIONTYPE,
+    error: `Invalid value '${logExpiration}'.`
+  }
 }
 
 export {

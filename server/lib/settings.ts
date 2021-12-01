@@ -328,6 +328,38 @@ You can use this field to customise Peertube's URI for Prosody modules (for exam
   })
 
   registerSetting({
+    name: 'prosody-muc-log-by-default',
+    label: 'Log rooms content by default',
+    type: 'input-checkbox',
+    default: true,
+    private: true,
+    descriptionHTML:
+`If checked, room contents will be saved by default.
+Any user that join a room will we what was written before he joins.<br>
+Please note that it is always possible to enable/disable the content
+archiving for a specific room, by editing its properties.
+`
+  })
+
+  registerSetting({
+    name: 'prosody-muc-expiration',
+    label: 'Room logs expiration',
+    type: 'input',
+    default: '1w',
+    private: true,
+    descriptionHTML:
+`You can choose here how long the chatting room's content is kept by the server. The value can be:
+<ul>
+    <li><b>60</b>: the content will be saved for 60 <b>seconds</b>. You can replace 60 by any integer value.</li>
+    <li><b>1d</b>: the content will be saved for 1 <b>day</b>. You can replace 1 by any integer value.</li>
+    <li><b>1w</b>: the content will be saved for 1 <b>week</b>. You can replace 1 by any integer value.</li>
+    <li><b>1m</b>: the content will be saved for 1 <b>month</b>. You can replace 1 by any integer value.</li>
+    <li><b>1y</b>: the content will be saved for 1 <b>year</b>. You can replace 1 by any integer value.</li>
+    <li><b>never</b>: the content will never expire, and will be kept forever.</li>
+</ul>`
+  })
+
+  registerSetting({
     name: 'prosody-c2s',
     label: 'Enable client to server connections',
     type: 'input-checkbox',

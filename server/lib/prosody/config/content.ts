@@ -4,6 +4,27 @@ type ConfigEntryValue = boolean | number | string | ConfigEntryValue[]
 
 type ConfigEntries = Map<string, ConfigEntryValue>
 
+interface ConfigLogExpirationNever {
+  value: 'never'
+  type: 'never'
+}
+interface ConfigLogExpirationSeconds {
+  value: string
+  seconds: number
+  type: 'seconds'
+}
+interface ConfigLogExpirationPeriod {
+  value: string
+  type: 'period'
+}
+interface ConfigLogExpirationError {
+  value: string
+  error: string
+  type: 'period'
+}
+type ConfigLogExpiration =
+  ConfigLogExpirationNever | ConfigLogExpirationPeriod | ConfigLogExpirationSeconds | ConfigLogExpirationError
+
 function writeValue (value: ConfigEntryValue): string {
   if (typeof value === 'boolean') {
     return value.toString() + ';\n'
@@ -218,16 +239,23 @@ class ProsodyConfigContent {
 
   /**
    * Calling this method makes Prosody use mod_muc_mam to store rooms history.
-   * @param duration: how long the server must store messages. See https://prosody.im/doc/modules/mod_muc_mam
+   * @param logByDefault: if the room content should be archived by default.
+   * @param logExpiration: how long the server must store messages. See https://prosody.im/doc/modules/mod_muc_mam
    */
-  useMam (duration: string): void {
+  useMam (logByDefault: boolean, logExpiration: ConfigLogExpiration): void {
     this.muc.add('modules_enabled', 'muc_mam')
 
-    this.muc.set('muc_log_by_default', true)
+    this.muc.set('muc_log_by_default', !!logByDefault)
     this.muc.set('muc_log_presences', true)
-    this.muc.set('log_all_rooms', true)
-    this.muc.set('muc_log_expires_after', duration)
-    this.muc.set('muc_log_cleanup_interval', 4 * 60 * 60)
+    this.muc.set('log_all_rooms', false)
+    this.muc.set('muc_log_expires_after', logExpiration.value)
+    const defaultCleanupInterval = 4 * 60 * 60
+    if (logExpiration.type === 'seconds' && logExpiration.seconds && logExpiration.seconds < defaultCleanupInterval) {
+      // if the log expiration is less than the default cleanup interval, we have to decrease it.
+      this.muc.set('muc_log_cleanup_interval', logExpiration.seconds)
+    } else {
+      this.muc.set('muc_log_cleanup_interval', defaultCleanupInterval)
+    }
 
     // We can also use mod_muc_moderation
     // NB: for now Prosody has a partial support of this feature with «internal» storage.
@@ -287,5 +315,6 @@ class ProsodyConfigContent {
 
 export {
   ProsodyLogLevel,
-  ProsodyConfigContent
+  ProsodyConfigContent,
+  ConfigLogExpiration
 }

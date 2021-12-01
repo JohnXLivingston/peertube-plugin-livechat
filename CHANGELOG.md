@@ -6,6 +6,7 @@
 
 * UI/UX improvements. Now using a custom ConverseJS build.
 * Auto color detection: when using ConverseJS, the plugin tries to guess colors to apply to its theme.
+* Builtin Prosody: new settings to choose how long the room's content is archived, and if it should be archived by default.
 
 ### Breaking changes
 

@@ -208,6 +208,8 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
         case 'chat-type-help-builtin-prosody':
         case 'prosody-list-rooms':
         case 'prosody-advanced':
+        case 'prosody-muc-log-by-default':
+        case 'prosody-muc-expiration':
         case 'prosody-c2s':
           return options.formValues['chat-type'] !== ('builtin-prosody' as ChatType)
         case 'prosody-c2s-port':
