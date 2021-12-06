@@ -13,9 +13,10 @@
   --peertube-link-hover: #000;
 }
 
-#conversejs.theme-peertube,
+.conversejs.theme-peertube,
+.conversejs-bg.theme-peertube,
 #conversejs-bg.theme-peertube,
-.converse-fullscreen.theme-peertube {
+body.converse-fullscreen.theme-peertube {
   --subdued-color: #a8aba1;
   --green: #3aa569; // only in this file
   --redder-orange: #e77051; // only in this file
@@ -41,8 +42,10 @@
   --message-text-color: var(--peertube-main-foreground);
   --message-receipt-color: var(--green);
   --save-button-color: var(--green);
+  --button-text-color: white;
   --message-avatar-width: 36px;
   --message-avatar-height: 36px;
+  --chat-background-color: white;
   --chat-textarea-color: var(--peertube-input-foreground);
   --chat-textarea-background-color: var(--peertube-input-background);
   --chat-textarea-height: 60px;
@@ -58,6 +61,7 @@
   --chat-head-text-color: var(--peertube-main-foreground);
   --chat-toolbar-btn-color: var(--peertube-button-background);
   --chat-toolbar-btn-disabled-color: var(--peertube-grey-background);
+  --toolbar-btn-text-color: white;
   --chat-content-background-color: var(--peertube-main-background);
   --chat-info-color: var(--peertube-grey-foreground); // FIXME: dont know if it is used, and what it is.
   --highlight-color: var(--peertube-grey-foreground); // FIXME: dont know if it is used, and what it is.
@@ -94,6 +98,7 @@
   --branding-font: "Source Sans Pro", sans-serif;
   --heading-display: inline;
   --heading-color: #9b4d;
+  --chatroom-color: var(--redder-orange);
   --chatroom-badge-color: var(--peertube-button-background);
   --chatroom-badge-hover-color: var(--peertube-button-background);
   --chatroom-correcting-color: var(--peertube-grey-background);
@@ -137,8 +142,6 @@
   --occupants-border-bottom: 1px solid var(--peertube-grey-foreground);
   --embedded-emoji-picker-height: 300px;
   --avatar-border-radius: 10%;
-  --avatar-border: 0;
-  --avatar-background-color: none;
   --fullpage-chat-height: calc(var(--vh, 1vh) * 100);
   --fullpage-chat-width: 100%;
   --fullpage-emoji-picker-height: 300px;

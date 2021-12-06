@@ -150,6 +150,7 @@ window.initConverse = async function initConverse ({
     theme: theme || 'peertube',
     persistent_store: 'sessionStorage',
     show_images_inline: false, // for security reason, and to avoid bugs when image is larger that iframe
+    render_media: false, // for security reason, and to avoid bugs when image is larger that iframe
     whitelisted_plugins: ['livechatWindowTitlePlugin']
   }
 

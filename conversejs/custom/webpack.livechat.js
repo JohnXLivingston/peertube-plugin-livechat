@@ -9,8 +9,8 @@ module.exports = merge(prod, {
     alias: {
       // To override a template, use this syntax:
       // 'templates/muc_sidebar.js': path.resolve(__dirname, 'custom/templates/muc_sidebar.js')
-      'templates/background_logo.js': path.resolve(__dirname, 'custom/templates/background_logo.js'),
-      '../sass/converse.scss': path.resolve(__dirname, 'custom/sass/livechat.scss')
+      '../../templates/background_logo.js$': path.resolve(__dirname, 'custom/templates/background_logo.js'),
+      './styles/index.scss$': path.resolve(__dirname, 'custom/shared/styles/livechat.scss')
     }
   }
 })

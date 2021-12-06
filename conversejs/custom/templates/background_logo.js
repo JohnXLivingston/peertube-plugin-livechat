@@ -1,5 +1,5 @@
 import { html } from 'lit-html'
-import { api } from '@converse/headless/converse-core'
+import { api } from '@converse/headless/core.js'
 
 export default () => html`
     <div class="inner-content converse-brand row">
