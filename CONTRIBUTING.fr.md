@@ -44,6 +44,12 @@ git checkout develop
 # Initialiser les sous-modules. Cette commande est à refaire si jamais la version d'un l'un des sous-module change.
 git submodule update --init --recursive
 
+# Installer les dépendances NPM et compiler le plugin pour la première fois :
+npm install
+
+# Compiler le plugin après une modification :
+npm run build
+
 # Si vous avez un fork du dépot, ajoutez le en remote (exemple) :
 git remote add me git@github.com:MON_COMPTE_GITHUB/peertube-plugin-livechat.git
 

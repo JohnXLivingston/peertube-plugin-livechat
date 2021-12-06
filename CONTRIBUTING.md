@@ -47,6 +47,12 @@ git checkout develop
 # Initialize the submodules. This command must be run again if any submodules' version changes.
 git submodule update --init --recursive
 
+# Install NPM dependencies and build the module for the first time:
+npm install
+
+# Build the plugin after a modification:
+npm run build
+
 # If you have a fork from the repository, add it as remote (example):
 git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git
 
