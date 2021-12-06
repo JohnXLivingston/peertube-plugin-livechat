@@ -34,7 +34,25 @@ Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en 
 
 Merci d'utiliser la branche `develop`. La branche `main` est réservée aux versions publiées, pour que la documentation affichée reste synchronisée avec la version publiée du plugin.
 
-Pour mettre à jour votre dépôt, utilisez la commande `git pull --recurse-submodules`, car il y a des sous-modules dans le dossier `vendor`.
+Pour clôner le dépot :
+
+```bash
+# Cloner le dépot
+git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git
+# Passer sur la branche develop
+git checkout develop
+# Initialiser les sous-modules. Cette commande est à refaire si jamais la version d'un l'un des sous-module change.
+git submodule update --init --recursive
+
+# Si vous avez un fork du dépot, ajoutez le en remote (exemple) :
+git remote add me git@github.com:MON_COMPTE_GITHUB/peertube-plugin-livechat.git
+
+# Créez une branche locale pour vos développements et placez vous dessus (exemple) :
+git checkout mon_developpement # NB: si un ticket y est associé, utilisé le nom fix_1234 (où 1234 est le numéro du ticket)
+# Pour proposer vos modifications, poussez votre branche sur votre dépot (exemple) :
+git push --set-upstream me mon_developpement
+# Rendez-vous ensuite sur votre dépot github avec votre navigateur web pour proposer la Pull Request (voir les instructions complémentaires ci-dessous)
+```
 
 Quand vous êtes prêt⋅e à montrer votre code pour avoir un retour, soumettez une Pull Request *draft*.
 Quand vous êtes prêt⋅e pour une relecture de code avant merge, soumettez une Pull Request. Dans tous les cas, merci de lier votre Pull Request au ticket concerné en utilisant la syntax de GitHub : «fixes #issue_number».
