@@ -77,6 +77,7 @@ interface ProsodyConfig {
   logByDefault: boolean
   logExpiration: ConfigLogExpiration
   bots: ProsodyConfigBots
+  valuesToHideInDiagnostic: {[key: string]: string}
 }
 async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
@@ -84,6 +85,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
 
   let useExternalComponents = false
   const bots: ProsodyConfigBots = {}
+  const valuesToHideInDiagnostic: {[key: string]: string} = {}
 
   const settings = await options.settingsManager.getSettings([
     'prosody-port',
@@ -109,6 +111,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const roomType = (settings['prosody-room-type']) === 'channel' ? 'channel' : 'video'
 
   const apikey = await getAPIKey(options)
+  valuesToHideInDiagnostic.APIKey = apikey
+
   let baseApiUrl = settings['prosody-peertube-uri'] as string
   if (baseApiUrl && !/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(baseApiUrl)) {
     throw new Error('Invalid prosody-peertube-uri')
@@ -162,7 +166,9 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const demoBotUUIDs = parseConfigDemoBotUUIDs((settings['chat-videos-list'] as string) || '')
   if (demoBotUUIDs?.length > 0) {
     useExternalComponents = true
-    config.useDemoBot(await getExternalComponentKey(options, 'DEMOBOT'))
+    const componentSecret = await getExternalComponentKey(options, 'DEMOBOT')
+    valuesToHideInDiagnostic.ComponentSecret = componentSecret
+    config.useDemoBot(componentSecret)
     bots.demo = demoBotUUIDs
   }
 
@@ -185,7 +191,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     roomType,
     logByDefault,
     logExpiration,
-    bots
+    bots,
+    valuesToHideInDiagnostic
   }
 }
 
@@ -258,10 +265,20 @@ function readLogExpiration (options: RegisterServerOptions, logExpiration: strin
   }
 }
 
+function getProsodyConfigContentForDiagnostic (config: ProsodyConfig, content?: string): string {
+  let r: string = content ?? config.content
+  for (const key in config.valuesToHideInDiagnostic) {
+    // replaceAll not available, using trick:
+    r = r.split(config.valuesToHideInDiagnostic[key]).join(`***${key}***`)
+  }
+  return r
+}
+
 export {
   getProsodyConfig,
   getWorkingDir,
   ensureWorkingDir,
   getProsodyFilePaths,
-  writeProsodyConfig
+  writeProsodyConfig,
+  getProsodyConfigContentForDiagnostic
 }
