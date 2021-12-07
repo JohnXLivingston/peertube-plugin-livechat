@@ -198,7 +198,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   config.setLog(logLevel)
 
   const demoBotUUIDs = parseConfigDemoBotUUIDs((settings['chat-videos-list'] as string) || '')
-  let demoBotContentObj: string = JSON.stringify({})
+  let demoBotContentObj: string = 'null'
   if (demoBotUUIDs?.length > 0) {
     useExternalComponents = true
     const componentSecret = await getExternalComponentKey(options, 'DEMOBOT')
@@ -206,7 +206,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     config.useDemoBot(componentSecret)
     bots.demobot = demoBotUUIDs
     demoBotContentObj = JSON.stringify({
-      UUIDs: demoBotUUIDs,
+      rooms: demoBotUUIDs.map((uuid) => `${uuid}@room.${prosodyDomain}`),
       service: 'xmpp://127.0.0.1:' + externalComponentsPort,
       domain: 'demobot.' + prosodyDomain,
       mucDomain: 'room.' + prosodyDomain,

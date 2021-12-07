@@ -1,78 +1,65 @@
-import * as path from 'path'
+import { BotsConfig } from './lib/config'
+import { logger } from './lib/logger'
+import { ComponentBot } from './lib/bot/component'
+import { DemoBot } from './lib/bot/demobot'
 
-let demoBotConfigFile = process.argv[2]
-if (!demoBotConfigFile) {
+if (!process.argv[2]) {
   throw new Error('Missing parameter: the demobot configuration file path')
 }
-demoBotConfigFile = path.resolve(demoBotConfigFile)
+const botsConfig = new BotsConfig(process.argv[2])
 
-// Not necessary, but just in case: perform some path checking...
-function checkBotConfigFilePath (configPath: string): void {
-  const parts = configPath.split(path.sep)
-  if (!parts.includes('peertube-plugin-livechat')) {
-    // Indeed, the path should contain the plugin name
-    // (/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/...)
-    throw new Error('demobot configuration file path seems invalid (not in peertube-plugin-livechat folder).')
+const runningBots: ComponentBot[] = []
+
+async function start (botsConfig: BotsConfig): Promise<void> {
+  await botsConfig.load()
+
+  let atLeastOne: boolean = false
+  if (botsConfig.useDemoBot()) {
+    atLeastOne = true
+    logger.info('Starting DemoBot...')
+
+    const config = botsConfig.getDemoBotConfig()
+    const instance = new DemoBot(
+      'DemoBot',
+      {
+        service: config.service,
+        domain: config.domain,
+        password: config.password
+      },
+      config.rooms,
+      'DemoBot' // FIXME: handle the case where the nick is already taken.
+    )
+    runningBots.push(instance)
+    instance.connect().catch(err => { throw err })
   }
-  if (parts[parts.length - 1] !== 'demobot.js') {
-    throw new Error('demobot configuration file path seems invalid (filename is not demobot.js).')
+  if (!atLeastOne) {
+    logger.info('No bot to launch, exiting.')
+    process.exit(0)
   }
 }
-checkBotConfigFilePath(demoBotConfigFile)
 
-const demoBotConf = require(demoBotConfigFile).getConf()
-if (!demoBotConf || !demoBotConf.UUIDs || !demoBotConf.UUIDs.length) {
+async function shutdown (): Promise<void> {
+  logger.info('Shutdown...')
+  for (const bot of runningBots) {
+    logger.info('Stopping the bot ' + bot.botName + '...')
+    await bot.stop()
+  }
   process.exit(0)
 }
 
-const { component, xml } = require('@xmpp/component')
-const xmpp = component({
-  service: demoBotConf.service,
-  domain: demoBotConf.domain,
-  password: demoBotConf.password
-})
-const roomId = `${demoBotConf.UUIDs[0] as string}@${demoBotConf.mucDomain as string}`
-
-xmpp.on('error', (err: any) => {
-  console.error(err)
-})
-
-xmpp.on('offline', () => {
-  console.log('offline')
-})
-
-xmpp.on('stanza', async (stanza: any) => {
-  console.log('stanza received' + (stanza?.toString ? ': ' + (stanza.toString() as string) : ''))
-  // if (stanza.is('message')) {
-  //   console.log('stanza was a message: ' + (stanza.toString() as string))
-  // }
-})
-
-xmpp.on('online', async (address: any) => {
-  console.log('Online with address: ' + JSON.stringify(address))
-
-  const presence = xml(
-    'presence',
-    {
-      from: address.toString(),
-      to: roomId + '/DemoBot'
-    },
-    xml('x', {
-      xmlns: 'http://jabber.org/protocol/muc'
+// catching signals and do something before exit
+['SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT',
+  'SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 'SIGUSR2', 'SIGTERM'
+].forEach((sig) => {
+  process.on(sig, () => {
+    logger.debug('Receiving signal: ' + sig)
+    shutdown().catch((err) => {
+      logger.error(`Error on shutting down: ${err as string}`)
     })
-  )
-  console.log('Sending presence...: ' + (presence.toString() as string))
-  await xmpp.send(presence)
-
-  setTimeout(() => {
-    const message = xml(
-      'message',
-      { type: 'groupchat', to: roomId, from: address.toString() },
-      xml('body', {}, 'Hello world')
-    )
-    console.log('Sending message...: ' + (message.toString() as string))
-    xmpp.send(message)
-  }, 1000)
+  })
 })
 
-xmpp.start().catch(console.error)
+start(botsConfig).catch((err) => {
+  logger.error(`Function start failed: ${err as string}`)
+  process.exit(1)
+})
