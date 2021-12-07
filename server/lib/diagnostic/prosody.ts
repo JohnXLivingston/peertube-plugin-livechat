@@ -49,8 +49,8 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     }
     result.messages.push(`Room content will be saved for '${wantedConfig.logExpiration.value}'`)
 
-    if (wantedConfig.bots.demo) {
-      result.messages.push(`The Demo bot is active for videos: ${wantedConfig.bots.demo.join(', ')}`)
+    if (wantedConfig.bots.demobot) {
+      result.messages.push(`The Demo bot is active for videos: ${wantedConfig.bots.demobot.join(', ')}`)
     }
 
     const configFiles = wantedConfig.getConfigFiles()

@@ -31,6 +31,7 @@
     "dist/assets/style.css"
   ],
   "dependencies": {
+    "@xmpp/component": "^0.13.0",
     "async": "^3.2.2",
     "body-parser": "^1.19.0",
     "decache": "^4.6.0",
@@ -82,6 +83,7 @@
     "clean": "rm -rf dist/* build/*",
     "clean:light": "rm -rf dist/*",
     "prepare": "npm run clean && npm run build",
+    "build:bots": "npx tsc --build bots/tsconfig.json",
     "build:converse": "bash conversejs/build-conversejs.sh",
     "build:images": "mkdir -p dist/client/images && npx svgo -f public/images/ -o dist/client/images/",
     "build:webpack": "webpack --mode=production",
@@ -89,7 +91,7 @@
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
     "build:prosodymodules": "mkdir -p dist/server/prosody-modules && cp -r prosody-modules/* dist/server/prosody-modules/",
     "build:styles": "sass assets:dist/assets",
-    "build": "npm-run-all -s clean:light -p build:converse build:images build:webpack build:server build:serverconverse build:prosodymodules build:styles",
+    "build": "npm-run-all -s clean:light -p build:converse build:images build:webpack build:server build:serverconverse build:prosodymodules build:styles build:bots",
     "lint": "npm-run-all -s lint:script lint:styles",
     "lint:script": "npx eslint --ext .js --ext .ts .",
     "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/**/*.css'",

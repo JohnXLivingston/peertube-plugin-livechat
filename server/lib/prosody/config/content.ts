@@ -291,13 +291,13 @@ class ProsodyConfigContent {
   }
 
   useDemoBot (componentSecret: string): void {
-    const demoBot = new ProsodyConfigComponent('demobot.' + this.prosodyDomain)
-    demoBot.set('component_secret', componentSecret)
+    const demoBotComponent = new ProsodyConfigComponent('demobot.' + this.prosodyDomain)
+    demoBotComponent.set('component_secret', componentSecret)
 
     // If we want the bot to be moderator, should do the trick:
     // this.global.add('admins', 'demobot.' + this.prosodyDomain)
 
-    this.externalComponents.push(demoBot)
+    this.externalComponents.push(demoBotComponent)
   }
 
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {

@@ -24,9 +24,9 @@ async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
 /**
  * Creates the working dir if needed, and returns it.
  */
-async function ensureWorkingDir (options: RegisterServerOptions): Promise<string> {
+async function ensureWorkingDirs (options: RegisterServerOptions): Promise<string> {
   const logger = options.peertubeHelpers.logger
-  logger.debug('Calling ensureworkingDir')
+  logger.debug('Calling ensureworkingDirs')
 
   const paths = await getProsodyFilePaths(options)
   const dir = paths.dir
@@ -39,10 +39,12 @@ async function ensureWorkingDir (options: RegisterServerOptions): Promise<string
   await fs.promises.access(dir, fs.constants.W_OK) // will throw an error if no access
   logger.debug(`Write access ok on ${dir}`)
 
-  if (!fs.existsSync(paths.data)) {
-    logger.info(`The data dir ${paths.data} does not exists, trying to create it`)
-    await fs.promises.mkdir(paths.data)
-    logger.debug(`Working dir ${paths.data} was created`)
+  for (const path of [paths.data, paths.bots.dir]) {
+    if (!fs.existsSync(path)) {
+      logger.info(`The data dir ${path} does not exists, trying to create it`)
+      await fs.promises.mkdir(path)
+      logger.debug(`Working dir ${path} was created`)
+    }
   }
 
   return dir
@@ -60,16 +62,19 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     log: path.resolve(dir, 'prosody.log'),
     config: path.resolve(dir, 'prosody.cfg.lua'),
     data: path.resolve(dir, 'data'),
-    bots: path.resolve(dir, 'bots'),
+    bots: {
+      dir: path.resolve(dir, 'bots'),
+      demobot: path.resolve(dir, 'bots', 'demobot.js')
+    },
     modules: path.resolve(__dirname, '../../prosody-modules')
   }
 }
 
 interface ProsodyConfigBots {
-  demo?: string[] // if the demo bot is activated, here are the video UUIDS where it will be.
+  demobot?: string[] // if the demo bot is activated, here are the video UUIDS where it will be.
 }
 
-type ProsodyConfigFilesKey = 'prosody'
+type ProsodyConfigFilesKey = 'prosody' | 'demobot'
 type ProsodyConfigFiles = Array<{
   key: ProsodyConfigFilesKey
   path: string
@@ -127,6 +132,10 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const port = (settings['prosody-port'] as string) || '52800'
   if (!/^\d+$/.test(port)) {
     throw new Error('Invalid port')
+  }
+  const externalComponentsPort = (settings['prosody-component-port'] as string) || '53470'
+  if (!/^\d+$/.test(externalComponentsPort)) {
+    throw new Error('Invalid external components port')
   }
   const logByDefault = (settings['prosody-muc-log-by-default'] as boolean) ?? true
   const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
@@ -189,19 +198,27 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   config.setLog(logLevel)
 
   const demoBotUUIDs = parseConfigDemoBotUUIDs((settings['chat-videos-list'] as string) || '')
+  let demoBotContentObj: string = JSON.stringify({})
   if (demoBotUUIDs?.length > 0) {
     useExternalComponents = true
     const componentSecret = await getExternalComponentKey(options, 'DEMOBOT')
     valuesToHideInDiagnostic.ComponentSecret = componentSecret
     config.useDemoBot(componentSecret)
-    bots.demo = demoBotUUIDs
+    bots.demobot = demoBotUUIDs
+    demoBotContentObj = JSON.stringify({
+      UUIDs: demoBotUUIDs,
+      service: 'xmpp://127.0.0.1:' + externalComponentsPort,
+      domain: 'demobot.' + prosodyDomain,
+      mucDomain: 'room.' + prosodyDomain,
+      password: componentSecret
+    })
   }
+  let demoBotContent = '"use strict";\n'
+  demoBotContent += 'Object.defineProperty(exports, "__esModule", { value: true });\n'
+  demoBotContent += `function getConf () { return ${demoBotContentObj}; }` + '\n'
+  demoBotContent += 'exports.getConf = getConf;\n'
 
   if (useExternalComponents) {
-    const externalComponentsPort = (settings['prosody-component-port'] as string) || '53470'
-    if (!/^\d+$/.test(externalComponentsPort)) {
-      throw new Error('Invalid external components port')
-    }
     config.useExternalComponents(externalComponentsPort)
   }
 
@@ -213,6 +230,11 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
         key: 'prosody',
         path: paths.config,
         content: content
+      },
+      {
+        key: 'demobot',
+        path: paths.bots.demobot,
+        content: demoBotContent
       }
     ],
     paths,
@@ -232,7 +254,7 @@ async function writeProsodyConfig (options: RegisterServerOptions): Promise<Pros
   logger.debug('Calling writeProsodyConfig')
 
   logger.debug('Ensuring that the working dir exists')
-  await ensureWorkingDir(options)
+  await ensureWorkingDirs(options)
   logger.debug('Computing the Prosody config content')
   const config = await getProsodyConfig(options)
 
@@ -303,7 +325,7 @@ function readLogExpiration (options: RegisterServerOptions, logExpiration: strin
 export {
   getProsodyConfig,
   getWorkingDir,
-  ensureWorkingDir,
+  ensureWorkingDirs,
   getProsodyFilePaths,
   writeProsodyConfig
 }
