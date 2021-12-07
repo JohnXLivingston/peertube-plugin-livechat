@@ -360,6 +360,22 @@ archiving for a specific room, by editing its properties.
   })
 
   registerSetting({
+    name: 'prosody-component-port',
+    label: 'The port to be use for external components',
+    type: 'input',
+    default: '53470',
+    private: true,
+    descriptionHTML:
+`The port that will be used for extra components used by the builtin Prosody server.<br>
+This is only used when one of these special features is used:<br>
+<ul>
+  <li>Demo bot: this is a hidden feature, for demonstration purposes. See the documentation for more information.</li>
+</ul><br>
+Change it if this port is already in use on your server.
+`
+  })
+
+  registerSetting({
     name: 'prosody-c2s',
     label: 'Enable client to server connections',
     type: 'input-checkbox',
