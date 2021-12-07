@@ -60,6 +60,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     log: path.resolve(dir, 'prosody.log'),
     config: path.resolve(dir, 'prosody.cfg.lua'),
     data: path.resolve(dir, 'data'),
+    bots: path.resolve(dir, 'bots'),
     modules: path.resolve(__dirname, '../../prosody-modules')
   }
 }
@@ -67,18 +68,42 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
 interface ProsodyConfigBots {
   demo?: string[] // if the demo bot is activated, here are the video UUIDS where it will be.
 }
-interface ProsodyConfig {
+
+type ProsodyConfigFilesKey = 'prosody'
+type ProsodyConfigFiles = Array<{
+  key: ProsodyConfigFilesKey
+  path: string
   content: string
-  paths: ProsodyFilePaths
-  host: string
-  port: string
-  baseApiUrl: string
-  roomType: 'video' | 'channel'
-  logByDefault: boolean
-  logExpiration: ConfigLogExpiration
-  bots: ProsodyConfigBots
-  valuesToHideInDiagnostic: {[key: string]: string}
+}>
+
+class ProsodyConfig {
+  constructor (
+    private readonly configFiles: ProsodyConfigFiles,
+    public paths: ProsodyFilePaths,
+    public host: string,
+    public port: string,
+    public baseApiUrl: string,
+    public roomType: 'video' | 'channel',
+    public logByDefault: boolean,
+    public logExpiration: ConfigLogExpiration,
+    public bots: ProsodyConfigBots,
+    public valuesToHideInDiagnostic: {[key: string]: string}
+  ) {}
+
+  public getConfigFiles (): ProsodyConfigFiles {
+    return this.configFiles
+  }
+
+  public contentForDiagnostic (content: string): string {
+    let r: string = content
+    for (const key in this.valuesToHideInDiagnostic) {
+      // replaceAll not available, using trick:
+      r = r.split(this.valuesToHideInDiagnostic[key]).join(`***${key}***`)
+    }
+    return r
+  }
 }
+
 async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling getProsodyConfig')
@@ -182,18 +207,24 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
 
   const content = config.write()
 
-  return {
-    content,
+  return new ProsodyConfig(
+    [
+      {
+        key: 'prosody',
+        path: paths.config,
+        content: content
+      }
+    ],
     paths,
+    prosodyDomain,
     port,
     baseApiUrl,
-    host: prosodyDomain,
     roomType,
     logByDefault,
     logExpiration,
     bots,
     valuesToHideInDiagnostic
-  }
+  )
 }
 
 async function writeProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
@@ -204,12 +235,16 @@ async function writeProsodyConfig (options: RegisterServerOptions): Promise<Pros
   await ensureWorkingDir(options)
   logger.debug('Computing the Prosody config content')
   const config = await getProsodyConfig(options)
-  const content = config.content
-  const fileName = config.paths.config
 
-  logger.info(`Writing prosody configuration file to ${fileName}`)
-  await fs.promises.writeFile(fileName, content)
-  logger.debug('Prosody configuration file writen')
+  const configFiles = config.getConfigFiles()
+  for (const configFile of configFiles) {
+    const content = configFile.content
+    const fileName = configFile.path
+
+    logger.info(`Writing prosody configuration file '${configFile.key}' to ${fileName}.`)
+    await fs.promises.writeFile(fileName, content)
+    logger.debug(`Prosody configuration file '${configFile.key}' writen.`)
+  }
 
   return config
 }
@@ -265,20 +300,10 @@ function readLogExpiration (options: RegisterServerOptions, logExpiration: strin
   }
 }
 
-function getProsodyConfigContentForDiagnostic (config: ProsodyConfig, content?: string): string {
-  let r: string = content ?? config.content
-  for (const key in config.valuesToHideInDiagnostic) {
-    // replaceAll not available, using trick:
-    r = r.split(config.valuesToHideInDiagnostic[key]).join(`***${key}***`)
-  }
-  return r
-}
-
 export {
   getProsodyConfig,
   getWorkingDir,
   ensureWorkingDir,
   getProsodyFilePaths,
-  writeProsodyConfig,
-  getProsodyConfigContentForDiagnostic
+  writeProsodyConfig
 }
