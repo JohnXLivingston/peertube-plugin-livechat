@@ -7,13 +7,17 @@
 * Adding Bots to builtin Prosody mode!
   * The DemoBot: it is a bot than can join rooms to demonstrate the plugin (it is an hidden feature).
 
+### Fixes
+
+* Fix spanish translation.
+
 ## v5.0.1
 
 ### Breaking changes
 
 * If you have some CSS customization for the plugin, it may be broken.
 * Auto color detection can have bad result for some Peertube themes. If so, you can disable it in the settings.
-* Note: if updating the plugin to v5.0.1 fails with an error like `Cannot find module 'validate-color'`, try to restart peertube, then install/update the plugin. See https://github.com/Chocobozzz/PeerTube/issues/4593
+* Note: if updating the plugin to v5.0.1 fails with an error like `Cannot find module 'validate-color'`, try to restart peertube, then install/update the plugin. See <https://github.com/Chocobozzz/PeerTube/issues/4593>
 
 ### Features
 
