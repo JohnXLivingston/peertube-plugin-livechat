@@ -1,23 +1,20 @@
-/* eslint-disable no-void */
+import type { XMPPStanza, XMPPStanzaType } from './types'
+import type { Node } from '@xmpp/xml'
 import { logger } from '../logger'
-import type { XMPPStanza } from './types'
-import { component, xml, Component } from '@xmpp/component'
-import type { JID } from '@xmpp/jid'
+import { component, xml, Component, Options } from '@xmpp/component'
+import { parse, JID } from '@xmpp/jid'
+import { BotRoom } from './room'
 
-interface ComponentConnectionConfig {
-  service: string
-  domain: string
-  password: string
-}
-
-abstract class ComponentBot {
+class BotComponent {
   protected xmpp?: Component
   protected address?: JID
-  protected xml = xml
+  public readonly xml = xml
+  protected rooms: Map<string, BotRoom> = new Map()
 
   constructor (
     public readonly botName: string,
-    protected readonly connectionConfig: ComponentConnectionConfig
+    protected readonly connectionConfig: Options,
+    protected readonly mucDomain: string
   ) {}
 
   public async connect (): Promise<void> {
@@ -36,46 +33,78 @@ abstract class ComponentBot {
     })
 
     this.xmpp.on('stanza', (stanza: XMPPStanza) => {
-      logger.debug('stanza received' + (stanza?.toString ? ': ' + stanza.toString() : ''))
-      if (stanza.is('message')) {
-        void this.onMessage(stanza)
+      logger.debug('stanza received' + stanza.toString())
+      if (!stanza.attrs.from) { return }
+      const jid = parse(stanza.attrs.from)
+      const roomJid = jid.bare() // removing the «resource» part of the jid.
+      const room = this.rooms.get(roomJid.toString())
+      if (!room) {
+        return
       }
-      if (stanza.is('presence')) {
-        void this.onPresence(stanza)
-      }
-      if (stanza.is('iq')) {
-        void this.onIq(stanza)
-      }
+      room.emit('stanza', stanza, jid.getResource())
     })
 
     this.xmpp.on('online', (address) => {
       logger.debug('Online with address' + address.toString())
 
       this.address = address
-      void this.onOnline()
+
+      // 'online' is emitted at reconnection, so we must reset rooms rosters
+      this.rooms.forEach(room => room.emit('reset'))
+    })
+
+    this.xmpp.on('offline', () => {
+      logger.info(`Stoppping process: ${this.botName} is now offline.`)
     })
 
     await this.xmpp.start()
   }
 
-  public async stop (): Promise<any> {
-    const p = new Promise((resolve) => {
-      this.xmpp?.on('offline', () => {
-        logger.info(`Stoppping process: ${this.botName} is now offline.`)
-        resolve(true)
-      })
-    })
+  public async disconnect (): Promise<any> {
+    for (const [roomId, room] of this.rooms) {
+      logger.debug(`Leaving room ${roomId}...`)
+      await room.part()
+    }
     await this.xmpp?.stop()
-    await p
+    this.xmpp = undefined
   }
 
-  protected async onMessage (_stanza: XMPPStanza): Promise<void> {}
-  protected async onIq (_stanza: XMPPStanza): Promise<void> {}
-  protected async onPresence (_stanza: XMPPStanza): Promise<void> {}
-  protected async onOnline (): Promise<void> {}
+  public async sendStanza (
+    type: XMPPStanzaType,
+    attrs: object,
+    ...children: Node[]
+  ): Promise<void> {
+    attrs = Object.assign({
+      from: this.address?.toString()
+    }, attrs)
+
+    const stanza = this.xml(type, attrs, ...children)
+    logger.debug('stanza to emit: ' + stanza.toString())
+    await this.xmpp?.send(stanza)
+  }
+
+  public async joinRoom (roomId: string, nick: string): Promise<BotRoom> {
+    const roomJID = new JID(roomId, this.mucDomain)
+    const roomJIDstr = roomJID.toString()
+    let room: BotRoom | undefined = this.rooms.get(roomJIDstr)
+    if (!room) {
+      room = new BotRoom(this, roomJID)
+      this.rooms.set(roomJIDstr, room)
+    }
+    await room.join(nick)
+    return room
+  }
+
+  public async partRoom (roomId: string): Promise<void> {
+    const roomJID = new JID(roomId, this.mucDomain)
+    const room = this.rooms.get(roomJID.toString())
+    if (!room) {
+      return
+    }
+    await room.part()
+  }
 }
 
 export {
-  ComponentConnectionConfig,
-  ComponentBot
+  BotComponent
 }

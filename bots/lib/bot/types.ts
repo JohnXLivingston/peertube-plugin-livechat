@@ -5,3 +5,9 @@ export type XMPPStanzaType = 'message' | 'iq' | 'presence'
 export interface XMPPStanza extends Element {
   name: XMPPStanzaType
 }
+
+export interface XMPPUser {
+  state: 'offline' | 'online'
+  nick: string
+  isMe: boolean
+}

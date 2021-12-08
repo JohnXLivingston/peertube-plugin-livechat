@@ -206,7 +206,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     config.useDemoBot(componentSecret)
     bots.demobot = demoBotUUIDs
     demoBotContentObj = JSON.stringify({
-      rooms: demoBotUUIDs.map((uuid) => `${uuid}@room.${prosodyDomain}`),
+      rooms: demoBotUUIDs,
       service: 'xmpp://127.0.0.1:' + externalComponentsPort,
       domain: 'demobot.' + prosodyDomain,
       mucDomain: 'room.' + prosodyDomain,
