@@ -49,6 +49,7 @@
     "@types/got": "^9.6.12",
     "@types/node": "^16.11.6",
     "@types/winston": "^2.4.4",
+    "@types/xmpp__component": "^0.13.0",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "eslint": "^7.32.0",

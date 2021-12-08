@@ -1,8 +1,8 @@
 /* eslint-disable no-void */
 import { logger } from '../logger'
-import { XMPP, XMPPXmlFunction, XMPPStanza, XMPPAddress } from './types'
-
-const { component, xml } = require('@xmpp/component')
+import type { XMPPStanza } from './types'
+import { component, xml, Component } from '@xmpp/component'
+import type { JID } from '@xmpp/jid'
 
 interface ComponentConnectionConfig {
   service: string
@@ -11,22 +11,21 @@ interface ComponentConnectionConfig {
 }
 
 abstract class ComponentBot {
-  protected xmpp?: XMPP
-  protected address?: XMPPAddress
+  protected xmpp?: Component
+  protected address?: JID
+  protected xml = xml
 
   constructor (
     public readonly botName: string,
     protected readonly connectionConfig: ComponentConnectionConfig
   ) {}
 
-  protected xml: XMPPXmlFunction = (...args) => xml(...args)
-
   public async connect (): Promise<void> {
     this.xmpp = component({
       service: this.connectionConfig.service,
       domain: this.connectionConfig.domain,
       password: this.connectionConfig.password
-    }) as XMPP
+    })
 
     this.xmpp.on('error', (err: any) => {
       logger.error(err)
@@ -49,14 +48,14 @@ abstract class ComponentBot {
       }
     })
 
-    this.xmpp.on('online', (address: XMPPAddress) => {
+    this.xmpp.on('online', (address) => {
       logger.debug('Online with address' + address.toString())
 
       this.address = address
       void this.onOnline()
     })
 
-    this.xmpp.start()
+    await this.xmpp.start()
   }
 
   public async stop (): Promise<any> {
