@@ -116,3 +116,9 @@ If the video is local (not from a remote Peertube), the video owner will be admi
 
 You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.
 When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.
+
+## Advanced usages
+
+### OBS Overlay using Matterbridge
+
+Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>
