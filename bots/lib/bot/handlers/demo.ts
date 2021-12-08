@@ -54,7 +54,7 @@ export class BotHandlerDemo extends BotHandler {
 
     this.randomTimeout = setInterval(() => {
       this.sendRandomMessage()
-    }, 10 * 1000)
+    }, 60 * 1000)
   }
 
   public stop (): void {
