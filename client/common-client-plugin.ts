@@ -5,6 +5,15 @@ async function register ({ peertubeHelpers, registerHook, registerVideoField }: 
     handler: () => {
       const container = document.querySelector('#peertube-plugin-livechat-container')
       if (container) {
+        const url = container.getAttribute('peertube-plugin-livechat-current-url')
+        if (url && url === window.location.href) {
+          console.warn(
+            '[peertube-plugin-livechat navigation-end] ' +
+            'It seems that action:router.navigation-end was called after action:video-watch.video.loaded. ' +
+            'No removing the chat from the DOM.'
+          )
+          return
+        }
         container.remove()
       }
     }

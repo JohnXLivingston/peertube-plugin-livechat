@@ -289,6 +289,7 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     container = document.createElement('div')
     container.setAttribute('id', 'peertube-plugin-livechat-container')
     container.setAttribute('peertube-plugin-livechat-state', 'initializing')
+    container.setAttribute('peertube-plugin-livechat-current-url', window.location.href)
     placeholder.append(container)
 
     peertubeHelpers.getSettings().then((s: any) => {
