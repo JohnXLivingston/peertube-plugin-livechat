@@ -44,6 +44,14 @@ export class BotHandlerDemo extends BotHandler {
       room.sendGroupchat(msg).catch(() => {})
     })
 
+    room.on('room_message', (msg: string, user?: XMPPUser, mentionned?: boolean) => {
+      if (!user || user.isMe) { return }
+      if (!room.isOnline()) { return }
+      if (!mentionned) { return }
+
+      room.sendGroupchat(`Yep @${user.nick}?`).catch(() => {})
+    })
+
     this.randomTimeout = setInterval(() => {
       this.sendRandomMessage()
     }, 10 * 1000)

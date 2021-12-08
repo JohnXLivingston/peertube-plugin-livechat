@@ -81,6 +81,9 @@ export class BotRoom extends EventEmitter {
     if (stanza.name === 'presence') {
       this.receivePresenceStanza(stanza, fromResource)
     }
+    if (stanza.name === 'message') {
+      this.receiveMessageStanza(stanza, fromResource)
+    }
   }
 
   public receivePresenceStanza (stanza: XMPPStanza, fromResource?: string): void {
@@ -130,6 +133,48 @@ export class BotRoom extends EventEmitter {
         this.emit('room_join', user)
       }
     }
+  }
+
+  protected receiveMessageStanza (stanza: XMPPStanza, fromResource?: string): void {
+    if (stanza.attrs.type !== 'groupchat') {
+      return
+    }
+    // ignoring messages send by the bot himself
+    if (stanza.attrs.from === this.userJID?.toString()) {
+      return
+    }
+    // ignoring history messages
+    if (stanza.getChild('delay')) {
+      return
+    }
+    const body = stanza.getChild('body')
+    // ignoring message without body (subject, ...)
+    if (!body) {
+      return
+    }
+
+    let mentionned: boolean = false // I'm I mentionned?
+    // TODO: fix this ugly code.
+    if (this.userJID) {
+      const references = stanza.getChildren('reference')
+      for (const reference of references) {
+        if (reference.attrs.type === 'mention') {
+          if (reference.attrs.uri === 'xmpp:' + this.userJID.toString()) {
+            mentionned = true
+          } else {
+            const addr = this.component.getAddress()
+            if (addr) {
+              if (reference.attrs.uri === 'xmpp:' + addr.toString()) {
+                mentionned = true
+              }
+            }
+          }
+        }
+      }
+    }
+
+    const user = fromResource ? this.roster.get(fromResource) : undefined
+    this.emit('room_message', body.toString(), user, mentionned)
   }
 
   public attachHandler (handler: BotHandler): void {

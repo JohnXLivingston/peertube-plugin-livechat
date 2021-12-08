@@ -104,6 +104,10 @@ class BotComponent {
     }
     await room.part()
   }
+
+  public getAddress (): JID | undefined {
+    return this.address
+  }
 }
 
 export {
