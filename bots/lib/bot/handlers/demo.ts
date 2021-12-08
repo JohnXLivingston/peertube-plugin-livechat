@@ -2,8 +2,19 @@ import type { XMPPUser } from '../types'
 import { logger } from '../../logger'
 import { BotHandler } from './base'
 
+const RANDOM_MESSAGES: string[] = [
+  '🎵🎶',
+  '🎵🎶 I\'m just a bot, I\'m just a bot in the world. 🎵🎶',
+  'You can see who is connected by opening the right panel.',
+  'This is a random message.',
+  'Oh, yet another random message.',
+  'You can mention a user using a @ in front of a user\'s nick. Try to mention me.'
+]
+
 export class BotHandlerDemo extends BotHandler {
   protected readonly lastHellos: Map<string, Date> = new Map()
+  protected randomCount: number = 0
+  protected randomTimeout: NodeJS.Timeout | undefined
 
   protected init (): void {
     const room = this.room
@@ -32,5 +43,26 @@ export class BotHandlerDemo extends BotHandler {
       this.lastHellos.set(user.nick, now)
       room.sendGroupchat(msg).catch(() => {})
     })
+
+    this.randomTimeout = setInterval(() => {
+      this.sendRandomMessage()
+    }, 10 * 1000)
+  }
+
+  public stop (): void {
+    if (this.randomTimeout) {
+      clearInterval(this.randomTimeout)
+    }
+  }
+
+  protected sendRandomMessage (): void {
+    const room = this.room
+    if (!room.isOnline()) { return }
+    // checking if there is someone to listen...
+    const onlineUserCount = this.room.onlineUserCount()
+    if (onlineUserCount < 2) { return }
+    const cpt = this.randomCount++
+    logger.info(`Emitting the random message number ${cpt}.`)
+    this.room.sendGroupchat(RANDOM_MESSAGES[cpt % RANDOM_MESSAGES.length]).catch(() => {})
   }
 }

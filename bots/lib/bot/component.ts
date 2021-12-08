@@ -63,6 +63,7 @@ class BotComponent {
   public async disconnect (): Promise<any> {
     for (const [roomId, room] of this.rooms) {
       logger.debug(`Leaving room ${roomId}...`)
+      await room.detachHandlers()
       await room.part()
     }
     await this.xmpp?.stop()

@@ -8,4 +8,5 @@ export abstract class BotHandler {
   }
 
   protected abstract init (): void
+  public abstract stop (): void
 }

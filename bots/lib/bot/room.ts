@@ -31,6 +31,14 @@ export class BotRoom extends EventEmitter {
     return this.state === 'online'
   }
 
+  public onlineUserCount (): number {
+    let count = 0
+    this.roster.forEach(user => {
+      if (user.state === 'online') { count++ }
+    })
+    return count
+  }
+
   public async join (nick: string): Promise<void> {
     this.userJID = new JID(this.roomJID.getLocal(), this.roomJID.getDomain(), nick)
     logger.debug(`Emitting a presence for room ${this.roomJID.toString()}...`)
@@ -126,5 +134,11 @@ export class BotRoom extends EventEmitter {
 
   public attachHandler (handler: BotHandler): void {
     this.handlers.push(handler)
+  }
+
+  public detachHandlers (): void {
+    for (const handler of this.handlers) {
+      handler.stop()
+    }
   }
 }
