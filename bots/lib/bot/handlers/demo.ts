@@ -68,6 +68,7 @@ export class BotHandlerDemo extends BotHandler {
     if (!room.isOnline()) { return }
     // checking if there is someone to listen...
     const onlineUserCount = this.room.onlineUserCount()
+    logger.debug(`Online user count in room: ${onlineUserCount}`)
     if (onlineUserCount < 2) { return }
     const cpt = this.randomCount++
     logger.info(`Emitting the random message number ${cpt}.`)
