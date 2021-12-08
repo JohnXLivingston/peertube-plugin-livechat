@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.0.2
+
+### Fixes
+
+* Fix some cases where the chat immediatly close (Peertube events are not fired in the good order).
+
 ## v5.0.1
 
 ### Breaking changes
