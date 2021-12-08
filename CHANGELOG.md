@@ -1,5 +1,12 @@
 # Changelog
 
+## (unreleased yet)
+
+### Features
+
+* Adding Bots to builtin Prosody mode!
+  * The DemoBot: it is a bot than can join rooms to demonstrate the plugin (it is an hidden feature).
+
 ## v5.0.1
 
 ### Breaking changes
