@@ -2,9 +2,9 @@
 
 ## (unreleased yet)
 
-### Fixes
+### Minor changes and fixes
 
-* Fix spanish translation.
+* Spanish translations (thanks [rnek0](https://github.com/rnek0)).
 * Hide secret keys in diagnostic tool.
 
 ## v5.0.2
