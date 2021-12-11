@@ -1,12 +1,25 @@
 # Changelog
 
+## (unreleased yet)
+
+### Fixes
+
+* Fix spanish translation.
+* Hide secret keys in diagnostic tool.
+
+## v5.0.2
+
+### Fixes
+
+* Fix some cases where the chat immediatly close (Peertube events are not fired in the good order).
+
 ## v5.0.1
 
 ### Breaking changes
 
 * If you have some CSS customization for the plugin, it may be broken.
 * Auto color detection can have bad result for some Peertube themes. If so, you can disable it in the settings.
-* Note: if updating the plugin to v5.0.1 fails with an error like `Cannot find module 'validate-color'`, try to restart peertube, then install/update the plugin. See https://github.com/Chocobozzz/PeerTube/issues/4593
+* Note: if updating the plugin to v5.0.1 fails with an error like `Cannot find module 'validate-color'`, try to restart peertube, then install/update the plugin. See <https://github.com/Chocobozzz/PeerTube/issues/4593>
 
 ### Features
 

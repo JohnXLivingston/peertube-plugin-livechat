@@ -39,3 +39,4 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [ ] | Builtin Prosody | Add on option to limit webchat to registered users.
 [x] | Builtin Prosody (or all modes?) | Offer a way for users to have a webchat per channel. See [#59](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/58). | v4.0.0
 [ ] | Common | Handle federation: if video is remote, then try to check if the plugin is installed on the instance, and open it.
+[ ] | Builtin Prosody | Moderation Bot.

@@ -1,4 +1,4 @@
-import { getProsodyConfig, getWorkingDir } from '../prosody/config'
+import { getProsodyConfig, getProsodyConfigContentForDiagnostic, getWorkingDir } from '../prosody/config'
 import { getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
 import { getAPIKey } from '../apikey'
@@ -58,7 +58,10 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
 
     result.debug.push({
       title: 'Current prosody configuration',
-      message: actualContent
+      // we have to hide secret keys and other values.
+      // But here, we haven't them for actualContent.
+      // So we will use values in wantedConfig, hopping it is enough.
+      message: getProsodyConfigContentForDiagnostic(wantedConfig, actualContent)
     })
 
     const wantedContent = wantedConfig.content
@@ -68,7 +71,8 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
       result.messages.push('Prosody configuration file content is not correct.')
       result.debug.push({
         title: 'Prosody configuration should be',
-        message: wantedContent
+        // we have to hide secret keys and other values:
+        message: getProsodyConfigContentForDiagnostic(wantedConfig)
       })
       return result
     }

@@ -72,25 +72,38 @@ interface ProsodyConfig {
   roomType: 'video' | 'channel'
   logByDefault: boolean
   logExpiration: ConfigLogExpiration
+  valuesToHideInDiagnostic: {[key: string]: string}
 }
 async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling getProsodyConfig')
 
-  const port = (await options.settingsManager.getSetting('prosody-port') as string) || '52800'
+  const settings = await options.settingsManager.getSettings([
+    'prosody-port',
+    'prosody-muc-log-by-default',
+    'prosody-muc-expiration',
+    'prosody-c2s',
+    'prosody-room-type',
+    'prosody-peertube-uri',
+    'prosody-c2s-port'
+  ])
+
+  const valuesToHideInDiagnostic: {[key: string]: string} = {}
+  const port = (settings['prosody-port'] as string) || '52800'
   if (!/^\d+$/.test(port)) {
     throw new Error('Invalid port')
   }
-  const logByDefault = (await options.settingsManager.getSetting('prosody-muc-log-by-default') as boolean) ?? true
-  const logExpirationSetting =
-    (await options.settingsManager.getSetting('prosody-muc-expiration') as string) ?? DEFAULTLOGEXPIRATION
-  const enableC2s = (await options.settingsManager.getSetting('prosody-c2s') as boolean) || false
+  const logByDefault = (settings['prosody-muc-log-by-default'] as boolean) ?? true
+  const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
+  const enableC2s = (settings['prosody-c2s'] as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
-  const roomType = (await options.settingsManager.getSetting('prosody-room-type')) === 'channel' ? 'channel' : 'video'
+  const roomType = settings['prosody-room-type'] === 'channel' ? 'channel' : 'video'
 
   const apikey = await getAPIKey(options)
-  let baseApiUrl = await options.settingsManager.getSetting('prosody-peertube-uri') as string
+  valuesToHideInDiagnostic.APIKey = apikey
+
+  let baseApiUrl = settings['prosody-peertube-uri'] as string
   if (baseApiUrl && !/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(baseApiUrl)) {
     throw new Error('Invalid prosody-peertube-uri')
   }
@@ -109,7 +122,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   config.useMucHttpDefault(roomApiUrl)
 
   if (enableC2s) {
-    const c2sPort = (await options.settingsManager.getSetting('prosody-c2s-port') as string) || '52822'
+    const c2sPort = (settings['prosody-c2s-port'] as string) || '52822'
     if (!/^\d+$/.test(c2sPort)) {
       throw new Error('Invalid c2s port')
     }
@@ -149,7 +162,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     host: prosodyDomain,
     roomType,
     logByDefault,
-    logExpiration
+    logExpiration,
+    valuesToHideInDiagnostic
   }
 }
 
@@ -222,10 +236,20 @@ function readLogExpiration (options: RegisterServerOptions, logExpiration: strin
   }
 }
 
+function getProsodyConfigContentForDiagnostic (config: ProsodyConfig, content?: string): string {
+  let r: string = content ?? config.content
+  for (const key in config.valuesToHideInDiagnostic) {
+    // replaceAll not available, using trick:
+    r = r.split(config.valuesToHideInDiagnostic[key]).join(`***${key}***`)
+  }
+  return r
+}
+
 export {
   getProsodyConfig,
   getWorkingDir,
   ensureWorkingDir,
   getProsodyFilePaths,
-  writeProsodyConfig
+  writeProsodyConfig,
+  getProsodyConfigContentForDiagnostic
 }
