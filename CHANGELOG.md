@@ -2,6 +2,10 @@
 
 ## (unreleased yet)
 
+### Features
+
+* Builtin Prosody: you can now allow «external XMPP components» to connect. This can be used for exemple to connect bots or bridges. For now, only connections from localhost will be allowed.
+
 ### Minor changes and fixes
 
 * Spanish translations (thanks [rnek0](https://github.com/rnek0)).

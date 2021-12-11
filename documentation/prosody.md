@@ -100,6 +100,15 @@ The port that will be used by the c2s module of the builtin Prosody server.
 XMPP clients shall use this port to connect.
 Change it if this port is already in use on your server.
 
+#### Enable external XMPP components
+
+This settings enable XMPP external components to connect to the server.
+For now, this option **only allows connections from localhost components**.
+
+This feature could be used to connect bridges or bots.
+
+More informations on Prosody external components [here](https://prosody.im/doc/components).
+
 ## Moderation
 
 You can access rooms settings and moderation tools by opening the chat in a new window,

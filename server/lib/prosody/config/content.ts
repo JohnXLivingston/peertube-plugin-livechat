@@ -1,4 +1,5 @@
 import type { ProsodyFilePaths } from './paths'
+import type { ExternalComponent } from './components'
 
 type ConfigEntryValue = boolean | number | string | ConfigEntryValue[]
 
@@ -102,16 +103,19 @@ class ProsodyConfigVirtualHost extends ProsodyConfigBlock {
 
 class ProsodyConfigComponent extends ProsodyConfigBlock {
   name: string
-  type: string
+  type?: string
 
-  constructor (type: string, name: string) {
+  constructor (name: string, type?: string) {
     super('  ')
     this.type = type
     this.name = name
   }
 
   write (): string {
-    return `Component "${this.name}" "${this.type}"\n` + super.write()
+    if (this.type !== undefined) {
+      return `Component "${this.name}" "${this.type}"\n` + super.write()
+    }
+    return `Component "${this.name}"\n` + super.write()
   }
 }
 
@@ -123,6 +127,7 @@ class ProsodyConfigContent {
   authenticated?: ProsodyConfigVirtualHost
   anon: ProsodyConfigVirtualHost
   muc: ProsodyConfigComponent
+  externalComponents: ProsodyConfigComponent[] = []
   log: string
   prosodyDomain: string
 
@@ -132,7 +137,7 @@ class ProsodyConfigContent {
     this.log = ''
     this.prosodyDomain = prosodyDomain
     this.anon = new ProsodyConfigVirtualHost('anon.' + prosodyDomain)
-    this.muc = new ProsodyConfigComponent('muc', 'room.' + prosodyDomain)
+    this.muc = new ProsodyConfigComponent('room.' + prosodyDomain, 'muc')
 
     this.global.set('daemonize', false)
     this.global.set('allow_registration', false)
@@ -228,6 +233,17 @@ class ProsodyConfigContent {
     this.global.set('c2s_ports', [c2sPort])
   }
 
+  useExternalComponents (componentsPort: string, components: ExternalComponent[]): void {
+    this.global.set('component_ports', [componentsPort])
+    this.global.set('component_interfaces', ['127.0.0.1', '::1'])
+
+    for (const component of components) {
+      const c = new ProsodyConfigComponent(component.name)
+      c.set('component_secret', component.secret)
+      this.externalComponents.push(c)
+    }
+  }
+
   useMucHttpDefault (url: string): void {
     this.muc.add('modules_enabled', 'muc_http_defaults')
     this.muc.add('muc_create_api_url', url)
@@ -309,6 +325,11 @@ class ProsodyConfigContent {
     content += '\n\n'
     content += this.muc.write()
     content += '\n\n'
+    for (const externalComponent of this.externalComponents) {
+      content += '\n\n'
+      content += externalComponent.write()
+      content += '\n\n'
+    }
     return content
   }
 }

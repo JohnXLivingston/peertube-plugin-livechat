@@ -380,7 +380,53 @@ This option alone only allows connections from localhost clients.`
 `The port that will be used by the c2s module of the builtin Prosody server.<br>
 XMPP clients shall use this port to connect.<br>
 Change it if this port is already in use on your server.<br>
-Keep it close this port on your firewall for now, it will not be accessed from the outer world.`
+You can keep this port closed on your firewall for now, it will not be accessed from the outer world.`
+  })
+
+  registerSetting({
+    name: 'prosody-components',
+    label: 'Enable custom Prosody external components',
+    type: 'input-checkbox',
+    default: false,
+    private: true,
+    descriptionHTML:
+`Enable the use of external XMPP components.<br>
+This option alone only allows connections from localhost.<br>
+This feature can for example be used to connect some bots to the chatting rooms.`
+  })
+
+  registerSetting({
+    name: 'prosody-components-port',
+    label: 'Prosody external components port',
+    type: 'input',
+    default: '53470',
+    private: true,
+    descriptionHTML:
+`The port that will be used by XMPP components to connect to the Prosody server.<br>
+Change it if this port is already in use on your server.<br>
+You can keep this port closed on your firewall for now, it will not be accessed from the outer world.`
+  })
+
+  registerSetting({
+    name: 'prosody-components-list',
+    label: 'External components',
+    type: 'input-textarea',
+    default: '',
+    private: true,
+    descriptionHTML:
+`The external components to create:
+<ul>
+  <li>One per line.</li>
+  <li>Use the format «component_name:component_secret» (spaces will be trimmed)</li>
+  <li>You can add comments: everything after the # character will be stripped off, and empty lines ignored</li>
+  <li>The name can only contain alphanumeric characters and dots</li>
+  <li>
+    If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain.
+    For exemple «bridge» will become «bridge.your_domain.tld».
+    You can also specify a full domain name, but you have to make sure to configure your DNS correctly.
+  </li>
+  <li>Only use alphanumeric characters in the secret passphrase (use at least 15 characters).</li>
+</ul>`
   })
 
   // ********** settings changes management

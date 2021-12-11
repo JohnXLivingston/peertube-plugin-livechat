@@ -1,3 +1,4 @@
+import type { ProsodyLogLevel } from './config/content'
 import * as fs from 'fs'
 import * as path from 'path'
 import { getBaseRouterRoute } from '../helpers'
@@ -5,7 +6,7 @@ import { ProsodyFilePaths } from './config/paths'
 import { ConfigLogExpiration, ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
 import { getAPIKey } from '../apikey'
-import type { ProsodyLogLevel } from './config/content'
+import { parseExternalComponents } from './config/components'
 
 async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
@@ -72,7 +73,7 @@ interface ProsodyConfig {
   roomType: 'video' | 'channel'
   logByDefault: boolean
   logExpiration: ConfigLogExpiration
-  valuesToHideInDiagnostic: {[key: string]: string}
+  valuesToHideInDiagnostic: Map<string, string>
 }
 async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
@@ -83,12 +84,15 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     'prosody-muc-log-by-default',
     'prosody-muc-expiration',
     'prosody-c2s',
+    'prosody-c2s-port',
     'prosody-room-type',
     'prosody-peertube-uri',
-    'prosody-c2s-port'
+    'prosody-components',
+    'prosody-components-port',
+    'prosody-components-list'
   ])
 
-  const valuesToHideInDiagnostic: {[key: string]: string} = {}
+  const valuesToHideInDiagnostic = new Map<string, string>()
   const port = (settings['prosody-port'] as string) || '52800'
   if (!/^\d+$/.test(port)) {
     throw new Error('Invalid port')
@@ -96,12 +100,13 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const logByDefault = (settings['prosody-muc-log-by-default'] as boolean) ?? true
   const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
   const enableC2s = (settings['prosody-c2s'] as boolean) || false
+  const enableComponents = (settings['prosody-c2s'] as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
   const roomType = settings['prosody-room-type'] === 'channel' ? 'channel' : 'video'
 
   const apikey = await getAPIKey(options)
-  valuesToHideInDiagnostic.APIKey = apikey
+  valuesToHideInDiagnostic.set('APIKey', apikey)
 
   let baseApiUrl = settings['prosody-peertube-uri'] as string
   if (baseApiUrl && !/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(baseApiUrl)) {
@@ -127,6 +132,18 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
       throw new Error('Invalid c2s port')
     }
     config.useC2S(c2sPort)
+  }
+
+  if (enableComponents) {
+    const componentsPort = (settings['prosody-components-port'] as string) || '53470'
+    if (!/^\d+$/.test(componentsPort)) {
+      throw new Error('Invalid external components port')
+    }
+    const components = parseExternalComponents((settings['prosody-components-list'] as string) || '', prosodyDomain)
+    for (const component of components) {
+      valuesToHideInDiagnostic.set('Component ' + component.name + ' secret', component.secret)
+    }
+    config.useExternalComponents(componentsPort, components)
   }
 
   const logExpiration = readLogExpiration(options, logExpirationSetting)
@@ -238,9 +255,9 @@ function readLogExpiration (options: RegisterServerOptions, logExpiration: strin
 
 function getProsodyConfigContentForDiagnostic (config: ProsodyConfig, content?: string): string {
   let r: string = content ?? config.content
-  for (const key in config.valuesToHideInDiagnostic) {
+  for (const [key, value] of config.valuesToHideInDiagnostic.entries()) {
     // replaceAll not available, using trick:
-    r = r.split(config.valuesToHideInDiagnostic[key]).join(`***${key}***`)
+    r = r.split(value).join(`***${key}***`)
   }
   return r
 }
