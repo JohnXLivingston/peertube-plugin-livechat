@@ -1,4 +1,4 @@
-import { getProsodyConfig, getWorkingDir } from '../prosody/config'
+import { getProsodyConfig, getProsodyConfigContentForDiagnostic, getWorkingDir } from '../prosody/config'
 import { getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
 import { getAPIKey } from '../apikey'
@@ -24,6 +24,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   let prosodyHost: string
   try {
     const wantedConfig = await getProsodyConfig(options)
+    const filePath = wantedConfig.paths.config
 
     result.messages.push(`Prosody will run on port '${wantedConfig.port}'`)
     prosodyPort = wantedConfig.port
@@ -49,44 +50,34 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     }
     result.messages.push(`Room content will be saved for '${wantedConfig.logExpiration.value}'`)
 
-    if (wantedConfig.bots.demobot) {
-      result.messages.push(`The Demo bot is active for videos: ${wantedConfig.bots.demobot.join(', ')}`)
-    }
+    await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
+    result.messages.push(`The prosody configuration file (${filePath}) exists`)
+    const actualContent = await fs.promises.readFile(filePath, {
+      encoding: 'utf-8'
+    })
 
-    const configFiles = wantedConfig.getConfigFiles()
-    for (const configFile of configFiles) {
-      const filePath = configFile.path
-      const configFileKey = configFile.key
+    result.debug.push({
+      title: 'Current prosody configuration',
+      // we have to hide secret keys and other values.
+      // But here, we haven't them for actualContent.
+      // So we will use values in wantedConfig, hopping it is enough.
+      message: getProsodyConfigContentForDiagnostic(wantedConfig, actualContent)
+    })
 
-      await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
-      result.messages.push(`The prosody '${configFileKey}' configuration file (${filePath}) exists`)
-      const actualContent = await fs.promises.readFile(filePath, {
-        encoding: 'utf-8'
-      })
-
+    const wantedContent = wantedConfig.content
+    if (actualContent === wantedContent) {
+      result.messages.push('Prosody configuration file content is correct.')
+    } else {
+      result.messages.push('Prosody configuration file content is not correct.')
       result.debug.push({
-        title: `Current prosody '${configFileKey}' configuration`,
-        // we have to hide secret keys and other values.
-        // But here, we haven't them for actualContent.
-        // So we will use values in wantedConfig, hopping it is enough.
-        message: wantedConfig.contentForDiagnostic(actualContent)
+        title: 'Prosody configuration should be',
+        // we have to hide secret keys and other values:
+        message: getProsodyConfigContentForDiagnostic(wantedConfig)
       })
-
-      const wantedContent = configFile.content
-      if (actualContent === wantedContent) {
-        result.messages.push(`Prosody configuration file '${configFileKey}' content is correct.`)
-      } else {
-        result.messages.push(`Prosody configuration file '${configFileKey}'' content is not correct.`)
-        result.debug.push({
-          title: `Prosody configuration '${configFileKey}' should be`,
-          // we have to hide secret keys and other values:
-          message: wantedConfig.contentForDiagnostic(wantedContent)
-        })
-        return result
-      }
+      return result
     }
   } catch (error) {
-    result.messages.push('Error when testing the prosody config: ' + (error as string))
+    result.messages.push('Error when requiring the prosody config file: ' + (error as string))
     return result
   }
 

@@ -102,19 +102,16 @@ class ProsodyConfigVirtualHost extends ProsodyConfigBlock {
 
 class ProsodyConfigComponent extends ProsodyConfigBlock {
   name: string
-  type?: string
+  type: string
 
-  constructor (name: string, type?: string) {
+  constructor (type: string, name: string) {
     super('  ')
     this.type = type
     this.name = name
   }
 
   write (): string {
-    if (this.type !== undefined) {
-      return `Component "${this.name}" "${this.type}"\n` + super.write()
-    }
-    return `Component "${this.name}"\n` + super.write()
+    return `Component "${this.name}" "${this.type}"\n` + super.write()
   }
 }
 
@@ -126,7 +123,6 @@ class ProsodyConfigContent {
   authenticated?: ProsodyConfigVirtualHost
   anon: ProsodyConfigVirtualHost
   muc: ProsodyConfigComponent
-  externalComponents: ProsodyConfigComponent[] = []
   log: string
   prosodyDomain: string
 
@@ -136,7 +132,7 @@ class ProsodyConfigContent {
     this.log = ''
     this.prosodyDomain = prosodyDomain
     this.anon = new ProsodyConfigVirtualHost('anon.' + prosodyDomain)
-    this.muc = new ProsodyConfigComponent('room.' + prosodyDomain, 'muc')
+    this.muc = new ProsodyConfigComponent('muc', 'room.' + prosodyDomain)
 
     this.global.set('daemonize', false)
     this.global.set('allow_registration', false)
@@ -285,21 +281,6 @@ class ProsodyConfigContent {
     this.muc.set('peertubelivechat_test_peertube_api_url', apiurl)
   }
 
-  useExternalComponents (componentsPort: string): void {
-    this.global.set('component_ports', [componentsPort])
-    this.global.set('component_interfaces', ['127.0.0.1', '::1'])
-  }
-
-  useDemoBot (componentSecret: string): void {
-    const demoBotComponent = new ProsodyConfigComponent('demobot.' + this.prosodyDomain)
-    demoBotComponent.set('component_secret', componentSecret)
-
-    // If we want the bot to be moderator, should do the trick:
-    // this.global.add('admins', 'demobot.' + this.prosodyDomain)
-
-    this.externalComponents.push(demoBotComponent)
-  }
-
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
     let log = ''
     log += 'log = {\n'
@@ -328,11 +309,6 @@ class ProsodyConfigContent {
     content += '\n\n'
     content += this.muc.write()
     content += '\n\n'
-    this.externalComponents.forEach((externalComponent) => {
-      content += '\n\n'
-      content += externalComponent.write()
-      content += '\n\n'
-    })
     return content
   }
 }

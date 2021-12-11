@@ -4,9 +4,8 @@ import { getBaseRouterRoute } from '../helpers'
 import { ProsodyFilePaths } from './config/paths'
 import { ConfigLogExpiration, ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
-import { getAPIKey, getExternalComponentKey } from '../apikey'
+import { getAPIKey } from '../apikey'
 import type { ProsodyLogLevel } from './config/content'
-import { parseConfigDemoBotUUIDs } from './config/bots'
 
 async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
@@ -24,9 +23,9 @@ async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
 /**
  * Creates the working dir if needed, and returns it.
  */
-async function ensureWorkingDirs (options: RegisterServerOptions): Promise<string> {
+async function ensureWorkingDir (options: RegisterServerOptions): Promise<string> {
   const logger = options.peertubeHelpers.logger
-  logger.debug('Calling ensureworkingDirs')
+  logger.debug('Calling ensureworkingDir')
 
   const paths = await getProsodyFilePaths(options)
   const dir = paths.dir
@@ -39,12 +38,10 @@ async function ensureWorkingDirs (options: RegisterServerOptions): Promise<strin
   await fs.promises.access(dir, fs.constants.W_OK) // will throw an error if no access
   logger.debug(`Write access ok on ${dir}`)
 
-  for (const path of [paths.data, paths.bots.dir]) {
-    if (!fs.existsSync(path)) {
-      logger.info(`The data dir ${path} does not exists, trying to create it`)
-      await fs.promises.mkdir(path)
-      logger.debug(`Working dir ${path} was created`)
-    }
+  if (!fs.existsSync(paths.data)) {
+    logger.info(`The data dir ${paths.data} does not exists, trying to create it`)
+    await fs.promises.mkdir(paths.data)
+    logger.debug(`Working dir ${paths.data} was created`)
   }
 
   return dir
@@ -62,60 +59,24 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     log: path.resolve(dir, 'prosody.log'),
     config: path.resolve(dir, 'prosody.cfg.lua'),
     data: path.resolve(dir, 'data'),
-    bots: {
-      dir: path.resolve(dir, 'bots'),
-      demobot: path.resolve(dir, 'bots', 'demobot.js')
-    },
     modules: path.resolve(__dirname, '../../prosody-modules')
   }
 }
 
-interface ProsodyConfigBots {
-  demobot?: string[] // if the demo bot is activated, here are the video UUIDS where it will be.
-}
-
-type ProsodyConfigFilesKey = 'prosody' | 'demobot'
-type ProsodyConfigFiles = Array<{
-  key: ProsodyConfigFilesKey
-  path: string
+interface ProsodyConfig {
   content: string
-}>
-
-class ProsodyConfig {
-  constructor (
-    private readonly configFiles: ProsodyConfigFiles,
-    public paths: ProsodyFilePaths,
-    public host: string,
-    public port: string,
-    public baseApiUrl: string,
-    public roomType: 'video' | 'channel',
-    public logByDefault: boolean,
-    public logExpiration: ConfigLogExpiration,
-    public bots: ProsodyConfigBots,
-    public valuesToHideInDiagnostic: {[key: string]: string}
-  ) {}
-
-  public getConfigFiles (): ProsodyConfigFiles {
-    return this.configFiles
-  }
-
-  public contentForDiagnostic (content: string): string {
-    let r: string = content
-    for (const key in this.valuesToHideInDiagnostic) {
-      // replaceAll not available, using trick:
-      r = r.split(this.valuesToHideInDiagnostic[key]).join(`***${key}***`)
-    }
-    return r
-  }
+  paths: ProsodyFilePaths
+  host: string
+  port: string
+  baseApiUrl: string
+  roomType: 'video' | 'channel'
+  logByDefault: boolean
+  logExpiration: ConfigLogExpiration
+  valuesToHideInDiagnostic: {[key: string]: string}
 }
-
 async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling getProsodyConfig')
-
-  let useExternalComponents = false
-  const bots: ProsodyConfigBots = {}
-  const valuesToHideInDiagnostic: {[key: string]: string} = {}
 
   const settings = await options.settingsManager.getSettings([
     'prosody-port',
@@ -124,25 +85,20 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     'prosody-c2s',
     'prosody-room-type',
     'prosody-peertube-uri',
-    'prosody-c2s-port',
-    'prosody-component-port',
-    'chat-videos-list'
+    'prosody-c2s-port'
   ])
 
+  const valuesToHideInDiagnostic: {[key: string]: string} = {}
   const port = (settings['prosody-port'] as string) || '52800'
   if (!/^\d+$/.test(port)) {
     throw new Error('Invalid port')
-  }
-  const externalComponentsPort = (settings['prosody-component-port'] as string) || '53470'
-  if (!/^\d+$/.test(externalComponentsPort)) {
-    throw new Error('Invalid external components port')
   }
   const logByDefault = (settings['prosody-muc-log-by-default'] as boolean) ?? true
   const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
   const enableC2s = (settings['prosody-c2s'] as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
-  const roomType = (settings['prosody-room-type']) === 'channel' ? 'channel' : 'video'
+  const roomType = settings['prosody-room-type'] === 'channel' ? 'channel' : 'video'
 
   const apikey = await getAPIKey(options)
   valuesToHideInDiagnostic.APIKey = apikey
@@ -196,57 +152,19 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     logLevel = 'info'
   }
   config.setLog(logLevel)
-
-  const demoBotUUIDs = parseConfigDemoBotUUIDs((settings['chat-videos-list'] as string) || '')
-  let demoBotContentObj: string = 'null'
-  if (demoBotUUIDs?.length > 0) {
-    useExternalComponents = true
-    const componentSecret = await getExternalComponentKey(options, 'DEMOBOT')
-    valuesToHideInDiagnostic.ComponentSecret = componentSecret
-    config.useDemoBot(componentSecret)
-    bots.demobot = demoBotUUIDs
-    demoBotContentObj = JSON.stringify({
-      rooms: demoBotUUIDs,
-      service: 'xmpp://127.0.0.1:' + externalComponentsPort,
-      domain: 'demobot.' + prosodyDomain,
-      mucDomain: 'room.' + prosodyDomain,
-      password: componentSecret
-    })
-  }
-  let demoBotContent = '"use strict";\n'
-  demoBotContent += 'Object.defineProperty(exports, "__esModule", { value: true });\n'
-  demoBotContent += `function getConf () { return ${demoBotContentObj}; }` + '\n'
-  demoBotContent += 'exports.getConf = getConf;\n'
-
-  if (useExternalComponents) {
-    config.useExternalComponents(externalComponentsPort)
-  }
-
   const content = config.write()
 
-  return new ProsodyConfig(
-    [
-      {
-        key: 'prosody',
-        path: paths.config,
-        content: content
-      },
-      {
-        key: 'demobot',
-        path: paths.bots.demobot,
-        content: demoBotContent
-      }
-    ],
+  return {
+    content,
     paths,
-    prosodyDomain,
     port,
     baseApiUrl,
+    host: prosodyDomain,
     roomType,
     logByDefault,
     logExpiration,
-    bots,
     valuesToHideInDiagnostic
-  )
+  }
 }
 
 async function writeProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
@@ -254,19 +172,15 @@ async function writeProsodyConfig (options: RegisterServerOptions): Promise<Pros
   logger.debug('Calling writeProsodyConfig')
 
   logger.debug('Ensuring that the working dir exists')
-  await ensureWorkingDirs(options)
+  await ensureWorkingDir(options)
   logger.debug('Computing the Prosody config content')
   const config = await getProsodyConfig(options)
+  const content = config.content
+  const fileName = config.paths.config
 
-  const configFiles = config.getConfigFiles()
-  for (const configFile of configFiles) {
-    const content = configFile.content
-    const fileName = configFile.path
-
-    logger.info(`Writing prosody configuration file '${configFile.key}' to ${fileName}.`)
-    await fs.promises.writeFile(fileName, content)
-    logger.debug(`Prosody configuration file '${configFile.key}' writen.`)
-  }
+  logger.info(`Writing prosody configuration file to ${fileName}`)
+  await fs.promises.writeFile(fileName, content)
+  logger.debug('Prosody configuration file writen')
 
   return config
 }
@@ -322,10 +236,20 @@ function readLogExpiration (options: RegisterServerOptions, logExpiration: strin
   }
 }
 
+function getProsodyConfigContentForDiagnostic (config: ProsodyConfig, content?: string): string {
+  let r: string = content ?? config.content
+  for (const key in config.valuesToHideInDiagnostic) {
+    // replaceAll not available, using trick:
+    r = r.split(config.valuesToHideInDiagnostic[key]).join(`***${key}***`)
+  }
+  return r
+}
+
 export {
   getProsodyConfig,
   getWorkingDir,
-  ensureWorkingDirs,
+  ensureWorkingDir,
   getProsodyFilePaths,
-  writeProsodyConfig
+  writeProsodyConfig,
+  getProsodyConfigContentForDiagnostic
 }

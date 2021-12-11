@@ -5,10 +5,6 @@ interface ProsodyFilePaths {
   log: string
   config: string
   data: string
-  bots: {
-    dir: string
-    demobot: string
-  }
   modules: string
 }
 

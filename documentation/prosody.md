@@ -122,8 +122,3 @@ When you open the chat room in full screen, there will also be a menu with dedic
 ### OBS Overlay using Matterbridge
 
 Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>
-
-### Demobot
-
-This is a hidden feature. It is a bot that can join rooms, and demonstrate the plugin capacities.
-This is not documented for now.

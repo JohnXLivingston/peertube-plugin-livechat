@@ -113,23 +113,20 @@ async function testProsodyCorrectlyRunning (options: RegisterServerOptions): Pro
 
   try {
     const wantedConfig = await getProsodyConfig(options)
-    const configFiles = wantedConfig.getConfigFiles()
-    for (const configFile of configFiles) {
-      const filePath = configFile.path
+    const filePath = wantedConfig.paths.config
 
-      await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
-      result.messages.push(`The prosody configuration file (${configFile.key}: ${filePath}) exists`)
-      const actualContent = await fs.promises.readFile(filePath, {
-        encoding: 'utf-8'
-      })
+    await fs.promises.access(filePath, fs.constants.R_OK) // throw an error if file does not exist.
+    result.messages.push(`The prosody configuration file (${filePath}) exists`)
+    const actualContent = await fs.promises.readFile(filePath, {
+      encoding: 'utf-8'
+    })
 
-      const wantedContent = configFile.content
-      if (actualContent === wantedContent) {
-        result.messages.push(`Prosody configuration file '${configFile.key}' content is correct.`)
-      } else {
-        result.messages.push(`Prosody configuration file '${configFile.key}' content is not correct.`)
-        return result
-      }
+    const wantedContent = wantedConfig.content
+    if (actualContent === wantedContent) {
+      result.messages.push('Prosody configuration file content is correct.')
+    } else {
+      result.messages.push('Prosody configuration file content is not correct.')
+      return result
     }
   } catch (error) {
     result.messages.push('Error when requiring the prosody config file: ' + (error as string))
