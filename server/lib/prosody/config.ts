@@ -100,7 +100,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const logByDefault = (settings['prosody-muc-log-by-default'] as boolean) ?? true
   const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
   const enableC2s = (settings['prosody-c2s'] as boolean) || false
-  const enableComponents = (settings['prosody-c2s'] as boolean) || false
+  const enableComponents = (settings['prosody-components'] as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
   const roomType = settings['prosody-room-type'] === 'channel' ? 'channel' : 'video'
