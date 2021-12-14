@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 type SVGButton = () => string
 
 const closeSVG: SVGButton = () => {
@@ -84,9 +85,24 @@ const openBlankChatSVG: SVGButton = () => {
 </svg>`
 }
 
+const shareChatUrlSVG: SVGButton = () => {
+  // This content comes from the file public/image/url.svg, after svgo cleaning.
+  // To get the formated content, you can do:
+  // xmllint dist/client/images/url.svg --format
+  // Then replace the color by `currentColor`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 4.233 4.233">
+  <g style="stroke-width:1.17052;stroke-miterlimit:4;stroke-dasharray:none">
+    <path style="opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m6.556-.435 1.132-1.132c.269-.268.618-.351.784-.186L9.867-.357c.166.165.083.515-.186.784L7.418 2.69c-.269.269-.618.352-.784.186l-.698-.697-.39-.407" transform="matrix(.45208 0 0 .45208 -.73 1.423)"/>
+    <path style="opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M6.038 3.505 4.906 4.637c-.268.268-.618.351-.784.186L2.727 3.427c-.166-.165-.083-.515.186-.784L5.176.38c.27-.269.619-.352.784-.186l.698.697.39.407" transform="matrix(.45208 0 0 .45208 -.73 1.423)"/>
+  </g>
+</svg>
+`
+}
+
 export {
   closeSVG,
   openChatSVG,
   openBlankChatSVG,
+  shareChatUrlSVG,
   SVGButton
 }

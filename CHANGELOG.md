@@ -4,7 +4,9 @@
 
 ### Features
 
-* Builtin Prosody: Readonly mode. You can open the chat in readonly mode. Could be used to integrate in OBS for example.
+* Builtin Prosody:
+  * Readonly mode. You can open the chat in readonly mode. Could be used to integrate in OBS for example.
+  * Share chat url: modal for video owner (and instance's moderators) that allows to generate a link to the chat. So you can - for example - obtain the url to use for OBS integration.
 * Builtin Prosody: you can now allow «external XMPP components» to connect. This can be used for exemple to connect bots or bridges. For now, only connections from localhost will be allowed.
 
 ### Minor changes and fixes

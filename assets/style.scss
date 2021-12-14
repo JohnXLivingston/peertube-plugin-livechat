@@ -53,6 +53,13 @@
   }
 
   .peertube-plugin-livechat-multi-button-secondary {
+    border-radius: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    border-left: 1px solid currentColor;
+  }
+
+  .peertube-plugin-livechat-multi-button-last-secondary {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
     margin-left: 0 !important;

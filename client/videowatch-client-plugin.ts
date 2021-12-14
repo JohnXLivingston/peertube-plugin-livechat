@@ -1,7 +1,10 @@
 import type { ChatType } from 'shared/lib/types'
 import { videoHasWebchat } from 'shared/lib/video'
 import { AutoColors, isAutoColorsAvailable, areAutoColorsValid } from 'shared/lib/autocolors'
-import { closeSVG, openBlankChatSVG, openChatSVG, SVGButton } from './videowatch/buttons'
+import { logger } from './videowatch/logger'
+import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG } from './videowatch/buttons'
+import { displayButton, displayButtonOptions } from './videowatch/button'
+import { shareChatUrl } from './videowatch/share'
 
 interface VideoWatchLoadedHookOptions {
   videojs: any
@@ -9,14 +12,8 @@ interface VideoWatchLoadedHookOptions {
   playlist?: any
 }
 
-function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
-  const logger = {
-    log: (s: string) => console.log('[peertube-plugin-livechat] ' + s),
-    info: (s: string) => console.info('[peertube-plugin-livechat] ' + s),
-    error: (s: string) => console.error('[peertube-plugin-livechat] ' + s),
-    warn: (s: string) => console.warn('[peertube-plugin-livechat] ' + s)
-  }
-
+function register (registerOptions: RegisterOptions): void {
+  const { registerHook, peertubeHelpers } = registerOptions
   let settings: any = {}
 
   function getBaseRoute (): string {
@@ -125,58 +122,22 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
     return autocolors
   }
 
-  function displayButton (
-    buttonContainer: HTMLElement,
-    name: string,
-    label: string,
-    callback: () => void | boolean,
-    icon?: SVGButton,
-    additionalClasses?: string[]
-  ): void {
-    const button = document.createElement('a')
-    button.classList.add(
-      'orange-button', 'peertube-button-link',
-      'peertube-plugin-livechat-button',
-      'peertube-plugin-livechat-button-' + name
-    )
-    if (additionalClasses) {
-      for (let i = 0; i < additionalClasses.length; i++) {
-        button.classList.add(additionalClasses[i])
-      }
-    }
-    button.onclick = callback
-    if (icon) {
-      try {
-        const svg = icon()
-        const tmp = document.createElement('span')
-        tmp.innerHTML = svg.trim()
-        const svgDom = tmp.firstChild
-        if (svgDom) {
-          button.prepend(svgDom)
-        }
-      } catch (err) {
-        logger.error('Failed to generate the ' + name + ' button: ' + (err as string))
-      }
-
-      button.setAttribute('title', label)
-    } else {
-      button.textContent = label
-    }
-    buttonContainer.append(button)
-  }
-
-  async function insertChatDom (container: HTMLElement, video: Video, showOpenBlank: boolean): Promise<void> {
+  async function insertChatDom (
+    container: HTMLElement, video: Video, showOpenBlank: boolean, showShareUrlButton: boolean
+  ): Promise<void> {
     logger.log('Adding livechat in the DOM...')
     const p = new Promise<void>((resolve, reject) => {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       Promise.all([
         peertubeHelpers.translate('Open chat'),
         peertubeHelpers.translate('Open chat in a new window'),
-        peertubeHelpers.translate('Close chat')
+        peertubeHelpers.translate('Close chat'),
+        peertubeHelpers.translate('Share link')
       ]).then(labels => {
         const labelOpen = labels[0]
         const labelOpenBlank = labels[1]
         const labelClose = labels[2]
+        const labelShareUrl = labels[3]
 
         const iframeUri = getIframeUri(video)
         if (!iframeUri) {
@@ -187,27 +148,66 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         buttonContainer.classList.add('peertube-plugin-livechat-buttons')
         container.append(buttonContainer)
 
+        // Here are buttons that are magically merged
+        const groupButtons: displayButtonOptions[] = []
+        groupButtons.push({
+          buttonContainer,
+          name: 'open',
+          label: labelOpen,
+          callback: () => openChat(video),
+          icon: openChatSVG,
+          additionalClasses: []
+        })
         if (showOpenBlank) {
-          displayButton(
-            buttonContainer, 'open',
-            labelOpen, () => openChat(video),
-            openChatSVG,
-            ['peertube-plugin-livechat-multi-button-main']
-          )
-          displayButton(
-            buttonContainer, 'openblank',
-            labelOpenBlank, () => {
+          groupButtons.push({
+            buttonContainer,
+            name: 'openblank',
+            label: labelOpenBlank,
+            callback: () => {
               closeChat()
               window.open(iframeUri)
             },
-            openBlankChatSVG,
-            ['peertube-plugin-livechat-multi-button-secondary']
-          )
-        } else {
-          displayButton(buttonContainer, 'open', labelOpen, () => openChat(video), openChatSVG)
+            icon: openBlankChatSVG,
+            additionalClasses: []
+          })
         }
-        displayButton(buttonContainer, 'close', labelClose, () => closeChat(), closeSVG)
+        if (showShareUrlButton) {
+          groupButtons.push({
+            buttonContainer,
+            name: 'shareurl',
+            label: labelShareUrl,
+            callback: () => {
+              shareChatUrl(registerOptions)
+            },
+            icon: shareChatUrlSVG,
+            additionalClasses: []
+          })
+        }
 
+        // If more than one groupButtons:
+        // - the first must have class 'peertube-plugin-livechat-multi-button-main'
+        // - middle ones must have 'peertube-plugin-livechat-multi-button-secondary'
+        // - the last must have 'peertube-plugin-livechat-multi-button-last-secondary'
+        if (groupButtons.length > 1) {
+          groupButtons[0].additionalClasses?.push('peertube-plugin-livechat-multi-button-main')
+          for (let i = 1; i < groupButtons.length - 1; i++) { // middle
+            groupButtons[i].additionalClasses?.push('peertube-plugin-livechat-multi-button-secondary')
+          }
+          groupButtons[groupButtons.length - 1]
+            .additionalClasses?.push('peertube-plugin-livechat-multi-button-last-secondary')
+        }
+
+        for (const button of groupButtons) {
+          displayButton(button)
+        }
+
+        displayButton({
+          buttonContainer,
+          name: 'close',
+          label: labelClose,
+          callback: () => closeChat(),
+          icon: closeSVG
+        })
         resolve()
       })
     })
@@ -301,7 +301,12 @@ function register ({ registerHook, peertubeHelpers }: RegisterOptions): void {
         return
       }
 
-      insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank']).then(() => {
+      let showShareUrlButton: boolean = false
+      if (settings['chat-type'] === 'builtin-prosody') {
+        // FIXME: showShareUrlButton should only be true for video owner and instance moderators.
+        showShareUrlButton = true
+      }
+      insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank'], showShareUrlButton).then(() => {
         if (settings['chat-auto-display']) {
           openChat(video)
         } else if (container) {
