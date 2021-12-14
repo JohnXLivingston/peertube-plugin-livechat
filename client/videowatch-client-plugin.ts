@@ -1,10 +1,9 @@
-import type { ChatType } from 'shared/lib/types'
 import { videoHasWebchat } from 'shared/lib/video'
-import { AutoColors, isAutoColorsAvailable, areAutoColorsValid } from 'shared/lib/autocolors'
 import { logger } from './videowatch/logger'
 import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG } from './videowatch/buttons'
 import { displayButton, displayButtonOptions } from './videowatch/button'
 import { shareChatUrl } from './videowatch/share'
+import { getIframeUri } from './videowatch/uri'
 
 interface VideoWatchLoadedHookOptions {
   videojs: any
@@ -16,112 +15,6 @@ function register (registerOptions: RegisterOptions): void {
   const { registerHook, peertubeHelpers } = registerOptions
   let settings: any = {}
 
-  function getBaseRoute (): string {
-    // NB: this will come with Peertube > 3.2.1 (3.3.0?)
-    if (peertubeHelpers.getBaseRouterRoute) {
-      return peertubeHelpers.getBaseRouterRoute()
-    }
-    // We are guessing the route with the correct plugin version with this trick:
-    const staticBase = peertubeHelpers.getBaseStaticRoute()
-    // we can't use '/plugins/livechat/router', because the loaded html page needs correct relative paths.
-    return staticBase.replace(/\/static.*$/, '/router')
-  }
-
-  function getIframeUri (video: Video): string | null {
-    if (!settings) {
-      logger.error('Settings are not initialized, too soon to compute the iframeUri')
-      return null
-    }
-    let iframeUri = ''
-    const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
-    if (chatType === 'builtin-prosody' || chatType === 'builtin-converse') {
-      // Using the builtin converseJS
-      iframeUri = getBaseRoute() + '/webchat/room/' + encodeURIComponent(video.uuid)
-    } else if (chatType === 'external-uri') {
-      iframeUri = settings['chat-uri'] || ''
-      iframeUri = iframeUri.replace(/{{VIDEO_UUID}}/g, encodeURIComponent(video.uuid))
-      if (iframeUri.includes('{{CHANNEL_ID}}')) {
-        if (!video.channel || !video.channel.id) {
-          logger.error('Missing channel info in video object.')
-          return null
-        }
-        iframeUri = iframeUri.replace(/{{CHANNEL_ID}}/g, encodeURIComponent(video.channel.id))
-      }
-      if (!/^https?:\/\//.test(iframeUri)) {
-        logger.error('The webchaturi must begin with https://')
-        return null
-      }
-    } else {
-      logger.error('Chat disabled.')
-      return null
-    }
-    if (iframeUri === '') {
-      logger.error('No iframe uri')
-      return null
-    }
-
-    if (
-      settings['converse-autocolors'] &&
-      isAutoColorsAvailable(settings['chat-type'] as ChatType, settings['converse-theme'])
-    ) {
-      logger.info('We have to try to compute autocolors.')
-      try {
-        const autocolors = computeAutoColors()
-        if (autocolors) {
-          const url = new URL(iframeUri, window.location.origin)
-          for (const p in autocolors) {
-            url.searchParams.set('_ac_' + p, autocolors[p as keyof AutoColors])
-          }
-          iframeUri = url.href
-        }
-      } catch (err) {
-        logger.error(`Failed computing autocolors:  '${err as string}'`)
-      }
-    }
-
-    return iframeUri
-  }
-
-  function computeAutoColors (): AutoColors | null {
-    if (!window.getComputedStyle) {
-      logger.warn('[AutoColors] getComputedStyle is not available, aborting.')
-      return null
-    }
-
-    const styles = window.getComputedStyle(document.body)
-
-    // Peertube has no CSS variable for the button color...
-    // Computing by hand.
-    // Searching for one of these button:
-    const button = document.querySelector('.publish-button') ?? document.querySelector('.peertube-button-link')
-    if (!button) {
-      logger.warn('[AutoColors] Cant find a button, aborting.')
-      return null
-    }
-    const buttonStyles = window.getComputedStyle(button)
-
-    const autocolors: AutoColors = {
-      mainForeground: styles.getPropertyValue('--mainForegroundColor'),
-      mainBackground: styles.getPropertyValue('--mainBackgroundColor'),
-      greyForeground: styles.getPropertyValue('--greyForegroundColor'),
-      greyBackground: styles.getPropertyValue('--greyBackgroundColor'),
-      menuForeground: styles.getPropertyValue('--menuForegroundColor'),
-      menuBackground: styles.getPropertyValue('--menuBackgroundColor'),
-      inputForeground: styles.getPropertyValue('--inputForegroundColor'),
-      inputBackground: styles.getPropertyValue('--inputBackgroundColor'),
-      buttonForeground: buttonStyles.color,
-      buttonBackground: styles.getPropertyValue('--mainColor'),
-      link: styles.getPropertyValue('--mainForegroundColor'),
-      linkHover: styles.getPropertyValue('--mainForegroundColor')
-    }
-    const autoColorsTest = areAutoColorsValid(autocolors)
-    if (autoColorsTest !== true) {
-      logger.warn('[AutoColors] Computed colors are not valid, dropping. Invalid values: ' + autoColorsTest.join(', '))
-      return null
-    }
-    return autocolors
-  }
-
   async function insertChatDom (
     container: HTMLElement, video: Video, showOpenBlank: boolean, showShareUrlButton: boolean
   ): Promise<void> {
@@ -132,14 +25,14 @@ function register (registerOptions: RegisterOptions): void {
         peertubeHelpers.translate('Open chat'),
         peertubeHelpers.translate('Open chat in a new window'),
         peertubeHelpers.translate('Close chat'),
-        peertubeHelpers.translate('Share link')
+        peertubeHelpers.translate('Share chat link')
       ]).then(labels => {
         const labelOpen = labels[0]
         const labelOpenBlank = labels[1]
         const labelClose = labels[2]
         const labelShareUrl = labels[3]
 
-        const iframeUri = getIframeUri(video)
+        const iframeUri = getIframeUri(registerOptions, settings, video)
         if (!iframeUri) {
           return reject(new Error('No uri, cant display the buttons.'))
         }
@@ -177,7 +70,7 @@ function register (registerOptions: RegisterOptions): void {
             name: 'shareurl',
             label: labelShareUrl,
             callback: () => {
-              shareChatUrl(registerOptions)
+              shareChatUrl(registerOptions).then(() => {}, () => {})
             },
             icon: shareChatUrlSVG,
             additionalClasses: []
@@ -221,7 +114,7 @@ function register (registerOptions: RegisterOptions): void {
     }
 
     logger.info('Trying to load the chat for video ' + video.uuid + '.')
-    const iframeUri = getIframeUri(video)
+    const iframeUri = getIframeUri(registerOptions, settings, video)
     if (!iframeUri) {
       logger.error('Incorrect iframe uri')
       return false
