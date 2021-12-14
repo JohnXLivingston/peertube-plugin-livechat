@@ -15,3 +15,13 @@ body.livechat-iframe #conversejs .chat-head {
     }
   }
 }
+
+// Readonly mode
+body.livechat-readonly #conversejs {
+  .chat-head,
+  .bottom-panel,
+  converse-message-actions,
+  converse-muc-sidebar {
+    display: none !important;
+  }
+}

@@ -82,6 +82,7 @@ interface InitConverseParams {
   websocketServiceUrl: string
   authenticationUrl: string
   advancedControls: boolean
+  forceReadonly: boolean
   theme: string
 }
 window.initConverse = async function initConverse ({
@@ -92,17 +93,21 @@ window.initConverse = async function initConverse ({
   websocketServiceUrl,
   authenticationUrl,
   advancedControls,
+  forceReadonly,
   theme
 }: InitConverseParams) {
   const isInIframe = inIframe()
 
+  const body = document.querySelector('body')
   if (isInIframe) {
-    const body = document.querySelector('body')
     if (body) {
       body.classList.add('livechat-iframe')
       // prevent horizontal scrollbar when in iframe. (don't know why, but does not work if done by CSS)
       body.style.overflowX = 'hidden'
     }
+  }
+  if (forceReadonly) {
+    body?.classList.add('livechat-readonly')
   }
 
   const params: any = {
@@ -125,7 +130,7 @@ window.initConverse = async function initConverse ({
     auto_focus: !isInIframe,
     hide_muc_participants: isInIframe,
     play_sounds: false,
-    muc_mention_autocomplete_min_chars: 3,
+    muc_mention_autocomplete_min_chars: 2,
     muc_mention_autocomplete_filter: 'contains',
     muc_instant_rooms: true,
     show_client_info: false,
@@ -172,6 +177,9 @@ window.initConverse = async function initConverse ({
 
   if (!isAuthenticated) {
     console.log('User is not authenticated.')
+    if (forceReadonly) {
+      params.nickname = 'Viewer ' + (new Date()).getTime().toString()
+    }
     // TODO: try to make these params work
     // params.muc_nickname_from_jid = true => compute the muc nickname from the jid (will be random here)
     // params.auto_register_muc_nickname = true => maybe not relevant here (dont do what i thought)

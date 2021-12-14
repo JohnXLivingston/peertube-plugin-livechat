@@ -4,6 +4,7 @@
 
 ### Features
 
+* Builtin Prosody: Readonly mode. You can open the chat in readonly mode. Could be used to integrate in OBS for example.
 * Builtin Prosody: you can now allow «external XMPP components» to connect. This can be used for exemple to connect bots or bridges. For now, only connections from localhost will be allowed.
 
 ### Minor changes and fixes
@@ -11,6 +12,7 @@
 * Spanish translations (thanks [rnek0](https://github.com/rnek0)).
 * Hide secret keys in diagnostic tool.
 * Builtin ConverseJS mode: fix advanced controls hiding.
+* Builtin Prosody & Builtin ConverseJS: muc_mention_autocomplete_min_chars set to 2 (3 previously)
 
 ## v5.0.2
 

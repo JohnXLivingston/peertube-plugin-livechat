@@ -53,6 +53,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let wsUri: string
       let authenticationUrl: string = ''
       let advancedControls: boolean = false
+      let forceReadonly: boolean = false
       let converseJSTheme: string = settings['converse-theme'] as string
       if (!/^\w+$/.test(converseJSTheme)) {
         converseJSTheme = 'peertube'
@@ -85,6 +86,9 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           getBaseRouterRoute(options) +
           'api/auth'
         advancedControls = true
+        if (req.query._readonly === 'true') {
+          forceReadonly = true
+        }
       } else if (chatType === 'builtin-converse') {
         if (!settings['chat-server']) {
           throw new Error('Missing chat-server settings.')
@@ -197,6 +201,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       } else {
         peertubeHelpers.logger.debug('No AutoColors.')
       }
+
       // ... then inject it in the page.
       page = page.replace(/{{ROOM}}/g, room)
       page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
@@ -205,6 +210,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{ADVANCEDCONTROLS}}/g, advancedControls ? 'true' : 'false')
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
       page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
+      page = page.replace(/{{FORCEREADONLY}}/g, forceReadonly ? 'true' : 'false')
 
       res.status(200)
       res.type('html')
