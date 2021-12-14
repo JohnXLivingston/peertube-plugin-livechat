@@ -70,7 +70,7 @@ function register (registerOptions: RegisterOptions): void {
             name: 'shareurl',
             label: labelShareUrl,
             callback: () => {
-              shareChatUrl(registerOptions).then(() => {}, () => {})
+              shareChatUrl(registerOptions, settings, video).then(() => {}, () => {})
             },
             icon: shareChatUrlSVG,
             additionalClasses: []
