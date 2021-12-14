@@ -81,7 +81,7 @@ interface InitConverseParams {
   boshServiceUrl: string
   websocketServiceUrl: string
   authenticationUrl: string
-  advancedControls: 'true' | 'false'
+  advancedControls: boolean
   theme: string
 }
 window.initConverse = async function initConverse ({

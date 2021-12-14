@@ -10,6 +10,7 @@
 
 * Spanish translations (thanks [rnek0](https://github.com/rnek0)).
 * Hide secret keys in diagnostic tool.
+* Builtin ConverseJS mode: fix advanced controls hiding.
 
 ## v5.0.2
 
