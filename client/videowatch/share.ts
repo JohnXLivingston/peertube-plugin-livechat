@@ -27,6 +27,17 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
   function renderContent (container: HTMLElement): void {
     if (!form) {
       container.childNodes.forEach(child => container.removeChild(child))
+
+      const pUrl = document.createElement('p')
+      const url = document.createElement('input')
+      url.setAttribute('type', 'text')
+      url.setAttribute('readonly', '')
+      url.setAttribute('autocomplete', 'off')
+      url.setAttribute('placeholder', '')
+      url.classList.add('form-control', 'readonly')
+      pUrl.append(url)
+      container.append(pUrl)
+
       const pTips = document.createElement('p')
       pTips.textContent = tipsOBS
       container.append(pTips)
@@ -40,16 +51,6 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
       readonlyLabelEl.prepend(readonly)
       pReadonly.append(readonlyLabelEl)
 
-      const pUrl = document.createElement('p')
-      container.append(pUrl)
-      const url = document.createElement('input')
-      url.setAttribute('type', 'text')
-      url.setAttribute('readonly', '')
-      url.setAttribute('autocomplete', 'off')
-      url.setAttribute('placeholder', '')
-      url.classList.add('form-control', 'readonly')
-      pUrl.append(url)
-
       readonly.onclick = () => {
         renderContent(container)
       }
@@ -61,6 +62,8 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
     }
 
     // TODO: save last form state, to restore each time the modal is opened.
+    // TODO: check when the feature should be available
+    // TODO: check the theme? some of the options should only be available in some cases.
 
     const uriOptions: UriOptions = {
       ignoreAutoColors: true,
