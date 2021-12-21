@@ -7,12 +7,20 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
   const [
     labelShare,
     labelReadonly,
-    tipsOBS
+    tipsOBS,
+    labelCopy,
+    labelCopied,
+    labelError,
+    labelOpen
   ] = await Promise.all([
     peertubeHelpers.translate('Share chat link'),
     peertubeHelpers.translate('Read-only'),
     // eslint-disable-next-line max-len
-    peertubeHelpers.translate('Tips for streamers: To add the chat to your OBS, generate a read-only link and use it as a browser source.')
+    peertubeHelpers.translate('Tips for streamers: To add the chat to your OBS, generate a read-only link and use it as a browser source.'),
+    peertubeHelpers.translate('Copy'),
+    peertubeHelpers.translate('Link copied'),
+    peertubeHelpers.translate('Error'),
+    peertubeHelpers.translate('Open')
   ])
 
   const defaultUri = getIframeUri(registerOptions, settings, video)
@@ -28,31 +36,65 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
     if (!form) {
       container.childNodes.forEach(child => container.removeChild(child))
 
-      const pUrl = document.createElement('p')
+      container.classList.add('peertube-plugin-livechat-shareurl-modal')
+
+      const divUrl = document.createElement('div')
+      divUrl.classList.add('livechat-shareurl-copy')
       const url = document.createElement('input')
       url.setAttribute('type', 'text')
       url.setAttribute('readonly', '')
       url.setAttribute('autocomplete', 'off')
       url.setAttribute('placeholder', '')
       url.classList.add('form-control', 'readonly')
-      pUrl.append(url)
-      container.append(pUrl)
+      divUrl.append(url)
+      const copy = document.createElement('button')
+      copy.classList.add('btn', 'btn-outline-secondary', 'text-uppercase')
+      copy.textContent = labelCopy
+      divUrl.append(copy)
+      const open = document.createElement('button')
+      open.classList.add('btn', 'btn-outline-secondary', 'text-uppercase')
+      open.textContent = labelOpen
+      divUrl.append(open)
+      container.append(divUrl)
 
-      const pTips = document.createElement('p')
-      pTips.textContent = tipsOBS
-      container.append(pTips)
+      const divTips = document.createElement('div')
+      divTips.textContent = tipsOBS
+      container.append(divTips)
 
-      const pReadonly = document.createElement('p')
-      container.append(pReadonly)
+      const divCustom = document.createElement('div')
+      divCustom.classList.add('livechat-shareurl-custom')
+      container.append(divCustom)
+
+      const divReadonly = document.createElement('div')
+      divCustom.append(divReadonly)
       const readonly = document.createElement('input')
       readonly.setAttribute('type', 'checkbox')
       const readonlyLabelEl = document.createElement('label')
       readonlyLabelEl.textContent = labelReadonly
       readonlyLabelEl.prepend(readonly)
-      pReadonly.append(readonlyLabelEl)
+      divReadonly.append(readonlyLabelEl)
 
       readonly.onclick = () => {
         renderContent(container)
+      }
+
+      url.onclick = () => {
+        url.select()
+        url.setSelectionRange(0, 99999) /* For mobile devices */
+      }
+
+      copy.onclick = () => {
+        url.select()
+        url.setSelectionRange(0, 99999) /* For mobile devices */
+        navigator.clipboard.writeText(url.value).then(() => {
+          peertubeHelpers.notifier.success(labelCopied)
+        }, () => {
+          peertubeHelpers.notifier.error(labelError)
+        })
+      }
+
+      open.onclick = () => {
+        window.open(url.value)
       }
 
       form = {
@@ -105,7 +147,7 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
   })
   peertubeHelpers.showModal({
     title: labelShare,
-    content: `<p>${defaultUri ?? ''}</p>`,
+    content: `<p>${defaultUri ?? ''}</p>`, // incase the observer is broken...
     close: true
   })
   // just in case, remove the observer after a timeout, if not already done...
