@@ -316,6 +316,20 @@ You can report the bug on the official
   })
 
   registerSetting({
+    name: 'chat-share-url',
+    label: 'Show the «share chat link» button',
+    descriptionHTML: 'There will be a button for sharing a chat url (could be used to intregrated in OBS for example).',
+    private: false,
+    type: 'select',
+    default: 'owner',
+    options: [
+      { label: 'Show for nobody', value: 'nobody' },
+      { label: 'Show for everyone', value: 'everyone' },
+      { label: 'Show for the video owner', value: 'owner' },
+      { label: 'Show for the video owner and instance\'s moderators', value: 'owner+moderators' }
+    ]
+  })
+  registerSetting({
     name: 'prosody-peertube-uri',
     label: 'Peertube url for API calls',
     type: 'input',

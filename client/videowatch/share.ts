@@ -130,8 +130,6 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
     // Saving the form state, to restore each time the modal is opened.
     save(form)
 
-    // TODO: check when the feature should be available
-
     const uriOptions: UriOptions = {
       ignoreAutoColors: form.autoColors ? !form.autoColors.checked : true,
       permanent: true

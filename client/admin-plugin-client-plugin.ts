@@ -212,6 +212,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
         case 'prosody-muc-expiration':
         case 'prosody-c2s':
         case 'prosody-components':
+        case 'chat-share-url':
           return options.formValues['chat-type'] !== ('builtin-prosody' as ChatType)
         case 'prosody-c2s-port':
           return !(

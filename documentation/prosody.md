@@ -67,6 +67,15 @@ Here is the documentation: [common settings](./common.md).
 
 ### Prosody advanced settings
 
+#### Show the «share chat link» button
+
+This feature enable a «share chat link» modal. With this modal, you can generate urls to join the chat.
+The chat can be customized (readonly mode, use the current theme, ...).
+
+You can for example generate a readonly url and use it in OBS to integrate the chat in your live stream!
+
+This settings allows you to choose who can access this modal.
+
 #### Peertube url for API calls
 
 In some rare cases, Prosody can't call Peertube's API from its public URI.
@@ -128,6 +137,18 @@ When you open the chat room in full screen, there will also be a menu with dedic
 
 ## Advanced usages
 
-### OBS Overlay using Matterbridge
+### OBS Overlay
+
+#### Using readonly chat url
+
+You can use the «share chat link» feature (see above) to generate an url to your chat.
+Check the «readonly» checkbox in the modal.
+Then use this link as a «web browser source» in OBS.
+
+Note: you can customize colors. This is undocumented yet, but you can try this:
+in the modal, check «use curent theme colors», then you can try to manually change color values in the url.
+You must use valid CSS color values, and they must be properly url encoded.
+
+#### Using Matterbridge
 
 Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>

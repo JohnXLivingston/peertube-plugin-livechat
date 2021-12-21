@@ -68,6 +68,7 @@ interface Video {
   originInstanceUrl: string
   uuid: string
   channel: Channel
+  byAccount: string
 }
 
 interface Channel {

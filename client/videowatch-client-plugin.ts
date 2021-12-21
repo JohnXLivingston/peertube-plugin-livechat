@@ -11,6 +11,54 @@ interface VideoWatchLoadedHookOptions {
   playlist?: any
 }
 
+function guessIsMine (registerOptions: RegisterOptions, video: Video): boolean {
+  // Note: this is not safe, but it is not a problem:
+  // this function is used for non critical functions
+  try {
+    if (!video) {
+      return false
+    }
+    if (!video.isLocal) {
+      return false
+    }
+    if (!window.localStorage) {
+      return false
+    }
+    const username = window.localStorage.getItem('username') ?? ''
+    if (!username) {
+      return false
+    }
+    if (username !== video.byAccount) {
+      return false
+    }
+    return true
+  } catch (err) {
+    logger.error(err as string)
+    return false
+  }
+}
+
+function guessIamIModerator (_registerOptions: RegisterOptions): boolean {
+  // Note: this is not safe, but it is not a problem:
+  // this function is used for non critical functions
+  try {
+    if (!window.localStorage) {
+      return false
+    }
+    const role = window.localStorage.getItem('role') ?? ''
+    if (!role) {
+      return false
+    }
+    if (role !== '0' && role !== '1') {
+      return false
+    }
+    return true
+  } catch (err) {
+    logger.error(err as string)
+    return false
+  }
+}
+
 function register (registerOptions: RegisterOptions): void {
   const { registerHook, peertubeHelpers } = registerOptions
   let settings: any = {}
@@ -196,8 +244,18 @@ function register (registerOptions: RegisterOptions): void {
 
       let showShareUrlButton: boolean = false
       if (settings['chat-type'] === 'builtin-prosody') {
-        // FIXME: showShareUrlButton should only be true for video owner and instance moderators.
-        showShareUrlButton = true
+        // The share url functionality should be technically possible for other modes
+        // than builtin-prosody. But it is too difficult to maintain.
+        // So I choose to enable it only for builtin-prosody.
+
+        const chatShareUrl = settings['chat-share-url'] ?? ''
+        if (chatShareUrl === 'everyone') {
+          showShareUrlButton = true
+        } else if (chatShareUrl === 'owner') {
+          showShareUrlButton = guessIsMine(registerOptions, video)
+        } else if (chatShareUrl === 'owner+moderators') {
+          showShareUrlButton = guessIsMine(registerOptions, video) || guessIamIModerator(registerOptions)
+        }
       }
       insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank'], showShareUrlButton).then(() => {
         if (settings['chat-auto-display']) {
