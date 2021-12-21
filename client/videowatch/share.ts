@@ -2,6 +2,12 @@ import { logger } from './logger'
 import { getIframeUri, UriOptions } from './uri'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 
+interface ShareForm {
+  readonly: HTMLInputElement
+  url: HTMLInputElement
+  autoColors?: HTMLInputElement
+}
+
 async function shareChatUrl (registerOptions: RegisterOptions, settings: any, video: Video): Promise<void> {
   const peertubeHelpers = registerOptions.peertubeHelpers
 
@@ -31,11 +37,7 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
     return
   }
 
-  let form: {
-    readonly: HTMLInputElement
-    url: HTMLInputElement
-    autoColors?: HTMLInputElement
-  } | undefined
+  let form: ShareForm | undefined
   function renderContent (container: HTMLElement): void {
     if (!form) {
       container.childNodes.forEach(child => container.removeChild(child))
@@ -122,11 +124,13 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
         url,
         autoColors
       }
+      restore(form)
     }
 
-    // TODO: save last form state, to restore each time the modal is opened.
+    // Saving the form state, to restore each time the modal is opened.
+    save(form)
+
     // TODO: check when the feature should be available
-    // TODO: check the theme? some of the options should only be available in some cases.
 
     const uriOptions: UriOptions = {
       ignoreAutoColors: form.autoColors ? !form.autoColors.checked : true,
@@ -137,6 +141,41 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
     }
     const iframeUri = getIframeUri(registerOptions, settings, video, uriOptions)
     form.url.setAttribute('value', iframeUri ?? '')
+  }
+
+  function save (form: ShareForm): void {
+    if (!window.localStorage) {
+      return
+    }
+    const v = {
+      version: 1, // in case we add incompatible values in a near feature
+      readonly: !!form.readonly.checked,
+      autocolors: !!form.autoColors?.checked
+    }
+    window.localStorage.setItem('peertube-plugin-livechat-shareurl', JSON.stringify(v))
+  }
+
+  function restore (form: ShareForm): void {
+    if (!window.localStorage) {
+      return
+    }
+    const s = window.localStorage.getItem('peertube-plugin-livechat-shareurl')
+    if (!s) {
+      return
+    }
+    let v: any
+    try {
+      v = JSON.parse(s)
+      if (!v || (typeof v !== 'object') || v.version !== 1) {
+        return
+      }
+      form.readonly.checked = !!v.readonly
+      if (form.autoColors) {
+        form.autoColors.checked = !!v.autocolors
+      }
+    } catch (err) {
+      logger.error(err as string)
+    }
   }
 
   logger.info('Opening the share modal...')
