@@ -1,5 +1,6 @@
 import { logger } from './logger'
 import { getIframeUri, UriOptions } from './uri'
+import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 
 async function shareChatUrl (registerOptions: RegisterOptions, settings: any, video: Video): Promise<void> {
   const peertubeHelpers = registerOptions.peertubeHelpers
@@ -11,7 +12,8 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
     labelCopy,
     labelCopied,
     labelError,
-    labelOpen
+    labelOpen,
+    labelAutocolors
   ] = await Promise.all([
     peertubeHelpers.translate('Share chat link'),
     peertubeHelpers.translate('Read-only'),
@@ -20,7 +22,8 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
     peertubeHelpers.translate('Copy'),
     peertubeHelpers.translate('Link copied'),
     peertubeHelpers.translate('Error'),
-    peertubeHelpers.translate('Open')
+    peertubeHelpers.translate('Open'),
+    peertubeHelpers.translate('Use current theme colors')
   ])
 
   const defaultUri = getIframeUri(registerOptions, settings, video)
@@ -31,6 +34,7 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
   let form: {
     readonly: HTMLInputElement
     url: HTMLInputElement
+    autoColors?: HTMLInputElement
   } | undefined
   function renderContent (container: HTMLElement): void {
     if (!form) {
@@ -74,8 +78,24 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
       readonlyLabelEl.prepend(readonly)
       divReadonly.append(readonlyLabelEl)
 
+      let autoColors
+      if (isAutoColorsAvailable(settings['chat-type'], settings['converse-theme'])) {
+        const label = document.createElement('label')
+        label.innerText = labelAutocolors
+        autoColors = document.createElement('input')
+        autoColors.setAttribute('type', 'checkbox')
+        label.prepend(autoColors)
+        divCustom.append(label)
+      }
+
       readonly.onclick = () => {
         renderContent(container)
+      }
+
+      if (autoColors) {
+        autoColors.onclick = () => {
+          renderContent(container)
+        }
       }
 
       url.onclick = () => {
@@ -99,7 +119,8 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
 
       form = {
         readonly,
-        url
+        url,
+        autoColors
       }
     }
 
@@ -108,7 +129,7 @@ async function shareChatUrl (registerOptions: RegisterOptions, settings: any, vi
     // TODO: check the theme? some of the options should only be available in some cases.
 
     const uriOptions: UriOptions = {
-      ignoreAutoColors: true,
+      ignoreAutoColors: form.autoColors ? !form.autoColors.checked : true,
       permanent: true
     }
     if (form.readonly.checked) {
