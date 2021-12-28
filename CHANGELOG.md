@@ -12,6 +12,7 @@
 ### Minor changes and fixes
 
 * Spanish translations (thanks [rnek0](https://github.com/rnek0)).
+* Occitan translations (thanks [Mejans](https://github.com/Mejans))
 * Hide secret keys in diagnostic tool.
 * Builtin ConverseJS mode: fix advanced controls hiding.
 * Builtin Prosody & Builtin ConverseJS: muc_mention_autocomplete_min_chars set to 2 (3 previously)

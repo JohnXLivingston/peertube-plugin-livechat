@@ -106,7 +106,7 @@
     "fr-FR": "./languages/fr.json",
     "eo": "./languages/eo.json",
     "eu-ES": "./languages/eu.json",
-    "oc-FR": "./languages/oc.json",    
+    "oc": "./languages/oc.json",    
     "pl-PL": "./languages/pl.json",
     "it-IT": "./languages/it.json"
   }
