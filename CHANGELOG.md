@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.2.1
+
+### Fixes
+
+* Trying to fix an OBS cache problem, where OBS can't connect to the chat after a plugin update.
+
 ## 5.2.0
 
 ### Features

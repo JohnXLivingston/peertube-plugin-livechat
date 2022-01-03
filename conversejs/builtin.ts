@@ -180,6 +180,11 @@ window.initConverse = async function initConverse ({
     console.log('User is not authenticated.')
     if (forceReadonly) {
       params.nickname = 'Viewer ' + (new Date()).getTime().toString()
+
+      // To avoid some bugs in OBS, trying to clear the session storage before ConverseJS connects.
+      if (window.sessionStorage?.clear) {
+        window.sessionStorage.clear()
+      }
     }
     // TODO: try to make these params work
     // params.muc_nickname_from_jid = true => compute the muc nickname from the jid (will be random here)
