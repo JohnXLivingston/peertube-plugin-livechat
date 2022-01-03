@@ -46,6 +46,34 @@ And that's it!
 
 You can find the source for this Dockerfile [here](../docker/Dockerfile.buster).
 
+### Yunohost
+
+Yunohost comes with the Metronome XMPP server. Metronome is an old fork of Prosody, but this plugin is not compatible.
+Unfortunately, the Metronome package conflicts with the Prosody package.
+You can't install both using debian packages.
+
+These packages are conflicting, because the two services can't run simultanously (ports would conflict).
+
+However, this plugin does not need the Prosody service to run. It will launch its own process, on non-standard ports.
+So you can easily build Prosody from sources, so that the plugin can use the executable.
+
+The official documentation is here: [installing_from_source](https://prosody.im/doc/installing_from_source).
+Please refer to this link for up-to-date instructions.
+Here is a summary of the steps needed:
+
+- create a folder where you will build prosody (anywhere in your home dir)
+- in this folder, follow the instructions from [installing_from_source](https://prosody.im/doc/installing_from_source):
+  
+```bash
+wget https://prosody.im/downloads/source/prosody-0.11.11.tar.gz # check on the official documentation if there is a newer version
+tar xzf prosody-0.11.11.tar.gz
+cd prosody-0.11.11
+sudo apt-get build-dep prosody # (this should work, even if Metronome is installed ; otherwise try: sudo apt install lua5.2 liblua5.2-dev libidn11-dev libssl-dev )
+./configure
+make
+sudo make install # should install Prosody in /usr/local.
+```
+
 ## Settings
 
 ### Chat mode
