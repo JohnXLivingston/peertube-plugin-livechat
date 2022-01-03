@@ -42,10 +42,10 @@ body.converse-fullscreen.theme-peertube {
   --message-text-color: var(--peertube-main-foreground);
   --message-receipt-color: var(--green);
   --save-button-color: var(--green);
-  --button-text-color: white;
+  --button-text-color: var(--peertube-button-foreground);
   --message-avatar-width: 36px;
   --message-avatar-height: 36px;
-  --chat-background-color: white;
+  --chat-background-color: var(--peertube-main-background);
   --chat-textarea-color: var(--peertube-input-foreground);
   --chat-textarea-background-color: var(--peertube-input-background);
   --chat-textarea-height: 60px;
@@ -61,7 +61,7 @@ body.converse-fullscreen.theme-peertube {
   --chat-head-text-color: var(--peertube-main-foreground);
   --chat-toolbar-btn-color: var(--peertube-button-background);
   --chat-toolbar-btn-disabled-color: var(--peertube-grey-background);
-  --toolbar-btn-text-color: white;
+  --toolbar-btn-text-color: var(--peertube-button-foreground);
   --chat-content-background-color: var(--peertube-main-background);
   --chat-info-color: var(--peertube-grey-foreground); // FIXME: dont know if it is used, and what it is.
   --highlight-color: var(--peertube-grey-foreground); // FIXME: dont know if it is used, and what it is.
@@ -98,7 +98,7 @@ body.converse-fullscreen.theme-peertube {
   --branding-font: "Source Sans Pro", sans-serif;
   --heading-display: inline;
   --heading-color: #9b4d;
-  --chatroom-color: var(--redder-orange);
+  --chatroom-color: var(--peertube-main-foreground);
   --chatroom-badge-color: var(--peertube-button-background);
   --chatroom-badge-hover-color: var(--peertube-button-background);
   --chatroom-correcting-color: var(--peertube-grey-background);
