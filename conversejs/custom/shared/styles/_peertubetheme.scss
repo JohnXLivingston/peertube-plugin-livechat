@@ -1,4 +1,20 @@
 #conversejs.theme-peertube {
+  .dropdown-menu {
+    // Fixing all dropdown colors
+    --text-color: #212529; // default bootstrap color for dropdown-items
+    --text-color-lighten-15-percent: #8c8c8c; // default ConverseJS theme color
+
+    background-color: #fff; // this is the default bootstrap color, used by ConverseJS
+
+    a,
+    i,
+    button {
+      --text-color: #212529; // default bootstrap color for dropdown-items
+
+      color: #212529; // default bootstrap color for dropdown-items
+    }
+  }
+
   .chatbox {
     converse-chat-toolbar {
       color: var(--peertube-main-foreground);
@@ -99,20 +115,6 @@
     // Fix color/background-color for correcting messages and textareas
     color: var(--peertube-grey-foreground) !important;
     background-color: var(--peertube-grey-background) !important;
-  }
-
-  .message.chat-msg .chat-msg__actions {
-    // Fixing message actions colors
-    .dropdown-menu {
-      --text-color-lighten-15-percent: #8c8c8c; // default ConverseJS theme color
-
-      background-color: #fff; // this is the default bootstrap color, used by ConverseJS
-
-      i,
-      button {
-        color: #212529; // default bootstrap color for dropdown-items
-      }
-    }
   }
 
   // hidding avatars when screen width is not big enough.
