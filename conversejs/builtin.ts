@@ -143,7 +143,7 @@ window.initConverse = async function initConverse ({
     allow_message_retraction: 'all',
     visible_toolbar_buttons: {
       call: false,
-      spoiler: true,
+      spoiler: false,
       emoji: true,
       toggle_occupants: true
     },

@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased Yet
+
+### Features
+
+* Using ConverseJS 9.0.0 (instead of 7.0.6).
+  * NB: the «spoiler» function is disabled, as it is buggy in ConverseJS 9.0.0 (see <https://github.com/conversejs/converse.js/issues/2627>)
+
 ## 5.1.0
 
 ### Features
