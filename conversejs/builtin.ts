@@ -82,7 +82,8 @@ interface InitConverseParams {
   websocketServiceUrl: string
   authenticationUrl: string
   advancedControls: boolean
-  forceReadonly: boolean
+  forceReadonly: boolean | 'noscroll'
+  noScroll: boolean
   theme: string
 }
 window.initConverse = async function initConverse ({
@@ -108,6 +109,9 @@ window.initConverse = async function initConverse ({
   }
   if (forceReadonly) {
     body?.classList.add('livechat-readonly')
+    if (forceReadonly === 'noscroll') {
+      body?.classList.add('livechat-noscroll')
+    }
   }
 
   const params: any = {

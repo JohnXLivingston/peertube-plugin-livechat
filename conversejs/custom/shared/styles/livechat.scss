@@ -25,3 +25,7 @@ body.livechat-readonly #conversejs {
     display: none !important;
   }
 }
+
+body.livechat-readonly.livechat-noscroll converse-chat-content {
+  overflow-y: hidden !important;
+}

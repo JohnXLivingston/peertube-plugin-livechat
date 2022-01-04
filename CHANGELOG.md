@@ -1,5 +1,11 @@
 # Changelog
 
+## ???
+
+## Features
+
+* Builtin Prosody, Share chat url: ability to show/hide the scrollbar in readonly mode.
+
 ## 5.2.4
 
 ### Fixes

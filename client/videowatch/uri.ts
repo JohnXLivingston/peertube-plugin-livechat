@@ -4,7 +4,7 @@ import { logger } from './logger'
 import { computeAutoColors } from './colors'
 
 interface UriOptions {
-  readonly?: boolean
+  readonly?: boolean | 'noscroll'
   ignoreAutoColors?: boolean
   permanent?: boolean
 }
@@ -79,7 +79,7 @@ function getIframeUri (
   }
 
   if (uriOptions.readonly) {
-    iFrameUri.searchParams.set('_readonly', 'true')
+    iFrameUri.searchParams.set('_readonly', (typeof uriOptions.readonly === 'string') ? uriOptions.readonly : 'true')
   }
 
   iframeUriStr = iFrameUri.href

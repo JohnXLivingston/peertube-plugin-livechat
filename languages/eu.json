@@ -6,6 +6,7 @@
   "If enabled, there will be a chat next to the video.": "Gaituta badago, txat bat agertuko da bideoaren ondoan.",
   "Share chat link": false,
   "Read-only": false,
+  "Show the scrollbar": false,
   "Tips for streamers: To add the chat to your OBS, generate a read-only link and use it as a browser source.": false,
   "Copy": false,
   "Link copied": false,

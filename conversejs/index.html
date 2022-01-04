@@ -23,7 +23,7 @@
     authenticationUrl: '{{AUTHENTICATION_URL}}',
     advancedControls: '{{ADVANCEDCONTROLS}}' === 'true',
     theme: '{{CONVERSEJS_THEME}}',
-    forceReadonly: '{{FORCEREADONLY}}' === 'true'
+    forceReadonly: '{{FORCEREADONLY}}' === 'noscroll' ? '{{FORCEREADONLY}}' : '{{FORCEREADONLY}}' === 'true'
   })
 </script>
 </body>

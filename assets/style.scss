@@ -134,5 +134,15 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
     label {
       display: block;
     }
+
+    .livechat-shareurl-custom-readonly {
+      display: flex;
+      flex-flow: wrap;
+      flex-direction: row;
+
+      label:not(:first-child) {
+        margin-left: 40px;
+      }
+    }
   }
 }

@@ -53,7 +53,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let wsUri: string
       let authenticationUrl: string = ''
       let advancedControls: boolean = false
-      let forceReadonly: boolean = false
+      let forceReadonly: 'true' | 'false' | 'noscroll' = 'false'
       let converseJSTheme: string = settings['converse-theme'] as string
       if (!/^\w+$/.test(converseJSTheme)) {
         converseJSTheme = 'peertube'
@@ -87,7 +87,9 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           'api/auth'
         advancedControls = true
         if (req.query._readonly === 'true') {
-          forceReadonly = true
+          forceReadonly = 'true'
+        } else if (req.query._readonly === 'noscroll') {
+          forceReadonly = 'noscroll'
         }
       } else if (chatType === 'builtin-converse') {
         if (!settings['chat-server']) {
@@ -210,7 +212,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{ADVANCEDCONTROLS}}/g, advancedControls ? 'true' : 'false')
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
       page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
-      page = page.replace(/{{FORCEREADONLY}}/g, forceReadonly ? 'true' : 'false')
+      page = page.replace(/{{FORCEREADONLY}}/g, forceReadonly)
 
       res.status(200)
       res.type('html')
