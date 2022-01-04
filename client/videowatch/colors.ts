@@ -20,18 +20,18 @@ function computeAutoColors (): AutoColors | null {
   const buttonStyles = window.getComputedStyle(button)
 
   const autocolors: AutoColors = {
-    mainForeground: styles.getPropertyValue('--mainForegroundColor'),
-    mainBackground: styles.getPropertyValue('--mainBackgroundColor'),
-    greyForeground: styles.getPropertyValue('--greyForegroundColor'),
-    greyBackground: styles.getPropertyValue('--greyBackgroundColor'),
-    menuForeground: styles.getPropertyValue('--menuForegroundColor'),
-    menuBackground: styles.getPropertyValue('--menuBackgroundColor'),
-    inputForeground: styles.getPropertyValue('--inputForegroundColor'),
-    inputBackground: styles.getPropertyValue('--inputBackgroundColor'),
-    buttonForeground: buttonStyles.color,
-    buttonBackground: styles.getPropertyValue('--mainColor'),
-    link: styles.getPropertyValue('--mainForegroundColor'),
-    linkHover: styles.getPropertyValue('--mainForegroundColor')
+    mainForeground: styles.getPropertyValue('--mainForegroundColor').trim(),
+    mainBackground: styles.getPropertyValue('--mainBackgroundColor').trim(),
+    greyForeground: styles.getPropertyValue('--greyForegroundColor').trim(),
+    greyBackground: styles.getPropertyValue('--greyBackgroundColor').trim(),
+    menuForeground: styles.getPropertyValue('--menuForegroundColor').trim(),
+    menuBackground: styles.getPropertyValue('--menuBackgroundColor').trim(),
+    inputForeground: styles.getPropertyValue('--inputForegroundColor').trim(),
+    inputBackground: styles.getPropertyValue('--inputBackgroundColor').trim(),
+    buttonForeground: buttonStyles.color.trim(),
+    buttonBackground: styles.getPropertyValue('--mainColor').trim(),
+    link: styles.getPropertyValue('--mainForegroundColor').trim(),
+    linkHover: styles.getPropertyValue('--mainForegroundColor').trim()
   }
   const autoColorsTest = areAutoColorsValid(autocolors)
   if (autoColorsTest !== true) {

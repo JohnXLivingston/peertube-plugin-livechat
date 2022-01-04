@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.2.4
+
+### Fixes
+
+* Fix Autocolors on chrome browser
+
 ## 5.2.3
 
 ### Fixes
