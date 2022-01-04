@@ -6,7 +6,7 @@
   "If enabled, there will be a chat next to the video.": "Se activat la messatjariá serà a costat de la vidèo.",
   "Share chat link": "Partejar lo ligam de la discussion",
   "Read-only": "Lectura sola",
-  "Show the scrollbar": false,
+  "Show the scrollbar": "Afichar la barra de desfilament",
   "Tips for streamers: To add the chat to your OBS, generate a read-only link and use it as a browser source.": "Astúcia pels difusors  : per apondre la messatjariá a vòstre OBS, generatz un ligam «  lectura sola» e utilizatz-lo coma «  font navegador web  ».",
   "Copy": "Copiar",
   "Link copied": "Ligam copiat",
