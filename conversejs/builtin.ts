@@ -213,7 +213,7 @@ window.initConverse = async function initConverse ({
       dependencies: ['converse-muc-views'],
       overrides: {
         ChatRoomView: {
-          renderHeading: function (this: any): any {
+          requestUpdate: function (this: any): any {
             console.log('[livechatWindowTitlePlugin] updating the document title.')
             try {
               const title = this.model.getDisplayName()
@@ -221,9 +221,9 @@ window.initConverse = async function initConverse ({
                 document.title = title
               }
             } catch (err) {
-              console.error('Failed updating the window title', err)
+              console.error('[livechatWindowTitlePlugin] Failed updating the window title', err)
             }
-            return this.__super__.renderHeading.apply(this, arguments)
+            return this.__super__.requestUpdate.apply(this)
           }
         }
       }

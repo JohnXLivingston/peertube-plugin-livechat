@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.2.3
+
+### Fixes
+
+* Fix ConverseJS: livechatWindowTitlePlugin was broken (window title won't be set to the room name)
+
 ## 5.2.1
 
 ### Fixes
