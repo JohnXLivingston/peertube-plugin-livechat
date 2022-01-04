@@ -2,9 +2,13 @@
 
 ## ???
 
-## Features
+### Features
 
 * Builtin Prosody, Share chat url: ability to show/hide the scrollbar in readonly mode.
+
+### Fixes
+
+* ConverseJS plugin livechatWindowTitlePlugin: Avoid errors when model is not initialized.
 
 ## 5.2.4
 

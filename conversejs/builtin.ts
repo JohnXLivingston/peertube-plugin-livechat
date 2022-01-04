@@ -220,9 +220,11 @@ window.initConverse = async function initConverse ({
           requestUpdate: function (this: any): any {
             console.log('[livechatWindowTitlePlugin] updating the document title.')
             try {
-              const title = this.model.getDisplayName()
-              if (document.title !== title) {
-                document.title = title
+              if (this.model?.getDisplayName) {
+                const title = this.model.getDisplayName()
+                if (document.title !== title) {
+                  document.title = title
+                }
               }
             } catch (err) {
               console.error('[livechatWindowTitlePlugin] Failed updating the window title', err)
