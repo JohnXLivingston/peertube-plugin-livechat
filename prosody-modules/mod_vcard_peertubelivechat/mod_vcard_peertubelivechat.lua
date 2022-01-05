@@ -69,6 +69,7 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
 
   vcard_temp:text_tag("FN", ret.displayName);
   vcard_temp:text_tag("NICKNAME", ret.displayName);
+  vcard_temp:text_tag("URL", ret.url);
   
   if ret.avatar and ret.avatar.path then
     module:log("debug", "Downloading user avatar on %s", peertube_url .. ret.avatar.path);
@@ -77,12 +78,14 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
       if math.floor(code / 100) == 2 then
         module:log("debug", "Avatar found for %s", who);
         vcard_temp:tag("PHOTO")
-        if (response and response.headers and response.headers["Content-Type"]) then
-          module:log("debug", "Avatar Content-Type: %s", response.headers["Content-Type"]);
-          vcard_temp:text_tag("TYPE", response.headers["Content-Type"])
+        if (response and response.headers and response.headers["content-type"]) then
+          module:log("debug", "Avatar content-type: %s", response.headers["content-type"]);
+          vcard_temp:text_tag("TYPE", response.headers["content-type"])
+          vcard_temp:text_tag("BINVAL", b64(body))
+          vcard_temp:up()
+        else
+          module:log("debug", "Avatar has no content-type.");
         end
-        vcard_temp:text_tag("BINVAL", b64(body))
-        vcard_temp:up()
       else
         module:log("debug", "Cant load avatar: ", body);
       end
