@@ -1,6 +1,6 @@
 -- mod_muc_moderation
 --
--- Copyright (C) 2015-2020 Kim Alvefur
+-- Copyright (C) 2015-2021 Kim Alvefur
 --
 -- This file is MIT licensed.
 --
@@ -44,6 +44,7 @@ module:hook("iq-set/bare/" .. xmlns_fasten .. ":apply-to", function (event)
 	if not moderate_tag then return end -- some other kind of fastening?
 
 	local reason = moderate_tag:get_child_text("reason");
+	local retract = moderate_tag:get_child("retract", xmlns_retract);
 
 	local room_jid = stanza.attr.to;
 	local room_node = jid.split(room_jid);
@@ -55,10 +56,19 @@ module:hook("iq-set/bare/" .. xmlns_fasten .. ":apply-to", function (event)
 	local actor = stanza.attr.from;
 	local actor_nick = room:get_occupant_jid(actor);
 	local affiliation = room:get_affiliation(actor);
+	-- Retrieve their current role, iff they are in the room, otherwise what they
+	-- would have based on affiliation.
 	local role = room:get_role(actor_nick) or room:get_default_role(affiliation);
 	if valid_roles[role or "none"] < valid_roles.moderator then
 		origin.send(st.error_reply(stanza, "auth", "forbidden", "You need a role of at least 'moderator'"));
 		return true;
+	end
+
+	if not actor_nick then
+		local reserved_nickname = room:get_affiliation_data(jid.bare(actor), "reserved_nickname");
+		if reserved_nickname then
+			actor_nick = room.jid .. "/" .. reserved_nickname;
+		end
 	end
 
 	-- Original stanza to base tombstone on
@@ -83,23 +93,28 @@ module:hook("iq-set/bare/" .. xmlns_fasten .. ":apply-to", function (event)
 		return true;
 	end
 
-	-- Replacements
-	local tombstone = st.message({ from = original.attr.from, type = "groupchat", id = original.attr.id })
-		:tag("moderated", { xmlns = xmlns_moderate, by = actor_nick })
-			:tag("retracted", { xmlns = xmlns_retract, stamp = dt.datetime() }):up();
 
 	local announcement = st.message({ from = room_jid, type = "groupchat", id = id.medium(), })
 		:tag("apply-to", { xmlns = xmlns_fasten, id = stanza_id })
 			:tag("moderated", { xmlns = xmlns_moderate, by = actor_nick })
-			:tag("retract", { xmlns = xmlns_retract }):up();
+
+	if retract then
+		announcement:tag("retract", { xmlns = xmlns_retract }):up();
+	end
 
 	if reason then
-		tombstone:text_tag("reason", reason);
 		announcement:text_tag("reason", reason);
 	end
 
-	if muc_log_archive.set then
-		-- Tombstone
+	if muc_log_archive.set and retract then
+		local tombstone = st.message({ from = original.attr.from, type = "groupchat", id = original.attr.id })
+			:tag("moderated", { xmlns = xmlns_moderate, by = actor_nick })
+				:tag("retracted", { xmlns = xmlns_retract, stamp = dt.datetime() }):up();
+
+		if reason then
+			tombstone:text_tag("reason", reason);
+		end
+
 		local was_replaced = muc_log_archive:set(room_node, stanza_id, tombstone);
 		if not was_replaced then
 			origin.send(st.error_reply(stanza, "wait", "internal-server-error"));

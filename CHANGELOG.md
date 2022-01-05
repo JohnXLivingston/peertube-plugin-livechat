@@ -6,9 +6,10 @@
 
 * Builtin Prosody, Share chat url: ability to show/hide the scrollbar in readonly mode.
 
-### Fixes
+### Minor changes and fixes
 
 * ConverseJS plugin livechatWindowTitlePlugin: Avoid errors when model is not initialized.
+* Update prosody-modules (mod_muc_moderation, mod_auth_http)
 
 ## 5.2.4
 

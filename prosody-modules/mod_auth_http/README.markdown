@@ -58,54 +58,13 @@ and `user_exists`. Unsupported methods should return a HTTP status code
 of `501 Not Implemented`, but other error codes will also be handled by
 Prosody.
 
-### register
-
-**HTTP method:**
-: POST
-
-**Success codes:**
-: 201
-
-**Error codes:**
-: 409 (user exists)
-
-### check_password
-
-**HTTP method:**
-: GET
-
-**Success codes:**
-: 200
-
-**Response:**
-: A text string of `true` if the user exists, or `false` otherwise.
-
-### user_exists
-
-**HTTP method:**
-: GET
-
-**Success codes:**
-: 200
-
-**Response:**
-: A text string of `true` if the user exists, or `false` otherwise.
-
-### set_password
-
-**HTTP method:**
-: POST
-
-**Success codes:**
-: 200, 201, or 204
-
-### remove_user
-
-**HTTP method:**
-: POST
-
-**Success codes:**
-: 200, 201 or 204
+  Method          HTTP method Success codes   Error codes       Response
+  --------        ----        ---             ----------------- -----------------------------------------------------------------
+  register        POST        201             409 (user exists)
+  check\_password GET         200                               A text string of `true` if the user exists, or `false` otherwise.
+  user\_exists    GET         200                               A text string of `true` if the user exists, or `false` otherwise.
+  set\_password   POST        200, 201 or 204
+  remove\_user    POST        200, 201 or 204
 
 ## Examples
 
