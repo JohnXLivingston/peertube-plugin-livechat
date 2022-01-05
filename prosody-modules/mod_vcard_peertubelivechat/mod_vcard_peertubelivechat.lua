@@ -66,6 +66,8 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   end
   
   local vcard_temp = st.stanza("vCard", { xmlns = "vcard-temp" });
+
+  vcard_temp:text_tag("FN", ret.displayName);
   vcard_temp:text_tag("NICKNAME", ret.displayName);
   
   if ret.avatar and ret.avatar.path then
