@@ -108,14 +108,14 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const apikey = await getAPIKey(options)
   valuesToHideInDiagnostic.set('APIKey', apikey)
 
-  let baseApiUrl = settings['prosody-peertube-uri'] as string
-  if (baseApiUrl && !/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(baseApiUrl)) {
+  let basePeertubeUrl = settings['prosody-peertube-uri'] as string
+  if (basePeertubeUrl && !/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(basePeertubeUrl)) {
     throw new Error('Invalid prosody-peertube-uri')
   }
-  if (!baseApiUrl) {
-    baseApiUrl = options.peertubeHelpers.config.getWebserverUrl()
+  if (!basePeertubeUrl) {
+    basePeertubeUrl = options.peertubeHelpers.config.getWebserverUrl()
   }
-  baseApiUrl += getBaseRouterRoute(options) + 'api/'
+  const baseApiUrl = basePeertubeUrl + getBaseRouterRoute(options) + 'api/'
 
   const authApiUrl = baseApiUrl + 'user' // FIXME: should be protected by apikey, but mod_auth_http cant handle params
   const roomApiUrl = baseApiUrl + 'room?apikey=' + apikey + '&jid={room.jid|jid_node}'
@@ -152,6 +152,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   config.useDefaultPersistent()
 
   config.useListRoomsApi(apikey)
+  config.usePeertubeVCards(basePeertubeUrl)
 
   config.useTestModule(apikey, testApiUrl)
 

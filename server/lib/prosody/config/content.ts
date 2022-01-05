@@ -157,9 +157,9 @@ class ProsodyConfigContent {
       'uptime', // Report how long server has been running
       'ping', // Replies to XMPP pings with pongs
       'bosh', // Enable BOSH clients, aka "Jabber over HTTP"
-      'posix', // POSIX functionality, sends server to background, enables syslog, etc.
-      'pep', // Enables users to publish their avatar, mood, activity, playing music and more
-      'vcard_legacy' // Conversion between legacy vCard and PEP Avatar, vcard
+      'posix' // POSIX functionality, sends server to background, enables syslog, etc.
+      // 'pep', // Enables users to publish their avatar, mood, activity, playing music and more
+      // 'vcard_legacy' // Conversion between legacy vCard and PEP Avatar, vcard
       // 'vcard4' // User profiles (stored in PEP)
 
     ])
@@ -299,6 +299,13 @@ class ProsodyConfigContent {
     this.muc.add('modules_enabled', 'http_peertubelivechat_test')
     this.muc.set('peertubelivechat_test_apikey', prosodyApikey)
     this.muc.set('peertubelivechat_test_peertube_api_url', apiurl)
+  }
+
+  usePeertubeVCards (peertubeUrl: string): void {
+    if (this.authenticated) {
+      this.authenticated.add('modules_enabled', 'vcard_peertubelivechat')
+      this.authenticated.set('peertubelivechat_vcard_peertube_url', peertubeUrl)
+    }
   }
 
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
