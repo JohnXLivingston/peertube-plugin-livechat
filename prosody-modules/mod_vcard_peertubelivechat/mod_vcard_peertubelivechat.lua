@@ -1,5 +1,6 @@
 local st = require "util.stanza";
 local http = require "net.http";
+local gettime = require 'socket'.gettime;
 local async = require "util.async";
 local b64 = require "util.encodings".base64.encode;
 local jid_split = require "util.jid".split;
@@ -8,6 +9,9 @@ local uh = require "util.http";
 
 module:add_feature("vcard-temp");
 
+local CACHE_EXPIRY = 3600;
+local cache_user = {};
+
 local peertube_url = assert(module:get_option_string("peertubelivechat_vcard_peertube_url", nil), "'peertubelivechat_vcard_peertube_url' is a required option");
 if peertube_url:sub(-1,-1) == "/" then peertube_url = peertube_url:sub(1,-2); end
 
@@ -15,6 +19,24 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   local origin, stanza = event.origin, event.stanza;
   local who = jid_split(stanza.attr.to) or origin.username
   module:log("debug", "vCard request for %s", who);
+
+  local from_cache = cache_user[who];
+  if from_cache then
+    if from_cache["last_fetch_time"] and from_cache["last_fetch_time"] + CACHE_EXPIRY < gettime() then
+      module:log("debug", "vCard result for %s was in cache but is expired.", who);
+      cache_user[who] = nil
+    else
+      module:log("debug", "vCard result for %s is in cache.", who);
+      if (from_cache['vcard']) then
+        origin.send(st.reply(stanza):add_child(from_cache["vcard"]));
+      else
+        origin.send(st.error_reply(stanza, "cancel", "item-not-found"));
+      end
+      return true;
+    end
+  else
+    module:log("debug", "vCard result for %s is not in cache.", who);
+  end
 
   local wait, done = async.waiter();
   local url = peertube_url .. '/api/v1/accounts/' .. uh.urlencode(who);
@@ -39,6 +61,7 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   if not ret then
     module:log("debug", "Peertube user not found, no vCard for %s", who);
     origin.send(st.error_reply(stanza, "cancel", "item-not-found"));
+    cache_user[who] = { last_fetch_time = gettime() };
     return true;
   end
   
@@ -68,6 +91,7 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   end
 
   origin.send(st.reply(stanza):add_child(vcard_temp));
+  cache_user[who] = { last_fetch_time = gettime(), vcard = vcard_temp };
   return true;
 end, 1); -- TODO: Negative priority, so if the user has set a custom vCard (mod_vcard_legacy), it will be used?
 -- TODO: cache results for N seconds
