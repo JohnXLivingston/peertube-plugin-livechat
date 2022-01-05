@@ -64,13 +64,13 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
     cache_user[who] = { last_fetch_time = gettime() };
     return true;
   end
-  
+
   local vcard_temp = st.stanza("vCard", { xmlns = "vcard-temp" });
 
   vcard_temp:text_tag("FN", ret.displayName);
   vcard_temp:text_tag("NICKNAME", ret.displayName);
   vcard_temp:text_tag("URL", ret.url);
-  
+
   if ret.avatar and ret.avatar.path then
     module:log("debug", "Downloading user avatar on %s", peertube_url .. ret.avatar.path);
     local waitAvatar, doneAvatar = async.waiter();
@@ -98,5 +98,4 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   origin.send(st.reply(stanza):add_child(vcard_temp));
   cache_user[who] = { last_fetch_time = gettime(), vcard = vcard_temp };
   return true;
-end, 1); -- TODO: Negative priority, so if the user has set a custom vCard (mod_vcard_legacy), it will be used?
--- TODO: cache results for N seconds
+end);
