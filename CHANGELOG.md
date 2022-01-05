@@ -12,6 +12,7 @@
 * ConverseJS plugin livechatWindowTitlePlugin: Avoid errors when model is not initialized.
 * Update prosody-modules (mod_muc_moderation, mod_auth_http)
 * Enable Prosody modules pep and vcard_legacy
+* ConverseJS Peertube theme: hide avatars under 250px width instead of 576px.
 
 ## 5.2.4
 

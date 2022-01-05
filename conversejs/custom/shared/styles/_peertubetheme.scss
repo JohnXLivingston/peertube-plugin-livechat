@@ -118,7 +118,7 @@
   }
 
   // hidding avatars when screen width is not big enough.
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 250px) {
     .message {
       &.chat-msg {
         .chat-msg__content {
