@@ -10,6 +10,7 @@
 
 * ConverseJS plugin livechatWindowTitlePlugin: Avoid errors when model is not initialized.
 * Update prosody-modules (mod_muc_moderation, mod_auth_http)
+* Enable Prosody modules pep and vcard_legacy
 
 ## 5.2.4
 
