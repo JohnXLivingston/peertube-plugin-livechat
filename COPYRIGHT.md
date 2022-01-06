@@ -13,6 +13,7 @@ Copyright holders:
 3rd party dependencies comes with their respective licenses.
 
 Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
+The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.
 
 Some material icons downloaded from this website where used for icons: [Material.io](https://material.io/resources/icons).
 

@@ -43,6 +43,7 @@ Please refer to the page [CONTRIBUTING.md](CONTRIBUTING.md).
 [package.json](package.json), [COPYRIGHT](COPYRIGHT.md) and [LICENSE](LICENSE) files contain the license information for this software and its dependencies.
 
 Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
+The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.
 
 Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, and for the financial support.
 

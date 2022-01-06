@@ -41,6 +41,7 @@ Merci de vous référer à la page [CONTRIBUTING.fr.md](CONTRIBUTING.fr.md).
 Les fichiers [package.json](package.json), [COPYRIGHT](COPYRIGHT.md) et [LICENSE](LICENSE) contiennent les informations sur la licence du présent logiciel (en anglais).
 
 Merci à David Revoy pour son travail sur la mascotte de Peertube, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
+Le character design est en licence CC-By, et les fichiers SVG utilisés pour créer certains logos et avatars en GPLv3.0.
 
 Merci à [Framasoft](https://framasoft.org) pour avoir rendu [Peertube](https://joinpeertube.org/) possible, et pour le support financier.
 
