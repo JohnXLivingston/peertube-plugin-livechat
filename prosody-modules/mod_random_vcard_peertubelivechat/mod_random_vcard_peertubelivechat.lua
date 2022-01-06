@@ -10,15 +10,15 @@ local avatars = {};
 local function load_avatar(filename)
   local file = assert(io.open(path.join(avatars_dir, filename), "r"));
   local result = {
-    type = 'image/png',
+    type = 'image/jpg',
     content = b64(file:read("*a"))
   };
   file:close();
   return result;
 end
-local AVATARS_COUNT = 40;
+local AVATARS_COUNT = 130;
 for i = 1, AVATARS_COUNT do
-  avatars[i] = load_avatar(i .. '.png');
+  avatars[i] = load_avatar(i .. '.jpg');
 end
 
 module:hook("iq-get/bare/vcard-temp:vCard", function (event)
