@@ -77,12 +77,12 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
     http.request(peertube_url .. ret.avatar.path, {}, function (body, code, response)
       if math.floor(code / 100) == 2 then
         module:log("debug", "Avatar found for %s", who);
-        vcard_temp:tag("PHOTO")
+        vcard_temp:tag("PHOTO");
         if (response and response.headers and response.headers["content-type"]) then
           module:log("debug", "Avatar content-type: %s", response.headers["content-type"]);
-          vcard_temp:text_tag("TYPE", response.headers["content-type"])
-          vcard_temp:text_tag("BINVAL", b64(body))
-          vcard_temp:up()
+          vcard_temp:text_tag("TYPE", response.headers["content-type"]);
+          vcard_temp:text_tag("BINVAL", b64(body));
+          vcard_temp:up();
         else
           module:log("debug", "Avatar has no content-type.");
         end
