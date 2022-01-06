@@ -16,7 +16,7 @@ local function load_avatar(filename)
   file:close();
   return result;
 end
-local AVATARS_COUNT = 10;
+local AVATARS_COUNT = 20;
 for i = 1, AVATARS_COUNT do
   avatars[i] = load_avatar(i .. '.png');
 end
