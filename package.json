@@ -85,7 +85,7 @@
     "prepare": "npm run clean && npm run build",
     "build:converse": "bash conversejs/build-conversejs.sh",
     "build:images": "mkdir -p dist/client/images && npx svgo -f public/images/ -o dist/client/images/",
-    "build:avatars": "mkdir -p dist/server/avatars && ./node_modules/sharp-cli/bin/cli.js -i ./public/images/avatars/**/*.svg -o ./dist/server/avatars/ -f png resize 40 40",
+    "build:avatars": "mkdir -p dist/server/avatars && ./node_modules/sharp-cli/bin/cli.js -i ./public/images/avatars/**/*.svg -o ./dist/server/avatars/ -f png resize 120 120",
     "build:webpack": "webpack --mode=production",
     "build:server": "npx tsc --build server/tsconfig.json",
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
