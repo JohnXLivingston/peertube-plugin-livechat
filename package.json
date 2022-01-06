@@ -83,7 +83,7 @@
     "clean:light": "rm -rf dist/*",
     "prepare": "npm run clean && npm run build",
     "build:converse": "bash conversejs/build-conversejs.sh",
-    "build:images": "mkdir -p dist/client/images && npx svgo -f public/images/ -o dist/client/images/",
+    "build:images": "mkdir -p dist/client/images && npx svgo -f public/images/ -o dist/client/images/ && npx svgo -f public/images/avatars/ -o dist/server/avatars/",
     "build:webpack": "webpack --mode=production",
     "build:server": "npx tsc --build server/tsconfig.json",
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",

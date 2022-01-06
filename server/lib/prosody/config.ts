@@ -60,7 +60,8 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     log: path.resolve(dir, 'prosody.log'),
     config: path.resolve(dir, 'prosody.cfg.lua'),
     data: path.resolve(dir, 'data'),
-    modules: path.resolve(__dirname, '../../prosody-modules')
+    modules: path.resolve(__dirname, '../../prosody-modules'),
+    avatars: path.resolve(__dirname, '../../avatars')
   }
 }
 
@@ -153,6 +154,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
 
   config.useListRoomsApi(apikey)
   config.usePeertubeVCards(basePeertubeUrl)
+  config.useAnonymousRandomVCards(paths.avatars)
 
   config.useTestModule(apikey, testApiUrl)
 

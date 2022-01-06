@@ -308,6 +308,13 @@ class ProsodyConfigContent {
     }
   }
 
+  useAnonymousRandomVCards (avatarPath: string): void {
+    if (this.anon) {
+      this.anon.add('modules_enabled', 'random_vcard_peertubelivechat')
+      this.anon.set('peertubelivechat_random_vcard_avatars_path', avatarPath)
+    }
+  }
+
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
     let log = ''
     log += 'log = {\n'

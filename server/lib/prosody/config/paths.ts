@@ -6,6 +6,7 @@ interface ProsodyFilePaths {
   config: string
   data: string
   modules: string
+  avatars: string
 }
 
 export {

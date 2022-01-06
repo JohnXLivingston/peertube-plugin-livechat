@@ -6,6 +6,7 @@
 
 * Builtin Prosody, Share chat url: ability to show/hide the scrollbar in readonly mode.
 * Builtin Prosody: display Peertube users avatars.
+* Builtin Prosody: display random avatars for anonymous users.
 
 ### Minor changes and fixes
 
