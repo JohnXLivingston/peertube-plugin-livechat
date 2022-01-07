@@ -7,8 +7,7 @@ module.exports = merge(prod, {
   resolve: {
     extensions: ['.js'],
     alias: {
-      // To override a template, use this syntax:
-      // 'templates/muc_sidebar.js': path.resolve(__dirname, 'custom/templates/muc_sidebar.js')
+      './templates/muc-bottom-panel.js': path.resolve('custom/templates/muc-bottom-panel.js'),
       '../../templates/background_logo.js$': path.resolve(__dirname, 'custom/templates/background_logo.js'),
       'shared/styles/index.scss$': path.resolve(__dirname, 'custom/shared/styles/livechat.scss')
     }

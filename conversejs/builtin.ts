@@ -82,6 +82,7 @@ interface InitConverseParams {
   websocketServiceUrl: string
   authenticationUrl: string
   advancedControls: boolean
+  autoViewerMode: boolean
   forceReadonly: boolean | 'noscroll'
   noScroll: boolean
   theme: string
@@ -94,6 +95,7 @@ window.initConverse = async function initConverse ({
   websocketServiceUrl,
   authenticationUrl,
   advancedControls,
+  autoViewerMode,
   forceReadonly,
   theme
 }: InitConverseParams) {
@@ -155,7 +157,7 @@ window.initConverse = async function initConverse ({
     persistent_store: 'sessionStorage',
     show_images_inline: false, // for security reason, and to avoid bugs when image is larger that iframe
     render_media: false, // for security reason, and to avoid bugs when image is larger that iframe
-    whitelisted_plugins: ['livechatWindowTitlePlugin']
+    whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin']
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
@@ -229,6 +231,44 @@ window.initConverse = async function initConverse ({
         }
       }
     })
+
+    if (autoViewerMode && !isAuthenticated) {
+      window.converse.plugins.add('livechatViewerModePlugin', {
+        dependencies: ['converse-muc', 'converse-muc-views'],
+        initialize: function () {
+          const _converse = this._converse
+          const getDefaultMUCNickname = _converse.getDefaultMUCNickname
+          if (!getDefaultMUCNickname) {
+            console.error('[livechatViewerModePlugin] getDefaultMUCNickname is not initialized.')
+          } else {
+            Object.assign(_converse, {
+              getDefaultMUCNickname: function (this: any): any {
+                return getDefaultMUCNickname.apply(this, arguments) ?? 'Anonymous ' + (new Date()).getTime().toString()
+              }
+            })
+          }
+          _converse.api.settings.update({
+            livechat_viewer_mode: true
+          })
+
+          function refreshViewerMode (canChat: boolean): void {
+            console.log('[livechatViewerModePlugin] refreshViewerMode: ' + (canChat ? 'off' : 'on'))
+            if (canChat) {
+              body?.setAttribute('livechat-viewer-mode', 'off')
+            } else {
+              body?.setAttribute('livechat-viewer-mode', 'on')
+            }
+          }
+
+          _converse.api.listen.on('livechatViewerModeSetNickname', () => refreshViewerMode(true))
+          _converse.api.listen.on('chatRoomInitialized', function (this: any, model: any): void {
+            const nick = model?.get ? model.get('nick') : ''
+            refreshViewerMode(nick && !/^Anonymous /.test(nick))
+          })
+        }
+      })
+    }
+
     window.converse.initialize(params)
   } catch (error) {
     console.error('Failed initializing converseJS', error)
