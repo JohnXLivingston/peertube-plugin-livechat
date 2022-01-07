@@ -26,6 +26,13 @@ body.livechat-readonly #conversejs {
   }
 }
 
-body.livechat-readonly.livechat-noscroll converse-chat-content {
-  overflow-y: hidden !important;
+body.livechat-readonly.livechat-noscroll {
+  converse-chat-content {
+    overflow-y: hidden !important;
+  }
+
+  .message.separator {
+    // also hide separators (new day, new message)
+    display: none;
+  }
 }
