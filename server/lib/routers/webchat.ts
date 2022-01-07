@@ -52,7 +52,8 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let boshUri: string
       let wsUri: string
       let authenticationUrl: string = ''
-      let advancedControls: boolean = false
+      let advancedControls: boolean = false // auto join the chat in viewer mode, if not logged in
+      let autoViewerMode: boolean = false
       let forceReadonly: 'true' | 'false' | 'noscroll' = 'false'
       let converseJSTheme: string = settings['converse-theme'] as string
       if (!/^\w+$/.test(converseJSTheme)) {
@@ -90,6 +91,8 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           forceReadonly = 'true'
         } else if (req.query._readonly === 'noscroll') {
           forceReadonly = 'noscroll'
+        } else {
+          autoViewerMode = true // auto join the chat in viewer mode, if not logged in
         }
       } else if (chatType === 'builtin-converse') {
         if (!settings['chat-server']) {
@@ -210,6 +213,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
       page = page.replace(/{{ADVANCEDCONTROLS}}/g, advancedControls ? 'true' : 'false')
+      page = page.replace(/{{AUTOVIEWERMODE}}/g, autoViewerMode ? 'true' : 'false')
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
       page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
       page = page.replace(/{{FORCEREADONLY}}/g, forceReadonly)
