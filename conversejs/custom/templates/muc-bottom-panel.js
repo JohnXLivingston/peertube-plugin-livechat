@@ -16,9 +16,9 @@ export default (o) => {
     const i18nNickname = __('Nickname')
     const i18nJoin = __('Enter groupchat')
     return html`
-    <div class="livechat-viewer-mode-nick chatroom-form-container muc-nickname-form"
+    <div class="livechat-viewer-mode-nick chatroom-form-container"
             @submit=${ev => setNickname(ev, model)}>
-        <form class="converse-form chatroom-form converse-centered-form">
+        <form class="converse-form chatroom-form">
             <fieldset class="form-group">
                 <input type="text"
                     required="required"

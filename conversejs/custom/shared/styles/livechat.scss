@@ -45,6 +45,14 @@ body.livechat-readonly.livechat-noscroll {
 body[livechat-viewer-mode="on"] {
   .livechat-viewer-mode-nick {
     display: initial;
+
+    form {
+      display: flex !important;
+      flex-flow: row wrap !important;
+      padding-top: 0.5em !important;
+      padding-bottom: 0.5em !important;
+      border-top: var(--chatroom-separator-border-bottom) !important;
+    }
   }
 
   converse-muc-bottom-panel {
