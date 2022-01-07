@@ -1,5 +1,11 @@
 # Changelog
 
+## ???
+
+### Minor changes and fixes
+
+* Builtin Prosody: better random avatars quality.
+
 ## 5.3.0
 
 ### Features

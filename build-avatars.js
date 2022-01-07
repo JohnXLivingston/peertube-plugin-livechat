@@ -28,6 +28,6 @@ for (let i = 1; i <= count; i++) {
   for (let j = 0; j < backgrounds.length; j++) {
     const out = i + (count * j)
     const background = backgrounds[j]
-    sharp(inputFile).flatten({background}).resize(120, 120).jpeg().toFile(path.join(outputDir, out.toString() + '.jpg'))
+    sharp(inputFile).flatten({background}).resize(120, 120).jpeg({quality: 95, mozjpeg: true}).toFile(path.join(outputDir, out.toString() + '.jpg'))
   }
 }
