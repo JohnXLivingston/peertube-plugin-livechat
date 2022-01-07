@@ -47,7 +47,9 @@ body[livechat-viewer-mode="on"] {
     display: initial;
   }
 
-  .livechat-viewer-mode-panel {
-    display: none;
+  converse-muc-bottom-panel {
+    >:not(.livechat-viewer-mode-nick) {
+      display: none;
+    }
   }
 }

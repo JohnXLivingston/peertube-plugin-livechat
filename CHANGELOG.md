@@ -2,6 +2,10 @@
 
 ## ???
 
+### Features
+
+* Builtin Prosody: anonymous users connects automatically to the chat in a readonly mode. They must choose a nickname before they can chat.
+
 ### Minor changes and fixes
 
 * Builtin Prosody: better random avatars quality.

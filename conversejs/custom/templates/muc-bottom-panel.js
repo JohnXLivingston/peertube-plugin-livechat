@@ -32,9 +32,7 @@ export default (o) => {
             </fieldset>
         </form>
     </div>
-    <span class="livechat-viewer-mode-panel">
-      ${tplMucBottomPanel(o)}
-    </span>`
+    ${tplMucBottomPanel(o)}`
   }
   return tplMucBottomPanel(o)
 }
