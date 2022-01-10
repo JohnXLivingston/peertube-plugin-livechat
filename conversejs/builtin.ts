@@ -74,6 +74,12 @@ async function authenticatedMode (authenticationUrl: string): Promise<false | Au
   }
 }
 
+function randomNick (base: string): string {
+  // using a 6 digit random number to generate a nickname with low colision risk
+  const n = 100000 + Math.floor(Math.random() * 900000)
+  return base + ' ' + n.toString()
+}
+
 interface InitConverseParams {
   jid: string
   assetsPath: string
@@ -185,7 +191,7 @@ window.initConverse = async function initConverse ({
   if (!isAuthenticated) {
     console.log('User is not authenticated.')
     if (forceReadonly) {
-      params.nickname = 'Viewer ' + (new Date()).getTime().toString()
+      params.nickname = randomNick('Viewer')
     }
     // TODO: try to make these params work
     // params.muc_nickname_from_jid = true => compute the muc nickname from the jid (will be random here)
@@ -243,7 +249,7 @@ window.initConverse = async function initConverse ({
           } else {
             Object.assign(_converse, {
               getDefaultMUCNickname: function (this: any): any {
-                return getDefaultMUCNickname.apply(this, arguments) ?? 'Anonymous ' + (new Date()).getTime().toString()
+                return getDefaultMUCNickname.apply(this, arguments) ?? randomNick('Anonymous')
               }
             })
           }
