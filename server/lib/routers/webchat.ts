@@ -1,3 +1,4 @@
+import type { RegisterServerOptions, MVideoThumbnail } from '@peertube/peertube-types'
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import type { ProxyOptions } from 'express-http-proxy'
 import type {

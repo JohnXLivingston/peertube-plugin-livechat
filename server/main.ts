@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { migrateSettings } from './lib/migration/settings'
 import { initSettings } from './lib/settings'
 import { initCustomFields } from './lib/custom-fields'

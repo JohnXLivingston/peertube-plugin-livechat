@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Request, Response, NextFunction } from 'express'
 import { getAPIKey } from '../apikey'
 

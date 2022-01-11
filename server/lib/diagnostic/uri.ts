@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { newResult, TestResult } from './utils'
 
 export async function diagUri (test: string, { settingsManager }: RegisterServerOptions): Promise<TestResult> {

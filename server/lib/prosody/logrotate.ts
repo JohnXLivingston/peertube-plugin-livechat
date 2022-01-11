@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ProsodyFilePaths } from './config/paths'
 
 type Rotate = (file: string, options: {

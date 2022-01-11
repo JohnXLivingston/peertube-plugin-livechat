@@ -1,3 +1,5 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
+
 async function getChannelNameById (options: RegisterServerOptions, channelId: number): Promise<string | null> {
   if (!channelId) {
     throw new Error('Missing channelId')

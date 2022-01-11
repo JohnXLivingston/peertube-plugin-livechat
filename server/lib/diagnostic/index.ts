@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { diagBackend } from './backend'
 import { diagConverse } from './converse'
 import { diagChatType } from './chat-type'

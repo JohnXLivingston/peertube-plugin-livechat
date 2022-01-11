@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { NextFunction, Request, Response } from 'express'
 import { initWebchatRouter } from './webchat'
 import { initSettingsRouter } from './settings'

@@ -1,3 +1,5 @@
+import type { Video } from '@peertube/peertube-types'
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { videoHasWebchat } from 'shared/lib/video'
 import { logger } from './videowatch/logger'
 import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG } from './videowatch/buttons'
@@ -11,7 +13,7 @@ interface VideoWatchLoadedHookOptions {
   playlist?: any
 }
 
-function guessIsMine (registerOptions: RegisterOptions, video: Video): boolean {
+function guessIsMine (registerOptions: RegisterClientOptions, video: Video): boolean {
   // Note: this is not safe, but it is not a problem:
   // this function is used for non critical functions
   try {
@@ -28,7 +30,7 @@ function guessIsMine (registerOptions: RegisterOptions, video: Video): boolean {
     if (!username) {
       return false
     }
-    if (username !== video.byAccount) {
+    if (username !== video.account?.name) {
       return false
     }
     return true
@@ -38,7 +40,7 @@ function guessIsMine (registerOptions: RegisterOptions, video: Video): boolean {
   }
 }
 
-function guessIamIModerator (_registerOptions: RegisterOptions): boolean {
+function guessIamIModerator (_registerOptions: RegisterClientOptions): boolean {
   // Note: this is not safe, but it is not a problem:
   // this function is used for non critical functions
   try {
@@ -59,7 +61,7 @@ function guessIamIModerator (_registerOptions: RegisterOptions): boolean {
   }
 }
 
-function register (registerOptions: RegisterOptions): void {
+function register (registerOptions: RegisterClientOptions): void {
   const { registerHook, peertubeHelpers } = registerOptions
   let settings: any = {}
 
@@ -161,7 +163,7 @@ function register (registerOptions: RegisterOptions): void {
       return false
     }
 
-    logger.info('Trying to load the chat for video ' + video.uuid + '.')
+    logger.info(`Trying to load the chat for video ${video.uuid}.`)
     const iframeUri = getIframeUri(registerOptions, settings, video)
     if (!iframeUri) {
       logger.error('Incorrect iframe uri')

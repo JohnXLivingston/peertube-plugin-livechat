@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
 import { diag } from '../diagnostic'
 import { getBaseStaticRoute, isUserAdmin } from '../helpers'

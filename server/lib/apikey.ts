@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 /*
 For internal API, we will generate an api Key that must be provided as
 GET parameter for every API call.

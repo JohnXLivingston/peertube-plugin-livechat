@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { ensureProsodyRunning, ensureProsodyNotRunning } from './prosody/ctl'
 import type { ChatType, ConverseJSTheme } from '../../shared/lib/types'
 

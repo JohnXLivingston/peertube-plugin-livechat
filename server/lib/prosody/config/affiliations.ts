@@ -1,3 +1,4 @@
+import type { RegisterServerOptions, MVideoThumbnail } from '@peertube/peertube-types'
 import { getProsodyDomain } from './domain'
 import { getUserNameByChannelId } from '../../database/channel'
 

@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { newResult, TestResult } from './utils'
 import type { ChatType } from '../../../shared/lib/types'
 

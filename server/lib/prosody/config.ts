@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ProsodyLogLevel } from './config/content'
 import * as fs from 'fs'
 import * as path from 'path'

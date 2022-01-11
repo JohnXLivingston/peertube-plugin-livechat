@@ -1,3 +1,5 @@
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import type { Video } from '@peertube/peertube-types'
 import { logger } from './logger'
 import { getIframeUri, UriOptions } from './uri'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
@@ -10,7 +12,7 @@ interface ShareForm {
   autoColors?: HTMLInputElement
 }
 
-async function shareChatUrl (registerOptions: RegisterOptions, settings: any, video: Video): Promise<void> {
+async function shareChatUrl (registerOptions: RegisterClientOptions, settings: any, video: Video): Promise<void> {
   const peertubeHelpers = registerOptions.peertubeHelpers
 
   const [

@@ -1,3 +1,5 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
+
 async function getProsodyDomain (options: RegisterServerOptions): Promise<string> {
   const url = options.peertubeHelpers.config.getWebserverUrl()
   const matches = url.match(/^https?:\/\/([^:/]*)(:\d+)?(\/|$)/)

@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
 import { videoHasWebchat } from '../../../shared/lib/video'
 import { asyncMiddleware } from '../middlewares/async'

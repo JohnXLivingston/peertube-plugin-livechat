@@ -1,3 +1,4 @@
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { pluginShortName } from '../helpers'
 import type { ChatType } from '../../../shared/lib/types'
 

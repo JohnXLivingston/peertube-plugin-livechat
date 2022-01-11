@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
     "module": "es6",
+		"moduleResolution": "node",
     "target": "es5",
     "allowJs": true,
 		"sourceMap": true,

@@ -1,5 +1,7 @@
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import type { RegisterClientFormFieldOptions } from '@peertube/peertube-types'
 
-async function register ({ peertubeHelpers, registerHook, registerVideoField }: RegisterOptions): Promise<void> {
+async function register ({ peertubeHelpers, registerHook, registerVideoField }: RegisterClientOptions): Promise<void> {
   registerHook({
     target: 'action:router.navigation-end',
     handler: () => {

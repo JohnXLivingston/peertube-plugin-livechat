@@ -1,10 +1,12 @@
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import type { Video } from '@peertube/peertube-types'
 import type { ChatType, ProsodyListRoomsResult } from 'shared/lib/types'
 
 interface ActionPluginSettingsParams {
   npmName: string
 }
 
-function register ({ registerHook, registerSettingsScript, peertubeHelpers }: RegisterOptions): void {
+function register ({ registerHook, registerSettingsScript, peertubeHelpers }: RegisterClientOptions): void {
   function getBaseRoute (): string {
     // NB: this will come with Peertube > 3.2.1 (3.3.0?)
     if (peertubeHelpers.getBaseRouterRoute) {

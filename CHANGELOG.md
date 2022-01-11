@@ -1,5 +1,11 @@
 # Changelog
 
+## ???
+
+### Changes
+
+* This plugin is now using types declarations from the official @peertube/peertube-types package.
+
 ## 5.4.0
 
 ### Features
