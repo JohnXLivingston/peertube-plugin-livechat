@@ -1,4 +1,5 @@
 #!/bin/node
+/* eslint-env es6 */
 
 const sharp = require('sharp')
 const path = require('path')
