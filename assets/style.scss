@@ -135,13 +135,17 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
       display: block;
     }
 
-    .livechat-shareurl-custom-readonly {
-      display: flex;
-      flex-flow: wrap;
-      flex-direction: row;
+    .livechat-shareurl-custom-readonly-options {
+      margin-left: 40px;
 
-      label:not(:first-child) {
-        margin-left: 40px;
+      & > * {
+        display: block;
+      }
+
+      &.livechat-shareurl-custom-readonly-disabled {
+        label {
+          color: var(--gray-dark);
+        }
       }
     }
   }

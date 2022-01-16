@@ -7,6 +7,7 @@ import { computeAutoColors } from './colors'
 
 interface UriOptions {
   readonly?: boolean | 'noscroll'
+  transparent?: boolean
   ignoreAutoColors?: boolean
   permanent?: boolean
 }
@@ -82,6 +83,10 @@ function getIframeUri (
 
   if (uriOptions.readonly) {
     iFrameUri.searchParams.set('_readonly', (typeof uriOptions.readonly === 'string') ? uriOptions.readonly : 'true')
+  }
+
+  if (uriOptions.transparent) {
+    iFrameUri.searchParams.set('_transparent', 'true')
   }
 
   iframeUriStr = iFrameUri.href

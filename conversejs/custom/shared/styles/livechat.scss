@@ -31,7 +31,8 @@ body.livechat-readonly.livechat-noscroll {
     overflow-y: hidden !important;
   }
 
-  .message.separator {
+  .message.separator,
+  .message.date-separator {
     // also hide separators (new day, new message)
     display: none;
   }
@@ -59,5 +60,27 @@ body[livechat-viewer-mode="on"] {
     >:not(.livechat-viewer-mode-nick) {
       display: none;
     }
+  }
+}
+
+// Transparent mode
+body.livechat-transparent {
+  // --peertube-main-background: rgba(0 0 0 / 0%) !important;
+  // --peertube-menu-background: rgba(0 0 0 / 0%) !important;
+
+  &.converse-fullscreen {
+    background-color: rgba(0 0 0 / 0%) !important;
+  }
+
+  .chat-body,
+  .conversejs .chatroom .box-flyout,
+  .conversejs .chatbox .chat-content,
+  .conversejs .chatbox .chat-content .chat-content__notifications {
+    background-color: rgba(0 0 0 / 0%) !important;
+  }
+
+  // Hide the background_logo
+  #conversejs-bg {
+    display: none !important;
   }
 }

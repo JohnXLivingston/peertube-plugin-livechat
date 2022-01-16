@@ -2,9 +2,14 @@
 
 ## ???
 
-### Changes
+### Features
+
+* Builtin Prosody, Share chat url: option to have a transparent background (for streaming integration).
+
+### Changes and fixes
 
 * This plugin is now using types declarations from the official @peertube/peertube-types package.
+* Builtin Prosody, Share chat url: fixed new day hidding when no scrollbar in readonly mode.
 
 ## 5.4.0
 

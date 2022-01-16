@@ -57,6 +57,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let autoViewerMode: boolean = false
       let forceReadonly: 'true' | 'false' | 'noscroll' = 'false'
       let converseJSTheme: string = settings['converse-theme'] as string
+      let transparent: boolean = false
       if (!/^\w+$/.test(converseJSTheme)) {
         converseJSTheme = 'peertube'
       }
@@ -94,6 +95,9 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           forceReadonly = 'noscroll'
         } else {
           autoViewerMode = true // auto join the chat in viewer mode, if not logged in
+        }
+        if (req.query._transparent === 'true') {
+          transparent = true
         }
       } else if (chatType === 'builtin-converse') {
         if (!settings['chat-server']) {
@@ -218,6 +222,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
       page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
       page = page.replace(/{{FORCEREADONLY}}/g, forceReadonly)
+      page = page.replace(/{{TRANSPARENT}}/g, transparent ? 'true' : 'false')
 
       res.status(200)
       res.type('html')

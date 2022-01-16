@@ -7,7 +7,8 @@ import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 interface ShareForm {
   readonly: HTMLInputElement
   withscroll: HTMLInputElement
-  withscrollLabelEl: HTMLElement
+  transparent: HTMLInputElement
+  readonlyOptions: HTMLElement
   url: HTMLInputElement
   autoColors?: HTMLInputElement
 }
@@ -19,6 +20,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     labelShare,
     labelReadonly,
     labelWithscroll,
+    labelTransparent,
     tipsOBS,
     labelCopy,
     labelCopied,
@@ -29,6 +31,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     peertubeHelpers.translate('Share chat link'),
     peertubeHelpers.translate('Read-only'),
     peertubeHelpers.translate('Show the scrollbar'),
+    peertubeHelpers.translate('Transparent background (for stream integration, with OBS for example)'),
     // eslint-disable-next-line max-len
     peertubeHelpers.translate('Tips for streamers: To add the chat to your OBS, generate a read-only link and use it as a browser source.'),
     peertubeHelpers.translate('Copy'),
@@ -77,23 +80,30 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       divCustom.classList.add('livechat-shareurl-custom')
       container.append(divCustom)
 
-      const divReadonly = document.createElement('div')
-      divReadonly.classList.add('livechat-shareurl-custom-readonly')
-
-      divCustom.append(divReadonly)
       const readonly = document.createElement('input')
       readonly.setAttribute('type', 'checkbox')
       const readonlyLabelEl = document.createElement('label')
       readonlyLabelEl.textContent = labelReadonly
       readonlyLabelEl.prepend(readonly)
-      divReadonly.append(readonlyLabelEl)
+      divCustom.append(readonlyLabelEl)
+
+      const readonlyOptions = document.createElement('div')
+      readonlyOptions.classList.add('livechat-shareurl-custom-readonly-options')
+      divCustom.append(readonlyOptions)
 
       const withscroll = document.createElement('input')
       withscroll.setAttribute('type', 'checkbox')
       const withscrollLabelEl = document.createElement('label')
       withscrollLabelEl.textContent = labelWithscroll
       withscrollLabelEl.prepend(withscroll)
-      divReadonly.append(withscrollLabelEl)
+      readonlyOptions.append(withscrollLabelEl)
+
+      const transparent = document.createElement('input')
+      transparent.setAttribute('type', 'checkbox')
+      const transparentLabelEl = document.createElement('label')
+      transparentLabelEl.textContent = labelTransparent
+      transparentLabelEl.prepend(transparent)
+      readonlyOptions.append(transparentLabelEl)
 
       let autoColors
       if (isAutoColorsAvailable(settings['chat-type'], settings['converse-theme'])) {
@@ -109,6 +119,9 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
         renderContent(container)
       }
       withscroll.onclick = () => {
+        renderContent(container)
+      }
+      transparent.onclick = () => {
         renderContent(container)
       }
 
@@ -140,7 +153,8 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       form = {
         readonly,
         withscroll,
-        withscrollLabelEl,
+        transparent,
+        readonlyOptions,
         url,
         autoColors
       }
@@ -160,10 +174,16 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       } else {
         uriOptions.readonly = 'noscroll'
       }
-      form.withscrollLabelEl.style.display = 'initial'
+      if (form.transparent.checked) {
+        uriOptions.transparent = true
+      }
+      form.withscroll.disabled = false
+      form.transparent.disabled = false
+      form.readonlyOptions.classList.remove('livechat-shareurl-custom-readonly-disabled')
     } else {
-      // Hide the withscroll checkbox
-      form.withscrollLabelEl.style.display = 'none'
+      form.withscroll.disabled = true
+      form.transparent.disabled = true
+      form.readonlyOptions.classList.add('livechat-shareurl-custom-readonly-disabled')
     }
     const iframeUri = getIframeUri(registerOptions, settings, video, uriOptions)
     form.url.setAttribute('value', iframeUri ?? '')
@@ -177,6 +197,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       version: 1, // in case we add incompatible values in a near feature
       readonly: !!form.readonly.checked,
       withscroll: !!form.withscroll.checked,
+      transparent: !!form.transparent.checked,
       autocolors: !!form.autoColors?.checked
     }
     window.localStorage.setItem('peertube-plugin-livechat-shareurl', JSON.stringify(v))
@@ -198,6 +219,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       }
       form.readonly.checked = !!v.readonly
       form.withscroll.checked = !!v.withscroll
+      form.transparent.checked = !!v.transparent
       if (form.autoColors) {
         form.autoColors.checked = !!v.autocolors
       }

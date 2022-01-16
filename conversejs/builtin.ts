@@ -92,6 +92,7 @@ interface InitConverseParams {
   forceReadonly: boolean | 'noscroll'
   noScroll: boolean
   theme: string
+  transparent: boolean
 }
 window.initConverse = async function initConverse ({
   jid,
@@ -103,7 +104,8 @@ window.initConverse = async function initConverse ({
   advancedControls,
   autoViewerMode,
   forceReadonly,
-  theme
+  theme,
+  transparent
 }: InitConverseParams) {
   const isInIframe = inIframe()
 
@@ -120,6 +122,9 @@ window.initConverse = async function initConverse ({
     if (forceReadonly === 'noscroll') {
       body?.classList.add('livechat-noscroll')
     }
+  }
+  if (transparent) {
+    body?.classList.add('livechat-transparent')
   }
 
   const params: any = {
