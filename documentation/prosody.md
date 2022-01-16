@@ -173,6 +173,8 @@ You can use the «share chat link» feature (see above) to generate an url to yo
 Check the «readonly» checkbox in the modal.
 Then use this link as a «web browser source» in OBS.
 
+You can use the «Transparent background» to have a transparent background in OBS.
+
 Note: you can customize colors. This is undocumented yet, but you can try this:
 in the modal, check «use curent theme colors», then you can try to manually change color values in the url.
 You must use valid CSS color values, and they must be properly url encoded.
@@ -180,3 +182,8 @@ You must use valid CSS color values, and they must be properly url encoded.
 #### Using Matterbridge
 
 Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>
+
+#### Mixing multiple chats in your live stream
+
+You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.
+The compatibility with this plugin was added in recent versions.
