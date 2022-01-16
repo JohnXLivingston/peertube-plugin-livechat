@@ -175,6 +175,14 @@ window.initConverse = async function initConverse ({
 
   let isAuthenticated: boolean = false
   if (authenticationUrl !== '') {
+    // We are in builtin-prosody mode.
+    // So the user will never se the «trusted browser» checkbox.
+    // So we have to disable it
+    // (and ensure clear_cache_on_logout is true,
+    // see https://conversejs.org/docs/html/configuration.html#allow-user-trust-override).
+    params.clear_cache_on_logout = true
+    params.allow_user_trust_override = false
+
     const auth = await authenticatedMode(authenticationUrl)
     if (auth) {
       params.authentication = 'login'
