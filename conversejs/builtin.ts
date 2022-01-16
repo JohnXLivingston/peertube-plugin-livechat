@@ -168,7 +168,7 @@ window.initConverse = async function initConverse ({
     persistent_store: 'sessionStorage',
     show_images_inline: false, // for security reason, and to avoid bugs when image is larger that iframe
     render_media: false, // for security reason, and to avoid bugs when image is larger that iframe
-    whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin']
+    whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin', 'livechatDisconnectOnUnloadPlugin']
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
@@ -287,6 +287,26 @@ window.initConverse = async function initConverse ({
         }
       })
     }
+
+    // The following code does not work. Just keeping it in case we want to investigate.
+    // if (authenticationUrl !== '') {
+    //   // We are in builtin-prosody mode. I'll try to disconnect from the room
+    //   // on page unload. This is to avoid some bugs:
+    //   // - users are not show as disconnected until a long timeout
+    //   // - anonymous users' nicknames are not available before this timeout
+    //   // - logged in users sometimes can't switch between iframe and fullscreen more than 1 time
+    //   window.converse.plugins.add('livechatDisconnectOnUnloadPlugin', {
+    //     initialize: function () {
+    //       const _converse = this._converse
+    //       const { unloadevent } = _converse
+    //       // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    //       window.addEventListener(unloadevent, async () => {
+    //         console.log('[livechatDisconnectOnUnloadPlugin] Disconnecting...')
+    //         await _converse.api.user.logout()
+    //       }, { once: true, passive: true })
+    //     }
+    //   })
+    // }
 
     window.converse.initialize(params)
   } catch (error) {
