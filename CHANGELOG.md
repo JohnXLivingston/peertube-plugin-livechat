@@ -11,6 +11,8 @@
 * This plugin is now using types declarations from the official @peertube/peertube-types package.
 * Builtin Prosody, Share chat url: fixed new day hidding when no scrollbar in readonly mode.
 * Builtin Prosody: using ConverseJS clear_cache_on_logout=true and allow_user_trust_override=false parameters
+* Update Basque, Spanish and Esperanto translations (thanks to [Porrumentzio](https://github.com/Porrumentzio))
+* Update Occitan translations (thanks [Mejans](https://github.com/Mejans))
 
 ## 5.4.0
 
