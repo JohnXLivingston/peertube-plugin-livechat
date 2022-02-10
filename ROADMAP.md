@@ -40,3 +40,5 @@ This roadmap is given as an indication. It will be updated as we go along accord
 [x] | Builtin Prosody (or all modes?) | Offer a way for users to have a webchat per channel. See [#59](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/58). | v4.0.0
 [ ] | Common | Handle federation: if video is remote, then try to check if the plugin is installed on the instance, and open it.
 [ ] | Builtin Prosody | Moderation Bot.
+[ ] | Common | Option to include the chat in embedded videos. See [[92]](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/92)
+[ ] | Common | Share modal: option to generate an iframe. See [[92]](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/92)
