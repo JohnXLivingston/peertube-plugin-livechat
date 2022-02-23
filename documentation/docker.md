@@ -7,7 +7,7 @@ Clone the git repository.
 Then:
 
 ```shell
-sudo docker build . -f docker/Dockerfile.buster
+sudo docker build . -f docker/Dockerfile.bullseye
 ```
 
 ## Publish docker image
@@ -22,6 +22,25 @@ Create an access token on your hub.docker.com account, then use
 
 ```shell
 # pull the current peertube production image:
+sudo docker pull chocobozzz/peertube:production-bullseye
+# build the docker image, if not done yet:
+sudo docker build . -f docker/Dockerfile.bullseye
+# list images to find the image id:
+sudo docker images
+#REPOSITORY            TAG                 IMAGE ID       CREATED          SIZE
+#<none>                <none>              0209eea56505   17 seconds ago   1.19GB
+#chocobozzz/peertube   production-bullseye  xxxxxxxxx   4 days ago       1.17GB
+
+# tag the image:
+sudo docker tag xxxxxxxxxxxx johnxlivingston/peertubelivechat:production-bullseye
+# push on the main tag name:
+sudo docker push johnxlivingston/peertubelivechat:production-bullseye
+# push on the current peertube tag name:
+sudo docker tag johnxlivingston/peertubelivechat:production-bullseye johnxlivingston/peertubelivechat:v4.1.0-bullseye
+sudo docker push johnxlivingston/peertubelivechat:v4.1.0-bullseye
+
+
+# repeat for buster:
 sudo docker pull chocobozzz/peertube:production-buster
 # build the docker image, if not done yet:
 sudo docker build . -f docker/Dockerfile.buster
