@@ -42,12 +42,9 @@ The default local port will be 52800 and can be changed in the plugin settings.
 In the docker-compose.yml file, replace the peertube service image
 `image: chocobozzz/peertube:production-bullseye` by `image: johnxlivingston/peertubelivechat:production-bullseye`.
 
-NB: if you are using debian buster (oldstable) image, replace instead
-`image: chocobozzz/peertube:production-buster` by `image: johnxlivingston/peertubelivechat:production-buster`.
-
 And that's it!
 
-You can find the source for this Dockerfile [here](../docker/Dockerfile.bullseye) (or for debian buster/oldstable [here](../docker/Dockerfile.buster)).
+You can find the source for this Dockerfile [here](../docker/Dockerfile.bullseye).
 
 ### Yunohost
 
