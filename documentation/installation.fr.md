@@ -1,6 +1,7 @@
 # Installation du plugin peertube-plugin-livechat 🇫🇷
 
 🇬🇧 English version / version anglaise [here](./installation.md).
+🇩🇪 German version / deutsche Version [hier](./installation.de.md).
 
 **IMPORTANT :** ce plugin ne fonctionne malheureusement pas (encore) tout seul, il doit se reposer sur des outils externes.
 

@@ -1,0 +1,17 @@
+{
+  "Open chat": "Chat öffnen",
+  "Open chat in a new window": "Chat in neuem Fenster öffnen",
+  "Close chat": "Chat schließen",
+  "Use chat": "Chat nutzen",
+  "If enabled, there will be a chat next to the video.": "Wenn aktiviert, wird ein Chat neben dem Video sein.",
+  "Share chat link": "Chat Link teilen",
+  "Read-only": "Nur-Lesen",
+  "Show the scrollbar": "Zeige die Scrollleiste",
+  "Transparent background (for stream integration, with OBS for example)": "Transpatenter Hintergrund (zum Beispiel für die Streamintegration mit OBS)",
+  "Tips for streamers: To add the chat to your OBS, generate a read-only link and use it as a browser source.": "Tipps für Streamer: Um den Chat zu OBS hinzuzufügen, einen Nur-Lesen Link erstellen und ihn als browser source in OBS nutzen",
+  "Copy": "Kopieren",
+  "Link copied": "Link kopiert",
+  "Error": "Fehler",
+  "Open": "Öffnen",
+  "Use current theme colors": "Die derzeitigen Themenfarben nutzen"
+}
