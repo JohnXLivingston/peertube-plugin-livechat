@@ -1,5 +1,26 @@
 # Changelog
 
+## 5.6.0 (Not Released Yet)
+
+### Important notes
+
+Following modes are deprecated and will be soon removed (in version 6.0.0, scheduled for may or june 2022):
+
+* Connect to an existing XMPP server with ConverseJS
+* Use an external web chat tool
+
+The only remaining mode will be the recommanded one: «Prosody server controlled by Peertube».
+
+If you need one of the 2 deprecated mode, please open an issue ASAP to explain your use case.
+
+These modes were here for historical reasons (backward compatibility, etc.).
+But now there are hard to maintain, and impossible to document (adding a lot of confusion).
+Moreover, they don't seem to be used much.
+
+### Changes
+
+* Adding a deprecation warning in the settings page when using one of the 2 deprecated mode.
+
 ## 5.5.0
 
 ### Features

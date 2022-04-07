@@ -71,7 +71,14 @@ Please read the <a
     type: 'html',
     label: 'Connect to an existing XMPP server with ConverseJS',
     descriptionHTML:
-`With this mode, you can connect to an existing XMPP server, that allow anonymous authentication and room creation.
+`<div class="peertube-plugin-livechat-warning"><b>
+  This mode is deprecated and will be removed in version 6.0.0.
+  More information in the
+  <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#551" target="_blank">
+    CHANGELOG
+  </a>.
+</b></div>
+With this mode, you can connect to an existing XMPP server, that allow anonymous authentication and room creation.
 Please read the
 <a
   href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/conversejs.md"
@@ -84,7 +91,14 @@ Please read the
     type: 'html',
     label: 'Use an external webchat',
     descriptionHTML:
-`With this mode, you can use any external web chat that can be included in an iframe.
+`<div class="peertube-plugin-livechat-warning"><b>
+This mode is deprecated and will be removed in version 6.0.0.
+More information in the
+<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#551" target="_blank">
+  CHANGELOG
+</a>.
+</b></div>
+With this mode, you can use any external web chat that can be included in an iframe.
 Please read the
 <a
   href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/external.md"
