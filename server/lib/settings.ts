@@ -74,7 +74,7 @@ Please read the <a
 `<div class="peertube-plugin-livechat-warning"><b>
   This mode is deprecated and will be removed in version 6.0.0.
   More information in the
-  <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#551" target="_blank">
+  <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#560" target="_blank">
     CHANGELOG
   </a>.
 </b></div>
@@ -94,7 +94,7 @@ Please read the
 `<div class="peertube-plugin-livechat-warning"><b>
 This mode is deprecated and will be removed in version 6.0.0.
 More information in the
-<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#551" target="_blank">
+<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#560" target="_blank">
   CHANGELOG
 </a>.
 </b></div>
