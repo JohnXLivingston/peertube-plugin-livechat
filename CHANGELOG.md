@@ -20,6 +20,8 @@ Moreover, they don't seem to be used much.
 ### Changes
 
 * Adding a deprecation warning in the settings page when using one of the 2 deprecated mode.
+* Adding German translations (thanks [Gamemap](https://github.com/Gamemap)).
+* Updating dependencies.
 
 ## 5.5.0
 
