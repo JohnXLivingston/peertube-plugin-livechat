@@ -1,6 +1,6 @@
 # Changelog
 
-## 5.6.0 (Not Released Yet)
+## 5.6.0
 
 ### Important notes
 
