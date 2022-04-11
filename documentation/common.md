@@ -39,6 +39,14 @@ You can choose some UUIDs for which the chat will be available.
 If you don't want te enable the feature for all videos, you can use this field to list videos UUIDs.
 You can add comments: everything rights to the # character will be stripped off, as for empty lines.
 
+### Hide the chat for anonymous users
+
+If checked, anonymous Peertube users won't see the chat.
+
+Note: for now this feature simply hide the chat.
+In a future release, the chat will be replaced by a message saying «please log in to [...]».
+See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information.
+
 ### Webchat iframe style attribute
 
 You can add some custom styles that will be added to the iframe.

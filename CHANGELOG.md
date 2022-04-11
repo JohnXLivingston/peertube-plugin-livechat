@@ -1,5 +1,15 @@
 # Changelog
 
+## 5.7.0
+
+### New features
+
+* You can disable the chat for anonymous users (users that are not connected to your Peertube instance).
+  * Note: this is a first version of this feature, released to quickly help some Peertube admins that are facing spam attacks.
+  * The chat will not be visible at all for anonymous users.
+  * In a future release, the chat will be replaced by a message saying «please log in to [...]».
+  * If you are not using the «Prosody controlled by Peertube» mode, this settings is not a real security feature. An attacker could easily find the chat uri and join it.
+
 ## 5.6.0
 
 ### Important notes

@@ -125,7 +125,7 @@ class ProsodyConfigContent {
   paths: ProsodyFilePaths
   global: ProsodyConfigGlobal
   authenticated?: ProsodyConfigVirtualHost
-  anon: ProsodyConfigVirtualHost
+  anon?: ProsodyConfigVirtualHost
   muc: ProsodyConfigComponent
   externalComponents: ProsodyConfigComponent[] = []
   log: string
@@ -136,7 +136,6 @@ class ProsodyConfigContent {
     this.global = new ProsodyConfigGlobal()
     this.log = ''
     this.prosodyDomain = prosodyDomain
-    this.anon = new ProsodyConfigVirtualHost('anon.' + prosodyDomain)
     this.muc = new ProsodyConfigComponent('room.' + prosodyDomain, 'muc')
 
     this.global.set('daemonize', false)
@@ -174,9 +173,6 @@ class ProsodyConfigContent {
     this.global.set('cross_domain_websocket', false)
     this.global.set('consider_websocket_secure', false)
 
-    this.anon.set('authentication', 'anonymous')
-    this.anon.set('modules_enabled', ['ping'])
-
     this.muc.set('muc_room_locking', false)
     this.muc.set('muc_tombstones', false)
     this.muc.set('muc_room_default_language', 'en')
@@ -187,6 +183,12 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_public_jids', false)
     this.muc.set('muc_room_default_change_subject', false)
     this.muc.set('muc_room_default_history_length', 20)
+  }
+
+  useAnonymous (): void {
+    this.anon = new ProsodyConfigVirtualHost('anon.' + this.prosodyDomain)
+    this.anon.set('authentication', 'anonymous')
+    this.anon.set('modules_enabled', ['ping'])
   }
 
   useHttpAuthentication (url: string): void {
@@ -212,12 +214,14 @@ class ProsodyConfigContent {
 
     this.global.set('consider_bosh_secure', true)
 
-    this.anon.set('trusted_proxies', ['127.0.0.1', '::1'])
-    this.anon.set('allow_anonymous_s2s', false)
-    this.anon.add('modules_enabled', 'http')
-    this.anon.add('modules_enabled', 'bosh')
-    this.anon.set('http_host', prosodyDomain)
-    this.anon.set('http_external_url', 'http://' + prosodyDomain)
+    if (this.anon) {
+      this.anon.set('trusted_proxies', ['127.0.0.1', '::1'])
+      this.anon.set('allow_anonymous_s2s', false)
+      this.anon.add('modules_enabled', 'http')
+      this.anon.add('modules_enabled', 'bosh')
+      this.anon.set('http_host', prosodyDomain)
+      this.anon.set('http_external_url', 'http://' + prosodyDomain)
+    }
 
     this.muc.set('restrict_room_creation', 'local')
     this.muc.set('http_host', prosodyDomain)
@@ -339,8 +343,10 @@ class ProsodyConfigContent {
       content += this.authenticated.write()
       content += '\n\n'
     }
-    content += this.anon.write()
-    content += '\n\n'
+    if (this.anon) {
+      content += this.anon.write()
+      content += '\n\n'
+    }
     content += this.muc.write()
     content += '\n\n'
     for (const externalComponent of this.externalComponents) {

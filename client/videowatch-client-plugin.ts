@@ -13,6 +13,10 @@ interface VideoWatchLoadedHookOptions {
   playlist?: any
 }
 
+function isAnonymousUser (registerOptions: RegisterClientOptions): boolean {
+  return !registerOptions.peertubeHelpers.isLoggedIn()
+}
+
 function guessIsMine (registerOptions: RegisterClientOptions, video: Video): boolean {
   // Note: this is not safe, but it is not a problem:
   // this function is used for non critical functions
@@ -239,6 +243,10 @@ function register (registerOptions: RegisterClientOptions): void {
       settings = s
 
       logger.log('Checking if this video should have a chat...')
+      if (settings['chat-no-anonymous'] === true && isAnonymousUser(registerOptions)) {
+        logger.log('No chat for anonymous users')
+        return
+      }
       if (!videoHasWebchat(s, video)) {
         logger.log('This video has no webchat')
         return

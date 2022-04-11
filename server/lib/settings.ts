@@ -272,6 +272,14 @@ You can add comments: everything after the # character will be stripped off, and
 Don't add private videos, the UUIDs will be send to frontend.`,
     private: false
   })
+  registerSetting({
+    name: 'chat-no-anonymous',
+    label: 'Hide the chat for anonymous users',
+    type: 'input-checkbox',
+    default: false,
+    descriptionHTML: 'If checked, anonymous Peertube users won\'t see the chat.',
+    private: false
+  })
 
   registerSetting({
     name: 'chat-style',

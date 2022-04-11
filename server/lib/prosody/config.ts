@@ -91,7 +91,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     'prosody-peertube-uri',
     'prosody-components',
     'prosody-components-port',
-    'prosody-components-list'
+    'prosody-components-list',
+    'chat-no-anonymous'
   ])
 
   const valuesToHideInDiagnostic = new Map<string, string>()
@@ -100,6 +101,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     throw new Error('Invalid port')
   }
   const logByDefault = (settings['prosody-muc-log-by-default'] as boolean) ?? true
+  const disableAnon = (settings['chat-no-anonymous'] as boolean) || false
   const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
   const enableC2s = (settings['prosody-c2s'] as boolean) || false
   const enableComponents = (settings['prosody-components'] as boolean) || false
@@ -124,6 +126,9 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
   const testApiUrl = baseApiUrl + 'test?apikey=' + apikey
 
   const config = new ProsodyConfigContent(paths, prosodyDomain)
+  if (!disableAnon) {
+    config.useAnonymous()
+  }
   config.useHttpAuthentication(authApiUrl)
   config.usePeertubeBosh(prosodyDomain, port)
   config.useMucHttpDefault(roomApiUrl)
