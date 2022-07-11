@@ -8,8 +8,8 @@ Prosody is a Free and Open Source XMPP/Jabber server software.
 
 With this mode, the Peertube server will be able to communicate with the Prosody server, with following features:
 
-- auto login: if a user is logged in on the Peertube instance, it will be automatically authenticated in the web chat
-- access rights: Peertube instance's administrators and moderators will automatically be owner for all created chat rooms.
+- auto login: if a user is logged in on the Peertube instance, they will be automatically authenticated in the web chat
+- access rights: Peertube instance's administrators and moderators will automatically be owners of all created chat rooms.
 - access rights: the Peertube's user who has added the video will automatically be moderator on the chat room.
 - moderation tools will be enabled
 - it will not be possible to create a room that is not linked to a video
@@ -34,7 +34,7 @@ sudo systemctl disable prosody && sudo systemctl stop prosody
 And that's it!
 
 The Prosody process launched by the plugin will listen on a specific port, and only on the localhost interface.
-You don't to open any external port on your firewall.
+You don't have to open any external port on your firewall.
 The default local port will be 52800 and can be changed in the plugin settings.
 
 ### For Docker installations
@@ -50,9 +50,9 @@ You can find the source for this Dockerfile [here](../docker/Dockerfile.bullseye
 
 Yunohost comes with the Metronome XMPP server. Metronome is an old fork of Prosody, but this plugin is not compatible.
 Unfortunately, the Metronome package conflicts with the Prosody package.
-You can't install both using debian packages.
+You can not install both using debian packages.
 
-These packages are conflicting, because the two services can't run simultanously (ports would conflict).
+These packages are conflicting, because the two services can not run simultanously (ports would conflict).
 
 However, this plugin does not need the Prosody service to run. It will launch its own process, on non-standard ports.
 So you can easily build Prosody from sources, so that the plugin can use the executable.
@@ -97,31 +97,31 @@ Here is the documentation: [common settings](./common.md).
 
 #### Show the «share chat link» button
 
-This feature enable a «share chat link» modal. With this modal, you can generate urls to join the chat.
+This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.
 The chat can be customized (readonly mode, use the current theme, ...).
 
-You can for example generate a readonly url and use it in OBS to integrate the chat in your live stream!
+You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!
 
 This settings allows you to choose who can access this modal.
 
-#### Peertube url for API calls
+#### Peertube URL for API calls
 
 In some rare cases, Prosody can't call Peertube's API from its public URI.
 If you have such issues (see the diagnostic tool result), you can try to set the value
 of this settings to `http://localhost:9000` or `http://127.0.0.1:9000`
-(supposing your Peertube is listening on port `9000`, check this in your Peertube `config/production.yaml` file).
+(supposing your Peertube is listening on port `9000`. Check that in your Peertube `config/production.yaml` file).
 
 #### Log rooms content by default
 
 If checked, room content will be archived on the server by default.
-This means that users who join the chan will see messages send before then joined.
+This means that users who join the chan will see messages sent before they have joined.
 
-Please note that it is always possible to enable/disable the content archiving for a specific room,
+Please note that it is always possible to enable/disable the content logging for a specific room,
 by editing its properties.
 
 #### Room logs expiration
 
-You can set here the expiration delay for rooms archives.
+You can set here the expiration delay for room logs.
 See the online help for accepted values.
 
 #### Enable client to server connections
@@ -148,7 +148,7 @@ More informations on Prosody external components [here](https://prosody.im/doc/c
 
 ## Moderation
 
-You can access rooms settings and moderation tools by opening the chat in a new window,
+You can access room settings and moderation tools by opening the chat in a new window,
 and using the dropdown menu at the top right.
 
 You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».
@@ -157,7 +157,7 @@ You can delete old rooms: join the room, and use the menu on the top to destroy 
 
 ## Notes
 
-All instance moderators and admins will be owner for created chat rooms.
+All instance moderators and admins will be owner of created chat rooms.
 If the video is local (not from a remote Peertube), the video owner will be admin in the chat room.
 
 You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.
@@ -167,17 +167,17 @@ When you open the chat room in full screen, there will also be a menu with dedic
 
 ### OBS Overlay
 
-#### Using readonly chat url
+#### Using readonly chat URL
 
-You can use the «share chat link» feature (see above) to generate an url to your chat.
+You can use the «share chat link» feature (see above) to generate an URL to your chat.
 Check the «readonly» checkbox in the modal.
 Then use this link as a «web browser source» in OBS.
 
 You can use the «Transparent background» to have a transparent background in OBS.
 
 Note: you can customize colors. This is undocumented yet, but you can try this:
-in the modal, check «use curent theme colors», then you can try to manually change color values in the url.
-You must use valid CSS color values, and they must be properly url encoded.
+in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.
+You must use valid CSS color values, and they must be properly URL encoded.
 
 #### Using Matterbridge
 
