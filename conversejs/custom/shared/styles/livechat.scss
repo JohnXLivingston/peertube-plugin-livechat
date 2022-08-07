@@ -65,18 +65,18 @@ body[livechat-viewer-mode="on"] {
 
 // Transparent mode
 body.livechat-transparent {
-  // --peertube-main-background: rgba(0 0 0 / 0%) !important;
-  // --peertube-menu-background: rgba(0 0 0 / 0%) !important;
+  // --peertube-main-background: var(--livechat-transparent) !important;
+  // --peertube-menu-background: var(--livechat-transparent) !important;
 
   &.converse-fullscreen {
-    background-color: rgba(0 0 0 / 0%) !important;
+    background-color: var(--livechat-transparent) !important;
   }
 
   .chat-body,
   .conversejs .chatroom .box-flyout,
   .conversejs .chatbox .chat-content,
   .conversejs .chatbox .chat-content .chat-content__notifications {
-    background-color: rgba(0 0 0 / 0%) !important;
+    background-color: var(--livechat-transparent) !important;
   }
 
   // Hide the background_logo

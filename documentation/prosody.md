@@ -174,6 +174,13 @@ Check the «readonly» checkbox in the modal.
 Then use this link as a «web browser source» in OBS.
 
 You can use the «Transparent background» to have a transparent background in OBS.
+If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:
+
+```css
+:root {
+  --livechat-transparent: rgba(255 255 255 / 90%) !important;
+}
+```
 
 Note: you can customize colors. This is undocumented yet, but you can try this:
 in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.

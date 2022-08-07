@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.7.1
+
+* Adding an easy way to customize background transparency in OBS and co.
+
 ## 5.7.0
 
 ### New features
