@@ -76,6 +76,10 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           room = '{{VIDEO_UUID}}@room.' + prosodyDomain
         }
       }
+      // Here we are using getBaseRouterCanonicalRoute,
+      // which correspond to a path without the plugin version.
+      // We are doing this, so the path is predictible,
+      // and can be optimized in the nginx configuration (to bypass Peertube).
       const boshUri = getBaseRouterCanonicalRoute(options) + 'webchat/http-bind'
       const wsUri = ''
       authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
