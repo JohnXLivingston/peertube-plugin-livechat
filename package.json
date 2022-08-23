@@ -33,10 +33,9 @@
   ],
   "dependencies": {
     "async": "^3.2.2",
-    "body-parser": "^1.19.0",
     "decache": "^4.6.0",
-    "express-http-proxy": "^1.6.3",
     "got": "^11.8.2",
+    "http-proxy": "^1.18.1",
     "log-rotate": "^0.2.8",
     "validate-color": "^2.2.1"
   },
@@ -46,8 +45,8 @@
     "@tsconfig/node12": "^1.0.9",
     "@types/async": "^3.2.9",
     "@types/express": "^4.17.13",
-    "@types/express-http-proxy": "^1.6.3",
     "@types/got": "^9.6.12",
+    "@types/http-proxy": "^1.17.9",
     "@types/node": "^16.11.6",
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^4.29.0",

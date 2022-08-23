@@ -1,7 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig } from './config'
 import { startProsodyLogRotate, stopProsodyLogRotate } from './logrotate'
-import { changeHttpBindRoute } from '../routers/webchat'
+import { disableProxyRoute, enableProxyRoute } from '../routers/webchat'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
 
@@ -188,7 +188,7 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   })
 
   // Set the http-bind route.
-  changeHttpBindRoute(options, {
+  enableProxyRoute(options, {
     host: config.host,
     port: config.port
   })
@@ -240,8 +240,8 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
   const status = await prosodyCtl(options, 'stop')
   logger.info(`ProsodyCtl command returned: ${status.message}`)
 
-  logger.debug('Removing http-bind route')
-  changeHttpBindRoute(options, null)
+  logger.debug('Removing proxy route')
+  disableProxyRoute(options)
 }
 
 export {

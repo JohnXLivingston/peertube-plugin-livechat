@@ -1,9 +1,9 @@
 import type { RegisterServerOptions, MVideoThumbnail } from '@peertube/peertube-types'
-import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
-import type { ProxyOptions } from 'express-http-proxy'
+import type { Router, Request, Response, NextFunction } from 'express'
 import type {
   ProsodyListRoomsResult, ProsodyListRoomsResultRoom
 } from '../../../shared/lib/types'
+import { createProxyServer } from 'http-proxy'
 import { getBaseRouterRoute, getBaseRouterCanonicalRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
@@ -11,18 +11,17 @@ import { getAPIKey } from '../apikey'
 import { getChannelInfosById, getChannelNameById } from '../database/channel'
 import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../shared/lib/autocolors'
 import * as path from 'path'
-const bodyParser = require('body-parser')
 const got = require('got')
 
 const fs = require('fs').promises
-const proxy = require('express-http-proxy')
+// const proxy = require('express-http-proxy')
 
-let httpBindRoute: RequestHandler
-interface ProsodyHttpBindInfo {
+interface ProsodyProxyInfo {
   host: string
   port: string
 }
-let currentProsodyHttpBindInfo: ProsodyHttpBindInfo | null = null
+let currentProsodyProxyInfo: ProsodyProxyInfo | null = null
+let currentHttpBindProxy: ReturnType<typeof createProxyServer> | null = null
 
 async function initWebchatRouter (options: RegisterServerOptions): Promise<Router> {
   const {
@@ -207,11 +206,20 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
     }
   ))
 
-  changeHttpBindRoute(options, null)
+  disableProxyRoute(options)
   router.all('/http-bind',
-    bodyParser.raw({ type: 'text/xml' }),
     (req: Request, res: Response, next: NextFunction) => {
-      httpBindRoute(req, res, next)
+      try {
+        if (!currentHttpBindProxy) {
+          res.status(404)
+          res.send('Not found')
+          return
+        }
+        req.url = 'http-bind'
+        currentHttpBindProxy.web(req, res)
+      } catch (err) {
+        next(err)
+      }
     }
   )
 
@@ -226,16 +234,16 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         return
       }
 
-      if (!currentProsodyHttpBindInfo) {
+      if (!currentProsodyProxyInfo) {
         throw new Error('It seems that prosody is not binded... Cant list rooms.')
       }
-      const apiUrl = `http://localhost:${currentProsodyHttpBindInfo.port}/peertubelivechat_list_rooms/list-rooms`
+      const apiUrl = `http://localhost:${currentProsodyProxyInfo.port}/peertubelivechat_list_rooms/list-rooms`
       peertubeHelpers.logger.debug('Calling list rooms API on url: ' + apiUrl)
       const rooms = await got(apiUrl, {
         method: 'GET',
         headers: {
           authorization: 'Bearer ' + await getAPIKey(options),
-          host: currentProsodyHttpBindInfo.host
+          host: currentProsodyProxyInfo.host
         },
         responseType: 'json',
         resolveBodyOnly: true
@@ -271,40 +279,63 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
   return router
 }
 
-function changeHttpBindRoute (
+// function changeHttpBindRoute (
+//   { peertubeHelpers }: RegisterServerOptions,
+//   prosodyHttpBindInfo: ProsodyHttpBindInfo | null
+// ): void {
+//   const logger = peertubeHelpers.logger
+//   if (prosodyHttpBindInfo && !/^\d+$/.test(prosodyHttpBindInfo.port)) {
+//     logger.error(`Port '${prosodyHttpBindInfo.port}' is not valid. Replacing by null`)
+//     prosodyHttpBindInfo = null
+//   }
+
+//   if (!prosodyHttpBindInfo) {
+//     logger.info('Changing http-bind port for null')
+//     currentProsodyHttpBindInfo = null
+//     httpBindRoute = (_req: Request, res: Response, _next: NextFunction) => {
+//       res.status(404)
+//       res.send('Not found')
+//     }
+//   } else {
+//     logger.info('Changing http-bind port for ' + prosodyHttpBindInfo.port + ', on host ' + prosodyHttpBindInfo.host)
+//     const options: ProxyOptions = {
+//       https: false,
+//       proxyReqPathResolver: async (_req: Request): Promise<string> => {
+//         return '/http-bind' // should not be able to access anything else
+//       },
+//       // preserveHostHdr: true,
+//       parseReqBody: true // Note that setting this to false overrides reqAsBuffer and reqBodyEncoding below.
+//       // FIXME: should we remove cookies?
+//     }
+//     currentProsodyHttpBindInfo = prosodyHttpBindInfo
+//     httpBindRoute = proxy('http://localhost:' + prosodyHttpBindInfo.port, options)
+//   }
+// }
+
+function disableProxyRoute (_options: RegisterServerOptions): void {
+  currentHttpBindProxy?.close()
+  currentHttpBindProxy = null
+  currentProsodyProxyInfo = null
+}
+
+function enableProxyRoute (
   { peertubeHelpers }: RegisterServerOptions,
-  prosodyHttpBindInfo: ProsodyHttpBindInfo | null
+  prosodyProxyInfo: ProsodyProxyInfo
 ): void {
   const logger = peertubeHelpers.logger
-  if (prosodyHttpBindInfo && !/^\d+$/.test(prosodyHttpBindInfo.port)) {
-    logger.error(`Port '${prosodyHttpBindInfo.port}' is not valid. Replacing by null`)
-    prosodyHttpBindInfo = null
+  if (!/^\d+$/.test(prosodyProxyInfo.port)) {
+    logger.error(`Port '${prosodyProxyInfo.port}' is not valid. Aborting.`)
+    return
   }
-
-  if (!prosodyHttpBindInfo) {
-    logger.info('Changing http-bind port for null')
-    currentProsodyHttpBindInfo = null
-    httpBindRoute = (_req: Request, res: Response, _next: NextFunction) => {
-      res.status(404)
-      res.send('Not found')
-    }
-  } else {
-    logger.info('Changing http-bind port for ' + prosodyHttpBindInfo.port + ', on host ' + prosodyHttpBindInfo.host)
-    const options: ProxyOptions = {
-      https: false,
-      proxyReqPathResolver: async (_req: Request): Promise<string> => {
-        return '/http-bind' // should not be able to access anything else
-      },
-      // preserveHostHdr: true,
-      parseReqBody: true // Note that setting this to false overrides reqAsBuffer and reqBodyEncoding below.
-      // FIXME: should we remove cookies?
-    }
-    currentProsodyHttpBindInfo = prosodyHttpBindInfo
-    httpBindRoute = proxy('http://localhost:' + prosodyHttpBindInfo.port, options)
-  }
+  currentProsodyProxyInfo = prosodyProxyInfo
+  currentHttpBindProxy = createProxyServer({
+    target: 'http://localhost:' + prosodyProxyInfo.port + '/http-bind',
+    ignorePath: true
+  })
 }
 
 export {
   initWebchatRouter,
-  changeHttpBindRoute
+  disableProxyRoute,
+  enableProxyRoute
 }
