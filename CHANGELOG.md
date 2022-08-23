@@ -23,7 +23,9 @@ If you don't want the chat server to be active, just uninstall the plugin
 
 ### New Features
 
-*
+* Removed deprecated modes, only keeping «Prosody server controlled by Peertube».
+* BOSH proxy optimization + enabling websocket.
+* BOSH path without plugin version, so it can be optimized in the nginx configuration.
 
 ## 5.7.1
 

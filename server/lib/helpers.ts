@@ -19,6 +19,16 @@ function getBaseRouterRoute (options: RegisterServerOptions): string {
   return options.peertubeHelpers.plugin.getBaseRouterRoute()
 }
 
+/**
+ * Returns the base router route, but without the plugin version.
+ * @param options server options
+ */
+function getBaseRouterCanonicalRoute (options: RegisterServerOptions): string {
+  let route = getBaseRouterRoute(options)
+  route = route.replace(pluginShortName + '/' + version + '/', pluginShortName + '/')
+  return route
+}
+
 function getBaseStaticRoute (options: RegisterServerOptions): string {
   if (!options.peertubeHelpers.plugin) {
     throw new Error('Missing peertubeHelpers.plugin, have you the correct Peertube version?')
@@ -62,6 +72,7 @@ async function getUserNickname (options: RegisterServerOptions, user: AuthUserFi
 
 export {
   getBaseRouterRoute,
+  getBaseRouterCanonicalRoute,
   getBaseStaticRoute,
   isUserAdmin,
   getUserNickname,

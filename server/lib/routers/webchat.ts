@@ -4,7 +4,7 @@ import type { ProxyOptions } from 'express-http-proxy'
 import type {
   ProsodyListRoomsResult, ProsodyListRoomsResultRoom
 } from '../../../shared/lib/types'
-import { getBaseRouterRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
+import { getBaseRouterRoute, getBaseRouterCanonicalRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getAPIKey } from '../apikey'
@@ -76,7 +76,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           room = '{{VIDEO_UUID}}@room.' + prosodyDomain
         }
       }
-      const boshUri = getBaseRouterRoute(options) + 'webchat/http-bind'
+      const boshUri = getBaseRouterCanonicalRoute(options) + 'webchat/http-bind'
       const wsUri = ''
       authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
         getBaseRouterRoute(options) +
