@@ -206,7 +206,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
     }
   ))
 
-  disableProxyRoute(options)
+  await disableProxyRoute(options)
   router.all('/http-bind',
     (req: Request, res: Response, next: NextFunction) => {
       try {
@@ -312,22 +312,38 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
 //   }
 // }
 
-function disableProxyRoute (_options: RegisterServerOptions): void {
-  currentHttpBindProxy?.close()
-  currentHttpBindProxy = null
-  currentProsodyProxyInfo = null
+async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): Promise<void> {
+  return new Promise((resolve) => {
+    try {
+      currentProsodyProxyInfo = null
+      if (!currentHttpBindProxy) {
+        resolve()
+        return
+      }
+      peertubeHelpers.logger.debug('Closing the proxy...')
+      currentHttpBindProxy.close(() => {
+        peertubeHelpers.logger.debug('The proxy is closed.')
+        resolve()
+      })
+      currentHttpBindProxy = null
+    } catch (err) {
+      peertubeHelpers.logger.error('Seems that the http bind proxy close has failed: ' + (err as string))
+      resolve()
+    }
+  })
 }
 
-function enableProxyRoute (
+async function enableProxyRoute (
   { peertubeHelpers }: RegisterServerOptions,
   prosodyProxyInfo: ProsodyProxyInfo
-): void {
+): Promise<void> {
   const logger = peertubeHelpers.logger
   if (!/^\d+$/.test(prosodyProxyInfo.port)) {
     logger.error(`Port '${prosodyProxyInfo.port}' is not valid. Aborting.`)
     return
   }
   currentProsodyProxyInfo = prosodyProxyInfo
+  logger.debug('Creating a new http bind proxy')
   currentHttpBindProxy = createProxyServer({
     target: 'http://localhost:' + prosodyProxyInfo.port + '/http-bind',
     ignorePath: true

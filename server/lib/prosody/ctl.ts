@@ -188,7 +188,7 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   })
 
   // Set the http-bind route.
-  enableProxyRoute(options, {
+  await enableProxyRoute(options, {
     host: config.host,
     port: config.port
   })
@@ -241,7 +241,7 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
   logger.info(`ProsodyCtl command returned: ${status.message}`)
 
   logger.debug('Removing proxy route')
-  disableProxyRoute(options)
+  await disableProxyRoute(options)
 }
 
 export {
