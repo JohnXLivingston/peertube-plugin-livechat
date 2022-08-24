@@ -236,12 +236,12 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
     return
   }
 
+  logger.debug('Removing proxy route')
+  await disableProxyRoute(options)
+
   logger.debug('Calling prosodyctl to stop the process')
   const status = await prosodyCtl(options, 'stop')
   logger.info(`ProsodyCtl command returned: ${status.message}`)
-
-  logger.debug('Removing proxy route')
-  await disableProxyRoute(options)
 }
 
 export {

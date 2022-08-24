@@ -313,24 +313,19 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
 // }
 
 async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): Promise<void> {
-  return new Promise((resolve) => {
-    try {
-      currentProsodyProxyInfo = null
-      if (!currentHttpBindProxy) {
-        resolve()
-        return
-      }
-      peertubeHelpers.logger.debug('Closing the proxy...')
-      currentHttpBindProxy.close(() => {
-        peertubeHelpers.logger.debug('The proxy is closed.')
-        resolve()
-      })
+  // Note: I tried to promisify the httpbind proxy closing (by waiting for the callback call).
+  // But this seems to never happen, and stucked the plugin uninstallation.
+  // So I don't wait.
+  try {
+    currentProsodyProxyInfo = null
+    if (currentHttpBindProxy) {
+      peertubeHelpers.logger.info('Closing the proxy...')
+      currentHttpBindProxy.close()
       currentHttpBindProxy = null
-    } catch (err) {
-      peertubeHelpers.logger.error('Seems that the http bind proxy close has failed: ' + (err as string))
-      resolve()
     }
-  })
+  } catch (err) {
+    peertubeHelpers.logger.error('Seems that the http bind proxy close has failed: ' + (err as string))
+  }
 }
 
 async function enableProxyRoute (
@@ -343,10 +338,26 @@ async function enableProxyRoute (
     return
   }
   currentProsodyProxyInfo = prosodyProxyInfo
-  logger.debug('Creating a new http bind proxy')
+
+  logger.info('Creating a new http bind proxy')
   currentHttpBindProxy = createProxyServer({
     target: 'http://localhost:' + prosodyProxyInfo.port + '/http-bind',
     ignorePath: true
+  })
+  currentHttpBindProxy.on('error', (err, req, res) => {
+    // We must handle errors, otherwise Peertube server crashes!
+    logger.error(
+      'The proxy got an error ' +
+      '(this can be normal if you updated/uninstalled the plugin, or shutdowned peertube while users were chatting): ' +
+      err.message
+    )
+    if ('writeHead' in res) {
+      res.writeHead(500)
+    }
+    res.end('')
+  })
+  currentHttpBindProxy.on('close', () => {
+    logger.info('Got a close event for the http bind proxy')
   })
 }
 
