@@ -156,6 +156,7 @@ class ProsodyConfigContent {
       'uptime', // Report how long server has been running
       'ping', // Replies to XMPP pings with pongs
       'bosh', // Enable BOSH clients, aka "Jabber over HTTP"
+      'websocket', // Enable Websocket clients
       'posix' // POSIX functionality, sends server to background, enables syslog, etc.
       // 'pep', // Enables users to publish their avatar, mood, activity, playing music and more
       // 'vcard_legacy' // Conversion between legacy vCard and PEP Avatar, vcard
@@ -200,7 +201,7 @@ class ProsodyConfigContent {
     this.authenticated.set('http_auth_url', url)
   }
 
-  usePeertubeBosh (prosodyDomain: string, port: string): void {
+  usePeertubeBoshAndWebsocket (prosodyDomain: string, port: string): void {
     this.global.set('c2s_require_encryption', false)
     this.global.set('interfaces', ['127.0.0.1', '::1'])
     this.global.set('c2s_ports', [])
@@ -213,12 +214,14 @@ class ProsodyConfigContent {
     this.global.set('https_interfaces', ['127.0.0.1', '::1'])
 
     this.global.set('consider_bosh_secure', true)
+    this.global.set('consider_websocket_secure', true)
 
     if (this.anon) {
       this.anon.set('trusted_proxies', ['127.0.0.1', '::1'])
       this.anon.set('allow_anonymous_s2s', false)
       this.anon.add('modules_enabled', 'http')
       this.anon.add('modules_enabled', 'bosh')
+      this.anon.add('modules_enabled', 'websocket')
       this.anon.set('http_host', prosodyDomain)
       this.anon.set('http_external_url', 'http://' + prosodyDomain)
     }
@@ -232,6 +235,7 @@ class ProsodyConfigContent {
       this.authenticated.set('allow_anonymous_s2s', false)
       this.authenticated.add('modules_enabled', 'http')
       this.authenticated.add('modules_enabled', 'bosh')
+      this.authenticated.add('modules_enabled', 'websocket')
       this.authenticated.set('http_host', prosodyDomain)
       this.authenticated.set('http_external_url', 'http://' + prosodyDomain)
     }

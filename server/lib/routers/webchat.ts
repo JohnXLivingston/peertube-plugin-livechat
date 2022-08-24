@@ -22,6 +22,12 @@ interface ProsodyProxyInfo {
 }
 let currentProsodyProxyInfo: ProsodyProxyInfo | null = null
 let currentHttpBindProxy: ReturnType<typeof createProxyServer> | null = null
+let currentWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
+interface CurrentWebsocketUpgradeEvent {
+  server: any
+  listener: Function
+}
+let currentWebsocketUpgradeEvent: CurrentWebsocketUpgradeEvent | null = null
 
 async function initWebchatRouter (options: RegisterServerOptions): Promise<Router> {
   const {
@@ -79,8 +85,9 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       // which correspond to a path without the plugin version.
       // We are doing this, so the path is predictible,
       // and can be optimized in the nginx configuration (to bypass Peertube).
-      const boshUri = getBaseRouterCanonicalRoute(options) + 'webchat/http-bind'
-      const wsUri = ''
+      const proxyBaseUri = getBaseRouterCanonicalRoute(options) + 'webchat/'
+      const boshUri = proxyBaseUri + 'http-bind'
+      const wsUri = proxyBaseUri + 'xmpp-websocket'
       authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
         getBaseRouterRoute(options) +
         'api/auth'
@@ -222,6 +229,21 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       }
     }
   )
+  router.all('/xmpp-websocket',
+    (req: Request, res: Response, next: NextFunction) => {
+      try {
+        if (!currentWebsocketProxy) {
+          res.status(404)
+          res.send('Not found')
+          return
+        }
+        req.url = 'xmpp-websocket'
+        currentWebsocketProxy.web(req, res)
+      } catch (err) {
+        next(err)
+      }
+    }
+  )
 
   router.get('/prosody-list-rooms', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
@@ -279,39 +301,6 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
   return router
 }
 
-// function changeHttpBindRoute (
-//   { peertubeHelpers }: RegisterServerOptions,
-//   prosodyHttpBindInfo: ProsodyHttpBindInfo | null
-// ): void {
-//   const logger = peertubeHelpers.logger
-//   if (prosodyHttpBindInfo && !/^\d+$/.test(prosodyHttpBindInfo.port)) {
-//     logger.error(`Port '${prosodyHttpBindInfo.port}' is not valid. Replacing by null`)
-//     prosodyHttpBindInfo = null
-//   }
-
-//   if (!prosodyHttpBindInfo) {
-//     logger.info('Changing http-bind port for null')
-//     currentProsodyHttpBindInfo = null
-//     httpBindRoute = (_req: Request, res: Response, _next: NextFunction) => {
-//       res.status(404)
-//       res.send('Not found')
-//     }
-//   } else {
-//     logger.info('Changing http-bind port for ' + prosodyHttpBindInfo.port + ', on host ' + prosodyHttpBindInfo.host)
-//     const options: ProxyOptions = {
-//       https: false,
-//       proxyReqPathResolver: async (_req: Request): Promise<string> => {
-//         return '/http-bind' // should not be able to access anything else
-//       },
-//       // preserveHostHdr: true,
-//       parseReqBody: true // Note that setting this to false overrides reqAsBuffer and reqBodyEncoding below.
-//       // FIXME: should we remove cookies?
-//     }
-//     currentProsodyHttpBindInfo = prosodyHttpBindInfo
-//     httpBindRoute = proxy('http://localhost:' + prosodyHttpBindInfo.port, options)
-//   }
-// }
-
 async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): Promise<void> {
   // Note: I tried to promisify the httpbind proxy closing (by waiting for the callback call).
   // But this seems to never happen, and stucked the plugin uninstallation.
@@ -319,9 +308,18 @@ async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): P
   try {
     currentProsodyProxyInfo = null
     if (currentHttpBindProxy) {
-      peertubeHelpers.logger.info('Closing the proxy...')
+      peertubeHelpers.logger.info('Closing the http bind proxy...')
       currentHttpBindProxy.close()
       currentHttpBindProxy = null
+    }
+
+    if (currentWebsocketProxy) {
+      peertubeHelpers.logger.info('Closing the websocket proxy...')
+      currentWebsocketProxy.close()
+      currentWebsocketProxy = null
+    }
+    if (currentWebsocketUpgradeEvent) {
+      currentWebsocketUpgradeEvent.server.off('upgrade', currentWebsocketUpgradeEvent.listener)
     }
   } catch (err) {
     peertubeHelpers.logger.error('Seems that the http bind proxy close has failed: ' + (err as string))
@@ -347,9 +345,9 @@ async function enableProxyRoute (
   currentHttpBindProxy.on('error', (err, req, res) => {
     // We must handle errors, otherwise Peertube server crashes!
     logger.error(
-      'The proxy got an error ' +
+      'The http bind proxy got an error ' +
       '(this can be normal if you updated/uninstalled the plugin, or shutdowned peertube while users were chatting): ' +
-      err.message
+      (err.message as string)
     )
     if ('writeHead' in res) {
       res.writeHead(500)
@@ -358,6 +356,61 @@ async function enableProxyRoute (
   })
   currentHttpBindProxy.on('close', () => {
     logger.info('Got a close event for the http bind proxy')
+  })
+
+  logger.info('Creating a new websocket proxy')
+  currentWebsocketProxy = createProxyServer({
+    target: 'http://localhost:' + prosodyProxyInfo.port + '/xmpp-websocket',
+    ignorePath: true,
+    ws: true
+  })
+  currentWebsocketProxy.on('error', (err, req, res) => {
+    // We must handle errors, otherwise Peertube server crashes!
+    logger.error(
+      'The websocket proxy got an error ' +
+      '(this can be normal if you updated/uninstalled the plugin, or shutdowned peertube while users were chatting): ' +
+      (err.message as string)
+    )
+    if ('writeHead' in res) {
+      res.writeHead(500)
+    }
+    res.end('')
+  })
+  currentWebsocketProxy.on('close', () => {
+    logger.info('Got a close event for the websocket proxy')
+  })
+  // Now, we need to attach an listener for the update event on the server...
+  // But we don't have access to the server.
+  // To get this, we will wait for the first request, and then get the server from there!
+  currentWebsocketProxy.once('proxyReq', function (_proxyReq, req, _res, _options) {
+    logger.info('Here is the first websocket proxy connection, we are binding the upgrade listener...')
+    /**
+     * Get the server object to subscribe to server events;
+     * 'upgrade' for websocket and 'close' for graceful shutdown
+     *
+     * NOTE:
+     * req.socket: node >= 13
+     * req.connection: node < 13 (Remove this when node 12/13 support is dropped)
+     *
+     * This code was inspired by:
+     * https://github.com/chimurai/http-proxy-middleware, file /src/http-proxy-middleware.ts#L53
+     */
+    const s: any = (req.socket ?? req.connection)
+    const server = 'server' in s ? s.server : null
+    if (currentWebsocketUpgradeEvent) {
+      currentWebsocketUpgradeEvent.server.off('upgrade', currentWebsocketUpgradeEvent.listener)
+    }
+    currentWebsocketUpgradeEvent = {
+      server,
+      listener: (req: any, socket: any, head: any) => {
+        // We are not the only websocket server! Peertube has its own. We must match the url.
+        if (/webchat\/xmpp-websocket/.test(req.url)) {
+          logger.info('Got an http upgrade event that match the correct path')
+          currentWebsocketProxy?.ws(req, socket, head)
+        }
+      }
+    }
+    server.on('upgrade', currentWebsocketUpgradeEvent.listener)
   })
 }
 

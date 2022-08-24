@@ -127,6 +127,13 @@ window.initConverse = async function initConverse ({
     body?.classList.add('livechat-transparent')
   }
 
+  if (websocketServiceUrl?.startsWith('/')) {
+    websocketServiceUrl = new URL(
+      websocketServiceUrl,
+      (window.location.protocol === 'http:' ? 'ws://' : 'wss://') + window.location.host
+    ).toString()
+  }
+
   const params: any = {
     assets_path: assetsPath,
 
