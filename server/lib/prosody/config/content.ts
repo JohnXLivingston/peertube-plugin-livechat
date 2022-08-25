@@ -156,7 +156,7 @@ class ProsodyConfigContent {
       'uptime', // Report how long server has been running
       'ping', // Replies to XMPP pings with pongs
       'bosh', // Enable BOSH clients, aka "Jabber over HTTP"
-      'websocket', // Enable Websocket clients
+      // 'websocket', // Enable Websocket clients
       'posix' // POSIX functionality, sends server to background, enables syslog, etc.
       // 'pep', // Enables users to publish their avatar, mood, activity, playing music and more
       // 'vcard_legacy' // Conversion between legacy vCard and PEP Avatar, vcard
@@ -201,7 +201,7 @@ class ProsodyConfigContent {
     this.authenticated.set('http_auth_url', url)
   }
 
-  usePeertubeBoshAndWebsocket (prosodyDomain: string, port: string): void {
+  usePeertubeBoshAndWebsocket (prosodyDomain: string, port: string, publicServerUrl: string): void {
     this.global.set('c2s_require_encryption', false)
     this.global.set('interfaces', ['127.0.0.1', '::1'])
     this.global.set('c2s_ports', [])
@@ -215,6 +215,9 @@ class ProsodyConfigContent {
 
     this.global.set('consider_bosh_secure', true)
     this.global.set('consider_websocket_secure', true)
+
+    // This line seems to be required by Prosody, otherwise it rejects websocket...
+    this.global.set('cross_domain_websocket', [publicServerUrl])
 
     if (this.anon) {
       this.anon.set('trusted_proxies', ['127.0.0.1', '::1'])

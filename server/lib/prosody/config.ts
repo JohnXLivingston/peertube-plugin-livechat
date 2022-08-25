@@ -130,7 +130,7 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     config.useAnonymous()
   }
   config.useHttpAuthentication(authApiUrl)
-  config.usePeertubeBoshAndWebsocket(prosodyDomain, port)
+  config.usePeertubeBoshAndWebsocket(prosodyDomain, port, options.peertubeHelpers.config.getWebserverUrl())
   config.useMucHttpDefault(roomApiUrl)
 
   if (enableC2s) {
