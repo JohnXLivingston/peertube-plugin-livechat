@@ -214,7 +214,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
   ))
 
   await disableProxyRoute(options)
-  router.all('/http-bind',
+  router.post('/http-bind',
     (req: Request, res: Response, next: NextFunction) => {
       try {
         if (!currentHttpBindProxy) {
@@ -237,6 +237,44 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           res.send('Not found')
           return
         }
+
+        // Now, we need to attach an listener for the update event on the server...
+        // But we don't have access to the server.
+        // To get this, we will wait for the first request, and then get the server from there!
+        if (!currentWebsocketUpgradeEvent) {
+          peertubeHelpers.logger.info(
+            'Here is the first websocket proxy connection, we are binding the upgrade listener...'
+          )
+          /**
+           * Get the server object to subscribe to server events;
+           * 'upgrade' for websocket and 'close' for graceful shutdown
+           *
+           * NOTE:
+           * req.socket: node >= 13
+           * req.connection: node < 13 (Remove this when node 12/13 support is dropped)
+           *
+           * This code was inspired by:
+           * https://github.com/chimurai/http-proxy-middleware, file /src/http-proxy-middleware.ts#L53
+           */
+          const s: any = (req.socket ?? req.connection)
+          const server = 'server' in s ? s.server : null
+          if (!server) {
+            peertubeHelpers.logger.error('Cant access to the ExpressJS server, wont be able to handle websocket.')
+          } else {
+            currentWebsocketUpgradeEvent = {
+              server,
+              listener: (req: any, socket: any, head: any) => {
+                // We are not the only websocket server! Peertube has its own. We must match the url.
+                if (/webchat\/xmpp-websocket/.test(req.url)) {
+                  peertubeHelpers.logger.info('Got an http upgrade event that match the correct path')
+                  currentWebsocketProxy?.ws(req, socket, head)
+                }
+              }
+            }
+            server.on('upgrade', currentWebsocketUpgradeEvent.listener)
+          }
+        }
+
         req.url = 'xmpp-websocket'
         currentWebsocketProxy.web(req, res)
       } catch (err) {
@@ -319,6 +357,7 @@ async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): P
       currentWebsocketProxy = null
     }
     if (currentWebsocketUpgradeEvent) {
+      peertubeHelpers.logger.info('Removing the upgrade listener')
       currentWebsocketUpgradeEvent.server.off('upgrade', currentWebsocketUpgradeEvent.listener)
     }
   } catch (err) {
@@ -378,39 +417,6 @@ async function enableProxyRoute (
   })
   currentWebsocketProxy.on('close', () => {
     logger.info('Got a close event for the websocket proxy')
-  })
-  // Now, we need to attach an listener for the update event on the server...
-  // But we don't have access to the server.
-  // To get this, we will wait for the first request, and then get the server from there!
-  currentWebsocketProxy.once('proxyReq', function (_proxyReq, req, _res, _options) {
-    logger.info('Here is the first websocket proxy connection, we are binding the upgrade listener...')
-    /**
-     * Get the server object to subscribe to server events;
-     * 'upgrade' for websocket and 'close' for graceful shutdown
-     *
-     * NOTE:
-     * req.socket: node >= 13
-     * req.connection: node < 13 (Remove this when node 12/13 support is dropped)
-     *
-     * This code was inspired by:
-     * https://github.com/chimurai/http-proxy-middleware, file /src/http-proxy-middleware.ts#L53
-     */
-    const s: any = (req.socket ?? req.connection)
-    const server = 'server' in s ? s.server : null
-    if (currentWebsocketUpgradeEvent) {
-      currentWebsocketUpgradeEvent.server.off('upgrade', currentWebsocketUpgradeEvent.listener)
-    }
-    currentWebsocketUpgradeEvent = {
-      server,
-      listener: (req: any, socket: any, head: any) => {
-        // We are not the only websocket server! Peertube has its own. We must match the url.
-        if (/webchat\/xmpp-websocket/.test(req.url)) {
-          logger.info('Got an http upgrade event that match the correct path')
-          currentWebsocketProxy?.ws(req, socket, head)
-        }
-      }
-    }
-    server.on('upgrade', currentWebsocketUpgradeEvent.listener)
   })
 }
 
