@@ -74,6 +74,9 @@
   "engine": {
     "peertube": ">=3.2.0"
   },
+  "engines": {
+    "npm": ">=7 <8"
+  },
   "homepage": "https://github.com/JohnXLivingston/peertube-plugin-livechat",
   "repository": "github:JohnXLivingston/peertube-plugin-livechat",
   "keywords": [
