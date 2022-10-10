@@ -253,20 +253,15 @@ function register (registerOptions: RegisterClientOptions): void {
       }
 
       let showShareUrlButton: boolean = false
-      if (settings['chat-type'] === 'builtin-prosody') {
-        // The share url functionality should be technically possible for other modes
-        // than builtin-prosody. But it is too difficult to maintain.
-        // So I choose to enable it only for builtin-prosody.
-
-        const chatShareUrl = settings['chat-share-url'] ?? ''
-        if (chatShareUrl === 'everyone') {
-          showShareUrlButton = true
-        } else if (chatShareUrl === 'owner') {
-          showShareUrlButton = guessIsMine(registerOptions, video)
-        } else if (chatShareUrl === 'owner+moderators') {
-          showShareUrlButton = guessIsMine(registerOptions, video) || guessIamIModerator(registerOptions)
-        }
+      const chatShareUrl = settings['chat-share-url'] ?? ''
+      if (chatShareUrl === 'everyone') {
+        showShareUrlButton = true
+      } else if (chatShareUrl === 'owner') {
+        showShareUrlButton = guessIsMine(registerOptions, video)
+      } else if (chatShareUrl === 'owner+moderators') {
+        showShareUrlButton = guessIsMine(registerOptions, video) || guessIamIModerator(registerOptions)
       }
+
       insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank'], showShareUrlButton).then(() => {
         if (settings['chat-auto-display']) {
           openChat(video)

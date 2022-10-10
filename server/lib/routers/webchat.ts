@@ -2,7 +2,7 @@ import type { RegisterServerOptions, MVideoThumbnail } from '@peertube/peertube-
 import type { Router, RequestHandler, Request, Response, NextFunction } from 'express'
 import type { ProxyOptions } from 'express-http-proxy'
 import type {
-  ChatType, ProsodyListRoomsResult, ProsodyListRoomsResultRoom
+  ProsodyListRoomsResult, ProsodyListRoomsResultRoom
 } from '../../../shared/lib/types'
 import { getBaseRouterRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
@@ -41,17 +41,11 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
 
       const roomKey = req.params.roomKey
       const settings = await settingsManager.getSettings([
-        'chat-type', 'chat-room', 'chat-server',
-        'chat-bosh-uri', 'chat-ws-uri',
         'prosody-room-type',
         'converse-theme', 'converse-autocolors'
       ])
-      const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
 
-      let jid: string
       let room: string
-      let boshUri: string
-      let wsUri: string
       let authenticationUrl: string = ''
       let advancedControls: boolean = false // auto join the chat in viewer mode, if not logged in
       let autoViewerMode: boolean = false
@@ -61,60 +55,42 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       if (!/^\w+$/.test(converseJSTheme)) {
         converseJSTheme = 'peertube'
       }
-      if (chatType === 'builtin-prosody') {
-        const prosodyDomain = await getProsodyDomain(options)
-        jid = 'anon.' + prosodyDomain
-        if (req.query.forcetype === '1') {
-          // We come from the room list in the settings page.
-          // Here we don't read the prosody-room-type settings,
-          // but use the roomKey format.
-          // NB: there is no extra security. Any user can add this parameter.
-          //     This is not an issue: the setting will be tested at the room creation.
-          //     No room can be created in the wrong mode.
-          if (/^channel\.\d+$/.test(roomKey)) {
-            room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
-          } else {
-            room = '{{VIDEO_UUID}}@room.' + prosodyDomain
-          }
+      const prosodyDomain = await getProsodyDomain(options)
+      const jid = 'anon.' + prosodyDomain
+      if (req.query.forcetype === '1') {
+        // We come from the room list in the settings page.
+        // Here we don't read the prosody-room-type settings,
+        // but use the roomKey format.
+        // NB: there is no extra security. Any user can add this parameter.
+        //     This is not an issue: the setting will be tested at the room creation.
+        //     No room can be created in the wrong mode.
+        if (/^channel\.\d+$/.test(roomKey)) {
+          room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
         } else {
-          if (settings['prosody-room-type'] === 'channel') {
-            room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
-          } else {
-            room = '{{VIDEO_UUID}}@room.' + prosodyDomain
-          }
+          room = '{{VIDEO_UUID}}@room.' + prosodyDomain
         }
-        boshUri = getBaseRouterRoute(options) + 'webchat/http-bind'
-        wsUri = ''
-        authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
-          getBaseRouterRoute(options) +
-          'api/auth'
-        advancedControls = true
-        if (req.query._readonly === 'true') {
-          forceReadonly = 'true'
-        } else if (req.query._readonly === 'noscroll') {
-          forceReadonly = 'noscroll'
-        } else {
-          autoViewerMode = true // auto join the chat in viewer mode, if not logged in
-        }
-        if (req.query._transparent === 'true') {
-          transparent = true
-        }
-      } else if (chatType === 'builtin-converse') {
-        if (!settings['chat-server']) {
-          throw new Error('Missing chat-server settings.')
-        }
-        if (!settings['chat-room']) {
-          throw new Error('Missing chat-room settings.')
-        }
-        if (!settings['chat-bosh-uri'] && !settings['chat-ws-uri']) {
-          throw new Error('Missing BOSH or Websocket uri.')
-        }
-        jid = settings['chat-server'] as string
-        room = settings['chat-room'] as string
-        boshUri = settings['chat-bosh-uri'] as string
-        wsUri = settings['chat-ws-uri'] as string
       } else {
-        throw new Error('Builtin chat disabled.')
+        if (settings['prosody-room-type'] === 'channel') {
+          room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
+        } else {
+          room = '{{VIDEO_UUID}}@room.' + prosodyDomain
+        }
+      }
+      const boshUri = getBaseRouterRoute(options) + 'webchat/http-bind'
+      const wsUri = ''
+      authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
+        getBaseRouterRoute(options) +
+        'api/auth'
+      advancedControls = true
+      if (req.query._readonly === 'true') {
+        forceReadonly = 'true'
+      } else if (req.query._readonly === 'noscroll') {
+        forceReadonly = 'noscroll'
+      } else {
+        autoViewerMode = true // auto join the chat in viewer mode, if not logged in
+      }
+      if (req.query._transparent === 'true') {
+        transparent = true
       }
 
       let video: MVideoThumbnail | undefined
@@ -122,10 +98,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       const channelMatches = roomKey.match(/^channel\.(\d+)$/)
       if (channelMatches?.[1]) {
         channelId = parseInt(channelMatches[1])
-        // Here we are on a room... must be in prosody mode.
-        if (chatType !== 'builtin-prosody') {
-          throw new Error('Cant access a chat by a channel uri if chatType!==builtin-prosody')
-        }
+        // Here we are on a channel room...
         const channelInfos = await getChannelInfosById(options, channelId)
         if (!channelInfos) {
           throw new Error('Channel not found')
@@ -168,7 +141,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       let autocolorsStyles = ''
       if (
         settings['converse-autocolors'] &&
-        isAutoColorsAvailable(settings['chat-type'] as ChatType, settings['converse-theme'] as string)
+        isAutoColorsAvailable(settings['converse-theme'] as string)
       ) {
         peertubeHelpers.logger.debug('Trying to load AutoColors...')
         const autocolors: AutoColors = {
@@ -246,18 +219,6 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       }
       if (!await isUserAdmin(options, res)) {
         res.sendStatus(403)
-        return
-      }
-
-      const chatType: ChatType = await options.settingsManager.getSetting('chat-type') as ChatType
-      if (chatType !== 'builtin-prosody') {
-        const message = 'Please save the settings first.' // TODO: translate?
-        res.status(200)
-        const r: ProsodyListRoomsResult = {
-          ok: false,
-          error: message
-        }
-        res.json(r)
         return
       }
 

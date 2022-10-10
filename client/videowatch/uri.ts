@@ -1,6 +1,5 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
-import type { ChatType } from 'shared/lib/types'
 import { AutoColors, isAutoColorsAvailable } from 'shared/lib/autocolors'
 import { logger } from './logger'
 import { computeAutoColors } from './colors'
@@ -32,41 +31,15 @@ function getIframeUri (
     logger.error('Settings are not initialized, too soon to compute the iframeUri')
     return null
   }
-  let iframeUriStr = ''
-  const chatType: ChatType = (settings['chat-type'] ?? 'disabled') as ChatType
-  if (chatType === 'builtin-prosody' || chatType === 'builtin-converse') {
-    // Using the builtin converseJS
-    iframeUriStr = getBaseRoute(registerOptions, uriOptions.permanent)
-    iframeUriStr += '/webchat/room/' + encodeURIComponent(video.uuid)
-  } else if (chatType === 'external-uri') {
-    iframeUriStr = settings['chat-uri'] || ''
-    iframeUriStr = iframeUriStr.replace(/{{VIDEO_UUID}}/g, encodeURIComponent(video.uuid))
-    if (iframeUriStr.includes('{{CHANNEL_ID}}')) {
-      if (!video.channel || !video.channel.id) {
-        logger.error('Missing channel info in video object.')
-        return null
-      }
-      iframeUriStr = iframeUriStr.replace(/{{CHANNEL_ID}}/g, encodeURIComponent(video.channel.id))
-    }
-    if (!/^https?:\/\//.test(iframeUriStr)) {
-      logger.error('The webchaturi must begin with https://')
-      return null
-    }
-  } else {
-    logger.error('Chat disabled.')
-    return null
-  }
-  if (iframeUriStr === '') {
-    logger.error('No iframe uri')
-    return null
-  }
+  let iframeUriStr = getBaseRoute(registerOptions, uriOptions.permanent)
+  iframeUriStr += '/webchat/room/' + encodeURIComponent(video.uuid)
 
   const iFrameUri = new URL(iframeUriStr, window.location.origin)
 
   if (
     !uriOptions.ignoreAutoColors &&
     settings['converse-autocolors'] &&
-    isAutoColorsAvailable(settings['chat-type'] as ChatType, settings['converse-theme'])
+    isAutoColorsAvailable(settings['converse-theme'])
   ) {
     logger.info('We have to try to compute autocolors.')
     try {

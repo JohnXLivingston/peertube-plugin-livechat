@@ -1,4 +1,3 @@
-import type { ChatType } from './types'
 const validateColor = require('validate-color').default
 
 type AutoColorValue = string
@@ -19,14 +18,10 @@ interface AutoColors {
 }
 
 /**
- * @param chatType value of the settings 'chat-type'
  * @param theme value of the settings 'converse-theme'
  * @returns true if the theme can use autocolors
  */
-function isAutoColorsAvailable (chatType: ChatType, theme: string): boolean {
-  if (chatType !== 'builtin-prosody' && chatType !== 'builtin-converse') {
-    return false
-  }
+function isAutoColorsAvailable (theme: string): boolean {
   return theme === 'peertube' // currently the only theme that can handle autocolors.
 }
 

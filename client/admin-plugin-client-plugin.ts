@@ -1,6 +1,6 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
-import type { ChatType, ProsodyListRoomsResult } from 'shared/lib/types'
+import type { ProsodyListRoomsResult } from 'shared/lib/types'
 
 interface ActionPluginSettingsParams {
   npmName: string
@@ -202,56 +202,13 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
     isSettingHidden: options => {
       const name = options.setting.name
       switch (name) {
-        case 'chat-type-help-disabled':
-          return options.formValues['chat-type'] !== ('disabled' as ChatType)
-        case 'prosody-room-type':
-        case 'prosody-port':
-        case 'prosody-peertube-uri':
-        case 'chat-type-help-builtin-prosody':
-        case 'prosody-list-rooms':
-        case 'prosody-advanced':
-        case 'prosody-muc-log-by-default':
-        case 'prosody-muc-expiration':
-        case 'prosody-c2s':
-        case 'prosody-components':
-        case 'chat-share-url':
-          return options.formValues['chat-type'] !== ('builtin-prosody' as ChatType)
         case 'prosody-c2s-port':
-          return !(
-            options.formValues['chat-type'] === ('builtin-prosody' as ChatType) &&
-            options.formValues['prosody-c2s'] === true
-          )
+          return options.formValues['prosody-c2s'] !== true
         case 'prosody-components-port':
         case 'prosody-components-list':
-          return !(
-            options.formValues['chat-type'] === ('builtin-prosody' as ChatType) &&
-            options.formValues['prosody-components'] === true
-          )
-        case 'chat-server':
-        case 'chat-room':
-        case 'chat-bosh-uri':
-        case 'chat-ws-uri':
-        case 'chat-type-help-builtin-converse':
-          return options.formValues['chat-type'] !== ('builtin-converse' as ChatType)
-        case 'converse-advanced':
-        case 'converse-theme':
-          return !(
-            options.formValues['chat-type'] === ('builtin-converse' as ChatType) ||
-            options.formValues['chat-type'] === ('builtin-prosody' as ChatType)
-          )
+          return options.formValues['prosody-components'] !== true
         case 'converse-autocolors':
-          return !(
-            (
-              options.formValues['chat-type'] === ('builtin-converse' as ChatType) ||
-              options.formValues['chat-type'] === ('builtin-prosody' as ChatType)
-            ) &&
-            options.formValues['converse-theme'] === 'peertube'
-          )
-        case 'chat-uri':
-        case 'chat-type-help-external-uri':
-          return options.formValues['chat-type'] !== ('external-uri' as ChatType)
-        case 'chat-style':
-          return options.formValues['chat-type'] === 'disabled'
+          return options.formValues['converse-theme'] !== 'peertube'
         case 'chat-per-live-video-warning':
           return !(options.formValues['chat-all-lives'] === true && options.formValues['chat-per-live-video'] === true)
       }

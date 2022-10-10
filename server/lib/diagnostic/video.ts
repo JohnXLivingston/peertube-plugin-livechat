@@ -46,7 +46,7 @@ export async function diagVideo (test: string, { settingsManager }: RegisterServ
   }
   if (atLeastOne) {
     result.ok = true
-    result.next = 'webchat-type'
+    result.next = 'prosody'
   } else {
     result.ok = false
     result.messages.push('Chat is activate for no video.')

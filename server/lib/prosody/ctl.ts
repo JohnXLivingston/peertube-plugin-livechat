@@ -2,7 +2,6 @@ import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig } from './config'
 import { startProsodyLogRotate, stopProsodyLogRotate } from './logrotate'
 import { changeHttpBindRoute } from '../routers/webchat'
-import type { ChatType } from '../../../shared/lib/types'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
 
@@ -139,16 +138,9 @@ async function testProsodyCorrectlyRunning (options: RegisterServerOptions): Pro
 }
 
 async function ensureProsodyRunning (options: RegisterServerOptions): Promise<void> {
-  const { peertubeHelpers, settingsManager } = options
+  const { peertubeHelpers } = options
   const logger = peertubeHelpers.logger
   logger.debug('Calling ensureProsodyRunning')
-
-  logger.debug('Checking if prosody should be active')
-  const setting = await settingsManager.getSetting('chat-type')
-  if (setting !== ('builtin-prosody' as ChatType)) {
-    logger.info('Chat type is not set to builtin-prosody, we wont launch it')
-    return
-  }
 
   const r = await testProsodyCorrectlyRunning(options)
   if (r.ok) {

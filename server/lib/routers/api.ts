@@ -7,7 +7,6 @@ import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } 
 import { getUserNickname } from '../helpers'
 import { Affiliations, getVideoAffiliations, getChannelAffiliations } from '../prosody/config/affiliations'
 import { getProsodyDomain } from '../prosody/config/domain'
-import type { ChatType } from '../../../shared/lib/types'
 import { fillVideoCustomFields } from '../custom-fields'
 import { getChannelInfosById } from '../database/channel'
 
@@ -51,14 +50,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       logger.info(`Requesting room information for room '${jid}'.`)
 
       const settings = await options.settingsManager.getSettings([
-        'chat-type',
         'prosody-room-type'
       ])
-      if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
-        logger.warn('Prosody chat is not active')
-        res.sendStatus(403)
-        return
-      }
       // Now, we have two different room type: per video or per channel.
       if (settings['prosody-room-type'] === 'channel') {
         const matches = jid.match(/^channel\.(\d+)$/)
@@ -106,17 +99,11 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
         // check settings (chat enabled for this video?)
         const settings = await options.settingsManager.getSettings([
-          'chat-type',
           'chat-per-live-video',
           'chat-all-lives',
           'chat-all-non-lives',
           'chat-videos-list'
         ])
-        if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
-          logger.warn('Prosody chat is not active')
-          res.sendStatus(403)
-          return
-        }
         if (!videoHasWebchat({
           'chat-per-live-video': !!settings['chat-per-live-video'],
           'chat-all-lives': !!settings['chat-all-lives'],
@@ -186,14 +173,6 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
   router.get('/user/check_password', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
-      const settings = await options.settingsManager.getSettings([
-        'chat-type'
-      ])
-      if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
-        logger.warn('Prosody chat is not active')
-        res.status(200).send('false')
-        return
-      }
       const prosodyDomain = await getProsodyDomain(options)
       const user = req.query.user
       const server = req.query.server
@@ -213,14 +192,6 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
   router.get('/user/user_exists', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
-      const settings = await options.settingsManager.getSettings([
-        'chat-type'
-      ])
-      if (settings['chat-type'] !== ('builtin-prosody' as ChatType)) {
-        logger.warn('Prosody chat is not active')
-        res.status(200).send('false')
-        return
-      }
       const prosodyDomain = await getProsodyDomain(options)
       const user = req.query.user
       const server = req.query.server

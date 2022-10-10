@@ -1,4 +1,3 @@
-type ChatType = 'disabled' | 'builtin-prosody' | 'builtin-converse' | 'external-uri'
 type ConverseJSTheme = 'peertube' | 'default' | 'concord'
 
 interface ProsodyListRoomsResultError {
@@ -28,7 +27,6 @@ interface ProsodyListRoomsResultSuccess {
 type ProsodyListRoomsResult = ProsodyListRoomsResultError | ProsodyListRoomsResultSuccess
 
 export {
-  ChatType,
   ConverseJSTheme,
   ProsodyListRoomsResult,
   ProsodyListRoomsResultRoom

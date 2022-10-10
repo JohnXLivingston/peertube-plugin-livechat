@@ -1,6 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import { ensureProsodyRunning, ensureProsodyNotRunning } from './prosody/ctl'
-import type { ChatType, ConverseJSTheme } from '../../shared/lib/types'
+import { ensureProsodyRunning } from './prosody/ctl'
+import type { ConverseJSTheme } from '../../shared/lib/types'
 
 function initSettings (options: RegisterServerOptions): void {
   const { peertubeHelpers, registerSetting, settingsManager } = options
@@ -34,74 +34,14 @@ function initSettings (options: RegisterServerOptions): void {
     descriptionHTML: '<h3>Chat mode</h3>'
   })
   registerSetting({
-    name: 'chat-type',
-    label: 'Chat mode',
-    type: 'select',
-    default: 'disabled' as ChatType,
-    private: false,
-    options: [
-      { value: 'disabled', label: 'Disabled' },
-      { value: 'builtin-prosody', label: 'Prosody server controlled by Peertube (recommended)' },
-      { value: 'builtin-converse', label: 'Connect to an existing XMPP server with ConverseJS' },
-      { value: 'external-uri', label: 'Use an external web chat tool' }
-    ] as Array<{value: ChatType, label: string}>,
-    descriptionHTML: 'Please choose the webchat mode you want to use.'
-  })
-
-  registerSetting({
-    name: 'chat-type-help-disabled',
+    name: 'chat-help-builtin-prosody',
     type: 'html',
-    descriptionHTML: 'The chat is disabled.',
-    private: true
-  })
-  registerSetting({
-    name: 'chat-type-help-builtin-prosody',
-    type: 'html',
-    label: 'Prosody server controlled by Peertube (recommended)',
-    descriptionHTML: `With this mode, the Peertube server will control a local Prosody XMPP server.<br>
-Note: you have to install the Prosody XMPP server.
+    label: 'Prosody server',
+    descriptionHTML: `This plugin uses the Prosody XMPP server to handle chat rooms.<br>
+The Peertube server will control this Prosody server.<br>
+Important Note: you have to install Prosody on your server.
 Please read the <a
   href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/prosody.md"
-  target="_blank"
->documentation</a>.`,
-    private: true
-  })
-  registerSetting({
-    name: 'chat-type-help-builtin-converse',
-    type: 'html',
-    label: 'Connect to an existing XMPP server with ConverseJS',
-    descriptionHTML:
-`<div class="peertube-plugin-livechat-warning"><b>
-  This mode is deprecated and will be removed in version 6.0.0.
-  More information in the
-  <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#560" target="_blank">
-    CHANGELOG
-  </a>.
-</b></div>
-With this mode, you can connect to an existing XMPP server, that allow anonymous authentication and room creation.
-Please read the
-<a
-  href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/conversejs.md"
-  target="_blank"
->documentation</a>.`,
-    private: true
-  })
-  registerSetting({
-    name: 'chat-type-help-external-uri',
-    type: 'html',
-    label: 'Use an external webchat',
-    descriptionHTML:
-`<div class="peertube-plugin-livechat-warning"><b>
-This mode is deprecated and will be removed in version 6.0.0.
-More information in the
-<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#560" target="_blank">
-  CHANGELOG
-</a>.
-</b></div>
-With this mode, you can use any external web chat that can be included in an iframe.
-Please read the
-<a
-  href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/external.md"
   target="_blank"
 >documentation</a>.`,
     private: true
@@ -138,70 +78,6 @@ Please read the
 `The port that will be used by the builtin Prosody server.<br>
 Change it if this port is already in use on your server.<br>
 You can close this port on your firewall, it will not be accessed from the outer world.`
-  })
-
-  registerSetting({
-    name: 'chat-server',
-    label: 'XMPP service server',
-    type: 'input',
-    default: '',
-    descriptionHTML: 'Your XMPP server. Without any scheme. Example : peertube.im.your_domain.',
-    private: true
-  })
-  registerSetting({
-    name: 'chat-room',
-    label: 'XMPP room template',
-    type: 'input',
-    default: '',
-    descriptionHTML:
-`Your XMPP room. You can use following placeholders to inject video metadata in the room name:
-<ul>
-  <li>{{VIDEO_UUID}} to add the video UUID.</li>
-  <li>{{CHANNEL_ID}} to add the CHANNEL numerical ID.</li>
-  <li>{{CHANNEL_NAME}} to add the channel name (see the Peertube's documentation for possible characters).</li>
-</ul>
-Without any placeholder, all videos will point to the same chat room.<br>
-Example: public@room.peertube.im.your_domain<br>
-Example: public_{{VIDEO_UUID}}@room.peertube.im.your_domain`,
-    private: true
-  })
-  registerSetting({
-    name: 'chat-bosh-uri',
-    label: 'BOSH uri',
-    type: 'input',
-    default: '',
-    descriptionHTML:
-`URI of the external BOSH server.
-Please make sure it accept cross origin request from your domain.<br>
-You must at least have a BOSH or a Websocket uri.`,
-    private: true
-  })
-  registerSetting({
-    name: 'chat-ws-uri',
-    label: 'Websocket uri',
-    type: 'input',
-    default: '',
-    descriptionHTML: `
-URI of the external WS server.
-Please make sure it accept cross origin request from your domain.<br>
-You must at least have a BOSH or a Websocket uri.`,
-    private: true
-  })
-
-  registerSetting({
-    name: 'chat-uri',
-    label: 'Webchat url',
-    type: 'input',
-    default: '',
-    descriptionHTML:
-`Put here your webchat url. An iframe will be created pointing to this url.
-You can use following placeholders to inject video metadata in the url:
-<ul>
-  <li>{{VIDEO_UUID}} to add the video UUID.</li>
-  <li>{{CHANNEL_ID}} to add the CHANNEL numerical ID.</li>
-</ul>
-Example : https://my_domain/conversejs.html?room=video_{{VIDEO_UUID}}.`,
-    private: false
   })
 
   // ********** Chat behaviour
@@ -467,17 +343,9 @@ You can keep this port closed on your firewall for now, it will not be accessed 
   })
 
   // ********** settings changes management
-  settingsManager.onSettingsChange(async (settings: any) => {
-    if ('chat-type' in settings) {
-      const chatType: ChatType = settings['chat-type'] ?? 'disabled'
-      if (chatType === 'builtin-prosody') {
-        peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
-        await ensureProsodyRunning(options)
-      } else {
-        peertubeHelpers.logger.info('Saving settings, ensuring prosody is not running')
-        await ensureProsodyNotRunning(options)
-      }
-    }
+  settingsManager.onSettingsChange(async (_settings: any) => {
+    peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
+    await ensureProsodyRunning(options)
   })
 }
 

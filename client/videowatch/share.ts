@@ -106,7 +106,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       readonlyOptions.append(transparentLabelEl)
 
       let autoColors
-      if (isAutoColorsAvailable(settings['chat-type'], settings['converse-theme'])) {
+      if (isAutoColorsAvailable(settings['converse-theme'])) {
         const label = document.createElement('label')
         label.innerText = labelAutocolors
         autoColors = document.createElement('input')

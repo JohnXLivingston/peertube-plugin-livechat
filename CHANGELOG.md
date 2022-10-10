@@ -1,5 +1,30 @@
 # Changelog
 
+## 6.0.0 (Not Released Yet)
+
+### Breaking changes
+
+Following modes are removed:
+
+* Connect to an existing XMPP server with ConverseJS
+* Use an external web chat tool
+
+The only remaining mode is the recommanded one: «Prosody server controlled by Peertube».
+
+These modes were here for historical reasons (backward compatibility, etc.).
+But they became difficult to maintain, and impossible to document (adding a lot of confusion).
+
+Moreover, it seems that they weren't really used.
+
+**Note:** If you were using one of the 2 removed modes, or if you disabled the plugin in the settings,
+the server will try to use the new mode after updating the plugin.
+If you don't want the chat server to be active, just uninstall the plugin
+(settings won't be lost, you just have to download it again).
+
+### New Features
+
+*
+
 ## 5.7.1
 
 * Adding an easy way to customize background transparency in OBS and co.
