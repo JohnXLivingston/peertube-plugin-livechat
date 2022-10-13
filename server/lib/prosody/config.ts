@@ -2,7 +2,7 @@ import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ProsodyLogLevel } from './config/content'
 import * as fs from 'fs'
 import * as path from 'path'
-import { getBaseRouterRoute } from '../helpers'
+import { getBaseRouterRoute, RegisterServerOptionsV5 } from '../helpers'
 import { ProsodyFilePaths } from './config/paths'
 import { ConfigLogExpiration, ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
@@ -77,7 +77,7 @@ interface ProsodyConfig {
   logExpiration: ConfigLogExpiration
   valuesToHideInDiagnostic: Map<string, string>
 }
-async function getProsodyConfig (options: RegisterServerOptions): Promise<ProsodyConfig> {
+async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling getProsodyConfig')
 
@@ -130,7 +130,8 @@ async function getProsodyConfig (options: RegisterServerOptions): Promise<Prosod
     config.useAnonymous()
   }
   config.useHttpAuthentication(authApiUrl)
-  config.usePeertubeBoshAndWebsocket(prosodyDomain, port, options.peertubeHelpers.config.getWebserverUrl())
+  const useWS = !!options.registerWebSocketRoute // this comes with Peertube >=5.0.0, and is a prerequisite to websocket
+  config.usePeertubeBoshAndWebsocket(prosodyDomain, port, options.peertubeHelpers.config.getWebserverUrl(), useWS)
   config.useMucHttpDefault(roomApiUrl)
 
   if (enableC2s) {
