@@ -4,7 +4,9 @@ import type {
   ProsodyListRoomsResult, ProsodyListRoomsResultRoom
 } from '../../../shared/lib/types'
 import { createProxyServer } from 'http-proxy'
-import { getBaseRouterRoute, getBaseRouterCanonicalRoute, getBaseStaticRoute, isUserAdmin } from '../helpers'
+import {
+  RegisterServerOptionsV5, getBaseRouterRoute, getBaseWebSocketRoute, getBaseStaticRoute, isUserAdmin
+} from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getAPIKey } from '../apikey'
@@ -14,7 +16,6 @@ import * as path from 'path'
 const got = require('got')
 
 const fs = require('fs').promises
-// const proxy = require('express-http-proxy')
 
 interface ProsodyProxyInfo {
   host: string
@@ -23,15 +24,11 @@ interface ProsodyProxyInfo {
 let currentProsodyProxyInfo: ProsodyProxyInfo | null = null
 let currentHttpBindProxy: ReturnType<typeof createProxyServer> | null = null
 let currentWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
-interface CurrentWebsocketUpgradeEvent {
-  server: any
-  listener: Function
-}
-let currentWebsocketUpgradeEvent: CurrentWebsocketUpgradeEvent | null = null
 
-async function initWebchatRouter (options: RegisterServerOptions): Promise<Router> {
+async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Router> {
   const {
     getRouter,
+    registerWebSocketRoute,
     peertubeHelpers,
     settingsManager
   } = options
@@ -49,6 +46,10 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
         'prosody-room-type',
         'converse-theme', 'converse-autocolors'
       ])
+
+      const boshUri = getBaseRouterRoute(options) + 'http-bind'
+      let wsUri = getBaseWebSocketRoute(options) // can be undefined
+      wsUri = wsUri !== undefined ? wsUri + 'xmpp-websocket' : ''
 
       let room: string
       let authenticationUrl: string = ''
@@ -81,13 +82,7 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
           room = '{{VIDEO_UUID}}@room.' + prosodyDomain
         }
       }
-      // Here we are using getBaseRouterCanonicalRoute,
-      // which correspond to a path without the plugin version.
-      // We are doing this, so the path is predictible,
-      // and can be optimized in the nginx configuration (to bypass Peertube).
-      const proxyBaseUri = getBaseRouterCanonicalRoute(options) + 'webchat/'
-      const boshUri = proxyBaseUri + 'http-bind'
-      const wsUri = proxyBaseUri + 'xmpp-websocket'
+
       authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
         getBaseRouterRoute(options) +
         'api/auth'
@@ -229,59 +224,19 @@ async function initWebchatRouter (options: RegisterServerOptions): Promise<Route
       }
     }
   )
-  router.all('/xmpp-websocket',
-    (req: Request, res: Response, next: NextFunction) => {
-      try {
+
+  // Peertube >=5.0.0: Adding the websocket route.
+  if (registerWebSocketRoute) {
+    registerWebSocketRoute({
+      route: '/xmpp-websocket',
+      handler: (request, socket, head) => {
         if (!currentWebsocketProxy) {
-          res.status(404)
-          res.send('Not found')
-          return
+          throw new Error('There is no current websocket proxy, should not get here.')
         }
-
-        // Now, we need to attach an listener for the update event on the server...
-        // But we don't have access to the server.
-        // To get this, we will wait for the first request, and then get the server from there!
-        if (!currentWebsocketUpgradeEvent) {
-          peertubeHelpers.logger.info(
-            'Here is the first websocket proxy connection, we are binding the upgrade listener...'
-          )
-          /**
-           * Get the server object to subscribe to server events;
-           * 'upgrade' for websocket and 'close' for graceful shutdown
-           *
-           * NOTE:
-           * req.socket: node >= 13
-           * req.connection: node < 13 (Remove this when node 12/13 support is dropped)
-           *
-           * This code was inspired by:
-           * https://github.com/chimurai/http-proxy-middleware, file /src/http-proxy-middleware.ts#L53
-           */
-          const s: any = (req.socket ?? req.connection)
-          const server = 'server' in s ? s.server : null
-          if (!server) {
-            peertubeHelpers.logger.error('Cant access to the ExpressJS server, wont be able to handle websocket.')
-          } else {
-            currentWebsocketUpgradeEvent = {
-              server,
-              listener: (req: any, socket: any, head: any) => {
-                // We are not the only websocket server! Peertube has its own. We must match the url.
-                if (/webchat\/xmpp-websocket/.test(req.url)) {
-                  peertubeHelpers.logger.info('Got an http upgrade event that match the correct path')
-                  currentWebsocketProxy?.ws(req, socket, head)
-                }
-              }
-            }
-            server.on('upgrade', currentWebsocketUpgradeEvent.listener)
-          }
-        }
-
-        req.url = 'xmpp-websocket'
-        currentWebsocketProxy.web(req, res)
-      } catch (err) {
-        next(err)
+        currentWebsocketProxy.ws(request, socket, head)
       }
-    }
-  )
+    })
+  }
 
   router.get('/prosody-list-rooms', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
@@ -355,10 +310,6 @@ async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): P
       peertubeHelpers.logger.info('Closing the websocket proxy...')
       currentWebsocketProxy.close()
       currentWebsocketProxy = null
-    }
-    if (currentWebsocketUpgradeEvent) {
-      peertubeHelpers.logger.info('Removing the upgrade listener')
-      currentWebsocketUpgradeEvent.server.off('upgrade', currentWebsocketUpgradeEvent.listener)
     }
   } catch (err) {
     peertubeHelpers.logger.error('Seems that the http bind proxy close has failed: ' + (err as string))

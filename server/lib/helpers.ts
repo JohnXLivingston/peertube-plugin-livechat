@@ -1,5 +1,7 @@
 import type { RegisterServerOptions, PeerTubeHelpers } from '@peertube/peertube-types'
-import { Response } from 'express'
+import type { Response } from 'express'
+import type { IncomingMessage } from 'http'
+import type { Duplex } from 'stream'
 
 const packagejson: any = require('../../../package.json')
 const version: string = packagejson.version || ''
@@ -19,14 +21,34 @@ function getBaseRouterRoute (options: RegisterServerOptions): string {
   return options.peertubeHelpers.plugin.getBaseRouterRoute()
 }
 
+interface RegisterServerWebSocketRouteOptions {
+  route: string
+  handler: (request: IncomingMessage, socket: Duplex, head: Buffer) => any
+}
+// getBaseWebSocketRoute() comes with Peertube 5.0.0.
+type RegisterServerOptionsV5 = RegisterServerOptions & {
+  registerWebSocketRoute?: (options: RegisterServerWebSocketRouteOptions) => void
+  peertubeHelpers: {
+    plugin: {
+      getBaseWebSocketRoute?: () => string
+    }
+  }
+}
+
 /**
- * Returns the base router route, but without the plugin version.
+ * Returns the base route for Websocket endpoint.
+ * This features comes with Peertube >=5.0.0.
  * @param options server options
+ * @returns the route, or undefined if the Peertube version does not provide this feature
  */
-function getBaseRouterCanonicalRoute (options: RegisterServerOptions): string {
-  let route = getBaseRouterRoute(options)
-  route = route.replace(pluginShortName + '/' + version + '/', pluginShortName + '/')
-  return route
+function getBaseWebSocketRoute (options: RegisterServerOptionsV5): string | undefined {
+  if (!options.peertubeHelpers.plugin) {
+    throw new Error('Missing peertubeHelpers.plugin, have you the correct Peertube version?')
+  }
+  if (!options.peertubeHelpers.plugin.getBaseWebSocketRoute) {
+    return undefined
+  }
+  return options.peertubeHelpers.plugin.getBaseWebSocketRoute()
 }
 
 function getBaseStaticRoute (options: RegisterServerOptions): string {
@@ -71,8 +93,9 @@ async function getUserNickname (options: RegisterServerOptions, user: AuthUserFi
 }
 
 export {
+  RegisterServerOptionsV5,
   getBaseRouterRoute,
-  getBaseRouterCanonicalRoute,
+  getBaseWebSocketRoute,
   getBaseStaticRoute,
   isUserAdmin,
   getUserNickname,
