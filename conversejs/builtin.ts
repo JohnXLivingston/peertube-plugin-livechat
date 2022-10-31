@@ -172,6 +172,7 @@ window.initConverse = async function initConverse ({
       toggle_occupants: true
     },
     theme: theme || 'peertube',
+    dark_theme: theme || 'peertube', // dark theme should be the same as theme
     persistent_store: 'sessionStorage',
     show_images_inline: false, // for security reason, and to avoid bugs when image is larger that iframe
     render_media: false, // for security reason, and to avoid bugs when image is larger that iframe
