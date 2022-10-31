@@ -26,6 +26,10 @@ If you don't want the chat server to be active, just uninstall the plugin
 * Removed deprecated modes, only keeping «Prosody server controlled by Peertube».
 * BOSH proxy optimization + enabling websocket.
 
+### Changes
+
+* ConverseJS v10.0.0 (instead of v9.0.0).
+
 ## 5.7.1
 
 * Adding an easy way to customize background transparency in OBS and co.
