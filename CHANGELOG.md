@@ -29,6 +29,7 @@ If you don't want the chat server to be active, just uninstall the plugin
 ### Changes
 
 * ConverseJS v10.0.0 (instead of v9.0.0).
+* Prosody server: enabling mod_disco.
 
 ## 5.7.1
 

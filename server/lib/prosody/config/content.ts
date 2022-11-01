@@ -157,10 +157,11 @@ class ProsodyConfigContent {
       'ping', // Replies to XMPP pings with pongs
       'bosh', // Enable BOSH clients, aka "Jabber over HTTP"
       // 'websocket', // Enable Websocket clients
-      'posix' // POSIX functionality, sends server to background, enables syslog, etc.
+      'posix', // POSIX functionality, sends server to background, enables syslog, etc.
       // 'pep', // Enables users to publish their avatar, mood, activity, playing music and more
       // 'vcard_legacy' // Conversion between legacy vCard and PEP Avatar, vcard
       // 'vcard4' // User profiles (stored in PEP)
+      'disco' // Enable mod_disco (feature discovering)
 
     ])
     this.global.set('modules_disabled', [
