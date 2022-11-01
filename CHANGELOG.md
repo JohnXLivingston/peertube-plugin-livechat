@@ -31,6 +31,10 @@ If you don't want the chat server to be active, just uninstall the plugin
 * ConverseJS v10.0.0 (instead of v9.0.0).
 * Prosody server: enabling mod_disco.
 
+### Minor changes and fixes
+
+* Fix «autocolor» mecanism when no color provided (raised an error)
+
 ## 5.7.1
 
 * Adding an easy way to customize background transparency in OBS and co.

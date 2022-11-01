@@ -163,28 +163,32 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
           link: req.query._ac_link?.toString() ?? '',
           linkHover: req.query._ac_linkHover?.toString() ?? ''
         }
-        const autoColorsTest = areAutoColorsValid(autocolors)
-        if (autoColorsTest === true) {
-          autocolorsStyles = `
-          <style>
-            :root {
-              --peertube-main-foreground: ${autocolors.mainForeground};
-              --peertube-main-background: ${autocolors.mainBackground};
-              --peertube-grey-foreground: ${autocolors.greyForeground};
-              --peertube-grey-background: ${autocolors.greyBackground};
-              --peertube-menu-foreground: ${autocolors.menuForeground};
-              --peertube-menu-background: ${autocolors.menuBackground};
-              --peertube-input-foreground: ${autocolors.inputForeground};
-              --peertube-input-background: ${autocolors.inputBackground};
-              --peertube-button-foreground: ${autocolors.buttonForeground};
-              --peertube-button-background: ${autocolors.buttonBackground};
-              --peertube-link: ${autocolors.link};
-              --peertube-link-hover: ${autocolors.linkHover};
-            }
-          </style>
-          `
+        if (!Object.values(autocolors).find(c => c !== '')) {
+          peertubeHelpers.logger.debug('All AutoColors are empty.')
         } else {
-          peertubeHelpers.logger.error('Provided AutoColors are invalid.', autoColorsTest)
+          const autoColorsTest = areAutoColorsValid(autocolors)
+          if (autoColorsTest === true) {
+            autocolorsStyles = `
+            <style>
+              :root {
+                --peertube-main-foreground: ${autocolors.mainForeground};
+                --peertube-main-background: ${autocolors.mainBackground};
+                --peertube-grey-foreground: ${autocolors.greyForeground};
+                --peertube-grey-background: ${autocolors.greyBackground};
+                --peertube-menu-foreground: ${autocolors.menuForeground};
+                --peertube-menu-background: ${autocolors.menuBackground};
+                --peertube-input-foreground: ${autocolors.inputForeground};
+                --peertube-input-background: ${autocolors.inputBackground};
+                --peertube-button-foreground: ${autocolors.buttonForeground};
+                --peertube-button-background: ${autocolors.buttonBackground};
+                --peertube-link: ${autocolors.link};
+                --peertube-link-hover: ${autocolors.linkHover};
+              }
+            </style>
+            `
+          } else {
+            peertubeHelpers.logger.error('Provided AutoColors are invalid.', autoColorsTest)
+          }
         }
       } else {
         peertubeHelpers.logger.debug('No AutoColors.')
