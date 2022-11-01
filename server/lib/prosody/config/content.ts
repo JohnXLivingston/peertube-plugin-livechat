@@ -262,6 +262,7 @@ class ProsodyConfigContent {
     for (const component of components) {
       const c = new ProsodyConfigComponent(component.name)
       c.set('component_secret', component.secret)
+      c.set('disco_hidden', true)
       this.externalComponents.push(c)
     }
   }
