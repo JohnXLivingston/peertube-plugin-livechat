@@ -138,6 +138,7 @@ window.initConverse = async function initConverse ({
     assets_path: assetsPath,
 
     authentication: 'anonymous',
+    ping_interval: 60, // must be set accordingly to c2s_close_timeout backend websocket settings
     auto_login: true,
     auto_join_rooms: [
       room

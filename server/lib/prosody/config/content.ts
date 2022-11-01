@@ -217,6 +217,7 @@ class ProsodyConfigContent {
     this.global.set('consider_bosh_secure', true)
     if (useWS) {
       this.global.set('consider_websocket_secure', true)
+      this.global.set('c2s_close_timeout', 65) // must be set accordingly with ConverseJS ping_interval
 
       // This line seems to be required by Prosody, otherwise it rejects websocket...
       this.global.set('cross_domain_websocket', [publicServerUrl])
