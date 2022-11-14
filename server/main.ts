@@ -3,7 +3,7 @@ import { migrateSettings } from './lib/migration/settings'
 import { initSettings } from './lib/settings'
 import { initCustomFields } from './lib/custom-fields'
 import { initRouters } from './lib/routers/index'
-import { ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
+import { prepareProsody, ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -25,6 +25,7 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await initRouters(options)
 
   try {
+    await prepareProsody(options)
     await ensureProsodyRunning(options)
   } catch (error) {
     options.peertubeHelpers.logger.error('Error when launching Prosody: ' + (error as string))

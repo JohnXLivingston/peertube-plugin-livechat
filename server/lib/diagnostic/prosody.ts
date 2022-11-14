@@ -33,6 +33,8 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
 
     result.messages.push(`Prosody will use ${wantedConfig.baseApiUrl} as base uri from api calls`)
 
+    result.messages.push(`Prosody path will be '${wantedConfig.paths.exec}'`)
+
     result.messages.push(`Prosody modules path will be '${wantedConfig.paths.modules}'`)
 
     result.messages.push(`Prosody rooms will be grouped by '${wantedConfig.roomType}'.`)

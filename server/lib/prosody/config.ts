@@ -54,6 +54,24 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   logger.debug('Calling getProsodyFilePaths')
 
   const dir = await getWorkingDir(options)
+  const settings = await options.settingsManager.getSettings(['use-system-prosody'])
+  let exec
+  let execArgs: string[]
+  let execCtl
+  let execCtlArgs: string[]
+  let appImageToExtract
+  if (settings['use-system-prosody']) {
+    exec = 'prosody'
+    execArgs = []
+    execCtl = 'prosodyctl'
+    execCtlArgs = []
+  } else {
+    appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-x86_64.AppImage')
+    exec = path.resolve(dir, 'squashfs-root/AppRun') // the AppImage will be extracted in the working dir
+    execArgs = ['prosody']
+    execCtl = exec
+    execCtlArgs = ['prosodyctl']
+  }
   return {
     dir: dir,
     pid: path.resolve(dir, 'prosody.pid'),
@@ -62,7 +80,12 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     config: path.resolve(dir, 'prosody.cfg.lua'),
     data: path.resolve(dir, 'data'),
     modules: path.resolve(__dirname, '../../prosody-modules'),
-    avatars: path.resolve(__dirname, '../../avatars')
+    avatars: path.resolve(__dirname, '../../avatars'),
+    exec,
+    execArgs,
+    execCtl,
+    execCtlArgs,
+    appImageToExtract
   }
 }
 

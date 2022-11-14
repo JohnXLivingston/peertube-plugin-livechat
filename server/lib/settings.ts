@@ -27,11 +27,11 @@ function initSettings (options: RegisterServerOptions): void {
 (if this button is not opening a new window, please try to refresh the page).`
   })
 
-  // ********** Chat Mode
+  // ********** Chat Server
   registerSetting({
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>Chat mode</h3>'
+    descriptionHTML: '<h3>Chat Server</h3>'
   })
   registerSetting({
     name: 'chat-help-builtin-prosody',
@@ -39,14 +39,22 @@ function initSettings (options: RegisterServerOptions): void {
     label: 'Prosody server',
     descriptionHTML: `This plugin uses the Prosody XMPP server to handle chat rooms.<br>
 The Peertube server will control this Prosody server.<br>
-Important Note: you have to install Prosody on your server.
-Please read the <a
-  href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/prosody.md"
-  target="_blank"
->documentation</a>.`,
+By default, this plugin comes with a Prosody AppImage.`,
     private: true
   })
+  registerSetting({
+    name: 'use-system-prosody',
+    type: 'input-checkbox',
+    label: 'Use system Prosody',
+    descriptionHTML: `Warning: don't check this settings if you are not sure of what you are doing.<br>
+By checking this settings, your Peertube will use the Prosody server that comes with your system,
+and not the embeded AppImage.<br>
+Only use this if you encounter problems with the embedded Prosody.`,
+    private: true,
+    default: false
+  })
 
+  // TODO: fix the settings order. Since there is no more multiple chat-mode, the order is not good.
   registerSetting({
     name: 'prosody-list-rooms',
     label: 'List existing rooms',

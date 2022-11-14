@@ -7,6 +7,11 @@ interface ProsodyFilePaths {
   data: string
   modules: string
   avatars: string
+  exec: string
+  execArgs: string[]
+  execCtl: string
+  execCtlArgs: string[]
+  appImageToExtract?: string
 }
 
 export {

@@ -21,10 +21,21 @@ the server will try to use the new mode after updating the plugin.
 If you don't want the chat server to be active, just uninstall the plugin
 (settings won't be lost, you just have to download it again).
 
+### Important Notes
+
+This version of the plugin comes with a builtin Prosody AppImage.
+
+If you were using this plugin before this version, and if you had installed Prosody manually,
+you can safely uninstall Prosody.
+
+If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official
+Peertube image.
+
 ### New Features
 
 * Removed deprecated modes, only keeping «Prosody server controlled by Peertube».
 * BOSH proxy optimization + enabling websocket.
+* Builtin Prosody AppImage. No more manual installation required.
 
 ### Changes
 

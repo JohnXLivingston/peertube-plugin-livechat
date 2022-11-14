@@ -5,6 +5,38 @@ import { disableProxyRoute, enableProxyRoute } from '../routers/webchat'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
 
+/**
+ * This function prepares the binaries for the embeded Prosody (if needed).
+ * @param options
+ */
+async function prepareProsody (options: RegisterServerOptions): Promise<void> {
+  const logger = options.peertubeHelpers.logger
+  const filePaths = await getProsodyFilePaths(options)
+  const appImageToExtract = filePaths.appImageToExtract
+  if (!appImageToExtract) {
+    return
+  }
+
+  return new Promise((resolve, reject) => {
+    const spawned = child_process.spawn(appImageToExtract, ['--appimage-extract'], {
+      cwd: filePaths.dir,
+      env: {
+        ...process.env
+      }
+    })
+    spawned.stdout.on('data', (data) => {
+      logger.debug(`AppImage extract printed: ${data as string}`)
+    })
+    spawned.stderr.on('data', (data) => {
+      logger.error(`AppImage extract has errors: ${data as string}`)
+    })
+    spawned.on('error', reject)
+    spawned.on('close', (_code) => { // 'close' and not 'exit', to be sure it is finished.
+      resolve()
+    })
+  })
+}
+
 interface ProsodyCtlResult {
   code: number | null
   stdout: string
@@ -23,11 +55,13 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
     let d: string = ''
     let e: string = ''
     let m: string = ''
-    const spawned = child_process.spawn('prosodyctl', [
+    const cmdArgs = [
+      ...filePaths.execCtlArgs,
       '--config',
       filePaths.config,
       command
-    ], {
+    ]
+    const spawned = child_process.spawn(filePaths.execCtl, cmdArgs, {
       cwd: filePaths.dir,
       env: {
         ...process.env,
@@ -44,7 +78,10 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
       m += data as string
     })
     spawned.on('error', reject)
-    spawned.on('exit', (code) => {
+
+    // on 'close' and not 'exit', to be sure everything is done
+    // (else it can cause trouble by cleaning AppImage extract too soon)
+    spawned.on('close', (code) => {
       resolve({
         code: code,
         stdout: d,
@@ -163,8 +200,9 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   const filePaths = config.paths
 
   // launch prosody
-  logger.info('Going to launch prosody')
-  const prosody = child_process.exec('prosody', {
+  const execCmd = filePaths.exec + (filePaths.execArgs.length ? ' ' + filePaths.execArgs.join(' ') : '')
+  logger.info('Going to launch prosody (' + execCmd + ')')
+  const prosody = child_process.exec(execCmd, {
     cwd: filePaths.dir,
     env: {
       ...process.env,
@@ -248,6 +286,7 @@ export {
   getProsodyAbout,
   testProsodyRunning,
   testProsodyCorrectlyRunning,
+  prepareProsody,
   ensureProsodyRunning,
   ensureProsodyNotRunning
 }
