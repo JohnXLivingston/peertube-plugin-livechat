@@ -12,6 +12,7 @@ interface ProsodyFilePaths {
   execCtl: string
   execCtlArgs: string[]
   appImageToExtract?: string
+  appImageExtractPath: string
 }
 
 export {

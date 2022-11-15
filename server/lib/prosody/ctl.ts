@@ -8,10 +8,11 @@ import * as child_process from 'child_process'
 async function _ensureWorkingDir (
   options: RegisterServerOptions,
   workingDir: string,
-  dataDir: string
+  dataDir: string,
+  appImageExtractPath: string
 ): Promise<string> {
   const logger = options.peertubeHelpers.logger
-  logger.debug('Calling ensureworkingDir')
+  logger.debug('Calling _ensureworkingDir')
 
   if (!fs.existsSync(workingDir)) {
     logger.info(`The working dir ${workingDir} does not exists, trying to create it`)
@@ -25,7 +26,13 @@ async function _ensureWorkingDir (
   if (!fs.existsSync(dataDir)) {
     logger.info(`The data dir ${dataDir} does not exists, trying to create it`)
     await fs.promises.mkdir(dataDir)
-    logger.debug(`Working dir ${dataDir} was created`)
+    logger.debug(`data dir ${dataDir} was created`)
+  }
+
+  if (!fs.existsSync(appImageExtractPath)) {
+    logger.info(`The appImageExtractPath dir ${appImageExtractPath} does not exists, trying to create it`)
+    await fs.promises.mkdir(appImageExtractPath)
+    logger.debug(`appImageExtractPath dir ${appImageExtractPath} was created`)
   }
 
   return workingDir
@@ -42,7 +49,7 @@ async function prepareProsody (options: RegisterServerOptions): Promise<void> {
   const filePaths = await getProsodyFilePaths(options)
 
   logger.debug('Ensuring that the working dir exists')
-  await _ensureWorkingDir(options, filePaths.dir, filePaths.data)
+  await _ensureWorkingDir(options, filePaths.dir, filePaths.data, filePaths.appImageExtractPath)
 
   const appImageToExtract = filePaths.appImageToExtract
   if (!appImageToExtract) {
@@ -51,7 +58,7 @@ async function prepareProsody (options: RegisterServerOptions): Promise<void> {
 
   return new Promise((resolve, reject) => {
     const spawned = child_process.spawn(appImageToExtract, ['--appimage-extract'], {
-      cwd: filePaths.dir,
+      cwd: filePaths.appImageExtractPath,
       env: {
         ...process.env
       }

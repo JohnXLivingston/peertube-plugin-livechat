@@ -33,6 +33,10 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   let execCtl
   let execCtlArgs: string[]
   let appImageToExtract
+
+  // this one is always needed (must create the directory on startup)
+  const appImageExtractPath = path.resolve(dir, '..', 'prosodyAppImage')
+
   if (settings['use-system-prosody']) {
     exec = 'prosody'
     execArgs = []
@@ -40,11 +44,12 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     execCtlArgs = []
   } else {
     appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-x86_64.AppImage')
-    exec = path.resolve(dir, 'squashfs-root/AppRun') // the AppImage will be extracted in the working dir
+    exec = path.resolve(appImageExtractPath, 'squashfs-root/AppRun')
     execArgs = ['prosody']
     execCtl = exec
     execCtlArgs = ['prosodyctl']
   }
+
   return {
     dir: dir,
     pid: path.resolve(dir, 'prosody.pid'),
@@ -58,7 +63,8 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     execArgs,
     execCtl,
     execCtlArgs,
-    appImageToExtract
+    appImageToExtract,
+    appImageExtractPath
   }
 }
 
