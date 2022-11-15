@@ -14,10 +14,10 @@ function initSettings (options: RegisterServerOptions): void {
   registerSetting({
     type: 'html',
     private: true,
-    descriptionHTML: `Please read the
+    descriptionHTML: `You can find the plugin documentation here:
 <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/README.md" target="_blank">
-  documentation
-</a> first.`
+  Peertube Plugin Livechat documentation
+</a>.`
   })
   registerSetting({
     type: 'html',
@@ -27,34 +27,12 @@ function initSettings (options: RegisterServerOptions): void {
 (if this button is not opening a new window, please try to refresh the page).`
   })
 
-  // ********** Chat Server
+  // ********** Chat
   registerSetting({
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>Chat Server</h3>'
+    descriptionHTML: '<h3>Chat</h3>'
   })
-  registerSetting({
-    name: 'chat-help-builtin-prosody',
-    type: 'html',
-    label: 'Prosody server',
-    descriptionHTML: `This plugin uses the Prosody XMPP server to handle chat rooms.<br>
-The Peertube server will control this Prosody server.<br>
-By default, this plugin comes with a Prosody AppImage.`,
-    private: true
-  })
-  registerSetting({
-    name: 'use-system-prosody',
-    type: 'input-checkbox',
-    label: 'Use system Prosody',
-    descriptionHTML: `Warning: don't check this settings if you are not sure of what you are doing.<br>
-By checking this settings, your Peertube will use the Prosody server that comes with your system,
-and not the embeded AppImage.<br>
-Only use this if you encounter problems with the embedded Prosody.`,
-    private: true,
-    default: false
-  })
-
-  // TODO: fix the settings order. Since there is no more multiple chat-mode, the order is not good.
   registerSetting({
     name: 'prosody-list-rooms',
     label: 'List existing rooms',
@@ -63,6 +41,12 @@ Only use this if you encounter problems with the embedded Prosody.`,
     private: true
   })
 
+  // ********** Chat behaviour
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: '<h3>Chat behaviour</h3>'
+  })
   registerSetting({
     name: 'prosody-room-type',
     label: 'Room type',
@@ -74,25 +58,6 @@ Only use this if you encounter problems with the embedded Prosody.`,
       { value: 'video', label: 'Each video has its own webchat room' },
       { value: 'channel', label: 'Webchat rooms are grouped by channel' }
     ]
-  })
-
-  registerSetting({
-    name: 'prosody-port',
-    label: 'Prosody port',
-    type: 'input',
-    default: '52800',
-    private: true,
-    descriptionHTML:
-`The port that will be used by the builtin Prosody server.<br>
-Change it if this port is already in use on your server.<br>
-You can close this port on your firewall, it will not be accessed from the outer world.`
-  })
-
-  // ********** Chat behaviour
-  registerSetting({
-    type: 'html',
-    private: true,
-    descriptionHTML: '<h3>Chat behaviour</h3>'
   })
   registerSetting({
     name: 'chat-auto-display',
@@ -109,6 +74,20 @@ You can close this port on your firewall, it will not be accessed from the outer
     private: false,
     type: 'input-checkbox',
     default: true
+  })
+  registerSetting({
+    name: 'chat-share-url',
+    label: 'Show the «share chat link» button',
+    descriptionHTML: 'There will be a button for sharing a chat url (could be used to intregrated in OBS for example).',
+    private: false,
+    type: 'select',
+    default: 'owner',
+    options: [
+      { label: 'Show for nobody', value: 'nobody' },
+      { label: 'Show for everyone', value: 'everyone' },
+      { label: 'Show for the video owner', value: 'owner' },
+      { label: 'Show for the video owner and instance\'s moderators', value: 'owner+moderators' }
+    ]
   })
   registerSetting({
     name: 'chat-per-live-video',
@@ -165,23 +144,12 @@ Don't add private videos, the UUIDs will be send to frontend.`,
     private: false
   })
 
+  // ********** Theming
   registerSetting({
-    name: 'chat-style',
-    label: 'Webchat iframe style attribute',
-    type: 'input-textarea',
-    default: '',
-    descriptionHTML:
-`Additional styles to be added on the iframe style attribute. <br>
-Example: height:400px;`,
-    private: false
-  })
-
-  // ********** ConverseJS advanced settings
-  registerSetting({
-    name: 'converse-advanced',
+    name: 'theming-advanced',
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>ConverseJS advanced settings</h3>'
+    descriptionHTML: '<h3>Theming</h3>'
   })
 
   registerSetting({
@@ -214,28 +182,58 @@ You can report the bug on the official
 </a>. Don't forget to specify which theme is not working.`
   })
 
-  // ********** Built-in Prosody advanced settings
+  registerSetting({
+    name: 'chat-style',
+    label: 'Webchat iframe style attribute',
+    type: 'input-textarea',
+    default: '',
+    descriptionHTML:
+`Additional styles to be added on the iframe style attribute. <br>
+Example: height:400px;`,
+    private: false
+  })
+
+  // ********** Chat server advanced settings
   registerSetting({
     name: 'prosody-advanced',
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>Prosody advanced settings</h3>'
+    descriptionHTML: '<h3>Chat server advanced settings</h3>'
   })
 
   registerSetting({
-    name: 'chat-share-url',
-    label: 'Show the «share chat link» button',
-    descriptionHTML: 'There will be a button for sharing a chat url (could be used to intregrated in OBS for example).',
-    private: false,
-    type: 'select',
-    default: 'owner',
-    options: [
-      { label: 'Show for nobody', value: 'nobody' },
-      { label: 'Show for everyone', value: 'everyone' },
-      { label: 'Show for the video owner', value: 'owner' },
-      { label: 'Show for the video owner and instance\'s moderators', value: 'owner+moderators' }
-    ]
+    name: 'chat-help-builtin-prosody',
+    type: 'html',
+    label: 'Prosody server',
+    descriptionHTML: `This plugin uses the Prosody XMPP server to handle chat rooms.<br>
+This plugin comes with a Prosody AppImage, that will be used to run the service.`,
+    private: true
   })
+
+  registerSetting({
+    name: 'use-system-prosody',
+    type: 'input-checkbox',
+    label: 'Use system Prosody',
+    descriptionHTML: `Warning: don't check this settings if you are not sure of what you are doing.<br>
+By checking this settings, your Peertube will use the Prosody server that comes with your system,
+and not the embeded AppImage.<br>
+Only use this if you encounter problems with the embedded Prosody.`,
+    private: true,
+    default: false
+  })
+
+  registerSetting({
+    name: 'prosody-port',
+    label: 'Prosody port',
+    type: 'input',
+    default: '52800',
+    private: true,
+    descriptionHTML:
+`The port that will be used by the builtin Prosody server.<br>
+Change it if this port is already in use on your server.<br>
+You can close this port on your firewall, it will not be accessed from the outer world.`
+  })
+
   registerSetting({
     name: 'prosody-peertube-uri',
     label: 'Peertube url for API calls',
@@ -256,7 +254,7 @@ You can use this field to customise Peertube's URI for Prosody modules (for exam
     private: true,
     descriptionHTML:
 `If checked, room contents will be saved by default.
-Any user that join a room will we what was written before he joins.<br>
+Any user that join a room will see what was written before he joins.<br>
 Please note that it is always possible to enable/disable the content
 archiving for a specific room, by editing its properties.
 `

@@ -41,6 +41,7 @@ Peertube image.
 
 * ConverseJS v10.0.0 (instead of v9.0.0).
 * Prosody server: enabling mod_disco.
+* Settings page re-ordered.
 
 ### Minor changes and fixes
 
