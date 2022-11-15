@@ -11,15 +11,13 @@ Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, ein Chat
 
 Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).
 
-**Wichtig:** leider funktioniert dieses Plugin (noch) nicht von selbst, es muss auf externe Tools zurückgreifen. Bitte lesen Sie die [Installationsanleitung](documentation/installation.de.md).
-
 **Bevor Sie auf eine Hauptversion aktualisieren, lesen Sie bitte die Versionshinweise und die Liste der wichtigsten Änderungen : [CHANGELOG](CHANGELOG.md)**.
 
 ## Dokumentation
 
 * [Installationsanleitung](documentation/installation.de.md)
-* [Benutzeranleitung](documentation/user.de.md)
-* [Administratoranleitung](documentation/admin.de.md)
+* [Benutzeranleitung](documentation/user.md)
+* [Administratoranleitung](documentation/admin.md)
 
 ## Neue Funktionen / Fehler (Bugs)
 

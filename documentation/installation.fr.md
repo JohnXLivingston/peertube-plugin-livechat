@@ -3,18 +3,14 @@
 🇬🇧 English version / version anglaise [here](./installation.md).
 🇩🇪 German version / deutsche Version [hier](./installation.de.md).
 
-**IMPORTANT :** ce plugin ne fonctionne malheureusement pas (encore) tout seul, il doit se reposer sur des outils externes.
-
 **Avant de mettre à jour vers une nouvelle version majeure, merci de lire les notes de version, et la liste des éventuelles modifications non rétro-compatibles : [CHANGELOG](../CHANGELOG.md).**
 
-Ce plugin peut être utilisé de plusieurs manières différentes :
+Pour installer ou mettre à jour ce plugin, utilisez simplement l'interface web d'administration de votre Peertube.
 
-| Mode | Description | Documentation
----|---|---
-**Serveur Prosody contrôlé par Peertube (recommandé)** | Ce plugin peut lancer un processus [Prosody](https://prosody.im) et l'auto-configurer. | [Installation Prosody+Peertube](./prosody.md). **C'est le mode recommandé, et est quasiment automatique à paramétrer**
-**Se connecter à un serveur XMPP existant avec ConverseJS** | Vous pouvez utiliser un serveur Jabber/XMPP externe. Ce serveur doit pouvoir utiliser le protocole BOSH ou Websocket, accepter les connexions anonymes, et accepter la création de salons de discussion. |[Installation ConverseJS+XMPP externe](./conversejs.md)
-**Utiliser un outil de chat externe** | Vous pouvez utiliser un outil de chat externe, si celui-ci peut être inclus dans une iframe. | [Installation chat externe](./external.md)
+## IMPORTANT NOTE
 
-Pour les deux premiers modes, la connexion vers le serveur XMPP est faite via la bibliothèque javascript [ConverseJS](https://conversejs.org/).
+Depuis la version v6.0.0, ce plugin ne nécessite plus l'installation de Prosody.
 
-Il y a de la documentation pour des paramètres communs aux différents modes ici : [common settings documentation](./common.md).
+Si vous utilisiez ce plugin avant, et que vous aviez installé Prosody manuellement, vous pouvez le désinstaller en tout sécurité.
+
+Si vous utilisiez l'image docker spéciale de Peertube (qui incluais Prosody), vous pouvez basculer sur l'image officielle de Peertube.

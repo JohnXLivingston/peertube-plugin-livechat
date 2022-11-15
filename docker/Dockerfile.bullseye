@@ -1,3 +1,0 @@
-FROM chocobozzz/peertube:production-bullseye
-
-RUN apt -y update && apt install -y prosody && apt -y clean

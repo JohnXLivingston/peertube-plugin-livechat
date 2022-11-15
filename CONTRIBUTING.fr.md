@@ -34,6 +34,11 @@ Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en 
 
 Merci d'utiliser la branche `develop`. La branche `main` est réservée aux versions publiées, pour que la documentation affichée reste synchronisée avec la version publiée du plugin.
 
+Pré-requis pour compiler le plugin:
+
+- vous devez avoir installé `npm`
+- vous devez avoir installé les venv python (paquet `python3-venv` sous Debian par exemple)
+
 Pour clôner le dépot :
 
 ```bash

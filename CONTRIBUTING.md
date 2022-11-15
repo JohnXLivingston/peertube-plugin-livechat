@@ -37,6 +37,11 @@ before you start working on it, and inform the community that you begin coding b
 
 Please use the `develop` branch. The `main` branch is reserved to released versions of the plugin, so that the documentation is always synchronized with the released version of the plugin.
 
+Prerequisite for building this plugin:
+
+- you must have `npm` installed
+- you must have python venv installed (`python3-venv` package on Debian for example)
+
 To clone the repository:
 
 ```bash
