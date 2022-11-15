@@ -5,13 +5,45 @@ import { disableProxyRoute, enableProxyRoute } from '../routers/webchat'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
 
+async function _ensureWorkingDir (
+  options: RegisterServerOptions,
+  workingDir: string,
+  dataDir: string
+): Promise<string> {
+  const logger = options.peertubeHelpers.logger
+  logger.debug('Calling ensureworkingDir')
+
+  if (!fs.existsSync(workingDir)) {
+    logger.info(`The working dir ${workingDir} does not exists, trying to create it`)
+    await fs.promises.mkdir(workingDir)
+    logger.debug(`Working dir ${workingDir} was created`)
+  }
+  logger.debug(`Testing write access on ${workingDir}`)
+  await fs.promises.access(workingDir, fs.constants.W_OK) // will throw an error if no access
+  logger.debug(`Write access ok on ${workingDir}`)
+
+  if (!fs.existsSync(dataDir)) {
+    logger.info(`The data dir ${dataDir} does not exists, trying to create it`)
+    await fs.promises.mkdir(dataDir)
+    logger.debug(`Working dir ${dataDir} was created`)
+  }
+
+  return workingDir
+}
+
 /**
- * This function prepares the binaries for the embeded Prosody (if needed).
+ * This function prepares:
+ * - the Prosody working dir
+ * - the binaries for the embeded Prosody (if needed).
  * @param options
  */
 async function prepareProsody (options: RegisterServerOptions): Promise<void> {
   const logger = options.peertubeHelpers.logger
   const filePaths = await getProsodyFilePaths(options)
+
+  logger.debug('Ensuring that the working dir exists')
+  await _ensureWorkingDir(options, filePaths.dir, filePaths.data)
+
   const appImageToExtract = filePaths.appImageToExtract
   if (!appImageToExtract) {
     return
