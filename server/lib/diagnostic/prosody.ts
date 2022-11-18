@@ -23,9 +23,11 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   // Testing the prosody config file.
   let prosodyPort: string
   let prosodyHost: string
+  let prosodyErrorLogPath: string
   try {
     const wantedConfig = await getProsodyConfig(options)
     const filePath = wantedConfig.paths.config
+    prosodyErrorLogPath = wantedConfig.paths.error
 
     result.messages.push(`Prosody will run on port '${wantedConfig.port}'`)
     prosodyPort = wantedConfig.port
@@ -161,6 +163,27 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   } catch (error) {
     result.messages.push('Error when calling Prosody test api (test-prosody-peertube): ' + (error as string))
     return result
+  }
+
+  // Checking if there is a Prosody error log, and returning last lines.
+  try {
+    await fs.promises.access(prosodyErrorLogPath, fs.constants.R_OK) // throw an error if file does not exist.
+    result.messages.push(`The prosody error log (${prosodyErrorLogPath}) exists`)
+    const errorLogContent = await fs.promises.readFile(prosodyErrorLogPath, {
+      encoding: 'utf-8'
+    })
+
+    let logLines = errorLogContent.split(/\r?\n/)
+    if (logLines.length > 50) {
+      logLines = logLines.slice(-50)
+    }
+
+    result.debug.push({
+      title: 'Prosody error log (last 50 lines)',
+      message: logLines.join('\n')
+    })
+  } catch (error) {
+    // Error should be because file does not exists. This is not an error case, just ignoring.
   }
 
   result.ok = true

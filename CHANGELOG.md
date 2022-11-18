@@ -49,6 +49,7 @@ Peertube image.
 
 * Fix «autocolor» mecanism when no color provided (raised an error).
 * Fix #73: deleted message are shown when loading history.
+* Implements #37: diagnostic tools includes last lines from prosody error log files.
 
 ## 5.7.1
 
