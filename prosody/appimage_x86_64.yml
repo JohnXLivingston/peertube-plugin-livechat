@@ -31,7 +31,8 @@ AppDir:
 
     include:
       - lua5.2
-      - prosody
+      - lua-unbound
+      - prosody/bullseye-backports
 
   files:
     exclude:

@@ -35,7 +35,7 @@ Peertube image.
 
 * Removed deprecated modes, only keeping «Prosody server controlled by Peertube».
 * BOSH proxy optimization + enabling websocket.
-* Builtin Prosody AppImage. No more manual installation required.
+* Builtin Prosody 0.12.1 AppImage. No more manual installation required.
 
 ### Changes
 
@@ -47,7 +47,8 @@ Peertube image.
 
 ### Minor changes and fixes
 
-* Fix «autocolor» mecanism when no color provided (raised an error)
+* Fix «autocolor» mecanism when no color provided (raised an error).
+* Fix #73: deleted message are shown when loading history.
 
 ## 5.7.1
 
