@@ -37,6 +37,14 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
 
     result.messages.push(`Prosody path will be '${wantedConfig.paths.exec}'`)
 
+    if (wantedConfig.paths.appImageToExtract) {
+      result.messages.push(`Prosody will be using the '${wantedConfig.paths.appImageToExtract}' AppImage`)
+    } else {
+      result.messages.push('Prosody will not be using any AppImage')
+    }
+
+    result.messages.push(`Prosody AppImage extract path will be '${wantedConfig.paths.appImageExtractPath}'`)
+
     result.messages.push(`Prosody modules path will be '${wantedConfig.paths.modules}'`)
 
     result.messages.push(`Prosody rooms will be grouped by '${wantedConfig.roomType}'.`)

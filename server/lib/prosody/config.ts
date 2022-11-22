@@ -43,7 +43,13 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     execCtl = 'prosodyctl'
     execCtlArgs = []
   } else {
-    appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-x86_64.AppImage')
+    const arch = process.arch
+    if (arch === 'arm' || arch === 'arm64') {
+      logger.info('Node process.arch is ' + arch + ', we will be using the aarch64 Prosody AppImage')
+      appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-aarch64.AppImage')
+    } else {
+      appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-x86_64.AppImage')
+    }
     exec = path.resolve(appImageExtractPath, 'squashfs-root/AppRun')
     execArgs = ['prosody']
     execCtl = exec

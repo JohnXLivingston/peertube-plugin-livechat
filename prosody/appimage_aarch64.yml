@@ -1,0 +1,60 @@
+# This file is meant to be used with appimage-builder: https://appimage-builder.readthedocs.io
+# See it is use in the build-prosody.sh script.
+
+version: 1
+
+script:
+  # Remove any previous build
+  - rm -rf AppDir | true
+  # Make usr dirs
+  - mkdir -p AppDir/usr/bin
+  # Copy the launcher code into the AppDir
+  - cp ./launcher.lua  AppDir/usr/bin/
+
+AppDir:
+  path: ./AppDir
+
+  app_info:
+    id: org.peertube-plugin-livechat.prosody
+    name: prosody
+    icon: utilities-terminal
+    version: 1.0.0
+    exec: usr/bin/lua5.2
+    exec_args: "$APPDIR/usr/bin/launcher.lua $@"
+
+  apt:
+    arch: arm64
+    sources:
+      - sourceline: 'deb [arch=arm64] https://deb.debian.org/debian/ bullseye main contrib'
+        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x648ACFD622F3D138'
+      - sourceline: 'deb [arch=arm64] https://deb.debian.org/debian/ bullseye-backports main contrib'
+
+    include:
+      - lua5.2
+      - lua-unbound
+      - prosody/bullseye-backports
+
+  files:
+    exclude:
+      - usr/share/man
+      - usr/share/doc/*/README.*
+      - usr/share/doc/*/changelog.*
+      - usr/share/doc/*/NEWS.*
+      - usr/share/doc/*/TODO.*
+      - etc/init.d/*
+      - etc/logrotate.d/*
+
+  runtime:
+    # Here we use the path_mappings to rewrite, on runtime, all paths.
+    # Note: this assume that peertube-plugin-livechat is not in a subdir of one of following mappings.
+    #       This seems a reasonable assumption.
+    path_mappings:
+      - /etc/:$APPDIR/etc/
+      - /lib/:$APPDIR/lib/
+      - /lib64/:$APPDIR/lib64/
+      - /runtime/:$APPDIR/runtime/
+      - /usr/:$APPDIR/usr/
+
+AppImage:
+  arch: aarch64
+  file_name: 'livechat-prosody-aarch64.AppImage'
