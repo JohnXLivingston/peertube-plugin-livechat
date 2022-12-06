@@ -1,4 +1,4 @@
-# PeerTube plugin livechat 🇬🇧
+# PeerTube ライブチャットプラグイン 🇬🇧
 
 🇫🇷 French version / Version française [ici](README.fr.md).
 🇩🇪 German version / deutsche Version [hier](./README.de.md).
