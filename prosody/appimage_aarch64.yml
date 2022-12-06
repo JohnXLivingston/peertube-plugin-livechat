@@ -37,6 +37,12 @@ AppDir:
       - lua5.2
       # For an unknown reason, lua-unbound is not found in these repository.
       # - lua-unbound
+      # lua-readline and lua-event are recommanded dependencies
+      # For an unknown reason, lua-readline is not found in these repository.
+      # - lua-readline
+      - lua-event
+      # lua-zlib is suggested. Not sure it is used, by make sense to add.
+      - lua-zlib
       - prosody
 
   files:

@@ -33,7 +33,13 @@ AppDir:
 
     include:
       - lua5.2
+      # lua-unbound is needed
       - lua-unbound
+      # lua-readline and lua-event are recommanded dependencies
+      - lua-readline
+      - lua-event
+      # lua-zlib is suggested. Not sure it is used, by make sense to add.
+      - lua-zlib
       - prosody/bullseye-backports
 
   files:
