@@ -25,14 +25,16 @@ AppDir:
   apt:
     arch: arm64
     sources:
-      - sourceline: 'deb [arch=arm64] https://deb.debian.org/debian/ bullseye main contrib'
-        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x648ACFD622F3D138'
-      - sourceline: 'deb [arch=arm64] https://deb.debian.org/debian/ bullseye-backports main contrib'
+      # Note: for an unknown reason, building from debian packages produce invalid AppFiles.
+      # See: https://github.com/AppImageCrafters/appimage-builder/issues/278
+      # So we are using ubuntu repository.
+      - sourceline: 'deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse'
+        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
 
     include:
       - lua5.2
-      - lua-unbound
-      - prosody/bullseye-backports
+      # - lua-unbound
+      - prosody
 
   files:
     exclude:
