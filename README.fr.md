@@ -47,4 +47,4 @@ Merci à [Framasoft](https://framasoft.org) pour avoir rendu [Peertube](https://
 
 Merci à [ritimo](https://www.ritimo.org/) pour le support financier.
 
-Merci à [Code Lutin](https://www.codelutin.com/) pour le support financier.
+Merci à [Code Lutin](https://www.codelutin.com/) et à la [Rétribution Copie Publique](https://copiepublique.fr) pour le support financier.

@@ -50,4 +50,4 @@ Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinp
 
 Thanks to [ritimo](https://www.ritimo.org/) for the financial support.
 
-Thanks to [Code Lutin](https://www.codelutin.com/) for the financial support.
+Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support.

@@ -49,4 +49,4 @@ Peertubeのマスコット[Sepia](https://www.davidrevoy.com/index.php?tag/peert
 
 経済的な支援を行って頂いている[ritimo](https://www.ritimo.org/)に感謝致します。
 
-経済的な支援を行って頂いている[Code Lutin](https://www.codelutin.com/)に感謝致します。
+経済的な支援を行って頂いている[Code Lutin](https://www.codelutin.com/)/[Rétribution Copie Publique](https://copiepublique.fr/)に感謝致します。
