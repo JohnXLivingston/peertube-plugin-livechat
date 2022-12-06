@@ -1,6 +1,6 @@
 # Changelog
 
-## 6.0.0 (Not Released Yet)
+## 6.0.0-beta.1
 
 ### Breaking changes
 
@@ -30,6 +30,16 @@ you can safely uninstall Prosody.
 
 If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official
 Peertube image.
+
+### Known issues
+
+This release will probably not run on ARM CPUs.
+There is a work in progress to make it work on ARM64, but there are bugs in the building tools.
+Subscribe to this [issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/120) to have updates.
+You can also subscribe to this [issue on appimage-builder repo](https://github.com/AppImageCrafters/appimage-builder/issues/278).
+
+If you want to try this release on such CPUs, you can manually install Prosody using your package manager
+(as for older plugin versions), and check the settings «use system Prosody» in plugin settings.
 
 ### New Features
 
