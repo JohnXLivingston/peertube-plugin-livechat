@@ -42,11 +42,11 @@
 
 [package.json](package.json)、[COPYRIGHT](COPYRIGHT.md) と [LICENSE](LICENSE) ファイルには、このソフトウェアと使用しているライブラリなどのライセンス情報が含まれています。
 
-Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
-The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.
+Peertubeのマスコット[Sepia](https://www.davidrevoy.com/index.php?tag/peertube)を制作してくださったDavid Revoy氏に感謝致します。
+キャラクターデザインは、CC-Byライセンスであり、本プラグインの一部のロゴとアバターを作成する為に使用されているSVGファイルはGPLv3.0です。
 
-Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, and for the financial support.
+[Peertube](https://joinpeertube.org/)を実現し、また経済的な支援も行っている[Framasoft](https://framasoft.org)に感謝致します。
 
-Thanks to [ritimo](https://www.ritimo.org/) for the financial support.
+経済的な支援を行って頂いている[ritimo](https://www.ritimo.org/)に感謝致します。
 
-Thanks to [Code Lutin](https://www.codelutin.com/) for the financial support.
+経済的な支援を行って頂いている[Code Lutin](https://www.codelutin.com/)に感謝致します。
