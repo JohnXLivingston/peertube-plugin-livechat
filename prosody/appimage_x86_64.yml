@@ -10,6 +10,8 @@ script:
   - mkdir -p AppDir/usr/bin
   # Copy the launcher code into the AppDir
   - cp ./launcher.lua  AppDir/usr/bin/
+  # Creating the /etc/prosody/certs folder to avoid unecessary errors
+  - mkdir -p AppDir/etc/prosody/certs
 
 AppDir:
   path: ./AppDir

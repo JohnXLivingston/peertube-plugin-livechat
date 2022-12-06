@@ -63,6 +63,9 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     log: path.resolve(dir, 'prosody.log'),
     config: path.resolve(dir, 'prosody.cfg.lua'),
     data: path.resolve(dir, 'data'),
+    // Certificates dir for Prosody.
+    // Note: not used yet, but we create the directory to avoid errors in prosody logs.
+    certs: path.resolve(dir, 'certs'),
     modules: path.resolve(__dirname, '../../prosody-modules'),
     avatars: path.resolve(__dirname, '../../avatars'),
     exec,

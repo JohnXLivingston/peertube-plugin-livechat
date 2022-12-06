@@ -9,6 +9,7 @@ async function _ensureWorkingDir (
   options: RegisterServerOptions,
   workingDir: string,
   dataDir: string,
+  certsDir: string,
   appImageExtractPath: string
 ): Promise<string> {
   const logger = options.peertubeHelpers.logger
@@ -27,6 +28,14 @@ async function _ensureWorkingDir (
     logger.info(`The data dir ${dataDir} does not exists, trying to create it`)
     await fs.promises.mkdir(dataDir)
     logger.debug(`data dir ${dataDir} was created`)
+  }
+
+  if (!fs.existsSync(certsDir)) {
+    // Certificates dir for Prosody.
+    // Note: not used yet, but we create the directory to avoid errors in prosody logs.
+    logger.info(`The certs dir ${certsDir} does not exists, trying to create it`)
+    await fs.promises.mkdir(certsDir)
+    logger.debug(`certs dir ${certsDir} was created`)
   }
 
   if (!fs.existsSync(appImageExtractPath)) {
@@ -49,7 +58,7 @@ async function prepareProsody (options: RegisterServerOptions): Promise<void> {
   const filePaths = await getProsodyFilePaths(options)
 
   logger.debug('Ensuring that the working dir exists')
-  await _ensureWorkingDir(options, filePaths.dir, filePaths.data, filePaths.appImageExtractPath)
+  await _ensureWorkingDir(options, filePaths.dir, filePaths.data, filePaths.certs, filePaths.appImageExtractPath)
 
   const appImageToExtract = filePaths.appImageToExtract
   if (!appImageToExtract) {
