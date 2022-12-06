@@ -3,7 +3,7 @@
 🇬🇧 English version / version anglaise [here](./installation.md).
 🇫🇷 French version / Version française [ici](./installation.fr.md)
 🇩🇪 German version / deutsche Version [hier](./installation.de.md)
-🇯🇵 Japanese version / 日本語バージョン [hier](./installation.ja.md)
+🇯🇵 Japanese version / 日本語バージョン [こちら](./installation.ja.md)
 
 **メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、変更をご確認ください : [変更履歴](../CHANGELOG.md)**.
 

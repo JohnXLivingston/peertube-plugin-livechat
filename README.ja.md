@@ -2,7 +2,7 @@
 
 🇫🇷 French version / Version française [ici](README.fr.md).
 🇩🇪 German version / deutsche Version [hier](./README.de.md).
-🇯🇵 Japanese Version / 日本語バージョン [hier](./README.ja.md).
+🇯🇵 Japanese Version / 日本語バージョン [こちら](./README.ja.md).
 
 この[Peertube](https://joinpeertube.org/)プラグインは、お使いのPeerTubeインスタンスの動画に対してチャットシステムを提供します。
 
