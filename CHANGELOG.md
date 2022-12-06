@@ -44,6 +44,7 @@ Peertube image.
 * Settings page re-ordered.
 * Cleaning deprecated documentation.
 * Removing the code of the Docker image, as it is no more needed.
+* Japanese translations (thanks [fusengum](https://github.com/fusengum)).
 
 ### Minor changes and fixes
 
