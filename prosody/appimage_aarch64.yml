@@ -35,6 +35,7 @@ AppDir:
 
     include:
       - lua5.2
+      # For an unknown reason, lua-unbound is not found in these repository.
       # - lua-unbound
       - prosody
 
