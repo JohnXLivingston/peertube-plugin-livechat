@@ -116,6 +116,7 @@
     "oc": "./languages/oc.json",
     "pl-PL": "./languages/pl.json",
     "de-DE": "./languages/de.json",
-    "it-IT": "./languages/it.json"
+    "it-IT": "./languages/it.json",
+    "ja-JP": "./languages/ja.json"
   }
 }
