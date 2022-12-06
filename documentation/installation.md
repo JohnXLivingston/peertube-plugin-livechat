@@ -2,6 +2,7 @@
 
 🇫🇷 French version / Version française [ici](./installation.fr.md)
 🇩🇪 German version / deutsche Version [hier](./installation.de.md)
+🇯🇵 Japanese version / 日本語バージョン [こちら](./installation.ja.md)
 
 **Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](../CHANGELOG.md)**.
 
