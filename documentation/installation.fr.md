@@ -2,6 +2,7 @@
 
 🇬🇧 English version / version anglaise [here](./installation.md).
 🇩🇪 German version / deutsche Version [hier](./installation.de.md).
+🇯🇵 Japanese version / 日本語バージョン [こちら](./installation.ja.md).
 
 **Avant de mettre à jour vers une nouvelle version majeure, merci de lire les notes de version, et la liste des éventuelles modifications non rétro-compatibles : [CHANGELOG](../CHANGELOG.md).**
 

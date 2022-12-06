@@ -2,6 +2,7 @@
 
 🇬🇧 English version / version anglaise [here](./README.md).
 🇫🇷 French version / Version française [ici](./README.fr.md).
+🇯🇵 Japanese Version / 日本語バージョン [こちら](./README.ja.md).
 
 Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, ein Chatsystem für Peertube-Videos bereitzustellen.
 

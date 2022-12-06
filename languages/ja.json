@@ -1,0 +1,17 @@
+{
+  "Open chat": "チャットを開く",
+  "Open chat in a new window": "新規ウィンドウでチャットを開く",
+  "Close chat": "チャットを閉じる",
+  "Use chat": "チャットを使用する",
+  "If enabled, there will be a chat next to the video.": "有効にしている場合、動画の横にチャットを表示します。",
+  "Share chat link": "チャットリンクを共有",
+  "Read-only": "読み取り専用にする",
+  "Show the scrollbar": "スクロールバーを表示する",
+  "Transparent background (for stream integration, with OBS for example)": "透過型背景にする (OBSなどを使用したストリーミング連携に最適)",
+  "Tips for streamers: To add the chat to your OBS, generate a read-only link and use it as a browser source.": "ストリーマーの方へ: OBSにチャットを追加する場合は、読み取り専用のチャットリンクを生成し、ブラウザソースで読み込んでください。",
+  "Copy": "コピー",
+  "Link copied": "リンクをコピーしました",
+  "Error": "エラー",
+  "Open": "開く",
+  "Use current theme colors": "現在のテーマカラーを使用する"
+}
