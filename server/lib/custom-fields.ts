@@ -1,4 +1,4 @@
-import type { RegisterServerOptions, MVideoThumbnail } from '@peertube/peertube-types'
+import type { RegisterServerOptions, Video } from '@peertube/peertube-types'
 async function initCustomFields (options: RegisterServerOptions): Promise<void> {
   const registerHook = options.registerHook
   const storageManager = options.storageManager
@@ -10,7 +10,7 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
       logger.debug('Saving a video, checking for custom fields')
 
       const body: any = params.body
-      const video: MVideoThumbnail | undefined = params.video
+      const video: Video | undefined = params.video
       if (!video || !video.id) {
         return
       }
@@ -18,11 +18,11 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
       const value = body.pluginData['livechat-active']
       // NB: on Peertube 3.2.1, value is "true", "false", or "null", as strings.
       if (value === true || value === 'true') {
-        logger.info(`Saving livechat-active=true for video ${video.id as string}`)
-        await storageManager.storeData(`livechat-active-${video.id as string}`, true)
+        logger.info(`Saving livechat-active=true for video ${video.id.toString()}`)
+        await storageManager.storeData(`livechat-active-${video.id.toString()}`, true)
       } else if (value === false || value === 'false' || value === 'null') {
-        logger.info(`Saving livechat-active=false for video ${video.id as string}`)
-        await storageManager.storeData(`livechat-active-${video.id as string}`, false)
+        logger.info(`Saving livechat-active=false for video ${video.id.toString()}`)
+        await storageManager.storeData(`livechat-active-${video.id.toString()}`, false)
       } else {
         logger.error('Unknown value ' + JSON.stringify(value) + ' for livechat-active field.')
       }
@@ -31,7 +31,7 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
 
   registerHook({
     target: 'filter:api.video.get.result',
-    handler: async (video: MVideoThumbnail): Promise<MVideoThumbnail> => {
+    handler: async (video: Video): Promise<Video> => {
       logger.debug('Getting a video, searching for custom fields')
       await fillVideoCustomFields(options, video)
       return video
@@ -39,14 +39,17 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
   })
 }
 
-// FIXME: @peertube/peertube-types@4.0.0-beta.3 is pluginData missing?
-interface MVideoThumbnailLiveChat extends MVideoThumbnail {
+// FIXME: @peertube/peertype-types@4.2.2: wrongly thinks that loadByIdOrUUID return a MVideoThumbnail.
+//      So we create this custom interface for fillVideoCustomFields to accept Video and MVideoThumbnail types.
+interface LiveChatCustomFieldsVideo {
+  id?: number | string
+  isLive: boolean
   pluginData?: {
     'livechat-active'?: boolean
   }
 }
 
-async function fillVideoCustomFields (options: RegisterServerOptions, video: MVideoThumbnailLiveChat): Promise<void> {
+async function fillVideoCustomFields (options: RegisterServerOptions, video: LiveChatCustomFieldsVideo): Promise<void> {
   if (!video) return video
   if (!video.pluginData) video.pluginData = {}
   if (!video.id) return

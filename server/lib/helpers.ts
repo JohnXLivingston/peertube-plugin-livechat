@@ -72,16 +72,10 @@ async function isUserAdmin (options: RegisterServerOptions, res: Response): Prom
   return true
 }
 
-// FIXME: @peertube/peertube-types@4.0.0-beta.3 is missing user.Account.name definition.
 type Unpack<T> = T extends Promise<infer U | undefined> ? U : T
 type AuthUser = Unpack<ReturnType<PeerTubeHelpers['user']['getAuthUser']>>
-interface AuthUserFixed extends AuthUser {
-  Account?: {
-    name: string
-  }
-}
 
-async function getUserNickname (options: RegisterServerOptions, user: AuthUserFixed): Promise<string | undefined> {
+async function getUserNickname (options: RegisterServerOptions, user: AuthUser): Promise<string | undefined> {
   const peertubeHelpers = options.peertubeHelpers
   const logger = peertubeHelpers.logger
 

@@ -87,6 +87,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         }
         res.json(roomDefaults)
       } else {
+        // FIXME: @peertube/peertype-types@4.2.2: wrongly considere video as MVideoThumbnail.
         const video = await peertubeHelpers.videos.loadByIdOrUUID(jid)
         if (!video) {
           logger.warn(`Video ${jid} not found`)

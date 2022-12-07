@@ -1,5 +1,21 @@
 # Changelog
 
+## 6.1.0 (Not Released Yet)
+
+### Important Notes
+
+If you haven't upgraded to v6.0.0 yet, please read v6.0.0 changelog first.
+
+### New Features
+
+### Changes
+
+* Minimum Peertube version is now v4.2.0.
+
+### Minor changes and fixes
+
+* Update @types/peertube to v4.2.2 (requiring Peertube v4.2.0).
+
 ## 6.0.0
 
 ### Breaking changes

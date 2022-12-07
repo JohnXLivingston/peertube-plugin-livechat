@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-livechat",
   "description": "PeerTube plugin livechat: offers a way to embed a chat system into Peertube.",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "license": "AGPL-3.0",
   "author": {
     "name": "John Livingston",
@@ -40,7 +40,7 @@
     "validate-color": "^2.2.1"
   },
   "devDependencies": {
-    "@peertube/peertube-types": "^4.0.0-beta.3",
+    "@peertube/peertube-types": "^4.2.2",
     "@purtuga/esm-webpack-plugin": "^1.5.0",
     "@tsconfig/node12": "^1.0.9",
     "@types/async": "^3.2.9",
@@ -71,7 +71,7 @@
     "webpack-cli": "^3.3.12"
   },
   "engine": {
-    "peertube": ">=3.2.0"
+    "peertube": ">=4.3.0"
   },
   "engines": {
     "npm": ">=7"
