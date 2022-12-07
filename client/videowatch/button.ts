@@ -50,7 +50,9 @@ function displayButton ({
   buttonContainer.append(button)
 }
 
+export type {
+  displayButtonOptions
+}
 export {
-  displayButtonOptions,
   displayButton
 }

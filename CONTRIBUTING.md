@@ -81,3 +81,11 @@ You can build the plugin with extra debug features simply by using:
 ```bash
 NODE_ENV=dev npm run build
 ```
+
+### ESBuild vs Typescript
+
+This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.
+ESBuild can handle Typescript, but does not check types
+(see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).
+That's why we first comple typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).
+Then, if everything is okay, we run ESBuild to generate the compiled javascript.

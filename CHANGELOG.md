@@ -15,6 +15,7 @@ If you haven't upgraded to v6.0.0 yet, please read v6.0.0 changelog first.
 ### Minor changes and fixes
 
 * Update @types/peertube to v4.2.2 (requiring Peertube v4.2.0).
+* Using ESBuild for front-end packing, instead of webpack. Note: for now webpack is still used for ConverseJS.
 
 ## 6.0.0
 

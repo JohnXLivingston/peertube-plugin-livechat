@@ -103,6 +103,8 @@ export {
   closeSVG,
   openChatSVG,
   openBlankChatSVG,
-  shareChatUrlSVG,
+  shareChatUrlSVG
+}
+export type {
   SVGButton
 }

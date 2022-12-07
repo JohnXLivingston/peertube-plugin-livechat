@@ -15,7 +15,11 @@ async function initSettingsRouter (options: RegisterServerOptions): Promise<Rout
       const src = getBaseStaticRoute(options) + 'settings/settings.js'
       res.status(200)
       res.type('html')
-      res.send('<html><body><div>Loading...</div></body><script src="' + src + '"></script></html>')
+      res.send(`<html>
+        <body><div>Loading...</div></body>
+        <script type="module" src="${src}"></script>
+        </html>
+      `)
     }
   ))
 

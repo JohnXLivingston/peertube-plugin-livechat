@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@peertube/peertube-types": "^4.2.2",
-    "@purtuga/esm-webpack-plugin": "^1.5.0",
     "@tsconfig/node12": "^1.0.9",
     "@types/async": "^3.2.9",
     "@types/express": "^4.17.13",
@@ -51,6 +50,7 @@
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
+    "esbuild": "^0.16.1",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-config-standard-with-typescript": "^20.0.0",
@@ -65,13 +65,10 @@
     "stylelint-config-recommended-scss": "^5.0.1",
     "stylelint-config-standard-scss": "^2.0.1",
     "svgo": "^2.8.0",
-    "ts-loader": "^8.3.0",
-    "typescript": "^4.3.5",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "typescript": "^4.3.5"
   },
   "engine": {
-    "peertube": ">=4.3.0"
+    "peertube": ">=4.2.0"
   },
   "engines": {
     "npm": ">=7"
@@ -91,12 +88,13 @@
     "build:prosody": "bash build-prosody.sh",
     "build:images": "mkdir -p dist/client/images && npx svgo -f public/images/ -o dist/client/images/",
     "build:avatars": "mkdir -p dist/server/avatars && ./build-avatars.js",
-    "build:webpack": "webpack --mode=production",
+    "check:client:tsc": "npx tsc --p client/ --noEmit --skipLibCheck",
+    "build:client": "node ./build-client.js --mode=production",
     "build:server": "npx tsc --build server/tsconfig.json",
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
     "build:prosodymodules": "mkdir -p dist/server/prosody-modules && cp -r prosody-modules/* dist/server/prosody-modules/",
     "build:styles": "sass assets:dist/assets",
-    "build": "npm-run-all -s clean:light -p build:converse build:prosody build:images build:avatars build:webpack build:server build:serverconverse build:prosodymodules build:styles",
+    "build": "npm-run-all -s clean:light check:client:tsc -p build:converse build:prosody build:images build:avatars build:client build:server build:serverconverse build:prosodymodules build:styles",
     "lint": "npm-run-all -s lint:script lint:styles",
     "lint:script": "npx eslint --ext .js --ext .ts .",
     "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/**/*.css'",

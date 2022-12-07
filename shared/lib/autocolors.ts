@@ -43,8 +43,10 @@ function areAutoColorsValid (autocolors: AutoColors): true | string[] {
   return true
 }
 
+export type {
+  AutoColors
+}
 export {
-  AutoColors,
   isAutoColorsAvailable,
   areAutoColorsValid
 }

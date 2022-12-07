@@ -13,6 +13,9 @@
 		"noImplicitReturns": true,
 		"strictBindCallApply": true, // should already be true because of strict:true
 		"noUnusedLocals": true,
+		"allowSyntheticDefaultImports": true, // Seems necessary for peertube types to work
+		"isolatedModules": true, // Needed by esbuild https://esbuild.github.io/content-types/#isolated-modules
+		"esModuleInterop": true, // Needed by esbuild https://esbuild.github.io/content-types/#es-module-interop
     "outDir": "../dist/client",
 		"paths": {
 			"shared/*": ["../shared/*"]

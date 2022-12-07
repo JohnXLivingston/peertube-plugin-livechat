@@ -26,7 +26,7 @@ interface ProsodyListRoomsResultSuccess {
 
 type ProsodyListRoomsResult = ProsodyListRoomsResultError | ProsodyListRoomsResultSuccess
 
-export {
+export type {
   ConverseJSTheme,
   ProsodyListRoomsResult,
   ProsodyListRoomsResultRoom

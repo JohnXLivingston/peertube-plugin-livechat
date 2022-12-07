@@ -205,3 +205,5 @@ function launchTests (): void {
 }
 
 launchTests()
+
+export {}

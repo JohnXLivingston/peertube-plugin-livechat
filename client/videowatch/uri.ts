@@ -66,8 +66,10 @@ function getIframeUri (
   return iframeUriStr
 }
 
+export type {
+  UriOptions
+}
 export {
-  UriOptions,
   getBaseRoute,
   getIframeUri
 }
