@@ -44,11 +44,14 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       const roomKey = req.params.roomKey
       const settings = await settingsManager.getSettings([
         'prosody-room-type',
+        'disable-websocket',
         'converse-theme', 'converse-autocolors'
       ])
 
       const boshUri = getBaseRouterRoute(options) + 'http-bind'
-      let wsUri = getBaseWebSocketRoute(options) // can be undefined
+      let wsUri = settings['disable-websocket']
+        ? undefined
+        : getBaseWebSocketRoute(options) // can be undefined
       wsUri = wsUri !== undefined ? wsUri + 'xmpp-websocket' : ''
 
       let room: string
@@ -341,7 +344,7 @@ async function enableProxyRoute (
     logger.error(
       'The http bind proxy got an error ' +
       '(this can be normal if you updated/uninstalled the plugin, or shutdowned peertube while users were chatting): ' +
-      (err.message as string)
+      err.message
     )
     if ('writeHead' in res) {
       res.writeHead(500)
@@ -363,7 +366,7 @@ async function enableProxyRoute (
     logger.error(
       'The websocket proxy got an error ' +
       '(this can be normal if you updated/uninstalled the plugin, or shutdowned peertube while users were chatting): ' +
-      (err.message as string)
+      err.message
     )
     if ('writeHead' in res) {
       res.writeHead(500)

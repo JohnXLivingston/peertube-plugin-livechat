@@ -99,6 +99,15 @@ If this AppImage is not working, you can fallback to the Prosody that is package
 
 This settings should only be used if the plugin is broken, and waiting for a patch.
 
+#### Disable Websocket
+
+With Peertube >= 5.0.0, this plugin try to use Websocket connection for chatting.
+If the user's browser or connection is not compatible, the browser will automatically fallback on the BOSH protocol.
+
+But in rare case, this can fail. For example if you have a reverse proxy in front of Peertube that does not
+allow Websocket connection for plugins.
+In this case, you can check this settings to disable Websocket connections.
+
 #### Prosody port
 
 This is the port that the Prosody server will use. By default it is set to 52800. If you want to use another port, just change the value here.

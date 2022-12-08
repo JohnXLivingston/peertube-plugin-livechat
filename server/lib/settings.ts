@@ -223,6 +223,20 @@ Only use this if you encounter problems with the embedded Prosody.`,
   })
 
   registerSetting({
+    name: 'disable-websocket',
+    type: 'input-checkbox',
+    label: 'Disable Websocket',
+    descriptionHTML: `With Peertube &gt;= 5.0.0, this plugin try to use Websocket connection for chatting.
+If the user's browser or connection is not compatible, the browser will automatically fallback on the BOSH protocol.
+<br>
+But in rare case, this can fail. For example if you have a reverse proxy in front of Peertube that does not
+allow Websocket connection for plugins.
+In this case, you can check this settings to disable Websocket connections.`,
+    private: true,
+    default: false
+  })
+
+  registerSetting({
     name: 'prosody-port',
     label: 'Prosody port',
     type: 'input',
