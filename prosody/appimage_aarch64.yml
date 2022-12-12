@@ -1,6 +1,9 @@
 # This file is meant to be used with appimage-builder: https://appimage-builder.readthedocs.io
 # See it is use in the build-prosody.sh script.
 
+# FIXME: this appimage file is not working. Not used for now.
+# See https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/124
+
 version: 1
 
 script:

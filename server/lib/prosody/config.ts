@@ -29,9 +29,9 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   const dir = await getWorkingDir(options)
   const settings = await options.settingsManager.getSettings(['use-system-prosody'])
   let exec
-  let execArgs: string[]
+  let execArgs: string[] = []
   let execCtl
-  let execCtlArgs: string[]
+  let execCtlArgs: string[] = []
   let appImageToExtract
 
   // this one is always needed (must create the directory on startup)
@@ -39,21 +39,25 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
 
   if (settings['use-system-prosody']) {
     exec = 'prosody'
-    execArgs = []
     execCtl = 'prosodyctl'
-    execCtlArgs = []
   } else {
-    const arch = process.arch
-    if (arch === 'arm' || arch === 'arm64') {
-      logger.info('Node process.arch is ' + arch + ', we will be using the aarch64 Prosody AppImage')
-      appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-aarch64.AppImage')
+    // const arch = process.arch
+    // if (arch === 'arm' || arch === 'arm64') {
+    //   logger.info('Node process.arch is ' + arch + ', we will be using the aarch64 Prosody AppImage')
+    //   appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-aarch64.AppImage')
+    // } else {
+    //   appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-x86_64.AppImage')
+    // }
+    if (process.arch !== 'x64' && process.arch !== 'x86_64') {
+      logger.info('Node process.arch is ' + process.arch + ', cant use the Prosody AppImage')
     } else {
+      logger.debug('Node process.arch is ' + process.arch + ', we will be using the x86_64 Prosody AppImage')
       appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-x86_64.AppImage')
+      exec = path.resolve(appImageExtractPath, 'squashfs-root/AppRun')
+      execArgs = ['prosody']
+      execCtl = exec
+      execCtlArgs = ['prosodyctl']
     }
-    exec = path.resolve(appImageExtractPath, 'squashfs-root/AppRun')
-    execArgs = ['prosody']
-    execCtl = exec
-    execCtlArgs = ['prosodyctl']
   }
 
   return {

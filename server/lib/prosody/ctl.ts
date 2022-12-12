@@ -100,6 +100,10 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
     throw new Error(`Invalid prosodyctl command '${command}'`)
   }
   return new Promise((resolve, reject) => {
+    if (!filePaths.execCtl) {
+      reject(new Error('Missing prosodyctl command executable'))
+      return
+    }
     let d: string = ''
     let e: string = ''
     let m: string = ''
@@ -246,6 +250,11 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   const config = await writeProsodyConfig(options)
 
   const filePaths = config.paths
+
+  if (!filePaths.exec) {
+    logger.info('No Prosody executable, cant run.')
+    return
+  }
 
   // launch prosody
   const execCmd = filePaths.exec + (filePaths.execArgs.length ? ' ' + filePaths.execArgs.join(' ') : '')

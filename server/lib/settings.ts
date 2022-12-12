@@ -27,6 +27,25 @@ function initSettings (options: RegisterServerOptions): void {
 (if this button is not opening a new window, please try to refresh the page).`
   })
 
+  if (process.arch !== 'x64' && process.arch !== 'x86_64') {
+    registerSetting({
+      name: 'prosody-arch-warning',
+      type: 'html',
+      private: true,
+      descriptionHTML: `<span class="peertube-plugin-livechat-warning">
+It seems that your are using a ${process.arch} CPU, 
+which is not compatible with the plugin.
+Please read the
+<a
+  href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/installation.md"
+  target="_blank"
+>
+  installation documentation
+</a> for a workaround.
+</span>`
+    })
+  }
+
   // ********** Chat
   registerSetting({
     type: 'html',

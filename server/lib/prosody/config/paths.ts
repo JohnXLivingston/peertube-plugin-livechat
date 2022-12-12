@@ -8,9 +8,9 @@ interface ProsodyFilePaths {
   certs: string
   modules: string
   avatars: string
-  exec: string
+  exec?: string
   execArgs: string[]
-  execCtl: string
+  execCtl?: string
   execCtlArgs: string[]
   appImageToExtract?: string
   appImageExtractPath: string

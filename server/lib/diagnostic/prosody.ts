@@ -35,6 +35,23 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
 
     result.messages.push(`Prosody will use ${wantedConfig.baseApiUrl} as base uri from api calls`)
 
+    if (!wantedConfig.paths.exec) {
+      result.messages.push({
+        level: 'error',
+        message: 'Error: no Prosody server.'
+      })
+      if (process.arch !== 'x64' && process.arch !== 'x86_64') {
+        result.messages.push({
+          level: 'error',
+          message: 'Error: your CPU is a ' +
+            process.arch + ', ' +
+            'which is not compatible with the plugin. ' +
+            'Please read the plugin installation documentation for a workaround.'
+        })
+      }
+      return result
+    }
+
     result.messages.push(`Prosody path will be '${wantedConfig.paths.exec}'`)
 
     if (wantedConfig.paths.appImageToExtract) {

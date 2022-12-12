@@ -13,7 +13,8 @@ fi
 
 cd "$prosody_build_dir"
 
-if [ -f "$prosody_build_dir/livechat-prosody-x86_64.AppImage" ] && [ -f "$prosody_build_dir/livechat-prosody-aarch64.AppImage" ]; then
+# if [ -f "$prosody_build_dir/livechat-prosody-x86_64.AppImage" ] && [ -f "$prosody_build_dir/livechat-prosody-aarch64.AppImage" ]; then
+if [ -f "$prosody_build_dir/livechat-prosody-x86_64.AppImage" ]; then
   echo "Prosody images already built."
 else
   echo "Prosody images must be build..."
@@ -32,18 +33,18 @@ else
 
   echo "Copying appimage source files..."
   cp "$rootdir/prosody/appimage_x86_64.yml" "$prosody_build_dir/appimage_x86_64.yml"
-  cp "$rootdir/prosody/appimage_aarch64.yml" "$prosody_build_dir/appimage_aarch64.yml"
+  # cp "$rootdir/prosody/appimage_aarch64.yml" "$prosody_build_dir/appimage_aarch64.yml"
   cp "$rootdir/prosody/launcher.lua" "$prosody_build_dir/launcher.lua"
 
   echo "Building Prosody x86_64..."
   appimage-builder --recipe "$prosody_build_dir/appimage_x86_64.yml"
 
-  echo "Cleaning build folders before building aarch64..."
-  rm -rf "$prosody_build_dir/AppDir"
-  rm -rf "$prosody_build_dir/appimage-build"
+  # echo "Cleaning build folders before building aarch64..."
+  # rm -rf "$prosody_build_dir/AppDir"
+  # rm -rf "$prosody_build_dir/appimage-build"
 
-  echo "Building Prosody aarch64..."
-  appimage-builder --recipe "$prosody_build_dir/appimage_aarch64.yml"
+  # echo "Building Prosody aarch64..."
+  # appimage-builder --recipe "$prosody_build_dir/appimage_aarch64.yml"
 
   # For some obscur reason, if we keep AppDir and appimage-build folders,
   # and if we try to install the plugin using the Peertube CLI,
@@ -56,8 +57,8 @@ fi
 
 echo "Copying Prosody dist files..."
 mkdir -p "$prosody_destination_dir" && cp $prosody_build_dir/livechat-prosody-x86_64.AppImage "$prosody_destination_dir/"
-mkdir -p "$prosody_destination_dir" && cp $prosody_build_dir/livechat-prosody-aarch64.AppImage "$prosody_destination_dir/"
+# mkdir -p "$prosody_destination_dir" && cp $prosody_build_dir/livechat-prosody-aarch64.AppImage "$prosody_destination_dir/"
 
-echo "Prosody AppImage OK."
+echo "Prosody AppImages OK."
 
 exit 0
