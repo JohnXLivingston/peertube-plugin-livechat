@@ -13,5 +13,7 @@
   "Link copied": "Ligilo kopiata",
   "Error": "Eraro",
   "Open": "Malfermi",
-  "Use current theme colors": "Uzi koloroj el la nuna etoso"
+  "Use current theme colors": "Uzi koloroj el la nuna etoso",
+  "Generate an iframe to embed the chat in a website": false,
+  "Chat for live stream": false
 }

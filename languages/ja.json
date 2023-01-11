@@ -13,5 +13,7 @@
   "Link copied": "リンクをコピーしました",
   "Error": "エラー",
   "Open": "開く",
-  "Use current theme colors": "現在のテーマカラーを使用する"
+  "Use current theme colors": "現在のテーマカラーを使用する",
+  "Generate an iframe to embed the chat in a website": false,
+  "Chat for live stream": false
 }

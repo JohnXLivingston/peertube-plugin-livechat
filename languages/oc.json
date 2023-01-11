@@ -13,5 +13,7 @@
   "Link copied": "Ligam copiat",
   "Error": "Error",
   "Open": "Dobrir",
-  "Use current theme colors": "Utilizar las colors del tèma actual"  
+  "Use current theme colors": "Utilizar las colors del tèma actual"  ,
+  "Generate an iframe to embed the chat in a website": false,
+  "Chat for live stream": false
 }

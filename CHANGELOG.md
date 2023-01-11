@@ -8,6 +8,10 @@ If you haven't upgraded to v6.0.0 yet, please read v6.0.0 changelog first.
 
 ### New Features
 
+### New features
+
+* Share chat link popup: add an option to generate an iframe.
+
 ### Changes
 
 * Minimum Peertube version is now v4.2.0.

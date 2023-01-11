@@ -13,5 +13,7 @@
   "Link copied": "Lien copié",
   "Error": "Erreur",
   "Open": "Ouvrir",
-  "Use current theme colors": "Utiliser les couleurs du thème courant"
+  "Use current theme colors": "Utiliser les couleurs du thème courant",
+  "Generate an iframe to embed the chat in a website": "Générer une iframe pour intégrer le tchat dans un site web",
+  "Chat for live stream:": "Tchat pour le direct :"
 }

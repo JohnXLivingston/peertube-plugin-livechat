@@ -13,5 +13,7 @@
   "Link copied": false,
   "Error": false,
   "Open": false,
-  "Use current theme colors": false
+  "Use current theme colors": false,
+  "Generate an iframe to embed the chat in a website": false,
+  "Chat for live stream": false
 }

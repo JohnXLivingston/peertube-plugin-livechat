@@ -13,5 +13,7 @@
   "Link copied": "Esteka kopiatu da",
   "Error": "Errorea",
   "Open": "Ireki",
-  "Use current theme colors": "Erabili uneko itxuraren koloreak"
+  "Use current theme colors": "Erabili uneko itxuraren koloreak",
+  "Generate an iframe to embed the chat in a website": false,
+  "Chat for live stream": false
 }

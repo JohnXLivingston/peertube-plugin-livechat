@@ -13,5 +13,7 @@
   "Link copied": "Enlace copiado",
   "Error": "Error",
   "Open": "Abrir",
-  "Use current theme colors": "Utilizar los colores del tema actual"
+  "Use current theme colors": "Utilizar los colores del tema actual",
+  "Generate an iframe to embed the chat in a website": false,
+  "Chat for live stream": false
 }

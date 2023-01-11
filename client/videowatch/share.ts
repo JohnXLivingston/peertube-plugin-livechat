@@ -5,12 +5,15 @@ import { getIframeUri, UriOptions } from './uri'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 
 interface ShareForm {
+  shareString: HTMLInputElement
+  openButton: HTMLButtonElement
+  copyButton: HTMLButtonElement
   readonly: HTMLInputElement
   withscroll: HTMLInputElement
   transparent: HTMLInputElement
   readonlyOptions: HTMLElement
-  url: HTMLInputElement
   autoColors?: HTMLInputElement
+  generateIframe: HTMLInputElement
 }
 
 async function shareChatUrl (registerOptions: RegisterClientOptions, settings: any, video: Video): Promise<void> {
@@ -26,7 +29,9 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     labelCopied,
     labelError,
     labelOpen,
-    labelAutocolors
+    labelAutocolors,
+    labelGenerateIframe,
+    labelChatFor
   ] = await Promise.all([
     peertubeHelpers.translate('Share chat link'),
     peertubeHelpers.translate('Read-only'),
@@ -38,7 +43,9 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     peertubeHelpers.translate('Link copied'),
     peertubeHelpers.translate('Error'),
     peertubeHelpers.translate('Open'),
-    peertubeHelpers.translate('Use current theme colors')
+    peertubeHelpers.translate('Use current theme colors'),
+    peertubeHelpers.translate('Generate an iframe to embed the chat in a website'),
+    peertubeHelpers.translate('Chat for live stream:')
   ])
 
   const defaultUri = getIframeUri(registerOptions, settings, video)
@@ -53,24 +60,24 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
 
       container.classList.add('peertube-plugin-livechat-shareurl-modal')
 
-      const divUrl = document.createElement('div')
-      divUrl.classList.add('livechat-shareurl-copy')
-      const url = document.createElement('input')
-      url.setAttribute('type', 'text')
-      url.setAttribute('readonly', '')
-      url.setAttribute('autocomplete', 'off')
-      url.setAttribute('placeholder', '')
-      url.classList.add('form-control', 'readonly')
-      divUrl.append(url)
-      const copy = document.createElement('button')
-      copy.classList.add('btn', 'btn-outline-secondary', 'text-uppercase')
-      copy.textContent = labelCopy
-      divUrl.append(copy)
-      const open = document.createElement('button')
-      open.classList.add('btn', 'btn-outline-secondary', 'text-uppercase')
-      open.textContent = labelOpen
-      divUrl.append(open)
-      container.append(divUrl)
+      const divShareString = document.createElement('div')
+      divShareString.classList.add('livechat-shareurl-copy')
+      const shareString = document.createElement('input')
+      shareString.setAttribute('type', 'text')
+      shareString.setAttribute('readonly', '')
+      shareString.setAttribute('autocomplete', 'off')
+      shareString.setAttribute('placeholder', '')
+      shareString.classList.add('form-control', 'readonly')
+      divShareString.append(shareString)
+      const copyButton = document.createElement('button')
+      copyButton.classList.add('btn', 'btn-outline-secondary', 'text-uppercase')
+      copyButton.textContent = labelCopy
+      divShareString.append(copyButton)
+      const openButton = document.createElement('button')
+      openButton.classList.add('btn', 'btn-outline-secondary', 'text-uppercase')
+      openButton.textContent = labelOpen
+      divShareString.append(openButton)
+      container.append(divShareString)
 
       const divTips = document.createElement('div')
       divTips.textContent = tipsOBS
@@ -115,6 +122,13 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
         divCustom.append(label)
       }
 
+      const generateIframe = document.createElement('input')
+      generateIframe.setAttribute('type', 'checkbox')
+      const generateIframeLabelEl = document.createElement('label')
+      generateIframeLabelEl.textContent = labelGenerateIframe
+      generateIframeLabelEl.prepend(generateIframe)
+      divCustom.append(generateIframeLabelEl)
+
       readonly.onclick = () => {
         renderContent(container)
       }
@@ -124,39 +138,47 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       transparent.onclick = () => {
         renderContent(container)
       }
-
       if (autoColors) {
         autoColors.onclick = () => {
           renderContent(container)
         }
       }
-
-      url.onclick = () => {
-        url.select()
-        url.setSelectionRange(0, 99999) /* For mobile devices */
+      generateIframe.onclick = () => {
+        renderContent(container)
       }
 
-      copy.onclick = () => {
-        url.select()
-        url.setSelectionRange(0, 99999) /* For mobile devices */
-        navigator.clipboard.writeText(url.value).then(() => {
+      shareString.onclick = () => {
+        shareString.select()
+        shareString.setSelectionRange(0, 99999) /* For mobile devices */
+      }
+
+      copyButton.onclick = () => {
+        shareString.select()
+        shareString.setSelectionRange(0, 99999) /* For mobile devices */
+        navigator.clipboard.writeText(shareString.value).then(() => {
           peertubeHelpers.notifier.success(labelCopied)
         }, () => {
           peertubeHelpers.notifier.error(labelError)
         })
       }
 
-      open.onclick = () => {
-        window.open(url.value)
+      openButton.onclick = () => {
+        // Don't open the url if it is an iframe!
+        if (shareString.value.startsWith('http')) {
+          window.open(shareString.value)
+        }
       }
 
       form = {
+        shareString,
+        copyButton,
+        openButton,
         readonly,
         withscroll,
         transparent,
         readonlyOptions,
-        url,
-        autoColors
+        autoColors,
+        generateIframe
       }
       restore(form)
     }
@@ -185,8 +207,24 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       form.transparent.disabled = true
       form.readonlyOptions.classList.add('livechat-shareurl-custom-readonly-disabled')
     }
-    const iframeUri = getIframeUri(registerOptions, settings, video, uriOptions)
-    form.url.setAttribute('value', iframeUri ?? '')
+    let shareStringValue = getIframeUri(registerOptions, settings, video, uriOptions)
+    if (form.generateIframe.checked) {
+      form.openButton.disabled = true
+      if (shareStringValue) {
+        // To properly escape all attributes, we are constructing an HTMLIframeElement
+        const iframe = document.createElement('iframe')
+        iframe.setAttribute('src', shareStringValue)
+        iframe.setAttribute('title', labelChatFor + ' ' + video.name)
+        iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
+        iframe.setAttribute('width', '560')
+        iframe.setAttribute('height', '315')
+        iframe.setAttribute('frameborder', '0')
+        shareStringValue = iframe.outerHTML
+      }
+    } else {
+      form.openButton.disabled = false
+    }
+    form.shareString.setAttribute('value', shareStringValue ?? '')
   }
 
   function save (form: ShareForm): void {
@@ -198,7 +236,8 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       readonly: !!form.readonly.checked,
       withscroll: !!form.withscroll.checked,
       transparent: !!form.transparent.checked,
-      autocolors: !!form.autoColors?.checked
+      autocolors: !!form.autoColors?.checked,
+      generateIframe: !!form.generateIframe.checked
     }
     window.localStorage.setItem('peertube-plugin-livechat-shareurl', JSON.stringify(v))
   }
@@ -223,6 +262,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       if (form.autoColors) {
         form.autoColors.checked = !!v.autocolors
       }
+      form.generateIframe.checked = !!v.generateIframe
     } catch (err) {
       logger.error(err as string)
     }
