@@ -55,8 +55,6 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       wsUri = wsUri !== undefined ? wsUri + 'xmpp-websocket' : ''
 
       let room: string
-      let authenticationUrl: string = ''
-      let advancedControls: boolean = false // auto join the chat in viewer mode, if not logged in
       let autoViewerMode: boolean = false
       let forceReadonly: 'true' | 'false' | 'noscroll' = 'false'
       let converseJSTheme: string = settings['converse-theme'] as string
@@ -86,10 +84,9 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         }
       }
 
-      authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
+      const authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
         getBaseRouterRoute(options) +
         'api/auth'
-      advancedControls = true
       if (req.query._readonly === 'true') {
         forceReadonly = 'true'
       } else if (req.query._readonly === 'noscroll') {
@@ -202,7 +199,6 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
       page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
-      page = page.replace(/{{ADVANCEDCONTROLS}}/g, advancedControls ? 'true' : 'false')
       page = page.replace(/{{AUTOVIEWERMODE}}/g, autoViewerMode ? 'true' : 'false')
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
       page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)

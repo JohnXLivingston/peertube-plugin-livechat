@@ -87,7 +87,6 @@ interface InitConverseParams {
   boshServiceUrl: string
   websocketServiceUrl: string
   authenticationUrl: string
-  advancedControls: boolean
   autoViewerMode: boolean
   forceReadonly: boolean | 'noscroll'
   noScroll: boolean
@@ -101,7 +100,6 @@ window.initConverse = async function initConverse ({
   boshServiceUrl,
   websocketServiceUrl,
   authenticationUrl,
-  advancedControls,
   autoViewerMode,
   forceReadonly,
   theme,
@@ -177,37 +175,39 @@ window.initConverse = async function initConverse ({
     persistent_store: 'sessionStorage',
     show_images_inline: false, // for security reason, and to avoid bugs when image is larger that iframe
     render_media: false, // for security reason, and to avoid bugs when image is larger that iframe
-    whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin', 'livechatDisconnectOnUnloadPlugin']
+    whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin', 'livechatDisconnectOnUnloadPlugin'],
+    show_retraction_warning: false // No need to use this warning (except if we open to external clients?)
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
 
   let isAuthenticated: boolean = false
-  if (authenticationUrl !== '') {
-    // We are in builtin-prosody mode.
-    // So the user will never se the «trusted browser» checkbox.
-    // So we have to disable it
-    // (and ensure clear_cache_on_logout is true,
-    // see https://conversejs.org/docs/html/configuration.html#allow-user-trust-override).
-    params.clear_cache_on_logout = true
-    params.allow_user_trust_override = false
+  if (authenticationUrl === '') {
+    throw new Error('Missing authenticationUrl')
+  }
 
-    const auth = await authenticatedMode(authenticationUrl)
-    if (auth) {
-      params.authentication = 'login'
-      params.auto_login = true
-      params.jid = auth.jid
-      params.password = auth.password
-      if (auth.nickname) {
-        params.nickname = auth.nickname
-      } else {
-        params.muc_nickname_from_jid = true
-      }
-      // We dont need the keepalive. And I suppose it is related to some bugs when opening a previous chat window.
-      params.keepalive = false
-      isAuthenticated = true
-      // FIXME: use params.oauth_providers?
+  // The user will never se the «trusted browser» checkbox (that allows to save credentials).
+  // So we have to disable it
+  // (and ensure clear_cache_on_logout is true,
+  // see https://conversejs.org/docs/html/configuration.html#allow-user-trust-override).
+  params.clear_cache_on_logout = true
+  params.allow_user_trust_override = false
+
+  const auth = await authenticatedMode(authenticationUrl)
+  if (auth) {
+    params.authentication = 'login'
+    params.auto_login = true
+    params.jid = auth.jid
+    params.password = auth.password
+    if (auth.nickname) {
+      params.nickname = auth.nickname
+    } else {
+      params.muc_nickname_from_jid = true
     }
+    // We dont need the keepalive. And I suppose it is related to some bugs when opening a previous chat window.
+    params.keepalive = false
+    isAuthenticated = true
+    // FIXME: use params.oauth_providers?
   }
 
   if (!isAuthenticated) {
@@ -219,22 +219,6 @@ window.initConverse = async function initConverse ({
     // params.muc_nickname_from_jid = true => compute the muc nickname from the jid (will be random here)
     // params.auto_register_muc_nickname = true => maybe not relevant here (dont do what i thought)
     // params.muc_show_logs_before_join = true => displays muc history on top of nickname form. But it's not updated.
-  }
-
-  if (advancedControls) {
-    // with the builtin prosody, no need to use this warning (except if we open to external clients?)
-    params.show_retraction_warning = false
-  } else {
-    // These params are for externals XMPP servers.
-    // NB: because we dont know if external servers have authentication mecanism,
-    // we disable all moderation functionnality.
-    // This is also done for backward compatibility with older installations.
-    params.muc_disable_slash_commands = [
-      'admin', 'ban', 'clear', 'deop', 'destroy', 'kick',
-      'member', 'modtools', 'mute', 'op', 'owner', 'register',
-      'revoke', 'subject', 'topic', 'voice'
-    ]
-    params.modtools_disable_assign = true
   }
 
   try {
