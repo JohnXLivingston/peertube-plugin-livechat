@@ -106,6 +106,7 @@ window.initConverse = async function initConverse ({
   transparent
 }: InitConverseParams) {
   const isInIframe = inIframe()
+  const converse = window.converse
 
   const body = document.querySelector('body')
   if (isInIframe) {
@@ -176,7 +177,20 @@ window.initConverse = async function initConverse ({
     show_images_inline: false, // for security reason, and to avoid bugs when image is larger that iframe
     render_media: false, // for security reason, and to avoid bugs when image is larger that iframe
     whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin', 'livechatDisconnectOnUnloadPlugin'],
-    show_retraction_warning: false // No need to use this warning (except if we open to external clients?)
+    show_retraction_warning: false, // No need to use this warning (except if we open to external clients?)
+    muc_show_info_messages: [
+      // FIXME: wait for a response here, and rewrite: https://github.com/conversejs/converse.js/issues/3125
+      '100', '102', '103', '172', '173', '174', // visibility_changes
+      '110', // self
+      '104', '201', // non_privacy_changes
+      '170', '171', // muc_logging_changes
+      '210', '303', // nickname_changes
+      '301', '307', '321', '322', '332', '333', // disconnected
+      'owner', 'admin', 'member', 'exadmin', 'exowner', 'exoutcast', 'exmember', // affiliation_changes
+      // 'entered', 'exited', // join_leave_events
+      'op', 'deop', 'voice', 'mute' // role_changes
+    ],
+    send_chat_state_notifications: false // don't send this for performance reason
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
@@ -222,7 +236,7 @@ window.initConverse = async function initConverse ({
   }
 
   try {
-    window.converse.plugins.add('livechatWindowTitlePlugin', {
+    converse.plugins.add('livechatWindowTitlePlugin', {
       dependencies: ['converse-muc-views'],
       overrides: {
         ChatRoomView: {
@@ -245,7 +259,7 @@ window.initConverse = async function initConverse ({
     })
 
     if (autoViewerMode && !isAuthenticated) {
-      window.converse.plugins.add('livechatViewerModePlugin', {
+      converse.plugins.add('livechatViewerModePlugin', {
         dependencies: ['converse-muc', 'converse-muc-views'],
         initialize: function () {
           const _converse = this._converse
@@ -288,7 +302,7 @@ window.initConverse = async function initConverse ({
     //   // - users are not show as disconnected until a long timeout
     //   // - anonymous users' nicknames are not available before this timeout
     //   // - logged in users sometimes can't switch between iframe and fullscreen more than 1 time
-    //   window.converse.plugins.add('livechatDisconnectOnUnloadPlugin', {
+    //   converse.plugins.add('livechatDisconnectOnUnloadPlugin', {
     //     initialize: function () {
     //       const _converse = this._converse
     //       const { unloadevent } = _converse
@@ -301,7 +315,7 @@ window.initConverse = async function initConverse ({
     //   })
     // }
 
-    window.converse.initialize(params)
+    converse.initialize(params)
   } catch (error) {
     console.error('Failed initializing converseJS', error)
   }

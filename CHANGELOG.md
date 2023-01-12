@@ -10,11 +10,13 @@ If you haven't upgraded to v6.0.0 yet, please read v6.0.0 changelog first.
 
 ### New features
 
-* Share chat link popup: add an option to generate an iframe.
+* Share chat link popup: add an option to generate an iframe. #110 #92
 
 ### Changes
 
 * Minimum Peertube version is now v4.2.0.
+* ConverseJS: Don't send state notifications. #134
+* ConverseJS: Don't show join/leave messages. #134
 
 ### Minor changes and fixes
 
