@@ -17,6 +17,7 @@ If you haven't upgraded to v6.0.0 yet, please read v6.0.0 changelog first.
 * Minimum Peertube version is now v4.2.0.
 * ConverseJS: Don't send state notifications. #134
 * ConverseJS: Don't show join/leave messages. #134
+* ConverseJS: remove browser notifications, and browser tab message count.
 
 ### Minor changes and fixes
 

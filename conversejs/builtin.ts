@@ -150,6 +150,8 @@ window.initConverse = async function initConverse ({
     notify_all_room_messages: [
       room
     ],
+    show_desktop_notifications: false,
+    show_tab_notifications: false,
     singleton: true,
     auto_focus: !isInIframe,
     hide_muc_participants: isInIframe,
