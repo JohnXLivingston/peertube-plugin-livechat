@@ -133,6 +133,24 @@ window.initConverse = async function initConverse ({
     ).toString()
   }
 
+  const mucShowInfoMessages = forceReadonly
+    ? [
+        // in readonly mode, show only following info messages:
+        '301', '307', '321', '322', '332', '333' // disconnected
+      ]
+    : [
+        // FIXME: wait for a response here, and rewrite: https://github.com/conversejs/converse.js/issues/3125
+        '100', '102', '103', '172', '173', '174', // visibility_changes
+        '110', // self
+        '104', '201', // non_privacy_changes
+        '170', '171', // muc_logging_changes
+        '210', '303', // nickname_changes
+        '301', '307', '321', '322', '332', '333', // disconnected
+        'owner', 'admin', 'member', 'exadmin', 'exowner', 'exoutcast', 'exmember', // affiliation_changes
+        // 'entered', 'exited', // join_leave_events
+        'op', 'deop', 'voice', 'mute' // role_changes
+      ]
+
   const params: any = {
     assets_path: assetsPath,
 
@@ -180,18 +198,7 @@ window.initConverse = async function initConverse ({
     render_media: false, // for security reason, and to avoid bugs when image is larger that iframe
     whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin', 'livechatDisconnectOnUnloadPlugin'],
     show_retraction_warning: false, // No need to use this warning (except if we open to external clients?)
-    muc_show_info_messages: [
-      // FIXME: wait for a response here, and rewrite: https://github.com/conversejs/converse.js/issues/3125
-      '100', '102', '103', '172', '173', '174', // visibility_changes
-      '110', // self
-      '104', '201', // non_privacy_changes
-      '170', '171', // muc_logging_changes
-      '210', '303', // nickname_changes
-      '301', '307', '321', '322', '332', '333', // disconnected
-      'owner', 'admin', 'member', 'exadmin', 'exowner', 'exoutcast', 'exmember', // affiliation_changes
-      // 'entered', 'exited', // join_leave_events
-      'op', 'deop', 'voice', 'mute' // role_changes
-    ],
+    muc_show_info_messages: mucShowInfoMessages,
     send_chat_state_notifications: false // don't send this for performance reason
   }
 
