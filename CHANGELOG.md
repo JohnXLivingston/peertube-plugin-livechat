@@ -8,8 +8,6 @@ If you haven't upgraded to v6.0.0 yet, please read v6.0.0 changelog first.
 
 ### New Features
 
-### New features
-
 * Share chat link popup: add an option to generate an iframe. #110 #92
 
 ### Changes
