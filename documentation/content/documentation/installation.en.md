@@ -1,10 +1,13 @@
-# Plugin peertube-plugin-livechat Installationsanleitung 🇩🇪
++++
+title="Installation guide"
+description="Plugin peertube-plugin-livechat installation guide"
+weight=10
+chapter=false
++++
 
-🇫🇷 French version / Version française [ici](./installation.fr.md).
-🇬🇧 English version / version anglaise [here](./installation.md).
-🇯🇵 Japanese version / 日本語バージョン [こちら](./installation.ja.md).
-
-**Bevor Sie auf eine Hauptversion aktualisieren, lesen Sie bitte die Versionshinweise und die Liste der wichtigsten Änderungen : [CHANGELOG](CHANGELOG.md)**.
+{{% notice info %}}
+Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).
+{{% /notice %}}
 
 To install or update the plugin, just use the Peertube web admin interface.
 

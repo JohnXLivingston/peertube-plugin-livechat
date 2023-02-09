@@ -1,20 +1,23 @@
-# Plugin peertube-plugin-livechat installation guide 🇬🇧
++++
+title="Installation guide"
+description="Plugin peertube-plugin-livechat installation guide"
+weight=10
+chapter=false
++++
 
-🇫🇷 French version / Version française [ici](./installation.fr.md)
-🇩🇪 German version / deutsche Version [hier](./installation.de.md)
-🇯🇵 Japanese version / 日本語バージョン [こちら](./installation.ja.md)
+{{% notice info %}}
+メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、変更をご確認ください : [変更履歴](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).
+{{% /notice %}}
 
-**Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](../CHANGELOG.md)**.
+本プラグインをインストールまたはアップデートは、PeerTubeの管理画面から実施できます。
 
-To install or update the plugin, just use the Peertube web admin interface.
+## 重要事項
 
-## IMPORTANT NOTE
+v6.0.0から、このプラグインはProsodyのインストールが不要になりました。
 
-Since version v6.0.0, this plugin does not need any Prosody installation.
+このバージョンより前の環境で本プラグインを既にご使用中で、手動でProsodyをインストールした場合は、Prosodyのアンインストールが可能です。
 
-If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody.
-
-If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image.
+Prosodyが内蔵されたカスタムDockerイメージをご利用の場合は、公式のPeerTube Dockerイメージに切り替えることができるようになりました。
 
 ## Known issues: CPU compatibility
 

@@ -1,4 +1,9 @@
-# Plugin Peertube Livechat administration
++++
+title="Admin documentation"
+description="Plugin Peertube Livechat administration"
+weight=30
+chapter=false
++++
 
 ## Settings
 

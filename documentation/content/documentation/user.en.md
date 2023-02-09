@@ -1,4 +1,9 @@
-# User documentation
++++
+title="User documentation"
+description="Plugin peertube-plugin-livechat user documentation"
+weight=20
+chapter=false
++++
 
 ## Moderation
 
