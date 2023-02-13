@@ -98,7 +98,8 @@
     "lint": "npm-run-all -s lint:script lint:styles",
     "lint:script": "npx eslint --ext .js --ext .ts .",
     "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/**/*.css'",
-    "show:npmfiles": "npx npm-packlist"
+    "show:npmfiles": "npx npm-packlist",
+    "doc:generatemissingtranslations": "bash doc-generate-missing-translations.sh"
   },
   "staticDirs": {
     "static": "dist/client/static",
