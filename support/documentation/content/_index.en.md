@@ -9,7 +9,3 @@ Before updating to a major release, please read the release notes and breaking c
 {{% /notice %}}
 
 {{% children style="li" depth="3" description="true" %}}
-
-## Contribute
-
-Please refer to the page [CONTRIBUTING.md](CONTRIBUTING.md).

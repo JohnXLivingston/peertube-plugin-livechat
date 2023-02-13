@@ -5,7 +5,3 @@ Bevor Sie auf eine Hauptversion aktualisieren, lesen Sie bitte die Versionshinwe
 {{% /notice %}}
 
 {{% children style="li" depth="3" description="true" %}}
-
-## Beitragen
-
-Bitte beachten Sie die Seite [CONTRIBUTING.md](CONTRIBUTING.md).

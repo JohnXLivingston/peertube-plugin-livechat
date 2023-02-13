@@ -5,7 +5,3 @@
 {{% /notice %}}
 
 {{% children style="li" depth="3" description="true" %}}
-
-## コントリビュート
-
-こちらのページを参考にしてください [CONTRIBUTING.md](CONTRIBUTING.md).

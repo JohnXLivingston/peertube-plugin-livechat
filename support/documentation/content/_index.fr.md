@@ -5,7 +5,3 @@ Avant de mettre à jour le plugin vers une nouvelle version majeure, merci de li
 {{% /notice %}}
 
 {{% children style="li" depth="3" description="true" %}}
-
-## Contribuer
-
-Merci de vous référer à la page [CONTRIBUTING.fr.md](CONTRIBUTING.fr.md).
