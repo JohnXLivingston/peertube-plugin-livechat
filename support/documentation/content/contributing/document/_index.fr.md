@@ -45,6 +45,18 @@ anglaise, puis de lancer ce script. Il va créer toutes les traductions
 manquantes, on y mettant un message type invitant l'utilisateur⋅rice à lire la
 version anglaise.
 
+## Ajout d'une nouvelle langue
+
+Dans le fichier `support/documentation/config.toml`, inspirez vous de la
+section `[Languages.fr]` pour déclarer la nouvelle langue.
+
+Ensuite, lancez le script `doc-generate-missing-translations.sh` à la racine
+du dépot. Celui-ci crééra tous les fichiers manquants pour la nouvelle langue.
+
+Il ne vous reste plus qu'à les traduire.
+Si les traductions ne sont pas complètes, ce n'est pas grave, les fichiers
+générés afficherons un message proposant de changer de langue.
+
 ## Prévisualiser
 
 Pour prévisualiser vos modification, il suffit de lancer:
