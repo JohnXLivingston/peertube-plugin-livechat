@@ -16,6 +16,7 @@ home = [ "HTML", "RSS", "JSON"]
   themeVariant = "red"
   landingPageURL = "/peertube-plugin-livechat/"
   landingPageName = "<i class='fas fa-home'></i> Home"
+  custom_css = ["css/livechatdoc.css"]
 
 [[menu.shortcuts]] 
 name = "<i class='fab fa-github'></i> Github repository"
