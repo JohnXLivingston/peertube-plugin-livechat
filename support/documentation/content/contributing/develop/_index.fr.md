@@ -1,34 +1,9 @@
-# Bienvenu sur le guide de contribution pour le plugin peertube-plugin-livechat
-
-Intéressé⋅e pour contribuer ? Super !
-
-## Code de conduite
-
-Merci de lire le [code de conduite](CODE_OF_CONDUCT.fr.md) (ou la version [anglaise](CODE_OF_CONDUCT.md)).
-
-## Traduction
-
-Vous pouvez nous aider à traduire ce plugin Peertube en créant ou modifiant des fichiers de traduction dans le dossier `languages`.
-
-Merci de travailler sur la branche `develop`, et de faire vos _pull request_ sur cette branche.
-
-Si la langue dans laquelle vous souhaitez traduire n'existe pas encore, créez un fichier `code.json` dans le dossier `languages`, où `code` est le code langue.
-Le code langue doit être dans le même format que les codes langues de Peertube (voir la [documentation Peertube](https://github.com/Chocobozzz/PeerTube/blob/develop/support/doc/translation.md)).
-Ensuite, ajoutez le fichier de langue dans le fichier [package.json](package.json), sous la clé `translations`.
-
-Les traductions sont sous la forme suivante dans le fichier de langue :
-
-- les fichiers sont au [format JSON](https://www.json.org)
-- les clés JSON sont le texte en anglais (voir les clés existantes dans [le fichier de traduction français](languages/fr.json), qui fait référence)
-- la valeur JSON est la traduction
-- NB: il n'y a pas de fichier de traduction pour l'anglais (c'est la façon de fonctionner de Peertube)
-
-## Donnez vos retours
-
-Vous n'avez pas besoin de coder pour commencer à contribuer à ce plugin !
-Les autres formes de contributions sont également précieuses, parmis lesquelles : vous pouvez tester le plugin et remonter les bugs que vous rencontrez, partager vos retours d'expérience, proposer des fonctionnalités qui vous intéressent, remonter vos remarques sur l'interface, le design, etc.
-
-## Développer et proposer des modifications de code
++++
+title="Développer"
+description="Développer et proposer des modifications de code"
+weight=40
+chapter=false
++++
 
 Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en créant un ticket ou en commentant un ticket existant, avant de commencer à travailler dessus. Et annoncez clairement à la communauté que vous commencez à travailler dessus. Ceci afin d'éviter que plusieurs personnes travaillent sur la même chose et entrent en conflit.
 
@@ -77,3 +52,11 @@ Vous pouvez *builder* le plugin avec des infos de debug supplémentaires en util
 ```bash
 NODE_ENV=dev npm run build
 ```
+
+## ESBuild vs Typescript
+
+Ce plugin utilise ESBuild pour compiler le code front-end, comme le plugin `peertube-plugin-quickstart` officiel.
+ESBuild peut gérer Typescript, mais ne vérifie pas les types
+(voir [la documentation ESBuild](https://esbuild.github.io/content-types/#typescript)).
+C'est pourquoi on compile d'abord Typescript avec l'option `-noEmit`, juste pour vérifier les types (`check:client:ts` dans le fichier package.json).
+Ensuite, si tout est ok, on lance ESBuild pour générer le javascript compilé.

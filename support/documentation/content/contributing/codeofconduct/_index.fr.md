@@ -1,4 +1,9 @@
-# Code de conduite _Contributor Covenant_
++++
+title="Code de conduite"
+description="Convention de Code de conduite Contributeur⋅rices"
+weight=10
+chapter=false
++++
 
 ## Notre engagement
 

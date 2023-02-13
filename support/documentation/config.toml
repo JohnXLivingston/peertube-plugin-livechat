@@ -1,0 +1,52 @@
+baseURL = "http://localhost:1313/peertube-plugin-livechat/" # this will be overrind in CI/CD.
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Peertube plugin livechat"
+theme = 'hugo-theme-learn'
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+  author = "John Livingston"
+  description = "Peertube plugin livechat documentation"
+  showVisitedLinks = true
+  disableSearch = false
+  disableLandingPageButton = false
+  themeVariant = "red"
+  landingPageURL = "/peertube-plugin-livechat/"
+  landingPageName = "<i class='fas fa-home'></i> Home"
+  custom_css = ["css/livechatdoc.css"]
+
+[[menu.shortcuts]] 
+name = "<i class='fab fa-github'></i> Github repository"
+url = "https://github.com/JohnXLivingston/peertube-plugin-livechat"
+weight = 10
+
+[[menu.shortcuts]] 
+name = "<i class='fab fa-git'></i> Framagit repository"
+url = "https://framagit.org/Livingston/peertube-plugin-livechat"
+weight = 20
+
+[Languages]
+  [Languages.en]
+  title = "Peertube plugin livechat documentation"
+  languageName = "English"
+
+  [Languages.fr]
+  title = "Documentation plugin Peertube livechat"
+  languageName = "Français"
+  landingPageName = "<i class='fas fa-home'></i> Accueil"
+  landingPageURL = "/peertube-plugin-livechat/fr/"
+
+  [Languages.de]
+  title = "Peertube Plugin Livechat Dokumentation"
+  languageName = "Deutsche"
+  landingPageName = "<i class='fas fa-home'></i> Home"
+  landingPageURL = "/peertube-plugin-livechat/de/"
+
+  [Languages.ja]
+  title = "PeerTube ライブチャットプラグイン"
+  languageName = "日本語バージョン"
+  landingPageName = "<i class='fas fa-home'></i> Home"
+  landingPageURL = "/peertube-plugin-livechat/ja/"
