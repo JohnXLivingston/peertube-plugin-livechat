@@ -1,7 +1,7 @@
 +++
-title="Admin documentation"
-description="Plugin Peertube Livechat administration"
-weight=30
+title="Using Matterbridge"
+description="Using Matterbridge to bridge with other chats"
+weight=50
 chapter=false
 +++
 
