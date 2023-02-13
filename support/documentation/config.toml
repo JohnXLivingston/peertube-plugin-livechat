@@ -34,11 +34,14 @@ weight = 20
   [Languages.fr]
   title = "Documentation plugin Peertube livechat"
   languageName = "Français"
+  landingPageName = "<i class='fas fa-home'></i> Accueil"
 
   [Languages.de]
   title = "Peertube Plugin Livechat Dokumentation"
   languageName = "Deutsche"
+  landingPageName = "<i class='fas fa-home'></i> Home"
 
   [Languages.ja]
   title = "PeerTube ライブチャットプラグイン"
   languageName = "日本語バージョン"
+  landingPageName = "<i class='fas fa-home'></i> Home"
