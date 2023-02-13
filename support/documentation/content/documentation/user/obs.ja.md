@@ -1,7 +1,7 @@
 +++
-title="User documentation"
-description="Plugin peertube-plugin-livechat user documentation"
-weight=20
+title="OBS"
+description="Documentation to stream the chat content using OBS."
+weight=10
 chapter=false
 +++
 
