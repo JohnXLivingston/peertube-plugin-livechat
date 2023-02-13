@@ -1,3 +1,4 @@
+baseURL = "http://localhost:1313/peertube-plugin-livechat/" # this will be overrind in CI/CD.
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Peertube plugin livechat"
@@ -13,7 +14,7 @@ home = [ "HTML", "RSS", "JSON"]
   disableSearch = false
   disableLandingPageButton = false
   themeVariant = "red"
-  landingPageURL = "/"
+  landingPageURL = "/peertube-plugin-livechat/"
   landingPageName = "<i class='fas fa-home'></i> Home"
 
 [[menu.shortcuts]] 
