@@ -1,25 +1,9 @@
 +++
-title="Documentation d'installation"
-description="Installation du plugin peertube-plugin-livechat"
+title="Problème connu: compatibilité CPU"
+description="Pour l'instant le plugin ne supporte de base que les architectures CPU x86_64. Veuillez trouver ici des instructions pour le faire fonctionner sur d'autres architectures CPU."
 weight=10
 chapter=false
 +++
-
-{{% notice info %}}
-Avant de mettre à jour le plugin vers une nouvelle version majeure, merci de lire les notes de version, et la liste des éventuelless modifications non rétro-compatibles : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).
-{{% /notice %}}
-
-Pour installer ou mettre à jour ce plugin, utilisez simplement l'interface web d'administration de votre Peertube.
-
-## IMPORTANT NOTE
-
-Depuis la version v6.0.0, ce plugin ne nécessite plus l'installation de Prosody.
-
-Si vous utilisiez ce plugin avant, et que vous aviez installé Prosody manuellement, vous pouvez le désinstaller en tout sécurité.
-
-Si vous utilisiez l'image docker spéciale de Peertube (qui incluais Prosody), vous pouvez basculer sur l'image officielle de Peertube.
-
-## Problème connu: compatibilité CPU
 
 L'AppImage Prosody inclue dans le plugin ne fonctionne que sur des CPU x86_64.
 Elle n'est pas compatible avec d'autres architectures CPU telles que arm64.
@@ -33,7 +17,7 @@ votre serveur (voir plus bas).
 
 Une fois cela fait, vous aurez à cocher le paramètre `Use system Prosody` du plugin.
 
-### Installation autres que Docker
+## Installation autres que Docker
 
 Pour les installations standard, vous avez juste à installer le paquet `prosody` officiellement
 disponible pour votre distribution linux.
@@ -56,7 +40,7 @@ sudo systemctl disable prosody && sudo systemctl stop prosody
 Attention: ne désactivez pas Prosody s'il est utilisé par un autre service sur
 votre serveur, par exemple pour Jitsi.
 
-### Docker
+## Docker
 
 Vous allez devoir générer une image de Peertube qui inclu Prosody dans le même
 conteneur que Peertube.
@@ -72,7 +56,7 @@ FROM chocobozzz/peertube:production-bullseye
 RUN apt -y update && apt install -y prosody && apt -y clean
 ```
 
-### Yunohost
+## Yunohost
 
 Vous avez à désactiver `metronome` (le serveur XMPP utilisé par Yunohost),
 et installer`prosody`.
