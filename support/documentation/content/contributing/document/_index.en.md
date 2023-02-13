@@ -34,6 +34,18 @@ Please note that a missing translation file will not appear in the menus of the 
 
 For this, there is a script `doc-generate-missing-translations.sh` in the root of the repository. When you add a new file, you just have to create the english version, then run this script. It will create all  missing translations, putting a sample message inviting the user to read the english version.
 
+## Preview
+
+To preview your modifications, just run:
+
+```bash
+hugo serve -s support/documentation/
+```
+
+Then open your browser on the address
+[http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).
+This page will automatically refresh on each modification.
+
 ## Publication
 
 Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.

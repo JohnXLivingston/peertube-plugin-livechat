@@ -45,6 +45,18 @@ anglaise, puis de lancer ce script. Il va créer toutes les traductions
 manquantes, on y mettant un message type invitant l'utilisateur⋅rice à lire la
 version anglaise.
 
+## Prévisualiser
+
+Pour prévisualiser vos modification, il suffit de lancer:
+
+```bash
+hugo serve -s support/documentation/
+```
+
+Puis d'ouvrir votre navigateur à l'adresse
+[http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).
+Cette page se raffraichira automatiquement à chaque modification.
+
 ## Publication
 
 La publication de la documentation est automatique, dès que les modifications
