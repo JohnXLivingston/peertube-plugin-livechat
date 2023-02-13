@@ -26,3 +26,8 @@
   --MENU-VISITED-color: #ff3333; /* Color of 'page visited' icons in menu */
   --MENU-SECTION-HR-color: #2b2020; /* Color of <hr> separator in menu */
 }
+
+div.notices p {
+  /* more contrast than the default theme. */
+  color: #000;
+}
