@@ -1,0 +1,39 @@
++++
+title="Document"
+description="Documenter the plugin, or translate the documentation."
+weight=50
+chapter=false
++++
+
+## General informatiosn
+
+Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are
+working on the same thing, and prevent conflicts.
+
+Please use the `develop` branch. The `main` branch is reserved to released versions of the plugin, so that the documentation is always synchronized with the released version of the plugin.
+
+The documentation source code is in the `support/documentation/content` folder.
+
+The documentation is generated using [Hugo](https://gohugo.io/).
+You have to install it on your computer if you want to preview your work.
+
+The used theme is [hugo-theme-learn](https://learn.netlify.app/).
+You should read its documentation before starting editing the documentation.
+
+## Translations
+
+The principal language is english (`en` code).
+
+The different translations of the same file are side by side in the
+tree, and are identified by a language code in the file name extension.
+Example: `_index.fr.md` is the French translation of `_index.en.md`.
+
+Please note that a missing translation file will not appear in the menus of the generated site.
+
+**Always make sure to create files for all languages**, even if the translation is not yet available.
+
+For this, there is a script `doc-generate-missing-translations.sh` in the root of the repository. When you add a new file, you just have to create the english version, then run this script. It will create all  missing translations, putting a sample message inviting the user to read the english version.
+
+## Publication
+
+Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.
