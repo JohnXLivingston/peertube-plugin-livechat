@@ -22,7 +22,7 @@ jobs:
           # extended: true
 
       - name: Build
-        run: hugo --minify --baseURL='https://johnxlivingston.github.io/peertube-plugin-livechat' --landingPageURL="https://johnxlivingston.github.io/peertube-plugin-livechat/" -s support/documentation
+        run: hugo --minify --baseURL='https://johnxlivingston.github.io/peertube-plugin-livechat' -s support/documentation
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
