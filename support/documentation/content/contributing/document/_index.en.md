@@ -34,6 +34,16 @@ Please note that a missing translation file will not appear in the menus of the 
 
 For this, there is a script `doc-generate-missing-translations.sh` in the root of the repository. When you add a new file, you just have to create the english version, then run this script. It will create all  missing translations, putting a sample message inviting the user to read the english version.
 
+## Add a new language
+
+In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section.
+
+Then, run the `doc-generate-missing-translations.sh` script.
+It will create all the missing files.
+
+Then you can translate them one by one.
+If the translations are not complete, it does not matter, the generated files will display a message suggesting to change the language.
+
 ## Preview
 
 To preview your modifications, just run:
