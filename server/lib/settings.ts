@@ -35,12 +35,12 @@ function initSettings (options: RegisterServerOptions): void {
       descriptionHTML: `<span class="peertube-plugin-livechat-warning">
 It seems that your are using a ${process.arch} CPU, 
 which is not compatible with the plugin.
-Please read the
+Please read
 <a
-  href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/documentation/installation.md"
+  href="https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/installation/cpu_compatibility/"
   target="_blank"
 >
-  installation documentation
+  this page
 </a> for a workaround.
 </span>`
     })

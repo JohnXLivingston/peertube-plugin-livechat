@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Updating a link to the documentation in the settings page.
+
 ## 6.1.0
 
 ### Important Notes
