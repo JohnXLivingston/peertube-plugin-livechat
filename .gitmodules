@@ -2,5 +2,5 @@
 	path = vendor/converse.js
 	url = https://github.com/conversejs/converse.js.git
 [submodule "documentation/themes/hugo-theme-learn"]
-	path = documentation/themes/hugo-theme-learn
+	path = support/documentation/themes/hugo-theme-learn
 	url = https://github.com/matcornic/hugo-theme-learn.git
