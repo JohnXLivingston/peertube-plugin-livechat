@@ -10,6 +10,8 @@ chapter=false
 と [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE)
 ファイルには、このソフトウェアと使用しているライブラリなどのライセンス情報が含まれています。
 
+The plugin is maintained by [John Livingston](https://www.john-livingston.fr/).
+
 Peertubeのマスコット[Sepia](https://www.davidrevoy.com/index.php?tag/peertube)を制作してくださったDavid Revoy氏に感謝致します。
 キャラクターデザインは、CC-Byライセンスであり、本プラグインの一部のロゴとアバターを作成する為に使用されているSVGファイルはGPLv3.0です。
 
