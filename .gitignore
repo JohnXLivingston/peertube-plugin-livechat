@@ -4,3 +4,4 @@ dist
 .vscode
 build
 support/documentation/public
+public
