@@ -24,7 +24,7 @@ room_type_option_video: "Each video has its own webchat room"
 room_type_option_channel: "Webchat rooms are grouped by channel"
 
 auto_display_label: "Automatically open the chat"
-auto_display_description: "When watching a video, the chatbox will automatically open"
+auto_display_description: "When watching a video, the chatbox will automatically open."
 
 open_blank_label: "Show the «open in new window» button"
 open_blank_description: "There will be a button for opening the web chat in a new window."

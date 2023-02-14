@@ -15,3 +15,112 @@ chat_title: "<h3>Tchat</h3>"
 list_rooms_label: "Lister les salons de tchat existants"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Lister les salons</a>
+
+chat_behaviour_description: "<h3>Comportement du tchat</h3>"
+
+room_type_label: "Type de salon"
+room_type_description: "Vous pouvez choisir d'avoir des salons séparés pour chaque vidéo, ou de les grouper par chaîne."
+room_type_option_video: "Chaque video a son propre salon de discussion"
+room_type_option_channel: "Les salons sont regroupés par chaîne"
+
+auto_display_label: "Ouvrir automatiquement le tchat"
+auto_display_description: "Quand on regarde une vidéo, le tchat va s'ouvrir automatiquement."
+
+open_blank_label: "Montrer le bouton «ouvrir dans une nouvelle fenêtre»"
+open_blank_description: "Il y aura un bouton pour ouvrir le tchat dans une nouvelle fenêtre."
+
+share_url_label: "Montrer le bouton «partager le lien du salon»"
+share_url_description: "Il y aura un bouton permettant de partager le lien vers le tchat (peut par exemple être utilisé pour l'intégration dans OBS)."
+share_url_option_nobody: "Ne pas le montrer"
+share_url_option_everyone: "Le montrer à tout le monde"
+share_url_option_owner: "Le montrer au proriétaire de la vidéo"
+share_url_option_owner_moderators: "Le montrer au propriétaire de la vidéo, et aux modérateur⋅rices de l'instance"
+
+per_live_video_label: "Les utilisateur⋅rices peuvent activer le tchat pour leurs directs"
+per_live_video_description: "Si coché, il y aura pour tous les directs une case à cocher dans les propriétés qui permettra d'activer/désactiver le tchat."
+
+per_live_video_warning_description: |
+  <span class="peertube-plugin-livechat-warning">
+    Vous avez activé le paramètre «Les utilisateur⋅rices peuvent activer le tchat pour leurs directs».
+    C'est redondant avec «Activer le tchat pour tous les directs».
+  </span>
+
+all_lives_label: "Activer le tchat pour tous les directs"
+all_lives_description: "Si coché, il y aura un tchat pour tous les directs."
+
+all_non_lives_label: "Activer le tchat pour toutes les vidéos «non-direct»"
+all_non_lives_description: "Si coché, il y aura un tchat pour toutes les vidéos qui ne sont pas des directs."
+
+videos_list_label: "Activer le tchat pour ces vidéos"
+videos_list_description: |
+  Mettez ici les UUIDs des vidéos pour lequelles vous voulez forcer l'activation
+  du tchat.
+  Cela peut être des directs, ou non.
+  Un UUID par ligne. <br />
+  Vous pouvez ajouter des commentaires: tout ce qui se trouve après le caractère #
+  sera retiré, et les lignes vides ignorées. <br />
+  N'ajoutez pas de vidéos privées, les UUIDs fuiteraient.
+
+no_anonymous_label: "Masque les tchats pour les utilisateur⋅rices anonymes"
+no_anonymous_description: "Si coché, les utilisteur⋅rices non connecté⋅es ne verront pas les tchats."
+
+theming_advanced_description: "<h3>Personnalisation des thèmes</h3>"
+
+converse_theme_label: "Thème ConverseJS"
+converse_theme_description: "Merci de choisir le thème ConverseJS que vous voulez utiliser."
+converse_theme_option_peertube: "Thème Peertube"
+converse_theme_option_default: "Thème par défaut de ConverseJS"
+converse_theme_option_concord: "Thème concord de ConverseJS"
+
+autocolors_label: "Détection automatique des couleurs"
+autocolors_description: |
+  Essaie de détecter automatiquement les couleurs du thème courant de l'utilisateur⋅rice.
+  <br>
+  Quand ce paramètre est activé, le plugin essaie de détecter automatiquement les
+  couleurs à appliquer au thème du tchat.
+  <br>
+  Si cela ne fonctionne pas correctement pour certains de vos thèmes Peertube,
+  vous pouvez désactiver cette option.
+  Vous pouvez rapporter les bugs sur le <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
+    gestionnaire de ticket
+  </a>. N'oubliez pas de préciser pour quel thème cela ne fonctionne pas.
+
+chat_style_label: "Attribut de style de l'iframe du tchat"
+chat_style_description: |
+  Styles additionnels à appliquer sur l'iframe du tchat.<br>
+  Exemple: height:400px;
+
+prosody_advanced_description: "<h3>Paramètres avancés du serveur de tchat</h3>"
+
+help_builtin_prosody_label: "Serveur Prosody"
+help_builtin_prosody_description: |
+  Ce plugin utilise le serveur XMPP Prosody pour gérer les salons de discussion.<br>
+  Ce plugin inclu une AppImage de Prosody, qui va être utilisée pour faire tourner le service.
+
+system_prosody_label: "Utiliser le serveur Prosody installé sur le système"
+system_prosody_description: |
+  Attention: ne cocher pas ce paramètre si vous n'êtes pas sûr de ce que vous faites.<br>
+  En cochant ce paramètre, Peertube va utiliser l'exécutable Prosody fourni
+  par le système, et non l'AppImage intégrée.<br>
+  N'utiliser cette option que si vous rencontrez des problèmes pour utiliser l'AppImage intégrée.
+
+disable_websocket_label: "Désactiver Websocket"
+disable_websocket_description: ~
+prosody_port_label: ~
+prosody_port_description: ~
+prosody_peertube_uri_label: ~
+prosody_peertube_uri_description: ~
+prosody_muc_log_by_default_label: ~
+prosody_muc_log_by_default_description: ~
+prosody_muc_expiration_label: ~
+prosody_muc_expiration_description: ~
+prosody_c2s_label: ~
+prosody_c2s_description: ~
+prosody_c2s_port_label: ~
+prosody_c2s_port_description: ~
+prosody_components_label: ~
+prosody_components_description: ~
+prosody_components_port_label: ~
+prosody_components_port_description: ~
+prosody_components_list_label: ~
+prosody_components_list_description: ~
