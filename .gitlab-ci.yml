@@ -5,7 +5,8 @@ pages:
     GIT_SUBMODULE_STRATEGY: recursive
     GIT_SUBMODULE_PATHS: support/documentation/themes/hugo-theme-learn
   script:
-    - hugo -s support/documentation/ -d public/
+    # gitlab need the generated documentation to be in the /public dir.
+    - hugo -s support/documentation/ -d ../../public/
   artifacts:
     paths:
       - public
