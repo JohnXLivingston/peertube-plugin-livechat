@@ -1,6 +1,9 @@
 image: monachus/hugo
 
 pages:
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+    GIT_SUBMODULE_PATHS: support/documentation/themes/hugo-theme-learn
   script:
     - hugo -s support/documentation/ -d public/
   artifacts:
