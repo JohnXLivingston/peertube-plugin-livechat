@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Updating a link to the documentation in the settings page.
+* Moving `public/images` dir to `assets/images`, because it conflicts with gitlab CI/CD for documentation. Moving `assets/styles.css` to `assets/styles/styles.css`.
 
 ## 6.1.0
 

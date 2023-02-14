@@ -4,7 +4,7 @@
 const sharp = require('sharp')
 const path = require('path')
 
-const inputDir = './public/images/avatars/'
+const inputDir = './assets/images/avatars/'
 const outputDir = './dist/server/avatars/'
 const backgrounds = [
   '#ffffff',

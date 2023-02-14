@@ -2,7 +2,7 @@
 type SVGButton = () => string
 
 const closeSVG: SVGButton = () => {
-  // This content comes from the file public/image/bye.svg, after svgo cleaning.
+  // This content comes from the file assets/images/bye.svg, after svgo cleaning.
   // To get the formated content, you can do:
   // xmllint dist/client/images/bye.svg --format
   // Then replace the main color by «currentColor»
@@ -25,7 +25,7 @@ const closeSVG: SVGButton = () => {
 }
 
 const openChatSVG: SVGButton = () => {
-  // This content comes from the file public/image/talking.svg, after svgo cleaning.
+  // This content comes from the file assets/images/talking.svg, after svgo cleaning.
   // To get the formated content, you can do:
   // xmllint dist/client/images/talking.svg --format
   // Note: it was highly simplified in this file.
@@ -43,7 +43,7 @@ const openChatSVG: SVGButton = () => {
 }
 
 const openBlankChatSVG: SVGButton = () => {
-  // This content comes from the file public/image/new-window.svg, after svgo cleaning.
+  // This content comes from the file assets/images/new-window.svg, after svgo cleaning.
   // To get the formated content, you can do:
   // xmllint dist/client/images/new-window.svg --format
   // Then replace the main color by «currentColor»
@@ -86,7 +86,7 @@ const openBlankChatSVG: SVGButton = () => {
 }
 
 const shareChatUrlSVG: SVGButton = () => {
-  // This content comes from the file public/image/url.svg, after svgo cleaning.
+  // This content comes from the file assets/images/url.svg, after svgo cleaning.
   // To get the formated content, you can do:
   // xmllint dist/client/images/url.svg --format
   // Then replace the color by `currentColor`
