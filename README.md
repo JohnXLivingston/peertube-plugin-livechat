@@ -8,6 +8,10 @@ To read the documentation, please refer to any of these:
   * 🇫🇷 [French version / Version française](https://johnxlivingston.github.io/peertube-plugin-livechat/fr/)
   * 🇩🇪 [German version / deutsche Version](https://johnxlivingston.github.io/peertube-plugin-livechat/de/)
   * 🇯🇵 [Japanese version / 日本語バージョン](https://johnxlivingston.github.io/peertube-plugin-livechat/ja/)
+* 🇬🇧 [Plugin Livechat Documentation on Framagit](https://livingston.frama.io/peertube-plugin-livechat/)
+  * 🇫🇷 [French version / Version française](https://livingston.frama.io/peertube-plugin-livechat/fr/)
+  * 🇩🇪 [German version / deutsche Version](https://livingston.frama.io/peertube-plugin-livechat/de/)
+  * 🇯🇵 [Japanese version / 日本語バージョン](https://livingston.frama.io/peertube-plugin-livechat/ja/)
 * [The documentation source code](./support/documentation/content/)
 
 **Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](CHANGELOG.md)**.
