@@ -2,6 +2,10 @@
 
 ## ??? (Not Released Yet)
 
+### New Features
+
+* Settings page translations. For now: english and french are available.
+
 ### Minor changes and fixes
 
 * Updating a link to the documentation in the settings page.

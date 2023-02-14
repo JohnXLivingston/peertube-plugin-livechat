@@ -1,0 +1,17 @@
+important_note_title: "<h3>Note importante</h3>"
+important_note_text: |
+  Vous pouvez trouver la documentation du plugin ici:
+  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/fr/" target="_blank">
+    Documentation du Plugin Peertube Livechat
+  </a>.
+
+diagnostic: |
+  Avant de demander de l'aide, merci d'utiliser l'outils de diagnostic:
+  <a class="peertube-plugin-livechat-launch-diagnostic">Lancer le diagnostique</a>
+  (si ce bouton n'ouvre pas une nouvelle fenêtre, merci d'essayer de raffraichir la page).
+
+chat_title: "<h3>Tchat</h3>"
+
+list_rooms_label: "Lister les salons de tchat existants"
+list_rooms_description: |
+  <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Lister les salons</a>

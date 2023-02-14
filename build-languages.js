@@ -78,12 +78,12 @@ class BuildLanguages {
     // First we must get the english reference file,
     // that will give us the keys to use in final JSON.
 
-    const reference = await this.getYmlFileContent(path.resolve(__dirname, 'languages', 'settings.en.yml'))
+    const reference = await this.getYmlFileContent(path.resolve(__dirname, 'languages', 'settings', 'en.yml'))
     this.monoLingualReferences['settings'] = reference
 
     const translationsStrings = this.translationsStrings
     for (const l of this.langs) {
-      const filePath = path.resolve(__dirname, 'languages', 'settings.' + l + '.yml')
+      const filePath = path.resolve(__dirname, 'languages', 'settings', l + '.yml')
       const o = await this.getYmlFileContent(filePath)
 
       for (const k in o) {
