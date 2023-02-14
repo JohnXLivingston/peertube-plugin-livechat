@@ -5,6 +5,6 @@ weight=60
 chapter=false
 +++
 
-Interested in contributing? Awesome!
+Interessiert beizutragen? Super!
 
 {{% children style="li" depth="3" description="true" %}}

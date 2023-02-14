@@ -41,7 +41,7 @@ weight = 20
 
   [Languages.de]
   title = "Peertube Plugin Livechat Dokumentation"
-  languageName = "Deutsche"
+  languageName = "Deutsch"
   landingPageName = "<i class='fas fa-home'></i> Home"
   landingPageURL = "/peertube-plugin-livechat/de/"
 

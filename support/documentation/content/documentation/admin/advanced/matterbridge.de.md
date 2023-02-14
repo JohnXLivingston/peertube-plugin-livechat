@@ -1,10 +1,8 @@
 +++
-title="Using Matterbridge"
-description="Using Matterbridge to bridge with other chats"
+title="Matterbridge benutzen"
+description="Matterbridge als Brücke zu anderen Chats nutzen"
 weight=50
 chapter=false
 +++
 
-{{% notice warning %}}
-This page is not yet translated in your language, please refer to the english version. You can switch to it by using the language selector in the left menu.
-{{% /notice %}}
+Hier ist ein Tutorial um Matterbridge mit diesem Plugin zu benutzen (nur auf englisch): <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>
