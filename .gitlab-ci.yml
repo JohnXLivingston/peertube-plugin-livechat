@@ -1,0 +1,10 @@
+image: monachus/hugo
+
+pages:
+  script:
+    - hugo -s support/documentation/ -d public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - develop
