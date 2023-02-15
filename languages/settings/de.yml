@@ -1,0 +1,104 @@
+important_note_title: ~
+important_note_text: ~
+diagnostic: ~
+chat_title: ~
+
+list_rooms_label: "Bestehende Räume auflisten"
+list_rooms_description: |
+  <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Bestehende Räume auflisten</a>
+
+chat_behaviour_description: "<h3>Chatverhalten</h3>"
+
+room_type_label: "Raumtyp"
+room_type_description: "Sie können hier auswählen, ob seperate Räume für jedes Video oder nach Kanal gruppiert erstellt werden."
+room_type_option_video: ~
+room_type_option_channel: ~
+
+auto_display_label: "Chat automatisch öffnen"
+auto_display_description: "Wenn ausgewählt wird der Chat geladen, sobald Sie auf der Videoseite sind."
+
+open_blank_label: "Zeige den «open in new window» Knopf"
+open_blank_description: ~
+
+share_url_label: ~
+share_url_description: ~
+share_url_option_nobody: ~
+share_url_option_everyone: ~
+share_url_option_owner: ~
+share_url_option_owner_moderators: ~
+
+per_live_video_label: "Nutzer können den Chat für ihre Live-Videos aktivieren"
+per_live_video_description: |
+  Wenn diese Option aktiviert ist, haben alle Live-Videos in ihren Eigenschaften ein Feld zur Aktivierung des Webchats.
+  Der Videoeigentümer kann Webchats aktivieren.
+
+per_live_video_warning_description: ~
+
+all_lives_label: "Den Chat für alle Live-Videos aktivieren"
+all_lives_description: ~
+
+all_non_lives_label: "Aktiviere den Chat für alle Nicht-Live-Videos"
+all_non_lives_description: ~
+
+videos_list_label: "Aktivieren Sie den Chat für diese Videos"
+videos_list_description: ~
+
+no_anonymous_label: "Den Chat für anonyme Benutzer ausblenden"
+no_anonymous_description: ~
+
+theming_advanced_description: ~
+
+converse_theme_label: "ConverseJS Thema"
+converse_theme_description: ~
+converse_theme_option_peertube: ~
+converse_theme_option_default: ~
+converse_theme_option_concord: ~
+
+autocolors_label: "Automatische Farberkennung"
+autocolors_description: ~
+
+chat_style_label: "Webchat Iframe Stil-Attribute"
+chat_style_description: |
+  Sie können einige benutzerdefinierte Stile hinzufügen, die dem Iframe hinzugefügt werden.
+  Zum Beispiel eine benutzerdefinierte Breite: width:400px;
+
+prosody_advanced_description: "<h3>Erweiterte Einstellungen des Chatservers</h3>"
+help_builtin_prosody_label: ~
+help_builtin_prosody_description: ~
+
+system_prosody_label: "System Prosody benutzen"
+system_prosody_description: ~
+
+disable_websocket_label: "Websocket deaktivieren"
+disable_websocket_description: |
+  Mit Peertube &gt;= 5.0.0 versucht dieses Plugin, eine Websocket-Verbindung zum Chatten zu verwenden.
+  Wenn der Browser oder die Verbindung des Benutzers nicht kompatibel ist, wird der Browser automatisch auf das BOSH-Protokoll zurückgreifen.
+  <br>
+  Aber in seltenen Fällen kann dies fehlschlagen. Zum Beispiel, wenn Sie einen Reverse Proxy vor Peertube haben, der keine
+  Websocket-Verbindung für Plugins erlaubt.
+  In diesem Fall können Sie diese Einstellungen überprüfen, um Websocket-Verbindungen zu deaktivieren.
+
+prosody_port_label: ~
+prosody_port_description: ~
+
+prosody_peertube_uri_label: "Peertube-URL für API-Aufrufe"
+prosody_peertube_uri_description: ~
+
+prosody_muc_log_by_default_label: "Standardmäßig Inhalte von Räumen protokollieren"
+prosody_muc_log_by_default_description: ~
+
+prosody_muc_expiration_label: "Ablaufzeit von Raumprotokollen"
+prosody_muc_expiration_description: ~
+
+prosody_c2s_label: "Aktivieren von Client-Server-Verbindungen"
+prosody_c2s_description: ~
+
+prosody_c2s_port_label: "Prosody Client-Server-Verbindungsport"
+prosody_c2s_port_description: ~
+
+prosody_components_label: "Aktivieren externer XMPP-Komponenten"
+prosody_components_description: ~
+prosody_components_port_label: ~
+prosody_components_port_description: ~
+prosody_components_list_label: ~
+prosody_components_list_description: ~

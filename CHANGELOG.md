@@ -4,7 +4,9 @@
 
 ### New Features
 
-* Settings page translations. For now: english and french are available.
+* Settings page translations.
+  * Fully translated: english and french
+  * Partially translated: german
 
 ### Minor changes and fixes
 

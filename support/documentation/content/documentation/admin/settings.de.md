@@ -13,7 +13,7 @@ Dieser Abschnitt beschreibt die Einstellungsseite des Plugins.
 
 ## List existing rooms (Bestehende Räume auflisten)
 
-Wenn der «List rooms» Knopf gedrückt wird, werden alle bestehenden Chaträume aufgelistet.
+Wenn der «Bestehende Räume auflisten» («List rooms») Knopf gedrückt wird, werden alle bestehenden Chaträume aufgelistet.
 Sie können die Chaträume damit finden und moderieren.
 
 ## Chat behaviour (Chatverhalten)
