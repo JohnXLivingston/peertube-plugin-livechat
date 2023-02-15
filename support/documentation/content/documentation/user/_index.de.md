@@ -1,6 +1,6 @@
 +++
-title="User documentation"
-description="Plugin peertube-plugin-livechat user documentation"
+title="Benutzer Dokumentation"
+description="Plugin peertube-plugin-livechat Benutzer Dokumentation"
 weight=40
 chapter=false
 +++

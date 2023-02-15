@@ -10,9 +10,9 @@ Bevor Sie auf eine Hauptversion aktualisieren, lesen Sie bitte die Versionshinwe
 {{% /notice %}}
 
 {{% notice tip %}}
-To install or update the plugin, **just use the Peertube web admin interface**.
+Um das Plugin zu installieren oder zu aktualisieren **einfach das Peertube Web-Admin-Interface benutzen**.
 {{% /notice %}}
 
-Here are some other more specific instructions:
+Hier sind weitere, spezifischere Anweisungen:
 
 {{% children style="li" depth="3" description="true" %}}

@@ -1,6 +1,6 @@
 +++
-title="Admin documentation"
-description="Plugin Peertube Livechat administration"
+title="Admin Dokumentation"
+description="Plugin Peertube Livechat Administration"
 weight=30
 chapter=false
 +++
