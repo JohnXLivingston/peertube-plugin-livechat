@@ -1,117 +1,146 @@
 +++
 title="Verhaltenskodex"
-description="Verhaltenskodex für Mitwirkende"
+description="Vereinbarung über Verhaltenskodex für Mitwirkende"
 weight=10
 chapter=false
 +++
 
-## Unser Versprechen
+## Unsere Verpflichtung
 
-Wir als Mitglieder, Mitwirkende und Führungskräfte verpflichten uns, die Teilnahme an unserer
-Gemeinschaft zu einer belästigungsfreien Erfahrung für alle zu machen, unabhängig von Alter, Körpergröße
-Körpergröße, sichtbarer oder unsichtbarer Behinderung, ethnischer Zugehörigkeit, Geschlechtsmerkmalen, 
-Geschlechtsidentität und -ausdruck, Erfahrungsstand, Bildung, sozioökonomischem Status, Nationalität
-Nationalität, persönlichem Aussehen, Rasse, Kaste, Hautfarbe, Religion oder sexueller Identität
-und Orientierung.
+Wir als Mitglieder, Teilnehmende und Verantwortliche unserer Gemeinschaft
+verpflichten uns, allen Teilnehmenden an dem Projekt und unserer Gemeinschaft
+eine belästigungsfreie Beteiligung, unabhängig von Alter, Körpergröße,
+Behinderung, ethnischer Zuordnung, Geschlechtermerkmalen, -identität und -ausdruck,
+Grad der Erfahrung, Bildung, sozialem Status, Nationalität, persönlicher
+Erscheinung, Rasse, Religion oder sexueller Identität und Orientierung
+zu ermöglichen.
 
-Wir verpflichten uns, in einer Weise zu handeln und zu interagieren, die zu einer offenen, einladenden,
-vielfältigen, integrativen und gesunden Gemeinschaft beitragen.
+Wir verpflichten uns, in einer Weise zu handeln und zu interagieren, die zu
+einer offenen, einladenden, vielfältigen, inklusiven und gesunden Gemeinschaft
+beiträgt.
 
 ## Unsere Standards
 
-Beispiele für Verhaltensweisen, die zu einem positiven Umfeld für unsere Gemeinschaft beitragen:
+Beispiele für Verhaltensweisen, die zu einem positiven Umfeld für unsere
+Gemeinschaft beitragen, sind:
 
-* Einfühlungsvermögen und Freundlichkeit gegenüber anderen Menschen zeigen
-* Respekt vor unterschiedlichen Meinungen, Standpunkten und Erfahrungen
-* Konstruktives Feedback zu geben und anstandslos anzunehmen
-* Verantwortung zu übernehmen und sich bei denjenigen zu entschuldigen, die von unseren Fehlern betroffen sind, und aus den Erfahrungen lernen
-* Sich auf das konzentrieren, was nicht nur für uns als Einzelpersonen, sondern für die gesamte Gemeinschaft am besten ist
+- Einfühlungsvermögen und Freundlichkeit gegenüber anderen Menschen zeigen
+- Unterschiedliche Meinungen, Standpunkte und Erfahrungen respektieren
+- Konstruktives Feedback geben und würdevoll annehmen
+- Verantwortung übernehmen und uns bei denjenigen entschuldigen, die von unseren
+  Fehlern betroffen sind, und aus den Erfahrungen lernen
+- Konzentration auf das, was nicht nur für uns als Individuen, sondern für die
+  gesamte Gemeinschaft das Beste ist
 
 Beispiele für inakzeptables Verhalten sind:
 
-* Die Verwendung von sexualisierter Sprache oder Bildern sowie sexuelle Aufmerksamkeit oder Annäherungsversuche jeglicher Art
-* Trollen, beleidigende oder herabsetzende Kommentare und persönliche oder politische Angriffe
-* Öffentliche oder private Belästigung
-* Veröffentlichung privater Informationen anderer, wie z. B. einer physischen oder E-Mail Adresse, ohne deren ausdrückliche Erlaubnis
-* Anderes Verhalten, das in einem beruflichen Umfeld als unangemessen angesehen werden könnte
+- Die Verwendung sexualisierter Sprache, Bilder oder Symbolik sowie unerwünschte
+  Versuche sexueller Annäherung
+- Beleidigende oder abwertende Kommentare, persönliche oder politische Angriffe
+  und Trollen
+- Öffentliche oder private Belästigungen
+- Das Veröffentlichen von privaten Informationen Anderer, wie zum Beispiel
+  physische oder elektronische Adressen, ohne deren ausdrückliche Erlaubnis
+- Anderes Verhalten, welches in einem professionellen Umfeld begründet als
+  unangemessen betrachtet werden kann
 
-## Zuständigkeiten bei der Durchsetzung
+## Verantwortlichkeiten bei der Durchsetzung
 
-Die Community Leiter sind für die Klärung und Durchsetzung unserer Standards für
-akzeptablen Verhaltens und werden angemessene und faire Korrekturmaßnahmen ergreifen
-Verhalten, das sie für unangemessen, bedrohlich, beleidigend oder schädlich halten,
-oder schädlich erachten, zuständig.
+Die Gemeinschaftsleitung ist verantwortlich dafür, unsere Standards für ein
+akzeptables Verhalten klarzustellen und wird angemessen und fair
+korrigierende Maßnahmen ergreifen um auf jegliches Verhalten, das sie für
+unangemessen, bedrohlich oder beleidigend hält, zu reagieren.
 
-Die Community Leiter haben das Recht und die Verantwortung, Kommentare, Commits, Code, Wiki-Edits, Issues und andere Beiträge zu entfernen, zu bearbeiten oder abzulehnen, die
-die nicht mit diesem Verhaltenskodex übereinstimmen, zu entfernen oder abzulehnen und werden die Gründe für
-Entscheidungen mitteilen, wenn dies angebracht ist.
+Die Gemeinschaftsleitung hat das Recht und die Verantwortung, Kommentare,
+Commits, Code, Wiki-Bearbeitungen, Support-Tickets und andere Beiträge, die
+nicht mit diesem Verhaltenskodex vereinbar sind, zu entfernen, zu bearbeiten
+oder abzulehnen, und wird die Gründe für eine Mäßigung mitteilen, wenn es
+angebracht ist.
 
-## Umfang
+## Geltungsbereich
 
-Dieser Verhaltenskodex gilt in allen Gemeinschaftsräumen und auch dann, wenn
-eine Person die Gemeinschaft offiziell im öffentlichen Raum vertritt.
-Beispiele für die Vertretung unserer Gemeinschaft sind die Verwendung einer offiziellen E-Mail-Adresse,
-Postings über ein offizielles Social-Media-Konto oder das Auftreten als ernannter
-Vertreter bei einer Online- oder Offline-Veranstaltung.
+Dieser Verhaltenskodex gilt für alle Gemeinschaftsbereiche und gilt auch, wenn
+eine Einzelperson die Gemeinschaft offiziell in öffentlichen Bereichen vertritt.
+Beispiele für die Repräsentation unserer Gemeinschaft sind die Verwendung einer
+offiziellen E-Mail-Adresse, das Posten über ein offizielles Social-Media-Konto
+oder das Auftreten als ernannte Vertretung bei einer Online- oder
+Offline-Veranstaltung.
 
 ## Durchsetzung
 
-Fälle von beleidigendem, belästigendem oder anderweitig inakzeptablem Verhalten können
-an die für die Durchsetzung verantwortlichen Community Leiter per E-Mail an
-git.[at].john-livingston.fr gemeldet werden.
-Alle Beschwerden werden umgehend und auf faire Weise geprüft und untersucht.
+Fälle von missbräuchlichem, belästigendem oder anderweitig inakzeptablem
+Verhalten können unter git.[at].john-livingston.fr der für die Durchsetzung
+zuständigen Gemeinschaftsleitung gemeldet werden. Alle Beschwerden werden
+zeitnah und fair geprüft und ermittelt.
 
-Alle Community Leiter sind verpflichtet, die Privatsphäre und Sicherheit des Meldenden zu respektieren.
+Die gesamte Gemeinschaftsleitung ist verpflichtet, die Privatsphäre und die
+Sicherheit derjenigen, die einen Vorfall gemeldet haben, zu respektieren.
 
 ## Durchsetzungsrichtlinien
 
-Die Community Leiter befolgen diese Richtlinien für die Auswirkungen auf die Gemeinschaft bei der Festlegung
-die Konsequenzen für Handlungen, die sie als Verstoß gegen diesen Verhaltenskodex ansehen:
+Die Gemeinschaftsleitung wird sich bei der Bestimmung der Konsequenzen für
+jede Handlung, die ihrer Ansicht nach gegen diesen Verhaltenskodex verstößt, an
+diese Richtlinien über die Auswirkungen in der Gemeinschaft halten:
 
-### 1. Korrektur
+### 1. Berichtigung
 
-**Problem**: Verwendung unangemessener Sprache oder anderes Verhalten, das
-unprofessionell oder in der Gemeinschaft unerwünscht ist.
+**Auswirkungen in der Gemeinschaft**: Verwendung unangemessener Sprache oder
+anderes Verhalten, das in der Gemeinschaft als unprofessionell oder unwillkommen
+gilt.
 
-**Folge**: Eine private, schriftliche Verwarnung durch die Community Leiter, die Klarheit über die Art des Verstoßes und eine Erklärung, warum das Verhalten unangemessen war. Eine öffentliche Entschuldigung kann verlangt werden.
+**Folge**: Eine private, schriftliche Verwarnung der Gemeinschaftsleitung,
+die Klarheit über die Art des Verstoßes und eine Erklärung dafür bietet, warum
+das Verhalten unangemessen war. Eine öffentliche Entschuldigung kann verlangt
+werden.
 
-### 2. Warnung
+### 2. Verwarnung
 
-**Problem**: Ein Verstoß durch einen einzelnen Vorfall oder eine Reihe von Handlungen.
+**Auswirkungen in der Gemeinschaft**: Eine Verletzung durch einen einzelnen
+Vorfall oder eine Reihe von Handlungen.
 
-**Folge**: Eine Warnung mit Konsequenzen für weiteres Verhalten. Keine Interaktion mit den betroffenen Personen, einschließlich unaufgeforderter Interaktion mit denjenigen, die den Verhaltenskodex durchsetzen, für einen bestimmten Zeitraum. Diese
-Dazu gehört auch die Vermeidung von Interaktionen in Gemeinschaftsräumen sowie in externen Kanälen
-wie soziale Medien. Ein Verstoß gegen diese Bedingungen kann zu einem vorübergehenden oder
-permanenten Ausschluss führen.
+**Folge**: Eine Warnung mit Konsequenzen bei wiederholtem Fehlverhalten. Keine
+Interaktion mit den beteiligten Personen, einschließlich unaufgeforderter
+Interaktion mit denjenigen, die den Verhaltenskodex durchsetzen, für einen
+bestimmten Zeitraum. Dazu gehört die Vermeidung von Interaktionen in
+Gemeinschaftsräumen sowie in externen Kanälen wie sozialen Medien. Ein Verstoß
+gegen diese Bedingungen kann zu einem vorübergehenden oder dauerhaften Verbot
+führen.
 
-### 3. Vorübergehendes Verbot
+### 3. Vorübergehender Ausschluss
 
-**Problem**: Ein schwerer Verstoß gegen die Gemeinschaftsstandards, einschließlich Anhaltendes unangemessenes Verhalten.
+**Auswirkungen in der Gemeinschaft**: Eine schwerwiegende Verletzung von
+Gemeinschaftsstandards, einschließlich anhaltend unangemessenen Verhaltens.
 
-**Folge**: Ein vorübergehendes Verbot jeder Art von Interaktion oder öffentlicher Kommunikation mit der Gemeinschaft während eines bestimmten Zeitraums. Keine öffentliche oder private Interaktion mit den betroffenen Personen, einschließlich unaufgeforderter Interaktion mit denjenigen, die den Verhaltenskodex durchsetzen, ist während dieses Zeitraums erlaubt.
-Ein Verstoß gegen diese Bedingungen kann zu einem permanenten Verbot führen.
+**Folge**: Ein zeitlich begrenztes Verbot jeglicher Art von Interaktion oder
+öffentlicher Kommunikation mit der Gemeinschaft. Während dieses Zeitraums ist
+keine öffentliche oder private Interaktion mit den beteiligten Personen erlaubt.
+Auch keine unaufgeforderte Interaktion mit denjenigen, die den Verhaltenskodex
+durchsetzen. Ein Verstoß gegen diese Bedingungen kann zu einem dauerhaften
+Verbot führen.
 
-### 4. Dauerhaftes Verbot
+### 4. Dauerhafter Ausschluss
 
-**Problem**: Nachweis eines Verstoßes gegen die Gemeinschaftsstandards, einschließlich anhaltend unangemessenen Verhaltens, Belästigung einer Person oder Aggression gegen oder Herabsetzung von Gruppen von Personen.
+**Auswirkungen in der Gemeinschaft**: Aufzeigen eines Musters von Verletzungen
+der Gemeinschaftsstandards, einschließlich anhaltend unangemessenen Verhaltens,
+Belästigung einer Person oder Aggression gegen oder Herabsetzung von Gruppen von
+Personen.
 
-**Folge**: Ein dauerhaftes Verbot jeder Art von öffentlicher Interaktion innerhalb der Gemeinschaft.
+**Folge**: Ein dauerhaftes Verbot jeglicher Art von öffentlicher Interaktion
+innerhalb der Gemeinschaft.
 
-## Zuordnung
+## Bezug
 
-Dieser Verhaltenskodex ist der [Contributor Covenant][homepage] entnommen,
-Version 2.1, verfügbar unter
-[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+Dieser Verhaltenskodex basiert auf dem [Contributor Covenant][homepage],
+Version 2.0, verfügbar unter
+<https://www.contributor-covenant.org/de/version/2/0/code_of_conduct>
 
-Die Leitlinien für die Auswirkungen auf die Gemeinschaft wurden inspiriert durch
-[Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+Community Impact Guidelines wurden von 
+[Mozillas Code of Conduct Enforcement Ladder][mozilla] inspiriert.
 
-Antworten auf häufig gestellte Fragen zu diesem Verhaltenskodex finden Sie in den FAQ unter
-[https://www.contributor-covenant.org/faq][FAQ]. Die Übersetzungen sind verfügbar
-unter [https://www.contributor-covenant.org/translations][translations].
+Antworten auf häufig gestellte Fragen zu diesem Verhaltenskodex finden Sie in
+den häufig gestellten Fragen unter <https://www.contributor-covenant.org/faq>
+(in Englisch). Andere Übersetzungen sind verfügbar unter
+<https://www.contributor-covenant.org/translations>.
 
 [homepage]: https://www.contributor-covenant.org
-[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
-[Mozilla CoC]: https://github.com/mozilla/diversity
-[FAQ]: https://www.contributor-covenant.org/faq
-[translations]: https://www.contributor-covenant.org/translations
+[mozilla]: https://github.com/mozilla/inclusion
