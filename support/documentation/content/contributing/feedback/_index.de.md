@@ -1,10 +1,11 @@
 +++
-title="Give your feedback"
-description="Give your feedback"
+title="Feedback"
+description="Gib dein Feedback"
 weight=30
 chapter=false
 +++
 
-{{% notice warning %}}
-This page is not yet translated in your language, please refer to the english version. You can switch to it by using the language selector in the left menu.
-{{% /notice %}}
+Sie müssen keine Programmierkenntnisse haben, um zu diesem Plugin beizutragen! Andere
+Beiträge sind auch sehr wertvoll, darunter: 
+Sie können die Software testen und Fehler melden, Sie können Feedback geben, Funktionen die Sie
+interessieren, Benutzeroberfläche, Design, ...

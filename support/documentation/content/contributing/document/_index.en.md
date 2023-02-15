@@ -5,7 +5,7 @@ weight=50
 chapter=false
 +++
 
-## General informatiosn
+## General information
 
 Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are
 working on the same thing, and prevent conflicts.
