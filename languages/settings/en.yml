@@ -109,9 +109,10 @@ disable_websocket_description: |
 
 prosody_port_label: "Prosody port"
 prosody_port_description: |
-  The port that will be used by the builtin Prosody server.<br>
+  The port that will be used by the Prosody server.<br>
   Change it if this port is already in use on your server.<br>
-  You can close this port on your firewall, it will not be accessed from the outer world.
+  You can close this port on your firewall, it will not be accessed from the outer world.<br>
+  Note: this might change in a near feature, as it is planned to add feature to activate external connections.
 
 prosody_peertube_uri_label: "Peertube url for API calls"
 prosody_peertube_uri_description: |
@@ -149,7 +150,8 @@ prosody_c2s_port_description: |
   The port that will be used by the c2s module of the builtin Prosody server.<br>
   XMPP clients shall use this port to connect.<br>
   Change it if this port is already in use on your server.<br>
-  You can keep this port closed on your firewall for now, it will not be accessed from the outer world.
+  You can keep this port closed on your firewall for now, it will not be accessed from the outer world.<br>
+  Note: this might change in a near feature, as it is planned to add feature to activate external connections.
 
 prosody_components_label: "Enable custom Prosody external components"
 prosody_components_description: |
@@ -161,16 +163,20 @@ prosody_components_port_label: "Prosody external components port"
 prosody_components_port_description: |
   The port that will be used by XMPP components to connect to the Prosody server.<br>
   Change it if this port is already in use on your server.<br>
-  You can keep this port closed on your firewall for now, it will not be accessed from the outer world.
+  You can keep this port closed on your firewall for now, it will not be accessed from the outer world.<br>
+  Note: this might change in a near feature, as it is planned to add feature to activate external connections.
 
 prosody_components_list_label: "External components"
 prosody_components_list_description: |
-  The external components to create:
+  The external components to declare:
   <ul>
     <li>One per line.</li>
-    <li>Use the format «component_name:component_secret» (spaces will be trimmed)</li>
-    <li>You can add comments: everything after the # character will be stripped off, and empty lines ignored</li>
-    <li>The name can only contain alphanumeric characters and dots</li>
+    <li>Use the format «component_name:component_secret» (spaces will be trimmed).</li>
+    <li>
+      You can add comments: everything after the # character will be stripped off,
+      and empty lines ignored.
+    </li>
+    <li>The name can only contain latin alphanumeric characters and dots.</li>
     <li>
       If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain.
       For exemple «bridge» will become «bridge.your_domain.tld».

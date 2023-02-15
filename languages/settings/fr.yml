@@ -105,22 +105,100 @@ system_prosody_description: |
   N'utiliser cette option que si vous rencontrez des problèmes pour utiliser l'AppImage intégrée.
 
 disable_websocket_label: "Désactiver Websocket"
-disable_websocket_description: ~
-prosody_port_label: ~
-prosody_port_description: ~
-prosody_peertube_uri_label: ~
-prosody_peertube_uri_description: ~
-prosody_muc_log_by_default_label: ~
-prosody_muc_log_by_default_description: ~
-prosody_muc_expiration_label: ~
-prosody_muc_expiration_description: ~
-prosody_c2s_label: ~
-prosody_c2s_description: ~
-prosody_c2s_port_label: ~
-prosody_c2s_port_description: ~
-prosody_components_label: ~
-prosody_components_description: ~
-prosody_components_port_label: ~
-prosody_components_port_description: ~
-prosody_components_list_label: ~
-prosody_components_list_description: ~
+disable_websocket_description: |
+  Avec Peertube &gt;= 5.0.0, ce plugin va essayer d'utiliser Websocket pour les connections au tchat.
+  Si le navigateur de l'utilisateur⋅rice ou sa connection n'est pas compatible, le navigateur va
+  automatiquement passer au protocole BOSH.
+  <br>
+  Mais dans de rare cas, ça pourrait échouer. Par exemple si vous avez un reverse proxy devant votre Peertube
+  qui ne permettrait pas les connection Websocket.
+  Dans ce cas, vous pouvez cocher cette option pour désactiver les connections Websocket.
+
+prosody_port_label: "Port Prosody"
+prosody_port_description: |
+  Le port qui va être utilisé par le serveur Prosody.<br>
+  Changer le si ce port est déjà utilisé sur votre serveur.<br>
+  Vous pouvez fermer ce port sur votre pare-feu, il ne sera pas accéder par le monde extérieur.<br>
+  Note: cela pourrait changer dans un futur proche, car il est prévu d'ajouter des paramètres pour autoriser les connections externes.
+
+prosody_peertube_uri_label: "Url Peertube pour les appels d'API"
+prosody_peertube_uri_description: |
+  Merci de ne pas toucher à ce paramètre si vous ne savez pas ce que vous faites.<br>
+  Dans de rare cas, le serveur Prosody ne peut appeler l'API de Peertube en utilisant l'url publique.
+  Vous pouvez utiliser ce paramètre pour personnaliser l'url que les modules Prosody utiliseront pour
+  les API Peertube (par exemple en mettant «http://localhost:9000» ou «http://127.0.0.1:9000»).
+
+prosody_muc_log_by_default_label: "Enregistrer les salons par défaut"
+prosody_muc_log_by_default_description: |
+  Si coché, le contenu des salons sera enregistré par défaut.
+  Quand un⋅e utilisateur⋅rice rejoint un salon, iel pourra voir ce qui a été dit avant.
+  <br>
+  À noter qu'il est toujours possible d'activer/désactiver cette fonctionnalité
+  pour un salon spécifique, en changeant ses paramètres.
+
+
+prosody_muc_expiration_label: "Expiration des journaux de salon"
+prosody_muc_expiration_description: |
+  Vous pouvez choisir combien de temps le contenu des salons est gardé sur le serveur.
+  La valeur peut être:
+  <ul>
+      <li><b>60</b>: le contenu sera sauvegardé pour 60 <b>secondes</b>. Vous pouvez remplacer 60 par n'importe quelle valeur entière.</li>
+      <li><b>1d</b>: le contenu sera sauvegardé pour 1 <b>jour</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
+      <li><b>1w</b>: le contenu sera sauvegardé pour 1 <b>semaine</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
+      <li><b>1m</b>: le contenu sera sauvegardé pour 1 <b>mois</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
+      <li><b>1y</b>: le contenu sera sauvegardé pour 1 <b>année</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
+      <li><b>never</b>: le contenu ne sera jamais effacé.</li>
+  </ul>
+
+prosody_c2s_label: "Activer les connections client vers serveur"
+prosody_c2s_description: |
+  Autoriser les clients XMPP à se connecter au serveur Prosody.<br>
+  Cette option seule n'autorise que les connections de clients sur le localhost.
+
+prosody_c2s_port_label: "Port Prosody client vers serveur"
+prosody_c2s_port_description: |
+  Le port à utiliser pour les connections XMPP c2s (client to server).<br>
+  Les clients XMPP devront utiliser ce port pour se connecter.<br>
+  Changez ce port si le port est déjà utilisé sur votre serveur.<br>
+  Pour l'instant, vous pouvez garder ce port fermé sur votre pare-feu,
+  il ne sera pas accessible du monde extérieur (Prosody n'écoute que sur localhost).<br>
+  Note: cela pourrait changer dans un futur proche, car il est prévu d'ajouter des paramètres pour autoriser les connections externes.
+
+prosody_components_label: "Activer les composants externe personnalisés Prosody"
+prosody_components_description: |
+  Active l'utilisation des «External XMPP components».<br>
+  Cette option seule n'autorise que les connections depuis localhost.<br>
+  Cette fonctionnalité peut par exemple être utilisée pour connecter des bots aux salons.
+
+prosody_components_port_label: "Port pour les composants externe Prosody"
+prosody_components_port_description: |
+  Le port à utiliser pour les XMPP components.<br>
+  Changez ce port s'il est déjà utilisé sur votre serveur.<br>
+  Pour l'instant, vous pouvez garder ce port fermé sur votre pare-feu,
+  il ne sera pas accessible du monde extérieur (Prosody n'écoute que sur localhost).<br>
+  Note: cela pourrait changer dans un futur proche, car il est prévu d'ajouter des paramètres pour autoriser les connections externes.
+
+prosody_components_list_label: "Composants externes"
+prosody_components_list_description: |
+  Les composants externes à déclarer :
+  <ul>
+    <li>Un par ligne.</li>
+    <li>Utilisez le format «nom_du_composant:passphrase_secrete» (les espaces seront retirés).</li>
+    <li>
+      Vous pouvez ajouter des commentaires: tout ce qui se trouve après un caractère # sera retiré,
+      et les lignes vides ignorées.
+    </li>
+    <li>Le nom ne peut contenir que des caractères alphanumériques latins et des points.</li>
+    <li>
+      Si le nom ne contient que des caractères alphanumériques, il sera suffixé avec
+      le domaine XMPP.
+      Par exemple «bridge» deviendra «bridge.votre_domaine.tld».
+      Vous pouvez aussi spécifier un nom de domaine complet,
+      mais vous devrez vous assurer que votre configuration DNS est
+      correctement paramétrée.
+    </li>
+    <li>
+      N'utilisez que des caractères alphanumériques dans la passphrase secrète
+      (utilisez au moins 15 caractères).
+    </li>
+  </ul>
