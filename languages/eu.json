@@ -15,5 +15,11 @@
   "Open": "Ireki",
   "Use current theme colors": "Erabili uneko itxuraren koloreak",
   "Generate an iframe to embed the chat in a website": false,
-  "Chat for live stream": false
+  "Chat for live stream": false,
+  "Room name": false,
+  "Room description": false,
+  "Not found": false,
+  "Video": false,
+  "Channel": false,
+  "Last activity": false
 }

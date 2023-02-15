@@ -1,30 +1,65 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { ensureProsodyRunning } from './prosody/ctl'
 import type { ConverseJSTheme } from '../../shared/lib/types'
+import { existsSync, promises as fsPromises } from 'fs'
+import { resolve } from 'path'
 
-function initSettings (options: RegisterServerOptions): void {
+const locContent: Map<string, string> = new Map<string, string>()
+
+/**
+ * Currently, the Peertube plugin system assumes that settings strings
+ * are localized in english, and will be translated on front-end.
+ * This system make it hard to have complex strings (with html, newlines, ...).
+ * See https://github.com/Chocobozzz/PeerTube/issues/4523
+ *
+ * Waiting for a better solution, we implemented a custom solution:
+ * - We are using keys to identify setting strings
+ * - the `loc` function gets the english segment for the key
+ * - the build-languages.js script builds all needed files.
+ * @param key The key to translate
+ */
+function loc (key: string): string {
+  return locContent.get(key) ?? key
+}
+
+async function loadLoc (): Promise<void> {
+  const filePath = resolve(__dirname, '..', '..', 'languages', 'settings.reference.json')
+  if (!existsSync(filePath)) {
+    throw new Error(`File ${filePath} missing, can't load plugin settings`)
+  }
+  const content = await fsPromises.readFile(filePath, 'utf8')
+  const json = JSON.parse(content ?? '{}')
+  if (typeof json !== 'object') {
+    throw new Error(`File ${filePath} invalid, can't load plugin settings`)
+  }
+  for (const k in json) {
+    const v = json[k]
+    if (typeof v === 'string') {
+      locContent.set(k, v)
+    }
+  }
+}
+
+async function initSettings (options: RegisterServerOptions): Promise<void> {
   const { peertubeHelpers, registerSetting, settingsManager } = options
+
+  await loadLoc()
 
   // ********** IMPORTANT NOTES
   registerSetting({
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>Important notes</h3>'
+    descriptionHTML: loc('important_note_title')
   })
   registerSetting({
     type: 'html',
     private: true,
-    descriptionHTML: `You can find the plugin documentation here:
-<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/README.md" target="_blank">
-  Peertube Plugin Livechat documentation
-</a>.`
+    descriptionHTML: loc('important_note_text')
   })
   registerSetting({
     type: 'html',
     private: true,
-    descriptionHTML: `Before asking for help, please use the diagnostic tool:
-<a class="peertube-plugin-livechat-launch-diagnostic">Launch diagnostic</a>
-(if this button is not opening a new window, please try to refresh the page).`
+    descriptionHTML: loc('diagnostic')
   })
 
   if (process.arch !== 'x64' && process.arch !== 'x86_64') {
@@ -32,6 +67,8 @@ function initSettings (options: RegisterServerOptions): void {
       name: 'prosody-arch-warning',
       type: 'html',
       private: true,
+      // Note: the following text as a variable in it.
+      //   Not translating it: it should be very rare.
       descriptionHTML: `<span class="peertube-plugin-livechat-warning">
 It seems that your are using a ${process.arch} CPU, 
 which is not compatible with the plugin.
@@ -50,13 +87,13 @@ Please read
   registerSetting({
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>Chat</h3>'
+    descriptionHTML: loc('chat_title')
   })
   registerSetting({
     name: 'prosody-list-rooms',
-    label: 'List existing rooms',
+    label: loc('list_rooms_label'),
     type: 'html',
-    descriptionHTML: '<a class="peertube-plugin-livechat-prosody-list-rooms-btn">List rooms</a>',
+    descriptionHTML: loc('list_rooms_description'),
     private: true
   })
 
@@ -64,102 +101,94 @@ Please read
   registerSetting({
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>Chat behaviour</h3>'
+    descriptionHTML: loc('chat_behaviour_description')
   })
   registerSetting({
     name: 'prosody-room-type',
-    label: 'Room type',
+    label: loc('room_type_label'),
     type: 'select',
-    descriptionHTML: 'You can choose here to have separate rooms for each video, or to group them by channel.',
+    descriptionHTML: loc('room_type_description'),
     private: false,
     default: 'video',
     options: [
-      { value: 'video', label: 'Each video has its own webchat room' },
-      { value: 'channel', label: 'Webchat rooms are grouped by channel' }
+      { value: 'video', label: loc('room_type_option_video') },
+      { value: 'channel', label: loc('room_type_option_channel') }
     ]
   })
   registerSetting({
     name: 'chat-auto-display',
-    label: 'Automatically open the chat',
-    descriptionHTML: 'When watching a video, the chatbox will automatically open',
+    label: loc('auto_display_label'),
+    descriptionHTML: loc('auto_display_description'),
     type: 'input-checkbox',
     default: true,
     private: false
   })
   registerSetting({
     name: 'chat-open-blank',
-    label: 'Show the «open in new window» button',
-    descriptionHTML: 'There will be a button for opening the web chat in a new window.',
+    label: loc('open_blank_label'),
+    descriptionHTML: loc('open_blank_description'),
     private: false,
     type: 'input-checkbox',
     default: true
   })
   registerSetting({
     name: 'chat-share-url',
-    label: 'Show the «share chat link» button',
-    descriptionHTML: 'There will be a button for sharing a chat url (could be used to intregrated in OBS for example).',
+    label: loc('share_url_label'),
+    descriptionHTML: loc('share_url_description'),
     private: false,
     type: 'select',
     default: 'owner',
     options: [
-      { label: 'Show for nobody', value: 'nobody' },
-      { label: 'Show for everyone', value: 'everyone' },
-      { label: 'Show for the video owner', value: 'owner' },
-      { label: 'Show for the video owner and instance\'s moderators', value: 'owner+moderators' }
+      { value: 'nobody', label: loc('share_url_option_nobody') },
+      { value: 'everyone', label: loc('share_url_option_everyone') },
+      { value: 'owner', label: loc('share_url_option_owner') },
+      { value: 'owner+moderators', label: loc('share_url_option_owner_moderators') }
     ]
   })
   registerSetting({
     name: 'chat-per-live-video',
-    label: 'Users can activate the chat for their lives',
+    label: loc('per_live_video_label'),
     type: 'input-checkbox',
     default: true,
-    descriptionHTML: 'If checked, all live videos will have a checkbox in their properties for enabling the web chat.',
+    descriptionHTML: loc('per_live_video_description'),
     private: false
   })
   registerSetting({
     name: 'chat-per-live-video-warning',
     type: 'html',
     private: true,
-    descriptionHTML:
-`<span class="peertube-plugin-livechat-warning">
-  You have enabled the setting «Users can activate the chat for their lives».
-  It is redundant with the «Activate chat for all lives» setting.
-</span>`
+    descriptionHTML: loc('per_live_video_warning_description')
   })
   registerSetting({
     name: 'chat-all-lives',
-    label: 'Activate chat for all lives',
+    label: loc('all_lives_label'),
     type: 'input-checkbox',
     default: false,
-    descriptionHTML: 'If checked, the chat will be enabled for all lives.',
+    descriptionHTML: loc('all_lives_description'),
     private: false
   })
   registerSetting({
     name: 'chat-all-non-lives',
-    label: 'Activate chat for all non-lives',
+    label: loc('all_non_lives_label'),
     type: 'input-checkbox',
     default: false,
-    descriptionHTML: 'If checked, the chat will be enable for all video that are not lives.',
+    descriptionHTML: loc('all_non_lives_description'),
     private: false
   })
   registerSetting({
     name: 'chat-videos-list',
-    label: 'Activate chat for these videos',
+    label: loc('videos_list_label'),
     type: 'input-textarea',
     default: '',
-    descriptionHTML:
-`Videos UUIDs for which we want a web chat.
-Can be non-live videos. One per line. <br />
-You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />
-Don't add private videos, the UUIDs will be send to frontend.`,
+    descriptionHTML: loc('videos_list_description'),
     private: false
   })
   registerSetting({
     name: 'chat-no-anonymous',
-    label: 'Hide the chat for anonymous users',
+    label: loc('no_anonymous_label'),
     type: 'input-checkbox',
     default: false,
-    descriptionHTML: 'If checked, anonymous Peertube users won\'t see the chat.',
+    descriptionHTML: loc('no_anonymous_description'),
     private: false
   })
 
@@ -168,47 +197,38 @@ Don't add private videos, the UUIDs will be send to frontend.`,
     name: 'theming-advanced',
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>Theming</h3>'
+    descriptionHTML: loc('theming_advanced_description')
   })
 
   registerSetting({
     name: 'converse-theme',
-    label: 'ConverseJS theme',
+    label: loc('converse_theme_label'),
     type: 'select',
     default: 'peertube' as ConverseJSTheme,
     private: false,
     options: [
-      { value: 'peertube', label: 'Peertube theme' },
-      { value: 'default', label: 'Default ConverseJS theme' },
-      { value: 'concord', label: 'ConverseJS concord theme' }
+      { value: 'peertube', label: loc('peertube') },
+      { value: 'default', label: loc('default') },
+      { value: 'concord', label: loc('concord') }
     ] as Array<{value: ConverseJSTheme, label: string}>,
-    descriptionHTML: 'Please choose the converseJS theme you want to use.'
+    descriptionHTML: loc('converse_theme_description')
   })
 
   registerSetting({
     name: 'converse-autocolors',
-    label: 'Automatic color detection',
+    label: loc('autocolors_label'),
     type: 'input-checkbox',
     default: true,
     private: false,
-    descriptionHTML:
-`Try to auto detect colors from user's current theme.<br>
-When this settings is enabled, the plugin tries to auto-detect colors to apply to the chat theme.<br>
-If this is not correctly working for some of your Peertube theme, you can disable this option.
-You can report the bug on the official
-<a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
-  issue tracker
-</a>. Don't forget to specify which theme is not working.`
+    descriptionHTML: loc('autocolors_description')
   })
 
   registerSetting({
     name: 'chat-style',
-    label: 'Webchat iframe style attribute',
+    label: loc('chat_style_label'),
     type: 'input-textarea',
     default: '',
-    descriptionHTML:
-`Additional styles to be added on the iframe style attribute. <br>
-Example: height:400px;`,
+    descriptionHTML: loc('chat_style_description'),
     private: false
   })
 
@@ -217,26 +237,22 @@ Example: height:400px;`,
     name: 'prosody-advanced',
     type: 'html',
     private: true,
-    descriptionHTML: '<h3>Chat server advanced settings</h3>'
+    descriptionHTML: loc('prosody_advanced_description')
   })
 
   registerSetting({
     name: 'chat-help-builtin-prosody',
     type: 'html',
-    label: 'Prosody server',
-    descriptionHTML: `This plugin uses the Prosody XMPP server to handle chat rooms.<br>
-This plugin comes with a Prosody AppImage, that will be used to run the service.`,
+    label: loc('help_builtin_prosody_label'),
+    descriptionHTML: loc('help_builtin_prosody_description'),
     private: true
   })
 
   registerSetting({
     name: 'use-system-prosody',
     type: 'input-checkbox',
-    label: 'Use system Prosody',
-    descriptionHTML: `Warning: don't check this settings if you are not sure of what you are doing.<br>
-By checking this settings, your Peertube will use the Prosody server that comes with your system,
-and not the embeded AppImage.<br>
-Only use this if you encounter problems with the embedded Prosody.`,
+    label: loc('system_prosody_label'),
+    descriptionHTML: loc('system_prosody_description'),
     private: true,
     default: false
   })
@@ -244,142 +260,91 @@ Only use this if you encounter problems with the embedded Prosody.`,
   registerSetting({
     name: 'disable-websocket',
     type: 'input-checkbox',
-    label: 'Disable Websocket',
-    descriptionHTML: `With Peertube &gt;= 5.0.0, this plugin try to use Websocket connection for chatting.
-If the user's browser or connection is not compatible, the browser will automatically fallback on the BOSH protocol.
-<br>
-But in rare case, this can fail. For example if you have a reverse proxy in front of Peertube that does not
-allow Websocket connection for plugins.
-In this case, you can check this settings to disable Websocket connections.`,
+    label: loc('disable_websocket_label'),
+    descriptionHTML: loc('disable_websocket_description'),
     private: true,
     default: false
   })
 
   registerSetting({
     name: 'prosody-port',
-    label: 'Prosody port',
+    label: loc('prosody_port_label'),
     type: 'input',
     default: '52800',
     private: true,
-    descriptionHTML:
-`The port that will be used by the builtin Prosody server.<br>
-Change it if this port is already in use on your server.<br>
-You can close this port on your firewall, it will not be accessed from the outer world.`
+    descriptionHTML: loc('prosody_port_description')
   })
 
   registerSetting({
     name: 'prosody-peertube-uri',
-    label: 'Peertube url for API calls',
+    label: loc('prosody_peertube_uri_label'),
     type: 'input',
     default: '',
     private: true,
-    descriptionHTML:
-`Please let this settings empty if you don't know what you are doing.<br>
-In some rare case, Prosody can't call Peertube's API from its public URI.
-You can use this field to customise Peertube's URI for Prosody modules
-(for example with «http://localhost:9000» or «http://127.0.0.1:9000»).`
+    descriptionHTML: loc('prosody_peertube_uri_description')
   })
 
   registerSetting({
     name: 'prosody-muc-log-by-default',
-    label: 'Log rooms content by default',
+    label: loc('prosody_muc_log_by_default_label'),
     type: 'input-checkbox',
     default: true,
     private: true,
-    descriptionHTML:
-`If checked, room contents will be saved by default.
-Any user that join a room will see what was written before he joins.<br>
-Please note that it is always possible to enable/disable the content
-archiving for a specific room, by editing its properties.
-`
+    descriptionHTML: loc('prosody_muc_log_by_default_description')
   })
 
   registerSetting({
     name: 'prosody-muc-expiration',
-    label: 'Room logs expiration',
+    label: loc('prosody_muc_expiration_label'),
     type: 'input',
     default: '1w',
     private: true,
-    descriptionHTML:
-`You can choose here how long the chatting room's content is kept by the server. The value can be:
-<ul>
-    <li><b>60</b>: the content will be saved for 60 <b>seconds</b>. You can replace 60 by any integer value.</li>
-    <li><b>1d</b>: the content will be saved for 1 <b>day</b>. You can replace 1 by any integer value.</li>
-    <li><b>1w</b>: the content will be saved for 1 <b>week</b>. You can replace 1 by any integer value.</li>
-    <li><b>1m</b>: the content will be saved for 1 <b>month</b>. You can replace 1 by any integer value.</li>
-    <li><b>1y</b>: the content will be saved for 1 <b>year</b>. You can replace 1 by any integer value.</li>
-    <li><b>never</b>: the content will never expire, and will be kept forever.</li>
-</ul>`
+    descriptionHTML: loc('prosody_muc_expiration_description')
   })
 
   registerSetting({
     name: 'prosody-c2s',
-    label: 'Enable client to server connections',
+    label: loc('prosody_c2s_label'),
     type: 'input-checkbox',
     default: false,
     private: true,
-    descriptionHTML:
-`Enable XMPP clients to connect to the builtin Prosody server.<br>
-This option alone only allows connections from localhost clients.`
+    descriptionHTML: loc('prosody_c2s_description')
   })
 
   registerSetting({
     name: 'prosody-c2s-port',
-    label: 'Prosody client to server port',
+    label: loc('prosody_c2s_port_label'),
     type: 'input',
     default: '52822',
     private: true,
-    descriptionHTML:
-`The port that will be used by the c2s module of the builtin Prosody server.<br>
-XMPP clients shall use this port to connect.<br>
-Change it if this port is already in use on your server.<br>
-You can keep this port closed on your firewall for now, it will not be accessed from the outer world.`
+    descriptionHTML: loc('prosody_c2s_port_description')
   })
 
   registerSetting({
     name: 'prosody-components',
-    label: 'Enable custom Prosody external components',
+    label: loc('prosody_components_label'),
     type: 'input-checkbox',
     default: false,
     private: true,
-    descriptionHTML:
-`Enable the use of external XMPP components.<br>
-This option alone only allows connections from localhost.<br>
-This feature can for example be used to connect some bots to the chatting rooms.`
+    descriptionHTML: loc('prosody_components_description')
   })
 
   registerSetting({
     name: 'prosody-components-port',
-    label: 'Prosody external components port',
+    label: loc('prosody_components_port_label'),
     type: 'input',
     default: '53470',
     private: true,
-    descriptionHTML:
-`The port that will be used by XMPP components to connect to the Prosody server.<br>
-Change it if this port is already in use on your server.<br>
-You can keep this port closed on your firewall for now, it will not be accessed from the outer world.`
+    descriptionHTML: loc('prosody_components_port_description')
   })
 
   registerSetting({
     name: 'prosody-components-list',
-    label: 'External components',
+    label: loc('prosody_components_list_label'),
     type: 'input-textarea',
     default: '',
     private: true,
-    descriptionHTML:
-`The external components to create:
-<ul>
-  <li>One per line.</li>
-  <li>Use the format «component_name:component_secret» (spaces will be trimmed)</li>
-  <li>You can add comments: everything after the # character will be stripped off, and empty lines ignored</li>
-  <li>The name can only contain alphanumeric characters and dots</li>
-  <li>
-    If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain.
-    For exemple «bridge» will become «bridge.your_domain.tld».
-    You can also specify a full domain name, but you have to make sure to configure your DNS correctly.
-  </li>
-  <li>Only use alphanumeric characters in the secret passphrase (use at least 15 characters).</li>
-</ul>`
+    descriptionHTML: loc('prosody_components_list_description')
   })
 
   // ********** settings changes management

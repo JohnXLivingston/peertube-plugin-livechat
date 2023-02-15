@@ -65,7 +65,8 @@
     "stylelint-config-recommended-scss": "^5.0.1",
     "stylelint-config-standard-scss": "^2.0.1",
     "svgo": "^2.8.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "yaml": "^2.2.1"
   },
   "engine": {
     "peertube": ">=4.2.0"
@@ -94,7 +95,8 @@
     "build:serverconverse": "mkdir -p dist/server/conversejs && cp conversejs/index.html dist/server/conversejs/",
     "build:prosodymodules": "mkdir -p dist/server/prosody-modules && cp -r prosody-modules/* dist/server/prosody-modules/",
     "build:styles": "sass assets/styles:dist/assets/styles",
-    "build": "npm-run-all -s clean:light check:client:tsc -p build:converse build:prosody build:images build:avatars build:client build:server build:serverconverse build:prosodymodules build:styles",
+    "build:languages": "node ./build-languages.js",
+    "build": "npm-run-all -s clean:light check:client:tsc -p build:converse build:prosody build:images build:avatars build:client build:server build:languages build:serverconverse build:prosodymodules build:styles",
     "lint": "npm-run-all -s lint:script lint:styles",
     "lint:script": "npx eslint --ext .js --ext .ts .",
     "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/styles/**/*.css'",
@@ -108,14 +110,14 @@
     "settings": "dist/client/settings"
   },
   "translations": {
-    "ca-ES": "./languages/ca.json",
-    "fr-FR": "./languages/fr.json",
-    "eo": "./languages/eo.json",
-    "eu-ES": "./languages/eu.json",
-    "oc": "./languages/oc.json",
-    "pl-PL": "./languages/pl.json",
-    "de-DE": "./languages/de.json",
-    "it-IT": "./languages/it.json",
-    "ja-JP": "./languages/ja.json"
+    "ca-ES": "./dist/languages/ca.json",
+    "fr-FR": "./dist/languages/fr.json",
+    "eo": "./dist/languages/eo.json",
+    "eu-ES": "./dist/languages/eu.json",
+    "oc": "./dist/languages/oc.json",
+    "pl-PL": "./dist/languages/pl.json",
+    "de-DE": "./dist/languages/de.json",
+    "it-IT": "./dist/languages/it.json",
+    "ja-JP": "./dist/languages/ja.json"
   }
 }

@@ -1,0 +1,186 @@
+important_note_title: "<h3>Important notes</h3>"
+important_note_text: |
+  You can find the plugin documentation here:
+  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/" target="_blank">
+    Peertube Plugin Livechat documentation
+  </a>.
+
+diagnostic: |
+  Before asking for help, please use the diagnostic tool:
+  <a class="peertube-plugin-livechat-launch-diagnostic">Launch diagnostic</a>
+  (if this button is not opening a new window, please try to refresh the page).
+
+chat_title: "<h3>Chat</h3>"
+
+list_rooms_label: "List existing rooms"
+list_rooms_description: |
+  <a class="peertube-plugin-livechat-prosody-list-rooms-btn">List rooms</a>
+
+chat_behaviour_description: "<h3>Chat behaviour</h3>"
+
+room_type_label: "Room type"
+room_type_description: "You can choose here to have separate rooms for each video, or to group them by channel."
+room_type_option_video: "Each video has its own webchat room"
+room_type_option_channel: "Webchat rooms are grouped by channel"
+
+auto_display_label: "Automatically open the chat"
+auto_display_description: "When watching a video, the chatbox will automatically open."
+
+open_blank_label: "Show the «open in new window» button"
+open_blank_description: "There will be a button for opening the web chat in a new window."
+
+share_url_label: "Show the «share chat link» button"
+share_url_description: "There will be a button for sharing a chat url (could be used to intregrated in OBS for example)."
+share_url_option_nobody: "Show for nobody"
+share_url_option_everyone: "Show for everyone"
+share_url_option_owner: "Show for the video owner"
+share_url_option_owner_moderators: "Show for the video owner and instance's moderators"
+
+per_live_video_label: "Users can activate the chat for their lives"
+per_live_video_description: "If checked, all live videos will have a checkbox in their properties for enabling the web chat."
+
+per_live_video_warning_description: |
+  <span class="peertube-plugin-livechat-warning">
+    You have enabled the setting «Users can activate the chat for their lives».
+    It is redundant with the «Activate chat for all lives» setting.
+  </span>
+
+all_lives_label: "Activate chat for all lives"
+all_lives_description: "If checked, the chat will be enabled for all lives."
+
+all_non_lives_label: "Activate chat for all non-lives"
+all_non_lives_description: "If checked, the chat will be enable for all video that are not lives."
+
+videos_list_label: "Activate chat for these videos"
+videos_list_description: |
+  Videos UUIDs for which we want a web chat.
+  Can be non-live videos. One per line. <br />
+  You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />
+  Don't add private videos, the UUIDs will be send to frontend.
+
+no_anonymous_label: "Hide the chat for anonymous users"
+no_anonymous_description: "If checked, anonymous Peertube users won't see the chat."
+
+theming_advanced_description: "<h3>Theming</h3>"
+
+converse_theme_label: "ConverseJS theme"
+converse_theme_description: "Please choose the converseJS theme you want to use."
+converse_theme_option_peertube: "Peertube theme"
+converse_theme_option_default: "Default ConverseJS theme"
+converse_theme_option_concord: "ConverseJS concord theme"
+
+autocolors_label: "Automatic color detection"
+autocolors_description: |
+  Try to auto detect colors from user's current theme.<br>
+  When this settings is enabled, the plugin tries to auto-detect colors to apply to the chat theme.<br>
+  If this is not correctly working for some of your Peertube theme, you can disable this option.
+  You can report the bug on the official
+  <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
+    issue tracker
+  </a>. Don't forget to specify which theme is not working.`
+
+chat_style_label: "Webchat iframe style attribute"
+chat_style_description: |
+  Additional styles to be added on the iframe style attribute. <br>
+  Example: height:400px;
+
+prosody_advanced_description: "<h3>Chat server advanced settings</h3>"
+
+help_builtin_prosody_label: "Prosody server"
+help_builtin_prosody_description: |
+  This plugin uses the Prosody XMPP server to handle chat rooms.<br>
+  This plugin comes with a Prosody AppImage, that will be used to run the service.
+
+system_prosody_label: "Use system Prosody"
+system_prosody_description: |
+  Warning: don't check this settings if you are not sure of what you are doing.<br>
+  By checking this settings, your Peertube will use the Prosody server that comes with your system,
+  and not the embeded AppImage.<br>
+  Only use this if you encounter problems with the embedded Prosody.
+
+disable_websocket_label: "Disable Websocket"
+disable_websocket_description: |
+  With Peertube &gt;= 5.0.0, this plugin try to use Websocket connection for chatting.
+  If the user's browser or connection is not compatible, the browser will automatically fallback on the BOSH protocol.
+  <br>
+  But in rare case, this can fail. For example if you have a reverse proxy in front of Peertube that does not
+  allow Websocket connection for plugins.
+  In this case, you can check this settings to disable Websocket connections.
+
+prosody_port_label: "Prosody port"
+prosody_port_description: |
+  The port that will be used by the Prosody server.<br>
+  Change it if this port is already in use on your server.<br>
+  You can close this port on your firewall, it will not be accessed from the outer world.<br>
+  Note: this might change in a near feature, as it is planned to add feature to activate external connections.
+
+prosody_peertube_uri_label: "Peertube url for API calls"
+prosody_peertube_uri_description: |
+  Please let this settings empty if you don't know what you are doing.<br>
+  In some rare case, Prosody can't call Peertube's API from its public URI.
+  You can use this field to customise Peertube's URI for Prosody modules
+  (for example with «http://localhost:9000» or «http://127.0.0.1:9000»).
+
+prosody_muc_log_by_default_label: "Log rooms content by default"
+prosody_muc_log_by_default_description: |
+  If checked, room contents will be saved by default.
+  Any user that join a room will see what was written before he joins.<br>
+  Please note that it is always possible to enable/disable the content
+  archiving for a specific room, by editing its properties.
+
+prosody_muc_expiration_label: "Room logs expiration"
+prosody_muc_expiration_description: |
+  You can choose here how long the chatting room's content is kept by the server. The value can be:
+  <ul>
+      <li><b>60</b>: the content will be saved for 60 <b>seconds</b>. You can replace 60 by any integer value.</li>
+      <li><b>1d</b>: the content will be saved for 1 <b>day</b>. You can replace 1 by any integer value.</li>
+      <li><b>1w</b>: the content will be saved for 1 <b>week</b>. You can replace 1 by any integer value.</li>
+      <li><b>1m</b>: the content will be saved for 1 <b>month</b>. You can replace 1 by any integer value.</li>
+      <li><b>1y</b>: the content will be saved for 1 <b>year</b>. You can replace 1 by any integer value.</li>
+      <li><b>never</b>: the content will never expire, and will be kept forever.</li>
+  </ul>
+
+prosody_c2s_label: "Enable client to server connections"
+prosody_c2s_description: |
+  Enable XMPP clients to connect to the builtin Prosody server.<br>
+  This option alone only allows connections from localhost clients.
+
+prosody_c2s_port_label: "Prosody client to server port"
+prosody_c2s_port_description: |
+  The port that will be used by the c2s module of the builtin Prosody server.<br>
+  XMPP clients shall use this port to connect.<br>
+  Change it if this port is already in use on your server.<br>
+  You can keep this port closed on your firewall for now, it will not be accessed from the outer world.<br>
+  Note: this might change in a near feature, as it is planned to add feature to activate external connections.
+
+prosody_components_label: "Enable custom Prosody external components"
+prosody_components_description: |
+  Enable the use of external XMPP components.<br>
+  This option alone only allows connections from localhost.<br>
+  This feature can for example be used to connect some bots to the chatting rooms.
+
+prosody_components_port_label: "Prosody external components port"
+prosody_components_port_description: |
+  The port that will be used by XMPP components to connect to the Prosody server.<br>
+  Change it if this port is already in use on your server.<br>
+  You can keep this port closed on your firewall for now, it will not be accessed from the outer world.<br>
+  Note: this might change in a near feature, as it is planned to add feature to activate external connections.
+
+prosody_components_list_label: "External components"
+prosody_components_list_description: |
+  The external components to declare:
+  <ul>
+    <li>One per line.</li>
+    <li>Use the format «component_name:component_secret» (spaces will be trimmed).</li>
+    <li>
+      You can add comments: everything after the # character will be stripped off,
+      and empty lines ignored.
+    </li>
+    <li>The name can only contain latin alphanumeric characters and dots.</li>
+    <li>
+      If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain.
+      For exemple «bridge» will become «bridge.your_domain.tld».
+      You can also specify a full domain name, but you have to make sure to configure your DNS correctly.
+    </li>
+    <li>Only use alphanumeric characters in the secret passphrase (use at least 15 characters).</li>
+  </ul>

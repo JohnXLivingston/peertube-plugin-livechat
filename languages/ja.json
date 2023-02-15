@@ -15,5 +15,11 @@
   "Open": "開く",
   "Use current theme colors": "現在のテーマカラーを使用する",
   "Generate an iframe to embed the chat in a website": false,
-  "Chat for live stream": false
+  "Chat for live stream": false,
+  "Room name": false,
+  "Room description": false,
+  "Not found": false,
+  "Video": false,
+  "Channel": false,
+  "Last activity": false
 }
