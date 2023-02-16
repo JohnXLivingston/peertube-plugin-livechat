@@ -40,7 +40,7 @@ class BuildLanguages {
     this.langs = Object.values(translations).map(filename => {
       return filename.match(/^.*\/(\w+)\.json$/)[1]
     })
-    console.log('Existings languages: ', this.langs)
+    console.log('Existing languages: ', this.langs)
   }
   
   initTranslationStrings () {
