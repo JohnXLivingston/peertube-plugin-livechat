@@ -1,6 +1,6 @@
 +++
 title="Einstellungen"
-description="Plugin Peertube Livechat settings"
+description="Plugin Peertube Livechat Einstellungen"
 weight=10
 chapter=false
 +++
@@ -20,7 +20,7 @@ Sie können die Chaträume damit finden und moderieren.
 
 ### Room type (Raumtyp)
 
-Sie können hier auswählen, ob seperate Räume für jedes Video oder nach Kanal gruppiert erstellt werden.
+Sie können hier wählen, ob Sie für jedes Video einen eigenen Raum haben möchten oder ob Sie sie nach Kanälen gruppieren möchten.
 
 ### Automatically open the chat (Chat automatisch öffnen)
 

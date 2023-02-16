@@ -9,7 +9,7 @@ Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der Einr
 
 Einen Einblick in die Roadmap für kommende Funktionen finden Sie hier:
 
-- [github project](https://github.com/users/JohnXLivingston/projects/1).
-- [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).
+- [Github Project](https://github.com/users/JohnXLivingston/projects/1).
+- [Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).
 
 Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen.
