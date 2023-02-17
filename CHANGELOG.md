@@ -4,7 +4,10 @@
 
 ### New Features
 
-* Settings page translations. For now, english, french and german are available.
+* Settings page translations:
+  * english,
+  * french,
+  * german (thanks [Gamemap](https://github.com/Gamemap))
 
 ### Minor changes and fixes
 
