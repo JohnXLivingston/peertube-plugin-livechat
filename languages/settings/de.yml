@@ -14,14 +14,14 @@ chat_title: "<h3>Chat</h3>"
 
 list_rooms_label: "Bestehende Räume auflisten"
 list_rooms_description: |
-  <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Bestehende Räume auflisten</a>
+  <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Räume auflisten</a>
 
 chat_behaviour_description: "<h3>Chatverhalten</h3>"
 
 room_type_label: "Raumtyp"
 room_type_description: "Sie können hier wählen, ob Sie für jedes Video einen eigenen Raum haben möchten oder ob Sie sie nach Kanälen gruppieren möchten."
-room_type_option_video: "Jedes Video hat seinen eigenen Webchat-Raum"
-room_type_option_channel: "Webchat-Räume sind nach Kanal gruppiert"
+room_type_option_video: "Eigenen Webchat-Raum für jedes Video"
+room_type_option_channel: "Webchat-Räume nach Kanal gruppieren"
 
 auto_display_label: "Chat automatisch öffnen"
 auto_display_description: "Wenn ausgewählt wird der Chat geladen, sobald Sie auf der Videoseite sind."
@@ -34,7 +34,7 @@ share_url_description: "Es wird einen Knopf für das Teilen des Chat Links geben
 share_url_option_nobody: "Niemandem zeigen"
 share_url_option_everyone: "Jedem zeigen"
 share_url_option_owner: "Videobesitzer zeigen"
-share_url_option_owner_moderators: "Viedeobesitzer und Instanzmoderatoren zeigen"
+share_url_option_owner_moderators: "Videobesitzern, Instanzmoderatoren zeigen"
 
 per_live_video_label: "Nutzer können den Chat für ihre Live-Videos aktivieren"
 per_live_video_description: |
@@ -79,7 +79,7 @@ autocolors_description: |
   Sie können den Fehler im offiziellen
   <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
     Issue Tracker
-  </a> melden. Vergessen Sie nicht anzugeben, welches Thema nicht funktioniert.`
+  </a> melden. Vergessen Sie nicht anzugeben, welches Thema nicht funktioniert.
 
 chat_style_label: "Webchat Iframe Stil-Attribut"
 chat_style_description: |
