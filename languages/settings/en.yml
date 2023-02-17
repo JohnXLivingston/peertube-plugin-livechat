@@ -77,7 +77,7 @@ autocolors_description: |
   You can report the bug on the official
   <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
     issue tracker
-  </a>. Don't forget to specify which theme is not working.`
+  </a>. Don't forget to specify which theme is not working.
 
 chat_style_label: "Webchat iframe style attribute"
 chat_style_description: |
