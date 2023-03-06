@@ -2,6 +2,13 @@
 
 ## ??? (Not Released Yet)
 
+### New Features
+
+* Settings page translations:
+  * english,
+  * french,
+  * german (thanks [Gamemap](https://github.com/Gamemap))
+
 ### Minor changes and fixes
 
 * Updating a link to the documentation in the settings page.

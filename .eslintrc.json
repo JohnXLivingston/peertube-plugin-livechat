@@ -4,6 +4,11 @@
     "extends": [],
     "globals": {},
     "plugins": [],
-    "ignorePatterns": ["node_modules/", "dist/", "webpack.config.js", "build/", "vendor/"],
+    "ignorePatterns": [
+        "node_modules/", "dist/", "webpack.config.js",
+        "build/",
+        "vendor/",
+        "support/documentation",
+        "build-*js"],
     "rules": {}
 }

@@ -1,6 +1,6 @@
 +++
 title="Einstellungen"
-description="Plugin Peertube Livechat settings"
+description="Plugin Peertube Livechat Einstellungen"
 weight=10
 chapter=false
 +++
@@ -13,14 +13,14 @@ Dieser Abschnitt beschreibt die Einstellungsseite des Plugins.
 
 ## List existing rooms (Bestehende Räume auflisten)
 
-Wenn der «List rooms» Knopf gedrückt wird, werden alle bestehenden Chaträume aufgelistet.
+Wenn der «Bestehende Räume auflisten» («List rooms») Knopf gedrückt wird, werden alle bestehenden Chaträume aufgelistet.
 Sie können die Chaträume damit finden und moderieren.
 
 ## Chat behaviour (Chatverhalten)
 
 ### Room type (Raumtyp)
 
-Sie können hier auswählen, ob seperate Räume für jedes Video oder nach Kanal gruppiert erstellt werden.
+Sie können hier wählen, ob Sie für jedes Video einen eigenen Raum haben möchten oder ob Sie sie nach Kanälen gruppieren möchten.
 
 ### Automatically open the chat (Chat automatisch öffnen)
 
