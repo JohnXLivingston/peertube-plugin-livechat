@@ -6,6 +6,7 @@
 
 * Italian settings page translation (thanks [lost-geographer](https://github.com/lost-geographer)).
 * Various translation fixes in french and english (thanks [lost-geographer](https://github.com/lost-geographer)).
+* Update npm dependencies with security fixes.
 
 ## 6.2.0
 
