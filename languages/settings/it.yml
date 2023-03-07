@@ -151,15 +151,15 @@ prosody_c2s_port_description: |
   Per ora, puoi tenere chiusa questa porta sul tuo firewall: sarà inaccessibile dall'esterno (Prosody ascolta solo il localhost).<br>
   Nota: questo potrebbe cambiare prossimamente, poiché è prevista l'aggiunta di una funzione per attivare le connessioni esterne.
 
-prosody_components_label: "Activer les composants externe personnalisés Prosody"
+prosody_components_label: "Abilitare le componenti esterne personalizzate di Prosody"
 prosody_components_description: |
-  Active l'utilisation des «External XMPP components».<br>
-  Cette option seule n'autorise que les connections depuis localhost.<br>
-  Cette fonctionnalité peut par exemple être utilisée pour connecter des bots aux salons.
+  Abilita l'uso di componenti XMPP esterne.<br>
+  Questa opzione consente unicamente le connessioni dal localhost.<br>
+  Questa funzione può essere utilizzata, ad esempio, per collegare i bot alle chat room.
 
 prosody_components_port_label: "Port pour les composants externe Prosody"
 prosody_components_port_description: |
-  Pour permettre l'utilisation de composants XMPP externes.<br>
+  Per abilitare l'uso di componenti XMPP esterne.<br>
   Cambiala se questa porta è già in uso sul tuo server.<br>
   Per ora, puoi tenere chiusa questa porta sul tuo firewall: sarà inaccessibile dall'esterno (Prosody ascolta solo il localhost).<br>
   Nota: questo potrebbe cambiare prossimamente, poiché è prevista l'aggiunta di una funzione per attivare le connessioni esterne.
