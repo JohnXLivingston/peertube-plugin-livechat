@@ -10,7 +10,7 @@ chapter=false
 Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are
 working on the same thing, and prevent conflicts.
 
-Please use the `develop` branch. The `main` branch is reserved to released versions of the plugin, so that the documentation is always synchronized with the released version of the plugin.
+Documentation work has to be merged in the `main` branch.
 
 The documentation source code is in the `support/documentation/content` folder.
 
@@ -19,6 +19,10 @@ You have to install it on your computer if you want to preview your work.
 
 The used theme is [hugo-theme-learn](https://learn.netlify.app/).
 You should read its documentation before starting editing the documentation.
+
+When a new plugin version is released, or when documentation is updated,
+plugin maintainers will merge the `main` branch to the `documentation` branche.
+This will trigger github and gitlab pipelines, and update published documentation.
 
 ## Translations
 

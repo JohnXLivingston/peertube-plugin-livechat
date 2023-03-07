@@ -12,7 +12,11 @@ For now, translation is done in the git repository. Later in 2023, online transl
 {{% /notice %}}
 
 {{% notice tip %}}
-Please work on the `develop` branch, and do your commits and pull request on this branch.
+Please work on the `main` branch, and do your commits and pull request on this branch.
+{{% /notice %}}
+
+{{% notice note %}}
+Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.
 {{% /notice %}}
 
 ## Standard application strings

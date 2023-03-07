@@ -8,7 +8,11 @@ chapter=false
 Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem
 before you start working on it, and inform the community that you begin coding by claiming the issue.
 
-Please use the `develop` branch. The `main` branch is reserved to released versions of the plugin, so that the documentation is always synchronized with the released version of the plugin.
+Pull Request must be done on the `main` branch.
+
+{{% notice note %}}
+Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.
+{{% /notice %}}
 
 Prerequisite for building this plugin:
 
@@ -20,8 +24,8 @@ To clone the repository:
 ```bash
 # Clone the repository
 git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git
-# Checkout the develop branch
-git checkout develop
+# Be sure to checkout the main branch
+git checkout main
 # Initialize the submodules. This command must be run again if any submodules' version changes.
 git submodule update --init --recursive
 

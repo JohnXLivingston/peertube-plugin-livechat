@@ -11,9 +11,7 @@ Toujours vous annoncer avant de commencer à travailler (en créant un ticket ou
 en commentant un ticket existant). Ceci afin d'éviter que plusieurs personnes
 travaillent sur la même chose et entrent en conflit.
 
-Merci d'utiliser la branche `develop`.
-La branche `main` est réservée aux versions publiées, pour que la documentation
-affichée reste synchronisée avec la version publiée du plugin.
+Le travail de documentation se fait sur la branche `main`.
 
 Le code source de la documentation se trouve dans le dossier
 `support/documentation/content` du dépot de code.
@@ -24,6 +22,11 @@ documentation.
 
 Le thème utilisé est [hugo-theme-learn](https://learn.netlify.app/).
 Il est recommandé d'en lire la documentation avant de commencer.
+
+Quand une version du plugin est publiée, ou quand la documentation est mise
+à jour, les mainteneur⋅euses du plugin fusionnerons la branche `main` dans
+la branche `documentation`, ce qui aura pour effet de déclencher les pipelines
+github et gitlab pour mettre à jour les versions publiées.
 
 ## Traductions
 

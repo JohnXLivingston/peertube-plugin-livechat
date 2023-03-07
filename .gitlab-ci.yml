@@ -11,4 +11,4 @@ pages:
     paths:
       - public
   only:
-    - main
+    - documentation

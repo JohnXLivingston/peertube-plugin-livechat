@@ -7,7 +7,11 @@ chapter=false
 
 Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en créant un ticket ou en commentant un ticket existant, avant de commencer à travailler dessus. Et annoncez clairement à la communauté que vous commencez à travailler dessus. Ceci afin d'éviter que plusieurs personnes travaillent sur la même chose et entrent en conflit.
 
-Merci d'utiliser la branche `develop`. La branche `main` est réservée aux versions publiées, pour que la documentation affichée reste synchronisée avec la version publiée du plugin.
+Les Pull Request sont à faire sur la branche `main`.
+
+{{% notice note %}}
+Jusqu'à mars 2023, il fallait contribuer sur la branche `develop`. Cette procédure est désormais obsolète.
+{{% /notice %}}
 
 Pré-requis pour compiler le plugin:
 
@@ -19,8 +23,8 @@ Pour clôner le dépot :
 ```bash
 # Cloner le dépot
 git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git
-# Passer sur la branche develop
-git checkout develop
+# Passer sur la branche main si ce n'est pas déjà le cas
+git checkout main
 # Initialiser les sous-modules. Cette commande est à refaire si jamais la version d'un l'un des sous-module change.
 git submodule update --init --recursive
 

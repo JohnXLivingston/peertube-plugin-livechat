@@ -7,7 +7,13 @@ chapter=false
 
 Sie können uns helfen, dieses PeerTube-Plugin zu übersetzen, indem Sie Übersetzungsdateien im Ordner `languages` erstellen oder ändern.
 
-Bitte arbeiten Sie auf dem `develop` Zweig, und machen Sie Ihre Änderungen und Pull Requests auf diesem Zweig.
+{{% notice tip %}}
+Bitte arbeiten Sie auf dem `main` Zweig, und machen Sie Ihre Änderungen und Pull Requests auf diesem Zweig.
+{{% /notice %}}
+
+{{% notice note %}}
+Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.
+{{% /notice %}}
 
 Wenn die Sprache, für die Sie sich interessieren, noch nicht existiert, erstellen Sie eine Datei `code.json` im Ordner `languages`, wobei `code` der Code der Sprache ist.
 Der Sprachcode muss derselbe sein wie der Sprachcode von Peertube (siehe [Peertube-Dokumentation](https://github.com/Chocobozzz/PeerTube/blob/develop/support/doc/translation.md)).

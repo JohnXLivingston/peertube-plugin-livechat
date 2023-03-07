@@ -15,7 +15,11 @@ Le processus de traduction en sera plus simple.
 {{% /notice %}}
 
 {{% notice tip %}}
-Merci de travailler sur la branche `develop`, et de faire vos _pull request_ sur cette branche.
+Merci de travailler sur la branche `main`, et de faire vos _pull request_ sur cette branche.
+{{% /notice %}}
+
+{{% notice note %}}
+Jusqu'à mars 2023, il fallait contribuer sur la branche `develop`. Cette procédure est désormais obsolète.
 {{% /notice %}}
 
 ## Chaîne applicatives standard

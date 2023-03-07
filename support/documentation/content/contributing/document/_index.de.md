@@ -10,7 +10,7 @@ chapter=false
 Informieren Sie die Community immer vor der Arbeit (indem Sie ein neues Problem erstellen oder ein bestehendes kommentieren). Damit soll vermieden werden, dass zwei Personen
 an der gleichen Sache arbeiten, und Konflikte zu verhindern.
 
-Bitte benutzen Sie den `develop`-Zweig. Der `main`-Zweig ist für veröffentlichte Versionen des Plugins reserviert, so dass die Dokumentation immer mit der veröffentlichten Version des Plugins synchronisiert ist.
+Bitte benutzen Sie den `main`-Zweig.
 
 Der Quellcode der Dokumentation befindet sich im Ordner `support/documentation/content`.
 
@@ -19,6 +19,10 @@ Sie müssen es auf Ihrem Computer installieren, wenn Sie eine Vorschau Ihrer Arb
 
 Das verwendete Thema ist [hugo-theme-learn](https://learn.netlify.app/).
 Sie sollten dessen Dokumentation lesen, bevor Sie mit der Bearbeitung der Dokumentation beginnen.
+
+When a new plugin version is released, or when documentation is updated,
+plugin maintainers will merge the `main` branch to the `documentation` branche.
+This will trigger github and gitlab pipelines, and update published documentation.
 
 ## Übersätzungen
 

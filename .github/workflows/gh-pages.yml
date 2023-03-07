@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - main  # Set a branch to deploy
+      - documentation  # Set a branch to deploy
   pull_request:
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/documentation'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./support/documentation/public

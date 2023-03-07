@@ -7,7 +7,11 @@ chapter=false
 
 Sprechen Sie immer über die Funktionen, die Sie entwickeln wollen, indem Sie das Issue, das Ihr Problem behandelt, erstellen/finden und kommentieren bevor Sie mit der Arbeit daran beginnen und informieren Sie die Gemeinschaft darüber, dass Sie mit der Programmierung beginnen, indem Sie das Thema für sich beanspruchen.
 
-Bitte benutzen Sie den `develop` Zweig. Der `main`-Zweig ist für veröffentlichte Versionen des Plugins reserviert, so dass die Dokumentation immer mit der veröffentlichten Version des Plugins synchronisiert ist.
+Bitte benutzen Sie den `main` Zweig.
+
+{{% notice note %}}
+Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.
+{{% /notice %}}
 
 Voraussetzung für die Erstellung dieses Plugins:
 
@@ -19,8 +23,8 @@ Um das Repository zu klonen:
 ```bash
 # Clone the repository
 git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git
-# Checkout the develop branch
-git checkout develop
+# Checkout the main branch
+git checkout main
 # Initialize the submodules. This command must be run again if any submodules' version changes.
 git submodule update --init --recursive
 
