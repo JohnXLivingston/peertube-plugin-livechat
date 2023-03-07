@@ -1,0 +1,186 @@
+important_note_title: "<h3>Note importanti</h3>"
+important_note_text: |
+  La documentazione del plugin si trova qui:
+  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/fr/" target="_blank">
+    Documentazione del plugin Peertube Livechat (in inglese)
+  </a>.
+
+diagnostic: |
+  Prima di chiedere aiuto, ti preghiamo di utilizzare lo strumento di diagnostica:
+  <a class="peertube-plugin-livechat-launch-diagnostic">Avvia la diagnostica</a>
+  (se questo pulsante non apre una nuova finestra, prova ad aggiornare la pagina).
+
+chat_title: "<h3>Chat</h3>"
+
+list_rooms_label: "Elenco delle chat room esistenti"
+list_rooms_description: |
+  <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Elenca le chat room</a>
+
+chat_behaviour_description: "<h3>Comportamento della chat</h3>"
+
+room_type_label: "Tipo di chat room"
+room_type_description: "Si può scegliere di avere chat room separate per ogni video o di raggrupparle per canale."
+room_type_option_video: "Ogni video ha la propria chat room"
+room_type_option_channel: "Le chat room sono raggruppate per canale"
+
+auto_display_label: "Apri automaticamente la chat"
+auto_display_description: "Quando si guarda un video, la chat si aprirà automaticamente."
+
+open_blank_label: "Mostra il pulsante “Apri in una nuova finestra”"
+open_blank_description: "Ci sarà un pulsante per aprire la chat in una nuova finestra."
+
+share_url_label: "Mostra il pulsante “Condividi il link della chat room”"
+share_url_description: "Ci sarà un pulsante per condividere il link della chat room (che potrebbe essere utilizzato, ad esempio, per l'integrazione con OBS)."
+share_url_option_nobody: "Non mostrarlo a nessuno"
+share_url_option_everyone: "Mostralo a tutti"
+share_url_option_owner: "Mostralo solo al proprietario del video"
+share_url_option_owner_moderators: "Mostralo solo al proprietario del video e ai moderatori dell'istanza"
+
+per_live_video_label: "Lз utentə possono attivare la chat per i loro video in diretta"
+per_live_video_description: "Se è selezionata, tutti i video in diretta avranno una casella di controllo nelle loro proprietà per attivare/disattivare la chat."
+
+per_live_video_warning_description: |
+  <span class="peertube-plugin-livechat-warning">
+    È stata attivata l'impostazione “Lз utentə possono attivare la chat per i loro video in diretta”.
+    È ridondante con l'impostazione “Attiva la chat per tutti i video in diretta”.
+  </span>
+
+all_lives_label: "Attiva la chat per tutti i video in diretta"
+all_lives_description: "Se questa opzione è selezionata, la chat sarà attivata per tutti i video in diretta."
+
+all_non_lives_label: "Attivare la chat per tutti i video non in diretta."
+all_non_lives_description: "Se questa opzione è selezionata, la chat sarà attivata per tutti i video non in diretta."
+
+videos_list_label: "Attivare la chat per questi video."
+videos_list_description: |
+  Inserire qui gli UUID dei video per i quali si desidera forzare l'attivazione della chat.
+  Questi possono essere delle dirette o meno.
+  Un'UUID per riga.<br />
+  È possibile aggiungere dei commenti: tutto ciò che si trova dopo il carattere # verrà eliminato e le righe vuote saranno ignorate.<br />
+  Non aggiungere video privati, gli UUID sarebbero esposti a tutti gli utenti (frontend).
+
+no_anonymous_label: "Nascondi la chat per gli utenti anonimi (non connessi)"
+no_anonymous_description: "Se questa opzione è selezionata, gli utenti anonimi (non connessi) non vedranno la chat."
+
+theming_advanced_description: "<h3>Personalizza l'aspetto</h3>"
+
+converse_theme_label: "Tema ConverseJS"
+converse_theme_description: "Scegli il tema converseJS che desideri utilizzare."
+converse_theme_option_peertube: "Tema Peertube"
+converse_theme_option_default: "Tema predefinito di ConverseJS"
+converse_theme_option_concord: "Tema “Concord“ di ConverseJS"
+
+autocolors_label: "Rilevamento automatico dei colori"
+autocolors_description: |
+  Cerca di rilevare automaticamente i colori del tema corrente dell'utente.
+  <br>
+  Quando questa impostazione è attivata, il plugin cerca di rilevare automaticamente i colori da applicare al tema della chat.
+  <br>
+  Se questo non funziona correttamente per alcuni temi di Peertube, è possibile disattivare questa opzione.
+  È possibile riportare il bug sul <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank"> registro ufficiale dei problemi</a>.
+  Non dimenticate di specificare quale tema non funziona.
+
+chat_style_label: "Attributi di stile dell'iframe della chat"
+chat_style_description: |
+  Stili aggiuntivi da applicare all'iframe della chat.<br>
+  Esempio: height:400px;
+
+prosody_advanced_description: "<h3>Impostazioni avanzate del chat server</h3>"
+
+help_builtin_prosody_label: "Prosody server"
+help_builtin_prosody_description: |
+  Questo plugin utilizza il server Prosody XMPP per gestire le chat room.<br>
+  Questo plugin include una Prosody AppImage, che serve a far funzionare il servizio.
+
+system_prosody_label: "Usa il server Prosody installato sul sistema"
+system_prosody_description: |
+  Attenzione: non utilizzare questa impostazione se non sei sicurə di quello che stai facendo.<br>
+  Selezionando questa impostazione, Peertube utilizzerà il server Prosody fornito dal il sistema e non l'AppImage incorporata nel plugin<br>
+  Utilizza questa impostazione solo se si riscontrano problemi con la Prosody AppImage incorporata nel plugin.
+
+disable_websocket_label: "Disattiva Websocket"
+disable_websocket_description: |
+  Con Peertube &gt;= 5.0.0, questo plugin cercherà di utilizzare Websocket per le connessioni alla chat.
+  Se il browser o la connessione dell'utente non sono compatibili, il browser passerà automaticamente al protocollo BOSH.
+  <br>
+  Tuttavia, in rari casi, questo può non funzionare. Ad esempio, se si dispone di un reverse proxy davanti a Peertube che non consente la connessione Websocket per i plugin.
+  In questo caso, è possibile selezionare questa opzione per disabilitare le connessioni Websocket.
+
+prosody_port_label: "Porta Prosody"
+prosody_port_description: |
+  Le port qui va être utilisé par le serveur Prosody.<br>
+  Cambiatela se questa porta è già in uso sul vostro server.<br>
+  È possibile chiudere questa porta tramite il firewall, in modo che non sia accessibile dall'esterno.<br>
+  Nota: questo potrebbe cambiare in un prossimo futuro, poiché è prevista l'aggiunta di una funzione per attivare le connessioni esterne.
+
+prosody_peertube_uri_label: "URL di Peertube per le chiamate API"
+prosody_peertube_uri_description: |
+  Ti preghiamo di non toccare questa impostazione se non sai cosa stai facendo.<br>
+  In rari casi, il server Prosody non è in grado di chiamare l'API di Peertube utilizzando l'URL pubblico.
+  Puoi modificare questo parametro per personalizzare l'URL che i moduli Prosody utilizzeranno per le API di Peertube (ad esempio mettendo «http://localhost:9000» o «http://127.0.0.1:9000»).
+
+prosody_muc_log_by_default_label: "Registra automaticamente il contenuto delle chat room"
+prosody_muc_log_by_default_description: |
+  Se questa opzione è selezionata, i contenuti della chat room saranno registrati automaticamente.
+  Ogni utente che entrerà in una chat room vedrà ciò che è stato scritto prima del suo arrivo.
+  <br>
+  Nota: è sempre possibile attivare/disattivare la registrazione dei contenuti per una specifica chat room, modificandone le proprietà.
+
+
+prosody_muc_expiration_label: "Scadenza dei registri delle chat room"
+prosody_muc_expiration_description: |
+  È possibile scegliere per quanto tempo il contenuto della chat room sarà conservato sul server. Il valore può essere:
+  <ul>
+      <li><b>60</b>: il contenuto verrà registrato per 60 <b>secondi</b>. È possibile sostituire 60 con qualsiasi valore intero.</li>
+      <li><b>1d</b>: il contenuto verrà registrato per 1 <b>giorno</b>. È possibile sostituire 1 con qualsiasi valore intero.</li>
+      <li><b>1w</b>: il contenuto verrà registrato per 1 <b>settimana</b>. È possibile sostituire 1 con qualsiasi valore intero.</li>
+      <li><b>1m</b>: il contenuto verrà registrato per 1 <b>mese</b>. È possibile sostituire 1 con qualsiasi valore intero.</li>
+      <li><b>1y</b>: il contenuto verrà registrato per 1 <b>anno</b>. È possibile sostituire 1 con qualsiasi valore intero.</li>
+      <li><b>never</b>: il contenuto non sarà mai cancellato.</li>
+  </ul>
+
+prosody_c2s_label: "Abilitare le connessioni da cliente a server"
+prosody_c2s_description: |
+  Consenti ai clienti XMPP a connettersi al server Prosody incorporato nel plugin.<br>
+  Questa opzione consente unicamente le connessioni dei clienti sul localhost.
+
+prosody_c2s_port_label: "Porta del client Prosody al server"
+prosody_c2s_port_description: |
+  La porta che verrà utilizzata dal modulo c2s (client to server) del server Prosody incorporato nel plugin.<br>
+  I clienti XMPP dovranno utilizzare questa porta per connettersi.<br>
+  Cambiala se questa porta è già in uso sul tuo server.<br>
+  Per ora, puoi tenere chiusa questa porta sul tuo firewall: sarà inaccessibile dall'esterno (Prosody ascolta solo il localhost).<br>
+  Nota: questo potrebbe cambiare prossimamente, poiché è prevista l'aggiunta di una funzione per attivare le connessioni esterne.
+
+prosody_components_label: "Activer les composants externe personnalisés Prosody"
+prosody_components_description: |
+  Active l'utilisation des «External XMPP components».<br>
+  Cette option seule n'autorise que les connections depuis localhost.<br>
+  Cette fonctionnalité peut par exemple être utilisée pour connecter des bots aux salons.
+
+prosody_components_port_label: "Port pour les composants externe Prosody"
+prosody_components_port_description: |
+  Pour permettre l'utilisation de composants XMPP externes.<br>
+  Cambiala se questa porta è già in uso sul tuo server.<br>
+  Per ora, puoi tenere chiusa questa porta sul tuo firewall: sarà inaccessibile dall'esterno (Prosody ascolta solo il localhost).<br>
+  Nota: questo potrebbe cambiare prossimamente, poiché è prevista l'aggiunta di una funzione per attivare le connessioni esterne.
+
+prosody_components_list_label: "Componenti esterni"
+prosody_components_list_description: |
+  Componenti esterne da dichiarare:
+  <ul>
+    <li>Una per riga.</li>
+    <li>Usa il formato "nome_componente:passphrase_segreta" (gli spazi verranno tagliati).</li>
+    <li>
+      È possibile aggiungere dei commenti: tutto ciò che si trova dopo il carattere # verrà eliminato e le righe vuote saranno ignorate.
+    </li>
+    <li>Il nome può contenere solo caratteri alfanumerici latini e punti.</li>
+    <li>
+      Se il nome contiene solo caratteri alfanumerici, sarà seguito da un suffisso con il dominio XMPP.
+      Ad esempio, “bridge” diventerà “bridge.your_domain.tld”.
+      È anche possibile specificare un nome di dominio completo, ma assicurati di configurare correttamente il tuo DNS.
+    </li>
+    <li>
+      Usa solo caratteri alfanumerici per la passphrase segreta (usa almeno 15 caratteri).
+    </li>
+  </ul>
