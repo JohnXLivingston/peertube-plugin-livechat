@@ -82,7 +82,7 @@ You can choose which theme to use for ConverseJS:
 
 ### Automatic color detection
 
-Try to auto detect colors from user's current theme.
+Try to autodetect colors from user's current theme.
 When this settings is enabled, the plugin tries to auto-detect colors to apply to the chat theme.
 If this is not correctly working for some of your Peertube theme, you can disable this option.
 
@@ -109,7 +109,7 @@ If the user's browser or connection is not compatible, the browser will automati
 
 But in rare case, this can fail. For example if you have a reverse proxy in front of Peertube that does not
 allow Websocket connection for plugins.
-In this case, you can check this settings to disable Websocket connections.
+In this case, you can check this setting to disable Websocket connections.
 
 ### Prosody port
 
@@ -137,14 +137,14 @@ See the online help for accepted values.
 
 ### Enable client to server connections
 
-This setting enable XMPP clients to connect to the builtin Prosody server.
+This setting enable XMPP clients to connect to the built-in Prosody server.
 For now, this option **only allows connections from localhost clients**.
 
 As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room.
 
 #### Prosody client to server port
 
-The port that will be used by the c2s module of the builtin Prosody server.
+The port that will be used by the c2s module of the built-in Prosody server.
 XMPP clients shall use this port to connect.
 Change it if this port is already in use on your server.
 
