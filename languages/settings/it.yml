@@ -157,7 +157,7 @@ prosody_components_description: |
   Questa opzione consente unicamente le connessioni dal localhost.<br>
   Questa funzione può essere utilizzata, ad esempio, per collegare i bot alle chat room.
 
-prosody_components_port_label: "Port pour les composants externe Prosody"
+prosody_components_port_label: "La porta che verrà utilizzata dalle componenti XMPP per connettersi al server Prosody"
 prosody_components_port_description: |
   Per abilitare l'uso di componenti XMPP esterne.<br>
   Cambiala se questa porta è già in uso sul tuo server.<br>
