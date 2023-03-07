@@ -1,5 +1,12 @@
 # Changelog
 
+## 6.2.1
+
+### Minor changes and fixes
+
+* Italian settings page translation (thanks [lost-geographer](https://github.com/lost-geographer)).
+* Various translation fixes in french and english (thanks [lost-geographer](https://github.com/lost-geographer)).
+
 ## 6.2.0
 
 ### New Features
