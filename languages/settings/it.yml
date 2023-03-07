@@ -108,7 +108,6 @@ disable_websocket_description: |
 
 prosody_port_label: "Porta Prosody"
 prosody_port_description: |
-  Le port qui va être utilisé par le serveur Prosody.<br>
   Cambiatela se questa porta è già in uso sul vostro server.<br>
   È possibile chiudere questa porta tramite il firewall, in modo che non sia accessibile dall'esterno.<br>
   Nota: questo potrebbe cambiare in un prossimo futuro, poiché è prevista l'aggiunta di una funzione per attivare le connessioni esterne.
