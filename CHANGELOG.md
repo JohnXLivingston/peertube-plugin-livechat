@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.2.3
+
+### Minor changes and fixes
+
+* Fix italian translation.
+
 ## 6.2.2
 
 ### Minor changes and fixes
