@@ -150,6 +150,36 @@ prosody_muc_expiration_description: |
       <li><b>never</b>: le contenu ne sera jamais effacé.</li>
   </ul>
 
+prosody_room_allow_s2s_label: "Autoriser les connexions aux salons via des comptes XMPP externes"
+prosody_room_allow_s2s_description: |
+  En activant cette option, il sera possible de se connecter aux salons en utilisant des comptes XMPP externes via des clients XMPP.<br>
+  Attention, activer cette option peut demander une configuration au niveau du serveur et des enregistrements DNS.
+  Pour en savoir plus, merci de vous référer à la documentation:
+  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/" target="_blank">
+    Autoriser les connexions avec des comptes XMPP externes.
+  </a>
+
+prosody_s2s_port_label: "Port Prosody serveur vers serveur"
+prosody_s2s_port_description: |
+  Le port à utiliser pour les connexions XMPP s2s (server to server).<br>
+  Il est recommandé d'utiliser le port standard 5269.
+  Sinon vous devrez <a href="https://prosody.im/doc/s2s">
+    configurer un enregistrement DNS spécifique
+  </a>.
+
+prosody_s2s_interfaces_label: "Interfaces réseau pour les connexions serveur vers serveur"
+prosody_s2s_interfaces_description: |
+  Les interfaces réseau sur lequelles écouter pour les connexions s2s (server to server).<br>
+  Une liste d'IP séparées par des virgules (les espaces seront retirés).
+  On pourra utiliser «*» pour écouter sur toutes les IPv4, et «::» pour toutes les IPv6.<br>
+  Exemples de configuration possible:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>172.18.0.42</li>
+  </ul>
+
 prosody_c2s_label: "Activer les connexions client vers serveur"
 prosody_c2s_description: |
   Autoriser les clients XMPP à se connecter au serveur Prosody.<br>

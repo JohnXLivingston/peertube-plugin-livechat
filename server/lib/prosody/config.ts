@@ -102,6 +102,9 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'prosody-muc-expiration',
     'prosody-c2s',
     'prosody-c2s-port',
+    'prosody-room-allow-s2s',
+    'prosody-s2s-port',
+    'prosody-s2s-interfaces',
     'prosody-room-type',
     'prosody-peertube-uri',
     'prosody-components',
@@ -118,7 +121,8 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const logByDefault = (settings['prosody-muc-log-by-default'] as boolean) ?? true
   const disableAnon = (settings['chat-no-anonymous'] as boolean) || false
   const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
-  const enableC2s = (settings['prosody-c2s'] as boolean) || false
+  const enableC2S = (settings['prosody-c2s'] as boolean) || false
+  const enableRoomS2S = (settings['prosody-room-allow-s2s'] as boolean) || false
   const enableComponents = (settings['prosody-components'] as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
@@ -149,7 +153,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   config.usePeertubeBoshAndWebsocket(prosodyDomain, port, options.peertubeHelpers.config.getWebserverUrl(), useWS)
   config.useMucHttpDefault(roomApiUrl)
 
-  if (enableC2s) {
+  if (enableC2S) {
     const c2sPort = (settings['prosody-c2s-port'] as string) || '52822'
     if (!/^\d+$/.test(c2sPort)) {
       throw new Error('Invalid c2s port')
@@ -167,6 +171,25 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
       valuesToHideInDiagnostic.set('Component ' + component.name + ' secret', component.secret)
     }
     config.useExternalComponents(componentsPort, components)
+  }
+
+  if (enableRoomS2S) {
+    const s2sPort = (settings['prosody-s2s-port'] as string) || '5269'
+    if (!/^\d+$/.test(s2sPort)) {
+      throw new Error('Invalid s2s port')
+    }
+    const s2sInterfaces = ((settings['prosody-s2s-interfaces'] as string) || '')
+      .split(',')
+      .map(s => s.trim())
+    // Check that there is no invalid values (to avoid injections):
+    s2sInterfaces.forEach(networkInterface => {
+      if (networkInterface === '*') return
+      if (networkInterface === '::') return
+      if (networkInterface.match(/^\d+\.\d+\.\d+\.\d+$/)) return
+      if (networkInterface.match(/^[a-f0-9:]+$/)) return
+      throw new Error('Invalid s2s interfaces')
+    })
+    config.useRoomS2S(s2sPort, s2sInterfaces)
   }
 
   const logExpiration = readLogExpiration(options, logExpirationSetting)
