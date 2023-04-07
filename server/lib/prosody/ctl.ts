@@ -158,6 +158,11 @@ async function reloadProsody (options: RegisterServerOptions): Promise<boolean> 
   return true
 }
 
+async function checkProsody (options: RegisterServerOptions): Promise<string> {
+  const ctl = await prosodyCtl(options, 'check')
+  return ctl.message
+}
+
 interface ProsodyRunning {
   ok: boolean
   messages: string[]
@@ -341,6 +346,7 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
 
 export {
   getProsodyAbout,
+  checkProsody,
   testProsodyRunning,
   testProsodyCorrectlyRunning,
   prepareProsody,
