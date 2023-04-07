@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Diagnostic tool: add the result of `prosodyctl check` in the debug section.
+
 ## 6.2.3
 
 ### Minor changes and fixes

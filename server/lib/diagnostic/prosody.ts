@@ -1,6 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { getProsodyConfig, getProsodyConfigContentForDiagnostic, getWorkingDir } from '../prosody/config'
-import { getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
+import { checkProsody, getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
 import { getAPIKey } from '../apikey'
 import * as fs from 'fs'
@@ -189,6 +189,12 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     result.messages.push('Error when calling Prosody test api (test-prosody-peertube): ' + (error as string))
     return result
   }
+
+  const check = await checkProsody(options)
+  result.debug.push({
+    title: 'Prosody check',
+    message: check
+  })
 
   // Checking if there is a Prosody error log, and returning last lines.
   try {
