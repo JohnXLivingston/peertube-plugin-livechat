@@ -303,6 +303,33 @@ Please read
   })
 
   registerSetting({
+    name: 'prosody-room-allow-s2s',
+    label: loc('prosody_room_allow_s2s_label'),
+    type: 'input-checkbox',
+    default: false,
+    private: true,
+    descriptionHTML: loc('prosody_room_allow_s2s_description')
+  })
+
+  registerSetting({
+    name: 'prosody-s2s-port',
+    label: loc('prosody_s2s_port_label'),
+    type: 'input',
+    default: '5269',
+    private: true,
+    descriptionHTML: loc('prosody_s2s_port_description')
+  })
+
+  registerSetting({
+    name: 'prosody-s2s-interfaces',
+    label: loc('prosody_s2s_interfaces_label'),
+    type: 'input',
+    default: '*, ::',
+    private: true,
+    descriptionHTML: loc('prosody_s2s_interfaces_description')
+  })
+
+  registerSetting({
     name: 'prosody-c2s',
     label: loc('prosody_c2s_label'),
     type: 'input-checkbox',

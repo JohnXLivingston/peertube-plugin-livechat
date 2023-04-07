@@ -257,6 +257,12 @@ class ProsodyConfigContent {
     this.global.set('c2s_ports', [c2sPort])
   }
 
+  useRoomS2S (s2sPort: string, s2sInterfaces: string[]): void {
+    this.global.set('s2s_ports', [s2sPort])
+    this.global.set('s2s_interfaces', s2sInterfaces)
+    this.muc.add('modules_enabled', 's2s')
+  }
+
   useExternalComponents (componentsPort: string, components: ExternalComponent[]): void {
     this.global.set('component_ports', [componentsPort])
     this.global.set('component_interfaces', ['127.0.0.1', '::1'])

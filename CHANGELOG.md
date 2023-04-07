@@ -2,6 +2,10 @@
 
 ## ??? (Not Released Yet)
 
+### New Features
+
+* XMPP clients: you can now allow connection to rooms using external XMPP accounts and XMPP clients. Please note that this feature might require some server configuration to be available. Please refer to the [documentation](https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/) for more informations.
+
 ### Minor changes and fixes
 
 * Diagnostic tool: add the result of `prosodyctl check` in the debug section.

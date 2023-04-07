@@ -203,6 +203,9 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
       switch (name) {
         case 'prosody-c2s-port':
           return options.formValues['prosody-c2s'] !== true
+        case 'prosody-s2s-port':
+        case 'prosody-s2s-interfaces':
+          return options.formValues['prosody-room-allow-s2s'] !== true
         case 'prosody-components-port':
         case 'prosody-components-list':
           return options.formValues['prosody-components'] !== true
