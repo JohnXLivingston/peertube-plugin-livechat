@@ -1,4 +1,4 @@
-#!/bin/node
+#!/bin/env node
 /* eslint-env es6 */
 
 const sharp = require('sharp')
