@@ -21,5 +21,8 @@
   "Not found": "Non trouvé",
   "Video": "Vidéo",
   "Channel": "Chaîne",
-  "Last activity": "Dernière activité"
+  "Last activity": "Dernière activité",
+  "Web": "Web",
+  "Connect using XMPP": "Connexion avec un client XMPP",
+  "You can connect to the room using an external XMPP account, and your favorite XMPP client.": "Vous pouvez vous connecter au salon en utilisant un compte XMPP externe, et votre client XMPP favori."
 }

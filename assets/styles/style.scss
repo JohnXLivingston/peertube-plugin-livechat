@@ -109,7 +109,7 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
 
 .peertube-plugin-livechat-shareurl-modal {
   & > * {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   .livechat-shareurl-copy {
@@ -126,8 +126,10 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
     }
   }
 
-  .livechat-shareurl-custom {
-    input[type="checkbox"] {
+  .livechat-shareurl-web-options,
+  .livechat-shareurl-xmpp-options {
+    input[type="checkbox"],
+    input[type="radio"] {
       margin-right: 20px;
     }
 
@@ -135,18 +137,32 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
       display: block;
     }
 
-    .livechat-shareurl-custom-readonly-options {
+    .livechat-shareurl-web-options-readonly {
       margin-left: 40px;
 
       & > * {
         display: block;
       }
 
-      &.livechat-shareurl-custom-readonly-disabled {
+      &.livechat-shareurl-web-options-readonly-disabled {
         label {
           color: var(--gray-dark);
         }
       }
     }
+  }
+
+  .livechat-shareurl-protocol {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 30px;
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+  }
+
+  .livechat-shareurl-tips {
+    min-height: 60px;
   }
 }

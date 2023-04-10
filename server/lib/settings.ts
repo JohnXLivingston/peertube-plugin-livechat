@@ -307,7 +307,7 @@ Please read
     label: loc('prosody_room_allow_s2s_label'),
     type: 'input-checkbox',
     default: false,
-    private: true,
+    private: false,
     descriptionHTML: loc('prosody_room_allow_s2s_description')
   })
 

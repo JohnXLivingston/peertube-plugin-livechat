@@ -1,7 +1,7 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
 import { logger } from './logger'
-import { getIframeUri, UriOptions } from './uri'
+import { getIframeUri, getXMPPUri, UriOptions } from './uri'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 
 interface ShareForm {
@@ -14,6 +14,10 @@ interface ShareForm {
   readonlyOptions: HTMLElement
   autoColors?: HTMLInputElement
   generateIframe: HTMLInputElement
+  divTips: HTMLElement
+  radioProtocolWeb?: HTMLInputElement
+  radioProtocolXMPP?: HTMLInputElement
+  divWebOptions: HTMLDivElement
 }
 
 async function shareChatUrl (registerOptions: RegisterClientOptions, settings: any, video: Video): Promise<void> {
@@ -21,10 +25,13 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
 
   const [
     labelShare,
+    labelWeb,
+    labelXMPP,
+    labelXMPPTips,
     labelReadonly,
     labelWithscroll,
     labelTransparent,
-    tipsOBS,
+    labelOBSTips,
     labelCopy,
     labelCopied,
     labelError,
@@ -34,6 +41,10 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     labelChatFor
   ] = await Promise.all([
     peertubeHelpers.translate('Share chat link'),
+    peertubeHelpers.translate('Web'),
+    peertubeHelpers.translate('Connect using XMPP'),
+    // eslint-disable-next-line max-len
+    peertubeHelpers.translate('You can connect to the room using an external XMPP account, and your favorite XMPP client.'),
     peertubeHelpers.translate('Read-only'),
     peertubeHelpers.translate('Show the scrollbar'),
     peertubeHelpers.translate('Transparent background (for stream integration, with OBS for example)'),
@@ -79,24 +90,52 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       divShareString.append(openButton)
       container.append(divShareString)
 
+      let radioProtocolWeb
+      let radioProtocolXMPP
+      if (settings['prosody-room-allow-s2s']) {
+        const protocolContainer = document.createElement('div')
+        protocolContainer.classList.add('livechat-shareurl-protocol')
+
+        radioProtocolWeb = document.createElement('input')
+        radioProtocolWeb.setAttribute('type', 'radio')
+        radioProtocolWeb.setAttribute('value', 'web')
+        radioProtocolWeb.setAttribute('name', 'protocol')
+        const radioProtocolWebLabel = document.createElement('label')
+        radioProtocolWebLabel.textContent = labelWeb
+        radioProtocolWebLabel.prepend(radioProtocolWeb)
+        protocolContainer.append(radioProtocolWebLabel)
+
+        radioProtocolXMPP = document.createElement('input')
+        radioProtocolXMPP.setAttribute('type', 'radio')
+        radioProtocolXMPP.setAttribute('value', 'xmpp')
+        radioProtocolXMPP.setAttribute('name', 'protocol')
+        const radioProtocolXMPPLabel = document.createElement('label')
+        radioProtocolXMPPLabel.textContent = labelXMPP
+        radioProtocolXMPPLabel.prepend(radioProtocolXMPP)
+        protocolContainer.append(radioProtocolXMPPLabel)
+
+        container.append(protocolContainer)
+      }
+
       const divTips = document.createElement('div')
-      divTips.textContent = tipsOBS
+      divTips.textContent = ''
+      divTips.classList.add('livechat-shareurl-tips')
       container.append(divTips)
 
-      const divCustom = document.createElement('div')
-      divCustom.classList.add('livechat-shareurl-custom')
-      container.append(divCustom)
+      const divWebOptions = document.createElement('div')
+      divWebOptions.classList.add('livechat-shareurl-web-options')
+      container.append(divWebOptions)
 
       const readonly = document.createElement('input')
       readonly.setAttribute('type', 'checkbox')
       const readonlyLabelEl = document.createElement('label')
       readonlyLabelEl.textContent = labelReadonly
       readonlyLabelEl.prepend(readonly)
-      divCustom.append(readonlyLabelEl)
+      divWebOptions.append(readonlyLabelEl)
 
       const readonlyOptions = document.createElement('div')
-      readonlyOptions.classList.add('livechat-shareurl-custom-readonly-options')
-      divCustom.append(readonlyOptions)
+      readonlyOptions.classList.add('livechat-shareurl-web-options-readonly')
+      divWebOptions.append(readonlyOptions)
 
       const withscroll = document.createElement('input')
       withscroll.setAttribute('type', 'checkbox')
@@ -119,7 +158,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
         autoColors = document.createElement('input')
         autoColors.setAttribute('type', 'checkbox')
         label.prepend(autoColors)
-        divCustom.append(label)
+        divWebOptions.append(label)
       }
 
       const generateIframe = document.createElement('input')
@@ -127,7 +166,18 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       const generateIframeLabelEl = document.createElement('label')
       generateIframeLabelEl.textContent = labelGenerateIframe
       generateIframeLabelEl.prepend(generateIframe)
-      divCustom.append(generateIframeLabelEl)
+      divWebOptions.append(generateIframeLabelEl)
+
+      if (radioProtocolWeb) {
+        radioProtocolWeb.onclick = () => {
+          renderContent(container)
+        }
+      }
+      if (radioProtocolXMPP) {
+        radioProtocolXMPP.onclick = () => {
+          renderContent(container)
+        }
+      }
 
       readonly.onclick = () => {
         renderContent(container)
@@ -164,7 +214,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
 
       openButton.onclick = () => {
         // Don't open the url if it is an iframe!
-        if (shareString.value.startsWith('http')) {
+        if (shareString.value.startsWith('http') || shareString.value.startsWith('xmpp')) {
           window.open(shareString.value)
         }
       }
@@ -178,7 +228,11 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
         transparent,
         readonlyOptions,
         autoColors,
-        generateIframe
+        generateIframe,
+        radioProtocolWeb,
+        radioProtocolXMPP,
+        divWebOptions,
+        divTips
       }
       restore(form)
     }
@@ -189,6 +243,16 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     const uriOptions: UriOptions = {
       ignoreAutoColors: form.autoColors ? !form.autoColors.checked : true,
       permanent: true
+    }
+    if (form.radioProtocolXMPP?.checked) {
+      // To minimize the height gap between the 2 modes,
+      // and prevent the dialog to resize and move too much,
+      // we use visibility instead of display
+      form.divTips.textContent = labelXMPPTips
+      form.divWebOptions.style.visibility = 'hidden'
+    } else {
+      form.divTips.textContent = labelOBSTips
+      form.divWebOptions.style.visibility = 'visible'
     }
     if (form.readonly.checked) {
       if (form.withscroll.checked) {
@@ -201,28 +265,35 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       }
       form.withscroll.disabled = false
       form.transparent.disabled = false
-      form.readonlyOptions.classList.remove('livechat-shareurl-custom-readonly-disabled')
+      form.readonlyOptions.classList.remove('livechat-shareurl-web-options-readonly-disabled')
     } else {
       form.withscroll.disabled = true
       form.transparent.disabled = true
-      form.readonlyOptions.classList.add('livechat-shareurl-custom-readonly-disabled')
+      form.readonlyOptions.classList.add('livechat-shareurl-web-options-readonly-disabled')
     }
-    let shareStringValue = getIframeUri(registerOptions, settings, video, uriOptions)
-    if (form.generateIframe.checked) {
-      form.openButton.disabled = true
-      if (shareStringValue) {
-        // To properly escape all attributes, we are constructing an HTMLIframeElement
-        const iframe = document.createElement('iframe')
-        iframe.setAttribute('src', shareStringValue)
-        iframe.setAttribute('title', labelChatFor + ' ' + video.name)
-        iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
-        iframe.setAttribute('width', '560')
-        iframe.setAttribute('height', '315')
-        iframe.setAttribute('frameborder', '0')
-        shareStringValue = iframe.outerHTML
+    let shareStringValue
+    if (!form.radioProtocolXMPP?.checked) {
+      shareStringValue = getIframeUri(registerOptions, settings, video, uriOptions)
+      if (form.generateIframe.checked) {
+        form.openButton.disabled = true
+        if (shareStringValue) {
+          // To properly escape all attributes, we are constructing an HTMLIframeElement
+          const iframe = document.createElement('iframe')
+          iframe.setAttribute('src', shareStringValue)
+          iframe.setAttribute('title', labelChatFor + ' ' + video.name)
+          iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
+          iframe.setAttribute('width', '560')
+          iframe.setAttribute('height', '315')
+          iframe.setAttribute('frameborder', '0')
+          shareStringValue = iframe.outerHTML
+        }
+      } else {
+        form.openButton.disabled = false
       }
     } else {
-      form.openButton.disabled = false
+      // we must generate a XMPP room address
+      // form.openButton.disabled = true
+      shareStringValue = getXMPPUri(registerOptions, settings, video)
     }
     form.shareString.setAttribute('value', shareStringValue ?? '')
   }
@@ -237,7 +308,8 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       withscroll: !!form.withscroll.checked,
       transparent: !!form.transparent.checked,
       autocolors: !!form.autoColors?.checked,
-      generateIframe: !!form.generateIframe.checked
+      generateIframe: !!form.generateIframe.checked,
+      protocol: !form.radioProtocolWeb || form.radioProtocolWeb.checked ? 'web' : 'xmpp'
     }
     window.localStorage.setItem('peertube-plugin-livechat-shareurl', JSON.stringify(v))
   }
@@ -263,6 +335,11 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
         form.autoColors.checked = !!v.autocolors
       }
       form.generateIframe.checked = !!v.generateIframe
+      if (form.radioProtocolXMPP && v.protocol === 'xmpp') {
+        form.radioProtocolXMPP.checked = true
+      } else if (form.radioProtocolWeb) {
+        form.radioProtocolWeb.checked = true
+      }
     } catch (err) {
       logger.error(err as string)
     }
