@@ -21,5 +21,8 @@
   "Not found": "Non trovato",
   "Video": "Video",
   "Channel": "Canale",
-  "Last activity": "Ultima attività"
+  "Last activity": "Ultima attività",
+  "Web": false,
+  "Connect using XMPP": false,
+  "You can connect to the room using an external XMPP account, and your favorite XMPP client.": false
 }

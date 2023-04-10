@@ -66,10 +66,31 @@ function getIframeUri (
   return iframeUriStr
 }
 
+function getXMPPUri (
+  registerOptions: RegisterClientOptions, settings: any, video: Video
+): string | null {
+  // returns something like xmpp:256896ac-199a-4dab-bb3a-4fd916140272@room.instance.tdl?join
+  if (!settings['prosody-room-allow-s2s']) {
+    return null
+  }
+
+  let uuid: string
+  if (settings['prosody-room-type'] === 'channel') {
+    uuid = 'channel.' + video.channel.id.toString()
+  } else {
+    uuid = video.uuid.toString()
+  }
+
+  const hostname = window.location.hostname
+
+  return 'xmpp:' + uuid + '@room.' + hostname + '?join'
+}
+
 export type {
   UriOptions
 }
 export {
   getBaseRoute,
-  getIframeUri
+  getIframeUri,
+  getXMPPUri
 }

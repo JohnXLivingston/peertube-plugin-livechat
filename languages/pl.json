@@ -21,5 +21,8 @@
   "Not found": false,
   "Video": false,
   "Channel": false,
-  "Last activity": false
+  "Last activity": false,
+  "Web": false,
+  "Connect using XMPP": false,
+  "You can connect to the room using an external XMPP account, and your favorite XMPP client.": false
 }
