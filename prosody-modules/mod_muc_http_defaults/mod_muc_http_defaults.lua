@@ -89,7 +89,7 @@ local function apply_config(room, settings)
 		if type(config.description) == "string" then room:set_description(config.description); end
 		if type(config.language) == "string" then room:set_language(config.language); end
 		if type(config.password) == "string" then room:set_password(config.password); end
-		if type(config.subject) == "string" then room:set_subject(config.subject); end
+		if type(config.subject) == "string" then room:set_subject(room.jid, config.subject); end
 
 		if type(config.public) == "boolean" then room:set_public(config.public); end
 		if type(config.members_only) == "boolean" then room:set_members_only(config.members_only); end

@@ -145,7 +145,7 @@ class ProsodyConfigContent {
     this.global.set('pidfile', this.paths.pid)
     this.global.set('plugin_paths', [this.paths.modules])
     this.global.set('data_path', this.paths.data)
-    this.global.set('default_storage', 'internal')
+    // this.global.set('default_storage', 'internal') Not needed as storage is set to a string
     this.global.set('storage', 'internal')
 
     this.global.set('modules_enabled', [
@@ -162,7 +162,6 @@ class ProsodyConfigContent {
       // 'vcard_legacy' // Conversion between legacy vCard and PEP Avatar, vcard
       // 'vcard4' // User profiles (stored in PEP)
       'disco' // Enable mod_disco (feature discovering)
-
     ])
     this.global.set('modules_disabled', [
       // 'offline' // Store offline messages
@@ -170,10 +169,11 @@ class ProsodyConfigContent {
       's2s' // Handle server-to-server connections
     ])
 
-    this.global.set('cross_domain_bosh', false)
+    // this.global.set('cross_domain_bosh', false) No more needed with Prosody 0.12
     this.global.set('consider_bosh_secure', false)
-    this.global.set('cross_domain_websocket', false)
+    // this.global.set('cross_domain_websocket', false) No more needed with Prosody 0.12
     this.global.set('consider_websocket_secure', false)
+    this.global.set('certificates', this.paths.data)
 
     this.muc.set('muc_room_locking', false)
     this.muc.set('muc_tombstones', false)
@@ -197,7 +197,7 @@ class ProsodyConfigContent {
     this.authenticated = new ProsodyConfigVirtualHost(this.prosodyDomain)
 
     this.authenticated.set('authentication', 'http')
-    this.authenticated.set('modules_enabled', ['ping', 'auth_http'])
+    this.authenticated.set('modules_enabled', ['ping'])
 
     this.authenticated.set('http_auth_url', url)
   }
@@ -213,6 +213,7 @@ class ProsodyConfigContent {
     this.global.set('http_interfaces', ['127.0.0.1', '::1'])
     this.global.set('https_ports', [])
     this.global.set('https_interfaces', ['127.0.0.1', '::1'])
+    this.global.set('trusted_proxies', ['127.0.0.1', '::1'])
 
     this.global.set('consider_bosh_secure', true)
     if (useWS) {
@@ -221,11 +222,10 @@ class ProsodyConfigContent {
       this.global.set('c2s_close_timeout', 29)
 
       // This line seems to be required by Prosody, otherwise it rejects websocket...
-      this.global.set('cross_domain_websocket', [publicServerUrl])
+      // this.global.set('cross_domain_websocket', [publicServerUrl])  No more needed with Prosody 0.12
     }
 
     if (this.anon) {
-      this.anon.set('trusted_proxies', ['127.0.0.1', '::1'])
       this.anon.set('allow_anonymous_s2s', false)
       this.anon.add('modules_enabled', 'http')
       this.anon.add('modules_enabled', 'bosh')
@@ -241,7 +241,6 @@ class ProsodyConfigContent {
     this.muc.set('http_external_url', 'http://' + prosodyDomain)
 
     if (this.authenticated) {
-      this.authenticated.set('trusted_proxies', ['127.0.0.1', '::1'])
       this.authenticated.set('allow_anonymous_s2s', false)
       this.authenticated.add('modules_enabled', 'http')
       this.authenticated.add('modules_enabled', 'bosh')
@@ -261,6 +260,7 @@ class ProsodyConfigContent {
     this.global.set('s2s_ports', [s2sPort])
     this.global.set('s2s_interfaces', s2sInterfaces)
     this.global.set('s2s_secure_auth', false)
+    this.global.add('modules_enabled', 'tls') // required for s2s and co
     this.muc.add('modules_enabled', 's2s')
     this.muc.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
   }

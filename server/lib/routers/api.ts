@@ -21,7 +21,8 @@ interface RoomDefaults {
     members_only?: boolean
     allow_member_invites?: boolean
     public_jids?: boolean
-    subject: string
+    // subject_from: string
+    // subject: string
     changesubject?: boolean
     // historylength: number
     moderated?: boolean
@@ -80,8 +81,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
         const roomDefaults: RoomDefaults = {
           config: {
             name: channelInfos.displayName,
-            description: '',
-            subject: channelInfos.displayName
+            description: ''
+            // subject: channelInfos.displayName
           },
           affiliations: affiliations
         }
@@ -129,8 +130,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
           config: {
             name: video.name,
             description: '',
-            language: video.language,
-            subject: video.name
+            language: video.language
+            // subject: video.name
           },
           affiliations: affiliations
         }
