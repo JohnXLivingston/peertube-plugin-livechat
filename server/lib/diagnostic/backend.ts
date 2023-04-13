@@ -5,6 +5,6 @@ export async function diagBackend (test: string, _options: RegisterServerOptions
   const result = newResult(test)
   result.label = 'Backend connection'
   result.ok = true
-  result.next = 'webchat-video'
+  result.next = 'debug'
   return result
 }

@@ -9,6 +9,7 @@
 ### Minor changes and fixes
 
 * Diagnostic tool: add the result of `prosodyctl check` in the debug section.
+* New debug mode
 
 ## 6.2.3
 

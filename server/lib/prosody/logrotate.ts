@@ -1,5 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ProsodyFilePaths } from './config/paths'
+import { isDebugMode } from '../debug'
 
 type Rotate = (file: string, options: {
   count?: number
@@ -32,8 +33,9 @@ async function _rotate (options: RegisterServerOptions, path: string): Promise<v
 
 function startProsodyLogRotate (options: RegisterServerOptions, paths: ProsodyFilePaths, reload: ReloadProsody): void {
   const logger = options.peertubeHelpers.logger
-  const checkInterval = process.env.NODE_ENV === 'test' ? 60 * 1000 : 60 * 60 * 1000 // check every hour
-  const rotateEvery = process.env.NODE_ENV === 'test' ? 2 * 60 * 1000 : 24 * 60 * 60 * 1000 // rotate every 24hour
+  const debugMode = isDebugMode(options)
+  const checkInterval = debugMode ? 60 * 1000 : 60 * 60 * 1000 // check every hour
+  const rotateEvery = debugMode ? 2 * 60 * 1000 : 24 * 60 * 60 * 1000 // rotate every 24hour
   // TODO: also rotate when file is too big
 
   if (logRotate) {

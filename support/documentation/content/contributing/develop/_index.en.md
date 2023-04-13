@@ -66,3 +66,16 @@ ESBuild can handle Typescript, but does not check types
 (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).
 That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).
 Then, if everything is okay, we run ESBuild to generate the compiled javascript.
+
+## Debug Mode
+
+There is a debug mode for this plugin, that shorten some delay.
+For example, some log files will rotate every two minutes, instead of once per day.
+This permit to test more easily certain actions, for which it could normally take hours or days to wait.
+
+To enable this mode, you juste have to create the
+`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file
+(replacing `/var/www/peertube/storage/` by the correct path on your installation).
+
+The simple existence of this file is sufficient to trigger the debug mode.
+To make sure it's taken into account, you can restart your Peertube instance.

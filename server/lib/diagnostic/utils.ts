@@ -1,4 +1,4 @@
-type nextValue = 'backend' | 'webchat-video' | 'prosody'
+type nextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody'
 
 interface MessageWithLevel {
   level: 'info' | 'warning' | 'error'
