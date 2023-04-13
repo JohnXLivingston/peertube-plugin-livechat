@@ -1,6 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { diagBackend } from './backend'
 import { TestResult, newResult } from './utils'
+import { diagDebug } from './debug'
 import { diagProsody } from './prosody'
 import { diagVideo } from './video'
 
@@ -9,6 +10,8 @@ export async function diag (test: string, options: RegisterServerOptions): Promi
 
   if (test === 'backend') {
     result = await diagBackend(test, options)
+  } else if (test === 'debug') {
+    result = await diagDebug(test, options)
   } else if (test === 'webchat-video') {
     result = await diagVideo(test, options)
   } else if (test === 'prosody') {

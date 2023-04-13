@@ -347,7 +347,7 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
     return
   }
   logger.info('Prosody is running')
-  startProsodyLogRotate(options, filePaths, reloadProsody)
+  await startProsodyLogRotate(options, filePaths, reloadProsody)
 }
 
 async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise<void> {
