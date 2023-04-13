@@ -139,6 +139,36 @@ indem Sie seine Eigenschaften bearbeiten.
 Hier können Sie die Ablaufzeit für Raumprotokolle einstellen.
 Siehe die Online-Hilfe für akzeptierte Werte.
 
+### Enable connection to room using external XMPP accounts
+
+By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients.<br>
+Warning, enabling this option can request extra server and DNS configuration.
+Please refer to the documentation: [Enable external XMPP account connections](/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/).
+
+### Prosody server to server port
+
+The port that will be used for XMPP s2s (server to server) connections.<br>
+You should use the standard 5269 port.
+Otherwise you should [setup a specific DNS record](https://prosody.im/doc/s2s).
+
+### Server to server network interfaces
+
+The network interfaces to listen on for server to server connections.<br>
+List of IP to listen on, coma separated (spaces will be stripped).<br>
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.<br>
+Examples:
+
+- `*, ::`
+- `*`
+- `127.0.0.1, ::1`
+- `172.18.0.42`
+
+### Certificates directory
+
+If this field is empty, the plugin will generate and use self-signed certificates.<br>
+If you want to use other certificates, just specify here the folder where
+Prosody can find them. Note: the `peertube` user must have read access to this directory.
+
 ### Enable client to server connections (Aktivieren von Client-Server-Verbindungen)
 
 Diese Einstellung ermöglicht es XMPP-Clients, sich mit dem eingebauten Prosody-Server zu verbinden.

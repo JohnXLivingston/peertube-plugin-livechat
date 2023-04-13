@@ -5,7 +5,8 @@ interface ProsodyFilePaths {
   log: string
   config: string
   data: string
-  certs: string
+  certs?: string
+  certsDirIsCustom: boolean
   modules: string
   avatars: string
   exec?: string

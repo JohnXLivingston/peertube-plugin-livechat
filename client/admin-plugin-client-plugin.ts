@@ -205,6 +205,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
           return options.formValues['prosody-c2s'] !== true
         case 'prosody-s2s-port':
         case 'prosody-s2s-interfaces':
+        case 'prosody-certificates-dir':
           return options.formValues['prosody-room-allow-s2s'] !== true
         case 'prosody-components-port':
         case 'prosody-components-list':
