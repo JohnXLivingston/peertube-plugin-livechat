@@ -87,6 +87,8 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   }
 }
 
+type ProsodyConfigCertificates = false | 'generate-self-signed'
+
 interface ProsodyConfig {
   content: string
   paths: ProsodyFilePaths
@@ -97,7 +99,7 @@ interface ProsodyConfig {
   logByDefault: boolean
   logExpiration: ConfigLogExpiration
   valuesToHideInDiagnostic: Map<string, string>
-  needCerticates: boolean
+  certificates: ProsodyConfigCertificates
 }
 async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
@@ -134,7 +136,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
   const roomType = settings['prosody-room-type'] === 'channel' ? 'channel' : 'video'
-  let needCerticates: boolean = false
+  let certificates: ProsodyConfigCertificates = false
 
   const apikey = await getAPIKey(options)
   valuesToHideInDiagnostic.set('APIKey', apikey)
@@ -182,7 +184,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   }
 
   if (enableRoomS2S) {
-    needCerticates = true
+    certificates = 'generate-self-signed'
     const s2sPort = (settings['prosody-s2s-port'] as string) || '5269'
     if (!/^\d+$/.test(s2sPort)) {
       throw new Error('Invalid s2s port')
@@ -238,7 +240,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     logByDefault,
     logExpiration,
     valuesToHideInDiagnostic,
-    needCerticates
+    certificates
   }
 }
 

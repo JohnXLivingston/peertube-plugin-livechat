@@ -1,6 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ProsodyFilePaths } from './config/paths'
 import { isDebugMode } from '../debug'
+import { reloadProsody } from './ctl'
 
 type Rotate = (file: string, options: {
   count?: number
@@ -12,7 +13,6 @@ interface ProsodyLogRotate {
   timer: NodeJS.Timeout
   lastRotation: number
 }
-type ReloadProsody = (options: RegisterServerOptions) => Promise<boolean>
 
 let logRotate: ProsodyLogRotate | undefined
 
@@ -31,7 +31,7 @@ async function _rotate (options: RegisterServerOptions, path: string): Promise<v
   return p
 }
 
-function startProsodyLogRotate (options: RegisterServerOptions, paths: ProsodyFilePaths, reload: ReloadProsody): void {
+function startProsodyLogRotate (options: RegisterServerOptions, paths: ProsodyFilePaths): void {
   const logger = options.peertubeHelpers.logger
   const debugMode = isDebugMode(options)
   const checkInterval = debugMode ? 60 * 1000 : 60 * 60 * 1000 // check every hour
@@ -63,7 +63,7 @@ function startProsodyLogRotate (options: RegisterServerOptions, paths: ProsodyFi
       _rotate(options, paths.error)
     ])
     p.then(() => {
-      reload(options).then(() => {
+      reloadProsody(options).then(() => {
         logger.debug('Prosody reloaded')
       }, () => {
         logger.error('Prosody failed to reload')

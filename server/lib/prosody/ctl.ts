@@ -1,6 +1,9 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig, ProsodyConfig } from './config'
+import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig } from './config'
 import { startProsodyLogRotate, stopProsodyLogRotate } from './logrotate'
+import {
+  ensureProsodyCertificates, startProsodyCertificatesRenewCheck, stopProsodyCertificatesRenewCheck
+} from './certificates'
 import { disableProxyRoute, enableProxyRoute } from '../routers/webchat'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
@@ -347,7 +350,8 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
     return
   }
   logger.info('Prosody is running')
-  await startProsodyLogRotate(options, filePaths, reloadProsody)
+  await startProsodyLogRotate(options, filePaths)
+  await startProsodyCertificatesRenewCheck(options, config)
 }
 
 async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise<void> {
@@ -356,6 +360,7 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
   logger.info('Checking if Prosody is running, and shutting it down if so')
 
   stopProsodyLogRotate(options)
+  stopProsodyCertificatesRenewCheck(options)
 
   // NB: this function is called on plugin unregister, even if prosody is not used
   // so we must avoid creating the working dir now
@@ -373,28 +378,6 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
   logger.info(`ProsodyCtl command returned: ${status.message}`)
 }
 
-async function ensureProsodyCertificates (options: RegisterServerOptions, config: ProsodyConfig): Promise<void> {
-  if (!config.needCerticates) { return }
-  options.peertubeHelpers.logger.info('Prosody needs certicicates, checking if certificates are okay...')
-
-  // FIXME: don't generate certicicated everytime, just if it is missing or expired.
-
-  const prosodyDomain = config.host
-  // Using: prososyctl --config /.../prosody.cfg.lua cert generate prosodyDomain.tld
-  await prosodyCtl(options, 'cert', {
-    additionalArgs: ['generate', prosodyDomain],
-    yesMode: true,
-    stdErrFilter: (data) => {
-      // For an unknow reason, `prosodyctl cert generate` outputs openssl data on stderr...
-      // So we filter these logs.
-      if (data.match(/Generating \w+ private key/)) { return false }
-      if (data.match(/^[.+o*\n]*$/m)) { return false }
-      if (data.match(/e is \d+/)) { return false }
-      return true
-    }
-  })
-}
-
 export {
   getProsodyAbout,
   checkProsody,
@@ -402,5 +385,7 @@ export {
   testProsodyCorrectlyRunning,
   prepareProsody,
   ensureProsodyRunning,
-  ensureProsodyNotRunning
+  ensureProsodyNotRunning,
+  prosodyCtl,
+  reloadProsody
 }
