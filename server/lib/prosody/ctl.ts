@@ -1,5 +1,5 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig } from './config'
+import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig, ProsodyConfig } from './config'
 import { startProsodyLogRotate, stopProsodyLogRotate } from './logrotate'
 import { disableProxyRoute, enableProxyRoute } from '../routers/webchat'
 import * as fs from 'fs'
@@ -91,7 +91,14 @@ interface ProsodyCtlResult {
   sterr: string
   message: string
 }
-async function prosodyCtl (options: RegisterServerOptions, command: string): Promise<ProsodyCtlResult> {
+interface ProsodyCtlOptions {
+  additionalArgs?: string[]
+  yesMode?: boolean
+  stdErrFilter?: (data: string) => boolean
+}
+async function prosodyCtl (
+  options: RegisterServerOptions, command: string, prosodyCtlOptions?: ProsodyCtlOptions
+): Promise<ProsodyCtlResult> {
   const logger = options.peertubeHelpers.logger
   logger.debug('Calling prosodyCtl with command ' + command)
 
@@ -113,6 +120,10 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
       filePaths.config,
       command
     ]
+    prosodyCtlOptions?.additionalArgs?.forEach(arg => {
+      // No need to check for code injection, child_process.spawn will escape args correctly.
+      cmdArgs.push(arg)
+    })
     const spawned = child_process.spawn(filePaths.execCtl, cmdArgs, {
       cwd: filePaths.dir,
       env: {
@@ -120,11 +131,25 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
         PROSODY_CONFIG: filePaths.config
       }
     })
+
+    let yesModeInterval: NodeJS.Timer
+    if (prosodyCtlOptions?.yesMode) {
+      yesModeInterval = setInterval(() => {
+        options.peertubeHelpers.logger.debug('ProsodyCtl was called in yesMode, writing to standard input.')
+        spawned.stdin.write('\n')
+      }, 10)
+    }
+
     spawned.stdout.on('data', (data) => {
       d += data as string
       m += data as string
     })
     spawned.stderr.on('data', (data) => {
+      if (prosodyCtlOptions?.stdErrFilter) {
+        if (!prosodyCtlOptions.stdErrFilter('' + (data as string))) {
+          return
+        }
+      }
       options.peertubeHelpers.logger.error(`Spawned command ${command} has errors: ${data as string}`)
       e += data as string
       m += data as string
@@ -134,6 +159,7 @@ async function prosodyCtl (options: RegisterServerOptions, command: string): Pro
     // on 'close' and not 'exit', to be sure everything is done
     // (else it can cause trouble by cleaning AppImage extract too soon)
     spawned.on('close', (code) => {
+      if (yesModeInterval) { clearInterval(yesModeInterval) }
       resolve({
         code: code,
         stdout: d,
@@ -261,6 +287,9 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
     return
   }
 
+  // Check certicates if needed.
+  await ensureProsodyCertificates(options, config)
+
   // launch prosody
   const execCmd = filePaths.exec + (filePaths.execArgs.length ? ' ' + filePaths.execArgs.join(' ') : '')
   logger.info('Going to launch prosody (' + execCmd + ')')
@@ -342,6 +371,28 @@ async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise
   logger.debug('Calling prosodyctl to stop the process')
   const status = await prosodyCtl(options, 'stop')
   logger.info(`ProsodyCtl command returned: ${status.message}`)
+}
+
+async function ensureProsodyCertificates (options: RegisterServerOptions, config: ProsodyConfig): Promise<void> {
+  if (!config.needCerticates) { return }
+  options.peertubeHelpers.logger.info('Prosody needs certicicates, checking if certificates are okay...')
+
+  // FIXME: don't generate certicicated everytime, just if it is missing or expired.
+
+  const prosodyDomain = config.host
+  // Using: prososyctl --config /.../prosody.cfg.lua cert generate prosodyDomain.tld
+  await prosodyCtl(options, 'cert', {
+    additionalArgs: ['generate', prosodyDomain],
+    yesMode: true,
+    stdErrFilter: (data) => {
+      // For an unknow reason, `prosodyctl cert generate` outputs openssl data on stderr...
+      // So we filter these logs.
+      if (data.match(/Generating \w+ private key/)) { return false }
+      if (data.match(/^[.+o*\n]*$/m)) { return false }
+      if (data.match(/e is \d+/)) { return false }
+      return true
+    }
+  })
 }
 
 export {
