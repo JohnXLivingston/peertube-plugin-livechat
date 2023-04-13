@@ -64,22 +64,26 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
 
   let certsDir: string | undefined = path.resolve(dir, 'certs')
   let certsDirIsCustom = false
-  if ((settings['prosody-certificates-dir'] as string ?? '') !== '') {
-    if (!fs.statSync(settings['prosody-certificates-dir'] as string).isDirectory()) {
-      // We can throw an exception here...
-      // Because if the user input a wrong directory, the plugin will not register,
-      // and he will never be able to fix the conf
-      logger.error('Certificate directory does not exist or is not a directory')
-      certsDir = undefined
+  if (settings['prosody-room-allow-s2s']) {
+    if ((settings['prosody-certificates-dir'] as string ?? '') !== '') {
+      if (!fs.statSync(settings['prosody-certificates-dir'] as string).isDirectory()) {
+        // We can throw an exception here...
+        // Because if the user input a wrong directory, the plugin will not register,
+        // and he will never be able to fix the conf
+        logger.error('Certificate directory does not exist or is not a directory')
+        certsDir = undefined
+      } else {
+        certsDir = settings['prosody-certificates-dir'] as string
+      }
+      certsDirIsCustom = true
     } else {
-      certsDir = settings['prosody-certificates-dir'] as string
+      // In this case we are generating and using self signed certificates
+
+      // Note: when using prosodyctl to generate self-signed certificates,
+      // there are wrongly generated in the data dir.
+      // So we will use this dir as the certs dir.
+      certsDir = path.resolve(dir, 'data')
     }
-    certsDirIsCustom = true
-  } else if (settings['prosody-room-allow-s2s']) {
-    // Note: when using prosodyctl to generate self-signed certificates,
-    // there are wrongly generated in the data dir.
-    // So we will use this dir as the certs dir.
-    certsDir = path.resolve(dir, 'data')
   }
 
   return {
