@@ -159,6 +159,12 @@ Examples:
 - `127.0.0.1, ::1`
 - `172.18.0.42`
 
+### Certificates directory
+
+If this field is empty, the plugin will generate and use self-signed certificates.<br>
+If you want to use other certificates, just specify here the folder where
+Prosody can find them. Note: the `peertube` user must have read access to this directory.
+
 ### Enable client to server connections
 
 This setting enable XMPP clients to connect to the built-in Prosody server.

@@ -180,6 +180,12 @@ prosody_s2s_interfaces_description: |
     <li>172.18.0.42</li>
   </ul>
 
+prosody_certificates_dir_label: "Dossiers des certificats"
+prosody_certificates_dir_description: |
+  Si ce champ est vide, le plugin va générer et utiliser des certificats auto-signés.<br>
+  Si vous voulez utiliser d'autres certificats, vous avez juste à spécifier ici le dossier où
+  Prosody peut les trouver. Note: l'utilisateur `peertube` doit avoir un accès en lecture à ce dossier.
+
 prosody_c2s_label: "Activer les connexions client vers serveur"
 prosody_c2s_description: |
   Autoriser les clients XMPP à se connecter au serveur Prosody.<br>

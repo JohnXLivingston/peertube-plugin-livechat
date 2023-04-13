@@ -330,6 +330,15 @@ Please read
   })
 
   registerSetting({
+    name: 'prosody-certificates-dir',
+    label: loc('prosody_certificates_dir_label'),
+    type: 'input',
+    default: '',
+    private: true,
+    descriptionHTML: loc('prosody_certificates_dir_description')
+  })
+
+  registerSetting({
     name: 'prosody-c2s',
     label: loc('prosody_c2s_label'),
     type: 'input-checkbox',

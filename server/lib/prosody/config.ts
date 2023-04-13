@@ -27,7 +27,9 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   logger.debug('Calling getProsodyFilePaths')
 
   const dir = await getWorkingDir(options)
-  const settings = await options.settingsManager.getSettings(['use-system-prosody', 'prosody-room-allow-s2s'])
+  const settings = await options.settingsManager.getSettings([
+    'use-system-prosody', 'prosody-room-allow-s2s', 'prosody-certificates-dir'
+  ])
   let exec
   let execArgs: string[] = []
   let execCtl
@@ -60,8 +62,20 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     }
   }
 
-  let certsDir = path.resolve(dir, 'certs')
-  if (settings['prosody-room-allow-s2s']) {
+  let certsDir: string | undefined = path.resolve(dir, 'certs')
+  let certsDirIsCustom = false
+  if ((settings['prosody-certificates-dir'] as string ?? '') !== '') {
+    if (!fs.statSync(settings['prosody-certificates-dir'] as string).isDirectory()) {
+      // We can throw an exception here...
+      // Because if the user input a wrong directory, the plugin will not register,
+      // and he will never be able to fix the conf
+      logger.error('Certificate directory does not exist or is not a directory')
+      certsDir = undefined
+    } else {
+      certsDir = settings['prosody-certificates-dir'] as string
+    }
+    certsDirIsCustom = true
+  } else if (settings['prosody-room-allow-s2s']) {
     // Note: when using prosodyctl to generate self-signed certificates,
     // there are wrongly generated in the data dir.
     // So we will use this dir as the certs dir.
@@ -76,6 +90,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     config: path.resolve(dir, 'prosody.cfg.lua'),
     data: path.resolve(dir, 'data'),
     certs: certsDir,
+    certsDirIsCustom,
     modules: path.resolve(__dirname, '../../prosody-modules'),
     avatars: path.resolve(__dirname, '../../avatars'),
     exec,
@@ -87,7 +102,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   }
 }
 
-type ProsodyConfigCertificates = false | 'generate-self-signed'
+type ProsodyConfigCertificates = false | 'generate-self-signed' | 'use-from-dir'
 
 interface ProsodyConfig {
   content: string
@@ -114,6 +129,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'prosody-room-allow-s2s',
     'prosody-s2s-port',
     'prosody-s2s-interfaces',
+    'prosody-certificates-dir',
     'prosody-room-type',
     'prosody-peertube-uri',
     'prosody-components',
@@ -185,6 +201,9 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
 
   if (enableRoomS2S) {
     certificates = 'generate-self-signed'
+    if (config.paths.certsDirIsCustom) {
+      certificates = 'use-from-dir'
+    }
     const s2sPort = (settings['prosody-s2s-port'] as string) || '5269'
     if (!/^\d+$/.test(s2sPort)) {
       throw new Error('Invalid s2s port')
