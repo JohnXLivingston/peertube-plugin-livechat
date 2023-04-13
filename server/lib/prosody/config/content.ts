@@ -173,7 +173,7 @@ class ProsodyConfigContent {
     this.global.set('consider_bosh_secure', false)
     // this.global.set('cross_domain_websocket', false) No more needed with Prosody 0.12
     this.global.set('consider_websocket_secure', false)
-    this.global.set('certificates', this.paths.data)
+    this.global.set('certificates', this.paths.certs)
 
     this.muc.set('muc_room_locking', false)
     this.muc.set('muc_tombstones', false)

@@ -27,7 +27,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   logger.debug('Calling getProsodyFilePaths')
 
   const dir = await getWorkingDir(options)
-  const settings = await options.settingsManager.getSettings(['use-system-prosody'])
+  const settings = await options.settingsManager.getSettings(['use-system-prosody', 'prosody-room-allow-s2s'])
   let exec
   let execArgs: string[] = []
   let execCtl
@@ -60,6 +60,14 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     }
   }
 
+  let certsDir = path.resolve(dir, 'certs')
+  if (settings['prosody-room-allow-s2s']) {
+    // Note: when using prosodyctl to generate self-signed certificates,
+    // there are wrongly generated in the data dir.
+    // So we will use this dir as the certs dir.
+    certsDir = path.resolve(dir, 'data')
+  }
+
   return {
     dir: dir,
     pid: path.resolve(dir, 'prosody.pid'),
@@ -67,9 +75,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     log: path.resolve(dir, 'prosody.log'),
     config: path.resolve(dir, 'prosody.cfg.lua'),
     data: path.resolve(dir, 'data'),
-    // Certificates dir for Prosody.
-    // Note: not used yet, but we create the directory to avoid errors in prosody logs.
-    certs: path.resolve(dir, 'certs'),
+    certs: certsDir,
     modules: path.resolve(__dirname, '../../prosody-modules'),
     avatars: path.resolve(__dirname, '../../avatars'),
     exec,
