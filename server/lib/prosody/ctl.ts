@@ -5,6 +5,7 @@ import {
   ensureProsodyCertificates, startProsodyCertificatesRenewCheck, stopProsodyCertificatesRenewCheck
 } from './certificates'
 import { disableProxyRoute, enableProxyRoute } from '../routers/webchat'
+import { fixRoomSubject } from './fix-room-subject'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
 
@@ -70,6 +71,12 @@ async function prepareProsody (options: RegisterServerOptions): Promise<void> {
     filePaths.certsDirIsCustom,
     filePaths.appImageExtractPath
   )
+
+  try {
+    await fixRoomSubject(options, filePaths)
+  } catch (err) {
+    logger.error(err)
+  }
 
   const appImageToExtract = filePaths.appImageToExtract
   if (!appImageToExtract) {

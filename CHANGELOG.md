@@ -10,6 +10,7 @@
 
 * Diagnostic tool: add the result of `prosodyctl check` in the debug section.
 * New debug mode
+* Fix room topic: due to a [bug in mod_muc_http_defaults](https://hg.prosody.im/prosody-modules/rev/6d99ddd99694), room topics were badly configured. The plugin will fix them at startup, and stops trying to set the subject.
 
 ## 6.2.3
 
