@@ -1,7 +1,7 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
 import { logger } from './logger'
-import { getIframeUri, getXMPPUri, UriOptions } from './uri'
+import { getIframeUri, getXMPPAddr, UriOptions } from './uri'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 
 interface ShareForm {
@@ -213,9 +213,10 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       }
 
       openButton.onclick = () => {
+        const uri = shareString.getAttribute('open-uri') ?? shareString.value
         // Don't open the url if it is an iframe!
-        if (shareString.value.startsWith('http') || shareString.value.startsWith('xmpp')) {
-          window.open(shareString.value)
+        if (uri.startsWith('http') || uri.startsWith('xmpp')) {
+          window.open(uri)
         }
       }
 
@@ -272,6 +273,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       form.readonlyOptions.classList.add('livechat-shareurl-web-options-readonly-disabled')
     }
     let shareStringValue
+    let shareStringOpen: string | undefined
     if (!form.radioProtocolXMPP?.checked) {
       shareStringValue = getIframeUri(registerOptions, settings, video, uriOptions)
       if (form.generateIframe.checked) {
@@ -293,9 +295,16 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     } else {
       // we must generate a XMPP room address
       // form.openButton.disabled = true
-      shareStringValue = getXMPPUri(registerOptions, settings, video)
+      const addr = getXMPPAddr(registerOptions, settings, video)
+      shareStringValue = addr?.jid
+      shareStringOpen = addr?.uri
     }
     form.shareString.setAttribute('value', shareStringValue ?? '')
+    if (shareStringOpen) {
+      form.shareString.setAttribute('open-uri', shareStringOpen)
+    } else {
+      form.shareString.removeAttribute('open-uri')
+    }
   }
 
   function save (form: ShareForm): void {

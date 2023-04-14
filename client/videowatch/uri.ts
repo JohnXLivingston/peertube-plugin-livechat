@@ -66,9 +66,13 @@ function getIframeUri (
   return iframeUriStr
 }
 
-function getXMPPUri (
+interface XMPPAddr {
+  uri: string
+  jid: string
+}
+function getXMPPAddr (
   registerOptions: RegisterClientOptions, settings: any, video: Video
-): string | null {
+): XMPPAddr | null {
   // returns something like xmpp:256896ac-199a-4dab-bb3a-4fd916140272@room.instance.tdl?join
   if (!settings['prosody-room-allow-s2s']) {
     return null
@@ -83,7 +87,11 @@ function getXMPPUri (
 
   const hostname = window.location.hostname
 
-  return 'xmpp:' + uuid + '@room.' + hostname + '?join'
+  const jid = uuid + '@room.' + hostname
+  return {
+    jid,
+    uri: 'xmpp:' + jid + '?join'
+  }
 }
 
 export type {
@@ -92,5 +100,5 @@ export type {
 export {
   getBaseRoute,
   getIframeUri,
-  getXMPPUri
+  getXMPPAddr
 }
