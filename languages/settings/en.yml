@@ -174,7 +174,7 @@ prosody_certificates_dir_label: "Certificates directory"
 prosody_certificates_dir_description: |
   If this field is empty, the plugin will generate and use self-signed certificates.<br>
   If you want to use other certificates, just specify here the folder where
-  Prosody can find them. Note: the `peertube` user must have read access to this directory.
+  Prosody can find them. Note: the "peertube" user must have read access to this directory.
 
 prosody_c2s_label: "Enable client to server connections"
 prosody_c2s_description: |
