@@ -170,11 +170,11 @@ prosody_s2s_interfaces_description: |
     <li>172.18.0.42</li>
   </ul>
 
-prosody_certificates_dir_label: "Certificates directory"
+prosody_certificates_dir_label: "Certificates folder"
 prosody_certificates_dir_description: |
   If this field is empty, the plugin will generate and use self-signed certificates.<br>
   If you want to use other certificates, just specify here the folder where
-  Prosody can find them. Note: the "peertube" user must have read access to this directory.
+  Prosody can find them. Note: the "peertube" user must have read access to this folder.
 
 prosody_c2s_label: "Enable client to server connections"
 prosody_c2s_description: |

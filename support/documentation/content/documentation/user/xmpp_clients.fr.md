@@ -16,14 +16,14 @@ les administrateur⋅rices de votre instance Peertube. Il se peut donc que vous
 n'y ayez pas accès.
 {{% /notice %}}
 
-## Connection à votre compte Peertube
+## Connexion à votre compte Peertube
 
 {{% notice warning %}}
 Cette fonctionnalité n'est pas encore disponible, et viendra dans une
 prochaine version du plugin.
 {{% /notice %}}
 
-## Connection en utilisant un compte XMPP externe
+## Connexion en utilisant un compte XMPP externe
 
 Si cette fonctionnalité est activée sur votre instance, vous pouvez vous
 connecter aux tchats Peertube en utilisant un compte XMPP quelconque.
