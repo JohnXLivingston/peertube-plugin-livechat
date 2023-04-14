@@ -1,6 +1,6 @@
 +++
-title="Document"
-description="Documenter the plugin, or translate the documentation."
+title="Documentation"
+description="Document the plugin, or translate the documentation."
 weight=50
 chapter=false
 +++
