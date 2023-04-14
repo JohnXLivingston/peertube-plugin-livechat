@@ -102,3 +102,9 @@ vous devriez obtenir un résultat similaire à celui-ci:
 $ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV
 0 5 5269 videos.john-livingston.fr.
 ```
+
+### En cas de problème
+
+Si cela ne fonctionne pas, vous pouvez utiliser l'outils de diagnostic
+(un bouton se trouve en haut de la page des paramètres du plugin),
+et notamment regarder ce que dit la section «Prosody check».
