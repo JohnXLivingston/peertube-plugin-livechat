@@ -234,7 +234,10 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       route: '/xmpp-websocket',
       handler: (request, socket, head) => {
         if (!currentWebsocketProxy) {
-          throw new Error('There is no current websocket proxy, should not get here.')
+          peertubeHelpers.logger.error('There is no current websocket proxy, should not get here.')
+          // no need to close the socket, Peertube will
+          // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
+          return
         }
         currentWebsocketProxy.ws(request, socket, head)
       }
