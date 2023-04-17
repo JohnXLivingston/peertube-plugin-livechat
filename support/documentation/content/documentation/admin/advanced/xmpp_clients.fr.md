@@ -57,16 +57,7 @@ de leur paramétrage.
 Dans ce cas, vous pouvez indiquer ici un chemin sur le serveur, dans lequel vous
 placerez des certificats à utiliser par le module.
 Charge à vous de les générer et de les renouveller.
-Vous pouvez vous référer à la documentation de [Prosody](https://prosody.im/doc/certificates).
-
-{{% notice tip %}}
-Si vous voulez utiliser l'utilitaire ProsodyCtl pour importer des certificats
-letsencrypts, cet utilitaire est disponible (une fois Peertube démarré) en utilisant
-la commande qui suit (en adaptant le chemin vers votre dossier data Peertube,
-et en remplaçant «xxx» par les arguments que vous souhaitez passer à
-prosodyctl):
-`sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`
-{{% /notice %}}
+Voir plus loin pour une explication plus détaillée.
 
 ### Pare-feu
 
@@ -102,6 +93,115 @@ vous devriez obtenir un résultat similaire à celui-ci:
 $ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV
 0 5 5269 videos.john-livingston.fr.
 ```
+
+### Utilisation de certificats de confiance
+
+Les certificats auto-signés que le plugin utilise par défaut peuvent ne pas convenir à tous les serveurs distants.
+En effet, ceux-ci peuvent les refuser pour raison de sécurité.
+
+Il est possible d'utiliser des certificats validés par une autorité de certification.
+Cependant cela demande des connaissances d'administration système avancées.
+En effet, devant la multitude de cas possibles, il est impossible de documenter ici toutes les situations.
+La présente documentation va donc se contenter de vous expliquer le but à atteindre, et donner un example
+qui ne conviendra qu'à une situation «basique» (installation manuelle de Peertube, avec utilisation de letsencrypt).
+Si vous êtes dans une autre situation (installation Docker, certificats signés par une autre autorité, etc...), il
+vous faudra adapter la démarche.
+
+#### Principe de base
+
+À vous de générer des certificats valides pour les domaines `votre_instance.tld` et `room.votre_instance.tld`.
+Vous pouvez utiliser n'importe quelle [méthode supportées par Prosody](https://prosody.im/doc/certificates).
+
+Vous devez ensuite placer ces certificats dans un dossier qui sera accessible au user `peertube`, puis indiquer
+ce dossier dans le paramètre du plugin «Dossiers des certificats».
+
+{{% notice tip %}}
+Si vous voulez utiliser l'utilitaire ProsodyCtl (pour importer des certificats
+letsencrypts, générer des certificats, etc...), cet utilitaire est disponible
+(une fois Peertube démarré) en utilisant la commande qui suit (en adaptant le chemin vers votre dossier data Peertube,
+et en remplaçant «xxx» par les arguments que vous souhaitez passer à prosodyctl) :
+`sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`
+{{% /notice %}}
+
+Le plugin va vérifier une fois par jour si des fichiers ont été modifiés dans ce dossier, et recharger Prosody le cas échéant.
+
+#### Méthode dans le cas simple
+
+Nous supposons ici que votre installation de Peertube est «classique» (pas d'utilisation de Docker), et que les
+certificats sont générés par letsencrypt, en utilisant l'outils certbot.
+
+Tout d'abord, on va devoir créer un certificat pour le sous-domain `room.votre_instance.tld` : c'est l'uri du composant
+MUC (salons de discussion XMPP). Même si les connections se font sur `votre_instance.tld`, il va nous falloir un
+certificat valide pour ce sous-domaine.
+
+Commencez donc par paraméter une entrée DNS pour `room.votre_instance.tld`, qui pointe sur votre serveur.
+Vous pouvez tout à faire faire une entrée CNAME (ou une entrée A et une entrée AAAA).
+
+Ensuite, nous allons utiliser nginx (déjà installé pour votre Peertube) pour générer le certificat certbot.
+On va créer un nouveau site. Dans le fichier `/etc/nginx/site-available/room.peertube`, ajoutez:
+
+```nginx
+server {
+  listen 80;
+  listen [::]:80;
+  server_name room.votre_instance.tld;
+
+  location /.well-known/acme-challenge/ {
+    default_type "text/plain";
+    root /var/www/certbot;
+  }
+  location / { return 301 https://votre.instance.tld; }
+}
+```
+
+Ensuite on active ce site:
+
+```bash
+ln -s /etc/nginx/sites-available/room.peertube /etc/nginx/sites-enabled/
+systemc reload nginx
+```
+
+On prépare ensuite le dossier dans lequel on va plus tard importer les certificats.
+On suppose ici que vous avez déjà le plugin actif. On va créer le dossier suivant (s'il n'existe pas déjà),
+avec le user `peertube` pour être sûr qu'il n'y a pas de problème de droits:
+
+```bash
+sudo -u peertube mkdir /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/certs
+```
+
+Il faut maintenant configurer ce dossier dans les paramètres du plugin, pour «Dossiers des certificats».
+C'est important de le faire avant la suite, sinon le script d'import des certificats va les placer au mauvais endroit.
+
+On va configurer certbot pour qu'il importe les certificats générés dans le dossier de Prosody.
+On va pouvoir utiliser l'utilistaire ProsodyCtl packagé dans le plugin.
+
+Note: pour qu'il soit disponible, il faut que le plugin ai démarré au moins une fois.
+
+On va créer un fichier `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` contenant:
+
+```bash
+#!/bin/sh
+/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \
+  --root \
+  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \
+  cert import \
+  room.votre_instance.tld votre_instance.tld /etc/letsencrypt/live
+
+chown peertube:peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/certs/*
+```
+
+Puis on demande à générer le certificat :
+
+```bash
+certbot -d room.videos.john-livingston.fr
+```
+
+Si certbot vous propose plusieurs méthodes pour générer le certificat, choisissez «nginx».
+
+Normalement vous devriez maintenant trouver les certificats dans le dossier configuré.
+
+Note: la première fois que vous faisez tout ça, il va falloir recharger Prosody. Le plus simple pour cela est de
+redémarrer Peertube.
 
 ### En cas de problème
 
