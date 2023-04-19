@@ -3,6 +3,7 @@ import { migrateSettings } from './lib/migration/settings'
 import { initSettings } from './lib/settings'
 import { initCustomFields } from './lib/custom-fields'
 import { initRouters } from './lib/routers/index'
+import { initFederation } from './lib/federation/init'
 import { prepareProsody, ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
 import decache from 'decache'
 
@@ -23,6 +24,7 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await initSettings(options)
   await initCustomFields(options)
   await initRouters(options)
+  await initFederation(options)
 
   try {
     await prepareProsody(options)

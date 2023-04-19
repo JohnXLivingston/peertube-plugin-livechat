@@ -40,7 +40,7 @@
     "validate-color": "^2.2.1"
   },
   "devDependencies": {
-    "@peertube/peertube-types": "^4.2.2",
+    "@peertube/peertube-types": "^5.1.0",
     "@tsconfig/node12": "^1.0.9",
     "@types/async": "^3.2.9",
     "@types/express": "^4.17.13",

@@ -5,13 +5,14 @@ import type {
 } from '../../../shared/lib/types'
 import { createProxyServer } from 'http-proxy'
 import {
-  RegisterServerOptionsV5, getBaseRouterRoute, getBaseWebSocketRoute, getBaseStaticRoute, isUserAdmin
+  RegisterServerOptionsV5, getBaseRouterRoute, getBaseStaticRoute, isUserAdmin
 } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getAPIKey } from '../apikey'
 import { getChannelInfosById, getChannelNameById } from '../database/channel'
 import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../shared/lib/autocolors'
+import { getBoshUri, getWSUri } from '../uri/webchat'
 import * as path from 'path'
 const got = require('got')
 
@@ -48,11 +49,10 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         'converse-theme', 'converse-autocolors'
       ])
 
-      const boshUri = getBaseRouterRoute(options) + 'http-bind'
-      let wsUri = settings['disable-websocket']
-        ? undefined
-        : getBaseWebSocketRoute(options) // can be undefined
-      wsUri = wsUri !== undefined ? wsUri + 'xmpp-websocket' : ''
+      const boshUri = getBoshUri(options)
+      const wsUri = settings['disable-websocket']
+        ? ''
+        : (getWSUri(options) ?? '')
 
       let room: string
       let autoViewerMode: boolean = false
