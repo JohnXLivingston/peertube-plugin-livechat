@@ -16,6 +16,28 @@ Dieser Abschnitt beschreibt die Einstellungsseite des Plugins.
 Wenn der «Bestehende Räume auflisten» («List rooms») Knopf gedrückt wird, werden alle bestehenden Chaträume aufgelistet.
 Sie können die Chaträume damit finden und moderieren.
 
+## Federation
+
+Following settings concern the fedration with other Peertube instances,
+and other fediverse softwares.
+
+### Don't display remote chats
+
+By checking this setting, your instance will never display chats from remote videos.
+
+### Don't publish chat information
+
+By checking this setting, your instance will not publish chat information on the fediverse.
+Remote Peertube instances will not be aware that they are chat rooms associated to your videos.
+
+**Please note**: if you already had chats in progress, it is possible that the information has already been published.
+You will have to wait for the next video update before the information is unpublished.
+Also, if you disable this setting, you'll have to wait for the videos to be updated before the information are
+published again. This update happens among others when a live event resumes or stops.
+
+**Please note**: this setting only affects the publication of information via the ActivityPub protocol.
+It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.
+
 ## Chat behaviour (Chatverhalten)
 
 ### Room type (Raumtyp)

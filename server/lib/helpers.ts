@@ -3,9 +3,12 @@ import type { Response } from 'express'
 import type { IncomingMessage } from 'http'
 import type { Duplex } from 'stream'
 
+const pluginVersionRegexp = /^\d+\.\d+\.\d+(?:-(?:rc|alpha|beta)\.\d+)?$/
+const pluginVersionWordBreakRegex = /\b\d+\.\d+\.\d+(?:-(?:rc|alpha|beta)\.\d+)?\b/
+
 const packagejson: any = require('../../../package.json')
 const version: string = packagejson.version || ''
-if (!/^\d+\.\d+\.\d+/.test(version)) {
+if (!pluginVersionRegexp.test(version)) {
   throw new Error('Incorrect version in package.json.')
 }
 const pluginName: string = packagejson.name || ''
@@ -94,5 +97,7 @@ export {
   isUserAdmin,
   getUserNickname,
   pluginName,
-  pluginShortName
+  pluginShortName,
+  pluginVersionRegexp,
+  pluginVersionWordBreakRegex
 }

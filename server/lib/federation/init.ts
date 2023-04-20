@@ -1,7 +1,7 @@
 import type { RegisterServerOptions, VideoObject, MVideoAP, MVideoFullLight } from '@peertube/peertube-types'
 import { videoHasWebchat } from '../../../shared/lib/video'
 import { getBoshUri, getWSUri } from '../uri/webchat'
-import { fullUri } from '../uri/full'
+import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
 
 interface LiveChatVideoObject extends VideoObject {
@@ -37,8 +37,13 @@ export async function initFederation (options: RegisterServerOptions): Promise<v
         'chat-all-non-lives',
         'chat-videos-list',
         'disable-websocket',
-        'prosody-room-type'
+        'prosody-room-type',
+        'federation-dont-publish-remotely'
       ])
+
+      if (settings['federation-dont-publish-remotely']) {
+        return jsonld
+      }
 
       const hasChat = await videoHasWebchat({
         'chat-per-live-video': !!settings['chat-per-live-video'],
@@ -62,7 +67,7 @@ export async function initFederation (options: RegisterServerOptions): Promise<v
 
       const links = [{
         type: 'xmpp-bosh-anonymous',
-        url: fullUri(options, getBoshUri(options)),
+        url: canonicalizePluginUri(options, getBoshUri(options), { removePluginVersion: true }),
         jid: userJID
       }]
       if (!settings['disable-websocket']) {
@@ -70,7 +75,10 @@ export async function initFederation (options: RegisterServerOptions): Promise<v
         if (wsUri) {
           links.push({
             type: 'xmpp-websocket-anonymous',
-            url: fullUri(options, wsUri),
+            url: canonicalizePluginUri(options, wsUri, {
+              removePluginVersion: true,
+              protocol: 'ws'
+            }),
             jid: userJID
           })
         }

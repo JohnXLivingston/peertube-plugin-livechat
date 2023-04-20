@@ -16,6 +16,14 @@ list_rooms_label: "Bestehende Räume auflisten"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Räume auflisten</a>
 
+federation_description: ~
+
+federation_no_remote_chat_label: ~
+federation_no_remote_chat_description: ~
+
+federation_dont_publish_remotely_label: ~
+federation_dont_publish_remotely_description: ~
+
 chat_behaviour_description: "<h3>Chatverhalten</h3>"
 
 room_type_label: "Raumtyp"

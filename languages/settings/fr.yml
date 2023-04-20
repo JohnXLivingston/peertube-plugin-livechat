@@ -16,6 +16,26 @@ list_rooms_label: "Lister les salons de tchat existants"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Lister les salons</a>
 
+federation_description: |
+  <h3>Fédération</h3>
+  Les paramètres ci-dessous concerne la fédération avec d'autres instances Peertube
+  et autres logiciels du fédivers.
+
+federation_no_remote_chat_label: "Ne pas afficher les tchats distants"
+federation_no_remote_chat_description: |
+  En cochant ce paramètre, votre instance n'affichera jamais les tchats sur les vidéos distantes.
+
+federation_dont_publish_remotely_label: "Ne pas publier les informations de tchats"
+federation_dont_publish_remotely_description: |
+  En cochant ce paramètre, votre instance ne publiera pas les informations de tchat sur le fédivers.
+  Les instances Peertube distantes ne sauront pas qu'un tchat est associé aux vidéos.<br>
+  <b>Attention</b>: si vous aviez déjà des tchats en cours, il est possible que les informations aient déjà été publiées.
+  Il faudra attendre la prochaine mise à jour des vidéos pour que les informations soient dépubliées.
+  De même, si vous désactivé ce paramètre, il faudra attendre que les vidéos soient mises à jour pour à nouveau
+  publier les informations. Cette mise à jour intervient entre autre quand un live reprend ou s'arrête.<br>
+  <b>Attention</b>: ce paramètre ne joue que sur la publication d'informations via le protocole ActivityPub. Il n'empêchera
+  pas une application distante de détecter autrement la présence de tchat, et de tenter de s'y connecter.
+
 chat_behaviour_description: "<h3>Comportement du tchat</h3>"
 
 room_type_label: "Type de salon"

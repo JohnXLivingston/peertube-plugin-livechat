@@ -16,6 +16,27 @@ list_rooms_label: "List existing rooms"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">List rooms</a>
 
+federation_description: |
+  <h3>Federation</h3>
+  Following settings concern the fedration with other Peertube instances,
+  and other fediverse softwares.
+
+federation_no_remote_chat_label: "Don't display remote chats"
+federation_no_remote_chat_description: |
+  By checking this setting, your instance will never display chats from remote videos.
+
+federation_dont_publish_remotely_label: "Don't publish chat information"
+federation_dont_publish_remotely_description: |
+  By checking this setting, your instance will not publish chat information on the fediverse.
+  Remote Peertube instances will not be aware that they are chat rooms associated to your videos.<br>
+  <b>Please note</b>: if you already had chats in progress, it is possible that the information has already been published.
+  You will have to wait for the next video update before the information is unpublished.
+  Also, if you disable this setting, you'll have to wait for the videos to be updated before the information are
+  published again. This update happens among others when a live event resumes or stops.<br>
+  <b>Please note</b>: this setting only affects the publication of information via the ActivityPub protocol.
+  It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.
+
+
 chat_behaviour_description: "<h3>Chat behaviour</h3>"
 
 room_type_label: "Room type"

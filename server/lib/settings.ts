@@ -97,6 +97,29 @@ Please read
     private: true
   })
 
+  // ********** Federation
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('federation_description')
+  })
+  registerSetting({
+    name: 'federation-no-remote-chat',
+    label: loc('federation_no_remote_chat_label'),
+    descriptionHTML: loc('federation_no_remote_chat_description'),
+    type: 'input-checkbox',
+    default: false,
+    private: false
+  })
+  registerSetting({
+    name: 'federation-dont-publish-remotely',
+    label: loc('federation_dont_publish_remotely_label'),
+    descriptionHTML: loc('federation_dont_publish_remotely_description'),
+    type: 'input-checkbox',
+    default: false,
+    private: true
+  })
+
   // ********** Chat behaviour
   registerSetting({
     type: 'html',

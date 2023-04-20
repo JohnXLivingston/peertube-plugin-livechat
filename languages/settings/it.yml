@@ -16,6 +16,14 @@ list_rooms_label: "Elenco delle chat room esistenti"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Elenca le chat room</a>
 
+federation_description: ~
+
+federation_no_remote_chat_label: ~
+federation_no_remote_chat_description: ~
+
+federation_dont_publish_remotely_label: ~
+federation_dont_publish_remotely_description: ~
+
 chat_behaviour_description: "<h3>Comportamento della chat</h3>"
 
 room_type_label: "Tipo di chat room"
