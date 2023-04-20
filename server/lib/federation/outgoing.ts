@@ -33,6 +33,8 @@ async function videoBuildJSONLD (
   ])
 
   if (settings['federation-dont-publish-remotely']) {
+    // Note: we store also outgoing data. Could help for migration/cleanup scripts, for example.
+    await storeVideoLiveChatInfos(options, video, false)
     return jsonld
   }
 
