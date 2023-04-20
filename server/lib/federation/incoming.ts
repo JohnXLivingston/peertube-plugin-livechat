@@ -1,19 +1,24 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { RemoteVideoHandlerParams } from './types'
+import { storeVideoLiveChatInfos } from './storage'
+import { sanitizePeertubeLiveChatInfos } from './sanitize'
 
+/**
+ * This function reads incoming ActivityPub data, to detect LiveChat informations.
+ * @param options server options
+ * @param param1 handler parameters
+ * @returns void
+ */
 async function readIncomingAPVideo (
   options: RegisterServerOptions,
   { video, videoAPObject }: RemoteVideoHandlerParams
 ): Promise<void> {
-  if (!('peertubeLiveChat' in videoAPObject)) {
-    return
-  }
-  const logger = options.peertubeHelpers.logger
-  // TODO: save the information.
-  logger.debug(
-    `Remote video uuid=${video.uuid} has a peertubeLiveChat attribute: ` +
-    JSON.stringify(videoAPObject.peertubeLiveChat)
-  )
+  let peertubeLiveChat = ('peertubeLiveChat' in videoAPObject) ? videoAPObject.peertubeLiveChat : false
+
+  // We must sanitize peertubeLiveChat, as it comes for the outer world.
+  peertubeLiveChat = sanitizePeertubeLiveChatInfos(peertubeLiveChat)
+
+  await storeVideoLiveChatInfos(options, video, peertubeLiveChat)
 }
 
 export {

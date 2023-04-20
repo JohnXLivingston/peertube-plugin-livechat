@@ -1,10 +1,18 @@
 import type { RegisterServerOptions, VideoObject } from '@peertube/peertube-types'
-import type { LiveChatVideoObject, VideoBuildResultContext, LiveChatJSONLDLink } from './types'
+import type { LiveChatVideoObject, VideoBuildResultContext, LiveChatJSONLDLink, LiveChatJSONLDAttribute } from './types'
+import { storeVideoLiveChatInfos } from './storage'
 import { videoHasWebchat } from '../../../shared/lib/video'
 import { getBoshUri, getWSUri } from '../uri/webchat'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
 
+/**
+ * This function adds LiveChat information on video ActivityPub data if relevant.
+ * @param options server options
+ * @param jsonld JSON-LD video data to fill
+ * @param context handler context
+ * @returns void
+ */
 async function videoBuildJSONLD (
   options: RegisterServerOptions,
   jsonld: VideoObject,
@@ -36,8 +44,12 @@ async function videoBuildJSONLD (
   }, video)
 
   if (!hasChat) {
-    // logger.debug(`Video uuid=${video.uuid} has not livechat, adding peertubeLiveChat=false.`)
-    (jsonld as LiveChatVideoObject).peertubeLiveChat = false
+    logger.debug(`Video uuid=${video.uuid} has not livechat, adding peertubeLiveChat=false.`)
+    // Note: we store also outgoing data. Could help for migration/cleanup scripts, for example.
+    await storeVideoLiveChatInfos(options, video, false)
+    Object.assign(jsonld, {
+      peertubeLiveChat: false
+    })
     return jsonld
   }
 
@@ -71,11 +83,16 @@ async function videoBuildJSONLD (
     }
   }
 
-  (jsonld as LiveChatVideoObject).peertubeLiveChat = {
+  const peertubeLiveChat: LiveChatJSONLDAttribute = {
     type: 'xmpp',
     jid: roomJID,
     links
   }
+  Object.assign(jsonld, {
+    peertubeLiveChat
+  })
+  // Note: we store also outgoing data. Could help for migration/cleanup scripts, for example.
+  await storeVideoLiveChatInfos(options, video, peertubeLiveChat)
   return jsonld
 }
 
