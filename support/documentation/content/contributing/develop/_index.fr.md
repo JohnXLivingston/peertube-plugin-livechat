@@ -78,3 +78,8 @@ Pour activer ce mode, il suffit de créer un fichier
 
 La simple existance de ce fichier suffit à déclencher le mode debug.
 Pour être sûr qu'il est pris en compte, vous pouvez redémarrer votre instance Peertube.
+
+## Environnement de développement rapide via Docker
+
+Un tutoriel est disponible sur [le forum Peertube](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)
+pour expliquer comment monter rapidement un environnement de développement en utilisant Docker.
