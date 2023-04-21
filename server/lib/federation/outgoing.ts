@@ -5,7 +5,7 @@ import { videoHasWebchat } from '../../../shared/lib/video'
 import { getBoshUri, getWSUri } from '../uri/webchat'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
-import { fillVideoCustomFields } from 'lib/custom-fields'
+import { fillVideoCustomFields } from '../custom-fields'
 
 /**
  * This function adds LiveChat information on video ActivityPub data if relevant.
