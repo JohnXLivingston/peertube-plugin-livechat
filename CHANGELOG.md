@@ -7,6 +7,7 @@
 * Chat Federation !
   * This version of the plugin is the first that enables chat between Peertube instances.
   * This feature is a first beta release. It will be improved.
+  * This feature requires Peertube >= 5.1.0. The plugin is still compatible with previous version, but the chat federation won't work.
   * By default, chat of video hosted on your instance will be shown on remote instances. You can disable this in the plugin settings.
   * By default, user from your instance will see remote chats. You can disable remote chats in the plugin settings.
   * When a user from your instance joins a remote chat, it will use your local ConverseJS, and will connect directly on the remote instance, as an anonymous XMPP user. If the user is logged-in on your instance, it will use his nickname by default (if available).
