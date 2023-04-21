@@ -35,7 +35,7 @@ export function canonicalizePluginUri (
   }
   if (canonicalizeOptions?.protocol) {
     // Assuming that current protocol is https? or wss?, other cases dont concern us, and will be buggy
-    const currentProtocolSecure = uri.protocol.endsWith('s')
+    const currentProtocolSecure = uri.protocol.endsWith('s:')
     if (canonicalizeOptions.protocol === 'http') {
       uri.protocol = currentProtocolSecure ? 'https' : 'http'
     } else if (canonicalizeOptions.protocol === 'ws') {
