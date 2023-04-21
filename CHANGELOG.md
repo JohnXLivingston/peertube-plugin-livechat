@@ -1,6 +1,6 @@
 # Changelog
 
-## 6.3.0 (Not Released Yet)
+## 6.3.0
 
 ### New Features
 
