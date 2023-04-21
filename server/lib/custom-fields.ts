@@ -1,5 +1,6 @@
 import type { RegisterServerOptions, Video, MVideoThumbnail } from '@peertube/peertube-types'
 import { getVideoLiveChatInfos } from './federation/storage'
+import { anonymousConnectionInfos } from './federation/connection-infos'
 
 async function initCustomFields (options: RegisterServerOptions): Promise<void> {
   const registerHook = options.registerHook
@@ -82,6 +83,10 @@ async function fillVideoRemoteLiveChat (
   if (('isLocal' in video) && video.isLocal) { return }
   const infos = await getVideoLiveChatInfos(options, video)
   if (!infos) { return }
+
+  // We must check if there is a compatible connection protocol...
+  // For now, the only that is implemetied is by using a remote anonymous account.
+  if (!anonymousConnectionInfos(infos)) { return }
 
   const v: LiveChatCustomFieldsVideo = video
   if (!v.pluginData) v.pluginData = {}

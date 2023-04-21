@@ -29,7 +29,8 @@ async function videoBuildJSONLD (
     'chat-videos-list',
     'disable-websocket',
     'prosody-room-type',
-    'federation-dont-publish-remotely'
+    'federation-dont-publish-remotely',
+    'chat-no-anonymous'
   ])
 
   if (settings['federation-dont-publish-remotely']) {
@@ -66,22 +67,25 @@ async function videoBuildJSONLD (
     roomJID = `${video.uuid}@room.${prosodyDomain}`
   }
 
-  const links: LiveChatJSONLDLink[] = [{
-    type: 'xmpp-bosh-anonymous',
-    url: canonicalizePluginUri(options, getBoshUri(options), { removePluginVersion: true }),
-    jid: userJID
-  }]
-  if (!settings['disable-websocket']) {
-    const wsUri = getWSUri(options)
-    if (wsUri) {
-      links.push({
-        type: 'xmpp-websocket-anonymous',
-        url: canonicalizePluginUri(options, wsUri, {
-          removePluginVersion: true,
-          protocol: 'ws'
-        }),
-        jid: userJID
-      })
+  const links: LiveChatJSONLDLink[] = []
+  if (!settings['chat-no-anonymous']) {
+    links.push({
+      type: 'xmpp-bosh-anonymous',
+      url: canonicalizePluginUri(options, getBoshUri(options), { removePluginVersion: true }),
+      jid: userJID
+    })
+    if (!settings['disable-websocket']) {
+      const wsUri = getWSUri(options)
+      if (wsUri) {
+        links.push({
+          type: 'xmpp-websocket-anonymous',
+          url: canonicalizePluginUri(options, wsUri, {
+            removePluginVersion: true,
+            protocol: 'ws'
+          }),
+          jid: userJID
+        })
+      }
     }
   }
 
