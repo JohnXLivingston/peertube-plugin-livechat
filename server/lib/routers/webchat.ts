@@ -216,6 +216,22 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       }
     }
   )
+  // We should also forward OPTIONS request, for CORS.
+  router.options('/http-bind',
+    (req: Request, res: Response, next: NextFunction) => {
+      try {
+        if (!currentHttpBindProxy) {
+          res.status(404)
+          res.send('Not found')
+          return
+        }
+        req.url = 'http-bind'
+        currentHttpBindProxy.web(req, res)
+      } catch (err) {
+        next(err)
+      }
+    }
+  )
 
   // Peertube >=5.0.0: Adding the websocket route.
   if (registerWebSocketRoute) {
