@@ -34,8 +34,8 @@ export function canonicalizePluginUri (
     uri = new url.URL(path, options.peertubeHelpers.config.getWebserverUrl())
   }
   if (canonicalizeOptions?.protocol) {
-    // Assuming that current protocol is https? or wss?, other cases dont concern us, and will be buggy
-    const currentProtocolSecure = uri.protocol.endsWith('s:')
+    // Assuming that current protocol is https?: or wss?:, other cases dont concern us, and will be buggy
+    const currentProtocolSecure = uri.protocol === 'https:' || uri.protocol === 'wss:'
     if (canonicalizeOptions.protocol === 'http') {
       uri.protocol = currentProtocolSecure ? 'https' : 'http'
     } else if (canonicalizeOptions.protocol === 'ws') {
