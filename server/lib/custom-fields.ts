@@ -1,4 +1,6 @@
-import type { RegisterServerOptions, Video } from '@peertube/peertube-types'
+import type { RegisterServerOptions, Video, MVideoThumbnail } from '@peertube/peertube-types'
+import { getVideoLiveChatInfos } from './federation/storage'
+
 async function initCustomFields (options: RegisterServerOptions): Promise<void> {
   const registerHook = options.registerHook
   const storageManager = options.storageManager
@@ -32,8 +34,11 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
   registerHook({
     target: 'filter:api.video.get.result',
     handler: async (video: Video): Promise<Video> => {
-      logger.debug('Getting a video, searching for custom fields')
+      logger.debug('Getting a video, searching for custom fields and data')
       await fillVideoCustomFields(options, video)
+      if (!video.isLocal) {
+        await fillVideoRemoteLiveChat(options, video)
+      }
       return video
     }
   })
@@ -46,6 +51,7 @@ interface LiveChatCustomFieldsVideo {
   isLive: boolean
   pluginData?: {
     'livechat-active'?: boolean
+    'livechat-remote'?: boolean
   }
 }
 
@@ -68,7 +74,22 @@ async function fillVideoCustomFields (options: RegisterServerOptions, video: Liv
   }
 }
 
+async function fillVideoRemoteLiveChat (
+  options: RegisterServerOptions,
+  video: Video | MVideoThumbnail
+): Promise<void> {
+  if (('remote' in video) && !video.remote) { return }
+  if (('isLocal' in video) && video.isLocal) { return }
+  const infos = await getVideoLiveChatInfos(options, video)
+  if (!infos) { return }
+
+  const v: LiveChatCustomFieldsVideo = video
+  if (!v.pluginData) v.pluginData = {}
+  v.pluginData['livechat-remote'] = true
+}
+
 export {
   initCustomFields,
-  fillVideoCustomFields
+  fillVideoCustomFields,
+  fillVideoRemoteLiveChat
 }

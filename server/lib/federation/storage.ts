@@ -1,5 +1,6 @@
-import type { RegisterServerOptions, MVideoFullLight, MVideoAP } from '@peertube/peertube-types'
+import type { RegisterServerOptions, MVideoFullLight, MVideoAP, Video, MVideoThumbnail } from '@peertube/peertube-types'
 import type { LiveChatJSONLDAttribute } from './types'
+import { sanitizePeertubeLiveChatInfos } from './sanitize'
 import { URL } from 'url'
 import * as fs from 'fs'
 import * as path from 'path'
@@ -50,8 +51,32 @@ async function storeVideoLiveChatInfos (
     return
   }
 
-  logger.debug(`${remote ? 'Remote' : 'Local'} video ${video.uuid} has caht infos to store`)
+  logger.debug(`${remote ? 'Remote' : 'Local'} video ${video.uuid} has chat infos to store`)
   await _store(options, filePath, liveChatInfos)
+}
+
+/**
+ * Gets the stored livechat information (if any).
+ * @param options server options
+ * @param video video object
+ * @returns livechat stored data
+ */
+async function getVideoLiveChatInfos (
+  options: RegisterServerOptions,
+  video: MVideoFullLight | MVideoAP | Video | MVideoThumbnail
+): Promise<LiveChatJSONLDAttribute> {
+  const logger = options.peertubeHelpers.logger
+  const remote = ('remote' in video) ? video.remote : !video.isLocal
+  const filePath = await _getFilePath(options, remote, video.uuid, video.url)
+  if (!filePath) {
+    logger.error('Cant compute the file path for storing liveChat infos for video ' + video.uuid)
+    return false
+  }
+
+  const content = await _get(options, filePath)
+  if (content === null) { return false }
+  // We must sanitize here, in case a previous plugin version did not sanitize enougth.
+  return sanitizePeertubeLiveChatInfos(content)
 }
 
 async function _getFilePath (
@@ -123,6 +148,23 @@ async function _store (options: RegisterServerOptions, filePath: string, content
   }
 }
 
+async function _get (options: RegisterServerOptions, filePath: string): Promise<any | null> {
+  const logger = options.peertubeHelpers.logger
+  try {
+    if (!fs.existsSync(filePath)) {
+      return null
+    }
+    const content = await fs.promises.readFile(filePath, {
+      encoding: 'utf-8'
+    })
+    return JSON.parse(content)
+  } catch (err) {
+    logger.error(err)
+    return null
+  }
+}
+
 export {
-  storeVideoLiveChatInfos
+  storeVideoLiveChatInfos,
+  getVideoLiveChatInfos
 }
