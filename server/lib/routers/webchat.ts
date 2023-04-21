@@ -1,4 +1,4 @@
-import type { RegisterServerOptions, MVideoThumbnail } from '@peertube/peertube-types'
+import type { RegisterServerOptions, MVideoThumbnail, SettingEntries } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
 import type {
   ProsodyListRoomsResult, ProsodyListRoomsResultRoom
@@ -13,6 +13,9 @@ import { getAPIKey } from '../apikey'
 import { getChannelInfosById, getChannelNameById } from '../database/channel'
 import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../shared/lib/autocolors'
 import { getBoshUri, getWSUri } from '../uri/webchat'
+import { getVideoLiveChatInfos } from '../federation/storage'
+import { LiveChatJSONLDAttribute } from '../federation/types'
+import { anonymousConnectionInfos } from '../federation/connection-infos'
 import * as path from 'path'
 const got = require('got')
 
@@ -46,42 +49,16 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       const settings = await settingsManager.getSettings([
         'prosody-room-type',
         'disable-websocket',
-        'converse-theme', 'converse-autocolors'
+        'converse-theme', 'converse-autocolors',
+        'federation-no-remote-chat'
       ])
 
-      const boshUri = getBoshUri(options)
-      const wsUri = settings['disable-websocket']
-        ? ''
-        : (getWSUri(options) ?? '')
-
-      let room: string
       let autoViewerMode: boolean = false
       let forceReadonly: 'true' | 'false' | 'noscroll' = 'false'
       let converseJSTheme: string = settings['converse-theme'] as string
       let transparent: boolean = false
       if (!/^\w+$/.test(converseJSTheme)) {
         converseJSTheme = 'peertube'
-      }
-      const prosodyDomain = await getProsodyDomain(options)
-      const jid = 'anon.' + prosodyDomain
-      if (req.query.forcetype === '1') {
-        // We come from the room list in the settings page.
-        // Here we don't read the prosody-room-type settings,
-        // but use the roomKey format.
-        // NB: there is no extra security. Any user can add this parameter.
-        //     This is not an issue: the setting will be tested at the room creation.
-        //     No room can be created in the wrong mode.
-        if (/^channel\.\d+$/.test(roomKey)) {
-          room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
-        } else {
-          room = '{{VIDEO_UUID}}@room.' + prosodyDomain
-        }
-      } else {
-        if (settings['prosody-room-type'] === 'channel') {
-          room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
-        } else {
-          room = '{{VIDEO_UUID}}@room.' + prosodyDomain
-        }
       }
 
       const authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
@@ -100,6 +77,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
 
       let video: MVideoThumbnail | undefined
       let channelId: number
+      let remoteChatInfos: LiveChatJSONLDAttribute | undefined
       const channelMatches = roomKey.match(/^channel\.(\d+)$/)
       if (channelMatches?.[1]) {
         channelId = parseInt(channelMatches[1])
@@ -113,7 +91,17 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         const uuid = roomKey // must be a video UUID.
         video = await peertubeHelpers.videos.loadByIdOrUUID(uuid)
         if (!video) {
-          throw new Error('Video not found')
+          res.status(404)
+          res.send('Not found')
+          return
+        }
+        if (video.remote) {
+          remoteChatInfos = settings['federation-no-remote-chat'] ? false : await getVideoLiveChatInfos(options, video)
+          if (!remoteChatInfos) {
+            res.status(404)
+            res.send('Not found')
+            return
+          }
         }
         channelId = video.channelId
       }
@@ -121,27 +109,27 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       let page = '' + (converseJSIndex as string)
       const baseStaticUrl = getBaseStaticRoute(options)
       page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
-      page = page.replace(/{{JID}}/g, jid)
-      // Computing the room name...
-      if (room.includes('{{VIDEO_UUID}}')) {
-        if (!video) {
-          throw new Error('Missing video')
-        }
-        room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
+
+      let connectionInfos: ConnectionInfos | null
+      if (video?.remote) {
+        connectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false)
+      } else {
+        connectionInfos = await _localConnectionInfos(
+          options,
+          settings,
+          roomKey,
+          video,
+          channelId,
+          req.query.forcetype === '1'
+        )
       }
-      room = room.replace(/{{CHANNEL_ID}}/g, `${channelId}`)
-      if (room.includes('{{CHANNEL_NAME}}')) {
-        const channelName = await getChannelNameById(options, channelId)
-        if (channelName === null) {
-          throw new Error('Channel not found')
-        }
-        if (!/^[a-zA-Z0-9_.]+$/.test(channelName)) {
-          // FIXME: see if there is a response here https://github.com/Chocobozzz/PeerTube/issues/4301 for allowed chars
-          peertubeHelpers.logger.error(`Invalid channel name, contains unauthorized chars: '${channelName}'`)
-          throw new Error('Invalid channel name, contains unauthorized chars')
-        }
-        room = room.replace(/{{CHANNEL_NAME}}/g, channelName)
+      if (!connectionInfos) {
+        res.status(404)
+        res.send('No compatible way to connect to remote chat')
+        return
       }
+
+      page = page.replace(/{{JID}}/g, connectionInfos.userJID)
 
       let autocolorsStyles = ''
       if (
@@ -195,9 +183,10 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       }
 
       // ... then inject it in the page.
-      page = page.replace(/{{ROOM}}/g, room)
-      page = page.replace(/{{BOSH_SERVICE_URL}}/g, boshUri)
-      page = page.replace(/{{WS_SERVICE_URL}}/g, wsUri)
+      page = page.replace(/{{ROOM}}/g, connectionInfos.roomJID)
+      page = page.replace(/{{BOSH_SERVICE_URL}}/g, connectionInfos.boshUri)
+      page = page.replace(/{{WS_SERVICE_URL}}/g, connectionInfos.wsUri ?? '')
+      page = page.replace(/{{REMOTE_ANONYMOUS_XMPP_SERVER}}/g, connectionInfos.remoteXMPPServer ? 'true' : 'false')
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
       page = page.replace(/{{AUTOVIEWERMODE}}/g, autoViewerMode ? 'true' : 'false')
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
@@ -375,6 +364,95 @@ async function enableProxyRoute (
   currentWebsocketProxy.on('close', () => {
     logger.info('Got a close event for the websocket proxy')
   })
+}
+
+interface ConnectionInfos {
+  userJID: string
+  roomJID: string
+  boshUri: string
+  wsUri?: string
+  remoteXMPPServer: boolean
+}
+
+async function _remoteConnectionInfos (remoteChatInfos: LiveChatJSONLDAttribute): Promise<ConnectionInfos | null> {
+  if (!remoteChatInfos) { throw new Error('Should have remote chat infos for remote videos') }
+  const connectionInfos = anonymousConnectionInfos(remoteChatInfos ?? false)
+  if (!connectionInfos || !connectionInfos.boshUri) {
+    return null
+  }
+  return {
+    userJID: connectionInfos.userJID,
+    roomJID: connectionInfos.roomJID,
+    boshUri: connectionInfos.boshUri,
+    wsUri: connectionInfos.wsUri,
+    remoteXMPPServer: true
+  }
+}
+
+async function _localConnectionInfos (
+  options: RegisterServerOptions,
+  settings: SettingEntries,
+  roomKey: string,
+  video: MVideoThumbnail | undefined,
+  channelId: number,
+  forceType: boolean
+): Promise<ConnectionInfos> {
+  const prosodyDomain = await getProsodyDomain(options)
+  const jid = 'anon.' + prosodyDomain
+  const boshUri = getBoshUri(options)
+  const wsUri = settings['disable-websocket']
+    ? ''
+    : (getWSUri(options) ?? '')
+
+  // Computing the room name...
+  let room: string
+  if (forceType) {
+    // We come from the room list in the settings page.
+    // Here we don't read the prosody-room-type settings,
+    // but use the roomKey format.
+    // NB: there is no extra security. Any user can add this parameter.
+    //     This is not an issue: the setting will be tested at the room creation.
+    //     No room can be created in the wrong mode.
+    if (/^channel\.\d+$/.test(roomKey)) {
+      room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
+    } else {
+      room = '{{VIDEO_UUID}}@room.' + prosodyDomain
+    }
+  } else {
+    if (settings['prosody-room-type'] === 'channel') {
+      room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
+    } else {
+      room = '{{VIDEO_UUID}}@room.' + prosodyDomain
+    }
+  }
+
+  if (room.includes('{{VIDEO_UUID}}')) {
+    if (!video) {
+      throw new Error('Missing video')
+    }
+    room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
+  }
+  room = room.replace(/{{CHANNEL_ID}}/g, `${channelId}`)
+  if (room.includes('{{CHANNEL_NAME}}')) {
+    const channelName = await getChannelNameById(options, channelId)
+    if (channelName === null) {
+      throw new Error('Channel not found')
+    }
+    if (!/^[a-zA-Z0-9_.]+$/.test(channelName)) {
+      // FIXME: see if there is a response here https://github.com/Chocobozzz/PeerTube/issues/4301 for allowed chars
+      options.peertubeHelpers.logger.error(`Invalid channel name, contains unauthorized chars: '${channelName}'`)
+      throw new Error('Invalid channel name, contains unauthorized chars')
+    }
+    room = room.replace(/{{CHANNEL_NAME}}/g, channelName)
+  }
+
+  return {
+    userJID: jid,
+    roomJID: room,
+    boshUri,
+    wsUri,
+    remoteXMPPServer: false
+  }
 }
 
 export {

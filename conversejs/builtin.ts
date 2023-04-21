@@ -82,6 +82,7 @@ function randomNick (base: string): string {
 
 interface InitConverseParams {
   jid: string
+  remoteAnonymousXMPPServer: boolean
   assetsPath: string
   room: string
   boshServiceUrl: string
@@ -95,6 +96,7 @@ interface InitConverseParams {
 }
 window.initConverse = async function initConverse ({
   jid,
+  remoteAnonymousXMPPServer,
   assetsPath,
   room,
   boshServiceUrl,
@@ -205,6 +207,7 @@ window.initConverse = async function initConverse ({
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
 
   let isAuthenticated: boolean = false
+  let isRemoteWithNicknameSet: boolean = false
   if (authenticationUrl === '') {
     throw new Error('Missing authenticationUrl')
   }
@@ -218,19 +221,27 @@ window.initConverse = async function initConverse ({
 
   const auth = await authenticatedMode(authenticationUrl)
   if (auth) {
-    params.authentication = 'login'
-    params.auto_login = true
-    params.jid = auth.jid
-    params.password = auth.password
-    if (auth.nickname) {
-      params.nickname = auth.nickname
+    if (remoteAnonymousXMPPServer) {
+      // Spécial case: anonymous connection to remote XMPP server.
+      if (auth.nickname) {
+        params.nickname = auth.nickname
+        isRemoteWithNicknameSet = true
+      }
     } else {
-      params.muc_nickname_from_jid = true
+      params.authentication = 'login'
+      params.auto_login = true
+      params.jid = auth.jid
+      params.password = auth.password
+      if (auth.nickname) {
+        params.nickname = auth.nickname
+      } else {
+        params.muc_nickname_from_jid = true
+      }
+      // We dont need the keepalive. And I suppose it is related to some bugs when opening a previous chat window.
+      params.keepalive = false
+      isAuthenticated = true
+      // FIXME: use params.oauth_providers?
     }
-    // We dont need the keepalive. And I suppose it is related to some bugs when opening a previous chat window.
-    params.keepalive = false
-    isAuthenticated = true
-    // FIXME: use params.oauth_providers?
   }
 
   if (!isAuthenticated) {
@@ -267,7 +278,7 @@ window.initConverse = async function initConverse ({
       }
     })
 
-    if (autoViewerMode && !isAuthenticated) {
+    if (autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet) {
       converse.plugins.add('livechatViewerModePlugin', {
         dependencies: ['converse-muc', 'converse-muc-views'],
         initialize: function () {

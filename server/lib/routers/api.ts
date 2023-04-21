@@ -7,7 +7,7 @@ import { prosodyCheckUserPassword, prosodyRegisterUser, prosodyUserRegistered } 
 import { getUserNickname } from '../helpers'
 import { Affiliations, getVideoAffiliations, getChannelAffiliations } from '../prosody/config/affiliations'
 import { getProsodyDomain } from '../prosody/config/domain'
-import { fillVideoCustomFields, fillVideoRemoteLiveChat } from '../custom-fields'
+import { fillVideoCustomFields } from '../custom-fields'
 import { getChannelInfosById } from '../database/channel'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
@@ -98,7 +98,6 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
         // Adding the custom fields and data:
         await fillVideoCustomFields(options, video)
-        if (video.remote) { await fillVideoRemoteLiveChat(options, video) }
 
         // check settings (chat enabled for this video?)
         const settings = await options.settingsManager.getSettings([

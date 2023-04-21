@@ -1,6 +1,6 @@
 import type { Video } from '@peertube/peertube-types'
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import { videoHasWebchat } from 'shared/lib/video'
+import { videoHasWebchat, videoHasRemoteWebchat } from 'shared/lib/video'
 import { logger } from './videowatch/logger'
 import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG } from './videowatch/buttons'
 import { displayButton, displayButtonOptions } from './videowatch/button'
@@ -247,19 +247,21 @@ function register (registerOptions: RegisterClientOptions): void {
         logger.log('No chat for anonymous users')
         return
       }
-      if (!videoHasWebchat(s, video)) {
+      if (!videoHasWebchat(s, video) && !videoHasRemoteWebchat(s, video)) {
         logger.log('This video has no webchat')
         return
       }
 
       let showShareUrlButton: boolean = false
-      const chatShareUrl = settings['chat-share-url'] ?? ''
-      if (chatShareUrl === 'everyone') {
-        showShareUrlButton = true
-      } else if (chatShareUrl === 'owner') {
-        showShareUrlButton = guessIsMine(registerOptions, video)
-      } else if (chatShareUrl === 'owner+moderators') {
-        showShareUrlButton = guessIsMine(registerOptions, video) || guessIamIModerator(registerOptions)
+      if (video.isLocal) { // No need for shareButton on remote chats.
+        const chatShareUrl = settings['chat-share-url'] ?? ''
+        if (chatShareUrl === 'everyone') {
+          showShareUrlButton = true
+        } else if (chatShareUrl === 'owner') {
+          showShareUrlButton = guessIsMine(registerOptions, video)
+        } else if (chatShareUrl === 'owner+moderators') {
+          showShareUrlButton = guessIsMine(registerOptions, video) || guessIamIModerator(registerOptions)
+        }
       }
 
       insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank'], showShareUrlButton).then(() => {
