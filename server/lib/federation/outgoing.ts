@@ -5,6 +5,7 @@ import { videoHasWebchat } from '../../../shared/lib/video'
 import { getBoshUri, getWSUri } from '../uri/webchat'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
+import { fillVideoCustomFields } from 'lib/custom-fields'
 
 /**
  * This function adds LiveChat information on video ActivityPub data if relevant.
@@ -39,6 +40,7 @@ async function videoBuildJSONLD (
     return jsonld
   }
 
+  await fillVideoCustomFields(options, video)
   const hasChat = await videoHasWebchat({
     'chat-per-live-video': !!settings['chat-per-live-video'],
     'chat-all-lives': !!settings['chat-all-lives'],
