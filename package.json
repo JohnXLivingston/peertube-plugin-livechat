@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-livechat",
   "description": "PeerTube plugin livechat: offers a way to embed a chat system into Peertube.",
-  "version": "6.3.0-beta.2",
+  "version": "6.3.0-beta.3",
   "license": "AGPL-3.0",
   "author": {
     "name": "John Livingston",
