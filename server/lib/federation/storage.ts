@@ -17,6 +17,8 @@ If a file exists, it means the video has a chat.
 The file itself contains the JSON LiveChatInfos object.
 */
 
+const cache: Map<string, LiveChatJSONLDAttribute> = new Map<string, LiveChatJSONLDAttribute>()
+
 /**
  * This function stores remote LiveChat infos that are contained in ActivityPub objects.
  * We store these data for remotes videos.
@@ -36,6 +38,8 @@ async function storeVideoLiveChatInfos (
 ): Promise<void> {
   const logger = options.peertubeHelpers.logger
 
+  cache.delete(video.url)
+
   const remote = video.remote
   const filePath = await _getFilePath(options, remote, video.uuid, video.url)
   if (!filePath) {
@@ -48,11 +52,15 @@ async function storeVideoLiveChatInfos (
   if (!liveChatInfos) {
     logger.debug(`${remote ? 'Remote' : 'Local'} video ${video.uuid} has no chat infos, removing if necessary`)
     await _del(options, filePath)
+    // Delete the cache again, just in case.
+    cache.delete(video.url)
     return
   }
 
   logger.debug(`${remote ? 'Remote' : 'Local'} video ${video.uuid} has chat infos to store`)
   await _store(options, filePath, liveChatInfos)
+  // Delete the cache again... in case a read failed because we were writing at the same time.
+  cache.delete(video.url)
 }
 
 /**
@@ -66,17 +74,27 @@ async function getVideoLiveChatInfos (
   video: MVideoFullLight | MVideoAP | Video | MVideoThumbnail
 ): Promise<LiveChatJSONLDAttribute> {
   const logger = options.peertubeHelpers.logger
+
+  const cached = cache.get(video.url)
+  if (cached !== undefined) { return cached }
+
   const remote = ('remote' in video) ? video.remote : !video.isLocal
   const filePath = await _getFilePath(options, remote, video.uuid, video.url)
   if (!filePath) {
     logger.error('Cant compute the file path for storing liveChat infos for video ' + video.uuid)
+    cache.set(video.url, false)
     return false
   }
 
   const content = await _get(options, filePath)
-  if (content === null) { return false }
+  if (content === null) {
+    cache.set(video.url, false)
+    return false
+  }
   // We must sanitize here, in case a previous plugin version did not sanitize enougth.
-  return sanitizePeertubeLiveChatInfos(content)
+  const r = sanitizePeertubeLiveChatInfos(content)
+  cache.set(video.url, r)
+  return r
 }
 
 async function _getFilePath (
