@@ -57,11 +57,11 @@ function _validUrl (s: string, constraints: URLConstraints): boolean {
 
   if (constraints.protocol) {
     if (constraints.protocol === 'http.') {
-      if (url.protocol !== 'https' && url.protocol !== 'http') {
+      if (url.protocol !== 'https:' && url.protocol !== 'http:') {
         return false
       }
     } else if (constraints.protocol === 'ws.') {
-      if (url.protocol !== 'wss' && url.protocol !== 'ws') {
+      if (url.protocol !== 'wss:' && url.protocol !== 'ws:') {
         return false
       }
     }
