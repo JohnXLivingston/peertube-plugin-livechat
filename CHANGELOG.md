@@ -1,9 +1,15 @@
 # Changelog
 
-## ??? (Not Released Yet)
+## 6.3.0 (Not Released Yet)
 
 ### New Features
 
+* Chat Federation !
+  * This version of the plugin is the first that enables chat between Peertube instances.
+  * This feature is a first beta release. It will be improved.
+  * By default, chat of video hosted on your instance will be shown on remote instances. You can disable this in the plugin settings.
+  * By default, user from your instance will see remote chats. You can disable remote chats in the plugin settings.
+  * When a user from your instance joins a remote chat, it will use your local ConverseJS, and will connect directly on the remote instance, as an anonymous XMPP user. If the user is logged-in on your instance, it will use his nickname by default (if available).
 * XMPP clients: you can now allow connection to rooms using external XMPP accounts and XMPP clients. Please note that this feature might require some server configuration to be available. Please refer to the [documentation](https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/) for more informations.
 
 ### Minor changes and fixes
