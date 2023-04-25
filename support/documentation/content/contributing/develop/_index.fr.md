@@ -83,3 +83,5 @@ Pour être sûr qu'il est pris en compte, vous pouvez redémarrer votre instance
 
 Un tutoriel est disponible sur [le forum Peertube](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)
 pour expliquer comment monter rapidement un environnement de développement en utilisant Docker.
+
+Un dépot a été crée sur la base de ce tutoriel: https://codeberg.org/mose/pt-plugin-dev

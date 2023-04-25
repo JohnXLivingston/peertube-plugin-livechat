@@ -85,3 +85,5 @@ To make sure it's taken into account, you can restart your Peertube instance.
 There is a tutorial, in french, on the
 [le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)
 that explains how to quickly build a dev env using Docker.
+
+A repo was made out of it, check out https://codeberg.org/mose/pt-plugin-dev 
