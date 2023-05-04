@@ -156,6 +156,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
   const roomType = settings['prosody-room-type'] === 'channel' ? 'channel' : 'video'
+  const enableUserS2S = enableRoomS2S && !(settings['federation-no-remote-chat'] as boolean)
   let certificates: ProsodyConfigCertificates = false
 
   const apikey = await getAPIKey(options)
@@ -203,7 +204,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     config.useExternalComponents(componentsPort, components)
   }
 
-  if (enableRoomS2S) {
+  if (enableRoomS2S || enableUserS2S) {
     certificates = 'generate-self-signed'
     if (config.paths.certsDirIsCustom) {
       certificates = 'use-from-dir'
@@ -223,7 +224,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
       if (networkInterface.match(/^[a-f0-9:]+$/)) return
       throw new Error('Invalid s2s interfaces')
     })
-    config.useRoomS2S(s2sPort, s2sInterfaces)
+    config.useS2S(s2sPort, s2sInterfaces, !enableUserS2S)
   }
 
   const logExpiration = readLogExpiration(options, logExpirationSetting)

@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Release Yet)
+
+### New Features
+
+* Chat Federation: if both local and remote instance have external XMPP connections enabled, you can use your local xmpp account to join remote rooms.
+
 ## 6.3.0
 
 ### New Features

@@ -36,6 +36,11 @@ function sanitizePeertubeLiveChatInfos (chatInfos: any): LiveChatJSONLDAttribute
         url: link.url
       })
     }
+    if (link.type === 'xmpp-s2s') {
+      r.links.push({
+        type: link.type
+      })
+    }
   }
   return r
 }

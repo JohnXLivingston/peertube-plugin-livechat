@@ -31,6 +31,17 @@ function anonymousConnectionInfos (livechatInfos: LiveChatJSONLDAttribute | fals
   return r
 }
 
+function remoteAuthenticatedConnectionEnabled (livechatInfos: LiveChatJSONLDAttribute | false): boolean {
+  if (!livechatInfos) { return false }
+  if (!livechatInfos.links) { return false }
+  if (livechatInfos.type !== 'xmpp') { return false }
+  for (const link of livechatInfos.links) {
+    if (link.type === 'xmpp-s2s') { return true }
+  }
+  return false
+}
+
 export {
-  anonymousConnectionInfos
+  anonymousConnectionInfos,
+  remoteAuthenticatedConnectionEnabled
 }
