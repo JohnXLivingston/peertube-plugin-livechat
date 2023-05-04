@@ -4,6 +4,10 @@ interface VideoBuildResultContext {
   video: MVideoAP
 }
 
+interface LiveChatJSONLDS2SLink {
+  type: 'xmpp-s2s'
+}
+
 interface LiveChatJSONLDAnonymousWebsocketLink {
   type: 'xmpp-websocket-anonymous'
   url: string
@@ -16,7 +20,7 @@ interface LiveChatJSONLDAnonymousBOSHLink {
   jid: string
 }
 
-type LiveChatJSONLDLink = LiveChatJSONLDAnonymousBOSHLink | LiveChatJSONLDAnonymousWebsocketLink
+type LiveChatJSONLDLink = LiveChatJSONLDS2SLink | LiveChatJSONLDAnonymousBOSHLink | LiveChatJSONLDAnonymousWebsocketLink
 
 interface LiveChatJSONLDInfos {
   type: 'xmpp'

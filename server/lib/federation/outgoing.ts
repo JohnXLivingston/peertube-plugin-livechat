@@ -31,7 +31,8 @@ async function videoBuildJSONLD (
     'disable-websocket',
     'prosody-room-type',
     'federation-dont-publish-remotely',
-    'chat-no-anonymous'
+    'chat-no-anonymous',
+    'prosody-room-allow-s2s'
   ])
 
   if (settings['federation-dont-publish-remotely']) {
@@ -70,6 +71,11 @@ async function videoBuildJSONLD (
   }
 
   const links: LiveChatJSONLDLink[] = []
+  if (settings['prosody-room-allow-s2s']) {
+    links.push({
+      type: 'xmpp-s2s'
+    })
+  }
   if (!settings['chat-no-anonymous']) {
     links.push({
       type: 'xmpp-bosh-anonymous',

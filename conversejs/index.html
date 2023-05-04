@@ -15,12 +15,17 @@
 <div id="conversejs-bg" class="theme-peertube"></div>
 <script type="text/javascript">
   initConverse({
-    jid: '{{JID}}',
+    isRemoteChat: '{{IS_REMOTE_CHAT}}' === 'true',
+    localAnonymousJID: '{{LOCAL_ANONYMOUS_JID}}',
+    remoteAnonymousJID: '{{REMOTE_ANONYMOUS_JID}}' === '' ? null : '{{REMOTE_ANONYMOUS_JID}}',
     remoteAnonymousXMPPServer: '{{REMOTE_ANONYMOUS_XMPP_SERVER}}' === 'true',
+    remoteAuthenticatedXMPPServer: '{{REMOTE_AUTHENTICATED_XMPP_SERVER}}' === 'true',
     assetsPath : '{{BASE_STATIC_URL}}conversejs/',
     room: '{{ROOM}}',
-    boshServiceUrl: '{{BOSH_SERVICE_URL}}',
-    websocketServiceUrl: '{{WS_SERVICE_URL}}',
+    localBoshServiceUrl: '{{LOCAL_BOSH_SERVICE_URL}}' === '' ? null : '{{LOCAL_BOSH_SERVICE_URL}}',
+    localWebsocketServiceUrl: '{{LOCAL_WS_SERVICE_URL}}' === '' ? null : '{{LOCAL_WS_SERVICE_URL}}',
+    remoteBoshServiceUrl: '{{REMOTE_BOSH_SERVICE_URL}}' === '' ? null : '{{REMOTE_BOSH_SERVICE_URL}}',
+    remoteWebsocketServiceUrl: '{{REMOTE_WS_SERVICE_URL}}' === '' ? null : '{{REMOTE_WS_SERVICE_URL}}',
     authenticationUrl: '{{AUTHENTICATION_URL}}',
     autoViewerMode: '{{AUTOVIEWERMODE}}' === 'true',
     theme: '{{CONVERSEJS_THEME}}',

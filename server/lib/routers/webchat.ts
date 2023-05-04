@@ -15,7 +15,7 @@ import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../
 import { getBoshUri, getWSUri } from '../uri/webchat'
 import { getVideoLiveChatInfos } from '../federation/storage'
 import { LiveChatJSONLDAttribute } from '../federation/types'
-import { anonymousConnectionInfos } from '../federation/connection-infos'
+import { anonymousConnectionInfos, remoteAuthenticatedConnectionEnabled } from '../federation/connection-infos'
 import * as path from 'path'
 const got = require('got')
 
@@ -50,7 +50,8 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         'prosody-room-type',
         'disable-websocket',
         'converse-theme', 'converse-autocolors',
-        'federation-no-remote-chat'
+        'federation-no-remote-chat',
+        'prosody-room-allow-s2s'
       ])
 
       let autoViewerMode: boolean = false
@@ -110,26 +111,38 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       const baseStaticUrl = getBaseStaticRoute(options)
       page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
 
-      let connectionInfos: ConnectionInfos | null
+      const prosodyDomain = await getProsodyDomain(options)
+      const localAnonymousJID = 'anon.' + prosodyDomain
+      const localBoshUri = getBoshUri(options)
+      const localWsUri = settings['disable-websocket']
+        ? ''
+        : (getWSUri(options) ?? '')
+
+      let remoteConnectionInfos: WCRemoteConnectionInfos | undefined
+      let roomJID: string
       if (video?.remote) {
-        connectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false)
+        remoteConnectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false)
+        if (!remoteConnectionInfos) {
+          res.status(404)
+          res.send('No compatible way to connect to remote chat')
+          return
+        }
+        roomJID = remoteConnectionInfos.roomJID
       } else {
-        connectionInfos = await _localConnectionInfos(
+        roomJID = await _localRoomJID(
           options,
           settings,
+          prosodyDomain,
           roomKey,
           video,
           channelId,
           req.query.forcetype === '1'
         )
       }
-      if (!connectionInfos) {
-        res.status(404)
-        res.send('No compatible way to connect to remote chat')
-        return
-      }
 
-      page = page.replace(/{{JID}}/g, connectionInfos.userJID)
+      page = page.replace(/{{IS_REMOTE_CHAT}}/g, video?.remote ? 'true' : 'false')
+      page = page.replace(/{{LOCAL_ANONYMOUS_JID}}/g, localAnonymousJID)
+      page = page.replace(/{{REMOTE_ANONYMOUS_JID}}/g, remoteConnectionInfos?.anonymous?.userJID ?? '')
 
       let autocolorsStyles = ''
       if (
@@ -183,10 +196,20 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       }
 
       // ... then inject it in the page.
-      page = page.replace(/{{ROOM}}/g, connectionInfos.roomJID)
-      page = page.replace(/{{BOSH_SERVICE_URL}}/g, connectionInfos.boshUri)
-      page = page.replace(/{{WS_SERVICE_URL}}/g, connectionInfos.wsUri ?? '')
-      page = page.replace(/{{REMOTE_ANONYMOUS_XMPP_SERVER}}/g, connectionInfos.remoteXMPPServer ? 'true' : 'false')
+      page = page.replace(/{{ROOM}}/g, roomJID)
+      page = page.replace(/{{LOCAL_BOSH_SERVICE_URL}}/g, localBoshUri)
+      page = page.replace(/{{LOCAL_WS_SERVICE_URL}}/g, localWsUri ?? '')
+      page = page.replace(/{{REMOTE_BOSH_SERVICE_URL}}/g, remoteConnectionInfos?.anonymous?.boshUri ?? '')
+      page = page.replace(/{{REMOTE_WS_SERVICE_URL}}/g, remoteConnectionInfos?.anonymous?.wsUri ?? '')
+      page = page.replace(/{{REMOTE_ANONYMOUS_XMPP_SERVER}}/g, remoteConnectionInfos?.anonymous ? 'true' : 'false')
+      // Note: to be able to connect to remote XMPP server, with a local account,
+      // we must enable prosody-room-allow-s2s
+      // (which is required, so we can use outgoing S2S from the authenticated virtualhost).
+      // TODO: There should be another settings, rather than prosody-room-allow-s2s
+      page = page.replace(
+        /{{REMOTE_AUTHENTICATED_XMPP_SERVER}}/g,
+        settings['prosody-room-allow-s2s'] && remoteConnectionInfos?.authenticated ? 'true' : 'false'
+      )
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
       page = page.replace(/{{AUTOVIEWERMODE}}/g, autoViewerMode ? 'true' : 'false')
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
@@ -382,44 +405,45 @@ async function enableProxyRoute (
   })
 }
 
-interface ConnectionInfos {
-  userJID: string
+interface WCRemoteConnectionInfos {
   roomJID: string
-  boshUri: string
-  wsUri?: string
-  remoteXMPPServer: boolean
+  anonymous?: {
+    userJID: string
+    boshUri: string
+    wsUri?: string
+  }
+  authenticated?: boolean
 }
 
-async function _remoteConnectionInfos (remoteChatInfos: LiveChatJSONLDAttribute): Promise<ConnectionInfos | null> {
+async function _remoteConnectionInfos (remoteChatInfos: LiveChatJSONLDAttribute): Promise<WCRemoteConnectionInfos> {
   if (!remoteChatInfos) { throw new Error('Should have remote chat infos for remote videos') }
-  const connectionInfos = anonymousConnectionInfos(remoteChatInfos ?? false)
-  if (!connectionInfos || !connectionInfos.boshUri) {
-    return null
+  if (remoteChatInfos.type !== 'xmpp') { throw new Error('Should have remote xmpp chat infos for remote videos') }
+  const connectionInfos: WCRemoteConnectionInfos = {
+    roomJID: remoteChatInfos.jid
   }
-  return {
-    userJID: connectionInfos.userJID,
-    roomJID: connectionInfos.roomJID,
-    boshUri: connectionInfos.boshUri,
-    wsUri: connectionInfos.wsUri,
-    remoteXMPPServer: true
+  if (remoteAuthenticatedConnectionEnabled(remoteChatInfos)) {
+    connectionInfos.authenticated = true
   }
+  const anonymousCI = anonymousConnectionInfos(remoteChatInfos ?? false)
+  if (anonymousCI?.boshUri) {
+    connectionInfos.anonymous = {
+      userJID: anonymousCI.userJID,
+      boshUri: anonymousCI.boshUri,
+      wsUri: anonymousCI.wsUri
+    }
+  }
+  return connectionInfos
 }
 
-async function _localConnectionInfos (
+async function _localRoomJID (
   options: RegisterServerOptions,
   settings: SettingEntries,
+  prosodyDomain: string,
   roomKey: string,
   video: MVideoThumbnail | undefined,
   channelId: number,
   forceType: boolean
-): Promise<ConnectionInfos> {
-  const prosodyDomain = await getProsodyDomain(options)
-  const jid = 'anon.' + prosodyDomain
-  const boshUri = getBoshUri(options)
-  const wsUri = settings['disable-websocket']
-    ? ''
-    : (getWSUri(options) ?? '')
-
+): Promise<string> {
   // Computing the room name...
   let room: string
   if (forceType) {
@@ -462,13 +486,7 @@ async function _localConnectionInfos (
     room = room.replace(/{{CHANNEL_NAME}}/g, channelName)
   }
 
-  return {
-    userJID: jid,
-    roomJID: room,
-    boshUri,
-    wsUri,
-    remoteXMPPServer: false
-  }
+  return room
 }
 
 export {

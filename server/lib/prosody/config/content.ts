@@ -258,13 +258,17 @@ class ProsodyConfigContent {
     this.global.set('c2s_ports', [c2sPort])
   }
 
-  useRoomS2S (s2sPort: string, s2sInterfaces: string[]): void {
+  useS2S (s2sPort: string, s2sInterfaces: string[], mucOnly: boolean): void {
     this.global.set('s2s_ports', [s2sPort])
     this.global.set('s2s_interfaces', s2sInterfaces)
     this.global.set('s2s_secure_auth', false)
     this.global.add('modules_enabled', 'tls') // required for s2s and co
     this.muc.add('modules_enabled', 's2s')
     this.muc.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
+    if (!mucOnly && this.authenticated) {
+      this.authenticated.add('modules_enabled', 's2s')
+      this.authenticated.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
+    }
   }
 
   useExternalComponents (componentsPort: string, components: ExternalComponent[]): void {
