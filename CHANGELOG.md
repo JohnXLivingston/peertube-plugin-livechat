@@ -6,6 +6,8 @@
 
 * Chat Federation: if both local and remote instance have external XMPP connections enabled, you can use your local xmpp account to join remote rooms.
 
+TODO: documentation, and settings names/descriptions changes related to direct XMPP S2S connections.
+
 ## 6.3.0
 
 ### New Features
