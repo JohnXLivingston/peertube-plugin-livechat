@@ -200,7 +200,7 @@ Si certbot vous propose plusieurs méthodes pour générer le certificat, choisi
 
 Normalement vous devriez maintenant trouver les certificats dans le dossier configuré.
 
-Note: la première fois que vous faisez tout ça, il va falloir recharger Prosody. Le plus simple pour cela est de
+Note: la première fois que vous faites tout ça, il va falloir recharger Prosody. Le plus simple pour cela est de
 redémarrer Peertube.
 
 ### En cas de problème
