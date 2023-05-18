@@ -150,7 +150,7 @@ server {
     default_type "text/plain";
     root /var/www/certbot;
   }
-  location / { return 301 https://votre.instance.tld; }
+  location / { return 301 https://votre_instance.tld; }
 }
 ```
 
