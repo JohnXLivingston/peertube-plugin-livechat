@@ -8,6 +8,7 @@ import { ConfigLogExpiration, ProsodyConfigContent } from './config/content'
 import { getProsodyDomain } from './config/domain'
 import { getAPIKey } from '../apikey'
 import { parseExternalComponents } from './config/components'
+import { getRemoteServerInfosDir } from '../federation/storage'
 
 async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
@@ -64,26 +65,24 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
 
   let certsDir: string | undefined = path.resolve(dir, 'certs')
   let certsDirIsCustom = false
-  if (settings['prosody-room-allow-s2s']) {
-    if ((settings['prosody-certificates-dir'] as string ?? '') !== '') {
-      if (!fs.statSync(settings['prosody-certificates-dir'] as string).isDirectory()) {
-        // We can throw an exception here...
-        // Because if the user input a wrong directory, the plugin will not register,
-        // and he will never be able to fix the conf
-        logger.error('Certificate directory does not exist or is not a directory')
-        certsDir = undefined
-      } else {
-        certsDir = settings['prosody-certificates-dir'] as string
-      }
-      certsDirIsCustom = true
+  if (settings['prosody-room-allow-s2s'] && (settings['prosody-certificates-dir'] as string ?? '') !== '') {
+    if (!fs.statSync(settings['prosody-certificates-dir'] as string).isDirectory()) {
+      // We can throw an exception here...
+      // Because if the user input a wrong directory, the plugin will not register,
+      // and he will never be able to fix the conf
+      logger.error('Certificate directory does not exist or is not a directory')
+      certsDir = undefined
     } else {
-      // In this case we are generating and using self signed certificates
-
-      // Note: when using prosodyctl to generate self-signed certificates,
-      // there are wrongly generated in the data dir.
-      // So we will use this dir as the certs dir.
-      certsDir = path.resolve(dir, 'data')
+      certsDir = settings['prosody-certificates-dir'] as string
     }
+    certsDirIsCustom = true
+  } else {
+    // In this case we are generating and using self signed certificates
+
+    // Note: when using prosodyctl to generate self-signed certificates,
+    // there are wrongly generated in the data dir.
+    // So we will use this dir as the certs dir.
+    certsDir = path.resolve(dir, 'data')
   }
 
   return {
@@ -139,7 +138,8 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'prosody-components',
     'prosody-components-port',
     'prosody-components-list',
-    'chat-no-anonymous'
+    'chat-no-anonymous',
+    'federation-dont-publish-remotely'
   ])
 
   const valuesToHideInDiagnostic = new Map<string, string>()
@@ -151,23 +151,27 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const disableAnon = (settings['chat-no-anonymous'] as boolean) || false
   const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
   const enableC2S = (settings['prosody-c2s'] as boolean) || false
+  // enableRoomS2S: room can be joined from remote XMPP servers (Peertube or not)
   const enableRoomS2S = (settings['prosody-room-allow-s2s'] as boolean) || false
   const enableComponents = (settings['prosody-components'] as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
   const roomType = settings['prosody-room-type'] === 'channel' ? 'channel' : 'video'
-  const enableUserS2S = enableRoomS2S && !(settings['federation-no-remote-chat'] as boolean)
+  // enableRemoteChatConnections: local users can communicate with external rooms
+  const enableRemoteChatConnections = !(settings['federation-dont-publish-remotely'] as boolean)
   let certificates: ProsodyConfigCertificates = false
 
   const apikey = await getAPIKey(options)
   valuesToHideInDiagnostic.set('APIKey', apikey)
+
+  const publicServerUrl = options.peertubeHelpers.config.getWebserverUrl()
 
   let basePeertubeUrl = settings['prosody-peertube-uri'] as string
   if (basePeertubeUrl && !/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(basePeertubeUrl)) {
     throw new Error('Invalid prosody-peertube-uri')
   }
   if (!basePeertubeUrl) {
-    basePeertubeUrl = options.peertubeHelpers.config.getWebserverUrl()
+    basePeertubeUrl = publicServerUrl
   }
   const baseApiUrl = basePeertubeUrl + getBaseRouterRoute(options) + 'api/'
 
@@ -181,7 +185,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   }
   config.useHttpAuthentication(authApiUrl)
   const useWS = !!options.registerWebSocketRoute // this comes with Peertube >=5.0.0, and is a prerequisite to websocket
-  config.usePeertubeBoshAndWebsocket(prosodyDomain, port, options.peertubeHelpers.config.getWebserverUrl(), useWS)
+  config.usePeertubeBoshAndWebsocket(prosodyDomain, port, publicServerUrl, useWS)
   config.useMucHttpDefault(roomApiUrl)
 
   if (enableC2S) {
@@ -204,27 +208,33 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     config.useExternalComponents(componentsPort, components)
   }
 
-  if (enableRoomS2S || enableUserS2S) {
+  if (enableRoomS2S || enableRemoteChatConnections) {
     certificates = 'generate-self-signed'
     if (config.paths.certsDirIsCustom) {
       certificates = 'use-from-dir'
     }
-    const s2sPort = (settings['prosody-s2s-port'] as string) || '5269'
-    if (!/^\d+$/.test(s2sPort)) {
-      throw new Error('Invalid s2s port')
+    let s2sPort, s2sInterfaces
+    if (enableRoomS2S) {
+      s2sPort = (settings['prosody-s2s-port'] as string) || '5269'
+      if (!/^\d+$/.test(s2sPort)) {
+        throw new Error('Invalid s2s port')
+      }
+      s2sInterfaces = ((settings['prosody-s2s-interfaces'] as string) || '')
+        .split(',')
+        .map(s => s.trim())
+      // Check that there is no invalid values (to avoid injections):
+      s2sInterfaces.forEach(networkInterface => {
+        if (networkInterface === '*') return
+        if (networkInterface === '::') return
+        if (networkInterface.match(/^\d+\.\d+\.\d+\.\d+$/)) return
+        if (networkInterface.match(/^[a-f0-9:]+$/)) return
+        throw new Error('Invalid s2s interfaces')
+      })
+    } else {
+      s2sPort = null
+      s2sInterfaces = null
     }
-    const s2sInterfaces = ((settings['prosody-s2s-interfaces'] as string) || '')
-      .split(',')
-      .map(s => s.trim())
-    // Check that there is no invalid values (to avoid injections):
-    s2sInterfaces.forEach(networkInterface => {
-      if (networkInterface === '*') return
-      if (networkInterface === '::') return
-      if (networkInterface.match(/^\d+\.\d+\.\d+\.\d+$/)) return
-      if (networkInterface.match(/^[a-f0-9:]+$/)) return
-      throw new Error('Invalid s2s interfaces')
-    })
-    config.useS2S(s2sPort, s2sInterfaces, !enableUserS2S)
+    config.useS2S(s2sPort, s2sInterfaces, publicServerUrl, getRemoteServerInfosDir(options))
   }
 
   const logExpiration = readLogExpiration(options, logExpirationSetting)

@@ -8,6 +8,7 @@ import { disableProxyRoute, enableProxyRoute } from '../routers/webchat'
 import { fixRoomSubject } from './fix-room-subject'
 import * as fs from 'fs'
 import * as child_process from 'child_process'
+import { disableLuaUnboundIfNeeded, prosodyDebuggerOptions } from '../../lib/debug'
 
 async function _ensureWorkingDir (
   options: RegisterServerOptions,
@@ -98,6 +99,7 @@ async function prepareProsody (options: RegisterServerOptions): Promise<void> {
     })
     spawned.on('error', reject)
     spawned.on('close', (_code) => { // 'close' and not 'exit', to be sure it is finished.
+      disableLuaUnboundIfNeeded(options, filePaths.appImageExtractPath)
       resolve()
     })
   })
@@ -275,20 +277,28 @@ async function testProsodyCorrectlyRunning (options: RegisterServerOptions): Pro
   return result
 }
 
-async function ensureProsodyRunning (options: RegisterServerOptions): Promise<void> {
+async function ensureProsodyRunning (
+  options: RegisterServerOptions,
+  forceRestart?: boolean,
+  restartProsodyInDebugMode?: boolean
+): Promise<void> {
   const { peertubeHelpers } = options
   const logger = peertubeHelpers.logger
   logger.debug('Calling ensureProsodyRunning')
 
-  const r = await testProsodyCorrectlyRunning(options)
-  if (r.ok) {
-    r.messages.forEach(m => logger.debug(m))
-    logger.info('Prosody is already running correctly')
-    // Stop here. Nothing to change.
-    return
+  if (forceRestart) {
+    logger.info('We want to force Prosody restart, skip checking the current state')
+  } else {
+    const r = await testProsodyCorrectlyRunning(options)
+    if (r.ok) {
+      r.messages.forEach(m => logger.debug(m))
+      logger.info('Prosody is already running correctly')
+      // Stop here. Nothing to change.
+      return
+    }
+    logger.info('Prosody is not running correctly: ')
+    r.messages.forEach(m => logger.info(m))
   }
-  logger.info('Prosody is not running correctly: ')
-  r.messages.forEach(m => logger.info(m))
 
   // Shutting down...
   logger.debug('Shutting down prosody')
@@ -309,9 +319,30 @@ async function ensureProsodyRunning (options: RegisterServerOptions): Promise<vo
   await ensureProsodyCertificates(options, config)
 
   // launch prosody
-  const execCmd = filePaths.exec + (filePaths.execArgs.length ? ' ' + filePaths.execArgs.join(' ') : '')
-  logger.info('Going to launch prosody (' + execCmd + ')')
-  const prosody = child_process.exec(execCmd, {
+  let execArgs: string[] = filePaths.execArgs
+  if (restartProsodyInDebugMode) {
+    if (!filePaths.exec.includes('squashfs-root')) {
+      logger.error('Trying to enable the Prosody Debugger, but not using the AppImage. Cant work.')
+    } else {
+      const debuggerOptions = prosodyDebuggerOptions(options)
+      if (debuggerOptions) {
+        execArgs = [
+          'debug',
+          debuggerOptions.mobdebugPath,
+          debuggerOptions.mobdebugHost,
+          debuggerOptions.mobdebugPort,
+          ...execArgs
+        ]
+      }
+    }
+  }
+  logger.info(
+    'Going to launch prosody (' +
+    filePaths.exec +
+    (execArgs.length ? ' ' + execArgs.join(' ') : '') +
+    ')'
+  )
+  const prosody = child_process.spawn(filePaths.exec, execArgs, {
     cwd: filePaths.dir,
     env: {
       ...process.env,

@@ -1,6 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { RemoteVideoHandlerParams } from './types'
-import { storeVideoLiveChatInfos } from './storage'
+import { storeVideoLiveChatInfos, storeRemoteServerInfos } from './storage'
 import { sanitizePeertubeLiveChatInfos } from './sanitize'
 
 /**
@@ -19,6 +19,9 @@ async function readIncomingAPVideo (
   peertubeLiveChat = sanitizePeertubeLiveChatInfos(peertubeLiveChat)
 
   await storeVideoLiveChatInfos(options, video, peertubeLiveChat)
+  if (video.remote) {
+    await storeRemoteServerInfos(options, peertubeLiveChat)
+  }
 }
 
 export {

@@ -9,6 +9,8 @@ import { Affiliations, getVideoAffiliations, getChannelAffiliations } from '../p
 import { getProsodyDomain } from '../prosody/config/domain'
 import { fillVideoCustomFields } from '../custom-fields'
 import { getChannelInfosById } from '../database/channel'
+import { ensureProsodyRunning } from '../prosody/ctl'
+import { isDebugMode } from '../debug'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -221,6 +223,33 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       res.sendStatus(501)
     }
   ))
+
+  // router.get('/federation_server_infos', asyncMiddleware(
+  //   async (req: Request, res: Response, _next: NextFunction) => {
+  //     logger.info('federation_server_infos api call')
+  //     // TODO/FIXME: return server infos.
+  //     // TODO/FIXME: store these informations on the other side.
+  //     res.json({ ok: true })
+  //   }
+  // ))
+
+  if (isDebugMode(options)) {
+    // Only add this route if the debug mode is enabled at time of the server launch.
+    // Note: the isDebugMode will be tested again when the API is called.
+    // Note: we dont authenticate the user. We want this API to be callable from debug tools.
+    //       This should not be an issue, as debug_mode should only be available on dev environments.
+    router.get('/restart_prosody', asyncMiddleware(
+      async (req: Request, res: Response, _next: NextFunction) => {
+        if (!isDebugMode(options)) {
+          res.json({ ok: false })
+          return
+        }
+        const restartProsodyInDebugMode = req.query.debugger === 'true'
+        await ensureProsodyRunning(options, true, restartProsodyInDebugMode)
+        res.json({ ok: true })
+      }
+    ))
+  }
 
   return router
 }

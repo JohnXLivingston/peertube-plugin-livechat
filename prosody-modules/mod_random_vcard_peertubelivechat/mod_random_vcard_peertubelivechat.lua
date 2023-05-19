@@ -1,5 +1,5 @@
 local st = require "util.stanza";
-local path = require "util.paths"; 
+local path = require "util.paths";
 local b64 = require "util.encodings".base64.encode;
 local jid = require "util.jid";
 
