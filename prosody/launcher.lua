@@ -13,6 +13,7 @@ if what == 'debug' then
   local dir_sep = package.config:sub(1,1);
   package.path = package.path..lua_path_sep..mobdebug_path..dir_sep.."?.lua";
   require "mobdebug".start(mobdebug_host, mobdebug_port);
+  require "mobdebug".coro();
   what = table.remove(arg, 1);
 end
 

@@ -149,7 +149,7 @@ function discover_websocket_s2s(event)
 		return;
 	end
 
-	local f_ws_proxy = io.open(path.join(server_infos_dir, to_host, 'ws-proxy'), "r");
+	local f_ws_proxy = io.open(path.join(server_infos_dir, to_host, 'ws-s2s'), "r");
 	if f_ws_proxy == nil then
 		module:log("debug", "Remote host %s is not a known remote Peertube, we will let legacy s2s module handle the connection", to_host);
 		return;
@@ -159,18 +159,18 @@ function discover_websocket_s2s(event)
 
 	local remote_ws_proxy_conf = json.decode(content);
 	if (not remote_ws_proxy_conf) then
-		module:log("error", "Remote host %s has empty ws-proxy configuration", to_host);
+		module:log("error", "Remote host %s has empty ws-s2s configuration", to_host);
 		return;
 	end
 	if (not remote_ws_proxy_conf['url']) then
-		module:log("error", "Remote host %s has missing Websocket url in ws-proxy configuration", to_host);
+		module:log("error", "Remote host %s has missing Websocket url in ws-s2s configuration", to_host);
 		return;
 	end
 
 	module:log("debug", "Found a Websocket endpoint to proxify s2s communications to remote host %s", to_host);
 	local properties = {};
 	properties["extra_headers"] = {
-		["peertube-livechat-ws-proxy-instance-url"] = instance_url;
+		["peertube-livechat-ws-s2s-instance-url"] = instance_url;
 	};
 	properties["url"] = remote_ws_proxy_conf["url"];
 	return properties;
@@ -186,7 +186,7 @@ function discover_websocket_s2s(event)
 
 	-- local ex = {};
 	-- ex.headers = {
-	-- 	["peertube-livechat-ws-proxy-instance-url"] = instance_url;
+	-- 	["peertube-livechat-ws-s2s-instance-url"] = instance_url;
 	-- 	["sec_websocket_protocol"] = 'xmpp';
 	-- }
 
