@@ -79,9 +79,63 @@ Pour activer ce mode, il suffit de créer un fichier
 La simple existance de ce fichier suffit à déclencher le mode debug.
 Pour être sûr qu'il est pris en compte, vous pouvez redémarrer votre instance Peertube.
 
+Ce fichier peut également contenir du JSON qui pourra activer d'autres options.
+
+{{% notice warning %}}
+N'activer jamais ce mode sur un serveur de production, ni même sur un serveur public.
+Cela pourrait poser des problèmes de sécurité.
+{{% /notice %}}
+
+### Redémarrer Prosody
+
+Pour redémarrer Prosody quand le mode debug est activé, vous pouvez appeler l'API
+`http://votre_instance.tld/plugins/livechat/router/api/restart_prosody`.
+Cet appel n'a pas besoin d'authentification.
+Il peut se faire depuis une ligne de commande, par exemple avec
+`curl http://votre_instance.tld/plugins/livechat/router/api/restart_prosody`.
+
+### Prosody debugger
+
+Il est possible de connecter l'AppImage Prosody à un debugger distant en utilisant
+[MobDebug](https://luarocks.org/modules/paulclinger/mobdebug).
+
+Pour cela, placer MobDebug dans un dossier accessible par le user `peertube`.
+Ensuite, ajouter cela dans le fichier `debug_mode` du plugin:
+
+```json
+{
+  "debug_prosody": {
+    "debugger_path": "/the_path_to_mobdebug/src",
+    "host": "localhost",
+    "port": "8172"
+  }
+}
+```
+
+`host` et `port` sont optionnels. `debugger_path` doit pointer vers le dossier où
+se trouve le fichier `.lua` de `MobDebug`.
+
+Redémarrer Peertube.
+
+Lancer votre serveur de debug.
+
+Pour que Prosody se connecte au debugger, appelez l'API
+`http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.
+Cet appel n'a pas besoin d'authentification.
+Il peut se faire depuis une ligne de commande, par exemple avec
+`curl http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.
+Vous pouvez même configurer votre serveur de debuggage pour lancer cette commande
+automatiquement.
+
+Prosody va alors redémarrer en se connectant au debugger.
+
 ## Environnement de développement rapide via Docker
 
 Un tutoriel est disponible sur [le forum Peertube](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)
 pour expliquer comment monter rapidement un environnement de développement en utilisant Docker.
 
 Un dépot a été crée sur la base de ce tutoriel: https://codeberg.org/mose/pt-plugin-dev
+
+Note: pour une raison obscure, Prosody n'arrive pas à résoudre les adresses DNS des conteneurs quand la librairie
+lua-unbound est utilisée. Pour contourner cela, il y a un «dirty hack»: il suffit de créer une fichier
+`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` dans vos docker-volumes, puis de les redémarrer.

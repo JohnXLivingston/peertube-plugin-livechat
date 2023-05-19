@@ -4,8 +4,15 @@ interface VideoBuildResultContext {
   video: MVideoAP
 }
 
+interface LiveChatJSONLDPeertubeWSS2SLink {
+  type: 'xmpp-peertube-livechat-ws-s2s'
+  url: string
+}
+
 interface LiveChatJSONLDS2SLink {
   type: 'xmpp-s2s'
+  host: string
+  port: string
 }
 
 interface LiveChatJSONLDAnonymousWebsocketLink {
@@ -20,7 +27,11 @@ interface LiveChatJSONLDAnonymousBOSHLink {
   jid: string
 }
 
-type LiveChatJSONLDLink = LiveChatJSONLDS2SLink | LiveChatJSONLDAnonymousBOSHLink | LiveChatJSONLDAnonymousWebsocketLink
+type LiveChatJSONLDLink =
+  LiveChatJSONLDPeertubeWSS2SLink
+  | LiveChatJSONLDS2SLink
+  | LiveChatJSONLDAnonymousBOSHLink
+  | LiveChatJSONLDAnonymousWebsocketLink
 
 interface LiveChatJSONLDInfos {
   type: 'xmpp'
@@ -42,6 +53,8 @@ interface RemoteVideoHandlerParams {
 export {
   VideoBuildResultContext,
   LiveChatJSONLDLink,
+  LiveChatJSONLDS2SLink,
+  LiveChatJSONLDPeertubeWSS2SLink,
   LiveChatJSONLDInfos,
   LiveChatJSONLDAttribute,
   LiveChatVideoObject,

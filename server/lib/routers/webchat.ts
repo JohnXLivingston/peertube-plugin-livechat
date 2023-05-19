@@ -16,6 +16,8 @@ import { getBoshUri, getWSUri } from '../uri/webchat'
 import { getVideoLiveChatInfos } from '../federation/storage'
 import { LiveChatJSONLDAttribute } from '../federation/types'
 import { anonymousConnectionInfos, remoteAuthenticatedConnectionEnabled } from '../federation/connection-infos'
+// import { XMPPWsProxyServer } from '../xmpp-ws-proxy/server'
+// import { checkRemote } from '../xmpp-ws-proxy/check-remote'
 import * as path from 'path'
 const got = require('got')
 
@@ -28,6 +30,7 @@ interface ProsodyProxyInfo {
 let currentProsodyProxyInfo: ProsodyProxyInfo | null = null
 let currentHttpBindProxy: ReturnType<typeof createProxyServer> | null = null
 let currentWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
+let currentS2SWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
 
 async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Router> {
   const {
@@ -202,13 +205,9 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       page = page.replace(/{{REMOTE_BOSH_SERVICE_URL}}/g, remoteConnectionInfos?.anonymous?.boshUri ?? '')
       page = page.replace(/{{REMOTE_WS_SERVICE_URL}}/g, remoteConnectionInfos?.anonymous?.wsUri ?? '')
       page = page.replace(/{{REMOTE_ANONYMOUS_XMPP_SERVER}}/g, remoteConnectionInfos?.anonymous ? 'true' : 'false')
-      // Note: to be able to connect to remote XMPP server, with a local account,
-      // we must enable prosody-room-allow-s2s
-      // (which is required, so we can use outgoing S2S from the authenticated virtualhost).
-      // TODO: There should be another settings, rather than prosody-room-allow-s2s
       page = page.replace(
         /{{REMOTE_AUTHENTICATED_XMPP_SERVER}}/g,
-        settings['prosody-room-allow-s2s'] && remoteConnectionInfos?.authenticated ? 'true' : 'false'
+        remoteConnectionInfos?.authenticated ? 'true' : 'false'
       )
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
       page = page.replace(/{{AUTOVIEWERMODE}}/g, autoViewerMode ? 'true' : 'false')
@@ -270,6 +269,29 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         currentWebsocketProxy.ws(request, socket, head)
       }
     })
+
+    registerWebSocketRoute({
+      route: '/xmpp-websocket-s2s',
+      handler: (request, socket, head) => {
+        if (!currentS2SWebsocketProxy) {
+          peertubeHelpers.logger.error('There is no current websocket s2s proxy, should not get here.')
+          // no need to close the socket, Peertube will
+          // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
+          return
+        }
+        currentS2SWebsocketProxy.ws(request, socket, head)
+      }
+    })
+    // registerWebSocketRoute({
+    //   route: '/xmpp-websocket-proxy',
+    //   handler: async (request, socket, head) => {
+    //     const remoteInstanceUrl = request.headers['peertube-livechat-ws-proxy-instance-url']
+    //     if (!await checkRemote(options, remoteInstanceUrl)) {
+    //       return
+    //     }
+    //     XMPPWsProxyServer.singleton(options).handleUpgrade(request, socket, head)
+    //   }
+    // })
   }
 
   router.get('/prosody-list-rooms', asyncMiddleware(
@@ -345,6 +367,11 @@ async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): P
       currentWebsocketProxy.close()
       currentWebsocketProxy = null
     }
+    if (currentS2SWebsocketProxy) {
+      peertubeHelpers.logger.info('Closing the s2s websocket proxy...')
+      currentS2SWebsocketProxy.close()
+      currentS2SWebsocketProxy = null
+    }
   } catch (err) {
     peertubeHelpers.logger.error('Seems that the http bind proxy close has failed: ' + (err as string))
   }
@@ -402,6 +429,28 @@ async function enableProxyRoute (
   })
   currentWebsocketProxy.on('close', () => {
     logger.info('Got a close event for the websocket proxy')
+  })
+
+  logger.info('Creating a new s2s websocket proxy')
+  currentS2SWebsocketProxy = createProxyServer({
+    target: 'http://localhost:' + prosodyProxyInfo.port + '/xmpp-websocket-s2s',
+    ignorePath: true,
+    ws: true
+  })
+  currentS2SWebsocketProxy.on('error', (err, req, res) => {
+    // We must handle errors, otherwise Peertube server crashes!
+    logger.error(
+      'The s2s websocket proxy got an error ' +
+      '(this can be normal if you updated/uninstalled the plugin, or shutdowned peertube while users were chatting): ' +
+      err.message
+    )
+    if ('writeHead' in res) {
+      res.writeHead(500)
+    }
+    res.end('')
+  })
+  currentS2SWebsocketProxy.on('close', () => {
+    logger.info('Got a close event for the s2s websocket proxy')
   })
 }
 

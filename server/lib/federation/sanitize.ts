@@ -37,8 +37,34 @@ function sanitizePeertubeLiveChatInfos (chatInfos: any): LiveChatJSONLDAttribute
       })
     }
     if (link.type === 'xmpp-s2s') {
+      if (!/^\d+$/.test(link.port)) {
+        continue
+      }
+      const host = _validateHost(link.host)
+      if (!host) {
+        continue
+      }
       r.links.push({
-        type: link.type
+        type: link.type,
+        host,
+        port: link.port
+      })
+    }
+    if (link.type === 'xmpp-peertube-livechat-ws-s2s') {
+      if ((typeof link.url) !== 'string') { continue }
+
+      if (
+        !_validUrl(link.url, {
+          noSearchParams: true,
+          protocol: 'ws.'
+        })
+      ) {
+        continue
+      }
+
+      r.links.push({
+        type: link.type,
+        url: link.url
       })
     }
   }
@@ -79,6 +105,16 @@ function _validUrl (s: string, constraints: URLConstraints): boolean {
   }
 
   return true
+}
+
+function _validateHost (s: string): false | string {
+  try {
+    if (s.includes('/')) { return false }
+    const url = new URL('http://' + s)
+    return url.hostname
+  } catch (_err) {
+    return false
+  }
 }
 
 export {

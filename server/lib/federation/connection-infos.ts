@@ -36,6 +36,7 @@ function remoteAuthenticatedConnectionEnabled (livechatInfos: LiveChatJSONLDAttr
   if (!livechatInfos.links) { return false }
   if (livechatInfos.type !== 'xmpp') { return false }
   for (const link of livechatInfos.links) {
+    if (link.type === 'xmpp-peertube-livechat-ws-s2s') { return true }
     if (link.type === 'xmpp-s2s') { return true }
   }
   return false

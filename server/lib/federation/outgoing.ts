@@ -2,7 +2,7 @@ import type { RegisterServerOptions, VideoObject } from '@peertube/peertube-type
 import type { LiveChatVideoObject, VideoBuildResultContext, LiveChatJSONLDLink, LiveChatJSONLDAttribute } from './types'
 import { storeVideoLiveChatInfos } from './storage'
 import { videoHasWebchat } from '../../../shared/lib/video'
-import { getBoshUri, getWSUri } from '../uri/webchat'
+import { getBoshUri, getWSUri, getWSS2SUri } from '../uri/webchat'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { fillVideoCustomFields } from '../custom-fields'
@@ -32,7 +32,8 @@ async function videoBuildJSONLD (
     'prosody-room-type',
     'federation-dont-publish-remotely',
     'chat-no-anonymous',
-    'prosody-room-allow-s2s'
+    'prosody-room-allow-s2s',
+    'prosody-s2s-port'
   ])
 
   if (settings['federation-dont-publish-remotely']) {
@@ -71,9 +72,23 @@ async function videoBuildJSONLD (
   }
 
   const links: LiveChatJSONLDLink[] = []
+  if (!settings['federation-dont-publish-remotely']) {
+    const wsS2SUri = getWSS2SUri(options)
+    if (wsS2SUri) {
+      links.push({
+        type: 'xmpp-peertube-livechat-ws-s2s',
+        url: canonicalizePluginUri(options, wsS2SUri, {
+          removePluginVersion: true,
+          protocol: 'ws'
+        })
+      })
+    }
+  }
   if (settings['prosody-room-allow-s2s']) {
     links.push({
-      type: 'xmpp-s2s'
+      type: 'xmpp-s2s',
+      host: prosodyDomain,
+      port: (settings['prosody-s2s-port'] as string) ?? ''
     })
   }
   if (!settings['chat-no-anonymous']) {

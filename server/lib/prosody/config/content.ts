@@ -72,6 +72,18 @@ abstract class ProsodyConfigBlock {
     this.entries.set(name, entry)
   }
 
+  remove (name: string, value: ConfigEntryValue): void {
+    if (!this.entries.has(name)) {
+      return
+    }
+    let entry = this.entries.get(name) as ConfigEntryValue
+    if (!Array.isArray(entry)) {
+      entry = [entry]
+    }
+    entry = entry.filter(v => v !== value)
+    this.entries.set(name, entry)
+  }
+
   write (): string {
     let content = ''
     // Map keeps order :)
@@ -258,17 +270,35 @@ class ProsodyConfigContent {
     this.global.set('c2s_ports', [c2sPort])
   }
 
-  useS2S (s2sPort: string, s2sInterfaces: string[], mucOnly: boolean): void {
-    this.global.set('s2s_ports', [s2sPort])
-    this.global.set('s2s_interfaces', s2sInterfaces)
-    this.global.set('s2s_secure_auth', false)
-    this.global.add('modules_enabled', 'tls') // required for s2s and co
-    this.muc.add('modules_enabled', 's2s')
-    this.muc.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
-    if (!mucOnly && this.authenticated) {
-      this.authenticated.add('modules_enabled', 's2s')
-      this.authenticated.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
+  useS2S (
+    s2sPort: string | null,
+    s2sInterfaces: string[] | null,
+    publicServerUrl: string,
+    serverInfosDir: string
+  ): void {
+    if (s2sPort !== null) {
+      this.global.set('s2s_ports', [s2sPort])
+    } else {
+      this.global.set('s2s_ports', [])
     }
+    if (s2sInterfaces !== null) {
+      this.global.set('s2s_interfaces', s2sInterfaces)
+    } else {
+      this.global.set('s2s_interfaces', [])
+    }
+    this.global.set('s2s_secure_auth', false)
+    this.global.remove('modules_disabled', 's2s')
+    this.global.add('modules_enabled', 's2s')
+    this.global.add('modules_enabled', 'tls') // required for s2s and co
+
+    this.global.add('modules_enabled', 's2s_peertubelivechat')
+    this.global.set('peertubelivechat_server_infos_path', serverInfosDir)
+    this.global.set('peertubelivechat_instance_url', publicServerUrl)
+
+    this.global.add('modules_enabled', 'websocket_s2s_peertubelivechat')
+
+    this.muc.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
+    this.authenticated?.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
   }
 
   useExternalComponents (componentsPort: string, components: ExternalComponent[]): void {

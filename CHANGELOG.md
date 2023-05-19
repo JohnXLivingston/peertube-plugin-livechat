@@ -4,9 +4,23 @@
 
 ### New Features
 
-* Chat Federation: if both local and remote instance have external XMPP connections enabled, you can use your local xmpp account to join remote rooms.
+* Chat Federation:
+  * You can now connect to a remote chat with your local account.
+  * This remote connection is done using a custom implementation of [XEP-0468: WebSocket S2S](https://xmpp.org/extensions/xep-0468.html), using some specific discovering method (so that it will work without any DNS configuration).
+  * If both local and remote instance have configured external XMPP connections, it will use legacy S2S connection.
 
 TODO: documentation, and settings names/descriptions changes related to direct XMPP S2S connections.
+TODO: write the new prosody modules README.
+TODO: mod_s2s_peertubelivechat: dont allow to connect to remote server that are not Peertube servers.
+TODO: when sanitizing remote chat endpoint, check that the domain is the same as the video domain (or is room.videodomain.tld).
+TODO: get remote server chat informations if missing (for now, it can be missing if there is no known remote video from that server).
+
+### Minor changes and fixes
+
+* Possibility to debug Prosody in development environments.
+* Using process.spawn instead of process.exec to launch Prosody (safer, and more optimal).
+* Prosody AppImage: fix path mapping: we only map necessary /etc/ subdir, so that the AppImage can access to /etc/resolv.conf, /etc/hosts, ...
+* Prosody AppImage: hidden debug mode to disable lua-unbound, that seems broken in some docker dev environments.
 
 ## 6.3.0
 
