@@ -142,16 +142,22 @@ function discover_websocket_s2s(event)
 	local to_host = event.to_host;
   module:log("debug", "Searching websocket s2s for remote host %s", to_host);
 
-	local f_s2s = io.open(path.join(server_infos_dir, to_host, 's2s'), "r");
+	-- FIXME: dont to this room. prefix thing. Peertube should create needed files.
+	local to_host_room = to_host;
+	if string.sub(to_host_room, 1, 5) ~= 'room.' then
+		to_host_room = 'room.'..to_host_room;
+	end
+
+	local f_s2s = io.open(path.join(server_infos_dir, to_host_room, 's2s'), "r");
 	if f_s2s ~= nil then
 		io.close(f_s2s);
-		module.log("debug", "Remote host is a known Peertube %s that has s2s activated, we will let legacy s2s module handle the connection", to_host);
+		module.log("debug", "Remote host is a known Peertube %s that has s2s activated, we will let legacy s2s module handle the connection", to_host_room);
 		return;
 	end
 
-	local f_ws_proxy = io.open(path.join(server_infos_dir, to_host, 'ws-s2s'), "r");
+	local f_ws_proxy = io.open(path.join(server_infos_dir, to_host_room, 'ws-s2s'), "r");
 	if f_ws_proxy == nil then
-		module:log("debug", "Remote host %s is not a known remote Peertube, we will let legacy s2s module handle the connection", to_host);
+		module:log("debug", "Remote host %s is not a known remote Peertube, we will let legacy s2s module handle the connection", to_host_room);
 		return;
 	end
 	local content = f_ws_proxy:read("*all");
