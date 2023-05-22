@@ -140,7 +140,7 @@ local instance_url = assert(module:get_option_string("peertubelivechat_instance_
 
 function discover_websocket_s2s(event)
 	local to_host = event.to_host;
-  module:log("debug", "Trying to route to %s", to_host);
+  module:log("debug", "Searching websocket s2s for remote host %s", to_host);
 
 	local f_s2s = io.open(path.join(server_infos_dir, to_host, 's2s'), "r");
 	if f_s2s ~= nil then
