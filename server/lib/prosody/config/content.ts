@@ -296,6 +296,8 @@ class ProsodyConfigContent {
     this.global.set('peertubelivechat_instance_url', publicServerUrl)
 
     this.global.add('modules_enabled', 'websocket_s2s_peertubelivechat')
+    // FIXME: seems to be necessary to add the module on the muc host, so that dialback can trigger route/remote.
+    this.muc.add('modules_enabled', 'websocket_s2s_peertubelivechat')
 
     this.muc.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
     this.authenticated?.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
