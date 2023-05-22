@@ -36,7 +36,7 @@ local consider_websocket_secure = module:get_option_boolean("consider_websocket_
 
 local xmlns_framing = "urn:ietf:params:xml:ns:xmpp-framing-server";
 local xmlns_streams = "http://etherx.jabber.org/streams";
-local xmlns_client = "jabber:server";
+local xmlns_server = "jabber:server";
 local stream_xmlns_attr = {xmlns='urn:ietf:params:xml:ns:xmpp-streams'};
 
 module:depends("s2s")
@@ -64,6 +64,7 @@ end
 
 local function session_close(session, reason)
 	local log = session.log or log;
+	log("debug", "Closing session...");
 	local close_event_payload = { session = session, reason = reason };
 	module:context(session.host):fire_event("pre-session-close", close_event_payload);
 	reason = close_event_payload.reason;
@@ -206,6 +207,7 @@ end
 
 local function wrap_websocket(session, conn)
 	local log = session.log or log;
+	log("Debug", "Calling wrap_websocket");
 
 	local function websocket_close(code, message)
 		log("debug", "Websocket close, writing a build_close frame");
@@ -291,7 +293,7 @@ local function wrap_websocket(session, conn)
 
 		stanza = st.clone(stanza);
 		local attr = stanza.attr;
-		attr.xmlns = attr.xmlns or xmlns_client;
+		attr.xmlns = attr.xmlns or xmlns_server;
 		if stanza.name:find("^stream:") then
 			attr["xmlns:stream"] = attr["xmlns:stream"] or xmlns_streams;
 		end
