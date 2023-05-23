@@ -2,31 +2,106 @@ import type { RegisterServerOptions } from '@peertube/peertube-types'
 import * as path from 'path'
 import * as fs from 'fs'
 
+interface ProsodyDebuggerOptions {
+  mobdebugPath: string
+  mobdebugHost: string
+  mobdebugPort: string
+}
+
+interface DebugContent {
+  renewCertCheckInterval?: number
+  renewSelfSignedCertInterval?: number
+  logRotateCheckInterval?: number
+  logRotateEvery?: number
+  prosodyDebuggerOptions?: ProsodyDebuggerOptions
+}
+
+type DebugNumericValue = 'renewCertCheckInterval'
+| 'renewSelfSignedCertInterval'
+| 'logRotateEvery'
+| 'logRotateCheckInterval'
+
+let debugContent: DebugContent | null | false = null
+function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
+  if (debugContent !== null) { return debugContent }
+
+  const peertubeHelpers = options.peertubeHelpers
+  const logger = peertubeHelpers.logger
+  if (!peertubeHelpers.plugin) {
+    return false
+  }
+
+  const filepath = path.resolve(peertubeHelpers.plugin.getDataDirectoryPath(), 'debug_mode')
+  logger.debug('Testing debug mode by testing if file exists: ' + filepath)
+  if (!fs.existsSync(filepath)) {
+    debugContent = false
+    return false
+  }
+
+  logger.info('Plugin livechat Debug mode is on.')
+  debugContent = {}
+
+  try {
+    // content is optional, the file can be empty!
+    const content = fs.readFileSync(filepath).toString()
+    let json: any = !content ? {} : JSON.parse(content)
+    if (!json || (typeof json !== 'object')) { json = {} }
+
+    debugContent.prosodyDebuggerOptions = _getProsodyDebuggerOptions(options, json)
+    debugContent.logRotateCheckInterval = _getNumericOptions(options, json, 'log_rotate_check_interval')
+    debugContent.logRotateEvery = _getNumericOptions(options, json, 'log_rotate_every')
+    debugContent.renewCertCheckInterval = _getNumericOptions(options, json, 'renew_cert_check_interval')
+    debugContent.renewSelfSignedCertInterval = _getNumericOptions(options, json, 'renew_self_signed_cert_interval')
+  } catch (err) {
+    logger.error('Failed to read the debug_mode file content:', err)
+  }
+
+  return debugContent
+}
+
+function _getProsodyDebuggerOptions (options: RegisterServerOptions, json: any): ProsodyDebuggerOptions | undefined {
+  if (!json) { return undefined }
+  if (typeof json !== 'object') { return undefined }
+  if (!json.debug_prosody) { return undefined }
+  if (typeof json.debug_prosody !== 'object') { return undefined }
+  if (!json.debug_prosody.debugger_path) { return undefined }
+  if (typeof json.debug_prosody.debugger_path !== 'string') { return undefined }
+
+  const mobdebugPath = json.debug_prosody.debugger_path
+
+  if (!fs.statSync(mobdebugPath).isDirectory()) {
+    options.peertubeHelpers.logger.error('There should be a debugger, but cant find it. Path should be: ', mobdebugPath)
+    return undefined
+  }
+
+  const mobdebugHost = json.debug_prosody.host?.toString() || 'localhost'
+  const mobdebugPort = json.debug_prosody.port?.toString() || '8172'
+  return {
+    mobdebugPath,
+    mobdebugHost,
+    mobdebugPort
+  }
+}
+
+function _getNumericOptions (options: RegisterServerOptions, json: any, name: string): number | undefined {
+  if (!(name in json)) { return undefined }
+  const v = json[name]
+  if (typeof v !== 'number') { return undefined }
+  return json[name]
+}
+
+function unloadDebugMode (): void {
+  debugContent = null
+}
+
 /**
  * Check if debug mode is enabled
  * @param options server options
  * @returns true if debug mode enabled
  */
-export function isDebugMode (options: RegisterServerOptions): boolean {
-  const peertubeHelpers = options.peertubeHelpers
-  const logger = peertubeHelpers.logger
-
-  if (!peertubeHelpers.plugin) {
-    return false
-  }
-  const filepath = path.resolve(peertubeHelpers.plugin.getDataDirectoryPath(), 'debug_mode')
-  logger.debug('Testing debug mode by testing if file exists: ' + filepath)
-  if (fs.existsSync(filepath)) {
-    logger.info('Plugin livechat Debug mode is on.')
-    return true
-  }
-  return false
-}
-
-interface ProsodyDebuggerOptions {
-  mobdebugPath: string
-  mobdebugHost: string
-  mobdebugPort: string
+function isDebugMode (options: RegisterServerOptions): boolean {
+  const debugContent = _readDebugFile(options)
+  return !!debugContent
 }
 
 /**
@@ -34,40 +109,14 @@ interface ProsodyDebuggerOptions {
  * @param options server options
  * @returns false if we dont use the Prosody debugger. Else the need information to launch the debugger.
  */
-export function prosodyDebuggerOptions (options: RegisterServerOptions): false | ProsodyDebuggerOptions {
+function prosodyDebuggerOptions (options: RegisterServerOptions): false | ProsodyDebuggerOptions {
+  // Additional security: testing NODE_ENV.
+  // It should absolutly not be possible to enable Prosody debugger on production ev.
   if (process.env.NODE_ENV !== 'dev') { return false }
-  if (!isDebugMode(options)) { return false }
-
-  const peertubeHelpers = options.peertubeHelpers
-  const logger = peertubeHelpers.logger
-
-  try {
-    const filepath = path.resolve(peertubeHelpers.plugin.getDataDirectoryPath(), 'debug_mode')
-    const content = fs.readFileSync(filepath).toString()
-    if (!content) { return false }
-    const json = JSON.parse(content)
-    if (!json) { return false }
-    if (typeof json !== 'object') { return false }
-    if (!json.debug_prosody) { return false }
-    if (typeof json.debug_prosody !== 'object') { return false }
-    if (!json.debug_prosody.debugger_path) { return false }
-    if (typeof json.debug_prosody.debugger_path !== 'string') { return false }
-    const mobdebugPath = json.debug_prosody.debugger_path
-    if (!fs.statSync(mobdebugPath).isDirectory()) {
-      logger.error('The should be a debugger, but cant find it. Path should be: ', mobdebugPath)
-      return false
-    }
-    const mobdebugHost = json.debug_prosody.host?.toString() || 'localhost'
-    const mobdebugPort = json.debug_prosody.port?.toString() || '8172'
-    return {
-      mobdebugPath,
-      mobdebugHost,
-      mobdebugPort
-    }
-  } catch (err) {
-    logger.error('Failed to read the debug_mode file content:', err)
-    return false
-  }
+  const debugContent = _readDebugFile(options)
+  if (debugContent === false) { return false }
+  if (!debugContent.prosodyDebuggerOptions) { return false }
+  return debugContent.prosodyDebuggerOptions
 }
 
 /**
@@ -79,7 +128,7 @@ export function prosodyDebuggerOptions (options: RegisterServerOptions): false |
  * @param options server options
  * @param squashfsPath the folder where the AppImage is extracted
  */
-export function disableLuaUnboundIfNeeded (options: RegisterServerOptions, squashfsPath: string): void {
+function disableLuaUnboundIfNeeded (options: RegisterServerOptions, squashfsPath: string): void {
   const peertubeHelpers = options.peertubeHelpers
   const logger = peertubeHelpers.logger
 
@@ -102,4 +151,38 @@ export function disableLuaUnboundIfNeeded (options: RegisterServerOptions, squas
   } catch (err) {
     logger.error(err)
   }
+}
+
+/**
+ * Get a numerical parameter value. There are 3 kind of values:
+ * - classic production value
+ * - value when debug mode is activated
+ * - value when debut mode is activated, and the debug_mode file overrides it
+ * @param options server options
+ * @param name name of the wanted value
+ * @param defaultDebug default value when debug is activated
+ * @param defaultValue default value when debug is disabled
+ *
+ */
+function debugNumericParameter (
+  options: RegisterServerOptions,
+  name: DebugNumericValue,
+  defaultDebug: number,
+  defaultValue: number
+): number {
+  const debugContent = _readDebugFile(options)
+  if (!debugContent) { return defaultValue }
+  if (name in debugContent) {
+    const v: any = debugContent[name]
+    if (typeof v === 'number') { return v }
+  }
+  return defaultDebug
+}
+
+export {
+  unloadDebugMode,
+  isDebugMode,
+  prosodyDebuggerOptions,
+  disableLuaUnboundIfNeeded,
+  debugNumericParameter
 }

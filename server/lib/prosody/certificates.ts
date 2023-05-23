@@ -1,6 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ProsodyConfig } from './config'
-import { isDebugMode } from '../debug'
+import { debugNumericParameter } from '../debug'
 import { prosodyCtl, reloadProsody } from './ctl'
 import * as path from 'path'
 import * as fs from 'fs'
@@ -18,9 +18,8 @@ function startProsodyCertificatesRenewCheck (options: RegisterServerOptions, con
     return
   }
 
-  const debugMode = isDebugMode(options)
   // check every day (or every minutes in debug mode)
-  const checkInterval = debugMode ? 60000 : 3600000 * 24
+  const checkInterval = debugNumericParameter(options, 'renewCertCheckInterval', 60000, 3600000 * 24)
 
   if (renew) {
     stopProsodyCertificatesRenewCheck(options)
@@ -91,8 +90,8 @@ async function renewCheckSelfSigned (options: RegisterServerOptions, config: Pro
   // We have to check if the self signed certificate is still valid.
   // Prosodyctl generated certificates are valid 365 days.
   // We will renew it every 10 months (and every X minutes in debug mode)
+  const renewEvery = debugNumericParameter(options, 'renewSelfSignedCertInterval', 5 * 60000, 3600000 * 24 * 30 * 10)
 
-  const renewEvery = isDebugMode(options) ? 5 * 60000 : 3600000 * 24 * 30 * 10
   // getting the file date...
   const filepath = _filePathToTest(options, config)
   if (!filepath) { return }
