@@ -80,6 +80,8 @@ La simple existance de ce fichier suffit à déclencher le mode debug.
 Pour être sûr qu'il est pris en compte, vous pouvez redémarrer votre instance Peertube.
 
 Ce fichier peut également contenir du JSON qui pourra activer d'autres options.
+Pour en avoir la liste, vous pouvez regarder le code de `server/lib/debug.ts`.
+Redémarrez Peertube après chaque modification de son contenu.
 
 {{% notice warning %}}
 N'activer jamais ce mode sur un serveur de production, ni même sur un serveur public.

@@ -14,6 +14,7 @@ TODO: write the new prosody modules README.
 TODO: mod_s2s_peertubelivechat: dont allow to connect to remote server that are not Peertube servers.
 TODO: when sanitizing remote chat endpoint, check that the domain is the same as the video domain (or is room.videodomain.tld).
 TODO: get remote server chat informations if missing (for now, it can be missing if there is no known remote video from that server).
+TODO: outgoing s2s connection have a session.secure=true hardcoded. Should not.
 
 ### Minor changes and fixes
 
@@ -21,6 +22,7 @@ TODO: get remote server chat informations if missing (for now, it can be missing
 * Using process.spawn instead of process.exec to launch Prosody (safer, and more optimal).
 * Prosody AppImage: fix path mapping: we only map necessary /etc/ subdir, so that the AppImage can access to /etc/resolv.conf, /etc/hosts, ...
 * Prosody AppImage: hidden debug mode to disable lua-unbound, that seems broken in some docker dev environments.
+* Debug Mode: can change some parameters.
 
 ## 6.3.0
 
