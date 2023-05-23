@@ -16,8 +16,6 @@ import { getBoshUri, getWSUri } from '../uri/webchat'
 import { getVideoLiveChatInfos } from '../federation/storage'
 import { LiveChatJSONLDAttribute } from '../federation/types'
 import { anonymousConnectionInfos, remoteAuthenticatedConnectionEnabled } from '../federation/connection-infos'
-// import { XMPPWsProxyServer } from '../xmpp-ws-proxy/server'
-// import { checkRemote } from '../xmpp-ws-proxy/check-remote'
 import * as path from 'path'
 const got = require('got')
 
@@ -282,16 +280,6 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         currentS2SWebsocketProxy.ws(request, socket, head)
       }
     })
-    // registerWebSocketRoute({
-    //   route: '/xmpp-websocket-proxy',
-    //   handler: async (request, socket, head) => {
-    //     const remoteInstanceUrl = request.headers['peertube-livechat-ws-proxy-instance-url']
-    //     if (!await checkRemote(options, remoteInstanceUrl)) {
-    //       return
-    //     }
-    //     XMPPWsProxyServer.singleton(options).handleUpgrade(request, socket, head)
-    //   }
-    // })
   }
 
   router.get('/prosody-list-rooms', asyncMiddleware(
