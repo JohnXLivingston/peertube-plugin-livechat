@@ -36,6 +36,7 @@ local consider_websocket_secure = module:get_option_boolean("consider_websocket_
 
 local xmlns_framing = "urn:ietf:params:xml:ns:xmpp-framing-server";
 local xmlns_streams = "http://etherx.jabber.org/streams";
+local xmlns_dialback = "jabber:server:dialback";
 local xmlns_server = "jabber:server";
 local stream_xmlns_attr = {xmlns='urn:ietf:params:xml:ns:xmpp-streams'};
 
@@ -134,6 +135,7 @@ local function filter_open_close(data)
 		oc.name = "stream:stream";
 		oc.attr.xmlns = nil;
 		oc.attr["xmlns:stream"] = xmlns_streams;
+		oc.attr["xmlns:db"] = xmlns_dialback;
 		return oc:top_tag();
 	end
 
@@ -651,6 +653,7 @@ function route_to_new_session(event)
 
 	session.open_stream = session_open_stream;
 	session.close = session_close;
+	session.secure = true; -- FIXME should test if protocol is wss or ws
 
 	local ex = {};
 	ex["headers"] = ws_properties.extra_headers or {};

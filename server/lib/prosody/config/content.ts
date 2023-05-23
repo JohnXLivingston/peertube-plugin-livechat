@@ -296,6 +296,8 @@ class ProsodyConfigContent {
     this.global.set('peertubelivechat_instance_url', publicServerUrl)
 
     this.global.add('modules_enabled', 'websocket_s2s_peertubelivechat')
+    // s2s_close_timeout must be set accordingly with nginx timeout (30s)
+    this.global.set('s2s_close_timeout', 29)
     // FIXME: seems to be necessary to add the module on the muc host, so that dialback can trigger route/remote.
     this.muc.add('modules_enabled', 'websocket_s2s_peertubelivechat')
 
