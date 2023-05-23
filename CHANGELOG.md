@@ -15,6 +15,7 @@ TODO: mod_s2s_peertubelivechat: dont allow to connect to remote server that are 
 TODO: when sanitizing remote chat endpoint, check that the domain is the same as the video domain (or is room.videodomain.tld).
 TODO: get remote server chat informations if missing (for now, it can be missing if there is no known remote video from that server).
 TODO: outgoing s2s connection have a session.secure=true hardcoded. Should not.
+TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
 
 ### Minor changes and fixes
 
