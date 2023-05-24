@@ -1,5 +1,5 @@
 import type { RegisterServerOptions, MVideoFullLight, MVideoAP, Video, MVideoThumbnail } from '@peertube/peertube-types'
-import type { LiveChatJSONLDAttribute, LiveChatJSONLDS2SLink, LiveChatJSONLDPeertubeWSS2SLink } from './types'
+import type { LiveChatJSONLDAttribute, LiveChatJSONLDAttributeV1 } from './types'
 import { sanitizePeertubeLiveChatInfos } from './sanitize'
 import { URL } from 'url'
 import * as fs from 'fs'
@@ -17,7 +17,7 @@ If a file exists, it means the video has a chat.
 The file itself contains the JSON LiveChatInfos object.
 */
 
-const cache: Map<string, LiveChatJSONLDAttribute> = new Map<string, LiveChatJSONLDAttribute>()
+const cache: Map<string, LiveChatJSONLDAttributeV1> = new Map<string, LiveChatJSONLDAttributeV1>()
 
 /**
  * This function stores remote LiveChat infos that are contained in ActivityPub objects.
@@ -72,7 +72,7 @@ async function storeVideoLiveChatInfos (
 async function getVideoLiveChatInfos (
   options: RegisterServerOptions,
   video: MVideoFullLight | MVideoAP | Video | MVideoThumbnail
-): Promise<LiveChatJSONLDAttribute> {
+): Promise<LiveChatJSONLDAttributeV1> {
   const logger = options.peertubeHelpers.logger
 
   const cached = cache.get(video.url)
@@ -92,7 +92,7 @@ async function getVideoLiveChatInfos (
     return false
   }
   // We must sanitize here, in case a previous plugin version did not sanitize enougth.
-  const r = sanitizePeertubeLiveChatInfos(content)
+  const r = sanitizePeertubeLiveChatInfos(options, content)
   cache.set(video.url, r)
   return r
 }
@@ -103,51 +103,65 @@ async function getVideoLiveChatInfos (
  * These information can then be read by Prosody module mod_s2s_peertubelivechat.
  *
  * We simply store the more recent informations. Indeed, it should be consistent between videos.
+ *
+ * Note: XMPP actively uses subdomains to seperate components.
+ * Peertube chats are on the domain `room.your_instance.tld`. But the server will
+ * be contacted using `your_instance.tld`.
+ * We must make sure that the Prosody module mod_s2s_peertubelivechat finds both
+ * kind of urls.
+ *
  * @param options server optiosn
  * @param liveChatInfos livechat stored data
  */
 async function storeRemoteServerInfos (
   options: RegisterServerOptions,
-  liveChatInfos: LiveChatJSONLDAttribute
+  liveChatInfos: LiveChatJSONLDAttributeV1
 ): Promise<void> {
   if (!liveChatInfos) { return }
+  if (!liveChatInfos.xmppserver) { return }
 
   const logger = options.peertubeHelpers.logger
 
-  const roomJID = liveChatInfos.jid
-  const host = roomJID.split('@')[1]
-  if (!host) {
-    logger.error(`Room JID seems not correct, no host: ${roomJID}`)
-    return
-  }
-  if (host.includes('..')) {
-    logger.error(`Room host seems not correct, contains ..: ${host}`)
-    return
-  }
-  const dir = path.resolve(
-    options.peertubeHelpers.plugin.getDataDirectoryPath(),
-    'serverInfos',
-    host
-  )
-  const s2sFilePath = path.resolve(dir, 's2s')
-  const wsS2SFilePath = path.resolve(dir, 'ws-s2s')
+  const mainHost = liveChatInfos.xmppserver.host
+  const hosts = [
+    liveChatInfos.xmppserver.host,
+    liveChatInfos.xmppserver.muc
+  ]
 
-  const s2sLink = liveChatInfos.links.find(v => v.type === 'xmpp-s2s')
-  if (s2sLink) {
-    await _store(options, s2sFilePath, {
-      host: (s2sLink as LiveChatJSONLDS2SLink).host,
-      port: (s2sLink as LiveChatJSONLDS2SLink).port
-    })
-  } else {
-    await _del(options, s2sFilePath)
-  }
-  const wsS2SLink = liveChatInfos.links.find(v => v.type === 'xmpp-peertube-livechat-ws-s2s')
-  if (wsS2SLink) {
-    await _store(options, wsS2SFilePath, {
-      url: (wsS2SLink as LiveChatJSONLDPeertubeWSS2SLink).url
-    })
-  } else {
-    await _del(options, wsS2SFilePath)
+  for (const host of hosts) {
+    if (!host) { continue }
+
+    // Some security check, just in case.
+    if (host.includes('..')) {
+      logger.error(`Host seems not correct, contains ..: ${host}`)
+      continue
+    }
+
+    const dir = path.resolve(
+      options.peertubeHelpers.plugin.getDataDirectoryPath(),
+      'serverInfos',
+      host
+    )
+    const s2sFilePath = path.resolve(dir, 's2s')
+    const wsS2SFilePath = path.resolve(dir, 'ws-s2s')
+
+    if (liveChatInfos.xmppserver.directs2s?.port) {
+      await _store(options, s2sFilePath, {
+        host: mainHost,
+        port: liveChatInfos.xmppserver.directs2s.port
+      })
+    } else {
+      await _del(options, s2sFilePath)
+    }
+
+    if (liveChatInfos.xmppserver.websockets2s?.url) {
+      await _store(options, wsS2SFilePath, {
+        host: mainHost,
+        url: liveChatInfos.xmppserver.websockets2s.url
+      })
+    } else {
+      await _del(options, wsS2SFilePath)
+    }
   }
 }
 

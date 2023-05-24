@@ -14,8 +14,11 @@ import { getChannelInfosById, getChannelNameById } from '../database/channel'
 import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../shared/lib/autocolors'
 import { getBoshUri, getWSUri } from '../uri/webchat'
 import { getVideoLiveChatInfos } from '../federation/storage'
-import { LiveChatJSONLDAttribute } from '../federation/types'
-import { anonymousConnectionInfos, remoteAuthenticatedConnectionEnabled } from '../federation/connection-infos'
+import { LiveChatJSONLDAttributeV1 } from '../federation/types'
+import {
+  anonymousConnectionInfos, compatibleRemoteAuthenticatedConnectionEnabled
+} from '../federation/connection-infos'
+// import { remoteServerInfos } from '../federation/remote-infos'
 import * as path from 'path'
 const got = require('got')
 
@@ -79,7 +82,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
 
       let video: MVideoThumbnail | undefined
       let channelId: number
-      let remoteChatInfos: LiveChatJSONLDAttribute | undefined
+      let remoteChatInfos: LiveChatJSONLDAttributeV1 | undefined
       const channelMatches = roomKey.match(/^channel\.(\d+)$/)
       if (channelMatches?.[1]) {
         channelId = parseInt(channelMatches[1])
@@ -122,7 +125,9 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       let remoteConnectionInfos: WCRemoteConnectionInfos | undefined
       let roomJID: string
       if (video?.remote) {
-        remoteConnectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false)
+        const canWebsocketS2S = !settings['federation-no-remote-chat']
+        const canDirectS2S = !settings['federation-no-remote-chat'] && !!settings['prosody-room-allow-s2s']
+        remoteConnectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false, canWebsocketS2S, canDirectS2S)
         if (!remoteConnectionInfos) {
           res.status(404)
           res.send('No compatible way to connect to remote chat')
@@ -258,26 +263,43 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
     registerWebSocketRoute({
       route: '/xmpp-websocket',
       handler: (request, socket, head) => {
-        if (!currentWebsocketProxy) {
-          peertubeHelpers.logger.error('There is no current websocket proxy, should not get here.')
-          // no need to close the socket, Peertube will
-          // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
-          return
+        try {
+          if (!currentWebsocketProxy) {
+            peertubeHelpers.logger.error('There is no current websocket proxy, should not get here.')
+            // no need to close the socket, Peertube will
+            // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
+            return
+          }
+          currentWebsocketProxy.ws(request, socket, head)
+        } catch (err) {
+          peertubeHelpers.logger.error('Got an error when trying to connect to S2S', err)
         }
-        currentWebsocketProxy.ws(request, socket, head)
       }
     })
 
     registerWebSocketRoute({
       route: '/xmpp-websocket-s2s',
-      handler: (request, socket, head) => {
-        if (!currentS2SWebsocketProxy) {
-          peertubeHelpers.logger.error('There is no current websocket s2s proxy, should not get here.')
-          // no need to close the socket, Peertube will
-          // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
-          return
+      handler: async (request, socket, head) => {
+        try {
+          if (!currentS2SWebsocketProxy) {
+            peertubeHelpers.logger.error('There is no current websocket s2s proxy, should not get here.')
+            // no need to close the socket, Peertube will
+            // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
+            return
+          }
+          // If the incomming request is from a remote Peertube instance, we must ensure that we know
+          // how to connect to it using Websocket S2S (for the dialback mecanism).
+          const remoteInstanceUrl = request.headers['peertube-livechat-ws-s2s-instance-url']
+          if (remoteInstanceUrl && (typeof remoteInstanceUrl !== 'string')) {
+            // Note: remoteServerInfos will store the information,
+            // so that the Prosody mod_s2s_peertubelivechat module can access them.
+            // TODO
+            // await remoteServerInfos(options, remoteInstanceUrl)
+          }
+          currentS2SWebsocketProxy.ws(request, socket, head)
+        } catch (err) {
+          peertubeHelpers.logger.error('Got an error when trying to connect to Websocket S2S', err)
         }
-        currentS2SWebsocketProxy.ws(request, socket, head)
       }
     })
   }
@@ -452,13 +474,17 @@ interface WCRemoteConnectionInfos {
   authenticated?: boolean
 }
 
-async function _remoteConnectionInfos (remoteChatInfos: LiveChatJSONLDAttribute): Promise<WCRemoteConnectionInfos> {
+async function _remoteConnectionInfos (
+  remoteChatInfos: LiveChatJSONLDAttributeV1,
+  canWebsocketS2S: boolean,
+  canDirectS2S: boolean
+): Promise<WCRemoteConnectionInfos> {
   if (!remoteChatInfos) { throw new Error('Should have remote chat infos for remote videos') }
   if (remoteChatInfos.type !== 'xmpp') { throw new Error('Should have remote xmpp chat infos for remote videos') }
   const connectionInfos: WCRemoteConnectionInfos = {
     roomJID: remoteChatInfos.jid
   }
-  if (remoteAuthenticatedConnectionEnabled(remoteChatInfos)) {
+  if (compatibleRemoteAuthenticatedConnectionEnabled(remoteChatInfos, canWebsocketS2S, canDirectS2S)) {
     connectionInfos.authenticated = true
   }
   const anonymousCI = anonymousConnectionInfos(remoteChatInfos ?? false)
