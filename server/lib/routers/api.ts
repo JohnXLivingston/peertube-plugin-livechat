@@ -10,6 +10,7 @@ import { getProsodyDomain } from '../prosody/config/domain'
 import { fillVideoCustomFields } from '../custom-fields'
 import { getChannelInfosById } from '../database/channel'
 import { ensureProsodyRunning } from '../prosody/ctl'
+import { serverBuildInfos } from '../federation/outgoing'
 import { isDebugMode } from '../debug'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
@@ -224,14 +225,13 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
     }
   ))
 
-  // router.get('/federation_server_infos', asyncMiddleware(
-  //   async (req: Request, res: Response, _next: NextFunction) => {
-  //     logger.info('federation_server_infos api call')
-  //     // TODO/FIXME: return server infos.
-  //     // TODO/FIXME: store these informations on the other side.
-  //     res.json({ ok: true })
-  //   }
-  // ))
+  router.get('/federation_server_infos', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      logger.info('federation_server_infos api call')
+      const result = await serverBuildInfos(options)
+      res.json(result)
+    }
+  ))
 
   if (isDebugMode(options)) {
     // Only add this route if the debug mode is enabled at time of the server launch.

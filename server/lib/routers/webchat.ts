@@ -18,7 +18,7 @@ import { LiveChatJSONLDAttributeV1 } from '../federation/types'
 import {
   anonymousConnectionInfos, compatibleRemoteAuthenticatedConnectionEnabled
 } from '../federation/connection-infos'
-// import { remoteServerInfos } from '../federation/remote-infos'
+import { fetchMissingRemoteServerInfos } from '../federation/fetch-infos'
 import * as path from 'path'
 const got = require('got')
 
@@ -290,11 +290,11 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
           // If the incomming request is from a remote Peertube instance, we must ensure that we know
           // how to connect to it using Websocket S2S (for the dialback mecanism).
           const remoteInstanceUrl = request.headers['peertube-livechat-ws-s2s-instance-url']
-          if (remoteInstanceUrl && (typeof remoteInstanceUrl !== 'string')) {
-            // Note: remoteServerInfos will store the information,
+          if (remoteInstanceUrl && (typeof remoteInstanceUrl === 'string')) {
+            // Note: fetchMissingRemoteServerInfos will store the information,
             // so that the Prosody mod_s2s_peertubelivechat module can access them.
-            // TODO
-            // await remoteServerInfos(options, remoteInstanceUrl)
+            // We dont need to read the result.
+            await fetchMissingRemoteServerInfos(options, remoteInstanceUrl)
           }
           currentS2SWebsocketProxy.ws(request, socket, head)
         } catch (err) {

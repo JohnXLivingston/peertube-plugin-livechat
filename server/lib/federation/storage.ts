@@ -1,6 +1,6 @@
 import type { RegisterServerOptions, MVideoFullLight, MVideoAP, Video, MVideoThumbnail } from '@peertube/peertube-types'
-import type { LiveChatJSONLDAttribute, LiveChatJSONLDAttributeV1 } from './types'
-import { sanitizePeertubeLiveChatInfos } from './sanitize'
+import type { LiveChatJSONLDAttribute, LiveChatJSONLDAttributeV1, PeertubeXMPPServerInfos } from './types'
+import { sanitizePeertubeLiveChatInfos, sanitizeXMPPHostFromInstanceUrl } from './sanitize'
 import { URL } from 'url'
 import * as fs from 'fs'
 import * as path from 'path'
@@ -111,21 +111,18 @@ async function getVideoLiveChatInfos (
  * kind of urls.
  *
  * @param options server optiosn
- * @param liveChatInfos livechat stored data
+ * @param xmppserver remote server informations
  */
 async function storeRemoteServerInfos (
   options: RegisterServerOptions,
-  liveChatInfos: LiveChatJSONLDAttributeV1
+  xmppserver: PeertubeXMPPServerInfos
 ): Promise<void> {
-  if (!liveChatInfos) { return }
-  if (!liveChatInfos.xmppserver) { return }
-
   const logger = options.peertubeHelpers.logger
 
-  const mainHost = liveChatInfos.xmppserver.host
+  const mainHost = xmppserver.host
   const hosts = [
-    liveChatInfos.xmppserver.host,
-    liveChatInfos.xmppserver.muc
+    xmppserver.host,
+    xmppserver.muc
   ]
 
   for (const host of hosts) {
@@ -144,25 +141,53 @@ async function storeRemoteServerInfos (
     )
     const s2sFilePath = path.resolve(dir, 's2s')
     const wsS2SFilePath = path.resolve(dir, 'ws-s2s')
+    const timestampFilePath = path.resolve(dir, 'last-update')
 
-    if (liveChatInfos.xmppserver.directs2s?.port) {
+    if (xmppserver.directs2s?.port) {
       await _store(options, s2sFilePath, {
         host: mainHost,
-        port: liveChatInfos.xmppserver.directs2s.port
+        port: xmppserver.directs2s.port
       })
     } else {
       await _del(options, s2sFilePath)
     }
 
-    if (liveChatInfos.xmppserver.websockets2s?.url) {
+    if (xmppserver.websockets2s?.url) {
       await _store(options, wsS2SFilePath, {
         host: mainHost,
-        url: liveChatInfos.xmppserver.websockets2s.url
+        url: xmppserver.websockets2s.url
       })
     } else {
       await _del(options, wsS2SFilePath)
     }
+
+    await _store(options, timestampFilePath, {
+      timestamp: (new Date()).getTime()
+    })
   }
+}
+
+/**
+ * Indicate if we have the remote hosts informations.
+ * @param options server options
+ * @param host host domain
+ */
+async function hasRemoteServerInfos (options: RegisterServerOptions, hostParam: any): Promise<boolean> {
+  const host = sanitizeXMPPHostFromInstanceUrl(options, hostParam)
+  if (!host) {
+    return false
+  }
+  if (host.includes('..')) {
+    options.peertubeHelpers.logger.error(`Host seems not correct, contains ..: ${host}`)
+    return false
+  }
+  const filePath = path.resolve(
+    options.peertubeHelpers.plugin.getDataDirectoryPath(),
+    'serverInfos',
+    host,
+    'last-update'
+  )
+  return fs.existsSync(filePath)
 }
 
 async function _getFilePath (
@@ -269,6 +294,7 @@ function getRemoteServerInfosDir (options: RegisterServerOptions): string {
 export {
   storeVideoLiveChatInfos,
   storeRemoteServerInfos,
+  hasRemoteServerInfos,
   getVideoLiveChatInfos,
   getRemoteServerInfosDir
 }
