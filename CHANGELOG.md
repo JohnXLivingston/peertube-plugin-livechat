@@ -1,6 +1,6 @@
 # Changelog
 
-## ??? (Not Release Yet)
+## 6.4.0-alpha.1
 
 ### New Features
 
@@ -10,10 +10,8 @@
   * If both local and remote instance have configured external XMPP connections, it will use legacy S2S connection.
 
 TODO: documentation, and settings names/descriptions changes related to direct XMPP S2S connections.
-TODO: write the new prosody modules README.
-TODO: mod_s2s_peertubelivechat: dont allow to connect to remote server that are not Peertube servers.
+TODO?: mod_s2s_peertubelivechat: dont allow to connect to remote server that are not Peertube servers?
 TODO: when sanitizing remote chat endpoint, check that the domain is the same as the video domain (or is room.videodomain.tld).
-TODO: get remote server chat informations if missing (for now, it can be missing if there is no known remote video from that server).
 TODO: outgoing s2s connection have a session.secure=true hardcoded. Should not.
 TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
 
