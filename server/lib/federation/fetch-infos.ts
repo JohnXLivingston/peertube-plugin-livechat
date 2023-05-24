@@ -1,6 +1,8 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
+import { hasRemoteServerInfos, storeRemoteServerInfos } from './storage'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
+import { sanitizePeertubeLiveChatServerInfos } from './sanitize'
 import { URL } from 'url'
 const got = require('got')
 
@@ -33,12 +35,17 @@ const got = require('got')
  * @param remoteInstanceUrl remote instance url to check (as readed in the request header)
  * @returns true if the remote instance is ok
  */
-async function remoteServerInfos (
+async function fetchMissingRemoteServerInfos (
   options: RegisterServerOptions,
   remoteInstanceUrl: string
-): Promise<boolean> {
+): Promise<void> {
   const logger = options.peertubeHelpers.logger
   logger.debug(`remoteServerInfos: checking if we have remote server infos for host ${remoteInstanceUrl}.`)
+
+  // FIXME: add a max age.
+  if (await hasRemoteServerInfos(options, remoteInstanceUrl)) {
+    return
+  }
 
   let url: string
   try {
@@ -53,7 +60,7 @@ async function remoteServerInfos (
     })
   } catch (_err) {
     logger.info('remoteServerInfos: Invalid remote instance url provided: ' + remoteInstanceUrl)
-    return false
+    return
   }
 
   try {
@@ -66,18 +73,18 @@ async function remoteServerInfos (
 
     if (!response) {
       logger.info('remoteServerInfos: Invalid remote server options')
-      return false
+      return
     }
 
-    // FIXME/TODO
-
-    return true
+    const serverInfos = sanitizePeertubeLiveChatServerInfos(options, response)
+    if (serverInfos) {
+      await storeRemoteServerInfos(options, serverInfos)
+    }
   } catch (_err) {
     logger.info('remoteServerInfos: Can\'t get remote instance informations using url ' + url)
-    return false
   }
 }
 
 export {
-  remoteServerInfos
+  fetchMissingRemoteServerInfos
 }

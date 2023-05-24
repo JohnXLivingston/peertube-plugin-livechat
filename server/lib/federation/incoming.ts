@@ -20,7 +20,9 @@ async function readIncomingAPVideo (
 
   await storeVideoLiveChatInfos(options, video, peertubeLiveChat)
   if (video.remote) {
-    await storeRemoteServerInfos(options, peertubeLiveChat)
+    if (peertubeLiveChat !== false && peertubeLiveChat.xmppserver) {
+      await storeRemoteServerInfos(options, peertubeLiveChat.xmppserver)
+    }
   }
 }
 

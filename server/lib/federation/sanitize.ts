@@ -1,5 +1,5 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import type { LiveChatJSONLDAttributeV1 } from './types'
+import type { LiveChatJSONLDAttributeV1, PeertubeXMPPServerInfos } from './types'
 import { URL } from 'url'
 
 /**
@@ -28,7 +28,24 @@ function sanitizePeertubeLiveChatInfos (options: RegisterServerOptions, chatInfo
   if (!chatInfos.xmppserver || (typeof chatInfos.xmppserver !== 'object')) {
     return false
   }
-  const xmppserver = chatInfos.xmppserver
+  const xmppserver = sanitizePeertubeLiveChatServerInfos(options, chatInfos.xmppserver)
+  if (!xmppserver) { return false }
+
+  const r: LiveChatJSONLDAttributeV1 = {
+    type: chatInfos.type,
+    jid: chatInfos.jid,
+    xmppserver
+  }
+
+  return r
+}
+
+function sanitizePeertubeLiveChatServerInfos (
+  options: RegisterServerOptions, xmppserver: any
+): PeertubeXMPPServerInfos | false {
+  if (!xmppserver || (typeof xmppserver !== 'object')) {
+    return false
+  }
 
   if ((typeof xmppserver.host) !== 'string') { return false }
   const host = _validateHost(xmppserver.host)
@@ -37,20 +54,16 @@ function sanitizePeertubeLiveChatInfos (options: RegisterServerOptions, chatInfo
   const muc = _validateHost(xmppserver.muc)
   if (!muc) { return false }
 
-  const r: LiveChatJSONLDAttributeV1 = {
-    type: chatInfos.type,
-    jid: chatInfos.jid,
-    xmppserver: {
-      host,
-      muc
-    }
+  const r: PeertubeXMPPServerInfos = {
+    host,
+    muc
   }
 
   if (xmppserver.directs2s) {
     if ((typeof xmppserver.directs2s) === 'object') {
       const port = xmppserver.directs2s.port
       if ((typeof port === 'string') && /^\d+$/.test(port)) {
-        r.xmppserver.directs2s = {
+        r.directs2s = {
           port
         }
       }
@@ -63,7 +76,7 @@ function sanitizePeertubeLiveChatInfos (options: RegisterServerOptions, chatInfo
         noSearchParams: true,
         protocol: 'ws.'
       })) {
-        r.xmppserver.websockets2s = {
+        r.websockets2s = {
           url
         }
       }
@@ -72,7 +85,7 @@ function sanitizePeertubeLiveChatInfos (options: RegisterServerOptions, chatInfo
   if (xmppserver.anonymous) {
     const virtualhost = _validateHost(xmppserver.anonymous.virtualhost)
     if (virtualhost) {
-      r.xmppserver.anonymous = {
+      r.anonymous = {
         virtualhost
       }
 
@@ -81,7 +94,7 @@ function sanitizePeertubeLiveChatInfos (options: RegisterServerOptions, chatInfo
         noSearchParams: true,
         protocol: 'http.'
       })) {
-        r.xmppserver.anonymous.bosh = bosh
+        r.anonymous.bosh = bosh
       }
 
       const websocket = xmppserver.anonymous.websocket
@@ -89,7 +102,7 @@ function sanitizePeertubeLiveChatInfos (options: RegisterServerOptions, chatInfo
         noSearchParams: true,
         protocol: 'ws.'
       })) {
-        r.xmppserver.anonymous.websocket = websocket
+        r.anonymous.websocket = websocket
       }
     }
   }
@@ -206,6 +219,23 @@ function _sanitizePeertubeLiveChatInfosV0 (options: RegisterServerOptions, chatI
   return r
 }
 
+function sanitizeXMPPHost (options: RegisterServerOptions, host: any): false | string {
+  return _validateHost(host)
+}
+
+function sanitizeXMPPHostFromInstanceUrl (_options: RegisterServerOptions, s: any): false | string {
+  try {
+    if (typeof s !== 'string') { return false }
+    const url = new URL(s)
+    return url.hostname
+  } catch (_err) {
+    return false
+  }
+}
+
 export {
-  sanitizePeertubeLiveChatInfos
+  sanitizePeertubeLiveChatInfos,
+  sanitizePeertubeLiveChatServerInfos,
+  sanitizeXMPPHost,
+  sanitizeXMPPHostFromInstanceUrl
 }
