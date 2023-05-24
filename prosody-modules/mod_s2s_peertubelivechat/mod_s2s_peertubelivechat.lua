@@ -13,7 +13,7 @@ function discover_websocket_s2s(event)
 	local f_s2s = io.open(path.join(server_infos_dir, to_host, 's2s'), "r");
 	if f_s2s ~= nil then
 		io.close(f_s2s);
-		module.log("debug", "Remote host is a known Peertube %s that has s2s activated, we will let legacy s2s module handle the connection", to_host);
+		module:log("debug", "Remote host is a known Peertube %s that has s2s activated, we will let legacy s2s module handle the connection", to_host);
 		return;
 	end
 
