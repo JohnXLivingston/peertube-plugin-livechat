@@ -3,6 +3,7 @@ import { hasRemoteServerInfos, storeRemoteServerInfos } from './storage'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { sanitizePeertubeLiveChatServerInfos } from './sanitize'
+import { debugNumericParameter } from '../debug'
 import { URL } from 'url'
 const got = require('got')
 
@@ -42,8 +43,11 @@ async function fetchMissingRemoteServerInfos (
   const logger = options.peertubeHelpers.logger
   logger.debug(`remoteServerInfos: checking if we have remote server infos for host ${remoteInstanceUrl}.`)
 
-  // FIXME: add a max age.
-  if (await hasRemoteServerInfos(options, remoteInstanceUrl)) {
+  // maxAge: max allowed aged for stored remote server infos (in milliseconds).
+  // In production: 24 hours
+  // In debug mode: 1hour
+  const maxAge = debugNumericParameter(options, 'remoteServerInfosMaxAge', 3600000, 3600 * 1000 * 24)
+  if (await hasRemoteServerInfos(options, remoteInstanceUrl, maxAge)) {
     return
   }
 

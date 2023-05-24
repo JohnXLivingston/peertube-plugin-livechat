@@ -13,6 +13,7 @@ interface DebugContent {
   renewSelfSignedCertInterval?: number
   logRotateCheckInterval?: number
   logRotateEvery?: number
+  remoteServerInfosMaxAge?: number
   prosodyDebuggerOptions?: ProsodyDebuggerOptions
 }
 
@@ -20,6 +21,7 @@ type DebugNumericValue = 'renewCertCheckInterval'
 | 'renewSelfSignedCertInterval'
 | 'logRotateEvery'
 | 'logRotateCheckInterval'
+| 'remoteServerInfosMaxAge'
 
 let debugContent: DebugContent | null | false = null
 function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
@@ -52,6 +54,7 @@ function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
     debugContent.logRotateEvery = _getNumericOptions(options, json, 'log_rotate_every')
     debugContent.renewCertCheckInterval = _getNumericOptions(options, json, 'renew_cert_check_interval')
     debugContent.renewSelfSignedCertInterval = _getNumericOptions(options, json, 'renew_self_signed_cert_interval')
+    debugContent.remoteServerInfosMaxAge = _getNumericOptions(options, json, 'remote_server_infos_max_age')
   } catch (err) {
     logger.error('Failed to read the debug_mode file content:', err)
   }

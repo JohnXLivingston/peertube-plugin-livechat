@@ -171,8 +171,13 @@ async function storeRemoteServerInfos (
  * Indicate if we have the remote hosts informations.
  * @param options server options
  * @param host host domain
+ * @param maxAge if given, the max age (in milliseconds) allowed for remote server informations
  */
-async function hasRemoteServerInfos (options: RegisterServerOptions, hostParam: any): Promise<boolean> {
+async function hasRemoteServerInfos (
+  options: RegisterServerOptions,
+  hostParam: any,
+  maxAge?: number
+): Promise<boolean> {
   const host = sanitizeXMPPHostFromInstanceUrl(options, hostParam)
   if (!host) {
     return false
@@ -187,7 +192,36 @@ async function hasRemoteServerInfos (options: RegisterServerOptions, hostParam: 
     host,
     'last-update'
   )
-  return fs.existsSync(filePath)
+  if (!fs.existsSync(filePath)) {
+    return false
+  }
+  if (maxAge === undefined) {
+    return true
+  }
+
+  // We must check the 'last-update' to be newer than maxAge
+  try {
+    const content = await fs.promises.readFile(filePath, {
+      encoding: 'utf-8'
+    })
+    const json = JSON.parse(content)
+    if (!json) { return false }
+    if (typeof json !== 'object') { return false }
+    if (!json.timestamp) { return false }
+    if ((typeof json.timestamp) !== 'number') { return false }
+    const now = (new Date()).getTime()
+    if (now - (json.timestamp as number) > maxAge) {
+      options.peertubeHelpers.logger.info(
+        `Remote informations for server ${host} are outdated.`
+      )
+      return false
+    }
+  } catch (err) {
+    options.peertubeHelpers.logger.error('Failed reading the last-update file:', err)
+    return false
+  }
+
+  return true
 }
 
 async function _getFilePath (
