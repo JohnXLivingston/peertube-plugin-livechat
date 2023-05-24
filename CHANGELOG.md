@@ -1,6 +1,6 @@
 # Changelog
 
-## 6.4.0-alpha.1
+## 6.4.0-alpha.2
 
 ### New Features
 
@@ -14,6 +14,8 @@ TODO?: mod_s2s_peertubelivechat: dont allow to connect to remote server that are
 TODO: when sanitizing remote chat endpoint, check that the domain is the same as the video domain (or is room.videodomain.tld).
 TODO: outgoing s2s connection have a session.secure=true hardcoded. Should not.
 TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
+TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Check if this is fine. And maybe we can optimise some code, by allowing directS2S event if current server dont accept it.
+TODO: alpha.2 version force Websocket S2S when available, even if s2s is possible. Revert this before releasing.
 
 ### Minor changes and fixes
 
