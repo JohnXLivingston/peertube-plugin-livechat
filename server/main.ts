@@ -1,4 +1,4 @@
-import type { RegisterServerOptions } from '@peertube/peertube-types'
+import type { RegisterServerOptions, Video } from '@peertube/peertube-types'
 import { migrateSettings } from './lib/migration/settings'
 import { initSettings } from './lib/settings'
 import { initCustomFields } from './lib/custom-fields'
@@ -6,6 +6,8 @@ import { initRouters } from './lib/routers/index'
 import { initFederation } from './lib/federation/init'
 import { prepareProsody, ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
 import decache from 'decache'
+import { CustomTag } from '@peertube/feed/lib/typings'
+import { URL } from 'url'
 
 // FIXME: Peertube unregister don't have any parameter.
 // Using this global variable to fix this, so we can use helpers to unregister.
@@ -25,6 +27,33 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await initCustomFields(options)
   await initRouters(options)
   await initFederation(options)
+
+  options.registerHook({
+    // @ts-expect-error Type doesn't exist for peertube 5.1 yet
+    target: 'filter:feed.podcast.video.create-custom-tags.result',
+    handler: (result: CustomTag[], { video, liveItem }: { video: Video, liveItem: boolean }) => {
+      if (!liveItem) {
+        return result
+      }
+
+      const webserverUrl = options.peertubeHelpers.config.getWebserverUrl()
+      const hostname = (new URL(webserverUrl)).hostname
+      const embedUrl = `${webserverUrl}/plugins/livechat/router/webchat/room/${encodeURIComponent(video.uuid)}`
+      const xmppHostname = `room.${hostname}`
+
+      return result.concat([
+        {
+          name: 'podcast:chat',
+          attributes: {
+            server: xmppHostname,
+            protocol: 'xmpp',
+            space: `${video.uuid}@${xmppHostname}`,
+            embedUrl: embedUrl
+          }
+        }
+      ])
+    }
+  })
 
   try {
     await prepareProsody(options)
