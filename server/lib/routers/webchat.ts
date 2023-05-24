@@ -125,7 +125,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       let remoteConnectionInfos: WCRemoteConnectionInfos | undefined
       let roomJID: string
       if (video?.remote) {
-        const canWebsocketS2S = !settings['federation-no-remote-chat']
+        const canWebsocketS2S = !settings['federation-no-remote-chat'] && !settings['disable-websocket']
         const canDirectS2S = !settings['federation-no-remote-chat'] && !!settings['prosody-room-allow-s2s']
         remoteConnectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false, canWebsocketS2S, canDirectS2S)
         if (!remoteConnectionInfos) {

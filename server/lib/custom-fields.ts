@@ -92,9 +92,10 @@ async function fillVideoRemoteLiveChat (
   } else {
     const settings = await options.settingsManager.getSettings([
       'federation-no-remote-chat',
-      'prosody-room-allow-s2s'
+      'prosody-room-allow-s2s',
+      'disable-websocket'
     ])
-    const canWebsocketS2S = !settings['federation-no-remote-chat']
+    const canWebsocketS2S = !settings['federation-no-remote-chat'] && !settings['disable-websocket']
     const canDirectS2S = !settings['federation-no-remote-chat'] && !!settings['prosody-room-allow-s2s']
     if (compatibleRemoteAuthenticatedConnectionEnabled(infos, canWebsocketS2S, canDirectS2S)) {
       // Even better, we can do a proper S2S connection!
