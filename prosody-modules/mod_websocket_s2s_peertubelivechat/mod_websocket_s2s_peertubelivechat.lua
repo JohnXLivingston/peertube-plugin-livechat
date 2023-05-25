@@ -365,6 +365,8 @@ end
 local function keepalive(event)
 	local session = event.session;
 	if session.open_stream == session_open_stream then
+		local log = session.log or log
+		log("debug", "Sending a keepalive on outgoint websocket s2s");
 		return session.conn:write(build_frame({ opcode = 0x9, FIN = true }));
 	end
 end
@@ -639,8 +641,6 @@ module:hook("server-stopping", function(event)
 end, -100);
 
 function module.add_host(module)
-	module:hook("s2s-read-timeout", keepalive, -0.9);
-
 	module:hook("route/remote", route_to_new_session, -2);
 
 	module:depends("http");
