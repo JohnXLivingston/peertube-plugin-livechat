@@ -601,7 +601,8 @@ function route_to_new_session(event)
 		-- so we will send keepalives on outgoing connections (in addition to keepalives sent by mod_s2s).
 		session.ws_s2s_keepalive_timer = module:add_timer(websocket_s2s_ping_interval, function ()
 			log("debug", "Timer triggered, sending a keepalive on outgoing websocket s2s");
-			return session.conn:write(build_frame({ opcode = 0x9, FIN = true }));
+			session.conn:write(build_frame({ opcode = 0x9, FIN = true }));
+			return websocket_s2s_ping_interval;
 		end);
 	end
 
