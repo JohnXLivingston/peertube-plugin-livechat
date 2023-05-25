@@ -366,7 +366,7 @@ end
 local function keepalive(event)
 	local session = event.session;
 	if session.open_stream == session_open_stream then
-		local log = session.log or log
+		local log = session.log or log;
 		log("debug", "Sending a keepalive on outgoing websocket s2s");
 		return session.conn:write(build_frame({ opcode = 0x9, FIN = true }));
 	end
@@ -573,7 +573,7 @@ function route_to_new_session(event)
 	ex["headers"] = ws_properties.extra_headers or {};
 	ex["protocol"] = "xmpp";
 
-	if ws_url:find('^wss') ~= nil then
+	if ws_url:find('^wss:') ~= nil then
 		log("debug", "Outgoing WS S2S Session is considered secure, we are using wss");
 		session.secure = true;
 	else
