@@ -15,7 +15,6 @@ TODO: when sanitizing remote chat endpoint, check that the domain is the same as
 TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
 TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Check if this is fine. And maybe we can optimise some code, by allowing directS2S event if current server dont accept it.
 TODO: check that the keepalive is working with websocket s2s. It seems the connection is often close and reopened.
-TODO: seems that the stream close timeout is too short.
 TODO: alpha.2 version force Websocket S2S when available, even if s2s is possible. Revert this before releasing.
 TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
 
