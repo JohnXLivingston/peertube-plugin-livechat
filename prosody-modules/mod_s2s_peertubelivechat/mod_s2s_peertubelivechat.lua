@@ -10,12 +10,13 @@ function discover_websocket_s2s(event)
 	local to_host = event.to_host;
   module:log("debug", "Searching websocket s2s for remote host %s", to_host);
 
-	local f_s2s = io.open(path.join(server_infos_dir, to_host, 's2s'), "r");
-	if f_s2s ~= nil then
-		io.close(f_s2s);
-		module:log("debug", "Remote host is a known Peertube %s that has s2s activated, we will let legacy s2s module handle the connection", to_host);
-		return;
-	end
+	-- FIXME: this was commented for the 6.4.0-alpha4, to test ws s2s. Revert before releasing.
+	-- local f_s2s = io.open(path.join(server_infos_dir, to_host, 's2s'), "r");
+	-- if f_s2s ~= nil then
+	-- 	io.close(f_s2s);
+	-- 	module:log("debug", "Remote host is a known Peertube %s that has s2s activated, we will let legacy s2s module handle the connection", to_host);
+	-- 	return;
+	-- end
 
 	local f_ws_proxy = io.open(path.join(server_infos_dir, to_host, 'ws-s2s'), "r");
 	if f_ws_proxy == nil then

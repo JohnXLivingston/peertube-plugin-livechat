@@ -17,6 +17,7 @@ TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Che
 TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
 TODO: check in the diagnostic tool that Prosody is >=0.12
 TODO?: allow directs2s on one side and websocket on the other? (currently disallowed by compatibleRemoteAuthenticatedConnectionEnabled)
+TODO: alpha.4 version force Websocket S2S when available, even if s2s is possible. Revert this before releasing.
 
 ### Minor changes and fixes
 
