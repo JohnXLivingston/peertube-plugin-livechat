@@ -12,7 +12,6 @@
 TODO: documentation, and settings names/descriptions changes related to direct XMPP S2S connections.
 TODO?: mod_s2s_peertubelivechat: dont allow to connect to remote server that are not Peertube servers?
 TODO: when sanitizing remote chat endpoint, check that the domain is the same as the video domain (or is room.videodomain.tld).
-TODO: outgoing s2s connection have a session.secure=true hardcoded. Should not.
 TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
 TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Check if this is fine. And maybe we can optimise some code, by allowing directS2S event if current server dont accept it.
 TODO: check that the keepalive is working with websocket s2s. It seems the connection is often close and reopened.
