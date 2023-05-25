@@ -16,6 +16,7 @@ TODO: only compatible with Prosody 0.12.x. So it should be documented for people
 TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Check if this is fine. And maybe we can optimise some code, by allowing directS2S event if current server dont accept it.
 TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
 TODO: check in the diagnostic tool that Prosody is >=0.12
+TODO?: allow directs2s on one side and websocket on the other? (currently disallowed by compatibleRemoteAuthenticatedConnectionEnabled)
 
 ### Minor changes and fixes
 
