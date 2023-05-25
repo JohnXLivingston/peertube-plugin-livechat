@@ -18,7 +18,6 @@ TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Che
 TODO: check that the keepalive is working with websocket s2s. It seems the connection is often close and reopened.
 TODO: seems that the stream close timeout is too short.
 TODO: alpha.2 version force Websocket S2S when available, even if s2s is possible. Revert this before releasing.
-TODO: ask for a plugin hook to customise host-meta and provide standard discovery method.
 TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
 
 ### Minor changes and fixes
