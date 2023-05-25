@@ -546,6 +546,10 @@ function route_to_new_session(event)
 		log("debug", "No websocket s2s capabilities from remote host %s", to_host);
 		return;
 	end
+	local ws_url = ws_properties.url;
+	if (not ws_url) then
+		log("error", "Missing url in the discover-websocket-s2s result");
+	end
 
 	log("debug", "Found a Websocket endpoint for s2s communications to remote host %s", to_host);
 	local session = s2s_new_outgoing(from_host, to_host);
@@ -561,11 +565,18 @@ function route_to_new_session(event)
 
 	session.open_stream = session_open_stream;
 	session.close = session_close;
-	session.secure = true; -- FIXME should test if protocol is wss or ws
 
 	local ex = {};
 	ex["headers"] = ws_properties.extra_headers or {};
 	ex["protocol"] = "xmpp";
+
+	if ws_url:find('^wss') ~= nil then
+		log("debug", "Outgoing WS S2S Session is considered secure, we are using wss");
+		session.secure = true;
+	else
+		log("debug", "Outgoing WS S2S Session is considered insecure, because the endpoint is not using wss");
+		session.secure = false;
+	end
 
 	-- now we start using the session logger
 	local log = session.log;
@@ -595,7 +606,7 @@ function route_to_new_session(event)
 	-- is called. But here, we switch the connection listener to use the
 	-- s2s_listener as soon as the connection is open. So it can't work.
 	-- That's why I use net.http, and handle the Websocket handshake by hand.
-	local ws_connection = custom_connect(ws_properties['url'], ex, {
+	local ws_connection = custom_connect(ws_url, ex, {
 		onopen = onopen;
 		onclose = onclose;
 	});
