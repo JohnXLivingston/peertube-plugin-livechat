@@ -35,6 +35,7 @@ local frame_buffer_limit = module:get_option_number("websocket_frame_buffer_limi
 local frame_fragment_limit = module:get_option_number("websocket_frame_fragment_limit", 8);
 local stream_close_timeout = module:get_option_number("s2s_close_timeout", 5);
 local consider_websocket_secure = module:get_option_boolean("consider_websocket_secure");
+local websocket_s2s_ping_interval = module:get_option_number("websocket_s2s_ping_interval", 55);
 
 local xmlns_framing = "urn:ietf:params:xml:ns:xmpp-framing-server";
 local xmlns_streams = "http://etherx.jabber.org/streams";
@@ -366,7 +367,7 @@ local function keepalive(event)
 	local session = event.session;
 	if session.open_stream == session_open_stream then
 		local log = session.log or log
-		log("debug", "Sending a keepalive on outgoint websocket s2s");
+		log("debug", "Sending a keepalive on outgoing websocket s2s");
 		return session.conn:write(build_frame({ opcode = 0x9, FIN = true }));
 	end
 end
@@ -594,6 +595,14 @@ function route_to_new_session(event)
 		conn:setlistener(s2s_listener);
 		s2s_listener.register_outgoing(conn, session);
 		s2s_listener.onconnect(conn);
+
+		-- many websocket server or proxy have timeouts when the connection is not active.
+		-- for example when nginx proxifies websocket, it has a default 60 seconds timeout.
+		-- so we will send keepalives on outgoing connections (in addition to keepalives sent by mod_s2s).
+		session.ws_s2s_keepalive_timer = module:add_timer(websocket_s2s_ping_interval, function ()
+			log("debug", "Timer triggered, sending a keepalive on outgoing websocket s2s");
+			return session.conn:write(build_frame({ opcode = 0x9, FIN = true }));
+		end);
 	end
 
 	local function onclose(s, code, message)
@@ -657,6 +666,17 @@ function module.add_host(module)
 	});
 
 	module:hook("s2s-read-timeout", keepalive, -0.9);
+	module:hook("s2s-destroyed", function (event)
+		local session = event.session;
+		if not session then
+			return;
+		end
+		local log = session.log or log;
+		if session.ws_s2s_keepalive_timer then
+			log("debug", "Stopping keepalive timer");
+			session.ws_s2s_keepalive_timer:stop();
+		end
+	end);
 end
 
 if require"core.modulemanager".get_modules_for_host("*"):contains(module.name) then
