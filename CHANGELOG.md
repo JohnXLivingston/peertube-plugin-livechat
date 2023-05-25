@@ -14,11 +14,8 @@ TODO?: mod_s2s_peertubelivechat: dont allow to connect to remote server that are
 TODO: when sanitizing remote chat endpoint, check that the domain is the same as the video domain (or is room.videodomain.tld).
 TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
 TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Check if this is fine. And maybe we can optimise some code, by allowing directS2S event if current server dont accept it.
-TODO: add a specific websocket timeout option, and send keepalive. In production the connection is often close and reopened because of nginx 30s timeout.
-TODO: alpha.2 version force Websocket S2S when available, even if s2s is possible. Revert this before releasing.
 TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
 TODO: check in the diagnostic tool that Prosody is >=0.12
-TODO: ARM AppImage, and to say that needs Prosody >=0.12
 
 ### Minor changes and fixes
 
