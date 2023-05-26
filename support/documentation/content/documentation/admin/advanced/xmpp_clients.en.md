@@ -192,6 +192,112 @@ Normally you should now find the certificates in the configured folder.
 
 Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube.
 
+#### Method for the Docker case
+
+This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube.
+
+First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.
+You can use a CNAME entry (or an A entry and a AAAA entry).
+This is necessary for Let's Encrypt to validate the domain for certificate generation.
+
+Enter the directory where your `docker-compose.yml` file exists.
+
+Open a shell in the certbot container:
+
+```bash
+docker exec -it certbot /bin/sh
+```
+
+Run certbot:
+
+```bash
+certbot
+```
+
+You will be presented with a series of prompts.  Enter `2` for the authentication type:
+
+```text
+How would you like to authenticate with the ACME CA?
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2
+```
+
+Enter the domain name `room.your_instance.tld`:
+
+```text
+Please enter the domain name(s) you would like on your certificate (comma and/or
+space separated) (Enter 'c' to cancel): room.your_instance.tld
+```
+
+Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:
+
+```text
+Input the webroot for <room.your_instance.tld>: (Enter 'c' to cancel): /var/www/certbot
+```
+
+You should see output like the following:
+
+```text
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/room.your_instance.tld/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/room.your_instance.tld/privkey.pem
+```
+
+Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.
+*Note*:  This will also make the files readable to the group with id 999 on the host system.
+Check the groups on your system to assess this as a risk before running this command.
+
+```bash
+chown -R root:999 /etc/letsencrypt/live; \
+chmod 750 /etc/letsencrypt/live; \
+chown -R root:999 /etc/letsencrypt/archive; \
+chmod 750 /etc/letsencrypt/archive; \
+find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} \;
+```
+
+Exit the certbot container:
+
+```bash
+exit
+```
+
+Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.
+This is the same as the above, but to be automatically executed after every certificate renewal.
+
+```text
+  entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; chown -R root:999 /etc/letsencrypt/live; chmod 750 /etc/letsencrypt/live; chown -R root:999 /etc/letsencrypt/archive; chmod 750 /etc/letsencrypt/archive; find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} \; sleep 12h & wait $${!}; done;"
+```
+
+Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.
+It should look something like this:
+
+```text
+  volumes:
+    - ./docker-volume/certbot/conf:/etc/letsencrypt
+```
+
+Restart your services:
+
+```bash
+docker-compose down; docker-comopse up -d
+```
+
+In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:
+
+```text
+/etc/letsencrypt/live
+```
+
+Save the plugin settings and verify Prosody can see the certificates:
+
+```bash
+docker-compose exec -u peertube \
+  peertube \
+  /data/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun \
+  prosodyctl \
+  --config /data/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \
+  check certs
+```
+
 ### Troubleshooting
 
 If you can't make it work, you can use the diagnostic tool
