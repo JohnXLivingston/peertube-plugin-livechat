@@ -44,15 +44,15 @@ async function register (options: RegisterServerOptions): Promise<any> {
       const webserverUrl = options.peertubeHelpers.config.getWebserverUrl()
       const hostname = (new URL(webserverUrl)).hostname
       const embedUrl = `${webserverUrl}/plugins/livechat/router/webchat/room/${encodeURIComponent(video.uuid)}`
-      const xmppHostname = `room.${hostname}`
+      const xmppRoom = `room.${hostname}`
 
       return result.concat([
         {
           name: 'podcast:chat',
           attributes: {
-            server: xmppHostname,
+            server: hostname,
             protocol: 'xmpp',
-            space: `${video.uuid}@${xmppHostname}`,
+            space: `${video.uuid}@${xmppRoom}`,
             embedUrl: embedUrl
           }
         }
