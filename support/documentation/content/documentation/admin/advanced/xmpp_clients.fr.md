@@ -203,6 +203,10 @@ Normalement vous devriez maintenant trouver les certificats dans le dossier conf
 Note: la première fois que vous faites tout ça, il va falloir recharger Prosody. Le plus simple pour cela est de
 redémarrer Peertube.
 
+#### Méthode en cas d'utilisation de Docker
+
+Merci de vous référer à la documentation en anglais.
+
 ### En cas de problème
 
 Si cela ne fonctionne pas, vous pouvez utiliser l'outils de diagnostic
