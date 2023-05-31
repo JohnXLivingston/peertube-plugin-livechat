@@ -1,12 +1,16 @@
 # Changelog
 
-## 6.4.0-alpha.5
+## 6.4.0 (Not Released Yet)
 
 ### Importante Notes
 
 If you enabled external XMPP connection with plugin v6.3.0,
 and are not using the standard 5269 port, you must add and additional DNS SRV record.
 Check the [documentation](https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/).
+
+If you are using ["system Prosody"](https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/#use-system-prosody),
+please not that this version will only properly work with Prosody >= 0.12.0.
+If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.
 
 ### New Features
 
@@ -31,6 +35,7 @@ TODO?: allow directs2s on one side and websocket on the other? (currently disall
 * Prosody AppImage: hidden debug mode to disable lua-unbound, that seems broken in some docker dev environments.
 * Debug Mode: can change some parameters.
 * Fix use case where self-signed certificates are missing.
+* Prosody recommended version is now 0.12.x.
 
 ## 6.3.0
 
