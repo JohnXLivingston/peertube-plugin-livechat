@@ -110,6 +110,19 @@ async function renewCheckSelfSigned (options: RegisterServerOptions, config: Pro
   await reloadProsody(options)
 }
 
+async function missingSelfSignedCertificates (options: RegisterServerOptions, config: ProsodyConfig): Promise<boolean> {
+  if (config.certificates !== 'generate-self-signed') {
+    return false
+  }
+  const filepath = _filePathToTest(options, config)
+  if (!filepath) { return false }
+  if (fs.existsSync(filepath)) {
+    options.peertubeHelpers.logger.debug('Missing certificate file: ' + filepath)
+    return false
+  }
+  return true
+}
+
 async function renewCheckFromDir (options: RegisterServerOptions, config: ProsodyConfig): Promise<void> {
   // We will browse all dir files, get the more recent file update time, and compare it to the previous call.
   const logger = options.peertubeHelpers.logger
@@ -149,5 +162,6 @@ function _filePathToTest (options: RegisterServerOptions, config: ProsodyConfig)
 export {
   ensureProsodyCertificates,
   startProsodyCertificatesRenewCheck,
-  stopProsodyCertificatesRenewCheck
+  stopProsodyCertificatesRenewCheck,
+  missingSelfSignedCertificates
 }
