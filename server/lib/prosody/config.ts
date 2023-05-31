@@ -51,15 +51,22 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     // } else {
     //   appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-x86_64.AppImage')
     // }
-    if (process.arch !== 'x64' && process.arch !== 'x86_64') {
-      logger.info('Node process.arch is ' + process.arch + ', cant use the Prosody AppImage')
-    } else {
+    if (process.arch === 'x64' || process.arch === 'x86_64') {
       logger.debug('Node process.arch is ' + process.arch + ', we will be using the x86_64 Prosody AppImage')
       appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-x86_64.AppImage')
       exec = path.resolve(appImageExtractPath, 'squashfs-root/AppRun')
       execArgs = ['prosody']
       execCtl = exec
       execCtlArgs = ['prosodyctl']
+    } else if (process.arch === 'arm64') {
+      logger.debug('Node process.arch is ' + process.arch + ', we will be using the aarch64 Prosody AppImage')
+      appImageToExtract = path.resolve(__dirname, '../../prosody/livechat-prosody-aarch64.AppImage')
+      exec = path.resolve(appImageExtractPath, 'squashfs-root/AppRun')
+      execArgs = ['prosody']
+      execCtl = exec
+      execCtlArgs = ['prosodyctl']
+    } else {
+      logger.info('Node process.arch is ' + process.arch + ', cant use the Prosody AppImage')
     }
   }
 

@@ -40,7 +40,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
         level: 'error',
         message: 'Error: no Prosody server.'
       })
-      if (process.arch !== 'x64' && process.arch !== 'x86_64') {
+      if (process.arch !== 'x64' && process.arch !== 'x86_64' && process.arch !== 'arm64') {
         result.messages.push({
           level: 'error',
           message: 'Error: your CPU is a ' +

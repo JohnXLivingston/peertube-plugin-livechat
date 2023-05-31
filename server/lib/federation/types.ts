@@ -45,7 +45,7 @@ interface LiveChatJSONLDInfosV0 {
   links: LiveChatJSONLDLink[]
 }
 
-// LiveChatJSONLDInfosV1 is the data format that comes with plugin v6.4.0.
+// LiveChatJSONLDInfosV1 is the data format that comes with plugin v7.0.0.
 interface LiveChatJSONLDInfosV1 {
   type: 'xmpp'
   jid: string // room JID

@@ -62,7 +62,7 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
     descriptionHTML: loc('diagnostic')
   })
 
-  if (process.arch !== 'x64' && process.arch !== 'x86_64') {
+  if (process.arch !== 'x64' && process.arch !== 'x86_64' && process.arch !== 'arm64') {
     registerSetting({
       name: 'prosody-arch-warning',
       type: 'html',
