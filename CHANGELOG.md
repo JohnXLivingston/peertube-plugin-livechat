@@ -20,12 +20,8 @@ If you are using an older version, Chat Federation could be broken, and it could
   * If the remote instance has configured external XMPP connections, it will use legacy S2S connection instead of Websocket S2S.
 
 TODO: documentation, and settings names/descriptions changes related to direct XMPP S2S connections.
-TODO?: mod_s2s_peertubelivechat: dont allow to connect to remote server that are not Peertube servers?
 TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
-TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Check if this is fine. And maybe we can optimise some code, by allowing directS2S even if current server dont accept it.
 TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
-TODO: check in the diagnostic tool that Prosody is >=0.12
-TODO?: allow directs2s on one side and websocket on the other? (currently disallowed by compatibleRemoteAuthenticatedConnectionEnabled)
 
 ### Minor changes and fixes
 

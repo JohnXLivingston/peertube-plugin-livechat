@@ -52,6 +52,13 @@ function compatibleRemoteAuthenticatedConnectionEnabled (
   if (!('xmppserver' in livechatInfos)) { return false }
   if (!livechatInfos.xmppserver) { return false }
 
+  // FIXME: these tests does not really represent what Prosody will do.
+  // Prosody can use Websocket in one way and Direct S2S in the other.
+  // I don't really know what to test here.
+  // In real case scenario, we should always have Websocket S2S on both side...
+  // They are rare cases where Websocket is disabled on an entire server.
+  // In such case, we indeed need direct S2S on both side.
+  // So these tests should work.
   if (canWebsocketS2S && livechatInfos.xmppserver.websockets2s) { return true }
   if (canDirectS2S && livechatInfos.xmppserver.directs2s) { return true }
 
