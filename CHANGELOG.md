@@ -1,6 +1,6 @@
 # Changelog
 
-## 7.0.0 (Not Released Yet)
+## 7.0.0
 
 ### Importante Notes
 
@@ -8,7 +8,7 @@ If you enabled external XMPP connection with plugin v6.3.0,
 and are not using the standard 5269 port, you must add and additional DNS SRV record.
 Check the [documentation](https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/).
 
-If you are using ARM 64 CPU, you no longer need to manually install Prosody on your server.
+If you are using arm64 CPU, you no longer need to manually install Prosody on your server.
 You can now uncheck the "use system prosody" option, and uninstall Prosody if you don't use it for anything else.
 
 If you are using ["system Prosody"](https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/#use-system-prosody),
@@ -21,11 +21,8 @@ If you are using an older version, Chat Federation could be broken, and it could
   * You can now connect to a remote chat with your local account.
   * This remote connection is done using a custom implementation of [XEP-0468: WebSocket S2S](https://xmpp.org/extensions/xep-0468.html), using some specific discovering method (so that it will work without any DNS configuration).
   * If the remote instance has configured external XMPP connections, it will use legacy S2S connection instead of Websocket S2S.
+  * The discovering methods are experimental and temporary. They will be replaced by something that uses XMPP standards in a later release.
 * ARM64 CPU support! The Prosody builtin AppImage is now compatible with ARM64 CPU.
-
-TODO: documentation, and settings names/descriptions changes related to direct XMPP S2S connections.
-TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
-TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
 
 ### Minor changes and fixes
 
