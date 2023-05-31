@@ -94,6 +94,10 @@ $ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV
 0 5 5269 videos.john-livingston.fr.
 ```
 
+Si vous **n'utilisez pas le port standard `5269`**, vous devez ajouter un autre enregistrement SRV pour
+`_xmpp-server._tcp.votre_instance.tld.` (pareil que précédemment, mais en enlevant le préfixe `room.`).
+Bien sûr, vous pouvez l'ajouter même si vous utilisez le port standard. Cela fonctionnera également.
+
 ### Utilisation de certificats de confiance
 
 Les certificats auto-signés que le plugin utilise par défaut peuvent ne pas convenir à tous les serveurs distants.

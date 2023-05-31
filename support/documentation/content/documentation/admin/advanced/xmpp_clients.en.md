@@ -89,6 +89,10 @@ $ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV
 0 5 5269 videos.john-livingston.fr.
 ```
 
+If you are **not using the standard `5269` port**, you must also add a SRV record
+for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).
+Of course, you can also add this record if you use the standard port. It will also work.
+
 ### Using trusted certificates
 
 The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons.
