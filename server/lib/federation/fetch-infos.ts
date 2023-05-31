@@ -80,7 +80,7 @@ async function fetchMissingRemoteServerInfos (
       return
     }
 
-    const serverInfos = sanitizePeertubeLiveChatServerInfos(options, response)
+    const serverInfos = sanitizePeertubeLiveChatServerInfos(options, response, remoteInstanceUrl)
     if (serverInfos) {
       await storeRemoteServerInfos(options, serverInfos)
     }
