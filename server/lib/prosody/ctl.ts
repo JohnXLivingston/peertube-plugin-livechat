@@ -2,7 +2,10 @@ import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { getProsodyConfig, getProsodyFilePaths, writeProsodyConfig } from './config'
 import { startProsodyLogRotate, stopProsodyLogRotate } from './logrotate'
 import {
-  ensureProsodyCertificates, startProsodyCertificatesRenewCheck, stopProsodyCertificatesRenewCheck
+  ensureProsodyCertificates,
+  startProsodyCertificatesRenewCheck,
+  stopProsodyCertificatesRenewCheck,
+  missingSelfSignedCertificates
 } from './certificates'
 import { disableProxyRoute, enableProxyRoute } from '../routers/webchat'
 import { fixRoomSubject } from './fix-room-subject'
@@ -266,6 +269,13 @@ async function testProsodyCorrectlyRunning (options: RegisterServerOptions): Pro
       result.messages.push('Prosody configuration file content is correct.')
     } else {
       result.messages.push('Prosody configuration file content is not correct.')
+      return result
+    }
+
+    if (!await missingSelfSignedCertificates(options, wantedConfig)) {
+      result.messages.push('No missing self signed certificates.')
+    } else {
+      result.messages.push('Missing self signed certificates.')
       return result
     }
   } catch (error) {

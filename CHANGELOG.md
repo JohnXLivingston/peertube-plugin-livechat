@@ -27,6 +27,7 @@ TODO: for directS2S, needs a SRV records for the main host if port is not standa
 * Prosody AppImage: fix path mapping: we only map necessary /etc/ subdir, so that the AppImage can access to /etc/resolv.conf, /etc/hosts, ...
 * Prosody AppImage: hidden debug mode to disable lua-unbound, that seems broken in some docker dev environments.
 * Debug Mode: can change some parameters.
+* Fix use case where self-signed certificates are missing.
 
 ## 6.3.0
 
