@@ -16,7 +16,7 @@ async function readIncomingAPVideo (
   let peertubeLiveChat = ('peertubeLiveChat' in videoAPObject) ? videoAPObject.peertubeLiveChat : false
 
   // We must sanitize peertubeLiveChat, as it comes for the outer world.
-  peertubeLiveChat = sanitizePeertubeLiveChatInfos(options, peertubeLiveChat)
+  peertubeLiveChat = sanitizePeertubeLiveChatInfos(options, peertubeLiveChat, video.url)
 
   await storeVideoLiveChatInfos(options, video, peertubeLiveChat)
   if (video.remote) {
