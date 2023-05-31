@@ -2,6 +2,12 @@
 
 ## 6.4.0-alpha.5
 
+### Importante Notes
+
+If you enabled external XMPP connection with plugin v6.3.0,
+and are not using the standard 5269 port, you must add and additional DNS SRV record.
+Check the [documentation](https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/).
+
 ### New Features
 
 * Chat Federation:
@@ -17,7 +23,6 @@ TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Che
 TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
 TODO: check in the diagnostic tool that Prosody is >=0.12
 TODO?: allow directs2s on one side and websocket on the other? (currently disallowed by compatibleRemoteAuthenticatedConnectionEnabled)
-TODO: for directS2S, needs a SRV records for the main host if port is not standard.. Must document.
 
 ### Minor changes and fixes
 
