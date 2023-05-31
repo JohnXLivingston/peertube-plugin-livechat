@@ -13,12 +13,12 @@ Check the [documentation](https://johnxlivingston.github.io/peertube-plugin-live
 * Chat Federation:
   * You can now connect to a remote chat with your local account.
   * This remote connection is done using a custom implementation of [XEP-0468: WebSocket S2S](https://xmpp.org/extensions/xep-0468.html), using some specific discovering method (so that it will work without any DNS configuration).
-  * If both local and remote instance have configured external XMPP connections, it will use legacy S2S connection.
+  * If the remote instance has configured external XMPP connections, it will use legacy S2S connection instead of Websocket S2S.
 
 TODO: documentation, and settings names/descriptions changes related to direct XMPP S2S connections.
 TODO?: mod_s2s_peertubelivechat: dont allow to connect to remote server that are not Peertube servers?
 TODO: only compatible with Prosody 0.12.x. So it should be documented for people using «system Prosody». And i should fix the ARM AppImage.
-TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Check if this is fine. And maybe we can optimise some code, by allowing directS2S event if current server dont accept it.
+TODO: it seems that in some case A->B can be Websocket, and B->A direct S2S. Check if this is fine. And maybe we can optimise some code, by allowing directS2S even if current server dont accept it.
 TODO?: always generate self-signed certificates. Could be used for outgoing s2s?
 TODO: check in the diagnostic tool that Prosody is >=0.12
 TODO?: allow directs2s on one side and websocket on the other? (currently disallowed by compatibleRemoteAuthenticatedConnectionEnabled)
