@@ -542,16 +542,17 @@ end
 
 function route_to_new_session(event)
 	local from_host, to_host, stanza = event.from_host, event.to_host, event.stanza;
-  log("debug", "Trying to route to %s using Websocket S2S", to_host);
+  log("debug", "Trying to route to %s, searching which method to use", to_host);
 
 	local ws_properties = module:fire_event("discover-websocket-s2s", { to_host = to_host });
 	if not ws_properties then
-		log("debug", "No websocket s2s capabilities from remote host %s", to_host);
+		log("debug", "Not using websocket s2s from remote host %s", to_host);
 		return;
 	end
 	local ws_url = ws_properties.url;
 	if (not ws_url) then
 		log("error", "Missing url in the discover-websocket-s2s result");
+		return;
 	end
 
 	log("debug", "Found a Websocket endpoint for s2s communications to remote host %s", to_host);
