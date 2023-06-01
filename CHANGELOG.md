@@ -1,5 +1,9 @@
 # Changelog
 
+## 7.0.1
+
+* Fix: trying to connect to a remote instance using direct s2s won't work if local instance has not the feature enabled, and if the remote instance does not know the local one. So using Websocket S2S in such case (that embed a discovery mecanism).
+
 ## 7.0.0
 
 ### Importante Notes

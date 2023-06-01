@@ -302,6 +302,12 @@ class ProsodyConfigContent {
     // FIXME: seems to be necessary to add the module on the muc host, so that dialback can trigger route/remote.
     this.muc.add('modules_enabled', 'websocket_s2s_peertubelivechat')
 
+    // Using direct S2S for outgoing connection can be an issue, if the local instance dont allow incomming S2S.
+    // Indeed, the remote instance will not necessarely be able to discover the Websocket Endpoint.
+    // To be sure the remote instance knows the websocket endpoint, we must use Websocket for the firt outgoing connect.
+    // So, we will add a parameter for mod_s2s_peertubelivechat, to tell him not to use outgoint s2s connection.
+    this.global.set('s2s_peertubelivechat_no_outgoing_directs2s_to_peertube', s2sPort === null)
+
     this.muc.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
     this.authenticated?.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
   }

@@ -5,16 +5,19 @@ local json = require "util.json";
 
 local server_infos_dir = assert(module:get_option_string("peertubelivechat_server_infos_path", nil), "'peertubelivechat_server_infos_path' is a required option");
 local current_instance_url = assert(module:get_option_string("peertubelivechat_instance_url", nil), "'peertubelivechat_instance_url' is a required option");
+local no_outgoing_directs2s_to_peertube = module:get_option_boolean("s2s_peertubelivechat_no_outgoing_directs2s_to_peertube");
 
 function discover_websocket_s2s(event)
 	local to_host = event.to_host;
   module:log("debug", "Searching websocket s2s for remote host %s", to_host);
 
-	local f_s2s = io.open(path.join(server_infos_dir, to_host, 's2s'), "r");
-	if f_s2s ~= nil then
-		io.close(f_s2s);
-		module:log("debug", "Remote host is a known Peertube %s that has s2s activated, we will let legacy s2s module handle the connection", to_host);
-		return;
+	if not no_outgoing_directs2s_to_peertube then
+		local f_s2s = io.open(path.join(server_infos_dir, to_host, 's2s'), "r");
+		if f_s2s ~= nil then
+			io.close(f_s2s);
+			module:log("debug", "Remote host is a known Peertube %s that has s2s activated, we will let legacy s2s module handle the connection", to_host);
+			return;
+		end
 	end
 
 	local f_ws_proxy = io.open(path.join(server_infos_dir, to_host, 'ws-s2s'), "r");
