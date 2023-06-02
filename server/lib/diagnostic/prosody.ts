@@ -40,7 +40,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
         level: 'error',
         message: 'Error: no Prosody server.'
       })
-      if (process.arch !== 'x64' && process.arch !== 'x86_64') {
+      if (process.arch !== 'x64' && process.arch !== 'x86_64' && process.arch !== 'arm64') {
         result.messages.push({
           level: 'error',
           message: 'Error: your CPU is a ' +
@@ -146,10 +146,10 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     const minor = versionMatches[2]
     const patch = versionMatches[3] ?? versionMatches[4]
     result.messages.push(`Prosody version is ${major}.${minor}.${patch}`)
-    if (major !== '0' && minor !== '11') {
+    if (major !== '0' && minor !== '12') {
       result.messages.push({
-        level: parseInt(minor) < 11 ? 'error' : 'warning',
-        message: 'Warning: recommended Prosody version is 0.11.x'
+        level: parseInt(minor) < 12 ? 'error' : 'warning',
+        message: 'Warning: recommended Prosody version is 0.12.x'
       })
     }
   }

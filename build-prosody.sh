@@ -13,8 +13,8 @@ fi
 
 cd "$prosody_build_dir"
 
-# if [ -f "$prosody_build_dir/livechat-prosody-x86_64.AppImage" ] && [ -f "$prosody_build_dir/livechat-prosody-aarch64.AppImage" ]; then
-if [ -f "$prosody_build_dir/livechat-prosody-x86_64.AppImage" ]; then
+if [ -f "$prosody_build_dir/livechat-prosody-x86_64.AppImage" ] && [ -f "$prosody_build_dir/livechat-prosody-aarch64.AppImage" ]; then
+# if [ -f "$prosody_build_dir/livechat-prosody-x86_64.AppImage" ]; then
   echo "Prosody images already built."
 else
   echo "Prosody images must be build..."
@@ -29,22 +29,28 @@ else
   source venv/bin/activate
 
   echo "Installing appimage-builder..."
-  pip3 install appimage-builder
+  pip3 install appimage-builder==1.1.0
+
+  echo "Unpatching appimage-builder for ARM..."
+  sed -i -E 's/^\s*"\*\*\/ld-linux-aarch64.so\*",\s*$//' venv/lib/*/site-packages/appimagebuilder/modules/setup/apprun_2/apprun2.py
 
   echo "Copying appimage source files..."
   cp "$rootdir/prosody/appimage_x86_64.yml" "$prosody_build_dir/appimage_x86_64.yml"
-  # cp "$rootdir/prosody/appimage_aarch64.yml" "$prosody_build_dir/appimage_aarch64.yml"
+  cp "$rootdir/prosody/appimage_aarch64.yml" "$prosody_build_dir/appimage_aarch64.yml"
   cp "$rootdir/prosody/launcher.lua" "$prosody_build_dir/launcher.lua"
 
   echo "Building Prosody x86_64..."
   appimage-builder --recipe "$prosody_build_dir/appimage_x86_64.yml"
 
-  # echo "Cleaning build folders before building aarch64..."
-  # rm -rf "$prosody_build_dir/AppDir"
-  # rm -rf "$prosody_build_dir/appimage-build"
+  echo "Cleaning build folders before building aarch64..."
+  rm -rf "$prosody_build_dir/AppDir"
+  rm -rf "$prosody_build_dir/appimage-build"
 
-  # echo "Building Prosody aarch64..."
-  # appimage-builder --recipe "$prosody_build_dir/appimage_aarch64.yml"
+  echo "Patching appimage-builder for ARM..."
+  sed -i -E 's/^\s*"\*\*\/ld-linux-x86-64.so.2",\s*$/"**\/ld-linux-x86-64.so.2", "**\/ld-linux-aarch64.so*",/' venv/lib/*/site-packages/appimagebuilder/modules/setup/apprun_2/apprun2.py
+
+  echo "Building Prosody aarch64..."
+  appimage-builder --recipe "$prosody_build_dir/appimage_aarch64.yml"
 
   # For some obscur reason, if we keep AppDir and appimage-build folders,
   # and if we try to install the plugin using the Peertube CLI,
@@ -57,7 +63,7 @@ fi
 
 echo "Copying Prosody dist files..."
 mkdir -p "$prosody_destination_dir" && cp $prosody_build_dir/livechat-prosody-x86_64.AppImage "$prosody_destination_dir/"
-# mkdir -p "$prosody_destination_dir" && cp $prosody_build_dir/livechat-prosody-aarch64.AppImage "$prosody_destination_dir/"
+mkdir -p "$prosody_destination_dir" && cp $prosody_build_dir/livechat-prosody-aarch64.AppImage "$prosody_destination_dir/"
 
 echo "Prosody AppImages OK."
 

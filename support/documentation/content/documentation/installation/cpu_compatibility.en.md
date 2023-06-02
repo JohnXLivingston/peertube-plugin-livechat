@@ -1,19 +1,18 @@
 +++
 title="Known issues: CPU Compatibility"
-description="For now, the plugin only works out of the box for x86_64 CPU architecture. Here are some instructions for other CPU architectures."
+description="For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
 weight=10
 chapter=false
 +++
 
-The Prosody AppImage included in the plugin will only work on x86_64 CPU.
-It is not compatible with arm64 and other CPU architectures.
-
-For now, I did not manage to make it work for other CPU architectures.
-If you want te be notified when it will be possible, you can subscribe and comment this
-[issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/124).
+The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.
+It is not compatible with other CPU architectures.
 
 To use the plugin, you will have to manually install Prosody on your server
 (see below).
+
+Note: the plugin requires Prosody >= 0.12.0.
+If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.
 
 Once it is done, you have to check `Use system Prosody` in the plugin settings.
 

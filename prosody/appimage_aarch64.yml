@@ -30,24 +30,21 @@ AppDir:
   apt:
     arch: arm64
     sources:
-      # Note: for an unknown reason, building from debian packages produce invalid AppFiles.
-      # See: https://github.com/AppImageCrafters/appimage-builder/issues/278
-      # So we are using ubuntu repository.
-      - sourceline: 'deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports bionic main restricted universe multiverse'
-        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
+      - sourceline: 'deb [arch=arm64] https://deb.debian.org/debian/ bullseye main contrib'
+        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x648ACFD622F3D138'
+      - sourceline: 'deb [arch=arm64] https://deb.debian.org/debian/ bullseye-backports main contrib'
 
     include:
       - lua5.2
-      # For an unknown reason, lua-unbound is not found in these repository.
-      # - lua-unbound
+      # lua-unbound is needed
+      - lua-unbound
       # lua-readline and lua-event are recommanded dependencies
-      # For an unknown reason, lua-readline is not found in these repository.
-      # - lua-readline
+      - lua-readline
       - lua-event
       # lua-zlib is suggested. Not sure it is used, by make sense to add.
       - lua-zlib
       - lua-sec
-      - prosody
+      - prosody/bullseye-backports
 
   files:
     exclude:
@@ -64,7 +61,12 @@ AppDir:
     # Note: this assume that peertube-plugin-livechat is not in a subdir of one of following mappings.
     #       This seems a reasonable assumption.
     path_mappings:
-      - /etc/:$APPDIR/etc/
+      # Dont map entire /etc/ (or dns resolution will not work properly)
+      - /etc/init.d/:$APPDIR/etc/init.d/
+      - /etc/ld.so.conf.d/:$APPDIR/etc/ld.so.conf.d/
+      - /etc/logrotate.d/:$APPDIR/etc/logrotate.d/
+      - /etc/prosody/:$APPDIR/etc/prosody/
+      - /etc/ssl/:$APPDIR/etc/ssl/
       - /lib/:$APPDIR/lib/
       - /lib64/:$APPDIR/lib64/
       - /runtime/:$APPDIR/runtime/

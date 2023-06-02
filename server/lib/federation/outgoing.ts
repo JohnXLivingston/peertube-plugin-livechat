@@ -1,8 +1,14 @@
-import type { RegisterServerOptions, VideoObject } from '@peertube/peertube-types'
-import type { LiveChatVideoObject, VideoBuildResultContext, LiveChatJSONLDLink, LiveChatJSONLDAttribute } from './types'
+import type { RegisterServerOptions, VideoObject, SettingValue } from '@peertube/peertube-types'
+import type {
+  LiveChatVideoObject,
+  VideoBuildResultContext,
+  LiveChatJSONLDLink,
+  LiveChatJSONLDAttribute,
+  PeertubeXMPPServerInfos
+} from './types'
 import { storeVideoLiveChatInfos } from './storage'
 import { videoHasWebchat } from '../../../shared/lib/video'
-import { getBoshUri, getWSUri } from '../uri/webchat'
+import { getBoshUri, getWSUri, getWSS2SUri } from '../uri/webchat'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { fillVideoCustomFields } from '../custom-fields'
@@ -31,7 +37,9 @@ async function videoBuildJSONLD (
     'disable-websocket',
     'prosody-room-type',
     'federation-dont-publish-remotely',
-    'chat-no-anonymous'
+    'chat-no-anonymous',
+    'prosody-room-allow-s2s',
+    'prosody-s2s-port'
   ])
 
   if (settings['federation-dont-publish-remotely']) {
@@ -61,7 +69,6 @@ async function videoBuildJSONLD (
   logger.debug(`Adding LiveChat data on video uuid=${video.uuid}...`)
 
   const prosodyDomain = await getProsodyDomain(options)
-  const userJID = 'anon.' + prosodyDomain
   let roomJID: string
   if (settings['prosody-room-type'] === 'channel') {
     roomJID = `channel.${video.channelId}@room.${prosodyDomain}`
@@ -69,32 +76,38 @@ async function videoBuildJSONLD (
     roomJID = `${video.uuid}@room.${prosodyDomain}`
   }
 
+  const serverInfos = await _serverBuildInfos(options, {
+    'federation-dont-publish-remotely': settings['federation-dont-publish-remotely'],
+    'prosody-s2s-port': settings['prosody-s2s-port'],
+    'prosody-room-allow-s2s': settings['prosody-room-allow-s2s'],
+    'disable-websocket': settings['disable-websocket'],
+    'chat-no-anonymous': settings['chat-no-anonymous']
+  })
+
+  // For backward compatibility with remote servers, using plugin <=6.3.0, we must provide links:
   const links: LiveChatJSONLDLink[] = []
-  if (!settings['chat-no-anonymous']) {
-    links.push({
-      type: 'xmpp-bosh-anonymous',
-      url: canonicalizePluginUri(options, getBoshUri(options), { removePluginVersion: true }),
-      jid: userJID
-    })
-    if (!settings['disable-websocket']) {
-      const wsUri = getWSUri(options)
-      if (wsUri) {
-        links.push({
-          type: 'xmpp-websocket-anonymous',
-          url: canonicalizePluginUri(options, wsUri, {
-            removePluginVersion: true,
-            protocol: 'ws'
-          }),
-          jid: userJID
-        })
-      }
+  if (serverInfos.anonymous) {
+    if (serverInfos.anonymous.bosh) {
+      links.push({
+        type: 'xmpp-bosh-anonymous',
+        url: serverInfos.anonymous.bosh,
+        jid: serverInfos.anonymous.virtualhost
+      })
+    }
+    if (serverInfos.anonymous.websocket) {
+      links.push({
+        type: 'xmpp-websocket-anonymous',
+        url: serverInfos.anonymous.websocket,
+        jid: serverInfos.anonymous.virtualhost
+      })
     }
   }
 
   const peertubeLiveChat: LiveChatJSONLDAttribute = {
     type: 'xmpp',
     jid: roomJID,
-    links
+    links,
+    xmppserver: serverInfos
   }
   Object.assign(jsonld, {
     peertubeLiveChat
@@ -104,6 +117,85 @@ async function videoBuildJSONLD (
   return jsonld
 }
 
+async function serverBuildInfos (options: RegisterServerOptions): Promise<PeertubeXMPPServerInfos> {
+  const settings = await options.settingsManager.getSettings([
+    'federation-dont-publish-remotely',
+    'prosody-s2s-port',
+    'prosody-room-allow-s2s',
+    'disable-websocket',
+    'chat-no-anonymous'
+  ])
+  return _serverBuildInfos(options, {
+    'federation-dont-publish-remotely': settings['federation-dont-publish-remotely'],
+    'prosody-s2s-port': settings['prosody-s2s-port'],
+    'prosody-room-allow-s2s': settings['prosody-room-allow-s2s'],
+    'disable-websocket': settings['disable-websocket'],
+    'chat-no-anonymous': settings['chat-no-anonymous']
+  })
+}
+
+async function _serverBuildInfos (
+  options: RegisterServerOptions,
+  settings: {
+    'federation-dont-publish-remotely': SettingValue
+    'prosody-s2s-port': SettingValue
+    'prosody-room-allow-s2s': SettingValue
+    'disable-websocket': SettingValue
+    'chat-no-anonymous': SettingValue
+  }
+): Promise<PeertubeXMPPServerInfos> {
+  const prosodyDomain = await getProsodyDomain(options)
+  const mucDomain = 'room.' + prosodyDomain
+  const anonDomain = 'anon.' + prosodyDomain
+
+  let directs2s
+  if (settings['prosody-room-allow-s2s'] && settings['prosody-s2s-port']) {
+    directs2s = {
+      port: (settings['prosody-s2s-port'] as string) ?? ''
+    }
+  }
+
+  let websockets2s
+  if (!settings['federation-dont-publish-remotely']) {
+    const wsS2SUri = getWSS2SUri(options)
+    if (wsS2SUri) { // can be undefined for old Peertube version that dont allow WS for plugins
+      websockets2s = {
+        url: canonicalizePluginUri(options, wsS2SUri, {
+          removePluginVersion: true,
+          protocol: 'ws'
+        })
+      }
+    }
+  }
+
+  let anonymous: PeertubeXMPPServerInfos['anonymous'] | undefined
+  if (!settings['chat-no-anonymous']) {
+    anonymous = {
+      bosh: canonicalizePluginUri(options, getBoshUri(options), { removePluginVersion: true }),
+      virtualhost: anonDomain
+    }
+
+    if (!settings['disable-websocket']) {
+      const wsUri = getWSUri(options)
+      if (wsUri) {
+        anonymous.websocket = canonicalizePluginUri(options, wsUri, {
+          removePluginVersion: true,
+          protocol: 'ws'
+        })
+      }
+    }
+  }
+
+  return {
+    host: prosodyDomain,
+    muc: mucDomain,
+    directs2s,
+    websockets2s,
+    anonymous
+  }
+}
+
 export {
-  videoBuildJSONLD
+  videoBuildJSONLD,
+  serverBuildInfos
 }

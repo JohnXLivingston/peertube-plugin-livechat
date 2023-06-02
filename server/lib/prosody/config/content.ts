@@ -72,6 +72,18 @@ abstract class ProsodyConfigBlock {
     this.entries.set(name, entry)
   }
 
+  remove (name: string, value: ConfigEntryValue): void {
+    if (!this.entries.has(name)) {
+      return
+    }
+    let entry = this.entries.get(name) as ConfigEntryValue
+    if (!Array.isArray(entry)) {
+      entry = [entry]
+    }
+    entry = entry.filter(v => v !== value)
+    this.entries.set(name, entry)
+  }
+
   write (): string {
     let content = ''
     // Map keeps order :)
@@ -258,13 +270,46 @@ class ProsodyConfigContent {
     this.global.set('c2s_ports', [c2sPort])
   }
 
-  useRoomS2S (s2sPort: string, s2sInterfaces: string[]): void {
-    this.global.set('s2s_ports', [s2sPort])
-    this.global.set('s2s_interfaces', s2sInterfaces)
+  useS2S (
+    s2sPort: string | null,
+    s2sInterfaces: string[] | null,
+    publicServerUrl: string,
+    serverInfosDir: string
+  ): void {
+    if (s2sPort !== null) {
+      this.global.set('s2s_ports', [s2sPort])
+    } else {
+      this.global.set('s2s_ports', [])
+    }
+    if (s2sInterfaces !== null) {
+      this.global.set('s2s_interfaces', s2sInterfaces)
+    } else {
+      this.global.set('s2s_interfaces', [])
+    }
     this.global.set('s2s_secure_auth', false)
+    this.global.remove('modules_disabled', 's2s')
+    this.global.add('modules_enabled', 's2s')
     this.global.add('modules_enabled', 'tls') // required for s2s and co
-    this.muc.add('modules_enabled', 's2s')
+
+    this.global.add('modules_enabled', 's2s_peertubelivechat')
+    this.global.set('peertubelivechat_server_infos_path', serverInfosDir)
+    this.global.set('peertubelivechat_instance_url', publicServerUrl)
+
+    this.global.add('modules_enabled', 'websocket_s2s_peertubelivechat')
+    // Nginx closes the websockets connection after a timeout. Seems the default is 60s.
+    // So we will ping on outgoing websocket s2s connection every 55s.
+    this.global.set('websocket_s2s_ping_interval', 55)
+    // FIXME: seems to be necessary to add the module on the muc host, so that dialback can trigger route/remote.
+    this.muc.add('modules_enabled', 'websocket_s2s_peertubelivechat')
+
+    // Using direct S2S for outgoing connection can be an issue, if the local instance dont allow incomming S2S.
+    // Indeed, the remote instance will not necessarely be able to discover the Websocket Endpoint.
+    // To be sure the remote instance knows the websocket endpoint, we must use Websocket for the firt outgoing connect.
+    // So, we will add a parameter for mod_s2s_peertubelivechat, to tell him not to use outgoint s2s connection.
+    this.global.set('s2s_peertubelivechat_no_outgoing_directs2s_to_peertube', s2sPort === null)
+
     this.muc.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
+    this.authenticated?.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
   }
 
   useExternalComponents (componentsPort: string, components: ExternalComponent[]): void {

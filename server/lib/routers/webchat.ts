@@ -14,8 +14,11 @@ import { getChannelInfosById, getChannelNameById } from '../database/channel'
 import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../shared/lib/autocolors'
 import { getBoshUri, getWSUri } from '../uri/webchat'
 import { getVideoLiveChatInfos } from '../federation/storage'
-import { LiveChatJSONLDAttribute } from '../federation/types'
-import { anonymousConnectionInfos } from '../federation/connection-infos'
+import { LiveChatJSONLDAttributeV1 } from '../federation/types'
+import {
+  anonymousConnectionInfos, compatibleRemoteAuthenticatedConnectionEnabled
+} from '../federation/connection-infos'
+import { fetchMissingRemoteServerInfos } from '../federation/fetch-infos'
 import * as path from 'path'
 const got = require('got')
 
@@ -28,6 +31,7 @@ interface ProsodyProxyInfo {
 let currentProsodyProxyInfo: ProsodyProxyInfo | null = null
 let currentHttpBindProxy: ReturnType<typeof createProxyServer> | null = null
 let currentWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
+let currentS2SWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
 
 async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Router> {
   const {
@@ -50,7 +54,8 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         'prosody-room-type',
         'disable-websocket',
         'converse-theme', 'converse-autocolors',
-        'federation-no-remote-chat'
+        'federation-no-remote-chat',
+        'prosody-room-allow-s2s'
       ])
 
       let autoViewerMode: boolean = false
@@ -77,7 +82,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
 
       let video: MVideoThumbnail | undefined
       let channelId: number
-      let remoteChatInfos: LiveChatJSONLDAttribute | undefined
+      let remoteChatInfos: LiveChatJSONLDAttributeV1 | undefined
       const channelMatches = roomKey.match(/^channel\.(\d+)$/)
       if (channelMatches?.[1]) {
         channelId = parseInt(channelMatches[1])
@@ -110,26 +115,40 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       const baseStaticUrl = getBaseStaticRoute(options)
       page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
 
-      let connectionInfos: ConnectionInfos | null
+      const prosodyDomain = await getProsodyDomain(options)
+      const localAnonymousJID = 'anon.' + prosodyDomain
+      const localBoshUri = getBoshUri(options)
+      const localWsUri = settings['disable-websocket']
+        ? ''
+        : (getWSUri(options) ?? '')
+
+      let remoteConnectionInfos: WCRemoteConnectionInfos | undefined
+      let roomJID: string
       if (video?.remote) {
-        connectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false)
+        const canWebsocketS2S = !settings['federation-no-remote-chat'] && !settings['disable-websocket']
+        const canDirectS2S = !settings['federation-no-remote-chat'] && !!settings['prosody-room-allow-s2s']
+        remoteConnectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false, canWebsocketS2S, canDirectS2S)
+        if (!remoteConnectionInfos) {
+          res.status(404)
+          res.send('No compatible way to connect to remote chat')
+          return
+        }
+        roomJID = remoteConnectionInfos.roomJID
       } else {
-        connectionInfos = await _localConnectionInfos(
+        roomJID = await _localRoomJID(
           options,
           settings,
+          prosodyDomain,
           roomKey,
           video,
           channelId,
           req.query.forcetype === '1'
         )
       }
-      if (!connectionInfos) {
-        res.status(404)
-        res.send('No compatible way to connect to remote chat')
-        return
-      }
 
-      page = page.replace(/{{JID}}/g, connectionInfos.userJID)
+      page = page.replace(/{{IS_REMOTE_CHAT}}/g, video?.remote ? 'true' : 'false')
+      page = page.replace(/{{LOCAL_ANONYMOUS_JID}}/g, localAnonymousJID)
+      page = page.replace(/{{REMOTE_ANONYMOUS_JID}}/g, remoteConnectionInfos?.anonymous?.userJID ?? '')
 
       let autocolorsStyles = ''
       if (
@@ -183,10 +202,16 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       }
 
       // ... then inject it in the page.
-      page = page.replace(/{{ROOM}}/g, connectionInfos.roomJID)
-      page = page.replace(/{{BOSH_SERVICE_URL}}/g, connectionInfos.boshUri)
-      page = page.replace(/{{WS_SERVICE_URL}}/g, connectionInfos.wsUri ?? '')
-      page = page.replace(/{{REMOTE_ANONYMOUS_XMPP_SERVER}}/g, connectionInfos.remoteXMPPServer ? 'true' : 'false')
+      page = page.replace(/{{ROOM}}/g, roomJID)
+      page = page.replace(/{{LOCAL_BOSH_SERVICE_URL}}/g, localBoshUri)
+      page = page.replace(/{{LOCAL_WS_SERVICE_URL}}/g, localWsUri ?? '')
+      page = page.replace(/{{REMOTE_BOSH_SERVICE_URL}}/g, remoteConnectionInfos?.anonymous?.boshUri ?? '')
+      page = page.replace(/{{REMOTE_WS_SERVICE_URL}}/g, remoteConnectionInfos?.anonymous?.wsUri ?? '')
+      page = page.replace(/{{REMOTE_ANONYMOUS_XMPP_SERVER}}/g, remoteConnectionInfos?.anonymous ? 'true' : 'false')
+      page = page.replace(
+        /{{REMOTE_AUTHENTICATED_XMPP_SERVER}}/g,
+        remoteConnectionInfos?.authenticated ? 'true' : 'false'
+      )
       page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
       page = page.replace(/{{AUTOVIEWERMODE}}/g, autoViewerMode ? 'true' : 'false')
       page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
@@ -238,13 +263,43 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
     registerWebSocketRoute({
       route: '/xmpp-websocket',
       handler: (request, socket, head) => {
-        if (!currentWebsocketProxy) {
-          peertubeHelpers.logger.error('There is no current websocket proxy, should not get here.')
-          // no need to close the socket, Peertube will
-          // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
-          return
+        try {
+          if (!currentWebsocketProxy) {
+            peertubeHelpers.logger.error('There is no current websocket proxy, should not get here.')
+            // no need to close the socket, Peertube will
+            // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
+            return
+          }
+          currentWebsocketProxy.ws(request, socket, head)
+        } catch (err) {
+          peertubeHelpers.logger.error('Got an error when trying to connect to S2S', err)
         }
-        currentWebsocketProxy.ws(request, socket, head)
+      }
+    })
+
+    registerWebSocketRoute({
+      route: '/xmpp-websocket-s2s',
+      handler: async (request, socket, head) => {
+        try {
+          if (!currentS2SWebsocketProxy) {
+            peertubeHelpers.logger.error('There is no current websocket s2s proxy, should not get here.')
+            // no need to close the socket, Peertube will
+            // (see https://github.com/Chocobozzz/PeerTube/issues/5752#issuecomment-1510870894)
+            return
+          }
+          // If the incomming request is from a remote Peertube instance, we must ensure that we know
+          // how to connect to it using Websocket S2S (for the dialback mecanism).
+          const remoteInstanceUrl = request.headers['peertube-livechat-ws-s2s-instance-url']
+          if (remoteInstanceUrl && (typeof remoteInstanceUrl === 'string')) {
+            // Note: fetchMissingRemoteServerInfos will store the information,
+            // so that the Prosody mod_s2s_peertubelivechat module can access them.
+            // We dont need to read the result.
+            await fetchMissingRemoteServerInfos(options, remoteInstanceUrl)
+          }
+          currentS2SWebsocketProxy.ws(request, socket, head)
+        } catch (err) {
+          peertubeHelpers.logger.error('Got an error when trying to connect to Websocket S2S', err)
+        }
       }
     })
   }
@@ -322,6 +377,11 @@ async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): P
       currentWebsocketProxy.close()
       currentWebsocketProxy = null
     }
+    if (currentS2SWebsocketProxy) {
+      peertubeHelpers.logger.info('Closing the s2s websocket proxy...')
+      currentS2SWebsocketProxy.close()
+      currentS2SWebsocketProxy = null
+    }
   } catch (err) {
     peertubeHelpers.logger.error('Seems that the http bind proxy close has failed: ' + (err as string))
   }
@@ -380,46 +440,73 @@ async function enableProxyRoute (
   currentWebsocketProxy.on('close', () => {
     logger.info('Got a close event for the websocket proxy')
   })
+
+  logger.info('Creating a new s2s websocket proxy')
+  currentS2SWebsocketProxy = createProxyServer({
+    target: 'http://localhost:' + prosodyProxyInfo.port + '/xmpp-websocket-s2s',
+    ignorePath: true,
+    ws: true
+  })
+  currentS2SWebsocketProxy.on('error', (err, req, res) => {
+    // We must handle errors, otherwise Peertube server crashes!
+    logger.error(
+      'The s2s websocket proxy got an error ' +
+      '(this can be normal if you updated/uninstalled the plugin, or shutdowned peertube while users were chatting): ' +
+      err.message
+    )
+    if ('writeHead' in res) {
+      res.writeHead(500)
+    }
+    res.end('')
+  })
+  currentS2SWebsocketProxy.on('close', () => {
+    logger.info('Got a close event for the s2s websocket proxy')
+  })
 }
 
-interface ConnectionInfos {
-  userJID: string
+interface WCRemoteConnectionInfos {
   roomJID: string
-  boshUri: string
-  wsUri?: string
-  remoteXMPPServer: boolean
+  anonymous?: {
+    userJID: string
+    boshUri: string
+    wsUri?: string
+  }
+  authenticated?: boolean
 }
 
-async function _remoteConnectionInfos (remoteChatInfos: LiveChatJSONLDAttribute): Promise<ConnectionInfos | null> {
+async function _remoteConnectionInfos (
+  remoteChatInfos: LiveChatJSONLDAttributeV1,
+  canWebsocketS2S: boolean,
+  canDirectS2S: boolean
+): Promise<WCRemoteConnectionInfos> {
   if (!remoteChatInfos) { throw new Error('Should have remote chat infos for remote videos') }
-  const connectionInfos = anonymousConnectionInfos(remoteChatInfos ?? false)
-  if (!connectionInfos || !connectionInfos.boshUri) {
-    return null
+  if (remoteChatInfos.type !== 'xmpp') { throw new Error('Should have remote xmpp chat infos for remote videos') }
+  const connectionInfos: WCRemoteConnectionInfos = {
+    roomJID: remoteChatInfos.jid
   }
-  return {
-    userJID: connectionInfos.userJID,
-    roomJID: connectionInfos.roomJID,
-    boshUri: connectionInfos.boshUri,
-    wsUri: connectionInfos.wsUri,
-    remoteXMPPServer: true
+  if (compatibleRemoteAuthenticatedConnectionEnabled(remoteChatInfos, canWebsocketS2S, canDirectS2S)) {
+    connectionInfos.authenticated = true
   }
+  const anonymousCI = anonymousConnectionInfos(remoteChatInfos ?? false)
+  if (anonymousCI?.boshUri) {
+    connectionInfos.anonymous = {
+      userJID: anonymousCI.userJID,
+      boshUri: anonymousCI.boshUri,
+      wsUri: anonymousCI.wsUri
+    }
+  }
+  return connectionInfos
 }
 
-async function _localConnectionInfos (
+async function _localRoomJID (
   options: RegisterServerOptions,
   settings: SettingEntries,
+  prosodyDomain: string,
   roomKey: string,
   video: MVideoThumbnail | undefined,
   channelId: number,
   forceType: boolean
-): Promise<ConnectionInfos> {
-  const prosodyDomain = await getProsodyDomain(options)
-  const jid = 'anon.' + prosodyDomain
-  const boshUri = getBoshUri(options)
-  const wsUri = settings['disable-websocket']
-    ? ''
-    : (getWSUri(options) ?? '')
-
+): Promise<string> {
   // Computing the room name...
   let room: string
   if (forceType) {
@@ -462,13 +549,7 @@ async function _localConnectionInfos (
     room = room.replace(/{{CHANNEL_NAME}}/g, channelName)
   }
 
-  return {
-    userJID: jid,
-    roomJID: room,
-    boshUri,
-    wsUri,
-    remoteXMPPServer: false
-  }
+  return room
 }
 
 export {

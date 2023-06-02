@@ -5,6 +5,7 @@ import { initCustomFields } from './lib/custom-fields'
 import { initRouters } from './lib/routers/index'
 import { initFederation } from './lib/federation/init'
 import { prepareProsody, ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
+import { unloadDebugMode } from './lib/debug'
 import decache from 'decache'
 import { CustomTag } from '@peertube/feed/lib/typings'
 import { URL } from 'url'
@@ -71,6 +72,8 @@ async function unregister (): Promise<any> {
       OPTIONS.peertubeHelpers.logger.error('Error when trying to unload Prosody: ' + (error as string))
     }
   }
+
+  unloadDebugMode()
 
   const module = __filename
   OPTIONS?.peertubeHelpers.logger.info(`Unloading module ${module}...`)

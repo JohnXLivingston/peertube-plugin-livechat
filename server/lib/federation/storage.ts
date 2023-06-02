@@ -1,6 +1,6 @@
 import type { RegisterServerOptions, MVideoFullLight, MVideoAP, Video, MVideoThumbnail } from '@peertube/peertube-types'
-import type { LiveChatJSONLDAttribute } from './types'
-import { sanitizePeertubeLiveChatInfos } from './sanitize'
+import type { LiveChatJSONLDAttribute, LiveChatJSONLDAttributeV1, PeertubeXMPPServerInfos } from './types'
+import { sanitizePeertubeLiveChatInfos, sanitizeXMPPHostFromInstanceUrl } from './sanitize'
 import { URL } from 'url'
 import * as fs from 'fs'
 import * as path from 'path'
@@ -17,7 +17,7 @@ If a file exists, it means the video has a chat.
 The file itself contains the JSON LiveChatInfos object.
 */
 
-const cache: Map<string, LiveChatJSONLDAttribute> = new Map<string, LiveChatJSONLDAttribute>()
+const cache: Map<string, LiveChatJSONLDAttributeV1> = new Map<string, LiveChatJSONLDAttributeV1>()
 
 /**
  * This function stores remote LiveChat infos that are contained in ActivityPub objects.
@@ -72,7 +72,7 @@ async function storeVideoLiveChatInfos (
 async function getVideoLiveChatInfos (
   options: RegisterServerOptions,
   video: MVideoFullLight | MVideoAP | Video | MVideoThumbnail
-): Promise<LiveChatJSONLDAttribute> {
+): Promise<LiveChatJSONLDAttributeV1> {
   const logger = options.peertubeHelpers.logger
 
   const cached = cache.get(video.url)
@@ -92,9 +92,136 @@ async function getVideoLiveChatInfos (
     return false
   }
   // We must sanitize here, in case a previous plugin version did not sanitize enougth.
-  const r = sanitizePeertubeLiveChatInfos(content)
+  const r = sanitizePeertubeLiveChatInfos(options, content)
   cache.set(video.url, r)
   return r
+}
+
+/**
+ * When receiving livechat information for remote servers, we store some information
+ * about remote server capatibilities: has it s2s enabled? can it proxify s2s in Peertube?
+ * These information can then be read by Prosody module mod_s2s_peertubelivechat.
+ *
+ * We simply store the more recent informations. Indeed, it should be consistent between videos.
+ *
+ * Note: XMPP actively uses subdomains to seperate components.
+ * Peertube chats are on the domain `room.your_instance.tld`. But the server will
+ * be contacted using `your_instance.tld`.
+ * We must make sure that the Prosody module mod_s2s_peertubelivechat finds both
+ * kind of urls.
+ *
+ * @param options server optiosn
+ * @param xmppserver remote server informations
+ */
+async function storeRemoteServerInfos (
+  options: RegisterServerOptions,
+  xmppserver: PeertubeXMPPServerInfos
+): Promise<void> {
+  const logger = options.peertubeHelpers.logger
+
+  const mainHost = xmppserver.host
+  const hosts = [
+    xmppserver.host,
+    xmppserver.muc
+  ]
+
+  for (const host of hosts) {
+    if (!host) { continue }
+
+    // Some security check, just in case.
+    if (host.includes('..')) {
+      logger.error(`Host seems not correct, contains ..: ${host}`)
+      continue
+    }
+
+    const dir = path.resolve(
+      options.peertubeHelpers.plugin.getDataDirectoryPath(),
+      'serverInfos',
+      host
+    )
+    const s2sFilePath = path.resolve(dir, 's2s')
+    const wsS2SFilePath = path.resolve(dir, 'ws-s2s')
+    const timestampFilePath = path.resolve(dir, 'last-update')
+
+    if (xmppserver.directs2s?.port) {
+      await _store(options, s2sFilePath, {
+        host: mainHost,
+        port: xmppserver.directs2s.port
+      })
+    } else {
+      await _del(options, s2sFilePath)
+    }
+
+    if (xmppserver.websockets2s?.url) {
+      await _store(options, wsS2SFilePath, {
+        host: mainHost,
+        url: xmppserver.websockets2s.url
+      })
+    } else {
+      await _del(options, wsS2SFilePath)
+    }
+
+    await _store(options, timestampFilePath, {
+      timestamp: (new Date()).getTime()
+    })
+  }
+}
+
+/**
+ * Indicate if we have the remote hosts informations.
+ * @param options server options
+ * @param host host domain
+ * @param maxAge if given, the max age (in milliseconds) allowed for remote server informations
+ */
+async function hasRemoteServerInfos (
+  options: RegisterServerOptions,
+  hostParam: any,
+  maxAge?: number
+): Promise<boolean> {
+  const host = sanitizeXMPPHostFromInstanceUrl(options, hostParam)
+  if (!host) {
+    return false
+  }
+  if (host.includes('..')) {
+    options.peertubeHelpers.logger.error(`Host seems not correct, contains ..: ${host}`)
+    return false
+  }
+  const filePath = path.resolve(
+    options.peertubeHelpers.plugin.getDataDirectoryPath(),
+    'serverInfos',
+    host,
+    'last-update'
+  )
+  if (!fs.existsSync(filePath)) {
+    return false
+  }
+  if (maxAge === undefined) {
+    return true
+  }
+
+  // We must check the 'last-update' to be newer than maxAge
+  try {
+    const content = await fs.promises.readFile(filePath, {
+      encoding: 'utf-8'
+    })
+    const json = JSON.parse(content)
+    if (!json) { return false }
+    if (typeof json !== 'object') { return false }
+    if (!json.timestamp) { return false }
+    if ((typeof json.timestamp) !== 'number') { return false }
+    const now = (new Date()).getTime()
+    if (now - (json.timestamp as number) > maxAge) {
+      options.peertubeHelpers.logger.info(
+        `Remote informations for server ${host} are outdated.`
+      )
+      return false
+    }
+  } catch (err) {
+    options.peertubeHelpers.logger.error('Failed reading the last-update file:', err)
+    return false
+  }
+
+  return true
 }
 
 async function _getFilePath (
@@ -152,13 +279,22 @@ async function _del (options: RegisterServerOptions, filePath: string): Promise<
 async function _store (options: RegisterServerOptions, filePath: string, content: any): Promise<void> {
   const logger = options.peertubeHelpers.logger
   try {
+    const jsonContent = JSON.stringify(content)
     if (!fs.existsSync(filePath)) {
       const dir = path.dirname(filePath)
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true })
       }
+    } else {
+      // only write if the content is different
+      try {
+        const currentJSONContent = await fs.promises.readFile(filePath, {
+          encoding: 'utf-8'
+        })
+        if (currentJSONContent === jsonContent) { return }
+      } catch (_err) {}
     }
-    await fs.promises.writeFile(filePath, JSON.stringify(content), {
+    await fs.promises.writeFile(filePath, jsonContent, {
       encoding: 'utf-8'
     })
   } catch (err) {
@@ -182,7 +318,17 @@ async function _get (options: RegisterServerOptions, filePath: string): Promise<
   }
 }
 
+function getRemoteServerInfosDir (options: RegisterServerOptions): string {
+  return path.resolve(
+    options.peertubeHelpers.plugin.getDataDirectoryPath(),
+    'serverInfos'
+  )
+}
+
 export {
   storeVideoLiveChatInfos,
-  getVideoLiveChatInfos
+  storeRemoteServerInfos,
+  hasRemoteServerInfos,
+  getVideoLiveChatInfos,
+  getRemoteServerInfosDir
 }

@@ -1,6 +1,6 @@
 import type { RegisterServerOptions, Video, MVideoThumbnail } from '@peertube/peertube-types'
 import { getVideoLiveChatInfos } from './federation/storage'
-import { anonymousConnectionInfos } from './federation/connection-infos'
+import { anonymousConnectionInfos, compatibleRemoteAuthenticatedConnectionEnabled } from './federation/connection-infos'
 
 async function initCustomFields (options: RegisterServerOptions): Promise<void> {
   const registerHook = options.registerHook
@@ -84,9 +84,28 @@ async function fillVideoRemoteLiveChat (
   const infos = await getVideoLiveChatInfos(options, video)
   if (!infos) { return }
 
+  let ok: boolean = false
   // We must check if there is a compatible connection protocol...
-  // For now, the only that is implemetied is by using a remote anonymous account.
-  if (!anonymousConnectionInfos(infos)) { return }
+  if (anonymousConnectionInfos(infos)) {
+    // Connection ok using a remote anonymous account. That's enought.
+    ok = true
+  } else {
+    const settings = await options.settingsManager.getSettings([
+      'federation-no-remote-chat',
+      'prosody-room-allow-s2s',
+      'disable-websocket'
+    ])
+    const canWebsocketS2S = !settings['federation-no-remote-chat'] && !settings['disable-websocket']
+    const canDirectS2S = !settings['federation-no-remote-chat'] && !!settings['prosody-room-allow-s2s']
+    if (compatibleRemoteAuthenticatedConnectionEnabled(infos, canWebsocketS2S, canDirectS2S)) {
+      // Even better, we can do a proper S2S connection!
+      ok = true
+    }
+  }
+
+  if (!ok) {
+    return
+  }
 
   const v: LiveChatCustomFieldsVideo = video
   if (!v.pluginData) v.pluginData = {}

@@ -1,6 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ProsodyConfig } from './config'
-import { isDebugMode } from '../debug'
+import { debugNumericParameter } from '../debug'
 import { prosodyCtl, reloadProsody } from './ctl'
 import * as path from 'path'
 import * as fs from 'fs'
@@ -18,9 +18,8 @@ function startProsodyCertificatesRenewCheck (options: RegisterServerOptions, con
     return
   }
 
-  const debugMode = isDebugMode(options)
   // check every day (or every minutes in debug mode)
-  const checkInterval = debugMode ? 60000 : 3600000 * 24
+  const checkInterval = debugNumericParameter(options, 'renewCertCheckInterval', 60000, 3600000 * 24)
 
   if (renew) {
     stopProsodyCertificatesRenewCheck(options)
@@ -91,8 +90,8 @@ async function renewCheckSelfSigned (options: RegisterServerOptions, config: Pro
   // We have to check if the self signed certificate is still valid.
   // Prosodyctl generated certificates are valid 365 days.
   // We will renew it every 10 months (and every X minutes in debug mode)
+  const renewEvery = debugNumericParameter(options, 'renewSelfSignedCertInterval', 5 * 60000, 3600000 * 24 * 30 * 10)
 
-  const renewEvery = isDebugMode(options) ? 5 * 60000 : 3600000 * 24 * 30 * 10
   // getting the file date...
   const filepath = _filePathToTest(options, config)
   if (!filepath) { return }
@@ -109,6 +108,19 @@ async function renewCheckSelfSigned (options: RegisterServerOptions, config: Pro
   logger.info(`The age of the certificate ${filepath} is ${age}ms, which is more than the period ${renewEvery}ms`)
   await ensureProsodyCertificates(options, config)
   await reloadProsody(options)
+}
+
+async function missingSelfSignedCertificates (options: RegisterServerOptions, config: ProsodyConfig): Promise<boolean> {
+  if (config.certificates !== 'generate-self-signed') {
+    return false
+  }
+  const filepath = _filePathToTest(options, config)
+  if (!filepath) { return false }
+  if (fs.existsSync(filepath)) {
+    options.peertubeHelpers.logger.debug('Missing certificate file: ' + filepath)
+    return false
+  }
+  return true
 }
 
 async function renewCheckFromDir (options: RegisterServerOptions, config: ProsodyConfig): Promise<void> {
@@ -150,5 +162,6 @@ function _filePathToTest (options: RegisterServerOptions, config: ProsodyConfig)
 export {
   ensureProsodyCertificates,
   startProsodyCertificatesRenewCheck,
-  stopProsodyCertificatesRenewCheck
+  stopProsodyCertificatesRenewCheck,
+  missingSelfSignedCertificates
 }

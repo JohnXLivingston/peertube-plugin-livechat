@@ -1,6 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { RemoteVideoHandlerParams } from './types'
-import { storeVideoLiveChatInfos } from './storage'
+import { storeVideoLiveChatInfos, storeRemoteServerInfos } from './storage'
 import { sanitizePeertubeLiveChatInfos } from './sanitize'
 
 /**
@@ -16,9 +16,14 @@ async function readIncomingAPVideo (
   let peertubeLiveChat = ('peertubeLiveChat' in videoAPObject) ? videoAPObject.peertubeLiveChat : false
 
   // We must sanitize peertubeLiveChat, as it comes for the outer world.
-  peertubeLiveChat = sanitizePeertubeLiveChatInfos(peertubeLiveChat)
+  peertubeLiveChat = sanitizePeertubeLiveChatInfos(options, peertubeLiveChat, video.url)
 
   await storeVideoLiveChatInfos(options, video, peertubeLiveChat)
+  if (video.remote) {
+    if (peertubeLiveChat !== false && peertubeLiveChat.xmppserver) {
+      await storeRemoteServerInfos(options, peertubeLiveChat.xmppserver)
+    }
+  }
 }
 
 export {
