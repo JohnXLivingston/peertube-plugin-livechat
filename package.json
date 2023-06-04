@@ -70,7 +70,7 @@
     "yaml": "^2.2.1"
   },
   "engine": {
-    "peertube": ">=4.2.0"
+    "peertube": ">=5.2.0"
   },
   "engines": {
     "npm": ">=7"
