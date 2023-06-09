@@ -40,7 +40,8 @@ federation_dont_publish_remotely_description: |
 chat_behaviour_description: "<h3>Chat behaviour</h3>"
 
 room_type_label: "Room type"
-room_type_description: "You can choose here to have separate rooms for each video, or to group them by channel."
+room_type_description: "You can choose here to have separate rooms for each video,\
+  \ or to group them by channel."
 room_type_option_video: "Each video has its own webchat room"
 room_type_option_channel: "Webchat rooms are grouped by channel"
 
@@ -48,17 +49,20 @@ auto_display_label: "Automatically open the chat"
 auto_display_description: "When watching a video, the chatbox will automatically open."
 
 open_blank_label: "Show the «open in new window» button"
-open_blank_description: "There will be a button for opening the web chat in a new window."
+open_blank_description: "There will be a button for opening the web chat in a new\
+  \ window."
 
 share_url_label: "Show the «share chat link» button"
-share_url_description: "There will be a button for sharing a chat url (could be used for OBS integration, for example)."
+share_url_description: "There will be a button for sharing a chat url (could be used\
+  \ for OBS integration, for example)."
 share_url_option_nobody: "Show for nobody"
 share_url_option_everyone: "Show for everyone"
 share_url_option_owner: "Show for the video owner"
 share_url_option_owner_moderators: "Show for the video owner and instance's moderators"
 
 per_live_video_label: "Users can activate the chat for their lives"
-per_live_video_description: "If checked, all live videos will have a checkbox in their properties for enabling the web chat."
+per_live_video_description: "If checked, all live videos will have a checkbox in their\
+  \ properties for enabling the web chat."
 
 per_live_video_warning_description: |
   <span class="peertube-plugin-livechat-warning">
@@ -70,7 +74,8 @@ all_lives_label: "Activate chat for all lives"
 all_lives_description: "If checked, the chat will be enabled for all lives."
 
 all_non_lives_label: "Activate chat for all non-lives"
-all_non_lives_description: "If checked, the chat will be enabled for all video that are not lives."
+all_non_lives_description: "If checked, the chat will be enabled for all video that\
+  \ are not lives."
 
 videos_list_label: "Activate chat for these videos"
 videos_list_description: |
@@ -241,3 +246,4 @@ prosody_components_list_description: |
     </li>
     <li>Only use alphanumeric characters in the secret passphrase (use at least 15 characters).</li>
   </ul>
+test_traduction: This is only a test, to check something with weblate.
