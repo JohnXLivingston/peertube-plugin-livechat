@@ -1,5 +1,13 @@
 # Changelog
 
+## ??? (Unreleased yet)
+
+### Minor changes and fixes
+
+* Translations are now made using Weblate. This requires some technical changes, but there is no functional differences.
+
+TODO: update the documentation
+
 ## 7.0.2
 
 * Fix: Letsencrypt certificate import procedure was not working on server that had never installed Prosody. Adding `prosody_user` in the Prosody configuration file to fix this. Updating the procedure: the `chown` is no more needed in `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh`.

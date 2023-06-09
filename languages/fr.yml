@@ -1,3 +1,34 @@
+open_chat: Ouvrir le salon de discussion
+open_chat_new_window: Ouvrir le salon de discussion dans une nouvelle fenêtre
+close_chat: Fermer le salon de discussion
+use_chat: Activer le salon de discussion
+use_chat_help: Si activé, un salon de discussion sera affiché à coté de la vidéo.
+share_chat_link: Partager le lien du salon de discussion
+read_only: Lecture seule
+show_scrollbarr: Afficher la barre de défilement
+transparent_background: Arrière plan transparent (pour l'intégration dans le
+  stream, avec OBS par exemple)
+tips_for_streamers: "Astuce pour les streamers et streameuses : pour ajouter le
+  tchat à votre OBS, générez un lien «lecture seule» et utilisez le comme
+  «source navigateur web»."
+copy: Copier
+link_copied: Lien copié
+error: Erreur
+open: Ouvrir
+use_current_theme_color: Utiliser les couleurs du thème courant
+generate_iframe: Générer une iframe pour intégrer le tchat dans un site web
+chat_for_live_stream: "Tchat pour le direct :"
+room_name: Nom du salon
+room_description: Description du salon
+not_found: Non trouvé
+video: Vidéo
+channel: Chaîne
+last_activity: Dernière activité
+web: Web
+connect_using_xmpp: Connexion avec un client XMPP
+connect_using_xmpp_help: Vous pouvez vous connecter au salon en utilisant un
+  compte XMPP externe, et votre client XMPP favori.
+
 important_note_title: "<h3>Note importante</h3>"
 important_note_text: |
   Vous pouvez trouver la documentation du plugin ici:

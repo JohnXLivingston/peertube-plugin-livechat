@@ -1,0 +1,17 @@
+open_chat: Ireki txata
+open_chat_new_window: Ireki txata leiho berri batean
+close_chat: Itxi txata
+use_chat: Erabili txata
+use_chat_help: Gaituta badago, txat bat agertuko da bideoaren ondoan.
+share_chat_link: Partekatu txataren esteka
+read_only: Irakurtzeko soilik
+show_scrollbarr: Erakutsi korritze-barra
+transparent_background: Atzealde gardena (zuzenekoekin integratzeko, OBSrekin kasu)
+tips_for_streamers: "Zuzeneko bideogileentzako aholkuak: txata OBSn gehitzeko,
+  sortu irakurtzeko soilik den esteka bat eta erabili nabigatzaileko iturburu
+  gisa."
+copy: Kopiatu
+link_copied: Esteka kopiatu da
+error: Errorea
+open: Ireki
+use_current_theme_color: Erabili uneko itxuraren koloreak
