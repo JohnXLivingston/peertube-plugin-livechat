@@ -37,7 +37,7 @@ class BuildLanguages {
     const packagejson = require('./package.json')
     const translations = packagejson.translations || {}
     this.langs = Object.values(translations).map(filename => {
-      return filename.match(/^.*\/(\w+)\.json$/)[1]
+      return filename.match(/^.*\/([a-zA-Z-]+)\.json$/)[1]
     })
     console.log('Existing languages: ', this.langs)
   }
