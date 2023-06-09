@@ -5,61 +5,23 @@ weight=20
 chapter=false
 +++
 
-Vous pouvez nous aider à traduire ce plugin Peertube en créant ou modifiant des fichiers de traduction dans le dossier `languages`.
+Vous pouvez contribuer à la traduction de ce plugin Peertube.
+Les traductions sont gérées par le logiciel [Weblate](https://weblate.org/),
+via [l'instance Weblate de Framasoft](https://weblate.framasoft.org/).
 
-{{% notice info %}}
-Pour le moment, les traductions se font directement dans le dépôt git.
-Plus tard en 2023, des outils de traduction en ligne seront mis en place
-(probablement [Weblate](https://weblate.org)).
-Le processus de traduction en sera plus simple.
+{{% notice warning %}}
+Ne modifiez jamais directement les fichiers dans le dossier `languages` du plugin,
+vous risqueriez de créer des conflits.
 {{% /notice %}}
 
-{{% notice tip %}}
-Merci de travailler sur la branche `main`, et de faire vos _pull request_ sur cette branche.
-{{% /notice %}}
+## Comment faire
 
-{{% notice note %}}
-Jusqu'à mars 2023, il fallait contribuer sur la branche `develop`. Cette procédure est désormais obsolète.
-{{% /notice %}}
-
-## Chaîne applicatives standard
-
-Si la langue dans laquelle vous souhaitez traduire n'existe pas encore, créez un fichier `code.json` dans le dossier `languages`, où `code` est le code langue.
-Le code langue doit être dans le même format que les codes langues de Peertube (voir la [documentation Peertube](https://github.com/Chocobozzz/PeerTube/blob/develop/support/doc/translation.md)).
-Ensuite, ajoutez le fichier de langue dans le fichier `package.json`, sous la clé `translations`.
-
-Les traductions sont sous la forme suivante dans le fichier de langue :
-
-- les fichiers sont au [format JSON](https://www.json.org)
-- les clés JSON sont le texte en anglais (voir les clés existantes dans [le fichier de traduction français](languages/fr.json), qui fait référence)
-- la valeur JSON est la traduction
-- NB: il n'y a pas de fichier de traduction pour l'anglais (c'est la façon de fonctionner de Peertube)
-
-## Traduction des paramètres du plugin
-
-Dans la page des paramètres du plugin, il y a des chaînes de texte plus compliquées.
-Elles peuvent contenir du code HTML, des retours à la ligne, ...
-Il est donc compliqué de les maintenir dans des fichiers JSON.
-
-C'est pourquoi le processus de traduction est différent pour les traductions de paramètres.
-
-Les traductions des paramètres sont définies dans des fichiers [YAML](https://fr.wikipedia.org/wiki/YAML).
-Elles n'utilisent pas l'anglais comme clé, mais des clés standardisées,
-comme par exemple `list_rooms_label`.
-
-Au contraire des chaînes applicatives standard, il y a aussi un fichier de
-configuration pour l'anglais.
-
-Ces fichiers sont dans le dossier `languages/settings`.
-Si le fichier de la langue qui vous intéresse n'existe pas, vous
-n'avez qu'à créer un fichier nommé `code.yml` où `code` est le code
-de la langue (voir plus haut).
-
-Ensuite, vous pouvez copier les clés du fichier HTML de référence
-`languages/settings/en.yml`, et traduire les chaînes de texte.
-
-Si vous ne voulez pas traduire une chaîne, vous pouvez l'ignorer,
-ou utiliser `null` ou `~` comme valeur.
+* Créez-vous un compte: https://weblate.framasoft.org/accounts/register/
+* Validez votre email en cliquant sur le lien reçu
+* Choisissez votre mot de passe, et configurez votre compte
+* Allez sur le projet du plugin de tchat: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/
+* Choisissez la langue que vous voulez traduire
+* Il ne vous reste plus qu'à ajouter les traductions manquantes, ou corriger celles qui vous semblent erronées.
 
 {{% notice warning %}}
 Il peut y avoir des chaînes «assez techniques».
@@ -67,3 +29,39 @@ Si vous n'êtes pas sûr⋅e à 100% du sens, ou de la traduction,
 il vaut mieux ne pas la traduire du tout ;
 ainsi la version anglaise s'affichera.
 {{% /notice %}}
+
+## Traduction de la documentation
+
+Pour l'instant, cela n'est pas encore géré dans Weblate. Je suis encore à la recherche de la bonne
+solution technique.
+
+Voir la page de documentation dédiée à la documentation.
+
+## Ajout d'une nouvelle langue
+
+Si la langue qui vous intéresse n'est pas présente, assurez-vous d'abord qu'elle est bien supportée par Peertube.
+Si c'est le cas, vous pouvez [ouvrir un ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)
+pour en demander l'ajout.
+
+## Ajout de nouveau segment / utilisation dans le code
+
+Si vous travaillez sur une nouvelle fonctionnalité, et que vous avez besoin de nouveaux segments,
+créez les directement dans Weblate.
+La version anglaise est obligatoire, commencez par celle-ci.
+
+Chaque segment est lié à une clé (par exemple `use_chat`).
+Choisissez une clé en anglais, suffisamment explicite.
+
+Pour utiliser un segment coté front-end, il faut (pour l'instant), appeler `peertubeHelpers.translate`
+avec la version anglaise du texte. Attention, cela veut-dire qu'il faut éviter de changer un segment anglais
+existant.
+Cette solution n'est pas optimale, mais devrais bientôt changer.
+
+Coté backend, le seul endroit (pour l'instant) qui a besoin de localiser des choses, est la déclaration
+des settings du plugin.
+Il y a pour cela une fonction `loc` dédiée dans `server/lib/settings.ts` à appeler en lui fournissant
+la clé de la phrase à utiliser.
+
+Si vous avez besoin de tester vos localisations sans attendre la fusion venant de Weblate,
+vous pouvez modifier les fichiers `languages/*.yml`, mais évitez de les commit
+(pour minimiser le risque de conflits).

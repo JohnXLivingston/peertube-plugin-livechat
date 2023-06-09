@@ -5,55 +5,54 @@ weight=20
 chapter=false
 +++
 
-You can help us to translate this PeerTube plugin by creating or modifying translation files in the `languages` folder.
+You can contribute to this plugin translation.
+Translations are handled using the [Weblate](https://weblate.org/) software,
+using [Framasoft Weblate instance](https://weblate.framasoft.org/).
 
-{{% notice info %}}
-For now, translation is done in the git repository. Later in 2023, online translation tools will be set (probably [Weblate](https://weblate.org)). This will make the translation process easier.
+{{% notice warning %}}
+Never modify directly files in the `languages` folder, this could lead to conflicts.
 {{% /notice %}}
 
-{{% notice tip %}}
-Please work on the `main` branch, and do your commits and pull request on this branch.
-{{% /notice %}}
+## How to
 
-{{% notice note %}}
-Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.
-{{% /notice %}}
-
-## Standard application strings
-
-If the language you are interesting in does not exist yet, create a file `code.json` in the `languages` folder, where `code` is the language code.
-The language code must be the same as the Peertube's langage code (see [Peertube documentation](https://github.com/Chocobozzz/PeerTube/blob/develop/support/doc/translation.md)).
-Then add the language file in the `package.json` file, under the key `translations`.
-
-Translation strings are set in the language file as follow:
-
-- files are in [JSON format](https://www.json.org)
-- the JSON key is the english string (see existing keys in the [french translation file](languages/fr.json)).
-- the JSON value is the translating string
-- NB: there is no english translation file (this is how translation works for peertube's plugins)
-
-## Settings translations
-
-In the plugin settings page, there are more complex strings.
-They can be HTML code, with newlines, HTML tags, ...
-This is not suitable for the JSON format.
-
-That's why the process is a little bit different for settings strings.
-
-Settings strings are defined in [YAML files](https://en.wikipedia.org/wiki/YAML).
-They don't use the english text as key, but a codified key, like `list_rooms_label`.
-
-On the contrary of the standards application strings, there is also a configuration file for the english language.
-
-These files are in the folder `languages/settings`. If the file for the language that you are interested in does not exist, just create a new file
-named `code.yml`, where `code` is the language code (see above).
-
-Then, you can copy YAML keys from the reference file `languages/settings/en.yml`, and translate strings.
-
-If you don't want to translate a string, you can ignore it, or use `null` or `~` as value.
+* Create an account: https://weblate.framasoft.org/accounts/register/
+* Validate your email and follow the link sent
+* Create your password and setup your account
+* Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/
+* Choose the locale you want to translate
+* Just translate missing sentences, or correct the ones that seems incorrect to you.
 
 {{% notice warning %}}
 There might be some «very technical» strings. If you are not 100% sure of
 the meaning, or of your translation, you better not translate it,
 so it will display in english.
 {{% /notice %}}
+
+## Documentation translation
+
+Fow now, this is not done on Weblate. I still looking for the good technical solution.
+
+Please refer to the "documentation" documentation page.
+
+## Adding a new locale
+
+If you think there is a missing locale, please check first if it is handled in Peertube.
+If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it.
+
+## Adding new strings / use translations in the code
+
+If you are working on new features, and need new strings, you can create them directly in Weblate.
+The english version is mandatory. Start with it.
+
+Each string is linked to a key (for example `use_chat`).
+Choose an explicit key in english.
+
+To use a string in front-end, you need (for now) to call `peertubeHelpers.translate` with the english string.
+This means we can't change english strings without updating the code.
+This is not optimal, but will change in a near future.
+
+For backend, for now the only file where there is localisation is
+`server/lib/settings.ts`. There is a `loc` function to call, passing as parameter the localisation key.
+
+If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files, but avoid to commit these change
+(to minimize conflict risks).
