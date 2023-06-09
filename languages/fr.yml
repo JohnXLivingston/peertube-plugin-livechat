@@ -37,7 +37,7 @@ important_note_text: |
   </a>.
 
 diagnostic: |
-  Avant de demander de l'aide, merci d'utiliser l'outil de diagnostic:
+  Avant de demander de l'aide, merci d'utiliser l'outil de diagnostic :
   <a class="peertube-plugin-livechat-launch-diagnostic">Lancer le diagnostique</a>
   (si ce bouton n'ouvre pas une nouvelle fenêtre, merci de rafraîchir la page).
 
@@ -60,11 +60,11 @@ federation_dont_publish_remotely_label: "Ne pas publier les informations de tcha
 federation_dont_publish_remotely_description: |
   En cochant ce paramètre, votre instance ne publiera pas les informations de tchat sur le fédivers.
   Les instances Peertube distantes ne sauront pas qu'un tchat est associé aux vidéos.<br>
-  <b>Attention</b>: si vous aviez déjà des tchats en cours, il est possible que les informations aient déjà été publiées.
+  <b>Attention</b> : si vous aviez déjà des tchats en cours, il est possible que les informations aient déjà été publiées.
   Il faudra attendre la prochaine mise à jour des vidéos pour que les informations soient dépubliées.
   De même, si vous désactivé ce paramètre, il faudra attendre que les vidéos soient mises à jour pour à nouveau
   publier les informations. Cette mise à jour intervient entre autre quand un live reprend ou s'arrête.<br>
-  <b>Attention</b>: ce paramètre ne joue que sur la publication d'informations via le protocole ActivityPub. Il n'empêchera
+  <b>Attention</b> : ce paramètre ne joue que sur la publication d'informations via le protocole ActivityPub. Il n'empêchera
   pas une application distante de détecter autrement la présence de tchat, et de tenter de s'y connecter.
 
 chat_behaviour_description: "<h3>Comportement du tchat</h3>"
@@ -111,12 +111,9 @@ all_non_lives_description: "Si coché, il y aura un tchat pour toutes les vidéo
 
 videos_list_label: "Activer le tchat pour ces vidéos"
 videos_list_description: |
-  Mettez ici les UUIDs des vidéos pour lesquelles vous voulez forcer l'activation
-  du tchat.
-  Cela peut être des directs, ou non.
-  Un UUID par ligne. <br />
-  Vous pouvez ajouter des commentaires: tout ce qui se trouve après le caractère #
-  sera retiré, et les lignes vides ignorées. <br />
+  Mettez ici les UUIDs des vidéos pour lesquelles vous voulez forcer l'activation du tchat.
+  Cela peut être des directs, ou non. Un UUID par ligne. <br />
+  Vous pouvez ajouter des commentaires : tout ce qui se trouve après le caractère # sera retiré, et les lignes vides ignorées. <br />
   N'ajoutez pas de vidéos privées, les UUIDs fuiteraient.
 
 no_anonymous_label: "Masque les tchats pour les utilisateur⋅rices anonymes"
@@ -134,21 +131,18 @@ converse_theme_option_concord: "Thème concord de ConverseJS"
 
 autocolors_label: "Détection automatique des couleurs"
 autocolors_description: |
-  Essaie de détecter automatiquement les couleurs du thème courant de l'utilisateur⋅rice.
-  <br>
-  Quand ce paramètre est activé, le plugin essaie de détecter automatiquement les
-  couleurs à appliquer au thème du tchat.
-  <br>
-  Si cela ne fonctionne pas correctement pour certains de vos thèmes Peertube,
-  vous pouvez désactiver cette option.
-  Vous pouvez rapporter les bugs sur le <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
+  Essaie de détecter automatiquement les couleurs du thème courant de l'utilisateur⋅rice.<br>
+  Quand ce paramètre est activé, le plugin essaie de détecter automatiquement les couleurs à appliquer au thème du tchat.<br>
+  Si cela ne fonctionne pas correctement pour certains de vos thèmes Peertube, vous pouvez désactiver cette option.
+  Vous pouvez rapporter les bugs sur le
+  <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
     gestionnaire de ticket
   </a>. N'oubliez pas de préciser pour quel thème cela ne fonctionne pas.
 
 chat_style_label: "Attribut de style de l'iframe du tchat"
 chat_style_description: |
   Styles additionnels à appliquer sur l'iframe du tchat.<br>
-  Exemple: height:400px;
+  Exemple : height:400px;
 
 prosody_advanced_description: "<h3>Paramètres avancés du serveur de tchat</h3>"
 
@@ -159,7 +153,7 @@ help_builtin_prosody_description: |
 
 system_prosody_label: "Utiliser le serveur Prosody installé sur le système"
 system_prosody_description: |
-  Attention: ne pas cocher ce paramètre si vous n'êtes pas sûr de ce que vous faites.<br>
+  Attention : ne pas cocher ce paramètre si vous n'êtes pas sûr de ce que vous faites.<br>
   En cochant ce paramètre, Peertube va utiliser l'exécutable Prosody fourni
   par le système, et non l'AppImage intégrée.<br>
   N'utilisez cette option que si vous rencontrez des problèmes pour utiliser l'AppImage intégrée.
@@ -167,8 +161,7 @@ system_prosody_description: |
 disable_websocket_label: "Désactiver Websocket"
 disable_websocket_description: |
   Avec Peertube &gt;= 5.0.0, ce plugin va essayer d'utiliser Websocket pour les connexions au tchat.
-  Si le navigateur de l'utilisateur⋅rice ou sa connexion n'est pas compatible, le navigateur va
-  automatiquement passer au protocole BOSH.
+  Si le navigateur de l'utilisateur⋅rice ou sa connexion n'est pas compatible, le navigateur va automatiquement passer au protocole BOSH.
   <br>
   Mais, dans de rare cas, cela pourrait échouer. Par exemple si vous avez un reverse proxy devant votre Peertube
   qui ne permettrait pas les connexions Websocket.
@@ -179,7 +172,7 @@ prosody_port_description: |
   Le port qui va être utilisé par le serveur Prosody.<br>
   Changez-le si ce port est déjà utilisé sur votre serveur.<br>
   Vous pouvez fermer ce port sur votre pare-feu, il ne sera pas accédé par le monde extérieur.<br>
-  Note: cela pourrait changer dans un futur proche, car il est prévu d'ajouter des paramètres pour autoriser les connexions externes.
+  Note : cela pourrait changer dans un futur proche, car il est prévu d'ajouter des paramètres pour autoriser les connexions externes.
 
 prosody_peertube_uri_label: "Url Peertube pour les appels d'API"
 prosody_peertube_uri_description: |
@@ -191,23 +184,21 @@ prosody_peertube_uri_description: |
 prosody_muc_log_by_default_label: "Enregistrer les salons par défaut"
 prosody_muc_log_by_default_description: |
   Si coché, le contenu des salons sera enregistré par défaut.
-  Quand un⋅e utilisateur⋅rice rejoint un salon, iel pourra voir ce qui a été dit avant.
-  <br>
+  Quand un⋅e utilisateur⋅rice rejoint un salon, iel pourra voir ce qui a été dit avant.<br>
   À noter qu'il est toujours possible d'activer/désactiver cette fonctionnalité
   pour un salon spécifique, en changeant ses paramètres.
 
 
 prosody_muc_expiration_label: "Expiration des journaux de salon"
 prosody_muc_expiration_description: |
-  Vous pouvez choisir combien de temps le contenu des salons est gardé sur le serveur.
-  La valeur peut être:
+  Vous pouvez choisir combien de temps le contenu des salons est gardé sur le serveur. La valeur peut être :
   <ul>
-      <li><b>60</b>: le contenu sera sauvegardé pour 60 <b>secondes</b>. Vous pouvez remplacer 60 par n'importe quelle valeur entière.</li>
-      <li><b>1d</b>: le contenu sera sauvegardé pour 1 <b>jour</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
-      <li><b>1w</b>: le contenu sera sauvegardé pour 1 <b>semaine</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
-      <li><b>1m</b>: le contenu sera sauvegardé pour 1 <b>mois</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
-      <li><b>1y</b>: le contenu sera sauvegardé pour 1 <b>année</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
-      <li><b>never</b>: le contenu ne sera jamais effacé.</li>
+      <li><b>60</b> : le contenu sera sauvegardé pour 60 <b>secondes</b>. Vous pouvez remplacer 60 par n'importe quelle valeur entière.</li>
+      <li><b>1d</b> : le contenu sera sauvegardé pour 1 <b>jour</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
+      <li><b>1w</b> : le contenu sera sauvegardé pour 1 <b>semaine</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
+      <li><b>1m</b> : le contenu sera sauvegardé pour 1 <b>mois</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
+      <li><b>1y</b> : le contenu sera sauvegardé pour 1 <b>année</b>. Vous pouvez remplacer 1 par n'importe quelle valeur entière.</li>
+      <li><b>never</b> : le contenu ne sera jamais effacé.</li>
   </ul>
 
 prosody_room_allow_s2s_label: "Autoriser les connexions aux salons via des comptes\
@@ -246,7 +237,7 @@ prosody_certificates_dir_label: "Dossiers des certificats"
 prosody_certificates_dir_description: |
   Si ce champ est vide, le plugin va générer et utiliser des certificats auto-signés.<br>
   Si vous voulez utiliser d'autres certificats, vous avez juste à spécifier ici le dossier où
-  Prosody peut les trouver. Note: l'utilisateur «peertube» doit avoir un accès en lecture à ce dossier.
+  Prosody peut les trouver. Note : l'utilisateur «peertube» doit avoir un accès en lecture à ce dossier.
 
 prosody_c2s_label: "Activer les connexions client vers serveur"
 prosody_c2s_description: |
@@ -258,9 +249,8 @@ prosody_c2s_port_description: |
   Le port à utiliser pour les connexions XMPP c2s (client to server).<br>
   Les clients XMPP devront utiliser ce port pour se connecter.<br>
   Changez ce port si le port est déjà utilisé sur votre serveur.<br>
-  Pour l'instant, vous pouvez garder ce port fermé sur votre pare-feu,
-  il sera inaccessible depuis l'extérieur (Prosody n'écoute que le localhost).<br>
-  Note: cela pourrait prochainement changer, car il est prévu d'ajouter une fonction permettant d'activer les connexions externes.
+  Pour l'instant, vous pouvez garder ce port fermé sur votre pare-feu, il sera inaccessible depuis l'extérieur (Prosody n'écoute que le localhost).<br>
+  Note : cela pourrait prochainement changer, car il est prévu d'ajouter une fonction permettant d'activer les connexions externes.
 
 prosody_components_label: "Activer les composants externes personnalisés Prosody"
 prosody_components_description: |
@@ -272,9 +262,8 @@ prosody_components_port_label: "Port pour les composants externe Prosody"
 prosody_components_port_description: |
   Le port à utiliser pour les XMPP components.<br>
   Changez ce port s'il est déjà utilisé sur votre serveur.<br>
-  Pour l'instant, vous pouvez garder ce port fermé sur votre pare-feu,
-  il sera inaccessible depuis l'extérieur (Prosody n'écoute que le localhost).<br>
-  Note: cela pourrait prochainement changer, car il est prévu d'ajouter une fonction permettant d'activer les connexions externes.
+  Pour l'instant, vous pouvez garder ce port fermé sur votre pare-feu, il sera inaccessible depuis l'extérieur (Prosody n'écoute que le localhost).<br>
+  Note : cela pourrait prochainement changer, car il est prévu d'ajouter une fonction permettant d'activer les connexions externes.
 
 prosody_components_list_label: "Composants externes"
 prosody_components_list_description: |
