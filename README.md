@@ -15,3 +15,9 @@ To read the documentation, please refer to any of these:
 * [The documentation source code](./support/documentation/content/)
 
 **Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](CHANGELOG.md)**.
+
+## Current translation status
+
+[
+  ![Current translation status](https://weblate.framasoft.org/widgets/peertube-livechat/-/multi-auto.svg)
+](https://weblate.framasoft.org/engage/peertube-livechat/)
