@@ -246,4 +246,3 @@ prosody_components_list_description: |
     </li>
     <li>Only use alphanumeric characters in the secret passphrase (use at least 15 characters).</li>
   </ul>
-test_traduction: This is only a test, to check something with weblate.
