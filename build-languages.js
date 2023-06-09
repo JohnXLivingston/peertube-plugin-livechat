@@ -67,6 +67,10 @@ class BuildLanguages {
         if (k in translationsStrings[l]) {
           throw new Error(`Duplicate translation for key ${k} in lang ${l}.`)
         }
+        if ((typeof v) !== 'string') {
+          // ignoring untranslated strings.
+          continue
+        }
         translationsStrings[l][k] = v
       }
     }
@@ -89,6 +93,10 @@ class BuildLanguages {
       for (const k in o) {
         if (!(k in reference)) {
           throw new Error(`File ${filePath} contains unknown keys. Key=${k}.`)
+        }
+        if ((typeof o[k]) !== 'string') {
+          // ignoring untranslated strings.
+          continue
         }
         const newKey = reference[k]
         this.translationsStrings[l][newKey] = o[k]
