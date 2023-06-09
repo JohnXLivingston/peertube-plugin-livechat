@@ -6,11 +6,11 @@ use_chat_help: Si activé, un salon de discussion sera affiché à coté de la v
 share_chat_link: Partager le lien du salon de discussion
 read_only: Lecture seule
 show_scrollbarr: Afficher la barre de défilement
-transparent_background: Arrière plan transparent (pour l'intégration dans le
-  stream, avec OBS par exemple)
-tips_for_streamers: "Astuce pour les streamers et streameuses : pour ajouter le
-  tchat à votre OBS, générez un lien «lecture seule» et utilisez le comme
-  «source navigateur web»."
+transparent_background: Arrière plan transparent (pour l'intégration dans le stream,
+  avec OBS par exemple)
+tips_for_streamers: "Astuce pour les streamers et streameuses : pour ajouter le tchat\
+  \ à votre OBS, générez un lien «lecture seule» et utilisez le comme «source navigateur\
+  \ web»."
 copy: Copier
 link_copied: Lien copié
 error: Erreur
@@ -26,13 +26,13 @@ channel: Chaîne
 last_activity: Dernière activité
 web: Web
 connect_using_xmpp: Connexion avec un client XMPP
-connect_using_xmpp_help: Vous pouvez vous connecter au salon en utilisant un
-  compte XMPP externe, et votre client XMPP favori.
+connect_using_xmpp_help: Vous pouvez vous connecter au salon en utilisant un compte
+  XMPP externe, et votre client XMPP favori.
 
 important_note_title: "<h3>Note importante</h3>"
 important_note_text: |
-  Vous pouvez trouver la documentation du plugin ici:
-  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/fr/" target="_blank">
+  Vous pouvez trouver la documentation du plugin ici :
+  <a href="https ://johnxlivingston.github.io/peertube-plugin-livechat/fr/" target="_blank">
     Documentation du Plugin Peertube Livechat
   </a>.
 
@@ -70,25 +70,31 @@ federation_dont_publish_remotely_description: |
 chat_behaviour_description: "<h3>Comportement du tchat</h3>"
 
 room_type_label: "Type de salon"
-room_type_description: "Vous pouvez choisir d'avoir des salons séparés pour chaque vidéo, ou de les grouper par chaîne."
+room_type_description: "Vous pouvez choisir d'avoir des salons séparés pour chaque\
+  \ vidéo, ou de les grouper par chaîne."
 room_type_option_video: "Chaque video a son propre salon de discussion"
 room_type_option_channel: "Les salons sont regroupés par chaîne"
 
 auto_display_label: "Ouvrir automatiquement le tchat"
-auto_display_description: "Quand on regarde une vidéo, le tchat va automatiquement s'ouvrir."
+auto_display_description: "Quand on regarde une vidéo, le tchat va automatiquement\
+  \ s'ouvrir."
 
 open_blank_label: "Montrer le bouton «ouvrir dans une nouvelle fenêtre»"
-open_blank_description: "Il y aura un bouton pour ouvrir le tchat dans une nouvelle fenêtre."
+open_blank_description: "Il y aura un bouton pour ouvrir le tchat dans une nouvelle\
+  \ fenêtre."
 
 share_url_label: "Montrer le bouton «partager le lien du salon»"
-share_url_description: "Il y aura un bouton permettant de partager le lien vers le tchat (peut par exemple être utilisé pour l'intégration dans OBS)."
+share_url_description: "Il y aura un bouton permettant de partager le lien vers le\
+  \ tchat (peut par exemple être utilisé pour l'intégration dans OBS)."
 share_url_option_nobody: "Ne pas le montrer"
 share_url_option_everyone: "Le montrer à tout le monde"
 share_url_option_owner: "Le montrer au proriétaire de la vidéo"
-share_url_option_owner_moderators: "Le montrer au propriétaire de la vidéo, et aux modérateur⋅rices de l'instance"
+share_url_option_owner_moderators: "Le montrer au propriétaire de la vidéo, et aux\
+  \ modérateur⋅rices de l'instance"
 
 per_live_video_label: "Les utilisateur⋅rices peuvent activer le tchat pour leurs directs"
-per_live_video_description: "Si coché, il y aura pour tous les directs une case à cocher dans les propriétés qui permettra d'activer/désactiver le tchat."
+per_live_video_description: "Si coché, il y aura pour tous les directs une case à\
+  \ cocher dans les propriétés qui permettra d'activer/désactiver le tchat."
 
 per_live_video_warning_description: |
   <span class="peertube-plugin-livechat-warning">
@@ -100,7 +106,8 @@ all_lives_label: "Activer le tchat pour tous les directs"
 all_lives_description: "Si coché, il y aura un tchat pour tous les directs."
 
 all_non_lives_label: "Activer le tchat pour toutes les vidéos «non-direct»"
-all_non_lives_description: "Si coché, il y aura un tchat pour toutes les vidéos qui ne sont pas des directs."
+all_non_lives_description: "Si coché, il y aura un tchat pour toutes les vidéos qui\
+  \ ne sont pas des directs."
 
 videos_list_label: "Activer le tchat pour ces vidéos"
 videos_list_description: |
@@ -113,12 +120,14 @@ videos_list_description: |
   N'ajoutez pas de vidéos privées, les UUIDs fuiteraient.
 
 no_anonymous_label: "Masque les tchats pour les utilisateur⋅rices anonymes"
-no_anonymous_description: "Si coché, les utilisteur⋅rices non connecté⋅es ne verront pas les tchats."
+no_anonymous_description: "Si coché, les utilisteur⋅rices non connecté⋅es ne verront\
+  \ pas les tchats."
 
 theming_advanced_description: "<h3>Personnalisation des thèmes</h3>"
 
 converse_theme_label: "Thème ConverseJS"
-converse_theme_description: "Merci de choisir le thème ConverseJS que vous voulez utiliser."
+converse_theme_description: "Merci de choisir le thème ConverseJS que vous voulez\
+  \ utiliser."
 converse_theme_option_peertube: "Thème Peertube"
 converse_theme_option_default: "Thème par défaut de ConverseJS"
 converse_theme_option_concord: "Thème concord de ConverseJS"
@@ -201,7 +210,8 @@ prosody_muc_expiration_description: |
       <li><b>never</b>: le contenu ne sera jamais effacé.</li>
   </ul>
 
-prosody_room_allow_s2s_label: "Autoriser les connexions aux salons via des comptes XMPP externes"
+prosody_room_allow_s2s_label: "Autoriser les connexions aux salons via des comptes\
+  \ XMPP externes"
 prosody_room_allow_s2s_description: |
   En activant cette option, il sera possible de se connecter aux salons en utilisant des comptes XMPP externes via des clients XMPP.<br>
   Attention, activer cette option peut demander une configuration au niveau du serveur et des enregistrements DNS.
@@ -218,7 +228,8 @@ prosody_s2s_port_description: |
     configurer un enregistrement DNS spécifique
   </a>.
 
-prosody_s2s_interfaces_label: "Interfaces réseau pour les connexions serveur vers serveur"
+prosody_s2s_interfaces_label: "Interfaces réseau pour les connexions serveur vers\
+  \ serveur"
 prosody_s2s_interfaces_description: |
   Les interfaces réseau sur lequelles écouter pour les connexions s2s (server to server).<br>
   Une liste d'IP séparées par des virgules (les espaces seront retirés).
