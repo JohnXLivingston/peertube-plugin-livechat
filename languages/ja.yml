@@ -1,0 +1,15 @@
+open_chat: チャットを開く
+open_chat_new_window: 新規ウィンドウでチャットを開く
+close_chat: チャットを閉じる
+use_chat: チャットを使用する
+use_chat_help: 有効にしている場合、動画の横にチャットを表示します。
+share_chat_link: チャットリンクを共有
+read_only: 読み取り専用にする
+show_scrollbarr: スクロールバーを表示する
+transparent_background: 透過型背景にする (OBSなどを使用したストリーミング連携に最適)
+tips_for_streamers: "ストリーマーの方へ: OBSにチャットを追加する場合は、読み取り専用のチャットリンクを生成し、ブラウザソースで読み込んでください。"
+copy: コピー
+link_copied: リンクをコピーしました
+error: エラー
+open: 開く
+use_current_theme_color: 現在のテーマカラーを使用する

@@ -17,7 +17,7 @@ class BuildLanguages {
   destinationDir = null
   langs = []
   translationsStrings = {}
-  monoLingualReferences = {}
+  monoLingualReferences = null
 
   constructor () {
     this.destinationDir = path.resolve(__dirname, 'dist', 'languages')
@@ -26,8 +26,7 @@ class BuildLanguages {
   async generateFiles () {
     await this.loadLangs()
     await this.initTranslationStrings()
-    await this.readJSONTranslations()
-    await this.readSettingsTranslations()
+    await this.readYamlTranslations()
 
     await this.ensureDestinationDir()
     await this.writeJSONTranslations()
@@ -38,7 +37,7 @@ class BuildLanguages {
     const packagejson = require('./package.json')
     const translations = packagejson.translations || {}
     this.langs = Object.values(translations).map(filename => {
-      return filename.match(/^.*\/(\w+)\.json$/)[1]
+      return filename.match(/^.*\/([a-zA-Z-]+)\.json$/)[1]
     })
     console.log('Existing languages: ', this.langs)
   }
@@ -51,44 +50,32 @@ class BuildLanguages {
     }
     this.translationsStrings = translationsStrings
   }
-  
-  async readJSONTranslations () {
-    console.log('Reading standard JSON translation strings...')
-    const translationsStrings = this.translationsStrings
-    for (const l of this.langs) {
-      const filePath = path.resolve(__dirname, 'languages', l + '.json')
-      if (!fs.existsSync(filePath)) {
-        console.warn(`File ${filePath} missing, ignoring.`)
-        continue
-      }
-      const t = require(filePath)
-      for (const k in t) {
-        const v = t[k]
-        if (k in translationsStrings[l]) {
-          throw new Error(`Duplicate translation for key ${k} in lang ${l}.`)
-        }
-        translationsStrings[l][k] = v
-      }
-    }
-  }
 
-  async readSettingsTranslations () {
-    console.log('Reading Settings Yaml translation strings...')
+  async readYamlTranslations () {
+    console.log('Reading Yaml translation strings...')
 
     // First we must get the english reference file,
     // that will give us the keys to use in final JSON.
 
-    const reference = await this.getYmlFileContent(path.resolve(__dirname, 'languages', 'settings', 'en.yml'))
-    this.monoLingualReferences['settings'] = reference
+    const reference = await this.getYmlFileContent(path.resolve(__dirname, 'languages', 'en.yml'))
+    this.monoLingualReferences = reference
 
     const translationsStrings = this.translationsStrings
     for (const l of this.langs) {
-      const filePath = path.resolve(__dirname, 'languages', 'settings', l + '.yml')
+      if (l === 'en') {
+        console.log('Skipping english, because it is the reference language.')
+        continue
+      }
+      const filePath = path.resolve(__dirname, 'languages', l + '.yml')
       const o = await this.getYmlFileContent(filePath)
 
       for (const k in o) {
         if (!(k in reference)) {
           throw new Error(`File ${filePath} contains unknown keys. Key=${k}.`)
+        }
+        if ((typeof o[k]) !== 'string') {
+          // ignoring untranslated strings.
+          continue
         }
         const newKey = reference[k]
         this.translationsStrings[l][newKey] = o[k]
@@ -140,10 +127,11 @@ class BuildLanguages {
 
   async writeMonoLingualReferences () {
     console.log('Writing JSON reference files...')
-    for (const name in this.monoLingualReferences) {
-      const filePath = path.resolve(this.destinationDir, name + '.reference.json')
-      await fs.promises.writeFile(filePath, JSON.stringify(this.monoLingualReferences[name]))
+    if (!this.monoLingualReferences) {
+      throw new Error('Missing monolingual reference content!')
     }
+    const filePath = path.resolve(this.destinationDir, 'en.reference.json')
+    await fs.promises.writeFile(filePath, JSON.stringify(this.monoLingualReferences))
   }
 }
 

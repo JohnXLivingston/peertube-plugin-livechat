@@ -1,3 +1,28 @@
+open_chat: Apri la chat
+open_chat_new_window: Apri la chat in un nuova finestra
+close_chat: Chiudi la chat
+use_chat: Attiva la chat
+use_chat_help: Se abilitato, ci sarà una chat accanto al video.
+share_chat_link: Condividi il link della chat
+read_only: In sola lettura
+show_scrollbarr: Mostra la barra di scorrimento
+transparent_background: Sfondo trasparente (per l'integrazione delle dirette con OBS, ad esempio)
+tips_for_streamers: "Suggerimenti per gli streamer: per aggiungere la chat al
+  proprio OBS, genera un link della chat in sola lettura e usalo in quanto fonte
+  “browser”."
+copy: Copia
+link_copied: Link copiato
+error: Errore
+open: Apri
+use_current_theme_color: Utilizza i colori del tema corrente
+generate_iframe: Genera un iframe per incorporare la chat in un sito web
+room_name: Nome della chat room
+room_description: Descrizione della chat room
+not_found: Non trovato
+video: Video
+channel: Canale
+last_activity: Ultima attività
+
 important_note_title: "<h3>Note importanti</h3>"
 important_note_text: |
   La documentazione del plugin si trova qui:

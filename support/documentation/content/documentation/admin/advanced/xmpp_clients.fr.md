@@ -190,8 +190,6 @@ On va créer un fichier `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` conte
   --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \
   cert import \
   room.votre_instance.tld votre_instance.tld /etc/letsencrypt/live
-
-chown peertube:peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/certs/*
 ```
 
 Puis on demande à générer le certificat :

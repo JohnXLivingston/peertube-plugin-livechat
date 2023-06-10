@@ -23,7 +23,7 @@ function loc (key: string): string {
 }
 
 async function loadLoc (): Promise<void> {
-  const filePath = resolve(__dirname, '..', '..', 'languages', 'settings.reference.json')
+  const filePath = resolve(__dirname, '..', '..', 'languages', 'en.reference.json')
   if (!existsSync(filePath)) {
     throw new Error(`File ${filePath} missing, can't load plugin settings`)
   }

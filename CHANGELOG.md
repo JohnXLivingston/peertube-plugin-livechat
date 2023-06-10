@@ -1,5 +1,17 @@
 # Changelog
 
+## ??? (Unreleased yet)
+
+### Minor changes and fixes
+
+* Translations are now made using Weblate. This requires some technical changes, but there is no functional differences.
+
+TODO: update the documentation
+
+## 7.0.2
+
+* Fix: Letsencrypt certificate import procedure was not working on server that had never installed Prosody. Adding `prosody_user` in the Prosody configuration file to fix this. Updating the procedure: the `chown` is no more needed in `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh`.
+
 ## 7.0.1
 
 * Fix: trying to connect to a remote instance using direct s2s won't work if local instance has not the feature enabled, and if the remote instance does not know the local one. So using Websocket S2S in such case (that embed a discovery mecanism).

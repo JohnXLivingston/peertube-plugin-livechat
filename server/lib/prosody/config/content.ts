@@ -1,5 +1,6 @@
 import type { ProsodyFilePaths } from './paths'
 import type { ExternalComponent } from './components'
+import { userInfo } from 'os'
 
 type ConfigEntryValue = boolean | number | string | ConfigEntryValue[]
 
@@ -153,6 +154,8 @@ class ProsodyConfigContent {
     this.global.set('daemonize', false)
     this.global.set('allow_registration', false)
     this.global.set('admins', [])
+
+    this.global.set('prosody_user', userInfo().username)
 
     this.global.set('pidfile', this.paths.pid)
     this.global.set('plugin_paths', [this.paths.modules])

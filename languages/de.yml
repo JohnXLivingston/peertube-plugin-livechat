@@ -1,3 +1,21 @@
+open_chat: Chat öffnen
+open_chat_new_window: Chat in neuem Fenster öffnen
+close_chat: Chat schließen
+use_chat: Chat nutzen
+use_chat_help: Wenn aktiviert, wird ein Chat neben dem Video sein.
+share_chat_link: Chat Link teilen
+read_only: Nur-Lesen
+show_scrollbarr: Zeige die Scrollleiste
+transparent_background: Transpatenter Hintergrund (zum Beispiel für die Streamintegration mit OBS)
+tips_for_streamers: "Tipps für Streamer: Um den Chat zu OBS hinzuzufügen, einen
+  Nur-Lesen Link erstellen und ihn als browser source in OBS nutzen"
+copy: Kopieren
+link_copied: Link kopiert
+error: Fehler
+open: Öffnen
+use_current_theme_color: Die derzeitigen Themenfarben nutzen
+generate_iframe: IFrame-Element erstellen, um den Chat in eine Webseite zu integrieren
+
 important_note_title: "<h3>Wichtige Hinweise</h3>"
 important_note_text: |
   Sie können die Dokumentation hier finden:

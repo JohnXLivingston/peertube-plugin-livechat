@@ -180,8 +180,6 @@ We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` contain
   --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \
   cert import \
   room.your_instance.tld your_instance.tld /etc/letsencrypt/live
-
-chown peertube:peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/certs/*
 ```
 
 Then we ask to generate the certificate:
@@ -268,7 +266,7 @@ Modify your `docker-compose.yml` file, changing the `entrypoint` line under the 
 This is the same as the above, but to be automatically executed after every certificate renewal.
 
 ```text
-  entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; chown -R root:999 /etc/letsencrypt/live; chmod 750 /etc/letsencrypt/live; chown -R root:999 /etc/letsencrypt/archive; chmod 750 /etc/letsencrypt/archive; find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} \; sleep 12h & wait $${!}; done;"
+  entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; chown -R root:999 /etc/letsencrypt/live; chmod 750 /etc/letsencrypt/live; chown -R root:999 /etc/letsencrypt/archive; chmod 750 /etc/letsencrypt/archive; find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} +; sleep 12h & wait $${!}; done;"
 ```
 
 Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.
