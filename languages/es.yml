@@ -23,3 +23,19 @@ video: Vídeo
 web: Web
 important_note_title: <h3>Notas importantes</h3>
 chat_title: <h3>Chat</h3>
+chat_for_live_stream: 'Chat para transmisión en vivo:'
+room_name: Sala apellido
+room_description: Sala descripción
+not_found: No encontrado
+connect_using_xmpp_help: Puede conectar a la sala con una XMPP cuanta externa, y su
+  favorito XMPP cliente.
+chat_behaviour_description: <h3>Chat comportamiento</h3>
+room_type_label: Tipo de sala
+room_type_option_video: Cada video tiene su proprio sala de webchat
+room_type_option_channel: Salas de webchat son grupadas por su canal
+important_note_text: "Puede encontrar la documentación del plugin acqui:\n<a href=\"\
+  https://johnxlivingston.github.io/peertube-plugin-livechat/\" target=\"_blank\"\
+  >\n  Peertube Plugin Livechat documentación\n</a>.\n"
+room_type_description: Puede elegir tener distintas salas para cada video, o agrupar
+  ellas por su canal.
+auto_display_label: Abrir el chat automaticamente
