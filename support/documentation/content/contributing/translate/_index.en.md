@@ -30,7 +30,7 @@ so it will display in english.
 
 ## Documentation translation
 
-Fow now, this is not done on Weblate. I still looking for the good technical solution.
+Fow now, this is not done on Weblate. I am still looking for the good technical solution.
 
 Please refer to the "documentation" documentation page.
 
