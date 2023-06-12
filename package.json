@@ -113,7 +113,6 @@
     "ar": "./dist/languages/ar.json",
     "is": "./dist/languages/is.json",
     "fa-IR": "./dist/languages/fa.json",
-    "en-US": "./dist/languages/en.json",
     "vi-VN": "./dist/languages/vi.json",
     "hu-HU": "./dist/languages/hu.json",
     "th-TH": "./dist/languages/th.json",
