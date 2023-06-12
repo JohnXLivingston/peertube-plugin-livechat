@@ -76,10 +76,10 @@ function register (registerOptions: RegisterClientOptions): void {
     const p = new Promise<void>((resolve, reject) => {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       Promise.all([
-        peertubeHelpers.translate('Open chat'),
-        peertubeHelpers.translate('Open chat in a new window'),
-        peertubeHelpers.translate('Close chat'),
-        peertubeHelpers.translate('Share chat link')
+        peertubeHelpers.translate(LOC_OPEN_CHAT),
+        peertubeHelpers.translate(LOC_OPEN_CHAT_NEW_WINDOW),
+        peertubeHelpers.translate(LOC_CLOSE_CHAT),
+        peertubeHelpers.translate(LOC_SHARE_CHAT_LINK)
       ]).then(labels => {
         const labelOpen = labels[0]
         const labelOpenBlank = labels[1]

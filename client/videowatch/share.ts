@@ -40,23 +40,21 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     labelGenerateIframe,
     labelChatFor
   ] = await Promise.all([
-    peertubeHelpers.translate('Share chat link'),
-    peertubeHelpers.translate('Web'),
-    peertubeHelpers.translate('Connect using XMPP'),
-    // eslint-disable-next-line max-len
-    peertubeHelpers.translate('You can connect to the room using an external XMPP account, and your favorite XMPP client.'),
-    peertubeHelpers.translate('Read-only'),
-    peertubeHelpers.translate('Show the scrollbar'),
-    peertubeHelpers.translate('Transparent background (for stream integration, with OBS for example)'),
-    // eslint-disable-next-line max-len
-    peertubeHelpers.translate('Tips for streamers: To add the chat to your OBS, generate a read-only link and use it as a browser source.'),
-    peertubeHelpers.translate('Copy'),
-    peertubeHelpers.translate('Link copied'),
-    peertubeHelpers.translate('Error'),
-    peertubeHelpers.translate('Open'),
-    peertubeHelpers.translate('Use current theme colors'),
-    peertubeHelpers.translate('Generate an iframe to embed the chat in a website'),
-    peertubeHelpers.translate('Chat for live stream:')
+    peertubeHelpers.translate(LOC_SHARE_CHAT_LINK),
+    peertubeHelpers.translate(LOC_WEB),
+    peertubeHelpers.translate(LOC_CONNECT_USING_XMPP),
+    peertubeHelpers.translate(LOC_CONNECT_USING_XMPP_HELP),
+    peertubeHelpers.translate(LOC_READ_ONLY),
+    peertubeHelpers.translate(LOC_SHOW_SCROLLBARR),
+    peertubeHelpers.translate(LOC_TRANSPARENT_BACKGROUND),
+    peertubeHelpers.translate(LOC_TIPS_FOR_STREAMERS),
+    peertubeHelpers.translate(LOC_COPY),
+    peertubeHelpers.translate(LOC_LINK_COPIED),
+    peertubeHelpers.translate(LOC_ERROR),
+    peertubeHelpers.translate(LOC_OPEN),
+    peertubeHelpers.translate(LOC_USE_CURRENT_THEME_COLOR),
+    peertubeHelpers.translate(LOC_GENERATE_IFRAME),
+    peertubeHelpers.translate(LOC_CHAT_FOR_LIVE_STREAM)
   ])
 
   const defaultUri = getIframeUri(registerOptions, settings, video)

@@ -96,7 +96,7 @@
     "build:prosodymodules": "mkdir -p dist/server/prosody-modules && cp -r prosody-modules/* dist/server/prosody-modules/",
     "build:styles": "sass assets/styles:dist/assets/styles",
     "build:languages": "node ./build-languages.js",
-    "build": "npm-run-all -s clean:light check:client:tsc -p build:converse build:prosody build:images build:avatars build:client build:server build:languages build:serverconverse build:prosodymodules build:styles",
+    "build": "npm-run-all -s clean:light build:languages check:client:tsc -p build:converse build:prosody build:images build:avatars build:client build:server build:serverconverse build:prosodymodules build:styles",
     "lint": "npm-run-all -s lint:script lint:styles",
     "lint:script": "npx eslint --ext .js --ext .ts .",
     "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/styles/**/*.css'",

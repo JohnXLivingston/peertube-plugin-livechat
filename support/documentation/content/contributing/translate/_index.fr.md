@@ -50,18 +50,39 @@ créez les directement dans Weblate.
 La version anglaise est obligatoire, commencez par celle-ci.
 
 Chaque segment est lié à une clé (par exemple `use_chat`).
-Choisissez une clé en anglais, suffisamment explicite.
-
-Pour utiliser un segment coté front-end, il faut (pour l'instant), appeler `peertubeHelpers.translate`
-avec la version anglaise du texte. Attention, cela veut-dire qu'il faut éviter de changer un segment anglais
-existant.
-Cette solution n'est pas optimale, mais devrais bientôt changer.
-
-Coté backend, le seul endroit (pour l'instant) qui a besoin de localiser des choses, est la déclaration
-des settings du plugin.
-Il y a pour cela une fonction `loc` dédiée dans `server/lib/settings.ts` à appeler en lui fournissant
-la clé de la phrase à utiliser.
+Choisissez une clé en anglais, suffisamment explicite, et en minuscule.
 
 Si vous avez besoin de tester vos localisations sans attendre la fusion venant de Weblate,
 vous pouvez modifier les fichiers `languages/*.yml`, mais évitez de les commit
 (pour minimiser le risque de conflits).
+
+### Utiliser un segment dans le code front-end
+
+Avant d'utiliser une chaîne en front-end, il faut déclarer une nouvelle constante dans `client/@types/global.d.ts`.
+La constante doit :
+
+* commencer par le préfixe "LOC_"
+* utiliser la clé de la chaîne, en majuscule
+* vous ne devez déclarer que son type, pas sa valeur
+
+Par exemple, pour utiliser "use_chat", vous devez déclarer :
+e, to use "use_chat", you have to declare:
+
+```typescript
+declare const LOC_USE_CHAT: string
+```
+
+Le script `build-client.js` va lire ce fichier `client/@types/global.d.ts`, chercher pour de telles constantes, et charger leurs valeurs depuis le fichier de langue.
+
+Vous pouvez maintenant utiliser `peertubeHelpers.translate(LOC_USE_CHAT)` dans votre code.
+
+### Utiliser un segment dans le code back-end
+
+En théorie, les seules parties du code qui ont besoin de traductions sont les déclarations de paramètres.
+Ici on a besoin de récupérer les chaînes anglaises à partir des clés de traduction.
+
+Note: vous ne devriez jamais avoir besoin d'autres langues que l'anglais pour le code backend.
+Les traductions doivent se faire coté front-end.
+
+Il y a un module `lib/loc.ts` qui fourni une function `loc()`.
+Passez juste la clé pour récupérer la phrase anglaise: `loc('diagnostic')`.

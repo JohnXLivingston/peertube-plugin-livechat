@@ -6,6 +6,7 @@ import { initRouters } from './lib/routers/index'
 import { initFederation } from './lib/federation/init'
 import { prepareProsody, ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
 import { unloadDebugMode } from './lib/debug'
+import { loadLoc } from './lib/loc'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -19,6 +20,9 @@ async function register (options: RegisterServerOptions): Promise<any> {
   if (!options.peertubeHelpers.plugin) {
     throw new Error('Your peertube version is not correct. This plugin is not compatible with Peertube < 3.2.0.')
   }
+
+  // First: load languages files, so we can localize strings.
+  await loadLoc()
 
   await migrateSettings(options)
 
