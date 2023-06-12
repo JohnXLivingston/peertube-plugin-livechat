@@ -33,6 +33,7 @@ AppDir:
       - sourceline: 'deb [arch=arm64] https://deb.debian.org/debian/ bullseye main contrib'
         key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x648ACFD622F3D138'
       - sourceline: 'deb [arch=arm64] https://deb.debian.org/debian/ bullseye-backports main contrib'
+        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x0E98404D386FA1D9'
 
     include:
       - lua5.2
