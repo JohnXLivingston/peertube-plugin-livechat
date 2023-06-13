@@ -99,7 +99,7 @@ all_lives_label: "Attiva la chat per tutti i video in diretta"
 all_lives_description: "Se selezionata, la chat sarà attivata per tutti i video in\
   \ diretta."
 
-all_non_lives_label: "Attiva la chat per tutti i video che non sono dirette."
+all_non_lives_label: "Attiva la chat per tutti i video che non sono dirette"
 all_non_lives_description: "Se selezionata, la chat sarà attivata per tutti i video\
   \ non in diretta."
 
@@ -164,14 +164,15 @@ prosody_port_label: "Porta per Prosody"
 prosody_port_description: |
   La porta che sarà utilizzata dal server Prosody.<br>
   Cambiala se questa porta è già in uso sul tuo server.<br>
-  Puoi chiudere  tramite il tuo firewall l'accesso a questa porta dall'esterno.<br>
-  Nota: questo potrebbe cambiare prossimamente, poiché è prevista l'aggiunta di parametri per attivare le connessioni dall'esterno.
+  Puoi chiudere tramite il tuo firewall l'accesso a questa porta dall'esterno.<br>
+  Nota: questo potrebbe cambiare prossimamente, poiché è prevista l'aggiunta di parametri per attivare le connessioni esterne.
 
 prosody_peertube_uri_label: "URL di Peertube per le chiamate API"
 prosody_peertube_uri_description: |
   Ti preghiamo di non toccare questa impostazione se non sei sicurə di quello che stai facendo.<br>
-  In rari casi, il server Prosody potrebbe non essere in grado di chiamare l'API di Peertube utilizzando l'URL pubblico predefinito.
-  Puoi allora inserire l'URL con cui i moduli Prosody chiameranno le API di Peertube (ad esempio «http://localhost:9000» o «http://127.0.0.1:9000»).
+  In rari casi il server Prosody potrebbe non essere in grado di chiamare l'API di Peertube utilizzando il suo url pubblico.
+  Puoi allora utilizzare questo parametro per personalizzare l'url che i moduli Prosody utilizzeranno per
+  le API di Peertube (ad esempio «http://localhost:9000» o «http://127.0.0.1:9000»).
 
 prosody_muc_log_by_default_label: "Registra automaticamente il contenuto delle chat\
   \ room"
