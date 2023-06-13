@@ -39,3 +39,17 @@ important_note_text: "Puede encontrar la documentación del plugin acqui:\n<a hr
 room_type_description: Puede elegir tener distintas salas para cada video, o agrupar
   ellas por su canal.
 auto_display_label: Abrir el chat automaticamente
+no_anonymous_label: Esconder chat para usuarios anónimos
+converse_theme_label: ConverseJS tematización
+converse_theme_description: Elige la converseJS tematización que quiere utilizar por
+  favor.
+converse_theme_option_peertube: Peertube tematización
+converse_theme_option_default: ConverseJS tematización por defecto
+autocolors_label: Detección de color automatica
+prosody_port_label: Prosody puerto
+prosody_peertube_uri_label: Peertube url para pedidas de API
+videos_list_label: Activar chat para estas videos
+help_builtin_prosody_label: Server prosody
+disable_websocket_label: Desactivar Websocket
+prosody_room_allow_s2s_label: Activar conexión a las salas con cuantas externas XMPP
+theming_advanced_description: <h3>Tematización</h3>
