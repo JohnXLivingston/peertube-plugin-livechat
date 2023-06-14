@@ -271,21 +271,12 @@ prosody_components_list_description: |
   <ul>
     <li>Un par ligne.</li>
     <li>Utilisez le format «nom_du_composant:passphrase_secrete» (les espaces seront retirés).</li>
-    <li>
-      Vous pouvez ajouter des commentaires: tout ce qui se trouve après un caractère # sera retiré,
-      et les lignes vides ignorées.
-    </li>
+    <li>Vous pouvez ajouter des commentaires: tout ce qui se trouve après un caractère # sera retiré,  et les lignes vides ignorées. </li>
     <li>Le nom ne peut contenir que des caractères alphanumériques latins et des points.</li>
     <li>
-      Si le nom ne contient que des caractères alphanumériques, il sera suffixé avec
-      le domaine XMPP.
+      Si le nom ne contient que des caractères alphanumériques, il sera suffixé avec  le domaine XMPP.
       Par exemple, «bridge» deviendra «bridge.votre_domaine.tld».
-      Vous pouvez aussi spécifier un nom de domaine complet,
-      mais vous devrez vous assurer que votre configuration DNS est
-      correctement paramétrée.
+      Vous pouvez aussi spécifier un nom de domaine complet,  mais vous devrez vous assurer que votre configuration DNS est correcte.
     </li>
-    <li>
-      N'utilisez que des caractères alphanumériques dans la passphrase secrète
-      (utilisez au moins 15 caractères).
-    </li>
+    <li>N'utilisez que des caractères alphanumériques dans la passphrase secrète (utilisez au moins 15 caractères).</li>
   </ul>
