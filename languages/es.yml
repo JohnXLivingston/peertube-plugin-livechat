@@ -9,7 +9,7 @@ show_scrollbarr: "Mostrar la barra de desplazamiento"
 transparent_background: "Fondo transparente (para la integración en directos, por\
   \ ejemplo con OBS)"
 tips_for_streamers: para agregar el chat a su OBS, genere un enlace de «solo lectura»
-  y utilícelo como «fuente o canal web»."
+  y utilícelo como «fuente o canal web».
 copy: "Copiar"
 link_copied: "Enlace copiado"
 error: "Error"
