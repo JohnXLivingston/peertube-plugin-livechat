@@ -241,14 +241,11 @@ prosody_components_list_label: "Externe Komponenten"
 prosody_components_list_description: |
   Die zu erstellenden externen Komponenten:
    <ul>
-    <li>Eine pro Zeile.</li>
-    <li>Verwenden Sie das Format «Komponentenname:Komponenten_Geheimnis» (Leerzeichen werden entfernt)</li>
-    <li>
-      Sie können Kommentare hinzufügen: alles nach dem #-Zeichen wird entfernt
-      und leere Zeilen werden ignoriert.
-    </li>
-    <li>Der Name darf nur alphanumerische Zeichen und Punkte enthalten</li>
-    <li>
+     <li>Eine pro Zeile.</li>
+     <li>Verwenden Sie das Format «Komponentenname:Komponenten_Geheimnis» (Leerzeichen werden entfernt)</li>
+     <li>Sie können Kommentare hinzufügen: alles nach dem #-Zeichen wird entfernt und leere Zeilen werden ignoriert.</li>
+     <li>Der Name darf nur alphanumerische Zeichen und Punkte enthalten</li>
+     <li>
        Wenn der Name nur alphanumerische Zeichen enthält, wird ihm die XMPP-Domäne angehängt.
        Aus «bridge» wird zum Beispiel «bridge.your_domain.tld».
        Sie können auch einen vollständigen Domänennamen angeben, müssen jedoch sicherstellen, dass Ihr DNS korrekt konfiguriert ist.
