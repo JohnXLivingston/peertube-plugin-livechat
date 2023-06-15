@@ -69,3 +69,32 @@ federation_description: "<h3>Federación</h3>\nLos siguientes ajustes se refiere
 open_blank_label: Muestra el botón «abrir en ventana nueva»
 share_url_description: Habrá un botón para compartir la url del chat (puede usarse
   para integración con OBS, por ejemplo).
+federation_no_remote_chat_label: No mostrar chat remoto.
+auto_display_description: Cuando viendo un video, el chatbox se abrira automaticamente.
+open_blank_description: Abra un botón para abrir el web chat en une nueve ventana.
+share_url_label: Mostra el botón "enlace para compartir el chat"
+share_url_option_owner: Mostrar para el proprietario del video
+share_url_option_owner_moderators: Mostrar para el proprietario del video y los moderadores
+  de la instancia
+all_lives_label: Activar chat para todos los en vivos
+all_lives_description: Si se marca, el chat sera activado para todos los en vivos.
+all_non_lives_label: Activar chatpara todos los no - en vivos
+federation_dont_publish_remotely_description: "Al aceptar esta configuración, su instancia\
+  \ no publicara la información del chat en el fediverse.\nInstancias remotas de Peertube\
+  \ no estaran al tanto de la existencia de chat rooms liados a sus videos. <br>\n\
+  <b>Porfavor note</b>: si ya tiene chats en progreso, es posible que la información\
+  \ ya haya sido publicada.\nTendra que esperar a la próxima actualización del video\
+  \ antes de que la información sea ocultada.\nAdemas, si desactiva esta configuracion,\
+  \ tendra que esperar a la próxima actualización del video antesde que la información\
+  \ \nsea publicada otra vez. Esta actualización sucede, ente otros, cuando un evento\
+  \ en vivo reanuda o se detiene.<br>\n<b>Porfavor note</b>: esta configuración solo\
+  \ afecta la publicación de información via el protocolo ActivityPub.\nElla no prevendra\
+  \ une applicación remota de detectar la presencia de chats y de intentar connectarse\
+  \ a ellos.\n"
+share_url_option_nobody: Mostrar para nadie
+per_live_video_label: Usuarios pueden activar el chat para sus en vivo
+share_url_option_everyone: Mostrar para todos
+per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n  Ha activado la configuración  \"Usuarions pueden activar el chat para sus en\
+  \ vivo\".\n  Es redundante con la configuración  \"Activar el chat para todos los\
+  \ en vivos\".\n</span>\n"
