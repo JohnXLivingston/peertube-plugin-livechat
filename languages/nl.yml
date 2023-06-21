@@ -1,0 +1,56 @@
+important_note_text: "Hier vind je de documentatie van de plugin:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n  Peertube Plugin Livechat documentatie\n</a>.\n"
+federation_description: "<h3>Federatie</h3>\nDe volgende instellingen gaan over het\
+  \ federeren met andere PeerTube-exemplaren\nen andere fediverse-software.\n"
+open_chat: Chat openen
+open_chat_new_window: Chat openen in nieuw venster
+close_chat: Chat sluiten
+use_chat: Chat activeren
+use_chat_help: Indien geactiveerd zal er naast de video een chat zijn.
+share_chat_link: Link naar deze chat delen
+read_only: Alleen leesbaar
+show_scrollbarr: Toon de schuifbalk
+transparent_background: Doorzichtige achtergrond (bijvoorbeeld voor stream-integratie
+  met OBS)
+tips_for_streamers: 'Tips voor streamers: Om de chat aan je OBS toe te voegen genereer
+  je een alleen-leesbare link en gebruik je die als een “browser source”.'
+copy: Kopiëren
+link_copied: Link gekopieerd
+error: Fout
+open: Openen
+use_current_theme_color: Gebruik kleuren van huidige thema
+generate_iframe: Genereer een iframe-element om de chat in een webpagina te integreren
+chat_for_live_stream: 'Chat voor de livestream:'
+room_name: Naam van chatroom
+room_description: Beschrijving van chatroom
+not_found: Niet gevonden
+video: Video
+channel: Kanaal
+last_activity: Laatste activiteit
+web: Web
+connect_using_xmpp: Via XMPP verbinden
+connect_using_xmpp_help: Je kan de chatroom betreden via een extern XMPP-account en
+  je favoriete XMPP-app.
+important_note_title: <h3>Belangrijke opmerkingen</h3>
+diagnostic: "Gebruik a.u.b. de diagnostische tool voordat je om hulp vraagt:\n<a class=\"\
+  peertube-plugin-livechat-launch-diagnostic\">Diagnose starten</a>\n(als deze knop\
+  \ geen nieuw venster opent, probeer dan de pagina te verversen).\n"
+chat_title: <h3>Chat</h3>
+list_rooms_label: Lijst van bestaande chatrooms weergeven
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Toon chatrooms</a>\n"
+federation_no_remote_chat_description: "Met deze instelling toont jouw exemplaar geen\
+  \ chats bij videos van elders.\n"
+federation_no_remote_chat_label: Geen chats van andere exemplaren tonen
+federation_dont_publish_remotely_label: Chat-informatie niet openbaren
+federation_dont_publish_remotely_description: "Door deze instelling te activeren zal\
+  \ jouw exemplaar geen informatie over chats delen met de rest van de fediverse.\n\
+  Andere PeerTube-exemplaren zullen niet weten dat er chatrooms bij jouw videos zijn.<br>\n\
+  <b>Pas op</b>: Als je al chats hebt lopen, dan kan het zijn dat informatie daarover\
+  \ al gedeeld is.\nJe moet wachten op de volgende video-update voor het delen ongedaan\
+  \ wordt gemaakt.\nBovendien, als je deze instelling de-activeert, zal je moeten\
+  \ wachten tot de volgende video-update voor de informatie\nweer wordt gedeeld. Deze\
+  \ update gebeurt onder andere wanneer een live-evenement verdergaat of stopt.<br>\n\
+  <b>Pas op</b>: Deze instelling betreft enkel het delen van informatie via het ActivityPub-protocol.\n\
+  Het voorkomt niet dat een applicatie op een andere manier de chats ontdekt, en ermee\
+  \ probeert te verbinden.\n"
