@@ -1,12 +1,11 @@
 # Changelog
 
-## ??? (Unreleased yet)
+## 7.1.0
 
 ### Minor changes and fixes
 
-* Translations are now made using Weblate. This requires some technical changes, but there is no functional differences.
-
-TODO: update the documentation
+* Translations are now made using [Weblate](https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/). This requires some technical changes, but there is no functional differences.
+* Translation updates.
 
 ## 7.0.2
 
