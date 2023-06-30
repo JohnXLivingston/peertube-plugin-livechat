@@ -48,7 +48,7 @@ converse_theme_option_default: ConverseJS tematización por defecto
 autocolors_label: Detección de color automatica
 prosody_port_label: Prosody puerto
 prosody_peertube_uri_label: Peertube url para pedidas de API
-videos_list_label: Activar chat para estas videos
+videos_list_label: Activar chat para estos vídeos
 help_builtin_prosody_label: Server prosody
 disable_websocket_label: Desactivar Websocket
 prosody_room_allow_s2s_label: Activar conexión a las salas con cuantas externas XMPP
@@ -67,14 +67,14 @@ per_live_video_description: Si se marca, todos los vídeos en directo tendrán u
 federation_description: "<h3>Federación</h3>\nLos siguientes ajustes se refieren a\
   \ la federación con otras instancias de Peertube\n y otros programas del fediverso.\n"
 open_blank_label: Muestra el botón «abrir en ventana nueva»
-share_url_description: Habrá un botón para compartir la url del chat (puede usarse
-  para integración con OBS, por ejemplo).
+share_url_description: Se mostrará un botón para compartir la url del chat (puede
+  usarse para integración con OBS, por ejemplo).
 federation_no_remote_chat_label: No mostrar chat remoto.
-auto_display_description: Cuando viendo un video, el chatbox se abrira automaticamente.
-open_blank_description: Abra un botón para abrir el web chat en une nueve ventana.
-share_url_label: Mostra el botón "enlace para compartir el chat"
-share_url_option_owner: Mostrar para el proprietario del video
-share_url_option_owner_moderators: Mostrar para el proprietario del video y los moderadores
+auto_display_description: Al ver un vídeo, se abrirá automáticamente el chatbox.
+open_blank_description: Se mostrará un botón para abrir el web chat en una nueva ventana.
+share_url_label: Muestra el botón "enlace para compartir el chat"
+share_url_option_owner: Mostrar para el propietario del video
+share_url_option_owner_moderators: Mostrar para el propietario del video y los moderadores
   de la instancia
 all_lives_label: Activar chat para todos los en vivos
 all_lives_description: Si se marca, el chat sera activado para todos los en vivos.
@@ -92,9 +92,11 @@ federation_dont_publish_remotely_description: "Al aceptar esta configuración, s
   \ une applicación remota de detectar la presencia de chats y de intentar connectarse\
   \ a ellos.\n"
 share_url_option_nobody: Mostrar para nadie
-per_live_video_label: Usuarios pueden activar el chat para sus en vivo
+per_live_video_label: Los usuarios pueden activar el chat para sus vídeos en directo
 share_url_option_everyone: Mostrar para todos
 per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
   >\n  Ha activado la configuración  \"Usuarions pueden activar el chat para sus en\
   \ vivo\".\n  Es redundante con la configuración  \"Activar el chat para todos los\
   \ en vivos\".\n</span>\n"
+all_non_lives_description: Si está marcada, el chat se habilitará para todos los vídeos
+  que no sean en directo.
