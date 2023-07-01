@@ -31,13 +31,13 @@ connect_using_xmpp_help: Puede conectar a la sala con una XMPP cuanta externa, y
   favorito XMPP cliente.
 chat_behaviour_description: <h3>Chat comportamiento</h3>
 room_type_label: Tipo de sala
-room_type_option_video: Cada video tiene su proprio sala de webchat
+room_type_option_video: Cada video tiene su propria sala de webchat
 room_type_option_channel: Salas de webchat son grupadas por su canal
-important_note_text: "Puede encontrar la documentación del plugin acqui:\n<a href=\"\
+important_note_text: "Puede encontrar la documentación del plugin aquí:\n<a href=\"\
   https://johnxlivingston.github.io/peertube-plugin-livechat/\" target=\"_blank\"\
   >\n  Peertube Plugin Livechat documentación\n</a>.\n"
-room_type_description: Puede elegir tener distintas salas para cada video, o agrupar
-  ellas por su canal.
+room_type_description: Puede elegir tener distintas salas para cada video, o agruparlas
+  por canal.
 auto_display_label: Abrir el chat automaticamente
 no_anonymous_label: Esconder chat para usuarios anónimos
 converse_theme_label: ConverseJS tematización
@@ -63,13 +63,13 @@ federation_no_remote_chat_description: "Marcando este ajuste, su instancia nunca
   \ los chats de los vídeos remotos.\n"
 federation_dont_publish_remotely_label: No publicar información del chat
 per_live_video_description: Si se marca, todos los vídeos en directo tendrán un checkbox
-  en sus propiedades para permitir el web chat.
+  en sus propiedades para activar el web chat.
 federation_description: "<h3>Federación</h3>\nLos siguientes ajustes se refieren a\
   \ la federación con otras instancias de Peertube\n y otros programas del fediverso.\n"
 open_blank_label: Muestra el botón «abrir en ventana nueva»
 share_url_description: Se mostrará un botón para compartir la url del chat (puede
   usarse para integración con OBS, por ejemplo).
-federation_no_remote_chat_label: No mostrar chat remoto.
+federation_no_remote_chat_label: No mostrar chats remotos
 auto_display_description: Al ver un vídeo, se abrirá automáticamente el chatbox.
 open_blank_description: Se mostrará un botón para abrir el web chat en una nueva ventana.
 share_url_label: Muestra el botón "enlace para compartir el chat"
@@ -100,3 +100,6 @@ per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warn
   \ en vivos\".\n</span>\n"
 all_non_lives_description: Si está marcada, el chat se habilitará para todos los vídeos
   que no sean en directo.
+no_anonymous_description: Si se marca, los usuarios anónimos de Peertube no verán
+  el chat.
+converse_theme_option_concord: Tema concord de ConverseJS
