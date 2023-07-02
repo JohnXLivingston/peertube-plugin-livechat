@@ -49,7 +49,7 @@ autocolors_label: Detección de color automatica
 prosody_port_label: Prosody puerto
 prosody_peertube_uri_label: Peertube url para pedidas de API
 videos_list_label: Activar chat para estos vídeos
-help_builtin_prosody_label: Server prosody
+help_builtin_prosody_label: Servidor prosody
 disable_websocket_label: Desactivar Websocket
 prosody_room_allow_s2s_label: Activar conexión a las salas con cuantas externas XMPP
 theming_advanced_description: <h3>Tematización</h3>
@@ -103,3 +103,18 @@ all_non_lives_description: Si está marcada, el chat se habilitará para todos l
 no_anonymous_description: Si se marca, los usuarios anónimos de Peertube no verán
   el chat.
 converse_theme_option_concord: Tema concord de ConverseJS
+help_builtin_prosody_description: "Este plugin utiliza el servidor XMPP Prosody para\
+  \ manejar salas de chat.<br>\nEste plugin viene con una AppImage de Prosody, que\
+  \ se utilizará para ejecutar el servicio.\n"
+autocolors_description: "Intenta detectar automáticamente los colores del tema actual\
+  \ del usuario.<br>\nCuando esta configuración está habilitada, el plugin intenta\
+  \ detectar automáticamente los colores para aplicarlos al tema del chat.<br>\nSi\
+  \ esto no funciona correctamente para algunos de sus temas de Peertube, puede deshabilitar\
+  \ esta opción.\nPuede informar de un error en el <a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
+  \ target=\"_blank\">rastreador de problemas</a> oficial. No olvide especificar qué\
+  \ tema no funciona.\n"
+chat_style_label: Atributo de estilo iframe del Webchat
+chat_style_description: "Se agregarán estilos adicionales en el atributo de estilo\
+  \ iframe. <br>\nPor ejemplo: height:400px;\n"
+prosody_advanced_description: <h3>Configuración avanzada del servidor de chat</h3>
+system_prosody_label: Use el sistema Prosody
