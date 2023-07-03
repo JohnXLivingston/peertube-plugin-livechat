@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 Code Lutin SASPO <https://www.codelutin.com/>
+# SPDX-FileCopyrightText: 2023 John Livingston <https://www.john-livingston.fr/>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 node_modules
 .cache
 dist
