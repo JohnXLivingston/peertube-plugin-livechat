@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.2.0 (Not Released Yet)
+
+## New Features
+
+* Implementing the [FEP-1970](https://codeberg.org/fediverse/fep/src/branch/main/fep/0ea0/fep-0ea0.md) draft for ActivityPub chat declaration.
+
 ## 7.1.0
 
 ### Minor changes and fixes
