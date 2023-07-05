@@ -73,7 +73,8 @@ Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code.
 ### Use translations in back-end code
 
 In theory, the only parts of the backend code where you need localization is the
-settings declaration. Here we need to get english strings from the translation key.
+settings declaration and standardized data (ActivityPub, RSS, ...).
+Here we need to get english strings from the translation key.
 
 Note: you should never need another language translation from backend code.
 Localization must be done on front-end.

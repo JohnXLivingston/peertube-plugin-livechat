@@ -78,7 +78,7 @@ Vous pouvez maintenant utiliser `peertubeHelpers.translate(LOC_USE_CHAT)` dans v
 
 ### Utiliser un segment dans le code back-end
 
-En théorie, les seules parties du code qui ont besoin de traductions sont les déclarations de paramètres.
+En théorie, les seules parties du code qui ont besoin de traductions sont les déclarations de paramètres et la génération de données standardisées (ActivityPub, RSS, ...).
 Ici on a besoin de récupérer les chaînes anglaises à partir des clés de traduction.
 
 Note: vous ne devriez jamais avoir besoin d'autres langues que l'anglais pour le code backend.

@@ -12,6 +12,7 @@ import { getBoshUri, getWSUri, getWSS2SUri, getPublicChatUri } from '../uri/webc
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { fillVideoCustomFields } from '../custom-fields'
+import { loc } from '../loc'
 
 /**
  * This function adds LiveChat information on video ActivityPub data if relevant.
@@ -84,11 +85,13 @@ async function videoBuildJSONLD (
     'chat-no-anonymous': settings['chat-no-anonymous']
   })
 
+  const chatTitle = loc('chat_for_live_stream') + ' ' + video.name
+
   // Adding attachments, as described in FEP-1970
   const discussionLinks: LiveChatVideoObject['attachment'] = []
   discussionLinks.push({
     type: 'Link',
-    name: 'Chat', // TODO: getter naming, maybe use chat_for_live_stream loc string
+    name: chatTitle,
     rel: 'discussion',
     href: getPublicChatUri(options, videoJsonld)
   })
@@ -99,7 +102,7 @@ async function videoBuildJSONLD (
   if (serverInfos.directs2s) {
     discussionLinks.push({
       type: 'Link',
-      name: 'Chat', // TODO: getter naming, maybe use chat_for_live_stream loc string
+      name: chatTitle,
       rel: 'discussion',
       href: 'xmpp://' + roomJID + '?join'
     })
