@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@peertube/feed": "^5.1.0",
-    "@peertube/peertube-types": "^5.1.0",
+    "@peertube/peertube-types": "^5.2.0",
     "@tsconfig/node12": "^1.0.9",
     "@types/async": "^3.2.9",
     "@types/express": "^4.17.13",
@@ -70,7 +70,7 @@
     "yaml": "^2.2.1"
   },
   "engine": {
-    "peertube": ">=5.2.0"
+    "peertube": ">=4.2.0"
   },
   "engines": {
     "npm": ">=7"

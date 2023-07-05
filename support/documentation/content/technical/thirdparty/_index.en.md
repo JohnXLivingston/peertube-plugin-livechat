@@ -159,7 +159,7 @@ In the ActivityPub object, there is also a `peertubeLiveChat` entry.
 Don't use the content of this entry. This is specific to the livechat plugin, and can be changed or removed in a near future.
 It is currently required for some endpoint discovery.
 
-### Using RSS
+### Using Podcast RSS feed
 
 {{% notice warning %}}
 This part is not implemented yet, but should be available for v7.2.0 release.
