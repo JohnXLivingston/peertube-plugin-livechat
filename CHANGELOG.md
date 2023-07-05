@@ -4,7 +4,7 @@
 
 ## New Features
 
-* Implementing the [FEP-1970](https://codeberg.org/fediverse/fep/src/branch/main/fep/0ea0/fep-0ea0.md) draft for ActivityPub chat declaration.
+* Implementing the [FEP-1970](https://codeberg.org/fediverse/fep/src/branch/main/fep/1970/fep-1970.md) draft for ActivityPub chat declaration.
 
 ## 7.1.0
 
