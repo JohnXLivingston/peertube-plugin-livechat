@@ -100,12 +100,12 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               table.classList.add('peertube-plugin-livechat-prosody-list-rooms')
               container.append(table)
               const labels: any = {
-                RoomName: await peertubeHelpers.translate('Room name'),
-                RoomDescription: await peertubeHelpers.translate('Room description'),
-                NotFound: await peertubeHelpers.translate('Not found'),
-                Video: await peertubeHelpers.translate('Video'),
-                Channel: await peertubeHelpers.translate('Channel'),
-                LastActivity: await peertubeHelpers.translate('Last activity')
+                RoomName: await peertubeHelpers.translate(LOC_ROOM_NAME),
+                RoomDescription: await peertubeHelpers.translate(LOC_ROOM_DESCRIPTION),
+                NotFound: await peertubeHelpers.translate(LOC_NOT_FOUND),
+                Video: await peertubeHelpers.translate(LOC_VIDEO),
+                Channel: await peertubeHelpers.translate(LOC_CHANNEL),
+                LastActivity: await peertubeHelpers.translate(LOC_LAST_ACTIVITY)
               }
 
               const titleLineEl = document.createElement('tr')

@@ -15,7 +15,7 @@ Das Plugin wird von [John Livingston](https://www.john-livingston.fr/) betrieben
 Dank an David Revoy für seine Arbeit an dem Peertube Maskottchen, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
 Das Charakterdesign steht unter CC-By-Lizenz, und die SVG-Dateien, die zur Erstellung einiger Logos und Avatare in diesem Plugin verwendet werden, sind GPLv3.0.
 
-Vielen Dank an [Framasoft](https://framasoft.org)für die Ermöglichung von [Peertube](https://joinpeertube.org/) und für die finanzielle Unterstützung.
+Vielen Dank an [Framasoft](https://framasoft.org)für die Ermöglichung von [Peertube](https://joinpeertube.org/), für die finanzielle Unterstützung, und für das [Weblate](https://weblate.framasoft.org).
 
 Vielen Dank an [ritimo](https://www.ritimo.org/) für die finanzielle Unterstützung.
 

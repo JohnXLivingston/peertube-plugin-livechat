@@ -22,8 +22,8 @@ async function register ({ peertubeHelpers, registerHook, registerVideoField }: 
   })
 
   const [label, description, settings] = await Promise.all([
-    peertubeHelpers.translate('Use chat'),
-    peertubeHelpers.translate('If enabled, there will be a chat next to the video.'),
+    peertubeHelpers.translate(LOC_USE_CHAT),
+    peertubeHelpers.translate(LOC_USE_CHAT_HELP),
     peertubeHelpers.getSettings()
   ])
   const webchatFieldOptions: RegisterClientFormFieldOptions = {

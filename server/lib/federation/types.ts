@@ -65,6 +65,12 @@ type LiveChatJSONLDAttributeV1 = LiveChatJSONLDInfosV1 | false
 
 interface LiveChatVideoObject extends VideoObject {
   peertubeLiveChat: LiveChatJSONLDAttribute
+  attachment: Array<{
+    type: 'Link'
+    name: string
+    href: string
+    rel: string
+  }>
 }
 
 interface RemoteVideoHandlerParams {

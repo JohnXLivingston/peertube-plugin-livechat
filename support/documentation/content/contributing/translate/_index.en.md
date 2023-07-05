@@ -30,7 +30,7 @@ so it will display in english.
 
 ## Documentation translation
 
-Fow now, this is not done on Weblate. I still looking for the good technical solution.
+Fow now, this is not done on Weblate. I am still looking for the good technical solution.
 
 Please refer to the "documentation" documentation page.
 
@@ -45,14 +45,39 @@ If you are working on new features, and need new strings, you can create them di
 The english version is mandatory. Start with it.
 
 Each string is linked to a key (for example `use_chat`).
-Choose an explicit key in english.
+Choose an explicit key in english, lower case.
 
-To use a string in front-end, you need (for now) to call `peertubeHelpers.translate` with the english string.
-This means we can't change english strings without updating the code.
-This is not optimal, but will change in a near future.
+If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files,
+but avoid to commit these changes (to minimize conflict risks).
 
-For backend, for now the only file where there is localisation is
-`server/lib/settings.ts`. There is a `loc` function to call, passing as parameter the localisation key.
+### Use translations in front-end code
 
-If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files, but avoid to commit these change
-(to minimize conflict risks).
+Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.
+The constant name must:
+
+* start with the prefix "LOC_"
+* use the string key, upper cased
+* you just have to declare its type, not its value
+
+For example, to use "use_chat", you have to declare:
+
+```typescript
+declare const LOC_USE_CHAT: string
+```
+
+The `build-client.js` script will read the `client/@types/global.d.ts`,
+search for such constants, and load their values from the languages files.
+
+Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code.
+
+### Use translations in back-end code
+
+In theory, the only parts of the backend code where you need localization is the
+settings declaration and standardized data (ActivityPub, RSS, ...).
+Here we need to get english strings from the translation key.
+
+Note: you should never need another language translation from backend code.
+Localization must be done on front-end.
+
+There is a `lib/loc.ts` module providing a `loc()` function.
+Just pass it the key to have the english string: `loc('diagnostic')`'.

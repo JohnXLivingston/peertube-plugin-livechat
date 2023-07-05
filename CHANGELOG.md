@@ -1,12 +1,17 @@
 # Changelog
 
-## ??? (Unreleased yet)
+## 7.2.0 (Not Released Yet)
+
+## New Features
+
+* Implementing the [FEP-1970](https://codeberg.org/fediverse/fep/src/branch/main/fep/1970/fep-1970.md) draft for ActivityPub chat declaration.
+
+## 7.1.0
 
 ### Minor changes and fixes
 
-* Translations are now made using Weblate. This requires some technical changes, but there is no functional differences.
-
-TODO: update the documentation
+* Translations are now made using [Weblate](https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/). This requires some technical changes, but there is no functional differences.
+* Translation updates.
 
 ## 7.0.2
 

@@ -8,26 +8,27 @@ import type {
 } from './types'
 import { storeVideoLiveChatInfos } from './storage'
 import { videoHasWebchat } from '../../../shared/lib/video'
-import { getBoshUri, getWSUri, getWSS2SUri } from '../uri/webchat'
+import { getBoshUri, getWSUri, getWSS2SUri, getPublicChatUri } from '../uri/webchat'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { fillVideoCustomFields } from '../custom-fields'
+import { loc } from '../loc'
 
 /**
  * This function adds LiveChat information on video ActivityPub data if relevant.
  * @param options server options
- * @param jsonld JSON-LD video data to fill
+ * @param videoJsonld JSON-LD video data to fill
  * @param context handler context
  * @returns void
  */
 async function videoBuildJSONLD (
   options: RegisterServerOptions,
-  jsonld: VideoObject,
+  videoJsonld: VideoObject | LiveChatVideoObject,
   context: VideoBuildResultContext
 ): Promise<VideoObject | LiveChatVideoObject> {
   const logger = options.peertubeHelpers.logger
   const video = context.video
-  if (video.remote) { return jsonld } // should not happen, but... just in case...
+  if (video.remote) { return videoJsonld } // should not happen, but... just in case...
 
   const settings = await options.settingsManager.getSettings([
     'chat-per-live-video',
@@ -45,7 +46,7 @@ async function videoBuildJSONLD (
   if (settings['federation-dont-publish-remotely']) {
     // Note: we store also outgoing data. Could help for migration/cleanup scripts, for example.
     await storeVideoLiveChatInfos(options, video, false)
-    return jsonld
+    return videoJsonld
   }
 
   await fillVideoCustomFields(options, video)
@@ -60,10 +61,10 @@ async function videoBuildJSONLD (
     logger.debug(`Video uuid=${video.uuid} has not livechat, adding peertubeLiveChat=false.`)
     // Note: we store also outgoing data. Could help for migration/cleanup scripts, for example.
     await storeVideoLiveChatInfos(options, video, false)
-    Object.assign(jsonld, {
+    Object.assign(videoJsonld, {
       peertubeLiveChat: false
     })
-    return jsonld
+    return videoJsonld
   }
 
   logger.debug(`Adding LiveChat data on video uuid=${video.uuid}...`)
@@ -84,6 +85,45 @@ async function videoBuildJSONLD (
     'chat-no-anonymous': settings['chat-no-anonymous']
   })
 
+  const chatTitle = loc('chat_for_live_stream') + ' ' + video.name
+
+  // Adding attachments, as described in FEP-1970
+  const discussionLinks: LiveChatVideoObject['attachment'] = []
+  discussionLinks.push({
+    type: 'Link',
+    name: chatTitle,
+    rel: 'discussion',
+    href: getPublicChatUri(options, videoJsonld)
+  })
+  // Adding the xmpp:// link requires:
+  // - prosody-room-allow-s2s
+  // - prosody-s2s-port
+  // For now, this can be tested reading serverInfos.directs2s
+  if (serverInfos.directs2s) {
+    discussionLinks.push({
+      type: 'Link',
+      name: chatTitle,
+      rel: 'discussion',
+      href: 'xmpp://' + roomJID + '?join'
+    })
+  }
+
+  if (!('attachment' in videoJsonld) || !videoJsonld.attachment) {
+    Object.assign(videoJsonld, {
+      attachment: discussionLinks
+    })
+  } else if (Array.isArray(videoJsonld.attachment)) {
+    videoJsonld.attachment.push(...discussionLinks)
+  } else {
+    videoJsonld.attachment = [
+      videoJsonld.attachment,
+      ...discussionLinks
+    ]
+  }
+
+  // Code beneath this point is for backward compatibility, before v7.2.0.
+  // Since then, the ActivityPub metadata were not standardized.
+
   // For backward compatibility with remote servers, using plugin <=6.3.0, we must provide links:
   const links: LiveChatJSONLDLink[] = []
   if (serverInfos.anonymous) {
@@ -103,18 +143,19 @@ async function videoBuildJSONLD (
     }
   }
 
+  // This is the custom format used by plugin > 6.3.0.
   const peertubeLiveChat: LiveChatJSONLDAttribute = {
     type: 'xmpp',
     jid: roomJID,
     links,
     xmppserver: serverInfos
   }
-  Object.assign(jsonld, {
+  Object.assign(videoJsonld, {
     peertubeLiveChat
   })
   // Note: we store also outgoing data. Could help for migration/cleanup scripts, for example.
   await storeVideoLiveChatInfos(options, video, peertubeLiveChat)
-  return jsonld
+  return videoJsonld
 }
 
 async function serverBuildInfos (options: RegisterServerOptions): Promise<PeertubeXMPPServerInfos> {

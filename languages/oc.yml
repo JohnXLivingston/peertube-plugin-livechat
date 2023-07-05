@@ -6,12 +6,20 @@ use_chat_help: Se activat la messatjariá serà a costat de la vidèo.
 share_chat_link: Partejar lo ligam de la discussion
 read_only: Lectura sola
 show_scrollbarr: Afichar la barra de desfilament
-transparent_background: Rèireplan transparent (per l’integracion del flux, amb OBS per exemple)
-tips_for_streamers: "Astúcia pels difusors  : per apondre la messatjariá a
-  vòstre OBS, generatz un ligam «  lectura sola» e utilizatz-lo coma «  font
-  navegador web  »."
+transparent_background: Rèireplan transparent (per l’integracion del flux, amb OBS
+  per exemple)
+tips_for_streamers: "Astúcia pels difusors : per apondre la messatjariá a vòstre OBS,\
+  \ generatz un ligam «  lectura sola» e utilizatz-lo coma «  font navegador web \
+  \ »."
 copy: Copiar
 link_copied: Ligam copiat
 error: Error
 open: Dobrir
 use_current_theme_color: Utilizar las colors del tèma actual
+not_found: Pas trobada
+video: Vidèo
+channel: Cadena
+last_activity: Darrièra activitat
+web: Web
+room_name: Nom de la sala
+room_description: Descripcion de la sala
