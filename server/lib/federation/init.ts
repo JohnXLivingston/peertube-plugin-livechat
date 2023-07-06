@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2023 Code Lutin SASPO  <https://www.codelutin.com/>
+// SPDX-FileCopyrightText: 2023 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import type { RegisterServerOptions, VideoObject } from '@peertube/peertube-types'
 import type { VideoBuildResultContext, RemoteVideoHandlerParams } from './types'
 import { videoBuildJSONLD } from './outgoing'
