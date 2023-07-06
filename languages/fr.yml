@@ -118,7 +118,10 @@ videos_list_description: |
 
 no_anonymous_label: "Masque les tchats pour les utilisateur⋅rices anonymes"
 no_anonymous_description: "Si coché, les utilisteur⋅rices non connecté⋅es ne verront\
-  \ pas les tchats."
+  \ pas les tchats.\nCette fonctionnalité est encore expérimentale.\nSi vous l'avez\
+  \ activée, il est hautement recommandé d'également cocher «Ne pas publier les informations\
+  \ de tchats».\nSinon certains outils tierces ne pourraient tenter d'ouvrir le tchat,\
+  \ et auraient des résultats imprédictibles.\n"
 
 theming_advanced_description: "<h3>Personnalisation des thèmes</h3>"
 
