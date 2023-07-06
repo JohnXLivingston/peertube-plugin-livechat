@@ -49,7 +49,7 @@ Sobald Sie bereit für eine Codeüberprüfung vor der Zusammenführung sind, rei
 
 Der Front-End-Code befindet sich im Ordner `client`, der Back-End-Code im Ordner `server`. Es gibt einige gemeinsam genutzte Codes im `shared` Ordner.
 
-Für allgemeine Anweisungen (Entwicklung von Plugins, Erstellung, Installation, ...), lesen Sie bitte die [Peertube Dokumentation] (https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).
+Für allgemeine Anweisungen (Entwicklung von Plugins, Erstellung, Installation, ...), lesen Sie bitte die [Peertube Dokumentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).
 
 Sie können das Plugin mit zusätzlichen Debug-Funktionen bauen, indem Sie es einfach benutzen:
 

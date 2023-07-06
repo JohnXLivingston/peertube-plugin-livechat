@@ -135,7 +135,7 @@ There is a tutorial, in french, on the
 [le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)
 that explains how to quickly build a dev env using Docker.
 
-A repo was made out of it, check out https://codeberg.org/mose/pt-plugin-dev 
+A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev).
 
 Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.
 There is a dirty hack in the plugin: just create a

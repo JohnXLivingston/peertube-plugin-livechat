@@ -115,7 +115,11 @@ videos_list_description: |
   Don't add private videos, the UUIDs will be sent to the frontend.
 
 no_anonymous_label: "Hide the chat for anonymous users"
-no_anonymous_description: "If checked, anonymous Peertube users won't see the chat."
+no_anonymous_description: |
+  If checked, anonymous Peertube users won't see the chat.
+  This feature is still experimental.
+  If you enabled it, it is highly recommended to also check "Don't publish chat information".
+  Otherwise, some third party tools could try to open the chat, and have unpredictable behaviours.
 
 theming_advanced_description: "<h3>Theming</h3>"
 
