@@ -13,6 +13,7 @@ import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { fillVideoCustomFields } from '../custom-fields'
 import { loc } from '../loc'
+import { isDebugMode } from '../debug'
 
 /**
  * This function adds LiveChat information on video ActivityPub data if relevant.
@@ -99,7 +100,8 @@ async function videoBuildJSONLD (
   // - prosody-room-allow-s2s
   // - prosody-s2s-port
   // For now, this can be tested reading serverInfos.directs2s
-  if (serverInfos.directs2s) {
+  // There is a debug_mode flag to always enable it.
+  if (!!serverInfos.directs2s || isDebugMode(options, 'alwaysPublishXMPPRoom')) {
     discussionLinks.push({
       type: 'Link',
       name: chatTitle,

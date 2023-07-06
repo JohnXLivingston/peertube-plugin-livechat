@@ -4,6 +4,7 @@ import { videoHasWebchat } from '../../../shared/lib/video'
 import { fillVideoCustomFields } from '../custom-fields'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getPublicChatUri } from '../uri/webchat'
+import { isDebugMode } from '../debug'
 
 async function initRSS (options: RegisterServerOptions): Promise<void> {
   const logger = options.peertubeHelpers.logger
@@ -15,7 +16,7 @@ async function initRSS (options: RegisterServerOptions): Promise<void> {
     handler: async (
       result: CustomTag[], { video, liveItem }: { video: Video, liveItem: boolean }
     ): Promise<CustomTag[]> => {
-      if (!liveItem) {
+      if (!liveItem && !isDebugMode(options, 'enablePodcastChatTagForNonLive')) {
         // Note: the Podcast RSS feed specification does not handle chats for non-live.
         // So we just return here.
         return result
@@ -67,7 +68,11 @@ async function initRSS (options: RegisterServerOptions): Promise<void> {
       // In order to connect to the chat using standard xmpp, it requires these settings:
       // - prosody-room-allow-s2s
       // - prosody-s2s-port
-      if (settings['prosody-room-allow-s2s'] && settings['prosody-s2s-port']) {
+      // Or there is a special debug_mode option
+      if (
+        (settings['prosody-room-allow-s2s'] && settings['prosody-s2s-port']) ||
+        isDebugMode(options, 'alwaysPublishXMPPRoom')
+      ) {
         let roomJID: string
         if (settings['prosody-room-type'] === 'channel') {
           roomJID = `channel.${video.channel.id}@room.${prosodyDomain}`

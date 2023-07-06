@@ -15,6 +15,8 @@ interface DebugContent {
   logRotateEvery?: number
   remoteServerInfosMaxAge?: number
   prosodyDebuggerOptions?: ProsodyDebuggerOptions
+  alwaysPublishXMPPRoom?: boolean
+  enablePodcastChatTagForNonLive?: boolean
 }
 
 type DebugNumericValue = 'renewCertCheckInterval'
@@ -22,6 +24,8 @@ type DebugNumericValue = 'renewCertCheckInterval'
 | 'logRotateEvery'
 | 'logRotateCheckInterval'
 | 'remoteServerInfosMaxAge'
+
+type DebugBooleanValue = 'alwaysPublishXMPPRoom' | 'enablePodcastChatTagForNonLive'
 
 let debugContent: DebugContent | null | false = null
 function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
@@ -55,6 +59,8 @@ function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
     debugContent.renewCertCheckInterval = _getNumericOptions(options, json, 'renew_cert_check_interval')
     debugContent.renewSelfSignedCertInterval = _getNumericOptions(options, json, 'renew_self_signed_cert_interval')
     debugContent.remoteServerInfosMaxAge = _getNumericOptions(options, json, 'remote_server_infos_max_age')
+    debugContent.alwaysPublishXMPPRoom = json.always_publish_xmpp_room === true
+    debugContent.enablePodcastChatTagForNonLive = json.enable_podcast_chat_tag_for_nonlive === true
   } catch (err) {
     logger.error('Failed to read the debug_mode file content:', err)
   }
@@ -100,11 +106,19 @@ function unloadDebugMode (): void {
 /**
  * Check if debug mode is enabled
  * @param options server options
+ * @param feature optional feature name.
+ *                Returns true only if the debug_mode file contains a key with that name, and that is true.
  * @returns true if debug mode enabled
  */
-function isDebugMode (options: RegisterServerOptions): boolean {
+function isDebugMode (options: RegisterServerOptions, feature?: DebugBooleanValue): boolean {
   const debugContent = _readDebugFile(options)
-  return !!debugContent
+  if (!debugContent) {
+    return false
+  }
+  if (!feature) {
+    return true
+  }
+  return debugContent[feature] === true
 }
 
 /**
