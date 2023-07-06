@@ -80,7 +80,7 @@ To enable this mode, you juste have to create the
 The simple existence of this file is sufficient to trigger the debug mode.
 To make sure it's taken into account, you can restart your Peertube instance.
 
-This file can contain some JSON to enable more advances options.
+This file can contain some JSON to enable more advanced options.
 To have a list of existing parameters, check `server/lib/debug.ts`.
 Restart Peertube after each content modification.
 
