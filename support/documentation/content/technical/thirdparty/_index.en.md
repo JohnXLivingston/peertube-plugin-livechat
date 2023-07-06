@@ -163,10 +163,6 @@ It is currently required for some endpoint discovery.
 
 The livechat plugin adds some data in Podcast RSS feeds under the [`<podcast:liveItem>`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item), so that the chat can be discovered for live streams.
 
-{{% notice warning %}}
-This part is not implemented yet, but should be available for v7.2.0 release.
-{{% /notice %}}
-
 {{% notice info %}}
 This requires Peertube >= 5.2
 {{% /notice %}}
