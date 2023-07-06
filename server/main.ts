@@ -4,6 +4,7 @@ import { initSettings } from './lib/settings'
 import { initCustomFields } from './lib/custom-fields'
 import { initRouters } from './lib/routers/index'
 import { initFederation } from './lib/federation/init'
+import { initRSS } from './lib/rss/init'
 import { prepareProsody, ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
 import { unloadDebugMode } from './lib/debug'
 import { loadLoc } from './lib/loc'
@@ -30,6 +31,7 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await initCustomFields(options)
   await initRouters(options)
   await initFederation(options)
+  await initRSS(options)
 
   try {
     await prepareProsody(options)

@@ -1,5 +1,4 @@
-
-import type { RegisterServerOptions, VideoObject } from '@peertube/peertube-types'
+import type { RegisterServerOptions, VideoObject, Video } from '@peertube/peertube-types'
 import { getBaseRouterRoute, getBaseWebSocketRoute } from '../helpers'
 import { canonicalizePluginUri } from './canonicalize'
 
@@ -19,7 +18,7 @@ export function getWSS2SUri (options: RegisterServerOptions): string | undefined
   return base + 'xmpp-websocket-s2s'
 }
 
-export function getPublicChatUri (options: RegisterServerOptions, video: VideoObject): string {
+export function getPublicChatUri (options: RegisterServerOptions, video: VideoObject | Video): string {
   const url = getBaseRouterRoute(options) + 'webchat/room/' + encodeURIComponent(video.uuid)
   return canonicalizePluginUri(options, url, {
     removePluginVersion: true
