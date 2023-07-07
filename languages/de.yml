@@ -108,7 +108,10 @@ videos_list_description: |
 
 no_anonymous_label: "Chat für anonyme Benutzer ausblenden"
 no_anonymous_description: "Wenn die Option aktiviert ist, können anonyme Peertube-Nutzer\
-  \ den Chat nicht sehen."
+  \ den Chat nicht sehen.\nDiese Funktion ist noch experimentell.\nWenn Sie diese\
+  \ Option aktiviert haben, wird empfohlen auch die Option \"Chat-Informationen nicht\
+  \ veröffentlichen\" zu aktivieren.\nAndernfalls könnten einige Tools von Drittanbietern\
+  \ versuchen, den Chat zu öffnen, und ein unvorhersehbares Verhalten verursachen.\n"
 
 theming_advanced_description: "<h3>Themen</h3>"
 
