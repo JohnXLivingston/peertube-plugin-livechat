@@ -2,10 +2,14 @@
 
 ## 7.2.0 (Not Released Yet)
 
-## New Features
+### New Features
 
 * Implementing the [FEP-1970](https://codeberg.org/fediverse/fep/src/branch/main/fep/1970/fep-1970.md) draft for ActivityPub chat declaration.
 * Podcast RSS feed support (thanks to [Alecks Gates](https://github.com/agates)).
+
+### Minor changes and fixes
+
+* Translation updates.
 
 ## 7.1.0
 
