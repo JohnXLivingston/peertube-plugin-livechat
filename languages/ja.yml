@@ -63,7 +63,8 @@ all_non_lives_label: 全ての非ライブ配信でチャットを有効にす�
 all_non_lives_description: チェックを入れると、ライブ配信以外のすべての動画でチャットが有効になります。
 videos_list_label: 次の動画でチャットを有効にする
 no_anonymous_label: 匿名ユーザーにチャットを非表示にする
-no_anonymous_description: チェックを入れると、匿名のPeerTubeユーザーはチャットが見えなくなります。
+no_anonymous_description: "チェックを入れると、匿名のPeerTubeユーザーはチャットが見えなくなります。\nこの機能はまだ試験中ものです。\n\
+  有効にする場合、\"チャット情報を公開しない\"にもチェックを入れることを推奨します。\nチェックがない場合、一部のサードパーティーツールがチャットを開こうとし、予期しない挙動をする可能性があります。\n"
 theming_advanced_description: <h3>テーマ設定</h3>
 converse_theme_label: ConverseJSのテーマ
 converse_theme_description: 使用したいconverseJSのテーマを選択してください。
