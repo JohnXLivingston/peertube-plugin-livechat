@@ -24,7 +24,7 @@ web: Web
 important_note_title: <h3>Notas importantes</h3>
 chat_title: <h3>Chat</h3>
 chat_for_live_stream: 'Chat para transmisión en vivo:'
-room_name: Sala apellido
+room_name: Nombre de la Sala
 room_description: Sala descripción
 not_found: No encontrado
 connect_using_xmpp_help: Puede conectar a la sala con una XMPP cuanta externa, y su
@@ -51,7 +51,7 @@ prosody_peertube_uri_label: Peertube url para pedidas de API
 videos_list_label: Activar chat para estos vídeos
 help_builtin_prosody_label: Servidor prosody
 disable_websocket_label: Desactivar Websocket
-prosody_room_allow_s2s_label: Activar conexión a las salas con cuantas externas XMPP
+prosody_room_allow_s2s_label: Activar conexión a la sala con cuentas XMPP externas
 theming_advanced_description: <h3>Tematización</h3>
 diagnostic: "Antes de pedir ayuda, por favor, use la herramienta de diagnóstico:\n\
   <a class=\"peertube-plugin-livechat-launch-diagnostic\">Lanzar diagnóstico</a>\n\
@@ -100,8 +100,10 @@ per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warn
   \ en vivos\".\n</span>\n"
 all_non_lives_description: Si está marcada, el chat se habilitará para todos los vídeos
   que no sean en directo.
-no_anonymous_description: Si se marca, los usuarios anónimos de Peertube no verán
-  el chat.
+no_anonymous_description: "Si se marca, los usuarios anónimos de Peertube no verán\
+  \ el chat.\nFuncionalidad en desarrollo.\nSi la activas, es muy recomendable marcar\
+  \ también \"No publicar información del chat\".\nDe lo contrario, algunas herramientas\
+  \ de terceros podrían intentar abrir el chat , generando comportamientos imprevistos.\n"
 converse_theme_option_concord: Tema concord de ConverseJS
 help_builtin_prosody_description: "Este plugin utiliza el servidor XMPP Prosody para\
   \ manejar salas de chat.<br>\nEste plugin viene con una AppImage de Prosody, que\
@@ -110,11 +112,59 @@ autocolors_description: "Intenta detectar automáticamente los colores del tema 
   \ del usuario.<br>\nCuando esta configuración está habilitada, el plugin intenta\
   \ detectar automáticamente los colores para aplicarlos al tema del chat.<br>\nSi\
   \ esto no funciona correctamente para algunos de sus temas de Peertube, puede deshabilitar\
-  \ esta opción.\nPuede informar de un error en el <a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
-  \ target=\"_blank\">rastreador de problemas</a> oficial. No olvide especificar qué\
-  \ tema no funciona.\n"
+  \ esta opción.\nPuede informar de un error en el \n<a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
+  \ target=\"_blank\">\nrastreador de problemas</a> oficial. No olvide especificar\
+  \ qué tema no funciona.\n"
 chat_style_label: Atributo de estilo iframe del Webchat
 chat_style_description: "Se agregarán estilos adicionales en el atributo de estilo\
   \ iframe. <br>\nPor ejemplo: height:400px;\n"
 prosody_advanced_description: <h3>Configuración avanzada del servidor de chat</h3>
 system_prosody_label: Use el sistema Prosody
+system_prosody_description: "Advertencia: no marque este parametro si no está seguro\
+  \ de lo que está haciendo. <br>\nAl seleccionar este parametro su Peertube utilizará\
+  \ el servidor Prosody por defecto en su sistema, y no el incorporado en la AppImage.\
+  \ <br>\nUtilize esto solamente si encuentra problemas con el servidor Prosody de\
+  \ la AppImage.\n"
+disable_websocket_description: "Con Peertube &gt;= 5.0.0, este plugin intenta usar\
+  \ una conexión Websocket para chatear.\nSi el navegador o la conexión del usuario\
+  \ son incompatibles, el navegador recurrirá automáticamente al protocolo BOSH.\n\
+  <br>\nEn ciertos casos esto puede fallar. Por ejemplo, si tiene un proxy inverso\
+  \ frente a Peertube que no\npermite una conexión Websocket para plugins.\nEn tal\
+  \ caso, puede marcar este parámetro para deshabilitar las conexiones Websocket.\n"
+prosody_peertube_uri_description: "Por favor, deje esta configuración vacía si no\
+  \ sabe lo que está haciendo.<br>\nEn algunos casos raros, Prosody no puede llamar\
+  \ a la API de Peertube desde su URI pública.\nPuede usar este campo para personalizar\
+  \ el URI de Peertube para los módulos de Prosody\n(por ejemplo, con \"http://localhost:9000\"\
+  \ o \"http://127.0.0.1:9000\").\n"
+prosody_room_allow_s2s_description: "Al habilitar esta opción, será posible conectarse\
+  \ a salas utilizando cuentas XMPP externas y clientes XMPP.<br>\nAdvertencia, habilitar\
+  \ esta opción puede solicitar un servidor adicional y una configuración de DNS.\n\
+  Por favor, consulte la documentación:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/\"\
+  \ target=\"_blank\">\n   Habilitar  conexiones con cuentas XMPP externas.\n</a>\n"
+prosody_muc_expiration_description: "Aquí puede elegir cuánto tiempo el servidor conserva\
+  \ el contenido de la sala de chat. El valor puede ser:\n<ul>\n     <li><b>60</b>:\
+  \ el contenido se guardará durante 60 <b>segundos</b>. Puede reemplazar 60 por cualquier\
+  \ valor entero.</li>\n     <li><b>1d</b>: el contenido se guardará durante 1 <b>día</b>.\
+  \ Puede reemplazar 1 por cualquier valor entero.</li>\n     <li><b>1s</b>: el contenido\
+  \ se guardará durante 1 <b>semana</b>. Puede reemplazar 1 por cualquier valor entero.</li>\n\
+  \     <li><b>1m</b>: el contenido se guardará durante 1 <b>mes</b>. Puede reemplazar\
+  \ 1 por cualquier valor entero.</li>\n     <li><b>1y</b>: el contenido se guardará\
+  \ durante 1 <b>año</b>. Puede reemplazar 1 por cualquier valor entero.</li>\n  \
+  \   <li><b>nunca</b>: el contenido nunca caducará y se mantendrá para siempre.</li>\n\
+  </ul>\n"
+videos_list_description: "UUIDs de los videos para los cuales se desea un chat web.\n\
+  Pueden ser videos no en vivo. Una por línea. <br />\nPuede agregar comentarios:\
+  \ todo lo que este detras del caracter # no sera interpretado y las líneas vacías\
+  \ ignoradas. <br />\nNo agregue videos privados, los UUID se enviarán al frontend.\n"
+prosody_port_description: "El puerto que sera usado por el servidor Prosody.<br>\n\
+  Cámbielo si este puerto ya está en uso en su servidor.<br>\nPuede cerrar este puerto\
+  \ con su cortafuegos, no sera accesible desde el mundo exterior.<br>\nNota: esto\
+  \ podría cambiar en un futuro cercano, ya que está previsto agregar una función\
+  \ para activar las conexiones externas.\n"
+prosody_muc_log_by_default_label: Contenido de los logs de las salas por defecto
+prosody_muc_log_by_default_description: "Si está marcado, el contenido de la sala\
+  \ de chat se guardará de forma predeterminada.\nCualquier usuario que se una a una\
+  \ sala verá lo que se escribió antes de unirse.<br>\nTenga en cuenta que siempre\
+  \ es posible habilitar/deshabilitar el contenido\nsalvaguardado de una sala específica,\
+  \ editando sus propiedades.\n"
+prosody_muc_expiration_label: Caducidad del historial de la sala
