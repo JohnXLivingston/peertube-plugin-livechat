@@ -55,7 +55,7 @@ function generatePo4aConf() {
     echo -n '[type: markdown] ' >> $po4afile
     echo -n $source_file >> $po4afile
     echo -n " " >> $po4afile
-    target_file=$(echo "$source_file" | sed -E "s/\/content\/en\//\/content\/translation\/\$lang\//")
+    target_file=$(echo "$source_file" | sed -E "s/\/content\/en\//\/content\/translations\/\$lang\//")
     echo -n '$lang:'$target_file >> $po4afile
     echo "" >> $po4afile
   done
