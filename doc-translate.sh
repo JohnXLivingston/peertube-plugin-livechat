@@ -41,7 +41,12 @@ function generatePo4aConf() {
   # dont wrap lines:
   echo -n 'opt:"--option neverwrap" ' >> $po4afile
   # handling hugo directive (when full line). For example: {{% notice tip %}}, {{% children %}}, ... :
-  echo -n 'opt:"--option breaks='^\{\{%.*%\}\}$'" ' >> $po4afile
+  echo -n 'opt:"--option breaks=' >> $po4afile
+  echo -n "'" >> $po4afile
+  echo -n '^\{\{%.*%\}\}$' >> $po4afile
+  echo -n "'" >> $po4afile
+  echo -n '" ' >> $po4afile
+
   echo -n 'opt:"--addendum-charset=UTF-8" ' >> $po4afile
   echo -n 'opt:"--localized-charset=UTF-8" ' >> $po4afile
   echo -n 'opt:"--master-charset=UTF-8" ' >> $po4afile
