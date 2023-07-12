@@ -56,7 +56,7 @@ function generatePo4aConf() {
   echo "" >> $po4afile
 
   # We must now list all english files to translate:
-  find support/documentation/content/en/ -name '*.md' | while read source_file; do
+  find support/documentation/content/en/ -name '*.md' | sort | while read source_file; do
     echo -n '[type: markdown] ' >> $po4afile
     echo -n $source_file >> $po4afile
     echo -n " " >> $po4afile
