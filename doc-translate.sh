@@ -2,13 +2,13 @@
 
 set -euo pipefail
 
+po4afile="support/documentation/po/po4a.conf"
+
 function getLangs() {
   grep -P '\[Languages.\w+\]' support/documentation/config.toml | sed -E 's/^.*\.(\w+)\].*$/\1/' | grep -v en
 }
 
 function generatePo4aConf() {
-  po4afile="support/documentation/po/po4a.conf"
-
   echo "    creating $po4afile file."
   echo "" > $po4afile
 
@@ -55,10 +55,16 @@ function generatePo4aConf() {
     echo -n '[type: markdown] ' >> $po4afile
     echo -n $source_file >> $po4afile
     echo -n " " >> $po4afile
-    target_file=$(echo "$source_file" | sed -E "s/\/content\/en\//\/translation\/\$lang\//")
+    target_file=$(echo "$source_file" | sed -E "s/\/content\/en\//\/content\/translation\/\$lang\//")
     echo -n '$lang:'$target_file >> $po4afile
     echo "" >> $po4afile
   done
 }
 
+function runPo4a() {
+  echo "Running po4a..."
+  po4a $po4afile
+}
+
 generatePo4aConf
+runPo4a

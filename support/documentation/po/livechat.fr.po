@@ -1,0 +1,3481 @@
+# French translations for PACKAGE package
+# Copyright (C) 2023 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-07-12 11:59+0200\n"
+"PO-Revision-Date: 2023-07-12 11:59+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/contact/_index.md
+#, no-wrap
+msgid "Contact the author"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/contact/_index.md
+#, no-wrap
+msgid "Contact me"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contact/_index.md
+#, no-wrap
+msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contact/_index.md
+#, no-wrap
+msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Translate the plugin"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Translate"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"You can contribute to this plugin translation.\n"
+"Translations are handled using the [Weblate](https://weblate.org/) software,\n"
+"using [Framasoft Weblate instance](https://weblate.framasoft.org/).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Never modify directly files in the `languages` folder, this could lead to conflicts.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "How to"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Create an account: https://weblate.framasoft.org/accounts/register/\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Validate your email and follow the link sent\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Create your password and setup your account\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Choose the locale you want to translate\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Just translate missing sentences, or correct the ones that seems incorrect to you.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"There might be some «very technical» strings. If you are not 100% sure of\n"
+"the meaning, or of your translation, you better not translate it,\n"
+"so it will display in english.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Documentation translation"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Fow now, this is not done on Weblate. I am still looking for the good technical solution.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Please refer to the \"documentation\" documentation page.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Adding a new locale"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"If you think there is a missing locale, please check first if it is handled in Peertube.\n"
+"If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Adding new strings / use translations in the code"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"If you are working on new features, and need new strings, you can create them directly in Weblate.\n"
+"The english version is mandatory. Start with it.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"Each string is linked to a key (for example `use_chat`).\n"
+"Choose an explicit key in english, lower case.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files,\n"
+"but avoid to commit these changes (to minimize conflict risks).\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Use translations in front-end code"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.\n"
+"The constant name must:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "start with the prefix \"LOC_\"\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "use the string key, upper cased\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "you just have to declare its type, not its value\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "For example, to use \"use_chat\", you have to declare:\n"
+msgstr ""
+
+#. type: Fenced code block (typescript)
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "declare const LOC_USE_CHAT: string\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"The `build-client.js` script will read the `client/@types/global.d.ts`,\n"
+"search for such constants, and load their values from the languages files.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "Use translations in back-end code"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"In theory, the only parts of the backend code where you need localization is the\n"
+"settings declaration and standardized data (ActivityPub, RSS, ...).\n"
+"Here we need to get english strings from the translation key.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"Note: you should never need another language translation from backend code.\n"
+"Localization must be done on front-end.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid ""
+"There is a `lib/loc.ts` module providing a `loc()` function.\n"
+"Just pass it the key to have the english string: `loc('diagnostic')`'.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Contributor Covenant Code of Conduct"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Code of Conduct"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Our Pledge"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"We as members, contributors, and leaders pledge to make participation in our\n"
+"community a harassment-free experience for everyone, regardless of age, body\n"
+"size, visible or invisible disability, ethnicity, sex characteristics, gender\n"
+"identity and expression, level of experience, education, socio-economic status,\n"
+"nationality, personal appearance, race, caste, color, religion, or sexual identity\n"
+"and orientation.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"We pledge to act and interact in ways that contribute to an open, welcoming,\n"
+"diverse, inclusive, and healthy community.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Our Standards"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Examples of behavior that contributes to a positive environment for our\n"
+"community include:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Demonstrating empathy and kindness toward other people\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Being respectful of differing opinions, viewpoints, and experiences\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Giving and gracefully accepting constructive feedback\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Accepting responsibility and apologizing to those affected by our mistakes,\n"
+"and learning from the experience\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Focusing on what is best not just for us as individuals, but for the\n"
+"overall community\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Examples of unacceptable behavior include:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"The use of sexualized language or imagery, and sexual attention or\n"
+"advances of any kind\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Trolling, insulting or derogatory comments, and personal or political attacks\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Public or private harassment\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Publishing others' private information, such as a physical or email\n"
+"address, without their explicit permission\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Other conduct which could reasonably be considered inappropriate in a\n"
+"professional setting\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Enforcement Responsibilities"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Community leaders are responsible for clarifying and enforcing our standards of\n"
+"acceptable behavior and will take appropriate and fair corrective action in\n"
+"response to any behavior that they deem inappropriate, threatening, offensive,\n"
+"or harmful.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Community leaders have the right and responsibility to remove, edit, or reject\n"
+"comments, commits, code, wiki edits, issues, and other contributions that are\n"
+"not aligned to this Code of Conduct, and will communicate reasons for moderation\n"
+"decisions when appropriate.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Scope"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"This Code of Conduct applies within all community spaces, and also applies when\n"
+"an individual is officially representing the community in public spaces.\n"
+"Examples of representing our community include using an official e-mail address,\n"
+"posting via an official social media account, or acting as an appointed\n"
+"representative at an online or offline event.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Enforcement"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Instances of abusive, harassing, or otherwise unacceptable behavior may be\n"
+"reported to the community leaders responsible for enforcement by mail at\n"
+"git.[at].john-livingston.fr.\n"
+"All complaints will be reviewed and investigated promptly and fairly.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"All community leaders are obligated to respect the privacy and security of the\n"
+"reporter of any incident.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Enforcement Guidelines"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Community leaders will follow these Community Impact Guidelines in determining\n"
+"the consequences for any action they deem in violation of this Code of Conduct:\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "1. Correction"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"**Community Impact**: Use of inappropriate language or other behavior deemed\n"
+"unprofessional or unwelcome in the community.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"**Consequence**: A private, written warning from community leaders, providing\n"
+"clarity around the nature of the violation and an explanation of why the\n"
+"behavior was inappropriate. A public apology may be requested.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "2. Warning"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"**Community Impact**: A violation through a single incident or series\n"
+"of actions.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"**Consequence**: A warning with consequences for continued behavior. No\n"
+"interaction with the people involved, including unsolicited interaction with\n"
+"those enforcing the Code of Conduct, for a specified period of time. This\n"
+"includes avoiding interactions in community spaces as well as external channels\n"
+"like social media. Violating these terms may lead to a temporary or\n"
+"permanent ban.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "3. Temporary Ban"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"**Community Impact**: A serious violation of community standards, including\n"
+"sustained inappropriate behavior.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"**Consequence**: A temporary ban from any sort of interaction or public\n"
+"communication with the community for a specified period of time. No public or\n"
+"private interaction with the people involved, including unsolicited interaction\n"
+"with those enforcing the Code of Conduct, is allowed during this period.\n"
+"Violating these terms may lead to a permanent ban.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "4. Permanent Ban"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"**Community Impact**: Demonstrating a pattern of violation of community\n"
+"standards, including sustained inappropriate behavior,  harassment of an\n"
+"individual, or aggression toward or disparagement of classes of individuals.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"**Consequence**: A permanent ban from any sort of public interaction within\n"
+"the community.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid "Attribution"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"This Code of Conduct is adapted from the [Contributor Covenant][homepage],\n"
+"version 2.1, available at\n"
+"[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"Community Impact Guidelines were inspired by\n"
+"[Mozilla's code of conduct enforcement ladder][Mozilla CoC].\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"For answers to common questions about this code of conduct, see the FAQ at\n"
+"[https://www.contributor-covenant.org/faq][FAQ]. Translations are available\n"
+"at [https://www.contributor-covenant.org/translations][translations].\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#, no-wrap
+msgid ""
+"[homepage]: https://www.contributor-covenant.org\n"
+"[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html\n"
+"[Mozilla CoC]: https://github.com/mozilla/diversity\n"
+"[FAQ]: https://www.contributor-covenant.org/faq\n"
+"[translations]: https://www.contributor-covenant.org/translations\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/contributing/feedback/_index.md
+#, no-wrap
+msgid "Give your feedback"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/feedback/_index.md
+#, no-wrap
+msgid ""
+"You don't need to know how to code to start contributing to this plugin! Other\n"
+"contributions are very valuable too, among which: you can test the software and\n"
+"report bugs, you can give feedback, features that you are\n"
+"interested in, user interface, design, ...\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Develop"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem\n"
+"before you start working on it, and inform the community that you begin coding by claiming the issue.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Pull Request must be done on the `main` branch.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Prerequisite for building this plugin:\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "you must have `npm` installed\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "To clone the repository:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"# Clone the repository\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git\n"
+"# Be sure to checkout the main branch\n"
+"git checkout main\n"
+"# Initialize the submodules. This command must be run again if any submodules' version changes.\n"
+"git submodule update --init --recursive\n"
+"\n"
+"# Install NPM dependencies and build the module for the first time:\n"
+"npm install\n"
+"\n"
+"# Build the plugin after a modification:\n"
+"npm run build\n"
+"\n"
+"# If you have a fork from the repository, add it as remote (example):\n"
+"git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git\n"
+"\n"
+"# Create a local branch for you developments, and checkout it (example):\n"
+"git checkout my_development # Note: if an issue is associated, use fix_1234 as your branch name (where 1234 is the issue's number)\n"
+"# To propose your modifications, push your branch to your repository (example):\n"
+"git push --set-upstream me my_development\n"
+"# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.\n"
+"Once you are ready for a code review before merge, submit a Pull Request. In any case, please\n"
+"link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "You can build the plugin with extra debug features simply by using:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "NODE_ENV=dev npm run build\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "ESBuild vs Typescript"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.\n"
+"ESBuild can handle Typescript, but does not check types\n"
+"(see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
+"That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
+"Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Debug Mode"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"There is a debug mode for this plugin, that shorten some delay.\n"
+"For example, some log files will rotate every two minutes, instead of once per day.\n"
+"This permit to test more easily certain actions, for which it could normally take hours or days to wait.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"To enable this mode, you juste have to create the\n"
+"`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file\n"
+"(replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"The simple existence of this file is sufficient to trigger the debug mode.\n"
+"To make sure it's taken into account, you can restart your Peertube instance.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"This file can contain some JSON to enable more advanced options.\n"
+"To have a list of existing parameters, check `server/lib/debug.ts`.\n"
+"Restart Peertube after each content modification.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"Don't enable this mode on a production server, neither on a public server.\n"
+"This could cause security issues.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Restart Prosody"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"When debug mode is enabled, you can restart Prosody using this API call:\n"
+"`http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+"This call don't need any authentificaiton.\n"
+"It can be done from a command line, for example using\n"
+"`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Prosody debugger"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.\n"
+"Then, add this in the `debub_mode` file:\n"
+msgstr ""
+
+#. type: Fenced code block (json)
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"{\n"
+"  \"debug_prosody\": {\n"
+"    \"debugger_path\": \"/the_path_to_mobdebug/src\",\n"
+"    \"host\": \"localhost\",\n"
+"    \"port\": \"8172\"\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Restart Peertube.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Start your debugger server.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"For Prosody to connect to the debugger, call the API\n"
+"`http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+"This call does not need any authentication.\n"
+"It can be done from a command line, for example with\n"
+"`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+"You can even configure your debug server to launch this request automatically.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Prosody will then restart, connecting to the debugger.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Quick dev environment using Docker"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"There is a tutorial, in french, on the\n"
+"[le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)\n"
+"that explains how to quickly build a dev env using Docker.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.\n"
+"There is a dirty hack in the plugin: just create a\n"
+"`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes,\n"
+"then restart containers.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/contributing/_index.md
+#, no-wrap
+msgid "Contributing"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/_index.md
+#, no-wrap
+msgid "Interested in contributing? Awesome!\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Document the plugin, or translate the documentation."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/contributing/document/_index.md
+#: support/documentation/content/en/documentation/_index.md
+#, no-wrap
+msgid "Documentation"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "General information"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are\n"
+"working on the same thing, and prevent conflicts.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Documentation work has to be merged in the `main` branch.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "The documentation source code is in the `support/documentation/content` folder.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"The documentation is generated using [Hugo](https://gohugo.io/).\n"
+"You have to install it on your computer if you want to preview your work.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"The used theme is [hugo-theme-learn](https://learn.netlify.app/).\n"
+"You should read its documentation before starting editing the documentation.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"When a new plugin version is released, or when documentation is updated,\n"
+"plugin maintainers will merge the `main` branch to the `documentation` branche.\n"
+"This will trigger github and gitlab pipelines, and update published documentation.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Translations"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "The principal language is english (`en` code).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"The different translations of the same file are side by side in the\n"
+"tree, and are identified by a language code in the file name extension.\n"
+"Example: `_index.fr.md` is the French translation of `_index.en.md`.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Please note that a missing translation file will not appear in the menus of the generated site.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "**Always make sure to create files for all languages**, even if the translation is not yet available.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "For this, there is a script `doc-generate-missing-translations.sh` in the root of the repository. When you add a new file, you just have to create the english version, then run this script. It will create all  missing translations, putting a sample message inviting the user to read the english version.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Add a new language"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"Then, run the `doc-generate-missing-translations.sh` script.\n"
+"It will create all the missing files.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"Then you can translate them one by one.\n"
+"If the translations are not complete, it does not matter, the generated files will display a message suggesting to change the language.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Preview"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "To preview your modifications, just run:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "hugo serve -s support/documentation/\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"Then open your browser on the address\n"
+"[http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).\n"
+"This page will automatically refresh on each modification.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Publication"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/intro/_index.md
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Introduction"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid ""
+"| | |\n"
+"|---|---|\n"
+"| ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Displaying the livechat with 3rd party software."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Third party"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"This page describes experimental features.\n"
+"These features are available with the plugin version >= 7.2.0.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"Peertube is part of the Fediverse. So Peertube video can be watched from other Peertube instances,\n"
+"and from various other softwares:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "from a Mastodon (or other fediverse application) instance,\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "from a mobile app (Fedilab, Tusky, ...),\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "from desktop fediverse app,\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "...\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "This livechat plugin is using well known standards, so it is possible to join chat rooms even when not viewing the video on Peertube.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "There are basically 2 ways to join the chat room associated to a video:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "opening a web page (with an url like `https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535`),\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "using a XMPP client (and joining a room like `xmpp://8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.yourinstance.tld?join`)\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"Joining the chat using a XMPP client is not always possible. It requires some DNS and server configuration.\n"
+"It will only be possible if instance's admins have correctly setup the\n"
+"[external XMPP clients connection](/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/) feature.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Don't try to gues these url and connection methods yourself. Please report to next chapters.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Chat discovery"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Using ActivityPub"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "The livechat plugin adds some data in Video ActivityPub objects, so that the chat can be discovered.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "This requires Peertube >= 5.1\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "This follows the [FEP-1970](https://codeberg.org/fediverse/fep/src/branch/main/fep/1970/fep-1970.md) recommendations.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"At the time of the writing, this FEP is in draft status, and the livechat plugin is a Proof-of-concept.\n"
+"Until the FEP is adopted, the specification can change, and the livechat plugin will be adapted accordingly.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Basically, the chat will be declared as `attachments` on the `Video` object, using the `discussion` relation.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "By default, here is an example of what you will get:\n"
+msgstr ""
+
+#. type: Fenced code block (javascript)
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"{\n"
+"  \"@context\": [\n"
+"    \"https://www.w3.org/ns/activitystreams\",\n"
+"    \"https://w3id.org/security/v1\",\n"
+"    {\n"
+"      \"RsaSignature2017\": \"https://w3id.org/security#RsaSignature2017\"\n"
+"    },\n"
+"    {\n"
+"      // ...\n"
+"    }\n"
+"  ],\n"
+"  \"to\": [\n"
+"    \"https://www.w3.org/ns/activitystreams#Public\"\n"
+"  ],\n"
+"  \"cc\": [\n"
+"    \"https://yourinstance.tld/accounts/root/followers\"\n"
+"  ],\n"
+"  \"type\": \"Video\",\n"
+"  \"id\": \"https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535\",\n"
+"  \"name\": \"The video title\",\n"
+"  // ...\n"
+"  \"url\": [ /* ... */ ],\n"
+"  \"attachment\": [\n"
+"    {\n"
+"      \"type\": \"Link\",\n"
+"      \"name\": \"Chat for live stream: The video title\",\n"
+"      \"rel\": \"discussion\",\n"
+"      \"href\": \"https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535\"\n"
+"    }\n"
+"  ]\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"In case the instance has activated the\n"
+" [external XMPP clients connection](/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/) feature:\n"
+msgstr ""
+
+#. type: Fenced code block (javascript)
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"{\n"
+"  \"@context\": [\n"
+"    \"https://www.w3.org/ns/activitystreams\",\n"
+"    \"https://w3id.org/security/v1\",\n"
+"    {\n"
+"      \"RsaSignature2017\": \"https://w3id.org/security#RsaSignature2017\"\n"
+"    },\n"
+"    {\n"
+"      // ...\n"
+"    }\n"
+"  ],\n"
+"  \"to\": [\n"
+"    \"https://www.w3.org/ns/activitystreams#Public\"\n"
+"  ],\n"
+"  \"cc\": [\n"
+"    \"https://yourinstance.tld/accounts/root/followers\"\n"
+"  ],\n"
+"  \"type\": \"Video\",\n"
+"  \"id\": \"https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535\",\n"
+"  \"name\": \"The video title\",\n"
+"  // ...\n"
+"  \"url\": [ /* ... */ ],\n"
+"  \"attachment\": [\n"
+"    {\n"
+"      \"type\": \"Link\",\n"
+"      \"name\": \"Chat for live stream: The video title\",\n"
+"      \"rel\": \"discussion\",\n"
+"      \"href\": \"https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535\"\n"
+"    },\n"
+"    {\n"
+"      \"type\": \"Link\",\n"
+"      \"name\": \"Chat for live stream: The video title\",\n"
+"      \"rel\": \"discussion\",\n"
+"      \"href\": \"xmpp://8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.yourinstance.tld?join\"\n"
+"    }\n"
+"  ]\n"
+"}\n"
+msgstr ""
+
+#. type: Title ####
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Algorithm"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "If you want to display the chat in a web page or in an iframe, here is what you should do:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "get the Video ActivityPub object,\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "if there is no `attachment` key, stop.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "loop through the `attachment` values (if `attachment` is not an array, just iterate on this single value)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "search for an entry with `rel` === `discussion`, and with `href` using the `https` scheme (that begins with `https://`)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "if found, open this href\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "If you want to open the chat room using the XMPP protocol:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "search for an entry with `rel` === `discussion`, and with `href` using the `xmpp` scheme (that begins with `xmpp://`)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "if found, open this xmpp uri with your client, or connect to the XMPP room at that address\n"
+msgstr ""
+
+#. type: Title ####
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Additional notes"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"In the ActivityPub object, there is also a `peertubeLiveChat` entry.\n"
+"Don't use the content of this entry. This is specific to the livechat plugin, and can be changed or removed in a near future.\n"
+"It is currently required for some endpoint discovery.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Using Podcast RSS feed"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "The livechat plugin adds some data in Podcast RSS feeds under the [`<podcast:liveItem>`](https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md#live-item), so that the chat can be discovered for live streams.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "This requires Peertube >= 5.2\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "The `<podcast:chat>` element is currently only supported for live streams.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "This follows the [`<podcast:chat>`](https://github.com/Podcastindex-org/podcast-namespace/discussions/502) proposal.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"At the time of the writing, this proposal is in draft status, and the livechat plugin is a Proof-of-concept.\n"
+"Until the proposal is adopted, the specification can change, and the livechat plugin will be adapted accordingly.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "Basically, the chat will be declared as tag under on the `<podcast:liveItem>` element.\n"
+msgstr ""
+
+#. type: Fenced code block (xml)
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"<podcast:liveItem status=\"live\" start=\"2023-07-06T18:00:00.000Z\">\n"
+"  <title>The video title</title>\n"
+"  <guid isPermaLink=\"false\">e32b4890-983b-4ce5-8b46-f2d6bc1d8819_2023-07-06T18:00:00.000Z</guid>\n"
+"  <link>https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535</link>\n"
+"  <podcast:socialInteract\n"
+"    uri=\"https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535\"\n"
+"    protocol=\"activitypub\"\n"
+"    accountUrl=\"https://yourinstance.tld/a/youraccount\"\n"
+"  />\n"
+"  <enclosure url=\"https://yourinstance.tld/path/to/video/master.m3u8\" type=\"application/x-mpegURL\" />\n"
+"  <podcast:alternateEnclosure type=\"application/x-mpegURL\" lang=\"en\" title=\"HLS\" default=\"true\">\n"
+"    <podcast:source uri=\"https://yourinstance.tld/path/to/video/master.m3u8\" />\n"
+"  </podcast:alternateEnclosure>\n"
+"  <itunes:image href=\"https://yourinstance.tld/lazy-static/previews/8df24108-6e70-4fc8-b1cc-f2db7fcdd535.jpg\" />\n"
+"  <podcast:chat \n"
+"    server=\"yourinstance.tld\"\n"
+"    protocol=\"xmpp\"\n"
+"    embedUrl=\"https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535\"\n"
+"  />\n"
+"</podcast:liveItem>\n"
+msgstr ""
+
+#. type: Fenced code block (xml)
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid ""
+"<podcast:liveItem status=\"live\" start=\"2023-07-06T18:00:00.000Z\">\n"
+"  <title>The video title</title>\n"
+"  <guid isPermaLink=\"false\">e32b4890-983b-4ce5-8b46-f2d6bc1d8819_2023-07-06T18:00:00.000Z</guid>\n"
+"  <link>https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535</link>\n"
+"  <podcast:socialInteract\n"
+"    uri=\"https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535\"\n"
+"    protocol=\"activitypub\"\n"
+"    accountUrl=\"https://yourinstance.tld/a/youraccount\"\n"
+"  />\n"
+"  <enclosure url=\"https://yourinstance.tld/path/to/video/master.m3u8\" type=\"application/x-mpegURL\" />\n"
+"  <podcast:alternateEnclosure type=\"application/x-mpegURL\" lang=\"en\" title=\"HLS\" default=\"true\">\n"
+"    <podcast:source uri=\"https://yourinstance.tld/path/to/video/master.m3u8\" />\n"
+"  </podcast:alternateEnclosure>\n"
+"  <itunes:image href=\"https://yourinstance.tld/lazy-static/previews/8df24108-6e70-4fc8-b1cc-f2db7fcdd535.jpg\" />\n"
+"  <podcast:chat \n"
+"    server=\"yourinstance.tld\"\n"
+"    protocol=\"xmpp\"\n"
+"    space=\"8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.yourinstance.tld\" \n"
+"    embedUrl=\"https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535\"\n"
+"  />\n"
+"</podcast:liveItem>\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "get the Podcast RSS feed for the channel,\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "if there is no `<podcast:liveItem>` element under the `<channel>`, stop.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "find the `<podcast:liveItem>` you are looking for\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "`<podcast:socialInteract>` can be used to cross-reference the items with ActivityPub\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "if there is no `<podcast:chat>` element under the `<podcast:liveItem>`, stop.\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "loop through the `<podcast:chat>` values (if `<podcast:chat>` is not an array, just iterate on this single value)\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "there should only be one, but you should expect to handle several just in case\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "search for the first entry `protocol` === `xmpp` and an `embedUrl` attribute\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "if found, open this embedUrl\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "search for the first entry `protocol` === `xmpp` and a `space` attribute\n"
+msgstr ""
+
+#. type: Bullet: '  * '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "space should be an XMPP JID for a MUC\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/technical/thirdparty/_index.md
+#, no-wrap
+msgid "if found, open this XMPP JID with your client after converting it to a join URI, or connect to the XMPP room at that address\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/technical/_index.md
+#, no-wrap
+msgid "Technical documentation"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/issues/_index.md
+#, no-wrap
+msgid "Bug tracking / New features requests"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/issues/_index.md
+#, no-wrap
+msgid "Bug tracking & new features"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/issues/_index.md
+#, no-wrap
+msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/issues/_index.md
+#, no-wrap
+msgid "To have a glimpse to the roadmap for upcoming features, please refer to:\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/issues/_index.md
+#, no-wrap
+msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/issues/_index.md
+#, no-wrap
+msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/issues/_index.md
+#, no-wrap
+msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid "Plugin Credits"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid "Credits"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid ""
+"[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json),\n"
+"[COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md)\n"
+"and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE)\n"
+"files contain the license information for this software and its dependencies.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid ""
+"Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).\n"
+"The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, no-wrap
+msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "Known issues: CPU Compatibility"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.\n"
+"It is not compatible with other CPU architectures.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"To use the plugin, you will have to manually install Prosody on your server\n"
+"(see below).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"Note: the plugin requires Prosody >= 0.12.0.\n"
+"If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "Once it is done, you have to check `Use system Prosody` in the plugin settings.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "On non-docker Peertube installation"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"For standard installation, you just have to install the official `prosody` package\n"
+"for your linux distribution.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "For example, on Debian/Ubuntu:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "sudo apt install prosody\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"You can then disable the service that starts automatically when you install\n"
+"Prosody (the plugin will launch a Prosody process, there is no need for the\n"
+"service to run).\n"
+"For example, on Debian/Ubuntu (and other Systemd based linux distributions):\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "sudo systemctl disable prosody && sudo systemctl stop prosody\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"Warning: do not disable Prosody if it is used for another service on your server,\n"
+"like for example Jitsi.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "Docker"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"You will have to generate a Peertube image that includes Prosody in the same\n"
+"container that Peertube.\n"
+"I know this is not the standard way to do this with Docker, but keep in mind it\n"
+"is a temporary workaround.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"To generate and use such an image, please refer to the Docker documentation.\n"
+"The Docker file to generate the image should be:\n"
+msgstr ""
+
+#. type: Fenced code block (Docker)
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"FROM chocobozzz/peertube:production-bullseye\n"
+"\n"
+"RUN apt -y update && apt install -y prosody && apt -y clean\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid "Yunohost"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"You have to disable `metronome` (the XMPP server provided by Yunohost), and\n"
+"install `prosody`.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, no-wrap
+msgid ""
+"This is already done by the Yunohost Peertube application, as it was required for the\n"
+"plugin before the v6.0.0.\n"
+"But it may be removed in a near feature (to avoid drawbacks of this method).\n"
+"I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks,\n"
+"and maximize compatibility.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
+#, no-wrap
+msgid "Important notes when upgrading for an older version."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
+#, no-wrap
+msgid "Upgrade from version older than 6.0.0"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
+#, no-wrap
+msgid "IMPORTANT NOTE"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
+#, no-wrap
+msgid "Since version v6.0.0, this plugin does not need any Prosody installation.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
+#, no-wrap
+msgid "If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
+#, no-wrap
+msgid "If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/installation/_index.md
+#, no-wrap
+msgid "Plugin peertube-plugin-livechat installation guide"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/installation/_index.md
+#, no-wrap
+msgid "Installation guide"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/_index.md
+#: support/documentation/content/en/_index.md
+#, no-wrap
+msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/_index.md
+#, no-wrap
+msgid "To install or update the plugin, **just use the Peertube web admin interface**.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/_index.md
+#, no-wrap
+msgid "Here are some other more specific instructions:\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid "Plugin peertube-plugin-livechat moderation"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid "Moderation"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid ""
+"You can access room settings and moderation tools by opening the chat in a new window,\n"
+"and using the dropdown menu at the top right.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid "Notes"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid ""
+"All instance moderators and admins will be owner of created chat rooms.\n"
+"If the video is local (not from a remote Peertube), the video owner will be admin in the chat room.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid ""
+"You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.\n"
+"When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid "Connect to chat using a XMPP client"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid "XMPP Clients"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid ""
+"This chat plugin relies on the XMPP protocol (also known as Jabber).\n"
+"It is therefore possible to connect to the chats using\n"
+"[XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).\n"
+"This can be useful for example to facilitate moderation operations.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid ""
+"The features described on this page must be enabled and configured by\n"
+"your Peertube instance's administrators. You may therefore not have access to them.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Login to your Peertube account"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "This feature is not yet available, and will come in a future version of the plugin.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Connection using an external XMPP account"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid ""
+"If this feature is enabled on your instance, you can connect to Peertube\n"
+"chats using any XMPP account.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid ""
+"To get the address of the room you want to join, you can use the \"share chat\"\n"
+"button that is located above the chat:\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid ""
+"By default, the share button is only visible to the owner of the video,\n"
+"and the admins/moderators of the instance.\n"
+"However, admins can decide to display this button for everyone.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid "Then, choose \"Connect using XMPP\":\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid "![Share XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Then you just have to click on \"open\" or copy/paste the address of the chat room into your XMPP client\n"
+"(using the \"join a room\" feature).\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "Documentation to stream the chat content using OBS."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "OBS"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "OBS Overlay"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "If you are using OBS for streaming, you can easily include the chat in your stream.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid ""
+"You can use the «share chat link» feature to generate an URL to your chat.\n"
+"The button should be near the chat if you are the video owner (unless it was desactivated by your server admins).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid ""
+"Check the «readonly» checkbox in the modal.\n"
+"Then use this link as a «web browser source» in OBS.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid ""
+"You can use the «Transparent background» to have a transparent background in OBS.\n"
+"If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:\n"
+msgstr ""
+
+#. type: Fenced code block (css)
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid ""
+":root {\n"
+"  --livechat-transparent: rgba(255 255 255 / 90%) !important;\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid ""
+"Note: you can customize colors. This is undocumented yet, but you can try this:\n"
+"in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.\n"
+"You must use valid CSS color values, and they must be properly URL encoded.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "Mixing multiple chats in your live stream"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid ""
+"You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.\n"
+"The compatibility with this plugin was added in recent versions.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/_index.md
+#, no-wrap
+msgid "Plugin peertube-plugin-livechat user documentation"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/_index.md
+#, no-wrap
+msgid "User documentation"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Plugin Peertube Livechat settings"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Settings"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "This section describes the plugin settings page.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "List existing rooms"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"When pressing the «List rooms» button, all existing chatrooms will be listed.\n"
+"You can then find them and moderated them.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Federation"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"Following settings concern the fedration with other Peertube instances,\n"
+"and other fediverse softwares.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Don't display remote chats"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "By checking this setting, your instance will never display chats from remote videos.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Don't publish chat information"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"By checking this setting, your instance will not publish chat information on the fediverse.\n"
+"Remote Peertube instances will not be aware that they are chat rooms associated to your videos.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"**Please note**: if you already had chats in progress, it is possible that the information has already been published.\n"
+"You will have to wait for the next video update before the information is unpublished.\n"
+"Also, if you disable this setting, you'll have to wait for the videos to be updated before the information are\n"
+"published again. This update happens among others when a live event resumes or stops.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"**Please note**: this setting only affects the publication of information via the ActivityPub protocol.\n"
+"It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Chat behaviour"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Room type"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "You can choose here to have separate rooms for each video, or to group them by channel.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Automatically open the chat"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "If checked, the chat will be loaded as soon as you are on the video page.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Show the «open in new window» button"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "If your web chat tool can be opened in a full window, you can add a button to do so.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "If you are using an external web chat tool (see the chat mode «Use an external web chat tool»), maybe it will not work in fullscreen (for example if it needs to access the parent window to get video informations). You can disable this button by unchecking this settings.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Show the «share chat link» button"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.\n"
+"The chat can be customized (readonly mode, use the current theme, ...).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "This settings allows you to choose who can access this modal.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Chats are only available for local videos"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"Peertube is a federated service. Plugins are only available on the server you are browsing.\n"
+"So, if you are watching a remote video, only you will have the webchat, not users from remote instances.\n"
+"Therefore, this options is checked by default and prevent displaying a webchat for remote videos.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Users can activate the chat for their lives"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"If checked, all live videos will have a checkbox in their properties for enabling the web chat.\n"
+"The video owner will be able to activate web chats.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Activate chat for all lives"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "The chat will be available for all Peertube live videos on your instance.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Activate chat for all non-lives"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "The chat will be available for all Peertube video that are not live.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Activate chat for these videos"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"You can choose some UUIDs for which the chat will be available.\n"
+"If you don't want te enable the feature for all videos, you can use this field to list videos UUIDs.\n"
+"You can add comments: everything rights to the # character will be stripped off, as for empty lines.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Hide the chat for anonymous users"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "If checked, anonymous Peertube users won't see the chat.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"Note: for now this feature simply hide the chat.\n"
+"In a future release, the chat will be replaced by a message saying «please log in to [...]».\n"
+"See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Theming"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "ConverseJS theme"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "You can choose which theme to use for ConverseJS:\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Peertube theme: this is a special theme, made especially for peertube's integration.\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Default ConverseJS theme: this is the default ConverseJS theme.\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "ConverseJS concord theme: this is a theme provided by ConverseJS.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Automatic color detection"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"Try to autodetect colors from user's current theme.\n"
+"When this settings is enabled, the plugin tries to auto-detect colors to apply to the chat theme.\n"
+"If this is not correctly working for some of your Peertube theme, you can disable this option.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Webchat iframe style attribute"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"You can add some custom styles that will be added to the iframe.\n"
+"For example a custom width:\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "```width:400px;```\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Chat server advanced settings"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Use system Prosody"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).\n"
+"If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "This settings should only be used if the plugin is broken, and waiting for a patch.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Disable Websocket"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"With Peertube >= 5.0.0, this plugin try to use Websocket connection for chatting.\n"
+"If the user's browser or connection is not compatible, the browser will automatically fallback on the BOSH protocol.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"But in rare case, this can fail. For example if you have a reverse proxy in front of Peertube that does not\n"
+"allow Websocket connection for plugins.\n"
+"In this case, you can check this setting to disable Websocket connections.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Prosody port"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "This is the port that the Prosody server will use. By default it is set to 52800. If you want to use another port, just change the value here.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Peertube URL for API calls"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"In some rare cases, Prosody can't call Peertube's API from its public URI.\n"
+"If you have such issues (see the diagnostic tool result), you can try to set the value\n"
+"of this settings to `http://localhost:9000` or `http://127.0.0.1:9000`\n"
+"(supposing your Peertube is listening on port `9000`. Check that in your Peertube `config/production.yaml` file).\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Log rooms content by default"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"If checked, room content will be archived on the server by default.\n"
+"This means that users who join the chan will see messages sent before they have joined.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"Please note that it is always possible to enable/disable the content logging for a specific room,\n"
+"by editing its properties.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Room logs expiration"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"You can set here the expiration delay for room logs.\n"
+"See the online help for accepted values.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Enable connection to room using external XMPP accounts"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients.<br>\n"
+"Warning, enabling this option can request extra server and DNS configuration.\n"
+"Please refer to the documentation: [Enable external XMPP account connections](/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/).\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Prosody server to server port"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"The port that will be used for XMPP s2s (server to server) connections.<br>\n"
+"You should use the standard 5269 port.\n"
+"Otherwise you should [setup a specific DNS record](https://prosody.im/doc/s2s).\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Server to server network interfaces"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"The network interfaces to listen on for server to server connections.<br>\n"
+"List of IP to listen on, coma separated (spaces will be stripped).<br>\n"
+"You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.<br>\n"
+"Examples:\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "`*, ::`\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "`*`\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "`127.0.0.1, ::1`\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "`172.18.0.42`\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Certificates directory"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"If this field is empty, the plugin will generate and use self-signed certificates.<br>\n"
+"If you want to use other certificates, just specify here the folder where\n"
+"Prosody can find them. Note: the `peertube` user must have read access to this directory.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Enable client to server connections"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"This setting enable XMPP clients to connect to the built-in Prosody server.\n"
+"For now, this option **only allows connections from localhost clients**.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room.\n"
+msgstr ""
+
+#. type: Title ####
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Prosody client to server port"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"The port that will be used by the c2s module of the built-in Prosody server.\n"
+"XMPP clients shall use this port to connect.\n"
+"Change it if this port is already in use on your server.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "Enable external XMPP components"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"This settings enable XMPP external components to connect to the server.\n"
+"For now, this option **only allows connections from localhost components**.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "This feature could be used to connect bridges or bots.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/settings.md
+#, no-wrap
+msgid "More informations on Prosody external components [here](https://prosody.im/doc/components).\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Allow connections using XMPP clients"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "XMPP clients"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"This chat module is based on the XMPP protocol, also known as Jabber.\n"
+"It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).\n"
+"This can for example be useful to facilitate moderation operations.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Enabling these features requires configuration changes on the server, and\n"
+"on the DNS records. It is not possible to configure this only from the\n"
+"Peertube interface, and it requires some basic system some basic system\n"
+"admin skills.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"To enable this feature, you will need to set up your server and DNS\n"
+"records, so that XMPP clients can find and access the\n"
+"[Prosody server](https://prosody.im) that this plugin uses internally.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Plugin settings"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Start by going to the livechat plugin settings of your instance, then\n"
+"enable the setting \"Enable connection to room using external XMPP accounts\".\n"
+"By checking this settings, new settings appear below.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"First of all, the \"Prosody server to server port\" field.\n"
+"This one defaults to 5269, which is the standard port for this service.\n"
+"You can however change to another port, if this is already in use on your server.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Next, the field \"Server to server network interfaces\" field allows you to specify\n"
+"which network interfaces the server should listen on.\n"
+"The default value \"*, ::\" indicates to listen on all IP addresses.\n"
+"You can change these values, if you wish to listen on only certain IP addresses.\n"
+"The syntax is explained next to the setting.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"For the \"Certificate folder\" setting, you can leave it empty.\n"
+"In this case, the plugin will automatically generate self-signed certificates.\n"
+"Some XMPP servers may refuse to connect, depending on their configuration.\n"
+"In this case, you can indicate here a path on the server, in which you \n"
+"must place certificates to be used by the module.\n"
+"It is up to you to generate and renew them.\n"
+"See bellow for more information.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Firewall"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "You must open the configured port (5269 by default) on your firewall.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"If you are using Docker for your Peertube, you need to modify the\n"
+"`docker-compose.yml` file to open port 5269 of the `peertube` container,\n"
+"so that the outer world can connect to it.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "DNS"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"You need to add a [DNS record](https://prosody.im/doc/dns) allowing\n"
+"remote servers to find the \"room.your_instance.tld\" component.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"The easiest way to do this is to add an SRV record for the \"room\"\n"
+"[subdomain](https://prosody.im/doc/dns#subdomains):\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "TTL: 3600\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "class: IN\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "SRV: 0\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "priority: 0\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "weight: 5\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "port: 5269 (adapt if your changed the default port)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "target: your_instance.tld. (replace by your instance uri)\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Be careful to keep the dot after \"your_instance.tld\".\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Using the `dig` command to check your record,\n"
+"you should get a result similar to this:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
+"0 5 5269 videos.john-livingston.fr.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"If you are **not using the standard `5269` port**, you must also add a SRV record\n"
+"for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).\n"
+"Of course, you can also add this record if you use the standard port. It will also work.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Using trusted certificates"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"It is possible to use certificates validated by a certification authority.\n"
+"However, this requires advanced system administration knowledge.\n"
+"Indeed, due to the multitude of possible use cases, it is impossible to document all situations here.\n"
+"This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a \"basic\" situation (manual installation of Peertube, using letsencrypt).\n"
+"If you are in another situation (Docker installation, certificates signed by another authority, etc...), you will have to adapt this approach by yourself.\n"
+msgstr ""
+
+#. type: Title ####
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Basic principle"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"It is up to you to generate valid certificates for domains `your_instance.tld` and `room.your_instance.tld`.\n"
+"You can use any [method supported by Prosody](https://prosody.im/doc/certificates).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "You must then place these certificates in a folder that will be accessible to the `peertube` user, and specify this folder in the plugin setting \"Certificate folder\".\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"If you want to use the ProsodyCtl utility to import\n"
+"certificates, this utility is available (once Peertube is started) using\n"
+"the following command (adapting the path to your Peertube data folder,\n"
+"and replacing \"xxx\" with the arguments you wish to pass to\n"
+"prosodyctl):\n"
+"`sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary.\n"
+msgstr ""
+
+#. type: Title ####
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Method for the simple case"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "We assume here that your Peertube installation is \"classic\" (no use of Docker), and that the certificates are generated by letsencrypt, using the certbot tool.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the\n"
+"MUC (XMPP chat rooms) component. Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.\n"
+"You can use a CNAME entry (or an A entry and a AAAA entry).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Next, we'll use nginx (already installed for your Peertube) to generate the certbot certificate.\n"
+"We will create a new site. In the file `/etc/nginx/site-available/room.peertube`, add:\n"
+msgstr ""
+
+#. type: Fenced code block (nginx)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"server {\n"
+"  listen 80;\n"
+"  listen [::]:80;\n"
+"  server_name room.your_instance.tld;\n"
+"\n"
+"  location /.well-known/acme-challenge/ {\n"
+"    default_type \"text/plain\";\n"
+"    root /var/www/certbot;\n"
+"  }\n"
+"  location / { return 301 https://your_instance.tld; }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Then enable the site:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"ln -s /etc/nginx/sites-available/room.peertube /etc/nginx/sites-enabled/\n"
+"systemc reload nginx\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Then we prepare the folder in which we will later import the certificates.\n"
+"We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist),\n"
+"with the user `peertube` to make sure there are no permissions issues:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "sudo -u peertube mkdir /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/certs\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Now you have to configure this folder in the plugin settings, for the parameter \"Certificate folders\".\n"
+"It's important to do this now, otherwise the certificate import script will put the certificates in the wrong folder.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"We will configure certbot to import the generated certificates into the Prosody folder.\n"
+"We can use the ProsodyCtl utility packaged in the plugin.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Note: for it to be available, the plugin must have been started at least once.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` containing:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"#!/bin/sh\n"
+"/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \\\n"
+"  --root \\\n"
+"  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\\n"
+"  cert import \\\n"
+"  room.your_instance.tld your_instance.tld /etc/letsencrypt/live\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Then we ask to generate the certificate:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "certbot -d room.videos.john-livingston.fr\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "If certbot offers you several methods to generate the certificate, choose \"nginx\".\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Normally you should now find the certificates in the configured folder.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube.\n"
+msgstr ""
+
+#. type: Title ####
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Method for the Docker case"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.\n"
+"You can use a CNAME entry (or an A entry and a AAAA entry).\n"
+"This is necessary for Let's Encrypt to validate the domain for certificate generation.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Enter the directory where your `docker-compose.yml` file exists.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Open a shell in the certbot container:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "docker exec -it certbot /bin/sh\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Run certbot:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "certbot\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "You will be presented with a series of prompts.  Enter `2` for the authentication type:\n"
+msgstr ""
+
+#. type: Fenced code block (text)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"How would you like to authenticate with the ACME CA?\n"
+"Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Enter the domain name `room.your_instance.tld`:\n"
+msgstr ""
+
+#. type: Fenced code block (text)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Please enter the domain name(s) you would like on your certificate (comma and/or\n"
+"space separated) (Enter 'c' to cancel): room.your_instance.tld\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:\n"
+msgstr ""
+
+#. type: Fenced code block (text)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Input the webroot for <room.your_instance.tld>: (Enter 'c' to cancel): /var/www/certbot\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "You should see output like the following:\n"
+msgstr ""
+
+#. type: Fenced code block (text)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Successfully received certificate.\n"
+"Certificate is saved at: /etc/letsencrypt/live/room.your_instance.tld/fullchain.pem\n"
+"Key is saved at:         /etc/letsencrypt/live/room.your_instance.tld/privkey.pem\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.\n"
+"*Note*:  This will also make the files readable to the group with id 999 on the host system.\n"
+"Check the groups on your system to assess this as a risk before running this command.\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"chown -R root:999 /etc/letsencrypt/live; \\\n"
+"chmod 750 /etc/letsencrypt/live; \\\n"
+"chown -R root:999 /etc/letsencrypt/archive; \\\n"
+"chmod 750 /etc/letsencrypt/archive; \\\n"
+"find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} \\;\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Exit the certbot container:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "exit\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.\n"
+"This is the same as the above, but to be automatically executed after every certificate renewal.\n"
+msgstr ""
+
+#. type: Fenced code block (text)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "  entrypoint: /bin/sh -c \"trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; chown -R root:999 /etc/letsencrypt/live; chmod 750 /etc/letsencrypt/live; chown -R root:999 /etc/letsencrypt/archive; chmod 750 /etc/letsencrypt/archive; find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} +; sleep 12h & wait $${!}; done;\"\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.\n"
+"It should look something like this:\n"
+msgstr ""
+
+#. type: Fenced code block (text)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"  volumes:\n"
+"    - ./docker-volume/certbot/conf:/etc/letsencrypt\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Restart your services:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "docker-compose down; docker-comopse up -d\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:\n"
+msgstr ""
+
+#. type: Fenced code block (text)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "/etc/letsencrypt/live\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Save the plugin settings and verify Prosody can see the certificates:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"docker-compose exec -u peertube \\\n"
+"  peertube \\\n"
+"  /data/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun \\\n"
+"  prosodyctl \\\n"
+"  --config /data/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\\n"
+"  check certs\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid "Troubleshooting"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, no-wrap
+msgid ""
+"If you can't make it work, you can use the diagnostic tool\n"
+"(there is a button on top of the plugin settings page),\n"
+"and take a close look on the «Prosody check» section.\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "Using Matterbridge to bridge with other chats"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "Using Matterbridge"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/admin/advanced/_index.md
+#, no-wrap
+msgid "Some advanced features"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/admin/advanced/_index.md
+#, no-wrap
+msgid "Advanced usage"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/_index.md
+#, no-wrap
+msgid ""
+"+++\n"
+"title=\"Admin documentation\"\n"
+"description=\"Plugin Peertube Livechat administration\"\n"
+"weight=30\n"
+"chapter=false\n"
+"+++\n"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/_index.md
+#, no-wrap
+msgid "Plugin documentation"
+msgstr ""
+
+#. type: Title #
+#: support/documentation/content/en/_index.md
+#, no-wrap
+msgid "PeerTube plugin livechat"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/_index.md
+#, no-wrap
+msgid "You can use the language selector in the left menu to view this documentation in different languages.\n"
+msgstr ""
