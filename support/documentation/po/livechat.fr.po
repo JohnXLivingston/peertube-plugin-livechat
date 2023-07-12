@@ -36,31 +36,31 @@ msgstr "Si vous avez des questions ou souhaitez parler de ce plugin, vous pouvez
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
 msgstr "Si vous souhaitez supporter le projet financièrement, vous pouvez me contacter par mail à l'adresse git.[arobase].john-livingston.fr, ou passer par mon [profil Liberapay](https://liberapay.com/JohnLivingston/).\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Contributor Covenant Code of Conduct"
 msgstr "Convention de Code de conduite Contributeur⋅rices"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Code of Conduct"
 msgstr "Code de conduite"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Our Pledge"
 msgstr "Notre engagement"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "We as members, contributors, and leaders pledge to make participation in our\n"
 "community a harassment-free experience for everyone, regardless of age, body\n"
@@ -80,7 +80,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "We pledge to act and interact in ways that contribute to an open, welcoming,\n"
 "diverse, inclusive, and healthy community.\n"
@@ -90,13 +90,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Our Standards"
 msgstr "Nos critères"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Examples of behavior that contributes to a positive environment for our\n"
 "community include:\n"
@@ -104,25 +104,25 @@ msgstr "Exemples de comportements qui contribuent à créer un environnement pos
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Demonstrating empathy and kindness toward other people\n"
 msgstr "Faire preuve d'empathie et de bienveillance envers les autres\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Being respectful of differing opinions, viewpoints, and experiences\n"
 msgstr "Être respectueux des opinions, points de vue et expériences divergents\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Giving and gracefully accepting constructive feedback\n"
 msgstr "Donner et recevoir avec grâce les critiques constructives\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Accepting responsibility and apologizing to those affected by our mistakes,\n"
 "and learning from the experience\n"
@@ -130,7 +130,7 @@ msgstr "Assumer ses responsabilités et s'excuser auprès des personnes affecté
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Focusing on what is best not just for us as individuals, but for the\n"
 "overall community\n"
@@ -138,13 +138,13 @@ msgstr "Se concentrer sur ce qui est le meilleur non pas uniquement pour nous en
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Examples of unacceptable behavior include:\n"
 msgstr "Exemples de comportements inacceptables :\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "The use of sexualized language or imagery, and sexual attention or\n"
 "advances of any kind\n"
@@ -152,7 +152,7 @@ msgstr "L'utilisation de langage ou d'images sexualisés et d'attentions ou d'av
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Trolling, insulting or derogatory comments, and personal or political attacks\n"
 msgstr ""
 "Le _trolling_, les commentaires insultants ou désobligeants et les attaques\n"
@@ -160,13 +160,13 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Public or private harassment\n"
 msgstr "Le harcèlement en public ou en privé\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Publishing others' private information, such as a physical or email\n"
 "address, without their explicit permission\n"
@@ -176,7 +176,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Other conduct which could reasonably be considered inappropriate in a\n"
 "professional setting\n"
@@ -186,13 +186,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Enforcement Responsibilities"
 msgstr "Responsabilités d'application"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Community leaders are responsible for clarifying and enforcing our standards of\n"
 "acceptable behavior and will take appropriate and fair corrective action in\n"
@@ -205,7 +205,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Community leaders have the right and responsibility to remove, edit, or reject\n"
 "comments, commits, code, wiki edits, issues, and other contributions that are\n"
@@ -219,13 +219,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Scope"
 msgstr "Portée d'application"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "This Code of Conduct applies within all community spaces, and also applies when\n"
 "an individual is officially representing the community in public spaces.\n"
@@ -242,13 +242,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Enforcement"
 msgstr "Application"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Instances of abusive, harassing, or otherwise unacceptable behavior may be\n"
 "reported to the community leaders responsible for enforcement by mail at\n"
@@ -261,7 +261,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "All community leaders are obligated to respect the privacy and security of the\n"
 "reporter of any incident.\n"
@@ -271,13 +271,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Enforcement Guidelines"
 msgstr "Directives d'application"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Community leaders will follow these Community Impact Guidelines in determining\n"
 "the consequences for any action they deem in violation of this Code of Conduct:\n"
@@ -287,13 +287,13 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "1. Correction"
 msgstr "1. Correction"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "**Community Impact**: Use of inappropriate language or other behavior deemed\n"
 "unprofessional or unwelcome in the community.\n"
@@ -303,7 +303,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "**Consequence**: A private, written warning from community leaders, providing\n"
 "clarity around the nature of the violation and an explanation of why the\n"
@@ -315,13 +315,13 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "2. Warning"
 msgstr "2. Avertissement"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "**Community Impact**: A violation through a single incident or series\n"
 "of actions.\n"
@@ -329,7 +329,7 @@ msgstr "**Impact communautaire** : un non-respect par un seul incident ou une s�
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "**Consequence**: A warning with consequences for continued behavior. No\n"
 "interaction with the people involved, including unsolicited interaction with\n"
@@ -347,13 +347,13 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "3. Temporary Ban"
 msgstr "3. Bannissement temporaire"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "**Community Impact**: A serious violation of community standards, including\n"
 "sustained inappropriate behavior.\n"
@@ -363,7 +363,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "**Consequence**: A temporary ban from any sort of interaction or public\n"
 "communication with the community for a specified period of time. No public or\n"
@@ -379,13 +379,13 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "4. Permanent Ban"
 msgstr "4. Bannissement permanent"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "**Community Impact**: Demonstrating a pattern of violation of community\n"
 "standards, including sustained inappropriate behavior,  harassment of an\n"
@@ -397,7 +397,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "**Consequence**: A permanent ban from any sort of public interaction within\n"
 "the community.\n"
@@ -407,13 +407,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Attribution"
 msgstr "Attributions"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "This Code of Conduct is adapted from the [Contributor Covenant][homepage],\n"
 "version 2.1, available at\n"
@@ -426,7 +426,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Community Impact Guidelines were inspired by\n"
 "[Mozilla's code of conduct enforcement ladder][Mozilla CoC].\n"
@@ -436,7 +436,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "For answers to common questions about this code of conduct, see the FAQ at\n"
 "[https://www.contributor-covenant.org/faq][FAQ]. Translations are available\n"
@@ -448,7 +448,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "[homepage]: https://www.contributor-covenant.org\n"
 "[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html\n"
@@ -464,7 +464,7 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Develop"
 msgstr ""
 "#-#-#-#-#  support/old_doc/contributing/develop/_index.fr.md:1 (type Yaml Front Matter Hash Value: description)  #-#-#-#-#\n"
@@ -474,7 +474,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem\n"
 "before you start working on it, and inform the community that you begin coding by claiming the issue.\n"
@@ -482,43 +482,43 @@ msgstr "Toujours annoncer les fonctionnalités sur lesquelles vous voulez travai
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Pull Request must be done on the `main` branch.\n"
 msgstr "Les Pull Request sont à faire sur la branche `main`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.\n"
 msgstr "Jusqu'à mars 2023, il fallait contribuer sur la branche `develop`. Cette procédure est désormais obsolète.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Prerequisite for building this plugin:\n"
 msgstr "Pré-requis pour compiler le plugin:\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "you must have `npm` installed\n"
 msgstr "vous devez avoir installé `npm`\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
 msgstr "vous devez avoir installé les venv python (paquet `python3-venv` sous Debian par exemple)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "To clone the repository:\n"
 msgstr "Pour clôner le dépot :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "# Clone the repository\n"
 "git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git\n"
@@ -566,7 +566,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.\n"
 "Once you are ready for a code review before merge, submit a Pull Request. In any case, please\n"
@@ -577,37 +577,37 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder.\n"
 msgstr "Le code du front-end est dans le dossier `client`. Le code backend dans `server`. Il y a du code partagé entre les deux dans `shared`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
 msgstr "Pour les instructions génériques concernant le développement de plugins (building, installation, ...), merci de vous référer à la [documentation Peertube](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "You can build the plugin with extra debug features simply by using:\n"
 msgstr "Vous pouvez *builder* le plugin avec des infos de debug supplémentaires en utilisant :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "NODE_ENV=dev npm run build\n"
 msgstr "NODE_ENV=dev npm run build\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "ESBuild vs Typescript"
 msgstr "ESBuild vs Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.\n"
 "ESBuild can handle Typescript, but does not check types\n"
@@ -623,13 +623,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Debug Mode"
-msgstr "Debug Mode"
+msgstr "Mode Debug"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "There is a debug mode for this plugin, that shorten some delay.\n"
 "For example, some log files will rotate every two minutes, instead of once per day.\n"
@@ -642,7 +642,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "To enable this mode, you juste have to create the\n"
 "`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file\n"
@@ -654,7 +654,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "The simple existence of this file is sufficient to trigger the debug mode.\n"
 "To make sure it's taken into account, you can restart your Peertube instance.\n"
@@ -664,7 +664,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "This file can contain some JSON to enable more advanced options.\n"
 "To have a list of existing parameters, check `server/lib/debug.ts`.\n"
@@ -676,7 +676,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Don't enable this mode on a production server, neither on a public server.\n"
 "This could cause security issues.\n"
@@ -686,13 +686,13 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Restart Prosody"
 msgstr "Redémarrer Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "When debug mode is enabled, you can restart Prosody using this API call:\n"
 "`http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
@@ -708,13 +708,13 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Prosody debugger"
 msgstr "Prosody debugger"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug).\n"
 msgstr ""
 "Il est possible de connecter l'AppImage Prosody à un debugger distant en utilisant\n"
@@ -722,7 +722,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.\n"
 "Then, add this in the `debub_mode` file:\n"
@@ -732,7 +732,7 @@ msgstr ""
 
 #. type: Fenced code block (json)
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "{\n"
 "  \"debug_prosody\": {\n"
@@ -752,7 +752,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is.\n"
 msgstr ""
 "`host` et `port` sont optionnels. `debugger_path` doit pointer vers le dossier où\n"
@@ -760,19 +760,19 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Restart Peertube.\n"
 msgstr "Redémarrer Peertube.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Start your debugger server.\n"
 msgstr "Lancer votre serveur de debug.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "For Prosody to connect to the debugger, call the API\n"
 "`http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
@@ -791,19 +791,19 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Prosody will then restart, connecting to the debugger.\n"
 msgstr "Prosody va alors redémarrer en se connectant au debugger.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Quick dev environment using Docker"
 msgstr "Environnement de développement rapide via Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "There is a tutorial, in french, on the\n"
 "[le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)\n"
@@ -814,13 +814,13 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev).\n"
 msgstr "Un dépot a été crée sur la base de ce tutoriel: https://codeberg.org/mose/pt-plugin-dev\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.\n"
 "There is a dirty hack in the plugin: just create a\n"
@@ -833,26 +833,26 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Document the plugin, or translate the documentation."
 msgstr "Documenter le plugin, ou traduire la documentation."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/document/_index.md
 #: support/documentation/content/en/documentation/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Documentation"
 msgstr "Documenter"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "General information"
 msgstr "Généralités"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Always inform the community before working (by creating a new issue, or commenting an existing one).\n"
 "This is to avoid that two persons are working on the same thing, and prevent conflicts.\n"
@@ -862,19 +862,19 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Documentation work has to be merged in the `main` branch.\n"
 msgstr "Le travail de documentation se fait sur la branche `main`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "The documentation source code is in the `support/documentation/content` folder.\n"
 msgstr "Le code source de la documentation se trouve dans le dossier `support/documentation/content` du dépot de code.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "The documentation is generated using [Hugo](https://gohugo.io/).\n"
 "You have to install it on your computer if you want to preview your work.\n"
@@ -884,7 +884,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "The used theme is [hugo-theme-learn](https://learn.netlify.app/).\n"
 "You should read its documentation before starting editing the documentation.\n"
@@ -894,7 +894,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.\n"
 "This will trigger github and gitlab pipelines, and update published documentation.\n"
@@ -904,19 +904,19 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Translations"
 msgstr "Traductions"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "The principal language is english (`en` code).\n"
 msgstr "La langue principale est l'anglais (code `en`).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "The different translations of the same file are side by side in the tree, and are identified by a language code in the file name extension.\n"
 "Example: `_index.fr.md` is the French translation of `_index.en.md`.\n"
@@ -926,7 +926,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Please note that a missing translation file will not appear in the menus of the generated site.\n"
 msgstr ""
 "Attention, un fichier de traduction manquant n'apparaitra pas dans les menus\n"
@@ -934,13 +934,13 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "**Always make sure to create files for all languages**, even if the translation is not yet available.\n"
 msgstr "**On veillera donc toujours à créer les fichiers pour toutes les langues**, même si la traduction n'est pas encore disponible.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "For this, there is a script `doc-generate-missing-translations.sh` in the root of the repository.\n"
 "When you add a new file, you just have to create the english version, then run this script.\n"
@@ -952,19 +952,19 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Add a new language"
 msgstr "Ajout d'une nouvelle langue"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section.\n"
 msgstr "Dans le fichier `support/documentation/config.toml`, inspirez vous de la section `[Languages.fr]` pour déclarer la nouvelle langue.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Then, run the `doc-generate-missing-translations.sh` script.\n"
 "It will create all the missing files.\n"
@@ -974,7 +974,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Then you can translate them one by one.\n"
 "If the translations are not complete, it does not matter, the generated files will display a message suggesting to change the language.\n"
@@ -984,25 +984,25 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Preview"
 msgstr "Prévisualiser"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "To preview your modifications, just run:\n"
 msgstr "Pour prévisualiser vos modification, il suffit de lancer:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "hugo serve -s support/documentation/\n"
 msgstr "hugo serve -s support/documentation/\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).\n"
 "This page will automatically refresh on each modification.\n"
@@ -1012,25 +1012,25 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Publication"
 msgstr "Publication"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.\n"
 msgstr "La publication de la documentation est automatique, dès que les modifications sont fusionnées dans la branche `main`.\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Give your feedback"
 msgstr "Donnez vos retours"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "You don't need to know how to code to start contributing to this plugin! Other\n"
 "contributions are very valuable too, among which: you can test the software and\n"
@@ -1042,31 +1042,31 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Contributing"
 msgstr "Contribuer"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Interested in contributing? Awesome!\n"
 msgstr "Intéressé⋅e pour contribuer ? Super !\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Translate the plugin"
 msgstr "Traduire le plugin"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Translate"
 msgstr "Traduction"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "You can contribute to this plugin translation.\n"
 "Translations are handled using the [Weblate](https://weblate.org/) software,\n"
@@ -1078,7 +1078,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Never modify directly files in the `languages` folder, this could lead to conflicts.\n"
 msgstr ""
 "Ne modifiez jamais directement les fichiers dans le dossier `languages` du plugin,\n"
@@ -1086,49 +1086,49 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "How to"
 msgstr "Comment faire"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Create an account: https://weblate.framasoft.org/accounts/register/\n"
 msgstr "Créez-vous un compte: https://weblate.framasoft.org/accounts/register/\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Validate your email and follow the link sent\n"
 msgstr "Validez votre email en cliquant sur le lien reçu\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Create your password and setup your account\n"
 msgstr "Choisissez votre mot de passe, et configurez votre compte\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/\n"
 msgstr "Allez sur le projet du plugin de tchat: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Choose the locale you want to translate\n"
 msgstr "Choisissez la langue que vous voulez traduire\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Just translate missing sentences, or correct the ones that seems incorrect to you.\n"
 msgstr "Il ne vous reste plus qu'à ajouter les traductions manquantes, ou corriger celles qui vous semblent erronées.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "There might be some «very technical» strings. If you are not 100% sure of\n"
 "the meaning, or of your translation, you better not translate it,\n"
@@ -1141,13 +1141,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Documentation translation"
 msgstr "Traduction de la documentation"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Fow now, this is not done on Weblate. I am still looking for the good technical solution.\n"
 msgstr ""
 "Pour l'instant, cela n'est pas encore géré dans Weblate. Je suis encore à la recherche de la bonne\n"
@@ -1155,19 +1155,19 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Please refer to the \"documentation\" documentation page.\n"
 msgstr "Voir la page de documentation dédiée à la documentation.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Adding a new locale"
 msgstr "Ajout d'une nouvelle langue"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "If you think there is a missing locale, please check first if it is handled in Peertube.\n"
 "If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it.\n"
@@ -1178,13 +1178,13 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Adding new strings / use translations in the code"
 msgstr "Ajout de nouveau segment / utilisation dans le code"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "If you are working on new features, and need new strings, you can create them directly in Weblate.\n"
 "The english version is mandatory. Start with it.\n"
@@ -1195,7 +1195,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Each string is linked to a key (for example `use_chat`).\n"
 "Choose an explicit key in english, lower case.\n"
@@ -1205,7 +1205,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files,\n"
 "but avoid to commit these changes (to minimize conflict risks).\n"
@@ -1216,13 +1216,13 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Use translations in front-end code"
 msgstr "Utiliser un segment dans le code front-end"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.\n"
 "The constant name must:\n"
@@ -1232,25 +1232,25 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "start with the prefix \"LOC_\"\n"
 msgstr "commencer par le préfixe \"LOC_\"\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "use the string key, upper cased\n"
 msgstr "utiliser la clé de la chaîne, en majuscule\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "you just have to declare its type, not its value\n"
 msgstr "vous ne devez déclarer que son type, pas sa valeur\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "For example, to use \"use_chat\", you have to declare:\n"
 msgstr ""
 "Par exemple, pour utiliser \"use_chat\", vous devez déclarer :\n"
@@ -1258,13 +1258,13 @@ msgstr ""
 
 #. type: Fenced code block (typescript)
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "declare const LOC_USE_CHAT: string\n"
 msgstr "declare const LOC_USE_CHAT: string\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "The `build-client.js` script will read the `client/@types/global.d.ts`,\n"
 "search for such constants, and load their values from the languages files.\n"
@@ -1272,19 +1272,19 @@ msgstr "Le script `build-client.js` va lire ce fichier `client/@types/global.d.t
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code.\n"
 msgstr "Vous pouvez maintenant utiliser `peertubeHelpers.translate(LOC_USE_CHAT)` dans votre code.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Use translations in back-end code"
 msgstr "Utiliser un segment dans le code back-end"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "In theory, the only parts of the backend code where you need localization is the\n"
 "settings declaration and standardized data (ActivityPub, RSS, ...).\n"
@@ -1295,7 +1295,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Note: you should never need another language translation from backend code.\n"
 "Localization must be done on front-end.\n"
@@ -1305,7 +1305,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "There is a `lib/loc.ts` module providing a `loc()` function.\n"
 "Just pass it the key to have the english string: `loc('diagnostic')`'.\n"
@@ -2023,7 +2023,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Restart your services:\n"
 msgstr "Lancer votre serveur de debug.\n"
 
@@ -2336,7 +2336,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/settings.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Note: for now this feature simply hide the chat.\n"
 "In a future release, the chat will be replaced by a message saying «please log in to [...]».\n"
@@ -2422,7 +2422,7 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Use system Prosody"
 msgstr "Redémarrer Prosody"
 
@@ -2465,7 +2465,7 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Prosody port"
 msgstr "Prosody debugger"
 
@@ -2675,7 +2675,7 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Plugin documentation"
 msgstr "Documenter"
 
@@ -2844,7 +2844,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
 msgstr "Avant de mettre à jour le plugin vers une nouvelle version majeure, merci de lire les notes de version, et la liste des éventuelless modifications non rétro-compatibles : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
 
@@ -2904,19 +2904,19 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "User documentation"
 msgstr "Documenter"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/moderation.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation"
 msgstr "PeerTube plugin livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/moderation.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Moderation"
 msgstr "Documenter"
 
@@ -3125,32 +3125,32 @@ msgstr ""
 
 #. type: Title #
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "PeerTube plugin livechat"
 msgstr "PeerTube plugin livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "You can use the language selector in the left menu to view this documentation in different languages.\n"
 msgstr "You can use the language selector in the left menu to view this documentation in different languages.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #: support/documentation/content/en/technical/thirdparty/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Introduction"
 msgstr "Introduction"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.\n"
 msgstr "Ce plugin pour [Peertube](https://joinpeertube.org/) permet d'intégrer un système de «chat» (clavardage) à coté des vidéos.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "| | |\n"
 "|---|---|\n"
@@ -3159,7 +3159,7 @@ msgstr "Vous pouvez utiliser le sélecteur de langue dans le menu de gauche pour
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
 msgstr ""
 "| | |\n"
@@ -3170,17 +3170,17 @@ msgstr ""
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking / New features requests"
-msgstr ""
+msgstr "Évolutions / Bugs"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking & new features"
-msgstr ""
+msgstr "Évolutions & suivi des bugs"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french.\n"
 msgstr ""
 "Si la langue qui vous intéresse n'est pas présente, assurez-vous d'abord qu'elle est bien supportée par Peertube.\n"
@@ -3213,7 +3213,7 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/technical/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Technical documentation"
 msgstr "Documenter"
 
