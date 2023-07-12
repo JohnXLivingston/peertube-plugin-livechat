@@ -32,21 +32,25 @@ weight = 20
   [Languages.en]
   title = "Peertube plugin livechat documentation"
   languageName = "English"
+  contentDir = "content/en"
 
   [Languages.fr]
   title = "Documentation plugin Peertube livechat"
   languageName = "Français"
   landingPageName = "<i class='fas fa-home'></i> Accueil"
   landingPageURL = "/peertube-plugin-livechat/fr/"
+  contentDir = "content/fr"
 
   [Languages.de]
   title = "Peertube Plugin Livechat Dokumentation"
   languageName = "Deutsch"
   landingPageName = "<i class='fas fa-home'></i> Home"
   landingPageURL = "/peertube-plugin-livechat/de/"
+  contentDir = "content/de"
 
   [Languages.ja]
   title = "PeerTube ライブチャットプラグイン"
   languageName = "日本語バージョン"
   landingPageName = "<i class='fas fa-home'></i> Home"
   landingPageURL = "/peertube-plugin-livechat/ja/"
+  contentDir = "content/ja"
