@@ -5,7 +5,7 @@ weight: 70
 chapter: false
 ---
 
-If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).
+If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french.
 
 To have a glimpse to the roadmap for upcoming features, please refer to:
 
