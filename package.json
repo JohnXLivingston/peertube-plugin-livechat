@@ -102,7 +102,7 @@
     "lint:script": "npx eslint --ext .js --ext .ts .",
     "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/styles/**/*.css'",
     "show:npmfiles": "npx npm-packlist",
-    "doc:generatemissingtranslations": "bash doc-generate-missing-translations.sh"
+    "doc:translate": "bash doc-translate.sh"
   },
   "staticDirs": {
     "static": "dist/client/static",

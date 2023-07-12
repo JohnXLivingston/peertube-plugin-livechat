@@ -10,6 +10,7 @@
 ### Minor changes and fixes
 
 * Translation updates.
+* Documentation can now also be translated using [Weblate](https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/).
 
 ## 7.1.0
 
