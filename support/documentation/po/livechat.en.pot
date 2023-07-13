@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-12 18:57+0200\n"
+"POT-Creation-Date: 2023-07-13 10:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1124,11 +1124,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, markdown-text, no-wrap
-msgid ""
-"[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json),\n"
-"[COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md)\n"
-"and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE)\n"
-"files contain the license information for this software and its dependencies.\n"
+msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies.\n"
 msgstr ""
 
 #. type: Plain text
@@ -1230,10 +1226,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
 msgid ""
-"Enabling these features requires configuration changes on the server, and\n"
-"on the DNS records. It is not possible to configure this only from the\n"
-"Peertube interface, and it requires some basic system some basic system\n"
-"admin skills.\n"
+"Enabling these features requires configuration changes on the server, and on the DNS records.\n"
+"It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills.\n"
 msgstr ""
 
 #. type: Title ##
@@ -1261,8 +1255,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
 msgid ""
-"To enable this feature, you will need to set up your server and DNS\n"
-"records, so that XMPP clients can find and access the\n"
+"To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the\n"
 "[Prosody server](https://prosody.im) that this plugin uses internally.\n"
 msgstr ""
 
@@ -1276,8 +1269,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
 msgid ""
-"Start by going to the livechat plugin settings of your instance, then\n"
-"enable the setting \"Enable connection to room using external XMPP accounts\".\n"
+"Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".\n"
 "By checking this settings, new settings appear below.\n"
 msgstr ""
 
@@ -1294,8 +1286,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
 msgid ""
-"Next, the field \"Server to server network interfaces\" field allows you to specify\n"
-"which network interfaces the server should listen on.\n"
+"Next, the field \"Server to server network interfaces\" field allows you to specify which network interfaces the server should listen on.\n"
 "The default value \"*, ::\" indicates to listen on all IP addresses.\n"
 "You can change these values, if you wish to listen on only certain IP addresses.\n"
 "The syntax is explained next to the setting.\n"
@@ -1306,10 +1297,9 @@ msgstr ""
 #, markdown-text, no-wrap
 msgid ""
 "For the \"Certificate folder\" setting, you can leave it empty.\n"
-"In this case, the plugin will automatically generate self-signed certificates.\n"
+"In this case, the plugin will automatically generate  self-signed certificates.\n"
 "Some XMPP servers may refuse to connect, depending on their configuration.\n"
-"In this case, you can indicate here a path on the server, in which you \n"
-"must place certificates to be used by the module.\n"
+"In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.\n"
 "It is up to you to generate and renew them.\n"
 "See bellow for more information.\n"
 msgstr ""
@@ -1330,8 +1320,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
 msgid ""
-"If you are using Docker for your Peertube, you need to modify the\n"
-"`docker-compose.yml` file to open port 5269 of the `peertube` container,\n"
+"If you are using Docker for your Peertube, you need to modify the `docker-compose.yml` file to open port 5269 of the `peertube` container,\n"
 "so that the outer world can connect to it.\n"
 msgstr ""
 
@@ -1344,17 +1333,13 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
-msgid ""
-"You need to add a [DNS record](https://prosody.im/doc/dns) allowing\n"
-"remote servers to find the \"room.your_instance.tld\" component.\n"
+msgid "You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the \"room.your_instance.tld\" component.\n"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
-msgid ""
-"The easiest way to do this is to add an SRV record for the \"room\"\n"
-"[subdomain](https://prosody.im/doc/dns#subdomains):\n"
+msgid "The easiest way to do this is to add an SRV record for the \"room\" [subdomain](https://prosody.im/doc/dns#subdomains):\n"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -1414,9 +1399,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
-msgid ""
-"Using the `dig` command to check your record,\n"
-"you should get a result similar to this:\n"
+msgid "Using the `dig` command to check your record, you should get a result similar to this:\n"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1431,8 +1414,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
 msgid ""
-"If you are **not using the standard `5269` port**, you must also add a SRV record\n"
-"for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).\n"
+"If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).\n"
 "Of course, you can also add this record if you use the standard port. It will also work.\n"
 msgstr ""
 
@@ -1483,12 +1465,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
 msgid ""
-"If you want to use the ProsodyCtl utility to import\n"
-"certificates, this utility is available (once Peertube is started) using\n"
-"the following command (adapting the path to your Peertube data folder,\n"
-"and replacing \"xxx\" with the arguments you wish to pass to\n"
-"prosodyctl):\n"
-"`sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`\n"
+"If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to\n"
+"prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`\n"
 msgstr ""
 
 #. type: Plain text
@@ -1513,8 +1491,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
 msgid ""
-"First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the\n"
-"MUC (XMPP chat rooms) component. Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain.\n"
+"First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the MUC (XMPP chat rooms) component.\n"
+"Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain.\n"
 msgstr ""
 
 #. type: Plain text
@@ -1569,8 +1547,7 @@ msgstr ""
 #, markdown-text, no-wrap
 msgid ""
 "Then we prepare the folder in which we will later import the certificates.\n"
-"We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist),\n"
-"with the user `peertube` to make sure there are no permissions issues:\n"
+"We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:\n"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1703,7 +1680,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
-msgid "You will be presented with a series of prompts.  Enter `2` for the authentication type:\n"
+msgid "You will be presented with a series of prompts. Enter `2` for the authentication type:\n"
 msgstr ""
 
 #. type: Fenced code block (text)
@@ -1723,9 +1700,7 @@ msgstr ""
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
-msgid ""
-"Please enter the domain name(s) you would like on your certificate (comma and/or\n"
-"space separated) (Enter 'c' to cancel): room.your_instance.tld\n"
+msgid "Please enter the domain name(s) you would like on your certificate (comma and/or space separated) (Enter 'c' to cancel): room.your_instance.tld\n"
 msgstr ""
 
 #. type: Plain text
@@ -1868,22 +1843,19 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, markdown-text, no-wrap
-msgid ""
-"If you can't make it work, you can use the diagnostic tool\n"
-"(there is a button on top of the plugin settings page),\n"
-"and take a close look on the «Prosody check» section.\n"
+msgid "If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section.\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/_index.md
-#, markdown-text, no-wrap
-msgid ""
-"+++\n"
-"title=\"Admin documentation\"\n"
-"description=\"Plugin Peertube Livechat administration\"\n"
-"weight=30\n"
-"chapter=false\n"
-"+++\n"
+#, no-wrap
+msgid "Plugin Peertube Livechat administration"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/admin/_index.md
+#, no-wrap
+msgid "Admin documentation"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -2526,9 +2498,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, markdown-text, no-wrap
-msgid ""
-"For standard installation, you just have to install the official `prosody` package\n"
-"for your linux distribution.\n"
+msgid "For standard installation, you just have to install the official `prosody` package for your linux distribution.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2547,9 +2517,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, markdown-text, no-wrap
 msgid ""
-"You can then disable the service that starts automatically when you install\n"
-"Prosody (the plugin will launch a Prosody process, there is no need for the\n"
-"service to run).\n"
+"You can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run).\n"
 "For example, on Debian/Ubuntu (and other Systemd based linux distributions):\n"
 msgstr ""
 
@@ -2562,9 +2530,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, markdown-text, no-wrap
-msgid ""
-"Warning: do not disable Prosody if it is used for another service on your server,\n"
-"like for example Jitsi.\n"
+msgid "Warning: do not disable Prosody if it is used for another service on your server, like for example Jitsi.\n"
 msgstr ""
 
 #. type: Title ##
@@ -2577,10 +2543,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, markdown-text, no-wrap
 msgid ""
-"You will have to generate a Peertube image that includes Prosody in the same\n"
-"container that Peertube.\n"
-"I know this is not the standard way to do this with Docker, but keep in mind it\n"
-"is a temporary workaround.\n"
+"You will have to generate a Peertube image that includes Prosody in the same container that Peertube.\n"
+"I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2609,20 +2573,21 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, markdown-text, no-wrap
-msgid ""
-"You have to disable `metronome` (the XMPP server provided by Yunohost), and\n"
-"install `prosody`.\n"
+msgid "You have to disable `metronome` (the XMPP server provided by Yunohost), and install `prosody`.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#, markdown-text, no-wrap
+msgid "This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0.\n"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, markdown-text, no-wrap
 msgid ""
-"This is already done by the Yunohost Peertube application, as it was required for the\n"
-"plugin before the v6.0.0.\n"
 "But it may be removed in a near feature (to avoid drawbacks of this method).\n"
-"I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks,\n"
-"and maximize compatibility.\n"
+"I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility.\n"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -2927,6 +2892,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
+#: support/documentation/content/en/intro/_index.md
 #, markdown-text, no-wrap
 msgid "You can use the language selector in the left menu to view this documentation in different languages.\n"
 msgstr ""
