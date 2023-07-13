@@ -52,7 +52,8 @@ function generatePo4aConf() {
   echo -n 'opt:"--option yfm_keys=title,description" ' >> $po4afile
   # dont wrap lines:
   echo -n 'opt:"--option neverwrap" ' >> $po4afile
-  # handling hugo directive (when full line). For example: {{% notice tip %}}, {{% children %}}, ... :
+
+  # handling hugo directive (when full line). For example: {{% notice tip %}}, {{% children %}}, ...
   echo -n 'opt:"--option breaks=' >> $po4afile
   echo -n "'" >> $po4afile
   echo -n '^\{\{%.*%\}\}$' >> $po4afile
@@ -83,5 +84,15 @@ function runPo4a() {
   po4a $po4afile
 }
 
+function copyLivechatLanguages() {
+  echo "Copying livechat yml languages files to the hugo directory..."
+  find languages/ -name '*.yml' | while read file; do
+    # We need to rename .yml to .yaml... don't ask, hugo stuff...
+    new_filename=$(echo "$file" | sed -E "s/languages\/(.*)\.yml$/support\/documentation\/i18n\/\1.yaml/")
+    cp $file $new_filename
+  done
+}
+
 generatePo4aConf
+copyLivechatLanguages
 runPo4a

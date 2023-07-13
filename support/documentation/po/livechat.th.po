@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-13 11:59+0200\n"
+"POT-Creation-Date: 2023-07-13 19:34+0200\n"
 "PO-Revision-Date: 2023-07-13 11:36+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1876,7 +1876,7 @@ msgstr ""
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "List existing rooms"
+msgid "{{% livechat_label \"list_rooms_label\" %}}"
 msgstr ""
 
 #. type: Plain text
@@ -1896,53 +1896,19 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid ""
-"Following settings concern the fedration with other Peertube instances,\n"
-"and other fediverse softwares.\n"
+msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares.\n"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Don't display remote chats"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "By checking this setting, your instance will never display chats from remote videos.\n"
+msgid "{{% livechat_label federation_no_remote_chat_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Don't publish chat information"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"By checking this setting, your instance will not publish chat information on the fediverse.\n"
-"Remote Peertube instances will not be aware that they are chat rooms associated to your videos.\n"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"**Please note**: if you already had chats in progress, it is possible that the information has already been published.\n"
-"You will have to wait for the next video update before the information is unpublished.\n"
-"Also, if you disable this setting, you'll have to wait for the videos to be updated before the information are\n"
-"published again. This update happens among others when a live event resumes or stops.\n"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"**Please note**: this setting only affects the publication of information via the ActivityPub protocol.\n"
-"It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.\n"
+msgid "{{% livechat_label federation_dont_publish_remotely_label %}}"
 msgstr ""
 
 #. type: Title ##
@@ -1954,49 +1920,25 @@ msgstr ""
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Room type"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "You can choose here to have separate rooms for each video, or to group them by channel.\n"
+msgid "{{% livechat_label room_type_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Automatically open the chat"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "If checked, the chat will be loaded as soon as you are on the video page.\n"
+msgid "{{% livechat_label auto_display_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Show the «open in new window» button"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "If your web chat tool can be opened in a full window, you can add a button to do so.\n"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "If you are using an external web chat tool (see the chat mode «Use an external web chat tool»), maybe it will not work in fullscreen (for example if it needs to access the parent window to get video informations). You can disable this button by unchecking this settings.\n"
+msgid "{{% livechat_label open_blank_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Show the «share chat link» button"
+msgid "{{% livechat_label share_url_label %}}"
 msgstr ""
 
 #. type: Plain text
@@ -2022,81 +1964,37 @@ msgstr ""
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Chats are only available for local videos"
+msgid "{{% livechat_label per_live_video_label %}}"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid ""
-"Peertube is a federated service. Plugins are only available on the server you are browsing.\n"
-"So, if you are watching a remote video, only you will have the webchat, not users from remote instances.\n"
-"Therefore, this options is checked by default and prevent displaying a webchat for remote videos.\n"
+msgid "The video owner will be able to activate web chats.\n"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Users can activate the chat for their lives"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"If checked, all live videos will have a checkbox in their properties for enabling the web chat.\n"
-"The video owner will be able to activate web chats.\n"
+msgid "{{% livechat_label all_lives_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Activate chat for all lives"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "The chat will be available for all Peertube live videos on your instance.\n"
+msgid "{{% livechat_label all_non_lives_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Activate chat for all non-lives"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "The chat will be available for all Peertube video that are not live.\n"
+msgid "{{% livechat_label videos_list_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Activate chat for these videos"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"You can choose some UUIDs for which the chat will be available.\n"
-"If you don't want te enable the feature for all videos, you can use this field to list videos UUIDs.\n"
-"You can add comments: everything rights to the # character will be stripped off, as for empty lines.\n"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "Hide the chat for anonymous users"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "If checked, anonymous Peertube users won't see the chat.\n"
+msgid "{{% livechat_label no_anonymous_label %}}"
 msgstr ""
 
 #. type: Plain text
@@ -2117,7 +2015,7 @@ msgstr ""
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "ConverseJS theme"
+msgid "{{% livechat_label converse_theme_label %}}"
 msgstr ""
 
 #. type: Plain text
@@ -2147,36 +2045,13 @@ msgstr ""
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Automatic color detection"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"Try to autodetect colors from user's current theme.\n"
-"When this settings is enabled, the plugin tries to auto-detect colors to apply to the chat theme.\n"
-"If this is not correctly working for some of your Peertube theme, you can disable this option.\n"
+msgid "{{% livechat_label autocolors_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Webchat iframe style attribute"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"You can add some custom styles that will be added to the iframe.\n"
-"For example a custom width:\n"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "```width:400px;```\n"
+msgid "{{% livechat_label chat_style_label %}}"
 msgstr ""
 
 #. type: Title ##
@@ -2188,7 +2063,7 @@ msgstr ""
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Use system Prosody"
+msgid "{{% livechat_label system_prosody_label %}}"
 msgstr ""
 
 #. type: Plain text
@@ -2208,179 +2083,61 @@ msgstr ""
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Disable Websocket"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"With Peertube >= 5.0.0, this plugin try to use Websocket connection for chatting.\n"
-"If the user's browser or connection is not compatible, the browser will automatically fallback on the BOSH protocol.\n"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"But in rare case, this can fail. For example if you have a reverse proxy in front of Peertube that does not\n"
-"allow Websocket connection for plugins.\n"
-"In this case, you can check this setting to disable Websocket connections.\n"
+msgid "{{% livechat_label disable_websocket_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Prosody port"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "This is the port that the Prosody server will use. By default it is set to 52800. If you want to use another port, just change the value here.\n"
+msgid "{{% livechat_label prosody_port_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Peertube URL for API calls"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"In some rare cases, Prosody can't call Peertube's API from its public URI.\n"
-"If you have such issues (see the diagnostic tool result), you can try to set the value\n"
-"of this settings to `http://localhost:9000` or `http://127.0.0.1:9000`\n"
-"(supposing your Peertube is listening on port `9000`. Check that in your Peertube `config/production.yaml` file).\n"
+msgid "{{% livechat_label prosody_peertube_uri_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Log rooms content by default"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"If checked, room content will be archived on the server by default.\n"
-"This means that users who join the chan will see messages sent before they have joined.\n"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"Please note that it is always possible to enable/disable the content logging for a specific room,\n"
-"by editing its properties.\n"
+msgid "{{% livechat_label prosody_muc_log_by_default_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Room logs expiration"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"You can set here the expiration delay for room logs.\n"
-"See the online help for accepted values.\n"
+msgid "{{% livechat_label prosody_muc_expiration_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Enable connection to room using external XMPP accounts"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients.<br>\n"
-"Warning, enabling this option can request extra server and DNS configuration.\n"
-"Please refer to the documentation: [Enable external XMPP account connections](/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/).\n"
+msgid "{{% livechat_label prosody_room_allow_s2s_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Prosody server to server port"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"The port that will be used for XMPP s2s (server to server) connections.<br>\n"
-"You should use the standard 5269 port.\n"
-"Otherwise you should [setup a specific DNS record](https://prosody.im/doc/s2s).\n"
+msgid "{{% livechat_label prosody_s2s_port_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Server to server network interfaces"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"The network interfaces to listen on for server to server connections.<br>\n"
-"List of IP to listen on, coma separated (spaces will be stripped).<br>\n"
-"You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.<br>\n"
-"Examples:\n"
-msgstr ""
-
-#. type: Bullet: '- '
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "`*, ::`\n"
-msgstr ""
-
-#. type: Bullet: '- '
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "`*`\n"
-msgstr ""
-
-#. type: Bullet: '- '
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "`127.0.0.1, ::1`\n"
-msgstr ""
-
-#. type: Bullet: '- '
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "`172.18.0.42`\n"
+msgid "{{% livechat_label prosody_s2s_interfaces_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Certificates directory"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"If this field is empty, the plugin will generate and use self-signed certificates.<br>\n"
-"If you want to use other certificates, just specify here the folder where\n"
-"Prosody can find them. Note: the `peertube` user must have read access to this directory.\n"
+msgid "{{% livechat_label prosody_certificates_dir_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Enable client to server connections"
+msgid "{{% livechat_label prosody_c2s_label %}}"
 msgstr ""
 
 #. type: Plain text
@@ -2400,22 +2157,13 @@ msgstr ""
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Prosody client to server port"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"The port that will be used by the c2s module of the built-in Prosody server.\n"
-"XMPP clients shall use this port to connect.\n"
-"Change it if this port is already in use on your server.\n"
+msgid "{{% livechat_label prosody_c2s_port_label %}}"
 msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/settings.md
 #, no-wrap
-msgid "Enable external XMPP components"
+msgid "{{% livechat_label prosody_components_label %}}"
 msgstr ""
 
 #. type: Plain text
