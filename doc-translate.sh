@@ -41,7 +41,8 @@ function generatePo4aConf() {
   echo -n 'opt:"--msgmerge-opt=--no-wrap" ' >> $po4afile
   echo -n 'opt:"--porefs=file" ' >> $po4afile
   echo -n 'opt:"--wrap-po=newlines" ' >> $po4afile
-  echo -n 'opt:"--package-name='peertube-plugin-livechat-documentation'" ' >> $po4afile
+  echo -n 'opt:"--package-name=peertube-plugin-livechat-documentation" ' >> $po4afile
+
   echo "" >> $po4afile
 
   # Markdown related options:
