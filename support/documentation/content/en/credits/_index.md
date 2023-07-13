@@ -5,10 +5,7 @@ weight: 90
 chapter: false
 ---
 
-[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json),
-[COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md)
-and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE)
-files contain the license information for this software and its dependencies.
+[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies.
 
 The plugin is maintained by [John Livingston](https://www.john-livingston.fr/).
 
