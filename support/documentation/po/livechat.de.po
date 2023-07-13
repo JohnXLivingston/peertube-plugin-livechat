@@ -3,60 +3,60 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2023.
 #
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-13 10:22+0200\n"
-"PO-Revision-Date: 2023-07-12 12:16+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: de\n"
+"POT-Creation-Date: 2023-07-13 10:42+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact the author"
-msgstr ""
+msgstr "Kontakt"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact me"
-msgstr ""
+msgstr "Kontakt"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
-msgstr ""
+msgstr "Wenn Sie eine Frage haben oder über dieses Plugin sprechen möchten, können Sie diesem XMPP-Raum mit einem beliebigen Jabber-Client beitreten: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
-msgstr ""
+msgstr "Wenn Sie das Projekt finanziell unterstützen möchten, können Sie mich per E-Mail unter git.[at].john-livingston.fr kontaktieren oder mein [Liberapay-Profil](https://liberapay.com/JohnLivingston/) ansehen.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Contributor Covenant Code of Conduct"
-msgstr ""
+msgstr "Vereinbarung über Verhaltenskodex für Mitwirkende"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Code of Conduct"
-msgstr ""
+msgstr "Verhaltenskodex"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Our Pledge"
-msgstr ""
+msgstr "Unsere Verpflichtung"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -69,6 +69,13 @@ msgid ""
 "nationality, personal appearance, race, caste, color, religion, or sexual identity\n"
 "and orientation.\n"
 msgstr ""
+"Wir als Mitglieder, Teilnehmende und Verantwortliche unserer Gemeinschaft\n"
+"verpflichten uns, allen Teilnehmenden an dem Projekt und unserer Gemeinschaft\n"
+"eine belästigungsfreie Beteiligung, unabhängig von Alter, Körpergröße,\n"
+"Behinderung, ethnischer Zuordnung, Geschlechtermerkmalen, -identität und -ausdruck,\n"
+"Grad der Erfahrung, Bildung, sozialem Status, Nationalität, persönlicher\n"
+"Erscheinung, Rasse, Religion oder sexueller Identität und Orientierung\n"
+"zu ermöglichen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -77,12 +84,15 @@ msgid ""
 "We pledge to act and interact in ways that contribute to an open, welcoming,\n"
 "diverse, inclusive, and healthy community.\n"
 msgstr ""
+"Wir verpflichten uns, in einer Weise zu handeln und zu interagieren, die zu\n"
+"einer offenen, einladenden, vielfältigen, inklusiven und gesunden Gemeinschaft\n"
+"beiträgt.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Our Standards"
-msgstr ""
+msgstr "Unsere Standards"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -91,24 +101,26 @@ msgid ""
 "Examples of behavior that contributes to a positive environment for our\n"
 "community include:\n"
 msgstr ""
+"Beispiele für Verhaltensweisen, die zu einem positiven Umfeld für unsere\n"
+"Gemeinschaft beitragen, sind:\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Demonstrating empathy and kindness toward other people\n"
-msgstr ""
+msgstr "Einfühlungsvermögen und Freundlichkeit gegenüber anderen Menschen zeigen\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Being respectful of differing opinions, viewpoints, and experiences\n"
-msgstr ""
+msgstr "Unterschiedliche Meinungen, Standpunkte und Erfahrungen respektieren\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Giving and gracefully accepting constructive feedback\n"
-msgstr ""
+msgstr "Konstruktives Feedback geben und würdevoll annehmen\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -117,6 +129,8 @@ msgid ""
 "Accepting responsibility and apologizing to those affected by our mistakes,\n"
 "and learning from the experience\n"
 msgstr ""
+"Verantwortung übernehmen und uns bei denjenigen entschuldigen, die von unseren\n"
+"Fehlern betroffen sind, und aus den Erfahrungen lernen\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -125,12 +139,14 @@ msgid ""
 "Focusing on what is best not just for us as individuals, but for the\n"
 "overall community\n"
 msgstr ""
+"Konzentration auf das, was nicht nur für uns als Individuen, sondern für die\n"
+"gesamte Gemeinschaft das Beste ist\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Examples of unacceptable behavior include:\n"
-msgstr ""
+msgstr "Beispiele für inakzeptables Verhalten sind:\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -139,18 +155,22 @@ msgid ""
 "The use of sexualized language or imagery, and sexual attention or\n"
 "advances of any kind\n"
 msgstr ""
+"Die Verwendung sexualisierter Sprache, Bilder oder Symbolik sowie unerwünschte\n"
+"Versuche sexueller Annäherung\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Trolling, insulting or derogatory comments, and personal or political attacks\n"
 msgstr ""
+"Beleidigende oder abwertende Kommentare, persönliche oder politische Angriffe\n"
+"und Trollen\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Public or private harassment\n"
-msgstr ""
+msgstr "Öffentliche oder private Belästigungen\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -159,6 +179,8 @@ msgid ""
 "Publishing others' private information, such as a physical or email\n"
 "address, without their explicit permission\n"
 msgstr ""
+"Das Veröffentlichen von privaten Informationen Anderer, wie zum Beispiel\n"
+"physische oder elektronische Adressen, ohne deren ausdrückliche Erlaubnis\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -167,12 +189,14 @@ msgid ""
 "Other conduct which could reasonably be considered inappropriate in a\n"
 "professional setting\n"
 msgstr ""
+"Anderes Verhalten, welches in einem professionellen Umfeld begründet als\n"
+"unangemessen betrachtet werden kann\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Enforcement Responsibilities"
-msgstr ""
+msgstr "Verantwortlichkeiten bei der Durchsetzung"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -183,6 +207,10 @@ msgid ""
 "response to any behavior that they deem inappropriate, threatening, offensive,\n"
 "or harmful.\n"
 msgstr ""
+"Die Gemeinschaftsleitung ist verantwortlich dafür, unsere Standards für ein\n"
+"akzeptables Verhalten klarzustellen und wird angemessen und fair\n"
+"korrigierende Maßnahmen ergreifen um auf jegliches Verhalten, das sie für\n"
+"unangemessen, bedrohlich oder beleidigend hält, zu reagieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -193,12 +221,17 @@ msgid ""
 "not aligned to this Code of Conduct, and will communicate reasons for moderation\n"
 "decisions when appropriate.\n"
 msgstr ""
+"Die Gemeinschaftsleitung hat das Recht und die Verantwortung, Kommentare,\n"
+"Commits, Code, Wiki-Bearbeitungen, Support-Tickets und andere Beiträge, die\n"
+"nicht mit diesem Verhaltenskodex vereinbar sind, zu entfernen, zu bearbeiten\n"
+"oder abzulehnen, und wird die Gründe für eine Mäßigung mitteilen, wenn es\n"
+"angebracht ist.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Scope"
-msgstr ""
+msgstr "Geltungsbereich"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -210,12 +243,18 @@ msgid ""
 "posting via an official social media account, or acting as an appointed\n"
 "representative at an online or offline event.\n"
 msgstr ""
+"Dieser Verhaltenskodex gilt für alle Gemeinschaftsbereiche und gilt auch, wenn\n"
+"eine Einzelperson die Gemeinschaft offiziell in öffentlichen Bereichen vertritt.\n"
+"Beispiele für die Repräsentation unserer Gemeinschaft sind die Verwendung einer\n"
+"offiziellen E-Mail-Adresse, das Posten über ein offizielles Social-Media-Konto\n"
+"oder das Auftreten als ernannte Vertretung bei einer Online- oder\n"
+"Offline-Veranstaltung.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Enforcement"
-msgstr ""
+msgstr "Durchsetzung"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -226,6 +265,10 @@ msgid ""
 "git.[at].john-livingston.fr.\n"
 "All complaints will be reviewed and investigated promptly and fairly.\n"
 msgstr ""
+"Fälle von missbräuchlichem, belästigendem oder anderweitig inakzeptablem\n"
+"Verhalten können unter git.[at].john-livingston.fr der für die Durchsetzung\n"
+"zuständigen Gemeinschaftsleitung gemeldet werden. Alle Beschwerden werden\n"
+"zeitnah und fair geprüft und ermittelt.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -234,12 +277,14 @@ msgid ""
 "All community leaders are obligated to respect the privacy and security of the\n"
 "reporter of any incident.\n"
 msgstr ""
+"Die gesamte Gemeinschaftsleitung ist verpflichtet, die Privatsphäre und die\n"
+"Sicherheit derjenigen, die einen Vorfall gemeldet haben, zu respektieren.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Enforcement Guidelines"
-msgstr ""
+msgstr "Durchsetzungsrichtlinien"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -248,12 +293,15 @@ msgid ""
 "Community leaders will follow these Community Impact Guidelines in determining\n"
 "the consequences for any action they deem in violation of this Code of Conduct:\n"
 msgstr ""
+"Die Gemeinschaftsleitung wird sich bei der Bestimmung der Konsequenzen für\n"
+"jede Handlung, die ihrer Ansicht nach gegen diesen Verhaltenskodex verstößt, an\n"
+"diese Richtlinien über die Auswirkungen in der Gemeinschaft halten:\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "1. Correction"
-msgstr ""
+msgstr "1. Berichtigung"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -262,6 +310,9 @@ msgid ""
 "**Community Impact**: Use of inappropriate language or other behavior deemed\n"
 "unprofessional or unwelcome in the community.\n"
 msgstr ""
+"**Auswirkungen in der Gemeinschaft**: Verwendung unangemessener Sprache oder\n"
+"anderes Verhalten, das in der Gemeinschaft als unprofessionell oder unwillkommen\n"
+"gilt.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -271,12 +322,16 @@ msgid ""
 "clarity around the nature of the violation and an explanation of why the\n"
 "behavior was inappropriate. A public apology may be requested.\n"
 msgstr ""
+"**Folge**: Eine private, schriftliche Verwarnung der Gemeinschaftsleitung,\n"
+"die Klarheit über die Art des Verstoßes und eine Erklärung dafür bietet, warum\n"
+"das Verhalten unangemessen war. Eine öffentliche Entschuldigung kann verlangt\n"
+"werden.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "2. Warning"
-msgstr ""
+msgstr "2. Verwarnung"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -285,6 +340,8 @@ msgid ""
 "**Community Impact**: A violation through a single incident or series\n"
 "of actions.\n"
 msgstr ""
+"**Auswirkungen in der Gemeinschaft**: Eine Verletzung durch einen einzelnen\n"
+"Vorfall oder eine Reihe von Handlungen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -297,12 +354,19 @@ msgid ""
 "like social media. Violating these terms may lead to a temporary or\n"
 "permanent ban.\n"
 msgstr ""
+"**Folge**: Eine Warnung mit Konsequenzen bei wiederholtem Fehlverhalten. Keine\n"
+"Interaktion mit den beteiligten Personen, einschließlich unaufgeforderter\n"
+"Interaktion mit denjenigen, die den Verhaltenskodex durchsetzen, für einen\n"
+"bestimmten Zeitraum. Dazu gehört die Vermeidung von Interaktionen in\n"
+"Gemeinschaftsräumen sowie in externen Kanälen wie sozialen Medien. Ein Verstoß\n"
+"gegen diese Bedingungen kann zu einem vorübergehenden oder dauerhaften Verbot\n"
+"führen.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "3. Temporary Ban"
-msgstr ""
+msgstr "3. Vorübergehender Ausschluss"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -311,6 +375,8 @@ msgid ""
 "**Community Impact**: A serious violation of community standards, including\n"
 "sustained inappropriate behavior.\n"
 msgstr ""
+"**Auswirkungen in der Gemeinschaft**: Eine schwerwiegende Verletzung von\n"
+"Gemeinschaftsstandards, einschließlich anhaltend unangemessenen Verhaltens.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -322,12 +388,18 @@ msgid ""
 "with those enforcing the Code of Conduct, is allowed during this period.\n"
 "Violating these terms may lead to a permanent ban.\n"
 msgstr ""
+"**Folge**: Ein zeitlich begrenztes Verbot jeglicher Art von Interaktion oder\n"
+"öffentlicher Kommunikation mit der Gemeinschaft. Während dieses Zeitraums ist\n"
+"keine öffentliche oder private Interaktion mit den beteiligten Personen erlaubt.\n"
+"Auch keine unaufgeforderte Interaktion mit denjenigen, die den Verhaltenskodex\n"
+"durchsetzen. Ein Verstoß gegen diese Bedingungen kann zu einem dauerhaften\n"
+"Verbot führen.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "4. Permanent Ban"
-msgstr ""
+msgstr "4. Dauerhafter Ausschluss"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -337,6 +409,10 @@ msgid ""
 "standards, including sustained inappropriate behavior,  harassment of an\n"
 "individual, or aggression toward or disparagement of classes of individuals.\n"
 msgstr ""
+"**Auswirkungen in der Gemeinschaft**: Aufzeigen eines Musters von Verletzungen\n"
+"der Gemeinschaftsstandards, einschließlich anhaltend unangemessenen Verhaltens,\n"
+"Belästigung einer Person oder Aggression gegen oder Herabsetzung von Gruppen von\n"
+"Personen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -345,12 +421,14 @@ msgid ""
 "**Consequence**: A permanent ban from any sort of public interaction within\n"
 "the community.\n"
 msgstr ""
+"**Folge**: Ein dauerhaftes Verbot jeglicher Art von öffentlicher Interaktion\n"
+"innerhalb der Gemeinschaft.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Attribution"
-msgstr ""
+msgstr "Bezug"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -360,6 +438,9 @@ msgid ""
 "version 2.1, available at\n"
 "[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].\n"
 msgstr ""
+"Dieser Verhaltenskodex basiert auf dem [Contributor Covenant][homepage],\n"
+"Version 2.0, verfügbar unter\n"
+"<https://www.contributor-covenant.org/de/version/2/0/code_of_conduct>\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -368,6 +449,8 @@ msgid ""
 "Community Impact Guidelines were inspired by\n"
 "[Mozilla's code of conduct enforcement ladder][Mozilla CoC].\n"
 msgstr ""
+"Community Impact Guidelines wurden von \n"
+"[Mozillas Code of Conduct Enforcement Ladder][mozilla] inspiriert.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -377,10 +460,14 @@ msgid ""
 "[https://www.contributor-covenant.org/faq][FAQ]. Translations are available\n"
 "at [https://www.contributor-covenant.org/translations][translations].\n"
 msgstr ""
+"Antworten auf häufig gestellte Fragen zu diesem Verhaltenskodex finden Sie in\n"
+"den häufig gestellten Fragen unter <https://www.contributor-covenant.org/faq>\n"
+"(in Englisch). Andere Übersetzungen sind verfügbar unter\n"
+"<https://www.contributor-covenant.org/translations>.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "[homepage]: https://www.contributor-covenant.org\n"
 "[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html\n"
@@ -388,12 +475,14 @@ msgid ""
 "[FAQ]: https://www.contributor-covenant.org/faq\n"
 "[translations]: https://www.contributor-covenant.org/translations\n"
 msgstr ""
+"[homepage]: https://www.contributor-covenant.org\n"
+"[mozilla]: https://github.com/mozilla/inclusion\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Develop"
-msgstr ""
+msgstr "Entwickeln"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -401,43 +490,43 @@ msgstr ""
 msgid ""
 "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem\n"
 "before you start working on it, and inform the community that you begin coding by claiming the issue.\n"
-msgstr ""
+msgstr "Sprechen Sie immer über die Funktionen, die Sie entwickeln wollen, indem Sie das Issue, das Ihr Problem behandelt, erstellen/finden und kommentieren bevor Sie mit der Arbeit daran beginnen und informieren Sie die Gemeinschaft darüber, dass Sie mit der Programmierung beginnen, indem Sie das Thema für sich beanspruchen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Pull Request must be done on the `main` branch.\n"
-msgstr ""
+msgstr "Bitte benutzen Sie den `main` Zweig.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.\n"
-msgstr ""
+msgstr "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prerequisite for building this plugin:\n"
-msgstr ""
+msgstr "Voraussetzung für die Erstellung dieses Plugins:\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "you must have `npm` installed\n"
-msgstr ""
+msgstr "Sie müssen `npm` installiert haben\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
-msgstr ""
+msgstr "Sie müssen python venv installiert haben (z.B. das Paket `python3-venv` auf Debian)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "To clone the repository:\n"
-msgstr ""
+msgstr "Um das Repository zu klonen:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -474,36 +563,38 @@ msgid ""
 "Once you are ready for a code review before merge, submit a Pull Request. In any case, please\n"
 "link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
 msgstr ""
+"Sobald Sie bereit sind, Ihren Code zu zeigen und um Feedback zu bitten, reichen Sie einen *Entwurf* für einen Pull Request ein.\n"
+"Sobald Sie bereit für eine Codeüberprüfung vor der Zusammenführung sind, reichen Sie einen Pull Request ein. In jedem Fall sollten Sie Ihren PR mit dem Problem, die er behebt, verlinken, indem Sie die GitHub-Syntax verwenden: \"fixes #issue_number\".\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder.\n"
-msgstr ""
+msgstr "Der Front-End-Code befindet sich im Ordner `client`, der Back-End-Code im Ordner `server`. Es gibt einige gemeinsam genutzte Codes im `shared` Ordner.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
-msgstr ""
+msgstr "Für allgemeine Anweisungen (Entwicklung von Plugins, Erstellung, Installation, ...), lesen Sie bitte die [Peertube Dokumentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "You can build the plugin with extra debug features simply by using:\n"
-msgstr ""
+msgstr "Sie können das Plugin mit zusätzlichen Debug-Funktionen bauen, indem Sie es einfach benutzen:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "NODE_ENV=dev npm run build\n"
-msgstr ""
+msgstr "NODE_ENV=dev npm run build\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "ESBuild vs Typescript"
-msgstr ""
+msgstr "ESBuild vs Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -515,12 +606,17 @@ msgid ""
 "That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
 "Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
 msgstr ""
+"Dieses Plugin verwendet ESBuild für die Generierung von Frontend-Code, wie das offizielle `peertube-plugin-quickstart` Plugin.\n"
+"ESBuild kann mit Typescript umgehen, prüft aber keine Typen\n"
+"(siehe [ESBuild-Dokumentation](https://esbuild.github.io/content-types/#typescript)).\n"
+"Deshalb kompilieren wir Typescript zuerst mit der Option `-noEmit`, nur um die Typen zu überprüfen (`check:client:ts` in der package.json Datei).\n"
+"Dann, wenn alles in Ordnung ist, führen wir ESBuild aus, um das kompilierte Javascript zu erzeugen.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Debug Mode"
-msgstr ""
+msgstr "Debug Mode"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -686,20 +782,20 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Document the plugin, or translate the documentation."
-msgstr ""
+msgstr "Dokumentieren Sie das Plugin, oder übersetzen Sie die Dokumentation."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/document/_index.md
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentation"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "General information"
-msgstr ""
+msgstr "Allgemeine Informationen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -708,18 +804,20 @@ msgid ""
 "Always inform the community before working (by creating a new issue, or commenting an existing one).\n"
 "This is to avoid that two persons are working on the same thing, and prevent conflicts.\n"
 msgstr ""
+"Informieren Sie die Community immer vor der Arbeit (indem Sie ein neues Problem erstellen oder ein bestehendes kommentieren).\n"
+"Damit soll vermieden werden, dass zwei Personen an der gleichen Sache arbeiten, und Konflikte zu verhindern.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Documentation work has to be merged in the `main` branch.\n"
-msgstr ""
+msgstr "Bitte benutzen Sie den `main`-Zweig.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "The documentation source code is in the `support/documentation/content` folder.\n"
-msgstr ""
+msgstr "Der Quellcode der Dokumentation befindet sich im Ordner `support/documentation/content`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -728,6 +826,8 @@ msgid ""
 "The documentation is generated using [Hugo](https://gohugo.io/).\n"
 "You have to install it on your computer if you want to preview your work.\n"
 msgstr ""
+"Die Dokumentation wird mit [Hugo](https://gohugo.io/) erstellt.\n"
+"Sie müssen es auf Ihrem Computer installieren, wenn Sie eine Vorschau Ihrer Arbeit sehen wollen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -736,6 +836,8 @@ msgid ""
 "The used theme is [hugo-theme-learn](https://learn.netlify.app/).\n"
 "You should read its documentation before starting editing the documentation.\n"
 msgstr ""
+"Das verwendete Thema ist [hugo-theme-learn](https://learn.netlify.app/).\n"
+"Sie sollten dessen Dokumentation lesen, bevor Sie mit der Bearbeitung der Dokumentation beginnen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -749,13 +851,13 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Translations"
-msgstr ""
+msgstr "Übersätzungen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "The principal language is english (`en` code).\n"
-msgstr ""
+msgstr "Die Hauptsprache ist Englisch (Code `en`).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -764,18 +866,20 @@ msgid ""
 "The different translations of the same file are side by side in the tree, and are identified by a language code in the file name extension.\n"
 "Example: `_index.fr.md` is the French translation of `_index.en.md`.\n"
 msgstr ""
+"Die verschiedenen Übersetzungen der gleichen Datei stehen nebeneinander im Verzeichnis und sind durch einen Sprachcode in der Dateinamenerweiterung gekennzeichnet.\n"
+"Beispiel: `_index.fr.md` ist die französische Übersetzung von `_index.en.md`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Please note that a missing translation file will not appear in the menus of the generated site.\n"
-msgstr ""
+msgstr "Bitte beachten Sie, dass eine fehlende Übersetzungsdatei nicht in den Menüs der generierten Website erscheint.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "**Always make sure to create files for all languages**, even if the translation is not yet available.\n"
-msgstr ""
+msgstr "**Stellen Sie sicher, dass Sie immer alle Dateien für die Sprachen erstellen**, auch wenn die Übersetzung noch nicht verfügbar ist.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -785,18 +889,21 @@ msgid ""
 "When you add a new file, you just have to create the english version, then run this script.\n"
 "It will create all  missing translations, putting a sample message inviting the user to read the english version.\n"
 msgstr ""
+"Dafür gibt es ein Skript `doc-generate-missing-translations.sh` im Stammverzeichnis des Projektes.\n"
+"Wenn Sie eine neue Datei hinzufügen, müssen Sie nur die englische Version erstellen und dann dieses Skript ausführen.\n"
+"Es erstellt alle fehlenden Übersetzungen und fügt eine Beispielmeldung hinzu, die den Benutzer auffordert, die englische Version zu lesen.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Add a new language"
-msgstr ""
+msgstr "Eine neue Sprache hinzufügen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section.\n"
-msgstr ""
+msgstr "Kopieren und ändern Sie den Abschnitt `[Languages.fr]` in der Datei `support/documentation/config.toml`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -805,6 +912,8 @@ msgid ""
 "Then, run the `doc-generate-missing-translations.sh` script.\n"
 "It will create all the missing files.\n"
 msgstr ""
+"Führen Sie dann das Skript `doc-generate-missing-translations.sh` aus.\n"
+"Es wird alle fehlenden Dateien erstellen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -813,24 +922,26 @@ msgid ""
 "Then you can translate them one by one.\n"
 "If the translations are not complete, it does not matter, the generated files will display a message suggesting to change the language.\n"
 msgstr ""
+"Dann können Sie sie eine Datei nach der anderen übersetzen.\n"
+"Wenn die Übersetzungen nicht vollständig sind, macht das nichts, die generierten Dateien zeigen eine Meldung an, die vorschlägt, die Sprache zu ändern.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To preview your modifications, just run:\n"
-msgstr ""
+msgstr "Um eine Vorschau Ihrer Änderungen zu sehen, führen Sie einfach diesen Befehl aus:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "hugo serve -s support/documentation/\n"
-msgstr ""
+msgstr "hugo serve -s support/documentation/\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -839,18 +950,20 @@ msgid ""
 "Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).\n"
 "This page will automatically refresh on each modification.\n"
 msgstr ""
+"Öffnen Sie dann Ihren Browser und gehen Sie auf die Adresse [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).\n"
+"Diese Seite wird bei jeder Änderung automatisch aktualisiert.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Publication"
-msgstr ""
+msgstr "Veröffentlichung"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.\n"
-msgstr ""
+msgstr "Die Veröffentlichung der Dokumentation erfolgt automatisch, sobald die Änderungen in den `main` Zweig eingefügt wurden.\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
@@ -862,35 +975,36 @@ msgstr ""
 #: support/documentation/content/en/contributing/feedback/_index.md
 #, no-wrap
 msgid ""
-"You don't need to know how to code to start contributing to this plugin! Other\n"
-"contributions are very valuable too, among which: you can test the software and\n"
-"report bugs, you can give feedback, features that you are\n"
-"interested in, user interface, design, ...\n"
+"You don't need to know how to code to start contributing to this plugin!\n"
+"Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ...\n"
 msgstr ""
+"Sie müssen keine Programmierkenntnisse haben, um zu diesem Plugin beizutragen!\n"
+"Andere Beiträge sind auch sehr wertvoll, darunter: Sie können die Software testen und Fehler melden, Sie können Feedback geben, Funktionen die Sie\n"
+"interessieren, Benutzeroberfläche, Design, ...\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/_index.md
 #, no-wrap
 msgid "Contributing"
-msgstr ""
+msgstr "Beitragen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/_index.md
 #, no-wrap
 msgid "Interested in contributing? Awesome!\n"
-msgstr ""
+msgstr "Interessiert beizutragen? Super!\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate the plugin"
-msgstr ""
+msgstr "Übersätzungen"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate"
-msgstr ""
+msgstr "Übersätzungen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -962,7 +1076,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Documentation translation"
-msgstr ""
+msgstr "Dokumentation"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -980,7 +1094,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding a new locale"
-msgstr ""
+msgstr "Eine neue Sprache hinzufügen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -988,7 +1102,7 @@ msgstr ""
 msgid ""
 "If you think there is a missing locale, please check first if it is handled in Peertube.\n"
 "If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it.\n"
-msgstr ""
+msgstr "Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der Einrichtung des Plugins haben, können Sie den [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) verwenden.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1113,25 +1227,25 @@ msgstr ""
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Plugin Credits"
-msgstr ""
+msgstr "Impressum des Plugins"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Credits"
-msgstr ""
+msgstr "Impressum"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies.\n"
-msgstr ""
+msgstr "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) Dateien beinhalten die Lizenzinformationen für dieses Programm und seiner Abhängigkeiten.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/).\n"
-msgstr ""
+msgstr "Das Plugin wird von [John Livingston](https://www.john-livingston.fr/) betrieben.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -1140,60 +1254,62 @@ msgid ""
 "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).\n"
 "The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.\n"
 msgstr ""
+"Dank an David Revoy für seine Arbeit an dem Peertube Maskottchen, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).\n"
+"Das Charakterdesign steht unter CC-By-Lizenz, und die SVG-Dateien, die zur Erstellung einiger Logos und Avatare in diesem Plugin verwendet werden, sind GPLv3.0.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org).\n"
-msgstr ""
+msgstr "Vielen Dank an [Framasoft](https://framasoft.org)für die Ermöglichung von [Peertube](https://joinpeertube.org/), für die finanzielle Unterstützung, und für das [Weblate](https://weblate.framasoft.org).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support.\n"
-msgstr ""
+msgstr "Vielen Dank an [ritimo](https://www.ritimo.org/) für die finanzielle Unterstützung.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support.\n"
-msgstr ""
+msgstr "Vielen Dank an [Code Lutin](https://www.codelutin.com/) und [Rétribution Copie Publique](https://copiepublique.fr/) für die finanzielle Unterstützung.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support.\n"
-msgstr ""
+msgstr "Vielen Dank an [NlNet](https://nlnet.nl/) und die [NGI0 Entrust fund](https://nlnet.nl/entrust/) für die finanzielle Unterstützung.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Some advanced features"
-msgstr ""
+msgstr "Einige erweiterte Funktionen"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Advanced usage"
-msgstr ""
+msgstr "Fortgeschrittene Nutzung"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge to bridge with other chats"
-msgstr ""
+msgstr "Matterbridge als Brücke zu anderen Chats nutzen"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge"
-msgstr ""
+msgstr "Matterbridge benutzen"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>\n"
-msgstr ""
+msgstr "Hier ist ein Tutorial um Matterbridge mit diesem Plugin zu benutzen (nur auf englisch): <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1263,7 +1379,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Plugin settings"
-msgstr ""
+msgstr "Impressum des Plugins"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1796,7 +1912,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Restart your services:\n"
-msgstr ""
+msgstr "Start your debugger server.\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1856,7 +1972,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/_index.md
 #, no-wrap
 msgid "Admin documentation"
-msgstr ""
+msgstr "Admin Dokumentation"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/settings.md
@@ -2109,7 +2225,7 @@ msgid ""
 "Note: for now this feature simply hide the chat.\n"
 "In a future release, the chat will be replaced by a message saying «please log in to [...]».\n"
 "See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information.\n"
-msgstr ""
+msgstr "Bevor Sie auf eine Hauptversion aktualisieren, lesen Sie bitte die Versionshinweise und die Liste der wichtigsten Änderungen : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/settings.md
@@ -2445,19 +2561,19 @@ msgstr ""
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Plugin documentation"
-msgstr ""
+msgstr "Plugin Dokumentation"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
-msgstr ""
+msgstr "Derzeit funktioniert das Plugin standartmäßig nur für x86_64 CPU Architekturen. Hier sind einige Anleitungen für andere CPU Architekturen."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Known issues: CPU Compatibility"
-msgstr ""
+msgstr "Bekannte Probleme: CPU Kompatibilität"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2466,6 +2582,8 @@ msgid ""
 "The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.\n"
 "It is not compatible with other CPU architectures.\n"
 msgstr ""
+"Das im Plugin enthaltene Prosody AppImage funktioniert nur mit x86_64 und arm64 CPU Architekturen.\n"
+"Es ist nicht kompatibel mit anderen CPU-Architekturen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2474,6 +2592,8 @@ msgid ""
 "To use the plugin, you will have to manually install Prosody on your server\n"
 "(see below).\n"
 msgstr ""
+"Um das Plugin zu verwenden, müssen Sie Prosody manuell auf Ihrem Server installieren\n"
+"(siehe unten).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2487,31 +2607,31 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Once it is done, you have to check `Use system Prosody` in the plugin settings.\n"
-msgstr ""
+msgstr "Sobald dies geschehen ist, müssen Sie in den Plugin-Einstellungen das Häkchen bei `Use system Prosody` setzen.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "On non-docker Peertube installation"
-msgstr ""
+msgstr "Nicht-Docker Peertube installation"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "For standard installation, you just have to install the official `prosody` package for your linux distribution.\n"
-msgstr ""
+msgstr "Für die Standardinstallation müssen Sie nur das offizielle `prosody`-Paket für Ihre Linux-Distribution installieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "For example, on Debian/Ubuntu:\n"
-msgstr ""
+msgstr "Zum Beispiel, auf Debian/Ubuntu:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "sudo apt install prosody\n"
-msgstr ""
+msgstr "sudo apt install prosody\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2520,24 +2640,26 @@ msgid ""
 "You can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run).\n"
 "For example, on Debian/Ubuntu (and other Systemd based linux distributions):\n"
 msgstr ""
+"Sie können dann den Dienst deaktivieren, der automatisch startet, wenn Sie Prosody installieren (das Plugin startet einen Prosody-Prozess, der Dienst muss nicht dauerhaft laufen).\n"
+"Zum Beispiel unter Debian/Ubuntu (und anderen Systemd-basierten Linux-Distributionen):\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "sudo systemctl disable prosody && sudo systemctl stop prosody\n"
-msgstr ""
+msgstr "sudo systemctl disable prosody && sudo systemctl stop prosody\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Warning: do not disable Prosody if it is used for another service on your server, like for example Jitsi.\n"
-msgstr ""
+msgstr "Achtung: Deaktivieren Sie Prosody nicht, wenn es für einen anderen Dienst auf Ihrem Server verwendet wird, wie zum Beispiel Jitsi.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Docker"
-msgstr ""
+msgstr "Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2546,6 +2668,9 @@ msgid ""
 "You will have to generate a Peertube image that includes Prosody in the same container that Peertube.\n"
 "I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround.\n"
 msgstr ""
+"Sie müssen ein Peertube-Image generieren, das Prosody in demselben\n"
+"Container enthält, der auch Peertube beinhaltet.\n"
+"Ich weiß, dass dies nicht der Standardweg ist, um dies mit Docker zu tun, aber bedenken Sie, dass eine vorübergehende Lösung ist.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2554,6 +2679,8 @@ msgid ""
 "To generate and use such an image, please refer to the Docker documentation.\n"
 "The Docker file to generate the image should be:\n"
 msgstr ""
+"Um ein solches Image zu erzeugen und zu verwenden, lesen Sie bitte die Docker-Dokumentation.\n"
+"Die Docker-Datei, um das Paket zu erzeugen, sollte wie folgt sein:\n"
 
 #. type: Fenced code block (Docker)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2563,24 +2690,27 @@ msgid ""
 "\n"
 "RUN apt -y update && apt install -y prosody && apt -y clean\n"
 msgstr ""
+"FROM chocobozzz/peertube:production-bullseye\n"
+"\n"
+"RUN apt -y update && apt install -y prosody && apt -y clean\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Yunohost"
-msgstr ""
+msgstr "Yunohost"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "You have to disable `metronome` (the XMPP server provided by Yunohost), and install `prosody`.\n"
-msgstr ""
+msgstr "Sie müssen `metronome` (der von Yunohost bereitgestellte XMPP-Server) deaktivieren, und `prosody` installieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0.\n"
-msgstr ""
+msgstr "Dies wird bereits von der Yunohost Peertube Anwendung gemacht, da es für das Plugin vor v6.0.0 erforderlich war.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2589,97 +2719,99 @@ msgid ""
 "But it may be removed in a near feature (to avoid drawbacks of this method).\n"
 "I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility.\n"
 msgstr ""
+"Es kann aber sein, dass es in naher Zukunft entfernt wird (um die Nachteile dieser Methode zu vermeiden).\n"
+"Ich muss mit dem Yunohost Team diskutieren, um zu entscheiden, wie wir die Nachteile minimieren können, und die Kompatibilität zu maximieren.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat installation guide"
-msgstr ""
+msgstr "Plugin peertube-plugin-livechat Installationsanleitung"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Installation guide"
-msgstr ""
+msgstr "Installationsanleitung"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
-msgstr ""
+msgstr "Bevor Sie auf eine Hauptversion aktualisieren, lesen Sie bitte die Versionshinweise und die Liste der wichtigsten Änderungen : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "To install or update the plugin, **just use the Peertube web admin interface**.\n"
-msgstr ""
+msgstr "Um das Plugin zu installieren oder zu aktualisieren **einfach das Peertube Web-Admin-Interface benutzen**.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Here are some other more specific instructions:\n"
-msgstr ""
+msgstr "Hier sind weitere, spezifischere Anweisungen:\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "Important notes when upgrading for an older version."
-msgstr ""
+msgstr "Wichtige Hinweise zum aktualisieren von älteren Versionen."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "Upgrade from version older than 6.0.0"
-msgstr ""
+msgstr "Aktualisieren von Versionen vor 6.0.0"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "IMPORTANT NOTE"
-msgstr ""
+msgstr "WICHTIGER HINWEIS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "Since version v6.0.0, this plugin does not need any Prosody installation.\n"
-msgstr ""
+msgstr "Seit Version v6.0.0 benötigt dieses Plugin keine andere Prosody-Installation.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody.\n"
-msgstr ""
+msgstr "Falls Sie dieses Plugin vor dieser Version benutzt haben und Sie Prosody manuell installiert haben, können Sie Prosody sicher deinstallieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image.\n"
-msgstr ""
+msgstr "Falls Sie ein eigenes Peertube Docker Paket genutzt haben, welches Prosody eingebettet hatte, können Sie zu den offiziellen Peertube Paketen zurück wechseln.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/_index.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat user documentation"
-msgstr ""
+msgstr "Plugin peertube-plugin-livechat Benutzer Dokumentation"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/_index.md
 #, no-wrap
 msgid "User documentation"
-msgstr ""
+msgstr "Benutzer Dokumentation"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation"
-msgstr ""
+msgstr "Plugin peertube-plugin-livechat Benutzer Dokumentation"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "Moderation"
-msgstr ""
+msgstr "Dokumentation"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2888,7 +3020,7 @@ msgstr ""
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "PeerTube plugin livechat"
-msgstr ""
+msgstr "PeerTube plugin livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
@@ -2896,19 +3028,20 @@ msgstr ""
 #, no-wrap
 msgid "You can use the language selector in the left menu to view this documentation in different languages.\n"
 msgstr ""
+"Sie können die Sprachauswahl im linken Menü verwenden, um diese Dokumentation in verschiedenen Sprachen anzuzeigen.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #: support/documentation/content/en/technical/thirdparty/_index.md
 #, no-wrap
 msgid "Introduction"
-msgstr ""
+msgstr "Einführung"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.\n"
-msgstr ""
+msgstr "Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, ein Chatsystem für Peertube-Videos bereitzustellen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -2923,55 +3056,55 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
-msgstr ""
+msgstr "Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking / New features requests"
-msgstr ""
+msgstr "Neue Funktionen / Fehler (Bugs)"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking & new features"
-msgstr ""
+msgstr "Neue Funktionen / Fehler (Bugs)"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french.\n"
-msgstr ""
+msgstr "Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der Einrichtung des Plugins haben, können Sie den [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) verwenden.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "To have a glimpse to the roadmap for upcoming features, please refer to:\n"
-msgstr ""
+msgstr "Einen Einblick in die Roadmap für kommende Funktionen finden Sie hier:\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
-msgstr ""
+msgstr "[Github Project](https://github.com/users/JohnXLivingston/projects/1).\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
-msgstr ""
+msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
-msgstr ""
+msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen.\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/technical/_index.md
 #, no-wrap
 msgid "Technical documentation"
-msgstr ""
+msgstr "Benutzer Dokumentation"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/technical/thirdparty/_index.md

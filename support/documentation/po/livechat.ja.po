@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-13 10:22+0200\n"
+"POT-Creation-Date: 2023-07-13 10:42+0200\n"
 "PO-Revision-Date: 2023-07-12 12:16+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -862,10 +862,8 @@ msgstr ""
 #: support/documentation/content/en/contributing/feedback/_index.md
 #, no-wrap
 msgid ""
-"You don't need to know how to code to start contributing to this plugin! Other\n"
-"contributions are very valuable too, among which: you can test the software and\n"
-"report bugs, you can give feedback, features that you are\n"
-"interested in, user interface, design, ...\n"
+"You don't need to know how to code to start contributing to this plugin!\n"
+"Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ...\n"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
