@@ -15,7 +15,7 @@ fi
 
 
 function getLangs() {
-  grep -P '\[Languages.\w+\]' support/documentation/config.toml | sed -E 's/^.*\.(\w+)\].*$/\1/' | grep -v en
+  grep -P '\[Languages\..+\]' support/documentation/config.toml | sed -E 's/^.*\.(.+)\].*$/\1/' | grep -v en
 }
 
 function generatePo4aConf() {

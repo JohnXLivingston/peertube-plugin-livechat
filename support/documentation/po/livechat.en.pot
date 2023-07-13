@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-13 11:36+0200\n"
+"POT-Creation-Date: 2023-07-13 11:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2892,7 +2892,9 @@ msgstr ""
 #: support/documentation/content/en/_index.md
 #: support/documentation/content/en/intro/_index.md
 #, markdown-text, no-wrap
-msgid "You can use the language selector in the left menu to view this documentation in different languages.\n"
+msgid ""
+"You can use the language selector in the left menu to view this documentation in different languages.\n"
+"Some translations are missing or incomplete. In this case, you'll see the English version of the text.\n"
 msgstr ""
 
 #. type: Title ##

@@ -2,6 +2,7 @@
 
 {{% notice tip %}}
 You can use the language selector in the left menu to view this documentation in different languages.
+Some translations are missing or incomplete. In this case, you'll see the English version of the text.
 {{% /notice %}}
 
 {{% notice info %}}

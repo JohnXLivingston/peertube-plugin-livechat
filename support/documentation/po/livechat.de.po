@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-13 10:42+0200\n"
+"POT-Creation-Date: 2023-07-13 11:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3025,10 +3025,12 @@ msgstr "PeerTube plugin livechat"
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 #: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "You can use the language selector in the left menu to view this documentation in different languages.\n"
-msgstr ""
-"Sie können die Sprachauswahl im linken Menü verwenden, um diese Dokumentation in verschiedenen Sprachen anzuzeigen.\n"
+#, fuzzy, no-wrap
+#| msgid "You can use the language selector in the left menu to view this documentation in different languages.\n"
+msgid ""
+"You can use the language selector in the left menu to view this documentation in different languages.\n"
+"Some translations are missing or incomplete. In this case, you'll see the English version of the text.\n"
+msgstr "Sie können die Sprachauswahl im linken Menü verwenden, um diese Dokumentation in verschiedenen Sprachen anzuzeigen.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
