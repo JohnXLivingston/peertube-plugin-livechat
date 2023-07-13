@@ -7,6 +7,10 @@ chapter: false
 
 This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.
 
+{{% notice tip %}}
+You can use the language selector in the left menu to view this documentation in different languages.
+{{% /notice %}}
+
 | | |
 |---|---|
 | ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |

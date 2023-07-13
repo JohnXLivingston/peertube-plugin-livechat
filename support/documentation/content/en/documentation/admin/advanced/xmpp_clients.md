@@ -12,10 +12,8 @@ This can for example be useful to facilitate moderation operations.
 For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/).
 
 {{% notice info %}}
-Enabling these features requires configuration changes on the server, and
-on the DNS records. It is not possible to configure this only from the
-Peertube interface, and it requires some basic system some basic system
-admin skills.
+Enabling these features requires configuration changes on the server, and on the DNS records.
+It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills.
 {{% /notice %}}
 
 ## Login to your Peertube account
@@ -26,31 +24,27 @@ This feature is not yet available, and will come in a future version of the plug
 
 ## Connection using an external XMPP account
 
-To enable this feature, you will need to set up your server and DNS
-records, so that XMPP clients can find and access the
+To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the
 [Prosody server](https://prosody.im) that this plugin uses internally.
 
 ### Plugin settings
 
-Start by going to the livechat plugin settings of your instance, then
-enable the setting "Enable connection to room using external XMPP accounts".
+Start by going to the livechat plugin settings of your instance, then enable the setting "Enable connection to room using external XMPP accounts".
 By checking this settings, new settings appear below.
 
 First of all, the "Prosody server to server port" field.
 This one defaults to 5269, which is the standard port for this service.
 You can however change to another port, if this is already in use on your server.
 
-Next, the field "Server to server network interfaces" field allows you to specify
-which network interfaces the server should listen on.
+Next, the field "Server to server network interfaces" field allows you to specify which network interfaces the server should listen on.
 The default value "*, ::" indicates to listen on all IP addresses.
 You can change these values, if you wish to listen on only certain IP addresses.
 The syntax is explained next to the setting.
 
 For the "Certificate folder" setting, you can leave it empty.
-In this case, the plugin will automatically generate self-signed certificates.
+In this case, the plugin will automatically generate  self-signed certificates.
 Some XMPP servers may refuse to connect, depending on their configuration.
-In this case, you can indicate here a path on the server, in which you 
-must place certificates to be used by the module.
+In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.
 It is up to you to generate and renew them.
 See bellow for more information.
 
@@ -58,17 +52,14 @@ See bellow for more information.
 
 You must open the configured port (5269 by default) on your firewall.
 
-If you are using Docker for your Peertube, you need to modify the
-`docker-compose.yml` file to open port 5269 of the `peertube` container,
+If you are using Docker for your Peertube, you need to modify the `docker-compose.yml` file to open port 5269 of the `peertube` container,
 so that the outer world can connect to it.
 
 ### DNS
 
-You need to add a [DNS record](https://prosody.im/doc/dns) allowing
-remote servers to find the "room.your_instance.tld" component.
+You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the "room.your_instance.tld" component.
 
-The easiest way to do this is to add an SRV record for the "room"
-[subdomain](https://prosody.im/doc/dns#subdomains):
+The easiest way to do this is to add an SRV record for the "room" [subdomain](https://prosody.im/doc/dns#subdomains):
 
 * record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)
 * TTL: 3600
@@ -81,16 +72,14 @@ The easiest way to do this is to add an SRV record for the "room"
 
 Be careful to keep the dot after "your_instance.tld".
 
-Using the `dig` command to check your record,
-you should get a result similar to this:
+Using the `dig` command to check your record, you should get a result similar to this:
 
 ```bash
 $ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV
 0 5 5269 videos.john-livingston.fr.
 ```
 
-If you are **not using the standard `5269` port**, you must also add a SRV record
-for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).
+If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).
 Of course, you can also add this record if you use the standard port. It will also work.
 
 ### Using trusted certificates
@@ -111,12 +100,8 @@ You can use any [method supported by Prosody](https://prosody.im/doc/certificate
 You must then place these certificates in a folder that will be accessible to the `peertube` user, and specify this folder in the plugin setting "Certificate folder".
 
 {{% notice tip %}}
-If you want to use the ProsodyCtl utility to import
-certificates, this utility is available (once Peertube is started) using
-the following command (adapting the path to your Peertube data folder,
-and replacing "xxx" with the arguments you wish to pass to
-prosodyctl):
-`sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`
+If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing "xxx" with the arguments you wish to pass to
+prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`
 {{% /notice %}}
 
 The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary.
@@ -125,8 +110,8 @@ The plugin will check once a day to see if any files have been modified in this 
 
 We assume here that your Peertube installation is "classic" (no use of Docker), and that the certificates are generated by letsencrypt, using the certbot tool.
 
-First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the
-MUC (XMPP chat rooms) component. Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain.
+First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the MUC (XMPP chat rooms) component.
+Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain.
 
 So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.
 You can use a CNAME entry (or an A entry and a AAAA entry).
@@ -156,8 +141,7 @@ systemc reload nginx
 ```
 
 Then we prepare the folder in which we will later import the certificates.
-We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist),
-with the user `peertube` to make sure there are no permissions issues:
+We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:
 
 ```bash
 sudo -u peertube mkdir /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/certs
@@ -216,7 +200,7 @@ Run certbot:
 certbot
 ```
 
-You will be presented with a series of prompts.  Enter `2` for the authentication type:
+You will be presented with a series of prompts. Enter `2` for the authentication type:
 
 ```text
 How would you like to authenticate with the ACME CA?
@@ -226,8 +210,7 @@ Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2
 Enter the domain name `room.your_instance.tld`:
 
 ```text
-Please enter the domain name(s) you would like on your certificate (comma and/or
-space separated) (Enter 'c' to cancel): room.your_instance.tld
+Please enter the domain name(s) you would like on your certificate (comma and/or space separated) (Enter 'c' to cancel): room.your_instance.tld
 ```
 
 Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:
@@ -302,6 +285,4 @@ docker-compose exec -u peertube \
 
 ### Troubleshooting
 
-If you can't make it work, you can use the diagnostic tool
-(there is a button on top of the plugin settings page),
-and take a close look on the «Prosody check» section.
+If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section.
