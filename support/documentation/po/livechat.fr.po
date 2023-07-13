@@ -467,9 +467,6 @@ msgstr ""
 #, no-wrap
 msgid "Develop"
 msgstr ""
-"#-#-#-#-#  support/old_doc/contributing/develop/_index.fr.md:1 (type Yaml Front Matter Hash Value: description)  #-#-#-#-#\n"
-"Développer et proposer des modifications de code\n"
-"#-#-#-#-#  support/old_doc/contributing/develop/_index.fr.md:1 (type: Yaml Front Matter Hash Value: title)  #-#-#-#-#\n"
 "Développer"
 
 #. type: Plain text
@@ -3005,10 +3002,6 @@ msgstr "Documentation utilisateur⋅rice du plugin peertube-plugin-livechat"
 #, no-wrap
 msgid "Moderation"
 msgstr ""
-"#-#-#-#-#  support/old_doc/contributing/document/_index.fr.md:1 (type Yaml Front Matter Hash Value: title)  #-#-#-#-#\n"
-"Documenter\n"
-"#-#-#-#-#  support/old_doc/documentation/_index.fr.md:1 (type: Yaml Front Matter Hash Value: title)  #-#-#-#-#\n"
-"Documentation"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
