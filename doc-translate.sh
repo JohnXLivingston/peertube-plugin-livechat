@@ -3,6 +3,7 @@
 set -euo pipefail
 
 po4afile="support/documentation/po/po4a.conf"
+build_pot_in_folder="build/documentation/pot_in"
 
 # Is po4a new enough?
 function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
@@ -13,6 +14,7 @@ if version_gt "$required_version" "$current_version"; then
     exit 1
 fi
 
+mkdir -p $build_pot_in_folder
 
 function getLangs() {
   grep -P '\[Languages\..+\]' support/documentation/config.toml | sed -E 's/^.*\.(.+)\].*$/\1/' | grep -v en
@@ -70,10 +72,29 @@ function generatePo4aConf() {
 
   # We must now list all english files to translate:
   find support/documentation/content/en/ -name '*.md' | sort | while read source_file; do
+    target_file=$(echo "$source_file" | sed -E "s/\/content\/en\//\/content\/translations\/\$lang\//")
+
     echo -n '[type: markdown] ' >> $po4afile
     echo -n $source_file >> $po4afile
     echo -n " " >> $po4afile
-    target_file=$(echo "$source_file" | sed -E "s/\/content\/en\//\/content\/translations\/\$lang\//")
+
+    # Some files have strings to ignore. For example, when the whole line/title is using the livechat_label shortcode.
+    # To do so, we will use the pot_in option (see https://po4a.org/man/man1/po4a.1.php).
+    # We are generating a filtered file, that will be used.
+    # There is also a special case:
+    #   If the file Yaml Font Matter contains the livechatnotranslation option, we just copy the file.
+    #   To do so, we use the pot_in option, by generating an empty file.
+    pot_in_file=$(echo "$source_file" | sed -E 's/support\/documentation\/content\/en\//build\/documentation\/pot_in\//')
+    pot_in_file_dir=$(dirname "$pot_in_file")
+    use_pot_in=""
+    if grep -q -P '^livechatnotranslation\s*:\s*true\s*$' "$source_file"; then
+      echo "File $source_file must not be translated."
+      mkdir -p "$pot_in_file_dir"
+      echo "" > "$pot_in_file"
+
+      echo -n "pot_in:$pot_in_file " >> $po4afile
+    fi
+
     echo -n '$lang:'$target_file >> $po4afile
     echo "" >> $po4afile
   done

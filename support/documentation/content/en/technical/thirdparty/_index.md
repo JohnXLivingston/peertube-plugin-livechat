@@ -3,6 +3,7 @@ title: "Third party"
 description: "Displaying the livechat with 3rd party software."
 weight: 20
 chapter: false
+livechatnotranslation: true
 ---
 
 {{% notice warning %}}
