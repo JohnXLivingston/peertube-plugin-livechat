@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-14 19:55+0200\n"
-"PO-Revision-Date: 2023-07-14 17:26+0000\n"
+"PO-Revision-Date: 2023-07-14 18:31+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-"
-"livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,9 +63,17 @@ msgid ""
 "Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
 "Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.\n"
 msgstr ""
-"Ce code de conduite est adapté du [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, disponible à l'adresse  [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
-"Les traductions sont disponibles à l'adresse [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
-"Les cas de comportements abusifs, harcelants ou tout autre comportement inacceptables peuvent être signalés aux dirigeant·e·s de la communauté responsables de l’application du code de conduite à git.[at].john-livingston.fr.\n"
+"Ce code de conduite est adapté du [Contributor Covenant](https://www."
+"contributor-covenant.org), version 2.1, disponible à l'adresse [https://www."
+"contributor-covenant.org/version/2/1/code_of_conduct.html](https://www."
+"contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
+"Les traductions sont disponibles à l'adresse [https://www.contributor-"
+"covenant.org/translations](https://www.contributor-covenant.org/"
+"translations).\n"
+"Les cas de comportements abusifs, harcelants ou tout autre comportement "
+"inacceptables peuvent être signalés aux dirigeant·e·s de la communauté "
+"responsables de l’application du code de conduite à git.[at].john-livingston."
+"fr.\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -202,7 +210,7 @@ msgstr "NODE_ENV=dev npm run build\n"
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "ESBuild vs Typescript"
-msgstr "ESBuild vs Typescript"
+msgstr "ESBuild versus Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -309,7 +317,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prosody debugger"
-msgstr "Prosody debugger"
+msgstr "debugger Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -343,7 +351,7 @@ msgid ""
 msgstr ""
 "{\n"
 "  \"debug_prosody\": {\n"
-"    \"debugger_path\": \"/the_path_to_mobdebug/src\",\n"
+"    \"debugger_path\": \"/le_chemin_vers_mobdebug/src\",\n"
 "    \"host\": \"localhost\",\n"
 "    \"port\": \"8172\"\n"
 "  }\n"
@@ -605,24 +613,33 @@ msgid ""
 "Please make sure to install a compatible version.\n"
 "If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually.\n"
 msgstr ""
+"Certaines distributions linux (comme Debian Bullseye par exemple) ont une "
+"version trop ancienne de `po4a`.\n"
+"Veillez à installer une version compatible.\n"
+"Si vous utilisez Debian Bullseye par exemple, vous pouvez télécharger le "
+"fichier Bookworm po4a.deb depuis [https://packages.debian."
+"org](https://packages.debian.org/bookworm/all/po4a/download), et l'installer "
+"manuellement.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To handle translations, just do:\n"
-msgstr ""
+msgstr "Pour gérer les traductions, il suffit de faire :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "npm run doc:translate\n"
-msgstr ""
+msgstr "npm run doc:translate\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector.\n"
 msgstr ""
+"Vous pouvez ensuite prévisualiser le résultat en utilisant `hugo serve -s "
+"support/documentation/`, et en utilisant le sélecteur de langue.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -641,6 +658,9 @@ msgstr "Éditez seulement les fichiers anglais dans `support/documentation/conte
 #, no-wrap
 msgid "Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file.\n"
 msgstr ""
+"Ensuite, avant de commiter, lancez toujours `npm run doc:translate`, afin "
+"que les changements dans les fichiers anglais puissent être propagés dans le "
+"fichier `support/documentation/po/livechat.en.pot`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -649,6 +669,10 @@ msgid ""
 "You can use the `livechat_label` short code to use application strings.\n"
 "See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).\n"
 msgstr ""
+"Vous pouvez utiliser le code court `livechat_label` pour utiliser des "
+"chaînes de l'application.\n"
+"Voir ici : [Traduction de la documentation](/peertube-plugin-livechat/fr/"
+"contribuer/translate/#documentation-translation).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -657,6 +681,10 @@ msgid ""
 "It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.\n"
 "See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).\n"
 msgstr ""
+"Il est possible d'empêcher un fichier d'être traduit, en utilisant `"
+"livechatnotranslation : true` dans la section Yaml Font Matter.\n"
+"Voir ici : [Traduction de la documentation](/peertube-plugin-livechat/fr/"
+"contribuer/translate/#documentation-translation).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -665,6 +693,10 @@ msgid ""
 "Please use the `livechatnotranslation` option for technical documentation.\n"
 "We don't want technical documentation to be translated, to avoid issues because of a wrong translation.\n"
 msgstr ""
+"Veuillez utiliser l'option `livechatnotranslation` pour la documentation "
+"technique.\n"
+"Nous ne voulons pas traduire la documentation technique, afin d'éviter les "
+"problèmes liés à une mauvaise traduction.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -674,18 +706,26 @@ msgid ""
 "But add a line break after each sentence in a paragraph.\n"
 "This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.\n"
 msgstr ""
+"Évitez d'ajouter des sauts de ligne au milieu d'une phrase.\n"
+"En revanche, ajoutez un saut de ligne après chaque phrase d'un paragraphe.\n"
+"Cela facilite le travail des traducteur⋅rices : iels peuvent ainsi "
+"facilement vérifier qu'iels n'oublient pas une phrase lorsqu'iels traduisent "
+"un paragraphe.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "What if I can't use hugo and/or po4a?"
-msgstr ""
+msgstr "Que faire si je ne peux pas utiliser hugo et/ou po4a ?"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request.\n"
 msgstr ""
+"Il suffit d'éditer les fichiers markdown en anglais, et de spécifier que "
+"vous ne pouvez pas compiler les traductions lorsque vous faites votre Pull "
+"Request.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -794,25 +834,25 @@ msgstr "Merci à [NlNet](https://nlnet.nl/) et au [fond NGI0 Entrust](https://nl
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Some advanced features"
-msgstr "Some advanced features"
+msgstr "Quelques fonctionnalités avancées"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Advanced usage"
-msgstr "Advanced usage"
+msgstr "Usage avancé"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge to bridge with other chats"
-msgstr "Using Matterbridge to bridge with other chats"
+msgstr "Utiliser Matterbridge pour faire un pont vers d'autres tchats"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge"
-msgstr "Using Matterbridge"
+msgstr "Utiliser Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -824,7 +864,7 @@ msgstr "This page is not yet translated in your language, please refer to the en
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Allow connections using XMPP clients"
-msgstr "Autoriser la connexion en utilisant des clients XMPP."
+msgstr "Autoriser la connexion en utilisant des clients XMPP"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1326,7 +1366,9 @@ msgstr "Méthode en cas d'utilisation de Docker"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube.\n"
-msgstr "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube.\n"
+msgstr ""
+"Cette méthode marche avec le [guide Docker](https://docs.joinpeertube.org/"
+"install/docker) officiel de Peertube.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1336,21 +1378,23 @@ msgid ""
 "You can use a CNAME entry (or an A entry and a AAAA entry).\n"
 "This is necessary for Let's Encrypt to validate the domain for certificate generation.\n"
 msgstr ""
-"First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.\n"
-"You can use a CNAME entry (or an A entry and a AAAA entry).\n"
-"This is necessary for Let's Encrypt to validate the domain for certificate generation.\n"
+"Tout d'abord, assurez-vous de créer une entrée DNS pour `room.your_instance."
+"tld`, qui pointe vers votre serveur.\n"
+"Vous pouvez utiliser une entrée CNAME (ou une entrée A et une entrée AAAA).\n"
+"Ceci est nécessaire pour que Let's Encrypt valide le domaine pour la "
+"génération du certificat.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Enter the directory where your `docker-compose.yml` file exists.\n"
-msgstr "Enter the directory where your `docker-compose.yml` file exists.\n"
+msgstr "Entrez le répertoire où se trouve votre fichier `docker-compose.yml`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Open a shell in the certbot container:\n"
-msgstr "Open a shell in the certbot container:\n"
+msgstr "Ouvrez un shell dans le conteneur certbot :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1362,7 +1406,7 @@ msgstr "docker exec -it certbot /bin/sh\n"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Run certbot:\n"
-msgstr "Run certbot:\n"
+msgstr "Lancez certbot :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1374,7 +1418,9 @@ msgstr "certbot\n"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "You will be presented with a series of prompts. Enter `2` for the authentication type:\n"
-msgstr "You will be presented with a series of prompts. Enter `2` for the authentication type:\n"
+msgstr ""
+"Une série d'invites vous sera présentée. Entrez `2` pour le type "
+"d'authentification :\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1383,8 +1429,6 @@ msgid ""
 "How would you like to authenticate with the ACME CA?\n"
 "Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2\n"
 msgstr ""
-"How would you like to authenticate with the ACME CA?\n"
-"Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1414,7 +1458,7 @@ msgstr "Input the webroot for <room.your_instance.tld>: (Enter 'c' to cancel): /
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "You should see output like the following:\n"
-msgstr "You should see output like the following:\n"
+msgstr "Vous devriez obtenir un résultat semblable à celui qui suit :\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1436,9 +1480,13 @@ msgid ""
 "*Note*:  This will also make the files readable to the group with id 999 on the host system.\n"
 "Check the groups on your system to assess this as a risk before running this command.\n"
 msgstr ""
-"Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.\n"
-"*Note*:  This will also make the files readable to the group with id 999 on the host system.\n"
-"Check the groups on your system to assess this as a risk before running this command.\n"
+"Exécutez la commande suivante à l'intérieur du conteneur certbot pour donner "
+"un accès en lecture aux nouveaux certificats et clés privées au groupe "
+"peertube.\n"
+"*Note* :  Cette commande rendra également les fichiers accessibles en "
+"lecture au groupe dont l'identifiant est 999 sur le système hôte.\n"
+"Vérifiez les groupes sur votre système pour évaluer le risque avant "
+"d'exécuter cette commande.\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1460,7 +1508,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Exit the certbot container:\n"
-msgstr "Exit the certbot container:\n"
+msgstr "Sortez du conteneur certbot :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1475,8 +1523,10 @@ msgid ""
 "Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.\n"
 "This is the same as the above, but to be automatically executed after every certificate renewal.\n"
 msgstr ""
-"Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.\n"
-"This is the same as the above, but to be automatically executed after every certificate renewal.\n"
+"Modifiez votre fichier `docker-compose.yml`, en changeant la ligne "
+"`entrypoint` sous le service `certbot` par ce qui suit.\n"
+"C'est la même chose que ci-dessus, mais elle doit être exécutée "
+"automatiquement après chaque renouvellement de certificat.\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1491,8 +1541,9 @@ msgid ""
 "Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.\n"
 "It should look something like this:\n"
 msgstr ""
-"Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.\n"
-"It should look something like this:\n"
+"En continuant à modifier `docker-compose.yml`, ajoutez le volume certbot "
+"dans le conteneur peertube.\n"
+"Il devrait ressembler à ceci :\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1508,7 +1559,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Restart your services:\n"
-msgstr "Restart your services:\n"
+msgstr "Redémarrez vos services :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1520,7 +1571,10 @@ msgstr "docker-compose down; docker-comopse up -d\n"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:\n"
-msgstr "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:\n"
+msgstr ""
+"Dans les paramètres du plugin livechat à partir des paramètres "
+"d'administration de PeerTube, définissez le répertoire des certificats comme "
+"suit :\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1532,7 +1586,9 @@ msgstr "/etc/letsencrypt/live\n"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Save the plugin settings and verify Prosody can see the certificates:\n"
-msgstr "Save the plugin settings and verify Prosody can see the certificates:\n"
+msgstr ""
+"Sauvegardez les paramètres du plugin et vérifiez que Prosody peut voir les "
+"certificats :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1592,7 +1648,7 @@ msgstr "Paramètres du plugin"
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This section describes the plugin settings page.\n"
-msgstr ""
+msgstr "Cette section décrit la page de configuration du plugin.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1601,6 +1657,9 @@ msgid ""
 "When pressing the «List rooms» button, all existing chatrooms will be listed.\n"
 "You can then find them and moderated them.\n"
 msgstr ""
+"Lorsque vous appuyez sur le bouton \"Lister les salles\", toutes les salles "
+"de chat existantes sont listées.\n"
+"Vous pouvez alors les trouver et les modérer.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1613,12 +1672,14 @@ msgstr "Fédération"
 #, no-wrap
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares.\n"
 msgstr ""
+"Les paramètres suivants concernent la fédération avec d'autres instances "
+"Peertube et d'autres logiciels du fediverse.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat behaviour"
-msgstr ""
+msgstr "Comportement en chat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1627,24 +1688,33 @@ msgid ""
 "This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.\n"
 "The chat can be customized (readonly mode, use the current theme, ...).\n"
 msgstr ""
+"Cette fonctionnalité permet d'activer une fenêtre modale \"partager le lien "
+"du chat\". Avec cette modale, vous pouvez générer des URL pour rejoindre le "
+"chat.\n"
+"Le chat peut être personnalisé (mode lecture seule, utilisation du thème "
+"actuel, ...).\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!\n"
 msgstr ""
+"Vous pouvez par exemple générer une URL en lecture seule et l'utiliser dans "
+"OBS pour intégrer le chat dans votre flux en direct !\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This settings allows you to choose who can access this modal.\n"
 msgstr ""
+"Ce paramètre vous permet de choisir qui peut accéder à cette fenêtre modale."
+"\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "The video owner will be able to activate web chats.\n"
-msgstr ""
+msgstr "Le⋅a propriétaire de la vidéo pourra activer le tchat en ligne.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1659,37 +1729,40 @@ msgstr "Avant de mettre à jour le plugin vers une nouvelle version majeure, mer
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Theming"
-msgstr ""
+msgstr "Personnalisation de l'apparence"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "You can choose which theme to use for ConverseJS:\n"
-msgstr ""
+msgstr "Vous pouvez choisir le thème à utiliser pour ConverseJS :\n"
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Peertube theme: this is a special theme, made especially for peertube's integration.\n"
 msgstr ""
+"Thème Peertube : il s'agit d'un thème spécial, conçu spécialement pour "
+"l'intégration dans Peertube.\n"
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Default ConverseJS theme: this is the default ConverseJS theme.\n"
-msgstr ""
+msgstr "Thème ConverseJS par défaut : c'est le thème ConverseJS par défaut.\n"
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "ConverseJS concord theme: this is a theme provided by ConverseJS.\n"
 msgstr ""
+"Thème ConverseJS concord : il s'agit d'un thème fourni par ConverseJS.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat server advanced settings"
-msgstr ""
+msgstr "Paramètres avancés du tchat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1698,12 +1771,19 @@ msgid ""
 "The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).\n"
 "If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package.\n"
 msgstr ""
+"Le plugin est livré avec une AppImage qui est utilisée pour exécuter le ["
+"serveur XMPP Prosody](https://prosody.im).\n"
+"Si cet AppImage ne fonctionne pas, vous pouvez vous rabattre sur la version "
+"de Prosody qui est packagé pour votre serveur. Installez simplement le "
+"paquet `prosody`.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This settings should only be used if the plugin is broken, and waiting for a patch.\n"
 msgstr ""
+"Ce paramètre ne devrait être utilisé que si le plugin est cassé et en "
+"attente d'un correctif.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1712,12 +1792,20 @@ msgid ""
 "This setting enable XMPP clients to connect to the built-in Prosody server.\n"
 "For now, this option **only allows connections from localhost clients**.\n"
 msgstr ""
+"Ce paramètre permet aux clients XMPP de se connecter au serveur Prosody "
+"intégré.\n"
+"Pour l'instant, cette option **n'autorise que les connexions des clients sur "
+"le localhost**.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room.\n"
 msgstr ""
+"Par exemple, cette option peut permettre à une instance Matterbridge (une "
+"fois qu'elle pourra utiliser une connexion anonyme) *sur la même machine* de "
+"faire le lien entre votre tchat et d'autres services tels qu'une salle "
+"Matrix.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1726,18 +1814,26 @@ msgid ""
 "This settings enable XMPP external components to connect to the server.\n"
 "For now, this option **only allows connections from localhost components**.\n"
 msgstr ""
+"Ce paramètre permet aux composants externes XMPP de se connecter au serveur."
+"\n"
+"Pour l'instant, cette option **n'autorise que les connexions des composants "
+"sur localhost**.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This feature could be used to connect bridges or bots.\n"
 msgstr ""
+"Cette fonction pourrait être utilisée pour connecter des ponts ou des robots."
+"\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "More informations on Prosody external components [here](https://prosody.im/doc/components).\n"
 msgstr ""
+"Plus d'informations sur les composants externes de Prosody [ici] "
+"(https://prosody.im/doc/components).\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
@@ -2009,24 +2105,31 @@ msgid ""
 "You can access room settings and moderation tools by opening the chat in a new window,\n"
 "and using the dropdown menu at the top right.\n"
 msgstr ""
+"Vous pouvez accéder aux paramètres de la salle et aux outils de modération "
+"en ouvrant le tchat dans une nouvelle fenêtre,\n"
+"et en utilisant le menu déroulant en haut à droite.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».\n"
 msgstr ""
+"Vous pouvez lister toutes les salles de discussion existantes : dans l'écran "
+"des paramètres du plugin, il y a un bouton \"Lister les salles\".\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room.\n"
 msgstr ""
+"Vous pouvez supprimer d'anciennes salles : rejoignez la salle, et utilisez "
+"le menu en haut pour détruire la salle.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "Notes"
-msgstr ""
+msgstr "Remarques"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2035,6 +2138,11 @@ msgid ""
 "All instance moderators and admins will be owner of created chat rooms.\n"
 "If the video is local (not from a remote Peertube), the video owner will be admin in the chat room.\n"
 msgstr ""
+"Tous les modérateur⋅rics et administrateur⋅rices de l'instance seront "
+"propriétaires des salons de discussion créés.\n"
+"Si la vidéo est locale (et ne provient pas d'un Peertube distant), le⋅a "
+"propriétaire de la vidéo sera l'administrateur⋅rice de l'espace de "
+"discussion.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2043,12 +2151,17 @@ msgid ""
 "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.\n"
 "When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.\n"
 msgstr ""
+"Vous pouvez utiliser les [commandes de modération "
+"ConverseJS](https://conversejs.org/docs/html/features.html#moderating-"
+"chatrooms) pour modérer le salon.\n"
+"Lorsque vous ouvrez la salle de discussion en plein écran, un menu avec des "
+"commandes dédiées s'affiche en haut à droite.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "Documentation to stream the chat content using OBS."
-msgstr ""
+msgstr "Documentation pour diffuser le contenu du tchat à l'aide d'OBS."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2060,13 +2173,15 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "OBS Overlay"
-msgstr ""
+msgstr "Overlay OBS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "If you are using OBS for streaming, you can easily include the chat in your stream.\n"
 msgstr ""
+"Si vous utilisez OBS pour la diffusion en direct, vous pouvez facilement "
+"inclure le tchat dans votre flux vidéo.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2075,6 +2190,11 @@ msgid ""
 "You can use the «share chat link» feature to generate an URL to your chat.\n"
 "The button should be near the chat if you are the video owner (unless it was desactivated by your server admins).\n"
 msgstr ""
+"Vous pouvez utiliser la fonction \"partager le lien du tchat\" pour générer "
+"une URL vers votre tchat.\n"
+"Le bouton devrait se trouver près du tchat si vous êtes le⋅a propriétaire de "
+"la vidéo (à moins qu'il n'ait été désactivé par les administrateur⋅rices de "
+"votre serveur).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2083,6 +2203,8 @@ msgid ""
 "Check the «readonly» checkbox in the modal.\n"
 "Then use this link as a «web browser source» in OBS.\n"
 msgstr ""
+"Cochez la case «lecture seule» dans la fenêtre modale.\n"
+"Utilisez ensuite ce lien comme «source navigateur web» dans OBS.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2091,6 +2213,11 @@ msgid ""
 "You can use the «Transparent background» to have a transparent background in OBS.\n"
 "If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:\n"
 msgstr ""
+"Vous pouvez utiliser l'option \"Fond transparent\" pour obtenir un fond "
+"transparent dans OBS.\n"
+"Si vous souhaitez personnaliser la transparence de l'arrière-plan, vous "
+"pouvez ajouter ce CSS dans les paramètres de la source de votre navigateur "
+"OBS :\n"
 
 #. type: Fenced code block (css)
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2109,12 +2236,18 @@ msgid ""
 "in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.\n"
 "You must use valid CSS color values, and they must be properly URL encoded.\n"
 msgstr ""
+"Remarque : vous pouvez personnaliser les couleurs. Ce n'est pas encore "
+"documenté, mais vous pouvez essayer ceci :\n"
+"dans la fenêtre modale, cochez \"utiliser les couleurs actuelles du thème\", "
+"puis essayez de modifier manuellement les valeurs de couleur dans l'URL.\n"
+"Vous devez utiliser des valeurs de couleur CSS valides, et elles doivent "
+"être correctement encodées dans l'URL.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "Mixing multiple chats in your live stream"
-msgstr ""
+msgstr "Mélanger plusieurs tchats dans votre flux en direct"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2123,6 +2256,11 @@ msgid ""
 "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.\n"
 "The compatibility with this plugin was added in recent versions.\n"
 msgstr ""
+"Vous pouvez utiliser l'extension [social_stream browser "
+"extension](https://github.com/steveseguin/social_stream#readme) pour "
+"mélanger plusieurs sources de tchat (Peertube, Twitch, Youtube, Facebook, "
+"...) et inclure leurs contenus dans votre flux en direct.\n"
+"La compatibilité avec ce plugin a été ajoutée dans les versions récentes.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
