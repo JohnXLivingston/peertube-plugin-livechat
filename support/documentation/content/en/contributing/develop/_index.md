@@ -22,12 +22,8 @@ Prerequisite for building this plugin:
 To clone the repository:
 
 ```bash
-# Clone the repository
-git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git
-# Be sure to checkout the main branch
-git checkout main
-# Initialize the submodules. This command must be run again if any submodules' version changes.
-git submodule update --init --recursive
+# Clone the repository. Dont forget the --recursive to clone submodules.
+git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive
 
 # Install NPM dependencies and build the module for the first time:
 npm install
