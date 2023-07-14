@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-14 15:00+0200\n"
+"POT-Creation-Date: 2023-07-14 18:24+0200\n"
 "PO-Revision-Date: 2023-07-13 11:36+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -56,8 +56,8 @@ msgstr ""
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid ""
-"This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].\n"
-"Translations are available at [https://www.contributor-covenant.org/translations][translations].\n"
+"This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
+"Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
 "Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.\n"
 msgstr ""
 
