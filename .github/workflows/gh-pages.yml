@@ -22,7 +22,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.80.0'
-          # extended: true
+          extended: true
 
       - name: Generate documentation translations
         run: bash ./doc-translate.sh
