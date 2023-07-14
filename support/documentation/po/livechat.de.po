@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-14 13:30+0200\n"
+"POT-Creation-Date: 2023-07-14 15:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,6 +104,13 @@ msgstr "Sie müssen `npm` installiert haben\n"
 #, no-wrap
 msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
 msgstr "Sie müssen python venv installiert haben (z.B. das Paket `python3-venv` auf Debian)\n"
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, fuzzy, no-wrap
+#| msgid "you must have `npm` installed\n"
+msgid "you must have `build-essential` installed\n"
+msgstr "Sie müssen `npm` installiert haben\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md

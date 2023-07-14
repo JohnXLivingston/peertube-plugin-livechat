@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-14 13:30+0200\n"
+"POT-Creation-Date: 2023-07-14 15:00+0200\n"
 "PO-Revision-Date: 2023-07-12 12:16+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -103,6 +103,12 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "you must have `build-essential` installed\n"
 msgstr ""
 
 #. type: Plain text

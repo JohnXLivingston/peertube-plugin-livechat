@@ -18,6 +18,7 @@ Prerequisite for building this plugin:
 
 - you must have `npm` installed
 - you must have python venv installed (`python3-venv` package on Debian for example)
+- you must have `build-essential` installed
 
 To clone the repository:
 

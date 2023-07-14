@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-14 13:30+0200\n"
+"POT-Creation-Date: 2023-07-14 15:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,6 +103,12 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, markdown-text, no-wrap
 msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, markdown-text, no-wrap
+msgid "you must have `build-essential` installed\n"
 msgstr ""
 
 #. type: Plain text
