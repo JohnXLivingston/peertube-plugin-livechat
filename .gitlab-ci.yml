@@ -10,7 +10,7 @@ builddoctranslations:
     - bash ./doc-translate.sh
   artifacts:
     paths:
-      # - support/documentation/i18n/
+      - support/documentation/i18n/
       - support/documentation/content/translations/
 
 pages:
