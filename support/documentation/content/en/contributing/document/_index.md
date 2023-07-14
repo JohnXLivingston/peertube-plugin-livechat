@@ -59,7 +59,7 @@ To do so, make sure you have `po4a` (version >= 0.66) installed on your computer
 {{% notice warning %}}
 Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.
 Please make sure to install a compatible version.
-If you are using Debian Bullseye for example, you can download the Bookwork po4a.deb file from https://packages.debian.org, and install it manually.
+If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually.
 {{% /notice %}}
 
 To handle translations, just do:
