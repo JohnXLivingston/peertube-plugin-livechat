@@ -113,7 +113,7 @@ class BuildLanguages {
 
   async ensureDestinationDir () {
     if (!fs.existsSync(this.destinationDir)) {
-      await fs.promises.mkdir(this.destinationDir)
+      await fs.promises.mkdir(this.destinationDir, { recursive: true })
     }
   }
 
