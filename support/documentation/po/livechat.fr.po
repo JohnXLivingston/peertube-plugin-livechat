@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-14 18:24+0200\n"
+"POT-Creation-Date: 2023-07-14 18:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -537,38 +537,16 @@ msgstr "La langue principale est l'anglais (code `en`).\n"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
-msgid ""
-"The different translations of the same file are side by side in the tree, and are identified by a language code in the file name extension.\n"
-"Example: `_index.fr.md` is the French translation of `_index.en.md`.\n"
+msgid "The `support/documentation/content/en` folder contains only english documentation files.\n"
 msgstr ""
-"Les différentes traductions d'un même fichier sont côte-à-côte dans l'arborescence, et sont identifiées par un code langue dans l'extension du nom de fichier.\n"
-"Exemple: `_index.fr.md` est la tranduction française de `_index.en.md`.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "Please note that a missing translation file will not appear in the menus of the generated site.\n"
-msgstr ""
-"Attention, un fichier de traduction manquant n'apparaitra pas dans les menus\n"
-"du site générés.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "**Always make sure to create files for all languages**, even if the translation is not yet available.\n"
-msgstr "**On veillera donc toujours à créer les fichiers pour toutes les langues**, même si la traduction n'est pas encore disponible.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid ""
-"For this, there is a script `doc-generate-missing-translations.sh` in the root of the repository.\n"
-"When you add a new file, you just have to create the english version, then run this script.\n"
-"It will create all  missing translations, putting a sample message inviting the user to read the english version.\n"
+"Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).\n"
+"To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page.\n"
 msgstr ""
-"Pour cela, il y a un script `doc-generate-missing-translations.sh` à la racine du dépot.\n"
-"Quand on ajoute un nouveau fichier, il suffit de créer la version anglaise, puis de lancer ce script.\n"
-"Il va créer toutes les traductions manquantes, on y mettant un message type invitant l'utilisateur⋅rice à lire la version anglaise.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -584,20 +562,11 @@ msgstr "Dans le fichier `support/documentation/config.toml`, inspirez vous de la
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"Then, run the `doc-generate-missing-translations.sh` script.\n"
-"It will create all the missing files.\n"
-msgstr ""
-"Ensuite, lancez le script `doc-generate-missing-translations.sh` à la racine du dépot.\n"
-"Celui-ci crééra tous les fichiers manquants pour la nouvelle langue.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"Then you can translate them one by one.\n"
-"If the translations are not complete, it does not matter, the generated files will display a message suggesting to change the language.\n"
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Then you can translate them one by one.\n"
+#| "If the translations are not complete, it does not matter, the generated files will display a message suggesting to change the language.\n"
+msgid "If the translations are not complete, it does not matter, english will be used for missing strings.\n"
 msgstr ""
 "Il ne vous reste plus qu'à les traduire.\n"
 "Si les traductions ne sont pas complètes, ce n'est pas grave, les fichiers générés afficherons un message proposant de changer de langue.\n"
@@ -633,13 +602,126 @@ msgstr ""
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
+msgid "Update localization files and generate documentation translations"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"For now, you only have the english version.\n"
+"To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.\n"
+"Please make sure to install a compatible version.\n"
+"If you are using Debian Bullseye for example, you can download the Bookwork po4a.deb file from https://packages.debian.org, and install it manually.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "To handle translations, just do:\n"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "npm run doc:translate\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/document/_index.md
+#, fuzzy, no-wrap
+#| msgid "User documentation"
+msgid "Write documentation"
+msgstr "Documentation utilisateur⋅rice"
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, fuzzy, no-wrap
+#| msgid "The documentation source code is in the `support/documentation/content` folder.\n"
+msgid "Just edit the english files in `support/documentation/content/en`.\n"
+msgstr "Le code source de la documentation se trouve dans le dossier `support/documentation/content` du dépot de code.\n"
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"You can use the `livechat_label` short code to use application strings.\n"
+"See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.\n"
+"See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"Please use the `livechatnotranslation` option for technical documentation.\n"
+"We don't want technical documentation to be translated, to avoid issues because of a wrong translation.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"Avoid adding line breaks in middle of a sentence.\n"
+"But add a line break after each sentence in a paragraph.\n"
+"This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.\n"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "What if I can't use hugo and/or po4a?"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request.\n"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
 msgid "Publication"
 msgstr "Publication"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.\n"
+#, fuzzy, no-wrap
+#| msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.\n"
+msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch.\n"
 msgstr "La publication de la documentation est automatique, dès que les modifications sont fusionnées dans la branche `main`.\n"
 
 #. type: Yaml Front Matter Hash Value: title
@@ -669,267 +751,6 @@ msgstr "Contribuer"
 #, no-wrap
 msgid "Interested in contributing? Awesome!\n"
 msgstr "Intéressé⋅e pour contribuer ? Super !\n"
-
-#. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Translate the plugin"
-msgstr "Traduire le plugin"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Translate"
-msgstr "Traduction"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"You can contribute to this plugin translation.\n"
-"Translations are handled using the [Weblate](https://weblate.org/) software,\n"
-"using [Framasoft Weblate instance](https://weblate.framasoft.org/).\n"
-msgstr ""
-"Vous pouvez contribuer à la traduction de ce plugin Peertube.\n"
-"Les traductions sont gérées par le logiciel [Weblate](https://weblate.org/),\n"
-"via [l'instance Weblate de Framasoft](https://weblate.framasoft.org/).\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Never modify directly files in the `languages` folder, this could lead to conflicts.\n"
-msgstr ""
-"Ne modifiez jamais directement les fichiers dans le dossier `languages` du plugin,\n"
-"vous risqueriez de créer des conflits.\n"
-
-#. type: Title ##
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "How to"
-msgstr "Comment faire"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Create an account: https://weblate.framasoft.org/accounts/register/\n"
-msgstr "Créez-vous un compte: https://weblate.framasoft.org/accounts/register/\n"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Validate your email and follow the link sent\n"
-msgstr "Validez votre email en cliquant sur le lien reçu\n"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Create your password and setup your account\n"
-msgstr "Choisissez votre mot de passe, et configurez votre compte\n"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/\n"
-msgstr "Allez sur le projet du plugin de tchat: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/\n"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Choose the locale you want to translate\n"
-msgstr "Choisissez la langue que vous voulez traduire\n"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Just translate missing sentences, or correct the ones that seems incorrect to you.\n"
-msgstr "Il ne vous reste plus qu'à ajouter les traductions manquantes, ou corriger celles qui vous semblent erronées.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"There might be some «very technical» strings. If you are not 100% sure of\n"
-"the meaning, or of your translation, you better not translate it,\n"
-"so it will display in english.\n"
-msgstr ""
-"Il peut y avoir des chaînes «assez techniques».\n"
-"Si vous n'êtes pas sûr⋅e à 100% du sens, ou de la traduction,\n"
-"il vaut mieux ne pas la traduire du tout ;\n"
-"ainsi la version anglaise s'affichera.\n"
-
-#. type: Title ##
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Documentation translation"
-msgstr "Traduction de la documentation"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Fow now, this is not done on Weblate. I am still looking for the good technical solution.\n"
-msgstr ""
-"Pour l'instant, cela n'est pas encore géré dans Weblate. Je suis encore à la recherche de la bonne\n"
-"solution technique.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Please refer to the \"documentation\" documentation page.\n"
-msgstr "Voir la page de documentation dédiée à la documentation.\n"
-
-#. type: Title ##
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Adding a new locale"
-msgstr "Ajout d'une nouvelle langue"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"If you think there is a missing locale, please check first if it is handled in Peertube.\n"
-"If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it.\n"
-msgstr ""
-"Si la langue qui vous intéresse n'est pas présente, assurez-vous d'abord qu'elle est bien supportée par Peertube.\n"
-"Si c'est le cas, vous pouvez [ouvrir un ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)\n"
-"pour en demander l'ajout.\n"
-
-#. type: Title ##
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Adding new strings / use translations in the code"
-msgstr "Ajout de nouveau segment / utilisation dans le code"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"If you are working on new features, and need new strings, you can create them directly in Weblate.\n"
-"The english version is mandatory. Start with it.\n"
-msgstr ""
-"Si vous travaillez sur une nouvelle fonctionnalité, et que vous avez besoin de nouveaux segments,\n"
-"créez les directement dans Weblate.\n"
-"La version anglaise est obligatoire, commencez par celle-ci.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"Each string is linked to a key (for example `use_chat`).\n"
-"Choose an explicit key in english, lower case.\n"
-msgstr ""
-"Chaque segment est lié à une clé (par exemple `use_chat`).\n"
-"Choisissez une clé en anglais, suffisamment explicite, et en minuscule.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files,\n"
-"but avoid to commit these changes (to minimize conflict risks).\n"
-msgstr ""
-"Si vous avez besoin de tester vos localisations sans attendre la fusion venant de Weblate,\n"
-"vous pouvez modifier les fichiers `languages/*.yml`, mais évitez de les commit\n"
-"(pour minimiser le risque de conflits).\n"
-
-#. type: Title ###
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Use translations in front-end code"
-msgstr "Utiliser un segment dans le code front-end"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.\n"
-"The constant name must:\n"
-msgstr ""
-"Avant d'utiliser une chaîne en front-end, il faut déclarer une nouvelle constante dans `client/@types/global.d.ts`.\n"
-"La constante doit :\n"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "start with the prefix \"LOC_\"\n"
-msgstr "commencer par le préfixe \"LOC_\"\n"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "use the string key, upper cased\n"
-msgstr "utiliser la clé de la chaîne, en majuscule\n"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "you just have to declare its type, not its value\n"
-msgstr "vous ne devez déclarer que son type, pas sa valeur\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "For example, to use \"use_chat\", you have to declare:\n"
-msgstr ""
-"Par exemple, pour utiliser \"use_chat\", vous devez déclarer :\n"
-"e, to use \"use_chat\", you have to declare:\n"
-
-#. type: Fenced code block (typescript)
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "declare const LOC_USE_CHAT: string\n"
-msgstr "declare const LOC_USE_CHAT: string\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"The `build-client.js` script will read the `client/@types/global.d.ts`,\n"
-"search for such constants, and load their values from the languages files.\n"
-msgstr "Le script `build-client.js` va lire ce fichier `client/@types/global.d.ts`, chercher pour de telles constantes, et charger leurs valeurs depuis le fichier de langue.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code.\n"
-msgstr "Vous pouvez maintenant utiliser `peertubeHelpers.translate(LOC_USE_CHAT)` dans votre code.\n"
-
-#. type: Title ###
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Use translations in back-end code"
-msgstr "Utiliser un segment dans le code back-end"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"In theory, the only parts of the backend code where you need localization is the\n"
-"settings declaration and standardized data (ActivityPub, RSS, ...).\n"
-"Here we need to get english strings from the translation key.\n"
-msgstr ""
-"En théorie, les seules parties du code qui ont besoin de traductions sont les déclarations de paramètres et la génération de données standardisées (ActivityPub, RSS, ...).\n"
-"Ici on a besoin de récupérer les chaînes anglaises à partir des clés de traduction.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"Note: you should never need another language translation from backend code.\n"
-"Localization must be done on front-end.\n"
-msgstr ""
-"Note: vous ne devriez jamais avoir besoin d'autres langues que l'anglais pour le code backend.\n"
-"Les traductions doivent se faire coté front-end.\n"
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid ""
-"There is a `lib/loc.ts` module providing a `loc()` function.\n"
-"Just pass it the key to have the english string: `loc('diagnostic')`'.\n"
-msgstr ""
-"Il y a un module `lib/loc.ts` qui fourni une function `loc()`.\n"
-"Passez juste la clé pour récupérer la phrase anglaise: `loc('diagnostic')`.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
@@ -2513,3 +2334,232 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #, no-wrap
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter.\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "The different translations of the same file are side by side in the tree, and are identified by a language code in the file name extension.\n"
+#~ "Example: `_index.fr.md` is the French translation of `_index.en.md`.\n"
+#~ msgstr ""
+#~ "Les différentes traductions d'un même fichier sont côte-à-côte dans l'arborescence, et sont identifiées par un code langue dans l'extension du nom de fichier.\n"
+#~ "Exemple: `_index.fr.md` est la tranduction française de `_index.en.md`.\n"
+
+#, no-wrap
+#~ msgid "Please note that a missing translation file will not appear in the menus of the generated site.\n"
+#~ msgstr ""
+#~ "Attention, un fichier de traduction manquant n'apparaitra pas dans les menus\n"
+#~ "du site générés.\n"
+
+#, no-wrap
+#~ msgid "**Always make sure to create files for all languages**, even if the translation is not yet available.\n"
+#~ msgstr "**On veillera donc toujours à créer les fichiers pour toutes les langues**, même si la traduction n'est pas encore disponible.\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "For this, there is a script `doc-generate-missing-translations.sh` in the root of the repository.\n"
+#~ "When you add a new file, you just have to create the english version, then run this script.\n"
+#~ "It will create all  missing translations, putting a sample message inviting the user to read the english version.\n"
+#~ msgstr ""
+#~ "Pour cela, il y a un script `doc-generate-missing-translations.sh` à la racine du dépot.\n"
+#~ "Quand on ajoute un nouveau fichier, il suffit de créer la version anglaise, puis de lancer ce script.\n"
+#~ "Il va créer toutes les traductions manquantes, on y mettant un message type invitant l'utilisateur⋅rice à lire la version anglaise.\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "Then, run the `doc-generate-missing-translations.sh` script.\n"
+#~ "It will create all the missing files.\n"
+#~ msgstr ""
+#~ "Ensuite, lancez le script `doc-generate-missing-translations.sh` à la racine du dépot.\n"
+#~ "Celui-ci crééra tous les fichiers manquants pour la nouvelle langue.\n"
+
+#, no-wrap
+#~ msgid "Translate the plugin"
+#~ msgstr "Traduire le plugin"
+
+#, no-wrap
+#~ msgid "Translate"
+#~ msgstr "Traduction"
+
+#, no-wrap
+#~ msgid ""
+#~ "You can contribute to this plugin translation.\n"
+#~ "Translations are handled using the [Weblate](https://weblate.org/) software,\n"
+#~ "using [Framasoft Weblate instance](https://weblate.framasoft.org/).\n"
+#~ msgstr ""
+#~ "Vous pouvez contribuer à la traduction de ce plugin Peertube.\n"
+#~ "Les traductions sont gérées par le logiciel [Weblate](https://weblate.org/),\n"
+#~ "via [l'instance Weblate de Framasoft](https://weblate.framasoft.org/).\n"
+
+#, no-wrap
+#~ msgid "Never modify directly files in the `languages` folder, this could lead to conflicts.\n"
+#~ msgstr ""
+#~ "Ne modifiez jamais directement les fichiers dans le dossier `languages` du plugin,\n"
+#~ "vous risqueriez de créer des conflits.\n"
+
+#, no-wrap
+#~ msgid "How to"
+#~ msgstr "Comment faire"
+
+#, no-wrap
+#~ msgid "Create an account: https://weblate.framasoft.org/accounts/register/\n"
+#~ msgstr "Créez-vous un compte: https://weblate.framasoft.org/accounts/register/\n"
+
+#, no-wrap
+#~ msgid "Validate your email and follow the link sent\n"
+#~ msgstr "Validez votre email en cliquant sur le lien reçu\n"
+
+#, no-wrap
+#~ msgid "Create your password and setup your account\n"
+#~ msgstr "Choisissez votre mot de passe, et configurez votre compte\n"
+
+#, no-wrap
+#~ msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/\n"
+#~ msgstr "Allez sur le projet du plugin de tchat: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/\n"
+
+#, no-wrap
+#~ msgid "Choose the locale you want to translate\n"
+#~ msgstr "Choisissez la langue que vous voulez traduire\n"
+
+#, no-wrap
+#~ msgid "Just translate missing sentences, or correct the ones that seems incorrect to you.\n"
+#~ msgstr "Il ne vous reste plus qu'à ajouter les traductions manquantes, ou corriger celles qui vous semblent erronées.\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "There might be some «very technical» strings. If you are not 100% sure of\n"
+#~ "the meaning, or of your translation, you better not translate it,\n"
+#~ "so it will display in english.\n"
+#~ msgstr ""
+#~ "Il peut y avoir des chaînes «assez techniques».\n"
+#~ "Si vous n'êtes pas sûr⋅e à 100% du sens, ou de la traduction,\n"
+#~ "il vaut mieux ne pas la traduire du tout ;\n"
+#~ "ainsi la version anglaise s'affichera.\n"
+
+#, no-wrap
+#~ msgid "Documentation translation"
+#~ msgstr "Traduction de la documentation"
+
+#, no-wrap
+#~ msgid "Fow now, this is not done on Weblate. I am still looking for the good technical solution.\n"
+#~ msgstr ""
+#~ "Pour l'instant, cela n'est pas encore géré dans Weblate. Je suis encore à la recherche de la bonne\n"
+#~ "solution technique.\n"
+
+#, no-wrap
+#~ msgid "Please refer to the \"documentation\" documentation page.\n"
+#~ msgstr "Voir la page de documentation dédiée à la documentation.\n"
+
+#, no-wrap
+#~ msgid "Adding a new locale"
+#~ msgstr "Ajout d'une nouvelle langue"
+
+#, no-wrap
+#~ msgid ""
+#~ "If you think there is a missing locale, please check first if it is handled in Peertube.\n"
+#~ "If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it.\n"
+#~ msgstr ""
+#~ "Si la langue qui vous intéresse n'est pas présente, assurez-vous d'abord qu'elle est bien supportée par Peertube.\n"
+#~ "Si c'est le cas, vous pouvez [ouvrir un ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)\n"
+#~ "pour en demander l'ajout.\n"
+
+#, no-wrap
+#~ msgid "Adding new strings / use translations in the code"
+#~ msgstr "Ajout de nouveau segment / utilisation dans le code"
+
+#, no-wrap
+#~ msgid ""
+#~ "If you are working on new features, and need new strings, you can create them directly in Weblate.\n"
+#~ "The english version is mandatory. Start with it.\n"
+#~ msgstr ""
+#~ "Si vous travaillez sur une nouvelle fonctionnalité, et que vous avez besoin de nouveaux segments,\n"
+#~ "créez les directement dans Weblate.\n"
+#~ "La version anglaise est obligatoire, commencez par celle-ci.\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "Each string is linked to a key (for example `use_chat`).\n"
+#~ "Choose an explicit key in english, lower case.\n"
+#~ msgstr ""
+#~ "Chaque segment est lié à une clé (par exemple `use_chat`).\n"
+#~ "Choisissez une clé en anglais, suffisamment explicite, et en minuscule.\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files,\n"
+#~ "but avoid to commit these changes (to minimize conflict risks).\n"
+#~ msgstr ""
+#~ "Si vous avez besoin de tester vos localisations sans attendre la fusion venant de Weblate,\n"
+#~ "vous pouvez modifier les fichiers `languages/*.yml`, mais évitez de les commit\n"
+#~ "(pour minimiser le risque de conflits).\n"
+
+#, no-wrap
+#~ msgid "Use translations in front-end code"
+#~ msgstr "Utiliser un segment dans le code front-end"
+
+#, no-wrap
+#~ msgid ""
+#~ "Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.\n"
+#~ "The constant name must:\n"
+#~ msgstr ""
+#~ "Avant d'utiliser une chaîne en front-end, il faut déclarer une nouvelle constante dans `client/@types/global.d.ts`.\n"
+#~ "La constante doit :\n"
+
+#, no-wrap
+#~ msgid "start with the prefix \"LOC_\"\n"
+#~ msgstr "commencer par le préfixe \"LOC_\"\n"
+
+#, no-wrap
+#~ msgid "use the string key, upper cased\n"
+#~ msgstr "utiliser la clé de la chaîne, en majuscule\n"
+
+#, no-wrap
+#~ msgid "you just have to declare its type, not its value\n"
+#~ msgstr "vous ne devez déclarer que son type, pas sa valeur\n"
+
+#, no-wrap
+#~ msgid "For example, to use \"use_chat\", you have to declare:\n"
+#~ msgstr ""
+#~ "Par exemple, pour utiliser \"use_chat\", vous devez déclarer :\n"
+#~ "e, to use \"use_chat\", you have to declare:\n"
+
+#, no-wrap
+#~ msgid "declare const LOC_USE_CHAT: string\n"
+#~ msgstr "declare const LOC_USE_CHAT: string\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "The `build-client.js` script will read the `client/@types/global.d.ts`,\n"
+#~ "search for such constants, and load their values from the languages files.\n"
+#~ msgstr "Le script `build-client.js` va lire ce fichier `client/@types/global.d.ts`, chercher pour de telles constantes, et charger leurs valeurs depuis le fichier de langue.\n"
+
+#, no-wrap
+#~ msgid "Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code.\n"
+#~ msgstr "Vous pouvez maintenant utiliser `peertubeHelpers.translate(LOC_USE_CHAT)` dans votre code.\n"
+
+#, no-wrap
+#~ msgid "Use translations in back-end code"
+#~ msgstr "Utiliser un segment dans le code back-end"
+
+#, no-wrap
+#~ msgid ""
+#~ "In theory, the only parts of the backend code where you need localization is the\n"
+#~ "settings declaration and standardized data (ActivityPub, RSS, ...).\n"
+#~ "Here we need to get english strings from the translation key.\n"
+#~ msgstr ""
+#~ "En théorie, les seules parties du code qui ont besoin de traductions sont les déclarations de paramètres et la génération de données standardisées (ActivityPub, RSS, ...).\n"
+#~ "Ici on a besoin de récupérer les chaînes anglaises à partir des clés de traduction.\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "Note: you should never need another language translation from backend code.\n"
+#~ "Localization must be done on front-end.\n"
+#~ msgstr ""
+#~ "Note: vous ne devriez jamais avoir besoin d'autres langues que l'anglais pour le code backend.\n"
+#~ "Les traductions doivent se faire coté front-end.\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "There is a `lib/loc.ts` module providing a `loc()` function.\n"
+#~ "Just pass it the key to have the english string: `loc('diagnostic')`'.\n"
+#~ msgstr ""
+#~ "Il y a un module `lib/loc.ts` qui fourni une function `loc()`.\n"
+#~ "Passez juste la clé pour récupérer la phrase anglaise: `loc('diagnostic')`.\n"

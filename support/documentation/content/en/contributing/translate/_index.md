@@ -28,12 +28,6 @@ the meaning, or of your translation, you better not translate it,
 so it will display in english.
 {{% /notice %}}
 
-## Documentation translation
-
-Fow now, this is not done on Weblate. I am still looking for the good technical solution.
-
-Please refer to the "documentation" documentation page.
-
 ## Adding a new locale
 
 If you think there is a missing locale, please check first if it is handled in Peertube.
@@ -81,3 +75,38 @@ Localization must be done on front-end.
 
 There is a `lib/loc.ts` module providing a `loc()` function.
 Just pass it the key to have the english string: `loc('diagnostic')`'.
+
+## Documentation translation
+
+The documentation translation is done using the corresponding Weblate component.
+
+There is a specific "Hugo shortcodes" you can use to display an application string.
+Saying you want to display the name of the button "open_chat_new_window", you can use this in the documentation markdown file:
+
+```hugo
+{{%/* livechat_label open_chat_new_window */%}}
+```
+
+You can also prevent a whole page from being translating by adding `livechatnotranslation: true` in the Yaml Font Matter section:
+
+```yaml
+---
+title: "Third party"
+description: "Displaying the livechat with 3rd party software."
+weight: 20
+chapter: false
+livechatnotranslation: true
+---
+```
+
+Never translate a string in the `livechat.en.pot` file, it would be ignored.
+Instead, edit directly the markdown files.
+
+If a string contains a link, you can change it for the correct link in the translated language.
+For example, for a link to this documentation, you can add the language code in the url.
+
+Some strings are block of code.
+Don't translate code.
+But you can translate comments, or parameters if relevant.
+
+If you are not sure, just don't translate, and ask what to do.

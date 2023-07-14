@@ -27,26 +27,16 @@ This will trigger github and gitlab pipelines, and update published documentatio
 
 The principal language is english (`en` code).
 
-The different translations of the same file are side by side in the tree, and are identified by a language code in the file name extension.
-Example: `_index.fr.md` is the French translation of `_index.en.md`.
+The `support/documentation/content/en` folder contains only english documentation files.
 
-Please note that a missing translation file will not appear in the menus of the generated site.
-
-**Always make sure to create files for all languages**, even if the translation is not yet available.
-
-For this, there is a script `doc-generate-missing-translations.sh` in the root of the repository.
-When you add a new file, you just have to create the english version, then run this script.
-It will create all  missing translations, putting a sample message inviting the user to read the english version.
+Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).
+To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page.
 
 ## Add a new language
 
 In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section.
 
-Then, run the `doc-generate-missing-translations.sh` script.
-It will create all the missing files.
-
-Then you can translate them one by one.
-If the translations are not complete, it does not matter, the generated files will display a message suggesting to change the language.
+If the translations are not complete, it does not matter, english will be used for missing strings.
 
 ## Preview
 
@@ -59,6 +49,50 @@ hugo serve -s support/documentation/
 Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).
 This page will automatically refresh on each modification.
 
+## Update localization files and generate documentation translations
+
+For now, you only have the english version.
+To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script.
+
+To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.
+
+{{% notice warning %}}
+Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.
+Please make sure to install a compatible version.
+If you are using Debian Bullseye for example, you can download the Bookwork po4a.deb file from https://packages.debian.org, and install it manually.
+{{% /notice %}}
+
+To handle translations, just do:
+
+```bash
+npm run doc:translate
+```
+
+You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector.
+
+## Write documentation
+
+Just edit the english files in `support/documentation/content/en`.
+
+Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file.
+
+You can use the `livechat_label` short code to use application strings.
+See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).
+
+It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.
+See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).
+
+Please use the `livechatnotranslation` option for technical documentation.
+We don't want technical documentation to be translated, to avoid issues because of a wrong translation.
+
+Avoid adding line breaks in middle of a sentence.
+But add a line break after each sentence in a paragraph.
+This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.
+
+### What if I can't use hugo and/or po4a?
+
+Just edit english markdown files, and specify that you can't build translations when you make your Pull Request.
+
 ## Publication
 
-Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.
+Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch.
