@@ -2854,7 +2854,7 @@ msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind u
 #: support/documentation/content/en/technical/_index.md
 #, no-wrap
 msgid "Technical documentation"
-msgstr "Benutzer Dokumentation"
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/technical/thirdparty/_index.md

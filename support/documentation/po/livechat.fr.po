@@ -3063,7 +3063,7 @@ msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XM
 #: support/documentation/content/en/technical/_index.md
 #, no-wrap
 msgid "Technical documentation"
-msgstr "Documentation utilisateur⋅rice"
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/technical/thirdparty/_index.md
