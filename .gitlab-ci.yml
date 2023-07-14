@@ -2,7 +2,7 @@ stages:
   - build
   - deploy
 
-builddoc:
+builddoctranslations:
   stage: build
   image: debian:stable
   script:
@@ -23,7 +23,7 @@ pages:
     # gitlab need the generated documentation to be in the /public dir.
     - hugo -s support/documentation/ -d ../../public/ --baseURL='https://livingston.frama.io/peertube-plugin-livechat/'
   dependencies:
-    - builddoc
+    - builddoctranslations
   artifacts:
     paths:
       - public
