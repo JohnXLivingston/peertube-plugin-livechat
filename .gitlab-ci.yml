@@ -1,6 +1,20 @@
-image: monachus/hugo
+stages:
+  - build
+  - deploy
+
+builddoc:
+  stage: build
+  image: debian:stable
+  script:
+    - sudo apt update && sudo apt install po4a -y
+    - bash ./doc-translate.sh
+  artifacts:
+    paths:
+      - support/documentation/
 
 pages:
+  stage: deploy
+  image: monachus/hugo
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
     GIT_SUBMODULE_PATHS: support/documentation/themes/hugo-theme-learn
@@ -12,3 +26,5 @@ pages:
       - public
   only:
     - documentation
+    - documentation_translation
+    # FIXME: remove documentation_translation
