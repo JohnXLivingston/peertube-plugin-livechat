@@ -10,7 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2023-07-14 19:55+0200\n"
 "PO-Revision-Date: 2023-07-14 17:26+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-"
+"livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -112,10 +113,9 @@ msgstr "vous devez avoir installé les venv python (paquet `python3-venv` sous D
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
-#| msgid "you must have `npm` installed\n"
+#, no-wrap
 msgid "you must have `build-essential` installed\n"
-msgstr "vous devez avoir installé `build-essential`\n"
+msgstr "vous devez avoir `build-essential` installé\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -125,29 +125,7 @@ msgstr "Pour clôner le dépot :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "# Clone the repository\n"
-#| "git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git\n"
-#| "# Be sure to checkout the main branch\n"
-#| "git checkout main\n"
-#| "# Initialize the submodules. This command must be run again if any submodules' version changes.\n"
-#| "git submodule update --init --recursive\n"
-#| "\n"
-#| "# Install NPM dependencies and build the module for the first time:\n"
-#| "npm install\n"
-#| "\n"
-#| "# Build the plugin after a modification:\n"
-#| "npm run build\n"
-#| "\n"
-#| "# If you have a fork from the repository, add it as remote (example):\n"
-#| "git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git\n"
-#| "\n"
-#| "# Create a local branch for you developments, and checkout it (example):\n"
-#| "git checkout my_development # Note: if an issue is associated, use fix_1234 as your branch name (where 1234 is the issue's number)\n"
-#| "# To propose your modifications, push your branch to your repository (example):\n"
-#| "git push --set-upstream me my_development\n"
-#| "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
+#, no-wrap
 msgid ""
 "# Clone the repository. Dont forget the --recursive to clone submodules.\n"
 "git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive\n"
@@ -167,12 +145,8 @@ msgid ""
 "git push --set-upstream me my_development\n"
 "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
 msgstr ""
-"# Cloner le dépot\n"
-"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git\n"
-"# Passer sur la branche main si ce n'est pas déjà le cas\n"
-"git checkout main\n"
-"# Initialiser les sous-modules. Cette commande est à refaire si jamais la version d'un l'un des sous-module change.\n"
-"git submodule update --init --recursive\n"
+"# Cloner le dépot. N'oubliez pas le --recursive, pour clôner les sous-modules.\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive\n"
 "\n"
 "# Installer les dépendances NPM et compiler le plugin pour la première fois :\n"
 "npm install\n"
@@ -543,7 +517,7 @@ msgstr "La langue principale est l'anglais (code `en`).\n"
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "The `support/documentation/content/en` folder contains only english documentation files.\n"
-msgstr ""
+msgstr "Le dossier `support/documentation/content/en`ne contient que les fichiers de documentation en anglais.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -552,6 +526,8 @@ msgid ""
 "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).\n"
 "To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page.\n"
 msgstr ""
+"La documentation est traduite en utilisant Weblate (voir [la documentation sur la traduction](/peertube-plugin-livechat/fr/contributing/translate/)).\n"
+"Pour cela, on utilise l'outils [po4a](https://po4a.org), comme nous le verrons plus loin dans cette page.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -567,14 +543,9 @@ msgstr "Dans le fichier `support/documentation/config.toml`, inspirez vous de la
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Then you can translate them one by one.\n"
-#| "If the translations are not complete, it does not matter, the generated files will display a message suggesting to change the language.\n"
+#, no-wrap
 msgid "If the translations are not complete, it does not matter, english will be used for missing strings.\n"
-msgstr ""
-"Il ne vous reste plus qu'à les traduire.\n"
-"Si les traductions ne sont pas complètes, ce n'est pas grave, les fichiers générés afficherons un message proposant de changer de langue.\n"
+msgstr "Si les traductions ne sont pas complètes, ce n'est pas grave, la version anglaise sera utilisée pour les chaînes manquantes.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -608,7 +579,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Update localization files and generate documentation translations"
-msgstr ""
+msgstr "Mettre à jour les fichiers de localisation et générer les traductions de la documentation"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -617,12 +588,14 @@ msgid ""
 "For now, you only have the english version.\n"
 "To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script.\n"
 msgstr ""
+"Pour l'instant, vous n'avez que la version anglaise.\n"
+"Pour mettre à jour les chaînes et générer les traductions, vous devez lancer le script `doc-translate.sh`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.\n"
-msgstr ""
+msgstr "Pour cela, assurez vous d'avoir `po4a` (version >= 0.66) installé sur votre ordinateur.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -653,17 +626,15 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
-#| msgid "User documentation"
+#, no-wrap
 msgid "Write documentation"
-msgstr "Documentation utilisateur⋅rice"
+msgstr "Écrire la documentation"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
-#| msgid "The documentation source code is in the `support/documentation/content` folder.\n"
+#, no-wrap
 msgid "Just edit the english files in `support/documentation/content/en`.\n"
-msgstr "Le code source de la documentation se trouve dans le dossier `support/documentation/content` du dépot de code.\n"
+msgstr "Éditez seulement les fichiers anglais dans `support/documentation/content/en`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -724,10 +695,9 @@ msgstr "Publication"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
-#| msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `main' branch.\n"
+#, no-wrap
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch.\n"
-msgstr "La publication de la documentation est automatique, dès que les modifications sont fusionnées dans la branche `main`.\n"
+msgstr "La publication de la documentation est automatique, dès que les modifications sont fusionnées dans la branche `documentation`.\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
@@ -2339,6 +2309,18 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #, no-wrap
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter.\n"
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, no-wrap
+msgid ""
+"Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.\n"
+"Please make sure to install a compatible version.\n"
+"If you are using Debian Bullseye for example, you can download the Bookwork po4a.deb file from https://packages.debian.org, and install it manually.\n"
+msgstr ""
+"Certaines distributions linux (comme Debian Bullseye par exemple) ont une version trop ancienne de `po4a`.\n"
+"Assurez-vous d'installer une version compatible.\n"
+"Si vous utilisez Debian Bullseye par exemple, vous pouvez télécharger le fichier po4a.deb de Bookworm depuis https://packages.debian.org et l'installer manuellement.\n"
 
 #, no-wrap
 #~ msgid ""
