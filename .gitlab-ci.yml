@@ -4,11 +4,10 @@ stages:
 
 builddoc:
   stage: build
-  image: alpine:latest
-  before_script:
-    - apk update && apk add po4a && apk add grep
+  image: debian:stable
   script:
-    - sh ./doc-translate.sh
+    - apt update && apt install po4a -y
+    - bash ./doc-translate.sh
   artifacts:
     paths:
       - support/documentation/
