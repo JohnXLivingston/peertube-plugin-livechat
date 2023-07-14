@@ -32,21 +32,180 @@ weight = 20
   [Languages.en]
   title = "Peertube plugin livechat documentation"
   languageName = "English"
+  contentDir = "content/en"
 
-  [Languages.fr]
-  title = "Documentation plugin Peertube livechat"
-  languageName = "Français"
-  landingPageName = "<i class='fas fa-home'></i> Accueil"
-  landingPageURL = "/peertube-plugin-livechat/fr/"
+  [Languages.ar]
+  languageName = "العربية"
+  landingPageURL = "/peertube-plugin-livechat/ar/"
+  contentDir = "content/translations/ar"
+
+  [Languages.ca]
+  languageName = "Català"
+  landingPageURL = "/peertube-plugin-livechat/ca/"
+  contentDir = "content/translations/ca"
+
+  [Languages.cs]
+  languageName = "Čeština"
+  landingPageURL = "/peertube-plugin-livechat/cs/"
+  contentDir = "content/translations/cs"
 
   [Languages.de]
   title = "Peertube Plugin Livechat Dokumentation"
   languageName = "Deutsch"
   landingPageName = "<i class='fas fa-home'></i> Home"
   landingPageURL = "/peertube-plugin-livechat/de/"
+  contentDir = "content/translations/de"
+
+  [Languages.el]
+  languageName = "ελληνικά"
+  landingPageURL = "/peertube-plugin-livechat/el/"
+  contentDir = "content/translations/el"
+
+  [Languages.eo]
+  languageName = "Esperanto"
+  landingPageURL = "/peertube-plugin-livechat/eo/"
+  contentDir = "content/translations/eo"
+
+  [Languages.es]
+  languageName = "Español"
+  landingPageURL = "/peertube-plugin-livechat/es/"
+  contentDir = "content/translations/es"
+
+  [Languages.eu]
+  languageName = "Euskara"
+  landingPageURL = "/peertube-plugin-livechat/eu/"
+  contentDir = "content/translations/eu"
+
+  [Languages.fa]
+  languageName = "فارسی"
+  landingPageURL = "/peertube-plugin-livechat/fa/"
+  contentDir = "content/translations/fa"
+
+  [Languages.fi]
+  languageName = "Suomi"
+  landingPageURL = "/peertube-plugin-livechat/fi/"
+  contentDir = "content/translations/fi"
+
+  [Languages.fr]
+  title = "Documentation plugin Peertube livechat"
+  languageName = "Français"
+  landingPageName = "<i class='fas fa-home'></i> Accueil"
+  landingPageURL = "/peertube-plugin-livechat/fr/"
+  contentDir = "content/translations/fr"
+
+  [Languages.gd]
+  languageName = "Gàidhlig"
+  landingPageURL = "/peertube-plugin-livechat/gd/"
+  contentDir = "content/translations/gd"
+
+  [Languages.gl]
+  languageName = "Galego"
+  landingPageURL = "/peertube-plugin-livechat/gl/"
+  contentDir = "content/translations/gl"
+
+  [Languages.hr]
+  languageName = "Hrvatski"
+  landingPageURL = "/peertube-plugin-livechat/hr/"
+  contentDir = "content/translations/hr"
+
+  [Languages.hu]
+  languageName = "Magyar"
+  landingPageURL = "/peertube-plugin-livechat/hu/"
+  contentDir = "content/translations/hu"
+
+  [Languages.is]
+  languageName = "Íslenska"
+  landingPageURL = "/peertube-plugin-livechat/is/"
+  contentDir = "content/translations/is"
+
+  [Languages.it]
+  languageName = "Italiano"
+  landingPageURL = "/peertube-plugin-livechat/it/"
+  contentDir = "content/translations/it"
 
   [Languages.ja]
   title = "PeerTube ライブチャットプラグイン"
   languageName = "日本語バージョン"
   landingPageName = "<i class='fas fa-home'></i> Home"
   landingPageURL = "/peertube-plugin-livechat/ja/"
+  contentDir = "content/translations/ja"
+
+  [Languages.kab]
+  languageName = "Taqbaylit"
+  landingPageURL = "/peertube-plugin-livechat/ka/"
+  contentDir = "content/translations/kab"
+
+  [Languages.nb]
+  languageName = "Norsk bokmål"
+  landingPageURL = "/peertube-plugin-livechat/nb/"
+  contentDir = "content/translations/nb"
+
+  [Languages.nl]
+  languageName = "Nederlands"
+  landingPageURL = "/peertube-plugin-livechat/nl/"
+  contentDir = "content/translations/nl"
+
+  [Languages.nn]
+  languageName = "Norsk nynorsk"
+  landingPageURL = "/peertube-plugin-livechat/nn/"
+  contentDir = "content/translations/nn"
+
+  [Languages.oc]
+  languageName = "Occitan"
+  landingPageURL = "/peertube-plugin-livechat/oc/"
+  contentDir = "content/translations/oc"
+
+  [Languages.pl]
+  languageName = "Polski"
+  landingPageURL = "/peertube-plugin-livechat/pl/"
+  contentDir = "content/translations/pl"
+
+  [Languages.pt]
+  languageName = "uguês"
+  landingPageURL = "/peertube-plugin-livechat/pt/"
+  contentDir = "content/translations/pt"
+
+  [Languages.ru]
+  languageName = "Pусский"
+  landingPageURL = "/peertube-plugin-livechat/ru/"
+  contentDir = "content/translations/ru"
+
+  [Languages.sq]
+  languageName = "Shqip"
+  landingPageURL = "/peertube-plugin-livechat/sq/"
+  contentDir = "content/translations/sq"
+
+  [Languages.sv]
+  languageName = "Svenska"
+  landingPageURL = "/peertube-plugin-livechat/sv/"
+  contentDir = "content/translations/sv"
+
+  [Languages.th]
+  languageName = "ไทย"
+  landingPageURL = "/peertube-plugin-livechat/th/"
+  contentDir = "content/translations/th"
+
+  [Languages.tok]
+  languageName = "Toki Pona"
+  landingPageURL = "/peertube-plugin-livechat/to/"
+  contentDir = "content/translations/tok"
+
+  [Languages.uk]
+  languageName = "украї́нська мо́ва"
+  landingPageURL = "/peertube-plugin-livechat/uk/"
+  contentDir = "content/translations/uk"
+
+  [Languages.vi]
+  languageName = "Tiếng Việt"
+  landingPageURL = "/peertube-plugin-livechat/vi/"
+  contentDir = "content/translations/vi"
+
+  [Languages.zh-Hans]
+  languageName = "简体中文（中国）"
+  landingPageURL = "/peertube-plugin-livechat/zh-Hans/"
+  contentDir = "content/translations/zh-Hans"
+
+  [Languages.zh-Hant]
+  languageName = "繁體中文（台灣"
+  landingPageURL = "/peertube-plugin-livechat/zh-Hant/"
+  contentDir = "content/translations/zh-Hant"

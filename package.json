@@ -83,8 +83,8 @@
   ],
   "library": "./dist/server/main.js",
   "scripts": {
-    "clean": "rm -rf dist/* build/*",
-    "clean:light": "rm -rf dist/*",
+    "clean": "rm -rf dist/* build/* support/documentation/content/translations/* support/documentation/i18n/*",
+    "clean:light": "rm -rf dist/* support/documentation/content/translations/* support/documentation/i18n/*",
     "prepare": "npm run clean && npm run build",
     "build:converse": "bash conversejs/build-conversejs.sh",
     "build:prosody": "bash build-prosody.sh",
@@ -102,7 +102,7 @@
     "lint:script": "npx eslint --ext .js --ext .ts .",
     "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/styles/**/*.css'",
     "show:npmfiles": "npx npm-packlist",
-    "doc:generatemissingtranslations": "bash doc-generate-missing-translations.sh"
+    "doc:translate": "bash doc-translate.sh"
   },
   "staticDirs": {
     "static": "dist/client/static",

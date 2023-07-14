@@ -10,6 +10,8 @@
 ### Minor changes and fixes
 
 * Translation updates.
+* Documentation can now also be translated using [Weblate](https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/).
+* Documentation can use hugo shortcode livechat_label to get application strings.
 
 ## 7.1.0
 

@@ -8,18 +8,24 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
+      - name: Install po4a
+        run: sudo apt update && sudo apt install po4a -y
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.80.0'
           # extended: true
+
+      - name: Generate documentation translations
+        run: bash ./doc-translate.sh
 
       - name: Build
         run: hugo --minify --baseURL='https://johnxlivingston.github.io/peertube-plugin-livechat' -s support/documentation

@@ -4,4 +4,7 @@ dist
 .vscode
 build
 support/documentation/public
+support/documentation/po/po4a.conf
+support/documentation/content/translations/**/*.md
+support/documentation/i18n
 public

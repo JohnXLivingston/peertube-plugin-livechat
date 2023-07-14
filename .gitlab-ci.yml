@@ -1,12 +1,29 @@
-image: monachus/hugo
+stages:
+  - build
+  - deploy
+
+builddoctranslations:
+  stage: build
+  image: debian:stable
+  script:
+    - apt update && apt install po4a -y
+    - bash ./doc-translate.sh
+  artifacts:
+    paths:
+      - support/documentation/i18n/
+      - support/documentation/content/translations/
 
 pages:
+  stage: deploy
+  image: registry.gitlab.com/pages/hugo/hugo_extended:latest
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
     GIT_SUBMODULE_PATHS: support/documentation/themes/hugo-theme-learn
   script:
     # gitlab need the generated documentation to be in the /public dir.
     - hugo -s support/documentation/ -d ../../public/ --baseURL='https://livingston.frama.io/peertube-plugin-livechat/'
+  dependencies:
+    - builddoctranslations
   artifacts:
     paths:
       - public
