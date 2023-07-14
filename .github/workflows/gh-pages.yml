@@ -32,7 +32,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/documentation'
+        if: github.ref == 'refs/heads/documentation_translation'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./support/documentation/public
