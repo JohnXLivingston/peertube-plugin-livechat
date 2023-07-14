@@ -15,7 +15,7 @@ builddoctranslations:
 
 pages:
   stage: deploy
-  image: monachus/hugo
+  image: registry.gitlab.com/pages/hugo/hugo_extended:latest
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
     GIT_SUBMODULE_PATHS: support/documentation/themes/hugo-theme-learn
