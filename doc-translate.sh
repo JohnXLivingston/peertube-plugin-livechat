@@ -4,6 +4,7 @@ set -euo pipefail
 
 po4afile="support/documentation/po/po4a.conf"
 build_pot_in_folder="build/documentation/pot_in"
+ignore_pattern='^#*\s*\{\{%\s*livechat_label[^\}]+\s*\}\}\s*$'
 
 # Is po4a new enough?
 function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
@@ -21,7 +22,7 @@ function getLangs() {
 }
 
 function generatePo4aConf() {
-  echo "    creating $po4afile file."
+  echo "Creating $po4afile file..."
   echo "" > $po4afile
 
   # First, list all existing langs, from the config.toml file:
@@ -93,6 +94,14 @@ function generatePo4aConf() {
       echo "" > "$pot_in_file"
 
       echo -n "pot_in:$pot_in_file " >> $po4afile
+    else
+      if grep -q -P "$ignore_pattern" $source_file; then
+        echo "File $source_file contains pattern to ignore, we must create a filtered pot_in file."
+        mkdir -p "$pot_in_file_dir"
+        grep -v -P "$ignore_pattern" $source_file > "$pot_in_file";
+
+        echo -n "pot_in:$pot_in_file " >> $po4afile
+      fi
     fi
 
     echo -n '$lang:'$target_file >> $po4afile

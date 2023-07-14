@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-14 10:18+0200\n"
+"POT-Creation-Date: 2023-07-14 10:28+0200\n"
 "PO-Revision-Date: 2023-07-13 11:36+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1857,31 +1857,25 @@ msgid "Admin documentation"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Plugin Peertube Livechat settings"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Settings"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This section describes the plugin settings page.\n"
 msgstr ""
 
-#. type: Title ##
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label \"list_rooms_label\" %}}"
-msgstr ""
-
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid ""
 "When pressing the «List rooms» button, all existing chatrooms will be listed.\n"
@@ -1889,61 +1883,25 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Federation"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares.\n"
 msgstr ""
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label federation_no_remote_chat_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label federation_dont_publish_remotely_label %}}"
-msgstr ""
-
 #. type: Title ##
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat behaviour"
 msgstr ""
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label room_type_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label auto_display_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label open_blank_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label share_url_label %}}"
-msgstr ""
-
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid ""
 "This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.\n"
@@ -1951,55 +1909,25 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!\n"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This settings allows you to choose who can access this modal.\n"
 msgstr ""
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label per_live_video_label %}}"
-msgstr ""
-
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "The video owner will be able to activate web chats.\n"
 msgstr ""
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label all_lives_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label all_non_lives_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label videos_list_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label no_anonymous_label %}}"
-msgstr ""
-
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid ""
 "Note: for now this feature simply hide the chat.\n"
@@ -2008,67 +1936,43 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Theming"
 msgstr ""
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label converse_theme_label %}}"
-msgstr ""
-
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "You can choose which theme to use for ConverseJS:\n"
 msgstr ""
 
 #. type: Bullet: '- '
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Peertube theme: this is a special theme, made especially for peertube's integration.\n"
 msgstr ""
 
 #. type: Bullet: '- '
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Default ConverseJS theme: this is the default ConverseJS theme.\n"
 msgstr ""
 
 #. type: Bullet: '- '
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "ConverseJS concord theme: this is a theme provided by ConverseJS.\n"
 msgstr ""
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label autocolors_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label chat_style_label %}}"
-msgstr ""
-
 #. type: Title ##
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat server advanced settings"
 msgstr ""
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label system_prosody_label %}}"
-msgstr ""
-
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid ""
 "The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).\n"
@@ -2076,73 +1980,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This settings should only be used if the plugin is broken, and waiting for a patch.\n"
 msgstr ""
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label disable_websocket_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_port_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_peertube_uri_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_muc_log_by_default_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_muc_expiration_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_room_allow_s2s_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_s2s_port_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_s2s_interfaces_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_certificates_dir_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_c2s_label %}}"
-msgstr ""
-
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid ""
 "This setting enable XMPP clients to connect to the built-in Prosody server.\n"
@@ -2150,25 +1994,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room.\n"
 msgstr ""
 
-#. type: Title ####
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_c2s_port_label %}}"
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/admin/settings.md
-#, no-wrap
-msgid "{{% livechat_label prosody_components_label %}}"
-msgstr ""
-
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid ""
 "This settings enable XMPP external components to connect to the server.\n"
@@ -2176,13 +2008,13 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This feature could be used to connect bridges or bots.\n"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/admin/settings.md
+#: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "More informations on Prosody external components [here](https://prosody.im/doc/components).\n"
 msgstr ""
