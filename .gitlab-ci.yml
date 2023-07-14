@@ -6,11 +6,9 @@ pages:
     GIT_SUBMODULE_PATHS: support/documentation/themes/hugo-theme-learn
   script:
     # gitlab need the generated documentation to be in the /public dir.
-    - sudo apt update && sudo apt install po4a -y
-    - bash ./doc-translate.sh
     - hugo -s support/documentation/ -d ../../public/ --baseURL='https://livingston.frama.io/peertube-plugin-livechat/'
   artifacts:
     paths:
       - public
   only:
-    - documentation_translation
+    - documentation
