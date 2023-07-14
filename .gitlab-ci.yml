@@ -21,6 +21,8 @@ pages:
   script:
     # gitlab need the generated documentation to be in the /public dir.
     - hugo -s support/documentation/ -d ../../public/ --baseURL='https://livingston.frama.io/peertube-plugin-livechat/'
+  dependencies:
+    - builddoc
   artifacts:
     paths:
       - public
