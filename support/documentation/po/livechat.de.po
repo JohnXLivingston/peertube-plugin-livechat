@@ -2007,7 +2007,6 @@ msgstr ""
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
-#| msgid "Moderation"
 msgid "Federation"
 msgstr ""
 

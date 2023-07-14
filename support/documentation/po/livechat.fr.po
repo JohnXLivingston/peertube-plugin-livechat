@@ -2185,7 +2185,6 @@ msgstr ""
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
-#| msgid "Documentation"
 msgid "Federation"
 msgstr "Fédération"
 
@@ -2580,7 +2579,6 @@ msgstr "Documentation utilisateur⋅rice du plugin peertube-plugin-livechat"
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
-#| msgid "Documentation"
 msgid "Moderation"
 msgstr "Modération"
 
