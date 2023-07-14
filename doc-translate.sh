@@ -16,6 +16,7 @@ if version_gt "$required_version" "$current_version"; then
 fi
 
 mkdir -p $build_pot_in_folder
+mkdir -p "support/documentation/i18n/"
 
 function getLangs() {
   grep -P '\[Languages\..+\]' support/documentation/config.toml | sed -E 's/^.*\.(.+)\].*$/\1/' | grep -v en
