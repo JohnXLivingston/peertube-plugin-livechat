@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Install po4a
-        run: sudo apt update && sudo apt install po4a/jammy-backports -y
+        run: sudo apt update && sudo apt install po4a -y
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
