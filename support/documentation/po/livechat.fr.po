@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-14 19:55+0200\n"
-"PO-Revision-Date: 2023-07-14 18:31+0000\n"
+"PO-Revision-Date: 2023-07-15 16:40+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -87,7 +87,13 @@ msgstr "Développer"
 msgid ""
 "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem\n"
 "before you start working on it, and inform the community that you begin coding by claiming the issue.\n"
-msgstr "Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en créant un ticket ou en commentant un ticket existant, avant de commencer à travailler dessus. Et annoncez clairement à la communauté que vous commencez à travailler dessus. Ceci afin d'éviter que plusieurs personnes travaillent sur la même chose et entrent en conflit.\n"
+msgstr ""
+"Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler "
+"en créant un ticket ou en commentant un ticket existant, avant de commencer "
+"à travailler dessus.\n"
+"Et annoncez clairement à la communauté que vous commencez à travailler "
+"dessus. Ceci afin d'éviter que plusieurs personnes travaillent sur la même "
+"chose et entrent en conflit.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -105,7 +111,7 @@ msgstr "Jusqu'à mars 2023, il fallait contribuer sur la branche `develop`. Cett
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prerequisite for building this plugin:\n"
-msgstr "Pré-requis pour compiler le plugin:\n"
+msgstr "Pré-requis pour compiler le plugin :\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -179,8 +185,12 @@ msgid ""
 "Once you are ready for a code review before merge, submit a Pull Request. In any case, please\n"
 "link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
 msgstr ""
-"Quand vous êtes prêt⋅e à montrer votre code pour avoir un retour, soumettez une Pull Request *draft*.\n"
-"Quand vous êtes prêt⋅e pour une relecture de code avant merge, soumettez une Pull Request. Dans tous les cas, merci de lier votre Pull Request au ticket concerné en utilisant la syntax de GitHub : «fixes #issue_number».\n"
+"Quand vous êtes prêt⋅e à montrer votre code pour avoir un retour, soumettez "
+"une Pull Request *draft*.\n"
+"Quand vous êtes prêt⋅e pour une relecture de code avant merge, soumettez une "
+"Pull Request.\n"
+"Dans tous les cas, merci de lier votre Pull Request au ticket concerné en "
+"utilisant la syntax de GitHub : «fixes #issue_number».\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -242,10 +252,12 @@ msgid ""
 "For example, some log files will rotate every two minutes, instead of once per day.\n"
 "This permit to test more easily certain actions, for which it could normally take hours or days to wait.\n"
 msgstr ""
-"Il existe un mode de debug pour le plugin, qui va raccourcir le délais de certaines actions.\n"
-"Par exemple, il va faire tourner les journaux toutes les deux minutes, au lieu de tous les jours.\n"
-"Cela permet de tester plus facilement certaines actions, pour lesquelles il faudrait normalement attendre\n"
-"des heures ou des jours.\n"
+"Il existe un mode de debug pour le plugin, qui va raccourcir le délais de "
+"certaines actions.\n"
+"Par exemple, il va faire tourner les journaux toutes les deux minutes, au "
+"lieu de tous les jours.\n"
+"Cela permet de tester plus facilement certaines actions, pour lesquelles il "
+"faudrait normalement attendre des heures ou des jours.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -324,8 +336,8 @@ msgstr "debugger Prosody"
 #, no-wrap
 msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug).\n"
 msgstr ""
-"Il est possible de connecter l'AppImage Prosody à un debugger distant en utilisant\n"
-"[MobDebug](https://luarocks.org/modules/paulclinger/mobdebug).\n"
+"Il est possible de connecter l'AppImage Prosody à un debugger distant en "
+"utilisant [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -334,8 +346,9 @@ msgid ""
 "To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.\n"
 "Then, add this in the `debub_mode` file:\n"
 msgstr ""
-"Pour cela, placer MobDebug dans un dossier accessible par le user `peertube`.\n"
-"Ensuite, ajouter cela dans le fichier `debug_mode` du plugin:\n"
+"Pour cela, placer MobDebug dans un dossier accessible par le user `peertube`."
+"\n"
+"Ensuite, ajouter cela dans le fichier `debug_mode` du plugin :\n"
 
 #. type: Fenced code block (json)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -362,8 +375,8 @@ msgstr ""
 #, no-wrap
 msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is.\n"
 msgstr ""
-"`host` et `port` sont optionnels. `debugger_path` doit pointer vers le dossier où\n"
-"se trouve le fichier `.lua` de `MobDebug`.\n"
+"`host` et `port` sont optionnels. `debugger_path` doit pointer vers le "
+"dossier où se trouve le fichier `.lua` de `MobDebug`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -389,12 +402,14 @@ msgid ""
 "You can even configure your debug server to launch this request automatically.\n"
 msgstr ""
 "Pour que Prosody se connecte au debugger, appelez l'API\n"
-"`http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+"`http://votre_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`.\n"
 "Cet appel n'a pas besoin d'authentification.\n"
 "Il peut se faire depuis une ligne de commande, par exemple avec\n"
-"`curl http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
-"Vous pouvez même configurer votre serveur de debuggage pour lancer cette commande\n"
-"automatiquement.\n"
+"`curl http://votre_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`.\n"
+"Vous pouvez même configurer votre serveur de debuggage pour lancer cette "
+"commande automatiquement.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -416,14 +431,19 @@ msgid ""
 "[le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)\n"
 "that explains how to quickly build a dev env using Docker.\n"
 msgstr ""
-"Un tutoriel est disponible sur [le forum Peertube](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)\n"
-"pour expliquer comment monter rapidement un environnement de développement en utilisant Docker.\n"
+"Un tutoriel est disponible sur [le forum Peertube](https://framacolibri.org/"
+"t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidem"
+"ent-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) pour "
+"expliquer comment monter rapidement un environnement de développement en "
+"utilisant Docker.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev).\n"
-msgstr "Un dépot a été crée sur la base de ce tutoriel: https://codeberg.org/mose/pt-plugin-dev\n"
+msgstr ""
+"Un dépot a été crée sur la base de ce tutoriel : https://codeberg.org/mose/"
+"pt-plugin-dev\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -434,9 +454,11 @@ msgid ""
 "`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes,\n"
 "then restart containers.\n"
 msgstr ""
-"Note: pour une raison obscure, Prosody n'arrive pas à résoudre les adresses DNS des conteneurs quand la librairie\n"
-"lua-unbound est utilisée. Pour contourner cela, il y a un «dirty hack»: il suffit de créer une fichier\n"
-"`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` dans vos docker-volumes, puis de les redémarrer.\n"
+"Note : pour une raison obscure, Prosody n'arrive pas à résoudre les adresses "
+"DNS des conteneurs quand la librairie lua-unbound est utilisée.\n"
+"Pour contourner cela, il y a un «dirty hack» : il suffit de créer une "
+"fichier `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` dans "
+"vos docker-volumes, puis de les redémarrer.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
@@ -565,7 +587,7 @@ msgstr "Prévisualiser"
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To preview your modifications, just run:\n"
-msgstr "Pour prévisualiser vos modification, il suffit de lancer:\n"
+msgstr "Pour prévisualiser vos modification, il suffit de lancer :\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -784,11 +806,12 @@ msgstr "Crédits"
 #, no-wrap
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies.\n"
 msgstr ""
-"Les fichiers\n"
-"[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json),\n"
-"[COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md)\n"
-"et [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE)\n"
-"contiennent les informations sur la licence du présent logiciel (en anglais).\n"
+"Les fichiers [package.json](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github."
+"com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) et "
+"[LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
+"main/LICENSE) contiennent les informations sur la licence du présent "
+"logiciel (en anglais).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -897,9 +920,11 @@ msgid ""
 "Enabling these features requires configuration changes on the server, and on the DNS records.\n"
 "It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills.\n"
 msgstr ""
-"L'activation de ces fonctionnalités demande des changements de configuration\n"
+"L'activation de ces fonctionnalités demande des changements de configuration "
 "sur le serveur, et sur les enregistrements DNS.\n"
-"Il n'est pas possible de les activer uniquement depuis l'interface de Peertube, et cela demande d'avoir quelques compétences basiques d'admin système.\n"
+"Il n'est pas possible de les activer uniquement depuis l'interface de "
+"Peertube, et cela demande d'avoir quelques compétences basiques d'admin "
+"système.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1026,13 +1051,17 @@ msgstr "Vous devez ajouter un [enregistrement DNS](https://prosody.im/doc/dns) p
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "The easiest way to do this is to add an SRV record for the \"room\" [subdomain](https://prosody.im/doc/dns#subdomains):\n"
-msgstr "Le plus simple pour cela est d'ajouter un enregistrement SRV pour le [sous-domaine](https://prosody.im/doc/dns#subdomains) «room»:\n"
+msgstr ""
+"Le plus simple pour cela est d'ajouter un enregistrement SRV pour le [sous-"
+"domaine](https ://prosody.im/doc/dns#subdomains) «room» :\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)\n"
-msgstr "nom de l'enregistrement: _xmpp-server._tcp.room.votre_instance.tld. (remplacez «votre_instance.tld» par la valeur adéquate)\n"
+msgstr ""
+"nom de l'enregistrement : _xmpp-server._tcp.room.votre_instance.tld. ("
+"remplacez «votre_instance.tld» par la valeur adéquate)\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
