@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-14 19:55+0200\n"
-"PO-Revision-Date: 2023-07-15 16:40+0000\n"
+"PO-Revision-Date: 2023-07-17 01:48+0000\n"
 "Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
 "\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/"
@@ -160,6 +160,33 @@ msgid ""
 "git push --set-upstream me my_development\n"
 "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
 msgstr ""
+"# Kopieren Sie das Repository. Vergessen Sie nicht die Option --recursive, "
+"um Submodule mit zu kopieren.\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --"
+"recursive\n"
+"\n"
+"# Installieren Sie die NPM-Abhängigkeiten und erstellen Sie das Modul zum "
+"ersten Mal:\n"
+"npm install\n"
+"\n"
+"# Erstellen des Plugins nach einer Änderung:\n"
+"npm run build\n"
+"\n"
+"# Wenn Sie einen Fork aus dem Repository haben, fügen Sie ihn als Remote "
+"hinzu (Beispiel):\n"
+"git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat."
+"git\n"
+"\n"
+"# Erstellen Sie einen lokalen Zweig für Ihre Entwicklungen und testen Sie "
+"ihn aus (Beispiel):\n"
+"git checkout my_development # Hinweis: Wenn ein Github Problem damit "
+"verbunden ist, verwenden Sie fix_1234 als Zweigname (wobei 1234 die Nummer "
+"des Problems ist).\n"
+"# Um Ihre Änderungen vorzuschlagen, schieben Sie Ihren Zweig in Ihr "
+"Repository (Beispiel):\n"
+"git push --set-upstream me my_development\n"
+"# Gehen Sie dann mit Ihrem Webbrowser zu Ihrem Github-Repository, um den "
+"Pull Request vorzuschlagen (siehe zusätzliche Anweisungen unten)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -236,6 +263,12 @@ msgid ""
 "For example, some log files will rotate every two minutes, instead of once per day.\n"
 "This permit to test more easily certain actions, for which it could normally take hours or days to wait.\n"
 msgstr ""
+"Es gibt einen Debug Modus für dieses Plugin, der einige Verzögerungen "
+"verkürzt.\n"
+"Zum Beispiel werden einige Protokolldateien alle zwei Minuten erneuert, "
+"anstatt einmal pro Tag.\n"
+"Dies ermöglicht es, bestimmte Aktionen, für die man normalerweise Stunden "
+"oder Tage warten müsste, leichter zu testen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -245,6 +278,11 @@ msgid ""
 "`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file\n"
 "(replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
 msgstr ""
+"Um diesen Modus zu aktivieren, müssen Sie lediglich die Datei\n"
+"`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` "
+"erstellen\n"
+"(ersetzen Sie `/var/www/peertube/storage/` durch den richtigen Pfad Ihrer "
+"Installation).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -298,6 +336,13 @@ msgid ""
 "It can be done from a command line, for example using\n"
 "`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 msgstr ""
+"Wenn der Debug Modus aktiviert ist, können Sie Prosody mit diesem API-Aufruf "
+"neu starten:\n"
+"`http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+"Für diesen Aufruf ist keine Authentifizierung erforderlich.\n"
+"Er kann von einer Befehlszeile aus erfolgen, zum Beispiel mit\n"
+"`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`."
+"\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -376,6 +421,16 @@ msgid ""
 "`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
 "You can even configure your debug server to launch this request automatically.\n"
 msgstr ""
+"Damit Prosody eine Verbindung mit dem Debugger herstellen kann, rufen Sie "
+"die API\n"
+"`http://your_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true` auf.\n"
+"Dieser Aufruf erfordert keine Authentifizierung.\n"
+"Er kann von einer Kommandozeile aus erfolgen, zum Beispiel mit\n"
+"`curl http://your_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`.\n"
+"Sie können sogar Ihren Debug Server so konfigurieren, dass er diese Anfrage "
+"automatisch startet.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -397,6 +452,11 @@ msgid ""
 "[le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)\n"
 "that explains how to quickly build a dev env using Docker.\n"
 msgstr ""
+"Es gibt eine Anleitung in französischer Sprache auf dem\n"
+"[le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnemen"
+"t-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-p"
+"ermet-de-tester-la-federation/17631)\n"
+"das erklärt, wie man schnell eine Entwicklungsumgebung mit Docker erstellt.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -415,6 +475,12 @@ msgid ""
 "`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes,\n"
 "then restart containers.\n"
 msgstr ""
+"Hinweis: Aus einem unbekannten Grund kann Prosody die DNS-Adresse von "
+"Containern nicht auflösen, wenn die lua-unbound-Bibliothek verwendet wird.\n"
+"Es gibt einen unsaubere Lösung dafür im Plugin: Erstellen Sie einfach eine\n"
+"`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` Datei in deinen "
+"docker-volumes,\n"
+"dann starten Sie die Container neu.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
@@ -484,6 +550,11 @@ msgid ""
 "When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.\n"
 "This will trigger github and gitlab pipelines, and update published documentation.\n"
 msgstr ""
+"Wenn eine neue Pluginversion veröffentlicht oder die Dokumentation "
+"aktualisiert wird, führen die Plugin Verwalter den `main`-Zweig mit dem "
+"`documentation`-Zweig zusammen.\n"
+"Dadurch werden Github- und Gitlab-Pipelines ausgelöst und die "
+"veröffentlichte Dokumentation aktualisiert.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -512,6 +583,11 @@ msgid ""
 "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).\n"
 "To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page.\n"
 msgstr ""
+"Die Dokumentation wird mit Weblate übersetzt (siehe die "
+"[Übersetzungsdokumentation](/peertube-plugin-livechat/contributing/translate/"
+")).\n"
+"Um dies zu tun, verwenden wir das [po4a tool](https://po4a.org/), wie wir "
+"später auf dieser Seite sehen werden.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -596,6 +672,12 @@ msgid ""
 "Please make sure to install a compatible version.\n"
 "If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually.\n"
 msgstr ""
+"Einige Linux-Distributionen (wie Debian Bullseye zum Beispiel) haben eine zu "
+"alte Version von `po4a`.\n"
+"Bitte stellen Sie sicher, dass Sie eine kompatible Version installieren.\n"
+"Wenn Sie zum Beispiel Debian Bullseye benutzen, können Sie die Bookworm "
+"po4a.deb Datei von [https://packages.debian.org](https://packages.debian.org/"
+"bookworm/all/po4a/download) herunterladen und manuell installieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -647,6 +729,10 @@ msgid ""
 "You can use the `livechat_label` short code to use application strings.\n"
 "See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).\n"
 msgstr ""
+"Du kannst den Shortcode `livechat_label` verwenden, um Anwendungsstrings zu "
+"verwenden.\n"
+"Siehe hier: [Dokumentation übersetzen](/peertube-plugin-livechat/"
+"contributing/translate/#documentation-translation).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -655,6 +741,10 @@ msgid ""
 "It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.\n"
 "See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).\n"
 msgstr ""
+"Es ist möglich zu verhindern, dass eine Datei übersetzt wird, indem man "
+"`livechatnotranslation: true` in der Yaml Font Matter Sektion benutzt.\n"
+"Siehe hier: [Dokumentation übersetzen](/peertube-plugin-livechat/"
+"contributing/translate/#documentation-translation).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -839,7 +929,7 @@ msgstr "Verbindungen über XMPP-Clients zulassen"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "XMPP clients"
-msgstr ""
+msgstr "XMPP-Clients"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -849,12 +939,21 @@ msgid ""
 "It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).\n"
 "This can for example be useful to facilitate moderation operations.\n"
 msgstr ""
+"Dieses Chatmodul basiert auf dem XMPP-Protokoll, das auch als Jabber bekannt "
+"ist.\n"
+"Es ist daher möglich, sich mit Hilfe von [XMPP-Client-Software] (https://en."
+"wikipedia.org/wiki/XMPP#Clients) mit den Chats zu verbinden.\n"
+"Dies kann zum Beispiel nützlich sein, um Moderationsvorgänge zu erleichtern."
+"\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/).\n"
 msgstr ""
+"Die Benutzerdokumentation zu diesen Funktionen finden Sie auf der Seite "
+"[Benutzerdokumentation](/peertube-plugin-livechat/documentation/user/"
+"xmpp_clients/).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -863,6 +962,11 @@ msgid ""
 "Enabling these features requires configuration changes on the server, and on the DNS records.\n"
 "It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills.\n"
 msgstr ""
+"Die Aktivierung dieser Funktionen erfordert Konfigurationsänderungen auf dem "
+"Server und in den DNS-Einträgen.\n"
+"Es ist nicht möglich, dies nur über die Peertube-Schnittstelle zu "
+"konfigurieren, und es erfordert einige grundlegende "
+"Systemadministrationskenntnisse.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -894,6 +998,10 @@ msgid ""
 "To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the\n"
 "[Prosody server](https://prosody.im) that this plugin uses internally.\n"
 msgstr ""
+"Um diese Funktion zu aktivieren, müssen Sie Ihren Server und Ihre DNS-"
+"Einträge so einrichten, dass XMPP-Clients den\n"
+"[Prosody-Server](https://prosody.im) finden und erreichen können, den dieses "
+"Plugin intern verwendet.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -908,6 +1016,11 @@ msgid ""
 "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".\n"
 "By checking this settings, new settings appear below.\n"
 msgstr ""
+"Beginne mit den Einstellungen des Livechat-Plugins deiner Instanz und "
+"aktiviere die Einstellung \"Verbindung zum Raum über externe XMPP-Konten "
+"aktivieren\".\n"
+"Wenn Sie diese Einstellung aktivieren, erscheinen unterhalb neue "
+"Einstellungen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -917,6 +1030,11 @@ msgid ""
 "This one defaults to 5269, which is the standard port for this service.\n"
 "You can however change to another port, if this is already in use on your server.\n"
 msgstr ""
+"Zunächst einmal das Feld \"Prosody-Server-zu-Server-Port\".\n"
+"Dieses Feld ist standardmäßig auf 5269 voreingestellt, dem Standardport für "
+"diesen Dienst.\n"
+"Sie können jedoch einen anderen Port wählen, wenn dieser bereits auf Ihrem "
+"Server verwendet wird.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -927,6 +1045,13 @@ msgid ""
 "You can change these values, if you wish to listen on only certain IP addresses.\n"
 "The syntax is explained next to the setting.\n"
 msgstr ""
+"Anschließend können Sie im Feld \"Netzwerkschnittstellen zwischen Server und "
+"Server\" angeben, welche Netzwerkschnittstellen der Server abhören soll.\n"
+"Der Standardwert \"*, ::\" bedeutet, dass alle IP-Adressen abgehört werden "
+"sollen.\n"
+"Sie können diese Werte ändern, wenn Sie nur bestimmte IP-Adressen abhören "
+"möchten.\n"
+"Die Syntax wird neben der Einstellung erklärt.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -939,6 +1064,15 @@ msgid ""
 "It is up to you to generate and renew them.\n"
 "See bellow for more information.\n"
 msgstr ""
+"Die Einstellung \"Zertifikatsordner\" können Sie leer lassen.\n"
+"In diesem Fall wird das Plugin automatisch selbstsignierte Zertifikate "
+"erzeugen.\n"
+"Einige XMPP-Server verweigern je nach ihrer Konfiguration möglicherweise die "
+"Verbindung.\n"
+"In diesem Fall können Sie hier einen Pfad auf dem Server angeben, in dem Sie "
+"die vom Modul zu verwendenden Zertifikate ablegen müssen.\n"
+"Es liegt an Ihnen, diese zu erzeugen und zu erneuern.\n"
+"Für weitere Informationen siehe unten.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -961,6 +1095,9 @@ msgid ""
 "If you are using Docker for your Peertube, you need to modify the `docker-compose.yml` file to open port 5269 of the `peertube` container,\n"
 "so that the outer world can connect to it.\n"
 msgstr ""
+"Wenn Sie Docker für Ihren Peertube verwenden, müssen Sie die Datei `docker-"
+"compose.yml` ändern, um Port 5269 des `Peertube`-Containers zu öffnen,\n"
+"damit sich die Außenwelt mit ihm verbinden kann.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -973,18 +1110,25 @@ msgstr "DNS"
 #, no-wrap
 msgid "You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the \"room.your_instance.tld\" component.\n"
 msgstr ""
+"Sie müssen einen [DNS-Eintrag](https://prosody.im/doc/dns) hinzufügen, der "
+"es entfernten Servern ermöglicht, die Komponente \"room.your_instance.tld\" "
+"zu finden.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "The easiest way to do this is to add an SRV record for the \"room\" [subdomain](https://prosody.im/doc/dns#subdomains):\n"
 msgstr ""
+"Am einfachsten ist es, einen SRV-Eintrag für die [Subdomäne](https://prosody."
+"im/doc/dns#subdomains) \"room\" hinzuzufügen:\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)\n"
 msgstr ""
+"record name: _xmpp-server._tcp.room.ihre_instanz.tld. (ersetzen Sie "
+"«ihre_instanz.tld» mit ihrer Instanz Uri)\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1002,7 +1146,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "SRV: 0\n"
-msgstr ""
+msgstr "SRV: 0\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1020,25 +1164,29 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "port: 5269 (adapt if your changed the default port)\n"
-msgstr ""
+msgstr "Port: 5269 (anpassen, wenn Sie den Standardport geändert haben)\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "target: your_instance.tld. (replace by your instance uri)\n"
-msgstr ""
+msgstr "Ziel: ihre_instanz.tld. (durch Ihre Instanz-URI ersetzen)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Be careful to keep the dot after \"your_instance.tld\".\n"
 msgstr ""
+"Achten Sie darauf, dass der Punkt nach \"ihre_instanz.tld\" erhalten bleibt."
+"\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Using the `dig` command to check your record, you should get a result similar to this:\n"
 msgstr ""
+"Wenn Sie den Befehl `dig` verwenden, um Ihren Datensatz zu überprüfen, "
+"sollten Sie ein ähnliches Ergebnis wie dieses erhalten:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1055,6 +1203,11 @@ msgid ""
 "If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).\n"
 "Of course, you can also add this record if you use the standard port. It will also work.\n"
 msgstr ""
+"Wenn Sie **nicht den Standardport `5269` verwenden**, müssen Sie auch einen "
+"SRV-Eintrag für `_xmpp-server._tcp.ihre_instanz.tld.` hinzufügen (wie oben, "
+"nur ohne das Präfix `room.`).\n"
+"Natürlich können Sie diesen Eintrag auch hinzufügen, wenn Sie den Standard-"
+"Port verwenden. Das wird auch funktionieren.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1080,12 +1233,23 @@ msgid ""
 "This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a \"basic\" situation (manual installation of Peertube, using letsencrypt).\n"
 "If you are in another situation (Docker installation, certificates signed by another authority, etc...), you will have to adapt this approach by yourself.\n"
 msgstr ""
+"Es ist möglich, von einer Zertifizierungsstelle validierte Zertifikate zu "
+"verwenden.\n"
+"Dies erfordert jedoch fortgeschrittene Kenntnisse in der Systemverwaltung.\n"
+"Aufgrund der Vielzahl möglicher Anwendungsfälle ist es in der Tat unmöglich, "
+"hier alle Situationen zu dokumentieren.\n"
+"Diese Dokumentation wird daher nur das zu erreichende Ziel erläutern und ein "
+"Beispiel geben, das nur für eine \"einfache\" Situation geeignet ist ("
+"manuelle Installation von Peertube unter Verwendung von letsencrypt).\n"
+"Wenn Sie sich in einer anderen Situation befinden (Docker-Installation, von "
+"einer anderen Autorität signierte Zertifikate, etc...), müssen Sie diesen "
+"Ansatz selbst anpassen.\n"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Basic principle"
-msgstr ""
+msgstr "Grundlegendes Prinzip"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1094,6 +1258,10 @@ msgid ""
 "It is up to you to generate valid certificates for domains `your_instance.tld` and `room.your_instance.tld`.\n"
 "You can use any [method supported by Prosody](https://prosody.im/doc/certificates).\n"
 msgstr ""
+"Es liegt an Ihnen, gültige Zertifikate für die Domänen `ihre_instanz.tld` "
+"und `room.ihre_instanz.tld` zu erzeugen.\n"
+"Sie können jede [von Prosody unterstützte Methode](https://prosody.im/doc/"
+"certificates) verwenden.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1111,6 +1279,13 @@ msgid ""
 "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to\n"
 "prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`\n"
 msgstr ""
+"Wenn Sie das Programm ProsodyCtl verwenden möchten, um Zertifikate zu "
+"importieren, ist es (sobald Peertube gestartet ist) mit folgendem Befehl "
+"verfügbar (passen Sie den Pfad zu Ihrem Peertube-Datenordner an und ersetzen "
+"Sie \"xxx\" durch die Argumente, die Sie an\n"
+"prosodyctl übergeben wollen): `sudo -u peertube /var/www/peertube/storage/"
+"plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun "
+"prosodyctl xxx`\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1142,6 +1317,10 @@ msgid ""
 "First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the MUC (XMPP chat rooms) component.\n"
 "Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain.\n"
 msgstr ""
+"Als erstes müssen wir ein Zertifikat für die Subdomain `room.ihre_instanz."
+"tld` erstellen: dies ist die Uri der MUC (XMPP chat rooms) Komponente.\n"
+"Auch wenn die Verbindungen über `ihre_instanz.tld` hergestellt werden, "
+"benötigen wir ein gültiges Zertifikat für diese Subdomain.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1150,6 +1329,10 @@ msgid ""
 "So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.\n"
 "You can use a CNAME entry (or an A entry and a AAAA entry).\n"
 msgstr ""
+"Beginnen Sie also damit, einen DNS-Eintrag für `room.ihre_instanz.tld` "
+"einzurichten, der auf Ihren Server verweist.\n"
+"Sie können einen CNAME-Eintrag verwenden (oder einen A-Eintrag und einen "
+"AAAA-Eintrag).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1158,6 +1341,10 @@ msgid ""
 "Next, we'll use nginx (already installed for your Peertube) to generate the certbot certificate.\n"
 "We will create a new site. In the file `/etc/nginx/site-available/room.peertube`, add:\n"
 msgstr ""
+"Als Nächstes verwenden wir nginx (bereits für Ihr Peertube installiert), um "
+"das certbot-Zertifikat zu erzeugen.\n"
+"Wir werden eine neue Website erstellen. In der Datei `/etc/nginx/"
+"site-available/room.peertube` fügen Sie hinzu:\n"
 
 #. type: Fenced code block (nginx)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1175,6 +1362,17 @@ msgid ""
 "  location / { return 301 https://your_instance.tld; }\n"
 "}\n"
 msgstr ""
+"server {\n"
+"  listen 80;\n"
+"  listen [::]:80;\n"
+"  server_name room.ihre_instanz.tld;\n"
+"\n"
+"  location /.well-known/acme-challenge/ {\n"
+"    default_type \"text/plain\";\n"
+"    root /var/www/certbot;\n"
+"  }\n"
+"  location / { return 301 https://ihre_instanz.tld; }\n"
+"}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1197,6 +1395,12 @@ msgid ""
 "Then we prepare the folder in which we will later import the certificates.\n"
 "We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:\n"
 msgstr ""
+"Dann bereiten wir den Ordner vor, in den wir später die Zertifikate "
+"importieren werden.\n"
+"Wir gehen hier davon aus, dass Sie das Plugin bereits aktiv haben. Wir "
+"erstellen den folgenden Ordner (falls er noch nicht existiert), mit dem "
+"Benutzer `peertube`, um sicherzustellen, dass es keine Probleme mit den "
+"Berechtigungen gibt:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1211,6 +1415,10 @@ msgid ""
 "Now you have to configure this folder in the plugin settings, for the parameter \"Certificate folders\".\n"
 "It's important to do this now, otherwise the certificate import script will put the certificates in the wrong folder.\n"
 msgstr ""
+"Nun müssen Sie diesen Ordner in den Plugin-Einstellungen für den Parameter "
+"\"Zertifikatsordner\" konfigurieren.\n"
+"Es ist wichtig, dies jetzt zu tun, da sonst das Skript für den "
+"Zertifikatsimport die Zertifikate in den falschen Ordner legt.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1219,6 +1427,9 @@ msgid ""
 "We will configure certbot to import the generated certificates into the Prosody folder.\n"
 "We can use the ProsodyCtl utility packaged in the plugin.\n"
 msgstr ""
+"Wir werden certbot so konfigurieren, dass die generierten Zertifikate in den "
+"Prosody Ordner importiert werden.\n"
+"Wir können das Programm ProsodyCtl verwenden, das im Plugin enthalten ist.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1233,6 +1444,8 @@ msgstr ""
 #, no-wrap
 msgid "We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` containing:\n"
 msgstr ""
+"Wir werden eine Datei `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` "
+"erstellen, die Folgendes enthält:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1245,6 +1458,14 @@ msgid ""
 "  cert import \\\n"
 "  room.your_instance.tld your_instance.tld /etc/letsencrypt/live\n"
 msgstr ""
+"#!/bin/sh\n"
+"/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
+"prosodyAppImage/squashfs-root/AppRun prosodyctl \\\n"
+"  --root \\\n"
+"  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
+"prosody/prosody.cfg.lua \\\n"
+"  cert import \\\n"
+"  room.your_instance.tld your_instance.tld /etc/letsencrypt/live\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1286,13 +1507,15 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Method for the Docker case"
-msgstr ""
+msgstr "Methode für das Docker-Verfahren"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube.\n"
 msgstr ""
+"Diese Methode funktioniert mit dem offiziell unterstützten [Docker Guide] "
+"(https://docs.joinpeertube.org/install/docker) von PeerTube.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1302,18 +1525,26 @@ msgid ""
 "You can use a CNAME entry (or an A entry and a AAAA entry).\n"
 "This is necessary for Let's Encrypt to validate the domain for certificate generation.\n"
 msgstr ""
+"Stellen Sie zunächst sicher, dass Sie einen DNS-Eintrag für \"room."
+"ihre_instanz.tld\" erstellen, der auf Ihren Server verweist.\n"
+"Sie können einen CNAME-Eintrag (oder einen A-Eintrag und einen AAAA-Eintrag) "
+"verwenden.\n"
+"Dies ist erforderlich, damit Let's Encrypt die Domäne für die "
+"Zertifikatserstellung validieren kann.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Enter the directory where your `docker-compose.yml` file exists.\n"
 msgstr ""
+"Geben Sie das Verzeichnis an, in dem sich Ihre Datei `docker-compose.yml` "
+"befindet.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Open a shell in the certbot container:\n"
-msgstr ""
+msgstr "Öffnen Sie eine Befehlszeile im certbot Container:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1377,7 +1608,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "You should see output like the following:\n"
-msgstr ""
+msgstr "Sie sollten eine Ausgabe wie die folgende sehen:\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1396,6 +1627,13 @@ msgid ""
 "*Note*:  This will also make the files readable to the group with id 999 on the host system.\n"
 "Check the groups on your system to assess this as a risk before running this command.\n"
 msgstr ""
+"Führen Sie den folgenden Befehl innerhalb des certbot-Containers aus, um der "
+"peertube-Gruppe Lesezugriff auf die neuen Zertifikate und privaten Schlüssel "
+"zu geben.\n"
+"*Hinweis*:  Dadurch werden die Dateien auch für die Gruppe mit der ID 999 "
+"auf dem Host-System lesbar.\n"
+"Überprüfen Sie die Gruppen auf Ihrem System, um dieses Risiko einzuschätzen, "
+"bevor Sie diesen Befehl ausführen.\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1412,7 +1650,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Exit the certbot container:\n"
-msgstr ""
+msgstr "Verlassen Sie den certbot-Container:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1427,6 +1665,10 @@ msgid ""
 "Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.\n"
 "This is the same as the above, but to be automatically executed after every certificate renewal.\n"
 msgstr ""
+"Ändern Sie Ihre Datei `docker-compose.yml`, indem Sie die Zeile `entrypoint` "
+"unter dem Dienst `certbot` wie folgt ändern.\n"
+"Dies ist das Gleiche wie oben, soll aber automatisch nach jeder "
+"Zertifikatserneuerung ausgeführt werden.\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1441,6 +1683,9 @@ msgid ""
 "Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.\n"
 "It should look something like this:\n"
 msgstr ""
+"Fahren Sie mit der Änderung der Datei `docker-compose.yml` fort und fügen "
+"Sie das certbot-Zertifikatsvolumen in den Peertube-Container ein.\n"
+"Es sollte in etwa so aussehen:\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1467,12 +1712,14 @@ msgstr ""
 #, no-wrap
 msgid "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:\n"
 msgstr ""
+"Setzen Sie in den Livechat-Plugin-Einstellungen in den PeerTube-"
+"Administrationseinstellungen den Zertifikatsordner auf den folgenden Wert:\n"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "/etc/letsencrypt/live\n"
-msgstr ""
+msgstr "/etc/letsencrypt/live\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1505,6 +1752,9 @@ msgstr "Fehlerbehebung"
 #, no-wrap
 msgid "If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section.\n"
 msgstr ""
+"Wenn Sie es nicht hinbekommen, können Sie das Diagnosetool verwenden (es "
+"gibt eine Schaltfläche oben auf der Seite mit den Plugin-Einstellungen) und "
+"sich den Abschnitt «Prosody check» genau ansehen.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/_index.md
@@ -1543,12 +1793,15 @@ msgid ""
 "When pressing the «List rooms» button, all existing chatrooms will be listed.\n"
 "You can then find them and moderated them.\n"
 msgstr ""
+"Wenn Sie auf die Schaltfläche «Räume auflisten» klicken, werden alle "
+"bestehenden Chaträume aufgelistet.\n"
+"Sie können sie dann finden und moderieren.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Federation"
-msgstr ""
+msgstr "Föderation"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1571,24 +1824,32 @@ msgid ""
 "This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.\n"
 "The chat can be customized (readonly mode, use the current theme, ...).\n"
 msgstr ""
+"Diese Funktion fügt eine «Chat-Link teilen» Schaltfläche hinzu. Mit dieser "
+"Schaltfläche können Sie URLs generieren, um dem Chat beizutreten.\n"
+"Der Chat kann angepasst werden (schreibgeschützter Modus, Verwendung des "
+"aktuellen Themas, ...).\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!\n"
 msgstr ""
+"Sie können zum Beispiel eine schreibgeschützte URL generieren und diese in "
+"OBS verwenden, um den Chat in Ihren Live-Stream zu integrieren!\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This settings allows you to choose who can access this modal.\n"
 msgstr ""
+"Mit diesen Einstellungen können Sie festlegen, wer auf diese Schaltfläche "
+"zugreifen kann.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "The video owner will be able to activate web chats.\n"
-msgstr ""
+msgstr "Der Eigentümer des Videos kann Webchats aktivieren.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1609,7 +1870,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Theming"
-msgstr ""
+msgstr "Farbthemen"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1644,7 +1905,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat server advanced settings"
-msgstr ""
+msgstr "Erweiterte Einstellungen des Chatservers"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1653,12 +1914,19 @@ msgid ""
 "The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).\n"
 "If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package.\n"
 msgstr ""
+"Das Plugin wird mit einem AppImage geliefert, das zum Ausführen des [Prosody "
+"XMPP-Servers] (https://prosody.im) verwendet wird.\n"
+"Wenn dieses AppImage nicht funktioniert, können Sie auf das Prosody-Paket "
+"zurückgreifen, das für Ihren Server gepackt ist. Installieren Sie einfach "
+"das Paket `prosody`.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This settings should only be used if the plugin is broken, and waiting for a patch.\n"
 msgstr ""
+"Diese Einstellung sollte nur verwendet werden, wenn das Plugin defekt ist "
+"und auf einen Patch wartet.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1667,12 +1935,18 @@ msgid ""
 "This setting enable XMPP clients to connect to the built-in Prosody server.\n"
 "For now, this option **only allows connections from localhost clients**.\n"
 msgstr ""
+"Diese Einstellung ermöglicht es XMPP-Clients, sich mit dem eingebauten "
+"Prosody-Server zu verbinden.\n"
+"Im Moment erlaubt diese Option **nur Verbindungen von localhost-Clients**.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room.\n"
 msgstr ""
+"Zum Beispiel kann diese Option einer Instanz von Matterbridge (sobald sie "
+"einen anonymen Login verwenden kann) *auf demselben Rechner* erlauben, Ihren "
+"Chat mit einem anderen Dienst wie einem Matrix-Raum zu verbinden.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1681,18 +1955,26 @@ msgid ""
 "This settings enable XMPP external components to connect to the server.\n"
 "For now, this option **only allows connections from localhost components**.\n"
 msgstr ""
+"Diese Einstellung ermöglicht es externen XMPP-Komponenten, sich mit dem "
+"Server zu verbinden.\n"
+"Im Moment erlaubt diese Option **nur Verbindungen von localhost-"
+"Komponenten**.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "This feature could be used to connect bridges or bots.\n"
 msgstr ""
+"Diese Funktion könnte für die Verbindung von Brücken oder Bots genutzt "
+"werden.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "More informations on Prosody external components [here](https://prosody.im/doc/components).\n"
 msgstr ""
+"Weitere Informationen zu den externen Komponenten von Prosody finden Sie "
+"[hier] (https://prosody.im/doc/components).\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
@@ -1739,6 +2021,9 @@ msgid ""
 "Note: the plugin requires Prosody >= 0.12.0.\n"
 "If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.\n"
 msgstr ""
+"Hinweis: Das Plugin erfordert Prosody >= 0.12.0.\n"
+"Wenn Sie eine ältere Version verwenden, könnte die Chat Federation nicht "
+"funktionieren und ein unerwartetes Verhalten zeigen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -1943,7 +2228,7 @@ msgstr "Benutzer Dokumentation"
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation"
-msgstr "Plugin peertube-plugin-livechat Benutzer Dokumentation"
+msgstr "Plugin peertube-plugin-livechat Moderation"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -1958,24 +2243,31 @@ msgid ""
 "You can access room settings and moderation tools by opening the chat in a new window,\n"
 "and using the dropdown menu at the top right.\n"
 msgstr ""
+"Sie können auf die Raumeinstellungen und Moderationswerkzeuge zugreifen, "
+"indem Sie den Chat in einem neuen Fenster öffnen,\n"
+"und das Dropdown-Menü oben rechts verwenden.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».\n"
 msgstr ""
+"Sie können alle bestehenden Chaträume auflisten: in den Einstellungen des "
+"Plugins gibt es eine Schaltfläche «Räume auflisten».\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room.\n"
 msgstr ""
+"Sie können alte Räume löschen: Treten Sie dem Raum bei, und verwenden Sie "
+"das Menü oben, um den Raum zu löschen.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "Notes"
-msgstr ""
+msgstr "Hinweise"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -1984,6 +2276,10 @@ msgid ""
 "All instance moderators and admins will be owner of created chat rooms.\n"
 "If the video is local (not from a remote Peertube), the video owner will be admin in the chat room.\n"
 msgstr ""
+"Alle Instanzmoderatoren und Admins sind Eigentümer der erstellten Chaträume."
+"\n"
+"Wenn das Video lokal ist (nicht von einem entfernten Peertube), ist der "
+"Eigentümer des Videos der Administrator des Chatraums.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -1992,12 +2288,16 @@ msgid ""
 "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.\n"
 "When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.\n"
 msgstr ""
+"Sie können [ConverseJS Moderationsbefehle] (https://conversejs.org/docs/html/"
+"features.html#moderating-chatrooms) verwenden, um den Raum zu moderieren.\n"
+"Wenn Sie den Chat-Raum im Vollbildmodus öffnen, finden Sie oben rechts ein "
+"Menü mit speziellen Befehlen.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "Documentation to stream the chat content using OBS."
-msgstr ""
+msgstr "Dokumentation zum Streamen des Chat-Inhalts mit OBS."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2009,13 +2309,15 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "OBS Overlay"
-msgstr ""
+msgstr "OBS Overlay"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "If you are using OBS for streaming, you can easily include the chat in your stream.\n"
 msgstr ""
+"Wenn Sie OBS zum Streaming verwenden, können Sie den Chat ganz einfach in "
+"Ihren Stream integrieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2024,6 +2326,11 @@ msgid ""
 "You can use the «share chat link» feature to generate an URL to your chat.\n"
 "The button should be near the chat if you are the video owner (unless it was desactivated by your server admins).\n"
 msgstr ""
+"Sie können die Funktion \"Chat-Link teilen\" verwenden, um eine URL zu Ihrem "
+"Chat zu erstellen.\n"
+"Die Schaltfläche sollte sich in der Nähe des Chats befinden, wenn Sie der "
+"Eigentümer des Videos sind (es sei denn, sie wurde von den Administratoren "
+"Ihres Servers deaktiviert).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2032,6 +2339,8 @@ msgid ""
 "Check the «readonly» checkbox in the modal.\n"
 "Then use this link as a «web browser source» in OBS.\n"
 msgstr ""
+"Aktivieren Sie das Kontrollkästchen \"schreibgeschützt\" in dem Fenster.\n"
+"Verwenden Sie dann diesen Link als \"Webbrowser-Quelle\" im OBS.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2040,6 +2349,10 @@ msgid ""
 "You can use the «Transparent background» to have a transparent background in OBS.\n"
 "If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:\n"
 msgstr ""
+"Sie können die Option «Transparenter Hintergrund» verwenden, um einen "
+"transparenten Hintergrund in OBS zu erhalten.\n"
+"Wenn Sie die Hintergrundtransparenz anpassen möchten, können Sie dieses CSS "
+"in den Einstellungen Ihrer OBS-Browserquelle hinzufügen:\n"
 
 #. type: Fenced code block (css)
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2058,12 +2371,18 @@ msgid ""
 "in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.\n"
 "You must use valid CSS color values, and they must be properly URL encoded.\n"
 msgstr ""
+"Hinweis: Sie können die Farben anpassen. Dies ist noch nicht dokumentiert, "
+"aber Sie können dies versuchen:\n"
+"Aktivieren Sie im Fenster die Option \"Aktuelle Themenfarben verwenden\", "
+"und versuchen Sie dann, die Farbwerte in der URL manuell zu ändern.\n"
+"Sie müssen gültige CSS-Farbwerte verwenden, und diese müssen in der URL "
+"korrekt kodiert sein.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "Mixing multiple chats in your live stream"
-msgstr ""
+msgstr "Mischen mehrerer Chats in Ihrem Live-Stream"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2072,18 +2391,24 @@ msgid ""
 "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.\n"
 "The compatibility with this plugin was added in recent versions.\n"
 msgstr ""
+"Sie können die [social_stream Browsererweiterung](https://github.com/"
+"steveseguin/social_stream#readme) verwenden, um mehrere Chat-Quellen (von "
+"Peertube, Twitch, Youtube, Facebook, ...) zu mischen und deren Inhalte in "
+"Ihren Live-Stream einzubinden.\n"
+"Die Kompatibilität mit diesem Plugin wurde in den letzten Versionen "
+"hinzugefügt.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Connect to chat using a XMPP client"
-msgstr ""
+msgstr "Verbindung zum Chat über einen XMPP-Client"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "XMPP Clients"
-msgstr ""
+msgstr "XMPP Clients"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2094,6 +2419,12 @@ msgid ""
 "[XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).\n"
 "This can be useful for example to facilitate moderation operations.\n"
 msgstr ""
+"Dieses Chat-Plugin basiert auf dem XMPP-Protokoll (auch bekannt als Jabber)."
+"\n"
+"Es ist daher möglich, eine Verbindung zu den Chats herzustellen mit\n"
+"[XMPP-Client-Software](https://en.wikipedia.org/wiki/XMPP#Clients).\n"
+"Dies kann zum Beispiel nützlich sein, um Moderationsvorgänge zu erleichtern."
+"\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2102,6 +2433,9 @@ msgid ""
 "The features described on this page must be enabled and configured by\n"
 "your Peertube instance's administrators. You may therefore not have access to them.\n"
 msgstr ""
+"Die auf dieser Seite beschriebenen Funktionen müssen von den\n"
+"Administratoren Ihrer Peertube-Instanz aktiviert und konfiguriert werden. "
+"Sie haben daher möglicherweise keinen Zugriff auf sie.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2110,6 +2444,9 @@ msgid ""
 "If this feature is enabled on your instance, you can connect to Peertube\n"
 "chats using any XMPP account.\n"
 msgstr ""
+"Wenn diese Funktion in Ihrer Instanz aktiviert ist, können Sie mit jedem "
+"XMPP-Konto eine Verbindung zu Peertube\n"
+"Chats über ein beliebiges XMPP-Konto verbinden.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2118,12 +2455,17 @@ msgid ""
 "To get the address of the room you want to join, you can use the \"share chat\"\n"
 "button that is located above the chat:\n"
 msgstr ""
+"Um die Adresse des Raums, dem Sie beitreten möchten, zu erhalten, können Sie "
+"die Schaltfläche \"Chat teilen\" verwenden\n"
+"die sich über dem Chat befindet:\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)\n"
 msgstr ""
+"![Share button](/peertube-plugin-livechat/images/share_button."
+"png?classes=shadow,border&height=200px)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2133,18 +2475,25 @@ msgid ""
 "and the admins/moderators of the instance.\n"
 "However, admins can decide to display this button for everyone.\n"
 msgstr ""
+"Standardmäßig ist die Schaltfläche \"Freigeben\" nur für den Eigentümer des "
+"Videos\n"
+"und die Admins/Moderatoren der Instanz.\n"
+"Administratoren können jedoch festlegen, dass diese Schaltfläche für alle "
+"angezeigt wird.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Then, choose \"Connect using XMPP\":\n"
-msgstr ""
+msgstr "Wählen Sie dann \"Verbinden über XMPP\":\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "![Share XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)\n"
 msgstr ""
+"![Share XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog."
+"png?classes=shadow,border&height=200px)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2153,6 +2502,9 @@ msgid ""
 "Then you just have to click on \"open\" or copy/paste the address of the chat room into your XMPP client\n"
 "(using the \"join a room\" feature).\n"
 msgstr ""
+"Dann müssen Sie nur noch auf \"Öffnen\" klicken oder die Adresse des "
+"Chatraums in Ihren XMPP-Client kopieren/einfügen\n"
+"(mit der Funktion \"einem Raum beitreten\").\n"
 
 #. type: Title #
 #: support/documentation/content/en/_index.md
@@ -2193,6 +2545,12 @@ msgid ""
 "|---|---|\n"
 "| ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
 msgstr ""
+"| | |\n"
+"|---|---|\n"
+"| ![Chat screenshot](/peertube-plugin-livechat/images/chat."
+"png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot"
+"](/peertube-plugin-livechat/images/fullscreen."
+"png?classes=shadow,border&height=200px) |\n"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -2204,13 +2562,13 @@ msgstr "Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking / New features requests"
-msgstr "Neue Funktionen / Fehler (Bugs)"
+msgstr "Fehler (Bugs) / Neue Funktionsanfragen"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking & new features"
-msgstr "Neue Funktionen / Fehler (Bugs)"
+msgstr "Fehlerverfolgung (Bug tracking) und neue Funktionen"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
