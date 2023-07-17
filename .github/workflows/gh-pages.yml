@@ -19,8 +19,9 @@ jobs:
       #       We need at least v0.69.
       #       Github does not provide any other suitable image...
       #       So... we will trick it by first installing the ubuntu package, then downloading the debian package.
+      #       Note: libsyntax-keyword-try-perl is required by 0.69, so we will also install it on the first step.
       - name: Install po4a
-        run: sudo apt update && sudo apt install po4a -y
+        run: sudo apt update && sudo apt install po4a libsyntax-keyword-try-perl -y
 
       - name: Install po4a from debian bookworm version
         run: wget http://ftp.debian.org/debian/pool/main/p/po4a/po4a_0.69-1_all.deb && sudo dpkg -i po4a_0.69-1_all.deb
