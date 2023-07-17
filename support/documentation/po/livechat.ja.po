@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-17 13:16+0200\n"
+"POT-Creation-Date: 2023-07-17 13:25+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Japanese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
@@ -191,7 +191,6 @@ msgstr ""
 msgid ""
 "These dependencies were tested on a Debian Bullseye.\n"
 "If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github.\n"
-"{{% /notice }}\n"
 msgstr ""
 
 #. type: Plain text

@@ -45,7 +45,7 @@ Building this AppImage also requires following packages:
 {{% notice info %}}
 These dependencies were tested on a Debian Bullseye.
 If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github.
-{{% /notice }}
+{{% /notice %}}
 
 ## Develop
 
