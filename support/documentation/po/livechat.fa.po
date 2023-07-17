@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-17 16:00+0200\n"
+"POT-Creation-Date: 2023-07-17 16:50+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Persian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fa/>\n"
@@ -462,7 +462,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
-msgid "To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.\n"
+msgid "To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.\n"
 msgstr ""
 
 #. type: Plain text

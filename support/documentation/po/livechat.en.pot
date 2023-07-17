@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-17 16:00+0200\n"
+"POT-Creation-Date: 2023-07-17 16:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -518,7 +518,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, markdown-text, no-wrap
-msgid "To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.\n"
+msgid "To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.\n"
 msgstr ""
 
 #. type: Plain text

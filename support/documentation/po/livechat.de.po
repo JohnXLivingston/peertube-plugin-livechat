@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-17 16:00+0200\n"
+"POT-Creation-Date: 2023-07-17 16:50+0200\n"
 "PO-Revision-Date: 2023-07-17 14:21+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -489,8 +488,9 @@ msgstr "Im Moment haben Sie nur die englische Version. Um die Dokumentationszeic
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.\n"
+#, fuzzy, no-wrap
+#| msgid "To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.\n"
+msgid "To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.\n"
 msgstr "Stellen Sie dazu sicher, dass Sie `po4a` (Version >= 0.66) auf Ihrem Computer installiert haben.\n"
 
 #. type: Plain text
@@ -1772,9 +1772,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
-msgstr ""
-"Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-"
-"4ef2-b843-98530a8ccbae)."
+msgstr "Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/issues/_index.md
@@ -1791,11 +1789,7 @@ msgstr "Fehlerverfolgung (Bug tracking) und neue Funktionen"
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french."
-msgstr ""
-"Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der "
-"Einrichtung des Plugins haben, können Sie den [Github issue "
-"tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) "
-"verwenden."
+msgstr "Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der Einrichtung des Plugins haben, können Sie den [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) verwenden."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
@@ -1810,16 +1804,12 @@ msgstr "[Github Project](https://github.com/users/JohnXLivingston/projects/1)."
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones)."
-msgstr ""
-"[Meilensteine auf Github](https://github.com/JohnXLivingston/"
-"peertube-plugin-livechat/milestones)."
+msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones)."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
-msgstr ""
-"Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und "
-"helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
+msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
 
 #, fuzzy
 #~| msgid ""
