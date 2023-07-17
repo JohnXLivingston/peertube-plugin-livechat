@@ -38,7 +38,7 @@ msgstr "Si vous avez des questions ou souhaitez parler de ce plugin, vous pouvez
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
-msgstr "Si vous souhaitez supporter le projet financièrement, vous pouvez me contacter par mail à l'adresse git.[arobase].john-livingston.fr, ou passer par mon [profil Liberapay](https://liberapay.com/JohnLivingston/)"
+msgstr "Si vous souhaitez supporter le projet financièrement, vous pouvez me contacter par mail à l'adresse git.[arobase].john-livingston.fr, ou passer par mon [profil Liberapay](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -54,16 +54,11 @@ msgstr "Code de conduite"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy
-#| msgid ""
-#| "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
-#| "Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
-#| "Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.\n"
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
 msgstr ""
-"Ce code de conduite est adapté du [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, disponible à l'adresse [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
-"Les traductions sont disponibles à l'adresse [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
-"Les cas de comportements abusifs, harcelants ou tout autre comportement inacceptables peuvent être signalés aux dirigeant·e·s de la communauté responsables de l’application du code de conduite à git.[at].john-livingston.fr.\n"
+"Ce code de conduite est adapté du [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, disponible à l'adresse [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)."
+"Les traductions sont disponibles à l'adresse [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations)."
+"Les cas de comportements abusifs, harcelants ou tout autre comportement inacceptables peuvent être signalés aux dirigeant·e·s de la communauté responsables de l’application du code de conduite à git.[at].john-livingston.fr."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -73,28 +68,20 @@ msgstr "Développer"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid ""
-#| "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem\n"
-#| "before you start working on it, and inform the community that you begin coding by claiming the issue.\n"
 msgid "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue."
 msgstr ""
-"Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en créant un ticket ou en commentant un ticket existant, avant de commencer à travailler dessus.\n"
-"Et annoncez clairement à la communauté que vous commencez à travailler dessus. Ceci afin d'éviter que plusieurs personnes travaillent sur la même chose et entrent en conflit.\n"
+"Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en créant un ticket ou en commentant un ticket existant, avant de commencer à travailler dessus."
+"Et annoncez clairement à la communauté que vous commencez à travailler dessus. Ceci afin d'éviter que plusieurs personnes travaillent sur la même chose et entrent en conflit."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "Pull Request must be done on the `main` branch.\n"
 msgid "Pull Request must be done on the `main` branch."
-msgstr "Les Pull Request sont à faire sur la branche `main`.\n"
+msgstr "Les Pull Request sont à faire sur la branche `main`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.\n"
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated."
-msgstr "Jusqu'à mars 2023, il fallait contribuer sur la branche `develop`. Cette procédure est désormais obsolète.\n"
+msgstr "Jusqu'à mars 2023, il fallait contribuer sur la branche `develop`. Cette procédure est désormais obsolète."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -104,70 +91,51 @@ msgstr "Pré-requis pour compiler le plugin"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "It is highly recommended to be familiar with following concepts:\n"
 msgid "It is highly recommended to be familiar with following concepts:"
-msgstr "Il est hautement recommandé d'être familier avec les concepts suivants :\n"
+msgstr "Il est hautement recommandé d'être familier avec les concepts suivants :"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "Git\n"
 msgid "Git"
-msgstr "Git\n"
+msgstr "Git"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "NodeJS\n"
 msgid "NodeJS"
-msgstr "NodeJS\n"
+msgstr "NodeJS"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "NPM\n"
 msgid "NPM"
-msgstr "NPM\n"
+msgstr "NPM"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "Typescript\n"
 msgid "Typescript"
-msgstr "Typescript\n"
+msgstr "Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "To build the plugin, you must have following packages:\n"
 msgid "To build the plugin, you must have following packages:"
-msgstr "Pour construire le module, vous avez besoin d'avoir installé les paquets suivants :\n"
+msgstr "Pour construire le module, vous avez besoin d'avoir installé les paquets suivants :"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "`git`\n"
 msgid "`git`"
-msgstr "`git`\n"
+msgstr "`git`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "`npm` (>=8.x)\n"
 msgid "`npm` (>=8.x)"
-msgstr "`npm` (>=8.x)\n"
+msgstr "`npm` (>=8.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "`nodejs` (>=14.x)\n"
 msgid "`nodejs` (>=14.x)"
-msgstr "`nodejs` (>=14.x)\n"
+msgstr "`nodejs` (>=14.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#| msgid "`build-essential`\n"
 msgid "`build-essential`"
 msgstr "`build-essential`"
 
@@ -253,24 +221,18 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder.\n"
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder."
-msgstr "Le code du front-end est dans le dossier `client`. Le code backend dans `server`. Il y a du code partagé entre les deux dans `shared`.\n"
+msgstr "Le code du front-end est dans le dossier `client`. Le code backend dans `server`. Il y a du code partagé entre les deux dans `shared`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
-msgstr "Pour les instructions génériques concernant le développement de plugins (building, installation, ...), merci de vous référer à la [documentation Peertube](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
+msgstr "Pour les instructions génériques concernant le développement de plugins (building, installation, ...), merci de vous référer à la [documentation Peertube](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "You can build the plugin with extra debug features simply by using:\n"
 msgid "You can build the plugin with extra debug features simply by using:"
-msgstr "Vous pouvez *builder* le plugin avec des infos de debug supplémentaires en utilisant :\n"
+msgstr "Vous pouvez *builder* le plugin avec des infos de debug supplémentaires en utilisant :"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -286,18 +248,12 @@ msgstr "ESBuild versus Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid ""
-#| "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.\n"
-#| "ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
-#| "That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
-#| "Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
 msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
 msgstr ""
-"Ce plugin utilise ESBuild pour compiler le code front-end, comme le plugin `peertube-plugin-quickstart` officiel.\n"
-"ESBuild peut gérer Typescript, mais ne vérifie pas les types (voir [la documentation ESBuild](https://esbuild.github.io/content-types/#typescript)).\n"
-"C'est pourquoi on compile d'abord Typescript avec l'option `-noEmit`, juste pour vérifier les types (`check:client:ts` dans le fichier package.json).\n"
-"Ensuite, si tout est ok, on lance ESBuild pour générer le javascript compilé.\n"
+"Ce plugin utilise ESBuild pour compiler le code front-end, comme le plugin `peertube-plugin-quickstart` officiel."
+"ESBuild peut gérer Typescript, mais ne vérifie pas les types (voir [la documentation ESBuild](https://esbuild.github.io/content-types/#typescript))."
+"C'est pourquoi on compile d'abord Typescript avec l'option `-noEmit`, juste pour vérifier les types (`check:client:ts` dans le fichier package.json)."
+"Ensuite, si tout est ok, on lance ESBuild pour générer le javascript compilé."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
