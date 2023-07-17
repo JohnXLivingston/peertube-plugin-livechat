@@ -7,9 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2023-07-17 16:00+0200\n"
-"PO-Revision-Date: 2023-07-17 10:52+0000\n"
-"Last-Translator: Tony Simoes <asrmail@protonmail.com>\n"
-"Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
+"PO-Revision-Date: 2023-07-17 14:21+0000\n"
+"Last-Translator: John Livingston <git@john-livingston.fr>\n"
+"Language-Team: Spanish <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,17 +32,19 @@ msgstr "Contáctame"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
-#, fuzzy
-#| msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
-msgstr "Si tiene alguna pregunta o si desea hablar sobre este plugin, puede unirse a esta sala XMPP con cualquier cliente Jabber.: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
+msgstr ""
+"Si tiene alguna pregunta o si desea hablar sobre este plugin, puede unirse a "
+"esta sala XMPP con cualquier cliente Jabber.: [plugin-livechat-support@room."
+"im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
-#, fuzzy
-#| msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
-msgstr "Si quieres apoyar financieramente el proyecto, puedes contactarme por correo electrónico en git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
+msgstr ""
+"Si quieres apoyar financieramente el proyecto, puedes contactarme por correo "
+"electrónico en git.[at].john-livingston.fr, or check my [Liberapay "
+"profile](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -57,16 +60,17 @@ msgstr "Código de Conducta"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, fuzzy
-#| msgid ""
-#| "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
-#| "Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
-#| "Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.\n"
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
 msgstr ""
-"Este Código de Conducta es una adaptación del [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, disponible en [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
-"Las traducciones están a disposición en [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
-"Los casos de comportamiento abusivo, acosador o inaceptable se pueden informar a los líderes de la comunidad responsables de la aplicación por correo en git.[at].john-livingston.fr.\n"
+"Este Código de Conducta es una adaptación del [Contributor "
+"Covenant](https://www.contributor-covenant.org), version 2.1, disponible en "
+"[https://www.contributor-covenant.org/version/2/1/code_of_conduct."
+"html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)"
+". Las traducciones están a disposición en [https://www.contributor-covenant."
+"org/translations](https://www.contributor-covenant.org/translations). Los "
+"casos de comportamiento abusivo, acosador o inaceptable se pueden informar a "
+"los líderes de la comunidad responsables de la aplicación por correo en "
+"git.[at].john-livingston.fr."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
