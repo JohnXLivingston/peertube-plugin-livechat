@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-17 13:25+0200\n"
-"PO-Revision-Date: 2023-07-17 10:52+0000\n"
+"PO-Revision-Date: 2023-07-17 11:28+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-"
-"livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -289,18 +289,22 @@ msgstr "ESBuild versus Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.\n"
 "ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
 "That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
 "Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
 msgstr ""
-"Ce plugin utilise ESBuild pour compiler le code front-end, comme le plugin `peertube-plugin-quickstart` officiel.\n"
-"ESBuild peut gérer Typescript, mais ne vérifie pas les types\n"
-"(voir [la documentation ESBuild](https://esbuild.github.io/content-types/#typescript)).\n"
-"C'est pourquoi on compile d'abord Typescript avec l'option `-noEmit`, juste pour vérifier les types (`check:client:ts` dans le fichier package.json).\n"
-"Ensuite, si tout est ok, on lance ESBuild pour générer le javascript compilé.\n"
+"Ce plugin utilise ESBuild pour compiler le code front-end, comme le plugin "
+"`peertube-plugin-quickstart` officiel.\n"
+"ESBuild peut gérer Typescript, mais ne vérifie pas les types (voir [la "
+"documentation ESBuild](https://esbuild.github.io/content-types/#typescript))."
+"\n"
+"C'est pourquoi on compile d'abord Typescript avec l'option `-noEmit`, juste "
+"pour vérifier les types (`check:client:ts` dans le fichier package.json).\n"
+"Ensuite, si tout est ok, on lance ESBuild pour générer le javascript compilé."
+"\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -322,12 +326,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
 msgstr ""
-"Pour activer ce mode, il suffit de créer un fichier\n"
-"`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode`\n"
-"(en adaptant `/var/www/peertube/storage/` à votre installation le cas échéant).\n"
+"Pour activer ce mode, il suffit de créer un fichier `/var/www/peertube/"
+"storage/plugins/data/peertube-plugin-livechat/debug_mode` (en adaptant `/var/"
+"www/peertube/storage/` à votre installation le cas échéant).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -369,17 +373,18 @@ msgstr "Redémarrer Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 "This call don't need any authentificaiton.\n"
 "It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 msgstr ""
-"Pour redémarrer Prosody quand le mode debug est activé, vous pouvez appeler l'API\n"
-"`http://votre_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+"Pour redémarrer Prosody quand le mode debug est activé, vous pouvez appeler "
+"l'API `http://votre_instance.tld/plugins/livechat/router/api/"
+"restart_prosody`.\n"
 "Cet appel n'a pas besoin d'authentification.\n"
-"Il peut se faire depuis une ligne de commande, par exemple avec\n"
-"`curl http://votre_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+"Il peut se faire depuis une ligne de commande, par exemple avec `curl "
+"http://votre_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -443,19 +448,22 @@ msgstr "Lancer votre serveur de debug.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
 "This call does not need any authentication.\n"
 "It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
 "You can even configure your debug server to launch this request automatically.\n"
 msgstr ""
-"Pour que Prosody se connecte au debugger, appelez l'API\n"
-"`http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+"Pour que Prosody se connecte au debugger, appelez l'API "
+"`http://votre_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`.\n"
 "Cet appel n'a pas besoin d'authentification.\n"
-"Il peut se faire depuis une ligne de commande, par exemple avec\n"
-"`curl http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
-"Vous pouvez même configurer votre serveur de debuggage pour lancer cette commande automatiquement.\n"
+"Il peut se faire depuis une ligne de commande, par exemple avec `curl "
+"http://votre_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`.\n"
+"Vous pouvez même configurer votre serveur de debuggage pour lancer cette "
+"commande automatiquement.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -471,9 +479,14 @@ msgstr "Environnement de développement rapide via Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker.\n"
-msgstr "Un tutoriel est disponible sur [le forum Peertube](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) pour expliquer comment monter rapidement un environnement de développement en utilisant Docker.\n"
+msgstr ""
+"Un tutoriel est disponible sur [le forum Peertube](https://framacolibri.org/"
+"t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidem"
+"ent-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) pour "
+"expliquer comment monter rapidement un environnement de développement en "
+"utilisant Docker.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -483,13 +496,16 @@ msgstr "Un dépot a été crée sur la base de ce tutoriel : https://codeberg.or
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.\n"
 "There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers.\n"
 msgstr ""
-"Note : pour une raison obscure, Prosody n'arrive pas à résoudre les adresses DNS des conteneurs quand la librairie lua-unbound est utilisée.\n"
-"Pour contourner cela, il y a un «dirty hack» : il suffit de créer une fichier `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` dans vos docker-volumes, puis de les redémarrer.\n"
+"Note : pour une raison obscure, Prosody n'arrive pas à résoudre les adresses "
+"DNS des conteneurs quand la librairie lua-unbound est utilisée.\n"
+"Pour contourner cela, il y a un «dirty hack» : il suffit de créer une "
+"fichier `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` dans "
+"vos docker-volumes, puis de les redémarrer.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
