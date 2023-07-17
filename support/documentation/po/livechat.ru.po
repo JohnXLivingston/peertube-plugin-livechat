@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-17 16:50+0200\n"
+"POT-Creation-Date: 2023-07-17 16:56+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Russian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ru/>\n"
@@ -524,7 +524,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-msgid "For now, it is not possible to use Mardown tables: the translation tools will break them."
+msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
 msgstr ""
 
 #. type: Title ###
