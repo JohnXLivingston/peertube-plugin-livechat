@@ -90,13 +90,13 @@ Saying you want to display the name of the button "open_chat_new_window", you ca
 You can also prevent a whole page from being translating by adding `livechatnotranslation: true` in the Yaml Font Matter section:
 
 ```yaml
----
-title: "Third party"
-description: "Displaying the livechat with 3rd party software."
-weight: 20
-chapter: false
-livechatnotranslation: true
----
+  ---
+  title: "Third party"
+  description: "Displaying the livechat with 3rd party software."
+  weight: 20
+  chapter: false
+  livechatnotranslation: true
+  ---
 ```
 
 Never translate a string in the `livechat.en.pot` file, it would be ignored.
