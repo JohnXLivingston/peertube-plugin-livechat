@@ -9,8 +9,7 @@ msgstr ""
 "POT-Creation-Date: 2023-07-14 19:55+0200\n"
 "PO-Revision-Date: 2023-07-17 10:58+0000\n"
 "Last-Translator: Tony Simoes <asrmail@protonmail.com>\n"
-"Language-Team: Spanish <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
+"Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,19 +33,13 @@ msgstr "Contáctame"
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
-msgstr ""
-"Si tiene alguna pregunta o si desea hablar sobre este plugin, puede unirse a "
-"esta sala XMPP con cualquier cliente Jabber.: [plugin-livechat-support@room."
-"im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
+msgstr "Si tiene alguna pregunta o si desea hablar sobre este plugin, puede unirse a esta sala XMPP con cualquier cliente Jabber.: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
-msgstr ""
-"Si quieres apoyar financieramente el proyecto, puedes contactarme por correo "
-"electrónico en git.[at].john-livingston.fr, or check my [Liberapay "
-"profile](https://liberapay.com/JohnLivingston/).\n"
+msgstr "Si quieres apoyar financieramente el proyecto, puedes contactarme por correo electrónico en git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -68,18 +61,11 @@ msgid ""
 "Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
 "Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.\n"
 msgstr ""
-"Este Código de Conducta es una adaptación del [Contributor "
-"Covenant](https://www.contributor-covenant.org), version 2.1, disponible en "
-"[https://www.contributor-covenant.org/version/2/1/code_of_conduct."
-"html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)."
-"\n"
-"Las traducciones están a disposición en [https://www.contributor-covenant."
-"org/translations](https://www.contributor-covenant.org/translations).\n"
-"Los casos de comportamiento abusivo, acosador o inaceptable se pueden "
-"informar a los líderes de la comunidad responsables de la aplicación por "
-"correo en git.[at].john-livingston.fr.\n"
+"Este Código de Conducta es una adaptación del [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, disponible en [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
+"Las traducciones están a disposición en [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
+"Los casos de comportamiento abusivo, acosador o inaceptable se pueden informar a los líderes de la comunidad responsables de la aplicación por correo en git.[at].john-livingston.fr.\n"
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Develop"
@@ -105,34 +91,115 @@ msgstr ""
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid "Prerequisite for building this plugin:\n"
-msgstr ""
-
-#. type: Bullet: '- '
-#: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "you must have `npm` installed\n"
-msgstr ""
-
-#. type: Bullet: '- '
-#: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
-msgstr ""
-
-#. type: Bullet: '- '
-#: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "you must have `build-essential` installed\n"
+msgid "Prerequisite for building this plugin"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid "To clone the repository:\n"
+msgid "It is highly recommended to be familiar with following concepts:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Git\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "NodeJS\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "NPM\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Typescript\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "To build the plugin, you must have following packages:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`git`\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`npm` (>=8.x)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`nodejs` (>=14.x)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`build-essential`\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"The plugin needs to build an AppImage for the Prosody XMPP server.\n"
+"It appears that the way this AppImage is build requires `apt` and `dpkg` commands.\n"
+"So it will only work \"out of the box\" on Debian-like systems.\n"
+"If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.\n"
+"See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).\n"
+"We will provide another solution as soon as possible.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Building this AppImage also requires following packages:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`python3-venv`\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`squashfs-tools`\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"These dependencies were tested on a Debian Bullseye.\n"
+"If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github.\n"
+"{{% /notice }}\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Clone the repository, buid the plugin, and create your feature branch:\n"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -163,8 +230,8 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.\n"
-"Once you are ready for a code review before merge, submit a Pull Request. In any case, please\n"
-"link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
+"Once you are ready for a code review before merge, submit a Pull Request.\n"
+"In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
 msgstr ""
 
 #. type: Plain text
@@ -202,8 +269,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.\n"
-"ESBuild can handle Typescript, but does not check types\n"
-"(see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
+"ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
 "That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
 "Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
 msgstr ""
@@ -226,10 +292,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid ""
-"To enable this mode, you juste have to create the\n"
-"`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file\n"
-"(replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
+msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
 msgstr ""
 
 #. type: Plain text
@@ -267,11 +330,9 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid ""
-"When debug mode is enabled, you can restart Prosody using this API call:\n"
-"`http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+"When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 "This call don't need any authentificaiton.\n"
-"It can be done from a command line, for example using\n"
-"`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+"It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 msgstr ""
 
 #. type: Title ###
@@ -329,11 +390,9 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid ""
-"For Prosody to connect to the debugger, call the API\n"
-"`http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+"For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
 "This call does not need any authentication.\n"
-"It can be done from a command line, for example with\n"
-"`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+"It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
 "You can even configure your debug server to launch this request automatically.\n"
 msgstr ""
 
@@ -352,10 +411,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid ""
-"There is a tutorial, in french, on the\n"
-"[le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)\n"
-"that explains how to quickly build a dev env using Docker.\n"
+msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker.\n"
 msgstr ""
 
 #. type: Plain text
@@ -369,9 +425,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.\n"
-"There is a dirty hack in the plugin: just create a\n"
-"`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes,\n"
-"then restart containers.\n"
+"There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers.\n"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
