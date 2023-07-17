@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-17 16:00+0200\n"
-"PO-Revision-Date: 2023-07-17 13:59+0000\n"
+"PO-Revision-Date: 2023-07-17 14:21+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,10 +107,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "ESBuild vs Typescript"
 msgid "Typescript"
-msgstr "ESBuild vs Typescript"
+msgstr "Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -1762,24 +1761,20 @@ msgstr "Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, 
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
 msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
-msgstr "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
 msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
-msgstr "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
 msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
-msgstr "Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
+msgstr ""
+"Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-"
+"4ef2-b843-98530a8ccbae)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/issues/_index.md
@@ -1795,38 +1790,36 @@ msgstr "Fehlerverfolgung (Bug tracking) und neue Funktionen"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
-#, fuzzy
-#| msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french.\n"
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french."
-msgstr "Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der Einrichtung des Plugins haben, können Sie den [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) verwenden.\n"
+msgstr ""
+"Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der "
+"Einrichtung des Plugins haben, können Sie den [Github issue "
+"tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) "
+"verwenden."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
-#, fuzzy
-#| msgid "To have a glimpse to the roadmap for upcoming features, please refer to:\n"
 msgid "To have a glimpse to the roadmap for upcoming features, please refer to:"
-msgstr "Einen Einblick in die Roadmap für kommende Funktionen finden Sie hier:\n"
+msgstr "Einen Einblick in die Roadmap für kommende Funktionen finden Sie hier:"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
-#, fuzzy
-#| msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
 msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1)."
-msgstr "[Github Project](https://github.com/users/JohnXLivingston/projects/1).\n"
+msgstr "[Github Project](https://github.com/users/JohnXLivingston/projects/1)."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
-#, fuzzy
-#| msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
 msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones)."
-msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
+msgstr ""
+"[Meilensteine auf Github](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/milestones)."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
-#, fuzzy
-#| msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
-msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen.\n"
+msgstr ""
+"Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und "
+"helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
 
 #, fuzzy
 #~| msgid ""
