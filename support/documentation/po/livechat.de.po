@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-17 15:13+0200\n"
+"POT-Creation-Date: 2023-07-17 15:40+0200\n"
 "PO-Revision-Date: 2023-07-17 13:38+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,19 +33,12 @@ msgstr "Kontaktieren Sie mich"
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
-msgstr ""
-"Wenn Sie eine Frage haben oder über dieses Plugin sprechen möchten, können "
-"Sie diesem XMPP-Raum mit einem beliebigen Jabber-Client beitreten: [plugin-"
-"livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny."
-"org?join)."
+msgstr "Wenn Sie eine Frage haben oder über dieses Plugin sprechen möchten, können Sie diesem XMPP-Raum mit einem beliebigen Jabber-Client beitreten: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
-msgstr ""
-"Wenn Sie das Projekt finanziell unterstützen möchten, können Sie mich per E-"
-"Mail unter git.[at].john-livingston.fr kontaktieren oder mein [Liberapay-"
-"Profil](https://liberapay.com/JohnLivingston/) ansehen."
+msgstr "Wenn Sie das Projekt finanziell unterstützen möchten, können Sie mich per E-Mail unter git.[at].john-livingston.fr kontaktieren oder mein [Liberapay-Profil](https://liberapay.com/JohnLivingston/) ansehen."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -63,16 +55,7 @@ msgstr "Verhaltenskodex"
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
-msgstr ""
-"Dieser Verhaltenskodex basiert auf dem [Contributor Covenant](https://www."
-"contributor-covenant.org), Version 2.1, verfügbar unter [https://www."
-"contributor-covenant.org/version/2/1/code_of_conduct.html](https://www."
-"contributor-covenant.org/version/2/1/code_of_conduct.html). Übersetzungen "
-"sind unter [https://www.contributor-covenant.org/translations](https://www."
-"contributor-covenant.org/translations) verfügbar. Fälle von beleidigendem, "
-"belästigendem oder anderweitig inakzeptablem Verhalten können den für die "
-"Durchsetzung verantwortlichen Gemeinschaftsleitern per E-Mail an git.[at"
-"].john-livingston.fr gemeldet werden."
+msgstr "Dieser Verhaltenskodex basiert auf dem [Contributor Covenant](https://www.contributor-covenant.org), Version 2.1, verfügbar unter [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html). Übersetzungen sind unter [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations) verfügbar. Fälle von beleidigendem, belästigendem oder anderweitig inakzeptablem Verhalten können den für die Durchsetzung verantwortlichen Gemeinschaftsleitern per E-Mail an git.[at].john-livingston.fr gemeldet werden."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -83,12 +66,7 @@ msgstr "Entwickeln"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue."
-msgstr ""
-"Sprechen Sie immer über die Funktionen, die Sie entwickeln wollen, indem Sie "
-"das Issue, das Ihr Problem behandelt, erstellen/finden und kommentieren "
-"bevor Sie mit der Arbeit daran beginnen und informieren Sie die Gemeinschaft "
-"darüber, dass Sie mit der Programmierung beginnen, indem Sie das Thema für "
-"sich beanspruchen."
+msgstr "Sprechen Sie immer über die Funktionen, die Sie entwickeln wollen, indem Sie das Issue, das Ihr Problem behandelt, erstellen/finden und kommentieren bevor Sie mit der Arbeit daran beginnen und informieren Sie die Gemeinschaft darüber, dass Sie mit der Programmierung beginnen, indem Sie das Thema für sich beanspruchen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -98,9 +76,7 @@ msgstr "Bitte benutzen Sie den `main` Zweig."
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated."
-msgstr ""
-"Bis März 2023 wurden die Beiträge auf dem `develop` Zweig erstellt. Dieses "
-"Verfahren ist nun veraltet."
+msgstr "Bis März 2023 wurden die Beiträge auf dem `develop` Zweig erstellt. Dieses Verfahren ist nun veraltet."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -233,35 +209,22 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.  Once you are ready for a code review before merge, submit a Pull Request.  In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\"."
-msgstr ""
-"Sobald Sie bereit sind, Ihren Code zu zeigen und um Feedback zu bitten, "
-"reichen Sie einen *Entwurf* für einen Pull Request ein. Sobald Sie bereit "
-"für eine Codeüberprüfung vor der Zusammenführung sind, reichen Sie einen "
-"Pull Request ein. In jedem Fall sollten Sie Ihren PR mit dem Problem, die er "
-"behebt, verlinken, indem Sie die GitHub-Syntax verwenden: \"fixes #"
-"issue_number\"."
+msgstr "Sobald Sie bereit sind, Ihren Code zu zeigen und um Feedback zu bitten, reichen Sie einen *Entwurf* für einen Pull Request ein. Sobald Sie bereit für eine Codeüberprüfung vor der Zusammenführung sind, reichen Sie einen Pull Request ein. In jedem Fall sollten Sie Ihren PR mit dem Problem, die er behebt, verlinken, indem Sie die GitHub-Syntax verwenden: \"fixes #issue_number\"."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder."
-msgstr ""
-"Der Front-End-Code befindet sich im Ordner `client`, der Back-End-Code im "
-"Ordner `server`. Es gibt einige gemeinsam genutzte Codes im `shared` Ordner."
+msgstr "Der Front-End-Code befindet sich im Ordner `client`, der Back-End-Code im Ordner `server`. Es gibt einige gemeinsam genutzte Codes im `shared` Ordner."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
-msgstr ""
-"Für allgemeine Anweisungen (Entwicklung von Plugins, Erstellung, "
-"Installation, ...), lesen Sie bitte die [Peertube Dokumentation](https://docs"
-".joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
+msgstr "Für allgemeine Anweisungen (Entwicklung von Plugins, Erstellung, Installation, ...), lesen Sie bitte die [Peertube Dokumentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "You can build the plugin with extra debug features simply by using:"
-msgstr ""
-"Sie können das Plugin mit zusätzlichen Debug-Funktionen bauen, indem Sie es "
-"einfach benutzen:"
+msgstr "Sie können das Plugin mit zusätzlichen Debug-Funktionen bauen, indem Sie es einfach benutzen:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -278,15 +241,7 @@ msgstr "ESBuild vs Typescript"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
-msgstr ""
-"Dieses Plugin verwendet ESBuild für die Generierung von Frontend-Code, wie "
-"das offizielle `peertube-plugin-quickstart` Plugin. ESBuild kann mit "
-"Typescript umgehen, prüft aber keine Typen (siehe [ESBuild-"
-"Dokumentation](https://esbuild.github.io/content-types/#typescript)). "
-"Deshalb kompilieren wir Typescript zuerst mit der Option `-noEmit`, nur um "
-"die Typen zu überprüfen (`check:client:ts` in der package.json Datei). Dann, "
-"wenn alles in Ordnung ist, führen wir ESBuild aus, um das kompilierte "
-"Javascript zu erzeugen."
+msgstr "Dieses Plugin verwendet ESBuild für die Generierung von Frontend-Code, wie das offizielle `peertube-plugin-quickstart` Plugin. ESBuild kann mit Typescript umgehen, prüft aber keine Typen (siehe [ESBuild-Dokumentation](https://esbuild.github.io/content-types/#typescript)). Deshalb kompilieren wir Typescript zuerst mit der Option `-noEmit`, nur um die Typen zu überprüfen (`check:client:ts` in der package.json Datei). Dann, wenn alles in Ordnung ist, führen wir ESBuild aus, um das kompilierte Javascript zu erzeugen."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -297,12 +252,7 @@ msgstr "Debug Modus"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a debug mode for this plugin, that shorten some delay.  For example, some log files will rotate every two minutes, instead of once per day.  This permit to test more easily certain actions, for which it could normally take hours or days to wait."
-msgstr ""
-"Es gibt einen Debug Modus für dieses Plugin, der einige Verzögerungen "
-"verkürzt. Zum Beispiel werden einige Protokolldateien alle zwei Minuten "
-"erneuert, anstatt einmal pro Tag. Dies ermöglicht es, bestimmte Aktionen, "
-"für die man normalerweise Stunden oder Tage warten müsste, leichter zu "
-"testen."
+msgstr "Es gibt einen Debug Modus für dieses Plugin, der einige Verzögerungen verkürzt. Zum Beispiel werden einige Protokolldateien alle zwei Minuten erneuert, anstatt einmal pro Tag. Dies ermöglicht es, bestimmte Aktionen, für die man normalerweise Stunden oder Tage warten müsste, leichter zu testen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -776,16 +726,8 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
-#| msgid ""
-#| "Avoid adding line breaks in middle of a sentence.\n"
-#| "But add a line break after each sentence in a paragraph.\n"
-#| "This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.\n"
-msgid "Avoid adding line breaks in middle of a sentence.  But add a line break after each sentence in a paragraph.  This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph."
+msgid "To facilitate translators work, avoid making too long paragraphs."
 msgstr ""
-"Vermeiden Sie Zeilenumbrüche in der Mitte eines Satzes.\n"
-"Fügen Sie jedoch nach jedem Satz eines Absatzes einen Zeilenumbruch ein.\n"
-"Dies soll den Übersetzern die Arbeit erleichtern: So können sie leicht überprüfen, dass sie beim Übersetzen eines Absatzes keinen Satz übersehen.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
@@ -2547,6 +2489,17 @@ msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-pl
 #| msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen.\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Avoid adding line breaks in middle of a sentence.\n"
+#~| "But add a line break after each sentence in a paragraph.\n"
+#~| "This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.\n"
+#~ msgid "Avoid adding line breaks in middle of a sentence.  But add a line break after each sentence in a paragraph.  This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph."
+#~ msgstr ""
+#~ "Vermeiden Sie Zeilenumbrüche in der Mitte eines Satzes.\n"
+#~ "Fügen Sie jedoch nach jedem Satz eines Absatzes einen Zeilenumbruch ein.\n"
+#~ "Dies soll den Übersetzern die Arbeit erleichtern: So können sie leicht überprüfen, dass sie beim Übersetzen eines Absatzes keinen Satz übersehen.\n"
 
 #, no-wrap
 #~ msgid "you must have `npm` installed\n"

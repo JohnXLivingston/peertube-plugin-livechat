@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-17 15:13+0200\n"
+"POT-Creation-Date: 2023-07-17 15:40+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Occitan <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/oc/>\n"
@@ -519,7 +519,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-msgid "Avoid adding line breaks in middle of a sentence.  But add a line break after each sentence in a paragraph.  This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph."
+msgid "To facilitate translators work, avoid making too long paragraphs."
 msgstr ""
 
 #. type: Title ###

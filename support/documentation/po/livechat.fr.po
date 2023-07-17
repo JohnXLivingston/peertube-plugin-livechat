@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-17 15:13+0200\n"
+"POT-Creation-Date: 2023-07-17 15:40+0200\n"
 "PO-Revision-Date: 2023-07-17 11:28+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -712,16 +712,8 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
-#| msgid ""
-#| "Avoid adding line breaks in middle of a sentence.\n"
-#| "But add a line break after each sentence in a paragraph.\n"
-#| "This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.\n"
-msgid "Avoid adding line breaks in middle of a sentence.  But add a line break after each sentence in a paragraph.  This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph."
+msgid "To facilitate translators work, avoid making too long paragraphs."
 msgstr ""
-"Évitez d'ajouter des sauts de ligne au milieu d'une phrase.\n"
-"En revanche, ajoutez un saut de ligne après chaque phrase d'un paragraphe.\n"
-"Cela facilite le travail des traducteur⋅rices : iels peuvent ainsi facilement vérifier qu'iels n'oublient pas une phrase lorsqu'iels traduisent un paragraphe.\n"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
@@ -2515,6 +2507,17 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #| msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter.\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "Avoid adding line breaks in middle of a sentence.\n"
+#~| "But add a line break after each sentence in a paragraph.\n"
+#~| "This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.\n"
+#~ msgid "Avoid adding line breaks in middle of a sentence.  But add a line break after each sentence in a paragraph.  This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph."
+#~ msgstr ""
+#~ "Évitez d'ajouter des sauts de ligne au milieu d'une phrase.\n"
+#~ "En revanche, ajoutez un saut de ligne après chaque phrase d'un paragraphe.\n"
+#~ "Cela facilite le travail des traducteur⋅rices : iels peuvent ainsi facilement vérifier qu'iels n'oublient pas une phrase lorsqu'iels traduisent un paragraphe.\n"
 
 #, no-wrap
 #~ msgid "you must have `npm` installed\n"

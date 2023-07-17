@@ -85,9 +85,7 @@ See here: [Documentation translation](/peertube-plugin-livechat/contributing/tra
 Please use the `livechatnotranslation` option for technical documentation.
 We don't want technical documentation to be translated, to avoid issues because of a wrong translation.
 
-Avoid adding line breaks in middle of a sentence.
-But add a line break after each sentence in a paragraph.
-This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.
+To facilitate translators work, avoid making too long paragraphs.
 
 ### What if I can't use hugo and/or po4a?
 
