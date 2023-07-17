@@ -8,9 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-14 19:55+0200\n"
-"PO-Revision-Date: 2023-07-17 01:48+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
+"PO-Revision-Date: 2023-07-17 10:58+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
@@ -36,13 +35,20 @@ msgstr "Kontaktieren Sie mich"
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
-msgstr "Wenn Sie eine Frage haben oder über dieses Plugin sprechen möchten, können Sie diesem XMPP-Raum mit einem beliebigen Jabber-Client beitreten: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
+msgstr ""
+"Wenn Sie eine Frage haben oder über dieses Plugin sprechen möchten, können "
+"Sie diesem XMPP-Raum mit einem beliebigen Jabber-Client beitreten: [plugin-"
+"livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny."
+"org?join).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
-msgstr "Wenn Sie das Projekt finanziell unterstützen möchten, können Sie mich per E-Mail unter git.[at].john-livingston.fr kontaktieren oder mein [Liberapay-Profil](https://liberapay.com/JohnLivingston/) ansehen.\n"
+msgstr ""
+"Wenn Sie das Projekt finanziell unterstützen möchten, können Sie mich per E-"
+"Mail unter git.[at].john-livingston.fr kontaktieren oder mein [Liberapay-"
+"Profil](https://liberapay.com/JohnLivingston/) ansehen.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -124,7 +130,9 @@ msgstr "Sie müssen `npm` installiert haben\n"
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
-msgstr "Sie müssen python venv installiert haben (z.B. das Paket `python3-venv` auf Debian)\n"
+msgstr ""
+"Sie müssen python venv installiert haben (z.B. das Paket `python3-venv` auf "
+"Debian)\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -207,19 +215,27 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder.\n"
-msgstr "Der Front-End-Code befindet sich im Ordner `client`, der Back-End-Code im Ordner `server`. Es gibt einige gemeinsam genutzte Codes im `shared` Ordner.\n"
+msgstr ""
+"Der Front-End-Code befindet sich im Ordner `client`, der Back-End-Code im "
+"Ordner `server`. Es gibt einige gemeinsam genutzte Codes im `shared` Ordner."
+"\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
-msgstr "Für allgemeine Anweisungen (Entwicklung von Plugins, Erstellung, Installation, ...), lesen Sie bitte die [Peertube Dokumentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
+msgstr ""
+"Für allgemeine Anweisungen (Entwicklung von Plugins, Erstellung, "
+"Installation, ...), lesen Sie bitte die [Peertube Dokumentation](https://docs"
+".joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "You can build the plugin with extra debug features simply by using:\n"
-msgstr "Sie können das Plugin mit zusätzlichen Debug-Funktionen bauen, indem Sie es einfach benutzen:\n"
+msgstr ""
+"Sie können das Plugin mit zusätzlichen Debug-Funktionen bauen, indem Sie es "
+"einfach benutzen:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -243,11 +259,15 @@ msgid ""
 "That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
 "Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
 msgstr ""
-"Dieses Plugin verwendet ESBuild für die Generierung von Frontend-Code, wie das offizielle `peertube-plugin-quickstart` Plugin.\n"
+"Dieses Plugin verwendet ESBuild für die Generierung von Frontend-Code, wie "
+"das offizielle `peertube-plugin-quickstart` Plugin.\n"
 "ESBuild kann mit Typescript umgehen, prüft aber keine Typen\n"
-"(siehe [ESBuild-Dokumentation](https://esbuild.github.io/content-types/#typescript)).\n"
-"Deshalb kompilieren wir Typescript zuerst mit der Option `-noEmit`, nur um die Typen zu überprüfen (`check:client:ts` in der package.json Datei).\n"
-"Dann, wenn alles in Ordnung ist, führen wir ESBuild aus, um das kompilierte Javascript zu erzeugen.\n"
+"(siehe [ESBuild-Dokumentation](https://esbuild.github.io/content-types/"
+"#typescript)).\n"
+"Deshalb kompilieren wir Typescript zuerst mit der Option `-noEmit`, nur um "
+"die Typen zu überprüfen (`check:client:ts` in der package.json Datei).\n"
+"Dann, wenn alles in Ordnung ist, führen wir ESBuild aus, um das kompilierte "
+"Javascript zu erzeugen.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -508,8 +528,10 @@ msgid ""
 "Always inform the community before working (by creating a new issue, or commenting an existing one).\n"
 "This is to avoid that two persons are working on the same thing, and prevent conflicts.\n"
 msgstr ""
-"Informieren Sie die Community immer vor der Arbeit (indem Sie ein neues Problem erstellen oder ein bestehendes kommentieren).\n"
-"Damit soll vermieden werden, dass zwei Personen an der gleichen Sache arbeiten, und Konflikte zu verhindern.\n"
+"Informieren Sie die Community immer vor der Arbeit (indem Sie ein neues "
+"Problem erstellen oder ein bestehendes kommentieren).\n"
+"Damit soll vermieden werden, dass zwei Personen an der gleichen Sache "
+"arbeiten, und Konflikte zu verhindern.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -521,7 +543,9 @@ msgstr "Bitte benutzen Sie den `main`-Zweig.\n"
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "The documentation source code is in the `support/documentation/content` folder.\n"
-msgstr "Der Quellcode der Dokumentation befindet sich im Ordner `support/documentation/content`.\n"
+msgstr ""
+"Der Quellcode der Dokumentation befindet sich im Ordner `support/"
+"documentation/content`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -531,7 +555,8 @@ msgid ""
 "You have to install it on your computer if you want to preview your work.\n"
 msgstr ""
 "Die Dokumentation wird mit [Hugo](https://gohugo.io/) erstellt.\n"
-"Sie müssen es auf Ihrem Computer installieren, wenn Sie eine Vorschau Ihrer Arbeit sehen wollen.\n"
+"Sie müssen es auf Ihrem Computer installieren, wenn Sie eine Vorschau Ihrer "
+"Arbeit sehen wollen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -541,7 +566,8 @@ msgid ""
 "You should read its documentation before starting editing the documentation.\n"
 msgstr ""
 "Das verwendete Thema ist [hugo-theme-learn](https://learn.netlify.app/).\n"
-"Sie sollten dessen Dokumentation lesen, bevor Sie mit der Bearbeitung der Dokumentation beginnen.\n"
+"Sie sollten dessen Dokumentation lesen, bevor Sie mit der Bearbeitung der "
+"Dokumentation beginnen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -599,7 +625,9 @@ msgstr "Eine neue Sprache hinzufügen"
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section.\n"
-msgstr "Kopieren und ändern Sie den Abschnitt `[Languages.fr]` in der Datei `support/documentation/config.toml`.\n"
+msgstr ""
+"Kopieren und ändern Sie den Abschnitt `[Languages.fr]` in der Datei `support/"
+"documentation/config.toml`.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -619,7 +647,9 @@ msgstr "Vorschau"
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To preview your modifications, just run:\n"
-msgstr "Um eine Vorschau Ihrer Änderungen zu sehen, führen Sie einfach diesen Befehl aus:\n"
+msgstr ""
+"Um eine Vorschau Ihrer Änderungen zu sehen, führen Sie einfach diesen Befehl "
+"aus:\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -634,7 +664,9 @@ msgid ""
 "Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).\n"
 "This page will automatically refresh on each modification.\n"
 msgstr ""
-"Öffnen Sie dann Ihren Browser und gehen Sie auf die Adresse [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).\n"
+"Öffnen Sie dann Ihren Browser und gehen Sie auf die Adresse "
+"[http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/"
+"peertube-plugin-livechat/).\n"
 "Diese Seite wird bei jeder Änderung automatisch aktualisiert.\n"
 
 #. type: Title ##
@@ -847,13 +879,21 @@ msgstr "Impressum"
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies.\n"
-msgstr "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) Dateien beinhalten die Lizenzinformationen für dieses Programm und seiner Abhängigkeiten.\n"
+msgstr ""
+"[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/"
+"blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github"
+".com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) Dateien "
+"beinhalten die Lizenzinformationen für dieses Programm und seiner "
+"Abhängigkeiten.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/).\n"
-msgstr "Das Plugin wird von [John Livingston](https://www.john-livingston.fr/) betrieben.\n"
+msgstr ""
+"Das Plugin wird von [John Livingston](https://www.john-livingston.fr/) "
+"betrieben.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -862,32 +902,45 @@ msgid ""
 "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).\n"
 "The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.\n"
 msgstr ""
-"Dank an David Revoy für seine Arbeit an dem Peertube Maskottchen, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).\n"
-"Das Charakterdesign steht unter CC-By-Lizenz, und die SVG-Dateien, die zur Erstellung einiger Logos und Avatare in diesem Plugin verwendet werden, sind GPLv3.0.\n"
+"Dank an David Revoy für seine Arbeit an dem Peertube Maskottchen, "
+"[Sepia](https://www.davidrevoy.com/index.php?tag/peertube).\n"
+"Das Charakterdesign steht unter CC-By-Lizenz, und die SVG-Dateien, die zur "
+"Erstellung einiger Logos und Avatare in diesem Plugin verwendet werden, sind "
+"GPLv3.0.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org).\n"
-msgstr "Vielen Dank an [Framasoft](https://framasoft.org)für die Ermöglichung von [Peertube](https://joinpeertube.org/), für die finanzielle Unterstützung, und für das [Weblate](https://weblate.framasoft.org).\n"
+msgstr ""
+"Vielen Dank an [Framasoft](https://framasoft.org)für die Ermöglichung von "
+"[Peertube](https://joinpeertube.org/), für die finanzielle Unterstützung, "
+"und für das [Weblate](https://weblate.framasoft.org).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support.\n"
-msgstr "Vielen Dank an [ritimo](https://www.ritimo.org/) für die finanzielle Unterstützung.\n"
+msgstr ""
+"Vielen Dank an [ritimo](https://www.ritimo.org/) für die finanzielle "
+"Unterstützung.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support.\n"
-msgstr "Vielen Dank an [Code Lutin](https://www.codelutin.com/) und [Rétribution Copie Publique](https://copiepublique.fr/) für die finanzielle Unterstützung.\n"
+msgstr ""
+"Vielen Dank an [Code Lutin](https://www.codelutin.com/) und [Rétribution "
+"Copie Publique](https://copiepublique.fr/) für die finanzielle Unterstützung."
+"\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support.\n"
-msgstr "Vielen Dank an [NlNet](https://nlnet.nl/) und die [NGI0 Entrust fund](https://nlnet.nl/entrust/) für die finanzielle Unterstützung.\n"
+msgstr ""
+"Vielen Dank an [NlNet](https://nlnet.nl/) und die [NGI0 Entrust "
+"fund](https://nlnet.nl/entrust/) für die finanzielle Unterstützung.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
@@ -917,7 +970,10 @@ msgstr "Matterbridge benutzen"
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>\n"
-msgstr "Hier ist ein Tutorial um Matterbridge mit diesem Plugin zu benutzen (nur auf englisch): <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>\n"
+msgstr ""
+"Hier ist ein Tutorial um Matterbridge mit diesem Plugin zu benutzen (nur auf "
+"englisch): <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/"
+"documentation/peertube.md>\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1986,7 +2042,9 @@ msgstr "Plugin Dokumentation"
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
-msgstr "Derzeit funktioniert das Plugin standartmäßig nur für x86_64 CPU Architekturen. Hier sind einige Anleitungen für andere CPU Architekturen."
+msgstr ""
+"Derzeit funktioniert das Plugin standartmäßig nur für x86_64 CPU "
+"Architekturen. Hier sind einige Anleitungen für andere CPU Architekturen."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2001,7 +2059,8 @@ msgid ""
 "The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.\n"
 "It is not compatible with other CPU architectures.\n"
 msgstr ""
-"Das im Plugin enthaltene Prosody AppImage funktioniert nur mit x86_64 und arm64 CPU Architekturen.\n"
+"Das im Plugin enthaltene Prosody AppImage funktioniert nur mit x86_64 und "
+"arm64 CPU Architekturen.\n"
 "Es ist nicht kompatibel mit anderen CPU-Architekturen.\n"
 
 #. type: Plain text
@@ -2011,7 +2070,8 @@ msgid ""
 "To use the plugin, you will have to manually install Prosody on your server\n"
 "(see below).\n"
 msgstr ""
-"Um das Plugin zu verwenden, müssen Sie Prosody manuell auf Ihrem Server installieren\n"
+"Um das Plugin zu verwenden, müssen Sie Prosody manuell auf Ihrem Server "
+"installieren\n"
 "(siehe unten).\n"
 
 #. type: Plain text
@@ -2029,7 +2089,9 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Once it is done, you have to check `Use system Prosody` in the plugin settings.\n"
-msgstr "Sobald dies geschehen ist, müssen Sie in den Plugin-Einstellungen das Häkchen bei `Use system Prosody` setzen.\n"
+msgstr ""
+"Sobald dies geschehen ist, müssen Sie in den Plugin-Einstellungen das "
+"Häkchen bei `Use system Prosody` setzen.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2041,7 +2103,9 @@ msgstr "Nicht-Docker Peertube installation"
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "For standard installation, you just have to install the official `prosody` package for your linux distribution.\n"
-msgstr "Für die Standardinstallation müssen Sie nur das offizielle `prosody`-Paket für Ihre Linux-Distribution installieren.\n"
+msgstr ""
+"Für die Standardinstallation müssen Sie nur das offizielle `prosody`-Paket "
+"für Ihre Linux-Distribution installieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2062,8 +2126,11 @@ msgid ""
 "You can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run).\n"
 "For example, on Debian/Ubuntu (and other Systemd based linux distributions):\n"
 msgstr ""
-"Sie können dann den Dienst deaktivieren, der automatisch startet, wenn Sie Prosody installieren (das Plugin startet einen Prosody-Prozess, der Dienst muss nicht dauerhaft laufen).\n"
-"Zum Beispiel unter Debian/Ubuntu (und anderen Systemd-basierten Linux-Distributionen):\n"
+"Sie können dann den Dienst deaktivieren, der automatisch startet, wenn Sie "
+"Prosody installieren (das Plugin startet einen Prosody-Prozess, der Dienst "
+"muss nicht dauerhaft laufen).\n"
+"Zum Beispiel unter Debian/Ubuntu (und anderen Systemd-basierten Linux-"
+"Distributionen):\n"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2075,7 +2142,9 @@ msgstr "sudo systemctl disable prosody && sudo systemctl stop prosody\n"
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Warning: do not disable Prosody if it is used for another service on your server, like for example Jitsi.\n"
-msgstr "Achtung: Deaktivieren Sie Prosody nicht, wenn es für einen anderen Dienst auf Ihrem Server verwendet wird, wie zum Beispiel Jitsi.\n"
+msgstr ""
+"Achtung: Deaktivieren Sie Prosody nicht, wenn es für einen anderen Dienst "
+"auf Ihrem Server verwendet wird, wie zum Beispiel Jitsi.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2102,7 +2171,8 @@ msgid ""
 "To generate and use such an image, please refer to the Docker documentation.\n"
 "The Docker file to generate the image should be:\n"
 msgstr ""
-"Um ein solches Image zu erzeugen und zu verwenden, lesen Sie bitte die Docker-Dokumentation.\n"
+"Um ein solches Image zu erzeugen und zu verwenden, lesen Sie bitte die "
+"Docker-Dokumentation.\n"
 "Die Docker-Datei, um das Paket zu erzeugen, sollte wie folgt sein:\n"
 
 #. type: Fenced code block (Docker)
@@ -2127,13 +2197,17 @@ msgstr "Yunohost"
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "You have to disable `metronome` (the XMPP server provided by Yunohost), and install `prosody`.\n"
-msgstr "Sie müssen `metronome` (der von Yunohost bereitgestellte XMPP-Server) deaktivieren, und `prosody` installieren.\n"
+msgstr ""
+"Sie müssen `metronome` (der von Yunohost bereitgestellte XMPP-Server) "
+"deaktivieren, und `prosody` installieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0.\n"
-msgstr "Dies wird bereits von der Yunohost Peertube Anwendung gemacht, da es für das Plugin vor v6.0.0 erforderlich war.\n"
+msgstr ""
+"Dies wird bereits von der Yunohost Peertube Anwendung gemacht, da es für das "
+"Plugin vor v6.0.0 erforderlich war.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2142,8 +2216,10 @@ msgid ""
 "But it may be removed in a near feature (to avoid drawbacks of this method).\n"
 "I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility.\n"
 msgstr ""
-"Es kann aber sein, dass es in naher Zukunft entfernt wird (um die Nachteile dieser Methode zu vermeiden).\n"
-"Ich muss mit dem Yunohost Team diskutieren, um zu entscheiden, wie wir die Nachteile minimieren können, und die Kompatibilität zu maximieren.\n"
+"Es kann aber sein, dass es in naher Zukunft entfernt wird (um die Nachteile "
+"dieser Methode zu vermeiden).\n"
+"Ich muss mit dem Yunohost Team diskutieren, um zu entscheiden, wie wir die "
+"Nachteile minimieren können, und die Kompatibilität zu maximieren.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/_index.md
@@ -2162,13 +2238,19 @@ msgstr "Installationsanleitung"
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
-msgstr "Bevor Sie auf eine Hauptversion aktualisieren, lesen Sie bitte die Versionshinweise und die Liste der wichtigsten Änderungen : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
+msgstr ""
+"Bevor Sie auf eine Hauptversion aktualisieren, lesen Sie bitte die "
+"Versionshinweise und die Liste der wichtigsten Änderungen : "
+"[CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
+"main/CHANGELOG.md).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "To install or update the plugin, **just use the Peertube web admin interface**.\n"
-msgstr "Um das Plugin zu installieren oder zu aktualisieren **einfach das Peertube Web-Admin-Interface benutzen**.\n"
+msgstr ""
+"Um das Plugin zu installieren oder zu aktualisieren **einfach das Peertube "
+"Web-Admin-Interface benutzen**.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
@@ -2198,19 +2280,26 @@ msgstr "WICHTIGER HINWEIS"
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "Since version v6.0.0, this plugin does not need any Prosody installation.\n"
-msgstr "Seit Version v6.0.0 benötigt dieses Plugin keine andere Prosody-Installation.\n"
+msgstr ""
+"Seit Version v6.0.0 benötigt dieses Plugin keine andere Prosody-Installation."
+"\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody.\n"
-msgstr "Falls Sie dieses Plugin vor dieser Version benutzt haben und Sie Prosody manuell installiert haben, können Sie Prosody sicher deinstallieren.\n"
+msgstr ""
+"Falls Sie dieses Plugin vor dieser Version benutzt haben und Sie Prosody "
+"manuell installiert haben, können Sie Prosody sicher deinstallieren.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image.\n"
-msgstr "Falls Sie ein eigenes Peertube Docker Paket genutzt haben, welches Prosody eingebettet hatte, können Sie zu den offiziellen Peertube Paketen zurück wechseln.\n"
+msgstr ""
+"Falls Sie ein eigenes Peertube Docker Paket genutzt haben, welches Prosody "
+"eingebettet hatte, können Sie zu den offiziellen Peertube Paketen zurück "
+"wechseln.\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/_index.md
@@ -2535,7 +2624,9 @@ msgstr "Einführung"
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.\n"
-msgstr "Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, ein Chatsystem für Peertube-Videos bereitzustellen.\n"
+msgstr ""
+"Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, ein "
+"Chatsystem für Peertube-Videos bereitzustellen.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -2556,7 +2647,9 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
-msgstr "Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
+msgstr ""
+"Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-"
+"4ef2-b843-98530a8ccbae).\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/issues/_index.md
@@ -2574,31 +2667,41 @@ msgstr "Fehlerverfolgung (Bug tracking) und neue Funktionen"
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french.\n"
-msgstr "Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der Einrichtung des Plugins haben, können Sie den [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) verwenden.\n"
+msgstr ""
+"Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der "
+"Einrichtung des Plugins haben, können Sie den [Github issue "
+"tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) "
+"verwenden.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "To have a glimpse to the roadmap for upcoming features, please refer to:\n"
-msgstr "Einen Einblick in die Roadmap für kommende Funktionen finden Sie hier:\n"
+msgstr ""
+"Einen Einblick in die Roadmap für kommende Funktionen finden Sie hier:\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
-msgstr "[Github Project](https://github.com/users/JohnXLivingston/projects/1).\n"
+msgstr ""
+"[Github Project](https://github.com/users/JohnXLivingston/projects/1).\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
-msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
+msgstr ""
+"[Meilensteine auf Github](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/milestones).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
-msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen.\n"
+msgstr ""
+"Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und "
+"helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen.\n"
 
 #, no-wrap
 #~ msgid ""
