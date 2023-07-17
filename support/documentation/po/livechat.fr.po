@@ -32,17 +32,13 @@ msgstr "Me contacter"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
-#, fuzzy
-#| msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
-msgstr "Si vous avez des questions ou souhaitez parler de ce plugin, vous pouvez rejoindre ce salon XMPP avec n'importe quel client Jabber : [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
+msgstr "Si vous avez des questions ou souhaitez parler de ce plugin, vous pouvez rejoindre ce salon XMPP avec n'importe quel client Jabber : [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
-#, fuzzy
-#| msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
-msgstr "Si vous souhaitez supporter le projet financièrement, vous pouvez me contacter par mail à l'adresse git.[arobase].john-livingston.fr, ou passer par mon [profil Liberapay](https://liberapay.com/JohnLivingston/).\n"
+msgstr "Si vous souhaitez supporter le projet financièrement, vous pouvez me contacter par mail à l'adresse git.[arobase].john-livingston.fr, ou passer par mon [profil Liberapay](https://liberapay.com/JohnLivingston/)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -171,10 +167,9 @@ msgstr "`nodejs` (>=14.x)\n"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
 #| msgid "`build-essential`\n"
 msgid "`build-essential`"
-msgstr "`build-essential`\n"
+msgstr "`build-essential`"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -183,10 +178,9 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
 #| msgid "To build the plugin, you must have following packages:\n"
 msgid "Building this AppImage also requires following packages:"
-msgstr "Pour construire le module, vous avez besoin d'avoir installé les paquets suivants :\n"
+msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
