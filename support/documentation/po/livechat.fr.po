@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-14 19:55+0200\n"
+"POT-Creation-Date: 2023-07-17 13:16+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-"
-"livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,7 +66,7 @@ msgstr ""
 "Les traductions sont disponibles à l'adresse [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
 "Les cas de comportements abusifs, harcelants ou tout autre comportement inacceptables peuvent être signalés aux dirigeant·e·s de la communauté responsables de l’application du code de conduite à git.[at].john-livingston.fr.\n"
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Develop"
@@ -95,35 +94,119 @@ msgstr "Les Pull Request sont à faire sur la branche `main`.\n"
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.\n"
 msgstr "Jusqu'à mars 2023, il fallait contribuer sur la branche `develop`. Cette procédure est désormais obsolète.\n"
 
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, fuzzy, no-wrap
+#| msgid "Prerequisite for building this plugin:\n"
+msgid "Prerequisite for building this plugin"
+msgstr "Pré-requis pour compiler le plugin :\n"
+
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid "Prerequisite for building this plugin:\n"
-msgstr "Pré-requis pour compiler le plugin :\n"
+msgid "It is highly recommended to be familiar with following concepts:\n"
+msgstr ""
 
-#. type: Bullet: '- '
+#. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid "you must have `npm` installed\n"
-msgstr "vous devez avoir installé `npm`\n"
+msgid "Git\n"
+msgstr ""
 
-#. type: Bullet: '- '
+#. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
-msgstr "vous devez avoir installé les venv python (paquet `python3-venv` sous Debian par exemple)\n"
+msgid "NodeJS\n"
+msgstr ""
 
-#. type: Bullet: '- '
+#. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid "you must have `build-essential` installed\n"
+msgid "NPM\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, fuzzy, no-wrap
+#| msgid "ESBuild vs Typescript"
+msgid "Typescript\n"
+msgstr "ESBuild versus Typescript"
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "To build the plugin, you must have following packages:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`git`\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`npm` (>=8.x)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`nodejs` (>=14.x)\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, fuzzy, no-wrap
+#| msgid "you must have `build-essential` installed\n"
+msgid "`build-essential`\n"
 msgstr "vous devez avoir `build-essential` installé\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
-msgid "To clone the repository:\n"
-msgstr "Pour clôner le dépot :\n"
+msgid ""
+"The plugin needs to build an AppImage for the Prosody XMPP server.\n"
+"It appears that the way this AppImage is build requires `apt` and `dpkg` commands.\n"
+"So it will only work \"out of the box\" on Debian-like systems.\n"
+"If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.\n"
+"See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).\n"
+"We will provide another solution as soon as possible.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Building this AppImage also requires following packages:\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`python3-venv`\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "`squashfs-tools`\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid ""
+"These dependencies were tested on a Debian Bullseye.\n"
+"If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github.\n"
+"{{% /notice }}\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Clone the repository, buid the plugin, and create your feature branch:\n"
+msgstr ""
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -167,11 +250,15 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.\n"
+#| "Once you are ready for a code review before merge, submit a Pull Request. In any case, please\n"
+#| "link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
 msgid ""
 "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.\n"
-"Once you are ready for a code review before merge, submit a Pull Request. In any case, please\n"
-"link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
+"Once you are ready for a code review before merge, submit a Pull Request.\n"
+"In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
 msgstr ""
 "Quand vous êtes prêt⋅e à montrer votre code pour avoir un retour, soumettez une Pull Request *draft*.\n"
 "Quand vous êtes prêt⋅e pour une relecture de code avant merge, soumettez une Pull Request.\n"
@@ -209,11 +296,16 @@ msgstr "ESBuild versus Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.\n"
+#| "ESBuild can handle Typescript, but does not check types\n"
+#| "(see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
+#| "That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
+#| "Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
 msgid ""
 "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.\n"
-"ESBuild can handle Typescript, but does not check types\n"
-"(see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
+"ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
 "That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
 "Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
 msgstr ""
@@ -243,11 +335,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"To enable this mode, you juste have to create the\n"
-"`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file\n"
-"(replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
+#, fuzzy, no-wrap
+#| msgid ""
+#| "To enable this mode, you juste have to create the\n"
+#| "`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file\n"
+#| "(replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
+msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
 msgstr ""
 "Pour activer ce mode, il suffit de créer un fichier\n"
 "`/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode`\n"
@@ -293,13 +386,17 @@ msgstr "Redémarrer Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "When debug mode is enabled, you can restart Prosody using this API call:\n"
+#| "`http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+#| "This call don't need any authentificaiton.\n"
+#| "It can be done from a command line, for example using\n"
+#| "`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 msgid ""
-"When debug mode is enabled, you can restart Prosody using this API call:\n"
-"`http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+"When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 "This call don't need any authentificaiton.\n"
-"It can be done from a command line, for example using\n"
-"`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+"It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
 msgstr ""
 "Pour redémarrer Prosody quand le mode debug est activé, vous pouvez appeler l'API\n"
 "`http://votre_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
@@ -369,13 +466,18 @@ msgstr "Lancer votre serveur de debug.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "For Prosody to connect to the debugger, call the API\n"
+#| "`http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+#| "This call does not need any authentication.\n"
+#| "It can be done from a command line, for example with\n"
+#| "`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+#| "You can even configure your debug server to launch this request automatically.\n"
 msgid ""
-"For Prosody to connect to the debugger, call the API\n"
-"`http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+"For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
 "This call does not need any authentication.\n"
-"It can be done from a command line, for example with\n"
-"`curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
+"It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
 "You can even configure your debug server to launch this request automatically.\n"
 msgstr ""
 "Pour que Prosody se connecte au debugger, appelez l'API\n"
@@ -399,11 +501,12 @@ msgstr "Environnement de développement rapide via Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"There is a tutorial, in french, on the\n"
-"[le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)\n"
-"that explains how to quickly build a dev env using Docker.\n"
+#, fuzzy, no-wrap
+#| msgid ""
+#| "There is a tutorial, in french, on the\n"
+#| "[le Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631)\n"
+#| "that explains how to quickly build a dev env using Docker.\n"
+msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker.\n"
 msgstr "Un tutoriel est disponible sur [le forum Peertube](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) pour expliquer comment monter rapidement un environnement de développement en utilisant Docker.\n"
 
 #. type: Plain text
@@ -414,12 +517,15 @@ msgstr "Un dépot a été crée sur la base de ce tutoriel : https://codeberg.or
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.\n"
+#| "There is a dirty hack in the plugin: just create a\n"
+#| "`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes,\n"
+#| "then restart containers.\n"
 msgid ""
 "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.\n"
-"There is a dirty hack in the plugin: just create a\n"
-"`/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes,\n"
-"then restart containers.\n"
+"There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers.\n"
 msgstr ""
 "Note : pour une raison obscure, Prosody n'arrive pas à résoudre les adresses DNS des conteneurs quand la librairie lua-unbound est utilisée.\n"
 "Pour contourner cela, il y a un «dirty hack» : il suffit de créer une fichier `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` dans vos docker-volumes, puis de les redémarrer.\n"
@@ -2335,17 +2441,27 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter.\n"
 
-#. type: Plain text
-#: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
-msgid ""
-"Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.\n"
-"Please make sure to install a compatible version.\n"
-"If you are using Debian Bullseye for example, you can download the Bookwork po4a.deb file from https://packages.debian.org, and install it manually.\n"
-msgstr ""
-"Certaines distributions linux (comme Debian Bullseye par exemple) ont une version trop ancienne de `po4a`.\n"
-"Assurez-vous d'installer une version compatible.\n"
-"Si vous utilisez Debian Bullseye par exemple, vous pouvez télécharger le fichier po4a.deb de Bookworm depuis https://packages.debian.org et l'installer manuellement.\n"
+#~ msgid "you must have `npm` installed\n"
+#~ msgstr "vous devez avoir installé `npm`\n"
+
+#, no-wrap
+#~ msgid "you must have python venv installed (`python3-venv` package on Debian for example)\n"
+#~ msgstr "vous devez avoir installé les venv python (paquet `python3-venv` sous Debian par exemple)\n"
+
+#, no-wrap
+#~ msgid "To clone the repository:\n"
+#~ msgstr "Pour clôner le dépot :\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.\n"
+#~ "Please make sure to install a compatible version.\n"
+#~ "If you are using Debian Bullseye for example, you can download the Bookwork po4a.deb file from https://packages.debian.org, and install it manually.\n"
+#~ msgstr ""
+#~ "Certaines distributions linux (comme Debian Bullseye par exemple) ont une version trop ancienne de `po4a`.\n"
+#~ "Assurez-vous d'installer une version compatible.\n"
+#~ "Si vous utilisez Debian Bullseye par exemple, vous pouvez télécharger le fichier po4a.deb de Bookworm depuis https://packages.debian.org et l'installer manuellement.\n"
 
 #, no-wrap
 #~ msgid ""
