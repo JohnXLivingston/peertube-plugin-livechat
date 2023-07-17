@@ -18,9 +18,10 @@ jobs:
       # FIXME: ubuntu-22.04 comes with po4a 0.66.
       #       We need at least v0.69.
       #       Github does not provide any other suitable image...
-      #       So... we will trick it by downloading the debian package.
-      # - name: Install po4a
-      #   run: sudo apt update && sudo apt install po4a -y
+      #       So... we will trick it by first installing the ubuntu package, then downloading the debian package.
+      - name: Install po4a
+        run: sudo apt update && sudo apt install po4a -y
+
       - name: Install po4a from debian bookworm version
         run: wget http://ftp.debian.org/debian/pool/main/p/po4a/po4a_0.69-1_all.deb && sudo dpkg -i po4a_0.69-1_all.deb
 
