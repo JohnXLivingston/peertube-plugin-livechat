@@ -15,6 +15,9 @@ script:
   - cp ./launcher.lua  AppDir/usr/bin/
   # Creating the /etc/prosody/certs folder to avoid unecessary errors
   - mkdir -p AppDir/etc/prosody/certs
+  # Adding the icon
+  - mkdir -p $TARGET_APPDIR/usr/share/icons/hicolor/scalable/apps
+  - cp ../../assets/images/avatars/1.svg $TARGET_APPDIR/usr/share/icons/hicolor/scalable/apps/livechat.svg
 
 AppDir:
   path: ./AppDir
@@ -22,7 +25,7 @@ AppDir:
   app_info:
     id: org.peertube-plugin-livechat.prosody
     name: prosody
-    icon: utilities-terminal
+    icon: livechat
     version: 1.0.0
     exec: usr/bin/lua5.2
     exec_args: "$APPDIR/usr/bin/launcher.lua $@"
