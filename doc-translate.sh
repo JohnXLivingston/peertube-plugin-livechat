@@ -54,8 +54,8 @@ function generatePo4aConf() {
   echo -n 'opt:"--option markdown" ' >> $po4afile
   # keys from the «Front Matter» section to translate:
   echo -n 'opt:"--option yfm_keys=title,description" ' >> $po4afile
-  # dont wrap lines:
-  echo -n 'opt:"--option neverwrap" ' >> $po4afile
+  # # dont wrap lines:
+  # echo -n 'opt:"--option neverwrap" ' >> $po4afile
 
   # handling hugo directive (when full line). For example: {{% notice tip %}}, {{% children %}}, ...
   echo -n 'opt:"--option breaks=' >> $po4afile

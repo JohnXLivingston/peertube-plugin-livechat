@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-17 13:25+0200\n"
+"POT-Creation-Date: 2023-07-17 15:13+0200\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Vietnamese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/vi/>\n"
@@ -31,14 +31,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
-#, no-wrap
-msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
+msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
-#, no-wrap
-msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
+msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -55,11 +53,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, no-wrap
-msgid ""
-"This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).\n"
-"Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).\n"
-"Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.\n"
+msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
 msgstr ""
 
 #. type: Title ##
@@ -70,22 +64,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem\n"
-"before you start working on it, and inform the community that you begin coding by claiming the issue.\n"
+msgid "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Pull Request must be done on the `main` branch.\n"
+msgid "Pull Request must be done on the `main` branch."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated.\n"
+msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated."
 msgstr ""
 
 #. type: Title ##
@@ -96,106 +85,82 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "It is highly recommended to be familiar with following concepts:\n"
+msgid "It is highly recommended to be familiar with following concepts:"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Git\n"
+msgid "Git"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "NodeJS\n"
+msgid "NodeJS"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "NPM\n"
+msgid "NPM"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Typescript\n"
+msgid "Typescript"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "To build the plugin, you must have following packages:\n"
+msgid "To build the plugin, you must have following packages:"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "`git`\n"
+msgid "`git`"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "`npm` (>=8.x)\n"
+msgid "`npm` (>=8.x)"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "`nodejs` (>=14.x)\n"
+msgid "`nodejs` (>=14.x)"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "`build-essential`\n"
+msgid "`build-essential`"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"The plugin needs to build an AppImage for the Prosody XMPP server.\n"
-"It appears that the way this AppImage is build requires `apt` and `dpkg` commands.\n"
-"So it will only work \"out of the box\" on Debian-like systems.\n"
-"If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.\n"
-"See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).\n"
-"We will provide another solution as soon as possible.\n"
+msgid "The plugin needs to build an AppImage for the Prosody XMPP server.  It appears that the way this AppImage is build requires `apt` and `dpkg` commands.  So it will only work \"out of the box\" on Debian-like systems.  If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.  See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  We will provide another solution as soon as possible."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Building this AppImage also requires following packages:\n"
+msgid "Building this AppImage also requires following packages:"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "`python3-venv`\n"
+msgid "`python3-venv`"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "`squashfs-tools`\n"
+msgid "`squashfs-tools`"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"These dependencies were tested on a Debian Bullseye.\n"
-"If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github.\n"
+msgid "These dependencies were tested on a Debian Bullseye.  If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Clone the repository, buid the plugin, and create your feature branch:\n"
+msgid "Clone the repository, buid the plugin, and create your feature branch:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -223,29 +188,22 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.\n"
-"Once you are ready for a code review before merge, submit a Pull Request.\n"
-"In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\".\n"
+msgid "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.  Once you are ready for a code review before merge, submit a Pull Request.  In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\"."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder.\n"
+msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme).\n"
+msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "You can build the plugin with extra debug features simply by using:\n"
+msgid "You can build the plugin with extra debug features simply by using:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -262,12 +220,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.\n"
-"ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).\n"
-"That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).\n"
-"Then, if everything is okay, we run ESBuild to generate the compiled javascript.\n"
+msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
 msgstr ""
 
 #. type: Title ##
@@ -278,42 +231,27 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"There is a debug mode for this plugin, that shorten some delay.\n"
-"For example, some log files will rotate every two minutes, instead of once per day.\n"
-"This permit to test more easily certain actions, for which it could normally take hours or days to wait.\n"
+msgid "There is a debug mode for this plugin, that shorten some delay.  For example, some log files will rotate every two minutes, instead of once per day.  This permit to test more easily certain actions, for which it could normally take hours or days to wait."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation).\n"
+msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"The simple existence of this file is sufficient to trigger the debug mode.\n"
-"To make sure it's taken into account, you can restart your Peertube instance.\n"
+msgid "The simple existence of this file is sufficient to trigger the debug mode.  To make sure it's taken into account, you can restart your Peertube instance."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"This file can contain some JSON to enable more advanced options.\n"
-"To have a list of existing parameters, check `server/lib/debug.ts`.\n"
-"Restart Peertube after each content modification.\n"
+msgid "This file can contain some JSON to enable more advanced options.  To have a list of existing parameters, check `server/lib/debug.ts`.  Restart Peertube after each content modification."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"Don't enable this mode on a production server, neither on a public server.\n"
-"This could cause security issues.\n"
+msgid "Don't enable this mode on a production server, neither on a public server.  This could cause security issues."
 msgstr ""
 
 #. type: Title ###
@@ -324,11 +262,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
-"This call don't need any authentificaiton.\n"
-"It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.\n"
+msgid "When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.  This call don't need any authentificaiton.  It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`."
 msgstr ""
 
 #. type: Title ###
@@ -339,16 +273,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug).\n"
+msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.\n"
-"Then, add this in the `debub_mode` file:\n"
+msgid "To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.  Then, add this in the `debub_mode` file:"
 msgstr ""
 
 #. type: Fenced code block (json)
@@ -366,36 +296,27 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is.\n"
+msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Restart Peertube.\n"
+msgid "Restart Peertube."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Start your debugger server.\n"
+msgid "Start your debugger server."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
-"This call does not need any authentication.\n"
-"It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.\n"
-"You can even configure your debug server to launch this request automatically.\n"
+msgid "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  This call does not need any authentication.  It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  You can even configure your debug server to launch this request automatically."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Prosody will then restart, connecting to the debugger.\n"
+msgid "Prosody will then restart, connecting to the debugger."
 msgstr ""
 
 #. type: Title ##
@@ -406,22 +327,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker.\n"
+msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev).\n"
+msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid ""
-"Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.\n"
-"There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers.\n"
+msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -445,46 +361,32 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"Always inform the community before working (by creating a new issue, or commenting an existing one).\n"
-"This is to avoid that two persons are working on the same thing, and prevent conflicts.\n"
+msgid "Always inform the community before working (by creating a new issue, or commenting an existing one).  This is to avoid that two persons are working on the same thing, and prevent conflicts."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "Documentation work has to be merged in the `main` branch.\n"
+msgid "Documentation work has to be merged in the `main` branch."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "The documentation source code is in the `support/documentation/content` folder.\n"
+msgid "The documentation source code is in the `support/documentation/content` folder."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"The documentation is generated using [Hugo](https://gohugo.io/).\n"
-"You have to install it on your computer if you want to preview your work.\n"
+msgid "The documentation is generated using [Hugo](https://gohugo.io/).  You have to install it on your computer if you want to preview your work."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"The used theme is [hugo-theme-learn](https://learn.netlify.app/).\n"
-"You should read its documentation before starting editing the documentation.\n"
+msgid "The used theme is [hugo-theme-learn](https://learn.netlify.app/).  You should read its documentation before starting editing the documentation."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.\n"
-"This will trigger github and gitlab pipelines, and update published documentation.\n"
+msgid "When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.  This will trigger github and gitlab pipelines, and update published documentation."
 msgstr ""
 
 #. type: Title ##
@@ -495,22 +397,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "The principal language is english (`en` code).\n"
+msgid "The principal language is english (`en` code)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "The `support/documentation/content/en` folder contains only english documentation files.\n"
+msgid "The `support/documentation/content/en` folder contains only english documentation files."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).\n"
-"To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page.\n"
+msgid "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page."
 msgstr ""
 
 #. type: Title ##
@@ -521,14 +418,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section.\n"
+msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "If the translations are not complete, it does not matter, english will be used for missing strings.\n"
+msgid "If the translations are not complete, it does not matter, english will be used for missing strings."
 msgstr ""
 
 #. type: Title ##
@@ -539,8 +434,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "To preview your modifications, just run:\n"
+msgid "To preview your modifications, just run:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -551,10 +445,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).\n"
-"This page will automatically refresh on each modification.\n"
+msgid "Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).  This page will automatically refresh on each modification."
 msgstr ""
 
 #. type: Title ##
@@ -565,10 +456,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"For now, you only have the english version.\n"
-"To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script.\n"
+msgid "For now, you only have the english version.  To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script."
 msgstr ""
 
 #. type: Plain text
@@ -579,17 +467,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.\n"
-"Please make sure to install a compatible version.\n"
-"If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually.\n"
+msgid "Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.  Please make sure to install a compatible version.  If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "To handle translations, just do:\n"
+msgid "To handle translations, just do:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -600,8 +483,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector.\n"
+msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector."
 msgstr ""
 
 #. type: Title ##
@@ -612,47 +494,32 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "Just edit the english files in `support/documentation/content/en`.\n"
+msgid "Just edit the english files in `support/documentation/content/en`."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file.\n"
+msgid "Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"You can use the `livechat_label` short code to use application strings.\n"
-"See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).\n"
+msgid "You can use the `livechat_label` short code to use application strings.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.\n"
-"See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation).\n"
+msgid "It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"Please use the `livechatnotranslation` option for technical documentation.\n"
-"We don't want technical documentation to be translated, to avoid issues because of a wrong translation.\n"
+msgid "Please use the `livechatnotranslation` option for technical documentation.  We don't want technical documentation to be translated, to avoid issues because of a wrong translation."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid ""
-"Avoid adding line breaks in middle of a sentence.\n"
-"But add a line break after each sentence in a paragraph.\n"
-"This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph.\n"
+msgid "Avoid adding line breaks in middle of a sentence.  But add a line break after each sentence in a paragraph.  This is to facilitate the work for translators: so then can easily check that they don't miss a sentence when translating a parapraph."
 msgstr ""
 
 #. type: Title ###
@@ -663,8 +530,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request.\n"
+msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request."
 msgstr ""
 
 #. type: Title ##
@@ -675,8 +541,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch.\n"
+msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
@@ -687,10 +552,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
-#, no-wrap
-msgid ""
-"You don't need to know how to code to start contributing to this plugin!\n"
-"Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ...\n"
+msgid "You don't need to know how to code to start contributing to this plugin! Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ..."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
@@ -701,8 +563,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/_index.md
-#, no-wrap
-msgid "Interested in contributing? Awesome!\n"
+msgid "Interested in contributing? Awesome!"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -719,46 +580,37 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies.\n"
+msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/).\n"
+msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid ""
-"Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).\n"
-"The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.\n"
+msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org).\n"
+msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support.\n"
+msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support.\n"
+msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support.\n"
+msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -787,8 +639,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
-#, no-wrap
-msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>\n"
+msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -805,25 +656,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"This chat module is based on the XMPP protocol, also known as Jabber.\n"
-"It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).\n"
-"This can for example be useful to facilitate moderation operations.\n"
+msgid "This chat module is based on the XMPP protocol, also known as Jabber.  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can for example be useful to facilitate moderation operations."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/).\n"
+msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Enabling these features requires configuration changes on the server, and on the DNS records.\n"
-"It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills.\n"
+msgid "Enabling these features requires configuration changes on the server, and on the DNS records.  It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills."
 msgstr ""
 
 #. type: Title ##
@@ -836,8 +679,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid "This feature is not yet available, and will come in a future version of the plugin.\n"
+msgid "This feature is not yet available, and will come in a future version of the plugin."
 msgstr ""
 
 #. type: Title ##
@@ -849,10 +691,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the\n"
-"[Prosody server](https://prosody.im) that this plugin uses internally.\n"
+msgid "To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the [Prosody server](https://prosody.im) that this plugin uses internally."
 msgstr ""
 
 #. type: Title ###
@@ -863,41 +702,22 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".\n"
-"By checking this settings, new settings appear below.\n"
+msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this settings, new settings appear below."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"First of all, the \"Prosody server to server port\" field.\n"
-"This one defaults to 5269, which is the standard port for this service.\n"
-"You can however change to another port, if this is already in use on your server.\n"
+msgid "First of all, the \"Prosody server to server port\" field.  This one defaults to 5269, which is the standard port for this service.  You can however change to another port, if this is already in use on your server."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Next, the field \"Server to server network interfaces\" field allows you to specify which network interfaces the server should listen on.\n"
-"The default value \"*, ::\" indicates to listen on all IP addresses.\n"
-"You can change these values, if you wish to listen on only certain IP addresses.\n"
-"The syntax is explained next to the setting.\n"
+msgid "Next, the field \"Server to server network interfaces\" field allows you to specify which network interfaces the server should listen on.  The default value \"*, ::\" indicates to listen on all IP addresses.  You can change these values, if you wish to listen on only certain IP addresses.  The syntax is explained next to the setting."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"For the \"Certificate folder\" setting, you can leave it empty.\n"
-"In this case, the plugin will automatically generate  self-signed certificates.\n"
-"Some XMPP servers may refuse to connect, depending on their configuration.\n"
-"In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.\n"
-"It is up to you to generate and renew them.\n"
-"See bellow for more information.\n"
+msgid "For the \"Certificate folder\" setting, you can leave it empty.  In this case, the plugin will automatically generate self-signed certificates.  Some XMPP servers may refuse to connect, depending on their configuration.  In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.  It is up to you to generate and renew them.  See bellow for more information."
 msgstr ""
 
 #. type: Title ###
@@ -908,16 +728,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "You must open the configured port (5269 by default) on your firewall.\n"
+msgid "You must open the configured port (5269 by default) on your firewall."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"If you are using Docker for your Peertube, you need to modify the `docker-compose.yml` file to open port 5269 of the `peertube` container,\n"
-"so that the outer world can connect to it.\n"
+msgid "If you are using Docker for your Peertube, you need to modify the `docker-compose.yml` file to open port 5269 of the `peertube` container, so that the outer world can connect to it."
 msgstr ""
 
 #. type: Title ###
@@ -928,74 +744,62 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the \"room.your_instance.tld\" component.\n"
+msgid "You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the \"room.your_instance.tld\" component."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "The easiest way to do this is to add an SRV record for the \"room\" [subdomain](https://prosody.im/doc/dns#subdomains):\n"
+msgid "The easiest way to do this is to add an SRV record for the \"room\" [subdomain](https://prosody.im/doc/dns#subdomains):"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)\n"
+msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "TTL: 3600\n"
+msgid "TTL: 3600"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "class: IN\n"
+msgid "class: IN"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "SRV: 0\n"
+msgid "SRV: 0"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "priority: 0\n"
+msgid "priority: 0"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "weight: 5\n"
+msgid "weight: 5"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "port: 5269 (adapt if your changed the default port)\n"
+msgid "port: 5269 (adapt if your changed the default port)"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "target: your_instance.tld. (replace by your instance uri)\n"
+msgid "target: your_instance.tld. (replace by your instance uri)"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Be careful to keep the dot after \"your_instance.tld\".\n"
+msgid "Be careful to keep the dot after \"your_instance.tld\"."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Using the `dig` command to check your record, you should get a result similar to this:\n"
+msgid "Using the `dig` command to check your record, you should get a result similar to this:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1008,10 +812,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).\n"
-"Of course, you can also add this record if you use the standard port. It will also work.\n"
+msgid "If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).  Of course, you can also add this record if you use the standard port. It will also work."
 msgstr ""
 
 #. type: Title ###
@@ -1022,19 +823,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons.\n"
+msgid "The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"It is possible to use certificates validated by a certification authority.\n"
-"However, this requires advanced system administration knowledge.\n"
-"Indeed, due to the multitude of possible use cases, it is impossible to document all situations here.\n"
-"This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a \"basic\" situation (manual installation of Peertube, using letsencrypt).\n"
-"If you are in another situation (Docker installation, certificates signed by another authority, etc...), you will have to adapt this approach by yourself.\n"
+msgid "It is possible to use certificates validated by a certification authority.  However, this requires advanced system administration knowledge.  Indeed, due to the multitude of possible use cases, it is impossible to document all situations here.  This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a \"basic\" situation (manual installation of Peertube, using letsencrypt).  If you are in another situation (Docker installation, certificates signed by another authority, etc...), you will have to adapt this approach by yourself."
 msgstr ""
 
 #. type: Title ####
@@ -1045,30 +839,22 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"It is up to you to generate valid certificates for domains `your_instance.tld` and `room.your_instance.tld`.\n"
-"You can use any [method supported by Prosody](https://prosody.im/doc/certificates).\n"
+msgid "It is up to you to generate valid certificates for domains `your_instance.tld` and `room.your_instance.tld`.  You can use any [method supported by Prosody](https://prosody.im/doc/certificates)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "You must then place these certificates in a folder that will be accessible to the `peertube` user, and specify this folder in the plugin setting \"Certificate folder\".\n"
+msgid "You must then place these certificates in a folder that will be accessible to the `peertube` user, and specify this folder in the plugin setting \"Certificate folder\"."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to\n"
-"prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`\n"
+msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary.\n"
+msgid "The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary."
 msgstr ""
 
 #. type: Title ####
@@ -1079,32 +865,22 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "We assume here that your Peertube installation is \"classic\" (no use of Docker), and that the certificates are generated by letsencrypt, using the certbot tool.\n"
+msgid "We assume here that your Peertube installation is \"classic\" (no use of Docker), and that the certificates are generated by letsencrypt, using the certbot tool."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the MUC (XMPP chat rooms) component.\n"
-"Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain.\n"
+msgid "First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the MUC (XMPP chat rooms) component.  Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.\n"
-"You can use a CNAME entry (or an A entry and a AAAA entry).\n"
+msgid "So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Next, we'll use nginx (already installed for your Peertube) to generate the certbot certificate.\n"
-"We will create a new site. In the file `/etc/nginx/site-available/room.peertube`, add:\n"
+msgid "Next, we'll use nginx (already installed for your Peertube) to generate the certbot certificate.  We will create a new site. In the file `/etc/nginx/site-available/room.peertube`, add:"
 msgstr ""
 
 #. type: Fenced code block (nginx)
@@ -1126,8 +902,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Then enable the site:\n"
+msgid "Then enable the site:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1140,10 +915,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Then we prepare the folder in which we will later import the certificates.\n"
-"We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:\n"
+msgid "Then we prepare the folder in which we will later import the certificates.  We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1154,30 +926,22 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Now you have to configure this folder in the plugin settings, for the parameter \"Certificate folders\".\n"
-"It's important to do this now, otherwise the certificate import script will put the certificates in the wrong folder.\n"
+msgid "Now you have to configure this folder in the plugin settings, for the parameter \"Certificate folders\".  It's important to do this now, otherwise the certificate import script will put the certificates in the wrong folder."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"We will configure certbot to import the generated certificates into the Prosody folder.\n"
-"We can use the ProsodyCtl utility packaged in the plugin.\n"
+msgid "We will configure certbot to import the generated certificates into the Prosody folder.  We can use the ProsodyCtl utility packaged in the plugin."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Note: for it to be available, the plugin must have been started at least once.\n"
+msgid "Note: for it to be available, the plugin must have been started at least once."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` containing:\n"
+msgid "We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` containing:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1194,8 +958,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Then we ask to generate the certificate:\n"
+msgid "Then we ask to generate the certificate:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1206,20 +969,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "If certbot offers you several methods to generate the certificate, choose \"nginx\".\n"
+msgid "If certbot offers you several methods to generate the certificate, choose \"nginx\"."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Normally you should now find the certificates in the configured folder.\n"
+msgid "Normally you should now find the certificates in the configured folder."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube.\n"
+msgid "Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube."
 msgstr ""
 
 #. type: Title ####
@@ -1230,29 +990,22 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube.\n"
+msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.\n"
-"You can use a CNAME entry (or an A entry and a AAAA entry).\n"
-"This is necessary for Let's Encrypt to validate the domain for certificate generation.\n"
+msgid "First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry).  This is necessary for Let's Encrypt to validate the domain for certificate generation."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Enter the directory where your `docker-compose.yml` file exists.\n"
+msgid "Enter the directory where your `docker-compose.yml` file exists."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Open a shell in the certbot container:\n"
+msgid "Open a shell in the certbot container:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1263,8 +1016,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Run certbot:\n"
+msgid "Run certbot:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1275,8 +1027,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "You will be presented with a series of prompts. Enter `2` for the authentication type:\n"
+msgid "You will be presented with a series of prompts. Enter `2` for the authentication type:"
 msgstr ""
 
 #. type: Fenced code block (text)
@@ -1289,8 +1040,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Enter the domain name `room.your_instance.tld`:\n"
+msgid "Enter the domain name `room.your_instance.tld`:"
 msgstr ""
 
 #. type: Fenced code block (text)
@@ -1301,8 +1051,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:\n"
+msgid "Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:"
 msgstr ""
 
 #. type: Fenced code block (text)
@@ -1313,8 +1062,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "You should see output like the following:\n"
+msgid "You should see output like the following:"
 msgstr ""
 
 #. type: Fenced code block (text)
@@ -1328,11 +1076,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.\n"
-"*Note*:  This will also make the files readable to the group with id 999 on the host system.\n"
-"Check the groups on your system to assess this as a risk before running this command.\n"
+msgid "Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.  *Note*: This will also make the files readable to the group with id 999 on the host system.  Check the groups on your system to assess this as a risk before running this command."
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1348,8 +1092,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Exit the certbot container:\n"
+msgid "Exit the certbot container:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1360,10 +1103,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.\n"
-"This is the same as the above, but to be automatically executed after every certificate renewal.\n"
+msgid "Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.  This is the same as the above, but to be automatically executed after every certificate renewal."
 msgstr ""
 
 #. type: Fenced code block (text)
@@ -1374,10 +1114,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.\n"
-"It should look something like this:\n"
+msgid "Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.  It should look something like this:"
 msgstr ""
 
 #. type: Fenced code block (text)
@@ -1390,8 +1127,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Restart your services:\n"
+msgid "Restart your services:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1402,8 +1138,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:\n"
+msgid "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:"
 msgstr ""
 
 #. type: Fenced code block (text)
@@ -1414,8 +1149,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Save the plugin settings and verify Prosody can see the certificates:\n"
+msgid "Save the plugin settings and verify Prosody can see the certificates:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1438,8 +1172,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section.\n"
+msgid "If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -1468,16 +1201,12 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "This section describes the plugin settings page.\n"
+msgid "This section describes the plugin settings page."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"When pressing the «List rooms» button, all existing chatrooms will be listed.\n"
-"You can then find them and moderated them.\n"
+msgid "When pressing the «List rooms» button, all existing chatrooms will be listed.  You can then find them and moderated them."
 msgstr ""
 
 #. type: Title ##
@@ -1488,8 +1217,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares.\n"
+msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
 msgstr ""
 
 #. type: Title ##
@@ -1500,37 +1228,27 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.\n"
-"The chat can be customized (readonly mode, use the current theme, ...).\n"
+msgid "This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.  The chat can be customized (readonly mode, use the current theme, ...)."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!\n"
+msgid "You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!"
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "This settings allows you to choose who can access this modal.\n"
+msgid "This settings allows you to choose who can access this modal."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "The video owner will be able to activate web chats.\n"
+msgid "The video owner will be able to activate web chats."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"Note: for now this feature simply hide the chat.\n"
-"In a future release, the chat will be replaced by a message saying «please log in to [...]».\n"
-"See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information.\n"
+msgid "Note: for now this feature simply hide the chat.  In a future release, the chat will be replaced by a message saying «please log in to [...]».  See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information."
 msgstr ""
 
 #. type: Title ##
@@ -1541,26 +1259,22 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "You can choose which theme to use for ConverseJS:\n"
+msgid "You can choose which theme to use for ConverseJS:"
 msgstr ""
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "Peertube theme: this is a special theme, made especially for peertube's integration.\n"
+msgid "Peertube theme: this is a special theme, made especially for peertube's integration."
 msgstr ""
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "Default ConverseJS theme: this is the default ConverseJS theme.\n"
+msgid "Default ConverseJS theme: this is the default ConverseJS theme."
 msgstr ""
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "ConverseJS concord theme: this is a theme provided by ConverseJS.\n"
+msgid "ConverseJS concord theme: this is a theme provided by ConverseJS."
 msgstr ""
 
 #. type: Title ##
@@ -1571,50 +1285,37 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).\n"
-"If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package.\n"
+msgid "The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).  If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "This settings should only be used if the plugin is broken, and waiting for a patch.\n"
+msgid "This settings should only be used if the plugin is broken, and waiting for a patch."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"This setting enable XMPP clients to connect to the built-in Prosody server.\n"
-"For now, this option **only allows connections from localhost clients**.\n"
+msgid "This setting enable XMPP clients to connect to the built-in Prosody server.  For now, this option **only allows connections from localhost clients**."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room.\n"
+msgid "As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid ""
-"This settings enable XMPP external components to connect to the server.\n"
-"For now, this option **only allows connections from localhost components**.\n"
+msgid "This settings enable XMPP external components to connect to the server.  For now, this option **only allows connections from localhost components**."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "This feature could be used to connect bridges or bots.\n"
+msgid "This feature could be used to connect bridges or bots."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "More informations on Prosody external components [here](https://prosody.im/doc/components).\n"
+msgid "More informations on Prosody external components [here](https://prosody.im/doc/components)."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -1637,18 +1338,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid ""
-"The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.\n"
-"It is not compatible with other CPU architectures.\n"
+msgid "The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.  It is not compatible with other CPU architectures."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid ""
-"To use the plugin, you will have to manually install Prosody on your server\n"
-"(see below).\n"
+msgid "To use the plugin, you will have to manually install Prosody on your server (see below)."
 msgstr ""
 
 #. type: Plain text
@@ -1661,8 +1356,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid "Once it is done, you have to check `Use system Prosody` in the plugin settings.\n"
+msgid "Once it is done, you have to check `Use system Prosody` in the plugin settings."
 msgstr ""
 
 #. type: Title ##
@@ -1673,14 +1367,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid "For standard installation, you just have to install the official `prosody` package for your linux distribution.\n"
+msgid "For standard installation, you just have to install the official `prosody` package for your linux distribution."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid "For example, on Debian/Ubuntu:\n"
+msgid "For example, on Debian/Ubuntu:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1691,10 +1383,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid ""
-"You can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run).\n"
-"For example, on Debian/Ubuntu (and other Systemd based linux distributions):\n"
+msgid "You can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run).  For example, on Debian/Ubuntu (and other Systemd based linux distributions):"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1705,8 +1394,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid "Warning: do not disable Prosody if it is used for another service on your server, like for example Jitsi.\n"
+msgid "Warning: do not disable Prosody if it is used for another service on your server, like for example Jitsi."
 msgstr ""
 
 #. type: Title ##
@@ -1717,18 +1405,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid ""
-"You will have to generate a Peertube image that includes Prosody in the same container that Peertube.\n"
-"I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround.\n"
+msgid "You will have to generate a Peertube image that includes Prosody in the same container that Peertube.  I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid ""
-"To generate and use such an image, please refer to the Docker documentation.\n"
-"The Docker file to generate the image should be:\n"
+msgid "To generate and use such an image, please refer to the Docker documentation.  The Docker file to generate the image should be:"
 msgstr ""
 
 #. type: Fenced code block (Docker)
@@ -1748,22 +1430,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid "You have to disable `metronome` (the XMPP server provided by Yunohost), and install `prosody`.\n"
+msgid "You have to disable `metronome` (the XMPP server provided by Yunohost), and install `prosody`."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid "This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0.\n"
+msgid "This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid ""
-"But it may be removed in a near feature (to avoid drawbacks of this method).\n"
-"I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility.\n"
+msgid "But it may be removed in a near feature (to avoid drawbacks of this method).  I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -1781,20 +1458,17 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 #: support/documentation/content/en/_index.md
-#, no-wrap
-msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
+msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
-#, no-wrap
-msgid "To install or update the plugin, **just use the Peertube web admin interface**.\n"
+msgid "To install or update the plugin, **just use the Peertube web admin interface**."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
-#, no-wrap
-msgid "Here are some other more specific instructions:\n"
+msgid "Here are some other more specific instructions:"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -1817,20 +1491,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
-#, no-wrap
-msgid "Since version v6.0.0, this plugin does not need any Prosody installation.\n"
+msgid "Since version v6.0.0, this plugin does not need any Prosody installation."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
-#, no-wrap
-msgid "If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody.\n"
+msgid "If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
-#, no-wrap
-msgid "If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image.\n"
+msgid "If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -1859,22 +1530,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-#, no-wrap
-msgid ""
-"You can access room settings and moderation tools by opening the chat in a new window,\n"
-"and using the dropdown menu at the top right.\n"
+msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-#, no-wrap
-msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».\n"
+msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-#, no-wrap
-msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room.\n"
+msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room."
 msgstr ""
 
 #. type: Title ##
@@ -1885,18 +1551,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-#, no-wrap
-msgid ""
-"All instance moderators and admins will be owner of created chat rooms.\n"
-"If the video is local (not from a remote Peertube), the video owner will be admin in the chat room.\n"
+msgid "All instance moderators and admins will be owner of created chat rooms.  If the video is local (not from a remote Peertube), the video owner will be admin in the chat room."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-#, no-wrap
-msgid ""
-"You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.\n"
-"When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.\n"
+msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -1919,32 +1579,22 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid "If you are using OBS for streaming, you can easily include the chat in your stream.\n"
+msgid "If you are using OBS for streaming, you can easily include the chat in your stream."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid ""
-"You can use the «share chat link» feature to generate an URL to your chat.\n"
-"The button should be near the chat if you are the video owner (unless it was desactivated by your server admins).\n"
+msgid "You can use the «share chat link» feature to generate an URL to your chat.  The button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid ""
-"Check the «readonly» checkbox in the modal.\n"
-"Then use this link as a «web browser source» in OBS.\n"
+msgid "Check the «readonly» checkbox in the modal.  Then use this link as a «web browser source» in OBS."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid ""
-"You can use the «Transparent background» to have a transparent background in OBS.\n"
-"If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:\n"
+msgid "You can use the «Transparent background» to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
 msgstr ""
 
 #. type: Fenced code block (css)
@@ -1958,11 +1608,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid ""
-"Note: you can customize colors. This is undocumented yet, but you can try this:\n"
-"in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.\n"
-"You must use valid CSS color values, and they must be properly URL encoded.\n"
+msgid "Note: you can customize colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
 msgstr ""
 
 #. type: Title ##
@@ -1973,10 +1619,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid ""
-"You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.\n"
-"The compatibility with this plugin was added in recent versions.\n"
+msgid "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.  The compatibility with this plugin was added in recent versions."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -1993,71 +1636,47 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid ""
-"This chat plugin relies on the XMPP protocol (also known as Jabber).\n"
-"It is therefore possible to connect to the chats using\n"
-"[XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).\n"
-"This can be useful for example to facilitate moderation operations.\n"
+msgid "This chat plugin relies on the XMPP protocol (also known as Jabber).  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can be useful for example to facilitate moderation operations."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid ""
-"The features described on this page must be enabled and configured by\n"
-"your Peertube instance's administrators. You may therefore not have access to them.\n"
+msgid "The features described on this page must be enabled and configured by your Peertube instance's administrators. You may therefore not have access to them."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid ""
-"If this feature is enabled on your instance, you can connect to Peertube\n"
-"chats using any XMPP account.\n"
+msgid "If this feature is enabled on your instance, you can connect to Peertube chats using any XMPP account."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid ""
-"To get the address of the room you want to join, you can use the \"share chat\"\n"
-"button that is located above the chat:\n"
+msgid "To get the address of the room you want to join, you can use the \"share chat\" button that is located above the chat:"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)\n"
+msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid ""
-"By default, the share button is only visible to the owner of the video,\n"
-"and the admins/moderators of the instance.\n"
-"However, admins can decide to display this button for everyone.\n"
+msgid "By default, the share button is only visible to the owner of the video, and the admins/moderators of the instance.  However, admins can decide to display this button for everyone."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid "Then, choose \"Connect using XMPP\":\n"
+msgid "Then, choose \"Connect using XMPP\":"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid "![Share XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)\n"
+msgid "![Share XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid ""
-"Then you just have to click on \"open\" or copy/paste the address of the chat room into your XMPP client\n"
-"(using the \"join a room\" feature).\n"
+msgid "Then you just have to click on \"open\" or copy/paste the address of the chat room into your XMPP client (using the \"join a room\" feature)."
 msgstr ""
 
 #. type: Title #
@@ -2069,10 +1688,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 #: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid ""
-"You can use the language selector in the left menu to view this documentation in different languages.\n"
-"Some translations are missing or incomplete. In this case, you'll see the English version of the text.\n"
+msgid "You can use the language selector in the left menu to view this documentation in different languages.  Some translations are missing or incomplete. In this case, you'll see the English version of the text."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
@@ -2083,23 +1699,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.\n"
+msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid ""
-"| | |\n"
-"|---|---|\n"
-"| ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
+msgid "| | | |---|---| | ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
+msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -2116,30 +1726,25 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
-#, no-wrap
-msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french.\n"
+msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
-#, no-wrap
-msgid "To have a glimpse to the roadmap for upcoming features, please refer to:\n"
+msgid "To have a glimpse to the roadmap for upcoming features, please refer to:"
 msgstr ""
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
-#, no-wrap
-msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
+msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1)."
 msgstr ""
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
-#, no-wrap
-msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
+msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
-#, no-wrap
-msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
+msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr ""
