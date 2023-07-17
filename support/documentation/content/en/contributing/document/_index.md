@@ -87,6 +87,8 @@ We don't want technical documentation to be translated, to avoid issues because 
 
 To facilitate translators work, avoid making too long paragraphs.
 
+For now, it is not possible to use Mardown tables: the translation tools will break them.
+
 ### What if I can't use hugo and/or po4a?
 
 Just edit english markdown files, and specify that you can't build translations when you make your Pull Request.

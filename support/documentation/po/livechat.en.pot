@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-17 15:40+0200\n"
+"POT-Creation-Date: 2023-07-17 16:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -585,6 +585,12 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, markdown-text
 msgid "To facilitate translators work, avoid making too long paragraphs."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+#, markdown-text
+msgid "For now, it is not possible to use Mardown tables: the translation tools will break them."
 msgstr ""
 
 #. type: Title ###
@@ -1902,7 +1908,13 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 #, markdown-text
-msgid "| | | |---|---| | ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |"
+msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, markdown-text
+msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text

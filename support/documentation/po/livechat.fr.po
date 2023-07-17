@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-17 15:40+0200\n"
+"POT-Creation-Date: 2023-07-17 16:00+0200\n"
 "PO-Revision-Date: 2023-07-17 11:28+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -713,6 +713,11 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To facilitate translators work, avoid making too long paragraphs."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+msgid "For now, it is not possible to use Mardown tables: the translation tools will break them."
 msgstr ""
 
 #. type: Title ###
@@ -2444,15 +2449,16 @@ msgstr "Ce plugin pour [Peertube](https://joinpeertube.org/) permet d'intégrer 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 #, fuzzy
-#| msgid ""
-#| "| | |\n"
-#| "|---|---|\n"
-#| "| ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
-msgid "| | | |---|---| | ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |"
-msgstr ""
-"| | |\n"
-"|---|---|\n"
-"| ![capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![capture d'écran du tchat en plein écran](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
+#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)\n"
+msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr "![Partage](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)\n"
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy
+#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)\n"
+msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgstr "![Partage](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -2507,6 +2513,17 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #| msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter.\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "| | |\n"
+#~| "|---|---|\n"
+#~| "| ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
+#~ msgid "| | | |---|---| | ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |"
+#~ msgstr ""
+#~ "| | |\n"
+#~ "|---|---|\n"
+#~ "| ![capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![capture d'écran du tchat en plein écran](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
 
 #, fuzzy
 #~| msgid ""
