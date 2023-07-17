@@ -15,8 +15,14 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Install po4a
-        run: sudo apt update && sudo apt install po4a -y
+      # FIXME: ubuntu-22.04 comes with po4a 0.66.
+      #       We need at least v0.69.
+      #       Github does not provide any other suitable image...
+      #       So... we will trick it by downloading the debian package.
+      # - name: Install po4a
+      #   run: sudo apt update && sudo apt install po4a -y
+      - name: Install po4a from debian bookworm version
+        run: wget http://ftp.debian.org/debian/pool/main/p/po4a/po4a_0.69-1_all.deb && dpkg -i po4a_0.69-1_all.deb
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2

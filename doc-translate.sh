@@ -8,7 +8,7 @@ ignore_pattern='^#*\s*\{\{%\s*livechat_label[^\}]+\s*\}\}\s*$'
 
 # Is po4a new enough?
 function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
-required_version='0.66'
+required_version='0.69'
 current_version=$(po4a --version | sed -En 's,po4a version ([0-9][0-9.]+[0-9]).*,\1,p')
 if version_gt "$required_version" "$current_version"; then
     echo "ERROR: po4a v$required_version or higher required. Current version: $current_version"

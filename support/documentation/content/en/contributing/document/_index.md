@@ -54,7 +54,7 @@ This page will automatically refresh on each modification.
 For now, you only have the english version.
 To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script.
 
-To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.
+To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.
 
 {{% notice warning %}}
 Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.
