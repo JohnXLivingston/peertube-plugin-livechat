@@ -1,0 +1,27 @@
+open_chat: فتح قناة المحادثة
+open_chat_new_window: فتح قناة الدردشة في نافذة جديدة
+close_chat: غلق قناة الدردشة
+use_chat: تفعيل قناة المحادثة
+share_chat_link: مشاركة رابط قناة الدردشة
+read_only: قراءة فقط
+copy: نسخ
+link_copied: تم نسخ الرابط
+error: خطأ
+open: فتح
+chat_for_live_stream: 'الدردشة الخاصة بالمباشر:'
+room_name: اسم القناة
+room_description: وصف قناة الدردشة
+not_found: لا يوجد
+video: فيديو
+channel: القناة
+last_activity: آخر نشاط
+web: الويب
+list_rooms_label: قائمة قنوات الدردشة الموجودة
+room_type_label: نوع قناة الدردشة
+auto_display_label: فتح قناة الدردشة تلقائيا
+all_lives_label: تفعيل الدردشة على كافة المباشرات
+converse_theme_option_peertube: حُلة PeerTube
+help_builtin_prosody_label: خادم Prosody
+prosody_port_label: منفذ Prosody
+prosody_s2s_port_label: منفذ Prosody مِن خادم إلى خادم آخر
+prosody_components_list_label: المكونات الخارجية
