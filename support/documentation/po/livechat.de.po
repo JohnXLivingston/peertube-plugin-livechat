@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-17 17:09+0200\n"
-"PO-Revision-Date: 2023-07-17 14:21+0000\n"
-"Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2023-07-18 19:57+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,27 +84,28 @@ msgstr "Bis März 2023 wurden die Beiträge auf dem `develop` Zweig erstellt. Di
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prerequisite for building this plugin"
-msgstr "Voraussetzung für die Erstellung dieses Plugins:"
+msgstr "Voraussetzung für die Erstellung dieses Plugins"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is highly recommended to be familiar with following concepts:"
 msgstr ""
+"Es wird dringend empfohlen, mit den folgenden Konzepten vertraut zu sein:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NodeJS"
-msgstr ""
+msgstr "NodeJS"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NPM"
-msgstr ""
+msgstr "NPM"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -112,22 +115,22 @@ msgstr "Typescript"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To build the plugin, you must have following packages:"
-msgstr ""
+msgstr "Um das Plugin zu erstellen, benötigen Sie die folgenden Pakete:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`git`"
-msgstr ""
+msgstr "`git`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`npm` (>=8.x)"
-msgstr ""
+msgstr "`npm` (>=8.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`nodejs` (>=14.x)"
-msgstr ""
+msgstr "`nodejs` (>=14.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -138,31 +141,46 @@ msgstr "`build-essential`"
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The plugin needs to build an AppImage for the Prosody XMPP server.  It appears that the way this AppImage is build requires `apt` and `dpkg` commands.  So it will only work \"out of the box\" on Debian-like systems.  If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.  See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  We will provide another solution as soon as possible."
 msgstr ""
+"Das Plugin muss ein AppImage für den Prosody XMPP-Server erstellen.  Es "
+"scheint, dass die Art und Weise, wie dieses AppImage erstellt wird, `apt`- "
+"und `dpkg`-Befehle erfordert.  Daher wird es nur auf Debian-ähnlichen "
+"Systemen funktionieren.  Wenn Sie eine andere Linux-Distribution verwenden, "
+"können Sie versuchen, `apt` und `dpkg` manuell zu installieren.  Siehe zum "
+"Beispiel dieses [Github issue] (https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/issues/200).  Wir werden so bald wie möglich eine "
+"andere Lösung anbieten."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Building this AppImage also requires following packages:"
 msgstr ""
+"Für die Erstellung dieses AppImage sind außerdem folgende Pakete "
+"erforderlich:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`python3-venv`"
-msgstr ""
+msgstr "`python3-venv`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`squashfs-tools`"
-msgstr ""
+msgstr "`squashfs-tools`"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "These dependencies were tested on a Debian Bullseye.  If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github."
 msgstr ""
+"Diese Abhängigkeiten wurden auf dem Betriebssystem Debian Bullseye "
+"getestet.  Wenn es Probleme mit den Abhängigkeiten auf Ihrem UNIX/Linux-"
+"System gibt, öffnen Sie bitte einen Eintrag auf Github."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Clone the repository, buid the plugin, and create your feature branch:"
 msgstr ""
+"Klonen Sie das Repository, bauen Sie das Plugin, und erstellen Sie Ihren "
+"Feature-Zweig:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -403,8 +421,9 @@ msgstr "Der Quellcode der Dokumentation befindet sich im Ordner `support/documen
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation is generated using [Hugo](https://gohugo.io/).  You have to install it on your computer if you want to preview your work."
 msgstr ""
-"Die Dokumentation wird mit [Hugo](https://gohugo.io/) erstellt.\n"
-"Sie müssen es auf Ihrem Computer installieren, wenn Sie eine Vorschau Ihrer Arbeit sehen wollen."
+"Die Dokumentation wird mit [Hugo](https://gohugo.io/) erstellt.  Sie müssen "
+"es auf Ihrem Computer installieren, wenn Sie eine Vorschau Ihrer Arbeit "
+"sehen wollen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -488,10 +507,11 @@ msgstr "Im Moment haben Sie nur die englische Version. Um die Dokumentationszeic
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
-#| msgid "To do so, make sure you have `po4a` (version >= 0.66) installed on your computer.\n"
+#, no-wrap
 msgid "To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.\n"
-msgstr "Stellen Sie dazu sicher, dass Sie `po4a` (Version >= 0.66) auf Ihrem Computer installiert haben.\n"
+msgstr ""
+"Stellen Sie dazu sicher, dass Sie `po4a` (Version >= 0.69) auf Ihrem "
+"Computer installiert haben.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -549,11 +569,15 @@ msgstr "Bitte verwenden Sie die Option `livechatnotranslation` für technische D
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To facilitate translators work, avoid making too long paragraphs."
 msgstr ""
+"Um den Übersetzern die Arbeit zu erleichtern, sollten Sie zu lange Absätze "
+"vermeiden."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
 msgstr ""
+"Im Moment ist es nicht möglich, Markdown-Tabellen zu verwenden: Die "
+"Übersetzungswerkzeuge würden sie nicht korrekt darstellen."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
@@ -603,64 +627,77 @@ msgstr "Interessiert beizutragen? Super!"
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate the plugin"
-msgstr "Übersätzungen"
+msgstr "Das Plugin übersetzen"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate"
-msgstr "Übersätzungen"
+msgstr "Übersätzen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can contribute to this plugin translation.  Translations are handled using the [Weblate](https://weblate.org/) software, using [Framasoft Weblate instance](https://weblate.framasoft.org/)."
 msgstr ""
+"Sie können zur Übersetzung dieses Plugins beitragen.  Die Übersetzungen "
+"werden mit der Software [Weblate](https://weblate.org/) unter Verwendung der "
+"[Framasoft Weblate Instanz](https://weblate.framasoft.org/) bearbeitet."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never modify directly files in the `languages` folder, this could lead to conflicts."
 msgstr ""
+"Ändern Sie niemals direkt Dateien im Ordner `languages`, dies könnte zu "
+"Konflikten führen."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "How to"
-msgstr ""
+msgstr "Wie funktioniert es"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Create an account: https://weblate.framasoft.org/accounts/register/"
 msgstr ""
+"Erstellen Sie ein Konto: https://weblate.framasoft.org/accounts/register/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Validate your email and follow the link sent"
-msgstr ""
+msgstr "Bestätigen Sie Ihre E-Mail und folgen Sie dem zugesandten Link"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Create your password and setup your account"
-msgstr ""
+msgstr "Erstellen Sie Ihr Passwort und richten Sie Ihr Konto ein"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 msgstr ""
+"Rufen Sie die Projektseite des Plugins auf: https://weblate.framasoft.org/"
+"projects/peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Choose the locale you want to translate"
-msgstr ""
+msgstr "Wählen Sie die Sprache, die Sie übersetzen möchten"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Just translate missing sentences, or correct the ones that seems incorrect to you."
 msgstr ""
+"Übersetzen Sie einfach die fehlenden Sätze, oder korrigieren Sie die Sätze, "
+"die Ihnen falsch erscheinen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english."
 msgstr ""
+"Es könnte einige «sehr technische» Zeichenfolgen geben. Wenn Sie sich der "
+"Bedeutung oder Ihrer Übersetzung nicht 100%ig sicher sind, sollten Sie sie "
+"besser nicht übersetzen, damit sie in Englisch angezeigt werden."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -670,128 +707,162 @@ msgstr "Eine neue Sprache hinzufügen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy
-#| msgid ""
-#| "If you think there is a missing locale, please check first if it is handled in Peertube.\n"
-#| "If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it.\n"
 msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
-msgstr "Wenn Sie neue Funktionswünsche, Fehler (Bugs) oder Schwierigkeiten bei der Einrichtung des Plugins haben, können Sie den [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) verwenden.\n"
+msgstr ""
+"Wenn Sie glauben, dass eine Sprache fehlt, prüfen Sie bitte zuerst, ob sie "
+"von Peertube unterstützt wird.  Wenn ja, können Sie [ein Problem erstellen] "
+"(https://github.com/JohnXLivingston/peertube-plugin-livechat/issues), um "
+"danach zu fragen."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding new strings / use translations in the code"
-msgstr ""
+msgstr "Hinzufügen neuer Zeichenfolgen / Verwendung von Übersetzungen im Code"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are working on new features, and need new strings, you can create them directly in Weblate.  The english version is mandatory. Start with it."
 msgstr ""
+"Wenn Sie an neuen Funktionen arbeiten und neue Zeichenketten benötigen, "
+"können Sie diese direkt in Weblate erstellen.  Die englische Version ist "
+"obligatorisch. Beginnen Sie mit ihr."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Each string is linked to a key (for example `use_chat`).  Choose an explicit key in english, lower case."
 msgstr ""
+"Jede Zeichenfolge ist mit einem Schlüssel verknüpft (z. B. `use_chat`).  "
+"Wählen Sie einen expliziten Schlüssel in Englisch und nutzen Sie nur "
+"Kleinbuchstaben."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files, but avoid to commit these changes (to minimize conflict risks)."
 msgstr ""
+"Wenn Sie neue Zeichenketten testen müssen, ohne auf einen Weblate-"
+"Zusammenschluss zu warten, können Sie die Dateien `languages/*.yml` ändern, "
+"aber vermeiden Sie es, diese Änderungen zu übertragen (um das Konfliktrisiko "
+"zu minimieren)."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Use translations in front-end code"
-msgstr ""
+msgstr "Übersetzungen im Front-End-Code verwenden"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.  The constant name must:"
 msgstr ""
+"Bevor Sie eine Zeichenkette im Frontend verwenden, müssen Sie eine neue "
+"Konstante in `client/@types/global.d.ts` deklarieren.  Der Name der "
+"Konstante muss:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "start with the prefix \"LOC_\""
-msgstr ""
+msgstr "mit dem Präfix \"LOC_\" beginnen"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "use the string key, upper cased"
-msgstr ""
+msgstr "den Zeichenketten Schlüssel in Großbuchstaben verwenden"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "you just have to declare its type, not its value"
-msgstr ""
+msgstr "Sie müssen nur den Typ angeben, nicht den Wert"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "For example, to use \"use_chat\", you have to declare:"
-msgstr ""
+msgstr "Um zum Beispiel \"use_chat\" zu verwenden, müssen Sie deklarieren:"
 
 #. type: Fenced code block (typescript)
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "declare const LOC_USE_CHAT: string\n"
-msgstr ""
+msgstr "declare const LOC_USE_CHAT: string\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The `build-client.js` script will read the `client/@types/global.d.ts`, search for such constants, and load their values from the languages files."
 msgstr ""
+"Das Skript `build-client.js` liest die `client/@types/global.d.ts`, sucht "
+"nach solchen Konstanten und lädt deren Werte aus den Sprachdateien."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code."
 msgstr ""
+"Jetzt können Sie einfach `peertubeHelpers.translate(LOC_USE_CHAT)` in Ihrem "
+"Code aufrufen."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Use translations in back-end code"
-msgstr ""
+msgstr "Übersetzungen im Backend-Code verwenden"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "In theory, the only parts of the backend code where you need localization is the settings declaration and standardized data (ActivityPub, RSS, ...).  Here we need to get english strings from the translation key."
 msgstr ""
+"Theoretisch sind die einzigen Teile des Backend-Codes, für die eine "
+"Lokalisierung erforderlich ist, die Deklaration der Einstellungen und "
+"standardisierte Daten (ActivityPub, RSS, ...).  Hier müssen wir englische "
+"Zeichenketten aus dem Übersetzungsschlüssel holen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Note: you should never need another language translation from backend code.  Localization must be done on front-end."
 msgstr ""
+"Hinweis: Sie sollten nie eine weitere Sprachübersetzung vom Backend-Code "
+"benötigen.  Die Lokalisierung muss im Frontend erfolgen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a `lib/loc.ts` module providing a `loc()` function.  Just pass it the key to have the english string: `loc('diagnostic')`'."
 msgstr ""
+"Es gibt ein `lib/loc.ts` Modul, das eine `loc()` Funktion bereitstellt.  "
+"Übergeben Sie ihr einfach den Schlüssel, um die englische Zeichenkette zu "
+"erhalten: `loc('diagnostic')`'."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Documentation translation"
-msgstr "Dokumentation"
+msgstr "Übersätzungs-Dokumentation"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The documentation translation is done using the corresponding Weblate component."
 msgstr ""
+"Die Übersetzung der Dokumentation erfolgt mit Hilfe der entsprechenden "
+"Weblate-Komponente."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a specific \"Hugo shortcodes\" you can use to display an application string.  Saying you want to display the name of the button \"open_chat_new_window\", you can use this in the documentation markdown file:"
 msgstr ""
+"Es gibt einen speziellen \"Hugo Shortcode\", den Sie verwenden können, um "
+"eine Anwendungszeichenkette anzuzeigen.  Wenn Sie beispielsweise den Namen "
+"der Schaltfläche \"open_chat_new_window\" anzeigen möchten, können Sie dies "
+"in der Markdown-Datei der Dokumentation verwenden:"
 
 #. type: Fenced code block (hugo)
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "{{%/* livechat_label open_chat_new_window */%}}\n"
-msgstr ""
+msgstr "{{%/* livechat_label open_chat_new_window */%}}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can also prevent a whole page from being translating by adding `livechatnotranslation: true` in the Yaml Font Matter section:"
 msgstr ""
+"Sie können auch verhindern, dass eine ganze Seite übersetzt wird, indem Sie "
+"`livechatnotranslation: true` in der Yaml Font Matter Sektion hinzufügen:"
 
 #. type: Fenced code block (yaml)
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -805,26 +876,43 @@ msgid ""
 "  livechatnotranslation: true\n"
 "  ---\n"
 msgstr ""
+"  ---\n"
+"  title: \"Drittanbieter\"\n"
+"  description: \"Anzeige des Livechats mit Software von Drittanbietern.\"\n"
+"  weight: 20\n"
+"  chapter: false\n"
+"  livechatnotranslation: true\n"
+"  ---\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never translate a string in the `livechat.en.pot` file, it would be ignored.  Instead, edit directly the markdown files."
 msgstr ""
+"Übersetze niemals eine Zeichenkette in der Datei `livechat.en.pot`, sie "
+"würde ignoriert werden.  Bearbeiten Sie stattdessen direkt die Markdown-"
+"Dateien."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If a string contains a link, you can change it for the correct link in the translated language.  For example, for a link to this documentation, you can add the language code in the url."
 msgstr ""
+"Wenn eine Zeichenfolge einen Link enthält, können Sie ihn in den richtigen "
+"Link in der übersetzten Sprache ändern.  Zum Beispiel können Sie für einen "
+"Link zu dieser Dokumentation den Sprachcode in die URL einfügen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Some strings are block of code.  Don't translate code.  But you can translate comments, or parameters if relevant."
 msgstr ""
+"Einige Zeichenfolgen sind Code-Blöcke.  Übersetzen Sie den Code nicht.  Aber "
+"Sie können Kommentare oder Parameter übersetzen, wenn sie relevant sind."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are not sure, just don't translate, and ask what to do."
 msgstr ""
+"Wenn Sie sich nicht sicher sind, übersetzen Sie einfach nicht und fragen "
+"Sie, was zu tun ist."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
@@ -1020,12 +1108,12 @@ msgstr "record name: _xmpp-server._tcp.room.ihre_instanz.tld. (ersetzen Sie «ih
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "TTL: 3600"
-msgstr ""
+msgstr "TTL: 3600"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "class: IN"
-msgstr ""
+msgstr "class: IN"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1035,12 +1123,12 @@ msgstr "SRV: 0"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "priority: 0"
-msgstr ""
+msgstr "priority: 0"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "weight: 5"
-msgstr ""
+msgstr "weight: 5"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1318,7 +1406,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the domain name `room.your_instance.tld`:"
-msgstr ""
+msgstr "Geben Sie den Domänennamen \"room.ihre_instanz.tld\" ein:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1330,6 +1418,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:"
 msgstr ""
+"Geben Sie das Verzeichnis an, in dem der PeerTube-Webserver Anfragen für "
+"Let's Encrypt bedient, `/var/www/certbot`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1405,7 +1495,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Restart your services:"
-msgstr "Start your debugger server."
+msgstr "Den Dienst neustarten:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1574,8 +1664,9 @@ msgstr "Diese Einstellung sollte nur verwendet werden, wenn das Plugin defekt is
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting enable XMPP clients to connect to the built-in Prosody server.  For now, this option **only allows connections from localhost clients**."
 msgstr ""
-"Diese Einstellung ermöglicht es XMPP-Clients, sich mit dem eingebauten Prosody-Server zu verbinden.\n"
-"Im Moment erlaubt diese Option **nur Verbindungen von localhost-Clients**."
+"Diese Einstellung ermöglicht es XMPP-Clients, sich mit dem eingebauten "
+"Prosody-Server zu verbinden.  Im Moment erlaubt diese Option **nur "
+"Verbindungen von localhost-Clients**."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1990,11 +2081,15 @@ msgstr "Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, 
 #: support/documentation/content/en/intro/_index.md
 msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgstr ""
+"![Chat screenshot](/peertube-plugin-livechat/images/chat."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
 msgstr ""
+"![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
