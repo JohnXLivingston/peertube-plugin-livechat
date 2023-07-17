@@ -7,27 +7,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2023-07-17 17:09+0200\n"
-"PO-Revision-Date: 2023-07-17 10:52+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Arabic <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ar/>\n"
+"PO-Revision-Date: 2023-07-17 19:41+0000\n"
+"Last-Translator: ButterflyOfFire <butterflyoffire@protonmail.com>\n"
+"Language-Team: Arabic <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 4.18.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact the author"
-msgstr ""
+msgstr "الاتصال بالمؤلف"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact me"
-msgstr ""
+msgstr "الاتصال بي"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
@@ -49,7 +51,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Code of Conduct"
-msgstr ""
+msgstr "قواعد السلوك"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -60,7 +62,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Develop"
-msgstr ""
+msgstr "التطوير"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -258,7 +260,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Restart Prosody"
-msgstr ""
+msgstr "إعادة تشغيل Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -302,7 +304,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Restart Peertube."
-msgstr ""
+msgstr "إعادة تشغيل Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -351,13 +353,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Documentation"
-msgstr ""
+msgstr "المستندات"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "General information"
-msgstr ""
+msgstr "معلومات عامة"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
