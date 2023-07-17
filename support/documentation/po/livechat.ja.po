@@ -8,13 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-14 19:55+0200\n"
-"PO-Revision-Date: 2023-07-12 12:16+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-07-17 10:59+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Japanese <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -32,13 +35,20 @@ msgstr "お問い合わせ"
 #: support/documentation/content/en/contact/_index.md
 #, fuzzy, no-wrap
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
-msgstr "もし、ご質問、このプラグインに関して話したいことがある場合、お好きなJabberクライアントを使って、こちらのXMPPルームに参加してください: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join).\n"
+msgstr ""
+"もし、ご質問、このプラグインに関して話したいことがある場合、お好きなJabberク"
+"ライアントを使って、こちらのXMPPルームに参加してください: [plugin-livechat-"
+"support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny."
+"org?join).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 #, fuzzy, no-wrap
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/).\n"
-msgstr "もし、プロジェクトを金銭面でご支援頂ける場合は、メールにて git.[at].john-livingston.fr, までご連絡頂くか、私の[Liberapay profile](https://liberapay.com/JohnLivingston/)をご確認頂けますと幸いです。\n"
+msgstr ""
+"もし、プロジェクトを金銭面でご支援頂ける場合は、メールにて git.[at].john-"
+"livingston.fr, までご連絡頂くか、私の[Liberapay profile](https://liberapay."
+"com/JohnLivingston/)をご確認頂けますと幸いです。\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -477,7 +487,7 @@ msgstr ""
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "hugo serve -s support/documentation/\n"
 msgstr "ドキュメンテーション"
 
@@ -654,16 +664,22 @@ msgstr "クレジット"
 #, fuzzy, no-wrap
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies.\n"
 msgstr ""
-"[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json)、\n"
-"[COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md)\n"
-"と [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE)\n"
-"ファイルには、このソフトウェアと使用しているライブラリなどのライセンス情報が含まれています。\n"
+"[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/"
+"blob/main/package.json)、\n"
+"[COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
+"main/COPYRIGHT.md)\n"
+"と [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/"
+"blob/main/LICENSE)\n"
+"ファイルには、このソフトウェアと使用しているライブラリなどのライセンス情報が"
+"含まれています。\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, fuzzy, no-wrap
 msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/).\n"
-msgstr "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/).\n"
+msgstr ""
+"The plugin is maintained by [John Livingston](https://www.john-livingston.fr/"
+").\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -672,32 +688,42 @@ msgid ""
 "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).\n"
 "The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.\n"
 msgstr ""
-"Peertubeのマスコット[Sepia](https://www.davidrevoy.com/index.php?tag/peertube)を制作してくださったDavid Revoy氏に感謝致します。\n"
-"キャラクターデザインは、CC-Byライセンスであり、本プラグインの一部のロゴとアバターを作成する為に使用されているSVGファイルはGPLv3.0です。\n"
+"Peertubeのマスコット[Sepia](https://www.davidrevoy.com/index.php?tag/"
+"peertube)を制作してくださったDavid Revoy氏に感謝致します。\n"
+"キャラクターデザインは、CC-Byライセンスであり、本プラグインの一部のロゴとアバ"
+"ターを作成する為に使用されているSVGファイルはGPLv3.0です。\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, fuzzy, no-wrap
 msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org).\n"
-msgstr "[Peertube](https://joinpeertube.org/)を実現し、また経済的な支援も行っている[Framasoft](https://framasoft.org)に感謝致します。\n"
+msgstr ""
+"[Peertube](https://joinpeertube.org/"
+")を実現し、また経済的な支援も行っている[Framasoft](https://framasoft."
+"org)に感謝致します。\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, fuzzy, no-wrap
 msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support.\n"
-msgstr "経済的な支援を行って頂いている[ritimo](https://www.ritimo.org/)に感謝致します。\n"
+msgstr "経済的な支援を行って頂いている[ritimo](https://www.ritimo.org/"
+")に感謝致します。\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, fuzzy, no-wrap
 msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support.\n"
-msgstr "経済的な支援を行って頂いている[Code Lutin](https://www.codelutin.com/)/[Rétribution Copie Publique](https://copiepublique.fr/)に感謝致します。\n"
+msgstr ""
+"経済的な支援を行って頂いている[Code Lutin](https://www.codelutin.com/)/["
+"Rétribution Copie Publique](https://copiepublique.fr/)に感謝致します。\n"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 #, fuzzy, no-wrap
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support.\n"
-msgstr "経済的な支援を行って頂いている[NlNet](https://nlnet.nl/)/[NGI0 Entrust fund](https://nlnet.nl/entrust/)(https://copiepublique.fr/)に感謝致します。\n"
+msgstr ""
+"経済的な支援を行って頂いている[NlNet](https://nlnet.nl/)/[NGI0 Entrust "
+"fund](https://nlnet.nl/entrust/)(https://copiepublique.fr/)に感謝致します。\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
@@ -1469,7 +1495,10 @@ msgid ""
 "Note: for now this feature simply hide the chat.\n"
 "In a future release, the chat will be replaced by a message saying «please log in to [...]».\n"
 "See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information.\n"
-msgstr "メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、変更をご確認ください : [変更履歴](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
+msgstr ""
+"メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、"
+"変更をご確認ください : [変更履歴](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1721,7 +1750,10 @@ msgstr ""
 #: support/documentation/content/en/_index.md
 #, fuzzy, no-wrap
 msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
-msgstr "メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、変更をご確認ください : [変更履歴](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
+msgstr ""
+"メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、"
+"変更をご確認ください : [変更履歴](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/CHANGELOG.md).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
@@ -2011,7 +2043,8 @@ msgstr "PeerTube ライブチャットプラグイン"
 msgid ""
 "You can use the language selector in the left menu to view this documentation in different languages.\n"
 "Some translations are missing or incomplete. In this case, you'll see the English version of the text.\n"
-msgstr "左側のメニューにある言語セレクターを使って、このドキュメントをさまざまな言語で表示することができます。\n"
+msgstr "左側のメニューにある言語セレクターを使って、このドキュメントをさまざまな言語"
+"で表示することができます。\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/intro/_index.md
@@ -2023,7 +2056,9 @@ msgstr "はじめに"
 #: support/documentation/content/en/intro/_index.md
 #, fuzzy, no-wrap
 msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos.\n"
-msgstr "この[Peertube](https://joinpeertube.org/)プラグインは、お使いのPeerTubeインスタンスの動画に対してチャットシステムを提供します。\n"
+msgstr ""
+"この[Peertube](https://joinpeertube.org/)プラグインは、お使いのPeerTubeインス"
+"タンスの動画に対してチャットシステムを提供します。\n"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -2035,13 +2070,18 @@ msgid ""
 msgstr ""
 "| | |\n"
 "|---|---|\n"
-"| ![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![チャット画面のスクリーンショットを全画面で表示する](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
+"| ![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat."
+"png?classes=shadow,border&height=200px) | "
+"![チャット画面のスクリーンショットを全画面で表示する](/peertube-"
+"plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |\n"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 #, fuzzy, no-wrap
 msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).\n"
-msgstr "実際の動きを[デモ](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)でご確認頂けます。\n"
+msgstr ""
+"実際の動きを[デモ](https://www.yiny.org/w/399a8d13-d4cf-"
+"4ef2-b843-98530a8ccbae)でご確認頂けます。\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/issues/_index.md
@@ -2059,7 +2099,10 @@ msgstr "新規機能のリクエスト / バグトラッキング"
 #: support/documentation/content/en/issues/_index.md
 #, fuzzy, no-wrap
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french.\n"
-msgstr "新しい機能のリクエスト、バグ、プラグインのセットアップ時に問題が発生した場合は、[Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)から報告してください。\n"
+msgstr ""
+"新しい機能のリクエスト、バグ、プラグインのセットアップ時に問題が発生した場合"
+"は、[Github issue tracker](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/issues)から報告してください。\n"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
@@ -2071,20 +2114,24 @@ msgstr ""
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
-msgstr "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
+msgstr ""
+"this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 #, fuzzy, no-wrap
 #| msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
 msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones).\n"
-msgstr "this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
+msgstr ""
+"this [github project](https://github.com/users/JohnXLivingston/projects/1).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 #, fuzzy, no-wrap
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.\n"
-msgstr "あなたがWebデザイナーの方または、ConverseJS/Prosody/XMPP上級者の方の場合は、このプラグインをより良くする為に力を貸してください、歓迎致します。\n"
+msgstr ""
+"あなたがWebデザイナーの方または、ConverseJS/Prosody/XMPP上級者の方の場合は、"
+"このプラグインをより良くする為に力を貸してください、歓迎致します。\n"
 
 #, fuzzy, no-wrap
 #~ msgid "Documentation translation"
