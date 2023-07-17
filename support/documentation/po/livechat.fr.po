@@ -55,10 +55,7 @@ msgstr "Code de conduite"
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
-msgstr ""
-"Ce code de conduite est adapté du [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, disponible à l'adresse [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html). "
-"Les traductions sont disponibles à l'adresse [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations). "
-"Les cas de comportements abusifs, harcelants ou tout autre comportement inacceptables peuvent être signalés aux dirigeant·e·s de la communauté responsables de l’application du code de conduite à git.[at].john-livingston.fr."
+msgstr "Ce code de conduite est adapté du [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, disponible à l'adresse [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html). Les traductions sont disponibles à l'adresse [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations). Les cas de comportements abusifs, harcelants ou tout autre comportement inacceptables peuvent être signalés aux dirigeant·e·s de la communauté responsables de l’application du code de conduite à git.[at].john-livingston.fr."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -69,9 +66,7 @@ msgstr "Développer"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue."
-msgstr ""
-"Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en créant un ticket ou en commentant un ticket existant, avant de commencer à travailler dessus."
-"Et annoncez clairement à la communauté que vous commencez à travailler dessus. Ceci afin d'éviter que plusieurs personnes travaillent sur la même chose et entrent en conflit."
+msgstr "Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en créant un ticket ou en commentant un ticket existant, avant de commencer à travailler dessus.Et annoncez clairement à la communauté que vous commencez à travailler dessus. Ceci afin d'éviter que plusieurs personnes travaillent sur la même chose et entrent en conflit."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -146,7 +141,6 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#| msgid "To build the plugin, you must have following packages:\n"
 msgid "Building this AppImage also requires following packages:"
 msgstr ""
 
@@ -249,11 +243,7 @@ msgstr "ESBuild versus Typescript"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
-msgstr ""
-"Ce plugin utilise ESBuild pour compiler le code front-end, comme le plugin `peertube-plugin-quickstart` officiel. "
-"ESBuild peut gérer Typescript, mais ne vérifie pas les types (voir [la documentation ESBuild](https://esbuild.github.io/content-types/#typescript)). "
-"C'est pourquoi on compile d'abord Typescript avec l'option `-noEmit`, juste pour vérifier les types (`check:client:ts` dans le fichier package.json). "
-"Ensuite, si tout est ok, on lance ESBuild pour générer le javascript compilé."
+msgstr "Ce plugin utilise ESBuild pour compiler le code front-end, comme le plugin `peertube-plugin-quickstart` officiel. ESBuild peut gérer Typescript, mais ne vérifie pas les types (voir [la documentation ESBuild](https://esbuild.github.io/content-types/#typescript)). C'est pourquoi on compile d'abord Typescript avec l'option `-noEmit`, juste pour vérifier les types (`check:client:ts` dans le fichier package.json). Ensuite, si tout est ok, on lance ESBuild pour générer le javascript compilé."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
