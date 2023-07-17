@@ -22,7 +22,7 @@ jobs:
       # - name: Install po4a
       #   run: sudo apt update && sudo apt install po4a -y
       - name: Install po4a from debian bookworm version
-        run: wget http://ftp.debian.org/debian/pool/main/p/po4a/po4a_0.69-1_all.deb && dpkg -i po4a_0.69-1_all.deb
+        run: wget http://ftp.debian.org/debian/pool/main/p/po4a/po4a_0.69-1_all.deb && sudo dpkg -i po4a_0.69-1_all.deb
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
