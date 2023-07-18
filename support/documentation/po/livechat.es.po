@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2023-07-17 17:09+0200\n"
-"PO-Revision-Date: 2023-07-17 19:41+0000\n"
+"PO-Revision-Date: 2023-07-18 19:57+0000\n"
 "Last-Translator: Tony Simoes <asrmail@protonmail.com>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -144,6 +144,13 @@ msgstr "`build-essential`"
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The plugin needs to build an AppImage for the Prosody XMPP server.  It appears that the way this AppImage is build requires `apt` and `dpkg` commands.  So it will only work \"out of the box\" on Debian-like systems.  If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.  See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  We will provide another solution as soon as possible."
 msgstr ""
+"El plugin necesita construir una AppImage para el servidor XMPP Prosody .  "
+"Al parecer la forma en que se construye esta AppImage requiere los comandos "
+"`apt` y `dpkg`.  Así que sólo funcionará \"out of the box\" en sistemas tipo "
+"Debian.  Si utiliza otra distribución de Linux, puede intentar instalar `apt`"
+" y `dpkg` manualmente.  Vea por ejemplo este [Issue de Github](https://github"
+".com/JohnXLivingston/peertube-plugin-livechat/issues/200).  Proporcionaremos "
+"otra solución lo antes posible."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -165,8 +172,7 @@ msgstr "`squashfs-tools`"
 msgid "These dependencies were tested on a Debian Bullseye.  If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github."
 msgstr ""
 "Estas dependencias se probaron en Debian Bullseye… Si hay algún problema de "
-"dependencias en su sistema UNIX/Linux, por favor abra una incidente en "
-"Github."
+"dependencias en su sistema UNIX/Linux, por favor abra un Issue en Github."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -206,16 +212,23 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder."
 msgstr ""
+"El código front-end se sitúa en el directorio `client`, el back-end en "
+"`server`. Hay código compartido en el directorio `shared`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 msgstr ""
+"Para obtener instrucciones generales (desarrollo de plugins, generación, "
+"instalación, ...), consulte la página [Peertube documentation](https://docs."
+"joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "You can build the plugin with extra debug features simply by using:"
 msgstr ""
+"Puede generar el plugin con características adicionales de depuración "
+"simplemente usando:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -227,18 +240,26 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "ESBuild vs Typescript"
-msgstr ""
+msgstr "ESBuild vs Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
 msgstr ""
+"Este plugin utiliza ESBuild para la generación de código frontend, al igual "
+"que el plugin oficial `peertube-plugin-quickstart`.  ESBuild puede manejar "
+"TypeScript, pero no verifica los tipos (ver [documentación de "
+"ESBuild](https://esbuild.github.io/content-types/#typescript)).  Por ello "
+"primero compilamos TypeScript con la opción `-noEmit`, sólo para la "
+"verificación de los tipos (`check:client:ts` en el fichero package.json).  "
+"Luego, si todo está bien, ejecutamos ESBuild para generar el javascript "
+"compilado."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Debug Mode"
-msgstr ""
+msgstr "Modo depuración"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -254,6 +275,9 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The simple existence of this file is sufficient to trigger the debug mode.  To make sure it's taken into account, you can restart your Peertube instance."
 msgstr ""
+"La simple existencia de este archivo es suficiente para activar el modo de "
+"depuración.  Para asegurarte de que se toma en cuenta, puedes reiniciar tu "
+"instancia de Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -264,6 +288,8 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Don't enable this mode on a production server, neither on a public server.  This could cause security issues."
 msgstr ""
+"No habilites este modo en un servidor de producción, ni en un servidor "
+"público. Esto podría ocasionar problemas de seguridad."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -291,6 +317,8 @@ msgstr "Depurador de Prosody"
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 msgstr ""
+"Es posible conectar la AppImage Prosody a un depurador remoto usando "
+"[MobDebug]https://luarocks.org/modules/paulclinger/mobdebug)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -309,26 +337,42 @@ msgid ""
 "  }\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"debug_prosody\": {\n"
+"    \"debugger_path\": \"/the_path_to_mobdebug/src\",\n"
+"    \"host\": \"localhost\",\n"
+"    \"port\": \"8172\"\n"
+"  }\n"
+"}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is."
 msgstr ""
+"`host` y `port` son opcionales. `debugger_path` debe apuntar a la carpeta "
+"donde se encuentra el archivo `MobDebug` `.lua`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Restart Peertube."
-msgstr ""
+msgstr "Reiniciar Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Start your debugger server."
-msgstr ""
+msgstr "Inicie su servidor de depuración."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  This call does not need any authentication.  It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  You can even configure your debug server to launch this request automatically."
 msgstr ""
+"Para que Prosody se conecte al depurador, llame a la API "
+"`http://your_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`. Esta llamada no necesita ninguna "
+"autenticación. Se puede hacer desde una línea de comandos, por ejemplo con `"
+"curl http://your_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`. Incluso puede configurar su servidor de "
+"depuración para iniciar esta solicitud automáticamente."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -339,17 +383,24 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quick dev environment using Docker"
-msgstr ""
+msgstr "Entorno de desarrollo rápido con Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker."
 msgstr ""
+"Hay un tutorial, en francés, en el [foro de Peertube](https://framacolibri."
+"org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rap"
+"idement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) que "
+"explica cómo construir rápidamente un entorno de desarrollo utilizando "
+"Docker."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev)."
 msgstr ""
+"Se creó un repositorio sobre ello, consulte [pt-plugin-dev](https://codeberg."
+"org/mose/pt-plugin-dev)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -367,13 +418,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Documentation"
-msgstr ""
+msgstr "Documentación"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "General information"
-msgstr ""
+msgstr "Información general"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -409,7 +460,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Translations"
-msgstr ""
+msgstr "Traducciones"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
