@@ -55,6 +55,8 @@ Clone the repository, buid the plugin, and create your feature branch:
 # Clone the repository. Dont forget the --recursive to clone submodules.
 git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive
 
+cd peertube-plugin-livechat
+
 # Install NPM dependencies and build the module for the first time:
 npm install
 
