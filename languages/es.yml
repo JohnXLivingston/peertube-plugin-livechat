@@ -168,4 +168,15 @@ prosody_muc_log_by_default_description: "Si está marcado, el contenido de la sa
   \ es posible habilitar/deshabilitar el contenido\nsalvaguardado de una sala específica,\
   \ editando sus propiedades.\n"
 prosody_muc_expiration_label: Caducidad del historial de la sala
-prosody_s2s_port_label: Puerto de servidor a servidor Prosody
+prosody_s2s_port_label: Puerto Prosody de servidor a servidor
+prosody_s2s_port_description: "El puerto que se usará para las conexiones XMPP s2s\
+  \ (servidor a servidor).<br>\nDebe utilizar el puerto estándar 5269.\nDe lo contrario,\
+  \ debería <a href=\"https://prosody.im/doc/s2s\">\n   configurar un registro DNS\
+  \ específico\n</a>.\n"
+prosody_s2s_interfaces_description: "Las interfaces de red para escuchar conexiones\
+  \ de servidor a servidor.<br>\nLista de direcciones IP para escuchar, separadas\
+  \ por comas (se eliminarán los espacios).<br>\nPuede utilizar «*» para escuchar\
+  \ en todas las interfaces IPv4 y «::» para todas las IPv6.<br>\nEjemplos:\n<ul>\n\
+  \   <li>*, ::</li>\n   <li>*</li>\n   <li>127.0.0.1, ::1</li>\n   <li>172.18.0.42</li>\n\
+  </ul>\n"
+prosody_s2s_interfaces_label: Interfaces de red de servidor a servidor
