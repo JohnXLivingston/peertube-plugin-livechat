@@ -1,7 +1,7 @@
 ---
 title: "User documentation"
 description: "Plugin peertube-plugin-livechat user documentation"
-weight: 40
+weight: 10
 chapter: false
 ---
 
