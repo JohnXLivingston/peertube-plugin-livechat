@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-19 08:49+0200\n"
+"POT-Creation-Date: 2023-07-25 17:54+0200\n"
 "PO-Revision-Date: 2023-07-19 07:08+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -189,33 +188,25 @@ msgid ""
 "git push --set-upstream me my_development\n"
 "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
 msgstr ""
-"# Cloner le dépot. N'oubliez pas le --recursive, pour clôner les sous-"
-"modules.\n"
-"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --"
-"recursive\n"
+"# Cloner le dépot. N'oubliez pas le --recursive, pour clôner les sous-modules.\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive\n"
 "\n"
 "cd peertube-plugin-livechat\n"
 "\n"
-"# Installer les dépendances NPM et compiler le plugin pour la première fois :"
-"\n"
+"# Installer les dépendances NPM et compiler le plugin pour la première fois :\n"
 "npm install\n"
 "\n"
 "# Compiler le plugin après une modification :\n"
 "npm run build\n"
 "\n"
 "# Si vous avez un fork du dépot, ajoutez le en remote (exemple) :\n"
-"git remote add me git@github.com:MON_COMPTE_GITHUB/peertube-plugin-livechat."
-"git\n"
+"git remote add me git@github.com:MON_COMPTE_GITHUB/peertube-plugin-livechat.git\n"
 "\n"
-"# Créez une branche locale pour vos développements et placez vous dessus "
-"(exemple) :\n"
-"git checkout mon_developpement # NB: si un ticket y est associé, utilisé le "
-"nom fix_1234 (où 1234 est le numéro du ticket)\n"
-"# Pour proposer vos modifications, poussez votre branche sur votre dépot "
-"(exemple) :\n"
+"# Créez une branche locale pour vos développements et placez vous dessus (exemple) :\n"
+"git checkout mon_developpement # NB: si un ticket y est associé, utilisé le nom fix_1234 (où 1234 est le numéro du ticket)\n"
+"# Pour proposer vos modifications, poussez votre branche sur votre dépot (exemple) :\n"
 "git push --set-upstream me mon_developpement\n"
-"# Rendez-vous ensuite sur votre dépot github avec votre navigateur web pour "
-"proposer la Pull Request (voir les instructions complémentaires ci-dessous)\n"
+"# Rendez-vous ensuite sur votre dépot github avec votre navigateur web pour proposer la Pull Request (voir les instructions complémentaires ci-dessous)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -273,18 +264,12 @@ msgstr "Pour activer ce mode, il suffit de créer un fichier `/var/www/peertube/
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The simple existence of this file is sufficient to trigger the debug mode.  To make sure it's taken into account, you can restart your Peertube instance."
-msgstr ""
-"La simple existance de ce fichier suffit à déclencher le mode debug. Pour "
-"être sûr qu'il est pris en compte, vous pouvez redémarrer votre instance "
-"Peertube."
+msgstr "La simple existance de ce fichier suffit à déclencher le mode debug. Pour être sûr qu'il est pris en compte, vous pouvez redémarrer votre instance Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This file can contain some JSON to enable more advanced options.  To have a list of existing parameters, check `server/lib/debug.ts`.  Restart Peertube after each content modification."
-msgstr ""
-"Ce fichier peut également contenir du JSON qui pourra activer d'autres "
-"options. Pour en avoir la liste, vous pouvez regarder le code de `server/lib/"
-"debug.ts`. Redémarrez Peertube après chaque modification de son contenu."
+msgstr "Ce fichier peut également contenir du JSON qui pourra activer d'autres options. Pour en avoir la liste, vous pouvez regarder le code de `server/lib/debug.ts`. Redémarrez Peertube après chaque modification de son contenu."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -300,12 +285,7 @@ msgstr "Redémarrer Prosody"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.  This call don't need any authentificaiton.  It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`."
-msgstr ""
-"Pour redémarrer Prosody quand le mode debug est activé, vous pouvez appeler "
-"l'API `http://votre_instance.tld/plugins/livechat/router/api/restart_prosody`"
-". Cet appel n'a pas besoin d'authentification. Il peut se faire depuis une "
-"ligne de commande, par exemple avec `curl http://votre_instance.tld/plugins/"
-"livechat/router/api/restart_prosody."
+msgstr "Pour redémarrer Prosody quand le mode debug est activé, vous pouvez appeler l'API `http://votre_instance.tld/plugins/livechat/router/api/restart_prosody`. Cet appel n'a pas besoin d'authentification. Il peut se faire depuis une ligne de commande, par exemple avec `curl http://votre_instance.tld/plugins/livechat/router/api/restart_prosody."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -362,14 +342,8 @@ msgstr "Lancer votre serveur de debug."
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  This call does not need any authentication.  It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  You can even configure your debug server to launch this request automatically."
 msgstr ""
-"Pour que Prosody se connecte au debugger, appelez l'API "
-"`http://votre_instance.tld/plugins/livechat/router/api/"
-"restart_prosody?debugger=true`. Cet appel n'a pas besoin d'authentification."
-"\n"
-"Il peut se faire depuis une ligne de commande, par exemple avec `curl "
-"http://votre_instance.tld/plugins/livechat/router/api/"
-"restart_prosody?debugger=true`. Vous pouvez même configurer votre serveur de "
-"debuggage pour lancer cette commande automatiquement."
+"Pour que Prosody se connecte au debugger, appelez l'API `http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`. Cet appel n'a pas besoin d'authentification.\n"
+"Il peut se faire depuis une ligne de commande, par exemple avec `curl http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`. Vous pouvez même configurer votre serveur de debuggage pour lancer cette commande automatiquement."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -444,11 +418,7 @@ msgstr "Le thème utilisé est [hugo-theme-learn](https://learn.netlify.app/). I
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.  This will trigger github and gitlab pipelines, and update published documentation."
-msgstr ""
-"Quand une version du plugin est publiée, ou quand la documentation est mise "
-"à jour, les mainteneur⋅euses du plugin fusionnerons la branche `main` dans "
-"la branche `documentation`. Ce qui aura pour effet de déclencher les "
-"pipelines github et gitlab pour mettre à jour les versions publiées."
+msgstr "Quand une version du plugin est publiée, ou quand la documentation est mise à jour, les mainteneur⋅euses du plugin fusionnerons la branche `main` dans la branche `documentation`. Ce qui aura pour effet de déclencher les pipelines github et gitlab pour mettre à jour les versions publiées."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -588,6 +558,11 @@ msgstr "Pour faciliter le travail des traducteur⋅rices, évitez de faire des p
 msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
 msgstr "Pour l'instant il n'est pas possible d'utiliser des tableaux Markdown : les outils de translation ne savent pas les gérer."
 
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+msgid "There may be links to documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
+msgstr ""
+
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
@@ -678,9 +653,7 @@ msgstr "Choisissez votre mot de passe, et configurez votre compte"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
-msgstr ""
-"Allez sur le projet du plugin de tchat : https://weblate.framasoft.org/"
-"projects/peertube-livechat/peertube-plugin-livechat/"
+msgstr "Allez sur le projet du plugin de tchat : https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -790,16 +763,12 @@ msgstr "En théorie, les seules parties du code qui ont besoin de traductions so
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Note: you should never need another language translation from backend code.  Localization must be done on front-end."
-msgstr ""
-"Note : vous ne devriez jamais avoir besoin d'autres langues que l'anglais "
-"pour le code backend. Les traductions doivent se faire coté front-end."
+msgstr "Note : vous ne devriez jamais avoir besoin d'autres langues que l'anglais pour le code backend. Les traductions doivent se faire coté front-end."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a `lib/loc.ts` module providing a `loc()` function.  Just pass it the key to have the english string: `loc('diagnostic')`'."
-msgstr ""
-"Il y a un module `lib/loc.ts` qui fourni une function `loc()`. Passez juste "
-"la clé pour récupérer la phrase anglaise : `loc('diagnostic')`."
+msgstr "Il y a un module `lib/loc.ts` qui fourni une function `loc()`. Passez juste la clé pour récupérer la phrase anglaise : `loc('diagnostic')`."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -942,10 +911,7 @@ msgstr "Utiliser Matterbridge"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>"
-msgstr ""
-"Voici un tutoriel sur comment utiliser Matterbridge avec ce plugin :  "
-"<https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/"
-"documentation/peertube.md>"
+msgstr "Voici un tutoriel sur comment utiliser Matterbridge avec ce plugin :  <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1008,11 +974,7 @@ msgstr "Paramètres du plugin"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this settings, new settings appear below."
-msgstr ""
-"Commencez par aller dans les paramètres du plugin livechat de votre "
-"instance, puis activez le paramètre «Autoriser les connexions aux salons via "
-"des comptes XMPP externes». En cochant celui-ci, de nouveaux champs "
-"apparaissent en dessous."
+msgstr "Commencez par aller dans les paramètres du plugin livechat de votre instance, puis activez le paramètre «Autoriser les connexions aux salons via des comptes XMPP externes». En cochant celui-ci, de nouveaux champs apparaissent en dessous."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1028,14 +990,8 @@ msgstr "Ensuite, le champs «Interfaces réseau pour les connexions serveur vers
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the \"Certificate folder\" setting, you can leave it empty.  In this case, the plugin will automatically generate self-signed certificates.  Some XMPP servers may refuse to connect, depending on their configuration.  In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.  It is up to you to generate and renew them.  See bellow for more information."
 msgstr ""
-"Pour le champs «Dossiers des certificats», vous pouvez le laisser vide. Dans "
-"ce cas là, le plugin va générer automatiquement des certificats auto-signés. "
-"Il se pourrait que certains serveurs XMPP refusent de se connecter, cela "
-"dépendant de leur paramétrage. Dans ce cas, vous pouvez indiquer ici un "
-"chemin sur le serveur, dans lequel vous placerez des certificats à utiliser "
-"par le module.\n"
-"Charge à vous de les générer et de les renouveller. Voir plus loin pour une "
-"explication plus détaillée."
+"Pour le champs «Dossiers des certificats», vous pouvez le laisser vide. Dans ce cas là, le plugin va générer automatiquement des certificats auto-signés. Il se pourrait que certains serveurs XMPP refusent de se connecter, cela dépendant de leur paramétrage. Dans ce cas, vous pouvez indiquer ici un chemin sur le serveur, dans lequel vous placerez des certificats à utiliser par le module.\n"
+"Charge à vous de les générer et de les renouveller. Voir plus loin pour une explication plus détaillée."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1117,9 +1073,7 @@ msgstr "Attention à bien conserver le point après «votre_instance.tld»."
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Using the `dig` command to check your record, you should get a result similar to this:"
-msgstr ""
-"En utilisant la commande `dig` pour vérifier votre enregistrement, vous "
-"devriez obtenir un résultat similaire à celui-ci :"
+msgstr "En utilisant la commande `dig` pour vérifier votre enregistrement, vous devriez obtenir un résultat similaire à celui-ci :"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1134,12 +1088,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).  Of course, you can also add this record if you use the standard port. It will also work."
-msgstr ""
-"Si vous **n'utilisez pas le port standard `5269`**, vous devez ajouter un "
-"autre enregistrement SRV pour `_xmpp-server._tcp.votre_instance.tld.` ("
-"pareil que précédemment, mais en enlevant le préfixe `room.`). Bien sûr, "
-"vous pouvez l'ajouter même si vous utilisez le port standard. Cela "
-"fonctionnera également."
+msgstr "Si vous **n'utilisez pas le port standard `5269`**, vous devez ajouter un autre enregistrement SRV pour `_xmpp-server._tcp.votre_instance.tld.` (pareil que précédemment, mais en enlevant le préfixe `room.`). Bien sûr, vous pouvez l'ajouter même si vous utilisez le port standard. Cela fonctionnera également."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1150,24 +1099,12 @@ msgstr "Utilisation de certificats de confiance"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons."
-msgstr ""
-"Les certificats auto-signés que le plugin utilise par défaut peuvent ne pas "
-"convenir à tous les serveurs distants. En effet, ceux-ci peuvent les refuser "
-"pour raison de sécurité."
+msgstr "Les certificats auto-signés que le plugin utilise par défaut peuvent ne pas convenir à tous les serveurs distants. En effet, ceux-ci peuvent les refuser pour raison de sécurité."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "It is possible to use certificates validated by a certification authority.  However, this requires advanced system administration knowledge.  Indeed, due to the multitude of possible use cases, it is impossible to document all situations here.  This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a \"basic\" situation (manual installation of Peertube, using letsencrypt).  If you are in another situation (Docker installation, certificates signed by another authority, etc...), you will have to adapt this approach by yourself."
-msgstr ""
-"Il est possible d'utiliser des certificats validés par une autorité de "
-"certification. Cependant cela demande des connaissances d'administration "
-"système avancées. En effet, devant la multitude de cas possibles, il est "
-"impossible de documenter ici toutes les situations. La présente "
-"documentation va donc se contenter de vous expliquer le but à atteindre, et "
-"donner un example qui ne conviendra qu'à une situation «basique» ("
-"installation manuelle de Peertube, avec utilisation de letsencrypt). Si vous "
-"êtes dans une autre situation (installation Docker, certificats signés par "
-"une autre autorité, etc...), il vous faudra adapter la démarche."
+msgstr "Il est possible d'utiliser des certificats validés par une autorité de certification. Cependant cela demande des connaissances d'administration système avancées. En effet, devant la multitude de cas possibles, il est impossible de documenter ici toutes les situations. La présente documentation va donc se contenter de vous expliquer le but à atteindre, et donner un example qui ne conviendra qu'à une situation «basique» (installation manuelle de Peertube, avec utilisation de letsencrypt). Si vous êtes dans une autre situation (installation Docker, certificats signés par une autre autorité, etc...), il vous faudra adapter la démarche."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1188,14 +1125,7 @@ msgstr "Vous devez ensuite placer ces certificats dans un dossier qui sera acces
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
-msgstr ""
-"Si vous voulez utiliser l'utilitaire ProsodyCtl (pour importer des "
-"certificats letsencrypts, générer des certificats, etc...), cet utilitaire "
-"est disponible (une fois Peertube démarré) en utilisant la commande qui suit "
-"(en adaptant le chemin vers votre dossier data Peertube, et en remplaçant "
-"«xxx» par les arguments que vous souhaitez passer à prosodyctl) : `sudo -u "
-"peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
-"prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
+msgstr "Si vous voulez utiliser l'utilitaire ProsodyCtl (pour importer des certificats letsencrypts, générer des certificats, etc...), cet utilitaire est disponible (une fois Peertube démarré) en utilisant la commande qui suit (en adaptant le chemin vers votre dossier data Peertube, et en remplaçant «xxx» par les arguments que vous souhaitez passer à prosodyctl) : `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1221,18 +1151,12 @@ msgstr "Tout d'abord, on va devoir créer un certificat pour le sous-domain `roo
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry)."
-msgstr ""
-"Commencez donc par paraméter une entrée DNS pour `room.votre_instance.tld`, "
-"qui pointe sur votre serveur. Vous pouvez tout à faire faire une entrée "
-"CNAME (ou une entrée A et une entrée AAAA)."
+msgstr "Commencez donc par paraméter une entrée DNS pour `room.votre_instance.tld`, qui pointe sur votre serveur. Vous pouvez tout à faire faire une entrée CNAME (ou une entrée A et une entrée AAAA)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Next, we'll use nginx (already installed for your Peertube) to generate the certbot certificate.  We will create a new site. In the file `/etc/nginx/site-available/room.peertube`, add:"
-msgstr ""
-"Ensuite, nous allons utiliser nginx (déjà installé pour votre Peertube) pour "
-"générer le certificat certbot. On va créer un nouveau site. Dans le fichier "
-"`/etc/nginx/site-available/room.peertube`, ajoutez :"
+msgstr "Ensuite, nous allons utiliser nginx (déjà installé pour votre Peertube) pour générer le certificat certbot. On va créer un nouveau site. Dans le fichier `/etc/nginx/site-available/room.peertube`, ajoutez :"
 
 #. type: Fenced code block (nginx)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1280,11 +1204,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Then we prepare the folder in which we will later import the certificates.  We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:"
-msgstr ""
-"On prépare ensuite le dossier dans lequel on va plus tard importer les "
-"certificats. On suppose ici que vous avez déjà le plugin actif. On va créer "
-"le dossier suivant (s'il n'existe pas déjà), avec le user `peertube` pour "
-"être sûr qu'il n'y a pas de problème de droits :"
+msgstr "On prépare ensuite le dossier dans lequel on va plus tard importer les certificats. On suppose ici que vous avez déjà le plugin actif. On va créer le dossier suivant (s'il n'existe pas déjà), avec le user `peertube` pour être sûr qu'il n'y a pas de problème de droits :"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1305,9 +1225,7 @@ msgstr "On va configurer certbot pour qu'il importe les certificats générés d
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: for it to be available, the plugin must have been started at least once."
-msgstr ""
-"Note : pour qu'il soit disponible, il faut que le plugin ai démarré au moins "
-"une fois."
+msgstr "Note : pour qu'il soit disponible, il faut que le plugin ai démarré au moins une fois."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1356,9 +1274,7 @@ msgstr "Normalement vous devriez maintenant trouver les certificats dans le doss
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube."
-msgstr ""
-"Note : la première fois que vous faites tout ça, il va falloir recharger "
-"Prosody. Le plus simple pour cela est de redémarrer Peertube."
+msgstr "Note : la première fois que vous faites tout ça, il va falloir recharger Prosody. Le plus simple pour cela est de redémarrer Peertube."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1558,8 +1474,9 @@ msgstr ""
 "  --config /data/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\\n"
 "  check certs\n"
 
-#. type: Title ###
+#. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Troubleshooting"
 msgstr "En cas de problème"
@@ -1605,6 +1522,7 @@ msgstr "Lorsque vous appuyez sur le bouton \"Lister les salles\", toutes les sal
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
+#: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Federation"
 msgstr "Fédération"
@@ -1643,12 +1561,7 @@ msgstr "Le⋅a propriétaire de la vidéo pourra activer le tchat en ligne."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Note: for now this feature simply hide the chat.  In a future release, the chat will be replaced by a message saying «please log in to [...]».  See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information."
-msgstr ""
-"Note : pour l'instant, c'est fonctionnalité masque simplement le tchat. Dans "
-"une future version, le tchat sera remplacé par un message précisant «merci "
-"de vous connecter [...]». Voir les notes de publication [de la version 5.7."
-"0](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/"
-"CHANGELOG.md#570) pour plus d'informations."
+msgstr "Note : pour l'instant, c'est fonctionnalité masque simplement le tchat. Dans une future version, le tchat sera remplacé par un message précisant «merci de vous connecter [...]». Voir les notes de publication [de la version 5.7.0](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) pour plus d'informations."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1751,10 +1664,7 @@ msgstr "Pour utiliser le plugin, vous allez devoir installer manuellement Prosod
 msgid ""
 "Note: the plugin requires Prosody >= 0.12.0.\n"
 "If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.\n"
-msgstr ""
-"Note : la version de Prosody devrait être supérieure ou égale à 0.12.0. Si "
-"vous utilisez une version plus ancienne, il pourrait y avoir des bugs sur la "
-"fédération du tchat, et d'autres comportements inattendus.\n"
+msgstr "Note : la version de Prosody devrait être supérieure ou égale à 0.12.0. Si vous utilisez une version plus ancienne, il pourrait y avoir des bugs sur la fédération du tchat, et d'autres comportements inattendus.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -1864,11 +1774,7 @@ msgstr "Documentation d'installation"
 #: support/documentation/content/en/documentation/installation/_index.md
 #: support/documentation/content/en/_index.md
 msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md)."
-msgstr ""
-"Avant de mettre à jour le plugin vers une nouvelle version majeure, merci de "
-"lire les notes de version, et la liste des éventuelles modifications non "
-"rétro-compatibles : [CHANGELOG](https://github.com/JohnXLivingston/"
-"peertube-plugin-livechat/blob/main/CHANGELOG.md)."
+msgstr "Avant de mettre à jour le plugin vers une nouvelle version majeure, merci de lire les notes de version, et la liste des éventuelles modifications non rétro-compatibles : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
@@ -1879,6 +1785,102 @@ msgstr "Pour installer ou mettre à jour ce plugin, **utilisez simplement l'inte
 #: support/documentation/content/en/documentation/installation/_index.md
 msgid "Here are some other more specific instructions:"
 msgstr "Vous trouverez ci-dessous d'autres instructions :"
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, no-wrap
+msgid "Some classic mistakes and workarounds."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, no-wrap
+msgid "I just installed/upgraded the plugin, but nothing happens"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, ...), just try to reload the page."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, no-wrap
+msgid "Diagnostic tool"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "If the chat does not work, there is a diagnostic tool in the plugin's settings pages."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "Open the plugin settings, and click on the \"launch diagnostic\" button."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Launch diagnostic](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the [Bug tracking documentation page](/peertube-plugin-livechat/issues/) if you can't find any response."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Diagnostic result](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, no-wrap
+msgid "Chat does not load"
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, no-wrap
+msgid "Internal API calls"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, no-wrap
+msgid "In some case (like for some Docker Peertube installation), the diagnostic tools displays an error for the test called \"API Prosody -> Peertube is KO\".\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, no-wrap
+msgid "Websocket"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue.  Since Peertube version 5.0.0, there are some additional configuration to do on the server side.  Check with the instance administrators that they did not forgot to apply changes listes in the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "If you can't fix this immediatly, you can disable Websocket by unchecking \"{{% livechat_label disable_websocket_label %}}\" in the plugin setting page.  In such case, you should also check \"{{% livechat_label federation_dont_publish_remotely_label %}}\", as chat federation won't work without Websocket."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
@@ -1931,24 +1933,71 @@ msgstr "Documentation utilisateur⋅rice"
 msgid "Plugin peertube-plugin-livechat moderation"
 msgstr "Modération du plugin peertube-plugin-livechat"
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Title ##
 #: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Moderation"
 msgstr "Modération"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
+msgid "This section is still incomplete."
 msgstr ""
-"Vous pouvez accéder aux paramètres de la salle et aux outils de modération "
-"en ouvrant le tchat dans une nouvelle fenêtre, et en utilisant le menu "
-"déroulant en haut à droite."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid "Accessing moderation tools"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
-msgstr "Vous pouvez lister toutes les salles de discussion existantes : dans l'écran des paramètres du plugin, il y a un bouton \"Lister les salles\"."
+msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
+msgstr "Vous pouvez accéder aux paramètres de la salle et aux outils de modération en ouvrant le tchat dans une nouvelle fenêtre, et en utilisant le menu déroulant en haut à droite."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+#, fuzzy
+#| msgid "All instance moderators and admins will be owner of created chat rooms.  If the video is local (not from a remote Peertube), the video owner will be admin in the chat room."
+msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
+msgstr "Tous les modérateur⋅rics et administrateur⋅rices de l'instance seront propriétaires des salons de discussion créés. Si la vidéo est locale (et ne provient pas d'un Peertube distant), le⋅a propriétaire de la vidéo sera l'administrateur⋅rice de l'espace de discussion."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
+msgstr "Vous pouvez utiliser les [commandes de modération ConverseJS](https://conversejs.org/docs/html/features.html#moderating-chatrooms) pour modérer le salon. Lorsque vous ouvrez la salle de discussion en plein écran, un menu avec des commandes dédiées s'affiche en haut à droite."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid "Roles and affiliations"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+msgid "There are several roles that can be assignated to users in chat rooms: owner, moderators, member, ..."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/moderation.md
+msgid "You can promote users as moderators, if you need some help."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/moderation.md
+#, no-wrap
+msgid "Delete room content"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -1957,19 +2006,20 @@ msgstr "Vous pouvez supprimer d'anciennes salles : rejoignez la salle, et utilis
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/moderation.md
-#, no-wrap
-msgid "Notes"
-msgstr "Remarques"
+#, fuzzy, no-wrap
+#| msgid "Moderation"
+msgid "Instance moderation"
+msgstr "Modération"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-msgid "All instance moderators and admins will be owner of created chat rooms.  If the video is local (not from a remote Peertube), the video owner will be admin in the chat room."
-msgstr "Tous les modérateur⋅rics et administrateur⋅rices de l'instance seront propriétaires des salons de discussion créés. Si la vidéo est locale (et ne provient pas d'un Peertube distant), le⋅a propriétaire de la vidéo sera l'administrateur⋅rice de l'espace de discussion."
+msgid "As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly."
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
-msgstr "Vous pouvez utiliser les [commandes de modération ConverseJS](https://conversejs.org/docs/html/features.html#moderating-chatrooms) pour modérer le salon. Lorsque vous ouvrez la salle de discussion en plein écran, un menu avec des commandes dédiées s'affiche en haut à droite."
+msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
+msgstr "Vous pouvez lister toutes les salles de discussion existantes : dans l'écran des paramètres du plugin, il y a un bouton \"Lister les salles\"."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/obs.md
@@ -1983,6 +2033,11 @@ msgstr "Documentation pour diffuser le contenu du tchat à l'aide d'OBS."
 msgid "OBS"
 msgstr "OBS"
 
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "[OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.  In the current page, you will find some adviced to handle your live chats using OBS."
+msgstr ""
+
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
@@ -1991,24 +2046,59 @@ msgstr "Overlay OBS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "If you are using OBS for streaming, you can easily include the chat in your stream."
+#, fuzzy
+#| msgid "If you are using OBS for streaming, you can easily include the chat in your stream."
+msgid "You can easily include the chat in your stream."
 msgstr "Si vous utilisez OBS pour la diffusion en direct, vous pouvez facilement inclure le tchat dans votre flux vidéo."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "You can use the «share chat link» feature to generate an URL to your chat.  The button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Embeding the chat in a live stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, fuzzy
+#| msgid "You can use the «share chat link» feature to generate an URL to your chat.  The button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
+msgid "You can use the \"{{% livechat_label share_chat_link %}}\" feature to generate an URL to your chat.  This button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
 msgstr "Vous pouvez utiliser la fonction \"partager le lien du tchat\" pour générer une URL vers votre tchat. Le bouton devrait se trouver près du tchat si vous êtes le⋅a propriétaire de la vidéo (à moins qu'il n'ait été désactivé par les administrateur⋅rices de votre serveur)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "Check the «readonly» checkbox in the modal.  Then use this link as a «web browser source» in OBS."
+msgid "Check the \"{{% livechat_label read_only %}}\" checkbox in the modal."
 msgstr ""
-"Cochez la case «lecture seule» dans la fenêtre modale. Utilisez ensuite ce "
-"lien comme «source navigateur web» dans OBS."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "You can use the «Transparent background» to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy
+#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgid "![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
+msgstr "![Partage](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, fuzzy
+#| msgid "Check the «readonly» checkbox in the modal.  Then use this link as a «web browser source» in OBS."
+msgid "Then use this link as a \"web browser source\" in OBS."
+msgstr "Cochez la case «lecture seule» dans la fenêtre modale. Utilisez ensuite ce lien comme «source navigateur web» dans OBS."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, fuzzy
+#| msgid "You can use the «Transparent background» to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
+msgid "You can use the \"{{% livechat_label transparent_background %}}\" option to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
 msgstr "Vous pouvez utiliser l'option \"Fond transparent\" pour obtenir un fond transparent dans OBS. Si vous souhaitez personnaliser la transparence de l'arrière-plan, vous pouvez ajouter ce CSS dans les paramètres de la source de votre navigateur OBS :"
 
 #. type: Fenced code block (css)
@@ -2022,7 +2112,14 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "Note: you can customize colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
+msgid "In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#, fuzzy
+#| msgid "Note: you can customize colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
+msgid "Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
 msgstr "Remarque : vous pouvez personnaliser les couleurs. Ce n'est pas encore documenté, mais vous pouvez essayer ceci : dans la fenêtre modale, cochez \"utiliser les couleurs actuelles du thème\", puis essayez de modifier manuellement les valeurs de couleur dans l'URL. Vous devez utiliser des valeurs de couleur CSS valides, et elles doivent être correctement encodées dans l'URL."
 
 #. type: Title ##
@@ -2035,6 +2132,376 @@ msgstr "Mélanger plusieurs tchats dans votre flux en direct"
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.  The compatibility with this plugin was added in recent versions."
 msgstr "Vous pouvez utiliser l'extension [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) pour mélanger plusieurs sources de tchat (Peertube, Twitch, Youtube, Facebook, ...) et inclure leurs contenus dans votre flux en direct. La compatibilité avec ce plugin a été ajoutée dans les versions récentes."
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy, no-wrap
+#| msgid "Mixing multiple chats in your live stream"
+msgid "How to setup the chat for your live stream"
+msgstr "Mélanger plusieurs tchats dans votre flux en direct"
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers.md
+#, no-wrap
+msgid "For streamers"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy, no-wrap
+#| msgid "Mixing multiple chats in your live stream"
+msgid "Enabling the chat for you live streams"
+msgstr "Mélanger plusieurs tchats dans votre flux en direct"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "Instance administrators can choose to disable or enable chat in specific cases.  Information in this section are only true in the default case."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "When you create or modify a Peertube live, there is a \"plugin settings\" tab:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "In the \"plugin settings\" tab, there is a \"{{% livechat_label use_chat %}}\" checkbox.  Just check or uncheck it to enable or disable the chat associated to your video."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Activate the chat](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "There can be other settings in this tab, depending on plugins installed on your Peertube instance."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers.md
+#, no-wrap
+msgid "Per channel chat"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "On the instance level, Peertube's adminstrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.  Please contact your instance's administrators for more information on how they configure the livechat plugin."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers.md
+#, no-wrap
+msgid "Share the chat"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "On top of the chat, there is a \"{{% livechat_label share_chat_link %}}\" button."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "This button opens a popup, where you can obtain an url to join the chat.  This url can be shared."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "You can customize some options:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "{{% livechat_label read_only %}}: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs))."
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "{{% livechat_label use_current_theme_color %}}: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set."
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "{{% livechat_label generate_iframe %}}: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "The \"{{% livechat_label share_chat_link %}}\" popup can also contain a \"{{% livechat_label connect_using_xmpp %}}\" tab.  This will only be available if your instance's administators have enabled an correctly configured this option.  Using this option, you can provide a link to join the chat using any [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  Using such softwares can for example facilitate moderation actions."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy
+#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
+msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/moderation)."
+msgstr "Pour la documentation utilisateur⋅rice associé à ces fonctionnalités, veuillez vous référer à la page [de documentation utilisateur⋅rice](/peertube-plugin-livechat/fr/documentation/user/xmpp_clients/)."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy, no-wrap
+#| msgid "Mixing multiple chats in your live stream"
+msgid "Include the chat in your video stream"
+msgstr "Mélanger plusieurs tchats dans votre flux en direct"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy
+#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
+msgid "Please refer to the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
+msgstr "Pour la documentation utilisateur⋅rice associé à ces fonctionnalités, veuillez vous référer à la page [de documentation utilisateur⋅rice](/peertube-plugin-livechat/fr/documentation/user/xmpp_clients/)."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Chat persistence"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "By default, the chat is persistent.  This means that the room content will be kept for a while.  User joining will see messages posted before their arrival."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "There are several option that can be changed."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "You can also uncheck \"enable archiving\": if unchecked, the message will be pruned in the server restarts."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "By unchecking \"Persistent\", the room will be cleared if there is no more participant."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers.md
+#, no-wrap
+msgid "Delete the chat content"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "If you want to delete the chat content, [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers.md
+msgid "The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the \"{{% livechat_label use_chat %}}\" feature activated."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "How to chat for stream viewers"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "For viewers"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "Joining chat rooms"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#: support/documentation/content/en/_index.md
+#: support/documentation/content/en/intro/_index.md
+msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "There are two slightly different use cases, depending on wether or not you have an account on the Peertube instance.  See bellow for more informations."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy, no-wrap
+#| msgid "Login to your Peertube account"
+msgid "If you haven't a Peertube account"
+msgstr "Connexion à votre compte Peertube"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "This feature can be disabled by the instance's adminitrators."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "If you are not logged in on the Peertube instance where you are watching the video, you will automatically join the chat.  You will be assigned a random nickname (something like \"Anonymous 12345\")."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "Before being able to speak in the chat room, you have to enter a nickname in the field on the bottom of the window."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Joining chat when not connected](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy, no-wrap
+#| msgid "Login to your Peertube account"
+msgid "If you have a Peertube account"
+msgstr "Connexion à votre compte Peertube"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "If you are connected with your Peertube account, you will automatically join the room, using your Peertube nickname and avatar."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy, no-wrap
+#| msgid "Settings"
+msgid "Chatting"
+msgstr "Paramètres"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "To send messages, just type them in the \"message\" field on the bottom of the screen.  You can send them by pressing the enter key on your keyboard, or by clicking on the \"send\" button."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "If you want to add line breaks in your messages, you can use the \"shift+enter\" key combinaison."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "You can add emojis to your messages.  You can for example use the emojis menu, or directly type emojis shortcuts like `:smiley:`."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "You can mention other participants.  To do so, you can type the first nickname letters, then press the tab key.  You can also type `@`: this will directly open the menu.  You can also click on a nickname in the participants list to insert it in the message field."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "Participants list"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "To see the list of participants, just open the right menu:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "![Participants list](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "You can see that some participants have special rights (moderator, owner, ...)."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "Opening full screen"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "On top of the chat, there is a button to open the chat in fullscreen.  This will open a new browser tab with the following content:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#: support/documentation/content/en/intro/_index.md
+msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgstr "![Capture d'écran du tchat en plein écran](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "It can be easier to chat using a full browser tab."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
+msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/moderation)."
+msgstr "Pour la documentation utilisateur⋅rice associé à ces fonctionnalités, veuillez vous référer à la page [de documentation utilisateur⋅rice](/peertube-plugin-livechat/fr/documentation/user/xmpp_clients/)."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "Changing nickname"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "You can change your nickname by typing `/nickname your_new_nickname` in the message field."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "You can also change your nickname using the top menu when you are in fullscreen mode."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2051,11 +2518,7 @@ msgstr "Clients XMPP"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "This chat plugin relies on the XMPP protocol (also known as Jabber).  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can be useful for example to facilitate moderation operations."
-msgstr ""
-"Ce module de tchat repose sur le protocole XMPP, aussi connu sous le nom de "
-"Jabber. Il est donc possible de se connecter aux tchats en utilisant des ["
-"logiciels clients XMPP](https://fr.wikipedia.org/wiki/Clients_XMPP). Cela "
-"peut par exemple être utile pour faciliter les opérations de modération."
+msgstr "Ce module de tchat repose sur le protocole XMPP, aussi connu sous le nom de Jabber. Il est donc possible de se connecter aux tchats en utilisant des [logiciels clients XMPP](https://fr.wikipedia.org/wiki/Clients_XMPP). Cela peut par exemple être utile pour faciliter les opérations de modération."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2070,9 +2533,7 @@ msgstr "Si cette fonctionnalité est activée sur votre instance, vous pouvez vo
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "To get the address of the room you want to join, you can use the \"share chat\" button that is located above the chat:"
-msgstr ""
-"Pour obtenir l'adresse du salon à rejoindre, vous pouvez utiliser la fenêtre "
-"de «partage» du tchat, dont le bouton est situé au dessus du tchat :"
+msgstr "Pour obtenir l'adresse du salon à rejoindre, vous pouvez utiliser la fenêtre de «partage» du tchat, dont le bouton est situé au dessus du tchat :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2087,9 +2548,7 @@ msgstr "Par défaut, le bouton de partage n'est visible que pour le ou la propri
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "Then, choose \"Connect using XMPP\":"
-msgstr ""
-"Ensuite, dans la modale qui s'affiche, choississez «Connexion avec un client "
-"XMPP» :"
+msgstr "Ensuite, dans la modale qui s'affiche, choississez «Connexion avec un client XMPP» :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2109,9 +2568,30 @@ msgstr "PeerTube plugin livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
-#: support/documentation/content/en/intro/_index.md
 msgid "You can use the language selector in the left menu to view this documentation in different languages.  Some translations are missing or incomplete. In this case, you'll see the English version of the text."
 msgstr "Vous pouvez utiliser le sélecteur de langue dans le menu de gauche pour afficher cette documentation dans différentes langues. Certaines traductions sont manquantes ou incomplètes. Dans ce cas, vous verrez la version anglaise du texte."
+
+#. type: Plain text
+#: support/documentation/content/en/_index.md
+#, fuzzy
+#| msgid "Plugin Peertube Livechat administration"
+msgid "Welcome the **Peertube Livechat Plugin** documentation."
+msgstr "Administration du Plugin Peertube Livechat"
+
+#. type: Plain text
+#: support/documentation/content/en/_index.md
+msgid "[Peertube](https://joinpeertube.org/) is a decentralized streaming platform, that can provide both live streaming and VOD (Video On Demand) features.  The present plugin adds chatting capatibilities to your Peertube installation, allowing viewers to interract with streamers."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/_index.md
+msgid "To have a glimpse on this plugin capabilities, checkout the [introduction](/peertube-plugin-livechat/intro/). For more precise informations, please find bellow the summary of this documentation."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/_index.md
+msgid "You can use the searchbox in the left menu to quickly find specific documentation parts."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/intro/_index.md
@@ -2119,25 +2599,148 @@ msgstr "Vous pouvez utiliser le sélecteur de langue dans le menu de gauche pour
 msgid "Introduction"
 msgstr "Introduction"
 
+#. type: Title ##
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "What is the livechat plugin?"
+msgstr ""
+
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos."
+#, fuzzy
+#| msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos."
+msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide a chat system for Peertube videos."
 msgstr "Ce plugin pour [Peertube](https://joinpeertube.org/) permet d'intégrer un système de «chat» (clavardage) à coté des vidéos."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
-msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgid "By default, once you have installed the plugin on your Peertube instance, a chat room will automatically be created for each live stream."
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
-msgstr "![Capture d'écran du tchat en plein écran](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgid "On the following screenshot, you can see a classic Peertube video page, with a chat room on the right (click on the picture to view it full screen):"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
+msgid "The chat room will be accessible for all viewers, even those who don't have an account on your instance. Those \"anonymous\" users just have to choose a nickname before they can begin talking in the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "By default, the chat is displayed next to the video.  But you can open it in another browser tab, using the button on top of it :"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy
+#| msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
+msgid "You can test the livechat plugin with this [demo page](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
 msgstr "Voir une [démo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
+
+#. type: Title ##
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy, no-wrap
+#| msgid "Installation guide"
+msgid "Installation"
+msgstr "Documentation d'installation"
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "As a Peertube administrator, you can setup this plugin on your instance simply by using the Peertube plugin marketplace included in the administration interface.  Search for \"livechat\", then click \"install\": that's it!"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy
+#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgid "![Livechat installation](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
+msgstr "![Partage](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+
+#. type: Title ##
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Livechat capabilities"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "The plugin has many advanced features.  As it is using the [XMPP](https://xmpp.org/) standard \"under the hood\", it is possible for Peertube administrators to allow advanced usages (connection using XMPP clients, chatbots, bridge to other chat protocols, ...).  More information in the relevant sections of this documentation."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "Peertube is part of the fediverse: you can create a network of Peertube instances, sharing content between them."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "This plugin can handle federation: when viewing a livestream from a remote instance, you will join the chat room with your local account.  You will be automatically connected with your current nickname and avatar."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "Of course, for the federation to work, the plugin must be installed on both instances."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "Some times, you have to protect your community from bad people.  As an instance administrator, you can choose to disallow federation for the livechat plugin.  If remote actors behave badly, streamers, moderators and administrators can ban or mute users."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "When joining a room, you will see previous messages.  Even those sent before you joined the room."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "This behaviour can be changed room by room, and default retention duration can be chosen by instance's administrators."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy, no-wrap
+#| msgid "Mixing multiple chats in your live stream"
+msgid "Integrate the chat in your live stream"
+msgstr "Mélanger plusieurs tchats dans votre flux en direct"
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "When using software as [OBS](https://obsproject.com) for you live stream, you can embed the chat in the video stream.  This is for example useful for replays."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "In the following screenshot, you can see a live replay, where the chat content is embeded on bottom of the video:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "In the following screenshot, you can see an OBS setup, where the chat is included as a source in the current scene (background color can be changed, and can be transparent):"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Other usages"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "By default, each streamer will be able to activate/deactivate the chat for their live streams."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "But on the instance level, administrators can choose to activate the chat for all videos (live and/or VOD)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "You can even activate the chat for specific VOD videos.  This is how the [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) page works: it is not a live stream, but I have activated the chat specifically for this video."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/issues/_index.md
@@ -2175,6 +2778,10 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter."
+
+#, no-wrap
+#~ msgid "Notes"
+#~ msgstr "Remarques"
 
 #, fuzzy
 #~| msgid ""
