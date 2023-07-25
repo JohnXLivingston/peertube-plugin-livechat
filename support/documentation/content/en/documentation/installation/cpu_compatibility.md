@@ -1,7 +1,7 @@
 ---
 title: "Known issues: CPU Compatibility"
 description: "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
-weight: 10
+weight: 20
 chapter: false
 ---
 
