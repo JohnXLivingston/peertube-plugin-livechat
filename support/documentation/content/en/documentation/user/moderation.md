@@ -15,7 +15,7 @@ You can delete old rooms: join the room, and use the menu on the top to destroy 
 ## Notes
 
 All instance moderators and admins will be owner of created chat rooms.
-If the video is local (not from a remote Peertube), the video owner will be admin in the chat room.
+The video owner will be admin in the chat room.
 
 You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.
 When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.

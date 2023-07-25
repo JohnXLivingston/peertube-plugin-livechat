@@ -64,7 +64,7 @@ This behaviour can be changed room by room, and default retention duration can b
 ## Integrate the chat in your live stream
 
 When using software as [OBS](https://obsproject.com) for you live stream, you can embed the chat in the video stream.
-This is for example usefull for replays.
+This is for example useful for replays.
 
 In the following screenshot, you can see a live replay, where the chat content is embeded on bottom of the video:
 
