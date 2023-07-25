@@ -66,7 +66,12 @@ User joining will see messages posted before their arrival.
 
 You can change the persistence behaviour.
 [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on "Configure".
+
+![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
+
 There are several option that can be changed.
+
+![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
 
 You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message.
 
