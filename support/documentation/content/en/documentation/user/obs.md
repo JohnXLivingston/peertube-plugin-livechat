@@ -1,21 +1,31 @@
 ---
 title: "OBS"
 description: "Documentation to stream the chat content using OBS."
-weight: 10
+weight: 40
 chapter: false
 ---
 
+[OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.
+In the current page, you will find some adviced to handle your live chats using OBS.
+
 ## OBS Overlay
 
-If you are using OBS for streaming, you can easily include the chat in your stream.
+You can easily include the chat in your stream.
 
-You can use the «share chat link» feature to generate an URL to your chat.
-The button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
+![Embeding the chat in a live stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)
 
-Check the «readonly» checkbox in the modal.
-Then use this link as a «web browser source» in OBS.
+You can use the "{{% livechat_label share_chat_link %}}" feature to generate an URL to your chat.
+This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
 
-You can use the «Transparent background» to have a transparent background in OBS.
+Check the "{{% livechat_label read_only %}}" checkbox in the modal.
+
+![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)
+
+Then use this link as a "web browser source" in OBS.
+
+![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)
+
+You can use the "{{% livechat_label transparent_background %}}" option to have a transparent background in OBS.
 If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:
 
 ```css
@@ -24,7 +34,9 @@ If you want to customize the background transparency, you can add this CSS in yo
 }
 ```
 
-Note: you can customize colors. This is undocumented yet, but you can try this:
+In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values.
+
+Note: you can entirely customize chat colors. This is undocumented yet, but you can try this:
 in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.
 You must use valid CSS color values, and they must be properly URL encoded.
 

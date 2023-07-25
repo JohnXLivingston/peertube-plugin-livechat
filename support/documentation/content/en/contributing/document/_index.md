@@ -89,6 +89,12 @@ To facilitate translators work, avoid making too long paragraphs.
 
 For now, it is not possible to use Markdown tables: the translation tools will break them.
 
+{{% notice warning %}}
+There may be links to documentation elsewhere on the web.
+Try not to change the urls of the documentation pages.
+Or at the very least, put links to the new location on the previous url.
+{{% /notice %}}
+
 ### What if I can't use hugo and/or po4a?
 
 Just edit english markdown files, and specify that you can't build translations when you make your Pull Request.

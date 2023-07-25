@@ -1,7 +1,7 @@
 ---
 title: "Installation guide"
 description: "Plugin peertube-plugin-livechat installation guide"
-weight: 10
+weight: 20
 chapter: false
 ---
 

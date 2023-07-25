@@ -1,7 +1,7 @@
 ---
 title: "XMPP Clients"
 description: "Connect to chat using a XMPP client"
-weight: 40
+weight: 60
 chapter: false
 ---
 
