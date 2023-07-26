@@ -4,6 +4,7 @@
 
 ### New Features
 
+* Adding a help button on top of the chat, that links to the online documentation on frama.io.
 * Implementing the [FEP-1970](https://codeberg.org/fediverse/fep/src/branch/main/fep/1970/fep-1970.md) draft for ActivityPub chat declaration.
 * Podcast RSS feed support (thanks to [Alecks Gates](https://github.com/agates)).
 
@@ -12,6 +13,8 @@
 * Translation updates.
 * Documentation can now also be translated using [Weblate](https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/).
 * Documentation can use hugo shortcode livechat_label to get application strings.
+* Replaced github.io documentation links by frama.io documentation.
+* Adding links to the documentation in the diagnostic tool.
 
 ## 7.1.0
 

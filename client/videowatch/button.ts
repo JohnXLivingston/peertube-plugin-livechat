@@ -1,38 +1,49 @@
 import type { SVGButton } from './buttons'
 import { logger } from './logger'
 
-interface displayButtonOptions {
+interface displayButtonOptionsBase {
   buttonContainer: HTMLElement
   name: string
   label: string
-  callback: () => void | boolean
   icon?: SVGButton
   additionalClasses?: string[]
 }
 
-function displayButton ({
-  name,
-  label,
-  callback,
-  buttonContainer,
-  additionalClasses,
-  icon
-}: displayButtonOptions): void {
+interface displayButtonOptionsCallback extends displayButtonOptionsBase {
+  callback: () => void | boolean
+}
+
+interface displayButtonOptionsHref extends displayButtonOptionsBase {
+  href: string
+  targetBlank?: boolean
+}
+
+type displayButtonOptions = displayButtonOptionsCallback | displayButtonOptionsHref
+
+function displayButton (dbo: displayButtonOptions): void {
   const button = document.createElement('a')
   button.classList.add(
     'orange-button', 'peertube-button-link',
     'peertube-plugin-livechat-button',
-    'peertube-plugin-livechat-button-' + name
+    'peertube-plugin-livechat-button-' + dbo.name
   )
-  if (additionalClasses) {
-    for (let i = 0; i < additionalClasses.length; i++) {
-      button.classList.add(additionalClasses[i])
+  if (dbo.additionalClasses) {
+    for (let i = 0; i < dbo.additionalClasses.length; i++) {
+      button.classList.add(dbo.additionalClasses[i])
     }
   }
-  button.onclick = callback
-  if (icon) {
+  if ('callback' in dbo) {
+    button.onclick = dbo.callback
+  }
+  if ('href' in dbo) {
+    button.href = dbo.href
+  }
+  if (('targetBlank' in dbo) && dbo.targetBlank) {
+    button.target = '_blank'
+  }
+  if (dbo.icon) {
     try {
-      const svg = icon()
+      const svg = dbo.icon()
       const tmp = document.createElement('span')
       tmp.innerHTML = svg.trim()
       const svgDom = tmp.firstChild
@@ -40,14 +51,14 @@ function displayButton ({
         button.prepend(svgDom)
       }
     } catch (err) {
-      logger.error('Failed to generate the ' + name + ' button: ' + (err as string))
+      logger.error('Failed to generate the ' + dbo.name + ' button: ' + (err as string))
     }
 
-    button.setAttribute('title', label)
+    button.setAttribute('title', dbo.label)
   } else {
-    button.textContent = label
+    button.textContent = dbo.label
   }
-  buttonContainer.append(button)
+  dbo.buttonContainer.append(button)
 }
 
 export type {

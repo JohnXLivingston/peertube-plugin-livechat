@@ -1,8 +1,9 @@
 import type { Video } from '@peertube/peertube-types'
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { videoHasWebchat, videoHasRemoteWebchat } from 'shared/lib/video'
+import { helpUrl } from 'shared/lib/help'
 import { logger } from './videowatch/logger'
-import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG } from './videowatch/buttons'
+import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG, helpButtonSVG } from './videowatch/buttons'
 import { displayButton, displayButtonOptions } from './videowatch/button'
 import { shareChatUrl } from './videowatch/share'
 import { getIframeUri } from './videowatch/uri'
@@ -79,12 +80,14 @@ function register (registerOptions: RegisterClientOptions): void {
         peertubeHelpers.translate(LOC_OPEN_CHAT),
         peertubeHelpers.translate(LOC_OPEN_CHAT_NEW_WINDOW),
         peertubeHelpers.translate(LOC_CLOSE_CHAT),
-        peertubeHelpers.translate(LOC_SHARE_CHAT_LINK)
+        peertubeHelpers.translate(LOC_SHARE_CHAT_LINK),
+        peertubeHelpers.translate(LOC_ONLINE_HELP)
       ]).then(labels => {
         const labelOpen = labels[0]
         const labelOpenBlank = labels[1]
         const labelClose = labels[2]
         const labelShareUrl = labels[3]
+        const labelHelp = labels[4]
 
         const iframeUri = getIframeUri(registerOptions, settings, video)
         if (!iframeUri) {
@@ -130,6 +133,17 @@ function register (registerOptions: RegisterClientOptions): void {
             additionalClasses: []
           })
         }
+        groupButtons.push({
+          buttonContainer,
+          name: 'help',
+          label: labelHelp,
+          href: helpUrl({
+            page: 'documentation/user/viewers'
+          }),
+          targetBlank: true,
+          icon: helpButtonSVG,
+          additionalClasses: []
+        })
 
         // If more than one groupButtons:
         // - the first must have class 'peertube-plugin-livechat-multi-button-main'

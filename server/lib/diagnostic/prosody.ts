@@ -3,6 +3,7 @@ import { getProsodyConfig, getProsodyConfigContentForDiagnostic, getWorkingDir }
 import { checkProsody, getProsodyAbout, testProsodyCorrectlyRunning } from '../prosody/ctl'
 import { newResult, TestResult } from './utils'
 import { getAPIKey } from '../apikey'
+import { helpUrl } from '../../../shared/lib/help'
 import * as fs from 'fs'
 
 const got = require('got')
@@ -190,7 +191,16 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
     if (testResult.ok === true) {
       result.messages.push('API Prosody -> Peertube is OK')
     } else {
-      result.messages.push('API Prosody -> Peertube is KO. Response was: ' + JSON.stringify(testResult))
+      result.messages.push({
+        level: 'error',
+        message: 'API Prosody -> Peertube is KO. Response was: ' + JSON.stringify(testResult),
+        help: {
+          text: 'Check the troubleshooting documentation.',
+          url: helpUrl({
+            page: 'documentation/installation/troubleshooting'
+          })
+        }
+      })
       return result
     }
   } catch (error) {
@@ -226,5 +236,6 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   }
 
   result.ok = true
+  result.next = 'everything-ok'
   return result
 }

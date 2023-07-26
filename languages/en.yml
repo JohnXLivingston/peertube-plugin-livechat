@@ -1,3 +1,4 @@
+online_help: "Help"
 open_chat: "Open chat"
 open_chat_new_window: "Open chat in a new window"
 close_chat: "Close chat"
@@ -31,7 +32,7 @@ connect_using_xmpp_help: "You can connect to the room using an external XMPP acc
 important_note_title: "<h3>Important notes</h3>"
 important_note_text: |
   You can find the plugin documentation here:
-  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/" target="_blank">
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/" target="_blank">
     Peertube Plugin Livechat documentation
   </a>.
 

@@ -1,6 +1,10 @@
 interface MessageWithLevel {
   level: 'info' | 'warning' | 'error'
   message: string
+  help?: {
+    url: string
+    text: string
+  }
 }
 
 interface Result {
@@ -63,8 +67,15 @@ function launchTests (): void {
           } else if (message.level === 'error') {
             messageSpan.style.color = 'red'
           }
-          messageSpan.textContent = message.message
+          messageSpan.textContent = message.message + ' ' // adding a space, in case there is a help button
           messageLi.append(messageSpan)
+
+          if (message.help) {
+            const helpButton = document.createElement('a')
+            helpButton.href = message.help.url
+            helpButton.textContent = message.help.text
+            messageLi.append(helpButton)
+          }
         }
         messageUl.append(messageLi)
       }

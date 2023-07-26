@@ -99,11 +99,24 @@ const shareChatUrlSVG: SVGButton = () => {
 `
 }
 
+const helpButtonSVG: SVGButton = () => {
+  // This content comes from the file assets/images/help.svg, after svgo cleaning.
+  // To get the formated content, you can do:
+  // xmllint dist/client/images/url.svg --format
+  // Then replace the color by `currentColor`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 4.233 4.233">
+  <path style="display:inline;opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:.529167;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M1.48 1.583V.86c0-.171.085-.31.19-.31h.893c.106 0 .19.139.19.31v.838c0 .171-.107.219-.19.284l-.404.314c-.136.106-.219.234-.221.489l-.003.247"/>
+  <path style="display:inline;fill:currentColor;stroke-width:.235169" d="M1.67 3.429h.529v.597H1.67z"/>
+</svg>
+`
+}
+
 export {
   closeSVG,
   openChatSVG,
   openBlankChatSVG,
-  shareChatUrlSVG
+  shareChatUrlSVG,
+  helpButtonSVG
 }
 export type {
   SVGButton

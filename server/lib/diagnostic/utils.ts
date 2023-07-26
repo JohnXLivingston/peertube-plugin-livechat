@@ -1,8 +1,12 @@
-type nextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody'
+type nextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody' | 'everything-ok'
 
 interface MessageWithLevel {
   level: 'info' | 'warning' | 'error'
   message: string
+  help?: {
+    url: string
+    text: string
+  }
 }
 export interface TestResult {
   label?: string
