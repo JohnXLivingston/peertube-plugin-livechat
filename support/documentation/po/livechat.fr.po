@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-26 18:51+0200\n"
-"PO-Revision-Date: 2023-07-19 07:08+0000\n"
+"PO-Revision-Date: 2023-07-26 18:46+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-"
-"livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2788,6 +2788,13 @@ msgid ""
 "the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/"
 "blob/master/CHANGELOG.md#v500)."
 msgstr ""
+"Si tout est OK d'après l'outil de diagnostique, mais que la fenêtre de tchat "
+"reste vide : cela peut être un soucis Websocket. Depuis la version 5.0.0 de "
+"Peertube, il y a de la configuration supplémentaire à faire du côté du "
+"serveur. Vérifiez avec les administrateur⋅rices de votre instance s'iels "
+"n'ont pas oublié d'appliquer les changements listés dans les [notes de "
+"version 5.0.0 de Peertube](https ://github.com/Chocobozzz/PeerTube/blob/"
+"master/CHANGELOG.md#v500)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2796,6 +2803,9 @@ msgid ""
 "console, and checking for error logs talking about failed Websocket "
 "connection."
 msgstr ""
+"Vous pouvez confirmer si c'est un problème de Websocket en ouvrant la "
+"console de votre navigateur, et en vérifiant s'il y a des journaux d'erreur "
+"mentionnant une connexion Websocket échouée."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2806,6 +2816,11 @@ msgid ""
 "federation_dont_publish_remotely_label %}}\", as chat federation won't work "
 "without Websocket."
 msgstr ""
+"Si vous ne pouvez pas corriger cela tout de suite, vous pouvez déactiver "
+"Websocket en décochant \"{{% livechat_label disable_websocket_label %}}\"  "
+"dans la page des paramètres du plugin. En pareil cas, vous devriez aussi "
+"décocher \"{{% livechat_label federation_dont_publish_remotely_label %}}\", "
+"car la fédération du tchat ne fonctionnera pas sans Websocket."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
@@ -2880,13 +2895,13 @@ msgstr "Modération"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
 msgid "This section is still incomplete."
-msgstr ""
+msgstr "Cette section est encore incomplète."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "Accessing moderation tools"
-msgstr ""
+msgstr "Accéder aux outils de modération"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2938,7 +2953,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "Roles and affiliations"
-msgstr ""
+msgstr "Rôles et affiliations"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2946,17 +2961,21 @@ msgid ""
 "There are several roles that can be assignated to users in chat rooms: "
 "owner, moderators, member, ..."
 msgstr ""
+"Il y a différents rôles qui peuvent être assignés aux utilisateur⋅rices dans "
+"les salons de discussion : propriétaire, modérateur⋅rice, membre, ..."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
 msgid "You can promote users as moderators, if you need some help."
 msgstr ""
+"Vous pouvez promouvoir des utilisateur⋅rices en tant que modérateur⋅rices, "
+"si vous avez besoin d'aide."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/moderation.md
 #, no-wrap
 msgid "Delete room content"
-msgstr ""
+msgstr "Supprimer le contenu des salons"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2979,6 +2998,9 @@ msgid ""
 "As Peertube instance moderator or administrator, you will probably need to "
 "check that your users are not behaving badly."
 msgstr ""
+"En tant que modérateur⋅rice ou administrateur⋅rice de l'instance Peertube, "
+"vous allez probablement vouloir vérifier que les utilisateur⋅rices n'ont pas "
+"de comportement problématique."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
