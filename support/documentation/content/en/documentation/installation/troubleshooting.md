@@ -33,7 +33,7 @@ In such case, try changing the "{{% livechat_label prosody_peertube_uri_label %}
 
 If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue.
 Since Peertube version 5.0.0, there are some additional configuration to do on the server side.
-Check with the instance administrators that they did not forgot to apply changes listes in the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500).
+Check with the instance administrators that they did not forgot to apply changes listed in the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500).
 
 You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection.
 
