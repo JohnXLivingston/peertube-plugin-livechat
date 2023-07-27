@@ -32,7 +32,7 @@ connect_using_xmpp_help: Vous pouvez vous connecter au salon en utilisant un com
 important_note_title: "<h3>Note importante</h3>"
 important_note_text: |
   Vous pouvez trouver la documentation du plugin ici :
-  <a href="https ://johnxlivingston.github.io/peertube-plugin-livechat/fr/" target="_blank">
+  <a href="https ://livingston.frama.io/peertube-plugin-livechat/fr/" target="_blank">
     Documentation du Plugin Peertube Livechat
   </a>.
 
@@ -283,3 +283,4 @@ prosody_components_list_description: |
     </li>
     <li>N'utilisez que des caractères alphanumériques dans la passphrase secrète (utilisez au moins 15 caractères).</li>
   </ul>
+online_help: Aide en ligne
