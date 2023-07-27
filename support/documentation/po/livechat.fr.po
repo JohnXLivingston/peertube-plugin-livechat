@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-26 18:51+0200\n"
-"PO-Revision-Date: 2023-07-26 18:46+0000\n"
+"PO-Revision-Date: 2023-07-27 08:41+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -2711,13 +2711,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
 msgid ""
 "![Launch diagnostic](/peertube-plugin-livechat/images/launch_diagnostic.png?"
 "classes=shadow,border&height=200px)"
 msgstr ""
-"![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?"
-"classes=shadow,border&height=200px)"
+"![Lancer le diagnostique](/peertube-plugin-livechat/images/launch_diagnostic."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2733,13 +2732,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
 msgid ""
 "![Diagnostic result](/peertube-plugin-livechat/images/diagnostic.png?"
 "classes=shadow,border&height=200px)"
 msgstr ""
-"![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?"
-"classes=shadow,border&height=200px)"
+"![Résultat du diagnostique](/peertube-plugin-livechat/images/diagnostic."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2916,25 +2914,22 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
 msgid ""
 "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,"
 "border&height=200px)"
 msgstr ""
-"![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?"
-"classes=shadow,border&height=200px)"
+"![Menu du haut](/peertube-plugin-livechat/images/top_menu."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-#, fuzzy
 msgid ""
 "All instance moderators and admins will be owner of created chat rooms.  The "
 "video owner will be admin in the chat room."
 msgstr ""
-"Tous les modérateur⋅rics et administrateur⋅rices de l'instance seront "
-"propriétaires des salons de discussion créés. Si la vidéo est locale (et ne "
-"provient pas d'un Peertube distant), le⋅a propriétaire de la vidéo sera "
-"l'administrateur⋅rice de l'espace de discussion."
+"Tous les modérateur⋅rices et administrateur⋅rices de l'instance seront "
+"propriétaires des salons de discussion créés. Le ou la propriétaire de la "
+"vidéo sera admin du salon."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2988,9 +2983,9 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/moderation.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Instance moderation"
-msgstr "Modération"
+msgstr "Modération de l'instance"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -3030,6 +3025,10 @@ msgid ""
 "software, with advanced capacities for your live streams.  In the current "
 "page, you will find some adviced to handle your live chats using OBS."
 msgstr ""
+"[OBS](https://obsproject.com) est un logiciel populaire de diffusion en "
+"direct, libre et open source, avec des capacités avancées pour vos "
+"diffusions. Dans la présente page, vous allez trouver quelques conseils pour "
+"gérer les tchats de vos directs en utilisant OBS."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
