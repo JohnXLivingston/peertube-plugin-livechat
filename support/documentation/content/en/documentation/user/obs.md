@@ -6,7 +6,7 @@ chapter: false
 ---
 
 [OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.
-In the current page, you will find some adviced to handle your live chats using OBS.
+In the current page, you will find some advices to handle your live chats using OBS.
 
 ## OBS Overlay
 

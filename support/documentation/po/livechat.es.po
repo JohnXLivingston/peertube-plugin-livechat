@@ -6,11 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-26 18:51+0200\n"
+"POT-Creation-Date: 2023-07-27 10:44+0200\n"
 "PO-Revision-Date: 2023-07-26 22:29+0000\n"
 "Last-Translator: Tony Simoes <asrmail@protonmail.com>\n"
-"Language-Team: Spanish <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
+"Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -189,8 +188,7 @@ msgid ""
 "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
 msgstr ""
 "# Clona el repositorio. No olvides el --recursive para clonar submódulos.\n"
-"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --"
-"recursive\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive\n"
 "\n"
 "cd peertube-plugin-livechat\n"
 "\n"
@@ -201,30 +199,18 @@ msgstr ""
 "npm run build\n"
 "\n"
 "# Si tienes un fork del repositorio, añádelo como remoto (ejemplo):\n"
-"git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat."
-"git\n"
+"git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git\n"
 "\n"
-"# Crea una rama local para tus desarrollos, haz checkout para ello (ejemplo):"
-"\n"
-"git checkout mi_desarrollo # Nota: si hay una incidencia asociada, usa "
-"fix_1234 como nombre de tu rama (donde 1234 es el número de la incidencia)\n"
-"# Para enviar tus modificaciones, haz un push de tu rama a tu repositorio "
-"(ejemplo):\n"
+"# Crea una rama local para tus desarrollos, haz checkout para ello (ejemplo):\n"
+"git checkout mi_desarrollo # Nota: si hay una incidencia asociada, usa fix_1234 como nombre de tu rama (donde 1234 es el número de la incidencia)\n"
+"# Para enviar tus modificaciones, haz un push de tu rama a tu repositorio (ejemplo):\n"
 "git push --set-upstream me mi_desarrollo\n"
-"# Dirijete a tu repositorio github con tu navegador web para abrir una "
-"solicitud de incorporación de cambios Pull Request (ver instrucciones "
-"adicionales más abajo)\n"
+"# Dirijete a tu repositorio github con tu navegador web para abrir una solicitud de incorporación de cambios Pull Request (ver instrucciones adicionales más abajo)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.  Once you are ready for a code review before merge, submit a Pull Request.  In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\"."
-msgstr ""
-"Una vez que esté listo para mostrar su código y desea solicitar comentarios, "
-"envíe un *borrador* de solicitud de incorporación de cambios. Una vez que "
-"esté listo para una revisión de código antes de la fusión, envíe una "
-"solicitud de incorporación de cambios. En cualquier caso, vincule su PR a "
-"los problemas que resuelve utilizando la sintaxis de GitHub: \"fixes #"
-"issue_number\"."
+msgstr "Una vez que esté listo para mostrar su código y desea solicitar comentarios, envíe un *borrador* de solicitud de incorporación de cambios. Una vez que esté listo para una revisión de código antes de la fusión, envíe una solicitud de incorporación de cambios. En cualquier caso, vincule su PR a los problemas que resuelve utilizando la sintaxis de GitHub: \"fixes #issue_number\"."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -267,19 +253,12 @@ msgstr "Modo depuración"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a debug mode for this plugin, that shorten some delay.  For example, some log files will rotate every two minutes, instead of once per day.  This permit to test more easily certain actions, for which it could normally take hours or days to wait."
-msgstr ""
-"Hay un modo de depuración para este plugin, que acorta ciertos retrasos.  "
-"Por ejemplo, algunos logs rotarán cada dos minutos, en lugar de una vez al "
-"día.  Esto permite probar más fácilmente ciertas acciones, para las que se "
-"podría tomar horas o días de espera."
+msgstr "Hay un modo de depuración para este plugin, que acorta ciertos retrasos.  Por ejemplo, algunos logs rotarán cada dos minutos, en lugar de una vez al día.  Esto permite probar más fácilmente ciertas acciones, para las que se podría tomar horas o días de espera."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation)."
-msgstr ""
-"Para habilitar este modo, solo tiene que crear el archivo `/var/www/peertube/"
-"storage/plugins/data/peertube-plugin-livechat/debug_mode` (reemplazando `/"
-"var/www/peertube/storage/` por la ruta correcta de su instalación)."
+msgstr "Para habilitar este modo, solo tiene que crear el archivo `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` (reemplazando `/var/www/peertube/storage/` por la ruta correcta de su instalación)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -289,10 +268,7 @@ msgstr "La simple existencia de este archivo es suficiente para activar el modo 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This file can contain some JSON to enable more advanced options.  To have a list of existing parameters, check `server/lib/debug.ts`.  Restart Peertube after each content modification."
-msgstr ""
-"Este archivo puede contener JSON para habilitar opciones más avanzadas. Para "
-"tener una lista de los parámetros existentes, consulte `server/lib/debug.ts`"
-". Reinicie Peertube después de cada modificación de su contenido."
+msgstr "Este archivo puede contener JSON para habilitar opciones más avanzadas. Para tener una lista de los parámetros existentes, consulte `server/lib/debug.ts`. Reinicie Peertube después de cada modificación de su contenido."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -324,9 +300,7 @@ msgstr "Es posible conectar la AppImage Prosody a un depurador remoto usando [Mo
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.  Then, add this in the `debub_mode` file:"
-msgstr ""
-"Para hacerlo, debe configurar MobDebug en un directorio al que pueda acceder "
-"el usuario `peertube`.  Luego, agrega esto en el archivo `debub_mode`:"
+msgstr "Para hacerlo, debe configurar MobDebug en un directorio al que pueda acceder el usuario `peertube`.  Luego, agrega esto en el archivo `debub_mode`:"
 
 #. type: Fenced code block (json)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -392,12 +366,7 @@ msgstr "Se creó un repositorio sobre ello, consulte [pt-plugin-dev](https://cod
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
-msgstr ""
-"Nota: por una razón desconocida, Prosody no puede resolver la dirección DNS "
-"de los contenedores cuando se utiliza la biblioteca lua-unbound.  Hay un "
-"hack en el plugin para resolverlo: simplemente crea un archivo `/data/"
-"plugins/data/peertube-plugin-livechat/no_lua_unbound` en tus docker-volumes, "
-"luego reinicia los contenedores."
+msgstr "Nota: por una razón desconocida, Prosody no puede resolver la dirección DNS de los contenedores cuando se utiliza la biblioteca lua-unbound.  Hay un hack en el plugin para resolverlo: simplemente crea un archivo `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` en tus docker-volumes, luego reinicia los contenedores."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
@@ -421,10 +390,7 @@ msgstr "Información general"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Always inform the community before working (by creating a new issue, or commenting an existing one).  This is to avoid that two persons are working on the same thing, and prevent conflicts."
-msgstr ""
-"Siempre informa a la comunidad antes de trabajar (creando un nuevo 'issue' o "
-"comentando uno existente). Esto es para evitar que dos personas estén "
-"trabajando en lo mismo y prevenir conflictos."
+msgstr "Siempre informa a la comunidad antes de trabajar (creando un nuevo 'issue' o comentando uno existente). Esto es para evitar que dos personas estén trabajando en lo mismo y prevenir conflictos."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -434,16 +400,12 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation source code is in the `support/documentation/content` folder."
-msgstr ""
-"El código fuente de la documentación se encuentra en el directorio `support/"
-"documentation/content`."
+msgstr "El código fuente de la documentación se encuentra en el directorio `support/documentation/content`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation is generated using [Hugo](https://gohugo.io/).  You have to install it on your computer if you want to preview your work."
-msgstr ""
-"La documentación se genera usando [Hugo](https://gohugo.io/). Debe "
-"instalarlo en su computadora si desea obtener una vista previa de su trabajo."
+msgstr "La documentación se genera usando [Hugo](https://gohugo.io/). Debe instalarlo en su computadora si desea obtener una vista previa de su trabajo."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -2012,7 +1974,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "[OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.  In the current page, you will find some adviced to handle your live chats using OBS."
+msgid "[OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.  In the current page, you will find some advices to handle your live chats using OBS."
 msgstr ""
 
 #. type: Title ##
