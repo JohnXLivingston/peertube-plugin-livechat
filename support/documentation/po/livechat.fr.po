@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-27 11:42+0200\n"
-"PO-Revision-Date: 2023-07-27 09:38+0000\n"
+"PO-Revision-Date: 2023-07-27 10:04+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -841,23 +842,37 @@ msgstr "Si vous avez un doute, ne traduisez pas, et demandez plutôt quoi faire.
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The tool I use to handle translations for the documentation can have strange behaviours. When I add sentences that looks like other existing sentences, it sometimes copies existing translations. So, when you have translations marked as \"to check\", please make sure it doesn't copy a string that has nothing to do with the english one before validating."
 msgstr ""
+"L'outils utilisé pour gérer les traductions de la documentation peut avoir "
+"des comportements étranges. Quand j'ajoute une phrase qui ressemble à une "
+"phrase existante, il va parfois copier les traductions. Donc quand vous avez "
+"des traductions marquées comme «à vérifier», veuillez vous assurer qu'il n'a "
+"pas copié une traduction qui n'a rien à voir avec la version anglaise avant "
+"de valider."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are now sure about the context of a string, you can check the string location in the weblate's right pane, and open the corresponding documentation page.  For example, for a string located in the file `support/documentation/content/en/documentation/user/streamers.md`, the corresponding url is `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`."
 msgstr ""
+"Si vous n'êtes pas sûr du contexte d'une chaîne de texte, vous pouvez "
+"vérifier l'emplacement de la chaîne source dans le panneau droit de Weblate, "
+"et ouvrir la page de documentation correspondante. Par exemple, pour une "
+"chaîne localisée dans le fichier `support/documentation/content/en/"
+"documentation/user/streamers.md`, l'url correspondante est "
+"`https://livingston.frama.io/peertube-plugin-livechat/documentation/user/"
+"streamers/`."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
-#| msgid "General information"
+#, no-wrap
 msgid "Generic recommandations"
-msgstr "Généralités"
+msgstr "Recommandations génériques"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
 msgstr ""
+"Merci d'être inclusif⋅ve dans vos phrasés, et merci de respecter le [code de "
+"conduite](/peertube-plugin-livechat/contributing/codeofconduct/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
@@ -2186,10 +2201,12 @@ msgstr "Tchat par chaîne"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "On the instance level, Peertube's adminstrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.  Please contact your instance's administrators for more information on how they configure the livechat plugin."
 msgid "On the instance level, Peertube's administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.  Please contact your instance's administrators for more information on how they configure the livechat plugin."
-msgstr "Au niveau de l'instance, les administrateur⋅rices peuvent choisir si les salons de discussions sont uniques par vidéo, ou s'ils vont être uniques par chaîne. Veuillez contacter les administrateur⋅rices de votre instance pour plus d'information sur la façon dont est configuré le plugin livechat."
+msgstr ""
+"Au niveau de l'instance, les administrateur⋅rices peuvent choisir si les "
+"salons de discussions sont uniques par vidéo, ou s'ils vont être uniques par "
+"chaîne. Veuillez contacter les administrateur⋅rices de votre instance pour "
+"plus d'information sur la façon dont est configuré le plugin livechat."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2267,8 +2284,6 @@ msgstr "Vous pouvez changer le comportement de la persistance. [Ouvrez le tchat 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "There are several option that can be changed."
 msgid "There are several options that can be changed."
 msgstr "Il y a plusieurs options qui peuvent être changées."
 
@@ -2286,50 +2301,65 @@ msgstr "Vous pouvez par exemple définir la valeur par défaut, et la valeur max
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "You can also uncheck \"enable archiving\": if unchecked, the message will be pruned in the server restarts."
 msgstr ""
+"Vous pouvez aussi décocher «activer l'archivage» : si décoché, les messages "
+"seront nettoyés si le serveur redémarre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "By unchecking \"Persistent\", the room will be cleared if there is no more participant."
 msgstr ""
+"En décochant «Persistant», le salon sera effacé quand il n'y aura plus de "
+"participant⋅es."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers.md
 #, no-wrap
 msgid "Delete the chat content"
-msgstr ""
+msgstr "Détruire le contenu du tchat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "If you want to delete the chat content, [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
 msgstr ""
+"Si vous voulez détruire le contenu du tchat, [ouvrez le tchat en plein écran"
+"](/peertube-plugin-livechat/fr/documentation/user/viewers), ouvrez le menu "
+"du haut et cliquez sur «Détruire». Une popup va s'ouvrir, demandant "
+"confirmation. Pour éviter les erreurs, la popup va vous demander «l'adresse "
+"XMPP» du salon. Cette adresse peut être obtenue via l'entrée «Détails» du "
+"menu haut."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the \"{{% livechat_label use_chat %}}\" feature activated."
 msgstr ""
+"Le tchat sera automatiquement recréé à chaque fois que quelqu'un essayera de "
+"le rejoindre, tant que la vidéo existe et qu'elle a le paramètre «{{% "
+"livechat_label use_chat %}}» activé."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "How to chat for stream viewers"
-msgstr ""
+msgstr "Comment tchater pour les spectateur⋅rices"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "For viewers"
-msgstr ""
+msgstr "Pour les spectateur⋅rices"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Joining chat rooms"
-msgstr ""
+msgstr "Rejoindre les salons de discussion"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:"
 msgstr ""
+"Quand vous regardez une vidéo Peertube qui a le tchat activé, vous le verrez "
+"à coté de celle-ci :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2342,76 +2372,104 @@ msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?c
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "There are two slightly different use cases, depending on wether or not you have an account on the Peertube instance.  See bellow for more informations."
 msgstr ""
+"Il y a deux cas d'usages légèrement différents, dépendant de si vous avez un "
+"compte sur l'instance Peertube ou non. Voir plus bas pour plus "
+"d'informations."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "If you haven't a Peertube account"
-msgstr "Connexion à votre compte Peertube"
+msgstr "Si vous n'avez pas de compte Peertube"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
 msgstr ""
+"Cette fonction peut être désactivée par les administrateur⋅rices de "
+"l'instance."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are not logged in on the Peertube instance where you are watching the video, you will automatically join the chat.  You will be assigned a random nickname (something like \"Anonymous 12345\")."
 msgstr ""
+"Si vous n'êtes pas identifié⋅e sur l'instance Peertube où vous regardez la "
+"vidéo, vous allez automatiquement rejoindre le tchat. Un pseudonyme "
+"aléatoire vous sera assigné (quelque chose de la forme «Anonyme 12345»)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
 msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
-msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Tchat avec utilisateur anonyme](/peertube-plugin-livechat/images/"
+"chat_with_anonymous.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "Before being able to speak in the chat room, you have to enter a nickname in the field on the bottom of the window."
 msgstr ""
+"Avant de pouvoir parler dans le salon, vous allez devoir choisir un "
+"pseudonyme dans le champ au bas de la fenêtre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
 msgid "![Joining chat when not connected](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
-msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Rejoindre le tchat quand pas connecté](/peertube-plugin-livechat/images/"
+"chat_anonymous.png?classes=shadow,border&height=200px)"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "If you have a Peertube account"
-msgstr "Connexion à votre compte Peertube"
+msgstr "Si vous avez un compte Peertube"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are connected with your Peertube account, you will automatically join the room, using your Peertube nickname and avatar."
 msgstr ""
+"Si vous êtes connecté avec votre compte Peertube, vous allez automatiquement "
+"rejoindre le salon, en utilisant votre pseudonyme Peertube et votre avatar."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
 msgstr ""
+"Si vous regardez un direct sur une instance où vous n'avez pas de compte, "
+"mais que vous avez un compte Peertube sur une autre instance : sous réserve "
+"que le plugin livechat soit installé sur les deux instances, vous pouvez "
+"rejoindre le tchat avec votre compte. Pour cela, ouvrez la vidéo sur votre "
+"instance (vous pouvez par exemple copier/coller l'url de la vidéo dans le "
+"champs de recherche de votre instance)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Chatting"
-msgstr "Paramètres"
+msgstr "Tchatter"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "To send messages, just type them in the \"message\" field on the bottom of the screen.  You can send them by pressing the enter key on your keyboard, or by clicking on the \"send\" button."
 msgstr ""
+"Pour envoyer des messages, saisissez les simplement dans le champ «message» "
+"en bas de l'écran. Vous pouvez les envoyer en tapant la touche entrée de "
+"votre clavier, ou en cliquant sur le bouton «envoyer»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you want to add line breaks in your messages, you can use the \"shift+enter\" key combinaison."
 msgstr ""
+"Si vous voulez ajouter des retours à la ligne à vos messages, vous pouvez "
+"utiliser la combinaison de touche «shift + entrée»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can add emojis to your messages.  You can for example use the emojis menu, or directly type emojis shortcuts like `:smiley:`."
 msgstr ""
+"Vous pouvez ajouter des emojis à vos messages. Vous pouvez par exemple "
+"utiliser le menu emojis, ou directement taper les raccourcis du type "
+"`:smiley:`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
