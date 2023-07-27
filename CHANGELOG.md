@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Fix link to documentation in french.
+* Adding a help button in the share chat modal.
 
 ## 7.2.0
 

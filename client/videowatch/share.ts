@@ -1,8 +1,10 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
+import { helpButtonSVG } from './buttons'
 import { logger } from './logger'
 import { getIframeUri, getXMPPAddr, UriOptions } from './uri'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
+import { helpUrl } from 'shared/lib/help'
 
 interface ShareForm {
   shareString: HTMLInputElement
@@ -38,7 +40,8 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     labelOpen,
     labelAutocolors,
     labelGenerateIframe,
-    labelChatFor
+    labelChatFor,
+    labelHelp
   ] = await Promise.all([
     peertubeHelpers.translate(LOC_SHARE_CHAT_LINK),
     peertubeHelpers.translate(LOC_WEB),
@@ -54,7 +57,8 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     peertubeHelpers.translate(LOC_OPEN),
     peertubeHelpers.translate(LOC_USE_CURRENT_THEME_COLOR),
     peertubeHelpers.translate(LOC_GENERATE_IFRAME),
-    peertubeHelpers.translate(LOC_CHAT_FOR_LIVE_STREAM)
+    peertubeHelpers.translate(LOC_CHAT_FOR_LIVE_STREAM),
+    peertubeHelpers.translate(LOC_ONLINE_HELP)
   ])
 
   const defaultUri = getIframeUri(registerOptions, settings, video)
@@ -86,6 +90,17 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       openButton.classList.add('btn', 'btn-outline-secondary', 'text-uppercase')
       openButton.textContent = labelOpen
       divShareString.append(openButton)
+
+      const helpButton = document.createElement('a')
+      helpButton.href = helpUrl({
+        page: 'documentation/user/streamers'
+      })
+      helpButton.target = '_blank'
+      helpButton.innerHTML = helpButtonSVG()
+      helpButton.title = labelHelp
+      helpButton.classList.add('orange-button', 'peertube-button-link', 'peertube-plugin-livechat-button')
+      divShareString.append(helpButton)
+
       container.append(divShareString)
 
       let radioProtocolWeb
