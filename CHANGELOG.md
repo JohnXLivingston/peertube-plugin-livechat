@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.2.1
+
+### Minor changes and fixes
+
+* Fix link to documentation in french.
+
 ## 7.2.0
 
 ### New Features
