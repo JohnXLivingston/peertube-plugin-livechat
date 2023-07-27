@@ -27,7 +27,7 @@ There can be other settings in this tab, depending on plugins installed on your 
 
 ### Per channel chat
 
-On the instance level, Peertube's adminstrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.
+On the instance level, Peertube's administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.
 Please contact your instance's administrators for more information on how they configure the livechat plugin.
 
 ## Share the chat
@@ -69,7 +69,7 @@ You can change the persistence behaviour.
 
 ![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
 
-There are several option that can be changed.
+There are several options that can be changed.
 
 ![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
 

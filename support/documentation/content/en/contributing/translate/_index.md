@@ -110,3 +110,12 @@ Don't translate code.
 But you can translate comments, or parameters if relevant.
 
 If you are not sure, just don't translate, and ask what to do.
+
+The tool I use to handle translations for the documentation can have strange behaviours. When I add sentences that looks like other existing sentences, it sometimes copies existing translations. So, when you have translations marked as "to check", please make sure it doesn't copy a string that has nothing to do with the english one before validating.
+
+If you are now sure about the context of a string, you can check the string location in the weblate's right pane, and open the corresponding documentation page.
+For example, for a string located in the file `support/documentation/content/en/documentation/user/streamers.md`, the corresponding url is `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`.
+
+## Generic recommandations
+
+Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/).
