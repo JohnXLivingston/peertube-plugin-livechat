@@ -35,7 +35,7 @@ If you are connected with your Peertube account, you will automatically join the
 
 {{% notice tip %}}
 If you are watching a live on an instance on which you have no account, but you have an account on another instance:
-if the plugin is installed on both instances, it is possible to join the chat using your account.
+if the livechat plugin is installed on both instances, it is possible to join the chat using your account.
 To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance).
 {{% /notice %}}
 

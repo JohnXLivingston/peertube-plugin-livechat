@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-27 11:42+0200\n"
+"POT-Creation-Date: 2023-07-27 13:12+0200\n"
 "PO-Revision-Date: 2023-07-27 11:09+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -841,25 +840,12 @@ msgstr "Si vous avez un doute, ne traduisez pas, et demandez plutôt quoi faire.
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The tool I use to handle translations for the documentation can have strange behaviours. When I add sentences that looks like other existing sentences, it sometimes copies existing translations. So, when you have translations marked as \"to check\", please make sure it doesn't copy a string that has nothing to do with the english one before validating."
-msgstr ""
-"L'outils utilisé pour gérer les traductions de la documentation peut avoir "
-"des comportements étranges. Quand j'ajoute une phrase qui ressemble à une "
-"phrase existante, il va parfois copier les traductions. Donc quand vous avez "
-"des traductions marquées comme «à vérifier», veuillez vous assurer qu'il n'a "
-"pas copié une traduction qui n'a rien à voir avec la version anglaise avant "
-"de valider."
+msgstr "L'outils utilisé pour gérer les traductions de la documentation peut avoir des comportements étranges. Quand j'ajoute une phrase qui ressemble à une phrase existante, il va parfois copier les traductions. Donc quand vous avez des traductions marquées comme «à vérifier», veuillez vous assurer qu'il n'a pas copié une traduction qui n'a rien à voir avec la version anglaise avant de valider."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are now sure about the context of a string, you can check the string location in the weblate's right pane, and open the corresponding documentation page.  For example, for a string located in the file `support/documentation/content/en/documentation/user/streamers.md`, the corresponding url is `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`."
-msgstr ""
-"Si vous n'êtes pas sûr du contexte d'une chaîne de texte, vous pouvez "
-"vérifier l'emplacement de la chaîne source dans le panneau droit de Weblate, "
-"et ouvrir la page de documentation correspondante. Par exemple, pour une "
-"chaîne localisée dans le fichier `support/documentation/content/en/"
-"documentation/user/streamers.md`, l'url correspondante est "
-"`https://livingston.frama.io/peertube-plugin-livechat/documentation/user/"
-"streamers/`."
+msgstr "Si vous n'êtes pas sûr du contexte d'une chaîne de texte, vous pouvez vérifier l'emplacement de la chaîne source dans le panneau droit de Weblate, et ouvrir la page de documentation correspondante. Par exemple, pour une chaîne localisée dans le fichier `support/documentation/content/en/documentation/user/streamers.md`, l'url correspondante est `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -870,9 +856,7 @@ msgstr "Recommandations génériques"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
-msgstr ""
-"Merci d'être inclusif⋅ve dans vos phrasés, et merci de respecter le [code de "
-"conduite](/peertube-plugin-livechat/contributing/codeofconduct/)."
+msgstr "Merci d'être inclusif⋅ve dans vos phrasés, et merci de respecter le [code de conduite](/peertube-plugin-livechat/contributing/codeofconduct/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
@@ -2202,11 +2186,7 @@ msgstr "Tchat par chaîne"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "On the instance level, Peertube's administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.  Please contact your instance's administrators for more information on how they configure the livechat plugin."
-msgstr ""
-"Au niveau de l'instance, les administrateur⋅rices peuvent choisir si les "
-"salons de discussions sont uniques par vidéo, ou s'ils vont être uniques par "
-"chaîne. Veuillez contacter les administrateur⋅rices de votre instance pour "
-"plus d'information sur la façon dont est configuré le plugin livechat."
+msgstr "Au niveau de l'instance, les administrateur⋅rices peuvent choisir si les salons de discussions sont uniques par vidéo, ou s'ils vont être uniques par chaîne. Veuillez contacter les administrateur⋅rices de votre instance pour plus d'information sur la façon dont est configuré le plugin livechat."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2299,17 +2279,15 @@ msgstr "Vous pouvez par exemple définir la valeur par défaut, et la valeur max
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-msgid "You can also uncheck \"enable archiving\": if unchecked, the message will be pruned in the server restarts."
-msgstr ""
-"Vous pouvez aussi décocher «activer l'archivage» : si décoché, les messages "
-"seront nettoyés si le serveur redémarre."
+#, fuzzy
+#| msgid "You can also uncheck \"enable archiving\": if unchecked, the message will be pruned in the server restarts."
+msgid "You can also uncheck \"enable archiving\": if unchecked, messages will be pruned if the server restarts."
+msgstr "Vous pouvez aussi décocher «activer l'archivage» : si décoché, les messages seront nettoyés si le serveur redémarre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "By unchecking \"Persistent\", the room will be cleared if there is no more participant."
-msgstr ""
-"En décochant «Persistant», le salon sera effacé quand il n'y aura plus de "
-"participant⋅es."
+msgstr "En décochant «Persistant», le salon sera effacé quand il n'y aura plus de participant⋅es."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2319,22 +2297,15 @@ msgstr "Détruire le contenu du tchat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-msgid "If you want to delete the chat content, [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
-msgstr ""
-"Si vous voulez détruire le contenu du tchat, [ouvrez le tchat en plein écran"
-"](/peertube-plugin-livechat/fr/documentation/user/viewers), ouvrez le menu "
-"du haut et cliquez sur «Détruire». Une popup va s'ouvrir, demandant "
-"confirmation. Pour éviter les erreurs, la popup va vous demander «l'adresse "
-"XMPP» du salon. Cette adresse peut être obtenue via l'entrée «Détails» du "
-"menu haut."
+#, fuzzy
+#| msgid "If you want to delete the chat content, [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
+msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
+msgstr "Si vous voulez détruire le contenu du tchat, [ouvrez le tchat en plein écran](/peertube-plugin-livechat/fr/documentation/user/viewers), ouvrez le menu du haut et cliquez sur «Détruire». Une popup va s'ouvrir, demandant confirmation. Pour éviter les erreurs, la popup va vous demander «l'adresse XMPP» du salon. Cette adresse peut être obtenue via l'entrée «Détails» du menu haut."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the \"{{% livechat_label use_chat %}}\" feature activated."
-msgstr ""
-"Le tchat sera automatiquement recréé à chaque fois que quelqu'un essayera de "
-"le rejoindre, tant que la vidéo existe et qu'elle a le paramètre «{{% "
-"livechat_label use_chat %}}» activé."
+msgstr "Le tchat sera automatiquement recréé à chaque fois que quelqu'un essayera de le rejoindre, tant que la vidéo existe et qu'elle a le paramètre «{{% livechat_label use_chat %}}» activé."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2357,9 +2328,7 @@ msgstr "Rejoindre les salons de discussion"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:"
-msgstr ""
-"Quand vous regardez une vidéo Peertube qui a le tchat activé, vous le verrez "
-"à coté de celle-ci :"
+msgstr "Quand vous regardez une vidéo Peertube qui a le tchat activé, vous le verrez à coté de celle-ci :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2371,10 +2340,7 @@ msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?c
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "There are two slightly different use cases, depending on wether or not you have an account on the Peertube instance.  See bellow for more informations."
-msgstr ""
-"Il y a deux cas d'usages légèrement différents, dépendant de si vous avez un "
-"compte sur l'instance Peertube ou non. Voir plus bas pour plus "
-"d'informations."
+msgstr "Il y a deux cas d'usages légèrement différents, dépendant de si vous avez un compte sur l'instance Peertube ou non. Voir plus bas pour plus d'informations."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2385,38 +2351,27 @@ msgstr "Si vous n'avez pas de compte Peertube"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
-msgstr ""
-"Cette fonction peut être désactivée par les administrateur⋅rices de "
-"l'instance."
+msgstr "Cette fonction peut être désactivée par les administrateur⋅rices de l'instance."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are not logged in on the Peertube instance where you are watching the video, you will automatically join the chat.  You will be assigned a random nickname (something like \"Anonymous 12345\")."
-msgstr ""
-"Si vous n'êtes pas identifié⋅e sur l'instance Peertube où vous regardez la "
-"vidéo, vous allez automatiquement rejoindre le tchat. Un pseudonyme "
-"aléatoire vous sera assigné (quelque chose de la forme «Anonyme 12345»)."
+msgstr "Si vous n'êtes pas identifié⋅e sur l'instance Peertube où vous regardez la vidéo, vous allez automatiquement rejoindre le tchat. Un pseudonyme aléatoire vous sera assigné (quelque chose de la forme «Anonyme 12345»)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Tchat avec utilisateur anonyme](/peertube-plugin-livechat/images/"
-"chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgstr "![Tchat avec utilisateur anonyme](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "Before being able to speak in the chat room, you have to enter a nickname in the field on the bottom of the window."
-msgstr ""
-"Avant de pouvoir parler dans le salon, vous allez devoir choisir un "
-"pseudonyme dans le champ au bas de la fenêtre."
+msgstr "Avant de pouvoir parler dans le salon, vous allez devoir choisir un pseudonyme dans le champ au bas de la fenêtre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Joining chat when not connected](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Rejoindre le tchat quand pas connecté](/peertube-plugin-livechat/images/"
-"chat_anonymous.png?classes=shadow,border&height=200px)"
+msgstr "![Rejoindre le tchat quand pas connecté](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2427,20 +2382,14 @@ msgstr "Si vous avez un compte Peertube"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are connected with your Peertube account, you will automatically join the room, using your Peertube nickname and avatar."
-msgstr ""
-"Si vous êtes connecté avec votre compte Peertube, vous allez automatiquement "
-"rejoindre le salon, en utilisant votre pseudonyme Peertube et votre avatar."
+msgstr "Si vous êtes connecté avec votre compte Peertube, vous allez automatiquement rejoindre le salon, en utilisant votre pseudonyme Peertube et votre avatar."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
-msgstr ""
-"Si vous regardez un direct sur une instance où vous n'avez pas de compte, "
-"mais que vous avez un compte Peertube sur une autre instance : sous réserve "
-"que le plugin livechat soit installé sur les deux instances, vous pouvez "
-"rejoindre le tchat avec votre compte. Pour cela, ouvrez la vidéo sur votre "
-"instance (vous pouvez par exemple copier/coller l'url de la vidéo dans le "
-"champs de recherche de votre instance)."
+#, fuzzy
+#| msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
+msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the livechat plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
+msgstr "Si vous regardez un direct sur une instance où vous n'avez pas de compte, mais que vous avez un compte Peertube sur une autre instance : sous réserve que le plugin livechat soit installé sur les deux instances, vous pouvez rejoindre le tchat avec votre compte. Pour cela, ouvrez la vidéo sur votre instance (vous pouvez par exemple copier/coller l'url de la vidéo dans le champs de recherche de votre instance)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2451,35 +2400,22 @@ msgstr "Tchatter"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "To send messages, just type them in the \"message\" field on the bottom of the screen.  You can send them by pressing the enter key on your keyboard, or by clicking on the \"send\" button."
-msgstr ""
-"Pour envoyer des messages, saisissez les simplement dans le champ «message» "
-"en bas de l'écran. Vous pouvez les envoyer en tapant la touche entrée de "
-"votre clavier, ou en cliquant sur le bouton «envoyer»."
+msgstr "Pour envoyer des messages, saisissez les simplement dans le champ «message» en bas de l'écran. Vous pouvez les envoyer en tapant la touche entrée de votre clavier, ou en cliquant sur le bouton «envoyer»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you want to add line breaks in your messages, you can use the \"shift+enter\" key combinaison."
-msgstr ""
-"Si vous voulez ajouter des retours à la ligne à vos messages, vous pouvez "
-"utiliser la combinaison de touche «shift + entrée»."
+msgstr "Si vous voulez ajouter des retours à la ligne à vos messages, vous pouvez utiliser la combinaison de touche «shift + entrée»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can add emojis to your messages.  You can for example use the emojis menu, or directly type emojis shortcuts like `:smiley:`."
-msgstr ""
-"Vous pouvez ajouter des emojis à vos messages. Vous pouvez par exemple "
-"utiliser le menu emojis, ou directement taper les raccourcis du type "
-"`:smiley:`."
+msgstr "Vous pouvez ajouter des emojis à vos messages. Vous pouvez par exemple utiliser le menu emojis, ou directement taper les raccourcis du type `:smiley:`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can mention other participants.  To do so, you can type the first nickname letters, then press the tab key.  You can also type `@`: this will directly open the menu.  You can also click on a nickname in the participants list to insert it in the message field."
-msgstr ""
-"Vous pouvez mentionner d'autres participant⋅es. Pour cela, vous pouvez taper "
-"les premières lettres du pseudo, puis appuyer sur la touche tabulation. Vous "
-"pouvez aussi taper le caractère `@` : cela ouvrira directement un menu. Vous "
-"pouvez également cliquer sur un pseudonyme dans la liste des participant⋅es "
-"pour insérer celui-ci dans le champs de saisie de message."
+msgstr "Vous pouvez mentionner d'autres participant⋅es. Pour cela, vous pouvez taper les premières lettres du pseudo, puis appuyer sur la touche tabulation. Vous pouvez aussi taper le caractère `@` : cela ouvrira directement un menu. Vous pouvez également cliquer sur un pseudonyme dans la liste des participant⋅es pour insérer celui-ci dans le champs de saisie de message."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2495,16 +2431,12 @@ msgstr "Pour voir la liste des participant⋅es, ouvrez juste le menu droit :"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Participants list](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Liste des participant⋅es](/peertube-plugin-livechat/images/"
-"open_participants_list.png?classes=shadow,border&height=200px)"
+msgstr "![Liste des participant⋅es](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can see that some participants have special rights (moderator, owner, ...)."
-msgstr ""
-"Vous pouvez constater que certain⋅es participant⋅es ont des droits spéciaux "
-"(modérateur⋅rice, propriétaire, ...)."
+msgstr "Vous pouvez constater que certain⋅es participant⋅es ont des droits spéciaux (modérateur⋅rice, propriétaire, ...)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2515,9 +2447,7 @@ msgstr "Ouvrir en plein écran"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "On top of the chat, there is a button to open the chat in fullscreen.  This will open a new browser tab with the following content:"
-msgstr ""
-"Au dessus du tchat, il y a un bouton qui permet de l'ouvrir en plein écran. "
-"Cela l'ouvrira dans un nouvel onglet du navigateur avec le contenu suivant :"
+msgstr "Au dessus du tchat, il y a un bouton qui permet de l'ouvrir en plein écran. Cela l'ouvrira dans un nouvel onglet du navigateur avec le contenu suivant :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2528,17 +2458,12 @@ msgstr "![Capture d'écran du tchat en plein écran](/peertube-plugin-livechat/i
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "It can be easier to chat using a full browser tab."
-msgstr ""
-"Cela peut être plus facile de tchatter en utilisant un onglet de navigateur "
-"complet."
+msgstr "Cela peut être plus facile de tchatter en utilisant un onglet de navigateur complet."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/moderation)."
-msgstr ""
-"Cette vue plein écran ajoute également un menu haut avec des fonctionnalités "
-"avancées. Cela est particulièrement utile pour les [fonctions de modération"
-"](/peertube-plugin-livechat/fr/documentation/user/moderation)."
+msgstr "Cette vue plein écran ajoute également un menu haut avec des fonctionnalités avancées. Cela est particulièrement utile pour les [fonctions de modération](/peertube-plugin-livechat/fr/documentation/user/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2549,16 +2474,12 @@ msgstr "Changer de pseudonyme"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can change your nickname by typing `/nickname your_new_nickname` in the message field."
-msgstr ""
-"Vous pouvez changer de pseudonyme en tapant `/nickname votre_nouveau_pseudo` "
-"dans le champs de message."
+msgstr "Vous pouvez changer de pseudonyme en tapant `/nickname votre_nouveau_pseudo` dans le champs de message."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can also change your nickname using the top menu when you are in fullscreen mode."
-msgstr ""
-"Vous pouvez également changer votre pseudonyme en utilisant le menu haut "
-"quand vous êtes en mode plein écran."
+msgstr "Vous pouvez également changer votre pseudonyme en utilisant le menu haut quand vous êtes en mode plein écran."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -2636,27 +2557,17 @@ msgstr "Bienvenue sur la documentation du **Plugin Peertube Livechat**."
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "[Peertube](https://joinpeertube.org/) is a decentralized streaming platform, that can provide both live streaming and VOD (Video On Demand) features.  The present plugin adds chatting capatibilities to your Peertube installation, allowing viewers to interract with streamers."
-msgstr ""
-"[Peertube](https ://joinpeertube.org/) est une plateforme de streaming "
-"décentralisée, qui peut permettre de diffuser aussi bien des directs que de "
-"la vidéo à la demande (VOD : Video On Demand). Ce plugin permet d'ajouter la "
-"possibilité de tchatter à votre installation Peertube, permettant ainsi des "
-"interactions avec les streameur⋅euses."
+msgstr "[Peertube](https ://joinpeertube.org/) est une plateforme de streaming décentralisée, qui peut permettre de diffuser aussi bien des directs que de la vidéo à la demande (VOD : Video On Demand). Ce plugin permet d'ajouter la possibilité de tchatter à votre installation Peertube, permettant ainsi des interactions avec les streameur⋅euses."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "To have a glimpse on this plugin capabilities, checkout the [introduction](/peertube-plugin-livechat/intro/). For more precise informations, please find bellow the summary of this documentation."
-msgstr ""
-"Pour avoir un aperçu des possibilités de ce plugin, aller jeter un œil à "
-"[l'introduction](/peertube-plugin-livechat/fr/intro/). Pour des informations "
-"plus précises, vous trouverez plus bas le sommaire de cette documentation."
+msgstr "Pour avoir un aperçu des possibilités de ce plugin, aller jeter un œil à [l'introduction](/peertube-plugin-livechat/fr/intro/). Pour des informations plus précises, vous trouverez plus bas le sommaire de cette documentation."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "You can use the searchbox in the left menu to quickly find specific documentation parts."
-msgstr ""
-"Vous pouvez utiliser la barre de recherche dans le menu gauche pour "
-"rapidement trouver des documentations spécifiques."
+msgstr "Vous pouvez utiliser la barre de recherche dans le menu gauche pour rapidement trouver des documentations spécifiques."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/intro/_index.md
@@ -2673,48 +2584,32 @@ msgstr "Qu'est ce que le plugin livechat ?"
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide a chat system for Peertube videos."
-msgstr ""
-"Ce plugin pour [Peertube](https://joinpeertube.org/) permet d'intégrer un "
-"système de «chat» (clavardage) à coté des vidéos."
+msgstr "Ce plugin pour [Peertube](https://joinpeertube.org/) permet d'intégrer un système de «chat» (clavardage) à coté des vidéos."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "By default, once you have installed the plugin on your Peertube instance, a chat room will automatically be created for each live stream."
-msgstr ""
-"Par défaut, une fois le plugin installé sur votre instance Peertube, un "
-"salon de discussion sera automatiquement créé pour chaque diffusion en "
-"direct."
+msgstr "Par défaut, une fois le plugin installé sur votre instance Peertube, un salon de discussion sera automatiquement créé pour chaque diffusion en direct."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "On the following screenshot, you can see a classic Peertube video page, with a chat room on the right (click on the picture to view it full screen):"
-msgstr ""
-"Sur la capture d'écran ci-dessous, vous pouvez voir une page classique de "
-"vidéo Peertube, avec un salon de discussion sur la droite (cliquez sur "
-"l'image pour la voir en plein écran) :"
+msgstr "Sur la capture d'écran ci-dessous, vous pouvez voir une page classique de vidéo Peertube, avec un salon de discussion sur la droite (cliquez sur l'image pour la voir en plein écran) :"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "The chat room will be accessible for all viewers, even those who don't have an account on your instance. Those \"anonymous\" users just have to choose a nickname before they can begin talking in the chat."
-msgstr ""
-"Le salon sera accessible pour les spectateur⋅rices, même si celleux-ci n'ont "
-"pas de compte sur votre instance. Ces utilisateur⋅rices «anonymes» auront "
-"juste à choisir un pseudonyme avant de pouvoir parler dans le tchat."
+msgstr "Le salon sera accessible pour les spectateur⋅rices, même si celleux-ci n'ont pas de compte sur votre instance. Ces utilisateur⋅rices «anonymes» auront juste à choisir un pseudonyme avant de pouvoir parler dans le tchat."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "By default, the chat is displayed next to the video.  But you can open it in another browser tab, using the button on top of it :"
-msgstr ""
-"Par défaut, le chat est affiché à côté de la vidéo. Mais vous pouvez "
-"l'ouvrir dans un autre onglet du navigateur, en utilisant le bouton situé au-"
-"dessus :"
+msgstr "Par défaut, le chat est affiché à côté de la vidéo. Mais vous pouvez l'ouvrir dans un autre onglet du navigateur, en utilisant le bouton situé au-dessus :"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can test the livechat plugin with this [demo page](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
-msgstr ""
-"Vous pouvez tester le plugin livechat via cette page [page de "
-"démo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
+msgstr "Vous pouvez tester le plugin livechat via cette page [page de démo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -2725,18 +2620,12 @@ msgstr "Installation"
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "As a Peertube administrator, you can setup this plugin on your instance simply by using the Peertube plugin marketplace included in the administration interface.  Search for \"livechat\", then click \"install\": that's it!"
-msgstr ""
-"En tant qu'administrateur⋅rice Peertube, vous pouvez installer ce plugin sur "
-"votre instance simplement en utilisant la boutique de plugin incluse dans "
-"l'interface d'administration de Peertube. Cherchez «livechat», puis cliquez "
-"sur «installer» : et voilà !"
+msgstr "En tant qu'administrateur⋅rice Peertube, vous pouvez installer ce plugin sur votre instance simplement en utilisant la boutique de plugin incluse dans l'interface d'administration de Peertube. Cherchez «livechat», puis cliquez sur «installer» : et voilà !"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "![Livechat installation](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Installation livechat](/peertube-plugin-livechat/images/installation."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Installation livechat](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -2747,59 +2636,37 @@ msgstr "Possibilités du livechat"
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "The plugin has many advanced features.  As it is using the [XMPP](https://xmpp.org/) standard \"under the hood\", it is possible for Peertube administrators to allow advanced usages (connection using XMPP clients, chatbots, bridge to other chat protocols, ...).  More information in the relevant sections of this documentation."
-msgstr ""
-"Le plugin a de nombreuses fonctionnalités avancées. Il utilise le standard "
-"[XMPP](https://xmpp.org/) «sous le capot», ce qui permet aux adminstrateur⋅"
-"rices d'activer des fonctionnalités avancées (se connecter en utilisant des "
-"clients XMPP, bots de tchat, pont vers d'autres protocoles, ...). Plus "
-"d'informations dans les sections correspondantes de cette documentation."
+msgstr "Le plugin a de nombreuses fonctionnalités avancées. Il utilise le standard [XMPP](https://xmpp.org/) «sous le capot», ce qui permet aux adminstrateur⋅rices d'activer des fonctionnalités avancées (se connecter en utilisant des clients XMPP, bots de tchat, pont vers d'autres protocoles, ...). Plus d'informations dans les sections correspondantes de cette documentation."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "Peertube is part of the fediverse: you can create a network of Peertube instances, sharing content between them."
-msgstr ""
-"Peertube fait parti du fédiverse : vous pouvez créer un réseau d'instances "
-"Peertube, en partageant le contenu entre elles."
+msgstr "Peertube fait parti du fédiverse : vous pouvez créer un réseau d'instances Peertube, en partageant le contenu entre elles."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This plugin can handle federation: when viewing a livestream from a remote instance, you will join the chat room with your local account.  You will be automatically connected with your current nickname and avatar."
-msgstr ""
-"Ce plugin est capable de gérer la fédération : quand vous regardez un direct "
-"d'une instance distante, vous rejoindrez le tchat avec votre compte local. "
-"Vous serez automatiquement connecté avec votre pseudonyme et votre avatar."
+msgstr "Ce plugin est capable de gérer la fédération : quand vous regardez un direct d'une instance distante, vous rejoindrez le tchat avec votre compte local. Vous serez automatiquement connecté avec votre pseudonyme et votre avatar."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "Of course, for the federation to work, the plugin must be installed on both instances."
-msgstr ""
-"Bien sûr, pour que la fédération fonctionne, le plugin doit être installé "
-"sur les deux instances."
+msgstr "Bien sûr, pour que la fédération fonctionne, le plugin doit être installé sur les deux instances."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "Some times, you have to protect your community from bad people.  As an instance administrator, you can choose to disallow federation for the livechat plugin.  If remote actors behave badly, streamers, moderators and administrators can ban or mute users."
-msgstr ""
-"Parfois, vous devez protéger votre communauté contre les personnes mal "
-"intentionnées. En tant qu'administrateur⋅rice d'instance, vous pouvez "
-"choisir de désactiver la fédération pour le plugin livechat. Si des acteur⋅"
-"rices distant⋅es se comportent mal, les streameur⋅euses, les modérateur⋅"
-"rices et les administrateur⋅rices peuvent bannir ou mettre en sourdine des "
-"utilisateur⋅ices."
+msgstr "Parfois, vous devez protéger votre communauté contre les personnes mal intentionnées. En tant qu'administrateur⋅rice d'instance, vous pouvez choisir de désactiver la fédération pour le plugin livechat. Si des acteur⋅rices distant⋅es se comportent mal, les streameur⋅euses, les modérateur⋅rices et les administrateur⋅rices peuvent bannir ou mettre en sourdine des utilisateur⋅ices."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "When joining a room, you will see previous messages.  Even those sent before you joined the room."
-msgstr ""
-"En rejoignant un salon, vous verrez les anciens messages. Même ceux envoyés "
-"avant que vous ne rejoignez le salon."
+msgstr "En rejoignant un salon, vous verrez les anciens messages. Même ceux envoyés avant que vous ne rejoignez le salon."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This behaviour can be changed room by room, and default retention duration can be chosen by instance's administrators."
-msgstr ""
-"Ce comportement peut changer salon par salon, et la durée de rétention peut "
-"être choisie par les administrateur⋅rices de l'instance."
+msgstr "Ce comportement peut changer salon par salon, et la durée de rétention peut être choisie par les administrateur⋅rices de l'instance."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -2810,25 +2677,17 @@ msgstr "Intégrer le tchat dans vos directs"
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "When using software as [OBS](https://obsproject.com) for you live stream, you can embed the chat in the video stream.  This is for example useful for replays."
-msgstr ""
-"Lorsque vous utilisez un logiciel tel que [OBS](https://obsproject.com) pour "
-"votre diffusion en direct, vous pouvez intégrer le tchat dans le flux vidéo. "
-"C'est par exemple utile pour les rediffusions."
+msgstr "Lorsque vous utilisez un logiciel tel que [OBS](https://obsproject.com) pour votre diffusion en direct, vous pouvez intégrer le tchat dans le flux vidéo. C'est par exemple utile pour les rediffusions."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "In the following screenshot, you can see a live replay, where the chat content is embeded on bottom of the video:"
-msgstr ""
-"Dans la capture d'écran suivante, vous pouvez voir une rediffusion de direct "
-"où le contenu du tchat est inclus dans le bas de la vidéo :"
+msgstr "Dans la capture d'écran suivante, vous pouvez voir une rediffusion de direct où le contenu du tchat est inclus dans le bas de la vidéo :"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "In the following screenshot, you can see an OBS setup, where the chat is included as a source in the current scene (background color can be changed, and can be transparent):"
-msgstr ""
-"Dans la capture d'écran suivante, vous pouvez voir une configuration OBS, où "
-"le chat est inclus en tant que source dans la scène actuelle (la couleur de "
-"fond peut être modifiée et peut être transparente) :"
+msgstr "Dans la capture d'écran suivante, vous pouvez voir une configuration OBS, où le chat est inclus en tant que source dans la scène actuelle (la couleur de fond peut être modifiée et peut être transparente) :"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -2839,25 +2698,17 @@ msgstr "Autres usages"
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "By default, each streamer will be able to activate/deactivate the chat for their live streams."
-msgstr ""
-"Par défaut, chaque streameur⋅euse peut activer/désactiver le tchat pour "
-"leurs directs."
+msgstr "Par défaut, chaque streameur⋅euse peut activer/désactiver le tchat pour leurs directs."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "But on the instance level, administrators can choose to activate the chat for all videos (live and/or VOD)."
-msgstr ""
-"Mais au niveau de l'instance, les administrateur⋅rices peuvent choisir "
-"d'activer le tchat pour toutes les vidéos (directs et/ou vidéo à la demande)."
+msgstr "Mais au niveau de l'instance, les administrateur⋅rices peuvent choisir d'activer le tchat pour toutes les vidéos (directs et/ou vidéo à la demande)."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can even activate the chat for specific VOD videos.  This is how the [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) page works: it is not a live stream, but I have activated the chat specifically for this video."
-msgstr ""
-"Vous pouvez également activer le tchat pour des vidéos à la demande "
-"spécifiques. C'est comme cela que fonctionne la page de [démo](https://www."
-"yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) : ce n'est pas un direct, "
-"mais j'ai activé le tchat spécifiquement pour cette vidéo."
+msgstr "Vous pouvez également activer le tchat pour des vidéos à la demande spécifiques. C'est comme cela que fonctionne la page de [démo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) : ce n'est pas un direct, mais j'ai activé le tchat spécifiquement pour cette vidéo."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/issues/_index.md

@@ -75,13 +75,13 @@ There are several options that can be changed.
 
 You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message.
 
-You can also uncheck "enable archiving": if unchecked, the message will be pruned in the server restarts.
+You can also uncheck "enable archiving": if unchecked, messages will be pruned if the server restarts.
 
 By unchecking "Persistent", the room will be cleared if there is no more participant.
 
 ## Delete the chat content
 
-If you want to delete the chat content, [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on "Destroy".
+If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on "Destroy".
 A popup will open, asking a confirmation.
 To avoid errors, the popup will ask you the "XMPP address" of the chat room.
 This address can be obtain using the "Details" menu in the top menu.

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-07-27 11:42+0200\n"
+"POT-Creation-Date: 2023-07-27 13:12+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Russian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ru/>\n"
@@ -2201,7 +2201,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-msgid "You can also uncheck \"enable archiving\": if unchecked, the message will be pruned in the server restarts."
+msgid "You can also uncheck \"enable archiving\": if unchecked, messages will be pruned if the server restarts."
 msgstr ""
 
 #. type: Plain text
@@ -2217,7 +2217,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-msgid "If you want to delete the chat content, [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
+msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
 msgstr ""
 
 #. type: Plain text
@@ -2304,7 +2304,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
+msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the livechat plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
 msgstr ""
 
 #. type: Title ##
