@@ -6,6 +6,7 @@ interface InitConverseJSParams {
   remoteAnonymousJID: string | null
   remoteAnonymousXMPPServer: boolean
   remoteAuthenticatedXMPPServer: boolean
+  staticBaseUrl: string
   assetsPath: string
   room: string
   localBoshServiceUrl: string | null

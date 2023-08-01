@@ -1,25 +1,14 @@
-import type { RegisterServerOptions, MVideoThumbnail, SettingEntries } from '@peertube/peertube-types'
+import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
-import type {
-  ProsodyListRoomsResult, ProsodyListRoomsResultRoom,
-  InitConverseJSParams, ConverseJSTheme
-} from '../../../shared/lib/types'
+import type { ProsodyListRoomsResult, ProsodyListRoomsResultRoom } from '../../../shared/lib/types'
 import { createProxyServer } from 'http-proxy'
-import {
-  RegisterServerOptionsV5, getBaseRouterRoute, getBaseStaticRoute, isUserAdmin
-} from '../helpers'
+import { RegisterServerOptionsV5, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
-import { getProsodyDomain } from '../prosody/config/domain'
 import { getAPIKey } from '../apikey'
-import { getChannelInfosById, getChannelNameById } from '../database/channel'
+import { getChannelInfosById } from '../database/channel'
 import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../shared/lib/autocolors'
-import { getBoshUri, getWSUri } from '../uri/webchat'
-import { getVideoLiveChatInfos } from '../federation/storage'
-import { LiveChatJSONLDAttributeV1 } from '../federation/types'
-import {
-  anonymousConnectionInfos, compatibleRemoteAuthenticatedConnectionEnabled
-} from '../federation/connection-infos'
 import { fetchMissingRemoteServerInfos } from '../federation/fetch-infos'
+import { getConverseJSParams } from '../conversejs/params'
 import * as path from 'path'
 const got = require('got')
 
@@ -38,8 +27,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
   const {
     getRouter,
     registerWebSocketRoute,
-    peertubeHelpers,
-    settingsManager
+    peertubeHelpers
   } = options
 
   const converseJSIndex = await fs.readFile(path.resolve(__dirname, '../../conversejs/index.html'))
@@ -51,102 +39,33 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       res.removeHeader('X-Frame-Options') // this route can be opened in an iframe
 
       const roomKey = req.params.roomKey
-      const settings = await settingsManager.getSettings([
-        'prosody-room-type',
-        'disable-websocket',
-        'converse-theme', 'converse-autocolors',
-        'federation-no-remote-chat',
-        'prosody-room-allow-s2s'
-      ])
-
-      let autoViewerMode: boolean = false
-      let forceReadonly: boolean | 'noscroll' = false
-      let converseJSTheme: ConverseJSTheme = settings['converse-theme'] as ConverseJSTheme
-      let transparent: boolean = false
-      if (!/^\w+$/.test(converseJSTheme)) {
-        converseJSTheme = 'peertube'
-      }
-
-      const authenticationUrl = options.peertubeHelpers.config.getWebserverUrl() +
-        getBaseRouterRoute(options) +
-        'api/auth'
+      let readonly: boolean | 'noscroll' = false
       if (req.query._readonly === 'true') {
-        forceReadonly = true
+        readonly = true
       } else if (req.query._readonly === 'noscroll') {
-        forceReadonly = 'noscroll'
-      } else {
-        autoViewerMode = true // auto join the chat in viewer mode, if not logged in
-      }
-      if (req.query._transparent === 'true') {
-        transparent = true
+        readonly = 'noscroll'
       }
 
-      let video: MVideoThumbnail | undefined
-      let channelId: number
-      let remoteChatInfos: LiveChatJSONLDAttributeV1 | undefined
-      const channelMatches = roomKey.match(/^channel\.(\d+)$/)
-      if (channelMatches?.[1]) {
-        channelId = parseInt(channelMatches[1])
-        // Here we are on a channel room...
-        const channelInfos = await getChannelInfosById(options, channelId)
-        if (!channelInfos) {
-          throw new Error('Channel not found')
-        }
-        channelId = channelInfos.id
-      } else {
-        const uuid = roomKey // must be a video UUID.
-        video = await peertubeHelpers.videos.loadByIdOrUUID(uuid)
-        if (!video) {
-          res.status(404)
-          res.send('Not found')
-          return
-        }
-        if (video.remote) {
-          remoteChatInfos = settings['federation-no-remote-chat'] ? false : await getVideoLiveChatInfos(options, video)
-          if (!remoteChatInfos) {
-            res.status(404)
-            res.send('Not found')
-            return
-          }
-        }
-        channelId = video.channelId
+      const initConverseJSParam = await getConverseJSParams(options, roomKey, {
+        readonly,
+        transparent: req.query._transparent === 'true',
+        forcetype: req.query.forcetype === '1'
+      })
+
+      if (('isError' in initConverseJSParam)) {
+        res.status(initConverseJSParam.code)
+        res.send(initConverseJSParam.message)
+        return
       }
 
       let page = '' + (converseJSIndex as string)
-      const baseStaticUrl = getBaseStaticRoute(options)
-      page = page.replace(/{{BASE_STATIC_URL}}/g, baseStaticUrl)
+      page = page.replace(/{{BASE_STATIC_URL}}/g, initConverseJSParam.staticBaseUrl)
 
-      const prosodyDomain = await getProsodyDomain(options)
-      const localAnonymousJID = 'anon.' + prosodyDomain
-      const localBoshUri = getBoshUri(options)
-      const localWsUri = settings['disable-websocket']
-        ? null
-        : (getWSUri(options) ?? null)
+      const settings = await options.settingsManager.getSettings([
+        'converse-theme', 'converse-autocolors'
+      ])
 
-      let remoteConnectionInfos: WCRemoteConnectionInfos | undefined
-      let roomJID: string
-      if (video?.remote) {
-        const canWebsocketS2S = !settings['federation-no-remote-chat'] && !settings['disable-websocket']
-        const canDirectS2S = !settings['federation-no-remote-chat'] && !!settings['prosody-room-allow-s2s']
-        remoteConnectionInfos = await _remoteConnectionInfos(remoteChatInfos ?? false, canWebsocketS2S, canDirectS2S)
-        if (!remoteConnectionInfos) {
-          res.status(404)
-          res.send('No compatible way to connect to remote chat')
-          return
-        }
-        roomJID = remoteConnectionInfos.roomJID
-      } else {
-        roomJID = await _localRoomJID(
-          options,
-          settings,
-          prosodyDomain,
-          roomKey,
-          video,
-          channelId,
-          req.query.forcetype === '1'
-        )
-      }
-
+      // Adding some custom CSS if relevant...
       let autocolorsStyles = ''
       if (
         settings['converse-autocolors'] &&
@@ -198,28 +117,10 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         peertubeHelpers.logger.debug('No AutoColors.')
       }
 
-      // ... then some CSS in the page.
+      // ... then insert CSS in the page.
       page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
 
       // ... and finaly inject all other parameters
-      const initConverseJSParam: InitConverseJSParams = {
-        assetsPath: baseStaticUrl + 'conversejs/',
-        isRemoteChat: !!(video?.remote),
-        localAnonymousJID: localAnonymousJID,
-        remoteAnonymousJID: remoteConnectionInfos?.anonymous?.userJID ?? null,
-        remoteAnonymousXMPPServer: !!(remoteConnectionInfos?.anonymous),
-        remoteAuthenticatedXMPPServer: !!(remoteConnectionInfos?.authenticated),
-        room: roomJID,
-        localBoshServiceUrl: localBoshUri,
-        localWebsocketServiceUrl: localWsUri,
-        remoteBoshServiceUrl: remoteConnectionInfos?.anonymous?.boshUri ?? null,
-        remoteWebsocketServiceUrl: remoteConnectionInfos?.anonymous?.wsUri ?? null,
-        authenticationUrl: authenticationUrl,
-        autoViewerMode,
-        theme: converseJSTheme,
-        forceReadonly,
-        transparent
-      }
       page = page.replace('{INIT_CONVERSE_PARAMS}', JSON.stringify(initConverseJSParam))
       res.status(200)
       res.type('html')
@@ -464,94 +365,6 @@ async function enableProxyRoute (
   currentS2SWebsocketProxy.on('close', () => {
     logger.info('Got a close event for the s2s websocket proxy')
   })
-}
-
-interface WCRemoteConnectionInfos {
-  roomJID: string
-  anonymous?: {
-    userJID: string
-    boshUri: string
-    wsUri?: string
-  }
-  authenticated?: boolean
-}
-
-async function _remoteConnectionInfos (
-  remoteChatInfos: LiveChatJSONLDAttributeV1,
-  canWebsocketS2S: boolean,
-  canDirectS2S: boolean
-): Promise<WCRemoteConnectionInfos> {
-  if (!remoteChatInfos) { throw new Error('Should have remote chat infos for remote videos') }
-  if (remoteChatInfos.type !== 'xmpp') { throw new Error('Should have remote xmpp chat infos for remote videos') }
-  const connectionInfos: WCRemoteConnectionInfos = {
-    roomJID: remoteChatInfos.jid
-  }
-  if (compatibleRemoteAuthenticatedConnectionEnabled(remoteChatInfos, canWebsocketS2S, canDirectS2S)) {
-    connectionInfos.authenticated = true
-  }
-  const anonymousCI = anonymousConnectionInfos(remoteChatInfos ?? false)
-  if (anonymousCI?.boshUri) {
-    connectionInfos.anonymous = {
-      userJID: anonymousCI.userJID,
-      boshUri: anonymousCI.boshUri,
-      wsUri: anonymousCI.wsUri
-    }
-  }
-  return connectionInfos
-}
-
-async function _localRoomJID (
-  options: RegisterServerOptions,
-  settings: SettingEntries,
-  prosodyDomain: string,
-  roomKey: string,
-  video: MVideoThumbnail | undefined,
-  channelId: number,
-  forceType: boolean
-): Promise<string> {
-  // Computing the room name...
-  let room: string
-  if (forceType) {
-    // We come from the room list in the settings page.
-    // Here we don't read the prosody-room-type settings,
-    // but use the roomKey format.
-    // NB: there is no extra security. Any user can add this parameter.
-    //     This is not an issue: the setting will be tested at the room creation.
-    //     No room can be created in the wrong mode.
-    if (/^channel\.\d+$/.test(roomKey)) {
-      room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
-    } else {
-      room = '{{VIDEO_UUID}}@room.' + prosodyDomain
-    }
-  } else {
-    if (settings['prosody-room-type'] === 'channel') {
-      room = 'channel.{{CHANNEL_ID}}@room.' + prosodyDomain
-    } else {
-      room = '{{VIDEO_UUID}}@room.' + prosodyDomain
-    }
-  }
-
-  if (room.includes('{{VIDEO_UUID}}')) {
-    if (!video) {
-      throw new Error('Missing video')
-    }
-    room = room.replace(/{{VIDEO_UUID}}/g, video.uuid)
-  }
-  room = room.replace(/{{CHANNEL_ID}}/g, `${channelId}`)
-  if (room.includes('{{CHANNEL_NAME}}')) {
-    const channelName = await getChannelNameById(options, channelId)
-    if (channelName === null) {
-      throw new Error('Channel not found')
-    }
-    if (!/^[a-zA-Z0-9_.]+$/.test(channelName)) {
-      // FIXME: see if there is a response here https://github.com/Chocobozzz/PeerTube/issues/4301 for allowed chars
-      options.peertubeHelpers.logger.error(`Invalid channel name, contains unauthorized chars: '${channelName}'`)
-      throw new Error('Invalid channel name, contains unauthorized chars')
-    }
-    room = room.replace(/{{CHANNEL_NAME}}/g, channelName)
-  }
-
-  return room
 }
 
 export {
