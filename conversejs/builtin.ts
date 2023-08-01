@@ -1,4 +1,4 @@
-import type { InitConverseParams } from './lib/types'
+import type { InitConverseJSParams } from 'shared/lib/types'
 import { inIframe } from './lib/utils'
 import { initDom } from './lib/dom'
 import {
@@ -19,11 +19,11 @@ declare global {
         add: (name: string, plugin: any) => void
       }
     }
-    initConverse: (args: InitConverseParams) => Promise<void>
+    initConverse: (args: InitConverseJSParams) => Promise<void>
   }
 }
 
-window.initConverse = async function initConverse (initConverseParams: InitConverseParams): Promise<void> {
+window.initConverse = async function initConverse (initConverseParams: InitConverseJSParams): Promise<void> {
   // First, fixing relative websocket urls.
   if (initConverseParams.localWebsocketServiceUrl?.startsWith('/')) {
     initConverseParams.localWebsocketServiceUrl = new URL(

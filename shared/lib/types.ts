@@ -1,5 +1,24 @@
 type ConverseJSTheme = 'peertube' | 'default' | 'concord'
 
+interface InitConverseJSParams {
+  isRemoteChat: boolean
+  localAnonymousJID: string
+  remoteAnonymousJID: string | null
+  remoteAnonymousXMPPServer: boolean
+  remoteAuthenticatedXMPPServer: boolean
+  assetsPath: string
+  room: string
+  localBoshServiceUrl: string | null
+  localWebsocketServiceUrl: string | null
+  remoteBoshServiceUrl: string | null
+  remoteWebsocketServiceUrl: string | null
+  authenticationUrl: string
+  autoViewerMode: boolean
+  forceReadonly: boolean | 'noscroll'
+  theme: ConverseJSTheme
+  transparent: boolean
+}
+
 interface ProsodyListRoomsResultError {
   ok: false
   error: string
@@ -28,6 +47,7 @@ type ProsodyListRoomsResult = ProsodyListRoomsResultError | ProsodyListRoomsResu
 
 export type {
   ConverseJSTheme,
+  InitConverseJSParams,
   ProsodyListRoomsResult,
   ProsodyListRoomsResultRoom
 }

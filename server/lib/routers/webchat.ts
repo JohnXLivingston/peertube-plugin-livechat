@@ -1,7 +1,8 @@
 import type { RegisterServerOptions, MVideoThumbnail, SettingEntries } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
 import type {
-  ProsodyListRoomsResult, ProsodyListRoomsResultRoom
+  ProsodyListRoomsResult, ProsodyListRoomsResultRoom,
+  InitConverseJSParams, ConverseJSTheme
 } from '../../../shared/lib/types'
 import { createProxyServer } from 'http-proxy'
 import {
@@ -59,8 +60,8 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       ])
 
       let autoViewerMode: boolean = false
-      let forceReadonly: 'true' | 'false' | 'noscroll' = 'false'
-      let converseJSTheme: string = settings['converse-theme'] as string
+      let forceReadonly: boolean | 'noscroll' = false
+      let converseJSTheme: ConverseJSTheme = settings['converse-theme'] as ConverseJSTheme
       let transparent: boolean = false
       if (!/^\w+$/.test(converseJSTheme)) {
         converseJSTheme = 'peertube'
@@ -70,7 +71,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         getBaseRouterRoute(options) +
         'api/auth'
       if (req.query._readonly === 'true') {
-        forceReadonly = 'true'
+        forceReadonly = true
       } else if (req.query._readonly === 'noscroll') {
         forceReadonly = 'noscroll'
       } else {
@@ -119,8 +120,8 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       const localAnonymousJID = 'anon.' + prosodyDomain
       const localBoshUri = getBoshUri(options)
       const localWsUri = settings['disable-websocket']
-        ? ''
-        : (getWSUri(options) ?? '')
+        ? null
+        : (getWSUri(options) ?? null)
 
       let remoteConnectionInfos: WCRemoteConnectionInfos | undefined
       let roomJID: string
@@ -145,10 +146,6 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
           req.query.forcetype === '1'
         )
       }
-
-      page = page.replace(/{{IS_REMOTE_CHAT}}/g, video?.remote ? 'true' : 'false')
-      page = page.replace(/{{LOCAL_ANONYMOUS_JID}}/g, localAnonymousJID)
-      page = page.replace(/{{REMOTE_ANONYMOUS_JID}}/g, remoteConnectionInfos?.anonymous?.userJID ?? '')
 
       let autocolorsStyles = ''
       if (
@@ -201,24 +198,29 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         peertubeHelpers.logger.debug('No AutoColors.')
       }
 
-      // ... then inject it in the page.
-      page = page.replace(/{{ROOM}}/g, roomJID)
-      page = page.replace(/{{LOCAL_BOSH_SERVICE_URL}}/g, localBoshUri)
-      page = page.replace(/{{LOCAL_WS_SERVICE_URL}}/g, localWsUri ?? '')
-      page = page.replace(/{{REMOTE_BOSH_SERVICE_URL}}/g, remoteConnectionInfos?.anonymous?.boshUri ?? '')
-      page = page.replace(/{{REMOTE_WS_SERVICE_URL}}/g, remoteConnectionInfos?.anonymous?.wsUri ?? '')
-      page = page.replace(/{{REMOTE_ANONYMOUS_XMPP_SERVER}}/g, remoteConnectionInfos?.anonymous ? 'true' : 'false')
-      page = page.replace(
-        /{{REMOTE_AUTHENTICATED_XMPP_SERVER}}/g,
-        remoteConnectionInfos?.authenticated ? 'true' : 'false'
-      )
-      page = page.replace(/{{AUTHENTICATION_URL}}/g, authenticationUrl)
-      page = page.replace(/{{AUTOVIEWERMODE}}/g, autoViewerMode ? 'true' : 'false')
-      page = page.replace(/{{CONVERSEJS_THEME}}/g, converseJSTheme)
+      // ... then some CSS in the page.
       page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
-      page = page.replace(/{{FORCEREADONLY}}/g, forceReadonly)
-      page = page.replace(/{{TRANSPARENT}}/g, transparent ? 'true' : 'false')
 
+      // ... and finaly inject all other parameters
+      const initConverseJSParam: InitConverseJSParams = {
+        assetsPath: baseStaticUrl + 'conversejs/',
+        isRemoteChat: !!(video?.remote),
+        localAnonymousJID: localAnonymousJID,
+        remoteAnonymousJID: remoteConnectionInfos?.anonymous?.userJID ?? null,
+        remoteAnonymousXMPPServer: !!(remoteConnectionInfos?.anonymous),
+        remoteAuthenticatedXMPPServer: !!(remoteConnectionInfos?.authenticated),
+        room: roomJID,
+        localBoshServiceUrl: localBoshUri,
+        localWebsocketServiceUrl: localWsUri,
+        remoteBoshServiceUrl: remoteConnectionInfos?.anonymous?.boshUri ?? null,
+        remoteWebsocketServiceUrl: remoteConnectionInfos?.anonymous?.wsUri ?? null,
+        authenticationUrl: authenticationUrl,
+        autoViewerMode,
+        theme: converseJSTheme,
+        forceReadonly,
+        transparent
+      }
+      page = page.replace('{INIT_CONVERSE_PARAMS}', JSON.stringify(initConverseJSParam))
       res.status(200)
       res.type('html')
       res.send(page)

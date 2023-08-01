@@ -1,6 +1,6 @@
-import type { InitConverseParams } from './types'
+import type { InitConverseJSParams } from 'shared/lib/types'
 
-function initDom ({ forceReadonly, transparent }: InitConverseParams, isInIframe: boolean): void {
+function initDom ({ forceReadonly, transparent }: InitConverseJSParams, isInIframe: boolean): void {
   const body = document.querySelector('body')
   if (isInIframe) {
     if (body) {

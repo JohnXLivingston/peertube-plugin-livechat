@@ -1,4 +1,4 @@
-import type { InitConverseParams } from './types'
+import type { InitConverseJSParams } from 'shared/lib/types'
 import type { AuthentInfos } from './auth'
 
 /**
@@ -9,7 +9,7 @@ import type { AuthentInfos } from './auth'
  * @returns default parameters to provide to ConverseJS.
  */
 function defaultConverseParams (
-  { forceReadonly, theme, assetsPath, room }: InitConverseParams,
+  { forceReadonly, theme, assetsPath, room }: InitConverseJSParams,
   isInIframe: boolean
 ): any {
   const mucShowInfoMessages = forceReadonly
@@ -96,7 +96,10 @@ function defaultConverseParams (
  * @param auth authent infos.
  * @param params ConverseJS parameters to fill
  */
-function localRoomAuthenticatedParams (initConverseParams: InitConverseParams, auth: AuthentInfos, params: any): void {
+function localRoomAuthenticatedParams (
+  initConverseParams: InitConverseJSParams,
+  auth: AuthentInfos, params: any
+): void {
   _fillAuthenticatedParams(initConverseParams, auth, params)
   _fillLocalProtocols(initConverseParams, params)
 }
@@ -106,7 +109,7 @@ function localRoomAuthenticatedParams (initConverseParams: InitConverseParams, a
  * @param initConverseParams global parameters
  * @param params ConverseJS parameters to fill
  */
-function localRoomAnonymousParams (initConverseParams: InitConverseParams, params: any): void {
+function localRoomAnonymousParams (initConverseParams: InitConverseJSParams, params: any): void {
   params.jid = initConverseParams.localAnonymousJID
   _fillLocalProtocols(initConverseParams, params)
 }
@@ -117,7 +120,10 @@ function localRoomAnonymousParams (initConverseParams: InitConverseParams, param
  * @param auth authent infos.
  * @param params ConverseJS parameters to fill
  */
-function remoteRoomAuthenticatedParams (initConverseParams: InitConverseParams, auth: AuthentInfos, params: any): void {
+function remoteRoomAuthenticatedParams (
+  initConverseParams: InitConverseJSParams,
+  auth: AuthentInfos, params: any
+): void {
   _fillAuthenticatedParams(initConverseParams, auth, params)
   _fillLocalProtocols(initConverseParams, params)
 }
@@ -129,7 +135,7 @@ function remoteRoomAuthenticatedParams (initConverseParams: InitConverseParams, 
  * @param params ConverseJS parameters to fill
  */
 function remoteRoomAnonymousParams (
-  initConverseParams: InitConverseParams,
+  initConverseParams: InitConverseJSParams,
   auth: AuthentInfos | null,
   params: any
 ): void {
@@ -140,7 +146,7 @@ function remoteRoomAnonymousParams (
   _fillRemoteProtocols(initConverseParams, params)
 }
 
-function _fillAuthenticatedParams (initConverseParams: InitConverseParams, auth: AuthentInfos, params: any): void {
+function _fillAuthenticatedParams (initConverseParams: InitConverseJSParams, auth: AuthentInfos, params: any): void {
   params.authentication = 'login'
   params.auto_login = true
   params.jid = auth.jid
@@ -155,12 +161,12 @@ function _fillAuthenticatedParams (initConverseParams: InitConverseParams, auth:
   // FIXME: use params.oauth_providers?
 }
 
-function _fillLocalProtocols (initConverseParams: InitConverseParams, params: any): void {
+function _fillLocalProtocols (initConverseParams: InitConverseJSParams, params: any): void {
   params.bosh_service_url = initConverseParams.localBoshServiceUrl
   params.websocket_url = initConverseParams.localWebsocketServiceUrl
 }
 
-function _fillRemoteProtocols (initConverseParams: InitConverseParams, params: any): void {
+function _fillRemoteProtocols (initConverseParams: InitConverseJSParams, params: any): void {
   params.bosh_service_url = initConverseParams.remoteBoshServiceUrl
   params.websocket_url = initConverseParams.remoteWebsocketServiceUrl
 }
