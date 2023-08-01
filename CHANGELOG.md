@@ -1,5 +1,15 @@
 # Changelog
 
+## XXX (Unreleased Yet)
+
+### New Features
+
+* ...
+
+### Minor changes and fixes
+
+* Some code refactoring.
+
 ## 7.2.1
 
 ### Minor changes and fixes
