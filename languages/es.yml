@@ -47,7 +47,7 @@ converse_theme_option_peertube: Peertube tematización
 converse_theme_option_default: ConverseJS tematización por defecto
 autocolors_label: Detección de color automatica
 prosody_port_label: Prosody puerto
-prosody_peertube_uri_label: Peertube url para pedidas de API
+prosody_peertube_uri_label: URL de Peertube para peticiones de API
 videos_list_label: Activar chat para estos vídeos
 help_builtin_prosody_label: Servidor prosody
 disable_websocket_label: Desactivar Websocket
@@ -180,3 +180,40 @@ prosody_s2s_interfaces_description: "Las interfaces de red para escuchar conexio
   \   <li>*, ::</li>\n   <li>*</li>\n   <li>127.0.0.1, ::1</li>\n   <li>172.18.0.42</li>\n\
   </ul>\n"
 prosody_s2s_interfaces_label: Interfaces de red de servidor a servidor
+prosody_components_label: Habilitar componentes externos personalizados de Prosody
+prosody_components_description: "Activar el uso de componentes XMPP externos.<br>\n\
+  Esta opción por sí sola solo permite conexiones desde localhost.<br>\nEsta función\
+  \ se puede utilizar, por ejemplo, para conectar algunos bots a las salas de chat.\n"
+prosody_components_port_description: "El puerto que usarán los componentes XMPP para\
+  \ conectarse al servidor Prosody.<br>\nCámbielo si este puerto ya está en uso en\
+  \ su servidor.<br>\nPuede mantener este puerto cerrado con su firewall por ahora,\
+  \ no se accederá desde el mundo exterior.<br>\nNota: esto podría cambiar en un futuro\
+  \ cercano, ya que está previsto agregar una función para activar las conexiones\
+  \ externas.\n"
+prosody_certificates_dir_label: Directorio de certificados
+prosody_c2s_label: Activar las conexiones cliente-servidor
+prosody_certificates_dir_description: "Si este campo está vacío, el plugin generará\
+  \ y utilizará certificados autofirmados.<br>\nSi desea utilizar otros certificados,\
+  \ sólo tiene que especificar aquí el directorio donde\nProsody puede encontrarlos.\
+  \ Nota: el usuario \"peertube\" debe tener acceso de lectura a este directorio.\n"
+prosody_c2s_description: "Habilitar clientes XMPP para conectarse al servidor Prosody\
+  \ integrado.<br>\nEsta opción sólo permite conexiones desde clientes en localhost.\n"
+prosody_c2s_port_label: Puerto de cliente a servidor Prosody
+prosody_c2s_port_description: "El puerto que utilizará el módulo c2s del servidor\
+  \ Prosody integrado.<br>\nLos clientes XMPP deben usar este puerto para conectarse.<br>\n\
+  Cámbielo si este puerto ya está en uso en su servidor.<br>\nPuede mantener este\
+  \ puerto cerrado con su cortafuegos por ahora, no se accederá desde el mundo exterior.<br>\n\
+  Nota: esto podría cambiar en un futuro cercano, ya que está previsto agregar una\
+  \ función para activar las conexiones externas.\n"
+prosody_components_port_label: Puerto de componentes externos Prosody
+prosody_components_list_label: Componentes externos
+prosody_components_list_description: "Los componentes externos a declarar:\n<ul>\n\
+  \   <li>Uno por línea.</li>\n   <li>Utilice el formato «component_name:component_secret»\
+  \ (los espacios se recortarán).</li>\n   <li>Puede agregar comentarios: todo lo\
+  \ que esté después del carácter # se eliminará y las líneas vacías se ignorarán.</li>\n\
+  \   <li>El nombre solo puede contener caracteres alfanuméricos latinos y puntos.</li>\n\
+  \   <li>\n     Si el nombre contiene solo caracteres alfanuméricos, tendrá como\
+  \ sufijo el dominio XMPP.\n     Por ejemplo, «bridge» se convertirá en «bridge.tu_dominio.tld».\n\
+  \     También puede especificar un nombre de dominio completo, pero debe asegurarse\
+  \ de configurar su DNS correctamente.\n   </li>\n   <li>Use solo caracteres alfanuméricos\
+  \ en la frase de contraseña secreta (use al menos 15 caracteres).</li>\n</ul>\n"
