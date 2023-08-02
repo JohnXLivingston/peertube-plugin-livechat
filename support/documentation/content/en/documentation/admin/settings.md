@@ -112,6 +112,13 @@ This settings should only be used if the plugin is broken, and waiting for a pat
 
 {{% livechat_label prosody_peertube_uri_description %}}
 
+If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
+
+In last resort, it will use your Peertube public URI.
+So, any API Call will go throught your Nginx server.
+This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP.
+In such case, try changing the "{{% livechat_label prosody_peertube_uri_label %}}" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know).
+
 ### {{% livechat_label prosody_muc_log_by_default_label %}}
 
 {{% livechat_label prosody_muc_log_by_default_description %}}
