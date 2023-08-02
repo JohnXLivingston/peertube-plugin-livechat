@@ -20,7 +20,7 @@ generate_iframe: IFrame-Element erstellen, um den Chat in eine Webseite zu integ
 important_note_title: "<h3>Wichtige Hinweise</h3>"
 important_note_text: |
   Sie können die Dokumentation hier finden:
-  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/de/" target="_blank">
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/de/" target="_blank">
     Peertube Plugin Livechat Dokumentation
   </a>.
 
@@ -271,3 +271,4 @@ prosody_certificates_dir_description: "Wenn dieses Feld leer ist, erzeugt und ve
   \ das Plugin selbstsignierte Zertifikate.<br>\nWenn Sie andere Zertifikate verwenden\
   \ wollen, geben Sie hier einfach den Ordner an,\nin dem Prosody sie finden kann.\
   \ Hinweis: Der Benutzer \"peertube\" muss Lesezugriff auf diesen Ordner haben.\n"
+online_help: Online Hilfe
