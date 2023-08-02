@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-08-02 17:04+0200\n"
-"PO-Revision-Date: 2023-07-21 00:49+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2023-08-03 20:53+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -560,6 +562,9 @@ msgstr "Im Moment ist es nicht möglich, Markdown-Tabellen zu verwenden: Die Üb
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "There may be links to documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
 msgstr ""
+"Möglicherweise gibt es Links zur Dokumentation an anderer Stelle im Web.  "
+"Versuchen Sie nicht, die URLs der Dokumentationsseiten zu ändern.  Oder "
+"setzen Sie zumindest Links zum neuen Ort auf die vorherige URL."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
@@ -839,23 +844,37 @@ msgstr "Wenn Sie sich nicht sicher sind, übersetzen Sie einfach nicht und frage
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The tool I use to handle translations for the documentation can have strange behaviours. When I add sentences that looks like other existing sentences, it sometimes copies existing translations. So, when you have translations marked as \"to check\", please make sure it doesn't copy a string that has nothing to do with the english one before validating."
 msgstr ""
+"Das Tool, mit dem ich die Übersetzungen für die Dokumentation bearbeite, "
+"verhält sich manchmal seltsam. Wenn ich Sätze hinzufüge, die anderen "
+"bestehenden Sätzen ähneln, kopiert es manchmal bestehende Übersetzungen. "
+"Wenn Sie also Übersetzungen als \"zu prüfen\" markiert haben, stellen Sie "
+"bitte sicher, dass es vor der Validierung keine Zeichenfolge kopiert, die "
+"nichts mit der englischen zu tun hat."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are now sure about the context of a string, you can check the string location in the weblate's right pane, and open the corresponding documentation page.  For example, for a string located in the file `support/documentation/content/en/documentation/user/streamers.md`, the corresponding url is `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`."
 msgstr ""
+"Wenn Sie sich nun über den Kontext einer Zeichenkette sicher sind, können "
+"Sie die Position der Zeichenkette im rechten Fensterbereich von weblate "
+"überprüfen und die entsprechende Dokumentationsseite öffnen.  Für eine "
+"Zeichenfolge in der Datei `support/documentation/content/de/documentation/"
+"user/streamers.md` lautet die entsprechende URL beispielsweise "
+"`https://livingston.frama.io/peertube-plugin-livechat/de/documentation/user/"
+"streamers/`."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
-#| msgid "General information"
+#, no-wrap
 msgid "Generic recommandations"
-msgstr "Allgemeine Informationen"
+msgstr "Allgemeine Empfehlungen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
 msgstr ""
+"Bitte formulieren Sie umfassend und beachten Sie den [Verhaltenskodex"
+"](/peertube-plugin-livechat/contributing/codeofconduct/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
@@ -1608,6 +1627,10 @@ msgstr "Diese Einstellung sollte nur verwendet werden, wenn das Plugin defekt is
 #, no-wrap
 msgid "If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
 msgstr ""
+"Wenn diese Einstellung leer gelassen wird und Sie Peertube >= 5.1 oder "
+"später verwenden, wird das Plugin die Werte aus Ihrer Peertube-"
+"Konfigurationsdatei verwenden, um zu erraten, auf welcher Schnittstelle und "
+"welchem Port die Anfrage erfolgen muss.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1801,41 +1824,50 @@ msgstr "Hier sind weitere, spezifischere Anweisungen:"
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Some classic mistakes and workarounds."
-msgstr ""
+msgstr "Einige klassische Fehler und Umgehungsmöglichkeiten."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "I just installed/upgraded the plugin, but nothing happens"
 msgstr ""
+"Ich habe das Plugin gerade installiert/aktualisiert, aber es passiert nichts"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, ...), just try to reload the page."
 msgstr ""
+"Wenn Sie das Plugin gerade installiert/aktualisiert haben, aber nichts "
+"passiert (kein Chat, keine Einstellungen, Schaltflächen auf der "
+"Einstellungsseite funktionieren nicht, ...), versuchen Sie einfach, die "
+"Seite neu zu laden."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Diagnostic tool"
-msgstr ""
+msgstr "Diagnosewerkzeug"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If the chat does not work, there is a diagnostic tool in the plugin's settings pages."
 msgstr ""
+"Wenn der Chat nicht funktioniert, gibt es ein Diagnosetool auf den "
+"Einstellungsseiten des Plugins."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Open the plugin settings, and click on the \"launch diagnostic\" button."
 msgstr ""
+"Öffnen Sie die Plugin-Einstellungen, und klicken Sie auf die Schaltfläche "
+"\"Diagnose starten\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Launch diagnostic](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Diagnose starten](/peertube-plugin-livechat/images/launch_diagnostic."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -1844,28 +1876,31 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Diagnostic result](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Diagnoseergebnis](/peertube-plugin-livechat/images/diagnostic."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Chat does not load"
-msgstr ""
+msgstr "Chat wird nicht geladen"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Internal API calls"
-msgstr ""
+msgstr "Interne API-Aufrufe"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "In some case (like for some Docker Peertube installation), the diagnostic tools displays an error for the test called \"API Prosody -> Peertube is KO\".\n"
 msgstr ""
+"In manchen Fällen (z. B. bei einer Docker-Peertube-Installation) zeigen die "
+"Diagnosewerkzeuge einen Fehler für den Test namens \"API Prosody -> Peertube "
+"is KO\" an.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -1874,10 +1909,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgid "Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
-msgstr "Die Benutzerdokumentation zu diesen Funktionen finden Sie auf der Seite [Benutzerdokumentation](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
+msgstr ""
+"Weitere Informationen finden Sie in der Hilfe für [diese Einstellungen"
+"](/peertube-plugin-livechat/documentation/admin/settings/)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -1978,17 +2013,18 @@ msgstr "Sie können auf die Raumeinstellungen und Moderationswerkzeuge zugreifen
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Hauptmenü](/peertube-plugin-livechat/images/top_menu."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
-#, fuzzy
-#| msgid "All instance moderators and admins will be owner of created chat rooms.  If the video is local (not from a remote Peertube), the video owner will be admin in the chat room."
 msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
-msgstr "Alle Instanzmoderatoren und Admins sind Eigentümer der erstellten Chaträume. Wenn das Video lokal ist (nicht von einem entfernten Peertube), ist der Eigentümer des Videos der Administrator des Chatraums."
+msgstr ""
+"Alle Instanzmoderatoren und Admins sind Eigentümer der erstellten "
+"Chaträume.  Der Eigentümer des Videos wird der Administrator des Chatraums "
+"sein."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2024,10 +2060,9 @@ msgstr "Sie können alte Räume löschen: Treten Sie dem Raum bei, und verwenden
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/moderation.md
-#, fuzzy, no-wrap
-#| msgid "Moderation"
+#, no-wrap
 msgid "Instance moderation"
-msgstr "Moderation"
+msgstr "Instanz-Moderation"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/moderation.md
@@ -2064,25 +2099,25 @@ msgstr "OBS Overlay"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "If you are using OBS for streaming, you can easily include the chat in your stream."
 msgid "You can easily include the chat in your stream."
-msgstr "Wenn Sie OBS zum Streaming verwenden, können Sie den Chat ganz einfach in Ihren Stream integrieren."
+msgstr "Sie können den Chat ganz einfach in Ihren Stream integrieren."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Embeding the chat in a live stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Einbetten des Chats in einen Live-Stream](/peertube-plugin-livechat/images/"
+"embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "You can use the «share chat link» feature to generate an URL to your chat.  The button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
 msgid "You can use the \"{{% livechat_label share_chat_link %}}\" feature to generate an URL to your chat.  This button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
-msgstr "Sie können die Funktion \"Chat-Link teilen\" verwenden, um eine URL zu Ihrem Chat zu erstellen. Die Schaltfläche sollte sich in der Nähe des Chats befinden, wenn Sie der Eigentümer des Videos sind (es sei denn, sie wurde von den Administratoren Ihres Servers deaktiviert)."
+msgstr ""
+"Sie können die Funktion \"{{% livechat_label share_chat_link %}}\" "
+"verwenden, um eine URL zu Ihrem Chat zu generieren.  Diese Schaltfläche "
+"sollte sich in der Nähe des Chats befinden, wenn Sie der Videoeigentümer "
+"sind (es sei denn, sie wurde von Ihren Serveradministratoren deaktiviert)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2092,32 +2127,32 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
 msgid "![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
-msgstr "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Link Teilen Popup](/peertube-plugin-livechat/images/share_readonly."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "Check the «readonly» checkbox in the modal.  Then use this link as a «web browser source» in OBS."
 msgid "Then use this link as a \"web browser source\" in OBS."
-msgstr "Aktivieren Sie das Kontrollkästchen \"schreibgeschützt\" in dem Fenster. Verwenden Sie dann diesen Link als \"Webbrowser-Quelle\" im OBS."
+msgstr "Verwenden Sie dann diesen Link als \"Webbrowser-Quelle\" in OBS."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Den Chat in OBS einbetten](/peertube-plugin-livechat/images/"
+"embed_chat_in_obs.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "You can use the «Transparent background» to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
 msgid "You can use the \"{{% livechat_label transparent_background %}}\" option to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
-msgstr "Sie können die Option «Transparenter Hintergrund» verwenden, um einen transparenten Hintergrund in OBS zu erhalten. Wenn Sie die Hintergrundtransparenz anpassen möchten, können Sie dieses CSS in den Einstellungen Ihrer OBS-Browserquelle hinzufügen:"
+msgstr ""
+"Sie können die \"{{% livechat_label transparent_background %}}\" Option "
+"verwenden, um einen transparenten Hintergrund in OBS zu erhalten.  Wenn Sie "
+"die Hintergrundtransparenz anpassen möchten, können Sie dieses CSS in den "
+"Einstellungen Ihrer OBS-Browserquelle hinzufügen:"
 
 #. type: Fenced code block (css)
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2135,10 +2170,13 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "Note: you can customize colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
 msgid "Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
-msgstr "Hinweis: Sie können die Farben anpassen. Dies ist noch nicht dokumentiert, aber Sie können dies versuchen: Aktivieren Sie im Fenster die Option \"Aktuelle Themenfarben verwenden\", und versuchen Sie dann, die Farbwerte in der URL manuell zu ändern. Sie müssen gültige CSS-Farbwerte verwenden, und diese müssen in der URL korrekt kodiert sein."
+msgstr ""
+"Hinweis: Sie können vollständig die Chat-Farben anpassen. Dies ist noch "
+"nicht dokumentiert, aber Sie können dies versuchen: Aktivieren Sie im "
+"Fenster die Option \"Aktuelle Themenfarben verwenden\", und versuchen Sie "
+"dann, die Farbwerte in der URL manuell zu ändern.  Sie müssen gültige CSS-"
+"Farbwerte verwenden, und diese müssen in der URL korrekt kodiert sein."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2153,10 +2191,9 @@ msgstr "Sie können die [social_stream Browsererweiterung](https://github.com/st
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy, no-wrap
-#| msgid "Mixing multiple chats in your live stream"
+#, no-wrap
 msgid "How to setup the chat for your live stream"
-msgstr "Mischen mehrerer Chats in Ihrem Live-Stream"
+msgstr "So richten Sie den Chat für Ihren Live-Stream ein"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2166,10 +2203,9 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy, no-wrap
-#| msgid "Mixing multiple chats in your live stream"
+#, no-wrap
 msgid "Enabling the chat for you live streams"
-msgstr "Mischen mehrerer Chats in Ihrem Live-Stream"
+msgstr "Aktivieren Sie den Chat für Ihre Live-Streams"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2183,10 +2219,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Neuer Live-Stream](/peertube-plugin-livechat/images/new_live."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2195,10 +2231,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Activate the chat](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Den Chat aktivieren](/peertube-plugin-livechat/images/"
+"new_live_activate_chat.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2259,24 +2295,23 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/moderation)."
-msgstr "Die Benutzerdokumentation zu diesen Funktionen finden Sie auf der Seite [Benutzerdokumentation](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
+msgstr ""
+"Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/"
+"documentation/user/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy, no-wrap
-#| msgid "Mixing multiple chats in your live stream"
+#, no-wrap
 msgid "Include the chat in your video stream"
-msgstr "Mischen mehrerer Chats in Ihrem Live-Stream"
+msgstr "Einbindung des Chats in den Videostream"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgid "Please refer to the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
-msgstr "Die Benutzerdokumentation zu diesen Funktionen finden Sie auf der Seite [Benutzerdokumentation](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
+msgstr ""
+"Bitte lesen Sie die [OBS-Dokumentation](/peertube-plugin-livechat/"
+"documentation/user/obs)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2302,10 +2337,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Chatraum konfigurieren](/peertube-plugin-livechat/images/top_menu."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2375,10 +2410,9 @@ msgstr ""
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy, no-wrap
-#| msgid "Login to your Peertube account"
+#, no-wrap
 msgid "If you haven't a Peertube account"
-msgstr "Melden Sie sich bei Ihrem Peertube-Konto an"
+msgstr "Wenn Sie kein Peertube-Konto haben"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2392,10 +2426,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Chat mit einem anonymen Benutzer](/peertube-plugin-livechat/images/"
+"chat_with_anonymous.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2404,17 +2438,16 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Joining chat when not connected](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Dem Chat beitreten, wenn nicht verbunden](/peertube-plugin-livechat/images/"
+"chat_anonymous.png?classes=shadow,border&height=200px)"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy, no-wrap
-#| msgid "Login to your Peertube account"
+#, no-wrap
 msgid "If you have a Peertube account"
-msgstr "Melden Sie sich bei Ihrem Peertube-Konto an"
+msgstr "Wenn Sie ein Peertube-Konto haben"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2428,10 +2461,9 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy, no-wrap
-#| msgid "Settings"
+#, no-wrap
 msgid "Chatting"
-msgstr "Einstellungen"
+msgstr "Chatten"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2466,10 +2498,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Participants list](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px)"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Teilnehmerliste](/peertube-plugin-livechat/images/open_participants_list."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2500,10 +2532,11 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/moderation)."
-msgstr "Die Benutzerdokumentation zu diesen Funktionen finden Sie auf der Seite [Benutzerdokumentation](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
+msgstr ""
+"Diese Vollbildansicht fügt auch ein oberes Menü mit erweiterten Funktionen "
+"hinzu.  Dies ist besonders nützlich für [Moderationsfunktionen](/peertube-"
+"plugin-livechat/documentation/user/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2591,10 +2624,8 @@ msgstr "Sie können die Sprachauswahl im linken Menü verwenden, um diese Dokume
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
-#, fuzzy
-#| msgid "Plugin Peertube Livechat administration"
 msgid "Welcome the **Peertube Livechat Plugin** documentation."
-msgstr "Plugin Peertube Livechat Administation"
+msgstr "Willkommen in der **Peertube Livechat Plugin** Dokumentation."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
@@ -2625,10 +2656,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide chat system for Peertube videos."
 msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide a chat system for Peertube videos."
-msgstr "Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, ein Chatsystem für Peertube-Videos bereitzustellen."
+msgstr ""
+"Dieses [Peertube](https://joinpeertube.org/) Plugin ist dafür gedacht, ein "
+"Chatsystem für Peertube-Videos bereitzustellen."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -2652,17 +2683,16 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "See a [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
 msgid "You can test the livechat plugin with this [demo page](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
-msgstr "Siehe eine [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
+msgstr ""
+"Sie können das Livechat-Plugin mit dieser [Demo-Seite] (https://www.yiny.org/"
+"w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) testen."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy, no-wrap
-#| msgid "Installation guide"
+#, no-wrap
 msgid "Installation"
-msgstr "Installationsanleitung"
+msgstr "Installation"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -2671,10 +2701,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
 msgid "![Livechat installation](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
-msgstr "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Livechat-Installation](/peertube-plugin-livechat/images/installation."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -2719,10 +2749,9 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy, no-wrap
-#| msgid "Mixing multiple chats in your live stream"
+#, no-wrap
 msgid "Integrate the chat in your live stream"
-msgstr "Mischen mehrerer Chats in Ihrem Live-Stream"
+msgstr "Integrieren Sie den Chat in Ihren Live-Stream"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
