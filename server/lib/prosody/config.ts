@@ -174,10 +174,32 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const publicServerUrl = options.peertubeHelpers.config.getWebserverUrl()
 
   let basePeertubeUrl = settings['prosody-peertube-uri'] as string
-  if (basePeertubeUrl && !/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(basePeertubeUrl)) {
-    throw new Error('Invalid prosody-peertube-uri')
+  if (basePeertubeUrl) {
+    logger.debug('basePeertubeUrl for internal API: using the settings value')
+    if (!/^https?:\/\/[a-z0-9.-_]+(?::\d+)?$/.test(basePeertubeUrl)) {
+      throw new Error('Invalid prosody-peertube-uri')
+    }
+  }
+  if (!basePeertubeUrl && ('getServerListeningConfig' in options.peertubeHelpers.config)) {
+    // Peertube >=5.1 has getServerListeningConfig to get relevant information.
+    const listeningConfig = options.peertubeHelpers.config.getServerListeningConfig()
+    if (listeningConfig?.port) {
+      if (!listeningConfig.hostname || listeningConfig.hostname === '::') {
+        logger.debug(
+          'basePeertubeUrl for internal API: getServerListeningConfig.hostname==="' +
+          (listeningConfig.hostname ?? '') +
+          '", fallbacking on 127.0.0.1.'
+        )
+        basePeertubeUrl = `http://127.0.0.1:${listeningConfig.port}`
+      } else {
+        logger.debug('basePeertubeUrl for internal API: using getServerListeningConfig')
+        basePeertubeUrl = `http://${listeningConfig.hostname}:${listeningConfig.port}`
+      }
+    }
   }
   if (!basePeertubeUrl) {
+    // In still nothing, just using the public url (it will get througt nginx, but will work)
+    logger.debug('basePeertubeUrl for internal API: using public Url')
     basePeertubeUrl = publicServerUrl
   }
   const baseApiUrl = basePeertubeUrl + getBaseRouterRoute(options) + 'api/'

@@ -29,6 +29,8 @@ In some case (like for some Docker Peertube installation), the diagnostic tools 
 
 In such case, try changing the "{{% livechat_label prosody_peertube_uri_label %}}" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know).
 
+Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information.
+
 ### Websocket
 
 If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue.

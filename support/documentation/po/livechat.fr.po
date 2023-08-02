@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-27 13:12+0200\n"
+"POT-Creation-Date: 2023-08-02 17:04+0200\n"
 "PO-Revision-Date: 2023-07-27 11:21+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -342,14 +341,7 @@ msgstr "Lancer votre serveur de debug."
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  This call does not need any authentication.  It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  You can even configure your debug server to launch this request automatically."
-msgstr ""
-"Pour que Prosody se connecte au debugger, appelez l'API "
-"`http://votre_instance.tld/plugins/livechat/router/api/"
-"restart_prosody?debugger=true`. Cet appel n'a pas besoin d'authentification. "
-"Il peut se faire depuis une ligne de commande, par exemple avec `curl "
-"http://votre_instance.tld/plugins/livechat/router/api/"
-"restart_prosody?debugger=true`. Vous pouvez même configurer votre serveur de "
-"debuggage pour lancer cette commande automatiquement."
+msgstr "Pour que Prosody se connecte au debugger, appelez l'API `http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`. Cet appel n'a pas besoin d'authentification. Il peut se faire depuis une ligne de commande, par exemple avec `curl http://votre_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`. Vous pouvez même configurer votre serveur de debuggage pour lancer cette commande automatiquement."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -938,10 +930,7 @@ msgstr "Utiliser Matterbridge"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>"
-msgstr ""
-"Voici un tutoriel sur comment utiliser Matterbridge avec ce plugin : "
-"<https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/"
-"documentation/peertube.md>"
+msgstr "Voici un tutoriel sur comment utiliser Matterbridge avec ce plugin : <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1019,14 +1008,7 @@ msgstr "Ensuite, le champs «Interfaces réseau pour les connexions serveur vers
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the \"Certificate folder\" setting, you can leave it empty.  In this case, the plugin will automatically generate self-signed certificates.  Some XMPP servers may refuse to connect, depending on their configuration.  In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.  It is up to you to generate and renew them.  See bellow for more information."
-msgstr ""
-"Pour le champs «Dossiers des certificats», vous pouvez le laisser vide. Dans "
-"ce cas là, le plugin va générer automatiquement des certificats auto-signés. "
-"Il se pourrait que certains serveurs XMPP refusent de se connecter, cela "
-"dépendant de leur paramétrage. Dans ce cas, vous pouvez indiquer ici un "
-"chemin sur le serveur, dans lequel vous placerez des certificats à utiliser "
-"par le module. Charge à vous de les générer et de les renouveller. Voir plus "
-"loin pour une explication plus détaillée."
+msgstr "Pour le champs «Dossiers des certificats», vous pouvez le laisser vide. Dans ce cas là, le plugin va générer automatiquement des certificats auto-signés. Il se pourrait que certains serveurs XMPP refusent de se connecter, cela dépendant de leur paramétrage. Dans ce cas, vous pouvez indiquer ici un chemin sur le serveur, dans lequel vous placerez des certificats à utiliser par le module. Charge à vous de les générer et de les renouveller. Voir plus loin pour une explication plus détaillée."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1186,10 +1168,7 @@ msgstr "Tout d'abord, on va devoir créer un certificat pour le sous-domain `roo
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry)."
-msgstr ""
-"Commencez donc par paramétrer une entrée DNS pour `room.votre_instance.tld`, "
-"qui pointe sur votre serveur. Vous pouvez tout à fait faire une entrée CNAME "
-"(ou une entrée A et une entrée AAAA)."
+msgstr "Commencez donc par paramétrer une entrée DNS pour `room.votre_instance.tld`, qui pointe sur votre serveur. Vous pouvez tout à fait faire une entrée CNAME (ou une entrée A et une entrée AAAA)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1645,6 +1624,19 @@ msgstr "Ce paramètre ne devrait être utilisé que si le plugin est cassé et e
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
+#, no-wrap
+msgid "If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy
+#| msgid "In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
+msgid "In last resort, it will use your Peertube public URI.  So, any API Call will go throught your Nginx server.  This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP.  In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
+msgstr "Dans ce cas, essayez de changer le paramètre \"{{% livechat_label prosody_peertube_uri_label %}}\", en mettant `http://127.0.0.1:9000` (si c'est bien le port 9000 qui est utilisé par votre Peertube, demandez aux administrateur⋅rices de votre instance si vous ne savez pas)."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting enable XMPP clients to connect to the built-in Prosody server.  For now, this option **only allows connections from localhost clients**."
 msgstr "Ce paramètre permet aux clients XMPP de se connecter au serveur Prosody intégré. Pour l'instant, cette option **n'autorise que les connexions des clients sur le localhost**."
 
@@ -1704,8 +1696,7 @@ msgid ""
 "If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.\n"
 msgstr ""
 "Note : la version de Prosody devrait être supérieure ou égale à 0.12.0.\n"
-"Si vous utilisez une version plus ancienne, il pourrait y avoir des bugs sur "
-"la fédération du tchat, et d'autres comportements inattendus.\n"
+"Si vous utilisez une version plus ancienne, il pourrait y avoir des bugs sur la fédération du tchat, et d'autres comportements inattendus.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -1897,6 +1888,13 @@ msgstr "Dans certains cas (comme par exemple les installation Peertube sous Dock
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
 msgstr "Dans ce cas, essayez de changer le paramètre \"{{% livechat_label prosody_peertube_uri_label %}}\", en mettant `http://127.0.0.1:9000` (si c'est bien le port 9000 qui est utilisé par votre Peertube, demandez aux administrateur⋅rices de votre instance si vous ne savez pas)."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, fuzzy
+#| msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/moderation)."
+msgid "Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
+msgstr "Veuillez vous référer à la [documentation de modération](/peertube-plugin-livechat/fr/documentation/user/moderation)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2300,9 +2298,7 @@ msgstr "Vous pouvez par exemple définir la valeur par défaut, et la valeur max
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "You can also uncheck \"enable archiving\": if unchecked, messages will be pruned if the server restarts."
-msgstr ""
-"Vous pouvez aussi décocher «activer l'archivage» : si décoché, les messages "
-"seront nettoyés si le serveur redémarre."
+msgstr "Vous pouvez aussi décocher «activer l'archivage» : si décoché, les messages seront nettoyés si le serveur redémarre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2318,13 +2314,7 @@ msgstr "Détruire le contenu du tchat"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
-msgstr ""
-"Si vous voulez détruire le contenu du tchat, [ouvrez le tchat en plein écran"
-"](/peertube-plugin-livechat/fr/documentation/user/viewers), ouvrez le menu "
-"du haut et cliquez sur «Détruire». Une popup va s'ouvrir, demandant "
-"confirmation. Pour éviter les erreurs, la popup va vous demander «l'adresse "
-"XMPP» du salon. Cette adresse peut être obtenue via l'entrée «Détails» du "
-"menu haut."
+msgstr "Si vous voulez détruire le contenu du tchat, [ouvrez le tchat en plein écran](/peertube-plugin-livechat/fr/documentation/user/viewers), ouvrez le menu du haut et cliquez sur «Détruire». Une popup va s'ouvrir, demandant confirmation. Pour éviter les erreurs, la popup va vous demander «l'adresse XMPP» du salon. Cette adresse peut être obtenue via l'entrée «Détails» du menu haut."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
@@ -2411,13 +2401,7 @@ msgstr "Si vous êtes connecté avec votre compte Peertube, vous allez automatiq
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the livechat plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
-msgstr ""
-"Si vous regardez un direct sur une instance où vous n'avez pas de compte, "
-"mais que vous avez un compte Peertube sur une autre instance : sous réserve "
-"que le plugin livechat soit installé sur les deux instances, vous pouvez "
-"rejoindre le tchat avec votre compte. Pour cela, ouvrez la vidéo sur votre "
-"instance (vous pouvez par exemple copier/coller l'url de la vidéo dans le "
-"champs de recherche de votre instance)."
+msgstr "Si vous regardez un direct sur une instance où vous n'avez pas de compte, mais que vous avez un compte Peertube sur une autre instance : sous réserve que le plugin livechat soit installé sur les deux instances, vous pouvez rejoindre le tchat avec votre compte. Pour cela, ouvrez la vidéo sur votre instance (vous pouvez par exemple copier/coller l'url de la vidéo dans le champs de recherche de votre instance)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2637,9 +2621,7 @@ msgstr "Par défaut, le chat est affiché à côté de la vidéo. Mais vous pouv
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can test the livechat plugin with this [demo page](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
-msgstr ""
-"Vous pouvez tester le plugin livechat via cette [page de démo](https://www."
-"yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
+msgstr "Vous pouvez tester le plugin livechat via cette [page de démo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md

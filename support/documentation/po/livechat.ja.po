@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-07-27 13:12+0200\n"
+"POT-Creation-Date: 2023-08-02 17:04+0200\n"
 "PO-Revision-Date: 2023-07-17 14:21+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: Japanese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
@@ -1564,6 +1564,17 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
+#, no-wrap
+msgid "If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "In last resort, it will use your Peertube public URI.  So, any API Call will go throught your Nginx server.  This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP.  In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting enable XMPP clients to connect to the built-in Prosody server.  For now, this option **only allows connections from localhost clients**."
 msgstr ""
 
@@ -1814,6 +1825,12 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
 msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, fuzzy
+msgid "Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
+msgstr "PeerTube ライブチャットプラグイン"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
