@@ -10,6 +10,7 @@
 
 * Some code refactoring.
 * Bypassing Nginx for API call originated from Prosody (if Peertube >=5.1). Can also fix some Docker setup, which needed to set the prosody-peertube-uri settings.
+* Translation updates.
 
 ## 7.2.1
 
