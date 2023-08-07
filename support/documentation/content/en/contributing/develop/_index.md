@@ -29,23 +29,12 @@ To build the plugin, you must have following packages:
 * `npm` (>=8.x)
 * `nodejs` (>=14.x)
 * `build-essential`
+* `coreutils`
+* `wget`
 
-The plugin needs to build an AppImage for the Prosody XMPP server.
-It appears that the way this AppImage is build requires `apt` and `dpkg` commands.
-So it will only work "out of the box" on Debian-like systems.
-If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.
-See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).
-We will provide another solution as soon as possible.
-
-Building this AppImage also requires following packages:
-
-* `python3-venv`
-* `squashfs-tools`
-
-{{% notice info %}}
-These dependencies were tested on a Debian Bullseye.
-If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github.
-{{% /notice %}}
+Please note that this plugin needs an AppImage for the Prosody XMPP server.
+This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.
+The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct.
 
 ## Develop
 

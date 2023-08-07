@@ -11,6 +11,7 @@
 * Some code refactoring.
 * Bypassing Nginx for API call originated from Prosody (if Peertube >=5.1). Can also fix some Docker setup, which needed to set the prosody-peertube-uri settings.
 * Translation updates.
+* The Prosody AppImage is no more built in this plugin, but downloaded from [prosody-appimage](https://github.com/JohnXLivingston/prosody-appimage).
 
 ## 7.2.1
 

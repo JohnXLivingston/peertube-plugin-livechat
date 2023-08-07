@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-08-07 10:19+0200\n"
+"POT-Creation-Date: 2023-08-07 16:29+0200\n"
 "PO-Revision-Date: 2023-08-03 20:53+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -134,30 +134,20 @@ msgstr "`nodejs` (>=14.x)"
 msgid "`build-essential`"
 msgstr "`build-essential`"
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-msgid "The plugin needs to build an AppImage for the Prosody XMPP server.  It appears that the way this AppImage is build requires `apt` and `dpkg` commands.  So it will only work \"out of the box\" on Debian-like systems.  If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.  See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  We will provide another solution as soon as possible."
-msgstr "Le plugin doit construire une AppImage pour du serveur XMPP de Prosody.  Il semble que la façon dont cette AppImage est construite nécessite les commandes `apt` et `dpkg`.  Elle ne fonctionnera donc que sur des systèmes de type Debian.  Si vous utilisez une autre distribution Linux, vous pouvez essayer d'installer `apt` et `dpkg` manuellement.  Voir par exemple cette [question sur Github] (https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  Nous fournirons une autre solution dès que possible."
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/develop/_index.md
-msgid "Building this AppImage also requires following packages:"
-msgstr "Construire cette AppImage demande également les paquets suivants :"
+msgid "`coreutils`"
+msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-msgid "`python3-venv`"
-msgstr "`python3-venv"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/develop/_index.md
-msgid "`squashfs-tools`"
-msgstr "`squashfs-tools`"
+msgid "`wget`"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-msgid "These dependencies were tested on a Debian Bullseye.  If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github."
-msgstr "Ces dépendances ont été testées sur Debian Bullseye. Si vous rencontrez des problèmes de dépendances sur votre système UNIX/Linux, merci d'ouvrir un ticket sur Github pour le signaler."
+msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -2756,6 +2746,21 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter."
+
+#~ msgid "The plugin needs to build an AppImage for the Prosody XMPP server.  It appears that the way this AppImage is build requires `apt` and `dpkg` commands.  So it will only work \"out of the box\" on Debian-like systems.  If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.  See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  We will provide another solution as soon as possible."
+#~ msgstr "Le plugin doit construire une AppImage pour du serveur XMPP de Prosody.  Il semble que la façon dont cette AppImage est construite nécessite les commandes `apt` et `dpkg`.  Elle ne fonctionnera donc que sur des systèmes de type Debian.  Si vous utilisez une autre distribution Linux, vous pouvez essayer d'installer `apt` et `dpkg` manuellement.  Voir par exemple cette [question sur Github] (https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  Nous fournirons une autre solution dès que possible."
+
+#~ msgid "Building this AppImage also requires following packages:"
+#~ msgstr "Construire cette AppImage demande également les paquets suivants :"
+
+#~ msgid "`python3-venv`"
+#~ msgstr "`python3-venv"
+
+#~ msgid "`squashfs-tools`"
+#~ msgstr "`squashfs-tools`"
+
+#~ msgid "These dependencies were tested on a Debian Bullseye.  If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github."
+#~ msgstr "Ces dépendances ont été testées sur Debian Bullseye. Si vous rencontrez des problèmes de dépendances sur votre système UNIX/Linux, merci d'ouvrir un ticket sur Github pour le signaler."
 
 #~ msgid "If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue.  Since Peertube version 5.0.0, there are some additional configuration to do on the server side.  Check with the instance administrators that they did not forgot to apply changes listes in the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."
 #~ msgstr "Si tout est OK d'après l'outil de diagnostique, mais que la fenêtre de tchat reste vide : cela peut être un soucis Websocket. Depuis la version 5.0.0 de Peertube, il y a de la configuration supplémentaire à faire du côté du serveur. Vérifiez avec les administrateur⋅rices de votre instance s'iels n'ont pas oublié d'appliquer les changements listés dans les [notes de version 5.0.0 de Peertube](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-08-07 10:19+0200\n"
+"POT-Creation-Date: 2023-08-07 16:29+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Polish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/pl/>\n"
@@ -133,29 +133,19 @@ msgstr ""
 msgid "`build-essential`"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-msgid "The plugin needs to build an AppImage for the Prosody XMPP server.  It appears that the way this AppImage is build requires `apt` and `dpkg` commands.  So it will only work \"out of the box\" on Debian-like systems.  If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.  See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  We will provide another solution as soon as possible."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/contributing/develop/_index.md
-msgid "Building this AppImage also requires following packages:"
+msgid "`coreutils`"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-msgid "`python3-venv`"
-msgstr ""
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/contributing/develop/_index.md
-msgid "`squashfs-tools`"
+msgid "`wget`"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-msgid "These dependencies were tested on a Debian Bullseye.  If there is some dependencies issues on your UNIX/Linux system, please open an issue on Github."
+msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
 msgstr ""
 
 #. type: Plain text
