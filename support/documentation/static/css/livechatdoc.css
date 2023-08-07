@@ -31,3 +31,14 @@ div.notices p {
   /* more contrast than the default theme. */
   color: #000;
 }
+
+/*
+ By default, links are not underlined. This is not recommaned for accessibility.
+ So we will underline links, and let the a.highlight animation double underline on hovering.
+ Si hugo-theme.css, a.highlight, for more information on about it is done.
+ */
+#body a.highlight,
+#body a.highlight:hover,
+#body a.highlight:focus {
+  text-decoration: underline;
+}
