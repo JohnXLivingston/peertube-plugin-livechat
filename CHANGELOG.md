@@ -1,10 +1,6 @@
 # Changelog
 
-## XXX (Unreleased Yet)
-
-### New Features
-
-* ...
+## 7.2.2
 
 ### Minor changes and fixes
 
