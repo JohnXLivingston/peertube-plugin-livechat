@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-08-02 17:04+0200\n"
+"POT-Creation-Date: 2023-08-07 10:19+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nb_NO/>\n"
@@ -2336,7 +2336,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "If you want to add line breaks in your messages, you can use the \"shift+enter\" key combinaison."
+msgid "If you want to add line breaks in your messages, you can use the \"shift+enter\" key combination."
 msgstr ""
 
 #. type: Plain text

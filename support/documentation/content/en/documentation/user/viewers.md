@@ -44,7 +44,7 @@ To do so, just open the video on your instance (you can for example copy/paste t
 To send messages, just type them in the "message" field on the bottom of the screen.
 You can send them by pressing the enter key on your keyboard, or by clicking on the "send" button.
 
-If you want to add line breaks in your messages, you can use the "shift+enter" key combinaison.
+If you want to add line breaks in your messages, you can use the "shift+enter" key combination.
 
 You can add emojis to your messages.
 You can for example use the emojis menu, or directly type emojis shortcuts like `:smiley:`.

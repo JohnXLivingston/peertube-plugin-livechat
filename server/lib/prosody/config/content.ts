@@ -357,7 +357,7 @@ class ProsodyConfigContent {
     }
 
     // We can also use mod_muc_moderation
-    // NB: Prosody has a partial support of this feature in combinaison with «internal» storage
+    // NB: Prosody has a partial support of this feature in combination with «internal» storage
     // (Requires the `set` function in mod_storage_internal).
     // This was fixed in Prosody 0.12.x.
     this.muc.add('modules_enabled', 'muc_moderation')
