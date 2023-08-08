@@ -2,6 +2,10 @@
 
 ## XXX (Unreleased Yet)
 
+### New features
+
+* Moderation bot
+
 ### Minor changes and fixes
 
 * ConverseJS v10.1.6 (instead of v10.0.0).

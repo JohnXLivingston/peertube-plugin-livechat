@@ -1,7 +1,10 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { RegisterClientFormFieldOptions } from '@peertube/peertube-types'
+import { registerModeration } from './common/moderation/register'
 
-async function register ({ peertubeHelpers, registerHook, registerVideoField }: RegisterClientOptions): Promise<void> {
+async function register (clientOptions: RegisterClientOptions): Promise<void> {
+  const { peertubeHelpers, registerHook, registerVideoField } = clientOptions
+
   registerHook({
     target: 'action:router.navigation-end',
     handler: () => {
@@ -48,6 +51,8 @@ async function register ({ peertubeHelpers, registerHook, registerVideoField }: 
   }
   registerVideoField(webchatFieldOptions, { type: 'update' })
   registerVideoField(webchatFieldOptions, { type: 'go-live' })
+
+  await registerModeration(clientOptions)
 }
 
 export {

@@ -30,3 +30,8 @@ declare const LOC_LAST_ACTIVITY: string
 declare const LOC_WEB: string
 declare const LOC_CONNECT_USING_XMPP: string
 declare const LOC_CONNECT_USING_XMPP_HELP: string
+
+declare const LOC_MENU_MODERATION_LABEL: string
+declare const LOC_LIVECHAT_MODERATION_TITLE: string
+declare const LOC_LIVECHAT_MODERATION_DESC: string
+declare const LOC_LIVECHAT_MODERATION_PLEASE_SELECT: string

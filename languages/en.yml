@@ -278,3 +278,8 @@ prosody_components_list_description: |
     </li>
     <li>Only use alphanumeric characters in the secret passphrase (use at least 15 characters).</li>
   </ul>
+
+menu_moderation_label: "Chatrooms"
+livechat_moderation_title: "Configure your live's chatrooms moderation policies"
+livechat_moderation_desc: "Here you can configure some advanced options for chatrooms associated to your live streams."
+livechat_moderation_please_select: "Please select bellow one of your channel, to setup its chatting options."
