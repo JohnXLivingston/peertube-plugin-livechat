@@ -9,3 +9,4 @@ support/documentation/content/translations/**/*.md
 support/documentation/i18n
 public
 vendor/prosody-appimage
+vendor/conversejs-*

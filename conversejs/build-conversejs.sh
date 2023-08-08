@@ -3,10 +3,13 @@
 set -euo pipefail
 set -x
 
+CONVERSE_VERSION="v10.1.5"
+CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
+
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
-converse_src_dir="$rootdir/vendor/converse.js"
-converse_build_dir="$rootdir/build/converse.js"
+converse_src_dir="$src_dir/conversejs-$CONVERSE_VERSION"
+converse_build_dir="$rootdir/build/conversejs"
 converse_destination_dir="$rootdir/dist/client/conversejs"
 
 if [[ ! -d $src_dir ]]; then
@@ -15,8 +18,8 @@ if [[ ! -d $src_dir ]]; then
 fi
 
 if [[ ! -d "$converse_src_dir" ]]; then
-  echo "ConverseJS sources are not here. Please be sure to have all the submodules downloaded ('git pull --recurse-submodules')."
-  exit 1
+  git clone --depth=1 --branch $CONVERSE_VERSION $CONVERSE_REPO $converse_src_dir
+  rm -rf "$converse_build_dir"
 fi
 
 if cmp -s "$converse_src_dir/package.json" "$converse_build_dir/package.json"; then
@@ -38,7 +41,7 @@ mv "$converse_build_dir/custom/webpack.livechat.js" "$converse_build_dir/"
 if [[ ! -d "$converse_build_dir/node_modules" ]]; then
   echo "Missing node_modules directory, seems we have to call the makefile..."
   cd "$converse_build_dir"
-  make node_modules src/*
+  make dist
   cd $rootdir
 fi
 
