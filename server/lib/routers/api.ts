@@ -7,6 +7,7 @@ import { isDebugMode } from '../debug'
 import { initRoomApiRouter } from './api/room'
 import { initAuthApiRouter, initUserAuthApiRouter } from './api/auth'
 import { initFederationServerInfosApiRouter } from './api/federation-server-infos'
+import { initModerationApiRouter } from './api/moderation'
 
 /**
  * Initiate API routes
@@ -51,6 +52,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       }
     ))
   }
+
+  router.use('/moderation', await initModerationApiRouter(options))
 
   return router
 }

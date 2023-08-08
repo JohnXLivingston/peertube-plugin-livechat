@@ -46,9 +46,18 @@ interface ProsodyListRoomsResultSuccess {
 
 type ProsodyListRoomsResult = ProsodyListRoomsResultError | ProsodyListRoomsResultSuccess
 
+interface ChannelModerationOptions {
+  channel: {
+    id: number
+    name: string
+    displayName: string
+  }
+}
+
 export type {
   ConverseJSTheme,
   InitConverseJSParams,
   ProsodyListRoomsResult,
-  ProsodyListRoomsResultRoom
+  ProsodyListRoomsResultRoom,
+  ChannelModerationOptions
 }

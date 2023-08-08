@@ -75,6 +75,20 @@ async function isUserAdmin (options: RegisterServerOptions, res: Response): Prom
   return true
 }
 
+async function isUserAdminOrModerator (options: RegisterServerOptions, res: Response): Promise<boolean> {
+  const user = await options.peertubeHelpers.user.getAuthUser(res)
+  if (!user) {
+    return false
+  }
+  if (user.blocked) {
+    return false
+  }
+  if (user.role !== 0 && user.role !== 1) {
+    return false
+  }
+  return true
+}
+
 type Unpack<T> = T extends Promise<infer U | undefined> ? U : T
 type AuthUser = Unpack<ReturnType<PeerTubeHelpers['user']['getAuthUser']>>
 
@@ -95,6 +109,7 @@ export {
   getBaseWebSocketRoute,
   getBaseStaticRoute,
   isUserAdmin,
+  isUserAdminOrModerator,
   getUserNickname,
   pluginName,
   pluginShortName,

@@ -2,6 +2,11 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 // Must use require for mustache, import seems buggy.
 const Mustache = require('mustache')
 
+/**
+ * Renders the livechat moderation setup home page.
+ * @param registerClientOptions Peertube client options
+ * @returns The page content
+ */
 async function renderModerationHome (registerClientOptions: RegisterClientOptions): Promise<string> {
   const { peertubeHelpers } = registerClientOptions
 
@@ -24,7 +29,7 @@ async function renderModerationHome (registerClientOptions: RegisterClientOption
     }
 
     for (const channel of channels.data) {
-      channel.livechatModerationUri = '/p/livechat/moderation/channel?id=' + encodeURIComponent(channel.id)
+      channel.livechatModerationUri = '/p/livechat/moderation/channel?channelId=' + encodeURIComponent(channel.id)
     }
 
     const view = {
@@ -33,9 +38,6 @@ async function renderModerationHome (registerClientOptions: RegisterClientOption
       please_select: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_PLEASE_SELECT),
       channels: channels.data
     }
-
-    // TODO: remove this line
-    console.log('Rendering the moderation home with view:', view)
 
     return Mustache.render(`
       <div class="margin-content">

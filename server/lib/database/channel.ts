@@ -51,6 +51,7 @@ interface ChannelInfos {
   id: number
   name: string
   displayName: string
+  ownerAccountId: number
 }
 
 async function getChannelInfosById (options: RegisterServerOptions, channelId: number): Promise<ChannelInfos | null> {
@@ -64,7 +65,8 @@ async function getChannelInfosById (options: RegisterServerOptions, channelId: n
     'SELECT' +
     ' "actor"."preferredUsername" as "channelName",' +
     ' "videoChannel"."id" as "channelId",' +
-    ' "videoChannel"."name" as "channelDisplayName"' +
+    ' "videoChannel"."name" as "channelDisplayName",' +
+    ' "videoChannel"."accountId" as "ownerAccountId"' +
     ' FROM "videoChannel"' +
     ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
     ' WHERE "videoChannel"."id" = ' + channelId.toString()
@@ -79,7 +81,8 @@ async function getChannelInfosById (options: RegisterServerOptions, channelId: n
   return {
     id: results[0].channelId,
     name: results[0].channelName ?? '',
-    displayName: results[0].channelDisplayName ?? ''
+    displayName: results[0].channelDisplayName ?? '',
+    ownerAccountId: results[0].ownerAccountId
   }
 }
 

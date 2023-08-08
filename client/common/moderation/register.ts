@@ -1,6 +1,11 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { renderModerationHome } from './templates/home'
+import { renderModerationChannel } from './templates/channel'
 
+/**
+ * Registers stuff related to the moderation settings.
+ * @param clientOptions Peertube client options
+ */
 async function registerModeration (clientOptions: RegisterClientOptions): Promise<void> {
   const { peertubeHelpers, registerClientRoute, registerHook } = clientOptions
 
@@ -8,6 +13,15 @@ async function registerModeration (clientOptions: RegisterClientOptions): Promis
     route: 'livechat/moderation',
     onMount: async ({ rootEl }) => {
       rootEl.innerHTML = await renderModerationHome(clientOptions)
+    }
+  })
+
+  registerClientRoute({
+    route: 'livechat/moderation/channel',
+    onMount: async ({ rootEl }) => {
+      const urlParams = new URLSearchParams(window.location.search)
+      const channelId = urlParams.get('channelId') ?? ''
+      rootEl.innerHTML = await renderModerationChannel(clientOptions, channelId)
     }
   })
 
