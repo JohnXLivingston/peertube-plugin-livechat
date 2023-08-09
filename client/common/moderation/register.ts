@@ -1,6 +1,7 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { renderModerationHome } from './templates/home'
 import { renderModerationChannel } from './templates/channel'
+import { vivifyModerationChannel } from './logic/channel'
 
 /**
  * Registers stuff related to the moderation settings.
@@ -21,7 +22,14 @@ async function registerModeration (clientOptions: RegisterClientOptions): Promis
     onMount: async ({ rootEl }) => {
       const urlParams = new URLSearchParams(window.location.search)
       const channelId = urlParams.get('channelId') ?? ''
-      rootEl.innerHTML = await renderModerationChannel(clientOptions, channelId)
+      const html = await renderModerationChannel(clientOptions, channelId)
+      if (!html) {
+        // renderModerationChannel has already used the notifier to display an error
+        rootEl.innerHTML = ''
+        return
+      }
+      rootEl.innerHTML = html
+      await vivifyModerationChannel(clientOptions, rootEl)
     }
   })
 

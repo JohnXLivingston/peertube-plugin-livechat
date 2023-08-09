@@ -47,7 +47,10 @@ async function initModerationApiRouter (options: RegisterServerOptions): Promise
           id: channelInfos.id,
           name: channelInfos.name,
           displayName: channelInfos.displayName
-        }
+        },
+        bot: false,
+        forbiddenWords: [],
+        bannedJIDs: []
       }
       res.status(200)
       res.json(result)

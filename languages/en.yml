@@ -279,9 +279,16 @@ prosody_components_list_description: |
     <li>Only use alphanumeric characters in the secret passphrase (use at least 15 characters).</li>
   </ul>
 
+save: "Save"
+cancel: "Cancel"
 menu_moderation_label: "Chatrooms"
 livechat_moderation_title: "Configure your live's chatrooms moderation policies"
 livechat_moderation_desc: "Here you can configure some advanced options for chatrooms associated to your live streams."
 livechat_moderation_please_select: "Please select bellow one of your channel, to setup its chatting options."
 livechat_moderation_channel_title: "Moderation policies for channel:"
 livechat_moderation_channel_desc: "You can setup here your moderation policies for this channel."
+livechat_moderation_channel_enable_bot_label: "Enable moderation bot"
+livechat_moderation_channel_bot_options_title: "Moderation bot options"
+livechat_moderation_channel_forbidden_words_label: "Forbidden words or expressions"
+livechat_moderation_channel_banned_jids_label: "Banned users and patterns"
+

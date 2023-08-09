@@ -13,7 +13,7 @@ const Mustache = require('mustache')
 async function renderModerationChannel (
   registerClientOptions: RegisterClientOptions,
   channelId: string
-): Promise<string> {
+): Promise<string | false> {
   const { peertubeHelpers } = registerClientOptions
 
   try {
@@ -35,16 +35,52 @@ async function renderModerationChannel (
     }
 
     const view = {
-      title:
-        await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_TITLE) +
-        ' ' + channelModerationOptions.channel.displayName,
-      description: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_DESC)
+      title: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_TITLE),
+      description: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_DESC),
+      enableBot: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_ENABLE_BOT_LABEL),
+      botOptions: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_BOT_OPTIONS_TITLE),
+      forbiddenWords: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
+      bannedJIDs: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_BANNED_JIDS_LABEL),
+      save: await peertubeHelpers.translate(LOC_SAVE),
+      cancel: await peertubeHelpers.translate(LOC_CANCEL),
+      channelModerationOptions
     }
 
     return Mustache.render(`
       <div class="margin-content">
-        <h1>{{title}}</h1>
+        <h1>{{title}} {{channelModerationOptions.channel.displayName}}</h1>
         <p>{{description}}</p>
+        <form livechat-moderation-channel-options>
+          <fieldset>
+            <label>
+              <input
+                type="checkbox" name="bot"
+                value="1"
+                {{#channelModerationOptions.bot}} checked="checked" {{/channelModerationOptions.bot}}
+              />
+              {{enableBot}}
+            </label>
+          </fieldset>
+          <fieldset livechat-moderation-channel-options-bot-enabled>
+            <legend>{{botOptions}}</legend>
+            <label>
+              {{forbiddenWords}}
+<textarea name="forbidden_words">
+{{#channelModerationOptions.forbiddenWords}}{{.}}
+{{/channelModerationOptions.forbiddenWords}}
+</textarea>
+            </label>
+            <label>
+              {{bannedJIDs}}
+<textarea name="banned_jids">
+{{#channelModerationOptions.bannedJIDs}}{{.}}
+{{/channelModerationOptions.bannedJIDs}}
+</textarea>
+            </label>
+          </fieldset>
+          <input type="submit" value="{{save}}" />
+          <input type="reset" value="{{cancel}}" />
+        </form>
       </div>
     `, view) as string
   } catch (err: any) {

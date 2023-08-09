@@ -52,6 +52,9 @@ interface ChannelModerationOptions {
     name: string
     displayName: string
   }
+  bot: boolean
+  forbiddenWords: string[]
+  bannedJIDs: string[]
 }
 
 export type {
