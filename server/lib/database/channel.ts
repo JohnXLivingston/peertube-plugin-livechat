@@ -54,7 +54,11 @@ interface ChannelInfos {
   ownerAccountId: number
 }
 
-async function getChannelInfosById (options: RegisterServerOptions, channelId: number): Promise<ChannelInfos | null> {
+async function getChannelInfosById (
+  options: RegisterServerOptions,
+  channelId: number,
+  restrictToLocalChannels: boolean = false
+): Promise<ChannelInfos | null> {
   if (!channelId) {
     throw new Error('Missing channelId')
   }
@@ -69,7 +73,11 @@ async function getChannelInfosById (options: RegisterServerOptions, channelId: n
     ' "videoChannel"."accountId" as "ownerAccountId"' +
     ' FROM "videoChannel"' +
     ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
-    ' WHERE "videoChannel"."id" = ' + channelId.toString()
+    ' WHERE "videoChannel"."id" = ' + channelId.toString() +
+    (restrictToLocalChannels
+      ? ' AND "serverId" is null '
+      : ''
+    )
   )
   if (!Array.isArray(results)) {
     throw new Error('getChannelInfosById: query result is not an array.')

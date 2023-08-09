@@ -19,7 +19,7 @@ async function initModerationApiRouter (options: RegisterServerOptions): Promise
         return
       }
 
-      const channelInfos = await getChannelInfosById(options, parseInt(channelId))
+      const channelInfos = await getChannelInfosById(options, parseInt(channelId), true)
       if (!channelInfos) {
         logger.warn(`Channel ${channelId} not found`)
         res.sendStatus(404)
