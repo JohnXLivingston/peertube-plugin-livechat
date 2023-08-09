@@ -52,7 +52,7 @@ async function renderModerationChannel (
 
     return Mustache.render(`
       <div class="margin-content">
-        <h1>{{title}} {{channelModeration.moderation.channel.displayName}}</h1>
+        <h1>{{title}} {{channelModeration.channel.displayName}}</h1>
         <p>{{description}}</p>
         <form livechat-moderation-channel-options>
           <fieldset>
