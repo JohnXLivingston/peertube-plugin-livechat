@@ -281,6 +281,7 @@ prosody_components_list_description: |
 
 save: "Save"
 cancel: "Cancel"
+successfully_saved: "Successfully saved"
 menu_moderation_label: "Chatrooms"
 livechat_moderation_title: "Configure your live's chatrooms moderation policies"
 livechat_moderation_desc: "Here you can configure some advanced options for chatrooms associated to your live streams."

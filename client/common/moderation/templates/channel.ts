@@ -1,5 +1,5 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import type { ChannelModerationOptions } from 'shared/lib/types'
+import type { ChannelModeration } from 'shared/lib/types'
 import { getBaseRoute } from '../../../videowatch/uri'
 // Must use require for mustache, import seems buggy.
 const Mustache = require('mustache')
@@ -21,17 +21,21 @@ async function renderModerationChannel (
       throw new Error('Missing or invalid channel id.')
     }
 
-    const channelModerationOptions: ChannelModerationOptions = await (await fetch(
+    const response = await fetch(
       getBaseRoute(registerClientOptions) + '/api/moderation/channel/' + encodeURIComponent(channelId),
       {
         method: 'GET',
         headers: peertubeHelpers.getAuthHeader()
       }
-    )).json()
-
-    // Basic testing that channelModerationOptions has the correct format
-    if ((typeof channelModerationOptions !== 'object') || !channelModerationOptions.channel) {
+    )
+    if (!response.ok) {
       throw new Error('Can\'t get channel moderation options.')
+    }
+    const channelModeration: ChannelModeration = await (response).json()
+
+    // Basic testing that channelModeration has the correct format
+    if ((typeof channelModeration !== 'object') || !channelModeration.channel) {
+      throw new Error('Invalid channel moderation options.')
     }
 
     const view = {
@@ -43,12 +47,12 @@ async function renderModerationChannel (
       bannedJIDs: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_CHANNEL_BANNED_JIDS_LABEL),
       save: await peertubeHelpers.translate(LOC_SAVE),
       cancel: await peertubeHelpers.translate(LOC_CANCEL),
-      channelModerationOptions
+      channelModeration
     }
 
     return Mustache.render(`
       <div class="margin-content">
-        <h1>{{title}} {{channelModerationOptions.channel.displayName}}</h1>
+        <h1>{{title}} {{channelModeration.moderation.channel.displayName}}</h1>
         <p>{{description}}</p>
         <form livechat-moderation-channel-options>
           <fieldset>
@@ -56,7 +60,7 @@ async function renderModerationChannel (
               <input
                 type="checkbox" name="bot"
                 value="1"
-                {{#channelModerationOptions.bot}} checked="checked" {{/channelModerationOptions.bot}}
+                {{#channelModeration.moderation.bot}} checked="checked" {{/channelModeration.moderation.bot}}
               />
               {{enableBot}}
             </label>
@@ -66,15 +70,15 @@ async function renderModerationChannel (
             <label>
               {{forbiddenWords}}
 <textarea name="forbidden_words">
-{{#channelModerationOptions.forbiddenWords}}{{.}}
-{{/channelModerationOptions.forbiddenWords}}
+{{#channelModeration.moderation.forbiddenWords}}{{.}}
+{{/channelModeration.moderation.forbiddenWords}}
 </textarea>
             </label>
             <label>
               {{bannedJIDs}}
 <textarea name="banned_jids">
-{{#channelModerationOptions.bannedJIDs}}{{.}}
-{{/channelModerationOptions.bannedJIDs}}
+{{#channelModeration.moderation.bannedJIDs}}{{.}}
+{{/channelModeration.moderation.bannedJIDs}}
 </textarea>
             </label>
           </fieldset>

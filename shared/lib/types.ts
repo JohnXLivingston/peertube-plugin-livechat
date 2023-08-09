@@ -46,15 +46,21 @@ interface ProsodyListRoomsResultSuccess {
 
 type ProsodyListRoomsResult = ProsodyListRoomsResultError | ProsodyListRoomsResultSuccess
 
+interface ChannelInfos {
+  id: number
+  name: string
+  displayName: string
+}
+
 interface ChannelModerationOptions {
-  channel: {
-    id: number
-    name: string
-    displayName: string
-  }
   bot: boolean
   forbiddenWords: string[]
   bannedJIDs: string[]
+}
+
+interface ChannelModeration {
+  channel: ChannelInfos
+  moderation: ChannelModerationOptions
 }
 
 export type {
@@ -62,5 +68,7 @@ export type {
   InitConverseJSParams,
   ProsodyListRoomsResult,
   ProsodyListRoomsResultRoom,
-  ChannelModerationOptions
+  ChannelInfos,
+  ChannelModerationOptions,
+  ChannelModeration
 }

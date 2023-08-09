@@ -29,7 +29,7 @@ async function registerModeration (clientOptions: RegisterClientOptions): Promis
         return
       }
       rootEl.innerHTML = html
-      await vivifyModerationChannel(clientOptions, rootEl)
+      await vivifyModerationChannel(clientOptions, rootEl, channelId)
     }
   })
 

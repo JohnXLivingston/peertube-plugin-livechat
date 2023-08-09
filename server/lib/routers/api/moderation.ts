@@ -1,61 +1,60 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
-import type { ChannelModerationOptions } from '../../../../shared/lib/types'
+import type { ChannelInfos } from '../../../../shared/lib/types'
 import { asyncMiddleware } from '../../middlewares/async'
-import { getChannelInfosById } from '../../database/channel'
-import { isUserAdminOrModerator } from '../../helpers'
+import { getCheckModerationChannelMiddleware } from '../../middlewares/moderation/channel'
+import { getChannelModerationOptions, storeChannelModerationOptions } from '../../moderation/channel/storage'
+import { sanitizeChannelModerationOptions } from '../../moderation/channel/sanitize'
 
 async function initModerationApiRouter (options: RegisterServerOptions): Promise<Router> {
   const router = options.getRouter()
   const logger = options.peertubeHelpers.logger
 
-  router.get('/channel/:channelId', asyncMiddleware(
+  router.get('/channel/:channelId', asyncMiddleware([
+    getCheckModerationChannelMiddleware(options),
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
-      const channelId = req.params.channelId
-      const currentUser = await options.peertubeHelpers.user.getAuthUser(res)
+      if (!res.locals.channelInfos) {
+        logger.error('Missing channelInfos in res.locals, should not happen')
+        res.sendStatus(500)
+        return
+      }
+      const channelInfos = res.locals.channelInfos as ChannelInfos
 
-      if (!channelId || !/^\d+$/.test(channelId)) {
+      const result = await getChannelModerationOptions(options, channelInfos)
+      res.status(200)
+      res.json(result)
+    }
+  ]))
+
+  router.post('/channel/:channelId', asyncMiddleware([
+    getCheckModerationChannelMiddleware(options),
+    async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
+      if (!res.locals.channelInfos) {
+        logger.error('Missing channelInfos in res.locals, should not happen')
+        res.sendStatus(500)
+        return
+      }
+      const channelInfos = res.locals.channelInfos as ChannelInfos
+      logger.debug('Trying to save ChannelModerationOptions')
+
+      let moderation
+      try {
+        moderation = await sanitizeChannelModerationOptions(options, channelInfos, req.body)
+      } catch (err) {
+        logger.warn(err)
         res.sendStatus(400)
         return
       }
 
-      const channelInfos = await getChannelInfosById(options, parseInt(channelId), true)
-      if (!channelInfos) {
-        logger.warn(`Channel ${channelId} not found`)
-        res.sendStatus(404)
-        return
-      }
-
-      // To access this page, you must either be:
-      // - the channel owner,
-      // - an instance modo/admin
-      // - TODO: a channel chat moderator, as defined in this page.
-      if (channelInfos.ownerAccountId === currentUser.Account.id) {
-        logger.debug('Current user is the channel owner')
-      } else if (await isUserAdminOrModerator(options, res)) {
-        logger.debug('Current user is an instance moderator or admin')
-      } else {
-        logger.warn('Current user tries to access a channel for which he has no right.')
-        res.sendStatus(403)
-        return
-      }
-
-      logger.debug('User can access the moderation channel api.')
-
-      const result: ChannelModerationOptions = {
-        channel: {
-          id: channelInfos.id,
-          name: channelInfos.name,
-          displayName: channelInfos.displayName
-        },
-        bot: false,
-        forbiddenWords: [],
-        bannedJIDs: []
-      }
+      logger.debug('Data seems ok, storing them.')
+      const result = await storeChannelModerationOptions(options, {
+        channel: channelInfos,
+        moderation
+      })
       res.status(200)
       res.json(result)
     }
-  ))
+  ]))
 
   return router
 }
