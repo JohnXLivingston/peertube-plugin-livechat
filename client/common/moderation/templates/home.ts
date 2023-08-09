@@ -18,7 +18,7 @@ async function renderModerationHome (registerClientOptions: RegisterClientOption
     }
 
     const channels = await (await fetch(
-      '/api/v1/accounts/' + encodeURIComponent(username) + '/video-channels?start=0&count=100&sort=-createdAt',
+      '/api/v1/accounts/' + encodeURIComponent(username) + '/video-channels?start=0&count=100&sort=name',
       {
         method: 'GET',
         headers: peertubeHelpers.getAuthHeader()
