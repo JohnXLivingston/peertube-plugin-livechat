@@ -47,10 +47,11 @@ async function initModerationApiRouter (options: RegisterServerOptions): Promise
       }
 
       logger.debug('Data seems ok, storing them.')
-      const result = await storeChannelModerationOptions(options, {
+      const result = {
         channel: channelInfos,
         moderation
-      })
+      }
+      await storeChannelModerationOptions(options, result)
       res.status(200)
       res.json(result)
     }
