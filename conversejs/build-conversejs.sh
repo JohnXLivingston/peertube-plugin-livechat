@@ -8,7 +8,7 @@ CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
-converse_src_dir="$src_dir/conversejs-$CONVERSE_VERSION"
+converse_src_dir="$rootdir/vendor/conversejs-$CONVERSE_VERSION"
 converse_build_dir="$rootdir/build/conversejs"
 converse_destination_dir="$rootdir/dist/client/conversejs"
 
