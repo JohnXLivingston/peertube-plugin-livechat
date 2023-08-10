@@ -208,6 +208,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
         case 'prosody-certificates-dir':
           return options.formValues['prosody-room-allow-s2s'] !== true
         case 'prosody-components-port':
+        case 'prosody-components-interfaces':
         case 'prosody-components-list':
           return options.formValues['prosody-components'] !== true
         case 'converse-autocolors':

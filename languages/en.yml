@@ -253,15 +253,29 @@ prosody_c2s_port_description: |
 prosody_components_label: "Enable custom Prosody external components"
 prosody_components_description: |
   Enable the use of external XMPP components.<br>
-  This option alone only allows connections from localhost.<br>
+  This option alone only allows connections from localhost.
+  You have to setup the listening interfaces and open the port on your firewall to make it available from remote servers.<br>
   This feature can, for example, be used to connect some bots to the chatting rooms.
 
 prosody_components_port_label: "Prosody external components port"
 prosody_components_port_description: |
   The port that will be used by XMPP components to connect to the Prosody server.<br>
   Change it if this port is already in use on your server.<br>
-  You can keep this port closed on your firewall for now, it will not be accessed from the outer world.<br>
+  You can keep this port closed on your firewall if you don't allow access on interfaces other than localhost.<br>
   Note: this might change in a near future, as it is planned to add a feature to activate external connections.
+
+prosody_components_interfaces_label: "Prosody external components network interfaces"
+prosody_components_interfaces_description: |
+  The network interfaces to listen on for external components connections.<br>
+  List of IP to listen on, coma separated (spaces will be stripped).<br>
+  You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.<br>
+  Examples:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>172.18.0.42</li>
+  </ul>
 
 prosody_components_list_label: "External components"
 prosody_components_list_description: |

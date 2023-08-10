@@ -159,8 +159,25 @@ As example, this option can allow an instance of Matterbridge (once it could use
 ### {{% livechat_label prosody_components_label %}}
 
 This settings enable XMPP external components to connect to the server.
-For now, this option **only allows connections from localhost components**.
+By default, this option **only allows connections from localhost components**.
+You have to change the "{{% livechat_label prosody_components_interfaces_label %}}" value to listen on other network interfaces.
 
 This feature could be used to connect bridges or bots.
 
 More informations on Prosody external components [here](https://prosody.im/doc/components).
+
+#### {{% livechat_label prosody_components_label %}}
+
+{{% livechat_label prosody_components_description %}}
+
+#### {{% livechat_label prosody_components_port_label %}}
+
+{{% livechat_label prosody_components_port_description %}}
+
+#### {{% livechat_label prosody_components_interfaces_label %}}
+
+{{% livechat_label prosody_components_interfaces_description %}}
+
+#### {{% livechat_label prosody_components_list_label %}}
+
+{{% livechat_label prosody_components_list_description %}}

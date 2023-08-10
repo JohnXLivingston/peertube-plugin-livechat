@@ -315,9 +315,17 @@ class ProsodyConfigContent {
     this.authenticated?.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
   }
 
-  useExternalComponents (componentsPort: string, components: ExternalComponent[]): void {
+  useExternalComponents (
+    componentsPort: string,
+    componentsInterfaces: string[] | null,
+    components: ExternalComponent[]
+  ): void {
     this.global.set('component_ports', [componentsPort])
-    this.global.set('component_interfaces', ['127.0.0.1', '::1'])
+    if (componentsInterfaces !== null) {
+      this.global.set('component_interfaces', componentsInterfaces)
+    } else {
+      this.global.set('component_interfaces', [])
+    }
 
     for (const component of components) {
       const c = new ProsodyConfigComponent(component.name)

@@ -359,6 +359,15 @@ Please read
   })
 
   registerSetting({
+    name: 'prosody-components-interfaces',
+    label: loc('prosody_components_interfaces_label'),
+    type: 'input',
+    default: '127.0.0.1, ::1',
+    private: true,
+    descriptionHTML: loc('prosody_components_interfaces_description')
+  })
+
+  registerSetting({
     name: 'prosody-components-list',
     label: loc('prosody_components_list_label'),
     type: 'input-textarea',

@@ -4,7 +4,11 @@
 
 ### New features
 
-* Moderation bot
+* Moderation bot.
+
+### Minor changes and fixes
+
+* You can now configure on which network interfaces Prosody will listen for external components.
 
 ### Minor changes and fixes
 

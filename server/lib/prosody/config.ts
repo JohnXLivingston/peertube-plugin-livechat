@@ -144,6 +144,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'prosody-peertube-uri',
     'prosody-components',
     'prosody-components-port',
+    'prosody-components-interfaces',
     'prosody-components-list',
     'chat-no-anonymous',
     'federation-dont-publish-remotely'
@@ -230,11 +231,22 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     if (!/^\d+$/.test(componentsPort)) {
       throw new Error('Invalid external components port')
     }
+    const componentsInterfaces = ((settings['prosody-components-interfaces'] as string) || '')
+      .split(',')
+      .map(s => s.trim())
+    // Check that there is no invalid values (to avoid injections):
+    componentsInterfaces.forEach(networkInterface => {
+      if (networkInterface === '*') return
+      if (networkInterface === '::') return
+      if (networkInterface.match(/^\d+\.\d+\.\d+\.\d+$/)) return
+      if (networkInterface.match(/^[a-f0-9:]+$/)) return
+      throw new Error('Invalid components interfaces')
+    })
     const components = parseExternalComponents((settings['prosody-components-list'] as string) || '', prosodyDomain)
     for (const component of components) {
       valuesToHideInDiagnostic.set('Component ' + component.name + ' secret', component.secret)
     }
-    config.useExternalComponents(componentsPort, components)
+    config.useExternalComponents(componentsPort, componentsInterfaces, components)
   }
 
   if (enableRoomS2S || enableRemoteChatConnections) {
