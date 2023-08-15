@@ -1,5 +1,11 @@
 # Changelog
 
+## XXX (Unreleased Yet)
+
+### Minor changes and fixes
+
+* ConverseJS v10.1.5 (instead of v10.0.0).
+
 ## 7.2.2
 
 ### Minor changes and fixes
