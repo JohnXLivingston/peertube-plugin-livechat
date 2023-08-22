@@ -41,7 +41,7 @@ mv "$converse_build_dir/custom/webpack.livechat.js" "$converse_build_dir/"
 if [[ ! -d "$converse_build_dir/node_modules" ]]; then
   echo "Missing node_modules directory, seems we have to call the makefile..."
   cd "$converse_build_dir"
-  make dist
+  make node_modules src/*
   cd $rootdir
 fi
 
