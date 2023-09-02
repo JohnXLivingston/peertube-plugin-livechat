@@ -3,3 +3,33 @@ open_chat_new_window: Otwórz czat w nowym oknie
 close_chat: Zamknij czat
 use_chat: Użyj czatu
 use_chat_help: Jeśli włączono, czat pojawi się po lewej stronie filmu.
+chat_behaviour_description: <h3>Zachowanie na czacie</h3>
+room_type_label: Typ pokoju
+prosody_components_list_label: Komponenty zewnętrzne
+link_copied: Skopiowano link
+converse_theme_label: Motyw ConverseJS
+online_help: Pomoc online
+show_scrollbarr: Pokaż pasek przewijania
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Lista pokoi</a>\n"
+converse_theme_option_default: Domyślny motyw ConverseJS
+read_only: Tylko do odczytu
+copy: Kopiuj
+error: Błąd
+open: Otwórz
+video: Film
+channel: Kanał
+chat_title: <h3>Czat</h3>
+room_name: Nazwa pokoju
+room_description: Opis pokoju
+not_found: Nie znaleziono
+last_activity: Ostatnia aktywność
+important_note_title: <h3>Ważne uwagi</h3>
+share_chat_link: Udostępnij link do czatu
+connect_using_xmpp: Połącz przy użyciu XMPP
+list_rooms_label: Lista istniejących pomieszczeń
+converse_theme_option_peertube: Motyw Peertube
+help_builtin_prosody_label: Serwer Prosody
+disable_websocket_label: Wyłącz Websocket
+prosody_port_label: Port Prosody
+prosody_certificates_dir_label: Folder certyfikatów
