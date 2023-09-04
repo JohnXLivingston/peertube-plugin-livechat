@@ -8,14 +8,11 @@
 
 ### Minor changes and fixes
 
-* You can now configure on which network interfaces Prosody will listen for external components.
-
-### Minor changes and fixes
-
 * ConverseJS v10.1.6 (instead of v10.0.0).
 * New polish translation (Thanks [ewm](https://weblate.framasoft.org/user/ewm/)).
 * Links to documentation are now using the front-end language to point to the translated documentation page (except for some links generated from the backend, in the diagnostic tool for example).
 * Some code refactoring.
+* You can now configure on which network interfaces Prosody will listen for external components.
 
 ## 7.2.2
 
