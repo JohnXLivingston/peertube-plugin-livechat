@@ -3,7 +3,7 @@
 set -euo pipefail
 set -x
 
-CONVERSE_VERSION="v10.1.5"
+CONVERSE_VERSION="v10.1.6"
 CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 
 rootdir="$(pwd)"

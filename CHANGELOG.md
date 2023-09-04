@@ -4,7 +4,7 @@
 
 ### Minor changes and fixes
 
-* ConverseJS v10.1.5 (instead of v10.0.0).
+* ConverseJS v10.1.6 (instead of v10.0.0).
 * New polish translation (Thanks [ewm](https://weblate.framasoft.org/user/ewm/)).
 
 ## 7.2.2
