@@ -52,15 +52,15 @@ interface ChannelInfos {
   displayName: string
 }
 
-interface ChannelModerationOptions {
+interface ChannelConfigurationOptions {
   bot: boolean
   forbiddenWords: string[]
   bannedJIDs: string[]
 }
 
-interface ChannelModeration {
+interface ChannelConfiguration {
   channel: ChannelInfos
-  moderation: ChannelModerationOptions
+  configuration: ChannelConfigurationOptions
 }
 
 export type {
@@ -69,6 +69,6 @@ export type {
   ProsodyListRoomsResult,
   ProsodyListRoomsResultRoom,
   ChannelInfos,
-  ChannelModerationOptions,
-  ChannelModeration
+  ChannelConfigurationOptions,
+  ChannelConfiguration
 }

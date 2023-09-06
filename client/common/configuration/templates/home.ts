@@ -3,11 +3,11 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 const Mustache = require('mustache')
 
 /**
- * Renders the livechat moderation setup home page.
+ * Renders the livechat configuration setup home page.
  * @param registerClientOptions Peertube client options
  * @returns The page content
  */
-async function renderModerationHome (registerClientOptions: RegisterClientOptions): Promise<string> {
+async function renderConfigurationHome (registerClientOptions: RegisterClientOptions): Promise<string> {
   const { peertubeHelpers } = registerClientOptions
 
   try {
@@ -29,13 +29,13 @@ async function renderModerationHome (registerClientOptions: RegisterClientOption
     }
 
     for (const channel of channels.data) {
-      channel.livechatModerationUri = '/p/livechat/moderation/channel?channelId=' + encodeURIComponent(channel.id)
+      channel.livechatConfigurationUri = '/p/livechat/configuration/channel?channelId=' + encodeURIComponent(channel.id)
     }
 
     const view = {
-      title: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_TITLE),
-      description: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_DESC),
-      please_select: await peertubeHelpers.translate(LOC_LIVECHAT_MODERATION_PLEASE_SELECT),
+      title: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_TITLE),
+      description: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_DESC),
+      please_select: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_PLEASE_SELECT),
       channels: channels.data
     }
 
@@ -47,7 +47,7 @@ async function renderModerationHome (registerClientOptions: RegisterClientOption
         <ul>
         {{#channels}}
           <li>
-            <a href="{{livechatModerationUri}}">
+            <a href="{{livechatConfigurationUri}}">
               {{displayName}}
             </a>
           </li>
@@ -62,5 +62,5 @@ async function renderModerationHome (registerClientOptions: RegisterClientOption
 }
 
 export {
-  renderModerationHome
+  renderConfigurationHome
 }

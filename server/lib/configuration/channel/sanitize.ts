@@ -1,19 +1,19 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import type { ChannelModerationOptions, ChannelInfos } from '../../../../shared/lib/types'
+import type { ChannelConfigurationOptions, ChannelInfos } from '../../../../shared/lib/types'
 
 /**
- * Sanitize data so that they can safely be used/stored for channel moderation configuration.
+ * Sanitize data so that they can safely be used/stored for channel configuration configuration.
  * Throw an error if the format is obviously wrong.
  * Cleans data (removing empty values, ...)
  * @param options Peertube server options
  * @param _channelInfos Channel infos
  * @param data Input data
  */
-async function sanitizeChannelModerationOptions (
+async function sanitizeChannelConfigurationOptions (
   _options: RegisterServerOptions,
   _channelInfos: ChannelInfos,
   data: any
-): Promise<ChannelModerationOptions> {
+): Promise<ChannelConfigurationOptions> {
   const result = {
     bot: false,
     bannedJIDs: [],
@@ -28,7 +28,7 @@ async function sanitizeChannelModerationOptions (
     if (!(f in data) || (typeof data[f] !== 'boolean')) {
       throw new Error('Invalid data type for field ' + f)
     }
-    result[f as keyof ChannelModerationOptions] = data[f]
+    result[f as keyof ChannelConfigurationOptions] = data[f]
   }
   // value/regexp array fields
   for (const f of ['bannedJIDs', 'forbiddenWords']) {
@@ -50,7 +50,7 @@ async function sanitizeChannelModerationOptions (
       } catch (_err) {
         throw new Error('Invalid value in field ' + f)
       }
-      (result[f as keyof ChannelModerationOptions] as string[]).push(v)
+      (result[f as keyof ChannelConfigurationOptions] as string[]).push(v)
     }
   }
 
@@ -58,5 +58,5 @@ async function sanitizeChannelModerationOptions (
 }
 
 export {
-  sanitizeChannelModerationOptions
+  sanitizeChannelConfigurationOptions
 }

@@ -6,11 +6,11 @@ import { isUserAdminOrModerator } from '../../helpers'
 
 /**
  * Returns a middleware handler to get the channelInfos from the channel parameter.
- * This is used in api related to channel moderation options.
+ * This is used in api related to channel configuration options.
  * @param options Peertube server options
  * @returns middleware function
  */
-function getCheckModerationChannelMiddleware (options: RegisterServerOptions): RequestPromiseHandler {
+function getCheckConfigurationChannelMiddleware (options: RegisterServerOptions): RequestPromiseHandler {
   return async (req: Request, res: Response, next: NextFunction) => {
     const logger = options.peertubeHelpers.logger
     const channelId = req.params.channelId
@@ -42,12 +42,12 @@ function getCheckModerationChannelMiddleware (options: RegisterServerOptions): R
       return
     }
 
-    logger.debug('User can access the moderation channel api.')
+    logger.debug('User can access the configuration channel api.')
     res.locals.channelInfos = channelInfos
     next()
   }
 }
 
 export {
-  getCheckModerationChannelMiddleware
+  getCheckConfigurationChannelMiddleware
 }

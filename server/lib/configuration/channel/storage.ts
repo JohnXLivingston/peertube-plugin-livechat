@@ -1,27 +1,27 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import type { ChannelModeration, ChannelInfos } from '../../../../shared/lib/types'
-import { sanitizeChannelModerationOptions } from '../../moderation/channel/sanitize'
+import type { ChannelConfiguration, ChannelInfos } from '../../../../shared/lib/types'
+import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
 import * as fs from 'fs'
 import * as path from 'path'
 
 /**
- * Get saved moderation options for the given channel.
+ * Get saved configuration options for the given channel.
  * Can throw an exception.
  * @param options Peertube server options
  * @param channelInfos Info from channel from which we want to get infos
- * @returns Channel moderation data
+ * @returns Channel configuration data
  */
-async function getChannelModerationOptions (
+async function getChannelConfigurationOptions (
   options: RegisterServerOptions,
   channelInfos: ChannelInfos
-): Promise<ChannelModeration> {
+): Promise<ChannelConfiguration> {
   const logger = options.peertubeHelpers.logger
   const filePath = _getFilePath(options, channelInfos)
   if (!fs.existsSync(filePath)) {
     logger.debug('No stored data for channel, returning default values')
     return {
       channel: channelInfos,
-      moderation: {
+      configuration: {
         bot: false,
         bannedJIDs: [],
         forbiddenWords: []
@@ -31,24 +31,24 @@ async function getChannelModerationOptions (
   const content = await fs.promises.readFile(filePath, {
     encoding: 'utf-8'
   })
-  const sanitized = await sanitizeChannelModerationOptions(options, channelInfos, JSON.parse(content))
+  const sanitized = await sanitizeChannelConfigurationOptions(options, channelInfos, JSON.parse(content))
   return {
     channel: channelInfos,
-    moderation: sanitized
+    configuration: sanitized
   }
 }
 
 /**
- * Save channel moderation options.
+ * Save channel configuration options.
  * Can throw an exception.
- * @param _options Peertube server options
- * @param _channelModeration data to save
+ * @param options Peertube server options
+ * @param channelConfiguration data to save
  */
-async function storeChannelModerationOptions (
+async function storeChannelConfigurationOptions (
   options: RegisterServerOptions,
-  channelModeration: ChannelModeration
+  channelConfiguration: ChannelConfiguration
 ): Promise<void> {
-  const channelInfos = channelModeration.channel
+  const channelInfos = channelConfiguration.channel
   const filePath = _getFilePath(options, channelInfos)
 
   if (!fs.existsSync(filePath)) {
@@ -58,7 +58,7 @@ async function storeChannelModerationOptions (
     }
   }
 
-  const jsonContent = JSON.stringify(channelModeration.moderation)
+  const jsonContent = JSON.stringify(channelConfiguration.configuration)
 
   await fs.promises.writeFile(filePath, jsonContent, {
     encoding: 'utf-8'
@@ -77,12 +77,12 @@ function _getFilePath (
 
   return path.resolve(
     options.peertubeHelpers.plugin.getDataDirectoryPath(),
-    'channelModerationOptions',
+    'channelConfigurationOptions',
     channelId.toString() + '.json'
   )
 }
 
 export {
-  getChannelModerationOptions,
-  storeChannelModerationOptions
+  getChannelConfigurationOptions,
+  storeChannelConfigurationOptions
 }
