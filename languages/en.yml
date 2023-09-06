@@ -49,7 +49,7 @@ list_rooms_description: |
 
 federation_description: |
   <h3>Federation</h3>
-  Following settings concern the fedration with other Peertube instances,
+  Following settings concern the federation with other Peertube instances,
   and other fediverse softwares.
 
 federation_no_remote_chat_label: "Don't display remote chats"
