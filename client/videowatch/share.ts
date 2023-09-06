@@ -4,7 +4,7 @@ import { helpButtonSVG } from './buttons'
 import { logger } from './logger'
 import { getIframeUri, getXMPPAddr, UriOptions } from './uri'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
-import { helpUrl } from 'shared/lib/help'
+import { localizedHelpUrl } from '../utils/help'
 
 interface ShareForm {
   shareString: HTMLInputElement
@@ -24,6 +24,10 @@ interface ShareForm {
 
 async function shareChatUrl (registerOptions: RegisterClientOptions, settings: any, video: Video): Promise<void> {
   const peertubeHelpers = registerOptions.peertubeHelpers
+
+  const streamersHelpUrl = await localizedHelpUrl(registerOptions, {
+    page: 'documentation/user/streamers'
+  })
 
   const [
     labelShare,
@@ -92,9 +96,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
       divShareString.append(openButton)
 
       const helpButton = document.createElement('a')
-      helpButton.href = helpUrl({
-        page: 'documentation/user/streamers'
-      })
+      helpButton.href = streamersHelpUrl
       helpButton.target = '_blank'
       helpButton.innerHTML = helpButtonSVG()
       helpButton.title = labelHelp

@@ -121,6 +121,14 @@ class BuildLanguages {
     console.log('Writing JSON files...')
     for (const l of this.langs) {
       const filePath = path.resolve(this.destinationDir, l + '.json')
+      // Waiting for this to be implemented:
+      // https://github.com/Chocobozzz/PeerTube/issues/5904
+      // (also see https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/224)
+      // we are adding a special entry with the language key, so we can use frontend
+      // translation function to get the path for localized documentation.
+      // See frontend getLangCode and localizedHelpUrl functions.
+      const content = this.translationsStrings[l]
+      content['_language'] = l
       await fs.promises.writeFile(filePath, JSON.stringify(this.translationsStrings[l]))
     }
   }

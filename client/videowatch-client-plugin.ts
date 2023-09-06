@@ -1,7 +1,7 @@
 import type { Video } from '@peertube/peertube-types'
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { videoHasWebchat, videoHasRemoteWebchat } from 'shared/lib/video'
-import { helpUrl } from 'shared/lib/help'
+import { localizedHelpUrl } from './utils/help'
 import { logger } from './videowatch/logger'
 import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG, helpButtonSVG } from './videowatch/buttons'
 import { displayButton, displayButtonOptions } from './videowatch/button'
@@ -74,6 +74,9 @@ function register (registerOptions: RegisterClientOptions): void {
     container: HTMLElement, video: Video, showOpenBlank: boolean, showShareUrlButton: boolean
   ): Promise<void> {
     logger.log('Adding livechat in the DOM...')
+    const viewersDocumentationHelpUrl = await localizedHelpUrl(registerOptions, {
+      page: 'documentation/user/viewers'
+    })
     const p = new Promise<void>((resolve, reject) => {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       Promise.all([
@@ -137,9 +140,7 @@ function register (registerOptions: RegisterClientOptions): void {
           buttonContainer,
           name: 'help',
           label: labelHelp,
-          href: helpUrl({
-            page: 'documentation/user/viewers'
-          }),
+          href: viewersDocumentationHelpUrl,
           targetBlank: true,
           icon: helpButtonSVG,
           additionalClasses: []
