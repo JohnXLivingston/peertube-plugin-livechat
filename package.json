@@ -100,7 +100,7 @@
     "build": "npm-run-all -s clean:light build:languages check:client:tsc -s build:converse build:prosody build:images build:avatars build:client build:server build:serverconverse build:prosodymodules build:styles",
     "lint": "npm-run-all -s lint:script lint:styles",
     "lint:script": "npx eslint --ext .js --ext .ts .",
-    "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/styles/**/*.css'",
+    "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/styles/**/*.scss'",
     "show:npmfiles": "npx npm-packlist",
     "doc:translate": "bash doc-translate.sh"
   },
