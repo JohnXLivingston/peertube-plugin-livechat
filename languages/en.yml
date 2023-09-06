@@ -293,6 +293,17 @@ prosody_components_list_description: |
     <li>Only use alphanumeric characters in the secret passphrase (use at least 15 characters).</li>
   </ul>
 
+experimental_warning: |
+  <b class="orange">Experimental feature:</b> this feature is still experimental.
+
+configuration_description: |
+  <h3>Channel advanced configuration</h3>
+  Following settings concern the advanced channel options:
+  users will be able to add some customization on their channels,
+  activate the moderation bot, ...
+
+disable_configuration_label: "Disable the advanced channel configuration and the chatbot"
+
 save: "Save"
 cancel: "Cancel"
 successfully_saved: "Successfully saved"

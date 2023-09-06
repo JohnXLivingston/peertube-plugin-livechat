@@ -3,6 +3,7 @@ import type { Router, Request, Response, NextFunction } from 'express'
 import type { ChannelInfos } from '../../../../shared/lib/types'
 import { asyncMiddleware } from '../../middlewares/async'
 import { getCheckConfigurationChannelMiddleware } from '../../middlewares/configuration/channel'
+import { checkConfigurationEnabledMiddleware } from '../../middlewares/configuration/configuration'
 import { getChannelConfigurationOptions, storeChannelConfigurationOptions } from '../../configuration/channel/storage'
 import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
 
@@ -11,6 +12,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions): Prom
   const logger = options.peertubeHelpers.logger
 
   router.get('/channel/:channelId', asyncMiddleware([
+    checkConfigurationEnabledMiddleware(options),
     getCheckConfigurationChannelMiddleware(options),
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
       if (!res.locals.channelInfos) {
@@ -27,6 +29,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions): Prom
   ]))
 
   router.post('/channel/:channelId', asyncMiddleware([
+    checkConfigurationEnabledMiddleware(options),
     getCheckConfigurationChannelMiddleware(options),
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
       if (!res.locals.channelInfos) {

@@ -10,6 +10,9 @@ import { vivifyConfigurationChannel } from './logic/channel'
 async function registerConfiguration (clientOptions: RegisterClientOptions): Promise<void> {
   const { peertubeHelpers, registerClientRoute, registerHook } = clientOptions
 
+  const settings = await peertubeHelpers.getSettings()
+  if (settings['disable-configuration']) { return }
+
   registerClientRoute({
     route: 'livechat/configuration',
     onMount: async ({ rootEl }) => {

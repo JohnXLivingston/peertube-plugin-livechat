@@ -81,6 +81,26 @@ Please read
     private: true
   })
 
+  // ********** Moderation and advances customization
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('configuration_description')
+  })
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('experimental_warning')
+  })
+  registerSetting({
+    name: 'disable-configuration',
+    label: loc('disable_configuration_label'),
+    // descriptionHTML: loc('disable_configuration_description'),
+    type: 'input-checkbox',
+    default: false,
+    private: false
+  })
+
   // ********** Chat behaviour
   registerSetting({
     type: 'html',
