@@ -294,7 +294,7 @@ prosody_components_list_description: |
   </ul>
 
 experimental_warning: |
-  <b class="orange">Experimental feature:</b> this feature is still experimental.
+  <b class="peertube-plugin-livechat-experimental">Experimental feature:</b> this feature is still experimental.
 
 configuration_description: |
   <h3>Channel advanced configuration</h3>
