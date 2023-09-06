@@ -4,7 +4,7 @@
 
 ### New features
 
-* Moderation bot.
+* Moderation bot (experimental new feature).
 
 ### Minor changes and fixes
 
