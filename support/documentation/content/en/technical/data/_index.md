@@ -48,3 +48,9 @@ These data can then be read by the Prosody server to connect to the remote chat.
 
 Moreover, when the current instance builds such data for local videos,
 it stores it in `videoInfos/local/video_uuid.json` (where `video_uuid` is the video uuid).
+
+## channelConfigurationOptions
+
+The `channelConfigurationOptions` folder contains JSON files describing channels advanced configuration.
+Filenames are like `1.json` where `1` is the channel id.
+The content of the files are similar to the content sent by the front-end when saving these configuration.
