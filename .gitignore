@@ -7,6 +7,7 @@ support/documentation/public
 support/documentation/po/po4a.conf
 support/documentation/content/translations/**/*.md
 support/documentation/i18n
+support/documentation/.hugo_build.lock
 public
 vendor/prosody-appimage
 vendor/conversejs-*
