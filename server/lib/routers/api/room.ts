@@ -6,6 +6,7 @@ import { getCheckAPIKeyMiddleware } from '../../middlewares/apikey'
 import { Affiliations, getVideoAffiliations, getChannelAffiliations } from '../../prosody/config/affiliations'
 import { fillVideoCustomFields } from '../../custom-fields'
 import { getChannelInfosById } from '../../database/channel'
+import { setChannel2Room } from '../../room/channel'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -78,6 +79,9 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
           },
           affiliations: affiliations
         }
+
+        await setChannel2Room(options, channelId, jid)
+
         res.json(roomDefaults)
       } else {
         // FIXME: @peertube/peertype-types@4.2.2: wrongly considere video as MVideoThumbnail.
@@ -127,6 +131,9 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
           },
           affiliations: affiliations
         }
+
+        await setChannel2Room(options, video.channelId, jid)
+
         res.json(roomDefaults)
       }
     }

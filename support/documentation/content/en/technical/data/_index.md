@@ -54,3 +54,30 @@ it stores it in `videoInfos/local/video_uuid.json` (where `video_uuid` is the vi
 The `channelConfigurationOptions` folder contains JSON files describing channels advanced configuration.
 Filenames are like `1.json` where `1` is the channel id.
 The content of the files are similar to the content sent by the front-end when saving these configuration.
+
+## channel2room and room2channel
+
+Some parts of the plugin need a quick way to get the channel id from the room id, or the all room id from a channel id.
+We won't use SQL queries, because we only want such information for video that have a chatroom.
+
+So we have 2 folders: `channel2room` and `room2channel`.
+When a chatroom is created, we create 2 empty files:
+
+* `channel2room/channel_id/room_id@muc_domain`
+* `room2channel/room_id@muc_domain/channel_id`
+
+Where:
+
+* `muc_domain` is the room's domain (should be `room.your_instance.tld`)
+* `channel_id` is the channel numerical id
+* `room_id` is the local part of the room JID
+
+So we can easily list all rooms for a given channel id, just by listing files in `channel2room`.
+Or get the channel id for a room JID (Jabber ID).
+
+Note: we include muc_domain, in case the instance domain changes. In such case, existing rooms
+could get lost, and we want a way to ignore them to avoid gettings errors.
+
+Note: there could be some inconsistencies, when video or rooms are deleted.
+The code must take this into account, and always double check room or channel existence.
+There will be some cleaning batch, to delete deprecated files.
