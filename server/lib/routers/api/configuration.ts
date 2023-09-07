@@ -7,11 +7,10 @@ import { checkConfigurationEnabledMiddleware } from '../../middlewares/configura
 import { getChannelConfigurationOptions, storeChannelConfigurationOptions } from '../../configuration/channel/storage'
 import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
 
-async function initConfigurationApiRouter (options: RegisterServerOptions): Promise<Router> {
-  const router = options.getRouter()
+async function initConfigurationApiRouter (options: RegisterServerOptions, router: Router): Promise<void> {
   const logger = options.peertubeHelpers.logger
 
-  router.get('/channel/:channelId', asyncMiddleware([
+  router.get('/configuration/channel/:channelId', asyncMiddleware([
     checkConfigurationEnabledMiddleware(options),
     getCheckConfigurationChannelMiddleware(options),
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
@@ -28,7 +27,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions): Prom
     }
   ]))
 
-  router.post('/channel/:channelId', asyncMiddleware([
+  router.post('/configuration/channel/:channelId', asyncMiddleware([
     checkConfigurationEnabledMiddleware(options),
     getCheckConfigurationChannelMiddleware(options),
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
@@ -59,8 +58,6 @@ async function initConfigurationApiRouter (options: RegisterServerOptions): Prom
       res.json(result)
     }
   ]))
-
-  return router
 }
 
 export {

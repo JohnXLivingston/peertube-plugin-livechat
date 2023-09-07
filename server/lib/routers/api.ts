@@ -35,6 +35,8 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
   await initFederationServerInfosApiRouter(options, router)
 
+  await initConfigurationApiRouter(options, router)
+
   if (isDebugMode(options)) {
     // Only add this route if the debug mode is enabled at time of the server launch.
     // Note: the isDebugMode will be tested again when the API is called.
@@ -52,8 +54,6 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
       }
     ))
   }
-
-  router.use('/configuration', await initConfigurationApiRouter(options))
 
   return router
 }
