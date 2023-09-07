@@ -1,15 +1,5 @@
 /*
 This module provides user credential for the builtin prosody module.
-
-A user can get a password thanks to a call to prosodyRegisterUser (see api user/auth).
-
-Then, we can test that the user exists with prosodyUserRegistered, and test password with prosodyCheckUserPassword.
-
-Passwords are randomly generated.
-
-These password are stored internally in a global variable, and are valid for 24h.
-Each call to registerUser extends the validity by 24h.
-
 */
 
 interface Password {
@@ -30,6 +20,20 @@ function _getAndClean (user: string): Password | undefined {
   return undefined
 }
 
+/**
+ * A user can get a password thanks to a call to prosodyRegisterUser (see api user/auth).
+ *
+ * Then, we can test that the user exists with prosodyUserRegistered, and test password with prosodyCheckUserPassword.
+ *
+ * Passwords are randomly generated.
+ *
+ * These password are stored internally in a global variable, and are valid for 24h.
+ * Each call to registerUser extends the validity by 24h.
+ *
+ * Prosody will use an API call to api/user/check_password to check the password transmitted by the frontend.
+ * @param user username
+ * @returns the password to use to connect to Prosody
+ */
 async function prosodyRegisterUser (user: string): Promise<string> {
   const entry = _getAndClean(user)
   const validity = Date.now() + (24 * 60 * 60 * 1000) // 24h
