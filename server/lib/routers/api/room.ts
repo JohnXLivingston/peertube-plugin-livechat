@@ -6,7 +6,7 @@ import { getCheckAPIKeyMiddleware } from '../../middlewares/apikey'
 import { Affiliations, getVideoAffiliations, getChannelAffiliations } from '../../prosody/config/affiliations'
 import { fillVideoCustomFields } from '../../custom-fields'
 import { getChannelInfosById } from '../../database/channel'
-import { setChannel2Room } from '../../room/channel'
+import { RoomChannel } from '../../room-channel'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -80,7 +80,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
           affiliations: affiliations
         }
 
-        await setChannel2Room(options, channelId, jid)
+        await RoomChannel.singleton().link(channelId, jid)
 
         res.json(roomDefaults)
       } else {
@@ -132,7 +132,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
           affiliations: affiliations
         }
 
-        await setChannel2Room(options, video.channelId, jid)
+        await RoomChannel.singleton().link(video.channelId, jid)
 
         res.json(roomDefaults)
       }

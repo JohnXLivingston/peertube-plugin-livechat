@@ -4,10 +4,12 @@ import { initSettings } from './lib/settings'
 import { initCustomFields } from './lib/custom-fields'
 import { initRouters } from './lib/routers/index'
 import { initFederation } from './lib/federation/init'
+import { initChannelConfiguration } from './lib/configuration/channel/init'
 import { initRSS } from './lib/rss/init'
 import { prepareProsody, ensureProsodyRunning, ensureProsodyNotRunning } from './lib/prosody/ctl'
 import { unloadDebugMode } from './lib/debug'
 import { loadLoc } from './lib/loc'
+import { RoomChannel } from './lib/room-channel'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -16,6 +18,7 @@ let OPTIONS: RegisterServerOptions | undefined
 
 async function register (options: RegisterServerOptions): Promise<any> {
   OPTIONS = options
+  const logger = options.peertubeHelpers.logger
 
   // This is a trick to check that peertube is at least in version 3.2.0
   if (!options.peertubeHelpers.plugin) {
@@ -24,6 +27,10 @@ async function register (options: RegisterServerOptions): Promise<any> {
 
   // First: load languages files, so we can localize strings.
   await loadLoc()
+  // Then load the RoomChannel singleton
+  const roomChannelSingleton = await RoomChannel.initSingleton(options)
+  // roomChannelNeedsDataInit: if true, means that the data file does not exist (or is invalid), so we must initiate it
+  const roomChannelNeedsDataInit = !await roomChannelSingleton.readData()
 
   await migrateSettings(options)
 
@@ -31,11 +38,21 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await initCustomFields(options)
   await initRouters(options)
   await initFederation(options)
+  await initChannelConfiguration(options)
   await initRSS(options)
 
   try {
     await prepareProsody(options)
     await ensureProsodyRunning(options)
+
+    if (roomChannelNeedsDataInit) {
+      logger.info('The RoomChannel singleton has not found data, we must rebuild')
+      // no need to wait here, can be done without await.
+      roomChannelSingleton.rebuildData().then(
+        () => { logger.info('RoomChannel singleton rebuild done') },
+        (reason) => { logger.error('RoomChannel singleton rebuild failed: ' + (reason as string)) }
+      )
+    }
   } catch (error) {
     options.peertubeHelpers.logger.error('Error when launching Prosody: ' + (error as string))
   }
@@ -51,6 +68,8 @@ async function unregister (): Promise<any> {
   }
 
   unloadDebugMode()
+
+  await RoomChannel.destroySingleton()
 
   const module = __filename
   OPTIONS?.peertubeHelpers.logger.info(`Unloading module ${module}...`)

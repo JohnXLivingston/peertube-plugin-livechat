@@ -55,28 +55,34 @@ The `channelConfigurationOptions` folder contains JSON files describing channels
 Filenames are like `1.json` where `1` is the channel id.
 The content of the files are similar to the content sent by the front-end when saving these configuration.
 
-## channel2room and room2channel
+## room-channel/muc_domain.json
 
-Some parts of the plugin need a quick way to get the channel id from the room id, or the all room id from a channel id.
+Some parts of the plugin need a quick way to get the channel id from the room Jabber ID, or the all room Jabber ID from a channel id.
 We won't use SQL queries, because we only want such information for video that have a chatroom.
 
-So we have 2 folders: `channel2room` and `room2channel`.
-When a chatroom is created, we create 2 empty files:
+So we will store in the `room-channel/muc_domain.json` file (where `muc_domain` is the actual MUC domain,
+something like `room.instance.tld`) a JSON object representing these relations.
 
-* `channel2room/channel_id/room_id@muc_domain`
-* `room2channel/room_id@muc_domain/channel_id`
+In the JSON object, keys are the channel ID, values are arrays of strings representing the rooms JIDs local part (without the MUC domain).
 
-Where:
+When a chatroom is created, the corresponding entry will be added.
 
-* `muc_domain` is the room's domain (should be `room.your_instance.tld`)
-* `channel_id` is the channel numerical id
-* `room_id` is the local part of the room JID
+Here is a sample file:
 
-So we can easily list all rooms for a given channel id, just by listing files in `channel2room`.
-Or get the channel id for a room JID (Jabber ID).
+```json
+{
+  1: [
+    "8df24108-6e70-4fc8-b1cc-f2db7fcdd535"
+  ]
+}
+```
 
-Note: we include muc_domain, in case the instance domain changes. In such case, existing rooms
-could get lost, and we want a way to ignore them to avoid gettings errors.
+This file is loaded at the plugin startup into an object that can manipulate these data.
+
+So we can easily list all rooms for a given channel id or get the channel id for a room JID (Jabber ID).
+
+Note: we include the MUC domain (`room.instance.tld`) in the filename in case the instance domain changes.
+In such case, existing rooms could get lost, and we want a way to ignore them to avoid gettings errors.
 
 Note: there could be some inconsistencies, when video or rooms are deleted.
 The code must take this into account, and always double check room or channel existence.
