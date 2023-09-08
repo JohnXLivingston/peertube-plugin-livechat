@@ -9,10 +9,15 @@
 
 ## Mandatory Checks
 
+<!-- This section lists a few important points to think about. -->
+<!-- These do not necessarily apply to all types of contributions. -->
 <!-- Put an `x` in the box(es) that applies: -->
 
 - [ ] I have added a description of the changes in the CHANGELOG files
 - [ ] I have run `npm run lint` to check that my changes respects the coding conventions
+- [ ] I have added user documentation for the new features I added
+- [ ] I have added technical documentation for the new features I added
+- [ ] I added some documentation and I have run `npm run doc:translate` to generate translations files
 
 ## Screenshots
 
