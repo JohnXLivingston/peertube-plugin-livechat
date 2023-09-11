@@ -87,9 +87,6 @@ class RoomChannel {
   public async readData (): Promise<boolean> {
     // Reading the data file (see https://livingston.frama.io/peertube-plugin-livechat/fr/technical/data/)
 
-    this.room2Channel.clear()
-    this.channel2Rooms.clear()
-
     let content: string
     try {
       content = (await fs.promises.readFile(this.dataFilePath)).toString()
@@ -106,6 +103,18 @@ class RoomChannel {
       this.logger.error('Unable to parse the content of the room-channel data file, will start with an empty database.')
       return false
     }
+
+    // This part must be done atomicly:
+    return this._readData(data)
+  }
+
+  /**
+   * _readData is the atomic part of readData:
+   * once the date are read from disk, object data must be emptied and filled atomicly.
+   */
+  protected _readData (data: any): boolean {
+    this.room2Channel.clear()
+    this.channel2Rooms.clear()
 
     if (typeof data !== 'object') {
       this.logger.error('Invalid room-channel data file content')
