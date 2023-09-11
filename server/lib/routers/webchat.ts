@@ -4,13 +4,13 @@ import type { ProsodyListRoomsResult, ProsodyListRoomsResultRoom } from '../../.
 import { createProxyServer } from 'http-proxy'
 import { RegisterServerOptionsV5, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
-import { getAPIKey } from '../apikey'
-import { getChannelInfosById } from '../database/channel'
 import { isAutoColorsAvailable, areAutoColorsValid, AutoColors } from '../../../shared/lib/autocolors'
 import { fetchMissingRemoteServerInfos } from '../federation/fetch-infos'
 import { getConverseJSParams } from '../conversejs/params'
+import { setCurrentProsody, delCurrentProsody } from '../prosody/api/host'
+import { getChannelInfosById } from '../database/channel'
+import { listProsodyRooms } from '../prosody/api/list-rooms'
 import * as path from 'path'
-const got = require('got')
 
 const fs = require('fs').promises
 
@@ -18,7 +18,6 @@ interface ProsodyProxyInfo {
   host: string
   port: string
 }
-let currentProsodyProxyInfo: ProsodyProxyInfo | null = null
 let currentHttpBindProxy: ReturnType<typeof createProxyServer> | null = null
 let currentWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
 let currentS2SWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
@@ -218,21 +217,8 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         return
       }
 
-      if (!currentProsodyProxyInfo) {
-        throw new Error('It seems that prosody is not binded... Cant list rooms.')
-      }
-      const apiUrl = `http://localhost:${currentProsodyProxyInfo.port}/peertubelivechat_list_rooms/list-rooms`
-      peertubeHelpers.logger.debug('Calling list rooms API on url: ' + apiUrl)
-      const rooms = await got(apiUrl, {
-        method: 'GET',
-        headers: {
-          authorization: 'Bearer ' + await getAPIKey(options),
-          host: currentProsodyProxyInfo.host
-        },
-        responseType: 'json',
-        resolveBodyOnly: true
-      })
-
+      const rooms = await listProsodyRooms(options)
+      // For the frontend, we are adding channel data if the room is channel specific
       if (Array.isArray(rooms)) {
         for (let i = 0; i < rooms.length; i++) {
           const room: ProsodyListRoomsResultRoom = rooms[i]
@@ -268,7 +254,7 @@ async function disableProxyRoute ({ peertubeHelpers }: RegisterServerOptions): P
   // But this seems to never happen, and stucked the plugin uninstallation.
   // So I don't wait.
   try {
-    currentProsodyProxyInfo = null
+    delCurrentProsody()
     if (currentHttpBindProxy) {
       peertubeHelpers.logger.info('Closing the http bind proxy...')
       currentHttpBindProxy.close()
@@ -299,7 +285,7 @@ async function enableProxyRoute (
     logger.error(`Port '${prosodyProxyInfo.port}' is not valid. Aborting.`)
     return
   }
-  currentProsodyProxyInfo = prosodyProxyInfo
+  setCurrentProsody(prosodyProxyInfo.host, prosodyProxyInfo.port)
 
   logger.info('Creating a new http bind proxy')
   currentHttpBindProxy = createProxyServer({

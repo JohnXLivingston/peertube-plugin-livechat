@@ -63,7 +63,7 @@ We won't use SQL queries, because we only want such information for video that h
 So we will store in the `room-channel/muc_domain.json` file (where `muc_domain` is the actual MUC domain,
 something like `room.instance.tld`) a JSON object representing these relations.
 
-In the JSON object, keys are the channel ID, values are arrays of strings representing the rooms JIDs local part (without the MUC domain).
+In the JSON object, keys are the channel ID (as string), values are arrays of strings representing the rooms JIDs local part (without the MUC domain).
 
 When a chatroom is created, the corresponding entry will be added.
 
@@ -71,7 +71,7 @@ Here is a sample file:
 
 ```json
 {
-  1: [
+  "1": [
     "8df24108-6e70-4fc8-b1cc-f2db7fcdd535"
   ]
 }

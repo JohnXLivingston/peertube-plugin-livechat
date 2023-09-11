@@ -1,5 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { getProsodyDomain } from '../prosody/config/domain'
+import { listProsodyRooms } from '../prosody/api/list-rooms'
+import { getChannelInfosById } from '../database/channel'
 import * as path from 'path'
 import * as fs from 'fs'
 
@@ -21,6 +23,7 @@ class RoomChannel {
 
   protected room2Channel: Map<string, number> = new Map<string, number>()
   protected channel2Rooms: Map<number, Map<string, true>> = new Map<number, Map<string, true>>()
+  protected needSync: boolean = false
 
   constructor (params: {
     options: RegisterServerOptions
@@ -115,6 +118,7 @@ class RoomChannel {
   protected _readData (data: any): boolean {
     this.room2Channel.clear()
     this.channel2Rooms.clear()
+    this.needSync = true
 
     if (typeof data !== 'object') {
       this.logger.error('Invalid room-channel data file content')
@@ -152,9 +156,56 @@ class RoomChannel {
   /**
    * Rebuilt the data from scratch.
    * Can be used for the initial migration.
+   * Can also be scheduled daily, or on an admin action (not sure it will be done, at the time of the writing).
    */
   public async rebuildData (): Promise<void> {
-    this.logger.error('rebuildData Not implemented yet')
+    const data: any = {}
+
+    const rooms = await listProsodyRooms(this.options)
+    for (const room of rooms) {
+      let channelId: string | number | undefined
+
+      const matches = room.localpart.match(/^channel\.(\d+)$/)
+      if (matches?.[1]) {
+        channelId = parseInt(matches[1])
+        if (isNaN(channelId)) {
+          this.logger.error(`Invalid room JID '${room.localpart}'`)
+          continue
+        }
+        // Checking that channel still exists
+        const channelInfos = await getChannelInfosById(this.options, channelId)
+        if (!channelInfos) {
+          this.logger.debug(
+            `Ignoring room ${room.localpart}, because channel ${channelId} seems to not exist anymore`
+          )
+          continue
+        }
+      } else {
+        const uuid = room.localpart
+        const video = await this.options.peertubeHelpers.videos.loadByIdOrUUID(uuid)
+        if (!video) {
+          this.logger.debug(
+            `Ignoring room ${room.localpart}, because video ${uuid} seems to not exist anymore`
+          )
+          continue
+        }
+        channelId = video.channelId
+      }
+
+      if (!channelId) {
+        this.logger.error(`Did not find channelId for ${room.localpart}`)
+        continue
+      }
+      channelId = channelId.toString()
+      if (!(channelId in data)) {
+        this.logger.debug(`Room ${room.localpart} is associated to channel ${channelId}`)
+        data[channelId] = [room.localpart]
+      }
+    }
+
+    // This part must be done atomicly:
+    this._readData(data)
+
     await this.sync() // FIXME: or maybe scheduleSync ?
   }
 
@@ -162,7 +213,9 @@ class RoomChannel {
    * Syncs data to disk.
    */
   public async sync (): Promise<void> {
+    if (!this.needSync) { return }
     this.logger.error('sync Not implemented yet')
+    this.needSync = false // Note: must be done at the right moment
   }
 
   /**
@@ -170,6 +223,7 @@ class RoomChannel {
    * Each times data are modified, we can schedule a sync, but we don't have to wait the file writing to be done.
    */
   public scheduleSync (): void {
+    if (!this.needSync) { return }
     this.logger.error('scheduleSync Not implemented yet')
   }
 
@@ -195,20 +249,31 @@ class RoomChannel {
     // First, if the room was linked to another channel, we must unlink.
     const previousChannelId = this.room2Channel.get(roomJID)
     if (previousChannelId) {
-      this.room2Channel.delete(roomJID)
+      if (this.room2Channel.delete(roomJID)) {
+        this.needSync = true
+      }
       const previousRooms = this.channel2Rooms.get(previousChannelId)
       if (previousRooms) {
-        previousRooms.delete(roomJID)
+        if (previousRooms.delete(roomJID)) {
+          this.needSync = true
+        }
       }
     }
 
-    this.room2Channel.set(roomJID, channelId)
+    if (this.room2Channel.get(roomJID) !== channelId) {
+      this.room2Channel.set(roomJID, channelId)
+      this.needSync = true
+    }
     let rooms = this.channel2Rooms.get(channelId)
     if (!rooms) {
       rooms = new Map<string, true>()
       this.channel2Rooms.set(channelId, rooms)
+      this.needSync = true
     }
-    rooms.set(roomJID, true)
+    if (!rooms.has(roomJID)) {
+      rooms.set(roomJID, true)
+      this.needSync = true
+    }
 
     this.scheduleSync()
   }
@@ -228,11 +293,15 @@ class RoomChannel {
     if (channelId) {
       const rooms = this.channel2Rooms.get(channelId)
       if (rooms) {
-        rooms.delete(roomJID)
+        if (rooms.delete(roomJID)) {
+          this.needSync = true
+        }
       }
     }
 
-    this.room2Channel.delete(roomJID)
+    if (this.room2Channel.delete(roomJID)) {
+      this.needSync = true
+    }
 
     this.scheduleSync()
   }
@@ -254,11 +323,14 @@ class RoomChannel {
         // checking the consistency... only removing if the channel is the current one
         if (this.room2Channel.get(jid) === channelId) {
           this.room2Channel.delete(jid)
+          this.needSync = true
         }
       }
     }
 
-    this.channel2Rooms.delete(channelId)
+    if (this.channel2Rooms.delete(channelId)) {
+      this.needSync = true
+    }
 
     this.scheduleSync()
   }
@@ -287,4 +359,3 @@ export {
 
 // TODO: schedule rebuild every X hours/days
 // TODO: write to disk, debouncing writes
-// TODO: only write if there is data changes
