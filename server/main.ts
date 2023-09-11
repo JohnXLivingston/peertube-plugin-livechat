@@ -46,7 +46,7 @@ async function register (options: RegisterServerOptions): Promise<any> {
     await ensureProsodyRunning(options)
 
     if (roomChannelNeedsDataInit) {
-      logger.info('The RoomChannel singleton has not found data, we must rebuild')
+      logger.info('The RoomChannel singleton has not found any data, we must rebuild')
       // no need to wait here, can be done without await.
       roomChannelSingleton.rebuildData().then(
         () => { logger.info('RoomChannel singleton rebuild done') },

@@ -25,6 +25,9 @@ class RoomChannel {
   protected channel2Rooms: Map<number, Map<string, true>> = new Map<number, Map<string, true>>()
   protected needSync: boolean = false
 
+  protected syncTimeout: ReturnType<typeof setTimeout> | undefined
+  protected isWriting: boolean = false
+
   constructor (params: {
     options: RegisterServerOptions
     prosodyDomain: string
@@ -68,7 +71,9 @@ class RoomChannel {
    */
   public static async destroySingleton (): Promise<void> {
     if (!singleton) { return }
+    singleton.cancelScheduledSync()
     await singleton.sync()
+    singleton.cancelScheduledSync() // in case sync rescheduled... we will lose data, but they could be rebuild later
     singleton = undefined
   }
 
@@ -199,8 +204,9 @@ class RoomChannel {
       channelId = channelId.toString()
       if (!(channelId in data)) {
         this.logger.debug(`Room ${room.localpart} is associated to channel ${channelId}`)
-        data[channelId] = [room.localpart]
+        data[channelId] = []
       }
+      data[channelId].push(room.localpart)
     }
 
     // This part must be done atomicly:
@@ -214,8 +220,28 @@ class RoomChannel {
    */
   public async sync (): Promise<void> {
     if (!this.needSync) { return }
-    this.logger.error('sync Not implemented yet')
-    this.needSync = false // Note: must be done at the right moment
+
+    if (this.isWriting) {
+      this.logger.info('Already writing, scheduling a new sync')
+      this.scheduleSync()
+      return
+    }
+    this.logger.info('Syncing...')
+    this.isWriting = true
+    try {
+      const data = this._serializeData() // must be atomic
+      this.needSync = false // Note: must be done atomicly with the read
+
+      await fs.promises.mkdir(path.dirname(this.dataFilePath), { recursive: true })
+      await fs.promises.writeFile(this.dataFilePath, JSON.stringify(data))
+      this.logger.info('Syncing done.')
+    } catch (err) {
+      this.logger.error(err as string)
+      this.logger.error('Syncing failed.')
+      this.needSync = true
+    } finally {
+      this.isWriting = false
+    }
   }
 
   /**
@@ -224,7 +250,26 @@ class RoomChannel {
    */
   public scheduleSync (): void {
     if (!this.needSync) { return }
-    this.logger.error('scheduleSync Not implemented yet')
+    if (this.syncTimeout) {
+      // Already scheduled... nothing to do
+      this.logger.debug('There is already a sync scheduled, skipping.')
+      return
+    }
+    this.logger.info('Scheduling a new sync...')
+    this.syncTimeout = setTimeout(() => {
+      this.syncTimeout = undefined
+      this.logger.info('Running scheduled sync')
+      this.sync().then(() => {}, (err) => {
+        this.logger.error(err)
+        // We will not re-schedule the sync, to avoid flooding error log if there is an issue with the server
+      })
+    }, 100)
+  }
+
+  public cancelScheduledSync (): void {
+    if (this.syncTimeout) {
+      clearTimeout(this.syncTimeout)
+    }
   }
 
   /**
@@ -351,6 +396,18 @@ class RoomChannel {
 
     return splits[0]
   }
+
+  protected _serializeData (): any {
+    const data: any = {}
+    this.channel2Rooms.forEach((rooms, channelId) => {
+      const a: string[] = []
+      rooms.forEach((_val, roomJID) => {
+        a.push(roomJID)
+      })
+      data[channelId.toString()] = a
+    })
+    return data
+  }
 }
 
 export {
@@ -358,4 +415,3 @@ export {
 }
 
 // TODO: schedule rebuild every X hours/days
-// TODO: write to disk, debouncing writes
