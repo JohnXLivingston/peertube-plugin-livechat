@@ -1,6 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ChannelConfiguration, ChannelInfos } from '../../../../shared/lib/types'
 import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
+import { BotConfiguration } from '../../configuration/bot'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -63,6 +64,13 @@ async function storeChannelConfigurationOptions (
   await fs.promises.writeFile(filePath, jsonContent, {
     encoding: 'utf-8'
   })
+
+  const roomConf = {
+    enabled: channelConfiguration.configuration.bot,
+    // TODO: nick
+    handlers: []
+  }
+  await BotConfiguration.singleton().updateChannelConf(channelInfos.id, roomConf)
 }
 
 function _getFilePath (

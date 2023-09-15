@@ -37,7 +37,8 @@
     "got": "^11.8.2",
     "http-proxy": "^1.18.1",
     "log-rotate": "^0.2.8",
-    "validate-color": "^2.2.1"
+    "validate-color": "^2.2.1",
+    "xmppjs-chat-bot": "^0.2.1"
   },
   "devDependencies": {
     "@peertube/feed": "^5.1.0",

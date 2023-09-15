@@ -8,7 +8,7 @@ import * as fs from 'fs'
 let singleton: RoomChannel | undefined
 
 /**
- * Class used to request some informations about relation between rooms and channels.
+ * Class used to request and store some informations about relation between rooms and channels.
  */
 class RoomChannel {
   protected readonly options: RegisterServerOptions
@@ -378,6 +378,40 @@ class RoomChannel {
     }
 
     this.scheduleSync()
+  }
+
+  /**
+   * Get the channel ID for a given room.
+   * Returns null if not found.
+   * @param roomJIDParam room JID (local part, or full JID)
+   */
+  public getRoomChannelId (roomJIDParam: string): number | null {
+    const roomJID = this._canonicJID(roomJIDParam)
+    if (!roomJID) {
+      this.logger.error('Invalid room JID: ' + roomJIDParam)
+      return null
+    }
+
+    return this.room2Channel.get(roomJID) ?? null
+  }
+
+  /**
+   * Returns room local JID parts for all room linked to given channel.
+   * @param channelId channel id
+   * @returns list of room JIDs local parts
+   */
+  public getChannelRoomJIDs (channelId: number | string): string[] {
+    channelId = parseInt(channelId.toString())
+    if (isNaN(channelId)) {
+      this.logger.error('Invalid channelId, we wont link')
+      return []
+    }
+
+    const rooms = this.channel2Rooms.get(channelId)
+    if (!rooms) {
+      return []
+    }
+    return Array.from(rooms.keys())
   }
 
   protected _canonicJID (roomJID: string): string | null {

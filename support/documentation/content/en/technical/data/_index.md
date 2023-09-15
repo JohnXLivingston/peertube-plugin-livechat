@@ -60,8 +60,8 @@ The content of the files are similar to the content sent by the front-end when s
 Some parts of the plugin need a quick way to get the channel id from the room Jabber ID, or the all room Jabber ID from a channel id.
 We won't use SQL queries, because we only want such information for video that have a chatroom.
 
-So we will store in the `room-channel/muc_domain.json` file (where `muc_domain` is the actual MUC domain,
-something like `room.instance.tld`) a JSON object representing these relations.
+So we will store in the `room-channel/muc_domain.json` file (where `muc_domain` is the current MUC domain,
+something like `room.instance.tld`) a JSON object representing these relations).
 
 In the JSON object, keys are the channel ID (as string), values are arrays of strings representing the rooms JIDs local part (without the MUC domain).
 
@@ -87,3 +87,16 @@ In such case, existing rooms could get lost, and we want a way to ignore them to
 Note: there could be some inconsistencies, when video or rooms are deleted.
 The code must take this into account, and always double check room or channel existence.
 There will be some cleaning batch, to delete deprecated files.
+
+## bot/muc_domain
+
+The `bot/muc_domain` (where muc_domain is the current MUC domain) folder contains configuration files that are read by the moderation bot.
+This bot uses the [xmppjs-chat-bot](https://github.com/JohnXLivingston/xmppjs-chat-bot) package.
+
+Note: we include the MUC domain (`room.instance.tld`) in the filename in case the instance domain changes.
+In such case, existing rooms could get lost, and we want a way to ignore them to avoid gettings errors.
+
+### bot/muc_domain/rooms
+
+The `bot/muc_domain/rooms` folder contains room configuration files.
+See the [xmppjs-chat-bot](https://github.com/JohnXLivingston/xmppjs-chat-bot) package help for more information.

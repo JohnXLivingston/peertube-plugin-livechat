@@ -10,6 +10,7 @@ import { prepareProsody, ensureProsodyRunning, ensureProsodyNotRunning } from '.
 import { unloadDebugMode } from './lib/debug'
 import { loadLoc } from './lib/loc'
 import { RoomChannel } from './lib/room-channel'
+import { BotConfiguration } from './lib/configuration/bot'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -27,6 +28,8 @@ async function register (options: RegisterServerOptions): Promise<any> {
 
   // First: load languages files, so we can localize strings.
   await loadLoc()
+  // Then load the BotConfiguration singleton
+  await BotConfiguration.initSingleton(options)
   // Then load the RoomChannel singleton
   const roomChannelSingleton = await RoomChannel.initSingleton(options)
   // roomChannelNeedsDataInit: if true, means that the data file does not exist (or is invalid), so we must initiate it
