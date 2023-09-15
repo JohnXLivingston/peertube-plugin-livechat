@@ -80,7 +80,12 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
         }, video)
 
         if (!hasChat) {
-          logger.debug(`Video ${video.uuid} has no chat, skipping`)
+          // Either there were never any chat, either it was disabled...
+          logger.debug(`Video ${video.uuid} has no chat, ensuring there is no room link`)
+          // Here the associated channel can be either channel.X@mucdomain or video_uuid@mucdomain.
+          // In first case, nothing to do... in the second, we must delete.
+          // So we don't need to check which case is effective, just delete video_uuid@mucdomain.
+          RoomChannel.singleton().removeRoom(video.uuid)
           return
         }
 
