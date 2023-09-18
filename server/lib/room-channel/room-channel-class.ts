@@ -1,7 +1,14 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
+import type { RoomConf } from 'xmppjs-chat-bot'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { listProsodyRooms } from '../prosody/api/list-rooms'
 import { getChannelInfosById } from '../database/channel'
+import { ChannelConfigurationOptions } from '../../../shared/lib/types'
+import {
+  getChannelConfigurationOptions,
+  channelConfigurationOptionsToBotRoomConf
+} from '../configuration/channel/storage'
+import { BotConfiguration } from '../configuration/bot'
 import * as path from 'path'
 import * as fs from 'fs'
 
@@ -24,6 +31,7 @@ class RoomChannel {
   protected room2Channel: Map<string, number> = new Map<string, number>()
   protected channel2Rooms: Map<number, Map<string, true>> = new Map<number, Map<string, true>>()
   protected needSync: boolean = false
+  protected roomConfToUpdate: Map<string, true> = new Map<string, true>()
 
   protected syncTimeout: ReturnType<typeof setTimeout> | undefined
   protected isWriting: boolean = false
@@ -145,13 +153,14 @@ class RoomChannel {
       const c2r = new Map<string, true>()
       this.channel2Rooms.set(channelId, c2r)
 
-      for (const jid of rooms) {
-        if (typeof jid !== 'string') {
+      for (const roomJID of rooms) {
+        if (typeof roomJID !== 'string') {
           this.logger.error('Invalid room jid for Channel ' + channelId.toString() + ', dropping')
           continue
         }
-        c2r.set(jid, true)
-        this.room2Channel.set(jid, channelId)
+        c2r.set(roomJID, true)
+        this.room2Channel.set(roomJID, channelId)
+        this.roomConfToUpdate.set(roomJID, true)
       }
     }
 
@@ -234,6 +243,58 @@ class RoomChannel {
 
       await fs.promises.mkdir(path.dirname(this.dataFilePath), { recursive: true })
       await fs.promises.writeFile(this.dataFilePath, JSON.stringify(data))
+
+      this.logger.debug('room-channel sync done, must sync room conf now')
+      // Note: getChannelConfigurationOptions has no cache for now, so we will handle it here
+      const channelConfigurationOptionsCache = new Map<number, ChannelConfigurationOptions | null>()
+      const roomJIDs = Array.from(this.roomConfToUpdate.keys())
+      for (const roomJID of roomJIDs) {
+        const channelId = this.room2Channel.get(roomJID) // roomJID already normalized, so bypassing getRoomChannelId
+        if (channelId === undefined) {
+          // No more channel, must disable room!
+          this.logger.info(`Room ${roomJID} has no associated channel, ensuring there is no active bot conf`)
+          await BotConfiguration.singleton().disableRoom(roomJID)
+          this.roomConfToUpdate.delete(roomJID)
+          continue
+        }
+        // Must write the correct Channel conf for the room.
+
+        if (!channelConfigurationOptionsCache.has(channelId)) {
+          try {
+            channelConfigurationOptionsCache.set(
+              channelId,
+              await getChannelConfigurationOptions(this.options, channelId)
+            )
+          } catch (err) {
+            this.logger.error(err as string)
+            this.logger.error('Failed reading channel configuration, will assume there is none.')
+            channelConfigurationOptionsCache.set(
+              channelId,
+              null
+            )
+          }
+        }
+        const channelConfigurationOptions = channelConfigurationOptionsCache.get(channelId)
+        if (!channelConfigurationOptions) {
+          // no channel configuration, disabling
+          this.logger.info(`Room ${roomJID} has not associated channel options, ensuring there is no active bot conf`)
+          await BotConfiguration.singleton().disableRoom(roomJID)
+          this.roomConfToUpdate.delete(roomJID)
+          continue
+        }
+
+        this.logger.info(`Room ${roomJID} has associated channel options, writing it`)
+        const botConf: RoomConf = Object.assign(
+          {
+            local: roomJID,
+            domain: this.prosodyDomain
+          },
+          channelConfigurationOptionsToBotRoomConf(this.options, channelConfigurationOptions)
+        )
+
+        await BotConfiguration.singleton().update(roomJID, botConf)
+      }
+
       this.logger.info('Syncing done.')
     } catch (err) {
       this.logger.error(err as string)
@@ -296,11 +357,13 @@ class RoomChannel {
     if (previousChannelId) {
       if (this.room2Channel.delete(roomJID)) {
         this.needSync = true
+        this.roomConfToUpdate.set(roomJID, true)
       }
       const previousRooms = this.channel2Rooms.get(previousChannelId)
       if (previousRooms) {
         if (previousRooms.delete(roomJID)) {
           this.needSync = true
+          this.roomConfToUpdate.set(roomJID, true)
         }
       }
     }
@@ -308,6 +371,7 @@ class RoomChannel {
     if (this.room2Channel.get(roomJID) !== channelId) {
       this.room2Channel.set(roomJID, channelId)
       this.needSync = true
+      this.roomConfToUpdate.set(roomJID, true)
     }
     let rooms = this.channel2Rooms.get(channelId)
     if (!rooms) {
@@ -318,6 +382,7 @@ class RoomChannel {
     if (!rooms.has(roomJID)) {
       rooms.set(roomJID, true)
       this.needSync = true
+      this.roomConfToUpdate.set(roomJID, true)
     }
 
     this.scheduleSync()
@@ -340,12 +405,14 @@ class RoomChannel {
       if (rooms) {
         if (rooms.delete(roomJID)) {
           this.needSync = true
+          this.roomConfToUpdate.set(roomJID, true)
         }
       }
     }
 
     if (this.room2Channel.delete(roomJID)) {
       this.needSync = true
+      this.roomConfToUpdate.set(roomJID, true)
     }
 
     this.scheduleSync()
@@ -364,11 +431,12 @@ class RoomChannel {
 
     const rooms = this.channel2Rooms.get(channelId)
     if (rooms) {
-      for (const jid of rooms.keys()) {
+      for (const roomJID of rooms.keys()) {
         // checking the consistency... only removing if the channel is the current one
-        if (this.room2Channel.get(jid) === channelId) {
-          this.room2Channel.delete(jid)
+        if (this.room2Channel.get(roomJID) === channelId) {
+          this.room2Channel.delete(roomJID)
           this.needSync = true
+          this.roomConfToUpdate.set(roomJID, true)
         }
       }
     }
@@ -412,6 +480,25 @@ class RoomChannel {
       return []
     }
     return Array.from(rooms.keys())
+  }
+
+  /**
+   * Call this method when the channel configuration options changed, to refresh all files.
+   * @param channelId channel ID
+   */
+  public refreshChannelConfigurationOptions (channelId: number | string): void {
+    channelId = parseInt(channelId.toString())
+    if (isNaN(channelId)) {
+      this.logger.error('Invalid channelId, we wont link')
+      return
+    }
+
+    const roomJIDs = this.getChannelRoomJIDs(channelId)
+    this.needSync = true
+    for (const roomJID of roomJIDs) {
+      this.roomConfToUpdate.set(roomJID, true)
+    }
+    this.scheduleSync()
   }
 
   protected _canonicJID (roomJID: string): string | null {

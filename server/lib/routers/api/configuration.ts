@@ -4,7 +4,11 @@ import type { ChannelInfos } from '../../../../shared/lib/types'
 import { asyncMiddleware } from '../../middlewares/async'
 import { getCheckConfigurationChannelMiddleware } from '../../middlewares/configuration/channel'
 import { checkConfigurationEnabledMiddleware } from '../../middlewares/configuration/configuration'
-import { getChannelConfigurationOptions, storeChannelConfigurationOptions } from '../../configuration/channel/storage'
+import {
+  getChannelConfigurationOptions,
+  getDefaultChannelConfigurationOptions,
+  storeChannelConfigurationOptions
+} from '../../configuration/channel/storage'
 import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
 
 async function initConfigurationApiRouter (options: RegisterServerOptions, router: Router): Promise<void> {
@@ -21,7 +25,14 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
       }
       const channelInfos = res.locals.channelInfos as ChannelInfos
 
-      const result = await getChannelConfigurationOptions(options, channelInfos)
+      const channelOptions =
+        await getChannelConfigurationOptions(options, channelInfos.id) ??
+        getDefaultChannelConfigurationOptions(options)
+
+      const result = {
+        channel: channelInfos,
+        configuration: channelOptions
+      }
       res.status(200)
       res.json(result)
     }
@@ -39,9 +50,9 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
       const channelInfos = res.locals.channelInfos as ChannelInfos
       logger.debug('Trying to save ChannelConfigurationOptions')
 
-      let configuration
+      let channelOptions
       try {
-        configuration = await sanitizeChannelConfigurationOptions(options, channelInfos, req.body)
+        channelOptions = await sanitizeChannelConfigurationOptions(options, channelInfos.id, req.body)
       } catch (err) {
         logger.warn(err)
         res.sendStatus(400)
@@ -51,9 +62,9 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
       logger.debug('Data seems ok, storing them.')
       const result = {
         channel: channelInfos,
-        configuration
+        configuration: channelOptions
       }
-      await storeChannelConfigurationOptions(options, result)
+      await storeChannelConfigurationOptions(options, channelInfos.id, channelOptions)
       res.status(200)
       res.json(result)
     }

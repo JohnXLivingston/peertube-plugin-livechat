@@ -1,7 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import { RoomConf } from 'xmppjs-chat-bot'
+import type { RoomConf } from 'xmppjs-chat-bot'
 import { getProsodyDomain } from '../prosody/config/domain'
-import { RoomChannel } from '../room-channel'
 import * as path from 'path'
 import * as fs from 'fs'
 
@@ -89,30 +88,34 @@ class BotConfiguration {
   }
 
   /**
-   * Recompute the room configuration, and save it to disk.
-   * @param roomJIDParam room JID (local part only, or full JID)
+   * Update the bot configuration for a given room.
+   * @param roomJIDParam Room full or local JID
+   * @param conf Configuration to write
    */
-  public async updateChannelConf (channelId: number | string, conf: ChannelCommonRoomConf): Promise<void> {
-    const jids = RoomChannel.singleton().getChannelRoomJIDs(channelId)
-
-    // cloning to avoid issues:
-    const roomConf: RoomConf = JSON.parse(JSON.stringify(conf))
-    roomConf.domain = this.prosodyDomain
-
-    for (const jid of jids) {
-      roomConf.local = jid
-
-      if (!(roomConf.enabled ?? true)) {
-        // Bot disabled... If the room config file does not exist, no need to create
-        const current = await this._getRoomConf(jid)
-        if (!current) {
-          this.logger.debug(`Bot is disabled for channel ${channelId}, room ${jid} has not current conf, skipping`)
-          return
-        }
-      }
-      this.roomConfCache.set(jid, roomConf)
-      await this._writeRoomConf(jid)
+  public async update (roomJIDParam: string, conf: ChannelCommonRoomConf): Promise<void> {
+    const roomJID = this._canonicJID(roomJIDParam)
+    if (!roomJID) {
+      this.logger.error('Invalid room JID')
+      return
     }
+
+    const roomConf: RoomConf = Object.assign({
+      local: roomJID,
+      domain: this.prosodyDomain
+    }, conf)
+
+    if (!(roomConf.enabled ?? true)) {
+      // Bot disabled... If the room config file does not exist, no need to create
+      const current = await this._getRoomConf(roomJID)
+      if (!current) {
+        this.logger.debug(`Bot is disabled for room ${roomJID}, and room has not current conf, skipping`)
+        return
+      }
+    }
+
+    this.logger.debug(`Setting and writing a new conf for room ${roomJID}`)
+    this.roomConfCache.set(roomJID, roomConf)
+    await this._writeRoomConf(roomJID)
   }
 
   /**
@@ -135,6 +138,14 @@ class BotConfiguration {
 
     conf.enabled = false
     await this._writeRoomConf(roomJID)
+  }
+
+  /**
+   * frees the singleton
+   */
+  public static async destroySingleton (): Promise<void> {
+    if (!singleton) { return }
+    singleton = undefined
   }
 
   /**
@@ -215,5 +226,6 @@ class BotConfiguration {
 }
 
 export {
-  BotConfiguration
+  BotConfiguration,
+  ChannelCommonRoomConf
 }

@@ -1,5 +1,5 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import type { ChannelConfigurationOptions, ChannelInfos } from '../../../../shared/lib/types'
+import type { ChannelConfigurationOptions } from '../../../../shared/lib/types'
 
 /**
  * Sanitize data so that they can safely be used/stored for channel configuration configuration.
@@ -11,7 +11,7 @@ import type { ChannelConfigurationOptions, ChannelInfos } from '../../../../shar
  */
 async function sanitizeChannelConfigurationOptions (
   _options: RegisterServerOptions,
-  _channelInfos: ChannelInfos,
+  _channelId: number | string,
   data: any
 ): Promise<ChannelConfigurationOptions> {
   const result = {

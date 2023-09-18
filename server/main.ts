@@ -73,6 +73,7 @@ async function unregister (): Promise<any> {
   unloadDebugMode()
 
   await RoomChannel.destroySingleton()
+  await BotConfiguration.destroySingleton()
 
   const module = __filename
   OPTIONS?.peertubeHelpers.logger.info(`Unloading module ${module}...`)

@@ -1,7 +1,8 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import type { ChannelConfiguration, ChannelInfos } from '../../../../shared/lib/types'
+import type { ChannelConfigurationOptions } from '../../../../shared/lib/types'
+import type { ChannelCommonRoomConf } from '../../configuration/bot'
+import { RoomChannel } from '../../room-channel'
 import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
-import { BotConfiguration } from '../../configuration/bot'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -10,32 +11,30 @@ import * as path from 'path'
  * Can throw an exception.
  * @param options Peertube server options
  * @param channelInfos Info from channel from which we want to get infos
- * @returns Channel configuration data
+ * @returns Channel configuration data, or null if nothing is stored
  */
 async function getChannelConfigurationOptions (
   options: RegisterServerOptions,
-  channelInfos: ChannelInfos
-): Promise<ChannelConfiguration> {
+  channelId: number | string
+): Promise<ChannelConfigurationOptions | null> {
   const logger = options.peertubeHelpers.logger
-  const filePath = _getFilePath(options, channelInfos)
+  const filePath = _getFilePath(options, channelId)
   if (!fs.existsSync(filePath)) {
     logger.debug('No stored data for channel, returning default values')
-    return {
-      channel: channelInfos,
-      configuration: {
-        bot: false,
-        bannedJIDs: [],
-        forbiddenWords: []
-      }
-    }
+    return null
   }
   const content = await fs.promises.readFile(filePath, {
     encoding: 'utf-8'
   })
-  const sanitized = await sanitizeChannelConfigurationOptions(options, channelInfos, JSON.parse(content))
+  const sanitized = await sanitizeChannelConfigurationOptions(options, channelId, JSON.parse(content))
+  return sanitized
+}
+
+function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions): ChannelConfigurationOptions {
   return {
-    channel: channelInfos,
-    configuration: sanitized
+    bot: false,
+    bannedJIDs: [],
+    forbiddenWords: []
   }
 }
 
@@ -43,14 +42,14 @@ async function getChannelConfigurationOptions (
  * Save channel configuration options.
  * Can throw an exception.
  * @param options Peertube server options
- * @param channelConfiguration data to save
+ * @param ChannelConfigurationOptions data to save
  */
 async function storeChannelConfigurationOptions (
   options: RegisterServerOptions,
-  channelConfiguration: ChannelConfiguration
+  channelId: number | string,
+  channelConfigurationOptions: ChannelConfigurationOptions
 ): Promise<void> {
-  const channelInfos = channelConfiguration.channel
-  const filePath = _getFilePath(options, channelInfos)
+  const filePath = _getFilePath(options, channelId)
 
   if (!fs.existsSync(filePath)) {
     const dir = path.dirname(filePath)
@@ -59,27 +58,40 @@ async function storeChannelConfigurationOptions (
     }
   }
 
-  const jsonContent = JSON.stringify(channelConfiguration.configuration)
+  const jsonContent = JSON.stringify(channelConfigurationOptions)
 
   await fs.promises.writeFile(filePath, jsonContent, {
     encoding: 'utf-8'
   })
 
+  RoomChannel.singleton().refreshChannelConfigurationOptions(channelId)
+}
+
+/**
+ * Converts the channel configuration to the bot room configuration object (minus the room JID and domain)
+ * @param options server options
+ * @param channelConfigurationOptions The channel configuration
+ * @returns Partial bot room configuration
+ */
+function channelConfigurationOptionsToBotRoomConf (
+  options: RegisterServerOptions,
+  channelConfigurationOptions: ChannelConfigurationOptions
+): ChannelCommonRoomConf {
   const roomConf = {
-    enabled: channelConfiguration.configuration.bot,
+    enabled: channelConfigurationOptions.bot,
     // TODO: nick
     handlers: []
   }
-  await BotConfiguration.singleton().updateChannelConf(channelInfos.id, roomConf)
+  return roomConf
 }
 
 function _getFilePath (
   options: RegisterServerOptions,
-  channelInfos: ChannelInfos
+  channelId: number | string
 ): string {
-  const channelId = channelInfos.id
   // some sanitization, just in case...
-  if (!/^\d+$/.test(channelId.toString())) {
+  channelId = parseInt(channelId.toString())
+  if (isNaN(channelId)) {
     throw new Error(`Invalid channelId: ${channelId}`)
   }
 
@@ -92,5 +104,7 @@ function _getFilePath (
 
 export {
   getChannelConfigurationOptions,
+  getDefaultChannelConfigurationOptions,
+  channelConfigurationOptionsToBotRoomConf,
   storeChannelConfigurationOptions
 }
