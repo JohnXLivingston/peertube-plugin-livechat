@@ -160,7 +160,6 @@ class RoomChannel {
         }
         c2r.set(roomJID, true)
         this.room2Channel.set(roomJID, channelId)
-        this.roomConfToUpdate.set(roomJID, true)
       }
     }
 
@@ -220,6 +219,11 @@ class RoomChannel {
 
     // This part must be done atomicly:
     this._readData(data)
+
+    // Now we must mark all rooms for conf update.
+    for (const roomJID of this.room2Channel.keys()) {
+      this.roomConfToUpdate.set(roomJID, true)
+    }
 
     await this.sync() // FIXME: or maybe scheduleSync ?
   }
