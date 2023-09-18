@@ -1,6 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import { ensureProsodyRunning } from './prosody/ctl'
 import type { ConverseJSTheme } from '../../shared/lib/types'
+import { ensureProsodyRunning } from './prosody/ctl'
+import { RoomChannel } from './room-channel'
 import { loc } from './loc'
 
 async function initSettings (options: RegisterServerOptions): Promise<void> {
@@ -396,10 +397,22 @@ Please read
     descriptionHTML: loc('prosody_components_list_description')
   })
 
+  let currentProsodyRoomtype = (await settingsManager.getSettings(['prosody-room-type']))['prosody-room-type']
+
   // ********** settings changes management
-  settingsManager.onSettingsChange(async (_settings: any) => {
+  settingsManager.onSettingsChange(async (settings: any) => {
     peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
     await ensureProsodyRunning(options)
+    // In case prosody-room-type changed, we must rebuild room-channel links.
+    if (settings['prosody-room-type'] !== currentProsodyRoomtype) {
+      peertubeHelpers.logger.info('Setting prosody-room-type has changed value, must rebuild room-channel infos')
+      // doing it without waiting, could be long!
+      RoomChannel.singleton().rebuildData().then(
+        () => peertubeHelpers.logger.info('Room-channel info rebuild ok.'),
+        (err) => peertubeHelpers.logger.error(err)
+      )
+    }
+    currentProsodyRoomtype = settings['prosody-room-type']
   })
 }
 
