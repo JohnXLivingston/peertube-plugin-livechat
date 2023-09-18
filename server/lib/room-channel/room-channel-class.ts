@@ -293,6 +293,7 @@ class RoomChannel {
         )
 
         await BotConfiguration.singleton().update(roomJID, botConf)
+        this.roomConfToUpdate.delete(roomJID)
       }
 
       this.logger.info('Syncing done.')
