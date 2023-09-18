@@ -19,7 +19,7 @@ let singleton: RoomChannel | undefined
  */
 class RoomChannel {
   protected readonly options: RegisterServerOptions
-  protected readonly prosodyDomain: string
+  protected readonly mucDomain: string
   protected readonly dataFilePath: string
   protected readonly logger: {
     debug: (s: string) => void
@@ -38,11 +38,11 @@ class RoomChannel {
 
   constructor (params: {
     options: RegisterServerOptions
-    prosodyDomain: string
+    mucDomain: string
     dataFilePath: string
   }) {
     this.options = params.options
-    this.prosodyDomain = params.prosodyDomain
+    this.mucDomain = params.mucDomain
     this.dataFilePath = params.dataFilePath
 
     const logger = params.options.peertubeHelpers.logger
@@ -59,15 +59,16 @@ class RoomChannel {
    */
   public static async initSingleton (options: RegisterServerOptions): Promise<RoomChannel> {
     const prosodyDomain = await getProsodyDomain(options)
+    const mucDomain = 'room.' + prosodyDomain
     const dataFilePath = path.resolve(
       options.peertubeHelpers.plugin.getDataDirectoryPath(),
       'room-channel',
-      prosodyDomain + '.json'
+      mucDomain + '.json'
     )
 
     singleton = new RoomChannel({
       options,
-      prosodyDomain,
+      mucDomain,
       dataFilePath
     })
 
@@ -291,7 +292,7 @@ class RoomChannel {
         const botConf: RoomConf = Object.assign(
           {
             local: roomJID,
-            domain: this.prosodyDomain
+            domain: this.mucDomain
           },
           channelConfigurationOptionsToBotRoomConf(this.options, channelConfigurationOptions)
         )
@@ -515,7 +516,7 @@ class RoomChannel {
       this.logger.error('The room JID contains multiple @, not valid')
       return null
     }
-    if (splits[1] !== this.prosodyDomain) {
+    if (splits[1] !== this.mucDomain) {
       this.logger.error('The room JID is not on the correct domain')
       return null
     }

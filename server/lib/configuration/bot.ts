@@ -17,7 +17,7 @@ type ChannelCommonRoomConf = Omit<RoomConf, 'local' | 'domain'>
  */
 class BotConfiguration {
   protected readonly options: RegisterServerOptions
-  protected readonly prosodyDomain: string
+  protected readonly mucDomain: string
   protected readonly confDir: string
   protected readonly roomConfDir: string
   protected readonly logger: {
@@ -31,12 +31,12 @@ class BotConfiguration {
 
   constructor (params: {
     options: RegisterServerOptions
-    prosodyDomain: string
+    mucDomain: string
     confDir: string
     roomConfDir: string
   }) {
     this.options = params.options
-    this.prosodyDomain = params.prosodyDomain
+    this.mucDomain = params.mucDomain
     this.confDir = params.confDir
     this.roomConfDir = params.roomConfDir
 
@@ -54,10 +54,11 @@ class BotConfiguration {
    */
   public static async initSingleton (options: RegisterServerOptions): Promise<BotConfiguration> {
     const prosodyDomain = await getProsodyDomain(options)
+    const mucDomain = 'room.' + prosodyDomain
     const confDir = path.resolve(
       options.peertubeHelpers.plugin.getDataDirectoryPath(),
       'bot',
-      prosodyDomain
+      mucDomain
     )
     const roomConfDir = path.resolve(
       confDir,
@@ -69,7 +70,7 @@ class BotConfiguration {
 
     singleton = new BotConfiguration({
       options,
-      prosodyDomain,
+      mucDomain,
       confDir,
       roomConfDir
     })
@@ -101,7 +102,7 @@ class BotConfiguration {
 
     const roomConf: RoomConf = Object.assign({
       local: roomJID,
-      domain: this.prosodyDomain
+      domain: this.mucDomain
     }, conf)
 
     if (!(roomConf.enabled ?? true)) {
@@ -216,7 +217,7 @@ class BotConfiguration {
       this.logger.error('The room JID contains multiple @, not valid')
       return null
     }
-    if (splits[1] !== this.prosodyDomain) {
+    if (splits[1] !== this.mucDomain) {
       this.logger.error('The room JID is not on the correct domain')
       return null
     }
