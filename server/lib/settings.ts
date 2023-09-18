@@ -2,6 +2,7 @@ import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ConverseJSTheme } from '../../shared/lib/types'
 import { ensureProsodyRunning } from './prosody/ctl'
 import { RoomChannel } from './room-channel'
+import { BotsCtl } from './bots/ctl'
 import { loc } from './loc'
 
 async function initSettings (options: RegisterServerOptions): Promise<void> {
@@ -94,9 +95,9 @@ Please read
     descriptionHTML: loc('experimental_warning')
   })
   registerSetting({
-    name: 'disable-configuration',
-    label: loc('disable_configuration_label'),
-    // descriptionHTML: loc('disable_configuration_description'),
+    name: 'disable-channel-configuration',
+    label: loc('disable_channel_configuration_label'),
+    // descriptionHTML: loc('disable_channel_configuration_description'),
     type: 'input-checkbox',
     default: false,
     private: false
@@ -401,8 +402,16 @@ Please read
 
   // ********** settings changes management
   settingsManager.onSettingsChange(async (settings: any) => {
+    // In case the Prosody port has changed, we must rewrite the Bot configuration file.
+    // To avoid race condition, we will just stop and start the bots at every settings saving.
+    await BotsCtl.destroySingleton()
+    await BotsCtl.initSingleton(options)
+
     peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
     await ensureProsodyRunning(options)
+
+    await BotsCtl.singleton().start()
+
     // In case prosody-room-type changed, we must rebuild room-channel links.
     if (settings['prosody-room-type'] !== currentProsodyRoomtype) {
       peertubeHelpers.logger.info('Setting prosody-room-type has changed value, must rebuild room-channel infos')

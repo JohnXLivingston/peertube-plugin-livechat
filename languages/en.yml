@@ -302,7 +302,7 @@ configuration_description: |
   users will be able to add some customization on their channels,
   activate the moderation bot, ...
 
-disable_configuration_label: "Disable the advanced channel configuration and the chatbot"
+disable_channel_configuration_label: "Disable the advanced channel configuration and the chatbot"
 
 save: "Save"
 cancel: "Cancel"

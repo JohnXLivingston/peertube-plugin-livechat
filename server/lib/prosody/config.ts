@@ -1,4 +1,5 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
+import type { Config as XMPPBotConfig } from 'xmppjs-chat-bot'
 import type { ProsodyLogLevel } from './config/content'
 import * as fs from 'fs'
 import * as path from 'path'
@@ -9,6 +10,7 @@ import { getProsodyDomain } from './config/domain'
 import { getAPIKey } from '../apikey'
 import { parseExternalComponents } from './config/components'
 import { getRemoteServerInfosDir } from '../federation/storage'
+import { BotConfiguration } from '../configuration/bot'
 
 async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
@@ -125,6 +127,9 @@ interface ProsodyConfig {
   logExpiration: ConfigLogExpiration
   valuesToHideInDiagnostic: Map<string, string>
   certificates: ProsodyConfigCertificates
+  bots: {
+    moderation?: XMPPBotConfig
+  }
 }
 async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<ProsodyConfig> {
   const logger = options.peertubeHelpers.logger
@@ -147,7 +152,8 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'prosody-components-interfaces',
     'prosody-components-list',
     'chat-no-anonymous',
-    'federation-dont-publish-remotely'
+    'federation-dont-publish-remotely',
+    'disable-channel-configuration'
   ])
 
   const valuesToHideInDiagnostic = new Map<string, string>()
@@ -168,6 +174,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   // enableRemoteChatConnections: local users can communicate with external rooms
   const enableRemoteChatConnections = !(settings['federation-dont-publish-remotely'] as boolean)
   let certificates: ProsodyConfigCertificates = false
+  const bots: ProsodyConfig['bots'] = {}
 
   const apikey = await getAPIKey(options)
   valuesToHideInDiagnostic.set('APIKey', apikey)
@@ -287,6 +294,12 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   config.usePeertubeVCards(basePeertubeUrl)
   config.useAnonymousRandomVCards(paths.avatars)
 
+  if (!settings['disable-channel-configuration']) {
+    config.useBotsVirtualHost()
+    bots.moderation = await BotConfiguration.singleton().getModerationBotGlobalConf()
+    valuesToHideInDiagnostic.set('BotPassword', bots.moderation.connection.password)
+  }
+
   config.useTestModule(apikey, testApiUrl)
 
   let logLevel: ProsodyLogLevel | undefined
@@ -315,7 +328,8 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     logByDefault,
     logExpiration,
     valuesToHideInDiagnostic,
-    certificates
+    certificates,
+    bots
   }
 }
 

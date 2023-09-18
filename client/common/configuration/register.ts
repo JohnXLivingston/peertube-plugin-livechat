@@ -11,7 +11,7 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
   const { peertubeHelpers, registerClientRoute, registerHook } = clientOptions
 
   const settings = await peertubeHelpers.getSettings()
-  if (settings['disable-configuration']) { return }
+  if (settings['disable-channel-configuration']) { return }
 
   registerClientRoute({
     route: 'livechat/configuration',

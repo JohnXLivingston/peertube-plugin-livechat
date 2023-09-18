@@ -93,8 +93,15 @@ There will be some cleaning batch, to delete deprecated files.
 The `bot/muc_domain` (where muc_domain is the current MUC domain) folder contains configuration files that are read by the moderation bot.
 This bot uses the [xmppjs-chat-bot](https://github.com/JohnXLivingston/xmppjs-chat-bot) package.
 
-Note: we include the MUC domain (`room.instance.tld`) in the filename in case the instance domain changes.
+Note: we include the MUC domain (`room.instance.tld`) in the dirname in case the instance domain changes.
 In such case, existing rooms could get lost, and we want a way to ignore them to avoid gettings errors.
+
+## bot/muc_domain/moderation.json
+
+The `bot/muc_domain/moderation.json` file contains the moderation bot global configuration.
+This bot uses the [xmppjs-chat-bot](https://github.com/JohnXLivingston/xmppjs-chat-bot) package, see it's README file for more information.
+
+Note: this includes the bot username and password. Don't let it leak.
 
 ### bot/muc_domain/rooms
 

@@ -342,7 +342,7 @@ class RoomChannel {
           channelConfigurationOptionsToBotRoomConf(this.options, channelConfigurationOptions)
         )
 
-        await BotConfiguration.singleton().update(roomJID, botConf)
+        await BotConfiguration.singleton().updateRoom(roomJID, botConf)
         this.roomConfToUpdate.delete(roomJID)
       }
 

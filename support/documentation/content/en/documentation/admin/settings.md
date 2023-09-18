@@ -29,7 +29,7 @@ Following settings concern the federation with other Peertube instances, and oth
 Following settings concern the advanced channel options:
 users will be able to add some customization on their channels, activate the moderation bot, ...
 
-### {{% livechat_label disable_configuration_label %}}
+### {{% livechat_label disable_channel_configuration_label %}}
 
 If you encounter any issue with this feature, you can disable it.
 

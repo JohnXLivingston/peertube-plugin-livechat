@@ -140,6 +140,7 @@ class ProsodyConfigContent {
   authenticated?: ProsodyConfigVirtualHost
   anon?: ProsodyConfigVirtualHost
   muc: ProsodyConfigComponent
+  bot?: ProsodyConfigVirtualHost
   externalComponents: ProsodyConfigComponent[] = []
   log: string
   prosodyDomain: string
@@ -170,7 +171,7 @@ class ProsodyConfigContent {
       'version', // Replies to server version requests
       'uptime', // Report how long server has been running
       'ping', // Replies to XMPP pings with pongs
-      'bosh', // Enable BOSH clients, aka "Jabber over HTTP"
+      // 'bosh', // Enable BOSH clients, aka "Jabber over HTTP"
       // 'websocket', // Enable Websocket clients
       'posix', // POSIX functionality, sends server to background, enables syslog, etc.
       // 'pep', // Enables users to publish their avatar, mood, activity, playing music and more
@@ -192,6 +193,7 @@ class ProsodyConfigContent {
       this.global.set('certificates', this.paths.certs)
     }
 
+    this.muc.set('admins', [])
     this.muc.set('muc_room_locking', false)
     this.muc.set('muc_tombstones', false)
     this.muc.set('muc_room_default_language', 'en')
@@ -403,6 +405,16 @@ class ProsodyConfigContent {
     }
   }
 
+  /**
+   * Enable the bots virtualhost.
+   */
+  useBotsVirtualHost (): void {
+    this.bot = new ProsodyConfigVirtualHost('bot.' + this.prosodyDomain)
+    this.bot.set('modules_enabled', ['ping'])
+
+    // TODO: bot vcards
+  }
+
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
     let log = ''
     log += 'log = {\n'
@@ -429,6 +441,10 @@ class ProsodyConfigContent {
     }
     if (this.anon) {
       content += this.anon.write()
+      content += '\n\n'
+    }
+    if (this.bot) {
+      content += this.bot.write()
       content += '\n\n'
     }
     content += this.muc.write()

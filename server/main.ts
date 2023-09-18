@@ -11,6 +11,7 @@ import { unloadDebugMode } from './lib/debug'
 import { loadLoc } from './lib/loc'
 import { RoomChannel } from './lib/room-channel'
 import { BotConfiguration } from './lib/configuration/bot'
+import { BotsCtl } from './lib/bots/ctl'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -35,6 +36,9 @@ async function register (options: RegisterServerOptions): Promise<any> {
   // roomChannelNeedsDataInit: if true, means that the data file does not exist (or is invalid), so we must initiate it
   const roomChannelNeedsDataInit = !await roomChannelSingleton.readData()
 
+  // BotsCtl.initSingleton() will force reload the bots conf files, so must be done before generating Prosody Conf.
+  await BotsCtl.initSingleton(options)
+
   await migrateSettings(options)
 
   await initSettings(options)
@@ -48,20 +52,35 @@ async function register (options: RegisterServerOptions): Promise<any> {
     await prepareProsody(options)
     await ensureProsodyRunning(options)
 
+    let preBotPromise: Promise<void>
     if (roomChannelNeedsDataInit) {
       logger.info('The RoomChannel singleton has not found any data, we must rebuild')
       // no need to wait here, can be done without await.
-      roomChannelSingleton.rebuildData().then(
+      preBotPromise = roomChannelSingleton.rebuildData().then(
         () => { logger.info('RoomChannel singleton rebuild done') },
         (reason) => { logger.error('RoomChannel singleton rebuild failed: ' + (reason as string)) }
       )
+    } else {
+      preBotPromise = Promise.resolve()
     }
+
+    // Don't need to wait for the bot to start.
+    preBotPromise.then(
+      async () => {
+        await BotsCtl.singleton().start()
+      },
+      () => {}
+    )
   } catch (error) {
     options.peertubeHelpers.logger.error('Error when launching Prosody: ' + (error as string))
   }
 }
 
 async function unregister (): Promise<any> {
+  try {
+    await BotsCtl.destroySingleton()
+  } catch (_error) {} // BotsCtl will log errors.
+
   if (OPTIONS) {
     try {
       await ensureProsodyNotRunning(OPTIONS)

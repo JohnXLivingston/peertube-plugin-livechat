@@ -1,6 +1,6 @@
 # Changelog
 
-## XXX (Unreleased Yet)
+## 8.0.0 (Unreleased Yet)
 
 ### New features
 
@@ -13,6 +13,7 @@
 * Links to documentation are now using the front-end language to point to the translated documentation page (except for some links generated from the backend, in the diagnostic tool for example).
 * Some code refactoring.
 * You can now configure on which network interfaces Prosody will listen for external components.
+* Prosody: removing the BOSH module from the global scope (must only be present on relevant virtualhosts).
 
 ## 7.2.2
 

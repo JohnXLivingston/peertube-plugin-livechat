@@ -10,9 +10,9 @@ import type { RequestPromiseHandler } from '../async'
 function checkConfigurationEnabledMiddleware (options: RegisterServerOptions): RequestPromiseHandler {
   return async (req: Request, res: Response, next: NextFunction) => {
     const settings = await options.settingsManager.getSettings([
-      'disable-configuration'
+      'disable-channel-configuration'
     ])
-    if (!settings['disable-configuration']) {
+    if (!settings['disable-channel-configuration']) {
       next()
       return
     }

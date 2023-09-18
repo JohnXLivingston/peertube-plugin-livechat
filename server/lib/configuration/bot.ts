@@ -1,6 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import type { RoomConf } from 'xmppjs-chat-bot'
+import type { RoomConf, Config } from 'xmppjs-chat-bot'
 import { getProsodyDomain } from '../prosody/config/domain'
+import { isDebugMode } from '../debug'
 import * as path from 'path'
 import * as fs from 'fs'
 
@@ -18,8 +19,10 @@ type ChannelCommonRoomConf = Omit<RoomConf, 'local' | 'domain'>
 class BotConfiguration {
   protected readonly options: RegisterServerOptions
   protected readonly mucDomain: string
+  protected readonly botsDomain: string
   protected readonly confDir: string
   protected readonly roomConfDir: string
+  protected readonly moderationBotGlobalConf: string
   protected readonly logger: {
     debug: (s: string) => void
     info: (s: string) => void
@@ -32,13 +35,17 @@ class BotConfiguration {
   constructor (params: {
     options: RegisterServerOptions
     mucDomain: string
+    botsDomain: string
     confDir: string
     roomConfDir: string
+    moderationBotGlobalConf: string
   }) {
     this.options = params.options
     this.mucDomain = params.mucDomain
+    this.botsDomain = params.botsDomain
     this.confDir = params.confDir
     this.roomConfDir = params.roomConfDir
+    this.moderationBotGlobalConf = params.moderationBotGlobalConf
 
     const logger = params.options.peertubeHelpers.logger
     this.logger = {
@@ -55,14 +62,20 @@ class BotConfiguration {
   public static async initSingleton (options: RegisterServerOptions): Promise<BotConfiguration> {
     const prosodyDomain = await getProsodyDomain(options)
     const mucDomain = 'room.' + prosodyDomain
+    const botsDomain = 'bot.' + prosodyDomain
     const confDir = path.resolve(
       options.peertubeHelpers.plugin.getDataDirectoryPath(),
       'bot',
       mucDomain
     )
+
     const roomConfDir = path.resolve(
       confDir,
       'rooms'
+    )
+    const moderationBotGlobalConf = path.resolve(
+      confDir,
+      'moderation.json'
     )
 
     await fs.promises.mkdir(confDir, { recursive: true })
@@ -71,8 +84,10 @@ class BotConfiguration {
     singleton = new BotConfiguration({
       options,
       mucDomain,
+      botsDomain,
       confDir,
-      roomConfDir
+      roomConfDir,
+      moderationBotGlobalConf
     })
 
     return singleton
@@ -93,7 +108,7 @@ class BotConfiguration {
    * @param roomJIDParam Room full or local JID
    * @param conf Configuration to write
    */
-  public async update (roomJIDParam: string, conf: ChannelCommonRoomConf): Promise<void> {
+  public async updateRoom (roomJIDParam: string, conf: ChannelCommonRoomConf): Promise<void> {
     const roomJID = this._canonicJID(roomJIDParam)
     if (!roomJID) {
       this.logger.error('Invalid room JID')
@@ -139,6 +154,65 @@ class BotConfiguration {
 
     conf.enabled = false
     await this._writeRoomConf(roomJID)
+  }
+
+  /**
+   * Returns the moderation bot global configuration.
+   * It it does not exists, creates it.
+   * @param forceRefresh if true, regenerates the configuration file, even if exists.
+   */
+  public async getModerationBotGlobalConf (forceRefresh?: boolean): Promise<Config> {
+    let config: Config | undefined
+    if (!forceRefresh) {
+      try {
+        const content = (await fs.promises.readFile(this.moderationBotGlobalConf, {
+          encoding: 'utf-8'
+        })).toString()
+
+        config = JSON.parse(content)
+      } catch (err) {
+        this.logger.info('Error reading the moderation bot global configuration file, assuming it does not exists.')
+        config = undefined
+      }
+    }
+
+    if (!config) {
+      // FIXME: use existing lib to get the port, dont hardcode default value here.
+      const portSetting = await this.options.settingsManager.getSetting('prosody-port')
+      const port = (portSetting as string) || '52800'
+
+      config = {
+        type: 'client',
+        connection: {
+          username: 'moderator',
+          password: Math.random().toString(36).slice(2, 12),
+          domain: this.botsDomain,
+          // Note: using localhost, and not currentProsody.host, because it does not always resolve correctly
+          service: 'xmpp://localhost:' + port
+        },
+        name: 'Moderator',
+        logger: 'ConsoleLogger',
+        log_level: isDebugMode(this.options) ? 'debug' : 'info'
+      }
+      await fs.promises.writeFile(this.moderationBotGlobalConf, JSON.stringify(config), {
+        encoding: 'utf-8'
+      })
+    }
+    return config
+  }
+
+  public configurationPaths (): {
+    moderation: {
+      globalFile: string
+      roomConfDir: string
+    }
+  } {
+    return {
+      moderation: {
+        globalFile: this.moderationBotGlobalConf,
+        roomConfDir: this.roomConfDir
+      }
+    }
   }
 
   /**
