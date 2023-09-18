@@ -256,13 +256,20 @@ class RoomChannel {
       data[channelId].push(room.localpart)
     }
 
-    // This part must be done atomicly:
-    this._readData(data)
-
+    // ************ ATOMIC PART ****************
+    // The rebuild process can remove some rooms (for example if prosody-room-type is changed),
+    // So we must mark all previous rooms as to refresh:
     // Now we must mark all rooms for conf update.
     for (const roomJID of this.room2Channel.keys()) {
       this.roomConfToUpdate.set(roomJID, true)
     }
+    // This part must be done atomicly:
+    this._readData(data)
+    // Now we must mark all rooms for conf update.
+    for (const roomJID of this.room2Channel.keys()) {
+      this.roomConfToUpdate.set(roomJID, true)
+    }
+    // ************ END OF ATOMIC PART ****************
 
     await this.sync() // FIXME: or maybe scheduleSync ?
   }
