@@ -80,7 +80,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
           affiliations: affiliations
         }
 
-        await RoomChannel.singleton().link(channelId, jid)
+        RoomChannel.singleton().link(channelId, jid)
 
         res.json(roomDefaults)
       } else {
@@ -132,7 +132,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
           affiliations: affiliations
         }
 
-        await RoomChannel.singleton().link(video.channelId, jid)
+        RoomChannel.singleton().link(video.channelId, jid)
 
         res.json(roomDefaults)
       }
