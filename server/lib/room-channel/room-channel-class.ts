@@ -9,6 +9,8 @@ import {
   channelConfigurationOptionsToBotRoomConf
 } from '../configuration/channel/storage'
 import { BotConfiguration } from '../configuration/bot'
+import { fillVideoCustomFields } from '../custom-fields'
+import { videoHasWebchat } from '../../../shared/lib/video'
 import * as path from 'path'
 import * as fs from 'fs'
 
@@ -176,11 +178,26 @@ class RoomChannel {
     const data: any = {}
 
     const rooms = await listProsodyRooms(this.options)
+    const settings = await this.options.settingsManager.getSettings([
+      'chat-per-live-video',
+      'chat-all-lives',
+      'chat-all-non-lives',
+      'chat-videos-list',
+      'prosody-room-type'
+    ])
+
     for (const room of rooms) {
       let channelId: string | number | undefined
 
       const matches = room.localpart.match(/^channel\.(\d+)$/)
       if (matches?.[1]) {
+        if (settings['prosody-room-type'] !== 'channel') {
+          this.logger.debug(
+            `Room ${room.localpart} is a channel-wide room, but prosody-room-type!== channel. Ignoring it`
+          )
+          continue
+        }
+
         channelId = parseInt(matches[1])
         if (isNaN(channelId)) {
           this.logger.error(`Invalid room JID '${room.localpart}'`)
@@ -195,6 +212,13 @@ class RoomChannel {
           continue
         }
       } else {
+        if (settings['prosody-room-type'] !== 'video') {
+          this.logger.debug(
+            `Room ${room.localpart} is a video-related room, but prosody-room-type!== room. Ignoring it`
+          )
+          continue
+        }
+
         const uuid = room.localpart
         const video = await this.options.peertubeHelpers.videos.loadByIdOrUUID(uuid)
         if (!video) {
@@ -203,6 +227,20 @@ class RoomChannel {
           )
           continue
         }
+
+        await fillVideoCustomFields(this.options, video)
+        const hasChat = await videoHasWebchat({
+          'chat-per-live-video': !!settings['chat-per-live-video'],
+          'chat-all-lives': !!settings['chat-all-lives'],
+          'chat-all-non-lives': !!settings['chat-all-non-lives'],
+          'chat-videos-list': settings['chat-videos-list'] as string
+        }, video)
+        if (!hasChat) {
+          // Either there were never any chat, either it was disabled...
+          this.logger.debug(`Video ${video.uuid} has no chat, ignoring it during the rebuild`)
+          continue
+        }
+
         channelId = video.channelId
       }
 
