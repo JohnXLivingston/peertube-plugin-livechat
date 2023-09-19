@@ -124,15 +124,16 @@ class BotsCtl {
           this.moderationBotProcess as ReturnType<typeof child_process.spawn>
 
         let resolved = false
-        // Trying to kill, and force kill if it takes more than 1 seconds
+        // Trying to kill, and force kill if it takes more than X seconds
+        const ms = 2000
         const timeout = setTimeout(() => {
           try {
-            this.logger.error('Moderation bot was not killed within 1 seconds, force killing')
+            this.logger.error('Moderation bot was not killed within ' + ms.toString() + 'ms, force killing')
             moderationBotProcess.kill('SIGKILL')
           } catch (_err) {}
           resolved = true
           resolve()
-        }, 1000)
+        }, ms)
 
         moderationBotProcess.on('exit', () => {
           if (resolved) { return }
