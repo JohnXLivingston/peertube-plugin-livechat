@@ -436,14 +436,13 @@ class ProsodyConfigContent {
    */
   useBotsVirtualHost (): void {
     this.bot = new ProsodyConfigVirtualHost('bot.' + this.prosodyDomain)
-    this.bot.set('modules_enabled', ['ping', 'bot_peertubelivechat'])
+    this.bot.set('modules_enabled', ['ping'])
+    this.bot.set('authentication', 'peertubelivechat_bot')
 
     const configurationPaths = BotConfiguration.singleton().configurationPaths()
     if (configurationPaths.moderation?.globalDir) {
       this.bot.set('livechat_bot_conf_folder', configurationPaths.moderation.globalDir)
     }
-
-    // TODO: bot vcards
   }
 
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {

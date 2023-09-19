@@ -10,11 +10,6 @@
 local new_sasl = require "util.sasl".new;
 local path = require "util.paths";
 local json = require "util.json";
--- local have_async, async = pcall(require, "util.async");
-
--- if not have_async then
--- 	error("Your version of Prosody does not support async and is incompatible");
--- end
 
 local host = module.host;
 local provider = {};
@@ -22,9 +17,11 @@ local provider = {};
 local bot_conf_folder = module:get_option_string('livechat_bot_conf_folder', '');
 
 function read_global_conf(filename)
-	local file = io.open(path.join(bot_conf_folder, filename), "r");
+	full_path = path.join(bot_conf_folder, filename);
+	module:log("debug", "Reading bot global conf file", full_path);
+	local file = io.open(full_path, "r");
 	if file == nil then
-		module:log("debug", "Cant read global conf file", filename);
+		module:log("debug", "Cant read bot global conf file", filename);
 		return nil;
 	end
 	local content = file:read("*all");
@@ -32,16 +29,19 @@ function read_global_conf(filename)
 
 	local o = json.decode(content);
 	if (not o) then
-		module:log("error", "Cant json-decode file", filename);
+		module:log("error", "Cant json-decode bot global conf file", filename);
 		return nil;
 	end
 	if (not o["connection"]) then
+		module:log("debug", "No connection info in bot global conf file", filename);
 		return nil;
 	end
 	if (not o["connection"]["username"]) then
+		module:log("debug", "No connection.username info in bot global conf file", filename);
 		return nil;
 	end
 	if (not o["connection"]["password"]) then
+		module:log("debug", "No connection.password info in bot global conf file", filename);
 		return nil;
 	end
 	result = {
@@ -53,7 +53,7 @@ end
 
 function provider.test_password(username, password)
 	-- FIXME: adapt the code for multiple bots
-	credentials = read_global_conf("moderator.json")
+	credentials = read_global_conf("moderation.json")
 	if (credentials and credentials["username"] == username and credentials["password"] == password) then
 		return true;
 	end
@@ -72,7 +72,7 @@ end
 
 function provider.user_exists(username)
 	-- FIXME: adapt the code for multiple bots
-	credentials = read_global_conf("moderator.json")
+	credentials = read_global_conf("moderation.json")
 	if (credentials and credentials["username"] == username) then
 		return true;
 	end
