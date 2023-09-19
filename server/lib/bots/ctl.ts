@@ -79,6 +79,12 @@ class BotsCtl {
       this.logger.debug(`ModerationBot stdout: ${data as string}`)
     })
     moderationBotProcess.stderr?.on('data', (data) => {
+      // change error level for non-relevant errors:
+      data = data.toString()
+      if (/Warning.*NODE_TLS_REJECT_UNAUTHORIZED.*'0'.*TLS/.test(data)) {
+        this.logger.debug(`ModerationBot stderr: ${data as string}`)
+        return
+      }
       this.logger.error(`ModerationBot stderr: ${data as string}`)
     })
     moderationBotProcess.on('error', (error) => {
