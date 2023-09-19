@@ -439,6 +439,9 @@ class ProsodyConfigContent {
     this.bot.set('modules_enabled', ['ping'])
     this.bot.set('authentication', 'peertubelivechat_bot')
 
+    // Adding the moderation bot as admin to the muc component.
+    this.muc.add('admins', BotConfiguration.singleton().moderationBotJID())
+
     const configurationPaths = BotConfiguration.singleton().configurationPaths()
     if (configurationPaths.moderation?.globalDir) {
       this.bot.set('livechat_bot_conf_folder', configurationPaths.moderation.globalDir)

@@ -218,6 +218,13 @@ class BotConfiguration {
   }
 
   /**
+   * Returns the moderation bot JID
+   */
+  public moderationBotJID (): string {
+    return 'moderator@' + this.botsDomain
+  }
+
+  /**
    * frees the singleton
    */
   public static async destroySingleton (): Promise<void> {
