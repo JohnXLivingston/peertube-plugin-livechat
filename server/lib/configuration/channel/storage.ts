@@ -33,6 +33,7 @@ async function getChannelConfigurationOptions (
 function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions): ChannelConfigurationOptions {
   return {
     bot: false,
+    botNickname: 'Sepia',
     bannedJIDs: [],
     forbiddenWords: []
   }
@@ -77,10 +78,12 @@ function channelConfigurationOptionsToBotRoomConf (
   options: RegisterServerOptions,
   channelConfigurationOptions: ChannelConfigurationOptions
 ): ChannelCommonRoomConf {
-  const roomConf = {
+  const roomConf: ChannelCommonRoomConf = {
     enabled: channelConfigurationOptions.bot,
-    // TODO: nick
     handlers: []
+  }
+  if (channelConfigurationOptions.botNickname && channelConfigurationOptions.botNickname !== '') {
+    roomConf.nick = channelConfigurationOptions.botNickname
   }
   return roomConf
 }

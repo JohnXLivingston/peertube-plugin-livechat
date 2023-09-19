@@ -47,6 +47,7 @@ async function renderConfigurationChannel (
       bannedJIDs: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BANNED_JIDS_LABEL),
       save: await peertubeHelpers.translate(LOC_SAVE),
       cancel: await peertubeHelpers.translate(LOC_CANCEL),
+      botNickname: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME),
       channelConfiguration
     }
 
@@ -69,6 +70,14 @@ async function renderConfigurationChannel (
           </fieldset>
           <fieldset livechat-configuration-channel-options-bot-enabled>
             <legend>{{botOptions}}</legend>
+            <label>
+              {{botNickname}}
+              <input
+                type="text"
+                name="bot_nickname"
+                value="{{channelConfiguration.configuration.botNickname}}"
+              />
+            </label>
             <label>
               {{forbiddenWords}}
 <textarea name="forbidden_words">

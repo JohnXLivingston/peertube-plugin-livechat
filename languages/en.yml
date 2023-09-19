@@ -317,4 +317,4 @@ livechat_configuration_channel_enable_bot_label: "Enable moderation bot"
 livechat_configuration_channel_bot_options_title: "Moderation bot options"
 livechat_configuration_channel_forbidden_words_label: "Forbidden words or expressions"
 livechat_configuration_channel_banned_jids_label: "Banned users and patterns"
-
+livechat_configuration_channel_bot_nickname: "Bot nickname"

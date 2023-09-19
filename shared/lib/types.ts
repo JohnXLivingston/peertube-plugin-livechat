@@ -54,6 +54,7 @@ interface ChannelInfos {
 
 interface ChannelConfigurationOptions {
   bot: boolean
+  botNickname?: string
   forbiddenWords: string[]
   bannedJIDs: string[]
 }
