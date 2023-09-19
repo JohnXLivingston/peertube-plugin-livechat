@@ -1,7 +1,9 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Config as XMPPChatBotConfig } from 'xmppjs-chat-bot'
 import { BotConfiguration } from '../configuration/bot'
+import { pluginName } from '../helpers'
 import * as child_process from 'child_process'
+import * as path from 'path'
 
 let singleton: BotsCtl | undefined
 
@@ -57,22 +59,23 @@ class BotsCtl {
 
     const paths = BotConfiguration.singleton().configurationPaths()
 
-    // We will run: npm exec -- xmppjs-chat-bot [...]
+    // We can't simple use 'npm exec xmppjs-chat-bot'.
+    // Indeed, this will spawn subprocesses, and kill signals sent to the child
+    // will not be sent to the real bot process.
+    // So we will search the path of the bot executable, and launch it directly.
+    const botExecPath = this._botExecPath()
     const execArgs = [
-      'exec',
-      '--',
-      'xmppjs-chat-bot',
       'run',
       '-f',
       paths.moderation.globalFile,
       '--room-conf-dir',
       paths.moderation.roomConfDir
     ]
-    const moderationBotProcess = child_process.spawn('npm', execArgs, {
+    const moderationBotProcess = child_process.spawn(botExecPath, execArgs, {
       cwd: __dirname, // must be in the livechat plugin tree, so that npm can found the package.
       env: {
         ...process.env, // will include NODE_ENV and co
-        NODE_TLS_REJECT_UNAUTHORIZED: '0' // Prosody use self-signed certificates, the bot must accept themp
+        NODE_TLS_REJECT_UNAUTHORIZED: '0' // Prosody use self-signed certificates, the bot must accept them
       }
     })
     moderationBotProcess.stdout?.on('data', (data) => {
@@ -183,6 +186,26 @@ class BotsCtl {
     if (!singleton) { return }
     await singleton.stop()
     singleton = undefined
+  }
+
+  protected _botExecPath (): string {
+    let dir: string = __dirname
+    let watchDog = 100
+
+    this.logger.debug('Searching the bot binary, in the ' + pluginName + ' folder')
+    while ((watchDog--) > 0 && path.basename(dir) !== pluginName && dir !== '/') {
+      dir = path.resolve(dir, '..')
+    }
+
+    if (path.basename(dir) !== pluginName) {
+      this.logger.error('Cant find the ' + pluginName + ' base dir, and so cant find the bot exec path.')
+      throw new Error('Cant find the bot exec path')
+    }
+
+    // xmppjs-chat-bot must be ./node_modules/.bin/xmppjs-chat-bot
+    const result = path.resolve(dir, 'node_modules', '.bin', 'xmppjs-chat-bot')
+    this.logger.info(`The bot path should be ${result}`)
+    return result
   }
 }
 
