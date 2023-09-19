@@ -204,12 +204,14 @@ class BotConfiguration {
   public configurationPaths (): {
     moderation: {
       globalFile: string
+      globalDir: string
       roomConfDir: string
     }
   } {
     return {
       moderation: {
         globalFile: this.moderationBotGlobalConf,
+        globalDir: this.confDir,
         roomConfDir: this.roomConfDir
       }
     }

@@ -71,7 +71,8 @@ class BotsCtl {
     const moderationBotProcess = child_process.spawn('npm', execArgs, {
       cwd: __dirname, // must be in the livechat plugin tree, so that npm can found the package.
       env: {
-        ...process.env // will include NODE_ENV and co
+        ...process.env, // will include NODE_ENV and co
+        NODE_TLS_REJECT_UNAUTHORIZED: '0' // Prosody use self-signed certificates, the bot must accept themp
       }
     })
     moderationBotProcess.stdout?.on('data', (data) => {
@@ -114,25 +115,27 @@ class BotsCtl {
           this.moderationBotProcess as ReturnType<typeof child_process.spawn>
 
         let resolved = false
-        // Trying to kill, and force kill if it takes more than 2 seconds
+        // Trying to kill, and force kill if it takes more than 1 seconds
         const timeout = setTimeout(() => {
-          this.logger.error('Moderation bot was not killed within 2 seconds, force killing')
-          moderationBotProcess.kill('SIGKILL')
+          try {
+            this.logger.error('Moderation bot was not killed within 1 seconds, force killing')
+            moderationBotProcess.kill('SIGKILL')
+          } catch (_err) {}
           resolved = true
           resolve()
-        }, 2000)
+        }, 1000)
 
         moderationBotProcess.on('exit', () => {
           if (resolved) { return }
           resolved = true
-          if (timeout) { clearTimeout(timeout) }
           resolve()
+          if (timeout) { clearTimeout(timeout) }
         })
         moderationBotProcess.on('close', () => {
           if (resolved) { return }
           resolved = true
-          if (timeout) { clearTimeout(timeout) }
           resolve()
+          if (timeout) { clearTimeout(timeout) }
         })
         moderationBotProcess.kill()
       } catch (err) {

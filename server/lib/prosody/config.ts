@@ -174,7 +174,13 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   // enableRemoteChatConnections: local users can communicate with external rooms
   const enableRemoteChatConnections = !(settings['federation-dont-publish-remotely'] as boolean)
   let certificates: ProsodyConfigCertificates = false
+  const useBots = !settings['disable-channel-configuration']
   const bots: ProsodyConfig['bots'] = {}
+
+  // Note: for the bots to connect, we must allow multiplexing.
+  // This will be done on the http (BOSH/Websocket) port, as it only listen on localhost.
+  // TODO: to improve performance, try to avoid multiplexing, and find a better way for bots to connect.
+  const useMultiplexing = useBots
 
   const apikey = await getAPIKey(options)
   valuesToHideInDiagnostic.set('APIKey', apikey)
@@ -222,7 +228,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   }
   config.useHttpAuthentication(authApiUrl)
   const useWS = !!options.registerWebSocketRoute // this comes with Peertube >=5.0.0, and is a prerequisite to websocket
-  config.usePeertubeBoshAndWebsocket(prosodyDomain, port, publicServerUrl, useWS)
+  config.usePeertubeBoshAndWebsocket(prosodyDomain, port, publicServerUrl, useWS, useMultiplexing)
   config.useMucHttpDefault(roomApiUrl)
 
   if (enableC2S) {
@@ -294,10 +300,12 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   config.usePeertubeVCards(basePeertubeUrl)
   config.useAnonymousRandomVCards(paths.avatars)
 
-  if (!settings['disable-channel-configuration']) {
+  if (useBots) {
     config.useBotsVirtualHost()
     bots.moderation = await BotConfiguration.singleton().getModerationBotGlobalConf()
-    valuesToHideInDiagnostic.set('BotPassword', bots.moderation.connection.password)
+    if (bots.moderation?.connection?.password) {
+      valuesToHideInDiagnostic.set('BotPassword', bots.moderation.connection.password)
+    }
   }
 
   config.useTestModule(apikey, testApiUrl)

@@ -1,5 +1,6 @@
 import type { ProsodyFilePaths } from './paths'
 import type { ExternalComponent } from './components'
+import { BotConfiguration } from '../../configuration/bot'
 import { userInfo } from 'os'
 
 type ConfigEntryValue = boolean | number | string | ConfigEntryValue[]
@@ -221,14 +222,39 @@ class ProsodyConfigContent {
     this.authenticated.set('http_auth_url', url)
   }
 
-  usePeertubeBoshAndWebsocket (prosodyDomain: string, port: string, publicServerUrl: string, useWS: boolean): void {
+  /**
+   * Activate BOSH (and optionnaly Websocket).
+   * @param prosodyDomain prosody domain
+   * @param port port to use for BOSH and Websocket interfaces
+   * @param publicServerUrl public server url
+   * @param useWS activate Websocket or not
+   * @param multiplexing activate multiplexing on port. Note: it will only listen on localhost interfaces.
+   */
+  usePeertubeBoshAndWebsocket (
+    prosodyDomain: string,
+    port: string,
+    publicServerUrl: string,
+    useWS: boolean,
+    multiplexing: boolean
+  ): void {
+    // Note: don't activate other http_interface or https_interfaces than localhost.
+    // Elsewhere it would be a security issue.
     this.global.set('c2s_require_encryption', false)
     this.global.set('interfaces', ['127.0.0.1', '::1'])
     this.global.set('c2s_ports', [])
     this.global.set('c2s_interfaces', ['127.0.0.1', '::1'])
     this.global.set('s2s_ports', [])
     this.global.set('s2s_interfaces', ['127.0.0.1', '::1'])
-    this.global.set('http_ports', [port])
+    if (!multiplexing) {
+      this.global.set('http_ports', [port])
+    } else {
+      // Note: don't activate other http_interface or https_interfaces than localhost.
+      // Elsewhere it would be a security issue.
+      this.global.add('modules_enabled', 'net_multiplex')
+      this.global.set('ports', [port])
+      // FIXME: this generates Prosody error logs saying that BOSH/Websocket won't work... even if it is not true.
+      this.global.set('http_ports', [])
+    }
     this.global.set('http_interfaces', ['127.0.0.1', '::1'])
     this.global.set('https_ports', [])
     this.global.set('https_interfaces', ['127.0.0.1', '::1'])
@@ -410,7 +436,12 @@ class ProsodyConfigContent {
    */
   useBotsVirtualHost (): void {
     this.bot = new ProsodyConfigVirtualHost('bot.' + this.prosodyDomain)
-    this.bot.set('modules_enabled', ['ping'])
+    this.bot.set('modules_enabled', ['ping', 'bot_peertubelivechat'])
+
+    const configurationPaths = BotConfiguration.singleton().configurationPaths()
+    if (configurationPaths.moderation?.globalDir) {
+      this.bot.set('livechat_bot_conf_folder', configurationPaths.moderation.globalDir)
+    }
 
     // TODO: bot vcards
   }
