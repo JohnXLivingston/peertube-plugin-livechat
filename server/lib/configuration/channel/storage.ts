@@ -6,6 +6,10 @@ import { sanitizeChannelConfigurationOptions } from '../../configuration/channel
 import * as fs from 'fs'
 import * as path from 'path'
 
+// FIXME: should be exported by xmppjs-chat-bot
+type ConfigHandlers = ChannelCommonRoomConf['handlers']
+type ConfigHandler = ConfigHandlers[0]
+
 /**
  * Get saved configuration options for the given channel.
  * Can throw an exception.
@@ -78,14 +82,56 @@ function channelConfigurationOptionsToBotRoomConf (
   options: RegisterServerOptions,
   channelConfigurationOptions: ChannelConfigurationOptions
 ): ChannelCommonRoomConf {
+  // Note concerning handlers:
+  // If we want the bot to correctly enable/disable the handlers,
+  // we must always define all handlers, even if not used.
+  const handlers: ConfigHandlers = []
+  handlers.push(_getForbiddenWordsHandler(
+    'forbidden_words_0',
+    channelConfigurationOptions.forbiddenWords
+  ))
+
   const roomConf: ChannelCommonRoomConf = {
     enabled: channelConfigurationOptions.bot,
-    handlers: []
+    handlers
   }
   if (channelConfigurationOptions.botNickname && channelConfigurationOptions.botNickname !== '') {
     roomConf.nick = channelConfigurationOptions.botNickname
   }
   return roomConf
+}
+
+function _getForbiddenWordsHandler (
+  id: string,
+  forbiddenWords: string[],
+  reason?: string
+): ConfigHandler {
+  const handler: ConfigHandler = {
+    type: 'moderate',
+    id,
+    enabled: false,
+    options: {
+      rules: []
+    }
+  }
+  if (forbiddenWords.length === 0) {
+    return handler
+  }
+
+  handler.enabled = true
+  // Note: on the Peertube frontend, channelConfigurationOptions.forbiddenWords
+  // is an array of RegExp definition (strings).
+  // They are validated one by bone.
+  // To increase the bot performance, we will join them all (hopping the bot will optimize them).
+  const rule: any = {
+    name: id,
+    regexp: '(?:' + forbiddenWords.join(')|(?:') + ')'
+  }
+  if (reason) {
+    rule.reason = reason
+  }
+  handler.options.rules.push(rule)
+  return handler
 }
 
 function _getFilePath (
