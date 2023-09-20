@@ -316,5 +316,31 @@ livechat_configuration_channel_desc: "You can setup here some options for this c
 livechat_configuration_channel_enable_bot_label: "Enable moderation bot"
 livechat_configuration_channel_bot_options_title: "Moderation bot options"
 livechat_configuration_channel_forbidden_words_label: "Forbidden words or expressions"
+livechat_configuration_channel_forbidden_words_desc: |
+  You can configure some words that will be automatically moderated by the bot (messages containing such words will be instantly deleted).
+  You can also add an optional reason that will be displayed at the place of deleted messages.
+  For more information about how to configure this feature, please refer to the documentation by clicking on the help button.
+  Several examples are provided on the documentation page.
+livechat_configuration_channel_forbidden_words_desc2: |
+  One word or expression per line. If you put multiple words on one line, it will only match messages containing the whole sequence.
+livechat_configuration_channel_forbidden_words_reason_label: "Reason"
+livechat_configuration_channel_forbidden_words_reason_desc: "Reason to display besides deleted messages"
+livechat_configuration_channel_forbidden_words_regexp_label: "Consider as regular expressions"
+livechat_configuration_channel_forbidden_words_regexp_desc: "By checking this option, you can use regular expressions."
+livechat_configuration_channel_quote_label: "Pre-recorded message"
+livechat_configuration_channel_quote_desc: |
+  You can configure several pre-recorded messages.
+  These messages will be sent by the bot every X minutes and/or when a chat user uses the corresponding command (for example "!help", where "help is the command name").
+  You can for example make the bot sent some sponsoring information every 5 minutes, or when a user types "!sponsor".
+  For more information about how to configure this feature, please refer to the documentation by clicking on the help button.
+livechat_configuration_channel_quote_delay_label: "Send every X minutes"
+livechat_configuration_channel_quote_delay_desc: |
+  The bot will post the message every X minutes.
+  Set to 0 if you don't want the bot to send the message periodically.
+livechat_configuration_channel_quote_command_label: "Bot command"
+livechat_configuration_channel_quote_command_desc: |
+  A command on which the bot will respond.
+  For example if you set "help", the bot will respond to messages starting with "!help".
+  Left empty if you don't want the bot to respond to commands.
 livechat_configuration_channel_banned_jids_label: "Banned users and patterns"
 livechat_configuration_channel_bot_nickname: "Bot nickname"

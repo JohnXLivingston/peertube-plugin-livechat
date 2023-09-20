@@ -17,10 +17,16 @@ async function vivifyConfigurationChannel (
   const labelSaved = await clientOptions.peertubeHelpers.translate(LOC_SUCCESSFULLY_SAVED)
   const labelError = await clientOptions.peertubeHelpers.translate(LOC_ERROR)
   const enableBotCB = form.querySelector('input[name=bot]') as HTMLInputElement
-  const botEnabledEl = form.querySelector('[livechat-configuration-channel-options-bot-enabled]') as HTMLElement
+  const botEnabledEl = form.querySelectorAll('[livechat-configuration-channel-options-bot-enabled]')
 
   const refresh: Function = () => {
-    botEnabledEl.style.display = enableBotCB.checked ? 'initial' : 'none'
+    botEnabledEl.forEach(el => {
+      if (enableBotCB.checked) {
+        (el as HTMLElement).style.removeProperty('display')
+      } else {
+        (el as HTMLElement).style.display = 'none'
+      }
+    })
   }
 
   const submitForm: Function = async () => {
