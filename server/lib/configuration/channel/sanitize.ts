@@ -21,7 +21,7 @@ async function sanitizeChannelConfigurationOptions (
   const result: ChannelConfigurationOptions = {
     bot: _readBoolean(data, 'bot'),
     botNickname: _readSimpleInput(data, 'botNickname'),
-    bannedJIDs: await _readRegExpArray(data, 'bannedJIDs'),
+    // bannedJIDs: await _readRegExpArray(data, 'bannedJIDs'),
     forbiddenWords: await _readRegExpArray(data, 'forbiddenWords')
   }
 

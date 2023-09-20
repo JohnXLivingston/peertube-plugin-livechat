@@ -38,7 +38,7 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
   return {
     bot: false,
     botNickname: 'Sepia',
-    bannedJIDs: [],
+    // bannedJIDs: [],
     forbiddenWords: []
   }
 }

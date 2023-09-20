@@ -4,6 +4,10 @@
   Here we are getting some Peertube variables (see _variables.scss in Peertube source code):
   We are disabling stylelint-disable custom-property-pattern so we can use Peertube var without warnings.
 */
+$font-size: 13px;
+$button-calc-line-height: 19px; // $font-size + math.round(math.div($font-size, 2));
+$button-font-size: 15px;
+$font-bold: 700;
 $font-semibold: 600;
 $grey-actor-name: #777272;
 $grey-background-color: var(--greyBackgroundColor);
@@ -22,6 +26,73 @@ $small-view: 800px;
     border-bottom: 2px solid $grey-background-color;
     padding-bottom: 15px;
     margin-bottom: $sub-menu-margin-bottom;
+  }
+
+  /* Channel configuration page */
+  &.peertube-plugin-livechat-configuration-channel {
+    .peertube-plugin-livechat-configuration-channel-info {
+      /* stylelint-disable-next-line value-keyword-case */
+      color: var(--mainForegroundColor);
+
+      span:first-child {
+        /* See Peertube .video-channel-display-name */
+        font-weight: $font-semibold;
+        font-size: 18px;
+      }
+
+      span:not(:first-child) {
+        /* See Peertube .video-channel-name */
+        margin-left: 5px;
+        font-size: 14px;
+        color: $grey-actor-name;
+      }
+    }
+
+    h2 {
+      // See Peertube settings-big-title mixin
+      text-transform: uppercase;
+      color: var(--mainColor);
+      font-weight: $font-bold;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      // Peertube rounded-line-height-1-5 mixins
+      line-height: $button-calc-line-height;
+
+      // Peertube peertube-button mixin
+      padding: 4px 13px;
+      border: 0;
+      font-weight: $font-semibold;
+      border-radius: 3px !important;
+      text-align: center;
+      cursor: pointer;
+      font-size: $button-font-size;
+    }
+
+    input[type="submit"] {
+      // Peertube orange-button mixin
+      &,
+      &:active,
+      &:focus {
+        color: #fff;
+        background-color: var(--mainColor);
+      }
+
+      &:hover {
+        color: #fff;
+        background-color: var(--mainHoverColor);
+      }
+
+      &[disabled],
+      &.disabled {
+        cursor: default;
+        color: #fff;
+        background-color: var(--inputBorderColor);
+      }
+    }
   }
 
   /* Channel selection page */

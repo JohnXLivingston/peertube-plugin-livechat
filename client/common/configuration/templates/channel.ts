@@ -44,7 +44,7 @@ async function renderConfigurationChannel (
       enableBot: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL),
       botOptions: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE),
       forbiddenWords: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
-      bannedJIDs: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BANNED_JIDS_LABEL),
+      // bannedJIDs: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BANNED_JIDS_LABEL),
       save: await peertubeHelpers.translate(LOC_SAVE),
       cancel: await peertubeHelpers.translate(LOC_CANCEL),
       botNickname: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME),
@@ -52,49 +52,62 @@ async function renderConfigurationChannel (
     }
 
     return Mustache.render(`
-      <div class="margin-content peertube-plugin-livechat-configuration">
-        <h1>{{title}} {{channelConfiguration.channel.displayName}}</h1>
+      <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-channel">
+        <h1>
+          {{title}}:
+          <span class="peertube-plugin-livechat-configuration-channel-info">
+            <span>{{channelConfiguration.channel.displayName}}</span>
+            <span>{{channelConfiguration.channel.name}}</span>
+          </span>
+        </h1>
         <p>{{description}}</p>
-        <form livechat-configuration-channel-options>
-          <fieldset>
-            <label>
-              <input
-                type="checkbox" name="bot"
-                value="1"
-                {{#channelConfiguration.configuration.bot}}
-                  checked="checked"
-                {{/channelConfiguration.configuration.bot}}
-              />
-              {{enableBot}}
-            </label>
-          </fieldset>
-          <fieldset livechat-configuration-channel-options-bot-enabled>
-            <legend>{{botOptions}}</legend>
-            <label>
-              {{botNickname}}
-              <input
-                type="text"
-                name="bot_nickname"
-                value="{{channelConfiguration.configuration.botNickname}}"
-              />
-            </label>
-            <label>
-              {{forbiddenWords}}
-<textarea name="forbidden_words">
+        <form livechat-configuration-channel-options role="form">
+          <div class="row mt-3">
+            <div class="col-12 col-lg-4 col-xl-3">
+              <h2>{{botOptions}}</h2>
+            </div>
+            <div class="col-12 col-lg-8 col-xl-9">
+              <fieldset>
+                <div class="form-group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="bot"
+                      id="peertube-livechat-bot"
+                      value="1"
+                      {{#channelConfiguration.configuration.bot}}
+                        checked="checked"
+                      {{/channelConfiguration.configuration.bot}}
+                    />
+                    {{enableBot}}
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset livechat-configuration-channel-options-bot-enabled>
+                <div class="form-group">
+                  <label for="peertube-livechat-bot-nickname">{{botNickname}}</label>
+                  <input
+                    type="text"
+                    name="bot_nickname"
+                    class="form-control"
+                    id="peertube-livechat-bot-nickname"
+                    value="{{channelConfiguration.configuration.botNickname}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="peertube-livechat-forbidden-words">{{forbiddenWords}}</label>
+<textarea name="forbidden_words" id="peertube-livechat-forbidden-words" class="form-control">
 {{#channelConfiguration.configuration.forbiddenWords}}{{.}}
 {{/channelConfiguration.configuration.forbiddenWords}}
 </textarea>
-            </label>
-            <label>
-              {{bannedJIDs}}
-<textarea name="banned_jids">
-{{#channelConfiguration.configuration.bannedJIDs}}{{.}}
-{{/channelConfiguration.configuration.bannedJIDs}}
-</textarea>
-            </label>
-          </fieldset>
-          <input type="submit" value="{{save}}" />
-          <input type="reset" value="{{cancel}}" />
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="{{save}}" />
+            <input type="reset" value="{{cancel}}" />
+          </div>
         </form>
       </div>
     `, view) as string

@@ -28,7 +28,7 @@ async function vivifyConfigurationChannel (
     const channelConfigurationOptions: ChannelConfigurationOptions = {
       bot: data.get('bot') === '1',
       botNickname: data.get('bot_nickname')?.toString() ?? '',
-      bannedJIDs: (data.get('banned_jids')?.toString() ?? '').split(/\r?\n|\r|\n/g),
+      // bannedJIDs: (data.get('banned_jids')?.toString() ?? '').split(/\r?\n|\r|\n/g),
       forbiddenWords: (data.get('forbidden_words')?.toString() ?? '').split(/\r?\n|\r|\n/g)
     }
 
