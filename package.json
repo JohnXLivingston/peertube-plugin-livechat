@@ -29,7 +29,8 @@
     }
   ],
   "css": [
-    "dist/assets/styles/style.css"
+    "dist/assets/styles/style.css",
+    "dist/assets/styles/configuration.css"
   ],
   "dependencies": {
     "async": "^3.2.2",

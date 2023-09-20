@@ -17,6 +17,7 @@ async function renderConfigurationHome (registerClientOptions: RegisterClientOpt
       throw new Error('Can\'t get the current username.')
     }
 
+    // FIXME: if more than 100 channels, loop (or add a pagination)
     const channels = await (await fetch(
       '/api/v1/accounts/' + encodeURIComponent(username) + '/video-channels?start=0&count=100&sort=name',
       {
@@ -40,16 +41,27 @@ async function renderConfigurationHome (registerClientOptions: RegisterClientOpt
     }
 
     return Mustache.render(`
-      <div class="margin-content">
+      <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-home">
         <h1>{{title}}</h1>
         <p>{{description}}</p>
         <h2>{{please_select}}</h2>
-        <ul>
+        <ul class="peertube-plugin-livechat-configuration-home-channels">
         {{#channels}}
           <li>
             <a href="{{livechatConfigurationUri}}">
-              {{displayName}}
+              {{#avatar}}
+                <img class="avatar channel" src="{{path}}">
+              {{/avatar}}
+              {{^avatar}}
+                <div class="avatar channel initial gray"></div>
+              {{/avatar}}
             </a>
+            <div class="peertube-plugin-livechat-configuration-home-info">
+              <a href="{{livechatConfigurationUri}}">
+                <div>{{displayName}}</div>
+                <div>{{name}}</div>
+              </a>
+            </div>
           </li>
         {{/channels}}
         </ul>

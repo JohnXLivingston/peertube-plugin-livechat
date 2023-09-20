@@ -1,0 +1,112 @@
+/* stylelint-disable custom-property-pattern */
+
+/*
+  Here we are getting some Peertube variables (see _variables.scss in Peertube source code):
+  We are disabling stylelint-disable custom-property-pattern so we can use Peertube var without warnings.
+*/
+$font-semibold: 600;
+$grey-actor-name: #777272;
+$grey-background-color: var(--greyBackgroundColor);
+$sub-menu-margin-bottom: 30px;
+$small-view: 800px;
+
+/*
+  These are styles to apply for the channel configuration pages.
+*/
+.peertube-plugin-livechat-configuration {
+  h1 {
+    /* See Peertube sub-menu-h1 mixin */
+    font-size: 1.3rem;
+    border-bottom: 2px solid $grey-background-color;
+    padding-bottom: 15px;
+    margin-bottom: $sub-menu-margin-bottom;
+  }
+
+  /* Channel selection page */
+  &.peertube-plugin-livechat-configuration-home {
+    ul.peertube-plugin-livechat-configuration-home-channels {
+      list-style-type: none;
+
+      li {
+        align-items: center;
+        gap: 15px;
+
+        /* See Peertube row-blocks mixin, used in video-channel */
+        display: flex;
+        min-height: 130px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        /* stylelint-disable-next-line value-keyword-case */
+        border-bottom: 1px solid var(--inputBorderColor);
+
+        @media screen and (max-width: $small-view) {
+          flex-direction: column;
+          height: auto;
+          align-items: center;
+        }
+
+        .avatar {
+          /* See Peertube CSS, class avatar and avatar-80 */
+          width: 80px;
+          height: 80px;
+          min-width: 80px;
+          min-height: 80px;
+
+          &.channel {
+            border-radius: 5px;
+          }
+
+          &.initial {
+            /* See Peertube actor-avatar.component.scss */
+            background-color: #3c2109;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--initialFontSize);
+
+            &.gray {
+              background-color: #939393;
+            }
+          }
+        }
+
+        .peertube-plugin-livechat-configuration-home-info {
+          flex-grow: 1;
+
+          a {
+            /* See Peertube .video-channel-names */
+            &:hover,
+            &:focus,
+            &:active {
+              text-decoration: none !important;
+            }
+
+            &:focus:not(.focus-visible) {
+              outline: none !important;
+            }
+
+            width: fit-content;
+            display: flex;
+            align-items: baseline;
+            /* stylelint-disable-next-line value-keyword-case */
+            color: var(--mainForegroundColor);
+
+            div:first-child {
+              /* See Peertube .video-channel-display-name */
+              font-weight: $font-semibold;
+              font-size: 18px;
+            }
+
+            div:not(:first-child) {
+              /* See Peertube .video-channel-name */
+              margin-left: 5px;
+              font-size: 14px;
+              color: $grey-actor-name;
+            }
+          }
+        }
+      }
+    }
+  }
+}

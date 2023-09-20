@@ -52,7 +52,7 @@ async function renderConfigurationChannel (
     }
 
     return Mustache.render(`
-      <div class="margin-content">
+      <div class="margin-content peertube-plugin-livechat-configuration">
         <h1>{{title}} {{channelConfiguration.channel.displayName}}</h1>
         <p>{{description}}</p>
         <form livechat-configuration-channel-options>
