@@ -185,7 +185,7 @@ class BotConfiguration {
         type: 'client',
         connection: {
           username: 'moderator',
-          password: Math.random().toString(36).slice(2, 12),
+          password: Math.random().toString(36).slice(2, 12) + Math.random().toString(36).slice(2, 12),
           domain: this.botsDomain,
           // Note: using localhost, and not currentProsody.host, because it does not always resolve correctly
           service: 'xmpp://localhost:' + port
