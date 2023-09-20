@@ -44,7 +44,7 @@ async function renderConfigurationHome (registerClientOptions: RegisterClientOpt
       <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-home">
         <h1>{{title}}</h1>
         <p>{{description}}</p>
-        <h2>{{please_select}}</h2>
+        <p>{{please_select}}</p>
         <ul class="peertube-plugin-livechat-configuration-home-channels">
         {{#channels}}
           <li>
