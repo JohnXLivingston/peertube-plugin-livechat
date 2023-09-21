@@ -78,6 +78,8 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
             if (!response.ok) {
               throw new Error('Response is not ok')
             }
+            const settings = await peertubeHelpers.getSettings()
+            const useChannelConfiguration = !(settings['disable-channel-configuration'])
             const json: ProsodyListRoomsResult = await response.json()
             if (!json.ok) {
               container.textContent = json.error
@@ -105,7 +107,8 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                 NotFound: await peertubeHelpers.translate(LOC_NOT_FOUND),
                 Video: await peertubeHelpers.translate(LOC_VIDEO),
                 Channel: await peertubeHelpers.translate(LOC_CHANNEL),
-                LastActivity: await peertubeHelpers.translate(LOC_LAST_ACTIVITY)
+                LastActivity: await peertubeHelpers.translate(LOC_LAST_ACTIVITY),
+                channelConfiguration: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE)
               }
 
               const titleLineEl = document.createElement('tr')
@@ -121,6 +124,11 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
               titleLineEl.append(titleDescriptionEl)
               titleLineEl.append(titleVideoEl)
               titleLineEl.append(titleLastActivityEl)
+              if (useChannelConfiguration) {
+                const titleChannelConfiguration = document.createElement('th')
+                titleChannelConfiguration.textContent = labels.channelConfiguration
+                titleLineEl.append(titleChannelConfiguration)
+              }
               table.append(titleLineEl)
               rooms.forEach(room => {
                 const localpart = room.localpart
@@ -137,12 +145,23 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                   const date = new Date(room.lasttimestamp * 1000)
                   lastActivityEl.textContent = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
                 }
+                const channelConfigurationEl = document.createElement('td')
                 nameEl.append(aEl)
                 lineEl.append(nameEl)
                 lineEl.append(descriptionEl)
                 lineEl.append(videoEl)
                 lineEl.append(lastActivityEl)
+                if (useChannelConfiguration) {
+                  lineEl.append(channelConfigurationEl) // else the element will just be dropped.
+                }
                 table.append(lineEl)
+
+                const writeChannelConfigurationLink = (channelId: number | string): void => {
+                  const a = document.createElement('a')
+                  a.href = '/p/livechat/configuration/channel?channelId=' + encodeURIComponent(channelId)
+                  a.textContent = labels.channelConfiguration
+                  channelConfigurationEl.append(a)
+                }
 
                 const channelMatches = localpart.match(/^channel\.(\d+)$/)
                 if (channelMatches) {
@@ -157,6 +176,9 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                     aVideoEl.target = '_blank'
                     aVideoEl.href = '/video-channels/' + room.channel.name
                     videoEl.append(aVideoEl)
+                  }
+                  if (room.channel?.id) {
+                    writeChannelConfigurationLink(room.channel.id)
                   }
                 } else if (/^[a-zA-A0-9-]+$/.test(localpart)) {
                   // localpart must be a video uuid.
@@ -183,6 +205,9 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                     aVideoEl.target = '_blank'
                     aVideoEl.href = '/videos/watch/' + uuid
                     videoEl.append(aVideoEl)
+                    if (video.channel.id) {
+                      writeChannelConfigurationLink(video.channel.id)
+                    }
                   }, () => {
                     console.error('[peertube-plugin-livechat] Failed to retrieve video ' + uuid)
                   })
