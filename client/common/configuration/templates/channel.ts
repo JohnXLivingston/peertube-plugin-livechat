@@ -1,129 +1,29 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import type { ChannelConfiguration } from 'shared/lib/types'
-import { getBaseRoute } from '../../../videowatch/uri'
 import { localizedHelpUrl } from '../../../utils/help'
 import { helpButtonSVG } from '../../../videowatch/buttons'
+import { vivifyConfigurationChannel, getConfigurationChannelViewData } from './logic/channel'
 // Must use require for mustache, import seems buggy.
 const Mustache = require('mustache')
 
 /**
- * Renders the configuration settings page for a given channel.
+ * Renders the configuration settings page for a given channel,
+ * and set it as innerHTML to rootEl.
+ * The page content can be empty. In such case, the notifier will be used to display a message.
  * @param registerClientOptions Peertube client options
  * @param channelId The channel id
- * @returns The page content
+ * @param rootEl The HTMLElement in which insert the generated DOM.
  */
 async function renderConfigurationChannel (
   registerClientOptions: RegisterClientOptions,
-  channelId: string
-): Promise<string | false> {
-  const { peertubeHelpers } = registerClientOptions
-
+  channelId: string,
+  rootEl: HTMLElement
+): Promise<void> {
   try {
-    if (!channelId || !/^\d+$/.test(channelId)) {
-      throw new Error('Missing or invalid channel id.')
-    }
+    const view = await getConfigurationChannelViewData(registerClientOptions, channelId)
+    await fillViewHelpButtons(registerClientOptions, view)
+    await fillLabels(registerClientOptions, view)
 
-    const response = await fetch(
-      getBaseRoute(registerClientOptions) + '/api/configuration/channel/' + encodeURIComponent(channelId),
-      {
-        method: 'GET',
-        headers: peertubeHelpers.getAuthHeader()
-      }
-    )
-    if (!response.ok) {
-      throw new Error('Can\'t get channel configuration options.')
-    }
-    const channelConfiguration: ChannelConfiguration = await (response).json()
-
-    // Basic testing that channelConfiguration has the correct format
-    if ((typeof channelConfiguration !== 'object') || !channelConfiguration.channel) {
-      throw new Error('Invalid channel configuration options.')
-    }
-
-    const helpUrl = await localizedHelpUrl(registerClientOptions, {
-      page: 'documentation/user/streamers/' // FIXME: this is not the good link
-    })
-    const helpIcon = helpButtonSVG()
-    const helpButton = `<a
-        href="${helpUrl}"
-        target=_blank
-        class="orange-button peertube-button-link"
-      >${helpIcon}</a>`
-    const helpButtonForbiddenWords = helpButton
-    const helpButtonQuotes = helpButton
-    const helpButtonCommands = helpButton
-
-    const view = {
-      title: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE),
-      description: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC),
-      enableBot: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL),
-      botOptions: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE),
-      forbiddenWords: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
-      forbiddenWordsDesc: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC),
-      forbiddenWordsDesc2: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC2),
-      forbiddenWordsReason: await peertubeHelpers.translate(
-        LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_LABEL
-      ),
-      forbiddenWordsReasonDesc: await peertubeHelpers.translate(
-        LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_DESC
-      ),
-      forbiddenWordsRegexp: await peertubeHelpers.translate(
-        LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_LABEL
-      ),
-      forbiddenWordsRegexpDesc: await peertubeHelpers.translate(
-        LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_DESC
-      ),
-      forbiddenWordsApplyToModerators: await peertubeHelpers.translate(
-        LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_LABEL
-      ),
-      forbiddenWordsApplyToModeratorsDesc: await peertubeHelpers.translate(
-        LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_DESC
-      ),
-      quoteLabel: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL),
-      quoteDesc: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC),
-      quoteDesc2: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC2),
-      quoteDelayLabel: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_LABEL),
-      quoteDelayDesc: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_DESC),
-      commandLabel: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL),
-      commandDesc: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC),
-      commandCmdLabel: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_CMD_LABEL),
-      commandCmdDesc: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_CMD_DESC),
-      commandMessageLabel: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_LABEL),
-      commandMessageDesc: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_DESC),
-      // bannedJIDs: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BANNED_JIDS_LABEL),
-      save: await peertubeHelpers.translate(LOC_SAVE),
-      cancel: await peertubeHelpers.translate(LOC_CANCEL),
-      botNickname: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME),
-      moreInfo: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FOR_MORE_INFO),
-      forbiddenWordsArray: [0, 1, 2].map(count => {
-        return {
-          displayNumber: count + 1,
-          fieldNumber: count,
-          displayHelp: count === 0
-        }
-      }),
-      quotesArray: [0].map(count => {
-        return {
-          displayNumber: count + 1,
-          fieldNumber: count,
-          displayHelp: count === 0
-        }
-      }),
-      cmdsArray: [0, 1, 2].map(count => {
-        return {
-          displayNumber: count + 1,
-          fieldNumber: count,
-          displayHelp: count === 0
-        }
-      }),
-      helpButton,
-      helpButtonForbiddenWords,
-      helpButtonCommands,
-      helpButtonQuotes,
-      channelConfiguration
-    }
-
-    return Mustache.render(`
+    const content = Mustache.render(`
       <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-channel">
         <h1>
           {{title}}:
@@ -312,10 +212,82 @@ async function renderConfigurationChannel (
         </form>
       </div>
     `, view) as string
+
+    rootEl.innerHTML = content
+
+    await vivifyConfigurationChannel(registerClientOptions, rootEl, channelId)
   } catch (err: any) {
-    peertubeHelpers.notifier.error(err.toString())
-    return ''
+    registerClientOptions.peertubeHelpers.notifier.error(err.toString())
+    rootEl.innerHTML = ''
   }
+}
+
+async function fillViewHelpButtons (
+  registerClientOptions: RegisterClientOptions,
+  view: any
+): Promise<void> {
+  const helpUrl = await localizedHelpUrl(registerClientOptions, {
+    page: 'documentation/user/streamers/' // FIXME: this is not the good link
+  })
+  const helpIcon = helpButtonSVG()
+  view.helpButton = `<a
+      href="${helpUrl}"
+      target=_blank
+      class="orange-button peertube-button-link"
+    >${helpIcon}</a>`
+  view.helpButtonForbiddenWords = view.helpButton // FIXME: this is not the good link
+  view.helpButtonQuotes = view.helpButton // FIXME: this is not the good link
+  view.helpButtonCommands = view.helpButton // FIXME: this is not the good link
+}
+
+async function fillLabels (
+  registerClientOptions: RegisterClientOptions,
+  view: any
+): Promise<void> {
+  const { peertubeHelpers } = registerClientOptions
+  view.title = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE)
+  view.description = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)
+
+  view.enableBot = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)
+  view.botOptions = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)
+  view.forbiddenWords = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)
+  view.forbiddenWordsDesc = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)
+  view.forbiddenWordsDesc2 = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC2)
+  view.forbiddenWordsReason = await peertubeHelpers.translate(
+    LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_LABEL
+  )
+  view.forbiddenWordsReasonDesc = await peertubeHelpers.translate(
+    LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_DESC
+  )
+  view.forbiddenWordsRegexp = await peertubeHelpers.translate(
+    LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_LABEL
+  )
+  view.forbiddenWordsRegexpDesc = await peertubeHelpers.translate(
+    LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_DESC
+  )
+  view.forbiddenWordsApplyToModerators = await peertubeHelpers.translate(
+    LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_LABEL
+  )
+  view.forbiddenWordsApplyToModeratorsDesc = await peertubeHelpers.translate(
+    LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_DESC
+  )
+  view.quoteLabel = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)
+  view.quoteDesc = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)
+  view.quoteDesc2 = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC2)
+  view.quoteDelayLabel = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_LABEL)
+  view.quoteDelayDesc = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_DESC)
+  view.commandLabel = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)
+  view.commandDesc = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)
+  view.commandCmdLabel = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_CMD_LABEL)
+  view.commandCmdDesc = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_CMD_DESC)
+  view.commandMessageLabel = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_LABEL)
+  view.commandMessageDesc = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_DESC)
+  // view.bannedJIDs = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BANNED_JIDS_LABEL)
+
+  view.save = await peertubeHelpers.translate(LOC_SAVE)
+  view.cancel = await peertubeHelpers.translate(LOC_CANCEL)
+  view.botNickname = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)
+  view.moreInfo = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FOR_MORE_INFO)
 }
 
 export {

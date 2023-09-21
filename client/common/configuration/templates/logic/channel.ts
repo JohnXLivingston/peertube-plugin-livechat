@@ -1,6 +1,63 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import type { ChannelConfigurationOptions } from 'shared/lib/types'
-import { getBaseRoute } from '../../../videowatch/uri'
+import type { ChannelConfiguration, ChannelConfigurationOptions } from 'shared/lib/types'
+import { getBaseRoute } from '../../../../videowatch/uri'
+
+/**
+ * Returns the data that can be feed into the template view
+ * @param registerClientOptions
+ * @param channelId
+ */
+async function getConfigurationChannelViewData (
+  registerClientOptions: RegisterClientOptions,
+  channelId: string
+): Promise<Object> {
+  if (!channelId || !/^\d+$/.test(channelId)) {
+    throw new Error('Missing or invalid channel id.')
+  }
+
+  const { peertubeHelpers } = registerClientOptions
+  const response = await fetch(
+    getBaseRoute(registerClientOptions) + '/api/configuration/channel/' + encodeURIComponent(channelId),
+    {
+      method: 'GET',
+      headers: peertubeHelpers.getAuthHeader()
+    }
+  )
+  if (!response.ok) {
+    throw new Error('Can\'t get channel configuration options.')
+  }
+  const channelConfiguration: ChannelConfiguration = await (response).json()
+
+  // Basic testing that channelConfiguration has the correct format
+  if ((typeof channelConfiguration !== 'object') || !channelConfiguration.channel) {
+    throw new Error('Invalid channel configuration options.')
+  }
+
+  return {
+    channelConfiguration,
+    forbiddenWordsArray: [0, 1, 2].map(count => {
+      return {
+        displayNumber: count + 1,
+        fieldNumber: count,
+        displayHelp: count === 0
+      }
+    }),
+    quotesArray: [0].map(count => {
+      return {
+        displayNumber: count + 1,
+        fieldNumber: count,
+        displayHelp: count === 0
+      }
+    }),
+    cmdsArray: [0, 1, 2].map(count => {
+      return {
+        displayNumber: count + 1,
+        fieldNumber: count,
+        displayHelp: count === 0
+      }
+    })
+  }
+}
 
 /**
  * Adds the front-end logic on the generated html for the channel configuration options.
@@ -87,5 +144,6 @@ async function vivifyConfigurationChannel (
 }
 
 export {
+  getConfigurationChannelViewData,
   vivifyConfigurationChannel
 }

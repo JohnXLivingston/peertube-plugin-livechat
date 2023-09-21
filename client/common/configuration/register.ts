@@ -1,7 +1,6 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { renderConfigurationHome } from './templates/home'
 import { renderConfigurationChannel } from './templates/channel'
-import { vivifyConfigurationChannel } from './logic/channel'
 
 /**
  * Registers stuff related to the user's configuration pages.
@@ -25,14 +24,7 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
     onMount: async ({ rootEl }) => {
       const urlParams = new URLSearchParams(window.location.search)
       const channelId = urlParams.get('channelId') ?? ''
-      const html = await renderConfigurationChannel(clientOptions, channelId)
-      if (!html) {
-        // renderConfigurationChannel has already used the notifier to display an error
-        rootEl.innerHTML = ''
-        return
-      }
-      rootEl.innerHTML = html
-      await vivifyConfigurationChannel(clientOptions, rootEl, channelId)
+      await renderConfigurationChannel(clientOptions, channelId, rootEl)
     }
   })
 

@@ -52,6 +52,9 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
 
       let channelOptions
       try {
+        // Note: the front-end should do some input validation.
+        // If there is any invalid value, we just return a 400 error.
+        // The frontend should have prevented to post invalid data.
         channelOptions = await sanitizeChannelConfigurationOptions(options, channelInfos.id, req.body)
       } catch (err) {
         logger.warn(err)
