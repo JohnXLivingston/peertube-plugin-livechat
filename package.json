@@ -39,7 +39,7 @@
     "http-proxy": "^1.18.1",
     "log-rotate": "^0.2.8",
     "validate-color": "^2.2.1",
-    "xmppjs-chat-bot": "^0.2.5"
+    "xmppjs-chat-bot": "^0.2.6"
   },
   "devDependencies": {
     "@peertube/feed": "^5.1.0",
