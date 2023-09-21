@@ -190,7 +190,7 @@ class BotConfiguration {
           // Note: using localhost, and not currentProsody.host, because it does not always resolve correctly
           service: 'xmpp://localhost:' + port
         },
-        name: 'Moderator',
+        name: 'Sepia',
         logger: 'ConsoleLogger',
         log_level: isDebugMode(this.options) ? 'debug' : 'info'
       }
