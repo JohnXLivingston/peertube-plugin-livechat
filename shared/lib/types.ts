@@ -53,10 +53,25 @@ interface ChannelInfos {
 }
 
 interface ChannelConfigurationOptions {
-  bot: boolean
-  botNickname?: string
-  forbiddenWords: string[]
-  // TODO: bannedJIDs: string[]
+  bot: {
+    enabled: boolean
+    nickname?: string
+    forbiddenWords: Array<{
+      entries: string[]
+      regexp?: boolean
+      applyToModerators?: boolean
+      reason?: string
+    }>
+    quotes: Array<{
+      messages: string[]
+      delay: number
+    }>
+    commands: Array<{
+      command: string
+      message: string
+    }>
+    // TODO: bannedJIDs: string[]
+  }
 }
 
 interface ChannelConfiguration {

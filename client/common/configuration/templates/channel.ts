@@ -47,9 +47,9 @@ async function renderConfigurationChannel (
                     name="bot"
                     id="peertube-livechat-bot"
                     value="1"
-                    {{#channelConfiguration.configuration.bot}}
+                    {{#channelConfiguration.configuration.bot.enabled}}
                       checked="checked"
-                    {{/channelConfiguration.configuration.bot}}
+                    {{/channelConfiguration.configuration.bot.enabled}}
                   />
                   {{enableBot}}
                 </label>
@@ -61,7 +61,7 @@ async function renderConfigurationChannel (
                   name="bot_nickname"
                   class="form-control"
                   id="peertube-livechat-bot-nickname"
-                  value="{{channelConfiguration.configuration.botNickname}}"
+                  value="{{channelConfiguration.configuration.bot.nickname}}"
                 />
               </div>
             </div>
@@ -84,11 +84,7 @@ async function renderConfigurationChannel (
                     name="forbidden_words_{{fieldNumber}}"
                     id="peertube-livechat-forbidden-words-{{fieldNumber}}"
                     class="form-control"
-                  >{{
-                    #channelConfiguration.configuration.forbiddenWords
-                  }}{{.}}\n{{
-                    /channelConfiguration.configuration.forbiddenWords
-                  }}</textarea>
+                  >{{entries}}</textarea>
                   <p class="form-group-description">{{forbiddenWordsDesc2}}</p>
                 </div>
                 <div class="form-group">
@@ -97,6 +93,9 @@ async function renderConfigurationChannel (
                       type="checkbox"
                       name="forbidden_words_regexp_{{fieldNumber}}"
                       value="1"
+                      {{#regexp}}
+                        checked="checked"
+                      {{/regexp}}
                     />
                     {{forbiddenWordsRegexp}}
                   </label>
@@ -108,6 +107,9 @@ async function renderConfigurationChannel (
                       type="checkbox"
                       name="forbidden_words_applytomoderators_{{fieldNumber}}"
                       value="1"
+                      {{#applyToModerators}}
+                        checked="checked"
+                      {{/applyToModerators}}
                     />
                     {{forbiddenWordsApplyToModerators}}
                   </label>
@@ -120,7 +122,7 @@ async function renderConfigurationChannel (
                     name="forbidden_words_reason_{{fieldNumber}}"
                     class="form-control"
                     id="peertube-livechat-forbidden-words-reason-{{fieldNumber}}"
-                    value=""
+                    value="{{reason}}"
                   />
                   <p class="form-group-description">{{forbiddenWordsReasonDesc}}</p>
                 </div>

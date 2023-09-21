@@ -18,11 +18,20 @@ async function sanitizeChannelConfigurationOptions (
     throw new Error('Invalid data type')
   }
 
+  const botData = data.bot
+  if (typeof botData !== 'object') {
+    throw new Error('Invalid data.bot data type')
+  }
+
   const result: ChannelConfigurationOptions = {
-    bot: _readBoolean(data, 'bot'),
-    botNickname: _readSimpleInput(data, 'botNickname'),
-    // bannedJIDs: await _readRegExpArray(data, 'bannedJIDs'),
-    forbiddenWords: await _readRegExpArray(data, 'forbiddenWords')
+    bot: {
+      enabled: _readBoolean(botData, 'enabled'),
+      nickname: _readSimpleInput(botData, 'nickname', true),
+      forbiddenWords: await _readForbiddenWords(botData),
+      quotes: _readQuotes(botData),
+      commands: _readCommands(botData)
+      // TODO: bannedJIDs
+    }
   }
 
   return result
@@ -38,15 +47,59 @@ function _readBoolean (data: any, f: string): boolean {
   return data[f]
 }
 
-function _readSimpleInput (data: any, f: string): string {
+function _readInteger (data: any, f: string, min: number, max: number): number {
+  if (!(f in data)) {
+    throw new Error('Missing integer value for field ' + f)
+  }
+  const v = parseInt(data[f])
+  if (isNaN(v)) {
+    throw new Error('Invalid value type for field ' + f)
+  }
+  if (v < min) {
+    throw new Error('Invalid value type (<min) for field ' + f)
+  }
+  if (v > max) {
+    throw new Error('Invalid value type (>max) for field ' + f)
+  }
+  return v
+}
+
+function _readSimpleInput (data: any, f: string, strict?: boolean): string {
   if (!(f in data)) {
     return ''
   }
   if (typeof data[f] !== 'string') {
     throw new Error('Invalid data type for field ' + f)
   }
-  // Replacing all invalid characters, no need to throw an error..
-  return (data[f] as string).replace(/[^\p{L}\p{N}\p{Z}_-]$/gu, '')
+  // Removing control characters.
+  // eslint-disable-next-line no-control-regex
+  let s = (data[f] as string).replace(/[\u0000-\u001F\u007F-\u009F]/g, '')
+  if (strict) {
+    // Replacing all invalid characters, no need to throw an error..
+    s = s.replace(/[^\p{L}\p{N}\p{Z}_-]$/gu, '')
+  }
+  return s
+}
+
+function _readStringArray (data: any, f: string): string[] {
+  if (!(f in data)) {
+    return []
+  }
+  if (!Array.isArray(data[f])) {
+    throw new Error('Invalid data type for field ' + f)
+  }
+  const result: string[] = []
+  for (const v of data[f]) {
+    if (typeof v !== 'string') {
+      throw new Error('Invalid data type in a value of field ' + f)
+    }
+    if (v === '' || /^\s+$/.test(v)) {
+      // ignore empty values
+      continue
+    }
+    result.push(v)
+  }
+  return result
 }
 
 async function _readRegExpArray (data: any, f: string): Promise<string[]> {
@@ -78,6 +131,66 @@ async function _readRegExpArray (data: any, f: string): Promise<string[]> {
       throw new Error('Invalid value in field ' + f)
     }
     result.push(v)
+  }
+  return result
+}
+
+async function _readForbiddenWords (botData: any): Promise<ChannelConfigurationOptions['bot']['forbiddenWords']> {
+  if (!Array.isArray(botData.forbiddenWords)) {
+    throw new Error('Invalid forbiddenWords data')
+  }
+  const result: ChannelConfigurationOptions['bot']['forbiddenWords'] = []
+  for (const fw of botData.forbiddenWords) {
+    const regexp = !!fw.regexp
+    let entries
+    if (regexp) {
+      entries = await _readRegExpArray(fw, 'entries')
+    } else {
+      entries = _readStringArray(fw, 'entries')
+    }
+    const applyToModerators = _readBoolean(fw, 'applyToModerators')
+    const reason = fw.reason ? _readSimpleInput(fw, 'reason') : undefined
+
+    result.push({
+      regexp,
+      entries,
+      applyToModerators,
+      reason
+    })
+  }
+  return result
+}
+
+function _readQuotes (botData: any): ChannelConfigurationOptions['bot']['quotes'] {
+  if (!Array.isArray(botData.quotes)) {
+    throw new Error('Invalid quotes data')
+  }
+  const result: ChannelConfigurationOptions['bot']['quotes'] = []
+  for (const fw of botData.quotes) {
+    const messages = _readStringArray(fw, 'message')
+    const delay = _readInteger(fw, 'delay', 1, 6000)
+
+    result.push({
+      messages,
+      delay
+    })
+  }
+  return result
+}
+
+function _readCommands (botData: any): ChannelConfigurationOptions['bot']['commands'] {
+  if (!Array.isArray(botData.commands)) {
+    throw new Error('Invalid commands data')
+  }
+  const result: ChannelConfigurationOptions['bot']['commands'] = []
+  for (const fw of botData.commands) {
+    const message = _readSimpleInput(fw, 'message')
+    const command = _readSimpleInput(fw, 'command')
+
+    result.push({
+      message,
+      command
+    })
   }
   return result
 }

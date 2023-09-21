@@ -55,6 +55,16 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
         // Note: the front-end should do some input validation.
         // If there is any invalid value, we just return a 400 error.
         // The frontend should have prevented to post invalid data.
+
+        // Note: if !bot.enabled, we wont try to save hidden fields values, to minimize the risk of error
+        if (req.body.bot?.enabled === false) {
+          logger.debug('Bot disabled, loading the previous bot conf to not override hidden fields')
+          const channelOptions =
+            await getChannelConfigurationOptions(options, channelInfos.id) ??
+            getDefaultChannelConfigurationOptions(options)
+          req.body.bot = channelOptions.bot
+          req.body.bot.enable = false
+        }
         channelOptions = await sanitizeChannelConfigurationOptions(options, channelInfos.id, req.body)
       } catch (err) {
         logger.warn(err)

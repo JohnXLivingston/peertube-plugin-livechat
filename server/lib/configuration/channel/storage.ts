@@ -36,10 +36,43 @@ async function getChannelConfigurationOptions (
 
 function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions): ChannelConfigurationOptions {
   return {
-    bot: false,
-    botNickname: 'Sepia',
-    // bannedJIDs: [],
-    forbiddenWords: []
+    bot: {
+      enabled: false,
+      nickname: 'Sepia',
+      // Note: we are instanciating several data for forbiddenWords, quotes and commands.
+      // This will be used by the frontend to instanciates requires fields
+      forbiddenWords: [
+        {
+          entries: []
+        },
+        {
+          entries: []
+        },
+        {
+          entries: []
+        }
+      ],
+      quotes: [
+        {
+          messages: [],
+          delay: 5 * 60 // seconds to minutes
+        }
+      ],
+      commands: [
+        {
+          command: '',
+          message: ''
+        },
+        {
+          command: '',
+          message: ''
+        },
+        {
+          command: '',
+          message: ''
+        }
+      ]
+    }
   }
 }
 
@@ -86,25 +119,26 @@ function channelConfigurationOptionsToBotRoomConf (
   // If we want the bot to correctly enable/disable the handlers,
   // we must always define all handlers, even if not used.
   const handlers: ConfigHandlers = []
-  handlers.push(_getForbiddenWordsHandler(
-    'forbidden_words_0',
-    channelConfigurationOptions.forbiddenWords
-  ))
+  channelConfigurationOptions.bot.forbiddenWords.forEach((v, i) => {
+    handlers.push(_getForbiddenWordsHandler(
+      'forbidden_words_' + i.toString(),
+      channelConfigurationOptions.bot.forbiddenWords[i]
+    ))
+  })
 
   const roomConf: ChannelCommonRoomConf = {
-    enabled: channelConfigurationOptions.bot,
+    enabled: channelConfigurationOptions.bot.enabled,
     handlers
   }
-  if (channelConfigurationOptions.botNickname && channelConfigurationOptions.botNickname !== '') {
-    roomConf.nick = channelConfigurationOptions.botNickname
+  if (channelConfigurationOptions.bot.nickname && channelConfigurationOptions.bot.nickname !== '') {
+    roomConf.nick = channelConfigurationOptions.bot.nickname
   }
   return roomConf
 }
 
 function _getForbiddenWordsHandler (
   id: string,
-  forbiddenWords: string[],
-  reason?: string
+  forbiddenWords: ChannelConfigurationOptions['bot']['forbiddenWords'][0]
 ): ConfigHandler {
   const handler: ConfigHandler = {
     type: 'moderate',
@@ -114,24 +148,61 @@ function _getForbiddenWordsHandler (
       rules: []
     }
   }
-  if (forbiddenWords.length === 0) {
+  if (forbiddenWords.entries.length === 0) {
     return handler
   }
 
   handler.enabled = true
-  // Note: on the Peertube frontend, channelConfigurationOptions.forbiddenWords
-  // is an array of RegExp definition (strings).
-  // They are validated one by bone.
-  // To increase the bot performance, we will join them all (hopping the bot will optimize them).
   const rule: any = {
-    name: id,
-    regexp: '(?:' + forbiddenWords.join(')|(?:') + ')'
+    name: id
   }
-  if (reason) {
-    rule.reason = reason
+
+  if (forbiddenWords.regexp) {
+    // Note: on the Peertube frontend, channelConfigurationOptions.forbiddenWords
+    // is an array of RegExp definition (strings).
+    // They are validated one by bone.
+    // To increase the bot performance, we will join them all (hopping the bot will optimize them).
+    rule.regexp = '(?:' + forbiddenWords.entries.join(')|(?:') + ')'
+  } else {
+    // Here we must add word-breaks and escape entries.
+    // We join all entries in one Regexp (for the same reason as above).
+    rule.regexp = '(?:' +
+      forbiddenWords.entries.map(s => {
+        s = _stringToWordRegexp(s)
+        // Must add the \b...
+        // ... but... won't work if the first (or last) char is an emoji.
+        // So, doing this trick:
+        if (/^\w/.test(s)) {
+          s = '\\b' + s
+        }
+        if (/\w$/.test(s)) {
+          s = s + '\\b'
+        }
+        // FIXME: this solution wont work for non-latin charsets.
+        return s
+      }).join(')|(?:') + ')'
+  }
+
+  if (forbiddenWords.reason) {
+    rule.reason = forbiddenWords.reason
   }
   handler.options.rules.push(rule)
+
+  handler.options.applyToModerators = !!forbiddenWords.applyToModerators
   return handler
+}
+
+const stringToWordRegexpSpecials = [
+  // order matters for these
+  '-', '[', ']',
+  // order doesn't matter for any of these
+  '/', '{', '}', '(', ')', '*', '+', '?', '.', '\\', '^', '$', '|'
+]
+// I choose to escape every character with '\'
+// even though only some strictly require it when inside of []
+const stringToWordRegexp = RegExp('[' + stringToWordRegexpSpecials.join('\\') + ']', 'g')
+function _stringToWordRegexp (s: string): string {
+  return s.replace(stringToWordRegexp, '\\$&')
 }
 
 function _getFilePath (

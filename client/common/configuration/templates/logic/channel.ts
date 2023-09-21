@@ -33,15 +33,23 @@ async function getConfigurationChannelViewData (
     throw new Error('Invalid channel configuration options.')
   }
 
+  const forbiddenWordsArray = []
+  for (let i = 0; i < channelConfiguration.configuration.bot.forbiddenWords.length; i++) {
+    const fw = channelConfiguration.configuration.bot.forbiddenWords[i]
+    forbiddenWordsArray.push({
+      displayNumber: i + 1,
+      fieldNumber: i,
+      displayHelp: i === 0,
+      entries: fw.entries.join('\n'),
+      regexp: !!fw.regexp,
+      applyToModerators: fw.applyToModerators,
+      reason: fw.reason
+    })
+  }
+
   return {
     channelConfiguration,
-    forbiddenWordsArray: [0, 1, 2].map(count => {
-      return {
-        displayNumber: count + 1,
-        fieldNumber: count,
-        displayHelp: count === 0
-      }
-    }),
+    forbiddenWordsArray,
     quotesArray: [0].map(count => {
       return {
         displayNumber: count + 1,
@@ -89,11 +97,35 @@ async function vivifyConfigurationChannel (
   const submitForm: Function = async () => {
     const data = new FormData(form)
     const channelConfigurationOptions: ChannelConfigurationOptions = {
-      bot: data.get('bot') === '1',
-      botNickname: data.get('bot_nickname')?.toString() ?? '',
-      // bannedJIDs: (data.get('banned_jids')?.toString() ?? '').split(/\r?\n|\r|\n/g),
-      forbiddenWords: (data.get('forbidden_words')?.toString() ?? '').split(/\r?\n|\r|\n/g)
+      bot: {
+        enabled: data.get('bot') === '1',
+        nickname: data.get('bot_nickname')?.toString() ?? '',
+        // TODO bannedJIDs
+        forbiddenWords: [],
+        quotes: [],
+        commands: []
+      }
     }
+
+    // TODO: handle form errors.
+
+    for (let i = 0; data.has('forbidden_words_' + i.toString()); i++) {
+      const entries = (data.get('forbidden_words_' + i.toString())?.toString() ?? '').split(/\r?\n|\r|\n/g)
+      const regexp = data.get('forbidden_words_regexp_' + i.toString())
+      const applyToModerators = data.get('forbidden_words_applytomoderators_' + i.toString())
+      const reason = data.get('forbidden_words_reason_' + i.toString())?.toString()
+      const fw: ChannelConfigurationOptions['bot']['forbiddenWords'][0] = {
+        entries,
+        applyToModerators: !!applyToModerators,
+        regexp: !!regexp
+      }
+      if (reason) {
+        fw.reason = reason
+      }
+      channelConfigurationOptions.bot.forbiddenWords.push(fw)
+    }
+
+    // TODO: quotes and commands.
 
     const headers: any = clientOptions.peertubeHelpers.getAuthHeader() ?? {}
     headers['content-type'] = 'application/json;charset=UTF-8'
