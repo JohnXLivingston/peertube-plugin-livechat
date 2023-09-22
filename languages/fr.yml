@@ -291,3 +291,71 @@ prosody_components_interfaces_description: "Les interfaces réseau sur lesquelle
   \ espaces seront retirés).\nOn pourra utiliser «*» pour écouter sur toutes les IPv4,\
   \ et «::» pour toutes les IPv6.<br>\nExemples :\n<ul>\n  <li>*,::</li>\n  <li>*</li>\n\
   \  <li>127.0.0.1,::1</li>\n  <li>172.18.0.42</li>\n</ul>\n"
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Fonction\
+  \ expérimentale :</b> cette fonctionnalité est encore expérimentale.\n"
+disable_channel_configuration_label: Désactiver la configuration avancée des chaînes
+  et le bot de modération
+save: Enregistrer
+cancel: Annuler
+successfully_saved: Sauvegarde effectuée
+menu_configuration_label: Salons de discussion
+livechat_configuration_title: Configurez vos salons de discussions
+livechat_configuration_desc: Vous pouvez configurer ici quelques options avancées
+  pour les salons de discussion associés à vos flux en direct.
+livechat_configuration_please_select: Veuillez sélectionner ci-dessous l'une de vos
+  chaîne, pour configurer ses options de tchat.
+livechat_configuration_channel_title: Options de la chaîne
+livechat_configuration_channel_desc: Vous pouvez configurer ici quelques options pour
+  cette chaîne (politiques de modération, ...).
+livechat_configuration_channel_enable_bot_label: Activer le bot de modération
+livechat_configuration_channel_bot_options_title: Options du bot de modération
+livechat_configuration_channel_forbidden_words_label: Mots ou expressions interdites
+livechat_configuration_channel_forbidden_words_desc2: "Un mot ou une expression par\
+  \ ligne. Si vous mettez plusieurs mots sur une même ligne, seuls les messages contenant\
+  \ la séquence entière seront supprimés.\n"
+livechat_configuration_channel_forbidden_words_reason_label: Raison
+livechat_configuration_channel_forbidden_words_reason_desc: Raison à affiche à côté
+  des messages supprimés
+livechat_configuration_channel_forbidden_words_regexp_label: Considérer comme une
+  expression régulière
+livechat_configuration_channel_forbidden_words_regexp_desc: En cochant cette option,
+  vous pouvez utiliser des expressions régulières.
+livechat_configuration_channel_forbidden_words_applytomoderators_label: Également
+  modérer les messages des modérateur⋅rices
+livechat_configuration_channel_quote_label: Messages pré-enregsitrés
+livechat_configuration_channel_quote_desc: "Vous pouvez configurer quelques messages\
+  \ pré-enregistrés.\nCes messages seront envoyés par le bot toutes les X minutes.\n\
+  Vous pouvez par exemple faire en sorte que le bot envoi des informations de sponsoring\
+  \ toutes les 5 minutes.\n"
+livechat_configuration_channel_quote_desc2: "Un message par ligne.\nS'il y a plusieurs\
+  \ messages, le bot en choisira un aléatoirement toutes les X minutes.\n"
+livechat_configuration_channel_quote_delay_label: Envoyer toutes les X minutes
+livechat_configuration_channel_quote_delay_desc: "Le bot enverra les messages toutes\
+  \ les X minutes\n"
+livechat_configuration_channel_command_label: Commande du bot
+livechat_configuration_channel_command_cmd_label: Commande
+livechat_configuration_channel_command_cmd_desc: "La commande, sans le \"!\" au début.\
+  \ Par exemple \"help\", \"sponsor\", ...\n"
+livechat_configuration_channel_command_message_label: Message
+livechat_configuration_channel_command_message_desc: "Le message à envoyer. Peut conteneir\
+  \ \"{{NICK}}\" qui sera remplacé par le pseudo de l'utilisateur⋅rice.\n"
+livechat_configuration_channel_banned_jids_label: Motifs d'utilisateur⋅rices banni⋅es
+livechat_configuration_channel_bot_nickname: Pseudonyme du bot
+configuration_description: "<h3>Configuration avancée de la chaîne</h3>\nLes paramètres\
+  \ suivants concernant les options avancées de la chaîne :\nles utilisateur⋅rices\
+  \ pourrons personnaliser certaines options pour les chaînes,\nactiver le bot de\
+  \ modération, ...\n"
+livechat_configuration_channel_forbidden_words_desc: "Vous pouvez configurer quelques\
+  \ mots qui seront automatiquement modérés par le bot (les messages contenant de\
+  \ tels mots seront instantanément supprimés).\nVous pouvez aussi ajouter une raison\
+  \ optionnelle, qui sera affichée à la place des messages supprimés.\nQuelques exemples\
+  \ de configuration sont fournis sur la page de documentation.\n"
+livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Par défaut,\
+  \ les messages des modérateur⋅rices ne seront pas supprimés quand ils contiennent\
+  \ des mots interdits.\nEn cochant cette option, leur messages seront également supprimé.\n"
+livechat_configuration_channel_command_desc: "Vous pouvez configurer le bot pour répondre\
+  \ à des commandes.\nUne commande est un message qui commence par un \"!\", comme\
+  \ par exemple \"!help\" qui appellera la commande \"help\".\n"
+livechat_configuration_channel_for_more_info: "Pour plus d'information sur comment\
+  \ configurer cette fonctionnalité, merci de vous référer à la documentation en cliquant\
+  \ sur le bouton d'aide.\n"
