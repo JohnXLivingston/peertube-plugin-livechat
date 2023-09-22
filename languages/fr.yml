@@ -116,7 +116,7 @@ videos_list_description: |
   Vous pouvez ajouter des commentaires : tout ce qui se trouve après le caractère # sera retiré, et les lignes vides ignorées. <br />
   N'ajoutez pas de vidéos privées, les UUIDs fuiteraient.
 
-no_anonymous_label: "Masque les tchats pour les utilisateur⋅rices anonymes"
+no_anonymous_label: "Masquer les tchats pour les utilisateur⋅rices anonymes"
 no_anonymous_description: "Si coché, les utilisteur⋅rices non connecté⋅es ne verront\
   \ pas les tchats.\nCette fonctionnalité est encore expérimentale.\nSi vous l'avez\
   \ activée, il est hautement recommandé d'également cocher «Ne pas publier les informations\
