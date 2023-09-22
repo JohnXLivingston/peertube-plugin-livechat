@@ -35,10 +35,23 @@ function loadLocs() {
   return r
 }
 
+function loadMustaches () {
+  // Loading mustache templates, dans filling constants.
+  const r = []
+  r['MUSTACHE_CONFIGURATION_HOME'] = loadMustache('client/common/configuration/templates/home.mustache')
+  r['MUSTACHE_CONFIGURATION_CHANNEL'] = loadMustache('client/common/configuration/templates/channel.mustache')
+  return r
+}
+
+function loadMustache (file) {
+  const filePath = path.resolve(__dirname, file)
+  return JSON.stringify(fs.readFileSync(filePath).toString())
+}
+
 const define = Object.assign({
   PLUGIN_CHAT_PACKAGE_NAME: JSON.stringify(packagejson.name),
   PLUGIN_CHAT_SHORT_NAME: JSON.stringify(packagejson.name.replace(/^peertube-plugin-/, ''))
-}, loadLocs())
+}, loadLocs(), loadMustaches())
 
 const configs = clientFiles.map(f => ({
   entryPoints: [ path.resolve(__dirname, 'client', f + '.ts') ],

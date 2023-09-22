@@ -1,6 +1,10 @@
 declare const PLUGIN_CHAT_PACKAGE_NAME: string
 declare const PLUGIN_CHAT_SHORT_NAME: string
 
+// Constants that begins with "MUSTACHE_" are mustache templates, and are built by build-client.js.
+declare const MUSTACHE_CONFIGURATION_HOME: string
+declare const MUSTACHE_CONFIGURATION_CHANNEL: string
+
 // Constants that begins with "LOC_" are loaded by build-client.js, reading the english locale file.
 // See the online documentation: https://johnxlivingston.github.io/peertube-plugin-livechat/contributing/translate/
 declare const LOC_ONLINE_HELP: string

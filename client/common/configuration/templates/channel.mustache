@@ -1,0 +1,185 @@
+<div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-channel">
+  <h1>
+    {{title}}:
+    <span class="peertube-plugin-livechat-configuration-channel-info">
+      <span>{{channelConfiguration.channel.displayName}}</span>
+      <span>{{channelConfiguration.channel.name}}</span>
+    </span>
+    {{{helpButton}}}
+  </h1>
+  <p>{{description}}</p>
+  <form livechat-configuration-channel-options role="form">
+    <div class="row mt-3">
+      <div class="col-12 col-lg-4 col-xl-3">
+        <h2>{{botOptions}}</h2>
+      </div>
+      <div class="col-12 col-lg-8 col-xl-9">
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
+              name="bot"
+              id="peertube-livechat-bot"
+              value="1"
+              {{#channelConfiguration.configuration.bot.enabled}}
+                checked="checked"
+              {{/channelConfiguration.configuration.bot.enabled}}
+            />
+            {{enableBot}}
+          </label>
+        </div>
+        <div class="form-group" livechat-configuration-channel-options-bot-enabled>
+          <label for="peertube-livechat-bot-nickname">{{botNickname}}</label>
+          <input
+            type="text"
+            name="bot_nickname"
+            class="form-control"
+            id="peertube-livechat-bot-nickname"
+            value="{{channelConfiguration.configuration.bot.nickname}}"
+          />
+        </div>
+      </div>
+    </div>
+
+    {{#forbiddenWordsArray}}{{! iterating on forbiddenWordsArray to display N fields }}
+      <div class="row mt-5" livechat-configuration-channel-options-bot-enabled>
+        <div class="col-12 col-lg-4 col-xl-3">
+          <h2>{{forbiddenWords}} #{{displayNumber}}</h2>
+          {{#displayHelp}}
+            <p>{{forbiddenWordsDesc}} {{moreInfo}}</p>
+            {{{HelpButtonForbiddenWords}}}
+          {{/displayHelp}}
+        </div>
+        <div class="col-12 col-lg-8 col-xl-9">
+          <div class="form-group">
+            <label for="peertube-livechat-forbidden-words-{{fieldNumber}}">{{forbiddenWords}}</label>
+            {{! warning: don't add extra line break in textarea! }}
+            <textarea
+              name="forbidden_words_{{fieldNumber}}"
+              id="peertube-livechat-forbidden-words-{{fieldNumber}}"
+              class="form-control"
+            >{{entries}}</textarea>
+            <p class="form-group-description">{{forbiddenWordsDesc2}}</p>
+          </div>
+          <div class="form-group">
+            <label>
+              <input
+                type="checkbox"
+                name="forbidden_words_regexp_{{fieldNumber}}"
+                value="1"
+                {{#regexp}}
+                  checked="checked"
+                {{/regexp}}
+              />
+              {{forbiddenWordsRegexp}}
+            </label>
+            <p class="form-group-description">{{forbiddenWordsRegexpDesc}}</p>
+          </div>
+          <div class="form-group">
+            <label>
+              <input
+                type="checkbox"
+                name="forbidden_words_applytomoderators_{{fieldNumber}}"
+                value="1"
+                {{#applyToModerators}}
+                  checked="checked"
+                {{/applyToModerators}}
+              />
+              {{forbiddenWordsApplyToModerators}}
+            </label>
+            <p class="form-group-description">{{forbiddenWordsApplyToModeratorsDesc}}</p>
+          </div>
+          <div class="form-group">
+            <label for="peertube-livechat-forbidden-words-reason-{{fieldNumber}}">{{forbiddenWordsReason}}</label>
+            <input
+              type="text"
+              name="forbidden_words_reason_{{fieldNumber}}"
+              class="form-control"
+              id="peertube-livechat-forbidden-words-reason-{{fieldNumber}}"
+              value="{{reason}}"
+            />
+            <p class="form-group-description">{{forbiddenWordsReasonDesc}}</p>
+          </div>
+        </div>
+      </div>
+    {{/forbiddenWordsArray}}
+
+    {{#quotesArray}}{{! iterating on quotesArray to display N fields }}
+      <div class="row mt-5" livechat-configuration-channel-options-bot-enabled>
+        <div class="col-12 col-lg-4 col-xl-3">
+          <h2>{{quoteLabel}} #{{displayNumber}}</h2>
+          {{#displayHelp}}
+            <p>{{quoteDesc}} {{moreInfo}}</p>
+            {{{helpButtonQuotes}}}
+          {{/displayHelp}}
+        </div>
+        <div class="col-12 col-lg-8 col-xl-9">
+          <div class="form-group">
+            <label for="peertube-livechat-quote-{{fieldNumber}}">{{quoteLabel}}</label>
+            {{! warning: don't add extra line break in textarea! }}
+            <textarea
+              name="quote_{{fieldNumber}}"
+              id="peertube-livechat-quote-{{fieldNumber}}"
+              class="form-control"
+            >{{TODO}}</textarea>
+            <p class="form-group-description">{{quoteDesc2}}</p>
+          </div>
+          <div class="form-group">
+            <label for="peertube-livechat-quote-delay-{{fieldNumber}}">{{quoteDelayLabel}}</label>
+            <input
+              type="number"
+              min="1"
+              max="6000"
+              step="1"
+              name="quote_delay_{{fieldNumber}}"
+              class="form-control"
+              id="peertube-livechat-quote-delay-{{fieldNumber}}"
+              value="5"
+            />
+            <p class="form-group-description">{{quoteDelayDesc}}</p>
+          </div>
+        </div>
+      </div>
+    {{/quotesArray}}
+
+    {{#cmdsArray}}{{! iterating on cmdsArray to display N fields }}
+      <div class="row mt-5" livechat-configuration-channel-options-bot-enabled>
+        <div class="col-12 col-lg-4 col-xl-3">
+          <h2>{{commandLabel}} #{{displayNumber}}</h2>
+          {{#displayHelp}}
+            <p>{{commandDesc}} {{moreInfo}}</p>
+            {{{helpButtonCommands}}}
+          {{/displayHelp}}
+        </div>
+        <div class="col-12 col-lg-8 col-xl-9">
+          <div class="form-group">
+            <label for="peertube-livechat-command-{{fieldNumber}}">{{commandCmdLabel}}</label>
+            <input
+              type="text"
+              name="command_{{fieldNumber}}"
+              class="form-control"
+              id="peertube-livechat-command-{{fieldNumber}}"
+              value=""
+            />
+            <p class="form-group-description">{{commandCmdDesc}}</p>
+          </div>
+          <div class="form-group">
+            <label for="peertube-livechat-command-message-{{fieldNumber}}">{{commandMessageLabel}}</label>
+            <input
+              type="text"
+              name="command_message_{{fieldNumber}}"
+              class="form-control"
+              id="peertube-livechat-command-message-{{fieldNumber}}"
+              value=""
+            />
+            <p class="form-group-description">{{commandMessageDesc}}</p>
+          </div>
+        </div>
+      </div>
+    {{/cmdsArray}}
+    <div class="form-group">
+      <input type="submit" value="{{save}}" />
+      <input type="reset" value="{{cancel}}" />
+    </div>
+  </form>
+</div>

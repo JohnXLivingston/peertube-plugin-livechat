@@ -40,33 +40,7 @@ async function renderConfigurationHome (registerClientOptions: RegisterClientOpt
       channels: channels.data
     }
 
-    return Mustache.render(`
-      <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-home">
-        <h1>{{title}}</h1>
-        <p>{{description}}</p>
-        <p>{{please_select}}</p>
-        <ul class="peertube-plugin-livechat-configuration-home-channels">
-        {{#channels}}
-          <li>
-            <a href="{{livechatConfigurationUri}}">
-              {{#avatar}}
-                <img class="avatar channel" src="{{path}}">
-              {{/avatar}}
-              {{^avatar}}
-                <div class="avatar channel initial gray"></div>
-              {{/avatar}}
-            </a>
-            <div class="peertube-plugin-livechat-configuration-home-info">
-              <a href="{{livechatConfigurationUri}}">
-                <div>{{displayName}}</div>
-                <div>{{name}}</div>
-              </a>
-            </div>
-          </li>
-        {{/channels}}
-        </ul>
-      </div>
-    `, view) as string
+    return Mustache.render(MUSTACHE_CONFIGURATION_HOME, view) as string
   } catch (err: any) {
     peertubeHelpers.notifier.error(err.toString())
     return ''
