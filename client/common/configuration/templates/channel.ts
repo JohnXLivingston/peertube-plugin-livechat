@@ -38,18 +38,26 @@ async function fillViewHelpButtons (
   registerClientOptions: RegisterClientOptions,
   view: any
 ): Promise<void> {
-  const helpUrl = await localizedHelpUrl(registerClientOptions, {
-    page: 'documentation/user/streamers/' // FIXME: this is not the good link
-  })
-  const helpIcon = helpButtonSVG()
-  view.helpButton = `<a
-      href="${helpUrl}"
-      target=_blank
-      class="orange-button peertube-button-link"
-    >${helpIcon}</a>`
-  view.helpButtonForbiddenWords = view.helpButton // FIXME: this is not the good link
-  view.helpButtonQuotes = view.helpButton // FIXME: this is not the good link
-  view.helpButtonCommands = view.helpButton // FIXME: this is not the good link
+  const title = await registerClientOptions.peertubeHelpers.translate(LOC_ONLINE_HELP)
+
+  const button = async (page: string): Promise<string> => {
+    const helpUrl = await localizedHelpUrl(registerClientOptions, {
+      page
+    })
+    const helpIcon = helpButtonSVG()
+    return `<a
+        href="${helpUrl}"
+        target=_blank
+        title="${title}"
+        class="orange-button peertube-button-link"
+      >${helpIcon}</a>`
+  }
+
+  view.helpButton = await button('documentation/user/streamers/channel')
+  view.helpButtonBot = await button('documentation/user/streamers/bot')
+  view.helpButtonForbiddenWords = await button('documentation/user/streamers/bot/forbidden_words')
+  view.helpButtonQuotes = await button('documentation/user/streamers/bot/quotes')
+  view.helpButtonCommands = await button('documentation/user/streamers/bot/commands')
 }
 
 async function fillLabels (
