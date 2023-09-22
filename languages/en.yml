@@ -122,6 +122,13 @@ no_anonymous_description: |
   If you enabled it, it is highly recommended to also check "Don't publish chat information".
   Otherwise, some third party tools could try to open the chat, and have unpredictable behaviours.
 
+auto_ban_anonymous_ip_label: "Ban anonymous user's IP when user is banned from a chatroom"
+auto_ban_anonymous_ip_description: |
+  By enabling this option, each time an anonymous user is banned from a chatroom, it's IP will also be banned from the chat server.
+  Warning: if your instance is open to registration, any user could create a trapped-room, invite users to join, and automatically ban all anonymous user's IPs.
+  The banned IP list is not stored, it will be cleared on server restart, or when you change some plugin's settings.
+  The banned IP are logged in the Prosody server log files, so server's administrators can eventually use some external tools (like fail2ban) to ban IPs more widely.
+
 theming_advanced_description: "<h3>Theming</h3>"
 
 converse_theme_label: "ConverseJS theme"

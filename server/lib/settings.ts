@@ -83,7 +83,7 @@ Please read
     private: true
   })
 
-  // ********** Moderation and advances customization
+  // ********** Advanced channel customization
   registerSetting({
     type: 'html',
     private: true,
@@ -196,6 +196,14 @@ Please read
     default: false,
     descriptionHTML: loc('no_anonymous_description'),
     private: false
+  })
+  registerSetting({
+    name: 'auto-ban-anonymous-ip',
+    label: loc('auto_ban_anonymous_ip_label'),
+    type: 'input-checkbox',
+    default: false,
+    descriptionHTML: loc('auto_ban_anonymous_ip_description'),
+    private: true
   })
 
   // ********** Theming

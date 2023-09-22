@@ -240,6 +240,8 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
           return options.formValues['converse-theme'] !== 'peertube'
         case 'chat-per-live-video-warning':
           return !(options.formValues['chat-all-lives'] === true && options.formValues['chat-per-live-video'] === true)
+        case 'auto-ban-anonymous-ip':
+          return options.formValues['chat-no-anonymous'] !== false
       }
 
       return false

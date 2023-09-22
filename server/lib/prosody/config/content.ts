@@ -207,10 +207,13 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_history_length', 20)
   }
 
-  useAnonymous (): void {
+  useAnonymous (autoBanIP: boolean): void {
     this.anon = new ProsodyConfigVirtualHost('anon.' + this.prosodyDomain)
     this.anon.set('authentication', 'anonymous')
     this.anon.set('modules_enabled', ['ping'])
+    if (autoBanIP) {
+      this.anon.add('modules_enabled', 'muc_ban_ip')
+    }
   }
 
   useHttpAuthentication (url: string): void {

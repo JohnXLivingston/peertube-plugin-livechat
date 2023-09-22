@@ -14,6 +14,10 @@
     * make it send pre-recorded messages every X minutes,
     * respond message to custom commands.
     * many other features will be available in future releases!
+* New settings: "Ban anonymous user's IP when user is banned from a chatroom":
+  * if enabled, every time a streamer bans an anonymous user, it will ban its IP on the chat server,
+  * banned IPs are logged on disk, so server's admin can use them to feed fail2ban (for example),
+  * option disabled by default, because could be used to create trapped-rooms on public servers
 
 ### Minor changes and fixes
 

@@ -152,6 +152,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'prosody-components-interfaces',
     'prosody-components-list',
     'chat-no-anonymous',
+    'auto-ban-anonymous-ip',
     'federation-dont-publish-remotely',
     'disable-channel-configuration'
   ])
@@ -163,6 +164,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   }
   const logByDefault = (settings['prosody-muc-log-by-default'] as boolean) ?? true
   const disableAnon = (settings['chat-no-anonymous'] as boolean) || false
+  const autoBanIP = (settings['auto-ban-anonymous-ip'] as boolean) || false
   const logExpirationSetting = (settings['prosody-muc-expiration'] as string) ?? DEFAULTLOGEXPIRATION
   const enableC2S = (settings['prosody-c2s'] as boolean) || false
   // enableRoomS2S: room can be joined from remote XMPP servers (Peertube or not)
@@ -224,7 +226,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
 
   const config = new ProsodyConfigContent(paths, prosodyDomain)
   if (!disableAnon) {
-    config.useAnonymous()
+    config.useAnonymous(autoBanIP)
   }
   config.useHttpAuthentication(authApiUrl)
   const useWS = !!options.registerWebSocketRoute // this comes with Peertube >=5.0.0, and is a prerequisite to websocket

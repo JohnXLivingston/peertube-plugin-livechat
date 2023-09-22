@@ -82,6 +82,10 @@ Note: for now this feature simply hide the chat.
 In a future release, the chat will be replaced by a message saying «please log in to [...]».
 See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information.
 
+### {{% livechat_label auto_ban_anonymous_ip_label %}}
+
+{{% livechat_label auto_ban_anonymous_ip_description %}}
+
 ## Theming
 
 ### {{% livechat_label converse_theme_label %}}
