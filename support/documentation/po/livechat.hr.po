@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-09-22 20:15+0200\n"
+"POT-Creation-Date: 2023-09-22 20:41+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -2298,6 +2298,11 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "Once there, you can enable the bot, and setup several options:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+msgid "The bot will reload instantly when you save the page."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description

@@ -19,3 +19,5 @@ To access this page, check the [channel configuration documentation](/peertube-p
 Once there, you can enable the bot, and setup several options:
 
 {{% children style="li" depth="3" description="true" %}}
+
+The bot will reload instantly when you save the page.
