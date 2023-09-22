@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-08-07 16:29+0200\n"
+"POT-Creation-Date: 2023-09-22 16:46+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Polish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/pl/>\n"
@@ -1471,6 +1471,22 @@ msgstr ""
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
+msgid "Channel advanced configuration"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, ..."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "If you encounter any issue with this feature, you can disable it."
+msgstr ""
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, no-wrap
 msgid "Chat behaviour"
 msgstr ""
 
@@ -1564,7 +1580,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "This settings enable XMPP external components to connect to the server.  For now, this option **only allows connections from localhost components**."
+msgid "This settings enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
 msgstr ""
 
 #. type: Plain text

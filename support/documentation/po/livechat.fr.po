@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-08-07 16:29+0200\n"
+"POT-Creation-Date: 2023-09-22 16:46+0200\n"
 "PO-Revision-Date: 2023-08-07 15:09+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -148,12 +147,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
-msgstr ""
-"Veuillez noter que ce plugin a besoin d'une AppImage du serveur XMPP "
-"Prosody. Cette AppImage est fournie par le project [Prosody "
-"AppImage](https://github.com/JohnXLivingston/prosody-appimage). Le script "
-"`build-prosody.sh` télécharge les binaires attachés à ce dépôt distant, et "
-"vérifie que les sommes de contrôles sha256 sont correctes."
+msgstr "Veuillez noter que ce plugin a besoin d'une AppImage du serveur XMPP Prosody. Cette AppImage est fournie par le project [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage). Le script `build-prosody.sh` télécharge les binaires attachés à ce dépôt distant, et vérifie que les sommes de contrôles sha256 sont correctes."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -1548,6 +1542,22 @@ msgstr "Les paramètres suivants concernent la fédération avec d'autres instan
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
+msgid "Channel advanced configuration"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, ..."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "If you encounter any issue with this feature, you can disable it."
+msgstr ""
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, no-wrap
 msgid "Chat behaviour"
 msgstr "Comportement en chat"
 
@@ -1641,7 +1651,9 @@ msgstr "Par exemple, cette option peut permettre à une instance Matterbridge (u
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "This settings enable XMPP external components to connect to the server.  For now, this option **only allows connections from localhost components**."
+#, fuzzy
+#| msgid "This settings enable XMPP external components to connect to the server.  For now, this option **only allows connections from localhost components**."
+msgid "This settings enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
 msgstr "Ce paramètre permet aux composants externes XMPP de se connecter au serveur. Pour l'instant, cette option **n'autorise que les connexions des composants sur localhost**."
 
 #. type: Plain text
@@ -2409,9 +2421,7 @@ msgstr "Pour envoyer des messages, saisissez les simplement dans le champ «mess
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you want to add line breaks in your messages, you can use the \"shift+enter\" key combination."
-msgstr ""
-"Si vous voulez ajouter des retours à la ligne à vos messages, vous pouvez "
-"utiliser la combinaison de touche «shift + entrée»."
+msgstr "Si vous voulez ajouter des retours à la ligne à vos messages, vous pouvez utiliser la combinaison de touche «shift + entrée»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
