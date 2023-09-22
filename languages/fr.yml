@@ -284,3 +284,10 @@ prosody_components_list_description: |
     <li>N'utilisez que des caractères alphanumériques dans la passphrase secrète (utilisez au moins 15 caractères).</li>
   </ul>
 online_help: Aide en ligne
+prosody_components_interfaces_label: Interfaces réseau pour les composants Prosody
+  externes
+prosody_components_interfaces_description: "Les interfaces réseau sur lesquelles écouter\
+  \ pour les composants externes.<br>\nUne liste d'IP séparées par des virgules (les\
+  \ espaces seront retirés).\nOn pourra utiliser «*» pour écouter sur toutes les IPv4,\
+  \ et «::» pour toutes les IPv6.<br>\nExemples :\n<ul>\n  <li>*,::</li>\n  <li>*</li>\n\
+  \  <li>127.0.0.1,::1</li>\n  <li>172.18.0.42</li>\n</ul>\n"
