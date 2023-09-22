@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-22 16:46+0200\n"
+"POT-Creation-Date: 2023-09-22 20:15+0200\n"
 "PO-Revision-Date: 2023-09-22 18:12+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1530,15 +1528,12 @@ msgstr "Erweiterte Kanaleinstellungen"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, ..."
-msgstr ""
-"Die folgenden Einstellungen betreffen die erweiterten Kanaloptionen: Nutzer "
-"können ihre Kanäle individuell anpassen, den Moderationsbot aktivieren, ..."
+msgstr "Die folgenden Einstellungen betreffen die erweiterten Kanaloptionen: Nutzer können ihre Kanäle individuell anpassen, den Moderationsbot aktivieren, ..."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "If you encounter any issue with this feature, you can disable it."
-msgstr ""
-"Wenn Sie Probleme mit dieser Funktion haben, können Sie sie deaktivieren."
+msgstr "Wenn Sie Probleme mit dieser Funktion haben, können Sie sie deaktivieren."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1637,12 +1632,7 @@ msgstr "Zum Beispiel kann diese Option einer Instanz von Matterbridge (sobald si
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This settings enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
-msgstr ""
-"Diese Einstellung ermöglicht es externen XMPP-Komponenten, sich mit dem "
-"Server zu verbinden. Standardmäßig erlaubt diese Option **nur Verbindungen "
-"von localhost-Komponenten**. Sie müssen den Wert \"{{% livechat_label "
-"prosody_components_interfaces_label %}}\" ändern, um an anderen "
-"Netzwerkschnittstellen zu lauschen."
+msgstr "Diese Einstellung ermöglicht es externen XMPP-Komponenten, sich mit dem Server zu verbinden. Standardmäßig erlaubt diese Option **nur Verbindungen von localhost-Komponenten**. Sie müssen den Wert \"{{% livechat_label prosody_components_interfaces_label %}}\" ändern, um an anderen Netzwerkschnittstellen zu lauschen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1955,23 +1945,543 @@ msgid "User documentation"
 msgstr "Benutzer Dokumentation"
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
-msgid "Plugin peertube-plugin-livechat moderation"
-msgstr "Plugin peertube-plugin-livechat Moderation"
+msgid "Documentation to stream the chat content using OBS."
+msgstr "Dokumentation zum Streamen des Chat-Inhalts mit OBS."
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "OBS"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "[OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.  In the current page, you will find some advices to handle your live chats using OBS."
+msgstr "[OBS] (https://obsproject.com) ist eine beliebte kostenlose and quellcodeoffene Streaming Software, mit erweiterten Funktionen für Ihre Live-Streams.  Auf dieser Seite finden Sie einige Ratschläge, wie Sie Ihre Live-Chats mit OBS verwalten können."
 
 #. type: Title ##
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "OBS Overlay"
+msgstr "OBS Overlay"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "You can easily include the chat in your stream."
+msgstr "Sie können den Chat ganz einfach in Ihren Stream integrieren."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#: support/documentation/content/en/intro/_index.md
+msgid "![Embeding the chat in a live stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
+msgstr "![Einbetten des Chats in einen Live-Stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "You can use the \"{{% livechat_label share_chat_link %}}\" feature to generate an URL to your chat.  This button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
+msgstr "Sie können die Funktion \"{{% livechat_label share_chat_link %}}\" verwenden, um eine URL zu Ihrem Chat zu generieren.  Diese Schaltfläche sollte sich in der Nähe des Chats befinden, wenn Sie der Videoeigentümer sind (es sei denn, sie wurde von Ihren Serveradministratoren deaktiviert)."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "Check the \"{{% livechat_label read_only %}}\" checkbox in the modal."
+msgstr "Aktivieren Sie das Kontrollkästchen \"{{% livechat_label read_only %}}\" im Fenster."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
+msgstr "![Link Teilen Popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "Then use this link as a \"web browser source\" in OBS."
+msgstr "Verwenden Sie dann diesen Link als \"Webbrowser-Quelle\" in OBS."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#: support/documentation/content/en/intro/_index.md
+msgid "![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
+msgstr "![Den Chat in OBS einbetten](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "You can use the \"{{% livechat_label transparent_background %}}\" option to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
+msgstr "Sie können die \"{{% livechat_label transparent_background %}}\" Option verwenden, um einen transparenten Hintergrund in OBS zu erhalten.  Wenn Sie die Hintergrundtransparenz anpassen möchten, können Sie dieses CSS in den Einstellungen Ihrer OBS-Browserquelle hinzufügen:"
+
+#. type: Fenced code block (css)
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid ""
+":root {\n"
+"  --livechat-transparent: rgba(255 255 255 / 90%) !important;\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values."
+msgstr "Im vorherigen CSS-Schnipsel können Sie natürlich die Farbe oder die Transparenz ändern, indem Sie die Farbwerte anpassen."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
+msgstr "Hinweis: Sie können vollständig die Chat-Farben anpassen. Dies ist noch nicht dokumentiert, aber Sie können dies versuchen: Aktivieren Sie im Fenster die Option \"Aktuelle Themenfarben verwenden\", und versuchen Sie dann, die Farbwerte in der URL manuell zu ändern.  Sie müssen gültige CSS-Farbwerte verwenden, und diese müssen in der URL korrekt kodiert sein."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "Mixing multiple chats in your live stream"
+msgstr "Mischen mehrerer Chats in Ihrem Live-Stream"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.  The compatibility with this plugin was added in recent versions."
+msgstr "Sie können die [social_stream Browsererweiterung](https://github.com/steveseguin/social_stream#readme) verwenden, um mehrere Chat-Quellen (von Peertube, Twitch, Youtube, Facebook, ...) zu mischen und deren Inhalte in Ihren Live-Stream einzubinden. Die Kompatibilität mit diesem Plugin wurde in den letzten Versionen hinzugefügt."
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#, fuzzy, no-wrap
+#| msgid "How to setup the chat for your live stream"
+msgid "Some basics about how to setup and use the chat for your live stream"
+msgstr "So richten Sie den Chat für Ihren Live-Stream ein"
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#, no-wrap
+msgid "Some basics"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#, no-wrap
+msgid "Enabling the chat for you live streams"
+msgstr "Aktivieren Sie den Chat für Ihre Live-Streams"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "Instance administrators can choose to disable or enable chat in specific cases.  Information in this section are only true in the default case."
+msgstr "Instanzadministratoren können den Chat in bestimmten Fällen deaktivieren oder aktivieren.  Die Informationen in diesem Abschnitt gelten nur für den Standardfall."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "When you create or modify a Peertube live, there is a \"plugin settings\" tab:"
+msgstr "Wenn Sie eine Peertube Live-Stream erstellen oder ändern, gibt es eine Registerkarte \"Plugin-Einstellungen\":"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
+msgstr "![Neuer Live-Stream](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "In the \"plugin settings\" tab, there is a \"{{% livechat_label use_chat %}}\" checkbox.  Just check or uncheck it to enable or disable the chat associated to your video."
+msgstr "Auf der Registerkarte \"Plugin-Einstellungen\" gibt es ein Kontrollkästchen \"{{% livechat_label use_chat %}}\".  Aktivieren oder deaktivieren Sie es einfach, um den mit Ihrem Video verbundenen Chat zu aktivieren oder zu deaktivieren."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "![Activate the chat](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
+msgstr "![Den Chat aktivieren](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "There can be other settings in this tab, depending on plugins installed on your Peertube instance."
+msgstr "Je nachdem, welche Plugins auf Ihrer Peertube-Instanz installiert sind, können sich auf dieser Registerkarte weitere Einstellungen befinden."
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#, no-wrap
+msgid "Per channel chat"
+msgstr "Chat pro Kanal"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "On the instance level, Peertube's administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.  Please contact your instance's administrators for more information on how they configure the livechat plugin."
+msgstr "Auf der Instanz-Ebene können die Peertube-Administratoren wählen, ob die Chat-Räume pro Video einzigartig sind, oder ob es einen einzigartigen Chat-Raum pro Kanal gibt.  Bitte kontaktieren Sie die Administratoren Ihrer Instanz für weitere Informationen zur Konfiguration des Livechat-Plugins."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#, no-wrap
+msgid "Share the chat"
+msgstr "Teilen Sie den Chat"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "On top of the chat, there is a \"{{% livechat_label share_chat_link %}}\" button."
+msgstr "Oben auf dem Chat gibt es eine Schaltfläche \"{{% livechat_label share_chat_link %}}\"."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "This button opens a popup, where you can obtain an url to join the chat.  This url can be shared."
+msgstr "Diese Schaltfläche öffnet ein Popup-Fenster, in dem Sie eine URL erhalten, mit der Sie dem Chat beitreten können.  Diese Url kann weitergegeben werden."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "You can customize some options:"
+msgstr "Sie können einige Optionen individuell anpassen:"
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "{{% livechat_label read_only %}}: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs))."
+msgstr "{{% livechat_label read_only %}}: Sie können den Chat nur lesen, nicht schreiben. Dies ist nützlich, um den Inhalt des Chats in Ihren Live-Stream einzubinden (siehe die [OBS Dokumentation](/peertube-plugin-livechat/documentation/user/obs))."
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "{{% livechat_label use_current_theme_color %}}: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set."
+msgstr "{{% livechat_label use_current_theme_color %}}: wenn diese Option aktiviert ist, werden die Farben des aktuellen Themas zur URL hinzugefügt, so dass jeder Benutzer, der den Link öffnet, dieselbe Farbe erhält."
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "{{% livechat_label generate_iframe %}}: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat."
+msgstr "{{% livechat_label generate_iframe %}}: Anstelle einer URL erhalten Sie ein HTML-Snippet, das Sie in Ihre Website einfügen können, um den Chat einzubetten."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "The \"{{% livechat_label share_chat_link %}}\" popup can also contain a \"{{% livechat_label connect_using_xmpp %}}\" tab.  This will only be available if your instance's administators have enabled an correctly configured this option.  Using this option, you can provide a link to join the chat using any [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  Using such softwares can for example facilitate moderation actions."
+msgstr "Das \"{{% livechat_label share_chat_link %}}\" Popup-Fenster kann auch einen \"{{% livechat_label connect_using_xmpp %}}\" Reiter enthalten.  Dieser ist nur verfügbar, wenn die Administratoren Ihrer Instanz diese Option aktiviert und korrekt konfiguriert haben.  Mit dieser Option können Sie einen Link bereitstellen, um dem Chat mit einer beliebigen [XMPP-Client-Software](https://en.wikipedia.org/wiki/XMPP#Clients) beizutreten.  Die Verwendung solcher Software kann zum Beispiel Moderationsmaßnahmen erleichtern."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Moderation"
 msgstr "Moderation"
 
 #. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+msgstr "Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#, no-wrap
+msgid "Include the chat in your video stream"
+msgstr "Einbindung des Chats in den Videostream"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "Please refer to the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
+msgstr "Bitte lesen Sie die [OBS-Dokumentation](/peertube-plugin-livechat/documentation/user/obs)."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Chat persistence"
+msgstr "Chat Dauerhaftigkeit"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "By default, the chat is persistent.  This means that the room content will be kept for a while.  User joining will see messages posted before their arrival."
+msgstr "Standardmäßig ist der Chat dauerhaft.  Das bedeutet, dass der Inhalt des Raums eine Zeit lang erhalten bleibt.  Benutzer, die dem Raum beitreten, sehen Nachrichten, die vor ihrer Ankunft gesendet wurden."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
+msgstr "Sie können das Dauerhaftigkeitsverhalten ändern.  [Öffnen Sie den Chat im Vollbildmodus (/peertube-plugin-livechat/documentation/user/viewers), öffnen Sie dann das obere Menü und klicken Sie auf \"Konfigurieren\"."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr "![Hauptmenü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "There are several options that can be changed."
+msgstr "Es gibt mehrere Optionen, die geändert werden können."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr "![Chatraum konfigurieren](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message."
+msgstr "Sie können z. B. die Standard- und Höchstzahl der zurückzusendenden Nachrichten auf 0 setzen, so dass neue Empfänger keine zuvor gesendeten Nachrichten sehen."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "You can also uncheck \"enable archiving\": if unchecked, messages will be pruned if the server restarts."
+msgstr "Sie können auch die Option \"Archivierung aktivieren\" deaktivieren: Wenn diese Option nicht aktiviert ist, werden die Nachrichten beim Neustart des Servers gelöscht."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "By unchecking \"Persistent\", the room will be cleared if there is no more participant."
+msgstr "Wenn Sie das Häkchen bei \"Dauerhaft\" entfernen, wird der Raum gelöscht, wenn es keinen Teilnehmer mehr gibt."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#, no-wrap
+msgid "Delete the chat content"
+msgstr "Löschen des Chat Inhalts"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
+msgstr "Wenn Sie den Inhalt des Chats löschen möchten, [öffnen Sie den Chat im Vollbildmodus](/peertube-plugin-livechat/documentation/user/viewers), öffnen Sie dann das obere Menü und klicken Sie auf \"Löschen\".  Es öffnet sich ein Popup-Fenster, das eine Bestätigung verlangt.  Um Fehler zu vermeiden, werden Sie in dem Popup-Fenster nach der \"XMPP-Adresse\" des Chatrooms gefragt.  Diese Adresse können Sie über das Menü \"Details\" im oberen Menü erhalten."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the \"{{% livechat_label use_chat %}}\" feature activated."
+msgstr "Der Chat wird automatisch neu erstellt, wenn jemand versucht, ihm beizutreten, solange das Video existiert und die Funktion \"{{% livechat_label use_chat %}}\" aktiviert ist."
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+#, no-wrap
+msgid "The bot can respond to several commands."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+#, no-wrap
+msgid "Commands"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+#, fuzzy
+#| msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgid "![Commands configuration](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px)"
+msgstr "![Chatraum konfigurieren](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+msgid "You can setup several commands."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, no-wrap
+msgid "The bot can automatically moderate messages containing forbidden words."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, no-wrap
+msgid "Forbidden words"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, fuzzy
+#| msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgid "![Forbidden words configuration](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
+msgstr "![Chatraum konfigurieren](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, fuzzy
+#| msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgid "![Deleted message](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
+msgstr "![Hauptmenü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "You can for example fill this field with a swear words list."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "To get some examples, please check these [forbidden words suggestions](https://framagit.org/Livingston/peertube-plugin-livechat/-/tree/main/support/forbidden_words)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "If you have some usefull words lists, you are welcome to contribute to this suggestion page.  There are in the `support/forbidden_words` folder of the livechat source code.  See the [contribution guide](/peertube-plugin-livechat/contributing/) for more information."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "These words are case insensitive."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, fuzzy
+#| msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
+msgid "This features is still experimental.  There might be some issues with non-latin alphabets.  You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to report your problems."
+msgstr "Wenn Sie glauben, dass eine Sprache fehlt, prüfen Sie bitte zuerst, ob sie von Peertube unterstützt wird.  Wenn ja, können Sie [ein Problem erstellen] (https://github.com/JohnXLivingston/peertube-plugin-livechat/issues), um danach zu fragen."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#, no-wrap
+msgid "Chat bot setup"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#, fuzzy, no-wrap
+#| msgid "Chat behaviour"
+msgid "Chat bot"
+msgstr "Chatverhalten"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "This feature can be disabled by the instance's adminitrators."
+msgid "This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance's admins."
+msgstr "Diese Funktion kann von den Administratoren der Instanz deaktiviert werden."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+msgid "You can enable a chat bot on your chatrooms.  The bot configuration is made channel per channel, and will apply to all related videos' chatrooms."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr "![Teilen Schaltfläche](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#, fuzzy
+#| msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
+msgstr "Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+msgid "Once there, you can enable the bot, and setup several options:"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+#, no-wrap
+msgid "The bot can send periodically some messages."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+#, no-wrap
+msgid "Pre-recorded messages"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+msgid "If there is no user in the chatroom, the bot won't send any message."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+#, fuzzy
+#| msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgstr "![Hauptmenü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy, no-wrap
+#| msgid "Channel advanced configuration"
+msgid "Peertube channel chatrooms configuration"
+msgstr "Erweiterte Kanaleinstellungen"
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy, no-wrap
+#| msgid "Channel advanced configuration"
+msgid "Channel configuration"
+msgstr "Erweiterte Kanaleinstellungen"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "On top of the chat, there is a \"{{% livechat_label share_chat_link %}}\" button."
+msgid "In the Peertube left menu, there is a \"{{% livechat_label menu_configuration_label %}}\" entry:"
+msgstr "Oben auf dem Chat gibt es eine Schaltfläche \"{{% livechat_label share_chat_link %}}\"."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgid "![Chatrooms menu](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px)"
+msgstr "![Hauptmenü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "This \"{{% livechat_label menu_configuration_label %}}\" link takes you to a list of your channels.  By clicking on a channel, you will then be able to setup some options for your channels:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "Here you can configure:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
+msgstr "Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "More feature to come..."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/_index.md
+#, no-wrap
+msgid "How to setup the chat for your live stream"
+msgstr "So richten Sie den Chat für Ihren Live-Stream ein"
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/_index.md
+#, no-wrap
+msgid "For streamers"
+msgstr "Für Streamer"
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, fuzzy, no-wrap
+#| msgid "Plugin peertube-plugin-livechat moderation"
+msgid "Plugin peertube-plugin-livechat advances moderation features"
+msgstr "Plugin peertube-plugin-livechat Moderation"
+
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "This section is still incomplete."
 msgstr "Dieser Abschnitt ist noch unvollständig."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, no-wrap
+msgid "The chat bot"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
+msgstr "Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -1983,12 +2493,6 @@ msgstr "Zugang zu den Moderationswerkzeugen"
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
 msgstr "Sie können auf die Raumeinstellungen und Moderationswerkzeuge zugreifen, indem Sie den Chat in einem neuen Fenster öffnen, und das Dropdown-Menü oben rechts verwenden."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
-msgstr "![Hauptmenü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2042,276 +2546,6 @@ msgstr "Als Moderator oder Administrator einer Peertube-Instanz müssen Sie wahr
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
 msgstr "Sie können alle bestehenden Chaträume auflisten: in den Einstellungen des Plugins gibt es eine Schaltfläche «Räume auflisten»."
-
-#. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid "Documentation to stream the chat content using OBS."
-msgstr "Dokumentation zum Streamen des Chat-Inhalts mit OBS."
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid "OBS"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "[OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.  In the current page, you will find some advices to handle your live chats using OBS."
-msgstr "[OBS] (https://obsproject.com) ist eine beliebte kostenlose and quellcodeoffene Streaming Software, mit erweiterten Funktionen für Ihre Live-Streams.  Auf dieser Seite finden Sie einige Ratschläge, wie Sie Ihre Live-Chats mit OBS verwalten können."
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid "OBS Overlay"
-msgstr "OBS Overlay"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "You can easily include the chat in your stream."
-msgstr "Sie können den Chat ganz einfach in Ihren Stream integrieren."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-#: support/documentation/content/en/intro/_index.md
-msgid "![Embeding the chat in a live stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
-msgstr "![Einbetten des Chats in einen Live-Stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "You can use the \"{{% livechat_label share_chat_link %}}\" feature to generate an URL to your chat.  This button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
-msgstr "Sie können die Funktion \"{{% livechat_label share_chat_link %}}\" verwenden, um eine URL zu Ihrem Chat zu generieren.  Diese Schaltfläche sollte sich in der Nähe des Chats befinden, wenn Sie der Videoeigentümer sind (es sei denn, sie wurde von Ihren Serveradministratoren deaktiviert)."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "Check the \"{{% livechat_label read_only %}}\" checkbox in the modal."
-msgstr "Aktivieren Sie das Kontrollkästchen \"{{% livechat_label read_only %}}\" im Fenster."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
-msgstr "![Link Teilen Popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "Then use this link as a \"web browser source\" in OBS."
-msgstr "Verwenden Sie dann diesen Link als \"Webbrowser-Quelle\" in OBS."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-#: support/documentation/content/en/intro/_index.md
-msgid "![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
-msgstr "![Den Chat in OBS einbetten](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "You can use the \"{{% livechat_label transparent_background %}}\" option to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
-msgstr "Sie können die \"{{% livechat_label transparent_background %}}\" Option verwenden, um einen transparenten Hintergrund in OBS zu erhalten.  Wenn Sie die Hintergrundtransparenz anpassen möchten, können Sie dieses CSS in den Einstellungen Ihrer OBS-Browserquelle hinzufügen:"
-
-#. type: Fenced code block (css)
-#: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid ""
-":root {\n"
-"  --livechat-transparent: rgba(255 255 255 / 90%) !important;\n"
-"}\n"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values."
-msgstr "Im vorherigen CSS-Schnipsel können Sie natürlich die Farbe oder die Transparenz ändern, indem Sie die Farbwerte anpassen."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
-msgstr "Hinweis: Sie können vollständig die Chat-Farben anpassen. Dies ist noch nicht dokumentiert, aber Sie können dies versuchen: Aktivieren Sie im Fenster die Option \"Aktuelle Themenfarben verwenden\", und versuchen Sie dann, die Farbwerte in der URL manuell zu ändern.  Sie müssen gültige CSS-Farbwerte verwenden, und diese müssen in der URL korrekt kodiert sein."
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid "Mixing multiple chats in your live stream"
-msgstr "Mischen mehrerer Chats in Ihrem Live-Stream"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
-msgid "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.  The compatibility with this plugin was added in recent versions."
-msgstr "Sie können die [social_stream Browsererweiterung](https://github.com/steveseguin/social_stream#readme) verwenden, um mehrere Chat-Quellen (von Peertube, Twitch, Youtube, Facebook, ...) zu mischen und deren Inhalte in Ihren Live-Stream einzubinden. Die Kompatibilität mit diesem Plugin wurde in den letzten Versionen hinzugefügt."
-
-#. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/streamers.md
-#, no-wrap
-msgid "How to setup the chat for your live stream"
-msgstr "So richten Sie den Chat für Ihren Live-Stream ein"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers.md
-#, no-wrap
-msgid "For streamers"
-msgstr "Für Streamer"
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
-#, no-wrap
-msgid "Enabling the chat for you live streams"
-msgstr "Aktivieren Sie den Chat für Ihre Live-Streams"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "Instance administrators can choose to disable or enable chat in specific cases.  Information in this section are only true in the default case."
-msgstr "Instanzadministratoren können den Chat in bestimmten Fällen deaktivieren oder aktivieren.  Die Informationen in diesem Abschnitt gelten nur für den Standardfall."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "When you create or modify a Peertube live, there is a \"plugin settings\" tab:"
-msgstr "Wenn Sie eine Peertube Live-Stream erstellen oder ändern, gibt es eine Registerkarte \"Plugin-Einstellungen\":"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
-msgstr "![Neuer Live-Stream](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "In the \"plugin settings\" tab, there is a \"{{% livechat_label use_chat %}}\" checkbox.  Just check or uncheck it to enable or disable the chat associated to your video."
-msgstr "Auf der Registerkarte \"Plugin-Einstellungen\" gibt es ein Kontrollkästchen \"{{% livechat_label use_chat %}}\".  Aktivieren oder deaktivieren Sie es einfach, um den mit Ihrem Video verbundenen Chat zu aktivieren oder zu deaktivieren."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "![Activate the chat](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
-msgstr "![Den Chat aktivieren](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "There can be other settings in this tab, depending on plugins installed on your Peertube instance."
-msgstr "Je nachdem, welche Plugins auf Ihrer Peertube-Instanz installiert sind, können sich auf dieser Registerkarte weitere Einstellungen befinden."
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/user/streamers.md
-#, no-wrap
-msgid "Per channel chat"
-msgstr "Chat pro Kanal"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "On the instance level, Peertube's administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.  Please contact your instance's administrators for more information on how they configure the livechat plugin."
-msgstr "Auf der Instanz-Ebene können die Peertube-Administratoren wählen, ob die Chat-Räume pro Video einzigartig sind, oder ob es einen einzigartigen Chat-Raum pro Kanal gibt.  Bitte kontaktieren Sie die Administratoren Ihrer Instanz für weitere Informationen zur Konfiguration des Livechat-Plugins."
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
-#, no-wrap
-msgid "Share the chat"
-msgstr "Teilen Sie den Chat"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "On top of the chat, there is a \"{{% livechat_label share_chat_link %}}\" button."
-msgstr "Oben auf dem Chat gibt es eine Schaltfläche \"{{% livechat_label share_chat_link %}}\"."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "This button opens a popup, where you can obtain an url to join the chat.  This url can be shared."
-msgstr "Diese Schaltfläche öffnet ein Popup-Fenster, in dem Sie eine URL erhalten, mit der Sie dem Chat beitreten können.  Diese Url kann weitergegeben werden."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "You can customize some options:"
-msgstr "Sie können einige Optionen individuell anpassen:"
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "{{% livechat_label read_only %}}: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs))."
-msgstr "{{% livechat_label read_only %}}: Sie können den Chat nur lesen, nicht schreiben. Dies ist nützlich, um den Inhalt des Chats in Ihren Live-Stream einzubinden (siehe die [OBS Dokumentation](/peertube-plugin-livechat/documentation/user/obs))."
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "{{% livechat_label use_current_theme_color %}}: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set."
-msgstr "{{% livechat_label use_current_theme_color %}}: wenn diese Option aktiviert ist, werden die Farben des aktuellen Themas zur URL hinzugefügt, so dass jeder Benutzer, der den Link öffnet, dieselbe Farbe erhält."
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "{{% livechat_label generate_iframe %}}: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat."
-msgstr "{{% livechat_label generate_iframe %}}: Anstelle einer URL erhalten Sie ein HTML-Snippet, das Sie in Ihre Website einfügen können, um den Chat einzubetten."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "The \"{{% livechat_label share_chat_link %}}\" popup can also contain a \"{{% livechat_label connect_using_xmpp %}}\" tab.  This will only be available if your instance's administators have enabled an correctly configured this option.  Using this option, you can provide a link to join the chat using any [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  Using such softwares can for example facilitate moderation actions."
-msgstr "Das \"{{% livechat_label share_chat_link %}}\" Popup-Fenster kann auch einen \"{{% livechat_label connect_using_xmpp %}}\" Reiter enthalten.  Dieser ist nur verfügbar, wenn die Administratoren Ihrer Instanz diese Option aktiviert und korrekt konfiguriert haben.  Mit dieser Option können Sie einen Link bereitstellen, um dem Chat mit einer beliebigen [XMPP-Client-Software](https://en.wikipedia.org/wiki/XMPP#Clients) beizutreten.  Die Verwendung solcher Software kann zum Beispiel Moderationsmaßnahmen erleichtern."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
-msgstr "Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
-#, no-wrap
-msgid "Include the chat in your video stream"
-msgstr "Einbindung des Chats in den Videostream"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "Please refer to the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
-msgstr "Bitte lesen Sie die [OBS-Dokumentation](/peertube-plugin-livechat/documentation/user/obs)."
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
-#: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "Chat persistence"
-msgstr "Chat Dauerhaftigkeit"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "By default, the chat is persistent.  This means that the room content will be kept for a while.  User joining will see messages posted before their arrival."
-msgstr "Standardmäßig ist der Chat dauerhaft.  Das bedeutet, dass der Inhalt des Raums eine Zeit lang erhalten bleibt.  Benutzer, die dem Raum beitreten, sehen Nachrichten, die vor ihrer Ankunft gesendet wurden."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
-msgstr "Sie können das Dauerhaftigkeitsverhalten ändern.  [Öffnen Sie den Chat im Vollbildmodus (/peertube-plugin-livechat/documentation/user/viewers), öffnen Sie dann das obere Menü und klicken Sie auf \"Konfigurieren\"."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "There are several options that can be changed."
-msgstr "Es gibt mehrere Optionen, die geändert werden können."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
-msgstr "![Chatraum konfigurieren](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message."
-msgstr "Sie können z. B. die Standard- und Höchstzahl der zurückzusendenden Nachrichten auf 0 setzen, so dass neue Empfänger keine zuvor gesendeten Nachrichten sehen."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "You can also uncheck \"enable archiving\": if unchecked, messages will be pruned if the server restarts."
-msgstr "Sie können auch die Option \"Archivierung aktivieren\" deaktivieren: Wenn diese Option nicht aktiviert ist, werden die Nachrichten beim Neustart des Servers gelöscht."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "By unchecking \"Persistent\", the room will be cleared if there is no more participant."
-msgstr "Wenn Sie das Häkchen bei \"Dauerhaft\" entfernen, wird der Raum gelöscht, wenn es keinen Teilnehmer mehr gibt."
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
-#, no-wrap
-msgid "Delete the chat content"
-msgstr "Löschen des Chat Inhalts"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
-msgstr "Wenn Sie den Inhalt des Chats löschen möchten, [öffnen Sie den Chat im Vollbildmodus](/peertube-plugin-livechat/documentation/user/viewers), öffnen Sie dann das obere Menü und klicken Sie auf \"Löschen\".  Es öffnet sich ein Popup-Fenster, das eine Bestätigung verlangt.  Um Fehler zu vermeiden, werden Sie in dem Popup-Fenster nach der \"XMPP-Adresse\" des Chatrooms gefragt.  Diese Adresse können Sie über das Menü \"Details\" im oberen Menü erhalten."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
-msgid "The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the \"{{% livechat_label use_chat %}}\" feature activated."
-msgstr "Der Chat wird automatisch neu erstellt, wenn jemand versucht, ihm beizutreten, solange das Video existiert und die Funktion \"{{% livechat_label use_chat %}}\" aktiviert ist."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-22 16:46+0200\n"
+"POT-Creation-Date: 2023-09-22 20:15+0200\n"
 "PO-Revision-Date: 2023-07-17 14:21+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: Japanese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
@@ -1905,97 +1905,6 @@ msgid "User documentation"
 msgstr "ドキュメンテーション"
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-#, fuzzy, no-wrap
-msgid "Plugin peertube-plugin-livechat moderation"
-msgstr "PeerTube ライブチャットプラグイン"
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers.md
-#: support/documentation/content/en/intro/_index.md
-#, fuzzy, no-wrap
-msgid "Moderation"
-msgstr "ドキュメンテーション"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "This section is still incomplete."
-msgstr ""
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-#, no-wrap
-msgid "Accessing moderation tools"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers.md
-#, fuzzy
-#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
-msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
-msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
-msgstr ""
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-#, no-wrap
-msgid "Roles and affiliations"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "There are several roles that can be assignated to users in chat rooms: owner, moderators, member, ..."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "You can promote users as moderators, if you need some help."
-msgstr ""
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-#, no-wrap
-msgid "Delete room content"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room."
-msgstr ""
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-#, fuzzy, no-wrap
-msgid "Instance moderation"
-msgstr "ドキュメンテーション"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
-msgstr ""
-
-#. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "Documentation to stream the chat content using OBS."
@@ -2043,7 +1952,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, fuzzy
 #| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
 msgid "![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
@@ -2098,184 +2007,506 @@ msgid "You can use the [social_stream browser extension](https://github.com/stev
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
-msgid "How to setup the chat for your live stream"
+msgid "Some basics about how to setup and use the chat for your live stream"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
-msgid "For streamers"
+msgid "Some basics"
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Enabling the chat for you live streams"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "Instance administrators can choose to disable or enable chat in specific cases.  Information in this section are only true in the default case."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "When you create or modify a Peertube live, there is a \"plugin settings\" tab:"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, fuzzy
 #| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
 msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
 msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "In the \"plugin settings\" tab, there is a \"{{% livechat_label use_chat %}}\" checkbox.  Just check or uncheck it to enable or disable the chat associated to your video."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, fuzzy
 #| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
 msgid "![Activate the chat](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
 msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "There can be other settings in this tab, depending on plugins installed on your Peertube instance."
 msgstr ""
 
 #. type: Title ###
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Per channel chat"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "On the instance level, Peertube's administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.  Please contact your instance's administrators for more information on how they configure the livechat plugin."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Share the chat"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "On top of the chat, there is a \"{{% livechat_label share_chat_link %}}\" button."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "This button opens a popup, where you can obtain an url to join the chat.  This url can be shared."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can customize some options:"
 msgstr ""
 
 #. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "{{% livechat_label read_only %}}: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs))."
 msgstr ""
 
 #. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "{{% livechat_label use_current_theme_color %}}: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set."
 msgstr ""
 
 #. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "{{% livechat_label generate_iframe %}}: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "The \"{{% livechat_label share_chat_link %}}\" popup can also contain a \"{{% livechat_label connect_using_xmpp %}}\" tab.  This will only be available if your instance's administators have enabled an correctly configured this option.  Using this option, you can provide a link to join the chat using any [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  Using such softwares can for example facilitate moderation actions."
 msgstr ""
 
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy, no-wrap
+msgid "Moderation"
+msgstr "ドキュメンテーション"
+
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Include the chat in your video stream"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, fuzzy
 msgid "Please refer to the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
 msgstr "PeerTube ライブチャットプラグイン"
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Chat persistence"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "By default, the chat is persistent.  This means that the room content will be kept for a while.  User joining will see messages posted before their arrival."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "There are several options that can be changed."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, fuzzy
 #| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
 msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can also uncheck \"enable archiving\": if unchecked, messages will be pruned if the server restarts."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "By unchecking \"Persistent\", the room will be cleared if there is no more participant."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Delete the chat content"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the \"{{% livechat_label use_chat %}}\" feature activated."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+#, no-wrap
+msgid "The bot can respond to several commands."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+#, no-wrap
+msgid "Commands"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+#, fuzzy
+#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgid "![Commands configuration](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px)"
+msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+msgid "You can setup several commands."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, no-wrap
+msgid "The bot can automatically moderate messages containing forbidden words."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, no-wrap
+msgid "Forbidden words"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, fuzzy
+#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgid "![Forbidden words configuration](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
+msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, fuzzy
+#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgid "![Deleted message](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
+msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "You can for example fill this field with a swear words list."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "To get some examples, please check these [forbidden words suggestions](https://framagit.org/Livingston/peertube-plugin-livechat/-/tree/main/support/forbidden_words)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "If you have some usefull words lists, you are welcome to contribute to this suggestion page.  There are in the `support/forbidden_words` folder of the livechat source code.  See the [contribution guide](/peertube-plugin-livechat/contributing/) for more information."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "These words are case insensitive."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#, fuzzy
+msgid "This features is still experimental.  There might be some issues with non-latin alphabets.  You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to report your problems."
+msgstr "新しい機能のリクエスト、バグ、プラグインのセットアップ時に問題が発生した場合は、[Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)から報告してください。\n"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#, no-wrap
+msgid "Chat bot setup"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#, fuzzy, no-wrap
+msgid "Chat bot"
+msgstr "クレジット"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance's admins."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+msgid "You can enable a chat bot on your chatrooms.  The bot configuration is made channel per channel, and will apply to all related videos' chatrooms."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#, fuzzy
+msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
+msgstr "PeerTube ライブチャットプラグイン"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+msgid "Once there, you can enable the bot, and setup several options:"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+#, no-wrap
+msgid "The bot can send periodically some messages."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+#, no-wrap
+msgid "Pre-recorded messages"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+msgid "If there is no user in the chatroom, the bot won't send any message."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+#, fuzzy
+#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, no-wrap
+msgid "Peertube channel chatrooms configuration"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, no-wrap
+msgid "Channel configuration"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "In the Peertube left menu, there is a \"{{% livechat_label menu_configuration_label %}}\" entry:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgid "![Chatrooms menu](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px)"
+msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "This \"{{% livechat_label menu_configuration_label %}}\" link takes you to a list of your channels.  By clicking on a channel, you will then be able to setup some options for your channels:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "Here you can configure:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
+msgstr "PeerTube ライブチャットプラグイン"
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "More feature to come..."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/_index.md
+#, no-wrap
+msgid "How to setup the chat for your live stream"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/_index.md
+#, no-wrap
+msgid "For streamers"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, fuzzy, no-wrap
+msgid "Plugin peertube-plugin-livechat advances moderation features"
+msgstr "PeerTube ライブチャットプラグイン"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "This section is still incomplete."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, no-wrap
+msgid "The chat bot"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, fuzzy
+msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
+msgstr "PeerTube ライブチャットプラグイン"
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, no-wrap
+msgid "Accessing moderation tools"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, no-wrap
+msgid "Roles and affiliations"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "There are several roles that can be assignated to users in chat rooms: owner, moderators, member, ..."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "You can promote users as moderators, if you need some help."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, no-wrap
+msgid "Delete room content"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, fuzzy, no-wrap
+msgid "Instance moderation"
+msgstr "ドキュメンテーション"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
