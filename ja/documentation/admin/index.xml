@@ -3,4 +3,4 @@
 Federation Following settings concern the federation with other Peertube instances, and other fediverse softwares.
 外部チャットを表示しない この設定を有効にすると、あなたのインスタンスはリモート動画のチャットを表示しないようになります。 チャット情報を公開しない この設定を有効にすると、あなたのインスタンスはFediverse上にチャット情報を公開しないようになります。 リモートのPeerTubeインスタンスは、チャットルームがあなたの動画に関連付いていることを認識しなくなります。
 注意: 進行中のチャットが既に存在する場合、既にチャット情報が公開されている可能性があります。 チャット情報が非公開になるまで、次の動画の更新を待つ必要があります。 また、この設定を無効にすると、再度チャット情報が公開されるようになるまで、次の動画の更新を待つ必要があります。 この更新は、主にライブ配信が再開したり、停止したときに発生します。
-注意: この設定は、ActivityPubプロトコルを経由した情報の公開のみ影響します。 リモート アプリケーションがチャットの存在を検出し、それに接続しようとすることを妨げるものではありません。 Chat behaviour ルームタイプ 動画ごとにチャットルームを分けるか、チャンネルで1つのチャットルームにするかを選択できます。 自動的にチャットを開く 動画を視聴している際に、チャットボックスが自動的に開かれます。 «新規ウィンドウで開く»ボタンを表示する 新規ウィンドウでチャットを開くボタンを表示します。 «チャットリンクを共有»ボタンを表示する This feature enables a «share chat link» modal.</description></item></channel></rss>
+注意: この設定は、ActivityPubプロトコルを経由した情報の公開のみ影響します。 リモート アプリケーションがチャットの存在を検出し、それに接続しようとすることを妨げるものではありません。 Channel advanced configuration Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, &amp;hellip;</description></item></channel></rss>
