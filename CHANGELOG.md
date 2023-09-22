@@ -4,7 +4,16 @@
 
 ### New features
 
-* Moderation bot (experimental new feature).
+* Moderation bot (experimental new feature):
+  * New "chatrooms" menu, accessible to all users
+  * In this menu, user's channels are listed
+  * For each channel, there is a new screen where you can setup new channel's chatroom options
+  * These options applies to all channel's video that have livechat activated
+  * For now, there are options related to the new Moderation Bot:
+    * you can make it auto-delete messages containing "forbidden words",
+    * make it send pre-recorded messages every X minutes,
+    * respond message to custom commands.
+    * many other features will be available in future releases!
 
 ### Minor changes and fixes
 
