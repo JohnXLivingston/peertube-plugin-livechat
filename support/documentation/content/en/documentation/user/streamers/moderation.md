@@ -1,13 +1,18 @@
 ---
 title: "Moderation"
-description: "Plugin peertube-plugin-livechat moderation"
-weight: 30
+description: "Plugin peertube-plugin-livechat advances moderation features"
+weight: 60
 chapter: false
 ---
 
 {{% notice warning %}}
 This section is still incomplete.
 {{% /notice %}}
+
+## The chat bot
+
+You can use a chat bot, that will help you for moderation.
+Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information.
 
 ## Accessing moderation tools
 

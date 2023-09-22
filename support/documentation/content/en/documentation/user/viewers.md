@@ -72,7 +72,7 @@ This will open a new browser tab with the following content:
 It can be easier to chat using a full browser tab.
 
 This fullscreen view also adds a top menu with advances features.
-This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/moderation).
+This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation).
 
 ## Changing nickname
 

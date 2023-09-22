@@ -2111,13 +2111,13 @@ msgid "User documentation"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation"
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/streamers.md
 #: support/documentation/content/en/intro/_index.md
 #, markdown-text, no-wrap
@@ -2125,86 +2125,86 @@ msgid "Moderation"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "This section is still incomplete."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text, no-wrap
 msgid "Accessing moderation tools"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/streamers.md
 #, markdown-text
 msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text, no-wrap
 msgid "Roles and affiliations"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "There are several roles that can be assignated to users in chat rooms: owner, moderators, member, ..."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "You can promote users as moderators, if you need some help."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text, no-wrap
 msgid "Delete room content"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text, no-wrap
 msgid "Instance moderation"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
 msgstr ""
@@ -2434,7 +2434,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers.md
 #, markdown-text
-msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/moderation)."
+msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
 msgstr ""
 
 #. type: Title ##
@@ -2690,7 +2690,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 #, markdown-text
-msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/moderation)."
+msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
 msgstr ""
 
 #. type: Title ##
