@@ -357,7 +357,7 @@ livechat_configuration_channel_command_cmd_desc: |
   The command, without the starting "!". For example "help", "sponsor", ...
 livechat_configuration_channel_command_message_label: "Message"
 livechat_configuration_channel_command_message_desc: |
-  The message to send. Can contain "{{NICK}}" that will be replaced by the user's nickname.
+  The message to send.
 livechat_configuration_channel_for_more_info: |
   For more information about how to configure this feature, please refer to the documentation by clicking on the help button.
 livechat_configuration_channel_banned_jids_label: "Banned users and patterns"

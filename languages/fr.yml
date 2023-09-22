@@ -337,8 +337,7 @@ livechat_configuration_channel_command_cmd_label: Commande
 livechat_configuration_channel_command_cmd_desc: "La commande, sans le \"!\" au début.\
   \ Par exemple \"help\", \"sponsor\", ...\n"
 livechat_configuration_channel_command_message_label: Message
-livechat_configuration_channel_command_message_desc: "Le message à envoyer. Peut conteneir\
-  \ \"{{NICK}}\" qui sera remplacé par le pseudo de l'utilisateur⋅rice.\n"
+livechat_configuration_channel_command_message_desc: "Le message à envoyer."
 livechat_configuration_channel_banned_jids_label: Motifs d'utilisateur⋅rices banni⋅es
 livechat_configuration_channel_bot_nickname: Pseudonyme du bot
 configuration_description: "<h3>Configuration avancée de la chaîne</h3>\nLes paramètres\
