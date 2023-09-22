@@ -58,7 +58,7 @@
               name="forbidden_words_{{fieldNumber}}"
               id="peertube-livechat-forbidden-words-{{fieldNumber}}"
               class="form-control"
-            >{{entries}}</textarea>
+            >{{joinedEntries}}</textarea>
             <p class="form-group-description">{{forbiddenWordsDesc2}}</p>
           </div>
           <div class="form-group">
@@ -121,7 +121,7 @@
               name="quote_{{fieldNumber}}"
               id="peertube-livechat-quote-{{fieldNumber}}"
               class="form-control"
-            >{{TODO}}</textarea>
+            >{{joinedMessages}}</textarea>
             <p class="form-group-description">{{quoteDesc2}}</p>
           </div>
           <div class="form-group">
@@ -134,7 +134,7 @@
               name="quote_delay_{{fieldNumber}}"
               class="form-control"
               id="peertube-livechat-quote-delay-{{fieldNumber}}"
-              value="5"
+              value="{{delay}}"
             />
             <p class="form-group-description">{{quoteDelayDesc}}</p>
           </div>
@@ -159,7 +159,7 @@
               name="command_{{fieldNumber}}"
               class="form-control"
               id="peertube-livechat-command-{{fieldNumber}}"
-              value=""
+              value="{{command}}"
             />
             <p class="form-group-description">{{commandCmdDesc}}</p>
           </div>
@@ -170,7 +170,7 @@
               name="command_message_{{fieldNumber}}"
               class="form-control"
               id="peertube-livechat-command-message-{{fieldNumber}}"
-              value=""
+              value="{{message}}"
             />
             <p class="form-group-description">{{commandMessageDesc}}</p>
           </div>

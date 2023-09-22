@@ -104,6 +104,21 @@ class BotConfiguration {
   }
 
   /**
+   * Get the current room conf content.
+   * @param roomJIDParam room JID (local or full)
+   * @returns the room conf, or null if does not exist
+   */
+  public async getRoom (roomJIDParam: string): Promise<ChannelCommonRoomConf | null> {
+    const roomJID = this._canonicJID(roomJIDParam)
+    if (!roomJID) {
+      this.logger.error('Invalid room JID')
+      return null
+    }
+    const conf = await this._getRoomConf(roomJID)
+    return conf
+  }
+
+  /**
    * Update the bot configuration for a given room.
    * @param roomJIDParam Room full or local JID
    * @param conf Configuration to write

@@ -334,12 +334,13 @@ class RoomChannel {
         }
 
         this.logger.info(`Room ${roomJID} has associated channel options, writing it`)
+        const previousRoomConf = await BotConfiguration.singleton().getRoom(roomJID)
         const botConf: RoomConf = Object.assign(
           {
             local: roomJID,
             domain: this.mucDomain
           },
-          channelConfigurationOptionsToBotRoomConf(this.options, channelConfigurationOptions)
+          channelConfigurationOptionsToBotRoomConf(this.options, channelConfigurationOptions, previousRoomConf)
         )
 
         await BotConfiguration.singleton().updateRoom(roomJID, botConf)

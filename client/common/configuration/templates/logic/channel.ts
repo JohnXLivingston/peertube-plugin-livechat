@@ -33,37 +33,90 @@ async function getConfigurationChannelViewData (
     throw new Error('Invalid channel configuration options.')
   }
 
-  const forbiddenWordsArray = []
+  const forbiddenWordsArray: Object[] = []
   for (let i = 0; i < channelConfiguration.configuration.bot.forbiddenWords.length; i++) {
     const fw = channelConfiguration.configuration.bot.forbiddenWords[i]
     forbiddenWordsArray.push({
       displayNumber: i + 1,
       fieldNumber: i,
       displayHelp: i === 0,
-      entries: fw.entries.join('\n'),
+      joinedEntries: fw.entries.join('\n'),
       regexp: !!fw.regexp,
       applyToModerators: fw.applyToModerators,
       reason: fw.reason
     })
   }
+  // Ensuring we have at least N blocks:
+  while (forbiddenWordsArray.length < 3) {
+    const i = forbiddenWordsArray.length
+    // default value
+    forbiddenWordsArray.push({
+      displayNumber: i + 1,
+      fieldNumber: i,
+      displayHelp: i === 0,
+      joinedEntries: '',
+      regexp: false,
+      applyToModerators: false,
+      reason: ''
+    })
+    continue
+  }
+
+  const quotesArray: Object[] = []
+  for (let i = 0; i < channelConfiguration.configuration.bot.quotes.length; i++) {
+    const qs = channelConfiguration.configuration.bot.quotes[i]
+    quotesArray.push({
+      displayNumber: i + 1,
+      fieldNumber: i,
+      displayHelp: i === 0,
+      joinedMessages: qs.messages.join('\n'),
+      delay: Math.round(qs.delay / 60) // converting to minutes
+    })
+  }
+  // Ensuring we have at least N blocks:
+  while (quotesArray.length < 1) {
+    const i = quotesArray.length
+    // default value
+    quotesArray.push({
+      displayNumber: i + 1,
+      fieldNumber: i,
+      displayHelp: i === 0,
+      joinedMessages: '',
+      delay: 5
+    })
+    continue
+  }
+
+  const cmdsArray: Object[] = []
+  for (let i = 0; i < channelConfiguration.configuration.bot.commands.length; i++) {
+    const cs = channelConfiguration.configuration.bot.commands[i]
+    cmdsArray.push({
+      displayNumber: i + 1,
+      fieldNumber: i,
+      displayHelp: i === 0,
+      message: cs.message,
+      command: cs.command
+    })
+  }
+  // Ensuring we have at least N blocks:
+  while (cmdsArray.length < 3) {
+    const i = cmdsArray.length
+    // default value
+    cmdsArray.push({
+      displayNumber: i + 1,
+      fieldNumber: i,
+      displayHelp: i === 0,
+      message: '',
+      command: ''
+    })
+    continue
+  }
 
   return {
     channelConfiguration,
     forbiddenWordsArray,
-    quotesArray: [0].map(count => {
-      return {
-        displayNumber: count + 1,
-        fieldNumber: count,
-        displayHelp: count === 0
-      }
-    }),
-    cmdsArray: [0, 1, 2].map(count => {
-      return {
-        displayNumber: count + 1,
-        fieldNumber: count,
-        displayHelp: count === 0
-      }
-    })
+    quotesArray,
+    cmdsArray
   }
 }
 
@@ -110,7 +163,9 @@ async function vivifyConfigurationChannel (
     // TODO: handle form errors.
 
     for (let i = 0; data.has('forbidden_words_' + i.toString()); i++) {
-      const entries = (data.get('forbidden_words_' + i.toString())?.toString() ?? '').split(/\r?\n|\r|\n/g)
+      const entries = (data.get('forbidden_words_' + i.toString())?.toString() ?? '')
+        .split(/\r?\n|\r|\n/g)
+        .filter(s => !/^\s*$/.test(s)) // filtering empty lines
       const regexp = data.get('forbidden_words_regexp_' + i.toString())
       const applyToModerators = data.get('forbidden_words_applytomoderators_' + i.toString())
       const reason = data.get('forbidden_words_reason_' + i.toString())?.toString()
@@ -125,7 +180,31 @@ async function vivifyConfigurationChannel (
       channelConfigurationOptions.bot.forbiddenWords.push(fw)
     }
 
-    // TODO: quotes and commands.
+    for (let i = 0; data.has('quote_' + i.toString()); i++) {
+      const messages = (data.get('quote_' + i.toString())?.toString() ?? '')
+        .split(/\r?\n|\r|\n/g)
+        .filter(s => !/^\s*$/.test(s)) // filtering empty lines
+      let delay = parseInt(data.get('quote_delay_' + i.toString())?.toString() ?? '')
+      if (!delay || isNaN(delay) || delay < 1) {
+        delay = 5
+      }
+      delay = delay * 60 // converting to seconds
+      const q: ChannelConfigurationOptions['bot']['quotes'][0] = {
+        messages,
+        delay
+      }
+      channelConfigurationOptions.bot.quotes.push(q)
+    }
+
+    for (let i = 0; data.has('command_' + i.toString()); i++) {
+      const command = (data.get('command_' + i.toString())?.toString() ?? '')
+      const message = (data.get('command_message_' + i.toString())?.toString() ?? '')
+      const c: ChannelConfigurationOptions['bot']['commands'][0] = {
+        command,
+        message
+      }
+      channelConfigurationOptions.bot.commands.push(c)
+    }
 
     const headers: any = clientOptions.peertubeHelpers.getAuthHeader() ?? {}
     headers['content-type'] = 'application/json;charset=UTF-8'

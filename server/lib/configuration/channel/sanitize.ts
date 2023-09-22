@@ -166,9 +166,9 @@ function _readQuotes (botData: any): ChannelConfigurationOptions['bot']['quotes'
     throw new Error('Invalid quotes data')
   }
   const result: ChannelConfigurationOptions['bot']['quotes'] = []
-  for (const fw of botData.quotes) {
-    const messages = _readStringArray(fw, 'message')
-    const delay = _readInteger(fw, 'delay', 1, 6000)
+  for (const qs of botData.quotes) {
+    const messages = _readStringArray(qs, 'messages')
+    const delay = _readInteger(qs, 'delay', 1, 6000)
 
     result.push({
       messages,
@@ -183,9 +183,9 @@ function _readCommands (botData: any): ChannelConfigurationOptions['bot']['comma
     throw new Error('Invalid commands data')
   }
   const result: ChannelConfigurationOptions['bot']['commands'] = []
-  for (const fw of botData.commands) {
-    const message = _readSimpleInput(fw, 'message')
-    const command = _readSimpleInput(fw, 'command')
+  for (const cs of botData.commands) {
+    const message = _readSimpleInput(cs, 'message')
+    const command = _readSimpleInput(cs, 'command')
 
     result.push({
       message,

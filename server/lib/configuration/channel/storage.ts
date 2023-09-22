@@ -39,39 +39,9 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
     bot: {
       enabled: false,
       nickname: 'Sepia',
-      // Note: we are instanciating several data for forbiddenWords, quotes and commands.
-      // This will be used by the frontend to instanciates requires fields
-      forbiddenWords: [
-        {
-          entries: []
-        },
-        {
-          entries: []
-        },
-        {
-          entries: []
-        }
-      ],
-      quotes: [
-        {
-          messages: [],
-          delay: 5 * 60 // seconds to minutes
-        }
-      ],
-      commands: [
-        {
-          command: '',
-          message: ''
-        },
-        {
-          command: '',
-          message: ''
-        },
-        {
-          command: '',
-          message: ''
-        }
-      ]
+      forbiddenWords: [],
+      quotes: [],
+      commands: []
     }
   }
 }
@@ -109,22 +79,47 @@ async function storeChannelConfigurationOptions (
  * Converts the channel configuration to the bot room configuration object (minus the room JID and domain)
  * @param options server options
  * @param channelConfigurationOptions The channel configuration
+ * @param previousRoomConf the previous saved room conf, if available. Used to merge handlers.
  * @returns Partial bot room configuration
  */
 function channelConfigurationOptionsToBotRoomConf (
   options: RegisterServerOptions,
-  channelConfigurationOptions: ChannelConfigurationOptions
+  channelConfigurationOptions: ChannelConfigurationOptions,
+  previousRoomConf: ChannelCommonRoomConf | null
 ): ChannelCommonRoomConf {
   // Note concerning handlers:
   // If we want the bot to correctly enable/disable the handlers,
   // we must always define all handlers, even if not used.
+  // That's why we are gathering handlers ids in handlersId, and disabling missing handlers at the end of this function.
+  const handlersIds: Map<string, true> = new Map<string, true>()
   const handlers: ConfigHandlers = []
   channelConfigurationOptions.bot.forbiddenWords.forEach((v, i) => {
-    handlers.push(_getForbiddenWordsHandler(
-      'forbidden_words_' + i.toString(),
-      channelConfigurationOptions.bot.forbiddenWords[i]
-    ))
+    const id = 'forbidden_words_' + i.toString()
+    handlersIds.set(id, true)
+    handlers.push(_getForbiddenWordsHandler(id, v))
   })
+  channelConfigurationOptions.bot.quotes.forEach((v, i) => {
+    const id = 'quote_' + i.toString()
+    handlersIds.set(id, true)
+    handlers.push(_getQuotesHandler(id, v))
+  })
+  channelConfigurationOptions.bot.commands.forEach((v, i) => {
+    const id = 'command_' + i.toString()
+    handlersIds.set(id, true)
+    handlers.push(_getCommandsHandler(id, v))
+  })
+
+  // Disabling missing handlers:
+  if (previousRoomConf) {
+    for (const handler of previousRoomConf.handlers) {
+      if (!handlersIds.has(handler.id)) {
+        // cloning to avoid issues...
+        const disabledHandler = JSON.parse(JSON.stringify(handler))
+        disabledHandler.enabled = false
+        handlers.push(disabledHandler)
+      }
+    }
+  }
 
   const roomConf: ChannelCommonRoomConf = {
     enabled: channelConfigurationOptions.bot.enabled,
@@ -189,6 +184,52 @@ function _getForbiddenWordsHandler (
   handler.options.rules.push(rule)
 
   handler.options.applyToModerators = !!forbiddenWords.applyToModerators
+  return handler
+}
+
+function _getQuotesHandler (
+  id: string,
+  quotes: ChannelConfigurationOptions['bot']['quotes'][0]
+): ConfigHandler {
+  const handler: ConfigHandler = {
+    type: 'quotes_random',
+    id,
+    enabled: false,
+    options: {
+      quotes: [],
+      delay: 5 * 60
+    }
+  }
+  if (quotes.messages.length === 0) {
+    return handler
+  }
+
+  handler.enabled = true
+  handler.options.quotes = quotes.messages
+  handler.options.delay = quotes.delay
+  return handler
+}
+
+function _getCommandsHandler (
+  id: string,
+  command: ChannelConfigurationOptions['bot']['commands'][0]
+): ConfigHandler {
+  const handler: ConfigHandler = {
+    type: 'command_say',
+    id,
+    enabled: false,
+    options: {
+      quotes: [],
+      command: 'undefined' // This is arbitrary, and does not matter as enabled=false
+    }
+  }
+  if (!command.message || command.message === '') {
+    return handler
+  }
+
+  handler.enabled = true
+  handler.options.command = command.command
+  handler.options.quotes = [command.message]
   return handler
 }
 
