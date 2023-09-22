@@ -230,14 +230,15 @@ prosody_c2s_port_description: |
 prosody_components_label: "Aktivieren externer XMPP-Komponenten"
 prosody_components_description: |
   Aktivieren Sie die Verwendung externer XMPP-Komponenten.<br>
-   Diese Option allein erlaubt nur Verbindungen von localhost.<br>
-   Diese Funktion kann beispielsweise verwendet werden, um einige Bots mit den Chatrooms zu verbinden.
+  Diese Option allein erlaubt nur Verbindungen von localhost.
+  Sie müssen die Netzwerkschnittstellen einrichten und den Port auf Ihrer Firewall öffnen, um sie von entfernten Servern aus verfügbar zu machen.<br>
+  Diese Funktion kann beispielsweise verwendet werden, um einige Bots mit den Chatrooms zu verbinden.
 
 prosody_components_port_label: "Port für externe Komponenten zur Verbindung mit Prosody"
 prosody_components_port_description: |
   Der Port, der von XMPP-Komponenten verwendet wird, um sich mit dem Prosody-Server zu verbinden.<br>
-   Ändern Sie ihn, wenn dieser Port bereits auf Ihrem Server verwendet wird.<br>
-   Sie können diesen Port auf Ihrer Firewall vorerst geschlossen halten, es wird nicht von Außerhalb darauf zugegriffen.
+  Ändern Sie ihn, wenn dieser Port bereits auf Ihrem Server verwendet wird.<br>
+  Sie können diesen Port in Ihrer Firewall geschlossen lassen, wenn Sie den Zugriff von anderen Schnittstellen als localhost nicht zulassen möchten.<br>
   Hinweis: Dies könnte sich in naher Zukunft ändern, da geplant ist, eine Funktion zum Aktivieren externer Verbindungen hinzuzufügen.
 
 prosody_components_list_label: "Externe Komponenten"
@@ -272,3 +273,89 @@ prosody_certificates_dir_description: "Wenn dieses Feld leer ist, erzeugt und ve
   \ wollen, geben Sie hier einfach den Ordner an,\nin dem Prosody sie finden kann.\
   \ Hinweis: Der Benutzer \"peertube\" muss Lesezugriff auf diesen Ordner haben.\n"
 online_help: Online Hilfe
+livechat_configuration_channel_enable_bot_label: Moderationsbot aktivieren
+livechat_configuration_channel_forbidden_words_desc2: "Ein Wort oder Ausdruck pro\
+  \ Zeile. Wenn Sie mehrere Wörter in eine Zeile schreiben, werden nur Nachrichten\
+  \ gefunden, die die gesamte Sequenz enthalten.\n"
+livechat_configuration_channel_forbidden_words_desc: "Sie können einige Wörter konfigurieren,\
+  \ die vom Chatbot automatisch moderiert werden (Nachrichten, die solche Wörter enthalten,\
+  \ werden sofort gelöscht).\nSie können auch einen optionalen Grund hinzufügen, der\
+  \ an der Stelle der gelöschten Nachrichten angezeigt wird.\nMehrere Beispiele finden\
+  \ Sie auf der Dokumentationsseite.\n"
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Experimentelle\
+  \ Funktion:</b> diese Funktion ist noch experimentell.\n"
+configuration_description: "<h3>Erweiterte Konfiguration des Kanals</h3>\nDie folgenden\
+  \ Einstellungen betreffen die erweiterten Kanaloptionen:\nDie Benutzer können ihre\
+  \ Kanäle individuell anpassen,\nden Moderationsbot aktivieren, ...\n"
+disable_channel_configuration_label: Die erweiterten Kanalkonfiguration und den Chatbot
+  deaktivieren
+save: Speichern
+cancel: Abbrechen
+successfully_saved: Erfolgreich gespeichert
+menu_configuration_label: Chaträume
+livechat_configuration_title: Konfigurieren Sie die Chaträume Ihres Livestreams
+livechat_configuration_desc: Hier können Sie einige erweiterte Optionen für Chaträume
+  konfigurieren, die mit Ihren Livestreams verbunden sind.
+livechat_configuration_channel_title: Kanaloptionen
+livechat_configuration_channel_desc: Sie können hier einige Optionen für diesen Kanal
+  einstellen (Moderationsrichtlinien, ...).
+livechat_configuration_channel_bot_options_title: Optionen für den Moderationsbot
+livechat_configuration_channel_forbidden_words_label: Verbotene Wörter oder Ausdrücke
+livechat_configuration_channel_forbidden_words_reason_label: Grund
+livechat_configuration_channel_forbidden_words_reason_desc: Anzuzeigender Grund anstelle
+  der gelöschen Nachricht
+livechat_configuration_channel_forbidden_words_regexp_desc: Wenn Sie diese Option
+  aktivieren, können Sie reguläre Ausdrücke (regex) verwenden.
+livechat_configuration_channel_quote_label: Aufgezeichnete Nachrichten
+livechat_configuration_channel_quote_desc2: "Eine Nachricht pro Zeile.\nWenn mehrere\
+  \ Nachrichten vorhanden sind, wird alle X Minuten eine zufällig ausgewählt.\n"
+livechat_configuration_channel_quote_delay_label: Alle X Minuten senden
+livechat_configuration_channel_command_label: Chatbotbefehle
+livechat_configuration_channel_command_cmd_label: Befehl
+livechat_configuration_channel_command_cmd_desc: "Den Befehl, ohne das beginnende\
+  \ \"!\" eintragen. Zum Beispiel \"help\", \"sponsor\", ...\n"
+livechat_configuration_channel_command_message_label: Nachricht
+livechat_configuration_channel_command_message_desc: "Die zu sendende Nachricht. Kann\
+  \ \"{{NICK}}\" enthalten, das durch den Spitznamen des Benutzers ersetzt wird.\n"
+livechat_configuration_channel_for_more_info: "Weitere Informationen zur Konfiguration\
+  \ dieser Funktion finden Sie in der Dokumentation, indem Sie auf die Schaltfläche\
+  \ Hilfe klicken.\n"
+livechat_configuration_channel_banned_jids_label: Gesperrte Benutzer und Muster
+livechat_configuration_channel_bot_nickname: Chatbot Spitzname
+auto_ban_anonymous_ip_label: IP eines anonymen Benutzers sperren, wenn dieser aus
+  einem Chatraum verbannt wird
+auto_ban_anonymous_ip_description: "Wenn Sie diese Option aktivieren, wird jedes Mal,\
+  \ wenn ein anonymer Benutzer aus einem Chatraum verbannt wird, seine IP auch vom\
+  \ Chatserver verbannt.\nWarnung: wenn Ihre Instanz für die Registrierung offen ist,\
+  \ könnte jeder Benutzer einen gefangenen Raum erstellen, Benutzer zum Beitritt einladen\
+  \ und automatisch alle IPs der anonymen Benutzer sperren.\nDie Liste der gesperrten\
+  \ IPs wird nicht gespeichert, sie wird beim Neustart des Servers gelöscht, oder\
+  \ wenn Sie die Einstellungen eines Plugins ändern.\nDie gesperrten IPs werden in\
+  \ den Logdateien des Prosody-Servers protokolliert, so dass die Administratoren\
+  \ des Servers eventuell externe Tools (wie fail2ban) verwenden können, um IPs in\
+  \ größerem Umfang zu sperren.\n"
+prosody_components_interfaces_label: Prosody externe Komponenten Netzwerkschnittstellen
+prosody_components_interfaces_description: "Die Netzwerkschnittstellen, die für externe\
+  \ Komponentenverbindungen überwacht werden sollen.<br>\nListe der zu überwachenden\
+  \ IP, durch Kommata getrennt (Leerzeichen werden entfernt).<br>\nSie können «*»\
+  \ verwenden, um auf allen IPv4-Schnittstellen zu lauschen, und «::» für alle IPv6-Schnittstellen.<br>\n\
+  Beispiele:\n<ul>\n  <li>*, ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>172.18.0.42</li>\n\
+  </ul>\n"
+livechat_configuration_please_select: Bitte wählen Sie unten einen Ihrer Channels
+  aus, um dessen Chat-Optionen einzustellen.
+livechat_configuration_channel_forbidden_words_regexp_label: Als reguläre Ausdrücke
+  (regex) betrachten
+livechat_configuration_channel_quote_desc: "Sie können mehrere voraufgezeichnete Nachrichten\
+  \ konfigurieren.\nDiese Nachrichten werden vom Chatbot alle X Minuten gesendet.\n\
+  Sie können beispielsweise festlegen, dass der Bot alle 5 Minuten eine Sponsoring-Information\
+  \ sendet.\n"
+livechat_configuration_channel_quote_delay_desc: "Der Chatbot wird die Nachricht alle\
+  \ X Minuten veröffentlichen.\n"
+livechat_configuration_channel_command_desc: "Sie können den Chatbot so konfigurieren,\
+  \ dass er auf Befehle reagiert.\nEin Befehl ist eine Nachricht, die mit einem \"\
+  !\" beginnt, wie zum Beispiel \"!help\" den Befehl \"help\" aufruft.\n"
+livechat_configuration_channel_forbidden_words_applytomoderators_label: Auch Nachrichten
+  von Moderatoren moderieren
+livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Standardmäßig\
+  \ werden Nachrichten von Moderatoren nicht gelöscht, wenn sie verbotene Wörter enthalten.\n\
+  Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.\n"
