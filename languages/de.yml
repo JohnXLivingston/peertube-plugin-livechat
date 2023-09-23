@@ -315,7 +315,7 @@ livechat_configuration_channel_command_cmd_label: Befehl
 livechat_configuration_channel_command_cmd_desc: "Den Befehl, ohne das beginnende\
   \ \"!\" eintragen. Zum Beispiel \"help\", \"sponsor\", ...\n"
 livechat_configuration_channel_command_message_label: Nachricht
-livechat_configuration_channel_command_message_desc: "Die zu sendende Nachricht."
+livechat_configuration_channel_command_message_desc: "Die zu sendende Nachricht.\n"
 livechat_configuration_channel_for_more_info: "Weitere Informationen zur Konfiguration\
   \ dieser Funktion finden Sie in der Dokumentation, indem Sie auf die Schaltfläche\
   \ Hilfe klicken.\n"
