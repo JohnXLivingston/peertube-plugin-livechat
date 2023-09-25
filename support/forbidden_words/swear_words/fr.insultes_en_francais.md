@@ -8,7 +8,7 @@ License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
 Import script:
 
 ```bash
-node ./support/forbidden_words/import-wikimedia.mjs category --lang fr --service wiktionary --category 'Insultes_en_français' > support/forbidden_words/swear_words/fr.insultes_en_francais.md
+node ./support/forbidden_words/import-wikimedia.mjs category --lang fr --service wiktionary --category 'Insultes_en_français'
 ```
 
 ## Usage
