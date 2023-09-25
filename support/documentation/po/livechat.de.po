@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-22 20:41+0200\n"
+"POT-Creation-Date: 2023-09-25 18:47+0200\n"
 "PO-Revision-Date: 2023-09-23 21:06+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -429,11 +427,7 @@ msgstr "Der Ordner `support/documentation/content/en` enthält nur englische Dok
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page."
-msgstr ""
-"Die Dokumentation wird mit Weblate übersetzt (siehe die "
-"[Übersetzungsdokumentation](/peertube-plugin-livechat/de/contributing/"
-"translate/)). Um dies zu tun, verwenden wir das [po4a tool](https://po4a.org/"
-"), wie wir später auf dieser Seite sehen werden."
+msgstr "Die Dokumentation wird mit Weblate übersetzt (siehe die [Übersetzungsdokumentation](/peertube-plugin-livechat/de/contributing/translate/)). Um dies zu tun, verwenden wir das [po4a tool](https://po4a.org/), wie wir später auf dieser Seite sehen werden."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -530,19 +524,12 @@ msgstr "Führen Sie dann vor dem Commit immer `npm run doc:translate` aus, so da
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can use the `livechat_label` short code to use application strings.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
-msgstr ""
-"Du kannst den Shortcode `livechat_label` verwenden, um Anwendungsstrings zu "
-"verwenden. Siehe hier: [Dokumentation übersetzen](/peertube-plugin-livechat/"
-"de/contributing/translate/#documentation-translation)."
+msgstr "Du kannst den Shortcode `livechat_label` verwenden, um Anwendungsstrings zu verwenden. Siehe hier: [Dokumentation übersetzen](/peertube-plugin-livechat/de/contributing/translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
-msgstr ""
-"Es ist möglich zu verhindern, dass eine Datei übersetzt wird, indem man "
-"`livechatnotranslation: true` in der Yaml Font Matter Sektion benutzt. Siehe "
-"hier: [Dokumentation übersetzen](/peertube-plugin-livechat/de/contributing/"
-"translate/#documentation-translation)."
+msgstr "Es ist möglich zu verhindern, dass eine Datei übersetzt wird, indem man `livechatnotranslation: true` in der Yaml Font Matter Sektion benutzt. Siehe hier: [Dokumentation übersetzen](/peertube-plugin-livechat/de/contributing/translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -857,9 +844,7 @@ msgstr "Allgemeine Empfehlungen"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
-msgstr ""
-"Bitte formulieren Sie umfassend und beachten Sie den [Verhaltenskodex"
-"](/peertube-plugin-livechat/de/contributing/codeofconduct/)."
+msgstr "Bitte formulieren Sie umfassend und beachten Sie den [Verhaltenskodex](/peertube-plugin-livechat/de/contributing/codeofconduct/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
@@ -957,10 +942,7 @@ msgstr "Dieses Chatmodul basiert auf dem XMPP-Protokoll, das auch als Jabber bek
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
-msgstr ""
-"Die Benutzerdokumentation zu diesen Funktionen finden Sie auf der Seite "
-"[Benutzerdokumentation](/peertube-plugin-livechat/de/documentation/user/"
-"xmpp_clients/)."
+msgstr "Die Benutzerdokumentation zu diesen Funktionen finden Sie auf der Seite [Benutzerdokumentation](/peertube-plugin-livechat/de/documentation/user/xmpp_clients/)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1861,11 +1843,7 @@ msgstr "![Diagnose starten](/peertube-plugin-livechat/images/launch_diagnostic.p
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the [Bug tracking documentation page](/peertube-plugin-livechat/issues/) if you can't find any response."
-msgstr ""
-"Wenn auf der Diagnoseseite ein Fehler auftritt, können Sie auf dieser Seite "
-"nach einer Lösung suchen oder auf der [Bugtracking Dokumentationsseite"
-"](/peertube-plugin-livechat/de/issues/) nachsehen, wenn Sie keine Antwort "
-"finden."
+msgstr "Wenn auf der Diagnoseseite ein Fehler auftritt, können Sie auf dieser Seite nach einer Lösung suchen oder auf der [Bugtracking Dokumentationsseite](/peertube-plugin-livechat/de/issues/) nachsehen, wenn Sie keine Antwort finden."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -1898,9 +1876,7 @@ msgstr "Versuchen Sie in diesem Fall, die \"{{% livechat_label prosody_peertube_
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
-msgstr ""
-"Weitere Informationen finden Sie in der Hilfe für [diese Einstellungen"
-"](/peertube-plugin-livechat/de/documentation/admin/settings/)."
+msgstr "Weitere Informationen finden Sie in der Hilfe für [diese Einstellungen](/peertube-plugin-livechat/de/documentation/admin/settings/)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2068,9 +2044,7 @@ msgstr "Sie können die [social_stream Browsererweiterung](https://github.com/st
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Some basics about how to setup and use the chat for your live stream"
-msgstr ""
-"Einige grundlegende Informationen zur Einrichtung und Nutzung des Chats für "
-"Ihren Livestream"
+msgstr "Einige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2149,11 +2123,7 @@ msgstr "Sie können einige Optionen individuell anpassen:"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "{{% livechat_label read_only %}}: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs))."
-msgstr ""
-"{{% livechat_label read_only %}}: Sie können den Chat nur lesen, nicht "
-"schreiben. Dies ist nützlich, um den Inhalt des Chats in Ihren Live-Stream "
-"einzubinden (siehe die [OBS Dokumentation](/peertube-plugin-livechat/de/"
-"documentation/user/obs))."
+msgstr "{{% livechat_label read_only %}}: Sie können den Chat nur lesen, nicht schreiben. Dies ist nützlich, um den Inhalt des Chats in Ihren Live-Stream einzubinden (siehe die [OBS Dokumentation](/peertube-plugin-livechat/de/documentation/user/obs))."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2181,9 +2151,7 @@ msgstr "Moderation"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
-msgstr ""
-"Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/de/"
-"documentation/user/streamers/moderation)."
+msgstr "Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2194,9 +2162,7 @@ msgstr "Einbindung des Chats in den Videostream"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "Please refer to the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
-msgstr ""
-"Bitte lesen Sie die [OBS-Dokumentation](/peertube-plugin-livechat/de/"
-"documentation/user/obs)."
+msgstr "Bitte lesen Sie die [OBS-Dokumentation](/peertube-plugin-livechat/de/documentation/user/obs)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2213,10 +2179,7 @@ msgstr "Standardmäßig ist der Chat dauerhaft.  Das bedeutet, dass der Inhalt d
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
-msgstr ""
-"Sie können das Dauerhaftigkeitsverhalten ändern.  [Öffnen Sie den Chat im "
-"Vollbildmodus (/peertube-plugin-livechat/de/documentation/user/viewers), "
-"öffnen Sie dann das obere Menü und klicken Sie auf \"Konfigurieren\"."
+msgstr "Sie können das Dauerhaftigkeitsverhalten ändern.  [Öffnen Sie den Chat im Vollbildmodus (/peertube-plugin-livechat/de/documentation/user/viewers), öffnen Sie dann das obere Menü und klicken Sie auf \"Konfigurieren\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2258,14 +2221,7 @@ msgstr "Löschen des Chat Inhalts"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
-msgstr ""
-"Wenn Sie den Inhalt des Chats löschen möchten, [öffnen Sie den Chat im "
-"Vollbildmodus](/peertube-plugin-livechat/de/documentation/user/viewers), "
-"öffnen Sie dann das obere Menü und klicken Sie auf \"Löschen\".  Es öffnet "
-"sich ein Popup-Fenster, das eine Bestätigung verlangt.  Um Fehler zu "
-"vermeiden, werden Sie in dem Popup-Fenster nach der \"XMPP-Adresse\" des "
-"Chatrooms gefragt.  Diese Adresse können Sie über das Menü \"Details\" im "
-"oberen Menü erhalten."
+msgstr "Wenn Sie den Inhalt des Chats löschen möchten, [öffnen Sie den Chat im Vollbildmodus](/peertube-plugin-livechat/de/documentation/user/viewers), öffnen Sie dann das obere Menü und klicken Sie auf \"Löschen\".  Es öffnet sich ein Popup-Fenster, das eine Bestätigung verlangt.  Um Fehler zu vermeiden, werden Sie in dem Popup-Fenster nach der \"XMPP-Adresse\" des Chatrooms gefragt.  Diese Adresse können Sie über das Menü \"Details\" im oberen Menü erhalten."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2287,9 +2243,7 @@ msgstr "Befehle"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 msgid "![Commands configuration](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Befehlskonfiguration](/peertube-plugin-livechat/images/bot_commands."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Befehlskonfiguration](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -2300,9 +2254,7 @@ msgstr "Sie können mehrere Befehle einrichten."
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #, no-wrap
 msgid "The bot can automatically moderate messages containing forbidden words."
-msgstr ""
-"Der Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter "
-"enthalten."
+msgstr "Der Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -2313,88 +2265,57 @@ msgstr "Verbotene Wörter"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Forbidden words configuration](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Konfiguration der verbotenen Wörter](/peertube-plugin-livechat/images/"
-"bot_forbidden_words.png?classes=shadow,border&height=400px)"
+msgstr "![Konfiguration der verbotenen Wörter](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Deleted message](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
-msgstr ""
-"![Gelöschte Nachricht](/peertube-plugin-livechat/images/bot_deleted_message."
-"png?classes=shadow,border&height=100px)"
+msgstr "![Gelöschte Nachricht](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
-msgstr ""
-"Sie können mehrere \"{{% livechat_label "
-"livechat_configuration_channel_forbidden_words_label %}}\"-Felder "
-"ausfüllen.  Wenn ein Benutzer eine Nachricht sendet, die den konfigurierten "
-"Kriterien entspricht, wird die Nachricht automatisch gelöscht."
+msgstr "Sie können mehrere \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\"-Felder ausfüllen.  Wenn ein Benutzer eine Nachricht sendet, die den konfigurierten Kriterien entspricht, wird die Nachricht automatisch gelöscht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
-msgstr ""
-"In diesem Feld können Sie mehrere Wörter, Wortgruppen oder \"reguläre "
-"Ausdrücke\" (regex) eingeben."
+msgstr "In diesem Feld können Sie mehrere Wörter, Wortgruppen oder \"reguläre Ausdrücke\" (regex) eingeben."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
-msgstr ""
-"Jedes Mal, wenn ein Benutzer eine Nachricht sendet, werden diese Wörter "
-"getestet.  Wenn die Nachricht eines dieser Wörter enthält, wird die "
-"Nachricht gelöscht."
+msgstr "Jedes Mal, wenn ein Benutzer eine Nachricht sendet, werden diese Wörter getestet.  Wenn die Nachricht eines dieser Wörter enthält, wird die Nachricht gelöscht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "You can for example fill this field with a swear words list."
-msgstr ""
-"Sie können dieses Feld zum Beispiel mit einer Liste von Schimpfwörtern "
-"füllen."
+msgstr "Sie können dieses Feld zum Beispiel mit einer Liste von Schimpfwörtern füllen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "To get some examples, please check these [forbidden words suggestions](https://framagit.org/Livingston/peertube-plugin-livechat/-/tree/main/support/forbidden_words)."
-msgstr ""
-"Einige Beispiele finden Sie in den [Vorschlägen für verbotene "
-"Wörter](https://framagit.org/Livingston/peertube-plugin-livechat/-/tree/main/"
-"support/forbidden_words)."
+msgstr "Einige Beispiele finden Sie in den [Vorschlägen für verbotene Wörter](https://framagit.org/Livingston/peertube-plugin-livechat/-/tree/main/support/forbidden_words)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "If you have some usefull words lists, you are welcome to contribute to this suggestion page.  There are in the `support/forbidden_words` folder of the livechat source code.  See the [contribution guide](/peertube-plugin-livechat/contributing/) for more information."
-msgstr ""
-"Wenn Sie einige nützliche Wörterlisten haben, können Sie die gerne zu dieser "
-"Vorschlagsseite beitragen.  Sie befinden sich im Ordner `support/"
-"forbidden_words` des Livechat-Quellcodes.  Siehe die [Beitragen Seite"
-"](/peertube-plugin-livechat/de/contributing/) für weitere Informationen."
+msgstr "Wenn Sie einige nützliche Wörterlisten haben, können Sie die gerne zu dieser Vorschlagsseite beitragen.  Sie befinden sich im Ordner `support/forbidden_words` des Livechat-Quellcodes.  Siehe die [Beitragen Seite](/peertube-plugin-livechat/de/contributing/) für weitere Informationen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "These words are case insensitive."
-msgstr ""
-"Bei diesen Wörtern wird die Groß- und Kleinschreibung nicht berücksichtigt."
+msgstr "Bei diesen Wörtern wird die Groß- und Kleinschreibung nicht berücksichtigt."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "This features is still experimental.  There might be some issues with non-latin alphabets.  You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to report your problems."
-msgstr ""
-"Diese Funktion ist noch experimentell.  Es könnte einige Probleme mit nicht-"
-"lateinischen Alphabeten geben.  Sie können [ein Problem öffnen] "
-"(https://github.com/JohnXLivingston/peertube-plugin-livechat/issues), um "
-"Ihre Probleme zu melden."
+msgstr "Diese Funktion ist noch experimentell.  Es könnte einige Probleme mit nicht-lateinischen Alphabeten geben.  Sie können [ein Problem öffnen] (https://github.com/JohnXLivingston/peertube-plugin-livechat/issues), um Ihre Probleme zu melden."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
-msgstr ""
-"Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% "
-"livechat_label livechat_configuration_channel_forbidden_words_label %}}\" "
-"als [regulärer Ausdruck] (https://de.wikipedia.org/wiki/"
-"Regul%C3%A4rer_Ausdruck) betrachtet."
+msgstr "Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" als [regulärer Ausdruck] (https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck) betrachtet."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -2412,39 +2333,28 @@ msgstr "Chatbot"
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance's admins."
-msgstr ""
-"Diese Funktion wird mit dem Livechatplugin Version 8.0.0 geliefert und kann "
-"von den Administratoren Ihrer Instanz deaktiviert werden."
+msgstr "Diese Funktion wird mit dem Livechatplugin Version 8.0.0 geliefert und kann von den Administratoren Ihrer Instanz deaktiviert werden."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "You can enable a chat bot on your chatrooms.  The bot configuration is made channel per channel, and will apply to all related videos' chatrooms."
-msgstr ""
-"Sie können einen Chatbot für Ihre Chaträume aktivieren.  Die "
-"Chatbotkonfiguration wird für jeden Kanal vorgenommen und gilt für alle "
-"Chaträume der zugehörigen Videos."
+msgstr "Sie können einen Chatbot für Ihre Chaträume aktivieren.  Die Chatbotkonfiguration wird für jeden Kanal vorgenommen und gilt für alle Chaträume der zugehörigen Videos."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Kanalkonfiguration](/peertube-plugin-livechat/images/channel_configuration."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Kanalkonfiguration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
-msgstr ""
-"Um auf diese Seite zuzugreifen, sehen Sie sich die [Kanal Konfigurations "
-"Dokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/"
-"channel) an."
+msgstr "Um auf diese Seite zuzugreifen, sehen Sie sich die [Kanal Konfigurations Dokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/channel) an."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "Once there, you can enable the bot, and setup several options:"
-msgstr ""
-"Dort können Sie den Chatbot aktivieren und verschiedene Optionen einstellen:"
+msgstr "Dort können Sie den Chatbot aktivieren und verschiedene Optionen einstellen:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -2466,16 +2376,12 @@ msgstr "Aufgezeichnete Nachrichten"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "If there is no user in the chatroom, the bot won't send any message."
-msgstr ""
-"Wenn sich kein Benutzer im Chatraum befindet, sendet der Chatbot keine "
-"Nachricht."
+msgstr "Wenn sich kein Benutzer im Chatraum befindet, sendet der Chatbot keine Nachricht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
-msgstr ""
-"[Konfiguration der aufgezeichneten Nachrichten](/peertube-plugin-livechat/"
-"images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgstr "[Konfiguration der aufgezeichneten Nachrichten](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2492,24 +2398,17 @@ msgstr "Kanalkonfiguration"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "In the Peertube left menu, there is a \"{{% livechat_label menu_configuration_label %}}\" entry:"
-msgstr ""
-"Im linken Menü von Peertube gibt es einen Eintrag \"{{% livechat_label "
-"menu_configuration_label %}}\":"
+msgstr "Im linken Menü von Peertube gibt es einen Eintrag \"{{% livechat_label menu_configuration_label %}}\":"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "![Chatrooms menu](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Chaträume Menü](/peertube-plugin-livechat/images/chatrooms_menu."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Chaträume Menü](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "This \"{{% livechat_label menu_configuration_label %}}\" link takes you to a list of your channels.  By clicking on a channel, you will then be able to setup some options for your channels:"
-msgstr ""
-"Dieser \"{{% livechat_label menu_configuration_label %}}\" Link führt Sie zu "
-"einer Liste Ihrer Kanäle.  Wenn Sie auf einen Kanal klicken, können Sie "
-"einige Optionen für Ihre Kanäle einrichten:"
+msgstr "Dieser \"{{% livechat_label menu_configuration_label %}}\" Link führt Sie zu einer Liste Ihrer Kanäle.  Wenn Sie auf einen Kanal klicken, können Sie einige Optionen für Ihre Kanäle einrichten:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2519,12 +2418,13 @@ msgstr "Hier können Sie konfigurieren:"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
-msgstr ""
-"[Den Chatbot](/peertube-plugin-livechat/de/documentation/user/streamers/bot)"
+msgstr "[Den Chatbot](/peertube-plugin-livechat/de/documentation/user/streamers/bot)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-msgid "More feature to come..."
+#, fuzzy
+#| msgid "More feature to come..."
+msgid "More features to come..."
 msgstr "Weitere Funktionen werden folgen..."
 
 #. type: Yaml Front Matter Hash Value: description
@@ -2559,10 +2459,7 @@ msgstr "Der Chatbot"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
-msgstr ""
-"Sie können einen Chatbot verwenden, der Sie bei der Moderation unterstützt.  "
-"Weitere Informationen finden Sie in der [Chatbot Dokumentation](/peertube-"
-"plugin-livechat/de/documentation/user/streamers/bot)."
+msgstr "Sie können einen Chatbot verwenden, der Sie bei der Moderation unterstützt.  Weitere Informationen finden Sie in der [Chatbot Dokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/bot)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2782,10 +2679,7 @@ msgstr "Es kann einfacher sein, in einer seperaten Browser-Registerkarte zu chat
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
-msgstr ""
-"Diese Vollbildansicht fügt auch ein oberes Menü mit erweiterten Funktionen "
-"hinzu.  Dies ist besonders nützlich für [Moderationsfunktionen](/peertube-"
-"plugin-livechat/de/documentation/user/streamers/moderation)."
+msgstr "Diese Vollbildansicht fügt auch ein oberes Menü mit erweiterten Funktionen hinzu.  Dies ist besonders nützlich für [Moderationsfunktionen](/peertube-plugin-livechat/de/documentation/user/streamers/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2884,10 +2778,7 @@ msgstr "[Peertube](https://joinpeertube.org/) ist eine dezentrale Streaming-Plat
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "To have a glimpse on this plugin capabilities, checkout the [introduction](/peertube-plugin-livechat/intro/). For more precise informations, please find bellow the summary of this documentation."
-msgstr ""
-"Um einen Einblick in die Fähigkeiten dieses Plugins zu bekommen, schauen Sie "
-"sich die [Einführung](/peertube-plugin-livechat/de/intro/) an. Für genauere "
-"Informationen, finden Sie unten die Zusammenfassung dieser Dokumentation."
+msgstr "Um einen Einblick in die Fähigkeiten dieses Plugins zu bekommen, schauen Sie sich die [Einführung](/peertube-plugin-livechat/de/intro/) an. Für genauere Informationen, finden Sie unten die Zusammenfassung dieser Dokumentation."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md

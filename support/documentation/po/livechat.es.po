@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-09-22 20:41+0200\n"
+"POT-Creation-Date: 2023-09-25 18:47+0200\n"
 "PO-Revision-Date: 2023-07-26 22:29+0000\n"
 "Last-Translator: Tony Simoes <asrmail@protonmail.com>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -2394,7 +2394,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-msgid "More feature to come..."
+msgid "More features to come..."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
