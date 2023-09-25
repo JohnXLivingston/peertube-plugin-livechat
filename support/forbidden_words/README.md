@@ -25,7 +25,7 @@ Please find here some swear words list, in several languages:
 
 ### 🇬🇧 English
 
-* TODO
+* [English swear words](./lists/en.english_swear_words.md)
 
 ### 🇫🇷 French / Français
 
