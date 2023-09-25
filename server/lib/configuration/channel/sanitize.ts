@@ -105,6 +105,19 @@ function _readStringArray (data: any, f: string): string[] {
   return result
 }
 
+function _readMultiLineString (data: any, f: string): string {
+  if (!(f in data)) {
+    return ''
+  }
+  if (typeof data[f] !== 'string') {
+    throw new Error('Invalid data type for field ' + f)
+  }
+  // Removing control characters.
+  // eslint-disable-next-line no-control-regex
+  const s = (data[f] as string).replace(/[\u0000-\u001F\u007F-\u009F]/g, '')
+  return s
+}
+
 async function _readRegExpArray (data: any, f: string): Promise<string[]> {
   // Note: this function can instanciate a lot of RegExp.
   // To avoid freezing the server, we make it async, and will validate each regexp in a separate tick.
@@ -153,12 +166,14 @@ async function _readForbiddenWords (botData: any): Promise<ChannelConfigurationO
     }
     const applyToModerators = _readBoolean(fw, 'applyToModerators')
     const reason = fw.reason ? _readSimpleInput(fw, 'reason') : undefined
+    const comments = fw.comments ? _readMultiLineString(fw, 'comments') : undefined
 
     result.push({
       regexp,
       entries,
       applyToModerators,
-      reason
+      reason,
+      comments
     })
   }
   return result

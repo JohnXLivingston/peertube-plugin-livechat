@@ -101,6 +101,16 @@
             />
             <p class="form-group-description">{{forbiddenWordsReasonDesc}}</p>
           </div>
+          <div class="form-group">
+            <label for="peertube-livechat-forbidden-words-comments-{{fieldNumber}}">{{forbiddenWordsComments}}</label>
+            {{! warning: don't add extra line break in textarea! }}
+            <textarea
+              name="forbidden_words_comments_{{fieldNumber}}"
+              id="peertube-livechat-forbidden-words-comments-{{fieldNumber}}"
+              class="form-control"
+            >{{comments}}</textarea>
+            <p class="form-group-description">{{forbiddenWordsCommentsDesc}}</p>
+          </div>
         </div>
       </div>
     {{/forbiddenWordsArray}}

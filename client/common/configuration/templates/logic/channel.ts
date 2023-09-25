@@ -43,7 +43,8 @@ async function getConfigurationChannelViewData (
       joinedEntries: fw.entries.join('\n'),
       regexp: !!fw.regexp,
       applyToModerators: fw.applyToModerators,
-      reason: fw.reason
+      reason: fw.reason,
+      comments: fw.comments
     })
   }
   // Ensuring we have at least N blocks:
@@ -57,7 +58,8 @@ async function getConfigurationChannelViewData (
       joinedEntries: '',
       regexp: false,
       applyToModerators: false,
-      reason: ''
+      reason: '',
+      comments: ''
     })
     continue
   }
@@ -231,6 +233,7 @@ async function vivifyConfigurationChannel (
       const regexp = data.get('forbidden_words_regexp_' + i.toString())
       const applyToModerators = data.get('forbidden_words_applytomoderators_' + i.toString())
       const reason = data.get('forbidden_words_reason_' + i.toString())?.toString()
+      const comments = data.get('forbidden_words_comments_' + i.toString())?.toString()
       const fw: ChannelConfigurationOptions['bot']['forbiddenWords'][0] = {
         entries,
         applyToModerators: !!applyToModerators,
@@ -238,6 +241,9 @@ async function vivifyConfigurationChannel (
       }
       if (reason) {
         fw.reason = reason
+      }
+      if (comments) {
+        fw.comments = comments
       }
       channelConfigurationOptions.bot.forbiddenWords.push(fw)
     }

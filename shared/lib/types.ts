@@ -61,6 +61,7 @@ interface ChannelConfigurationOptions {
       regexp?: boolean
       applyToModerators?: boolean
       reason?: string
+      comments?: string
     }>
     quotes: Array<{
       messages: string[]

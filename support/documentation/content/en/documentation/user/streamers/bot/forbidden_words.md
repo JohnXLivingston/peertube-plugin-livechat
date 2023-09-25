@@ -52,3 +52,7 @@ By checking this option, each line of the "{{% livechat_label livechat_configura
 ## {{% livechat_label livechat_configuration_channel_forbidden_words_reason_label %}}
 
 {{% livechat_label livechat_configuration_channel_forbidden_words_reason_desc %}}
+
+## {{% livechat_label livechat_configuration_channel_forbidden_words_comments_label %}}
+
+{{% livechat_label livechat_configuration_channel_forbidden_words_comments_desc %}}

@@ -336,6 +336,10 @@ livechat_configuration_channel_forbidden_words_applytomoderators_label:  "Also m
 livechat_configuration_channel_forbidden_words_applytomoderators_desc: |
   By default, moderator messages will not be deleted when containing forbidden words.
   By checking this option, messages from moderators will also be deleted.
+livechat_configuration_channel_forbidden_words_comments_label:  "Comments"
+livechat_configuration_channel_forbidden_words_comments_desc: |
+  You can add here some comments about this rule, to remember how and why you created it.
+  These comments are purely indicative, and have no influence on the bot's behavior.
 livechat_configuration_channel_quote_label: "Pre-recorded messages"
 livechat_configuration_channel_quote_desc: |
   You can configure several pre-recorded messages.
