@@ -23,3 +23,6 @@ last_activity: Darrièra activitat
 web: Web
 room_name: Nom de la sala
 room_description: Descripcion de la sala
+room_type_label: Tipe de sala
+online_help: Ajuda en linha
+chat_title: <h3>Chat</h3>
