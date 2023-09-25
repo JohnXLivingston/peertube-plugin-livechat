@@ -238,8 +238,7 @@ prosody_components_port_label: "Port für externe Komponenten zur Verbindung mit
 prosody_components_port_description: |
   Der Port, der von XMPP-Komponenten verwendet wird, um sich mit dem Prosody-Server zu verbinden.<br>
   Ändern Sie ihn, wenn dieser Port bereits auf Ihrem Server verwendet wird.<br>
-  Sie können diesen Port in Ihrer Firewall geschlossen lassen, wenn Sie den Zugriff von anderen Schnittstellen als localhost nicht zulassen möchten.<br>
-  Hinweis: Dies könnte sich in naher Zukunft ändern, da geplant ist, eine Funktion zum Aktivieren externer Verbindungen hinzuzufügen.
+  Sie können diesen Port in Ihrer Firewall geschlossen lassen, wenn Sie den Zugriff von anderen Schnittstellen als localhost nicht zulassen möchten.
 
 prosody_components_list_label: "Externe Komponenten"
 prosody_components_list_description: |
@@ -358,3 +357,9 @@ livechat_configuration_channel_forbidden_words_applytomoderators_label: Auch Nac
 livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Standardmäßig\
   \ werden Nachrichten von Moderatoren nicht gelöscht, wenn sie verbotene Wörter enthalten.\n\
   Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.\n"
+invalid_value: Ungültiger Wert.
+livechat_configuration_channel_forbidden_words_comments_label: Kommentare
+livechat_configuration_channel_forbidden_words_comments_desc: "Sie können hier einige\
+  \ Kommentare zu dieser Regel hinzufügen, um sich daran zu erinnern, wie und warum\
+  \ Sie sie erstellt haben.\nDiese Kommentare sind rein indikativ und haben keinen\
+  \ Einfluss auf das Verhalten des Chatbots.\n"
