@@ -64,7 +64,7 @@ function _readInteger (data: any, f: string, min: number, max: number): number {
   return v
 }
 
-function _readSimpleInput (data: any, f: string, strict?: boolean): string {
+function _readSimpleInput (data: any, f: string, strict?: boolean, noSpace?: boolean): string {
   if (!(f in data)) {
     return ''
   }
@@ -77,6 +77,9 @@ function _readSimpleInput (data: any, f: string, strict?: boolean): string {
   if (strict) {
     // Replacing all invalid characters, no need to throw an error..
     s = s.replace(/[^\p{L}\p{N}\p{Z}_-]$/gu, '')
+  }
+  if (noSpace) {
+    s = s.replace(/\s+/g, '')
   }
   return s
 }
@@ -185,7 +188,7 @@ function _readCommands (botData: any): ChannelConfigurationOptions['bot']['comma
   const result: ChannelConfigurationOptions['bot']['commands'] = []
   for (const cs of botData.commands) {
     const message = _readSimpleInput(cs, 'message')
-    const command = _readSimpleInput(cs, 'command')
+    const command = _readSimpleInput(cs, 'command', false, true)
 
     result.push({
       message,

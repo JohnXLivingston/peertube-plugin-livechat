@@ -132,8 +132,9 @@ async function vivifyConfigurationChannel (
 ): Promise<void> {
   const form = rootEl.querySelector('form[livechat-configuration-channel-options]') as HTMLFormElement
   if (!form) { return }
-  const labelSaved = await clientOptions.peertubeHelpers.translate(LOC_SUCCESSFULLY_SAVED)
-  const labelError = await clientOptions.peertubeHelpers.translate(LOC_ERROR)
+  const translate = clientOptions.peertubeHelpers.translate
+  const labelSaved = await translate(LOC_SUCCESSFULLY_SAVED)
+  const labelError = await translate(LOC_ERROR)
   const enableBotCB = form.querySelector('input[name=bot]') as HTMLInputElement
   const botEnabledEl = form.querySelectorAll('[livechat-configuration-channel-options-bot-enabled]')
 
@@ -147,8 +148,70 @@ async function vivifyConfigurationChannel (
     })
   }
 
+  const removeDisplayedErrors = (): void => {
+    form.querySelectorAll('.form-error').forEach(el => el.remove())
+  }
+
+  const displayError = async (fieldSelector: string, message: string): Promise<void> => {
+    form.querySelectorAll(fieldSelector).forEach(el => {
+      const erEl = document.createElement('div')
+      erEl.classList.add('form-error')
+      erEl.textContent = message
+      el.after(erEl)
+    })
+  }
+
+  const validateData: Function = async (channelConfigurationOptions: ChannelConfigurationOptions): Promise<boolean> => {
+    const botConf = channelConfigurationOptions.bot
+    const errorFieldSelectors = []
+    if (/[^\p{L}\p{N}\p{Z}_-]/u.test(botConf.nickname ?? '')) {
+      const selector = '#peertube-livechat-bot-nickname'
+      errorFieldSelectors.push(selector)
+      await displayError(selector, await translate(LOC_INVALID_VALUE))
+    }
+
+    for (let iFw = 0; iFw < botConf.forbiddenWords.length; iFw++) {
+      const fw = botConf.forbiddenWords[iFw]
+      if (fw.regexp) {
+        for (const v of fw.entries) {
+          if (v === '' || /^\s+$/.test(v)) { continue }
+          try {
+            // eslint-disable-next-line no-new
+            new RegExp(v)
+          } catch (err) {
+            const selector = '#peertube-livechat-forbidden-words-' + iFw.toString()
+            errorFieldSelectors.push(selector)
+            let message = await translate(LOC_INVALID_VALUE)
+            message += ` "${v}": ${err as string}`
+            await displayError(selector, message)
+          }
+        }
+      }
+    }
+
+    for (let iCd = 0; iCd < botConf.commands.length; iCd++) {
+      const cd = botConf.commands[iCd]
+      if (/\s+/.test(cd.command)) {
+        const selector = '#peertube-livechat-command-' + iCd.toString()
+        errorFieldSelectors.push(selector)
+        const message = await translate(LOC_INVALID_VALUE)
+        await displayError(selector, message)
+      }
+    }
+
+    if (errorFieldSelectors.length) {
+      // Set the focus to the first in-error field:
+      const el: HTMLInputElement | HTMLTextAreaElement | null = document.querySelector(errorFieldSelectors[0])
+      el?.focus()
+      return false
+    }
+
+    return true
+  }
+
   const submitForm: Function = async () => {
     const data = new FormData(form)
+    removeDisplayedErrors()
     const channelConfigurationOptions: ChannelConfigurationOptions = {
       bot: {
         enabled: data.get('bot') === '1',
@@ -160,8 +223,7 @@ async function vivifyConfigurationChannel (
       }
     }
 
-    // TODO: handle form errors.
-
+    // Note: but data in order, because validateData assume index are okay to find associated fields.
     for (let i = 0; data.has('forbidden_words_' + i.toString()); i++) {
       const entries = (data.get('forbidden_words_' + i.toString())?.toString() ?? '')
         .split(/\r?\n|\r|\n/g)
@@ -180,6 +242,7 @@ async function vivifyConfigurationChannel (
       channelConfigurationOptions.bot.forbiddenWords.push(fw)
     }
 
+    // Note: but data in order, because validateData assume index are okay to find associated fields.
     for (let i = 0; data.has('quote_' + i.toString()); i++) {
       const messages = (data.get('quote_' + i.toString())?.toString() ?? '')
         .split(/\r?\n|\r|\n/g)
@@ -196,6 +259,7 @@ async function vivifyConfigurationChannel (
       channelConfigurationOptions.bot.quotes.push(q)
     }
 
+    // Note: but data in order, because validateData assume index are okay to find associated fields.
     for (let i = 0; data.has('command_' + i.toString()); i++) {
       const command = (data.get('command_' + i.toString())?.toString() ?? '')
       const message = (data.get('command_message_' + i.toString())?.toString() ?? '')
@@ -204,6 +268,10 @@ async function vivifyConfigurationChannel (
         message
       }
       channelConfigurationOptions.bot.commands.push(c)
+    }
+
+    if (!await validateData(channelConfigurationOptions)) {
+      throw new Error('Invalid form data')
     }
 
     const headers: any = clientOptions.peertubeHelpers.getAuthHeader() ?? {}
@@ -235,6 +303,9 @@ async function vivifyConfigurationChannel (
   enableBotCB.onclick = () => refresh()
   form.onsubmit = () => {
     toggleSubmit(true)
+    if (!form.checkValidity()) {
+      return false
+    }
     submitForm().then(
       () => {
         clientOptions.peertubeHelpers.notifier.success(labelSaved)

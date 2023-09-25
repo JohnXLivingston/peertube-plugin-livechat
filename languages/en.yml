@@ -361,3 +361,5 @@ livechat_configuration_channel_for_more_info: |
   For more information about how to configure this feature, please refer to the documentation by clicking on the help button.
 livechat_configuration_channel_banned_jids_label: "Banned users and patterns"
 livechat_configuration_channel_bot_nickname: "Bot nickname"
+
+invalid_value: "Invalid value."
