@@ -358,3 +358,21 @@ livechat_configuration_channel_command_desc: "Vous pouvez configurer le bot pour
 livechat_configuration_channel_for_more_info: "Pour plus d'information sur comment\
   \ configurer cette fonctionnalité, merci de vous référer à la documentation en cliquant\
   \ sur le bouton d'aide.\n"
+auto_ban_anonymous_ip_label: Bannir l'IP des utilisateur⋅rices anonymes, quand iels
+  sont banni⋅es des salons
+invalid_value: Valeur invalide.
+livechat_configuration_channel_forbidden_words_comments_label: Commentaires
+livechat_configuration_channel_forbidden_words_comments_desc: "Vous pouvez ajouter\
+  \ ici quelques commentaires sur cette règle, pour vous rappeler comment et pourquoi\
+  \ vous l'avez créé.\nCes commentaires sont purement indicatifs, et n'ont pas d'influence\
+  \ sur le comportement du bot.\n"
+auto_ban_anonymous_ip_description: "En activant cette option, à chaque fois qu'un⋅e\
+  \ utilisateur⋅rice anonyme est banni⋅e d'un salon, son IP sera également bannie\
+  \ du serveur de tchat.\nAttention : si votre instance est ouverte aux inscriptions,\
+  \ un⋅e utilisateur⋅rice pourrait créer un salon piégé, y inviter des personnes,\
+  \ et automatiquement bannir les IPs des utilisateur⋅rices anonymes.\nLa liste des\
+  \ IPs bannie n'est pas enregistrée, et sera effacée au redémarrage du serveur, ou\
+  \ si vous changez certains paramètres du plugin.\nLes IPs bannies sont journalisées\
+  \ dans les journaux du serveur Prosody, donc les admins du serveur peuvent éventuellement\
+  \ utiliser des outils externes (comme par exemple fail2ban) pour bannir les IPs\
+  \ plus largement.\n"
