@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import { Command } from 'commander'
 
 const program = new Command()
