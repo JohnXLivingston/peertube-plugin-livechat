@@ -6,6 +6,7 @@ local jid = require "util.jid";
 module:add_feature("vcard-temp");
 
 local avatars_dir = assert(module:get_option_string("peertubelivechat_random_vcard_avatars_path", nil), "'peertubelivechat_random_vcard_avatars_path' is a required option");
+local avatars_files = assert(module:get_option_array("peertubelivechat_random_vcard_avatars_files", nil), "'peertubelivechat_random_vcard_avatars_files' is a required option");
 local avatars = {};
 local function load_avatar(filename)
   local file = assert(io.open(path.join(avatars_dir, filename), "r"));
@@ -16,10 +17,12 @@ local function load_avatar(filename)
   file:close();
   return result;
 end
-local AVATARS_COUNT = 130;
-for i = 1, AVATARS_COUNT do
-  avatars[i] = load_avatar(i .. '.jpg');
+local AVATARS_COUNT = 0;
+for _, filename in pairs(avatars_files) do
+  AVATARS_COUNT = AVATARS_COUNT + 1;
+  avatars[AVATARS_COUNT] = load_avatar(filename);
 end
+module:log("info", "Loaded " .. AVATARS_COUNT .. ' avatars for host ' .. module:get_host() .. '.' );
 
 module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   local origin, stanza = event.origin, event.stanza;

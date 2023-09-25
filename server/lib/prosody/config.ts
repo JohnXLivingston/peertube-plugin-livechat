@@ -94,6 +94,11 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     certsDir = path.resolve(dir, 'data')
   }
 
+  const avatarsDir = path.resolve(__dirname, '../../avatars')
+  const avatarsFiles = await _listAvatars(avatarsDir)
+  const botAvatarsDir = path.resolve(__dirname, '../../bot_avatars')
+  const botAvatarsFiles = await _listAvatars(botAvatarsDir)
+
   return {
     dir: dir,
     pid: path.resolve(dir, 'prosody.pid'),
@@ -104,7 +109,10 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     certs: certsDir,
     certsDirIsCustom,
     modules: path.resolve(__dirname, '../../prosody-modules'),
-    avatars: path.resolve(__dirname, '../../avatars'),
+    avatars: avatarsDir,
+    avatarsFiles,
+    botAvatars: botAvatarsDir,
+    botAvatarsFiles,
     exec,
     execArgs,
     execCtl,
@@ -300,10 +308,10 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
 
   config.useListRoomsApi(apikey)
   config.usePeertubeVCards(basePeertubeUrl)
-  config.useAnonymousRandomVCards(paths.avatars)
+  config.useAnonymousRandomVCards(paths.avatars, paths.avatarsFiles)
 
   if (useBots) {
-    config.useBotsVirtualHost()
+    config.useBotsVirtualHost(paths.botAvatars, paths.botAvatarsFiles)
     bots.moderation = await BotConfiguration.singleton().getModerationBotGlobalConf()
     if (bots.moderation?.connection?.password) {
       valuesToHideInDiagnostic.set('BotPassword', bots.moderation.connection.password)
@@ -417,6 +425,18 @@ function getProsodyConfigContentForDiagnostic (config: ProsodyConfig, content?: 
     r = r.split(value).join(`***${key}***`)
   }
   return r
+}
+
+async function _listAvatars (dir: string): Promise<string[]> {
+  const files = await fs.promises.readdir(dir)
+  const r = []
+  for (const file of files) {
+    if (!file.endsWith('.jpg') && !file.endsWith('.png')) {
+      continue
+    }
+    r.push(file)
+  }
+  return r.sort()
 }
 
 export {

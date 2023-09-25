@@ -32,3 +32,14 @@ for (let i = 1; i <= count; i++) {
     sharp(inputFile).flatten({background}).resize(120, 120).jpeg({quality: 95, mozjpeg: true}).toFile(path.join(outputDir, out.toString() + '.jpg'))
   }
 }
+
+// Moderation bot avatar: for now taking image 2, and applying a grey background.
+{
+  const i = 2
+  const inputFile = path.join(inputDir, i + '.svg')
+
+  const background = '#858da0'
+  const outputDir = './dist/server/bot_avatars/'
+  const out = 1
+  sharp(inputFile).flatten({background}).resize(120, 120).jpeg({quality: 95, mozjpeg: true}).toFile(path.join(outputDir, out.toString() + '.jpg'))
+}

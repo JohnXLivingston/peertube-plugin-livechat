@@ -93,7 +93,7 @@
     "build:converse": "bash conversejs/build-conversejs.sh",
     "build:prosody": "bash build-prosody.sh",
     "build:images": "mkdir -p dist/client/images && npx svgo -f assets/images/ -o dist/client/images/",
-    "build:avatars": "mkdir -p dist/server/avatars && ./build-avatars.js",
+    "build:avatars": "mkdir -p dist/server/avatars && mkdir -p dist/server/bot_avatars && ./build-avatars.js",
     "check:client:tsc": "npx tsc --p client/ --noEmit --skipLibCheck && npx tsc --p conversejs/ --noemit --skipLibCheck",
     "build:client": "node ./build-client.js --mode=production",
     "build:server": "npx tsc --build server/tsconfig.json",

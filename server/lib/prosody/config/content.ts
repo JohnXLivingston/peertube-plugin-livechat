@@ -427,20 +427,26 @@ class ProsodyConfigContent {
     }
   }
 
-  useAnonymousRandomVCards (avatarPath: string): void {
+  useAnonymousRandomVCards (avatarPath: string, avatarFiles: string[]): void {
     if (this.anon) {
       this.anon.add('modules_enabled', 'random_vcard_peertubelivechat')
       this.anon.set('peertubelivechat_random_vcard_avatars_path', avatarPath)
+      this.anon.set('peertubelivechat_random_vcard_avatars_files', avatarFiles)
     }
   }
 
   /**
    * Enable the bots virtualhost.
    */
-  useBotsVirtualHost (): void {
+  useBotsVirtualHost (botAvatarPath: string, botAvatarFiles: string[]): void {
     this.bot = new ProsodyConfigVirtualHost('bot.' + this.prosodyDomain)
     this.bot.set('modules_enabled', ['ping'])
     this.bot.set('authentication', 'peertubelivechat_bot')
+
+    // For now, just using random_vcard_peertubelivechat to set bot avatar
+    this.bot.add('modules_enabled', 'random_vcard_peertubelivechat')
+    this.bot.set('peertubelivechat_random_vcard_avatars_path', botAvatarPath)
+    this.bot.set('peertubelivechat_random_vcard_avatars_files', botAvatarFiles)
 
     // Adding the moderation bot as admin to the muc component.
     this.muc.add('admins', BotConfiguration.singleton().moderationBotJID())
