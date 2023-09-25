@@ -259,14 +259,14 @@ prosody_components_label: "Activer les composants externes personnalisés Prosod
 prosody_components_description: |
   Pour permettre l'utilisation de composants XMPP externes.<br>
   Cette option seule n'autorise que les connexions depuis le localhost.<br>
+  Vous devez configurer les interfaces sur lesquelles écouter et ouvrir les ports sur votre pare-feu pour rendre cela disponible à des serveurs distants.<br>
   Cette fonctionnalité peut, par exemple, être utilisée pour connecter des bots aux salons.
 
 prosody_components_port_label: "Port pour les composants externe Prosody"
 prosody_components_port_description: |
   Le port à utiliser pour les XMPP components.<br>
   Changez ce port s'il est déjà utilisé sur votre serveur.<br>
-  Pour l'instant, vous pouvez garder ce port fermé sur votre pare-feu, il sera inaccessible depuis l'extérieur (Prosody n'écoute que le localhost).<br>
-  Note : cela pourrait prochainement changer, car il est prévu d'ajouter une fonction permettant d'activer les connexions externes.
+  Vous pouvez garder ce port fermé sur votre pare-feu si vous n'autorisez pas l'accès sur les interfaces autre que localhost.<br>
 
 prosody_components_list_label: "Composants externes"
 prosody_components_list_description: |
