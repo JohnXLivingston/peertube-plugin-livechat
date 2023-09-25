@@ -112,9 +112,9 @@ function _readMultiLineString (data: any, f: string): string {
   if (typeof data[f] !== 'string') {
     throw new Error('Invalid data type for field ' + f)
   }
-  // Removing control characters.
+  // Removing control characters (must authorize \u001A: line feed)
   // eslint-disable-next-line no-control-regex
-  const s = (data[f] as string).replace(/[\u0000-\u001F\u007F-\u009F]/g, '')
+  const s = (data[f] as string).replace(/[\u0000-\u0009\u001B-\u001F\u007F-\u009F]/g, '')
   return s
 }
 
