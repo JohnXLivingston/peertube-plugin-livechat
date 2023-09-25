@@ -29,5 +29,5 @@ Please find here some swear words list, in several languages:
 
 ### 🇫🇷 French / Français
 
-* [Insultes en français](./swear_words/fr.insultes_en_francais.md)
-* [Termes vulgaires en français](./swear_words/fr.termes_vulgaires_en_francais.md)
+* [Insultes en français](./lists/fr.insultes_en_francais.md)
+* [Termes vulgaires en français](./lists/fr.termes_vulgaires_en_francais.md)
