@@ -21,4 +21,12 @@ If you want to prevent users to send URLs in the chat, you can use following val
 
 ## Swear words
 
-Please find here some swear words list, in several languages: [swear words](./swear_words/).
+Please find here some swear words list, in several languages:
+
+### 🇬🇧 English
+
+* TODO
+
+### 🇫🇷 French / Français
+
+* [Insultes en français](./swear_words/fr.insultes_en_francais.md)
