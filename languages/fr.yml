@@ -266,7 +266,7 @@ prosody_components_port_label: "Port pour les composants externe Prosody"
 prosody_components_port_description: |
   Le port à utiliser pour les XMPP components.<br>
   Changez ce port s'il est déjà utilisé sur votre serveur.<br>
-  Vous pouvez garder ce port fermé sur votre pare-feu si vous n'autorisez pas l'accès sur les interfaces autre que localhost.<br>
+  Vous pouvez garder ce port fermé sur votre pare-feu si vous n'autorisez pas l'accès sur les interfaces autre que localhost.
 
 prosody_components_list_label: "Composants externes"
 prosody_components_list_description: |
