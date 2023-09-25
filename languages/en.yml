@@ -269,7 +269,6 @@ prosody_components_port_description: |
   The port that will be used by XMPP components to connect to the Prosody server.<br>
   Change it if this port is already in use on your server.<br>
   You can keep this port closed on your firewall if you don't allow access on interfaces other than localhost.<br>
-  Note: this might change in a near future, as it is planned to add a feature to activate external connections.
 
 prosody_components_interfaces_label: "Prosody external components network interfaces"
 prosody_components_interfaces_description: |
