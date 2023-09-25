@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-09-22 20:41+0200\n"
-"PO-Revision-Date: 2023-08-07 15:09+0000\n"
+"PO-Revision-Date: 2023-09-25 16:46+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.0.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1543,17 +1544,22 @@ msgstr "Les paramètres suivants concernent la fédération avec d'autres instan
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Channel advanced configuration"
-msgstr ""
+msgstr "Configuration avancée de la chaîne"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, ..."
 msgstr ""
+"Les paramètres suivants concernent les options de chaîne avancées : les "
+"utilisateur⋅rices pourront personnaliser leurs chaînes, activer le bot de "
+"modération, ..."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "If you encounter any issue with this feature, you can disable it."
 msgstr ""
+"Si vous rencontrez un problème avec cette fonctionnalité, vous pouvez la "
+"désactiver."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2073,7 +2079,7 @@ msgstr "Comment mettre en place le tchat pour vos diffusions en direct"
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Some basics"
-msgstr ""
+msgstr "Quelques basiques"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2255,13 +2261,13 @@ msgstr "Le tchat sera automatiquement recréé à chaque fois que quelqu'un essa
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 #, no-wrap
 msgid "The bot can respond to several commands."
-msgstr ""
+msgstr "Le bot peut répondre à différentes commandes."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 #, no-wrap
 msgid "Commands"
-msgstr ""
+msgstr "Commandes"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -2273,19 +2279,21 @@ msgstr "![Configurer le salon](/peertube-plugin-livechat/images/top_menu.png?cla
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 msgid "You can setup several commands."
-msgstr ""
+msgstr "Vous pouvez paramétrer différentes commandes."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #, no-wrap
 msgid "The bot can automatically moderate messages containing forbidden words."
 msgstr ""
+"Le bot peut automatiquement modérer les messages contenant des mots "
+"interdits."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #, no-wrap
 msgid "Forbidden words"
-msgstr ""
+msgstr "Mots interdits"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -2305,36 +2313,52 @@ msgstr "![Menu du haut](/peertube-plugin-livechat/images/top_menu.png?classes=sh
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
 msgstr ""
+"Vous pouvez remplir plusieurs champs «{{% livechat_label "
+"livechat_configuration_channel_forbidden_words_label %}}\"». Quand un⋅e "
+"utilisateur⋅rice envoie un message qui correspond à l'un des critère "
+"configuré, le message sera automatiquement supprimé."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
 msgstr ""
+"Dans ce champs, vous pouvez mettre plusieurs mots, groupes de mots, ou «"
+"expressions régulières»."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
 msgstr ""
+"Chaque fois qu'un⋅e utilisateur⋅rice envoi un message, ces mots seront "
+"testés. Si le message contient l'un d'entre eux, le message sera supprimé."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "You can for example fill this field with a swear words list."
-msgstr ""
+msgstr "Vous pouvez par exemple remplir ce champs avec une liste d'insultes."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "To get some examples, please check these [forbidden words suggestions](https://framagit.org/Livingston/peertube-plugin-livechat/-/tree/main/support/forbidden_words)."
 msgstr ""
+"Pour avoir quelques exemples, merci de vous référer aux [suggestions de mots "
+"interdits](https://framagit.org/Livingston/peertube-plugin-livechat/-/tree/"
+"main/support/forbidden_words)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "If you have some usefull words lists, you are welcome to contribute to this suggestion page.  There are in the `support/forbidden_words` folder of the livechat source code.  See the [contribution guide](/peertube-plugin-livechat/contributing/) for more information."
 msgstr ""
+"Si vous avez des listes de mots utiles, vous êtes les bienvenu⋅es pour "
+"contribuer à cette page de suggestion. Elles sont dans le dossier `support/"
+"forbidden_words` du code source. Veuillez vous référer au [guide de "
+"contribution](/peertube-plugin-livechat/fr/contributing/) pour plus "
+"d'informations."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "These words are case insensitive."
-msgstr ""
+msgstr "Ces mots ne sont pas sensibles à la casse."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -2347,12 +2371,16 @@ msgstr "Si la langue qui vous intéresse n'est pas présente, assurez-vous d'abo
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
 msgstr ""
+"En cochant cette option, chaque ligne du champs «{{% livechat_label "
+"livechat_configuration_channel_forbidden_words_label %}}» sera considéré "
+"comme une [expression régulière](https://fr.wikipedia.org/wiki/"
+"Expression_r%C3%A9guli%C3%A8re)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #, no-wrap
 msgid "Chat bot setup"
-msgstr ""
+msgstr "Configuration du bot de tchat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -2373,6 +2401,9 @@ msgstr "Cette fonction peut être désactivée par les administrateur⋅rices de
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "You can enable a chat bot on your chatrooms.  The bot configuration is made channel per channel, and will apply to all related videos' chatrooms."
 msgstr ""
+"Vous pouvez activer un bot de tchat dans vos salons. La configuration du bot "
+"se fait chaîne par chaîne, et s'applique aux salons de toutes les vidéos de "
+"celles-ci."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -2393,28 +2424,32 @@ msgstr "Veuillez vous référer à la [documentation de modération](/peertube-p
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "Once there, you can enable the bot, and setup several options:"
 msgstr ""
+"Une fois ici, vous pouvez activer le bot, et configurer quelques options :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "The bot will reload instantly when you save the page."
 msgstr ""
+"Le bot recharge automatiquement ses options quand vous sauvegardez la page."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
 msgid "The bot can send periodically some messages."
-msgstr ""
+msgstr "Le bot peut envoyer des messages périodiquement."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
 msgid "Pre-recorded messages"
-msgstr ""
+msgstr "Messages pré-enregistrés"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "If there is no user in the chatroom, the bot won't send any message."
 msgstr ""
+"S'il n'y a pas d'utilisateur⋅rice dans le salon, le bot n'enverra pas de "
+"message."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
@@ -2427,7 +2462,7 @@ msgstr "![Menu du haut](/peertube-plugin-livechat/images/top_menu.png?classes=sh
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 #, no-wrap
 msgid "Peertube channel chatrooms configuration"
-msgstr ""
+msgstr "Configuration des salons de discussion des chaînes Peertube"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2454,11 +2489,14 @@ msgstr "![Menu du haut](/peertube-plugin-livechat/images/top_menu.png?classes=sh
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "This \"{{% livechat_label menu_configuration_label %}}\" link takes you to a list of your channels.  By clicking on a channel, you will then be able to setup some options for your channels:"
 msgstr ""
+"Ce lien «{{% livechat_label menu_configuration_label %}}» vous emmène sur "
+"une liste de vos chaînes. En cliquant sur une chaîne, vous pourrez effectuer "
+"certains réglages pour vos chaînes :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "Here you can configure:"
-msgstr ""
+msgstr "Ici vous pouvez configurer :"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2470,7 +2508,7 @@ msgstr "Veuillez vous référer à la [documentation de modération](/peertube-p
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "More feature to come..."
-msgstr ""
+msgstr "Nouvelles fonctionnalités à venir..."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
@@ -2500,7 +2538,7 @@ msgstr "Cette section est encore incomplète."
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "The chat bot"
-msgstr ""
+msgstr "Le bot de tchat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
