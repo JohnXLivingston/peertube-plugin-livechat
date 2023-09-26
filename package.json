@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-livechat",
   "description": "PeerTube plugin livechat: create chat rooms for your Peertube lives!",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "license": "AGPL-3.0",
   "author": {
     "name": "John Livingston",
