@@ -166,38 +166,43 @@ async function vivifyConfigurationChannel (
   const validateData: Function = async (channelConfigurationOptions: ChannelConfigurationOptions): Promise<boolean> => {
     const botConf = channelConfigurationOptions.bot
     const errorFieldSelectors = []
-    if (/[^\p{L}\p{N}\p{Z}_-]/u.test(botConf.nickname ?? '')) {
-      const selector = '#peertube-livechat-bot-nickname'
-      errorFieldSelectors.push(selector)
-      await displayError(selector, await translate(LOC_INVALID_VALUE))
-    }
 
-    for (let iFw = 0; iFw < botConf.forbiddenWords.length; iFw++) {
-      const fw = botConf.forbiddenWords[iFw]
-      if (fw.regexp) {
-        for (const v of fw.entries) {
-          if (v === '' || /^\s+$/.test(v)) { continue }
-          try {
-            // eslint-disable-next-line no-new
-            new RegExp(v)
-          } catch (err) {
-            const selector = '#peertube-livechat-forbidden-words-' + iFw.toString()
-            errorFieldSelectors.push(selector)
-            let message = await translate(LOC_INVALID_VALUE)
-            message += ` "${v}": ${err as string}`
-            await displayError(selector, message)
+    // If !bot.enabled, we don't have to validate these fields:
+    // The backend will ignore those values.
+    if (botConf.enabled) {
+      if (/[^\p{L}\p{N}\p{Z}_-]/u.test(botConf.nickname ?? '')) {
+        const selector = '#peertube-livechat-bot-nickname'
+        errorFieldSelectors.push(selector)
+        await displayError(selector, await translate(LOC_INVALID_VALUE))
+      }
+
+      for (let iFw = 0; iFw < botConf.forbiddenWords.length; iFw++) {
+        const fw = botConf.forbiddenWords[iFw]
+        if (fw.regexp) {
+          for (const v of fw.entries) {
+            if (v === '' || /^\s+$/.test(v)) { continue }
+            try {
+              // eslint-disable-next-line no-new
+              new RegExp(v)
+            } catch (err) {
+              const selector = '#peertube-livechat-forbidden-words-' + iFw.toString()
+              errorFieldSelectors.push(selector)
+              let message = await translate(LOC_INVALID_VALUE)
+              message += ` "${v}": ${err as string}`
+              await displayError(selector, message)
+            }
           }
         }
       }
-    }
 
-    for (let iCd = 0; iCd < botConf.commands.length; iCd++) {
-      const cd = botConf.commands[iCd]
-      if (/\s+/.test(cd.command)) {
-        const selector = '#peertube-livechat-command-' + iCd.toString()
-        errorFieldSelectors.push(selector)
-        const message = await translate(LOC_INVALID_VALUE)
-        await displayError(selector, message)
+      for (let iCd = 0; iCd < botConf.commands.length; iCd++) {
+        const cd = botConf.commands[iCd]
+        if (/\s+/.test(cd.command)) {
+          const selector = '#peertube-livechat-command-' + iCd.toString()
+          errorFieldSelectors.push(selector)
+          const message = await translate(LOC_INVALID_VALUE)
+          await displayError(selector, message)
+        }
       }
     }
 
