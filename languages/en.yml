@@ -345,6 +345,7 @@ livechat_configuration_channel_quote_desc: |
   You can configure several timers that will send messages at regular interval.
   These messages will be sent by the bot every X minutes.
   You can for example make the bot sent some sponsoring information every 5 minutes.
+livechat_configuration_channel_quote_label2: "Messages"
 livechat_configuration_channel_quote_desc2: |
   One message per line.
   If multiple messages, it will pick one randomly every X minutes.
