@@ -1,4 +1,6 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import { localizedHelpUrl } from '../../../utils/help'
+import { helpButtonSVG } from '../../../videowatch/buttons'
 // Must use require for mustache, import seems buggy.
 const Mustache = require('mustache')
 
@@ -40,11 +42,35 @@ async function renderConfigurationHome (registerClientOptions: RegisterClientOpt
       channels: channels.data
     }
 
+    await _fillViewHelpButtons(registerClientOptions, view)
+
     return Mustache.render(MUSTACHE_CONFIGURATION_HOME, view) as string
   } catch (err: any) {
     peertubeHelpers.notifier.error(err.toString())
     return ''
   }
+}
+
+async function _fillViewHelpButtons ( // TODO: refactor with the similar function in channel.ts
+  registerClientOptions: RegisterClientOptions,
+  view: any
+): Promise<void> {
+  const title = await registerClientOptions.peertubeHelpers.translate(LOC_ONLINE_HELP)
+
+  const button = async (page: string): Promise<string> => {
+    const helpUrl = await localizedHelpUrl(registerClientOptions, {
+      page
+    })
+    const helpIcon = helpButtonSVG()
+    return `<a
+        href="${helpUrl}"
+        target=_blank
+        title="${title}"
+        class="orange-button peertube-button-link"
+      >${helpIcon}</a>`
+  }
+
+  view.helpButton = await button('documentation/user/streamers/channel')
 }
 
 export {
