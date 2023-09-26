@@ -4,7 +4,9 @@
 
 ### Minor changes and fixes
 
-* Fix dark mode for channel configuration buttons.
+* Channel configuration:
+  * Fix dark mode for buttons.
+  * Fix buttons margin.
 
 ## 8.0.0
 
