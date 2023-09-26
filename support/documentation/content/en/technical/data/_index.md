@@ -1,12 +1,12 @@
 ---
-title: "Data on the server"
-description: "Date files and folders used on the server"
+title: "Plugin storage"
+description: "Data files and folders used on the server"
 weight: 50
 chapter: false
 livechatnotranslation: true
 ---
 
-The livechat plugin stores some date on the server,
+The livechat plugin stores some data on the server,
 in the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/` folder.
 This page describes these data.
 
