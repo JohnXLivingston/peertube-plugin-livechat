@@ -322,11 +322,11 @@ livechat_configuration_channel_forbidden_words_regexp_desc: En cochant cette opt
   vous pouvez utiliser des expressions régulières.
 livechat_configuration_channel_forbidden_words_applytomoderators_label: Également
   modérer les messages des modérateur⋅rices
-livechat_configuration_channel_quote_label: Messages pré-enregsitrés
-livechat_configuration_channel_quote_desc: "Vous pouvez configurer quelques messages\
-  \ pré-enregistrés.\nCes messages seront envoyés par le bot toutes les X minutes.\n\
-  Vous pouvez par exemple faire en sorte que le bot envoi des informations de sponsoring\
-  \ toutes les 5 minutes.\n"
+livechat_configuration_channel_quote_label: Timer
+livechat_configuration_channel_quote_desc: "Vous pouvez configurer quelques timers\
+  \ qui enverrons des messages à intervalle régulier.\nCes messages seront envoyés\
+  \ par le bot toutes les X minutes.\nVous pouvez par exemple faire en sorte que le\
+  \ bot envoi des informations de sponsoring toutes les 5 minutes.\n"
 livechat_configuration_channel_quote_desc2: "Un message par ligne.\nS'il y a plusieurs\
   \ messages, le bot en choisira un aléatoirement toutes les X minutes.\n"
 livechat_configuration_channel_quote_delay_label: Envoyer toutes les X minutes
