@@ -93,6 +93,26 @@ $small-view: 800px;
         background-color: var(--inputBorderColor);
       }
     }
+
+    input[type="reset"] {
+      // Peertube grey-button mixin
+      background-color: var(--greyBackgroundColor);
+      color: var(--greyForegroundColor);
+
+      &:hover,
+      &:active,
+      &:focus,
+      &[disabled],
+      &.disabled {
+        color: var(--greyForegroundColor);
+        background-color: var(--greySecondaryBackgroundColor);
+      }
+
+      &[disabled],
+      &.disabled {
+        cursor: default;
+      }
+    }
   }
 
   /* Channel selection page */

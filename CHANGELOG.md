@@ -1,5 +1,11 @@
 # Changelog
 
+## 8.0.1 (Note Released Yet)
+
+### Minor changes and fixes
+
+* Fix dark mode for channel configuration buttons.
+
 ## 8.0.0
 
 ### New features
