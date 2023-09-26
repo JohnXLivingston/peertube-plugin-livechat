@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-26 10:44+0200\n"
+"POT-Creation-Date: 2023-09-26 14:40+0200\n"
 "PO-Revision-Date: 2023-09-25 16:55+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -2399,8 +2399,8 @@ msgstr "Le bot peut envoyer des messages périodiquement."
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
-msgid "Pre-recorded messages"
-msgstr "Messages pré-enregistrés"
+msgid "Timers"
+msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
@@ -2409,7 +2409,9 @@ msgstr "S'il n'y a pas d'utilisateur⋅rice dans le salon, le bot n'enverra pas 
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
-msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+#, fuzzy
+#| msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 msgstr "![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 
 #. type: Yaml Front Matter Hash Value: description
@@ -2989,6 +2991,10 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter."
+
+#, no-wrap
+#~ msgid "Pre-recorded messages"
+#~ msgstr "Messages pré-enregistrés"
 
 #~ msgid "The plugin needs to build an AppImage for the Prosody XMPP server.  It appears that the way this AppImage is build requires `apt` and `dpkg` commands.  So it will only work \"out of the box\" on Debian-like systems.  If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.  See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  We will provide another solution as soon as possible."
 #~ msgstr "Le plugin doit construire une AppImage pour du serveur XMPP de Prosody.  Il semble que la façon dont cette AppImage est construite nécessite les commandes `apt` et `dpkg`.  Elle ne fonctionnera donc que sur des systèmes de type Debian.  Si vous utilisez une autre distribution Linux, vous pouvez essayer d'installer `apt` et `dpkg` manuellement.  Voir par exemple cette [question sur Github] (https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  Nous fournirons une autre solution dès que possible."

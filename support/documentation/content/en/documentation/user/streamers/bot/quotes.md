@@ -1,5 +1,5 @@
 ---
-title: "Pre-recorded messages"
+title: "Timers"
 description: "The bot can send periodically some messages."
 weight: 20
 chapter: false
@@ -11,7 +11,7 @@ chapter: false
 If there is no user in the chatroom, the bot won't send any message.
 {{% /notice %}}
 
-![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)
+![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)
 
 ## {{% livechat_label livechat_configuration_channel_quote_label %}}
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-09-26 10:44+0200\n"
+"POT-Creation-Date: 2023-09-26 14:40+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Hungarian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hu/>\n"
@@ -2323,7 +2323,7 @@ msgstr ""
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
-msgid "Pre-recorded messages"
+msgid "Timers"
 msgstr ""
 
 #. type: Plain text
@@ -2333,7 +2333,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
-msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description

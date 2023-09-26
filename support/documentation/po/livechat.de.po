@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-26 10:44+0200\n"
+"POT-Creation-Date: 2023-09-26 14:40+0200\n"
 "PO-Revision-Date: 2023-09-26 10:07+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1577,10 +1575,7 @@ msgid ""
 "Otherwise it could block all anonymous users at once.\n"
 msgstr ""
 "**Wichtiger Hinweis**:\n"
-"Wenn Sie diese Funktion aktivieren und einen benutzerdefinierten Reverse-"
-"Proxy vor Peertube verwenden, stellen Sie bitte sicher, dass Ihr Setup "
-"korrekt konfiguriert ist, um die IPs echter Benutzer an Peertube "
-"weiterzuleiten.\n"
+"Wenn Sie diese Funktion aktivieren und einen benutzerdefinierten Reverse-Proxy vor Peertube verwenden, stellen Sie bitte sicher, dass Ihr Setup korrekt konfiguriert ist, um die IPs echter Benutzer an Peertube weiterzuleiten.\n"
 "Andernfalls könnten alle anonymen Benutzer auf einmal blockiert werden.\n"
 
 #. type: Title ##
@@ -2387,8 +2382,8 @@ msgstr "Der Chatbot kann in regelmäßigen Abständen einige Nachrichten senden.
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
-msgid "Pre-recorded messages"
-msgstr "Aufgezeichnete Nachrichten"
+msgid "Timers"
+msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
@@ -2397,7 +2392,9 @@ msgstr "Wenn sich kein Benutzer im Chatraum befindet, sendet der Chatbot keine N
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
-msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+#, fuzzy
+#| msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 msgstr "[Konfiguration der aufgezeichneten Nachrichten](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 
 #. type: Yaml Front Matter Hash Value: description
@@ -2977,6 +2974,10 @@ msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-pl
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
+
+#, no-wrap
+#~ msgid "Pre-recorded messages"
+#~ msgstr "Aufgezeichnete Nachrichten"
 
 #~ msgid "The plugin needs to build an AppImage for the Prosody XMPP server.  It appears that the way this AppImage is build requires `apt` and `dpkg` commands.  So it will only work \"out of the box\" on Debian-like systems.  If you are using another Linux distribution, you can try to install `apt` and `dpkg` manually.  See for example this [Github issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  We will provide another solution as soon as possible."
 #~ msgstr "Das Plugin muss ein AppImage für den Prosody XMPP-Server erstellen.  Es scheint, dass die Art und Weise, wie dieses AppImage erstellt wird, `apt`- und `dpkg`-Befehle erfordert.  Daher wird es nur auf Debian-ähnlichen Systemen funktionieren.  Wenn Sie eine andere Linux-Distribution verwenden, können Sie versuchen, `apt` und `dpkg` manuell zu installieren.  Siehe zum Beispiel dieses [Github issue] (https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/200).  Wir werden so bald wie möglich eine andere Lösung anbieten."

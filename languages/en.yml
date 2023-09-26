@@ -340,9 +340,9 @@ livechat_configuration_channel_forbidden_words_comments_label:  "Comments"
 livechat_configuration_channel_forbidden_words_comments_desc: |
   You can add here some comments about this rule, to remember how and why you created it.
   These comments are purely indicative, and have no influence on the bot's behavior.
-livechat_configuration_channel_quote_label: "Pre-recorded messages"
+livechat_configuration_channel_quote_label: "Timer"
 livechat_configuration_channel_quote_desc: |
-  You can configure several pre-recorded messages.
+  You can configure several timers that will send messages at regular interval.
   These messages will be sent by the bot every X minutes.
   You can for example make the bot sent some sponsoring information every 5 minutes.
 livechat_configuration_channel_quote_desc2: |

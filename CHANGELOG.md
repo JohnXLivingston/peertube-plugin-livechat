@@ -10,6 +10,7 @@
   * Don't validate hidden fields.
   * Fix disabling bot.
 * Help button on top of the "channels" page.
+* Renaming "pre-recorded message" to "timers".
 
 ## 8.0.0
 
