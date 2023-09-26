@@ -8,6 +8,7 @@
   * Fix dark mode for buttons.
   * Fix buttons margin.
   * Don't validate hidden fields.
+  * Fix disabling bot.
 * Help button on top of the "channels" page.
 
 ## 8.0.0

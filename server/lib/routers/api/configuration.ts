@@ -63,7 +63,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
             await getChannelConfigurationOptions(options, channelInfos.id) ??
             getDefaultChannelConfigurationOptions(options)
           req.body.bot = channelOptions.bot
-          req.body.bot.enable = false
+          req.body.bot.enabled = false
         }
         channelOptions = await sanitizeChannelConfigurationOptions(options, channelInfos.id, req.body)
       } catch (err) {
