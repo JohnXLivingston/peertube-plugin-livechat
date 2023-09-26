@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-25 18:47+0200\n"
+"POT-Creation-Date: 2023-09-26 10:44+0200\n"
 "PO-Revision-Date: 2023-09-25 16:55+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1587,6 +1586,15 @@ msgstr "Le⋅a propriétaire de la vidéo pourra activer le tchat en ligne."
 msgid "Note: for now this feature simply hide the chat.  In a future release, the chat will be replaced by a message saying «please log in to [...]».  See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information."
 msgstr "Note : pour l'instant, c'est fonctionnalité masque simplement le tchat. Dans une future version, le tchat sera remplacé par un message précisant «merci de vous connecter [...]». Voir les notes de publication [de la version 5.7.0](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) pour plus d'informations."
 
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, no-wrap
+msgid ""
+"**Important note**:\n"
+"If you enable this feature, and are using a custom reverse proxy on front of Peertube, please make sure that your setup is correctly configured to forward real user's IPs to Peertube.\n"
+"Otherwise it could block all anonymous users at once.\n"
+msgstr ""
+
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
@@ -1653,12 +1661,7 @@ msgstr "Par exemple, cette option peut permettre à une instance Matterbridge (u
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This settings enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
-msgstr ""
-"Ce paramètre permet aux composants externes XMPP de se connecter au serveur. "
-"Par défaut cette option **n'autorise que les connexions des composants sur "
-"localhost**. Vous devez changer la valeur du paramètre «{{% livechat_label "
-"prosody_components_interfaces_label %}}» pour écouter sur d'autres "
-"interfaces réseau."
+msgstr "Ce paramètre permet aux composants externes XMPP de se connecter au serveur. Par défaut cette option **n'autorise que les connexions des composants sur localhost**. Vous devez changer la valeur du paramètre «{{% livechat_label prosody_components_interfaces_label %}}» pour écouter sur d'autres interfaces réseau."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2070,9 +2073,7 @@ msgstr "Vous pouvez utiliser l'extension [social_stream browser extension](https
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Some basics about how to setup and use the chat for your live stream"
-msgstr ""
-"Quelques basiques sur comment configurer et utiliser le tchat pour vos "
-"directs"
+msgstr "Quelques basiques sur comment configurer et utiliser le tchat pour vos directs"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2271,9 +2272,7 @@ msgstr "Commandes"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 msgid "![Commands configuration](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Configuration des commandes](/peertube-plugin-livechat/images/bot_commands."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Configuration des commandes](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -2295,16 +2294,12 @@ msgstr "Mots interdits"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Forbidden words configuration](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Configuration des mots interdits](/peertube-plugin-livechat/images/"
-"bot_forbidden_words.png?classes=shadow,border&height=400px)"
+msgstr "![Configuration des mots interdits](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Deleted message](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
-msgstr ""
-"![Messages supprimés](/peertube-plugin-livechat/images/bot_deleted_message."
-"png?classes=shadow,border&height=100px)"
+msgstr "![Messages supprimés](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -2344,11 +2339,7 @@ msgstr "Ces mots ne sont pas sensibles à la casse."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "This features is still experimental.  There might be some issues with non-latin alphabets.  You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to report your problems."
-msgstr ""
-"Cette fonction est encore expérimentale. Il pourrait y avoir quelques "
-"problèmes avec les alphabets non-latin. Si c'est le cas, vous pouvez [ouvrir "
-"un ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/"
-"issues) pour signaler votre problème."
+msgstr "Cette fonction est encore expérimentale. Il pourrait y avoir quelques problèmes avec les alphabets non-latin. Si c'est le cas, vous pouvez [ouvrir un ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) pour signaler votre problème."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -2371,9 +2362,7 @@ msgstr "Bot de tchat"
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance's admins."
-msgstr ""
-"Cette fonctionnalité arrive avec le plugin livechat version 8.0.0, et peut "
-"être désactivée par les admins de votre instance."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 8.0.0, et peut être désactivée par les admins de votre instance."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -2384,17 +2373,12 @@ msgstr "Vous pouvez activer un bot de tchat dans vos salons. La configuration du
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Configuration de la chaîne](/peertube-plugin-livechat/images/"
-"channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr "![Configuration de la chaîne](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
-msgstr ""
-"Pour accéder à cette page, veuillez vous référer à la [documentation sur la "
-"configuration des chaînes](/peertube-plugin-livechat/fr/documentation/user/"
-"streamers/channel)."
+msgstr "Pour accéder à cette page, veuillez vous référer à la [documentation sur la configuration des chaînes](/peertube-plugin-livechat/fr/documentation/user/streamers/channel)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -2426,9 +2410,7 @@ msgstr "S'il n'y a pas d'utilisateur⋅rice dans le salon, le bot n'enverra pas 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "![Pre-recorded messages configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/"
-"images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgstr "![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2445,16 +2427,12 @@ msgstr "Configuration de la chaîne"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "In the Peertube left menu, there is a \"{{% livechat_label menu_configuration_label %}}\" entry:"
-msgstr ""
-"Dans le menu gauche de Peertube, il y a une entrée «{{% livechat_label "
-"menu_configuration_label %}}» :"
+msgstr "Dans le menu gauche de Peertube, il y a une entrée «{{% livechat_label menu_configuration_label %}}» :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "![Chatrooms menu](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Menu salons de discussion](/peertube-plugin-livechat/images/chatrooms_menu."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Menu salons de discussion](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2469,9 +2447,7 @@ msgstr "Ici vous pouvez configurer :"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
-msgstr ""
-"[Le bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/"
-"bot)"
+msgstr "[Le bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/bot)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2494,8 +2470,7 @@ msgstr "Pour les streameur⋅euses"
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advances moderation features"
-msgstr ""
-"Fonctionnalités de modération avancées du plugin peertube-plugin-livechat"
+msgstr "Fonctionnalités de modération avancées du plugin peertube-plugin-livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2511,11 +2486,7 @@ msgstr "Le bot de tchat"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
-msgstr ""
-"Vous pouvez utiliser un bot de tchat, qui vous aidera pour la modération. "
-"Veuillez vous référer à la [documentation du bot de tchat](/peertube-"
-"plugin-livechat/documentation/fr/user/streamers/bot) pour plus "
-"d'informations."
+msgstr "Vous pouvez utiliser un bot de tchat, qui vous aidera pour la modération. Veuillez vous référer à la [documentation du bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/bot) pour plus d'informations."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation.md

@@ -86,6 +86,10 @@ See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-li
 
 {{% livechat_label auto_ban_anonymous_ip_description %}}
 
+**Important note**:
+If you enable this feature, and are using a custom reverse proxy on front of Peertube, please make sure that your setup is correctly configured to forward real user's IPs to Peertube.
+Otherwise it could block all anonymous users at once.
+
 ## Theming
 
 ### {{% livechat_label converse_theme_label %}}
