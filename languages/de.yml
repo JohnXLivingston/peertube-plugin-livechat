@@ -305,7 +305,7 @@ livechat_configuration_channel_forbidden_words_reason_desc: Anzuzeigender Grund 
   der gelöschen Nachricht
 livechat_configuration_channel_forbidden_words_regexp_desc: Wenn Sie diese Option
   aktivieren, können Sie reguläre Ausdrücke (regex) verwenden.
-livechat_configuration_channel_quote_label: Aufgezeichnete Nachrichten
+livechat_configuration_channel_quote_label: Timer
 livechat_configuration_channel_quote_desc2: "Eine Nachricht pro Zeile.\nWenn mehrere\
   \ Nachrichten vorhanden sind, wird alle X Minuten eine zufällig ausgewählt.\n"
 livechat_configuration_channel_quote_delay_label: Alle X Minuten senden
@@ -344,9 +344,9 @@ livechat_configuration_please_select: Bitte wählen Sie unten einen Ihrer Channe
 livechat_configuration_channel_forbidden_words_regexp_label: Als reguläre Ausdrücke
   (regex) betrachten
 livechat_configuration_channel_quote_desc: "Sie können mehrere voraufgezeichnete Nachrichten\
-  \ konfigurieren.\nDiese Nachrichten werden vom Chatbot alle X Minuten gesendet.\n\
-  Sie können beispielsweise festlegen, dass der Bot alle 5 Minuten eine Sponsoring-Information\
-  \ sendet.\n"
+  \ (Timer) konfigurieren, die in regelmäßigen Abständen gesendet werden.\nDiese Nachrichten\
+  \ werden vom Chatbot alle X Minuten gesendet.\nSie können beispielsweise festlegen,\
+  \ dass der Bot alle 5 Minuten eine Sponsor-Information sendet.\n"
 livechat_configuration_channel_quote_delay_desc: "Der Chatbot wird die Nachricht alle\
   \ X Minuten veröffentlichen.\n"
 livechat_configuration_channel_command_desc: "Sie können den Chatbot so konfigurieren,\
@@ -363,3 +363,4 @@ livechat_configuration_channel_forbidden_words_comments_desc: "Sie können hier 
   \ Kommentare zu dieser Regel hinzufügen, um sich daran zu erinnern, wie und warum\
   \ Sie sie erstellt haben.\nDiese Kommentare sind rein indikativ und haben keinen\
   \ Einfluss auf das Verhalten des Chatbots.\n"
+livechat_configuration_channel_quote_label2: Nachrichten
