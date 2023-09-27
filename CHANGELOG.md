@@ -1,5 +1,14 @@
 # Changelog
 
+## 8.0.2
+
+### Minor changes and fixes
+
+* On some Ubuntu server, the self-signed certificates generation fails:
+  * See [issue #268](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/268)
+  * This prevents the bot to connect to the server
+  * As a fallback, we directly call openssl to generate the certificates
+
 ## 8.0.1
 
 ### Minor changes and fixes

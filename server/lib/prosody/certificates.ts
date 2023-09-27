@@ -1,9 +1,10 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ProsodyConfig } from './config'
-import { debugNumericParameter } from '../debug'
+import { debugNumericParameter, isDebugMode } from '../debug'
 import { prosodyCtl, reloadProsody } from './ctl'
 import * as path from 'path'
 import * as fs from 'fs'
+import * as child_process from 'child_process'
 
 interface Renew {
   timer: NodeJS.Timer
@@ -61,18 +62,28 @@ async function ensureProsodyCertificates (options: RegisterServerOptions, config
   }
 
   // Using: prososyctl --config /.../prosody.cfg.lua cert generate prosodyDomain.tld
-  await prosodyCtl(options, 'cert', {
-    additionalArgs: ['generate', prosodyDomain],
-    yesMode: true,
-    stdErrFilter: (data) => {
-      // For an unknow reason, `prosodyctl cert generate` outputs openssl data on stderr...
-      // So we filter these logs.
-      if (data.match(/Generating \w+ private key/)) { return false }
-      if (data.match(/^[.+o*\n]*$/m)) { return false }
-      if (data.match(/e is \d+/)) { return false }
-      return true
-    }
-  })
+  if (!isDebugMode(options, 'useOpenSSL')) {
+    await prosodyCtl(options, 'cert', {
+      additionalArgs: ['generate', prosodyDomain],
+      yesMode: true,
+      stdErrFilter: (data) => {
+        // For an unknow reason, `prosodyctl cert generate` outputs openssl data on stderr...
+        // So we filter these logs.
+        if (data.match(/Generating \w+ private key/)) { return false }
+        if (data.match(/^[.+o*\n]*$/m)) { return false }
+        if (data.match(/e is \d+/)) { return false }
+        return true
+      }
+    })
+  }
+
+  // Note: it seems that on Ubuntu, "prosocyctl cert generate" won't work.
+  // See https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/268
+  // So, if the file still does not exist, we will fallback to openssl:
+  if (!fs.existsSync(filepath)) {
+    logger.warn(`The certificate ${filepath} creation (using prosodyctl) failed, trying to use openssl`)
+    await _generateSelfSignedUsingOpenSSL(options, path.dirname(filepath), prosodyDomain)
+  }
 }
 
 async function renewCheck (options: RegisterServerOptions, config: ProsodyConfig): Promise<void> {
@@ -157,6 +168,63 @@ async function renewCheckFromDir (options: RegisterServerOptions, config: Prosod
 function _filePathToTest (options: RegisterServerOptions, config: ProsodyConfig): string | null {
   if (!config.paths.certs) { return null }
   return path.resolve(config.paths.certs, config.host + '.crt')
+}
+
+async function _generateSelfSignedUsingOpenSSL (
+  options: RegisterServerOptions,
+  dir: string,
+  prosodyDomain: string
+): Promise<void> {
+  const logger = options.peertubeHelpers.logger
+  logger.info('Calling openssl to generate a self-signed certificate.')
+
+  return new Promise((resolve, reject) => {
+    // Here we want to launch something like:
+    // eslint-disable-next-line max-len
+    // openssl req -new -x509 -newkey rsa:2048 -nodes -keyout prosodyDomain.key -days 365 -sha256 -out prosodyDomain.crt -utf8 -subj /CN=prosodyDomain
+    const cmdArgs = [
+      'req',
+      '-new',
+      '-x509',
+      '-newkey',
+      'rsa:2048',
+      '-nodes',
+      '-keyout',
+      path.resolve(dir, `${prosodyDomain}.key`),
+      '-days',
+      '365',
+      '-sha256',
+      '-out',
+      path.resolve(dir, `${prosodyDomain}.crt`),
+      '-utf8',
+      '-subj',
+      `/CN=${prosodyDomain}`
+    ]
+    const spawned = child_process.spawn('openssl', cmdArgs, {
+      cwd: dir,
+      env: {
+        ...process.env
+      }
+    })
+
+    // spawned.stdout.on('data', (data) => {
+    //   logger.debug(`OpenSSL output: ${data as string}`)
+    // })
+    // spawned.stderr.on('data', (data) => {
+    //   // Note: openssl writes on  stderr... not loging anything.
+    //   // logger.error(`Spawned openssl command has errors: ${data as string}`)
+    // })
+    spawned.on('error', (err) => {
+      logger.error(`Spawned openssl command failed: ${err as unknown as string}`)
+      reject(err)
+    })
+
+    // on 'close' and not 'exit', to be sure everything is done
+    // (else it can cause trouble by cleaning AppImage extract too soon)
+    spawned.on('close', () => {
+      resolve()
+    })
+  })
 }
 
 export {

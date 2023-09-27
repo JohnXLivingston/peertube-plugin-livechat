@@ -11,6 +11,7 @@ interface ProsodyDebuggerOptions {
 interface DebugContent {
   renewCertCheckInterval?: number
   renewSelfSignedCertInterval?: number
+  useOpenSSL?: boolean
   logRotateCheckInterval?: number
   logRotateEvery?: number
   remoteServerInfosMaxAge?: number
@@ -25,7 +26,7 @@ type DebugNumericValue = 'renewCertCheckInterval'
 | 'logRotateCheckInterval'
 | 'remoteServerInfosMaxAge'
 
-type DebugBooleanValue = 'alwaysPublishXMPPRoom' | 'enablePodcastChatTagForNonLive'
+type DebugBooleanValue = 'alwaysPublishXMPPRoom' | 'enablePodcastChatTagForNonLive' | 'useOpenSSL'
 
 let debugContent: DebugContent | null | false = null
 function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
@@ -58,6 +59,7 @@ function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
     debugContent.logRotateEvery = _getNumericOptions(options, json, 'log_rotate_every')
     debugContent.renewCertCheckInterval = _getNumericOptions(options, json, 'renew_cert_check_interval')
     debugContent.renewSelfSignedCertInterval = _getNumericOptions(options, json, 'renew_self_signed_cert_interval')
+    debugContent.useOpenSSL = json.use_openssl === true
     debugContent.remoteServerInfosMaxAge = _getNumericOptions(options, json, 'remote_server_infos_max_age')
     debugContent.alwaysPublishXMPPRoom = json.always_publish_xmpp_room === true
     debugContent.enablePodcastChatTagForNonLive = json.enable_podcast_chat_tag_for_nonlive === true
