@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* German translation updates.
+
 ## 8.0.2
 
 ### Minor changes and fixes
