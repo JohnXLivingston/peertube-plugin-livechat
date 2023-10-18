@@ -15,7 +15,7 @@ open: 開く
 use_current_theme_color: 現在のテーマカラーを使用する
 connect_using_xmpp_help: 外部のXMPPアカウントとお気に入りのXMPPクライアントを使用してチャットルームに接続できます。
 federation_no_remote_chat_description: "この設定を有効にすると、あなたのインスタンスはリモート動画のチャットを表示しないようになります。\n"
-important_note_text: "プラグインのドキュメントはこちらから確認頂けます:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/\"\
+important_note_text: "プラグインのドキュメントはこちらから確認頂けます:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
   \ target=\"_blank\">\n  PeerTube ライブチャットプラグイン ドキュメント\n</a>.\n"
 list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
   >ルームリスト</a>\n"
@@ -146,3 +146,4 @@ prosody_components_list_description: "外部コンポーネントを宣言する
   \  <li>\n    名前に英数字のみ使用されている場合、接頭辞にXMPPドメインが追加されます。\n    例えば、«bridge»という名前をつけた場合、«bridge.your_domain.tld»となります。\n\
   \    完全なドメイン名を指定することもできますが、DNSが正しく設定されていることを確認してください。\n  </li>\n  <li>秘密のパスフレーズには、英数字のみ使用してください。(最低15文字)</li>\n\
   </ul>\n"
+online_help: オンラインヘルプ
