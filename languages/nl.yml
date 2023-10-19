@@ -54,3 +54,16 @@ federation_dont_publish_remotely_description: "Door deze instelling te activeren
   <b>Pas op</b>: Deze instelling betreft enkel het delen van informatie via het ActivityPub-protocol.\n\
   Het voorkomt niet dat een applicatie op een andere manier de chats ontdekt, en ermee\
   \ probeert te verbinden.\n"
+chat_behaviour_description: <h3>Chatgedrag</h3>
+room_type_label: Kamertype
+open_blank_label: Laat de «Open in een nieuw venster» knop zien
+auto_display_description: Bij het kijken van een video zal de chat automatisch geopend
+  worden.
+open_blank_description: Er zal een knop komen om de chat in een nieuw venster te openen.
+online_help: Online hulp
+room_type_description: Je kunt er hier voor kiezen om aparte kamers te hebben voor
+  elk video, of om ze per kanaal te groeperen.
+room_type_option_video: Elk video heeft zijn eigen gespreksruimte
+room_type_option_channel: Gesprekskamers zijn gegroepeerd per kanaal
+auto_display_label: Automatisch de chat openen
+share_url_label: Laat de «deel chat-link» knop zien
