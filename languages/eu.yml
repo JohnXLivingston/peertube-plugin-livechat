@@ -7,11 +7,27 @@ share_chat_link: Partekatu txataren esteka
 read_only: Irakurtzeko soilik
 show_scrollbarr: Erakutsi korritze-barra
 transparent_background: Atzealde gardena (zuzenekoekin integratzeko, OBSrekin kasu)
-tips_for_streamers: "Zuzeneko bideogileentzako aholkuak: txata OBSn gehitzeko,
-  sortu irakurtzeko soilik den esteka bat eta erabili nabigatzaileko iturburu
-  gisa."
+tips_for_streamers: "Zuzeneko bideogileentzako aholkuak: txata OBSn gehitzeko, sortu\
+  \ irakurtzeko soilik den esteka bat eta erabili nabigatzaileko iturburu gisa."
 copy: Kopiatu
 link_copied: Esteka kopiatu da
 error: Errorea
 open: Ireki
 use_current_theme_color: Erabili uneko itxuraren koloreak
+generate_iframe: Sortu iframe bat txata webgune batean txertatzeko
+chat_for_live_stream: 'Zuzeneko igorpenaren txata:'
+room_name: Gelaren izena
+room_description: Gelaren azalpena
+not_found: Ez da aurkitu
+video: Bideoa
+channel: Kanala
+last_activity: Azken jarduera
+web: Web
+connect_using_xmpp: Konektatu XMPP erabiliz
+connect_using_xmpp_help: Gelara konekta zaitezke kanpoko XMPP kontu bat eta gogoko
+  XMPP bezeroa erabiliz.
+online_help: Lineako laguntza
+important_note_title: <h3>Ohar garrantzitsuak</h3>
+important_note_text: "Osagarriaren dokumentazioa aurki dezakezu hemen:\n<a href=\"\
+  https://livingston.frama.io/peertube-plugin-livechat/\" target=\"_blank\">\n  Peertube\
+  \ Plugin Livechat-en dokumentazioa\n</a>.\n"
