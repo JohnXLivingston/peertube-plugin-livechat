@@ -34,7 +34,7 @@ diagnostic: "ヘルプを要請する前に、診断ツールをご利用くだ�
   >診断ツールを起動</a>\n(このボタンを押して、新規ウィンドウで開かれない場合はページを再読み込みしてください)\n"
 chat_title: <h3>チャット</h3>
 list_rooms_label: 既に存在するルームリスト
-federation_description: "<h3>連合</h3>\n次の設定は、他のPeerTubeインスタンスやFediverseソフトウェアとの連合に影響がある可能性があります。\n"
+federation_description: "<h3>連合</h3>\n次の設定は、他のPeerTubeインスタンスや\nFediverseソフトウェアとの連合に影響がある可能性があります。\n"
 federation_no_remote_chat_label: 外部チャットを表示しない
 federation_dont_publish_remotely_label: チャット情報を公開しない
 chat_behaviour_description: <h3>チャットのふるまい</h3>
@@ -102,8 +102,8 @@ prosody_c2s_label: クライアントからサーバー接続を有効にする
 prosody_c2s_description: "XMPPクライアントから内蔵のProsodyサーバーへの接続を有効にします。<br>\nこの設定のみにすると、localhostクライアントからの接続のみ許可されます。\n"
 prosody_c2s_port_label: Prosodyクライアントからサーバーへの接続ポート番号
 prosody_components_label: カスタムProsody外部コンポーネントを有効にする
-prosody_components_description: "外部XMPPコンポーネントの使用を有効にします。<br>\nこの設定のみでは、localhostからの接続のみが許可されます。<br>\n\
-  この機能により、例えばbotなどがチャットルームに接続できるようにすることができます。\n"
+prosody_components_description: "外部XMPPコンポーネントの使用を有効にします。<br>\nこの設定のみでは、localhostからの接続のみが許可されます。\n\
+  リッスン用のインタフェースの準備とリモートサーバーからの接続を受け付けるように、ファイアウォールとポートの開放を行う必要があります。<br>\nこの機能により、例えばbotなどがチャットルームに接続できるようにすることができます。\n"
 prosody_components_port_label: Prosody外部コンポーネントポート番号
 prosody_components_list_label: 外部コンポーネント
 federation_dont_publish_remotely_description: "この設定を有効にすると、あなたのインスタンスはFediverse上にチャット情報を公開しないようになります。\n\
@@ -138,8 +138,7 @@ prosody_c2s_port_description: "内蔵のProsodyサーバーのc2sモジュール
   このポートが既にサーバー上で使用されている場合に変更してください。<br>\n現時点では、このポートをファイアウォールにより閉じておくことができます。外部からアクセスされることはありません。<br>\n\
   注: 外部接続を有効にする機能の追加が予定されている為、この設定は近い将来変更される可能性があります。\n"
 prosody_components_port_description: "XMPPコンポーネントがProsodyサーバーに接続する際に使用されるポート番号です。<br>\n\
-  このポートが既にサーバー上で使用されている場合に変更してください。<br>\n現時点では、このポートをファイアウォールにより閉じておくことができます。外部からアクセスされることはありません。<br>\n\
-  注: 外部接続を有効にする機能の追加が予定されている為、この設定は近い将来変更される可能性があります。\n"
+  このポートが既にサーバー上で使用されている場合に変更してください。<br>\nlocalhost以外からのアクセスを許可しない場合は、引き続きファイアウォールでこのポートを閉じておくことができます。\n"
 prosody_components_list_description: "外部コンポーネントを宣言するには:\n<ul>\n  <li>コンポーネント1つにつき1行</li>\n\
   \  <li>«component_name:component_secret»のフォーマットを使用します。(スペースは取り除かれます)</li>\n  <li>コメントを記載可能:\
   \ #移行の文字は全てコメントと扱われます。空行は無視されます。</li>\n  <li>名前には、ラテン英数字とドット(.)のみが使用できます。</li>\n\
@@ -147,3 +146,8 @@ prosody_components_list_description: "外部コンポーネントを宣言する
   \    完全なドメイン名を指定することもできますが、DNSが正しく設定されていることを確認してください。\n  </li>\n  <li>秘密のパスフレーズには、英数字のみ使用してください。(最低15文字)</li>\n\
   </ul>\n"
 online_help: オンラインヘルプ
+prosody_components_interfaces_label: Prosody外部コンポーネントネットワークインタフェース
+auto_ban_anonymous_ip_label: ユーザーがチャットルームから追放された場合に匿名ユーザーのIPを凍結する
+auto_ban_anonymous_ip_description: "このオプションを有効にすると、匿名のユーザーがチャットルームから追放されるたびに、そのユーザーのIPもチャットサーバーから追放されます。\n\
+  警告: あなたのインスタンスが登録を受け付けている場合、どんなユーザーでも罠のルームを作成し、他のユーザーを招待し、自動的にすべての匿名ユーザーのIPを追放できます。\n\
+  追放されたIPリストは保存されず、サーバー再起動時やプラグインの設定を変更した場合にクリアされます。\n追放されたIPはProsodyサーバーログファイルに記録されるため、サーバーの管理者は外部ツール（fail2banなど）を使用してIPを広範囲に追放することができます。\n"
