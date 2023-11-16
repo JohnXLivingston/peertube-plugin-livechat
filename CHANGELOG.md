@@ -4,6 +4,8 @@
 
 ### Minor changes and fixes
 
+* Peertube v6.0.0 compatibility:
+  * avatars: using account.avatars if account.avatar is not available (Fix #275).
 * Translation updates: German, Dutch, Japanese, Basque.
 
 ## 8.0.2

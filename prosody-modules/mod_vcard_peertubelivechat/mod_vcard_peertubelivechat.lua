@@ -15,6 +15,38 @@ local cache_user = {};
 local peertube_url = assert(module:get_option_string("peertubelivechat_vcard_peertube_url", nil), "'peertubelivechat_vcard_peertube_url' is a required option");
 if peertube_url:sub(-1,-1) == "/" then peertube_url = peertube_url:sub(1,-2); end
 
+local function get_avatar_url(ret)
+  -- Note:
+  -- * before Peertube v6.0.0: using ret.avatar
+  -- * after Peertube v6.0.0: using ret.avatars, searching for width 48, or for the smallest width
+  if ret.avatar and ret.avatar.path then
+    module:log("debug", "User avatar path (Peertube < v6): %s", peertube_url .. ret.avatar.path);
+    return peertube_url .. ret.avatar.path;
+  end
+  local min_width = 100000;
+  local min_path = nil;
+  if ret.avatars and type(ret.avatars) == "table" then
+    for _, avatar in ipairs(ret.avatars) do
+      if avatar.path and avatar.width then
+        if (avatar.width == 48) then
+          module:log("debug", "User avatar path (Peertube >= v6, width 48): %s", peertube_url .. avatar.path);
+          return peertube_url .. avatar.path;
+        end
+        if (avatar.width < min_width) then;
+          min_path = avatar.path;
+          min_width = avatar.width;
+        end
+      end
+    end
+    if min_path then
+      module:log("debug", "User avatar path (Peertube >= v6, minimal width): %s", peertube_url .. min_path);
+      return peertube_url .. min_path;
+    end
+  end
+  module:log("debug", "Cant find user avatar url");
+  return nil;
+end
+
 module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   local origin, stanza = event.origin, event.stanza;
   local who = jid_split(stanza.attr.to) or origin.username
@@ -71,10 +103,11 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   vcard_temp:text_tag("NICKNAME", ret.displayName);
   vcard_temp:text_tag("URL", ret.url);
 
-  if ret.avatar and ret.avatar.path then
-    module:log("debug", "Downloading user avatar on %s", peertube_url .. ret.avatar.path);
+  local avatar_url = get_avatar_url(ret);
+  if avatar_url then
+    -- module:log("debug", "Downloading user avatar on %s", avatar_url);
     local waitAvatar, doneAvatar = async.waiter();
-    http.request(peertube_url .. ret.avatar.path, {}, function (body, code, response)
+    http.request(avatar_url, {}, function (body, code, response)
       if math.floor(code / 100) == 2 then
         module:log("debug", "Avatar found for %s", who);
         vcard_temp:tag("PHOTO");
