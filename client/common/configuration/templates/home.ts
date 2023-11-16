@@ -33,6 +33,17 @@ async function renderConfigurationHome (registerClientOptions: RegisterClientOpt
 
     for (const channel of channels.data) {
       channel.livechatConfigurationUri = '/p/livechat/configuration/channel?channelId=' + encodeURIComponent(channel.id)
+
+      // Note: since Peertube v6.0.0, channel.avatar is dropped, and we have to use channel.avatars.
+      // So, if !channel.avatar, we will search a suitable one in channel.avatars, and fill channel.avatar.
+      if (!channel.avatar && channel.avatars && Array.isArray(channel.avatars)) {
+        for (const avatar of channel.avatars) {
+          if (avatar.width === 120) {
+            channel.avatar = avatar
+            break
+          }
+        }
+      }
     }
 
     const view = {

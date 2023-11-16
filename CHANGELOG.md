@@ -5,7 +5,8 @@
 ### Minor changes and fixes
 
 * Peertube v6.0.0 compatibility:
-  * avatars: using account.avatars if account.avatar is not available (Fix #275).
+  * xmpp avatars: using account.avatars if account.avatar is not available (Fix #275).
+  * chatrooms screen: using channel.avatars if channel.avatar is not available (Fix #276).
 * Translation updates: German, Dutch, Japanese, Basque.
 
 ## 8.0.2
