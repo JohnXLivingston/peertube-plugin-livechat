@@ -8,6 +8,7 @@
   * xmpp avatars: using account.avatars if account.avatar is not available (Fix #275).
   * chatrooms screen: using channel.avatars if channel.avatar is not available (Fix #276).
 * Translation updates: German, Dutch, Japanese, Basque.
+* Security fix for npm packages (only used for building, does not impact the produced package).
 
 ## 8.0.2
 
