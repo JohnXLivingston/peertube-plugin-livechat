@@ -4,7 +4,7 @@
 
 ### Minor changes and fixes
 
-* German translation updates.
+* Translation updates: German, Dutch, Japanese, Basque.
 
 ## 8.0.2
 
