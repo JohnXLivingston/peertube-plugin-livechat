@@ -147,3 +147,8 @@ A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/p
 
 Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.
 There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers.
+
+## Performance tests
+
+The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.
+It can be used to evaluate code improvments, or find bottlenecks.

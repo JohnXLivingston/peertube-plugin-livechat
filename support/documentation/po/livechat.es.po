@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-09-26 14:40+0200\n"
+"POT-Creation-Date: 2023-12-07 11:02+0100\n"
 "PO-Revision-Date: 2023-07-26 22:29+0000\n"
 "Last-Translator: Tony Simoes <asrmail@protonmail.com>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -357,6 +357,17 @@ msgstr "Se creó un repositorio sobre ello, consulte [pt-plugin-dev](https://cod
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
 msgstr "Nota: por una razón desconocida, Prosody no puede resolver la dirección DNS de los contenedores cuando se utiliza la biblioteca lua-unbound.  Hay un hack en el plugin para resolverlo: simplemente crea un archivo `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` en tus docker-volumes, luego reinicia los contenedores."
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Performance tests"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvments, or find bottlenecks."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md

@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-26 14:40+0200\n"
+"POT-Creation-Date: 2023-12-07 11:02+0100\n"
 "PO-Revision-Date: 2023-09-28 07:23+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -361,6 +359,17 @@ msgstr "Es wurde ein Repo daraus gemacht, siehe [pt-plugin-dev](https://codeberg
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
 msgstr "Hinweis: Aus einem unbekannten Grund kann Prosody die DNS-Adresse von Containern nicht auflösen, wenn die lua-unbound-Bibliothek verwendet wird. Es gibt einen unsaubere Lösung dafür im Plugin: Erstellen Sie einfach eine `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` Datei in deinen docker-volumes, dann starten Sie die Container neu."
 
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Performance tests"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvments, or find bottlenecks."
+msgstr ""
+
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
@@ -669,11 +678,7 @@ msgstr "Eine neues Sprachgebiet hinzufügen"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
-msgstr ""
-"Wenn Sie glauben, dass eine Sprache fehlt, prüfen Sie bitte zuerst, ob sie "
-"von Peertube unterstützt wird.  Wenn ja, können Sie [ein Problem "
-"erstellen](https://github.com/JohnXLivingston/peertube-plugin-livechat/"
-"issues), um danach zu fragen."
+msgstr "Wenn Sie glauben, dass eine Sprache fehlt, prüfen Sie bitte zuerst, ob sie von Peertube unterstützt wird.  Wenn ja, können Sie [ein Problem erstellen](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues), um danach zu fragen."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -943,12 +948,7 @@ msgstr "XMPP-Clients"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This chat module is based on the XMPP protocol, also known as Jabber.  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can for example be useful to facilitate moderation operations."
-msgstr ""
-"Dieses Chatmodul basiert auf dem XMPP-Protokoll, das auch als Jabber bekannt "
-"ist. Es ist daher möglich, sich mit Hilfe von [XMPP-Client-"
-"Software](https://en.wikipedia.org/wiki/XMPP#Clients) mit den Chats zu "
-"verbinden. Dies kann zum Beispiel nützlich sein, um Moderationsvorgänge zu "
-"erleichtern."
+msgstr "Dieses Chatmodul basiert auf dem XMPP-Protokoll, das auch als Jabber bekannt ist. Es ist daher möglich, sich mit Hilfe von [XMPP-Client-Software](https://en.wikipedia.org/wiki/XMPP#Clients) mit den Chats zu verbinden. Dies kann zum Beispiel nützlich sein, um Moderationsvorgänge zu erleichtern."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1299,9 +1299,7 @@ msgstr "Methode für das Docker-Verfahren"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube."
-msgstr ""
-"Diese Methode funktioniert mit dem offiziell unterstützten [Docker "
-"Guide](https://docs.joinpeertube.org/install/docker) von PeerTube."
+msgstr "Diese Methode funktioniert mit dem offiziell unterstützten [Docker Guide](https://docs.joinpeertube.org/install/docker) von PeerTube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1626,11 +1624,7 @@ msgstr "Erweiterte Einstellungen des Chatservers"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).  If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package."
-msgstr ""
-"Das Plugin wird mit einem AppImage geliefert, das zum Ausführen des [Prosody "
-"XMPP-Servers](https://prosody.im) verwendet wird. Wenn dieses AppImage nicht "
-"funktioniert, können Sie auf das Prosody-Paket zurückgreifen, das für Ihren "
-"Server gepackt ist. Installieren Sie einfach das Paket `prosody`."
+msgstr "Das Plugin wird mit einem AppImage geliefert, das zum Ausführen des [Prosody XMPP-Servers](https://prosody.im) verwendet wird. Wenn dieses AppImage nicht funktioniert, können Sie auf das Prosody-Paket zurückgreifen, das für Ihren Server gepackt ist. Installieren Sie einfach das Paket `prosody`."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1671,9 +1665,7 @@ msgstr "Diese Funktion könnte für die Verbindung von Brücken oder Bots genutz
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "More informations on Prosody external components [here](https://prosody.im/doc/components)."
-msgstr ""
-"Weitere Informationen zu den externen Komponenten von Prosody finden Sie "
-"[hier](https://prosody.im/doc/components)."
+msgstr "Weitere Informationen zu den externen Komponenten von Prosody finden Sie [hier](https://prosody.im/doc/components)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
@@ -1990,11 +1982,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "[OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.  In the current page, you will find some advices to handle your live chats using OBS."
-msgstr ""
-"[OBS](https://obsproject.com) ist eine beliebte kostenlose and "
-"quellcodeoffene Streaming Software, mit erweiterten Funktionen für Ihre Live-"
-"Streams.  Auf dieser Seite finden Sie einige Ratschläge, wie Sie Ihre Live-"
-"Chats mit OBS verwalten können."
+msgstr "[OBS](https://obsproject.com) ist eine beliebte kostenlose and quellcodeoffene Streaming Software, mit erweiterten Funktionen für Ihre Live-Streams.  Auf dieser Seite finden Sie einige Ratschläge, wie Sie Ihre Live-Chats mit OBS verwalten können."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2345,20 +2333,12 @@ msgstr "Bei diesen Wörtern wird die Groß- und Kleinschreibung nicht berücksic
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "This features is still experimental.  There might be some issues with non-latin alphabets.  You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to report your problems."
-msgstr ""
-"Diese Funktion ist noch experimentell.  Es könnte einige Probleme mit nicht-"
-"lateinischen Alphabeten geben.  Sie können [ein Problem "
-"öffnen](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues), "
-"um Ihre Probleme zu melden."
+msgstr "Diese Funktion ist noch experimentell.  Es könnte einige Probleme mit nicht-lateinischen Alphabeten geben.  Sie können [ein Problem öffnen](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues), um Ihre Probleme zu melden."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
-msgstr ""
-"Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% "
-"livechat_label livechat_configuration_channel_forbidden_words_label %}}\" "
-"als [regulärer Ausdruck](https://de.wikipedia.org/wiki/"
-"Regul%C3%A4rer_Ausdruck) betrachtet."
+msgstr "Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" als [regulärer Ausdruck](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck) betrachtet."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -2424,9 +2404,7 @@ msgstr "Wenn sich kein Benutzer im Chatraum befindet, sendet der Chatbot keine N
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
-msgstr ""
-"[Konfiguration der Timer](/peertube-plugin-livechat/images/bot_quotes."
-"png?classes=shadow,border&height=200px)"
+msgstr "[Konfiguration der Timer](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2523,11 +2501,7 @@ msgstr "Alle Instanzmoderatoren und Admins sind Eigentümer der erstellten Chatr
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
-msgstr ""
-"Sie können [ConverseJS Moderationsbefehle](https://conversejs.org/docs/html/"
-"features.html#moderating-chatrooms) verwenden, um den Raum zu moderieren. "
-"Wenn Sie den Chat-Raum im Vollbildmodus öffnen, finden Sie oben rechts ein "
-"Menü mit speziellen Befehlen."
+msgstr "Sie können [ConverseJS Moderationsbefehle](https://conversejs.org/docs/html/features.html#moderating-chatrooms) verwenden, um den Raum zu moderieren. Wenn Sie den Chat-Raum im Vollbildmodus öffnen, finden Sie oben rechts ein Menü mit speziellen Befehlen."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2872,9 +2846,7 @@ msgstr "Standardmäßig wird der Chat neben dem Video angezeigt.  Sie können ih
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can test the livechat plugin with this [demo page](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
-msgstr ""
-"Sie können das Livechat-Plugin mit dieser [Demo-Seite](https://www.yiny.org/"
-"w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) testen."
+msgstr "Sie können das Livechat-Plugin mit dieser [Demo-Seite](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) testen."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -2942,10 +2914,7 @@ msgstr "Integrieren Sie den Chat in Ihren Live-Stream"
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "When using software as [OBS](https://obsproject.com) for you live stream, you can embed the chat in the video stream.  This is for example useful for replays."
-msgstr ""
-"Wenn Sie Software wie [OBS](https://obsproject.com) für Ihren Live-Stream "
-"verwenden, können Sie den Chat in den Videostream einbetten.  Dies ist zum "
-"Beispiel für Wiederholungen nützlich."
+msgstr "Wenn Sie Software wie [OBS](https://obsproject.com) für Ihren Live-Stream verwenden, können Sie den Chat in den Videostream einbetten.  Dies ist zum Beispiel für Wiederholungen nützlich."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
