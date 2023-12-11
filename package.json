@@ -80,7 +80,7 @@
   "engines": {
     "npm": ">=7"
   },
-  "homepage": "https://github.com/JohnXLivingston/peertube-plugin-livechat",
+  "homepage": "https://livingston.frama.io/peertube-plugin-livechat/",
   "repository": "github:JohnXLivingston/peertube-plugin-livechat",
   "keywords": [
     "peertube",
