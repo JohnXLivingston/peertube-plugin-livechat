@@ -6,8 +6,8 @@ use_chat_help: "Activado, abre el chat junto al vídeo"
 share_chat_link: "Compartir el enlace de esta sala de chat"
 read_only: "Sólo lectura"
 show_scrollbarr: "Mostrar la barra de desplazamiento"
-transparent_background: "Fondo transparente (para la integración en directos, por\
-  \ ejemplo con OBS)"
+transparent_background: "Fondo transparente (para la integración en directos, por
+  ejemplo con OBS)"
 tips_for_streamers: para agregar el chat a su OBS, genere un enlace de «solo lectura»
   y utilícelo como «fuente o canal web».
 copy: "Copiar"
@@ -53,19 +53,19 @@ help_builtin_prosody_label: Servidor prosody
 disable_websocket_label: Desactivar Websocket
 prosody_room_allow_s2s_label: Activar conexión a la sala con cuentas XMPP externas
 theming_advanced_description: <h3>Tematización</h3>
-diagnostic: "Antes de pedir ayuda, por favor, use la herramienta de diagnóstico:\n\
-  <a class=\"peertube-plugin-livechat-launch-diagnostic\">Lanzar diagnóstico</a>\n\
+diagnostic: "Antes de pedir ayuda, por favor, use la herramienta de diagnóstico:\n
+  <a class=\"peertube-plugin-livechat-launch-diagnostic\">Lanzar diagnóstico</a>\n
   (si este botón no abre una nueva ventana, por favor, intente refrescar la ventana).\n"
 list_rooms_label: Listar salas existentes
 list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
   >Listar salas</a>\n"
-federation_no_remote_chat_description: "Marcando este ajuste, su instancia nunca mostrará\
-  \ los chats de los vídeos remotos.\n"
+federation_no_remote_chat_description: "Marcando este ajuste, su instancia nunca mostrará
+  los chats de los vídeos remotos.\n"
 federation_dont_publish_remotely_label: No publicar información del chat
 per_live_video_description: Si se marca, todos los vídeos en directo tendrán un checkbox
   en sus propiedades para activar el web chat.
-federation_description: "<h3>Federación</h3>\nLos siguientes ajustes se refieren a\
-  \ la federación con otras instancias de Peertube\n y otros programas del fediverso.\n"
+federation_description: "<h3>Federación</h3>\nLos siguientes ajustes se refieren a
+  la federación con otras instancias de Peertube\n y otros programas del fediverso.\n"
 open_blank_label: Muestra el botón «abrir en ventana nueva»
 share_url_description: Se mostrará un botón para compartir la url del chat (puede
   usarse para integración con OBS, por ejemplo).
@@ -79,141 +79,139 @@ share_url_option_owner_moderators: Mostrar para el propietario del video y los m
 all_lives_label: Activar chat para todos los en vivos
 all_lives_description: Si se marca, el chat sera activado para todos los en vivos.
 all_non_lives_label: Activar chatpara todos los no - en vivos
-federation_dont_publish_remotely_description: "Al aceptar esta configuración, su instancia\
-  \ no publicara la información del chat en el fediverse.\nInstancias remotas de Peertube\
-  \ no estaran al tanto de la existencia de chat rooms liados a sus videos. <br>\n\
-  <b>Porfavor note</b>: si ya tiene chats en progreso, es posible que la información\
-  \ ya haya sido publicada.\nTendra que esperar a la próxima actualización del video\
-  \ antes de que la información sea ocultada.\nAdemas, si desactiva esta configuracion,\
-  \ tendra que esperar a la próxima actualización del video antesde que la información\
-  \ \nsea publicada otra vez. Esta actualización sucede, ente otros, cuando un evento\
-  \ en vivo reanuda o se detiene.<br>\n<b>Porfavor note</b>: esta configuración solo\
-  \ afecta la publicación de información via el protocolo ActivityPub.\nElla no prevendra\
-  \ une applicación remota de detectar la presencia de chats y de intentar connectarse\
-  \ a ellos.\n"
+federation_dont_publish_remotely_description: "Al aceptar esta configuración, su instancia
+  no publicara la información del chat en el fediverse.\nInstancias remotas de Peertube
+  no estaran al tanto de la existencia de chat rooms liados a sus videos. <br>\n<b>Porfavor
+  note</b>: si ya tiene chats en progreso, es posible que la información ya haya sido
+  publicada.\nTendra que esperar a la próxima actualización del video antes de que
+  la información sea ocultada.\nAdemas, si desactiva esta configuracion, tendra que
+  esperar a la próxima actualización del video antesde que la información \nsea publicada
+  otra vez. Esta actualización sucede, ente otros, cuando un evento en vivo reanuda
+  o se detiene.<br>\n<b>Porfavor note</b>: esta configuración solo afecta la publicación
+  de información via el protocolo ActivityPub.\nElla no prevendra une applicación
+  remota de detectar la presencia de chats y de intentar connectarse a ellos.\n"
 share_url_option_nobody: Mostrar para nadie
 per_live_video_label: Los usuarios pueden activar el chat para sus vídeos en directo
 share_url_option_everyone: Mostrar para todos
 per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
-  >\n  Ha activado la configuración  \"Usuarions pueden activar el chat para sus en\
-  \ vivo\".\n  Es redundante con la configuración  \"Activar el chat para todos los\
-  \ en vivos\".\n</span>\n"
+  >\n  Ha activado la configuración  \"Usuarions pueden activar el chat para sus en
+  vivo\".\n  Es redundante con la configuración  \"Activar el chat para todos los
+  en vivos\".\n</span>\n"
 all_non_lives_description: Si está marcada, el chat se habilitará para todos los vídeos
   que no sean en directo.
-no_anonymous_description: "Si se marca, los usuarios anónimos de Peertube no verán\
-  \ el chat.\nFuncionalidad en desarrollo.\nSi la activas, es muy recomendable marcar\
-  \ también \"No publicar información del chat\".\nDe lo contrario, algunas herramientas\
-  \ de terceros podrían intentar abrir el chat , generando comportamientos imprevistos.\n"
+no_anonymous_description: "Si se marca, los usuarios anónimos de Peertube no verán
+  el chat.\nFuncionalidad en desarrollo.\nSi la activas, es muy recomendable marcar
+  también \"No publicar información del chat\".\nDe lo contrario, algunas herramientas
+  de terceros podrían intentar abrir el chat , generando comportamientos imprevistos.\n"
 converse_theme_option_concord: Tema concord de ConverseJS
-help_builtin_prosody_description: "Este plugin utiliza el servidor XMPP Prosody para\
-  \ manejar salas de chat.<br>\nEste plugin viene con una AppImage de Prosody, que\
-  \ se utilizará para ejecutar el servicio.\n"
-autocolors_description: "Intenta detectar automáticamente los colores del tema actual\
-  \ del usuario.<br>\nCuando esta configuración está habilitada, el plugin intenta\
-  \ detectar automáticamente los colores para aplicarlos al tema del chat.<br>\nSi\
-  \ esto no funciona correctamente para algunos de sus temas de Peertube, puede deshabilitar\
-  \ esta opción.\nPuede informar de un error en el \n<a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
-  \ target=\"_blank\">\nrastreador de problemas</a> oficial. No olvide especificar\
-  \ qué tema no funciona.\n"
+help_builtin_prosody_description: "Este plugin utiliza el servidor XMPP Prosody para
+  manejar salas de chat.<br>\nEste plugin viene con una AppImage de Prosody, que se
+  utilizará para ejecutar el servicio.\n"
+autocolors_description: "Intenta detectar automáticamente los colores del tema actual
+  del usuario.<br>\nCuando esta configuración está habilitada, el plugin intenta detectar
+  automáticamente los colores para aplicarlos al tema del chat.<br>\nSi esto no funciona
+  correctamente para algunos de sus temas de Peertube, puede deshabilitar esta opción.\n
+  Puede informar de un error en el \n<a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
+  \ target=\"_blank\">\nrastreador de problemas</a> oficial. No olvide especificar
+  qué tema no funciona.\n"
 chat_style_label: Atributo de estilo iframe del Webchat
-chat_style_description: "Se agregarán estilos adicionales en el atributo de estilo\
-  \ iframe. <br>\nPor ejemplo: height:400px;\n"
+chat_style_description: "Se agregarán estilos adicionales en el atributo de estilo
+  iframe. <br>\nPor ejemplo: height:400px;\n"
 prosody_advanced_description: <h3>Configuración avanzada del servidor de chat</h3>
 system_prosody_label: Use el sistema Prosody
-system_prosody_description: "Advertencia: no marque este parametro si no está seguro\
-  \ de lo que está haciendo. <br>\nAl seleccionar este parametro su Peertube utilizará\
-  \ el servidor Prosody por defecto en su sistema, y no el incorporado en la AppImage.\
-  \ <br>\nUtilize esto solamente si encuentra problemas con el servidor Prosody de\
-  \ la AppImage.\n"
-disable_websocket_description: "Con Peertube &gt;= 5.0.0, este plugin intenta usar\
-  \ una conexión Websocket para chatear.\nSi el navegador o la conexión del usuario\
-  \ son incompatibles, el navegador recurrirá automáticamente al protocolo BOSH.\n\
-  <br>\nEn ciertos casos esto puede fallar. Por ejemplo, si tiene un proxy inverso\
-  \ frente a Peertube que no\npermite una conexión Websocket para plugins.\nEn tal\
-  \ caso, puede marcar este parámetro para deshabilitar las conexiones Websocket.\n"
-prosody_peertube_uri_description: "Por favor, deje esta configuración vacía si no\
-  \ sabe lo que está haciendo.<br>\nEn algunos casos raros, Prosody no puede llamar\
-  \ a la API de Peertube desde su URI pública.\nPuede usar este campo para personalizar\
-  \ el URI de Peertube para los módulos de Prosody\n(por ejemplo, con \"http://localhost:9000\"\
+system_prosody_description: "Advertencia: no marque este parametro si no está seguro
+  de lo que está haciendo. <br>\nAl seleccionar este parametro su Peertube utilizará
+  el servidor Prosody por defecto en su sistema, y no el incorporado en la AppImage.
+  <br>\nUtilize esto solamente si encuentra problemas con el servidor Prosody de la
+  AppImage.\n"
+disable_websocket_description: "Con Peertube &gt;= 5.0.0, este plugin intenta usar
+  una conexión Websocket para chatear.\nSi el navegador o la conexión del usuario
+  son incompatibles, el navegador recurrirá automáticamente al protocolo BOSH.\n<br>\n
+  En ciertos casos esto puede fallar. Por ejemplo, si tiene un proxy inverso frente
+  a Peertube que no\npermite una conexión Websocket para plugins.\nEn tal caso, puede
+  marcar este parámetro para deshabilitar las conexiones Websocket.\n"
+prosody_peertube_uri_description: "Por favor, deje esta configuración vacía si no
+  sabe lo que está haciendo.<br>\nEn algunos casos raros, Prosody no puede llamar
+  a la API de Peertube desde su URI pública.\nPuede usar este campo para personalizar
+  el URI de Peertube para los módulos de Prosody\n(por ejemplo, con \"http://localhost:9000\"\
   \ o \"http://127.0.0.1:9000\").\n"
-prosody_room_allow_s2s_description: "Al habilitar esta opción, será posible conectarse\
-  \ a salas utilizando cuentas XMPP externas y clientes XMPP.<br>\nAdvertencia, habilitar\
-  \ esta opción puede solicitar un servidor adicional y una configuración de DNS.\n\
+prosody_room_allow_s2s_description: "Al habilitar esta opción, será posible conectarse
+  a salas utilizando cuentas XMPP externas y clientes XMPP.<br>\nAdvertencia, habilitar
+  esta opción puede solicitar un servidor adicional y una configuración de DNS.\n
   Por favor, consulte la documentación:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n   Habilitar  conexiones con cuentas XMPP externas.\n</a>\n"
-prosody_muc_expiration_description: "Aquí puede elegir cuánto tiempo el servidor conserva\
-  \ el contenido de la sala de chat. El valor puede ser:\n<ul>\n     <li><b>60</b>:\
-  \ el contenido se guardará durante 60 <b>segundos</b>. Puede reemplazar 60 por cualquier\
-  \ valor entero.</li>\n     <li><b>1d</b>: el contenido se guardará durante 1 <b>día</b>.\
-  \ Puede reemplazar 1 por cualquier valor entero.</li>\n     <li><b>1s</b>: el contenido\
-  \ se guardará durante 1 <b>semana</b>. Puede reemplazar 1 por cualquier valor entero.</li>\n\
-  \     <li><b>1m</b>: el contenido se guardará durante 1 <b>mes</b>. Puede reemplazar\
-  \ 1 por cualquier valor entero.</li>\n     <li><b>1y</b>: el contenido se guardará\
-  \ durante 1 <b>año</b>. Puede reemplazar 1 por cualquier valor entero.</li>\n  \
-  \   <li><b>nunca</b>: el contenido nunca caducará y se mantendrá para siempre.</li>\n\
+prosody_muc_expiration_description: "Aquí puede elegir cuánto tiempo el servidor conserva
+  el contenido de la sala de chat. El valor puede ser:\n<ul>\n     <li><b>60</b>:
+  el contenido se guardará durante 60 <b>segundos</b>. Puede reemplazar 60 por cualquier
+  valor entero.</li>\n     <li><b>1d</b>: el contenido se guardará durante 1 <b>día</b>.
+  Puede reemplazar 1 por cualquier valor entero.</li>\n     <li><b>1s</b>: el contenido
+  se guardará durante 1 <b>semana</b>. Puede reemplazar 1 por cualquier valor entero.</li>\n\
+  \     <li><b>1m</b>: el contenido se guardará durante 1 <b>mes</b>. Puede reemplazar
+  1 por cualquier valor entero.</li>\n     <li><b>1y</b>: el contenido se guardará
+  durante 1 <b>año</b>. Puede reemplazar 1 por cualquier valor entero.</li>\n    \
+  \ <li><b>nunca</b>: el contenido nunca caducará y se mantendrá para siempre.</li>\n\
   </ul>\n"
-videos_list_description: "UUIDs de los videos para los cuales se desea un chat web.\n\
-  Pueden ser videos no en vivo. Una por línea. <br />\nPuede agregar comentarios:\
-  \ todo lo que este detras del caracter # no sera interpretado y las líneas vacías\
-  \ ignoradas. <br />\nNo agregue videos privados, los UUID se enviarán al frontend.\n"
-prosody_port_description: "El puerto que sera usado por el servidor Prosody.<br>\n\
-  Cámbielo si este puerto ya está en uso en su servidor.<br>\nPuede cerrar este puerto\
-  \ con su cortafuegos, no sera accesible desde el mundo exterior.<br>\nNota: esto\
-  \ podría cambiar en un futuro cercano, ya que está previsto agregar una función\
-  \ para activar las conexiones externas.\n"
+videos_list_description: "UUIDs de los videos para los cuales se desea un chat web.\n
+  Pueden ser videos no en vivo. Una por línea. <br />\nPuede agregar comentarios:
+  todo lo que este detras del caracter # no sera interpretado y las líneas vacías
+  ignoradas. <br />\nNo agregue videos privados, los UUID se enviarán al frontend.\n"
+prosody_port_description: "El puerto que sera usado por el servidor Prosody.<br>\n
+  Cámbielo si este puerto ya está en uso en su servidor.<br>\nPuede cerrar este puerto
+  con su cortafuegos, no sera accesible desde el mundo exterior.<br>\nNota: esto podría
+  cambiar en un futuro cercano, ya que está previsto agregar una función para activar
+  las conexiones externas.\n"
 prosody_muc_log_by_default_label: Contenido de los logs de las salas por defecto
-prosody_muc_log_by_default_description: "Si está marcado, el contenido de la sala\
-  \ de chat se guardará de forma predeterminada.\nCualquier usuario que se una a una\
-  \ sala verá lo que se escribió antes de unirse.<br>\nTenga en cuenta que siempre\
-  \ es posible habilitar/deshabilitar el contenido\nsalvaguardado de una sala específica,\
-  \ editando sus propiedades.\n"
+prosody_muc_log_by_default_description: "Si está marcado, el contenido de la sala
+  de chat se guardará de forma predeterminada.\nCualquier usuario que se una a una
+  sala verá lo que se escribió antes de unirse.<br>\nTenga en cuenta que siempre es
+  posible habilitar/deshabilitar el contenido\nsalvaguardado de una sala específica,
+  editando sus propiedades.\n"
 prosody_muc_expiration_label: Caducidad del historial de la sala
 prosody_s2s_port_label: Puerto Prosody de servidor a servidor
-prosody_s2s_port_description: "El puerto que se usará para las conexiones XMPP s2s\
-  \ (servidor a servidor).<br>\nDebe utilizar el puerto estándar 5269.\nDe lo contrario,\
-  \ debería <a href=\"https://prosody.im/doc/s2s\">\n   configurar un registro DNS\
-  \ específico\n</a>.\n"
-prosody_s2s_interfaces_description: "Las interfaces de red para escuchar conexiones\
-  \ de servidor a servidor.<br>\nLista de direcciones IP para escuchar, separadas\
-  \ por comas (se eliminarán los espacios).<br>\nPuede utilizar «*» para escuchar\
-  \ en todas las interfaces IPv4 y «::» para todas las IPv6.<br>\nEjemplos:\n<ul>\n\
-  \   <li>*, ::</li>\n   <li>*</li>\n   <li>127.0.0.1, ::1</li>\n   <li>172.18.0.42</li>\n\
-  </ul>\n"
+prosody_s2s_port_description: "El puerto que se usará para las conexiones XMPP s2s
+  (servidor a servidor).<br>\nDebe utilizar el puerto estándar 5269.\nDe lo contrario,
+  debería <a href=\"https://prosody.im/doc/s2s\">\n   configurar un registro DNS específico\n\
+  </a>.\n"
+prosody_s2s_interfaces_description: "Las interfaces de red para escuchar conexiones
+  de servidor a servidor.<br>\nLista de direcciones IP para escuchar, separadas por
+  comas (se eliminarán los espacios).<br>\nPuede utilizar «*» para escuchar en todas
+  las interfaces IPv4 y «::» para todas las IPv6.<br>\nEjemplos:\n<ul>\n   <li>*,
+  ::</li>\n   <li>*</li>\n   <li>127.0.0.1, ::1</li>\n   <li>172.18.0.42</li>\n</ul>\n"
 prosody_s2s_interfaces_label: Interfaces de red de servidor a servidor
 prosody_components_label: Habilitar componentes externos personalizados de Prosody
-prosody_components_description: "Activar el uso de componentes XMPP externos.<br>\n\
-  Esta opción por sí sola solo permite conexiones desde localhost.<br>\nEsta función\
-  \ se puede utilizar, por ejemplo, para conectar algunos bots a las salas de chat.\n"
-prosody_components_port_description: "El puerto que usarán los componentes XMPP para\
-  \ conectarse al servidor Prosody.<br>\nCámbielo si este puerto ya está en uso en\
-  \ su servidor.<br>\nPuede mantener este puerto cerrado con su firewall por ahora,\
-  \ no se accederá desde el mundo exterior.<br>\nNota: esto podría cambiar en un futuro\
-  \ cercano, ya que está previsto agregar una función para activar las conexiones\
-  \ externas.\n"
+prosody_components_description: "Activar el uso de componentes XMPP externos.<br>\n
+  Esta opción por sí sola solo permite conexiones desde localhost.<br>\nEsta función
+  se puede utilizar, por ejemplo, para conectar algunos bots a las salas de chat.\n"
+prosody_components_port_description: "El puerto que usarán los componentes XMPP para
+  conectarse al servidor Prosody.<br>\nCámbielo si este puerto ya está en uso en su
+  servidor.<br>\nPuede mantener este puerto cerrado con su firewall por ahora, no
+  se accederá desde el mundo exterior.<br>\nNota: esto podría cambiar en un futuro
+  cercano, ya que está previsto agregar una función para activar las conexiones externas.\n"
 prosody_certificates_dir_label: Directorio de certificados
 prosody_c2s_label: Activar las conexiones cliente-servidor
-prosody_certificates_dir_description: "Si este campo está vacío, el plugin generará\
-  \ y utilizará certificados autofirmados.<br>\nSi desea utilizar otros certificados,\
-  \ sólo tiene que especificar aquí el directorio donde\nProsody puede encontrarlos.\
-  \ Nota: el usuario \"peertube\" debe tener acceso de lectura a este directorio.\n"
-prosody_c2s_description: "Habilitar clientes XMPP para conectarse al servidor Prosody\
-  \ integrado.<br>\nEsta opción sólo permite conexiones desde clientes en localhost.\n"
+prosody_certificates_dir_description: "Si este campo está vacío, el plugin generará
+  y utilizará certificados autofirmados.<br>\nSi desea utilizar otros certificados,
+  sólo tiene que especificar aquí el directorio donde\nProsody puede encontrarlos.
+  Nota: el usuario \"peertube\" debe tener acceso de lectura a este directorio.\n"
+prosody_c2s_description: "Habilitar clientes XMPP para conectarse al servidor Prosody
+  integrado.<br>\nEsta opción sólo permite conexiones desde clientes en localhost.\n"
 prosody_c2s_port_label: Puerto de cliente a servidor Prosody
-prosody_c2s_port_description: "El puerto que utilizará el módulo c2s del servidor\
-  \ Prosody integrado.<br>\nLos clientes XMPP deben usar este puerto para conectarse.<br>\n\
-  Cámbielo si este puerto ya está en uso en su servidor.<br>\nPuede mantener este\
-  \ puerto cerrado con su cortafuegos por ahora, no se accederá desde el mundo exterior.<br>\n\
-  Nota: esto podría cambiar en un futuro cercano, ya que está previsto agregar una\
-  \ función para activar las conexiones externas.\n"
+prosody_c2s_port_description: "El puerto que utilizará el módulo c2s del servidor
+  Prosody integrado.<br>\nLos clientes XMPP deben usar este puerto para conectarse.<br>\n
+  Cámbielo si este puerto ya está en uso en su servidor.<br>\nPuede mantener este
+  puerto cerrado con su cortafuegos por ahora, no se accederá desde el mundo exterior.<br>\n
+  Nota: esto podría cambiar en un futuro cercano, ya que está previsto agregar una
+  función para activar las conexiones externas.\n"
 prosody_components_port_label: Puerto de componentes externos Prosody
 prosody_components_list_label: Componentes externos
 prosody_components_list_description: "Los componentes externos a declarar:\n<ul>\n\
-  \   <li>Uno por línea.</li>\n   <li>Utilice el formato «component_name:component_secret»\
-  \ (los espacios se recortarán).</li>\n   <li>Puede agregar comentarios: todo lo\
-  \ que esté después del carácter # se eliminará y las líneas vacías se ignorarán.</li>\n\
+  \   <li>Uno por línea.</li>\n   <li>Utilice el formato «component_name:component_secret»
+  (los espacios se recortarán).</li>\n   <li>Puede agregar comentarios: todo lo que
+  esté después del carácter # se eliminará y las líneas vacías se ignorarán.</li>\n\
   \   <li>El nombre solo puede contener caracteres alfanuméricos latinos y puntos.</li>\n\
-  \   <li>\n     Si el nombre contiene solo caracteres alfanuméricos, tendrá como\
-  \ sufijo el dominio XMPP.\n     Por ejemplo, «bridge» se convertirá en «bridge.tu_dominio.tld».\n\
-  \     También puede especificar un nombre de dominio completo, pero debe asegurarse\
-  \ de configurar su DNS correctamente.\n   </li>\n   <li>Use solo caracteres alfanuméricos\
-  \ en la frase de contraseña secreta (use al menos 15 caracteres).</li>\n</ul>\n"
+  \   <li>\n     Si el nombre contiene solo caracteres alfanuméricos, tendrá como
+  sufijo el dominio XMPP.\n     Por ejemplo, «bridge» se convertirá en «bridge.tu_dominio.tld».\n\
+  \     También puede especificar un nombre de dominio completo, pero debe asegurarse
+  de configurar su DNS correctamente.\n   </li>\n   <li>Use solo caracteres alfanuméricos
+  en la frase de contraseña secreta (use al menos 15 caracteres).</li>\n</ul>\n"
+online_help: Ayuda en línea
