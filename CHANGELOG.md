@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Updated spanish translations
+
 ## 8.0.3
 
 ### Minor changes and fixes
