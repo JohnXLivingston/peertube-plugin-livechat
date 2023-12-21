@@ -75,7 +75,10 @@ function defaultConverseParams (
     whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin', 'livechatDisconnectOnUnloadPlugin'],
     show_retraction_warning: false, // No need to use this warning (except if we open to external clients?)
     muc_show_info_messages: mucShowInfoMessages,
-    send_chat_state_notifications: false // don't send this for performance reason
+    send_chat_state_notifications: false, // don't send this for performance reason
+
+    prune_messages_above: 100, // only keep 100 message in history.
+    pruning_behavior: 'unscrolled'
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.

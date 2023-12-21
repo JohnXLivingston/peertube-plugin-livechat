@@ -4,7 +4,8 @@
 
 ### Minor changes and fixes
 
-* Updated spanish translations
+* Updated spanish translations.
+* ConverseJS: using `prune_messages_above` to purge old messages, keeping only last 100 (Fix #140).
 
 ## 8.0.3
 
