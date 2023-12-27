@@ -1,11 +1,12 @@
 # Changelog
 
-## ??? (Not Released Yet)
+## 8.0.4
 
 ### Minor changes and fixes
 
 * Updated spanish translations.
 * ConverseJS: using `prune_messages_above` to purge old messages, keeping only last 100 (Fix #140).
+* NPM packages security fixes.
 
 ## 8.0.3
 
