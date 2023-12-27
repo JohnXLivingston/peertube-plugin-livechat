@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-12-07 11:02+0100\n"
+"POT-Creation-Date: 2023-12-27 10:36+0100\n"
 "PO-Revision-Date: 2023-09-28 07:23+0000\n"
 "Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
@@ -2346,8 +2346,9 @@ msgstr "Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% livec
 msgid "Chat bot setup"
 msgstr "Chatbot Einrichtung"
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Chat bot"
 msgstr "Chatbot"
@@ -2894,6 +2895,18 @@ msgstr "Damit der Zusammenschluss funktioniert, muss das Plugin natürlich auf b
 #: support/documentation/content/en/intro/_index.md
 msgid "Some times, you have to protect your community from bad people.  As an instance administrator, you can choose to disallow federation for the livechat plugin.  If remote actors behave badly, streamers, moderators and administrators can ban or mute users."
 msgstr "Manchmal muss man seine Community vor bösen Menschen schützen.  Als Instanzadministrator können Sie die Föderation für das Livechat-Plugin deaktivieren.  Wenn sich entfernte Akteure schlecht benehmen, können Streamer, Moderatoren und Administratoren Nutzer sperren oder stummschalten."
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, fuzzy
+#| msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
+msgid "This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).  Check its documentation for more information."
+msgstr "Sie können einen Chatbot verwenden, der Sie bei der Moderation unterstützt.  Weitere Informationen finden Sie in der [Chatbot Dokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/bot)."
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "You can also plug in any other XMPP chat bot, using [XMPP External Components](https://prosody.im/doc/components).  To do so, you just have to configure External Components access in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md

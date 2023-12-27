@@ -54,6 +54,14 @@ Some times, you have to protect your community from bad people.
 As an instance administrator, you can choose to disallow federation for the livechat plugin.
 If remote actors behave badly, streamers, moderators and administrators can ban or mute users.
 
+## Chat bot
+
+This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).
+Check its documentation for more information.
+
+You can also plug in any other XMPP chat bot, using [XMPP External Components](https://prosody.im/doc/components).
+To do so, you just have to configure External Components access in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings).
+
 ## Chat persistence
 
 When joining a room, you will see previous messages.

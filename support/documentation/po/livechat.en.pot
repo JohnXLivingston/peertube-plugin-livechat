@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-12-07 11:02+0100\n"
+"POT-Creation-Date: 2023-12-27 10:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2561,9 +2561,10 @@ msgstr ""
 msgid "Chat bot setup"
 msgstr ""
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
-#, no-wrap
+#: support/documentation/content/en/intro/_index.md
+#, markdown-text, no-wrap
 msgid "Chat bot"
 msgstr ""
 
@@ -3182,6 +3183,18 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, markdown-text
 msgid "Some times, you have to protect your community from bad people.  As an instance administrator, you can choose to disallow federation for the livechat plugin.  If remote actors behave badly, streamers, moderators and administrators can ban or mute users."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, markdown-text
+msgid "This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).  Check its documentation for more information."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+#, markdown-text
+msgid "You can also plug in any other XMPP chat bot, using [XMPP External Components](https://prosody.im/doc/components).  To do so, you just have to configure External Components access in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
 msgstr ""
 
 #. type: Plain text
