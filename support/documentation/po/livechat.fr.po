@@ -2422,7 +2422,7 @@ msgstr "Le bot peut envoyer des messages périodiquement."
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
 msgid "Timers"
-msgstr "Timers"
+msgstr "Messages pré-enregistrés"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
@@ -2927,10 +2927,8 @@ msgstr "Parfois, vous devez protéger votre communauté contre les personnes mal
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
 msgid "This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).  Check its documentation for more information."
-msgstr "Vous pouvez utiliser un bot de tchat, qui vous aidera pour la modération. Veuillez vous référer à la [documentation du bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/bot) pour plus d'informations."
+msgstr "Ce plugin via avec un [bot de tchat](/peertube-plugin-livechat/fr/documentation/user/streamers/bot/) intégré. Veuillez vous référer à sa documentation pour plus d'informations."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
