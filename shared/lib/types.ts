@@ -21,6 +21,12 @@ interface InitConverseJSParams {
   forceDefaultHideMucParticipants?: boolean
 }
 
+interface InitConverseJSParamsError {
+  isError: true
+  code: 404 | 403 | 500
+  message: string
+}
+
 interface ProsodyListRoomsResultError {
   ok: false
   error: string
@@ -87,6 +93,7 @@ interface ChannelConfiguration {
 export type {
   ConverseJSTheme,
   InitConverseJSParams,
+  InitConverseJSParamsError,
   ProsodyListRoomsResult,
   ProsodyListRoomsResultRoom,
   ChannelInfos,

@@ -1,6 +1,6 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ChannelConfiguration, ChannelConfigurationOptions } from 'shared/lib/types'
-import { getBaseRoute } from '../../../../videowatch/uri'
+import { getBaseRoute } from '../../../../utils/uri'
 
 /**
  * Returns the data that can be feed into the template view

@@ -1,5 +1,5 @@
 import type { RegisterServerOptions, MVideoThumbnail, SettingEntries } from '@peertube/peertube-types'
-import type { ConverseJSTheme, InitConverseJSParams } from '../../../shared/lib/types'
+import type { ConverseJSTheme, InitConverseJSParams, InitConverseJSParamsError } from '../../../shared/lib/types'
 import type { RegisterServerOptionsV5 } from '../helpers'
 import type { LiveChatJSONLDAttributeV1 } from '../federation/types'
 import { getChannelInfosById, getChannelNameById } from '../database/channel'
@@ -10,12 +10,6 @@ import { getVideoLiveChatInfos } from '../federation/storage'
 import { getBaseRouterRoute, getBaseStaticRoute } from '../helpers'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getBoshUri, getWSUri } from '../uri/webchat'
-
-interface InitConverseJSParamsError {
-  isError: true
-  code: 404 | 403 | 500
-  message: string
-}
 
 interface GetConverseJSParamsParams {
   readonly?: boolean | 'noscroll'

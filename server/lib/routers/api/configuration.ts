@@ -10,9 +10,23 @@ import {
   storeChannelConfigurationOptions
 } from '../../configuration/channel/storage'
 import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
+import { getConverseJSParams } from '../../../lib/conversejs/params'
 
 async function initConfigurationApiRouter (options: RegisterServerOptions, router: Router): Promise<void> {
   const logger = options.peertubeHelpers.logger
+
+  router.get('/configuration/room/:roomKey', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
+      const roomKey = req.params.roomKey
+      const initConverseJSParam = await getConverseJSParams(options, roomKey, {})
+      if (('isError' in initConverseJSParam) && initConverseJSParam.isError) {
+        res.sendStatus(initConverseJSParam.code)
+        return
+      }
+      res.status(200)
+      res.json(initConverseJSParam)
+    }
+  ))
 
   router.get('/configuration/channel/:channelId', asyncMiddleware([
     checkConfigurationEnabledMiddleware(options),

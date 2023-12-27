@@ -1,6 +1,9 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import type { InitConverseJSParams } from 'shared/lib/types'
 import { renderConfigurationHome } from './templates/home'
 import { renderConfigurationChannel } from './templates/channel'
+import { getBaseRoute } from '../../utils/uri'
+import { loadConverseJS } from '../../utils/conversejs'
 
 /**
  * Registers stuff related to the user's configuration pages.
@@ -11,6 +14,42 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
 
   const settings = await peertubeHelpers.getSettings()
   if (settings['disable-channel-configuration']) { return }
+
+  registerClientRoute({
+    route: 'livechat/room',
+    onMount: async ({ rootEl }) => {
+      try {
+        const urlParams = new URLSearchParams(window.location.search)
+        const roomKey = urlParams.get('room')
+        if (!roomKey) {
+          throw new Error('missing room parameter')
+        }
+
+        const response = await fetch(
+          getBaseRoute(clientOptions) + '/api/configuration/room/' + encodeURIComponent(roomKey),
+          {
+            method: 'GET',
+            headers: peertubeHelpers.getAuthHeader()
+          }
+        )
+        if (!response.ok) {
+          throw new Error('Can\'t get channel configuration options.')
+        }
+
+        const converseJSParams: InitConverseJSParams = await (response).json()
+        await loadConverseJS(converseJSParams)
+
+        rootEl.innerHTML = `<div class="converse-fullscreen theme-peertube">
+          <div id="conversejs-bg" class="theme-peertube">
+        </div>`
+
+        window.initConverse(converseJSParams)
+      } catch (err) {
+        console.error('[peertube-plugin-livechat] ' + (err as string))
+        rootEl.innerText = await peertubeHelpers.translate(LOC_NOT_FOUND)
+      }
+    }
+  })
 
   registerClientRoute({
     route: 'livechat/configuration',

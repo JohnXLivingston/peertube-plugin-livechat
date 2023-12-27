@@ -1,22 +1,14 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
 import type { ProsodyListRoomsResult } from 'shared/lib/types'
+import { getBaseRoute } from './utils/uri'
 
 interface ActionPluginSettingsParams {
   npmName: string
 }
 
-function register ({ registerHook, registerSettingsScript, peertubeHelpers }: RegisterClientOptions): void {
-  function getBaseRoute (): string {
-    // NB: this will come with Peertube > 3.2.1 (3.3.0?)
-    if (peertubeHelpers.getBaseRouterRoute) {
-      return peertubeHelpers.getBaseRouterRoute()
-    }
-    // We are guessing the route with the correct plugin version with this trick:
-    const staticBase = peertubeHelpers.getBaseStaticRoute()
-    // we can't use '/plugins/livechat/router', because the loaded html page needs correct relative paths.
-    return staticBase.replace(/\/static.*$/, '/router')
-  }
+function register (clientOptions: RegisterClientOptions): void {
+  const { registerHook, registerSettingsScript, peertubeHelpers } = clientOptions
 
   registerHook({
     target: 'action:admin-plugin-settings.init',
@@ -30,7 +22,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
       diagButtons.forEach(diagButton => {
         if (diagButton.hasAttribute('href')) { return }
         // TODO: use a modal instead of a target=_blank
-        diagButton.setAttribute('href', getBaseRoute() + '/settings/diagnostic')
+        diagButton.setAttribute('href', getBaseRoute(clientOptions) + '/settings/diagnostic')
         diagButton.setAttribute('target', '_blank')
       })
       console.log('[peertube-plugin-livechat] Initializing prosody-list-rooms button')
@@ -71,7 +63,7 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
             container.textContent = '...'
             listRoomsButton.after(container)
 
-            const response = await fetch(getBaseRoute() + '/webchat/prosody-list-rooms', {
+            const response = await fetch(getBaseRoute(clientOptions) + '/webchat/prosody-list-rooms', {
               method: 'GET',
               headers: peertubeHelpers.getAuthHeader()
             })
@@ -168,7 +160,8 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                   // Here we have a channel chat room
                   // The backend should have added informations here
                   // (because the Peertube API can't work with channelId...)
-                  const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(localpart) + '?forcetype=1'
+                  const href = getBaseRoute(clientOptions) +
+                    '/webchat/room/' + encodeURIComponent(localpart) + '?forcetype=1'
                   if (room.channel?.name) {
                     aEl.href = href // here we know that the channel still exists, so we can open the webchat.
                     const aVideoEl = document.createElement('a')
@@ -183,7 +176,8 @@ function register ({ registerHook, registerSettingsScript, peertubeHelpers }: Re
                 } else if (/^[a-zA-A0-9-]+$/.test(localpart)) {
                   // localpart must be a video uuid.
                   const uuid = localpart
-                  const href = getBaseRoute() + '/webchat/room/' + encodeURIComponent(uuid) + '?forcetype=1'
+                  const href = getBaseRoute(clientOptions) +
+                    '/webchat/room/' + encodeURIComponent(uuid) + '?forcetype=1'
                   const p = fetch('/api/v1/videos/' + uuid, {
                     method: 'GET',
                     headers: peertubeHelpers.getAuthHeader()
