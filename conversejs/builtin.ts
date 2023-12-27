@@ -24,7 +24,10 @@ declare global {
   }
 }
 
-window.initConverse = async function initConverse (initConverseParams: InitConverseJSParams): Promise<void> {
+window.initConverse = async function initConverse (
+  initConverseParams: InitConverseJSParams,
+  viewMode: 'fullscreen' | 'embedded' = 'fullscreen'
+): Promise<void> {
   // First, fixing relative websocket urls.
   if (initConverseParams.localWebsocketServiceUrl?.startsWith('/')) {
     initConverseParams.localWebsocketServiceUrl = new URL(
@@ -47,6 +50,8 @@ window.initConverse = async function initConverse (initConverseParams: InitConve
   const isInIframe = inIframe()
   initDom(initConverseParams, isInIframe)
   const params = defaultConverseParams(initConverseParams, isInIframe)
+  params.view_mode = viewMode
+  params.allow_url_history_change = viewMode === 'fullscreen'
 
   let isAuthenticated: boolean = false
   let isRemoteWithNicknameSet: boolean = false

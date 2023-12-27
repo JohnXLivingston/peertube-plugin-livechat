@@ -39,11 +39,15 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
         const converseJSParams: InitConverseJSParams = await (response).json()
         await loadConverseJS(converseJSParams)
 
-        rootEl.innerHTML = `<div class="converse-fullscreen theme-peertube">
-          <div id="conversejs-bg" class="theme-peertube">
-        </div>`
+        const container = document.createElement('div')
+        container.classList.add('margin-content')
+        container.classList.add('livechat-embed-fullpage')
+        rootEl.append(container)
+        const converseRoot = document.createElement('converse-root')
+        converseRoot.classList.add('theme-peertube')
+        container.append(converseRoot)
 
-        window.initConverse(converseJSParams)
+        window.initConverse(converseJSParams, 'embedded')
       } catch (err) {
         console.error('[peertube-plugin-livechat] ' + (err as string))
         rootEl.innerText = await peertubeHelpers.translate(LOC_NOT_FOUND)
