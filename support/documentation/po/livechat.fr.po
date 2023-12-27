@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-12-27 10:36+0100\n"
-"PO-Revision-Date: 2023-09-25 16:55+0000\n"
+"PO-Revision-Date: 2023-12-27 09:46+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.0.1\n"
+"X-Generator: Weblate 5.3.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -363,12 +364,16 @@ msgstr "Note : pour une raison obscure, Prosody n'arrive pas à résoudre les 
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Performance tests"
-msgstr ""
+msgstr "Tests de performance"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvments, or find bottlenecks."
 msgstr ""
+"Le dépôt [livechat-perf-test](https ://github.com/JohnXLivingston/livechat-"
+"perf-test) contient quelques outils pour effectuer des tests de performance. "
+"Ils peuvent être utilisés pour évaluer les améliorations du code source, ou "
+"trouver les goulots d'étranglement."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
@@ -1605,6 +1610,11 @@ msgid ""
 "If you enable this feature, and are using a custom reverse proxy on front of Peertube, please make sure that your setup is correctly configured to forward real user's IPs to Peertube.\n"
 "Otherwise it could block all anonymous users at once.\n"
 msgstr ""
+"**Note importante** :\n"
+"Si vous activez cette fonctionnalité, et que vous utilisez un reverse proxy "
+"personnalisé devant Peertube, merci de vous assurer que vous avez "
+"correctement configuré celui-ci pour faire suivre les IPs réelles des "
+"utilisateur⋅rices à Peertube.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2412,7 +2422,7 @@ msgstr "Le bot peut envoyer des messages périodiquement."
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
 msgid "Timers"
-msgstr ""
+msgstr "Timers"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
@@ -2926,6 +2936,11 @@ msgstr "Vous pouvez utiliser un bot de tchat, qui vous aidera pour la modératio
 #: support/documentation/content/en/intro/_index.md
 msgid "You can also plug in any other XMPP chat bot, using [XMPP External Components](https://prosody.im/doc/components).  To do so, you just have to configure External Components access in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
 msgstr ""
+"Vous pouvez également brancher tout autre bot de tchat XMPP, en utilisant "
+"les [Composants XMPP externes](https ://prosody.im/doc/components). Pour "
+"cela, vous avez juste à configurer les accès des composants externes via la "
+"page des [paramètres du plugin](/peertube-plugin-livechat/fr/documentation/"
+"admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
