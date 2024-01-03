@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-12-27 10:36+0100\n"
-"PO-Revision-Date: 2023-12-27 09:46+0000\n"
+"PO-Revision-Date: 2024-01-03 12:39+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -1519,7 +1519,7 @@ msgstr "Administration du Plugin Peertube Livechat"
 #: support/documentation/content/en/documentation/admin/_index.md
 #, no-wrap
 msgid "Admin documentation"
-msgstr "Admin documentation"
+msgstr "Documentation administrateur⋅rice"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/settings.md
