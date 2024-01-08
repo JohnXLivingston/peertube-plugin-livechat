@@ -1,5 +1,5 @@
 import type { SVGButton } from './buttons'
-import { logger } from './logger'
+import { logger } from '../utils/logger'
 
 interface displayButtonOptionsBase {
   buttonContainer: HTMLElement

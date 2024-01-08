@@ -9,6 +9,10 @@ TODO: replace commit_id by a tag in build-conversejs
 * #143: User colors: implementing [XEP-0392](https://xmpp.org/extensions/xep-0392.html) to have random colors on users nicknames
 * Fullscreen chat: now uses a custom page (in other words: when opening the chat in a new tab, you will have the Peertube menu).
 
+### Minor changes and fixes
+
+* Some code refactoring.
+
 ## 8.4.0
 
 * Fix #87: updating chat room title when video/channel title is changed.

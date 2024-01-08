@@ -1,4 +1,5 @@
-:root {
+body.converse-fullscreen,
+body.converse-embedded {
   --peertube-main-foreground: #000;
   --peertube-main-background: #fff;
   --peertube-grey-foreground: #585858;
@@ -16,10 +17,20 @@
   --livechat-transparent: rgba(0 0 0 / 0%);
 }
 
+/* Chat embedded in a full client page. */
+.livechat-embed-fullpage {
+  converse-root {
+    display: block;
+    height: 90vh;
+    min-height: 400px;
+  }
+}
+
 .conversejs.theme-peertube,
 .conversejs-bg.theme-peertube,
 #conversejs-bg.theme-peertube,
-body.converse-fullscreen.theme-peertube {
+body.converse-fullscreen.theme-peertube,
+body.converse-embedded converse-root.theme-peertube {
   --foreground: var(--peertube-main-foreground);
   --background: var(--peertube-main-background);
   --subdued-color: #a8aba1;
