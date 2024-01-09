@@ -156,9 +156,8 @@ function _fillAuthenticatedParams (initConverseParams: InitConverseJSParams, aut
   params.password = auth.password
   if (auth.nickname) {
     params.nickname = auth.nickname
-  } else {
-    params.muc_nickname_from_jid = true
   }
+  params.muc_nickname_from_jid = true // if nickname already used, ConverseJS will add a suffix.
   // We dont need the keepalive. And I suppose it is related to some bugs when opening a previous chat window.
   params.keepalive = false
   // FIXME: use params.oauth_providers?

@@ -6,6 +6,7 @@
 
 * Anonymous chat user: remember the chosen nickname in sessionStorage, to avoid entering it again too often.
 * Fix: if an anonymous chat user enter spaces in the nickname choice, it will allows them to keep the random nickname.
+* Authenticated users: if current user nickname is already used in the room, automatically add a suffix.
 * Translation updates: German, French.
 * New Swedish translations.
 
