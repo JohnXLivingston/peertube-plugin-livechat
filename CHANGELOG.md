@@ -1,5 +1,12 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Translation updates: German, French.
+* New Swedish translations.
+
 ## 8.0.4
 
 ### Minor changes and fixes
