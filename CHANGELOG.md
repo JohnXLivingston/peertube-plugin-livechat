@@ -4,6 +4,8 @@
 
 ### Minor changes and fixes
 
+* Anonymous chat user: remember the chosen nickname in sessionStorage, to avoid entering it again too often.
+* Fix: if an anonymous chat user enter spaces in the nickname choice, it will allows them to keep the random nickname.
 * Translation updates: German, French.
 * New Swedish translations.
 

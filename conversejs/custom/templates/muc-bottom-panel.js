@@ -6,8 +6,13 @@ import tplMucBottomPanel from '../../src/plugins/muc-views/templates/muc-bottom-
 async function setNickname (ev, model) {
   ev.preventDefault()
   const nick = ev.target.nick.value.trim()
-  nick && await model.setNickname(nick)
-  _converse.api.trigger('livechatViewerModeSetNickname')
+  if (!nick) {
+    return
+  }
+  await model.setNickname(nick)
+  _converse.api.trigger('livechatViewerModeSetNickname', model, nick, {
+    synchronous: true
+  })
 }
 
 export default (o) => {
