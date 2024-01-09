@@ -50,9 +50,14 @@ body[livechat-viewer-mode="on"] {
     form {
       display: flex !important;
       flex-flow: row wrap !important;
-      padding-top: 0.5em !important;
       padding-bottom: 0.5em !important;
       border-top: var(--chatroom-separator-border-bottom) !important;
+      gap: 10px;
+      align-items: baseline;
+
+      label {
+        color: var(--text-color); // fix converseJs css that breaks this label color.
+      }
     }
   }
 

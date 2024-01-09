@@ -20,17 +20,19 @@ export default (o) => {
     const model = o.model
     const i18nNickname = __('Nickname')
     const i18nJoin = __('Enter groupchat')
+    const i18n_heading = __('Choose a nickname to enter')
     return html`
     <div class="livechat-viewer-mode-nick chatroom-form-container"
             @submit=${ev => setNickname(ev, model)}>
         <form class="converse-form chatroom-form">
+            <label>${i18n_heading}</label>
             <fieldset class="form-group">
-                <input type="text"
-                    required="required"
-                    name="nick"
-                    value=""
-                    class="form-control"
-                    placeholder="${i18nNickname}"/>
+              <input type="text"
+                  required="required"
+                  name="nick"
+                  value=""
+                  class="form-control"
+                  placeholder="${i18nNickname}"/>
             </fieldset>
             <fieldset class="form-group">
                 <input type="submit" class="btn btn-primary" name="join" value="${i18nJoin}"/>

@@ -7,6 +7,7 @@
 * Anonymous chat user: remember the chosen nickname in sessionStorage, to avoid entering it again too often.
 * Fix: if an anonymous chat user enter spaces in the nickname choice, it will allows them to keep the random nickname.
 * Authenticated users: if current user nickname is already used in the room, automatically add a suffix.
+* UX: add a label ('Choose a nickname to enter') for the anonymous nickname prompt. Fix #287.
 * Translation updates: German, French.
 * New Swedish translations.
 
