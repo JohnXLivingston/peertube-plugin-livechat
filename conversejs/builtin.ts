@@ -93,6 +93,7 @@ window.initConverse = async function initConverse (
   }
 
   try {
+// TODO: disable this when on the new full page.
     converse.plugins.add('livechatWindowTitlePlugin', {
       dependencies: ['converse-muc-views'],
       overrides: {
