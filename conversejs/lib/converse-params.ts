@@ -23,7 +23,8 @@ function defaultConverseParams (
         '110', // self
         '104', '201', // non_privacy_changes
         '170', '171', // muc_logging_changes
-        '210', '303', // nickname_changes
+        '210', // nickname_changes. 210=Inform user that the service has assigned or modified the occupant's roomnick
+        '303', // nickname_changes. 303=Inform all occupants of new room nickname
         '301', '307', '321', '322', '332', '333', // disconnected
         'owner', 'admin', 'member', 'exadmin', 'exowner', 'exoutcast', 'exmember', // affiliation_changes
         // 'entered', 'exited', // join_leave_events
@@ -72,7 +73,12 @@ function defaultConverseParams (
     persistent_store: 'sessionStorage',
     show_images_inline: false, // for security reason, and to avoid bugs when image is larger that iframe
     render_media: false, // for security reason, and to avoid bugs when image is larger that iframe
-    whitelisted_plugins: ['livechatWindowTitlePlugin', 'livechatViewerModePlugin', 'livechatDisconnectOnUnloadPlugin'],
+    whitelisted_plugins: [
+      'livechatWindowTitlePlugin',
+      'livechatSpecifics',
+      'livechatViewerModePlugin',
+      'livechatDisconnectOnUnloadPlugin'
+    ],
     show_retraction_warning: false, // No need to use this warning (except if we open to external clients?)
     muc_show_info_messages: mucShowInfoMessages,
     send_chat_state_notifications: false, // don't send this for performance reason

@@ -109,6 +109,29 @@ window.initConverse = async function initConverse (initConverseParams: InitConve
       }
     })
 
+    // livechatSpecifics plugins add some customization for the livechat plugin.
+    converse.plugins.add('livechatSpecifics', {
+      dependencies: ['converse-muc'],
+      overrides: {
+        ChatRoom: {
+          getActionInfoMessage: function (this: any, code: string, nick: string, actor: any): any {
+            if (code === '303') {
+              // When there is numerous anonymous users joining at the same time,
+              // they can all change their nicknames at the same time, generating a log of action messages.
+              // To mitigate this, will don't display nickname changes if the previous nick is something like
+              // 'Anonymous 12345'.
+              // To avoid displaying the message, we just have to return an empty one
+              // (createInfoMessage will ignore if !data.message).
+              if (/^Anonymous \d+$/.test(nick)) {
+                return null
+              }
+            }
+            return this.__super__.getActionInfoMessage(code, nick, actor)
+          }
+        }
+      }
+    })
+
     if (autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet) {
       const previousNickname = getPreviousAnonymousNick()
       converse.plugins.add('livechatViewerModePlugin', {

@@ -10,6 +10,7 @@
 * UX: add a label ('Choose a nickname to enter') for the anonymous nickname prompt. Fix #287.
 * Translation updates: German, French.
 * New Swedish translations.
+* UI/UX improvment: hide nickname changes when previous nickname was like "Anonymous 12345". Helps to improve performances when massive anonymous users are joining (#138), and prevent displaying unnecessary messages (#111).
 
 ## 8.0.4
 
