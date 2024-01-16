@@ -40,15 +40,18 @@ if [[ ! -d "$converse_src_dir" ]]; then
     git remote add origin $CONVERSE_REPO
     git fetch --depth 1 origin $CONVERSE_COMMIT
     git checkout $CONVERSE_COMMIT
+    # In order to be able to test if $converse_build_dir is up to date, we add the commit id in a file:
     cd -
+    echo "$CONVERSE_COMMIT" > "$converse_src_dir/current"
   else
     echo "Shallow cloning ConverseJS."
     git clone --depth=1 --branch $CONVERSE_VERSION $CONVERSE_REPO $converse_src_dir
+    echo "$CONVERSE_VERSION" > "$converse_src_dir/current"
   fi
   rm -rf "$converse_build_dir"
 fi
 
-if cmp -s "$converse_src_dir/package.json" "$converse_build_dir/package.json"; then
+if cmp -s "$converse_src_dir/package.json" "$converse_build_dir/package.json" && cmp -s "$converse_src_dir/current" "$converse_build_dir/current"; then
   echo "ConverseJS files are already up to date in the build directory."
 else
   echo "ConverseJS files are not up to date in the build directory, copying them..."
