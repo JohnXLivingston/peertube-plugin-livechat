@@ -14,7 +14,8 @@ CONVERSE_COMMIT=""
 # This version includes following changes:
 # - #converse.js/3300: Adding the maxWait option for `debouncedPruneHistory`
 # - #converse.js/3302: debounce MUC sidebar rendering
-CONVERSE_COMMIT="732f58b50d1b1cf0d3f091668057032fb52b164a"
+# - Fix: refresh the MUC sidebar when participants collection is sorted
+CONVERSE_COMMIT="4861395f047e4abee2b30271c80d29a86baf7828"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"

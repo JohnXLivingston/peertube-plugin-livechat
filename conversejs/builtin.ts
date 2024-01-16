@@ -111,7 +111,7 @@ window.initConverse = async function initConverse (initConverseParams: InitConve
 
     // livechatSpecifics plugins add some customization for the livechat plugin.
     converse.plugins.add('livechatSpecifics', {
-      dependencies: ['converse-muc'],
+      dependencies: ['converse-muc', 'converse-muc-views'],
       overrides: {
         ChatRoom: {
           getActionInfoMessage: function (this: any, code: string, nick: string, actor: any): any {
@@ -120,13 +120,42 @@ window.initConverse = async function initConverse (initConverseParams: InitConve
               // they can all change their nicknames at the same time, generating a log of action messages.
               // To mitigate this, will don't display nickname changes if the previous nick is something like
               // 'Anonymous 12345'.
-              // To avoid displaying the message, we just have to return an empty one
-              // (createInfoMessage will ignore if !data.message).
               if (/^Anonymous \d+$/.test(nick)) {
+                // We are sorting anonymous users at the end, by overriding ChatRoomOccupants.comparator.
+                // But this has a caveat: occupants are not sorted again when nicknames changes...
+                // As a workaround, we re-sort the occupant list here, when we intercept a action info message
+                // from an anonymous user that has changed his nickname.
+                // FIXME: This is not very clean... but will do the work.
+                try {
+                  // Moreover, we can't sort now, as the new nickname is not saved in the Collection...
+                  // So using a setTimout
+                  // FIXME: find a better way
+                  setTimeout(() => this.occupants.sort(), 100)
+                } catch (err) {
+                  console.error(err)
+                }
+
+                // To avoid displaying the message, we just have to return an empty one
+                // (createInfoMessage will ignore if !data.message).
                 return null
               }
             }
             return this.__super__.getActionInfoMessage(code, nick, actor)
+          }
+        },
+        ChatRoomOccupants: {
+          comparator: function (this: any, occupant1: any, occupant2: any): Number {
+            // Overriding Occupants comparators, to display anonymous users at the end of the list.
+            const nick1: string = occupant1.getDisplayName()
+            const nick2: string = occupant2.getDisplayName()
+            const b1 = nick1.startsWith('Anonymous ')
+            const b2 = nick2.startsWith('Anonymous ')
+            if (b1 === b2) {
+              // Both startswith anonymous, or non of it: fallback to the standard comparator.
+              return this.__super__.comparator(occupant1, occupant2)
+            }
+            // Else: Anonymous always last.
+            return b1 ? 1 : -1
           }
         }
       }
