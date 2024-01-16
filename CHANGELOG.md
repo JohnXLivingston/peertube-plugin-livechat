@@ -11,6 +11,9 @@
 * Translation updates: German, French.
 * New Swedish translations.
 * UI/UX improvment: hide nickname changes when previous nickname was like "Anonymous 12345". Helps to improve performances when massive anonymous users are joining (#138), and prevent displaying unnecessary messages (#111).
+* Using patched ConverseJS for performance improvment (related to #96):
+  * debounce MUC sidebar rendering in ConverseJS (Fix #138)
+  * force history pruning, even if messages keep coming (Fix #140)
 
 ## 8.0.4
 
