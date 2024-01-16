@@ -25,3 +25,7 @@ help_builtin_prosody_label: خادم Prosody
 prosody_port_label: منفذ Prosody
 prosody_s2s_port_label: منفذ Prosody مِن خادم إلى خادم آخر
 prosody_components_list_label: المكونات الخارجية
+use_current_theme_color: استخدم ألوان الحلة الحالية
+connect_using_xmpp: للاتصال عبر XMPP
+important_note_title: <h3>ملاحظات هامة</h3>
+chat_title: <h3>الدردشة</h3>
