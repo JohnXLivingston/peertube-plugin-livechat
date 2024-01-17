@@ -16,7 +16,7 @@ CONVERSE_COMMIT=""
 # - #converse.js/3302: debounce MUC sidebar rendering
 # - Fix: refresh the MUC sidebar when participants collection is sorted
 # - Fix: MUC occupant list does not sort itself on nicknames or roles changes
-CONVERSE_COMMIT="64d23bd160a9531c45604b1d7e86b4c759a1e883"
+CONVERSE_COMMIT="4351ae2af04bc15151d97ae5810089c007563913"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"
