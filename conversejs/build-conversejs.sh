@@ -15,7 +15,8 @@ CONVERSE_COMMIT=""
 # - #converse.js/3300: Adding the maxWait option for `debouncedPruneHistory`
 # - #converse.js/3302: debounce MUC sidebar rendering
 # - Fix: refresh the MUC sidebar when participants collection is sorted
-CONVERSE_COMMIT="4861395f047e4abee2b30271c80d29a86baf7828"
+# - Fix: MUC occupant list does not sort itself on nicknames or roles changes
+CONVERSE_COMMIT="64d23bd160a9531c45604b1d7e86b4c759a1e883"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"

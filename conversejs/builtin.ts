@@ -121,20 +121,6 @@ window.initConverse = async function initConverse (initConverseParams: InitConve
               // To mitigate this, will don't display nickname changes if the previous nick is something like
               // 'Anonymous 12345'.
               if (/^Anonymous \d+$/.test(nick)) {
-                // We are sorting anonymous users at the end, by overriding ChatRoomOccupants.comparator.
-                // But this has a caveat: occupants are not sorted again when nicknames changes...
-                // As a workaround, we re-sort the occupant list here, when we intercept a action info message
-                // from an anonymous user that has changed his nickname.
-                // FIXME: This is not very clean... but will do the work.
-                try {
-                  // Moreover, we can't sort now, as the new nickname is not saved in the Collection...
-                  // So using a setTimout
-                  // FIXME: find a better way
-                  setTimeout(() => this.occupants.sort(), 100)
-                } catch (err) {
-                  console.error(err)
-                }
-
                 // To avoid displaying the message, we just have to return an empty one
                 // (createInfoMessage will ignore if !data.message).
                 return null
