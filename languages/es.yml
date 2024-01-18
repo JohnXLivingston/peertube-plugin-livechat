@@ -215,3 +215,17 @@ prosody_components_list_description: "Los componentes externos a declarar:\n<ul>
   de configurar su DNS correctamente.\n   </li>\n   <li>Use solo caracteres alfanuméricos
   en la frase de contraseña secreta (use al menos 15 caracteres).</li>\n</ul>\n"
 online_help: Ayuda en línea
+auto_ban_anonymous_ip_description: "Al habilitar esta opción, cada vez que un usuario
+  anónimo sea excluido de una sala de chat, su IP también será baneada del servidor
+  de chat.\nAdvertencia: si su instancia está abierta a la inscripción, cualquier
+  usuario podría crear un chat de trampa, invitar a los usuarios a unirse y banear
+  automáticamente todas las IP de esos usuarios anónimos.\nLa lista de IP baneadas
+  no se almacena, se borrará al reiniciar el servidor o cuando cambie la configuración
+  de algún plugin.\nLas IP baneadas se guardan en los archivos de registro del servidor
+  Prosody, por lo que los administradores del servidor pueden eventualmente usar algunas
+  herramientas externas (como fail2ban) para bloquear el acceso las IP de manera más
+  amplia.\n"
+prosody_components_interfaces_label: Interfaces de red de componentes externos de
+  Prosody
+auto_ban_anonymous_ip_label: Banear la IP del usuario si le banean de una sala de
+  chat
