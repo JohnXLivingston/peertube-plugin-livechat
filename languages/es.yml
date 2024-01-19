@@ -272,3 +272,27 @@ livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Por defe
   los mensajes de los moderadores no se borrarán cuando contengan palabras prohibidas.\n
   Al marcar esta opción, los mensajes de los moderadores también se eliminarán.\n"
 livechat_configuration_channel_forbidden_words_comments_label: Comentarios
+livechat_configuration_channel_quote_label: Temporizador
+livechat_configuration_channel_quote_desc: "Puedes configurar varios temporizadores
+  que enviaran mensajes cada cierto intervalo.\nEstos mensages los enviara el bot
+  cada X minutos.\nPuedes por ejemplo hacer que el bot muestre información de tus
+  patrocinadores cada 5 minutos.\n"
+livechat_configuration_channel_command_message_desc: El mensaje a enviar.
+livechat_configuration_channel_forbidden_words_comments_desc: "Puedes añadir aquí
+  algunos comentarios sobre esta regla, para recordar cómo y por qué la creaste.\n
+  Estos comentarios son puramente indicativos, y no influyen en el comportamiento
+  del bot.\n"
+livechat_configuration_channel_quote_desc2: "Un mensaje por línea.\nSi hay varios
+  mensajes, se seleccionará uno al azar cada X minutos.\n"
+livechat_configuration_channel_quote_delay_label: Enviar cada X minutos
+livechat_configuration_channel_quote_delay_desc: "El bot publicará el mensaje cada
+  X minutos.\n"
+livechat_configuration_channel_command_label: Comando del bot
+livechat_configuration_channel_command_desc: "Puedes configurar el bot para que responda
+  a comandos.\nUn comando es un mensaje que comienza con \"!\", como por ejemplo \"\
+  !help\" que llama al comando \"help\".\n"
+livechat_configuration_channel_command_cmd_label: Comando
+livechat_configuration_channel_command_cmd_desc: "El comando, sin el \"!\" inicial.
+  Por ejemplo \"ayuda\", \"patrocinador\",...\n"
+livechat_configuration_channel_command_message_label: Mensaje
+livechat_configuration_channel_quote_label2: Mensajes
