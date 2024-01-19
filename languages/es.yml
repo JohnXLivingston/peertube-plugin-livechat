@@ -296,3 +296,5 @@ livechat_configuration_channel_command_cmd_desc: "El comando, sin el \"!\" inici
   Por ejemplo \"ayuda\", \"patrocinador\",...\n"
 livechat_configuration_channel_command_message_label: Mensaje
 livechat_configuration_channel_quote_label2: Mensajes
+livechat_configuration_channel_for_more_info: "Para más información sobre cómo configurar
+  esta funciónalidad, consulte la documentación haciendo clic en el botón de ayuda.\n"
