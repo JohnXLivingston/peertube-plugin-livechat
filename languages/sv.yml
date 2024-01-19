@@ -13,3 +13,63 @@ video: Video
 channel: Kanal
 last_activity: Senaste aktivitet
 web: Webb
+livechat_configuration_channel_quote_label2: Meddelanden
+livechat_configuration_channel_banned_jids_label: Blockerade användare och mönster
+not_found: Hittades inte
+connect_using_xmpp: Anslut med XMPP
+important_note_title: <h3>Att tänka på</h3>
+important_note_text: "Dokumentation av tillägget hittar du här:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n  Peertube Plugin Livechat-dokumentation\n</a>.\n"
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Visa rum</a>\n"
+room_type_label: Typ av rum
+room_type_description: Här kan du välja om du vill ha separata rum för varje video
+  eller gruppera dem per kanal.
+theming_advanced_description: <h3>Utseende</h3>
+converse_theme_option_peertube: PeerTubes tema
+converse_theme_option_default: ConverseJS standardtema
+converse_theme_option_concord: ConverseJS-temat concord
+autocolors_label: Automatisk färgigenkänning
+save: Spara
+cancel: Avbryt
+successfully_saved: Sparat
+menu_configuration_label: Chattrum
+livechat_configuration_title: Anpassa din sändnings chattrum
+livechat_configuration_channel_title: Kanalinställningar
+livechat_configuration_channel_forbidden_words_label: Förbjudna ord och uttryck
+livechat_configuration_channel_forbidden_words_reason_label: Anledning
+livechat_configuration_channel_quote_label: Timer
+livechat_configuration_channel_quote_delay_label: Skicka var X:e minut
+livechat_configuration_channel_command_message_desc: Meddelandet som ska skickas.
+read_only: Skrivskyddad
+transparent_background: Genomskinlig bakgrund (för integrering i video, genom exempelvis
+  OBD)
+use_current_theme_color: Använd valda temafärger
+generate_iframe: Skapa en iframe för att bädda in chatten på en webbplats
+chat_for_live_stream: 'Chatt för direktsändning:'
+room_name: Namn på rummet
+room_description: Beskrivning av rummet
+chat_title: <h3>Chatt</h3>
+list_rooms_label: Visa redan skapade rum
+chat_behaviour_description: <h3>Chattinställningar</h3>
+room_type_option_video: Varje video har ett eget webbchatt-rum
+room_type_option_channel: Varje kanal har ett eget webbchatt-rum
+auto_display_label: Öppna chatten automatiskt
+auto_display_description: Öppna chattrutan automatiskt när videon spelas upp.
+open_blank_label: Visa knappen ”öppna i nytt fönster”
+share_url_option_nobody: Visa inte för någon
+share_url_option_everyone: Visa för alla
+share_url_option_owner: Visa för videons skapare
+share_url_option_owner_moderators: Visa för videons skapare och instansens moderatorer
+per_live_video_label: Användare kan aktivera chatten för sina direktsändningar
+all_lives_label: Aktivera chatt för alla direktsändningar
+videos_list_label: Aktivera chatten för dessa videor
+no_anonymous_label: Dölj chatten för anonyma användare
+converse_theme_label: ConverseJS-tema
+converse_theme_description: Välj vilket ConverseJS-tema du vill använda.
+invalid_value: Ogiltigt värde.
+livechat_configuration_channel_forbidden_words_comments_label: Kommentarer
+livechat_configuration_channel_quote_delay_desc: "Roboten kommen skicka meddelandet
+  var X:e minut.\n"
+livechat_configuration_channel_command_message_label: Meddelande
+livechat_configuration_channel_bot_nickname: Robotens visningsnamn
