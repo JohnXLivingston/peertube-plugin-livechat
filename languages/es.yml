@@ -299,3 +299,5 @@ livechat_configuration_channel_quote_label2: Mensajes
 livechat_configuration_channel_for_more_info: "Para más información sobre cómo configurar
   esta funciónalidad, consulte la documentación haciendo clic en el botón de ayuda.\n"
 livechat_configuration_channel_banned_jids_label: Usuarios baneados y patrones
+invalid_value: Valor inválido.
+livechat_configuration_channel_bot_nickname: Nick del bot
