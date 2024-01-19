@@ -229,3 +229,5 @@ prosody_components_interfaces_label: Interfaces de red de componentes externos d
   Prosody
 auto_ban_anonymous_ip_label: Banear la IP del usuario si le banean de una sala de
   chat
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Característica
+  experimental:</b>esta característica aún es experimental\n"
