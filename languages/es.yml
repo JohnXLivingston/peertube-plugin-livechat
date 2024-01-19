@@ -231,3 +231,32 @@ auto_ban_anonymous_ip_label: Banear la IP del usuario si le banean de una sala d
   chat
 experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Característica
   experimental:</b>esta característica aún es experimental\n"
+configuration_description: "<h3>Configuracion avanzada del canal</h3>\nLos parametros
+  a continuación conciernen las opciones avanzadas del canal:\nlos usuarios podrán
+  añadir personalización adicional a sus canales,\nactivar el bot de moderación, ...\n"
+livechat_configuration_channel_desc: Puedes configurar aquí algunas opciones para
+  este canal (políticas de moderación, ...).
+livechat_configuration_channel_forbidden_words_desc: "Puedes configurar algunas palabras
+  que serán moderadas automáticamente por el bot (los mensajes que contengan dichas
+  palabras serán borrados instantáneamente).\nTambién puedes añadir una razón opcional
+  que se mostrará en el lugar de los mensajes eliminados.\nSe proporcionan varios
+  ejemplos en la página de documentación.\n"
+disable_channel_configuration_label: Desactivar la configuración avanzada del canal
+  y el chatbot
+save: Salvaguardar
+cancel: Cancelar
+successfully_saved: Salvaguardado éxitosamente
+menu_configuration_label: Salas de chat
+livechat_configuration_title: Configura las salas de chat de tus directos
+livechat_configuration_desc: Aquí puedes configurar algunas opciones avanzadas para
+  salas de chat asociadas a tus retransmisiones en directo.
+livechat_configuration_please_select: Selecciona a continuación uno de tus canales
+  para configurar sus opciones de chat.
+livechat_configuration_channel_title: Opciones de canal
+livechat_configuration_channel_enable_bot_label: Habilitar el bot de moderación
+livechat_configuration_channel_bot_options_title: Opciones del bot de moderación
+livechat_configuration_channel_forbidden_words_label: Palabras o expresiones prohibidas
+livechat_configuration_channel_forbidden_words_desc2: "Una palabra o expresión por
+  línea. Si pones varias palabras en una línea, solo coincidirá con los mensajes que
+  contengan la secuencia completa.\n"
+livechat_configuration_channel_forbidden_words_reason_label: Motivo
