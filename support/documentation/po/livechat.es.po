@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2023-12-27 10:36+0100\n"
-"PO-Revision-Date: 2023-07-26 22:29+0000\n"
-"Last-Translator: Tony Simoes <asrmail@protonmail.com>\n"
-"Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
+"PO-Revision-Date: 2024-01-28 13:01+0000\n"
+"Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: Spanish <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 5.3.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -147,6 +148,11 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
 msgstr ""
+"Tenga en cuenta que este plugin necesita una AppImage para el servidor "
+"Prosody XMPP.  Esa AppImage la proporciona el proyecto paralelo [Prosody "
+"AppImage](https://github.com/JohnXLivingston/prosody-appimage).  El script "
+"`build-prosody.sh` descarga los binarios adjuntos de ese repositorio remoto "
+"y verifica que sus checksum sha256 sean correctos."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -362,12 +368,16 @@ msgstr "Nota: por una razón desconocida, Prosody no puede resolver la direcció
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Performance tests"
-msgstr ""
+msgstr "Pruebas de rendimiento"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvments, or find bottlenecks."
 msgstr ""
+"El repositorio [livechat-perf-test](https://github.com/JohnXLivingston/"
+"livechat-perf-test) contiene algunas herramientas para realizar pruebas de "
+"rendimiento.  Se puede utilizar para evaluar mejoras de código, o encontrar "
+"cuellos de botella."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
@@ -396,7 +406,7 @@ msgstr "Siempre informa a la comunidad antes de trabajar (creando un nuevo 'issu
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation work has to be merged in the `main` branch."
-msgstr ""
+msgstr "El trabajo de documentación debe fusionarse en la rama `main`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -412,11 +422,17 @@ msgstr "La documentación se genera usando [Hugo](https://gohugo.io/). Debe inst
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The used theme is [hugo-theme-learn](https://learn.netlify.app/).  You should read its documentation before starting editing the documentation."
 msgstr ""
+"El tema utilizado es [hugo-theme-learn](https://learn.netlify.app/).  "
+"Deberías leer su documentación antes de empezar a editar la documentación."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.  This will trigger github and gitlab pipelines, and update published documentation."
 msgstr ""
+"Cuando se libere una nueva versión del plugin, o cuando se actualice la "
+"documentación, los mantenedores del plugin fusionarán la rama `main` con la "
+"rama `documentation`.  Esto activará los pipelines de github y gitlab, y "
+"actualizará la documentación publicada."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -427,44 +443,54 @@ msgstr "Traducciones"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The principal language is english (`en` code)."
-msgstr ""
+msgstr "El idioma principal es el inglés (código `en`)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The `support/documentation/content/en` folder contains only english documentation files."
 msgstr ""
+"La carpeta `support/documentation/content/en` sólo contiene archivos de "
+"documentación en inglés."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page."
 msgstr ""
+"La documentación se traduce mediante Weblate (consulte la [documentación de "
+"traducción](/peertube-plugin-livechat/contributing/translate/)).  Para "
+"hacerlo pues, utilizamos la [herramienta po4a](https://po4a.org/), como "
+"veremos más adelante en esta página."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Add a new language"
-msgstr ""
+msgstr "Añadir un nuevo idioma"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section."
 msgstr ""
+"En el archivo `support/documentation/config.toml`, copie y modifique la "
+"sección `[Languages.fr]`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "If the translations are not complete, it does not matter, english will be used for missing strings."
 msgstr ""
+"Si las traducciones no están completas, no importa, se utilizará el inglés "
+"para las secuencias de caracteres que falten."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Preview"
-msgstr ""
+msgstr "Previsualizar"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To preview your modifications, just run:"
-msgstr ""
+msgstr "Para previsualizar sus modificaciones, simplemente ejecute:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -476,23 +502,32 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).  This page will automatically refresh on each modification."
 msgstr ""
+"A continuación, abra su navegador en la dirección [http://localhost:1313/"
+"peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/). "
+"Esta página se actualizará automáticamente con cada modificación."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Update localization files and generate documentation translations"
 msgstr ""
+"Actualizar archivos de localización y generar traducciones de documentación"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, you only have the english version.  To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script."
 msgstr ""
+"Por ahora, sólo tienes la versión en inglés. Para actualizar las frases de "
+"la documentación, y generar traducciones, tienes que ejecutar el script `doc-"
+"translate.sh`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.\n"
 msgstr ""
+"Para hacerlo, asegúrese de tener `po4a` (versión>= 0.69) instalado en su "
+"computadora.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
