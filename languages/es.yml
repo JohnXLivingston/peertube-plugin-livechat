@@ -34,8 +34,8 @@ room_type_label: Tipo de sala
 room_type_option_video: Cada video tiene su propria sala de webchat
 room_type_option_channel: Salas de webchat son grupadas por su canal
 important_note_text: "Puede encontrar la documentación del plugin aquí:\n<a href=\"\
-  https://johnxlivingston.github.io/peertube-plugin-livechat/\" target=\"_blank\"\
-  >\n  Peertube Plugin Livechat documentación\n</a>.\n"
+  https://livingston.frama.io/peertube-plugin-livechat/\" target=\"_blank\">Documentación
+  del plugin Peertube Livechat</a>.\n"
 room_type_description: Puede elegir tener distintas salas para cada video, o agruparlas
   por canal.
 auto_display_label: Abrir el chat automaticamente
@@ -65,7 +65,7 @@ federation_dont_publish_remotely_label: No publicar información del chat
 per_live_video_description: Si se marca, todos los vídeos en directo tendrán un checkbox
   en sus propiedades para activar el web chat.
 federation_description: "<h3>Federación</h3>\nLos siguientes ajustes se refieren a
-  la federación con otras instancias de Peertube\n y otros programas del fediverso.\n"
+  la federación con otras instancias de Peertube,\ny otros software del fediverso.\n"
 open_blank_label: Muestra el botón «abrir en ventana nueva»
 share_url_description: Se mostrará un botón para compartir la url del chat (puede
   usarse para integración con OBS, por ejemplo).
@@ -180,13 +180,14 @@ prosody_s2s_interfaces_description: "Las interfaces de red para escuchar conexio
 prosody_s2s_interfaces_label: Interfaces de red de servidor a servidor
 prosody_components_label: Habilitar componentes externos personalizados de Prosody
 prosody_components_description: "Activar el uso de componentes XMPP externos.<br>\n
-  Esta opción por sí sola solo permite conexiones desde localhost.<br>\nEsta función
-  se puede utilizar, por ejemplo, para conectar algunos bots a las salas de chat.\n"
+  Esta opción por sí sola solo permite conexiones desde localhost.<br>\nDebes configurar
+  las interfaces de escucha y abrir el puerto en tu cortafuegos para que esté disponible
+  desde servidores remotos.<br>\nEsta función se puede utilizar, por ejemplo, para
+  conectar algunos bots a las salas de chat.\n"
 prosody_components_port_description: "El puerto que usarán los componentes XMPP para
   conectarse al servidor Prosody.<br>\nCámbielo si este puerto ya está en uso en su
   servidor.<br>\nPuede mantener este puerto cerrado con su firewall por ahora, no
-  se accederá desde el mundo exterior.<br>\nNota: esto podría cambiar en un futuro
-  cercano, ya que está previsto agregar una función para activar las conexiones externas.\n"
+  se accederá desde el mundo exterior.\n"
 prosody_certificates_dir_label: Directorio de certificados
 prosody_c2s_label: Activar las conexiones cliente-servidor
 prosody_certificates_dir_description: "Si este campo está vacío, el plugin generará
@@ -260,7 +261,7 @@ livechat_configuration_channel_forbidden_words_desc2: "Una palabra o expresión 
   línea. Si pones varias palabras en una línea, solo coincidirá con los mensajes que
   contengan la secuencia completa.\n"
 livechat_configuration_channel_forbidden_words_reason_label: Motivo
-livechat_configuration_channel_forbidden_words_reason_desc: Razón que se muestra además
+livechat_configuration_channel_forbidden_words_reason_desc: Motivo para mostrar además
   de eliminar los mensajes
 livechat_configuration_channel_forbidden_words_regexp_label: Considéralo como expresiones
   regulares
@@ -301,3 +302,8 @@ livechat_configuration_channel_for_more_info: "Para más información sobre cóm
 livechat_configuration_channel_banned_jids_label: Usuarios baneados y patrones
 invalid_value: Valor inválido.
 livechat_configuration_channel_bot_nickname: Nick del bot
+prosody_components_interfaces_description: "Las interfaces de red para escuchar las
+  conexiones de componentes externos.<br>\nLista de IP para escuchar, separadas por
+  coma (se eliminarán los espacios).<br>\nPuede utilizar «*» para escuchar en todas
+  las interfaces IPv4 y «::» para todas las IPv6.<br>\nEjemplos:\n<ul>\n  <li>*, ::</li>\n\
+  \  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>172.18.0.42</li>\n</ul>\n"
