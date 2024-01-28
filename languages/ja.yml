@@ -76,12 +76,12 @@ chat_style_label: チャットのiframeスタイル属性
 chat_style_description: "追加のスタイル設定をiframeスタイルの属性に追加します。<br>\n例）height:400px;\n"
 prosody_advanced_description: <h3>チャットサーバーの詳細設定</h3>
 help_builtin_prosody_label: Prosodyサーバー
-help_builtin_prosody_description: "本プラグインは、チャットルームの処理にProsody XMPPサーバーを使用します。<br>\n\
+help_builtin_prosody_description: "本プラグインは、チャットルームの処理にProsody XMPPサーバーを使用します。<br>\n
   本プラグインには、サービスで使用されるProsody AppImageが同梱されています。\n"
 system_prosody_label: システムのProsodyを使用する
 disable_websocket_label: Websocketを無効にする
 prosody_port_label: Prosodyポート番号
-prosody_port_description: "Prosodyサーバーによって使用されるポート番号です。<br>\nこのポートを既にサーバーが使用している場合に変更してください。<br>\n\
+prosody_port_description: "Prosodyサーバーによって使用されるポート番号です。<br>\nこのポートを既にサーバーが使用している場合に変更してください。<br>\n
   このポートをファイアウォールなどで封じることで、外部からアクセスを禁止できます。<br>\n注: 外部接続を有効にする機能の追加が予定されている為、この設定は近い将来変更される可能性があります。\n"
 prosody_peertube_uri_label: API呼び出しのためのPeerTube URL
 prosody_peertube_uri_description: "この設定が何を意味するのか分からない場合は、空欄のままにしてください。<br>\n一部の特殊なケースで、公開URIからProsodyを呼び出せない場合があります。\n\
@@ -92,11 +92,11 @@ prosody_muc_log_by_default_description: "チェックを入れると、ルーム
 prosody_muc_expiration_label: ルームログの有効期限
 prosody_room_allow_s2s_label: 外部のXMPPアカウントを使用してのルーム接続を有効にする
 prosody_s2s_port_label: Prosodyサーバー間のポート番号
-prosody_s2s_port_description: "XMPP s2s(サーバー間)接続で使用されるポート番号です。<br>\n通常は、ポート5269を使用します。\n\
+prosody_s2s_port_description: "XMPP s2s(サーバー間)接続で使用されるポート番号です。<br>\n通常は、ポート5269を使用します。\n
   それ以外にしたい場合は <a href=\"https://prosody.im/doc/s2s\">\n  特定のDNSレコードを設定する\n</a>必要があります。\n"
 prosody_s2s_interfaces_label: サーバー間ネットワークインターフェイス
 prosody_certificates_dir_label: 証明書フォルダー
-prosody_certificates_dir_description: "この欄が空欄の場合、プラグインは自己証明書を生成し、使用するようになります。<br>\n\
+prosody_certificates_dir_description: "この欄が空欄の場合、プラグインは自己証明書を生成し、使用するようになります。<br>\n
   他の証明書を使用したい場合は、ここに証明書が入ったProsodyがアクセス可能な\nフォルダを指定します。 注意: \"peertube\"というユーザーがこのフォルダーにアクセス可能である必要があります。\n"
 prosody_c2s_label: クライアントからサーバー接続を有効にする
 prosody_c2s_description: "XMPPクライアントから内蔵のProsodyサーバーへの接続を有効にします。<br>\nこの設定のみにすると、localhostクライアントからの接続のみ許可されます。\n"
@@ -106,14 +106,14 @@ prosody_components_description: "外部XMPPコンポーネントの使用を有�
   リッスン用のインタフェースの準備とリモートサーバーからの接続を受け付けるように、ファイアウォールとポートの開放を行う必要があります。<br>\nこの機能により、例えばbotなどがチャットルームに接続できるようにすることができます。\n"
 prosody_components_port_label: Prosody外部コンポーネントポート番号
 prosody_components_list_label: 外部コンポーネント
-federation_dont_publish_remotely_description: "この設定を有効にすると、あなたのインスタンスはFediverse上にチャット情報を公開しないようになります。\n\
-  リモートのPeerTubeインスタンスは、チャットルームがあなたの動画に関連付いていることを認識しなくなります。<br>\n<b>注意</b>: 進行中のチャットが既に存在する場合、既にチャット情報が公開されている可能性があります。\n\
-  チャット情報が非公開になるまで、次の動画の更新を待つ必要があります。\nまた、この設定を無効にすると、再度チャット情報が公開されるようになるまで、次の動画の更新を待つ必要があります。\
-  \ この更新は、主にライブ配信が再開したり、停止したときに発生します。<br>\n<b>注意</b>: この設定は、ActivityPubプロトコルを経由した情報の公開のみ影響します。\n\
+federation_dont_publish_remotely_description: "この設定を有効にすると、あなたのインスタンスはFediverse上にチャット情報を公開しないようになります。\n
+  リモートのPeerTubeインスタンスは、チャットルームがあなたの動画に関連付いていることを認識しなくなります。<br>\n<b>注意</b>: 進行中のチャットが既に存在する場合、既にチャット情報が公開されている可能性があります。\n
+  チャット情報が非公開になるまで、次の動画の更新を待つ必要があります。\nまた、この設定を無効にすると、再度チャット情報が公開されるようになるまで、次の動画の更新を待つ必要があります。
+  この更新は、主にライブ配信が再開したり、停止したときに発生します。<br>\n<b>注意</b>: この設定は、ActivityPubプロトコルを経由した情報の公開のみ影響します。\n
   リモート アプリケーションがチャットの存在を検出し、それに接続しようとすることを妨げるものではありません。\n"
-videos_list_description: "チャットを有効にしたい動画のUUIDを入力してください。\n非ライブ配信の動画が指定可能です。1つにつき1行で入力してください。\
-  \ <br />\nコメントを記載可能: #以降の文字は全てコメント扱いとなります。空行は無視されます。<br />\nUUIDがフロントエンドに送信されてしまう為、非公開動画は追加しないでください。\n"
-autocolors_description: "ユーザーの現在のテーマから色を自動検出します。<br>\nこの設定が有効の場合、プラグインは色を自動検出し、チャットのテーマに適用します。<br>\n\
+videos_list_description: "チャットを有効にしたい動画のUUIDを入力してください。\n非ライブ配信の動画が指定可能です。1つにつき1行で入力してください。
+  <br />\nコメントを記載可能: #以降の文字は全てコメント扱いとなります。空行は無視されます。<br />\nUUIDがフロントエンドに送信されてしまう為、非公開動画は追加しないでください。\n"
+autocolors_description: "ユーザーの現在のテーマから色を自動検出します。<br>\nこの設定が有効の場合、プラグインは色を自動検出し、チャットのテーマに適用します。<br>\n
   この設定がお使いのPeerTubeテーマでうまく動作しない場合は、この設定を無効にできます。\n発見したバグは、公式の\n<a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
   \ target=\"_blank\">\n  issue トラッカー\n</a>から報告をお願いします。 どのテーマで動作しなかったかも合わせて報告をお願いします。\n"
 system_prosody_description: "警告: この設定を理解していない場合は、チェックを入れないでください。<br>\nこの設定を有効にすると、あなたのPeerTubeインスタンスは、システムで動作しているProsodyサーバーを使用するようになり、\n\
@@ -122,32 +122,85 @@ disable_websocket_description: "PeerTube v5.0.0以降をお使いの場合、本
   ユーザーのブラウザーにWebsocketとの互換性がない場合は、ブラウザーは自動的にBOSHプロトコルに切り替えます。\n<br>\nただし希に、プロトコルの切替に失敗することがあります。例えば、PeerTubeの前に、プラグインに対してWebsocketを許可していないリバースプロキシを使用している場合などが、これに該当します。\n\
   この場合、この設定を有効にすることでWebsocket接続を使用しないようになります。\n"
 prosody_muc_expiration_description: "チャットルームの内容をいつまでサーバーに保管しておくかを選択できます。 値によって次のようになります:\n\
-  <ul>\n    <li><b>60</b>: 内容は、60 <b>秒</b>保存されます。 60をお好みの数字に変更できます。</li>\n    <li><b>1d</b>:\
-  \ 内容は、1<b>日</b>保存されます。1をお好みの数字に変更できます。</li>\n    <li><b>1w</b>: 内容は、1<b>週間</b>保存されます。1をお好みの数字に変更できます。</li>\n\
-  \    <li><b>1m</b>: 内容は、1<b>ヶ月</b>保存されます。1をお好みの数字に変更できます。</li>\n    <li><b>1y</b>:\
-  \ 内容は、<b>year</b>保存されます。1をお好みの数字に変更できます。</li>\n    <li><b>永久</b>: 内容に有効期限はなく、永久保管されます。</li>\n\
+  <ul>\n    <li><b>60</b>: 内容は、60 <b>秒</b>保存されます。 60をお好みの数字に変更できます。</li>\n    <li><b>1d</b>:
+  内容は、1<b>日</b>保存されます。1をお好みの数字に変更できます。</li>\n    <li><b>1w</b>: 内容は、1<b>週間</b>保存されます。1をお好みの数字に変更できます。</li>\n\
+  \    <li><b>1m</b>: 内容は、1<b>ヶ月</b>保存されます。1をお好みの数字に変更できます。</li>\n    <li><b>1y</b>:
+  内容は、<b>year</b>保存されます。1をお好みの数字に変更できます。</li>\n    <li><b>永久</b>: 内容に有効期限はなく、永久保管されます。</li>\n\
   </ul>\n"
-prosody_room_allow_s2s_description: "この設定を有効にすると、外部のXMPPアカウントとXMPPクライアントを利用してチャットルームに接続できるようになります。<br>\n\
+prosody_room_allow_s2s_description: "この設定を有効にすると、外部のXMPPアカウントとXMPPクライアントを利用してチャットルームに接続できるようになります。<br>\n
   注意しなければならないのは、この設定は追加のサーバーとDNS設定をリクエストできるようになることです。\n次のドキュメントを参照してください:\n<a href=\"\
   https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n  外部のXMPPアカウント接続を有効にする。\n</a>\n"
 prosody_s2s_interfaces_description: "サーバー間接続のためにリッスンするネットワークインターフェイスです。<br>\nリッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。<br>\n\
-  «*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。<br>\n例:\n<ul>\n  <li>*,\
-  \ ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>172.18.0.42</li>\n</ul>\n"
-prosody_c2s_port_description: "内蔵のProsodyサーバーのc2sモジュールで使用されるポート番号です。<br>\nXMPPクライアントは、このポート番号を使用して接続します。<br>\n\
-  このポートが既にサーバー上で使用されている場合に変更してください。<br>\n現時点では、このポートをファイアウォールにより閉じておくことができます。外部からアクセスされることはありません。<br>\n\
+  «*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。<br>\n例:\n<ul>\n  <li>*,
+  ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>172.18.0.42</li>\n</ul>\n"
+prosody_c2s_port_description: "内蔵のProsodyサーバーのc2sモジュールで使用されるポート番号です。<br>\nXMPPクライアントは、このポート番号を使用して接続します。<br>\n
+  このポートが既にサーバー上で使用されている場合に変更してください。<br>\n現時点では、このポートをファイアウォールにより閉じておくことができます。外部からアクセスされることはありません。<br>\n
   注: 外部接続を有効にする機能の追加が予定されている為、この設定は近い将来変更される可能性があります。\n"
 prosody_components_port_description: "XMPPコンポーネントがProsodyサーバーに接続する際に使用されるポート番号です。<br>\n\
   このポートが既にサーバー上で使用されている場合に変更してください。<br>\nlocalhost以外からのアクセスを許可しない場合は、引き続きファイアウォールでこのポートを閉じておくことができます。\n"
 prosody_components_list_description: "外部コンポーネントを宣言するには:\n<ul>\n  <li>コンポーネント1つにつき1行</li>\n\
-  \  <li>«component_name:component_secret»のフォーマットを使用します。(スペースは取り除かれます)</li>\n  <li>コメントを記載可能:\
-  \ #移行の文字は全てコメントと扱われます。空行は無視されます。</li>\n  <li>名前には、ラテン英数字とドット(.)のみが使用できます。</li>\n\
-  \  <li>\n    名前に英数字のみ使用されている場合、接頭辞にXMPPドメインが追加されます。\n    例えば、«bridge»という名前をつけた場合、«bridge.your_domain.tld»となります。\n\
+  \  <li>«component_name:component_secret»のフォーマットを使用します。(スペースは取り除かれます)</li>\n  <li>コメントを記載可能:
+  #移行の文字は全てコメントと扱われます。空行は無視されます。</li>\n  <li>名前には、ラテン英数字とドット(.)のみが使用できます。</li>\n \
+  \ <li>\n    名前に英数字のみ使用されている場合、接頭辞にXMPPドメインが追加されます。\n    例えば、«bridge»という名前をつけた場合、«bridge.your_domain.tld»となります。\n\
   \    完全なドメイン名を指定することもできますが、DNSが正しく設定されていることを確認してください。\n  </li>\n  <li>秘密のパスフレーズには、英数字のみ使用してください。(最低15文字)</li>\n\
   </ul>\n"
 online_help: オンラインヘルプ
 prosody_components_interfaces_label: Prosody外部コンポーネントネットワークインタフェース
 auto_ban_anonymous_ip_label: ユーザーがチャットルームから追放された場合に匿名ユーザーのIPを凍結する
-auto_ban_anonymous_ip_description: "このオプションを有効にすると、匿名のユーザーがチャットルームから追放されるたびに、そのユーザーのIPもチャットサーバーから追放されます。\n\
+auto_ban_anonymous_ip_description: "このオプションを有効にすると、匿名のユーザーがチャットルームから追放されるたびに、そのユーザーのIPもチャットサーバーから追放されます。\n
   警告: あなたのインスタンスが登録を受け付けている場合、どんなユーザーでも罠のルームを作成し、他のユーザーを招待し、自動的にすべての匿名ユーザーのIPを追放できます。\n\
   追放されたIPリストは保存されず、サーバー再起動時やプラグインの設定を変更した場合にクリアされます。\n追放されたIPはProsodyサーバーログファイルに記録されるため、サーバーの管理者は外部ツール（fail2banなど）を使用してIPを広範囲に追放することができます。\n"
+livechat_configuration_channel_desc: このチャンネルの設定を開始できます（モデレートポリシーなど）。
+livechat_configuration_channel_forbidden_words_desc: "Botにより自動的にモデレーションする単語を設定できます（単語が含まれるメッセージは即座に削除されます）。\n\
+  削除されたメッセージの箇所に表示する、削除された理由を設定することもできます。\nいくつかの例をドキュメントで提供していますので、必要があれば確認してください。\n"
+livechat_configuration_channel_forbidden_words_applytomoderators_desc: "デフォルトでは、モデレーターのメッセージは禁止単語・語句が含まれていても削除されません。\n\
+  このオプションを有効にすると、モデレーターからのメッセージも削除されるようになります。\n"
+save: 保存
+prosody_components_interfaces_description: "外部コンポーネント接続のためにリッスンするネットワークインターフェイスです。<br>\n
+  リッスンするIPのリストをコンマ区切りで入力してください。（スペースは除かれます）<br>\n全IPv4インタフェースでリッスンする場合は、 «*»、IPv6の場合は、«::»
+  が使用できます。<br>\n例:\n<ul>\n  <li>*, ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n\
+  \  <li>172.18.0.42</li>\n</ul>\n"
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">試験的な機能:</b>
+  この機能は試験段階です。\n"
+configuration_description: "<h3>チャンネルの高度な設定</h3>\n以下の設定は、高度なチャネル設定に関するものです:\nユーザーは、自身のチャンネルにおいてモデレーターBotの有効化など\n\
+  高度なカスタマイズを可能とします。\n"
+disable_channel_configuration_label: 高度なチャンネル設定とチャットボットを無効にする
+cancel: キャンセル
+successfully_saved: 保存に成功しました
+menu_configuration_label: チャットルーム
+livechat_configuration_title: ライブ配信のチャットルームを構成
+livechat_configuration_desc: あなたのライブ配信のチャットルームに関する高度なオプションを構成できます。
+livechat_configuration_please_select: 以下から、チャット設定を開始するチャンネルを選択してください。
+livechat_configuration_channel_title: チャンネル設定
+livechat_configuration_channel_enable_bot_label: モデレーターBotを有効にする
+livechat_configuration_channel_bot_options_title: モデレーターBotの設定
+livechat_configuration_channel_forbidden_words_label: 禁止単語または語句
+livechat_configuration_channel_forbidden_words_desc2: "単語または語句を1行ごとに記載してください。複数の単語を1行に記載した場合、記載したすべての内容を含むメッセージのみが一致するようになります。\n"
+livechat_configuration_channel_forbidden_words_reason_label: 理由
+livechat_configuration_channel_forbidden_words_reason_desc: 削除理由
+livechat_configuration_channel_forbidden_words_regexp_label: 正規表現
+livechat_configuration_channel_forbidden_words_regexp_desc: このオプションを有効にすると、正規表現として処理します。
+livechat_configuration_channel_forbidden_words_applytomoderators_label: モデレーターからのメッセージも対象にする
+livechat_configuration_channel_quote_label: タイマー
+livechat_configuration_channel_quote_desc2: "メッセージ1つに対して1行で入力してください。\n複数のメッセージが入力されている場合、X分おきにランダムに選択されます。\n"
+livechat_configuration_channel_command_message_label: メッセージ
+livechat_configuration_channel_command_message_desc: 送信するメッセージ。
+invalid_value: 無効な値です。
+livechat_configuration_channel_quote_delay_label: X分おきに送信する
+livechat_configuration_channel_forbidden_words_comments_label: コメント
+livechat_configuration_channel_forbidden_words_comments_desc: "このルールに関するコメントを追加できます。作成した方法や理由を覚えておくために役立ちます。\n\
+  これらのコメントは単なる参考情報であり、Botの動作には影響しません。\n"
+livechat_configuration_channel_quote_delay_desc: "BotはメッセージをX分おきに送信します。\n"
+livechat_configuration_channel_command_label: Botコマンド
+livechat_configuration_channel_command_desc: "Botが応答するコマンドを設定できます。\nコマンドは、メッセージの先頭に\"\
+  !\"をつけて使用します。たとえば、\"!help\"と入力することで、\"help\"コマンドが呼び出されます。\n"
+livechat_configuration_channel_command_cmd_label: コマンド
+livechat_configuration_channel_command_cmd_desc: "先頭の\"!\"を除いたコマンドを入力してください。たとえば、\"\
+  help\"、\"sponsor\"など…\n"
+livechat_configuration_channel_for_more_info: "この機能の設定方法に関するより詳しい情報は、ヘルプボタンをクリックし、ドキュメントを参照してください。\n"
+livechat_configuration_channel_banned_jids_label: 追放するユーザーとパターン
+livechat_configuration_channel_bot_nickname: Botのニックネーム
+livechat_configuration_channel_quote_desc: "一定間隔でメッセージを送信するための複数のタイマーを設定できます。\nこれらのメッセージは、BotによってX分ごとに送信されます。\n\
+  たとえば、Botからスポンサー情報を5分ごとに送信させることができます。\n"
+livechat_configuration_channel_quote_label2: メッセージ
