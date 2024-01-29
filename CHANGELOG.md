@@ -8,7 +8,7 @@
 * Fix: if an anonymous chat user enter spaces in the nickname choice, it allowed them to keep the random nickname.
 * Authenticated users: if current user nickname is already used in the room, automatically add a suffix.
 * UX: add a label ('Choose a nickname to enter') for the anonymous nickname prompt. Fix #287.
-* Translation updates: Arabic, German, French.
+* Translation updates: Arabic, German, French, Swedish, Spanish.
 * New Swedish translations.
 * UI/UX improvments:
   * hide nickname changes when previous nickname was like "Anonymous 12345". Helps to improve performances when massive anonymous users are joining (#138), and prevent displaying unnecessary messages (#111).
