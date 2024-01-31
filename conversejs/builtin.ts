@@ -129,6 +129,11 @@ window.initConverse = async function initConverse (initConverseParams: InitConve
             return this.__super__.getActionInfoMessage(code, nick, actor)
           }
         },
+        ChatRoomMessage: {
+          /* By default, ConverseJS groups messages from the same users for a 10 minutes period.
+           * This make no sense in a livechat room. So we override isFollowup to ignore. */
+          isFollowup: function isFollowup () { return false }
+        },
         ChatRoomOccupants: {
           comparator: function (this: any, occupant1: any, occupant2: any): Number {
             // Overriding Occupants comparators, to display anonymous users at the end of the list.
