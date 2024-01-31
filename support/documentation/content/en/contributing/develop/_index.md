@@ -151,4 +151,4 @@ There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-
 ## Performance tests
 
 The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.
-It can be used to evaluate code improvments, or find bottlenecks.
+It can be used to evaluate code improvements, or find bottlenecks.

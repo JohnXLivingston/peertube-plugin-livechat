@@ -372,7 +372,7 @@ msgstr "Pruebas de rendimiento"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvments, or find bottlenecks."
+msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvements, or find bottlenecks."
 msgstr ""
 "El repositorio [livechat-perf-test](https://github.com/JohnXLivingston/"
 "livechat-perf-test) contiene algunas herramientas para realizar pruebas de "
