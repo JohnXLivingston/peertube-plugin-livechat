@@ -9,7 +9,7 @@ import type { AuthentInfos } from './auth'
  * @returns default parameters to provide to ConverseJS.
  */
 function defaultConverseParams (
-  { forceReadonly, theme, assetsPath, room }: InitConverseJSParams,
+  { forceReadonly, theme, assetsPath, room, forceDefaultHideMucParticipants }: InitConverseJSParams,
   isInIframe: boolean
 ): any {
   const mucShowInfoMessages = forceReadonly
@@ -49,7 +49,8 @@ function defaultConverseParams (
     show_tab_notifications: false,
     singleton: true,
     auto_focus: !isInIframe,
-    hide_muc_participants: isInIframe,
+    // forceDefaultHideMucParticipants is for testing purpose
+    hide_muc_participants: isInIframe || forceDefaultHideMucParticipants === true,
     play_sounds: false,
     muc_mention_autocomplete_min_chars: 2,
     muc_mention_autocomplete_filter: 'contains',

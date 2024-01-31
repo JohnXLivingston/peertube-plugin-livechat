@@ -21,6 +21,7 @@ interface GetConverseJSParamsParams {
   readonly?: boolean | 'noscroll'
   transparent?: boolean
   forcetype?: boolean
+  forceDefaultHideMucParticipants?: boolean
 }
 
 /**
@@ -86,7 +87,10 @@ async function getConverseJSParams (
     autoViewerMode,
     theme: converseJSTheme,
     forceReadonly,
-    transparent
+    transparent,
+    // forceDefaultHideMucParticipants is for testing purpose
+    // (so we can stress test with the muc participant list hidden by default)
+    forceDefaultHideMucParticipants: params.forceDefaultHideMucParticipants
   }
 }
 

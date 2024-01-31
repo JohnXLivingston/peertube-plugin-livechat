@@ -18,6 +18,7 @@ interface InitConverseJSParams {
   forceReadonly: boolean | 'noscroll'
   theme: ConverseJSTheme
   transparent: boolean
+  forceDefaultHideMucParticipants?: boolean
 }
 
 interface ProsodyListRoomsResultError {

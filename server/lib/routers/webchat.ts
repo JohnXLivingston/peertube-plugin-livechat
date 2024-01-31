@@ -48,7 +48,8 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       const initConverseJSParam = await getConverseJSParams(options, roomKey, {
         readonly,
         transparent: req.query._transparent === 'true',
-        forcetype: req.query.forcetype === '1'
+        forcetype: req.query.forcetype === '1',
+        forceDefaultHideMucParticipants: req.query.force_default_hide_muc_participants === '1'
       })
 
       if (('isError' in initConverseJSParam)) {
