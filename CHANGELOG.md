@@ -17,6 +17,7 @@
 * Using patched ConverseJS for performance improvement (related to #96):
   * debounce MUC sidebar rendering in ConverseJS (Fix #138)
   * force history pruning, even if messages keep coming (Fix #140)
+* Prosody: disabling message carbons for anonymous users (See #295)
 
 ## 8.0.4
 

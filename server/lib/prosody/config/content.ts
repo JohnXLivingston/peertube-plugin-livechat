@@ -211,6 +211,9 @@ class ProsodyConfigContent {
     this.anon = new ProsodyConfigVirtualHost('anon.' + this.prosodyDomain)
     this.anon.set('authentication', 'anonymous')
     this.anon.set('modules_enabled', ['ping'])
+    this.anon.set('modules_disabled', [
+      'carbons' // carbon make no sense for anonymous users, they can't have multiple windows
+    ])
     if (autoBanIP) {
       this.anon.add('modules_enabled', 'muc_ban_ip')
     }
