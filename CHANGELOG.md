@@ -17,6 +17,7 @@
 * Using patched ConverseJS for performance improvement (related to #96):
   * debounce MUC sidebar rendering in ConverseJS (Fix #138)
   * force history pruning, even if messages keep coming (Fix #140)
+  * don't load all vCards when right menu is not visible (Fix #106)
 * Prosody: disabling message carbons for anonymous users (See #295)
 * Peertube users avatars optimization (Fix #303):
   * avoid multiple parallel request to load same avatar from Peertube
