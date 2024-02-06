@@ -2,6 +2,7 @@ local st = require "util.stanza";
 local http = require "net.http";
 local gettime = require 'socket'.gettime;
 local async = require "util.async";
+local promise = require "util.promise";
 local b64 = require "util.encodings".base64.encode;
 local jid_split = require "util.jid".split;
 local json = require "util.json";
@@ -10,12 +11,12 @@ local uh = require "util.http";
 module:add_feature("vcard-temp");
 
 local CACHE_EXPIRY = 3600;
-local cache_user = {};
+local cache_user = {}; -- keeps track of vCards requests. Foreach "who", keeps the last query time (so we can expire it), and a promise that resolves with a vCards, or rejects if no vCard
 
 local peertube_url = assert(module:get_option_string("peertubelivechat_vcard_peertube_url", nil), "'peertubelivechat_vcard_peertube_url' is a required option");
 if peertube_url:sub(-1,-1) == "/" then peertube_url = peertube_url:sub(1,-2); end
 
-local function get_avatar_url(ret)
+local function read_avatar_url(ret)
   -- Note:
   -- * before Peertube v6.0.0: using ret.avatar
   -- * after Peertube v6.0.0: using ret.avatars, searching for width 48, or for the smallest width
@@ -53,82 +54,80 @@ module:hook("iq-get/bare/vcard-temp:vCard", function (event)
   module:log("debug", "vCard request for %s", who);
 
   local from_cache = cache_user[who];
-  if from_cache then
-    if from_cache["last_fetch_time"] and from_cache["last_fetch_time"] + CACHE_EXPIRY < gettime() then
-      module:log("debug", "vCard result for %s was in cache but is expired.", who);
-      cache_user[who] = nil
-    else
-      module:log("debug", "vCard result for %s is in cache.", who);
-      if (from_cache['vcard']) then
-        origin.send(st.reply(stanza):add_child(from_cache["vcard"]));
-      else
-        origin.send(st.error_reply(stanza, "cancel", "item-not-found"));
-      end
-      return true;
-    end
-  else
-    module:log("debug", "vCard result for %s is not in cache.", who);
+  if from_cache and from_cache["last_fetch_time"] and from_cache["last_fetch_time"] + CACHE_EXPIRY < gettime() then
+    module:log("debug", "vCard promise for %s was in cache but is expired.", who);
+    cache_user[who] = nil;
+    from_cache = nil;
   end
 
-  local wait, done = async.waiter();
-  local url = peertube_url .. '/api/v1/accounts/' .. uh.urlencode(who);
-  module:log("debug", "Calling Peertube API: %s", url);
-  local ret;
-  http.request(url, { accept = "application/json" }, function (body, code)
-    if math.floor(code / 100) == 2 then
-			local parsed, parse_err = json.decode(body);
-			if not parsed then
-				module:log("debug", "Got invalid JSON from %s: %s", url, parse_err);
-			else
-				ret = parsed;
-			end
-		else
-			module:log("debug", "Rejected by API: ", body);
-		end
-    done();
-  end)
+  if not from_cache then
+    module:log("debug", "vCard for %s is not in cache, loading it.", who);
+    local p = promise.new(function(resolve, reject)
+      local url = peertube_url .. '/api/v1/accounts/' .. uh.urlencode(who);
+      module:log("debug", "Calling Peertube API: %s", url);
+      http.request(url, { accept = "application/json" }, function (body, code)
+        if not(math.floor(code / 100) == 2) then
+          reject("Rejected by API for " .. who .. ": " .. body);
+          return;
+        end
 
-  wait();
+        local parsed, parse_err = json.decode(body);
+        if not parsed then
+          reject("Got invalid JSON for " .. who .. " from " .. url .. ': ' .. parse_err);
+          return;
+        end
 
-  if not ret then
-    module:log("debug", "Peertube user not found, no vCard for %s", who);
-    origin.send(st.error_reply(stanza, "cancel", "item-not-found"));
-    cache_user[who] = { last_fetch_time = gettime() };
-    return true;
-  end
+        module:log("debug", "Got valid JSON, so far everything is ok.");
 
-  local vcard_temp = st.stanza("vCard", { xmlns = "vcard-temp" });
+        local avatar_url = read_avatar_url(parsed);
+        if not avatar_url then
+          reject("No avatar url for user " .. who .. ", so ignoring vCard");
+          return;
+        end
 
-  vcard_temp:text_tag("FN", ret.displayName);
-  vcard_temp:text_tag("NICKNAME", ret.displayName);
-  vcard_temp:text_tag("URL", ret.url);
+        module:log("debug", "Downloading user avatar using %s", avatar_url);
+        http.request(avatar_url, {}, function (body, code, response)
+          if not(math.floor(code / 100) == 2) then
+            reject("Cant load avatar for " .. who .. ": " .. body);
+            return;
+          end
+          if not (response and response.headers and response.headers["content-type"]) then
+            reject("Avatar for " .. who .. " has no content-type.");
+            return;
+          end
 
-  local avatar_url = get_avatar_url(ret);
-  if avatar_url then
-    -- module:log("debug", "Downloading user avatar on %s", avatar_url);
-    local waitAvatar, doneAvatar = async.waiter();
-    http.request(avatar_url, {}, function (body, code, response)
-      if math.floor(code / 100) == 2 then
-        module:log("debug", "Avatar found for %s", who);
-        vcard_temp:tag("PHOTO");
-        if (response and response.headers and response.headers["content-type"]) then
-          module:log("debug", "Avatar content-type: %s", response.headers["content-type"]);
+          module:log("debug", "Avatar found for %s, with content-type: %s", who, response.headers["content-type"]);
+          local vcard_temp = st.stanza("vCard", { xmlns = "vcard-temp" });
+          vcard_temp:text_tag("FN", parsed.displayName);
+          vcard_temp:text_tag("NICKNAME", parsed.displayName);
+          vcard_temp:text_tag("URL", parsed.url);
+          vcard_temp:tag("PHOTO");
           vcard_temp:text_tag("TYPE", response.headers["content-type"]);
           vcard_temp:text_tag("BINVAL", b64(body));
           vcard_temp:up();
-        else
-          module:log("debug", "Avatar has no content-type.");
-        end
-      else
-        module:log("debug", "Cant load avatar: ", body);
-      end
-      doneAvatar();
-    end)
-
-    waitAvatar();
+          resolve(vcard_temp);
+          return;
+        end)
+      end);
+    end);
+    from_cache = { last_fetch_time = gettime(), promise = p };
+    cache_user[who] = from_cache;
   end
 
-  origin.send(st.reply(stanza):add_child(vcard_temp));
-  cache_user[who] = { last_fetch_time = gettime(), vcard = vcard_temp };
+  if not (from_cache and from_cache["promise"] and promise.is_promise(from_cache["promise"])) then
+    module:log("error", "Missing from_cache promise (user %s).", who);
+    origin.send(st.error_reply(stanza, "cancel", "item-not-found"));
+    return true;
+  end
+
+  module:log("debug", "There is a vCard promise for %s.", who);
+  local vcard, err = async.wait_for(from_cache["promise"])
+  if (vcard) then
+    module:log("debug", "vCard for %s loaded.", who);
+    origin.send(st.reply(stanza):add_child(vcard));
+  else
+    module:log("debug", "no vCard for %s (%s).", who, err);
+    origin.send(st.error_reply(stanza, "cancel", "item-not-found"));
+  end
   return true;
 end);

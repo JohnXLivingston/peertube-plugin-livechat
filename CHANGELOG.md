@@ -18,6 +18,9 @@
   * debounce MUC sidebar rendering in ConverseJS (Fix #138)
   * force history pruning, even if messages keep coming (Fix #140)
 * Prosody: disabling message carbons for anonymous users (See #295)
+* Peertube users avatars optimization (Fix #303):
+  * avoid multiple parallel request to load same avatar from Peertube
+  * send "item-not-found" stanza when no avatar, instead of a vCard without avatar
 
 ## 8.0.4
 
