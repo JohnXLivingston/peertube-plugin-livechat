@@ -28,6 +28,13 @@ the meaning, or of your translation, you better not translate it,
 so it will display in english.
 {{% /notice %}}
 
+## ConverseJS translations
+
+This plugin relies on [ConverseJS](https://conversejs.org/) for the chat front-end.
+ConverseJS has its own translations, on its own [weblate instance](https://hosted.weblate.org/projects/conversejs/#languages).
+You can also translate directly in the code repository.
+For more information, check [ConverseJS translations documentation](https://conversejs.org/docs/html/translations.html).
+
 ## Adding a new locale
 
 If you think there is a missing locale, please check first if it is handled in Peertube.

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2023-12-27 10:36+0100\n"
+"POT-Creation-Date: 2024-02-07 17:40+0100\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nb_NO/>\n"
@@ -640,6 +640,17 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/translate/_index.md
+#, no-wrap
+msgid "ConverseJS translations"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/translate/_index.md
+msgid "This plugin relies on [ConverseJS](https://conversejs.org/) for the chat front-end.  ConverseJS has its own translations, on its own [weblate instance](https://hosted.weblate.org/projects/conversejs/#languages).  You can also translate directly in the code repository.  For more information, check [ConverseJS translations documentation](https://conversejs.org/docs/html/translations.html)."
 msgstr ""
 
 #. type: Title ##
