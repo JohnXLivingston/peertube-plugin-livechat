@@ -21,6 +21,7 @@
   * don't load all vCards when right menu is not visible (Fix #106)
   * Changing the default avatar to minimize blinking effect when a user sends his first message
   * Custom settings livechat_load_all_vcards for the readonly mode
+  * Removing unecessary plugins: headless/pubsub, minimize, notifications, profile, omemo, push, roomlist, dragresize (generated JS is about 10% lighter)
 * Prosody: disabling message carbons for anonymous users (See #295)
 * Peertube users avatars optimization (Fix #303):
   * avoid multiple parallel request to load same avatar from Peertube

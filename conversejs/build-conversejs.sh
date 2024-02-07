@@ -21,7 +21,8 @@ CONVERSE_COMMIT=""
 # - Changing the default avatar, for something very light (to mitigate blinking effect when vCards are loaded)
 # - Custom settings livechat_load_all_vcards for the readonly mode
 # - Adding "users" icon in the menu toggle button
-CONVERSE_COMMIT="a99abdfb91c00daa6c4bacbbc31b47ab6762704f"
+# - Removing unecessary plugins: headless/pubsub, minimize, notifications, profile, omemo, push, roomlist, dragresize.
+CONVERSE_COMMIT="6df8960260b843d37c0a7399f755c03236ae5432"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"
