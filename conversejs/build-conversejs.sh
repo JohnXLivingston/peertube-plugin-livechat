@@ -20,7 +20,8 @@ CONVERSE_COMMIT=""
 # - Don't load vCards for all room occupants when the right menu is closed
 # - Changing the default avatar, for something very light (to mitigate blinking effect when vCards are loaded)
 # - Custom settings livechat_load_all_vcards for the readonly mode
-CONVERSE_COMMIT="b6f9a82daf52d04434e75a7ab224cb525082d082"
+# - Adding "users" icon in the menu toggle button
+CONVERSE_COMMIT="a99abdfb91c00daa6c4bacbbc31b47ab6762704f"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"
