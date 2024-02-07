@@ -18,7 +18,8 @@ CONVERSE_COMMIT=""
 # - Fix: MUC occupant list does not sort itself on nicknames or roles changes
 # This version already includes following changes that will not be merged in ConverseJS upstream:
 # - Don't load vCards for all room occupants when the right menu is closed
-CONVERSE_COMMIT="00ee4fc70d56af1f4d2387ef67576264ae79d497"
+# - Changing the default avatar, for something very light (to mitigate blinking effect when vCards are loaded)
+CONVERSE_COMMIT="9fff09f75a3f65a970506c3fd1796feaba552845"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"
