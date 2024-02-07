@@ -2717,8 +2717,8 @@ msgstr "Spitznamen ändern"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "You can change your nickname by typing `/nickname your_new_nickname` in the message field."
-msgstr "Sie können Ihren Spitznamen ändern, indem Sie `/nickname ihr_neuer_spitzname` in das Nachrichtenfeld eingeben."
+msgid "You can change your nickname by typing `/nick your_new_nickname` in the message field."
+msgstr "Sie können Ihren Spitznamen ändern, indem Sie `/nick ihr_neuer_spitzname` in das Nachrichtenfeld eingeben."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md

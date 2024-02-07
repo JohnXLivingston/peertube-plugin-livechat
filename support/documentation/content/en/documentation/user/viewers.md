@@ -76,6 +76,6 @@ This is especially useful for [moderation features](/peertube-plugin-livechat/do
 
 ## Changing nickname
 
-You can change your nickname by typing `/nickname your_new_nickname` in the message field.
+You can change your nickname by typing `/nick your_new_nickname` in the message field.
 
 You can also change your nickname using the top menu when you are in fullscreen mode.

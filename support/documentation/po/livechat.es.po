@@ -2715,7 +2715,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "You can change your nickname by typing `/nickname your_new_nickname` in the message field."
+msgid "You can change your nickname by typing `/nick your_new_nickname` in the message field."
 msgstr ""
 
 #. type: Plain text

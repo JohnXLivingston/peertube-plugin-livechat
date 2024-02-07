@@ -2740,8 +2740,8 @@ msgstr "Changer de pseudonyme"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "You can change your nickname by typing `/nickname your_new_nickname` in the message field."
-msgstr "Vous pouvez changer de pseudonyme en tapant `/nickname votre_nouveau_pseudo` dans le champs de message."
+msgid "You can change your nickname by typing `/nick your_new_nickname` in the message field."
+msgstr "Vous pouvez changer de pseudonyme en tapant `/nick votre_nouveau_pseudo` dans le champs de message."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
