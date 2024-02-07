@@ -19,7 +19,8 @@ CONVERSE_COMMIT=""
 # This version already includes following changes that will not be merged in ConverseJS upstream:
 # - Don't load vCards for all room occupants when the right menu is closed
 # - Changing the default avatar, for something very light (to mitigate blinking effect when vCards are loaded)
-CONVERSE_COMMIT="9fff09f75a3f65a970506c3fd1796feaba552845"
+# - Custom settings livechat_load_all_vcards for the readonly mode
+CONVERSE_COMMIT="b6f9a82daf52d04434e75a7ab224cb525082d082"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"

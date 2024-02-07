@@ -19,6 +19,7 @@
   * force history pruning, even if messages keep coming (Fix #140)
   * don't load all vCards when right menu is not visible (Fix #106)
   * Changing the default avatar to minimize blinking effect when a user sends his first message
+  * Custom settings livechat_load_all_vcards for the readonly mode
 * Prosody: disabling message carbons for anonymous users (See #295)
 * Peertube users avatars optimization (Fix #303):
   * avoid multiple parallel request to load same avatar from Peertube

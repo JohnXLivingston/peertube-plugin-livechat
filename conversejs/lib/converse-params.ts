@@ -85,7 +85,10 @@ function defaultConverseParams (
     send_chat_state_notifications: false, // don't send this for performance reason
 
     prune_messages_above: 100, // only keep 100 message in history.
-    pruning_behavior: 'unscrolled'
+    pruning_behavior: 'unscrolled',
+
+    // This is a specific settings, that is used in ConverseJS customization, to force avatars loading in readonly mode.
+    livechat_load_all_vcards: !!forceReadonly
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
