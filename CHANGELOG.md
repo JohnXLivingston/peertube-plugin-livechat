@@ -15,6 +15,7 @@
   * display anonymous users at the end of the participants list (Fix #136)
   * don't group "followup" messages, and always display avatar/nickname/datetime besides messages, even when it is the same user as previous one (#305)
   * Adding "users" icon in the menu toggle button
+  * Destroy room: remove the challenge, and the new JID
 * Using patched ConverseJS for performance improvement (related to #96):
   * debounce MUC sidebar rendering in ConverseJS (Fix #138)
   * force history pruning, even if messages keep coming (Fix #140)
