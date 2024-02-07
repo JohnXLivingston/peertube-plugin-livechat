@@ -23,7 +23,8 @@ CONVERSE_COMMIT=""
 # - Adding "users" icon in the menu toggle button
 # - Removing unecessary plugins: headless/pubsub, minimize, notifications, profile, omemo, push, roomlist, dragresize.
 # - Destroy room: remove the challenge, and the new JID
-CONVERSE_COMMIT="8036ad647a2148cb0ada1edad2cb0a558e695e9f"
+CONVERSE_VERSION="livechat-8.1.0"
+# CONVERSE_COMMIT="8036ad647a2148cb0ada1edad2cb0a558e695e9f"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"

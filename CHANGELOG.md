@@ -1,8 +1,10 @@
 # Changelog
 
-## ??? (Not Released Yet)
+## 8.1.0
 
 ### Minor changes and fixes
+
+This version comes with a lot of UX/UI and performances improvements:
 
 * Anonymous chat user: remember the chosen nickname in localStorage, to avoid entering it again too often. Nickname will expire after 12 hours.
 * Fix: if an anonymous chat user enter spaces in the nickname choice, it allowed them to keep the random nickname.
