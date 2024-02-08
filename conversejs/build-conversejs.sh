@@ -16,6 +16,7 @@ CONVERSE_COMMIT=""
 # - #converse.js/3302: debounce MUC sidebar rendering
 # - Fix: refresh the MUC sidebar when participants collection is sorted
 # - Fix: MUC occupant list does not sort itself on nicknames or roles changes
+# - Fix inconsistency between browsers on textarea outlines
 # This version already includes following changes that will not be merged in ConverseJS upstream:
 # - Don't load vCards for all room occupants when the right menu is closed
 # - Changing the default avatar, for something very light (to mitigate blinking effect when vCards are loaded)
@@ -24,7 +25,7 @@ CONVERSE_COMMIT=""
 # - Removing unecessary plugins: headless/pubsub, minimize, notifications, profile, omemo, push, roomlist, dragresize.
 # - Destroy room: remove the challenge, and the new JID
 CONVERSE_VERSION="livechat-8.1.0"
-# CONVERSE_COMMIT="8036ad647a2148cb0ada1edad2cb0a558e695e9f"
+CONVERSE_COMMIT="5f53fc16336b93da49174b38294a8944f850e8ae"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"

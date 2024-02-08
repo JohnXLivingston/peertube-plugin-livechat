@@ -1,5 +1,12 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Fix #311:
+  * Fix inconsistency between browsers on textarea outlines
+
 ## 8.1.0
 
 ### Minor changes and fixes
