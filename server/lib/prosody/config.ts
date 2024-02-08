@@ -94,7 +94,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     certsDir = path.resolve(dir, 'data')
   }
 
-  const avatarsDir = path.resolve(__dirname, '../../avatars')
+  const avatarsDir = path.resolve(__dirname, '../../avatars-2024')
   const avatarsFiles = await _listAvatars(avatarsDir)
   const botAvatarsDir = path.resolve(__dirname, '../../bot_avatars')
   const botAvatarsFiles = await _listAvatars(botAvatarsDir)

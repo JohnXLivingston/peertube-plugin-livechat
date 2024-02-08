@@ -2,6 +2,10 @@
 
 ## ??? (Not Released Yet)
 
+### New features
+
+* New avatars, by David Revoy (#234)
+
 ### Minor changes and fixes
 
 * Fix #311:
