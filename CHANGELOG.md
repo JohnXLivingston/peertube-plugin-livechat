@@ -5,7 +5,8 @@
 ### Minor changes and fixes
 
 * Fix #311:
-  * Fix inconsistency between browsers on textarea outlines
+  * Fix inconsistency between browsers on textarea outlines.
+  * Fix ConverseJS input borders/outline/shadow.
 
 ## 8.1.0
 

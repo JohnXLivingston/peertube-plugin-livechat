@@ -85,6 +85,18 @@
     }
   }
 
+  .form-control {
+    /* Cancelling some bootstrap stuff */
+    border-color: var(--chatroom-head-bg-color);
+    box-shadow: none;
+
+    &:focus {
+      border-color: var(--chatroom-head-bg-color);
+      outline: 2px solid var(--chatroom-head-bg-color);
+      box-shadow: none;
+    }
+  }
+
   .chatroom .box-flyout .chatroom-body .chatroom-form-container {
     background-color: var(--peertube-main-background);
   }
