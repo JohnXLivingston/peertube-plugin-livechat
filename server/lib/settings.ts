@@ -5,6 +5,8 @@ import { RoomChannel } from './room-channel'
 import { BotsCtl } from './bots/ctl'
 import { loc } from './loc'
 
+type AvatarSet = 'sepia' | 'legacy'
+
 async function initSettings (options: RegisterServerOptions): Promise<void> {
   const { peertubeHelpers, registerSetting, settingsManager } = options
 
@@ -212,6 +214,22 @@ Please read
     type: 'html',
     private: true,
     descriptionHTML: loc('theming_advanced_description')
+  })
+
+  registerSetting({
+    name: 'avatar-set',
+    label: loc('avatar_set_label'),
+    descriptionHTML: loc('avatar_set_description'),
+    type: 'select',
+    default: 'sepia' as AvatarSet,
+    private: true,
+    options: [
+      { value: 'sepia', label: loc('avatar_set_option_sepia') },
+      { value: 'legacy', label: loc('avatar_set_option_legacy') }
+    ] as Array<{
+      value: AvatarSet
+      label: string
+    }>
   })
 
   registerSetting({
@@ -434,5 +452,6 @@ Please read
 }
 
 export {
-  initSettings
+  initSettings,
+  AvatarSet
 }

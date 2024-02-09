@@ -92,6 +92,18 @@ Otherwise it could block all anonymous users at once.
 
 ## Theming
 
+### {{% livechat_label avatar_set_label %}}
+
+You can choose from several different sets the default avatars that will be used for chat users.
+
+{{% livechat_label avatar_set_option_sepia %}}:
+![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)
+
+{{% livechat_label avatar_set_option_legacy %}}:
+![Legacy](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)
+
+If you can't see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
+
 ### {{% livechat_label converse_theme_label %}}
 
 You can choose which theme to use for ConverseJS:

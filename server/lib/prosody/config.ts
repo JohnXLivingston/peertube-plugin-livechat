@@ -1,6 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Config as XMPPBotConfig } from 'xmppjs-chat-bot'
 import type { ProsodyLogLevel } from './config/content'
+import type { AvatarSet } from '../settings'
 import * as fs from 'fs'
 import * as path from 'path'
 import { getBaseRouterRoute, RegisterServerOptionsV5 } from '../helpers'
@@ -31,7 +32,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
 
   const dir = await getWorkingDir(options)
   const settings = await options.settingsManager.getSettings([
-    'use-system-prosody', 'prosody-room-allow-s2s', 'prosody-certificates-dir'
+    'use-system-prosody', 'prosody-room-allow-s2s', 'prosody-certificates-dir', 'avatar-set'
   ])
   let exec
   let execArgs: string[] = []
@@ -94,9 +95,14 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     certsDir = path.resolve(dir, 'data')
   }
 
-  const avatarsDir = path.resolve(__dirname, '../../avatars/sepia')
+  let avatarSet: AvatarSet = (settings['avatar-set'] ?? 'sepia') as AvatarSet
+  if (!['sepia', 'legacy'].includes(avatarSet)) {
+    logger.error('Invalid avatar-set setting, using sepia as default')
+    avatarSet = 'sepia'
+  }
+  const avatarsDir = path.resolve(__dirname, '../../avatars/', avatarSet)
   const avatarsFiles = await _listAvatars(avatarsDir)
-  const botAvatarsDir = path.resolve(__dirname, '../../bot_avatars/sepia')
+  const botAvatarsDir = path.resolve(__dirname, '../../bot_avatars/', avatarSet)
   const botAvatarsFiles = await _listAvatars(botAvatarsDir)
 
   return {

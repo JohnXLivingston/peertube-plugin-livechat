@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-02-07 17:40+0100\n"
+"POT-Creation-Date: 2024-02-09 12:40+0100\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Ukrainian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/uk/>\n"
@@ -858,7 +858,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0."
+msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
 msgstr ""
 
 #. type: Plain text
@@ -1550,6 +1550,26 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Theming"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "You can choose from several different sets the default avatars that will be used for chat users."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "{{% livechat_label avatar_set_option_sepia %}}: ![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "{{% livechat_label avatar_set_option_legacy %}}: ![Legacy](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "If you can't see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it."
 msgstr ""
 
 #. type: Plain text
