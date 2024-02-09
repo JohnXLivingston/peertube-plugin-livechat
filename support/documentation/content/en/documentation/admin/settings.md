@@ -99,6 +99,9 @@ You can choose from several different sets the default avatars that will be used
 {{% livechat_label avatar_set_option_sepia %}}:
 ![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)
 
+{{% livechat_label avatar_set_option_cat %}}:
+![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)
+
 {{% livechat_label avatar_set_option_legacy %}}:
 ![Legacy](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)
 

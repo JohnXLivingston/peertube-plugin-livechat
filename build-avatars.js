@@ -53,96 +53,134 @@ const path = require('node:path')
 {
   // 2024 avatars generation
 
-  const inputDir = './assets/images/avatars/sepia/'
-  const outputDir = './dist/server/avatars/sepia/'
-  fs.mkdirSync(outputDir, { recursive: true })
-
-  // Available parts:
-  // Note: some part files are empty, so that David's generator don't always add every part.
-  // But this make my algorithm generate a lot of avatars that have no part other that the body and the yes.
-  // So i don't include all empty files
-  const parts = {
-    body: 25,
-    pattern: 14, // 12 to 20 are empty
-    mouth: 10,
-    eyes: 10,
-    accessories: 17, // 14 to 20 are empty
-    misc: 16, // 15 to 20 are empty
-    hat: 20 // 13 to 20 are empty
-  }
-  // We just have to combinate different parts into one file, then output at the wanted size.
-
-  function computeFilename (part, count) {
-    let a = (1 + (count % parts[part])).toString()
-    if (a.length < 2) { a = '0' + a}
-
-    return path.join(
-      inputDir,
-      part,
-      part + '_' + a + '.png'
-    )
-  }
-
   async function generate () {
-    // We can't generate all combinations! It would make 400 000 000 files!
-    // So we arbitrary pick some combinations, using some modulus
-    const nb = 200 // number of avatars to generate
-
-    for (let i = 0; i < nb; i++) {
-      const ouputFile = path.join(
-        outputDir,
-        i.toString() + '.png'
-      )
-      if (await fs.existsSync(ouputFile)) {
-        console.log(`Skipping ${ouputFile}, file already exists`)
-        continue
+    const partsDef = {
+      // Available parts:
+      // Note: some part files are empty, so that David's generator don't always add every part.
+      // But this make my algorithm generate a lot of avatars that have no part other that the body and the yes.
+      // So i don't include all empty files
+      'sepia': {
+        body: 25,
+        pattern: 14, // 12 to 20 are empty
+        mouth: 10,
+        eyes: 10,
+        accessories: 17, // 14 to 20 are empty
+        misc: 16, // 15 to 20 are empty
+        hat: 20 // 13 to 20 are empty
+      },
+      'cat': {
+        body: 15,
+        fur: 10,
+        eyes: 15,
+        mouth: 10,
+        accessorie: 20 // 17 to 20 are empty
       }
+    }
 
-      const bodyFile = computeFilename('body', i)
+    for (const part in partsDef) {
+      const parts = partsDef[part]
 
-      const composites = []
-      let j = 0
-      for (const part of Object.keys(parts).filter(p => p !== 'body')) {
-        j++ // introduce an offset so we don't get all empty parts at the same time
-        composites.push({
-          input: computeFilename(part, i + (j * 7))
-        })
+      const inputDir = path.join('./assets/images/avatars/', part)
+      const outputDir = path.join('./dist/server/avatars/', part)
+      fs.mkdirSync(outputDir, { recursive: true })
+
+      function computeFilename (part, count) {
+        let a = (1 + (count % parts[part])).toString()
+        if (a.length < 2) { a = '0' + a}
+
+        return path.join(
+          inputDir,
+          part + '_' + a + '.png'
+        )
       }
+      // We can't generate all combinations! It would make 400 000 000 files!
+      // So we arbitrary pick some combinations, using some modulus
+      const nb = 200 // number of avatars to generate
 
-      const buff = await sharp(bodyFile)
-        .composite(composites)
+      for (let i = 0; i < nb; i++) {
+        const ouputFile = path.join(
+          outputDir,
+          i.toString() + '.png'
+        )
+        if (await fs.existsSync(ouputFile)) {
+          console.log(`Skipping ${ouputFile}, file already exists`)
+          continue
+        }
+
+        const bodyFile = computeFilename('body', i)
+
+        // We just have to combinate different parts into one file, then output at the wanted size.
+        const composites = []
+        let j = 0
+        for (const part of Object.keys(parts).filter(p => p !== 'body')) {
+          j++ // introduce an offset so we don't get all empty parts at the same time
+          composites.push({
+            input: computeFilename(part, i + (j * 7))
+          })
+        }
+
+        const buff = await sharp(bodyFile)
+          .composite(composites)
+          .toBuffer()
+
+        await sharp(buff)
+          .resize(60, 60)
+          .png({
+            compressionLevel: 9,
+            palette: true
+          })
+          .toFile(ouputFile)
+      }
+    }
+
+    {
+      // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+      const inputDir = path.join('./assets/images/avatars/', 'sepia')
+      const botOutputDir = './dist/server/bot_avatars/sepia/'
+      fs.mkdirSync(botOutputDir, { recursive: true })
+      const buff = await sharp(path.join(inputDir, 'body_20.png'))
+        .composite([
+          { input: path.join(inputDir, 'pattern_01.png') },
+          { input: path.join(inputDir, 'mouth_01.png') },
+          { input: path.join(inputDir, 'eyes_01.png') },
+          { input: path.join(inputDir, 'misc_05.png') },
+          { input: path.join(inputDir, 'hat_07.png') }
+        ])
         .toBuffer()
 
       await sharp(buff)
+        .flop() // horizontal mirror
         .resize(60, 60)
         .png({
           compressionLevel: 9,
           palette: true
         })
-        .toFile(ouputFile)
+        .toFile(path.join(botOutputDir, '1.png'))
     }
 
-    // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
-    const botOutputDir = './dist/server/bot_avatars/sepia/'
-    fs.mkdirSync(botOutputDir, { recursive: true })
-    const buff = await sharp(path.join(inputDir, 'body', 'body_20.png'))
-      .composite([
-        { input: path.join(inputDir, 'pattern', 'pattern_01.png') },
-        { input: path.join(inputDir, 'mouth', 'mouth_01.png') },
-        { input: path.join(inputDir, 'eyes', 'eyes_01.png') },
-        { input: path.join(inputDir, 'misc', 'misc_05.png') },
-        { input: path.join(inputDir, 'hat', 'hat_07.png') }
-      ])
-      .toBuffer()
+    {
+      // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+      const inputDir = path.join('./assets/images/avatars/', 'cat')
+      const botOutputDir = './dist/server/bot_avatars/cat/'
+      fs.mkdirSync(botOutputDir, { recursive: true })
+      const buff = await sharp(path.join(inputDir, 'body_04.png'))
+        .composite([
+          { input: path.join(inputDir, 'mouth_02.png') },
+          { input: path.join(inputDir, 'eyes_11.png') },
+          { input: path.join(inputDir, 'fur_02.png') },
+          { input: path.join(inputDir, 'accessorie_03.png') }
+        ])
+        .toBuffer()
 
-    await sharp(buff)
-      .flop() // horizontal mirror
-      .resize(60, 60)
-      .png({
-        compressionLevel: 9,
-        palette: true
-      })
-      .toFile(path.join(botOutputDir, '1.png'))
+      await sharp(buff)
+        .flop() // horizontal mirror
+        .resize(60, 60)
+        .png({
+          compressionLevel: 9,
+          palette: true
+        })
+        .toFile(path.join(botOutputDir, '1.png'))
+    }
   }
 
   generate().then(

@@ -137,6 +137,7 @@ avatar_set_description: |
   Please refer to the documentation:
   <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Settings</a>.
 avatar_set_option_sepia: "Sepia (Peertube mascot)"
+avatar_set_option_cat: "Cats"
 avatar_set_option_legacy: "Legacy Sepia avatars (those included in previous plugin versions)"
 
 converse_theme_label: "ConverseJS theme"
