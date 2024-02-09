@@ -7,8 +7,9 @@ const path = require('node:path')
 
 {
   // Legacy avatars generation
-  const inputDir = './assets/images/avatars/'
-  const outputDir = './dist/server/avatars/'
+  const inputDir = './assets/images/avatars/legacy'
+  const outputDir = './dist/server/avatars/legacy'
+  fs.mkdirSync(outputDir, { recursive: true })
   const backgrounds = [
     '#ffffff',
     '#000000',
@@ -42,7 +43,8 @@ const path = require('node:path')
     const inputFile = path.join(inputDir, i + '.svg')
 
     const background = '#858da0'
-    const outputDir = './dist/server/bot_avatars/'
+    const outputDir = './dist/server/bot_avatars/legacy'
+    fs.mkdirSync(outputDir, { recursive: true })
     const out = 1
     sharp(inputFile).flatten({background}).resize(120, 120).jpeg({quality: 95, mozjpeg: true}).toFile(path.join(outputDir, out.toString() + '.jpg'))
   }
@@ -51,8 +53,9 @@ const path = require('node:path')
 {
   // 2024 avatars generation
 
-  const inputDir = './assets/images/avatars-2024/'
-  const outputDir = './dist/server/avatars-2024/'
+  const inputDir = './assets/images/avatars/sepia/'
+  const outputDir = './dist/server/avatars/sepia/'
+  fs.mkdirSync(outputDir, { recursive: true })
 
   // Available parts:
   // Note: some part files are empty, so that David's generator don't always add every part.
@@ -118,6 +121,28 @@ const path = require('node:path')
         })
         .toFile(ouputFile)
     }
+
+    // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+    const botOutputDir = './dist/server/bot_avatars/sepia/'
+    fs.mkdirSync(botOutputDir, { recursive: true })
+    const buff = await sharp(path.join(inputDir, 'body', 'body_20.png'))
+      .composite([
+        { input: path.join(inputDir, 'pattern', 'pattern_01.png') },
+        { input: path.join(inputDir, 'mouth', 'mouth_01.png') },
+        { input: path.join(inputDir, 'eyes', 'eyes_01.png') },
+        { input: path.join(inputDir, 'misc', 'misc_05.png') },
+        { input: path.join(inputDir, 'hat', 'hat_07.png') }
+      ])
+      .toBuffer()
+
+    await sharp(buff)
+      .flop() // horizontal mirror
+      .resize(60, 60)
+      .png({
+        compressionLevel: 9,
+        palette: true
+      })
+      .toFile(path.join(botOutputDir, '1.png'))
   }
 
   generate().then(

@@ -22,7 +22,8 @@ The `assets/images` folder contains all icons files used by the plugin.
 There is also the `assets/images/avatars` folders, which contains avatars used for anonymous chat users.
 These files are used to generate multiple avatars (see the `build-avatars.js` script for more information).
 
-`assets/images/avatars-2024` contains new avatar set, and is also used by the `build-avatars.js` script.
+* `assets/images/avatars/legacy` contains legacy avatar set (livechat versions until 8.1.0 included)
+* `assets/images/avatars/sepia` contains new avatar set, based on the work of David Revoy (see copyright informations)
 
 ### assets/styles
 
