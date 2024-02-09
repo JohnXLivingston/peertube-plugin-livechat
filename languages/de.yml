@@ -8,8 +8,8 @@ read_only: Nur-Lesen
 show_scrollbarr: Zeige die Scrollleiste
 transparent_background: Transpatenter Hintergrund (zum Beispiel für die Streamintegration
   mit OBS)
-tips_for_streamers: "Tipps für Streamer: Um den Chat zu OBS hinzuzufügen, einen Nur-Lesen\
-  \ Link erstellen und ihn als browser source in OBS nutzen."
+tips_for_streamers: "Tipps für Streamer: Um den Chat zu OBS hinzuzufügen, einen Nur-Lesen
+  Link erstellen und ihn als browser source in OBS nutzen."
 copy: Kopieren
 link_copied: Link kopiert
 error: Fehler
@@ -35,47 +35,47 @@ list_rooms_label: "Bestehende Räume auflisten"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Räume auflisten</a>
 
-federation_description: "<h3>Föderation</h3>\nDie folgenden Einstellungen betreffen\
-  \ die Föderation mit anderen Peertube-Instanzen,\nund anderer Fediverse Software.\n"
+federation_description: "<h3>Föderation</h3>\nDie folgenden Einstellungen betreffen
+  die Föderation mit anderen Peertube-Instanzen,\nund anderer Fediverse Software.\n"
 
 federation_no_remote_chat_label: Chats von anderen Instanzen nicht anzeigen
-federation_no_remote_chat_description: "Wenn Sie diese Einstellung aktivieren, werden\
-  \ in Ihrer Instanz niemals Chats von Videos anderer Instanzen angezeigt.\n"
+federation_no_remote_chat_description: "Wenn Sie diese Einstellung aktivieren, werden
+  in Ihrer Instanz niemals Chats von Videos anderer Instanzen angezeigt.\n"
 
 federation_dont_publish_remotely_label: Chat-Information nicht veröffentlichen
-federation_dont_publish_remotely_description: "Wenn Sie diese Einstellung aktivieren,\
-  \ wird Ihre Instanz keine Chat Informationen im Fediverse veröffentlichen.\nAndere\
-  \ Peertube-Instanzen wissen nicht, dass mit Ihren Videos Chaträume verbunden sind.<br>\n\
-  <b>Bitte beachten Sie</b>: Wenn Sie bereits Chats geführt haben, ist es möglich,\
-  \ dass die Informationen bereits veröffentlicht wurden.\nSie müssen das nächste\
-  \ Video Update abwarten, bevor die Informationen nicht mehr öffentlich zugänglich\
-  \ sind.\nWenn Sie diese Einstellung deaktivieren, müssen Sie außerdem warten, bis\
-  \ die Videos aktualisiert wurden, bevor die Informationen\nerneut veröffentlicht\
-  \ werden. Diese Aktualisierung erfolgt unter anderem, wenn ein Live Event fortgesetzt\
-  \ oder beendet wird.<br>\n<b>Bitte beachten Sie</b>: Diese Einstellung betrifft\
-  \ nur die Veröffentlichung von Informationen über das ActivityPub-Protokoll.\nDies\
-  \ hindert eine entfernte Anwendung nicht daran, das Vorhandensein von Chats zu erkennen\
-  \ und zu versuchen, eine Verbindung herzustellen.\n"
+federation_dont_publish_remotely_description: "Wenn Sie diese Einstellung aktivieren,
+  wird Ihre Instanz keine Chat Informationen im Fediverse veröffentlichen.\nAndere
+  Peertube-Instanzen wissen nicht, dass mit Ihren Videos Chaträume verbunden sind.<br>\n
+  <b>Bitte beachten Sie</b>: Wenn Sie bereits Chats geführt haben, ist es möglich,
+  dass die Informationen bereits veröffentlicht wurden.\nSie müssen das nächste Video
+  Update abwarten, bevor die Informationen nicht mehr öffentlich zugänglich sind.\n
+  Wenn Sie diese Einstellung deaktivieren, müssen Sie außerdem warten, bis die Videos
+  aktualisiert wurden, bevor die Informationen\nerneut veröffentlicht werden. Diese
+  Aktualisierung erfolgt unter anderem, wenn ein Live Event fortgesetzt oder beendet
+  wird.<br>\n<b>Bitte beachten Sie</b>: Diese Einstellung betrifft nur die Veröffentlichung
+  von Informationen über das ActivityPub-Protokoll.\nDies hindert eine entfernte Anwendung
+  nicht daran, das Vorhandensein von Chats zu erkennen und zu versuchen, eine Verbindung
+  herzustellen.\n"
 
 chat_behaviour_description: "<h3>Chatverhalten</h3>"
 
 room_type_label: "Raumtyp"
-room_type_description: "Sie können hier wählen, ob Sie für jedes Video einen eigenen\
-  \ Raum haben möchten oder ob Sie sie nach Kanälen gruppieren möchten."
+room_type_description: "Sie können hier wählen, ob Sie für jedes Video einen eigenen
+  Raum haben möchten oder ob Sie sie nach Kanälen gruppieren möchten."
 room_type_option_video: "Eigenen Webchat-Raum für jedes Video"
 room_type_option_channel: "Webchat-Räume nach Kanal gruppieren"
 
 auto_display_label: "Chat automatisch öffnen"
-auto_display_description: "Wenn ausgewählt wird der Chat geladen, sobald Sie auf der\
-  \ Videoseite sind."
+auto_display_description: "Wenn ausgewählt wird der Chat geladen, sobald Sie auf der
+  Videoseite sind."
 
 open_blank_label: "Zeige den «Chat in neuem Fenster öffnen» Knopf"
-open_blank_description: "Es wird einen Knopf zum Öffnen des Webchats in einem neuen\
-  \ Fenster geben."
+open_blank_description: "Es wird einen Knopf zum Öffnen des Webchats in einem neuen
+  Fenster geben."
 
 share_url_label: "Zeige den «Chat Link teilen» Knopf"
-share_url_description: "Es wird einen Knopf für das Teilen des Chat Links geben (könnte\
-  \ z.B. für die Integration in OBS verwendet werden)."
+share_url_description: "Es wird einen Knopf für das Teilen des Chat Links geben (könnte
+  z.B. für die Integration in OBS verwendet werden)."
 share_url_option_nobody: "Niemandem zeigen"
 share_url_option_everyone: "Jedem zeigen"
 share_url_option_owner: "Videobesitzer zeigen"
@@ -92,12 +92,12 @@ per_live_video_warning_description: |
   </span>
 
 all_lives_label: "Chat für alle Live-Videos aktivieren"
-all_lives_description: "Wenn diese Option markiert ist, wird der Chat für alle Live-Videos\
-  \ aktiviert."
+all_lives_description: "Wenn diese Option markiert ist, wird der Chat für alle Live-Videos
+  aktiviert."
 
 all_non_lives_label: "Chat für alle Nicht-Live-Videos aktivieren"
-all_non_lives_description: "Wenn diese Option aktiviert ist, wird der Chat für alle\
-  \ Videos aktiviert, die keine Live-Videos sind."
+all_non_lives_description: "Wenn diese Option aktiviert ist, wird der Chat für alle
+  Videos aktiviert, die keine Live-Videos sind."
 
 videos_list_label: "Chat für diese Videos aktivieren"
 videos_list_description: |
@@ -107,17 +107,17 @@ videos_list_description: |
   Fügen Sie keine privaten Videos hinzu, die UUIDs werden an das Frontend gesendet.
 
 no_anonymous_label: "Chat für anonyme Benutzer ausblenden"
-no_anonymous_description: "Wenn die Option aktiviert ist, können anonyme Peertube-Nutzer\
-  \ den Chat nicht sehen.\nDiese Funktion ist noch experimentell.\nWenn Sie diese\
-  \ Option aktiviert haben, wird empfohlen auch die Option \"Chat-Informationen nicht\
-  \ veröffentlichen\" zu aktivieren.\nAndernfalls könnten einige Tools von Drittanbietern\
-  \ versuchen, den Chat zu öffnen, und ein unvorhersehbares Verhalten verursachen.\n"
+no_anonymous_description: "Wenn die Option aktiviert ist, können anonyme Peertube-Nutzer
+  den Chat nicht sehen.\nDiese Funktion ist noch experimentell.\nWenn Sie diese Option
+  aktiviert haben, wird empfohlen auch die Option \"Chat-Informationen nicht veröffentlichen\"\
+  \ zu aktivieren.\nAndernfalls könnten einige Tools von Drittanbietern versuchen,
+  den Chat zu öffnen, und ein unvorhersehbares Verhalten verursachen.\n"
 
 theming_advanced_description: "<h3>Themen</h3>"
 
 converse_theme_label: "ConverseJS Thema"
-converse_theme_description: "Bitte wählen Sie, welches ConverseJS Thema Sie nutzen\
-  \ möchten."
+converse_theme_description: "Bitte wählen Sie, welches ConverseJS Thema Sie nutzen
+  möchten."
 converse_theme_option_peertube: "Peertube Thema"
 converse_theme_option_default: "Default ConverseJS Thema"
 converse_theme_option_concord: "ConverseJS Concord Thema"
@@ -194,23 +194,23 @@ prosody_muc_expiration_description: |
    </ul>
 
 prosody_room_allow_s2s_label: Verbindung zum Raum mit externen XMPP Konten aktivieren
-prosody_room_allow_s2s_description: "Durch Aktivieren dieser Option ist es möglich,\
-  \ über externe XMPP-Konten und XMPP-Clients eine Verbindung zu Räumen herzustellen.<br>\n\
-  Achtung: Durch die Aktivierung dieser Option können zusätzliche Server- und DNS-Konfigurationen\
-  \ erforderlich sein.\nBitte beachten Sie die Dokumentation:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/advanced/xmpp_clients/\"\
+prosody_room_allow_s2s_description: "Durch Aktivieren dieser Option ist es möglich,
+  über externe XMPP-Konten und XMPP-Clients eine Verbindung zu Räumen herzustellen.<br>\n
+  Achtung: Durch die Aktivierung dieser Option können zusätzliche Server- und DNS-Konfigurationen
+  erforderlich sein.\nBitte beachten Sie die Dokumentation:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n  Aktivieren Sie externe XMPP-Kontoverbindungen.\n</a>\n"
 
 prosody_s2s_port_label: Prosody Server Port zu Server Port
-prosody_s2s_port_description: "Der Port, der für XMPP s2s-Verbindungen (Server zu\
-  \ Server) verwendet wird.<br>\nSie sollten den Standardport 5269 verwenden.\nAndernfalls\
-  \ müssen Sie <a href=\"https://prosody.im/doc/s2s\">\n  einen bestimmten DNS Eintrag\
-  \ erstellen\n</a>.\n"
+prosody_s2s_port_description: "Der Port, der für XMPP s2s-Verbindungen (Server zu
+  Server) verwendet wird.<br>\nSie sollten den Standardport 5269 verwenden.\nAndernfalls
+  müssen Sie <a href=\"https://prosody.im/doc/s2s\">\n  einen bestimmten DNS Eintrag
+  erstellen\n</a>.\n"
 
 prosody_s2s_interfaces_label: Server zu Server Netzwerkschnittstellen
-prosody_s2s_interfaces_description: "Die Netzwerkschnittstellen, die für Server zu\
-  \ Server Verbindungen verwendet werden sollen.<br>\nListe der zu nutzenden IPs,\
-  \ durch Kommata getrennt (Leerzeichen werden entfernt).<br>\nSie können «*» verwenden,\
-  \ um alle IPv4-Schnittstellen zu nutzen, und «::» für alle IPv6-Schnittstellen.<br>\n\
+prosody_s2s_interfaces_description: "Die Netzwerkschnittstellen, die für Server zu
+  Server Verbindungen verwendet werden sollen.<br>\nListe der zu nutzenden IPs, durch
+  Kommata getrennt (Leerzeichen werden entfernt).<br>\nSie können «*» verwenden, um
+  alle IPv4-Schnittstellen zu nutzen, und «::» für alle IPv6-Schnittstellen.<br>\n\
   Beispiele:\n<ul>\n  <li>*, ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>172.18.0.42</li>\n\
   </ul>\n"
 
@@ -267,25 +267,25 @@ connect_using_xmpp: Mit XMPP verbinden
 connect_using_xmpp_help: Sie können sich mit einem externen XMPP Konto und Ihrem bevorzugten
   XMPP Client zum Chatraum verbinden.
 prosody_certificates_dir_label: Zertifikate Ordner
-prosody_certificates_dir_description: "Wenn dieses Feld leer ist, erzeugt und verwendet\
-  \ das Plugin selbstsignierte Zertifikate.<br>\nWenn Sie andere Zertifikate verwenden\
-  \ wollen, geben Sie hier einfach den Ordner an,\nin dem Prosody sie finden kann.\
-  \ Hinweis: Der Benutzer \"peertube\" muss Lesezugriff auf diesen Ordner haben.\n"
+prosody_certificates_dir_description: "Wenn dieses Feld leer ist, erzeugt und verwendet
+  das Plugin selbstsignierte Zertifikate.<br>\nWenn Sie andere Zertifikate verwenden
+  wollen, geben Sie hier einfach den Ordner an,\nin dem Prosody sie finden kann. Hinweis:
+  Der Benutzer \"peertube\" muss Lesezugriff auf diesen Ordner haben.\n"
 online_help: Online Hilfe
 livechat_configuration_channel_enable_bot_label: Moderationsbot aktivieren
-livechat_configuration_channel_forbidden_words_desc2: "Ein Wort oder Ausdruck pro\
-  \ Zeile. Wenn Sie mehrere Wörter in eine Zeile schreiben, werden nur Nachrichten\
-  \ gefunden, die die gesamte Sequenz enthalten.\n"
-livechat_configuration_channel_forbidden_words_desc: "Sie können einige Wörter konfigurieren,\
-  \ die vom Chatbot automatisch moderiert werden (Nachrichten, die solche Wörter enthalten,\
-  \ werden sofort gelöscht).\nSie können auch einen optionalen Grund hinzufügen, der\
-  \ an der Stelle der gelöschten Nachrichten angezeigt wird.\nMehrere Beispiele finden\
-  \ Sie auf der Dokumentationsseite.\n"
-experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Experimentelle\
-  \ Funktion:</b> diese Funktion ist noch experimentell.\n"
-configuration_description: "<h3>Erweiterte Konfiguration des Kanals</h3>\nDie folgenden\
-  \ Einstellungen betreffen die erweiterten Kanaloptionen:\nDie Benutzer können ihre\
-  \ Kanäle individuell anpassen,\nden Moderationsbot aktivieren, ...\n"
+livechat_configuration_channel_forbidden_words_desc2: "Ein Wort oder Ausdruck pro
+  Zeile. Wenn Sie mehrere Wörter in eine Zeile schreiben, werden nur Nachrichten gefunden,
+  die die gesamte Sequenz enthalten.\n"
+livechat_configuration_channel_forbidden_words_desc: "Sie können einige Wörter konfigurieren,
+  die vom Chatbot automatisch moderiert werden (Nachrichten, die solche Wörter enthalten,
+  werden sofort gelöscht).\nSie können auch einen optionalen Grund hinzufügen, der
+  an der Stelle der gelöschten Nachrichten angezeigt wird.\nMehrere Beispiele finden
+  Sie auf der Dokumentationsseite.\n"
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Experimentelle
+  Funktion:</b> diese Funktion ist noch experimentell.\n"
+configuration_description: "<h3>Erweiterte Konfiguration des Kanals</h3>\nDie folgenden
+  Einstellungen betreffen die erweiterten Kanaloptionen:\nDie Benutzer können ihre
+  Kanäle individuell anpassen,\nden Moderationsbot aktivieren, ...\n"
 disable_channel_configuration_label: Die erweiterten Kanalkonfiguration und den Chatbot
   deaktivieren
 save: Speichern
@@ -306,61 +306,71 @@ livechat_configuration_channel_forbidden_words_reason_desc: Anzuzeigender Grund 
 livechat_configuration_channel_forbidden_words_regexp_desc: Wenn Sie diese Option
   aktivieren, können Sie reguläre Ausdrücke (regex) verwenden.
 livechat_configuration_channel_quote_label: Timer
-livechat_configuration_channel_quote_desc2: "Eine Nachricht pro Zeile.\nWenn mehrere\
-  \ Nachrichten vorhanden sind, wird alle X Minuten eine zufällig ausgewählt.\n"
+livechat_configuration_channel_quote_desc2: "Eine Nachricht pro Zeile.\nWenn mehrere
+  Nachrichten vorhanden sind, wird alle X Minuten eine zufällig ausgewählt.\n"
 livechat_configuration_channel_quote_delay_label: Alle X Minuten senden
 livechat_configuration_channel_command_label: Chatbotbefehle
 livechat_configuration_channel_command_cmd_label: Befehl
-livechat_configuration_channel_command_cmd_desc: "Den Befehl, ohne das beginnende\
-  \ \"!\" eintragen. Zum Beispiel \"help\", \"sponsor\", ...\n"
+livechat_configuration_channel_command_cmd_desc: "Den Befehl, ohne das beginnende
+  \"!\" eintragen. Zum Beispiel \"help\", \"sponsor\", ...\n"
 livechat_configuration_channel_command_message_label: Nachricht
 livechat_configuration_channel_command_message_desc: "Die zu sendende Nachricht."
-livechat_configuration_channel_for_more_info: "Weitere Informationen zur Konfiguration\
-  \ dieser Funktion finden Sie in der Dokumentation, indem Sie auf die Schaltfläche\
-  \ Hilfe klicken.\n"
+livechat_configuration_channel_for_more_info: "Weitere Informationen zur Konfiguration
+  dieser Funktion finden Sie in der Dokumentation, indem Sie auf die Schaltfläche
+  Hilfe klicken.\n"
 livechat_configuration_channel_banned_jids_label: Gesperrte Benutzer und Muster
 livechat_configuration_channel_bot_nickname: Chatbot Spitzname
 auto_ban_anonymous_ip_label: IP eines anonymen Benutzers sperren, wenn dieser aus
   einem Chatraum verbannt wird
-auto_ban_anonymous_ip_description: "Wenn Sie diese Option aktivieren, wird jedes Mal,\
-  \ wenn ein anonymer Benutzer aus einem Chatraum verbannt wird, seine IP auch vom\
-  \ Chatserver verbannt.\nWarnung: wenn Ihre Instanz für die Registrierung offen ist,\
-  \ könnte jeder Benutzer einen gefangenen Raum erstellen, Benutzer zum Beitritt einladen\
-  \ und automatisch alle IPs der anonymen Benutzer sperren.\nDie Liste der gesperrten\
-  \ IPs wird nicht gespeichert, sie wird beim Neustart des Servers gelöscht, oder\
-  \ wenn Sie die Einstellungen eines Plugins ändern.\nDie gesperrten IPs werden in\
-  \ den Logdateien des Prosody-Servers protokolliert, so dass die Administratoren\
-  \ des Servers eventuell externe Tools (wie fail2ban) verwenden können, um IPs in\
-  \ größerem Umfang zu sperren.\n"
+auto_ban_anonymous_ip_description: "Wenn Sie diese Option aktivieren, wird jedes Mal,
+  wenn ein anonymer Benutzer aus einem Chatraum verbannt wird, seine IP auch vom Chatserver
+  verbannt.\nWarnung: wenn Ihre Instanz für die Registrierung offen ist, könnte jeder
+  Benutzer einen gefangenen Raum erstellen, Benutzer zum Beitritt einladen und automatisch
+  alle IPs der anonymen Benutzer sperren.\nDie Liste der gesperrten IPs wird nicht
+  gespeichert, sie wird beim Neustart des Servers gelöscht, oder wenn Sie die Einstellungen
+  eines Plugins ändern.\nDie gesperrten IPs werden in den Logdateien des Prosody-Servers
+  protokolliert, so dass die Administratoren des Servers eventuell externe Tools (wie
+  fail2ban) verwenden können, um IPs in größerem Umfang zu sperren.\n"
 prosody_components_interfaces_label: Prosody externe Komponenten Netzwerkschnittstellen
-prosody_components_interfaces_description: "Die Netzwerkschnittstellen, die für externe\
-  \ Komponentenverbindungen überwacht werden sollen.<br>\nListe der zu überwachenden\
-  \ IP, durch Kommata getrennt (Leerzeichen werden entfernt).<br>\nSie können «*»\
-  \ verwenden, um auf allen IPv4-Schnittstellen zu lauschen, und «::» für alle IPv6-Schnittstellen.<br>\n\
+prosody_components_interfaces_description: "Die Netzwerkschnittstellen, die für externe
+  Komponentenverbindungen überwacht werden sollen.<br>\nListe der zu überwachenden
+  IP, durch Kommata getrennt (Leerzeichen werden entfernt).<br>\nSie können «*» verwenden,
+  um auf allen IPv4-Schnittstellen zu lauschen, und «::» für alle IPv6-Schnittstellen.<br>\n\
   Beispiele:\n<ul>\n  <li>*, ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>172.18.0.42</li>\n\
   </ul>\n"
 livechat_configuration_please_select: Bitte wählen Sie unten einen Ihrer Channels
   aus, um dessen Chat-Optionen einzustellen.
 livechat_configuration_channel_forbidden_words_regexp_label: Als reguläre Ausdrücke
   (regex) betrachten
-livechat_configuration_channel_quote_desc: "Sie können mehrere voraufgezeichnete Nachrichten\
-  \ (Timer) konfigurieren, die in regelmäßigen Abständen gesendet werden.\nDiese Nachrichten\
-  \ werden vom Chatbot alle X Minuten gesendet.\nSie können beispielsweise festlegen,\
-  \ dass der Bot alle 5 Minuten eine Sponsor-Information sendet.\n"
-livechat_configuration_channel_quote_delay_desc: "Der Chatbot wird die Nachricht alle\
-  \ X Minuten veröffentlichen.\n"
-livechat_configuration_channel_command_desc: "Sie können den Chatbot so konfigurieren,\
-  \ dass er auf Befehle reagiert.\nEin Befehl ist eine Nachricht, die mit einem \"\
-  !\" beginnt, wie zum Beispiel \"!help\" den Befehl \"help\" aufruft.\n"
+livechat_configuration_channel_quote_desc: "Sie können mehrere voraufgezeichnete Nachrichten
+  (Timer) konfigurieren, die in regelmäßigen Abständen gesendet werden.\nDiese Nachrichten
+  werden vom Chatbot alle X Minuten gesendet.\nSie können beispielsweise festlegen,
+  dass der Bot alle 5 Minuten eine Sponsor-Information sendet.\n"
+livechat_configuration_channel_quote_delay_desc: "Der Chatbot wird die Nachricht alle
+  X Minuten veröffentlichen.\n"
+livechat_configuration_channel_command_desc: "Sie können den Chatbot so konfigurieren,
+  dass er auf Befehle reagiert.\nEin Befehl ist eine Nachricht, die mit einem \"!\"\
+  \ beginnt, wie zum Beispiel \"!help\" den Befehl \"help\" aufruft.\n"
 livechat_configuration_channel_forbidden_words_applytomoderators_label: Auch Nachrichten
   von Moderatoren moderieren
-livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Standardmäßig\
-  \ werden Nachrichten von Moderatoren nicht gelöscht, wenn sie verbotene Wörter enthalten.\n\
+livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Standardmäßig
+  werden Nachrichten von Moderatoren nicht gelöscht, wenn sie verbotene Wörter enthalten.\n
   Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.\n"
 invalid_value: Ungültiger Wert.
 livechat_configuration_channel_forbidden_words_comments_label: Kommentare
-livechat_configuration_channel_forbidden_words_comments_desc: "Sie können hier einige\
-  \ Kommentare zu dieser Regel hinzufügen, um sich daran zu erinnern, wie und warum\
-  \ Sie sie erstellt haben.\nDiese Kommentare sind rein indikativ und haben keinen\
-  \ Einfluss auf das Verhalten des Chatbots.\n"
+livechat_configuration_channel_forbidden_words_comments_desc: "Sie können hier einige
+  Kommentare zu dieser Regel hinzufügen, um sich daran zu erinnern, wie und warum
+  Sie sie erstellt haben.\nDiese Kommentare sind rein indikativ und haben keinen Einfluss
+  auf das Verhalten des Chatbots.\n"
 livechat_configuration_channel_quote_label2: Nachrichten
+avatar_set_label: Avatar-Satz
+avatar_set_description: "Sie können aus mehreren verschiedenen Sets von Standard-Avataren
+  wählen, die für Chat-Benutzer verwendet werden sollen.\nBitte beachten Sie die Dokumentation:\n
+  <a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/settings/\"\
+  \ target=\"_blank\">Einstellungen</a>.\n"
+avatar_set_option_sepia: Sepia (Peertube-Maskottchen)
+avatar_set_option_cat: Katzen
+avatar_set_option_bird: Vögel
+avatar_set_option_fenec: Fenecs (Mobilizon-Maskottchen)
+avatar_set_option_legacy: Ältere Sepia-Avatare (die in früheren Plugin-Versionen enthalten
+  waren)
