@@ -83,7 +83,17 @@ const path = require('node:path')
         eyes: 9,
         bec: 9,
         accessorie: 16 // 15 to 20 are empty
-      }
+      },
+      'fenec': {
+        body: 25,
+        nose: 10,
+        tail: 5,
+        eyes: 10,
+        mouth: 10,
+        accessories: 16, // 14 to 20 are empty
+        misc: 17, // 15 to 20 are empty
+        hat: 15 // 13 to 20 are empty
+      },
     }
 
     for (const part in partsDef) {
@@ -204,6 +214,33 @@ const path = require('node:path')
           { input: path.join(inputDir, 'eyes_05.png')},
           { input: path.join(inputDir, 'bec_07.png')},
           { input: path.join(inputDir, 'accessorie_03.png')}
+        ])
+        .toBuffer()
+
+      await sharp(buff)
+        .flop() // horizontal mirror
+        .resize(60, 60)
+        .png({
+          compressionLevel: 9,
+          palette: true
+        })
+        .toFile(path.join(botOutputDir, '1.png'))
+    }
+
+    {
+      // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+      const inputDir = './assets/images/avatars/fenec'
+      const botOutputDir = './dist/server/bot_avatars/fenec/'
+      fs.mkdirSync(botOutputDir, { recursive: true })
+      const buff = await sharp(path.join(inputDir, 'body_15.png'))
+        .composite([
+          { input: path.join(inputDir, 'nose_07.png') },
+          { input: path.join(inputDir, 'tail_04.png') },
+          { input: path.join(inputDir, 'eyes_03.png') },
+          { input: path.join(inputDir, 'mouth_07.png') },
+          { input: path.join(inputDir, 'accessories_08.png') },
+          { input: path.join(inputDir, 'misc_05.png') },
+          { input: path.join(inputDir, 'hat_07.png') }
         ])
         .toBuffer()
 

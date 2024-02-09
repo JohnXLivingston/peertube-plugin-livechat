@@ -96,7 +96,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   }
 
   let avatarSet: AvatarSet = (settings['avatar-set'] ?? 'sepia') as AvatarSet
-  if (!['sepia', 'cat', 'bird', 'legacy'].includes(avatarSet)) {
+  if (!['sepia', 'cat', 'bird', 'fenec', 'legacy'].includes(avatarSet)) {
     logger.error('Invalid avatar-set setting, using sepia as default')
     avatarSet = 'sepia'
   }

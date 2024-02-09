@@ -108,6 +108,10 @@ You can choose from several different sets the default avatars that will be used
 
 ![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px) license
 
+{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)
+
+![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px) license
+
 {{% livechat_label avatar_set_option_legacy %}}: Based on [David Revoy' work](https://www.davidrevoy.com), [AGPL-v3](https://www.gnu.org/licenses/agpl-3.0.en.html) license
 
 ![Legacy](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)

@@ -139,6 +139,7 @@ avatar_set_description: |
 avatar_set_option_sepia: "Sepia (Peertube mascot)"
 avatar_set_option_cat: "Cats"
 avatar_set_option_bird: "Birds"
+avatar_set_option_fenec: "Fenecs (Mobilizon mascot)"
 avatar_set_option_legacy: "Legacy Sepia avatars (those included in previous plugin versions)"
 
 converse_theme_label: "ConverseJS theme"
