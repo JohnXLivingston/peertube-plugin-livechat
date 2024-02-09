@@ -1387,7 +1387,6 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, fuzzy
 msgid ""
 "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www."
 "davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By "
@@ -1396,10 +1395,13 @@ msgid ""
 "[online Sepia Avatar Generator](https://www.peppercarrot.com/extras/"
 "html/2023_peertube-generator/)."
 msgstr ""
-"Dank an David Revoy für seine Arbeit an dem Peertube Maskottchen, [Sepia]"
-"(https://www.davidrevoy.com/index.php?tag/peertube). Das Charakterdesign "
+"Vielen Dank an David Revoy für seine Arbeit am Peertube-Maskottchen, [Sepia] "
+"(https://www.davidrevoy.com/index.php?tag/peertube).  Das Charakterdesign "
 "steht unter CC-By-Lizenz, und die SVG-Dateien, die zur Erstellung einiger "
-"Logos und Avatare in diesem Plugin verwendet werden, sind GPLv3.0."
+"Logos und Avatare in diesem Plugin verwendet wurden, stehen unter GPLv3.0.  "
+"Die PNG-Dateien stehen unter CC-By-Lizenzen und stammen aus dem [online "
+"Sepia Avatar Generator](https://www.peppercarrot.com/extras/"
+"html/2023_peertube-generator/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -4794,6 +4796,9 @@ msgid ""
 "avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-"
 "generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube "
+"Avatargenerator](https://www.peppercarrot.com/extras/html/2023_peertube-"
+"generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) Lizenz"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4802,16 +4807,18 @@ msgid ""
 "generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/) [CC-"
 "By](https://creativecommons.org/licenses/by/4.0/)"
 msgstr ""
+"{{% livechat_label avatar_set_option_cat %}}: [David Revoy's Katzen "
+"Avatargenerator](https://www.peppercarrot.com/extras/html/2016_cat-"
+"generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
 msgid ""
 "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,"
 "border&height=40px) license"
 msgstr ""
-"![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,"
-"border&height=200px)"
+"![Katzen](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,"
+"border&height=40px) Lizenz"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4820,16 +4827,18 @@ msgid ""
 "generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/) "
 "[CC-By](https://creativecommons.org/licenses/by/4.0/)"
 msgstr ""
+"{{% livechat_label avatar_set_option_bird %}}: [David Revoy's Vögel "
+"Avatargenerator](https://www.peppercarrot.com/extras/html/2019_bird-"
+"generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
 msgid ""
 "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,"
 "border&height=40px) license"
 msgstr ""
-"![Neuer Live-Stream](/peertube-plugin-livechat/images/new_live.png?"
-"classes=shadow,border&height=200px)"
+"![Vögel](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,"
+"border&height=40px) Lizenz"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4839,16 +4848,19 @@ msgid ""
 "html/2020_mobilizon-generator/) [CC-By](https://creativecommons.org/licenses/"
 "by/4.0/)"
 msgstr ""
+"{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's Fenec/"
+"Mobilizon Avatargenerator](https://www.peppercarrot.com/extras/"
+"html/2020_mobilizon-generator/) [CC-By](https://creativecommons.org/licenses/"
+"by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
 msgid ""
 "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,"
 "border&height=40px) license"
 msgstr ""
-"![Hauptmenü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,"
-"border&height=200px)"
+"![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,"
+"border&height=40px) Lizenz"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -4858,10 +4870,10 @@ msgid ""
 "licence, and the SVG files used to create some logo and avatars in this "
 "plugin are GPLv3.0."
 msgstr ""
-"Dank an David Revoy für seine Arbeit an dem Peertube Maskottchen, [Sepia]"
-"(https://www.davidrevoy.com/index.php?tag/peertube). Das Charakterdesign "
+"Vielen Dank an David Revoy für seine Arbeit am Peertube-Maskottchen, [Sepia] "
+"(https://www.davidrevoy.com/index.php?tag/peertube).  Das Charakterdesign "
 "steht unter CC-By-Lizenz, und die SVG-Dateien, die zur Erstellung einiger "
-"Logos und Avatare in diesem Plugin verwendet werden, sind GPLv3.0."
+"Logos und Avatare in diesem Plugin verwendet wurden, stehen unter GPLv3.0."
 
 #~ msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 #~ msgstr "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube Avatargenerator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) Lizenz"
