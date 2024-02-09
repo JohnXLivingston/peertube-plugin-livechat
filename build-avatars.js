@@ -126,19 +126,20 @@ const path = require('node:path')
           continue
         }
 
-        const bodyFile = computeFilename('body', i)
+        const firstPart = Object.keys(parts)[0]
+        const firstFile = computeFilename(firstPart, i)
 
         // We just have to combinate different parts into one file, then output at the wanted size.
         const composites = []
         let j = 0
-        for (const part of Object.keys(parts).filter(p => p !== 'body')) {
+        for (const part of Object.keys(parts).filter(p => p !== firstPart)) {
           j++ // introduce an offset so we don't get all empty parts at the same time
           composites.push({
             input: computeFilename(part, i + (j * 7))
           })
         }
 
-        const buff = await sharp(bodyFile)
+        const buff = await sharp(firstFile)
           .composite(composites)
           .toBuffer()
 
