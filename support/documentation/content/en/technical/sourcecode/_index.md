@@ -25,6 +25,7 @@ These files are used to generate multiple avatars (see the `build-avatars.js` sc
 * `assets/images/avatars/legacy` contains legacy avatar set (livechat versions until 8.1.0 included)
 * `assets/images/avatars/sepia` contains new sepia avatar set, based on the work of David Revoy (see copyright informations)
 * `assets/images/avatars/cat` contains new cats avatar set, based on the work of David Revoy (see copyright informations)
+* `assets/images/avatars/bird` contains new birds avatar set, based on the work of David Revoy (see copyright informations)
 
 ### assets/styles
 

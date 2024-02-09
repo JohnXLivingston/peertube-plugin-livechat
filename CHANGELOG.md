@@ -7,6 +7,7 @@
 * New avatars, by David Revoy (#234):
   * new Sepia avatars
   * new Cats avatars
+  * new Birds avatars
   * plugin settings to change the avatar set (for now it is only possible to choose on the instance level, channel option will come later)
 
 ### Minor changes and fixes

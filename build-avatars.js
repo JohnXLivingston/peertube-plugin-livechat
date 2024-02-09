@@ -74,6 +74,15 @@ const path = require('node:path')
         eyes: 15,
         mouth: 10,
         accessorie: 20 // 17 to 20 are empty
+      },
+      'bird': {
+        tail: 9, // here we must begin with the tail
+        hoop: 10,
+        body: 9,
+        wing: 9,
+        eyes: 9,
+        bec: 9,
+        accessorie: 16 // 15 to 20 are empty
       }
     }
 
@@ -169,6 +178,32 @@ const path = require('node:path')
           { input: path.join(inputDir, 'eyes_11.png') },
           { input: path.join(inputDir, 'fur_02.png') },
           { input: path.join(inputDir, 'accessorie_03.png') }
+        ])
+        .toBuffer()
+
+      await sharp(buff)
+        .flop() // horizontal mirror
+        .resize(60, 60)
+        .png({
+          compressionLevel: 9,
+          palette: true
+        })
+        .toFile(path.join(botOutputDir, '1.png'))
+    }
+
+    {
+      // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+      const inputDir = path.join('./assets/images/avatars/', 'bird')
+      const botOutputDir = './dist/server/bot_avatars/bird/'
+      fs.mkdirSync(botOutputDir, { recursive: true })
+      const buff = await sharp(path.join(inputDir, 'tail_06.png'))
+        .composite([
+          { input: path.join(inputDir, 'hoop_04.png')},
+          { input: path.join(inputDir, 'body_07.png')},
+          { input: path.join(inputDir, 'wing_03.png')},
+          { input: path.join(inputDir, 'eyes_05.png')},
+          { input: path.join(inputDir, 'bec_07.png')},
+          { input: path.join(inputDir, 'accessorie_03.png')}
         ])
         .toBuffer()
 
