@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-02-12 09:55+0100\n"
+"POT-Creation-Date: 2024-02-12 16:44+0100\n"
 "PO-Revision-Date: 2024-02-12 09:03+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -1669,6 +1669,20 @@ msgstr "{{% livechat_label avatar_set_option_fenec %}} : [Générateur d'avata
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
 msgstr "![Fénnecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy
+#| msgid "{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
+msgid "{{% livechat_label avatar_set_option_abstract %}}: [David Revoy's Abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
+msgstr "{{% livechat_label avatar_set_option_cat %}} : [Générateur d'avatar de chat de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-generator/), Licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy
+#| msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
+msgid "![Abstracts](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px)"
+msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md

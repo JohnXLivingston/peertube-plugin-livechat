@@ -48,6 +48,12 @@ const avatarPartsDef = {
     misc: 17, // 15 to 20 are empty
     hat: 15 // 13 to 20 are empty
   },
+  'abstract': {
+    body: 15,
+    fur: 10,
+    eyes: 15,
+    mouth: 10
+  }
 }
 
 function generateLegacyAvatars () {
@@ -248,6 +254,29 @@ async function generateBotsAvatars () {
         { input: path.join(inputDir, 'accessories_08.png') },
         { input: path.join(inputDir, 'misc_05.png') },
         { input: path.join(inputDir, 'hat_07.png') }
+      ])
+      .toBuffer()
+
+    await sharp(buff)
+      .flop() // horizontal mirror
+      .resize(60, 60)
+      .png({
+        compressionLevel: 9,
+        palette: true
+      })
+      .toFile(path.join(botOutputDir, '1.png'))
+  }
+
+  {
+    // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+    const inputDir = './assets/images/avatars/abstract'
+    const botOutputDir = './dist/server/bot_avatars/abstract/'
+    fs.mkdirSync(botOutputDir, { recursive: true })
+    const buff = await sharp(path.join(inputDir, 'body_08.png'))
+      .composite([
+        { input: path.join(inputDir, 'body_15.png') }, // here we add a second body
+        { input: path.join(inputDir, 'fur_08.png') },
+        { input: path.join(inputDir, 'mouth_03.png') }
       ])
       .toBuffer()
 

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-02-12 09:55+0100\n"
+"POT-Creation-Date: 2024-02-12 16:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1787,6 +1787,18 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, markdown-text
 msgid "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, markdown-text
+msgid "{{% livechat_label avatar_set_option_abstract %}}: [David Revoy's Abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, markdown-text
+msgid "![Abstracts](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px)"
 msgstr ""
 
 #. type: Plain text
