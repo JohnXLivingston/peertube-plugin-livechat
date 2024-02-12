@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-02-09 15:38+0100\n"
+"POT-Creation-Date: 2024-02-12 09:55+0100\n"
 "PO-Revision-Date: 2024-01-03 12:39+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -1635,7 +1635,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
+msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
 
 #. type: Plain text
@@ -1647,38 +1647,38 @@ msgstr "![Nouveau direct](/peertube-plugin-livechat/images/new_live.png?classes=
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)"
+msgid "{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, fuzzy
 #| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
-msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px) license"
+msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
 msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)"
+msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, fuzzy
 #| msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
-msgid "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px) license"
+msgid "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
 msgstr "![Nouveau direct](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)"
+msgid "{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, fuzzy
 #| msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
-msgid "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px) license"
+msgid "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
 msgstr "![Menu du haut](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text

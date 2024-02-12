@@ -96,21 +96,21 @@ Otherwise it could block all anonymous users at once.
 
 You can choose from several different sets the default avatars that will be used for chat users.
 
-{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) license
+{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license
 
 ![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)
 
-{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)
+{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license
 
-![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px) license
+![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)
 
-{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)
+{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license
 
-![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px) license
+![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)
 
-{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)
+{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license
 
-![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px) license
+![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)
 
 {{% livechat_label avatar_set_option_legacy %}}: Based on [David Revoy' work](https://www.davidrevoy.com), [AGPL-v3](https://www.gnu.org/licenses/agpl-3.0.en.html) license
 
