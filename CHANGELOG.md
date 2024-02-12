@@ -16,6 +16,7 @@
 * Fix #311:
   * Fix inconsistency between browsers on textarea outlines.
   * Fix ConverseJS input borders/outline/shadow.
+* Updated translations: german, french.
 
 ## 8.1.0
 

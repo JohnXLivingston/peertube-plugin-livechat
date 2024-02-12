@@ -2487,8 +2487,8 @@ msgid ""
 "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,"
 "border&height=40px)"
 msgstr ""
-"![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,"
-"border&height=200px)"
+"![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,"
+"border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2505,8 +2505,8 @@ msgid ""
 "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,"
 "border&height=40px)"
 msgstr ""
-"![Neuer Live-Stream](/peertube-plugin-livechat/images/new_live.png?"
-"classes=shadow,border&height=200px)"
+"![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,"
+"border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md

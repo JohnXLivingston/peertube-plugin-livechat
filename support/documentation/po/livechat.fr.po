@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2024-02-12 09:55+0100\n"
 "PO-Revision-Date: 2024-02-12 09:03+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-"
+"livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2465,8 +2465,8 @@ msgid ""
 "generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
 "{{% livechat_label avatar_set_option_sepia %}} : [Générateur d'avatars "
-"Peertube de David Revoy](https ://www.peppercarrot.com/extras/html/"
-"2023_peertube-generator/), Licence [CC-By](https ://creativecommons.org/"
+"Peertube de David Revoy](https ://www.peppercarrot.com/extras/"
+"html/2023_peertube-generator/), Licence [CC-By](https ://creativecommons.org/"
 "licenses/by/4.0/)"
 
 #. type: Plain text
@@ -2486,8 +2486,8 @@ msgid ""
 "[CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
 "{{% livechat_label avatar_set_option_cat %}} : [Générateur d'avatar de chat "
-"de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-generator/"
-"), Licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
+"de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-"
+"generator/), Licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2495,8 +2495,8 @@ msgid ""
 "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,"
 "border&height=40px)"
 msgstr ""
-"![Chats](/peertube-plugin-livechat/images/avatar_cat.png "
-"?classes=shadow,border&height=40px)"
+"![Chats](/peertube-plugin-livechat/images/avatar_cat.png ?classes=shadow,"
+"border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2506,9 +2506,8 @@ msgid ""
 "[CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
 "{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar "
-"d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/"
-"2016_cat-generator/), Licence [CC-By](https ://creativecommons.org/licenses/"
-"by/4.0/)"
+"d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-"
+"generator/), Licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2516,8 +2515,8 @@ msgid ""
 "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,"
 "border&height=40px)"
 msgstr ""
-"![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png "
-"?classes=shadow,border&height=40px)"
+"![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png ?classes=shadow,"
+"border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2528,9 +2527,9 @@ msgid ""
 "licenses/by/4.0/) license"
 msgstr ""
 "{{% livechat_label avatar_set_option_fenec %}} : [Générateur d'avatar fénnec/"
-"mobilizon de David Revoy](https ://www.peppercarrot.com/extras/html/"
-"2020_mobilizon-generator/), licence [CC-By](https ://creativecommons.org/"
-"licenses/by/4.0/)"
+"mobilizon de David Revoy](https ://www.peppercarrot.com/extras/"
+"html/2020_mobilizon-generator/), licence [CC-By](https ://creativecommons."
+"org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2538,8 +2537,8 @@ msgid ""
 "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,"
 "border&height=40px)"
 msgstr ""
-"![Fénnecs](/peertube-plugin-livechat/images/avatar_fenec.png "
-"?classes=shadow,border&height=40px)"
+"![Fénnecs](/peertube-plugin-livechat/images/avatar_fenec.png ?classes=shadow,"
+"border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2548,9 +2547,9 @@ msgid ""
 "(https://www.davidrevoy.com), [AGPL-v3](https://www.gnu.org/licenses/"
 "agpl-3.0.en.html) license"
 msgstr ""
-"{{% livechat_label avatar_set_option_legacy %}} : Basé sur le travail de ["
-"David Revoy](https ://www.davidrevoy.com), licence [AGPL-v3](https ://www.gnu"
-".org/licenses/agpl-3.0.fr.html)"
+"{{% livechat_label avatar_set_option_legacy %}} : Basé sur le travail de "
+"[David Revoy](https ://www.davidrevoy.com), licence [AGPL-v3](https ://www."
+"gnu.org/licenses/agpl-3.0.fr.html)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2558,8 +2557,8 @@ msgid ""
 "![Legacy](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,"
 "border&height=40px)"
 msgstr ""
-"![Anciens avatars](/peertube-plugin-livechat/images/avatar_legacy.jpg "
-"?classes=shadow,border&height=40px)"
+"![Anciens avatars](/peertube-plugin-livechat/images/avatar_legacy.jpg ?"
+"classes=shadow,border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4867,8 +4866,8 @@ msgid ""
 "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,"
 "border&height=40px) license"
 msgstr ""
-"![Chats](/peertube-plugin-livechat/images/avatar_cat.png "
-"?classes=shadow,border&height=40px)"
+"![Chats](/peertube-plugin-livechat/images/avatar_cat.png ?classes=shadow,"
+"border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4878,9 +4877,8 @@ msgid ""
 "[CC-By](https://creativecommons.org/licenses/by/4.0/)"
 msgstr ""
 "{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar "
-"d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/"
-"2016_cat-generator/), Licence [CC-By](https ://creativecommons.org/licenses/"
-"by/4.0/)"
+"d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-"
+"generator/), Licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4888,8 +4886,8 @@ msgid ""
 "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,"
 "border&height=40px) license"
 msgstr ""
-"![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png "
-"?classes=shadow,border&height=40px)"
+"![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png ?classes=shadow,"
+"border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
