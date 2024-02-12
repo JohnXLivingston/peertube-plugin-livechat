@@ -893,7 +893,7 @@ msgstr "Le plugin est maintenu par [John Livingston](https://www.john-livingston
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
-msgstr "Merci à David Revoy pour son travail sur la mascotte de Peertube, [Sepia](https ://www.davidrevoy.com/index.php ?tag/peertube). Le design est en licence CC-By, et les fichiers SVG utilisés pour créer certains logos et avatars en GPLv3.0."
+msgstr "Merci à David Revoy pour son travail sur la mascotte de Peertube, [Sepia](https ://www.davidrevoy.com/index.php?tag/peertube). Le design est en licence CC-By, et les fichiers SVG utilisés pour créer certains logos et avatars en GPLv3.0."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -1638,7 +1638,7 @@ msgstr "{{% livechat_label avatar_set_option_sepia %}} : [Générateur d'avata
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)"
-msgstr "![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png ?classes=shadow,border&height=40px)"
+msgstr "![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1648,17 +1648,17 @@ msgstr "{{% livechat_label avatar_set_option_cat %}} : [Générateur d'avatar 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
-msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png ?classes=shadow,border&height=40px)"
+msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr "{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-generator/), Licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
+msgstr "{{% livechat_label avatar_set_option_bird %}}: [Générateur d'avatar d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-generator/), Licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
-msgstr "![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png ?classes=shadow,border&height=40px)"
+msgstr "![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1668,7 +1668,7 @@ msgstr "{{% livechat_label avatar_set_option_fenec %}} : [Générateur d'avata
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
-msgstr "![Fénnecs](/peertube-plugin-livechat/images/avatar_fenec.png ?classes=shadow,border&height=40px)"
+msgstr "![Fénnecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1678,7 +1678,7 @@ msgstr "{{% livechat_label avatar_set_option_legacy %}} : Basé sur le travail
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Legacy](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)"
-msgstr "![Anciens avatars](/peertube-plugin-livechat/images/avatar_legacy.jpg ?classes=shadow,border&height=40px)"
+msgstr "![Anciens avatars](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2495,7 +2495,7 @@ msgstr "S'il n'y a pas d'utilisateur⋅rice dans le salon, le bot n'enverra pas 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
-msgstr "![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/images/bot_quotes.png ?classes=shadow,border&height=200px)"
+msgstr "![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3092,13 +3092,13 @@ msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XM
 #~ msgstr "{{% livechat_label avatar_set_option_cat %}} : [Générateur d'avatar de chat de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-generator/) [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #~ msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px) license"
-#~ msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png ?classes=shadow,border&height=40px)"
+#~ msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
 
 #~ msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/)"
 #~ msgstr "{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-generator/), Licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #~ msgid "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px) license"
-#~ msgstr "![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png ?classes=shadow,border&height=40px)"
+#~ msgstr "![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
 
 #, fuzzy
 #~ msgid "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px) license"
