@@ -285,7 +285,7 @@ if (isMainThread) {
     })
 
     p.then(
-      (msg) => console.log('Part ' + part + ': ' + msg),
+      (msg) => console.log(part + ' avatars: ' + msg),
       () => console.error
     )
   }
