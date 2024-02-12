@@ -10,6 +10,7 @@ local avatars_files = assert(module:get_option_array("peertubelivechat_random_vc
 local avatars = {};
 local function load_avatar(filename)
   local file = assert(io.open(path.join(avatars_dir, filename), "r"));
+  -- FIXME: check filetype, to only allow jpg or png. (for the day we would allow users to add custom avatars sets)
   local filetype = filename.sub(filename, -3); -- jpg or png
   local result = {
     type = 'image/' .. filetype,
