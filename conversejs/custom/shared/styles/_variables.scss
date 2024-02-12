@@ -20,6 +20,8 @@
 .conversejs-bg.theme-peertube,
 #conversejs-bg.theme-peertube,
 body.converse-fullscreen.theme-peertube {
+  --foreground: var(--peertube-main-foreground);
+  --background: var(--peertube-main-background);
   --subdued-color: #a8aba1;
   --green: #3aa569; // only in this file
   --redder-orange: #e77051; // only in this file
@@ -39,10 +41,10 @@ body.converse-fullscreen.theme-peertube {
   --global-background-color: var(--peertube-main-background);
   --inverse-link-color: var(--peertube-button-foreground);
   --text-shadow-color: var(--peertube-main-background); // FIXME: should be a little different from background
-  --text-color: var(--peertube-main-foreground);
-  --controlbox-text-color: var(--peertube-main-foreground); // Note: controlbox is not used
-  --text-color-lighten-15-percent: var(--peertube-main-foreground);
-  --message-text-color: var(--peertube-main-foreground);
+  --text-color: var(--peertube-input-foreground);
+  --controlbox-text-color: var(--peertube-input-foreground); // Note: controlbox is not used
+  --text-color-lighten-15-percent: var(--peertube-input-foreground);
+  --message-text-color: var(--peertube-input-foreground);
   --message-receipt-color: var(--green);
   --save-button-color: var(--green);
   --button-text-color: var(--peertube-button-foreground);
@@ -61,7 +63,7 @@ body.converse-fullscreen.theme-peertube {
   --chat-head-color-darker: #0e763b; // should not be used in this plugin
   --chat-head-color-lighten-50-percent: #e7f7ee;  // should not be used in this plugin
   --chat-head-color: var(--green);
-  --chat-head-text-color: var(--peertube-main-foreground);
+  --chat-head-text-color: var(--peertube-input-foreground);
   --chat-toolbar-btn-color: var(--peertube-button-background);
   --chat-toolbar-btn-disabled-color: var(--peertube-grey-background);
   --toolbar-btn-text-color: var(--peertube-button-foreground);

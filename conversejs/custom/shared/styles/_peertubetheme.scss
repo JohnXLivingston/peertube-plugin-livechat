@@ -129,6 +129,11 @@
     background-color: var(--peertube-grey-background) !important;
   }
 
+  .suggestion-box__results {
+    // To make the autocompletes results more readable, adding a border (orange for the default theme)
+    border-color: var(--peertube-button-background);
+  }
+
   // hidding avatars when screen width is not big enough.
   @media screen and (max-width: 250px) {
     .message {
