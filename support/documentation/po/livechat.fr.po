@@ -1374,7 +1374,6 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, fuzzy
 msgid ""
 "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www."
 "davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By "
@@ -1384,8 +1383,8 @@ msgid ""
 "html/2023_peertube-generator/)."
 msgstr ""
 "Merci à David Revoy pour son travail sur la mascotte de Peertube, [Sepia]"
-"(https://www.davidrevoy.com/index.php?tag/peertube). Le character design est "
-"en licence CC-By, et les fichiers SVG utilisés pour créer certains logos et "
+"(https ://www.davidrevoy.com/index.php ?tag/peertube). Le design est en "
+"licence CC-By, et les fichiers SVG utilisés pour créer certains logos et "
 "avatars en GPLv3.0."
 
 #. type: Plain text
@@ -2455,6 +2454,8 @@ msgid ""
 "You can choose from several different sets the default avatars that will be "
 "used for chat users."
 msgstr ""
+"Vous pouvez choisir parmi plusieurs jeux différents les avatars par défaut "
+"qui seront utilisés pour les utilisateurs du tchat."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2466,13 +2467,12 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
 msgid ""
 "![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,"
 "border&height=40px)"
 msgstr ""
-"![Nouveau direct](/peertube-plugin-livechat/images/new_live.png?"
-"classes=shadow,border&height=200px)"
+"![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png ?classes=shadow,"
+"border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4829,6 +4829,10 @@ msgid ""
 "avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-"
 "generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_sepia %}} : [Générateur d'avatars "
+"Peertube de David Revoy](https ://www.peppercarrot.com/extras/"
+"html/2023_peertube-generator/) [Licence CC-By](https ://creativecommons.org/"
+"licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4837,6 +4841,9 @@ msgid ""
 "generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/) [CC-"
 "By](https://creativecommons.org/licenses/by/4.0/)"
 msgstr ""
+"{{% livechat_label avatar_set_option_cat %}} : [Générateur d'avatar de chat "
+"de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-"
+"generator/) [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
