@@ -4755,6 +4755,10 @@ msgid ""
 "avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-"
 "generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_sepia %}} : [Générateur d'avatars "
+"Peertube de David Revoy](https ://www.peppercarrot.com/extras/"
+"html/2023_peertube-generator/) [Licence CC-By](https ://creativecommons.org/"
+"licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4763,6 +4767,9 @@ msgid ""
 "generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/) [CC-"
 "By](https://creativecommons.org/licenses/by/4.0/)"
 msgstr ""
+"{{% livechat_label avatar_set_option_cat %}} : [Générateur d'avatar de chat "
+"de David Revoy](https ://www.peppercarrot.com/extras/html/2016_cat-"
+"generator/) [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
