@@ -8,9 +8,9 @@ read_only: Lecture seule
 show_scrollbarr: Afficher la barre de défilement
 transparent_background: Arrière plan transparent (pour l'intégration dans le stream,
   avec OBS par exemple)
-tips_for_streamers: "Astuce pour les streamers et streameuses : pour ajouter le tchat\
-  \ à votre OBS, générez un lien «lecture seule» et utilisez le comme «source navigateur\
-  \ web»."
+tips_for_streamers: "Astuce pour les streamers et streameuses : pour ajouter le tchat
+  à votre OBS, générez un lien «lecture seule» et utilisez le comme «source navigateur
+  web»."
 copy: Copier
 link_copied: Lien copié
 error: Erreur
@@ -70,31 +70,31 @@ federation_dont_publish_remotely_description: |
 chat_behaviour_description: "<h3>Comportement du tchat</h3>"
 
 room_type_label: "Type de salon"
-room_type_description: "Vous pouvez choisir d'avoir des salons séparés pour chaque\
-  \ vidéo, ou de les grouper par chaîne."
+room_type_description: "Vous pouvez choisir d'avoir des salons séparés pour chaque
+  vidéo, ou de les grouper par chaîne."
 room_type_option_video: "Chaque video a son propre salon de discussion"
 room_type_option_channel: "Les salons sont regroupés par chaîne"
 
 auto_display_label: "Ouvrir automatiquement le tchat"
-auto_display_description: "Quand on regarde une vidéo, le tchat va automatiquement\
-  \ s'ouvrir."
+auto_display_description: "Quand on regarde une vidéo, le tchat va automatiquement
+  s'ouvrir."
 
 open_blank_label: "Montrer le bouton «ouvrir dans une nouvelle fenêtre»"
-open_blank_description: "Il y aura un bouton pour ouvrir le tchat dans une nouvelle\
-  \ fenêtre."
+open_blank_description: "Il y aura un bouton pour ouvrir le tchat dans une nouvelle
+  fenêtre."
 
 share_url_label: "Montrer le bouton «partager le lien du salon»"
-share_url_description: "Il y aura un bouton permettant de partager le lien vers le\
-  \ tchat (peut par exemple être utilisé pour l'intégration dans OBS)."
+share_url_description: "Il y aura un bouton permettant de partager le lien vers le
+  tchat (peut par exemple être utilisé pour l'intégration dans OBS)."
 share_url_option_nobody: "Ne pas le montrer"
 share_url_option_everyone: "Le montrer à tout le monde"
 share_url_option_owner: "Le montrer au proriétaire de la vidéo"
-share_url_option_owner_moderators: "Le montrer au propriétaire de la vidéo, et aux\
-  \ modérateur⋅rices de l'instance"
+share_url_option_owner_moderators: "Le montrer au propriétaire de la vidéo, et aux
+  modérateur⋅rices de l'instance"
 
 per_live_video_label: "Les utilisateur⋅rices peuvent activer le tchat pour leurs directs"
-per_live_video_description: "Si coché, il y aura pour tous les directs une case à\
-  \ cocher dans les propriétés qui permettra d'activer/désactiver le tchat."
+per_live_video_description: "Si coché, il y aura pour tous les directs une case à
+  cocher dans les propriétés qui permettra d'activer/désactiver le tchat."
 
 per_live_video_warning_description: |
   <span class="peertube-plugin-livechat-warning">
@@ -106,8 +106,8 @@ all_lives_label: "Activer le tchat pour tous les directs"
 all_lives_description: "Si coché, il y aura un tchat pour tous les directs."
 
 all_non_lives_label: "Activer le tchat pour toutes les vidéos «non-direct»"
-all_non_lives_description: "Si coché, il y aura un tchat pour toutes les vidéos qui\
-  \ ne sont pas des directs."
+all_non_lives_description: "Si coché, il y aura un tchat pour toutes les vidéos qui
+  ne sont pas des directs."
 
 videos_list_label: "Activer le tchat pour ces vidéos"
 videos_list_description: |
@@ -117,17 +117,17 @@ videos_list_description: |
   N'ajoutez pas de vidéos privées, les UUIDs fuiteraient.
 
 no_anonymous_label: "Masquer les tchats pour les utilisateur⋅rices anonymes"
-no_anonymous_description: "Si coché, les utilisteur⋅rices non connecté⋅es ne verront\
-  \ pas les tchats.\nCette fonctionnalité est encore expérimentale.\nSi vous l'avez\
-  \ activée, il est hautement recommandé d'également cocher «Ne pas publier les informations\
-  \ de tchats».\nSinon certains outils tierces ne pourraient tenter d'ouvrir le tchat,\
-  \ et auraient des résultats imprédictibles.\n"
+no_anonymous_description: "Si coché, les utilisteur⋅rices non connecté⋅es ne verront
+  pas les tchats.\nCette fonctionnalité est encore expérimentale.\nSi vous l'avez
+  activée, il est hautement recommandé d'également cocher «Ne pas publier les informations
+  de tchats».\nSinon certains outils tierces ne pourraient tenter d'ouvrir le tchat,
+  et auraient des résultats imprédictibles.\n"
 
 theming_advanced_description: "<h3>Personnalisation des thèmes</h3>"
 
 converse_theme_label: "Thème ConverseJS"
-converse_theme_description: "Merci de choisir le thème ConverseJS que vous voulez\
-  \ utiliser."
+converse_theme_description: "Merci de choisir le thème ConverseJS que vous voulez
+  utiliser."
 converse_theme_option_peertube: "Thème Peertube"
 converse_theme_option_default: "Thème par défaut de ConverseJS"
 converse_theme_option_concord: "Thème concord de ConverseJS"
@@ -204,8 +204,8 @@ prosody_muc_expiration_description: |
       <li><b>never</b> : le contenu ne sera jamais effacé.</li>
   </ul>
 
-prosody_room_allow_s2s_label: "Autoriser les connexions aux salons via des comptes\
-  \ XMPP externes"
+prosody_room_allow_s2s_label: "Autoriser les connexions aux salons via des comptes
+  XMPP externes"
 prosody_room_allow_s2s_description: |
   En activant cette option, il sera possible de se connecter aux salons en utilisant des comptes XMPP externes via des clients XMPP.<br>
   Attention, activer cette option peut demander une configuration au niveau du serveur et des enregistrements DNS.
@@ -222,8 +222,8 @@ prosody_s2s_port_description: |
     configurer un enregistrement DNS spécifique
   </a>.
 
-prosody_s2s_interfaces_label: "Interfaces réseau pour les connexions serveur vers\
-  \ serveur"
+prosody_s2s_interfaces_label: "Interfaces réseau pour les connexions serveur vers
+  serveur"
 prosody_s2s_interfaces_description: |
   Les interfaces réseau sur lequelles écouter pour les connexions s2s (server to server).<br>
   Une liste d'IP séparées par des virgules (les espaces seront retirés).
@@ -286,13 +286,13 @@ prosody_components_list_description: |
 online_help: Aide en ligne
 prosody_components_interfaces_label: Interfaces réseau pour les composants Prosody
   externes
-prosody_components_interfaces_description: "Les interfaces réseau sur lesquelles écouter\
-  \ pour les composants externes.<br>\nUne liste d'IP séparées par des virgules (les\
-  \ espaces seront retirés).\nOn pourra utiliser «*» pour écouter sur toutes les IPv4,\
-  \ et «::» pour toutes les IPv6.<br>\nExemples :\n<ul>\n  <li>*,::</li>\n  <li>*</li>\n\
+prosody_components_interfaces_description: "Les interfaces réseau sur lesquelles écouter
+  pour les composants externes.<br>\nUne liste d'IP séparées par des virgules (les
+  espaces seront retirés).\nOn pourra utiliser «*» pour écouter sur toutes les IPv4,
+  et «::» pour toutes les IPv6.<br>\nExemples :\n<ul>\n  <li>*,::</li>\n  <li>*</li>\n\
   \  <li>127.0.0.1,::1</li>\n  <li>172.18.0.42</li>\n</ul>\n"
-experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Fonction\
-  \ expérimentale :</b> cette fonctionnalité est encore expérimentale.\n"
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Fonction
+  expérimentale :</b> cette fonctionnalité est encore expérimentale.\n"
 disable_channel_configuration_label: Désactiver la configuration avancée des chaînes
   et le bot de modération
 save: Enregistrer
@@ -310,9 +310,9 @@ livechat_configuration_channel_desc: Vous pouvez configurer ici quelques options
 livechat_configuration_channel_enable_bot_label: Activer le bot de modération
 livechat_configuration_channel_bot_options_title: Options du bot de modération
 livechat_configuration_channel_forbidden_words_label: Mots ou expressions interdites
-livechat_configuration_channel_forbidden_words_desc2: "Un mot ou une expression par\
-  \ ligne. Si vous mettez plusieurs mots sur une même ligne, seuls les messages contenant\
-  \ la séquence entière seront supprimés.\n"
+livechat_configuration_channel_forbidden_words_desc2: "Un mot ou une expression par
+  ligne. Si vous mettez plusieurs mots sur une même ligne, seuls les messages contenant
+  la séquence entière seront supprimés.\n"
 livechat_configuration_channel_forbidden_words_reason_label: Raison
 livechat_configuration_channel_forbidden_words_reason_desc: Raison à affiche à côté
   des messages supprimés
@@ -323,57 +323,67 @@ livechat_configuration_channel_forbidden_words_regexp_desc: En cochant cette opt
 livechat_configuration_channel_forbidden_words_applytomoderators_label: Également
   modérer les messages des modérateur⋅rices
 livechat_configuration_channel_quote_label: Timer
-livechat_configuration_channel_quote_desc: "Vous pouvez configurer quelques timers\
-  \ qui enverrons des messages à intervalle régulier.\nCes messages seront envoyés\
-  \ par le bot toutes les X minutes.\nVous pouvez par exemple faire en sorte que le\
-  \ bot envoi des informations de sponsoring toutes les 5 minutes.\n"
-livechat_configuration_channel_quote_desc2: "Un message par ligne.\nS'il y a plusieurs\
-  \ messages, le bot en choisira un aléatoirement toutes les X minutes.\n"
+livechat_configuration_channel_quote_desc: "Vous pouvez configurer quelques timers
+  qui enverrons des messages à intervalle régulier.\nCes messages seront envoyés par
+  le bot toutes les X minutes.\nVous pouvez par exemple faire en sorte que le bot
+  envoi des informations de sponsoring toutes les 5 minutes.\n"
+livechat_configuration_channel_quote_desc2: "Un message par ligne.\nS'il y a plusieurs
+  messages, le bot en choisira un aléatoirement toutes les X minutes.\n"
 livechat_configuration_channel_quote_delay_label: Envoyer toutes les X minutes
-livechat_configuration_channel_quote_delay_desc: "Le bot enverra les messages toutes\
-  \ les X minutes\n"
+livechat_configuration_channel_quote_delay_desc: "Le bot enverra les messages toutes
+  les X minutes\n"
 livechat_configuration_channel_command_label: Commande du bot
 livechat_configuration_channel_command_cmd_label: Commande
-livechat_configuration_channel_command_cmd_desc: "La commande, sans le \"!\" au début.\
-  \ Par exemple \"help\", \"sponsor\", ...\n"
+livechat_configuration_channel_command_cmd_desc: "La commande, sans le \"!\" au début.
+  Par exemple \"help\", \"sponsor\", ...\n"
 livechat_configuration_channel_command_message_label: Message
 livechat_configuration_channel_command_message_desc: "Le message à envoyer."
 livechat_configuration_channel_banned_jids_label: Motifs d'utilisateur⋅rices banni⋅es
 livechat_configuration_channel_bot_nickname: Pseudonyme du bot
-configuration_description: "<h3>Configuration avancée de la chaîne</h3>\nLes paramètres\
-  \ suivants concernant les options avancées de la chaîne :\nles utilisateur⋅rices\
-  \ pourrons personnaliser certaines options pour les chaînes,\nactiver le bot de\
-  \ modération, ...\n"
-livechat_configuration_channel_forbidden_words_desc: "Vous pouvez configurer quelques\
-  \ mots qui seront automatiquement modérés par le bot (les messages contenant de\
-  \ tels mots seront instantanément supprimés).\nVous pouvez aussi ajouter une raison\
-  \ optionnelle, qui sera affichée à la place des messages supprimés.\nQuelques exemples\
-  \ de configuration sont fournis sur la page de documentation.\n"
-livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Par défaut,\
-  \ les messages des modérateur⋅rices ne seront pas supprimés quand ils contiennent\
-  \ des mots interdits.\nEn cochant cette option, leur messages seront également supprimé.\n"
-livechat_configuration_channel_command_desc: "Vous pouvez configurer le bot pour répondre\
-  \ à des commandes.\nUne commande est un message qui commence par un \"!\", comme\
-  \ par exemple \"!help\" qui appellera la commande \"help\".\n"
-livechat_configuration_channel_for_more_info: "Pour plus d'information sur comment\
-  \ configurer cette fonctionnalité, merci de vous référer à la documentation en cliquant\
-  \ sur le bouton d'aide.\n"
+configuration_description: "<h3>Configuration avancée de la chaîne</h3>\nLes paramètres
+  suivants concernant les options avancées de la chaîne :\nles utilisateur⋅rices pourrons
+  personnaliser certaines options pour les chaînes,\nactiver le bot de modération,
+  ...\n"
+livechat_configuration_channel_forbidden_words_desc: "Vous pouvez configurer quelques
+  mots qui seront automatiquement modérés par le bot (les messages contenant de tels
+  mots seront instantanément supprimés).\nVous pouvez aussi ajouter une raison optionnelle,
+  qui sera affichée à la place des messages supprimés.\nQuelques exemples de configuration
+  sont fournis sur la page de documentation.\n"
+livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Par défaut,
+  les messages des modérateur⋅rices ne seront pas supprimés quand ils contiennent
+  des mots interdits.\nEn cochant cette option, leur messages seront également supprimé.\n"
+livechat_configuration_channel_command_desc: "Vous pouvez configurer le bot pour répondre
+  à des commandes.\nUne commande est un message qui commence par un \"!\", comme par
+  exemple \"!help\" qui appellera la commande \"help\".\n"
+livechat_configuration_channel_for_more_info: "Pour plus d'information sur comment
+  configurer cette fonctionnalité, merci de vous référer à la documentation en cliquant
+  sur le bouton d'aide.\n"
 auto_ban_anonymous_ip_label: Bannir l'IP des utilisateur⋅rices anonymes, quand iels
   sont banni⋅es des salons
 invalid_value: Valeur invalide.
 livechat_configuration_channel_forbidden_words_comments_label: Commentaires
-livechat_configuration_channel_forbidden_words_comments_desc: "Vous pouvez ajouter\
-  \ ici quelques commentaires sur cette règle, pour vous rappeler comment et pourquoi\
-  \ vous l'avez créé.\nCes commentaires sont purement indicatifs, et n'ont pas d'influence\
-  \ sur le comportement du bot.\n"
-auto_ban_anonymous_ip_description: "En activant cette option, à chaque fois qu'un⋅e\
-  \ utilisateur⋅rice anonyme est banni⋅e d'un salon, son IP sera également bannie\
-  \ du serveur de tchat.\nAttention : si votre instance est ouverte aux inscriptions,\
-  \ un⋅e utilisateur⋅rice pourrait créer un salon piégé, y inviter des personnes,\
-  \ et automatiquement bannir les IPs des utilisateur⋅rices anonymes.\nLa liste des\
-  \ IPs bannie n'est pas enregistrée, et sera effacée au redémarrage du serveur, ou\
-  \ si vous changez certains paramètres du plugin.\nLes IPs bannies sont journalisées\
-  \ dans les journaux du serveur Prosody, donc les admins du serveur peuvent éventuellement\
-  \ utiliser des outils externes (comme par exemple fail2ban) pour bannir les IPs\
-  \ plus largement.\n"
+livechat_configuration_channel_forbidden_words_comments_desc: "Vous pouvez ajouter
+  ici quelques commentaires sur cette règle, pour vous rappeler comment et pourquoi
+  vous l'avez créé.\nCes commentaires sont purement indicatifs, et n'ont pas d'influence
+  sur le comportement du bot.\n"
+auto_ban_anonymous_ip_description: "En activant cette option, à chaque fois qu'un⋅e
+  utilisateur⋅rice anonyme est banni⋅e d'un salon, son IP sera également bannie du
+  serveur de tchat.\nAttention : si votre instance est ouverte aux inscriptions, un⋅e
+  utilisateur⋅rice pourrait créer un salon piégé, y inviter des personnes, et automatiquement
+  bannir les IPs des utilisateur⋅rices anonymes.\nLa liste des IPs bannie n'est pas
+  enregistrée, et sera effacée au redémarrage du serveur, ou si vous changez certains
+  paramètres du plugin.\nLes IPs bannies sont journalisées dans les journaux du serveur
+  Prosody, donc les admins du serveur peuvent éventuellement utiliser des outils externes
+  (comme par exemple fail2ban) pour bannir les IPs plus largement.\n"
 livechat_configuration_channel_quote_label2: Messages
+avatar_set_option_sepia: Sepia (mascotte Peertube)
+avatar_set_option_cat: Chats
+avatar_set_option_bird: Oiseaux
+avatar_set_option_fenec: Fennecs (mascotte Mobilizon)
+avatar_set_option_legacy: Anciens avatars Sepia (ceux inclus dans les versions précédentes
+  du plugin)
+avatar_set_label: Jeu d'avatars
+avatar_set_description: "Vous pouvez choisir parmi plusieurs jeux différents les avatars
+  par défaut qui seront utilisés pour les utilisateurs du tchat.\nVeuillez vous référer
+  à la documentation :\n<a href=\"https ://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
+  \ target=\"_blank\">Paramètres</a>.\n"
