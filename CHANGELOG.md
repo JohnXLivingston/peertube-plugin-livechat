@@ -1,5 +1,11 @@
 # Changelog
 
+## 8.2.1
+
+### Minor changes and fixes
+
+* Fix new avatars content-type.
+
 ## 8.2.0
 
 ### New features

@@ -10,8 +10,9 @@ local avatars_files = assert(module:get_option_array("peertubelivechat_random_vc
 local avatars = {};
 local function load_avatar(filename)
   local file = assert(io.open(path.join(avatars_dir, filename), "r"));
+  local filetype = filename.sub(filename, -3); -- jpg or png
   local result = {
-    type = 'image/jpg',
+    type = 'image/' .. filetype,
     content = b64(file:read("*a"))
   };
   file:close();
