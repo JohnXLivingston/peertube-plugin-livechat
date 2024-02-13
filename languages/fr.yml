@@ -387,3 +387,4 @@ avatar_set_description: "Vous pouvez choisir parmi plusieurs jeux différents le
   par défaut qui seront utilisés pour les utilisateurs du tchat.\nVeuillez vous référer
   à la documentation :\n<a href=\"https ://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
   \ target=\"_blank\">Paramètres</a>.\n"
+avatar_set_option_abstract: Abstrait
