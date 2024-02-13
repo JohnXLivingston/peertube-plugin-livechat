@@ -205,6 +205,8 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_public_jids', false)
     this.muc.set('muc_room_default_change_subject', false)
     this.muc.set('muc_room_default_history_length', 20)
+
+    this.muc.add('modules_enabled', 'muc_slow_mode')
   }
 
   useAnonymous (autoBanIP: boolean): void {

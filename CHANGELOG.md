@@ -2,6 +2,11 @@
 
 ## 8.3.0 (Not Released Yet)
 
+### New features
+
+* Slow mode (#192):
+  * new option in room configuration to set the slow mode delay (new prosody module mod_muc_slow_mode).
+
 ### Minor changes and fixes
 
 * Fix ConverseJS build: translations were missing, and only english was available.
