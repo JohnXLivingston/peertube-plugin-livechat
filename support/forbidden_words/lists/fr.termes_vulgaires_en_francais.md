@@ -8,8 +8,10 @@ License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
 Import script:
 
 ```bash
-node ./support/forbidden_words/import-wikimedia.mjs category --lang fr --service wiktionary --category 'Termes_vulgaires_en_français'
+node ./support/forbidden_words/import-wikimedia.mjs category --lang fr --service wiktionary --category 'Termes_vulgaires_en_français' | grep -vP '^.$'
 ```
+
+Note: we remove words with only one letter ("b", "c", "f")
 
 ## Usage
 
@@ -72,7 +74,6 @@ avoir les yeux en trou de pine
 avoir plein le cul
 avoir un balai dans le cul
 avoir une plume dans le cul
-b
 BAB
 bagouse
 baisable
@@ -101,8 +102,6 @@ bar à putes
 bat
 bâton
 batte
-bef
-beffen
 bengala
 benzer
 berlingue
@@ -143,6 +142,7 @@ botter le cul
 boucaque
 bouche à pipe
 boucle-la
+boudiner
 bouègre
 bouffable
 bouffer la chatte
@@ -169,9 +169,9 @@ branlette espagnole
 branlette intellectuelle
 branlette thaïlandaise
 branleur
+branleuse
 branlo
 branlotter
-brêle
 brise-burnes
 briser les couilles
 briser les noix
@@ -184,7 +184,6 @@ brouteur
 brouteuse
 burne
 bz
-c
 ça m’en touche une sans faire bouger l’autre
 cagasse
 cagoince
@@ -377,6 +376,8 @@ duconnot
 dugland
 éburné
 écouillé
+écrase-merde
+éjaculer
 emboîter
 emmanché
 emmancher
@@ -433,6 +434,7 @@ enfiler
 enfler
 enfoirage
 enfoiré
+enfoirée
 enfoirer
 enfourailler
 enfoutrer
@@ -460,7 +462,6 @@ et ta connerie
 étron
 exploser
 exploser le terrier
-f
 face de pet
 faciale
 faire
@@ -494,6 +495,7 @@ fille de pute
 film de boule
 film de boules
 fils de bâtard
+fils de catin
 fils de chien
 fils de chienne
 fils de garce
@@ -507,6 +509,8 @@ fiotte
 fister
 flûte
 foirade
+foire
+foirer
 fouf
 foufoune
 foufounette
@@ -519,6 +523,7 @@ fout-la-merde
 foutage de gueule
 fouteur
 fouteur de merde
+fouteuse
 fouteuse de merde
 foutoir
 foutre
@@ -535,6 +540,7 @@ foutriquer
 fuck
 fuck me boots
 fucker
+gamahucher
 garage à bite
 garage à bites
 gauchiasse
@@ -562,6 +568,7 @@ grosso merdo
 grouille
 gueule
 gueuler
+hostie
 imbaisable
 imbitabilité
 imbitable
@@ -580,6 +587,7 @@ l’avoir dans le cul
 le con de sa mère
 le con de ta mère
 lèche-cul
+lèche-fesses
 lèche-couilles
 lèchecul
 lécher le cul
@@ -591,9 +599,11 @@ limage
 limer
 lopette
 lunette de chiotte
+machine à baiser
 main au cul
 manche à couilles
 mange-merde
+mangeoire
 manger comme un chancre
 manger de la marde
 manger ses morts
@@ -648,12 +658,15 @@ moule à merde
 moule-bite
 mouron
 musarder
+n’avoir rien à foutre
 naaien
 ne plus se sentir pisser
 ne rien branler
 n’en avoir rien à battre
 n’en avoir rien à branler
 n’en avoir rien à foutre
+néo chatte
+néo-chatte
 nique
 nique sa mère
 nique ta mère
@@ -668,12 +681,14 @@ nulach’
 oh hisse, enculé
 on s’encule
 ordure
+ostie
 oui ou merde
 ouvrir sa grande gueule
 pachole
 pak pak
 pak-pak
 pakos
+panafricon
 panier
 papier-cul
 parachuter un congolais
@@ -682,6 +697,7 @@ pare-choc
 pare-chocs
 parle à mon cul, ma tête est malade
 partir en couille
+partir en couilles
 pays-bas
 PD
 peau d’hareng
@@ -716,6 +732,7 @@ pinocumettable
 pinocumettre
 pipe
 pipeuse
+pisse
 pisse-au-lit
 pisser
 pisser à la raie
@@ -725,6 +742,7 @@ pisser sa côtelette
 pisseur
 plan cul
 planter le javelot dans la moquette
+pleuvoir comme vache qui pisse
 plotte à cash
 plume
 pogne-cul
@@ -758,6 +776,7 @@ putain de sa mère
 putain de sa race
 putain de ta race
 putalike
+putasse
 putassier
 pute
 pute borgne
@@ -818,6 +837,7 @@ saint-sacrament
 saint-simonaque
 salaud
 salaude
+salaupard
 salle des fêtes
 salopard
 salope
@@ -970,6 +990,7 @@ vieille
 vier
 vier d’âne
 vtff
+XY
 y avoir une couille dans le pâté
 y avoir une couille dans le potage
 y’a bon
