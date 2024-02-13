@@ -24,7 +24,7 @@ async function getChannelConfigurationOptions (
   const logger = options.peertubeHelpers.logger
   const filePath = _getFilePath(options, channelId)
   if (!fs.existsSync(filePath)) {
-    logger.debug('No stored data for channel, returning default values')
+    logger.debug('No stored data for channel, returning null')
     return null
   }
   const content = await fs.promises.readFile(filePath, {
@@ -42,6 +42,9 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
       forbiddenWords: [],
       quotes: [],
       commands: []
+    },
+    slowMode: {
+      defaultDelay: 0
     }
   }
 }

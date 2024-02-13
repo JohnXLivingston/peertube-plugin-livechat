@@ -7,6 +7,10 @@ import { Affiliations, getVideoAffiliations, getChannelAffiliations } from '../.
 import { fillVideoCustomFields } from '../../custom-fields'
 import { getChannelInfosById } from '../../database/channel'
 import { RoomChannel } from '../../room-channel'
+import {
+  getChannelConfigurationOptions,
+  getDefaultChannelConfigurationOptions
+} from '../../configuration/channel/storage'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -25,8 +29,17 @@ interface RoomDefaults {
     // historylength: number
     moderated?: boolean
     archiving?: boolean
+
+    // Following fields are specific to livechat (for now), and requires a customized version for mod_muc_http_defaults.
+    slow_mode_delay?: number
   }
   affiliations?: Affiliations
+}
+
+async function defaultSlowModeDelay (options: RegisterServerOptions, channelId: number): Promise<number> {
+  const channelOptions = await getChannelConfigurationOptions(options, channelId) ??
+    getDefaultChannelConfigurationOptions(options)
+  return channelOptions.slowMode.defaultDelay
 }
 
 /**
@@ -74,8 +87,9 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
         const roomDefaults: RoomDefaults = {
           config: {
             name: channelInfos.displayName,
-            description: ''
+            description: '',
             // subject: channelInfos.displayName
+            slow_mode_delay: await defaultSlowModeDelay(options, channelId)
           },
           affiliations: affiliations
         }
@@ -126,8 +140,9 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
           config: {
             name: video.name,
             description: '',
-            language: video.language
+            language: video.language,
             // subject: video.name
+            slow_mode_delay: await defaultSlowModeDelay(options, video.channelId)
           },
           affiliations: affiliations
         }

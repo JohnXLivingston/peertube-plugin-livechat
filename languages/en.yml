@@ -331,6 +331,14 @@ livechat_configuration_desc: "Here you can configure some advanced options for c
 livechat_configuration_please_select: "Please select bellow one of your channel, to setup its chatting options."
 livechat_configuration_channel_title: "Channel options"
 livechat_configuration_channel_desc: "You can setup here some options for this channel (moderation policies, ...)."
+livechat_configuration_channel_default_slow_mode_label: "Slow mode"
+livechat_configuration_channel_default_slow_mode_desc: |
+  Default slow mode value for new chats:
+  <ul>
+    <li>0: slow mode disabled</li>
+    <li>Any positive integer: minimum time (in seconds) between two messages from the same user (moderators are not concerned)</li>
+  </ul>
+  This value applies for new chat rooms. To change this value for an already existing room, you have to use the room configuration menu.
 livechat_configuration_channel_enable_bot_label: "Enable moderation bot"
 livechat_configuration_channel_bot_options_title: "Moderation bot options"
 livechat_configuration_channel_forbidden_words_label: "Forbidden words or expressions"

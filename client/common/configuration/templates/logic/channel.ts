@@ -165,7 +165,19 @@ async function vivifyConfigurationChannel (
 
   const validateData: Function = async (channelConfigurationOptions: ChannelConfigurationOptions): Promise<boolean> => {
     const botConf = channelConfigurationOptions.bot
+    const slowModeDefaultDelay = channelConfigurationOptions.slowMode.defaultDelay
     const errorFieldSelectors = []
+
+    if (
+      (typeof slowModeDefaultDelay !== 'number') ||
+      isNaN(slowModeDefaultDelay) ||
+      slowModeDefaultDelay < 0 ||
+      slowModeDefaultDelay > 1000
+    ) {
+      const selector = '#peertube-livechat-slow-mode-default-delay'
+      errorFieldSelectors.push(selector)
+      await displayError(selector, await translate(LOC_INVALID_VALUE))
+    }
 
     // If !bot.enabled, we don't have to validate these fields:
     // The backend will ignore those values.
@@ -220,6 +232,9 @@ async function vivifyConfigurationChannel (
     const data = new FormData(form)
     removeDisplayedErrors()
     const channelConfigurationOptions: ChannelConfigurationOptions = {
+      slowMode: {
+        defaultDelay: parseInt(data.get('slow_mode_default_delay')?.toString() ?? '0')
+      },
       bot: {
         enabled: data.get('bot') === '1',
         nickname: data.get('bot_nickname')?.toString() ?? '',

@@ -23,6 +23,11 @@ async function sanitizeChannelConfigurationOptions (
     throw new Error('Invalid data.bot data type')
   }
 
+  const slowModeData = data.slowMode ?? { defaultDelay: 0 } // not present in livechat <= 8.2.0
+  if (typeof slowModeData !== 'object') {
+    throw new Error('Invalid data.slowMode data type')
+  }
+
   const result: ChannelConfigurationOptions = {
     bot: {
       enabled: _readBoolean(botData, 'enabled'),
@@ -31,6 +36,9 @@ async function sanitizeChannelConfigurationOptions (
       quotes: _readQuotes(botData),
       commands: _readCommands(botData)
       // TODO: bannedJIDs
+    },
+    slowMode: {
+      defaultDelay: _readInteger(slowModeData, 'defaultDelay', 0, 1000)
     }
   }
 
