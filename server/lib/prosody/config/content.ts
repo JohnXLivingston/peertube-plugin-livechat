@@ -207,6 +207,7 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_history_length', 20)
 
     this.muc.add('modules_enabled', 'muc_slow_mode')
+    this.muc.add('slow_mode_delay_form_position', 120)
   }
 
   useAnonymous (autoBanIP: boolean): void {

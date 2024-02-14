@@ -22,6 +22,14 @@ local valid_roles = muc_util.valid_roles;
 -- Namespaces
 local xmlns_muc = "http://jabber.org/protocol/muc";
 
+-- Options
+
+-- form_position: the position in the room config form (this value will be passed as priority for the "muc-config-form" hook).
+-- Depending on your application, it is possible that the slow mode is more important than other fields (for example for a video streaming service).
+-- So there is an option to change this.
+-- By default, field will be between muc#roomconfig_changesubject and muc#roomconfig_moderatedroom
+local form_position = module:get_option_number("slow_mode_delay_form_position") or 80-2;
+
 -- Getter/Setter
 local function get_slow_mode_delay(room)
 	return room._data.slow_mode_delay or 0;
@@ -68,7 +76,7 @@ module:hook("muc-config-submitted/muc#roomconfig_slow_mode_delay", function(even
 	end
 end);
 
-module:hook("muc-config-form", add_form_option, 100-4);
+module:hook("muc-config-form", add_form_option, form_position);
 
 -- handling groupchat messages
 function handle_groupchat(event)
