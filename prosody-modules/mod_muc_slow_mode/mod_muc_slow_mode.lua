@@ -55,7 +55,7 @@ local function add_disco_form(event)
   event.formdata["muc#roominfo_slow_mode_delay"] = get_slow_mode_delay(event.room);
 end
 
-module:hook("mub-disco#info", add_disco_form);
+module:hook("muc-disco#info", add_disco_form);
 
 -- Config form declaration
 local function add_form_option(event)
