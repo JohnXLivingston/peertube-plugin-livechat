@@ -32,21 +32,21 @@ local form_position = module:get_option_number("slow_mode_delay_form_position") 
 
 -- Getter/Setter
 local function get_slow_mode_delay(room)
-	return room._data.slow_mode_delay or 0;
+  return room._data.slow_mode_delay or 0;
 end
 
 local function set_slow_mode_delay(room, delay)
   if delay then
-		delay = assert(tonumber(delay), "Slow mode delay is not a valid number");
-	end
+    delay = assert(tonumber(delay), "Slow mode delay is not a valid number");
+  end
   if delay and delay < 0 then
     delay = 0;
   end
 
   if get_slow_mode_delay(room) == delay then return false; end
 
-	room._data.slow_mode_delay = delay;
-	return true;
+  room._data.slow_mode_delay = delay;
+  return true;
 end
 
 -- Discovering support
@@ -65,7 +65,7 @@ local function add_form_option(event)
   table.insert(event.form, {
     name = "muc#roomconfig_slow_mode_delay";
     type = "text-single";
-		datatype = "xs:integer";
+    datatype = "xs:integer";
     label = "Slow Mode (0=disabled, any positive integer= minimal delay in seconds between two messages from the same user)";
     desc = "Minimal delay, in seconds, between two messages for the same user in the room. If value is set to 0, the slow mode is not active.";
     value = get_slow_mode_delay(event.room);
@@ -73,10 +73,10 @@ local function add_form_option(event)
 end
 
 module:hook("muc-config-submitted/muc#roomconfig_slow_mode_delay", function(event)
-	if set_slow_mode_delay(event.room, event.value) then
+  if set_slow_mode_delay(event.room, event.value) then
     -- status 104 = configuration change: Inform occupants that a non-privacy-related room configuration change has occurred
-		event.status_codes["104"] = true;
-	end
+    event.status_codes["104"] = true;
+  end
 end);
 
 module:hook("muc-config-form", add_form_option, form_position);
@@ -94,16 +94,16 @@ function handle_groupchat(event)
   end
 
   -- Checking user's permissions (moderators are not subject to slow mode)
-	local actor = stanza.attr.from;
-	local actor_nick = room:get_occupant_jid(actor);
+  local actor = stanza.attr.from;
+  local actor_nick = room:get_occupant_jid(actor);
   local actor_jid = jid_bare(actor);
   -- Only checking role, not affiliation (slow mode only applies on users currently connected to the room)
   local role = room:get_role(actor_nick);
-	if valid_roles[role or "none"] >= valid_roles.moderator then
+  if valid_roles[role or "none"] >= valid_roles.moderator then
     -- user bypasses the slow mode.
     -- module:log("debug", "User is moderator, bypassing slow mode");
-		return;
-	end
+    return;
+  end
 
   if not room.slow_mode_last_messages then
     -- We store last message time for each users in room.slow_mode_last_messages:
