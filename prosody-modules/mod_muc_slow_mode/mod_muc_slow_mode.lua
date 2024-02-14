@@ -42,13 +42,16 @@ local function set_slow_mode_delay(room, delay)
   if delay and delay < 0 then
     delay = 0;
   end
+
+  if get_slow_mode_delay(room) == delay then return false; end
+
 	room._data.slow_mode_delay = delay;
 	return true;
 end
 
 -- Discovering support
 local function add_disco_form(event)
-  table.insert(event.room, {
+  table.insert(event.form, {
     name = "muc#roominfo_slow_mode_delay";
     value = "";
   });
