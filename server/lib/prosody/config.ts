@@ -76,7 +76,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   let certsDir: string | undefined = path.resolve(dir, 'certs')
   let certsDirIsCustom = false
   if (settings['prosody-room-allow-s2s'] && (settings['prosody-certificates-dir'] as string ?? '') !== '') {
-    if (!fs.statSync(settings['prosody-certificates-dir'] as string).isDirectory()) {
+    if (!(await fs.promises.stat(settings['prosody-certificates-dir'] as string)).isDirectory()) {
       // We can throw an exception here...
       // Because if the user input a wrong directory, the plugin will not register,
       // and he will never be able to fix the conf
