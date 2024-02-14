@@ -49,10 +49,10 @@ end
 -- Discovering support
 local function add_disco_form(event)
   table.insert(event.room, {
-    name = "muc#roomconfig_slow_mode_delay";
+    name = "muc#roominfo_slow_mode_delay";
     value = "";
   });
-  event.formdata["muc#roomconfig_slow_mode_delay"] = get_slow_mode_delay(event.room);
+  event.formdata["muc#roominfo_slow_mode_delay"] = get_slow_mode_delay(event.room);
 end
 
 module:hook("mub-disco#info", add_disco_form);
