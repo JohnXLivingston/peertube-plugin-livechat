@@ -87,7 +87,17 @@ fi
 
 echo "Building ConverseJS..."
 cd "$converse_build_dir"
-npx webpack --config webpack.livechat.js
+
+# Note: following lines are from the ConverseJS Makefile (see "make dist" code), where we just replace the "npm run build" with our webpack.livechat.js.
+#   Ideally this should just be `npm run build`.
+#   The additional steps are necessary to properly generate JSON chunk files
+#   from the .po files. The nodeps config uses preset-env with IE11.
+#   Somehow this is necessary.
+npm run nodeps
+TMPD=$(mktemp -d)
+mv dist/locales $TMPD && npx webpack --config webpack.livechat.js && mv $TMPD/locales/*-po.js dist/locales/ && rm -rf $TMPD
+rm dist/converse-no-dependencies.js dist/converse-no-dependencies.js.map
+
 cd $rootdir
 
 echo "Copying ConverseJS dist files..."
