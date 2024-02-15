@@ -1,5 +1,11 @@
 # Changelog
 
+## 8.3.0 (Not Released Yet)
+
+### Minor changes and fixes
+
+* Fix ConverseJS build: translations were missing, and only english was available.
+
 ## 8.2.1
 
 ### Minor changes and fixes
