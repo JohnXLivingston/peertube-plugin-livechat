@@ -8,7 +8,8 @@
   * new option in room configuration to set the slow mode duration (new prosody module mod_muc_slow_mode).
   * default duration is configurable in channel's chat rooms options.
   * backend rejects messages when the slow mode is not respected.
-  * frontend: display an infobox when slow mode is active.
+  * front-end: display an infobox when slow mode is active.
+  * front-end: disable the message field during the slow mode duration.
 
 ### Minor changes and fixes
 
