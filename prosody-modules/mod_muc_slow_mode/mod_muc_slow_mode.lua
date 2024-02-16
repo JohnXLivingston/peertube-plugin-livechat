@@ -28,34 +28,34 @@ local xmlns_muc = "http://jabber.org/protocol/muc";
 -- Depending on your application, it is possible that the slow mode is more important than other fields (for example for a video streaming service).
 -- So there is an option to change this.
 -- By default, field will be between muc#roomconfig_changesubject and muc#roomconfig_moderatedroom
-local form_position = module:get_option_number("slow_mode_delay_form_position") or 80-2;
+local form_position = module:get_option_number("slow_mode_duration_form_position") or 80-2;
 
 -- Getter/Setter
-local function get_slow_mode_delay(room)
-  return room._data.slow_mode_delay or 0;
+local function get_slow_mode_duration(room)
+  return room._data.slow_mode_duration or 0;
 end
 
-local function set_slow_mode_delay(room, delay)
-  if delay then
-    delay = assert(tonumber(delay), "Slow mode delay is not a valid number");
+local function set_slow_mode_duration(room, duration)
+  if duration then
+    duration = assert(tonumber(duration), "Slow mode duration is not a valid number");
   end
-  if delay and delay < 0 then
-    delay = 0;
+  if duration and duration < 0 then
+    duration = 0;
   end
 
-  if get_slow_mode_delay(room) == delay then return false; end
+  if get_slow_mode_duration(room) == duration then return false; end
 
-  room._data.slow_mode_delay = delay;
+  room._data.slow_mode_duration = duration;
   return true;
 end
 
 -- Discovering support
 local function add_disco_form(event)
   table.insert(event.form, {
-    name = "muc#roominfo_slow_mode_delay";
+    name = "muc#roominfo_slow_mode_duration";
     value = "";
   });
-  event.formdata["muc#roominfo_slow_mode_delay"] = get_slow_mode_delay(event.room);
+  event.formdata["muc#roominfo_slow_mode_duration"] = get_slow_mode_duration(event.room);
 end
 
 module:hook("muc-disco#info", add_disco_form);
@@ -63,17 +63,17 @@ module:hook("muc-disco#info", add_disco_form);
 -- Config form declaration
 local function add_form_option(event)
   table.insert(event.form, {
-    name = "muc#roomconfig_slow_mode_delay";
+    name = "muc#roomconfig_slow_mode_duration";
     type = "text-single";
     datatype = "xs:integer";
-    label = "Slow Mode (0=disabled, any positive integer= minimal delay in seconds between two messages from the same user)";
-    desc = "Minimal delay, in seconds, between two messages for the same user in the room. If value is set to 0, the slow mode is not active.";
-    value = get_slow_mode_delay(event.room);
+    label = "Slow Mode (0=disabled, any positive integer= users can send a message every X seconds.)";
+    -- desc = "";
+    value = get_slow_mode_duration(event.room);
   });
 end
 
-module:hook("muc-config-submitted/muc#roomconfig_slow_mode_delay", function(event)
-  if set_slow_mode_delay(event.room, event.value) then
+module:hook("muc-config-submitted/muc#roomconfig_slow_mode_duration", function(event)
+  if set_slow_mode_duration(event.room, event.value) then
     -- status 104 = configuration change: Inform occupants that a non-privacy-related room configuration change has occurred
     event.status_codes["104"] = true;
   end
@@ -86,8 +86,8 @@ function handle_groupchat(event)
   local origin, stanza = event.origin, event.stanza;
   local room = event.room;
 
-  local delay = get_slow_mode_delay(room) or 0;
-  if delay <= 0 then
+  local duration = get_slow_mode_duration(room) or 0;
+  if duration <= 0 then
     -- no slow mode for this room
     -- module:log("debug", "No slow mode for this room");
     return;
@@ -119,14 +119,14 @@ function handle_groupchat(event)
   local previous = room.slow_mode_last_messages[actor_jid];
   -- module:log(
   --   "debug",
-  --   "Last message for user %s was at %s, now is %s, delay is %s, now - previous is %s",
+  --   "Last message for user %s was at %s, now is %s, duration is %s, now - previous is %s",
   --   actor_jid,
   --   previous or 0,
   --   now,
-  --   delay,
+  --   duration,
   --   (now - (previous or 0))
   -- );
-  if ((not previous) or (now - previous > delay)) then
+  if ((not previous) or (now - previous > duration)) then
     -- module:log("debug", "Message accepted");
     room.slow_mode_last_messages[actor_jid] = now;
     return;
@@ -139,7 +139,7 @@ function handle_groupchat(event)
     "wait",
     -- error_condition = 'policy-violation' (see RFC 6120 Defined Error Conditions https://xmpp.org/rfcs/rfc6120.html#stanzas-error-conditions)
     "policy-violation",
-    "You have exceeded the limit imposed by the slow mode in this room. You have to wait " .. delay .. " seconds between messages. Please try again later"
+    "You have exceeded the limit imposed by the slow mode in this room. You have to wait " .. duration .. " seconds between messages. Please try again later"
   );
 
   -- Note: following commented lines were inspired by mod_muc_limits, but it seems it is not required.

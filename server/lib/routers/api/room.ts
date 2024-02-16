@@ -31,15 +31,15 @@ interface RoomDefaults {
     archiving?: boolean
 
     // Following fields are specific to livechat (for now), and requires a customized version for mod_muc_http_defaults.
-    slow_mode_delay?: number
+    slow_mode_duration?: number
   }
   affiliations?: Affiliations
 }
 
-async function defaultSlowModeDelay (options: RegisterServerOptions, channelId: number): Promise<number> {
+async function defaultSlowModeDuration (options: RegisterServerOptions, channelId: number): Promise<number> {
   const channelOptions = await getChannelConfigurationOptions(options, channelId) ??
     getDefaultChannelConfigurationOptions(options)
-  return channelOptions.slowMode.defaultDelay
+  return channelOptions.slowMode.defaultDuration
 }
 
 /**
@@ -89,7 +89,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
             name: channelInfos.displayName,
             description: '',
             // subject: channelInfos.displayName
-            slow_mode_delay: await defaultSlowModeDelay(options, channelId)
+            slow_mode_duration: await defaultSlowModeDuration(options, channelId)
           },
           affiliations: affiliations
         }
@@ -142,7 +142,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
             description: '',
             language: video.language,
             // subject: video.name
-            slow_mode_delay: await defaultSlowModeDelay(options, video.channelId)
+            slow_mode_duration: await defaultSlowModeDuration(options, video.channelId)
           },
           affiliations: affiliations
         }

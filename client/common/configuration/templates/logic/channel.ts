@@ -165,16 +165,16 @@ async function vivifyConfigurationChannel (
 
   const validateData: Function = async (channelConfigurationOptions: ChannelConfigurationOptions): Promise<boolean> => {
     const botConf = channelConfigurationOptions.bot
-    const slowModeDefaultDelay = channelConfigurationOptions.slowMode.defaultDelay
+    const slowModeDefaultDuration = channelConfigurationOptions.slowMode.defaultDuration
     const errorFieldSelectors = []
 
     if (
-      (typeof slowModeDefaultDelay !== 'number') ||
-      isNaN(slowModeDefaultDelay) ||
-      slowModeDefaultDelay < 0 ||
-      slowModeDefaultDelay > 1000
+      (typeof slowModeDefaultDuration !== 'number') ||
+      isNaN(slowModeDefaultDuration) ||
+      slowModeDefaultDuration < 0 ||
+      slowModeDefaultDuration > 1000
     ) {
-      const selector = '#peertube-livechat-slow-mode-default-delay'
+      const selector = '#peertube-livechat-slow-mode-default-duration'
       errorFieldSelectors.push(selector)
       await displayError(selector, await translate(LOC_INVALID_VALUE))
     }
@@ -233,7 +233,7 @@ async function vivifyConfigurationChannel (
     removeDisplayedErrors()
     const channelConfigurationOptions: ChannelConfigurationOptions = {
       slowMode: {
-        defaultDelay: parseInt(data.get('slow_mode_default_delay')?.toString() ?? '0')
+        defaultDuration: parseInt(data.get('slow_mode_default_duration')?.toString() ?? '0')
       },
       bot: {
         enabled: data.get('bot') === '1',

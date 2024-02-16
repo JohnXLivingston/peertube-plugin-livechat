@@ -336,7 +336,7 @@ livechat_configuration_channel_default_slow_mode_desc: |
   Default slow mode value for new chats:
   <ul>
     <li>0: slow mode disabled</li>
-    <li>Any positive integer: minimum time (in seconds) between two messages from the same user (moderators are not concerned)</li>
+    <li>Any positive integer: users can send a message every X seconds (moderators are not limited)</li>
   </ul>
   This value applies for new chat rooms. To change this value for an already existing room, you have to use the room configuration menu.
 livechat_configuration_channel_enable_bot_label: "Enable moderation bot"
@@ -388,4 +388,4 @@ livechat_configuration_channel_bot_nickname: "Bot nickname"
 
 invalid_value: "Invalid value."
 
-slow_mode_info: "Slow mode is enabled, you have to wait 10 seconds between two messages."
+slow_mode_info: "Slow mode is enabled, users can send a message every %1$s seconds."

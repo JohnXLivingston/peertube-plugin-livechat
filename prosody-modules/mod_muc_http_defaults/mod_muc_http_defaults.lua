@@ -4,7 +4,7 @@
 -- This file is MIT licensed. Please see the
 -- COPYING file in the source package for more information.
 --
--- This version contains a modification to take into account new config option "slow_mode_delay".
+-- This version contains a modification to take into account new config option "slow_mode_duration".
 -- This option is introduced in the Peertube livechat plugin, by mod_muc_slow_mode.
 -- There will be a XEP proposal. When done, these modifications will be submitted to the mod_muc_http_defaults maintainer.
 -- 
@@ -111,8 +111,8 @@ local function apply_config(room, settings)
 		if type(config.archiving) == "boolean" then room._config.archiving = config.archiving; end
 
 		-- specific to peertube-plugin-livechat:
-		if (type(config.slow_mode_delay) == "number") and config.slow_mode_delay >= 0 then
-				room._data.slow_mode_delay = config.slow_mode_delay;
+		if (type(config.slow_mode_duration) == "number") and config.slow_mode_duration >= 0 then
+				room._data.slow_mode_duration = config.slow_mode_duration;
 		end
 	elseif config ~= nil then
 		module:log("error", "Invalid config returned from API for %s: %q", room.jid, config);

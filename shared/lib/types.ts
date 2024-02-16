@@ -75,7 +75,7 @@ interface ChannelConfigurationOptions {
     // TODO: bannedJIDs: string[]
   }
   slowMode: {
-    defaultDelay: number
+    defaultDuration: number
   }
 }
 

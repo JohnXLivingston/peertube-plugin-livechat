@@ -28,20 +28,20 @@ class SlowMode extends CustomElement {
     this.model = _converse.chatboxes.get(this.jid)
     await this.model.initialized
 
-    this.listenTo(this.model.config, 'change:slow_mode_delay', () => {
+    this.listenTo(this.model.config, 'change:slow_mode_duration', () => {
       this.requestUpdate()
     })
   }
 
   render () {
-    if (!(parseInt(this.model.config.get('slow_mode_delay')) > 0)) { // This includes NaN, for which ">0"===false
+    if (!(parseInt(this.model.config.get('slow_mode_duration')) > 0)) { // This includes NaN, for which ">0"===false
       return html``
     }
     return html`
       <converse-icon class="fa fa-info-circle" size="1.2em"></converse-icon>
       ${__(
-        'Slow mode is enabled, you have to wait %1$s seconds between two messages.',
-        this.model.config.get('slow_mode_delay')
+        'Slow mode is enabled, users can send a message every %1$s seconds.',
+        this.model.config.get('slow_mode_duration')
       )}`
   }
 }
