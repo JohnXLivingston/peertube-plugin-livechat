@@ -71,7 +71,7 @@ You can change the persistence behaviour.
 
 There are several options that can be changed.
 
-![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
+![Configure chat room](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)
 
 You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message.
 

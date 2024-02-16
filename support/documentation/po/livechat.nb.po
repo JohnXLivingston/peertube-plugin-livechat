@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-02-12 16:44+0100\n"
+"POT-Creation-Date: 2024-02-16 18:09+0100\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nb_NO/>\n"
@@ -2229,6 +2229,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgstr ""
 
@@ -2239,7 +2240,8 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "![Configure chat room](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text
@@ -2463,6 +2465,11 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
 msgstr ""
 
@@ -2486,7 +2493,7 @@ msgstr ""
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, no-wrap
-msgid "Plugin peertube-plugin-livechat advances moderation features"
+msgid "Plugin peertube-plugin-livechat advanced moderation features"
 msgstr ""
 
 #. type: Plain text
@@ -2570,15 +2577,137 @@ msgid "You can list all existing chatrooms: in the plugin settings screen, there
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/viewers.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, no-wrap
-msgid "How to chat for stream viewers"
+msgid "Plugin peertube-plugin-livechat slow mode"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, no-wrap
+msgid "Slow mode"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This features comes with the livechat plugin version 8.3.0."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Introduction"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "As a streamer, you can choose to rate limit your viewers messages in the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This can be really usefull to:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "avoid message flooding"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "avoid unreadable chat if there are many viewsers talking"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "You can set a number of seconds that users will have to wait after sending a message, before sending another."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This limitation does not apply to moderators."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, no-wrap
+msgid "Default channel value"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "Setting the value to `0` will disable the feature."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "Setting the value to a positive integer will set the period during which users will not be able to post additional messages."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, no-wrap
+msgid "Modifying the value for an existing chatroom"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "To modify the slow mode duration for an existing chatroom, you first have to open it in [full screen mode](/peertube-plugin-livechat/documentation/user/viewers).  Then, open the top menu and click on \"configure\"."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "You just have to change the \"slow mode\" field value."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "The modification will immediatly apply."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "For viewers"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "If the slow mode is enabled, users will be informed by an message."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "![Slow mode infobox](/peertube-plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "When they send a message, the input field will be disabled for X seconds (where X is the slow mode duration)."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "How to chat for stream viewers"
 msgstr ""
 
 #. type: Title ##
@@ -2827,12 +2956,6 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "You can use the searchbox in the left menu to quickly find specific documentation parts."
-msgstr ""
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "Introduction"
 msgstr ""
 
 #. type: Title ##

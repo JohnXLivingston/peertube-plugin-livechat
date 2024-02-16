@@ -20,5 +20,6 @@ By clicking on a channel, you will then be able to setup some options for your c
 
 Here you can configure:
 
+* [The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)
 * [The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)
 * More features to come...

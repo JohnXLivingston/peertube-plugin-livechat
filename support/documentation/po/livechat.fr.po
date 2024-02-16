@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-02-12 16:44+0100\n"
+"POT-Creation-Date: 2024-02-16 18:09+0100\n"
 "PO-Revision-Date: 2024-02-13 13:25+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1674,18 +1673,12 @@ msgstr "![Fénnecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=sh
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_abstract %}}: [David Revoy's Abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_abstract %}} : [Générateur d'avatar "
-"abstrait de David Revoy](https ://www.peppercarrot.com/extras/html/"
-"2017_abstract-generator/index.php), licence [CC-By](https ://creativecommons."
-"org/licenses/by/4.0/)"
+msgstr "{{% livechat_label avatar_set_option_abstract %}} : [Générateur d'avatar abstrait de David Revoy](https ://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), licence [CC-By](https ://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Abstracts](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px)"
-msgstr ""
-"![Abstraits](/peertube-plugin-livechat/images/avatar_abstract.png "
-"?classes=shadow,border&height=40px)"
+msgstr "![Abstraits](/peertube-plugin-livechat/images/avatar_abstract.png ?classes=shadow,border&height=40px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2314,6 +2307,7 @@ msgstr "Vous pouvez changer le comportement de la persistance. [Ouvrez le tchat 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgstr "![Menu du haut](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 
@@ -2324,7 +2318,10 @@ msgstr "Il y a plusieurs options qui peuvent être changées."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, fuzzy
+#| msgid "![Configure chat room](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgid "![Configure chat room](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)"
 msgstr "![Configurer le salon](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
@@ -2548,6 +2545,13 @@ msgstr "Ici vous pouvez configurer :"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
+msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
+msgstr "[Le bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/bot)"
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
 msgstr "[Le bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/bot)"
 
@@ -2570,8 +2574,9 @@ msgstr "Pour les streameur⋅euses"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
-#, no-wrap
-msgid "Plugin peertube-plugin-livechat advances moderation features"
+#, fuzzy, no-wrap
+#| msgid "Plugin peertube-plugin-livechat advances moderation features"
+msgid "Plugin peertube-plugin-livechat advanced moderation features"
 msgstr "Fonctionnalités de modération avancées du plugin peertube-plugin-livechat"
 
 #. type: Plain text
@@ -2655,16 +2660,151 @@ msgid "You can list all existing chatrooms: in the plugin settings screen, there
 msgstr "Vous pouvez lister toutes les salles de discussion existantes : dans l'écran des paramètres du plugin, il y a un bouton \"Lister les salles\"."
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/viewers.md
-#, no-wrap
-msgid "How to chat for stream viewers"
-msgstr "Comment tchater pour les spectateur⋅rices"
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, fuzzy, no-wrap
+#| msgid "Plugin peertube-plugin-livechat installation guide"
+msgid "Plugin peertube-plugin-livechat slow mode"
+msgstr "Installation du plugin peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, no-wrap
+msgid "Slow mode"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, fuzzy
+#| msgid "This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance's admins."
+msgid "This features comes with the livechat plugin version 8.3.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 8.0.0, et peut être désactivée par les admins de votre instance."
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Introduction"
+msgstr "Introduction"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "As a streamer, you can choose to rate limit your viewers messages in the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This can be really usefull to:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "avoid message flooding"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "avoid unreadable chat if there are many viewsers talking"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "You can set a number of seconds that users will have to wait after sending a message, before sending another."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This limitation does not apply to moderators."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, no-wrap
+msgid "Default channel value"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, fuzzy
+#| msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
+msgstr "Pour accéder à cette page, veuillez vous référer à la [documentation sur la configuration des chaînes](/peertube-plugin-livechat/fr/documentation/user/streamers/channel)."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, fuzzy
+#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgstr "![Configuration de la chaîne](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "Setting the value to `0` will disable the feature."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "Setting the value to a positive integer will set the period during which users will not be able to post additional messages."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, no-wrap
+msgid "Modifying the value for an existing chatroom"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, fuzzy
+#| msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
+msgid "To modify the slow mode duration for an existing chatroom, you first have to open it in [full screen mode](/peertube-plugin-livechat/documentation/user/viewers).  Then, open the top menu and click on \"configure\"."
+msgstr "Vous pouvez changer le comportement de la persistance. [Ouvrez le tchat en plein écran](/peertube-plugin-livechat/fr/documentation/user/viewers), puis ouvrez le menu du haut et cliquez sur «Configurer»."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, fuzzy
+#| msgid "you just have to declare its type, not its value"
+msgid "You just have to change the \"slow mode\" field value."
+msgstr "vous ne devez déclarer que son type, pas sa valeur"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "The modification will immediatly apply."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "For viewers"
 msgstr "Pour les spectateur⋅rices"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "If the slow mode is enabled, users will be informed by an message."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, fuzzy
+#| msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgid "![Slow mode infobox](/peertube-plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px)"
+msgstr "![Menu du haut](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "When they send a message, the input field will be disabled for X seconds (where X is the slow mode duration)."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "How to chat for stream viewers"
+msgstr "Comment tchater pour les spectateur⋅rices"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -2913,12 +3053,6 @@ msgstr "Pour avoir un aperçu des possibilités de ce plugin, aller jeter un œi
 #: support/documentation/content/en/_index.md
 msgid "You can use the searchbox in the left menu to quickly find specific documentation parts."
 msgstr "Vous pouvez utiliser la barre de recherche dans le menu gauche pour rapidement trouver des documentations spécifiques."
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "Introduction"
-msgstr "Introduction"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
