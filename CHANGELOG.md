@@ -8,6 +8,7 @@
   * new option in room configuration to set the slow mode delay (new prosody module mod_muc_slow_mode).
   * default delay is configurable in channel's chat rooms options.
   * backend rejects messages when the slow mode is not respected.
+  * frontend: display an infobox when slow mode is active.
 
 ### Minor changes and fixes
 

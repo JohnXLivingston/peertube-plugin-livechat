@@ -2,6 +2,7 @@ import { __ } from 'i18n'
 import { _converse, api } from '@converse/headless/core'
 import { html } from 'lit'
 import tplMucBottomPanel from '../../src/plugins/muc-views/templates/muc-bottom-panel.js'
+import { CustomElement } from 'shared/components/element.js'
 
 async function setNickname (ev, model) {
   ev.preventDefault()
@@ -13,6 +14,41 @@ async function setNickname (ev, model) {
   _converse.api.trigger('livechatViewerModeSetNickname', model, nick, {
     synchronous: true
   })
+}
+
+class SlowMode extends CustomElement {
+  static get properties () {
+    return {
+      jid: { type: String }
+    }
+  }
+
+  async connectedCallback () {
+    super.connectedCallback()
+    this.model = _converse.chatboxes.get(this.jid)
+    await this.model.initialized
+
+    this.listenTo(this.model.config, 'change:slow_mode_delay', () => {
+      this.requestUpdate()
+    })
+  }
+
+  render () {
+    if (!(parseInt(this.model.config.get('slow_mode_delay')) > 0)) { // This includes NaN, for which ">0"===false
+      return html``
+    }
+    return html`
+      <converse-icon class="fa fa-info-circle" size="1.2em"></converse-icon>
+      ${__(
+        'Slow mode is enabled, you have to wait %1$s seconds between two messages.',
+        this.model.config.get('slow_mode_delay')
+      )}`
+  }
+}
+api.elements.define('livechat-slow-mode', SlowMode)
+
+const tplSlowMode = (o) => {
+  return html`<livechat-slow-mode jid=${o.model.get('jid')}>`
 }
 
 export default (o) => {
@@ -39,7 +75,11 @@ export default (o) => {
             </fieldset>
         </form>
     </div>
+    ${tplSlowMode(o)}
     ${tplMucBottomPanel(o)}`
   }
-  return tplMucBottomPanel(o)
+
+  return html`
+    ${tplSlowMode(o)}
+    ${tplMucBottomPanel(o)}`
 }

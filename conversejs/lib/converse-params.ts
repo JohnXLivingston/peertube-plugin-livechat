@@ -78,7 +78,8 @@ function defaultConverseParams (
       'livechatWindowTitlePlugin',
       'livechatSpecifics',
       'livechatViewerModePlugin',
-      'livechatDisconnectOnUnloadPlugin'
+      'livechatDisconnectOnUnloadPlugin',
+      'converse-slow-mode'
     ],
     show_retraction_warning: false, // No need to use this warning (except if we open to external clients?)
     muc_show_info_messages: mucShowInfoMessages,

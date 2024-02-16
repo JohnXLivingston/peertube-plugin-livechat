@@ -10,6 +10,7 @@ import {
 } from './lib/converse-params'
 import { getLocalAuthentInfos } from './lib/auth'
 import { randomNick, getPreviousAnonymousNick, setPreviousAnonymousNick } from './lib/nick'
+import { slowModePlugin } from './lib/slow-mode/plugin'
 
 declare global {
   interface Window {
@@ -108,6 +109,8 @@ window.initConverse = async function initConverse (initConverseParams: InitConve
         }
       }
     })
+
+    converse.plugins.add('converse-slow-mode', slowModePlugin)
 
     // livechatSpecifics plugins add some customization for the livechat plugin.
     converse.plugins.add('livechatSpecifics', {

@@ -387,3 +387,5 @@ livechat_configuration_channel_banned_jids_label: "Banned users and patterns"
 livechat_configuration_channel_bot_nickname: "Bot nickname"
 
 invalid_value: "Invalid value."
+
+slow_mode_info: "Slow mode is enabled, you have to wait 10 seconds between two messages."

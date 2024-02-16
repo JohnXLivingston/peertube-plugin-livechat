@@ -16,6 +16,13 @@
   }
 
   .chatbox {
+    // Slow mode info box
+    livechat-slow-mode {
+      border-top: var(--chatroom-message-input-border-top);
+      color: var(--peertube-main-foreground);
+      background-color: var(--peertube-main-background);
+    }
+
     converse-chat-toolbar {
       color: var(--peertube-main-foreground);
       background-color: var(--peertube-main-background);
