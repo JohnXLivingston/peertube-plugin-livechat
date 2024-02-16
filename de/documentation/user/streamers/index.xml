@@ -5,7 +5,11 @@ Je nachdem, welche Plugins auf Ihrer Peertube-Instanz installiert sind, können 
 Im linken Menü von Peertube gibt es einen Eintrag &amp;ldquo;Chaträume&amp;rdquo;:
 Dieser &amp;ldquo;Chaträume&amp;rdquo; Link führt Sie zu einer Liste Ihrer Kanäle. Wenn Sie auf einen Kanal klicken, können Sie einige Optionen für Ihre Kanäle einrichten:
 Hier können Sie konfigurieren:
-Den Chatbot Weitere Funktionen werden folgen&amp;hellip;</description></item><item><title>Moderation</title><link>https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/user/streamers/moderation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/user/streamers/moderation/</guid><description>Dieser Abschnitt ist noch unvollständig.
+The slow mode Den Chatbot Weitere Funktionen werden folgen&amp;hellip;</description></item><item><title>Slow mode</title><link>https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/user/streamers/slow_mode/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/user/streamers/slow_mode/</guid><description>This features comes with the livechat plugin version 8.3.0.
+Einführung As a streamer, you can choose to rate limit your viewers messages in the chat.
+This can be really usefull to:
+avoid message flooding avoid unreadable chat if there are many viewsers talking You can set a number of seconds that users will have to wait after sending a message, before sending another.
+This limitation does not apply to moderators.</description></item><item><title>Moderation</title><link>https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/user/streamers/moderation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/user/streamers/moderation/</guid><description>Dieser Abschnitt ist noch unvollständig.
 Der Chatbot Sie können einen Chatbot verwenden, der Sie bei der Moderation unterstützt. Weitere Informationen finden Sie in der Chatbot Dokumentation.
 Zugang zu den Moderationswerkzeugen Sie können auf die Raumeinstellungen und Moderationswerkzeuge zugreifen, indem Sie den Chat in einem neuen Fenster öffnen, und das Dropdown-Menü oben rechts verwenden.
 Alle Instanzmoderatoren und Admins sind Eigentümer der erstellten Chaträume. Der Eigentümer des Videos wird der Administrator des Chatraums sein.</description></item></channel></rss>
