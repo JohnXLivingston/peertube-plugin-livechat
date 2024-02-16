@@ -21,6 +21,11 @@
       border-top: var(--chatroom-message-input-border-top);
       color: var(--peertube-main-foreground);
       background-color: var(--peertube-main-background);
+
+      .livechat-hide-slow-mode-info-box {
+        cursor: pointer;
+        font-size: var(--font-size-small);
+      }
     }
 
     converse-chat-toolbar {

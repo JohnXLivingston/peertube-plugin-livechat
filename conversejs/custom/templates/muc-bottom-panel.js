@@ -23,12 +23,23 @@ class SlowMode extends CustomElement {
     }
   }
 
+  hideInfoBox = false
+
   async connectedCallback () {
     super.connectedCallback()
     this.model = _converse.chatboxes.get(this.jid)
     await this.model.initialized
 
+    let previousDuration = this.model.config.get('slow_mode_duration')
     this.listenTo(this.model.config, 'change:slow_mode_duration', () => {
+      if (this.hideInfoBox) {
+        const duration = this.model.config.get('slow_mode_duration')
+        if (duration !== previousDuration) {
+          previousDuration = duration
+          // Duration changed, opening the infobox again.
+          this.hideInfoBox = false
+        }
+      }
       this.requestUpdate()
     })
   }
@@ -37,12 +48,25 @@ class SlowMode extends CustomElement {
     if (!(parseInt(this.model.config.get('slow_mode_duration')) > 0)) { // This includes NaN, for which ">0"===false
       return html``
     }
+    if (this.hideInfoBox) {
+      return html``
+    }
     return html`
       <converse-icon class="fa fa-info-circle" size="1.2em"></converse-icon>
       ${__(
         'Slow mode is enabled, users can send a message every %1$s seconds.',
         this.model.config.get('slow_mode_duration')
-      )}`
+      )}
+      <i class="livechat-hide-slow-mode-info-box" @click=${this.closeSlowModeInfoBox}>
+        <converse-icon class="fa fa-times" size="1em"></converse-icon>
+      </i>`
+  }
+
+  closeSlowModeInfoBox (ev) {
+    ev?.preventDefault?.()
+    ev?.stopPropagation?.()
+    this.hideInfoBox = true
+    this.requestUpdate()
   }
 }
 api.elements.define('livechat-slow-mode', SlowMode)
