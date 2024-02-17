@@ -16,7 +16,7 @@ As a streamer, you can choose to rate limit your viewers messages in the chat.
 This can be really usefull to:
 
 * avoid message flooding
-* avoid unreadable chat if there are many viewsers talking
+* avoid unreadable chat if there are many viewers talking
 
 You can set a number of seconds that users will have to wait after sending a message, before sending another.
 

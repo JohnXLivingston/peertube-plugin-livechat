@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-02-16 18:09+0100\n"
+"POT-Creation-Date: 2024-02-17 08:10+0100\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nb_NO/>\n"
@@ -2617,7 +2617,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "avoid unreadable chat if there are many viewsers talking"
+msgid "avoid unreadable chat if there are many viewers talking"
 msgstr ""
 
 #. type: Plain text
