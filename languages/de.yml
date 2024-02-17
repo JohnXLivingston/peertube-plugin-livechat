@@ -375,3 +375,12 @@ avatar_set_option_fenec: Fenecs (Mobilizon-Maskottchen)
 avatar_set_option_legacy: Ältere Sepia-Avatare (die in früheren Plugin-Versionen enthalten
   waren)
 avatar_set_option_abstract: Abstrakt
+livechat_configuration_channel_default_slow_mode_label: Langsamer Modus
+slow_mode_info: Wenn der langsame Modus aktiviert ist, können Benutzer alle %1$s Sekunden
+  eine Nachricht senden.
+livechat_configuration_channel_default_slow_mode_desc: "Standardwert für den langsamen
+  Modus für neue Chats:\n<ul>\n  <li>0: langsamer Modus deaktiviert</li>\n  <li>Beliebige
+  positive ganze Zahl: Benutzer können alle X Sekunden eine Nachricht senden (Moderatoren
+  sind nicht beschränkt)</li>\n</ul>\nDieser Wert gilt für neue Chaträume. Um diesen
+  Wert für einen bereits bestehenden Raum zu ändern, müssen Sie das Raumkonfigurationsmenü
+  verwenden.\n"
