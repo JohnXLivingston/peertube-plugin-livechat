@@ -385,6 +385,6 @@ avatar_set_option_legacy: Anciens avatars Sepia (ceux inclus dans les versions p
 avatar_set_label: Jeu d'avatars
 avatar_set_description: "Vous pouvez choisir parmi plusieurs jeux différents les avatars
   par défaut qui seront utilisés pour les utilisateurs du tchat.\nVeuillez vous référer
-  à la documentation :\n<a href=\"https ://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
+  à la documentation :\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
   \ target=\"_blank\">Paramètres</a>.\n"
 avatar_set_option_abstract: Abstrait
