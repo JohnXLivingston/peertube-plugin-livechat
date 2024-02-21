@@ -15,7 +15,8 @@
 
 * Fix ConverseJS build: translations were missing, and only english was available.
 * Replaced a sync file operation by an async one, to avoid blocking the server.
-* Fix ConverseJS bug: room information not correctly refreshed when modifications are made by other users
+* Fix ConverseJS bug: room information not correctly refreshed when modifications are made by other users.
+* Translation update: German.
 
 ## 8.2.1
 
