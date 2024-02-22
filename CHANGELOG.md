@@ -1,5 +1,9 @@
 # Changelog
 
+## 8.3.1
+
+* Fix: video owner must be room owner, not only admin. Otherwise they can't edit room parameters (including slow mode settings).
+
 ## 8.3.0
 
 ### New features

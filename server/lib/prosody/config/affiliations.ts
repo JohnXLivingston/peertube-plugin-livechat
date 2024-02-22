@@ -43,7 +43,7 @@ async function _addAffiliationByChannelId (
     } else {
       const userJid = username + '@' + prosodyDomain
       if (!(userJid in r)) { // don't override if already owner!
-        r[userJid] = 'admin'
+        r[userJid] = 'owner'
       }
     }
   } catch (error) {
