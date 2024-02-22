@@ -79,6 +79,9 @@ echo "Adding the custom files..."
 cp -r "$src_dir/custom/" "$converse_build_dir/custom/"
 mv "$converse_build_dir/custom/webpack.livechat.js" "$converse_build_dir/"
 
+echo "Patching i18n files to add custom labels..."
+/bin/env node conversejs/build-conversejs-patch-i18n.js
+
 if [[ ! -d "$converse_build_dir/node_modules" ]]; then
   echo "Missing node_modules directory, seems we have to call the makefile..."
   cd "$converse_build_dir"
