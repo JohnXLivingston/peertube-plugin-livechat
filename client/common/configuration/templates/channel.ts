@@ -58,6 +58,7 @@ async function fillViewHelpButtons (
   view.helpButtonForbiddenWords = await button('documentation/user/streamers/bot/forbidden_words')
   view.helpButtonQuotes = await button('documentation/user/streamers/bot/quotes')
   view.helpButtonCommands = await button('documentation/user/streamers/bot/commands')
+  view.helpButtonSlowMode = await button('documentation/user/streamers/slow_mode')
 }
 
 async function fillLabels (
