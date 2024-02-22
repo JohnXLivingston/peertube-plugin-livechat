@@ -86,6 +86,13 @@ function handle_groupchat(event)
   local origin, stanza = event.origin, event.stanza;
   local room = event.room;
 
+  -- only consider messages with body (ie: ignore chatstate and other non-text xmpp messages)
+  local body = stanza:get_child_text("body")
+  if not body or #body < 1 then
+    -- module:log("debug", "No body, message accepted");
+    return;
+  end
+
   local duration = get_slow_mode_duration(room) or 0;
   if duration <= 0 then
     -- no slow mode for this room
@@ -143,7 +150,6 @@ function handle_groupchat(event)
   );
 
   -- Note: following commented lines were inspired by mod_muc_limits, but it seems it is not required.
-  -- local body = stanza:get_child_text("body");
   -- if body then
   --   reply:up():tag("body"):text(body):up();
   -- end
