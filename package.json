@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-livechat",
   "description": "PeerTube plugin livechat: create chat rooms for your Peertube lives! Comes with many features: federation, moderation tools, chat bot, chat persistence, OBS integration, ...",
-  "version": "8.2.1",
+  "version": "8.3.0",
   "license": "AGPL-3.0",
   "author": {
     "name": "John Livingston",

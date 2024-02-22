@@ -1,6 +1,6 @@
 # Changelog
 
-## 8.3.0 (Not Released Yet)
+## 8.3.0
 
 ### New features
 
