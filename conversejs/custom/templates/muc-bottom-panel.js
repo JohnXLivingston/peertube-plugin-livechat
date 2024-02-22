@@ -51,7 +51,7 @@ class SlowMode extends CustomElement {
     if (this.hideInfoBox) {
       return html``
     }
-    return html`
+    return html`<div class="livechat-slow-mode-info-box">
       <converse-icon class="fa fa-info-circle" size="1.2em"></converse-icon>
       ${__(
         'Slow mode is enabled, users can send a message every %1$s seconds.',
@@ -59,7 +59,8 @@ class SlowMode extends CustomElement {
       )}
       <i class="livechat-hide-slow-mode-info-box" @click=${this.closeSlowModeInfoBox}>
         <converse-icon class="fa fa-times" size="1em"></converse-icon>
-      </i>`
+      </i>
+    </div>`
   }
 
   closeSlowModeInfoBox (ev) {

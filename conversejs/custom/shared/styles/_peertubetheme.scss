@@ -17,8 +17,8 @@
 
   .chatbox {
     // Slow mode info box
-    livechat-slow-mode {
-      border-top: var(--chatroom-message-input-border-top);
+    .livechat-slow-mode-info-box {
+      border: 1px dashed var(--peertube-menu-background);
       color: var(--peertube-main-foreground);
       background-color: var(--peertube-main-background);
 
@@ -29,6 +29,7 @@
     }
 
     converse-chat-toolbar {
+      border-top: none !important; // removing border, to avoid confusing the toolbar with an input field.
       color: var(--peertube-main-foreground);
       background-color: var(--peertube-main-background);
     }
