@@ -79,7 +79,7 @@ The `value` of the field MUST be a positive integer. Any invalid value MUST be c
 `0` value means that the slow mode is disabled for this room.
 Any positive value is the time, in seconds, users must wait between two messages.
 
-Here is an example of response the server could send when a client is querying `muc#owner`(https://xmpp.org/extensions/xep-0045.html#roomconfig):
+Here is an example of response the server could send when a client is querying [room configuration form](https://xmpp.org/extensions/xep-0045.html#roomconfig):
 
 ```xml
 <iq from='coven@chat.shakespeare.lit'
@@ -112,12 +112,17 @@ Here is an example of response the server could send when a client is querying `
 </iq>
 ```
 
+If the configuration is changed, the server SHOULD send a status code 104, as specified in [XEP-0045 - Notification of configuration changes](https://xmpp.org/extensions/xep-0045.html#roomconfig-notify).
+
 ### 4.2 Client discovering
 
 The feature can be enabled on a room:
 
 * by the room owner, if your implementation allow them to set this option
 * by a server-wide parameter
+
+In other words: you can enable this feature, without adding the field in the room configuration form.
+This allows for example server admins to apply a rate limit server-wide, or to set the slow mode programmatically on any wanted criteria (number of users in the room, current server load, room context, ...).
 
 In any case, to allow clients to discover that the feature is active, the server MUST respond on [room information queries](https://xmpp.org/extensions/xep-0045.html#disco-roominfo) by adding a `muc#roominfo_slow_mode_duration` field. This field type MUST be `text-single`, and its value MUST be a positive integer.
 
@@ -150,3 +155,43 @@ Here is an example of response the server could send when a client is [querying 
   </query>
 </iq>
 ```
+
+If the slow mode duration is changed, the server SHOULD send a status code 104, as specified in [XEP-0045 - Notification of configuration changes](https://xmpp.org/extensions/xep-0045.html#roomconfig-notify).
+
+## 5. Server-side rate limiting
+
+When the Slow Mode is enabled, server MUST NOT accept two consecutive messages from the same user, to the same room.
+Only messages containing at least one `body` tag must be taking into account (to avoid counting `chatstate` messages for example).
+
+If a user bypass the limit, the server MUST reply an error stanza, that respects [RFC 6120](https://xmpp.org/rfcs/rfc6120.html#stanzas-error), especially:
+
+* `error_type` MUST be `wait`, as described in [RFC 6120 - Stanzas error - Syntax](https://xmpp.org/rfcs/rfc6120.html#stanzas-error-syntax),
+* `error_condition` MUST be `policy-violation`, as described in [RFC 6120 - Stanzas error - Defined Stream Error Conditions](https://xmpp.org/rfcs/rfc6120.html#stanzas-error-conditions),
+* the stanza SHOULD contain a `text` tag explaining why the message was rejected, and this message SHOULD mention the slow mode duration so that user can understand why they can't post their message.
+
+Here is an example or error stanza:
+
+```xml
+<message
+  xmlns="jabber:client"
+  type="error"
+  to="crone1@shakespeare.lit/desktop" id="528df978-aa6b-422a-b987-056a810c4733" from="coven@chat.shakespeare.lit"
+>
+  <error type="wait">
+    <policy-violation xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" />
+    <text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">
+      You have exceeded the limit imposed by the slow mode in this room. You have to wait 2 seconds between messages. Please try again later
+    </text>
+  </error>
+</message>
+```
+
+## 6. Client handling
+
+When a user joins a room, the client SHOULD request room information as described in section "4.2 Client discovering", and look for the `muc#roominfo_slow_mode_duration` field.
+
+If this field is present, and contains a valid strictly positive integer value, the client SHOULD display an information somewhere, to tell users that there is a slow mode limitation that applies to this room.
+
+Moreover, each time a user sends a text message, the client SHOULD prevent the user to send another message before the timeout is passed. This COULD be done either by disabling the input field, or the submit button.
+
+To avoid some frustrating behaviour, in case there is some lag on the server for example, the client SHOULD prevent sending new messages for a slightly longer duration, than the slow mode duration (for example by adding 100 or 200ms). Indeed, if the first message is processed with some delay by the server, it could consider that the duration is not passed yet when receiving the next one.
