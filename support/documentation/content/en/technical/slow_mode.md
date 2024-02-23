@@ -25,7 +25,7 @@ Author: John Livingston
 There are some contexts in which you want to be able to rate limit [MUC](https://xmpp.org/extensions/xep-0045.html) messages.
 This could have multiple motivations: avoid flooding, garantee a better readability of the room when there are hundreds of active users, ...
 
-This specification will propose to add an option to MUC rooms, allowing room owners to fix a time that users MUST wait between two messages.
+This specification propose a new option to MUC rooms, allowing room owners to fix a duration that users MUST wait between two messages.
 We will also specify how the server MUST reject messages send too quickly, and how clients SHOULD handle this feature (by preventing users to send messages without waiting the delay to be over).
 
 ## 2. Terminology
@@ -40,7 +40,7 @@ Service Discovery Extensions: [XEP-0128: Service Discovery Extensions](https://x
 
 Slow Mode: feature allowing to rate limit user messages in a MUC room.
 
-Slow Mode duration: when the Slow Mode feature is active, specifies the time, in seconds, users must wait between two text messages.
+Slow Mode duration: when the Slow Mode feature is active, specifies the duration, in seconds, users must wait between two text messages.
 
 ## 3. Requirements
 
@@ -66,7 +66,7 @@ This field SHOULD use [Data Forms Validation](https://xmpp.org/extensions/xep-01
 The `value` of the field MUST be a positive integer, so you MUST add a `range` validation, as described in [RFC-0122](https://xmpp.org/extensions/xep-0122.html).
 
 `0` value means that the slow mode is disabled for this room.
-Any positive value is the time, in seconds, users must wait between two messages.
+Any positive value is the duration, in seconds, users must wait between two messages.
 
 Here is an example of response the server could send when a client is querying [room configuration form](https://xmpp.org/extensions/xep-0045.html#roomconfig):
 
@@ -118,7 +118,7 @@ This allows for example server admins to apply a rate limit server-wide, or to s
 In any case, to allow clients to discover that the feature is active, the server MUST respond on [room information queries](https://xmpp.org/extensions/xep-0045.html#disco-roominfo) by adding a `muc#roominfo_slow_mode_duration` field. This field type MUST be `text-single`, and its value MUST be a positive integer.
 
 `0` value means that the slow mode is disabled for this room.
-Any positive value is the time, in seconds, users must wait between two messages.
+Any positive value is the duration, in seconds, users must wait between two messages.
 Any invalid (non-positive integer) value sent by the server MUST be considered as equal to `0` (in case of a bad implementation).
 
 Here is an example of response the server could send when a client is [querying room information](https://xmpp.org/extensions/xep-0045.html#disco-roominfo):
@@ -148,7 +148,7 @@ Here is an example of response the server could send when a client is [querying 
 </iq>
 ```
 
-If the slow mode duration is changed, the server SHOULD send a status code 104, as specified in [XEP-0045 - Notification of configuration changes](https://xmpp.org/extensions/xep-0045.html#roomconfig-notify).
+If the slow mode duration has changed (either because the room configuration was modified, or because a server parameter changed), the server SHOULD send a status code 104, as specified in [XEP-0045 - Notification of configuration changes](https://xmpp.org/extensions/xep-0045.html#roomconfig-notify).
 
 ## 5. Server-side rate limiting
 
