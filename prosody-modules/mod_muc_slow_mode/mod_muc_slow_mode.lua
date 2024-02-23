@@ -66,6 +66,7 @@ local function add_form_option(event)
     name = "muc#roomconfig_slow_mode_duration";
     type = "text-single";
     datatype = "xs:integer";
+    range_min = 0;
     label = "Slow Mode (0=disabled, any positive integer= users can send a message every X seconds.)";
     -- desc = "";
     value = get_slow_mode_duration(event.room);
