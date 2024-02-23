@@ -32,7 +32,15 @@ We will also specify how the server MUST reject messages send too quickly, and h
 
 Clients: the client software used by end-users to join MUC rooms.
 
+Moderator: A room role that is usually associated with room admins but that can be granted to non-admins.
+
 MUC: The [multi-user chat protocol for text-based conferencing](https://xmpp.org/extensions/xep-0045.html).
+
+Participant: An occupant who does not have admin status; in a moderated room, a participant is further defined as having voice (in contrast to a visitor). A participant has a role of "participant".
+
+Role: A temporary position or privilege level within a room, distinct from a user's long-lived affiliation with the room; the possible roles are "moderator", "participant", and "visitor" (it is also possible to have no defined role). A role lasts only for the duration of an occupant's visit to a room. See [XEP-0045](https://xmpp.org/extensions/xep-0045.html).
+
+Room administrator: A user empowered by the room owner to perform administrative functions such as banning users; however, a room administrator is not allowed to change the room configuration or to destroy the room. An admin has an affiliation of "admin". See [XEP-0045](https://xmpp.org/extensions/xep-0045.html).
 
 Room owner: users that have special access to a room, and that can edit room configuration. See [XEP-0045 - Owner Use Cases](https://xmpp.org/extensions/xep-0045.html#owner).
 
@@ -148,12 +156,14 @@ Here is an example of response the server could send when a client is [querying 
 </iq>
 ```
 
-If the slow mode duration has changed (either because the room configuration was modified, or because a server parameter changed), the server SHOULD send a status code 104, as specified in [XEP-0045 - Notification of configuration changes](https://xmpp.org/extensions/xep-0045.html#roomconfig-notify).
+If the slow mode duration has changed (either because the room configuration was modified, or because a server parameter has changed), the server SHOULD send a status code 104, as specified in [XEP-0045 - Notification of configuration changes](https://xmpp.org/extensions/xep-0045.html#roomconfig-notify).
 
 ## 5. Server-side rate limiting
 
 When the Slow Mode is enabled, server MUST NOT accept two consecutive messages from the same user, to the same room, until the slow mode duration has elapsed.
 Only messages containing at least one `body` tag must be taking into account (to avoid counting `chatstate` messages for example).
+
+Room administrators and owners MUST NOT be rate limited.
 
 If a user bypass the limit, the server MUST reply an error stanza, that respects [RFC 6120](https://xmpp.org/rfcs/rfc6120.html#stanzas-error), especially:
 
@@ -180,14 +190,20 @@ Here is an example or error stanza:
 
 ## 6. Client handling
 
-When a user joins a room, the client SHOULD request room information as described in section "4.2 Client discovering", and look for the `muc#roominfo_slow_mode_duration` field.
+When a participant joins a room, the client SHOULD request room information as described in section "4.2 Client discovering", and look for the `muc#roominfo_slow_mode_duration` field.
 
 If this field is present, and contains a valid strictly positive integer value, the client SHOULD display an information somewhere, to tell users that there is a slow mode limitation that applies to this room.
+This information MAY also be displayed to users for which the rate limit does not apply (administrators, owners, ...).
 
-Moreover, each time a user sends a text message, the client SHOULD prevent the user to send another message before the timeout is passed. This MAY be done either by disabling the input field, or the submit button.
+Moreover, each time a participant sends a text message, the client SHOULD prevent the user to send another message before the timeout is passed. This MAY be done either by disabling the input field, or the submit button.
+If the user has at least the administrator acces level, the client SHOULD NOT disable the input field or the submit button.
 
 To avoid some frustrating behaviour, in case there is some lag on the server for example, the client MAY start counting time after receiving the message echo.
 Indeed, if the first message is processed with some delay by the server, it could consider that the duration is not passed yet when receiving the next one.
+
+## 7. Security Considerations
+
+As a same user can join a room with multiple sessions and/or nicknames, the server MUST use the appropriate key to identify the account, and apply the same limits to all user's sessions.
 
 ## Appendices
 
