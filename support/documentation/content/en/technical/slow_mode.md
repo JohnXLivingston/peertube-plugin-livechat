@@ -63,7 +63,7 @@ This field MUST have its type equal to `text-single`.
 
 This field SHOULD use [Data Forms Validation](https://xmpp.org/extensions/xep-0122.html), having its datatype equal to `xs:integer`.
 
-The `value` of the field MUST be a positive integer. Any invalid value MUST be considered as equal to `0`.
+The `value` of the field MUST be a positive integer, so you MUST add a `range` validation, as described in [RFC-0122](https://xmpp.org/extensions/xep-0122.html).
 
 `0` value means that the slow mode is disabled for this room.
 Any positive value is the time, in seconds, users must wait between two messages.
@@ -92,7 +92,9 @@ Here is an example of response the server could send when a client is querying [
         type='text-single'
         label='Slow Mode (0=disabled, any positive integer= users can send a message every X seconds.)'
       >
-        <validate xmlns='http://jabber.org/protocol/xdata-validate' datatype='xs:integer'/>
+        <validate xmlns='http://jabber.org/protocol/xdata-validate' datatype='xs:integer'>
+          <range min='0'/>
+        </validate>
         <value>20</value>
       </field>
       <!-- and any other field... -->
@@ -117,6 +119,7 @@ In any case, to allow clients to discover that the feature is active, the server
 
 `0` value means that the slow mode is disabled for this room.
 Any positive value is the time, in seconds, users must wait between two messages.
+Any invalid (non-positive integer) value sent by the server MUST be considered as equal to `0` (in case of a bad implementation).
 
 Here is an example of response the server could send when a client is [querying room information](https://xmpp.org/extensions/xep-0045.html#disco-roominfo):
 
@@ -149,7 +152,7 @@ If the slow mode duration is changed, the server SHOULD send a status code 104, 
 
 ## 5. Server-side rate limiting
 
-When the Slow Mode is enabled, server MUST NOT accept two consecutive messages from the same user, to the same room.
+When the Slow Mode is enabled, server MUST NOT accept two consecutive messages from the same user, to the same room, until the slow mode duration has elapsed.
 Only messages containing at least one `body` tag must be taking into account (to avoid counting `chatstate` messages for example).
 
 If a user bypass the limit, the server MUST reply an error stanza, that respects [RFC 6120](https://xmpp.org/rfcs/rfc6120.html#stanzas-error), especially:
@@ -181,11 +184,10 @@ When a user joins a room, the client SHOULD request room information as describe
 
 If this field is present, and contains a valid strictly positive integer value, the client SHOULD display an information somewhere, to tell users that there is a slow mode limitation that applies to this room.
 
-Moreover, each time a user sends a text message, the client SHOULD prevent the user to send another message before the timeout is passed. This COULD be done either by disabling the input field, or the submit button.
+Moreover, each time a user sends a text message, the client SHOULD prevent the user to send another message before the timeout is passed. This MAY be done either by disabling the input field, or the submit button.
 
-To avoid some frustrating behaviour, in case there is some lag on the server for example, the client SHOULD prevent sending new messages for a slightly longer duration, than the slow mode duration (for example by adding 100 or 200ms). Indeed, if the first message is processed with some delay by the server, it could consider that the duration is not passed yet when receiving the next one.
-
-If the `muc#roomconfig_slow_mode_duration` field is present in room configuration form (as described in "4.1 Activating Slow Mode in the MUC Room configuration"), the client SHOULD add an input field when the room's owner modifies the room configuration. This field SHOULD only accept positive integer as value (0 included, which means the feature is disabled).
+To avoid some frustrating behaviour, in case there is some lag on the server for example, the client MAY start counting time after receiving the message echo.
+Indeed, if the first message is processed with some delay by the server, it could consider that the duration is not passed yet when receiving the next one.
 
 ## Appendices
 
