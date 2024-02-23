@@ -63,7 +63,7 @@ This document addresses the following requirements:
 
 ### 4.1 Activating Slow Mode in the MUC Room configuration
 
-Your implementation CAN allow the Slow Mode feature to be set room by room, by its owners.
+Your implementation MAY allow the Slow Mode feature to be set room by room, by its owners.
 
 If room owners can configure the Slow Mode feature, the server MUST add a `muc#roomconfig_slow_mode_duration` field in the [room configuration form](https://xmpp.org/extensions/xep-0045.html#owner).
 
