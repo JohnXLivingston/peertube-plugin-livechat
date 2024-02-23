@@ -30,21 +30,9 @@ We will also specify how the server MUST reject messages send too quickly, and h
 
 ## 2. Terminology
 
-Bare JID: The <user@host> by which a user is identified outside the context of any existing session or resource; contrast with Full JID and Occupant JID.
-
 Clients: the client software used by end-users to join MUC rooms.
 
-Full JID: The <user@host/resource> by which an online user is identified outside the context of a room; contrast with Bare JID and Occupant JID.
-
-Moderator: A room role that is usually associated with room admins but that can be granted to non-admins. Is allowed to edit [room information](https://xmpp.org/extensions/xep-0045.html#disco-roominfo). A moderator has a role of "moderator".
-
 MUC: The [multi-user chat protocol for text-based conferencing](https://xmpp.org/extensions/xep-0045.html).
-
-Occupant JID: The <room@service/nick> by which an occupant is identified within the context of a room; contrast with Bare JID and Full JID.
-
-Role: A temporary position or privilege level within a room, distinct from a user's long-lived affiliation with the room; the possible roles are "moderator", "participant", and "visitor" (it is also possible to have no defined role). A role lasts only for the duration of an occupant's visit to a room.
-
-Room JID: The <room@service> address of a room.
 
 Room owner: users that have special access to a room, and that can edit room configuration. See [XEP-0045 - Owner Use Cases](https://xmpp.org/extensions/xep-0045.html#owner).
 
