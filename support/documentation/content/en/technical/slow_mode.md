@@ -183,3 +183,5 @@ If this field is present, and contains a valid strictly positive integer value, 
 Moreover, each time a user sends a text message, the client SHOULD prevent the user to send another message before the timeout is passed. This COULD be done either by disabling the input field, or the submit button.
 
 To avoid some frustrating behaviour, in case there is some lag on the server for example, the client SHOULD prevent sending new messages for a slightly longer duration, than the slow mode duration (for example by adding 100 or 200ms). Indeed, if the first message is processed with some delay by the server, it could consider that the duration is not passed yet when receiving the next one.
+
+If the `muc#roomconfig_slow_mode_duration` field is present in room configuration form (as described in "4.1 Activating Slow Mode in the MUC Room configuration"), the client SHOULD add an input field when the room's owner modifies the room configuration. This field SHOULD only accept positive integer as value (0 included, which means the feature is disabled).
