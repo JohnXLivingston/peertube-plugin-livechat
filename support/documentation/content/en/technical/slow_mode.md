@@ -46,7 +46,8 @@ Slow Mode duration: when the Slow Mode feature is active, specifies the time, in
 
 This document addresses the following requirements:
 
-* Enable and configure the feature by editing the MUC room discovery information.
+* How to allow room owners to enable and configure the feature by editing the MUC room discovery information.
+* How to enable and configure the feature without allowing room owners to change the configuration.
 * How the server MUST reject messages that does not respect the parameters.
 * How clients SHOULD handle rooms with such feature enabled.
 
