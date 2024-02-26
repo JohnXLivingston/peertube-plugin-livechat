@@ -161,7 +161,7 @@ If the slow mode duration has changed (either because the room configuration was
 ## 5. Server-side rate limiting
 
 When the Slow Mode is enabled, server MUST NOT accept two consecutive messages from the same user, to the same room, until the slow mode duration has elapsed.
-Only messages containing at least one `body` tag must be taking into account (to avoid counting `chatstate` messages for example).
+Only messages containing at least one `<body/>` element must be taking into account (to avoid counting `chatstate` messages for example).
 
 Room administrators and owners MUST NOT be rate limited.
 
@@ -169,7 +169,7 @@ If a user bypass the limit, the server MUST reply an error stanza, that respects
 
 * `error_type` MUST be `wait`, as described in [RFC 6120 - Stanzas error - Syntax](https://xmpp.org/rfcs/rfc6120.html#stanzas-error-syntax),
 * `error_condition` MUST be `policy-violation`, as described in [RFC 6120 - Stanzas error - Defined Stream Error Conditions](https://xmpp.org/rfcs/rfc6120.html#stanzas-error-conditions),
-* the stanza SHOULD contain a `text` tag explaining why the message was rejected, and this message SHOULD mention the slow mode duration so that user can understand why they can't post their message.
+* the stanza SHOULD contain a `<text>` element explaining why the message was rejected, and this message SHOULD mention the slow mode duration so that user can understand why they can't post their message.
 
 Here is an example or error stanza:
 
