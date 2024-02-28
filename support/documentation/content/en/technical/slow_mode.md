@@ -12,6 +12,7 @@ Please find below a XEP draft, that will be submitted for review.
 
 {{% notice warning %}}
 Work In Progress, this page is not done yet.
+For an updated version of this documented, you can check the [draft XEP XMP file](https://github.com/JohnXLivingston/xeps/blob/xep-slow-mode/xep-slow-mode.xml).
 {{% /notice %}}
 
 ## XEP: MUC Slow Mode
