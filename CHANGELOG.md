@@ -3,6 +3,7 @@
 ## ??? (Not Released Yet)
 
 * Fix mod_muc_slow_mode: add min value for slow_mode_duration field.
+* Debug Mode: new option to promote some JIDs as admins on the MUC component.
 
 ## 8.3.1
 

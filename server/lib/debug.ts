@@ -18,6 +18,7 @@ interface DebugContent {
   prosodyDebuggerOptions?: ProsodyDebuggerOptions
   alwaysPublishXMPPRoom?: boolean
   enablePodcastChatTagForNonLive?: boolean
+  mucAdmins?: string[]
 }
 
 type DebugNumericValue = 'renewCertCheckInterval'
@@ -63,6 +64,7 @@ function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
     debugContent.remoteServerInfosMaxAge = _getNumericOptions(options, json, 'remote_server_infos_max_age')
     debugContent.alwaysPublishXMPPRoom = json.always_publish_xmpp_room === true
     debugContent.enablePodcastChatTagForNonLive = json.enable_podcast_chat_tag_for_nonlive === true
+    debugContent.mucAdmins = _getJIDs(options, json, 'muc_admins')
   } catch (err) {
     logger.error('Failed to read the debug_mode file content:', err)
   }
@@ -101,6 +103,17 @@ function _getNumericOptions (options: RegisterServerOptions, json: any, name: st
   return json[name]
 }
 
+function _getJIDs (options: RegisterServerOptions, json: any, name: string): string[] | undefined {
+  if (!(name in json)) { return undefined }
+  const v = json[name]
+  if (!Array.isArray(v)) { return undefined }
+  return v.filter(jid => {
+    if (typeof jid !== 'string') { return false }
+    if (!/^[a-zA-Z0-9_.-]+(?:@[a-zA-Z0-9_.-]+)?$/.test(jid)) { return false }
+    return true
+  })
+}
+
 function unloadDebugMode (): void {
   debugContent = null
 }
@@ -130,7 +143,7 @@ function isDebugMode (options: RegisterServerOptions, feature?: DebugBooleanValu
  */
 function prosodyDebuggerOptions (options: RegisterServerOptions): false | ProsodyDebuggerOptions {
   // Additional security: testing NODE_ENV.
-  // It should absolutly not be possible to enable Prosody debugger on production ev.
+  // It should absolutly not be possible to enable Prosody debugger on production env.
   if (process.env.NODE_ENV !== 'dev') { return false }
   const debugContent = _readDebugFile(options)
   if (debugContent === false) { return false }
@@ -198,10 +211,17 @@ function debugNumericParameter (
   return defaultDebug
 }
 
+function debugMucAdmins (options: RegisterServerOptions): string[] | undefined {
+  const debugContent = _readDebugFile(options)
+  if (!debugContent) { return undefined }
+  return debugContent.mucAdmins
+}
+
 export {
   unloadDebugMode,
   isDebugMode,
   prosodyDebuggerOptions,
   disableLuaUnboundIfNeeded,
-  debugNumericParameter
+  debugNumericParameter,
+  debugMucAdmins
 }

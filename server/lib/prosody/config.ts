@@ -12,6 +12,7 @@ import { getAPIKey } from '../apikey'
 import { parseExternalComponents } from './config/components'
 import { getRemoteServerInfosDir } from '../federation/storage'
 import { BotConfiguration } from '../configuration/bot'
+import { debugMucAdmins } from '../debug'
 
 async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
@@ -325,6 +326,11 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   }
 
   config.useTestModule(apikey, testApiUrl)
+
+  const debugMucAdminJids = debugMucAdmins(options)
+  if (debugMucAdminJids) {
+    config.addMucAdmins(debugMucAdminJids)
+  }
 
   let logLevel: ProsodyLogLevel | undefined
   if (logger.level && (typeof logger.level === 'string')) {

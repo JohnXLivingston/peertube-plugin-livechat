@@ -463,6 +463,12 @@ class ProsodyConfigContent {
     }
   }
 
+  addMucAdmins (jids: string[]): void {
+    for (const jid of jids) {
+      this.muc.add('admins', jid)
+    }
+  }
+
   setLog (level: ProsodyLogLevel, syslog?: ProsodyLogLevel[]): void {
     let log = ''
     log += 'log = {\n'
