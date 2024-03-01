@@ -1,6 +1,6 @@
 # Changelog
 
-## ??? (Not Released Yet)
+## 8.3.2
 
 * Temporary security fix for #332: rollback of v8.3.1:
   * Setting video owner as room owner as side effects. Like leaking the instance moderator/admin list. And maybe others.
