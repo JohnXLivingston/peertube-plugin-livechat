@@ -4,6 +4,11 @@
 
 * Fix mod_muc_slow_mode: add min value for slow_mode_duration field.
 * Debug Mode: new option to promote some JIDs as admins on the MUC component.
+* Fix #322: "Sepia is no longer an owner of this groupchat" message when joining the chat.
+  * This was related to the fact that the bot was owner because of the "admins" Prosody config key, and not registered in the room.
+  * To fix it, i added the bot as owner when creating rooms.
+  * This means that the fix only work for newly created rooms.
+  * There might still be an issue in ConverseJS or Prosody, don't know exactly where.
 
 ## 8.3.1
 

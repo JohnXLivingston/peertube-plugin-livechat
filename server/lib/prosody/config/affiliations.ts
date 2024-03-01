@@ -1,6 +1,7 @@
 import type { RegisterServerOptions, MVideoThumbnail } from '@peertube/peertube-types'
 import { getProsodyDomain } from './domain'
 import { getUserNameByChannelId } from '../../database/channel'
+import { BotConfiguration } from '../../configuration/bot'
 
 interface Affiliations { [jid: string]: 'outcast' | 'none' | 'member' | 'admin' | 'owner' }
 
@@ -24,6 +25,15 @@ async function _getCommonAffiliations (options: RegisterServerOptions, prosodyDo
     }
     const jid = (result.username as string) + '@' + prosodyDomain
     r[jid] = 'owner'
+  }
+
+  // Adding the moderation bot JID as room owner.
+  const settings = await options.settingsManager.getSettings([
+    'disable-channel-configuration'
+  ])
+  const useBots = !settings['disable-channel-configuration']
+  if (useBots) {
+    r[BotConfiguration.singleton().moderationBotJID()] = 'owner'
   }
 
   return r
@@ -55,7 +65,7 @@ async function getVideoAffiliations (options: RegisterServerOptions, video: MVid
   const prosodyDomain = await getProsodyDomain(options)
   const r = await _getCommonAffiliations(options, prosodyDomain)
 
-  // Adding an 'admin' affiliation for video owner
+  // Adding an 'owner' affiliation for video owner
   if (!video.remote) {
     // don't add the video owner if it is a remote video!
     await _addAffiliationByChannelId(options, prosodyDomain, r, video.channelId)
