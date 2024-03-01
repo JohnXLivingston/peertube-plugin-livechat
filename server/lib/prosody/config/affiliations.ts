@@ -53,7 +53,7 @@ async function _addAffiliationByChannelId (
     } else {
       const userJid = username + '@' + prosodyDomain
       if (!(userJid in r)) { // don't override if already owner!
-        r[userJid] = 'owner'
+        r[userJid] = 'admin'
       }
     }
   } catch (error) {
@@ -65,7 +65,7 @@ async function getVideoAffiliations (options: RegisterServerOptions, video: MVid
   const prosodyDomain = await getProsodyDomain(options)
   const r = await _getCommonAffiliations(options, prosodyDomain)
 
-  // Adding an 'owner' affiliation for video owner
+  // Adding an affiliation for video owner
   if (!video.remote) {
     // don't add the video owner if it is a remote video!
     await _addAffiliationByChannelId(options, prosodyDomain, r, video.channelId)

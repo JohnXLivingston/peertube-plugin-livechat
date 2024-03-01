@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-02-17 08:10+0100\n"
+"POT-Creation-Date: 2024-03-01 15:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2991,6 +2991,12 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, markdown-text, no-wrap
 msgid "Modifying the value for an existing chatroom"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, markdown-text
+msgid "As there was a security issue with livechat plugin v8.3.1 (leaking the full list of instance moderator and administrators), the following only works for users that are also administrator or moderator on the Peertube instance.  An alternative method to set this for existing chatrooms will be provided in a later livechat version, when the issue will be properly fixed.  For now, if you are not moderator or administrator on the Peertube instance, you can change the slow mode setting by deleting your room (it will be recreated with the value set in the channel options).  This solution is not optimal, and we apologize for the inconvenience."
 msgstr ""
 
 #. type: Plain text

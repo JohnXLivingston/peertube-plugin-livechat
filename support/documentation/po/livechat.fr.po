@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-02-17 08:10+0100\n"
+"POT-Creation-Date: 2024-03-01 15:25+0100\n"
 "PO-Revision-Date: 2024-02-21 15:07+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2321,9 +2320,7 @@ msgstr "Il y a plusieurs options qui peuvent être changées."
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Configure chat room](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Configurer le salon](/peertube-plugin-livechat/images/configure."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Configurer le salon](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2547,9 +2544,7 @@ msgstr "Ici vous pouvez configurer :"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
-msgstr ""
-"[Le mode lent](/peertube-plugin-livechat/documentation/user/streamers/"
-"slow_mode)"
+msgstr "[Le mode lent](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2577,8 +2572,7 @@ msgstr "Pour les streameur⋅euses"
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advanced moderation features"
-msgstr ""
-"Fonctionnalités de modération avancées du plugin peertube-plugin-livechat"
+msgstr "Fonctionnalités de modération avancées du plugin peertube-plugin-livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2687,9 +2681,7 @@ msgstr "Introduction"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "As a streamer, you can choose to rate limit your viewers messages in the chat."
-msgstr ""
-"En tant que streameur⋅euse, vous pouvez choisir de limiter la fréquence des "
-"messages de vos spectateur⋅rices dans le tchat."
+msgstr "En tant que streameur⋅euse, vous pouvez choisir de limiter la fréquence des messages de vos spectateur⋅rices dans le tchat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2704,16 +2696,12 @@ msgstr "éviter l'inondation de messages"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "avoid unreadable chat if there are many viewers talking"
-msgstr ""
-"éviter que le tchat ne devienne illisible si de nombreux⋅ses personnes y "
-"parlent"
+msgstr "éviter que le tchat ne devienne illisible si de nombreux⋅ses personnes y parlent"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "You can set a number of seconds that users will have to wait after sending a message, before sending another."
-msgstr ""
-"Vous pouvez définir le nombre de secondes que les utilisateur⋅rices devront "
-"attendre après avoir envoyé un message avant d'en envoyer un autre."
+msgstr "Vous pouvez définir le nombre de secondes que les utilisateur⋅rices devront attendre après avoir envoyé un message avant d'en envoyer un autre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2729,25 +2717,17 @@ msgstr "Valeur par défaut de la chaîne"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
-msgstr ""
-"Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/"
-"documentation/user/streamers/channel), vous pouvez définir une valeur par "
-"défaut pour l'option mode lent :"
+msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), vous pouvez définir une valeur par défaut pour l'option mode lent :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Configuration de la chaîne / Mode lent par défaut](/peertube-"
-"plugin-livechat/images/slow_mode_channel_option."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Configuration de la chaîne / Mode lent par défaut](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
-msgstr ""
-"Cette valeur s'appliquera par défaut aux nouveaux salons. Elle ne "
-"s'appliquera pas aux salons de discussion existants."
+msgstr "Cette valeur s'appliquera par défaut aux nouveaux salons. Elle ne s'appliquera pas aux salons de discussion existants."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2757,10 +2737,7 @@ msgstr "La valeur `0` désactive la fonctionnalité."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "Setting the value to a positive integer will set the period during which users will not be able to post additional messages."
-msgstr ""
-"Positionner la valeur à un nombre entier positif permet de fixer la période "
-"pendant laquelle les utilisateur⋅rices ne pourront pas envoyer de messages "
-"supplémentaires."
+msgstr "Positionner la valeur à un nombre entier positif permet de fixer la période pendant laquelle les utilisateur⋅rices ne pourront pas envoyer de messages supplémentaires."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2770,12 +2747,13 @@ msgstr "Modifier la valeur d'un salon de discussion existant"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "To modify the slow mode duration for an existing chatroom, you first have to open it in [full screen mode](/peertube-plugin-livechat/documentation/user/viewers).  Then, open the top menu and click on \"configure\"."
+msgid "As there was a security issue with livechat plugin v8.3.1 (leaking the full list of instance moderator and administrators), the following only works for users that are also administrator or moderator on the Peertube instance.  An alternative method to set this for existing chatrooms will be provided in a later livechat version, when the issue will be properly fixed.  For now, if you are not moderator or administrator on the Peertube instance, you can change the slow mode setting by deleting your room (it will be recreated with the value set in the channel options).  This solution is not optimal, and we apologize for the inconvenience."
 msgstr ""
-"Pour modifier le paramètre du mode lent pour un salon déjà existant, vous "
-"devez d'abord ouvrir celui-ci en [plein écran](/peertube-plugin-livechat/fr/"
-"documentation/user/viewers). Ensuite, ouvrez le menu haut, et cliquez sur "
-"\"configurer\"."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "To modify the slow mode duration for an existing chatroom, you first have to open it in [full screen mode](/peertube-plugin-livechat/documentation/user/viewers).  Then, open the top menu and click on \"configure\"."
+msgstr "Pour modifier le paramètre du mode lent pour un salon déjà existant, vous devez d'abord ouvrir celui-ci en [plein écran](/peertube-plugin-livechat/fr/documentation/user/viewers). Ensuite, ouvrez le menu haut, et cliquez sur \"configurer\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2797,23 +2775,17 @@ msgstr "Pour les spectateur⋅rices"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "If the slow mode is enabled, users will be informed by an message."
-msgstr ""
-"Si le mode lent est activé, les utilisateur⋅rices en seront informé⋅es par "
-"un message."
+msgstr "Si le mode lent est activé, les utilisateur⋅rices en seront informé⋅es par un message."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Slow mode infobox](/peertube-plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Information mode lent](/peertube-plugin-livechat/images/slow_mode."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Information mode lent](/peertube-plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "When they send a message, the input field will be disabled for X seconds (where X is the slow mode duration)."
-msgstr ""
-"Lorsqu'iels envoient un message, le champ de saisie est désactivé pendant X "
-"secondes (X étant la durée du mode lent)."
+msgstr "Lorsqu'iels envoient un message, le champ de saisie est désactivé pendant X secondes (X étant la durée du mode lent)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md

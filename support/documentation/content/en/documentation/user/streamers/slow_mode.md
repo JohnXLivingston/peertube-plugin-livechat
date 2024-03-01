@@ -37,6 +37,13 @@ Setting the value to a positive integer will set the period during which users w
 
 ## Modifying the value for an existing chatroom
 
+{{% notice warning %}}
+As there was a security issue with livechat plugin v8.3.1 (leaking the full list of instance moderator and administrators), the following only works for users that are also administrator or moderator on the Peertube instance.
+An alternative method to set this for existing chatrooms will be provided in a later livechat version, when the issue will be properly fixed.
+For now, if you are not moderator or administrator on the Peertube instance, you can change the slow mode setting by deleting your room (it will be recreated with the value set in the channel options).
+This solution is not optimal, and we apologize for the inconvenience.
+{{% /notice %}}
+
 To modify the slow mode duration for an existing chatroom, you first have to open it in [full screen mode](/peertube-plugin-livechat/documentation/user/viewers).
 Then, open the top menu and click on "configure".
 

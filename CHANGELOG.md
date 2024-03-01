@@ -2,6 +2,10 @@
 
 ## ??? (Not Released Yet)
 
+* Temporary security fix for #332: rollback of v8.3.1:
+  * Setting video owner as room owner as side effects. Like leaking the instance moderator/admin list. And maybe others.
+  * So we rollback this feature, waiting for a better way to allow room admins/moderators to change room settings.
+  * As a consequence, users that are not Peertube moderator/administrator can't change the slow mode configuration without deleting/recreating the room. This will be fixed in a later plugin version.
 * Fix mod_muc_slow_mode: add min value for slow_mode_duration field.
 * Debug Mode: new option to promote some JIDs as admins on the MUC component.
 * Fix #322: "Sepia is no longer an owner of this groupchat" message when joining the chat.
