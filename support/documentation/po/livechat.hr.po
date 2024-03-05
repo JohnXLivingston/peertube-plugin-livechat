@@ -7,15 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-03-01 15:25+0100\n"
-"PO-Revision-Date: 2023-07-17 10:52+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
+"PO-Revision-Date: 2024-03-06 13:38+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.4.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -91,47 +93,47 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NodeJS"
-msgstr ""
+msgstr "NodeJS"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NPM"
-msgstr ""
+msgstr "NPM"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Typescript"
-msgstr ""
+msgstr "Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To build the plugin, you must have following packages:"
-msgstr ""
+msgstr "Za izradu dodatka moraš imati sljedeće pakete:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`git`"
-msgstr ""
+msgstr "`git`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`npm` (>=8.x)"
-msgstr ""
+msgstr "`npm` (≥ 8.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`nodejs` (>=14.x)"
-msgstr ""
+msgstr "`nodejs` (≥ 14.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`build-essential`"
-msgstr ""
+msgstr "`build-essential`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -219,7 +221,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Debug Mode"
-msgstr ""
+msgstr "Modus ispravljanja grešaka"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -250,7 +252,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Restart Prosody"
-msgstr ""
+msgstr "Ponovo pokreni Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -294,7 +296,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Restart Peertube."
-msgstr ""
+msgstr "Ponovo pokreni Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -354,13 +356,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentacija"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "General information"
-msgstr ""
+msgstr "Opće informacije"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -396,49 +398,59 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Translations"
-msgstr ""
+msgstr "Prijevodi"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The principal language is english (`en` code)."
-msgstr ""
+msgstr "Glavni jezik je engleski (kod: `en`)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The `support/documentation/content/en` folder contains only english documentation files."
 msgstr ""
+"Mapa `support/documentation/content/en` sadrži datoteke dokumentacije samo "
+"na engleskom jeziku."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page."
 msgstr ""
+"Dokumentacija se prevodi pomoću Weblate platforme (pogledaj [Prevođenje "
+"dokumentacije](/peertube-plugin-livechat/contributing/translate/)). Za to "
+"koristimo [alat po4a](https://po4a.org/), što ćemo kasnije vidjeti na ovoj "
+"stranici."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Add a new language"
-msgstr ""
+msgstr "Dodaj novi jezik"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section."
 msgstr ""
+"U datoteci `support/documentation/config.toml`kopiraj i izmjeni odjeljak "
+"`[Languages.fr]`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "If the translations are not complete, it does not matter, english will be used for missing strings."
 msgstr ""
+"Ako prijevodi nisu potpuni, nedostajući izrazi će se prikazati na engleskom "
+"jeziku."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Preview"
-msgstr ""
+msgstr "Pregled"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To preview your modifications, just run:"
-msgstr ""
+msgstr "Za pregledavanje tvojih izmjena pokreni naredbu:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -493,12 +505,12 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Write documentation"
-msgstr ""
+msgstr "Piši dokumentaciju"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit the english files in `support/documentation/content/en`."
-msgstr ""
+msgstr "Uredi engleske datoteke u mapi `support/documentation/content/en`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -509,6 +521,9 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can use the `livechat_label` short code to use application strings.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 msgstr ""
+"Za korištenje izraza aplikacije možeš koristiti kratki kod `livechat_label`. "
+"Pogledaj ovdje: [Prijevod dokumentacije](/peertube-plugin-livechat/"
+"contributing/translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -561,7 +576,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/feedback/_index.md
 #, no-wrap
 msgid "Give your feedback"
-msgstr ""
+msgstr "Šalji povratne informacije"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
@@ -572,29 +587,32 @@ msgstr ""
 #: support/documentation/content/en/contributing/_index.md
 #, no-wrap
 msgid "Contributing"
-msgstr ""
+msgstr "Doprinošenje"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/_index.md
 msgid "Interested in contributing? Awesome!"
-msgstr ""
+msgstr "Želiš doprinijeti? Super!"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate the plugin"
-msgstr ""
+msgstr "Prevedi dodatak"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate"
-msgstr ""
+msgstr "Prevodi"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can contribute to this plugin translation.  Translations are handled using the [Weblate](https://weblate.org/) software, using [Framasoft Weblate instance](https://weblate.framasoft.org/)."
 msgstr ""
+"Možeš doprinijeti prijevodu ovog dodatka. Za prevođenje koristimo platformu "
+"[Weblate](https://weblate.org/) na stranici [Framasoft "
+"Weblate](https://weblate.framasoft.org/)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -657,7 +675,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding a new locale"
-msgstr ""
+msgstr "Dodavanje novog narječja"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -2737,6 +2755,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "There are two slightly different use cases, depending on wether or not you have an account on the Peertube instance.  See bellow for more informations."
 msgstr ""
+"Postoje dva različita slučaja upotrebe, ovisno o tome imaš li račun na "
+"Peertube instanci ili ne. Pogledaj dolje za više informacija."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
