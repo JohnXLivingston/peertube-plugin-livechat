@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-03-01 15:25+0100\n"
-"PO-Revision-Date: 2024-01-28 13:01+0000\n"
+"PO-Revision-Date: 2024-03-06 13:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
+"Language-Team: Spanish <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.3.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 5.4.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -432,7 +433,9 @@ msgstr "El idioma principal es el inglés (código `en`)."
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The `support/documentation/content/en` folder contains only english documentation files."
-msgstr "La carpeta `support/documentation/content/en` sólo contiene archivos de documentación en inglés."
+msgstr ""
+"El directorio `support/documentation/content/en` sólo contiene archivos de "
+"documentación en inglés."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -498,11 +501,17 @@ msgstr "Para hacerlo, asegúrese de tener `po4a` (versión>= 0.69) instalado en 
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.  Please make sure to install a compatible version.  If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually."
 msgstr ""
+"Algunas distribuciones de Linux (como Debian Bullseye, por ejemplo) tienen "
+"una versión demasiado antigua de `po4a`. Asegúrese de instalar una versión "
+"compatible. Si está utilizando Debian Bullseye, por ejemplo, puede descargar "
+"el archivo Bookworm po4a.deb desde [https://packages.debian."
+"org](https://packages.debian.org/bookworm/all/po4a/download), e instalarlo "
+"manualmente."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To handle translations, just do:"
-msgstr ""
+msgstr "Para traducir, solo haz:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
