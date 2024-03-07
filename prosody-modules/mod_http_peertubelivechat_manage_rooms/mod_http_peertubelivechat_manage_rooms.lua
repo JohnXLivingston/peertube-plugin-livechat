@@ -83,6 +83,12 @@ local function update_room(event)
       must104 = true;
     end
   end
+  if type(config.slow_mode_duration) == "number" then
+    if room._data.slow_mode_duration ~= config.slow_mode_duration then
+      room._data.slow_mode_duration = config.slow_mode_duration;
+      must104 = true;
+    end
+  end
 
   if must104 then
     -- we must broadcast a status 104 message, so that clients can update room info

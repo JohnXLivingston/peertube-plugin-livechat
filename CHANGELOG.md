@@ -5,6 +5,7 @@
 * Fix #87: updating chat room title when video/channel title is changed.
 * Updating xmppjs-chat-box version.
 * Translation updates: japanese.
+* Updating slow mode duration on existing rooms when changing channel options (related to #332).
 
 ## 8.3.2
 

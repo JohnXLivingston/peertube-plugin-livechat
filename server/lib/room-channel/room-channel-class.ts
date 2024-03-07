@@ -1,7 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { RoomConf } from 'xmppjs-chat-bot'
 import { getProsodyDomain } from '../prosody/config/domain'
-import { listProsodyRooms } from '../prosody/api/manage-rooms'
+import { listProsodyRooms, updateProsodyRoom } from '../prosody/api/manage-rooms'
 import { getChannelInfosById } from '../database/channel'
 import { ChannelConfigurationOptions } from '../../../shared/lib/types'
 import {
@@ -287,6 +287,9 @@ class RoomChannel {
     }
     this.logger.info('Syncing...')
     this.isWriting = true
+
+    const prosodyRoomUpdates = new Map<string, Parameters<typeof updateProsodyRoom>[2]>()
+
     try {
       const data = this._serializeData() // must be atomic
       this.needSync = false // Note: must be done atomicly with the read
@@ -344,6 +347,14 @@ class RoomChannel {
         )
 
         await BotConfiguration.singleton().updateRoom(roomJID, botConf)
+
+        // Now we also must update some room metadata (slow mode duration, ...)
+        // This can be done without waiting for the API call to finish, but we don't want to send thousands of
+        // API calls at the same time. So storing data in a map, and we well launch it sequentially at the end
+        prosodyRoomUpdates.set(roomJID, {
+          slow_mode_duration: channelConfigurationOptions.slowMode.defaultDuration
+        })
+
         this.roomConfToUpdate.delete(roomJID)
       }
 
@@ -354,6 +365,23 @@ class RoomChannel {
       this.needSync = true
     } finally {
       this.isWriting = false
+    }
+
+    if (prosodyRoomUpdates.size) {
+      // Here we don't have to wait.
+      // If it fails (for example because we are turning off prosody), it is not a big deal.
+      // Does not worth the cost to wait.
+      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+      setTimeout(async () => {
+        this.logger.info('Syncing done, but still some data to send to Prosody')
+        for (const [roomJID, data] of prosodyRoomUpdates.entries()) {
+          try {
+            await updateProsodyRoom(this.options, roomJID, data)
+          } catch (err) {
+            this.logger.error(`Failed updating prosody room info: "${err as string}".`)
+          }
+        }
+      }, 0)
     }
   }
 

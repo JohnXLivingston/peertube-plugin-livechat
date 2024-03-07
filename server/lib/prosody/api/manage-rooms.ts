@@ -49,17 +49,16 @@ async function listProsodyRooms (options: RegisterServerOptions): Promise<Prosod
  * Note: could be called without verifying that the room exists.
  * On the Prosody side, non existing rooms will be ignored.
  * @param options Peertube server options
- * @param channelId associated channelId
  * @param jid Room JID (can be only the local part, or the local + domain)
- * @param data Data to update
+ * @param data Data to update. Note: will only try to update data that are given.
  * @returns true if success
  */
 async function updateProsodyRoom (
   options: RegisterServerOptions,
-  channelId: number | string,
   jid: string,
   data: {
-    name: string
+    name?: string
+    slow_mode_duration?: number
   }
 ): Promise<boolean> {
   const logger = options.peertubeHelpers.logger
@@ -78,8 +77,13 @@ async function updateProsodyRoom (
   // Requesting on localhost, because currentProsody.host does not always resolves correctly (docker use case, ...)
   const apiUrl = `http://localhost:${currentProsody.port}/peertubelivechat_manage_rooms/update-room`
   const apiData = {
-    jid,
-    name: data.name
+    jid
+  } as any
+  if ('name' in data) {
+    apiData.name = data.name
+  }
+  if ('slow_mode_duration' in data) {
+    apiData.slow_mode_duration = data.slow_mode_duration
   }
   try {
     logger.debug('Calling update room API on url: ' + apiUrl + ', with data: ' + JSON.stringify(apiData))
