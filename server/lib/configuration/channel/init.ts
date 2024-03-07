@@ -4,6 +4,7 @@ import { fillVideoCustomFields } from '../../custom-fields'
 import { videoHasWebchat } from '../../../../shared/lib/video'
 import { updateProsodyRoom } from '../../prosody/api/manage-rooms'
 import { getChannelInfosById } from '../../database/channel'
+import { getChannelConfigurationOptions, getDefaultChannelConfigurationOptions } from './storage'
 
 /**
  * Register stuffs related to channel configuration
@@ -106,8 +107,11 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
           // FIXME: this piece of code should not be in this file (nothing to do with initChannelConfiguration,
           //   but will be more efficient to add here, as we already tested hasChat).
           // Note: no need to await here, would only degrade performances.
+          const channelOptions = await getChannelConfigurationOptions(options, video.channelId) ??
+            getDefaultChannelConfigurationOptions(options)
           updateProsodyRoom(options, video.uuid, {
-            name: video.name
+            name: video.name,
+            slow_mode_duration: channelOptions.slowMode.duration
           }).then(
             () => {},
             (err) => logger.error(err)
@@ -133,8 +137,11 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
       if (settings['prosody-room-type'] === 'channel') {
         const jid = 'channel.' + channel.id.toString()
         // Note: no need to await here, would only degrade performances.
+        const channelOptions = await getChannelConfigurationOptions(options, channel.id) ??
+          getDefaultChannelConfigurationOptions(options)
         updateProsodyRoom(options, jid, {
-          name: channel.displayName
+          name: channel.displayName,
+          slow_mode_duration: channelOptions.slowMode.duration
         }).then(
           () => {},
           (err) => logger.error(err)
