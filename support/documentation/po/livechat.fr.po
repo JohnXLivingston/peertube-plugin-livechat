@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-03-07 18:10+0100\n"
-"PO-Revision-Date: 2024-02-21 15:07+0000\n"
+"PO-Revision-Date: 2024-03-07 17:56+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Weblate 5.4.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -2708,29 +2709,30 @@ msgstr "Cette limitation ne s'applique pas aux modérateur⋅rices."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, fuzzy, no-wrap
-#| msgid "Slow mode"
+#, no-wrap
 msgid "Slow mode option"
-msgstr "Mode lent"
+msgstr "Option du mode lent"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, fuzzy
-#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
-msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), vous pouvez définir une valeur par défaut pour l'option mode lent :"
+msgstr ""
+"Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/"
+"documentation/user/streamers/channel), vous pouvez définir une valeur pour "
+"l'option mode lent :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, fuzzy
-#| msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
-msgstr "![Configuration de la chaîne / Mode lent par défaut](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Configuration de la chaîne / Mode lent](/peertube-plugin-livechat/images/"
+"slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "This value will apply to all your channel's chatrooms."
 msgstr ""
+"Cette valeur va s'appliquer à tous les salons de discussion de votre chaîne."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2751,10 +2753,10 @@ msgstr "Pour les spectateur⋅rices"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, fuzzy
-#| msgid "If the slow mode is enabled, users will be informed by an message."
 msgid "If the slow mode is enabled, users will be informed by a message."
-msgstr "Si le mode lent est activé, les utilisateur⋅rices en seront informé⋅es par un message."
+msgstr ""
+"Si le mode lent est activé, les utilisateur⋅rices en seront informé⋅es par "
+"un message."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
