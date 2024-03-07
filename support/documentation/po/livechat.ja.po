@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-01 15:25+0100\n"
+"POT-Creation-Date: 2024-03-07 17:46+0100\n"
 "PO-Revision-Date: 2024-01-28 13:01+0000\n"
 "Last-Translator: \"T.S\" <fusen@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Japanese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
@@ -2699,19 +2699,19 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, fuzzy
-msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
 msgstr "PeerTube ライブチャットプラグイン"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, fuzzy
 #| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
-msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
+msgid "This value will apply to all your channel's chatrooms."
 msgstr ""
 
 #. type: Plain text

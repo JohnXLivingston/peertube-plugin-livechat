@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-01 15:25+0100\n"
+"POT-Creation-Date: 2024-03-07 17:46+0100\n"
 "PO-Revision-Date: 2024-03-03 00:57+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2699,18 +2697,22 @@ msgstr "Standard Kanalwert"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
+#, fuzzy
+#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
 msgstr "Auf der [Kanal Konfigurations Seite](/peertube-plugin-livechat/de/documentation/user/streamers/channel) können Sie einen Standardwert für den langsamen Modus einstellen:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+#, fuzzy
+#| msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 msgstr "![Kanalkonfiguration / Standardwert langsamer Modus](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
-msgstr "Dieser Wert gilt als Standardwert für neue Chaträume.  Er gilt nicht für bereits bestehende Chaträume."
+msgid "This value will apply to all your channel's chatrooms."
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2731,18 +2733,7 @@ msgstr "Ändern des Wertes für einen bestehenden Chatraum"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "As there was a security issue with livechat plugin v8.3.1 (leaking the full list of instance moderator and administrators), the following only works for users that are also administrator or moderator on the Peertube instance.  An alternative method to set this for existing chatrooms will be provided in a later livechat version, when the issue will be properly fixed.  For now, if you are not moderator or administrator on the Peertube instance, you can change the slow mode setting by deleting your room (it will be recreated with the value set in the channel options).  This solution is not optimal, and we apologize for the inconvenience."
-msgstr ""
-"Da es ein Sicherheitsproblem mit dem Livechat-Plugin v8.3.1 gab (Die "
-"vollständigen Liste der Moderatoren und Administratoren der Instanz wurde "
-"angezeigt), funktioniert das Folgende nur für Benutzer, die auch "
-"Administrator oder Moderator der Peertube-Instanz sind.  Eine alternative "
-"Methode, um dies für bestehende Chaträume einzustellen, wird in einer "
-"späteren Livechat-Version zur Verfügung gestellt werden, wenn das Problem "
-"richtig behoben ist.  Im Moment können Sie, wenn Sie nicht Moderator oder "
-"Administrator auf der Peertube-Instanz sind, die Einstellung des langsamen "
-"Modus nur ändern, indem Sie Ihren Raum löschen (er wird mit dem in den "
-"Kanaloptionen eingestellten Wert neu erstellt).  Diese Lösung ist nicht "
-"optimal, und wir entschuldigen uns für die Unannehmlichkeiten."
+msgstr "Da es ein Sicherheitsproblem mit dem Livechat-Plugin v8.3.1 gab (Die vollständigen Liste der Moderatoren und Administratoren der Instanz wurde angezeigt), funktioniert das Folgende nur für Benutzer, die auch Administrator oder Moderator der Peertube-Instanz sind.  Eine alternative Methode, um dies für bestehende Chaträume einzustellen, wird in einer späteren Livechat-Version zur Verfügung gestellt werden, wenn das Problem richtig behoben ist.  Im Moment können Sie, wenn Sie nicht Moderator oder Administrator auf der Peertube-Instanz sind, die Einstellung des langsamen Modus nur ändern, indem Sie Ihren Raum löschen (er wird mit dem in den Kanaloptionen eingestellten Wert neu erstellt).  Diese Lösung ist nicht optimal, und wir entschuldigen uns für die Unannehmlichkeiten."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3216,6 +3207,9 @@ msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-pl
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
+
+#~ msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
+#~ msgstr "Dieser Wert gilt als Standardwert für neue Chaträume.  Er gilt nicht für bereits bestehende Chaträume."
 
 #~ msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 #~ msgstr "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube Avatargenerator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) Lizenz"

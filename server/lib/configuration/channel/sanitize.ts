@@ -25,7 +25,7 @@ async function sanitizeChannelConfigurationOptions (
 
   // slowMode not present in livechat <= 8.2.0:
   const slowModeData = data.slowMode ?? {}
-  slowModeData.defaultDuration ??= 0
+  slowModeData.duration ??= slowModeData.defaultDuration ?? 0 // v8.3.0 to 8.3.2: was in defaultDuration
 
   if (typeof slowModeData !== 'object') {
     throw new Error('Invalid data.slowMode data type')
@@ -41,7 +41,7 @@ async function sanitizeChannelConfigurationOptions (
       // TODO: bannedJIDs
     },
     slowMode: {
-      defaultDuration: _readInteger(slowModeData, 'defaultDuration', 0, 1000)
+      duration: _readInteger(slowModeData, 'duration', 0, 1000)
     }
   }
 

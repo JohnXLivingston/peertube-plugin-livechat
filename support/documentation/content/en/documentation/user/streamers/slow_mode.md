@@ -24,12 +24,11 @@ This limitation does not apply to moderators.
 
 ## Default channel value
 
-On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:
+On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:
 
-![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)
+![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)
 
-This value will apply as the default value for new chatrooms.
-It will not apply on already existing chatrooms.
+This value will apply to all your channel's chatrooms.
 
 Setting the value to `0` will disable the feature.
 

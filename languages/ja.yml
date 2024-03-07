@@ -204,7 +204,7 @@ livechat_configuration_channel_bot_nickname: Botのニックネーム
 livechat_configuration_channel_quote_desc: "一定間隔でメッセージを送信するための複数のタイマーを設定できます。\nこれらのメッセージは、BotによってX分ごとに送信されます。\n\
   たとえば、Botからスポンサー情報を5分ごとに送信させることができます。\n"
 livechat_configuration_channel_quote_label2: メッセージ
-livechat_configuration_channel_default_slow_mode_desc: "新しいチャットに適用される低速モードのデフォルト値:\n\
+livechat_configuration_channel_slow_mode_desc: "新しいチャットに適用される低速モードのデフォルト値:\n\
   <ul>\n  <li>0: 低速モード無効</li>\n  <li>任意の整数: ユーザーはX秒毎にメッセージを送信可能 (モデレーターは無制限)</li>\n\
   </ul>\nこの値は、新しいチャットルームに対して適用されます。既に存在するルームの値を変更するには、ルーム設定メニューから変更が必要です。\n"
 avatar_set_description: "チャットユーザーに使用するデフォルトのアバターをいくつかのセットから選択できます。\n詳細はドキュメントを参照してください:\n
@@ -217,5 +217,5 @@ avatar_set_option_sepia: Sepia (Peertubeのマスコットキャラクター)
 avatar_set_option_bird: 鳥
 avatar_set_option_fenec: Fenecs (Mobilizonのマスコットキャラクター)
 avatar_set_option_legacy: 以前のSepia アバター(以前のプラグインバージョンに含まれていたもの)
-livechat_configuration_channel_default_slow_mode_label: 低速モード
+livechat_configuration_channel_slow_mode_label: 低速モード
 slow_mode_info: 低速モードが有効になっているため、メッセージは%1$s秒ごとに送信できます。

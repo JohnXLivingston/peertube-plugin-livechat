@@ -11,8 +11,8 @@
   <form livechat-configuration-channel-options role="form">
     <div class="row mt-3">
       <div class="col-12 col-lg-4 col-xl-3">
-        <h2>{{defaultSlowModeLabel}}</h2>
-        <p>{{{defaultSlowModeDesc}}}</p>
+        <h2>{{slowModeLabel}}</h2>
+        <p>{{{slowModeDesc}}}</p>
         {{{helpButtonSlowMode}}}
       </div>
       <div class="col-12 col-lg-8 col-xl-9">
@@ -20,12 +20,12 @@
           <label>
             <input
               type="number"
-              name="slow_mode_default_duration"
+              name="slow_mode_duration"
               class="form-control"
               min="0"
               max="1000"
-              id="peertube-livechat-slow-mode-default-duration"
-              value="{{channelConfiguration.configuration.slowMode.defaultDuration}}"
+              id="peertube-livechat-slow-mode-duration"
+              value="{{channelConfiguration.configuration.slowMode.duration}}"
             />
           </label>
         </div>

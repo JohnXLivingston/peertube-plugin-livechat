@@ -6,11 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-03-01 15:25+0100\n"
+"POT-Creation-Date: 2024-03-07 17:46+0100\n"
 "PO-Revision-Date: 2024-03-07 05:45+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: Spanish <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
+"Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -433,9 +432,7 @@ msgstr "El idioma principal es el inglés (código `en`)."
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The `support/documentation/content/en` folder contains only english documentation files."
-msgstr ""
-"El directorio `support/documentation/content/en` sólo contiene archivos de "
-"documentación en inglés."
+msgstr "El directorio `support/documentation/content/en` sólo contiene archivos de documentación en inglés."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -500,13 +497,7 @@ msgstr "Para hacerlo, asegúrese de tener `po4a` (versión>= 0.69) instalado en 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.  Please make sure to install a compatible version.  If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually."
-msgstr ""
-"Algunas distribuciones de Linux (como Debian Bullseye, por ejemplo) tienen "
-"una versión demasiado antigua de `po4a`. Asegúrese de instalar una versión "
-"compatible. Si está utilizando Debian Bullseye, por ejemplo, puede descargar "
-"el archivo Bookworm po4a.deb desde [https://packages.debian."
-"org](https://packages.debian.org/bookworm/all/po4a/download), e instalarlo "
-"manualmente."
+msgstr "Algunas distribuciones de Linux (como Debian Bullseye, por ejemplo) tienen una versión demasiado antigua de `po4a`. Asegúrese de instalar una versión compatible. Si está utilizando Debian Bullseye, por ejemplo, puede descargar el archivo Bookworm po4a.deb desde [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), e instalarlo manualmente."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -533,9 +524,7 @@ msgstr "Redactar la documentación"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit the english files in `support/documentation/content/en`."
-msgstr ""
-"Sólo tienes que editar los archivos en inglés en `support/documentation/"
-"content/en`."
+msgstr "Sólo tienes que editar los archivos en inglés en `support/documentation/content/en`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -2678,17 +2667,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
+msgid "This value will apply to all your channel's chatrooms."
 msgstr ""
 
 #. type: Plain text

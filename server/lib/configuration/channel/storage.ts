@@ -44,7 +44,7 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
       commands: []
     },
     slowMode: {
-      defaultDuration: 0
+      duration: 0
     }
   }
 }

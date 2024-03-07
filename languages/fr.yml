@@ -388,12 +388,10 @@ avatar_set_description: "Vous pouvez choisir parmi plusieurs jeux différents le
   à la documentation :\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
   \ target=\"_blank\">Paramètres</a>.\n"
 avatar_set_option_abstract: Abstrait
-livechat_configuration_channel_default_slow_mode_label: Mode lent
+livechat_configuration_channel_slow_mode_label: Mode lent
 slow_mode_info: Le mode lent est activé, les utilisateur⋅rices peuvent envoyer un
   message toutes les %1$s secondes.
-livechat_configuration_channel_default_slow_mode_desc: "Valeur par défaut du mode
-  lent pour les nouveaux tchats :\n<ul>\n  <li>0 : mode lent désactivé</li>\n  <li>Tout
+livechat_configuration_channel_slow_mode_desc: "Valeur du mode
+  lent :\n<ul>\n  <li>0 : mode lent désactivé</li>\n  <li>Tout
   entier positif : les utilisateur⋅rices peuvent envoyer un message toutes les X secondes
-  (les modérateur⋅rices ne sont pas limité⋅es)</li>\n</ul>\nCette valeur s'applique
-  aux nouveaux salons. Pour changer cette valeur sur les salons déjà existants, vous
-  devez passer par le menu de configuration du salon.\n"
+  (les modérateur⋅rices ne sont pas limité⋅es)</li>\n</ul>"

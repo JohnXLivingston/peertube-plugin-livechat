@@ -69,10 +69,8 @@ async function fillLabels (
   view.title = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE)
   view.description = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)
 
-  view.defaultSlowModeLabel = await peertubeHelpers.translate(
-    LOC_LIVECHAT_CONFIGURATION_CHANNEL_DEFAULT_SLOW_MODE_LABEL
-  )
-  view.defaultSlowModeDesc = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DEFAULT_SLOW_MODE_DESC)
+  view.slowModeLabel = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)
+  view.slowModeDesc = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC)
   view.enableBot = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)
   view.botOptions = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)
   view.forbiddenWords = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)

@@ -36,10 +36,10 @@ interface RoomDefaults {
   affiliations?: Affiliations
 }
 
-async function defaultSlowModeDuration (options: RegisterServerOptions, channelId: number): Promise<number> {
+async function slowModeDuration (options: RegisterServerOptions, channelId: number): Promise<number> {
   const channelOptions = await getChannelConfigurationOptions(options, channelId) ??
     getDefaultChannelConfigurationOptions(options)
-  return channelOptions.slowMode.defaultDuration
+  return channelOptions.slowMode.duration
 }
 
 /**
@@ -89,7 +89,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
             name: channelInfos.displayName,
             description: '',
             // subject: channelInfos.displayName
-            slow_mode_duration: await defaultSlowModeDuration(options, channelId)
+            slow_mode_duration: await slowModeDuration(options, channelId)
           },
           affiliations: affiliations
         }
@@ -142,7 +142,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
             description: '',
             language: video.language,
             // subject: video.name
-            slow_mode_duration: await defaultSlowModeDuration(options, video.channelId)
+            slow_mode_duration: await slowModeDuration(options, video.channelId)
           },
           affiliations: affiliations
         }

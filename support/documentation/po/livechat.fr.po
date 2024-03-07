@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-01 15:25+0100\n"
+"POT-Creation-Date: 2024-03-07 17:46+0100\n"
 "PO-Revision-Date: 2024-02-21 15:07+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -2716,18 +2716,22 @@ msgstr "Valeur par défaut de la chaîne"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
+#, fuzzy
+#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set a default value for the slow mode option:"
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
 msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), vous pouvez définir une valeur par défaut pour l'option mode lent :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+#, fuzzy
+#| msgid "![Channel configuration / Default slow mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 msgstr "![Configuration de la chaîne / Mode lent par défaut](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
-msgstr "Cette valeur s'appliquera par défaut aux nouveaux salons. Elle ne s'appliquera pas aux salons de discussion existants."
+msgid "This value will apply to all your channel's chatrooms."
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3222,6 +3226,9 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter."
+
+#~ msgid "This value will apply as the default value for new chatrooms.  It will not apply on already existing chatrooms."
+#~ msgstr "Cette valeur s'appliquera par défaut aux nouveaux salons. Elle ne s'appliquera pas aux salons de discussion existants."
 
 #~ msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/) [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 #~ msgstr "{{% livechat_label avatar_set_option_sepia %}} : [Générateur d'avatars Peertube de David Revoy](https://www.peppercarrot.com/extras/html/2023_peertube-generator/) [Licence CC-By](https://creativecommons.org/licenses/by/4.0/)"
