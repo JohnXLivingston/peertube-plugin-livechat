@@ -129,7 +129,7 @@ prosody_muc_expiration_description: "チャットルームの内容をいつま�
   </ul>\n"
 prosody_room_allow_s2s_description: "この設定を有効にすると、外部のXMPPアカウントとXMPPクライアントを利用してチャットルームに接続できるようになります。<br>\n
   注意しなければならないのは、この設定は追加のサーバーとDNS設定をリクエストできるようになることです。\n次のドキュメントを参照してください:\n<a href=\"\
-  https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/\"\
+  https://johnxlivingston.github.io/peertube-plugin-livechat/ja/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n  外部のXMPPアカウント接続を有効にする。\n</a>\n"
 prosody_s2s_interfaces_description: "サーバー間接続のためにリッスンするネットワークインターフェイスです。<br>\nリッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。<br>\n\
   «*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。<br>\n例:\n<ul>\n  <li>*,
@@ -208,7 +208,7 @@ livechat_configuration_channel_default_slow_mode_desc: "新しいチャットに
   <ul>\n  <li>0: 低速モード無効</li>\n  <li>任意の整数: ユーザーはX秒毎にメッセージを送信可能 (モデレーターは無制限)</li>\n\
   </ul>\nこの値は、新しいチャットルームに対して適用されます。既に存在するルームの値を変更するには、ルーム設定メニューから変更が必要です。\n"
 avatar_set_description: "チャットユーザーに使用するデフォルトのアバターをいくつかのセットから選択できます。\n詳細はドキュメントを参照してください:\n
-  <a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  <a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/ja/documentation/admin/settings/\"\
   \ target=\"_blank\">設定</a>\n"
 avatar_set_option_abstract: 抽象
 avatar_set_label: アバターセット
