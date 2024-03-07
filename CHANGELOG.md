@@ -1,5 +1,9 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+* Updating xmppjs-chat-box version.
+
 ## 8.3.2
 
 * Temporary security fix for #332: rollback of v8.3.1:

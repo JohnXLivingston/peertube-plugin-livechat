@@ -320,7 +320,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   if (useBots) {
     config.useBotsVirtualHost(paths.botAvatars, paths.botAvatarsFiles)
     bots.moderation = await BotConfiguration.singleton().getModerationBotGlobalConf()
-    if (bots.moderation?.connection?.password) {
+    if (bots.moderation?.connection?.password && typeof bots.moderation.connection.password === 'string') {
       valuesToHideInDiagnostic.set('BotPassword', bots.moderation.connection.password)
     }
   }
