@@ -415,9 +415,9 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_persistent', true)
   }
 
-  useListRoomsApi (apikey: string): void {
-    this.muc.add('modules_enabled', 'http_peertubelivechat_list_rooms')
-    this.muc.set('peertubelivechat_list_rooms_apikey', apikey)
+  useManageRoomsApi (apikey: string): void {
+    this.muc.add('modules_enabled', 'http_peertubelivechat_manage_rooms')
+    this.muc.set('peertubelivechat_manage_rooms_apikey', apikey)
   }
 
   useTestModule (prosodyApikey: string, apiurl: string): void {

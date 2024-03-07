@@ -9,7 +9,7 @@ import { fetchMissingRemoteServerInfos } from '../federation/fetch-infos'
 import { getConverseJSParams } from '../conversejs/params'
 import { setCurrentProsody, delCurrentProsody } from '../prosody/api/host'
 import { getChannelInfosById } from '../database/channel'
-import { listProsodyRooms } from '../prosody/api/list-rooms'
+import { listProsodyRooms } from '../prosody/api/manage-rooms'
 import * as path from 'path'
 
 const fs = require('fs').promises

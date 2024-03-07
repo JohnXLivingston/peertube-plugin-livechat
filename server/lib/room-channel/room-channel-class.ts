@@ -1,7 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { RoomConf } from 'xmppjs-chat-bot'
 import { getProsodyDomain } from '../prosody/config/domain'
-import { listProsodyRooms } from '../prosody/api/list-rooms'
+import { listProsodyRooms } from '../prosody/api/manage-rooms'
 import { getChannelInfosById } from '../database/channel'
 import { ChannelConfigurationOptions } from '../../../shared/lib/types'
 import {

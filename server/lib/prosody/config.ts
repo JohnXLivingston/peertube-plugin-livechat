@@ -313,7 +313,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   // TODO: add a settings to choose?
   config.useDefaultPersistent()
 
-  config.useListRoomsApi(apikey)
+  config.useManageRoomsApi(apikey)
   config.usePeertubeVCards(basePeertubeUrl)
   config.useAnonymousRandomVCards(paths.avatars, paths.avatarsFiles)
 

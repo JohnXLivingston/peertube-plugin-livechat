@@ -2,6 +2,8 @@ import type { RegisterServerOptions, MVideoFullLight, VideoChannel } from '@peer
 import { RoomChannel } from '../../room-channel'
 import { fillVideoCustomFields } from '../../custom-fields'
 import { videoHasWebchat } from '../../../../shared/lib/video'
+import { updateProsodyRoom } from '../../prosody/api/manage-rooms'
+import { getChannelInfosById } from '../../database/channel'
 
 /**
  * Register stuffs related to channel configuration
@@ -98,8 +100,45 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
 
         logger.debug(`Ensuring a room-channel link between room ${roomLocalPart} and channel ${video.channelId}`)
         RoomChannel.singleton().link(video.channelId, roomLocalPart)
+
+        if (settings['prosody-room-type'] === 'video') {
+          // Also updating chatroom meta data.
+          // FIXME: this piece of code should not be in this file (nothing to do with initChannelConfiguration,
+          //   but will be more efficient to add here, as we already tested hasChat).
+          // Note: no need to await here, would only degrade performances.
+          updateProsodyRoom(options, video.channelId, video.uuid, {
+            name: video.name
+          }).then(
+            () => {},
+            (err) => logger.error(err)
+          )
+        }
       } catch (err) {
         logger.error(err)
+      }
+    }
+  })
+
+  registerHook({
+    target: 'action:api.video-channel.updated',
+    handler: async (params: { videoChannel: VideoChannel }) => {
+      const channel = await getChannelInfosById(options, params.videoChannel.id, true)
+      if (!channel) { return }
+
+      // FIXME: this piece of code should not be in this file (nothing to do with initChannelConfiguration,
+      //   but for now i keep it close to the similar code on video.updated hook).
+      const settings = await options.settingsManager.getSettings([
+        'prosody-room-type'
+      ])
+      if (settings['prosody-room-type'] === 'channel') {
+        const jid = 'channel.' + channel.id.toString()
+        // Note: no need to await here, would only degrade performances.
+        updateProsodyRoom(options, channel.id, jid, {
+          name: channel.displayName
+        }).then(
+          () => {},
+          (err) => logger.error(err)
+        )
       }
     }
   })
