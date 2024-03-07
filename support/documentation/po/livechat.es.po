@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-03-01 15:25+0100\n"
-"PO-Revision-Date: 2024-03-06 13:38+0000\n"
+"PO-Revision-Date: 2024-03-07 05:45+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -528,12 +528,14 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Write documentation"
-msgstr ""
+msgstr "Redactar la documentación"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit the english files in `support/documentation/content/en`."
 msgstr ""
+"Sólo tienes que editar los archivos en inglés en `support/documentation/"
+"content/en`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
