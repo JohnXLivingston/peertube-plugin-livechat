@@ -22,7 +22,7 @@ You can set a number of seconds that users will have to wait after sending a mes
 
 This limitation does not apply to moderators.
 
-## Default channel value
+## Slow mode option
 
 On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:
 
@@ -34,33 +34,9 @@ Setting the value to `0` will disable the feature.
 
 Setting the value to a positive integer will set the period during which users will not be able to post additional messages.
 
-## Modifying the value for an existing chatroom
-
-{{% notice warning %}}
-As there was a security issue with livechat plugin v8.3.1 (leaking the full list of instance moderator and administrators), the following only works for users that are also administrator or moderator on the Peertube instance.
-An alternative method to set this for existing chatrooms will be provided in a later livechat version, when the issue will be properly fixed.
-For now, if you are not moderator or administrator on the Peertube instance, you can change the slow mode setting by deleting your room (it will be recreated with the value set in the channel options).
-This solution is not optimal, and we apologize for the inconvenience.
-{{% /notice %}}
-
-To modify the slow mode duration for an existing chatroom, you first have to open it in [full screen mode](/peertube-plugin-livechat/documentation/user/viewers).
-Then, open the top menu and click on "configure".
-
-![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
-
-You just have to change the "slow mode" field value.
-
-![Configure chat room](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)
-
-Setting the value to `0` will disable the feature.
-
-Setting the value to a positive integer will set the period during which users will not be able to post additional messages.
-
-The modification will immediatly apply.
-
 ## For viewers
 
-If the slow mode is enabled, users will be informed by an message.
+If the slow mode is enabled, users will be informed by a message.
 
 ![Slow mode infobox](/peertube-plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px)
 
