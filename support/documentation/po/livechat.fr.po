@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-03-07 18:10+0100\n"
-"PO-Revision-Date: 2024-03-07 17:56+0000\n"
+"PO-Revision-Date: 2024-03-08 08:41+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -1618,7 +1618,11 @@ msgid ""
 "Otherwise it could block all anonymous users at once.\n"
 msgstr ""
 "**Note importante** :\n"
-"Si vous activez cette fonctionnalité, et que vous utilisez un reverse proxy personnalisé devant Peertube, merci de vous assurer que vous avez correctement configuré celui-ci pour faire suivre les IPs réelles des utilisateur⋅rices à Peertube.\n"
+"Si vous activez cette fonctionnalité, et que vous utilisez un reverse proxy "
+"personnalisé devant Peertube, merci de vous assurer que vous avez "
+"correctement configuré celui-ci pour faire suivre les IPs réelles des "
+"utilisateur⋅rices à Peertube.\n"
+"Sinon cela pourrait bloquer tous les utilisateur⋅rices anonymes d'un coup.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1654,7 +1658,11 @@ msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr "{{% livechat_label avatar_set_option_bird %}}: [Générateur d'avatar d'oiseaux de David Revoy](https://www.peppercarrot.com/extras/html/2016_cat-generator/), Licence [CC-By](https://creativecommons.org/licenses/by/4.0/)"
+msgstr ""
+"{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar "
+"d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/"
+"2016_cat-generator/), Licence [CC-By](https ://creativecommons.org/licenses/"
+"by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
