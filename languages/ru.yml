@@ -1,0 +1,67 @@
+important_note_text: "Документацию по плагину вы можете найти здесь:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/ru/\"\
+  \ target=\"_blank\">\n  Документация по плагину Livechat для Peertube\n</a>.\n"
+diagnostic: "Перед тем, как попросить о помощи, пожалуйста, воспользуйтесь диагностикой:\n
+  <a class=\"peertube-plugin-livechat-launch-diagnostic\">Запустить диагностику</a>\n
+  (если эта кнопка не открывает новое окно, просим вас обновить страницу).\n"
+room_type_description: Здесь вы можете выбрать, чтобы каждое видео имело отдельную
+  комнату или чтобы чат-комната распротранялась на канал.
+auto_display_description: При просмотре видео чат будет открываться автоматически.
+cancel: Отмена
+successfully_saved: Успешно сохранено
+menu_configuration_label: Чат-комнаты
+livechat_configuration_title: Настройте чат-комнаты на своих трансляциях
+livechat_configuration_desc: Здесь мы можете настроить некоторые продвинутые опии
+  для чат-комнат, привязанных к вашим трансляциям.
+livechat_configuration_please_select: Пожалуйста, выберите ниже один из каналов, чтобы
+  начать настройку.
+livechat_configuration_channel_title: Опции канала
+livechat_configuration_channel_desc: Здесь вы можете настроить некоторые опции для
+  этого канала (политика модерации, ...).
+livechat_configuration_channel_enable_bot_label: Активировать бота-модератора
+livechat_configuration_channel_bot_options_title: Опции бота-модератора
+open_chat: Открыть чат
+room_name: Имя комнаты
+connect_using_xmpp_help: Вы можете подключиться к комнате, пользуясь внешней учётной
+  записью XMPP и вашим любимым клиентом.
+important_note_title: <h3>Важные примечания</h3>
+chat_behaviour_description: <h3>Поведение чата</h3>
+online_help: Онлайн-помощь
+save: Сохранить
+open_chat_new_window: Открыть чат в новом вкладке
+close_chat: Закрыть чат
+use_chat: Использовать чат
+use_chat_help: Если включено, рядом с видео будет открыт чат.
+share_chat_link: Поделиться ссылкой на чат
+read_only: Только для чтения
+show_scrollbarr: Показывать полосу прокрутки
+transparent_background: Прозрачный фон (для интеграции в эфир, например, через OBS)
+tips_for_streamers: 'Для стримеров: чтобы добавить чат в OBS, создайте ссылку только
+  для чтения и используйте её в источнике «Браузер».'
+copy: Копировать
+link_copied: Ссылка скопирована
+error: Ошибка
+open: Открыть
+use_current_theme_color: Использовать цвета из текущей темы
+generate_iframe: Создать iframe для интеграци чата в веб-сайт
+chat_for_live_stream: 'Чат живого эфира:'
+room_description: Описание комнаты
+not_found: Не найдено
+video: Видео
+channel: Канал
+last_activity: Последняя активность
+web: Веб
+connect_using_xmpp: Подключиться по XMPP
+chat_title: <h3>Чат</h3>
+list_rooms_label: Показать существующие комнаты
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Показать комнаты</a>\n"
+federation_description: "<h3>Федерирование</h3>\nДанные настройки касаются федерирования
+  с другими серверами Peertube\nи прочим федиверс-софтом.\n"
+federation_no_remote_chat_label: Не показывать внешние чаты
+federation_no_remote_chat_description: "Имея эту настройку, ваш сервер никогда не
+  будет отображать чаты на видео с внешних серверов.\n"
+federation_dont_publish_remotely_label: Не публиковать информацию чата
+room_type_label: Тип комнаты
+room_type_option_video: Каждое видео имеет свою собственную чат-комнату
+room_type_option_channel: Чат-комната общая для канала
+auto_display_label: Автоматически открывать чат
