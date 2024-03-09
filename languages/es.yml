@@ -70,11 +70,11 @@ open_blank_label: Muestra el botón «abrir en ventana nueva»
 share_url_description: Se mostrará un botón para compartir la url del chat (puede
   usarse para integración con OBS, por ejemplo).
 federation_no_remote_chat_label: No mostrar chats remotos
-auto_display_description: Al ver un vídeo, se abrirá automáticamente el chatbox.
-open_blank_description: Se mostrará un botón para abrir el web chat en una nueva ventana.
+auto_display_description: Cuando se reproduzca un vídeo, el chatbox se abrirá automáticamente.
+open_blank_description: Habrá un botón para abrir el web chat en una nueva ventana.
 share_url_label: Muestra el botón "enlace para compartir el chat"
-share_url_option_owner: Mostrar para el propietario del video
-share_url_option_owner_moderators: Mostrar para el propietario del video y los moderadores
+share_url_option_owner: Mostrar para el propietario del vídeo
+share_url_option_owner_moderators: Mostrar para el propietario del vídeo y los moderadores
   de la instancia
 all_lives_label: Activar chat para todos los en vivos
 all_lives_description: Si se marca, el chat sera activado para todos los en vivos.
@@ -90,9 +90,9 @@ federation_dont_publish_remotely_description: "Al aceptar esta configuración, s
   o se detiene.<br>\n<b>Porfavor note</b>: esta configuración solo afecta la publicación
   de información via el protocolo ActivityPub.\nElla no prevendra une applicación
   remota de detectar la presencia de chats y de intentar connectarse a ellos.\n"
-share_url_option_nobody: Mostrar para nadie
-per_live_video_label: Los usuarios pueden activar el chat para sus vídeos en directo
-share_url_option_everyone: Mostrar para todos
+share_url_option_nobody: No mostrar a nadie
+per_live_video_label: Los usuarios pueden activar el chat para sus directos
+share_url_option_everyone: Mostrar a todos
 per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
   >\n  Ha activado la configuración  \"Usuarions pueden activar el chat para sus en
   vivo\".\n  Es redundante con la configuración  \"Activar el chat para todos los
