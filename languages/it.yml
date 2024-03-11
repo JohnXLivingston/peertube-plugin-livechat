@@ -198,9 +198,9 @@ prosody_muc_expiration_description: |
 prosody_room_allow_s2s_label: Abilitare la connessione a questa stanza usando profili
   XMPP esterni
 prosody_room_allow_s2s_description: "Abilitando questa opzione, sarà possibile connettersi\
-  \ alle stanze utilizzando account XMPP esterni tramite client XMPP.<br>\nSi noti\
+  \ alle stanze utilizzando account XMPP esterni tramite client XMPP.<br>\n<span class=\"peertube-plugin-livechat-warning\">Si noti\
   \ che l'attivazione di questa opzione può richiedere la configurazione del server\
-  \ e dei record DNS.\nPer saperne di più, consultare la documentazione:\n<a href=\"\
+  \ e dei record DNS.</span>\nPer saperne di più, consultare la documentazione:\n<a href=\"\
   https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n   Permettere connessioni con account XMPP esterni.\n</a>\n"
 

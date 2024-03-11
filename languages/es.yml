@@ -136,8 +136,8 @@ prosody_peertube_uri_description: "Por favor, deje esta configuración vacía si
   el URI de Peertube para los módulos de Prosody\n(por ejemplo, con \"http://localhost:9000\"\
   \ o \"http://127.0.0.1:9000\").\n"
 prosody_room_allow_s2s_description: "Al habilitar esta opción, será posible conectarse
-  a salas utilizando cuentas XMPP externas y clientes XMPP.<br>\nAdvertencia, habilitar
-  esta opción puede solicitar un servidor adicional y una configuración de DNS.\n
+  a salas utilizando cuentas XMPP externas y clientes XMPP.<br>\n<span class=\"peertube-plugin-livechat-warning\">Advertencia, habilitar
+  esta opción puede solicitar un servidor adicional y una configuración de DNS.</span>\n
   Por favor, consulte la documentación:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n   Habilitar  conexiones con cuentas XMPP externas.\n</a>\n"
 prosody_muc_expiration_description: "Aquí puede elegir cuánto tiempo el servidor conserva

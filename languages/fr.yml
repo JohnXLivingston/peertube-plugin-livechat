@@ -208,7 +208,9 @@ prosody_room_allow_s2s_label: "Autoriser les connexions aux salons via des compt
   XMPP externes"
 prosody_room_allow_s2s_description: |
   En activant cette option, il sera possible de se connecter aux salons en utilisant des comptes XMPP externes via des clients XMPP.<br>
-  Attention, activer cette option peut demander une configuration au niveau du serveur et des enregistrements DNS.
+  <span class="peertube-plugin-livechat-warning">
+    Attention, activer cette option peut demander une configuration au niveau du serveur et des enregistrements DNS.
+  </span>
   Pour en savoir plus, merci de vous référer à la documentation:
   <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/" target="_blank">
     Autoriser les connexions avec des comptes XMPP externes.

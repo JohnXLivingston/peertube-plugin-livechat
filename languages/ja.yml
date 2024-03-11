@@ -128,7 +128,7 @@ prosody_muc_expiration_description: "チャットルームの内容をいつま�
   内容は、1<b>年</b>保存されます。1をお好みの数字に変更できます。</li>\n    <li><b>永久</b>: 内容に有効期限はなく、永久保管されます。</li>\n\
   </ul>\n"
 prosody_room_allow_s2s_description: "この設定を有効にすると、外部のXMPPアカウントとXMPPクライアントを利用してチャットルームに接続できるようになります。<br>\n
-  注意しなければならないのは、この設定は追加のサーバーとDNS設定をリクエストできるようになることです。\n次のドキュメントを参照してください:\n<a href=\"\
+  <span class=\"peertube-plugin-livechat-warning\">注意しなければならないのは、この設定は追加のサーバーとDNS設定をリクエストできるようになることです。</span>\n次のドキュメントを参照してください:\n<a href=\"\
   https://johnxlivingston.github.io/peertube-plugin-livechat/ja/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n  外部のXMPPアカウント接続を有効にする。\n</a>\n"
 prosody_s2s_interfaces_description: "サーバー間接続のためにリッスンするネットワークインターフェイスです。<br>\nリッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。<br>\n\

@@ -7,6 +7,7 @@
 * Translation updates: deutsch, japanese, russian.
 * Updating slow mode duration on existing rooms when changing channel options (related to #332).
   * This settings is no more a default duration, but the actual duration (updating labels and documentation).
+* Settings: orange warning for the "Enable connection to room using external XMPP accounts" settings.
 
 ## 8.3.2
 
