@@ -1,6 +1,6 @@
 # Changelog
 
-## ??? (Not Released Yet)
+## 8.4.0
 
 * Fix #87: updating chat room title when video/channel title is changed.
 * Updating xmppjs-chat-box version.
