@@ -1660,8 +1660,8 @@ msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,
 msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
 "{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar "
-"d'oiseaux de David Revoy](https ://www.peppercarrot.com/extras/html/"
-"2016_cat-generator/), Licence [CC-By](https ://creativecommons.org/licenses/"
+"d'oiseaux de David Revoy](https://www.peppercarrot.com/extras/html/"
+"2016_cat-generator/), Licence [CC-By](https://creativecommons.org/licenses/"
 "by/4.0/)"
 
 #. type: Plain text
