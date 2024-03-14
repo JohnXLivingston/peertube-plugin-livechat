@@ -1,5 +1,9 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+* #143: User colors: implementing [XEP-0392](https://xmpp.org/extensions/xep-0392.html) to have random colors on users nicknames
+
 ## 8.4.0
 
 * Fix #87: updating chat room title when video/channel title is changed.
