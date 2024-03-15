@@ -2,6 +2,8 @@
 
 ## ??? (Not Released Yet)
 
+TODO: replace commit_id by a tag in build-conversejs
+
 * #143: User colors: implementing [XEP-0392](https://xmpp.org/extensions/xep-0392.html) to have random colors on users nicknames
 
 ## 8.4.0
