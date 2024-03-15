@@ -27,7 +27,7 @@ CONVERSE_COMMIT=""
 # - Destroy room: remove the challenge, and the new JID
 # - New config option [colorize_username](https://conversejs.org/docs/html/configuration.html#colorize_username)
 CONVERSE_VERSION="livechat-8.2.0"
-CONVERSE_COMMIT="335d37880a1aeafc0d1df62ae9c0788a92267162"
+CONVERSE_COMMIT="9d0794974fe77e1a3a1de4585ab4d1f0a373f269"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"
