@@ -46,7 +46,9 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
         converseRoot.classList.add('theme-peertube')
         container.append(converseRoot)
 
-        window.initConverse(converseJSParams, 'embedded')
+        const authHeader = peertubeHelpers.getAuthHeader()
+
+        window.initConverse(converseJSParams, 'peertube-fullpage', authHeader ?? null)
       } catch (err) {
         console.error('[peertube-plugin-livechat] ' + (err as string))
         rootEl.innerText = await peertubeHelpers.translate(LOC_NOT_FOUND)

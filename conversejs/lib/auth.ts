@@ -3,7 +3,13 @@ interface AuthentInfos {
   password: string
   nickname?: string
 }
-async function getLocalAuthentInfos (authenticationUrl: string): Promise<false | AuthentInfos> {
+
+interface AuthHeader { [key: string]: string }
+
+async function getLocalAuthentInfos (
+  authenticationUrl: string,
+  peertubeAuthHeader?: AuthHeader | null
+): Promise<false | AuthentInfos> {
   try {
     if (authenticationUrl === '') {
       console.error('Missing authenticationUrl')
@@ -13,25 +19,43 @@ async function getLocalAuthentInfos (authenticationUrl: string): Promise<false |
       console.error('Your browser has not the fetch api, we cant log you in')
       return false
     }
-    if (!window.localStorage) {
-      // FIXME: is the Peertube token always in localStorage?
-      console.error('Your browser has no localStorage, we cant log you in')
+
+    if (peertubeAuthHeader === null) {
+      console.info('User is not logged in.')
       return false
     }
-    const tokenType = window.localStorage.getItem('token_type') ?? ''
-    const accessToken = window.localStorage.getItem('access_token') ?? ''
-    const refreshToken = window.localStorage.getItem('refresh_token') ?? ''
-    if (tokenType === '' && accessToken === '' && refreshToken === '') {
-      console.info('User seems not to be logged in.')
-      return false
+
+    if (peertubeAuthHeader === undefined) { // parameter not given.
+      // We must be in a page without PeertubeHelpers, so we must get authent token manualy.
+      if (!window.localStorage) {
+        // FIXME: is the Peertube token always in localStorage?
+        console.error('Your browser has no localStorage, we cant log you in')
+        return false
+      }
+      const tokenType = window.localStorage.getItem('token_type') ?? ''
+      const accessToken = window.localStorage.getItem('access_token') ?? ''
+      const refreshToken = window.localStorage.getItem('refresh_token') ?? ''
+      if (tokenType === '' && accessToken === '' && refreshToken === '') {
+        console.info('User seems not to be logged in.')
+        return false
+      }
+
+      peertubeAuthHeader = {
+        Authorization: tokenType + ' ' + accessToken
+      }
     }
 
     const response = await window.fetch(authenticationUrl, {
       method: 'GET',
-      headers: new Headers({
-        Authorization: tokenType + ' ' + accessToken,
-        'content-type': 'application/json;charset=UTF-8'
-      })
+      headers: new Headers(
+        Object.assign(
+          {},
+          peertubeAuthHeader,
+          {
+            'content-type': 'application/json;charset=UTF-8'
+          }
+        )
+      )
     })
 
     if (!response.ok) {

@@ -24,9 +24,24 @@ declare global {
   }
 }
 
+/**
+ * ChatIncludeMode:
+ * - chat-only: the chat is on a full page, without Peertube
+ * - peertube-fullpage: the chat is embedded in Peertube, in a full custom page
+ * - peertube-video: the chat is embedded in Peertube, beside a video
+ */
+type ChatIncludeMode = 'chat-only' | 'peertube-fullpage' | 'peertube-video'
+
+/**
+ * Init ConverseJS
+ * @param initConverseParams ConverseJS init Params
+ * @param chatIncludeMode How the chat is included in the html page
+ * @param peertubeAuthHeader when embedded in Peertube, we can get the header from peertubeHelpers
+ */
 window.initConverse = async function initConverse (
   initConverseParams: InitConverseJSParams,
-  viewMode: 'fullscreen' | 'embedded' = 'fullscreen'
+  chatIncludeMode: ChatIncludeMode = 'chat-only',
+  peertubeAuthHeader?: { [header: string]: string } | null
 ): Promise<void> {
   // First, fixing relative websocket urls.
   if (initConverseParams.localWebsocketServiceUrl?.startsWith('/')) {
@@ -50,13 +65,13 @@ window.initConverse = async function initConverse (
   const isInIframe = inIframe()
   initDom(initConverseParams, isInIframe)
   const params = defaultConverseParams(initConverseParams, isInIframe)
-  params.view_mode = viewMode
-  params.allow_url_history_change = viewMode === 'fullscreen'
+  params.view_mode = chatIncludeMode === 'chat-only' ? 'fullscreen' : 'embedded'
+  params.allow_url_history_change = chatIncludeMode === 'chat-only'
 
   let isAuthenticated: boolean = false
   let isRemoteWithNicknameSet: boolean = false
 
-  const auth = await getLocalAuthentInfos(authenticationUrl)
+  const auth = await getLocalAuthentInfos(authenticationUrl, peertubeAuthHeader)
   if (auth) {
     if (!isRemoteChat) {
       localRoomAuthenticatedParams(initConverseParams, auth, params)
@@ -93,28 +108,29 @@ window.initConverse = async function initConverse (
   }
 
   try {
-// TODO: disable this when on the new full page.
-    converse.plugins.add('livechatWindowTitlePlugin', {
-      dependencies: ['converse-muc-views'],
-      overrides: {
-        ChatRoomView: {
-          requestUpdate: function (this: any): any {
-            console.log('[livechatWindowTitlePlugin] updating the document title.')
-            try {
-              if (this.model?.getDisplayName) {
-                const title = this.model.getDisplayName()
-                if (document.title !== title) {
-                  document.title = title
+    if (chatIncludeMode === 'chat-only') {
+      converse.plugins.add('livechatWindowTitlePlugin', {
+        dependencies: ['converse-muc-views'],
+        overrides: {
+          ChatRoomView: {
+            requestUpdate: function (this: any): any {
+              console.log('[livechatWindowTitlePlugin] updating the document title.')
+              try {
+                if (this.model?.getDisplayName) {
+                  const title = this.model.getDisplayName()
+                  if (document.title !== title) {
+                    document.title = title
+                  }
                 }
+              } catch (err) {
+                console.error('[livechatWindowTitlePlugin] Failed updating the window title', err)
               }
-            } catch (err) {
-              console.error('[livechatWindowTitlePlugin] Failed updating the window title', err)
+              return this.__super__.requestUpdate.apply(this)
             }
-            return this.__super__.requestUpdate.apply(this)
           }
         }
-      }
-    })
+      })
+    }
 
     converse.plugins.add('converse-slow-mode', slowModePlugin)
 

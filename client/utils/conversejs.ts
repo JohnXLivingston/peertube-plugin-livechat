@@ -1,6 +1,7 @@
 import type { InitConverseJSParams } from 'shared/lib/types'
 import { computeAutoColors } from './colors'
 
+// FIXME
 // declare global {
 //   interface Window {
 //     converse?: {
@@ -12,6 +13,7 @@ import { computeAutoColors } from './colors'
 //   }
 // }
 
+// FIXME: better declaration
 declare global {
   interface Window {
     converse?: any
