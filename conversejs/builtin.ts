@@ -137,6 +137,13 @@ window.initConverse = async function initConverse (
     // livechatSpecifics plugins add some customization for the livechat plugin.
     converse.plugins.add('livechatSpecifics', {
       dependencies: ['converse-muc', 'converse-muc-views'],
+      initialize: function () {
+        const _converse = this._converse
+        _converse.api.listen.on('chatRoomViewInitialized', function (this: any, _model: any): void {
+          // Remove the spinner if present...
+          document.getElementById('livechat-loading-spinner')?.remove()
+        })
+      },
       overrides: {
         ChatRoom: {
           getActionInfoMessage: function (this: any, code: string, nick: string, actor: any): any {

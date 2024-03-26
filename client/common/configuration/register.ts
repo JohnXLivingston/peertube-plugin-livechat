@@ -37,17 +37,25 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
         }
 
         const converseJSParams: InitConverseJSParams = await (response).json()
-        await loadConverseJS(converseJSParams)
 
         const container = document.createElement('div')
         container.classList.add('livechat-embed-fullpage')
         rootEl.append(container)
+
         const converseRoot = document.createElement('converse-root')
         converseRoot.classList.add('theme-peertube')
         container.append(converseRoot)
 
+        const spinner = document.createElement('div')
+        spinner.classList.add('livechat-spinner')
+        spinner.setAttribute('id', 'livechat-loading-spinner')
+        spinner.innerHTML = '<div></div>'
+        container.prepend(spinner)
+        // spinner will be removed by a converse plugin
+
         const authHeader = peertubeHelpers.getAuthHeader()
 
+        await loadConverseJS(converseJSParams)
         window.initConverse(converseJSParams, 'peertube-fullpage', authHeader ?? null)
       } catch (err) {
         console.error('[peertube-plugin-livechat] ' + (err as string))
