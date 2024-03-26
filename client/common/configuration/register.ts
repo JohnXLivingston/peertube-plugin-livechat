@@ -40,7 +40,6 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
         await loadConverseJS(converseJSParams)
 
         const container = document.createElement('div')
-        container.classList.add('margin-content')
         container.classList.add('livechat-embed-fullpage')
         rootEl.append(container)
         const converseRoot = document.createElement('converse-root')

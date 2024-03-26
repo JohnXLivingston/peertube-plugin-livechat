@@ -110,4 +110,9 @@ body.converse-embedded {
     height: 90vh;
     min-height: 400px;
   }
+
+  converse-muc-message-form {
+    // For an unknown reason, message field in truncated... so adding a bottom margin.
+    margin-bottom: 6px;
+  }
 }
