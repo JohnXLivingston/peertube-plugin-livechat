@@ -89,3 +89,25 @@ body.livechat-transparent {
     display: none !important;
   }
 }
+
+/* Chat directly embedded in Peertube */
+body.converse-embedded {
+  .conversejs .modal {
+    // modal z-index = use same z-index as Peertube (see Peertube _variables.scss)
+    z-index: 19000;
+  }
+
+  .modal-backdrop {
+    // must be just under .modal.
+    z-index: 18999;
+  }
+}
+
+/* Chat embedded in a full client page. */
+.livechat-embed-fullpage {
+  converse-root {
+    display: block;
+    height: 90vh;
+    min-height: 400px;
+  }
+}
