@@ -9,8 +9,11 @@ import {
   remoteRoomAuthenticatedParams
 } from './lib/converse-params'
 import { getLocalAuthentInfos } from './lib/auth'
-import { randomNick, getPreviousAnonymousNick, setPreviousAnonymousNick } from './lib/nick'
-import { slowModePlugin } from './lib/slow-mode/plugin'
+import { randomNick } from './lib/nick'
+import { slowModePlugin } from './lib/plugins/slow-mode'
+import { windowTitlePlugin } from './lib/plugins/window-title'
+import { livechatSpecificsPlugin } from './lib/plugins/livechat-specific'
+import { livechatViewerModePlugin } from './lib/plugins/livechat-viewer-mode'
 
 declare global {
   interface Window {
@@ -19,10 +22,36 @@ declare global {
       plugins: {
         add: (name: string, plugin: any) => void
       }
+      livechatDisconnect?: Function
     }
-    initConverse: (args: InitConverseJSParams) => Promise<void>
+    initConversePlugins: typeof initConversePlugins
+    initConverse: typeof initConverse
   }
 }
+
+/**
+ * Initilialize ConverseJS plugins.
+ * @param peertubeEmbedded true if we are embedded in Peertube, false if it is the old full page mode.
+ */
+function initConversePlugins (peertubeEmbedded: boolean): void {
+  const converse = window.converse
+
+  if (!peertubeEmbedded) {
+    // When in full page mode, this plugin ensure the window title is equal to the room title.
+    converse.plugins.add('livechatWindowTitlePlugin', windowTitlePlugin)
+  }
+
+  // Slow mode
+  converse.plugins.add('converse-slow-mode', slowModePlugin)
+
+  // livechatSpecifics plugins add some customization for the livechat plugin.
+  converse.plugins.add('livechatSpecifics', livechatSpecificsPlugin)
+
+  // Viewer mode (anonymous accounts, before they have chosen their nickname).
+  // This plugin will be blacklisted in initConverse if not necessary.
+  converse.plugins.add('livechatViewerModePlugin', livechatViewerModePlugin)
+}
+window.initConversePlugins = initConversePlugins
 
 /**
  * ChatIncludeMode:
@@ -38,7 +67,7 @@ type ChatIncludeMode = 'chat-only' | 'peertube-fullpage' | 'peertube-video'
  * @param chatIncludeMode How the chat is included in the html page
  * @param peertubeAuthHeader when embedded in Peertube, we can get the header from peertubeHelpers
  */
-window.initConverse = async function initConverse (
+async function initConverse (
   initConverseParams: InitConverseJSParams,
   chatIncludeMode: ChatIncludeMode = 'chat-only',
   peertubeAuthHeader?: { [header: string]: string } | null
@@ -108,162 +137,14 @@ window.initConverse = async function initConverse (
   }
 
   try {
-    if (chatIncludeMode === 'chat-only') {
-      converse.plugins.add('livechatWindowTitlePlugin', {
-        dependencies: ['converse-muc-views'],
-        overrides: {
-          ChatRoomView: {
-            requestUpdate: function (this: any): any {
-              console.log('[livechatWindowTitlePlugin] updating the document title.')
-              try {
-                if (this.model?.getDisplayName) {
-                  const title = this.model.getDisplayName()
-                  if (document.title !== title) {
-                    document.title = title
-                  }
-                }
-              } catch (err) {
-                console.error('[livechatWindowTitlePlugin] Failed updating the window title', err)
-              }
-              return this.__super__.requestUpdate.apply(this)
-            }
-          }
-        }
-      })
+    if (!(autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet)) {
+      params.blacklisted_plugins ??= []
+      params.blacklisted_plugins.push('livechatViewerModePlugin')
     }
-
-    converse.plugins.add('converse-slow-mode', slowModePlugin)
-
-    // livechatSpecifics plugins add some customization for the livechat plugin.
-    converse.plugins.add('livechatSpecifics', {
-      dependencies: ['converse-muc', 'converse-muc-views'],
-      initialize: function () {
-        const _converse = this._converse
-        _converse.api.listen.on('chatRoomViewInitialized', function (this: any, _model: any): void {
-          // Remove the spinner if present...
-          document.getElementById('livechat-loading-spinner')?.remove()
-        })
-      },
-      overrides: {
-        ChatRoom: {
-          getActionInfoMessage: function (this: any, code: string, nick: string, actor: any): any {
-            if (code === '303') {
-              // When there is numerous anonymous users joining at the same time,
-              // they can all change their nicknames at the same time, generating a log of action messages.
-              // To mitigate this, will don't display nickname changes if the previous nick is something like
-              // 'Anonymous 12345'.
-              if (/^Anonymous \d+$/.test(nick)) {
-                // To avoid displaying the message, we just have to return an empty one
-                // (createInfoMessage will ignore if !data.message).
-                return null
-              }
-            }
-            return this.__super__.getActionInfoMessage(code, nick, actor)
-          }
-        },
-        ChatRoomMessage: {
-          /* By default, ConverseJS groups messages from the same users for a 10 minutes period.
-           * This make no sense in a livechat room. So we override isFollowup to ignore. */
-          isFollowup: function isFollowup () { return false }
-        },
-        ChatRoomOccupants: {
-          comparator: function (this: any, occupant1: any, occupant2: any): Number {
-            // Overriding Occupants comparators, to display anonymous users at the end of the list.
-            const nick1: string = occupant1.getDisplayName()
-            const nick2: string = occupant2.getDisplayName()
-            const b1 = nick1.startsWith('Anonymous ')
-            const b2 = nick2.startsWith('Anonymous ')
-            if (b1 === b2) {
-              // Both startswith anonymous, or non of it: fallback to the standard comparator.
-              return this.__super__.comparator(occupant1, occupant2)
-            }
-            // Else: Anonymous always last.
-            return b1 ? 1 : -1
-          }
-        }
-      }
-    })
-
-    if (autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet) {
-      const previousNickname = getPreviousAnonymousNick()
-      converse.plugins.add('livechatViewerModePlugin', {
-        dependencies: ['converse-muc', 'converse-muc-views'],
-        initialize: function () {
-          const _converse = this._converse
-          const getDefaultMUCNickname = _converse.getDefaultMUCNickname
-          if (!getDefaultMUCNickname) {
-            console.error('[livechatViewerModePlugin] getDefaultMUCNickname is not initialized.')
-          } else {
-            Object.assign(_converse, {
-              getDefaultMUCNickname: function (this: any): any {
-                return getDefaultMUCNickname.apply(this, arguments) ?? previousNickname ?? randomNick('Anonymous')
-              }
-            })
-          }
-
-          function refreshViewerMode (canChat: boolean): void {
-            console.log('[livechatViewerModePlugin] refreshViewerMode: ' + (canChat ? 'off' : 'on'))
-            if (canChat) {
-              document.querySelector('body')?.setAttribute('livechat-viewer-mode', 'off')
-            } else {
-              document.querySelector('body')?.setAttribute('livechat-viewer-mode', 'on')
-            }
-          }
-
-          if (previousNickname === null) {
-            _converse.api.settings.update({
-              livechat_viewer_mode: true
-            })
-          }
-
-          _converse.api.listen.on('livechatViewerModeSetNickname', () => refreshViewerMode(true))
-
-          _converse.ChatRoomOccupants.prototype.on('change:nick', (data: any, nick: string) => {
-            try {
-              // On nick change, if the user is_me, storing the new nickname
-              if (nick && data?.attributes?.is_me === true) {
-                console.log('Nickname change, storing to previousAnonymousNick')
-                setPreviousAnonymousNick(nick)
-              }
-            } catch (err) {
-              console.error('Error on nick change handling...', err)
-            }
-          })
-
-          _converse.api.listen.on('chatRoomInitialized', function (this: any, model: any): void {
-            // When room is initialized, if user has chosen a nickname, set viewermode to off.
-            // Note: when previousNickname is set, model.get('nick') has not the nick yet...
-            // It will only come after receiving a presence stanza.
-            // So we use previousNickname before trying to read the model.
-            const nick = previousNickname ?? (model?.get ? model.get('nick') : '')
-            refreshViewerMode(nick && !/^Anonymous /.test(nick))
-          })
-        }
-      })
-    }
-
-    // The following code does not work. Just keeping it in case we want to investigate.
-    // if (authenticationUrl !== '') {
-    //   // We are in builtin-prosody mode. I'll try to disconnect from the room
-    //   // on page unload. This is to avoid some bugs:
-    //   // - users are not show as disconnected until a long timeout
-    //   // - anonymous users' nicknames are not available before this timeout
-    //   // - logged in users sometimes can't switch between iframe and fullscreen more than 1 time
-    //   converse.plugins.add('livechatDisconnectOnUnloadPlugin', {
-    //     initialize: function () {
-    //       const _converse = this._converse
-    //       const { unloadevent } = _converse
-    //       // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    //       window.addEventListener(unloadevent, async () => {
-    //         console.log('[livechatDisconnectOnUnloadPlugin] Disconnecting...')
-    //         await _converse.api.user.logout()
-    //       }, { once: true, passive: true })
-    //     }
-    //   })
-    // }
 
     converse.initialize(params)
   } catch (error) {
     console.error('Failed initializing converseJS', error)
   }
 }
+window.initConverse = initConverse

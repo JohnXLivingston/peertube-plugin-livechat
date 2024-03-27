@@ -18,6 +18,7 @@ declare global {
   interface Window {
     converse?: any
     initConverse: Function
+    initConversePlugins: Function
   }
 }
 
@@ -104,6 +105,7 @@ async function loadConverseJS (converseJSParams: InitConverseJSParams): Promise<
   }
   if (!window.initConverse) {
     await loadScript(converseJSParams.staticBaseUrl + 'static/builtin.js')
+    window.initConversePlugins(true)
   }
 }
 

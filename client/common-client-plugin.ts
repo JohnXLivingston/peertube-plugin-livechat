@@ -21,6 +21,10 @@ async function register (clientOptions: RegisterClientOptions): Promise<void> {
         }
         container.remove()
       }
+
+      if (window.converse?.livechatDisconnect) {
+        window.converse.livechatDisconnect()
+      }
     }
   })
 
