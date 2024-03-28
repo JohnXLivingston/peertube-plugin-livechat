@@ -26,6 +26,7 @@ declare global {
     }
     initConversePlugins: typeof initConversePlugins
     initConverse: typeof initConverse
+    reconnectConverse?: (room: string) => void
   }
 }
 
@@ -142,7 +143,11 @@ async function initConverse (
       params.blacklisted_plugins.push('livechatViewerModePlugin')
     }
 
-    converse.initialize(params)
+    if (window.reconnectConverse) { // this is set in the livechatSpecificsPlugin
+      window.reconnectConverse(params)
+    } else {
+      converse.initialize(params)
+    }
   } catch (error) {
     console.error('Failed initializing converseJS', error)
   }

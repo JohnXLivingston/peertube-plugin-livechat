@@ -15,6 +15,32 @@ export const livechatSpecificsPlugin = {
       window.converse.livechatDisconnect = undefined // will be set again on next initialize.
     }
 
+    // To reconnect ConverseJS when joining another room (or the same one),
+    // we store the relevant closure function:
+    window.reconnectConverse = function reconnectConverse (params: any): void {
+      console.log('[livechatSpecificsPlugin] reconnecting converseJS...')
+
+      // The new room to join:
+      _converse.api.settings.set('auto_join_rooms', params.auto_join_rooms)
+      _converse.api.settings.set('notify_all_room_messages', params.notify_all_room_messages)
+
+      // update connection parameters (in case the user logged in after the first chat)
+      for (const k of [
+        'bosh_service_url', 'websocket_url',
+        'authentication', 'nickname', 'muc_nickname_from_jid', 'auto_login', 'jid', 'password', 'keepalive'
+      ]) {
+        _converse.api.settings.set(k, params[k])
+      }
+
+      // update other settings
+      for (const k of ['hide_muc_participants', 'blacklisted_plugins']) {
+        _converse.api.settings.set(k, params[k])
+      }
+
+      // Then login.
+      _converse.api.user.login()
+    }
+
     if (window.location.protocol === 'http:') {
       // We are probably on a dev instance, so we will add _converse in window:
       (window as any)._livechatConverse = _converse

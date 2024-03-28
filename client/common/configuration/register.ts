@@ -25,19 +25,6 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
           throw new Error('missing room parameter')
         }
 
-        const response = await fetch(
-          getBaseRoute(clientOptions) + '/api/configuration/room/' + encodeURIComponent(roomKey),
-          {
-            method: 'GET',
-            headers: peertubeHelpers.getAuthHeader()
-          }
-        )
-        if (!response.ok) {
-          throw new Error('Can\'t get channel configuration options.')
-        }
-
-        const converseJSParams: InitConverseJSParams = await (response).json()
-
         const container = document.createElement('div')
         container.classList.add('livechat-embed-fullpage')
         rootEl.append(container)
@@ -55,10 +42,23 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
 
         const authHeader = peertubeHelpers.getAuthHeader()
 
+        const response = await fetch(
+          getBaseRoute(clientOptions) + '/api/configuration/room/' + encodeURIComponent(roomKey),
+          {
+            method: 'GET',
+            headers: peertubeHelpers.getAuthHeader()
+          }
+        )
+        if (!response.ok) {
+          throw new Error('Can\'t get channel configuration options.')
+        }
+        const converseJSParams: InitConverseJSParams = await (response).json()
+
         await loadConverseJS(converseJSParams)
         window.initConverse(converseJSParams, 'peertube-fullpage', authHeader ?? null)
       } catch (err) {
         console.error('[peertube-plugin-livechat] ' + (err as string))
+        // FIXME: do a better error page.
         rootEl.innerText = await peertubeHelpers.translate(LOC_NOT_FOUND)
       }
     }
