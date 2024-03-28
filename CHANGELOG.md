@@ -4,6 +4,10 @@
 
 TODO: replace commit_id by a tag in build-conversejs
 
+**Breaking changes**:
+
+* if you were adding custom CSS to livechat iframe, it could be broken, as the livechat is no more included in an iframe. Your custom styles are now added on a `div` element.
+
 ### New features
 
 * #143: User colors: implementing [XEP-0392](https://xmpp.org/extensions/xep-0392.html) to have random colors on users nicknames

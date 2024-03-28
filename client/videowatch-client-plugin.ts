@@ -6,7 +6,7 @@ import { logger } from './utils/logger'
 import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG, helpButtonSVG } from './videowatch/buttons'
 import { displayButton, displayButtonOptions } from './videowatch/button'
 import { shareChatUrl } from './videowatch/share'
-import { getIframeUri } from './videowatch/uri'
+import { displayConverseJS } from './utils/conversejs'
 
 interface VideoWatchLoadedHookOptions {
   videojs: any
@@ -68,7 +68,7 @@ function guessIamIModerator (_registerOptions: RegisterClientOptions): boolean {
 
 function register (registerOptions: RegisterClientOptions): void {
   const { registerHook, peertubeHelpers } = registerOptions
-  let settings: any = {}
+  let settings: any = {} // will be loaded later
 
   async function insertChatDom (
     container: HTMLElement, video: Video, showOpenBlank: boolean, showShareUrlButton: boolean
@@ -77,7 +77,7 @@ function register (registerOptions: RegisterClientOptions): void {
     const viewersDocumentationHelpUrl = await localizedHelpUrl(registerOptions, {
       page: 'documentation/user/viewers'
     })
-    const p = new Promise<void>((resolve, reject) => {
+    const p = new Promise<void>((resolve) => {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       Promise.all([
         peertubeHelpers.translate(LOC_OPEN_CHAT),
@@ -92,11 +92,6 @@ function register (registerOptions: RegisterClientOptions): void {
         const labelShareUrl = labels[3]
         const labelHelp = labels[4]
 
-        const iframeUri = getIframeUri(registerOptions, settings, video)
-        if (!iframeUri) {
-          return reject(new Error('No uri, cant display the buttons.'))
-        }
-
         const buttonContainer = document.createElement('div')
         buttonContainer.classList.add('peertube-plugin-livechat-buttons')
         container.append(buttonContainer)
@@ -107,7 +102,9 @@ function register (registerOptions: RegisterClientOptions): void {
           buttonContainer,
           name: 'open',
           label: labelOpen,
-          callback: () => openChat(video),
+          callback: () => {
+            openChat(video).then(() => {}, () => {})
+          },
           icon: openChatSVG,
           additionalClasses: []
         })
@@ -118,7 +115,7 @@ function register (registerOptions: RegisterClientOptions): void {
             label: labelOpenBlank,
             callback: () => {
               closeChat()
-              window.open(iframeUri)
+              window.open('/p/livechat/room?room=' + encodeURIComponent(video.uuid))
             },
             icon: openBlankChatSVG,
             additionalClasses: []
@@ -176,45 +173,49 @@ function register (registerOptions: RegisterClientOptions): void {
     return p
   }
 
-  function openChat (video: Video): void | boolean {
+  async function openChat (video: Video): Promise<void | false> {
     if (!video) {
       logger.log('No video.')
       return false
     }
 
     logger.info(`Trying to load the chat for video ${video.uuid}.`)
-    const iframeUri = getIframeUri(registerOptions, settings, video)
-    if (!iframeUri) {
-      logger.error('Incorrect iframe uri')
+    // here the room key is always the video uuid, a backend API will translate to channel id if relevant.
+    const roomkey = video.uuid
+    if (!roomkey) {
+      logger.error('Can\'t get room xmpp addr')
       return false
     }
+
     const additionalStyles = settings['chat-style'] || ''
 
     logger.info('Opening the chat...')
     const container = document.getElementById('peertube-plugin-livechat-container')
-    if (!container) {
-      logger.error('Cant found the livechat container.')
-      return false
-    }
 
-    if (container.querySelector('iframe')) {
-      logger.error('Seems that there is already an iframe in the container.')
-      return false
-    }
+    try {
+      if (!container) {
+        logger.error('Cant found the livechat container.')
+        return false
+      }
 
-    // Creating the iframe...
-    const iframe = document.createElement('iframe')
-    iframe.setAttribute('src', iframeUri)
-    iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
-    iframe.setAttribute('frameborder', '0')
-    if (additionalStyles) {
-      iframe.setAttribute('style', additionalStyles)
-    }
-    container.append(iframe)
-    container.setAttribute('peertube-plugin-livechat-state', 'open')
+      if (container.querySelector('converse-root')) {
+        logger.error('Seems that there is already a ConverseJS in the container.')
+        return false
+      }
 
-    // Hacking styles...
-    hackStyles(true)
+      // Loading converseJS...
+      await displayConverseJS(registerOptions, container, roomkey, 'peertube-video')
+
+      if (additionalStyles) {
+        container.setAttribute('style', additionalStyles)
+      }
+      container.setAttribute('peertube-plugin-livechat-state', 'open')
+
+      // Hacking styles...
+      hackStyles(true)
+    } catch (err) {
+
+    }
   }
 
   function closeChat (): void {
@@ -223,8 +224,12 @@ function register (registerOptions: RegisterClientOptions): void {
       logger.error('Cant close livechat, container not found.')
       return
     }
-    container.querySelectorAll('iframe')
-      .forEach(dom => dom.remove())
+
+    // Disconnecting ConverseJS
+    if (window.converse?.livechatDisconnect) { window.converse.livechatDisconnect() }
+
+    // Removing from the DOM
+    container.childNodes.forEach(dom => dom.remove())
 
     container.setAttribute('peertube-plugin-livechat-state', 'closed')
 
@@ -232,7 +237,7 @@ function register (registerOptions: RegisterClientOptions): void {
     hackStyles(false)
   }
 
-  function initChat (video: Video): void {
+  async function initChat (video: Video): Promise<void> {
     if (!video) {
       logger.error('No video provided')
       return
@@ -254,15 +259,15 @@ function register (registerOptions: RegisterClientOptions): void {
     container.setAttribute('peertube-plugin-livechat-current-url', window.location.href)
     placeholder.append(container)
 
-    peertubeHelpers.getSettings().then((s: any) => {
-      settings = s
+    try {
+      settings = await peertubeHelpers.getSettings()
 
       logger.log('Checking if this video should have a chat...')
       if (settings['chat-no-anonymous'] === true && isAnonymousUser(registerOptions)) {
         logger.log('No chat for anonymous users')
         return
       }
-      if (!videoHasWebchat(s, video) && !videoHasRemoteWebchat(s, video)) {
+      if (!videoHasWebchat(settings, video) && !videoHasRemoteWebchat(settings, video)) {
         logger.log('This video has no webchat')
         return
       }
@@ -279,18 +284,16 @@ function register (registerOptions: RegisterClientOptions): void {
         }
       }
 
-      insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank'], showShareUrlButton).then(() => {
-        if (settings['chat-auto-display']) {
-          openChat(video)
-        } else if (container) {
-          container.setAttribute('peertube-plugin-livechat-state', 'closed')
-        }
-      }, () => {
-        logger.error('insertChatDom has failed')
-      })
-    }, () => {
-      logger.error('Cant get settings')
-    })
+      await insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank'], showShareUrlButton)
+      if (settings['chat-auto-display']) {
+        await openChat(video)
+      } else if (container) {
+        container.setAttribute('peertube-plugin-livechat-state', 'closed')
+      }
+    } catch (err) {
+      logger.error('initChat has failed')
+      logger.error(err as string)
+    }
   }
 
   let savedMyPluginFlexGrow: string | undefined
@@ -335,7 +338,7 @@ function register (registerOptions: RegisterClientOptions): void {
         logger.info('We are in a playlist, we will not use the webchat')
         return
       }
-      initChat(video)
+      initChat(video).then(() => {}, () => {})
     }
   })
 }

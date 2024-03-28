@@ -1,6 +1,7 @@
-import type { InitConverseJSParams } from 'shared/lib/types'
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import type { InitConverseJSParams, ChatPeertubeIncludeMode } from 'shared/lib/types'
 import { computeAutoColors } from './colors'
-
+import { getBaseRoute } from './uri'
 // FIXME
 // declare global {
 //   interface Window {
@@ -109,6 +110,50 @@ async function loadConverseJS (converseJSParams: InitConverseJSParams): Promise<
   }
 }
 
+/**
+ * Loads the chat in the given container.
+ * @param clientOptions Peertube client options
+ * @param container the dom element where to insert the chat
+ * @param roomKey the room to join
+ * @param chatIncludeMode the include mode
+ */
+async function displayConverseJS (
+  clientOptions: RegisterClientOptions,
+  container: HTMLElement,
+  roomKey: string,
+  chatIncludeMode: ChatPeertubeIncludeMode
+): Promise<void> {
+  const peertubeHelpers = clientOptions.peertubeHelpers
+
+  const converseRoot = document.createElement('converse-root')
+  converseRoot.classList.add('theme-peertube')
+  container.append(converseRoot)
+
+  const spinner = document.createElement('div')
+  spinner.classList.add('livechat-spinner')
+  spinner.setAttribute('id', 'livechat-loading-spinner')
+  spinner.innerHTML = '<div></div>'
+  container.prepend(spinner)
+  // spinner will be removed by a converse plugin
+
+  const authHeader = peertubeHelpers.getAuthHeader()
+
+  const response = await fetch(
+    getBaseRoute(clientOptions) + '/api/configuration/room/' + encodeURIComponent(roomKey),
+    {
+      method: 'GET',
+      headers: peertubeHelpers.getAuthHeader()
+    }
+  )
+  if (!response.ok) {
+    throw new Error('Can\'t get channel configuration options.')
+  }
+  const converseJSParams: InitConverseJSParams = await (response).json()
+
+  await loadConverseJS(converseJSParams)
+  window.initConverse(converseJSParams, chatIncludeMode, authHeader ?? null)
+}
+
 export {
-  loadConverseJS
+  displayConverseJS
 }

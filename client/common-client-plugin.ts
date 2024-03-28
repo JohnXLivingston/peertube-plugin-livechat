@@ -15,7 +15,7 @@ async function register (clientOptions: RegisterClientOptions): Promise<void> {
           console.warn(
             '[peertube-plugin-livechat navigation-end] ' +
             'It seems that action:router.navigation-end was called after action:video-watch.video.loaded. ' +
-            'No removing the chat from the DOM.'
+            'Not removing the chat from the DOM.'
           )
           return
         }

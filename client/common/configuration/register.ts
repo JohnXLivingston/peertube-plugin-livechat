@@ -1,9 +1,7 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import type { InitConverseJSParams } from 'shared/lib/types'
 import { renderConfigurationHome } from './templates/home'
 import { renderConfigurationChannel } from './templates/channel'
-import { getBaseRoute } from '../../utils/uri'
-import { loadConverseJS } from '../../utils/conversejs'
+import { displayConverseJS } from '../../utils/conversejs'
 
 /**
  * Registers stuff related to the user's configuration pages.
@@ -29,33 +27,7 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
         container.classList.add('livechat-embed-fullpage')
         rootEl.append(container)
 
-        const converseRoot = document.createElement('converse-root')
-        converseRoot.classList.add('theme-peertube')
-        container.append(converseRoot)
-
-        const spinner = document.createElement('div')
-        spinner.classList.add('livechat-spinner')
-        spinner.setAttribute('id', 'livechat-loading-spinner')
-        spinner.innerHTML = '<div></div>'
-        container.prepend(spinner)
-        // spinner will be removed by a converse plugin
-
-        const authHeader = peertubeHelpers.getAuthHeader()
-
-        const response = await fetch(
-          getBaseRoute(clientOptions) + '/api/configuration/room/' + encodeURIComponent(roomKey),
-          {
-            method: 'GET',
-            headers: peertubeHelpers.getAuthHeader()
-          }
-        )
-        if (!response.ok) {
-          throw new Error('Can\'t get channel configuration options.')
-        }
-        const converseJSParams: InitConverseJSParams = await (response).json()
-
-        await loadConverseJS(converseJSParams)
-        window.initConverse(converseJSParams, 'peertube-fullpage', authHeader ?? null)
+        await displayConverseJS(clientOptions, container, roomKey, 'peertube-fullpage')
       } catch (err) {
         console.error('[peertube-plugin-livechat] ' + (err as string))
         // FIXME: do a better error page.

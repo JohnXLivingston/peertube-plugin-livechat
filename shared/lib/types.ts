@@ -90,6 +90,16 @@ interface ChannelConfiguration {
   configuration: ChannelConfigurationOptions
 }
 
+type ChatPeertubeIncludeMode = 'peertube-fullpage' | 'peertube-video'
+
+/**
+ * ChatIncludeMode:
+ * - chat-only: the chat is on a full page, without Peertube
+ * - peertube-fullpage: the chat is embedded in Peertube, in a full custom page
+ * - peertube-video: the chat is embedded in Peertube, beside a video
+ */
+type ChatIncludeMode = 'chat-only' | ChatPeertubeIncludeMode
+
 export type {
   ConverseJSTheme,
   InitConverseJSParams,
@@ -98,5 +108,7 @@ export type {
   ProsodyListRoomsResultRoom,
   ChannelInfos,
   ChannelConfigurationOptions,
-  ChannelConfiguration
+  ChannelConfiguration,
+  ChatIncludeMode,
+  ChatPeertubeIncludeMode
 }

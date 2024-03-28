@@ -4,7 +4,7 @@ function initDom ({ forceReadonly, transparent }: InitConverseJSParams, isInIfra
   const body = document.querySelector('body')
   if (isInIframe) {
     if (body) {
-      body.classList.add('livechat-iframe')
+      body.classList.add('livechat-iframe') // we need to keep this, for embedded chats in external websites
       // prevent horizontal scrollbar when in iframe. (don't know why, but does not work if done by CSS)
       body.style.overflowX = 'hidden'
     }

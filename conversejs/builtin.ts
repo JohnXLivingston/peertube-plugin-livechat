@@ -1,4 +1,4 @@
-import type { InitConverseJSParams } from 'shared/lib/types'
+import type { InitConverseJSParams, ChatIncludeMode } from 'shared/lib/types'
 import { inIframe } from './lib/utils'
 import { initDom } from './lib/dom'
 import {
@@ -53,14 +53,6 @@ function initConversePlugins (peertubeEmbedded: boolean): void {
   converse.plugins.add('livechatViewerModePlugin', livechatViewerModePlugin)
 }
 window.initConversePlugins = initConversePlugins
-
-/**
- * ChatIncludeMode:
- * - chat-only: the chat is on a full page, without Peertube
- * - peertube-fullpage: the chat is embedded in Peertube, in a full custom page
- * - peertube-video: the chat is embedded in Peertube, beside a video
- */
-type ChatIncludeMode = 'chat-only' | 'peertube-fullpage' | 'peertube-video'
 
 /**
  * Init ConverseJS

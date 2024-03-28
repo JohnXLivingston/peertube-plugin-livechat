@@ -2,9 +2,12 @@
 @import "shared/styles/index";
 @import "./peertubetheme";
 
-body.livechat-iframe #conversejs .chat-head {
-  // Hidding the chat-head when the plugin is displayed in an iframe.
-  display: none;
+peertube-plugin-livechat-container,
+body.livechat-iframe {
+  #conversejs .chat-head {
+    // Hidding the chat-head when the plugin is displayed in an iframe or besides a video.
+    display: none;
+  }
 }
 
 #conversejs-bg {
