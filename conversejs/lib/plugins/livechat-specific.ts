@@ -14,6 +14,11 @@ export const livechatSpecificsPlugin = {
       _converse.api.user.logout()
       window.converse.livechatDisconnect = undefined // will be set again on next initialize.
     }
+
+    if (window.location.protocol === 'http:') {
+      // We are probably on a dev instance, so we will add _converse in window:
+      (window as any)._livechatConverse = _converse
+    }
   },
   overrides: {
     ChatRoom: {
