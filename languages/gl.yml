@@ -1,0 +1,36 @@
+open_chat_new_window: Abrir chat en nova ventá
+open_chat: Abrir chat
+share_chat_link: Compartir ligazón ao chat
+transparent_background: Fondo transparente (para integración coa retransmisión, por
+  exemplo con OBS)
+use_chat_help: Se o activas, haberá un chat xunto ao vídeo.
+read_only: Só lectura
+show_scrollbarr: Mostrar barra desprazameto
+copy: Copiar
+important_note_title: <h3>Notas importantes</h3>
+important_note_text: "Aquí tes a documentación acerca do complemento:\n<a href=\"\
+  https://livingston.frama.io/peertube-plugin-livechat/\" target=\"_blank\">\n  Documentación
+  sobre Peertube Plugin Livechat\n</a>.\n"
+chat_title: <h3>Chat</h3>
+connect_using_xmpp_help: Podes conectarte á sala usando unha conta XMPP externa, e
+  o teu cliente XMPP favorito.
+diagnostic: "Antes de pedir axuda, por favor usa a ferramenta de diagnóstico:\n<a
+  class=\"peertube-plugin-livechat-launch-diagnostic\">Iniciar o diagnóstico</a>\n
+  (se o botón non abre outra ventá, intenta actualizar a páxina).\n"
+online_help: Axuda en liña
+close_chat: Pechar chat
+use_chat: Usar chat
+link_copied: Ligazón copiada
+error: Erro
+open: Abrir
+use_current_theme_color: Usar esquema de cores actual
+generate_iframe: Crear un iframe para incrustar o chat nun sitio web
+chat_for_live_stream: 'Chat para a emisión en directo:'
+room_name: Nome da sala
+room_description: Descrición da sala
+not_found: Non se atopa
+video: Vídeo
+channel: Canle
+last_activity: Última actividade
+web: Web
+connect_using_xmpp: Conectar usando XMPP
