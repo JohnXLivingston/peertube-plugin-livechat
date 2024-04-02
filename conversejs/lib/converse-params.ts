@@ -5,12 +5,10 @@ import type { AuthentInfos } from './auth'
  * Instanciate defaults params to use for ConverseJS.
  * Note: these parameters must be completed with one of the other function present in this module.
  * @param param0 global parameters
- * @param isInIframe true if we are in iframe mode (inside Peertube, beside video)
  * @returns default parameters to provide to ConverseJS.
  */
 function defaultConverseParams (
-  { forceReadonly, theme, assetsPath, room, forceDefaultHideMucParticipants }: InitConverseJSParams,
-  isInIframe: boolean
+  { forceReadonly, theme, assetsPath, room, forceDefaultHideMucParticipants, autofocus }: InitConverseJSParams
 ): any {
   const mucShowInfoMessages = forceReadonly
     ? [
@@ -48,9 +46,8 @@ function defaultConverseParams (
     show_desktop_notifications: false,
     show_tab_notifications: false,
     singleton: true,
-    auto_focus: !isInIframe,
-    // forceDefaultHideMucParticipants is for testing purpose
-    hide_muc_participants: isInIframe || forceDefaultHideMucParticipants === true,
+    auto_focus: autofocus === true,
+    hide_muc_participants: forceDefaultHideMucParticipants === true,
     play_sounds: false,
     muc_mention_autocomplete_min_chars: 2,
     muc_mention_autocomplete_filter: 'contains',

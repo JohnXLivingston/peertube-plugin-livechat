@@ -2,8 +2,8 @@
 @import "shared/styles/index";
 @import "./peertubetheme";
 
-peertube-plugin-livechat-container,
-body.livechat-iframe {
+body.livechat-iframe,
+#peertube-plugin-livechat-container {
   #conversejs .chat-head {
     // Hidding the chat-head when the plugin is displayed in an iframe or besides a video.
     display: none;
@@ -21,6 +21,7 @@ body.livechat-iframe {
 
 // Readonly mode
 body.livechat-readonly #conversejs {
+  /* stylelint-disable-next-line no-descending-specificity */
   .chat-head,
   .bottom-panel,
   converse-message-actions,
@@ -113,7 +114,10 @@ body.converse-embedded {
     height: 90vh;
     min-height: 400px;
   }
+}
 
+.livechat-embed-fullpage,
+#peertube-plugin-livechat-container {
   converse-muc-message-form {
     // For an unknown reason, message field in truncated... so adding a bottom margin.
     margin-bottom: 6px;

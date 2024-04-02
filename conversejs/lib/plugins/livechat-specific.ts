@@ -33,6 +33,7 @@ export const livechatSpecificsPlugin = {
       }
 
       // update other settings
+      params.blacklisted_plugins ??= []
       for (const k of ['hide_muc_participants', 'blacklisted_plugins']) {
         _converse.api.settings.set(k, params[k])
       }

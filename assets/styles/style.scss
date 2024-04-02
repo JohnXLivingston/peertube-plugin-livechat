@@ -1,10 +1,12 @@
 #peertube-plugin-livechat-container {
   display: flex;
   flex-direction: column;
-}
-
-#plugin-placeholder-player-next #peertube-plugin-livechat-container {
   height: 100%;
+
+  // Bigger occupants sidebar when embedded near a video.
+  .chatroom .box-flyout .chatroom-body .occupants {
+    min-width: min(200px, 50%);
+  }
 }
 
 .peertube-plugin-livechat-buttons {
@@ -68,9 +70,14 @@
 }
 
 #peertube-plugin-livechat-container converse-root {
+  display: block;
   border: 1px solid black;
-  min-height: 30vh;
+  min-height: max(30vh, 200px);
   height: 100%;
+
+  converse-muc {
+    min-height: max(30vh, 200px);
+  }
 }
 
 .peertube-plugin-livechat-experimental,
@@ -179,7 +186,9 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
     width: 48px;
     height: 48px;
     margin: 20px;
+    /* stylelint-disable-next-line custom-property-pattern */
     border: 5px solid var(--greyBackgroundColor);
+    /* stylelint-disable-next-line custom-property-pattern */
     border-bottom-color: var(--mainColor);
     border-radius: 50%;
     display: inline-block;

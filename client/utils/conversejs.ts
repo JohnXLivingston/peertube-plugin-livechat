@@ -125,16 +125,16 @@ async function displayConverseJS (
 ): Promise<void> {
   const peertubeHelpers = clientOptions.peertubeHelpers
 
-  const converseRoot = document.createElement('converse-root')
-  converseRoot.classList.add('theme-peertube')
-  container.append(converseRoot)
-
   const spinner = document.createElement('div')
   spinner.classList.add('livechat-spinner')
   spinner.setAttribute('id', 'livechat-loading-spinner')
   spinner.innerHTML = '<div></div>'
-  container.prepend(spinner)
+  container.append(spinner)
   // spinner will be removed by a converse plugin
+
+  const converseRoot = document.createElement('converse-root')
+  converseRoot.classList.add('theme-peertube')
+  container.append(converseRoot)
 
   const authHeader = peertubeHelpers.getAuthHeader()
 

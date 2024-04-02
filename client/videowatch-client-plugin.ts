@@ -198,7 +198,7 @@ function register (registerOptions: RegisterClientOptions): void {
         return false
       }
 
-      if (container.querySelector('converse-root')) {
+      if (container.getElementsByTagName('converse-root').length) {
         logger.error('Seems that there is already a ConverseJS in the container.')
         return false
       }
@@ -221,7 +221,7 @@ function register (registerOptions: RegisterClientOptions): void {
   function closeChat (): void {
     const container = document.getElementById('peertube-plugin-livechat-container')
     if (!container) {
-      logger.error('Cant close livechat, container not found.')
+      logger.error('Can\'t close livechat, container not found.')
       return
     }
 
@@ -229,7 +229,7 @@ function register (registerOptions: RegisterClientOptions): void {
     if (window.converse?.livechatDisconnect) { window.converse.livechatDisconnect() }
 
     // Removing from the DOM
-    container.childNodes.forEach(dom => dom.remove())
+    container.querySelectorAll('converse-root, .livechat-spinner').forEach(dom => dom.remove())
 
     container.setAttribute('peertube-plugin-livechat-state', 'closed')
 

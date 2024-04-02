@@ -86,7 +86,11 @@ async function initConverse (
 
   const isInIframe = inIframe()
   initDom(initConverseParams, isInIframe)
-  const params = defaultConverseParams(initConverseParams, isInIframe)
+  if (!isInIframe) { initConverseParams.autofocus = true }
+  if (isInIframe || chatIncludeMode === 'peertube-video') {
+    initConverseParams.forceDefaultHideMucParticipants = true
+  }
+  const params = defaultConverseParams(initConverseParams)
   params.view_mode = chatIncludeMode === 'chat-only' ? 'fullscreen' : 'embedded'
   params.allow_url_history_change = chatIncludeMode === 'chat-only'
 

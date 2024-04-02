@@ -19,6 +19,7 @@ interface InitConverseJSParams {
   theme: ConverseJSTheme
   transparent: boolean
   forceDefaultHideMucParticipants?: boolean
+  autofocus?: boolean
 }
 
 interface InitConverseJSParamsError {
