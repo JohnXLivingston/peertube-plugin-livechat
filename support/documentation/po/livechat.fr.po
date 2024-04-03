@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-07 18:10+0100\n"
+"POT-Creation-Date: 2024-04-03 16:22+0200\n"
 "PO-Revision-Date: 2024-03-08 08:41+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -916,6 +915,18 @@ msgstr "Merci à [Code Lutin](https://www.codelutin.com/) et à la [Rétribution
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
 msgstr "Merci à [NlNet](https://nlnet.nl/) et au [fond NGI0 Entrust](https://nlnet.nl/entrust/) pour le support financier."
 
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, fuzzy
+#| msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support."
+msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
+msgstr "Merci à [ritimo](https://www.ritimo.org/) pour le support financier."
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
+msgstr ""
+
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
@@ -1618,10 +1629,7 @@ msgid ""
 "Otherwise it could block all anonymous users at once.\n"
 msgstr ""
 "**Note importante** :\n"
-"Si vous activez cette fonctionnalité, et que vous utilisez un reverse proxy "
-"personnalisé devant Peertube, merci de vous assurer que vous avez "
-"correctement configuré celui-ci pour faire suivre les IPs réelles des "
-"utilisateur⋅rices à Peertube.\n"
+"Si vous activez cette fonctionnalité, et que vous utilisez un reverse proxy personnalisé devant Peertube, merci de vous assurer que vous avez correctement configuré celui-ci pour faire suivre les IPs réelles des utilisateur⋅rices à Peertube.\n"
 "Sinon cela pourrait bloquer tous les utilisateur⋅rices anonymes d'un coup.\n"
 
 #. type: Title ##
@@ -1658,11 +1666,7 @@ msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar "
-"d'oiseaux de David Revoy](https://www.peppercarrot.com/extras/html/"
-"2016_cat-generator/), Licence [CC-By](https://creativecommons.org/licenses/"
-"by/4.0/)"
+msgstr "{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar d'oiseaux de David Revoy](https://www.peppercarrot.com/extras/html/2016_cat-generator/), Licence [CC-By](https://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2724,23 +2728,17 @@ msgstr "Option du mode lent"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
-msgstr ""
-"Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/"
-"documentation/user/streamers/channel), vous pouvez définir une valeur pour "
-"l'option mode lent :"
+msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), vous pouvez définir une valeur pour l'option mode lent :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Configuration de la chaîne / Mode lent](/peertube-plugin-livechat/images/"
-"slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgstr "![Configuration de la chaîne / Mode lent](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "This value will apply to all your channel's chatrooms."
-msgstr ""
-"Cette valeur va s'appliquer à tous les salons de discussion de votre chaîne."
+msgstr "Cette valeur va s'appliquer à tous les salons de discussion de votre chaîne."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2762,9 +2760,7 @@ msgstr "Pour les spectateur⋅rices"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "If the slow mode is enabled, users will be informed by a message."
-msgstr ""
-"Si le mode lent est activé, les utilisateur⋅rices en seront informé⋅es par "
-"un message."
+msgstr "Si le mode lent est activé, les utilisateur⋅rices en seront informé⋅es par un message."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md

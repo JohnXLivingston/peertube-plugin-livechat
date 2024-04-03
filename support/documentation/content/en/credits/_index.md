@@ -20,3 +20,7 @@ Thanks to [ritimo](https://www.ritimo.org/) for the financial support.
 Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support.
 
 Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support.
+
+Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support.
+
+And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/).

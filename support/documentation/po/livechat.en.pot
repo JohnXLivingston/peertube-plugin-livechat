@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-03-07 18:10+0100\n"
+"POT-Creation-Date: 2024-04-03 16:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -990,6 +990,18 @@ msgstr ""
 #: support/documentation/content/en/credits/_index.md
 #, markdown-text
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, markdown-text
+msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, markdown-text
+msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description

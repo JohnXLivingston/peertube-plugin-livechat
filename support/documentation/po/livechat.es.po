@@ -6,11 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-03-07 18:10+0100\n"
+"POT-Creation-Date: 2024-04-03 16:22+0200\n"
 "PO-Revision-Date: 2024-03-10 20:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: Spanish <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
+"Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -514,9 +513,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector."
-msgstr ""
-"A continuación, puede previsualizar el resultado utilizando `hugo serve -s "
-"support/documentation/`, y utilizando el selector de idioma."
+msgstr "A continuación, puede previsualizar el resultado utilizando `hugo serve -s support/documentation/`, y utilizando el selector de idioma."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -532,10 +529,7 @@ msgstr "Sólo tienes que editar los archivos en inglés en `support/documentatio
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file."
-msgstr ""
-"Después, antes de hacer el commit, ejecuta siempre `npm run doc:translate`, "
-"para que los cambios en los archivos en inglés se propaguen al archivo `"
-"support/documentation/po/livechat.en.pot`."
+msgstr "Después, antes de hacer el commit, ejecuta siempre `npm run doc:translate`, para que los cambios en los archivos en inglés se propaguen al archivo `support/documentation/po/livechat.en.pot`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -555,24 +549,17 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To facilitate translators work, avoid making too long paragraphs."
-msgstr ""
-"Para facilitar el trabajo de los traductores, evite hacer párrafos demasiado "
-"largos."
+msgstr "Para facilitar el trabajo de los traductores, evite hacer párrafos demasiado largos."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
-msgstr ""
-"Por ahora, no es posible utilizar tablas Markdown: las herramientas de "
-"traducción las descomponen."
+msgstr "Por ahora, no es posible utilizar tablas Markdown: las herramientas de traducción las descomponen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "There may be links to documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
-msgstr ""
-"Puede haber enlaces a documentación en otros lugares de la web.  Intenta no "
-"cambiar las urls de las páginas de documentación.  O, al menos, pon enlaces "
-"que apunten hacia la nueva ubicación de la url anterior."
+msgstr "Puede haber enlaces a documentación en otros lugares de la web.  Intenta no cambiar las urls de las páginas de documentación.  O, al menos, pon enlaces que apunten hacia la nueva ubicación de la url anterior."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
@@ -583,9 +570,7 @@ msgstr "¿Y si no puedo usar hugo y/o po4a?"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request."
-msgstr ""
-"Simplemente edite los archivos markdown en inglés, y especifique que no "
-"puede construir las traducciones cuando haga su Pull Request."
+msgstr "Simplemente edite los archivos markdown en inglés, y especifique que no puede construir las traducciones cuando haga su Pull Request."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -596,9 +581,7 @@ msgstr "Publicación"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch."
-msgstr ""
-"La publicación de la documentación es automátizada cuando los cambios se "
-"fusionan en la rama `documentation`."
+msgstr "La publicación de la documentación es automátizada cuando los cambios se fusionan en la rama `documentation`."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
@@ -609,11 +592,7 @@ msgstr "Envianos tu feedback"
 #. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
 msgid "You don't need to know how to code to start contributing to this plugin! Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ..."
-msgstr ""
-"No necesitas saber programar para empezar a contribuir al desarrollo de este "
-"plugin. Otras contribuciones son igualmente muy valiosas, tales como: probar "
-"el software y reportar bugs, dar feedback, comentar sobre características "
-"que te interesen o sobre la interfaz de usuario, el diseño, ..."
+msgstr "No necesitas saber programar para empezar a contribuir al desarrollo de este plugin. Otras contribuciones son igualmente muy valiosas, tales como: probar el software y reportar bugs, dar feedback, comentar sobre características que te interesen o sobre la interfaz de usuario, el diseño, ..."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/_index.md
@@ -641,17 +620,12 @@ msgstr "Traducir"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can contribute to this plugin translation.  Translations are handled using the [Weblate](https://weblate.org/) software, using [Framasoft Weblate instance](https://weblate.framasoft.org/)."
-msgstr ""
-"Puedes contribuir a la traducción de este plugin.  Las traducciones se "
-"realizan con el software [Weblate](https://weblate.org/), utilizando [la "
-"instancia Weblate  de Framasoft ](https://weblate.framasoft.org/)."
+msgstr "Puedes contribuir a la traducción de este plugin.  Las traducciones se realizan con el software [Weblate](https://weblate.org/), utilizando [la instancia Weblate  de Framasoft ](https://weblate.framasoft.org/)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never modify directly files in the `languages` folder, this could lead to conflicts."
-msgstr ""
-"Nunca modifiques directamente los archivos del directorio `languages`, esto "
-"podría provocar conflictos."
+msgstr "Nunca modifiques directamente los archivos del directorio `languages`, esto podría provocar conflictos."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -677,9 +651,7 @@ msgstr "Crea tu contraseña y configura tu cuenta"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
-msgstr ""
-"Dirigete a la página del proyecto del plugin: https://weblate.framasoft.org/"
-"projects/peertube-livechat/peertube-plugin-livechat/"
+msgstr "Dirigete a la página del proyecto del plugin: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -689,17 +661,12 @@ msgstr "Selecciona la configuración regional que deseas traducir"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Just translate missing sentences, or correct the ones that seems incorrect to you."
-msgstr ""
-"Sólo tienes que traducir las frases que faltan o corregir las que te "
-"parezcan incorrectas."
+msgstr "Sólo tienes que traducir las frases que faltan o corregir las que te parezcan incorrectas."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english."
-msgstr ""
-"Puede haber algunas cadenas \"muy técnicas\". Si no estás al 100% seguro del "
-"significado, o de su traducción, es mejor que no las traduzcas, y que se "
-"muestren en inglés."
+msgstr "Puede haber algunas cadenas \"muy técnicas\". Si no estás al 100% seguro del significado, o de su traducción, es mejor que no las traduzcas, y que se muestren en inglés."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -710,13 +677,7 @@ msgstr "Traducciones de ConverseJS"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "This plugin relies on [ConverseJS](https://conversejs.org/) for the chat front-end.  ConverseJS has its own translations, on its own [weblate instance](https://hosted.weblate.org/projects/conversejs/#languages).  You can also translate directly in the code repository.  For more information, check [ConverseJS translations documentation](https://conversejs.org/docs/html/translations.html)."
-msgstr ""
-"Este plugin se basa en [ConverseJS](https://conversejs.org/) para el front-"
-"end del chat.  ConverseJS genera sus propias traducciones, en su [instancia "
-"weblate](https://hosted.weblate.org/projects/conversejs/#languages).  "
-"También puedes traducir directamente en el repositorio de código.  Para más "
-"información, consulta la [documentación sobre las traducciones de "
-"ConverseJS](https://conversejs.org/docs/html/translations.html)."
+msgstr "Este plugin se basa en [ConverseJS](https://conversejs.org/) para el front-end del chat.  ConverseJS genera sus propias traducciones, en su [instancia weblate](https://hosted.weblate.org/projects/conversejs/#languages).  También puedes traducir directamente en el repositorio de código.  Para más información, consulta la [documentación sobre las traducciones de ConverseJS](https://conversejs.org/docs/html/translations.html)."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -727,10 +688,7 @@ msgstr "Agregar una nueva configuración regional"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
-msgstr ""
-"Si crees que falta una configuración regional, verifica primero si se toma "
-"en cuenta en Peertube. Si es así, puedes [abrir un issue](https://github.com/"
-"JohnXLivingston/peertube-plugin-livechat/issues) para solicitarla."
+msgstr "Si crees que falta una configuración regional, verifica primero si se toma en cuenta en Peertube. Si es así, puedes [abrir un issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) para solicitarla."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -948,6 +906,16 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description

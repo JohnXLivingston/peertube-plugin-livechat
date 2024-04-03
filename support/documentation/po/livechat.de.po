@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-07 18:10+0100\n"
+"POT-Creation-Date: 2024-04-03 16:22+0200\n"
 "PO-Revision-Date: 2024-03-08 08:15+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -916,6 +914,18 @@ msgstr "Vielen Dank an [Code Lutin](https://www.codelutin.com/) und [Rétributio
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
 msgstr "Vielen Dank an [NlNet](https://nlnet.nl/) und die [NGI0 Entrust fund](https://nlnet.nl/entrust/) für die finanzielle Unterstützung."
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, fuzzy
+#| msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support."
+msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
+msgstr "Vielen Dank an [ritimo](https://www.ritimo.org/) für die finanzielle Unterstützung."
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
@@ -2698,17 +2708,12 @@ msgstr "Langsamer Modus Option"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
-msgstr ""
-"Auf der [Kanal Konfigurations Seite](/peertube-plugin-livechat/de/"
-"documentation/user/streamers/channel) können Sie den langsamen Modus "
-"einstellen:"
+msgstr "Auf der [Kanal Konfigurations Seite](/peertube-plugin-livechat/de/documentation/user/streamers/channel) können Sie den langsamen Modus einstellen:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Kanalkonfiguration / Langsamer Modus](/peertube-plugin-livechat/images/"
-"slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgstr "![Kanalkonfiguration / Langsamer Modus](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2735,9 +2740,7 @@ msgstr "Für Zuschauer"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "If the slow mode is enabled, users will be informed by a message."
-msgstr ""
-"Wenn der langsame Modus aktiviert ist, wird der Benutzer durch eine "
-"Nachricht informiert."
+msgstr "Wenn der langsame Modus aktiviert ist, wird der Benutzer durch eine Nachricht informiert."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md

@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-07 18:10+0100\n"
+"POT-Creation-Date: 2024-04-03 16:22+0200\n"
 "PO-Revision-Date: 2024-03-10 20:38+0000\n"
 "Last-Translator: \"T.S\" <fusen@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: Japanese <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
+"Language-Team: Japanese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,15 +55,7 @@ msgstr "コード規約"
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
-msgstr ""
-"この行動規範は、[Contributor Covenant](https://www.contributor-covenant.org)"
-"のバージョン 2.1を基に作成されており、[https://www.contributor-covenant.org/"
-"version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/"
-"version/2/1/code_of_conduct.html)から入手できます。  翻訳は[https://www."
-"contributor-covenant.org/translations](https://www.contributor-covenant.org/"
-"translations)にあります。  虐待的、嫌がらせ、またはその他の受け入れられない行"
-"為の事例は、執行を担当するコミュニティリーダーに、git.[at].john-livingston."
-"fr宛のメールで報告することができます。"
+msgstr "この行動規範は、[Contributor Covenant](https://www.contributor-covenant.org)のバージョン 2.1を基に作成されており、[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)から入手できます。  翻訳は[https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations)にあります。  虐待的、嫌がらせ、またはその他の受け入れられない行為の事例は、執行を担当するコミュニティリーダーに、git.[at].john-livingston.fr宛のメールで報告することができます。"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -900,6 +891,18 @@ msgstr "経済的な支援を行って頂いている[Code Lutin](https://www.co
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
 msgstr "経済的な支援を行って頂いている[NlNet](https://nlnet.nl/)/[NGI0 Entrust fund](https://nlnet.nl/entrust/)(https://copiepublique.fr/)に感謝致します。"
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+#, fuzzy
+#| msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support."
+msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
+msgstr "経済的な支援を行って頂いている[ritimo](https://www.ritimo.org/)に感謝致します。"
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-03-07 18:10+0100\n"
+"POT-Creation-Date: 2024-04-03 16:22+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -879,6 +879,16 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/credits/_index.md
+msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
