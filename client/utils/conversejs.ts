@@ -2,19 +2,8 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { InitConverseJSParams, ChatPeertubeIncludeMode } from 'shared/lib/types'
 import { computeAutoColors } from './colors'
 import { getBaseRoute } from './uri'
-// FIXME
-// declare global {
-//   interface Window {
-//     converse?: {
-//       initialize: (args: any) => void
-//       plugins: {
-//         add: (name: string, plugin: any) => void
-//       }
-//     }
-//   }
-// }
 
-// FIXME: better declaration
+// FIXME: better declaration (see builtin.ts)
 declare global {
   interface Window {
     converse?: any
@@ -25,7 +14,6 @@ declare global {
 
 /**
  * load the ConverseJS CSS.
- * TODO: always load them using plugin's package.json?
  * @param url CSS url
  */
 async function loadCSS (url: string): Promise<void> {
