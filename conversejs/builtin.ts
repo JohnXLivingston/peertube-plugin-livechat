@@ -85,10 +85,14 @@ async function initConverse (
 
   const isInIframe = inIframe()
   initDom(initConverseParams, isInIframe)
-  if (!isInIframe) { initConverseParams.autofocus = true }
-  if (isInIframe || chatIncludeMode === 'peertube-video') {
-    initConverseParams.forceDefaultHideMucParticipants = true
-  }
+
+  // Autofocus: false if besides video, or if an external iframe
+  initConverseParams.autofocus = (chatIncludeMode === 'peertube-fullpage') ||
+    (chatIncludeMode === 'chat-only' && !isInIframe)
+
+  // hide participant if in an external iframe, or besides video.
+  initConverseParams.forceDefaultHideMucParticipants = (isInIframe || chatIncludeMode === 'peertube-video')
+
   const params = defaultConverseParams(initConverseParams)
   params.view_mode = chatIncludeMode === 'chat-only' ? 'fullscreen' : 'embedded'
   params.allow_url_history_change = chatIncludeMode === 'chat-only'
