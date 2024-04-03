@@ -31,15 +31,12 @@ export const slowModePlugin = {
           // FIXME: field could be enabled by something else (another event in ConverseJS).
           // This is not very important: the server will reject messages anyway.
 
-          textarea.classList.add('disabled')
-          textarea.setAttribute('disabled', 'disabled')
+          textarea.setAttribute('readonly', 'readonly')
           // Note: we are adding a 100ms delay.
           // To minimize the risk that user can send a message before the server will accept it
           // (if the first message lagged for example)
           setTimeout(() => {
-            textarea.classList.remove('disabled')
-            textarea.removeAttribute('disabled');
-            (textarea as HTMLTextAreaElement).focus()
+            textarea.removeAttribute('readonly')
           }, slowModeDuration * 1000 + 100)
         })
       }, 100)

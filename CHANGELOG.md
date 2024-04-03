@@ -19,6 +19,7 @@ TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
 
 * Some code refactoring.
 * New translations: Galician.
+* Fix slow mode: focus was lost when textarea got disabled, so it could trigger some Peertube events if the user type some text.
 
 ## 8.4.0
 

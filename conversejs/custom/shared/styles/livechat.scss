@@ -123,3 +123,10 @@ body.converse-embedded {
     margin-bottom: 6px;
   }
 }
+
+.conversejs {
+  // Fix: for the slow mode, we use readonly instead of disabled, we must apply same CSS as ConverseJS.
+  textarea:read-only {
+    background-color: var(--chat-textarea-disabled-bg-color) !important;
+  }
+}
