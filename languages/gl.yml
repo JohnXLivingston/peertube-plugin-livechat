@@ -9,8 +9,8 @@ show_scrollbarr: Mostrar barra desprazameto
 copy: Copiar
 important_note_title: <h3>Notas importantes</h3>
 important_note_text: "Aquí tes a documentación acerca do complemento:\n<a href=\"\
-  https://livingston.frama.io/peertube-plugin-livechat/\" target=\"_blank\">\n  Documentación
-  sobre Peertube Plugin Livechat\n</a>.\n"
+  https://livingston.frama.io/peertube-plugin-livechat/gl/\" target=\"_blank\">\n\
+  \  Documentación sobre Peertube Plugin Livechat\n</a>.\n"
 chat_title: <h3>Chat</h3>
 connect_using_xmpp_help: Podes conectarte á sala usando unha conta XMPP externa, e
   o teu cliente XMPP favorito.
