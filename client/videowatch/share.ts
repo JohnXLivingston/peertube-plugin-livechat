@@ -290,6 +290,7 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     let shareStringValue
     let shareStringOpen: string | undefined
     if (!form.radioProtocolXMPP?.checked) {
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       if (form.readonly?.checked || form.autoColors?.checked || form.generateIframe?.checked) {
         shareStringValue = getIframeUri(registerOptions, settings, video, uriOptions)
         if (form.generateIframe.checked) {
