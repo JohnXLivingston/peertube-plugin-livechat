@@ -138,6 +138,23 @@ async function displayConverseJS (
   converseRoot.classList.add('theme-peertube')
   container.append(converseRoot)
 
+  converseRoot.addEventListener('click', ev => {
+    // For some reason, there are some buttons in ConverseJS that are not working properly.
+    // When clicked, it does not prevent the default, so it try to open href="#".
+    // We will catch such clicks in converse-root, and prevent default!
+    if (!ev.target) { return }
+
+    const a: HTMLAnchorElement | null = ('tagName' in ev.target) && ev.target.tagName === 'A'
+      ? ev.target as HTMLAnchorElement
+      : (ev.target as HTMLElement).closest('a')
+
+    if (!a) { return }
+    if (a.getAttribute('href') !== '#') { return }
+
+    console.log('[peertube-plugin-livechat] intercepting a click on href=# in converse root, canceling the event.')
+    ev.preventDefault()
+  })
+
   const authHeader = peertubeHelpers.getAuthHeader()
 
   const response = await fetch(
