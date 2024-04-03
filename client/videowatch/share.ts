@@ -290,22 +290,30 @@ async function shareChatUrl (registerOptions: RegisterClientOptions, settings: a
     let shareStringValue
     let shareStringOpen: string | undefined
     if (!form.radioProtocolXMPP?.checked) {
-      shareStringValue = getIframeUri(registerOptions, settings, video, uriOptions)
-      if (form.generateIframe.checked) {
-        form.openButton.disabled = true
-        if (shareStringValue) {
-          // To properly escape all attributes, we are constructing an HTMLIframeElement
-          const iframe = document.createElement('iframe')
-          iframe.setAttribute('src', shareStringValue)
-          iframe.setAttribute('title', labelChatFor + ' ' + video.name)
-          iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
-          iframe.setAttribute('width', '560')
-          iframe.setAttribute('height', '315')
-          iframe.setAttribute('frameborder', '0')
-          shareStringValue = iframe.outerHTML
+      if (form.readonly?.checked || form.autoColors?.checked || form.generateIframe?.checked) {
+        shareStringValue = getIframeUri(registerOptions, settings, video, uriOptions)
+        if (form.generateIframe.checked) {
+          form.openButton.disabled = true
+          if (shareStringValue) {
+            // To properly escape all attributes, we are constructing an HTMLIframeElement
+            const iframe = document.createElement('iframe')
+            iframe.setAttribute('src', shareStringValue)
+            iframe.setAttribute('title', labelChatFor + ' ' + video.name)
+            iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
+            iframe.setAttribute('width', '560')
+            iframe.setAttribute('height', '315')
+            iframe.setAttribute('frameborder', '0')
+            shareStringValue = iframe.outerHTML
+          }
+        } else {
+          form.openButton.disabled = false
         }
       } else {
-        form.openButton.disabled = false
+        shareStringValue = window.location.protocol +
+          '//' +
+          window.location.host +
+          '/p/livechat/room?room=' +
+          encodeURIComponent(video.uuid)
       }
     } else {
       // we must generate a XMPP room address
