@@ -49,7 +49,6 @@ function initConversePlugins (peertubeEmbedded: boolean): void {
   converse.plugins.add('livechatSpecifics', livechatSpecificsPlugin)
 
   // Viewer mode (anonymous accounts, before they have chosen their nickname).
-  // This plugin will be blacklisted in initConverse if not necessary.
   converse.plugins.add('livechatViewerModePlugin', livechatViewerModePlugin)
 }
 window.initConversePlugins = initConversePlugins
@@ -133,12 +132,10 @@ async function initConverse (
     // params.muc_show_logs_before_join = true => displays muc history on top of nickname form. But it's not updated.
   }
 
-  try {
-    if (!(autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet)) {
-      params.blacklisted_plugins ??= []
-      params.blacklisted_plugins.push('livechatViewerModePlugin')
-    }
+  // no viewer mode if authenticated.
+  params.livechat_enable_viewer_mode = autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet
 
+  try {
     if (window.reconnectConverse) { // this is set in the livechatSpecificsPlugin
       window.reconnectConverse(params)
     } else {

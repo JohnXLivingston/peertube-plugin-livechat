@@ -5,15 +5,22 @@ export const livechatViewerModePlugin = {
   initialize: function (this: any) {
     const _converse = this._converse
 
-    const previousNickname = getPreviousAnonymousNick()
+    _converse.api.settings.extend({
+      livechat_enable_viewer_mode: false
+    })
 
-    const getDefaultMUCNickname = _converse.getDefaultMUCNickname
-    if (!getDefaultMUCNickname) {
+    const originalGetDefaultMUCNickname = _converse.getDefaultMUCNickname
+    if (!originalGetDefaultMUCNickname) {
       console.error('[livechatViewerModePlugin] getDefaultMUCNickname is not initialized.')
     } else {
       Object.assign(_converse, {
         getDefaultMUCNickname: function (this: any): any {
-          return getDefaultMUCNickname.apply(this, arguments) ?? previousNickname ?? randomNick('Anonymous')
+          if (!_converse.api.settings.get('livechat_enable_viewer_mode')) {
+            return originalGetDefaultMUCNickname.apply(this, arguments)
+          }
+          return originalGetDefaultMUCNickname.apply(this, arguments) ??
+            getPreviousAnonymousNick() ??
+            randomNick('Anonymous')
         }
       })
     }
@@ -27,20 +34,18 @@ export const livechatViewerModePlugin = {
       }
     }
 
-    if (previousNickname === null) {
-      _converse.api.settings.update({
-        livechat_viewer_mode: true
-      })
-    }
-
     _converse.api.listen.on('livechatViewerModeSetNickname', () => refreshViewerMode(true))
 
     _converse.ChatRoomOccupants.prototype.on('change:nick', (data: any, nick: string) => {
       try {
+        if (!_converse.api.settings.get('livechat_enable_viewer_mode')) {
+          return
+        }
         // On nick change, if the user is_me, storing the new nickname
         if (nick && data?.attributes?.is_me === true) {
           console.log('Nickname change, storing to previousAnonymousNick')
           setPreviousAnonymousNick(nick)
+          refreshViewerMode(!!nick && !/^Anonymous /.test(nick))
         }
       } catch (err) {
         console.error('Error on nick change handling...', err)
@@ -48,11 +53,14 @@ export const livechatViewerModePlugin = {
     })
 
     _converse.api.listen.on('chatRoomInitialized', function (this: any, model: any): void {
+      if (!_converse.api.settings.get('livechat_enable_viewer_mode')) {
+        return
+      }
       // When room is initialized, if user has chosen a nickname, set viewermode to off.
       // Note: when previousNickname is set, model.get('nick') has not the nick yet...
       // It will only come after receiving a presence stanza.
       // So we use previousNickname before trying to read the model.
-      const nick = previousNickname ?? (model?.get ? model.get('nick') : '')
+      const nick = getPreviousAnonymousNick() ?? (model?.get ? model.get('nick') : '')
       refreshViewerMode(nick && !/^Anonymous /.test(nick))
     })
   }

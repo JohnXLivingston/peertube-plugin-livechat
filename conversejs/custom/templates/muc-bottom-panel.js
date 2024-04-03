@@ -77,16 +77,16 @@ const tplSlowMode = (o) => {
 }
 
 export default (o) => {
-  if (api.settings.get('livechat_viewer_mode')) {
+  if (api.settings.get('livechat_enable_viewer_mode')) {
     const model = o.model
     const i18nNickname = __('Nickname')
     const i18nJoin = __('Enter groupchat')
-    const i18n_heading = __('Choose a nickname to enter')
+    const i18nHeading = __('Choose a nickname to enter')
     return html`
     <div class="livechat-viewer-mode-nick chatroom-form-container"
             @submit=${ev => setNickname(ev, model)}>
         <form class="converse-form chatroom-form">
-            <label>${i18n_heading}</label>
+            <label>${i18nHeading}</label>
             <fieldset class="form-group">
               <input type="text"
                   required="required"

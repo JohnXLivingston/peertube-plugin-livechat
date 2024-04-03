@@ -7,12 +7,13 @@ export const livechatSpecificsPlugin = {
       document.getElementById('livechat-loading-spinner')?.remove()
     })
 
-    // Adding a methode on window.converse, so we can close the chat on navigation-end event
+    // Adding a method on window.converse, so we can close the chat on navigation-end event
     // (when chatIncludeMode is peertube-*)
     window.converse.livechatDisconnect = function livechatDisconnect () {
-      console.log('[livechatSpecificsPlugin] disconnecting converseJS...')
-      _converse.api.user.logout()
-      window.converse.livechatDisconnect = undefined // will be set again on next initialize.
+      if (_converse.api.connection.connected()) {
+        console.log('[livechatSpecificsPlugin] disconnecting converseJS...')
+        _converse.api.user.logout()
+      }
     }
 
     // To reconnect ConverseJS when joining another room (or the same one),
@@ -33,8 +34,7 @@ export const livechatSpecificsPlugin = {
       }
 
       // update other settings
-      params.blacklisted_plugins ??= []
-      for (const k of ['hide_muc_participants', 'blacklisted_plugins']) {
+      for (const k of ['hide_muc_participants', 'livechat_enable_viewer_mode']) {
         _converse.api.settings.set(k, params[k])
       }
 
