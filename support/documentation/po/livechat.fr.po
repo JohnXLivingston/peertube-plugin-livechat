@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-04-03 16:22+0200\n"
-"PO-Revision-Date: 2024-03-08 08:41+0000\n"
+"PO-Revision-Date: 2024-04-03 14:25+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Weblate 5.4.2\n"
+"X-Generator: Weblate 5.4.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -917,15 +918,15 @@ msgstr "Merci à [NlNet](https://nlnet.nl/) et au [fond NGI0 Entrust](https://nl
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, fuzzy
-#| msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support."
 msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
-msgstr "Merci à [ritimo](https://www.ritimo.org/) pour le support financier."
+msgstr "Merci à [Octopuce](https://www.octopuce.fr/) pour le support financier."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
 msgstr ""
+"Et merci à toustes les contributeur⋅rices individuel⋅les qui ont fait un don "
+"via ma [page liberapay](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
