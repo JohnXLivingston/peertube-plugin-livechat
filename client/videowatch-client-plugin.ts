@@ -204,7 +204,7 @@ function register (registerOptions: RegisterClientOptions): void {
       }
 
       // Loading converseJS...
-      await displayConverseJS(registerOptions, container, roomkey, 'peertube-video')
+      await displayConverseJS(registerOptions, container, roomkey, 'peertube-video', false)
 
       if (additionalStyles) {
         container.setAttribute('style', additionalStyles)

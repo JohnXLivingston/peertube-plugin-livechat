@@ -1,6 +1,7 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { RegisterClientFormFieldOptions } from '@peertube/peertube-types'
 import { registerConfiguration } from './common/configuration/register'
+import { registerRoom } from './common/room/register'
 
 async function register (clientOptions: RegisterClientOptions): Promise<void> {
   const { peertubeHelpers, registerHook, registerVideoField } = clientOptions
@@ -56,7 +57,10 @@ async function register (clientOptions: RegisterClientOptions): Promise<void> {
   registerVideoField(webchatFieldOptions, { type: 'update' })
   registerVideoField(webchatFieldOptions, { type: 'go-live' })
 
-  await registerConfiguration(clientOptions)
+  await Promise.all([
+    registerRoom(clientOptions),
+    registerConfiguration(clientOptions)
+  ])
 }
 
 export {

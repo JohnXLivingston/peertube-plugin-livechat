@@ -1,0 +1,38 @@
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import { displayConverseJS } from '../../utils/conversejs'
+
+/**
+ * Registers stuff related to "room" page.
+ * @param clientOptions Peertube client options
+ */
+async function registerRoom (clientOptions: RegisterClientOptions): Promise<void> {
+  const { peertubeHelpers, registerClientRoute } = clientOptions
+
+  registerClientRoute({
+    route: 'livechat/room',
+    onMount: async ({ rootEl }) => {
+      try {
+        const urlParams = new URLSearchParams(window.location.search)
+        const roomKey = urlParams.get('room')
+        if (!roomKey) {
+          throw new Error('missing room parameter')
+        }
+        const forceType = urlParams.get('forcetype') === '1'
+
+        const container = document.createElement('div')
+        container.classList.add('livechat-embed-fullpage')
+        rootEl.append(container)
+
+        await displayConverseJS(clientOptions, container, roomKey, 'peertube-fullpage', forceType)
+      } catch (err) {
+        console.error('[peertube-plugin-livechat] ' + (err as string))
+        // FIXME: do a better error page.
+        rootEl.innerText = await peertubeHelpers.translate(LOC_NOT_FOUND)
+      }
+    }
+  })
+}
+
+export {
+  registerRoom
+}

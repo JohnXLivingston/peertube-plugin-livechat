@@ -1,7 +1,6 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { renderConfigurationHome } from './templates/home'
 import { renderConfigurationChannel } from './templates/channel'
-import { displayConverseJS } from '../../utils/conversejs'
 
 /**
  * Registers stuff related to the user's configuration pages.
@@ -12,29 +11,6 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
 
   const settings = await peertubeHelpers.getSettings()
   if (settings['disable-channel-configuration']) { return }
-
-  registerClientRoute({
-    route: 'livechat/room',
-    onMount: async ({ rootEl }) => {
-      try {
-        const urlParams = new URLSearchParams(window.location.search)
-        const roomKey = urlParams.get('room')
-        if (!roomKey) {
-          throw new Error('missing room parameter')
-        }
-
-        const container = document.createElement('div')
-        container.classList.add('livechat-embed-fullpage')
-        rootEl.append(container)
-
-        await displayConverseJS(clientOptions, container, roomKey, 'peertube-fullpage')
-      } catch (err) {
-        console.error('[peertube-plugin-livechat] ' + (err as string))
-        // FIXME: do a better error page.
-        rootEl.innerText = await peertubeHelpers.translate(LOC_NOT_FOUND)
-      }
-    }
-  })
 
   registerClientRoute({
     route: 'livechat/configuration',

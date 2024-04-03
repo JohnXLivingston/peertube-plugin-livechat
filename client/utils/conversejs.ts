@@ -116,12 +116,14 @@ async function loadConverseJS (converseJSParams: InitConverseJSParams): Promise<
  * @param container the dom element where to insert the chat
  * @param roomKey the room to join
  * @param chatIncludeMode the include mode
+ * @param forceType only usable for admins/moderators, to enter rooms that have not the current type (channel/video)
  */
 async function displayConverseJS (
   clientOptions: RegisterClientOptions,
   container: HTMLElement,
   roomKey: string,
-  chatIncludeMode: ChatPeertubeIncludeMode
+  chatIncludeMode: ChatPeertubeIncludeMode,
+  forceType: boolean
 ): Promise<void> {
   const peertubeHelpers = clientOptions.peertubeHelpers
 
@@ -139,7 +141,9 @@ async function displayConverseJS (
   const authHeader = peertubeHelpers.getAuthHeader()
 
   const response = await fetch(
-    getBaseRoute(clientOptions) + '/api/configuration/room/' + encodeURIComponent(roomKey),
+    getBaseRoute(clientOptions) + '/api/configuration/room/' +
+      encodeURIComponent(roomKey) +
+      (forceType ? '?forcetype=1' : ''),
     {
       method: 'GET',
       headers: peertubeHelpers.getAuthHeader()

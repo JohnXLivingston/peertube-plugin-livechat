@@ -18,7 +18,9 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
   router.get('/configuration/room/:roomKey', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
       const roomKey = req.params.roomKey
-      const initConverseJSParam = await getConverseJSParams(options, roomKey, {})
+      const initConverseJSParam = await getConverseJSParams(options, roomKey, {
+        forcetype: req.query.forcetype === '1'
+      })
       if (('isError' in initConverseJSParam) && initConverseJSParam.isError) {
         res.sendStatus(initConverseJSParam.code)
         return
