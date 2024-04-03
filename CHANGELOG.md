@@ -12,7 +12,8 @@ TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
 ### New features
 
 * #143: User colors: implementing [XEP-0392](https://xmpp.org/extensions/xep-0392.html) to have random colors on users nicknames
-* Fullscreen chat: now uses a custom page (in other words: when opening the chat in a new tab, you will have the Peertube menu).
+* #330: Chat does no more use an iframe to display the chat besides the videos.
+* #330: Fullscreen chat: now uses a custom page (in other words: when opening the chat in a new tab, you will have the Peertube menu).
 
 ### Minor changes and fixes
 
