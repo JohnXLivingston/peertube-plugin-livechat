@@ -203,9 +203,6 @@ function register (registerOptions: RegisterClientOptions): void {
         return false
       }
 
-      // Loading converseJS...
-      await displayConverseJS(registerOptions, container, roomkey, 'peertube-video', false)
-
       if (additionalStyles) {
         container.setAttribute('style', additionalStyles)
       }
@@ -213,6 +210,9 @@ function register (registerOptions: RegisterClientOptions): void {
 
       // Hacking styles...
       hackStyles(true)
+
+      // Loading converseJS...
+      await displayConverseJS(registerOptions, container, roomkey, 'peertube-video', false)
     } catch (err) {
 
     }
