@@ -132,7 +132,7 @@ async function displayConverseJS (
     // We will catch such clicks in converse-root, and prevent default!
     if (!ev.target) { return }
 
-    const a: HTMLAnchorElement | null = ('tagName' in ev.target) && ev.target.tagName === 'A'
+    const a: HTMLAnchorElement | null = ('tagName' in ev.target) && (ev.target as HTMLAnchorElement).tagName === 'A'
       ? ev.target as HTMLAnchorElement
       : (ev.target as HTMLElement).closest('a')
 
