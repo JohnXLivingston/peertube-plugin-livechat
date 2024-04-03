@@ -18,6 +18,7 @@ TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
 ### Minor changes and fixes
 
 * Some code refactoring.
+* New translations: Galician.
 
 ## 8.4.0
 
