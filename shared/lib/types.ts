@@ -2,7 +2,7 @@ type ConverseJSTheme = 'peertube' | 'default' | 'concord'
 
 interface InitConverseJSParams {
   isRemoteChat: boolean
-  localAnonymousJID: string
+  localAnonymousJID: string | null
   remoteAnonymousJID: string | null
   remoteAnonymousXMPPServer: boolean
   remoteAuthenticatedXMPPServer: boolean

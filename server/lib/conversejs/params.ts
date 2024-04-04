@@ -80,7 +80,7 @@ async function getConverseJSParams (
     staticBaseUrl,
     assetsPath: staticBaseUrl + 'conversejs/',
     isRemoteChat: !!(roomInfos.video?.remote),
-    localAnonymousJID: localAnonymousJID,
+    localAnonymousJID: !settings['chat-no-anonymous'] ? localAnonymousJID : null,
     remoteAnonymousJID: remoteConnectionInfos?.anonymous?.userJID ?? null,
     remoteAnonymousXMPPServer: !!(remoteConnectionInfos?.anonymous),
     remoteAuthenticatedXMPPServer: !!(remoteConnectionInfos?.authenticated),

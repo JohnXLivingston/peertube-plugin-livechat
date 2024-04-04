@@ -113,7 +113,8 @@ async function initConverse (
       remoteRoomAnonymousParams(initConverseParams, auth, params)
       isRemoteWithNicknameSet = true
     } else {
-      throw new Error('Remote server does not allow remote connection')
+      console.error('Remote server does not allow remote connection')
+      params.jid = null
     }
   } else {
     if (!isRemoteChat) {
@@ -121,7 +122,21 @@ async function initConverse (
     } else if (remoteAnonymousXMPPServer) {
       remoteRoomAnonymousParams(initConverseParams, null, params)
     } else {
-      throw new Error('Remote server does not allow remote connection')
+      console.error('Remote server does not allow remote connection')
+      params.jid = null
+    }
+  }
+
+  if (params.jid === null) {
+    if (chatIncludeMode === 'chat-only') {
+      // Special use case: when mode=chat-only, and no params.jid: display an error page.
+      // Note: this can happen if anonymous users are not allowed on the server.
+      console.error('Seems that anonymous users are not allowed on the target server')
+      // FIXME: localize?
+      document.body.innerHTML = '<h1>This chatroom does not exist, or is not accessible to you.</h1>'
+      return
+    } else {
+      throw new Error('Can\'t connect, no JID')
     }
   }
 
