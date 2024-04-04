@@ -220,6 +220,10 @@ function register (registerOptions: RegisterClientOptions): void {
         message.classList.add('peertube-plugin-livechat-error-message')
         message.innerText = await peertubeHelpers.translate(LOC_CHATROOM_NOT_ACCESSIBLE)
         container.append(message)
+
+        container.querySelectorAll(
+          '.livechat-spinner, converse-root'
+        ).forEach(dom => dom.remove())
       }
 
       hackStyles(false)

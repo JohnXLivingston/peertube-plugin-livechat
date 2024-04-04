@@ -160,7 +160,7 @@ async function displayConverseJS (
   const converseJSParams: InitConverseJSParams = await (response).json()
 
   await loadConverseJS(converseJSParams)
-  window.initConverse(converseJSParams, chatIncludeMode, authHeader ?? null)
+  await window.initConverse(converseJSParams, chatIncludeMode, authHeader ?? null)
 }
 
 export {
