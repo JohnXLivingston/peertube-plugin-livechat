@@ -214,7 +214,15 @@ function register (registerOptions: RegisterClientOptions): void {
       // Loading converseJS...
       await displayConverseJS(registerOptions, container, roomkey, 'peertube-video', false)
     } catch (err) {
+      // Displaying an error page.
+      if (container) {
+        const message = document.createElement('div')
+        message.classList.add('peertube-plugin-livechat-error-message')
+        message.innerText = await peertubeHelpers.translate(LOC_CHATROOM_NOT_ACCESSIBLE)
+        container.append(message)
+      }
 
+      hackStyles(false)
     }
   }
 
@@ -229,7 +237,9 @@ function register (registerOptions: RegisterClientOptions): void {
     if (window.converse?.livechatDisconnect) { window.converse.livechatDisconnect() }
 
     // Removing from the DOM
-    container.querySelectorAll('converse-root, .livechat-spinner').forEach(dom => dom.remove())
+    container.querySelectorAll(
+      'converse-root, .livechat-spinner, .peertube-plugin-livechat-error-message'
+    ).forEach(dom => dom.remove())
 
     container.setAttribute('peertube-plugin-livechat-state', 'closed')
 

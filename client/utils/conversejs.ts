@@ -155,7 +155,7 @@ async function displayConverseJS (
     }
   )
   if (!response.ok) {
-    throw new Error('Can\'t get channel configuration options.')
+    throw new Error('Can\'t get room configuration.')
   }
   const converseJSParams: InitConverseJSParams = await (response).json()
 

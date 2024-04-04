@@ -23,19 +23,31 @@ interface GetConverseJSParamsParams {
  * Returns an object describing the error if access can not be granted.
  * @param options server options
  * @param roomKey chat room key: video UUID (or channel id when forcetype is true)
+ * @param params various parameters
+ * @param userIsConnected true if user is connected. If undefined, bypass access tests.
  */
 async function getConverseJSParams (
   options: RegisterServerOptionsV5,
   roomKey: string,
-  params: GetConverseJSParamsParams
+  params: GetConverseJSParamsParams,
+  userIsConnected?: boolean
 ): Promise<InitConverseJSParams | InitConverseJSParamsError> {
   const settings = await options.settingsManager.getSettings([
     'prosody-room-type',
     'disable-websocket',
     'converse-theme',
     'federation-no-remote-chat',
-    'prosody-room-allow-s2s'
+    'prosody-room-allow-s2s',
+    'chat-no-anonymous'
   ])
+
+  if (settings['chat-no-anonymous'] && userIsConnected === false) {
+    return {
+      isError: true,
+      code: 403,
+      message: 'You must be connected'
+    }
+  }
 
   const {
     autoViewerMode, forceReadonly, transparent, converseJSTheme
@@ -337,5 +349,6 @@ async function _localRoomJID (
 }
 
 export {
-  getConverseJSParams
+  getConverseJSParams,
+  InitConverseJSParamsError
 }

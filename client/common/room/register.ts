@@ -26,8 +26,12 @@ async function registerRoom (clientOptions: RegisterClientOptions): Promise<void
         await displayConverseJS(clientOptions, container, roomKey, 'peertube-fullpage', forceType)
       } catch (err) {
         console.error('[peertube-plugin-livechat] ' + (err as string))
-        // FIXME: do a better error page.
-        rootEl.innerText = await peertubeHelpers.translate(LOC_NOT_FOUND)
+        // Displaying an error page.
+        rootEl.innerHTML = ''
+        const message = document.createElement('div')
+        message.classList.add('peertube-plugin-livechat-error-message')
+        message.innerText = await peertubeHelpers.translate(LOC_CHATROOM_NOT_ACCESSIBLE)
+        rootEl.append(message)
       }
     }
   })

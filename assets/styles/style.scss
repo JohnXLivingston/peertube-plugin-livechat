@@ -207,3 +207,18 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
     }
   }
 }
+
+.peertube-plugin-livechat-error-message {
+  /* display an error block (page not found, ...) */
+  display: block;
+  font-size: 20px;
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.peertube-plugin-livechat-container {
+  .peertube-plugin-livechat-error-message {
+    max-width: 30vw;
+  }
+}

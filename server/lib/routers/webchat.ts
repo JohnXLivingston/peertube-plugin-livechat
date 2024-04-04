@@ -1,6 +1,8 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
-import type { ProsodyListRoomsResult, ProsodyListRoomsResultRoom } from '../../../shared/lib/types'
+import type {
+  InitConverseJSParamsError, ProsodyListRoomsResult, ProsodyListRoomsResultRoom
+} from '../../../shared/lib/types'
 import { createProxyServer } from 'http-proxy'
 import { RegisterServerOptionsV5, isUserAdmin } from '../helpers'
 import { asyncMiddleware } from '../middlewares/async'
@@ -10,7 +12,10 @@ import { getConverseJSParams } from '../conversejs/params'
 import { setCurrentProsody, delCurrentProsody } from '../prosody/api/host'
 import { getChannelInfosById } from '../database/channel'
 import { listProsodyRooms } from '../prosody/api/manage-rooms'
+import { loc } from '../loc'
 import * as path from 'path'
+
+const escapeHTML = require('escape-html')
 
 const fs = require('fs').promises
 
@@ -21,6 +26,14 @@ interface ProsodyProxyInfo {
 let currentHttpBindProxy: ReturnType<typeof createProxyServer> | null = null
 let currentWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
 let currentS2SWebsocketProxy: ReturnType<typeof createProxyServer> | null = null
+
+class LivechatError extends Error {
+  livechatError: InitConverseJSParamsError
+  constructor (e: InitConverseJSParamsError) {
+    super(e.message)
+    this.livechatError = e
+  }
+}
 
 async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Router> {
   const {
@@ -33,100 +46,113 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
 
   const router: Router = getRouter()
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  router.get('/room/:roomKey', asyncMiddleware(
-    async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
-      res.removeHeader('X-Frame-Options') // this route can be opened in an iframe
+  router.get('/room/:roomKey',
+    asyncMiddleware(async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
+      try {
+        res.removeHeader('X-Frame-Options') // this route can be opened in an iframe
 
-      const roomKey = req.params.roomKey
-      let readonly: boolean | 'noscroll' = false
-      if (req.query._readonly === 'true') {
-        readonly = true
-      } else if (req.query._readonly === 'noscroll') {
-        readonly = 'noscroll'
-      }
-
-      const initConverseJSParam = await getConverseJSParams(options, roomKey, {
-        readonly,
-        transparent: req.query._transparent === 'true',
-        forcetype: req.query.forcetype === '1',
-        forceDefaultHideMucParticipants: req.query.force_default_hide_muc_participants === '1'
-      })
-
-      if (('isError' in initConverseJSParam)) {
-        res.status(initConverseJSParam.code)
-        res.send(initConverseJSParam.message)
-        return
-      }
-
-      let page = '' + (converseJSIndex as string)
-      page = page.replace(/{{BASE_STATIC_URL}}/g, initConverseJSParam.staticBaseUrl)
-
-      const settings = await options.settingsManager.getSettings([
-        'converse-theme', 'converse-autocolors'
-      ])
-
-      // Adding some custom CSS if relevant...
-      let autocolorsStyles = ''
-      if (
-        settings['converse-autocolors'] &&
-        isAutoColorsAvailable(settings['converse-theme'] as string)
-      ) {
-        peertubeHelpers.logger.debug('Trying to load AutoColors...')
-        const autocolors: AutoColors = {
-          mainForeground: req.query._ac_mainForeground?.toString() ?? '',
-          mainBackground: req.query._ac_mainBackground?.toString() ?? '',
-          greyForeground: req.query._ac_greyForeground?.toString() ?? '',
-          greyBackground: req.query._ac_greyBackground?.toString() ?? '',
-          menuForeground: req.query._ac_menuForeground?.toString() ?? '',
-          menuBackground: req.query._ac_menuBackground?.toString() ?? '',
-          inputForeground: req.query._ac_inputForeground?.toString() ?? '',
-          inputBackground: req.query._ac_inputBackground?.toString() ?? '',
-          buttonForeground: req.query._ac_buttonForeground?.toString() ?? '',
-          buttonBackground: req.query._ac_buttonBackground?.toString() ?? '',
-          link: req.query._ac_link?.toString() ?? '',
-          linkHover: req.query._ac_linkHover?.toString() ?? ''
+        const roomKey = req.params.roomKey
+        let readonly: boolean | 'noscroll' = false
+        if (req.query._readonly === 'true') {
+          readonly = true
+        } else if (req.query._readonly === 'noscroll') {
+          readonly = 'noscroll'
         }
-        if (!Object.values(autocolors).find(c => c !== '')) {
-          peertubeHelpers.logger.debug('All AutoColors are empty.')
-        } else {
-          const autoColorsTest = areAutoColorsValid(autocolors)
-          if (autoColorsTest === true) {
-            autocolorsStyles = `
-            <style>
-              :root {
-                --peertube-main-foreground: ${autocolors.mainForeground};
-                --peertube-main-background: ${autocolors.mainBackground};
-                --peertube-grey-foreground: ${autocolors.greyForeground};
-                --peertube-grey-background: ${autocolors.greyBackground};
-                --peertube-menu-foreground: ${autocolors.menuForeground};
-                --peertube-menu-background: ${autocolors.menuBackground};
-                --peertube-input-foreground: ${autocolors.inputForeground};
-                --peertube-input-background: ${autocolors.inputBackground};
-                --peertube-button-foreground: ${autocolors.buttonForeground};
-                --peertube-button-background: ${autocolors.buttonBackground};
-                --peertube-link: ${autocolors.link};
-                --peertube-link-hover: ${autocolors.linkHover};
-              }
-            </style>
-            `
-          } else {
-            peertubeHelpers.logger.error('Provided AutoColors are invalid.', autoColorsTest)
+
+        const initConverseJSParam = await getConverseJSParams(options, roomKey, {
+          readonly,
+          transparent: req.query._transparent === 'true',
+          forcetype: req.query.forcetype === '1',
+          forceDefaultHideMucParticipants: req.query.force_default_hide_muc_participants === '1'
+        })
+
+        if (('isError' in initConverseJSParam)) {
+          throw new LivechatError(initConverseJSParam)
+        }
+
+        let page = '' + (converseJSIndex as string)
+        page = page.replace(/{{BASE_STATIC_URL}}/g, initConverseJSParam.staticBaseUrl)
+
+        const settings = await options.settingsManager.getSettings([
+          'converse-theme', 'converse-autocolors'
+        ])
+
+        // Adding some custom CSS if relevant...
+        let autocolorsStyles = ''
+        if (
+          settings['converse-autocolors'] &&
+          isAutoColorsAvailable(settings['converse-theme'] as string)
+        ) {
+          peertubeHelpers.logger.debug('Trying to load AutoColors...')
+          const autocolors: AutoColors = {
+            mainForeground: req.query._ac_mainForeground?.toString() ?? '',
+            mainBackground: req.query._ac_mainBackground?.toString() ?? '',
+            greyForeground: req.query._ac_greyForeground?.toString() ?? '',
+            greyBackground: req.query._ac_greyBackground?.toString() ?? '',
+            menuForeground: req.query._ac_menuForeground?.toString() ?? '',
+            menuBackground: req.query._ac_menuBackground?.toString() ?? '',
+            inputForeground: req.query._ac_inputForeground?.toString() ?? '',
+            inputBackground: req.query._ac_inputBackground?.toString() ?? '',
+            buttonForeground: req.query._ac_buttonForeground?.toString() ?? '',
+            buttonBackground: req.query._ac_buttonBackground?.toString() ?? '',
+            link: req.query._ac_link?.toString() ?? '',
+            linkHover: req.query._ac_linkHover?.toString() ?? ''
           }
+          if (!Object.values(autocolors).find(c => c !== '')) {
+            peertubeHelpers.logger.debug('All AutoColors are empty.')
+          } else {
+            const autoColorsTest = areAutoColorsValid(autocolors)
+            if (autoColorsTest === true) {
+              autocolorsStyles = `
+              <style>
+                :root {
+                  --peertube-main-foreground: ${autocolors.mainForeground};
+                  --peertube-main-background: ${autocolors.mainBackground};
+                  --peertube-grey-foreground: ${autocolors.greyForeground};
+                  --peertube-grey-background: ${autocolors.greyBackground};
+                  --peertube-menu-foreground: ${autocolors.menuForeground};
+                  --peertube-menu-background: ${autocolors.menuBackground};
+                  --peertube-input-foreground: ${autocolors.inputForeground};
+                  --peertube-input-background: ${autocolors.inputBackground};
+                  --peertube-button-foreground: ${autocolors.buttonForeground};
+                  --peertube-button-background: ${autocolors.buttonBackground};
+                  --peertube-link: ${autocolors.link};
+                  --peertube-link-hover: ${autocolors.linkHover};
+                }
+              </style>
+              `
+            } else {
+              peertubeHelpers.logger.error('Provided AutoColors are invalid.', autoColorsTest)
+            }
+          }
+        } else {
+          peertubeHelpers.logger.debug('No AutoColors.')
         }
-      } else {
-        peertubeHelpers.logger.debug('No AutoColors.')
+
+        // ... then insert CSS in the page.
+        page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
+
+        // ... and finaly inject all other parameters
+        page = page.replace('{INIT_CONVERSE_PARAMS}', JSON.stringify(initConverseJSParam))
+        res.status(200)
+        res.type('html')
+        res.send(page)
+      } catch (err: LivechatError | any) {
+        const code = err.livechatError?.code ?? 500
+        const additionnalMessage: string = escapeHTML(err.livechatError?.message as string ?? '')
+        const message: string = escapeHTML(loc('chatroom_not_accessible'))
+
+        res.status(code)
+        res.send(`<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN"><html>
+          <head><title>${message}</title></head>
+          <body>
+            <h1>${message}</h1>
+            <p>${additionnalMessage}</p>
+          </body>
+        </html>`)
       }
-
-      // ... then insert CSS in the page.
-      page = page.replace(/{{CONVERSEJS_AUTOCOLORS}}/g, autocolorsStyles)
-
-      // ... and finaly inject all other parameters
-      page = page.replace('{INIT_CONVERSE_PARAMS}', JSON.stringify(initConverseJSParam))
-      res.status(200)
-      res.type('html')
-      res.send(page)
-    }
-  ))
+    })
+  )
 
   await disableProxyRoute(options)
   router.post('/http-bind',

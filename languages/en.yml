@@ -390,3 +390,5 @@ livechat_configuration_channel_bot_nickname: "Bot nickname"
 invalid_value: "Invalid value."
 
 slow_mode_info: "Slow mode is enabled, users can send a message every %1$s seconds."
+
+chatroom_not_accessible: "This chatroom does not exist, or is not accessible to you."
