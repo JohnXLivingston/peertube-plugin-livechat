@@ -18,7 +18,7 @@ TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
 ### Minor changes and fixes
 
 * Some code refactoring.
-* New translations: Galician.
+* New translations: Galician, German, French.
 * Fix slow mode: focus was lost when textarea got disabled, so it could trigger some Peertube events if the user type some text.
 * #48: Proper 404 and 403 pages when trying to open non-existant chatroom.
 
