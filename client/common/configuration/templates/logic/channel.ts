@@ -47,12 +47,13 @@ async function getConfigurationChannelViewData (
       joinedEntries: fw.entries.join('\n'),
       regexp: !!fw.regexp,
       applyToModerators: fw.applyToModerators,
+      label:fw.label,
       reason: fw.reason,
       comments: fw.comments
     })
   }
   // Ensuring we have at least N blocks:
-  while (forbiddenWordsArray.length < 3) {
+  while (forbiddenWordsArray.length < 1) {
     const i = forbiddenWordsArray.length
     // default value
     forbiddenWordsArray.push({
@@ -62,6 +63,7 @@ async function getConfigurationChannelViewData (
       joinedEntries: '',
       regexp: false,
       applyToModerators: false,
+      label:'',
       reason: '',
       comments: ''
     })
@@ -105,7 +107,7 @@ async function getConfigurationChannelViewData (
     })
   }
   // Ensuring we have at least N blocks:
-  while (cmdsArray.length < 3) {
+  while (cmdsArray.length < 1) {
     const i = cmdsArray.length
     // default value
     cmdsArray.push({
@@ -143,6 +145,52 @@ async function vivifyConfigurationChannel (
   const labelError = await translate(LOC_ERROR)
   const enableBotCB = form.querySelector('input[name=bot]') as HTMLInputElement
   const botEnabledEl = form.querySelectorAll('[livechat-configuration-channel-options-bot-enabled]')
+
+  const dataClasses = ['forbidden-words', 'command', 'quote']
+  type ChannelConfigClass = (typeof dataClasses)[number]
+
+  type ChannelRowData = Record<ChannelConfigClass,{ rows: HTMLTableRowElement[], addButton: HTMLButtonElement, removeButtons: HTMLButtonElement[]}>
+
+  const populateRowData: Function = () => {
+    let modifiers : ChannelRowData = {};
+    for (let dataClass in dataClasses) {
+      let rows : HTMLTableRowElement[] = [];
+      let removeButtons : HTMLButtonElement[] = [];
+
+      for (let i = 0, row : HTMLTableRowElement; row = form.querySelector(`button.peertube-livechat-${dataClass}-${i}-row`) as HTMLTableRowElement; i++) {
+        rows.push(row)
+      }
+
+      for (let i = 0, button : HTMLButtonElement; button = form.querySelector(`button.peertube-livechat-${dataClass}-${i}-remove`) as HTMLButtonElement; i++) {
+        removeButtons.push(button)
+      }
+
+      modifiers[dataClass] = {
+        rows,
+        addButton: form.querySelector(`button.peertube-livechat-${dataClass}-add`) as HTMLButtonElement,
+        removeButtons
+      }
+    }
+    return modifiers
+  }
+
+  let rowDataRecords : ChannelRowData = populateRowData();
+
+  function removeRow(dataClass: ChannelConfigClass, index: number): any {
+    let {rows} = rowDataRecords[dataClass]
+
+    let rowToDelete = rows.splice(index,1)[0]
+
+    rowToDelete
+    
+    for (let i = index, row : HTMLTableRowElement; row = form.querySelector(`button.peertube-livechat-${dataClass}-${i}-row`) as HTMLTableRowElement; i++) {
+      rows.push(row)
+    }
+  }
+  
+  function addRow(dataClass: ChannelConfigClass): any {
+    throw new Error('Function not implemented.')
+  }
 
   const refresh: Function = () => {
     botEnabledEl.forEach(el => {
@@ -211,6 +259,16 @@ async function vivifyConfigurationChannel (
         }
       }
 
+      for (let iQt = 0; iQt < botConf.quotes.length; iQt++) {
+        const qt = botConf.quotes[iQt]
+        if (qt.messages.some(/\s+/.test)) {
+          const selector = '#peertube-livechat-quote-' + iQt.toString()
+          errorFieldSelectors.push(selector)
+          const message = await translate(LOC_INVALID_VALUE)
+          await displayError(selector, message)
+        }
+      }
+
       for (let iCd = 0; iCd < botConf.commands.length; iCd++) {
         const cd = botConf.commands[iCd]
         if (/\s+/.test(cd.command)) {
@@ -256,12 +314,16 @@ async function vivifyConfigurationChannel (
         .filter(s => !/^\s*$/.test(s)) // filtering empty lines
       const regexp = data.get('forbidden_words_regexp_' + i.toString())
       const applyToModerators = data.get('forbidden_words_applytomoderators_' + i.toString())
+      const label = data.get('forbidden_words_label_' + i.toString())?.toString()
       const reason = data.get('forbidden_words_reason_' + i.toString())?.toString()
       const comments = data.get('forbidden_words_comments_' + i.toString())?.toString()
       const fw: ChannelConfigurationOptions['bot']['forbiddenWords'][0] = {
         entries,
         applyToModerators: !!applyToModerators,
         regexp: !!regexp
+      }
+      if (label) {
+        fw.label = label
       }
       if (reason) {
         fw.reason = reason
@@ -331,6 +393,15 @@ async function vivifyConfigurationChannel (
   }
 
   enableBotCB.onclick = () => refresh()
+
+  for(let [dataClass, rowData] of Object.entries(rowDataRecords)) {
+    rowData.addButton.onclick = () => addRow(dataClass)
+
+    for (let i = 0; i < rowData.removeButtons.length; i++) {
+      rowData.removeButtons[i].onclick = () => removeRow(dataClass, i)
+    }
+  }
+
   form.onsubmit = () => {
     toggleSubmit(true)
     if (!form.checkValidity()) {

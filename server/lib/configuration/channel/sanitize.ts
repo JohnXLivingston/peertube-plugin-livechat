@@ -180,6 +180,7 @@ async function _readForbiddenWords (botData: any): Promise<ChannelConfigurationO
       entries = _readStringArray(fw, 'entries')
     }
     const applyToModerators = _readBoolean(fw, 'applyToModerators')
+    const label = fw.label ? _readSimpleInput(fw, 'label') : undefined
     const reason = fw.reason ? _readSimpleInput(fw, 'reason') : undefined
     const comments = fw.comments ? _readMultiLineString(fw, 'comments') : undefined
 
@@ -187,6 +188,7 @@ async function _readForbiddenWords (botData: any): Promise<ChannelConfigurationO
       regexp,
       entries,
       applyToModerators,
+      label,
       reason,
       comments
     })

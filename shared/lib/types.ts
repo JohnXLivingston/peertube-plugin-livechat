@@ -79,6 +79,7 @@ interface ChannelConfigurationOptions {
       entries: string[]
       regexp?: boolean
       applyToModerators?: boolean
+      label?: string
       reason?: string
       comments?: string
     }>
