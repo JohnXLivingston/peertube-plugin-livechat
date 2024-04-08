@@ -6,7 +6,9 @@ export const livechatViewerModePlugin = {
     const _converse = this._converse
 
     _converse.api.settings.extend({
-      livechat_enable_viewer_mode: false
+      livechat_enable_viewer_mode: false,
+      livechat_peertube_video_original_url: undefined,
+      livechat_peertube_video_uuid: undefined
     })
 
     const originalGetDefaultMUCNickname = _converse.getDefaultMUCNickname

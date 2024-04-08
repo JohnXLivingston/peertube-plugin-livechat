@@ -8,7 +8,10 @@ import type { AuthentInfos } from './auth'
  * @returns default parameters to provide to ConverseJS.
  */
 function defaultConverseParams (
-  { forceReadonly, theme, assetsPath, room, forceDefaultHideMucParticipants, autofocus }: InitConverseJSParams
+  {
+    forceReadonly, theme, assetsPath, room, forceDefaultHideMucParticipants, autofocus,
+    peertubeVideoOriginalUrl, peertubeVideoUUID
+  }: InitConverseJSParams
 ): any {
   const mucShowInfoMessages = forceReadonly
     ? [
@@ -87,7 +90,10 @@ function defaultConverseParams (
     colorize_username: true,
 
     // This is a specific settings, that is used in ConverseJS customization, to force avatars loading in readonly mode.
-    livechat_load_all_vcards: !!forceReadonly
+    livechat_load_all_vcards: !!forceReadonly,
+
+    livechat_peertube_video_original_url: peertubeVideoOriginalUrl,
+    livechat_peertube_video_uuid: peertubeVideoUUID
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.

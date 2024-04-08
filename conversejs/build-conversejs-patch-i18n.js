@@ -2,6 +2,7 @@
 const fs = require('node:fs')
 const path = require('node:path')
 const YAML = require('yaml')
+const locKeys = require('./loc.keys.js')
 
 /**
  * This script will patch ConverseJS .po files, to add custom strings.
@@ -11,9 +12,7 @@ const livechatDir = path.resolve(__dirname, '..', 'languages')
 const converseDir = path.resolve(__dirname, '..', 'build', 'conversejs', 'src', 'i18n')
 
 // Labels to import:
-const labels = loadLabels([
-  'slow_mode_info'
-])
+const labels = loadLabels(locKeys)
 
 function loadLabels (keys) {
   const labels = {}

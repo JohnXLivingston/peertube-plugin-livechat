@@ -1,6 +1,8 @@
 type ConverseJSTheme = 'peertube' | 'default' | 'concord'
 
 interface InitConverseJSParams {
+  peertubeVideoOriginalUrl?: string
+  peertubeVideoUUID?: string
   isRemoteChat: boolean
   localAnonymousJID: string | null
   remoteAnonymousJID: string | null

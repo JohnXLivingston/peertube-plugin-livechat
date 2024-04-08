@@ -392,3 +392,13 @@ invalid_value: "Invalid value."
 slow_mode_info: "Slow mode is enabled, users can send a message every %1$s seconds."
 
 chatroom_not_accessible: "This chatroom does not exist, or is not accessible to you."
+
+login_using_external_account: "Log in using an external account"
+login_remote_peertube: "Log in using an account on another Peertube instance:"
+login_remote_peertube_url: "Your Peertube instance URL"
+login_remote_peertube_searching: "Searching the video on the Peertube instance..."
+login_remote_peertube_url_invalid: "Invalid Peertube URL."
+login_remote_peertube_no_livechat: "The livechat plugin is not installed on this Peertube instance."
+login_remote_peertube_video_not_found: "This video is not available on this Peertube instance."
+login_remote_peertube_video_not_found_try_anyway: "In some cases, the video can still be retrieved if you connect to the remote instance."
+login_remote_peertube_video_not_found_try_anyway_button: "Try anyway to open the video on the Peertube instance"

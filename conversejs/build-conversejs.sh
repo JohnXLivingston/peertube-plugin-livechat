@@ -79,6 +79,7 @@ rm -rf "$converse_build_dir/custom/"
 echo "Adding the custom files..."
 cp -r "$src_dir/custom/" "$converse_build_dir/custom/"
 mv "$converse_build_dir/custom/webpack.livechat.js" "$converse_build_dir/"
+cp "$src_dir/loc.keys.js" "$converse_build_dir/"
 
 echo "Patching i18n files to add custom labels..."
 /bin/env node conversejs/build-conversejs-patch-i18n.js

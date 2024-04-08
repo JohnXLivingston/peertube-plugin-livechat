@@ -77,6 +77,8 @@ async function getConverseJSParams (
   } = connectionInfos
 
   return {
+    peertubeVideoOriginalUrl: roomInfos.video?.url,
+    peertubeVideoUUID: roomInfos.video?.uuid,
     staticBaseUrl,
     assetsPath: staticBaseUrl + 'conversejs/',
     isRemoteChat: !!(roomInfos.video?.remote),

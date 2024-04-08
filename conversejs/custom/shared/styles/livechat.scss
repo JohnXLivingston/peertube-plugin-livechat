@@ -43,30 +43,39 @@ body.livechat-readonly.livechat-noscroll {
 }
 
 // Viewer mode
-.livechat-viewer-mode-nick {
+.livechat-viewer-mode-content {
   display: none;
-}
 
-body[livechat-viewer-mode="on"] {
-  .livechat-viewer-mode-nick {
-    display: initial;
+  form {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    padding-bottom: 0.5em !important;
+    border-top: 1px solid var(--chatroom-head-bg-color) !important;
+    gap: 10px;
+    align-items: baseline;
 
-    form {
-      display: flex !important;
-      flex-flow: row wrap !important;
-      padding-bottom: 0.5em !important;
-      border-top: var(--chatroom-separator-border-bottom) !important;
-      gap: 10px;
-      align-items: baseline;
-
-      label {
-        color: var(--text-color); // fix converseJs css that breaks this label color.
-      }
+    label {
+      color: var(--text-color); // fix converseJs css that breaks this label color.
     }
   }
 
+  hr {
+    margin: 0;
+    background-color: var(--chatroom-head-bg-color);
+  }
+
+  .livechat-viewer-mode-external-login {
+    padding: 2em;
+  }
+}
+
+body[livechat-viewer-mode="on"] {
+  .livechat-viewer-mode-content {
+    display: initial;
+  }
+
   converse-muc-bottom-panel {
-    >:not(.livechat-viewer-mode-nick) {
+    >:not(.livechat-viewer-mode-content) {
       display: none;
     }
   }
