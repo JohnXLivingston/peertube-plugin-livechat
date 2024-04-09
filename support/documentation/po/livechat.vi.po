@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-04-03 16:22+0200\n"
+"POT-Creation-Date: 2024-04-09 17:08+0200\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Vietnamese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/vi/>\n"
@@ -2765,6 +2765,32 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the livechat plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "If you have a Peertube account on another Peertube instance"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "This feature comes with the livechat plugin version 9.0.0."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "If you have a Peertube account, but not on the current instance, there is a \"{{% livechat_label login_using_external_account %}}\" button.  This button will open a dialog where you can enter your Peertube instance URL.  Once you entered it, it will check if the livechat plugin is available on the remote instance, and if the video is available.  If it is the case, you will be redirected to the video on the remote instance."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "![External login dialog](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Title ##

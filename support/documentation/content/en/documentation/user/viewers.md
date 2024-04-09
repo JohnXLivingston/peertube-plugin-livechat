@@ -39,6 +39,21 @@ if the livechat plugin is installed on both instances, it is possible to join th
 To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance).
 {{% /notice %}}
 
+## If you have a Peertube account on another Peertube instance
+
+{{% notice info %}}
+This feature comes with the livechat plugin version 9.0.0.
+{{% /notice %}}
+
+If you have a Peertube account, but not on the current instance, there is a "{{% livechat_label login_using_external_account %}}" button.
+This button will open a dialog where you can enter your Peertube instance URL.
+Once you entered it, it will check if the livechat plugin is available on the remote instance, and if the video is available.
+If it is the case, you will be redirected to the video on the remote instance.
+
+![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)
+
+![External login dialog](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)
+
 ## Chatting
 
 To send messages, just type them in the "message" field on the bottom of the screen.

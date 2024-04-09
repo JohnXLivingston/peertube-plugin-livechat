@@ -1,6 +1,6 @@
 # Changelog
 
-## ??? (Not Released Yet)
+## 9.0.0 (Not Released Yet)
 
 TODO: replace commit_id by a tag in build-conversejs
 TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48

@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-04-03 16:22+0200\n"
+"POT-Creation-Date: 2024-04-09 17:08+0200\n"
 "PO-Revision-Date: 2024-04-04 10:18+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -920,16 +918,12 @@ msgstr "Vielen Dank an [NlNet](https://nlnet.nl/) und die [NGI0 Entrust fund](ht
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
-msgstr ""
-"Vielen Dank an [Octopuce](https://www.octopuce.fr/) für die finanzielle "
-"Unterstützung."
+msgstr "Vielen Dank an [Octopuce](https://www.octopuce.fr/) für die finanzielle Unterstützung."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
-msgstr ""
-"Und vielen Dank an alle Einzelspender, die über meine [Liberapay Seite] "
-"(https://liberapay.com/JohnLivingston/) gespendet haben."
+msgstr "Und vielen Dank an alle Einzelspender, die über meine [Liberapay Seite] (https://liberapay.com/JohnLivingston/) gespendet haben."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
@@ -2831,6 +2825,39 @@ msgstr "Wenn Sie mit Ihrem Peertube-Konto verbunden sind, treten Sie dem Raum au
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the livechat plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
 msgstr "Wenn Sie ein Live-Video auf einer Instanz ansehen, auf der Sie kein Konto haben, aber ein Konto auf einer anderen Instanz: Wenn das Livechat-Plugin auf beiden Instanzen installiert ist, ist es möglich, dem Chat mit Ihrem Konto beizutreten.  Öffnen Sie dazu einfach das Video auf Ihrer Instanz (Sie können zum Beispiel die Video-URL in das Suchfeld Ihrer Instanz kopieren/einfügen)."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy, no-wrap
+#| msgid "If you have a Peertube account"
+msgid "If you have a Peertube account on another Peertube instance"
+msgstr "Wenn Sie ein Peertube-Konto haben"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "This features comes with the livechat plugin version 8.3.0."
+msgid "This feature comes with the livechat plugin version 9.0.0."
+msgstr "Diese Funktionen werden mit dem Livechatplugin Version 8.3.0 verfügbar sein."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "If you have a Peertube account, but not on the current instance, there is a \"{{% livechat_label login_using_external_account %}}\" button.  This button will open a dialog where you can enter your Peertube instance URL.  Once you entered it, it will check if the livechat plugin is available on the remote instance, and if the video is available.  If it is the case, you will be redirected to the video on the remote instance."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgid "![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
+msgstr "![Teilen Schaltfläche](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
+msgid "![External login dialog](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
+msgstr "![Neuer Live-Stream](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md

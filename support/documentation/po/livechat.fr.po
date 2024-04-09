@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-04-03 16:22+0200\n"
+"POT-Creation-Date: 2024-04-09 17:08+0200\n"
 "PO-Revision-Date: 2024-04-03 14:25+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -924,9 +923,7 @@ msgstr "Merci à [Octopuce](https://www.octopuce.fr/) pour le support financier.
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
-msgstr ""
-"Et merci à toustes les contributeur⋅rices individuel⋅les qui ont fait un don "
-"via ma [page liberapay](https://liberapay.com/JohnLivingston/)."
+msgstr "Et merci à toustes les contributeur⋅rices individuel⋅les qui ont fait un don via ma [page liberapay](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
@@ -2848,6 +2845,39 @@ msgstr "Si vous êtes connecté avec votre compte Peertube, vous allez automatiq
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the livechat plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
 msgstr "Si vous regardez un direct sur une instance où vous n'avez pas de compte, mais que vous avez un compte Peertube sur une autre instance : sous réserve que le plugin livechat soit installé sur les deux instances, vous pouvez rejoindre le tchat avec votre compte. Pour cela, ouvrez la vidéo sur votre instance (vous pouvez par exemple copier/coller l'url de la vidéo dans le champs de recherche de votre instance)."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy, no-wrap
+#| msgid "If you have a Peertube account"
+msgid "If you have a Peertube account on another Peertube instance"
+msgstr "Si vous avez un compte Peertube"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "This features comes with the livechat plugin version 8.3.0."
+msgid "This feature comes with the livechat plugin version 9.0.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 8.3.0."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "If you have a Peertube account, but not on the current instance, there is a \"{{% livechat_label login_using_external_account %}}\" button.  This button will open a dialog where you can enter your Peertube instance URL.  Once you entered it, it will check if the livechat plugin is available on the remote instance, and if the video is available.  If it is the case, you will be redirected to the video on the remote instance."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgid "![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
+msgstr "![Partage](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
+msgid "![External login dialog](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
+msgstr "![Nouveau direct](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
