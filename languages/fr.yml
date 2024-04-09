@@ -564,3 +564,5 @@ poll_anonymous_vote_ok: Votre vote a été pris en compte. Les votes sont anonym
   ils ne seront pas montrés aux autres participant⋅es.
 poll_vote_ok: Votre vote a été pris en compte, les compteurs seront mis à jour dans
   un instant.
+poll_vote_instructions_xmpp: ''
+poll: ''
