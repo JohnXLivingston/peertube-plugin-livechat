@@ -16,6 +16,7 @@ export const tplExternalLoginModal = (el, o) => {
           placeholder="${i18nRemotePeertubeUrl}"
           class="form-control ${o.remote_peertube_alert_message ? 'is-invalid' : ''}"
           name="peertube_url"
+          @keyup=${el.onKeyUp}
           ?disabled=${o.remote_peertube_state === 'loading'}
         />
       </label>
@@ -23,7 +24,6 @@ export const tplExternalLoginModal = (el, o) => {
         type="submit"
         class="btn btn-primary"
         value="${i18nRemotePeertubeOpen}"
-        @keyup=${el.onKeyUp}
         ?disabled=${o.remote_peertube_state === 'loading'}
       />
       ${
