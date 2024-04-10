@@ -1,5 +1,11 @@
 #!/bin/bash
 
+NO_CONVERSEJS_LOC=""
+if [ "$1" = "no-loc" ]; then
+  echo "We won't generate ConverseJS localization files!"
+  NO_CONVERSEJS_LOC="1"
+fi
+
 set -euo pipefail
 set -x
 
@@ -94,15 +100,21 @@ fi
 echo "Building ConverseJS..."
 cd "$converse_build_dir"
 
-# Note: following lines are from the ConverseJS Makefile (see "make dist" code), where we just replace the "npm run build" with our webpack.livechat.js.
-#   Ideally this should just be `npm run build`.
-#   The additional steps are necessary to properly generate JSON chunk files
-#   from the .po files. The nodeps config uses preset-env with IE11.
-#   Somehow this is necessary.
-npm run nodeps
-TMPD=$(mktemp -d)
-mv dist/locales $TMPD && npx webpack --config webpack.livechat.js && mv $TMPD/locales/*-po.js dist/locales/ && rm -rf $TMPD
-rm dist/converse-no-dependencies.js dist/converse-no-dependencies.js.map
+if [ "$NO_CONVERSEJS_LOC" = "1" ]; then
+  echo "Building without ConverseJS localization files!"
+  # shortcut to build more quickly for dev purpose (see npm run build:converjs-no-loc)
+  npx webpack --config webpack.livechat.js
+else
+  # Note: following lines are from the ConverseJS Makefile (see "make dist" code), where we just replace the "npm run build" with our webpack.livechat.js.
+  #   Ideally this should just be `npm run build`.
+  #   The additional steps are necessary to properly generate JSON chunk files
+  #   from the .po files. The nodeps config uses preset-env with IE11.
+  #   Somehow this is necessary.
+  npm run nodeps
+  TMPD=$(mktemp -d)
+  mv dist/locales $TMPD && npx webpack --config webpack.livechat.js && mv $TMPD/locales/*-po.js dist/locales/ && rm -rf $TMPD
+  rm dist/converse-no-dependencies.js dist/converse-no-dependencies.js.map
+fi
 
 cd $rootdir
 
