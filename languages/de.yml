@@ -196,8 +196,9 @@ prosody_muc_expiration_description: |
 prosody_room_allow_s2s_label: Verbindung zum Raum mit externen XMPP Konten aktivieren
 prosody_room_allow_s2s_description: "Durch Aktivieren dieser Option ist es möglich,
   über externe XMPP-Konten und XMPP-Clients eine Verbindung zu Räumen herzustellen.<br>\n
-  <span class=\"peertube-plugin-livechat-warning\">Achtung: Durch die Aktivierung dieser Option können zusätzliche Server- und DNS-Konfigurationen
-  erforderlich sein.</span>\nBitte beachten Sie die Dokumentation:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/advanced/xmpp_clients/\"\
+  <span class=\"peertube-plugin-livechat-warning\">\n  <b>Achtung:</b> Durch die Aktivierung
+  dieser Option können zusätzliche Server- und DNS-Konfigurationen erforderlich sein.\n
+  </span>\nBitte beachten Sie die Dokumentation:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n  Aktivieren Sie externe XMPP-Kontoverbindungen.\n</a>\n"
 
 prosody_s2s_port_label: Prosody Server Port zu Server Port
@@ -378,7 +379,8 @@ avatar_set_option_abstract: Abstrakt
 livechat_configuration_channel_slow_mode_label: Langsamer Modus
 slow_mode_info: Wenn der langsame Modus aktiviert ist, können Benutzer alle %1$s Sekunden
   eine Nachricht senden.
-livechat_configuration_channel_slow_mode_desc: "Standardwert für den langsamen
-  Modus:\n<ul>\n  <li>0: langsamer Modus deaktiviert</li>\n  <li>Beliebige
-  positive ganze Zahl: Benutzer können alle X Sekunden eine Nachricht senden (Moderatoren
-  sind nicht beschränkt)</li>\n</ul>"
+livechat_configuration_channel_slow_mode_desc: "Standardwert für den langsamen Modus:\n\
+  <ul>\n  <li>0: langsamer Modus deaktiviert</li>\n  <li>Beliebige positive ganze
+  Zahl: Benutzer können alle X Sekunden eine Nachricht senden (Moderatoren sind nicht
+  beschränkt)</li>\n</ul>\n"
+chatroom_not_accessible: Dieser Chatraum existiert nicht oder ist für Sie nicht zugänglich.

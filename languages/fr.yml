@@ -398,3 +398,17 @@ livechat_configuration_channel_slow_mode_desc: "Valeur du mode lent :\n<ul>\n 
   envoyer un message toutes les X secondes (les modérateur⋅rices ne sont pas limité⋅es)</li>\n\
   </ul>\n"
 chatroom_not_accessible: Ce salon de discussion n'existe pas, ou ne vous ai pas accessible.
+login_remote_peertube_video_not_found_try_anyway: Dans certains cas, la vidéo peut
+  quand même être récupérée si vous vous connectez sur l'instance distante.
+login_using_external_account: Se connecter avec un compte externe
+login_remote_peertube_searching: Recherche de la vidéo sur l'instance Peertube...
+login_remote_peertube: 'Se connecter en utilisant un compte sur une autre instance
+  Peertube :'
+login_remote_peertube_url: L'URL de votre instance Peertube
+login_remote_peertube_url_invalid: URL Peertube invalide.
+login_remote_peertube_no_livechat: Le plugin livechat n'est pas installé sur cette
+  instance Peertube.
+login_remote_peertube_video_not_found: Cette vidéo n'est pas disponible sur cette
+  instance Peertube.
+login_remote_peertube_video_not_found_try_anyway_button: Essayer quand-même d'ouvrir
+  la vidéo sur l'instance Peertube
