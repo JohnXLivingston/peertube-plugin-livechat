@@ -384,3 +384,17 @@ livechat_configuration_channel_slow_mode_desc: "Standardwert für den langsamen 
   Zahl: Benutzer können alle X Sekunden eine Nachricht senden (Moderatoren sind nicht
   beschränkt)</li>\n</ul>\n"
 chatroom_not_accessible: Dieser Chatraum existiert nicht oder ist für Sie nicht zugänglich.
+login_remote_peertube_searching: Suche nach dem Video auf der Peertube Instanz...
+login_remote_peertube_video_not_found_try_anyway: In einigen Fällen kann das Video
+  dennoch abgerufen werden, wenn Sie eine Verbindung zur Remote-Instanz herstellen.
+login_remote_peertube: 'Melden Sie sich mit einem Konto auf einer anderen Peertube-Instanz
+  an:'
+login_remote_peertube_url: Ihre Peertube Instanz URL
+login_remote_peertube_url_invalid: Ungültige Peertube URL.
+login_remote_peertube_no_livechat: Das Livechat Plugin ist auf dieser Peertube Instanz
+  nicht installiert.
+login_remote_peertube_video_not_found: Dieses Video ist auf dieser Peertube Instanz
+  nicht verfügbar.
+login_remote_peertube_video_not_found_try_anyway_button: Trotzdem versuchen, das Video
+  auf der Peertube-Instanz zu öffnen
+login_using_external_account: Mit einem externem Account anmelden
