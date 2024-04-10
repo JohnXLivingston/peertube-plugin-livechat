@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-04-09 17:08+0200\n"
+"POT-Creation-Date: 2024-04-10 09:00+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Thai <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/th/>\n"
@@ -2598,7 +2598,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This features comes with the livechat plugin version 8.3.0."
+msgid "This feature comes with the livechat plugin version 8.3.0."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title

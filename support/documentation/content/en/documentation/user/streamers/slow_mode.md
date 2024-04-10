@@ -6,7 +6,7 @@ chapter: false
 ---
 
 {{% notice info %}}
-This features comes with the livechat plugin version 8.3.0.
+This feature comes with the livechat plugin version 8.3.0.
 {{% /notice %}}
 
 ## Introduction

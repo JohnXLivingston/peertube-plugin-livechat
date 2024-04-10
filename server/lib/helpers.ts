@@ -40,7 +40,7 @@ type RegisterServerOptionsV5 = RegisterServerOptions & {
 
 /**
  * Returns the base route for Websocket endpoint.
- * This features comes with Peertube >=5.0.0.
+ * This feature comes with Peertube >=5.0.0.
  * @param options server options
  * @returns the route, or undefined if the Peertube version does not provide this feature
  */
