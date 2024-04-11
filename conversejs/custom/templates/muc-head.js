@@ -77,9 +77,9 @@ export default (el) => {
   const headingButtonsPromise = el.getHeadingButtons(subjectHidden)
   return html`
     <div class="livechat-mini-muc-bar-buttons">
-      ${getPeertubeButtons()}
       ${until(getStandaloneButtons(headingButtonsPromise), '')}
       ${until(getDropdownButtons(headingButtonsPromise), '')}
+      ${getPeertubeButtons()}
     </div>
   `
 }
