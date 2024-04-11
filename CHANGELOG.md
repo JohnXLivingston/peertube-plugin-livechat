@@ -16,6 +16,7 @@ TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
 * #330: Fullscreen chat: now uses a custom page (in other words: when opening the chat in a new tab, you will have the Peertube menu).
 * For anonymous users: new "log in using an external account" dialog, with following options:
   * remote Peertube account
+* #355: ConverseJS dropdown menu available everywhere, inclusing when chat is besides the video.
 
 ### Minor changes and fixes
 
