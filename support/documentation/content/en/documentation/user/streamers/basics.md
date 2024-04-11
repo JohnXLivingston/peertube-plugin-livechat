@@ -65,9 +65,9 @@ This means that the room content will be kept for a while.
 User joining will see messages posted before their arrival.
 
 You can change the persistence behaviour.
-[Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on "Configure".
+[Open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), and click on "Configure".
 
-![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
+![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
 
 There are several options that can be changed.
 
@@ -81,9 +81,7 @@ By unchecking "Persistent", the room will be cleared if there is no more partici
 
 ## Delete the chat content
 
-If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on "Destroy".
+If you want to delete the chat content, [open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), then click on "Destroy".
 A popup will open, asking a confirmation.
-To avoid errors, the popup will ask you the "XMPP address" of the chat room.
-This address can be obtain using the "Details" menu in the top menu.
 
 The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the "{{% livechat_label use_chat %}}" feature activated.

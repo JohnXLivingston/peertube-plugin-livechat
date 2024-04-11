@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-04-10 09:00+0200\n"
+"POT-Creation-Date: 2024-04-11 12:40+0200\n"
 "PO-Revision-Date: 2024-03-10 20:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -2260,13 +2260,14 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
+msgid "You can change the persistence behaviour.  [Open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), and click on \"Configure\"."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text
@@ -2302,7 +2303,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
+msgid "If you want to delete the chat content, [open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), then click on \"Destroy\".  A popup will open, asking a confirmation."
 msgstr ""
 
 #. type: Plain text
@@ -2556,7 +2557,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
+msgid "You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat."
 msgstr ""
 
 #. type: Plain text
@@ -2871,6 +2872,17 @@ msgstr ""
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
+msgid "Chat dropdown menu"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "There is a dropdown menu on the top of the chat, with some advanced features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation).  Available features depends on your access level."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
 msgid "Opening full screen"
 msgstr ""
 
@@ -2890,11 +2902,6 @@ msgstr ""
 msgid "It can be easier to chat using a full browser tab."
 msgstr ""
 
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/viewers.md
-msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
-msgstr ""
-
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
@@ -2908,7 +2915,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "You can also change your nickname using the top menu when you are in fullscreen mode."
+msgid "You can also change your nickname using the chat menu."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description

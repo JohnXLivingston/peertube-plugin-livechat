@@ -77,6 +77,14 @@ To see the list of participants, just open the right menu:
 
 You can see that some participants have special rights (moderator, owner, ...).
 
+## Chat dropdown menu
+
+There is a dropdown menu on the top of the chat, with some advanced features.
+This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation).
+Available features depends on your access level.
+
+![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
+
 ## Opening full screen
 
 On top of the chat, there is a button to open the chat in fullscreen.
@@ -86,11 +94,8 @@ This will open a new browser tab with the following content:
 
 It can be easier to chat using a full browser tab.
 
-This fullscreen view also adds a top menu with advances features.
-This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation).
-
 ## Changing nickname
 
 You can change your nickname by typing `/nick your_new_nickname` in the message field.
 
-You can also change your nickname using the top menu when you are in fullscreen mode.
+You can also change your nickname using the chat menu.

@@ -16,10 +16,9 @@ Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/
 
 ## Accessing moderation tools
 
-You can access room settings and moderation tools by opening the chat in a new window,
-and using the dropdown menu at the top right.
+You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat.
 
-![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
+![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
 
 {{% notice tip %}}
 All instance moderators and admins will be owner of created chat rooms.

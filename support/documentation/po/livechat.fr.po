@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-04-10 09:00+0200\n"
+"POT-Creation-Date: 2024-04-11 12:40+0200\n"
 "PO-Revision-Date: 2024-04-10 16:48+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2313,13 +2312,18 @@ msgstr "Par défaut, le tchat est persistant. Cela veut dire que le contenu des 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
+#, fuzzy
+#| msgid "You can change the persistence behaviour.  [Open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Configure\"."
+msgid "You can change the persistence behaviour.  [Open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), and click on \"Configure\"."
 msgstr "Vous pouvez changer le comportement de la persistance. [Ouvrez le tchat en plein écran](/peertube-plugin-livechat/fr/documentation/user/viewers), puis ouvrez le menu du haut et cliquez sur «Configurer»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![Top menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgstr "![Menu du haut](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
@@ -2355,7 +2359,9 @@ msgstr "Détruire le contenu du tchat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
+#, fuzzy
+#| msgid "If you want to delete the chat content, [open the chat in fullscreen](/peertube-plugin-livechat/documentation/user/viewers), then open the top menu and click on \"Destroy\".  A popup will open, asking a confirmation.  To avoid errors, the popup will ask you the \"XMPP address\" of the chat room.  This address can be obtain using the \"Details\" menu in the top menu."
+msgid "If you want to delete the chat content, [open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), then click on \"Destroy\".  A popup will open, asking a confirmation."
 msgstr "Si vous voulez détruire le contenu du tchat, [ouvrez le tchat en plein écran](/peertube-plugin-livechat/fr/documentation/user/viewers), ouvrez le menu du haut et cliquez sur «Détruire». Une popup va s'ouvrir, demandant confirmation. Pour éviter les erreurs, la popup va vous demander «l'adresse XMPP» du salon. Cette adresse peut être obtenue via l'entrée «Détails» du menu haut."
 
 #. type: Plain text
@@ -2608,7 +2614,9 @@ msgstr "Accéder aux outils de modération"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
+#, fuzzy
+#| msgid "You can access room settings and moderation tools by opening the chat in a new window, and using the dropdown menu at the top right."
+msgid "You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat."
 msgstr "Vous pouvez accéder aux paramètres de la salle et aux outils de modération en ouvrant le tchat dans une nouvelle fenêtre, et en utilisant le menu déroulant en haut à droite."
 
 #. type: Plain text
@@ -2923,6 +2931,19 @@ msgstr "Vous pouvez constater que certain⋅es participant⋅es ont des droits s
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
+msgid "Chat dropdown menu"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+msgid "There is a dropdown menu on the top of the chat, with some advanced features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation).  Available features depends on your access level."
+msgstr "Cette vue plein écran ajoute également un menu haut avec des fonctionnalités avancées. Cela est particulièrement utile pour les [fonctions de modération](/peertube-plugin-livechat/fr/documentation/user/streamers/moderation)."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
 msgid "Opening full screen"
 msgstr "Ouvrir en plein écran"
 
@@ -2942,11 +2963,6 @@ msgstr "![Capture d'écran du tchat en plein écran](/peertube-plugin-livechat/i
 msgid "It can be easier to chat using a full browser tab."
 msgstr "Cela peut être plus facile de tchatter en utilisant un onglet de navigateur complet."
 
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/viewers.md
-msgid "This fullscreen view also adds a top menu with advances features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
-msgstr "Cette vue plein écran ajoute également un menu haut avec des fonctionnalités avancées. Cela est particulièrement utile pour les [fonctions de modération](/peertube-plugin-livechat/fr/documentation/user/streamers/moderation)."
-
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
@@ -2960,7 +2976,9 @@ msgstr "Vous pouvez changer de pseudonyme en tapant `/nick votre_nouveau_pseudo`
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "You can also change your nickname using the top menu when you are in fullscreen mode."
+#, fuzzy
+#| msgid "You can also change your nickname using the top menu when you are in fullscreen mode."
+msgid "You can also change your nickname using the chat menu."
 msgstr "Vous pouvez également changer votre pseudonyme en utilisant le menu haut quand vous êtes en mode plein écran."
 
 #. type: Yaml Front Matter Hash Value: description
