@@ -77,6 +77,7 @@ function defaultConverseParams (
     whitelisted_plugins: [
       'livechatWindowTitlePlugin',
       'livechatSpecifics',
+      'livechatMiniMucHeadPlugin',
       'livechatViewerModePlugin',
       'livechatDisconnectOnUnloadPlugin',
       'converse-slow-mode'

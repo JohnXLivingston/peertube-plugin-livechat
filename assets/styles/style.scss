@@ -9,12 +9,13 @@
   }
 }
 
-.peertube-plugin-livechat-buttons {
+.peertube-plugin-livechat-buttons,
+.livechat-mini-muc-bar-buttons {
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  padding-right: 12px; // to avoid being under the window scrollbar.
+  padding-right: 12px !important; // to avoid being under the window scrollbar.
 }
 
 .peertube-plugin-livechat-button {
@@ -30,10 +31,19 @@
   }
 }
 
-.peertube-plugin-livechat-buttons-open .peertube-plugin-livechat-button {
-  height: 18px !important;
-  margin: 2px !important;
-  padding: 1px !important;
+.peertube-plugin-livechat-buttons-open,
+.livechat-mini-muc-bar-buttons {
+  .peertube-plugin-livechat-button {
+    height: 18px !important;
+    margin: 2px !important;
+    padding: 1px !important;
+  }
+}
+
+.peertube-plugin-livechat-buttons-open {
+  // So that buttons will be behind chatbox (buttons are then cloned by our custom muc-head template):
+  position: fixed;
+  right: 0;
 }
 
 [peertube-plugin-livechat-state="initializing"] {

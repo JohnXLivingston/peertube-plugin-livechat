@@ -35,8 +35,11 @@ module.exports = merge(prod, {
     extensions: ['.js'],
     alias: {
       './templates/muc-bottom-panel.js': path.resolve('custom/templates/muc-bottom-panel.js'),
+      './templates/muc-head.js': path.resolve(__dirname, 'custom/templates/muc-head.js'),
       '../../templates/background_logo.js$': path.resolve(__dirname, 'custom/templates/background_logo.js'),
+
       'shared/styles/index.scss$': path.resolve(__dirname, 'custom/shared/styles/livechat.scss'),
+
       'shared/modals/livechat-external-login.js': path.resolve(
         __dirname,
         'custom/shared/modals/livechat-external-login.js'

@@ -2,11 +2,23 @@
 @import "shared/styles/index";
 @import "./peertubetheme";
 
-body.livechat-iframe,
-#peertube-plugin-livechat-container {
+body.livechat-iframe {
   #conversejs .chat-head {
-    // Hidding the chat-head when the plugin is displayed in an iframe or besides a video.
+    // Hidding the chat-head when the plugin is displayed in an iframe
     display: none;
+  }
+}
+
+#peertube-plugin-livechat-container #conversejs .chat-head {
+  // When besides a video, reduce the size of the toolbar.
+  padding: 0 !important;
+}
+
+#conversejs .livechat-mini-muc-bar-buttons {
+  a.orange-button {
+    // force these colors...
+    color: var(--peertube-button-foreground);
+    background-color: var(--peertube-button-background);
   }
 }
 
