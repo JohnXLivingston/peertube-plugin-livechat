@@ -20,6 +20,10 @@ function getPeertubeButtons () {
   )
   if (!buttonsContainer) { return html`` }
 
+  // We must remove this class, in case it is already here.
+  // Otherwise, the trick with offsetParent (see the forEach loop) will not work.
+  buttonsContainer.classList.remove('peertube-plugin-livechat-buttons-cloned')
+
   const buttons = []
   buttonsContainer.childNodes.forEach(button => {
     try {
@@ -38,6 +42,10 @@ function getPeertubeButtons () {
   if (!buttons.length) {
     return html``
   }
+
+  // Hidding original buttons:
+  console.log('[peertube-plugin-livechat] Adding class peertube-plugin-livechat-buttons-cloned')
+  buttonsContainer.classList.add('peertube-plugin-livechat-buttons-cloned')
 
   return html`
     ${repeat(buttons, (node) => html`

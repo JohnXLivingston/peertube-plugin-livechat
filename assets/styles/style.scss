@@ -40,10 +40,9 @@
   }
 }
 
-.peertube-plugin-livechat-buttons-open {
-  // So that buttons will be behind chatbox (buttons are then cloned by our custom muc-head template):
-  position: fixed;
-  right: 0;
+.peertube-plugin-livechat-buttons-cloned {
+  // Hidding buttons when cloned by the ConverseJS mini-muc-head plugin.
+  display: none;
 }
 
 [peertube-plugin-livechat-state="initializing"] {

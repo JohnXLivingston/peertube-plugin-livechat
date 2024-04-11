@@ -21,5 +21,16 @@ export const livechatMiniMucHeadPlugin = {
       buttons = buttons.filter(b => b.name !== 'toggle-topic')
       return buttons
     })
+
+    const restoreClonedButtons = (): void => {
+      console.log('[peertube-plugin-livechat] Removing class peertube-plugin-livechat-buttons-cloned')
+      document.querySelectorAll(
+        '.peertube-plugin-livechat-buttons-cloned'
+      ).forEach(el => el.classList.remove('peertube-plugin-livechat-buttons-cloned'))
+    }
+
+    // muc-head can hide buttons that are cloned, so we restore them on disconnection and chatbox closing.
+    _converse.api.listen.on('disconnected', restoreClonedButtons)
+    _converse.api.listen.on('chatBoxClosed', restoreClonedButtons)
   }
 }
