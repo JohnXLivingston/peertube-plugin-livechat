@@ -34,7 +34,7 @@ export const livechatSpecificsPlugin = {
       }
 
       // update other settings
-      for (const k of ['hide_muc_participants', 'livechat_enable_viewer_mode']) {
+      for (const k of ['hide_muc_participants', 'livechat_enable_viewer_mode', 'livechat_mini_muc_head']) {
         _converse.api.settings.set(k, params[k])
       }
 
