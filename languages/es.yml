@@ -136,9 +136,10 @@ prosody_peertube_uri_description: "Por favor, deje esta configuración vacía si
   el URI de Peertube para los módulos de Prosody\n(por ejemplo, con \"http://localhost:9000\"\
   \ o \"http://127.0.0.1:9000\").\n"
 prosody_room_allow_s2s_description: "Al habilitar esta opción, será posible conectarse
-  a salas utilizando cuentas XMPP externas y clientes XMPP.<br>\n<span class=\"peertube-plugin-livechat-warning\">Advertencia, habilitar
-  esta opción puede solicitar un servidor adicional y una configuración de DNS.</span>\n
-  Por favor, consulte la documentación:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/\"\
+  a salas utilizando cuentas XMPP externas y clientes XMPP.<br>\n<span class=\"peertube-plugin-livechat-warning\"\
+  >Advertencia, habilitar esta opción puede solicitar un servidor adicional y una
+  configuración de DNS.</span>\n Por favor, consulte la documentación:\n<a href=\"\
+  https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n   Habilitar  conexiones con cuentas XMPP externas.\n</a>\n"
 prosody_muc_expiration_description: "Aquí puede elegir cuánto tiempo el servidor conserva
   el contenido de la sala de chat. El valor puede ser:\n<ul>\n     <li><b>60</b>:
@@ -326,3 +327,14 @@ livechat_configuration_channel_slow_mode_desc: "Valor del modo lento:\n<ul>\n   
   modo lento deshabilitado</li>\n   <li>Cualquier número entero positivo: los usuarios
   pueden enviar un mensaje cada X segundos (los moderadores no están limitados)</li>\n\
   </ul>\n"
+chatroom_not_accessible: Esta sala de chat no existe, o no esta accesible para ti.
+login_using_external_account: Iniciar sesión usando una cuenta externa
+login_remote_peertube: 'Iniciar sesión usando una cuenta de otra instancia Peertube:'
+login_remote_peertube_url: Tu URL de instancia Peertube
+login_remote_peertube_searching: Buscar el vídeo en la instancia Peertube...
+login_remote_peertube_url_invalid: URL Peertube inválida.
+login_remote_peertube_no_livechat: El plugin livechat no esta instalado en esta instancia.
+login_remote_peertube_video_not_found: Este vídeo no está disponible en esta instancia
+  de Peertube.
+login_remote_peertube_video_not_found_try_anyway: En algunos casos, el vídeo aún se
+  puede recuperar si se conecta a la instancia remota.
