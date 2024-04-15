@@ -8,9 +8,48 @@ import { loc } from './loc'
 type AvatarSet = 'sepia' | 'cat' | 'bird' | 'fenec' | 'abstract' | 'legacy'
 
 async function initSettings (options: RegisterServerOptions): Promise<void> {
-  const { peertubeHelpers, registerSetting, settingsManager } = options
+  const { peertubeHelpers, settingsManager } = options
 
-  // ********** IMPORTANT NOTES
+  initImportantNotesSettings(options)
+  initChatSettings(options)
+  initFederationSettings(options)
+  initAdvancedChannelCustomizationSettings(options)
+  initChatBehaviourSettings(options)
+  initThemingSettings(options)
+  initChatServerAdvancedSettings(options)
+
+  let currentProsodyRoomtype = (await settingsManager.getSettings(['prosody-room-type']))['prosody-room-type']
+
+  // ********** settings changes management
+  settingsManager.onSettingsChange(async (settings: any) => {
+    // In case the Prosody port has changed, we must rewrite the Bot configuration file.
+    // To avoid race condition, we will just stop and start the bots at every settings saving.
+    await BotsCtl.destroySingleton()
+    await BotsCtl.initSingleton(options)
+
+    peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
+    await ensureProsodyRunning(options)
+
+    await BotsCtl.singleton().start()
+
+    // In case prosody-room-type changed, we must rebuild room-channel links.
+    if (settings['prosody-room-type'] !== currentProsodyRoomtype) {
+      peertubeHelpers.logger.info('Setting prosody-room-type has changed value, must rebuild room-channel infos')
+      // doing it without waiting, could be long!
+      RoomChannel.singleton().rebuildData().then(
+        () => peertubeHelpers.logger.info('Room-channel info rebuild ok.'),
+        (err) => peertubeHelpers.logger.error(err)
+      )
+    }
+    currentProsodyRoomtype = settings['prosody-room-type']
+  })
+}
+
+/**
+ * Registers settings related to the "Important Notes" section.
+ * @param param0 server options
+ */
+function initImportantNotesSettings ({ registerSetting }: RegisterServerOptions): void {
   registerSetting({
     type: 'html',
     private: true,
@@ -47,8 +86,13 @@ Please read
 </span>`
     })
   }
+}
 
-  // ********** Chat
+/**
+ * Register settings related to the "Chat" section.
+ * @param param0 server options
+ */
+function initChatSettings ({ registerSetting }: RegisterServerOptions): void {
   registerSetting({
     type: 'html',
     private: true,
@@ -61,8 +105,13 @@ Please read
     descriptionHTML: loc('list_rooms_description'),
     private: true
   })
+}
 
-  // ********** Federation
+/**
+ * Registers settings related to the "Federation" section.
+ * @param param0 server options
+ */
+function initFederationSettings ({ registerSetting }: RegisterServerOptions): void {
   registerSetting({
     type: 'html',
     private: true,
@@ -84,8 +133,13 @@ Please read
     default: false,
     private: true
   })
+}
 
-  // ********** Advanced channel customization
+/**
+ * Registers settings related to the "Advanced channel customization" section.
+ * @param param0 server options
+ */
+function initAdvancedChannelCustomizationSettings ({ registerSetting }: RegisterServerOptions): void {
   registerSetting({
     type: 'html',
     private: true,
@@ -104,8 +158,13 @@ Please read
     default: false,
     private: false
   })
+}
 
-  // ********** Chat behaviour
+/**
+ * Registers settings related to the "Chat behaviour" section.
+ * @param param0 server options
+ */
+function initChatBehaviourSettings ({ registerSetting }: RegisterServerOptions): void {
   registerSetting({
     type: 'html',
     private: true,
@@ -207,8 +266,13 @@ Please read
     descriptionHTML: loc('auto_ban_anonymous_ip_description'),
     private: true
   })
+}
 
-  // ********** Theming
+/**
+ * Registers settings related to the "Theming" section.
+ * @param param0 server options
+ */
+function initThemingSettings ({ registerSetting }: RegisterServerOptions): void {
   registerSetting({
     name: 'theming-advanced',
     type: 'html',
@@ -267,8 +331,13 @@ Please read
     descriptionHTML: loc('chat_style_description'),
     private: false
   })
+}
 
-  // ********** Chat server advanced settings
+/**
+ * Registers settings related to the "Chat server advanded settings" section.
+ * @param param0 server options
+ */
+function initChatServerAdvancedSettings ({ registerSetting }: RegisterServerOptions): void {
   registerSetting({
     name: 'prosody-advanced',
     type: 'html',
@@ -426,32 +495,6 @@ Please read
     default: '',
     private: true,
     descriptionHTML: loc('prosody_components_list_description')
-  })
-
-  let currentProsodyRoomtype = (await settingsManager.getSettings(['prosody-room-type']))['prosody-room-type']
-
-  // ********** settings changes management
-  settingsManager.onSettingsChange(async (settings: any) => {
-    // In case the Prosody port has changed, we must rewrite the Bot configuration file.
-    // To avoid race condition, we will just stop and start the bots at every settings saving.
-    await BotsCtl.destroySingleton()
-    await BotsCtl.initSingleton(options)
-
-    peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
-    await ensureProsodyRunning(options)
-
-    await BotsCtl.singleton().start()
-
-    // In case prosody-room-type changed, we must rebuild room-channel links.
-    if (settings['prosody-room-type'] !== currentProsodyRoomtype) {
-      peertubeHelpers.logger.info('Setting prosody-room-type has changed value, must rebuild room-channel infos')
-      // doing it without waiting, could be long!
-      RoomChannel.singleton().rebuildData().then(
-        () => peertubeHelpers.logger.info('Room-channel info rebuild ok.'),
-        (err) => peertubeHelpers.logger.error(err)
-      )
-    }
-    currentProsodyRoomtype = settings['prosody-room-type']
   })
 }
 
