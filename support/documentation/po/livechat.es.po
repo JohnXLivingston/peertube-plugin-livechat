@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-04-15 12:06+0200\n"
-"PO-Revision-Date: 2024-03-10 20:38+0000\n"
+"PO-Revision-Date: 2024-04-16 21:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
+"Language-Team: Spanish <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.4.2\n"
+"X-Generator: Weblate 5.4.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -362,27 +363,38 @@ msgstr "Nota: por una razón desconocida, Prosody no puede resolver la direcció
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quickly rebuild and install the plugin"
-msgstr ""
+msgstr "Reconstruir e instalar rápidamente el plugin"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When you do modification, you don't have to always rebuild the full project, and reinstall the plugin on your dev environment.  You can build only the modified part (for example, if you only modified client files: `npm run build:client`).  Check the `package.json` files for available build scripts."
 msgstr ""
+"Cuando hace un cambio, no debe siempre reconstruir el proyecto completo, y "
+"reinstalar el plugin en su entorno de desarrollo.  Puede solo construir la "
+"parte modificada( ejemplo, si solo has modificado los ficheros del cliente: `"
+"npm run build:client`).  Verifica el fichero `package.json` para los scripts "
+"de construcción disponibles."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When the plugin is already installed on your dev instance, and you haven't changed any dependency, you can quickly install your work by following these steps:"
 msgstr ""
+"Cuando el plugin ya esta instalado en su instancia de desarrollo, y no ha "
+"cambiado cualquier dependencia, puede instalar rápidamente su trabajo "
+"siguiendo estas etapas:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "re-build necessary parts of the plugin (client, styles, ...),"
-msgstr ""
+msgstr "reconstruir las partes necesarias del plugin, (cliente, estilos, ...),"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "overwrite the `data/plugins/node_modules/peertube-plugin-livechat/dist/` content of your dev instance by the content of the plugin's `dist` folder,"
 msgstr ""
+"sobrescribir el contenido de `data/plugins/node_modules/"
+"peertube-plugin-livechat/dist/` de su instancia de desarrollo con el "
+"contenido del directorio `dist`,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
