@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-04-11 12:40+0200\n"
+"POT-Creation-Date: 2024-04-15 12:06+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Icelandic <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/is/>\n"
@@ -330,6 +330,42 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Quickly rebuild and install the plugin"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "When you do modification, you don't have to always rebuild the full project, and reinstall the plugin on your dev environment.  You can build only the modified part (for example, if you only modified client files: `npm run build:client`).  Check the `package.json` files for available build scripts."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "When the plugin is already installed on your dev instance, and you haven't changed any dependency, you can quickly install your work by following these steps:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "re-build necessary parts of the plugin (client, styles, ...),"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "overwrite the `data/plugins/node_modules/peertube-plugin-livechat/dist/` content of your dev instance by the content of the plugin's `dist` folder,"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "change recursively `plugins/node_modules/peertube-plugin-livechat/dist/` files owner to your `peertube` user,"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "restart your instance."
 msgstr ""
 
 #. type: Title ##

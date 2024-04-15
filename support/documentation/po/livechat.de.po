@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-04-11 12:40+0200\n"
+"POT-Creation-Date: 2024-04-15 12:06+0200\n"
 "PO-Revision-Date: 2024-04-12 05:39+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -360,6 +358,44 @@ msgstr "Es wurde ein Repo daraus gemacht, siehe [pt-plugin-dev](https://codeberg
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
 msgstr "Hinweis: Aus einem unbekannten Grund kann Prosody die DNS-Adresse von Containern nicht auflösen, wenn die lua-unbound-Bibliothek verwendet wird. Es gibt einen unsaubere Lösung dafür im Plugin: Erstellen Sie einfach eine `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` Datei in deinen docker-volumes, dann starten Sie die Container neu."
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Quickly rebuild and install the plugin"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "When you do modification, you don't have to always rebuild the full project, and reinstall the plugin on your dev environment.  You can build only the modified part (for example, if you only modified client files: `npm run build:client`).  Check the `package.json` files for available build scripts."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "When the plugin is already installed on your dev instance, and you haven't changed any dependency, you can quickly install your work by following these steps:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "re-build necessary parts of the plugin (client, styles, ...),"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "overwrite the `data/plugins/node_modules/peertube-plugin-livechat/dist/` content of your dev instance by the content of the plugin's `dist` folder,"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "change recursively `plugins/node_modules/peertube-plugin-livechat/dist/` files owner to your `peertube` user,"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+#, fuzzy
+#| msgid "Restart your services:"
+msgid "restart your instance."
+msgstr "Den Dienst neustarten:"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -2295,19 +2331,14 @@ msgstr "Standardmäßig ist der Chat dauerhaft.  Das bedeutet, dass der Inhalt d
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can change the persistence behaviour.  [Open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), and click on \"Configure\"."
-msgstr ""
-"Sie können das Dauerhaftigkeitsverhalten ändern.  [Öffnen Sie das Chat "
-"Dropdownmenü](/peertube-plugin-livechat/de/documentation/user/viewers), und "
-"klicken Sie auf \"Konfigurieren\"."
+msgstr "Sie können das Dauerhaftigkeitsverhalten ändern.  [Öffnen Sie das Chat Dropdownmenü](/peertube-plugin-livechat/de/documentation/user/viewers), und klicken Sie auf \"Konfigurieren\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Chat Menü](/peertube-plugin-livechat/images/top_menu."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Chat Menü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2343,11 +2374,7 @@ msgstr "Löschen des Chat Inhalts"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "If you want to delete the chat content, [open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), then click on \"Destroy\".  A popup will open, asking a confirmation."
-msgstr ""
-"Wenn Sie den Inhalt des Chats löschen möchten, [öffnen Sie deas Dropdown "
-"Menü des Chats](/peertube-plugin-livechat/de/documentation/user/viewers) und "
-"klicken Sie auf \"Löschen\".  Es öffnet sich ein Popup-Fenster, das eine "
-"Bestätigung verlangt."
+msgstr "Wenn Sie den Inhalt des Chats löschen möchten, [öffnen Sie deas Dropdown Menü des Chats](/peertube-plugin-livechat/de/documentation/user/viewers) und klicken Sie auf \"Löschen\".  Es öffnet sich ein Popup-Fenster, das eine Bestätigung verlangt."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2600,10 +2627,7 @@ msgstr "Zugang zu den Moderationswerkzeugen"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat."
-msgstr ""
-"Über das [Chat Dropdown Menü](/peertube-plugin-livechat/de/documentation/"
-"user/viewers) am oberen Rand des Chats haben Sie Zugriff auf die "
-"Raumeinstellungen und Moderationswerkzeuge."
+msgstr "Über das [Chat Dropdown Menü](/peertube-plugin-livechat/de/documentation/user/viewers) am oberen Rand des Chats haben Sie Zugriff auf die Raumeinstellungen und Moderationswerkzeuge."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2673,8 +2697,7 @@ msgstr "Langsamer Modus"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "This feature comes with the livechat plugin version 8.3.0."
-msgstr ""
-"Diese Funktion wird mit dem Livechatplugin Version 8.3.0 verfügbar sein."
+msgstr "Diese Funktion wird mit dem Livechatplugin Version 8.3.0 verfügbar sein."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2924,12 +2947,7 @@ msgstr "Chat Dropdown Menü"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "There is a dropdown menu on the top of the chat, with some advanced features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation).  Available features depends on your access level."
-msgstr ""
-"Es gibt ein Dropdownmenü am oberen Rand des Chats, das einige erweiterte "
-"Funktionen enthält.  Dies ist besonders nützlich für die "
-"[Moderationsfunktionen](/peertube-plugin-livechat/de/documentation/user/"
-"streamers/moderation).  Die verfügbaren Funktionen hängen von Ihrer "
-"Zugriffsstufe ab."
+msgstr "Es gibt ein Dropdownmenü am oberen Rand des Chats, das einige erweiterte Funktionen enthält.  Dies ist besonders nützlich für die [Moderationsfunktionen](/peertube-plugin-livechat/de/documentation/user/streamers/moderation).  Die verfügbaren Funktionen hängen von Ihrer Zugriffsstufe ab."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
