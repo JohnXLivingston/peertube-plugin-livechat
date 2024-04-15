@@ -3,6 +3,7 @@ import type { ConverseJSTheme } from '../../shared/lib/types'
 import { ensureProsodyRunning } from './prosody/ctl'
 import { RoomChannel } from './room-channel'
 import { BotsCtl } from './bots/ctl'
+import { ExternalAuthOIDC } from './external-auth/oidc'
 import { loc } from './loc'
 
 type AvatarSet = 'sepia' | 'cat' | 'bird' | 'fenec' | 'abstract' | 'legacy'
@@ -13,10 +14,13 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
   initImportantNotesSettings(options)
   initChatSettings(options)
   initFederationSettings(options)
+  initExternalAuth(options)
   initAdvancedChannelCustomizationSettings(options)
   initChatBehaviourSettings(options)
   initThemingSettings(options)
   initChatServerAdvancedSettings(options)
+
+  await ExternalAuthOIDC.initSingleton(options)
 
   let currentProsodyRoomtype = (await settingsManager.getSettings(['prosody-room-type']))['prosody-room-type']
 
@@ -26,6 +30,8 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
     // To avoid race condition, we will just stop and start the bots at every settings saving.
     await BotsCtl.destroySingleton()
     await BotsCtl.initSingleton(options)
+
+    await ExternalAuthOIDC.initSingleton(options)
 
     peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
     await ensureProsodyRunning(options)
@@ -133,6 +139,77 @@ function initFederationSettings ({ registerSetting }: RegisterServerOptions): vo
     default: false,
     private: true
   })
+}
+
+/**
+ * Registers settings related to the "External Authentication" section.
+ * @param param0 server options
+ */
+function initExternalAuth ({ registerSetting }: RegisterServerOptions): void {
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('external_auth_description')
+  })
+  registerSetting({
+    name: 'external-auth-custom-oidc',
+    label: loc('external_auth_custom_oidc_label'),
+    descriptionHTML: loc('external_auth_custom_oidc_description'),
+    type: 'input-checkbox',
+    default: false,
+    private: true
+  })
+  registerSetting({
+    name: 'external-auth-custom-oidc-button-label',
+    label: loc('external_auth_custom_oidc_button_label_label'),
+    descriptionHTML: loc('external_auth_custom_oidc_button_label_description'),
+    type: 'input',
+    default: '',
+    private: true
+  })
+  registerSetting({
+    name: 'external-auth-custom-oidc-discovery-url',
+    label: loc('external_auth_custom_oidc_discovery_url_label'),
+    // descriptionHTML: loc('external_auth_custom_oidc_discovery_url_description'),
+    type: 'input',
+    private: true
+  })
+  registerSetting({
+    name: 'external-auth-custom-oidc-client-id',
+    label: loc('external_auth_custom_oidc_client_id_label'),
+    // descriptionHTML: loc('external_auth_custom_oidc_client_id_description'),
+    type: 'input',
+    private: true
+  })
+  registerSetting({
+    name: 'external-auth-custom-oidc-client-secret',
+    label: loc('external_auth_custom_oidc_client_secret_label'),
+    // descriptionHTML: loc('external_auth_custom_oidc_client_secret_description'),
+    type: 'input-password',
+    private: true
+  })
+
+  // registerSetting({
+  //   name: 'external-auth-custom-oidc-scope',
+  //   label: loc('external_auth_custom_oidc_scope_label'),
+  //   descriptionHTML: loc('external_auth_custom_oidc_scope_description'),
+  //   type: 'input',
+  //   private: true,
+  //   default: 'openid profile'
+  // })
+  // registerSetting({
+  //   name: 'username-property',
+  //   label: 'Username property',
+  //   type: 'input',
+  //   private: true,
+  //   default: 'preferred_username'
+  // })
+  // registerSetting({
+  //   name: 'display-name-property',
+  //   label: 'Display name property',
+  //   type: 'input',
+  //   private: true
+  // })
 }
 
 /**

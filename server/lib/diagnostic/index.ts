@@ -4,6 +4,7 @@ import { TestResult, newResult } from './utils'
 import { diagDebug } from './debug'
 import { diagProsody } from './prosody'
 import { diagVideo } from './video'
+import { diagExternalAuthCustomOIDC } from './external-auth-custom-oidc'
 import { helpUrl } from '../../../shared/lib/help'
 
 export async function diag (test: string, options: RegisterServerOptions): Promise<TestResult> {
@@ -17,6 +18,8 @@ export async function diag (test: string, options: RegisterServerOptions): Promi
     result = await diagVideo(test, options)
   } else if (test === 'prosody') {
     result = await diagProsody(test, options)
+  } else if (test === 'external-auth-custom-oidc') {
+    result = await diagExternalAuthCustomOIDC(test, options)
   } else if (test === 'everything-ok') {
     result = newResult(test)
     result.label = 'Everything seems fine'

@@ -22,6 +22,9 @@ interface InitConverseJSParams {
   transparent: boolean
   forceDefaultHideMucParticipants?: boolean
   autofocus?: boolean
+  externalAuthOIDC?: {
+    buttonLabel: string
+  }
 }
 
 interface InitConverseJSParamsError {

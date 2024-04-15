@@ -1,4 +1,4 @@
-type nextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody' | 'everything-ok'
+type nextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody' | 'external-auth-custom-oidc' | 'everything-ok'
 
 interface MessageWithLevel {
   level: 'info' | 'warning' | 'error'

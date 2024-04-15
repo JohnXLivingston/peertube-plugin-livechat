@@ -236,6 +236,6 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
   }
 
   result.ok = true
-  result.next = 'everything-ok'
+  result.next = 'external-auth-custom-oidc'
   return result
 }

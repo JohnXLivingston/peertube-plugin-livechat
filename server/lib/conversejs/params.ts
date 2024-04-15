@@ -10,6 +10,7 @@ import { getVideoLiveChatInfos } from '../federation/storage'
 import { getBaseRouterRoute, getBaseStaticRoute } from '../helpers'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getBoshUri, getWSUri } from '../uri/webchat'
+import { ExternalAuthOIDC } from '../external-auth/oidc'
 
 interface GetConverseJSParamsParams {
   readonly?: boolean | 'noscroll'
@@ -76,6 +77,10 @@ async function getConverseJSParams (
     roomJID
   } = connectionInfos
 
+  const oidc = ExternalAuthOIDC.singleton()
+  // TODO:
+  const externalAuthOIDC = await oidc.isOk() ? undefined : undefined
+
   return {
     peertubeVideoOriginalUrl: roomInfos.video?.url,
     peertubeVideoUUID: roomInfos.video?.uuid,
@@ -98,7 +103,8 @@ async function getConverseJSParams (
     transparent,
     // forceDefaultHideMucParticipants is for testing purpose
     // (so we can stress test with the muc participant list hidden by default)
-    forceDefaultHideMucParticipants: params.forceDefaultHideMucParticipants
+    forceDefaultHideMucParticipants: params.forceDefaultHideMucParticipants,
+    externalAuthOIDC
   }
 }
 

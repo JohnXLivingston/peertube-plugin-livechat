@@ -12,6 +12,7 @@ import { loadLoc } from './lib/loc'
 import { RoomChannel } from './lib/room-channel'
 import { BotConfiguration } from './lib/configuration/bot'
 import { BotsCtl } from './lib/bots/ctl'
+import { ExternalAuthOIDC } from './lib/external-auth/oidc'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -93,6 +94,7 @@ async function unregister (): Promise<any> {
 
   await RoomChannel.destroySingleton()
   await BotConfiguration.destroySingleton()
+  await ExternalAuthOIDC.destroySingleton()
 
   const module = __filename
   OPTIONS?.peertubeHelpers.logger.info(`Unloading module ${module}...`)

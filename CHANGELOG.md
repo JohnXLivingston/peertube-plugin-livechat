@@ -7,15 +7,16 @@ TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
 
 **Breaking changes**:
 
-* if you were adding custom CSS to livechat iframe, it could be broken, as the livechat is no more included in an iframe. Your custom styles are now added on a `div` element.
+* If you were adding custom CSS to livechat iframe, it could be broken, as the livechat is no more included in an iframe. Your custom styles are now added on a `div` element.
 
 ### New features
 
+* For anonymous users: new "log in using an external account" dialog, with following options:
+  * remote Peertube account,
+  * #128: possibility to configure an OpenID Connect provider on the instance level.
 * #143: User colors: implementing [XEP-0392](https://xmpp.org/extensions/xep-0392.html) to have random colors on users nicknames
 * #330: Chat does no more use an iframe to display the chat besides the videos.
 * #330: Fullscreen chat: now uses a custom page (in other words: when opening the chat in a new tab, you will have the Peertube menu).
-* For anonymous users: new "log in using an external account" dialog, with following options:
-  * remote Peertube account
 * #355: ConverseJS dropdown menu available everywhere, inclusing when chat is besides the video.
 
 ### Minor changes and fixes
