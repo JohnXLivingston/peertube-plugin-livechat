@@ -14,6 +14,7 @@ class ExternalAuthOIDC {
   private readonly clientId: string | undefined
   private readonly clientSecret: string | undefined
   private ok: boolean | undefined
+  private issuer: Issuer | undefined | null
   protected readonly logger: {
     debug: (s: string) => void
     info: (s: string) => void
@@ -55,6 +56,22 @@ class ExternalAuthOIDC {
   }
 
   /**
+   * Get the button
+   * @returns Button label
+   */
+  getButtonLabel (): string | undefined {
+    return this.buttonLabel
+  }
+
+  /**
+   * Get the discovery URL
+   * @returns discoveryURL
+   */
+  getDiscoveryUrl (): string | undefined {
+    return this.discoveryUrl
+  }
+
+  /**
    * Indicates if the OIDC provider is correctly configured.
    * @param force If true, all checks will be forced again.
    */
@@ -78,41 +95,50 @@ class ExternalAuthOIDC {
     }
 
     const errors: string[] = []
-    if (this.buttonLabel === undefined) {
+    if ((this.buttonLabel ?? '') === '') {
       errors.push('Missing button label')
     }
-    if (this.discoveryUrl === undefined) {
+    if ((this.discoveryUrl ?? '') === '') {
       errors.push('Missing discovery url')
     } else {
       try {
-        const uri = new URL(this.discoveryUrl)
+        const uri = new URL(this.discoveryUrl ?? 'wrong url')
         this.logger.debug('OIDC Discovery url is valid: ' + uri.toString())
       } catch (err) {
         errors.push('Invalid discovery url')
       }
     }
-    if (this.clientId === undefined) {
+    if ((this.clientId ?? '') === '') {
       errors.push('Missing client id')
     }
-    if (this.clientSecret === undefined) {
+    if ((this.clientSecret ?? '') === '') {
       errors.push('Missing client secret')
-    }
-
-    if (errors.length === 0) {
-      // Now we can try to use the discover service
-      try {
-        const issuer = await Issuer.discover(this.discoveryUrl as string)
-        this.logger.debug(`Discovered issuer, metadata are: ${JSON.stringify(issuer.metadata)}`)
-      } catch (err) {
-        this.logger.error(err as string)
-        errors.push(`Discovery URL non working: ${err as string}`)
-      }
     }
 
     if (errors.length) {
       this.logger.error('OIDC is not ok: ' + JSON.stringify(errors))
     }
     return errors
+  }
+
+  /**
+   * Ensure the issuer is loaded.
+   * @returns the issuer if enabled
+   */
+  async loadIssuer (): Promise<Issuer | null> {
+    // this.issuer === null means we already tried, but it failed.
+    if (this.issuer !== undefined) { return this.issuer }
+
+    if (!await this.isOk()) { return null }
+
+    try {
+      this.issuer = await Issuer.discover(this.discoveryUrl as string)
+      this.logger.debug(`Discovered issuer, metadata are: ${JSON.stringify(this.issuer.metadata)}`)
+    } catch (err) {
+      this.logger.error(err as string)
+      this.issuer = null
+    }
+    return this.issuer
   }
 
   /**
@@ -143,6 +169,7 @@ class ExternalAuthOIDC {
       settings['external-auth-custom-oidc-client-id'] as string | undefined,
       settings['external-auth-custom-oidc-client-secret'] as string | undefined
     )
+
     return singleton
   }
 

@@ -79,7 +79,11 @@ async function getConverseJSParams (
 
   const oidc = ExternalAuthOIDC.singleton()
   // TODO:
-  const externalAuthOIDC = await oidc.isOk() ? undefined : undefined
+  const externalAuthOIDC = await oidc.isOk()
+    ? {
+        buttonLabel: oidc.getButtonLabel() ?? '???'
+      }
+    : undefined
 
   return {
     peertubeVideoOriginalUrl: roomInfos.video?.url,

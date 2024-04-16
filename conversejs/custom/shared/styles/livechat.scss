@@ -93,6 +93,17 @@ body[livechat-viewer-mode="on"] {
   }
 }
 
+.livechat-external-login-modal {
+  .livechat-external-login-modal-external-auth-oidc {
+    text-align: center;
+    width: 100%;
+  }
+
+  hr {
+    background-color: var(--chatroom-head-bg-color);
+  }
+}
+
 // Transparent mode
 body.livechat-transparent {
   // --peertube-main-background: rgba(0 0 0 / 0%) !important;

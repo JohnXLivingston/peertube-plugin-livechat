@@ -1,3 +1,4 @@
+import { api } from '@converse/headless/core'
 import { __ } from 'i18n'
 import { html } from 'lit'
 
@@ -7,7 +8,22 @@ export const tplExternalLoginModal = (el, o) => {
   // eslint-disable-next-line no-undef
   const i18nRemotePeertubeUrl = __(LOC_login_remote_peertube_url)
   const i18nRemotePeertubeOpen = __('OK')
+  const externalAuthOIDCButtonLabel = api.settings.get('livechat_external_auth_oidc_button_label')
   return html`<div class="modal-body livechat-external-login-modal">
+    ${!externalAuthOIDCButtonLabel
+      ? ''
+      : html`
+        <div class="livechat-external-login-modal-external-auth-oidc">
+          <button
+            class="btn btn-primary"
+            @click=${() => console.log('ok, go')}
+          >
+            ${externalAuthOIDCButtonLabel}
+          </button>
+        </div>
+        <hr>
+      `
+    }
     <form class="converse-form chatroom-form" @submit=${(ev) => el.openRemotePeertube(ev)}>
       <label>
         ${i18nRemotePeertube}
@@ -51,6 +67,6 @@ export const tplExternalLoginModal = (el, o) => {
           }</button>
         </div>`
       }
-    </fieldset>
-  </form></div>`
+    </form>
+  </div>`
 }

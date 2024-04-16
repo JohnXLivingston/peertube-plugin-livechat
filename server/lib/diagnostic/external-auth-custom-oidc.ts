@@ -16,19 +16,38 @@ export async function diagExternalAuthCustomOIDC (test: string, _options: Regist
       return result
     }
 
-    const errors = await oidc.check()
-    if (errors.length) {
+    result.messages.push('Discovery URL: ' + (oidc.getDiscoveryUrl() ?? 'undefined'))
+
+    const oidcErrors = await oidc.check()
+    if (oidcErrors.length) {
       result.messages.push({
         level: 'error',
         message: 'The ExternalAuthOIDC singleton got some errors:'
       })
-      result.messages.push(...errors)
+      for (const oidcError of oidcErrors) {
+        result.messages.push({
+          level: 'error',
+          message: oidcError
+        })
+      }
       return result
     }
   } catch (err) {
     result.messages.push({
       level: 'error',
       message: 'Error while retrieving the ExternalAuthOIDC singleton:' + (err as string)
+    })
+    return result
+  }
+
+  const oidc = ExternalAuthOIDC.singleton()
+  const issuer = await oidc.loadIssuer()
+  if (issuer) {
+    result.messages.push('Discovery URL loaded: ' + JSON.stringify(issuer.metadata))
+  } else {
+    result.messages.push({
+      level: 'error',
+      message: 'Failed to load the Discovery URL.'
     })
     return result
   }
