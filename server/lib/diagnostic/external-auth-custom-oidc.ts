@@ -41,9 +41,9 @@ export async function diagExternalAuthCustomOIDC (test: string, _options: Regist
   }
 
   const oidc = ExternalAuthOIDC.singleton()
-  const issuer = await oidc.loadIssuer()
-  if (issuer) {
-    result.messages.push('Discovery URL loaded: ' + JSON.stringify(issuer.metadata))
+  const oidcClient = await oidc.load()
+  if (oidcClient) {
+    result.messages.push('Discovery URL loaded: ' + JSON.stringify(oidcClient.issuer.metadata))
   } else {
     result.messages.push({
       level: 'error',

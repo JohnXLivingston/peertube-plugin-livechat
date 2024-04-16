@@ -5,11 +5,13 @@ import { RoomChannel } from './room-channel'
 import { BotsCtl } from './bots/ctl'
 import { ExternalAuthOIDC } from './external-auth/oidc'
 import { loc } from './loc'
+const escapeHTML = require('escape-html')
 
 type AvatarSet = 'sepia' | 'cat' | 'bird' | 'fenec' | 'abstract' | 'legacy'
 
 async function initSettings (options: RegisterServerOptions): Promise<void> {
   const { peertubeHelpers, settingsManager } = options
+  const logger = peertubeHelpers.logger
 
   initImportantNotesSettings(options)
   initChatSettings(options)
@@ -21,6 +23,30 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
   initChatServerAdvancedSettings(options)
 
   await ExternalAuthOIDC.initSingleton(options)
+  const loadOidc = (): void => {
+    try {
+      const oidc = ExternalAuthOIDC.singleton()
+      oidc.isOk().then(
+        () => {
+          logger.info('Loading External Auth OIDC...')
+          oidc.load().then(
+            () => {
+              logger.info('External Auth OIDC loaded')
+            },
+            () => {
+              logger.error('Loading the External Auth OIDC failed')
+            }
+          )
+        },
+        () => {
+          logger.info('No valid External Auth OIDC, nothing loaded')
+        }
+      )
+    } catch (err) {
+      logger.error(err as string)
+    }
+  }
+  loadOidc() // we don't have to wait (can take time, it will do external http requests)
 
   let currentProsodyRoomtype = (await settingsManager.getSettings(['prosody-room-type']))['prosody-room-type']
 
@@ -30,6 +56,7 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
     // To avoid race condition, we will just stop and start the bots at every settings saving.
     await BotsCtl.destroySingleton()
     await BotsCtl.initSingleton(options)
+    loadOidc() // we don't have to wait (can take time, it will do external http requests)
 
     await ExternalAuthOIDC.initSingleton(options)
 
@@ -145,12 +172,21 @@ function initFederationSettings ({ registerSetting }: RegisterServerOptions): vo
  * Registers settings related to the "External Authentication" section.
  * @param param0 server options
  */
-function initExternalAuth ({ registerSetting }: RegisterServerOptions): void {
+function initExternalAuth (options: RegisterServerOptions): void {
+  const registerSetting = options.registerSetting
+
   registerSetting({
     type: 'html',
     private: true,
     descriptionHTML: loc('external_auth_description')
   })
+
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('experimental_warning')
+  })
+
   registerSetting({
     name: 'external-auth-custom-oidc',
     label: loc('external_auth_custom_oidc_label'),
@@ -159,6 +195,20 @@ function initExternalAuth ({ registerSetting }: RegisterServerOptions): void {
     default: false,
     private: true
   })
+
+  registerSetting({
+    type: 'html',
+    name: 'external-auth-custom-oidc-redirect-uris-info',
+    private: true,
+    descriptionHTML: loc('external_auth_custom_oidc_redirect_uris_info_description')
+  })
+  registerSetting({
+    type: 'html',
+    name: 'external-auth-custom-oidc-redirect-uris',
+    private: true,
+    descriptionHTML: `<ul><li>${escapeHTML(ExternalAuthOIDC.redirectUri(options)) as string}</li></ul>`
+  })
+
   registerSetting({
     name: 'external-auth-custom-oidc-button-label',
     label: loc('external_auth_custom_oidc_button_label_label'),

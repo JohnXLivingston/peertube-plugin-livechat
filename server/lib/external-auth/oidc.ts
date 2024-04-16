@@ -1,6 +1,8 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { URL } from 'url'
-import { Issuer } from 'openid-client'
+import { Issuer, BaseClient } from 'openid-client'
+import { getBaseRouterRoute } from '../helpers'
+import { canonicalizePluginUri } from '../uri/canonicalize'
 
 let singleton: ExternalAuthOIDC | undefined
 
@@ -13,8 +15,14 @@ class ExternalAuthOIDC {
   private readonly discoveryUrl: string | undefined
   private readonly clientId: string | undefined
   private readonly clientSecret: string | undefined
+  private readonly redirectUri: string
+
   private ok: boolean | undefined
+
   private issuer: Issuer | undefined | null
+  private client: BaseClient | undefined | null
+  private authorizationUrl: string | null
+
   protected readonly logger: {
     debug: (s: string) => void
     info: (s: string) => void
@@ -28,7 +36,8 @@ class ExternalAuthOIDC {
     buttonLabel: string | undefined,
     discoveryUrl: string | undefined,
     clientId: string | undefined,
-    clientSecret: string | undefined
+    clientSecret: string | undefined,
+    redirectUri: string
   ) {
     this.logger = {
       debug: (s) => logger.debug('[ExternalAuthOIDC] ' + s),
@@ -38,6 +47,8 @@ class ExternalAuthOIDC {
     }
 
     this.enabled = !!enabled
+    this.redirectUri = redirectUri
+    this.authorizationUrl = null
     if (this.enabled) {
       this.buttonLabel = buttonLabel
       this.discoveryUrl = discoveryUrl
@@ -53,6 +64,16 @@ class ExternalAuthOIDC {
    */
   isDisabledBySettings (): boolean {
     return !this.enabled
+  }
+
+  /**
+   * Get the url to open for external authentication.
+   * Note: If the singleton is not loaded yet, returns null.
+   *   This means that the feature will only be available when the load as complete.
+   * @returns the url to open
+   */
+  getAuthUrl (): string | null {
+    return this.authorizationUrl ?? null
   }
 
   /**
@@ -122,14 +143,21 @@ class ExternalAuthOIDC {
   }
 
   /**
-   * Ensure the issuer is loaded.
+   * Ensure the issuer is loaded, and the client instanciated.
    * @returns the issuer if enabled
    */
-  async loadIssuer (): Promise<Issuer | null> {
-    // this.issuer === null means we already tried, but it failed.
-    if (this.issuer !== undefined) { return this.issuer }
+  async load (): Promise<BaseClient | null> {
+    // this.client === null means we already tried, but it failed.
+    if (this.client !== undefined) { return this.client }
 
-    if (!await this.isOk()) { return null }
+    // First, reset the authentication url:
+    this.authorizationUrl = null
+
+    if (!await this.isOk()) {
+      this.issuer = null
+      this.client = null
+      return null
+    }
 
     try {
       this.issuer = await Issuer.discover(this.discoveryUrl as string)
@@ -137,8 +165,38 @@ class ExternalAuthOIDC {
     } catch (err) {
       this.logger.error(err as string)
       this.issuer = null
+      this.client = null
     }
-    return this.issuer
+
+    if (!this.issuer) {
+      this.client = null
+      return null
+    }
+
+    try {
+      this.client = new this.issuer.Client({
+        client_id: this.clientId as string,
+        client_secret: this.clientSecret as string,
+        redirect_uris: [this.redirectUri],
+        response_types: ['code']
+      })
+    } catch (err) {
+      this.logger.error(err as string)
+      this.client = null
+    }
+
+    if (!this.client) {
+      return null
+    }
+
+    try {
+      this.authorizationUrl = this.client.authorizationUrl()
+    } catch (err) {
+      this.logger.error(err as string)
+      this.authorizationUrl = null
+    }
+
+    return this.client
   }
 
   /**
@@ -167,7 +225,8 @@ class ExternalAuthOIDC {
       settings['external-auth-custom-oidc-button-label'] as string | undefined,
       settings['external-auth-custom-oidc-discovery-url'] as string | undefined,
       settings['external-auth-custom-oidc-client-id'] as string | undefined,
-      settings['external-auth-custom-oidc-client-secret'] as string | undefined
+      settings['external-auth-custom-oidc-client-secret'] as string | undefined,
+      ExternalAuthOIDC.redirectUri(options)
     )
 
     return singleton
@@ -182,6 +241,13 @@ class ExternalAuthOIDC {
       throw new Error('ExternalAuthOIDC singleton is not initialized yet')
     }
     return singleton
+  }
+
+  public static redirectUri (options: RegisterServerOptions): string {
+    const path = getBaseRouterRoute(options) + 'oidc/cb'
+    return canonicalizePluginUri(options, path, {
+      removePluginVersion: true
+    })
   }
 }
 

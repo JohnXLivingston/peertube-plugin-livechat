@@ -24,6 +24,7 @@ interface InitConverseJSParams {
   autofocus?: boolean
   externalAuthOIDC?: {
     buttonLabel: string
+    url: string
   }
 }
 

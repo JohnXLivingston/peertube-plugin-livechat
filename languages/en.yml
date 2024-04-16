@@ -83,6 +83,9 @@ external_auth_custom_oidc_button_label_description: "This label will be displaye
 external_auth_custom_oidc_discovery_url_label: "Discovery URL"
 external_auth_custom_oidc_client_id_label: "Client ID"
 external_auth_custom_oidc_client_secret_label: "Client secret"
+external_auth_custom_oidc_redirect_uris_info_description: |
+  <strong>Callback/Redirect URI:</strong>
+  If you want to configure authorized redirection URI on the external Application, please add this url:
 
 chat_behaviour_description: "<h3>Chat behaviour</h3>"
 

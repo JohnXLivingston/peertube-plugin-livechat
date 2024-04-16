@@ -77,13 +77,24 @@ async function getConverseJSParams (
     roomJID
   } = connectionInfos
 
-  const oidc = ExternalAuthOIDC.singleton()
-  // TODO:
-  const externalAuthOIDC = await oidc.isOk()
-    ? {
-        buttonLabel: oidc.getButtonLabel() ?? '???'
+  let externalAuthOIDC
+  if (userIsConnected !== true) {
+    try {
+      const oidc = ExternalAuthOIDC.singleton()
+      if (await oidc.isOk()) {
+        const authUrl = oidc.getAuthUrl()
+        const buttonLabel = oidc.getButtonLabel()
+        if (authUrl && buttonLabel) {
+          externalAuthOIDC = {
+            buttonLabel: buttonLabel,
+            url: authUrl
+          }
+        }
       }
-    : undefined
+    } catch (err) {
+      options.peertubeHelpers.logger.error(err)
+    }
+  }
 
   return {
     peertubeVideoOriginalUrl: roomInfos.video?.url,
