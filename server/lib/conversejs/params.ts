@@ -82,7 +82,7 @@ async function getConverseJSParams (
     try {
       const oidc = ExternalAuthOIDC.singleton()
       if (await oidc.isOk()) {
-        const authUrl = oidc.getAuthUrl()
+        const authUrl = oidc.getConnectUrl()
         const buttonLabel = oidc.getButtonLabel()
         if (authUrl && buttonLabel) {
           externalAuthOIDC = {

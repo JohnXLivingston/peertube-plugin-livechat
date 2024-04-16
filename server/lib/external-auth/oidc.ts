@@ -1,10 +1,22 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
+import type { Request } from 'express'
 import { URL } from 'url'
-import { Issuer, BaseClient } from 'openid-client'
+import { Issuer, BaseClient, generators } from 'openid-client'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
+import { createCipheriv, createDecipheriv, randomBytes, Encoding } from 'node:crypto'
 
 let singleton: ExternalAuthOIDC | undefined
+
+async function getRandomBytes (size: number): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    randomBytes(size, (err, buf) => {
+      if (err) return reject(err)
+
+      return resolve(buf)
+    })
+  })
+}
 
 /**
  * This class handles the external OpenId Connect provider, if defined.
@@ -15,13 +27,20 @@ class ExternalAuthOIDC {
   private readonly discoveryUrl: string | undefined
   private readonly clientId: string | undefined
   private readonly clientSecret: string | undefined
-  private readonly redirectUri: string
+  private readonly secretKey: string
+  private readonly redirectUrl: string
+  private readonly connectUrl: string
+
+  private readonly encryptionOptions = {
+    algorithm: 'aes256' as string,
+    inputEncoding: 'utf8' as Encoding,
+    outputEncoding: 'hex' as Encoding
+  }
 
   private ok: boolean | undefined
 
   private issuer: Issuer | undefined | null
   private client: BaseClient | undefined | null
-  private authorizationUrl: string | null
 
   protected readonly logger: {
     debug: (s: string) => void
@@ -37,7 +56,9 @@ class ExternalAuthOIDC {
     discoveryUrl: string | undefined,
     clientId: string | undefined,
     clientSecret: string | undefined,
-    redirectUri: string
+    secretKey: string,
+    connectUrl: string,
+    redirectUrl: string
   ) {
     this.logger = {
       debug: (s) => logger.debug('[ExternalAuthOIDC] ' + s),
@@ -47,8 +68,9 @@ class ExternalAuthOIDC {
     }
 
     this.enabled = !!enabled
-    this.redirectUri = redirectUri
-    this.authorizationUrl = null
+    this.secretKey = secretKey
+    this.redirectUrl = redirectUrl
+    this.connectUrl = connectUrl
     if (this.enabled) {
       this.buttonLabel = buttonLabel
       this.discoveryUrl = discoveryUrl
@@ -72,8 +94,12 @@ class ExternalAuthOIDC {
    *   This means that the feature will only be available when the load as complete.
    * @returns the url to open
    */
-  getAuthUrl (): string | null {
-    return this.authorizationUrl ?? null
+  getConnectUrl (): string | null {
+    if (!this.client) {
+      // Not loaded yet
+      return null
+    }
+    return this.connectUrl
   }
 
   /**
@@ -150,9 +176,6 @@ class ExternalAuthOIDC {
     // this.client === null means we already tried, but it failed.
     if (this.client !== undefined) { return this.client }
 
-    // First, reset the authentication url:
-    this.authorizationUrl = null
-
     if (!await this.isOk()) {
       this.issuer = null
       this.client = null
@@ -177,7 +200,7 @@ class ExternalAuthOIDC {
       this.client = new this.issuer.Client({
         client_id: this.clientId as string,
         client_secret: this.clientSecret as string,
-        redirect_uris: [this.redirectUri],
+        redirect_uris: [this.redirectUrl],
         response_types: ['code']
       })
     } catch (err) {
@@ -189,14 +212,102 @@ class ExternalAuthOIDC {
       return null
     }
 
-    try {
-      this.authorizationUrl = this.client.authorizationUrl()
-    } catch (err) {
-      this.logger.error(err as string)
-      this.authorizationUrl = null
+    return this.client
+  }
+
+  /**
+   * Returns everything that is needed to instanciate an OIDC authentication.
+   */
+  async initAuthenticationProcess (): Promise<{
+    encryptedCodeVerifier: string
+    encryptedState: string
+    redirectUrl: string
+  }> {
+    if (!this.client) {
+      throw new Error('External Auth OIDC not loaded yet, too soon to call oidc.initAuthentication')
     }
 
-    return this.client
+    const codeVerifier = generators.codeVerifier()
+    const codeChallenge = generators.codeChallenge(codeVerifier)
+    const state = generators.state()
+
+    const encryptedCodeVerifier = await this.encrypt(codeVerifier)
+    const encryptedState = await this.encrypt(state)
+
+    const redirectUrl = this.client.authorizationUrl({
+      scope: 'openid profile',
+      response_mode: 'form_post',
+      code_challenge: codeChallenge,
+      code_challenge_method: 'S256',
+      state
+    })
+
+    return {
+      encryptedCodeVerifier,
+      encryptedState,
+      redirectUrl
+    }
+  }
+
+  /**
+   * Authentication process callback.
+   * @param req The ExpressJS request object.
+   * @return user info
+   */
+  async validateAuthenticationProcess (req: Request, cookieNamePrefix: string): Promise<any> {
+    if (!this.client) {
+      throw new Error('External Auth OIDC not loaded yet, too soon to call oidc.validateAuthenticationProcess')
+    }
+
+    const encryptedCodeVerifier = req.cookies[cookieNamePrefix + 'code-verifier']
+    if (!encryptedCodeVerifier) {
+      throw new Error('Received callback but code verifier not found in request cookies.')
+    }
+
+    const encryptedState = req.cookies[cookieNamePrefix + 'state']
+    if (!encryptedState) {
+      throw new Error('Received callback but state not found in request cookies.')
+    }
+
+    const codeVerifier = await this.decrypt(encryptedCodeVerifier)
+    const state = await this.decrypt(encryptedState)
+
+    const params = this.client.callbackParams(req)
+    const tokenSet = await this.client.callback(this.redirectUrl, params, {
+      code_verifier: codeVerifier,
+      state
+    })
+
+    const accessToken = tokenSet.access_token
+    if (!accessToken) {
+      throw new Error('Missing access_token')
+    }
+    const userInfo = await this.client.userinfo(accessToken)
+    return userInfo
+  }
+
+  private async encrypt (data: string): Promise<string> {
+    const { algorithm, inputEncoding, outputEncoding } = this.encryptionOptions
+
+    const iv = await getRandomBytes(16)
+
+    const cipher = createCipheriv(algorithm, this.secretKey, iv)
+    let encrypted = cipher.update(data, inputEncoding, outputEncoding)
+    encrypted += cipher.final(outputEncoding)
+
+    return iv.toString(outputEncoding) + ':' + encrypted
+  }
+
+  private async decrypt (data: string): Promise<string> {
+    const { algorithm, inputEncoding, outputEncoding } = this.encryptionOptions
+
+    const encryptedArray = data.split(':')
+    const iv = Buffer.from(encryptedArray[0], outputEncoding)
+    const encrypted = Buffer.from(encryptedArray[1], outputEncoding)
+    const decipher = createDecipheriv(algorithm, this.secretKey, iv)
+
+    // FIXME: dismiss the "as any" below (dont understand why Typescript is not happy without)
+    return decipher.update(encrypted as any, outputEncoding, inputEncoding) + decipher.final(inputEncoding)
   }
 
   /**
@@ -219,6 +330,10 @@ class ExternalAuthOIDC {
       'external-auth-custom-oidc-client-id',
       'external-auth-custom-oidc-client-secret'
     ])
+
+    // Generating a secret key that will be used for the authenticatio process (can change on restart).
+    const secretKey = (await getRandomBytes(16)).toString('hex')
+
     singleton = new ExternalAuthOIDC(
       options.peertubeHelpers.logger,
       settings['external-auth-custom-oidc'] as boolean,
@@ -226,7 +341,9 @@ class ExternalAuthOIDC {
       settings['external-auth-custom-oidc-discovery-url'] as string | undefined,
       settings['external-auth-custom-oidc-client-id'] as string | undefined,
       settings['external-auth-custom-oidc-client-secret'] as string | undefined,
-      ExternalAuthOIDC.redirectUri(options)
+      secretKey,
+      ExternalAuthOIDC.connectUrl(options),
+      ExternalAuthOIDC.redirectUrl(options)
     )
 
     return singleton
@@ -243,7 +360,24 @@ class ExternalAuthOIDC {
     return singleton
   }
 
-  public static redirectUri (options: RegisterServerOptions): string {
+  /**
+   * Get the uri to start the authentication process.
+   * @param options Peertube server options
+   * @returns the uri
+   */
+  public static connectUrl (options: RegisterServerOptions): string {
+    const path = getBaseRouterRoute(options) + 'oidc/connect'
+    return canonicalizePluginUri(options, path, {
+      removePluginVersion: true
+    })
+  }
+
+  /**
+   * Get the redirect uri to require from the remote OIDC Provider.
+   * @param options Peertube server optiosn
+   * @returns the uri
+   */
+  public static redirectUrl (options: RegisterServerOptions): string {
     const path = getBaseRouterRoute(options) + 'oidc/cb'
     return canonicalizePluginUri(options, path, {
       removePluginVersion: true

@@ -206,7 +206,7 @@ function initExternalAuth (options: RegisterServerOptions): void {
     type: 'html',
     name: 'external-auth-custom-oidc-redirect-uris',
     private: true,
-    descriptionHTML: `<ul><li>${escapeHTML(ExternalAuthOIDC.redirectUri(options)) as string}</li></ul>`
+    descriptionHTML: `<ul><li>${escapeHTML(ExternalAuthOIDC.redirectUrl(options)) as string}</li></ul>`
   })
 
   registerSetting({
