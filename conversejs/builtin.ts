@@ -107,7 +107,11 @@ async function initConverse (
   let isAuthenticated: boolean = false
   let isRemoteWithNicknameSet: boolean = false
 
-  const auth = await getLocalAuthentInfos(authenticationUrl, peertubeAuthHeader)
+  // OIDC (OpenID Connect):
+  const tryOIDC = !!initConverseParams.externalAuthOIDC
+
+  const auth = await getLocalAuthentInfos(authenticationUrl, tryOIDC, peertubeAuthHeader)
+
   if (auth) {
     if (!isRemoteChat) {
       localRoomAuthenticatedParams(initConverseParams, auth, params)
@@ -160,8 +164,11 @@ async function initConverse (
 
   // no viewer mode if authenticated.
   params.livechat_enable_viewer_mode = autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet
-  params.livechat_external_auth_oidc_button_label = initConverseParams.externalAuthOIDC?.buttonLabel
-  params.livechat_external_auth_oidc_url = initConverseParams.externalAuthOIDC?.url
+
+  if (tryOIDC && !isAuthenticated) {
+    params.livechat_external_auth_oidc_button_label = initConverseParams.externalAuthOIDC?.buttonLabel
+    params.livechat_external_auth_oidc_url = initConverseParams.externalAuthOIDC?.url
+  }
 
   if (chatIncludeMode === 'peertube-video') {
     params.livechat_mini_muc_head = true // we must replace the muc-head by the custom buttons toolbar.

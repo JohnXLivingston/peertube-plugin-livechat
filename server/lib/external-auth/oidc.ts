@@ -12,6 +12,13 @@ import { URL } from 'url'
 
 type UserInfoField = 'username' | 'last_name' | 'first_name' | 'nickname'
 
+interface UnserializedToken {
+  jid: string
+  password: string
+  nickname: string
+  expire: Date
+}
+
 let singleton: ExternalAuthOIDC | undefined
 
 async function getRandomBytes (size: number): Promise<Buffer> {
@@ -328,16 +335,28 @@ class ExternalAuthOIDC {
     nickname ??= username
 
     // Computing the JID (can throw Error/ExternalAuthenticationError).
-    const jid = this.computeJID(username)
+    const jid = this.computeJID(username).toString(false)
 
     // Computing a random Password
     // (16 bytes in hex => 32 chars (but only numbers and abdcef), 256^16 should be enougth).
     const password = (await getRandomBytes(16)).toString('hex')
 
-    return {
-      jid: jid.toString(false),
+    // Now we will encrypt jid + password, and return it to the browser.
+    // The browser will be able to use this encrypted data with the api/configuration/room API.
+    const tokenContent: UnserializedToken = {
+      jid,
+      password,
       nickname,
-      password
+      // expires in 12 hours (user will just have to do the whole process again).
+      expire: (new Date(Date.now() + 12 * 3600 * 1000))
+    }
+    const token = await this.encrypt(JSON.stringify(tokenContent))
+
+    return {
+      jid,
+      nickname,
+      password,
+      token
     }
   }
 
@@ -363,6 +382,54 @@ class ExternalAuthOIDC {
 
     // FIXME: dismiss the "as any" below (dont understand why Typescript is not happy without)
     return decipher.update(encrypted as any, outputEncoding, inputEncoding) + decipher.final(inputEncoding)
+  }
+
+  /**
+   * Decrypt and unserialize a token associated to a previous authentication.
+   * @param token the token stored by the browser.
+   * @return authentication informations, or null if:
+   *  if the token is expired, if the token is invalid.
+   *  Can also fail (and return null) when server was restarted, or settings saved, as the secret key may have changed
+   *  (this is not an issue, users just have to start the process again).
+   */
+  public async unserializeToken (token: string): Promise<UnserializedToken | null> {
+    try {
+      const decrypted = await this.decrypt(token)
+      const o = JSON.parse(decrypted) // can fail
+
+      if (typeof o !== 'object') {
+        throw new Error('Invalid encrypted data')
+      }
+      if (typeof o.jid !== 'string' || o.jid === '') {
+        throw new Error('No jid')
+      }
+      if (typeof o.password !== 'string' || o.password === '') {
+        throw new Error('No password')
+      }
+      if (typeof o.nickname !== 'string' || o.nickname === '') {
+        throw new Error('No nickname')
+      }
+
+      const expire = new Date(Date.parse(o.expire))
+      if (!(expire instanceof Date) || isNaN(expire.getTime())) {
+        throw new Error('Invalid expire date')
+      }
+
+      if (expire <= new Date()) {
+        throw new Error('Token expired')
+      }
+
+      return {
+        jid: o.jid,
+        password: o.password,
+        nickname: o.nickname,
+        expire
+      }
+    } catch (err) {
+      // This is not an error, as there are many legitimate cases (token expired, ...)
+      this.logger.info('Cant unserialize the token: ' + (err as string))
+      return null
+    }
   }
 
   /**

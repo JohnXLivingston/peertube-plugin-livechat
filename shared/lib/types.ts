@@ -107,13 +107,12 @@ type ChatPeertubeIncludeMode = 'peertube-fullpage' | 'peertube-video'
  */
 type ChatIncludeMode = 'chat-only' | ChatPeertubeIncludeMode
 
-interface OIDCAuthResultError {
+interface OIDCAuthResultOk {
   ok: true
-  jid: string
-  password: string
+  token: string
 }
 
-interface OIDCAuthResultOk {
+interface OIDCAuthResultError {
   ok: false
   message?: string
 }

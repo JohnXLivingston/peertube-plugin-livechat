@@ -151,7 +151,7 @@ async function displayConverseJS (
       (forceType ? '?forcetype=1' : ''),
     {
       method: 'GET',
-      headers: peertubeHelpers.getAuthHeader()
+      headers: authHeader
     }
   )
   if (!response.ok) {

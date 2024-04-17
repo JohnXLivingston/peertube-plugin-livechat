@@ -71,7 +71,8 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
             {},
             externalAccountInfos,
             {
-              password: '**removed**' // removing the password from logs!
+              password: '**removed**', // removing the password from logs!
+              token: '**removed**' // same as password
             }
           )
         ))
@@ -85,8 +86,7 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
 
         res.send(popupResultHTML({
           ok: true,
-          jid: externalAccountInfos.jid,
-          password: externalAccountInfos.password
+          token: externalAccountInfos.token
         }))
       } catch (err) {
         logger.error('[oidc router] Failed to process the OIDC callback: ' + (err as string))

@@ -11,7 +11,7 @@ export const tplExternalLoginModal = (el, o) => {
   const externalAuthOIDCButtonLabel = api.settings.get('livechat_external_auth_oidc_button_label')
   const externalAuthOIDCUrl = api.settings.get('livechat_external_auth_oidc_url')
   return html`<div class="modal-body livechat-external-login-modal">
-    ${!externalAuthOIDCButtonLabel || !externalAuthOIDCUrl
+    ${!externalAuthOIDCButtonLabel || !externalAuthOIDCUrl || !window.sessionStorage
       ? ''
       : html`
         <div class="livechat-external-login-modal-external-auth-oidc">
@@ -45,9 +45,13 @@ export const tplExternalLoginModal = (el, o) => {
                       (data.message ? ` (${data.message})` : '')
                     return
                   }
-                  // TODO
+
                   console.info('Got external account information', data)
-                  console.error('not implemented yet')
+                  // Storing the token in sessionStorage.
+                  window.sessionStorage.setItem('peertube-plugin-livechat-oidc-token', data.token)
+
+                  // FIXME: do better.
+                  window.location.reload()
                 }
 
                 return false

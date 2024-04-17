@@ -4,6 +4,7 @@ import { asyncMiddleware } from '../../middlewares/async'
 import { getProsodyDomain } from '../../prosody/config/domain'
 import { prosodyRegisterUser, prosodyCheckUserPassword, prosodyUserRegistered } from '../../prosody/auth'
 import { getUserNickname } from '../../helpers'
+import { ExternalAuthOIDC } from '../../external-auth/oidc'
 
 /**
  * Instanciate the authentication API.
@@ -14,6 +15,31 @@ async function initAuthApiRouter (options: RegisterServerOptions, router: Router
   router.get('/auth', asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
       const user = await options.peertubeHelpers.user.getAuthUser(res)
+
+      if (!user) {
+        // No Peertube user, but perhaps an external authentication?
+        const token = req.header('X-Peertube-Plugin-Livechat-OIDC-Token')
+        if (token) {
+          try {
+            const oidc = ExternalAuthOIDC.singleton()
+            if (await oidc.isOk()) {
+              const unserializedToken = await oidc.unserializeToken(token)
+              if (unserializedToken) {
+                res.status(200).json({
+                  jid: unserializedToken.jid,
+                  password: unserializedToken.password,
+                  nickname: unserializedToken.nickname
+                })
+                return
+              }
+            }
+          } catch (err) {
+            options.peertubeHelpers.logger.error(err)
+            // Just continue with the normal flow.
+          }
+        }
+      }
+
       if (!user) {
         res.sendStatus(403)
         return

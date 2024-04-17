@@ -8,6 +8,7 @@ interface AuthHeader { [key: string]: string }
 
 async function getLocalAuthentInfos (
   authenticationUrl: string,
+  tryOIDC: boolean,
   peertubeAuthHeader?: AuthHeader | null
 ): Promise<false | AuthentInfos> {
   try {
@@ -17,11 +18,6 @@ async function getLocalAuthentInfos (
     }
     if (!window.fetch) {
       console.error('Your browser has not the fetch api, we cant log you in')
-      return false
-    }
-
-    if (peertubeAuthHeader === null) {
-      console.info('User is not logged in.')
       return false
     }
 
@@ -45,12 +41,27 @@ async function getLocalAuthentInfos (
       }
     }
 
+    let oidcHeaders: any
+    // When user has used the External OIDC mechanisme to create an account, we got a token in sessionStorage.
+    if (tryOIDC && !peertubeAuthHeader && window.sessionStorage) {
+      const token = window.sessionStorage.getItem('peertube-plugin-livechat-oidc-token')
+      if (token && (typeof token === 'string')) {
+        oidcHeaders = { 'X-Peertube-Plugin-Livechat-OIDC-Token': token }
+      }
+    }
+
+    if (peertubeAuthHeader === null && oidcHeaders === undefined) {
+      console.info('User is not logged in.')
+      return false
+    }
+
     const response = await window.fetch(authenticationUrl, {
       method: 'GET',
       headers: new Headers(
         Object.assign(
           {},
-          peertubeAuthHeader,
+          peertubeAuthHeader ?? {},
+          oidcHeaders ?? {},
           {
             'content-type': 'application/json;charset=UTF-8'
           }
