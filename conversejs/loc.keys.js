@@ -13,7 +13,8 @@ const locKeys = [
   'login_remote_peertube_no_livechat',
   'login_remote_peertube_video_not_found',
   'login_remote_peertube_video_not_found_try_anyway',
-  'login_remote_peertube_video_not_found_try_anyway_button'
+  'login_remote_peertube_video_not_found_try_anyway_button',
+  'login_external_oidc_alert_message'
 ]
 
 module.exports = locKeys

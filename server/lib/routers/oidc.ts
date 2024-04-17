@@ -1,14 +1,32 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import type { Router, Request, Response, NextFunction, CookieOptions } from 'express'
+import type { Router, Request, Response, NextFunction } from 'express'
+import type { OIDCAuthResult } from '../../../shared/lib/types'
 import { asyncMiddleware } from '../middlewares/async'
 import { ExternalAuthOIDC } from '../external-auth/oidc'
 
-const cookieNamePrefix = 'peertube-plugin-livechat-oidc-'
-const cookieOptions: CookieOptions = {
-  secure: true,
-  httpOnly: true,
-  sameSite: 'none',
-  maxAge: 1000 * 60 * 10 // 10 minutes
+/**
+ * When using a popup for OIDC, writes the HTML/Javascript to close the popup
+ * and send the result to the parent window.
+ * @param result the result to send to the parent window
+ */
+function popupResultHTML (result: OIDCAuthResult): string {
+  return `<!DOCTYPE html><html>
+    <body>
+      <noscript>Your browser must enable javascript for this page to work.</noscript>
+      <script>
+        try {
+          const data = ${JSON.stringify(result)};
+          if (!window.opener || !window.opener.oidcGetResult) {
+            throw new Error("Can't find parent window callback handler.")
+          }
+          window.opener.oidcGetResult(data);
+          window.close();
+        } catch (err) {
+          document.body.innerText = 'Error: ' + err;
+        }
+      </script>
+    </body>
+  </html> `
 }
 
 async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> {
@@ -26,10 +44,8 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
           throw new Error('[oidc router] External Auth OIDC not loaded yet')
         }
 
-        const authenticationProcess = await oidc.initAuthenticationProcess()
-        res.cookie(cookieNamePrefix + 'code-verifier', authenticationProcess.encryptedCodeVerifier, cookieOptions)
-        res.cookie(cookieNamePrefix + 'state', authenticationProcess.encryptedState, cookieOptions)
-        return res.redirect(authenticationProcess.redirectUrl)
+        const redirectUrl = await oidc.initAuthenticationProcess(req, res)
+        res.redirect(redirectUrl)
       } catch (err) {
         logger.error('[oidc router] Failed to process the OIDC callback: ' + (err as string))
         next()
@@ -38,7 +54,7 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
   ))
 
   router.get('/cb', asyncMiddleware(
-    async (req: Request, res: Response, next: NextFunction) => {
+    async (req: Request, res: Response, _next: NextFunction) => {
       logger.info('[oidc router] OIDC callback call')
       try {
         const oidc = ExternalAuthOIDC.singleton()
@@ -47,13 +63,20 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
           throw new Error('[oidc router] External Auth OIDC not loaded yet')
         }
 
-        const userInfos = await oidc.validateAuthenticationProcess(req, cookieNamePrefix)
-        logger.info(JSON.stringify(userInfos)) // FIXME
+        const userInfos = await oidc.validateAuthenticationProcess(req)
+        logger.info(JSON.stringify(userInfos)) // FIXME (normalize data type, process, ...)
 
-        res.send('ok')
+        res.send(popupResultHTML({
+          ok: true,
+          username: userInfos.username,
+          password: 'TODO'
+        }))
       } catch (err) {
         logger.error('[oidc router] Failed to process the OIDC callback: ' + (err as string))
-        next()
+        res.sendStatus(500)
+        res.send(popupResultHTML({
+          ok: false
+        }))
       }
     }
   ))

@@ -15,6 +15,16 @@ class ExternalLoginModal extends BaseModal {
     // eslint-disable-next-line no-undef
     return __(LOC_login_using_external_account)
   }
+
+  onHide () {
+    super.onHide()
+    // kill the oidcGetResult handler if still there
+    try {
+      if (window.oidcGetResult) { window.oidcGetResult() }
+    } catch (err) {
+      console.error(err)
+    }
+  }
 }
 
 api.elements.define('converse-livechat-external-login', ExternalLoginModal)

@@ -1,5 +1,5 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
-import type { Request } from 'express'
+import type { Request, Response, CookieOptions } from 'express'
 import { URL } from 'url'
 import { Issuer, BaseClient, generators } from 'openid-client'
 import { getBaseRouterRoute } from '../helpers'
@@ -35,6 +35,14 @@ class ExternalAuthOIDC {
     algorithm: 'aes256' as string,
     inputEncoding: 'utf8' as Encoding,
     outputEncoding: 'hex' as Encoding
+  }
+
+  private readonly cookieNamePrefix: string = 'peertube-plugin-livechat-oidc-'
+  private readonly cookieOptions: CookieOptions = {
+    secure: true,
+    httpOnly: true,
+    sameSite: 'none',
+    maxAge: 1000 * 60 * 10 // 10 minutes
   }
 
   private ok: boolean | undefined
@@ -217,12 +225,11 @@ class ExternalAuthOIDC {
 
   /**
    * Returns everything that is needed to instanciate an OIDC authentication.
+   * @param req express request
+   * @param res express response. Will add some cookies.
+   * @return the url to which redirect
    */
-  async initAuthenticationProcess (): Promise<{
-    encryptedCodeVerifier: string
-    encryptedState: string
-    redirectUrl: string
-  }> {
+  async initAuthenticationProcess (req: Request, res: Response): Promise<string> {
     if (!this.client) {
       throw new Error('External Auth OIDC not loaded yet, too soon to call oidc.initAuthentication')
     }
@@ -242,29 +249,27 @@ class ExternalAuthOIDC {
       state
     })
 
-    return {
-      encryptedCodeVerifier,
-      encryptedState,
-      redirectUrl
-    }
+    res.cookie(this.cookieNamePrefix + 'code-verifier', encryptedCodeVerifier, this.cookieOptions)
+    res.cookie(this.cookieNamePrefix + 'state', encryptedState, this.cookieOptions)
+    return redirectUrl
   }
 
   /**
    * Authentication process callback.
-   * @param req The ExpressJS request object.
+   * @param req The ExpressJS request object. Will read cookies.
    * @return user info
    */
-  async validateAuthenticationProcess (req: Request, cookieNamePrefix: string): Promise<any> {
+  async validateAuthenticationProcess (req: Request): Promise<any> {
     if (!this.client) {
       throw new Error('External Auth OIDC not loaded yet, too soon to call oidc.validateAuthenticationProcess')
     }
 
-    const encryptedCodeVerifier = req.cookies[cookieNamePrefix + 'code-verifier']
+    const encryptedCodeVerifier = req.cookies[this.cookieNamePrefix + 'code-verifier']
     if (!encryptedCodeVerifier) {
       throw new Error('Received callback but code verifier not found in request cookies.')
     }
 
-    const encryptedState = req.cookies[cookieNamePrefix + 'state']
+    const encryptedState = req.cookies[this.cookieNamePrefix + 'state']
     if (!encryptedState) {
       throw new Error('Received callback but state not found in request cookies.')
     }

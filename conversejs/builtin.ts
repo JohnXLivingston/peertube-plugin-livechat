@@ -1,4 +1,4 @@
-import type { InitConverseJSParams, ChatIncludeMode } from 'shared/lib/types'
+import type { InitConverseJSParams, ChatIncludeMode, OIDCAuthResult } from 'shared/lib/types'
 import { inIframe } from './lib/utils'
 import { initDom } from './lib/dom'
 import {
@@ -28,6 +28,7 @@ declare global {
     initConversePlugins: typeof initConversePlugins
     initConverse: typeof initConverse
     reconnectConverse?: (room: string) => void
+    oidcGetResult?: (data: OIDCAuthResult) => void
   }
 }
 
