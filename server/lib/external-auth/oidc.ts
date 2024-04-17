@@ -1,10 +1,16 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Request, Response, CookieOptions } from 'express'
-import { URL } from 'url'
-import { Issuer, BaseClient, generators } from 'openid-client'
+import type { ExternalAccountInfos } from './types'
+import { ExternalAuthenticationError } from './error'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
+import { getProsodyDomain } from '../prosody/config/domain'
 import { createCipheriv, createDecipheriv, randomBytes, Encoding } from 'node:crypto'
+import { Issuer, BaseClient, generators, UnknownObject } from 'openid-client'
+import { JID } from '@xmpp/jid'
+import { URL } from 'url'
+
+type UserInfoField = 'username' | 'last_name' | 'first_name' | 'nickname'
 
 let singleton: ExternalAuthOIDC | undefined
 
@@ -30,6 +36,7 @@ class ExternalAuthOIDC {
   private readonly secretKey: string
   private readonly redirectUrl: string
   private readonly connectUrl: string
+  private readonly externalVirtualhost: string
 
   private readonly encryptionOptions = {
     algorithm: 'aes256' as string,
@@ -49,6 +56,7 @@ class ExternalAuthOIDC {
 
   private issuer: Issuer | undefined | null
   private client: BaseClient | undefined | null
+  private providerHostName?: string
 
   protected readonly logger: {
     debug: (s: string) => void
@@ -57,33 +65,35 @@ class ExternalAuthOIDC {
     error: (s: string) => void
   }
 
-  constructor (
-    logger: RegisterServerOptions['peertubeHelpers']['logger'],
-    enabled: boolean,
-    buttonLabel: string | undefined,
-    discoveryUrl: string | undefined,
-    clientId: string | undefined,
-    clientSecret: string | undefined,
-    secretKey: string,
-    connectUrl: string,
+  constructor (params: {
+    logger: RegisterServerOptions['peertubeHelpers']['logger']
+    enabled: boolean
+    buttonLabel: string | undefined
+    discoveryUrl: string | undefined
+    clientId: string | undefined
+    clientSecret: string | undefined
+    secretKey: string
+    connectUrl: string
     redirectUrl: string
-  ) {
+    externalVirtualhost: string
+  }) {
     this.logger = {
-      debug: (s) => logger.debug('[ExternalAuthOIDC] ' + s),
-      info: (s) => logger.info('[ExternalAuthOIDC] ' + s),
-      warn: (s) => logger.warn('[ExternalAuthOIDC] ' + s),
-      error: (s) => logger.error('[ExternalAuthOIDC] ' + s)
+      debug: (s) => params.logger.debug('[ExternalAuthOIDC] ' + s),
+      info: (s) => params.logger.info('[ExternalAuthOIDC] ' + s),
+      warn: (s) => params.logger.warn('[ExternalAuthOIDC] ' + s),
+      error: (s) => params.logger.error('[ExternalAuthOIDC] ' + s)
     }
 
-    this.enabled = !!enabled
-    this.secretKey = secretKey
-    this.redirectUrl = redirectUrl
-    this.connectUrl = connectUrl
+    this.enabled = !!params.enabled
+    this.secretKey = params.secretKey
+    this.redirectUrl = params.redirectUrl
+    this.connectUrl = params.connectUrl
+    this.externalVirtualhost = params.externalVirtualhost
     if (this.enabled) {
-      this.buttonLabel = buttonLabel
-      this.discoveryUrl = discoveryUrl
-      this.clientId = clientId
-      this.clientSecret = clientSecret
+      this.buttonLabel = params.buttonLabel
+      this.discoveryUrl = params.discoveryUrl
+      this.clientId = params.clientId
+      this.clientSecret = params.clientSecret
     }
   }
 
@@ -142,6 +152,7 @@ class ExternalAuthOIDC {
    * Check the configuration.
    * Returns an error list.
    * If error list is empty, consider the OIDC is correctly configured.
+   * Note: this function also fills this.providerHostName (as it also parse the discoveryUrl).
    */
   async check (): Promise<string[]> {
     if (!this.enabled) {
@@ -159,6 +170,8 @@ class ExternalAuthOIDC {
       try {
         const uri = new URL(this.discoveryUrl ?? 'wrong url')
         this.logger.debug('OIDC Discovery url is valid: ' + uri.toString())
+
+        this.providerHostName = uri.hostname
       } catch (err) {
         errors.push('Invalid discovery url')
       }
@@ -257,9 +270,11 @@ class ExternalAuthOIDC {
   /**
    * Authentication process callback.
    * @param req The ExpressJS request object. Will read cookies.
+   * @throws ExternalAuthenticationError when a specific message must be displayed to enduser.
+   * @throws Error in other cases.
    * @return user info
    */
-  async validateAuthenticationProcess (req: Request): Promise<any> {
+  async validateAuthenticationProcess (req: Request): Promise<ExternalAccountInfos> {
     if (!this.client) {
       throw new Error('External Auth OIDC not loaded yet, too soon to call oidc.validateAuthenticationProcess')
     }
@@ -288,7 +303,42 @@ class ExternalAuthOIDC {
       throw new Error('Missing access_token')
     }
     const userInfo = await this.client.userinfo(accessToken)
-    return userInfo
+
+    if (!userInfo) {
+      throw new ExternalAuthenticationError('Can\'t retrieve userInfos')
+    }
+
+    const username = this.readUserInfoField(userInfo, 'username')
+    if (username === undefined) {
+      throw new ExternalAuthenticationError('Missing username in userInfos')
+    }
+
+    let nickname: string | undefined = this.readUserInfoField(userInfo, 'nickname')
+    if (nickname === undefined) {
+      const lastname = this.readUserInfoField(userInfo, 'last_name')
+      const firstname = this.readUserInfoField(userInfo, 'first_name')
+      if (lastname !== undefined && firstname !== undefined) {
+        nickname = firstname + ' ' + lastname
+      } else if (firstname !== undefined) {
+        nickname = firstname
+      } else if (lastname !== undefined) {
+        nickname = lastname
+      }
+    }
+    nickname ??= username
+
+    // Computing the JID (can throw Error/ExternalAuthenticationError).
+    const jid = this.computeJID(username)
+
+    // Computing a random Password
+    // (16 bytes in hex => 32 chars (but only numbers and abdcef), 256^16 should be enougth).
+    const password = (await getRandomBytes(16)).toString('hex')
+
+    return {
+      jid: jid.toString(false),
+      nickname,
+      password
+    }
   }
 
   private async encrypt (data: string): Promise<string> {
@@ -316,6 +366,54 @@ class ExternalAuthOIDC {
   }
 
   /**
+   * Get an attribute from the userInfos.
+   * @param userInfos userInfos returned by the remote OIDC Provider
+   * @param field the field to get
+   * @returns the value if present
+   */
+  private readUserInfoField (userInfos: UnknownObject, field: UserInfoField): string | undefined {
+    // FIXME: do some attribute mapping? (add settings for that?)
+    if (!(field in userInfos)) { return undefined }
+    if (typeof userInfos[field] !== 'string') { return undefined }
+    if (userInfos[field] === '') { return undefined }
+    return userInfos[field] as string
+  }
+
+  /**
+   * Compute the JID to use for this remote account.
+   * Format will be: "username+remote.domain.tld@external.instance.tld"
+   * @param username the remote username
+   * @throws ExternalAuthenticationError if the computed JID is not valid.
+   * @throws Error
+   * @returns The JID.
+   */
+  private computeJID (username: string): JID {
+    if (!this.providerHostName) {
+      this.logger.error('Missing providerHostName, callong computeJID before check()?')
+      throw new Error('Can\'t compute JID')
+    }
+    try {
+      const jid = new JID(username + '+' + this.providerHostName, this.externalVirtualhost)
+
+      // Checking JID is not too long.
+      // Following https://xmpp.org/extensions/xep-0029.html , there is no exact limit,
+      // but we should definitively not accept anything.
+      // Using 256 as suggested (for the escaped version)
+      if (jid.toString(false).length > 256) {
+        throw new ExternalAuthenticationError(
+          'Resulting identifier for your account is too long'
+        )
+      }
+      return jid
+    } catch (err) {
+      this.logger.error(err as string)
+      throw new ExternalAuthenticationError(
+        'Resulting identifier for your account is invalid, please report this issue'
+      )
+    }
+  }
+
+  /**
    * frees the singleton
    */
   public static async destroySingleton (): Promise<void> {
@@ -339,17 +437,20 @@ class ExternalAuthOIDC {
     // Generating a secret key that will be used for the authenticatio process (can change on restart).
     const secretKey = (await getRandomBytes(16)).toString('hex')
 
-    singleton = new ExternalAuthOIDC(
-      options.peertubeHelpers.logger,
-      settings['external-auth-custom-oidc'] as boolean,
-      settings['external-auth-custom-oidc-button-label'] as string | undefined,
-      settings['external-auth-custom-oidc-discovery-url'] as string | undefined,
-      settings['external-auth-custom-oidc-client-id'] as string | undefined,
-      settings['external-auth-custom-oidc-client-secret'] as string | undefined,
+    const prosodyDomain = await getProsodyDomain(options)
+
+    singleton = new ExternalAuthOIDC({
+      logger: options.peertubeHelpers.logger,
+      enabled: settings['external-auth-custom-oidc'] as boolean,
+      buttonLabel: settings['external-auth-custom-oidc-button-label'] as string | undefined,
+      discoveryUrl: settings['external-auth-custom-oidc-discovery-url'] as string | undefined,
+      clientId: settings['external-auth-custom-oidc-client-id'] as string | undefined,
+      clientSecret: settings['external-auth-custom-oidc-client-secret'] as string | undefined,
       secretKey,
-      ExternalAuthOIDC.connectUrl(options),
-      ExternalAuthOIDC.redirectUrl(options)
-    )
+      connectUrl: ExternalAuthOIDC.connectUrl(options),
+      redirectUrl: ExternalAuthOIDC.redirectUrl(options),
+      externalVirtualhost: 'external.' + prosodyDomain
+    })
 
     return singleton
   }

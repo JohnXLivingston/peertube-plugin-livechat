@@ -46,6 +46,7 @@ export const tplExternalLoginModal = (el, o) => {
                     return
                   }
                   // TODO
+                  console.info('Got external account information', data)
                   console.error('not implemented yet')
                 }
 

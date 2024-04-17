@@ -3,6 +3,7 @@ import type { Router, Request, Response, NextFunction } from 'express'
 import type { OIDCAuthResult } from '../../../shared/lib/types'
 import { asyncMiddleware } from '../middlewares/async'
 import { ExternalAuthOIDC } from '../external-auth/oidc'
+import { ExternalAuthenticationError } from '../external-auth/error'
 
 /**
  * When using a popup for OIDC, writes the HTML/Javascript to close the popup
@@ -63,19 +64,21 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
           throw new Error('[oidc router] External Auth OIDC not loaded yet')
         }
 
-        const userInfos = await oidc.validateAuthenticationProcess(req)
-        logger.info(JSON.stringify(userInfos)) // FIXME (normalize data type, process, ...)
+        const externalAccountInfos = await oidc.validateAuthenticationProcess(req)
+        logger.info(JSON.stringify(externalAccountInfos)) // FIXME (normalize data type, process, ...)
 
         res.send(popupResultHTML({
           ok: true,
-          username: userInfos.username,
-          password: 'TODO'
+          jid: externalAccountInfos.jid,
+          password: externalAccountInfos.password
         }))
       } catch (err) {
         logger.error('[oidc router] Failed to process the OIDC callback: ' + (err as string))
-        res.sendStatus(500)
+        const message = err instanceof ExternalAuthenticationError ? err.message : undefined
+        res.status(500)
         res.send(popupResultHTML({
-          ok: false
+          ok: false,
+          message
         }))
       }
     }

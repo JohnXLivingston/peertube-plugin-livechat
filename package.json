@@ -33,6 +33,7 @@
     "dist/assets/styles/configuration.css"
   ],
   "dependencies": {
+    "@xmpp/jid": "^0.13.1",
     "async": "^3.2.2",
     "decache": "^4.6.0",
     "escape-html": "^1.0.3",
@@ -55,6 +56,7 @@
     "@types/mustache": "^4.2.2",
     "@types/node": "^16.11.6",
     "@types/winston": "^2.4.4",
+    "@types/xmpp__jid": "^1.3.5",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",
     "commander": "^11.0.0",

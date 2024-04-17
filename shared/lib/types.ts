@@ -109,7 +109,7 @@ type ChatIncludeMode = 'chat-only' | ChatPeertubeIncludeMode
 
 interface OIDCAuthResultError {
   ok: true
-  username: string
+  jid: string
   password: string
 }
 
