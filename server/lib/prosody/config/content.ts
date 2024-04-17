@@ -140,6 +140,7 @@ class ProsodyConfigContent {
   global: ProsodyConfigGlobal
   authenticated?: ProsodyConfigVirtualHost
   anon?: ProsodyConfigVirtualHost
+  external?: ProsodyConfigVirtualHost
   muc: ProsodyConfigComponent
   bot?: ProsodyConfigVirtualHost
   externalComponents: ProsodyConfigComponent[] = []
@@ -220,6 +221,19 @@ class ProsodyConfigContent {
     if (autoBanIP) {
       this.anon.add('modules_enabled', 'muc_ban_ip')
     }
+  }
+
+  /**
+   * Activates the virtual host for external account authentication (OpenID Connect, ...)
+   */
+  useExternal (apikey: string): void {
+    this.external = new ProsodyConfigVirtualHost('external.' + this.prosodyDomain)
+    this.external.set('modules_enabled', [
+      'ping',
+      'http',
+      'http_peertubelivechat_manage_users'
+    ])
+    this.external.set('peertubelivechat_manage_users_apikey', apikey)
   }
 
   useHttpAuthentication (url: string): void {
@@ -303,6 +317,17 @@ class ProsodyConfigContent {
       }
       this.authenticated.set('http_host', prosodyDomain)
       this.authenticated.set('http_external_url', 'http://' + prosodyDomain)
+    }
+
+    if (this.external) {
+      this.external.set('allow_anonymous_s2s', false)
+      this.external.add('modules_enabled', 'http')
+      this.external.add('modules_enabled', 'bosh')
+      if (useWS) {
+        this.external.add('modules_enabled', 'websocket')
+      }
+      this.external.set('http_host', prosodyDomain)
+      this.external.set('http_external_url', 'http://' + prosodyDomain)
     }
   }
 
@@ -499,6 +524,10 @@ class ProsodyConfigContent {
     }
     if (this.bot) {
       content += this.bot.write()
+      content += '\n\n'
+    }
+    if (this.external) {
+      content += this.external.write()
       content += '\n\n'
     }
     content += this.muc.write()

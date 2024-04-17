@@ -457,6 +457,7 @@ class ExternalAuthOIDC {
 
   /**
    * Gets the singleton, or raise an exception if it is too soon.
+   * @throws Error
    * @returns the singleton
    */
   public static singleton (): ExternalAuthOIDC {

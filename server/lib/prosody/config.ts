@@ -13,6 +13,7 @@ import { parseExternalComponents } from './config/components'
 import { getRemoteServerInfosDir } from '../federation/storage'
 import { BotConfiguration } from '../configuration/bot'
 import { debugMucAdmins } from '../debug'
+import { ExternalAuthOIDC } from '../external-auth/oidc'
 
 async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
@@ -194,6 +195,17 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const useBots = !settings['disable-channel-configuration']
   const bots: ProsodyConfig['bots'] = {}
 
+  let useExternal: boolean = false
+  try {
+    const oidc = ExternalAuthOIDC.singleton()
+    if (await oidc.isOk()) {
+      useExternal = true
+    }
+  } catch (err) {
+    logger.error(err)
+    useExternal = false
+  }
+
   // Note: for the bots to connect, we must allow multiplexing.
   // This will be done on the http (BOSH/Websocket) port, as it only listen on localhost.
   // TODO: to improve performance, try to avoid multiplexing, and find a better way for bots to connect.
@@ -243,6 +255,11 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   if (!disableAnon) {
     config.useAnonymous(autoBanIP)
   }
+
+  if (useExternal) {
+    config.useExternal(apikey)
+  }
+
   config.useHttpAuthentication(authApiUrl)
   const useWS = !!options.registerWebSocketRoute // this comes with Peertube >=5.0.0, and is a prerequisite to websocket
   config.usePeertubeBoshAndWebsocket(prosodyDomain, port, publicServerUrl, useWS, useMultiplexing)

@@ -4,6 +4,7 @@ import type { OIDCAuthResult } from '../../../shared/lib/types'
 import { asyncMiddleware } from '../middlewares/async'
 import { ExternalAuthOIDC } from '../external-auth/oidc'
 import { ExternalAuthenticationError } from '../external-auth/error'
+import { ensureUser } from '../prosody/api/manage-users'
 
 /**
  * When using a popup for OIDC, writes the HTML/Javascript to close the popup
@@ -65,7 +66,22 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
         }
 
         const externalAccountInfos = await oidc.validateAuthenticationProcess(req)
-        logger.info(JSON.stringify(externalAccountInfos)) // FIXME (normalize data type, process, ...)
+        logger.debug(JSON.stringify(
+          Object.assign(
+            {},
+            externalAccountInfos,
+            {
+              password: '**removed**' // removing the password from logs!
+            }
+          )
+        ))
+
+        // Now we create or update the user:
+        if (!await ensureUser(options, externalAccountInfos)) {
+          throw new ExternalAuthenticationError(
+            'Failing to create your account, please try again later or report this issue'
+          )
+        }
 
         res.send(popupResultHTML({
           ok: true,
