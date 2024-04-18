@@ -62,6 +62,47 @@ async function ensureUser (options: RegisterServerOptions, infos: ExternalAccoun
   return true
 }
 
+/**
+ * Calls an API provided by mod_http_peertubelivechat_manage_users, to prune unused users.
+ * @param options Peertube server options
+ * @throws Error
+ */
+async function pruneUsers (options: RegisterServerOptions): Promise<void> {
+  const logger = options.peertubeHelpers.logger
+
+  const currentProsody = getCurrentProsody()
+  if (!currentProsody) {
+    throw new Error('It seems that prosody is not binded... Cant call API.')
+  }
+
+  const prosodyDomain = await getProsodyDomain(options)
+
+  logger.info('Calling pruneUsers')
+
+  // Requesting on localhost, because currentProsody.host does not always resolves correctly (docker use case, ...)
+  const apiUrl = `http://localhost:${currentProsody.port}/` +
+    'peertubelivechat_manage_users/' +
+    `external.${prosodyDomain}/` + // the virtual host name
+    'prune-users'
+
+  try {
+    logger.debug('Calling prune-users API on url: ' + apiUrl)
+    await got(apiUrl, {
+      method: 'POST',
+      headers: {
+        authorization: 'Bearer ' + await getAPIKey(options),
+        host: currentProsody.host
+      },
+      json: {},
+      responseType: 'json',
+      resolveBodyOnly: true
+    })
+  } catch (err) {
+    logger.error(`prune-users failed: ' ${err as string}`)
+  }
+}
+
 export {
-  ensureUser
+  ensureUser,
+  pruneUsers
 }

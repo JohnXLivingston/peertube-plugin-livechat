@@ -7,6 +7,8 @@ module:depends"http";
 
 local module_host = module:get_host(); -- this module is not global
 
+local bare_sessions = prosody.bare_sessions;
+
 local vcards = module:open_store("vcard");
 
 function check_auth(routes)
@@ -113,10 +115,35 @@ local function ensure_user(event)
   });
 end
 
--- TODO: add a function to prune user that have not logged in since X days.
+
+local function prune_users(event) -- delete all users that are not connected!
+  local request, response = event.request, event.response;
+  event.response.headers["Content-Type"] = "application/json";
+
+  module:log("info", "Calling prune_users for host %s", module_host);
+
+  for user in usermanager.users(module_host) do
+    -- has the user still open sessions?
+    if (bare_sessions[user..'@'..module_host] ~= nil) then
+      module:log("debug", "User %s on host %s has still active sessions, ignoring.", user, module_host);
+    else
+      -- FIXME: there is a little chance that we delete a user that is currently connecting...
+      -- As this prune should not be called too often, we can consider it is not an issue for now.
+
+      module:log("debug", "Deleting user %s on host %s", user, module_host);
+      update_vcard(user, nil);
+      usermanager.delete_user(user, module_host);
+    end
+  end
+
+  return json.encode({
+    result = "ok";
+  });
+end
 
 module:provides("http", {
   route = check_auth {
     ["POST /" .. module_host .. "/ensure-user"] = ensure_user;
+    ["POST /" .. module_host .. "/prune-users"] = prune_users;
   };
 });

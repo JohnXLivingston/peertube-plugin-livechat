@@ -5,7 +5,9 @@ import { ExternalAuthenticationError } from './error'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
+import { pruneUsers } from '../prosody/api/manage-users'
 import { getProsodyFilePaths } from '../prosody/config'
+import { debugNumericParameter } from '../debug'
 import { createCipheriv, createDecipheriv, randomBytes, Encoding } from 'node:crypto'
 import { Issuer, BaseClient, generators, UnknownObject } from 'openid-client'
 import { JID } from '@xmpp/jid'
@@ -80,6 +82,7 @@ class ExternalAuthOIDC {
   private readonly externalVirtualhost: string
   private readonly avatarsDir: string
   private readonly avatarsFiles: string[]
+  private pruneTimer?: NodeJS.Timer
 
   private readonly encryptionOptions = {
     algorithm: 'aes256' as string,
@@ -620,10 +623,44 @@ class ExternalAuthOIDC {
   }
 
   /**
+   * Starts an interval timer to prune external users from Prosody.
+   * @param options Peertube server options.
+   */
+  public startPruneTimer (options: RegisterServerOptions): void {
+    this.stopPruneTimer() // just in case...
+
+    // every 4 hour (every minutes in debug mode)
+    const pruneInterval = debugNumericParameter(options, 'externalAccountPruneInterval', 60 * 1000, 4 * 60 * 60 * 1000)
+    this.logger.info(`Creating a timer for external account pruning, every ${Math.round(pruneInterval / 1000)}s.`)
+
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    this.pruneTimer = setInterval(async () => {
+      try {
+        if (!await this.isOk()) { return }
+
+        this.logger.info('Pruning external users...')
+        await pruneUsers(options)
+      } catch (err) {
+        this.logger.error('Error while pruning external users: ' + (err as string))
+      }
+    }, pruneInterval)
+  }
+
+  /**
+   * Stops the prune timer.
+   */
+  public stopPruneTimer (): void {
+    if (!this.pruneTimer) { return }
+    clearInterval(this.pruneTimer)
+    this.pruneTimer = undefined
+  }
+
+  /**
    * frees the singleton
    */
   public static async destroySingleton (): Promise<void> {
     if (!singleton) { return }
+    singleton.stopPruneTimer()
     singleton = undefined
   }
 
@@ -662,6 +699,8 @@ class ExternalAuthOIDC {
       avatarsDir: prosodyFilePaths.avatars,
       avatarsFiles: prosodyFilePaths.avatarsFiles
     })
+
+    singleton.startPruneTimer(options)
 
     return singleton
   }

@@ -19,6 +19,7 @@ interface DebugContent {
   alwaysPublishXMPPRoom?: boolean
   enablePodcastChatTagForNonLive?: boolean
   mucAdmins?: string[]
+  externalAccountPruneInterval?: number
 }
 
 type DebugNumericValue = 'renewCertCheckInterval'
@@ -26,6 +27,7 @@ type DebugNumericValue = 'renewCertCheckInterval'
 | 'logRotateEvery'
 | 'logRotateCheckInterval'
 | 'remoteServerInfosMaxAge'
+| 'externalAccountPruneInterval'
 
 type DebugBooleanValue = 'alwaysPublishXMPPRoom' | 'enablePodcastChatTagForNonLive' | 'useOpenSSL'
 
@@ -65,6 +67,7 @@ function _readDebugFile (options: RegisterServerOptions): DebugContent | false {
     debugContent.alwaysPublishXMPPRoom = json.always_publish_xmpp_room === true
     debugContent.enablePodcastChatTagForNonLive = json.enable_podcast_chat_tag_for_nonlive === true
     debugContent.mucAdmins = _getJIDs(options, json, 'muc_admins')
+    debugContent.externalAccountPruneInterval = _getNumericOptions(options, json, 'external_account_prune_interval')
   } catch (err) {
     logger.error('Failed to read the debug_mode file content:', err)
   }
