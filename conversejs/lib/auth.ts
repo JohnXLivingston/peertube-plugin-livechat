@@ -33,11 +33,12 @@ async function getLocalAuthentInfos (
       const refreshToken = window.localStorage.getItem('refresh_token') ?? ''
       if (tokenType === '' && accessToken === '' && refreshToken === '') {
         console.info('User seems not to be logged in.')
-        return false
-      }
-
-      peertubeAuthHeader = {
-        Authorization: tokenType + ' ' + accessToken
+        // We must continue, for OIDC workflow.
+        peertubeAuthHeader = null
+      } else {
+        peertubeAuthHeader = {
+          Authorization: tokenType + ' ' + accessToken
+        }
       }
     }
 
