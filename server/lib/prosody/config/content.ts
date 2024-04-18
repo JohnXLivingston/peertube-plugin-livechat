@@ -231,6 +231,7 @@ class ProsodyConfigContent {
     this.external.set('modules_enabled', [
       'ping',
       'http',
+      'vcard',
       'http_peertubelivechat_manage_users'
     ])
     this.external.set('peertubelivechat_manage_users_apikey', apikey)

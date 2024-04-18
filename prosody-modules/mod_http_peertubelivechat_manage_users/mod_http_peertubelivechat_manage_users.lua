@@ -1,10 +1,13 @@
 local json = require "util.json";
 local jid_split = require"util.jid".split;
 local usermanager = require "core.usermanager";
+local st = require "util.stanza"
 
 module:depends"http";
 
 local module_host = module:get_host(); -- this module is not global
+
+local vcards = module:open_store("vcard");
 
 function check_auth(routes)
   local function check_request_auth(event)
@@ -31,6 +34,26 @@ function check_auth(routes)
 end
 
 
+local function update_vcard(username, avatar)
+  if not avatar then
+    module:log("debug", "No avatar for user %s, deleting vcard", username);
+    vcards:set(username, nil)
+    return
+  end
+
+  module:log("debug", "There is a avatar for user %s, storing the relevant vcard.", username);
+  local vcard_temp = st.stanza("vCard", { xmlns = "vcard-temp" });
+  vcard_temp:tag("PHOTO");
+  vcard_temp:text_tag("TYPE", avatar.mimetype);
+  -- avatar.base64 is already base64 encoded
+  vcard_temp:text_tag("BINVAL", avatar.base64);
+  vcard_temp:up();
+  if not vcards:set(username, st.preserialize(vcard_temp)) then
+    module:log("error", "Failed to store the vcard for user %s", username);
+  end
+end
+
+
 local function ensure_user(event)
   local request, response = event.request, event.response;
   event.response.headers["Content-Type"] = "application/json";
@@ -42,29 +65,30 @@ local function ensure_user(event)
     });
   end
 
-  module:log("debug", "Calling ensure_user", config.jid);
+  module:log("debug", "Calling ensure_user for %s", config.jid);
 
   local username, host = jid_split(config.jid);
   if module_host ~= host then
-    module:log("error", "Wrong host", host);
+    module:log("error", "Wrong host %s", host);
     return json.encode({
       result = "failed";
       message = "Wrong host"
     });
   end
 
-  -- TODO: handle avatars.
-
   -- if user exists, just update.
   if usermanager.user_exists(username, host) then
-    module:log("debug", "User already exists, updating", filename);
+    module:log("debug", "User already exists, updating");
     if not usermanager.set_password(username, config.password, host, nil) then
-      module:log("error", "Failed to update the password", host);
+      module:log("error", "Failed to update the password");
       return json.encode({
         result = "failed";
         message = "Failed to update the password"
       });
     end
+
+    update_vcard(username, config.avatar);
+
     return json.encode({
       result = "ok";
       message = "User updated"
@@ -72,14 +96,17 @@ local function ensure_user(event)
   end
 
   -- we must create the user.
-  module:log("debug", "User does not exists, creating", filename);
+  module:log("debug", "User does not exists, creating");
   if (not usermanager.create_user(username, config.password, host)) then
-    module:log("error", "Failed to create the user", host);
+    module:log("error", "Failed to create the user");
     return json.encode({
       result = "failed";
       message = "Failed to create the user"
     });
   end
+
+  update_vcard(username, config.avatar);
+
   return json.encode({
     result = "ok";
     message = "User created"

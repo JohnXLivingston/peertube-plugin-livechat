@@ -1,11 +1,17 @@
+type AcceptableAvatarMimeType = 'image/png' | 'image/jpeg' | 'image/gif' | 'image/webp'
+
 interface ExternalAccountInfos {
   nickname: string
   jid: string
   password: string
   token: string
-  // TODO: avatar
+  avatar?: {
+    mimetype: AcceptableAvatarMimeType
+    base64: string
+  }
 }
 
 export {
-  ExternalAccountInfos
+  ExternalAccountInfos,
+  AcceptableAvatarMimeType
 }

@@ -34,7 +34,8 @@ async function ensureUser (options: RegisterServerOptions, infos: ExternalAccoun
   const apiData = {
     jid: infos.jid,
     nickname: infos.nickname,
-    password: infos.password
+    password: infos.password,
+    avatar: infos.avatar
   }
   try {
     logger.debug('Calling ensure-user API on url: ' + apiUrl)

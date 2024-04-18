@@ -1,6 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Request, Response, CookieOptions } from 'express'
-import type { ExternalAccountInfos } from './types'
+import type { ExternalAccountInfos, AcceptableAvatarMimeType } from './types'
 import { ExternalAuthenticationError } from './error'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
@@ -10,7 +10,38 @@ import { Issuer, BaseClient, generators, UnknownObject } from 'openid-client'
 import { JID } from '@xmpp/jid'
 import { URL } from 'url'
 
-type UserInfoField = 'username' | 'last_name' | 'first_name' | 'nickname'
+const got = require('got')
+
+function getMimeTypeFromArrayBuffer (arrayBuffer: ArrayBuffer): AcceptableAvatarMimeType | null {
+  const uint8arr = new Uint8Array(arrayBuffer)
+
+  const len = 4
+  if (uint8arr.length >= len) {
+    const signatureArr = new Array(len)
+    for (let i = 0; i < len; i++) {
+      signatureArr[i] = (new Uint8Array(arrayBuffer))[i].toString(16)
+    }
+    const signature = signatureArr.join('').toUpperCase()
+
+    switch (signature) {
+      case '89504E47':
+        return 'image/png'
+      case '47494638':
+        return 'image/gif'
+      case 'FFD8FFDB':
+      case 'FFD8FFE0':
+        return 'image/jpeg'
+      case '52494646':
+      case '57454250':
+        return 'image/webp'
+      default:
+        return null
+    }
+  }
+  return null
+}
+
+type UserInfoField = 'username' | 'last_name' | 'first_name' | 'nickname' | 'picture'
 
 interface UnserializedToken {
   jid: string
@@ -354,11 +385,14 @@ class ExternalAuthOIDC {
     }
     const token = await this.encrypt(JSON.stringify(tokenContent))
 
+    const avatar = await this.readUserInfoPicture(userInfo)
+
     return {
       jid,
       nickname,
       password,
-      token
+      token,
+      avatar
     }
   }
 
@@ -458,6 +492,7 @@ class ExternalAuthOIDC {
         guesses.push('given_name')
         break
       case 'nickname':
+        guesses.push('preferred_username')
         guesses.push('name')
         break
     }
@@ -469,6 +504,39 @@ class ExternalAuthOIDC {
       return userInfos[field] as string
     }
     return undefined
+  }
+
+  /**
+   * Read and get the avatar for the remote user (if exists).
+   * @param userInfos userInfos returned by the remote OIDC Provider.
+   */
+  private async readUserInfoPicture (userInfos: UnknownObject): Promise<undefined | ExternalAccountInfos['avatar']> {
+    // According to "Standard Claims" section https://openid.net/specs/openid-connect-core-1_0.html,
+    // there should be a `picture` field containing an URL to the avatar
+    const picture = this.readUserInfoField(userInfos, 'picture')
+    if (!picture) { return undefined }
+
+    try {
+      const url = new URL(picture)
+      const buf = await got(url.toString(), {
+        method: 'GET',
+        headers: {},
+        responseType: 'buffer'
+      }).buffer()
+
+      const mimeType = await getMimeTypeFromArrayBuffer(buf)
+      if (!mimeType) {
+        throw new Error('Failed to get the avatar file type')
+      }
+
+      return {
+        mimetype: mimeType,
+        base64: buf.toString('base64')
+      }
+    } catch (err) {
+      this.logger.error(`Failed to get the user avatar: ${err as string}`)
+      return undefined
+    }
   }
 
   /**

@@ -72,7 +72,10 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
             externalAccountInfos,
             {
               password: '**removed**', // removing the password from logs!
-              token: '**removed**' // same as password
+              token: '**removed**', // same as password
+              avatar: externalAccountInfos.avatar
+                ? `**removed** ${externalAccountInfos.avatar.mimetype} avatar`
+                : undefined
             }
           )
         ))
