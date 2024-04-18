@@ -55,7 +55,7 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
     }
   ))
 
-  router.get('/cb', asyncMiddleware(
+  const cbHandler = asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
       logger.info('[oidc router] OIDC callback call')
       try {
@@ -98,7 +98,9 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
         }))
       }
     }
-  ))
+  )
+  router.get('/cb', cbHandler)
+  router.post('/cb', cbHandler)
 
   return router
 }
