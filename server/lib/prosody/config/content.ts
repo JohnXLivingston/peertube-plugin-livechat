@@ -375,6 +375,7 @@ class ProsodyConfigContent {
 
     this.muc.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
     this.authenticated?.add('modules_enabled', 'dialback') // This allows s2s connections without certicicates!
+    this.external?.add('modules_enabled', 'dialback') // same.
   }
 
   useExternalComponents (

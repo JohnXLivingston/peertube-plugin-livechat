@@ -8,6 +8,7 @@ TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
 **Breaking changes**:
 
 * If you were adding custom CSS to livechat iframe, it could be broken, as the livechat is no more included in an iframe. Your custom styles are now added on a `div` element.
+* If you enabled [XMPP Clients connections](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), you must add a new DNS entry for `external.your_instance.example.com`. Check the documentation.
 
 ### New features
 

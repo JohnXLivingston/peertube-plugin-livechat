@@ -88,6 +88,12 @@ function sanitizePeertubeLiveChatServerInfos (
     muc
   }
 
+  // This comes with livechat >= 9.0.0, can be absent.
+  const external = _validateHost(xmppserver.external, checkHost)
+  if (external) {
+    r.external = external
+  }
+
   if (xmppserver.directs2s) {
     if ((typeof xmppserver.directs2s) === 'object') {
       const port = xmppserver.directs2s.port

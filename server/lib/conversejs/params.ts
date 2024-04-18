@@ -79,20 +79,26 @@ async function getConverseJSParams (
 
   let externalAuthOIDC
   if (userIsConnected !== true) {
-    try {
-      const oidc = ExternalAuthOIDC.singleton()
-      if (await oidc.isOk()) {
-        const authUrl = oidc.getConnectUrl()
-        const buttonLabel = oidc.getButtonLabel()
-        if (authUrl && buttonLabel) {
-          externalAuthOIDC = {
-            buttonLabel: buttonLabel,
-            url: authUrl
+    if (!remoteConnectionInfos?.externalAuthCompatible) {
+      options.peertubeHelpers.logger.debug(
+        'The remote livechat plugin is not compatible with external authentication, not enabling the feature'
+      )
+    } else {
+      try {
+        const oidc = ExternalAuthOIDC.singleton()
+        if (await oidc.isOk()) {
+          const authUrl = oidc.getConnectUrl()
+          const buttonLabel = oidc.getButtonLabel()
+          if (authUrl && buttonLabel) {
+            externalAuthOIDC = {
+              buttonLabel: buttonLabel,
+              url: authUrl
+            }
           }
         }
+      } catch (err) {
+        options.peertubeHelpers.logger.error(err)
       }
-    } catch (err) {
-      options.peertubeHelpers.logger.error(err)
     }
   }
 
@@ -291,6 +297,7 @@ interface WCRemoteConnectionInfos {
     wsUri?: string
   }
   authenticated?: boolean
+  externalAuthCompatible: boolean
 }
 
 async function _remoteConnectionInfos (
@@ -301,7 +308,8 @@ async function _remoteConnectionInfos (
   if (!remoteChatInfos) { throw new Error('Should have remote chat infos for remote videos') }
   if (remoteChatInfos.type !== 'xmpp') { throw new Error('Should have remote xmpp chat infos for remote videos') }
   const connectionInfos: WCRemoteConnectionInfos = {
-    roomJID: remoteChatInfos.jid
+    roomJID: remoteChatInfos.jid,
+    externalAuthCompatible: false
   }
   if (compatibleRemoteAuthenticatedConnectionEnabled(remoteChatInfos, canWebsocketS2S, canDirectS2S)) {
     connectionInfos.authenticated = true
@@ -314,6 +322,14 @@ async function _remoteConnectionInfos (
       wsUri: anonymousCI.wsUri
     }
   }
+
+  if (remoteChatInfos.xmppserver.external) {
+    // To be able to connect to a remote livechat using an external account,
+    // The remote server MUST have livechat >= 9.0.0...
+    // So we flag the connection as compatible or not, and we will disable the feature if not compatible.
+    connectionInfos.externalAuthCompatible = true
+  }
+
   return connectionInfos
 }
 

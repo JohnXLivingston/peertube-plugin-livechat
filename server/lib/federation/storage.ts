@@ -122,7 +122,8 @@ async function storeRemoteServerInfos (
   const mainHost = xmppserver.host
   const hosts = [
     xmppserver.host,
-    xmppserver.muc
+    xmppserver.muc,
+    xmppserver.external
   ]
 
   for (const host of hosts) {

@@ -57,9 +57,9 @@ so that the outer world can connect to it.
 
 ### DNS
 
-You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the "room.your_instance.tld" component.
+You need to add [DNS records](https://prosody.im/doc/dns) allowing remote servers to find "room.your_instance.tld" and "external.your_instance.tld" components.
 
-The easiest way to do this is to add an SRV record for the "room" [subdomain](https://prosody.im/doc/dns#subdomains):
+The easiest way to do this is to add SRV records for the "room" and "external" [subdomain](https://prosody.im/doc/dns#subdomains):
 
 * record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)
 * TTL: 3600
@@ -70,12 +70,24 @@ The easiest way to do this is to add an SRV record for the "room" [subdomain](ht
 * port: 5269 (adapt if your changed the default port)
 * target: your_instance.tld. (replace by your instance uri)
 
+* record name: _xmpp-server._tcp.external.your_instance.tld. (replace «your_instance.tld» by your instance uri)
+* TTL: 3600
+* class: IN
+* SRV: 0
+* priority: 0
+* weight: 5
+* port: 5269 (adapt if your changed the default port)
+* target: your_instance.tld. (replace by your instance uri)
+
 Be careful to keep the dot after "your_instance.tld".
 
-Using the `dig` command to check your record, you should get a result similar to this:
+Using the `dig` command to check your records, you should get a result similar to this:
 
 ```bash
 $ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV
+0 5 5269 videos.john-livingston.fr.
+
+$ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV
 0 5 5269 videos.john-livingston.fr.
 ```
 

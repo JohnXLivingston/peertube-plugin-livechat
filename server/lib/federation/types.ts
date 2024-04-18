@@ -7,6 +7,7 @@ interface VideoBuildResultContext {
 interface PeertubeXMPPServerInfos {
   host: string // main host (should be the peertube url)
   muc: string // muc component url
+  external?: string // external users virtualhost (livechat version >=9.0.0)
   directs2s?: { // if direct S2S is enabled
     port: string
   }

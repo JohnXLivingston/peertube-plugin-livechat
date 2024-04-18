@@ -190,6 +190,7 @@ async function _serverBuildInfos (
   const prosodyDomain = await getProsodyDomain(options)
   const mucDomain = 'room.' + prosodyDomain
   const anonDomain = 'anon.' + prosodyDomain
+  const externalDomain = 'external.' + prosodyDomain
 
   let directs2s
   if (settings['prosody-room-allow-s2s'] && settings['prosody-s2s-port']) {
@@ -232,6 +233,7 @@ async function _serverBuildInfos (
   return {
     host: prosodyDomain,
     muc: mucDomain,
+    external: externalDomain, // we will always add it, even if disabled. Can't cause trouble.
     directs2s,
     websockets2s,
     anonymous
