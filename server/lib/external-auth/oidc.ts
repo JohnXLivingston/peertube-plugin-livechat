@@ -311,6 +311,8 @@ class ExternalAuthOIDC {
     }
     const userInfo = await this.client.userinfo(accessToken)
 
+    this.logger.debug('User info: ' + JSON.stringify(userInfo))
+
     if (!userInfo) {
       throw new ExternalAuthenticationError('Can\'t retrieve userInfos')
     }
@@ -434,16 +436,39 @@ class ExternalAuthOIDC {
 
   /**
    * Get an attribute from the userInfos.
-   * @param userInfos userInfos returned by the remote OIDC Provider
-   * @param field the field to get
-   * @returns the value if present
+   * @param userInfos userInfos returned by the remote OIDC Provider.
+   * @param normalizedFieldName the field to get (internal normalized name).
+   * @returns the value if present.
    */
-  private readUserInfoField (userInfos: UnknownObject, field: UserInfoField): string | undefined {
-    // FIXME: do some attribute mapping? (add settings for that?)
-    if (!(field in userInfos)) { return undefined }
-    if (typeof userInfos[field] !== 'string') { return undefined }
-    if (userInfos[field] === '') { return undefined }
-    return userInfos[field] as string
+  private readUserInfoField (userInfos: UnknownObject, normalizedFieldName: UserInfoField): string | undefined {
+    // FIXME: do some explicit attribute mapping? (add settings for that?)
+    // For now, we will try some standards field names.
+
+    const guesses: string[] = [normalizedFieldName]
+
+    // Note: see "Standard Claims" section https://openid.net/specs/openid-connect-core-1_0.html
+    switch (normalizedFieldName) {
+      case 'username':
+        guesses.push('sub') // unique identifier, see https://openid.net/specs/openid-connect-core-1_0.html
+        break
+      case 'last_name':
+        guesses.push('family_name')
+        break
+      case 'first_name':
+        guesses.push('given_name')
+        break
+      case 'nickname':
+        guesses.push('name')
+        break
+    }
+
+    for (const field of guesses) {
+      if (!(field in userInfos)) { continue }
+      if (typeof userInfos[field] !== 'string') { continue }
+      if (userInfos[field] === '') { continue }
+      return userInfos[field] as string
+    }
+    return undefined
   }
 
   /**

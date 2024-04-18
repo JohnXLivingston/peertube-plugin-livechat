@@ -66,7 +66,7 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
         }
 
         const externalAccountInfos = await oidc.validateAuthenticationProcess(req)
-        logger.debug(JSON.stringify(
+        logger.debug('external account infos: ' + JSON.stringify(
           Object.assign(
             {},
             externalAccountInfos,
