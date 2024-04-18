@@ -1,4 +1,4 @@
-import { api } from '@converse/headless/core'
+import { _converse, api } from '@converse/headless/core'
 import { __ } from 'i18n'
 import { html } from 'lit'
 
@@ -50,8 +50,32 @@ export const tplExternalLoginModal = (el, o) => {
                   // Storing the token in sessionStorage.
                   window.sessionStorage.setItem('peertube-plugin-livechat-oidc-token', data.token)
 
-                  // FIXME: do better.
-                  window.location.reload()
+                  const reconnectMode = api.settings.get('livechat_external_auth_reconnect_mode')
+                  if (reconnectMode === 'button-close-open') {
+                    // Here, we click on the close button, then on the open button.
+                    // FIXME: there is maybe a better way to do this.
+                    try {
+                      // But first, close the modal.
+                      document.getElementsByClassName('livechat-external-login-modal')[0]
+                        .closest('.modal-dialog')
+                        .querySelector('button.close')
+                        .click()
+
+                      // As soon as disconnected, re-open:
+                      _converse.api.listen.once('disconnected', () => {
+                        document.getElementsByClassName('peertube-plugin-livechat-button-open')[0].click()
+                      })
+
+                      // And we close!
+                      document.getElementsByClassName('peertube-plugin-livechat-button-close')[0].click()
+                    } catch (err) {
+                      // fallback... reloading window :/
+                      console.error(err)
+                      window.location.reload()
+                    }
+                  } else { // reload and other use cases...
+                    window.location.reload()
+                  }
                 }
 
                 return false

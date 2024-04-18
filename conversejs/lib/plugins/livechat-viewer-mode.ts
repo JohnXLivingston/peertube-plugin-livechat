@@ -10,7 +10,8 @@ export const livechatViewerModePlugin = {
       livechat_peertube_video_original_url: undefined,
       livechat_peertube_video_uuid: undefined,
       livechat_external_auth_oidc_button_label: undefined,
-      livechat_external_auth_oidc_url: undefined
+      livechat_external_auth_oidc_url: undefined,
+      livechat_external_auth_reconnect_mode: undefined
     })
 
     const originalGetDefaultMUCNickname = _converse.getDefaultMUCNickname

@@ -38,6 +38,7 @@ export const livechatSpecificsPlugin = {
         'hide_muc_participants',
         'livechat_enable_viewer_mode',
         'livechat_external_auth_oidc_button_label', 'livechat_external_auth_oidc_url',
+        'livechat_external_auth_reconnect_mode',
         'livechat_mini_muc_head'
       ]) {
         _converse.api.settings.set(k, params[k])

@@ -168,6 +168,16 @@ async function initConverse (
   if (tryOIDC && !isAuthenticated) {
     params.livechat_external_auth_oidc_button_label = initConverseParams.externalAuthOIDC?.buttonLabel
     params.livechat_external_auth_oidc_url = initConverseParams.externalAuthOIDC?.url
+
+    switch (chatIncludeMode) {
+      case 'peertube-video':
+        params.livechat_external_auth_reconnect_mode = 'button-close-open'
+        break
+      case 'peertube-fullpage':
+      case 'chat-only':
+      default:
+        params.livechat_external_auth_reconnect_mode = 'reload'
+    }
   }
 
   if (chatIncludeMode === 'peertube-video') {
