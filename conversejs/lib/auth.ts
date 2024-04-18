@@ -1,4 +1,5 @@
 interface AuthentInfos {
+  type: 'peertube' | 'oidc'
   jid: string
   password: string
   nickname?: string
@@ -87,7 +88,8 @@ async function getLocalAuthentInfos (
     return {
       jid: data.jid,
       password: data.password,
-      nickname: data.nickname
+      nickname: data.nickname,
+      type: data.type ?? 'peertube'
     }
   } catch (error) {
     console.error(error)

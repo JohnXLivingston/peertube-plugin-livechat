@@ -105,6 +105,7 @@ async function initConverse (
   params.allow_url_history_change = chatIncludeMode === 'chat-only'
 
   let isAuthenticated: boolean = false
+  let isAuthenticatedWithExternalAccount: boolean = false
   let isRemoteWithNicknameSet: boolean = false
 
   // OIDC (OpenID Connect):
@@ -116,9 +117,11 @@ async function initConverse (
     if (!isRemoteChat) {
       localRoomAuthenticatedParams(initConverseParams, auth, params)
       isAuthenticated = true
+      isAuthenticatedWithExternalAccount = auth.type !== 'peertube'
     } else if (remoteAuthenticatedXMPPServer) {
       remoteRoomAuthenticatedParams(initConverseParams, auth, params)
       isAuthenticated = true
+      isAuthenticatedWithExternalAccount = auth.type !== 'peertube'
     } else if (remoteAnonymousXMPPServer) {
       // remote server does not allow remote authenticated users, falling back to anonymous mode
       remoteRoomAnonymousParams(initConverseParams, auth, params)
@@ -165,10 +168,14 @@ async function initConverse (
   // no viewer mode if authenticated.
   params.livechat_enable_viewer_mode = autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet
 
+  params.livechat_specific_external_authent = isAuthenticatedWithExternalAccount
+
   if (tryOIDC && !isAuthenticated) {
     params.livechat_external_auth_oidc_button_label = initConverseParams.externalAuthOIDC?.buttonLabel
     params.livechat_external_auth_oidc_url = initConverseParams.externalAuthOIDC?.url
+  }
 
+  if (tryOIDC) { // also needed when authenticated (for the signout button)
     switch (chatIncludeMode) {
       case 'peertube-video':
         params.livechat_external_auth_reconnect_mode = 'button-close-open'

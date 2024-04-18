@@ -28,7 +28,8 @@ async function initAuthApiRouter (options: RegisterServerOptions, router: Router
                 res.status(200).json({
                   jid: unserializedToken.jid,
                   password: unserializedToken.password,
-                  nickname: unserializedToken.nickname
+                  nickname: unserializedToken.nickname,
+                  type: 'oidc'
                 })
                 return
               }
@@ -59,7 +60,8 @@ async function initAuthApiRouter (options: RegisterServerOptions, router: Router
       res.status(200).json({
         jid: normalizedUsername + '@' + prosodyDomain,
         password: password,
-        nickname: nickname
+        nickname: nickname,
+        type: 'peertube'
       })
     }
   ))

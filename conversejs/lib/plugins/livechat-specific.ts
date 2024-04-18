@@ -2,6 +2,51 @@ export const livechatSpecificsPlugin = {
   dependencies: ['converse-muc', 'converse-muc-views'],
   initialize: function (this: any) {
     const _converse = this._converse
+
+    _converse.api.settings.extend({
+      // if user is authenticated with an external account (to add a logout button)
+      livechat_specific_external_authent: false
+    })
+
+    _converse.api.listen.on('getHeadingButtons', (view: any, buttons: any[]) => {
+      if (view.model.get('type') !== _converse.CHATROOMS_TYPE) {
+        // only on MUC.
+        return
+      }
+
+      if (_converse.api.settings.get('livechat_specific_external_authent')) {
+        // Adding a logout button
+        buttons.push({
+          i18n_text: _converse.__('Log out'),
+          handler: async (ev: Event) => {
+            ev.preventDefault()
+            ev.stopPropagation()
+
+            const messages = [_converse.__('Are you sure you want to leave this groupchat?')]
+            const result = await _converse.api.confirm(_converse.__('Confirm'), messages)
+            if (!result) { return }
+
+            // Deleting access token in sessionStorage.
+            window.sessionStorage.removeItem('peertube-plugin-livechat-oidc-token')
+
+            const reconnectMode = _converse.api.settings.get('livechat_external_auth_reconnect_mode')
+            if (reconnectMode === 'button-close-open') {
+              const button = document.getElementsByClassName('peertube-plugin-livechat-button-close')[0]
+              if ((button as HTMLAnchorElement).click) { (button as HTMLAnchorElement).click() }
+              return
+            }
+
+            window.location.reload()
+          },
+          a_class: 'close-chatbox-button',
+          icon_class: 'fa-sign-out-alt',
+          name: 'signout'
+        })
+      }
+
+      return buttons
+    })
+
     _converse.api.listen.on('chatRoomViewInitialized', function (this: any, _model: any): void {
       // Remove the spinner if present...
       document.getElementById('livechat-loading-spinner')?.remove()
@@ -39,7 +84,8 @@ export const livechatSpecificsPlugin = {
         'livechat_enable_viewer_mode',
         'livechat_external_auth_oidc_button_label', 'livechat_external_auth_oidc_url',
         'livechat_external_auth_reconnect_mode',
-        'livechat_mini_muc_head'
+        'livechat_mini_muc_head',
+        'livechat_specific_external_authent'
       ]) {
         _converse.api.settings.set(k, params[k])
       }
