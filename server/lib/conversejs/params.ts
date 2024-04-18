@@ -79,7 +79,7 @@ async function getConverseJSParams (
 
   let externalAuthOIDC
   if (userIsConnected !== true) {
-    if (!remoteConnectionInfos?.externalAuthCompatible) {
+    if (remoteConnectionInfos && !remoteConnectionInfos.externalAuthCompatible) {
       options.peertubeHelpers.logger.debug(
         'The remote livechat plugin is not compatible with external authentication, not enabling the feature'
       )
