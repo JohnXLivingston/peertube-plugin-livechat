@@ -30,12 +30,14 @@ export const livechatViewerModePlugin = {
       })
     }
 
-    function refreshViewerMode (canChat: boolean): void {
+    function refreshViewerMode (canChat: boolean | null): void {
       console.log('[livechatViewerModePlugin] refreshViewerMode: ' + (canChat ? 'off' : 'on'))
-      if (canChat) {
-        document.querySelector('body')?.setAttribute('livechat-viewer-mode', 'off')
+      if (canChat === null) {
+        document.body.removeAttribute('livechat-viewer-mode')
+      } else if (canChat) {
+        document.body.setAttribute('livechat-viewer-mode', 'off')
       } else {
-        document.querySelector('body')?.setAttribute('livechat-viewer-mode', 'on')
+        document.body.setAttribute('livechat-viewer-mode', 'on')
       }
     }
 
@@ -44,6 +46,7 @@ export const livechatViewerModePlugin = {
     _converse.ChatRoomOccupants.prototype.on('change:nick', (data: any, nick: string) => {
       try {
         if (!_converse.api.settings.get('livechat_enable_viewer_mode')) {
+          refreshViewerMode(null)
           return
         }
         // On nick change, if the user is_me, storing the new nickname
@@ -59,6 +62,7 @@ export const livechatViewerModePlugin = {
 
     _converse.api.listen.on('chatRoomInitialized', function (this: any, model: any): void {
       if (!_converse.api.settings.get('livechat_enable_viewer_mode')) {
+        refreshViewerMode(null)
         return
       }
       // When room is initialized, if user has chosen a nickname, set viewermode to off.
