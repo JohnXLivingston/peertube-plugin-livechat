@@ -5,10 +5,13 @@ import { ExternalAuthenticationError } from './error'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
+import { getProsodyFilePaths } from '../prosody/config'
 import { createCipheriv, createDecipheriv, randomBytes, Encoding } from 'node:crypto'
 import { Issuer, BaseClient, generators, UnknownObject } from 'openid-client'
 import { JID } from '@xmpp/jid'
 import { URL } from 'url'
+import * as path from 'path'
+import * as fs from 'fs'
 
 const got = require('got')
 
@@ -75,6 +78,8 @@ class ExternalAuthOIDC {
   private readonly redirectUrl: string
   private readonly connectUrl: string
   private readonly externalVirtualhost: string
+  private readonly avatarsDir: string
+  private readonly avatarsFiles: string[]
 
   private readonly encryptionOptions = {
     algorithm: 'aes256' as string,
@@ -114,6 +119,8 @@ class ExternalAuthOIDC {
     connectUrl: string
     redirectUrl: string
     externalVirtualhost: string
+    avatarsDir: string
+    avatarsFiles: string[]
   }) {
     this.logger = {
       debug: (s) => params.logger.debug('[ExternalAuthOIDC] ' + s),
@@ -127,6 +134,9 @@ class ExternalAuthOIDC {
     this.redirectUrl = params.redirectUrl
     this.connectUrl = params.connectUrl
     this.externalVirtualhost = params.externalVirtualhost
+    this.avatarsDir = params.avatarsDir
+    this.avatarsFiles = params.avatarsFiles
+
     if (this.enabled) {
       this.buttonLabel = params.buttonLabel
       this.discoveryUrl = params.discoveryUrl
@@ -385,7 +395,11 @@ class ExternalAuthOIDC {
     }
     const token = await this.encrypt(JSON.stringify(tokenContent))
 
-    const avatar = await this.readUserInfoPicture(userInfo)
+    let avatar = await this.readUserInfoPicture(userInfo)
+    if (!avatar) {
+      this.logger.debug('No avatar from the external service, getting a random one.')
+      avatar = await this.getRandomAvatar()
+    }
 
     return {
       jid,
@@ -540,6 +554,38 @@ class ExternalAuthOIDC {
   }
 
   /**
+   * Gets a random default avatar from the current avatar set.
+   */
+  private async getRandomAvatar (): Promise<undefined | ExternalAccountInfos['avatar']> {
+    try {
+      if (!this.avatarsDir || !this.avatarsFiles.length) {
+        throw new Error('Seems there is no default avatars')
+      }
+
+      const file = this.avatarsFiles[Math.floor(Math.random() * this.avatarsFiles.length)]
+      if (!file) {
+        throw new Error('No default avatar file')
+      }
+
+      const filePath = path.resolve(this.avatarsDir, file)
+      const buf = await fs.promises.readFile(filePath)
+
+      const mimeType = await getMimeTypeFromArrayBuffer(buf)
+      if (!mimeType) {
+        throw new Error('Failed to get the default avatar file type')
+      }
+
+      return {
+        mimetype: mimeType,
+        base64: buf.toString('base64')
+      }
+    } catch (err) {
+      this.logger.error(`Failed to get a default avatar: ${err as string}`)
+      return undefined
+    }
+  }
+
+  /**
    * Compute the JID to use for this remote account.
    * Format will be: "username+remote.domain.tld@external.instance.tld"
    * @param username the remote username
@@ -599,6 +645,9 @@ class ExternalAuthOIDC {
 
     const prosodyDomain = await getProsodyDomain(options)
 
+    // FIXME: this is not optimal to call here.
+    const prosodyFilePaths = await getProsodyFilePaths(options)
+
     singleton = new ExternalAuthOIDC({
       logger: options.peertubeHelpers.logger,
       enabled: settings['external-auth-custom-oidc'] as boolean,
@@ -609,7 +658,9 @@ class ExternalAuthOIDC {
       secretKey,
       connectUrl: ExternalAuthOIDC.connectUrl(options),
       redirectUrl: ExternalAuthOIDC.redirectUrl(options),
-      externalVirtualhost: 'external.' + prosodyDomain
+      externalVirtualhost: 'external.' + prosodyDomain,
+      avatarsDir: prosodyFilePaths.avatars,
+      avatarsFiles: prosodyFilePaths.avatarsFiles
     })
 
     return singleton
