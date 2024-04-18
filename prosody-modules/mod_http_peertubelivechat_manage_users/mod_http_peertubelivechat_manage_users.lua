@@ -8,8 +8,10 @@ module:depends"http";
 local module_host = module:get_host(); -- this module is not global
 
 local bare_sessions = prosody.bare_sessions;
-
 local vcards = module:open_store("vcard");
+
+local prune_counts = {};
+local prune_thresold = 4; -- arbitrary value
 
 function check_auth(routes)
   local function check_request_auth(event)
@@ -124,15 +126,25 @@ local function prune_users(event) -- delete all users that are not connected!
 
   for user in usermanager.users(module_host) do
     -- has the user still open sessions?
-    if (bare_sessions[user..'@'..module_host] ~= nil) then
+    local jid = user..'@'..module_host;
+    if (bare_sessions[jid] ~= nil) then
       module:log("debug", "User %s on host %s has still active sessions, ignoring.", user, module_host);
+      prune_counts[jid] = 0; -- reset
     else
       -- FIXME: there is a little chance that we delete a user that is currently connecting...
-      -- As this prune should not be called too often, we can consider it is not an issue for now.
+      -- to avoid doing this, we track how often we got here, and only delete after X tries.
+      if (not prune_counts[jid]) then
+        prune_counts[jid] = 0;
+      end
+      prune_counts[jid] = prune_counts[jid] + 1;
+      if (prune_counts[jid] < prune_thresold) then -- X is arbitrary... in production will mean X hours
+        module:log("debug", "User %s on host %s prune count is only %i, ignoring.", user, module_host, prune_counts[jid]);
+      else
+        module:log("debug", "Deleting user %s on host %s", user, module_host);
+        update_vcard(user, nil);
+        usermanager.delete_user(user, module_host);
+      end
 
-      module:log("debug", "Deleting user %s on host %s", user, module_host);
-      update_vcard(user, nil);
-      usermanager.delete_user(user, module_host);
     end
   end
 

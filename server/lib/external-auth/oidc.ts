@@ -629,8 +629,8 @@ class ExternalAuthOIDC {
   public startPruneTimer (options: RegisterServerOptions): void {
     this.stopPruneTimer() // just in case...
 
-    // every 4 hour (every minutes in debug mode)
-    const pruneInterval = debugNumericParameter(options, 'externalAccountPruneInterval', 60 * 1000, 4 * 60 * 60 * 1000)
+    // every hour (every minutes in debug mode)
+    const pruneInterval = debugNumericParameter(options, 'externalAccountPruneInterval', 60 * 1000, 60 * 60 * 1000)
     this.logger.info(`Creating a timer for external account pruning, every ${Math.round(pruneInterval / 1000)}s.`)
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
