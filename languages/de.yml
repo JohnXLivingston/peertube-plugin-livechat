@@ -531,3 +531,17 @@ livechat_configuration_channel_terms_label: Chat Nutzungsbedingungen und Konditi
   des Kanals
 livechat_configuration_channel_terms_desc: "Sie können eine \"Nutzungsbedingungen\"\
   -Nachricht konfigurieren, die Benutzern angezeigt wird, die Ihren Chaträumen beitreten.\n"
+poll_anonymous_vote_ok: ''
+poll: ''
+poll_title: ''
+poll_vote_instructions_xmpp: ''
+poll_is_over: ''
+new_poll: ''
+poll_instructions: ''
+poll_question: ''
+poll_duration: ''
+poll_anonymous_results: ''
+poll_choice_n: ''
+poll_end: ''
+poll_vote_instructions: ''
+poll_choice_invalid: ''
