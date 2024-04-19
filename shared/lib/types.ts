@@ -107,17 +107,17 @@ type ChatPeertubeIncludeMode = 'peertube-fullpage' | 'peertube-video'
  */
 type ChatIncludeMode = 'chat-only' | ChatPeertubeIncludeMode
 
-interface OIDCAuthResultOk {
+interface ExternalAuthResultOk {
   ok: true
   token: string
 }
 
-interface OIDCAuthResultError {
+interface ExternalAuthResultError {
   ok: false
   message?: string
 }
 
-type OIDCAuthResult = OIDCAuthResultError | OIDCAuthResultOk
+type ExternalAuthResult = ExternalAuthResultError | ExternalAuthResultOk
 
 export type {
   ConverseJSTheme,
@@ -130,7 +130,7 @@ export type {
   ChannelConfiguration,
   ChatIncludeMode,
   ChatPeertubeIncludeMode,
-  OIDCAuthResultError,
-  OIDCAuthResultOk,
-  OIDCAuthResult
+  ExternalAuthResultError,
+  ExternalAuthResultOk,
+  ExternalAuthResult
 }

@@ -25,12 +25,12 @@ export const tplExternalLoginModal = (el, o) => {
 
                 const popup = window.open(
                   externalAuthOIDCUrl,
-                  'livechat-oidc',
+                  'livechat-external-auth',
                   'popup'
                 )
 
-                window.oidcGetResult = (data) => {
-                  window.oidcGetResult = undefined
+                window.externalAuthGetResult = (data) => {
+                  window.externalAuthGetResult = undefined
 
                   if (!data) {
                     // special case: when this modal is closed, used to close the popup
@@ -38,17 +38,17 @@ export const tplExternalLoginModal = (el, o) => {
                     return
                   }
 
-                  console.log('Received an OIDC authentication result...', data)
+                  console.log('Received an external authentication result...', data)
                   if (!data.ok) {
                     // eslint-disable-next-line no-undef
-                    el.external_auth_oidc_alert_message = __(LOC_login_external_oidc_alert_message) +
+                    el.external_auth_oidc_alert_message = __(LOC_login_external_auth_alert_message) +
                       (data.message ? ` (${data.message})` : '')
                     return
                   }
 
                   console.info('Got external account information', data)
                   // Storing the token in sessionStorage.
-                  window.sessionStorage.setItem('peertube-plugin-livechat-oidc-token', data.token)
+                  window.sessionStorage.setItem('peertube-plugin-livechat-external-auth-oidc-token', data.token)
 
                   const reconnectMode = api.settings.get('livechat_external_auth_reconnect_mode')
                   if (reconnectMode === 'button-close-open') {

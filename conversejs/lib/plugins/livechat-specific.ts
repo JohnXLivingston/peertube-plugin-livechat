@@ -27,7 +27,7 @@ export const livechatSpecificsPlugin = {
             if (!result) { return }
 
             // Deleting access token in sessionStorage.
-            window.sessionStorage.removeItem('peertube-plugin-livechat-oidc-token')
+            window.sessionStorage.removeItem('peertube-plugin-livechat-external-auth-oidc-token')
 
             const reconnectMode = _converse.api.settings.get('livechat_external_auth_reconnect_mode')
             if (reconnectMode === 'button-close-open') {

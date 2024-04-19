@@ -9,7 +9,7 @@ interface AuthHeader { [key: string]: string }
 
 async function getLocalAuthentInfos (
   authenticationUrl: string,
-  tryOIDC: boolean,
+  tryExternalAuth: boolean,
   peertubeAuthHeader?: AuthHeader | null
 ): Promise<false | AuthentInfos> {
   try {
@@ -34,7 +34,7 @@ async function getLocalAuthentInfos (
       const refreshToken = window.localStorage.getItem('refresh_token') ?? ''
       if (tokenType === '' && accessToken === '' && refreshToken === '') {
         console.info('User seems not to be logged in.')
-        // We must continue, for OIDC workflow.
+        // We must continue, for External Auth workflow.
         peertubeAuthHeader = null
       } else {
         peertubeAuthHeader = {
@@ -43,16 +43,16 @@ async function getLocalAuthentInfos (
       }
     }
 
-    let oidcHeaders: any
-    // When user has used the External OIDC mechanisme to create an account, we got a token in sessionStorage.
-    if (tryOIDC && !peertubeAuthHeader && window.sessionStorage) {
-      const token = window.sessionStorage.getItem('peertube-plugin-livechat-oidc-token')
+    let externalAuthHeaders: any
+    // When user has used the External Authentication mechanism to create an account, we got a token in sessionStorage.
+    if (tryExternalAuth && !peertubeAuthHeader && window.sessionStorage) {
+      const token = window.sessionStorage.getItem('peertube-plugin-livechat-external-auth-oidc-token')
       if (token && (typeof token === 'string')) {
-        oidcHeaders = { 'X-Peertube-Plugin-Livechat-OIDC-Token': token }
+        externalAuthHeaders = { 'X-Peertube-Plugin-Livechat-External-Auth-OIDC-Token': token }
       }
     }
 
-    if (peertubeAuthHeader === null && oidcHeaders === undefined) {
+    if (peertubeAuthHeader === null && externalAuthHeaders === undefined) {
       console.info('User is not logged in.')
       return false
     }
@@ -63,7 +63,7 @@ async function getLocalAuthentInfos (
         Object.assign(
           {},
           peertubeAuthHeader ?? {},
-          oidcHeaders ?? {},
+          externalAuthHeaders ?? {},
           {
             'content-type': 'application/json;charset=UTF-8'
           }

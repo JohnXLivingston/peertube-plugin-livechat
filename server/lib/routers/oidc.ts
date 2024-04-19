@@ -1,6 +1,6 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
-import type { OIDCAuthResult } from '../../../shared/lib/types'
+import type { ExternalAuthResult } from '../../../shared/lib/types'
 import { asyncMiddleware } from '../middlewares/async'
 import { ExternalAuthOIDC } from '../external-auth/oidc'
 import { ExternalAuthenticationError } from '../external-auth/error'
@@ -11,17 +11,17 @@ import { ensureUser } from '../prosody/api/manage-users'
  * and send the result to the parent window.
  * @param result the result to send to the parent window
  */
-function popupResultHTML (result: OIDCAuthResult): string {
+function popupResultHTML (result: ExternalAuthResult): string {
   return `<!DOCTYPE html><html>
     <body>
       <noscript>Your browser must enable javascript for this page to work.</noscript>
       <script>
         try {
           const data = ${JSON.stringify(result)};
-          if (!window.opener || !window.opener.oidcGetResult) {
+          if (!window.opener || !window.opener.externalAuthGetResult) {
             throw new Error("Can't find parent window callback handler.")
           }
-          window.opener.oidcGetResult(data);
+          window.opener.externalAuthGetResult(data);
           window.close();
         } catch (err) {
           document.body.innerText = 'Error: ' + err;

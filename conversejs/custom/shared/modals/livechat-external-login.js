@@ -18,9 +18,9 @@ class ExternalLoginModal extends BaseModal {
 
   onHide () {
     super.onHide()
-    // kill the oidcGetResult handler if still there
+    // kill the externalAuthGetResult handler if still there
     try {
-      if (window.oidcGetResult) { window.oidcGetResult() }
+      if (window.externalAuthGetResult) { window.externalAuthGetResult() }
     } catch (err) {
       console.error(err)
     }

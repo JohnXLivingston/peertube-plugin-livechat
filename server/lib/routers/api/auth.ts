@@ -18,7 +18,7 @@ async function initAuthApiRouter (options: RegisterServerOptions, router: Router
 
       if (!user) {
         // No Peertube user, but perhaps an external authentication?
-        const token = req.header('X-Peertube-Plugin-Livechat-OIDC-Token')
+        const token = req.header('X-Peertube-Plugin-Livechat-External-Auth-OIDC-Token')
         if (token) {
           try {
             const oidc = ExternalAuthOIDC.singleton()
