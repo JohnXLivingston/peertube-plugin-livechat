@@ -398,3 +398,22 @@ login_remote_peertube_video_not_found: Dieses Video ist auf dieser Peertube Inst
 login_remote_peertube_video_not_found_try_anyway_button: Trotzdem versuchen, das Video
   auf der Peertube-Instanz zu öffnen
 login_using_external_account: Mit einem externem Account anmelden
+external_auth_custom_oidc_label: Verwenden eines OpenID Connect Anbieters
+external_auth_custom_oidc_button_label_label: Name für die Anmeldungsschaltfläche
+external_auth_custom_oidc_discovery_url_label: Discovery URL
+external_auth_custom_oidc_client_id_label: Client ID
+external_auth_custom_oidc_client_secret_label: Client secret
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
+external_auth_custom_oidc_button_label_description: Diese Bezeichnung wird den Nutzern
+  als Name der Schaltfläche zur Authentifizierung bei diesem OIDC-Anbieter angezeigt.
+external_auth_custom_oidc_description: "Sie können einen externen OpenID Connect Anbieter
+  konfigurieren, der für die Anmeldung beim Chat verwendet werden kann.\nBitte lesen
+  Sie dazu die Dokumentation:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/settings/\"\
+  \ target=\"_blank\">Einstellungen</a>.\n"
+external_auth_description: "<h3>Externe Authentifizierung</h3>\nFür Benutzer, die
+  kein Peertubekonto haben, können Sie verschiedene Authentifizierungsmodi auf der
+  Grundlage von externen Authentifizierungsanbietern aktivieren.\n"
+login_external_auth_alert_message: Authentifizierung fehlgeschlagen
+external_auth_custom_oidc_redirect_uris_info_description: "<strong>Callback/Redirect
+  URI:</strong>\nWenn Sie eine autorisierte Umleitungs-URI für die externe Anwendung
+  konfigurieren möchten, fügen Sie bitte diese URL hinzu:\n"
