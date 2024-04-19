@@ -1,0 +1,177 @@
+login_remote_peertube_video_not_found_try_anyway_button: Svejedno pokušaj otvoriti
+  video na Peertube instanci
+external_auth_custom_oidc_button_label_label: Oznaka za gumb povezivanja
+external_auth_custom_oidc_discovery_url_label: Discovery URL
+external_auth_custom_oidc_client_id_label: ID klijenta
+external_auth_custom_oidc_client_secret_label: Tajna klijenta
+videos_list_label: Aktiviraj chat za ova videa
+prosody_peertube_uri_label: Peertube URL za API pozive
+save: Spremi
+cancel: Odustani
+menu_configuration_label: Chat sobe
+livechat_configuration_channel_forbidden_words_desc2: "Jedna riječ ili izraz po retku.
+  Ako upišeš više riječi u jedan redak, pronaći će samo poruke koje sadrže cijeli
+  niz.\n"
+login_remote_peertube_searching: Traženje videa na Peertube instanci …
+login_remote_peertube_video_not_found: Ovaj video nije dostupan na ovoj Peertube instanci.
+login_external_auth_alert_message: Autentifikacija neuspjela
+avatar_set_label: Skup avatara
+avatar_set_description: "Možeš odabrati između nekoliko različitih skupova zadanih
+  avatara koji će se koristiti za korisnike chata.\nPogledaj dokumentaciju:\n<a href=\"\
+  https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Postavke</a>.\n"
+avatar_set_option_sepia: Sipa (Peertube maskota)
+avatar_set_option_cat: Mačke
+avatar_set_option_bird: Ptice
+avatar_set_option_fenec: Mala lisica (Mobilizon maskota)
+avatar_set_option_legacy: Stari Sepia avatari (avatari koji su uključeni u prethodnim
+  verzijama dodatka)
+successfully_saved: Uspješno spremljeno
+avatar_set_option_abstract: Sažetak
+prosody_muc_expiration_description: "Možeš odabrati koliko dugo server čuva sadržaj
+  chat sobe. Vrijednost može biti:\n<ul>\n     <li><b>60</b>: sadržaj će se čuvati
+  60 <b>sekundi</b>. 60 možeš zamijeniti s bilo kojim cijelim brojem.</li>\n     <li><b>1d</b>:
+  sadržaj će se čuvati 1 <b>dan</b>. 1 možeš zamijeniti s bilo kojim cijelim brojem.</li>\n\
+  \     <li><b>1w</b>: sadržaj će se čuvati 1 <b>tjedan</b>. 1 možeš zamijeniti s
+  bilo kojim cijelim brojem.</li>\n     <li><b>1m</b>: sadržaj će se čuvati 1 <b>mjesec</b>.
+  1 možeš zamijeniti s bilo kojim cijelim brojem.</li>\n     <li><b>1y</b>: sadržaj
+  će se čuvati 1 <b>godinu</b>. 1 možeš zamijeniti s bilo kojim cijelim brojem.</li>\n\
+  \     <li><b>nikada</b>: sadržaj nikada neće isteći i čuvat će se zauvijek.</li>\n\
+  </ul>\n"
+prosody_certificates_dir_description: "Ako je ovo polje prazno, dodatak će generirati
+  i koristiti samopotpisane certifikate.<br>\nAko želiš koristiti druge certifikate,
+  ovdje navedi ovdje mapu gdje ih Prosody\nmože pronaći. Napomena: „peertube” korisnik
+  mora imati dozvolu za čitanje ove mape.\n"
+prosody_c2s_label: Omogući veze između klijenta i servera
+prosody_components_list_label: Eksterne komponente
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Eksperimentalna
+  značajka:</b> ova je značajka još uvijek eksperimentalna.\n"
+configuration_description: "<h3>Napredna konfiguracija kanala</h3>\nSljedeće postavke
+  odnose se na napredne opcije kanala:\nkorisnici će moći dodati neke prilagodbe na
+  svojim kanalima,\naktivirati bot za moderiranje, …\n"
+disable_channel_configuration_label: Onemogući naprednu konfiguraciju kanala i chatbota
+livechat_configuration_channel_forbidden_words_regexp_label: Tretiraj kao regularne
+  izraze
+livechat_configuration_channel_forbidden_words_regexp_desc: Označavanjem ove opcije
+  možeš koristiti regularne izraze.
+livechat_configuration_channel_forbidden_words_applytomoderators_label: Također moderiraj
+  porukama moderatora
+livechat_configuration_channel_quote_label: Timer
+livechat_configuration_channel_forbidden_words_desc: "Možeš konfigurirati neke riječi
+  koje će bot automatski moderirati (poruke koje sadrže takve riječi će se odmah izbrisati).\n
+  Možeš dodati i opcionalni razlog koji će se prikazati na mjestu izbrisanih poruka.\n
+  Stranica dokumentacije sadrži nekoliko primjera.\n"
+livechat_configuration_channel_forbidden_words_reason_label: Razlog
+livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Poruke moderatora
+  se standardno neće izbrisati ako sadrže zabranjene riječi.\nOznačavanjem ove opcije
+  će se poruke moderatora također izbrisati.\n"
+slow_mode_info: Spori način rada je omogućen. Korisnici mogu slati poruku svakih %1$s
+  sekundi.
+open_chat: Otvori chat
+open_chat_new_window: Otvori chat u novom prozoru
+close_chat: Zatvori chat
+use_chat: Koristi chat
+read_only: Samo za čitanje
+show_scrollbarr: Prikaži kliznu traku
+transparent_background: Prozirna pozadina (za integraciju prijenosa, na primjer s
+  OBS-om)
+tips_for_streamers: 'Savjeti za prenositelje: Za dodavanje chata u svoj OBS, generiraj
+  vezu samo za čitanje i koristi je kao izvor preglednika.'
+generate_iframe: Generiraj iframe za ugrađivanje chata u web stranici
+chat_for_live_stream: 'Chat za prijenos uživo:'
+room_name: Ime sobe
+room_description: Opis sobe
+important_note_title: <h3>Važne napomene</h3>
+important_note_text: "Ovdje možeš pronaći dokumentaciju dodatka:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n   Dokumentacija Peertube dodatka za chat uživo\n</a>.\n"
+chat_title: <h3>Chat</h3>
+list_rooms_label: Prikaži popis postojećih soba
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Prikaži popis soba</a>\n"
+federation_dont_publish_remotely_label: Nemoj objaviti podatke chata
+chat_behaviour_description: <h3>Ponašanje chata</h3>
+room_type_label: Vrsta sobe
+auto_display_label: Automatski otvori chat
+share_url_option_nobody: Prikaži nikome
+open_blank_label: Prikaži gumb „Otvori u novom prozoru”
+share_url_label: Prikaži gumb „Dijeli poveznicu chata”
+share_url_option_owner_moderators: Prikaži vlasniku videa i moderatorima instance
+converse_theme_label: ConverseJS tema
+converse_theme_option_peertube: Peertube tema
+converse_theme_option_default: Zadana ConverseJS tema
+autocolors_label: Automatsko prepoznavanje boja
+prosody_advanced_description: <h3>Napredne postavke Chat servera</h3>
+help_builtin_prosody_label: Prosody server
+system_prosody_label: Koristi Prosody sustav
+prosody_muc_log_by_default_label: Standardno zapiši sadržaj soba
+prosody_muc_expiration_label: Istek dnevnika soba
+prosody_room_allow_s2s_label: Omogući vezu sa sobom pomoću eksternih XMPP računa
+prosody_certificates_dir_label: Mapa certifikata
+online_help: Pomoć na internetu
+livechat_configuration_channel_command_message_label: Poruka
+livechat_configuration_title: Konfiguriraj svoje chatsobe za chat uživo
+livechat_configuration_desc: Ovdje možeš konfigurirati neke napredne opcije za chat
+  sobe povezane s tvojim prijenosima uživo.
+livechat_configuration_please_select: Dolje odaberi jedan od svojih kanala za postavljanje
+  chat opcija.
+livechat_configuration_channel_title: Opcije kanala
+livechat_configuration_channel_desc: Ovdje možeš postaviti neke opcije za ovaj kanal
+  (pravila moderiranja, …).
+livechat_configuration_channel_enable_bot_label: Omogući moderirajući bot
+livechat_configuration_channel_bot_options_title: Opcije moderirajućeg bota
+livechat_configuration_channel_forbidden_words_label: Zabranjene riječi i izrazi
+livechat_configuration_channel_command_message_desc: Poruka za slanje.
+use_chat_help: Ako je omogućeno, pored videa će se prikazati chat.
+share_chat_link: Dijeli poveznicu chata
+copy: Kopiraj
+link_copied: Poveznica je kopirana
+error: Greška
+open: Otvori
+use_current_theme_color: Koristi boje trenutačne teme
+not_found: Nije pronađeno
+video: Video
+channel: Kanal
+last_activity: Zadnja aktivnost
+web: Web
+connect_using_xmpp: Poveži se koristeći XMPP
+connect_using_xmpp_help: Možeš se povezati sa sobom koristeći eksterni XMPP račun
+  i svoj omiljeni XMPP klijent.
+diagnostic: "Prije nego zatražiš pomoć, upotrijebi dijagnostički alat:\n<a class=\"\
+  peertube-plugin-livechat-launch-diagnostic\">Pokreni dijagnostiku</a>\n(ako ovaj
+  gumb ne otvori novi prozor, pokušaj ponovo učitati stranicu).\n"
+share_url_option_everyone: Prikaži svima
+share_url_option_owner: Prikaži vlasniku videa
+invalid_value: Neispravna vrijednost.
+livechat_configuration_channel_quote_desc2: "Jedna poruka po retku.\nAko postoji više
+  poruka, nasumično će odabrati jednu svakih X minuta.\n"
+livechat_configuration_channel_forbidden_words_comments_label: Komentari
+livechat_configuration_channel_forbidden_words_comments_desc: "Ovdje možeš dodati
+  neke komentare o ovom pravilu, kao podsjetnik kako i zašto si ga stvorio/la.\nOvi
+  komentari su čisto indikativni i ne utječu na ponašanje bota.\n"
+livechat_configuration_channel_quote_delay_label: Šalji svakih X minuta
+livechat_configuration_channel_quote_delay_desc: "Bot će slati poruku svakih X minuta.\n"
+livechat_configuration_channel_command_label: Bot naredba
+livechat_configuration_channel_command_cmd_label: Naredba
+livechat_configuration_channel_quote_desc: "Možeš konfigurirati nekoliko timera koji
+  će slati poruke u intervalima.\nOve će poruke bot slati svakih X minuta.\nNa primjer,
+  možeš postaviti bota da šalje neke informacije o sponzoriranju svakih 5 minuta.\n"
+livechat_configuration_channel_command_desc: "Možeš konfigurirati bota da odgovara
+  na naredbe.\nNaredba je poruka koja počinje s uskličnikom (!). Na primjer „!help”
+  poziva naredbu „help”.\n"
+livechat_configuration_channel_command_cmd_desc: "Naredba, bez uskličnika na početku.
+  Na primjer „pomoć”, „sponzor”, …\n"
+livechat_configuration_channel_for_more_info: "Za više informacija o tome kako konfigurirati
+  ovu značajku pogledaj dokumentaciju pritiskom gumba za pomoć.\n"
+livechat_configuration_channel_banned_jids_label: Blokirani korisnici i uzorci
+livechat_configuration_channel_bot_nickname: Nadimak bota
+livechat_configuration_channel_quote_label2: Poruke
+livechat_configuration_channel_slow_mode_label: Spori način rada
+livechat_configuration_channel_slow_mode_desc: "Vrijednost sporog načina rada:\n<ul>\n\
+  \   <li>0: spori način rada onemogućen</li>\n   <li>Bilo koji pozitivan cijeli broj:
+  korisnici mogu slati poruke svakih X sekundi (ograničenje ne vrijedi za moderatore)</li>\n\
+  </ul>\n"
+chatroom_not_accessible: Ova chat soba ne postoji ili joj ne možeš pristupiti.
+login_using_external_account: Prijavi se pomoću eksternog računa
+login_remote_peertube: 'Prijavi se pomoću računa na jednoj drugoj Peertube instanci:'
+login_remote_peertube_url: URL tvoje Peertube instance
+login_remote_peertube_url_invalid: Neispravan Peertube URL.
