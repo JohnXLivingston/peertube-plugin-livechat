@@ -24,6 +24,12 @@ Following settings concern the federation with other Peertube instances, and oth
 
 {{% livechat_label federation_dont_publish_remotely_description %}}
 
+## External Authentication
+
+See the detailed documentation page:
+
+[External Authentication](/peertube-plugin-livechat/documentation/admin/external_auth/)
+
 ## Channel advanced configuration
 
 Following settings concern the advanced channel options:

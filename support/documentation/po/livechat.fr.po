@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-04-15 12:06+0200\n"
+"POT-Creation-Date: 2024-04-19 11:03+0200\n"
 "PO-Revision-Date: 2024-04-12 05:39+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -1094,12 +1094,16 @@ msgstr "DNS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-msgid "You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the \"room.your_instance.tld\" component."
+#, fuzzy
+#| msgid "You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the \"room.your_instance.tld\" component."
+msgid "You need to add [DNS records](https://prosody.im/doc/dns) allowing remote servers to find \"room.your_instance.tld\" and \"external.your_instance.tld\" components."
 msgstr "Vous devez ajouter un [enregistrement DNS](https://prosody.im/doc/dns) permettant aux serveurs distant de trouver le composant «room.votre_instance.tld»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-msgid "The easiest way to do this is to add an SRV record for the \"room\" [subdomain](https://prosody.im/doc/dns#subdomains):"
+#, fuzzy
+#| msgid "The easiest way to do this is to add an SRV record for the \"room\" [subdomain](https://prosody.im/doc/dns#subdomains):"
+msgid "The easiest way to do this is to add SRV records for the \"room\" and \"external\" [subdomain](https://prosody.im/doc/dns#subdomains):"
 msgstr "Le plus simple pour cela est d'ajouter un enregistrement SRV pour le [sous-domaine](https://prosody.im/doc/dns#subdomains) «room» :"
 
 #. type: Bullet: '* '
@@ -1142,6 +1146,13 @@ msgstr "port: 5269 (adaptez si vous avez changé le port)"
 msgid "target: your_instance.tld. (replace by your instance uri)"
 msgstr "target: votre_instance.tld. (remplacez par la valeur adéquate)"
 
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#, fuzzy
+#| msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
+msgid "record name: _xmpp-server._tcp.external.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
+msgstr "nom de l'enregistrement : _xmpp-server._tcp.room.votre_instance.tld. (remplacez «votre_instance.tld» par la valeur adéquate)"
+
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Be careful to keep the dot after \"your_instance.tld\"."
@@ -1149,14 +1160,22 @@ msgstr "Attention à bien conserver le point après «votre_instance.tld»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-msgid "Using the `dig` command to check your record, you should get a result similar to this:"
+#, fuzzy
+#| msgid "Using the `dig` command to check your record, you should get a result similar to this:"
+msgid "Using the `dig` command to check your records, you should get a result similar to this:"
 msgstr "En utilisant la commande `dig` pour vérifier votre enregistrement, vous devriez obtenir un résultat similaire à celui-ci :"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
+#| "0 5 5269 videos.john-livingston.fr.\n"
 msgid ""
 "$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
+"0 5 5269 videos.john-livingston.fr.\n"
+"\n"
+"$ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV\n"
 "0 5 5269 videos.john-livingston.fr.\n"
 msgstr ""
 "$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
@@ -1553,6 +1572,7 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Troubleshooting"
@@ -1562,6 +1582,175 @@ msgstr "En cas de problème"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section."
 msgstr "Si cela ne fonctionne pas, vous pouvez utiliser l'outils de diagnostic (un bouton se trouve en haut de la page des paramètres du plugin), et notamment regarder ce que dit la section «Prosody check»."
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#, fuzzy, no-wrap
+#| msgid "Plugin Peertube Livechat settings"
+msgid "Plugin Peertube Livechat settings - External Authentication"
+msgstr "Paramètres du Plugin Peertube Livechat"
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, no-wrap
+msgid "External Authentication"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Users that are not connected to your Peertube instance are joining the chat using \"anonymous accounts\" (they can freely choose a nickname, and will be assigned a random avatar)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "You can enable some external authentication methods to allow user to create chat accounts.  In such case their nickname and avatar will be automatically initialized with the remote account information."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Such \"external account users\" will be easier to moderate than anonymous accounts."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
+msgstr "![Bouton connexion avec compte externe](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#: support/documentation/content/en/documentation/user/viewers.md
+#, fuzzy
+#| msgid "![External login dialog](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
+msgid "![External login dialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)"
+msgstr "![Fenêtre de dialogue connexion avec un compte externe](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "This page will describe available authentication methods."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#, fuzzy
+#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
+msgid "For the user documentation, see [user documentation](/peertube-plugin-livechat/documentation/user/viewers/)"
+msgstr "Pour la documentation utilisateur⋅rice associé à ces fonctionnalités, veuillez vous référer à la page [de documentation utilisateur⋅rice](/peertube-plugin-livechat/fr/documentation/user/xmpp_clients/)."
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#, no-wrap
+msgid "OpenID Connect"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#, fuzzy, no-wrap
+#| msgid "This feature comes with the livechat plugin version 9.0.0."
+msgid ""
+"This feature is still experimental.\n"
+"This feature is available with the plugin version >= 9.0.0.\n"
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 9.0.0."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "You can configure one external [OpenID Connect](https://openid.net/developers/how-connect-works/) compatible provider."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Doing so, you can for example use your website for Single Sign-On."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Popular CMS softwares (Wordpess, ...) offers plugins implementing OpenID Connect."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "So can also use provider such as Google, Facebook, ..."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect).  Then go to the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings), and enable \"{{% livechat_label external_auth_custom_oidc_label %}}\"."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Note: if you want to restrict allowed redirection urls on the provider side (best security practice), the plugin will show you the url to allow.  Just copy it in your OpenID Connect application configuration."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "You will now have to fill some settings."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "This is the button label in the following screenshot:"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#, fuzzy
+#| msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
+msgid "For now, it is not possible to localize this label."
+msgstr "Pour l'instant il n'est pas possible d'utiliser des tableaux Markdown : les outils de translation ne savent pas les gérer."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Your OpenID Connect provider must implement the [discovery URL](https://openid.net/specs/openid-connect-discovery-1_0.html).  Just set here the discovery url, that should be something like `https://example.com/.well-known/openid-configuration`."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Note: if your provider use the standard `/.well-known/openid-configuration` path, you can omit it.  For example `https://accounts.google.com` will work."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Your application Client ID."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "You application Client secret."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "If the button does not appear for end users, there might be a configuration issue.  You can try the [diagnostic tool](/peertube-plugin-livechat/documentation/installation/troubleshooting/) to get more information."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "If the button is displayed but is not working, check your Peertube logs.  It could be because the remote service does not use standard scopes or attribute names."
+msgstr ""
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#, fuzzy, no-wrap
+#| msgid "More features to come..."
+msgid "More to come"
+msgstr "Nouvelles fonctionnalités à venir..."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "Other authentication methods will be implemented in the future."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/_index.md
@@ -1608,6 +1797,20 @@ msgstr "Fédération"
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
 msgstr "Les paramètres suivants concernent la fédération avec d'autres instances Peertube et d'autres logiciels du fediverse."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy
+#| msgid "Please refer to the \"documentation\" documentation page.\n"
+msgid "See the detailed documentation page:"
+msgstr "Voir la page de documentation dédiée à la documentation.\n"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy
+#| msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
+msgid "[External Authentication](/peertube-plugin-livechat/documentation/admin/external_auth/)"
+msgstr "[Le bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/bot)"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2869,6 +3072,22 @@ msgstr "Avant de pouvoir parler dans le salon, vous allez devoir choisir un pseu
 msgid "![Joining chat when not connected](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
 msgstr "![Rejoindre le tchat quand pas connecté](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
 
+#. type: Title ####
+#: support/documentation/content/en/documentation/user/viewers.md
+#, no-wrap
+msgid "Log in using an external authentication provider"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "The Peertube instance can configure external authentication providers (Mastodon accounts, Google accounts, ...).  In such case, you will see a \"{{% livechat_label login_using_external_account %}}\" button, that will open a dialog modal.  In this dialog modal, there will be some buttons to connect using a remote account."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "Once you signed in the remote account, and have granted access, your nickname and avatar (if available) will be automatically fetched.  No other data will be stored.  These data will be automatically deleted several hours after your quit the chat."
+msgstr ""
+
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
@@ -2900,11 +3119,6 @@ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 9.0.0."
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you have a Peertube account, but not on the current instance, there is a \"{{% livechat_label login_using_external_account %}}\" button.  This button will open a dialog where you can enter your Peertube instance URL.  Once you entered it, it will check if the livechat plugin is available on the remote instance, and if the video is available.  If it is the case, you will be redirected to the video on the remote instance."
 msgstr "Si vous avez un compte Peertube, mais pas sur l'instance courante, il y a un bouton \"{{% livechat_label login_using_external_account %}}\". Ce bouton va ouvrir un fenêtre de dialogue où vous pourrez entrer l'URL de votre instance Peertube. Une fois celle-ci entrée, cela vérifiera sur le plugin livechat est disponible sur l'instance distante, et si la vidéo y est disponible. Dans ce cas, vous serez redirigé vers la vidéo sur l'instance distante."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/viewers.md
-msgid "![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
-msgstr "![Bouton connexion avec compte externe](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -3430,7 +3644,3 @@ msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XM
 #~ msgstr ""
 #~ "Pour l'instant, cela n'est pas encore géré dans Weblate. Je suis encore à la recherche de la bonne\n"
 #~ "solution technique.\n"
-
-#, no-wrap
-#~ msgid "Please refer to the \"documentation\" documentation page.\n"
-#~ msgstr "Voir la page de documentation dédiée à la documentation.\n"

@@ -184,6 +184,12 @@ function initExternalAuth (options: RegisterServerOptions): void {
   registerSetting({
     type: 'html',
     private: true,
+    descriptionHTML: loc('external_auth_custom_oidc_title')
+  })
+
+  registerSetting({
+    type: 'html',
+    private: true,
     descriptionHTML: loc('experimental_warning')
   })
 
@@ -239,27 +245,11 @@ function initExternalAuth (options: RegisterServerOptions): void {
     private: true
   })
 
-  // registerSetting({
-  //   name: 'external-auth-custom-oidc-scope',
-  //   label: loc('external_auth_custom_oidc_scope_label'),
-  //   descriptionHTML: loc('external_auth_custom_oidc_scope_description'),
-  //   type: 'input',
-  //   private: true,
-  //   default: 'openid profile'
-  // })
-  // registerSetting({
-  //   name: 'username-property',
-  //   label: 'Username property',
-  //   type: 'input',
-  //   private: true,
-  //   default: 'preferred_username'
-  // })
-  // registerSetting({
-  //   name: 'display-name-property',
-  //   label: 'Display name property',
-  //   type: 'input',
-  //   private: true
-  // })
+  // FIXME: adding settings for these?
+  // - scope (default: 'openid profile')
+  // - user-name property
+  // - display-name property
+  // - picture property
 }
 
 /**

@@ -29,6 +29,24 @@ Before being able to speak in the chat room, you have to enter a nickname in the
 
 ![Joining chat when not connected](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)
 
+#### Log in using an external authentication provider
+
+{{% notice warning %}}
+This feature can be disabled by the instance's adminitrators.
+{{% /notice %}}
+
+The Peertube instance can configure external authentication providers (Mastodon accounts, Google accounts, ...).
+In such case, you will see a "{{% livechat_label login_using_external_account %}}" button, that will open a dialog modal.
+In this dialog modal, there will be some buttons to connect using a remote account.
+
+![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)
+
+![External login dialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)
+
+Once you signed in the remote account, and have granted access, your nickname and avatar (if available) will be automatically fetched.
+No other data will be stored.
+These data will be automatically deleted several hours after your quit the chat.
+
 ### If you have a Peertube account
 
 If you are connected with your Peertube account, you will automatically join the room, using your Peertube nickname and avatar.
