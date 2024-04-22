@@ -63,11 +63,11 @@ Just set here the discovery url, that should be something like `https://example.
 Note: if your provider use the standard `/.well-known/openid-configuration` path, you can omit it.
 For example `https://accounts.google.com` will work.
 
-### {{% livechat_label external_auth_custom_oidc_client_id_label %}}
+### {{% livechat_label external_auth_oidc_client_id_label %}}
 
 Your application Client ID.
 
-### {{% livechat_label external_auth_custom_oidc_client_secret_label %}}
+### {{% livechat_label external_auth_oidc_client_secret_label %}}
 
 You application Client secret.
 

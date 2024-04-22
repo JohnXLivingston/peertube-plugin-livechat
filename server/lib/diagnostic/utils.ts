@@ -1,4 +1,6 @@
-type nextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody' | 'external-auth-custom-oidc' | 'everything-ok'
+type NextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody'
+| 'external-auth-custom-oidc' | 'external-auth-google-oidc' | 'external-auth-facebook-oidc'
+| 'everything-ok'
 
 interface MessageWithLevel {
   level: 'info' | 'warning' | 'error'
@@ -15,7 +17,7 @@ export interface TestResult {
     title: string
     message: string
   }>
-  next: nextValue | null
+  next: NextValue | null
   ok: boolean
   test: string
 }

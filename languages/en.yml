@@ -83,11 +83,20 @@ external_auth_custom_oidc_button_label_label: "Label for the connection button"
 external_auth_custom_oidc_button_label_description: "This label will be displayed to users, as the button label to authenticate with this OIDC provider."
 
 external_auth_custom_oidc_discovery_url_label: "Discovery URL"
-external_auth_custom_oidc_client_id_label: "Client ID"
-external_auth_custom_oidc_client_secret_label: "Client secret"
-external_auth_custom_oidc_redirect_uris_info_description: |
+external_auth_oidc_client_id_label: "Client ID"
+external_auth_oidc_client_secret_label: "Client secret"
+external_auth_oidc_redirect_uris_info_description: |
   <strong>Callback/Redirect URI:</strong>
   If you want to configure authorized redirection URI on the external Application, please add this url:
+
+external_auth_google_oidc_label: 'Use Google'
+external_auth_google_oidc_description: |
+  Enabling this adds a "login with Google" button.
+  You have to configure a Google OAuth application.
+external_auth_facebook_oidc_label: 'Use Facebook'
+external_auth_facebook_oidc_description: |
+  Enabling this adds a "login with Facebook" button.
+  You have to configure a Facebook OAuth application.
 
 chat_behaviour_description: "<h3>Chat behaviour</h3>"
 

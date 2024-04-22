@@ -2,8 +2,8 @@ login_remote_peertube_video_not_found_try_anyway_button: Svejedno pokušaj otvor
   video na Peertube instanci
 external_auth_custom_oidc_button_label_label: Oznaka za gumb povezivanja
 external_auth_custom_oidc_discovery_url_label: Discovery URL
-external_auth_custom_oidc_client_id_label: ID klijenta
-external_auth_custom_oidc_client_secret_label: Tajna klijenta
+external_auth_oidc_client_id_label: ID klijenta
+external_auth_oidc_client_secret_label: Tajna klijenta
 videos_list_label: Aktiviraj chat za ova videa
 prosody_peertube_uri_label: Peertube URL za API pozive
 save: Spremi

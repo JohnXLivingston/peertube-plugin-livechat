@@ -236,8 +236,11 @@ function register (clientOptions: RegisterClientOptions): void {
           return options.formValues['chat-no-anonymous'] !== false
       }
 
-      if (name?.startsWith('external-auth-custom-oidc-')) {
-        return options.formValues['external-auth-custom-oidc'] !== true
+      if (name?.startsWith('external-auth-')) {
+        const m = name.match(/^external-auth-(\w+)-oidc-/)
+        if (m) {
+          return options.formValues['external-auth-' + m[1] + '-oidc'] !== true
+        }
       }
 
       return false

@@ -36,11 +36,12 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
   const router = getRouter()
   const logger = peertubeHelpers.logger
 
-  router.get('/connect', asyncMiddleware(
+  router.get('/:type?/connect', asyncMiddleware(
     async (req: Request, res: Response, next: NextFunction) => {
-      logger.info('[oidc router] OIDC connect call')
+      const singletonType = req.params.type ?? 'custom'
+      logger.info('[oidc router] OIDC connect call (' + singletonType + ')')
       try {
-        const oidc = ExternalAuthOIDC.singleton()
+        const oidc = ExternalAuthOIDC.singleton(singletonType)
         const oidcClient = await oidc.load()
         if (!oidcClient) {
           throw new Error('[oidc router] External Auth OIDC not loaded yet')
@@ -57,9 +58,10 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
 
   const cbHandler = asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
-      logger.info('[oidc router] OIDC callback call')
+      const singletonType = req.params.type ?? 'custom'
+      logger.info('[oidc router] OIDC callback call (' + singletonType + ')')
       try {
-        const oidc = ExternalAuthOIDC.singleton()
+        const oidc = ExternalAuthOIDC.singleton(singletonType)
         const oidcClient = await oidc.load()
         if (!oidcClient) {
           throw new Error('[oidc router] External Auth OIDC not loaded yet')
@@ -102,8 +104,8 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
       }
     }
   )
-  router.get('/cb', cbHandler)
-  router.post('/cb', cbHandler)
+  router.get('/:type?/cb', cbHandler)
+  router.post('/:type?/cb', cbHandler)
 
   return router
 }

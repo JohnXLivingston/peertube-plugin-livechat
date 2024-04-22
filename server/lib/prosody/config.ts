@@ -197,9 +197,13 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
 
   let useExternal: boolean = false
   try {
-    const oidc = ExternalAuthOIDC.singleton()
-    if (await oidc.isOk()) {
-      useExternal = true
+    const oidcs = ExternalAuthOIDC.allSingletons()
+    for (const oidc of oidcs) {
+      if (await oidc.isOk()) {
+        // At least one external authentcation => we must enable the external virtual host.
+        useExternal = true
+        break
+      }
     }
   } catch (err) {
     logger.error(err)

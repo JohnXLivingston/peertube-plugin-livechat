@@ -49,13 +49,14 @@ function getMimeTypeFromArrayBuffer (arrayBuffer: ArrayBuffer): AcceptableAvatar
 type UserInfoField = 'username' | 'last_name' | 'first_name' | 'nickname' | 'picture'
 
 interface UnserializedToken {
+  type: ExternalAuthOIDCType
   jid: string
   password: string
   nickname: string
   expire: Date
 }
 
-let singleton: ExternalAuthOIDC | undefined
+let singletons: Map<ExternalAuthOIDCType, ExternalAuthOIDC> | undefined
 
 async function getRandomBytes (size: number): Promise<Buffer> {
   return new Promise((resolve, reject) => {
@@ -67,10 +68,13 @@ async function getRandomBytes (size: number): Promise<Buffer> {
   })
 }
 
+type ExternalAuthOIDCType = 'custom' | 'google' | 'facebook'
+
 /**
  * This class handles the external OpenId Connect provider, if defined.
  */
 class ExternalAuthOIDC {
+  private readonly singletonType: ExternalAuthOIDCType
   private readonly enabled: boolean
   private readonly buttonLabel: string | undefined
   private readonly discoveryUrl: string | undefined
@@ -82,7 +86,6 @@ class ExternalAuthOIDC {
   private readonly externalVirtualhost: string
   private readonly avatarsDir: string
   private readonly avatarsFiles: string[]
-  private pruneTimer?: NodeJS.Timer
 
   private readonly encryptionOptions = {
     algorithm: 'aes256' as string,
@@ -113,6 +116,7 @@ class ExternalAuthOIDC {
 
   constructor (params: {
     logger: RegisterServerOptions['peertubeHelpers']['logger']
+    singletonType: ExternalAuthOIDCType
     enabled: boolean
     buttonLabel: string | undefined
     discoveryUrl: string | undefined
@@ -132,6 +136,7 @@ class ExternalAuthOIDC {
       error: (s) => params.logger.error('[ExternalAuthOIDC] ' + s)
     }
 
+    this.singletonType = params.singletonType
     this.enabled = !!params.enabled
     this.secretKey = params.secretKey
     this.redirectUrl = params.redirectUrl
@@ -146,6 +151,13 @@ class ExternalAuthOIDC {
       this.clientId = params.clientId
       this.clientSecret = params.clientSecret
     }
+  }
+
+  /**
+   * This singleton type.
+   */
+  public get type (): ExternalAuthOIDCType {
+    return this.singletonType
   }
 
   /**
@@ -390,13 +402,15 @@ class ExternalAuthOIDC {
     // Now we will encrypt jid + password, and return it to the browser.
     // The browser will be able to use this encrypted data with the api/configuration/room API.
     const tokenContent: UnserializedToken = {
+      type: this.type,
       jid,
       password,
       nickname,
       // expires in 12 hours (user will just have to do the whole process again).
       expire: (new Date(Date.now() + 12 * 3600 * 1000))
     }
-    const token = await this.encrypt(JSON.stringify(tokenContent))
+    // Token is prefixed by the type, so we can get the correct singleton for deserializing.
+    const token = this.type + '-' + await this.encrypt(JSON.stringify(tokenContent))
 
     let avatar = await this.readUserInfoPicture(userInfo)
     if (!avatar) {
@@ -447,12 +461,24 @@ class ExternalAuthOIDC {
    */
   public async unserializeToken (token: string): Promise<UnserializedToken | null> {
     try {
+      // First, check the prefix:
+      if (!token.startsWith(this.type + '-')) {
+        throw new Error('Wrong token prefix')
+      }
+      // Removing the prefix:
+      token = token.substring(this.type.length + 1)
+
       const decrypted = await this.decrypt(token)
       const o = JSON.parse(decrypted) // can fail
 
       if (typeof o !== 'object') {
         throw new Error('Invalid encrypted data')
       }
+
+      if (o.type !== this.type) {
+        throw new Error('Token type is not the expected one')
+      }
+
       if (typeof o.jid !== 'string' || o.jid === '') {
         throw new Error('No jid')
       }
@@ -473,6 +499,7 @@ class ExternalAuthOIDC {
       }
 
       return {
+        type: o.type,
         jid: o.jid,
         password: o.password,
         nickname: o.nickname,
@@ -623,98 +650,134 @@ class ExternalAuthOIDC {
   }
 
   /**
-   * Starts an interval timer to prune external users from Prosody.
-   * @param options Peertube server options.
+   * frees the singletons
    */
-  public startPruneTimer (options: RegisterServerOptions): void {
-    this.stopPruneTimer() // just in case...
+  public static async destroySingletons (): Promise<void> {
+    if (!singletons) { return }
 
-    // every hour (every minutes in debug mode)
-    const pruneInterval = debugNumericParameter(options, 'externalAccountPruneInterval', 60 * 1000, 60 * 60 * 1000)
-    this.logger.info(`Creating a timer for external account pruning, every ${Math.round(pruneInterval / 1000)}s.`)
+    stopPruneTimer()
 
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    this.pruneTimer = setInterval(async () => {
-      try {
-        if (!await this.isOk()) { return }
+    const keys = singletons.keys()
+    for (const key of keys) {
+      const singleton = singletons.get(key)
+      if (!singleton) { continue }
+      singletons.delete(key)
+    }
 
-        this.logger.info('Pruning external users...')
-        await pruneUsers(options)
-      } catch (err) {
-        this.logger.error('Error while pruning external users: ' + (err as string))
-      }
-    }, pruneInterval)
+    singletons = undefined
   }
 
   /**
-   * Stops the prune timer.
+   * Instanciate all singletons.
+   * Note: no need to destroy singletons before creating new ones.
    */
-  public stopPruneTimer (): void {
-    if (!this.pruneTimer) { return }
-    clearInterval(this.pruneTimer)
-    this.pruneTimer = undefined
-  }
+  public static async initSingletons (options: RegisterServerOptions): Promise<void> {
+    const prosodyDomain = await getProsodyDomain(options)
+    // FIXME: this is not optimal to call here.
+    const prosodyFilePaths = await getProsodyFilePaths(options)
 
-  /**
-   * frees the singleton
-   */
-  public static async destroySingleton (): Promise<void> {
-    if (!singleton) { return }
-    singleton.stopPruneTimer()
-    singleton = undefined
-  }
-
-  /**
-   * Instanciate the singleton.
-   * Note: no need to destroy the singleton before creating a new one.
-   */
-  public static async initSingleton (options: RegisterServerOptions): Promise<ExternalAuthOIDC> {
     const settings = await options.settingsManager.getSettings([
       'external-auth-custom-oidc',
       'external-auth-custom-oidc-button-label',
       'external-auth-custom-oidc-discovery-url',
       'external-auth-custom-oidc-client-id',
-      'external-auth-custom-oidc-client-secret'
+      'external-auth-custom-oidc-client-secret',
+      'external-auth-google-oidc',
+      'external-auth-google-oidc-client-id',
+      'external-auth-google-oidc-client-secret',
+      'external-auth-facebook-oidc',
+      'external-auth-facebook-oidc-client-id',
+      'external-auth-facebook-oidc-client-secret'
     ])
 
-    // Generating a secret key that will be used for the authenticatio process (can change on restart).
-    const secretKey = (await getRandomBytes(16)).toString('hex')
+    const init = async function initSingleton (
+      singletonType: ExternalAuthOIDCType,
+      buttonLabel: string | undefined,
+      discoveryUrl: string | undefined
+    ): Promise<void> {
+      // Generating a secret key that will be used for the authenticatio process (can change on restart).
+      const secretKey = (await getRandomBytes(16)).toString('hex')
 
-    const prosodyDomain = await getProsodyDomain(options)
+      const singleton = new ExternalAuthOIDC({
+        logger: options.peertubeHelpers.logger,
+        singletonType,
+        enabled: settings['external-auth-' + singletonType + '-oidc'] as boolean,
+        buttonLabel,
+        discoveryUrl,
+        clientId: settings['external-auth-' + singletonType + '-oidc-client-id'] as string | undefined,
+        clientSecret: settings['external-auth-' + singletonType + '-oidc-client-secret'] as string | undefined,
+        secretKey,
+        connectUrl: ExternalAuthOIDC.connectUrl(options, singletonType),
+        redirectUrl: ExternalAuthOIDC.redirectUrl(options, singletonType),
+        externalVirtualhost: 'external.' + prosodyDomain,
+        avatarsDir: prosodyFilePaths.avatars,
+        avatarsFiles: prosodyFilePaths.avatarsFiles
+      })
 
-    // FIXME: this is not optimal to call here.
-    const prosodyFilePaths = await getProsodyFilePaths(options)
+      singletons ??= new Map<ExternalAuthOIDCType, ExternalAuthOIDC>()
+      singletons.set(singletonType, singleton)
+    }
 
-    singleton = new ExternalAuthOIDC({
-      logger: options.peertubeHelpers.logger,
-      enabled: settings['external-auth-custom-oidc'] as boolean,
-      buttonLabel: settings['external-auth-custom-oidc-button-label'] as string | undefined,
-      discoveryUrl: settings['external-auth-custom-oidc-discovery-url'] as string | undefined,
-      clientId: settings['external-auth-custom-oidc-client-id'] as string | undefined,
-      clientSecret: settings['external-auth-custom-oidc-client-secret'] as string | undefined,
-      secretKey,
-      connectUrl: ExternalAuthOIDC.connectUrl(options),
-      redirectUrl: ExternalAuthOIDC.redirectUrl(options),
-      externalVirtualhost: 'external.' + prosodyDomain,
-      avatarsDir: prosodyFilePaths.avatars,
-      avatarsFiles: prosodyFilePaths.avatarsFiles
-    })
+    await Promise.all([
+      init(
+        'custom',
+        settings['external-auth-custom-oidc-button-label'] as string | undefined,
+        settings['external-auth-custom-oidc-discovery-url'] as string | undefined
+      ),
+      init(
+        'google',
+        'Google',
+        'https://accounts.google.com'
+      ),
+      init(
+        'facebook',
+        'Facebook',
+        'https://www.facebook.com'
+      )
+    ])
 
-    singleton.startPruneTimer(options)
-
-    return singleton
+    startPruneTimer(options)
   }
 
   /**
    * Gets the singleton, or raise an exception if it is too soon.
+   * @param ExternalAuthOIDCType The singleton type.
    * @throws Error
    * @returns the singleton
    */
-  public static singleton (): ExternalAuthOIDC {
+  public static singleton (singletonType: ExternalAuthOIDCType | string): ExternalAuthOIDC {
+    if (!singletons) {
+      throw new Error('ExternalAuthOIDC singletons are not initialized yet')
+    }
+    const singleton = singletons.get(singletonType as ExternalAuthOIDCType)
     if (!singleton) {
-      throw new Error('ExternalAuthOIDC singleton is not initialized yet')
+      throw new Error(`ExternalAuthOIDC singleton "${singletonType}" is not initiliazed yet`)
     }
     return singleton
+  }
+
+  /**
+   * Get all initialiazed singletons.
+   */
+  public static allSingletons (): ExternalAuthOIDC[] {
+    if (!singletons) { return [] }
+    return Array.from(singletons.values())
+  }
+
+  /**
+   * Reading header X-Peertube-Plugin-Livechat-External-Auth-OIDC-Token,
+   * got the singleton that is supposed to read the token.
+   * Note: the token must be unserialized before supposing it is valid!
+   * @param token the authentication token
+   */
+  public static singletonForToken (token: string): ExternalAuthOIDC | null {
+    try {
+      const m = token.match(/^(\w+)-/)
+      if (!m) { return null }
+      return ExternalAuthOIDC.singleton(m[1])
+    } catch (err) {
+      return null
+    }
   }
 
   /**
@@ -722,8 +785,11 @@ class ExternalAuthOIDC {
    * @param options Peertube server options
    * @returns the uri
    */
-  public static connectUrl (options: RegisterServerOptions): string {
-    const path = getBaseRouterRoute(options) + 'oidc/connect'
+  public static connectUrl (options: RegisterServerOptions, type: ExternalAuthOIDCType): string {
+    if (!/^\w+$/.test(type)) {
+      throw new Error('Invalid singleton type')
+    }
+    const path = getBaseRouterRoute(options) + 'oidc/' + type + '/connect'
     return canonicalizePluginUri(options, path, {
       removePluginVersion: true
     })
@@ -734,14 +800,67 @@ class ExternalAuthOIDC {
    * @param options Peertube server optiosn
    * @returns the uri
    */
-  public static redirectUrl (options: RegisterServerOptions): string {
-    const path = getBaseRouterRoute(options) + 'oidc/cb'
+  public static redirectUrl (options: RegisterServerOptions, type: ExternalAuthOIDCType): string {
+    if (!/^\w+$/.test(type)) {
+      throw new Error('Invalid singleton type')
+    }
+    const path = getBaseRouterRoute(options) + 'oidc/' + type + '/cb'
     return canonicalizePluginUri(options, path, {
       removePluginVersion: true
     })
   }
 }
 
+let pruneTimer: NodeJS.Timer | undefined
+
+/**
+   * Starts an interval timer to prune external users from Prosody.
+   * @param options Peertube server options.
+   */
+function startPruneTimer (options: RegisterServerOptions): void {
+  stopPruneTimer() // just in case...
+
+  const logger = {
+    debug: (s: string) => options.peertubeHelpers.logger.debug('[ExternalAuthOIDC startPruneTimer] ' + s),
+    info: (s: string) => options.peertubeHelpers.logger.info('[ExternalAuthOIDC startPruneTimer] ' + s),
+    warn: (s: string) => options.peertubeHelpers.logger.warn('[ExternalAuthOIDC startPruneTimer] ' + s),
+    error: (s: string) => options.peertubeHelpers.logger.error('[ExternalAuthOIDC startPruneTimer] ' + s)
+  }
+
+  // every hour (every minutes in debug mode)
+  const pruneInterval = debugNumericParameter(options, 'externalAccountPruneInterval', 60 * 1000, 60 * 60 * 1000)
+  logger.info(`Creating a timer for external account pruning, every ${Math.round(pruneInterval / 1000)}s.`)
+
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+  pruneTimer = setInterval(async () => {
+    try {
+      // Checking if at least one active singleton
+      let ok = false
+      for (const oidc of ExternalAuthOIDC.allSingletons()) {
+        if (!await oidc.isOk()) { continue }
+        ok = true
+        break
+      }
+      if (!ok) { return }
+
+      logger.info('Pruning external users...')
+      await pruneUsers(options)
+    } catch (err) {
+      logger.error('Error while pruning external users: ' + (err as string))
+    }
+  }, pruneInterval)
+}
+
+/**
+ * Stops the prune timer.
+ */
+function stopPruneTimer (): void {
+  if (!pruneTimer) { return }
+  clearInterval(pruneTimer)
+  pruneTimer = undefined
+}
+
 export {
-  ExternalAuthOIDC
+  ExternalAuthOIDC,
+  ExternalAuthOIDCType
 }

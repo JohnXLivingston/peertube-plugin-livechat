@@ -21,8 +21,8 @@ async function initAuthApiRouter (options: RegisterServerOptions, router: Router
         const token = req.header('X-Peertube-Plugin-Livechat-External-Auth-OIDC-Token')
         if (token) {
           try {
-            const oidc = ExternalAuthOIDC.singleton()
-            if (await oidc.isOk()) {
+            const oidc = ExternalAuthOIDC.singletonForToken(token)
+            if (oidc && await oidc.isOk()) {
               const unserializedToken = await oidc.unserializeToken(token)
               if (unserializedToken) {
                 res.status(200).json({

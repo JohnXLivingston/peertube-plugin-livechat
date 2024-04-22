@@ -1,14 +1,19 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { newResult, TestResult } from './utils'
-import { ExternalAuthOIDC } from '../external-auth/oidc'
+import { ExternalAuthOIDC, ExternalAuthOIDCType } from '../external-auth/oidc'
 
-export async function diagExternalAuthCustomOIDC (test: string, _options: RegisterServerOptions): Promise<TestResult> {
+export async function diagExternalAuthOIDC (
+  test: string,
+  _options: RegisterServerOptions,
+  singletonType: ExternalAuthOIDCType,
+  next: TestResult['next']
+): Promise<TestResult> {
   const result = newResult(test)
-  result.label = 'Test External Auth Custom OIDC'
-  result.next = 'everything-ok'
+  result.label = 'Test External Auth OIDC: ' + singletonType
+  result.next = next
 
   try {
-    const oidc = ExternalAuthOIDC.singleton()
+    const oidc = ExternalAuthOIDC.singleton(singletonType)
 
     if (oidc.isDisabledBySettings()) {
       result.ok = true
@@ -40,7 +45,7 @@ export async function diagExternalAuthCustomOIDC (test: string, _options: Regist
     return result
   }
 
-  const oidc = ExternalAuthOIDC.singleton()
+  const oidc = ExternalAuthOIDC.singleton(singletonType)
   const oidcClient = await oidc.load()
   if (oidcClient) {
     result.messages.push('Discovery URL loaded: ' + JSON.stringify(oidcClient.issuer.metadata))

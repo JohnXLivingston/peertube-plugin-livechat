@@ -4,7 +4,7 @@ import { TestResult, newResult } from './utils'
 import { diagDebug } from './debug'
 import { diagProsody } from './prosody'
 import { diagVideo } from './video'
-import { diagExternalAuthCustomOIDC } from './external-auth-custom-oidc'
+import { diagExternalAuthOIDC } from './external-auth-oidc'
 import { helpUrl } from '../../../shared/lib/help'
 
 export async function diag (test: string, options: RegisterServerOptions): Promise<TestResult> {
@@ -19,7 +19,11 @@ export async function diag (test: string, options: RegisterServerOptions): Promi
   } else if (test === 'prosody') {
     result = await diagProsody(test, options)
   } else if (test === 'external-auth-custom-oidc') {
-    result = await diagExternalAuthCustomOIDC(test, options)
+    result = await diagExternalAuthOIDC(test, options, 'custom', 'external-auth-google-oidc')
+  } else if (test === 'external-auth-google-oidc') {
+    result = await diagExternalAuthOIDC(test, options, 'google', 'external-auth-facebook-oidc')
+  } else if (test === 'external-auth-facebook-oidc') {
+    result = await diagExternalAuthOIDC(test, options, 'facebook', 'everything-ok')
   } else if (test === 'everything-ok') {
     result = newResult(test)
     result.label = 'Everything seems fine'
