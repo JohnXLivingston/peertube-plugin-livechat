@@ -35,8 +35,6 @@ Doing so, you can for example use your website for Single Sign-On.
 
 Popular CMS softwares (Wordpess, ...) offers plugins implementing OpenID Connect.
 
-So can also use provider such as Google, Facebook, ...
-
 To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect).
 Then go to the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings), and enable "{{% livechat_label external_auth_custom_oidc_label %}}".
 
@@ -70,6 +68,15 @@ Your application Client ID.
 ### {{% livechat_label external_auth_oidc_client_secret_label %}}
 
 You application Client secret.
+
+### Google, Facebook, ...
+
+In addition to that, you can also configure one or several "standard" Open ID Connect provider (Google, Facebook, ...).
+
+For these providers, discovery url and button label are preset.
+You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret.
+
+If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/).
 
 ### Troubleshooting
 

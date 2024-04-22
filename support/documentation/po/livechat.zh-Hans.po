@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-04-19 11:03+0200\n"
+"POT-Creation-Date: 2024-04-22 14:48+0200\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/zh_Hans/>\n"
@@ -1585,11 +1585,6 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-msgid "So can also use provider such as Google, Facebook, ..."
-msgstr ""
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect).  Then go to the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings), and enable \"{{% livechat_label external_auth_custom_oidc_label %}}\"."
 msgstr ""
 
@@ -1631,6 +1626,27 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You application Client secret."
+msgstr ""
+
+#. type: Title ###
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#, no-wrap
+msgid "Google, Facebook, ..."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "In addition to that, you can also configure one or several \"standard\" Open ID Connect provider (Google, Facebook, ...)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "For these providers, discovery url and button label are preset.  You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/)."
 msgstr ""
 
 #. type: Plain text
