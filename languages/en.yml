@@ -432,4 +432,5 @@ login_remote_peertube_no_livechat: "The livechat plugin is not installed on this
 login_remote_peertube_video_not_found: "This video is not available on this Peertube instance."
 login_remote_peertube_video_not_found_try_anyway: "In some cases, the video can still be retrieved if you connect to the remote instance."
 login_remote_peertube_video_not_found_try_anyway_button: "Try anyway to open the video on the Peertube instance"
+login_remote_peertube_video_open_failed: "Your browser has blocked the opening on the remote instance, please try to open manually this link:"
 login_external_auth_alert_message: "Authentication failed"

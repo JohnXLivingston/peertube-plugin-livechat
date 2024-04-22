@@ -9,7 +9,8 @@ export default class LivechatExternalLoginContentElement extends CustomElement {
       external_auth_oidc_alert_message: { type: String, attribute: false },
       remote_peertube_state: { type: String, attribute: false },
       remote_peertube_alert_message: { type: String, attribute: false },
-      remote_peertube_try_anyway_url: { type: String, attribute: false }
+      remote_peertube_try_anyway_url: { type: String, attribute: false },
+      remote_peertube_open_failed_url: { type: String, attribute: false }
     }
   }
 
@@ -23,7 +24,8 @@ export default class LivechatExternalLoginContentElement extends CustomElement {
       external_auth_oidc_alert_message: this.external_auth_oidc_alert_message,
       remote_peertube_state: this.remote_peertube_state,
       remote_peertube_alert_message: this.remote_peertube_alert_message,
-      remote_peertube_try_anyway_url: this.remote_peertube_try_anyway_url
+      remote_peertube_try_anyway_url: this.remote_peertube_try_anyway_url,
+      remote_peertube_open_failed_url: this.remote_peertube_open_failed_url
     })
   }
 
@@ -82,13 +84,14 @@ export default class LivechatExternalLoginContentElement extends CustomElement {
           searchAPIUrl.searchParams.append('count', 1)
           searchAPIUrl.searchParams.append('search', search)
           searchAPIUrl.searchParams.append('searchTarget', searchTarget)
-          const videos = await (await fetch(searchAPIUrl.toString())).json()
+          const videos = null // await (await fetch(searchAPIUrl.toString())).json()
           if (videos && Array.isArray(videos.data) && videos.data.length > 0 && videos.data[0].uuid) {
             console.log('Video found, opening on remote instance')
             this.remote_peertube_state = 'ok'
-            window.location.href = new URL(
+            const url = new URL(
               '/videos/watch/' + encodeURIComponent(videos.data[0].uuid), remotePeertubeUrl
             ).toString()
+            this.openUrlTargetTop(url)
             return
           }
         }
@@ -110,10 +113,28 @@ export default class LivechatExternalLoginContentElement extends CustomElement {
     }
   }
 
+  openUrlTargetTop (url) {
+    try {
+      // window.open can fail when in an iframe that restricts some operations
+      // (when embeding the chat in a website).
+      // So, we must try/catch, and propose an alternative open method.
+      window.open(url, '_top')
+    } catch (e) {
+      console.log(e)
+      this.remote_peertube_state = 'error'
+      // eslint-disable-next-line no-undef
+      this.remote_peertube_alert_message = __(LOC_login_remote_peertube_video_open_failed)
+      this.remote_peertube_open_failed_url = url
+
+      this.remote_peertube_try_anyway_url = ''
+    }
+  }
+
   clearAlert () {
     this.external_auth_oidc_alert_message = ''
     this.remote_peertube_alert_message = ''
     this.remote_peertube_try_anyway_url = ''
+    this.remote_peertube_open_failed_url = ''
   }
 }
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Fix #370: "open with a remote Peertube" broken when chat is embedded in an iframe.
+
 ## 9.0.0
 
 **Breaking changes**:

@@ -165,7 +165,16 @@ export const tplExternalLoginModal = (el, o) => {
       }
       ${!o.remote_peertube_alert_message
         ? ''
-        : html`<div class="invalid-feedback d-block">${o.remote_peertube_alert_message}</div>`
+        : html`<div class="invalid-feedback d-block">
+          ${o.remote_peertube_alert_message}
+          ${
+            !o.remote_peertube_open_failed_url
+              ? ''
+              : html`<a href="${o.remote_peertube_open_failed_url}" target="_top">
+                ${o.remote_peertube_open_failed_url}
+              </a>`
+          }
+        </div>`
       }
       ${!o.remote_peertube_try_anyway_url
         ? ''
@@ -174,7 +183,7 @@ export const tplExternalLoginModal = (el, o) => {
             // eslint-disable-next-line no-undef
             __(LOC_login_remote_peertube_video_not_found_try_anyway)
           }
-          <button class="btn btn-primary" onclick="window.location.href='${o.remote_peertube_try_anyway_url}'">${
+          <button class="btn btn-primary" @click=${() => el.openUrlTargetTop(o.remote_peertube_try_anyway_url)}>${
             // eslint-disable-next-line no-undef
             __(LOC_login_remote_peertube_video_not_found_try_anyway_button)
           }</button>
