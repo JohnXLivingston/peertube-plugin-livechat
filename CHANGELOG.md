@@ -1,9 +1,6 @@
 # Changelog
 
-## 9.0.0 (Not Released Yet)
-
-TODO: replace commit_id by a tag in build-conversejs
-TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
+## 9.0.0
 
 **Breaking changes**:
 
@@ -15,7 +12,7 @@ TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/48
 * For anonymous users: new "log in using an external account" dialog, with following options:
   * remote Peertube account,
   * #128, #363 (**Experimental Feature**): possibility to configure an OpenID Connect provider on the instance level.
-  * #128: adding some standard OpenID Connect providers (Google, Facebook).
+  * #128, #367: adding some standard OpenID Connect providers (Google, Facebook).
 * #143: User colors: implementing [XEP-0392](https://xmpp.org/extensions/xep-0392.html) to have random colors on users nicknames
 * #330: Chat does no more use an iframe to display the chat besides the videos.
 * #330: Fullscreen chat: now uses a custom page (in other words: when opening the chat in a new tab, you will have the Peertube menu).
