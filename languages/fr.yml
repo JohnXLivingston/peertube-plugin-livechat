@@ -412,3 +412,28 @@ login_remote_peertube_video_not_found: Cette vidéo n'est pas disponible sur cet
   instance Peertube.
 login_remote_peertube_video_not_found_try_anyway_button: Essayer quand-même d'ouvrir
   la vidéo sur l'instance Peertube
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
+external_auth_custom_oidc_label: Utiliser un fournisseur OpenID Connect
+external_auth_custom_oidc_discovery_url_label: URL de découverte (Discovery URL)
+external_auth_google_oidc_description: "Activer cette option ajoute un bouton «se
+  connecter avec Google».\nVous devez configurer une application OAuth Google.\n"
+external_auth_description: "<h3>Authentification externe</h3>\nPour les utilisateur⋅rices
+  qui n'ont pas de compte Peertube, vous pouvez activer diverses méthodes d'authentification
+  basées sur des fournisseurs d'identité externes.\n"
+external_auth_custom_oidc_description: "Vous pouvez configurer un fournisseur OpenID
+  Connect externe, qui pourra être utilisé pour se connecter au tchat.\nVeuillez vous
+  référer à la documentation :\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
+  \ target=\"_blank\">Paramètres</a>.\n"
+external_auth_oidc_client_id_label: Client ID
+external_auth_oidc_client_secret_label: Secret client (Client Secret)
+external_auth_oidc_redirect_uris_info_description: "<strong>URL de retour :</strong>\n
+  Si vous voulez configurer les URL de retour autorisées pour l'application externe,
+  veuillez ajouter cette url :\n"
+external_auth_google_oidc_label: Utiliser Google
+external_auth_facebook_oidc_label: Utiliser Facebook
+external_auth_facebook_oidc_description: "Activer cette option ajoute un bouton «se
+  connecter avec Facebook».\nVous devez configurer une application OAuth Facebook.\n"
+login_external_auth_alert_message: Échec de l'authentification
+external_auth_custom_oidc_button_label_label: Libellé pour le bouton de connexion
+external_auth_custom_oidc_button_label_description: Ce libellé va être affiché aux
+  utilisateur⋅rices, en tant que libellé du bouton de connection OIDC.
