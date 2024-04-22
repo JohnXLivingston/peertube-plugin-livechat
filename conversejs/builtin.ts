@@ -109,7 +109,7 @@ async function initConverse (
   let isRemoteWithNicknameSet: boolean = false
 
   // OIDC (OpenID Connect):
-  const tryOIDC = !!initConverseParams.externalAuthOIDC
+  const tryOIDC = (initConverseParams.externalAuthOIDC?.length ?? 0) > 0
 
   const auth = await getLocalAuthentInfos(authenticationUrl, tryOIDC, peertubeAuthHeader)
 
@@ -171,8 +171,7 @@ async function initConverse (
   params.livechat_specific_external_authent = isAuthenticatedWithExternalAccount
 
   if (tryOIDC && !isAuthenticated) {
-    params.livechat_external_auth_oidc_button_label = initConverseParams.externalAuthOIDC?.buttonLabel
-    params.livechat_external_auth_oidc_url = initConverseParams.externalAuthOIDC?.url
+    params.livechat_external_auth_oidc_buttons = initConverseParams.externalAuthOIDC
   }
 
   if (tryOIDC) { // also needed when authenticated (for the signout button)

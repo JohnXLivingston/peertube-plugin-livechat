@@ -85,14 +85,18 @@ async function getConverseJSParams (
       )
     } else {
       try {
-        const customOidc = ExternalAuthOIDC.singleton('custom')
-        if (await customOidc.isOk()) {
-          const authUrl = customOidc.getConnectUrl()
-          const buttonLabel = customOidc.getButtonLabel()
-          if (authUrl && buttonLabel) {
-            externalAuthOIDC = {
-              buttonLabel: buttonLabel,
-              url: authUrl
+        const oidcs = ExternalAuthOIDC.allSingletons()
+        for (const oidc of oidcs) {
+          if (await oidc.isOk()) {
+            const authUrl = oidc.getConnectUrl()
+            const buttonLabel = oidc.getButtonLabel()
+            if (authUrl && buttonLabel) {
+              externalAuthOIDC ??= []
+              externalAuthOIDC.push({
+                type: oidc.type,
+                buttonLabel: buttonLabel,
+                url: authUrl
+              })
             }
           }
         }

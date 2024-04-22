@@ -1,6 +1,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Request, Response, CookieOptions } from 'express'
 import type { ExternalAccountInfos, AcceptableAvatarMimeType } from './types'
+import type { ExternalAuthOIDCType } from '../../../shared/lib/types'
 import { ExternalAuthenticationError } from './error'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
@@ -67,8 +68,6 @@ async function getRandomBytes (size: number): Promise<Buffer> {
     })
   })
 }
-
-type ExternalAuthOIDCType = 'custom' | 'google' | 'facebook'
 
 /**
  * This class handles the external OpenId Connect provider, if defined.

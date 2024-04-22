@@ -22,10 +22,11 @@ interface InitConverseJSParams {
   transparent: boolean
   forceDefaultHideMucParticipants?: boolean
   autofocus?: boolean
-  externalAuthOIDC?: {
+  externalAuthOIDC?: Array<{
+    type: ExternalAuthOIDCType
     buttonLabel: string
     url: string
-  }
+  }>
 }
 
 interface InitConverseJSParamsError {
@@ -119,6 +120,8 @@ interface ExternalAuthResultError {
 
 type ExternalAuthResult = ExternalAuthResultError | ExternalAuthResultOk
 
+type ExternalAuthOIDCType = 'custom' | 'google' | 'facebook'
+
 export type {
   ConverseJSTheme,
   InitConverseJSParams,
@@ -132,5 +135,6 @@ export type {
   ChatPeertubeIncludeMode,
   ExternalAuthResultError,
   ExternalAuthResultOk,
-  ExternalAuthResult
+  ExternalAuthResult,
+  ExternalAuthOIDCType
 }
