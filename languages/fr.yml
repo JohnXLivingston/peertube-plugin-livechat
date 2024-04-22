@@ -424,7 +424,7 @@ external_auth_custom_oidc_description: "Vous pouvez configurer un fournisseur Op
   Connect externe, qui pourra être utilisé pour se connecter au tchat.\nVeuillez vous
   référer à la documentation :\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
   \ target=\"_blank\">Paramètres</a>.\n"
-external_auth_oidc_client_id_label: Client ID
+external_auth_oidc_client_id_label: ID Client (Client ID)
 external_auth_oidc_client_secret_label: Secret client (Client Secret)
 external_auth_oidc_redirect_uris_info_description: "<strong>URL de retour :</strong>\n
   Si vous voulez configurer les URL de retour autorisées pour l'application externe,
