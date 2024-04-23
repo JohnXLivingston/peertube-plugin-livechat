@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-04-22 14:48+0200\n"
-"PO-Revision-Date: 2024-04-20 16:38+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-04-24 02:27+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1690,22 +1692,31 @@ msgstr "Ihr Anwendungs Client secret."
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #, no-wrap
 msgid "Google, Facebook, ..."
-msgstr ""
+msgstr "Google, Facebook, ..."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "In addition to that, you can also configure one or several \"standard\" Open ID Connect provider (Google, Facebook, ...)."
 msgstr ""
+"Darüber hinaus können Sie auch einen oder mehrere \"Standard\"-Open ID "
+"Connect-Anbieter (Google, Facebook, ...) konfigurieren."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "For these providers, discovery url and button label are preset.  You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret."
 msgstr ""
+"Bei diesen Anbietern sind die Discovery-Url und die "
+"Schaltflächenbeschriftung voreingestellt.  Sie müssen lediglich eine OAuth2-"
+"Anwendung auf der Anbieterseite erstellen und Client ID und Client Secret "
+"konfigurieren."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/)."
 msgstr ""
+"Wenn Ihnen ein Standardanbieter einfällt, der noch nicht verfügbar ist, "
+"können Sie um eine Implementierung bitten, indem Sie ein [neues Thema "
+"eröffnen](/peertube-plugin-livechat/de/issues/)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
