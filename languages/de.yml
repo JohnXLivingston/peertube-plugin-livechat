@@ -414,6 +414,15 @@ external_auth_description: "<h3>Externe Authentifizierung</h3>\nFür Benutzer, d
   kein Peertubekonto haben, können Sie verschiedene Authentifizierungsmodi auf der
   Grundlage von externen Authentifizierungsanbietern aktivieren.\n"
 login_external_auth_alert_message: Authentifizierung fehlgeschlagen
-external_auth_oidc_redirect_uris_info_description: "<strong>Callback/Redirect
-  URI:</strong>\nWenn Sie eine autorisierte Umleitungs-URI für die externe Anwendung
-  konfigurieren möchten, fügen Sie bitte diese URL hinzu:\n"
+external_auth_oidc_redirect_uris_info_description: "<strong>Callback/Redirect URI:</strong>\n
+  Wenn Sie eine autorisierte Umleitungs-URI für die externe Anwendung konfigurieren
+  möchten, fügen Sie bitte diese URL hinzu:\n"
+external_auth_google_oidc_description: "Wenn Sie dies aktivieren, wird eine Schaltfläche
+  \"Über Google anmelden\" hinzugefügt.\nSie müssen eine Google OAuth-Anwendung konfigurieren.\n"
+external_auth_google_oidc_label: Über Google anmelden
+external_auth_facebook_oidc_label: Über Facebook anmelden
+external_auth_facebook_oidc_description: "Wenn Sie dies aktivieren, wird eine Schaltfläche
+  \"Über Facebook anmelden\" hinzugefügt.\nSie müssen eine Facebook OAuth-Anwendung
+  konfigurieren.\n"
+login_remote_peertube_video_open_failed: 'Ihr Browser hat das Öffnen der Remote-Instanz
+  blockiert. Bitte versuchen Sie, diesen Link manuell zu öffnen:'
