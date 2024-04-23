@@ -62,9 +62,15 @@ body.livechat-readonly.livechat-noscroll {
     display: flex !important;
     flex-flow: row wrap !important;
     padding-bottom: 0.5em !important;
+    padding-top: 0.5em !important;
     border-top: 1px solid var(--chatroom-head-bg-color) !important;
-    gap: 10px;
+    gap: 0.5em 10px;
     align-items: baseline;
+
+    .form-group,
+    label {
+      margin-bottom: 0 !important; // replaced by the gap on .livechat-viewer-mode-content
+    }
 
     label {
       color: var(--text-color); // fix converseJs css that breaks this label color.
@@ -77,7 +83,8 @@ body.livechat-readonly.livechat-noscroll {
   }
 
   .livechat-viewer-mode-external-login {
-    padding: 2em;
+    margin: 0.5em 0;
+    padding: 0;
   }
 }
 

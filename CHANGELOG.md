@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Fix #370: "open with a remote Peertube" broken when chat is embedded in an iframe.
+* Fix UI on little screens (form for anonymous users was too high).
 
 ## 9.0.0
 
