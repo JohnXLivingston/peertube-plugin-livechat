@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Translation updates: french, croatian, deutsch.
+
 ## 9.0.1
 
 ### Minor changes and fixes
