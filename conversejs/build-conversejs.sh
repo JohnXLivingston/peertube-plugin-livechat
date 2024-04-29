@@ -85,6 +85,8 @@ rm -rf "$converse_build_dir/custom/"
 echo "Adding the custom files..."
 cp -r "$src_dir/custom/" "$converse_build_dir/custom/"
 mv "$converse_build_dir/custom/webpack.livechat.js" "$converse_build_dir/"
+# overriding original index.js file:
+mv "$converse_build_dir/custom/index.js" "$converse_build_dir/src/"
 cp "$src_dir/loc.keys.js" "$converse_build_dir/"
 
 echo "Patching i18n files to add custom labels..."

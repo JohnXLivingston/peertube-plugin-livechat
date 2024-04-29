@@ -38,6 +38,8 @@ module.exports = merge(prod, {
       './templates/muc-head.js': path.resolve(__dirname, 'custom/templates/muc-head.js'),
       '../../templates/background_logo.js$': path.resolve(__dirname, 'custom/templates/background_logo.js'),
 
+      '../templates/icons.js': path.resolve(__dirname, 'custom/shared/components/font-awesome.js'),
+
       'shared/styles/index.scss$': path.resolve(__dirname, 'custom/shared/styles/livechat.scss'),
 
       'shared/modals/livechat-external-login.js': path.resolve(

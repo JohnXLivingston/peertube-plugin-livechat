@@ -15,7 +15,8 @@ const locKeys = [
   'login_remote_peertube_video_not_found_try_anyway',
   'login_remote_peertube_video_not_found_try_anyway_button',
   'login_remote_peertube_video_open_failed',
-  'login_external_auth_alert_message'
+  'login_external_auth_alert_message',
+  'tasks'
 ]
 
 module.exports = locKeys
