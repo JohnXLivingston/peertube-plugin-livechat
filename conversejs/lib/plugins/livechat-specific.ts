@@ -11,7 +11,7 @@ export const livechatSpecificsPlugin = {
     _converse.api.listen.on('getHeadingButtons', (view: any, buttons: any[]) => {
       if (view.model.get('type') !== _converse.CHATROOMS_TYPE) {
         // only on MUC.
-        return
+        return buttons
       }
 
       if (_converse.api.settings.get('livechat_specific_external_authent')) {

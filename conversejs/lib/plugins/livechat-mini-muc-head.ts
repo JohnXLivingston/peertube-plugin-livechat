@@ -14,7 +14,7 @@ export const livechatMiniMucHeadPlugin = {
     _converse.api.listen.on('getHeadingButtons', (view: any, buttons: any[]) => {
       if (view.model.get('type') !== _converse.CHATROOMS_TYPE) {
         // only on MUC.
-        return
+        return buttons
       }
 
       // removing the 'show/hide topic' buttons

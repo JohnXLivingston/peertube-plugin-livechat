@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Translation updates: french, croatian, deutsch.
+* Minor JS fix.
 
 ## 9.0.1
 
