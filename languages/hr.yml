@@ -175,3 +175,5 @@ login_using_external_account: Prijavi se pomoću eksternog računa
 login_remote_peertube: 'Prijavi se pomoću računa na jednoj drugoj Peertube instanci:'
 login_remote_peertube_url: URL tvoje Peertube instance
 login_remote_peertube_url_invalid: Neispravan Peertube URL.
+external_auth_google_oidc_label: Koristi Google
+external_auth_facebook_oidc_label: Koristi Facebook
