@@ -177,3 +177,5 @@ login_remote_peertube_url: URL tvoje Peertube instance
 login_remote_peertube_url_invalid: Neispravan Peertube URL.
 external_auth_google_oidc_label: Koristi Google
 external_auth_facebook_oidc_label: Koristi Facebook
+login_remote_peertube_video_open_failed: 'Tvoj preglednik je blokirao otvaranje na
+  eksternoj instanci, pokušaj ručno otvoriti ovu vezu:'
