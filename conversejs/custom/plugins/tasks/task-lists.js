@@ -13,6 +13,7 @@ class ChatRoomTaskLists extends Collection {
   model = ChatRoomTaskList
 
   initialize (models, options) {
+    this.model = ChatRoomTaskList // don't know why, must do it again here
     super.initialize(arguments)
     this.chatroom = options.chatroom
 
@@ -32,6 +33,9 @@ class ChatRoomTaskLists extends Collection {
   }
 
   create (attrs, options) {
+    if (attrs instanceof ChatRoomTaskList) {
+      return super.create(attrs, options)
+    }
     attrs.id ??= getUniqueId()
     return super.create(attrs, options)
   }
@@ -47,7 +51,7 @@ class ChatRoomTaskLists extends Collection {
         name: 'Task List 1'
       },
       {
-        // id: 'task-list-2',
+        id: 'task-list-2',
         name: 'Task List 2'
       }
     ]

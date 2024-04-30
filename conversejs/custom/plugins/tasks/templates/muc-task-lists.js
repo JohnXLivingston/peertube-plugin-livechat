@@ -1,4 +1,3 @@
-import tplMucTaskList from './muc-task-list'
 import { html } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { __ } from 'i18n'
@@ -37,7 +36,9 @@ export default function tplMucTaskLists (tasklists) {
     </form>
     <div class="">
       ${
-        repeat(tasklists, (tasklist) => tasklist.get('id'), (tasklist) => tplMucTaskList(tasklist))
+        repeat(tasklists, (tasklist) => tasklist.get('id'), (tasklist) => {
+          return html`<livechat-converse-muc-task-list .model=${tasklist}></livechat-converse-muc-task-list>`
+        })
       }
     </div>`
 }

@@ -37,6 +37,7 @@ function _initChatRoomTaskLists (mucModel) {
   }
 
   mucModel.tasklists = new _converse.ChatRoomTaskLists(undefined, { chatroom: mucModel })
+  mucModel.tasks = new _converse.ChatRoomTasks(undefined, { chatroom: mucModel })
 }
 
 function _destroyChatRoomTaskLists (mucModel) {
@@ -44,6 +45,7 @@ function _destroyChatRoomTaskLists (mucModel) {
 
   // mucModel.tasklists.unload() FIXME: add a method to unregister from the pubsub, and empty the tasklist.
   mucModel.tasklists = undefined
+  mucModel.tasks = undefined
 }
 
 export function initOrDestroyChatRoomTaskLists (mucModel) {

@@ -1,23 +1,22 @@
 import { CustomElement } from 'shared/components/element.js'
-import { _converse, api } from '@converse/headless/core'
+import { api } from '@converse/headless/core'
 import tplMucTaskLists from './templates/muc-task-lists'
 
 export default class MUCTaskListsView extends CustomElement {
   static get properties () {
     return {
-      jid: { type: String, attribute: true }
+      model: { type: Object, attribute: true }
     }
   }
 
   async initialize () {
-    this.model = _converse.chatboxes.get(this.getAttribute('jid')).tasklists
-
     if (!this.model) {
       return
     }
 
+    // Adding or removing a new task list: we must update.
     this.listenTo(this.model, 'add', () => this.requestUpdate())
-    this.listenTo(this.model, 'change', () => this.requestUpdate())
+    this.listenTo(this.model, 'remove', () => this.requestUpdate())
   }
 
   render () {

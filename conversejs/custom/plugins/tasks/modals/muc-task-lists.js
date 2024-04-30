@@ -6,7 +6,7 @@ import { __ } from 'i18n'
 export default class mucTaskListsModal extends BaseModal {
   renderModal () {
     const muc = this.model
-    return html`<livechat-converse-muc-task-lists jid="${muc.get('jid')}"></livechat-converse-muc-task-lists>`
+    return html`<livechat-converse-muc-task-lists .model=${muc.tasklists}></livechat-converse-muc-task-lists>`
   }
 
   getModalTitle () {

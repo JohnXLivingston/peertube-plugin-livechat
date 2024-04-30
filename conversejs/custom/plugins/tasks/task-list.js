@@ -8,6 +8,13 @@ import { Model } from '@converse/skeletor/src/model.js'
  */
 class ChatRoomTaskList extends Model {
   idAttribute = 'id'
+
+  getTasks () {
+    const taskListId = this.get('id')
+    return this.collection?.chatroom?.tasks?.filter({
+      list: taskListId
+    }) ?? []
+  }
 }
 
 export {
