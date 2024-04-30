@@ -1,4 +1,4 @@
-import { _converse } from '../../../src/headless/core.js'
+import { _converse, api } from '../../../src/headless/core.js'
 import { __ } from 'i18n'
 
 export function getHeadingButtons (view, buttons) {
@@ -20,8 +20,8 @@ export function getHeadingButtons (view, buttons) {
     handler: async (ev) => {
       ev.preventDefault()
       ev.stopPropagation()
-
-      // TODO.
+      // opening the muc task lists view:
+      api.modal.show('livechat-converse-muc-task-lists-modal', { model: muc })
     },
     a_class: '',
     icon_class: 'fa-list', // FIXME
