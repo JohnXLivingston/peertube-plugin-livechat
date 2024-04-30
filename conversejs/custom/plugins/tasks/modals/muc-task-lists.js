@@ -10,7 +10,8 @@ export default class mucTaskListsModal extends BaseModal {
   }
 
   getModalTitle () {
-    return __('Tasks')
+    // eslint-disable-next-line no-undef
+    return __(LOC_tasks)
   }
 }
 

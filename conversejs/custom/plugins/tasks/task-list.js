@@ -7,7 +7,7 @@ import { Model } from '@converse/skeletor/src/model.js'
  * @memberof _converse
  */
 class ChatRoomTaskList extends Model {
-
+  idAttribute = 'id'
 }
 
 export {

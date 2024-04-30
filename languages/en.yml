@@ -435,4 +435,6 @@ login_remote_peertube_video_not_found_try_anyway_button: "Try anyway to open the
 login_remote_peertube_video_open_failed: "Your browser has blocked the opening on the remote instance, please try to open manually this link:"
 login_external_auth_alert_message: "Authentication failed"
 
-tasks: Tasks
+tasks: 'Tasks'
+task_list_create: 'Create new task list:'
+task_list_name: 'Task list name'

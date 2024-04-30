@@ -1,4 +1,4 @@
-import { _converse, api } from '../../../src/headless/core.js'
+import { converse, _converse, api } from '../../../src/headless/core.js'
 import { __ } from 'i18n'
 
 export function getHeadingButtons (view, buttons) {
@@ -8,15 +8,14 @@ export function getHeadingButtons (view, buttons) {
     return buttons
   }
 
-  const myself = muc.getOwnOccupant()
-  if (!myself || !myself.isModerator()) {
-    // User must be moderator
+  if (!muc.tasklists) { // this is defined only if user has access (see initOrDestroyChatRoomTaskLists)
     return buttons
   }
 
   // Adding a "Open task list" button.
   buttons.unshift({
-    i18n_text: __('Tasks'),
+    // eslint-disable-next-line no-undef
+    i18n_text: __(LOC_tasks),
     handler: async (ev) => {
       ev.preventDefault()
       ev.stopPropagation()
@@ -29,4 +28,39 @@ export function getHeadingButtons (view, buttons) {
   })
 
   return buttons
+}
+
+function _initChatRoomTaskLists (mucModel) {
+  if (mucModel.tasklists) {
+    // already initiliazed
+    return
+  }
+
+  mucModel.tasklists = new _converse.ChatRoomTaskLists(undefined, { chatroom: mucModel })
+}
+
+function _destroyChatRoomTaskLists (mucModel) {
+  if (!mucModel.tasklists) { return }
+
+  // mucModel.tasklists.unload() FIXME: add a method to unregister from the pubsub, and empty the tasklist.
+  mucModel.tasklists = undefined
+}
+
+export function initOrDestroyChatRoomTaskLists (mucModel) {
+  if (mucModel.get('type') !== _converse.CHATROOMS_TYPE) {
+    // only on MUC.
+    return _destroyChatRoomTaskLists(mucModel)
+  }
+
+  if (mucModel.session.get('connection_status') !== converse.ROOMSTATUS.ENTERED) {
+    _destroyChatRoomTaskLists(mucModel)
+  }
+
+  const myself = mucModel.getOwnOccupant()
+  if (!myself || !myself.isModerator()) {
+    // User must be moderator
+    return _destroyChatRoomTaskLists(mucModel)
+  }
+
+  return _initChatRoomTaskLists(mucModel)
 }
