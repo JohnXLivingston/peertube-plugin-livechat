@@ -226,6 +226,6 @@ external_auth_custom_oidc_discovery_url_label: ディスカバリーURL
 external_auth_oidc_client_id_label: クライアントID
 external_auth_oidc_client_secret_label: クライアントシークレット
 external_auth_custom_oidc_description: "チャットへのログインに、外部のOpenID Connectプロバイダーを設定できます。\n
-  次のドキュメントを参照してください:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  次のドキュメントを参照してください:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/ja/documentation/admin/settings/\"\
   \ target=\"_blank\">設定</a>ページ\n"
 external_auth_custom_oidc_button_label_description: このラベルは、OIDCプロバイダーを使用して認証するボタン名としてユーザーに表示されます。
