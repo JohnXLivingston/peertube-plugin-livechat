@@ -1,0 +1,288 @@
+-- This module create sort of a MEP equivalent to PEP, but for MUC chatrooms.
+-- This idea is described in https://xmpp.org/extensions/xep-0316.html
+-- but here there are some differences (the node can only be subscribed by room moderators, ...)
+
+-- Note: all room moderators will have 'publisher' access:
+-- so they can't modify configuration, affiliations or subscriptions.
+-- There will be no owner. FIXME: is this ok? will prosody accept? (the XEP-0060 says that there must be an owner).
+
+local pubsub = require "util.pubsub";
+local jid_bare = require "util.jid".bare;
+local jid_split = require "util.jid".split;
+local jid_join = require "util.jid".join;
+local cache = require "util.cache";
+
+local xmlns_pubsub = "http://jabber.org/protocol/pubsub";
+local xmlns_pubsub_event = "http://jabber.org/protocol/pubsub#event";
+local xmlns_pubsub_owner = "http://jabber.org/protocol/pubsub#owner";
+
+local lib_pubsub = module:require "pubsub";
+
+local mod_muc = module:depends"muc";
+local get_room_from_jid = mod_muc.get_room_from_jid;
+
+local muc_util = module:require "muc/util";
+local valid_roles = muc_util.valid_roles;
+
+-- room_jid => object passed to module:add_items()
+local mep_service_items = {};
+
+-- Size of caches with full pubsub service objects
+-- We will have one service per MUC room.
+local service_cache_size = module:get_option_number("livechat_mep_service_cache_size", 1000);
+
+-- room_jid => util.pubsub service object
+local services = cache.new(service_cache_size, function (room_jid, _)
+  -- when service is evicted from cache, we must remove the associated item.
+  local item = mep_service_items[room_jid];
+  mep_service_items[room_jid] = nil;
+  if item then
+    module:remove_item("livechat-mep-service", item);
+  end
+end):table();
+
+-- size of caches with smaller objects
+local info_cache_size = module:get_option_number("livechat_mep_info_cache_size", 10000);
+
+-- room_jid -> recipient -> set of nodes
+local recipients = cache.new(info_cache_size):table();
+
+
+local host = module.host;
+
+-- store for nodes configuration
+local node_config = module:open_store("livechat-mep", "map");
+-- store for nodes content
+local known_nodes = module:open_store("livechat-mep");
+
+-- maximum number of items in a node:
+local max_max_items = module:get_option_number("livechat_mep_max_items", 256);
+
+local function tonumber_max_items(n)
+	if n == "max" then
+		return max_max_items;
+	end
+	return tonumber(n);
+end
+
+function is_item_stanza(item)
+	return st.is_stanza(item) and item.attr.xmlns == xmlns_pubsub and item.name == "item" and #item.tags == 1;
+end
+
+-- check_node_config: if someone try to change the node configuration, checks the values.
+-- TODO: is this necessary? we should not allow config modification.
+function check_node_config(node, actor, new_config)
+	if (tonumber_max_items(new_config["max_items"]) or 1) > max_max_items then
+		return false;
+	end
+	if new_config["access_model"] ~= "whitelist" then
+		return false;
+	end
+	return true;
+end
+
+-- get the store for a given room nodes.
+local function nodestore(room_jid)
+	-- luacheck: ignore 212/self
+	local store = {};
+	function store:get(node)
+		local data, err = node_config:get(room_jid, node)
+    -- data looks like:
+    -- data = {
+    --   name = node;
+    --   config = {};
+    --   subscribers = {};
+    --   affiliations = {};
+    -- };
+		return data, err;
+	end
+	function store:set(node, data)
+		return node_config:set(room_jid, node, data);
+	end
+	function store:users() -- iterator over all available keys (see https://prosody.im/doc/developers/moduleapi)
+		return pairs(known_nodes:get(room_jid) or {});
+	end
+	return store;
+end
+
+local function simple_itemstore(room_jid)
+	local driver = storagemanager.get_driver(module.host, "livechat_mep_data");
+	return function (config, node)
+		local max_items = tonumber_max_items(config["max_items"]);
+		module:log("debug", "Creating new persistent item store for room %s, node %q", room_jid, node);
+		local archive = driver:open("livechat_mep_"..node, "archive");
+		return lib_pubsub.archive_itemstore(archive, max_items, room_jid, node, false);
+	end
+end
+
+local function get_broadcaster(room_jid)
+	local room_bare = jid_join(room_jid, host);
+	local function simple_broadcast(kind, node, jids, item, _, node_obj)
+		if node_obj then
+			if node_obj.config["notify_"..kind] == false then
+				return;
+			end
+		end
+		if kind == "retract" then
+			kind = "items"; -- XEP-0060 signals retraction in an <items> container
+		end
+		if item then
+			item = st.clone(item);
+			item.attr.xmlns = nil; -- Clear the pubsub namespace
+			if kind == "items" then
+				if node_obj and node_obj.config.include_payload == false then
+					item:maptags(function () return nil; end);
+				end
+			end
+		end
+
+		local id = new_id();
+		local message = st.message({ from = room_bare, type = "headline", id = id })
+			:tag("event", { xmlns = xmlns_pubsub_event })
+				:tag(kind, { node = node });
+
+		if item then
+			message:add_child(item);
+		end
+
+		for jid in pairs(jids) do
+			module:log("debug", "Sending notification to %s from %s for node %s", jid, room_bare, node);
+			message.attr.to = jid;
+			module:send(message);
+		end
+	end
+	return simple_broadcast;
+end
+
+local function get_subscriber_filter(room_jid)
+	return function (jids, node)
+		local broadcast_to = {};
+		for jid, opts in pairs(jids) do
+			broadcast_to[jid] = opts;
+		end
+
+		local service_recipients = recipients[room_jid];
+		if service_recipients then
+			local service = services[room_jid];
+			for recipient, nodes in pairs(service_recipients) do
+				if nodes:contains(node) and service:may(node, recipient, "subscribe") then
+					broadcast_to[recipient] = true;
+				end
+			end
+		end
+		return broadcast_to;
+	end
+end
+
+-- Read-only service with no nodes where nobody is allowed anything to act as a
+-- fallback for interactions with non-existent rooms
+local noroom_service = pubsub.new({
+	node_defaults = {
+		["max_items"] = 1;
+		["persist_items"] = false;
+		["access_model"] = "whitelist";
+		["send_last_published_item"] = "never";
+	};
+	autocreate_on_publish = false;
+	autocreate_on_subscribe = false;
+	get_affiliation = function ()
+		return "outcast";
+	end;
+});
+
+function get_mep_service(room_jid)
+	local room_bare = jid_join(room_jid, host);
+	local service = services[room_jid];
+	if service then
+		return service;
+	end
+  local room = get_room_from_jid(room_jid);
+	if not room then
+		return noroom_service;
+	end
+	module:log("debug", "Creating pubsub service for room %q", room_jid);
+	service = pubsub.new({
+		livechat_mep_room_jid = room_jid;
+		node_defaults = {
+			["max_items"] = max_max_items;
+			["persist_items"] = true;
+			["access_model"] = "whitelist";
+			["send_last_published_item"] = "never"; -- never send last item, clients will require all items at connection
+		};
+		max_items = max_max_items;
+
+		autocreate_on_publish = false;
+		autocreate_on_subscribe = false;
+
+		nodestore = nodestore(room_jid);
+		itemstore = simple_itemstore(room_jid);
+		broadcaster = get_broadcaster(room_jid);
+		subscriber_filter = get_subscriber_filter(room_jid);
+		itemcheck = is_item_stanza;
+		get_affiliation = function (jid)
+      -- First checking if there is an affiliation on the room for this JID.
+      local actor_jid = jid_bare(jid);
+      local room_affiliation = room:get_affiliation(actor_jid);
+      -- if user is banned, don't go any further
+      if (room_affiliation == "outcast") then
+        return "outcast";
+      end
+      if (room_affiliation == "owner" or room_affiliation == "admin") then
+        return "publisher"; -- always publisher! (see notes at the beginning of this file)
+      end
+
+      -- No permanent room affiliation... Checking role (for users currently connected to the room)
+      local actor_nick = room:get_occupant_jid(jid);
+      if (actor_nick ~= nil) then
+        local role = room:get_role(actor_nick);
+        if valid_roles[role or "none"] >= valid_roles.moderator then
+          return "publisher"; -- always publisher! (see notes at the beginning of this file)
+        end
+      end
+
+      -- no access!
+      return "outcast";
+		end;
+
+		jid = room_bare;
+		normalize_jid = jid_bare;
+
+		check_node_config = check_node_config;
+	});
+	services[room_jid] = service;
+	local item = { service = service, jid = room_bare }
+	mep_service_items[room_jid] = item;
+	module:add_item("livechat-mep-service", item);
+	return service;
+end
+
+function handle_pubsub_iq(event)
+	local origin, stanza = event.origin, event.stanza;
+	local service_name = origin.username;
+	if stanza.attr.to ~= nil then
+		service_name = jid_split(stanza.attr.to);
+	end
+	local service = get_pep_service(service_name);
+
+	return lib_pubsub.handle_pubsub_iq(event, service)
+end
+
+module:hook("iq/bare/"..xmlns_pubsub..":pubsub", handle_pubsub_iq);
+module:hook("iq/bare/"..xmlns_pubsub_owner..":pubsub", handle_pubsub_iq); -- FIXME: should not be necessary, as we don't have owners.
+
+-- Destroying the node when the room is destroyed
+-- FIXME: really? as the room will be automatically recreated in some cases...
+module:hook("muc-room-destroyed", function(event)
+	local room = event.room;
+  local room_jid = room.jid;
+	local service = services[room_jid];
+	if not service then return end
+
+	for node in pairs(service.nodes) do service:delete(node, true); end
+
+	local item = mep_service_items[room_jid];
+	mep_service_items[room_jid] = nil;
+	if item then module:remove_item("livechat-mep-service", item); end
+
+	recipients[room_jid] = nil;
+end);
