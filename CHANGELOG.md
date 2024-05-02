@@ -1,6 +1,7 @@
 # Changelog
 
 TODO: add documentation link for the task-list in the CHANGELOG.
+TODO: tag custom ConverseJS, and update build-conversejs.sh.
 
 ## ??? (Not Released Yet)
 

@@ -1,5 +1,6 @@
 import { converse, _converse, api } from '../../../src/headless/core.js'
 import { __ } from 'i18n'
+const { Strophe, $iq } = converse.env
 
 export function getHeadingButtons (view, buttons) {
   const muc = view.model
@@ -38,6 +39,32 @@ function _initChatRoomTaskLists (mucModel) {
 
   mucModel.tasklists = new _converse.ChatRoomTaskLists(undefined, { chatroom: mucModel })
   mucModel.tasks = new _converse.ChatRoomTasks(undefined, { chatroom: mucModel })
+
+  // Requesting all items.
+  const stanza = $iq({
+    type: 'get',
+    from: _converse.bare_jid,
+    to: mucModel.get('jid')
+  }).c('pubsub', { xmlns: Strophe.NS.PUBSUB })
+    .c('items', { node: 'livechat-tasks' })
+
+  api.sendIQ(stanza).then(
+    (iq) => {
+      console.debug('task lists: ', iq)
+    },
+    (iq) => {
+      if (iq === null || !iq?.querySelector) {
+        console.error('Failed to retrieve tasks', iq)
+        return
+      }
+      if (!iq.querySelector('error[type="cancel"] item-not-found')) {
+        console.error('Failed to retrieve tasks:', iq)
+        return
+      }
+      // This is totally normal when you open an empty task list.
+      console.log('Not livechat-tasks node for now')
+    }
+  )
 }
 
 function _destroyChatRoomTaskLists (mucModel) {
@@ -55,7 +82,7 @@ export function initOrDestroyChatRoomTaskLists (mucModel) {
   }
 
   if (mucModel.session.get('connection_status') !== converse.ROOMSTATUS.ENTERED) {
-    _destroyChatRoomTaskLists(mucModel)
+    return _destroyChatRoomTaskLists(mucModel)
   }
 
   const myself = mucModel.getOwnOccupant()

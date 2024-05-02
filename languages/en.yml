@@ -437,4 +437,5 @@ login_external_auth_alert_message: "Authentication failed"
 
 tasks: 'Tasks'
 task_list_create: 'Create new task list:'
+task_list_create_error: 'Error when saving the task list'
 task_list_name: 'Task list name'

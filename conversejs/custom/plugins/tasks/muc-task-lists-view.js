@@ -1,11 +1,14 @@
 import { CustomElement } from 'shared/components/element.js'
 import { api } from '@converse/headless/core'
 import tplMucTaskLists from './templates/muc-task-lists'
+import { __ } from 'i18n'
 
 export default class MUCTaskListsView extends CustomElement {
   static get properties () {
     return {
-      model: { type: Object, attribute: true }
+      model: { type: Object, attribute: true },
+      new_task_list_name: { type: String, attribute: false },
+      create_tasklist_error_message: { type: String, attribute: false }
     }
   }
 
@@ -20,7 +23,29 @@ export default class MUCTaskListsView extends CustomElement {
   }
 
   render () {
-    return tplMucTaskLists(this.model)
+    return tplMucTaskLists(this, this.model)
+  }
+
+  async submitCreateTaskList (ev) {
+    ev.preventDefault()
+    const name = ev.target.name.value.trim()
+    if (this.create_tasklist_error_message) {
+      this.create_tasklist_error_message = ''
+    }
+
+    if ((name ?? '') === '') { return }
+
+    try {
+      await this.model.createTaskList({
+        name
+      })
+
+      this.new_task_list_name = ''
+    } catch (err) {
+      console.error(err)
+      // eslint-disable-next-line no-undef
+      this.create_tasklist_error_message = __(LOC_task_list_create_error)
+    }
   }
 }
 

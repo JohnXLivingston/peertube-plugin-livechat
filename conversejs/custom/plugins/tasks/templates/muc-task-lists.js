@@ -2,7 +2,7 @@ import { html } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { __ } from 'i18n'
 
-export default function tplMucTaskLists (tasklists) {
+export default function tplMucTaskLists (el, tasklists) {
   if (!tasklists) { // if user losed rights
     return html`` // FIXME: add a message like "you dont have access"?
   }
@@ -14,24 +14,17 @@ export default function tplMucTaskLists (tasklists) {
   const i18nTaskListName = __(LOC_task_list_name)
 
   return html`
-    <form class="converse-form" @submit=${(ev) => {
-        ev.preventDefault()
-        const name = ev.target.name.value.trim()
-        if ((name ?? '') === '') { return }
-
-        ev.target.name.value = ''
-
-        tasklists.create({
-          name
-        })
-      }}
-    >
+    <form class="converse-form" @submit=${el.submitCreateTaskList}>
       <div class="form-group">
         <label>
           ${i18nCreateTaskList}
-          <input type="text" value="" name="name" placeholder="${i18nTaskListName}" />
+          <input type="text" value="${el.new_task_list_name}" name="name" placeholder="${i18nTaskListName}" />
         </label>
         <input type="submit" value="${i18nAdd}" class="btn btn-primary" />
+        ${!el.create_tasklist_error_message
+          ? ''
+          : html`<div class="invalid-feedback d-block">${el.create_tasklist_error_message}</div>`
+        }
       </div>
     </form>
     <div class="">

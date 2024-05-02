@@ -18,6 +18,8 @@ local jid_bare = require "util.jid".bare;
 local jid_split = require "util.jid".split;
 local jid_join = require "util.jid".join;
 local cache = require "util.cache";
+local st = require "util.stanza";
+local new_id = require "util.id".medium;
 local storagemanager = require "core.storagemanager";
 
 local xmlns_pubsub = "http://jabber.org/protocol/pubsub";
@@ -225,8 +227,8 @@ function get_mep_service(room_jid, room_host)
 		};
 		max_items = max_max_items;
 
-		autocreate_on_publish = false;
-		autocreate_on_subscribe = false;
+		autocreate_on_publish = true;
+		autocreate_on_subscribe = true;
 
 		nodestore = nodestore(room_jid);
 		itemstore = simple_itemstore(room_jid);
@@ -234,14 +236,17 @@ function get_mep_service(room_jid, room_host)
 		-- subscriber_filter = get_subscriber_filter(room_jid);
 		itemcheck = is_item_stanza;
 		get_affiliation = function (jid)
+			-- module:log("debug", "get_affiliation call for %q", jid);
       -- First checking if there is an affiliation on the room for this JID.
       local actor_jid = jid_bare(jid);
       local room_affiliation = room:get_affiliation(actor_jid);
       -- if user is banned, don't go any further
       if (room_affiliation == "outcast") then
+				-- module:log("debug", "get_affiliation for %q: outcast (existing room affiliation)", jid);
         return "outcast";
       end
       if (room_affiliation == "owner" or room_affiliation == "admin") then
+				-- module:log("debug", "get_affiliation for %q: publisher (because owner or admin affiliation)", jid);
         return "publisher"; -- always publisher! (see notes at the beginning of this file)
       end
 
@@ -250,11 +255,13 @@ function get_mep_service(room_jid, room_host)
       if (actor_nick ~= nil) then
         local role = room:get_role(actor_nick);
         if valid_roles[role or "none"] >= valid_roles.moderator then
+					module:log("debug", "get_affiliation for %q: publisher (because of current role)", jid);
           return "publisher"; -- always publisher! (see notes at the beginning of this file)
         end
       end
 
       -- no access!
+			-- module:log("debug", "get_affiliation for %q: outcast", jid);
       return "outcast";
 		end;
 

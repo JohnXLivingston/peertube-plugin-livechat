@@ -18,6 +18,7 @@ const locKeys = [
   'login_external_auth_alert_message',
   'tasks',
   'task_list_create',
+  'task_list_create_error',
   'task_list_name'
 ]
 
