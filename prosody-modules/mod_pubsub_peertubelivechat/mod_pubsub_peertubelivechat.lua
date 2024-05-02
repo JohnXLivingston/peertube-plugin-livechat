@@ -1,16 +1,24 @@
 -- This module create sort of a MEP equivalent to PEP, but for MUC chatrooms.
 -- This idea is described in https://xmpp.org/extensions/xep-0316.html
--- but here there are some differences (the node can only be subscribed by room moderators, ...)
+-- but here there are some differences:
+-- * there will be several nodes, using MUC JID+NodeID to access them
+--	 (see https://xmpp.org/extensions/xep-0060.html#addressing-jid)
+-- * nodes can only be subscribed by room moderators,
+-- * ...
 
 -- Note: all room moderators will have 'publisher' access:
 -- so they can't modify configuration, affiliations or subscriptions.
 -- There will be no owner. FIXME: is this ok? will prosody accept? (the XEP-0060 says that there must be an owner).
+
+-- Implemented nodes:
+-- * livechat-tasks: contains tasklist and task items, specific to livechat plugin.
 
 local pubsub = require "util.pubsub";
 local jid_bare = require "util.jid".bare;
 local jid_split = require "util.jid".split;
 local jid_join = require "util.jid".join;
 local cache = require "util.cache";
+local storagemanager = require "core.storagemanager";
 
 local xmlns_pubsub = "http://jabber.org/protocol/pubsub";
 local xmlns_pubsub_event = "http://jabber.org/protocol/pubsub#event";
@@ -41,11 +49,11 @@ local services = cache.new(service_cache_size, function (room_jid, _)
   end
 end):table();
 
--- size of caches with smaller objects
-local info_cache_size = module:get_option_number("livechat_mep_info_cache_size", 10000);
+-- -- size of caches with smaller objects
+-- local info_cache_size = module:get_option_number("livechat_mep_info_cache_size", 10000);
 
--- room_jid -> recipient -> set of nodes
-local recipients = cache.new(info_cache_size):table();
+-- -- room_jid -> recipient -> set of nodes
+-- local recipients = cache.new(info_cache_size):table();
 
 
 local host = module.host;
@@ -109,14 +117,13 @@ local function simple_itemstore(room_jid)
 	local driver = storagemanager.get_driver(module.host, "livechat_mep_data");
 	return function (config, node)
 		local max_items = tonumber_max_items(config["max_items"]);
-		module:log("debug", "Creating new persistent item store for room %s, node %q", room_jid, node);
+		module:log("debug", "Creating new persistent item store for room_jid %s, node %q", room_jid, node);
 		local archive = driver:open("livechat_mep_"..node, "archive");
 		return lib_pubsub.archive_itemstore(archive, max_items, room_jid, node, false);
 	end
 end
 
 local function get_broadcaster(room_jid)
-	local room_bare = jid_join(room_jid, host);
 	local function simple_broadcast(kind, node, jids, item, _, node_obj)
 		if node_obj then
 			if node_obj.config["notify_"..kind] == false then
@@ -137,7 +144,7 @@ local function get_broadcaster(room_jid)
 		end
 
 		local id = new_id();
-		local message = st.message({ from = room_bare, type = "headline", id = id })
+		local message = st.message({ from = room_jid, type = "headline", id = id })
 			:tag("event", { xmlns = xmlns_pubsub_event })
 				:tag(kind, { node = node });
 
@@ -146,7 +153,7 @@ local function get_broadcaster(room_jid)
 		end
 
 		for jid in pairs(jids) do
-			module:log("debug", "Sending notification to %s from %s for node %s", jid, room_bare, node);
+			module:log("debug", "Sending notification to %s from %s for node %s", jid, room_jid, node);
 			message.attr.to = jid;
 			module:send(message);
 		end
@@ -154,25 +161,25 @@ local function get_broadcaster(room_jid)
 	return simple_broadcast;
 end
 
-local function get_subscriber_filter(room_jid)
-	return function (jids, node)
-		local broadcast_to = {};
-		for jid, opts in pairs(jids) do
-			broadcast_to[jid] = opts;
-		end
+-- local function get_subscriber_filter(room_jid)
+-- 	return function (jids, node)
+-- 		local broadcast_to = {};
+-- 		for jid, opts in pairs(jids) do
+-- 			broadcast_to[jid] = opts;
+-- 		end
 
-		local service_recipients = recipients[room_jid];
-		if service_recipients then
-			local service = services[room_jid];
-			for recipient, nodes in pairs(service_recipients) do
-				if nodes:contains(node) and service:may(node, recipient, "subscribe") then
-					broadcast_to[recipient] = true;
-				end
-			end
-		end
-		return broadcast_to;
-	end
-end
+-- 		local service_recipients = recipients[room_jid];
+-- 		if service_recipients then
+-- 			local service = services[room_jid];
+-- 			for recipient, nodes in pairs(service_recipients) do
+-- 				if nodes:contains(node) and service:may(node, recipient, "subscribe") then
+-- 					broadcast_to[recipient] = true;
+-- 				end
+-- 			end
+-- 		end
+-- 		return broadcast_to;
+-- 	end
+-- end
 
 -- Read-only service with no nodes where nobody is allowed anything to act as a
 -- fallback for interactions with non-existent rooms
@@ -190,19 +197,26 @@ local noroom_service = pubsub.new({
 	end;
 });
 
-function get_mep_service(room_jid)
-	local room_bare = jid_join(room_jid, host);
+function get_mep_service(room_jid, room_host)
+	if (room_host ~= host) then
+		module:log("debug", "Host %q for room %q is not the current host, returning the noroom service", room_host, room_jid);
+		return noroom_service;
+	end
+
 	local service = services[room_jid];
 	if service then
 		return service;
 	end
-  local room = get_room_from_jid(room_jid);
+
+  local room = get_room_from_jid(jid_join(room_jid, room_host));
 	if not room then
+		module:log("debug", "No room for node %q, returning the noroom service", room_jid);
 		return noroom_service;
 	end
+
 	module:log("debug", "Creating pubsub service for room %q", room_jid);
 	service = pubsub.new({
-		livechat_mep_room_jid = room_jid;
+		livechat_mep_room_jid = room_jid; -- FIXME: what is this for? this was inspired by mod_pep
 		node_defaults = {
 			["max_items"] = max_max_items;
 			["persist_items"] = true;
@@ -217,7 +231,7 @@ function get_mep_service(room_jid)
 		nodestore = nodestore(room_jid);
 		itemstore = simple_itemstore(room_jid);
 		broadcaster = get_broadcaster(room_jid);
-		subscriber_filter = get_subscriber_filter(room_jid);
+		-- subscriber_filter = get_subscriber_filter(room_jid);
 		itemcheck = is_item_stanza;
 		get_affiliation = function (jid)
       -- First checking if there is an affiliation on the room for this JID.
@@ -244,13 +258,13 @@ function get_mep_service(room_jid)
       return "outcast";
 		end;
 
-		jid = room_bare;
+		jid = room_jid;
 		normalize_jid = jid_bare;
 
 		check_node_config = check_node_config;
 	});
 	services[room_jid] = service;
-	local item = { service = service, jid = room_bare }
+	local item = { service = service, jid = room_jid }
 	mep_service_items[room_jid] = item;
 	module:add_item("livechat-mep-service", item);
 	return service;
@@ -258,11 +272,13 @@ end
 
 function handle_pubsub_iq(event)
 	local origin, stanza = event.origin, event.stanza;
-	local service_name = origin.username;
-	if stanza.attr.to ~= nil then
-		service_name = jid_split(stanza.attr.to);
+	if stanza.attr.to == nil then
+		-- FIXME: or return to let another hook process?
+		return origin.send(st.error_reply(stanza, "cancel", "bad-request"));
 	end
-	local service = get_pep_service(service_name);
+
+	local room_jid, room_host = jid_split(stanza.attr.to);
+	local service = get_mep_service(room_jid, room_host);
 
 	return lib_pubsub.handle_pubsub_iq(event, service)
 end
@@ -274,15 +290,19 @@ module:hook("iq/bare/"..xmlns_pubsub_owner..":pubsub", handle_pubsub_iq); -- FIX
 -- FIXME: really? as the room will be automatically recreated in some cases...
 module:hook("muc-room-destroyed", function(event)
 	local room = event.room;
-  local room_jid = room.jid;
+  local room_jid, room_host = jid_split(room.jid);
+	if room_host == nil then
+		room_host = host;
+	end
+
 	local service = services[room_jid];
-	if not service then return end
+	if service then
+		for node in pairs(service.nodes) do service:delete(node, true); end
 
-	for node in pairs(service.nodes) do service:delete(node, true); end
+		local item = mep_service_items[room_jid];
+		mep_service_items[room_jid] = nil;
+		if item then module:remove_item("livechat-mep-service", item); end
 
-	local item = mep_service_items[room_jid];
-	mep_service_items[room_jid] = nil;
-	if item then module:remove_item("livechat-mep-service", item); end
-
-	recipients[room_jid] = nil;
+		-- recipients[room_jid] = nil;
+	end
 end);
