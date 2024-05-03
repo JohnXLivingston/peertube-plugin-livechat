@@ -13,6 +13,8 @@
 -- Implemented nodes:
 -- * livechat-tasks: contains tasklist and task items, specific to livechat plugin.
 
+-- TODO: add disco support.
+
 local pubsub = require "util.pubsub";
 local jid_bare = require "util.jid".bare;
 local jid_split = require "util.jid".split;
@@ -125,7 +127,7 @@ local function simple_itemstore(room_jid)
 	end
 end
 
-local function get_broadcaster(room_jid)
+local function get_broadcaster(room_jid, room_host)
 	local function simple_broadcast(kind, node, jids, item, _, node_obj)
 		if node_obj then
 			if node_obj.config["notify_"..kind] == false then
@@ -146,7 +148,9 @@ local function get_broadcaster(room_jid)
 		end
 
 		local id = new_id();
-		local message = st.message({ from = room_jid, type = "headline", id = id })
+		-- FIXME: should we add a type=headline to the message? (this is what mod_pep does,
+		-- and it seems that ConverseJS prefer to have it for server messages.)
+		local message = st.message({ from = jid_join(room_jid, room_host), type = "headline", id = id })
 			:tag("event", { xmlns = xmlns_pubsub_event })
 				:tag(kind, { node = node });
 
@@ -232,7 +236,7 @@ function get_mep_service(room_jid, room_host)
 
 		nodestore = nodestore(room_jid);
 		itemstore = simple_itemstore(room_jid);
-		broadcaster = get_broadcaster(room_jid);
+		broadcaster = get_broadcaster(room_jid, room_host);
 		-- subscriber_filter = get_subscriber_filter(room_jid);
 		itemcheck = is_item_stanza;
 		get_affiliation = function (jid)

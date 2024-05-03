@@ -8,6 +8,8 @@ import './muc-task-list-view.js' // FIXME: here or in another file?
 import './muc-task-lists-view.js' // FIXME: here or in another file?
 import './modals/muc-task-lists.js' // FIXME: here or in another file?
 
+// TODO: add a client disco feature (using api.listen.on('addClientFeatures' ...)).
+
 converse.plugins.add('livechat-converse-tasks', {
   dependencies: ['converse-muc', 'converse-disco'], // TODO: add converse-pubsub
 

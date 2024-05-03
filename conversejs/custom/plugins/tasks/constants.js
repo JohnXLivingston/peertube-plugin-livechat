@@ -1,1 +1,2 @@
-export const XMLNS_TASKLIST = 'https://livingston.frama.io/peertube-plugin-livechat/protocol/tasklist'
+export const XMLNS_TASKLIST = 'urn:peertube-plugin-livechat:tasklist'
+export const XMLNS_TASK = 'urn:peertube-plugin-livechat:task'

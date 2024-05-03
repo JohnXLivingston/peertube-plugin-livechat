@@ -1,6 +1,7 @@
+import { XMLNS_TASKLIST, XMLNS_TASK } from './constants.js'
+import { PubSubManager } from '../../shared/lib/pubsub-manager.js'
 import { converse, _converse, api } from '../../../src/headless/core.js'
 import { __ } from 'i18n'
-const { Strophe, $iq } = converse.env
 
 export function getHeadingButtons (view, buttons) {
   const muc = view.model
@@ -12,6 +13,9 @@ export function getHeadingButtons (view, buttons) {
   if (!muc.tasklists) { // this is defined only if user has access (see initOrDestroyChatRoomTaskLists)
     return buttons
   }
+
+  // TODO: use disco to discover the feature.
+  // (if the chat is remote, the server could use a livechat version that does not support this feature)
 
   // Adding a "Open task list" button.
   buttons.unshift({
@@ -32,7 +36,7 @@ export function getHeadingButtons (view, buttons) {
 }
 
 function _initChatRoomTaskLists (mucModel) {
-  if (mucModel.tasklists) {
+  if (mucModel.taskManager) {
     // already initiliazed
     return
   }
@@ -40,35 +44,41 @@ function _initChatRoomTaskLists (mucModel) {
   mucModel.tasklists = new _converse.ChatRoomTaskLists(undefined, { chatroom: mucModel })
   mucModel.tasks = new _converse.ChatRoomTasks(undefined, { chatroom: mucModel })
 
-  // Requesting all items.
-  const stanza = $iq({
-    type: 'get',
-    from: _converse.bare_jid,
-    to: mucModel.get('jid')
-  }).c('pubsub', { xmlns: Strophe.NS.PUBSUB })
-    .c('items', { node: 'livechat-tasks' })
-
-  api.sendIQ(stanza).then(
-    (iq) => {
-      console.debug('task lists: ', iq)
-    },
-    (iq) => {
-      if (iq === null || !iq?.querySelector) {
-        console.error('Failed to retrieve tasks', iq)
-        return
+  mucModel.taskManager = new PubSubManager(
+    mucModel.get('jid'),
+    'livechat-tasks', // the node name
+    {
+      tasklist: {
+        itemTag: 'tasklist',
+        xmlns: XMLNS_TASKLIST,
+        collection: mucModel.tasklists,
+        fields: {
+          name: String
+        }
+      },
+      task: {
+        itemTag: 'task',
+        xmlns: XMLNS_TASK,
+        collection: mucModel.tasks,
+        fields: {
+          name: String
+        },
+        attributes: {
+          done: Boolean,
+          list: String,
+          order: Number
+        }
       }
-      if (!iq.querySelector('error[type="cancel"] item-not-found')) {
-        console.error('Failed to retrieve tasks:', iq)
-        return
-      }
-      // This is totally normal when you open an empty task list.
-      console.log('Not livechat-tasks node for now')
     }
   )
+  mucModel.taskManager.start().catch(err => console.log(err))
 }
 
 function _destroyChatRoomTaskLists (mucModel) {
-  if (!mucModel.tasklists) { return }
+  if (!mucModel.taskManager) { return }
+
+  mucModel.taskManager.stop().catch(err => console.log(err))
+  mucModel.taskManager = undefined
 
   // mucModel.tasklists.unload() FIXME: add a method to unregister from the pubsub, and empty the tasklist.
   mucModel.tasklists = undefined
