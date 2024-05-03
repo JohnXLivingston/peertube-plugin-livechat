@@ -150,6 +150,7 @@
     "uk-UA": "./dist/languages/uk.json",
     "sq": "./dist/languages/sq.json",
     "tok": "./dist/languages/tok.json",
+    "tr-TR": "./dist/languages/tr.json",
     "nn": "./dist/languages/nn.json",
     "nb-NO": "./dist/languages/nb.json",
     "kab": "./dist/languages/kab.json",

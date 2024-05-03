@@ -185,6 +185,11 @@ weight = 20
   landingPageURL = "/peertube-plugin-livechat/th/"
   contentDir = "content/translations/th"
 
+  [Languages.tr]
+  languageName = "Türkçe"
+  landingPageURL = "/peertube-plugin-livechat/tr/"
+  contentDir = "content/translations/tr"
+
   [Languages.tok]
   languageName = "Toki Pona"
   landingPageURL = "/peertube-plugin-livechat/to/"

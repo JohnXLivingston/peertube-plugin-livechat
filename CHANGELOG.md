@@ -6,6 +6,7 @@
 
 * Fix #378: alert message not visible with dark theme when using external login.
 * Translation updates: french, croatian, deutsch, japanese.
+* New lang: turkish (available with Peertube >= 6.1.0).
 * Minor JS fix.
 
 ## 9.0.1
