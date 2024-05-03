@@ -83,9 +83,11 @@ class ChatRoomTaskLists extends Collection {
     const name = data?.name
     if (!name) { throw new Error('Missing name') }
 
+    console.log('Creating task list ' + name + '...')
     const item = $build('item').c('tasklist', { xmlns: XMLNS_TASKLIST })
     item.c('name').t(name)
     await api.pubsub.publish(this.chatroom.get('jid'), 'livechat-tasks', item)
+    console.log('Task list ' + name + ' created.')
   }
 }
 

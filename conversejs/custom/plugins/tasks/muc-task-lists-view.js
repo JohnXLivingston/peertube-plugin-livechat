@@ -7,12 +7,13 @@ export default class MUCTaskListsView extends CustomElement {
   static get properties () {
     return {
       model: { type: Object, attribute: true },
-      new_task_list_name: { type: String, attribute: false },
       create_tasklist_error_message: { type: String, attribute: false }
     }
   }
 
   async initialize () {
+    this.create_tasklist_error_message = ''
+
     if (!this.model) {
       return
     }
@@ -28,6 +29,7 @@ export default class MUCTaskListsView extends CustomElement {
 
   async submitCreateTaskList (ev) {
     ev.preventDefault()
+
     const name = ev.target.name.value.trim()
     if (this.create_tasklist_error_message) {
       this.create_tasklist_error_message = ''
@@ -36,15 +38,25 @@ export default class MUCTaskListsView extends CustomElement {
     if ((name ?? '') === '') { return }
 
     try {
+      this.querySelectorAll('input[type=submit]').forEach(el => {
+        el.setAttribute('disabled', true)
+        el.classList.add('disabled')
+      })
+
       await this.model.createTaskList({
         name
       })
 
-      this.new_task_list_name = ''
+      this.querySelector('input[name=name]').value = ''
     } catch (err) {
       console.error(err)
       // eslint-disable-next-line no-undef
       this.create_tasklist_error_message = __(LOC_task_list_create_error)
+    } finally {
+      this.querySelectorAll('input[type=submit]').forEach(el => {
+        el.removeAttribute('disabled')
+        el.classList.remove('disabled')
+      })
     }
   }
 }
