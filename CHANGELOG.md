@@ -4,6 +4,7 @@
 
 ### Minor changes and fixes
 
+* Fix #378: alert message not visible with dark theme when using external login.
 * Translation updates: french, croatian, deutsch, japanese.
 * Minor JS fix.
 

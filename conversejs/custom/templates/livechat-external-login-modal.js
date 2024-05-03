@@ -178,7 +178,7 @@ export const tplExternalLoginModal = (el, o) => {
       }
       ${!o.remote_peertube_try_anyway_url
         ? ''
-        : html`<div class="form-text">
+        : html`<div>
           ${
             // eslint-disable-next-line no-undef
             __(LOC_login_remote_peertube_video_not_found_try_anyway)
