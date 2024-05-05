@@ -62,9 +62,6 @@ async function videoBuildJSONLD (
     logger.debug(`Video uuid=${video.uuid} has not livechat, adding peertubeLiveChat=false.`)
     // Note: we store also outgoing data. Could help for migration/cleanup scripts, for example.
     await storeVideoLiveChatInfos(options, video, false)
-    // Object.assign(videoJsonld, {
-    //   peertubeLiveChat: false
-    // })
     return videoJsonld
   }
 
@@ -174,12 +171,11 @@ async function videoContextBuildJSONLD (_options: RegisterServerOptions, jsonld:
     return jsonld
   }
 
-  // // We are on a video!
+  // We are on a video!
   return jsonld.concat([{
-    ptlc: 'https://xxx.example.com',
+    ptlc: 'urn:peertube-plugin-livechat',
     peertubeLiveChat: {
-      '@id': 'ptlc:peertubeLiveChat',
-      '@type': '@id'
+      '@id': 'ptlc:peertubeLiveChat', '@type': '@json'
     }
   }])
 }

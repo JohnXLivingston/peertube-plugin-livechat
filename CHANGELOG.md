@@ -2,6 +2,10 @@
 
 ## ??? (Not Released Yet)
 
+### Important fix
+
+* The livechat plugin broke the federation with Peertube >= 6.1.0.
+
 ### Minor changes and fixes
 
 * Fix #378: alert message not visible with dark theme when using external login.
