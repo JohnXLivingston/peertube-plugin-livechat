@@ -1,6 +1,6 @@
 import type { RegisterServerOptions, VideoObject } from '@peertube/peertube-types'
 import type { VideoBuildResultContext, RemoteVideoHandlerParams } from './types'
-import { videoBuildJSONLD } from './outgoing'
+import { videoBuildJSONLD, videoContextBuildJSONLD } from './outgoing'
 import { readIncomingAPVideo } from './incoming'
 
 export async function initFederation (options: RegisterServerOptions): Promise<void> {
@@ -15,13 +15,13 @@ export async function initFederation (options: RegisterServerOptions): Promise<v
     }
   })
 
-  // TODO: we should also register the context.build hook.
-  // registerHook({
-  //   target: 'filter:activity-pub.activity.context.build.result',
-  //   handler: (jsonld: any) => {
-  //     return videoContectBuildJSONLD(options, jsonld)
-  //   }
-  // })
+  registerHook({
+    target: 'filter:activity-pub.activity.context.build.result',
+    handler: async (jsonld: any) => {
+      logger.error('nb arguments: ' + arguments.length.toString())
+      return videoContextBuildJSONLD(options, jsonld)
+    }
+  })
 
   registerHook({
     target: 'action:activity-pub.remote-video.created',

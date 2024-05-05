@@ -62,9 +62,9 @@ async function videoBuildJSONLD (
     logger.debug(`Video uuid=${video.uuid} has not livechat, adding peertubeLiveChat=false.`)
     // Note: we store also outgoing data. Could help for migration/cleanup scripts, for example.
     await storeVideoLiveChatInfos(options, video, false)
-    Object.assign(videoJsonld, {
-      peertubeLiveChat: false
-    })
+    // Object.assign(videoJsonld, {
+    //   peertubeLiveChat: false
+    // })
     return videoJsonld
   }
 
@@ -125,6 +125,8 @@ async function videoBuildJSONLD (
 
   // Code beneath this point is for backward compatibility, before v7.2.0.
   // Since then, the ActivityPub metadata were not standardized.
+  // Note: plugin version >=7.2.0 still uses these data to get remote server informations
+  //       (not 100% sure if it is needed or not)
 
   // For backward compatibility with remote servers, using plugin <=6.3.0, we must provide links:
   const links: LiveChatJSONLDLink[] = []
@@ -160,6 +162,28 @@ async function videoBuildJSONLD (
   return videoJsonld
 }
 
+async function videoContextBuildJSONLD (_options: RegisterServerOptions, jsonld: any[]): Promise<any> {
+  // Note: this function is called for all kind of context, not only video.
+  // We have no parameter to know on which context we currently are.
+  // See: https://github.com/Chocobozzz/PeerTube/issues/6375
+  // But we only want to add some context on videos...
+  // So, to detect if we are on video, we search for a 'isLiveBroadcast' field in jsonld (this only exists for videos).
+
+  const entry = jsonld.find(e => typeof e === 'object' && ('isLiveBroadcast' in e))
+  if (!entry) {
+    return jsonld
+  }
+
+  // // We are on a video!
+  return jsonld.concat([{
+    ptlc: 'https://xxx.example.com',
+    peertubeLiveChat: {
+      '@id': 'ptlc:peertubeLiveChat',
+      '@type': '@id'
+    }
+  }])
+}
+
 async function serverBuildInfos (options: RegisterServerOptions): Promise<PeertubeXMPPServerInfos> {
   const settings = await options.settingsManager.getSettings([
     'federation-dont-publish-remotely',
@@ -192,14 +216,14 @@ async function _serverBuildInfos (
   const anonDomain = 'anon.' + prosodyDomain
   const externalDomain = 'external.' + prosodyDomain
 
-  let directs2s
+  let directs2s: PeertubeXMPPServerInfos['directs2s'] | undefined
   if (settings['prosody-room-allow-s2s'] && settings['prosody-s2s-port']) {
     directs2s = {
       port: (settings['prosody-s2s-port'] as string) ?? ''
     }
   }
 
-  let websockets2s
+  let websockets2s: PeertubeXMPPServerInfos['websockets2s'] | undefined
   if (!settings['federation-dont-publish-remotely']) {
     const wsS2SUri = getWSS2SUri(options)
     if (wsS2SUri) { // can be undefined for old Peertube version that dont allow WS for plugins
@@ -242,5 +266,6 @@ async function _serverBuildInfos (
 
 export {
   videoBuildJSONLD,
+  videoContextBuildJSONLD,
   serverBuildInfos
 }
