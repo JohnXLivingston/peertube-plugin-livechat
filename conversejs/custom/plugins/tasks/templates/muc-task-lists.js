@@ -14,6 +14,13 @@ export default function tplMucTaskLists (el, tasklists) {
   const i18nTaskListName = __(LOC_task_list_name)
 
   return html`
+    <div class="">
+      ${
+        repeat(tasklists, (tasklist) => tasklist.get('id'), (tasklist) => {
+          return html`<livechat-converse-muc-task-list .model=${tasklist}></livechat-converse-muc-task-list>`
+        })
+      }
+    </div>
     <form class="converse-form" @submit=${el.submitCreateTaskList}>
       <div class="form-group">
         <label>
@@ -26,12 +33,5 @@ export default function tplMucTaskLists (el, tasklists) {
           : html`<div class="invalid-feedback d-block">${el.create_tasklist_error_message}</div>`
         }
       </div>
-    </form>
-    <div class="">
-      ${
-        repeat(tasklists, (tasklist) => tasklist.get('id'), (tasklist) => {
-          return html`<livechat-converse-muc-task-list .model=${tasklist}></livechat-converse-muc-task-list>`
-        })
-      }
-    </div>`
+    </form>`
 }

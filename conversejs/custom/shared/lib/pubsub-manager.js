@@ -1,5 +1,5 @@
 import { converse, _converse, api } from '../../../src/headless/core.js'
-const { Strophe, $iq, sizzle } = converse.env
+const { $build, Strophe, $iq, sizzle } = converse.env
 
 /**
  * This class helps to manage some objects that are stored on pubsub nodes.
@@ -78,6 +78,61 @@ export class PubSubManager {
       _converse.connection.deleteHandler(this.stanzaHandler)
       this.stanzaHandler = undefined
     }
+  }
+
+  /**
+   * Created a new item
+   * @param collection The collection handling this object.
+   * @param data Object data
+   */
+  async createItem (collection, data) {
+    const type = this._typeFromCollection(collection)
+    if (!type) {
+      throw new Error('Collection not found in manager')
+    }
+
+    console.log('Creating item...')
+    const attributes = { xmlns: type.xmlns }
+
+    for (const attrName in type.attributes ?? []) {
+      if (!(attrName in data)) { continue }
+      attributes[attrName] = data[attrName]
+    }
+
+    const item = $build('item').c(type.itemTag, attributes)
+
+    for (const fieldName in type.fields ?? []) {
+      if (!(fieldName in data)) { continue }
+      item.c(fieldName).t(data[fieldName]).up()
+    }
+
+    await api.pubsub.publish(this.roomJID, this.node, item)
+    console.log(`Node ${this.node} created on ${this.roomJID}.`)
+  }
+
+  async deleteItem (item) {
+    const id = item.get('id')
+    if (!id) {
+      throw new Error('Can\'t delete an empty without ID')
+    }
+
+    const type = this._typeFromCollection(item.collection)
+    if (!type) {
+      throw new Error('Can\'t get type definition from item collection')
+    }
+
+    console.log('Deleting item ' + id + ' on node ' + this.node + ' for room ' + this.roomJID + '...')
+
+    const stanza = $iq({
+      from: _converse.bare_jid,
+      type: 'set',
+      to: this.roomJID
+    }).c('pubsub', { xmlns: Strophe.NS.PUBSUB })
+      .c('retract', { node: this.node })
+      .c('item', { id })
+
+    await api.sendIQ(stanza)
+    console.log('Item deleted.')
   }
 
   /**
@@ -244,5 +299,9 @@ export class PubSubManager {
       case Boolean: return !!v
       default: return v // dont know what to do
     }
+  }
+
+  _typeFromCollection (collection) {
+    return Object.values(this.types).find(type => type.collection === collection)
   }
 }

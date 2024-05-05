@@ -15,6 +15,10 @@ class ChatRoomTaskList extends Model {
       list: taskListId
     }) ?? []
   }
+
+  async deleteItem () {
+    return this.collection.chatroom.taskManager.deleteItem(this)
+  }
 }
 
 export {
