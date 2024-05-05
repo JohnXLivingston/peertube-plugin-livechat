@@ -23,10 +23,13 @@ local cache = require "util.cache";
 local st = require "util.stanza";
 local new_id = require "util.id".medium;
 local storagemanager = require "core.storagemanager";
+local uuid_generate = require "util.uuid".generate;
 
 local xmlns_pubsub = "http://jabber.org/protocol/pubsub";
 local xmlns_pubsub_event = "http://jabber.org/protocol/pubsub#event";
 local xmlns_pubsub_owner = "http://jabber.org/protocol/pubsub#owner";
+local xmlns_tasklist = "urn:peertube-plugin-livechat:tasklist";
+local xmlns_task = "urn:peertube-plugin-livechat:task"
 
 local lib_pubsub = module:require "pubsub";
 
@@ -297,6 +300,29 @@ end
 module:hook("iq/bare/"..xmlns_pubsub..":pubsub", handle_pubsub_iq);
 module:hook("iq/bare/"..xmlns_pubsub_owner..":pubsub", handle_pubsub_iq); -- FIXME: should not be necessary, as we don't have owners.
 
+-- FIXME: this code does not work, don't know why
+-- -- When a livechat-tasks node is created, we create a first task list with the same name as the room.
+-- module:hook("node-created", function (event)
+-- 	local node = event.node;
+-- 	local service = event.service;
+
+-- 	if (node ~= 'livechat-tasks') then
+-- 		return
+-- 	end
+
+-- 	module:log("debug", "New node %q created, we must create the first tasklist", node);
+
+-- 	local id = uuid_generate();
+-- 	local stanza = st.stanza("iq", {}); -- this stanza is only here to construct and get a child item.
+-- 	stanza:tag("item", {})
+-- 		:tag("tasklist", { xmlns = xmlns_tasklist })
+-- 		:tag("name"):text(room.get_name()):up();
+
+-- 	local item = stanza:get_child("item");
+
+-- 	service:publish('livechat-tasks', true, id, item); -- true as second parameters: no actor, force rights.
+-- end);
+
 -- Destroying the node when the room is destroyed
 -- FIXME: really? as the room will be automatically recreated in some cases...
 module:hook("muc-room-destroyed", function(event)
@@ -308,6 +334,8 @@ module:hook("muc-room-destroyed", function(event)
 
 	local service = services[room_jid];
 	if service then
+		module:log("debug", "Deleting nodes for room %q", room_jid);
+
 		for node in pairs(service.nodes) do service:delete(node, true); end
 
 		local item = mep_service_items[room_jid];
