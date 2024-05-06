@@ -109,10 +109,15 @@ export class PubSubManager {
 
     const data = {}
     for (const attr in (type.attributes ?? [])) {
-      data[attr] = item.get(attr)
+      const v = item.get(attr)
+      if (v === undefined) { continue }
+      if (type.attributes[attr] === Boolean && !v) { continue }
+      data[attr] = v
     }
     for (const field in (type.fields ?? [])) {
-      data[field] = item.get(field)
+      const v = item.get(field)
+      if (v === undefined) { continue }
+      data[field] = v
     }
 
     console.log('Saving item...')

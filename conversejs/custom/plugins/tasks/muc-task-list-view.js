@@ -125,10 +125,15 @@ export default class MUCTaskListView extends CustomElement {
       })
 
       await this.model.createTask({
-        name
+        name,
+        description: ev.target.description.value.trim()
       })
 
       this.closeAddTaskForm()
+
+      // If the task list is collapsed, we must open it.
+      // Otherwise, the newly created task won't show up, and user could think that there is a bug.
+      if (this.collapsed) { this.collapsed = false }
     } catch (err) {
       console.error(err)
     } finally {
