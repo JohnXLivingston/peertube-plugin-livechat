@@ -26,6 +26,13 @@
       form {
         width: 100%;
       }
+
+      &[task-is-done] {
+        .task-name,
+        .task-description {
+          text-decoration-line: line-through;
+        }
+      }
     }
   }
 }

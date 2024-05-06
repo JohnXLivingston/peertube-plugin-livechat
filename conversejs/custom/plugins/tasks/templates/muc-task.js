@@ -9,7 +9,7 @@ export function tplMucTask (el, task) {
   const doneId = 'livechat-task-done-id-' + task.get('id')
   return !el.edit
     ? html`
-      <div class="task-line">
+      <div class="task-line" ?task-is-done=${done}>
         <div class="form-check">
           <input
             id="${doneId}"
