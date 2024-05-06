@@ -1,23 +1,28 @@
 import { html } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { __ } from 'i18n'
+import { tplMucAddTaskForm } from './muc-task'
 
 export default function tplMucTaskList (el, tasklist) {
   const tasks = tasklist.getTasks()
   // eslint-disable-next-line no-undef
   const i18nDelete = __(LOC_task_list_delete)
+  // eslint-disable-next-line no-undef
+  const i18nCreateTask = __(LOC_task_create)
+  // eslint-disable-next-line no-undef
+  const i18nTaskListName = __(LOC_task_list_name)
   return html`
     <div class="task-list-description">
       ${el.collapsed
         ? html`
-          <button @click=${el.toggleTasks}>
+          <button @click=${el.toggleTasks} class="task-list-toggle-tasks">
             <converse-icon
               color="var(--muc-toolbar-btn-color)"
               class="fa fa-angle-double-up"
               size="1em"></converse-icon>
           </button>`
         : html`
-          <button @click=${el.toggleTasks}>
+          <button @click=${el.toggleTasks} class="task-list-toggle-tasks">
             <converse-icon
               color="var(--muc-toolbar-btn-color)"
               class="fa fa-angle-double-down"
@@ -29,22 +34,31 @@ export default function tplMucTaskList (el, tasklist) {
           <div class="task-list-name">
             ${tasklist.get('name')}
           </div>
-          <a title="${__('Edit')}"
+          <button class="task-list-action" title="${i18nCreateTask}" @click=${el.openAddTaskForm}>
+            <converse-icon class="fa fa-plus" size="1em"></converse-icon>
+          </button>
+          <button class="task-list-action" title="${__('Edit')}"
             @click=${el.toggleEdit}
           >
             <converse-icon class="fa fa-edit" size="1em"></converse-icon>
-          </a>
-          <a title="${i18nDelete}"
+          </button>
+          <button class="task-list-action" title="${i18nDelete}"
             @click=${el.deleteTaskList}
           >
             <converse-icon class="fa fa-trash-alt" size="1em"></converse-icon>
-          </a>`
+          </button>`
         : html`
           <div class="task-list-name">
-            <form @submit=${el.saveTaskList}>
-              <input type="text" name="name" autofocus value=${tasklist.get('name')} />
+            <form @submit=${el.saveTaskList} class="converse-form">
+              <input type="text" name="name"
+                placeholder="${__(i18nTaskListName)}"
+                class="form-control"
+                value="${tasklist.get('name')}"
+              />
               <input type="submit" class="btn btn-primary" value="${__('Ok')}" />
-              <input type="reset" class="btn btn-secondary" value="${__('Cancel')}" @click=${el.toggleEdit} />
+              <input type="button" class="btn btn-secondary button-cancel"
+                value="${__('Cancel')}" @click=${el.toggleEdit}
+              />
             </form>
           </div>`
       }
@@ -56,5 +70,9 @@ export default function tplMucTaskList (el, tasklist) {
           return html`<livechat-converse-muc-task .model=${task}></livechat-converse-muc-task>`
         })
       }
-    </div>`
+    </div>
+    ${!el.add_task_form_opened
+      ? ''
+      : tplMucAddTaskForm(el, tasklist)
+    }`
 }

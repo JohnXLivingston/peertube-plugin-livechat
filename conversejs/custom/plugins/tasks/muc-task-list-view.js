@@ -8,13 +8,15 @@ export default class MUCTaskListView extends CustomElement {
     return {
       model: { type: Object, attribute: true },
       collapsed: { type: Boolean, attribute: false },
-      edit: { type: Boolean, attribute: false }
+      edit: { type: Boolean, attribute: false },
+      add_task_form_opened: { type: Boolean, attribute: false }
     }
   }
 
   async initialize () {
     this.collapsed = false
     this.edit = false
+    this.add_task_form_opened = false
     if (!this.model) {
       return
     }
@@ -82,13 +84,53 @@ export default class MUCTaskListView extends CustomElement {
     this.edit = !this.edit
     if (this.edit) {
       await this.updateComplete
-      const input = this.querySelector('input[name="name"]')
+      const input = this.querySelector('.task-list-name input[name="name"]')
       if (input) {
         input.focus()
         // Placing cursor at the end:
         input.selectionStart = input.value.length
         input.selectionEnd = input.selectionStart
       }
+    }
+  }
+
+  async openAddTaskForm () {
+    this.add_task_form_opened = true
+    await this.updateComplete
+    const input = this.querySelector('.task-list-add-task input[name="name"]')
+    if (input) {
+      input.focus()
+    }
+  }
+
+  closeAddTaskForm () {
+    this.add_task_form_opened = false
+  }
+
+  async submitAddTask (ev) {
+    ev.preventDefault()
+
+    const name = ev.target.name.value.trim()
+    if ((name ?? '') === '') { return }
+
+    try {
+      this.querySelectorAll('input[type=submit]').forEach(el => {
+        el.setAttribute('disabled', true)
+        el.classList.add('disabled')
+      })
+
+      await this.model.createTask({
+        name
+      })
+
+      this.closeAddTaskForm()
+    } catch (err) {
+      console.error(err)
+    } finally {
+      this.querySelectorAll('input[type=submit]').forEach(el => {
+        el.removeAttribute('disabled')
+        el.classList.remove('disabled')
+      })
     }
   }
 }

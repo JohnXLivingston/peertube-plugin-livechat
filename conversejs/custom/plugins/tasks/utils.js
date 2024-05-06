@@ -61,7 +61,8 @@ function _initChatRoomTaskLists (mucModel) {
         xmlns: XMLNS_TASK,
         collection: mucModel.tasks,
         fields: {
-          name: String
+          name: String,
+          description: String
         },
         attributes: {
           done: Boolean,

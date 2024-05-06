@@ -1,6 +1,6 @@
 import { CustomElement } from 'shared/components/element.js'
 import { api } from '@converse/headless/core'
-import tplMucTask from './templates/muc-task'
+import { tplMucTask } from './templates/muc-task'
 
 export default class MUCTaskView extends CustomElement {
   static get properties () {

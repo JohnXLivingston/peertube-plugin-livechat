@@ -23,7 +23,27 @@ class ChatRoomTaskList extends Model {
   }
 
   async deleteItem () {
-    return this.collection.chatroom.taskManager.deleteItem(this)
+    const tasks = this.getTasks()
+    return this.collection.chatroom.taskManager.deleteItems([...tasks, this])
+  }
+
+  async createTask (data) {
+    // Cloning data to avoid side effects:
+    data = Object.assign({}, data)
+
+    const name = data?.name
+    if (!name) { throw new Error('Missing name') }
+
+    data.list = this.get('id')
+    if (!data.order) {
+      data.order = 1 + Math.max(...this.getTasks().map(t => t.get('order') ?? 0))
+    }
+
+    console.log('Creating task ' + name + '...')
+    const chatroom = this.collection.chatroom
+    const tasksCollection = chatroom.tasks
+    await chatroom.taskManager.createItem(tasksCollection, data)
+    console.log('Task list ' + name + ' created.')
   }
 }
 

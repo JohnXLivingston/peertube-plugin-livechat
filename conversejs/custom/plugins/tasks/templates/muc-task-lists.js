@@ -23,7 +23,7 @@ export default function tplMucTaskLists (el, tasklists) {
       <div class="form-group">
         <label>
           ${i18nCreateTaskList}
-          <input type="text" value="" name="name" placeholder="${i18nTaskListName}" />
+          <input type="text" value="" class="form-control" name="name" placeholder="${i18nTaskListName}" />
         </label>
         <input type="submit" value="${i18nAdd}" class="btn btn-primary" />
         ${!el.create_tasklist_error_message

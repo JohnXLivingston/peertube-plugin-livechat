@@ -16,17 +16,35 @@
       column-gap: 0.25em;
       width: 100%;
 
-      button {
+      .task-list-toggle-tasks,
+      .task-list-action {
         border: 0;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
       }
 
       .task-list-name {
         flex-grow: 2;
+
+        form {
+          display: flex;
+          flex-flow: row nowrap;
+          column-gap: 0.25em;
+
+          input[type="text"] {
+            flex-grow: 2;
+          }
+        }
       }
     }
 
     .task-list-tasks {
       padding-left: 2em;
+      width: 100%;
+    }
+
+    .task-list-add-task {
+      padding: 0.25em 0.25em 0.25em 2em;
       width: 100%;
     }
   }

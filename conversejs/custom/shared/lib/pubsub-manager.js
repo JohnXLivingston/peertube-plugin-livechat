@@ -120,6 +120,10 @@ export class PubSubManager {
     console.log(`Node ${this.node} created on ${this.roomJID}.`)
   }
 
+  async deleteItems (items) {
+    await Promise.all[items.map(item => this.deleteItem(item))]
+  }
+
   async deleteItem (item) {
     const id = item.get('id')
     if (!id) {
