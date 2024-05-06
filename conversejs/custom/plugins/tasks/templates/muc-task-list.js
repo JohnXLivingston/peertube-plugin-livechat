@@ -12,7 +12,7 @@ export default function tplMucTaskList (el, tasklist) {
   // eslint-disable-next-line no-undef
   const i18nTaskListName = __(LOC_task_list_name)
   return html`
-    <div class="task-list-description">
+    <div class="task-list-line">
       ${el.collapsed
         ? html`
           <button @click=${el.toggleTasks} class="task-list-toggle-tasks">

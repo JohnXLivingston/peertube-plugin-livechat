@@ -1,0 +1,31 @@
+.conversejs {
+  livechat-converse-muc-task {
+    padding: 0;
+    width: 100%;
+
+    .task-line {
+      border: 1px solid var(--chatroom-head-bg-color);
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      padding: 0.25em;
+      column-gap: 0.25em;
+      width: 100%;
+
+      .task-description {
+        flex-grow: 2;
+        white-space: pre-wrap;
+      }
+
+      .task-action {
+        border: 0;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+      }
+
+      form {
+        width: 100%;
+      }
+    }
+  }
+}

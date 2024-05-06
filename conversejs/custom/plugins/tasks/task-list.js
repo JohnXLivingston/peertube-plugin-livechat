@@ -18,8 +18,8 @@ class ChatRoomTaskList extends Model {
 
   async saveItem () {
     console.log('Saving task list ' + this.get('id') + '...')
-    await this.collection.chatroom.taskManager.saveItem(this, { name })
-    console.log('Task list ' + this.get('id') + ' created.')
+    await this.collection.chatroom.taskManager.saveItem(this)
+    console.log('Task list ' + this.get('id') + ' saved.')
   }
 
   async deleteItem () {
@@ -36,7 +36,10 @@ class ChatRoomTaskList extends Model {
 
     data.list = this.get('id')
     if (!data.order) {
-      data.order = 1 + Math.max(...this.getTasks().map(t => t.get('order') ?? 0))
+      data.order = 1 + Math.max(
+        0,
+        ...(this.getTasks().map(t => t.get('order') ?? 0).filter(o => !isNaN(o)))
+      )
     }
 
     console.log('Creating task ' + name + '...')
