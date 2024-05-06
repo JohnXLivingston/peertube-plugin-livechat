@@ -132,6 +132,8 @@ end
 
 local function get_broadcaster(room_jid, room_host)
 	local function simple_broadcast(kind, node, jids, item, _, node_obj)
+		-- module:log("debug", "simple_broadcast call, kind=%q, from %s for node %s", kind, room_jid, node);
+
 		if node_obj then
 			if node_obj.config["notify_"..kind] == false then
 				return;

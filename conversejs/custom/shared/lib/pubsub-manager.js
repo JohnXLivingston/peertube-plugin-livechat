@@ -128,7 +128,7 @@ export class PubSubManager {
       type: 'set',
       to: this.roomJID
     }).c('pubsub', { xmlns: Strophe.NS.PUBSUB })
-      .c('retract', { node: this.node })
+      .c('retract', { node: this.node, notify: '1' })
       .c('item', { id })
 
     await api.sendIQ(stanza)
@@ -258,7 +258,7 @@ export class PubSubManager {
    */
   _handleRetractations (stanza) {
     // Note: here we don't know the object type. We must try on each collection.
-    const ids = sizzle('', stanza).map(i => i.getAttribute('id'))
+    const ids = sizzle('retract', stanza).map(i => i.getAttribute('id'))
     for (const id of ids) {
       for (const key in this.types) {
         const type = this.types[key]
