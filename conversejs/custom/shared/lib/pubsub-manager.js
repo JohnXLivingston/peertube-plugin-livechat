@@ -92,21 +92,31 @@ export class PubSubManager {
     }
 
     console.log('Creating item...')
-    const attributes = { xmlns: type.xmlns }
+    await this._save(type, data)
+    console.log(`Node ${this.node} created on ${this.roomJID}.`)
+  }
 
-    for (const attrName in type.attributes ?? []) {
-      if (!(attrName in data)) { continue }
-      attributes[attrName] = data[attrName]
+  async saveItem (item) {
+    const id = item.get('id')
+    if (!id) {
+      throw new Error('Can\'t delete an empty without ID')
     }
 
-    const item = $build('item').c(type.itemTag, attributes)
-
-    for (const fieldName in type.fields ?? []) {
-      if (!(fieldName in data)) { continue }
-      item.c(fieldName).t(data[fieldName]).up()
+    const type = this._typeFromCollection(item.collection)
+    if (!type) {
+      throw new Error('Collection not found in manager')
     }
 
-    await api.pubsub.publish(this.roomJID, this.node, item)
+    const data = {}
+    for (const attr in (type.attributes ?? [])) {
+      data[attr] = item.get(attr)
+    }
+    for (const field in (type.fields ?? [])) {
+      data[field] = item.get(field)
+    }
+
+    console.log('Saving item...')
+    await this._save(type, data, id)
     console.log(`Node ${this.node} created on ${this.roomJID}.`)
   }
 
@@ -133,6 +143,29 @@ export class PubSubManager {
 
     await api.sendIQ(stanza)
     console.log('Item deleted.')
+  }
+
+  async _save (type, data, id) {
+    const itemAttributes = {}
+    if (id) {
+      itemAttributes.id = id
+    }
+
+    const attributes = { xmlns: type.xmlns }
+
+    for (const attrName in type.attributes ?? []) {
+      if (!(attrName in data)) { continue }
+      attributes[attrName] = data[attrName]
+    }
+
+    const item = $build('item', itemAttributes).c(type.itemTag, attributes)
+
+    for (const fieldName in type.fields ?? []) {
+      if (!(fieldName in data)) { continue }
+      item.c(fieldName).t(data[fieldName]).up()
+    }
+
+    await api.pubsub.publish(this.roomJID, this.node, item)
   }
 
   /**

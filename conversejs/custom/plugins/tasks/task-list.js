@@ -16,6 +16,12 @@ class ChatRoomTaskList extends Model {
     }) ?? []
   }
 
+  async saveItem () {
+    console.log('Saving task list ' + this.get('id') + '...')
+    await this.collection.chatroom.taskManager.saveItem(this, { name })
+    console.log('Task list ' + this.get('id') + ' created.')
+  }
+
   async deleteItem () {
     return this.collection.chatroom.taskManager.deleteItem(this)
   }

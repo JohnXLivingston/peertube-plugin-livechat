@@ -3,6 +3,8 @@ import { api } from '@converse/headless/core'
 import tplMucTaskLists from './templates/muc-task-lists'
 import { __ } from 'i18n'
 
+import './styles/muc-task-lists.scss'
+
 export default class MUCTaskListsView extends CustomElement {
   static get properties () {
     return {
