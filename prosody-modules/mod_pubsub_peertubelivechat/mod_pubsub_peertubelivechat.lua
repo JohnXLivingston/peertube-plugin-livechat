@@ -71,7 +71,7 @@ local node_config = module:open_store("livechat-mep", "map");
 local known_nodes = module:open_store("livechat-mep");
 
 -- maximum number of items in a node:
-local max_max_items = module:get_option_number("livechat_mep_max_items", 256);
+local max_max_items = module:get_option_number("livechat_mep_max_items", 5000);
 
 local function tonumber_max_items(n)
 	if n == "max" then
