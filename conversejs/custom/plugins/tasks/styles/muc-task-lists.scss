@@ -9,6 +9,7 @@
 
     .task-list-line {
       border: 1px solid var(--chatroom-head-bg-color);
+      border-radius: 4px;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-around;

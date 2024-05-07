@@ -18,21 +18,21 @@ export default function tplMucTaskList (el, tasklist) {
           <button @click=${el.toggleTasks} class="task-list-toggle-tasks">
             <converse-icon
               color="var(--muc-toolbar-btn-color)"
-              class="fa fa-angle-double-up"
+              class="fa fa-angle-right"
               size="1em"></converse-icon>
           </button>`
         : html`
           <button @click=${el.toggleTasks} class="task-list-toggle-tasks">
             <converse-icon
               color="var(--muc-toolbar-btn-color)"
-              class="fa fa-angle-double-down"
+              class="fa fa-angle-down"
               size="1em"></converse-icon>
           </button>`
       }
       ${!el.edit
         ? html`
           <div class="task-list-name">
-            ${tasklist.get('name')}
+            <a @click=${el.toggleTasks}>${tasklist.get('name')}</a>
           </div>
           <button class="task-list-action" title="${i18nCreateTask}" @click=${el.openAddTaskForm}>
             <converse-icon class="fa fa-plus" size="1em"></converse-icon>
