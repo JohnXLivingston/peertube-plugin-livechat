@@ -27,6 +27,7 @@ export default class MUCTaskListView extends CustomElement {
     // FIXME: is there a way to only refresh if the task is part of this list?
     this.listenTo(this.model.collection.chatroom.tasks, 'add', () => this.requestUpdate())
     this.listenTo(this.model.collection.chatroom.tasks, 'remove', () => this.requestUpdate())
+    this.listenTo(this.model.collection.chatroom.tasks, 'sort', () => this.requestUpdate())
   }
 
   render () {
