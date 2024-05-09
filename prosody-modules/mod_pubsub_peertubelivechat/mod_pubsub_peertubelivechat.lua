@@ -48,12 +48,12 @@ local service_cache_size = module:get_option_number("livechat_mep_service_cache_
 
 -- room_jid => util.pubsub service object
 local services = cache.new(service_cache_size, function (room_jid, _)
-  -- when service is evicted from cache, we must remove the associated item.
-  local item = mep_service_items[room_jid];
-  mep_service_items[room_jid] = nil;
-  if item then
-    module:remove_item("livechat-mep-service", item);
-  end
+	-- when service is evicted from cache, we must remove the associated item.
+	local item = mep_service_items[room_jid];
+	mep_service_items[room_jid] = nil;
+	if item then
+		module:remove_item("livechat-mep-service", item);
+	end
 end):table();
 
 -- -- size of caches with smaller objects
@@ -102,13 +102,13 @@ local function nodestore(room_jid)
 	local store = {};
 	function store:get(node)
 		local data, err = node_config:get(room_jid, node)
-    -- data looks like:
-    -- data = {
-    --   name = node;
-    --   config = {};
-    --   subscribers = {};
-    --   affiliations = {};
-    -- };
+		-- data looks like:
+		-- data = {
+		--	 name = node;
+		--	 config = {};
+		--	 subscribers = {};
+		--	 affiliations = {};
+		-- };
 		return data, err;
 	end
 	function store:set(node, data)
@@ -199,7 +199,7 @@ function get_mep_service(room_jid, room_host)
 		return service;
 	end
 
-  local room = get_room_from_jid(jid_join(room_jid, room_host));
+	local room = get_room_from_jid(jid_join(room_jid, room_host));
 	if not room then
 		module:log("debug", "No room for node %q, returning the noroom service", room_jid);
 		return noroom_service;
@@ -225,32 +225,32 @@ function get_mep_service(room_jid, room_host)
 		itemcheck = is_item_stanza;
 		get_affiliation = function (jid)
 			-- module:log("debug", "get_affiliation call for %q", jid);
-      -- First checking if there is an affiliation on the room for this JID.
-      local actor_jid = jid_bare(jid);
-      local room_affiliation = room:get_affiliation(actor_jid);
-      -- if user is banned, don't go any further
-      if (room_affiliation == "outcast") then
+			-- First checking if there is an affiliation on the room for this JID.
+			local actor_jid = jid_bare(jid);
+			local room_affiliation = room:get_affiliation(actor_jid);
+			-- if user is banned, don't go any further
+			if (room_affiliation == "outcast") then
 				-- module:log("debug", "get_affiliation for %q: outcast (existing room affiliation)", jid);
-        return "outcast";
-      end
-      if (room_affiliation == "owner" or room_affiliation == "admin") then
+				return "outcast";
+			end
+			if (room_affiliation == "owner" or room_affiliation == "admin") then
 				-- module:log("debug", "get_affiliation for %q: publisher (because owner or admin affiliation)", jid);
-        return "publisher"; -- always publisher! (see notes at the beginning of this file)
-      end
+				return "publisher"; -- always publisher! (see notes at the beginning of this file)
+			end
 
-      -- No permanent room affiliation... Checking role (for users currently connected to the room)
-      local actor_nick = room:get_occupant_jid(jid);
-      if (actor_nick ~= nil) then
-        local role = room:get_role(actor_nick);
-        if valid_roles[role or "none"] >= valid_roles.moderator then
+			-- No permanent room affiliation... Checking role (for users currently connected to the room)
+			local actor_nick = room:get_occupant_jid(jid);
+			if (actor_nick ~= nil) then
+				local role = room:get_role(actor_nick);
+				if valid_roles[role or "none"] >= valid_roles.moderator then
 					module:log("debug", "get_affiliation for %q: publisher (because of current role)", jid);
-          return "publisher"; -- always publisher! (see notes at the beginning of this file)
-        end
-      end
+					return "publisher"; -- always publisher! (see notes at the beginning of this file)
+				end
+			end
 
-      -- no access!
+			-- no access!
 			-- module:log("debug", "get_affiliation for %q: outcast", jid);
-      return "outcast";
+			return "outcast";
 		end;
 
 		jid = room_jid;
@@ -308,7 +308,7 @@ module:hook("iq/bare/"..xmlns_pubsub_owner..":pubsub", handle_pubsub_iq); -- FIX
 -- FIXME: really? as the room will be automatically recreated in some cases...
 module:hook("muc-room-destroyed", function(event)
 	local room = event.room;
-  local room_jid, room_host = jid_split(room.jid);
+	local room_jid, room_host = jid_split(room.jid);
 	if room_host == nil then
 		room_host = host;
 	end
