@@ -26,6 +26,22 @@ export default class MUCTaskView extends CustomElement {
     return tplMucTask(this, this.model)
   }
 
+  shouldUpdate (changedProperties) {
+    if (!super.shouldUpdate(...arguments)) { return false }
+    // When a task is currently edited, and another users change the order,
+    // it could refresh losing the current form.
+    // To avoid this, we cancel update here.
+    // Note: of course, if 'edit' is part of the edited properties, we must update anyway
+    // (it means we just leaved the form)
+    if (this.edit && !changedProperties.has('edit')) {
+      console.info('Canceling an update on task, because it is currently edited', this)
+      return false
+    }
+    // FIXME: in some case this is not enough. Can't understand exactly why for now.
+    //    probably because of some of the requestUpdate on the task-list or task-lists.
+    return true
+  }
+
   async saveTask (ev) {
     ev?.preventDefault?.()
 
@@ -45,6 +61,7 @@ export default class MUCTaskView extends CustomElement {
       await task.saveItem()
 
       this.edit = false
+      this.requestUpdate() // In case we cancel another update in shouldUpdate
     } catch (err) {
       console.error(err)
     } finally {
