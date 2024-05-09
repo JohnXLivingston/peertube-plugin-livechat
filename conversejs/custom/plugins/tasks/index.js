@@ -25,8 +25,8 @@ converse.plugins.add('livechat-converse-tasks', {
         initOrDestroyChatRoomTaskLists(muc)
       })
 
-      // When the current user role changes, we must also delete or initilize the TaskLists object:
-      muc.occupants.on('change:role', occupant => {
+      // When the current user affiliation changes, we must also delete or initiliaze the TaskLists object:
+      muc.occupants.on('change:affiliation', occupant => {
         if (occupant.get('jid') !== _converse.bare_jid) { // only for myself
           return
         }

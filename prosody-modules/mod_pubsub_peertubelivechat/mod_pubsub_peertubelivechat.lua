@@ -3,10 +3,10 @@
 -- but here there are some differences:
 -- * there will be several nodes, using MUC JID+NodeID to access them
 --	 (see https://xmpp.org/extensions/xep-0060.html#addressing-jid)
--- * nodes can only be subscribed by room moderators,
+-- * nodes can only be subscribed by room admin/owner,
 -- * ...
 
--- Note: all room moderators will have 'publisher' access:
+-- Note: all room admin/owner will have 'publisher' access:
 -- so they can't modify configuration, affiliations or subscriptions.
 -- There will be no owner. FIXME: is this ok? will prosody accept? (the XEP-0060 says that there must be an owner).
 
@@ -226,26 +226,16 @@ function get_mep_service(room_jid, room_host)
 		get_affiliation = function (jid)
 			-- module:log("debug", "get_affiliation call for %q", jid);
 			-- First checking if there is an affiliation on the room for this JID.
-			local actor_jid = jid_bare(jid);
-			local room_affiliation = room:get_affiliation(actor_jid);
+			local actor_bare_jid = jid_bare(jid);
+			local room_affiliation = room:get_affiliation(actor_bare_jid);
 			-- if user is banned, don't go any further
 			if (room_affiliation == "outcast") then
 				-- module:log("debug", "get_affiliation for %q: outcast (existing room affiliation)", jid);
 				return "outcast";
 			end
 			if (room_affiliation == "owner" or room_affiliation == "admin") then
-				-- module:log("debug", "get_affiliation for %q: publisher (because owner or admin affiliation)", jid);
+				module:log("debug", "get_affiliation for %q: publisher (because owner or admin affiliation)", jid);
 				return "publisher"; -- always publisher! (see notes at the beginning of this file)
-			end
-
-			-- No permanent room affiliation... Checking role (for users currently connected to the room)
-			local actor_nick = room:get_occupant_jid(jid);
-			if (actor_nick ~= nil) then
-				local role = room:get_role(actor_nick);
-				if valid_roles[role or "none"] >= valid_roles.moderator then
-					module:log("debug", "get_affiliation for %q: publisher (because of current role)", jid);
-					return "publisher"; -- always publisher! (see notes at the beginning of this file)
-				end
 			end
 
 			-- no access!

@@ -97,8 +97,8 @@ export function initOrDestroyChatRoomTaskLists (mucModel) {
   }
 
   const myself = mucModel.getOwnOccupant()
-  if (!myself || !myself.isModerator()) {
-    // User must be moderator
+  if (!myself || !['admin', 'owner'].includes(myself.get('affiliation'))) {
+    // User must be admin or owner
     return _destroyChatRoomTaskLists(mucModel)
   }
 

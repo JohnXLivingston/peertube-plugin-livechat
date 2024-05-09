@@ -4,7 +4,7 @@ This module is a custom module that provide some pubsub services associated to a
 This module is entended to be used in the peertube-plugin-livechat project.
 
 For each MUC room, there will be an associated pubsub node.
-This node in only accessible by the ROOM moderators.
+This node in only accessible by the ROOM admin/owner.
 
 This node can contains various objects:
 
@@ -12,7 +12,7 @@ This node can contains various objects:
 * tasks
 * ... (more to come)
 
-These objects are meant te be shared between moderators.
+These objects are meant te be shared between admin/owner.
 
 This module is part of peertube-plugin-livechat, and is under the same LICENSE.
 
