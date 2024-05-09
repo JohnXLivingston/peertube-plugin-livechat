@@ -172,26 +172,6 @@ local function get_broadcaster(room_jid, room_host)
 	return simple_broadcast;
 end
 
--- local function get_subscriber_filter(room_jid)
--- 	return function (jids, node)
--- 		local broadcast_to = {};
--- 		for jid, opts in pairs(jids) do
--- 			broadcast_to[jid] = opts;
--- 		end
-
--- 		local service_recipients = recipients[room_jid];
--- 		if service_recipients then
--- 			local service = services[room_jid];
--- 			for recipient, nodes in pairs(service_recipients) do
--- 				if nodes:contains(node) and service:may(node, recipient, "subscribe") then
--- 					broadcast_to[recipient] = true;
--- 				end
--- 			end
--- 		end
--- 		return broadcast_to;
--- 	end
--- end
-
 -- Read-only service with no nodes where nobody is allowed anything to act as a
 -- fallback for interactions with non-existent rooms
 local noroom_service = pubsub.new({
@@ -242,7 +222,6 @@ function get_mep_service(room_jid, room_host)
 		nodestore = nodestore(room_jid);
 		itemstore = simple_itemstore(room_jid);
 		broadcaster = get_broadcaster(room_jid, room_host);
-		-- subscriber_filter = get_subscriber_filter(room_jid);
 		itemcheck = is_item_stanza;
 		get_affiliation = function (jid)
 			-- module:log("debug", "get_affiliation call for %q", jid);
