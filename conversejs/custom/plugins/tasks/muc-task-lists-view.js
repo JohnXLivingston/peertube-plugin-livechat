@@ -4,6 +4,7 @@ import tplMucTaskLists from './templates/muc-task-lists'
 import { __ } from 'i18n'
 
 import './styles/muc-task-lists.scss'
+import './styles/muc-task-drag.scss'
 
 export default class MUCTaskListsView extends CustomElement {
   currentDraggedTask = null
@@ -95,8 +96,16 @@ export default class MUCTaskListsView extends CustomElement {
     return target.closest?.('livechat-converse-muc-task')
   }
 
+  _getParentTaskOrTaskListEl (target) {
+    return target.closest?.('livechat-converse-muc-task, livechat-converse-muc-task-list')
+  }
+
   _isATaskEl (target) {
     return target.nodeName?.toLowerCase() === 'livechat-converse-muc-task'
+  }
+
+  isATaskListEl (target) {
+    return target.nodeName?.toLowerCase() === 'livechat-converse-muc-task-list'
   }
 
   _isOnTopHalf (ev, taskEl) {
@@ -115,30 +124,31 @@ export default class MUCTaskListsView extends CustomElement {
     // The draggable=true is on a livechat-converse-muc-task child
     const possibleTaskEl = ev.target.parentElement
     if (!this._isATaskEl(possibleTaskEl)) { return }
-    console.log('Starting to drag a task...')
+    console.log('[livechat task drag&drop] Starting to drag a task...')
     this.currentDraggedTask = possibleTaskEl
     this._resetDropOver()
   }
 
   _handleDragOver (ev) {
     if (!this.currentDraggedTask) { return }
-    const taskEl = this._getParentTaskEl(ev.target)
-    if (!taskEl) { return }
+    const taskOrTaskListEl = this._getParentTaskOrTaskListEl(ev.target)
+    if (!taskOrTaskListEl) { return }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event says we should preventDefault
     ev.preventDefault()
 
     // Are we on the top or bottom part of the taskEl?
-    const topHalf = this._isOnTopHalf(ev, taskEl)
-    taskEl.classList.add(topHalf ? 'livechat-drag-top-half' : 'livechat-drag-bottom-half')
-    taskEl.classList.remove(topHalf ? 'livechat-drag-bottom-half' : 'livechat-drag-top-half')
+    // Note: for task list, we always add the task in the task list, so no need to test here.
+    const topHalf = this._isATaskEl(taskOrTaskListEl) ? this._isOnTopHalf(ev, taskOrTaskListEl) : false
+    taskOrTaskListEl.classList.add(topHalf ? 'livechat-drag-top-half' : 'livechat-drag-bottom-half')
+    taskOrTaskListEl.classList.remove(topHalf ? 'livechat-drag-bottom-half' : 'livechat-drag-top-half')
   }
 
   _handleDragLeave (ev) {
     if (!this.currentDraggedTask) { return }
-    const taskEl = this._getParentTaskEl(ev.target)
-    if (!taskEl) { return }
-    taskEl.classList.remove('livechat-drag-bottom-half', 'livechat-drag-top-half')
+    const taskOrTaskListEl = this._getParentTaskOrTaskListEl(ev.target)
+    if (!taskOrTaskListEl) { return }
+    taskOrTaskListEl.classList.remove('livechat-drag-bottom-half', 'livechat-drag-top-half')
   }
 
   _handleDragEnd (_ev) {
@@ -149,39 +159,78 @@ export default class MUCTaskListsView extends CustomElement {
   _handleDrop (_ev) {
     if (!this.currentDraggedTask) { return }
 
-    const draggedEl = document.querySelector('.livechat-drag-bottom-half, .livechat-drag-top-half')
-    const taskEl = this._getParentTaskEl(draggedEl)
-    if (!taskEl) { return }
+    const droppedOnEl = document.querySelector('.livechat-drag-bottom-half, .livechat-drag-top-half')
+    const droppedOntaskOrTaskListEl = this._getParentTaskOrTaskListEl(droppedOnEl)
+    if (!droppedOntaskOrTaskListEl) { return }
 
-    console.log('Task dropped...')
+    console.log('[livechat task drag&drop] Task dropped...')
 
     const task = this.currentDraggedTask.model
-    const droppedOnTask = taskEl.model
 
-    if (task === droppedOnTask) {
-      console.log('Task dropped on itself, nothing to do')
+    let newOrder, targetTasklist
+    if (this.isATaskListEl(droppedOntaskOrTaskListEl)) {
+      // We dropped on a task list, we must add as first entry.
+      newOrder = 0
+
+      targetTasklist = droppedOntaskOrTaskListEl.model
+      if (task.get('list') !== targetTasklist.get('id')) {
+        console.log('[livechat task drag&drop] Changing task list...')
+        task.set('list', targetTasklist.get('id'))
+      } else if (task.get('order') === newOrder) {
+        // Just to avoid doing some modifications for nothing...
+        console.log('[livechat task drag&drop] Task dropped on tasklist, but already first item, nothing to do')
+        return
+      }
+    } else if (this._isATaskEl(droppedOntaskOrTaskListEl)) {
+      // We dropped on a task, we must get its order (+1 if !onTopHalf)
+      const droppedOnTask = droppedOntaskOrTaskListEl.model
+      if (task === droppedOnTask) {
+        // But of course, if dropped on itself there is nothing to do.
+        console.log('[livechat task drag&drop] Task dropped on itself, nothing to do')
+        return
+      }
+
+      if (task.get('list') !== droppedOnTask.get('list')) {
+        console.log('[livechat task drag&drop] Changing task list...')
+        task.set('list', droppedOnTask.get('list'))
+      }
+
+      const topHalf = droppedOnEl.classList.contains('livechat-drag-top-half')
+      newOrder = droppedOnTask.get('order') ?? 0
+      if (!topHalf) { newOrder = Math.max(0, newOrder + 1) }
+
+      if (typeof newOrder !== 'number' || isNaN(newOrder)) {
+        console.error(
+          'Dropped on a task that has not valid order.  ' +
+          'Setting order to 0, that will refresh all tasks order, but the user will not have the expected result.'
+        )
+        newOrder = 0
+      }
+
+      targetTasklist = this.model.get(droppedOnTask.get('list'))
+    } else {
+      console.error('[livechat task drag&drop] Dropped on something that is not valid, aborting')
       return
     }
 
-    if (task.get('list') !== droppedOnTask.get('list')) {
-      console.log('Changing task list...')
-      task.set('list', droppedOnTask.get('list'))
+    if (typeof newOrder !== 'number' || isNaN(newOrder)) {
+      console.error('[livechat task drag&drop] Computed new order is not a number, aborting.')
+      return
     }
+    console.log('[livechat task drag&drop] Task new order will be ' + newOrder)
 
-    const topHalf = draggedEl.classList.contains('livechat-drag-top-half')
-    let newOrder = droppedOnTask.get('order') ?? 0
-    if (!topHalf) { Math.max(0, newOrder++) }
-    console.log('Task new order will be ' + newOrder)
-
-    const targetTasklist = this.model.get(droppedOnTask.get('list'))
-
-    console.log('Reordering tasks...')
+    console.log('[livechat task drag&drop] Reordering tasks...')
     let currentOrder = newOrder + 1
     for (const t of targetTasklist.getTasks()) {
-      const order = t.get('order') ?? 0
       if (t === task) {
-        console.log('Skipping the currently moved task')
+        console.log('[livechat task drag&drop] Skipping the currently moved task')
         continue
+      }
+
+      let order = t.get('order') ?? 0
+      if (typeof order !== 'number' || isNaN(order)) {
+        console.error('[livechat task drag&drop] Found a task with an invalid order, fixing it.')
+        order = currentOrder // this will cause the code bellow to increment task order
       }
       if (order < newOrder) { continue }
 
@@ -198,7 +247,7 @@ export default class MUCTaskListsView extends CustomElement {
       t.saveItem() // TODO: handle errors?
     }
 
-    console.log('Setting new order on the moved task')
+    console.log('[livechat task drag&drop] Setting new order on the moved task')
     task.set('order', newOrder)
     task.saveItem() // TODO: handle errors?
 

@@ -28,6 +28,7 @@ export default class MUCTaskListView extends CustomElement {
     this.listenTo(this.model.collection.chatroom.tasks, 'add', () => this.requestUpdate())
     this.listenTo(this.model.collection.chatroom.tasks, 'remove', () => this.requestUpdate())
     this.listenTo(this.model.collection.chatroom.tasks, 'sort', () => this.requestUpdate())
+    this.listenTo(this.model.collection.chatroom.tasks, 'change:list', () => this.requestUpdate())
   }
 
   render () {

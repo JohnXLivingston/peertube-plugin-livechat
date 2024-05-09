@@ -36,7 +36,7 @@ class ChatRoomTaskList extends Model {
 
     data.list = this.get('id')
     if (!data.order) {
-      data.order = 1 + Math.max(
+      data.order = 0 + Math.max(
         0,
         ...(this.getTasks().map(t => t.get('order') ?? 0).filter(o => !isNaN(o)))
       )

@@ -1,0 +1,21 @@
+.conversejs {
+  livechat-converse-muc-task {
+    &.livechat-drag-bottom-half .task-line {
+      border-bottom: 4px solid blue;
+    }
+
+    &.livechat-drag-top-half .task-line {
+      border-top: 4px solid blue;
+    }
+  }
+
+  livechat-converse-muc-task-list {
+    &.livechat-drag-bottom-half .task-list-line {
+      border-bottom: 4px solid blue;
+    }
+
+    &.livechat-drag-top-half .task-list-line {
+      border-top: 4px solid blue;
+    }
+  }
+}
