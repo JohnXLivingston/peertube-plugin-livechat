@@ -112,9 +112,11 @@ export default class MUCTaskListsView extends CustomElement {
   }
 
   _handleDragStart (ev) {
-    if (!this._isATaskEl(ev.target)) { return }
+    // The draggable=true is on a livechat-converse-muc-task child
+    const possibleTaskEl = ev.target.parentElement
+    if (!this._isATaskEl(possibleTaskEl)) { return }
     console.log('Starting to drag a task...')
-    this.currentDraggedTask = ev.target
+    this.currentDraggedTask = possibleTaskEl
     this._resetDropOver()
   }
 

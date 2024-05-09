@@ -67,7 +67,7 @@ export default function tplMucTaskList (el, tasklist) {
       ${el.collapsed
         ? ''
         : repeat(tasks, (task) => task.get('id'), (task) => {
-          return html`<livechat-converse-muc-task .model=${task} draggable="true"></livechat-converse-muc-task>`
+          return html`<livechat-converse-muc-task .model=${task}></livechat-converse-muc-task>`
         })
       }
     </div>
