@@ -14,7 +14,7 @@
 -- * livechat-tasks: contains tasklist and task items, specific to livechat plugin.
 
 -- There are some other tricks in this module:
--- * no message sent to offline users
+-- * unsubscribing users that have left the room (the front-end will subscribe again when needed)
 -- * unsubscribing users when losing their affiliation
 
 -- TODO: add disco support.
@@ -177,29 +177,6 @@ local function get_broadcaster(room_jid, room_host)
 	return simple_broadcast;
 end
 
--- We only broadcast messages to users currently online.
-local function get_subscriber_filter(room_jid, room_host)
-	return function (jids, node)
-		local broadcast_to = {};
-		if (room_host ~= host) then;
-			return broadcast_to;
-		end
-
-		local service = services[room_jid];
-		for jid, opts in pairs(jids) do
-			local bare_jid = jid_bare(jid);
-			if (not bare_sessions[bare_jid]) then
-				module:log("debug", "Filtering subscriptions for user %q, as he/she is not currently logged in.", bare_jid);
-			else
-				broadcast_to[jid] = opts;
-			end
-		end
-
-		return broadcast_to;
-	end
-end
-
-
 -- Read-only service with no nodes where nobody is allowed anything to act as a
 -- fallback for interactions with non-existent rooms
 local noroom_service = pubsub.new({
@@ -250,7 +227,6 @@ function get_mep_service(room_jid, room_host)
 		nodestore = nodestore(room_jid);
 		itemstore = simple_itemstore(room_jid);
 		broadcaster = get_broadcaster(room_jid, room_host);
-		subscriber_filter = get_subscriber_filter(room_jid, room_host);
 		itemcheck = is_item_stanza;
 		get_affiliation = function (jid)
 			-- module:log("debug", "get_affiliation call for %q", jid);
@@ -366,10 +342,39 @@ module:hook("muc-set-affiliation", function(event)
 	);
 
 	local room_jid, room_host = jid_split(room.jid);
-	local service = get_mep_service(room_jid, room_host);
+	local service = services[room_jid];
+	if (not service) then
+		return;
+	end
 
 	for node in pairs(service.nodes) do
-		-- remove_subscription can fail if user is not subscribed, but that is ok.
-		service:remove_subscription(node, true, jid);
+		if service.nodes[node].subscribers[jid] then
+			module:log("debug", "  Unsubscribing from node %q", node);
+			service:remove_subscription(node, true, jid);
+		end
+	end
+end);
+
+-- When a user leaves a room, we must unsubscribe it
+module:hook("muc-occupant-left", function (event)
+	local room = event.room;
+	local occupant = event.occupant;
+
+	local room_jid, room_host = jid_split(room.jid);
+	local service = services[room_jid];
+	if (not service) then
+		return;
+	end
+
+	module:log(
+		"debug",
+		"Occupant %q has left room %q, we must unsubscribe him/her for pubsub nodes.",
+		occupant.bare_jid, room_jid
+	);
+	for node in pairs(service.nodes) do
+		if service.nodes[node].subscribers[occupant.bare_jid] then
+			module:log("debug", "  Unsubscribing from node %q", node);
+			service:remove_subscription(node, true, occupant.bare_jid);
+		end;
 	end
 end);
