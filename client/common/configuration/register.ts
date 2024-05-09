@@ -5,6 +5,7 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { renderConfigurationHome } from './templates/home'
 import { renderConfigurationChannel } from './templates/channel'
+import { render } from 'lit'
 
 /**
  * Registers stuff related to the user's configuration pages.
@@ -19,7 +20,7 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
   registerClientRoute({
     route: 'livechat/configuration',
     onMount: async ({ rootEl }) => {
-      rootEl.innerHTML = await renderConfigurationHome(clientOptions)
+      render(await renderConfigurationHome(clientOptions), rootEl)
     }
   })
 
@@ -28,7 +29,7 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
     onMount: async ({ rootEl }) => {
       const urlParams = new URLSearchParams(window.location.search)
       const channelId = urlParams.get('channelId') ?? ''
-      await renderConfigurationChannel(clientOptions, channelId, rootEl)
+      render(await renderConfigurationChannel(clientOptions, channelId, rootEl), rootEl)
     }
   })
 

@@ -5,15 +5,22 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { localizedHelpUrl } from '../../../utils/help'
 import { helpButtonSVG } from '../../../videowatch/buttons'
-// Must use require for mustache, import seems buggy.
-const Mustache = require('mustache')
+import { TemplateResult, html } from 'lit';
+
+interface HomeViewData {
+  title: string
+  description: string
+  please_select: string
+  channels: any[]
+  helpButton: TemplateResult
+}
 
 /**
  * Renders the livechat configuration setup home page.
  * @param registerClientOptions Peertube client options
  * @returns The page content
  */
-async function renderConfigurationHome (registerClientOptions: RegisterClientOptions): Promise<string> {
+async function renderConfigurationHome (registerClientOptions: RegisterClientOptions): Promise<TemplateResult> {
   const { peertubeHelpers } = registerClientOptions
 
   try {
@@ -50,34 +57,33 @@ async function renderConfigurationHome (registerClientOptions: RegisterClientOpt
       }
     }
 
-    const view = {
+    const view : HomeViewData = {
       title: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_TITLE),
       description: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_DESC),
       please_select: await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_PLEASE_SELECT),
-      channels: channels.data
+      channels: channels.data,
+      helpButton: await _fillViewHelpButtons(registerClientOptions)
     }
 
-    await _fillViewHelpButtons(registerClientOptions, view)
 
-    return Mustache.render(MUSTACHE_CONFIGURATION_HOME, view) as string
+    return renderConfigurationHomeFromTemplate(view)
   } catch (err: any) {
     peertubeHelpers.notifier.error(err.toString())
-    return ''
+    return html``
   }
 }
 
 async function _fillViewHelpButtons ( // TODO: refactor with the similar function in channel.ts
-  registerClientOptions: RegisterClientOptions,
-  view: any
-): Promise<void> {
+  registerClientOptions: RegisterClientOptions
+): Promise<TemplateResult> {
   const title = await registerClientOptions.peertubeHelpers.translate(LOC_ONLINE_HELP)
 
-  const button = async (page: string): Promise<string> => {
+  const button = async (page: string): Promise<TemplateResult> => {
     const helpUrl = await localizedHelpUrl(registerClientOptions, {
       page
     })
     const helpIcon = helpButtonSVG()
-    return `<a
+    return html`<a
         href="${helpUrl}"
         target=_blank
         title="${title}"
@@ -85,7 +91,39 @@ async function _fillViewHelpButtons ( // TODO: refactor with the similar functio
       >${helpIcon}</a>`
   }
 
-  view.helpButton = await button('documentation/user/streamers/channel')
+  return button('documentation/user/streamers/channel')
+}
+
+function renderConfigurationHomeFromTemplate(view: HomeViewData) {
+  return html`
+    <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-home">
+      <h1>
+        ${view.title}
+        ${view.helpButton}
+      </h1>
+      <p>${view.description}</p>
+      <p>${view.please_select}</p>
+      <ul class="peertube-plugin-livechat-configuration-home-channels">
+      ${view.channels.map((channel) => html`
+        <li>
+          <a href="${channel.livechatConfigurationUri}">
+            ${channel.avatar ?
+              html`<img class="avatar channel" src="${channel.avatar.path}">`
+                     :
+              html`<div class="avatar channel initial gray"></div>`
+            }
+          </a>
+          <div class="peertube-plugin-livechat-configuration-home-info">
+            <a href="${channel.livechatConfigurationUri}">
+              <div>${channel.displayName}</div>
+              <div>${channel.name}</div>
+            </a>
+          </div>
+        </li>
+      `)}
+      </ul>
+    </div>
+    `
 }
 
 export {

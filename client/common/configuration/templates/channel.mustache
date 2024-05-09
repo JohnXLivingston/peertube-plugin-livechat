@@ -87,42 +87,34 @@
           <tbody>
             <tr class="button.peertube-livechat-forbidden-words-row-{{fieldNumber}}">
               <td>
-                <label for="peertube-livechat-forbidden-words-{{fieldNumber}}">{{forbiddenWords}}</label>
                 {{! warning: don't add extra line break in textarea! }}
                 <textarea
                   name="forbidden_words_{{fieldNumber}}"
                   id="peertube-livechat-forbidden-words-{{fieldNumber}}"
                   class="form-control"
                 >{{joinedEntries}}</textarea>
-                <p class="form-group-description">{{forbiddenWordsDesc2}}</p>
               </td>
-                <label>
-                  <input
-                    type="checkbox"
-                    name="forbidden_words_regexp_{{fieldNumber}}"
-                    value="1"
-                    {{#regexp}}
-                      checked="checked"
-                    {{/regexp}}
-                  />
-                  {{forbiddenWordsRegexp}}
-                </label>
-                <p class="form-group-description">{{forbiddenWordsRegexpDesc}}</p>
               <td>
-                <label>
-                  <input
-                    type="checkbox"
-                    name="forbidden_words_applytomoderators_{{fieldNumber}}"
-                    value="1"
-                    {{#applyToModerators}}
-                      checked="checked"
-                    {{/applyToModerators}}
-                  />
-                  {{forbiddenWordsApplyToModerators}}
-                </label>
-                <p class="form-group-description">{{forbiddenWordsApplyToModeratorsDesc}}</p>
+                <input
+                  type="checkbox"
+                  name="forbidden_words_regexp_{{fieldNumber}}"
+                  value="1"
+                  {{#regexp}}
+                    checked="checked"
+                  {{/regexp}}
+                />
               </td>
-                <label for="peertube-livechat-forbidden-words-label-{{fieldNumber}}">{{forbiddenWordsLabel}}</label>
+              <td>
+                <input
+                  type="checkbox"
+                  name="forbidden_words_applytomoderators_{{fieldNumber}}"
+                  value="1"
+                  {{#applyToModerators}}
+                    checked="checked"
+                  {{/applyToModerators}}
+                />
+              </td>
+              <td>
                 <input
                   type="text"
                   name="forbidden_words_label_{{fieldNumber}}"
@@ -130,9 +122,8 @@
                   id="peertube-livechat-forbidden-words-label-{{fieldNumber}}"
                   value="{{label}}"
                 />
-                <p class="form-group-description">{{forbiddenWordsLabelDesc}}</p>
+              </td>
               <td>
-                <label for="peertube-livechat-forbidden-words-reason-{{fieldNumber}}">{{forbiddenWordsReason}}</label>
                 <input
                   type="text"
                   name="forbidden_words_reason_{{fieldNumber}}"
@@ -140,16 +131,15 @@
                   id="peertube-livechat-forbidden-words-reason-{{fieldNumber}}"
                   value="{{reason}}"
                 />
-                <p class="form-group-description">{{forbiddenWordsReasonDesc}}</p>
               </td>
-                <label for="peertube-livechat-forbidden-words-comments-{{fieldNumber}}">{{forbiddenWordsComments}}</label>
+              <td>
                 {{! warning: don't add extra line break in textarea! }}
                 <textarea
                   name="forbidden_words_comments_{{fieldNumber}}"
                   id="peertube-livechat-forbidden-words-comments-{{fieldNumber}}"
                   class="form-control"
                 >{{comments}}</textarea>
-                <p class="form-group-description">{{forbiddenWordsCommentsDesc}}</p>
+              </td>
               <td>
                 <button type="button" class="btn btn-danger peertube-livechat-forbidden-words-{{fieldNumber}}-remove">x</button>
               </td>

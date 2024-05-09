@@ -6,6 +6,8 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { localizedHelpUrl } from '../../../utils/help'
 import { helpButtonSVG } from '../../../videowatch/buttons'
 import { vivifyConfigurationChannel, getConfigurationChannelViewData } from './logic/channel'
+import { TemplateResult, html } from 'lit'
+import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 // Must use require for mustache, import seems buggy.
 const Mustache = require('mustache')
 
@@ -21,20 +23,18 @@ async function renderConfigurationChannel (
   registerClientOptions: RegisterClientOptions,
   channelId: string,
   rootEl: HTMLElement
-): Promise<void> {
+): Promise<TemplateResult> {
   try {
     const view = await getConfigurationChannelViewData(registerClientOptions, channelId)
     await fillViewHelpButtons(registerClientOptions, view)
     await fillLabels(registerClientOptions, view)
 
-    const content = Mustache.render(MUSTACHE_CONFIGURATION_CHANNEL, view) as string
-
-    rootEl.innerHTML = content
+    return html`${unsafeHTML(Mustache.render(MUSTACHE_CONFIGURATION_CHANNEL, view))}`
 
     await vivifyConfigurationChannel(registerClientOptions, rootEl, channelId)
   } catch (err: any) {
     registerClientOptions.peertubeHelpers.notifier.error(err.toString())
-    rootEl.innerHTML = ''
+    return html``
   }
 }
 
