@@ -13,6 +13,10 @@
 -- Implemented nodes:
 -- * livechat-tasks: contains tasklist and task items, specific to livechat plugin.
 
+-- There are some other tricks in this module:
+-- * no message sent to offline users
+-- * unsubscribing users when losing their affiliation
+
 -- TODO: add disco support.
 
 local pubsub = require "util.pubsub";
@@ -24,6 +28,7 @@ local st = require "util.stanza";
 local new_id = require "util.id".medium;
 local storagemanager = require "core.storagemanager";
 local uuid_generate = require "util.uuid".generate;
+local bare_sessions = prosody.bare_sessions;
 
 local xmlns_pubsub = "http://jabber.org/protocol/pubsub";
 local xmlns_pubsub_event = "http://jabber.org/protocol/pubsub#event";
@@ -172,6 +177,29 @@ local function get_broadcaster(room_jid, room_host)
 	return simple_broadcast;
 end
 
+-- We only broadcast messages to users currently online.
+local function get_subscriber_filter(room_jid, room_host)
+	return function (jids, node)
+		local broadcast_to = {};
+		if (room_host ~= host) then;
+			return broadcast_to;
+		end
+
+		local service = services[room_jid];
+		for jid, opts in pairs(jids) do
+			local bare_jid = jid_bare(jid);
+			if (not bare_sessions[bare_jid]) then
+				module:log("debug", "Filtering subscriptions for user %q, as he/she is not currently logged in.", bare_jid);
+			else
+				broadcast_to[jid] = opts;
+			end
+		end
+
+		return broadcast_to;
+	end
+end
+
+
 -- Read-only service with no nodes where nobody is allowed anything to act as a
 -- fallback for interactions with non-existent rooms
 local noroom_service = pubsub.new({
@@ -222,6 +250,7 @@ function get_mep_service(room_jid, room_host)
 		nodestore = nodestore(room_jid);
 		itemstore = simple_itemstore(room_jid);
 		broadcaster = get_broadcaster(room_jid, room_host);
+		subscriber_filter = get_subscriber_filter(room_jid, room_host);
 		itemcheck = is_item_stanza;
 		get_affiliation = function (jid)
 			-- module:log("debug", "get_affiliation call for %q", jid);
@@ -314,5 +343,33 @@ module:hook("muc-room-destroyed", function(event)
 		if item then module:remove_item("livechat-mep-service", item); end
 
 		-- recipients[room_jid] = nil;
+	end
+end);
+
+-- When a user lose its admin/owner affilation, and is still subscribed to the node,
+-- we must unsubscribe him.
+module:hook("muc-set-affiliation", function(event)
+	local previous_affiliation = event.previous_affiliation;
+	local new_affiliation = event.affiliation;
+	if (new_affiliation == 'owner' or new_affiliation == 'admin') then
+		return;
+	end
+	if (previous_affiliation ~= 'owner' and previous_affiliation ~= 'admin') then
+		return;
+	end
+	local jid = event.jid;
+	local room = event.room;
+	module:log(
+		"debug",
+		"User %q lost its admin/owner affilition in room %q, must remove node subscription (if exists).",
+		jid, room.jid
+	);
+
+	local room_jid, room_host = jid_split(room.jid);
+	local service = get_mep_service(room_jid, room_host);
+
+	for node in pairs(service.nodes) do
+		-- remove_subscription can fail if user is not subscribed, but that is ok.
+		service:remove_subscription(node, true, jid);
 	end
 end);
