@@ -253,6 +253,30 @@ function get_mep_service(room_jid, room_host)
 
 		check_node_config = check_node_config;
 	});
+
+	-- When a livechat-tasks node is created, we create a first task list with the same name as the room.
+	service.events.add_handler("node-created", function (event)
+		local node = event.node;
+		local service = event.service;
+
+		if (node ~= 'livechat-tasks') then
+			return
+		end
+
+		module:log("debug", "New node %q created, we must create the first tasklist", node);
+
+		local id = uuid_generate();
+		local stanza = st.stanza("iq", {}); -- this stanza is only here to construct and get a child item.
+		stanza:tag("item", { xmlns = xmlns_pubsub })
+			:tag("tasklist", { xmlns = xmlns_tasklist })
+			:tag("name"):text(room:get_name()):up();
+
+		stanza:top_tag();
+		local item = stanza:get_child("item", xmlns_pubsub);
+
+		service:publish('livechat-tasks', true, id, item); -- true as second parameters: no actor, force rights.
+	end);
+
 	services[room_jid] = service;
 	local item = { service = service, jid = room_jid }
 	mep_service_items[room_jid] = item;
@@ -275,29 +299,6 @@ end
 
 module:hook("iq/bare/"..xmlns_pubsub..":pubsub", handle_pubsub_iq);
 module:hook("iq/bare/"..xmlns_pubsub_owner..":pubsub", handle_pubsub_iq); -- FIXME: should not be necessary, as we don't have owners.
-
--- FIXME: this code does not work, don't know why
--- -- When a livechat-tasks node is created, we create a first task list with the same name as the room.
--- module:hook("node-created", function (event)
--- 	local node = event.node;
--- 	local service = event.service;
-
--- 	if (node ~= 'livechat-tasks') then
--- 		return
--- 	end
-
--- 	module:log("debug", "New node %q created, we must create the first tasklist", node);
-
--- 	local id = uuid_generate();
--- 	local stanza = st.stanza("iq", {}); -- this stanza is only here to construct and get a child item.
--- 	stanza:tag("item", {})
--- 		:tag("tasklist", { xmlns = xmlns_tasklist })
--- 		:tag("name"):text(room.get_name()):up();
-
--- 	local item = stanza:get_child("item");
-
--- 	service:publish('livechat-tasks', true, id, item); -- true as second parameters: no actor, force rights.
--- end);
 
 -- Destroying the node when the room is destroyed
 -- FIXME: really? as the room will be automatically recreated in some cases...
