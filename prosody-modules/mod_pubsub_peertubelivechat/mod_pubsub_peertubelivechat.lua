@@ -17,8 +17,6 @@
 -- * unsubscribing users that have left the room (the front-end will subscribe again when needed)
 -- * unsubscribing users when losing their affiliation
 
--- TODO: add disco support.
-
 local pubsub = require "util.pubsub";
 local jid_bare = require "util.jid".bare;
 local jid_split = require "util.jid".split;
@@ -378,4 +376,10 @@ module:hook("muc-occupant-left", function (event)
 			service:remove_subscription(node, true, occupant.bare_jid);
 		end;
 	end
+end);
+
+-- Discovering support
+module:hook("muc-disco#info", function (event)
+	event.reply:tag("feature", { var = xmlns_task }):up();
+	event.reply:tag("feature", { var = xmlns_tasklist }):up();
 end);

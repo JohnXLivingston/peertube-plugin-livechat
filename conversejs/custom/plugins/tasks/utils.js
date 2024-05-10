@@ -14,9 +14,6 @@ export function getHeadingButtons (view, buttons) {
     return buttons
   }
 
-  // TODO: use disco to discover the feature.
-  // (if the chat is remote, the server could use a livechat version that does not support this feature)
-
   // Adding a "Open task list" button.
   buttons.unshift({
     // eslint-disable-next-line no-undef
@@ -93,6 +90,12 @@ export function initOrDestroyChatRoomTaskLists (mucModel) {
   }
 
   if (mucModel.session.get('connection_status') !== converse.ROOMSTATUS.ENTERED) {
+    return _destroyChatRoomTaskLists(mucModel)
+  }
+
+  // We must check disco features
+  // (if the chat is remote, the server could use a livechat version that does not support this feature)
+  if (!mucModel.features?.get?.(XMLNS_TASKLIST) || !mucModel.features?.get?.(XMLNS_TASK)) {
     return _destroyChatRoomTaskLists(mucModel)
   }
 

@@ -3,6 +3,7 @@ import { ChatRoomTaskLists } from './task-lists.js'
 import { ChatRoomTaskList } from './task-list.js'
 import { ChatRoomTasks } from './tasks.js'
 import { getHeadingButtons, initOrDestroyChatRoomTaskLists } from './utils.js'
+import { XMLNS_TASK, XMLNS_TASKLIST } from './constants.js'
 import './muc-task-view.js' // FIXME: here or in another file?
 import './muc-task-list-view.js' // FIXME: here or in another file?
 import './muc-task-lists-view.js' // FIXME: here or in another file?
@@ -25,11 +26,19 @@ converse.plugins.add('livechat-converse-tasks', {
         initOrDestroyChatRoomTaskLists(muc)
       })
 
-      // When the current user affiliation changes, we must also delete or initiliaze the TaskLists object:
+      // When the current user affiliation changes, we must also delete or initialize the TaskLists object:
       muc.occupants.on('change:affiliation', occupant => {
         if (occupant.get('jid') !== _converse.bare_jid) { // only for myself
           return
         }
+        initOrDestroyChatRoomTaskLists(muc)
+      })
+
+      // To be sure that everything works in any case, we also must listen for addition in muc.features.
+      muc.features.on('change:' + XMLNS_TASK, () => {
+        initOrDestroyChatRoomTaskLists(muc)
+      })
+      muc.features.on('change:' + XMLNS_TASKLIST, () => {
         initOrDestroyChatRoomTaskLists(muc)
       })
     })
