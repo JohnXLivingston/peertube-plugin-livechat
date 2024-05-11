@@ -190,6 +190,13 @@ async function initConverse (
     params.livechat_mini_muc_head = true // we must replace the muc-head by the custom buttons toolbar.
   }
 
+  if (chatIncludeMode === 'peertube-video' || chatIncludeMode === 'peertube-fullpage') {
+    // We enable task list only if we are in the peertube interface.
+    // Technically it would work in 'chat-only' mode, but i don't want to add too many things to test
+    // (and i now there is some CSS bugs in the task list).
+    params.livechat_task_list_enabled = true
+  }
+
   try {
     if (window.reconnectConverse) { // this is set in the livechatSpecificsPlugin
       window.reconnectConverse(params)

@@ -20,9 +20,9 @@ export function getHeadingButtons (view, buttons) {
     i18n_text: __(LOC_tasks),
     handler: async (ev) => {
       ev.preventDefault()
-      ev.stopPropagation()
-      // opening the muc task lists view:
-      api.modal.show('livechat-converse-muc-task-lists-modal', { model: muc })
+      // opening or closing the muc task app:
+      const taskAppEl = ev.target.closest('converse-root').querySelector('livechat-converse-muc-task-app')
+      taskAppEl.toggleApp()
     },
     a_class: '',
     icon_class: 'fa-list', // FIXME
@@ -86,6 +86,11 @@ function _destroyChatRoomTaskLists (mucModel) {
 export function initOrDestroyChatRoomTaskLists (mucModel) {
   if (mucModel.get('type') !== _converse.CHATROOMS_TYPE) {
     // only on MUC.
+    return _destroyChatRoomTaskLists(mucModel)
+  }
+
+  if (!api.settings.get('livechat_task_list_enabled')) {
+    // Feature disabled, no need to handle tasks.
     return _destroyChatRoomTaskLists(mucModel)
   }
 

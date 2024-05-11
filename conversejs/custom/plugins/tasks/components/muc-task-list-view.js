@@ -1,6 +1,6 @@
 import { CustomElement } from 'shared/components/element.js'
 import { api } from '@converse/headless/core'
-import tplMucTaskList from './templates/muc-task-list'
+import tplMucTaskList from '../templates/muc-task-list'
 import { __ } from 'i18n'
 
 export default class MUCTaskListView extends CustomElement {
@@ -69,9 +69,7 @@ export default class MUCTaskListView extends CustomElement {
     // eslint-disable-next-line no-undef
     const i18nConfirmDelete = __(LOC_task_list_delete_confirm)
 
-    // FIXME: when tasks are in a modal, api.confirm replaces the modal. This is not ok.
-    // const result = await api.confirm(i18nConfirmDelete)
-    const result = confirm(i18nConfirmDelete)
+    const result = await api.confirm(i18nConfirmDelete)
     if (!result) { return }
 
     try {

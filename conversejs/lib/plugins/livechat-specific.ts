@@ -85,7 +85,8 @@ export const livechatSpecificsPlugin = {
         'livechat_external_auth_oidc_buttons',
         'livechat_external_auth_reconnect_mode',
         'livechat_mini_muc_head',
-        'livechat_specific_external_authent'
+        'livechat_specific_external_authent',
+        'livechat_task_list_enabled'
       ]) {
         _converse.api.settings.set(k, params[k])
       }

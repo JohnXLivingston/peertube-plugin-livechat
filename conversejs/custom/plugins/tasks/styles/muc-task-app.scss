@@ -1,0 +1,33 @@
+.conversejs {
+  livechat-converse-muc-task-app {
+    border: var(--occupants-border-left);
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 0 1 100%;
+    padding: var(--occupants-padding);
+
+    .livechat-converse-muc-app-header {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      font-family: var(--heading-font);
+      padding-left: 0;
+      margin-right: 1em;
+      width: 100%;
+
+      h5 {
+        display: inline;
+        color: var(--groupchats-header-color-dark);
+      }
+
+      .livechat-converse-muc-app-close {
+        border: 0;
+      }
+    }
+
+    .livechat-converse-muc-app-body {
+      padding-right: 2em; // let some place for the scrollbar.
+      overflow-y: auto;
+    }
+  }
+}

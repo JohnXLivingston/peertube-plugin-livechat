@@ -1,10 +1,10 @@
 import { CustomElement } from 'shared/components/element.js'
 import { api } from '@converse/headless/core'
-import tplMucTaskLists from './templates/muc-task-lists'
+import tplMucTaskLists from '../templates/muc-task-lists'
 import { __ } from 'i18n'
 
-import './styles/muc-task-lists.scss'
-import './styles/muc-task-drag.scss'
+import '../styles/muc-task-lists.scss'
+import '../styles/muc-task-drag.scss'
 
 export default class MUCTaskListsView extends CustomElement {
   currentDraggedTask = null

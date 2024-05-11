@@ -4,12 +4,10 @@ import { ChatRoomTaskList } from './task-list.js'
 import { ChatRoomTasks } from './tasks.js'
 import { getHeadingButtons, initOrDestroyChatRoomTaskLists } from './utils.js'
 import { XMLNS_TASK, XMLNS_TASKLIST } from './constants.js'
-import './muc-task-view.js' // FIXME: here or in another file?
-import './muc-task-list-view.js' // FIXME: here or in another file?
-import './muc-task-lists-view.js' // FIXME: here or in another file?
-import './modals/muc-task-lists.js' // FIXME: here or in another file?
-
-// TODO: add a client disco feature (using api.listen.on('addClientFeatures' ...)).
+import './components/muc-task-view.js' // FIXME: here or in another file?
+import './components/muc-task-list-view.js' // FIXME: here or in another file?
+import './components/muc-task-lists-view.js' // FIXME: here or in another file?
+import './components/muc-task-app-view.js' // FIXME: here or in another file?
 
 converse.plugins.add('livechat-converse-tasks', {
   dependencies: ['converse-muc', 'converse-disco'], // TODO: add converse-pubsub
@@ -18,6 +16,10 @@ converse.plugins.add('livechat-converse-tasks', {
     _converse.ChatRoomTaskLists = ChatRoomTaskLists
     _converse.ChatRoomTaskList = ChatRoomTaskList
     _converse.ChatRoomTasks = ChatRoomTasks
+
+    _converse.api.settings.extend({
+      livechat_task_list_enabled: false
+    })
 
     _converse.api.listen.on('chatRoomInitialized', muc => {
       muc.session.on('change:connection_status', _session => {
