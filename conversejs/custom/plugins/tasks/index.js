@@ -2,12 +2,13 @@ import { _converse, converse } from '../../../src/headless/core.js'
 import { ChatRoomTaskLists } from './task-lists.js'
 import { ChatRoomTaskList } from './task-list.js'
 import { ChatRoomTasks } from './tasks.js'
-import { getHeadingButtons, initOrDestroyChatRoomTaskLists } from './utils.js'
+import { getHeadingButtons, getMessageActionButtons, initOrDestroyChatRoomTaskLists } from './utils.js'
 import { XMLNS_TASK, XMLNS_TASKLIST } from './constants.js'
 import './components/muc-task-view.js' // FIXME: here or in another file?
 import './components/muc-task-list-view.js' // FIXME: here or in another file?
 import './components/muc-task-lists-view.js' // FIXME: here or in another file?
 import './components/muc-task-app-view.js' // FIXME: here or in another file?
+import './modals/pick-task-list.js' // FIXME: here or in another file?
 
 converse.plugins.add('livechat-converse-tasks', {
   dependencies: ['converse-muc', 'converse-disco', 'converse-pubsub'],
@@ -48,5 +49,8 @@ converse.plugins.add('livechat-converse-tasks', {
 
     // adding the "Tasks" button in the MUC heading buttons:
     _converse.api.listen.on('getHeadingButtons', getHeadingButtons)
+
+    // Adding buttons on message:
+    _converse.api.listen.on('getMessageActionButtons', getMessageActionButtons)
   }
 })

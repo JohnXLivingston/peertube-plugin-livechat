@@ -25,8 +25,40 @@ export function getHeadingButtons (view, buttons) {
       taskAppEl.toggleApp()
     },
     a_class: '',
-    icon_class: 'fa-list', // FIXME
+    icon_class: 'fa-list-check',
     name: 'muc-tasks'
+  })
+
+  return buttons
+}
+
+export function getMessageActionButtons (messageActionsEl, buttons) {
+  const messageModel = messageActionsEl.model
+  if (messageModel.get('type') !== 'groupchat') {
+    // only on groupchat message.
+    return buttons
+  }
+
+  const muc = messageModel.collection?.chatbox
+  if (!muc?.tasklists) {
+    return buttons
+  }
+
+  // eslint-disable-next-line no-undef
+  const i18nCreate = __(LOC_task_create)
+
+  buttons.push({
+    i18n_text: i18nCreate,
+    handler: async (ev) => {
+      ev.preventDefault()
+      api.modal.show('livechat-converse-pick-task-list-modal', {
+        muc,
+        message: messageModel
+      }, ev)
+    },
+    button_class: '',
+    icon_class: 'fa fa-list-check',
+    name: 'muc-task-create-from-message'
   })
 
   return buttons
@@ -70,6 +102,10 @@ function _initChatRoomTaskLists (mucModel) {
     }
   )
   mucModel.taskManager.start().catch(err => console.log(err))
+
+  // We must requestUpdate for all message actions, to add the "create task" button.
+  // FIXME: this should not be done here (but it is simplier for now)
+  document.querySelectorAll('converse-message-actions').forEach(el => el.requestUpdate())
 }
 
 function _destroyChatRoomTaskLists (mucModel) {
@@ -81,6 +117,10 @@ function _destroyChatRoomTaskLists (mucModel) {
   // mucModel.tasklists.unload() FIXME: add a method to unregister from the pubsub, and empty the tasklist.
   mucModel.tasklists = undefined
   mucModel.tasks = undefined
+
+  // We must requestUpdate for all message actions, to remove the "create task" button.
+  // FIXME: this should not be done here (but it is simplier for now)
+  document.querySelectorAll('converse-message-actions').forEach(el => el.requestUpdate())
 }
 
 export function initOrDestroyChatRoomTaskLists (mucModel) {

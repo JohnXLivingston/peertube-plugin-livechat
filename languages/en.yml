@@ -449,3 +449,9 @@ task_delete_confirm: 'Are you sure you want to delete this task?'
 task_app_info: |
   You can create tasks and task lists, which are shared between all room's admins.
   See the livechat streamers documentation for more information.
+task_list_pick_title: 'Please choose a task list'
+task_list_pick_empty: 'There is no task list for now, please first create one'
+task_list_pick_message: |
+  Once you have chosen a task list, a new task will be created.
+  To see the task, open the task application using the top menu.
+  More information in the livechat plugin documentation.
