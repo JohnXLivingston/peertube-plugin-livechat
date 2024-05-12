@@ -16,7 +16,8 @@ export default class MUCTaskApp extends CustomElement {
   }
 
   async initialize () {
-    this.show = false
+    this.show = api.settings.get('livechat_task_app_restore') &&
+      (window.sessionStorage?.getItem?.('livechat-converse-task-app-show') === '1')
   }
 
   render () {
@@ -25,6 +26,7 @@ export default class MUCTaskApp extends CustomElement {
 
   toggleApp () {
     this.show = !this.show
+    window.sessionStorage?.setItem?.('livechat-converse-task-app-show', this.show ? '1' : '')
   }
 }
 

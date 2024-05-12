@@ -18,7 +18,8 @@ converse.plugins.add('livechat-converse-tasks', {
     _converse.ChatRoomTasks = ChatRoomTasks
 
     _converse.api.settings.extend({
-      livechat_task_list_enabled: false
+      livechat_task_app_enabled: false,
+      livechat_task_app_restore: false // should we open the app by default if it was previously oppened?
     })
 
     _converse.api.listen.on('chatRoomInitialized', muc => {

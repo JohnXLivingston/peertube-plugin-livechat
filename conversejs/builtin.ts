@@ -194,7 +194,8 @@ async function initConverse (
     // We enable task list only if we are in the peertube interface.
     // Technically it would work in 'chat-only' mode, but i don't want to add too many things to test
     // (and i now there is some CSS bugs in the task list).
-    params.livechat_task_list_enabled = true
+    params.livechat_task_app_enabled = true
+    params.livechat_task_app_restore = chatIncludeMode === 'peertube-fullpage'
   }
 
   try {

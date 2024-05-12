@@ -5,7 +5,7 @@ import { html } from 'lit'
 export default (o) => {
   return html`
     ${
-      o?.model && api.settings.get('livechat_task_list_enabled')
+      o?.model && api.settings.get('livechat_task_app_enabled')
         ? html`<livechat-converse-muc-task-app .model=${o.model}></livechat-converse-muc-task-app>`
         : ''
     }

@@ -89,7 +89,7 @@ export function initOrDestroyChatRoomTaskLists (mucModel) {
     return _destroyChatRoomTaskLists(mucModel)
   }
 
-  if (!api.settings.get('livechat_task_list_enabled')) {
+  if (!api.settings.get('livechat_task_app_enabled')) {
     // Feature disabled, no need to handle tasks.
     return _destroyChatRoomTaskLists(mucModel)
   }
