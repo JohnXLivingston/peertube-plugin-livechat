@@ -17,6 +17,10 @@
 -- * unsubscribing users that have left the room (the front-end will subscribe again when needed)
 -- * unsubscribing users when losing their affiliation
 
+-- FIXME: empty subscribers on Prosody startup? Normally users will subscribe when opening the app.
+-- 		And this module will unsubscribe when leaving the room.
+--		But if prosody crash, or is restarted, subscribers may remain...
+
 local pubsub = require "util.pubsub";
 local jid_bare = require "util.jid".bare;
 local jid_split = require "util.jid".split;
