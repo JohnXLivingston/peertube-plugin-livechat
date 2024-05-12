@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Fix missing titles on some buttons when the chat is open.
+
 ## 9.0.2
 
 ### Important fix
