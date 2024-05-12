@@ -30,4 +30,13 @@
       overflow-y: auto;
     }
   }
+
+  &[livechat-converse-root-width="small"],
+  &[livechat-converse-root-width="medium"] {
+    converse-muc-chatarea livechat-converse-muc-task-app:not(.hidden) ~ * {
+      // on small and medium width, we hide all subsequent siblings of the task app
+      // (when app is not hidden)
+      display: none !important;
+    }
+  }
 }
