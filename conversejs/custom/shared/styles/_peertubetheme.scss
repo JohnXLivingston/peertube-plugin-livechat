@@ -148,8 +148,8 @@
   }
 
   // hidding avatars when screen width is not big enough.
-  // FIXME: how to apply this when the chat is beside video without iframe? (2024-04-02)
-  @media screen and (max-width: 250px) {
+  // The livechat-converse-root-width attributes comes from the 'size' plugin.
+  &[livechat-converse-root-width="small"] {
     .message {
       &.chat-msg {
         .chat-msg__content {

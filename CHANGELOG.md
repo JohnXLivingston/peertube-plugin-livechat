@@ -9,6 +9,10 @@ TODO: tag custom ConverseJS, and update build-conversejs.sh.
 
 * #177: streamer's task/to-do lists: streamers, and their room's moderators, can handle task lists directly. This can be used to handle viewers questions, moderation actions, ... More info in the documentation.
 
+### Minor changes and fixes
+
+* Fixed some styling when chatbox is small (hidding avatars).
+
 ## 9.0.3
 
 ### Minor changes and fixes

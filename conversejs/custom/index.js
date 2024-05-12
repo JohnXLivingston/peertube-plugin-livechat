@@ -38,11 +38,13 @@ import './plugins/singleton/index.js'
 // import './plugins/dragresize/index.js'     // Allows chat boxes to be resized by dragging them
 import './plugins/fullscreen/index.js'
 
+import '../custom/plugins/size/index.js'
 import '../custom/plugins/tasks/index.js'
 /* END: Removable components */
 
 // We must add our custom plugins to CORE_PLUGINS (so it is white listed):
 import { CORE_PLUGINS } from './headless/shared/constants.js'
+CORE_PLUGINS.push('livechat-converse-size')
 CORE_PLUGINS.push('livechat-converse-tasks')
 
 _converse.CustomElement = CustomElement
