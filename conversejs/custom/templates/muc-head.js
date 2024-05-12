@@ -51,7 +51,7 @@ function getPeertubeButtons () {
     ${repeat(buttons, (node) => html`
       <a
         href="#"
-        title="${node.getAttribute('title')}"
+        title="${node.getAttribute('title') ?? ''}"
         class="${
           // adding original classes
           node.className
