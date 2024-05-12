@@ -10,7 +10,7 @@ import './components/muc-task-lists-view.js' // FIXME: here or in another file?
 import './components/muc-task-app-view.js' // FIXME: here or in another file?
 
 converse.plugins.add('livechat-converse-tasks', {
-  dependencies: ['converse-muc', 'converse-disco'], // TODO: add converse-pubsub
+  dependencies: ['converse-muc', 'converse-disco', 'converse-pubsub'],
 
   initialize () {
     _converse.ChatRoomTaskLists = ChatRoomTaskLists
