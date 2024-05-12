@@ -22,9 +22,16 @@ export function tplMUCTaskApp (el, mucModel) {
 
   // eslint-disable-next-line no-undef
   const i18nTasks = __(LOC_tasks)
+  // eslint-disable-next-line no-undef
+  const i18nHint = __(LOC_task_app_info)
   return html`
     <div class="livechat-converse-muc-app-header">
       <h5>${i18nTasks}</h5>
+      <converse-icon
+          class="fa fa-info-circle"
+          size="1em"
+          title="${i18nHint}"
+      ></converse-icon>
       <button class="livechat-converse-muc-app-close" @click=${el.toggleApp} title="${__('Close')}">
           <converse-icon class="fa fa-times" size="1em"></converse-icon>
       </button>

@@ -7,6 +7,7 @@
     padding: var(--occupants-padding);
 
     .livechat-converse-muc-app-header {
+      column-gap: 0.25em;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -16,8 +17,9 @@
       width: 100%;
 
       h5 {
-        display: inline;
         color: var(--groupchats-header-color-dark);
+        display: inline;
+        flex-grow: 2;
       }
 
       .livechat-converse-muc-app-close {

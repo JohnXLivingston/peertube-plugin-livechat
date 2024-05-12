@@ -26,7 +26,8 @@ const locKeys = [
   'task_name',
   'task_description',
   'task_delete',
-  'task_delete_confirm'
+  'task_delete_confirm',
+  'task_app_info'
 ]
 
 module.exports = locKeys
