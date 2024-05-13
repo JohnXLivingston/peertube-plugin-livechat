@@ -1,29 +1,30 @@
 {
-	"compilerOptions": {
-    "module": "es6",
-		"moduleResolution": "node",
-    "target": "es5",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "es2022",
+      "moduleResolution": "node",
+    "target": "es2022",
     "allowJs": true,
-		"sourceMap": true,
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"alwaysStrict": true, // should already be true because of strict:true
-		"noImplicitAny": true, // should already be true because of strict:true
-		"noImplicitThis": true, // should already be true because of strict:true
-		"noImplicitReturns": true,
-		"strictBindCallApply": true, // should already be true because of strict:true
-		"noUnusedLocals": true,
-		"allowSyntheticDefaultImports": true, // Seems necessary for peertube types to work
-		"isolatedModules": true, // Needed by esbuild https://esbuild.github.io/content-types/#isolated-modules
-		"esModuleInterop": true, // Needed by esbuild https://esbuild.github.io/content-types/#es-module-interop
+      "sourceMap": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "alwaysStrict": true, // should already be true because of strict:true
+      "noImplicitAny": true, // should already be true because of strict:true
+      "noImplicitThis": true, // should already be true because of strict:true
+      "noImplicitReturns": true,
+      "strictBindCallApply": true, // should already be true because of strict:true
+      "noUnusedLocals": false,
+      "allowSyntheticDefaultImports": true, // Seems necessary for peertube types to work
+      "isolatedModules": true, // Needed by esbuild https://esbuild.github.io/content-types/#isolated-modules
+      "esModuleInterop": true, // Needed by esbuild https://esbuild.github.io/content-types/#es-module-interop
     "outDir": "../dist/client",
-		"paths": {
-			"shared/*": ["../shared/*"]
-		}
-	},
-	"include": [
-		"./**/*",
-		"../shared/**/*"
-	],
-	"exclude": []
+      "paths": {
+        "shared/*": ["../shared/*"]
+      }
+  },
+  "include": [
+    "./**/*",
+    "../shared/**/*"
+  ],
+  "exclude": []
 }

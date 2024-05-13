@@ -74,18 +74,18 @@
       <table class="col-12 col-lg-4 col-xl-3 forbidden_words_table">
         <thead>
           <tr>
-            <th scope="col">{{forbiddenWords}}  <span class="form-group-description">{{forbiddenWordsDesc2}}</th>
+            <th scope="col">{{forbiddenWords}}  <span class="form-group-description">{{forbiddenWordsDesc2}}</span></th>
             <th scope="col">{{forbiddenWordsRegexp}} <span class="form-group-description">{{forbiddenWordsRegexpDesc}}</span></th>
             <th scope="col">{{forbiddenWordsApplyToModerators}} <span class="form-group-description">{{forbiddenWordsApplyToModeratorsDesc}}</span></th>
-            <th scope="col">{{forbiddenWordsLabel}}  <span class="form-group-description">{{forbiddenWordsLabelDesc}}</th>
-            <th scope="col">{{forbiddenWordsReason}}  <span class="form-group-description">{{forbiddenWordsReasonDesc}}</th>
-            <th scope="col">{{forbiddenWordsComments}}  <span class="form-group-description">{{forbiddenWordsCommentsDesc}}</th>
-            <th scope="col">Remove  <span class="form-group-description">Remove Row</th>
+            <th scope="col">{{forbiddenWordsLabel}}  <span class="form-group-description">{{forbiddenWordsLabelDesc}}</span></th>
+            <th scope="col">{{forbiddenWordsReason}}  <span class="form-group-description">{{forbiddenWordsReasonDesc}}</span></th>
+            <th scope="col">{{forbiddenWordsComments}}  <span class="form-group-description">{{forbiddenWordsCommentsDesc}}</span></th>
+            <th scope="col">Remove  <span class="form-group-description">Remove Row</span></th>
           </tr>
         </thead>
         {{#forbiddenWordsArray}}{{! iterating on forbiddenWordsArray to display N fields }}
           <tbody>
-            <tr class="button.peertube-livechat-forbidden-words-row-{{fieldNumber}}">
+            <tr class="peertube-livechat-forbidden-words-row-{{fieldNumber}}">
               <td>
                 {{! warning: don't add extra line break in textarea! }}
                 <textarea

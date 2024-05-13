@@ -14,7 +14,7 @@ import { getBaseRoute } from '../../../../utils/uri'
 async function getConfigurationChannelViewData (
   registerClientOptions: RegisterClientOptions,
   channelId: string
-): Promise<Object> {
+): Promise<{[key: string] : any}> {
   if (!channelId || !/^\d+$/.test(channelId)) {
     throw new Error('Missing or invalid channel id.')
   }
