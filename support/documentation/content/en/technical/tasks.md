@@ -55,9 +55,9 @@ Here is the worflow to create/modify/delete items:
 
 ## Unsubscribing
 
-When a user leaves a MUC room, he is automatically unsubscribe from the "livechat-tasks" node related to this room.
+When users leaves a MUC room, they are automatically unsubscribed from the "livechat-tasks" node related to this room.
 
-When a user lose the owner/admin affiliation, he/she is removed from the "livechat-tasks" node.
+When users lose the owner/admin affiliation, they are removed from the "livechat-tasks" node subscriptions.
 
 ## Items
 

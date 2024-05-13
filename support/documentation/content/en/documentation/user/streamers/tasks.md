@@ -44,15 +44,15 @@ To have more space and better readability, open the chat in full page.
 
 All room's admins have access to the Task Application (read and write access).
 
-When you promote someone as room admin or owner, he/she gets instantly access to the Task Application.
-When you remove admin or owner rights to someone, he/she instantly loses access to the Task Application.
+When you promote someone as room admin or owner, they get instantly access to the Task Application.
+When you remove admin or owner rights to someone, they instantly loses access to the Task Application.
 
 ### Task lists
 
 By default, there is one task list that has the same name as your live stream.
 
 You can use the form at the bottom to create a new task list.
-You can also edit existing tasks list using the edit button, or delete any task list (deleting a task list will also delete all its tasks).
+You can also edit existing task lists using the edit button, or delete any task list (deleting a task list will also delete all its tasks).
 
 Task lists are sorted alphabetically.
 
@@ -66,7 +66,7 @@ All modification are instantly visible in all your browser tabs, and for all roo
 
 #### Create tasks
 
-You can create task using the button on the right of tasks lists.
+You can create task using the button on the right of task lists.
 This opens a form with two fields: a mandatory task name, and an optional description.
 
 ![Task form](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)

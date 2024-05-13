@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-05-13 13:55+0200\n"
+"POT-Creation-Date: 2024-05-13 17:16+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Greek <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/el/>\n"
@@ -3026,7 +3026,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "When you promote someone as room admin or owner, he/she gets instantly access to the Task Application.  When you remove admin or owner rights to someone, he/she instantly loses access to the Task Application."
+msgid "When you promote someone as room admin or owner, they get instantly access to the Task Application.  When you remove admin or owner rights to someone, they instantly loses access to the Task Application."
 msgstr ""
 
 #. type: Title ###
@@ -3042,7 +3042,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "You can use the form at the bottom to create a new task list.  You can also edit existing tasks list using the edit button, or delete any task list (deleting a task list will also delete all its tasks)."
+msgid "You can use the form at the bottom to create a new task list.  You can also edit existing task lists using the edit button, or delete any task list (deleting a task list will also delete all its tasks)."
 msgstr ""
 
 #. type: Plain text
@@ -3074,7 +3074,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "You can create task using the button on the right of tasks lists.  This opens a form with two fields: a mandatory task name, and an optional description."
+msgid "You can create task using the button on the right of task lists.  This opens a form with two fields: a mandatory task name, and an optional description."
 msgstr ""
 
 #. type: Plain text
