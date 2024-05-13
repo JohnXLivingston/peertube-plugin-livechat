@@ -30,14 +30,14 @@ To open the Task Application, there is a "{{% livechat_label "tasks" %}}" button
 
 ![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)
 
-Click this button will toggle the Task Application display:
+Clicking this button will toggle the Task Application display:
 
 ![Task Application](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px)
 
 ![Task Application](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px)
 
 {{% notice tip %}}
-Open the chat in full page, to have more space and better readability.
+To have more space and better readability, open the chat in full page.
 {{% /notice %}}
 
 ### Access rights
