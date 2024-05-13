@@ -12,7 +12,7 @@ This feature comes with the livechat plugin version 10.0.0.
 ## Introduction
 
 The livechat plugin includes a Task Application: a kind of "to-do list" feature where you can create task lists and add tasks to them.
-All rooms' admins have access to these tasks, so you can edit them collaboratively.
+Every room's admins have access to these tasks, so you can edit them collaboratively.
 
 You can for example use the Task Application to:
 
@@ -42,7 +42,7 @@ To have more space and better readability, open the chat in full-page mode.
 
 ### Access rights
 
-All rooms' admins have access to the Task Application (read and write access).
+Every room's admins have access to the Task Application (read and write access).
 
 When you promote someone as room admin or owner, they gets instant access to the Task Application.
 When you remove admin or owner rights to someone, they instantly lose access to the Task Application.
@@ -52,14 +52,14 @@ When you remove admin or owner rights to someone, they instantly lose access to 
 By default, there is one task list that has the same name as your livestream.
 
 You can use the form at the bottom to create a new task list.
-You can also edit existing tasks lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks.
+You can also edit existing task lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks.
 
 Task lists are sorted alphabetically.
 
 ![Task lists](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px)
 
 {{% notice tip %}}
-All modification are instantly visible in all your browser tabs, and for all room admins.
+All modification are instantly visible in all your browser tabs, and for all room's admins.
 {{% /notice %}}
 
 ### Tasks

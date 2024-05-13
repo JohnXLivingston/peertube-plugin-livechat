@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-05-13 17:16+0200\n"
+"POT-Creation-Date: 2024-05-13 17:41+0200\n"
 "PO-Revision-Date: 2024-04-16 21:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -2957,7 +2957,7 @@ msgstr ""
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
-msgid "You can handle tasks ans task lists with your moderation team."
+msgid "You can handle tasks and task lists with your moderation team."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
@@ -2973,7 +2973,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "The livechat plugin includes a Task Application: a kind of \"to-do list\" features where you can create task lists and add tasks to them.  All room's admins have access to these tasks, so you can edit them collaboratively."
+msgid "The livechat plugin includes a Task Application: a kind of \"to-do list\" feature where you can create task lists and add tasks to them.  Every room's admins have access to these tasks, so you can edit them collaboratively."
 msgstr ""
 
 #. type: Plain text
@@ -2983,12 +2983,12 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "prepare a list of themes you want to discuss during your live stream, so you can be sure you won't forget anything"
+msgid "prepare a list of themes you want to discuss during your livestream, so you can be sure you won't forget anything"
 msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "note down questions from your viewers, so you can come back to them later without forgetting to answer them"
+msgid "highlight questions from your viewers, so you can come back to them later without forgetting to answer them"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -3010,7 +3010,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the chat top menu:"
+msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the top chat menu:"
 msgstr ""
 
 #. type: Plain text
@@ -3040,7 +3040,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "To have more space and better readability, open the chat in full page."
+msgid "To have more space and better readability, open the chat in full-page mode."
 msgstr ""
 
 #. type: Title ###
@@ -3051,12 +3051,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "All room's admins have access to the Task Application (read and write access)."
+msgid "Every room's admins have access to the Task Application (read and write access)."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "When you promote someone as room admin or owner, they get instantly access to the Task Application.  When you remove admin or owner rights to someone, they instantly loses access to the Task Application."
+msgid "When you promote someone as room admin or owner, they gets instant access to the Task Application.  When you remove admin or owner rights to someone, they instantly lose access to the Task Application."
 msgstr ""
 
 #. type: Title ###
@@ -3067,12 +3067,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "By default, there is one task list that has the same name as your live stream."
+msgid "By default, there is one task list that has the same name as your livestream."
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "You can use the form at the bottom to create a new task list.  You can also edit existing task lists using the edit button, or delete any task list (deleting a task list will also delete all its tasks)."
+msgid "You can use the form at the bottom to create a new task list.  You can also edit existing task lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks."
 msgstr ""
 
 #. type: Plain text
@@ -3087,7 +3087,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "All modification are instantly visible in all your browser tabs, and for all room admins."
+msgid "All modification are instantly visible in all your browser tabs, and for all room's admins."
 msgstr ""
 
 #. type: Title ###
@@ -3104,7 +3104,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "You can create task using the button on the right of task lists.  This opens a form with two fields: a mandatory task name, and an optional description."
+msgid "You can create a task using the button on the right of task lists.  This opens a form with two fields: a mandatory task name, and an optional description."
 msgstr ""
 
 #. type: Plain text
@@ -3130,7 +3130,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "Tasks can be completed (or uncompleted) by clicking directly on the checkbox in the list."
+msgid "Tasks can be marked complete (or uncomplete) by clicking directly on the checkbox in the list."
 msgstr ""
 
 #. type: Plain text
@@ -3146,7 +3146,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "You can sort tasks, or move tasks from a list to another, simply using drag & drop."
+msgid "You can sort tasks, or move tasks from one list to another, simply using drag & drop."
 msgstr ""
 
 #. type: Plain text
@@ -3167,7 +3167,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "You can create a task from a message in a chat, using the \"{{% livechat_label \"task_create\" %}}\" button in the dropdown menu at the right of the message.  This will open a dialog where you can choose in which task list you want to add the task.  The task name will be the user nickname, and the task description the message content."
+msgid "You can create a task from a message in a chat, using the \"{{% livechat_label \"task_create\" %}}\" button in the dropdown menu at the right of the message.  This will open a dialog box where you can choose which task list you want to add the task into.  The task name will be the user nickname, and the task description the message content."
 msgstr ""
 
 #. type: Plain text
@@ -3187,7 +3187,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "Using this feature, you can for example asks your moderators to note all chat questions, so you can see them at a glance during your live, and check them as your have answered."
+msgid "Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
