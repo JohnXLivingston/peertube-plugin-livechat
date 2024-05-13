@@ -52,7 +52,7 @@ When you remove admin or owner rights to someone, they instantly lose access to 
 By default, there is one task list that has the same name as your livestream.
 
 You can use the form at the bottom to create a new task list.
-You can also edit existing tasks list using the edit button, or delete any task list. Deleting a task list will also delete all its tasks.
+You can also edit existing tasks lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks.
 
 Task lists are sorted alphabetically.
 
@@ -66,7 +66,7 @@ All modification are instantly visible in all your browser tabs, and for all roo
 
 #### Create tasks
 
-You can create a task using the button on the right of tasks lists.
+You can create a task using the button on the right of task lists.
 This opens a form with two fields: a mandatory task name, and an optional description.
 
 ![Task form](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)
