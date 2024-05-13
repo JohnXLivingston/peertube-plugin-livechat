@@ -426,3 +426,22 @@ external_auth_facebook_oidc_description: "Wenn Sie dies aktivieren, wird eine Sc
   konfigurieren.\n"
 login_remote_peertube_video_open_failed: 'Ihr Browser hat das Öffnen der Remote-Instanz
   blockiert. Bitte versuchen Sie, diesen Link manuell zu öffnen:'
+task_list_create: 'Neue Aufgabenliste erstellen:'
+task_list_name: Name der Aufgabenliste
+task_create: Eine neue Aufgabe erstellen
+task_name: Aufgabenname
+task_description: Beschreibung
+task_delete: Aufgabe löschen
+task_delete_confirm: Sind Sie sich sicher, dass Sie diese Aufgabe löschen wollen?
+task_list_pick_title: Bitte wählen Sie eine Aufgabenliste
+task_list_create_error: Fehler beim Speichern der Aufgabenliste
+tasks: Aufgaben
+task_list_delete: Aufgabenliste löschen
+task_list_delete_confirm: Sind Sie sich sicher, dass Sie diese Aufgabenliste löschen
+  möchten?
+task_list_pick_empty: Es gibt noch keine Aufgabenliste, bitte erstellen Sie zunächst
+  eine
+task_list_pick_message: "Sobald Sie eine Aufgabenliste ausgewählt haben, wird eine
+  neue Aufgabe erstellt.\nUm die Aufgabe zu sehen, öffnen Sie die Aufgabenanwendung
+  über das obere Menü.\nWeitere Informationen finden Sie in der Dokumentation des
+  Livechat-Plugins.\n"
