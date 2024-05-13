@@ -3,7 +3,7 @@
 TODO: add documentation link for the task-list in the CHANGELOG.
 TODO: tag custom ConverseJS, and update build-conversejs.sh.
 
-## ??? (Not Released Yet)
+## 10.0.0 (Not Released Yet)
 
 ### New features
 
