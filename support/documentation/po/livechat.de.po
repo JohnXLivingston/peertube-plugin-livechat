@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-05-13 17:41+0200\n"
-"PO-Revision-Date: 2024-05-13 22:00+0000\n"
+"PO-Revision-Date: 2024-05-14 02:14+0000\n"
 "Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
 "\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/"
@@ -3276,29 +3276,32 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Deleted message](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
 msgid "![Create task from message](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px)"
-msgstr "![Gelöschte Nachricht](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
+msgstr ""
+"![Aufgabe aus einer Nachricht erstellen](/peertube-plugin-livechat/images/"
+"task_from_message_1.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![Choose the task list](/peertube-plugin-livechat/images/task_from_message_2.png?classes=shadow,border&height=200px)"
-msgstr "![Chat Menü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Aufgabenliste auswählen](/peertube-plugin-livechat/images/"
+"task_from_message_2.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![Task created](/peertube-plugin-livechat/images/task_from_message_3.png?classes=shadow,border&height=200px)"
-msgstr "![Chat Menü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Aufgabe erstellt](/peertube-plugin-livechat/images/task_from_message_3."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered."
 msgstr ""
+"Mit dieser Funktion können Sie z. B. Ihre Moderatoren bitten, alle Chat-"
+"Fragen zu markieren, damit Sie sie während Ihres Livestreams auf einen Blick "
+"sehen und als beantwortet markieren können."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
