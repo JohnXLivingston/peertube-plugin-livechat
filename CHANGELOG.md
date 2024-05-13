@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Fix missing titles on some buttons when the chat is open.
+* Fix select styling in ConverseJS.
 
 ## 9.0.2
 

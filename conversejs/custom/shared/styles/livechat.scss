@@ -173,4 +173,11 @@ body.converse-embedded {
   textarea:read-only {
     background-color: var(--chat-textarea-disabled-bg-color) !important;
   }
+
+  select.form-control {
+    // Peertube uses a trick to display a triangle as dropdown icon for selects.
+    // But this tricks breaks selects that are not in a .peertube-select-container.
+    // So we must revert appearance:
+    appearance: revert !important;
+  }
 }
