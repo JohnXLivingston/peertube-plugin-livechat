@@ -16,6 +16,7 @@ const locKeys = [
   'login_remote_peertube_video_not_found_try_anyway_button',
   'login_remote_peertube_video_open_failed',
   'login_external_auth_alert_message',
+  'online_help',
   'tasks',
   'task_list_create',
   'task_list_create_error',
@@ -27,7 +28,6 @@ const locKeys = [
   'task_description',
   'task_delete',
   'task_delete_confirm',
-  'task_app_info',
   'task_list_pick_title',
   'task_list_pick_empty',
   'task_list_pick_message'

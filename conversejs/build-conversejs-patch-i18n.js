@@ -54,6 +54,10 @@ function patch (lang) {
     const label = labels[key]
     patchLabel(destContent, label, yaml[key] ?? '')
   }
+
+  // We add an extra _livechat_language, so we can compute url to documentation
+  // (same thing as _language in build-languages.js)
+  patchLabel(destContent, '_livechat_language', lang)
   fs.writeFileSync(destFile, destContent.join('\n'))
 }
 

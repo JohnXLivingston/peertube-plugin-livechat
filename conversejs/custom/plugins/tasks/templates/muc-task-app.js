@@ -1,3 +1,4 @@
+import { converseLocalizedHelpUrl } from '../../../shared/lib/help'
 import { html } from 'lit'
 import { __ } from 'i18n'
 
@@ -23,15 +24,19 @@ export function tplMUCTaskApp (el, mucModel) {
   // eslint-disable-next-line no-undef
   const i18nTasks = __(LOC_tasks)
   // eslint-disable-next-line no-undef
-  const i18nHint = __(LOC_task_app_info)
+  const i18nHelp = __(LOC_online_help)
+  const helpUrl = converseLocalizedHelpUrl({
+    page: 'documentation/user/streamers/tasks'
+  })
+
   return html`
     <div class="livechat-converse-muc-app-header">
       <h5>${i18nTasks}</h5>
-      <converse-icon
-          class="fa fa-info-circle"
+      <a href="${helpUrl}" target="_blank"><converse-icon
+          class="fa fa-circle-question"
           size="1em"
-          title="${i18nHint}"
-      ></converse-icon>
+          title="${i18nHelp}"
+      ></converse-icon></a>
       <button class="livechat-converse-muc-app-close" @click=${el.toggleApp} title="${__('Close')}">
           <converse-icon class="fa fa-times" size="1em"></converse-icon>
       </button>
