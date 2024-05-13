@@ -114,7 +114,6 @@ function _destroyChatRoomTaskLists (mucModel) {
   mucModel.taskManager.stop().catch(err => console.log(err))
   mucModel.taskManager = undefined
 
-  // mucModel.tasklists.unload() FIXME: add a method to unregister from the pubsub, and empty the tasklist.
   mucModel.tasklists = undefined
   mucModel.tasks = undefined
 

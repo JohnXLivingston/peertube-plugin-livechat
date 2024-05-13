@@ -72,7 +72,7 @@ export class PubSubManager {
    * Stops the manager
    */
   async stop () {
-    // await this._unsubscribe() TODO
+    // Note: no need to unsubscribe from the pubsub node, the backend will do when users leave the room.
 
     if (this.stanzaHandler) {
       _converse.connection.deleteHandler(this.stanzaHandler)
@@ -203,6 +203,7 @@ export class PubSubManager {
    *
    * TODO: handle pagination if results are not all sent.
    * See https://xmpp.org/extensions/xep-0060.html#subscriber-retrieve-returnsome
+   * (seems Prosody does not handle pagination for now)
    */
   async _retrieveAllItems () {
     // Requesting all items.

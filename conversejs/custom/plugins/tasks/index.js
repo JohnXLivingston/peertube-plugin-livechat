@@ -4,11 +4,11 @@ import { ChatRoomTaskList } from './task-list.js'
 import { ChatRoomTasks } from './tasks.js'
 import { getHeadingButtons, getMessageActionButtons, initOrDestroyChatRoomTaskLists } from './utils.js'
 import { XMLNS_TASK, XMLNS_TASKLIST } from './constants.js'
-import './components/muc-task-view.js' // FIXME: here or in another file?
-import './components/muc-task-list-view.js' // FIXME: here or in another file?
-import './components/muc-task-lists-view.js' // FIXME: here or in another file?
-import './components/muc-task-app-view.js' // FIXME: here or in another file?
-import './modals/pick-task-list.js' // FIXME: here or in another file?
+import './components/muc-task-view.js'
+import './components/muc-task-list-view.js'
+import './components/muc-task-lists-view.js'
+import './components/muc-task-app-view.js'
+import './modals/pick-task-list.js'
 
 converse.plugins.add('livechat-converse-tasks', {
   dependencies: ['converse-muc', 'converse-disco', 'converse-pubsub'],
