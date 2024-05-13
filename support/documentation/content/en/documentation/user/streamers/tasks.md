@@ -1,5 +1,5 @@
 ---
-title: "Tasks / TODO-list"
+title: "Tasks / To-do lists"
 description: "You can handle tasks ans task lists with your moderation team."
 weight: 35
 chapter: false
@@ -11,7 +11,7 @@ This feature comes with the livechat plugin version 10.0.0.
 
 ## Introduction
 
-The livechat plugin includes a Task Application: a kind of "TODO-list" features where you can create task lists and add tasks to them.
+The livechat plugin includes a Task Application: a kind of "to-do list" features where you can create task lists and add tasks to them.
 All room's admins have access to these tasks, so you can edit them collaboratively.
 
 You can for example use the Task Application to:

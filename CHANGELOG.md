@@ -1,13 +1,12 @@
 # Changelog
 
-TODO: add documentation link for the task-list in the CHANGELOG.
 TODO: tag custom ConverseJS, and update build-conversejs.sh.
 
 ## 10.0.0 (Not Released Yet)
 
 ### New features
 
-* #177: streamer's task/to-do lists: streamers, and their room's moderators, can handle task lists directly. This can be used to handle viewers questions, moderation actions, ... More info in the documentation.
+* #177: streamer's task/to-do lists: streamers, and their room's moderators, can handle task lists directly. This can be used to handle viewers questions, moderation actions, ... More info in the [tasks documentation](https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/user/streamers/tasks/).
 
 ### Minor changes and fixes
 
