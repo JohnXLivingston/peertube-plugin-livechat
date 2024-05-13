@@ -398,6 +398,8 @@ livechat_configuration_channel_forbidden_words_reason_label: "Reason"
 livechat_configuration_channel_forbidden_words_reason_desc: "Reason to display besides deleted messages"
 livechat_configuration_channel_forbidden_words_regexp_label: "Consider as regular expressions"
 livechat_configuration_channel_forbidden_words_regexp_desc: "By checking this option, you can use regular expressions."
+livechat_configuration_channel_forbidden_words_label_label: "Label"
+livechat_configuration_channel_forbidden_words_label_desc: "Label for this forbidden words rule"
 livechat_configuration_channel_forbidden_words_applytomoderators_label:  "Also moderate messages from moderators"
 livechat_configuration_channel_forbidden_words_applytomoderators_desc: |
   By default, moderator messages will not be deleted when containing forbidden words.

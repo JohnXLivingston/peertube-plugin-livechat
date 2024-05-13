@@ -1,6 +1,9 @@
 import { html, LitElement, TemplateResult } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { customElement, property, state } from 'lit/decorators.js'
+import { unsafeHTML } from 'lit/directives/unsafe-html.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
+import { StaticValue, unsafeStatic } from 'lit/static-html.js'
 
 type DynamicTableAcceptedTypes = number | string | boolean | Date
 
@@ -41,7 +44,7 @@ interface CellDataSchema {
 export class DynamicTableFormElement extends LitElement {
 
   @property({ attribute: false })
-  public header: { [key : string]: TemplateResult<1> } = {}
+  public header: { [key : string]: { colName: TemplateResult, description: TemplateResult } } = {}
 
 
   @property({ attribute: false })
@@ -87,55 +90,51 @@ export class DynamicTableFormElement extends LitElement {
   render = () => {
     const inputId = `peertube-livechat-${this.formName.replaceAll('_','-')}-table`
 
+    for(let row of this.rows) {
+      if (!row._id) {
+        row._id = this._lastRowId++
+      }
+    }
 
     return html`
-        <div class="row mt-5">
-          <div class="col-12 col-lg-4 col-xl-3">
-            <h2>Bot command #1</h2>
-            <p>You can configure the bot to respond to commands. A command is a message starting with a "!", like for example "!help" that calls the "help" command. For more information about how to configure this feature, please refer to the documentation by clicking on the help button.</p>
-            <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/bot/commands/" target="_blank" title="Online help" class="orange-button peertube-button-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 4.233 4.233">
-                <path style="display:inline;opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:.529167;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M1.48 1.583V.86c0-.171.085-.31.19-.31h.893c.106 0 .19.139.19.31v.838c0 .171-.107.219-.19.284l-.404.314c-.136.106-.219.234-.221.489l-.003.247"></path>
-                <path style="display:inline;fill:currentColor;stroke-width:.235169" d="M1.67 3.429h.529v.597H1.67z"></path>
-              </svg>
-            </a>
-          </div>
-          <div class="col-12 col-lg-8 col-xl-9">
-            <table class="table table-striped table-hover table-sm" id=${inputId}>
-              ${this._renderHeader()}
-              <tbody>
-                ${repeat(this.rows, this._renderDataRow)}
-              </tbody>
-              <tfoot>
-                <tr><td><button @click=${this._addRow}>Add Row</button></td></tr>
-              </tfoot>
-            </table>
-          </div>
-        </div>
-        ${JSON.stringify(this.rows)}
+      <table class="table table-striped table-hover table-sm" id=${inputId}>
+        ${this._renderHeader()}
+        <tbody>
+          ${repeat(this.rows,(row) => row._id, this._renderDataRow)}
+        </tbody>
+        <tfoot>
+          <tr><td><button @click=${this._addRow}>Add Row</button></td></tr>
+        </tfoot>
+      </table>
     `
 
   }
 
   private _renderHeader = () => {
-    return html`<thead><tr><th scope="col">#</th>${Object.values(this.header).map(this._renderHeaderCell)}<th scope="col">Remove Row</th></tr></thead>`
+    return html`<thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        ${Object.values(this.header).map(this._renderHeaderCell)}
+        <th scope="col">Remove Row</th>
+      </tr>
+    </thead>`
 
   }
 
-  private _renderHeaderCell = (headerCellData: TemplateResult<1> | any) => {
-    return html`<th scope="col">${headerCellData}</th>`
-
+  private _renderHeaderCell = (headerCellData: { colName: TemplateResult, description: TemplateResult }) => {
+    return html`<th scope="col">
+      <div data-toggle="tooltip" data-placement="bottom" data-html="true" title="${headerCellData.description}">${headerCellData.colName}</div>
+    </th>`
   }
 
   private _renderDataRow = (rowData: { _id: number; [key : string]: DynamicTableAcceptedTypes }) => {
-    if (!rowData._id) {
-      rowData._id = this._lastRowId++
-
-    }
-
     const inputId = `peertube-livechat-${this.formName.replaceAll('_','-')}-row-${rowData._id}`
 
-    return html`<tr id=${inputId}><td class="form-group">${rowData._id}</td>${repeat(Object.entries(rowData).filter(([k,v]) => k != '_id'), (data) => this.renderDataCell(data, rowData._id))}<td class="form-group"><button @click=${() => this._removeRow(rowData._id)}>Remove</button></td></tr>`
+    return html`<tr id=${inputId}>
+      <!-- <td class="form-group">${rowData._id}</td> -->
+      ${Object.entries(rowData).filter(([k,v]) => k != '_id').map((data) => this.renderDataCell(data, rowData._id))}
+      <td class="form-group"><button @click=${() => this._removeRow(rowData._id)}>Remove</button></td>
+    </tr>`
 
   }
 
@@ -175,12 +174,12 @@ export class DynamicTableFormElement extends LitElement {
               name=${inputName}
               class="form-control"
               id=${inputId}
-              min=${propertySchema?.min}
-              max=${propertySchema?.max}
-              minlength=${propertySchema?.minlength}
-              maxlength=${propertySchema?.maxlength}
-              @oninput=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
-              .value=${propertyValue}
+              min=${ifDefined(propertySchema?.min)}
+              max=${ifDefined(propertySchema?.max)}
+              minlength=${ifDefined(propertySchema?.minlength)}
+              maxlength=${ifDefined(propertySchema?.maxlength)}
+              @input=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
+              .value=${propertyValue as string}
             />`
             break
 
@@ -189,19 +188,26 @@ export class DynamicTableFormElement extends LitElement {
               name=${inputName}
               class="form-control"
               id=${inputId}
-              min=${propertySchema?.min}
-              max=${propertySchema?.max}
-              minlength=${propertySchema?.minlength}
-              maxlength=${propertySchema?.maxlength}
-              @oninput=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
-              .value=${propertyValue}
+              min=${ifDefined(propertySchema?.min)}
+              max=${ifDefined(propertySchema?.max)}
+              minlength=${ifDefined(propertySchema?.minlength)}
+              maxlength=${ifDefined(propertySchema?.maxlength)}
+              @input=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
+              .value=${propertyValue as string}
             ></textarea>`
             break
 
           case 'select':
-            formElement = html`<select class="form-select" aria-label="Default select example">
+            formElement = html`<select
+              class="form-select"
+              aria-label="Default select example"
+              @change=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
+            >
               <option ?selected=${!propertyValue}>${propertySchema?.label ?? 'Choose your option'}</option>
-              ${Object.entries(propertySchema?.options ?? {})?.map(([value,name]) => html`<option ?selected=${propertyValue === value} value=${value}>${name}</option>`)}
+              ${Object.entries(propertySchema?.options ?? {})
+                      ?.map(([value,name]) => 
+                        html`<option ?selected=${propertyValue === value} value=${value}>${name}</option>`
+                      )}
             </select>`
             break
 
@@ -222,12 +228,12 @@ export class DynamicTableFormElement extends LitElement {
                 name=${inputName}
                 class="form-control"
                 id=${inputId}
-                min=${propertySchema?.min}
-                max=${propertySchema?.max}
-                minlength=${propertySchema?.minlength}
-                maxlength=${propertySchema?.maxlength}
-                @oninput=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
-                .value=${propertyValue}
+              min=${ifDefined(propertySchema?.min)}
+              max=${ifDefined(propertySchema?.max)}
+              minlength=${ifDefined(propertySchema?.minlength)}
+              maxlength=${ifDefined(propertySchema?.maxlength)}
+              @input=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
+              .value=${(propertyValue as Date).toISOString()}
               />`
               break
 
@@ -246,12 +252,12 @@ export class DynamicTableFormElement extends LitElement {
               name=${inputName}
               class="form-control"
               id=${inputId}
-              min=${propertySchema?.min}
-              max=${propertySchema?.max}
-              minlength=${propertySchema?.minlength}
-              maxlength=${propertySchema?.maxlength}
-              @oninput=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
-              .value=${propertyValue}
+              min=${ifDefined(propertySchema?.min)}
+              max=${ifDefined(propertySchema?.max)}
+              minlength=${ifDefined(propertySchema?.minlength)}
+              maxlength=${ifDefined(propertySchema?.maxlength)}
+              @input=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
+              .value=${propertyValue as String}
             />`
             break
 
@@ -269,9 +275,9 @@ export class DynamicTableFormElement extends LitElement {
               name=${inputName}
               class="form-check-input"
               id=${inputId}
-              @oninput=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
-              value=""
-              ?checked=${propertyValue}
+              @input=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, rowId)}
+              .value=${propertyValue as String}
+              ?checked=${propertyValue as Boolean}
             />`
             break
 
@@ -281,24 +287,26 @@ export class DynamicTableFormElement extends LitElement {
     }
 
     if (!formElement) {
-      console.warn(`value type '${propertyValue.constructor}' is incompatible with field type '${propertySchema.inputType}' for form entry '${propertyName.toString()}'.`)
+      console.warn(`value type '${propertyValue.constructor}' is incompatible`
+                 + `with field type '${propertySchema.inputType}' for form entry '${propertyName.toString()}'.`)
 
     }
-
-    console.log
 
     return html`<td class="form-group">${formElement}</td>`
 
   }
 
 
-  _updatePropertyFromValue(event: InputEvent, propertyName: string, rowId : number) {
+  _updatePropertyFromValue(event: Event, propertyName: string, rowId : number) {
     let target = event?.target as (HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement)
+    let value = (target && target instanceof HTMLInputElement && target.type == "checkbox") ? !!(target?.checked) : target?.value
 
-    if(target?.value) {
+    if(value !== undefined) {
       for(let row of this.rows) {
         if(row._id === rowId) {
-          row[propertyName] = target?.value
+          row[propertyName] = value
+
+          this.requestUpdate('rows')
 
           return
         }

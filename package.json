@@ -33,6 +33,8 @@
     "dist/assets/styles/configuration.css"
   ],
   "dependencies": {
+    "@lit/context": "^1.1.1",
+    "@lit/task": "^1.0.0",
     "@xmpp/jid": "^0.13.1",
     "async": "^3.2.2",
     "decache": "^4.6.0",
@@ -42,6 +44,7 @@
     "lit": "^3.1.3",
     "log-rotate": "^0.2.8",
     "openid-client": "^5.6.5",
+    "rxjs": "^7.8.1",
     "validate-color": "^2.2.1",
     "xmppjs-chat-bot": "^0.3.0"
   },

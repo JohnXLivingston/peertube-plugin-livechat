@@ -2,16 +2,20 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import type { RegisterClientHelpers, RegisterClientOptions } from '@peertube/peertube-types/client'
 import { localizedHelpUrl } from '../../../utils/help'
 import { helpButtonSVG } from '../../../videowatch/buttons'
 import {  getConfigurationChannelViewData } from './logic/channel'
 import { TemplateResult, html } from 'lit'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 // Must use require for mustache, import seems buggy.
 const Mustache = require('mustache')
+
 import './DynamicTableFormElement'
 import './ChannelConfigurationElement'
+import './PluginConfigurationRow'
+import { ptTr } from './TranslationDirective'
 
 /**
  * Renders the configuration settings page for a given channel,
@@ -26,6 +30,8 @@ async function renderConfigurationChannel (
   channelId: string,
   rootEl: HTMLElement
 ): Promise<TemplateResult> {
+  const peertubeHelpers = registerClientOptions.peertubeHelpers
+
   try {
     const view : {[key: string] : any} = await getConfigurationChannelViewData(registerClientOptions, channelId)
     await fillViewHelpButtons(registerClientOptions, view)
@@ -34,12 +40,30 @@ async function renderConfigurationChannel (
     //await vivifyConfigurationChannel(registerClientOptions, rootEl, channelId)
 
     let tableHeader = {
-      words: html`${view.forbiddenWords}<div data-toggle="tooltip" data-placement="bottom" data-html="true" title=${view.forbiddenWordsDesc}></div>`,
-      regex: html`${view.forbiddenWordsRegexp}<div data-toggle="tooltip" data-placement="bottom" data-html="true" title=${view.forbiddenWordsRegexpDesc}></div>`,
-      applyToModerators: html`${view.forbiddenWordsApplyToModerators}<div data-toggle="tooltip" data-placement="bottom" data-html="true" title=${view.forbiddenWordsApplyToModeratorsDesc}></div>`,
-      label: html`${view.forbiddenWordsLabel}<div data-toggle="tooltip" data-placement="bottom" data-html="true" title=${view.forbiddenWordsLabelDesc}></div>`,
-      reason: html`${view.forbiddenWordsReason}<div data-toggle="tooltip" data-placement="bottom" data-html="true" title=${view.forbiddenWordsReasonDesc}></div>`,
-      comments: html`${view.forbiddenWordsComments}<div data-toggle="tooltip" data-placement="bottom" data-html="true" title=${view.forbiddenWordsCommentsDesc}></div>`,
+      words: {
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
+        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC2)
+      },
+      regex: {
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_LABEL),
+        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_DESC)
+      },
+      applyToModerators: {
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_LABEL),
+        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_DESC)
+      },
+      label: {
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL_LABEL),
+        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL_DESC)
+      },
+      reason: {
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_LABEL),
+        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_DESC)
+      },
+      comments: {
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_LABEL),
+        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_DESC)
+      }
     }
     let tableSchema = {
       words: {
@@ -102,19 +126,30 @@ async function renderConfigurationChannel (
       },
     ]
 
-    return html`${unsafeHTML(Mustache.render(MUSTACHE_CONFIGURATION_CHANNEL, view))}
+    let helpLink = {
+      url : new URL(await localizedHelpUrl(registerClientOptions, { page: 'documentation/user/streamers/bot/forbidden_words' })),
+      title: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)
+    }
+
+    return html`
     <div class="container">
       <channel-configuration></channel-configuration>
-      <dynamic-table-form
-        .header=${tableHeader}
-        .schema=${tableSchema}
-        .rows=${tableRows}
-        .formName=${'dynamic-table-form'}
+      <plugin-configuration-row
+        .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
+        .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
+        .helpLink=${helpLink}
       >
-      </dynamic-table-form>
-    </div>${JSON.stringify(tableRows)}`
+        <dynamic-table-form
+          .header=${tableHeader}
+          .schema=${tableSchema}
+          .rows=${tableRows}
+          .formName=${'forbidden-words'}
+        >
+        </dynamic-table-form>
+      </plugin-configuration-row>
+    </div>`
   } catch (err: any) {
-    registerClientOptions.peertubeHelpers.notifier.error(err.toString())
+    peertubeHelpers.notifier.error(err.toString())
     return html``
   }
 }
@@ -150,7 +185,8 @@ async function fillLabels (
   registerClientOptions: RegisterClientOptions,
   view: {[key: string] : string}
 ): Promise<void> {
-  const { peertubeHelpers } = registerClientOptions
+  const peertubeHelpers = registerClientOptions.peertubeHelpers
+  
   view.title = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE)
   view.description = await peertubeHelpers.translate(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)
 
