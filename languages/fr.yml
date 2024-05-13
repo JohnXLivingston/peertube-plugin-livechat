@@ -437,3 +437,23 @@ login_external_auth_alert_message: Échec de l'authentification
 external_auth_custom_oidc_button_label_label: Libellé pour le bouton de connexion
 external_auth_custom_oidc_button_label_description: Ce libellé va être affiché aux
   utilisateur⋅rices, en tant que libellé du bouton de connection OIDC.
+task_list_create_error: Erreur à l'enregistrement de la liste de tâche
+task_list_delete: Supprimer la liste de tâches
+task_list_name: Nom de la liste de tâches
+task_create: Créer une nouvelle tâche
+task_name: Nom de la tâche
+task_description: Description
+task_delete: Supprimer la tâche
+task_list_pick_title: Veuillez sélectionner une liste de tâches
+login_remote_peertube_video_open_failed: "Votre navigateur a bloqué l'ouverture sur
+  l'instance distante, veuillez essayer d'ouvrir manuellement ce lien :"
+tasks: Tâches
+task_delete_confirm: Êtes-vous sûr de vouloir supprimer cette tâche ?
+task_list_pick_empty: Il n'y a pas de liste de tâches pour l'instant, veuillez d'abord
+  en créer une
+task_list_create: 'Créer une nouvelle liste de tâches :'
+task_list_delete_confirm: Êtes-vous sûr de vouloir supprimer cette liste de tâches ?
+task_list_pick_message: "Une fois que vous aurez sélectionné une liste de tâches,
+  une nouvelle tâche sera créée.\nPour visualiser la tâche, ouvrez l'application tâche
+  en utilisant le menu du haut.\nPlus d'informations dans la documentation du module
+  livechat.\n"
