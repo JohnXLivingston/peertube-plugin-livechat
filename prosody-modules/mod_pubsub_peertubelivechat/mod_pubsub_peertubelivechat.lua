@@ -2,7 +2,7 @@
 -- This idea is described in https://xmpp.org/extensions/xep-0316.html
 -- but here there are some differences:
 -- * there will be several nodes, using MUC JID+NodeID to access them
---	 (see https://xmpp.org/extensions/xep-0060.html#addressing-jid)
+--	 (see https://xmpp.org/extensions/xep-0060.html#addressing-jidnode)
 -- * nodes can only be subscribed by room admin/owner,
 -- * ...
 
