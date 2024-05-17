@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-05-17 15:56+0200\n"
-"PO-Revision-Date: 2024-04-12 05:39+0000\n"
+"PO-Revision-Date: 2024-05-17 16:40+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Weblate 5.4.3\n"
+"X-Generator: Weblate 5.5.5\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -392,10 +393,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
-#, fuzzy
-#| msgid "Restart your services:"
 msgid "restart your instance."
-msgstr "Redémarrez vos services :"
+msgstr "Redémarrez votre instance."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -1094,17 +1093,19 @@ msgstr "DNS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy
-#| msgid "You need to add a [DNS record](https://prosody.im/doc/dns) allowing remote servers to find the \"room.your_instance.tld\" component."
 msgid "You need to add [DNS records](https://prosody.im/doc/dns) allowing remote servers to find \"room.your_instance.tld\" and \"external.your_instance.tld\" components."
-msgstr "Vous devez ajouter un [enregistrement DNS](https://prosody.im/doc/dns) permettant aux serveurs distant de trouver le composant «room.votre_instance.tld»."
+msgstr ""
+"Vous devez ajouter des [enregistrements DNS](https://prosody.im/doc/dns) "
+"permettant aux serveurs distant de trouver les composants «room."
+"votre_instance.tld» et «external.votre_instance.tld»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy
-#| msgid "The easiest way to do this is to add an SRV record for the \"room\" [subdomain](https://prosody.im/doc/dns#subdomains):"
 msgid "The easiest way to do this is to add SRV records for the \"room\" and \"external\" [subdomain](https://prosody.im/doc/dns#subdomains):"
-msgstr "Le plus simple pour cela est d'ajouter un enregistrement SRV pour le [sous-domaine](https://prosody.im/doc/dns#subdomains) «room» :"
+msgstr ""
+"Le plus simple pour cela est d'ajouter des enregistrements SRV pour les "
+"[sous-domaines](https://prosody.im/doc/dns#subdomains) «room»  et «external» "
+":"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1148,10 +1149,10 @@ msgstr "target: votre_instance.tld. (remplacez par la valeur adéquate)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy
-#| msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
 msgid "record name: _xmpp-server._tcp.external.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
-msgstr "nom de l'enregistrement : _xmpp-server._tcp.room.votre_instance.tld. (remplacez «votre_instance.tld» par la valeur adéquate)"
+msgstr ""
+"nom de l'enregistrement : _xmpp-server._tcp.external.votre_instance.tld. ("
+"remplacez «votre_instance.tld» par la valeur adéquate)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1160,17 +1161,14 @@ msgstr "Attention à bien conserver le point après «votre_instance.tld»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy
-#| msgid "Using the `dig` command to check your record, you should get a result similar to this:"
 msgid "Using the `dig` command to check your records, you should get a result similar to this:"
-msgstr "En utilisant la commande `dig` pour vérifier votre enregistrement, vous devriez obtenir un résultat similaire à celui-ci :"
+msgstr ""
+"En utilisant la commande `dig` pour vérifier vos enregistrements, vous "
+"devriez obtenir un résultat similaire à celui-ci :"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
-#| "0 5 5269 videos.john-livingston.fr.\n"
+#, no-wrap
 msgid ""
 "$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
 "0 5 5269 videos.john-livingston.fr.\n"
@@ -1179,6 +1177,9 @@ msgid ""
 "0 5 5269 videos.john-livingston.fr.\n"
 msgstr ""
 "$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
+"0 5 5269 videos.john-livingston.fr.\n"
+"\n"
+"$ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV\n"
 "0 5 5269 videos.john-livingston.fr.\n"
 
 #. type: Plain text
@@ -1585,10 +1586,9 @@ msgstr "Si cela ne fonctionne pas, vous pouvez utiliser l'outils de diagnostic (
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-#, fuzzy, no-wrap
-#| msgid "Plugin Peertube Livechat settings"
+#, no-wrap
 msgid "Plugin Peertube Livechat settings - External Authentication"
-msgstr "Paramètres du Plugin Peertube Livechat"
+msgstr "Paramètres du Plugin Peertube Livechat - Authentification Externe"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1626,10 +1626,11 @@ msgstr "![Bouton connexion avec compte externe](/peertube-plugin-livechat/images
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![External login dialog](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
 msgid "![External login dialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)"
-msgstr "![Fenêtre de dialogue connexion avec un compte externe](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Fenêtre d'authentification Externe - OpenID Connect](/peertube-"
+"plugin-livechat/images/external_login_dialog_oidc."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1638,10 +1639,11 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-#, fuzzy
-#| msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgid "For the user documentation, see [user documentation](/peertube-plugin-livechat/documentation/user/viewers/)"
-msgstr "Pour la documentation utilisateur⋅rice associé à ces fonctionnalités, veuillez vous référer à la page [de documentation utilisateur⋅rice](/peertube-plugin-livechat/fr/documentation/user/xmpp_clients/)."
+msgstr ""
+"Pour la documentation utilisateur⋅rice, veuillez vous référer à la page [de "
+"documentation utilisateur⋅rice](/peertube-plugin-livechat/fr/documentation/"
+"user/viewers/)"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1651,12 +1653,13 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-#, fuzzy, no-wrap
-#| msgid "This feature comes with the livechat plugin version 9.0.0."
+#, no-wrap
 msgid ""
 "This feature is still experimental.\n"
 "This feature is available with the plugin version >= 9.0.0.\n"
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 9.0.0."
+msgstr ""
+"Cette fonctionnalité est encore expérimentale.\n"
+"Cette fonctionnalité arrive avec le plugin livechat version >= 9.0.0.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1695,10 +1698,8 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-#, fuzzy
-#| msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
 msgid "For now, it is not possible to localize this label."
-msgstr "Pour l'instant il n'est pas possible d'utiliser des tableaux Markdown : les outils de translation ne savent pas les gérer."
+msgstr "Pour l'instant il n'est pas possible de localiser ce libellé."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1758,10 +1759,9 @@ msgstr ""
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-#, fuzzy, no-wrap
-#| msgid "More features to come..."
+#, no-wrap
 msgid "More to come"
-msgstr "Nouvelles fonctionnalités à venir..."
+msgstr "Plus à venir..."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1816,17 +1816,15 @@ msgstr "Les paramètres suivants concernent la fédération avec d'autres instan
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "Please refer to the \"documentation\" documentation page.\n"
 msgid "See the detailed documentation page:"
-msgstr "Voir la page de documentation dédiée à la documentation.\n"
+msgstr "Voir la page de documentation détaillée :"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
 msgid "[External Authentication](/peertube-plugin-livechat/documentation/admin/external_auth/)"
-msgstr "[Le bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/bot)"
+msgstr ""
+"[Authentification Externe](/peertube-plugin-livechat/fr/documentation/admin/"
+"external_auth/)"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -3012,10 +3010,10 @@ msgstr "![Configuration de la chaîne / Mode lent](/peertube-plugin-livechat/ima
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, fuzzy
-#| msgid "This value will apply to all your channel's chatrooms."
 msgid "This value will apply as a default value for all your channel's chatrooms."
-msgstr "Cette valeur va s'appliquer à tous les salons de discussion de votre chaîne."
+msgstr ""
+"Cette valeur va s'appliquer comme valeur par défaut pour tous les salons de "
+"discussion de votre chaîne."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3068,10 +3066,8 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 9.0.0."
 msgid "This feature comes with the livechat plugin version 10.0.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 9.0.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.0.0."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3112,24 +3108,24 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "On top of the chat, there is a \"{{% livechat_label share_chat_link %}}\" button."
 msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the top chat menu:"
-msgstr "Au dessus du tchat, il y a un bouton «{{% livechat_label share_chat_link %}}»."
+msgstr ""
+"Pour ouvrir l'Application Tâches, il y a un bouton «{{% livechat_label tasks "
+"%}}» dans le menu haut du tchat :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
 msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
-msgstr "![Inclure le tchat dans OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Ouvrir l'Application Tâche](/peertube-plugin-livechat/images/"
+"task_open_app_video.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
-msgstr "![Menu du tchat](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Ouvrir l'Application Tâche](/peertube-plugin-livechat/images/"
+"task_open_app_fullpage.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3138,17 +3134,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![Task Application](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px)"
-msgstr "![Menu du tchat](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Application Tâches](/peertube-plugin-livechat/images/task_app_video_1."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 msgid "![Task Application](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px)"
-msgstr "![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Application Tâches](/peertube-plugin-livechat/images/task_app_fullpage_1."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3194,10 +3190,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
 msgid "![Task lists](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px)"
-msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Listes de Tâches](/peertube-plugin-livechat/images/task_app_task_lists."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3223,17 +3219,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![Task form](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)"
-msgstr "![Menu du tchat](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Formulaire de tâche](/peertube-plugin-livechat/images/task_app_task_form."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Task created](/peertube-plugin-livechat/images/task_app_task_1.png?classes=shadow,border&height=200px)"
-msgstr "![Capture d'écran du tchat](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Tâche créée](/peertube-plugin-livechat/images/task_app_task_1."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3253,10 +3249,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
 msgid "![Tasks](/peertube-plugin-livechat/images/task_app_task_2.png?classes=shadow,border&height=200px)"
-msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Tâches](/peertube-plugin-livechat/images/task_app_task_2."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3271,17 +3267,18 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Diagnostic result](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px)"
 msgid "![Drag and drop to sort](/peertube-plugin-livechat/images/task_drag_drop.png?classes=shadow,border&height=200px)"
-msgstr "![Résultat du diagnostique](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Glissé déposé pour trier](/peertube-plugin-livechat/images/task_drag_drop."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Participants list](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px)"
 msgid "![Drag and drop to move to another list](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px)"
-msgstr "![Liste des participant⋅es](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Glissé déposé pour déplacer vers une autre liste](/peertube-"
+"plugin-livechat/images/task_drag_drop_task_list."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3296,24 +3293,24 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Deleted message](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
 msgid "![Create task from message](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px)"
-msgstr "![Messages supprimés](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
+msgstr ""
+"![Créer une tâche depuis un message](/peertube-plugin-livechat/images/"
+"task_from_message_1.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![Choose the task list](/peertube-plugin-livechat/images/task_from_message_2.png?classes=shadow,border&height=200px)"
-msgstr "![Menu du tchat](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Sélectionnez la liste de tâches](/peertube-plugin-livechat/images/"
+"task_from_message_2.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![Task created](/peertube-plugin-livechat/images/task_from_message_3.png?classes=shadow,border&height=200px)"
-msgstr "![Menu du tchat](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Tâche créée](/peertube-plugin-livechat/images/task_from_message_3."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
