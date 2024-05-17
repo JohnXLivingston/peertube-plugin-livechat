@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-05-13 17:41+0200\n"
+"POT-Creation-Date: 2024-05-17 15:56+0200\n"
 "PO-Revision-Date: 2024-05-14 02:14+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2809,6 +2807,14 @@ msgstr "Plugin peertube-plugin-livechat Erweiterte Moderationsfunktionen"
 msgid "This section is still incomplete."
 msgstr "Dieser Abschnitt ist noch unvollständig."
 
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, no-wrap
+msgid ""
+"This page describes the behaviour of livechat versions >= 10.0.0.\n"
+"There were some changes in the way we manage access rights for Peertube administrators and moderators.\n"
+msgstr ""
+
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, no-wrap
@@ -2833,8 +2839,13 @@ msgstr "Über das [Chat Dropdown Menü](/peertube-plugin-livechat/de/documentati
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
-msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
-msgstr "Alle Instanzmoderatoren und Admins sind Eigentümer der erstellten Chaträume.  Der Eigentümer des Videos wird der Administrator des Chatraums sein."
+msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2883,6 +2894,11 @@ msgstr "Als Moderator oder Administrator einer Peertube-Instanz müssen Sie wahr
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
 msgstr "Sie können alle bestehenden Chaträume auflisten: in den Einstellungen des Plugins gibt es eine Schaltfläche «Räume auflisten»."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2957,7 +2973,9 @@ msgstr "![Kanalkonfiguration / Langsamer Modus](/peertube-plugin-livechat/images
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This value will apply to all your channel's chatrooms."
+#, fuzzy
+#| msgid "This value will apply to all your channel's chatrooms."
+msgid "This value will apply as a default value for all your channel's chatrooms."
 msgstr "Dieser Wert gilt für alle Chaträume deines Kanals."
 
 #. type: Plain text
@@ -2969,6 +2987,11 @@ msgstr "Wird der Wert auf \"0\" gesetzt, wird die Funktion deaktiviert."
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "Setting the value to a positive integer will set the period during which users will not be able to post additional messages."
 msgstr "Wenn Sie den Wert auf eine positive ganze Zahl setzen, wird der Zeitraum festgelegt, in dem die Benutzer keine weiteren Nachrichten senden können."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the slow mode value in the configuration form."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -2996,8 +3019,7 @@ msgstr "Wenn sie eine Nachricht senden, wird das Eingabefeld für X Sekunden dea
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "You can handle tasks and task lists with your moderation team."
-msgstr ""
-"Sie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten."
+msgstr "Sie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3008,17 +3030,12 @@ msgstr "Aufgaben / To-do-Listen"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "This feature comes with the livechat plugin version 10.0.0."
-msgstr ""
-"Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein."
+msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "The livechat plugin includes a Task Application: a kind of \"to-do list\" feature where you can create task lists and add tasks to them.  Every room's admins have access to these tasks, so you can edit them collaboratively."
-msgstr ""
-"Das Livechat Plugin enthält eine Aufgabenanwendung: eine Art \"To-Do-Liste\""
-", mit der Sie Aufgabenlisten erstellen und Aufgaben zu ihnen hinzufügen "
-"können.  Die Administratoren eines jeden Raums haben Zugriff auf diese "
-"Aufgaben, sodass Sie sie gemeinsam bearbeiten können."
+msgstr "Das Livechat Plugin enthält eine Aufgabenanwendung: eine Art \"To-Do-Liste\", mit der Sie Aufgabenlisten erstellen und Aufgaben zu ihnen hinzufügen können.  Die Administratoren eines jeden Raums haben Zugriff auf diese Aufgaben, sodass Sie sie gemeinsam bearbeiten können."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3028,16 +3045,12 @@ msgstr "Sie können die Aufgabenanwendung zum Beispiel verwenden, um:"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "prepare a list of themes you want to discuss during your livestream, so you can be sure you won't forget anything"
-msgstr ""
-"eine Liste der Themen vorzubereiten, die Sie während Ihres Livestreams "
-"besprechen möchten, damit Sie nichts vergessen"
+msgstr "eine Liste der Themen vorzubereiten, die Sie während Ihres Livestreams besprechen möchten, damit Sie nichts vergessen"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "highlight questions from your viewers, so you can come back to them later without forgetting to answer them"
-msgstr ""
-"Fragen Ihrer Zuschauer markieren, damit Sie später darauf zurückkommen "
-"können, ohne zu vergessen, sie zu beantworten"
+msgstr "Fragen Ihrer Zuschauer markieren, damit Sie später darauf zurückkommen können, ohne zu vergessen, sie zu beantworten"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3059,51 +3072,37 @@ msgstr "Aufgabenanwendung öffnen"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the top chat menu:"
-msgstr ""
-"Um die Aufgabenanwendung zu öffnen, gibt es eine Schaltfläche \"{{% "
-"livechat_label \"Aufgaben\" %}}\" im oberen Chatmenü:"
+msgstr "Um die Aufgabenanwendung zu öffnen, gibt es eine Schaltfläche \"{{% livechat_label \"Aufgaben\" %}}\" im oberen Chatmenü:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
-msgstr ""
-"[Öffnen der Aufgabenanwendung](/peertube-plugin-livechat/images/"
-"task_open_app_video.png?classes=shadow,border&height=200px)"
+msgstr "[Öffnen der Aufgabenanwendung](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
-msgstr ""
-"[Öffnen der Aufgabenanwendung](/peertube-plugin-livechat/images/"
-"task_open_app_fullpage.png?classes=shadow,border&height=200px)"
+msgstr "[Öffnen der Aufgabenanwendung](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Clicking this button will toggle the Task Application display:"
-msgstr ""
-"Wenn Sie auf diese Schaltfläche klicken, wird die Anzeige der "
-"Aufgabenanwendung umgeschaltet:"
+msgstr "Wenn Sie auf diese Schaltfläche klicken, wird die Anzeige der Aufgabenanwendung umgeschaltet:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Task Application](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgabenanwendung](/peertube-plugin-livechat/images/task_app_video_1."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabenanwendung](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Task Application](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgabenanwendung](/peertube-plugin-livechat/images/task_app_fullpage_1."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabenanwendung](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "To have more space and better readability, open the chat in full-page mode."
-msgstr ""
-"Um mehr Platz und eine bessere Lesbarkeit zu erhalten, öffnen Sie den Chat "
-"im neuen Fenster."
+msgstr "Um mehr Platz und eine bessere Lesbarkeit zu erhalten, öffnen Sie den Chat im neuen Fenster."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3114,18 +3113,12 @@ msgstr "Zugriffsrechte"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Every room's admins have access to the Task Application (read and write access)."
-msgstr ""
-"Die Administratoren eines jeden Raums haben Zugriff auf die "
-"Aufgabenanwendung (Lese- und Schreibzugriff)."
+msgstr "Die Administratoren eines jeden Raums haben Zugriff auf die Aufgabenanwendung (Lese- und Schreibzugriff)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "When you promote someone as room admin or owner, they gets instant access to the Task Application.  When you remove admin or owner rights to someone, they instantly lose access to the Task Application."
-msgstr ""
-"Wenn Sie jemanden zum Raumadministrator oder -besitzer befördern, erhält "
-"dieser sofortigen Zugriff auf die Aufgabenanwendung.  Wenn Sie jemandem die "
-"Admin- oder Eigentümerrechte entziehen, verliert er sofort den Zugang zur "
-"Aufgabenanwendung."
+msgstr "Wenn Sie jemanden zum Raumadministrator oder -besitzer befördern, erhält dieser sofortigen Zugriff auf die Aufgabenanwendung.  Wenn Sie jemandem die Admin- oder Eigentümerrechte entziehen, verliert er sofort den Zugang zur Aufgabenanwendung."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3136,18 +3129,12 @@ msgstr "Aufgabenlisten"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "By default, there is one task list that has the same name as your livestream."
-msgstr ""
-"Standardmäßig gibt es eine Aufgabenliste, die denselben Namen wie Ihr "
-"Livestream hat."
+msgstr "Standardmäßig gibt es eine Aufgabenliste, die denselben Namen wie Ihr Livestream hat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can use the form at the bottom to create a new task list.  You can also edit existing task lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks."
-msgstr ""
-"Mit dem Formular am unteren Rand können Sie eine neue Aufgabenliste "
-"erstellen.  Sie können auch bestehende Aufgabenlisten über die Schaltfläche "
-"bearbeiten oder eine Aufgabenliste löschen. Wenn Sie eine Aufgabenliste "
-"löschen, werden auch alle dazugehörigen Aufgaben gelöscht."
+msgstr "Mit dem Formular am unteren Rand können Sie eine neue Aufgabenliste erstellen.  Sie können auch bestehende Aufgabenlisten über die Schaltfläche bearbeiten oder eine Aufgabenliste löschen. Wenn Sie eine Aufgabenliste löschen, werden auch alle dazugehörigen Aufgaben gelöscht."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3157,16 +3144,12 @@ msgstr "Die Aufgabenlisten sind alphabetisch sortiert."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Task lists](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgabenlisten](/peertube-plugin-livechat/images/task_app_task_lists."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabenlisten](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "All modification are instantly visible in all your browser tabs, and for all room's admins."
-msgstr ""
-"Alle Änderungen sind sofort in allen Registerkarten Ihres Browsers und für "
-"alle Raumadministratoren sichtbar."
+msgstr "Alle Änderungen sind sofort in allen Registerkarten Ihres Browsers und für alle Raumadministratoren sichtbar."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3183,24 +3166,17 @@ msgstr "Aufgaben erstellen"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can create a task using the button on the right of task lists.  This opens a form with two fields: a mandatory task name, and an optional description."
-msgstr ""
-"Sie können eine Aufgabe über die Schaltfläche rechts neben der Aufgabenliste "
-"erstellen.  Es öffnet sich ein Formular mit zwei Feldern: einem "
-"obligatorischen Aufgabennamen und einer optionalen Beschreibung."
+msgstr "Sie können eine Aufgabe über die Schaltfläche rechts neben der Aufgabenliste erstellen.  Es öffnet sich ein Formular mit zwei Feldern: einem obligatorischen Aufgabennamen und einer optionalen Beschreibung."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Task form](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgabenformular](/peertube-plugin-livechat/images/task_app_task_form."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabenformular](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Task created](/peertube-plugin-livechat/images/task_app_task_1.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgabe erstellt](/peertube-plugin-livechat/images/task_app_task_1."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabe erstellt](/peertube-plugin-livechat/images/task_app_task_1.png?classes=shadow,border&height=200px)"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3211,23 +3187,17 @@ msgstr "Aufgaben bearbeiten"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Tasks can be edited by using the edit button on the right."
-msgstr ""
-"Aufgaben können über die Schaltfläche \"Bearbeiten\" auf der rechten Seite "
-"bearbeitet werden."
+msgstr "Aufgaben können über die Schaltfläche \"Bearbeiten\" auf der rechten Seite bearbeitet werden."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Tasks can be marked complete (or uncomplete) by clicking directly on the checkbox in the list."
-msgstr ""
-"Aufgaben können durch direktes Anklicken des Kontrollkästchens in der Liste "
-"als erledigt (oder nicht erledigt) markiert werden."
+msgstr "Aufgaben können durch direktes Anklicken des Kontrollkästchens in der Liste als erledigt (oder nicht erledigt) markiert werden."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Tasks](/peertube-plugin-livechat/images/task_app_task_2.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgaben](/peertube-plugin-livechat/images/task_app_task_2."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Aufgaben](/peertube-plugin-livechat/images/task_app_task_2.png?classes=shadow,border&height=200px)"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3238,24 +3208,17 @@ msgstr "Aufgaben sortieren / Aufgabenliste ändern"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can sort tasks, or move tasks from one list to another, simply using drag & drop."
-msgstr ""
-"Sie können Aufgaben sortieren oder von einer Liste in eine andere "
-"verschieben, indem Sie sie einfach per Drag & Drop ziehen."
+msgstr "Sie können Aufgaben sortieren oder von einer Liste in eine andere verschieben, indem Sie sie einfach per Drag & Drop ziehen."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Drag and drop to sort](/peertube-plugin-livechat/images/task_drag_drop.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Drag und Drop zum Sortieren](/peertube-plugin-livechat/images/"
-"task_drag_drop.png?classes=shadow,border&height=200px)"
+msgstr "![Drag und Drop zum Sortieren](/peertube-plugin-livechat/images/task_drag_drop.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Drag and drop to move to another list](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Drag und Drop zum Verschieben zu einer anderen Liste](/peertube-"
-"plugin-livechat/images/task_drag_drop_task_list."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Drag und Drop zum Verschieben zu einer anderen Liste](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px)"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3266,42 +3229,27 @@ msgstr "Erstellen einer Aufgabe aus einer Chat-Nachricht"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can create a task from a message in a chat, using the \"{{% livechat_label \"task_create\" %}}\" button in the dropdown menu at the right of the message.  This will open a dialog box where you can choose which task list you want to add the task into.  The task name will be the user nickname, and the task description the message content."
-msgstr ""
-"Sie können eine Aufgabe aus einer Nachricht in einem Chat erstellen, indem "
-"Sie die Schaltfläche \"{{% livechat_label \"task_create\" %}}\" im Dropdown-"
-"Menü rechts neben der Nachricht verwenden.  Daraufhin öffnet sich ein "
-"Dialogfeld, in dem Sie auswählen können, in welche Aufgabenliste Sie die "
-"Aufgabe aufnehmen möchten.  Der Aufgabenname ist der Spitzname des Benutzers "
-"und die Aufgabenbeschreibung der Inhalt der Nachricht."
+msgstr "Sie können eine Aufgabe aus einer Nachricht in einem Chat erstellen, indem Sie die Schaltfläche \"{{% livechat_label \"task_create\" %}}\" im Dropdown-Menü rechts neben der Nachricht verwenden.  Daraufhin öffnet sich ein Dialogfeld, in dem Sie auswählen können, in welche Aufgabenliste Sie die Aufgabe aufnehmen möchten.  Der Aufgabenname ist der Spitzname des Benutzers und die Aufgabenbeschreibung der Inhalt der Nachricht."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Create task from message](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgabe aus einer Nachricht erstellen](/peertube-plugin-livechat/images/"
-"task_from_message_1.png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabe aus einer Nachricht erstellen](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Choose the task list](/peertube-plugin-livechat/images/task_from_message_2.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgabenliste auswählen](/peertube-plugin-livechat/images/"
-"task_from_message_2.png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabenliste auswählen](/peertube-plugin-livechat/images/task_from_message_2.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Task created](/peertube-plugin-livechat/images/task_from_message_3.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Aufgabe erstellt](/peertube-plugin-livechat/images/task_from_message_3."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabe erstellt](/peertube-plugin-livechat/images/task_from_message_3.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered."
-msgstr ""
-"Mit dieser Funktion können Sie z. B. Ihre Moderatoren bitten, alle Chat-"
-"Fragen zu markieren, damit Sie sie während Ihres Livestreams auf einen Blick "
-"sehen und als beantwortet markieren können."
+msgstr "Mit dieser Funktion können Sie z. B. Ihre Moderatoren bitten, alle Chat-Fragen zu markieren, damit Sie sie während Ihres Livestreams auf einen Blick sehen und als beantwortet markieren können."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -3781,6 +3729,9 @@ msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-pl
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
+
+#~ msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
+#~ msgstr "Alle Instanzmoderatoren und Admins sind Eigentümer der erstellten Chaträume.  Der Eigentümer des Videos wird der Administrator des Chatraums sein."
 
 #~ msgid "So can also use provider such as Google, Facebook, ..."
 #~ msgstr "So können auch Anbieter wie Google, Facebook, ... genutzt werden."

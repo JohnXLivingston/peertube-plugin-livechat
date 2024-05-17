@@ -28,11 +28,13 @@ On the [channel configuration page](/peertube-plugin-livechat/documentation/user
 
 ![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)
 
-This value will apply to all your channel's chatrooms.
+This value will apply as a default value for all your channel's chatrooms.
 
 Setting the value to `0` will disable the feature.
 
 Setting the value to a positive integer will set the period during which users will not be able to post additional messages.
+
+To modify the value for an already existing room, just open the room "configuration" menu (on top of the chat window), and change the slow mode value in the configuration form.
 
 ## For viewers
 

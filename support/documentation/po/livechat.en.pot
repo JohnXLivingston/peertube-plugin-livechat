@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-05-13 17:41+0200\n"
+"POT-Creation-Date: 2024-05-17 15:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3084,6 +3084,14 @@ msgstr ""
 msgid "This section is still incomplete."
 msgstr ""
 
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, markdown-text, no-wrap
+msgid ""
+"This page describes the behaviour of livechat versions >= 10.0.0.\n"
+"There were some changes in the way we manage access rights for Peertube administrators and moderators.\n"
+msgstr ""
+
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text, no-wrap
@@ -3111,7 +3119,13 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
-msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
+msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, markdown-text
+msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
 msgstr ""
 
 #. type: Plain text
@@ -3166,6 +3180,12 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 #, markdown-text
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#, markdown-text
+msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -3251,7 +3271,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, markdown-text
-msgid "This value will apply to all your channel's chatrooms."
+msgid "This value will apply as a default value for all your channel's chatrooms."
 msgstr ""
 
 #. type: Plain text
@@ -3264,6 +3284,12 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, markdown-text
 msgid "Setting the value to a positive integer will set the period during which users will not be able to post additional messages."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#, markdown-text
+msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the slow mode value in the configuration form."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title

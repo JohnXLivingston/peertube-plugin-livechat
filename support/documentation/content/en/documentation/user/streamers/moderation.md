@@ -9,6 +9,11 @@ chapter: false
 This section is still incomplete.
 {{% /notice %}}
 
+{{% notice warning %}}
+This page describes the behaviour of livechat versions >= 10.0.0.
+There were some changes in the way we manage access rights for Peertube administrators and moderators.
+{{% /notice %}}
+
 ## The chat bot
 
 You can use a chat bot, that will help you for moderation.
@@ -21,8 +26,14 @@ You can access room settings and moderation tools using the [chat dropdown menu]
 ![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
 
 {{% notice tip %}}
-All instance moderators and admins will be owner of created chat rooms.
-The video owner will be admin in the chat room.
+The video owner will be owner of the chat room.
+This means he can configure the room, delete it, promote other users as admins, ...
+{{% /notice %}}
+
+{{% notice tip %}}
+Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.
+However, they have a special button available on top of the chat: "{{% livechat_label promote %}}".
+Clicking this button will give them owner access on the room.
 {{% /notice %}}
 
 You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.
@@ -47,3 +58,5 @@ You can delete old rooms: join the room, and use the menu on the top to destroy 
 As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly.
 
 You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».
+
+From there, you can also promote yourself as room moderator by using the "{{% livechat_label promote %}}" button on the right.
