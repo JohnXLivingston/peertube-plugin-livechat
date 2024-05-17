@@ -445,3 +445,4 @@ task_list_pick_message: "Sobald Sie eine Aufgabenliste ausgewählt haben, wird e
   neue Aufgabe erstellt.\nUm die Aufgabe zu sehen, öffnen Sie die Aufgabenanwendung
   über das obere Menü.\nWeitere Informationen finden Sie in der Dokumentation des
   Livechat-Plugins.\n"
+promote: Moderator werden
