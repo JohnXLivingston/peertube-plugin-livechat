@@ -452,3 +452,5 @@ task_list_pick_message: |
   Once you have chosen a task list, a new task will be created.
   To see the task, open the task application using the top menu.
   More information in the livechat plugin documentation.
+
+promote: 'Become moderator'

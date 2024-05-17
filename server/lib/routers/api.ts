@@ -8,6 +8,7 @@ import { initRoomApiRouter } from './api/room'
 import { initAuthApiRouter, initUserAuthApiRouter } from './api/auth'
 import { initFederationServerInfosApiRouter } from './api/federation-server-infos'
 import { initConfigurationApiRouter } from './api/configuration'
+import { initPromoteApiRouter } from './api/promote'
 
 /**
  * Initiate API routes
@@ -36,6 +37,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   await initFederationServerInfosApiRouter(options, router)
 
   await initConfigurationApiRouter(options, router)
+  await initPromoteApiRouter(options, router)
 
   if (isDebugMode(options)) {
     // Only add this route if the debug mode is enabled at time of the server launch.

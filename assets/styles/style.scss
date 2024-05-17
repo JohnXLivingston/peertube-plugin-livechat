@@ -53,8 +53,11 @@
   display: none;
 }
 
-[peertube-plugin-livechat-state="closed"] .peertube-plugin-livechat-button-close {
-  display: none;
+[peertube-plugin-livechat-state="closed"] {
+  .peertube-plugin-livechat-button-promote,
+  .peertube-plugin-livechat-button-close {
+    display: none;
+  }
 }
 
 [peertube-plugin-livechat-state]:not([peertube-plugin-livechat-state="open"]) {

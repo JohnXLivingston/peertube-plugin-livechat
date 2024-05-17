@@ -376,6 +376,8 @@ async function _localRoomJID (
   }
   room = room.replace(/{{CHANNEL_ID}}/g, `${channelId}`)
   if (room.includes('{{CHANNEL_NAME}}')) {
+    // FIXME: this should no more exists, since we removed options to include other chat server.
+    //  So we should remove this code. (and simplify the above code)
     const channelName = await getChannelNameById(options, channelId)
     if (channelName === null) {
       throw new Error('Channel not found')

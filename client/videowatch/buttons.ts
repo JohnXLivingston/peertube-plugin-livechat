@@ -111,12 +111,26 @@ const helpButtonSVG: SVGButton = () => {
 `
 }
 
+const promoteSVG: SVGButton = () => {
+  // This content comes from the file assets/images/moderator.svg, after svgo cleaning.
+  // To get the formated content, you can do:
+  // xmllint dist/client/images/moderator.svg --format
+  // Then replace the color by `currentColor`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 4.233 4.233">
+  <g style="stroke-width:1.00021;stroke-miterlimit:4;stroke-dasharray:none">
+    <path style="opacity:.998;fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M2.403.583V-.19a.94.94 0 0 1 .942-.943l1.962-.023 1.961.01a.94.94 0 0 1 .942.942v.772S6.586 4.9 5.307 4.92C4.027 4.939 2.403.583 2.403.583Z" transform="matrix(.45208 0 0 .45208 -.526 1.335)"/>
+  </g>
+</svg>
+`
+}
+
 export {
   closeSVG,
   openChatSVG,
   openBlankChatSVG,
   shareChatUrlSVG,
-  helpButtonSVG
+  helpButtonSVG,
+  promoteSVG
 }
 export type {
   SVGButton

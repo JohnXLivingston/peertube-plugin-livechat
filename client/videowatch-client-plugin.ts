@@ -1,12 +1,16 @@
 import type { Video } from '@peertube/peertube-types'
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import type { InitConverseJSParams } from 'shared/lib/types'
 import { videoHasWebchat, videoHasRemoteWebchat } from 'shared/lib/video'
 import { localizedHelpUrl } from './utils/help'
 import { logger } from './utils/logger'
-import { closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG, helpButtonSVG } from './videowatch/buttons'
+import {
+  closeSVG, openBlankChatSVG, openChatSVG, shareChatUrlSVG, helpButtonSVG, promoteSVG
+} from './videowatch/buttons'
 import { displayButton, displayButtonOptions } from './videowatch/button'
 import { shareChatUrl } from './videowatch/share'
 import { displayConverseJS } from './utils/conversejs'
+import { getBaseRoute } from './utils/uri'
 
 interface VideoWatchLoadedHookOptions {
   videojs: any
@@ -71,7 +75,11 @@ function register (registerOptions: RegisterClientOptions): void {
   let settings: any = {} // will be loaded later
 
   async function insertChatDom (
-    container: HTMLElement, video: Video, showOpenBlank: boolean, showShareUrlButton: boolean
+    container: HTMLElement,
+    video: Video,
+    showOpenBlank: boolean,
+    showShareUrlButton: boolean,
+    showPromote: boolean
   ): Promise<void> {
     logger.log('Adding livechat in the DOM...')
     const viewersDocumentationHelpUrl = await localizedHelpUrl(registerOptions, {
@@ -84,13 +92,15 @@ function register (registerOptions: RegisterClientOptions): void {
         peertubeHelpers.translate(LOC_OPEN_CHAT_NEW_WINDOW),
         peertubeHelpers.translate(LOC_CLOSE_CHAT),
         peertubeHelpers.translate(LOC_SHARE_CHAT_LINK),
-        peertubeHelpers.translate(LOC_ONLINE_HELP)
+        peertubeHelpers.translate(LOC_ONLINE_HELP),
+        peertubeHelpers.translate(LOC_PROMOTE)
       ]).then(labels => {
         const labelOpen = labels[0]
         const labelOpenBlank = labels[1]
         const labelClose = labels[2]
         const labelShareUrl = labels[3]
         const labelHelp = labels[4]
+        const labelPromote = labels[5]
 
         const buttonContainer = document.createElement('div')
         buttonContainer.classList.add('peertube-plugin-livechat-buttons')
@@ -130,6 +140,45 @@ function register (registerOptions: RegisterClientOptions): void {
               shareChatUrl(registerOptions, settings, video).then(() => {}, () => {})
             },
             icon: shareChatUrlSVG,
+            additionalClasses: []
+          })
+        }
+        if (showPromote) {
+          groupButtons.push({
+            buttonContainer,
+            name: 'promote',
+            label: labelPromote,
+            callback: async () => {
+              try {
+                // First we must get the room JID (can be video.uuid@ or channel.id@)
+                const response = await fetch(
+                  getBaseRoute(registerOptions) + '/api/configuration/room/' +
+                    encodeURIComponent(video.uuid),
+                  {
+                    method: 'GET',
+                    headers: peertubeHelpers.getAuthHeader()
+                  }
+                )
+
+                const converseJSParams: InitConverseJSParams = await (response).json()
+                if (converseJSParams.isRemoteChat) {
+                  throw new Error('Cant promote on remote chat.')
+                }
+
+                const roomJIDLocalPart = converseJSParams.room.replace(/@.*$/, '')
+
+                await fetch(
+                  getBaseRoute(registerOptions) + '/api/promote/' + encodeURIComponent(roomJIDLocalPart),
+                  {
+                    method: 'PUT',
+                    headers: peertubeHelpers.getAuthHeader()
+                  }
+                )
+              } catch (err) {
+                console.error(err)
+              }
+            },
+            icon: promoteSVG,
             additionalClasses: []
           })
         }
@@ -287,6 +336,7 @@ function register (registerOptions: RegisterClientOptions): void {
       }
 
       let showShareUrlButton: boolean = false
+      let showPromote: boolean = false
       if (video.isLocal) { // No need for shareButton on remote chats.
         const chatShareUrl = settings['chat-share-url'] ?? ''
         if (chatShareUrl === 'everyone') {
@@ -296,9 +346,19 @@ function register (registerOptions: RegisterClientOptions): void {
         } else if (chatShareUrl === 'owner+moderators') {
           showShareUrlButton = guessIsMine(registerOptions, video) || guessIamIModerator(registerOptions)
         }
+
+        if (guessIamIModerator(registerOptions)) {
+          showPromote = true
+        }
       }
 
-      await insertChatDom(container as HTMLElement, video, !!settings['chat-open-blank'], showShareUrlButton)
+      await insertChatDom(
+        container as HTMLElement,
+        video,
+        !!settings['chat-open-blank'],
+        showShareUrlButton,
+        showPromote
+      )
       if (settings['chat-auto-display']) {
         await openChat(video)
       } else if (container) {

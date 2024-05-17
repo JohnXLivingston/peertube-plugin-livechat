@@ -121,6 +121,7 @@ function register (clientOptions: RegisterClientOptions): void {
                 titleChannelConfiguration.textContent = labels.channelConfiguration
                 titleLineEl.append(titleChannelConfiguration)
               }
+              titleLineEl.append(document.createElement('th'))
               table.append(titleLineEl)
               rooms.forEach(room => {
                 const localpart = room.localpart
@@ -137,6 +138,35 @@ function register (clientOptions: RegisterClientOptions): void {
                   const date = new Date(room.lasttimestamp * 1000)
                   lastActivityEl.textContent = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
                 }
+                const promoteButton = document.createElement('a')
+                promoteButton.classList.add('orange-button', 'peertube-button-link')
+                promoteButton.style.margin = '5px'
+                promoteButton.onclick = async () => {
+                  await fetch(
+                    getBaseRoute(clientOptions) + '/api/promote/' + encodeURIComponent(room.jid.replace(/@.*$/, '')),
+                    {
+                      method: 'PUT',
+                      headers: peertubeHelpers.getAuthHeader()
+                    }
+                  )
+                }
+                // FIXME: we can use promoteSVG, which is in client scope...
+                promoteButton.innerHTML = `<svg
+                  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 4.233 4.233"
+                >
+                  <g style="stroke-width:1.00021;stroke-miterlimit:4;stroke-dasharray:none">
+                    <path
+                    style="opacity:.998;fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;
+                    stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                    d="M2.403.583V-.19a.94.94 0 0 1 .942-.943l1.962-.023 1.961.01a.94.94 0 0 1
+                    .942.942v.772S6.586 4.9 5.307 4.92C4.027 4.939 2.403.583 2.403.583Z"
+                    transform="matrix(.45208 0 0 .45208 -.526 1.335)"
+                    />
+                  </g>
+                </svg>`
+                const promoteEl = document.createElement('td')
+                promoteEl.append(promoteButton)
+
                 const channelConfigurationEl = document.createElement('td')
                 nameEl.append(aEl)
                 lineEl.append(nameEl)
@@ -146,6 +176,7 @@ function register (clientOptions: RegisterClientOptions): void {
                 if (useChannelConfiguration) {
                   lineEl.append(channelConfigurationEl) // else the element will just be dropped.
                 }
+                lineEl.append(promoteEl)
                 table.append(lineEl)
 
                 const writeChannelConfigurationLink = (channelId: number | string): void => {

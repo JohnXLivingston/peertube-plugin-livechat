@@ -10,7 +10,7 @@ interface displayButtonOptionsBase {
 }
 
 interface displayButtonOptionsCallback extends displayButtonOptionsBase {
-  callback: () => void | boolean
+  callback: () => void | boolean | Promise<void>
 }
 
 interface displayButtonOptionsHref extends displayButtonOptionsBase {
