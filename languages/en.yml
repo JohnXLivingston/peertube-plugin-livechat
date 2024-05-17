@@ -365,7 +365,7 @@ livechat_configuration_channel_title: "Channel options"
 livechat_configuration_channel_desc: "You can setup here some options for this channel (moderation policies, ...)."
 livechat_configuration_channel_slow_mode_label: "Slow mode"
 livechat_configuration_channel_slow_mode_desc: |
-  Slow mode value:
+  Slow mode default value:
   <ul>
     <li>0: slow mode disabled</li>
     <li>Any positive integer: users can send a message every X seconds (moderators are not limited)</li>

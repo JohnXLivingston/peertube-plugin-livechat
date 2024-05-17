@@ -393,7 +393,7 @@ avatar_set_option_abstract: Abstrait
 livechat_configuration_channel_slow_mode_label: Mode lent
 slow_mode_info: Le mode lent est activé, les utilisateur⋅rices peuvent envoyer un
   message toutes les %1$s secondes.
-livechat_configuration_channel_slow_mode_desc: "Valeur du mode lent :\n<ul>\n  <li>0 :
+livechat_configuration_channel_slow_mode_desc: "Valeur par défaut du mode lent :\n<ul>\n  <li>0 :
   mode lent désactivé</li>\n  <li>Tout entier positif : les utilisateur⋅rices peuvent
   envoyer un message toutes les X secondes (les modérateur⋅rices ne sont pas limité⋅es)</li>\n\
   </ul>\n"
