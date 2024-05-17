@@ -13,6 +13,7 @@ import { RoomChannel } from './lib/room-channel'
 import { BotConfiguration } from './lib/configuration/bot'
 import { BotsCtl } from './lib/bots/ctl'
 import { ExternalAuthOIDC } from './lib/external-auth/oidc'
+import { migrateMUCAffiliations } from './lib/prosody/migration/migrateV10'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -72,6 +73,16 @@ async function register (options: RegisterServerOptions): Promise<any> {
       },
       () => {}
     )
+
+    // livechat v10.0.0: we must migrate MUC affiliations (but we don't have to wait)
+    // we do this after the preBotPromise, just to avoid doing both at the same time.
+    preBotPromise.then(() => {
+      migrateMUCAffiliations(options).then(
+        () => {},
+        (err) => {
+          logger.error(err)
+        })
+    }, () => {})
   } catch (error) {
     options.peertubeHelpers.logger.error('Error when launching Prosody: ' + (error as string))
   }

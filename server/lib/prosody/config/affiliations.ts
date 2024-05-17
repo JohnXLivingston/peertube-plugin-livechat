@@ -5,29 +5,10 @@ import { BotConfiguration } from '../../configuration/bot'
 
 interface Affiliations { [jid: string]: 'outcast' | 'none' | 'member' | 'admin' | 'owner' }
 
-async function _getCommonAffiliations (options: RegisterServerOptions, prosodyDomain: string): Promise<Affiliations> {
-  // Get all admins and moderators
-  const [results] = await options.peertubeHelpers.database.query(
-    'SELECT "username" FROM "user"' +
-    ' WHERE "user"."role" IN (0, 1)'
-  )
-  if (!Array.isArray(results)) {
-    throw new Error('getVideoAffiliations: query result is not an array.')
-  }
+async function _getCommonAffiliations (options: RegisterServerOptions, _prosodyDomain: string): Promise<Affiliations> {
   const r: Affiliations = {}
-  for (let i = 0; i < results.length; i++) {
-    const result = results[i]
-    if (typeof result !== 'object') {
-      throw new Error('getVideoAffiliations: query result is not an object')
-    }
-    if (!('username' in result)) {
-      throw new Error('getVideoAffiliations: no username field in result')
-    }
-    const jid = (result.username as string) + '@' + prosodyDomain
-    r[jid] = 'owner'
-  }
 
-  // Adding the moderation bot JID as room owner.
+  // Adding the moderation bot JID as room owner if feature is enabled.
   const settings = await options.settingsManager.getSettings([
     'disable-channel-configuration'
   ])
@@ -52,9 +33,7 @@ async function _addAffiliationByChannelId (
       options.peertubeHelpers.logger.error(`Failed to get the username for channelId '${channelId}'.`)
     } else {
       const userJid = username + '@' + prosodyDomain
-      if (!(userJid in r)) { // don't override if already owner!
-        r[userJid] = 'admin'
-      }
+      r[userJid] = 'owner'
     }
   } catch (error) {
     options.peertubeHelpers.logger.error('Failed to get channel owner informations:', error)
@@ -78,7 +57,7 @@ async function getChannelAffiliations (options: RegisterServerOptions, channelId
   const prosodyDomain = await getProsodyDomain(options)
   const r = await _getCommonAffiliations(options, prosodyDomain)
 
-  // Adding an 'admin' affiliation for channel owner
+  // Adding an affiliation for channel owner
   // NB: remote channel can't be found, there are not in the videoChannel table.
   await _addAffiliationByChannelId(options, prosodyDomain, r, channelId)
 

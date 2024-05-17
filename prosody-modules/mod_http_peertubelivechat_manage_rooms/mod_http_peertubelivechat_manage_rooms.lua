@@ -1,5 +1,6 @@
 local json = require "util.json";
 local jid_split = require"util.jid".split;
+local jid_prep = require"util.jid".prep;
 local array = require "util.array";
 local st = require "util.stanza";
 
@@ -87,6 +88,30 @@ local function update_room(event)
     if room._data.slow_mode_duration ~= config.slow_mode_duration then
       room._data.slow_mode_duration = config.slow_mode_duration;
       must104 = true;
+    end
+  end
+  if type(config.removeAffiliationsFor) == "table" then
+    -- array of jids
+    for _, jid in ipairs(config.removeAffiliationsFor) do
+      room:set_affiliation(true, jid, "none");
+    end
+  end
+  if type(config.addAffiliations) == "table" then
+    -- map of jid:affiliation
+    for user_jid, aff in pairs(config.addAffiliations) do
+      if type(user_jid) == "string" and type(aff) == "string" then
+        local prepped_jid = jid_prep(user_jid);
+        if prepped_jid then
+          local ok, err = room:set_affiliation(true, prepped_jid, aff);
+          if not ok then
+            module:log("error", "Could not set affiliation in %s: %s", room.jid, err);
+            -- FIXME: fail?
+          end
+        else
+          module:log("error", "Invalid JID: %q", aff.jid);
+          -- FIXME: fail?
+        end
+      end
     end
   end
 

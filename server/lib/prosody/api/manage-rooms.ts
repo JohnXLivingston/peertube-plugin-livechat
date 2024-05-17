@@ -1,4 +1,5 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
+import type { Affiliations } from '../config/affiliations'
 import { getCurrentProsody } from './host'
 import { getAPIKey } from '../../apikey'
 import { getProsodyDomain } from '../config/domain'
@@ -59,6 +60,8 @@ async function updateProsodyRoom (
   data: {
     name?: string
     slow_mode_duration?: number
+    addAffiliations?: Affiliations
+    removeAffiliationsFor?: string[]
   }
 ): Promise<boolean> {
   const logger = options.peertubeHelpers.logger
@@ -79,11 +82,17 @@ async function updateProsodyRoom (
   const apiData = {
     jid
   } as any
-  if ('name' in data) {
+  if (('name' in data) && data.name !== undefined) {
     apiData.name = data.name
   }
-  if ('slow_mode_duration' in data) {
+  if (('slow_mode_duration' in data) && data.slow_mode_duration !== undefined) {
     apiData.slow_mode_duration = data.slow_mode_duration
+  }
+  if (('addAffiliations' in data) && data.addAffiliations !== undefined) {
+    apiData.addAffiliations = data.addAffiliations
+  }
+  if (('removeAffiliationsFor' in data) && data.removeAffiliationsFor !== undefined) {
+    apiData.removeAffiliationsFor = data.removeAffiliationsFor
   }
   try {
     logger.debug('Calling update room API on url: ' + apiUrl + ', with data: ' + JSON.stringify(apiData))
