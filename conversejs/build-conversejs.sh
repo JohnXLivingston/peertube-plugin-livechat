@@ -14,7 +14,7 @@ set -x
 CONVERSE_VERSION="v10.1.6"
 CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 # You can eventually set CONVERSE_COMMIT to a specific commit ID, if you want to apply some patches.
-CONVERSE_COMMIT="821b41e189b25316b9a044cb41ecc9b3f1910172"
+CONVERSE_COMMIT=""
 
 # 2014-01-16: we are using a custom version, to wait for some PR to be apply upstream.
 # This version includes following changes:
@@ -32,8 +32,8 @@ CONVERSE_COMMIT="821b41e189b25316b9a044cb41ecc9b3f1910172"
 # - Removing unecessary plugins: headless/pubsub, minimize, notifications, profile, omemo, push, roomlist, dragresize.
 # - Destroy room: remove the challenge, and the new JID
 # - New config option [colorize_username](https://conversejs.org/docs/html/configuration.html#colorize_username)
-CONVERSE_VERSION="livechat-9.0.0"
-# CONVERSE_COMMIT="9d0794974fe77e1a3a1de4585ab4d1f0a373f269"
+CONVERSE_VERSION="livechat-10.0.0"
+# CONVERSE_COMMIT="821b41e189b25316b9a044cb41ecc9b3f1910172"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"

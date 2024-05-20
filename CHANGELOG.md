@@ -1,8 +1,6 @@
 # Changelog
 
-TODO: tag custom ConverseJS, and update build-conversejs.sh.
-
-## 10.0.0 (Not Released Yet)
+## 10.0.0
 
 ### New features
 
