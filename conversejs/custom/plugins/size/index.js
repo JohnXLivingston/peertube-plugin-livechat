@@ -31,6 +31,8 @@ function start () {
     stop()
   }
 
+  root.style.display = 'block' // this is needed, otherwise it won't have any width.
+
   rootResizeObserver.observe(root)
   handle(root)
 }

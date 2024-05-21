@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * #139: Fix colors in old fullpage mode (used for OBS integration for example).
+* Fix missing avatars in old fullpage mode (including OBS integration).
 
 ## 10.0.0
 
