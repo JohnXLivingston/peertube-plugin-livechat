@@ -103,9 +103,10 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
           } else {
             const autoColorsTest = areAutoColorsValid(autocolors)
             if (autoColorsTest === true) {
+              // Note: we use body.converse-fullscreen.theme-peertube to be more specific than code in _variable.scss.
               autocolorsStyles = `
               <style>
-                :root {
+                body.converse-fullscreen.theme-peertube {
                   --peertube-main-foreground: ${autocolors.mainForeground};
                   --peertube-main-background: ${autocolors.mainBackground};
                   --peertube-grey-foreground: ${autocolors.greyForeground};

@@ -1,3 +1,8 @@
+:root {
+  // we add --livechat-transparent variable, so that users can customize transparent background in OBS (for example).
+  --livechat-transparent: rgba(0 0 0 / 0%);
+}
+
 body.converse-fullscreen,
 body.converse-embedded {
   --peertube-main-foreground: #000;
@@ -12,9 +17,6 @@ body.converse-embedded {
   --peertube-button-background: #f2690d;
   --peertube-link: #000;
   --peertube-link-hover: #000;
-
-  // we add --livechat-transparent variable, so that users can customize transparent background in OBS (for example).
-  --livechat-transparent: rgba(0 0 0 / 0%);
 }
 
 .conversejs.theme-peertube,
