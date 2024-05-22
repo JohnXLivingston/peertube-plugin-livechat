@@ -1,5 +1,11 @@
 # Changelog
 
+## 10.0.2 (Not Released Yet)
+
+### Minor changes and fixes
+
+* Fix "become moderator" icon.
+
 ## 10.0.1
 
 ### Minor changes and fixes
