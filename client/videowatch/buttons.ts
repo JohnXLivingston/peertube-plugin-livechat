@@ -118,7 +118,7 @@ const promoteSVG: SVGButton = () => {
   // Then replace the color by `currentColor`
   return `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 4.233 4.233">
   <g style="stroke-width:1.00021;stroke-miterlimit:4;stroke-dasharray:none">
-    <path style="opacity:.998;fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M2.943 1.626V-.34a.94.94 0 0 1 .942-.943l1.962-.023 1.961.01a.94.94 0 0 1 .942.942v1.968S7.126 4.746 5.847 4.767c-1.28.02-2.904-3.14-2.904-3.14Z" transform="matrix(.45208 0 0 .45208 -.526 1.335)"/>
+    <path style="opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M2.943 1.626V-.34a.94.94 0 0 1 .942-.943l1.962-.023 1.961.01a.94.94 0 0 1 .942.942v1.968S7.126 4.746 5.847 4.767c-1.28.02-2.904-3.14-2.904-3.14Z" transform="matrix(.45208 0 0 .45208 -.526 1.335)"/>
   </g>
 </svg>
 `
