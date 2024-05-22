@@ -1,6 +1,6 @@
 # Changelog
 
-## 10.0.2 (Not Released Yet)
+## 10.0.2
 
 ### Minor changes and fixes
 
