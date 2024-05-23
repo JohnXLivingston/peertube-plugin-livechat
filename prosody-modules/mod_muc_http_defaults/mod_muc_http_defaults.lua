@@ -1,8 +1,8 @@
--- Copyright (C) 2021 Kim Alvefur
--- Copyright (C) 2024 John Livingston
+-- SPDX-FileCopyrightText: 2021 Kim Alvefur
+-- SPDX-FileCopyrightText: 2024 John Livingston
 --
--- This file is MIT licensed. Please see the
--- COPYING file in the source package for more information.
+-- SPDX-License-Identifier: MIT
+-- SPDX-License-Identifier: AGPL-3.0-only
 --
 -- This version contains a modification to take into account new config option "slow_mode_duration".
 -- This option is introduced in the Peertube livechat plugin, by mod_muc_slow_mode.

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2008-2013 Matthew Wild
+SPDX-FileCopyrightText: 2008-2013 Waqas Hussain
+SPDX-FileCopyrightText: 2014 Kim Alvefur
+SPDX-License-Identifier: MIT
+-->
 ---
 labels:
 - Stage-Alpha

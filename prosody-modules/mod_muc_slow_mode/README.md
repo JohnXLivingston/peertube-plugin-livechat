@@ -1,3 +1,7 @@
+<!--
+SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+SPDX-License-Identifier: AGPL-3.0-only
+-->
 # mod_muc_slow_mode
 
 This module is a custom module that allows slow mode for MUC rooms.

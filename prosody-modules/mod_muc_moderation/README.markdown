@@ -1,3 +1,7 @@
+<!--
+SPDX-FileCopyrightText: 2015-2021 Kim Alvefur
+SPDX-License-Identifier: MIT
+-->
 # Introduction
 
 This module implements [XEP-0425: Message Moderation].

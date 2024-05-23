@@ -1,8 +1,8 @@
 -- mod_muc_moderation
 --
--- Copyright (C) 2015-2021 Kim Alvefur
+-- SPDX-FileCopyrightText: 2015-2021 Kim Alvefur
 --
--- This file is MIT licensed.
+-- SPDX-License-Identifier: MIT
 --
 -- Implements: XEP-0425: Message Moderation
 --

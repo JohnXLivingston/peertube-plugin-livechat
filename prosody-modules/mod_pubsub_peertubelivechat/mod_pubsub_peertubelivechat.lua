@@ -1,3 +1,6 @@
+-- SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+-- SPDX-License-Identifier: AGPL-3.0-only
+
 -- This module create sort of a MEP equivalent to PEP, but for MUC chatrooms.
 -- This idea is described in https://xmpp.org/extensions/xep-0316.html
 -- but here there are some differences:

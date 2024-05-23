@@ -1,3 +1,7 @@
+<!--
+SPDX-FileCopyrightText: Prosody Modules <https://hg.prosody.im/prosody-modules>
+SPDX-License-Identifier: MIT
+-->
 ---
 labels:
 - 'Stage-Alpha'

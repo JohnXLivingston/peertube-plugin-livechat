@@ -1,3 +1,6 @@
+-- SPDX-FileCopyrightText: Prosody Modules <https://hg.prosody.im/prosody-modules>
+-- SPDX-License-Identifier: MIT
+
 module:set_global();
 
 local jid_bare, jid_host = require "util.jid".bare, require "util.jid".host;

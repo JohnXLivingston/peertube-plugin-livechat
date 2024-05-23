@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+
+SPDX-License-Identifier: AGPL-3.0-only
+-->
+
 # mod_s2s_peertubelivechat
 
 This module is part of peertube-plugin-livechat, and is under the same LICENSE.

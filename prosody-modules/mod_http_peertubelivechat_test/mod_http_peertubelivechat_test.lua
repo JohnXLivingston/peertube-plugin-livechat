@@ -1,3 +1,7 @@
+-- SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+--
+-- SPDX-License-Identifier: AGPL-3.0-only
+
 local json = require "util.json";
 local async = require "util.async";
 local http = require "net.http";

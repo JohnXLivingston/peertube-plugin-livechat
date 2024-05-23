@@ -8,3 +8,11 @@ Source: https://github.com/JohnXLivingston/peertube-plugin-livechat/
 # Files: src/*
 # Copyright: $YEAR $NAME <$CONTACT>
 # License: ...
+
+Files: languages/*
+Copyright: 2024 John Livingston <https://www.john-livingston.fr/>
+License: AGPL-3.0-only
+
+Files: support/documentation/po/*
+Copyright: 2024 John Livingston <https://www.john-livingston.fr/>
+License: AGPL-3.0-only

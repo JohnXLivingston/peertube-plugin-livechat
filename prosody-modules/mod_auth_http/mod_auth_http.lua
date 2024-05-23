@@ -5,7 +5,7 @@
 --
 -- This project is MIT/X11 licensed. Please see the
 -- COPYING file in the source package for more information.
---
+-- SPDX-License-Identifier: MIT
 
 local new_sasl = require "util.sasl".new;
 local base64 = require "util.encodings".base64.encode;

@@ -1,3 +1,7 @@
+<!--
+SPDX-FileCopyrightText: 2021 Kim Alvefur
+SPDX-License-Identifier: MIT
+-->
 ---
 summary: Seed MUC configuration from JSON REST API
 ---

@@ -1,11 +1,10 @@
--- Prosody IM
--- Copyright (C) 2008-2013 Matthew Wild
--- Copyright (C) 2008-2013 Waqas Hussain
--- Copyright (C) 2014 Kim Alvefur
+-- SPDX-FileCopyrightText: 2008-2013 Matthew Wild
+-- SPDX-FileCopyrightText: 2008-2013 Waqas Hussain
+-- SPDX-FileCopyrightText: 2014 Kim Alvefur
+-- SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
 --
--- This project is MIT/X11 licensed. Please see the
--- COPYING file in the source package for more information.
---
+-- SPDX-License-Identifier: MIT
+-- SPDX-License-Identifier: AGPL-3.0-only
 
 local new_sasl = require "util.sasl".new;
 local path = require "util.paths";

@@ -1,7 +1,8 @@
--- Prosody IM
--- Copyright (C) 2012-2014 Florian Zeitz
--- Copyright (C) 2023 John Livingston
--- Copied from original Prosody mod_websocket module (MIT/X11 licensed). Provided with Peertube Livechat plugin (AGPL-v3).
+-- SPDX-FileCopyrightText: 2012-2014 Florian Zeitz
+-- SPDX-FileCopyrightText: 2023-2024 John Livingston <https://www.john-livingston.fr/>
+--
+-- SPDX-License-Identifier: MIT
+-- SPDX-License-Identifier: AGPL-3.0-only
 
 module:set_global();
 

@@ -1,6 +1,7 @@
 -- mod_muc_slow_mode
 --
--- Copyright (C) 2024 John Livingston
+-- SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+-- SPDX-License-Identifier: AGPL-3.0-only
 --
 -- This file is AGPL-v3 licensed.
 -- Please see the Peertube livechat plugin copyright information.
