@@ -109,9 +109,10 @@
     "build:styles": "sass assets/styles:dist/assets/styles",
     "build:languages": "node ./build-languages.js",
     "build": "npm-run-all -s clean:light build:languages check:client:tsc -s build:client build:server build:images build:styles build:avatars build:serverconverse build:prosodymodules build:converse build:prosody",
-    "lint": "npm-run-all -s lint:script lint:styles",
+    "lint": "npm-run-all -s lint:script lint:styles lint:reuse",
     "lint:script": "npx eslint --ext .js --ext .ts .",
     "lint:styles": "stylelint 'conversejs/**/*.scss' 'assets/styles/**/*.scss'",
+    "lint:reuse": "reuse lint",
     "show:npmfiles": "npx npm-packlist",
     "doc:translate": "bash doc-translate.sh"
   },
