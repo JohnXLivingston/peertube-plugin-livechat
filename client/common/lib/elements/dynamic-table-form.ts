@@ -2,11 +2,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { css, html, LitElement, nothing, TemplateResult } from 'lit'
+import { html, nothing, TemplateResult } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
+import { LivechatElement } from './livechat'
 
   // This content comes from the file assets/images/plus-square.svg, from the Feather icons set https://feathericons.com/
 const AddSVG: string =
@@ -61,8 +62,7 @@ interface CellDataSchema {
 }
 
 @customElement('livechat-dynamic-table-form')
-// FIXME: use LivechatElement instead of LitElement? If so, be carefull about createRenderRoot
-export class DynamicTableFormElement extends LitElement {
+export class DynamicTableFormElement extends LivechatElement {
 
   @property({ attribute: false })
   public header: { [key: string]: { colName: TemplateResult, description: TemplateResult } } = {}
@@ -85,48 +85,6 @@ export class DynamicTableFormElement extends LitElement {
 
   @property({ attribute: false })
   private _colOrder: string[] = []
-
-  static styles = css`
-      table {
-        table-layout: fixed;
-        text-align: center;
-      }
-
-      table td, table th {
-        word-wrap:break-word;
-        vertical-align: top;
-        padding: 5px 7px;
-      }
-
-      table tbody > :nth-child(odd) {
-        background-color: var(--greySecondaryBackgroundColor);
-      }
-
-      button {
-        padding: 2px;
-      }
-
-      .dynamic-table-add-row {
-        background-color: var(--bs-green);
-      }
-
-      .dynamic-table-remove-row {
-        background-color: var(--bs-orange);
-      }
-  `;
-
-  protected createRenderRoot = () => {
-    if (document.head.querySelector(`style[data-tagname="${this.tagName}"]`)) {
-      return this;
-    }
-
-    const style = document.createElement("style");
-    style.innerHTML = DynamicTableFormElement.styles.toString();
-    style.setAttribute("data-tagname", this.tagName);
-    document.head.append(style);
-
-    return this
-  }
 
   // fixes situations when list has been reinitialized or changed outside of CustomElement
   private _updateLastRowId = () => {
@@ -211,7 +169,7 @@ export class DynamicTableFormElement extends LitElement {
       ${Object.entries(rowData.row).filter(([k, v]) => k != '_id')
                                    .sort(([k1,_1], [k2,_2]) => this._colOrder.indexOf(k1) - this._colOrder.indexOf(k2))
                                    .map((data) => this.renderDataCell(data, rowData._id))}
-      <td class="form-group"><button type="button" class="peertube-button-link dynamic-table-remove-row" @click=${() => this._removeRow(rowData._id)}>${unsafeHTML(RemoveSVG)}</button></td>
+      <td class="form-group"><button type="button" class="peertube-button-link orange-button dynamic-table-remove-row" @click=${() => this._removeRow(rowData._id)}>${unsafeHTML(RemoveSVG)}</button></td>
     </tr>`
 
   }
@@ -220,7 +178,7 @@ export class DynamicTableFormElement extends LitElement {
     return html`<tfoot>
     <tr>
       ${Object.values(this.header).map(() => html`<td></td>`)}
-      <td><button type="button" class="peertube-button-link dynamic-table-add-row" @click=${this._addRow}>${unsafeHTML(AddSVG)}</button></td>
+      <td><button type="button" class="peertube-button-link orange-button dynamic-table-add-row" @click=${this._addRow}>${unsafeHTML(AddSVG)}</button></td>
     </tr>
   </tfoot>`
   }

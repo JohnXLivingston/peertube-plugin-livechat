@@ -209,3 +209,41 @@ $small-view: 800px;
     }
   }
 }
+
+livechat-dynamic-table-form {
+  table {
+    table-layout: fixed;
+    text-align: center;
+
+    tr {
+      border: 1px var(--greyBackgroundColor) solid;
+    }
+
+    td,
+    th {
+      word-wrap: break-word;
+      vertical-align: top;
+      padding: 5px 7px;
+    }
+
+    td:last-child {
+      vertical-align: middle;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: var(--greySecondaryBackgroundColor);
+    }
+  }
+
+  button {
+    padding: 2px !important;
+  }
+
+  .dynamic-table-add-row {
+    background-color: var(--bs-green);
+  }
+
+  .dynamic-table-remove-row {
+    background-color: var(--bs-orange);
+  }
+}
