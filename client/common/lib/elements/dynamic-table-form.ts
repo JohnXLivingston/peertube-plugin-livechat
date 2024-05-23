@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Mehdi Benadel <https://mehdibenadel.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import { css, html, LitElement, nothing, TemplateResult } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { customElement, property, state } from 'lit/decorators.js'

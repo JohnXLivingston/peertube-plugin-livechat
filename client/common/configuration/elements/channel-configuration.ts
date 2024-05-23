@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Mehdi Benadel <https://mehdibenadel.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ChannelConfiguration } from 'shared/lib/types'
 import { html } from 'lit'
