@@ -8,9 +8,10 @@ import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
 import { channelDetailsServiceContext } from '../contexts/channel'
 import { registerClientOptionsContext } from '../../lib/contexts/peertube'
+import { LivechatElement } from '../../lib/elements/livechat'
 
 @customElement('livechat-channel-home')
-export class ChannelHomeElement extends LitElement {
+export class ChannelHomeElement extends LivechatElement {
 
   @provide({ context: registerClientOptionsContext })
   @property({ attribute: false })
@@ -21,10 +22,6 @@ export class ChannelHomeElement extends LitElement {
 
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService: ChannelDetailsService | undefined
-
-  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
-    return this
-  }
 
   @state()
   public _formStatus: boolean | any = undefined

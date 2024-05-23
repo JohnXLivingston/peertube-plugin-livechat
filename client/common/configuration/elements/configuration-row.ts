@@ -1,8 +1,9 @@
-import { html, LitElement } from 'lit'
+import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { LivechatElement } from '../../lib/elements/livechat'
 
 @customElement('livechat-configuration-row')
-export class ConfigurationRowElement extends LitElement {
+export class ConfigurationRowElement extends LivechatElement {
 
   @property({ attribute: false })
   public title: string = `title`
@@ -12,10 +13,6 @@ export class ConfigurationRowElement extends LitElement {
 
   @property({ attribute: false })
   public helpPage: string = 'documentation'
-
-  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
-    return this
-  }
 
   render() {
     return html`

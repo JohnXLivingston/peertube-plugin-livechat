@@ -57,6 +57,7 @@ interface CellDataSchema {
 }
 
 @customElement('livechat-dynamic-table-form')
+// FIXME: use LivechatElement instead of LitElement? If so, be carefull about createRenderRoot
 export class DynamicTableFormElement extends LitElement {
 
   @property({ attribute: false })

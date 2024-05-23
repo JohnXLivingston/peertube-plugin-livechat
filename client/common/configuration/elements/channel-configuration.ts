@@ -1,6 +1,6 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ChannelConfiguration } from 'shared/lib/types'
-import { html, LitElement } from 'lit'
+import { html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ptTr } from '../../lib/directives/translation'
 import { Task } from '@lit/task'
@@ -8,9 +8,10 @@ import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
 import { channelConfigurationContext, channelDetailsServiceContext } from '../contexts/channel'
 import { registerClientOptionsContext } from '../../lib/contexts/peertube'
+import { LivechatElement } from '../../lib/elements/livechat'
 
 @customElement('livechat-channel-configuration')
-export class ChannelConfigurationElement extends LitElement {
+export class ChannelConfigurationElement extends LivechatElement {
 
   @provide({ context: registerClientOptionsContext })
   @property({ attribute: false })
@@ -25,10 +26,6 @@ export class ChannelConfigurationElement extends LitElement {
 
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService: ChannelDetailsService | undefined
-
-  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
-    return this
-  }
 
   @state()
   public _formStatus: boolean | any = undefined

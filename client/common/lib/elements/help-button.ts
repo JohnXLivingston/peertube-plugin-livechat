@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit'
+import { html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import { helpButtonSVG } from '../../../videowatch/buttons'
@@ -9,9 +9,10 @@ import { Task } from '@lit/task'
 import { localizedHelpUrl } from '../../../utils/help'
 import { ptTr } from '../directives/translation'
 import { DirectiveResult } from 'lit/directive'
+import { LivechatElement } from './livechat'
 
 @customElement('livechat-help-button')
-export class HelpButtonElement extends LitElement {
+export class HelpButtonElement extends LivechatElement {
 
   @consume({ context: registerClientOptionsContext, subscribe: true })
   public registerClientOptions: RegisterClientOptions | undefined
@@ -24,10 +25,6 @@ export class HelpButtonElement extends LitElement {
 
   @state()
   public url: URL = new URL('https://lmddgtfy.net/')
-
-  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
-    return this
-  }
 
   private _asyncTaskRender = new Task(this, {
     task: async ([registerClientOptions], {signal}) => {
