@@ -1,11 +1,10 @@
-import { html, LitElement } from 'lit'
+import { css, html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { unsafeSVG } from 'lit/directives/unsafe-svg.js'
-import { StaticValue } from 'lit/static-html.js'
-import { helpButtonSVG } from '../../../videowatch/buttons'
+import './HelpButtonElement'
+import { getGlobalStyleSheets } from '../../global-styles'
 
 @customElement('plugin-configuration-row')
-export class PLuginConfigurationRow extends LitElement {
+export class PluginConfigurationRow extends LitElement {
 
   @property({ attribute: false })
   public title: string = `title`
@@ -14,24 +13,20 @@ export class PLuginConfigurationRow extends LitElement {
   public description: string = `Here's a description`
 
   @property({ attribute: false })
-  public helpLink: { url: URL, title: string } = { url : new URL('https://lmddgtfy.net/'), title: 'Online Help'}
+  public helpPage: string = 'documentation'
 
-  createRenderRoot = () => {
-    return this
-  }
+  static styles = [
+    ...getGlobalStyleSheets()
+  ];
 
   render() {
     return html`
     <div class="row mt-5">
-    <div class="col-12 col-lg-4 col-xl-3">
-      <h2>${this.title}</h2>
-      <p>${this.description}</p>
-        <a
-          href="${this.helpLink.url.href}"
-          target=_blank
-          title="${this.helpLink.title}"
-          class="orange-button peertube-button-link"
-        >${unsafeSVG(helpButtonSVG())}</a>
+      <div class="col-12 col-lg-4 col-xl-3">
+        <h2>${this.title}</h2>
+        <p>${this.description}</p>
+        <help-button .page=${this.helpPage}>
+        </help-button>
       </div>
       <div class="col-12 col-lg-8 col-xl-9">
         <slot><p>Nothing in this row.</p></slot>

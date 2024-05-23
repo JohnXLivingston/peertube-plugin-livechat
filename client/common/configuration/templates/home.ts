@@ -6,9 +6,7 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { localizedHelpUrl } from '../../../utils/help'
 import { helpButtonSVG } from '../../../videowatch/buttons'
 import { TemplateResult, html } from 'lit'
-import { unsafeHTML } from 'lit/directives/unsafe-html.js'
-import { ptTr } from './TranslationDirective'
-import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 interface HomeViewData {
   title: string
@@ -89,7 +87,7 @@ async function _fillViewHelpButtons ( // TODO: refactor with the similar functio
     return html`<a
         href="${helpUrl}"
         target=_blank
-        title="${ptTr(LOC_ONLINE_HELP)}"
+        title="${title}"
         class="orange-button peertube-button-link"
       >${unsafeHTML(helpIcon)}</a>`
   }

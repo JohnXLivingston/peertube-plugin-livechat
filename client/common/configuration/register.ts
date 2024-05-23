@@ -29,7 +29,8 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
     onMount: async ({ rootEl }) => {
       const urlParams = new URLSearchParams(window.location.search)
       const channelId = urlParams.get('channelId') ?? ''
-      render(html`<channel-configuration .registerClientOptions=${clientOptions}></channel-configuration>`, rootEl)
+      render(html`<channel-configuration .registerClientOptions=${clientOptions}
+                                         .channelId=${channelId}></channel-configuration>`, rootEl)
     }
   })
 
