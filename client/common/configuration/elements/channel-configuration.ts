@@ -3,16 +3,15 @@ import { html, LitElement } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ptTr } from '../directives/translation'
 import './dynamic-table-form'
-import './plugin-configuration-row'
+import './configuration-row'
 import './help-button'
 import { Task } from '@lit/task';
 import type { ChannelConfiguration } from 'shared/lib/types'
 import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
-import { getGlobalStyleSheets } from '../../global-styles'
 import { channelConfigurationContext, channelDetailsServiceContext, registerClientOptionsContext } from '../contexts/channel'
 
-@customElement('channel-configuration')
+@customElement('livechat-channel-configuration')
 export class ChannelConfigurationElement extends LitElement {
 
   @provide({ context: registerClientOptionsContext })
@@ -29,16 +28,16 @@ export class ChannelConfigurationElement extends LitElement {
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService: ChannelDetailsService | undefined
 
-  static styles = [
-    ...getGlobalStyleSheets()
-  ];
+  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
+    return this
+  }
 
   @state()
   public _formStatus: boolean | any = undefined
 
   private _asyncTaskRender = new Task(this, {
 
-    task: async ([registerClientOptions], {signal}) => {
+    task: async ([registerClientOptions], { signal }) => {
       if (this.registerClientOptions) {
         this._channelDetailsService = new ChannelDetailsService(this.registerClientOptions)
         this._channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
@@ -50,18 +49,18 @@ export class ChannelConfigurationElement extends LitElement {
   });
 
   private _saveConfig = () => {
-    if(this._channelDetailsService && this._channelConfiguration) {
+    if (this._channelDetailsService && this._channelConfiguration) {
       this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id, this._channelConfiguration.configuration)
-      .then((value) => {
-        this._formStatus = { success: true }
-        console.log(`Configuration has been updated`)
-        this.requestUpdate('_formStatus')
-      })
-      .catch((error) => {
-        this._formStatus = error
-        console.log(`An error occurred : ${JSON.stringify(this._formStatus)}`)
-        this.requestUpdate('_formStatus')
-      });
+        .then((value) => {
+          this._formStatus = { success: true }
+          console.log(`Configuration has been updated`)
+          this.requestUpdate('_formStatus')
+        })
+        .catch((error) => {
+          this._formStatus = error
+          console.log(`An error occurred : ${JSON.stringify(this._formStatus)}`)
+          this.requestUpdate('_formStatus')
+        });
     }
   }
 
@@ -181,142 +180,178 @@ export class ChannelConfigurationElement extends LitElement {
               <span>${this._channelConfiguration?.channel.displayName}</span>
               <span>${this._channelConfiguration?.channel.name}</span>
             </span>
-            <help-button .page="documentation/user/streamers/channel">
-            </help-button>
+            <livechat-help-button .page="documentation/user/streamers/channel">
+            </livechat-help-button>
           </h1>
           <p>${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)}</p>
           <form livechat-configuration-channel-options role="form">
           <div class="row mt-3">
-            <plugin-configuration-row
-              .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
-              .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
-              .helpPage=${"documentation/user/streamers/slow_mode"}>
-              <div class="form-group">
-                <label>
-                  <input
-                    type="number"
-                    name="slow_mode_duration"
-                    class="form-control"
-                    min="0"
-                    max="1000"
-                    id="peertube-livechat-slow-mode-duration"
-                    @input=${(event: InputEvent) => {
-                      if (event?.target && this._channelConfiguration)
-                        this._channelConfiguration.configuration.slowMode.duration = Number((event.target as HTMLInputElement).value)
-                        this.requestUpdate('_channelConfiguration')
-                      }
-                    }
-                    value="${this._channelConfiguration?.configuration.slowMode.duration}"
-                  />
-                </label>
+            <div class="row mt-5">
+                <div class="col-12 col-lg-4 col-xl-3">
+                <livechat-configuration-row
+                  .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
+                  .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
+                  .helpPage=${"documentation/user/streamers/slow_mode"}>
+                </livechat-configuration-row>
               </div>
-            </plugin-configuration-row>
-            <plugin-configuration-row
-              .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
-              .description=${''}
-              .helpPage=${"documentation/user/streamers/channel"}>
-              <div class="form-group">
-                <label>
-                  <input
-                    type="checkbox"
-                    name="bot"
-                    id="peertube-livechat-bot"
-                    @input=${(event: InputEvent) => {
-                      if (event?.target && this._channelConfiguration)
-                        this._channelConfiguration.configuration.bot.enabled = (event.target as HTMLInputElement).checked
-                        this.requestUpdate('_channelConfiguration')
+              <div class="col-12 col-lg-8 col-xl-9">
+                <div class="form-group">
+                  <label>
+                    <input
+                      type="number"
+                      name="slow_mode_duration"
+                      class="form-control"
+                      min="0"
+                      max="1000"
+                      id="peertube-livechat-slow-mode-duration"
+                      @input=${(event: InputEvent) => {
+                          if (event?.target && this._channelConfiguration)
+                            this._channelConfiguration.configuration.slowMode.duration = Number((event.target as HTMLInputElement).value)
+                          this.requestUpdate('_channelConfiguration')
+                        }
                       }
-                    }
-                    .value=${this._channelConfiguration?.configuration.bot.enabled}
-                    ?checked=${this._channelConfiguration?.configuration.bot.enabled}
-                  />
-                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
-                </label>
+                      value="${this._channelConfiguration?.configuration.slowMode.duration}"
+                    />
+                  </label>
+                </div>
               </div>
-              ${this._channelConfiguration?.configuration.bot.enabled ?
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 col-lg-4 col-xl-3">
+              <livechat-configuration-row
+                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
+                .description=${''}
+                .helpPage=${"documentation/user/streamers/channel"}>
+              </livechat-configuration-row>
+              </div>
+              <div class="col-12 col-lg-8 col-xl-9">
+                <div class="form-group">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="bot"
+                      id="peertube-livechat-bot"
+                      @input=${(event: InputEvent) => {
+                          if (event?.target && this._channelConfiguration)
+                            this._channelConfiguration.configuration.bot.enabled = (event.target as HTMLInputElement).checked
+                          this.requestUpdate('_channelConfiguration')
+                        }
+                      }
+                      .value=${this._channelConfiguration?.configuration.bot.enabled}
+                      ?checked=${this._channelConfiguration?.configuration.bot.enabled}
+                    />
+                    ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
+                  </label>
+                </div>
+                ${this._channelConfiguration?.configuration.bot.enabled ?
                 html`<div class="form-group">
-                <label for="peertube-livechat-bot-nickname">${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)}</label>
-                <input
-                  type="text"
-                  name="bot_nickname"
-                  class="form-control"
-                  id="peertube-livechat-bot-nickname"
-                  @input=${(event: InputEvent) => {
-                    if (event?.target && this._channelConfiguration)
-                      this._channelConfiguration.configuration.bot.nickname = (event.target as HTMLInputElement).value
-                      this.requestUpdate('_channelConfiguration')
+                  <label for="peertube-livechat-bot-nickname">${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)}</label>
+                  <input
+                    type="text"
+                    name="bot_nickname"
+                    class="form-control"
+                    id="peertube-livechat-bot-nickname"
+                    @input=${(event: InputEvent) => {
+                        if (event?.target && this._channelConfiguration)
+                          this._channelConfiguration.configuration.bot.nickname = (event.target as HTMLInputElement).value
+                        this.requestUpdate('_channelConfiguration')
+                      }
                     }
-                  }
-                  value="${this._channelConfiguration?.configuration.bot.nickname}"
-                />
-              </div>`
+                    value="${this._channelConfiguration?.configuration.bot.nickname}"
+                  />
+                </div>`
                 : ''
               }
-            </plugin-configuration-row>
+              </div>
+            </div>
             ${this._channelConfiguration?.configuration.bot.enabled ?
-              html`<plugin-configuration-row
-                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
-                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
-                .helpPage=${"documentation/user/streamers/bot/forbidden_words"}>
-                <dynamic-table-form
-                  .header=${tableHeaderList.forbiddenWords}
-                  .schema=${tableSchema.forbiddenWords}
-                  .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
-                  @update=${(e: CustomEvent) => {
-                    if (this._channelConfiguration) this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
-                    this.requestUpdate('_channelConfiguration')
+            html`<div class="row mt-5">
+              <div class="col-12 col-lg-4 col-xl-3">
+                <livechat-configuration-row
+                  .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
+                  .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
+                  .helpPage=${"documentation/user/streamers/bot/forbidden_words"}>
+                </livechat-configuration-row>
+              </div>
+              <div class="col-12 col-lg-8 col-xl-9">
+                <livechat-dynamic-table-form
+                    .header=${tableHeaderList.forbiddenWords}
+                    .schema=${tableSchema.forbiddenWords}
+                    .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
+                    @update=${(e: CustomEvent) => {
+                        if (this._channelConfiguration) {
+                          this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
+                          this.requestUpdate('_channelConfiguration')
+                        }
+                      }
                     }
-                  }
-                  .formName=${'forbidden-words'}>
-                </dynamic-table-form>
-              </plugin-configuration-row>
-              <plugin-configuration-row
-                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
-                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
-                .helpPage=${"documentation/user/streamers/bot/quotes"}>
-                <dynamic-table-form
+                    .formName=${'forbidden-words'}>
+                  </livechat-dynamic-table-form>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 col-lg-4 col-xl-3">
+                <livechat-configuration-row
+                  .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
+                  .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
+                  .helpPage=${"documentation/user/streamers/bot/quotes"}>
+                </livechat-configuration-row>
+              </div>
+              <div class="col-12 col-lg-8 col-xl-9">
+                <livechat-dynamic-table-form
                   .header=${tableHeaderList.quotes}
                   .schema=${tableSchema.quotes}
                   .rows=${this._channelConfiguration?.configuration.bot.quotes}
                   @update=${(e: CustomEvent) => {
-                    if (this._channelConfiguration) this._channelConfiguration.configuration.bot.quotes = e.detail
-                    this.requestUpdate('_channelConfiguration')
+                      if (this._channelConfiguration) {
+                        this._channelConfiguration.configuration.bot.quotes = e.detail
+                        this.requestUpdate('_channelConfiguration')
+                      }
                     }
                   }
                   .formName=${'quote'}>
-                </dynamic-table-form>
-              </plugin-configuration-row>
-              <plugin-configuration-row
-                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
-                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
-                .helpPage=${"documentation/user/streamers/bot/commands"}>
-                <dynamic-table-form
+                </livechat-dynamic-table-form>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 col-lg-4 col-xl-3">
+                <livechat-configuration-row
+                  .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
+                  .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
+                  .helpPage=${"documentation/user/streamers/bot/commands"}>
+                </livechat-configuration-row>
+              </div>
+              <div class="col-12 col-lg-8 col-xl-9">
+                <livechat-dynamic-table-form
                   .header=${tableHeaderList.commands}
                   .schema=${tableSchema.commands}
                   .rows=${this._channelConfiguration?.configuration.bot.commands}
                   @update=${(e: CustomEvent) => {
-                    if (this._channelConfiguration) this._channelConfiguration.configuration.bot.commands = e.detail
-                    this.requestUpdate('_channelConfiguration')
+                      if (this._channelConfiguration) {
+                        this._channelConfiguration.configuration.bot.commands = e.detail
+                        this.requestUpdate('_channelConfiguration')
+                      }
                     }
                   }
                   .formName=${'command'}>
-                </dynamic-table-form>
-              </plugin-configuration-row>`
+                </livechat-dynamic-table-form>
+              </div>
+            </div>`
               : ''
             }
             <div class="form-group mt-5">
               <button type="button" class="orange-button" @click=${this._saveConfig}>${ptTr(LOC_SAVE)}</button>
             </div>
             ${(this._formStatus && this._formStatus.success === undefined) ?
-              html`<div class="alert alert-warning" role="alert">
-                An error occurred : ${JSON.stringify(this._formStatus)}
-              </div>`
+            html`<div class="alert alert-warning" role="alert">
+              An error occurred : ${JSON.stringify(this._formStatus)}
+            </div>`
               : ''
             }
             ${(this._formStatus && this._formStatus.success === true) ?
-              html`<div class="alert alert-success" role="alert">
-                Configuration has been updated
-              </div>`
+            html`<div class="alert alert-success" role="alert">
+              Configuration has been updated
+            </div>`
               : ''
             }
           </form>

@@ -20,7 +20,7 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
   registerClientRoute({
     route: 'livechat/configuration',
     onMount: async ({ rootEl }) => {
-      render(html`<channel-home .registerClientOptions=${clientOptions}></channel-home>`, rootEl)
+      render(html`<livechat-channel-home .registerClientOptions=${clientOptions}></livechat-channel-home>`, rootEl)
     }
   })
 
@@ -29,8 +29,8 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
     onMount: async ({ rootEl }) => {
       const urlParams = new URLSearchParams(window.location.search)
       const channelId = urlParams.get('channelId') ?? ''
-      render(html`<channel-configuration .registerClientOptions=${clientOptions}
-                                         .channelId=${channelId}></channel-configuration>`, rootEl)
+      render(html`<livechat-channel-configuration .registerClientOptions=${clientOptions}
+                                         .channelId=${channelId}></livechat-channel-configuration>`, rootEl)
     }
   })
 

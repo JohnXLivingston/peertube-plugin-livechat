@@ -9,12 +9,11 @@ import { Task } from '@lit/task'
 import { localizedHelpUrl } from '../../../utils/help'
 import { ptTr } from '../directives/translation'
 import { DirectiveResult } from 'lit/directive'
-import { getGlobalStyleSheets } from '../../global-styles'
 
-@customElement('help-button')
+@customElement('livechat-help-button')
 export class HelpButtonElement extends LitElement {
 
-  @consume({context: registerClientOptionsContext})
+  @consume({ context: registerClientOptionsContext, subscribe: true })
   public registerClientOptions: RegisterClientOptions | undefined
 
   @property({ attribute: false })
@@ -26,9 +25,9 @@ export class HelpButtonElement extends LitElement {
   @state()
   public url: URL = new URL('https://lmddgtfy.net/')
 
-  static styles = [
-    ...getGlobalStyleSheets()
-  ];
+  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
+    return this
+  }
 
   private _asyncTaskRender = new Task(this, {
     task: async ([registerClientOptions], {signal}) => {

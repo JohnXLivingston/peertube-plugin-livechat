@@ -2,7 +2,6 @@ import { css, html, LitElement, nothing, TemplateResult } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import { getGlobalStyleSheets } from '../../global-styles'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 
   // This content comes from the file assets/images/plus-square.svg, from the Feather icons set https://feathericons.com/
@@ -57,7 +56,7 @@ interface CellDataSchema {
   default?: DynamicTableAcceptedTypes
 }
 
-@customElement('dynamic-table-form')
+@customElement('livechat-dynamic-table-form')
 export class DynamicTableFormElement extends LitElement {
 
   @property({ attribute: false })
@@ -82,37 +81,47 @@ export class DynamicTableFormElement extends LitElement {
   @property({ attribute: false })
   private _colOrder: string[] = []
 
-  static styles = [
-    ...getGlobalStyleSheets(),
-    css`
-      :host table {
+  static styles = css`
+      table {
         table-layout: fixed;
         text-align: center;
       }
 
-      :host table td, table th {
+      table td, table th {
         word-wrap:break-word;
         vertical-align: top;
         padding: 5px 7px;
       }
 
-      :host table tbody > :nth-child(odd) {
+      table tbody > :nth-child(odd) {
         background-color: var(--greySecondaryBackgroundColor);
       }
 
-      :host button {
+      button {
         padding: 2px;
       }
 
-      :host .dynamic-table-add-row {
+      .dynamic-table-add-row {
         background-color: var(--bs-green);
       }
 
-      :host .dynamic-table-remove-row {
+      .dynamic-table-remove-row {
         background-color: var(--bs-orange);
       }
-    `
-  ];
+  `;
+
+  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
+    if (document.head.querySelector(`style[data-tagname="${this.tagName}"]`)) {
+      return this;
+    }
+
+    const style = document.createElement("style");
+    style.innerHTML = DynamicTableFormElement.styles.toString();
+    style.setAttribute("data-tagname", this.tagName);
+    document.head.append(style);
+
+    return this
+  }
 
   // fixes situations when list has been reinitialized or changed outside of CustomElement
   private _updateLastRowId = () => {
@@ -197,7 +206,7 @@ export class DynamicTableFormElement extends LitElement {
       ${Object.entries(rowData.row).filter(([k, v]) => k != '_id')
                                    .sort(([k1,_1], [k2,_2]) => this._colOrder.indexOf(k1) - this._colOrder.indexOf(k2))
                                    .map((data) => this.renderDataCell(data, rowData._id))}
-      <td class="form-group"><button class="btn dynamic-table-remove-row" @click=${() => this._removeRow(rowData._id)}>${unsafeHTML(RemoveSVG)}</button></td>
+      <td class="form-group"><button type="button" class="btn dynamic-table-remove-row" @click=${() => this._removeRow(rowData._id)}>${unsafeHTML(RemoveSVG)}</button></td>
     </tr>`
 
   }
@@ -206,7 +215,7 @@ export class DynamicTableFormElement extends LitElement {
     return html`<tfoot>
     <tr>
       ${Object.values(this.header).map(() => html`<td></td>`)}
-      <td><button class="btn dynamic-table-add-row" @click=${this._addRow}>${unsafeHTML(AddSVG)}</button></td>
+      <td><button type="button" class="btn dynamic-table-add-row" @click=${this._addRow}>${unsafeHTML(AddSVG)}</button></td>
     </tr>
   </tfoot>`
   }

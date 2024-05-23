@@ -7,10 +7,9 @@ import { Task } from '@lit/task';
 import type { ChannelLiveChatInfos } from 'shared/lib/types'
 import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
-import { getGlobalStyleSheets } from '../../global-styles'
 import { channelDetailsServiceContext, registerClientOptionsContext } from '../contexts/channel'
 
-@customElement('channel-home')
+@customElement('livechat-channel-home')
 export class ChannelHomeElement extends LitElement {
 
   @provide({ context: registerClientOptionsContext })
@@ -23,9 +22,9 @@ export class ChannelHomeElement extends LitElement {
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService: ChannelDetailsService | undefined
 
-  static styles = [
-    ...getGlobalStyleSheets()
-  ];
+  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
+    return this
+  }
 
   @state()
   public _formStatus: boolean | any = undefined
@@ -55,8 +54,8 @@ export class ChannelHomeElement extends LitElement {
       <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-home">
         <h1>
           ${ptTr(LOC_LIVECHAT_CONFIGURATION_TITLE)}
-            <help-button .page="documentation/user/streamers/channel">
-            </help-button>
+            <livechat-help-button .page="documentation/user/streamers/channel">
+            </livechat-help-button>
         </h1>
         <p>${ptTr(LOC_LIVECHAT_CONFIGURATION_DESC)}</p>
         <p>${ptTr(LOC_LIVECHAT_CONFIGURATION_PLEASE_SELECT)}</p>
