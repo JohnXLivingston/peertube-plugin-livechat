@@ -1,4 +1,9 @@
 #!/bin/env node
+
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 /* eslint-env es6 */
 
 const sharp = require('sharp')

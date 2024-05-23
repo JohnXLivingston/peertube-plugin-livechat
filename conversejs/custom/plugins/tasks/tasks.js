@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import { Collection } from '@converse/skeletor/src/collection.js'
 import { ChatRoomTask } from './task'
 import { initStorage } from '@converse/headless/utils/storage.js'

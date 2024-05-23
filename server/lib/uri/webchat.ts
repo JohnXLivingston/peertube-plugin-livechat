@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import type { RegisterServerOptions, VideoObject, Video } from '@peertube/peertube-types'
 import { getBaseRouterRoute, getBaseWebSocketRoute } from '../helpers'
 import { canonicalizePluginUri } from './canonicalize'

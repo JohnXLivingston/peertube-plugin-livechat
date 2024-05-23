@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import { api } from '@converse/headless/core'
 import tplMUCChatarea from '../../src/plugins/muc-views/templates/muc-chatarea.js'
 import { html } from 'lit'

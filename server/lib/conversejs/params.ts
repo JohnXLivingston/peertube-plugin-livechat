@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import type { RegisterServerOptions, MVideoThumbnail, SettingEntries } from '@peertube/peertube-types'
 import type { ConverseJSTheme, InitConverseJSParams, InitConverseJSParamsError } from '../../../shared/lib/types'
 import type { RegisterServerOptionsV5 } from '../helpers'

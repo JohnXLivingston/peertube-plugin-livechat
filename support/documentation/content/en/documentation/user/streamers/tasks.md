@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+
+SPDX-License-Identifier: AGPL-3.0-only
+-->
+
 ---
 title: "Tasks / To-do lists"
 description: "You can handle tasks and task lists with your moderation team."

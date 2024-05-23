@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+
+SPDX-License-Identifier: AGPL-3.0-only
+-->
+
 # import-wikimedia.mjs
 
 The [import-wikimedia.mjs](./import-wikimedia.mjs) script can be used to generate some word lists.

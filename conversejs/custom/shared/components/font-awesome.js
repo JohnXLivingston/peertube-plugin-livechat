@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 /* eslint-disable max-len */
 import { html } from 'lit'
 import tplIcons from '../../../src/shared/templates/icons.js'

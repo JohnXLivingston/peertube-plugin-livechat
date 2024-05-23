@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 export const livechatSpecificsPlugin = {
   dependencies: ['converse-muc', 'converse-muc-views'],
   initialize: function (this: any) {

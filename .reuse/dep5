@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: peertube-plugin-livechat
+Upstream-Contact: John Livingston <https://www.john-livingston.fr/>
+Source: https://github.com/JohnXLivingston/peertube-plugin-livechat/
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...

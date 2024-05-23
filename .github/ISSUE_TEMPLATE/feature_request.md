@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+
+SPDX-License-Identifier: AGPL-3.0-only
+-->
+
 ---
 name: Feature request
 about: Suggest an idea for this project

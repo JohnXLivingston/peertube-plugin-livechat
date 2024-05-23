@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+
+SPDX-License-Identifier: AGPL-3.0-only
+-->
+
 # Chat bot: forbidden words or expressions
 
 This page lists some common options you can use to configure the bot forbidden words feature.

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import type { RegisterServerOptions, MVideoFullLight, MVideoAP, Video, MVideoThumbnail } from '@peertube/peertube-types'
 import type { LiveChatJSONLDAttribute, LiveChatJSONLDAttributeV1, PeertubeXMPPServerInfos } from './types'
 import { sanitizePeertubeLiveChatInfos, sanitizeXMPPHostFromInstanceUrl } from './sanitize'

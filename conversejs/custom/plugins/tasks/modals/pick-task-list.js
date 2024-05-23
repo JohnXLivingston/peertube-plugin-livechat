@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import BaseModal from 'plugins/modal/modal.js'
 import tplPickTaskList from './templates/pick-task-list.js'
 import { api } from '@converse/headless/core'

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import { converse, _converse, api } from '../../../src/headless/core.js'
 const { $build, Strophe, $iq, sizzle } = converse.env
 

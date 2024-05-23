@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import type { RegisterServerOptions, Video } from '@peertube/peertube-types'
 import type { CustomTag } from '@peertube/feed/lib/typings'
 import { videoHasWebchat } from '../../../shared/lib/video'

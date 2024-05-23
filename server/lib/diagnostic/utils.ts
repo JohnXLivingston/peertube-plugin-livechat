@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 type NextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody'
 | 'external-auth-custom-oidc' | 'external-auth-google-oidc' | 'external-auth-facebook-oidc'
 | 'everything-ok'

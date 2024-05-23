@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 const prod = require('./webpack/webpack.build.js')
 const { merge } = require('webpack-merge')
 const webpack = require('webpack')

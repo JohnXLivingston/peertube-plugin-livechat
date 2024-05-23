@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
 [submodule "documentation/themes/hugo-theme-learn"]
 	path = support/documentation/themes/hugo-theme-learn
 	url = https://github.com/matcornic/hugo-theme-learn.git

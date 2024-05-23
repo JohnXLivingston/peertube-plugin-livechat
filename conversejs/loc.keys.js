@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 /** Localization keys to inject in ConverseJS:
  *  these keys are used to:
  *  - inject needed localization strings in ConverseJS language files

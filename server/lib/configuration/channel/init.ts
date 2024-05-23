@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 import type { RegisterServerOptions, MVideoFullLight, VideoChannel } from '@peertube/peertube-types'
 import { RoomChannel } from '../../room-channel'
 import { fillVideoCustomFields } from '../../custom-fields'
