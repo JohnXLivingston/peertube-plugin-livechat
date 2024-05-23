@@ -37,6 +37,7 @@ To build the plugin, you must have following packages:
 * `build-essential`
 * `coreutils`
 * `wget`
+* `reuse`
 
 Please note that this plugin needs an AppImage for the Prosody XMPP server.
 This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.
@@ -81,6 +82,12 @@ You can build the plugin with extra debug features simply by using:
 ```bash
 NODE_ENV=dev npm run build
 ```
+
+This plugin is [REUSE](https://reuse.software/) compliant: it uses SPDX headers to identify licensing information of its source code.
+More information on the [REUSE](https://reuse.software/) website.
+You can use the [reuse](https://reuse.readthedocs.io/en/stable/readme.html#) command line tool to help you update headers.
+The `npm run lint` command will use the `reuse` command to check compliance.
+Don't forget to add your copyright information in SPDX headers when you modify some code.
 
 ## ESBuild vs Typescript
 

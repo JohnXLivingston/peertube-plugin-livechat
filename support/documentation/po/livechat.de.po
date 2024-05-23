@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-05-17 15:56+0200\n"
+"POT-Creation-Date: 2024-05-23 12:27+0200\n"
 "PO-Revision-Date: 2024-05-18 04:24+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,17 +18,97 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Weblate 5.5.5\n"
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/contact/_index.md
-#, no-wrap
-msgid "Contact the author"
-msgstr "Den Autor kontaktieren"
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#: support/documentation/content/en/contributing/develop/_index.md
+#: support/documentation/content/en/contributing/document/_index.md
+#: support/documentation/content/en/contributing/feedback/_index.md
+#: support/documentation/content/en/contributing/_index.md
+#: support/documentation/content/en/contributing/translate/_index.md
+#: support/documentation/content/en/credits/_index.md
+#: support/documentation/content/en/documentation/admin/advanced/_index.md
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#: support/documentation/content/en/documentation/admin/_index.md
+#: build/documentation/pot_in/documentation/admin/settings.md
+#: support/documentation/content/en/documentation/_index.md
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#: support/documentation/content/en/documentation/installation/_index.md
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
+#: support/documentation/content/en/documentation/user/_index.md
+#: support/documentation/content/en/documentation/user/obs.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#: support/documentation/content/en/documentation/user/streamers/_index.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+#: support/documentation/content/en/documentation/user/viewers.md
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#: support/documentation/content/en/_index.md
+#: support/documentation/content/en/intro/_index.md
+#: support/documentation/content/en/issues/_index.md
+#, fuzzy, no-wrap
+#| msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/)."
+msgid ""
+"<!--\n"
+"SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>\n"
+msgstr "Das Plugin wird von [John Livingston](https://www.john-livingston.fr/) betrieben."
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Plain text
 #: support/documentation/content/en/contact/_index.md
+#: support/documentation/content/en/contributing/codeofconduct/_index.md
+#: support/documentation/content/en/contributing/develop/_index.md
+#: support/documentation/content/en/contributing/document/_index.md
+#: support/documentation/content/en/contributing/feedback/_index.md
+#: support/documentation/content/en/contributing/_index.md
+#: support/documentation/content/en/contributing/translate/_index.md
+#: support/documentation/content/en/credits/_index.md
+#: support/documentation/content/en/documentation/admin/advanced/_index.md
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
+#: build/documentation/pot_in/documentation/admin/external_auth.md
+#: support/documentation/content/en/documentation/admin/_index.md
+#: build/documentation/pot_in/documentation/admin/settings.md
+#: support/documentation/content/en/documentation/_index.md
+#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
+#: support/documentation/content/en/documentation/installation/_index.md
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
+#: support/documentation/content/en/documentation/user/_index.md
+#: support/documentation/content/en/documentation/user/obs.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
+#: support/documentation/content/en/documentation/user/streamers/channel.md
+#: support/documentation/content/en/documentation/user/streamers/_index.md
+#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+#: support/documentation/content/en/documentation/user/viewers.md
+#: support/documentation/content/en/documentation/user/xmpp_clients.md
+#: support/documentation/content/en/_index.md
+#: support/documentation/content/en/intro/_index.md
+#: support/documentation/content/en/issues/_index.md
 #, no-wrap
-msgid "Contact me"
-msgstr "Kontaktieren Sie mich"
+msgid ""
+"SPDX-License-Identifier: AGPL-3.0-only\n"
+"-->\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contact/_index.md
+msgid "title: \"Contact me\" description: \"Contact the author\" weight: 80 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
@@ -42,28 +120,20 @@ msgstr "Wenn Sie eine Frage haben oder über dieses Plugin sprechen möchten, k�
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
 msgstr "Wenn Sie das Projekt finanziell unterstützen möchten, können Sie mich per E-Mail unter git.[at].john-livingston.fr kontaktieren oder mein [Liberapay-Profil](https://liberapay.com/JohnLivingston/) ansehen."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, no-wrap
-msgid "Contributor Covenant Code of Conduct"
-msgstr "Vereinbarung über Verhaltenskodex für Mitwirkende"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/contributing/codeofconduct/_index.md
-#, no-wrap
-msgid "Code of Conduct"
-msgstr "Verhaltenskodex"
+msgid "title: \"Code of Conduct\" description: \"Contributor Covenant Code of Conduct\" weight: 10 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
 msgstr "Dieser Verhaltenskodex basiert auf dem [Contributor Covenant](https://www.contributor-covenant.org), Version 2.1, verfügbar unter [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html). Übersetzungen sind unter [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations) verfügbar. Fälle von beleidigendem, belästigendem oder anderweitig inakzeptablem Verhalten können den für die Durchsetzung verantwortlichen Gemeinschaftsleitern per E-Mail an git.[at].john-livingston.fr gemeldet werden."
 
-#. type: Title ##
+#. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
-#, no-wrap
-msgid "Develop"
-msgstr "Entwickeln"
+msgid "title: \"Develop\" description: \"Develop\" weight: 40 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -146,10 +216,21 @@ msgstr ""
 msgid "`wget`"
 msgstr ""
 
+#. type: Bullet: '* '
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "`reuse`"
+msgstr ""
+
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
 msgstr "Bitte beachten Sie, dass dieses Plugin ein AppImage für den Prosody XMPP Server benötigt.  Dieses AppImage wird vom [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) Seitenprojekt bereitgestellt.  Das Skript `build-prosody.sh` lädt Binärdateien herunter, die an dieses entfernte Repository angehängt sind, und überprüft, ob ihre sha256-Hashsumme korrekt ist."
+
+#. type: Title ##
+#: support/documentation/content/en/contributing/develop/_index.md
+#, no-wrap
+msgid "Develop"
+msgstr "Entwickeln"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -225,6 +306,11 @@ msgstr "Sie können das Plugin mit zusätzlichen Debug-Funktionen bauen, indem S
 #, no-wrap
 msgid "NODE_ENV=dev npm run build\n"
 msgstr "NODE_ENV=dev npm run build\n"
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/develop/_index.md
+msgid "This plugin is [REUSE](https://reuse.software/) compliant: it uses SPDX headers to identify licensing information of its source code.  More information on the [REUSE](https://reuse.software/) website.  You can use the [reuse](https://reuse.readthedocs.io/en/stable/readme.html#) command line tool to help you update headers.  The `npm run lint` command will use the `reuse` command to check compliance.  Don't forget to add your copyright information in SPDX headers when you modify some code."
+msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -408,18 +494,12 @@ msgstr "Leistungstests"
 msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvements, or find bottlenecks."
 msgstr "Das [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) Repository enthält einige Werkzeuge zur Durchführung von Leistungstests.  Sie können verwendet werden, um Code-Verbesserungen zu bewerten oder Engpässe zu finden."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, no-wrap
-msgid "Document the plugin, or translate the documentation."
+#, fuzzy
+#| msgid "Document the plugin, or translate the documentation."
+msgid "title: \"Documentation\" description: \"Document the plugin, or translate the documentation.\" weight: 50 chapter: false"
 msgstr "Dokumentieren Sie das Plugin, oder übersetzen Sie die Dokumentation."
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/contributing/document/_index.md
-#: support/documentation/content/en/documentation/_index.md
-#, no-wrap
-msgid "Documentation"
-msgstr "Dokumentation"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -622,39 +702,30 @@ msgstr "Veröffentlichung"
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch."
 msgstr "Die Veröffentlichung der Dokumentation erfolgt automatisch, sobald die Änderungen in den `documentation` Zweig eingefügt wurden."
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
-#, no-wrap
-msgid "Give your feedback"
-msgstr "Geben Sie Ihr Feedback"
+msgid "title: \"Give your feedback\" description: \"Give your feedback\" weight: 30 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
 msgid "You don't need to know how to code to start contributing to this plugin! Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ..."
 msgstr "Sie müssen keine Programmierkenntnisse haben, um zu diesem Plugin beizutragen! Andere Beiträge sind auch sehr wertvoll, darunter: Sie können die Software testen und Fehler melden, Sie können Feedback geben, Funktionen die Sie interessieren, Benutzeroberfläche, Design, ..."
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Plain text
 #: support/documentation/content/en/contributing/_index.md
-#, no-wrap
-msgid "Contributing"
-msgstr "Beitragen"
+msgid "title: \"Contributing\" description: \"Contributing\" weight: 60 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/_index.md
 msgid "Interested in contributing? Awesome!"
 msgstr "Interessiert beizutragen? Super!"
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Translate the plugin"
-msgstr "Das Plugin übersetzen"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/contributing/translate/_index.md
-#, no-wrap
-msgid "Translate"
-msgstr "Übersätzen"
+msgid "title: \"Translate\" description: \"Translate the plugin\" weight: 20 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -906,17 +977,10 @@ msgstr "Allgemeine Empfehlungen"
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
 msgstr "Bitte formulieren Sie umfassend und beachten Sie den [Verhaltenskodex](/peertube-plugin-livechat/de/contributing/codeofconduct/)."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid "Plugin Credits"
-msgstr "Impressum des Plugins"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/credits/_index.md
-#, no-wrap
-msgid "Credits"
-msgstr "Impressum"
+msgid "title: \"Credits\" description: \"Plugin Credits\" weight: 90 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -963,46 +1027,25 @@ msgstr "Vielen Dank an [Octopuce](https://www.octopuce.fr/) für die finanzielle
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
 msgstr "Und vielen Dank an alle Einzelspender, die über meine [Liberapay Seite] (https://liberapay.com/JohnLivingston/) gespendet haben."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
-#, no-wrap
-msgid "Some advanced features"
-msgstr "Einige erweiterte Funktionen"
+msgid "title: \"Advanced usage\" description: \"Some advanced features\" weight: 20 chapter: false"
+msgstr ""
 
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/admin/advanced/_index.md
-#, no-wrap
-msgid "Advanced usage"
-msgstr "Fortgeschrittene Nutzung"
-
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
-#, no-wrap
-msgid "Using Matterbridge to bridge with other chats"
-msgstr "Matterbridge als Brücke zu anderen Chats nutzen"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
-#, no-wrap
-msgid "Using Matterbridge"
-msgstr "Matterbridge benutzen"
+msgid "title: \"Using Matterbridge\" description: \"Using Matterbridge to bridge with other chats\" weight: 50 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>"
 msgstr "Hier ist ein Tutorial um Matterbridge mit diesem Plugin zu benutzen (nur auf englisch): <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>"
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "Allow connections using XMPP clients"
-msgstr "Verbindungen über XMPP-Clients zulassen"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, no-wrap
-msgid "XMPP clients"
-msgstr "XMPP-Clients"
+msgid "title: \"XMPP clients\" description: \"Allow connections using XMPP clients\" weight: 30 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1544,10 +1587,9 @@ msgid ""
 "  check certs\n"
 msgstr ""
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-#: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Troubleshooting"
 msgstr "Fehlerbehebung"
@@ -1557,18 +1599,12 @@ msgstr "Fehlerbehebung"
 msgid "If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section."
 msgstr "Wenn Sie es nicht hinbekommen, können Sie das Diagnosetool verwenden (es gibt eine Schaltfläche oben auf der Seite mit den Plugin-Einstellungen) und sich den Abschnitt «Prosody check» genau ansehen."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-#, no-wrap
-msgid "Plugin Peertube Livechat settings - External Authentication"
+#, fuzzy
+#| msgid "Plugin Peertube Livechat settings - External Authentication"
+msgid "title: \"External Authentication\" description: \"Plugin Peertube Livechat settings - External Authentication\" weight: 15 chapter: false"
 msgstr "Plugin Peertube Livechat Einstellungen - Externe Authentifizierung"
-
-#. type: Title ##
-#: build/documentation/pot_in/documentation/admin/external_auth.md
-#: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "External Authentication"
-msgstr "Externe Authentifizierung"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1735,29 +1771,15 @@ msgstr "Weiteres folgt"
 msgid "Other authentication methods will be implemented in the future."
 msgstr "Andere Authentifizierungsmethoden werden in Zukunft implementiert werden."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/admin/_index.md
-#, no-wrap
-msgid "Plugin Peertube Livechat administration"
-msgstr "Plugin Peertube Livechat Administation"
+msgid "title: \"Admin documentation\" description: \"Plugin Peertube Livechat administration\" weight: 30 chapter: false"
+msgstr ""
 
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/admin/_index.md
-#, no-wrap
-msgid "Admin documentation"
-msgstr "Admin Dokumentation"
-
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "Plugin Peertube Livechat settings"
-msgstr "Plugin Peertube Livechat Einstellungen"
-
-#. type: Yaml Front Matter Hash Value: title
-#: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "Settings"
-msgstr "Einstellungen"
+msgid "title: \"Settings\" description: \"Plugin Peertube Livechat settings\" weight: 10 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1780,6 +1802,12 @@ msgstr "Föderation"
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
 msgstr "Die folgenden Einstellungen betreffen die Föderation mit anderen Peertube Instanzen und anderer Fediverse-Software."
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, no-wrap
+msgid "External Authentication"
+msgstr "Externe Authentifizierung"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1998,23 +2026,17 @@ msgstr "Diese Funktion könnte für die Verbindung von Brücken oder Bots genutz
 msgid "More informations on Prosody external components [here](https://prosody.im/doc/components)."
 msgstr "Weitere Informationen zu den externen Komponenten von Prosody finden Sie [hier](https://prosody.im/doc/components)."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/_index.md
-#, no-wrap
-msgid "Plugin documentation"
-msgstr "Plugin Dokumentation"
+msgid "title: \"Documentation\" description: \"Plugin documentation\" weight: 10 chapter: false"
+msgstr ""
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
+#, fuzzy
+#| msgid "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
+msgid "title: \"Known issues: CPU Compatibility\" description: \"For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.\" weight: 20 chapter: false"
 msgstr "Derzeit funktioniert das Plugin standartmäßig nur für x86_64 CPU Architekturen. Hier sind einige Anleitungen für andere CPU Architekturen."
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/installation/cpu_compatibility.md
-#, no-wrap
-msgid "Known issues: CPU Compatibility"
-msgstr "Bekannte Probleme: CPU Kompatibilität"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2128,17 +2150,10 @@ msgstr "Dies wird bereits von der Yunohost Peertube Anwendung gemacht, da es fü
 msgid "But it may be removed in a near feature (to avoid drawbacks of this method).  I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility."
 msgstr "Es kann aber sein, dass es in naher Zukunft entfernt wird (um die Nachteile dieser Methode zu vermeiden). Ich muss mit dem Yunohost Team diskutieren, um zu entscheiden, wie wir die Nachteile minimieren können, und die Kompatibilität zu maximieren."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
-#, no-wrap
-msgid "Plugin peertube-plugin-livechat installation guide"
-msgstr "Plugin peertube-plugin-livechat Installationsanleitung"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/installation/_index.md
-#, no-wrap
-msgid "Installation guide"
-msgstr "Installationsanleitung"
+msgid "title: \"Installation guide\" description: \"Plugin peertube-plugin-livechat installation guide\" weight: 20 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
@@ -2156,11 +2171,10 @@ msgstr "Um das Plugin zu installieren oder zu aktualisieren **einfach das Peertu
 msgid "Here are some other more specific instructions:"
 msgstr "Hier sind weitere, spezifischere Anweisungen:"
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, no-wrap
-msgid "Some classic mistakes and workarounds."
-msgstr "Einige klassische Fehler und Umgehungsmöglichkeiten."
+msgid "title: \"Troubleshooting\" description: \"Some classic mistakes and workarounds.\" weight: 10 chapter: false"
+msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2253,17 +2267,10 @@ msgstr "Sie können bestätigen, dass es sich um ein Websocket-Problem handelt, 
 msgid "If you can't fix this immediatly, you can disable Websocket by unchecking \"{{% livechat_label disable_websocket_label %}}\" in the plugin setting page.  In such case, you should also check \"{{% livechat_label federation_dont_publish_remotely_label %}}\", as chat federation won't work without Websocket."
 msgstr "Wenn Sie dies nicht sofort beheben können, können Sie Websocket deaktivieren, indem Sie das Häkchen bei \"{{% livechat_label disable_websocket_label %}}\" auf der Plugin Einstellungsseite entfernen.  In diesem Fall sollten Sie auch das Häkchen bei \"{{% livechat_label federation_dont_publish_remotely_label %}}\" setzen, da die Chat-Föderation ohne Websocket nicht funktioniert."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
-#, no-wrap
-msgid "Important notes when upgrading for an older version."
-msgstr "Wichtige Hinweise zum aktualisieren von älteren Versionen."
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
-#, no-wrap
-msgid "Upgrade from version older than 6.0.0"
-msgstr "Aktualisieren von Versionen vor 6.0.0"
+msgid "title: \"Upgrade from version older than 6.0.0\" description: \"Important notes when upgrading for an older version.\" weight: 50 chapter: false"
+msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
@@ -2286,29 +2293,19 @@ msgstr "Falls Sie dieses Plugin vor dieser Version benutzt haben und Sie Prosody
 msgid "If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image."
 msgstr "Falls Sie ein eigenes Peertube Docker Paket genutzt haben, welches Prosody eingebettet hatte, können Sie zu den offiziellen Peertube Paketen zurück wechseln."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/_index.md
-#, no-wrap
-msgid "Plugin peertube-plugin-livechat user documentation"
-msgstr "Plugin peertube-plugin-livechat Benutzer Dokumentation"
+#, fuzzy
+#| msgid "For the user documentation, see [user documentation](/peertube-plugin-livechat/documentation/user/viewers/)"
+msgid "title: \"User documentation\" description: \"Plugin peertube-plugin-livechat user documentation\" weight: 10 chapter: false"
+msgstr "Für die Benutzerdokumentation, siehe [Benutzerdokumentation](/peertube-plugin-livechat/de/documentation/user/viewers/)"
 
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/_index.md
-#, no-wrap
-msgid "User documentation"
-msgstr "Benutzer Dokumentation"
-
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid "Documentation to stream the chat content using OBS."
+#, fuzzy
+#| msgid "Documentation to stream the chat content using OBS."
+msgid "title: \"OBS\" description: \"Documentation to stream the chat content using OBS.\" weight: 40 chapter: false"
 msgstr "Dokumentation zum Streamen des Chat-Inhalts mit OBS."
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/obs.md
-#, no-wrap
-msgid "OBS"
-msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2394,17 +2391,12 @@ msgstr "Mischen mehrerer Chats in Ihrem Live-Stream"
 msgid "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.  The compatibility with this plugin was added in recent versions."
 msgstr "Sie können die [social_stream Browsererweiterung](https://github.com/steveseguin/social_stream#readme) verwenden, um mehrere Chat-Quellen (von Peertube, Twitch, Youtube, Facebook, ...) zu mischen und deren Inhalte in Ihren Live-Stream einzubinden. Die Kompatibilität mit diesem Plugin wurde in den letzten Versionen hinzugefügt."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, no-wrap
-msgid "Some basics about how to setup and use the chat for your live stream"
+#, fuzzy
+#| msgid "Some basics about how to setup and use the chat for your live stream"
+msgid "title: \"Some basics\" description: \"Some basics about how to setup and use the chat for your live stream\" weight: 10 chapter: false"
 msgstr "Einige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers/basics.md
-#, no-wrap
-msgid "Some basics"
-msgstr "Einige Grundlagen"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2496,7 +2488,6 @@ msgstr "Das \"{{% livechat_label share_chat_link %}}\" Popup-Fenster kann auch e
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Moderation"
@@ -2583,17 +2574,10 @@ msgstr "Wenn Sie den Inhalt des Chats löschen möchten, [öffnen Sie deas Dropd
 msgid "The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the \"{{% livechat_label use_chat %}}\" feature activated."
 msgstr "Der Chat wird automatisch neu erstellt, wenn jemand versucht, ihm beizutreten, solange das Video existiert und die Funktion \"{{% livechat_label use_chat %}}\" aktiviert ist."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
-#, no-wrap
-msgid "The bot can respond to several commands."
-msgstr "Der Chatbot kann auf verschiedene Befehle reagieren."
-
-#. type: Yaml Front Matter Hash Value: title
-#: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
-#, no-wrap
-msgid "Commands"
-msgstr "Befehle"
+msgid "title: \"Commands\" description: \"The bot can respond to several commands.\" weight: 40 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -2605,17 +2589,12 @@ msgstr "![Befehlskonfiguration](/peertube-plugin-livechat/images/bot_commands.pn
 msgid "You can setup several commands."
 msgstr "Sie können mehrere Befehle einrichten."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, no-wrap
-msgid "The bot can automatically moderate messages containing forbidden words."
+#, fuzzy
+#| msgid "The bot can automatically moderate messages containing forbidden words."
+msgid "title: \"Forbidden words\" description: \"The bot can automatically moderate messages containing forbidden words.\" weight: 10 chapter: false"
 msgstr "Der Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten."
-
-#. type: Yaml Front Matter Hash Value: title
-#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, no-wrap
-msgid "Forbidden words"
-msgstr "Verbotene Wörter"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -2672,18 +2651,10 @@ msgstr "Diese Funktion ist noch experimentell.  Es könnte einige Probleme mit n
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
 msgstr "Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" als [regulärer Ausdruck](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck) betrachtet."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
-#, no-wrap
-msgid "Chat bot setup"
-msgstr "Chatbot Einrichtung"
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/bot/_index.md
-#: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "Chat bot"
-msgstr "Chatbot"
+msgid "title: \"Chat bot\" description: \"Chat bot setup\" weight: 40 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -2717,17 +2688,12 @@ msgstr "Dort können Sie den Chatbot aktivieren und verschiedene Optionen einste
 msgid "The bot will reload instantly when you save the page."
 msgstr "Der Chatbot wird sofort neu geladen, wenn Sie die Seite speichern."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
-#, no-wrap
-msgid "The bot can send periodically some messages."
+#, fuzzy
+#| msgid "The bot can send periodically some messages."
+msgid "title: \"Timers\" description: \"The bot can send periodically some messages.\" weight: 20 chapter: false"
 msgstr "Der Chatbot kann in regelmäßigen Abständen einige Nachrichten senden."
-
-#. type: Yaml Front Matter Hash Value: title
-#: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
-#, no-wrap
-msgid "Timers"
-msgstr "Timer"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
@@ -2739,17 +2705,10 @@ msgstr "Wenn sich kein Benutzer im Chatraum befindet, sendet der Chatbot keine N
 msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 msgstr "[Konfiguration der Timer](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, no-wrap
-msgid "Peertube channel chatrooms configuration"
-msgstr "Peertube Kanal Chaträume Konfiguration"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers/channel.md
-#, no-wrap
-msgid "Channel configuration"
-msgstr "Kanalkonfiguration"
+msgid "title: \"Channel configuration\" description: \"Peertube channel chatrooms configuration\" weight: 30 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2786,22 +2745,16 @@ msgstr "[Den Chatbot](/peertube-plugin-livechat/de/documentation/user/streamers/
 msgid "More features to come..."
 msgstr "Weitere Funktionen werden folgen..."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/_index.md
-#, no-wrap
-msgid "How to setup the chat for your live stream"
-msgstr "So richten Sie den Chat für Ihren Live-Stream ein"
+msgid "title: \"For streamers\" description: \"How to setup the chat for your live stream\" weight: 20 chapter: false"
+msgstr ""
 
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers/_index.md
-#, no-wrap
-msgid "For streamers"
-msgstr "Für Streamer"
-
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
-#, no-wrap
-msgid "Plugin peertube-plugin-livechat advanced moderation features"
+#, fuzzy
+#| msgid "Plugin peertube-plugin-livechat advanced moderation features"
+msgid "title: \"Moderation\" description: \"Plugin peertube-plugin-livechat advanced moderation features\" weight: 60 chapter: false"
 msgstr "Plugin peertube-plugin-livechat Erweiterte Moderationsfunktionen"
 
 #. type: Plain text
@@ -2817,8 +2770,7 @@ msgid ""
 "There were some changes in the way we manage access rights for Peertube administrators and moderators.\n"
 msgstr ""
 "Diese Seite beschreibt das Verhalten von Livechat-Versionen >= 10.0.0.\n"
-"Es gab einige Änderungen in der Art und Weise, wie wir die Zugriffsrechte "
-"für Peertube-Administratoren und -Moderatoren verwalten.\n"
+"Es gab einige Änderungen in der Art und Weise, wie wir die Zugriffsrechte für Peertube-Administratoren und -Moderatoren verwalten.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2845,20 +2797,12 @@ msgstr "Über das [Chat Dropdown Menü](/peertube-plugin-livechat/de/documentati
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
-msgstr ""
-"Der Videobesitzer ist der Besitzer des Chatraums.  Das bedeutet, er kann den "
-"Raum konfigurieren, löschen, andere Benutzer als Administratoren befördern, "
-"..."
+msgstr "Der Videobesitzer ist der Besitzer des Chatraums.  Das bedeutet, er kann den Raum konfigurieren, löschen, andere Benutzer als Administratoren befördern, ..."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
-msgstr ""
-"Ab livechat v10.0.0 haben Admins und Moderatoren der Peertube-Instanz "
-"standardmäßig keine besonderen Rechte für Räume.  Sie haben jedoch einen "
-"speziellen Button oben im Chat zur Verfügung: \"{{% livechat_label promote "
-"%}}\".  Wenn sie auf diese Schaltfläche klicken, erhalten sie Besitzerrechte "
-"für den Raum."
+msgstr "Ab livechat v10.0.0 haben Admins und Moderatoren der Peertube-Instanz standardmäßig keine besonderen Rechte für Räume.  Sie haben jedoch einen speziellen Button oben im Chat zur Verfügung: \"{{% livechat_label promote %}}\".  Wenn sie auf diese Schaltfläche klicken, erhalten sie Besitzerrechte für den Raum."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2911,32 +2855,21 @@ msgstr "Sie können alle bestehenden Chaträume auflisten: in den Einstellungen 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
+msgstr "Von dort aus kannst du dich auch als Moderator des Raums bewerben, indem du die Schaltfläche \"{{% livechat_label promote %}}\" auf der rechten Seite benutzt."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "title: \"Slow mode\" description: \"Plugin peertube-plugin-livechat slow mode\" weight: 30 chapter: false"
 msgstr ""
-"Von dort aus kannst du dich auch als Moderator des Raums bewerben, indem du "
-"die Schaltfläche \"{{% livechat_label promote %}}\" auf der rechten Seite "
-"benutzt."
-
-#. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, no-wrap
-msgid "Plugin peertube-plugin-livechat slow mode"
-msgstr "Plugin peertube-plugin-livechat Langsamer Modus"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, no-wrap
-msgid "Slow mode"
-msgstr "Langsamer Modus"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "This feature comes with the livechat plugin version 8.3.0."
 msgstr "Diese Funktion wird mit dem Livechatplugin Version 8.3.0 verfügbar sein."
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Introduction"
 msgstr "Einführung"
@@ -3005,14 +2938,10 @@ msgstr "Wenn Sie den Wert auf eine positive ganze Zahl setzen, wird der Zeitraum
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the slow mode value in the configuration form."
-msgstr ""
-"Um den Wert für einen bereits existierenden Raum zu ändern, öffnen Sie "
-"einfach das Raum-Konfigurationsmenü (oben im Chatfenster) und ändern Sie den "
-"Wert für den langsamen Modus im Konfigurationsformular."
+msgstr "Um den Wert für einen bereits existierenden Raum zu ändern, öffnen Sie einfach das Raum-Konfigurationsmenü (oben im Chatfenster) und ändern Sie den Wert für den langsamen Modus im Konfigurationsformular."
 
-#. type: Yaml Front Matter Hash Value: title
+#. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "For viewers"
 msgstr "Für Zuschauer"
@@ -3032,17 +2961,12 @@ msgstr "![Infobox Langsamer Modus](/peertube-plugin-livechat/images/slow_mode.pn
 msgid "When they send a message, the input field will be disabled for X seconds (where X is the slow mode duration)."
 msgstr "Wenn sie eine Nachricht senden, wird das Eingabefeld für X Sekunden deaktiviert (wobei X die Dauer des langsamen Modus ist)."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, no-wrap
-msgid "You can handle tasks and task lists with your moderation team."
+#, fuzzy
+#| msgid "You can handle tasks and task lists with your moderation team."
+msgid "title: \"Tasks / To-do lists\" description: \"You can handle tasks and task lists with your moderation team.\" weight: 35 chapter: false"
 msgstr "Sie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten."
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, no-wrap
-msgid "Tasks / To-do lists"
-msgstr "Aufgaben / To-do-Listen"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3268,11 +3192,10 @@ msgstr "![Aufgabe erstellt](/peertube-plugin-livechat/images/task_from_message_3
 msgid "Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered."
 msgstr "Mit dieser Funktion können Sie z. B. Ihre Moderatoren bitten, alle Chat-Fragen zu markieren, damit Sie sie während Ihres Livestreams auf einen Blick sehen und als beantwortet markieren können."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, no-wrap
-msgid "How to chat for stream viewers"
-msgstr "Wie man chattet für Live-Stream Zuschauer"
+msgid "title: \"For viewers\" description: \"How to chat for stream viewers\" weight: 10 chapter: false"
+msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -3477,17 +3400,10 @@ msgstr "Sie können Ihren Spitznamen ändern, indem Sie `/nick ihr_neuer_spitzna
 msgid "You can also change your nickname using the chat menu."
 msgstr "Sie können Ihren Spitznamen auch über das Chatmenü ändern."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid "Connect to chat using a XMPP client"
-msgstr "Verbindung zum Chat über einen XMPP-Client"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, no-wrap
-msgid "XMPP Clients"
-msgstr "XMPP Clients"
+msgid "title: \"XMPP Clients\" description: \"Connect to chat using a XMPP client\" weight: 60 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -3564,6 +3480,11 @@ msgstr "Um einen Einblick in die Fähigkeiten dieses Plugins zu bekommen, schaue
 #: support/documentation/content/en/_index.md
 msgid "You can use the searchbox in the left menu to quickly find specific documentation parts."
 msgstr "Sie können das Suchfeld im linken Menü verwenden, um bestimmte Teile der Dokumentation schnell zu finden."
+
+#. type: Plain text
+#: support/documentation/content/en/intro/_index.md
+msgid "title: \"Introduction\" description: \"Introduction\" weight: 5 chapter: false"
+msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -3648,6 +3569,12 @@ msgstr "Damit der Zusammenschluss funktioniert, muss das Plugin natürlich auf b
 msgid "Some times, you have to protect your community from bad people.  As an instance administrator, you can choose to disallow federation for the livechat plugin.  If remote actors behave badly, streamers, moderators and administrators can ban or mute users."
 msgstr "Manchmal muss man seine Community vor bösen Menschen schützen.  Als Instanzadministrator können Sie die Föderation für das Livechat-Plugin deaktivieren.  Wenn sich entfernte Akteure schlecht benehmen, können Streamer, Moderatoren und Administratoren Nutzer sperren oder stummschalten."
 
+#. type: Title ##
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Chat bot"
+msgstr "Chatbot"
+
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).  Check its documentation for more information."
@@ -3710,17 +3637,10 @@ msgstr "Auf der Instanzebene können Administratoren jedoch den Chat für alle V
 msgid "You can even activate the chat for specific VOD videos.  This is how the [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) page works: it is not a live stream, but I have activated the chat specifically for this video."
 msgstr "Sie können den Chat sogar für bestimmte VOD-Videos aktivieren.  So funktioniert die [Demonstrationsseite](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae): Es handelt sich nicht um einen Live-Stream, aber ich habe den Chat speziell für dieses Video aktiviert."
 
-#. type: Yaml Front Matter Hash Value: description
+#. type: Plain text
 #: support/documentation/content/en/issues/_index.md
-#, no-wrap
-msgid "Bug tracking / New features requests"
-msgstr "Fehler (Bugs) / Neue Funktionsanfragen"
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/issues/_index.md
-#, no-wrap
-msgid "Bug tracking & new features"
-msgstr "Fehlerverfolgung (Bug tracking) und neue Funktionen"
+msgid "title: \"Bug tracking & new features\" description: \"Bug tracking / New features requests\" weight: 70 chapter: false"
+msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
@@ -3746,6 +3666,198 @@ msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-pl
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
+
+#, no-wrap
+#~ msgid "Contact the author"
+#~ msgstr "Den Autor kontaktieren"
+
+#, no-wrap
+#~ msgid "Contact me"
+#~ msgstr "Kontaktieren Sie mich"
+
+#, no-wrap
+#~ msgid "Contributor Covenant Code of Conduct"
+#~ msgstr "Vereinbarung über Verhaltenskodex für Mitwirkende"
+
+#, no-wrap
+#~ msgid "Code of Conduct"
+#~ msgstr "Verhaltenskodex"
+
+#, no-wrap
+#~ msgid "Documentation"
+#~ msgstr "Dokumentation"
+
+#, no-wrap
+#~ msgid "Give your feedback"
+#~ msgstr "Geben Sie Ihr Feedback"
+
+#, no-wrap
+#~ msgid "Contributing"
+#~ msgstr "Beitragen"
+
+#, no-wrap
+#~ msgid "Translate the plugin"
+#~ msgstr "Das Plugin übersetzen"
+
+#, no-wrap
+#~ msgid "Translate"
+#~ msgstr "Übersätzen"
+
+#, no-wrap
+#~ msgid "Plugin Credits"
+#~ msgstr "Impressum des Plugins"
+
+#, no-wrap
+#~ msgid "Credits"
+#~ msgstr "Impressum"
+
+#, no-wrap
+#~ msgid "Some advanced features"
+#~ msgstr "Einige erweiterte Funktionen"
+
+#, no-wrap
+#~ msgid "Advanced usage"
+#~ msgstr "Fortgeschrittene Nutzung"
+
+#, no-wrap
+#~ msgid "Using Matterbridge to bridge with other chats"
+#~ msgstr "Matterbridge als Brücke zu anderen Chats nutzen"
+
+#, no-wrap
+#~ msgid "Using Matterbridge"
+#~ msgstr "Matterbridge benutzen"
+
+#, no-wrap
+#~ msgid "Allow connections using XMPP clients"
+#~ msgstr "Verbindungen über XMPP-Clients zulassen"
+
+#, no-wrap
+#~ msgid "XMPP clients"
+#~ msgstr "XMPP-Clients"
+
+#, no-wrap
+#~ msgid "Plugin Peertube Livechat administration"
+#~ msgstr "Plugin Peertube Livechat Administation"
+
+#, no-wrap
+#~ msgid "Admin documentation"
+#~ msgstr "Admin Dokumentation"
+
+#, no-wrap
+#~ msgid "Plugin Peertube Livechat settings"
+#~ msgstr "Plugin Peertube Livechat Einstellungen"
+
+#, no-wrap
+#~ msgid "Settings"
+#~ msgstr "Einstellungen"
+
+#, no-wrap
+#~ msgid "Plugin documentation"
+#~ msgstr "Plugin Dokumentation"
+
+#, no-wrap
+#~ msgid "Known issues: CPU Compatibility"
+#~ msgstr "Bekannte Probleme: CPU Kompatibilität"
+
+#, no-wrap
+#~ msgid "Plugin peertube-plugin-livechat installation guide"
+#~ msgstr "Plugin peertube-plugin-livechat Installationsanleitung"
+
+#, no-wrap
+#~ msgid "Installation guide"
+#~ msgstr "Installationsanleitung"
+
+#, no-wrap
+#~ msgid "Some classic mistakes and workarounds."
+#~ msgstr "Einige klassische Fehler und Umgehungsmöglichkeiten."
+
+#, no-wrap
+#~ msgid "Important notes when upgrading for an older version."
+#~ msgstr "Wichtige Hinweise zum aktualisieren von älteren Versionen."
+
+#, no-wrap
+#~ msgid "Upgrade from version older than 6.0.0"
+#~ msgstr "Aktualisieren von Versionen vor 6.0.0"
+
+#, no-wrap
+#~ msgid "Plugin peertube-plugin-livechat user documentation"
+#~ msgstr "Plugin peertube-plugin-livechat Benutzer Dokumentation"
+
+#, no-wrap
+#~ msgid "User documentation"
+#~ msgstr "Benutzer Dokumentation"
+
+#, no-wrap
+#~ msgid "Some basics"
+#~ msgstr "Einige Grundlagen"
+
+#, no-wrap
+#~ msgid "The bot can respond to several commands."
+#~ msgstr "Der Chatbot kann auf verschiedene Befehle reagieren."
+
+#, no-wrap
+#~ msgid "Commands"
+#~ msgstr "Befehle"
+
+#, no-wrap
+#~ msgid "Forbidden words"
+#~ msgstr "Verbotene Wörter"
+
+#, no-wrap
+#~ msgid "Chat bot setup"
+#~ msgstr "Chatbot Einrichtung"
+
+#, no-wrap
+#~ msgid "Timers"
+#~ msgstr "Timer"
+
+#, no-wrap
+#~ msgid "Peertube channel chatrooms configuration"
+#~ msgstr "Peertube Kanal Chaträume Konfiguration"
+
+#, no-wrap
+#~ msgid "Channel configuration"
+#~ msgstr "Kanalkonfiguration"
+
+#, no-wrap
+#~ msgid "How to setup the chat for your live stream"
+#~ msgstr "So richten Sie den Chat für Ihren Live-Stream ein"
+
+#, no-wrap
+#~ msgid "For streamers"
+#~ msgstr "Für Streamer"
+
+#, no-wrap
+#~ msgid "Plugin peertube-plugin-livechat slow mode"
+#~ msgstr "Plugin peertube-plugin-livechat Langsamer Modus"
+
+#, no-wrap
+#~ msgid "Slow mode"
+#~ msgstr "Langsamer Modus"
+
+#, no-wrap
+#~ msgid "Tasks / To-do lists"
+#~ msgstr "Aufgaben / To-do-Listen"
+
+#, no-wrap
+#~ msgid "How to chat for stream viewers"
+#~ msgstr "Wie man chattet für Live-Stream Zuschauer"
+
+#, no-wrap
+#~ msgid "Connect to chat using a XMPP client"
+#~ msgstr "Verbindung zum Chat über einen XMPP-Client"
+
+#, no-wrap
+#~ msgid "XMPP Clients"
+#~ msgstr "XMPP Clients"
+
+#, no-wrap
+#~ msgid "Bug tracking / New features requests"
+#~ msgstr "Fehler (Bugs) / Neue Funktionsanfragen"
+
+#, no-wrap
+#~ msgid "Bug tracking & new features"
+#~ msgstr "Fehlerverfolgung (Bug tracking) und neue Funktionen"
 
 #~ msgid "All instance moderators and admins will be owner of created chat rooms.  The video owner will be admin in the chat room."
 #~ msgstr "Alle Instanzmoderatoren und Admins sind Eigentümer der erstellten Chaträume.  Der Eigentümer des Videos wird der Administrator des Chatraums sein."
