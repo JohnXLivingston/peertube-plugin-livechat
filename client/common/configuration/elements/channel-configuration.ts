@@ -43,7 +43,7 @@ export class ChannelConfigurationElement extends LivechatElement {
     args: () => [this.registerClientOptions]
   })
 
-  private readonly _saveConfig = (ev?: Event): undefined => {
+  private readonly _saveConfig = (ev?: Event): void => {
     ev?.preventDefault()
     if (this._channelDetailsService && this._channelConfiguration) {
       this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id,

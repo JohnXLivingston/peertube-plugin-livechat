@@ -444,7 +444,7 @@ export class DynamicTableFormElement extends LivechatElement {
   _updatePropertyFromValue = (event: Event,
     propertyName: string,
     propertySchema: CellDataSchema,
-    rowId: number): undefined => {
+    rowId: number): void => {
     const target = event.target as (HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement)
     const value = (target)
       ? (target instanceof HTMLInputElement && target.type === 'checkbox')
