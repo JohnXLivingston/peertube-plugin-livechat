@@ -1,9 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
-
-SPDX-License-Identifier: AGPL-3.0-only
--->
-
 ---
 title: "Some basics"
 description: "Some basics about how to setup and use the chat for your live stream"

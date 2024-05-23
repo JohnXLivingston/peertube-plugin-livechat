@@ -1,9 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
-
-SPDX-License-Identifier: AGPL-3.0-only
--->
-
 ---
 title: "Known issues: CPU Compatibility"
 description: "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."

@@ -1,9 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
-
-SPDX-License-Identifier: AGPL-3.0-only
--->
-
 ---
 title: "Upgrade from version older than 6.0.0"
 description: "Important notes when upgrading for an older version."

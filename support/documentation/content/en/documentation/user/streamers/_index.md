@@ -1,9 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
-
-SPDX-License-Identifier: AGPL-3.0-only
--->
-
 ---
 title: "For streamers"
 description: "How to setup the chat for your live stream"
