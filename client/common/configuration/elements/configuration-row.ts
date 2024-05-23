@@ -1,6 +1,5 @@
 import { html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import './help-button'
 
 @customElement('livechat-configuration-row')
 export class ConfigurationRowElement extends LitElement {

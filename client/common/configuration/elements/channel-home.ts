@@ -1,13 +1,13 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { html, LitElement } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { ptTr } from '../directives/translation'
-import './help-button'
+import { ptTr } from '../../lib/directives/translation'
 import { Task } from '@lit/task';
 import type { ChannelLiveChatInfos } from 'shared/lib/types'
 import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
-import { channelDetailsServiceContext, registerClientOptionsContext } from '../contexts/channel'
+import { channelDetailsServiceContext } from '../contexts/channel'
+import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 
 @customElement('livechat-channel-home')
 export class ChannelHomeElement extends LitElement {

@@ -3,9 +3,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import './elements/channel-home'
-import './elements/channel-configuration'
 import { html, render } from 'lit'
+import './elements' // Import all needed elements.
 
 /**
  * Registers stuff related to the user's configuration pages.

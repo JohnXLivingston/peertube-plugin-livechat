@@ -155,7 +155,7 @@ export class DynamicTableFormElement extends LitElement {
   }
 
   render = () => {
-    const inputId = `peertube-livechat-${this.formName.replaceAll('_', '-')}-table`
+    const inputId = `peertube-livechat-${this.formName.replace(/_/g, '-')}-table`
 
     this._updateLastRowId()
 
@@ -200,7 +200,7 @@ export class DynamicTableFormElement extends LitElement {
   }
 
   private _renderDataRow = (rowData: { _id: number; row: {[key: string]: DynamicTableAcceptedTypes} }) => {
-    const inputId = `peertube-livechat-${this.formName.replaceAll('_', '-')}-row-${rowData._id}`
+    const inputId = `peertube-livechat-${this.formName.replace(/_/g, '-')}-row-${rowData._id}`
 
     return html`<tr id=${inputId}>
       ${Object.entries(rowData.row).filter(([k, v]) => k != '_id')
@@ -226,8 +226,8 @@ export class DynamicTableFormElement extends LitElement {
 
     let formElement
 
-    const inputName = `${this.formName.replaceAll('-', '_')}_${propertyName.toString().replaceAll('-', '_')}_${rowId}`
-    const inputId = `peertube-livechat-${this.formName.replaceAll('_', '-')}-${propertyName.toString().replaceAll('_', '-')}-${rowId}`
+    const inputName = `${this.formName.replace(/-/g, '_')}_${propertyName.toString().replace(/-/g, '_')}_${rowId}`
+    const inputId = `peertube-livechat-${this.formName.replace(/_/g, '-')}-${propertyName.toString().replace(/_/g, '-')}-${rowId}`
 
     switch (propertyValue.constructor) {
       case String:

@@ -1,15 +1,13 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import type { ChannelConfiguration } from 'shared/lib/types'
 import { html, LitElement } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { ptTr } from '../directives/translation'
-import './dynamic-table-form'
-import './configuration-row'
-import './help-button'
-import { Task } from '@lit/task';
-import type { ChannelConfiguration } from 'shared/lib/types'
+import { ptTr } from '../../lib/directives/translation'
+import { Task } from '@lit/task'
 import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
-import { channelConfigurationContext, channelDetailsServiceContext, registerClientOptionsContext } from '../contexts/channel'
+import { channelConfigurationContext, channelDetailsServiceContext } from '../contexts/channel'
+import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 
 @customElement('livechat-channel-configuration')
 export class ChannelConfigurationElement extends LitElement {

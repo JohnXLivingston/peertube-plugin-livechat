@@ -1,5 +1,5 @@
-import type { RegisterClientOptions } from "@peertube/peertube-types/client"
-import { ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions } from "shared/lib/types"
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import { ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions } from 'shared/lib/types'
 import { getBaseRoute } from "../../../utils/uri"
 
 
