@@ -4,31 +4,29 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions } from 'shared/lib/types'
-import { getBaseRoute } from "../../../utils/uri"
-
+import { getBaseRoute } from '../../../utils/uri'
 
 export class ChannelDetailsService {
-
   public _registerClientOptions: RegisterClientOptions
 
-  private _headers : any = {}
+  private readonly _headers: any = {}
 
-  constructor(registerClientOptions: RegisterClientOptions) {
+  constructor (registerClientOptions: RegisterClientOptions) {
     this._registerClientOptions = registerClientOptions
 
     this._headers = this._registerClientOptions.peertubeHelpers.getAuthHeader() ?? {}
     this._headers['content-type'] = 'application/json;charset=UTF-8'
   }
 
-  validateOptions = (channelConfigurationOptions: ChannelConfigurationOptions) => {
-    return true
+  validateOptions = (channelConfigurationOptions: ChannelConfigurationOptions): boolean => {
+    return !!channelConfigurationOptions
   }
 
-  saveOptions = async (channelId: number, channelConfigurationOptions: ChannelConfigurationOptions) => {
+  saveOptions = async (channelId: number,
+    channelConfigurationOptions: ChannelConfigurationOptions): Promise<Response> => {
     if (!await this.validateOptions(channelConfigurationOptions)) {
       throw new Error('Invalid form data')
     }
-
 
     const response = await fetch(
       getBaseRoute(this._registerClientOptions) + '/api/configuration/channel/' + encodeURIComponent(channelId),
@@ -43,7 +41,7 @@ export class ChannelDetailsService {
       throw new Error('Failed to save configuration options.')
     }
 
-    return await response.json()
+    return response.json()
   }
 
   fetchUserChannels = async (username: string): Promise<ChannelLiveChatInfos[]> => {
@@ -90,6 +88,6 @@ export class ChannelDetailsService {
       throw new Error('Can\'t get channel configuration options.')
     }
 
-    return await response.json()
+    return response.json()
   }
 }

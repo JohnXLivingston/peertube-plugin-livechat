@@ -16,7 +16,6 @@ import { LivechatElement } from '../../lib/elements/livechat'
 
 @customElement('livechat-channel-configuration')
 export class ChannelConfigurationElement extends LivechatElement {
-
   @provide({ context: registerClientOptionsContext })
   @property({ attribute: false })
   public registerClientOptions: RegisterClientOptions | undefined
@@ -34,38 +33,36 @@ export class ChannelConfigurationElement extends LivechatElement {
   @state()
   public _formStatus: boolean | any = undefined
 
-  private _asyncTaskRender = new Task(this, {
-
-    task: async ([registerClientOptions], { signal }) => {
-      if (this.registerClientOptions) {
-        this._channelDetailsService = new ChannelDetailsService(this.registerClientOptions)
+  private readonly _asyncTaskRender = new Task(this, {
+    task: async ([registerClientOptions]) => {
+      if (registerClientOptions) {
+        this._channelDetailsService = new ChannelDetailsService(registerClientOptions)
         this._channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
       }
     },
-
     args: () => [this.registerClientOptions]
+  })
 
-  });
-
-  private _saveConfig = (ev?: Event) => {
+  private readonly _saveConfig = (ev?: Event): undefined => {
     ev?.preventDefault()
     if (this._channelDetailsService && this._channelConfiguration) {
-      this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id, this._channelConfiguration.configuration)
-        .then((value) => {
+      this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id,
+        this._channelConfiguration.configuration)
+        .then(() => {
           this._formStatus = { success: true }
-          console.log(`Configuration has been updated`)
+          console.log('Configuration has been updated')
           this.requestUpdate('_formStatus')
         })
         .catch((error) => {
           this._formStatus = error
           console.log(`An error occurred : ${JSON.stringify(this._formStatus)}`)
           this.requestUpdate('_formStatus')
-        });
+        })
     }
   }
 
-  render = () => {
-    let tableHeaderList = {
+  protected override render = (): unknown => {
+    const tableHeaderList = {
       forbiddenWords: {
         entries: {
           colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
@@ -113,16 +110,16 @@ export class ChannelConfigurationElement extends LivechatElement {
         }
       }
     }
-    let tableSchema = {
+    const tableSchema = {
       forbiddenWords: {
         entries: {
           inputType: 'textarea',
           default: [''],
-          separator: '\n',
+          separator: '\n'
         },
         regex: {
           inputType: 'checkbox',
-          default: false,
+          default: false
         },
         applyToModerators: {
           inputType: 'checkbox',
@@ -140,34 +137,35 @@ export class ChannelConfigurationElement extends LivechatElement {
         comments: {
           inputType: 'textarea',
           default: ''
-        },
+        }
       },
       quotes: {
         messages: {
           inputType: 'textarea',
           default: [''],
-          separator: '\n',
+          separator: '\n'
         },
         delay: {
           inputType: 'number',
-          default: 10,
+          default: 10
         }
       },
       commands: {
         command: {
           inputType: 'text',
-          default: '',
+          default: ''
         },
         message: {
           inputType: 'text',
-          default: '',
+          default: ''
         }
       }
     }
 
     return this._asyncTaskRender.render({
       complete: () => html`
-        <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-channel">
+        <div class="margin-content peertube-plugin-livechat-configuration
+                    peertube-plugin-livechat-configuration-channel">
           <h1>
             ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE)}:
             <span class="peertube-plugin-livechat-configuration-channel-info">
@@ -185,7 +183,7 @@ export class ChannelConfigurationElement extends LivechatElement {
                 <livechat-configuration-row
                   .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
                   .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
-                  .helpPage=${"documentation/user/streamers/slow_mode"}>
+                  .helpPage=${'documentation/user/streamers/slow_mode'}>
                 </livechat-configuration-row>
               </div>
               <div class="col-12 col-lg-8 col-xl-9">
@@ -199,8 +197,10 @@ export class ChannelConfigurationElement extends LivechatElement {
                       max="1000"
                       id="peertube-livechat-slow-mode-duration"
                       @input=${(event: InputEvent) => {
-                          if (event?.target && this._channelConfiguration)
-                            this._channelConfiguration.configuration.slowMode.duration = Number((event.target as HTMLInputElement).value)
+                          if (event?.target && this._channelConfiguration) {
+                            this._channelConfiguration.configuration.slowMode.duration =
+                              Number((event.target as HTMLInputElement).value)
+                          }
                           this.requestUpdate('_channelConfiguration')
                         }
                       }
@@ -215,7 +215,7 @@ export class ChannelConfigurationElement extends LivechatElement {
               <livechat-configuration-row
                 .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
                 .description=${''}
-                .helpPage=${"documentation/user/streamers/channel"}>
+                .helpPage=${'documentation/user/streamers/channel'}>
               </livechat-configuration-row>
               </div>
               <div class="col-12 col-lg-8 col-xl-9">
@@ -226,8 +226,10 @@ export class ChannelConfigurationElement extends LivechatElement {
                       name="bot"
                       id="peertube-livechat-bot"
                       @input=${(event: InputEvent) => {
-                          if (event?.target && this._channelConfiguration)
-                            this._channelConfiguration.configuration.bot.enabled = (event.target as HTMLInputElement).checked
+                          if (event?.target && this._channelConfiguration) {
+                            this._channelConfiguration.configuration.bot.enabled =
+                              (event.target as HTMLInputElement).checked
+                          }
                           this.requestUpdate('_channelConfiguration')
                         }
                       }
@@ -237,17 +239,21 @@ export class ChannelConfigurationElement extends LivechatElement {
                     ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
                   </label>
                 </div>
-                ${this._channelConfiguration?.configuration.bot.enabled ?
-                html`<div class="form-group">
-                  <label for="peertube-livechat-bot-nickname">${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)}</label>
+                ${this._channelConfiguration?.configuration.bot.enabled
+                ? html`<div class="form-group">
+                  <labelfor="peertube-livechat-bot-nickname">
+                    ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)}
+                  </label>
                   <input
                     type="text"
                     name="bot_nickname"
                     class="form-control"
                     id="peertube-livechat-bot-nickname"
                     @input=${(event: InputEvent) => {
-                        if (event?.target && this._channelConfiguration)
-                          this._channelConfiguration.configuration.bot.nickname = (event.target as HTMLInputElement).value
+                        if (event?.target && this._channelConfiguration) {
+                          this._channelConfiguration.configuration.bot.nickname =
+                          (event.target as HTMLInputElement).value
+                        }
                         this.requestUpdate('_channelConfiguration')
                       }
                     }
@@ -258,13 +264,13 @@ export class ChannelConfigurationElement extends LivechatElement {
               }
               </div>
             </div>
-            ${this._channelConfiguration?.configuration.bot.enabled ?
-            html`<div class="row mt-5">
+            ${this._channelConfiguration?.configuration.bot.enabled
+            ? html`<div class="row mt-5">
               <div class="col-12 col-lg-4 col-xl-3">
                 <livechat-configuration-row
                   .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
                   .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
-                  .helpPage=${"documentation/user/streamers/bot/forbidden_words"}>
+                  .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
                 </livechat-configuration-row>
               </div>
               <div class="col-12 col-lg-8 col-xl-9">
@@ -288,7 +294,7 @@ export class ChannelConfigurationElement extends LivechatElement {
                 <livechat-configuration-row
                   .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
                   .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
-                  .helpPage=${"documentation/user/streamers/bot/quotes"}>
+                  .helpPage=${'documentation/user/streamers/bot/quotes'}>
                 </livechat-configuration-row>
               </div>
               <div class="col-12 col-lg-8 col-xl-9">
@@ -312,7 +318,7 @@ export class ChannelConfigurationElement extends LivechatElement {
                 <livechat-configuration-row
                   .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
                   .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
-                  .helpPage=${"documentation/user/streamers/bot/commands"}>
+                  .helpPage=${'documentation/user/streamers/bot/commands'}>
                 </livechat-configuration-row>
               </div>
               <div class="col-12 col-lg-8 col-xl-9">
@@ -336,14 +342,14 @@ export class ChannelConfigurationElement extends LivechatElement {
             <div class="form-group mt-5">
               <input type="submit" class="peertube-button-link orange-button" value=${ptTr(LOC_SAVE)} />
             </div>
-            ${(this._formStatus && this._formStatus.success === undefined) ?
-            html`<div class="alert alert-warning" role="alert">
+            ${(this._formStatus && this._formStatus.success === undefined)
+            ? html`<div class="alert alert-warning" role="alert">
               An error occurred : ${JSON.stringify(this._formStatus)}
             </div>`
               : ''
             }
-            ${(this._formStatus && this._formStatus.success === true) ?
-            html`<div class="alert alert-success" role="alert">
+            ${(this._formStatus && this._formStatus.success === true)
+            ? html`<div class="alert alert-success" role="alert">
               Configuration has been updated
             </div>`
               : ''

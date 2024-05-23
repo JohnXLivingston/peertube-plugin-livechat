@@ -8,17 +8,16 @@ import { LivechatElement } from '../../lib/elements/livechat'
 
 @customElement('livechat-configuration-row')
 export class ConfigurationRowElement extends LivechatElement {
+  @property({ attribute: false })
+  public title: string = 'title'
 
   @property({ attribute: false })
-  public title: string = `title`
-
-  @property({ attribute: false })
-  public description: string = `Here's a description`
+  public description: string = 'Here\'s a description'
 
   @property({ attribute: false })
   public helpPage: string = 'documentation'
 
-  render() {
+  protected override render = (): unknown => {
     return html`
       <h2>${this.title}</h2>
       <p>${this.description}</p>

@@ -17,7 +17,6 @@ import { LivechatElement } from './livechat'
 
 @customElement('livechat-help-button')
 export class HelpButtonElement extends LivechatElement {
-
   @consume({ context: registerClientOptionsContext, subscribe: true })
   public registerClientOptions: RegisterClientOptions | undefined
 
@@ -30,14 +29,16 @@ export class HelpButtonElement extends LivechatElement {
   @state()
   public url: URL = new URL('https://lmddgtfy.net/')
 
-  private _asyncTaskRender = new Task(this, {
-    task: async ([registerClientOptions], {signal}) => {
-      this.url = new URL(registerClientOptions ? await localizedHelpUrl(registerClientOptions, { page: this.page }) : '')
+  private readonly _asyncTaskRender = new Task(this, {
+    task: async ([registerClientOptions]) => {
+      this.url = new URL(registerClientOptions
+        ? await localizedHelpUrl(registerClientOptions, { page: this.page })
+        : '')
     },
     args: () => [this.registerClientOptions]
-  });
+  })
 
-  render() {
+  protected override render = (): unknown => {
     return this._asyncTaskRender.render({
       complete: () => html`<a
         href="${this.url.href}"

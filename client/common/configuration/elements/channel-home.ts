@@ -6,7 +6,7 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ptTr } from '../../lib/directives/translation'
-import { Task } from '@lit/task';
+import { Task } from '@lit/task'
 import type { ChannelLiveChatInfos } from 'shared/lib/types'
 import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
@@ -16,7 +16,6 @@ import { LivechatElement } from '../../lib/elements/livechat'
 
 @customElement('livechat-channel-home')
 export class ChannelHomeElement extends LivechatElement {
-
   @provide({ context: registerClientOptionsContext })
   @property({ attribute: false })
   public registerClientOptions: RegisterClientOptions | undefined
@@ -30,26 +29,23 @@ export class ChannelHomeElement extends LivechatElement {
   @state()
   public _formStatus: boolean | any = undefined
 
-  private _asyncTaskRender = new Task(this, {
-
-    task: async ([registerClientOptions], {signal}) => {
+  private readonly _asyncTaskRender = new Task(this, {
+    task: async ([registerClientOptions]) => {
       // Getting the current username in localStorage. Don't know any cleaner way to do.
       const username = window.localStorage.getItem('username')
       if (!username) {
         throw new Error('Can\'t get the current username.')
       }
 
-      if (this.registerClientOptions) {
-        this._channelDetailsService = new ChannelDetailsService(this.registerClientOptions)
+      if (registerClientOptions) {
+        this._channelDetailsService = new ChannelDetailsService(registerClientOptions)
         this._channels = await this._channelDetailsService.fetchUserChannels(username)
       }
     },
-
     args: () => [this.registerClientOptions]
+  })
 
-  });
-
-  render = () => {
+  protected override render = (): unknown => {
     return this._asyncTaskRender.render({
       complete: () => html`
       <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-home">
@@ -64,10 +60,9 @@ export class ChannelHomeElement extends LivechatElement {
         ${this._channels?.map((channel) => html`
           <li>
             <a href="${channel.livechatConfigurationUri}">
-              ${channel.avatar ?
-                html`<img class="avatar channel" src="${channel.avatar.path}">`
-                       :
-                html`<div class="avatar channel initial gray"></div>`
+              ${channel.avatar
+                ? html`<img class="avatar channel" src="${channel.avatar.path}">`
+                       : html`<div class="avatar channel initial gray"></div>`
               }
             </a>
             <div class="peertube-plugin-livechat-configuration-home-info">
