@@ -1,22 +1,16 @@
-import { RegisterClientOptions } from '@peertube/peertube-types/client'
-import { css, html, LitElement } from 'lit'
-import { repeat } from 'lit-html/directives/repeat.js'
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import { html, LitElement } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { ptTr } from './TranslationDirective'
-import { localizedHelpUrl } from '../../../utils/help'
-import './DynamicTableFormElement'
-import './PluginConfigurationRow'
-import './HelpButtonElement'
-import { until } from 'async'
+import { ptTr } from '../directives/translation'
+import './dynamic-table-form'
+import './plugin-configuration-row'
+import './help-button'
 import { Task } from '@lit/task';
-import { ChannelConfiguration } from 'shared/lib/types'
-import { ChannelConfigurationService } from './ChannelConfigurationService'
-import { createContext, provide } from '@lit/context'
+import type { ChannelConfiguration } from 'shared/lib/types'
+import { ChannelDetailsService } from '../services/channel-details'
+import { provide } from '@lit/context'
 import { getGlobalStyleSheets } from '../../global-styles'
-
-export const registerClientOptionsContext = createContext<RegisterClientOptions | undefined>(Symbol('register-client-options'));
-export const channelConfigurationContext = createContext<ChannelConfiguration | undefined>(Symbol('channel-configuration'));
-export const channelConfigurationServiceContext = createContext<ChannelConfigurationService | undefined>(Symbol('channel-configuration-service'));
+import { channelConfigurationContext, channelDetailsServiceContext, registerClientOptionsContext } from '../contexts/channel'
 
 @customElement('channel-configuration')
 export class ChannelConfigurationElement extends LitElement {
@@ -32,8 +26,8 @@ export class ChannelConfigurationElement extends LitElement {
   @state()
   public _channelConfiguration: ChannelConfiguration | undefined
 
-  @provide({ context: channelConfigurationServiceContext })
-  private _configurationService: ChannelConfigurationService | undefined
+  @provide({ context: channelDetailsServiceContext })
+  private _channelDetailsService: ChannelDetailsService | undefined
 
   static styles = [
     ...getGlobalStyleSheets()
@@ -46,8 +40,8 @@ export class ChannelConfigurationElement extends LitElement {
 
     task: async ([registerClientOptions], {signal}) => {
       if (this.registerClientOptions) {
-        this._configurationService = new ChannelConfigurationService(this.registerClientOptions)
-        this._channelConfiguration = await this._configurationService.fetchConfiguration(this.channelId ?? 0)
+        this._channelDetailsService = new ChannelDetailsService(this.registerClientOptions)
+        this._channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
       }
     },
 
@@ -56,8 +50,8 @@ export class ChannelConfigurationElement extends LitElement {
   });
 
   private _saveConfig = () => {
-    if(this._configurationService && this._channelConfiguration) {
-      this._configurationService.saveOptions(this._channelConfiguration.channel.id, this._channelConfiguration.configuration)
+    if(this._channelDetailsService && this._channelConfiguration) {
+      this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id, this._channelConfiguration.configuration)
       .then((value) => {
         this._formStatus = { success: true }
         console.log(`Configuration has been updated`)
@@ -326,7 +320,7 @@ export class ChannelConfigurationElement extends LitElement {
               : ''
             }
           </form>
-        </div>${JSON.stringify(this._channelConfiguration)}`
+        </div>`
     })
   }
 }

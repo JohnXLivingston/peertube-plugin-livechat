@@ -2,6 +2,17 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// Not working for some reason
+// import type { ActorImage } from '@peertube/peertube-types'
+
+interface ActorImage {
+  width: number
+  path: string
+  url?: string
+  createdAt: Date | string
+  updatedAt: Date | string
+}
+
 type ConverseJSTheme = 'peertube' | 'default' | 'concord'
 
 interface InitConverseJSParams {
@@ -71,6 +82,12 @@ interface ChannelInfos {
   displayName: string
 }
 
+interface ChannelLiveChatInfos extends ChannelInfos {
+  avatar: ActorImage
+  avatars: ActorImage[]
+  livechatConfigurationUri: string
+}
+
 interface ChannelConfigurationOptions {
   bot: {
     enabled: boolean
@@ -134,6 +151,7 @@ export type {
   ProsodyListRoomsResult,
   ProsodyListRoomsResultRoom,
   ChannelInfos,
+  ChannelLiveChatInfos,
   ChannelConfigurationOptions,
   ChannelConfiguration,
   ChatIncludeMode,

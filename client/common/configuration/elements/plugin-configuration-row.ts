@@ -1,10 +1,10 @@
-import { css, html, LitElement } from 'lit'
+import { html, LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import './HelpButtonElement'
+import './help-button'
 import { getGlobalStyleSheets } from '../../global-styles'
 
 @customElement('plugin-configuration-row')
-export class PluginConfigurationRow extends LitElement {
+export class PluginConfigurationRowElement extends LitElement {
 
   @property({ attribute: false })
   public title: string = `title`

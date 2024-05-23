@@ -1,9 +1,8 @@
-import { PartInfo, PartType, directive } from 'lit/directive.js'
+import { PartInfo, directive } from 'lit/directive.js'
 import { AsyncDirective } from 'lit/async-directive.js'
 import { RegisterClientHelpers } from '@peertube/peertube-types/client';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { html } from 'lit';
-import { unsafeStatic } from 'lit/static-html.js';
 
 export class TranslationDirective extends AsyncDirective {
 
@@ -34,7 +33,7 @@ export class TranslationDirective extends AsyncDirective {
             this._translatedValue = locId
         }
 
-        this._asyncUpdateTranslation()
+        this._asyncUpdateTranslation().then(() => {}, () => {})
 
         return this._internalRender()
     }

@@ -3,8 +3,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import { renderConfigurationHome } from './templates/home'
-import './templates/ChannelConfigurationElement'
+import './elements/channel-home'
+import './elements/channel-configuration'
 import { html, render } from 'lit'
 
 /**
@@ -20,7 +20,7 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
   registerClientRoute({
     route: 'livechat/configuration',
     onMount: async ({ rootEl }) => {
-      render(await renderConfigurationHome(clientOptions), rootEl)
+      render(html`<channel-home .registerClientOptions=${clientOptions}></channel-home>`, rootEl)
     }
   })
 
