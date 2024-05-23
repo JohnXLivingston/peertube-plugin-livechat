@@ -206,7 +206,7 @@ export class DynamicTableFormElement extends LitElement {
       ${Object.entries(rowData.row).filter(([k, v]) => k != '_id')
                                    .sort(([k1,_1], [k2,_2]) => this._colOrder.indexOf(k1) - this._colOrder.indexOf(k2))
                                    .map((data) => this.renderDataCell(data, rowData._id))}
-      <td class="form-group"><button type="button" class="btn dynamic-table-remove-row" @click=${() => this._removeRow(rowData._id)}>${unsafeHTML(RemoveSVG)}</button></td>
+      <td class="form-group"><button type="button" class="peertube-button-link dynamic-table-remove-row" @click=${() => this._removeRow(rowData._id)}>${unsafeHTML(RemoveSVG)}</button></td>
     </tr>`
 
   }
@@ -215,7 +215,7 @@ export class DynamicTableFormElement extends LitElement {
     return html`<tfoot>
     <tr>
       ${Object.values(this.header).map(() => html`<td></td>`)}
-      <td><button type="button" class="btn dynamic-table-add-row" @click=${this._addRow}>${unsafeHTML(AddSVG)}</button></td>
+      <td><button type="button" class="peertube-button-link dynamic-table-add-row" @click=${this._addRow}>${unsafeHTML(AddSVG)}</button></td>
     </tr>
   </tfoot>`
   }

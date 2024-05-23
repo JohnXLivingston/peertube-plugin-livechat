@@ -340,7 +340,7 @@ export class ChannelConfigurationElement extends LitElement {
               : ''
             }
             <div class="form-group mt-5">
-              <button type="button" class="orange-button" @click=${this._saveConfig}>${ptTr(LOC_SAVE)}</button>
+              <button type="button" class="peertube-button-link orange-button" @click=${this._saveConfig}>${ptTr(LOC_SAVE)}</button>
             </div>
             ${(this._formStatus && this._formStatus.success === undefined) ?
             html`<div class="alert alert-warning" role="alert">
