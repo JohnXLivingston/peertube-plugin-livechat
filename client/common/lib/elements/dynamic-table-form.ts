@@ -115,7 +115,7 @@ export class DynamicTableFormElement extends LitElement {
       }
   `;
 
-  protected createRenderRoot = (): HTMLElement | DocumentFragment => {
+  protected createRenderRoot = () => {
     if (document.head.querySelector(`style[data-tagname="${this.tagName}"]`)) {
       return this;
     }

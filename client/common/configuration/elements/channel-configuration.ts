@@ -47,7 +47,8 @@ export class ChannelConfigurationElement extends LivechatElement {
 
   });
 
-  private _saveConfig = () => {
+  private _saveConfig = (ev?: Event) => {
+    ev?.preventDefault()
     if (this._channelDetailsService && this._channelConfiguration) {
       this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id, this._channelConfiguration.configuration)
         .then((value) => {
@@ -183,7 +184,7 @@ export class ChannelConfigurationElement extends LivechatElement {
             </livechat-help-button>
           </h1>
           <p>${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)}</p>
-          <form livechat-configuration-channel-options role="form">
+          <form livechat-configuration-channel-options role="form" @submit=${this._saveConfig}>
           <div class="row mt-3">
             <div class="row mt-5">
                 <div class="col-12 col-lg-4 col-xl-3">
@@ -339,7 +340,7 @@ export class ChannelConfigurationElement extends LivechatElement {
               : ''
             }
             <div class="form-group mt-5">
-              <button type="button" class="peertube-button-link orange-button" @click=${this._saveConfig}>${ptTr(LOC_SAVE)}</button>
+              <input type="submit" class="peertube-button-link orange-button" value=${ptTr(LOC_SAVE)} />
             </div>
             ${(this._formStatus && this._formStatus.success === undefined) ?
             html`<div class="alert alert-warning" role="alert">
