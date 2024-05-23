@@ -84,7 +84,7 @@ export class DynamicTableFormElement extends LivechatElement {
   private _lastRowId = 1
 
   @property({ attribute: false })
-  private _colOrder: string[] = []
+  private columnOrder: string[] = []
 
   // fixes situations when list has been reinitialized or changed outside of CustomElement
   private _updateLastRowId = () => {
@@ -95,9 +95,7 @@ export class DynamicTableFormElement extends LivechatElement {
 
   private _getDefaultRow = () : { [key: string]: DynamicTableAcceptedTypes } => {
     this._updateLastRowId()
-
     return Object.fromEntries([...Object.entries(this.schema).map((entry) => [entry[0], entry[1].default ?? ''])])
-
   }
 
   private _addRow = () => {
@@ -105,15 +103,17 @@ export class DynamicTableFormElement extends LivechatElement {
     this._rowsById.push({_id:this._lastRowId++, row: newRow})
     this.rows.push(newRow)
     this.requestUpdate('rows')
+    this.requestUpdate('_rowsById')
     this.dispatchEvent(new CustomEvent('update', { detail: this.rows }))
   }
 
 
   private _removeRow = (rowId: number) => {
     let rowToRemove = this._rowsById.filter(rowById => rowById._id == rowId).map(rowById => rowById.row)[0]
-    this._rowsById = this._rowsById.filter((rowById) => rowById._id !== rowId)
+    this._rowsById = this._rowsById.filter(rowById => rowById._id !== rowId)
     this.rows = this.rows.filter((row) => row !== rowToRemove)
     this.requestUpdate('rows')
+    this.requestUpdate('_rowsById')
     this.dispatchEvent(new CustomEvent('update', { detail: this.rows }))
   }
 
@@ -130,26 +130,28 @@ export class DynamicTableFormElement extends LivechatElement {
       }
     }
 
+    if (this.columnOrder.length !== Object.keys(this.header).length) {
+      this.columnOrder = this.columnOrder.filter(key => Object.keys(this.header).includes(key))
+      this.columnOrder.push(...Object.keys(this.header).filter(key => !this.columnOrder.includes(key)))
+    }
+
     return html`
-      <table class="table table-striped table-hover table-sm" id=${inputId}>
-        ${this._renderHeader()}
-        <tbody>
-          ${repeat(this._rowsById, (rowById) => rowById._id, this._renderDataRow)}
-        </tbody>
-        ${this._renderFooter()}
-      </table>
+      <div class="table-responsive">
+        <table class="table" id=${inputId}>
+          ${this._renderHeader()}
+          <tbody>
+            ${repeat(this._rowsById, (rowById) => rowById._id, this._renderDataRow)}
+          </tbody>
+          ${this._renderFooter()}
+        </table>
+      </div>
     `
   }
 
   private _renderHeader = () => {
-    if (this._colOrder.length !== Object.keys(this.header).length) {
-      this._colOrder = this._colOrder.filter(key => Object.keys(this.header).includes(key))
-      this._colOrder.push(...Object.keys(this.header).filter(key => !this._colOrder.includes(key)))
-    }
-
     return html`<thead>
       <tr>
-        ${Object.entries(this.header).sort(([k1,_1], [k2,_2]) => this._colOrder.indexOf(k1) - this._colOrder.indexOf(k2))
+        ${Object.entries(this.header).sort(([k1,_1], [k2,_2]) => this.columnOrder.indexOf(k1) - this.columnOrder.indexOf(k2))
                                      .map(([k,v]) => this._renderHeaderCell(v))}
         <th scope="col"></th>
       </tr>
@@ -166,9 +168,8 @@ export class DynamicTableFormElement extends LivechatElement {
     const inputId = `peertube-livechat-${this.formName.replace(/_/g, '-')}-row-${rowData._id}`
 
     return html`<tr id=${inputId}>
-      ${Object.entries(rowData.row).filter(([k, v]) => k != '_id')
-                                   .sort(([k1,_1], [k2,_2]) => this._colOrder.indexOf(k1) - this._colOrder.indexOf(k2))
-                                   .map((data) => this.renderDataCell(data, rowData._id))}
+      ${Object.keys(this.header).sort((k1, k2) => this.columnOrder.indexOf(k1) - this.columnOrder.indexOf(k2))
+                                     .map(k => this.renderDataCell([k, rowData.row[k] ?? this.schema[k].default], rowData._id))}
       <td class="form-group"><button type="button" class="peertube-button-link orange-button dynamic-table-remove-row" @click=${() => this._removeRow(rowData._id)}>${unsafeHTML(RemoveSVG)}</button></td>
     </tr>`
 
@@ -184,7 +185,7 @@ export class DynamicTableFormElement extends LivechatElement {
   }
 
   renderDataCell = (property: [string, DynamicTableAcceptedTypes], rowId: number) => {
-    const [propertyName, propertyValue] = property
+    let [propertyName, propertyValue] = property
     const propertySchema = this.schema[propertyName] ?? {}
 
     let formElement
@@ -192,7 +193,7 @@ export class DynamicTableFormElement extends LivechatElement {
     const inputName = `${this.formName.replace(/-/g, '_')}_${propertyName.toString().replace(/-/g, '_')}_${rowId}`
     const inputId = `peertube-livechat-${this.formName.replace(/_/g, '-')}-${propertyName.toString().replace(/_/g, '-')}-${rowId}`
 
-    switch (propertyValue.constructor) {
+    switch (propertySchema.default?.constructor) {
       case String:
         switch (propertySchema.inputType) {
           case undefined:
@@ -285,12 +286,18 @@ export class DynamicTableFormElement extends LivechatElement {
           case 'time':
           case 'url':
           case 'week':
+            if (propertyValue.constructor !== Array) {
+              propertyValue = (propertyValue) ? [propertyValue as (number | string)] : []
+            }
             formElement = this._renderInput(rowId, inputId, inputName, propertyName, propertySchema,
-              (propertyValue as Array<number | string>).join(propertySchema.separator ?? ','))
+              (propertyValue as Array<number | string>)?.join(propertySchema.separator ?? ',') ?? propertyValue ?? propertySchema.default ?? '')
             break
           case 'textarea':
+            if (propertyValue.constructor !== Array) {
+              propertyValue = (propertyValue) ? [propertyValue as (number | string)] : []
+            }
             formElement = this._renderTextarea(rowId, inputId, inputName, propertyName, propertySchema,
-              (propertyValue as Array<number | string>).join(propertySchema.separator ?? ','))
+              (propertyValue as Array<number | string>)?.join(propertySchema.separator ?? ',') ?? propertyValue ?? propertySchema.default ?? '')
             break
         }
     }
@@ -309,16 +316,16 @@ export class DynamicTableFormElement extends LivechatElement {
       name=${inputName}
       class="form-control"
       id=${inputId}
-      list=${(propertySchema?.datalist) ? inputId + '-datalist' : nothing}
-      min=${ifDefined(propertySchema?.min)}
-      max=${ifDefined(propertySchema?.max)}
-      minlength=${ifDefined(propertySchema?.minlength)}
-      maxlength=${ifDefined(propertySchema?.maxlength)}
-      @input=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
+      list=${(propertySchema.datalist) ? inputId + '-datalist' : nothing}
+      min=${ifDefined(propertySchema.min)}
+      max=${ifDefined(propertySchema.max)}
+      minlength=${ifDefined(propertySchema.minlength)}
+      maxlength=${ifDefined(propertySchema.maxlength)}
+      @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue}
     />
-    ${(propertySchema?.datalist) ? html`<datalist id=${inputId + '-datalist'}>
-      ${(propertySchema?.datalist ?? []).map((value) => html`<option value=${value} />`)}
+    ${(propertySchema.datalist) ? html`<datalist id=${inputId + '-datalist'}>
+      ${(propertySchema.datalist ?? []).map((value) => html`<option value=${value} />`)}
     </datalist>` : nothing}
     `
   }
@@ -328,11 +335,11 @@ export class DynamicTableFormElement extends LivechatElement {
       name=${inputName}
       class="form-control"
       id=${inputId}
-      min=${ifDefined(propertySchema?.min)}
-      max=${ifDefined(propertySchema?.max)}
-      minlength=${ifDefined(propertySchema?.minlength)}
-      maxlength=${ifDefined(propertySchema?.maxlength)}
-      @input=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
+      min=${ifDefined(propertySchema.min)}
+      max=${ifDefined(propertySchema.max)}
+      minlength=${ifDefined(propertySchema.minlength)}
+      maxlength=${ifDefined(propertySchema.maxlength)}
+      @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue}
     ></textarea>`
   }
@@ -343,7 +350,7 @@ export class DynamicTableFormElement extends LivechatElement {
       name=${inputName}
       class="form-check-input"
       id=${inputId}
-      @input=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
+      @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue}
       ?checked=${propertyValue}
     />`
@@ -353,10 +360,10 @@ export class DynamicTableFormElement extends LivechatElement {
     return html`<select
       class="form-select"
       aria-label="Default select example"
-      @change=${(event: InputEvent) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
+      @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
     >
-      <option ?selected=${!propertyValue}>${propertySchema?.label ?? 'Choose your option'}</option>
-      ${Object.entries(propertySchema?.options ?? {})
+      <option ?selected=${!propertyValue}>${propertySchema.label ?? 'Choose your option'}</option>
+      ${Object.entries(propertySchema.options ?? {})
         ?.map(([value, name]) =>
           html`<option ?selected=${propertyValue === value} value=${value}>${name}</option>`
         )}
@@ -365,23 +372,25 @@ export class DynamicTableFormElement extends LivechatElement {
 
 
   _updatePropertyFromValue = (event: Event, propertyName: string, propertySchema: CellDataSchema, rowId: number) => {
-    let target = event?.target as (HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement)
-    let value = (target && target instanceof HTMLInputElement && target.type == "checkbox") ? !!(target?.checked) : target?.value
+    let target = event.target as (HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement)
+    let value = (target) ? (target instanceof HTMLInputElement && target.type == "checkbox") ? !!(target.checked) : target.value : undefined
 
     if (value !== undefined) {
       for (let rowById of this._rowsById) {
         if (rowById._id === rowId) {
-          switch (rowById.row[propertyName].constructor) {
+          switch (propertySchema.default?.constructor) {
             case Array:
               rowById.row[propertyName] = (value as string).split(propertySchema.separator ?? ',')
+              break
             default:
               rowById.row[propertyName] = value
+              break
           }
 
           this.rows = this._rowsById.map(rowById => rowById.row)
 
           this.requestUpdate('rows')
-          this.requestUpdate('rowsById')
+          this.requestUpdate('_rowsById')
           this.dispatchEvent(new CustomEvent('update', { detail: this.rows }))
           return
         }

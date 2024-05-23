@@ -117,56 +117,50 @@ export class ChannelConfigurationElement extends LivechatElement {
       forbiddenWords: {
         entries: {
           inputType: 'textarea',
-          default: ['helloqwesad'],
+          default: [''],
           separator: '\n',
         },
         regex: {
-          inputType: 'text',
-          default: 'helloaxzca',
+          inputType: 'checkbox',
+          default: false,
         },
         applyToModerators: {
           inputType: 'checkbox',
-          default: true
+          default: false
         },
         label: {
           inputType: 'text',
-          default: 'helloasx'
+          default: ''
         },
         reason: {
           inputType: 'text',
-          default: 'transphobia',
-          datalist: ['Racism', 'Sexism', 'Transphobia', 'Bigotry']
+          default: '',
+          datalist: []
         },
         comments: {
           inputType: 'textarea',
-          default: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.`
+          default: ''
         },
       },
       quotes: {
         messages: {
           inputType: 'textarea',
-          default: ['default message'],
+          default: [''],
           separator: '\n',
         },
         delay: {
           inputType: 'number',
-          default: 100,
+          default: 10,
         }
       },
       commands: {
         command: {
           inputType: 'text',
-          default: 'default command',
+          default: '',
         },
         message: {
           inputType: 'text',
-          default: 'default message',
+          default: '',
         }
       }
     }
