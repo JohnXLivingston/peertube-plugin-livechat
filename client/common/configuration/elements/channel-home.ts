@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import { html, LitElement } from 'lit'
+import { html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ptTr } from '../../lib/directives/translation'
 import { Task } from '@lit/task';
