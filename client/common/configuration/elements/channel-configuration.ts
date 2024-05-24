@@ -18,17 +18,17 @@ import { LivechatElement } from '../../lib/elements/livechat'
 export class ChannelConfigurationElement extends LivechatElement {
   @provide({ context: registerClientOptionsContext })
   @property({ attribute: false })
-  public registerClientOptions: RegisterClientOptions | undefined
+  public registerClientOptions?: RegisterClientOptions
 
   @property({ attribute: false })
-  public channelId: number | undefined
+  public channelId?: number
 
   @provide({ context: channelConfigurationContext })
   @state()
-  public _channelConfiguration: ChannelConfiguration | undefined
+  public _channelConfiguration?: ChannelConfiguration
 
   @provide({ context: channelDetailsServiceContext })
-  private _channelDetailsService: ChannelDetailsService | undefined
+  private _channelDetailsService?: ChannelDetailsService
 
   @state()
   public _formStatus: boolean | any = undefined
@@ -43,19 +43,22 @@ export class ChannelConfigurationElement extends LivechatElement {
     args: () => [this.registerClientOptions]
   })
 
-  private readonly _saveConfig = (ev?: Event): void => {
-    ev?.preventDefault()
+  private readonly _saveConfig = (event?: Event): void => {
+    event?.preventDefault()
     if (this._channelDetailsService && this._channelConfiguration) {
       this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id,
         this._channelConfiguration.configuration)
         .then(() => {
           this._formStatus = { success: true }
-          console.log('Configuration has been updated')
+          this.registerClientOptions
+            ?.peertubeHelpers.notifier.info('Livechat configuration has been properly updated.')
           this.requestUpdate('_formStatus')
         })
-        .catch((error) => {
-          this._formStatus = error
-          console.log(`An error occurred : ${JSON.stringify(this._formStatus)}`)
+        .catch((error: Error) => {
+          console.error(`An error occurred. ${error.name}: ${error.message}`)
+          this.registerClientOptions
+            ?.peertubeHelpers.notifier.error(
+              `An error occurred. ${(error.name && error.message) ? `${error.name}: ${error.message}` : ''}`)
           this.requestUpdate('_formStatus')
         })
     }
@@ -342,18 +345,6 @@ export class ChannelConfigurationElement extends LivechatElement {
             <div class="form-group mt-5">
               <input type="submit" class="peertube-button-link orange-button" value=${ptTr(LOC_SAVE)} />
             </div>
-            ${(this._formStatus && this._formStatus.success === undefined)
-            ? html`<div class="alert alert-warning" role="alert">
-              An error occurred : ${JSON.stringify(this._formStatus)}
-            </div>`
-              : ''
-            }
-            ${(this._formStatus && this._formStatus.success === true)
-            ? html`<div class="alert alert-success" role="alert">
-              Configuration has been updated
-            </div>`
-              : ''
-            }
           </form>
         </div>`
     })

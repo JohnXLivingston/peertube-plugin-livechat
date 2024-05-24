@@ -18,7 +18,7 @@ import { LivechatElement } from './livechat'
 @customElement('livechat-help-button')
 export class HelpButtonElement extends LivechatElement {
   @consume({ context: registerClientOptionsContext, subscribe: true })
-  public registerClientOptions: RegisterClientOptions | undefined
+  public registerClientOptions?: RegisterClientOptions
 
   @property({ attribute: false })
   public buttonTitle: string | DirectiveResult = ptTr(LOC_ONLINE_HELP)

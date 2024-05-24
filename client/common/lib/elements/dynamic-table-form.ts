@@ -380,7 +380,7 @@ export class DynamicTableFormElement extends LivechatElement {
     />
     ${(propertySchema.datalist)
 ? html`<datalist id=${inputId + '-datalist'}>
-      ${(propertySchema.datalist ?? []).map((value) => html`<option value=${value} />`)}
+      ${(propertySchema.datalist ?? []).map((value) => html`<option value=${value}>`)}
     </datalist>`
 : nothing}
     `

@@ -18,13 +18,13 @@ import { LivechatElement } from '../../lib/elements/livechat'
 export class ChannelHomeElement extends LivechatElement {
   @provide({ context: registerClientOptionsContext })
   @property({ attribute: false })
-  public registerClientOptions: RegisterClientOptions | undefined
+  public registerClientOptions?: RegisterClientOptions
 
   @state()
-  public _channels: ChannelLiveChatInfos[] | undefined
+  public _channels?: ChannelLiveChatInfos[]
 
   @provide({ context: channelDetailsServiceContext })
-  private _channelDetailsService: ChannelDetailsService | undefined
+  private _channelDetailsService?: ChannelDetailsService
 
   @state()
   public _formStatus: boolean | any = undefined
