@@ -4,6 +4,10 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client/types'
 import { createContext } from '@lit/context'
+import { BehaviorSubject } from 'rxjs'
 
 export const registerClientOptionsContext =
   createContext<RegisterClientOptions | undefined>(Symbol('register-client-options'))
+
+export const registerClientOptionsSubject$ =
+  new BehaviorSubject<RegisterClientOptions | undefined>(undefined)
