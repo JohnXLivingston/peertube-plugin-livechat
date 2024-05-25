@@ -5,7 +5,6 @@
 root = true
 
 [**.{ts,json,js,css}]
-quote_type = single
 end_of_line = lf
 charset = utf-8
 # Please set your autosave delay to 1 second to avoid getting kicked out of the last line at each input
@@ -13,3 +12,9 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 indent_style = space
 indent_size = 2
+
+[**.{ts,js,css}]
+quote_type = single
+
+[**.json]
+quote_type = double

@@ -8,9 +8,9 @@
 		"noImplicitAny": true, // should already be true because of strict:true
 		"noImplicitThis": true, // should already be true because of strict:true
 		"noImplicitReturns": true,
+    "noImplicitOverride": true,
 		"strictBindCallApply": true, // should already be true because of strict:true
-		"noUnusedLocals": true,
-
+		"noUnusedLocals": false, // works better as a linter error/warning
 		"removeComments": true,
 		"sourceMap": true,
 

@@ -114,7 +114,7 @@ class ProsodyConfigVirtualHost extends ProsodyConfigBlock {
     this.name = name
   }
 
-  write (): string {
+  override write (): string {
     return `VirtualHost "${this.name}"\n` + super.write()
   }
 }
@@ -129,7 +129,7 @@ class ProsodyConfigComponent extends ProsodyConfigBlock {
     this.name = name
   }
 
-  write (): string {
+  override write (): string {
     if (this.type !== undefined) {
       return `Component "${this.name}" "${this.type}"\n` + super.write()
     }

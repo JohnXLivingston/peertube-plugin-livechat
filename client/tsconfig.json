@@ -12,8 +12,9 @@
     "noImplicitAny": true, // should already be true because of strict:true
     "noImplicitThis": true, // should already be true because of strict:true
     "noImplicitReturns": true,
+    "noImplicitOverride": true,
     "strictBindCallApply": true, // should already be true because of strict:true
-    "noUnusedLocals": true,
+    "noUnusedLocals": false, // works better as a linter error/warning
     "allowSyntheticDefaultImports": true, // Seems necessary for peertube types to work
     "isolatedModules": true, // Needed by esbuild https://esbuild.github.io/content-types/#isolated-modules
     "esModuleInterop": true, // Needed by esbuild https://esbuild.github.io/content-types/#es-module-interop
