@@ -37,7 +37,6 @@ export class TranslationDirective extends AsyncDirective {
       .pipe(map(registerClientOptions => registerClientOptions.peertubeHelpers))
       .subscribe((registerClientHelpers: RegisterClientHelpers) => {
         this._peertubeHelpers = registerClientHelpers
-        console.log(`we got PeertubeHelpers ! ${JSON.stringify(registerClientHelpers)}`)
         this._asyncUpdateTranslation().then(() => {}, () => {})
       })
   }
@@ -51,21 +50,17 @@ export class TranslationDirective extends AsyncDirective {
       this._translatedValue = locId
     }
 
-    console.log('rendering')
     this._asyncUpdateTranslation().then(() => {}, () => {})
 
     return this._internalRender()
   }
 
   private readonly _internalRender = (): unknown => {
-    console.log(`internalRender ${this._translatedValue}`)
     return this._allowUnsafeHTML ? html`${unsafeHTML(this._translatedValue)}` : this._translatedValue
   }
 
   private readonly _asyncUpdateTranslation = async (): Promise<true> => {
     const newValue = await this._peertubeHelpers?.translate(this._localizationId) ?? ''
-
-    console.log(`asyncUpdateTranslation ${newValue}`)
 
     if (newValue !== '' && newValue !== this._translatedValue) {
       this._translatedValue = newValue
