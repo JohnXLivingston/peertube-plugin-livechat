@@ -4,12 +4,12 @@
 
 import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { LivechatElement } from '../../lib/elements/livechat'
+import { LivechatElement } from './livechat'
 
 @customElement('livechat-configuration-row')
 export class ConfigurationRowElement extends LivechatElement {
   @property({ attribute: false })
-  public title: string = 'title'
+  public override title: string = 'title'
 
   @property({ attribute: false })
   public description: string = 'Here\'s a description'
