@@ -228,6 +228,7 @@ livechat-dynamic-table-form {
 
     td:last-child {
       vertical-align: middle;
+      min-width: 28px;
     }
 
     tbody tr:nth-child(odd) {
@@ -255,6 +256,7 @@ livechat-tags-input {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+  max-width: 320px;
 
   input {
     flex: 1;
@@ -262,6 +264,7 @@ livechat-tags-input {
     padding: var(--tag-padding-vertical) 0 0;
     color: inherit;
     background-color: inherit;
+    width: 100%;
 
     &:focus {
       outline: transparent;
@@ -273,6 +276,8 @@ livechat-tags-input {
     flex-wrap: wrap;
     padding: 0;
     margin: var(--tag-padding-vertical) 0 0;
+    max-height: 150px;
+    overflow-y: scroll;
   }
 
   .tag {
@@ -324,12 +329,6 @@ livechat-tags-input {
       border-radius: 50%;
       background: #fff;
       cursor: pointer;
-    }
-  }
-
-  @media screen and (max-width: 567px) {
-    .tags-input {
-      width: calc(100vw - 32px);
     }
   }
 }
