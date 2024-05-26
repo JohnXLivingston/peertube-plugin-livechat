@@ -4,7 +4,7 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ChannelConfiguration } from 'shared/lib/types'
-import { html } from 'lit'
+import { TemplateResult, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ptTr } from '../../lib/directives/translation'
 import { Task } from '@lit/task'
@@ -13,6 +13,8 @@ import { provide } from '@lit/context'
 import { channelConfigurationContext, channelDetailsServiceContext } from '../contexts/channel'
 import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 import { LivechatElement } from '../../lib/elements/livechat'
+import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
+import { classMap } from 'lit/directives/class-map.js'
 
 @customElement('livechat-channel-configuration')
 export class ChannelConfigurationElement extends LivechatElement {
@@ -31,7 +33,7 @@ export class ChannelConfigurationElement extends LivechatElement {
   private _channelDetailsService?: ChannelDetailsService
 
   @state()
-  public _formStatus: boolean | any = undefined
+  public _validationError?: ValidationError
 
   private readonly _asyncTaskRender = new Task(this, {
     task: async ([registerClientOptions]) => {
@@ -49,18 +51,48 @@ export class ChannelConfigurationElement extends LivechatElement {
       this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id,
         this._channelConfiguration.configuration)
         .then(() => {
-          this._formStatus = { success: true }
+          this._validationError = undefined
           this.registerClientOptions
             ?.peertubeHelpers.notifier.info('Livechat configuration has been properly updated.')
-          this.requestUpdate('_formStatus')
+          this.requestUpdate('_validationError')
         })
-        .catch((error: Error) => {
-          console.error(`An error occurred. ${error.name}: ${error.message}`)
+        .catch((error: ValidationError) => {
+          this._validationError = error
+          console.warn(`A validation error occurred in saving configuration. ${error.name}: ${error.message}`)
           this.registerClientOptions
             ?.peertubeHelpers.notifier.error(
-              `An error occurred. ${(error.name && error.message) ? `${error.name}: ${error.message}` : ''}`)
-          this.requestUpdate('_formStatus')
+              `An error occurred. ${(error.message) ? `${error.message}` : ''}`)
+          this.requestUpdate('_validationError')
         })
+    }
+  }
+
+  private readonly _getInputValidationClass = (propertyName: string): { [key: string]: boolean } => {
+    const validationErrorTypes: ValidationErrorType[] | undefined =
+      this._validationError?.properties[`${propertyName}`]
+    return validationErrorTypes ? (validationErrorTypes.length ? { 'is-invalid': true } : { 'is-valid': true }) : {}
+  }
+
+  private readonly _renderFeedback = (feedbackId: string,
+    propertyName: string): TemplateResult | typeof nothing => {
+    const errorMessages: TemplateResult[] = []
+    const validationErrorTypes: ValidationErrorType[] | undefined =
+      this._validationError?.properties[`${propertyName}`] ?? undefined
+
+    if (validationErrorTypes && validationErrorTypes.length !== 0) {
+      if (validationErrorTypes.includes(ValidationErrorType.WrongType)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_WRONG_TYPE)}`)
+      }
+      if (validationErrorTypes.includes(ValidationErrorType.WrongFormat)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_WRONG_FORMAT)}`)
+      }
+      if (validationErrorTypes.includes(ValidationErrorType.NotInRange)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_NOT_IN_RANGE)}`)
+      }
+
+      return html`<div id=${feedbackId} class="invalid-feedback">${errorMessages}</div>`
+    } else {
+      return nothing
     }
   }
 
@@ -116,8 +148,8 @@ export class ChannelConfigurationElement extends LivechatElement {
     const tableSchema = {
       forbiddenWords: {
         entries: {
-          inputType: 'textarea',
-          default: [''],
+          inputType: 'tags',
+          default: [],
           separator: '\n'
         },
         regex: {
@@ -144,9 +176,9 @@ export class ChannelConfigurationElement extends LivechatElement {
       },
       quotes: {
         messages: {
-          inputType: 'textarea',
-          default: [''],
-          separator: '\n'
+          inputType: 'tags',
+          default: [],
+          separators: ['\n', '\t', ';']
         },
         delay: {
           inputType: 'number',
@@ -194,11 +226,12 @@ export class ChannelConfigurationElement extends LivechatElement {
                   <label>
                     <input
                       type="number"
-                      name="slow_mode_duration"
-                      class="form-control"
+                      name="slowmode_duration"
+                      class="form-control ${classMap(this._getInputValidationClass('slowMode.duration'))}"
                       min="0"
                       max="1000"
-                      id="peertube-livechat-slow-mode-duration"
+                      id="peertube-livechat-slowmode-duration"
+                      aria-describedby="peertube-livechat-slowmode-duration-feedback"
                       @input=${(event: InputEvent) => {
                           if (event?.target && this._channelConfiguration) {
                             this._channelConfiguration.configuration.slowMode.duration =
@@ -210,6 +243,7 @@ export class ChannelConfigurationElement extends LivechatElement {
                       value="${this._channelConfiguration?.configuration.slowMode.duration}"
                     />
                   </label>
+                  ${this._renderFeedback('peertube-livechat-slowmode-duration-feedback', 'slowMode.duration')}
                 </div>
               </div>
             </div>
@@ -244,14 +278,15 @@ export class ChannelConfigurationElement extends LivechatElement {
                 </div>
                 ${this._channelConfiguration?.configuration.bot.enabled
                 ? html`<div class="form-group">
-                  <labelfor="peertube-livechat-bot-nickname">
+                  <label for="peertube-livechat-bot-nickname">
                     ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)}
                   </label>
                   <input
                     type="text"
                     name="bot_nickname"
-                    class="form-control"
+                    class="form-control ${classMap(this._getInputValidationClass('bot.nickname'))}"
                     id="peertube-livechat-bot-nickname"
+                    aria-describedby="peertube-livechat-bot-nickname-feedback"
                     @input=${(event: InputEvent) => {
                         if (event?.target && this._channelConfiguration) {
                           this._channelConfiguration.configuration.bot.nickname =
@@ -262,6 +297,7 @@ export class ChannelConfigurationElement extends LivechatElement {
                     }
                     value="${this._channelConfiguration?.configuration.bot.nickname}"
                   />
+                  ${this._renderFeedback('peertube-livechat-bot-nickname-feedback', 'bot.nickname')}
                 </div>`
                 : ''
               }
@@ -278,18 +314,20 @@ export class ChannelConfigurationElement extends LivechatElement {
               </div>
               <div class="col-12 col-lg-8 col-xl-9">
                 <livechat-dynamic-table-form
-                    .header=${tableHeaderList.forbiddenWords}
-                    .schema=${tableSchema.forbiddenWords}
-                    .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
-                    @update=${(e: CustomEvent) => {
-                        if (this._channelConfiguration) {
-                          this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
-                          this.requestUpdate('_channelConfiguration')
-                        }
+                  .header=${tableHeaderList.forbiddenWords}
+                  .schema=${tableSchema.forbiddenWords}
+                  .validation=${this._validationError?.properties}
+                  .validationPrefix=${'bot.forbiddenWords'}
+                  .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
+                  @update=${(e: CustomEvent) => {
+                      if (this._channelConfiguration) {
+                        this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
+                        this.requestUpdate('_channelConfiguration')
                       }
                     }
-                    .formName=${'forbidden-words'}>
-                  </livechat-dynamic-table-form>
+                  }
+                  .formName=${'forbidden-words'}>
+                </livechat-dynamic-table-form>
               </div>
             </div>
             <div class="row mt-5">
@@ -304,6 +342,8 @@ export class ChannelConfigurationElement extends LivechatElement {
                 <livechat-dynamic-table-form
                   .header=${tableHeaderList.quotes}
                   .schema=${tableSchema.quotes}
+                  .validation=${this._validationError?.properties}
+                  .validationPrefix=${'bot.quotes'}
                   .rows=${this._channelConfiguration?.configuration.bot.quotes}
                   @update=${(e: CustomEvent) => {
                       if (this._channelConfiguration) {
@@ -328,6 +368,8 @@ export class ChannelConfigurationElement extends LivechatElement {
                 <livechat-dynamic-table-form
                   .header=${tableHeaderList.commands}
                   .schema=${tableSchema.commands}
+                  .validation=${this._validationError?.properties}
+                  .validationPrefix=${'bot.commands'}
                   .rows=${this._channelConfiguration?.configuration.bot.commands}
                   @update=${(e: CustomEvent) => {
                       if (this._channelConfiguration) {

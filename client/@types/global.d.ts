@@ -82,6 +82,9 @@ declare const LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME: string
 declare const LOC_LIVECHAT_CONFIGURATION_CHANNEL_FOR_MORE_INFO: string
 
 declare const LOC_INVALID_VALUE: string
+declare const LOC_INVALID_VALUE_WRONG_TYPE: string
+declare const LOC_INVALID_VALUE_WRONG_FORMAT: string
+declare const LOC_INVALID_VALUE_NOT_IN_RANGE: string
 declare const LOC_CHATROOM_NOT_ACCESSIBLE: string
 
 declare const LOC_PROMOTE: string

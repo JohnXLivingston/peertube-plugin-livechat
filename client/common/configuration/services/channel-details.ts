@@ -3,7 +3,9 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import { ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions } from 'shared/lib/types'
+import type { ValidationError } from '../../lib/models/validation'
+import type { ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions } from 'shared/lib/types'
+import { ValidationErrorType } from '../../lib/models/validation'
 import { getBaseRoute } from '../../../utils/uri'
 
 export class ChannelDetailsService {
@@ -19,7 +21,73 @@ export class ChannelDetailsService {
   }
 
   validateOptions = (channelConfigurationOptions: ChannelConfigurationOptions): boolean => {
-    return !!channelConfigurationOptions
+    let hasErrors = false
+    const validationError: ValidationError = {
+      name: 'ChannelConfigurationOptionsValidationError',
+      message: 'There was an error during validation',
+      properties: {}
+    }
+    const botConf = channelConfigurationOptions.bot
+    const slowModeDuration = channelConfigurationOptions.slowMode.duration
+
+    validationError.properties['slowMode.duration'] = []
+
+    if (
+      (typeof slowModeDuration !== 'number') ||
+      isNaN(slowModeDuration)) {
+      validationError.properties['slowMode.duration'].push(ValidationErrorType.WrongType)
+      hasErrors = true
+    } else if (
+      slowModeDuration < 0 ||
+      slowModeDuration > 1000
+    ) {
+      validationError.properties['slowMode.duration'].push(ValidationErrorType.NotInRange)
+      hasErrors = true
+    }
+
+    // If !bot.enabled, we don't have to validate these fields:
+    // The backend will ignore those values.
+    if (botConf.enabled) {
+      validationError.properties['bot.nickname'] = []
+
+      if (/[^\p{L}\p{N}\p{Z}_-]/u.test(botConf.nickname ?? '')) {
+        validationError.properties['bot.nickname'].push(ValidationErrorType.WrongFormat)
+        hasErrors = true
+      }
+
+      for (const [i, fw] of botConf.forbiddenWords.entries()) {
+        for (const v of fw.entries) {
+          validationError.properties[`bot.forbiddenWords.${i}.entries`] = []
+          if (fw.regexp) {
+            if (v.trim() !== '') {
+              try {
+                const test = new RegExp(v)
+                test.test(v)
+              } catch (_) {
+                validationError.properties[`bot.forbiddenWords.${i}.entries`]
+                  .push(ValidationErrorType.WrongFormat)
+                hasErrors = true
+              }
+            }
+          }
+        }
+      }
+
+      for (const [i, cd] of botConf.commands.entries()) {
+        validationError.properties[`bot.commands.${i}.command`] = []
+
+        if (/\s+/.test(cd.command)) {
+          validationError.properties[`bot.commands.${i}.command`].push(ValidationErrorType.WrongFormat)
+          hasErrors = true
+        }
+      }
+    }
+
+    if (hasErrors) {
+      throw validationError
+    }
+
+    return true
   }
 
   saveOptions = async (channelId: number,

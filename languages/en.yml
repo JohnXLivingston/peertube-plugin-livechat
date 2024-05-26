@@ -435,6 +435,9 @@ livechat_configuration_channel_banned_jids_label: "Banned users and patterns"
 livechat_configuration_channel_bot_nickname: "Bot nickname"
 
 invalid_value: "Invalid value."
+invalid_value_wrong_type: "Value is of the wrong type."
+invalid_value_wrong_format: "Value is in the wrong format."
+invalid_value_not_in_range: "Value is not in authorized range."
 
 slow_mode_info: "Slow mode is enabled, users can send a message every %1$s seconds."
 

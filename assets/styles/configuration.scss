@@ -247,3 +247,89 @@ livechat-dynamic-table-form {
     background-color: var(--bs-orange);
   }
 }
+
+livechat-tags-input {
+  --tag-padding-vertical: 3px;
+  --tag-padding-horizontal: 6px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  input {
+    flex: 1;
+    border: none;
+    padding: var(--tag-padding-vertical) 0 0;
+    color: inherit;
+    background-color: inherit;
+
+    &:focus {
+      outline: transparent;
+    }
+  }
+
+  #tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: var(--tag-padding-vertical) 0 0;
+  }
+
+  .tag {
+    width: auto;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0 var(--tag-padding-horizontal);
+    font-size: 14px;
+    list-style: none;
+    border-radius: 3px;
+    margin: 0 3px 3px 0;
+    background: var(--bs-orange);
+
+    &,
+    &:active,
+    &:focus {
+      color: #fff;
+      background-color: var(--mainColor);
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: var(--mainHoverColor);
+    }
+
+    &[disabled],
+    &.disabled {
+      cursor: default;
+      color: #fff;
+      background-color: var(--inputBorderColor);
+    }
+
+    .tag-name {
+      margin-top: 3px;
+    }
+
+    .tag-close {
+      display: block;
+      width: 12px;
+      height: 12px;
+      line-height: 10px;
+      text-align: center;
+      font-size: 14px;
+      margin-left: var(--tag-padding-horizontal);
+      color: var(--bs-orange);
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 567px) {
+    .tags-input {
+      width: calc(100vw - 32px);
+    }
+  }
+}

@@ -3,7 +3,7 @@
     "experimentalDecorators": true,
     "module": "es6",
     "moduleResolution": "node",
-    "target": "es5",
+    "target": "es6",
     "allowJs": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,

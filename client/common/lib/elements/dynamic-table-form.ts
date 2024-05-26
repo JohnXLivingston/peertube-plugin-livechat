@@ -4,12 +4,16 @@
 
 /* eslint no-fallthrough: "off" */
 
+import type { TagsInputElement } from './tags-input'
+import { ValidationErrorType } from '../models/validation'
 import { html, nothing, TemplateResult } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
+import { classMap } from 'lit/directives/class-map.js'
 import { LivechatElement } from './livechat'
+import { ptTr } from '../directives/translation'
 
 // This content comes from the file assets/images/plus-square.svg, from the Feather icons set https://feathericons.com/
 const AddSVG: string =
@@ -50,6 +54,7 @@ type DynamicTableAcceptedInputTypes = 'textarea'
 | 'time'
 | 'url'
 | 'week'
+| 'tags'
 
 interface CellDataSchema {
   min?: number
@@ -57,12 +62,18 @@ interface CellDataSchema {
   minlength?: number
   maxlength?: number
   size?: number
-  label?: string
+  label?: TemplateResult | string
   options?: { [key: string]: string }
   datalist?: DynamicTableAcceptedTypes[]
-  separator?: string
+  separators?: string[]
   inputType?: DynamicTableAcceptedInputTypes
   default?: DynamicTableAcceptedTypes
+}
+
+interface DynamicTableRowData {
+  _id: number
+  _originalIndex: number
+  row: { [key: string]: DynamicTableAcceptedTypes }
 }
 
 @customElement('livechat-dynamic-table-form')
@@ -73,11 +84,17 @@ export class DynamicTableFormElement extends LivechatElement {
   @property({ attribute: false })
   public schema: { [key: string]: CellDataSchema } = {}
 
+  @property()
+  public validation?: {[key: string]: ValidationErrorType[] }
+
+  @property({ attribute: false })
+  public validationPrefix: string = ''
+
   @property({ attribute: false })
   public rows: Array<{ [key: string]: DynamicTableAcceptedTypes }> = []
 
   @state()
-  public _rowsById: Array<{ _id: number, row: { [key: string]: DynamicTableAcceptedTypes } }> = []
+  public _rowsById: DynamicTableRowData[] = []
 
   @property({ attribute: false })
   public formName: string = ''
@@ -102,7 +119,8 @@ export class DynamicTableFormElement extends LivechatElement {
 
   private readonly _addRow = (): void => {
     const newRow = this._getDefaultRow()
-    this._rowsById.push({ _id: this._lastRowId++, row: newRow })
+    // Create row and assign id and original index
+    this._rowsById.push({ _id: this._lastRowId++, _originalIndex: this.rows.length, row: newRow })
     this.rows.push(newRow)
     this.requestUpdate('rows')
     this.requestUpdate('_rowsById')
@@ -123,11 +141,17 @@ export class DynamicTableFormElement extends LivechatElement {
 
     this._updateLastRowId()
 
+    // Filter removed rows
     this._rowsById.filter(rowById => this.rows.includes(rowById.row))
 
-    for (const row of this.rows) {
-      if (this._rowsById.filter(rowById => rowById.row === row).length === 0) {
-        this._rowsById.push({ _id: this._lastRowId++, row })
+    for (let i = 0; i < this.rows.length; i++) {
+      if (this._rowsById.filter(rowById => rowById.row === this.rows[i]).length === 0) {
+        // Add row and assign id
+        this._rowsById.push({ _id: this._lastRowId++, _originalIndex: i, row: this.rows[i] })
+      } else {
+        // Update index in case it changed
+        this._rowsById.filter(rowById => rowById.row === this.rows[i])
+          .forEach((value) => { value._originalIndex = i })
       }
     }
 
@@ -169,14 +193,16 @@ export class DynamicTableFormElement extends LivechatElement {
     </th>`
   }
 
-  private readonly _renderDataRow = (rowData: { _id: number
-    row: {[key: string]: DynamicTableAcceptedTypes} }): TemplateResult => {
+  private readonly _renderDataRow = (rowData: DynamicTableRowData): TemplateResult => {
     const inputId = `peertube-livechat-${this.formName.replace(/_/g, '-')}-row-${rowData._id}`
 
     return html`<tr id=${inputId}>
       ${Object.keys(this.header)
               .sort((k1, k2) => this.columnOrder.indexOf(k1) - this.columnOrder.indexOf(k2))
-              .map(k => this.renderDataCell([k, rowData.row[k] ?? this.schema[k].default], rowData._id))}
+              .map(key => this.renderDataCell(key,
+              rowData.row[key] ?? this.schema[key].default,
+              rowData._id,
+              rowData._originalIndex))}
       <td class="form-group">
         <button type="button"
         class="peertube-button-link orange-button dynamic-table-remove-row"
@@ -202,8 +228,10 @@ export class DynamicTableFormElement extends LivechatElement {
   </tfoot>`
   }
 
-  renderDataCell = (property: [string, DynamicTableAcceptedTypes], rowId: number): TemplateResult => {
-    let [propertyName, propertyValue] = property
+  renderDataCell = (propertyName: string,
+    propertyValue: DynamicTableAcceptedTypes,
+    rowId: number,
+    originalIndex: number): TemplateResult => {
     const propertySchema = this.schema[propertyName] ?? {}
 
     let formElement
@@ -211,6 +239,8 @@ export class DynamicTableFormElement extends LivechatElement {
     const inputName = `${this.formName.replace(/-/g, '_')}_${propertyName.toString().replace(/-/g, '_')}_${rowId}`
     const inputId =
       `peertube-livechat-${this.formName.replace(/_/g, '-')}-${propertyName.toString().replace(/_/g, '-')}-${rowId}`
+
+    const feedback = this._renderFeedback(inputId, propertyName, originalIndex)
 
     switch (propertySchema.default?.constructor) {
       case String:
@@ -234,30 +264,39 @@ export class DynamicTableFormElement extends LivechatElement {
           case 'time':
           case 'url':
           case 'week':
-            formElement = this._renderInput(rowId,
+            formElement = html`${this._renderInput(rowId,
               inputId,
               inputName,
               propertyName,
               propertySchema,
-              propertyValue as string)
+              propertyValue as string,
+              originalIndex)}
+              ${feedback}
+              `
             break
 
           case 'textarea':
-            formElement = this._renderTextarea(rowId,
+            formElement = html`${this._renderTextarea(rowId,
               inputId,
               inputName,
               propertyName,
               propertySchema,
-              propertyValue as string)
+              propertyValue as string,
+              originalIndex)}
+              ${feedback}
+              `
             break
 
           case 'select':
-            formElement = this._renderSelect(rowId,
+            formElement = html`${this._renderSelect(rowId,
               inputId,
               inputName,
               propertyName,
               propertySchema,
-              propertyValue as string)
+              propertyValue as string,
+              originalIndex)}
+              ${feedback}
+              `
             break
         }
         break
@@ -271,12 +310,15 @@ export class DynamicTableFormElement extends LivechatElement {
           case 'datetime':
           case 'datetime-local':
           case 'time':
-            formElement = this._renderInput(rowId,
+            formElement = html`${this._renderInput(rowId,
               inputId,
               inputName,
               propertyName,
               propertySchema,
-              (propertyValue as Date).toISOString())
+              (propertyValue as Date).toISOString(),
+              originalIndex)}
+              ${feedback}
+              `
             break
         }
         break
@@ -288,12 +330,15 @@ export class DynamicTableFormElement extends LivechatElement {
 
           case 'number':
           case 'range':
-            formElement = this._renderInput(rowId,
+            formElement = html`${this._renderInput(rowId,
               inputId,
               inputName,
               propertyName,
               propertySchema,
-              propertyValue as string)
+              propertyValue as string,
+              originalIndex)}
+              ${feedback}
+              `
             break
         }
         break
@@ -304,12 +349,15 @@ export class DynamicTableFormElement extends LivechatElement {
             propertySchema.inputType = 'checkbox'
 
           case 'checkbox':
-            formElement = this._renderCheckbox(rowId,
+            formElement = html`${this._renderCheckbox(rowId,
               inputId,
               inputName,
               propertyName,
               propertySchema,
-              propertyValue as boolean)
+              propertyValue as boolean,
+              originalIndex)}
+              ${feedback}
+              `
             break
         }
         break
@@ -338,15 +386,45 @@ export class DynamicTableFormElement extends LivechatElement {
             if (propertyValue.constructor !== Array) {
               propertyValue = (propertyValue) ? [propertyValue as (number | string)] : []
             }
-            formElement = this._renderInput(rowId, inputId, inputName, propertyName, propertySchema,
-              (propertyValue)?.join(propertySchema.separator ?? ',') ?? propertyValue ?? propertySchema.default ?? '')
+            formElement = html`${this._renderInput(rowId,
+              inputId,
+              inputName,
+              propertyName,
+              propertySchema,
+              (propertyValue)?.join(propertySchema.separators?.[0] ?? ',') ??
+                propertyValue ?? propertySchema.default ?? '',
+              originalIndex)}
+              ${feedback}
+              `
             break
           case 'textarea':
             if (propertyValue.constructor !== Array) {
               propertyValue = (propertyValue) ? [propertyValue as (number | string)] : []
             }
-            formElement = this._renderTextarea(rowId, inputId, inputName, propertyName, propertySchema,
-              (propertyValue)?.join(propertySchema.separator ?? ',') ?? propertyValue ?? propertySchema.default ?? '')
+            formElement = html`${this._renderTextarea(rowId,
+              inputId,
+              inputName,
+              propertyName,
+              propertySchema,
+              (propertyValue)?.join(propertySchema.separators?.[0] ?? ',') ??
+                propertyValue ?? propertySchema.default ?? '',
+              originalIndex)}
+              ${feedback}
+              `
+            break
+          case 'tags':
+            if (propertyValue.constructor !== Array) {
+              propertyValue = (propertyValue) ? [propertyValue as (number | string)] : []
+            }
+            formElement = html`${this._renderTagsInput(rowId,
+              inputId,
+              inputName,
+              propertyName,
+              propertySchema,
+              propertyValue,
+              originalIndex)}
+              ${feedback}
+              `
             break
         }
     }
@@ -364,12 +442,14 @@ export class DynamicTableFormElement extends LivechatElement {
     inputName: string,
     propertyName: string,
     propertySchema: CellDataSchema,
-    propertyValue: string): TemplateResult => {
+    propertyValue: string,
+    originalIndex: number): TemplateResult => {
     return html`<input
       type=${propertySchema.inputType}
       name=${inputName}
-      class="form-control"
+      class="form-control ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
       id=${inputId}
+      aria-describedby="${inputId}-feedback"
       list=${(propertySchema.datalist) ? inputId + '-datalist' : nothing}
       min=${ifDefined(propertySchema.min)}
       max=${ifDefined(propertySchema.max)}
@@ -382,8 +462,31 @@ export class DynamicTableFormElement extends LivechatElement {
 ? html`<datalist id=${inputId + '-datalist'}>
       ${(propertySchema.datalist ?? []).map((value) => html`<option value=${value}>`)}
     </datalist>`
-: nothing}
-    `
+: nothing}`
+  }
+
+  _renderTagsInput = (rowId: number,
+    inputId: string,
+    inputName: string,
+    propertyName: string,
+    propertySchema: CellDataSchema,
+    propertyValue: Array<string | number>,
+    originalIndex: number): TemplateResult => {
+    return html`<livechat-tags-input
+      .type=${'text'}
+      .name=${inputName}
+      class="form-control ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      id=${inputId}
+      .inputPlaceholder=${ifDefined(propertySchema.label)}
+      aria-describedby="${inputId}-feedback"
+      .min=${ifDefined(propertySchema.min)}
+      .max=${ifDefined(propertySchema.max)}
+      .minlength=${ifDefined(propertySchema.minlength)}
+      .maxlength=${ifDefined(propertySchema.maxlength)}
+      .datalist=${ifDefined(propertySchema.datalist)}
+      .separators=${ifDefined(propertySchema.separators)}
+      @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
+      .value=${propertyValue}></livechat-tags-input>`
   }
 
   _renderTextarea = (rowId: number,
@@ -391,18 +494,19 @@ export class DynamicTableFormElement extends LivechatElement {
     inputName: string,
     propertyName: string,
     propertySchema: CellDataSchema,
-    propertyValue: string): TemplateResult => {
+    propertyValue: string,
+    originalIndex: number): TemplateResult => {
     return html`<textarea
       name=${inputName}
-      class="form-control"
+      class="form-control ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
       id=${inputId}
+      aria-describedby="${inputId}-feedback"
       min=${ifDefined(propertySchema.min)}
       max=${ifDefined(propertySchema.max)}
       minlength=${ifDefined(propertySchema.minlength)}
       maxlength=${ifDefined(propertySchema.maxlength)}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
-      .value=${propertyValue}
-    ></textarea>`
+      .value=${propertyValue}></textarea>`
   }
 
   _renderCheckbox = (rowId: number,
@@ -410,16 +514,17 @@ export class DynamicTableFormElement extends LivechatElement {
     inputName: string,
     propertyName: string,
     propertySchema: CellDataSchema,
-    propertyValue: boolean): TemplateResult => {
+    propertyValue: boolean,
+    originalIndex: number): TemplateResult => {
     return html`<input
       type="checkbox"
       name=${inputName}
-      class="form-check-input"
+      class="form-check-input ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
       id=${inputId}
+      aria-describedby="${inputId}-feedback"
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue}
-      ?checked=${propertyValue}
-    />`
+      ?checked=${propertyValue} />`
   }
 
   _renderSelect = (rowId: number,
@@ -427,10 +532,13 @@ export class DynamicTableFormElement extends LivechatElement {
     inputName: string,
     propertyName: string,
     propertySchema: CellDataSchema,
-    propertyValue: string): TemplateResult => {
+    propertyValue: string,
+    originalIndex: number): TemplateResult => {
     return html`<select
-      class="form-select"
-      aria-label="Default select example"
+      class="form-select ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      id=${inputId}
+      aria-describedby="${inputId}-feedback"
+      aria-label=${inputName}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
     >
       <option ?selected=${!propertyValue}>${propertySchema.label ?? 'Choose your option'}</option>
@@ -441,23 +549,64 @@ export class DynamicTableFormElement extends LivechatElement {
     </select>`
   }
 
+  _getInputValidationClass = (propertyName: string,
+    originalIndex: number): { [key: string]: boolean } => {
+    const validationErrorTypes: ValidationErrorType[] | undefined =
+      this.validation?.[`${this.validationPrefix}.${originalIndex}.${propertyName}`]
+
+    return validationErrorTypes !== undefined
+      ? (validationErrorTypes.length ? { 'is-invalid': true } : { 'is-valid': true })
+      : {}
+  }
+
+  _renderFeedback = (inputId: string,
+    propertyName: string,
+    originalIndex: number): TemplateResult | typeof nothing => {
+    const errorMessages: TemplateResult[] = []
+    const validationErrorTypes: ValidationErrorType[] | undefined =
+      this.validation?.[`${this.validationPrefix}.${originalIndex}.${propertyName}`]
+
+    if (validationErrorTypes !== undefined && validationErrorTypes.length !== 0) {
+      if (validationErrorTypes.includes(ValidationErrorType.WrongType)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_WRONG_TYPE)}`)
+      }
+      if (validationErrorTypes.includes(ValidationErrorType.WrongFormat)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_WRONG_FORMAT)}`)
+      }
+      if (validationErrorTypes.includes(ValidationErrorType.NotInRange)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_NOT_IN_RANGE)}`)
+      }
+
+      return html`<div id="${inputId}-feedback" class="invalid-feedback">${errorMessages}</div>`
+    } else {
+      return nothing
+    }
+  }
+
   _updatePropertyFromValue = (event: Event,
     propertyName: string,
     propertySchema: CellDataSchema,
     rowId: number): void => {
-    const target = event.target as (HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement)
+    const target = event.target as (TagsInputElement | HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement)
     const value = (target)
       ? (target instanceof HTMLInputElement && target.type === 'checkbox')
           ? !!(target.checked)
           : target.value
       : undefined
 
+    console.log(`value: ${JSON.stringify(value)}`)
+
     if (value !== undefined) {
       for (const rowById of this._rowsById) {
         if (rowById._id === rowId) {
           switch (propertySchema.default?.constructor) {
             case Array:
-              rowById.row[propertyName] = (value as string).split(propertySchema.separator ?? ',')
+              if (value.constructor === Array) {
+                rowById.row[propertyName] = value
+              } else {
+                rowById.row[propertyName] = (value as string)
+                  .split(new RegExp(`/[${propertySchema.separators?.join('') ?? ''}]+/`))
+              }
               break
             default:
               rowById.row[propertyName] = value

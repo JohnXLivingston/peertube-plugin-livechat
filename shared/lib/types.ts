@@ -92,27 +92,33 @@ interface ChannelConfigurationOptions {
   bot: {
     enabled: boolean
     nickname?: string
-    forbiddenWords: Array<{
-      entries: string[]
-      regexp?: boolean
-      applyToModerators?: boolean
-      label?: string
-      reason?: string
-      comments?: string
-    }>
-    quotes: Array<{
-      messages: string[]
-      delay: number
-    }>
-    commands: Array<{
-      command: string
-      message: string
-    }>
+    forbiddenWords: ChannelForbiddenWords[]
+    quotes: ChannelQuotes[]
+    commands: ChannelCommands[]
     // TODO: bannedJIDs: string[]
   }
   slowMode: {
     duration: number
   }
+}
+
+interface ChannelForbiddenWords {
+  entries: string[]
+  regexp?: boolean
+  applyToModerators?: boolean
+  label?: string
+  reason?: string
+  comments?: string
+}
+
+interface ChannelQuotes {
+  messages: string[]
+  delay: number
+}
+
+interface ChannelCommands {
+  command: string
+  message: string
 }
 
 interface ChannelConfiguration {

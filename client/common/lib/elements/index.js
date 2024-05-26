@@ -6,3 +6,4 @@
 import './help-button'
 import './dynamic-table-form'
 import './configuration-row'
+import './tags-input'
