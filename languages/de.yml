@@ -446,3 +446,12 @@ task_list_pick_message: "Sobald Sie eine Aufgabenliste ausgewählt haben, wird e
   über das obere Menü.\nWeitere Informationen finden Sie in der Dokumentation des
   Livechat-Plugins.\n"
 promote: Moderator werden
+prosody_c2s_interfaces_label: Client zu Server Netzwerkschnittstellen
+prosody_c2s_interfaces_description: "Die Netzwerkschnittstellen, die für Client-Server-Verbindungen
+  überwacht werden sollen.<br>\nDiese Einstellung ist für fortgeschrittene Benutzer
+  gedacht. Ändern Sie diese Einstellung nicht, wenn Sie nicht genau wissen, was sie
+  bedeutet.<br>\nListe der zu überwachenden IPs, durch Kommata getrennt (Leerzeichen
+  werden entfernt).<br>\nSie können \"*\" verwenden, um auf allen IPv4-Schnittstellen
+  zu lauschen, und \"::\" für alle IPv6-Schnittstellen.<br>\nBeispiele:\n<ul>\n  <li>*,
+  ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>127.0.0.1, ::1, 172.18.0.42</li>\n\
+  </ul>\n"
