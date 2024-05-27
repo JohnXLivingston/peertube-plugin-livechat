@@ -20,3 +20,11 @@ License: AGPL-3.0-only
 Files: support/documentation/content/en/*
 Copyright: 2024 John Livingston <https://www.john-livingston.fr/>
 License: AGPL-3.0-only
+
+Files: .github/ISSUE_TEMPLATE/*
+Copyright: 2024 John Livingston <https://www.john-livingston.fr/>
+License: AGPL-3.0-only
+
+Files: .github/PULL_REQUEST_TEMPLATE.md
+Copyright: 2024 John Livingston <https://www.john-livingston.fr/>
+License: AGPL-3.0-only
