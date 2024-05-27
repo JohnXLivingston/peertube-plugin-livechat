@@ -8,8 +8,8 @@ read_only: In sola lettura
 show_scrollbarr: Mostra la barra di scorrimento
 transparent_background: Sfondo trasparente (per l'integrazione delle dirette con OBS,
   ad esempio)
-tips_for_streamers: "Suggerimenti per gli streamer: per aggiungere la chat al proprio\
-  \ OBS, genera un link della chat in sola lettura e usalo in quanto fonte “browser”."
+tips_for_streamers: "Suggerimenti per gli streamer: per aggiungere la chat al proprio
+  OBS, genera un link della chat in sola lettura e usalo in quanto fonte “browser”."
 copy: Copia
 link_copied: Link copiato
 error: Errore
@@ -41,32 +41,32 @@ list_rooms_label: "Elenco delle chat room esistenti"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Elenca le chat room</a>
 
-federation_description: "<h3>Federazione</h3>\nLe impostazioni seguenti riguardano\
-  \ la federazione con altre istanze Peertube,\ne altri software del fediverso.\n"
+federation_description: "<h3>Federazione</h3>\nLe impostazioni seguenti riguardano
+  la federazione con altre istanze Peertube,\ne altri software del fediverso.\n"
 
 federation_no_remote_chat_label: Non visualizzare le chat remote
-federation_no_remote_chat_description: "Selezionando questa impostazione la vostra\
-  \ istanza non visualizzerà mai chat da video remoti.\n"
+federation_no_remote_chat_description: "Selezionando questa impostazione la vostra
+  istanza non visualizzerà mai chat da video remoti.\n"
 
 federation_dont_publish_remotely_label: Non pubblicare le informazioni sulla chat
-federation_dont_publish_remotely_description: "Selezionando questo parametro, la vostra\
-  \ istanza non pubblicherà le informazioni della chat sul fediverso.\nLe istanze\
-  \ Peertube remote non sapranno che una chat è associata ai video.<br>\n<b>Attenzione</b>:\
-  \ se erano già in corso delle chat, è possibile che le informazioni siano già state\
-  \ pubblicate.\nDovrete attendere il prossimo aggiornamento dei video perché le informazioni\
-  \ non vengano pubblicate.\nAllo stesso modo, se si disattiva questa impostazione,\
-  \ bisognerà attendere l'aggiornamento dei video prima di poter\npubblicare nuovamente\
-  \ le informazioni. Questo aggiornamento avviene, tra l'altro, quando una trasmissione\
-  \ in diretta riprende o si interrompe.<br>\n<b>Attenzione</b>: questo parametro\
-  \ influisce solo sulla pubblicazione di informazioni tramite il protocollo ActivityPub.\n\
-  Non impedisce a un'applicazione remota di rilevare in altro modo la presenza della\
-  \ chat e di tentare di connettersi ad essa.\n"
+federation_dont_publish_remotely_description: "Selezionando questo parametro, la vostra
+  istanza non pubblicherà le informazioni della chat sul fediverso.\nLe istanze Peertube
+  remote non sapranno che una chat è associata ai video.<br>\n<b>Attenzione</b>: se
+  erano già in corso delle chat, è possibile che le informazioni siano già state pubblicate.\n
+  Dovrete attendere il prossimo aggiornamento dei video perché le informazioni non
+  vengano pubblicate.\nAllo stesso modo, se si disattiva questa impostazione, bisognerà
+  attendere l'aggiornamento dei video prima di poter\npubblicare nuovamente le informazioni.
+  Questo aggiornamento avviene, tra l'altro, quando una trasmissione in diretta riprende
+  o si interrompe.<br>\n<b>Attenzione</b>: questo parametro influisce solo sulla pubblicazione
+  di informazioni tramite il protocollo ActivityPub.\nNon impedisce a un'applicazione
+  remota di rilevare in altro modo la presenza della chat e di tentare di connettersi
+  ad essa.\n"
 
 chat_behaviour_description: "<h3>Comportamento della chat</h3>"
 
 room_type_label: "Tipo di chat room"
-room_type_description: "Puoi scegliere di avere delle chat room separate per ogni\
-  \ video o di raggrupparle per canale."
+room_type_description: "Puoi scegliere di avere delle chat room separate per ogni
+  video o di raggrupparle per canale."
 room_type_option_video: "Ogni video ha la propria chat room"
 room_type_option_channel: "Le chat room sono raggruppate per canale"
 
@@ -77,17 +77,17 @@ open_blank_label: "Mostra il pulsante “Apri in una nuova finestra”"
 open_blank_description: "Ci sarà un pulsante per aprire la chat in una nuova finestra."
 
 share_url_label: "Mostra il pulsante “Condividi il link della chat room”"
-share_url_description: "Ci sarà un pulsante per condividere il link della chat room\
-  \ (che potrebbe essere utilizzato, ad esempio, per integrare la chat a OBS)."
+share_url_description: "Ci sarà un pulsante per condividere il link della chat room
+  (che potrebbe essere utilizzato, ad esempio, per integrare la chat a OBS)."
 share_url_option_nobody: "Non mostrarlo a nessuno"
 share_url_option_everyone: "Mostralo a tutti"
 share_url_option_owner: "Mostralo solo al proprietario del video"
-share_url_option_owner_moderators: "Mostralo solo al proprietario del video e ai moderatori\
-  \ dell'istanza"
+share_url_option_owner_moderators: "Mostralo solo al proprietario del video e ai moderatori
+  dell'istanza"
 
 per_live_video_label: "Lз utentə possono attivare la chat per i loro video in diretta"
-per_live_video_description: "Se selezionata, tutti i video in diretta avranno una\
-  \ casella di controllo nelle loro proprietà per attivare/disattivare la chat."
+per_live_video_description: "Se selezionata, tutti i video in diretta avranno una
+  casella di controllo nelle loro proprietà per attivare/disattivare la chat."
 
 per_live_video_warning_description: |
   <span class="peertube-plugin-livechat-warning">
@@ -96,12 +96,12 @@ per_live_video_warning_description: |
   </span>
 
 all_lives_label: "Attiva la chat per tutti i video in diretta"
-all_lives_description: "Se selezionata, la chat sarà attivata per tutti i video in\
-  \ diretta."
+all_lives_description: "Se selezionata, la chat sarà attivata per tutti i video in
+  diretta."
 
 all_non_lives_label: "Attiva la chat per tutti i video che non sono dirette"
-all_non_lives_description: "Se selezionata, la chat sarà attivata per tutti i video\
-  \ non in diretta."
+all_non_lives_description: "Se selezionata, la chat sarà attivata per tutti i video
+  non in diretta."
 
 videos_list_label: "Attiva la chat per questi video"
 videos_list_description: |
@@ -111,8 +111,8 @@ videos_list_description: |
   Non aggiungere video privati: gli UUID sarebbero inviati al frontend e dunque esposti a tutti gli utenti.
 
 no_anonymous_label: "Nascondi la chat per gli utenti anonimi (non connessi)"
-no_anonymous_description: "Se selezionata, gli utenti anonimi (non connessi) non vedranno\
-  \ la chat."
+no_anonymous_description: "Se selezionata, gli utenti anonimi (non connessi) non vedranno
+  la chat."
 
 theming_advanced_description: "<h3>Personalizza l'aspetto</h3>"
 
@@ -174,8 +174,8 @@ prosody_peertube_uri_description: |
   Puoi allora utilizzare questo parametro per personalizzare l'url che i moduli Prosody utilizzeranno per
   le API di Peertube (ad esempio «http://localhost:9000» o «http://127.0.0.1:9000»).
 
-prosody_muc_log_by_default_label: "Registra automaticamente il contenuto delle chat\
-  \ room"
+prosody_muc_log_by_default_label: "Registra automaticamente il contenuto delle chat
+  room"
 prosody_muc_log_by_default_description: |
   Se selezionata, i contenuti della chat room saranno registrati automaticamente.
   Ogni utente che entrerà in una chat room vedrà allora tutto quello che è stato scritto prima del suo arrivo.
@@ -197,26 +197,25 @@ prosody_muc_expiration_description: |
 
 prosody_room_allow_s2s_label: Abilitare la connessione a questa stanza usando profili
   XMPP esterni
-prosody_room_allow_s2s_description: "Abilitando questa opzione, sarà possibile connettersi\
-  \ alle stanze utilizzando account XMPP esterni tramite client XMPP.<br>\n<span class=\"peertube-plugin-livechat-warning\">Si noti\
-  \ che l'attivazione di questa opzione può richiedere la configurazione del server\
-  \ e dei record DNS.</span>\nPer saperne di più, consultare la documentazione:\n<a href=\"\
-  https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/\"\
+prosody_room_allow_s2s_description: "Abilitando questa opzione, sarà possibile connettersi
+  alle stanze utilizzando account XMPP esterni tramite client XMPP.<br>\n<span class=\"\
+  peertube-plugin-livechat-warning\">Si noti che l'attivazione di questa opzione può
+  richiedere la configurazione del server e dei record DNS.</span>\nPer saperne di
+  più, consultare la documentazione:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n   Permettere connessioni con account XMPP esterni.\n</a>\n"
 
 prosody_s2s_port_label: Porta Prosody da server a server
-prosody_s2s_port_description: "La porta che verrà utilizzata per le connessioni XMPP\
-  \ s2s (da server a server).<br>\nSi dovrebbe usare la porta standard 5269.\nAltrimenti\
-  \ sarà necessario <a href=\"https://prosody.im/doc/s2s\">\n  impostare un record\
-  \ DNS specifico\n</a>.\n"
+prosody_s2s_port_description: "La porta che verrà utilizzata per le connessioni XMPP
+  s2s (da server a server).<br>\nSi dovrebbe usare la porta standard 5269.\nAltrimenti
+  sarà necessario <a href=\"https://prosody.im/doc/s2s\">\n  impostare un record DNS
+  specifico\n</a>.\n"
 
 prosody_s2s_interfaces_label: Interfacce di rete da server a server
-prosody_s2s_interfaces_description: "Le interfacce di rete su cui ascoltare per le\
-  \ connessioni da server a server.<br>\nElenco di IP su cui ascoltare,  separati\
-  \ da virgole (gli spazi saranno eliminati).<br>\nÈ possibile utilizzare \"*\" per\
-  \ ascoltare su tutte le interfacce IPv4 e  «::» per tutte le IPv6.<br>\nEsempi:\n\
-  <ul>\n  <li>*, ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>172.18.0.42</li>\n\
-  </ul>\n"
+prosody_s2s_interfaces_description: "Le interfacce di rete su cui ascoltare per le
+  connessioni da server a server.<br>\nElenco di IP su cui ascoltare,  separati da
+  virgole (gli spazi saranno eliminati).<br>\nÈ possibile utilizzare \"*\" per ascoltare
+  su tutte le interfacce IPv4 e  «::» per tutte le IPv6.<br>\nEsempi:\n<ul>\n  <li>*,
+  ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>172.18.0.42</li>\n</ul>\n"
 
 prosody_c2s_label: "Abilitare le connessioni dal client al server"
 prosody_c2s_description: |
@@ -237,8 +236,8 @@ prosody_components_description: |
   Sono consentite solo le connessioni dal localhost.<br>
   Questa funzione può essere utilizzata, ad esempio, per collegare dei bot alle chat room.
 
-prosody_components_port_label: "Porta di connessione delle componenti XMPP al server\
-  \ Prosody"
+prosody_components_port_label: "Porta di connessione delle componenti XMPP al server
+  Prosody"
 prosody_components_port_description: |
   Questa è la porta che verrà utilizzata dalle componenti XMPP per connettersi al server Prosody.<br>
   Cambiala se questa porta è già in uso sul tuo server.<br>
@@ -265,8 +264,8 @@ connect_using_xmpp: Connessione con un client XMPP
 connect_using_xmpp_help: Puoi collegarti alla stanza usando un account XMPP esterno,
   e il tuo client XMPP preferito.
 prosody_certificates_dir_label: Cartella dei certificati
-prosody_certificates_dir_description: "Se questo campo è vuoto, il plugin genererà\
-  \ e utilizzerà certificati autofirmati.<br>\nSe si desidera utilizzare altri certificati,\
-  \ è sufficiente specificare la cartella in cui\nProsody può trovarli. Nota: l'utente\
-  \ \"peertube\" deve avere accesso in lettura a questa cartella.\n"
+prosody_certificates_dir_description: "Se questo campo è vuoto, il plugin genererà
+  e utilizzerà certificati autofirmati.<br>\nSe si desidera utilizzare altri certificati,
+  è sufficiente specificare la cartella in cui\nProsody può trovarli. Nota: l'utente
+  \"peertube\" deve avere accesso in lettura a questa cartella.\n"
 chat_for_live_stream: 'Chat per la diretta:'
