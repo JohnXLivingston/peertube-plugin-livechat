@@ -150,7 +150,7 @@ export class ChannelConfigurationElement extends LivechatElement {
         entries: {
           inputType: 'tags',
           default: [],
-          separator: '\n'
+          separators: ['\n', '\t', ';']
         },
         regex: {
           inputType: 'checkbox',

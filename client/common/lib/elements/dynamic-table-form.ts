@@ -605,7 +605,9 @@ export class DynamicTableFormElement extends LivechatElement {
                 rowById.row[propertyName] = value
               } else {
                 rowById.row[propertyName] = (value as string)
-                  .split(new RegExp(`/[${propertySchema.separators?.join('') ?? ''}]+/`))
+                  .split(new RegExp(`(?:${propertySchema.separators
+                    ?.map((c: string) => c.replace(/^[.\\+*?[^\]$(){}=!<>|:-]$/, '\\'))
+                    .join('|') ?? ''})+)`))
               }
               break
             default:
