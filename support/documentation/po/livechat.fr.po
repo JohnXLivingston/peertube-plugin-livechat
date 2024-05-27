@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-05-27 17:18+0200\n"
-"PO-Revision-Date: 2024-05-27 15:16+0000\n"
+"PO-Revision-Date: 2024-05-28 03:32+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1732,10 +1733,11 @@ msgstr "Pour ces fournisseurs, l'url de découverte et l'étiquette du bouton so
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-#, fuzzy
-#| msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/)."
 msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
-msgstr "Si vous pensez à un fournisseur standard qui n'est pas disponible, vous pouvez en demander la mise en œuvre en [ouvrant un nouveau ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
+msgstr ""
+"Si vous pensez à un fournisseur standard qui n'est pas disponible, vous "
+"pouvez en demander la mise en œuvre en [ouvrant un nouveau "
+"ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
