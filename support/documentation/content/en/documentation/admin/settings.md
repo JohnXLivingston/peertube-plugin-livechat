@@ -209,6 +209,10 @@ As example, this option can allow an instance of Matterbridge (once it could use
 
 {{% livechat_label prosody_c2s_port_description %}}
 
+### {{% livechat_label prosody_c2s_interfaces_label %}}
+
+{{% livechat_label prosody_c2s_interfaces_description %}}
+
 ### {{% livechat_label prosody_components_label %}}
 
 This settings enable XMPP external components to connect to the server.

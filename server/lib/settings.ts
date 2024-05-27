@@ -633,6 +633,15 @@ function initChatServerAdvancedSettings ({ registerSetting }: RegisterServerOpti
   })
 
   registerSetting({
+    name: 'prosody-c2s-interfaces',
+    label: loc('prosody_c2s_interfaces_label'),
+    type: 'input',
+    default: '127.0.0.1, ::1',
+    private: true,
+    descriptionHTML: loc('prosody_c2s_interfaces_description')
+  })
+
+  registerSetting({
     name: 'prosody-components',
     label: loc('prosody_components_label'),
     type: 'input-checkbox',

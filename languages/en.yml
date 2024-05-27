@@ -301,6 +301,21 @@ prosody_c2s_port_description: |
   You can keep this port closed on your firewall for now, it will not be accessed from the outer world.<br>
   Note: this might change in a near future, as it is planned to add a feature to activate external connections.
 
+
+prosody_c2s_interfaces_label: "Client to server network interfaces"
+prosody_c2s_interfaces_description: |
+  The network interfaces to listen on for client to server connections.<br>
+  This settings is provided for advanced users. Don't change this settings if you don't fully understand what it means.<br>
+  List of IP to listen on, coma separated (spaces will be stripped).<br>
+  You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.<br>
+  Examples:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>127.0.0.1, ::1, 172.18.0.42</li>
+  </ul>
+
 prosody_components_label: "Enable custom Prosody external components"
 prosody_components_description: |
   Enable the use of external XMPP components.<br>

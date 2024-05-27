@@ -6,6 +6,12 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 # Changelog
 
+## ??? (Not Released Yet)
+
+### New features
+
+* #377: new setting to listen C2S connection on non-localhost interfaces.
+
 ## 10.0.2
 
 ### Minor changes and fixes

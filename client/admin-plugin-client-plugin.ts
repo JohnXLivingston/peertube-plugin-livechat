@@ -254,6 +254,7 @@ function register (clientOptions: RegisterClientOptions): void {
       const name = options.setting.name
       switch (name) {
         case 'prosody-c2s-port':
+        case 'prosody-c2s-interfaces':
           return options.formValues['prosody-c2s'] !== true
         case 'prosody-s2s-port':
         case 'prosody-s2s-interfaces':

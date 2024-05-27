@@ -337,8 +337,9 @@ class ProsodyConfigContent {
     }
   }
 
-  useC2S (c2sPort: string): void {
+  useC2S (c2sPort: string, c2sInterfaces: string[]): void {
     this.global.set('c2s_ports', [c2sPort])
+    this.global.set('c2s_interfaces', c2sInterfaces)
   }
 
   useS2S (

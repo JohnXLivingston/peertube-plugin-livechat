@@ -161,6 +161,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'prosody-muc-expiration',
     'prosody-c2s',
     'prosody-c2s-port',
+    'prosody-c2s-interfaces',
     'prosody-room-allow-s2s',
     'prosody-s2s-port',
     'prosody-s2s-interfaces',
@@ -278,7 +279,18 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     if (!/^\d+$/.test(c2sPort)) {
       throw new Error('Invalid c2s port')
     }
-    config.useC2S(c2sPort)
+    const c2sInterfaces = ((settings['prosody-c2s-interfaces'] as string) || '127.0.0.1, ::1')
+      .split(',')
+      .map(s => s.trim())
+    // Check that there is no invalid values (to avoid injections):
+    c2sInterfaces.forEach(networkInterface => {
+      if (networkInterface === '*') return
+      if (networkInterface === '::') return
+      if (networkInterface.match(/^\d+\.\d+\.\d+\.\d+$/)) return
+      if (networkInterface.match(/^[a-f0-9:]+$/)) return
+      throw new Error('Invalid c2s interfaces')
+    })
+    config.useC2S(c2sPort, c2sInterfaces)
   }
 
   if (enableComponents) {
