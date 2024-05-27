@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-05-23 12:32+0200\n"
+"POT-Creation-Date: 2024-05-27 17:18+0200\n"
 "PO-Revision-Date: 2024-05-27 15:16+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -233,15 +232,7 @@ msgstr "NODE_ENV=dev npm run build\n"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin is [REUSE](https://reuse.software/) compliant: it uses SPDX headers to identify licensing information of its source code.  More information on the [REUSE](https://reuse.software/) website.  You can use the [reuse](https://reuse.readthedocs.io/en/stable/readme.html#) command line tool to help you update headers.  The `npm run lint` command will use the `reuse` command to check compliance.  Don't forget to add your copyright information in SPDX headers when you modify some code."
-msgstr ""
-"Ce plugin est conforme à la norme [REUSE](https://reuse.software/) : il "
-"utilise des en-têtes SPDX pour identifier les informations de licence de son "
-"code source.  Plus d'informations sur le site [REUSE](https://reuse.software/"
-").  Vous pouvez utiliser l'outil en ligne de commande [reuse](https://reuse."
-"readthedocs.io/en/stable/readme.html#) pour vous aider à mettre à jour les "
-"en-têtes.  La commande `npm run lint` utilisera la commande `reuse` pour "
-"vérifier la conformité.  N'oubliez pas d'ajouter vos informations de "
-"copyright dans les en-têtes SPDX lorsque vous modifiez du code."
+msgstr "Ce plugin est conforme à la norme [REUSE](https://reuse.software/) : il utilise des en-têtes SPDX pour identifier les informations de licence de son code source.  Plus d'informations sur le site [REUSE](https://reuse.software/).  Vous pouvez utiliser l'outil en ligne de commande [reuse](https://reuse.readthedocs.io/en/stable/readme.html#) pour vous aider à mettre à jour les en-têtes.  La commande `npm run lint` utilisera la commande `reuse` pour vérifier la conformité.  N'oubliez pas d'ajouter vos informations de copyright dans les en-têtes SPDX lorsque vous modifiez du code."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -387,21 +378,12 @@ msgstr "Reconstruire et installer rapidement le plugin"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When you do modification, you don't have to always rebuild the full project, and reinstall the plugin on your dev environment.  You can build only the modified part (for example, if you only modified client files: `npm run build:client`).  Check the `package.json` files for available build scripts."
-msgstr ""
-"Lorsque vous faites des modifications, vous n'avez pas besoin de "
-"reconstruire le projet complet, et de réinstaller le plugin sur votre "
-"environnement de développement.  Vous pouvez ne construire que la partie "
-"modifiée (par exemple, si vous n'avez modifié que les fichiers clients : `"
-"npm run build:client`).  Vous trouverez la liste des scripts de construction "
-"disponibles dans le fichier `package.json`."
+msgstr "Lorsque vous faites des modifications, vous n'avez pas besoin de reconstruire le projet complet, et de réinstaller le plugin sur votre environnement de développement.  Vous pouvez ne construire que la partie modifiée (par exemple, si vous n'avez modifié que les fichiers clients : `npm run build:client`).  Vous trouverez la liste des scripts de construction disponibles dans le fichier `package.json`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When the plugin is already installed on your dev instance, and you haven't changed any dependency, you can quickly install your work by following these steps:"
-msgstr ""
-"Lorsque le plugin est déjà installé sur votre instance de développement, et "
-"que vous n'avez modifié aucune dépendance, vous pouvez installer rapidement "
-"votre travail en suivant les étapes suivantes :"
+msgstr "Lorsque le plugin est déjà installé sur votre instance de développement, et que vous n'avez modifié aucune dépendance, vous pouvez installer rapidement votre travail en suivant les étapes suivantes :"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -411,17 +393,12 @@ msgstr "reconstruire les parties nécessaires du plugin (client, styles, ...),"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "overwrite the `data/plugins/node_modules/peertube-plugin-livechat/dist/` content of your dev instance by the content of the plugin's `dist` folder,"
-msgstr ""
-"écraser le contenu de `data/plugins/node_modules/peertube-plugin-livechat/"
-"dist/` de votre instance de développement par le contenu du dossier `dist` "
-"du plugin,"
+msgstr "écraser le contenu de `data/plugins/node_modules/peertube-plugin-livechat/dist/` de votre instance de développement par le contenu du dossier `dist` du plugin,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "change recursively `plugins/node_modules/peertube-plugin-livechat/dist/` files owner to your `peertube` user,"
-msgstr ""
-"changer récursivement le propriétaire des fichiers `plugins/node_modules/"
-"peertube-plugin-livechat/dist/` pour votre utilisateur `peertube`,"
+msgstr "changer récursivement le propriétaire des fichiers `plugins/node_modules/peertube-plugin-livechat/dist/` pour votre utilisateur `peertube`,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -1622,34 +1599,22 @@ msgstr "Authentification externe"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Users that are not connected to your Peertube instance are joining the chat using \"anonymous accounts\" (they can freely choose a nickname, and will be assigned a random avatar)."
-msgstr ""
-"Les utilisateur⋅rices qui ne sont pas connecté⋅es à votre instance Peertube "
-"rejoignent le chat en utilisant des \"comptes anonymes\" (iels peuvent "
-"librement choisir un surnom, et se verront attribuer un avatar aléatoire)."
+msgstr "Les utilisateur⋅rices qui ne sont pas connecté⋅es à votre instance Peertube rejoignent le chat en utilisant des \"comptes anonymes\" (iels peuvent librement choisir un surnom, et se verront attribuer un avatar aléatoire)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You can enable some external authentication methods to allow user to create chat accounts.  In such case their nickname and avatar will be automatically initialized with the remote account information."
-msgstr ""
-"Vous pouvez activer des méthodes d'authentification externes pour permettre "
-"aux utilisateur⋅rices de créer des comptes pour tchater.  Dans ce cas, leur "
-"pseudo et leur avatar seront automatiquement initialisés avec les "
-"informations du compte distant."
+msgstr "Vous pouvez activer des méthodes d'authentification externes pour permettre aux utilisateur⋅rices de créer des comptes pour tchater.  Dans ce cas, leur pseudo et leur avatar seront automatiquement initialisés avec les informations du compte distant."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Such \"external account users\" will be easier to moderate than anonymous accounts."
-msgstr ""
-"Ces \"utilisateur⋅rices de comptes externes\" seront plus faciles à modérer "
-"que les comptes anonymes."
+msgstr "Ces \"utilisateur⋅rices de comptes externes\" seront plus faciles à modérer que les comptes anonymes."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval)."
-msgstr ""
-"Cela permet également à l'utilisateur⋅ice de rejoindre le tchat sans créer "
-"de compte Peertube (dans le cas où votre instance a fermé l'enregistrement "
-"par exemple, ou sans attendre l'approbation du compte)."
+msgstr "Cela permet également à l'utilisateur⋅ice de rejoindre le tchat sans créer de compte Peertube (dans le cas où votre instance a fermé l'enregistrement par exemple, ou sans attendre l'approbation du compte)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1692,42 +1657,27 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You can configure one external [OpenID Connect](https://openid.net/developers/how-connect-works/) compatible provider."
-msgstr ""
-"Vous pouvez configurer un fournisseur externe compatible avec [OpenID "
-"Connect](https://openid.net/developers/how-connect-works/)."
+msgstr "Vous pouvez configurer un fournisseur externe compatible avec [OpenID Connect](https://openid.net/developers/how-connect-works/)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Doing so, you can for example use your website for Single Sign-On."
-msgstr ""
-"Ainsi, vous pouvez par exemple utiliser votre site web pour "
-"l'authentification unique (Single Sign-On)."
+msgstr "Ainsi, vous pouvez par exemple utiliser votre site web pour l'authentification unique (Single Sign-On)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Popular CMS softwares (Wordpess, ...) offers plugins implementing OpenID Connect."
-msgstr ""
-"Les logiciels CMS les plus répandus (Wordpess, ...) proposent des modules "
-"implémentant OpenID Connect."
+msgstr "Les logiciels CMS les plus répandus (Wordpess, ...) proposent des modules implémentant OpenID Connect."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect).  Then go to the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings), and enable \"{{% livechat_label external_auth_custom_oidc_label %}}\"."
-msgstr ""
-"Pour activer cette fonctionnalité, vous devez d'abord créer un client du "
-"côté de votre fournisseur (consultez la documentation relative à "
-"l'activation d'OpenID Connect).  Ensuite, allez dans les [paramètres du "
-"plugin](/peertube-plugin-livechat/fr/documentation/admin/settings), et "
-"activez \"{{% livechat_label external_auth_custom_oidc_label %}}\"."
+msgstr "Pour activer cette fonctionnalité, vous devez d'abord créer un client du côté de votre fournisseur (consultez la documentation relative à l'activation d'OpenID Connect).  Ensuite, allez dans les [paramètres du plugin](/peertube-plugin-livechat/fr/documentation/admin/settings), et activez \"{{% livechat_label external_auth_custom_oidc_label %}}\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if you want to restrict allowed redirection urls on the provider side (best security practice), the plugin will show you the url to allow.  Just copy it in your OpenID Connect application configuration."
-msgstr ""
-"Note : si vous souhaitez restreindre les urls de redirection autorisées du "
-"côté du fournisseur (bonne pratique de sécurité), le plugin vous indiquera "
-"l'url à autoriser.  Il suffit de la copier dans la configuration de votre "
-"application OpenID Connect."
+msgstr "Note : si vous souhaitez restreindre les urls de redirection autorisées du côté du fournisseur (bonne pratique de sécurité), le plugin vous indiquera l'url à autoriser.  Il suffit de la copier dans la configuration de votre application OpenID Connect."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1747,19 +1697,12 @@ msgstr "Pour l'instant il n'est pas possible de localiser ce libellé."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Your OpenID Connect provider must implement the [discovery URL](https://openid.net/specs/openid-connect-discovery-1_0.html).  Just set here the discovery url, that should be something like `https://example.com/.well-known/openid-configuration`."
-msgstr ""
-"Votre fournisseur OpenID Connect doit implémenter l'[URL de découverte ("
-"discovery URL)](https://openid.net/specs/openid-connect-discovery-1_0.html)"
-".  Définissez ici l'url de découverte, qui devrait être quelque chose comme "
-"`https://example.com/.well-known/openid-configuration`."
+msgstr "Votre fournisseur OpenID Connect doit implémenter l'[URL de découverte (discovery URL)](https://openid.net/specs/openid-connect-discovery-1_0.html).  Définissez ici l'url de découverte, qui devrait être quelque chose comme `https://example.com/.well-known/openid-configuration`."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if your provider use the standard `/.well-known/openid-configuration` path, you can omit it.  For example `https://accounts.google.com` will work."
-msgstr ""
-"Note : si votre fournisseur utilise le chemin standard `/.well-known/openid-"
-"configuration`, vous pouvez l'omettre.  Par exemple, `https://accounts.google"
-".com` fonctionnera."
+msgstr "Note : si votre fournisseur utilise le chemin standard `/.well-known/openid-configuration`, vous pouvez l'omettre.  Par exemple, `https://accounts.google.com` fonctionnera."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1780,49 +1723,34 @@ msgstr "Google, Facebook, ..."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "In addition to that, you can also configure one or several \"standard\" Open ID Connect provider (Google, Facebook, ...)."
-msgstr ""
-"En plus de cela, vous pouvez également configurer un ou plusieurs "
-"fournisseurs Open ID Connect \"standards\" (Google, Facebook, ...)."
+msgstr "En plus de cela, vous pouvez également configurer un ou plusieurs fournisseurs Open ID Connect \"standards\" (Google, Facebook, ...)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "For these providers, discovery url and button label are preset.  You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret."
-msgstr ""
-"Pour ces fournisseurs, l'url de découverte et l'étiquette du bouton sont "
-"prédéfinies.  Il suffit de créer une application OAuth2 du côté du "
-"fournisseur et de configurer l'ID et le secret du client."
+msgstr "Pour ces fournisseurs, l'url de découverte et l'étiquette du bouton sont prédéfinies.  Il suffit de créer une application OAuth2 du côté du fournisseur et de configurer l'ID et le secret du client."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/)."
-msgstr ""
-"Si vous pensez à un fournisseur standard qui n'est pas disponible, vous "
-"pouvez en demander la mise en œuvre en [ouvrant un nouveau "
-"ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
+#, fuzzy
+#| msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/)."
+msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
+msgstr "Si vous pensez à un fournisseur standard qui n'est pas disponible, vous pouvez en demander la mise en œuvre en [ouvrant un nouveau ticket](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If the button does not appear for end users, there might be a configuration issue.  You can try the [diagnostic tool](/peertube-plugin-livechat/documentation/installation/troubleshooting/) to get more information."
-msgstr ""
-"Si le bouton n'apparaît pas pour les utilisateur⋅rices finaux, il se peut "
-"qu'il y ait un problème de configuration.  Vous pouvez essayer l'[outil de "
-"diagnostic](/peertube-plugin-livechat/fr/documentation/installation/"
-"troubleshooting/) pour obtenir plus d'informations."
+msgstr "Si le bouton n'apparaît pas pour les utilisateur⋅rices finaux, il se peut qu'il y ait un problème de configuration.  Vous pouvez essayer l'[outil de diagnostic](/peertube-plugin-livechat/fr/documentation/installation/troubleshooting/) pour obtenir plus d'informations."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test."
-msgstr ""
-"Note : si vous êtes connecté⋅e à votre compte Peertube, le bouton ne "
-"s'affichera jamais. Utilisez une fenêtre de navigation privée pour tester."
+msgstr "Note : si vous êtes connecté⋅e à votre compte Peertube, le bouton ne s'affichera jamais. Utilisez une fenêtre de navigation privée pour tester."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If the button is displayed but is not working, check your Peertube logs.  It could be because the remote service does not use standard scopes or attribute names."
-msgstr ""
-"Si le bouton s'affiche mais ne fonctionne pas, vérifiez les journaux de "
-"Peertube.  Cela peut être dû au fait que le service distant n'utilise pas "
-"des scopes ou des noms d'attributs standard."
+msgstr "Si le bouton s'affiche mais ne fonctionne pas, vérifiez les journaux de Peertube.  Cela peut être dû au fait que le service distant n'utilise pas des scopes ou des noms d'attributs standard."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2108,10 +2036,7 @@ msgstr "Documentation du plugin"
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
-msgstr ""
-"Pour l'instant le plugin ne supporte de base que les architectures CPU "
-"x86_64 et arm64. Veuillez trouver ici des instructions pour le faire "
-"fonctionner sur d'autres architectures CPU."
+msgstr "Pour l'instant le plugin ne supporte de base que les architectures CPU x86_64 et arm64. Veuillez trouver ici des instructions pour le faire fonctionner sur d'autres architectures CPU."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2501,9 +2426,7 @@ msgstr "Vous pouvez utiliser l'extension [social_stream browser extension](https
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Some basics about how to setup and use the chat for your live stream"
-msgstr ""
-"Quelques informations de base sur comment configurer et utiliser le tchat "
-"pour vos directs"
+msgstr "Quelques informations de base sur comment configurer et utiliser le tchat pour vos directs"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2714,9 +2637,7 @@ msgstr "Vous pouvez paramétrer différentes commandes."
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #, no-wrap
 msgid "The bot can automatically moderate messages containing forbidden words."
-msgstr ""
-"Le bot peut automatiquement modérer les messages contenant des mots "
-"interdits."
+msgstr "Le bot peut automatiquement modérer les messages contenant des mots interdits."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -2924,8 +2845,7 @@ msgid ""
 "There were some changes in the way we manage access rights for Peertube administrators and moderators.\n"
 msgstr ""
 "Cette page décrit le comportement des versions de livechat >= 10.0.0.\n"
-"Il y a eu quelques changements dans la façon dont nous gérons les droits "
-"d'accès pour les administrateur⋅rices et modérateur⋅rices de Peertube.\n"
+"Il y a eu quelques changements dans la façon dont nous gérons les droits d'accès pour les administrateur⋅rices et modérateur⋅rices de Peertube.\n"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -2952,20 +2872,12 @@ msgstr "Vous pouvez accéder aux paramètres de la salle et aux outils de modér
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
-msgstr ""
-"Le⋅a propriétaire de la vidéo sera le⋅a propriétaire du salon de "
-"discussion.  Cela signifie qu'iel peut configurer le salon, le supprimer, "
-"promouvoir d'autres utilisateur⋅rices en tant qu'administrateur⋅rices, ..."
+msgstr "Le⋅a propriétaire de la vidéo sera le⋅a propriétaire du salon de discussion.  Cela signifie qu'iel peut configurer le salon, le supprimer, promouvoir d'autres utilisateur⋅rices en tant qu'administrateur⋅rices, ..."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
-msgstr ""
-"Depuis la version 10.0.0 de livechat, les administrateur⋅rices et modérateur⋅"
-"rices de l'instance Peertube n'ont pas de droits particuliers par défaut sur "
-"les salons.  Cependant, iels ont un bouton spécial disponible en haut du "
-"chat : \"{{% livechat_label promote %}}\".  En cliquant sur ce bouton, iels "
-"auront un accès propriétaire à la salle."
+msgstr "Depuis la version 10.0.0 de livechat, les administrateur⋅rices et modérateur⋅rices de l'instance Peertube n'ont pas de droits particuliers par défaut sur les salons.  Cependant, iels ont un bouton spécial disponible en haut du chat : \"{{% livechat_label promote %}}\".  En cliquant sur ce bouton, iels auront un accès propriétaire à la salle."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
@@ -3018,10 +2930,7 @@ msgstr "Vous pouvez lister toutes les salles de discussion existantes : dans l'�
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation.md
 msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
-msgstr ""
-"De là, vous pouvez également vous promouvoir en tant que modérateur⋅rice de "
-"salon en utilisant le bouton \"{{% livechat_label promote %}}\" sur la "
-"droite."
+msgstr "De là, vous pouvez également vous promouvoir en tant que modérateur⋅rice de salon en utilisant le bouton \"{{% livechat_label promote %}}\" sur la droite."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3112,10 +3021,7 @@ msgstr "Positionner la valeur à un nombre entier positif permet de fixer la pé
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the slow mode value in the configuration form."
-msgstr ""
-"Pour modifier la valeur d'un salon déjà existant, il suffit d'ouvrir le menu "
-"\"configuration\" du salon (en haut de la fenêtre de tchat), et de modifier "
-"la valeur du mode lent dans le formulaire de configuration."
+msgstr "Pour modifier la valeur d'un salon déjà existant, il suffit d'ouvrir le menu \"configuration\" du salon (en haut de la fenêtre de tchat), et de modifier la valeur du mode lent dans le formulaire de configuration."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3143,9 +3049,7 @@ msgstr "Lorsqu'iels envoient un message, le champ de saisie est désactivé pend
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "You can handle tasks and task lists with your moderation team."
-msgstr ""
-"Vous pouvez gérer les tâches et les listes de tâches avec votre équipe de "
-"modération."
+msgstr "Vous pouvez gérer les tâches et les listes de tâches avec votre équipe de modération."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3161,12 +3065,7 @@ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.0.0."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "The livechat plugin includes a Task Application: a kind of \"to-do list\" feature where you can create task lists and add tasks to them.  Every room's admins have access to these tasks, so you can edit them collaboratively."
-msgstr ""
-"Le plugin livechat comprend une Application de Tâches : une sorte de \"liste "
-"de choses à faire\" où vous pouvez créer des listes de tâches et y ajouter "
-"des tâches.  Les administrateur⋅rices de chaque salon de discussion ont "
-"accès à ces tâches, ce qui vous permet de les modifier de manière "
-"collaborative."
+msgstr "Le plugin livechat comprend une Application de Tâches : une sorte de \"liste de choses à faire\" où vous pouvez créer des listes de tâches et y ajouter des tâches.  Les administrateur⋅rices de chaque salon de discussion ont accès à ces tâches, ce qui vous permet de les modifier de manière collaborative."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3176,16 +3075,12 @@ msgstr "Vous pouvez par exemple utiliser l'Application de Tâches pour :"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "prepare a list of themes you want to discuss during your livestream, so you can be sure you won't forget anything"
-msgstr ""
-"préparez une liste des thèmes que vous souhaitez aborder lors de votre "
-"direct, afin d'être sûr de ne rien oublier"
+msgstr "préparez une liste des thèmes que vous souhaitez aborder lors de votre direct, afin d'être sûr de ne rien oublier"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "highlight questions from your viewers, so you can come back to them later without forgetting to answer them"
-msgstr ""
-"mettre en évidence les questions de vos spectateur⋅rices, afin que vous "
-"puissiez y revenir plus tard sans oublier d'y répondre"
+msgstr "mettre en évidence les questions de vos spectateur⋅rices, afin que vous puissiez y revenir plus tard sans oublier d'y répondre"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3222,8 +3117,7 @@ msgstr "![Ouvrir l'Application Tâche](/peertube-plugin-livechat/images/task_ope
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Clicking this button will toggle the Task Application display:"
-msgstr ""
-"En cliquant sur ce bouton, l'affichage de l'Application de Tâches bascule :"
+msgstr "En cliquant sur ce bouton, l'affichage de l'Application de Tâches bascule :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3238,9 +3132,7 @@ msgstr "![Application Tâches](/peertube-plugin-livechat/images/task_app_fullpag
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "To have more space and better readability, open the chat in full-page mode."
-msgstr ""
-"Pour avoir plus d'espace et une meilleure lisibilité, ouvrez le tchat en "
-"mode pleine page."
+msgstr "Pour avoir plus d'espace et une meilleure lisibilité, ouvrez le tchat en mode pleine page."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3251,18 +3143,12 @@ msgstr "Droits d'accès"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Every room's admins have access to the Task Application (read and write access)."
-msgstr ""
-"Les administrateur⋅rices de chaque salon de discussion ont accès à "
-"l'application de tâches (accès en lecture et en écriture)."
+msgstr "Les administrateur⋅rices de chaque salon de discussion ont accès à l'application de tâches (accès en lecture et en écriture)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "When you promote someone as room admin or owner, they gets instant access to the Task Application.  When you remove admin or owner rights to someone, they instantly lose access to the Task Application."
-msgstr ""
-"Lorsque vous promouvez quelqu'un en tant qu'administrateur⋅rice ou "
-"propriétaire d'un salon, iel obtient un accès instantané à l'Application "
-"Tâches.  Lorsque vous retirez les droits d'admin ou de propriétaire à "
-"quelqu'un, iel perd instantanément l'accès à l'Application Tâches."
+msgstr "Lorsque vous promouvez quelqu'un en tant qu'administrateur⋅rice ou propriétaire d'un salon, iel obtient un accès instantané à l'Application Tâches.  Lorsque vous retirez les droits d'admin ou de propriétaire à quelqu'un, iel perd instantanément l'accès à l'Application Tâches."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3273,18 +3159,12 @@ msgstr "Listes de tâches"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "By default, there is one task list that has the same name as your livestream."
-msgstr ""
-"Par défaut, il y a une liste de tâches portant le même nom que votre direct."
+msgstr "Par défaut, il y a une liste de tâches portant le même nom que votre direct."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can use the form at the bottom to create a new task list.  You can also edit existing task lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks."
-msgstr ""
-"Vous pouvez utiliser le formulaire en bas de page pour créer une nouvelle "
-"liste de tâches.  Vous pouvez également modifier les listes de tâches "
-"existantes à l'aide du bouton \"modifier\" ou supprimer n'importe quelle "
-"liste de tâches. La suppression d'une liste de tâches entraîne la "
-"suppression de toutes les tâches qu'elle contient."
+msgstr "Vous pouvez utiliser le formulaire en bas de page pour créer une nouvelle liste de tâches.  Vous pouvez également modifier les listes de tâches existantes à l'aide du bouton \"modifier\" ou supprimer n'importe quelle liste de tâches. La suppression d'une liste de tâches entraîne la suppression de toutes les tâches qu'elle contient."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3299,9 +3179,7 @@ msgstr "![Listes de Tâches](/peertube-plugin-livechat/images/task_app_task_list
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "All modification are instantly visible in all your browser tabs, and for all room's admins."
-msgstr ""
-"Toutes les modifications sont instantanément visibles dans tous les onglets "
-"de votre navigateur, et pour tous les administrateur⋅rices du salon."
+msgstr "Toutes les modifications sont instantanément visibles dans tous les onglets de votre navigateur, et pour tous les administrateur⋅rices du salon."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3318,10 +3196,7 @@ msgstr "Créer des tâches"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can create a task using the button on the right of task lists.  This opens a form with two fields: a mandatory task name, and an optional description."
-msgstr ""
-"Vous pouvez créer une tâche en utilisant le bouton situé à droite des listes "
-"de tâches.  Un formulaire s'ouvre alors avec deux champs : un nom de tâche "
-"obligatoire et une description facultative."
+msgstr "Vous pouvez créer une tâche en utilisant le bouton situé à droite des listes de tâches.  Un formulaire s'ouvre alors avec deux champs : un nom de tâche obligatoire et une description facultative."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3342,15 +3217,12 @@ msgstr "Modifier les tâches"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Tasks can be edited by using the edit button on the right."
-msgstr ""
-"Les tâches peuvent être modifiées en utilisant le bouton d'édition à droite."
+msgstr "Les tâches peuvent être modifiées en utilisant le bouton d'édition à droite."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Tasks can be marked complete (or uncomplete) by clicking directly on the checkbox in the list."
-msgstr ""
-"Les tâches peuvent être marquées comme terminées (ou non terminées) en "
-"cliquant directement sur la case à cocher dans la liste."
+msgstr "Les tâches peuvent être marquées comme terminées (ou non terminées) en cliquant directement sur la case à cocher dans la liste."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3366,9 +3238,7 @@ msgstr "Trier les tâches / changer de liste des tâches"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can sort tasks, or move tasks from one list to another, simply using drag & drop."
-msgstr ""
-"Vous pouvez trier les tâches ou les déplacer d'une liste à l'autre par "
-"simple \"glisser-déposer\"."
+msgstr "Vous pouvez trier les tâches ou les déplacer d'une liste à l'autre par simple \"glisser-déposer\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3389,13 +3259,7 @@ msgstr "Créer une tâche à partir d'un message du tchat"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can create a task from a message in a chat, using the \"{{% livechat_label \"task_create\" %}}\" button in the dropdown menu at the right of the message.  This will open a dialog box where you can choose which task list you want to add the task into.  The task name will be the user nickname, and the task description the message content."
-msgstr ""
-"Vous pouvez créer une tâche à partir d'un message du tchat, en utilisant le "
-"bouton \"{{% livechat_label \"task_create\" %}}\" dans le menu déroulant à "
-"droite du message.  Cela ouvrira une boîte de dialogue dans laquelle vous "
-"pourrez choisir la liste de tâches dans laquelle vous souhaitez ajouter la "
-"tâche.  Le nom de la tâche sera le pseudonyme de l'utilisateur⋅rice, et la "
-"description de la tâche le contenu du message."
+msgstr "Vous pouvez créer une tâche à partir d'un message du tchat, en utilisant le bouton \"{{% livechat_label \"task_create\" %}}\" dans le menu déroulant à droite du message.  Cela ouvrira une boîte de dialogue dans laquelle vous pourrez choisir la liste de tâches dans laquelle vous souhaitez ajouter la tâche.  Le nom de la tâche sera le pseudonyme de l'utilisateur⋅rice, et la description de la tâche le contenu du message."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -3415,11 +3279,7 @@ msgstr "![Tâche créée](/peertube-plugin-livechat/images/task_from_message_3.p
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered."
-msgstr ""
-"Grâce à cette fonctionnalité, vous pouvez par exemple demander à vos "
-"modérateur⋅rices de relever toutes les questions du tchat, afin que vous "
-"puissiez les voir d'un seul coup d'œil pendant votre direct, et vérifier que "
-"vous y avez répondu."
+msgstr "Grâce à cette fonctionnalité, vous pouvez par exemple demander à vos modérateur⋅rices de relever toutes les questions du tchat, afin que vous puissiez les voir d'un seul coup d'œil pendant votre direct, et vérifier que vous y avez répondu."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -3490,22 +3350,12 @@ msgstr "Se connecter à l'aide d'un fournisseur d'authentification externe"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "The Peertube instance can configure external authentication providers (Mastodon accounts, Google accounts, ...).  In such case, you will see a \"{{% livechat_label login_using_external_account %}}\" button, that will open a dialog modal.  In this dialog modal, there will be some buttons to connect using a remote account."
-msgstr ""
-"L'instance Peertube peut configurer des fournisseurs d'authentification "
-"externes (comptes Mastodon, comptes Google, ...).  Dans ce cas, vous verrez "
-"un bouton \"{{% livechat_label login_using_external_account %}}\", qui "
-"ouvrira une boîte de dialogue modale.  Dans cette modale de dialogue, il y "
-"aura des boutons pour se connecter en utilisant un compte distant."
+msgstr "L'instance Peertube peut configurer des fournisseurs d'authentification externes (comptes Mastodon, comptes Google, ...).  Dans ce cas, vous verrez un bouton \"{{% livechat_label login_using_external_account %}}\", qui ouvrira une boîte de dialogue modale.  Dans cette modale de dialogue, il y aura des boutons pour se connecter en utilisant un compte distant."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "Once you signed in the remote account, and have granted access, your nickname and avatar (if available) will be automatically fetched.  No other data will be stored.  These data will be automatically deleted several hours after your quit the chat."
-msgstr ""
-"Une fois que vous vous êtes connecté au compte distant et que l'accès vous a "
-"été accordé, votre pseudonyme et votre avatar (le cas échéant) seront "
-"automatiquement récupérés.  Aucune autre donnée ne sera stockée.  Ces "
-"données seront automatiquement supprimées quelques heures après que vous "
-"ayez quitté le tchat."
+msgstr "Une fois que vous vous êtes connecté au compte distant et que l'accès vous a été accordé, votre pseudonyme et votre avatar (le cas échéant) seront automatiquement récupérés.  Aucune autre donnée ne sera stockée.  Ces données seront automatiquement supprimées quelques heures après que vous ayez quitté le tchat."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md

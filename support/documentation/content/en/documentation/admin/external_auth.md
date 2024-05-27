@@ -76,7 +76,7 @@ In addition to that, you can also configure one or several "standard" Open ID Co
 For these providers, discovery url and button label are preset.
 You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret.
 
-If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/).
+If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues).
 
 ### Troubleshooting
 

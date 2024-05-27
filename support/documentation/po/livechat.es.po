@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-05-23 12:32+0200\n"
+"POT-Creation-Date: 2024-05-27 17:18+0200\n"
 "PO-Revision-Date: 2024-04-16 21:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -1686,8 +1686,10 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/)."
-msgstr ""
+#, fuzzy
+#| msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
+msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
+msgstr "Si crees que falta una configuración regional, verifica primero si se toma en cuenta en Peertube. Si es así, puedes [abrir un issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) para solicitarla."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md

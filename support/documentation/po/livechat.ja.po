@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-05-23 12:32+0200\n"
+"POT-Creation-Date: 2024-05-27 17:18+0200\n"
 "PO-Revision-Date: 2024-03-10 20:38+0000\n"
 "Last-Translator: \"T.S\" <fusen@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Japanese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
@@ -1674,8 +1674,9 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
-msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](/peertube-plugin-livechat/issues/)."
-msgstr ""
+#, fuzzy
+msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
+msgstr "新しい機能のリクエスト、バグ、プラグインのセットアップ時に問題が発生した場合は、[Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)から報告してください。\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
