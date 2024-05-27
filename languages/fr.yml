@@ -227,14 +227,14 @@ prosody_s2s_port_description: |
 prosody_s2s_interfaces_label: "Interfaces réseau pour les connexions serveur vers
   serveur"
 prosody_s2s_interfaces_description: |
-  Les interfaces réseau sur lequelles écouter pour les connexions s2s (server to server).<br>
+  Les interfaces réseau sur lesquelles écouter pour les connexions s2s (server to server).<br>
   Une liste d'IP séparées par des virgules (les espaces seront retirés).
   On pourra utiliser «*» pour écouter sur toutes les IPv4, et «::» pour toutes les IPv6.<br>
   Exemples de configuration possible:
   <ul>
-    <li>*, ::</li>
+    <li>*, ::</li>
     <li>*</li>
-    <li>127.0.0.1, ::1</li>
+    <li>127.0.0.1, ::1</li>
     <li>172.18.0.42</li>
   </ul>
 
@@ -458,3 +458,12 @@ task_list_pick_message: "Une fois que vous aurez sélectionné une liste de tâc
   en utilisant le menu du haut.\nPlus d'informations dans la documentation du module
   livechat.\n"
 promote: Devenir modérateur⋅rice
+prosody_c2s_interfaces_label: Interfaces réseau client vers serveur
+prosody_c2s_interfaces_description: "Les interfaces réseau sur lesquelles écouter
+  pour les connexions c2s (client to server).<br>\nCe paramètre est fourni pour les
+  utilisateur⋅ices avancé⋅es. Ne changez pas ce paramètre si vous ne comprenez pas
+  entièrement ce que cela signifie.<br<\nUne liste d'IP séparées par des virgules
+  (les espaces seront retirés).\nOn pourra utiliser «*» pour écouter sur toutes les
+  IPv4, et «::» pour toutes les IPv6.<br>\nExemples de configuration possible:\n<ul>\n\
+  \  <li>*, ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>127.0.0.1, ::1,
+  172.18.0.42</li>\n</ul>\n"
