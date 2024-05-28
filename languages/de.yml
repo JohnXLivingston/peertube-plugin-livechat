@@ -455,3 +455,9 @@ prosody_c2s_interfaces_description: "Die Netzwerkschnittstellen, die für Client
   zu lauschen, und \"::\" für alle IPv6-Schnittstellen.<br>\nBeispiele:\n<ul>\n  <li>*,
   ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>127.0.0.1, ::1, 172.18.0.42</li>\n\
   </ul>\n"
+livechat_configuration_channel_forbidden_words_label_label: Beschriftung
+livechat_configuration_channel_forbidden_words_label_desc: Beschriftung für diese
+  Regel der verbotenen Wörter
+invalid_value_wrong_type: Der Wert hat einen falschen Typ.
+invalid_value_wrong_format: Der Wert ist in einem falschen Format.
+invalid_value_not_in_range: Der Wert liegt nicht im zulässigen Bereich.
