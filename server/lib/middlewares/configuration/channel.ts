@@ -12,9 +12,13 @@ import { isUserAdminOrModerator } from '../../helpers'
  * Returns a middleware handler to get the channelInfos from the channel parameter.
  * This is used in api related to channel configuration options.
  * @param options Peertube server options
+ * @param publicPage If true, the page is considered public, and we don't test user rights.
  * @returns middleware function
  */
-function getCheckConfigurationChannelMiddleware (options: RegisterServerOptions): RequestPromiseHandler {
+function getCheckConfigurationChannelMiddleware (
+  options: RegisterServerOptions,
+  publicPage?: boolean
+): RequestPromiseHandler {
   return async (req: Request, res: Response, next: NextFunction) => {
     const logger = options.peertubeHelpers.logger
     const channelId = req.params.channelId
@@ -32,18 +36,20 @@ function getCheckConfigurationChannelMiddleware (options: RegisterServerOptions)
       return
     }
 
-    // To access this page, you must either be:
-    // - the channel owner,
-    // - an instance modo/admin
-    // - TODO: a channel chat moderator, as defined in this page.
-    if (channelInfos.ownerAccountId === currentUser.Account.id) {
-      logger.debug('Current user is the channel owner')
-    } else if (await isUserAdminOrModerator(options, res)) {
-      logger.debug('Current user is an instance moderator or admin')
-    } else {
-      logger.warn('Current user tries to access a channel for which he has no right.')
-      res.sendStatus(403)
-      return
+    if (!publicPage) {
+      // To access this page, you must either be:
+      // - the channel owner,
+      // - an instance modo/admin
+      // - TODO: a channel chat moderator, as defined in this page.
+      if (channelInfos.ownerAccountId === currentUser.Account.id) {
+        logger.debug('Current user is the channel owner')
+      } else if (await isUserAdminOrModerator(options, res)) {
+        logger.debug('Current user is an instance moderator or admin')
+      } else {
+        logger.warn('Current user tries to access a channel for which he has no right.')
+        res.sendStatus(403)
+        return
+      }
     }
 
     logger.debug('User can access the configuration channel api.')

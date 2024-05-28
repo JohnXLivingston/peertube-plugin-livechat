@@ -36,8 +36,10 @@ CONVERSE_COMMIT=""
 # - Removing unecessary plugins: headless/pubsub, minimize, notifications, profile, omemo, push, roomlist, dragresize.
 # - Destroy room: remove the challenge, and the new JID
 # - New config option [colorize_username](https://conversejs.org/docs/html/configuration.html#colorize_username)
+# - New loadEmojis hook, to customize emojis at runtime.
+# - Fix custom emojis path when assets_path is not the default path.
 CONVERSE_VERSION="livechat-10.0.0"
-# CONVERSE_COMMIT="821b41e189b25316b9a044cb41ecc9b3f1910172"
+CONVERSE_COMMIT="4402fcc3fc60f6c9334f86528c33a0b463371d12"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"

@@ -4,7 +4,9 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ValidationError } from '../../lib/models/validation'
-import type { ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions } from 'shared/lib/types'
+import type {
+  ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions, ChannelEmojis
+} from 'shared/lib/types'
 import { ValidationErrorType } from '../../lib/models/validation'
 import { getBaseRoute } from '../../../utils/uri'
 
@@ -154,6 +156,24 @@ export class ChannelDetailsService {
 
     if (!response.ok) {
       throw new Error('Can\'t get channel configuration options.')
+    }
+
+    return response.json()
+  }
+
+  fetchEmojis = async (channelId: number): Promise<ChannelEmojis> => {
+    const response = await fetch(
+      getBaseRoute(this._registerClientOptions) +
+        '/api/configuration/channel/emojis/' +
+        encodeURIComponent(channelId),
+      {
+        method: 'GET',
+        headers: this._headers
+      }
+    )
+
+    if (!response.ok) {
+      throw new Error('Can\'t get channel emojis options.')
     }
 
     return response.json()

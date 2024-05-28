@@ -37,6 +37,20 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
     }
   })
 
+  registerClientRoute({
+    route: 'livechat/configuration/emojis',
+    onMount: async ({ rootEl }) => {
+      const urlParams = new URLSearchParams(window.location.search)
+      const channelId = urlParams.get('channelId') ?? ''
+      render(html`
+        <livechat-channel-emojis
+          .registerClientOptions=${clientOptions}
+          .channelId=${channelId}
+        ></livechat-channel-emojis>
+      `, rootEl)
+    }
+  })
+
   registerHook({
     target: 'filter:left-menu.links.create.result',
     handler: async (links: any) => {

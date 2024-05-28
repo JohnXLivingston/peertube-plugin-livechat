@@ -43,7 +43,8 @@ async function getConverseJSParams (
     'converse-theme',
     'federation-no-remote-chat',
     'prosody-room-allow-s2s',
-    'chat-no-anonymous'
+    'chat-no-anonymous',
+    'disable-channel-configuration'
   ])
 
   if (settings['chat-no-anonymous'] && userIsConnected === false) {
@@ -133,7 +134,8 @@ async function getConverseJSParams (
     // forceDefaultHideMucParticipants is for testing purpose
     // (so we can stress test with the muc participant list hidden by default)
     forceDefaultHideMucParticipants: params.forceDefaultHideMucParticipants,
-    externalAuthOIDC
+    externalAuthOIDC,
+    customEmojisUrl: connectionInfos.customEmojisUrl
   }
 }
 
@@ -237,6 +239,7 @@ async function _connectionInfos (
     localWsUri: string | null
     remoteConnectionInfos: WCRemoteConnectionInfos | undefined
     roomJID: string
+    customEmojisUrl?: string
   } | InitConverseJSParamsError> {
   const { video, remoteChatInfos, channelId, roomKey } = roomInfos
 
@@ -249,6 +252,7 @@ async function _connectionInfos (
 
   let remoteConnectionInfos: WCRemoteConnectionInfos | undefined
   let roomJID: string
+  let customEmojisUrl: string | undefined
   if (video?.remote) {
     const canWebsocketS2S = !settings['federation-no-remote-chat'] && !settings['disable-websocket']
     const canDirectS2S = !settings['federation-no-remote-chat'] && !!settings['prosody-room-allow-s2s']
@@ -266,6 +270,8 @@ async function _connectionInfos (
       }
     }
     roomJID = remoteConnectionInfos.roomJID
+
+    // TODO: fill customEmojisUrl (how to get the info? is the remote livechat compatible?)
   } else {
     try {
       roomJID = await _localRoomJID(
@@ -277,6 +283,12 @@ async function _connectionInfos (
         channelId,
         params.forcetype ?? false
       )
+
+      if (!settings['disable-channel-configuration'] && video?.channelId) {
+        customEmojisUrl = getBaseRouterRoute(options) +
+          'api/configuration/channel/emojis/' +
+          encodeURIComponent(video.channelId)
+      }
     } catch (err) {
       options.peertubeHelpers.logger.error(err)
       return {
@@ -293,7 +305,8 @@ async function _connectionInfos (
     localBoshUri,
     localWsUri,
     remoteConnectionInfos,
-    roomJID
+    roomJID,
+    customEmojisUrl
   }
 }
 

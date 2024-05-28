@@ -42,6 +42,7 @@ interface InitConverseJSParams {
     buttonLabel: string
     url: string
   }>
+  customEmojisUrl?: string | null
 }
 
 interface InitConverseJSParamsError {
@@ -150,6 +151,16 @@ type ExternalAuthResult = ExternalAuthResultError | ExternalAuthResultOk
 
 type ExternalAuthOIDCType = 'custom' | 'google' | 'facebook'
 
+interface CustomEmojiDefinition {
+  sn: string
+  url: string
+  isCategoryEmoji?: boolean
+}
+
+interface ChannelEmojis {
+  customEmojis: CustomEmojiDefinition[]
+}
+
 export type {
   ConverseJSTheme,
   InitConverseJSParams,
@@ -165,5 +176,7 @@ export type {
   ExternalAuthResultError,
   ExternalAuthResultOk,
   ExternalAuthResult,
-  ExternalAuthOIDCType
+  ExternalAuthOIDCType,
+  CustomEmojiDefinition,
+  ChannelEmojis
 }

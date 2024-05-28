@@ -14,7 +14,8 @@ import type { AuthentInfos } from './auth'
 function defaultConverseParams (
   {
     forceReadonly, theme, assetsPath, room, forceDefaultHideMucParticipants, autofocus,
-    peertubeVideoOriginalUrl, peertubeVideoUUID
+    peertubeVideoOriginalUrl, peertubeVideoUUID,
+    customEmojisUrl
   }: InitConverseJSParams
 ): any {
   const mucShowInfoMessages = forceReadonly
@@ -84,7 +85,8 @@ function defaultConverseParams (
       'livechatMiniMucHeadPlugin',
       'livechatViewerModePlugin',
       'livechatDisconnectOnUnloadPlugin',
-      'converse-slow-mode'
+      'converse-slow-mode',
+      'livechatEmojis'
     ],
     show_retraction_warning: false, // No need to use this warning (except if we open to external clients?)
     muc_show_info_messages: mucShowInfoMessages,
@@ -98,7 +100,9 @@ function defaultConverseParams (
     livechat_load_all_vcards: !!forceReadonly,
 
     livechat_peertube_video_original_url: peertubeVideoOriginalUrl,
-    livechat_peertube_video_uuid: peertubeVideoUUID
+    livechat_peertube_video_uuid: peertubeVideoUUID,
+
+    livechat_custom_emojis_url: customEmojisUrl
   }
 
   // TODO: params.clear_messages_on_reconnection = true when muc_mam will be available.
@@ -109,6 +113,29 @@ function defaultConverseParams (
   // see https://conversejs.org/docs/html/configuration.html#allow-user-trust-override).
   params.clear_cache_on_logout = true
   params.allow_user_trust_override = false
+
+  // We must enable custom emoji category, that ConverseJS disables by default.
+  // We put it last by default, but first if there are any custom emojis for this chat.
+  params.emoji_categories = Object.assign(
+    {},
+    customEmojisUrl
+      ? { custom: ':xmpp:' } // TODO: put here the default custom emoji
+      : {},
+    {
+      smileys: ':grinning:',
+      people: ':thumbsup:',
+      activity: ':soccer:',
+      travel: ':motorcycle:',
+      objects: ':bomb:',
+      nature: ':rainbow:',
+      food: ':hotdog:',
+      symbols: ':musical_note:',
+      flags: ':flag_ac:'
+    },
+    !customEmojisUrl
+      ? { custom: ':converse:' }
+      : {}
+  )
 
   return params
 }

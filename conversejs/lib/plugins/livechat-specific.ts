@@ -91,9 +91,17 @@ export const livechatSpecificsPlugin = {
         'livechat_mini_muc_head',
         'livechat_specific_external_authent',
         'livechat_task_app_enabled',
-        'livechat_task_app_restore'
+        'livechat_task_app_restore',
+        'livechat_custom_emojis_url',
+        'emoji_categories'
       ]) {
         _converse.api.settings.set(k, params[k])
+      }
+
+      // We also unload emojis, in case there are custom emojis.
+      window.converse.emojis = {
+        initialized: false,
+        initialized_promise: getOpenPromise()
       }
 
       // Then login.
@@ -143,4 +151,33 @@ export const livechatSpecificsPlugin = {
       }
     }
   }
+}
+
+// FIXME: this function is copied from @converse. Should not do so.
+function getOpenPromise (): any {
+  const wrapper: any = {
+    isResolved: false,
+    isPending: true,
+    isRejected: false
+  }
+  const promise: any = new Promise((resolve, reject) => {
+    wrapper.resolve = resolve
+    wrapper.reject = reject
+  })
+  Object.assign(promise, wrapper)
+  promise.then(
+    function (v: any) {
+      promise.isResolved = true
+      promise.isPending = false
+      promise.isRejected = false
+      return v
+    },
+    function (e: any) {
+      promise.isResolved = false
+      promise.isPending = false
+      promise.isRejected = true
+      throw (e)
+    }
+  )
+  return promise
 }
