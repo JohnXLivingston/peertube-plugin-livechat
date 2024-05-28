@@ -11,9 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-only
 ### New features
 
 * Overhauled configuration page, with more broadly customizable lists of parameters by @Murazaki ([See pull request #352](https://github.com/JohnXLivingston/peertube-plugin-livechat/pull/352))
-
-### New features
-
 * #377: new setting to listen C2S connection on non-localhost interfaces.
 
 ## 10.0.2
