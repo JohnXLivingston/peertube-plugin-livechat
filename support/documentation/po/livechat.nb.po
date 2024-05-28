@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-05-28 11:58+0200\n"
+"POT-Creation-Date: 2024-05-28 12:04+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nb_NO/>\n"
@@ -1011,12 +1011,12 @@ msgstr ""
 #. type: Fenced code block
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
-msgid "127.0.0.1       anon.example.com room.example.com\n"
+msgid "127.0.0.1       anon.example.org room.example.org\n"
 msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
-msgid "Replace `example.com` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
+msgid "Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
 msgstr ""
 
 #. type: Title ##
@@ -1053,7 +1053,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
-msgid "You also need to add DNS records (A and AAAA) for `anon.example.com` and `room.example.com` (replace `example.com` by your actual domain name)."
+msgid "You also need to add DNS records (A and AAAA) for `anon.example.org` and `room.example.org` (replace `example.org` by your actual domain name)."
 msgstr ""
 
 #. type: Plain text
@@ -1083,8 +1083,8 @@ msgstr ""
 msgid ""
 "[xmpp.mypeertube]\n"
 "Anonymous=true\n"
-"Server=\"anon.example.com:52822\"\n"
-"Muc=\"room.example.com\"\n"
+"Server=\"anon.example.org:52822\"\n"
+"Muc=\"room.example.org\"\n"
 "Nick=\"Matterbridge\"\n"
 "RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
 "NoTLS=true\n"
@@ -1092,7 +1092,7 @@ msgstr ""
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
-msgid "Replace `example.com` by your actual instance domain name."
+msgid "Replace `example.org` by your actual instance domain name."
 msgstr ""
 
 #. type: Bullet: '- '

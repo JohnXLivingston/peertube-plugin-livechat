@@ -23,10 +23,10 @@ This will allow localhost XMPP clients to connect to the Prosody XMPP server.
 You may need to add some line to your `/etc/hosts`:
 
 ```
-127.0.0.1       anon.example.com room.example.com
+127.0.0.1       anon.example.org room.example.org
 ```
 
-Replace `example.com` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below.
+Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below.
 
 ## Allow external connections (advanced)
 
@@ -41,7 +41,7 @@ You can also use `*` to listen on all IPv4 interfaces, and `::` for all IPv6. Do
 Then you need to open the C2S port (by default `52822`, but check the plugin settings to get the current value) in your firewall so that it can be reached from the internet.
 If you don't want to use C2S connections for anything else than your Matterbridge service, you should restrict access to this port to your Matterbridge server IP.
 
-You also need to add DNS records (A and AAAA) for `anon.example.com` and `room.example.com` (replace `example.com` by your actual domain name).
+You also need to add DNS records (A and AAAA) for `anon.example.org` and `room.example.org` (replace `example.org` by your actual domain name).
 
 In case you are using a port other than `5222` (XMPP standard port) you also need to set the [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) to the correct port.
 
@@ -54,14 +54,14 @@ So in the TOML config file put:
 ``` TOML
 [xmpp.mypeertube]
 Anonymous=true
-Server="anon.example.com:52822"
-Muc="room.example.com"
+Server="anon.example.org:52822"
+Muc="room.example.org"
 Nick="Matterbridge"
 RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 NoTLS=true
 ```
 
-- Replace `example.com` by your actual instance domain name.
+- Replace `example.org` by your actual instance domain name.
 - Replace `52822` by the actual port if you changed it.
 - `mypeertube` can be replaced by another name.
 - Using `peertube` as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification.
