@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-05-27 17:18+0200\n"
+"POT-Creation-Date: 2024-05-28 11:58+0200\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/zh_Hant/>\n"
@@ -963,7 +963,161 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
-msgid "Here is a tutorial to use Matterbridge with the plugin: <https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md>"
+msgid "The following is based on a tutorial to use Matterbridge with the plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "Requirements"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 or later."
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 or later."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "The easiest is if the PeerTube instance and Matterbridge run on the same server."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "Internal connections only (basic)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "You will need to enable `{{% livechat_label prosody_c2s_label %}}` in the livechat plugin settings."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "This will allow localhost XMPP clients to connect to the Prosody XMPP server."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "You may need to add some line to your `/etc/hosts`:"
+msgstr ""
+
+#. type: Fenced code block
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "127.0.0.1       anon.example.com room.example.com\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "Replace `example.com` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "Allow external connections (advanced)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "By default, the internal Prosody XMPP server only listens on localhost (127.0.0.1)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "It allows to add a list of IPs to listen on, coma separated (spaces will be stripped)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "You can also use `*` to listen on all IPv4 interfaces, and `::` for all IPv6. Doing so allows external access to the client to server interface."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "Then you need to open the C2S port (by default `52822`, but check the plugin settings to get the current value) in your firewall so that it can be reached from the internet.  If you don't want to use C2S connections for anything else than your Matterbridge service, you should restrict access to this port to your Matterbridge server IP."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "You also need to add DNS records (A and AAAA) for `anon.example.com` and `room.example.com` (replace `example.com` by your actual domain name)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "In case you are using a port other than `5222` (XMPP standard port) you also need to set the [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) to the correct port."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid "Configurating Matterbridge"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "In the version 1.22.4, Matterbridge added support for XMPP anonymous connections needed to connect to the built-in prosody."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "So in the TOML config file put:"
+msgstr ""
+
+#. type: Fenced code block (TOML)
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+#, no-wrap
+msgid ""
+"[xmpp.mypeertube]\n"
+"Anonymous=true\n"
+"Server=\"anon.example.com:52822\"\n"
+"Muc=\"room.example.com\"\n"
+"Nick=\"Matterbridge\"\n"
+"RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
+"NoTLS=true\n"
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "Replace `example.com` by your actual instance domain name."
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "Replace `52822` by the actual port if you changed it."
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "`mypeertube` can be replaced by another name."
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "Using `peertube` as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification."
+msgstr ""
+
+#. type: Bullet: '- '
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "The setting `NoTLS=true` allows connecting to a server with self-signed certificates."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "Now you can add this account to gateways and bridge specific live-chat channels."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
