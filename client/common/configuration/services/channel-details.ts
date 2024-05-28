@@ -61,8 +61,8 @@ export class ChannelDetailsService {
           if (fw.regexp) {
             if (v.trim() !== '') {
               try {
-                const test = new RegExp(v)
-                test.test(v)
+                // eslint-disable-next-line no-new
+                new RegExp(v)
               } catch (_) {
                 validationError.properties[`bot.forbiddenWords.${i}.entries`]
                   .push(ValidationErrorType.WrongFormat)

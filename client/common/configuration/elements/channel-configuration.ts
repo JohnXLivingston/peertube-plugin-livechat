@@ -103,7 +103,7 @@ export class ChannelConfigurationElement extends LivechatElement {
           colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
           description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC2)
         },
-        regex: {
+        regexp: {
           colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_LABEL),
           description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_DESC)
         },
@@ -152,7 +152,7 @@ export class ChannelConfigurationElement extends LivechatElement {
           default: [],
           separators: ['\n', '\t', ';']
         },
-        regex: {
+        regexp: {
           inputType: 'checkbox',
           default: false
         },

@@ -594,8 +594,6 @@ export class DynamicTableFormElement extends LivechatElement {
           : target.value
       : undefined
 
-    console.log(`value: ${JSON.stringify(value)}`)
-
     if (value !== undefined) {
       for (const rowById of this._rowsById) {
         if (rowById._id === rowId) {
