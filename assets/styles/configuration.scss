@@ -307,12 +307,20 @@ livechat-tags-input {
     padding: 0;
     margin: var(--tag-padding-vertical) 0;
     max-height: 150px;
-    overflow-y: scroll;
+    overflow-y: auto;
     border-bottom: 1px dashed var(--greyForegroundColor);
-    transition: 0.3s height;
+    transition-property: height, margin;
+    transition-duration: 0.3s;
 
     &.empty {
-      visibility: hidden;
+      height: 0;
+      margin: 0;
+      border: none;
+    }
+
+    @supports (scrollbar-width: auto) {
+      scrollbar-color: var(--greyForegroundColor) transparent;
+      scrollbar-width: thin;
     }
   }
 
@@ -334,6 +342,7 @@ livechat-tags-input {
   .tag-searched {
     width: auto;
     height: 24px;
+    max-width: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -396,6 +405,9 @@ livechat-tags-input {
 
     .tag-name {
       margin-top: 3px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 

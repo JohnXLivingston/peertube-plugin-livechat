@@ -46,7 +46,7 @@ export class TagsInputElement extends LivechatElement {
   private _searchedTagsIndex: number[] = []
 
   @state()
-  private _isPressingKey: string[] = []
+  private readonly _isPressingKey: string[] = []
 
   @property({ attribute: false })
   public separators?: string[] = ['\n']
@@ -62,7 +62,7 @@ export class TagsInputElement extends LivechatElement {
           unfocused: this._searchedTagsIndex.length
         })}>
           ${repeat(this.value, tag => tag,
-            (tag, index) => html`<li key=${index} class="tag" ${animate({
+            (tag, index) => html`<li key=${index} class="tag" title=${tag} ${animate({
                 keyframeOptions: {
                   duration: this.animDuration,
                   fill: 'both'
@@ -78,7 +78,7 @@ export class TagsInputElement extends LivechatElement {
         </ul>
         <ul id="tags-searched" class=${classMap({ empty: !this._searchedTagsIndex.length })}>
           ${repeat(this._searchedTagsIndex, index => index,
-            (index) => html`<li key=${index} class="tag-searched" ${animate({
+            (index) => html`<li key=${index} class="tag-searched" title=${this.value[index]} ${animate({
                 keyframeOptions: {
                   duration: this.animDuration,
                   fill: 'both'
@@ -144,6 +144,8 @@ export class TagsInputElement extends LivechatElement {
         }
         // no duplicate
         this.value = [...new Set([...this.value, ...values])]
+
+        this._inputValue = target.value
 
         this._updateSearchedTags() // is that necessary ?
 
@@ -243,7 +245,6 @@ export class TagsInputElement extends LivechatElement {
         e.preventDefault()
         target.value = target.value.slice(0, -1)
         this._handleNewTag(e)
-        return false
       } else {
         this._updateSearchedTags()
       }
@@ -258,6 +259,7 @@ export class TagsInputElement extends LivechatElement {
     if (target) {
       this._addTag(target.value)
       target.value = ''
+      this._inputValue = ''
 
       this._updateSearchedTags()
     }
