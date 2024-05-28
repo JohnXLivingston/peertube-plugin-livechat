@@ -234,6 +234,11 @@ livechat-dynamic-table-form {
     td:last-child {
       vertical-align: middle;
       min-width: 28px;
+
+      > input:not([type="checkbox"]),
+      textarea {
+        min-width: 150px;
+      }
     }
 
     tbody tr:nth-child(odd) {
@@ -287,6 +292,8 @@ livechat-tags-input {
   flex-wrap: wrap;
   max-width: 320px;
 
+  // stylelint trying to rearrange unrelated root blocks because of smaller blocks in them
+  /* stylelint-disable-next-line no-descending-specificity */
   input {
     flex: 1;
     border: none;
@@ -295,6 +302,7 @@ livechat-tags-input {
     background-color: inherit;
     width: 100%;
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &:focus {
       outline: transparent;
     }
@@ -342,7 +350,6 @@ livechat-tags-input {
   .tag-searched {
     width: auto;
     height: 24px;
-    max-width: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -408,6 +415,7 @@ livechat-tags-input {
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      max-width: 250px;
     }
   }
 

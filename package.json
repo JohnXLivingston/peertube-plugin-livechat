@@ -33,9 +33,6 @@
     "dist/assets/styles/configuration.css"
   ],
   "dependencies": {
-    "@lit-labs/motion": "^1.0.7",
-    "@lit/context": "^1.1.1",
-    "@lit/task": "^1.0.0",
     "@xmpp/jid": "^0.13.1",
     "async": "^3.2.2",
     "decache": "^4.6.0",
@@ -44,11 +41,13 @@
     "http-proxy": "^1.18.1",
     "log-rotate": "^0.2.8",
     "openid-client": "^5.6.5",
-    "rxjs": "^7.8.1",
     "validate-color": "^2.2.1",
     "xmppjs-chat-bot": "^0.3.0"
   },
   "devDependencies": {
+    "@lit-labs/motion": "^1.0.7",
+    "@lit/context": "^1.1.1",
+    "@lit/task": "^1.0.0",
     "@peertube/feed": "^5.1.0",
     "@peertube/peertube-types": "^5.2.0",
     "@tsconfig/node12": "^1.0.9",
@@ -74,6 +73,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "lit": "^2.4.0",
     "npm-run-all": "^4.1.5",
+    "rxjs": "^7.8.1",
     "sass": "^1.43.4",
     "sharp": "^0.33.2",
     "stylelint": "^14.0.1",
