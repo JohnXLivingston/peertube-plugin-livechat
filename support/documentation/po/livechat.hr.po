@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-05-28 12:04+0200\n"
-"PO-Revision-Date: 2024-06-04 14:14+0000\n"
+"PO-Revision-Date: 2024-06-05 10:41+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -148,7 +148,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`reuse`"
-msgstr ""
+msgstr "`reuse`"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -821,7 +821,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "{{%/* livechat_label open_chat_new_window */%}}\n"
-msgstr ""
+msgstr "{{%/* livechat_label open_chat_new_window */%}}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
