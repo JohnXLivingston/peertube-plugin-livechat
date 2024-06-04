@@ -207,7 +207,7 @@ export class ChannelConfigurationElement extends LivechatElement {
               <span>${this._channelConfiguration?.channel.displayName}</span>
               <span>${this._channelConfiguration?.channel.name}</span>
             </span>
-            <livechat-help-button .page="documentation/user/streamers/channel">
+            <livechat-help-button .page=${'documentation/user/streamers/channel'}>
             </livechat-help-button>
           </h1>
           <p>${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)}</p>

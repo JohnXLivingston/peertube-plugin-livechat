@@ -51,7 +51,7 @@ export class ChannelHomeElement extends LivechatElement {
       <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-home">
         <h1>
           ${ptTr(LOC_LIVECHAT_CONFIGURATION_TITLE)}
-            <livechat-help-button .page="documentation/user/streamers/channel">
+            <livechat-help-button .page=${'documentation/user/streamers/channel'}>
             </livechat-help-button>
         </h1>
         <p>${ptTr(LOC_LIVECHAT_CONFIGURATION_DESC)}</p>
