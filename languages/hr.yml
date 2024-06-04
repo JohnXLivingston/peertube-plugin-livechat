@@ -166,9 +166,9 @@ livechat_configuration_channel_banned_jids_label: Blokirani korisnici i uzorci
 livechat_configuration_channel_bot_nickname: Nadimak bota
 livechat_configuration_channel_quote_label2: Poruke
 livechat_configuration_channel_slow_mode_label: Spori način rada
-livechat_configuration_channel_slow_mode_desc: "Vrijednost sporog načina rada:\n<ul>\n\
-  \   <li>0: spori način rada onemogućen</li>\n   <li>Bilo koji pozitivan cijeli broj:
-  korisnici mogu slati poruke svakih X sekundi (ograničenje ne vrijedi za moderatore)</li>\n\
+livechat_configuration_channel_slow_mode_desc: "Zadana vrijednost sporog načina rada:\n\
+  <ul>\n   <li>0: spori način rada onemogućen</li>\n   <li>Bilo koji pozitivan cijeli
+  broj: korisnici mogu slati poruke svakih X sekundi (ograničenje ne vrijedi za moderatore)</li>\n\
   </ul>\n"
 chatroom_not_accessible: Ova chat soba ne postoji ili joj ne možeš pristupiti.
 login_using_external_account: Prijavi se pomoću eksternog računa
@@ -179,3 +179,22 @@ external_auth_google_oidc_label: Koristi Google
 external_auth_facebook_oidc_label: Koristi Facebook
 login_remote_peertube_video_open_failed: 'Tvoj preglednik je blokirao otvaranje na
   eksternoj instanci, pokušaj ručno otvoriti ovu vezu:'
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
+external_auth_custom_oidc_label: Koristi jednog pružatelja usluge OpenID Connect
+external_auth_google_oidc_description: "Aktiviranjem ove opcije dodaje se gumb „prijava
+  s Googleom”.\nMoraš konfigurirati jednu Google OAuth aplikaciju.\n"
+external_auth_facebook_oidc_description: "Aktiviranjem ove opcije dodaje se gumb „prijava
+  s Facebookom”.\nMoraš konfigurirati jednu Facebook OAuth aplikaciju.\n"
+prosody_components_label: Omogući prilagođene eksterne komponente u Prosody
+prosody_port_label: Prosody priključak
+disable_websocket_label: Onemogući Websocket
+prosody_c2s_port_label: Prosody priključak za vezu između klijenta i servera
+prosody_s2s_interfaces_label: Mrežna sučelja za vezu između servera i servera
+prosody_c2s_interfaces_label: Mrežna sučelja za vezu između klijenta i servera
+room_type_option_video: Svaki video ima zasebnu web-chat sobu
+room_type_description: Ovdje možeš odabrati želiš li zasebne sobe za svaki video ili
+  ih grupirati po kanalu.
+room_type_option_channel: Web-chat sobe se grupiraju po kanalu
+prosody_s2s_port_label: Prosody priključak za vezu između servera i servera
+prosody_components_port_label: Prosody priključak za eksterne komponente
+prosody_components_interfaces_label: Prosody mrežna sučelja za eksterne komponente
