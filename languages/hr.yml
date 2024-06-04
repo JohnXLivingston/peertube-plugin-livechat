@@ -201,3 +201,15 @@ prosody_components_interfaces_label: Prosody mrežna sučelja za eksterne kompon
 auto_display_description: Prilikom gledanja videa automatski će se otvoriti prozor
   za chat.
 open_blank_description: U novom prozoru će se pojavit gumb za otvaranje web chata.
+share_url_description: Postojat će gumb za dijeljenje URL-a chata (može se na primjer
+  koristiti za OBS integraciju).
+per_live_video_description: Ako je označeno, sva videa uživo imat će potvrdni okvir
+  u svojim svojstvima za aktiviranje web chata.
+per_live_video_label: Korisnici mogu aktivirati chat za svoja videa uživo
+all_lives_label: Aktiviraj chat za sva videa uživo
+no_anonymous_label: Sakrij chat za anonimne korisnike
+theming_advanced_description: <h3>Izgled</h3>
+chat_style_description: "Dodatni stilovi koji se dodaju iframe atributu stila. <br>\n
+  Primjer: height:400px;\n"
+livechat_configuration_channel_forbidden_words_label_label: Oznaka
+converse_theme_description: Odaberi converseJS temu koju želiš koristiti.
