@@ -198,3 +198,6 @@ room_type_option_channel: Web-chat sobe se grupiraju po kanalu
 prosody_s2s_port_label: Prosody priključak za vezu između servera i servera
 prosody_components_port_label: Prosody priključak za eksterne komponente
 prosody_components_interfaces_label: Prosody mrežna sučelja za eksterne komponente
+auto_display_description: Prilikom gledanja videa automatski će se otvoriti prozor
+  za chat.
+open_blank_description: U novom prozoru će se pojavit gumb za otvaranje web chata.
