@@ -8,6 +8,7 @@ import { ensureProsodyRunning } from './prosody/ctl'
 import { RoomChannel } from './room-channel'
 import { BotsCtl } from './bots/ctl'
 import { ExternalAuthOIDC, ExternalAuthOIDCType } from './external-auth/oidc'
+import { Emojis } from './emojis'
 import { loc } from './loc'
 const escapeHTML = require('escape-html')
 
@@ -67,6 +68,10 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
     loadOidcs() // we don't have to wait (can take time, it will do external http requests)
 
     await ExternalAuthOIDC.initSingletons(options)
+
+    // recreating a Emojis singleton
+    await Emojis.destroySingleton()
+    await Emojis.initSingleton(options)
 
     peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
     await ensureProsodyRunning(options)

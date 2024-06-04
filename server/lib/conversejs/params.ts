@@ -15,6 +15,7 @@ import { getBaseRouterRoute, getBaseStaticRoute } from '../helpers'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getBoshUri, getWSUri } from '../uri/webchat'
 import { ExternalAuthOIDC } from '../external-auth/oidc'
+import { Emojis } from '../emojis'
 
 interface GetConverseJSParamsParams {
   readonly?: boolean | 'noscroll'
@@ -284,10 +285,11 @@ async function _connectionInfos (
         params.forcetype ?? false
       )
 
-      if (!settings['disable-channel-configuration'] && video?.channelId) {
+      if (video?.channelId && await Emojis.singletonSafe()?.channelHasCustomEmojis(video.channelId)) {
         customEmojisUrl = getBaseRouterRoute(options) +
-          'api/configuration/channel/emojis/' +
-          encodeURIComponent(video.channelId)
+          'emojis/channel/' +
+          encodeURIComponent(video.channelId) +
+          '/definition'
       }
     } catch (err) {
       options.peertubeHelpers.logger.error(err)

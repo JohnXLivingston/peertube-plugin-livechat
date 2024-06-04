@@ -161,6 +161,11 @@ interface ChannelEmojis {
   customEmojis: CustomEmojiDefinition[]
 }
 
+interface ChannelEmojisConfiguration {
+  channel: ChannelInfos
+  emojis: ChannelEmojis
+}
+
 export type {
   ConverseJSTheme,
   InitConverseJSParams,
@@ -178,5 +183,6 @@ export type {
   ExternalAuthResult,
   ExternalAuthOIDCType,
   CustomEmojiDefinition,
-  ChannelEmojis
+  ChannelEmojis,
+  ChannelEmojisConfiguration
 }

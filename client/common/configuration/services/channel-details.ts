@@ -5,7 +5,7 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ValidationError } from '../../lib/models/validation'
 import type {
-  ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions, ChannelEmojis
+  ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions, ChannelEmojisConfiguration
 } from 'shared/lib/types'
 import { ValidationErrorType } from '../../lib/models/validation'
 import { getBaseRoute } from '../../../utils/uri'
@@ -161,7 +161,7 @@ export class ChannelDetailsService {
     return response.json()
   }
 
-  fetchEmojis = async (channelId: number): Promise<ChannelEmojis> => {
+  fetchEmojisConfiguration = async (channelId: number): Promise<ChannelEmojisConfiguration> => {
     const response = await fetch(
       getBaseRoute(this._registerClientOptions) +
         '/api/configuration/channel/emojis/' +
@@ -173,6 +173,9 @@ export class ChannelDetailsService {
     )
 
     if (!response.ok) {
+      if (response.status === 404) {
+        // File does not exist yet, that is a normal use case.
+      }
       throw new Error('Can\'t get channel emojis options.')
     }
 

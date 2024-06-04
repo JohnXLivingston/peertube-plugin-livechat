@@ -474,3 +474,5 @@ task_list_pick_message: |
   More information in the livechat plugin documentation.
 
 promote: 'Become moderator'
+
+livechat_configuration_channel_emojis_title: 'Channel emojis'

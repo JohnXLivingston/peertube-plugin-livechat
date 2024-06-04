@@ -107,3 +107,12 @@ Note: this includes the bot username and password. Don't let it leak.
 
 The `bot/muc_domain/rooms` folder contains room configuration files.
 See the [xmppjs-chat-bot](https://github.com/JohnXLivingston/xmppjs-chat-bot) package help for more information.
+
+## emojis/channel
+
+The `emojis/channel` folder contains custom emojis definitions for channels.
+
+For example, the channel `1` will contain:
+
+* `emojis/channel/1/definition.json`: the JSON file containing the emojis definitions
+* `emojis/channel/1/files/42.png`: N image files (png, jpg, ...), using numbers as filenames.

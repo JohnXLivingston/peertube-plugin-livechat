@@ -18,6 +18,7 @@ import { BotConfiguration } from './lib/configuration/bot'
 import { BotsCtl } from './lib/bots/ctl'
 import { ExternalAuthOIDC } from './lib/external-auth/oidc'
 import { migrateMUCAffiliations } from './lib/prosody/migration/migrateV10'
+import { Emojis } from './lib/emojis'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -48,6 +49,9 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await migrateSettings(options)
 
   await initSettings(options)
+
+  await Emojis.initSingleton(options) // after settings, before routes
+
   await initCustomFields(options)
   await initRouters(options)
   await initFederation(options)
@@ -110,6 +114,7 @@ async function unregister (): Promise<any> {
   await RoomChannel.destroySingleton()
   await BotConfiguration.destroySingleton()
   await ExternalAuthOIDC.destroySingletons()
+  await Emojis.destroySingleton()
 
   const module = __filename
   OPTIONS?.peertubeHelpers.logger.info(`Unloading module ${module}...`)

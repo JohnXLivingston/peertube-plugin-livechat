@@ -4,7 +4,7 @@
 
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
-import type { ChannelInfos, ChannelEmojis } from '../../../../shared/lib/types'
+import type { ChannelConfiguration, ChannelEmojisConfiguration, ChannelInfos } from '../../../../shared/lib/types'
 import { asyncMiddleware } from '../../middlewares/async'
 import { getCheckConfigurationChannelMiddleware } from '../../middlewares/configuration/channel'
 import { checkConfigurationEnabledMiddleware } from '../../middlewares/configuration/configuration'
@@ -15,6 +15,7 @@ import {
 } from '../../configuration/channel/storage'
 import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
 import { getConverseJSParams } from '../../../lib/conversejs/params'
+import { Emojis } from '../../../lib/emojis'
 
 async function initConfigurationApiRouter (options: RegisterServerOptions, router: Router): Promise<void> {
   const logger = options.peertubeHelpers.logger
@@ -57,7 +58,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
         await getChannelConfigurationOptions(options, channelInfos.id) ??
         getDefaultChannelConfigurationOptions(options)
 
-      const result = {
+      const result: ChannelConfiguration = {
         channel: channelInfos,
         configuration: channelOptions
       }
@@ -101,7 +102,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
       }
 
       logger.debug('Data seems ok, storing them.')
-      const result = {
+      const result: ChannelConfiguration = {
         channel: channelInfos,
         configuration: channelOptions
       }
@@ -113,25 +114,62 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
 
   router.get('/configuration/channel/emojis/:channelId', asyncMiddleware([
     checkConfigurationEnabledMiddleware(options),
-    getCheckConfigurationChannelMiddleware(options, true),
+    getCheckConfigurationChannelMiddleware(options),
     async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
-      if (!res.locals.channelInfos) {
-        logger.error('Missing channelInfos in res.locals, should not happen')
+      try {
+        if (!res.locals.channelInfos) {
+          throw new Error('Missing channelInfos in res.locals, should not happen')
+        }
+
+        const emojis = Emojis.singleton()
+        const channelInfos = res.locals.channelInfos as ChannelInfos
+
+        const channelEmojis =
+          (await emojis.channelCustomEmojisDefinition(channelInfos.id)) ??
+          emojis.emptyChannelDefinition()
+
+        const result: ChannelEmojisConfiguration = {
+          channel: channelInfos,
+          emojis: channelEmojis
+        }
+        res.status(200)
+        res.json(result)
+      } catch (err) {
+        logger.error(err)
         res.sendStatus(500)
-        return
       }
-      // const channelInfos = res.locals.channelInfos as ChannelInfos
+    }
+  ]))
 
-      const channelEmojis: ChannelEmojis = {
-        customEmojis: [{
-          sn: ':test:',
-          url: '/dist/images/custom_emojis/xmpp.png',
-          isCategoryEmoji: true
-        }]
+  router.post('/configuration/channel/emojis/:channelId', asyncMiddleware([
+    checkConfigurationEnabledMiddleware(options),
+    getCheckConfigurationChannelMiddleware(options),
+    async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
+      try {
+        if (!res.locals.channelInfos) {
+          throw new Error('Missing channelInfos in res.locals, should not happen')
+        }
+
+        const emojis = Emojis.singleton()
+        const channelInfos = res.locals.channelInfos as ChannelInfos
+
+        const emojisDefinition = req.body
+        let emojisDefinitionSanitized
+        try {
+          emojisDefinitionSanitized = await emojis.sanitizeChannelDefinition(channelInfos.id, emojisDefinition)
+        } catch (err) {
+          logger.warn(err)
+          res.sendStatus(400)
+          return
+        }
+
+        await emojis.saveChannelDefinition(channelInfos.id, emojisDefinitionSanitized)
+
+        res.sendStatus(200)
+      } catch (err) {
+        logger.error(err)
+        res.sendStatus(500)
       }
-
-      res.status(200)
-      res.json(channelEmojis)
     }
   ]))
 }
