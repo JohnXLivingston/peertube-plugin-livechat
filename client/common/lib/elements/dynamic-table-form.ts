@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2024 Mehdi Benadel <https://mehdibenadel.com>
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-/* eslint no-fallthrough: "off" */
-
 import type { TagsInputElement } from './tags-input'
+import type { DirectiveResult } from 'lit/directive'
 import { ValidationErrorType } from '../models/validation'
 import { html, nothing, TemplateResult } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
@@ -55,6 +55,7 @@ type DynamicTableAcceptedInputTypes = 'textarea'
 | 'url'
 | 'week'
 | 'tags'
+| 'image-file'
 
 interface CellDataSchema {
   min?: number
@@ -76,13 +77,21 @@ interface DynamicTableRowData {
   row: { [key: string]: DynamicTableAcceptedTypes }
 }
 
+export interface DynamicFormHeader {
+  [key: string]: {
+    colName: TemplateResult | DirectiveResult
+    description: TemplateResult | DirectiveResult
+  }
+}
+export interface DynamicFormSchema { [key: string]: CellDataSchema }
+
 @customElement('livechat-dynamic-table-form')
 export class DynamicTableFormElement extends LivechatElement {
   @property({ attribute: false })
-  public header: { [key: string]: { colName: TemplateResult, description: TemplateResult } } = {}
+  public header: DynamicFormHeader = {}
 
   @property({ attribute: false })
-  public schema: { [key: string]: CellDataSchema } = {}
+  public schema: DynamicFormSchema = {}
 
   @property()
   public validation?: {[key: string]: ValidationErrorType[] }
@@ -184,8 +193,8 @@ export class DynamicTableFormElement extends LivechatElement {
     </thead>`
   }
 
-  private readonly _renderHeaderCell = (headerCellData: { colName: TemplateResult
-    description: TemplateResult }): TemplateResult => {
+  private readonly _renderHeaderCell = (headerCellData: { colName: TemplateResult | DirectiveResult
+    description: TemplateResult | DirectiveResult }): TemplateResult => {
     return html`<th scope="col">
       <div data-toggle="tooltip" data-placement="bottom" data-html="true" title=${headerCellData.description}>
         ${headerCellData.colName}
@@ -244,10 +253,8 @@ export class DynamicTableFormElement extends LivechatElement {
 
     switch (propertySchema.default?.constructor) {
       case String:
+        propertySchema.inputType ??= 'text'
         switch (propertySchema.inputType) {
-          case undefined:
-            propertySchema.inputType = 'text'
-
           case 'text':
           case 'color':
           case 'date':
@@ -298,14 +305,24 @@ export class DynamicTableFormElement extends LivechatElement {
               ${feedback}
               `
             break
+
+          case 'image-file':
+            formElement = html`${this._renderImageFileInput(rowId,
+              inputId,
+              inputName,
+              propertyName,
+              propertySchema,
+              propertyValue?.toString(),
+              originalIndex)}
+              ${feedback}
+              `
+            break
         }
         break
 
       case Date:
+        propertySchema.inputType ??= 'datetime'
         switch (propertySchema.inputType) {
-          case undefined:
-            propertySchema.inputType = 'datetime'
-
           case 'date':
           case 'datetime':
           case 'datetime-local':
@@ -324,10 +341,8 @@ export class DynamicTableFormElement extends LivechatElement {
         break
 
       case Number:
+        propertySchema.inputType ??= 'number'
         switch (propertySchema.inputType) {
-          case undefined:
-            propertySchema.inputType = 'number'
-
           case 'number':
           case 'range':
             formElement = html`${this._renderInput(rowId,
@@ -344,10 +359,8 @@ export class DynamicTableFormElement extends LivechatElement {
         break
 
       case Boolean:
+        propertySchema.inputType ??= 'checkbox'
         switch (propertySchema.inputType) {
-          case undefined:
-            propertySchema.inputType = 'checkbox'
-
           case 'checkbox':
             formElement = html`${this._renderCheckbox(rowId,
               inputId,
@@ -363,10 +376,8 @@ export class DynamicTableFormElement extends LivechatElement {
         break
 
       case Array:
+        propertySchema.inputType ??= 'text'
         switch (propertySchema.inputType) {
-          case undefined:
-            propertySchema.inputType = 'text'
-
           case 'text':
           case 'color':
           case 'date':
@@ -547,6 +558,23 @@ export class DynamicTableFormElement extends LivechatElement {
           html`<option ?selected=${propertyValue === value} value=${value}>${name}</option>`
         )}
     </select>`
+  }
+
+  _renderImageFileInput = (rowId: number,
+    inputId: string,
+    inputName: string,
+    propertyName: string,
+    propertySchema: CellDataSchema,
+    propertyValue: string,
+    originalIndex: number
+  ): TemplateResult => {
+    return html`<livechat-image-file-input
+      .name=${inputName}
+      class="${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      id=${inputId}
+      aria-describedby="${inputId}-feedback"
+      @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
+      .value=${propertyValue}></livechat-image-file-input>`
   }
 
   _getInputValidationClass = (propertyName: string,

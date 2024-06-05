@@ -4,13 +4,15 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ChannelEmojisConfiguration } from 'shared/lib/types'
+import type { DynamicFormHeader, DynamicFormSchema } from '../../lib/elements/dynamic-table-form'
 import { LivechatElement } from '../../lib/elements/livechat'
 import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 import { ChannelDetailsService } from '../services/channel-details'
 import { channelDetailsServiceContext } from '../contexts/channel'
 import { ptTr } from '../../lib/directives/translation'
+import { ValidationError } from '../../lib/models/validation'
 import { Task } from '@lit/task'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { provide } from '@lit/context'
 import { html } from 'lit'
 
@@ -31,7 +33,30 @@ export class ChannelEmojisElement extends LivechatElement {
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService?: ChannelDetailsService
 
+  @state()
+  private _validationError?: ValidationError
+
   protected override render = (): unknown => {
+    const tableHeaderList: DynamicFormHeader = {
+      shortname: {
+        colName: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME),
+        description: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME_DESC)
+      },
+      file: {
+        colName: ptTr(LOC_LIVECHAT_EMOJIS_FILE),
+        description: ptTr(LOC_LIVECHAT_EMOJIS_FILE_DESC)
+      }
+    }
+    const tableSchema: DynamicFormSchema = {
+      shortname: {
+        inputType: 'text',
+        default: ''
+      },
+      file: {
+        inputType: 'image-file',
+        default: ''
+      }
+    }
     return this._asyncTaskRender.render({
       pending: () => {},
       complete: () => html`
@@ -49,6 +74,22 @@ export class ChannelEmojisElement extends LivechatElement {
             FIXME: help url OK?
           </h1>
           <form role="form" @submit=${this._saveEmojis}>
+            <div class="row mt-5">
+              <livechat-dynamic-table-form
+                .header=${tableHeaderList}
+                .schema=${tableSchema}
+                .validation=${this._validationError?.properties}
+                .validationPrefix=${'emojis'}
+                .rows=${this._channelEmojisConfiguration?.emojis.customEmojis}
+                @update=${(_e: CustomEvent) => {
+                    // if (this._channelEmojisConfiguration) {
+                    //   this._channelEmojisConfiguration.configuration.emojis.customEmojis = e.detail
+                    //   this.requestUpdate('_channelEmojisConfiguration')
+                    // }
+                  }
+                }
+              ></livechat-dynamic-table-form>
+            </div>
             <div class="form-group mt-5">
               <button type="submit" class="peertube-button-link orange-button">
                 ${ptTr(LOC_SAVE)}

@@ -12,7 +12,7 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { Task } from '@lit/task'
 import { localizedHelpUrl } from '../../../utils/help'
 import { ptTr } from '../directives/translation'
-import { DirectiveResult } from 'lit/directive'
+import type { DirectiveResult } from 'lit/directive'
 import { LivechatElement } from './livechat'
 
 @customElement('livechat-help-button')

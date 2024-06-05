@@ -476,3 +476,11 @@ task_list_pick_message: |
 promote: 'Become moderator'
 
 livechat_configuration_channel_emojis_title: 'Channel emojis'
+livechat_emojis_shortname: 'Short name'
+livechat_emojis_shortname_desc: |
+  You can use emojis using ":shortname:".
+  The short name can only contain alphanumerical characters, underscores and hyphens.
+livechat_emojis_file: 'File'
+livechat_emojis_file_desc: |
+  The maximum file size must be 32px by 32px.
+  Accepted formats: png, jpg, gif.

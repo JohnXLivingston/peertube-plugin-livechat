@@ -90,3 +90,7 @@ declare const LOC_CHATROOM_NOT_ACCESSIBLE: string
 declare const LOC_PROMOTE: string
 
 declare const LOC_LIVECHAT_CONFIGURATION_CHANNEL_EMOJIS_TITLE: string
+declare const LOC_LIVECHAT_EMOJIS_SHORTNAME: string
+declare const LOC_LIVECHAT_EMOJIS_SHORTNAME_DESC: string
+declare const LOC_LIVECHAT_EMOJIS_FILE: string
+declare const LOC_LIVECHAT_EMOJIS_FILE_DESC: string
