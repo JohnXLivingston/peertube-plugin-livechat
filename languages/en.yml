@@ -434,6 +434,7 @@ livechat_configuration_channel_for_more_info: |
 livechat_configuration_channel_banned_jids_label: "Banned users and patterns"
 livechat_configuration_channel_bot_nickname: "Bot nickname"
 
+validation_error: "There was an error during validation."
 invalid_value: "Invalid value."
 invalid_value_wrong_type: "Value is of the wrong type."
 invalid_value_wrong_format: "Value is in the wrong format."

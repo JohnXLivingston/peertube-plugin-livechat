@@ -10,4 +10,10 @@ export enum ValidationErrorType {
 
 export class ValidationError extends Error {
   properties: {[key: string]: ValidationErrorType[] } = {}
+
+  constructor (name: string, message: string | undefined, properties: ValidationError['properties']) {
+    super(message)
+    this.name = name
+    this.properties = properties
+  }
 }

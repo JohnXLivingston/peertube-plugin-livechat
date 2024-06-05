@@ -55,10 +55,13 @@ export class ImageFileInputElement extends LivechatElement {
 
   private async _upload (ev: Event): Promise<void> {
     ev.preventDefault()
+    ev.stopImmediatePropagation() // we dont want to propage the change from the input field, only from the hidden field
     const target = ev.target
     const file = (target as HTMLInputElement).files?.[0]
     if (!file) {
       this.value = ''
+      const event = new Event('change')
+      this.dispatchEvent(event)
       return
     }
 
@@ -81,6 +84,8 @@ export class ImageFileInputElement extends LivechatElement {
       })
 
       this.value = base64
+      const event = new Event('change')
+      this.dispatchEvent(event)
     } catch (err) {
       // FIXME: use peertube notifier?
       console.error(err)

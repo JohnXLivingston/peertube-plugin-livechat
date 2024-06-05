@@ -38,21 +38,21 @@ export class ChannelEmojisElement extends LivechatElement {
 
   protected override render = (): unknown => {
     const tableHeaderList: DynamicFormHeader = {
-      shortname: {
+      sn: {
         colName: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME),
         description: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME_DESC)
       },
-      file: {
+      url: {
         colName: ptTr(LOC_LIVECHAT_EMOJIS_FILE),
         description: ptTr(LOC_LIVECHAT_EMOJIS_FILE_DESC)
       }
     }
     const tableSchema: DynamicFormSchema = {
-      shortname: {
+      sn: {
         inputType: 'text',
         default: ''
       },
-      file: {
+      url: {
         inputType: 'image-file',
         default: ''
       }
@@ -81,11 +81,11 @@ export class ChannelEmojisElement extends LivechatElement {
                 .validation=${this._validationError?.properties}
                 .validationPrefix=${'emojis'}
                 .rows=${this._channelEmojisConfiguration?.emojis.customEmojis}
-                @update=${(_e: CustomEvent) => {
-                    // if (this._channelEmojisConfiguration) {
-                    //   this._channelEmojisConfiguration.configuration.emojis.customEmojis = e.detail
-                    //   this.requestUpdate('_channelEmojisConfiguration')
-                    // }
+                @update=${(e: CustomEvent) => {
+                    if (this._channelEmojisConfiguration) {
+                      this._channelEmojisConfiguration.emojis.customEmojis = e.detail
+                      this.requestUpdate('_channelEmojisConfiguration')
+                    }
                   }
                 }
               ></livechat-dynamic-table-form>
@@ -118,9 +118,32 @@ export class ChannelEmojisElement extends LivechatElement {
     args: () => []
   })
 
-  private readonly _saveEmojis = (ev?: Event): void => {
+  private async _saveEmojis (ev?: Event): Promise<void> {
     ev?.preventDefault()
-    // TODO
-    this.registerClientOptions?.peertubeHelpers.notifier.error('TODO')
+    const peertubeHelpers = this.registerClientOptions?.peertubeHelpers
+    if (!peertubeHelpers) { return } // Should not happen
+
+    if (!this._channelDetailsService || !this._channelEmojisConfiguration || !this.channelId) {
+      peertubeHelpers.notifier.error(await peertubeHelpers.translate(LOC_ERROR))
+      return
+    }
+
+    try {
+      await this._channelDetailsService.saveEmojisConfiguration(this.channelId, this._channelEmojisConfiguration.emojis)
+      this._validationError = undefined
+      this.requestUpdate('_validationError')
+    } catch (error) {
+      this._validationError = undefined
+      let msg: string
+      if ((error instanceof ValidationError)) {
+        this._validationError = error
+        if (error.message) {
+          msg = error.message
+        }
+      }
+      msg ??= await peertubeHelpers.translate(LOC_ERROR)
+      peertubeHelpers.notifier.error(msg)
+      this.requestUpdate('_validationError')
+    }
   }
 }

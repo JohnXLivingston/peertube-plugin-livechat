@@ -45,23 +45,30 @@ export class ChannelConfigurationElement extends LivechatElement {
     args: () => [this.registerClientOptions]
   })
 
-  private readonly _saveConfig = (event?: Event): void => {
+  private readonly _saveConfig = async (event?: Event): Promise<void> => {
     event?.preventDefault()
     if (this._channelDetailsService && this._channelConfiguration) {
       this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id,
         this._channelConfiguration.configuration)
         .then(() => {
           this._validationError = undefined
-          this.registerClientOptions
-            ?.peertubeHelpers.notifier.info('Livechat configuration has been properly updated.')
+          this.registerClientOptions?.peertubeHelpers.translate(LOC_SUCCESSFULLY_SAVED).then((msg) => {
+            this.registerClientOptions
+              ?.peertubeHelpers.notifier.info(msg)
+          })
           this.requestUpdate('_validationError')
         })
-        .catch((error: ValidationError) => {
-          this._validationError = error
+        .catch(async (error: Error) => {
+          this._validationError = undefined
+          if (error instanceof ValidationError) {
+            this._validationError = error
+          }
           console.warn(`A validation error occurred in saving configuration. ${error.name}: ${error.message}`)
-          this.registerClientOptions
-            ?.peertubeHelpers.notifier.error(
-              `An error occurred. ${(error.message) ? `${error.message}` : ''}`)
+          this.registerClientOptions?.peertubeHelpers.notifier.error(
+            error.message
+              ? error.message
+              : await this.registerClientOptions.peertubeHelpers.translate('error')
+          )
           this.requestUpdate('_validationError')
         })
     }
