@@ -154,16 +154,19 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
         const channelInfos = res.locals.channelInfos as ChannelInfos
 
         const emojisDefinition = req.body
-        let emojisDefinitionSanitized
+        let emojisDefinitionSanitized, bufferInfos
         try {
-          emojisDefinitionSanitized = await emojis.sanitizeChannelDefinition(channelInfos.id, emojisDefinition)
+          [emojisDefinitionSanitized, bufferInfos] = await emojis.sanitizeChannelDefinition(
+            channelInfos.id,
+            emojisDefinition
+          )
         } catch (err) {
           logger.warn(err)
           res.sendStatus(400)
           return
         }
 
-        await emojis.saveChannelDefinition(channelInfos.id, emojisDefinitionSanitized)
+        await emojis.saveChannelDefinition(channelInfos.id, emojisDefinitionSanitized, bufferInfos)
 
         res.sendStatus(200)
       } catch (err) {

@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 export enum ValidationErrorType {
+  Missing,
   WrongType,
   WrongFormat,
   NotInRange,

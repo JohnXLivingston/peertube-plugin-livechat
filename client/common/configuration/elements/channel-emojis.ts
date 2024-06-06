@@ -9,6 +9,7 @@ import { LivechatElement } from '../../lib/elements/livechat'
 import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 import { ChannelDetailsService } from '../services/channel-details'
 import { channelDetailsServiceContext } from '../contexts/channel'
+import { maxEmojisPerChannel } from 'shared/lib/emojis'
 import { ptTr } from '../../lib/directives/translation'
 import { ValidationError } from '../../lib/models/validation'
 import { Task } from '@lit/task'
@@ -78,12 +79,19 @@ export class ChannelEmojisElement extends LivechatElement {
               <livechat-dynamic-table-form
                 .header=${tableHeaderList}
                 .schema=${tableSchema}
+                .maxLines=${maxEmojisPerChannel}
                 .validation=${this._validationError?.properties}
                 .validationPrefix=${'emojis'}
                 .rows=${this._channelEmojisConfiguration?.emojis.customEmojis}
                 @update=${(e: CustomEvent) => {
                     if (this._channelEmojisConfiguration) {
                       this._channelEmojisConfiguration.emojis.customEmojis = e.detail
+                      // Fixing missing ':' for shortnames:
+                      for (const desc of this._channelEmojisConfiguration.emojis.customEmojis) {
+                        if (desc.sn === '') { continue }
+                        if (!desc.sn.startsWith(':')) { desc.sn = ':' + desc.sn }
+                        if (!desc.sn.endsWith(':')) { desc.sn += ':' }
+                      }
                       this.requestUpdate('_channelEmojisConfiguration')
                     }
                   }
@@ -131,6 +139,7 @@ export class ChannelEmojisElement extends LivechatElement {
     try {
       await this._channelDetailsService.saveEmojisConfiguration(this.channelId, this._channelEmojisConfiguration.emojis)
       this._validationError = undefined
+      peertubeHelpers.notifier.info(await peertubeHelpers.translate(LOC_SUCCESSFULLY_SAVED))
       this.requestUpdate('_validationError')
     } catch (error) {
       this._validationError = undefined

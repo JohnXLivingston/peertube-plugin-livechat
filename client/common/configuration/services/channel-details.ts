@@ -184,9 +184,15 @@ export class ChannelDetailsService {
 
     for (const [i, e] of channelEmojis.customEmojis.entries()) {
       propertiesError[`emojis.${i}.sn`] = []
-      // FIXME: the ":" should not be in the value, but added afterward.
-      if (!/^:[\w-]+:$/.test(e.sn)) {
+      if (e.sn === '') {
+        propertiesError[`emojis.${i}.sn`].push(ValidationErrorType.Missing)
+      } else if (!/^:[\w-]+:$/.test(e.sn)) {
         propertiesError[`emojis.${i}.sn`].push(ValidationErrorType.WrongFormat)
+      }
+
+      propertiesError[`emojis.${i}.url`] = []
+      if (!e.url) {
+        propertiesError[`emojis.${i}.url`].push(ValidationErrorType.Missing)
       }
     }
 
@@ -227,7 +233,5 @@ export class ChannelDetailsService {
       }
       throw new Error('Can\'t get channel emojis options.')
     }
-
-    return response.json()
   }
 }

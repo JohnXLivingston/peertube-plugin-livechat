@@ -6,6 +6,7 @@
 import type { TagsInputElement } from './tags-input'
 import type { DirectiveResult } from 'lit/directive'
 import { ValidationErrorType } from '../models/validation'
+import { maxSize, inputFileAccept } from 'shared/lib/emojis'
 import { html, nothing, TemplateResult } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { customElement, property, state } from 'lit/decorators.js'
@@ -92,6 +93,9 @@ export class DynamicTableFormElement extends LivechatElement {
 
   @property({ attribute: false })
   public schema: DynamicFormSchema = {}
+
+  @property({ attribute: false })
+  public maxLines?: number = undefined
 
   @property()
   public validation?: {[key: string]: ValidationErrorType[] }
@@ -223,6 +227,9 @@ export class DynamicTableFormElement extends LivechatElement {
   }
 
   private readonly _renderFooter = (): TemplateResult => {
+    if (this.maxLines && this._rowsById.length >= this.maxLines) {
+      return html``
+    }
     return html`<tfoot>
     <tr>
       ${Object.values(this.header).map(() => html`<td></td>`)}
@@ -574,7 +581,10 @@ export class DynamicTableFormElement extends LivechatElement {
       id=${inputId}
       aria-describedby="${inputId}-feedback"
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
-      .value=${propertyValue}></livechat-image-file-input>`
+      .value=${propertyValue}
+      .maxSize=${maxSize}
+      .accept=${inputFileAccept}
+    ></livechat-image-file-input>`
   }
 
   _getInputValidationClass = (propertyName: string,
@@ -595,6 +605,9 @@ export class DynamicTableFormElement extends LivechatElement {
       this.validation?.[`${this.validationPrefix}.${originalIndex}.${propertyName}`]
 
     if (validationErrorTypes !== undefined && validationErrorTypes.length !== 0) {
+      if (validationErrorTypes.includes(ValidationErrorType.Missing)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_MISSING)}`)
+      }
       if (validationErrorTypes.includes(ValidationErrorType.WrongType)) {
         errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_WRONG_TYPE)}`)
       }

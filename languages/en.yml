@@ -436,9 +436,11 @@ livechat_configuration_channel_bot_nickname: "Bot nickname"
 
 validation_error: "There was an error during validation."
 invalid_value: "Invalid value."
+invalid_value_missing: "This value is required."
 invalid_value_wrong_type: "Value is of the wrong type."
 invalid_value_wrong_format: "Value is in the wrong format."
 invalid_value_not_in_range: "Value is not in authorized range."
+invalid_value_file_too_big: "File size is too big (max size: %s)"
 
 slow_mode_info: "Slow mode is enabled, users can send a message every %1$s seconds."
 
@@ -483,5 +485,4 @@ livechat_emojis_shortname_desc: |
   The short name can only contain alphanumerical characters, underscores and hyphens.
 livechat_emojis_file: 'File'
 livechat_emojis_file_desc: |
-  The maximum file size must be 32px by 32px.
-  Accepted formats: png, jpg, gif.
+  The emoji file.

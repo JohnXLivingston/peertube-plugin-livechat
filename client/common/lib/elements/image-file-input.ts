@@ -33,6 +33,12 @@ export class ImageFileInputElement extends LivechatElement {
   @property({ reflect: true })
   public value: string | undefined
 
+  @property({ attribute: false })
+  public maxSize?: number
+
+  @property({ attribute: false })
+  public accept: string[] = ['image/jpg', 'image/png', 'image/gif']
+
   protected override render = (): unknown => {
     // FIXME: limit file size in the upload field.
     return html`
@@ -46,7 +52,7 @@ export class ImageFileInputElement extends LivechatElement {
       }
       <input
         type="file"
-        accept="image/jpg,image/png,image/gif"
+        accept="${this.accept.join(',')}"
         class="form-control"
         style=${this.value ? 'visibility: hidden;' : ''}
         @change=${async (ev: Event) => this._upload(ev)}
@@ -65,9 +71,16 @@ export class ImageFileInputElement extends LivechatElement {
     const target = ev.target
     const file = (target as HTMLInputElement).files?.[0]
     if (!file) {
-      this.value = ''
-      const event = new Event('change')
-      this.dispatchEvent(event)
+      return
+    }
+
+    if (this.maxSize && file.size > this.maxSize) {
+      let msg = await this.registerClientOptions?.peertubeHelpers.translate(LOC_INVALID_VALUE_FILE_TOO_BIG)
+      if (msg) {
+        // FIXME: better unit handling (here we force kb)
+        msg = msg.replace('%s', Math.round(this.maxSize / 1024).toString() + 'k')
+        this.registerClientOptions?.peertubeHelpers.notifier.error(msg)
+      }
       return
     }
 

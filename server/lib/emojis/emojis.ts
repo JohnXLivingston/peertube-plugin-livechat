@@ -6,17 +6,31 @@ import type { ChannelEmojis, CustomEmojiDefinition } from '../../../shared/lib/t
 import { RegisterServerOptions } from '@peertube/peertube-types'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
+import { allowedMimeTypes, allowedExtensions, maxEmojisPerChannel, maxSize } from '../../../shared/lib/emojis'
 import * as path from 'node:path'
 import * as fs from 'node:fs'
 
 let singleton: Emojis | undefined
 
+interface BufferInfos {
+  url: string
+  buf: Buffer
+  filename: string
+}
+
 export class Emojis {
   protected options: RegisterServerOptions
   protected channelBasePath: string
   protected channelBaseUri: string
+  protected readonly logger: {
+    debug: (s: string) => void
+    info: (s: string) => void
+    warn: (s: string) => void
+    error: (s: string) => void
+  }
 
   constructor (options: RegisterServerOptions) {
+    const logger = options.peertubeHelpers.logger
     this.options = options
     this.channelBasePath = path.resolve(
       options.peertubeHelpers.plugin.getDataDirectoryPath(),
@@ -31,6 +45,13 @@ export class Emojis {
         removePluginVersion: true
       }
     )
+
+    this.logger = {
+      debug: (s) => logger.debug('[Emojis] ' + s),
+      info: (s) => logger.info('[Emojis] ' + s),
+      warn: (s) => logger.warn('[Emojis] ' + s),
+      error: (s) => logger.error('[Emojis] ' + s)
+    }
   }
 
   /**
@@ -77,7 +98,17 @@ export class Emojis {
    * @param fileName the filename to test
    */
   public validImageFileName (fileName: string): boolean {
-    return /^(\d+)\.(png|jpg|gif)$/.test(fileName)
+    const m = fileName.match(/^(?:\d+)\.([a-z]+)$/)
+    if (!m) {
+      this.logger.debug('Filename invalid: ' + fileName)
+      return false
+    }
+    const ext = m[1]
+    if (!allowedExtensions.includes(ext)) {
+      this.logger.debug('File extension non allowed: ' + ext)
+      return false
+    }
+    return true
   }
 
   /**
@@ -85,7 +116,11 @@ export class Emojis {
    * @param sn short name
    */
   public validShortName (sn: any): boolean {
-    return (typeof sn === 'string') && /^:[\w-]+:$/.test(sn)
+    if ((typeof sn !== 'string') || !/^:[\w-]+:$/.test(sn)) {
+      this.logger.debug('Short name invalid: ' + (typeof sn === 'string' ? sn : '???'))
+      return false
+    }
+    return true
   }
 
   /**
@@ -95,15 +130,66 @@ export class Emojis {
    * @returns true if ok
    */
   public async validFileUrl (channelId: number, url: any): Promise<boolean> {
-    if (typeof url !== 'string') { return false }
-    const fileName = url.split('/').pop() ?? ''
-    if (!this.validImageFileName(fileName)) { return false }
-    const correctUrl = this.channelBaseUri + channelId.toString() + '/files/' + fileName
-    if (url !== correctUrl) {
+    if (typeof url !== 'string') {
+      this.logger.debug('File url is not a string')
       return false
     }
-    // TODO: test if file exists?
+    if (!url.startsWith('https://') && !url.startsWith('http://')) {
+      this.logger.debug('Url does not start by http scheme')
+      return false
+    }
+    const fileName = url.split('/').pop() ?? ''
+    if (!this.validImageFileName(fileName)) { return false }
+    const correctUrl = this.channelBaseUri + channelId.toString() + '/files/' + encodeURIComponent(fileName)
+    if (url !== correctUrl) {
+      this.logger.debug('Url is not the expected url: ' + url + ' vs ' + correctUrl)
+      return false
+    }
+    // TODO: test if file exists? (if so, only if we dont have any buffer to write)
     return true
+  }
+
+  public async validBufferInfos (channelId: number, toBufInfos: BufferInfos): Promise<boolean> {
+    if (toBufInfos.buf.length > maxSize) {
+      this.logger.debug('File is too big')
+      return false
+    }
+    return true
+  }
+
+  public async fileDataURLToBufferInfos (
+    channelId: number,
+    url: unknown,
+    cnt: number
+  ): Promise<BufferInfos | undefined> {
+    if ((typeof url !== 'string') || !url.startsWith('data:')) {
+      return undefined
+    }
+    const regex = /^data:(\w+\/([a-z]+));base64,/
+    const m = url.match(regex)
+    if (!m) {
+      this.logger.debug('Invalid data url format.')
+      return undefined
+    }
+    const mimetype = m[1]
+    if (!allowedMimeTypes.includes(mimetype)) {
+      this.logger.debug('Mime type not allowed: ' + mimetype)
+    }
+    const ext = m[2]
+    if (!allowedExtensions.includes(ext)) {
+      this.logger.debug('Extension not allowed: ' + ext)
+      return undefined
+    }
+    const buf = Buffer.from(url.replace(regex, ''), 'base64')
+
+    // For the filename, in order to get something unique, we will just use a timestamp + a counter.
+    const filename = Date.now().toString() + cnt.toString() + '.' + ext
+    const newUrl = this.channelBaseUri + channelId.toString() + '/files/' + encodeURIComponent(filename)
+    return {
+      buf,
+      url: newUrl,
+      filename
+    }
   }
 
   /**
@@ -134,28 +220,43 @@ export class Emojis {
    * Throw an error if format is not valid.
    * @param channelId channel id
    * @param def the definition
-   * @returns a proper ChannelEmojis
+   * @returns a proper ChannelEmojis, and some BufferInfos for missing files
    * @throws Error if format is not valid
    */
-  public async sanitizeChannelDefinition (channelId: number, def: any): Promise<ChannelEmojis> {
+  public async sanitizeChannelDefinition (channelId: number, def: any): Promise<[ChannelEmojis, BufferInfos[]]> {
     if (typeof def !== 'object') {
       throw new Error('Invalid definition, type must be object')
     }
     if (!('customEmojis' in def) || !Array.isArray(def.customEmojis)) {
       throw new Error('Invalid custom emojis entry in definition')
     }
-    if (def.customEmojis.length > 100) { // to avoid unlimited image storage
+    if (def.customEmojis.length > maxEmojisPerChannel) { // to avoid unlimited image storage
       throw new Error('Too many custom emojis')
     }
+
+    const buffersInfos: BufferInfos[] = []
+    let cnt = 0
 
     const customEmojis: CustomEmojiDefinition[] = []
     let categoryEmojiFound = false
     for (const ce of def.customEmojis) {
+      cnt++
       if (typeof ce !== 'object') {
         throw new Error('Invalid custom emoji')
       }
       if (!this.validShortName(ce.sn)) {
         throw new Error('Invalid short name')
+      }
+      if ((typeof ce.url === 'string') && ce.url.startsWith('data:')) {
+        const b = await this.fileDataURLToBufferInfos(channelId, ce.url, cnt)
+        if (!b) {
+          throw new Error('Invalid data URL')
+        }
+        if (!await this.validBufferInfos(channelId, b)) {
+          throw new Error('Invalid file')
+        }
+        ce.url = b.url
+        buffersInfos.push(b)
       }
       if (!await this.validFileUrl(channelId, ce.url)) {
         throw new Error('Invalid file url')
@@ -177,20 +278,42 @@ export class Emojis {
     const result: ChannelEmojis = {
       customEmojis: customEmojis
     }
-    return result
+    return [result, buffersInfos]
   }
 
   /**
    * Saves the channel custom emojis definition file.
    * @param channelId the channel Id
    * @param def the custom emojis definition
+   * @param bufferInfos buffers to write for missing files.
    */
-  public async saveChannelDefinition (channelId: number, def: ChannelEmojis): Promise<void> {
+  public async saveChannelDefinition (
+    channelId: number,
+    def: ChannelEmojis,
+    bufferInfos: BufferInfos[]
+  ): Promise<void> {
     const filepath = this.channelCustomEmojisDefinitionPath(channelId)
-    await fs.promises.mkdir(path.dirname(filepath), {
-      recursive: true
-    })
+    await fs.promises.mkdir(
+      path.resolve(
+        path.dirname(filepath),
+        'files'
+      ),
+      {
+        recursive: true
+      }
+    )
     await fs.promises.writeFile(filepath, JSON.stringify(def))
+
+    for (const b of bufferInfos) {
+      const fp = path.resolve(
+        path.dirname(filepath),
+        'files',
+        b.filename
+      )
+      await fs.promises.writeFile(fp, b.buf)
+    }
+
+    // TODO: remove deprecated files.
   }
 
   /**
