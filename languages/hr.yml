@@ -213,3 +213,20 @@ chat_style_description: "Dodatni stilovi koji se dodaju iframe atributu stila. <
   Primjer: height:400px;\n"
 livechat_configuration_channel_forbidden_words_label_label: Oznaka
 converse_theme_description: Odaberi converseJS temu koju želiš koristiti.
+external_auth_custom_oidc_button_label_description: Ova će se oznaka prikazati korisnicima
+  kao oznaka gumba za autentifikaciju kod ovog pružatelja usluge OpenID Connect.
+external_auth_oidc_redirect_uris_info_description: "<strong>URI preusmjeravanja:</strong>\n
+  Ako želiš konfigurirati URI ovlaštenog preusmjeravanja na eksternoj aplikaciji,
+  dodaj ovaj url:\n"
+federation_no_remote_chat_label: Nemoj prikazati chatove drugih instanci
+federation_description: "<h3>Federacija</h3>\nSljedeće postavke odnose se na federaciju
+  s drugim Peertube instancama,\ni drugim fediverse softverom.\n"
+federation_no_remote_chat_description: "Označavanjem ove postavke tvoja instanca nikada
+  neće prikazati chatove od videa drugih instanci.\n"
+external_auth_custom_oidc_description: "Možeš konfigurirati eksternog pružatelja usluge
+  OpenID Connect koji se može koristiti za prijavu na chat.\nPogledaj dokumentaciju:\n
+  <a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Postavke</a>.\n"
+external_auth_description: "<h3>Eksterna autentifikacija</h3>\nZa korisnike koji nemaju
+  Peertube račun možeš aktivirati različite načine autentifikacije pomoću externih
+  pružatelja usluge autentifikacije.\n"
