@@ -427,11 +427,9 @@ livechat-tags-input {
 livechat-image-file-input {
   img {
     cursor: pointer;
-    position: fixed;
 
     // width and height are values coming from ConverseJS custom emojis.
     // If we want to upload something else, we should add options on the field to customize.
-    max-height: 1.5em;
-    max-width: 1.5em;
+    max-height: 3em !important; // and no max-width
   }
 }

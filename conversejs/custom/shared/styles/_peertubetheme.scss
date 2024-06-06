@@ -132,6 +132,13 @@
       background-color: var(--peertube-grey-background) !important;
     }
 
+    // Changing size for emojis, to have bigger custom emojis
+    img.emoji {
+      width: unset !important;
+      height: unset !important;
+      max-height: 3em !important; // and no max-width
+    }
+
     // underline links in chat messages
     a[href] {
       text-decoration: underline;

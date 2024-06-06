@@ -52,7 +52,7 @@ export class ImageFileInputElement extends LivechatElement {
         type="file"
         accept="${this.accept.join(',')}"
         class="form-control"
-        style=${this.value ? 'visibility: hidden;' : ''}
+        style=${this.value ? 'display: none;' : ''}
         @change=${async (ev: Event) => this._upload(ev)}
       />
     `
