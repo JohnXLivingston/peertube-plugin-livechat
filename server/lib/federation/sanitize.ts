@@ -41,10 +41,16 @@ function sanitizePeertubeLiveChatInfos (
   const xmppserver = sanitizePeertubeLiveChatServerInfos(options, chatInfos.xmppserver, referenceUrl)
   if (!xmppserver) { return false }
 
+  let customEmojisUrl: string | undefined
+  if (('customEmojisUrl' in chatInfos) && chatInfos.customEmojisUrl) {
+    customEmojisUrl = sanitizeCustomEmojisUrl(options, chatInfos.customEmojisUrl, referenceUrl)
+  }
+
   const r: LiveChatJSONLDAttributeV1 = {
     type: chatInfos.type,
     jid: chatInfos.jid,
-    xmppserver
+    xmppserver,
+    customEmojisUrl
   }
 
   return r
@@ -150,6 +156,48 @@ function sanitizePeertubeLiveChatServerInfos (
   }
 
   return r
+}
+
+/**
+ * Use this function for incoming custom emojis definition url.
+ * It will sanitize them, by checking everything is ok.
+ *
+ * @param options server options
+ * @param customEmojisUrl the value to test.
+ * @param referenceUrl optional url string. If given, we must check that urls are on the same domain, to avoid spoofing.
+ * @returns the url if valid, else undefined.
+ */
+function sanitizeCustomEmojisUrl (
+  options: RegisterServerOptions,
+  customEmojisUrl: any,
+  referenceUrl?: string
+): string | undefined {
+  let checkHost: undefined | string
+
+  if (referenceUrl) {
+    checkHost = _readReferenceUrl(referenceUrl)
+    if (!checkHost) {
+      options.peertubeHelpers.logger.error(
+        'sanitizeCustomEmojisUrl: got an invalid referenceUrl: ' + referenceUrl
+      )
+      return undefined
+    }
+  }
+
+  if ((typeof customEmojisUrl) !== 'string') { return undefined }
+
+  if (
+    !_validUrl(customEmojisUrl, {
+      noSearchParams: true,
+      protocol: 'http.',
+      domain: checkHost
+    })
+  ) {
+    return undefined
+  }
+
+  // No further verification. The frontend must use this url carefully (should only get JSON data).
+  return customEmojisUrl
 }
 
 interface URLConstraints {

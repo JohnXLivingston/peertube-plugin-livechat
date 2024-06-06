@@ -1,5 +1,4 @@
 TODO: tag conversejs livechat branch, and replace commit ID in build-converse.js
-TODO: handle custom emojis url for remote video.
 
 # Changelog
 

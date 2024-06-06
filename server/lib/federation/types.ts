@@ -55,6 +55,7 @@ interface LiveChatJSONLDInfosV1 {
   type: 'xmpp'
   jid: string // room JID
   xmppserver: PeertubeXMPPServerInfos
+  customEmojisUrl?: string // this comes with plugin v10.1.0
 }
 
 // LiveChatJSONLDInfosV1CompatV0 is a mix of both interface.

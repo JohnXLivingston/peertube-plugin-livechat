@@ -16,6 +16,7 @@ import { getBoshUri, getWSUri, getWSS2SUri, getPublicChatUri } from '../uri/webc
 import { canonicalizePluginUri } from '../uri/canonicalize'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { fillVideoCustomFields } from '../custom-fields'
+import { Emojis } from '../emojis'
 import { loc } from '../loc'
 import { isDebugMode } from '../debug'
 
@@ -153,7 +154,8 @@ async function videoBuildJSONLD (
     type: 'xmpp',
     jid: roomJID,
     links,
-    xmppserver: serverInfos
+    xmppserver: serverInfos,
+    customEmojisUrl: await Emojis.singletonSafe()?.channelCustomEmojisUrl(video.channelId)
   }
   Object.assign(videoJsonld, {
     peertubeLiveChat

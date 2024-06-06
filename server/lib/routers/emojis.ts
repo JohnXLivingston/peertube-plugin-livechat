@@ -42,6 +42,7 @@ export async function initEmojisRouter (
     })
   )
 
+  // Note: CORS is handled by Peertube.
   router.get(
     '/emojis/channel/:channelId/files/:fileName',
     asyncMiddleware(async (req: Request, res: Response, _next: NextFunction): Promise<void> => {

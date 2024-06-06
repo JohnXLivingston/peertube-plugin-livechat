@@ -272,7 +272,10 @@ async function _connectionInfos (
     }
     roomJID = remoteConnectionInfos.roomJID
 
-    // TODO: fill customEmojisUrl (how to get the info? is the remote livechat compatible?)
+    // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
+    if (remoteChatInfos && remoteChatInfos.customEmojisUrl) {
+      customEmojisUrl = remoteChatInfos.customEmojisUrl
+    }
   } else {
     try {
       roomJID = await _localRoomJID(
