@@ -22,6 +22,7 @@ export class Emojis {
   protected options: RegisterServerOptions
   protected channelBasePath: string
   protected channelBaseUri: string
+  protected readonly channelCache = new Map<number, boolean>()
   protected readonly logger: {
     debug: (s: string) => void
     info: (s: string) => void
@@ -59,8 +60,12 @@ export class Emojis {
    * @param channelId channel Id
    */
   public async channelHasCustomEmojis (channelId: number): Promise<boolean> {
+    if (this.channelCache.has(channelId)) { return this.channelCache.get(channelId) as boolean }
+
     const filepath = this.channelCustomEmojisDefinitionPath(channelId)
-    return fs.promises.access(filepath, fs.constants.F_OK).then(() => true, () => false)
+    const v = await fs.promises.access(filepath, fs.constants.F_OK).then(() => true, () => false)
+    this.channelCache.set(channelId, v)
+    return v
   }
 
   /**
@@ -335,6 +340,7 @@ export class Emojis {
       recursive: true
     })
     await fs.promises.writeFile(filepath, JSON.stringify(def))
+    this.channelCache.delete(channelId)
 
     const fileDirPath = this.channelCustomEmojisDirPath(channelId)
     await fs.promises.mkdir(fileDirPath, {
@@ -386,6 +392,8 @@ export class Emojis {
       if (!(('code' in err) && err.code === 'ENOENT')) {
         this.logger.error(err)
       }
+    } finally {
+      this.channelCache.delete(channelId)
     }
   }
 
