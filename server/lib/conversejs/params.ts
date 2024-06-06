@@ -285,11 +285,8 @@ async function _connectionInfos (
         params.forcetype ?? false
       )
 
-      if (video?.channelId && await Emojis.singletonSafe()?.channelHasCustomEmojis(video.channelId)) {
-        customEmojisUrl = getBaseRouterRoute(options) +
-          'emojis/channel/' +
-          encodeURIComponent(video.channelId) +
-          '/definition'
+      if (video?.channelId) {
+        customEmojisUrl = await Emojis.singletonSafe()?.channelCustomEmojisUrl(video.channelId)
       }
     } catch (err) {
       options.peertubeHelpers.logger.error(err)

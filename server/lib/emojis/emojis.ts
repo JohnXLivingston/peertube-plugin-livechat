@@ -64,6 +64,26 @@ export class Emojis {
   }
 
   /**
+   * Gets the public url for the channel emojis definition, if there are custom emojis.
+   * @param channelId channel Id
+   */
+  public async channelCustomEmojisUrl (channelId: number): Promise<string | undefined> {
+    if (!await this.channelHasCustomEmojis(channelId)) {
+      return undefined
+    }
+    return canonicalizePluginUri(
+      this.options,
+      getBaseRouterRoute(this.options) +
+        'emojis/channel/' +
+        encodeURIComponent(channelId) +
+        '/definition',
+      {
+        removePluginVersion: true
+      }
+    )
+  }
+
+  /**
    * Get the file path for the channel definition JSON file (does not test if the file exists).
    * @param channelId channel Id
    */
@@ -284,6 +304,13 @@ export class Emojis {
       }
 
       customEmojis.push(sanitized)
+    }
+
+    // For now, the frontend does not implement isCategoryEmoji.
+    // if there is no isCategoryEmoji, we will take the first value.
+    // TODO: remove this when the frontend will be able to set this.
+    if (!categoryEmojiFound && customEmojis.length) {
+      customEmojis[0].isCategoryEmoji = true
     }
 
     const result: ChannelEmojis = {

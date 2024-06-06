@@ -617,6 +617,9 @@ export class DynamicTableFormElement extends LivechatElement {
       if (validationErrorTypes.includes(ValidationErrorType.NotInRange)) {
         errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_NOT_IN_RANGE)}`)
       }
+      if (validationErrorTypes.includes(ValidationErrorType.Duplicate)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_DUPLICATE)}`)
+      }
 
       return html`<div id="${inputId}-feedback" class="invalid-feedback">${errorMessages}</div>`
     } else {

@@ -441,6 +441,7 @@ invalid_value_wrong_type: "Value is of the wrong type."
 invalid_value_wrong_format: "Value is in the wrong format."
 invalid_value_not_in_range: "Value is not in authorized range."
 invalid_value_file_too_big: "File size is too big (max size: %s)"
+invalid_value_duplicate: "Duplicate value"
 
 slow_mode_info: "Slow mode is enabled, users can send a message every %1$s seconds."
 

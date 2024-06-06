@@ -88,6 +88,7 @@ declare const LOC_INVALID_VALUE_WRONG_TYPE: string
 declare const LOC_INVALID_VALUE_WRONG_FORMAT: string
 declare const LOC_INVALID_VALUE_NOT_IN_RANGE: string
 declare const LOC_INVALID_VALUE_FILE_TOO_BIG: string
+declare const LOC_INVALID_VALUE_DUPLICATE: string
 
 declare const LOC_CHATROOM_NOT_ACCESSIBLE: string
 

@@ -119,7 +119,7 @@ function defaultConverseParams (
   params.emoji_categories = Object.assign(
     {},
     customEmojisUrl
-      ? { custom: ':xmpp:' } // TODO: put here the default custom emoji
+      ? { custom: ':converse:' }
       : {},
     {
       smileys: ':grinning:',

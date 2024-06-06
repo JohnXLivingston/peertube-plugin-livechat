@@ -7,6 +7,7 @@ export enum ValidationErrorType {
   WrongType,
   WrongFormat,
   NotInRange,
+  Duplicate
 }
 
 export class ValidationError extends Error {

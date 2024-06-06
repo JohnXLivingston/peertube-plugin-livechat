@@ -33,8 +33,10 @@ export const livechatEmojisPlugin = {
         return json
       }
 
-      // We will put default emojis at the end
+      // We will put default emojis at the end, so keeping a copy
       const defaultCustom = json.custom ?? {}
+      // Now we must clone json, to avoid side effects when navigating between several videos.
+      json = JSON.parse(JSON.stringify(json))
       json.custom = {}
 
       let defaultDef: CustomEmojiDefinition | undefined
@@ -47,6 +49,15 @@ export const livechatEmojisPlugin = {
         }
         if (def.isCategoryEmoji) {
           defaultDef ??= def
+        }
+
+        // We must also remove any existing emojis in category other than custom
+        for (const type of Object.keys(json)) {
+          const v: {[key: string]: any} = json[type]
+          if (type !== 'custom' && type !== 'modifiers' && (def.sn in v)) {
+            // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+            delete v[def.sn]
+          }
         }
       }
 

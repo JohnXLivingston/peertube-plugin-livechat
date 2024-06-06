@@ -8,7 +8,6 @@ import { registerClientOptionsContext } from '../contexts/peertube'
 import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { consume } from '@lit/context'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
 /**
  * Special element to upload image files.
@@ -40,7 +39,6 @@ export class ImageFileInputElement extends LivechatElement {
   public accept: string[] = ['image/jpg', 'image/png', 'image/gif']
 
   protected override render = (): unknown => {
-    // FIXME: limit file size in the upload field.
     return html`
       ${this.value
         ? html`<img src=${this.value} @click=${(ev: Event) => {
@@ -56,11 +54,6 @@ export class ImageFileInputElement extends LivechatElement {
         class="form-control"
         style=${this.value ? 'visibility: hidden;' : ''}
         @change=${async (ev: Event) => this._upload(ev)}
-      />
-      <input
-        type="hidden"
-        name=${ifDefined(this.name)}
-        value=${this.value ?? ''}
       />
     `
   }

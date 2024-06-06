@@ -182,12 +182,17 @@ export class ChannelDetailsService {
   public async validateEmojisConfiguration (channelEmojis: ChannelEmojis): Promise<boolean> {
     const propertiesError: ValidationError['properties'] = {}
 
+    const seen = new Map<string, true>()
     for (const [i, e] of channelEmojis.customEmojis.entries()) {
       propertiesError[`emojis.${i}.sn`] = []
       if (e.sn === '') {
         propertiesError[`emojis.${i}.sn`].push(ValidationErrorType.Missing)
       } else if (!/^:[\w-]+:$/.test(e.sn)) {
         propertiesError[`emojis.${i}.sn`].push(ValidationErrorType.WrongFormat)
+      } else if (seen.has(e.sn)) {
+        propertiesError[`emojis.${i}.sn`].push(ValidationErrorType.Duplicate)
+      } else {
+        seen.set(e.sn, true)
       }
 
       propertiesError[`emojis.${i}.url`] = []
