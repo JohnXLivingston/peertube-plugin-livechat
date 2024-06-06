@@ -60,6 +60,9 @@ export class TranslationDirective extends AsyncDirective {
   }
 
   private readonly _asyncUpdateTranslation = async (): Promise<true> => {
+    if (!this._peertubeHelpers) {
+      console.error('Translation directive: missing peertubeHelpers')
+    }
     const newValue = await this._peertubeHelpers?.translate(this._localizationId) ?? ''
 
     if (newValue !== '' && newValue !== this._translatedValue) {

@@ -6,7 +6,6 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { html, render } from 'lit'
 import './elements' // Import all needed elements.
-import { registerClientOptionsSubject$ } from '../lib/contexts/peertube'
 
 /**
  * Registers stuff related to the user's configuration pages.
@@ -17,8 +16,6 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
 
   const settings = await peertubeHelpers.getSettings()
   if (settings['disable-channel-configuration']) { return }
-
-  registerClientOptionsSubject$.next(clientOptions)
 
   registerClientRoute({
     route: 'livechat/configuration',

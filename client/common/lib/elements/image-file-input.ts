@@ -2,9 +2,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { LivechatElement } from './livechat'
+import { registerClientOptionsContext } from '../contexts/peertube'
 import { html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
+import { consume } from '@lit/context'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 /**
@@ -21,6 +24,9 @@ import { ifDefined } from 'lit/directives/if-defined.js'
  */
 @customElement('livechat-image-file-input')
 export class ImageFileInputElement extends LivechatElement {
+  @consume({ context: registerClientOptionsContext, subscribe: true })
+  public registerClientOptions?: RegisterClientOptions
+
   @property({ attribute: false })
   public name?: string
 

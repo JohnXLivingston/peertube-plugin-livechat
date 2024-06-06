@@ -6,10 +6,13 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { RegisterClientFormFieldOptions } from '@peertube/peertube-types'
 import { registerConfiguration } from './common/configuration/register'
 import { registerRoom } from './common/room/register'
+import { registerClientOptionsSubject$ } from './common/lib/contexts/peertube'
 import './common/lib/elements' // Import shared elements.
 
 async function register (clientOptions: RegisterClientOptions): Promise<void> {
   const { peertubeHelpers, registerHook, registerVideoField } = clientOptions
+
+  registerClientOptionsSubject$.next(clientOptions)
 
   registerHook({
     target: 'action:router.navigation-end',
