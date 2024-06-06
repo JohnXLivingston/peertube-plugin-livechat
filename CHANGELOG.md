@@ -11,6 +11,10 @@ TODO: handle custom emojis url for remote video.
 * #377: new setting to listen C2S connection on non-localhost interfaces.
 * #130: custom channel emoticons.
 
+### Minor changes and fixes
+
+* Fix cleanup on channel deletion.
+
 ## 10.0.2
 
 ### Minor changes and fixes

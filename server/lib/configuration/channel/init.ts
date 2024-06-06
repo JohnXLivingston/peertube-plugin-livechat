@@ -8,6 +8,7 @@ import { fillVideoCustomFields } from '../../custom-fields'
 import { videoHasWebchat } from '../../../../shared/lib/video'
 import { updateProsodyRoom } from '../../prosody/api/manage-rooms'
 import { getChannelInfosById } from '../../database/channel'
+import { Emojis } from '../../emojis'
 
 /**
  * Register stuffs related to channel configuration
@@ -40,17 +41,25 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
 
   registerHook({
     target: 'action:api.video-channel.deleted',
-    handler: async (params: { channel: VideoChannel }) => {
+    handler: async (params: { videoChannel: VideoChannel }) => {
       // When a video is deleted, we can delete the channel2room and room2channel files.
       // Note: don't need to check if there is a chat for this video, just deleting existing files...
-      if (!params.channel.isLocal) { return }
-      const channelId = params.channel.id
+
+      // Note: this hook is only called for local channels.
+      const channelId = params.videoChannel.id
       logger.info(`Channel ${channelId} deleted, removing 'channel configuration' related stuff.`)
       // Here the associated channel can be either channel.X@mucdomain or video_uuid@mucdomain.
       // In first case, nothing to do... in the second, we must delete.
       // So we don't need to check which case is effective, just delete video_uuid@mucdomain.
       try {
         RoomChannel.singleton().removeChannel(channelId)
+      } catch (err) {
+        logger.error(err)
+      }
+
+      logger.info(`Channel ${channelId} deleted, removing 'custom emojis' related stuff.`)
+      try {
+        Emojis.singletonSafe()?.deleteChannelDefinition(channelId)
       } catch (err) {
         logger.error(err)
       }

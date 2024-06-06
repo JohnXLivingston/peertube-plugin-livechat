@@ -32,7 +32,7 @@ export class Emojis {
   constructor (options: RegisterServerOptions) {
     const logger = options.peertubeHelpers.logger
     this.options = options
-    this.channelBasePath = path.resolve(
+    this.channelBasePath = path.join(
       options.peertubeHelpers.plugin.getDataDirectoryPath(),
       'emojis',
       'channel'
@@ -69,7 +69,7 @@ export class Emojis {
    */
   public channelCustomEmojisDefinitionPath (channelId: number): string {
     if (typeof channelId !== 'number') { throw new Error('Invalid channelId') }
-    return path.resolve(this.channelBasePath, channelId.toString(), 'definition.json')
+    return path.join(this.channelBasePath, channelId.toString(), 'definition.json')
   }
 
   /**
@@ -199,13 +199,24 @@ export class Emojis {
    * @returns the file path
    */
   public channelCustomEmojisFilePath (channelId: number, fileName: string): string {
-    if (typeof channelId !== 'number') { throw new Error('Invalid channelId') }
     if (!this.validImageFileName(fileName)) { throw new Error('Invalid filename') }
-    return path.resolve(
+    return path.join(
+      this.channelCustomEmojisDirPath(channelId),
+      fileName
+    )
+  }
+
+  /**
+   * Returns the dir path where to store emojis files relative to a channel.
+   * @param channelId channel Id
+   * @returns the dir path
+   */
+  public channelCustomEmojisDirPath (channelId: number): string {
+    if (typeof channelId !== 'number') { throw new Error('Invalid channelId') }
+    return path.join(
       this.channelBasePath,
       channelId.toString(),
-      'files',
-      fileName
+      'files'
     )
   }
 
@@ -293,27 +304,62 @@ export class Emojis {
     bufferInfos: BufferInfos[]
   ): Promise<void> {
     const filepath = this.channelCustomEmojisDefinitionPath(channelId)
-    await fs.promises.mkdir(
-      path.resolve(
-        path.dirname(filepath),
-        'files'
-      ),
-      {
-        recursive: true
-      }
-    )
+    await fs.promises.mkdir(path.dirname(filepath), {
+      recursive: true
+    })
     await fs.promises.writeFile(filepath, JSON.stringify(def))
 
+    const fileDirPath = this.channelCustomEmojisDirPath(channelId)
+    await fs.promises.mkdir(fileDirPath, {
+      recursive: true
+    })
     for (const b of bufferInfos) {
-      const fp = path.resolve(
-        path.dirname(filepath),
-        'files',
+      const fp = path.join(
+        fileDirPath,
         b.filename
       )
       await fs.promises.writeFile(fp, b.buf)
     }
 
-    // TODO: remove deprecated files.
+    // Finally, remove deprecated files
+    const presentFiles = new Map<string, true>()
+    for (const e of def.customEmojis) {
+      const fn = e.url.split('/').pop()
+      if (fn === undefined) { continue }
+      presentFiles.set(fn, true)
+    }
+    const dirents = await fs.promises.readdir(fileDirPath, { withFileTypes: true })
+    for (const dirent of dirents) {
+      if (!dirent.isFile()) { continue }
+      if (presentFiles.has(dirent.name)) { continue }
+      const fp = path.join(fileDirPath, dirent.name)
+      this.logger.debug('Deleting obsolete emojis file: ' + fp)
+      await fs.promises.unlink(fp)
+    }
+  }
+
+  /**
+   * Deletes channel custom emojis definitions and files.
+   * @param channelId channel id
+   */
+  public async deleteChannelDefinition (channelId: number): Promise<void> {
+    const filepath = this.channelCustomEmojisDefinitionPath(channelId)
+    const fileDirPath = this.channelCustomEmojisDirPath(channelId)
+    this.logger.info('Deleting all channel ' + channelId.toString() + ' emojis...')
+    try {
+      await fs.promises.rm(fileDirPath, {
+        force: true,
+        recursive: true
+      })
+      await fs.promises.rm(path.dirname(filepath), {
+        force: true,
+        recursive: true
+      })
+    } catch (err: any) {
+      if (!(('code' in err) && err.code === 'ENOENT')) {
+        this.logger.error(err)
+      }
+    }
   }
 
   /**
