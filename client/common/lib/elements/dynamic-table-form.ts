@@ -70,6 +70,7 @@ interface CellDataSchema {
   separators?: string[]
   inputType?: DynamicTableAcceptedInputTypes
   default?: DynamicTableAcceptedTypes
+  colClassList?: string[] // CSS classes to add to the <td> element.
 }
 
 interface DynamicTableRowData {
@@ -460,7 +461,11 @@ export class DynamicTableFormElement extends LivechatElement {
         `with field type '${propertySchema.inputType as string}' for form entry '${propertyName.toString()}'.`)
     }
 
-    return html`<td class="form-group">${formElement}</td>`
+    const classList = ['form-group']
+    if (propertySchema.colClassList) {
+      classList.push(...propertySchema.colClassList)
+    }
+    return html`<td class=${classList.join(' ')}>${formElement}</td>`
   }
 
   _renderInput = (rowId: number,

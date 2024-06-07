@@ -1,5 +1,4 @@
 TODO: tag conversejs livechat branch, and replace commit ID in build-converse.js
-TODO: check that the help url is ok for the emojis configuration page.
 
 # Changelog
 
@@ -9,7 +8,7 @@ TODO: check that the help url is ok for the emojis configuration page.
 
 * Overhauled configuration page, with more broadly customizable lists of parameters by @Murazaki ([See pull request #352](https://github.com/JohnXLivingston/peertube-plugin-livechat/pull/352)).
 * #377: new setting to listen C2S connection on non-localhost interfaces.
-* #130: custom channel emoticons.
+* #130: channel custom emojis.
 
 ### Minor changes and fixes
 

@@ -46,7 +46,7 @@ export class ChannelEmojisElement extends LivechatElement {
       url: {
         colName: ptTr(LOC_LIVECHAT_EMOJIS_FILE),
         description: ptTr(LOC_LIVECHAT_EMOJIS_FILE_DESC),
-        headerClassList: ['peertube-livechat-emojis-thead-file']
+        headerClassList: ['peertube-livechat-emojis-col-file']
       }
     }
     const tableSchema: DynamicFormSchema = {
@@ -56,7 +56,8 @@ export class ChannelEmojisElement extends LivechatElement {
       },
       url: {
         inputType: 'image-file',
-        default: ''
+        default: '',
+        colClassList: ['peertube-livechat-emojis-col-file']
       }
     }
     return this._asyncTaskRender.render({
