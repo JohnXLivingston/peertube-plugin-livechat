@@ -65,15 +65,20 @@ export class ChannelEmojisElement extends LivechatElement {
           class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-channel"
         >
           <h1>
-            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_EMOJIS_TITLE)}:
             <span class="peertube-plugin-livechat-configuration-channel-info">
               <span>${this._channelEmojisConfiguration?.channel.displayName}</span>
               <span>${this._channelEmojisConfiguration?.channel.name}</span>
             </span>
+          </h1>
+
+          <livechat-channel-tabs .active=${'emojis'} .channelId=${this.channelId}></livechat-channel-tabs>
+
+          <p>
+            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_EMOJIS_DESC)}
             <livechat-help-button .page=${'documentation/user/streamers/emojis'}>
             </livechat-help-button>
-            FIXME: help url OK?
-          </h1>
+          </p>
+
           <form role="form" @submit=${this._saveEmojis}>
             <div class="row mt-5">
               <livechat-dynamic-table-form

@@ -480,6 +480,10 @@ task_list_pick_message: |
 promote: 'Become moderator'
 
 livechat_configuration_channel_emojis_title: 'Channel emojis'
+livechat_configuration_channel_emojis_desc: |
+  You can configure custom emojis for your channel.
+  These emojis will be available in the emoji picker.
+  Users can also use them by with their short name (for example by writing ":shortname:").
 livechat_emojis_shortname: 'Short name'
 livechat_emojis_shortname_desc: |
   You can use emojis using ":shortname:".

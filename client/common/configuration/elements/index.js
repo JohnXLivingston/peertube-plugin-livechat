@@ -7,3 +7,4 @@
 import './channel-home'
 import './channel-configuration'
 import './channel-emojis'
+import './channel-tabs'

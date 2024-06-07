@@ -33,6 +33,12 @@ $small-view: 800px;
     font-size: 1.3rem;
     border-bottom: 2px solid $grey-background-color;
     padding-bottom: 15px;
+  }
+
+  livechat-channel-tabs {
+    display: block;
+
+    /* See Peertube sub-menu-h1 mixin */
     margin-bottom: $sub-menu-margin-bottom;
   }
 

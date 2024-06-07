@@ -1,4 +1,5 @@
 TODO: tag conversejs livechat branch, and replace commit ID in build-converse.js
+TODO: check that the help url is ok for the emojis configuration page.
 
 # Changelog
 

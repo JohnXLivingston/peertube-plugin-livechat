@@ -209,15 +209,20 @@ export class ChannelConfigurationElement extends LivechatElement {
         <div class="margin-content peertube-plugin-livechat-configuration
                     peertube-plugin-livechat-configuration-channel">
           <h1>
-            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE)}:
             <span class="peertube-plugin-livechat-configuration-channel-info">
               <span>${this._channelConfiguration?.channel.displayName}</span>
               <span>${this._channelConfiguration?.channel.name}</span>
             </span>
+          </h1>
+
+          <livechat-channel-tabs .active=${'configuration'} .channelId=${this.channelId}></livechat-channel-tabs>
+
+          <p>
+            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)}
             <livechat-help-button .page=${'documentation/user/streamers/channel'}>
             </livechat-help-button>
-          </h1>
-          <p>${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)}</p>
+          </p>
+
           <form livechat-configuration-channel-options role="form" @submit=${this._saveConfig}>
           <div class="row mt-3">
             <div class="row mt-5">
