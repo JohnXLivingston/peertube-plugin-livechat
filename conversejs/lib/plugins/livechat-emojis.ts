@@ -33,8 +33,6 @@ export const livechatEmojisPlugin = {
         return json
       }
 
-      // We will put default emojis at the end, so keeping a copy
-      const defaultCustom = json.custom ?? {}
       // Now we must clone json, to avoid side effects when navigating between several videos.
       json = JSON.parse(JSON.stringify(json))
       json.custom = {}
@@ -61,18 +59,14 @@ export const livechatEmojisPlugin = {
         }
       }
 
-      for (const key in defaultCustom) {
-        if (key in json.custom) {
-          // Was overriden by the backend, skipping.
-          continue
-        }
-        json.custom[key] = defaultCustom[key]
-      }
-
       // And if there was a default definition, using it for the custom cat icon.
+      // Else we fallback to the first.
+      // If none... just keep custom to null!
+      defaultDef ??= customs[0]
       if (defaultDef) {
         const cat = _converse.api.settings.get('emoji_categories')
         cat.custom = defaultDef.sn
+        _converse.api.settings.set('emoji_categories', cat)
       }
       return json
     })

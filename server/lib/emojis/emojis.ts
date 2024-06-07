@@ -311,13 +311,6 @@ export class Emojis {
       customEmojis.push(sanitized)
     }
 
-    // For now, the frontend does not implement isCategoryEmoji.
-    // if there is no isCategoryEmoji, we will take the first value.
-    // TODO: remove this when the frontend will be able to set this.
-    if (!categoryEmojiFound && customEmojis.length) {
-      customEmojis[0].isCategoryEmoji = true
-    }
-
     const result: ChannelEmojis = {
       customEmojis: customEmojis
     }

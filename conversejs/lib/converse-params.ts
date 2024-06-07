@@ -114,28 +114,20 @@ function defaultConverseParams (
   params.clear_cache_on_logout = true
   params.allow_user_trust_override = false
 
-  // We must enable custom emoji category, that ConverseJS disables by default.
-  // We put it last by default, but first if there are any custom emojis for this chat.
-  params.emoji_categories = Object.assign(
-    {},
-    customEmojisUrl
-      ? { custom: ':converse:' }
-      : {},
-    {
-      smileys: ':grinning:',
-      people: ':thumbsup:',
-      activity: ':soccer:',
-      travel: ':motorcycle:',
-      objects: ':bomb:',
-      nature: ':rainbow:',
-      food: ':hotdog:',
-      symbols: ':musical_note:',
-      flags: ':flag_ac:'
-    },
-    !customEmojisUrl
-      ? { custom: ':converse:' }
-      : {}
-  )
+  // We change emoji_categories to put custom first.
+  // We set custom to null, it will be set to another value if custom emojis are enabled.
+  params.emoji_categories = {
+    custom: null,
+    smileys: ':grinning:',
+    people: ':thumbsup:',
+    activity: ':soccer:',
+    travel: ':motorcycle:',
+    objects: ':bomb:',
+    nature: ':rainbow:',
+    food: ':hotdog:',
+    symbols: ':musical_note:',
+    flags: ':flag_ac:'
+  }
 
   return params
 }
