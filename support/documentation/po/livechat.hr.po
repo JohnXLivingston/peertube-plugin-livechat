@@ -7,15 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-05-28 12:04+0200\n"
-"PO-Revision-Date: 2024-05-01 01:17+0000\n"
+"PO-Revision-Date: 2024-06-05 10:41+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
+"Language-Team: Croatian <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.5.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.5.5\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -146,7 +148,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`reuse`"
-msgstr ""
+msgstr "`reuse`"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -819,7 +821,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "{{%/* livechat_label open_chat_new_window */%}}\n"
-msgstr ""
+msgstr "{{%/* livechat_label open_chat_new_window */%}}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -3133,14 +3135,8 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid ""
-#| "This feature is still experimental.\n"
-#| "This feature is available with the plugin version >= 9.0.0.\n"
 msgid "This feature comes with the livechat plugin version 10.0.0."
-msgstr ""
-"Ovo je još uvijek eksperimentalna funkcija.\n"
-"Ova je funkcija dostupna s dodatkom verzije ≥ 9.0.0.\n"
+msgstr "Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.0.0."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
