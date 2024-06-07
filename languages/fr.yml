@@ -467,3 +467,25 @@ prosody_c2s_interfaces_description: "Les interfaces réseau sur lesquelles écou
   IPv4, et «::» pour toutes les IPv6.<br>\nExemples de configuration possible:\n<ul>\n\
   \  <li>*, ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>127.0.0.1, ::1,
   172.18.0.42</li>\n</ul>\n"
+livechat_configuration_channel_forbidden_words_label_label: Libellé
+livechat_configuration_channel_forbidden_words_label_desc: Libellé pour cette règle
+  de mots interdits
+invalid_value_wrong_type: La valeur n'est pas du bon type.
+invalid_value_wrong_format: Le format de la valeur n'est pas correct.
+invalid_value_not_in_range: La valeur n'est pas dans la plage autorisée.
+livechat_configuration_channel_emojis_desc: "Vous pouvez configurer des émojis personnalisés
+  pour votre chaîne.\nCes émojis seront disponibles dans le sélecteur d’émojis.\n
+  Les utilisateurs peuvent également les utiliser avec leur nom court (par exemple
+  en écrivant \":nom_court:\").\n"
+validation_error: Il y a eu une erreur lors de la validation.
+invalid_value_missing: Cette valeur est obligatoire.
+invalid_value_file_too_big: 'La taille du fichier est trop grande (taille maximum:
+  %s).'
+invalid_value_duplicate: Valeur en double
+livechat_configuration_channel_emojis_title: Émojis de la chaîne
+livechat_emojis_shortname: Nom court
+livechat_emojis_shortname_desc: "Vous pouvez utiliser l'émojis en utilisant \":nom_court:\"\
+  .\nLe nom court peut seulement contenir des caractères alphanumériques des underscores
+  et des tirets.\n"
+livechat_emojis_file: Fichier
+livechat_emojis_file_desc: "Le fichier de l'émoji.\n"
