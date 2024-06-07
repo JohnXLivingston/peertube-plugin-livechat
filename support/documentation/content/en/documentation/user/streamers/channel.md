@@ -22,4 +22,5 @@ Here you can configure:
 
 * [The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)
 * [The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)
+* [Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)
 * More features to come...

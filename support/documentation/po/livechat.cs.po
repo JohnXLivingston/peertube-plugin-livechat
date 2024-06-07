@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-05-28 12:04+0200\n"
+"POT-Creation-Date: 2024-06-07 14:16+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -2879,7 +2879,55 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "More features to come..."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid "Plugin peertube-plugin-livechat custom emojis"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid "Custom emojis"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "This feature comes with the livechat plugin version 10.1.0."
+msgstr ""
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid "Channel emojis"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "Streamers can add custom emojis to their channels."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "![Channel configuration / Channel emojis configuration](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description

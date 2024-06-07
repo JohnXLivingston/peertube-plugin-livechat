@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-05-28 12:04+0200\n"
+"POT-Creation-Date: 2024-06-07 14:16+0200\n"
 "PO-Revision-Date: 2024-05-28 17:19+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1000,10 +998,7 @@ msgstr "Matterbridge benutzen"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The following is based on a tutorial to use Matterbridge with the plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
-msgstr ""
-"Das Folgende basiert auf einem Tutorial zur Verwendung von Matterbridge mit "
-"dem Plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/"
-"obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
+msgstr "Das Folgende basiert auf einem Tutorial zur Verwendung von Matterbridge mit dem Plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1014,23 +1009,17 @@ msgstr "Anforderungen"
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 or later."
-msgstr ""
-"[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-"
-"plugin-livechat) Version 3.2.0 oder höher."
+msgstr "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) Version 3.2.0 oder höher."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 or later."
-msgstr ""
-"[Matterbridge](https://github.com/42wim/matterbridge) Version 1.22.4 oder "
-"höher."
+msgstr "[Matterbridge](https://github.com/42wim/matterbridge) Version 1.22.4 oder höher."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The easiest is if the PeerTube instance and Matterbridge run on the same server."
-msgstr ""
-"Am einfachsten ist es, wenn die PeerTube-Instanz und Matterbridge auf "
-"demselben Server laufen."
+msgstr "Am einfachsten ist es, wenn die PeerTube-Instanz und Matterbridge auf demselben Server laufen."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1041,22 +1030,17 @@ msgstr "Nur interne Verbindungen (EInfach)"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You will need to enable `{{% livechat_label prosody_c2s_label %}}` in the livechat plugin settings."
-msgstr ""
-"Sie müssen `{{% livechat_label prosody_c2s_label %}}` in den Einstellungen "
-"des Livechat-Plugins aktivieren."
+msgstr "Sie müssen `{{% livechat_label prosody_c2s_label %}}` in den Einstellungen des Livechat-Plugins aktivieren."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This will allow localhost XMPP clients to connect to the Prosody XMPP server."
-msgstr ""
-"Dadurch können XMPP-Clients von localhost eine Verbindung zum Prosody XMPP-"
-"Server herstellen."
+msgstr "Dadurch können XMPP-Clients von localhost eine Verbindung zum Prosody XMPP-Server herstellen."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You may need to add some line to your `/etc/hosts`:"
-msgstr ""
-"Möglicherweise müssen Sie eine Zeile in Ihre Datei `/etc/hosts` hinzufügen:"
+msgstr "Möglicherweise müssen Sie eine Zeile in Ihre Datei `/etc/hosts` hinzufügen:"
 
 #. type: Fenced code block
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1067,10 +1051,7 @@ msgstr "127.0.0.1       anon.example.org raum.example.org\n"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
-msgstr ""
-"Ersetzen Sie `example.org` durch den Namen Ihrer tatsächlichen "
-"Instanzdomäne. Danach können Sie mit der Matterbridge-Konfiguration "
-"fortfahren."
+msgstr "Ersetzen Sie `example.org` durch den Namen Ihrer tatsächlichen Instanzdomäne. Danach können Sie mit der Matterbridge-Konfiguration fortfahren."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1081,59 +1062,38 @@ msgstr "Externe Verbindungen zulassen (Fortgeschritten)"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "By default, the internal Prosody XMPP server only listens on localhost (127.0.0.1)."
-msgstr ""
-"Standardmäßig lauscht der interne Prosody XMPP-Server nur auf localhost (127."
-"0.0.1)."
+msgstr "Standardmäßig lauscht der interne Prosody XMPP-Server nur auf localhost (127.0.0.1)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
-msgstr ""
-"Dem Livechat Plugin Versionen >= 10.1.0 wurde eine neue Option `Client zu "
-"Server Netzwerkschnittstellen` hinzugefügt, um dies zu ändern.\n"
+msgstr "Dem Livechat Plugin Versionen >= 10.1.0 wurde eine neue Option `Client zu Server Netzwerkschnittstellen` hinzugefügt, um dies zu ändern.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "It allows to add a list of IPs to listen on, coma separated (spaces will be stripped)."
-msgstr ""
-"Es ermöglicht das Hinzufügen einer Liste von IPs, die abgehört werden "
-"sollen, durch Kommata getrennt (Leerzeichen werden entfernt)."
+msgstr "Es ermöglicht das Hinzufügen einer Liste von IPs, die abgehört werden sollen, durch Kommata getrennt (Leerzeichen werden entfernt)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You can also use `*` to listen on all IPv4 interfaces, and `::` for all IPv6. Doing so allows external access to the client to server interface."
-msgstr ""
-"Sie können auch `*` verwenden, um an allen IPv4-Schnittstellen zu lauschen, "
-"und `::` für alle IPv6-Schnittstellen. Dadurch wird der externe Zugriff auf "
-"die Schnittstelle zwischen Client und Server ermöglicht."
+msgstr "Sie können auch `*` verwenden, um an allen IPv4-Schnittstellen zu lauschen, und `::` für alle IPv6-Schnittstellen. Dadurch wird der externe Zugriff auf die Schnittstelle zwischen Client und Server ermöglicht."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Then you need to open the C2S port (by default `52822`, but check the plugin settings to get the current value) in your firewall so that it can be reached from the internet.  If you don't want to use C2S connections for anything else than your Matterbridge service, you should restrict access to this port to your Matterbridge server IP."
-msgstr ""
-"Dann müssen Sie den C2S-Port (standardmäßig `52822`, aber überprüfen Sie die "
-"Plugin-Einstellungen, um den aktuellen Wert zu erhalten) in Ihrer Firewall "
-"öffnen, damit er vom Internet aus erreicht werden kann.  Wenn Sie C2S-"
-"Verbindungen nur für Ihren Matterbridge-Dienst verwenden möchten, sollten "
-"Sie den Zugriff auf diesen Port auf die IP Ihres Matterbridge-Servers "
-"beschränken."
+msgstr "Dann müssen Sie den C2S-Port (standardmäßig `52822`, aber überprüfen Sie die Plugin-Einstellungen, um den aktuellen Wert zu erhalten) in Ihrer Firewall öffnen, damit er vom Internet aus erreicht werden kann.  Wenn Sie C2S-Verbindungen nur für Ihren Matterbridge-Dienst verwenden möchten, sollten Sie den Zugriff auf diesen Port auf die IP Ihres Matterbridge-Servers beschränken."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You also need to add DNS records (A and AAAA) for `anon.example.org` and `room.example.org` (replace `example.org` by your actual domain name)."
-msgstr ""
-"Sie müssen auch DNS-Einträge (A und AAAA) für `anon.example.org` und `room."
-"example.org` hinzufügen (ersetzen Sie `example.org` durch Ihren "
-"tatsächlichen Domänennamen)."
+msgstr "Sie müssen auch DNS-Einträge (A und AAAA) für `anon.example.org` und `room.example.org` hinzufügen (ersetzen Sie `example.org` durch Ihren tatsächlichen Domänennamen)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In case you are using a port other than `5222` (XMPP standard port) you also need to set the [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) to the correct port."
-msgstr ""
-"Falls Sie einen anderen Port als `5222` (XMPP-Standardport) verwenden, "
-"müssen Sie auch den [xmpp-client SRV record](https://prosody.im/doc/"
-"dns#srv_records) auf den richtigen Port setzen."
+msgstr "Falls Sie einen anderen Port als `5222` (XMPP-Standardport) verwenden, müssen Sie auch den [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) auf den richtigen Port setzen."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1144,10 +1104,7 @@ msgstr "Matterbridge konfigurieren"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In the version 1.22.4, Matterbridge added support for XMPP anonymous connections needed to connect to the built-in prosody."
-msgstr ""
-"In der Version 1.22.4 hat Matterbridge Unterstützung für anonyme XMPP-"
-"Verbindungen hinzugefügt, die für die Verbindung mit der eingebauten Prosody "
-"benötigt werden."
+msgstr "In der Version 1.22.4 hat Matterbridge Unterstützung für anonyme XMPP-Verbindungen hinzugefügt, die für die Verbindung mit der eingebauten Prosody benötigt werden."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1177,15 +1134,12 @@ msgstr ""
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name."
-msgstr ""
-"Ersetzen Sie `example.org` durch den Namen Ihrer tatsächlichen Instanzdomäne."
+msgstr "Ersetzen Sie `example.org` durch den Namen Ihrer tatsächlichen Instanzdomäne."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `52822` by the actual port if you changed it."
-msgstr ""
-"Ersetzen Sie \"52822\" durch den tatsächlichen Port, wenn Sie ihn geändert "
-"haben."
+msgstr "Ersetzen Sie \"52822\" durch den tatsächlichen Port, wenn Sie ihn geändert haben."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1195,24 +1149,17 @@ msgstr "`mypeertube` kann durch einen anderen Namen ersetzt werden."
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Using `peertube` as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification."
-msgstr ""
-"Die Verwendung von `peertube` als Nick stellt ein PeerTube-Symbol für "
-"Overlay-Nachrichten zur Verfügung, kann aber auch mit einer Overlay-"
-"Konfigurationsänderung durchgeführt werden."
+msgstr "Die Verwendung von `peertube` als Nick stellt ein PeerTube-Symbol für Overlay-Nachrichten zur Verfügung, kann aber auch mit einer Overlay-Konfigurationsänderung durchgeführt werden."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The setting `NoTLS=true` allows connecting to a server with self-signed certificates."
-msgstr ""
-"Die Einstellung `NoTLS=true` ermöglicht die Verbindung zu einem Server mit "
-"selbstsignierten Zertifikaten."
+msgstr "Die Einstellung `NoTLS=true` ermöglicht die Verbindung zu einem Server mit selbstsignierten Zertifikaten."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Now you can add this account to gateways and bridge specific live-chat channels."
-msgstr ""
-"Jetzt können Sie dieses Konto zu Gateways hinzufügen und bestimmte Live-"
-"Übertragungskanäle weiterleiten."
+msgstr "Jetzt können Sie dieses Konto zu Gateways hinzufügen und bestimmte Live-Übertragungskanäle weiterleiten."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1929,11 +1876,7 @@ msgstr "Bei diesen Anbietern sind die Discovery-Url und die Schaltflächenbeschr
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
-msgstr ""
-"Wenn Ihnen ein Standardanbieter einfällt, der noch nicht verfügbar ist, "
-"können Sie um die Implementierung bitten, indem Sie [eine neues Problem] "
-"(https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) "
-"eröffnen."
+msgstr "Wenn Ihnen ein Standardanbieter einfällt, der noch nicht verfügbar ist, können Sie um die Implementierung bitten, indem Sie [eine neues Problem] (https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) eröffnen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -3009,8 +2952,67 @@ msgstr "[Den Chatbot](/peertube-plugin-livechat/de/documentation/user/streamers/
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
+msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
+msgstr "[Der langsame Modus](/peertube-plugin-livechat/de/documentation/user/streamers/slow_mode)"
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "More features to come..."
 msgstr "Weitere Funktionen werden folgen..."
+
+#. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, fuzzy, no-wrap
+#| msgid "Plugin peertube-plugin-livechat slow mode"
+msgid "Plugin peertube-plugin-livechat custom emojis"
+msgstr "Plugin peertube-plugin-livechat Langsamer Modus"
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid "Custom emojis"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, fuzzy
+#| msgid "This feature comes with the livechat plugin version 10.0.0."
+msgid "This feature comes with the livechat plugin version 10.1.0."
+msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein."
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid "Channel emojis"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "Streamers can add custom emojis to their channels."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, fuzzy
+#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
+msgstr "Auf der [Kanal Konfigurations Seite](/peertube-plugin-livechat/de/documentation/user/streamers/channel) können Sie den langsamen Modus einstellen:"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, fuzzy
+#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgid "![Channel configuration / Channel emojis configuration](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)"
+msgstr "![Kanalkonfiguration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, fuzzy
+#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgid "![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
+msgstr "![Kanalkonfiguration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
