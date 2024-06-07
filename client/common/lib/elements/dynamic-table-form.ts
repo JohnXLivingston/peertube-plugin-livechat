@@ -78,11 +78,14 @@ interface DynamicTableRowData {
   row: { [key: string]: DynamicTableAcceptedTypes }
 }
 
+interface DynamicFormHeaderCellData {
+  colName: TemplateResult | DirectiveResult
+  description: TemplateResult | DirectiveResult
+  headerClassList?: string[]
+}
+
 export interface DynamicFormHeader {
-  [key: string]: {
-    colName: TemplateResult | DirectiveResult
-    description: TemplateResult | DirectiveResult
-  }
+  [key: string]: DynamicFormHeaderCellData
 }
 export interface DynamicFormSchema { [key: string]: CellDataSchema }
 
@@ -197,10 +200,15 @@ export class DynamicTableFormElement extends LivechatElement {
     </thead>`
   }
 
-  private readonly _renderHeaderCell = (headerCellData: { colName: TemplateResult | DirectiveResult
-    description: TemplateResult | DirectiveResult }): TemplateResult => {
+  private readonly _renderHeaderCell = (headerCellData: DynamicFormHeaderCellData): TemplateResult => {
     return html`<th scope="col">
-      <div data-toggle="tooltip" data-placement="bottom" data-html="true" title=${headerCellData.description}>
+      <div
+        data-toggle="tooltip"
+        data-placement="bottom"
+        data-html="true"
+        title=${headerCellData.description}
+        class=${headerCellData.headerClassList?.join(' ') ?? ''}
+      >
         ${headerCellData.colName}
       </div>
     </th>`
