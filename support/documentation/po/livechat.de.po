@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-07 14:16+0200\n"
-"PO-Revision-Date: 2024-05-28 17:19+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-06-09 06:24+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2952,10 +2954,10 @@ msgstr "[Den Chatbot](/peertube-plugin-livechat/de/documentation/user/streamers/
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
-msgstr "[Der langsame Modus](/peertube-plugin-livechat/de/documentation/user/streamers/slow_mode)"
+msgstr ""
+"[Benutzerdefinierte Emojis](/peertube-plugin-livechat/de/documentation/user/"
+"streamers/emojis)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2964,55 +2966,55 @@ msgstr "Weitere Funktionen werden folgen..."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy, no-wrap
-#| msgid "Plugin peertube-plugin-livechat slow mode"
+#, no-wrap
 msgid "Plugin peertube-plugin-livechat custom emojis"
-msgstr "Plugin peertube-plugin-livechat Langsamer Modus"
+msgstr "Plugin peertube-plugin-livechat benutzerdefinierte Emojis"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Custom emojis"
-msgstr ""
+msgstr "Benutzerdefinierte Emojis"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 10.0.0."
 msgid "This feature comes with the livechat plugin version 10.1.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein."
+msgstr ""
+"Diese Funktion wird mit dem Livechatplugin Version 10.1.0 verfügbar sein."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Channel emojis"
-msgstr ""
+msgstr "Kanal-Emojis"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "Streamers can add custom emojis to their channels."
-msgstr ""
+msgstr "Streamer können benutzerdefinierte Emojis zu ihren Kanälen hinzufügen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
-msgstr "Auf der [Kanal Konfigurations Seite](/peertube-plugin-livechat/de/documentation/user/streamers/channel) können Sie den langsamen Modus einstellen:"
+msgstr ""
+"Öffnen Sie auf der [Kanal Konfigurationsseite](/peertube-plugin-livechat/de/"
+"documentation/user/streamers/channel) die Registerkarte \"{{% livechat_label "
+"livechat_configuration_channel_emojis_title %}}\":"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Channel configuration / Channel emojis configuration](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)"
-msgstr "![Kanalkonfiguration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Kanal-Konfiguration / Kanal-Emojis-Konfiguration](/peertube-"
+"plugin-livechat/images/channel_custom_emojis_configuration."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
-msgstr "![Kanalkonfiguration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Kanal-Konfiguration / Kanal-Emojis](/peertube-plugin-livechat/images/"
+"channel_custom_emojis.png?classes=shadow,border&height=400px)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
