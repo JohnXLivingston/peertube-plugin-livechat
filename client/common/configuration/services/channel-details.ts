@@ -11,7 +11,7 @@ import { ValidationError, ValidationErrorType } from '../../lib/models/validatio
 import { getBaseRoute } from '../../../utils/uri'
 
 export class ChannelDetailsService {
-  public _registerClientOptions: RegisterClientOptions
+  private readonly _registerClientOptions: RegisterClientOptions
 
   private readonly _headers: any = {}
 

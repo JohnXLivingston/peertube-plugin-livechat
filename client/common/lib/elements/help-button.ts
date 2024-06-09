@@ -17,8 +17,9 @@ import { LivechatElement } from './livechat'
 
 @customElement('livechat-help-button')
 export class HelpButtonElement extends LivechatElement {
+  // eslint-disable-next-line @typescript-eslint/prefer-readonly
   @consume({ context: registerClientOptionsContext, subscribe: true })
-  public registerClientOptions?: RegisterClientOptions
+  private _registerClientOptions?: RegisterClientOptions
 
   @property({ attribute: false })
   public buttonTitle: string | DirectiveResult = ptTr(LOC_ONLINE_HELP)
@@ -35,7 +36,7 @@ export class HelpButtonElement extends LivechatElement {
         ? await localizedHelpUrl(registerClientOptions, { page: this.page })
         : '')
     },
-    args: () => [this.registerClientOptions]
+    args: () => [this._registerClientOptions]
   })
 
   protected override render = (): unknown => {

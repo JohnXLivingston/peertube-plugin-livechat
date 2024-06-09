@@ -21,13 +21,10 @@ export class ChannelHomeElement extends LivechatElement {
   public registerClientOptions?: RegisterClientOptions
 
   @state()
-  public _channels?: ChannelLiveChatInfos[]
+  private _channels?: ChannelLiveChatInfos[]
 
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService?: ChannelDetailsService
-
-  @state()
-  public _formStatus: boolean | any = undefined
 
   private readonly _asyncTaskRender = new Task(this, {
     task: async ([registerClientOptions]) => {
