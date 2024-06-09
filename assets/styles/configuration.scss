@@ -343,6 +343,8 @@ livechat-tags-input {
   }
 
   #tags-searched {
+    user-select: contain;
+
     &::after {
       content: "\1F50D";
       flex-grow: 1;
@@ -370,6 +372,7 @@ livechat-tags-input {
     border-radius: 3px;
     margin: 0 3px 3px 0;
     transition: 0.3s filter;
+    user-select: all;
 
     .tag-close {
       display: block;
@@ -387,6 +390,14 @@ livechat-tags-input {
       &::before {
         content: "\2715";
       }
+    }
+
+    &.selected {
+      filter: hue-rotate(180deg);
+    }
+
+    &.to-be-removed {
+      filter: hue-rotate(-45deg);
     }
 
     &,

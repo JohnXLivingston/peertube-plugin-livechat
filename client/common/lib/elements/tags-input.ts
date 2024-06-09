@@ -10,6 +10,12 @@ import { classMap } from 'lit/directives/class-map.js'
 import { animate, fadeOut, fadeIn } from '@lit-labs/motion'
 import { repeat } from 'lit/directives/repeat.js'
 
+enum TagsInputSelectionMode {
+  Single,
+  Consecutive,
+  Additive
+}
+
 @customElement('livechat-tags-input')
 export class TagsInputElement extends LivechatElement {
   @property({ attribute: false })
@@ -54,15 +60,36 @@ export class TagsInputElement extends LivechatElement {
   @property({ attribute: false })
   public animDuration: number = 200
 
+  private _selectionMode: TagsInputSelectionMode = TagsInputSelectionMode.Single
+
+  @state()
+  private _selectedTags: number[] = []
+
+  @state()
+  private _selectionToBeRemoved: boolean = false
+
+  private _currentTag?: number = undefined
+  private _firstConsecutiveSelectedTag?: number = undefined
+
   protected override render = (): unknown => {
     return html`<ul
-        id="tags"
-        class=${classMap({
-          empty: !this.value.length,
-          unfocused: this._searchedTagsIndex.length
-        })}>
+          id="tags"
+          class=${classMap({
+            empty: !this.value.length,
+            unfocused: this._searchedTagsIndex.length
+          })}
+          tabindex="0"
+          @blur=${() => this._handleTagsListBlur()}
+          @keydown=${(e: KeyboardEvent) => this._handleTagsListKeyDown(e, [...this.value.keys()])}
+          @keyup=${(e: KeyboardEvent) => this._handleKeyUp(e)}>
           ${repeat(this.value, tag => tag,
-            (tag, index) => html`<li key=${index} class="tag" title=${tag} ${animate({
+            (tag, index) => html`<li key=${index}
+              class="tag ${classMap({
+                selected: !this._selectionToBeRemoved && this._selectedTags.includes(index),
+                'to-be-removed': this._selectionToBeRemoved && this._selectedTags.includes(index)
+              })}"
+              title=${tag}
+              ${animate({
                 keyframeOptions: {
                   duration: this.animDuration,
                   fill: 'both'
@@ -70,15 +97,28 @@ export class TagsInputElement extends LivechatElement {
                 in: fadeIn,
                 out: fadeOut
               })}>
-              <span class='tag-name'>${tag}</span>
-              <span class='tag-close'
+              <span class="tag-name"
+                    @click=${() => this._handleSelectTag(index)}>${tag}</span>
+              <span class="tag-close"
                     @click=${() => this._handleDeleteTag(index)}></span>
             </li>`
           )}
         </ul>
-        <ul id="tags-searched" class=${classMap({ empty: !this._searchedTagsIndex.length })}>
+        <ul
+          id="tags-searched"
+          class=${classMap({ empty: !this._searchedTagsIndex.length })}
+          tabindex="0"
+          @blur=${() => this._handleTagsListBlur()}
+          @keydown=${(e: KeyboardEvent) => this._handleTagsListKeyDown(e, this._searchedTagsIndex)}
+          @keyup=${(e: KeyboardEvent) => this._handleKeyUp(e)}>
           ${repeat(this._searchedTagsIndex, index => index,
-            (index) => html`<li key=${index} class="tag-searched" title=${this.value[index]} ${animate({
+            (index) => html`<li key=${index}
+              class="tag-searched ${classMap({
+                selected: !this._selectionToBeRemoved && this._selectedTags.includes(index),
+                'to-be-removed': this._selectionToBeRemoved && this._selectedTags.includes(index)
+              })}"
+              title=${this.value[index]}
+              ${animate({
                 keyframeOptions: {
                   duration: this.animDuration,
                   fill: 'both'
@@ -86,8 +126,9 @@ export class TagsInputElement extends LivechatElement {
                 in: fadeIn,
                 out: fadeOut
               })}>
-              <span class='tag-name'>${this.value[index]}</span>
-              <span class='tag-close'
+              <span class="tag-name"
+                    @click=${() => this._handleSelectTag(index)}>${this.value[index]}</span>
+              <span class="tag-close"
                     @click=${() => this._handleDeleteTag(index)}>
               </span>
             </li>`
@@ -103,7 +144,7 @@ export class TagsInputElement extends LivechatElement {
         minlength=${ifDefined(this.minlength)}
         maxlength=${ifDefined(this.maxlength)}
         @paste=${(e: ClipboardEvent) => this._handlePaste(e)}
-        @keydown=${(e: KeyboardEvent) => this._handleKeyDown(e)}
+        @keydown=${(e: KeyboardEvent) => this._handleInputKeyDown(e)}
         @keyup=${(e: KeyboardEvent) => this._handleKeyUp(e)}
         @input=${(e: InputEvent) => this._handleInputEvent(e)}
         @change=${(e: Event) => e.stopPropagation()}
@@ -115,6 +156,44 @@ export class TagsInputElement extends LivechatElement {
           </datalist>`
           : ''
         }`
+  }
+
+  private readonly _handleSelectTag = (index?: number): boolean => {
+    if (!index) {
+      this._selectedTags = []
+      this._currentTag = undefined
+      this._firstConsecutiveSelectedTag = undefined
+
+      return true
+    }
+
+    switch (this._selectionMode) {
+      case TagsInputSelectionMode.Single:
+        this._selectedTags = [index]
+        break
+      case TagsInputSelectionMode.Additive:
+        if (!this._selectedTags.includes(index)) {
+          this._selectedTags.push(index)
+        }
+        break
+      case TagsInputSelectionMode.Consecutive:
+        if (!this._firstConsecutiveSelectedTag) {
+          this._firstConsecutiveSelectedTag = index
+        }
+        if (!this._selectedTags.includes(index)) {
+          this._selectedTags.push(index)
+        } else {
+          this._selectedTags = this._selectedTags.filter(i => i === index)
+        }
+        break
+    }
+
+    this.renderRoot.querySelectorAll(`li [key="${index}"]`)
+      .forEach(el => el.scrollIntoView({
+        behavior: 'smooth'
+      }))
+
+    return true
   }
 
   private readonly _handlePaste = (e: ClipboardEvent): boolean => {
@@ -136,8 +215,9 @@ export class TagsInputElement extends LivechatElement {
       values = values.map(v => v.trim()).filter(v => v !== '')
 
       if (values.length > 0) {
-        // Keep last value in input if value doesn't finish with a separator
-        if (!this.separators?.some(separator => newValue.match(/\s+$/m)?.[0]?.includes(separator))) {
+        // Keep value in input if value is unique and does not end with a separator
+        if (values.length === 1 &&
+            !this.separators?.some(separator => newValue.match(/\s+$/m)?.[0]?.includes(separator))) {
           target.value = values.pop() ?? ''
         } else {
           target.value = ''
@@ -158,11 +238,88 @@ export class TagsInputElement extends LivechatElement {
     return true
   }
 
-  private readonly _handleKeyDown = (e: KeyboardEvent): boolean => {
+  private readonly _handleTagsListBlur = (): boolean => {
+    this._handleSelectTag(undefined)
+    return true
+  }
+
+  private readonly _handleTagsListKeyDown = (e: KeyboardEvent, valueIndexes: number[]): boolean => {
+    const target = e?.target as HTMLInputElement
+    let selectedTag = (this._currentTag) ? valueIndexes.indexOf(this._currentTag) : undefined
+
+    if (target) {
+      switch (e.key) {
+        case 'ArrowLeft':
+          selectedTag = selectedTag ? selectedTag-- : this.value.length - 1
+
+          this._handleSelectTag(selectedTag)
+          this._currentTag = selectedTag
+          break
+        case 'ArrowRight':
+          selectedTag = selectedTag ? selectedTag++ : 0
+
+          this._handleSelectTag(selectedTag)
+          this._currentTag = selectedTag
+          break
+        case 'ShiftLeft':
+        case 'ShiftRight':
+          if (!this._isPressingKey.includes(e.key)) {
+            this._isPressingKey.push(e.key)
+
+            if (!e.isComposing) {
+              this._selectionMode = TagsInputSelectionMode.Consecutive
+              this._firstConsecutiveSelectedTag = selectedTag
+            }
+          }
+          break
+        case 'ControlLeft':
+        case 'ControlRight':
+          if (!this._isPressingKey.includes(e.key)) {
+            this._isPressingKey.push(e.key)
+
+            if (!e.isComposing) {
+              this._selectionMode = TagsInputSelectionMode.Additive
+            }
+          }
+          break
+        case 'Enter':
+          if (!this._isPressingKey.includes(e.key)) {
+            this._isPressingKey.push(e.key)
+          }
+
+          this._handleSelectTag(undefined)
+          break
+        case 'Backspace':
+        case 'Delete':
+          // Avoid bounce delete
+          if (!this._isPressingKey.includes(e.key)) {
+            this._isPressingKey.push(e.key)
+
+            if (this._selectionToBeRemoved) {
+              this._selectionToBeRemoved = false
+              this._handleDeleteTags(this._selectedTags)
+              this._handleSelectTag(undefined)
+            } else {
+              this._selectionToBeRemoved = true
+            }
+          }
+          break
+        default:
+          break
+      }
+    }
+
+    return true
+  }
+
+  private readonly _handleInputKeyDown = (e: KeyboardEvent): boolean => {
     const target = e?.target as HTMLInputElement
 
     if (target) {
       switch (e.key) {
+        case 'Tab':
+          this._handleNewTag(e)
+          break
         case 'Enter':
           // Avoid bounce
           if (!this._isPressingKey.includes(e.key)) {
@@ -173,7 +330,9 @@ export class TagsInputElement extends LivechatElement {
           }
 
           if (target.value === '') {
-            this._isPressingKey.push(e.key)
+            if (!this._isPressingKey.includes(e.key)) {
+              this._isPressingKey.push(e.key)
+            }
             return true
           } else {
             e.preventDefault()
@@ -188,12 +347,22 @@ export class TagsInputElement extends LivechatElement {
 
             if ((target.selectionStart === target.selectionEnd) &&
                  target.selectionStart === 0) {
-              this._handleDeleteTag((this._searchedTagsIndex.length)
+              const indexToRemove = (this._searchedTagsIndex.length)
                 ? this._searchedTagsIndex.slice(-1)[0]
-                : (this.value.length - 1))
+                : (this.value.length - 1)
+              if (this._selectionToBeRemoved) {
+                this._selectionToBeRemoved = false
+                this._handleDeleteTag(indexToRemove)
+              } else {
+                this._selectedTags = [indexToRemove]
+                this._selectionToBeRemoved = true
+                this.renderRoot.querySelectorAll(`li [key="${indexToRemove}"]`)
+                  .forEach(el => el.scrollIntoView({
+                    behavior: 'smooth'
+                  }))
+              }
             }
           }
-
           break
         case 'Delete':
           // Avoid bounce delete
@@ -202,9 +371,20 @@ export class TagsInputElement extends LivechatElement {
 
             if ((target.selectionStart === target.selectionEnd) &&
                  target.selectionStart === target.value.length) {
-              this._handleDeleteTag((this._searchedTagsIndex.length)
+              const indexToRemove = (this._searchedTagsIndex.length)
                 ? this._searchedTagsIndex[0]
-                : 0)
+                : 0
+              if (this._selectionToBeRemoved) {
+                this._selectionToBeRemoved = false
+                this._handleDeleteTag(indexToRemove)
+              } else {
+                this._selectedTags = [indexToRemove]
+                this._selectionToBeRemoved = true
+                this.renderRoot.querySelectorAll(`li [key="${indexToRemove}"]`)
+                  .forEach(el => el.scrollIntoView({
+                    behavior: 'smooth'
+                  }))
+              }
             }
           }
           break
@@ -221,6 +401,12 @@ export class TagsInputElement extends LivechatElement {
 
     if (target) {
       switch (e.key) {
+        case 'ShiftLeft':
+        case 'ShiftRight':
+        case 'ControlLeft':
+        case 'ControlRight':
+          this._selectionMode = TagsInputSelectionMode.Single
+        // eslint-disable-next-line no-fallthrough
         case 'Enter':
         case 'Backspace':
         case 'Delete':
@@ -265,8 +451,14 @@ export class TagsInputElement extends LivechatElement {
     }
   }
 
+  private readonly _handleDeleteTags = (indexes: number[]): void => {
+    this._removeTags(indexes)
+
+    this._updateSearchedTags()
+  }
+
   private readonly _handleDeleteTag = (index: number): void => {
-    this._removeTag(index)
+    this._removeTags([index])
 
     this._updateSearchedTags()
   }
@@ -305,13 +497,17 @@ export class TagsInputElement extends LivechatElement {
     }
   }
 
-  private readonly _removeTag = (index: number): void => {
-    if (index < 0 || index >= this.value.length) {
-      console.warn('Could not remove tag : index out of range')
-      return
-    }
+  private readonly _removeTags = (indexes: number[]): void => {
+    indexes.filter(index => {
+      const valid = index > 0 && index < this.value.length
+      if (!valid) {
+        console.warn(`Could not remove tag at index ${index} : index out of range`)
+      }
 
-    this.value.splice(index, 1)
+      return valid
+    })
+
+    this.value = this.value.filter((_, index) => !indexes.includes(index))
 
     this.requestUpdate('value')
     this.dispatchEvent(new CustomEvent('change', { detail: this.value }))
