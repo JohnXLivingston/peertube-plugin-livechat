@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-07 14:16+0200\n"
+"POT-Creation-Date: 2024-06-10 19:27+0200\n"
 "PO-Revision-Date: 2024-03-10 20:38+0000\n"
 "Last-Translator: \"T.S\" <fusen@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Japanese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ja/>\n"
@@ -3004,6 +3004,39 @@ msgstr "![チャット画面のスクリーンショット](/peertube-plugin-liv
 #| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
 msgid "![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
 msgstr "![チャット画面のスクリーンショット](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+
+#. type: Title ###
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid "Import / Export"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" generated a file than you can then import on another channel."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "You can also generate a file to import from any other source (for example you can import your Twitch custom emojis).  The file must be a valid JSON file, using the following format:"
+msgstr ""
+
+#. type: Fenced code block (json)
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid ""
+"[\n"
+"  {\n"
+"    \"sn\": \":short_name\",\n"
+"    \"url\": \"https://example.com/image.png\"\n"
+"  }\n"
+"]\n"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "The `sn` attribute is the short name code.  The `url` attribute can be any image url than your browser can access, or a [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) representing the file you want to import."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md

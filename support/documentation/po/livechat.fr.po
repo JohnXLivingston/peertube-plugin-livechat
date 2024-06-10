@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-07 14:16+0200\n"
+"POT-Creation-Date: 2024-06-10 19:27+0200\n"
 "PO-Revision-Date: 2024-06-08 00:29+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -999,10 +998,7 @@ msgstr "Utiliser Matterbridge"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The following is based on a tutorial to use Matterbridge with the plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
-msgstr ""
-"Ce qui suit est basé sur un tutoriel pour utiliser Matterbridge avec le "
-"plugin : [Matterbridge + Peertube](https://gitlab.com/refrac/"
-"obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
+msgstr "Ce qui suit est basé sur un tutoriel pour utiliser Matterbridge avec le plugin : [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1013,23 +1009,17 @@ msgstr "Pré-requis"
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 or later."
-msgstr ""
-"[Plugin PeerTube livechat](https://github.com/JohnXLivingston/peertube-"
-"plugin-livechat) version 3.2.0 ou supérieure."
+msgstr "[Plugin PeerTube livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 ou supérieure."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 or later."
-msgstr ""
-"[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 ou "
-"supérieure."
+msgstr "[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 ou supérieure."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The easiest is if the PeerTube instance and Matterbridge run on the same server."
-msgstr ""
-"La solution la plus simple consiste à faire tourner l'instance PeerTube et "
-"Matterbridge sur le même serveur."
+msgstr "La solution la plus simple consiste à faire tourner l'instance PeerTube et Matterbridge sur le même serveur."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1040,16 +1030,12 @@ msgstr "Connexions internes uniquement (version simple)"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You will need to enable `{{% livechat_label prosody_c2s_label %}}` in the livechat plugin settings."
-msgstr ""
-"Vous devez activer `{{% livechat_label prosody_c2s_label %}}` dans les "
-"paramètres du plugin livechat."
+msgstr "Vous devez activer `{{% livechat_label prosody_c2s_label %}}` dans les paramètres du plugin livechat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This will allow localhost XMPP clients to connect to the Prosody XMPP server."
-msgstr ""
-"Cela permettra aux clients XMPP de l'hôte local de se connecter au serveur "
-"XMPP Prosody."
+msgstr "Cela permettra aux clients XMPP de l'hôte local de se connecter au serveur XMPP Prosody."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1065,9 +1051,7 @@ msgstr "127.0.0.1       anon.example.org room.example.org\n"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
-msgstr ""
-"Remplacez `example.org` par le nom de domaine de votre instance. Vous pouvez "
-"ensuite poursuivre avec la configuration de Matterbridge ci-dessous."
+msgstr "Remplacez `example.org` par le nom de domaine de votre instance. Vous pouvez ensuite poursuivre avec la configuration de Matterbridge ci-dessous."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1078,32 +1062,23 @@ msgstr "Autoriser les connexions externes (avancé)"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "By default, the internal Prosody XMPP server only listens on localhost (127.0.0.1)."
-msgstr ""
-"Par défaut, le serveur interne XMPP Prosody n'écoute que sur localhost (127.0"
-".0.1)."
+msgstr "Par défaut, le serveur interne XMPP Prosody n'écoute que sur localhost (127.0.0.1)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
-msgstr ""
-"Sur les versions de livechat >= 10.1.0, un nouvel appel d'option `interfaces "
-"client vers serveur` a été ajouté pour permettre de changer cela.\n"
+msgstr "Sur les versions de livechat >= 10.1.0, un nouvel appel d'option `interfaces client vers serveur` a été ajouté pour permettre de changer cela.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "It allows to add a list of IPs to listen on, coma separated (spaces will be stripped)."
-msgstr ""
-"Cela permet d'ajouter une liste d'adresses IP sur lesquelles écouter, "
-"séparées par des virgules (les espaces seront supprimés)."
+msgstr "Cela permet d'ajouter une liste d'adresses IP sur lesquelles écouter, séparées par des virgules (les espaces seront supprimés)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You can also use `*` to listen on all IPv4 interfaces, and `::` for all IPv6. Doing so allows external access to the client to server interface."
-msgstr ""
-"Vous pouvez également utiliser `*` pour écouter sur toutes les interfaces "
-"IPv4, et `::` pour toutes les interfaces IPv6. Cela permet un accès externe "
-"à l'interface client-serveur."
+msgstr "Vous pouvez également utiliser `*` pour écouter sur toutes les interfaces IPv4, et `::` pour toutes les interfaces IPv6. Cela permet un accès externe à l'interface client-serveur."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -3050,6 +3025,39 @@ msgstr "![Configuration de la chaîne](/peertube-plugin-livechat/images/channel_
 #| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
 msgstr "![Configuration de la chaîne](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+
+#. type: Title ###
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid "Import / Export"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" generated a file than you can then import on another channel."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "You can also generate a file to import from any other source (for example you can import your Twitch custom emojis).  The file must be a valid JSON file, using the following format:"
+msgstr ""
+
+#. type: Fenced code block (json)
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+#, no-wrap
+msgid ""
+"[\n"
+"  {\n"
+"    \"sn\": \":short_name\",\n"
+"    \"url\": \"https://example.com/image.png\"\n"
+"  }\n"
+"]\n"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "The `sn` attribute is the short name code.  The `url` attribute can be any image url than your browser can access, or a [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) representing the file you want to import."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
