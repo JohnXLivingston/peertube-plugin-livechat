@@ -507,3 +507,7 @@ livechat_emojis_shortname_desc: |
 livechat_emojis_file: 'File'
 livechat_emojis_file_desc: |
   The emoji file.
+
+action_import: Import
+action_export: Export
+action_import_emojis_info: If imported data are okay, don't forgot to save the form.

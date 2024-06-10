@@ -80,7 +80,6 @@ export class ImageFileInputElement extends LivechatElement {
     try {
       const base64 = await new Promise<string>((resolve, reject) => {
         const fileReader = new FileReader()
-        fileReader.readAsDataURL(file)
         fileReader.onload = () => {
           if (fileReader.result === null) {
             reject(new Error('Empty result'))
@@ -93,6 +92,7 @@ export class ImageFileInputElement extends LivechatElement {
           }
         }
         fileReader.onerror = reject
+        fileReader.readAsDataURL(file)
       })
 
       this.value = base64

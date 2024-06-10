@@ -100,3 +100,7 @@ declare const LOC_LIVECHAT_EMOJIS_SHORTNAME: string
 declare const LOC_LIVECHAT_EMOJIS_SHORTNAME_DESC: string
 declare const LOC_LIVECHAT_EMOJIS_FILE: string
 declare const LOC_LIVECHAT_EMOJIS_FILE_DESC: string
+
+declare const LOC_ACTION_IMPORT: string
+declare const LOC_ACTION_EXPORT: string
+declare const LOC_ACTION_IMPORT_EMOJIS_INFO: string

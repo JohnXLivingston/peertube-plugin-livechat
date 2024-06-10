@@ -81,6 +81,23 @@ export class ChannelEmojisElement extends LivechatElement {
             </livechat-help-button>
           </p>
 
+          <div class="peertube-plugin-livechat-configuration-actions">
+            ${
+              this._channelEmojisConfiguration?.emojis?.customEmojis?.length
+                ? html`<button class="peertube-button-link orange-button" @click=${this._exportEmojis}>
+                  ${ptTr(LOC_ACTION_EXPORT)}
+                </button>`
+                : ''
+            }
+            ${
+              (this._channelEmojisConfiguration?.emojis?.customEmojis?.length ?? 0) < maxEmojisPerChannel
+                ? html`<button class="peertube-button-link orange-button" @click=${this._importEmojis}>
+                  ${ptTr(LOC_ACTION_IMPORT)}
+                </button>`
+                : ''
+            }
+          </div>
+
           <form role="form" @submit=${this._saveEmojis}>
             <div class="row mt-5">
               <livechat-dynamic-table-form
@@ -161,5 +178,147 @@ export class ChannelEmojisElement extends LivechatElement {
       peertubeHelpers.notifier.error(msg)
       this.requestUpdate('_validationError')
     }
+  }
+
+  private async _importEmojis (ev: Event): Promise<void> {
+    ev.preventDefault()
+    const b: HTMLElement | null = ev.target && 'tagName' in ev.target ? ev.target as HTMLElement : null
+    b?.setAttribute('disabled', '')
+    try {
+      // download a json file:
+      const file = await new Promise<File>((resolve, reject) => {
+        const input = document.createElement('input')
+        input.setAttribute('type', 'file')
+        input.setAttribute('accept', 'application/json')
+        input.onchange = (e) => {
+          e.preventDefault()
+          e.stopImmediatePropagation()
+          const file = (e.target as HTMLInputElement).files?.[0]
+          if (!file) {
+            reject(new Error('Missing file'))
+            return
+          }
+          resolve(file)
+        }
+        input.click()
+        input.remove()
+      })
+
+      const content = await new Promise<string>((resolve, reject) => {
+        const fileReader = new FileReader()
+        fileReader.onerror = reject
+        fileReader.onload = () => {
+          if (fileReader.result === null) {
+            reject(new Error('Empty result'))
+            return
+          }
+          if (fileReader.result instanceof ArrayBuffer) {
+            reject(new Error('Result is an ArrayBuffer, this was not intended'))
+          } else {
+            resolve(fileReader.result)
+          }
+        }
+        fileReader.readAsText(file)
+      })
+
+      const json = JSON.parse(content)
+      if (!Array.isArray(json)) {
+        throw new Error('Invalid data, an array was expected')
+      }
+      for (const entry of json) {
+        if (typeof entry !== 'object') {
+          throw new Error('Invalid data')
+        }
+        if (!entry.sn || !entry.url || (typeof entry.sn !== 'string') || (typeof entry.url !== 'string')) {
+          throw new Error('Invalid data')
+        }
+
+        const url = await this._convertImageToDataUrl(entry.url)
+        let sn = entry.sn as string
+        if (!sn.startsWith(':')) { sn = ':' + sn }
+        if (!sn.endsWith(':')) { sn += ':' }
+
+        const item: ChannelEmojisConfiguration['emojis']['customEmojis'][0] = {
+          sn,
+          url
+        }
+        if (entry.isCategoryEmoji === true) {
+          item.isCategoryEmoji = true
+        }
+        this._channelEmojisConfiguration?.emojis.customEmojis.push(item)
+      }
+
+      this.requestUpdate('_channelEmojisConfiguration')
+
+      this.registerClientOptions?.peertubeHelpers.notifier.info(
+        await this.registerClientOptions?.peertubeHelpers.translate(LOC_ACTION_IMPORT_EMOJIS_INFO)
+      )
+    } catch (err: any) {
+      this.registerClientOptions?.peertubeHelpers.notifier.error(err.toString())
+    } finally {
+      b?.removeAttribute('disabled')
+    }
+  }
+
+  private async _exportEmojis (ev: Event): Promise<void> {
+    ev.preventDefault()
+    const b: HTMLElement | null = ev.target && 'tagName' in ev.target ? ev.target as HTMLElement : null
+    b?.setAttribute('disabled', '')
+    try {
+      const result: ChannelEmojisConfiguration['emojis']['customEmojis'] = []
+      for (const ed of this._channelEmojisConfiguration?.emojis?.customEmojis ?? []) {
+        if (!ed.sn || !ed.url) { continue }
+        // Here url can be:
+        // * the dataUrl representation of a newly uploaded file
+        // * or the url of an already saved image file
+        // In both cases, we want to export a dataUrl version.
+        const url = await this._convertImageToDataUrl(ed.url)
+
+        const item: typeof result[0] = {
+          sn: ed.sn,
+          url
+        }
+        if (ed.isCategoryEmoji === true) { item.isCategoryEmoji = ed.isCategoryEmoji }
+        result.push(item)
+      }
+
+      // Make the browser download the JSON file:
+      const dataUrl = 'data:application/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(result))
+      const a = document.createElement('a')
+      a.setAttribute('href', dataUrl)
+      a.setAttribute('download', 'emojis.json')
+      a.click()
+      a.remove()
+    } catch (err: any) {
+      console.error(err)
+      this.registerClientOptions?.peertubeHelpers.notifier.error(err.toString())
+    } finally {
+      b?.removeAttribute('disabled')
+    }
+  }
+
+  private async _convertImageToDataUrl (url: string): Promise<string> {
+    if (url.startsWith('data:')) { return url }
+    // There is a trick to convert img to dataUrl: using a canvas.
+    // But we can't use it here... as it won't work with animated GIF.
+    // So we just fetch each url, and do the work.
+    const blob = await (await fetch(url)).blob()
+    const base64 = await new Promise<string>((resolve, reject) => {
+      const fileReader = new FileReader()
+      fileReader.onload = () => {
+        if (fileReader.result === null) {
+          reject(new Error('Empty result'))
+          return
+        }
+        if (fileReader.result instanceof ArrayBuffer) {
+          reject(new Error('Result is an ArrayBuffer, this was not intended'))
+        } else {
+          resolve(fileReader.result)
+        }
+      }
+      fileReader.onerror = reject
+      fileReader.readAsDataURL(blob)
+    })
+    return base64
   }
 }
