@@ -461,3 +461,17 @@ livechat_configuration_channel_forbidden_words_label_desc: Beschriftung für die
 invalid_value_wrong_type: Der Wert hat einen falschen Typ.
 invalid_value_wrong_format: Der Wert ist in einem falschen Format.
 invalid_value_not_in_range: Der Wert liegt nicht im zulässigen Bereich.
+validation_error: Bei der Validierung ist ein Fehler aufgetreten.
+invalid_value_missing: Dieser Wert ist erforderlich.
+invalid_value_file_too_big: 'Die Datei ist zu groß (maximale Größe: %s).'
+invalid_value_duplicate: Doppelter Wert
+livechat_configuration_channel_emojis_title: Kanal-Emojis
+livechat_emojis_shortname: Kurzname
+livechat_emojis_shortname_desc: "Sie können Emojis mit \":Kurzname:\" verwenden.\n
+  Der Kurzname darf nur alphanumerische Zeichen, Unterstriche und Bindestriche enthalten.\n"
+livechat_configuration_channel_emojis_desc: "Sie können benutzerdefinierte Emojis
+  für Ihren Kanal konfigurieren.\nDiese Emojis werden in der Emoji-Auswahl verfügbar
+  sein.\nBenutzer können sie auch mit ihrem Kurznamen verwenden (z. B. indem sie \"\
+  :Kurzname:\" schreiben).\n"
+livechat_emojis_file: Datei
+livechat_emojis_file_desc: "Die Emoji-Datei.\n"

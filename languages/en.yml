@@ -7,10 +7,10 @@ use_chat_help: "If enabled, there will be a chat next to the video."
 share_chat_link: "Share chat link"
 read_only: "Read-only"
 show_scrollbarr: "Show the scrollbar"
-transparent_background: "Transparent background (for stream integration, with OBS\
-  \ for example)"
-tips_for_streamers: "Tips for streamers: To add the chat to your OBS, generate a read-only\
-  \ link and use it as a browser source."
+transparent_background: "Transparent background (for stream integration, with OBS
+  for example)"
+tips_for_streamers: "Tips for streamers: To add the chat to your OBS, generate a read-only
+  link and use it as a browser source."
 copy: "Copy"
 link_copied: "Link copied"
 error: "Error"
@@ -26,8 +26,8 @@ channel: "Channel"
 last_activity: "Last activity"
 web: "Web"
 connect_using_xmpp: "Connect using XMPP"
-connect_using_xmpp_help: "You can connect to the room using an external XMPP account,\
-  \ and your favorite XMPP client."
+connect_using_xmpp_help: "You can connect to the room using an external XMPP account,
+  and your favorite XMPP client."
 
 important_note_title: "<h3>Important notes</h3>"
 important_note_text: |
@@ -80,7 +80,8 @@ external_auth_custom_oidc_description: |
   <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Settings</a>.
 
 external_auth_custom_oidc_button_label_label: "Label for the connection button"
-external_auth_custom_oidc_button_label_description: "This label will be displayed to users, as the button label to authenticate with this OIDC provider."
+external_auth_custom_oidc_button_label_description: "This label will be displayed
+  to users, as the button label to authenticate with this OIDC provider."
 
 external_auth_custom_oidc_discovery_url_label: "Discovery URL"
 external_auth_oidc_client_id_label: "Client ID"
@@ -101,8 +102,8 @@ external_auth_facebook_oidc_description: |
 chat_behaviour_description: "<h3>Chat behaviour</h3>"
 
 room_type_label: "Room type"
-room_type_description: "You can choose here to have separate rooms for each video,\
-  \ or to group them by channel."
+room_type_description: "You can choose here to have separate rooms for each video,
+  or to group them by channel."
 room_type_option_video: "Each video has its own webchat room"
 room_type_option_channel: "Webchat rooms are grouped by channel"
 
@@ -110,20 +111,20 @@ auto_display_label: "Automatically open the chat"
 auto_display_description: "When watching a video, the chatbox will automatically open."
 
 open_blank_label: "Show the «open in new window» button"
-open_blank_description: "There will be a button for opening the web chat in a new\
-  \ window."
+open_blank_description: "There will be a button for opening the web chat in a new
+  window."
 
 share_url_label: "Show the «share chat link» button"
-share_url_description: "There will be a button for sharing a chat url (could be used\
-  \ for OBS integration, for example)."
+share_url_description: "There will be a button for sharing a chat url (could be used
+  for OBS integration, for example)."
 share_url_option_nobody: "Show for nobody"
 share_url_option_everyone: "Show for everyone"
 share_url_option_owner: "Show for the video owner"
 share_url_option_owner_moderators: "Show for the video owner and instance's moderators"
 
 per_live_video_label: "Users can activate the chat for their lives"
-per_live_video_description: "If checked, all live videos will have a checkbox in their\
-  \ properties for enabling the web chat."
+per_live_video_description: "If checked, all live videos will have a checkbox in their
+  properties for enabling the web chat."
 
 per_live_video_warning_description: |
   <span class="peertube-plugin-livechat-warning">
@@ -135,8 +136,8 @@ all_lives_label: "Activate chat for all lives"
 all_lives_description: "If checked, the chat will be enabled for all lives."
 
 all_non_lives_label: "Activate chat for all non-lives"
-all_non_lives_description: "If checked, the chat will be enabled for all video that\
-  \ are not lives."
+all_non_lives_description: "If checked, the chat will be enabled for all video that
+  are not lives."
 
 videos_list_label: "Activate chat for these videos"
 videos_list_description: |
@@ -171,7 +172,8 @@ avatar_set_option_cat: "Cats"
 avatar_set_option_bird: "Birds"
 avatar_set_option_fenec: "Fenecs (Mobilizon mascot)"
 avatar_set_option_abstract: Abstract
-avatar_set_option_legacy: "Legacy Sepia avatars (those included in previous plugin versions)"
+avatar_set_option_legacy: "Legacy Sepia avatars (those included in previous plugin
+  versions)"
 
 converse_theme_label: "ConverseJS theme"
 converse_theme_description: "Please choose the converseJS theme you want to use."
@@ -367,17 +369,21 @@ configuration_description: |
   users will be able to add some customization on their channels,
   activate the moderation bot, ...
 
-disable_channel_configuration_label: "Disable the advanced channel configuration and the chatbot"
+disable_channel_configuration_label: "Disable the advanced channel configuration and
+  the chatbot"
 
 save: "Save"
 cancel: "Cancel"
 successfully_saved: "Successfully saved"
 menu_configuration_label: "Chatrooms"
 livechat_configuration_title: "Configure your live's chatrooms"
-livechat_configuration_desc: "Here you can configure some advanced options for chatrooms associated to your live streams."
-livechat_configuration_please_select: "Please select bellow one of your channel, to setup its chatting options."
+livechat_configuration_desc: "Here you can configure some advanced options for chatrooms
+  associated to your live streams."
+livechat_configuration_please_select: "Please select bellow one of your channel, to
+  setup its chatting options."
 livechat_configuration_channel_title: "Channel options"
-livechat_configuration_channel_desc: "You can setup here some options for this channel (moderation policies, ...)."
+livechat_configuration_channel_desc: "You can setup here some options for this channel
+  (moderation policies, ...)."
 livechat_configuration_channel_slow_mode_label: "Slow mode"
 livechat_configuration_channel_slow_mode_desc: |
   Slow mode default value:
@@ -395,16 +401,21 @@ livechat_configuration_channel_forbidden_words_desc: |
 livechat_configuration_channel_forbidden_words_desc2: |
   One word or expression per line. If you put multiple words on one line, it will only match messages containing the whole sequence.
 livechat_configuration_channel_forbidden_words_reason_label: "Reason"
-livechat_configuration_channel_forbidden_words_reason_desc: "Reason to display besides deleted messages"
-livechat_configuration_channel_forbidden_words_regexp_label: "Consider as regular expressions"
-livechat_configuration_channel_forbidden_words_regexp_desc: "By checking this option, you can use regular expressions."
+livechat_configuration_channel_forbidden_words_reason_desc: "Reason to display besides
+  deleted messages"
+livechat_configuration_channel_forbidden_words_regexp_label: "Consider as regular
+  expressions"
+livechat_configuration_channel_forbidden_words_regexp_desc: "By checking this option,
+  you can use regular expressions."
 livechat_configuration_channel_forbidden_words_label_label: "Label"
-livechat_configuration_channel_forbidden_words_label_desc: "Label for this forbidden words rule"
-livechat_configuration_channel_forbidden_words_applytomoderators_label:  "Also moderate messages from moderators"
+livechat_configuration_channel_forbidden_words_label_desc: "Label for this forbidden
+  words rule"
+livechat_configuration_channel_forbidden_words_applytomoderators_label: "Also moderate
+  messages from moderators"
 livechat_configuration_channel_forbidden_words_applytomoderators_desc: |
   By default, moderator messages will not be deleted when containing forbidden words.
   By checking this option, messages from moderators will also be deleted.
-livechat_configuration_channel_forbidden_words_comments_label:  "Comments"
+livechat_configuration_channel_forbidden_words_comments_label: "Comments"
 livechat_configuration_channel_forbidden_words_comments_desc: |
   You can add here some comments about this rule, to remember how and why you created it.
   These comments are purely indicative, and have no influence on the bot's behavior.
@@ -440,7 +451,7 @@ invalid_value_missing: "This value is required."
 invalid_value_wrong_type: "Value is of the wrong type."
 invalid_value_wrong_format: "Value is in the wrong format."
 invalid_value_not_in_range: "Value is not in authorized range."
-invalid_value_file_too_big: "File size is too big (max size: %s)"
+invalid_value_file_too_big: "File size is too big (max size: %s)."
 invalid_value_duplicate: "Duplicate value"
 
 slow_mode_info: "Slow mode is enabled, users can send a message every %1$s seconds."
@@ -452,11 +463,16 @@ login_remote_peertube: "Log in using an account on another Peertube instance:"
 login_remote_peertube_url: "Your Peertube instance URL"
 login_remote_peertube_searching: "Searching the video on the Peertube instance..."
 login_remote_peertube_url_invalid: "Invalid Peertube URL."
-login_remote_peertube_no_livechat: "The livechat plugin is not installed on this Peertube instance."
-login_remote_peertube_video_not_found: "This video is not available on this Peertube instance."
-login_remote_peertube_video_not_found_try_anyway: "In some cases, the video can still be retrieved if you connect to the remote instance."
-login_remote_peertube_video_not_found_try_anyway_button: "Try anyway to open the video on the Peertube instance"
-login_remote_peertube_video_open_failed: "Your browser has blocked the opening on the remote instance, please try to open manually this link:"
+login_remote_peertube_no_livechat: "The livechat plugin is not installed on this Peertube
+  instance."
+login_remote_peertube_video_not_found: "This video is not available on this Peertube
+  instance."
+login_remote_peertube_video_not_found_try_anyway: "In some cases, the video can still
+  be retrieved if you connect to the remote instance."
+login_remote_peertube_video_not_found_try_anyway_button: "Try anyway to open the video
+  on the Peertube instance"
+login_remote_peertube_video_open_failed: "Your browser has blocked the opening on
+  the remote instance, please try to open manually this link:"
 login_external_auth_alert_message: "Authentication failed"
 
 tasks: 'Tasks'
