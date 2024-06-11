@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 Mehdi Benadel <https://mehdibenadel.com>
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
@@ -224,9 +225,8 @@ export class ChannelConfigurationElement extends LivechatElement {
           </p>
 
           <form livechat-configuration-channel-options role="form" @submit=${this._saveConfig}>
-          <div class="row mt-3">
             <div class="row mt-5">
-                <div class="col-12 col-lg-4 col-xl-3">
+              <div class="col-12 col-lg-4 col-xl-3">
                 <livechat-configuration-row
                   .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
                   .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
@@ -315,87 +315,88 @@ export class ChannelConfigurationElement extends LivechatElement {
               }
               </div>
             </div>
-            ${this._channelConfiguration?.configuration.bot.enabled
-            ? html`<div class="row mt-5">
-              <div class="col-12 col-lg-4 col-xl-3">
-                <livechat-configuration-row
-                  .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
-                  .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
-                  .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
-                </livechat-configuration-row>
-              </div>
-              <div class="col-12 col-lg-8 col-xl-9">
-                <livechat-dynamic-table-form
-                  .header=${tableHeaderList.forbiddenWords}
-                  .schema=${tableSchema.forbiddenWords}
-                  .validation=${this._validationError?.properties}
-                  .validationPrefix=${'bot.forbiddenWords'}
-                  .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
-                  @update=${(e: CustomEvent) => {
-                      if (this._channelConfiguration) {
-                        this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
-                        this.requestUpdate('_channelConfiguration')
+            ${!this._channelConfiguration?.configuration.bot.enabled
+            ? ''
+            : html`
+              <div class="row mt-5">
+                <div class="col-12 col-lg-4 col-xl-3">
+                  <livechat-configuration-row
+                    .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
+                    .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
+                    .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
+                  </livechat-configuration-row>
+                </div>
+                <div class="col-12 col-lg-8 col-xl-9">
+                  <livechat-dynamic-table-form
+                    .header=${tableHeaderList.forbiddenWords}
+                    .schema=${tableSchema.forbiddenWords}
+                    .validation=${this._validationError?.properties}
+                    .validationPrefix=${'bot.forbiddenWords'}
+                    .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
+                    @update=${(e: CustomEvent) => {
+                        if (this._channelConfiguration) {
+                          this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
+                          this.requestUpdate('_channelConfiguration')
+                        }
                       }
                     }
-                  }
-                  .formName=${'forbidden-words'}>
-                </livechat-dynamic-table-form>
+                    .formName=${'forbidden-words'}>
+                  </livechat-dynamic-table-form>
+                </div>
               </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-12 col-lg-4 col-xl-3">
-                <livechat-configuration-row
-                  .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
-                  .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
-                  .helpPage=${'documentation/user/streamers/bot/quotes'}>
-                </livechat-configuration-row>
-              </div>
-              <div class="col-12 col-lg-8 col-xl-9">
-                <livechat-dynamic-table-form
-                  .header=${tableHeaderList.quotes}
-                  .schema=${tableSchema.quotes}
-                  .validation=${this._validationError?.properties}
-                  .validationPrefix=${'bot.quotes'}
-                  .rows=${this._channelConfiguration?.configuration.bot.quotes}
-                  @update=${(e: CustomEvent) => {
-                      if (this._channelConfiguration) {
-                        this._channelConfiguration.configuration.bot.quotes = e.detail
-                        this.requestUpdate('_channelConfiguration')
+              <div class="row mt-5">
+                <div class="col-12 col-lg-4 col-xl-3">
+                  <livechat-configuration-row
+                    .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
+                    .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
+                    .helpPage=${'documentation/user/streamers/bot/quotes'}>
+                  </livechat-configuration-row>
+                </div>
+                <div class="col-12 col-lg-8 col-xl-9">
+                  <livechat-dynamic-table-form
+                    .header=${tableHeaderList.quotes}
+                    .schema=${tableSchema.quotes}
+                    .validation=${this._validationError?.properties}
+                    .validationPrefix=${'bot.quotes'}
+                    .rows=${this._channelConfiguration?.configuration.bot.quotes}
+                    @update=${(e: CustomEvent) => {
+                        if (this._channelConfiguration) {
+                          this._channelConfiguration.configuration.bot.quotes = e.detail
+                          this.requestUpdate('_channelConfiguration')
+                        }
                       }
                     }
-                  }
-                  .formName=${'quote'}>
-                </livechat-dynamic-table-form>
+                    .formName=${'quote'}>
+                  </livechat-dynamic-table-form>
+                </div>
               </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-12 col-lg-4 col-xl-3">
-                <livechat-configuration-row
-                  .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
-                  .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
-                  .helpPage=${'documentation/user/streamers/bot/commands'}>
-                </livechat-configuration-row>
-              </div>
-              <div class="col-12 col-lg-8 col-xl-9">
-                <livechat-dynamic-table-form
-                  .header=${tableHeaderList.commands}
-                  .schema=${tableSchema.commands}
-                  .validation=${this._validationError?.properties}
-                  .validationPrefix=${'bot.commands'}
-                  .rows=${this._channelConfiguration?.configuration.bot.commands}
-                  @update=${(e: CustomEvent) => {
-                      if (this._channelConfiguration) {
-                        this._channelConfiguration.configuration.bot.commands = e.detail
-                        this.requestUpdate('_channelConfiguration')
+              <div class="row mt-5">
+                <div class="col-12 col-lg-4 col-xl-3">
+                  <livechat-configuration-row
+                    .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
+                    .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
+                    .helpPage=${'documentation/user/streamers/bot/commands'}>
+                  </livechat-configuration-row>
+                </div>
+                <div class="col-12 col-lg-8 col-xl-9">
+                  <livechat-dynamic-table-form
+                    .header=${tableHeaderList.commands}
+                    .schema=${tableSchema.commands}
+                    .validation=${this._validationError?.properties}
+                    .validationPrefix=${'bot.commands'}
+                    .rows=${this._channelConfiguration?.configuration.bot.commands}
+                    @update=${(e: CustomEvent) => {
+                        if (this._channelConfiguration) {
+                          this._channelConfiguration.configuration.bot.commands = e.detail
+                          this.requestUpdate('_channelConfiguration')
+                        }
                       }
                     }
-                  }
-                  .formName=${'command'}>
-                </livechat-dynamic-table-form>
+                    .formName=${'command'}>
+                  </livechat-dynamic-table-form>
+                </div>
               </div>
-            </div>`
-              : ''
-            }
+            `}
             <div class="form-group mt-5">
               <input type="submit" class="peertube-button-link orange-button" value=${ptTr(LOC_SAVE)} />
             </div>
