@@ -72,7 +72,10 @@ $small-view: 800px;
     }
 
     input[type="submit"],
-    input[type="reset"] {
+    input[type="reset"],
+    button[type="submit"],
+    button[type="reset"],
+    .peertube-plugin-livechat-configuration-actions button {
       // Peertube rounded-line-height-1-5 mixins
       line-height: $button-calc-line-height;
 
@@ -86,7 +89,9 @@ $small-view: 800px;
       font-size: $button-font-size;
     }
 
-    input[type="submit"] {
+    input[type="submit"],
+    button[type="submit"],
+    .peertube-plugin-livechat-configuration-actions button {
       // Peertube orange-button mixin
       &,
       &:active,
@@ -108,7 +113,8 @@ $small-view: 800px;
       }
     }
 
-    input[type="reset"] {
+    input[type="reset"],
+    button[type="reset"] {
       // Peertube grey-button mixin
       background-color: var(--greyBackgroundColor);
       color: var(--greyForegroundColor);

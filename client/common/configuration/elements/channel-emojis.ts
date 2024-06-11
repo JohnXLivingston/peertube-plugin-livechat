@@ -37,6 +37,16 @@ export class ChannelEmojisElement extends LivechatElement {
   @state()
   private _validationError?: ValidationError
 
+  @state()
+  private _actionDisabled: boolean = false
+
+  private _asyncTaskRender: Task
+
+  constructor () {
+    super()
+    this._asyncTaskRender = this._initTask()
+  }
+
   protected override render = (): unknown => {
     const tableHeaderList: DynamicFormHeader = {
       sn: {
@@ -84,14 +94,22 @@ export class ChannelEmojisElement extends LivechatElement {
           <div class="peertube-plugin-livechat-configuration-actions">
             ${
               this._channelEmojisConfiguration?.emojis?.customEmojis?.length
-                ? html`<button class="peertube-button-link orange-button" @click=${this._exportEmojis}>
+                ? html`
+                <button
+                  @click=${this._exportEmojis}
+                  ?disabled=${this._actionDisabled}
+                >
                   ${ptTr(LOC_ACTION_EXPORT)}
                 </button>`
                 : ''
             }
             ${
               (this._channelEmojisConfiguration?.emojis?.customEmojis?.length ?? 0) < maxEmojisPerChannel
-                ? html`<button class="peertube-button-link orange-button" @click=${this._importEmojis}>
+                ? html`
+                <button
+                  @click=${this._importEmojis}
+                  ?disabled=${this._actionDisabled}
+                >
                   ${ptTr(LOC_ACTION_IMPORT)}
                 </button>`
                 : ''
@@ -123,7 +141,10 @@ export class ChannelEmojisElement extends LivechatElement {
               ></livechat-dynamic-table-form>
             </div>
             <div class="form-group mt-5">
-              <button type="submit" class="peertube-button-link orange-button">
+              <button type="reset" @click=${this._reset} ?disabled=${this._actionDisabled}>
+                ${ptTr(LOC_CANCEL)}
+              </button>
+              <button type="submit" ?disabled=${this._actionDisabled}>
                 ${ptTr(LOC_SAVE)}
               </button>
             </div>
@@ -136,19 +157,29 @@ export class ChannelEmojisElement extends LivechatElement {
     })
   }
 
-  private readonly _asyncTaskRender = new Task(this, {
-    task: async () => {
-      if (!this.registerClientOptions) {
-        throw new Error('Missing client options')
-      }
-      if (!this.channelId) {
-        throw new Error('Missing channelId')
-      }
-      this._channelDetailsService = new ChannelDetailsService(this.registerClientOptions)
-      this._channelEmojisConfiguration = await this._channelDetailsService.fetchEmojisConfiguration(this.channelId)
-    },
-    args: () => []
-  })
+  protected _initTask (): Task {
+    return new Task(this, {
+      task: async () => {
+        if (!this.registerClientOptions) {
+          throw new Error('Missing client options')
+        }
+        if (!this.channelId) {
+          throw new Error('Missing channelId')
+        }
+        this._channelDetailsService = new ChannelDetailsService(this.registerClientOptions)
+        this._channelEmojisConfiguration = await this._channelDetailsService.fetchEmojisConfiguration(this.channelId)
+        this._actionDisabled = false // in case of reset
+      },
+      args: () => []
+    })
+  }
+
+  private async _reset (ev?: Event): Promise<void> {
+    ev?.preventDefault()
+    this._actionDisabled = true
+    this._asyncTaskRender = this._initTask()
+    this.requestUpdate()
+  }
 
   private async _saveEmojis (ev?: Event): Promise<void> {
     ev?.preventDefault()
@@ -161,6 +192,7 @@ export class ChannelEmojisElement extends LivechatElement {
     }
 
     try {
+      this._actionDisabled = true
       await this._channelDetailsService.saveEmojisConfiguration(this.channelId, this._channelEmojisConfiguration.emojis)
       this._validationError = undefined
       peertubeHelpers.notifier.info(await peertubeHelpers.translate(LOC_SUCCESSFULLY_SAVED))
@@ -177,13 +209,14 @@ export class ChannelEmojisElement extends LivechatElement {
       msg ??= await peertubeHelpers.translate(LOC_ERROR)
       peertubeHelpers.notifier.error(msg)
       this.requestUpdate('_validationError')
+    } finally {
+      this._actionDisabled = false
     }
   }
 
   private async _importEmojis (ev: Event): Promise<void> {
     ev.preventDefault()
-    const b: HTMLElement | null = ev.target && 'tagName' in ev.target ? ev.target as HTMLElement : null
-    b?.setAttribute('disabled', '')
+    this._actionDisabled = true
     try {
       // download a json file:
       const file = await new Promise<File>((resolve, reject) => {
@@ -256,14 +289,13 @@ export class ChannelEmojisElement extends LivechatElement {
     } catch (err: any) {
       this.registerClientOptions?.peertubeHelpers.notifier.error(err.toString())
     } finally {
-      b?.removeAttribute('disabled')
+      this._actionDisabled = false
     }
   }
 
   private async _exportEmojis (ev: Event): Promise<void> {
     ev.preventDefault()
-    const b: HTMLElement | null = ev.target && 'tagName' in ev.target ? ev.target as HTMLElement : null
-    b?.setAttribute('disabled', '')
+    this._actionDisabled = true
     try {
       const result: ChannelEmojisConfiguration['emojis']['customEmojis'] = []
       for (const ed of this._channelEmojisConfiguration?.emojis?.customEmojis ?? []) {
@@ -293,7 +325,7 @@ export class ChannelEmojisElement extends LivechatElement {
       console.error(err)
       this.registerClientOptions?.peertubeHelpers.notifier.error(err.toString())
     } finally {
-      b?.removeAttribute('disabled')
+      this._actionDisabled = false
     }
   }
 

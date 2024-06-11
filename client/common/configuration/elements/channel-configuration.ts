@@ -36,19 +36,40 @@ export class ChannelConfigurationElement extends LivechatElement {
   @state()
   public _validationError?: ValidationError
 
-  private readonly _asyncTaskRender = new Task(this, {
-    task: async ([registerClientOptions]) => {
-      if (registerClientOptions) {
-        this._channelDetailsService = new ChannelDetailsService(registerClientOptions)
-        this._channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
-      }
-    },
-    args: () => [this.registerClientOptions]
-  })
+  @state()
+  private _actionDisabled: boolean = false
+
+  private _asyncTaskRender: Task
+
+  constructor () {
+    super()
+    this._asyncTaskRender = this._initTask()
+  }
+
+  protected _initTask (): Task {
+    return new Task(this, {
+      task: async ([registerClientOptions]) => {
+        if (registerClientOptions) {
+          this._channelDetailsService = new ChannelDetailsService(registerClientOptions)
+          this._channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
+          this._actionDisabled = false // in case of reset
+        }
+      },
+      args: () => [this.registerClientOptions]
+    })
+  }
+
+  private async _reset (event?: Event): Promise<void> {
+    event?.preventDefault()
+    this._actionDisabled = true
+    this._asyncTaskRender = this._initTask()
+    this.requestUpdate()
+  }
 
   private readonly _saveConfig = async (event?: Event): Promise<void> => {
     event?.preventDefault()
     if (this._channelDetailsService && this._channelConfiguration) {
+      this._actionDisabled = true
       this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id,
         this._channelConfiguration.configuration)
         .then(() => {
@@ -71,6 +92,9 @@ export class ChannelConfigurationElement extends LivechatElement {
               : await this.registerClientOptions.peertubeHelpers.translate('error')
           )
           this.requestUpdate('_validationError')
+        })
+        .finally(() => {
+          this._actionDisabled = false
         })
     }
   }
@@ -398,7 +422,12 @@ export class ChannelConfigurationElement extends LivechatElement {
               </div>
             `}
             <div class="form-group mt-5">
-              <input type="submit" class="peertube-button-link orange-button" value=${ptTr(LOC_SAVE)} />
+              <button type="reset" @click=${this._reset} ?disabled=${this._actionDisabled}>
+                ${ptTr(LOC_CANCEL)}
+              </button>
+              <button type="submit" ?disabled=${this._actionDisabled}>
+                ${ptTr(LOC_SAVE)}
+              </button>
             </div>
           </form>
         </div>`
