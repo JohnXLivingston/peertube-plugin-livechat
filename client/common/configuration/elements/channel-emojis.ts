@@ -51,7 +51,8 @@ export class ChannelEmojisElement extends LivechatElement {
     const tableHeaderList: DynamicFormHeader = {
       sn: {
         colName: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME),
-        description: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME_DESC)
+        description: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME_DESC),
+        headerClassList: ['peertube-livechat-emojis-col-sn']
       },
       url: {
         colName: ptTr(LOC_LIVECHAT_EMOJIS_FILE),

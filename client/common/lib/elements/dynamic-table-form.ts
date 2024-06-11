@@ -218,27 +218,39 @@ export class DynamicTableFormElement extends LivechatElement {
   }
 
   private readonly _renderHeader = (): TemplateResult => {
+    const columns = Object.entries(this.header)
+      .sort(([k1, _1], [k2, _2]) => this.columnOrder.indexOf(k1) - this.columnOrder.indexOf(k2))
     return html`<thead>
       <tr>
-        ${Object.entries(this.header)
-                .sort(([k1, _1], [k2, _2]) => this.columnOrder.indexOf(k1) - this.columnOrder.indexOf(k2))
-                .map(([_, v]) => this._renderHeaderCell(v))}
+        ${columns.map(([_, v]) => this._renderHeaderCell(v))}
+        <th scope="col"></th>
+      </tr>
+      <tr>
+        ${columns.map(([_, v]) => this._renderHeaderDescriptionCell(v))}
         <th scope="col"></th>
       </tr>
     </thead>`
   }
 
   private readonly _renderHeaderCell = (headerCellData: DynamicFormHeaderCellData): TemplateResult => {
-    return html`<th scope="col">
+    return html`<th scope="col" class=${headerCellData.headerClassList?.join(' ') ?? ''}>
       <div
         data-toggle="tooltip"
         data-placement="bottom"
         data-html="true"
-        title=${headerCellData.description}
-        class=${headerCellData.headerClassList?.join(' ') ?? ''}
       >
         ${headerCellData.colName}
       </div>
+    </th>`
+  }
+
+  private _renderHeaderDescriptionCell (headerCellData: DynamicFormHeaderCellData): TemplateResult {
+    const classList = ['livechat-dynamic-table-form-description-header']
+    if (headerCellData.headerClassList) {
+      classList.push(...headerCellData.headerClassList)
+    }
+    return html`<th scope="col" class=${classList.join(' ')}>
+      ${headerCellData.description}
     </th>`
   }
 

@@ -223,8 +223,12 @@ $small-view: 800px;
     }
   }
 
+  .peertube-livechat-emojis-col-sn {
+    width: 30%;
+  }
+
   .peertube-livechat-emojis-col-file {
-    width: 150px;
+    width: 65%;
   }
 
   .peertube-plugin-livechat-configuration-actions {
@@ -263,6 +267,11 @@ livechat-dynamic-table-form {
 
     tbody tr:nth-child(odd) {
       background-color: var(--greySecondaryBackgroundColor);
+    }
+
+    .livechat-dynamic-table-form-description-header {
+      font-size: small;
+      font-weight: lighter;
     }
   }
 
