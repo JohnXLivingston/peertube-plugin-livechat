@@ -597,7 +597,7 @@ export class DynamicTableFormElement extends LivechatElement {
       id=${inputId}
       aria-describedby="${inputId}-feedback"
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
-      .value=${propertyValue}
+      value="1"
       ?checked=${propertyValue} />`
   }
 

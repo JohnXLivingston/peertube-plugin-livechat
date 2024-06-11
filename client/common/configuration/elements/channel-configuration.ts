@@ -308,7 +308,7 @@ export class ChannelConfigurationElement extends LivechatElement {
                           this.requestUpdate('_channelConfiguration')
                         }
                       }
-                      .value=${this._channelConfiguration?.configuration.bot.enabled}
+                      value="1"
                       ?checked=${this._channelConfiguration?.configuration.bot.enabled}
                     />
                     ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
