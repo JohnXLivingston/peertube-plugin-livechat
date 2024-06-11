@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+import type { TemplateResult } from 'lit'
 import { PartInfo, directive } from 'lit/directive.js'
 import { AsyncDirective } from 'lit/async-directive.js'
 import { RegisterClientHelpers } from '@peertube/peertube-types/client'
@@ -41,7 +42,7 @@ export class TranslationDirective extends AsyncDirective {
       })
   }
 
-  public override render = (locId: string, allowHTML: boolean = false): unknown => {
+  public override render = (locId: string, allowHTML: boolean = false): TemplateResult | string => {
     this._localizationId = locId // TODO Check current component for context (to infer the prefix)
 
     this._allowUnsafeHTML = allowHTML
@@ -55,7 +56,7 @@ export class TranslationDirective extends AsyncDirective {
     return this._internalRender()
   }
 
-  private readonly _internalRender = (): unknown => {
+  private readonly _internalRender = (): TemplateResult | string => {
     return this._allowUnsafeHTML ? html`${unsafeHTML(this._translatedValue)}` : this._translatedValue
   }
 
