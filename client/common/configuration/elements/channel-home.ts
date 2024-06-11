@@ -47,6 +47,8 @@ export class ChannelHomeElement extends LivechatElement {
 
   protected override render = (): unknown => {
     return this._asyncTaskRender.render({
+      pending: () => html`<livechat-spinner></livechat-spinner>`,
+      error: () => html`<livechat-error></livechat-error>`,
       complete: () => html`
       <div class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-home">
         <h1>
@@ -62,7 +64,7 @@ export class ChannelHomeElement extends LivechatElement {
             <a href="${channel.livechatConfigurationUri}">
               ${channel.avatar
                 ? html`<img class="avatar channel" src="${channel.avatar.path}">`
-                       : html`<div class="avatar channel initial gray"></div>`
+                : html`<div class="avatar channel initial gray"></div>`
               }
             </a>
             <div class="peertube-plugin-livechat-configuration-home-info">

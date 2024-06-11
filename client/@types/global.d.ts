@@ -107,3 +107,5 @@ declare const LOC_ACTION_IMPORT_EMOJIS_INFO: string
 declare const LOC_ACTION_ADD_ENTRY: string
 declare const LOC_ACTION_REMOVE_ENTRY: string
 declare const LOC_ACTION_REMOVE_ENTRY_CONFIRM: string
+
+declare const LOC_LOADING_ERROR: string

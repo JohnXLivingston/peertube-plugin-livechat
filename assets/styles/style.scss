@@ -110,6 +110,7 @@
   color: orange;
 }
 
+livechat-error,
 .peertube-plugin-livechat-error {
   color: red;
 }
@@ -202,6 +203,7 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
   }
 }
 
+livechat-spinner,
 .livechat-spinner {
   display: flex;
   flex-direction: row;
@@ -245,4 +247,10 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
   .peertube-plugin-livechat-error-message {
     max-width: 30vw;
   }
+}
+
+livechat-error {
+  display: block;
+  padding: 50px;
+  text-align: center;
 }

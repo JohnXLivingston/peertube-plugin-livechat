@@ -71,7 +71,8 @@ export class ChannelEmojisElement extends LivechatElement {
       }
     }
     return this._asyncTaskRender.render({
-      pending: () => {},
+      pending: () => html`<livechat-spinner></livechat-spinner>`,
+      error: () => html`<livechat-error></livechat-error>`,
       complete: () => html`
         <div
           class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-channel"
@@ -150,10 +151,7 @@ export class ChannelEmojisElement extends LivechatElement {
             </div>
           </form>
         </div>
-      `,
-      error: (err: any) => {
-        this.registerClientOptions?.peertubeHelpers.notifier.error(err.toString())
-      }
+      `
     })
   }
 

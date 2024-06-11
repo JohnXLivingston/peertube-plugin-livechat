@@ -515,3 +515,5 @@ action_import_emojis_info: If imported data are okay, don't forgot to save the f
 action_add_entry: Add an entry
 action_remove_entry: Remove this entry
 action_remove_entry_confirm: Are you sure you want to remove this entry?
+
+loading_error: An error occured while loading data.

@@ -230,6 +230,8 @@ export class ChannelConfigurationElement extends LivechatElement {
     }
 
     return this._asyncTaskRender.render({
+      pending: () => html`<livechat-spinner></livechat-spinner>`,
+      error: () => html`<livechat-error></livechat-error>`,
       complete: () => html`
         <div class="margin-content peertube-plugin-livechat-configuration
                     peertube-plugin-livechat-configuration-channel">
