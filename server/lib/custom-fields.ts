@@ -12,6 +12,22 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
   const logger = options.peertubeHelpers.logger
 
   registerHook({
+    target: 'action:api.live-video.created',
+    handler: async ({ video }: { video: Video | undefined }) => {
+      if (!video?.id) { return }
+      // When creating a new live, if the chat is an option 'per video', we enable the chat by default.
+      // This is done for the Peertube live Android app, which does not update the video after creation.
+      // See: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/400
+      const setting = await options.settingsManager.getSetting('chat-per-live-video')
+      if (setting !== true) { return }
+      logger.info(
+        `New live created, enabling chat by default by setting livechat-active=true for video ${video.id.toString()}.`
+      )
+      await storageManager.storeData(`livechat-active-${video.id.toString()}`, true)
+    }
+  })
+
+  registerHook({
     target: 'action:api.video.updated',
     handler: async (params: any) => {
       logger.debug('Saving a video, checking for custom fields')
