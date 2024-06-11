@@ -13,6 +13,7 @@ TODO: tag conversejs livechat branch, and replace commit ID in build-converse.js
 ### Minor changes and fixes
 
 * Fix cleanup on channel deletion.
+* #416: Deregister prosodyctl interval callback when spawn.stdin disappears.
 
 ## 10.0.2
 

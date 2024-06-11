@@ -165,6 +165,14 @@ async function prosodyCtl (
         options.peertubeHelpers.logger.debug('ProsodyCtl was called in yesMode, writing to standard input.')
         spawned.stdin.write('\n')
       }, 10)
+      spawned.stdin.on('close', () => {
+        options.peertubeHelpers.logger.debug('ProsodyCtl standard input closed, clearing interval.')
+        clearInterval(yesModeInterval)
+      })
+      spawned.stdin.on('error', () => {
+        options.peertubeHelpers.logger.debug('ProsodyCtl standard input errored, clearing interval.')
+        clearInterval(yesModeInterval)
+      })
     }
 
     spawned.stdout.on('data', (data) => {
@@ -186,7 +194,6 @@ async function prosodyCtl (
     // on 'close' and not 'exit', to be sure everything is done
     // (else it can cause trouble by cleaning AppImage extract too soon)
     spawned.on('close', (code) => {
-      if (yesModeInterval) { clearInterval(yesModeInterval) }
       resolve({
         code: code,
         stdout: d,
