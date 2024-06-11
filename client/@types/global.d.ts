@@ -104,3 +104,5 @@ declare const LOC_LIVECHAT_EMOJIS_FILE_DESC: string
 declare const LOC_ACTION_IMPORT: string
 declare const LOC_ACTION_EXPORT: string
 declare const LOC_ACTION_IMPORT_EMOJIS_INFO: string
+declare const LOC_ACTION_ADD_ENTRY: string
+declare const LOC_ACTION_REMOVE_ENTRY: string

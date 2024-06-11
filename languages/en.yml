@@ -511,3 +511,6 @@ livechat_emojis_file_desc: |
 action_import: Import
 action_export: Export
 action_import_emojis_info: If imported data are okay, don't forgot to save the form.
+
+action_add_entry: Add an entry
+action_remove_entry: Remove this entry
