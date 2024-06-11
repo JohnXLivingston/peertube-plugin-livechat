@@ -5,6 +5,8 @@
 
 import type { TagsInputElement } from './tags-input'
 import type { DirectiveResult } from 'lit/directive'
+import type { RegisterClientOptions } from '@peertube/peertube-types/client'
+import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 import { ValidationErrorType } from '../models/validation'
 import { maxSize, inputFileAccept } from 'shared/lib/emojis'
 import { html, nothing, TemplateResult } from 'lit'
@@ -15,6 +17,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { LivechatElement } from './livechat'
 import { ptTr } from '../directives/translation'
+import { consume } from '@lit/context'
 
 // This content comes from the file assets/images/plus-square.svg, from the Feather icons set https://feathericons.com/
 const AddSVG: string =
@@ -92,6 +95,9 @@ export interface DynamicFormSchema { [key: string]: CellDataSchema }
 
 @customElement('livechat-dynamic-table-form')
 export class DynamicTableFormElement extends LivechatElement {
+  @consume({ context: registerClientOptionsContext, subscribe: true })
+  public registerClientOptions?: RegisterClientOptions
+
   @property({ attribute: false })
   public header: DynamicFormHeader = {}
 
@@ -144,7 +150,28 @@ export class DynamicTableFormElement extends LivechatElement {
     this.dispatchEvent(new CustomEvent('update', { detail: this.rows }))
   }
 
-  private readonly _removeRow = (rowId: number): void => {
+  private async _removeRow (rowId: number): Promise<void> {
+    if (!this.registerClientOptions) {
+      console.error('Missing registreClientOptions.')
+      return
+    }
+    const peertubeHelpers = this.registerClientOptions.peertubeHelpers
+    const confirmMsg = await peertubeHelpers.translate(LOC_ACTION_REMOVE_ENTRY_CONFIRM)
+    await new Promise<void>((resolve, reject) => {
+      peertubeHelpers.showModal({
+        title: confirmMsg,
+        content: '',
+        close: true,
+        cancel: {
+          value: 'cancel',
+          action: reject
+        },
+        confirm: {
+          value: 'confirm',
+          action: resolve
+        }
+      })
+    })
     const rowToRemove = this._rowsById.filter(rowById => rowById._id === rowId).map(rowById => rowById.row)[0]
     this._rowsById = this._rowsById.filter(rowById => rowById._id !== rowId)
     this.rows = this.rows.filter((row) => row !== rowToRemove)
