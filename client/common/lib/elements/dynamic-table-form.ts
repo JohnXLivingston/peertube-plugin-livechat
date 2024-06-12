@@ -268,7 +268,7 @@ export class DynamicTableFormElement extends LivechatElement {
       <td class="form-group">
         <button type="button"
           class="peertube-button-link orange-button dynamic-table-remove-row"
-          .title=${ptTr(LOC_ACTION_REMOVE_ENTRY)}
+          .title=${ptTr(LOC_ACTION_REMOVE_ENTRY) as any}
           @click=${async () => this._removeRow(rowData._id)}
         >
           ${unsafeHTML(RemoveSVG)}
@@ -287,7 +287,7 @@ export class DynamicTableFormElement extends LivechatElement {
       <td>
         <button type="button"
           class="peertube-button-link orange-button dynamic-table-add-row"
-          .title=${ptTr(LOC_ACTION_ADD_ENTRY)}
+          .title=${ptTr(LOC_ACTION_ADD_ENTRY) as any}
           @click=${this._addRow}
         >
           ${unsafeHTML(AddSVG)}
@@ -520,7 +520,7 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyValue: string,
     originalIndex: number): TemplateResult => {
     return html`<input
-      type=${propertySchema.inputType}
+      type=${propertySchema.inputType as any}
       name=${inputName}
       class=${classMap(
         Object.assign(
@@ -530,7 +530,7 @@ export class DynamicTableFormElement extends LivechatElement {
       )}
       id=${inputId}
       aria-describedby="${inputId}-feedback"
-      list=${(propertySchema.datalist) ? inputId + '-datalist' : nothing}
+      list=${ifDefined(propertySchema.datalist ? inputId + '-datalist' : undefined)}
       min=${ifDefined(propertySchema.min)}
       max=${ifDefined(propertySchema.max)}
       minlength=${ifDefined(propertySchema.minlength)}
@@ -540,7 +540,7 @@ export class DynamicTableFormElement extends LivechatElement {
     />
     ${(propertySchema.datalist)
 ? html`<datalist id=${inputId + '-datalist'}>
-      ${(propertySchema.datalist ?? []).map((value) => html`<option value=${value}>`)}
+      ${(propertySchema.datalist ?? []).map((value) => html`<option value=${value.toString()}>`)}
     </datalist>`
 : nothing}`
   }
@@ -561,16 +561,17 @@ export class DynamicTableFormElement extends LivechatElement {
         )
       )}
       id=${inputId}
-      .inputPlaceholder=${ifDefined(propertySchema.label)}
+      .inputPlaceholder=${propertySchema.label as any}
       aria-describedby="${inputId}-feedback"
-      .min=${ifDefined(propertySchema.min)}
-      .max=${ifDefined(propertySchema.max)}
-      .minlength=${ifDefined(propertySchema.minlength)}
-      .maxlength=${ifDefined(propertySchema.maxlength)}
-      .datalist=${ifDefined(propertySchema.datalist)}
-      .separators=${ifDefined(propertySchema.separators)}
+      .min=${propertySchema.min}
+      .max=${propertySchema.max}
+      .minlength=${propertySchema.minlength}
+      .maxlength=${propertySchema.maxlength}
+      .datalist=${propertySchema.datalist as any}
+      .separators=${propertySchema.separators}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
-      .value=${propertyValue}></livechat-tags-input>`
+      .value=${propertyValue as any}
+      ></livechat-tags-input>`
   }
 
   _renderTextarea = (rowId: number,

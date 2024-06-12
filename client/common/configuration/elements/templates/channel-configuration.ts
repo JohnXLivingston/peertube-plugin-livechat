@@ -78,8 +78,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       },
       reason: {
         inputType: 'text',
-        default: '',
-        datalist: []
+        default: ''
       },
       comments: {
         inputType: 'textarea',
