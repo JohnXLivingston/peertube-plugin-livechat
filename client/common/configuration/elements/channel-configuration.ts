@@ -27,13 +27,13 @@ export class ChannelConfigurationElement extends LivechatElement {
 
   @provide({ context: channelConfigurationContext })
   @state()
-  public _channelConfiguration?: ChannelConfiguration
+  private _channelConfiguration?: ChannelConfiguration
 
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService?: ChannelDetailsService
 
   @state()
-  public _validationError?: ValidationError
+  private _validationError?: ValidationError
 
   private readonly _asyncTaskRender = new Task(this, {
     task: async ([registerClientOptions]) => {

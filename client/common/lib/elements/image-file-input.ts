@@ -23,8 +23,9 @@ import { consume } from '@lit/context'
  */
 @customElement('livechat-image-file-input')
 export class ImageFileInputElement extends LivechatElement {
+  // eslint-disable-next-line @typescript-eslint/prefer-readonly
   @consume({ context: registerClientOptionsContext, subscribe: true })
-  public registerClientOptions?: RegisterClientOptions
+  private _registerClientOptions?: RegisterClientOptions
 
   @property({ attribute: false })
   public name?: string
@@ -68,11 +69,11 @@ export class ImageFileInputElement extends LivechatElement {
     }
 
     if (this.maxSize && file.size > this.maxSize) {
-      let msg = await this.registerClientOptions?.peertubeHelpers.translate(LOC_INVALID_VALUE_FILE_TOO_BIG)
+      let msg = await this._registerClientOptions?.peertubeHelpers.translate(LOC_INVALID_VALUE_FILE_TOO_BIG)
       if (msg) {
         // FIXME: better unit handling (here we force kb)
         msg = msg.replace('%s', Math.round(this.maxSize / 1024).toString() + 'k')
-        this.registerClientOptions?.peertubeHelpers.notifier.error(msg)
+        this._registerClientOptions?.peertubeHelpers.notifier.error(msg)
       }
       return
     }

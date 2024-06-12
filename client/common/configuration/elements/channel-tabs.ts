@@ -12,8 +12,9 @@ import { consume } from '@lit/context'
 
 @customElement('livechat-channel-tabs')
 export class ChannelHomeElement extends LivechatElement {
+  // eslint-disable-next-line @typescript-eslint/prefer-readonly
   @consume({ context: registerClientOptionsContext, subscribe: true })
-  public registerClientOptions?: RegisterClientOptions
+  private _registerClientOptions?: RegisterClientOptions
 
   @property({ attribute: false })
   public channelId?: number

@@ -111,7 +111,7 @@ export class DynamicTableFormElement extends LivechatElement {
   public rows: Array<{ [key: string]: DynamicTableAcceptedTypes }> = []
 
   @state()
-  public _rowsById: DynamicTableRowData[] = []
+  private _rowsById: DynamicTableRowData[] = []
 
   @property({ attribute: false })
   public formName: string = ''
@@ -120,7 +120,7 @@ export class DynamicTableFormElement extends LivechatElement {
   private _lastRowId = 1
 
   @property({ attribute: false })
-  private columnOrder: string[] = []
+  public columnOrder: string[] = []
 
   // fixes situations when list has been reinitialized or changed outside of CustomElement
   private readonly _updateLastRowId = (): void => {
