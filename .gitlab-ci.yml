@@ -25,7 +25,7 @@ pages:
     GIT_SUBMODULE_PATHS: support/documentation/themes/hugo-theme-learn
   script:
     # gitlab need the generated documentation to be in the /public dir.
-    - hugo -s support/documentation/ -d ../../public/ --baseURL='https://livingston.frama.io/peertube-plugin-livechat/'
+    - hugo -s support/documentation/ --minify -d ../../public/ --baseURL='https://livingston.frama.io/peertube-plugin-livechat/'
   dependencies:
     - builddoctranslations
   artifacts:
