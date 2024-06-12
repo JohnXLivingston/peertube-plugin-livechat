@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+// SPDX-FileCopyrightText: 2024 OPNA2608 <opna2608@protonmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
