@@ -54,6 +54,25 @@ export class TagsInputElement extends LivechatElement {
   @property({ attribute: false })
   public animDuration: number = 200
 
+  /**
+   * Overloading the standard focus method.
+   */
+  public override focus (): void {
+    const input = this.querySelector('input[type=text]')
+    if (input) {
+      (input as HTMLInputElement).focus()
+      return
+    }
+    // Never rendered, we will wait for the update to be complete, and then render.
+    // This is not fully compliant, as it is not synchrone... But needed (see dynamic-table addRow)
+    this.updateComplete.then(() => {
+      const input = this.querySelector('input[type=text]')
+      if (input) {
+        (input as HTMLInputElement).focus()
+      }
+    }, () => {})
+  }
+
   protected override render = (): unknown => {
     return html`<ul
         id="tags"

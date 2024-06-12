@@ -140,7 +140,7 @@ export class DynamicTableFormElement extends LivechatElement {
     return Object.fromEntries([...Object.entries(this.schema).map((entry) => [entry[0], entry[1].default ?? ''])])
   }
 
-  private readonly _addRow = (): void => {
+  private async _addRow (): Promise<void> {
     const newRow = this._getDefaultRow()
     // Create row and assign id and original index
     this._rowsById.push({ _id: this._lastRowId++, _originalIndex: this.rows.length, row: newRow })
@@ -148,6 +148,17 @@ export class DynamicTableFormElement extends LivechatElement {
     this.requestUpdate('rows')
     this.requestUpdate('_rowsById')
     this.dispatchEvent(new CustomEvent('update', { detail: this.rows }))
+
+    // Once the update is completed, we give focus to the first input field of the new row.
+    await this.updateComplete
+    // Note: we make multiple querySelector, to be sure to not get a nested table.
+    // We want the top level table associated tr.
+    const input = this.querySelector('table')?.querySelector(
+      '&>tbody>tr:last-child>td input:not([type=hidden]),&>tbody>tr:last-child>td livechat-tags-input'
+    )
+    if (input) {
+      (input as HTMLElement).focus()
+    }
   }
 
   private async _removeRow (rowId: number): Promise<void> {
