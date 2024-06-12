@@ -22,6 +22,19 @@ $grey-background-color: var(--greyBackgroundColor);
 $sub-menu-margin-bottom: 30px;
 $small-view: 800px;
 
+livechat-help-button {
+  a {
+    height: 18px !important;
+    margin: 2px !important;
+    padding: 1px !important;
+  }
+
+  svg {
+    display: block;
+    height: auto;
+  }
+}
+
 /*
   These are styles to apply for the channel configuration pages.
 */
@@ -232,6 +245,7 @@ $small-view: 800px;
   }
 
   .peertube-plugin-livechat-configuration-actions {
+    margin-bottom: 1rem;
     text-align: right;
   }
 }
@@ -273,10 +287,6 @@ livechat-dynamic-table-form {
       font-size: small;
       font-weight: lighter;
     }
-  }
-
-  button {
-    padding: 2px !important;
   }
 
   .dynamic-table-add-row {
@@ -461,4 +471,8 @@ livechat-image-file-input {
     // If we want to upload something else, we should add options on the field to customize.
     max-height: 3em !important; // and no max-width
   }
+}
+
+livechat-configuration-row {
+  margin-top: 3rem;
 }

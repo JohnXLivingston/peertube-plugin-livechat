@@ -251,178 +251,151 @@ export class ChannelConfigurationElement extends LivechatElement {
           </p>
 
           <form livechat-configuration-channel-options role="form" @submit=${this._saveConfig}>
-            <div class="row mt-5">
-              <div class="col-12 col-lg-4 col-xl-3">
-                <livechat-configuration-row
-                  .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
-                  .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
-                  .helpPage=${'documentation/user/streamers/slow_mode'}>
-                </livechat-configuration-row>
-              </div>
-              <div class="col-12 col-lg-8 col-xl-9">
-                <div class="form-group">
-                  <label>
-                    <input
-                      type="number"
-                      name="slowmode_duration"
-                      class="form-control ${classMap(this._getInputValidationClass('slowMode.duration'))}"
-                      min="0"
-                      max="1000"
-                      id="peertube-livechat-slowmode-duration"
-                      aria-describedby="peertube-livechat-slowmode-duration-feedback"
-                      @input=${(event: InputEvent) => {
-                          if (event?.target && this._channelConfiguration) {
-                            this._channelConfiguration.configuration.slowMode.duration =
-                              Number((event.target as HTMLInputElement).value)
-                          }
-                          this.requestUpdate('_channelConfiguration')
-                        }
+            <livechat-configuration-row
+              .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
+              .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
+              .helpPage=${'documentation/user/streamers/slow_mode'}>
+            </livechat-configuration-row>
+            <div class="form-group">
+              <label>
+                ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
+                <input
+                  type="number"
+                  name="slowmode_duration"
+                  class="form-control ${classMap(this._getInputValidationClass('slowMode.duration'))}"
+                  min="0"
+                  max="1000"
+                  id="peertube-livechat-slowmode-duration"
+                  aria-describedby="peertube-livechat-slowmode-duration-feedback"
+                  @input=${(event: InputEvent) => {
+                      if (event?.target && this._channelConfiguration) {
+                        this._channelConfiguration.configuration.slowMode.duration =
+                          Number((event.target as HTMLInputElement).value)
                       }
-                      value="${this._channelConfiguration?.configuration.slowMode.duration}"
-                    />
-                  </label>
-                  ${this._renderFeedback('peertube-livechat-slowmode-duration-feedback', 'slowMode.duration')}
-                </div>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-12 col-lg-4 col-xl-3">
-              <livechat-configuration-row
-                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
-                .description=${''}
-                .helpPage=${'documentation/user/streamers/channel'}>
-              </livechat-configuration-row>
-              </div>
-              <div class="col-12 col-lg-8 col-xl-9">
-                <div class="form-group">
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="bot"
-                      id="peertube-livechat-bot"
-                      @input=${(event: InputEvent) => {
-                          if (event?.target && this._channelConfiguration) {
-                            this._channelConfiguration.configuration.bot.enabled =
-                              (event.target as HTMLInputElement).checked
-                          }
-                          this.requestUpdate('_channelConfiguration')
-                        }
-                      }
-                      value="1"
-                      ?checked=${this._channelConfiguration?.configuration.bot.enabled}
-                    />
-                    ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
-                  </label>
-                </div>
-                ${this._channelConfiguration?.configuration.bot.enabled
-                ? html`<div class="form-group">
-                  <label for="peertube-livechat-bot-nickname">
-                    ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)}
-                  </label>
-                  <input
-                    type="text"
-                    name="bot_nickname"
-                    class="form-control ${classMap(this._getInputValidationClass('bot.nickname'))}"
-                    id="peertube-livechat-bot-nickname"
-                    aria-describedby="peertube-livechat-bot-nickname-feedback"
-                    @input=${(event: InputEvent) => {
-                        if (event?.target && this._channelConfiguration) {
-                          this._channelConfiguration.configuration.bot.nickname =
-                          (event.target as HTMLInputElement).value
-                        }
-                        this.requestUpdate('_channelConfiguration')
-                      }
+                      this.requestUpdate('_channelConfiguration')
                     }
-                    value="${this._channelConfiguration?.configuration.bot.nickname}"
-                  />
-                  ${this._renderFeedback('peertube-livechat-bot-nickname-feedback', 'bot.nickname')}
-                </div>`
-                : ''
-              }
-              </div>
+                  }
+                  value="${this._channelConfiguration?.configuration.slowMode.duration ?? ''}"
+                />
+              </label>
+              ${this._renderFeedback('peertube-livechat-slowmode-duration-feedback', 'slowMode.duration')}
             </div>
+
+            <livechat-configuration-row
+              .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
+              .description=${''}
+              .helpPage=${'documentation/user/streamers/channel'}>
+            </livechat-configuration-row>
+            <div class="form-group">
+              <label>
+                <input
+                  type="checkbox"
+                  name="bot"
+                  id="peertube-livechat-bot"
+                  @input=${(event: InputEvent) => {
+                      if (event?.target && this._channelConfiguration) {
+                        this._channelConfiguration.configuration.bot.enabled =
+                          (event.target as HTMLInputElement).checked
+                      }
+                      this.requestUpdate('_channelConfiguration')
+                    }
+                  }
+                  value="1"
+                  ?checked=${this._channelConfiguration?.configuration.bot.enabled}
+                />
+                ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
+              </label>
+            </div>
+
             ${!this._channelConfiguration?.configuration.bot.enabled
-            ? ''
-            : html`
-              <div class="row mt-5">
-                <div class="col-12 col-lg-4 col-xl-3">
-                  <livechat-configuration-row
-                    .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
-                    .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
-                    .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
-                  </livechat-configuration-row>
-                </div>
-                <div class="col-12 col-lg-8 col-xl-9">
-                  <livechat-dynamic-table-form
-                    .header=${tableHeaderList.forbiddenWords}
-                    .schema=${tableSchema.forbiddenWords}
-                    .validation=${this._validationError?.properties}
-                    .validationPrefix=${'bot.forbiddenWords'}
-                    .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
-                    @update=${(e: CustomEvent) => {
-                        if (this._channelConfiguration) {
-                          this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
-                          this.requestUpdate('_channelConfiguration')
-                        }
+              ? ''
+              : html`<div class="form-group">
+                <label for="peertube-livechat-bot-nickname">
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)}
+                </label>
+                <input
+                  type="text"
+                  name="bot_nickname"
+                  class="form-control ${classMap(this._getInputValidationClass('bot.nickname'))}"
+                  id="peertube-livechat-bot-nickname"
+                  aria-describedby="peertube-livechat-bot-nickname-feedback"
+                  @input=${(event: InputEvent) => {
+                      if (event?.target && this._channelConfiguration) {
+                        this._channelConfiguration.configuration.bot.nickname =
+                        (event.target as HTMLInputElement).value
                       }
+                      this.requestUpdate('_channelConfiguration')
                     }
-                    .formName=${'forbidden-words'}>
-                  </livechat-dynamic-table-form>
-                </div>
+                  }
+                  value="${this._channelConfiguration?.configuration.bot.nickname ?? ''}"
+                />
+                ${this._renderFeedback('peertube-livechat-bot-nickname-feedback', 'bot.nickname')}
               </div>
-              <div class="row mt-5">
-                <div class="col-12 col-lg-4 col-xl-3">
-                  <livechat-configuration-row
-                    .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
-                    .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
-                    .helpPage=${'documentation/user/streamers/bot/quotes'}>
-                  </livechat-configuration-row>
-                </div>
-                <div class="col-12 col-lg-8 col-xl-9">
-                  <livechat-dynamic-table-form
-                    .header=${tableHeaderList.quotes}
-                    .schema=${tableSchema.quotes}
-                    .validation=${this._validationError?.properties}
-                    .validationPrefix=${'bot.quotes'}
-                    .rows=${this._channelConfiguration?.configuration.bot.quotes}
-                    @update=${(e: CustomEvent) => {
-                        if (this._channelConfiguration) {
-                          this._channelConfiguration.configuration.bot.quotes = e.detail
-                          this.requestUpdate('_channelConfiguration')
-                        }
-                      }
+
+              <livechat-configuration-row
+                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
+                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
+                .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
+              </livechat-configuration-row>
+              <livechat-dynamic-table-form
+                .header=${tableHeaderList.forbiddenWords}
+                .schema=${tableSchema.forbiddenWords}
+                .validation=${this._validationError?.properties}
+                .validationPrefix=${'bot.forbiddenWords'}
+                .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
+                @update=${(e: CustomEvent) => {
+                    if (this._channelConfiguration) {
+                      this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
+                      this.requestUpdate('_channelConfiguration')
                     }
-                    .formName=${'quote'}>
-                  </livechat-dynamic-table-form>
-                </div>
-              </div>
-              <div class="row mt-5">
-                <div class="col-12 col-lg-4 col-xl-3">
-                  <livechat-configuration-row
-                    .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
-                    .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
-                    .helpPage=${'documentation/user/streamers/bot/commands'}>
-                  </livechat-configuration-row>
-                </div>
-                <div class="col-12 col-lg-8 col-xl-9">
-                  <livechat-dynamic-table-form
-                    .header=${tableHeaderList.commands}
-                    .schema=${tableSchema.commands}
-                    .validation=${this._validationError?.properties}
-                    .validationPrefix=${'bot.commands'}
-                    .rows=${this._channelConfiguration?.configuration.bot.commands}
-                    @update=${(e: CustomEvent) => {
-                        if (this._channelConfiguration) {
-                          this._channelConfiguration.configuration.bot.commands = e.detail
-                          this.requestUpdate('_channelConfiguration')
-                        }
-                      }
+                  }
+                }
+                .formName=${'forbidden-words'}
+              ></livechat-dynamic-table-form>
+
+              <livechat-configuration-row
+                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
+                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
+                .helpPage=${'documentation/user/streamers/bot/quotes'}>
+              </livechat-configuration-row>
+              <livechat-dynamic-table-form
+                .header=${tableHeaderList.quotes}
+                .schema=${tableSchema.quotes}
+                .validation=${this._validationError?.properties}
+                .validationPrefix=${'bot.quotes'}
+                .rows=${this._channelConfiguration?.configuration.bot.quotes}
+                @update=${(e: CustomEvent) => {
+                    if (this._channelConfiguration) {
+                      this._channelConfiguration.configuration.bot.quotes = e.detail
+                      this.requestUpdate('_channelConfiguration')
                     }
-                    .formName=${'command'}>
-                  </livechat-dynamic-table-form>
-                </div>
-              </div>
+                  }
+                }
+                .formName=${'quote'}
+              ></livechat-dynamic-table-form>
+
+              <livechat-configuration-row
+                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
+                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
+                .helpPage=${'documentation/user/streamers/bot/commands'}>
+              </livechat-configuration-row>
+              <livechat-dynamic-table-form
+                .header=${tableHeaderList.commands}
+                .schema=${tableSchema.commands}
+                .validation=${this._validationError?.properties}
+                .validationPrefix=${'bot.commands'}
+                .rows=${this._channelConfiguration?.configuration.bot.commands}
+                @update=${(e: CustomEvent) => {
+                    if (this._channelConfiguration) {
+                      this._channelConfiguration.configuration.bot.commands = e.detail
+                      this.requestUpdate('_channelConfiguration')
+                    }
+                  }
+                }
+                .formName=${'command'}
+              ></livechat-dynamic-table-form>
             `}
+
             <div class="form-group mt-5">
               <button type="reset" @click=${this._reset} ?disabled=${this._actionDisabled}>
                 ${ptTr(LOC_CANCEL)}

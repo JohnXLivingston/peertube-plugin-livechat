@@ -19,10 +19,11 @@ export class ConfigurationRowElement extends LivechatElement {
 
   protected override render = (): unknown => {
     return html`
-      <h2>${this.title}</h2>
+      <h2>
+        ${this.title}
+        <livechat-help-button .page=${this.helpPage}></livechat-help-button>
+      </h2>
       <p>${this.description}</p>
-      <livechat-help-button .page=${this.helpPage}>
-      </livechat-help-button>
       `
   }
 }

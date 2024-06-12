@@ -93,55 +93,55 @@ export class ChannelEmojisElement extends LivechatElement {
             </livechat-help-button>
           </p>
 
-          <div class="peertube-plugin-livechat-configuration-actions">
-            ${
-              this._channelEmojisConfiguration?.emojis?.customEmojis?.length
-                ? html`
-                <button
-                  @click=${this._exportEmojis}
-                  ?disabled=${this._actionDisabled}
-                >
-                  ${ptTr(LOC_ACTION_EXPORT)}
-                </button>`
-                : ''
-            }
-            ${
-              (this._channelEmojisConfiguration?.emojis?.customEmojis?.length ?? 0) < maxEmojisPerChannel
-                ? html`
-                <button
-                  @click=${this._importEmojis}
-                  ?disabled=${this._actionDisabled}
-                >
-                  ${ptTr(LOC_ACTION_IMPORT)}
-                </button>`
-                : ''
-            }
-          </div>
-
+          
           <form role="form" @submit=${this._saveEmojis}>
-            <div class="row mt-5">
-              <livechat-dynamic-table-form
-                .header=${tableHeaderList}
-                .schema=${tableSchema}
-                .maxLines=${maxEmojisPerChannel}
-                .validation=${this._validationError?.properties}
-                .validationPrefix=${'emojis'}
-                .rows=${this._channelEmojisConfiguration?.emojis.customEmojis}
-                @update=${(e: CustomEvent) => {
-                    if (this._channelEmojisConfiguration) {
-                      this._channelEmojisConfiguration.emojis.customEmojis = e.detail
-                      // Fixing missing ':' for shortnames:
-                      for (const desc of this._channelEmojisConfiguration.emojis.customEmojis) {
-                        if (desc.sn === '') { continue }
-                        if (!desc.sn.startsWith(':')) { desc.sn = ':' + desc.sn }
-                        if (!desc.sn.endsWith(':')) { desc.sn += ':' }
-                      }
-                      this.requestUpdate('_channelEmojisConfiguration')
+            <div class="peertube-plugin-livechat-configuration-actions">
+              ${
+                this._channelEmojisConfiguration?.emojis?.customEmojis?.length
+                  ? html`
+                  <button
+                    @click=${this._exportEmojis}
+                    ?disabled=${this._actionDisabled}
+                  >
+                    ${ptTr(LOC_ACTION_EXPORT)}
+                  </button>`
+                  : ''
+              }
+              ${
+                (this._channelEmojisConfiguration?.emojis?.customEmojis?.length ?? 0) < maxEmojisPerChannel
+                  ? html`
+                  <button
+                    @click=${this._importEmojis}
+                    ?disabled=${this._actionDisabled}
+                  >
+                    ${ptTr(LOC_ACTION_IMPORT)}
+                  </button>`
+                  : ''
+              }
+            </div>
+
+            <livechat-dynamic-table-form
+              .header=${tableHeaderList}
+              .schema=${tableSchema}
+              .maxLines=${maxEmojisPerChannel}
+              .validation=${this._validationError?.properties}
+              .validationPrefix=${'emojis'}
+              .rows=${this._channelEmojisConfiguration?.emojis.customEmojis}
+              @update=${(e: CustomEvent) => {
+                  if (this._channelEmojisConfiguration) {
+                    this._channelEmojisConfiguration.emojis.customEmojis = e.detail
+                    // Fixing missing ':' for shortnames:
+                    for (const desc of this._channelEmojisConfiguration.emojis.customEmojis) {
+                      if (desc.sn === '') { continue }
+                      if (!desc.sn.startsWith(':')) { desc.sn = ':' + desc.sn }
+                      if (!desc.sn.endsWith(':')) { desc.sn += ':' }
                     }
+                    this.requestUpdate('_channelEmojisConfiguration')
                   }
                 }
-              ></livechat-dynamic-table-form>
-            </div>
+              }
+            ></livechat-dynamic-table-form>
+
             <div class="form-group mt-5">
               <button type="reset" @click=${this._reset} ?disabled=${this._actionDisabled}>
                 ${ptTr(LOC_CANCEL)}

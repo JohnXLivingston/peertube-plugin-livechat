@@ -268,7 +268,7 @@ export class DynamicTableFormElement extends LivechatElement {
         <button type="button"
           class="peertube-button-link orange-button dynamic-table-remove-row"
           .title=${ptTr(LOC_ACTION_REMOVE_ENTRY)}
-          @click=${() => this._removeRow(rowData._id)}
+          @click=${async () => this._removeRow(rowData._id)}
         >
           ${unsafeHTML(RemoveSVG)}
         </button>
