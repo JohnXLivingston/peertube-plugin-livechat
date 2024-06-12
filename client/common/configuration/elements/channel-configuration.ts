@@ -3,7 +3,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ChannelConfiguration } from 'shared/lib/types'
 import { TemplateResult, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
@@ -12,17 +11,12 @@ import { Task } from '@lit/task'
 import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
 import { channelConfigurationContext, channelDetailsServiceContext } from '../contexts/channel'
-import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 import { LivechatElement } from '../../lib/elements/livechat'
 import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
 import { classMap } from 'lit/directives/class-map.js'
 
 @customElement('livechat-channel-configuration')
 export class ChannelConfigurationElement extends LivechatElement {
-  @provide({ context: registerClientOptionsContext })
-  @property({ attribute: false })
-  public registerClientOptions?: RegisterClientOptions
-
   @property({ attribute: false })
   public channelId?: number
 
@@ -48,14 +42,12 @@ export class ChannelConfigurationElement extends LivechatElement {
 
   protected _initTask (): Task {
     return new Task(this, {
-      task: async ([registerClientOptions]) => {
-        if (registerClientOptions) {
-          this._channelDetailsService = new ChannelDetailsService(registerClientOptions)
-          this._channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
-          this._actionDisabled = false // in case of reset
-        }
+      task: async () => {
+        this._channelDetailsService = new ChannelDetailsService(this.ptOptions)
+        this._channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
+        this._actionDisabled = false // in case of reset
       },
-      args: () => [this.registerClientOptions]
+      args: () => []
     })
   }
 
@@ -74,10 +66,9 @@ export class ChannelConfigurationElement extends LivechatElement {
         this._channelConfiguration.configuration)
         .then(() => {
           this._validationError = undefined
-          this.registerClientOptions?.peertubeHelpers.translate(LOC_SUCCESSFULLY_SAVED).then((msg) => {
-            this.registerClientOptions
-              ?.peertubeHelpers.notifier.info(msg)
-          })
+          this.ptTranslate(LOC_SUCCESSFULLY_SAVED).then((msg) => {
+            this.ptNotifier.info(msg)
+          }, () => {})
           this.requestUpdate('_validationError')
         })
         .catch(async (error: Error) => {
@@ -86,10 +77,10 @@ export class ChannelConfigurationElement extends LivechatElement {
             this._validationError = error
           }
           console.warn(`A validation error occurred in saving configuration. ${error.name}: ${error.message}`)
-          this.registerClientOptions?.peertubeHelpers.notifier.error(
+          this.ptNotifier.error(
             error.message
               ? error.message
-              : await this.registerClientOptions.peertubeHelpers.translate('error')
+              : await this.ptTranslate(LOC_ERROR)
           )
           this.requestUpdate('_validationError')
         })

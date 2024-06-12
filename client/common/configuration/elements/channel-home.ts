@@ -2,24 +2,18 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, state } from 'lit/decorators.js'
 import { ptTr } from '../../lib/directives/translation'
 import { Task } from '@lit/task'
 import type { ChannelLiveChatInfos } from 'shared/lib/types'
 import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
 import { channelDetailsServiceContext } from '../contexts/channel'
-import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 import { LivechatElement } from '../../lib/elements/livechat'
 
 @customElement('livechat-channel-home')
 export class ChannelHomeElement extends LivechatElement {
-  @provide({ context: registerClientOptionsContext })
-  @property({ attribute: false })
-  public registerClientOptions?: RegisterClientOptions
-
   @state()
   public _channels?: ChannelLiveChatInfos[]
 
@@ -30,19 +24,17 @@ export class ChannelHomeElement extends LivechatElement {
   public _formStatus: boolean | any = undefined
 
   private readonly _asyncTaskRender = new Task(this, {
-    task: async ([registerClientOptions]) => {
+    task: async () => {
       // Getting the current username in localStorage. Don't know any cleaner way to do.
       const username = window.localStorage.getItem('username')
       if (!username) {
         throw new Error('Can\'t get the current username.')
       }
 
-      if (registerClientOptions) {
-        this._channelDetailsService = new ChannelDetailsService(registerClientOptions)
-        this._channels = await this._channelDetailsService.fetchUserChannels(username)
-      }
+      this._channelDetailsService = new ChannelDetailsService(this.ptOptions)
+      this._channels = await this._channelDetailsService.fetchUserChannels(username)
     },
-    args: () => [this.registerClientOptions]
+    args: () => []
   })
 
   protected override render = (): unknown => {

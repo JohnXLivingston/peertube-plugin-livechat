@@ -6,9 +6,6 @@ import { html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import { helpButtonSVG } from '../../../videowatch/buttons'
-import { consume } from '@lit/context'
-import { registerClientOptionsContext } from '../contexts/peertube'
-import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { Task } from '@lit/task'
 import { localizedHelpUrl } from '../../../utils/help'
 import { ptTr } from '../directives/translation'
@@ -17,9 +14,6 @@ import { LivechatElement } from './livechat'
 
 @customElement('livechat-help-button')
 export class HelpButtonElement extends LivechatElement {
-  @consume({ context: registerClientOptionsContext, subscribe: true })
-  public registerClientOptions?: RegisterClientOptions
-
   @property({ attribute: false })
   public buttonTitle: string | DirectiveResult = ptTr(LOC_ONLINE_HELP)
 
@@ -30,12 +24,12 @@ export class HelpButtonElement extends LivechatElement {
   public url: URL = new URL('https://lmddgtfy.net/')
 
   private readonly _asyncTaskRender = new Task(this, {
-    task: async ([registerClientOptions]) => {
-      this.url = new URL(registerClientOptions
-        ? await localizedHelpUrl(registerClientOptions, { page: this.page })
-        : '')
+    task: async () => {
+      this.url = new URL(
+        await localizedHelpUrl(this.ptOptions, { page: this.page })
+      )
     },
-    args: () => [this.registerClientOptions]
+    args: () => []
   })
 
   protected override render = (): unknown => {

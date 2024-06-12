@@ -2,11 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { ChannelEmojisConfiguration } from 'shared/lib/types'
 import type { DynamicFormHeader, DynamicFormSchema } from '../../lib/elements/dynamic-table-form'
 import { LivechatElement } from '../../lib/elements/livechat'
-import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 import { ChannelDetailsService } from '../services/channel-details'
 import { channelDetailsServiceContext } from '../contexts/channel'
 import { maxEmojisPerChannel } from 'shared/lib/emojis'
@@ -22,10 +20,6 @@ import { html } from 'lit'
  */
 @customElement('livechat-channel-emojis')
 export class ChannelEmojisElement extends LivechatElement {
-  @provide({ context: registerClientOptionsContext })
-  @property({ attribute: false })
-  public registerClientOptions?: RegisterClientOptions
-
   @property({ attribute: false })
   public channelId?: number
 
@@ -159,13 +153,10 @@ export class ChannelEmojisElement extends LivechatElement {
   protected _initTask (): Task {
     return new Task(this, {
       task: async () => {
-        if (!this.registerClientOptions) {
-          throw new Error('Missing client options')
-        }
         if (!this.channelId) {
           throw new Error('Missing channelId')
         }
-        this._channelDetailsService = new ChannelDetailsService(this.registerClientOptions)
+        this._channelDetailsService = new ChannelDetailsService(this.ptOptions)
         this._channelEmojisConfiguration = await this._channelDetailsService.fetchEmojisConfiguration(this.channelId)
         this._actionDisabled = false // in case of reset
       },
@@ -182,11 +173,9 @@ export class ChannelEmojisElement extends LivechatElement {
 
   private async _saveEmojis (ev?: Event): Promise<void> {
     ev?.preventDefault()
-    const peertubeHelpers = this.registerClientOptions?.peertubeHelpers
-    if (!peertubeHelpers) { return } // Should not happen
 
     if (!this._channelDetailsService || !this._channelEmojisConfiguration || !this.channelId) {
-      peertubeHelpers.notifier.error(await peertubeHelpers.translate(LOC_ERROR))
+      this.ptNotifier.error(await this.ptTranslate(LOC_ERROR))
       return
     }
 
@@ -194,7 +183,7 @@ export class ChannelEmojisElement extends LivechatElement {
       this._actionDisabled = true
       await this._channelDetailsService.saveEmojisConfiguration(this.channelId, this._channelEmojisConfiguration.emojis)
       this._validationError = undefined
-      peertubeHelpers.notifier.info(await peertubeHelpers.translate(LOC_SUCCESSFULLY_SAVED))
+      this.ptNotifier.info(await this.ptTranslate(LOC_SUCCESSFULLY_SAVED))
       this.requestUpdate('_validationError')
     } catch (error) {
       this._validationError = undefined
@@ -205,8 +194,8 @@ export class ChannelEmojisElement extends LivechatElement {
           msg = error.message
         }
       }
-      msg ??= await peertubeHelpers.translate(LOC_ERROR)
-      peertubeHelpers.notifier.error(msg)
+      msg ??= await this.ptTranslate(LOC_ERROR)
+      this.ptNotifier.error(msg)
       this.requestUpdate('_validationError')
     } finally {
       this._actionDisabled = false
@@ -282,11 +271,11 @@ export class ChannelEmojisElement extends LivechatElement {
 
       this.requestUpdate('_channelEmojisConfiguration')
 
-      this.registerClientOptions?.peertubeHelpers.notifier.info(
-        await this.registerClientOptions?.peertubeHelpers.translate(LOC_ACTION_IMPORT_EMOJIS_INFO)
+      this.ptNotifier.info(
+        await this.ptTranslate(LOC_ACTION_IMPORT_EMOJIS_INFO)
       )
     } catch (err: any) {
-      this.registerClientOptions?.peertubeHelpers.notifier.error(err.toString())
+      this.ptNotifier.error(err.toString())
     } finally {
       this._actionDisabled = false
     }
@@ -322,7 +311,7 @@ export class ChannelEmojisElement extends LivechatElement {
       a.remove()
     } catch (err: any) {
       console.error(err)
-      this.registerClientOptions?.peertubeHelpers.notifier.error(err.toString())
+      this.ptNotifier.error(err.toString())
     } finally {
       this._actionDisabled = false
     }

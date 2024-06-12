@@ -2,19 +2,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { RegisterClientOptions } from '@peertube/peertube-types/client'
-import { registerClientOptionsContext } from '../../lib/contexts/peertube'
 import { LivechatElement } from '../../lib/elements/livechat'
 import { ptTr } from '../../lib/directives/translation'
 import { html, TemplateResult } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { consume } from '@lit/context'
 
 @customElement('livechat-channel-tabs')
 export class ChannelHomeElement extends LivechatElement {
-  @consume({ context: registerClientOptionsContext, subscribe: true })
-  public registerClientOptions?: RegisterClientOptions
-
   @property({ attribute: false })
   public channelId?: number
 

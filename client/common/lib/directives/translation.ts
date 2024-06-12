@@ -8,38 +8,21 @@ import { AsyncDirective } from 'lit/async-directive.js'
 import { RegisterClientHelpers } from '@peertube/peertube-types/client'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import { html } from 'lit'
-import { registerClientOptionsSubject$ } from '../contexts/peertube'
-import { Subscription, filter, map } from 'rxjs'
+import { getPtContext } from '../contexts/peertube'
 
 export class TranslationDirective extends AsyncDirective {
-  private _peertubeHelpers?: RegisterClientHelpers
+  private readonly _peertubeHelpers: RegisterClientHelpers
 
   private _translatedValue: string = ''
   private _localizationId: string = ''
 
   private _allowUnsafeHTML = false
 
-  private _subscriptionHandle: Subscription = new Subscription()
-
   constructor (partInfo: PartInfo) {
     super(partInfo)
 
-    this.reconnected()
-  }
-
-  protected override disconnected = (): void => {
-    this._subscriptionHandle.unsubscribe()
-  }
-
-  protected override reconnected = (): void => {
-    this._subscriptionHandle.unsubscribe()
-    this._subscriptionHandle = registerClientOptionsSubject$
-      .pipe(filter(Boolean))
-      .pipe(map(registerClientOptions => registerClientOptions.peertubeHelpers))
-      .subscribe((registerClientHelpers: RegisterClientHelpers) => {
-        this._peertubeHelpers = registerClientHelpers
-        this._asyncUpdateTranslation().then(() => {}, () => {})
-      })
+    this._peertubeHelpers = getPtContext().ptOptions.peertubeHelpers
+    this._asyncUpdateTranslation().then(() => {}, () => {})
   }
 
   public override render = (locId: string, allowHTML: boolean = false): TemplateResult | string => {
@@ -61,10 +44,7 @@ export class TranslationDirective extends AsyncDirective {
   }
 
   private readonly _asyncUpdateTranslation = async (): Promise<true> => {
-    if (!this._peertubeHelpers) {
-      console.error('Translation directive: missing peertubeHelpers')
-    }
-    const newValue = await this._peertubeHelpers?.translate(this._localizationId) ?? ''
+    const newValue = await this._peertubeHelpers.translate(this._localizationId) ?? ''
 
     if (newValue !== '' && newValue !== this._translatedValue) {
       this._translatedValue = newValue
