@@ -58,6 +58,7 @@ export function tplChannelEmojis (el: ChannelEmojisElement): TemplateResult {
             el.channelEmojisConfiguration?.emojis?.customEmojis?.length
               ? html`
               <button
+                type="button"
                 @click=${el.exportEmojis}
                 ?disabled=${el.actionDisabled}
               >
@@ -69,6 +70,7 @@ export function tplChannelEmojis (el: ChannelEmojisElement): TemplateResult {
             (el.channelEmojisConfiguration?.emojis?.customEmojis?.length ?? 0) < maxEmojisPerChannel
               ? html`
               <button
+                type="button"
                 @click=${el.importEmojis}
                 ?disabled=${el.actionDisabled}
               >
