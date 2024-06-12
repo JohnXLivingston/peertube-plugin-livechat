@@ -28,9 +28,14 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
     route: 'livechat/configuration/channel',
     onMount: async ({ rootEl }) => {
       const urlParams = new URLSearchParams(window.location.search)
-      const channelId = urlParams.get('channelId') ?? ''
-      render(html`<livechat-channel-configuration .registerClientOptions=${clientOptions}
-                                         .channelId=${channelId}></livechat-channel-configuration>`, rootEl)
+      const channelId = parseInt(urlParams.get('channelId') ?? '')
+      if (isNaN(channelId)) { throw new Error('Invalid channelId parameter') }
+      render(html`
+        <livechat-channel-configuration
+          .registerClientOptions=${clientOptions}
+          .channelId=${channelId}></livechat-channel-configuration
+        ></livechat-channel-configuration>
+      `, rootEl)
     }
   })
 
@@ -38,7 +43,8 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
     route: 'livechat/configuration/emojis',
     onMount: async ({ rootEl }) => {
       const urlParams = new URLSearchParams(window.location.search)
-      const channelId = urlParams.get('channelId') ?? ''
+      const channelId = parseInt(urlParams.get('channelId') ?? '')
+      if (isNaN(channelId)) { throw new Error('Invalid channelId parameter') }
       render(html`
         <livechat-channel-emojis
           .registerClientOptions=${clientOptions}

@@ -129,8 +129,8 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
 
       <form livechat-configuration-channel-options role="form" @submit=${el.saveConfig}>
         <livechat-configuration-section-header
-          .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
-          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
+          .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
+          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC)}
           .helpPage=${'documentation/user/streamers/slow_mode'}>
         </livechat-configuration-section-header>
         <div class="form-group">
@@ -164,7 +164,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
         </div>
 
         <livechat-configuration-section-header
-          .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
+          .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
           .description=${''}
           .helpPage=${'documentation/user/streamers/channel'}>
         </livechat-configuration-section-header>
@@ -220,7 +220,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
           </div>
 
           <livechat-configuration-section-header
-            .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
+            .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
             .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
             .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
           </livechat-configuration-section-header>
@@ -241,7 +241,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
           ></livechat-dynamic-table-form>
 
           <livechat-configuration-section-header
-            .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
+            .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
             .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
             .helpPage=${'documentation/user/streamers/bot/quotes'}>
           </livechat-configuration-section-header>
@@ -262,7 +262,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
           ></livechat-dynamic-table-form>
 
           <livechat-configuration-section-header
-            .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
+            .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
             .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
             .helpPage=${'documentation/user/streamers/bot/commands'}>
           </livechat-configuration-section-header>
