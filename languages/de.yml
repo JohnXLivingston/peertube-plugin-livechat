@@ -475,3 +475,7 @@ livechat_configuration_channel_emojis_desc: "Sie können benutzerdefinierte Emoj
   :Kurzname:\" schreiben).\n"
 livechat_emojis_file: Datei
 livechat_emojis_file_desc: "Die Emoji-Datei.\n"
+action_export: Exportieren
+action_import: Importieren
+action_import_emojis_info: Wenn die importierten Daten in Ordnung sind, vergessen
+  Sie nicht, das Formular zu speichern.
