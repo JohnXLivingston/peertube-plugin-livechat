@@ -13,22 +13,19 @@ import { repeat } from 'lit/directives/repeat.js'
 @customElement('livechat-tags-input')
 export class TagsInputElement extends LivechatElement {
   @property({ attribute: false })
-  public type?: string = 'text'
-
-  @property({ attribute: false })
   public name?: string
 
   @property({ attribute: false })
-  public min?: string
+  public min?: number
 
   @property({ attribute: false })
-  public max?: string
+  public max?: number
 
   @property({ attribute: false })
-  public maxlength?: string
+  public maxlength?: number
 
   @property({ attribute: false })
-  public minlength?: string
+  public minlength?: number
 
   @state()
   private _inputValue?: string = ''
@@ -37,10 +34,10 @@ export class TagsInputElement extends LivechatElement {
   public inputPlaceholder?: string = ''
 
   @property({ attribute: false })
-  public datalist?: Array<string | number>
+  public datalist?: string[]
 
-  @property({ reflect: true })
-  public value: Array<string | number> = []
+  @property({ reflect: true, type: Array })
+  public value: string[] = []
 
   @state()
   private _searchedTagsIndex: number[] = []
@@ -113,7 +110,7 @@ export class TagsInputElement extends LivechatElement {
           )}
         </ul>
         <input
-        type=${ifDefined(this.type)}
+        type="text"
         name=${ifDefined(this.name)}
         id="${this.id ?? 'tags-input'}-input"
         list="${this.id ?? 'tags-input'}-input-datalist"
@@ -126,8 +123,8 @@ export class TagsInputElement extends LivechatElement {
         @keyup=${(e: KeyboardEvent) => this._handleKeyUp(e)}
         @input=${(e: InputEvent) => this._handleInputEvent(e)}
         @change=${(e: Event) => e.stopPropagation()}
-        .value=${this._inputValue}
-        .placeholder=${this.inputPlaceholder} />
+        .value=${this._inputValue ?? ''}
+        placeholder=${ifDefined(this.inputPlaceholder)} />
         ${(this.datalist)
           ? html`<datalist id="${this.id ?? 'tags-input'}-datalist">
             ${(this.datalist ?? []).map((value) => html`<option value=${value}>`)}
@@ -296,7 +293,7 @@ export class TagsInputElement extends LivechatElement {
 
     if (inputValue?.length) {
       for (const [i, tag] of this.value.entries()) {
-        if ((tag as string).toLowerCase().includes(inputValue.toLowerCase())) {
+        if (tag.toLowerCase().includes(inputValue.toLowerCase())) {
           searchedTags.push(i)
         }
       }

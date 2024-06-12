@@ -553,7 +553,6 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyValue: Array<string | number>,
     originalIndex: number): TemplateResult => {
     return html`<livechat-tags-input
-      .type=${'text'}
       .name=${inputName}
       class=${classMap(
         Object.assign(
