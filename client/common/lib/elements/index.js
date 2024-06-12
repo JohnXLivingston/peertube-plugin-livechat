@@ -6,7 +6,7 @@
 // Add here all your elements, the main JS file will import them all.
 import './help-button'
 import './dynamic-table-form'
-import './configuration-row'
+import './configuration-section-header'
 import './tags-input'
 import './image-file-input'
 import './spinner'

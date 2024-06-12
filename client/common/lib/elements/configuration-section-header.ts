@@ -6,7 +6,7 @@ import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { LivechatElement } from './livechat'
 
-@customElement('livechat-configuration-row')
+@customElement('livechat-configuration-section-header')
 export class ConfigurationRowElement extends LivechatElement {
   @property({ attribute: false })
   public override title: string = 'title'

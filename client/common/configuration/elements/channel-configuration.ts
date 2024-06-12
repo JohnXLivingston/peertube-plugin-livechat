@@ -251,11 +251,11 @@ export class ChannelConfigurationElement extends LivechatElement {
           </p>
 
           <form livechat-configuration-channel-options role="form" @submit=${this._saveConfig}>
-            <livechat-configuration-row
+            <livechat-configuration-section-header
               .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
               .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
               .helpPage=${'documentation/user/streamers/slow_mode'}>
-            </livechat-configuration-row>
+            </livechat-configuration-section-header>
             <div class="form-group">
               <label>
                 ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
@@ -281,11 +281,11 @@ export class ChannelConfigurationElement extends LivechatElement {
               ${this._renderFeedback('peertube-livechat-slowmode-duration-feedback', 'slowMode.duration')}
             </div>
 
-            <livechat-configuration-row
+            <livechat-configuration-section-header
               .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
               .description=${''}
               .helpPage=${'documentation/user/streamers/channel'}>
-            </livechat-configuration-row>
+            </livechat-configuration-section-header>
             <div class="form-group">
               <label>
                 <input
@@ -332,11 +332,11 @@ export class ChannelConfigurationElement extends LivechatElement {
                 ${this._renderFeedback('peertube-livechat-bot-nickname-feedback', 'bot.nickname')}
               </div>
 
-              <livechat-configuration-row
+              <livechat-configuration-section-header
                 .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
                 .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
                 .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
-              </livechat-configuration-row>
+              </livechat-configuration-section-header>
               <livechat-dynamic-table-form
                 .header=${tableHeaderList.forbiddenWords}
                 .schema=${tableSchema.forbiddenWords}
@@ -353,11 +353,11 @@ export class ChannelConfigurationElement extends LivechatElement {
                 .formName=${'forbidden-words'}
               ></livechat-dynamic-table-form>
 
-              <livechat-configuration-row
+              <livechat-configuration-section-header
                 .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
                 .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
                 .helpPage=${'documentation/user/streamers/bot/quotes'}>
-              </livechat-configuration-row>
+              </livechat-configuration-section-header>
               <livechat-dynamic-table-form
                 .header=${tableHeaderList.quotes}
                 .schema=${tableSchema.quotes}
@@ -374,11 +374,11 @@ export class ChannelConfigurationElement extends LivechatElement {
                 .formName=${'quote'}
               ></livechat-dynamic-table-form>
 
-              <livechat-configuration-row
+              <livechat-configuration-section-header
                 .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
                 .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
                 .helpPage=${'documentation/user/streamers/bot/commands'}>
-              </livechat-configuration-row>
+              </livechat-configuration-section-header>
               <livechat-dynamic-table-form
                 .header=${tableHeaderList.commands}
                 .schema=${tableSchema.commands}

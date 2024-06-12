@@ -197,6 +197,7 @@ export class DynamicTableFormElement extends LivechatElement {
     this._updateLastRowId()
 
     // Filter removed rows
+    // FIXME: seems buggy. Missing assignation?
     this._rowsById.filter(rowById => this.rows.includes(rowById.row))
 
     for (let i = 0; i < this.rows.length; i++) {
