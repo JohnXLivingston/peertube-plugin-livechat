@@ -20,9 +20,6 @@ export class ChannelHomeElement extends LivechatElement {
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService?: ChannelDetailsService
 
-  @state()
-  public _formStatus: boolean | any = undefined
-
   private readonly _asyncTaskRender = new Task(this, {
     task: async () => {
       // Getting the current username in localStorage. Don't know any cleaner way to do.

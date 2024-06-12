@@ -522,7 +522,12 @@ export class DynamicTableFormElement extends LivechatElement {
     return html`<input
       type=${propertySchema.inputType}
       name=${inputName}
-      class="form-control ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      class=${classMap(
+        Object.assign(
+          { 'form-control': true },
+          this._getInputValidationClass(propertyName, originalIndex)
+        )
+      )}
       id=${inputId}
       aria-describedby="${inputId}-feedback"
       list=${(propertySchema.datalist) ? inputId + '-datalist' : nothing}
@@ -550,7 +555,12 @@ export class DynamicTableFormElement extends LivechatElement {
     return html`<livechat-tags-input
       .type=${'text'}
       .name=${inputName}
-      class="form-control ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      class=${classMap(
+        Object.assign(
+          { 'form-control': true },
+          this._getInputValidationClass(propertyName, originalIndex)
+        )
+      )}
       id=${inputId}
       .inputPlaceholder=${ifDefined(propertySchema.label)}
       aria-describedby="${inputId}-feedback"
@@ -573,7 +583,12 @@ export class DynamicTableFormElement extends LivechatElement {
     originalIndex: number): TemplateResult => {
     return html`<textarea
       name=${inputName}
-      class="form-control ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      class=${classMap(
+        Object.assign(
+          { 'form-control': true },
+          this._getInputValidationClass(propertyName, originalIndex)
+        )
+      )}
       id=${inputId}
       aria-describedby="${inputId}-feedback"
       min=${ifDefined(propertySchema.min)}
@@ -594,7 +609,12 @@ export class DynamicTableFormElement extends LivechatElement {
     return html`<input
       type="checkbox"
       name=${inputName}
-      class="form-check-input ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      class=${classMap(
+        Object.assign(
+          { 'form-check-input': true },
+          this._getInputValidationClass(propertyName, originalIndex)
+        )
+      )}
       id=${inputId}
       aria-describedby="${inputId}-feedback"
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
@@ -610,7 +630,12 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyValue: string,
     originalIndex: number): TemplateResult => {
     return html`<select
-      class="form-select ${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      class=${classMap(
+        Object.assign(
+          { 'form-select': true },
+          this._getInputValidationClass(propertyName, originalIndex)
+        )
+      )}
       id=${inputId}
       aria-describedby="${inputId}-feedback"
       aria-label=${inputName}
@@ -634,7 +659,7 @@ export class DynamicTableFormElement extends LivechatElement {
   ): TemplateResult => {
     return html`<livechat-image-file-input
       .name=${inputName}
-      class="${classMap(this._getInputValidationClass(propertyName, originalIndex))}"
+      class=${classMap(this._getInputValidationClass(propertyName, originalIndex))}
       id=${inputId}
       aria-describedby="${inputId}-feedback"
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}

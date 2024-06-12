@@ -4,16 +4,16 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { ChannelConfiguration } from 'shared/lib/types'
+import { ChannelDetailsService } from '../services/channel-details'
+import { channelConfigurationContext, channelDetailsServiceContext } from '../contexts/channel'
+import { LivechatElement } from '../../lib/elements/livechat'
+import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
+import { tplChannelConfiguration } from './templates/channel-configuration'
 import { TemplateResult, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ptTr } from '../../lib/directives/translation'
 import { Task } from '@lit/task'
-import { ChannelDetailsService } from '../services/channel-details'
 import { provide } from '@lit/context'
-import { channelConfigurationContext, channelDetailsServiceContext } from '../contexts/channel'
-import { LivechatElement } from '../../lib/elements/livechat'
-import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
-import { classMap } from 'lit/directives/class-map.js'
 
 @customElement('livechat-channel-configuration')
 export class ChannelConfigurationElement extends LivechatElement {
@@ -22,16 +22,16 @@ export class ChannelConfigurationElement extends LivechatElement {
 
   @provide({ context: channelConfigurationContext })
   @state()
-  public _channelConfiguration?: ChannelConfiguration
+  public channelConfiguration?: ChannelConfiguration
 
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService?: ChannelDetailsService
 
   @state()
-  public _validationError?: ValidationError
+  public validationError?: ValidationError
 
   @state()
-  private _actionDisabled: boolean = false
+  public actionDisabled: boolean = false
 
   private _asyncTaskRender: Task
 
@@ -44,37 +44,44 @@ export class ChannelConfigurationElement extends LivechatElement {
     return new Task(this, {
       task: async () => {
         this._channelDetailsService = new ChannelDetailsService(this.ptOptions)
-        this._channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
-        this._actionDisabled = false // in case of reset
+        this.channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
+        this.actionDisabled = false // in case of reset
       },
       args: () => []
     })
   }
 
-  private async _reset (event?: Event): Promise<void> {
+  /**
+   * Resets the form by reloading data from backend.
+   */
+  public async reset (event?: Event): Promise<void> {
     event?.preventDefault()
-    this._actionDisabled = true
+    this.actionDisabled = true
     this._asyncTaskRender = this._initTask()
     this.requestUpdate()
   }
 
-  private readonly _saveConfig = async (event?: Event): Promise<void> => {
+  /**
+   * Saves the channel configuration.
+   * @param event event
+   */
+  public readonly saveConfig = async (event?: Event): Promise<void> => {
     event?.preventDefault()
-    if (this._channelDetailsService && this._channelConfiguration) {
-      this._actionDisabled = true
-      this._channelDetailsService.saveOptions(this._channelConfiguration.channel.id,
-        this._channelConfiguration.configuration)
+    if (this._channelDetailsService && this.channelConfiguration) {
+      this.actionDisabled = true
+      this._channelDetailsService.saveOptions(this.channelConfiguration.channel.id,
+        this.channelConfiguration.configuration)
         .then(() => {
-          this._validationError = undefined
+          this.validationError = undefined
           this.ptTranslate(LOC_SUCCESSFULLY_SAVED).then((msg) => {
             this.ptNotifier.info(msg)
           }, () => {})
           this.requestUpdate('_validationError')
         })
         .catch(async (error: Error) => {
-          this._validationError = undefined
+          this.validationError = undefined
           if (error instanceof ValidationError) {
-            this._validationError = error
+            this.validationError = error
           }
           console.warn(`A validation error occurred in saving configuration. ${error.name}: ${error.message}`)
           this.ptNotifier.error(
@@ -85,22 +92,22 @@ export class ChannelConfigurationElement extends LivechatElement {
           this.requestUpdate('_validationError')
         })
         .finally(() => {
-          this._actionDisabled = false
+          this.actionDisabled = false
         })
     }
   }
 
-  private readonly _getInputValidationClass = (propertyName: string): { [key: string]: boolean } => {
+  public readonly getInputValidationClass = (propertyName: string): { [key: string]: boolean } => {
     const validationErrorTypes: ValidationErrorType[] | undefined =
-      this._validationError?.properties[`${propertyName}`]
+      this.validationError?.properties[`${propertyName}`]
     return validationErrorTypes ? (validationErrorTypes.length ? { 'is-invalid': true } : { 'is-valid': true }) : {}
   }
 
-  private readonly _renderFeedback = (feedbackId: string,
+  public readonly renderFeedback = (feedbackId: string,
     propertyName: string): TemplateResult | typeof nothing => {
     const errorMessages: TemplateResult[] = []
     const validationErrorTypes: ValidationErrorType[] | undefined =
-      this._validationError?.properties[`${propertyName}`] ?? undefined
+      this.validationError?.properties[`${propertyName}`] ?? undefined
 
     if (validationErrorTypes && validationErrorTypes.length !== 0) {
       if (validationErrorTypes.includes(ValidationErrorType.WrongType)) {
@@ -120,283 +127,10 @@ export class ChannelConfigurationElement extends LivechatElement {
   }
 
   protected override render = (): unknown => {
-    const tableHeaderList = {
-      forbiddenWords: {
-        entries: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC2)
-        },
-        regexp: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_DESC)
-        },
-        applyToModerators: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_DESC)
-        },
-        label: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL_DESC)
-        },
-        reason: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_DESC)
-        },
-        comments: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_DESC)
-        }
-      },
-      quotes: {
-        messages: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL2),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC2)
-        },
-        delay: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_DESC)
-        }
-      },
-      commands: {
-        command: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_CMD_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_CMD_DESC)
-        },
-        message: {
-          colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_LABEL),
-          description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_DESC)
-        }
-      }
-    }
-    const tableSchema = {
-      forbiddenWords: {
-        entries: {
-          inputType: 'tags',
-          default: [],
-          separators: ['\n', '\t', ';']
-        },
-        regexp: {
-          inputType: 'checkbox',
-          default: false
-        },
-        applyToModerators: {
-          inputType: 'checkbox',
-          default: false
-        },
-        label: {
-          inputType: 'text',
-          default: ''
-        },
-        reason: {
-          inputType: 'text',
-          default: '',
-          datalist: []
-        },
-        comments: {
-          inputType: 'textarea',
-          default: ''
-        }
-      },
-      quotes: {
-        messages: {
-          inputType: 'tags',
-          default: [],
-          separators: ['\n', '\t', ';']
-        },
-        delay: {
-          inputType: 'number',
-          default: 10
-        }
-      },
-      commands: {
-        command: {
-          inputType: 'text',
-          default: ''
-        },
-        message: {
-          inputType: 'text',
-          default: ''
-        }
-      }
-    }
-
     return this._asyncTaskRender.render({
       pending: () => html`<livechat-spinner></livechat-spinner>`,
       error: () => html`<livechat-error></livechat-error>`,
-      complete: () => html`
-        <div class="margin-content peertube-plugin-livechat-configuration
-                    peertube-plugin-livechat-configuration-channel">
-          <h1>
-            <span class="peertube-plugin-livechat-configuration-channel-info">
-              <span>${this._channelConfiguration?.channel.displayName}</span>
-              <span>${this._channelConfiguration?.channel.name}</span>
-            </span>
-          </h1>
-
-          <livechat-channel-tabs .active=${'configuration'} .channelId=${this.channelId}></livechat-channel-tabs>
-
-          <p>
-            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)}
-            <livechat-help-button .page=${'documentation/user/streamers/channel'}>
-            </livechat-help-button>
-          </p>
-
-          <form livechat-configuration-channel-options role="form" @submit=${this._saveConfig}>
-            <livechat-configuration-section-header
-              .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
-              .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
-              .helpPage=${'documentation/user/streamers/slow_mode'}>
-            </livechat-configuration-section-header>
-            <div class="form-group">
-              <label>
-                ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
-                <input
-                  type="number"
-                  name="slowmode_duration"
-                  class="form-control ${classMap(this._getInputValidationClass('slowMode.duration'))}"
-                  min="0"
-                  max="1000"
-                  id="peertube-livechat-slowmode-duration"
-                  aria-describedby="peertube-livechat-slowmode-duration-feedback"
-                  @input=${(event: InputEvent) => {
-                      if (event?.target && this._channelConfiguration) {
-                        this._channelConfiguration.configuration.slowMode.duration =
-                          Number((event.target as HTMLInputElement).value)
-                      }
-                      this.requestUpdate('_channelConfiguration')
-                    }
-                  }
-                  value="${this._channelConfiguration?.configuration.slowMode.duration ?? ''}"
-                />
-              </label>
-              ${this._renderFeedback('peertube-livechat-slowmode-duration-feedback', 'slowMode.duration')}
-            </div>
-
-            <livechat-configuration-section-header
-              .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
-              .description=${''}
-              .helpPage=${'documentation/user/streamers/channel'}>
-            </livechat-configuration-section-header>
-            <div class="form-group">
-              <label>
-                <input
-                  type="checkbox"
-                  name="bot"
-                  id="peertube-livechat-bot"
-                  @input=${(event: InputEvent) => {
-                      if (event?.target && this._channelConfiguration) {
-                        this._channelConfiguration.configuration.bot.enabled =
-                          (event.target as HTMLInputElement).checked
-                      }
-                      this.requestUpdate('_channelConfiguration')
-                    }
-                  }
-                  value="1"
-                  ?checked=${this._channelConfiguration?.configuration.bot.enabled}
-                />
-                ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
-              </label>
-            </div>
-
-            ${!this._channelConfiguration?.configuration.bot.enabled
-              ? ''
-              : html`<div class="form-group">
-                <label for="peertube-livechat-bot-nickname">
-                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_NICKNAME)}
-                </label>
-                <input
-                  type="text"
-                  name="bot_nickname"
-                  class="form-control ${classMap(this._getInputValidationClass('bot.nickname'))}"
-                  id="peertube-livechat-bot-nickname"
-                  aria-describedby="peertube-livechat-bot-nickname-feedback"
-                  @input=${(event: InputEvent) => {
-                      if (event?.target && this._channelConfiguration) {
-                        this._channelConfiguration.configuration.bot.nickname =
-                        (event.target as HTMLInputElement).value
-                      }
-                      this.requestUpdate('_channelConfiguration')
-                    }
-                  }
-                  value="${this._channelConfiguration?.configuration.bot.nickname ?? ''}"
-                />
-                ${this._renderFeedback('peertube-livechat-bot-nickname-feedback', 'bot.nickname')}
-              </div>
-
-              <livechat-configuration-section-header
-                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
-                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
-                .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
-              </livechat-configuration-section-header>
-              <livechat-dynamic-table-form
-                .header=${tableHeaderList.forbiddenWords}
-                .schema=${tableSchema.forbiddenWords}
-                .validation=${this._validationError?.properties}
-                .validationPrefix=${'bot.forbiddenWords'}
-                .rows=${this._channelConfiguration?.configuration.bot.forbiddenWords}
-                @update=${(e: CustomEvent) => {
-                    if (this._channelConfiguration) {
-                      this._channelConfiguration.configuration.bot.forbiddenWords = e.detail
-                      this.requestUpdate('_channelConfiguration')
-                    }
-                  }
-                }
-                .formName=${'forbidden-words'}
-              ></livechat-dynamic-table-form>
-
-              <livechat-configuration-section-header
-                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_LABEL)}
-                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
-                .helpPage=${'documentation/user/streamers/bot/quotes'}>
-              </livechat-configuration-section-header>
-              <livechat-dynamic-table-form
-                .header=${tableHeaderList.quotes}
-                .schema=${tableSchema.quotes}
-                .validation=${this._validationError?.properties}
-                .validationPrefix=${'bot.quotes'}
-                .rows=${this._channelConfiguration?.configuration.bot.quotes}
-                @update=${(e: CustomEvent) => {
-                    if (this._channelConfiguration) {
-                      this._channelConfiguration.configuration.bot.quotes = e.detail
-                      this.requestUpdate('_channelConfiguration')
-                    }
-                  }
-                }
-                .formName=${'quote'}
-              ></livechat-dynamic-table-form>
-
-              <livechat-configuration-section-header
-                .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_LABEL)}
-                .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
-                .helpPage=${'documentation/user/streamers/bot/commands'}>
-              </livechat-configuration-section-header>
-              <livechat-dynamic-table-form
-                .header=${tableHeaderList.commands}
-                .schema=${tableSchema.commands}
-                .validation=${this._validationError?.properties}
-                .validationPrefix=${'bot.commands'}
-                .rows=${this._channelConfiguration?.configuration.bot.commands}
-                @update=${(e: CustomEvent) => {
-                    if (this._channelConfiguration) {
-                      this._channelConfiguration.configuration.bot.commands = e.detail
-                      this.requestUpdate('_channelConfiguration')
-                    }
-                  }
-                }
-                .formName=${'command'}
-              ></livechat-dynamic-table-form>
-            `}
-
-            <div class="form-group mt-5">
-              <button type="reset" @click=${this._reset} ?disabled=${this._actionDisabled}>
-                ${ptTr(LOC_CANCEL)}
-              </button>
-              <button type="submit" ?disabled=${this._actionDisabled}>
-                ${ptTr(LOC_SAVE)}
-              </button>
-            </div>
-          </form>
-        </div>`
+      complete: () => tplChannelConfiguration(this)
     })
   }
 }

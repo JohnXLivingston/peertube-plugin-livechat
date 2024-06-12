@@ -3,13 +3,11 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { ChannelEmojisConfiguration } from 'shared/lib/types'
-import type { DynamicFormHeader, DynamicFormSchema } from '../../lib/elements/dynamic-table-form'
 import { LivechatElement } from '../../lib/elements/livechat'
 import { ChannelDetailsService } from '../services/channel-details'
 import { channelDetailsServiceContext } from '../contexts/channel'
-import { maxEmojisPerChannel } from 'shared/lib/emojis'
-import { ptTr } from '../../lib/directives/translation'
 import { ValidationError } from '../../lib/models/validation'
+import { tplChannelEmojis } from './templates/channel-emojis'
 import { Task } from '@lit/task'
 import { customElement, property, state } from 'lit/decorators.js'
 import { provide } from '@lit/context'
@@ -23,16 +21,16 @@ export class ChannelEmojisElement extends LivechatElement {
   @property({ attribute: false })
   public channelId?: number
 
-  private _channelEmojisConfiguration?: ChannelEmojisConfiguration
+  public channelEmojisConfiguration?: ChannelEmojisConfiguration
 
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService?: ChannelDetailsService
 
   @state()
-  private _validationError?: ValidationError
+  public validationError?: ValidationError
 
   @state()
-  private _actionDisabled: boolean = false
+  public actionDisabled: boolean = false
 
   private _asyncTaskRender: Task
 
@@ -42,111 +40,10 @@ export class ChannelEmojisElement extends LivechatElement {
   }
 
   protected override render = (): unknown => {
-    const tableHeaderList: DynamicFormHeader = {
-      sn: {
-        colName: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME),
-        description: ptTr(LOC_LIVECHAT_EMOJIS_SHORTNAME_DESC),
-        headerClassList: ['peertube-livechat-emojis-col-sn']
-      },
-      url: {
-        colName: ptTr(LOC_LIVECHAT_EMOJIS_FILE),
-        description: ptTr(LOC_LIVECHAT_EMOJIS_FILE_DESC),
-        headerClassList: ['peertube-livechat-emojis-col-file']
-      }
-    }
-    const tableSchema: DynamicFormSchema = {
-      sn: {
-        inputType: 'text',
-        default: ''
-      },
-      url: {
-        inputType: 'image-file',
-        default: '',
-        colClassList: ['peertube-livechat-emojis-col-file']
-      }
-    }
     return this._asyncTaskRender.render({
       pending: () => html`<livechat-spinner></livechat-spinner>`,
       error: () => html`<livechat-error></livechat-error>`,
-      complete: () => html`
-        <div
-          class="margin-content peertube-plugin-livechat-configuration peertube-plugin-livechat-configuration-channel"
-        >
-          <h1>
-            <span class="peertube-plugin-livechat-configuration-channel-info">
-              <span>${this._channelEmojisConfiguration?.channel.displayName}</span>
-              <span>${this._channelEmojisConfiguration?.channel.name}</span>
-            </span>
-          </h1>
-
-          <livechat-channel-tabs .active=${'emojis'} .channelId=${this.channelId}></livechat-channel-tabs>
-
-          <p>
-            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_EMOJIS_DESC)}
-            <livechat-help-button .page=${'documentation/user/streamers/emojis'}>
-            </livechat-help-button>
-          </p>
-
-          
-          <form role="form" @submit=${this._saveEmojis}>
-            <div class="peertube-plugin-livechat-configuration-actions">
-              ${
-                this._channelEmojisConfiguration?.emojis?.customEmojis?.length
-                  ? html`
-                  <button
-                    @click=${this._exportEmojis}
-                    ?disabled=${this._actionDisabled}
-                  >
-                    ${ptTr(LOC_ACTION_EXPORT)}
-                  </button>`
-                  : ''
-              }
-              ${
-                (this._channelEmojisConfiguration?.emojis?.customEmojis?.length ?? 0) < maxEmojisPerChannel
-                  ? html`
-                  <button
-                    @click=${this._importEmojis}
-                    ?disabled=${this._actionDisabled}
-                  >
-                    ${ptTr(LOC_ACTION_IMPORT)}
-                  </button>`
-                  : ''
-              }
-            </div>
-
-            <livechat-dynamic-table-form
-              .header=${tableHeaderList}
-              .schema=${tableSchema}
-              .maxLines=${maxEmojisPerChannel}
-              .validation=${this._validationError?.properties}
-              .validationPrefix=${'emojis'}
-              .rows=${this._channelEmojisConfiguration?.emojis.customEmojis}
-              @update=${(e: CustomEvent) => {
-                  if (this._channelEmojisConfiguration) {
-                    this._channelEmojisConfiguration.emojis.customEmojis = e.detail
-                    // Fixing missing ':' for shortnames:
-                    for (const desc of this._channelEmojisConfiguration.emojis.customEmojis) {
-                      if (desc.sn === '') { continue }
-                      if (!desc.sn.startsWith(':')) { desc.sn = ':' + desc.sn }
-                      if (!desc.sn.endsWith(':')) { desc.sn += ':' }
-                    }
-                    this.requestUpdate('_channelEmojisConfiguration')
-                  }
-                }
-              }
-            ></livechat-dynamic-table-form>
-
-            <div class="form-group mt-5">
-              <button type="reset" @click=${this._reset} ?disabled=${this._actionDisabled}>
-                ${ptTr(LOC_CANCEL)}
-              </button>
-              <button type="submit" ?disabled=${this._actionDisabled}>
-                ${ptTr(LOC_SAVE)}
-              </button>
-            </div>
-          </form>
-        </div>
-      `
+      complete: () => tplChannelEmojis(this)
     })
   }
 
@@ -157,39 +54,46 @@ export class ChannelEmojisElement extends LivechatElement {
           throw new Error('Missing channelId')
         }
         this._channelDetailsService = new ChannelDetailsService(this.ptOptions)
-        this._channelEmojisConfiguration = await this._channelDetailsService.fetchEmojisConfiguration(this.channelId)
-        this._actionDisabled = false // in case of reset
+        this.channelEmojisConfiguration = await this._channelDetailsService.fetchEmojisConfiguration(this.channelId)
+        this.actionDisabled = false // in case of reset
       },
       args: () => []
     })
   }
 
-  private async _reset (ev?: Event): Promise<void> {
+  /**
+   * Resets the page, by reloading data from backend.
+   */
+  public async reset (ev?: Event): Promise<void> {
     ev?.preventDefault()
-    this._actionDisabled = true
+    this.actionDisabled = true
     this._asyncTaskRender = this._initTask()
     this.requestUpdate()
   }
 
-  private async _saveEmojis (ev?: Event): Promise<void> {
+  /**
+   * Saves the emojis form.
+   * @param ev event
+   */
+  public async saveEmojis (ev?: Event): Promise<void> {
     ev?.preventDefault()
 
-    if (!this._channelDetailsService || !this._channelEmojisConfiguration || !this.channelId) {
+    if (!this._channelDetailsService || !this.channelEmojisConfiguration || !this.channelId) {
       this.ptNotifier.error(await this.ptTranslate(LOC_ERROR))
       return
     }
 
     try {
-      this._actionDisabled = true
-      await this._channelDetailsService.saveEmojisConfiguration(this.channelId, this._channelEmojisConfiguration.emojis)
-      this._validationError = undefined
+      this.actionDisabled = true
+      await this._channelDetailsService.saveEmojisConfiguration(this.channelId, this.channelEmojisConfiguration.emojis)
+      this.validationError = undefined
       this.ptNotifier.info(await this.ptTranslate(LOC_SUCCESSFULLY_SAVED))
       this.requestUpdate('_validationError')
     } catch (error) {
-      this._validationError = undefined
+      this.validationError = undefined
       let msg: string
       if ((error instanceof ValidationError)) {
-        this._validationError = error
+        this.validationError = error
         if (error.message) {
           msg = error.message
         }
@@ -198,13 +102,16 @@ export class ChannelEmojisElement extends LivechatElement {
       this.ptNotifier.error(msg)
       this.requestUpdate('_validationError')
     } finally {
-      this._actionDisabled = false
+      this.actionDisabled = false
     }
   }
 
-  private async _importEmojis (ev: Event): Promise<void> {
+  /**
+   * Import emojis action.
+   */
+  public async importEmojis (ev: Event): Promise<void> {
     ev.preventDefault()
-    this._actionDisabled = true
+    this.actionDisabled = true
     try {
       // download a json file:
       const file = await new Promise<File>((resolve, reject) => {
@@ -266,10 +173,10 @@ export class ChannelEmojisElement extends LivechatElement {
         if (entry.isCategoryEmoji === true) {
           item.isCategoryEmoji = true
         }
-        this._channelEmojisConfiguration?.emojis.customEmojis.push(item)
+        this.channelEmojisConfiguration?.emojis.customEmojis.push(item)
       }
 
-      this.requestUpdate('_channelEmojisConfiguration')
+      this.requestUpdate('channelEmojisConfiguration')
 
       this.ptNotifier.info(
         await this.ptTranslate(LOC_ACTION_IMPORT_EMOJIS_INFO)
@@ -277,16 +184,19 @@ export class ChannelEmojisElement extends LivechatElement {
     } catch (err: any) {
       this.ptNotifier.error(err.toString())
     } finally {
-      this._actionDisabled = false
+      this.actionDisabled = false
     }
   }
 
-  private async _exportEmojis (ev: Event): Promise<void> {
+  /**
+   * Export emojis action.
+   */
+  public async exportEmojis (ev: Event): Promise<void> {
     ev.preventDefault()
-    this._actionDisabled = true
+    this.actionDisabled = true
     try {
       const result: ChannelEmojisConfiguration['emojis']['customEmojis'] = []
-      for (const ed of this._channelEmojisConfiguration?.emojis?.customEmojis ?? []) {
+      for (const ed of this.channelEmojisConfiguration?.emojis?.customEmojis ?? []) {
         if (!ed.sn || !ed.url) { continue }
         // Here url can be:
         // * the dataUrl representation of a newly uploaded file
@@ -313,10 +223,15 @@ export class ChannelEmojisElement extends LivechatElement {
       console.error(err)
       this.ptNotifier.error(err.toString())
     } finally {
-      this._actionDisabled = false
+      this.actionDisabled = false
     }
   }
 
+  /**
+   * Takes an url (or dataUrl), download the image, and converts to dataUrl.
+   * @param url the url
+   * @returns A dataUrl representation of the image.
+   */
   private async _convertImageToDataUrl (url: string): Promise<string> {
     if (url.startsWith('data:')) { return url }
     // There is a trick to convert img to dataUrl: using a canvas.
