@@ -23,6 +23,7 @@ declare const LOC_SHOW_SCROLLBARR: string
 declare const LOC_TRANSPARENT_BACKGROUND: string
 declare const LOC_TIPS_FOR_STREAMERS: string
 declare const LOC_COPY: string
+declare const LOC_COPIED: string
 declare const LOC_LINK_COPIED: string
 declare const LOC_ERROR: string
 declare const LOC_OPEN: string

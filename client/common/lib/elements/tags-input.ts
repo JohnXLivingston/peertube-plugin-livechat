@@ -2,13 +2,29 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
 import { LivechatElement } from './livechat'
+import { ptTr } from '../directives/translation'
+import { html } from 'lit'
+import { unsafeHTML } from 'lit/directives/unsafe-html.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { animate, fadeOut, fadeIn } from '@lit-labs/motion'
 import { repeat } from 'lit/directives/repeat.js'
+
+// FIXME: find a better way to store this image.
+// This content comes from the file assets/images/copy.svg, after svgo cleaning.
+// To get the formated content, you can do:
+// xmllint dist/client/images/copy.svg --format
+// Then replace the main color by «currentColor»
+const copySVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 4.233 4.233">
+  <g style="stroke-width:1.00021;stroke-miterlimit:4;stroke-dasharray:none">` +
+    // eslint-disable-next-line max-len
+    '<path style="opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m4.084 4.046-.616.015-.645-.004a.942.942 0 0 1-.942-.942v-4.398a.94.94 0 0 1 .942-.943H7.22a.94.94 0 0 1 .942.943l-.006.334-.08.962" transform="matrix(.45208 0 0 .45208 -.528 1.295)"/>' +
+    // eslint-disable-next-line max-len
+    '<path style="opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M8.434 5.85c-.422.009-1.338.009-1.76.01-.733.004-2.199 0-2.199 0a.94.94 0 0 1-.942-.941V.52a.94.94 0 0 1 .942-.942h4.398a.94.94 0 0 1 .943.942s.004 1.466 0 2.2c-.003.418-.019 1.251-.006 1.67.024.812-.382 1.439-1.376 1.46z" transform="matrix(.45208 0 0 .45208 -.528 1.295)"/>' +
+  `</g>
+</svg>`
 
 @customElement('livechat-tags-input')
 export class TagsInputElement extends LivechatElement {
@@ -71,30 +87,55 @@ export class TagsInputElement extends LivechatElement {
   }
 
   protected override render = (): unknown => {
-    return html`<ul
-        id="tags"
-        class=${classMap({
-          empty: !this.value.length,
-          unfocused: this._searchedTagsIndex.length
-        })}>
-          ${repeat(this.value, tag => tag,
-            (tag, index) => html`<li key=${index} class="tag" title=${tag} ${animate({
-                keyframeOptions: {
-                  duration: this.animDuration,
-                  fill: 'both'
-                },
-                in: fadeIn,
-                out: fadeOut
-              })}>
-              <span class='tag-name'>${tag}</span>
-              <span class='tag-close'
-                    @click=${() => this._handleDeleteTag(index)}></span>
-            </li>`
-          )}
-        </ul>
-        <ul id="tags-searched" class=${classMap({ empty: !this._searchedTagsIndex.length })}>
+    return html`
+      <div class=${classMap({
+            'livechat-empty': !this.value.length,
+            'livechat-tags-container': true
+          })}
+      >
+        <ul
+          class=${classMap({
+            'livechat-empty': !this.value.length,
+            'livechat-unfocused': this._searchedTagsIndex.length,
+            'livechat-tags': true
+          })}>
+            ${repeat(this.value, tag => tag,
+              (tag, index) => html`<li key=${index} class="livechat-tag" title=${tag} ${animate({
+                  keyframeOptions: {
+                    duration: this.animDuration,
+                    fill: 'both'
+                  },
+                  in: fadeIn,
+                  out: fadeOut
+                })}>
+                <span class='livechat-tag-name'>${tag}</span>
+                <span class='livechat-tag-close'
+                      @click=${() => this._handleDeleteTag(index)}></span>
+              </li>`
+            )}
+          </ul>
+          ${
+            this.value?.length === 0
+              ? ''
+              : html`<button
+                type="button"
+                class="peertube-plugin-livechat-tags-input-copy"
+                title=${ptTr(LOC_COPY) as any}
+                @click=${async (ev: Event) => {
+                  ev.preventDefault()
+                  await navigator.clipboard.writeText(this.value.join(this.separator))
+                  this.ptNotifier.success(await this.ptTranslate(LOC_COPIED))
+                }}
+              >${unsafeHTML(copySVG)}</button>`
+          }
+      </div>
+        <ul class=${classMap({
+            'livechat-empty': !this._searchedTagsIndex.length,
+            'livechat-tags-searched': true
+          })}
+        >
           ${repeat(this._searchedTagsIndex, index => index,
-            (index) => html`<li key=${index} class="tag-searched" title=${this.value[index]} ${animate({
+            (index) => html`<li key=${index} class="livechat-tag-searched" title=${this.value[index]} ${animate({
                 keyframeOptions: {
                   duration: this.animDuration,
                   fill: 'both'
@@ -102,8 +143,8 @@ export class TagsInputElement extends LivechatElement {
                 in: fadeIn,
                 out: fadeOut
               })}>
-              <span class='tag-name'>${this.value[index]}</span>
-              <span class='tag-close'
+              <span class='livechat-tag-name'>${this.value[index]}</span>
+              <span class='livechat-tag-close'
                     @click=${() => this._handleDeleteTag(index)}>
               </span>
             </li>`

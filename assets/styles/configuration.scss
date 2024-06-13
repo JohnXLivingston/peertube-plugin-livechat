@@ -88,7 +88,8 @@ livechat-help-button {
     input[type="reset"],
     button[type="submit"],
     button[type="reset"],
-    .peertube-plugin-livechat-configuration-actions button {
+    .peertube-plugin-livechat-configuration-actions button,
+    .peertube-plugin-livechat-tags-input-copy {
       // Peertube rounded-line-height-1-5 mixins
       line-height: $button-calc-line-height;
 
@@ -104,7 +105,8 @@ livechat-help-button {
 
     input[type="submit"],
     button[type="submit"],
-    .peertube-plugin-livechat-configuration-actions button {
+    .peertube-plugin-livechat-configuration-actions button,
+    .peertube-plugin-livechat-tags-input-copy {
       // Peertube orange-button mixin
       &,
       &:active,
@@ -331,6 +333,13 @@ livechat-tags-input {
   flex-wrap: wrap;
   max-width: 320px;
 
+  .livechat-tags-container {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
+
   // stylelint trying to rearrange unrelated root blocks because of smaller blocks in them
   /* stylelint-disable-next-line no-descending-specificity */
   input {
@@ -347,23 +356,16 @@ livechat-tags-input {
     }
   }
 
-  #tags,
-  #tags-searched {
+  .livechat-tags,
+  .livechat-tags-searched {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
     margin: var(--tag-padding-vertical) 0;
     max-height: 150px;
     overflow-y: auto;
-    border-bottom: 1px dashed var(--greyForegroundColor);
     transition-property: height, margin;
     transition-duration: 0.3s;
-
-    &.empty {
-      height: 0;
-      margin: 0;
-      border: none;
-    }
 
     @supports (scrollbar-width: auto) {
       scrollbar-color: var(--greyForegroundColor) transparent;
@@ -371,22 +373,33 @@ livechat-tags-input {
     }
   }
 
-  #tags-searched {
+  .livechat-tags-container,
+  .livechat-tags-searched {
+    border-bottom: 1px dashed var(--greyForegroundColor);
+
+    &.livechat-empty {
+      height: 0;
+      margin: 0;
+      border: none;
+    }
+  }
+
+  .livechat-tags-searched {
     &::after {
       content: "\1F50D";
       flex-grow: 1;
       text-align: right;
     }
 
-    &.empty {
+    &.livechat-empty {
       &::after {
         display: none;
       }
     }
   }
 
-  .tag,
-  .tag-searched {
+  .livechat-tag,
+  .livechat-tag-searched {
     width: auto;
     height: 24px;
     display: flex;
@@ -400,7 +413,7 @@ livechat-tags-input {
     margin: 0 3px 3px 0;
     transition: 0.3s filter;
 
-    .tag-close {
+    .livechat-tag-close {
       display: block;
       width: 12px;
       height: 12px;
@@ -424,7 +437,7 @@ livechat-tags-input {
       color: #fff;
       background-color: var(--mainColor);
 
-      .tag-close {
+      .livechat-tag-close {
         color: var(--mainColor);
       }
     }
@@ -433,7 +446,7 @@ livechat-tags-input {
       color: #fff;
       background-color: var(--mainHoverColor);
 
-      .tag-close {
+      .livechat-tag-close {
         color: var(--mainHoverColor);
       }
     }
@@ -444,12 +457,12 @@ livechat-tags-input {
       color: #fff;
       background-color: var(--inputBorderColor);
 
-      .tag-close {
+      .livechat-tag-close {
         color: var(--inputBorderColor);
       }
     }
 
-    .tag-name {
+    .livechat-tag-name {
       margin-top: 3px;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -458,7 +471,7 @@ livechat-tags-input {
     }
   }
 
-  #tags.unfocused .tag {
+  .livechat-tags.livechat-unfocused .livechat-tag {
     filter: opacity(50%) grayscale(80%);
   }
 }
