@@ -188,11 +188,11 @@ export class DynamicTableFormElement extends LivechatElement {
     this._updateLastRowId()
 
     // Filter removed rows
-    // FIXME: seems buggy. Missing assignation?
-    this._rowsById.filter(rowById => this.rows.includes(rowById.row))
+    // FIXME: is this really necessary?
+    this._rowsById = this._rowsById.filter(rowById => this.rows.includes(rowById.row))
 
     for (let i = 0; i < this.rows.length; i++) {
-      if (this._rowsById.filter(rowById => rowById.row === this.rows[i]).length === 0) {
+      if (!this._rowsById.find(rowById => rowById.row === this.rows[i])) {
         // Add row and assign id
         this._rowsById.push({ _id: this._lastRowId++, _originalIndex: i, row: this.rows[i] })
       } else {
@@ -722,35 +722,35 @@ export class DynamicTableFormElement extends LivechatElement {
           : target.value
       : undefined
 
-    if (value !== undefined) {
-      for (const rowById of this._rowsById) {
-        if (rowById._id === rowId) {
-          switch (propertySchema.default?.constructor) {
-            case Array:
-              if (value.constructor === Array || !propertySchema.separator) {
-                rowById.row[propertyName] = value
-              } else {
-                rowById.row[propertyName] = (value as string)
-                  .split(propertySchema.separator)
-              }
-              break
-            default:
-              rowById.row[propertyName] = value
-              break
-          }
-
-          this.rows = this._rowsById.map(rowById => rowById.row)
-
-          this.requestUpdate('rows')
-          this.requestUpdate('_rowsById')
-          this.dispatchEvent(new CustomEvent('update', { detail: this.rows }))
-          return
-        }
-      }
-
-      console.warn(`Could not update property : Did not find a property named '${propertyName}' in row '${rowId}'`)
-    } else {
+    if (value === undefined) {
       console.warn('Could not update property : Target or value was undefined')
+      return
     }
+
+    const rowById = this._rowsById.find(rowById => rowById._id === rowId)
+    if (!rowById) {
+      console.warn(`Could not update property : Did not find a property named '${propertyName}' in row '${rowId}'`)
+      return
+    }
+
+    switch (propertySchema.default?.constructor) {
+      case Array:
+        if (value.constructor === Array || !propertySchema.separator) {
+          rowById.row[propertyName] = value
+        } else {
+          rowById.row[propertyName] = (value as string)
+            .split(propertySchema.separator)
+        }
+        break
+      default:
+        rowById.row[propertyName] = value
+        break
+    }
+
+    this.rows = this._rowsById.map(rowById => rowById.row)
+
+    this.requestUpdate('rows')
+    this.requestUpdate('_rowsById')
+    this.dispatchEvent(new CustomEvent('update', { detail: this.rows }))
   }
 }
