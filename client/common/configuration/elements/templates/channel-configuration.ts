@@ -126,7 +126,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
         </livechat-help-button>
       </p>
 
-      <form livechat-configuration-channel-options role="form" @submit=${el.saveConfig}>
+      <form livechat-configuration-channel-options role="form" @submit=${el.saveConfig} @change=${el.resetValidation}>
         <livechat-configuration-section-header
           .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
           .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
@@ -230,6 +230,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
             .validationPrefix=${'bot.forbiddenWords'}
             .rows=${el.channelConfiguration?.configuration.bot.forbiddenWords}
             @update=${(e: CustomEvent) => {
+                el.resetValidation(e)
                 if (el.channelConfiguration) {
                   el.channelConfiguration.configuration.bot.forbiddenWords = e.detail
                   el.requestUpdate('channelConfiguration')
@@ -251,6 +252,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
             .validationPrefix=${'bot.quotes'}
             .rows=${el.channelConfiguration?.configuration.bot.quotes}
             @update=${(e: CustomEvent) => {
+                el.resetValidation(e)
                 if (el.channelConfiguration) {
                   el.channelConfiguration.configuration.bot.quotes = e.detail
                   el.requestUpdate('channelConfiguration')
@@ -272,6 +274,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
             .validationPrefix=${'bot.commands'}
             .rows=${el.channelConfiguration?.configuration.bot.commands}
             @update=${(e: CustomEvent) => {
+                el.resetValidation(e)
                 if (el.channelConfiguration) {
                   el.channelConfiguration.configuration.bot.commands = e.detail
                   el.requestUpdate('channelConfiguration')

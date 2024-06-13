@@ -52,7 +52,7 @@ export function tplChannelEmojis (el: ChannelEmojisElement): TemplateResult {
       </p>
 
       
-      <form role="form" @submit=${el.saveEmojis}>
+      <form role="form" @submit=${el.saveEmojis} @change=${el.resetValidation}>
         <div class="peertube-plugin-livechat-configuration-actions">
           ${
             el.channelEmojisConfiguration?.emojis?.customEmojis?.length
@@ -88,6 +88,7 @@ export function tplChannelEmojis (el: ChannelEmojisElement): TemplateResult {
           .validationPrefix=${'emojis'}
           .rows=${el.channelEmojisConfiguration?.emojis.customEmojis}
           @update=${(e: CustomEvent) => {
+              el.resetValidation(e)
               if (el.channelEmojisConfiguration) {
                 el.channelEmojisConfiguration.emojis.customEmojis = e.detail
                 // Fixing missing ':' for shortnames:

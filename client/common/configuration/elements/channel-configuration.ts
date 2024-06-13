@@ -62,6 +62,17 @@ export class ChannelConfigurationElement extends LivechatElement {
   }
 
   /**
+   * Resets the validation errors.
+   * @param ev the vent
+   */
+  public resetValidation (_ev?: Event): void {
+    if (this.validationError) {
+      this.validationError = undefined
+      this.requestUpdate('_validationError')
+    }
+  }
+
+  /**
    * Saves the channel configuration.
    * @param event event
    */
