@@ -298,6 +298,21 @@ livechat-dynamic-table-form {
     text-align: left;
   }
 
+  .dynamic-table-add-row,
+  .dynamic-table-remove-row {
+    // Peertube rounded-line-height-1-5 mixins
+    line-height: $button-calc-line-height;
+
+    // Peertube peertube-button mixin (but with less horizontal padding)
+    padding: 4px;
+    border: 0;
+    font-weight: $font-semibold;
+    border-radius: 3px !important;
+    text-align: center;
+    cursor: pointer;
+    font-size: $button-font-size;
+  }
+
   .dynamic-table-add-row {
     background-color: var(--bs-green);
 
@@ -328,6 +343,30 @@ livechat-dynamic-table-form {
 
   .dynamic-table-remove-row {
     background-color: var(--bs-orange);
+
+    &,
+    &:active,
+    &:focus {
+      color: #fff;
+      background-color: var(--mainColor);
+    }
+
+    &:focus,
+    &.focus-visible {
+      box-shadow: 0 0 0 0.2rem var(--mainHoverColor);
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: var(--mainHoverColor);
+    }
+
+    &[disabled],
+    &.disabled {
+      cursor: default;
+      color: #fff;
+      background-color: var(--inputBorderColor);
+    }
   }
 }
 

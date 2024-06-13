@@ -269,7 +269,7 @@ export class DynamicTableFormElement extends LivechatElement {
               rowData._originalIndex))}
       <td class="form-group">
         <button type="button"
-          class="peertube-button-link orange-button dynamic-table-remove-row"
+          class="dynamic-table-remove-row"
           .title=${ptTr(LOC_ACTION_REMOVE_ENTRY) as any}
           @click=${async () => this._removeRow(rowData._id)}
         >
@@ -288,7 +288,7 @@ export class DynamicTableFormElement extends LivechatElement {
     <tr>
       <td class="dynamic-table-add-row-cell">
         <button type="button"
-          class="peertube-button-link orange-button dynamic-table-add-row"
+          class="dynamic-table-add-row"
           .title=${ptTr(LOC_ACTION_ADD_ENTRY) as any}
           @click=${this._addRow}
         >
