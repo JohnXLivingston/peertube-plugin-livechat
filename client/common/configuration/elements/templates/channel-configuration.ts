@@ -129,7 +129,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       <form livechat-configuration-channel-options role="form" @submit=${el.saveConfig}>
         <livechat-configuration-section-header
           .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
-          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC)}
+          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
           .helpPage=${'documentation/user/streamers/slow_mode'}>
         </livechat-configuration-section-header>
         <div class="form-group">
