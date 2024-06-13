@@ -256,6 +256,9 @@ livechat-dynamic-table-form {
   // We need this variable to be known at that time
   $bs-green: #39cc0b;
 
+  display: block;
+  margin-bottom: 3rem;
+
   table {
     table-layout: fixed;
     text-align: center;
@@ -289,6 +292,10 @@ livechat-dynamic-table-form {
       font-size: small;
       font-weight: lighter;
     }
+  }
+
+  .dynamic-table-add-row-cell {
+    text-align: left;
   }
 
   .dynamic-table-add-row {

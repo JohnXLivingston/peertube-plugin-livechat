@@ -283,10 +283,10 @@ export class DynamicTableFormElement extends LivechatElement {
     if (this.maxLines && this._rowsById.length >= this.maxLines) {
       return html``
     }
+    // Note: the addRow button is in first column, so it won't be hidden if screen not wide enough.
     return html`<tfoot>
     <tr>
-      ${Object.values(this.header).map(() => html`<td></td>`)}
-      <td>
+      <td class="dynamic-table-add-row-cell">
         <button type="button"
           class="peertube-button-link orange-button dynamic-table-add-row"
           .title=${ptTr(LOC_ACTION_ADD_ENTRY) as any}
@@ -295,6 +295,7 @@ export class DynamicTableFormElement extends LivechatElement {
           ${unsafeHTML(AddSVG)}
         </button>
       </td>
+      ${Object.values(this.header).map(() => html`<td></td>`)}
     </tr>
   </tfoot>`
   }
