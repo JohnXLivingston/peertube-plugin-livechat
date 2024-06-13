@@ -241,9 +241,9 @@ function register (clientOptions: RegisterClientOptions): void {
                 }
               })
             }
-          } catch (error) {
+          } catch (error: any) {
             console.error(error)
-            peertubeHelpers.notifier.error('Room list failed')
+            peertubeHelpers.notifier.error(error.toString(), await peertubeHelpers.translate(LOC_LOADING_ERROR))
           }
         }
       })

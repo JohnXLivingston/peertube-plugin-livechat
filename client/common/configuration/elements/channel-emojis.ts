@@ -193,7 +193,7 @@ export class ChannelEmojisElement extends LivechatElement {
         await this.ptTranslate(LOC_ACTION_IMPORT_EMOJIS_INFO)
       )
     } catch (err: any) {
-      this.ptNotifier.error(err.toString())
+      this.ptNotifier.error(err.toString(), await this.ptTranslate(LOC_ERROR))
     } finally {
       this.actionDisabled = false
     }
