@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { SVGButton } from './buttons'
-import { logger } from '../utils/logger'
+import { logger } from '../../utils/logger'
 
 interface displayButtonOptionsBase {
   buttonContainer: HTMLElement

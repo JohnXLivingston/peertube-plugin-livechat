@@ -10,12 +10,6 @@
   "bugs": "https://github.com/JohnXLivingston/peertube-plugin-livechat/issues",
   "clientScripts": [
     {
-      "script": "dist/client/videowatch-client-plugin.js",
-      "scopes": [
-        "video-watch"
-      ]
-    },
-    {
       "script": "dist/client/common-client-plugin.js",
       "scopes": [
         "common"

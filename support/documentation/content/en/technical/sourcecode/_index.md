@@ -43,7 +43,7 @@ For example, `build-conversejs.js` use the folder `build/conversejs` to build a 
 
 The `client` folder contains the front-end source code.
 
-Files like `client/common-client-plugin.ts`, `client/videowatch-client-plugin.ts`, ... are the base files that
+Files like `client/common-client-plugin.ts`, `admin-plugin-client-plugin.ts`, ... are the base files that
 are loaded by Peertube for different "scopes" (`common`, `videowatch`, ...).
 Please refer to the [Peertube plugin documentation](https://docs.joinpeertube.org/contribute/plugins)
  for more information.

@@ -5,10 +5,10 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
 import { helpButtonSVG } from './buttons'
-import { logger } from '../utils/logger'
+import { logger } from '../../utils/logger'
 import { getIframeUri, getXMPPAddr, UriOptions } from './uri'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
-import { localizedHelpUrl } from '../utils/help'
+import { localizedHelpUrl } from '../../utils/help'
 
 interface ShareForm {
   shareString: HTMLInputElement

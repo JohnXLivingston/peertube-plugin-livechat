@@ -14,6 +14,7 @@ TODO: tag conversejs livechat branch, and replace commit ID in build-converse.js
 
 * Fix cleanup on channel deletion.
 * #416: Deregister prosodyctl interval callback when spawn.stdin disappears.
+* #423: Merging video-watch scope into common scope.
 
 ## 10.0.2
 

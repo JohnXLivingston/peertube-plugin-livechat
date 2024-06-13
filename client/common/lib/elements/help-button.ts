@@ -5,7 +5,7 @@
 import { html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
-import { helpButtonSVG } from '../../../videowatch/buttons'
+import { helpButtonSVG } from '../../videowatch/buttons'
 import { Task } from '@lit/task'
 import { localizedHelpUrl } from '../../../utils/help'
 import { ptTr } from '../directives/translation'

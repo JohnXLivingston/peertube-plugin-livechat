@@ -12,7 +12,6 @@ const sourcemap = process.env.NODE_ENV === 'dev' ?  'inline' : false
 const clientFiles = [
   // Client files list, without the file extension:
   'common-client-plugin',
-  'videowatch-client-plugin',
   'admin-plugin-client-plugin'
 ]
 

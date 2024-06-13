@@ -5,9 +5,9 @@
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
 import { AutoColors, isAutoColorsAvailable } from 'shared/lib/autocolors'
-import { getBaseRoute } from '../utils/uri'
-import { logger } from '../utils/logger'
-import { computeAutoColors } from '../utils/colors'
+import { getBaseRoute } from '../../utils/uri'
+import { logger } from '../../utils/logger'
+import { computeAutoColors } from '../../utils/colors'
 
 interface UriOptions {
   readonly?: boolean | 'noscroll'
