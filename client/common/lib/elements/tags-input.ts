@@ -191,12 +191,14 @@ export class TagsInputElement extends LivechatElement {
       values = values.map(v => v.trim()).filter(v => v !== '')
 
       if (values.length > 0) {
-        // Keep last value in input if value doesn't finish with a separator
-        if (!newValue.match(/\s+$/m)?.[0]?.includes(this.separator)) {
-          target.value = values.pop() ?? ''
-        } else {
-          target.value = ''
-        }
+        // 20240613: i disable this code, i think it is not a good idea.
+        // // Keep last value in input if value doesn't finish with a separator
+        // if (!newValue.match(/\s+$/m)?.[0]?.includes(this.separator)) {
+        //   target.value = values.pop() ?? ''
+        // } else {
+        //   target.value = ''
+        // }
+        target.value = ''
         // no duplicate
         this.value = [...new Set([...this.value, ...values])]
 
