@@ -489,3 +489,12 @@ livechat_emojis_shortname_desc: "Vous pouvez utiliser l'émojis en utilisant \":
   et des tirets.\n"
 livechat_emojis_file: Fichier
 livechat_emojis_file_desc: "Le fichier de l'émoji.\n"
+action_export: Exporter
+action_import_emojis_info: Si les données importées sont correctes, n'oubliez pas
+  de sauvegarder le formulaire.
+action_import: Importer
+copied: Copié
+action_remove_entry: Supprimer cette entrée
+action_remove_entry_confirm: Êtes-vous sûr de vouloir supprimer cette entrée ?
+loading_error: Une erreur s'est produite lors du chargement des données.
+action_add_entry: Ajouter une entrée

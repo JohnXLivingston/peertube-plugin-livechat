@@ -479,3 +479,7 @@ action_export: Exportieren
 action_import: Importieren
 action_import_emojis_info: Wenn die importierten Daten in Ordnung sind, vergessen
   Sie nicht, das Formular zu speichern.
+action_add_entry: Eintrag hinzufügen
+action_remove_entry: Diesen Eintrag entfernen
+action_remove_entry_confirm: Sind Sie sicher, dass Sie diesen Eintrag entfernen möchten?
+loading_error: Beim Laden der Daten ist ein Fehler aufgetreten.
