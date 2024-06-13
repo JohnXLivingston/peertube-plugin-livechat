@@ -571,7 +571,7 @@ export class DynamicTableFormElement extends LivechatElement {
       .minlength=${propertySchema.minlength}
       .maxlength=${propertySchema.maxlength}
       .datalist=${propertySchema.datalist as any}
-      .separator=${propertySchema.separator}
+      .separator=${propertySchema.separator ?? '\n'}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue as any}
       ></livechat-tags-input>`
