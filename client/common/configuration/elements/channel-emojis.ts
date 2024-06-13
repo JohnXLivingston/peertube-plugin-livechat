@@ -55,6 +55,12 @@ export class ChannelEmojisElement extends LivechatElement {
         }
         this._channelDetailsService = new ChannelDetailsService(this.ptOptions)
         this.channelEmojisConfiguration = await this._channelDetailsService.fetchEmojisConfiguration(this.channelId)
+        if (!this.channelEmojisConfiguration.emojis.customEmojis.length) {
+          this.channelEmojisConfiguration.emojis.customEmojis.push({
+            sn: '',
+            url: ''
+          })
+        }
         this.actionDisabled = false // in case of reset
       },
       args: () => []
