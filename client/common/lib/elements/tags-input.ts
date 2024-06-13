@@ -46,7 +46,7 @@ export class TagsInputElement extends LivechatElement {
   private readonly _isPressingKey: string[] = []
 
   @property({ attribute: false })
-  public separators?: string[] = ['\n']
+  public separator: string = '\n'
 
   @property({ attribute: false })
   public animDuration: number = 200
@@ -145,15 +145,13 @@ export class TagsInputElement extends LivechatElement {
           target?.value?.slice(target.selectionEnd ?? target?.value?.length ?? 0) ?? ''
         }`
 
-      let values = newValue.split(new RegExp(`(?:${this.separators
-        ?.map((c: string) => c.replace(/^[.\\+*?[^\]$(){}=!<>|:-]$/, '\\'))
-        .join('|') ?? ''})+`))
+      let values = newValue.split(this.separator)
 
       values = values.map(v => v.trim()).filter(v => v !== '')
 
       if (values.length > 0) {
         // Keep last value in input if value doesn't finish with a separator
-        if (!this.separators?.some(separator => newValue.match(/\s+$/m)?.[0]?.includes(separator))) {
+        if (!newValue.match(/\s+$/m)?.[0]?.includes(this.separator)) {
           target.value = values.pop() ?? ''
         } else {
           target.value = ''
@@ -257,7 +255,7 @@ export class TagsInputElement extends LivechatElement {
 
     if (target) {
       this._inputValue = target.value
-      if (this.separators?.includes(target.value.slice(-1))) {
+      if (this.separator === target.value.slice(-1)) {
         e.preventDefault()
         target.value = target.value.slice(0, -1)
         this._handleNewTag(e)

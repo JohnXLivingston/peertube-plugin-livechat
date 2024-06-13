@@ -67,7 +67,7 @@ interface CellDataSchema {
   label?: TemplateResult | string
   options?: { [key: string]: string }
   datalist?: DynamicTableAcceptedTypes[]
-  separators?: string[]
+  separator?: string
   inputType?: DynamicTableAcceptedInputTypes
   default?: DynamicTableAcceptedTypes
   colClassList?: string[] // CSS classes to add to the <td> element.
@@ -148,7 +148,9 @@ export class DynamicTableFormElement extends LivechatElement {
     // Note: we make multiple querySelector, to be sure to not get a nested table.
     // We want the top level table associated tr.
     const input = this.querySelector('table')?.querySelector(
-      '&>tbody>tr:last-child>td input:not([type=hidden]),&>tbody>tr:last-child>td livechat-tags-input'
+      '&>tbody>tr:last-child>td input:not([type=hidden]),' +
+      '&>tbody>tr:last-child>td livechat-tags-input,' +
+      '&>tbody>tr:last-child>td textarea'
     )
     if (input) {
       (input as HTMLElement).focus()
@@ -462,7 +464,7 @@ export class DynamicTableFormElement extends LivechatElement {
               inputName,
               propertyName,
               propertySchema,
-              (propertyValue)?.join(propertySchema.separators?.[0] ?? ',') ??
+              (propertyValue)?.join(propertySchema.separator ?? ',') ??
                 propertyValue ?? propertySchema.default ?? '',
               originalIndex)}
               ${feedback}
@@ -477,7 +479,7 @@ export class DynamicTableFormElement extends LivechatElement {
               inputName,
               propertyName,
               propertySchema,
-              (propertyValue)?.join(propertySchema.separators?.[0] ?? ',') ??
+              (propertyValue)?.join(propertySchema.separator ?? ',') ??
                 propertyValue ?? propertySchema.default ?? '',
               originalIndex)}
               ${feedback}
@@ -568,7 +570,7 @@ export class DynamicTableFormElement extends LivechatElement {
       .minlength=${propertySchema.minlength}
       .maxlength=${propertySchema.maxlength}
       .datalist=${propertySchema.datalist as any}
-      .separators=${propertySchema.separators}
+      .separator=${propertySchema.separator}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue as any}
       ></livechat-tags-input>`
@@ -725,13 +727,11 @@ export class DynamicTableFormElement extends LivechatElement {
         if (rowById._id === rowId) {
           switch (propertySchema.default?.constructor) {
             case Array:
-              if (value.constructor === Array) {
+              if (value.constructor === Array || !propertySchema.separator) {
                 rowById.row[propertyName] = value
               } else {
                 rowById.row[propertyName] = (value as string)
-                  .split(new RegExp(`(?:${propertySchema.separators
-                    ?.map((c: string) => c.replace(/^[.\\+*?[^\]$(){}=!<>|:-]$/, '\\'))
-                    .join('|') ?? ''})+)`))
+                  .split(propertySchema.separator)
               }
               break
             default:

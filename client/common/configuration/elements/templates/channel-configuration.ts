@@ -62,7 +62,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       entries: {
         inputType: 'tags',
         default: [],
-        separators: ['\n', '\t', ';']
+        separator: '\n'
       },
       regexp: {
         inputType: 'checkbox',
@@ -87,9 +87,9 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
     },
     quotes: {
       messages: {
-        inputType: 'tags',
+        inputType: 'textarea',
         default: [],
-        separators: ['\n', '\t', ';']
+        separator: '\n'
       },
       delay: {
         inputType: 'number',
