@@ -170,9 +170,6 @@ export class ChannelDetailsService {
     )
 
     if (!response.ok) {
-      if (response.status === 404) {
-        // File does not exist yet, that is a normal use case.
-      }
       throw new Error('Can\'t get channel emojis options.')
     }
 
