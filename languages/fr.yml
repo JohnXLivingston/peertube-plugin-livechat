@@ -8,9 +8,9 @@ read_only: Lecture seule
 show_scrollbarr: Afficher la barre de défilement
 transparent_background: Arrière plan transparent (pour l'intégration dans le stream,
   avec OBS par exemple)
-tips_for_streamers: "Astuce pour les streamers et streameuses : pour ajouter le tchat
-  à votre OBS, générez un lien «lecture seule» et utilisez le comme «source navigateur
-  web»."
+tips_for_streamers: "Astuce pour les streamers et streameuses : pour intégrer le tchat
+  dans votre flux en direct, en utilisant OBS par exemple, générez un lien «lecture
+  seule» et utilisez le comme «source navigateur web».\n"
 copy: Copier
 link_copied: Lien copié
 error: Erreur
@@ -498,3 +498,5 @@ action_remove_entry: Supprimer cette entrée
 action_remove_entry_confirm: Êtes-vous sûr de vouloir supprimer cette entrée ?
 loading_error: Une erreur s'est produite lors du chargement des données.
 action_add_entry: Ajouter une entrée
+share_chat_embed: Intégration
+share_chat_peertube_tips: Ce lien ouvrira le tchat dans l'interface Peertube.
