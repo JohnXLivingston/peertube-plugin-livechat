@@ -15,6 +15,7 @@ export class LivechatElement extends LitElement {
   public readonly ptOptions: RegisterClientOptions
   public readonly ptTranslate: RegisterClientOptions['peertubeHelpers']['translate']
   public readonly ptNotifier: RegisterClientOptions['peertubeHelpers']['notifier']
+  public readonly logger: ReturnType<PtContext['logger']['createLogger']>
 
   constructor () {
     super()
@@ -22,6 +23,7 @@ export class LivechatElement extends LitElement {
     this.ptOptions = this.ptContext.ptOptions
     this.ptNotifier = this.ptOptions.peertubeHelpers.notifier
     this.ptTranslate = this.ptOptions.peertubeHelpers.translate
+    this.logger = this.ptContext.logger.createLogger(this.tagName.toLowerCase())
   }
 
   protected override createRenderRoot = (): Element | ShadowRoot => {

@@ -11,6 +11,10 @@ import { tplShareChatCopy, tplShareChatTips, tplShareChatTabs, tplShareChatOptio
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 import { getIframeUri, getXMPPAddr, UriOptions } from '../uri'
 
+const validTabNames = ['peertube', 'embed', 'xmpp'] as const
+
+type ValidTabNames = typeof validTabNames[number]
+
 /**
  * Results of the ShareChatElement.computeUrl method.
  */
@@ -48,7 +52,7 @@ export class ShareChatElement extends LivechatElement {
    * The current tab.
    */
   @property({ attribute: false })
-  public currentTab: 'peertube' | 'embed' | 'xmpp' = 'peertube'
+  public currentTab: ValidTabNames = 'peertube'
 
   /**
    * Should we render the XMPP tab?
@@ -103,7 +107,8 @@ export class ShareChatElement extends LivechatElement {
 
   protected override updated (changedProperties: PropertyValues): void {
     super.updated(changedProperties)
-    this.logger.info('Update!')
+    this.logger.log('Updated was triggered, saving current state.')
+    this._saveCurrentState()
   }
 
   protected override render = (): TemplateResult => {
@@ -118,12 +123,54 @@ export class ShareChatElement extends LivechatElement {
   }
 
   protected _restorePreviousState (): void {
-    // TODO: restore previous state.
+    if (!window.localStorage) {
+      this.logger.warn('No localStorage, can\'t restore state.')
+      return
+    }
+    const s = window.localStorage.getItem('peertube-plugin-livechat-shareurl')
+    if (!s) {
+      return
+    }
+    try {
+      const v = JSON.parse(s)
+      if (!v || (typeof v !== 'object') || v.version !== 2) {
+        this.logger.warn('Stored information are invalid, dropping')
+        return
+      }
+      this.logger.log('Restoring previous state')
+      if (validTabNames.includes(v.currentTab)) {
+        this.currentTab = v.currentTab
+      }
+      this.embedIFrame = !!v.embedIFrame
+      this.embedReadOnly = !!v.embedReadOnly
+      this.embedReadOnlyScrollbar = !!v.embedReadOnlyScrollbar
+      this.embedReadOnlyTransparentBackground = !!v.embedReadOnlyTransparentBackground
+      this.embedAutocolors = !!v.embedAutocolors
+    } catch (err) {
+      this.logger.error(err as string)
+    }
 
     // Some sanity checks, to not be in an impossible state.
     if (!this.xmppUriEnabled && this.currentTab === 'xmpp') {
       this.currentTab = 'peertube'
     }
+  }
+
+  protected _saveCurrentState (): void {
+    if (!window.localStorage) {
+      this.logger.warn('No localStorage, can\'t save state.')
+      return
+    }
+    const v = {
+      version: 2, // in case we add incompatible values in a near feature
+      currentTab: this.currentTab,
+      embedIFrame: this.embedIFrame,
+      embedReadOnly: this.embedReadOnly,
+      embedReadOnlyScrollbar: this.embedReadOnlyScrollbar,
+      embedReadOnlyTransparentBackground: this.embedReadOnlyTransparentBackground,
+      embedAutocolors: this.embedAutocolors
+    }
+    window.localStorage.setItem('peertube-plugin-livechat-shareurl', JSON.stringify(v))
   }
 
   public computeUrl (): ComputedUrl {
