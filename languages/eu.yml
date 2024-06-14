@@ -7,8 +7,8 @@ share_chat_link: Partekatu txataren esteka
 read_only: Irakurtzeko soilik
 show_scrollbarr: Erakutsi korritze-barra
 transparent_background: Atzealde gardena (zuzenekoekin integratzeko, OBSrekin kasu)
-tips_for_streamers: "Zuzeneko bideogileentzako aholkuak: txata OBSn gehitzeko, sortu\
-  \ irakurtzeko soilik den esteka bat eta erabili nabigatzaileko iturburu gisa."
+tips_for_streamers: "Zuzeneko bideogileentzako aholkuak: txata OBSn gehitzeko, sortu
+  irakurtzeko soilik den esteka bat eta erabili nabigatzaileko iturburu gisa."
 copy: Kopiatu
 link_copied: Esteka kopiatu da
 error: Errorea
@@ -29,5 +29,5 @@ connect_using_xmpp_help: Gelara konekta zaitezke kanpoko XMPP kontu bat eta gogo
 online_help: Lineako laguntza
 important_note_title: <h3>Ohar garrantzitsuak</h3>
 important_note_text: "Osagarriaren dokumentazioa aurki dezakezu hemen:\n<a href=\"\
-  https://livingston.frama.io/peertube-plugin-livechat/\" target=\"_blank\">\n  Peertube\
-  \ Plugin Livechat-en dokumentazioa\n</a>.\n"
+  https://livingston.frama.io/peertube-plugin-livechat/\" target=\"_blank\">\n  Peertube
+  Plugin Livechat-en dokumentazioa\n</a>.\n"
