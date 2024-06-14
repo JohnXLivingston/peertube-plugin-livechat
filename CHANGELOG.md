@@ -16,7 +16,7 @@ TODO: tag conversejs livechat branch, and replace commit ID in build-converse.js
 * #416: Deregister prosodyctl interval callback when spawn.stdin disappears.
 * #423: Merging video-watch scope into common scope.
 * Rewriting the share chat dialog with more modern code.
-* #400: Enable the chat by default when a live is created. So that lives created by the Android Peertube Live app will have chat by default.
+* #400: Reading livechat-active parameter on live creation API endpoint. So that the Android Peertube Live app can pass the parameter withing the first (and only) API call.
 
 ## 10.0.2
 

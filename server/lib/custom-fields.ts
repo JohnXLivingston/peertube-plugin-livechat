@@ -13,15 +13,26 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
 
   registerHook({
     target: 'action:api.live-video.created',
-    handler: async ({ video }: { video: Video | undefined }) => {
+    handler: async ({ video, req }: { video: Video | undefined, req: any }) => {
       if (!video?.id) { return }
-      // When creating a new live, if the chat is an option 'per video', we enable the chat by default.
+      // When creating a new live, if 'chat-per-live-video' is true,
+      // we must read req.body.pluginData['livechat-active'] (as for action:api.video.updated).
       // This is done for the Peertube live Android app, which does not update the video after creation.
       // See: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/400
+
+      // Note: following code is a little bit verbose, to be sure it can't fail, even with old Peertube versions.
+      if (!req || (typeof req !== 'object') || !('body' in req)) { return }
+      if (!req.body || (typeof req.body !== 'object') || !('pluginData' in req.body)) { return }
+      const pluginData = req.body?.pluginData
+      if (!pluginData || (typeof pluginData !== 'object') || !('livechat-active' in pluginData)) { return }
+      if (pluginData['livechat-active'] !== true) { return }
+
       const setting = await options.settingsManager.getSetting('chat-per-live-video')
       if (setting !== true) { return }
+
       logger.info(
-        `New live created, enabling chat by default by setting livechat-active=true for video ${video.id.toString()}.`
+        'New live created, livechat-active parameter given, ' +
+        `enabling chat by default by setting livechat-active=true for video ${video.id.toString()}.`
       )
       await storageManager.storeData(`livechat-active-${video.id.toString()}`, true)
     }
