@@ -6,6 +6,7 @@ import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { InitConverseJSParams, ChatPeertubeIncludeMode } from 'shared/lib/types'
 import { computeAutoColors } from './colors'
 import { getBaseRoute } from './uri'
+import { logger } from './logger'
 
 // FIXME: better declaration (see builtin.ts)
 declare global {
@@ -143,7 +144,7 @@ async function displayConverseJS (
     if (!a) { return }
     if (a.getAttribute('href') !== '#') { return }
 
-    console.log('[peertube-plugin-livechat] intercepting a click on href=# in converse root, canceling the event.')
+    logger.log('Intercepting a click on href=# in converse root, canceling the event.')
     ev.preventDefault()
   })
 

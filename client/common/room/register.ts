@@ -4,6 +4,7 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import { displayConverseJS } from '../../utils/conversejs'
+import { logger } from '../../utils/logger'
 
 /**
  * Registers stuff related to "room" page.
@@ -29,7 +30,7 @@ async function registerRoom (clientOptions: RegisterClientOptions): Promise<void
 
         await displayConverseJS(clientOptions, container, roomKey, 'peertube-fullpage', forceType)
       } catch (err) {
-        console.error('[peertube-plugin-livechat] ' + (err as string))
+        logger.error(err)
         // Displaying an error page.
         rootEl.innerHTML = ''
         const message = document.createElement('div')

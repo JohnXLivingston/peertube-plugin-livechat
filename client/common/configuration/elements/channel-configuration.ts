@@ -94,7 +94,7 @@ export class ChannelConfigurationElement extends LivechatElement {
           if (error instanceof ValidationError) {
             this.validationError = error
           }
-          console.warn(`A validation error occurred in saving configuration. ${error.name}: ${error.message}`)
+          this.logger.warn(`A validation error occurred in saving configuration. ${error.name}: ${error.message}`)
           this.ptNotifier.error(
             error.message
               ? error.message

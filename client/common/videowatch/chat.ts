@@ -212,7 +212,7 @@ async function _insertChatDom (
                 }
               )
             } catch (err) {
-              console.error(err)
+              logger.error(err)
             }
           },
           icon: promoteSVG,

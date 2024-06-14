@@ -94,7 +94,7 @@ export class ImageFileInputElement extends LivechatElement {
       this.dispatchEvent(event)
     } catch (err) {
       // FIXME: use peertube notifier?
-      console.error(err)
+      this.logger.error(err)
     }
   }
 }

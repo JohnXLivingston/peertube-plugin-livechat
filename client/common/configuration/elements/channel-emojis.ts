@@ -237,7 +237,7 @@ export class ChannelEmojisElement extends LivechatElement {
       a.click()
       a.remove()
     } catch (err: any) {
-      console.error(err)
+      this.logger.error(err)
       this.ptNotifier.error(err.toString())
     } finally {
       this.actionDisabled = false

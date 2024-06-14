@@ -347,7 +347,7 @@ export class TagsInputElement extends LivechatElement {
 
   private readonly _addTag = (value: string | undefined): void => {
     if (value === undefined) {
-      console.warn('Could not add tag : Target or value was undefined')
+      this.logger.warn('Could not add tag : Target or value was undefined')
       return
     }
 
@@ -365,7 +365,7 @@ export class TagsInputElement extends LivechatElement {
 
   private readonly _removeTag = (index: number): void => {
     if (index < 0 || index >= this.value.length) {
-      console.warn('Could not remove tag : index out of range')
+      this.logger.warn('Could not remove tag : index out of range')
       return
     }
 

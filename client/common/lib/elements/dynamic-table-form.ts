@@ -504,7 +504,7 @@ export class DynamicTableFormElement extends LivechatElement {
     }
 
     if (!formElement) {
-      console.warn(`value type '${(propertyValue.constructor.toString())}' is incompatible` +
+      this.logger.warn(`value type '${(propertyValue.constructor.toString())}' is incompatible` +
         `with field type '${propertySchema.inputType as string}' for form entry '${propertyName.toString()}'.`)
     }
 
@@ -724,13 +724,13 @@ export class DynamicTableFormElement extends LivechatElement {
       : undefined
 
     if (value === undefined) {
-      console.warn('Could not update property : Target or value was undefined')
+      this.logger.warn('Could not update property : Target or value was undefined')
       return
     }
 
     const rowById = this._rowsById.find(rowById => rowById._id === rowId)
     if (!rowById) {
-      console.warn(`Could not update property : Did not find a property named '${propertyName}' in row '${rowId}'`)
+      this.logger.warn(`Could not update property : Did not find a property named '${propertyName}' in row '${rowId}'`)
       return
     }
 
