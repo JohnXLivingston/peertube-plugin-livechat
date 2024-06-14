@@ -242,3 +242,4 @@ prosody_muc_log_by_default_description: "Ako je označeno, sadržaj sobe će se 
   za određenu sobu, uređivanjem njezinih svojstava.\n"
 auto_ban_anonymous_ip_label: Blokiraj IP anonimnog korisnika kada je korisniku zabranjen
   pristup chat sobi
+livechat_configuration_channel_emojis_title: Emojiji kanala

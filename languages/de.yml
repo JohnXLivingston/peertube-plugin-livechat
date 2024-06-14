@@ -483,3 +483,4 @@ action_add_entry: Eintrag hinzufügen
 action_remove_entry: Diesen Eintrag entfernen
 action_remove_entry_confirm: Sind Sie sicher, dass Sie diesen Eintrag entfernen möchten?
 loading_error: Beim Laden der Daten ist ein Fehler aufgetreten.
+copied: Kopiert
