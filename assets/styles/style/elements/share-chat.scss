@@ -1,0 +1,77 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+livechat-share-chat {
+  display: block;
+
+  & > * {
+    margin-top: 10px;
+  }
+
+  .sub-menu-entry {
+    cursor: pointer;
+  }
+
+  .livechat-shareurl-copy {
+    display: flex;
+    flex-wrap: wrap;
+
+    button {
+      white-space: nowrap;
+    }
+
+    input {
+      flex-grow: 2;
+      width: auto !important; // must cancel the width: 100% of form-control
+    }
+  }
+
+  .livechat-shareurl-block {
+    // To avoid the height to change when switching tabs, we set a height and overflow.
+    height: 300px;
+    overflow-y: scroll;
+  }
+
+  .livechat-shareurl-options {
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 20px;
+    }
+
+    label {
+      display: block;
+    }
+
+    .livechat-shareurl-suboptions {
+      margin-left: 40px;
+
+      & > * {
+        display: block;
+      }
+
+      &.livechat-shareurl-suboptions-disabled {
+        label {
+          /* stylelint-disable-next-line custom-property-pattern */
+          color: var(--greyForegroundColor);
+        }
+      }
+    }
+  }
+
+  .livechat-shareurl-protocol {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 30px;
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+  }
+
+  .livechat-shareurl-tips {
+    min-height: 60px;
+  }
+}

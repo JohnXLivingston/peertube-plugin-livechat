@@ -5,6 +5,7 @@
 import type { Video } from '@peertube/peertube-types'
 import { getPtContext } from '../lib/contexts/peertube'
 import { initChat } from './chat'
+import './elements' // Import all needed elements.
 
 interface VideoWatchLoadedHookOptions {
   videojs: any

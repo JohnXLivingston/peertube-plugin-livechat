@@ -4,6 +4,7 @@
 
 import type { SettingEntries } from '@peertube/peertube-types'
 import type { RegisterClientOptions } from '@peertube/peertube-types/client/types'
+import type { ConverseJSTheme } from 'shared/lib/types'
 import { logger as loggerFunction } from '../../../utils/logger'
 
 // We precise some of the settings in SettingsEntries, to faciliate some type checking.
@@ -14,6 +15,9 @@ export type LiveChatSettings = SettingEntries & {
   'chat-videos-list': string
   'federation-no-remote-chat': boolean
   'chat-style': string | undefined
+  'prosody-room-allow-s2s': boolean
+  'converse-theme': ConverseJSTheme
+  'prosody-room-type': string
 }
 
 export class PtContext {

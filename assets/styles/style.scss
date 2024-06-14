@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
+@use "style/elements/share-chat.scss";
+
 #peertube-plugin-livechat-container {
   display: flex;
   flex-direction: column;
@@ -141,66 +143,6 @@ table.peertube-plugin-livechat-prosody-list-rooms td {
   border: 1px solid #555;
   color: black;
   padding: 4px 5px;
-}
-
-.peertube-plugin-livechat-shareurl-modal {
-  & > * {
-    margin-top: 10px;
-  }
-
-  .livechat-shareurl-copy {
-    display: flex;
-    flex-wrap: wrap;
-
-    button {
-      white-space: nowrap;
-    }
-
-    input {
-      flex-grow: 2;
-      width: auto !important; // must cancel the width: 100% of form-control
-    }
-  }
-
-  .livechat-shareurl-web-options,
-  .livechat-shareurl-xmpp-options {
-    input[type="checkbox"],
-    input[type="radio"] {
-      margin-right: 20px;
-    }
-
-    label {
-      display: block;
-    }
-
-    .livechat-shareurl-web-options-readonly {
-      margin-left: 40px;
-
-      & > * {
-        display: block;
-      }
-
-      &.livechat-shareurl-web-options-readonly-disabled {
-        label {
-          color: var(--gray-dark);
-        }
-      }
-    }
-  }
-
-  .livechat-shareurl-protocol {
-    display: flex;
-    flex-flow: row wrap;
-    column-gap: 30px;
-
-    input[type="radio"] {
-      margin-right: 10px;
-    }
-  }
-
-  .livechat-shareurl-tips {
-    min-height: 60px;
-  }
 }
 
 livechat-spinner,

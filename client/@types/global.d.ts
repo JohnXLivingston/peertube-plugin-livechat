@@ -110,3 +110,6 @@ declare const LOC_ACTION_REMOVE_ENTRY: string
 declare const LOC_ACTION_REMOVE_ENTRY_CONFIRM: string
 
 declare const LOC_LOADING_ERROR: string
+
+declare const LOC_SHARE_CHAT_EMBED: string
+declare const LOC_SHARE_CHAT_PEERTUBE_TIPS: string

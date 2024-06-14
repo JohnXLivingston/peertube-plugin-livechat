@@ -58,12 +58,17 @@ function getIframeUri (
   return iframeUriStr
 }
 
+interface GetXMPPAddrSettings {
+  'prosody-room-allow-s2s': boolean
+  'prosody-room-type': string
+}
+
 interface XMPPAddr {
   uri: string
   jid: string
 }
 function getXMPPAddr (
-  registerOptions: RegisterClientOptions, settings: any, video: Video
+  registerOptions: RegisterClientOptions, settings: GetXMPPAddrSettings, video: Video
 ): XMPPAddr | null {
   // returns something like xmpp:256896ac-199a-4dab-bb3a-4fd916140272@room.instance.tdl?join
   if (!settings['prosody-room-allow-s2s']) {

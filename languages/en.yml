@@ -9,8 +9,9 @@ read_only: "Read-only"
 show_scrollbarr: "Show the scrollbar"
 transparent_background: "Transparent background (for stream integration, with OBS
   for example)"
-tips_for_streamers: "Tips for streamers: To add the chat to your OBS, generate a read-only
-  link and use it as a browser source."
+tips_for_streamers: |
+  Tips for streamers: To embed the chat in your video stream using OBS for example,
+  generate a read-only link and use it as a browser source.
 copy: "Copy"
 copied: "Copied"
 link_copied: "Link copied"
@@ -518,3 +519,5 @@ action_remove_entry: Remove this entry
 action_remove_entry_confirm: Are you sure you want to remove this entry?
 
 loading_error: An error occured while loading data.
+share_chat_embed: Embed
+share_chat_peertube_tips: This link will open the chat within the Peertube interface.
