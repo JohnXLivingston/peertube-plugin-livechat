@@ -6,6 +6,7 @@
 
 livechat-share-chat {
   display: block;
+  text-align: start;
 
   & > * {
     margin-top: 10px;
@@ -72,6 +73,7 @@ livechat-share-chat {
   }
 
   .livechat-shareurl-tips {
-    min-height: 60px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 }
