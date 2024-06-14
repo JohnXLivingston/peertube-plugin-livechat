@@ -2,12 +2,25 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-const logger = {
-  log: (s: string) => console.log('[peertube-plugin-livechat] ' + s),
-  info: (s: string) => console.info('[peertube-plugin-livechat] ' + s),
-  error: (s: string) => console.error('[peertube-plugin-livechat] ' + s),
-  warn: (s: string) => console.warn('[peertube-plugin-livechat] ' + s)
+interface Logger {
+  log: (s: string) => void
+  info: (s: string) => void
+  error: (s: string) => void
+  warn: (s: string) => void
+  createLogger: (p: string) => Logger
 }
+
+function createLogger (prefix: string): Logger {
+  return {
+    log: (s: string) => console.log('[' + prefix + '] ' + s),
+    info: (s: string) => console.info('[' + prefix + '] ' + s),
+    error: (s: string) => console.error('[' + prefix + '] ' + s),
+    warn: (s: string) => console.warn('[' + prefix + '] ' + s),
+    createLogger: (p: string) => createLogger('peertube-plugin-livechat>' + p)
+  }
+}
+
+const logger = createLogger('peertube-plugin-livechat')
 
 export {
   logger

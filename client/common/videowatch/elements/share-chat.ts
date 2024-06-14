@@ -101,6 +101,11 @@ export class ShareChatElement extends LivechatElement {
     this._restorePreviousState()
   }
 
+  protected override updated (changedProperties: PropertyValues): void {
+    super.updated(changedProperties)
+    this.logger.info('Update!')
+  }
+
   protected override render = (): TemplateResult => {
     return html`
       ${tplShareChatTabs(this)}
