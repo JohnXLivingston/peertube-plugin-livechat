@@ -6,6 +6,7 @@ import { LivechatElement } from '../../lib/elements/livechat'
 import { ptTr } from '../../lib/directives/translation'
 import { html, TemplateResult } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { classMap } from 'lit/directives/class-map.js'
 
 @customElement('livechat-channel-tabs')
 export class ChannelHomeElement extends LivechatElement {
@@ -18,13 +19,19 @@ export class ChannelHomeElement extends LivechatElement {
   protected override render = (): TemplateResult => {
     return html`
       <a
-        class="sub-menu-entry ${this.active === 'configuration' ? 'active' : ''}"
+        class=${classMap({
+          'sub-menu-entry': true,
+          active: this.active === 'configuration'
+        })}
         href=${'/p/livechat/configuration/channel?channelId=' + encodeURIComponent(this.channelId ?? '')}
       >
         ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE)}
       </a>
       <a
-        class="sub-menu-entry ${this.active === 'emojis' ? 'active' : ''}"
+        class=${classMap({
+          'sub-menu-entry': true,
+          active: this.active === 'emojis'
+        })}
         href=${'/p/livechat/configuration/emojis?channelId=' + encodeURIComponent(this.channelId ?? '')}
       >
         ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_EMOJIS_TITLE)}
