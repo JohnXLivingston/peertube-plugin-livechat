@@ -1,0 +1,78 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+.peertube-plugin-livechat-buttons,
+.livechat-mini-muc-bar-buttons {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  padding-right: 12px !important; // to avoid being under the window scrollbar.
+}
+
+.peertube-plugin-livechat-button {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 36px !important;
+  margin: 5px !important;
+  padding: 2px !important;
+
+  svg {
+    height: auto; // override .peertube-button-link
+  }
+}
+
+.peertube-plugin-livechat-buttons-open,
+.livechat-mini-muc-bar-buttons {
+  .peertube-plugin-livechat-button {
+    height: 18px !important;
+    margin: 2px !important;
+    padding: 1px !important;
+  }
+}
+
+.peertube-plugin-livechat-buttons-cloned {
+  // Hiding buttons when cloned by the ConverseJS mini-muc-head plugin.
+  display: none;
+}
+
+[peertube-plugin-livechat-state="initializing"] {
+  display: none;
+}
+
+[peertube-plugin-livechat-state="open"] .peertube-plugin-livechat-button-open {
+  display: none;
+}
+
+[peertube-plugin-livechat-state="closed"] {
+  .peertube-plugin-livechat-button-promote,
+  .peertube-plugin-livechat-button-close {
+    display: none;
+  }
+}
+
+[peertube-plugin-livechat-state]:not([peertube-plugin-livechat-state="open"]) {
+  .peertube-plugin-livechat-multi-button-main {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .peertube-plugin-livechat-multi-button-secondary {
+    border-radius: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    border-left: 1px solid currentcolor;
+  }
+
+  .peertube-plugin-livechat-multi-button-last-secondary {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    margin-left: 0 !important;
+    border-left: 1px solid currentcolor;
+  }
+}

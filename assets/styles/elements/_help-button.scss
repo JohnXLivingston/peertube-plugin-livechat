@@ -1,0 +1,19 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+livechat-help-button {
+  a {
+    height: 18px !important;
+    margin: 2px !important;
+    padding: 1px !important;
+    vertical-align: middle;
+  }
+
+  svg {
+    display: block;
+    height: auto;
+  }
+}

@@ -1,0 +1,33 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+table.peertube-plugin-livechat-prosody-list-rooms {
+  border: 1px solid black;
+  margin: 5px 0;
+}
+
+table.peertube-plugin-livechat-prosody-list-rooms tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+table.peertube-plugin-livechat-prosody-list-rooms tr:nth-child(even) {
+  background-color: #fff;
+}
+
+table.peertube-plugin-livechat-prosody-list-rooms th {
+  /* stylelint-disable-next-line custom-property-pattern */
+  background-color: var(--mainHoverColor);
+  border: 1px solid black;
+  /* stylelint-disable-next-line custom-property-pattern */
+  color: var(--mainBackgroundColor);
+  padding: 4px 5px;
+}
+
+table.peertube-plugin-livechat-prosody-list-rooms td {
+  border: 1px solid #555;
+  color: black;
+  padding: 4px 5px;
+}

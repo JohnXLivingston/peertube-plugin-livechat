@@ -1,0 +1,33 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+#peertube-plugin-livechat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  // Bigger occupants sidebar when embedded near a video.
+  .chatroom .box-flyout .chatroom-body .occupants {
+    min-width: min(200px, 50%);
+  }
+}
+
+/* Note: livechat-viewer-mode-content (the form where anonymous users can
+    choose nickname or log in with external account), can be something like
+    ~180px height (at time of writing).
+    We must ensure that the 200px limit for converse-muc and converse-root is
+    always higher than livechat-viewer-mode-content max size.
+*/
+#peertube-plugin-livechat-container converse-root {
+  display: block;
+  border: 1px solid black;
+  min-height: max(30vh, 200px); // Always at least 200px, and ideally at least 30% of viewport.
+  height: 100%;
+
+  converse-muc {
+    min-height: max(30vh, 200px);
+  }
+}

@@ -1,0 +1,130 @@
+/*
+ * SPDX-FileCopyrightText: 2024 Mehdi Benadel <https://mehdibenadel.com>
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+/* We are disabling stylelint-disable custom-property-pattern so we can use Peertube var without warnings. */
+/* stylelint-disable custom-property-pattern */
+
+@use "sass:color";
+@use "../variables";
+
+livechat-dynamic-table-form {
+  // We need this variable to be known at that time
+  $bs-green: #39cc0b;
+
+  display: block;
+  margin-bottom: 3rem;
+
+  table {
+    table-layout: fixed;
+    text-align: center;
+
+    tr {
+      border: 1px var(--greyBackgroundColor) solid;
+    }
+
+    td,
+    th {
+      word-wrap: break-word;
+      vertical-align: top;
+      padding: 5px 7px;
+    }
+
+    td:last-child {
+      vertical-align: middle;
+      min-width: 28px;
+
+      > input:not([type="checkbox"]),
+      textarea {
+        min-width: 150px;
+      }
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: var(--greySecondaryBackgroundColor);
+    }
+
+    .livechat-dynamic-table-form-description-header {
+      font-size: small;
+      font-weight: lighter;
+    }
+  }
+
+  .dynamic-table-add-row-cell {
+    text-align: left;
+  }
+
+  .dynamic-table-add-row,
+  .dynamic-table-remove-row {
+    // Peertube rounded-line-height-1-5 mixins
+    line-height: variables.$button-calc-line-height;
+
+    // Peertube peertube-button mixin (but with less horizontal padding)
+    padding: 4px;
+    border: 0;
+    font-weight: variables.$font-semibold;
+    border-radius: 3px !important;
+    text-align: center;
+    cursor: pointer;
+    font-size: variables.$button-font-size;
+  }
+
+  .dynamic-table-add-row {
+    background-color: var(--bs-green);
+
+    &,
+    &:active,
+    &:focus {
+      color: #fff;
+      background-color: color.adjust($bs-green, $lightness: 5%);
+    }
+
+    &:focus,
+    &.focus-visible {
+      box-shadow: 0 0 0 0.2rem color.adjust($bs-green, $lightness: 20%);
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: color.adjust($bs-green, $lightness: 10%);
+    }
+
+    &[disabled],
+    &.disabled {
+      cursor: default;
+      color: #fff;
+      background-color: var(--inputBorderColor);
+    }
+  }
+
+  .dynamic-table-remove-row {
+    background-color: var(--bs-orange);
+
+    &,
+    &:active,
+    &:focus {
+      color: #fff;
+      background-color: var(--mainColor);
+    }
+
+    &:focus,
+    &.focus-visible {
+      box-shadow: 0 0 0 0.2rem var(--mainHoverColor);
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: var(--mainHoverColor);
+    }
+
+    &[disabled],
+    &.disabled {
+      cursor: default;
+      color: #fff;
+      background-color: var(--inputBorderColor);
+    }
+  }
+}

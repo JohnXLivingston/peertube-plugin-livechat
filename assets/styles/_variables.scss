@@ -1,0 +1,19 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+$error-color: red;
+
+/*
+ Here we are getting some Peertube variables (see _variables.scss in Peertube source code):
+ */
+
+$font-size: 13px;
+$button-calc-line-height: 19px; // $font-size + math.round(math.div($font-size, 2));
+$button-font-size: 15px;
+$font-bold: 700;
+$font-semibold: 600;
+$grey-actor-name: #777272;
+$sub-menu-margin-bottom: 30px;

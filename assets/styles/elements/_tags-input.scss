@@ -1,0 +1,160 @@
+/*
+ * SPDX-FileCopyrightText: 2024 Mehdi Benadel <https://mehdibenadel.com>
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+/* stylelint-disable custom-property-pattern */
+
+livechat-tags-input {
+  --tag-padding-vertical: 3px;
+  --tag-padding-horizontal: 6px;
+
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 320px;
+
+  .livechat-tags-container {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
+
+  // stylelint trying to rearrange unrelated root blocks because of smaller blocks in them
+  /* stylelint-disable-next-line no-descending-specificity */
+  input {
+    flex: 1;
+    border: none;
+    padding: 0;
+    color: inherit;
+    background-color: inherit;
+    width: 100%;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    &:focus {
+      outline: transparent;
+    }
+  }
+
+  .livechat-tags,
+  .livechat-tags-searched {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: var(--tag-padding-vertical) 0;
+    max-height: 150px;
+    overflow-y: auto;
+    transition-property: height, margin;
+    transition-duration: 0.3s;
+
+    @supports (scrollbar-width: auto) {
+      scrollbar-color: var(--greyForegroundColor) transparent;
+      scrollbar-width: thin;
+    }
+  }
+
+  .livechat-tags-container,
+  .livechat-tags-searched {
+    border-bottom: 1px dashed var(--greyForegroundColor);
+
+    &.livechat-empty {
+      height: 0;
+      margin: 0;
+      border: none;
+    }
+  }
+
+  .livechat-tags-searched {
+    &::after {
+      content: "\1F50D";
+      flex-grow: 1;
+      text-align: right;
+    }
+
+    &.livechat-empty {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .livechat-tag,
+  .livechat-tag-searched {
+    width: auto;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0 var(--tag-padding-horizontal);
+    font-size: 14px;
+    list-style: none;
+    border-radius: 3px;
+    margin: 0 3px 3px 0;
+    transition: 0.3s filter;
+
+    .livechat-tag-close {
+      display: block;
+      width: 12px;
+      height: 12px;
+      line-height: 12px;
+      text-align: center;
+      font-size: 10px;
+      margin-left: var(--tag-padding-horizontal);
+      color: var(--mainColor);
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+
+      &::before {
+        content: "\2715";
+      }
+    }
+
+    &,
+    &:active,
+    &:focus {
+      color: #fff;
+      background-color: var(--mainColor);
+
+      .livechat-tag-close {
+        color: var(--mainColor);
+      }
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: var(--mainHoverColor);
+
+      .livechat-tag-close {
+        color: var(--mainHoverColor);
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      cursor: default;
+      color: #fff;
+      background-color: var(--inputBorderColor);
+
+      .livechat-tag-close {
+        color: var(--inputBorderColor);
+      }
+    }
+
+    .livechat-tag-name {
+      margin-top: 3px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 250px;
+    }
+  }
+
+  .livechat-tags.livechat-unfocused .livechat-tag {
+    filter: opacity(50%) grayscale(80%);
+  }
+}

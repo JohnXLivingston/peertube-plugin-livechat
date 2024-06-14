@@ -1,0 +1,31 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+@use "variables";
+
+.peertube-plugin-livechat-experimental,
+.peertube-plugin-livechat-warning {
+  color: orange;
+}
+
+.peertube-plugin-livechat-error {
+  color: variables.$error-color;
+}
+
+.peertube-plugin-livechat-error-message {
+  /* display an error block (page not found, ...) */
+  display: block;
+  font-size: 20px;
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.peertube-plugin-livechat-container {
+  .peertube-plugin-livechat-error-message {
+    max-width: 30vw;
+  }
+}

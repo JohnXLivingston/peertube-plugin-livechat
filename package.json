@@ -23,8 +23,7 @@
     }
   ],
   "css": [
-    "dist/assets/styles/style.css",
-    "dist/assets/styles/configuration.css"
+    "dist/assets/styles/style.css"
   ],
   "dependencies": {
     "@xmpp/jid": "^0.13.1",

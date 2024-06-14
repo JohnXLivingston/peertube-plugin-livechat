@@ -1,0 +1,223 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+/* stylelint-disable custom-property-pattern */
+
+@use "sass:color";
+@use "elements/index";
+@use "../variables";
+
+$small-view: 800px;
+
+/*
+  These are styles to apply for the channel configuration pages.
+*/
+.peertube-plugin-livechat-configuration {
+  h1 {
+    padding-top: 40px;
+
+    /* See Peertube sub-menu-h1 mixin */
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--greyBackgroundColor);
+    padding-bottom: 15px;
+  }
+
+  /* Channel configuration page */
+  &.peertube-plugin-livechat-configuration-channel {
+    .peertube-plugin-livechat-configuration-channel-info {
+      /* stylelint-disable-next-line value-keyword-case */
+      color: var(--mainForegroundColor);
+
+      span:first-child {
+        /* See Peertube .video-channel-display-name */
+        font-weight: variables.$font-semibold;
+        font-size: 18px;
+      }
+
+      span:not(:first-child) {
+        /* See Peertube .video-channel-name */
+        margin-left: 5px;
+        font-size: 14px;
+        color: variables.$grey-actor-name;
+      }
+    }
+
+    h2 {
+      // See Peertube settings-big-title mixin
+      text-transform: uppercase;
+      color: var(--mainColor);
+      font-weight: variables.$font-bold;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    button[type="submit"],
+    button[type="reset"],
+    .peertube-plugin-livechat-configuration-actions button,
+    .peertube-plugin-livechat-tags-input-copy {
+      // Peertube rounded-line-height-1-5 mixins
+      line-height: variables.$button-calc-line-height;
+
+      // Peertube peertube-button mixin
+      padding: 4px 13px;
+      border: 0;
+      font-weight: variables.$font-semibold;
+      border-radius: 3px !important;
+      text-align: center;
+      cursor: pointer;
+      font-size: variables.$button-font-size;
+    }
+
+    input[type="submit"],
+    button[type="submit"],
+    .peertube-plugin-livechat-configuration-actions button,
+    .peertube-plugin-livechat-tags-input-copy {
+      // Peertube orange-button mixin
+      &,
+      &:active,
+      &:focus {
+        color: #fff;
+        background-color: var(--mainColor);
+      }
+
+      &:hover {
+        color: #fff;
+        background-color: var(--mainHoverColor);
+      }
+
+      &[disabled],
+      &.disabled {
+        cursor: default;
+        color: #fff;
+        background-color: var(--inputBorderColor);
+      }
+    }
+
+    input[type="reset"],
+    button[type="reset"] {
+      // Peertube grey-button mixin
+      background-color: var(--greyBackgroundColor);
+      color: var(--greyForegroundColor);
+
+      &:hover,
+      &:active,
+      &:focus,
+      &[disabled],
+      &.disabled {
+        color: var(--greyForegroundColor);
+        background-color: var(--greySecondaryBackgroundColor);
+      }
+
+      &[disabled],
+      &.disabled {
+        cursor: default;
+      }
+    }
+  }
+
+  /* Channel selection page */
+  &.peertube-plugin-livechat-configuration-home {
+    ul.peertube-plugin-livechat-configuration-home-channels {
+      list-style-type: none;
+
+      li {
+        align-items: center;
+        gap: 15px;
+
+        /* See Peertube row-blocks mixin, used in video-channel */
+        display: flex;
+        min-height: 130px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        /* stylelint-disable-next-line value-keyword-case */
+        border-bottom: 1px solid var(--inputBorderColor);
+
+        @media screen and (max-width: $small-view) {
+          flex-direction: column;
+          height: auto;
+          align-items: center;
+        }
+
+        .avatar {
+          /* See Peertube CSS, class avatar and avatar-80 */
+          width: 80px;
+          height: 80px;
+          min-width: 80px;
+          min-height: 80px;
+
+          &.channel {
+            border-radius: 5px;
+          }
+
+          &.initial {
+            /* See Peertube actor-avatar.component.scss */
+            background-color: #3c2109;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--initialFontSize);
+
+            &.gray {
+              background-color: #939393;
+            }
+          }
+        }
+
+        .peertube-plugin-livechat-configuration-home-info {
+          flex-grow: 1;
+
+          a {
+            /* See Peertube .video-channel-names */
+            &:hover,
+            &:focus,
+            &:active {
+              text-decoration: none !important;
+            }
+
+            &:focus:not(.focus-visible) {
+              outline: none !important;
+            }
+
+            width: fit-content;
+            display: flex;
+            align-items: baseline;
+            /* stylelint-disable-next-line value-keyword-case */
+            color: var(--mainForegroundColor);
+
+            div:first-child {
+              /* See Peertube .video-channel-display-name */
+              font-weight: variables.$font-semibold;
+              font-size: 18px;
+            }
+
+            div:not(:first-child) {
+              /* See Peertube .video-channel-name */
+              margin-left: 5px;
+              font-size: 14px;
+              color: variables.$grey-actor-name;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .peertube-livechat-emojis-col-sn {
+    width: 30%;
+  }
+
+  .peertube-livechat-emojis-col-file {
+    width: 65%;
+  }
+
+  .peertube-plugin-livechat-configuration-actions {
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+}
