@@ -70,12 +70,14 @@ export function tplShareChatTabs (el: ShareChatElement): TemplateResult {
 
 export function tplShareChatTips (el: ShareChatElement): TemplateResult {
   let label: string | undefined
+  let tips: TemplateResult | undefined
   switch (el.currentTab) {
     case 'peertube':
       label = LOC_SHARE_CHAT_PEERTUBE_TIPS
       break
     case 'embed':
       label = LOC_TIPS_FOR_STREAMERS
+      tips = html`<livechat-help-button .page=${'documentation/user/obs'}></livechat-help-button>`
       break
     case 'xmpp':
       label = LOC_CONNECT_USING_XMPP_HELP
@@ -84,7 +86,7 @@ export function tplShareChatTips (el: ShareChatElement): TemplateResult {
   if (!label) {
     return html``
   }
-  return html`<div class="livechat-shareurl-tips">${ptTr(label)}</div>`
+  return html`<div class="livechat-shareurl-tips">${ptTr(label)}${tips}</div>`
 }
 
 function _tplShareChatPeertubeOptions (_el: ShareChatElement): TemplateResult {
