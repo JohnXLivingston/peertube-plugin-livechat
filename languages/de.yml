@@ -8,8 +8,9 @@ read_only: Nur-Lesen
 show_scrollbarr: Zeige die Scrollleiste
 transparent_background: Transpatenter Hintergrund (zum Beispiel für die Streamintegration
   mit OBS)
-tips_for_streamers: "Tipps für Streamer: Um den Chat zu OBS hinzuzufügen, einen Nur-Lesen
-  Link erstellen und ihn als browser source in OBS nutzen."
+tips_for_streamers: "Tipps für Streamer: Um den Chat in Ihren Video Stream einzubinden,
+  z.B. mit OBS,\nerstellen Sie einen schreibgeschützten Link und verwenden Sie ihn
+  als Browser-Quelle.\n"
 copy: Kopieren
 link_copied: Link kopiert
 error: Fehler
@@ -484,3 +485,6 @@ action_remove_entry: Diesen Eintrag entfernen
 action_remove_entry_confirm: Sind Sie sicher, dass Sie diesen Eintrag entfernen möchten?
 loading_error: Beim Laden der Daten ist ein Fehler aufgetreten.
 copied: Kopiert
+share_chat_embed: Einbetten
+share_chat_peertube_tips: Über diesen Link wird der Chat in der Peertube-Oberfläche
+  geöffnet.
