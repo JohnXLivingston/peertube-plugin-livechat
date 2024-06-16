@@ -10,8 +10,9 @@ import { LivechatElement } from '../../lib/elements/livechat'
 import { tplShareChatCopy, tplShareChatTips, tplShareChatTabs, tplShareChatOptions } from './templates/share-chat'
 import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 import { getIframeUri, getXMPPAddr, UriOptions } from '../uri'
+import { isAnonymousUser } from '../../../utils/user'
 
-const validTabNames = ['peertube', 'embed', 'xmpp'] as const
+const validTabNames = ['peertube', 'embed', 'dock', 'xmpp'] as const
 
 type ValidTabNames = typeof validTabNames[number]
 
@@ -61,6 +62,12 @@ export class ShareChatElement extends LivechatElement {
   public xmppUriEnabled: boolean = false
 
   /**
+   * Should we render the Dock tab?
+   */
+  @property({ attribute: false })
+  public dockEnabled: boolean = false
+
+  /**
    * Can we use autocolors?
    */
   @property({ attribute: false })
@@ -100,6 +107,10 @@ export class ShareChatElement extends LivechatElement {
     super.firstUpdated(changedProperties)
     const settings = this._settings
     this.xmppUriEnabled = !!settings['prosody-room-allow-s2s']
+    // Note: for dockEnabled, we check:
+    // * that the user is logged in
+    // * that the video is local (for remote video, tests case are too complicated, and it's not the main use case, so…)
+    this.dockEnabled = !isAnonymousUser(this.ptContext.ptOptions) && this._video.isLocal
     this.autocolorsAvailable = isAutoColorsAvailable(settings['converse-theme'])
 
     this._restorePreviousState()
@@ -154,6 +165,9 @@ export class ShareChatElement extends LivechatElement {
     if (!this.xmppUriEnabled && this.currentTab === 'xmpp') {
       this.currentTab = 'peertube'
     }
+    if (!this.dockEnabled && this.currentTab === 'dock') {
+      this.currentTab = 'peertube'
+    }
   }
 
   protected _saveCurrentState (): void {
@@ -177,6 +191,7 @@ export class ShareChatElement extends LivechatElement {
     switch (this.currentTab) {
       case 'peertube': return this._computeUrlPeertube()
       case 'embed': return this._computeUrlEmbed()
+      case 'dock': return this._computeUrlDock()
       case 'xmpp': return this._computeUrlXMPP()
       default:
         return {
@@ -204,6 +219,32 @@ export class ShareChatElement extends LivechatElement {
       shareString: addr?.jid ?? '',
       openUrl: addr?.uri
     }
+  }
+
+  protected _computeUrlDock (): ComputedUrl {
+    return {
+      shareString: '',
+      openUrl: undefined
+    }
+    // const uriOptions: UriOptions = {
+    //   ignoreAutoColors: true,
+    //   permanent: true
+    // }
+
+    // // Note: for the "embed" case, the url is always the same as the iframe.
+    // // So we use getIframeUri to compte, and just change the finale result if we really want the iframe.
+    // const url = getIframeUri(this.ptContext.ptOptions, this._settings, this._video, uriOptions)
+    // if (!url) {
+    //   return {
+    //     shareString: '',
+    //     openUrl: undefined
+    //   }
+    // }
+
+    // return {
+    //   shareString: url,
+    //   openUrl: url
+    // }
   }
 
   protected _computeUrlEmbed (): ComputedUrl {

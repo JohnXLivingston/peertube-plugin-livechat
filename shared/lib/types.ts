@@ -166,6 +166,22 @@ interface ChannelEmojisConfiguration {
   emojis: ChannelEmojis
 }
 
+interface ProsodyAuthentInfos {
+  type: 'peertube' | 'oidc' | 'livechat-token'
+  jid: string
+  password: string
+  nickname?: string
+}
+
+interface LivechatToken {
+  id: number
+  label: string
+  jid: string
+  password: string
+  nickname?: string
+  date: number
+}
+
 export type {
   ConverseJSTheme,
   InitConverseJSParams,
@@ -184,5 +200,7 @@ export type {
   ExternalAuthOIDCType,
   CustomEmojiDefinition,
   ChannelEmojis,
-  ChannelEmojisConfiguration
+  ChannelEmojisConfiguration,
+  ProsodyAuthentInfos,
+  LivechatToken
 }

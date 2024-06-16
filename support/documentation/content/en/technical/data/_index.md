@@ -116,3 +116,8 @@ For example, the channel `1` will contain:
 
 * `emojis/channel/1/definition.json`: the JSON file containing the emojis definitions
 * `emojis/channel/1/files/42.png`: N image files (png, jpg, ...), using numbers as filenames.
+
+## tokens
+
+The `tokens` folder contains long term token to connect to the chat.
+See the `LivechatProsodyAuth` class for more information.

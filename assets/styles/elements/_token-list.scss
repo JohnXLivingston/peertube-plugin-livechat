@@ -1,0 +1,22 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+@use "../mixins/buttons";
+@use "../mixins/tables";
+
+livechat-token-list {
+  table {
+    @include tables.data-table;
+  }
+
+  .livechat-create-token {
+    @include buttons.button-row-add;
+  }
+
+  .livechat-revoke-token {
+    @include buttons.button-row-remove;
+  }
+}

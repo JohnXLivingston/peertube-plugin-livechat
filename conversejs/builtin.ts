@@ -12,7 +12,7 @@ import {
   remoteRoomAnonymousParams,
   remoteRoomAuthenticatedParams
 } from './lib/converse-params'
-import { getLocalAuthentInfos } from './lib/auth'
+import { getLocalAuthentInfos, getLivechatTokenAuthInfos } from './lib/auth'
 import { randomNick } from './lib/nick'
 import { slowModePlugin } from './lib/plugins/slow-mode'
 import { windowTitlePlugin } from './lib/plugins/window-title'
@@ -120,7 +120,12 @@ async function initConverse (
   // OIDC (OpenID Connect):
   const tryOIDC = (initConverseParams.externalAuthOIDC?.length ?? 0) > 0
 
-  const auth = await getLocalAuthentInfos(authenticationUrl, tryOIDC, peertubeAuthHeader)
+  let auth
+  if (chatIncludeMode === 'chat-only') {
+    // In this mode, we can check if there is a token in the url.
+    auth = getLivechatTokenAuthInfos()
+  }
+  auth ??= await getLocalAuthentInfos(authenticationUrl, tryOIDC, peertubeAuthHeader)
 
   if (auth) {
     if (!isRemoteChat) {

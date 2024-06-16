@@ -2,12 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-interface AuthentInfos {
-  type: 'peertube' | 'oidc'
-  jid: string
-  password: string
-  nickname?: string
-}
+import type { ProsodyAuthentInfos } from 'shared/lib/types'
 
 interface AuthHeader { [key: string]: string }
 
@@ -15,7 +10,7 @@ async function getLocalAuthentInfos (
   authenticationUrl: string,
   tryExternalAuth: boolean,
   peertubeAuthHeader?: AuthHeader | null
-): Promise<false | AuthentInfos> {
+): Promise<false | ProsodyAuthentInfos> {
   try {
     if (authenticationUrl === '') {
       console.error('Missing authenticationUrl')
@@ -101,7 +96,37 @@ async function getLocalAuthentInfos (
   }
 }
 
+/**
+ * Reads the livechat-token if relevant.
+ * This token can be passed to the page by adding the following hash to the window.location:
+ * `?j=the_xmpp_id&p=XXXXXXX&n=MyNickname`
+ */
+function getLivechatTokenAuthInfos (): ProsodyAuthentInfos | undefined {
+  try {
+    const hash = window.location.hash
+    if (!hash || !hash.startsWith('#?')) { return undefined }
+    // We try to read the hash as a queryString.
+    const u = new URL('http://localhost' + hash.substring(1))
+    const jid = u.searchParams.get('j')
+    const password = u.searchParams.get('p')
+    if (!jid || !password) { return undefined }
+
+    const nickname = u.searchParams.get('n') ?? undefined
+
+    return {
+      type: 'livechat-token',
+      jid,
+      password,
+      nickname
+    }
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
+
 export {
-  AuthentInfos,
-  getLocalAuthentInfos
+  ProsodyAuthentInfos,
+  getLocalAuthentInfos,
+  getLivechatTokenAuthInfos
 }

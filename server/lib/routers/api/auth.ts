@@ -6,8 +6,7 @@ import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
 import { asyncMiddleware } from '../../middlewares/async'
 import { getProsodyDomain } from '../../prosody/config/domain'
-import { prosodyRegisterUser, prosodyCheckUserPassword, prosodyUserRegistered } from '../../prosody/auth'
-import { getUserNickname } from '../../helpers'
+import { LivechatProsodyAuth } from '../../prosody/auth'
 import { ExternalAuthOIDC } from '../../external-auth/oidc'
 
 /**
@@ -45,28 +44,76 @@ async function initAuthApiRouter (options: RegisterServerOptions, router: Router
         }
       }
 
-      if (!user) {
+      const tempPassword = await LivechatProsodyAuth.singleton().getUserTempPassword(user)
+      if (!tempPassword) {
         res.sendStatus(403)
         return
       }
-      if (user.blocked) {
-        res.sendStatus(403)
-        return
+      res.status(200).json(tempPassword)
+    }
+  ))
+
+  router.get('/auth/tokens', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      const user = await options.peertubeHelpers.user.getAuthUser(res)
+
+      try {
+        const tokens = await LivechatProsodyAuth.singleton().getUserTokens(user)
+        if (!tokens) {
+          res.sendStatus(403)
+          return
+        }
+        res.status(200).json(tokens)
+      } catch (err) {
+        options.peertubeHelpers.logger.error(err as string)
+        res.sendStatus(500)
       }
-      // NB 2021-08-05: Peertube usernames should be lowercase. But it seems that
-      // in some old installation, there can be uppercase letters in usernames.
-      // When Peertube checks username unicity, it does a lowercase search.
-      // So it feels safe to normalize usernames like so:
-      const normalizedUsername = user.username.toLowerCase()
-      const prosodyDomain = await getProsodyDomain(options)
-      const password: string = await prosodyRegisterUser(normalizedUsername)
-      const nickname: string | undefined = await getUserNickname(options, user)
-      res.status(200).json({
-        jid: normalizedUsername + '@' + prosodyDomain,
-        password: password,
-        nickname: nickname,
-        type: 'peertube'
-      })
+    }
+  ))
+
+  router.post('/auth/tokens', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      const user = await options.peertubeHelpers.user.getAuthUser(res)
+
+      try {
+        const label = req.body.label
+        if ((typeof label !== 'string') || !label) {
+          res.sendStatus(400)
+          return
+        }
+        const token = await LivechatProsodyAuth.singleton().createUserToken(user, label)
+        if (!token) {
+          res.sendStatus(403)
+          return
+        }
+        res.status(200).json(token)
+      } catch (err) {
+        options.peertubeHelpers.logger.error(err as string)
+        res.sendStatus(500)
+      }
+    }
+  ))
+
+  router.delete('/auth/tokens/:tokenId', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      const user = await options.peertubeHelpers.user.getAuthUser(res)
+
+      try {
+        const tokenId = parseInt(req.params.tokenId)
+        if (isNaN(tokenId)) {
+          res.sendStatus(400)
+          return
+        }
+        const r = await LivechatProsodyAuth.singleton().revokeUserToken(user, tokenId)
+        if (!r) {
+          res.sendStatus(403)
+          return
+        }
+        res.status(200).json(true)
+      } catch (err) {
+        options.peertubeHelpers.logger.error(err as string)
+        res.sendStatus(500)
+      }
     }
   ))
 }
@@ -97,7 +144,7 @@ async function initUserAuthApiRouter (options: RegisterServerOptions, router: Ro
         res.status(200).send('false')
         return
       }
-      if (user && pass && await prosodyCheckUserPassword(user as string, pass as string)) {
+      if (user && pass && await LivechatProsodyAuth.singleton().checkUserPassword(user as string, pass as string)) {
         res.status(200).send('true')
         return
       }
@@ -115,7 +162,7 @@ async function initUserAuthApiRouter (options: RegisterServerOptions, router: Ro
         res.status(200).send('false')
         return
       }
-      if (user && await prosodyUserRegistered(user as string)) {
+      if (user && await LivechatProsodyAuth.singleton().userRegistered(user as string)) {
         res.status(200).send('true')
         return
       }

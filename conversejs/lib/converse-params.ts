@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { InitConverseJSParams } from 'shared/lib/types'
-import type { AuthentInfos } from './auth'
+import type { ProsodyAuthentInfos } from './auth'
 
 /**
  * Instanciate defaults params to use for ConverseJS.
@@ -140,7 +140,7 @@ function defaultConverseParams (
  */
 function localRoomAuthenticatedParams (
   initConverseParams: InitConverseJSParams,
-  auth: AuthentInfos, params: any
+  auth: ProsodyAuthentInfos, params: any
 ): void {
   _fillAuthenticatedParams(initConverseParams, auth, params)
   _fillLocalProtocols(initConverseParams, params)
@@ -164,7 +164,7 @@ function localRoomAnonymousParams (initConverseParams: InitConverseJSParams, par
  */
 function remoteRoomAuthenticatedParams (
   initConverseParams: InitConverseJSParams,
-  auth: AuthentInfos, params: any
+  auth: ProsodyAuthentInfos, params: any
 ): void {
   _fillAuthenticatedParams(initConverseParams, auth, params)
   _fillLocalProtocols(initConverseParams, params)
@@ -178,7 +178,7 @@ function remoteRoomAuthenticatedParams (
  */
 function remoteRoomAnonymousParams (
   initConverseParams: InitConverseJSParams,
-  auth: AuthentInfos | null,
+  auth: ProsodyAuthentInfos | null,
   params: any
 ): void {
   params.jid = initConverseParams.remoteAnonymousJID
@@ -188,7 +188,11 @@ function remoteRoomAnonymousParams (
   _fillRemoteProtocols(initConverseParams, params)
 }
 
-function _fillAuthenticatedParams (initConverseParams: InitConverseJSParams, auth: AuthentInfos, params: any): void {
+function _fillAuthenticatedParams (
+  initConverseParams: InitConverseJSParams,
+  auth: ProsodyAuthentInfos,
+  params: any
+): void {
   params.authentication = 'login'
   params.auto_login = true
   params.jid = auth.jid

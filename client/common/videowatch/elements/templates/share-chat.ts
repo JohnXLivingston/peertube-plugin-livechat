@@ -22,7 +22,11 @@ export function tplShareChatCopy (el: ShareChatElement): TemplateResult {
         input.setSelectionRange(0, 99999) /* For mobile devices */
       }}
     />
-    <button type="button" class="btn btn-outline-secondary text-uppercase" @click=${el.copyUrl}>
+    <button
+      type="button" class="btn btn-outline-secondary text-uppercase"
+      @click=${el.copyUrl}
+      ?disabled=${!computedUrl.shareString}
+    >
       ${ptTr(LOC_COPY)}
     </button>
     <button
@@ -61,6 +65,11 @@ export function tplShareChatTabs (el: ShareChatElement): TemplateResult {
   ${_tplShareChatTab(el, 'peertube', LOC_WEB)}
     ${_tplShareChatTab(el, 'embed', LOC_SHARE_CHAT_EMBED)}
     ${
+      el.dockEnabled
+        ? _tplShareChatTab(el, 'dock', LOC_SHARE_CHAT_DOCK)
+        : ''
+    }
+    ${
       el.xmppUriEnabled
         ? _tplShareChatTab(el, 'xmpp', LOC_CONNECT_USING_XMPP)
         : ''
@@ -77,6 +86,10 @@ export function tplShareChatTips (el: ShareChatElement): TemplateResult {
       break
     case 'embed':
       label = LOC_TIPS_FOR_STREAMERS
+      tips = html`<livechat-help-button .page=${'documentation/user/obs'}></livechat-help-button>`
+      break
+    case 'dock':
+      label = LOC_SHARE_CHAT_DOCK_TIPS
       tips = html`<livechat-help-button .page=${'documentation/user/obs'}></livechat-help-button>`
       break
     case 'xmpp':
@@ -154,6 +167,10 @@ function _tplShareChatEmbedOptions (el: ShareChatElement): TemplateResult {
   `
 }
 
+function _tplShareChatDockOptions (_el: ShareChatElement): TemplateResult {
+  return html`<livechat-token-list mode="select"></livechat-token-list>`
+}
+
 function _tplShareChatXMPPOptions (_el: ShareChatElement): TemplateResult {
   return html``
 }
@@ -166,6 +183,9 @@ export function tplShareChatOptions (el: ShareChatElement): TemplateResult {
       break
     case 'embed':
       tpl = _tplShareChatEmbedOptions(el)
+      break
+    case 'dock':
+      tpl = _tplShareChatDockOptions(el)
       break
     case 'xmpp':
       tpl = _tplShareChatXMPPOptions(el)

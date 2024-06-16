@@ -521,3 +521,18 @@ action_remove_entry_confirm: Are you sure you want to remove this entry?
 loading_error: An error occured while loading data.
 share_chat_embed: Embed
 share_chat_peertube_tips: This link will open the chat within the Peertube interface.
+share_chat_dock: Dock
+share_chat_dock_tips: |
+  You can generate a link that will open the chat in full page, logged in with your Peertube account.
+  This can be use, for example, to have a web dock in your OBS, so you can read and interact with the chat directly from OBS.
+  Don't share this link to anyone, as it would allow them to connect as yourself.
+  Please find bellow the list of authentication token you have already generated.
+  You can create a new one, or revoke any previous token.
+  Please note that these tokens have no expiration date.
+
+token_label: Label
+token_jid: Username
+token_password: Password token
+token_action_create: Create a new token
+token_action_revoke: Revoke the token
+token_default_label: Token generated from the web interface

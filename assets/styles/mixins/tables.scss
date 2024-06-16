@@ -1,0 +1,39 @@
+/*
+ * SPDX-FileCopyrightText: 2024 Mehdi Benadel <https://mehdibenadel.com>
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+/* We are disabling stylelint-disable custom-property-pattern so we can use Peertube var without warnings. */
+/* stylelint-disable custom-property-pattern */
+
+@mixin data-table {
+  table-layout: fixed;
+  text-align: center;
+
+  tr {
+    border: 1px var(--greyBackgroundColor) solid;
+  }
+
+  td,
+  th {
+    word-wrap: break-word;
+    vertical-align: top;
+    padding: 5px 7px;
+  }
+
+  td:last-child {
+    vertical-align: middle;
+    min-width: 28px;
+
+    > input:not([type="checkbox"]),
+    textarea {
+      min-width: 150px;
+    }
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: var(--greySecondaryBackgroundColor);
+  }
+}

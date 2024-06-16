@@ -1,0 +1,89 @@
+/*
+ * SPDX-FileCopyrightText: 2024 Mehdi Benadel <https://mehdibenadel.com>
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+@use "sass:color";
+@use "../variables";
+
+/* We are disabling stylelint-disable custom-property-pattern so we can use Peertube var without warnings. */
+/* stylelint-disable custom-property-pattern */
+
+// We need this variable to be known at that time
+$bs-green: #39cc0b;
+
+@mixin button-row {
+  // Peertube rounded-line-height-1-5 mixins
+  line-height: variables.$button-calc-line-height;
+
+  // Peertube peertube-button mixin (but with less horizontal padding)
+  padding: 4px;
+  border: 0;
+  font-weight: variables.$font-semibold;
+  border-radius: 3px !important;
+  text-align: center;
+  cursor: pointer;
+  font-size: variables.$button-font-size;
+}
+
+@mixin button-row-add {
+  @include button-row;
+
+  background-color: var(--bs-green);
+
+  &,
+  &:active,
+  &:focus {
+    color: #fff;
+    background-color: color.adjust($bs-green, $lightness: 5%);
+  }
+
+  &:focus,
+  &.focus-visible {
+    box-shadow: 0 0 0 0.2rem color.adjust($bs-green, $lightness: 20%);
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: color.adjust($bs-green, $lightness: 10%);
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: default;
+    color: #fff;
+    background-color: var(--inputBorderColor);
+  }
+}
+
+@mixin button-row-remove {
+  @include button-row;
+
+  background-color: var(--bs-orange);
+
+  &,
+  &:active,
+  &:focus {
+    color: #fff;
+    background-color: var(--mainColor);
+  }
+
+  &:focus,
+  &.focus-visible {
+    box-shadow: 0 0 0 0.2rem var(--mainHoverColor);
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: var(--mainHoverColor);
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: default;
+    color: #fff;
+    background-color: var(--inputBorderColor);
+  }
+}
