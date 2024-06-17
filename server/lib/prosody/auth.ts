@@ -19,6 +19,16 @@ type SavedLivechatToken = Omit<LivechatToken, 'jid' | 'nickname' | 'password'> &
   encryptedPassword: string
 }
 
+interface SavedUserData {
+  userId: number
+  tokens: SavedLivechatToken[]
+}
+
+interface LivechatTokenInfos {
+  userId: number
+  tokens: LivechatToken[]
+}
+
 async function getRandomBytes (size: number): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     randomBytes(size, (err, buf) => {
@@ -55,7 +65,7 @@ export class LivechatProsodyAuth {
   private readonly _prosodyDomain: string
   private readonly _tokensPath: string
   private readonly _passwords: Map<string, Password> = new Map()
-  private readonly _jidTokens: Map<string, LivechatToken[]> = new Map()
+  private readonly _tokensInfoByJID: Map<string, LivechatTokenInfos | undefined> = new Map()
   private readonly _secretKey: string
   protected readonly _logger: {
     debug: (s: string) => void
@@ -118,13 +128,47 @@ export class LivechatProsodyAuth {
 
   public async userRegistered (normalizedUsername: string): Promise<boolean> {
     const entry = this._getAndClean(normalizedUsername)
-    return !!entry
+    if (entry) {
+      return true
+    }
+    try {
+      const tokensInfo = await this._getTokensInfoForJID(normalizedUsername + '@' + this._prosodyDomain)
+      if (!tokensInfo || !tokensInfo.tokens.length) {
+        return false
+      }
+      // Checking that the user is valid:
+      if (await this._userIdValid(tokensInfo.userId)) {
+        return true
+      }
+    } catch (err) {
+      this._logger.error(err as string)
+      return false
+    }
+    return false
   }
 
   public async checkUserPassword (normalizedUsername: string, password: string): Promise<boolean> {
     const entry = this._getAndClean(normalizedUsername)
     if (entry && entry.password === password) {
       return true
+    }
+    try {
+      const tokensInfo = await this._getTokensInfoForJID(normalizedUsername + '@' + this._prosodyDomain)
+      if (!tokensInfo || !tokensInfo.tokens.length) {
+        return false
+      }
+      // Checking that the user is valid:
+      if (!await this._userIdValid(tokensInfo.userId)) {
+        return false
+      }
+
+      // Is the password in tokens?
+      if (tokensInfo.tokens.find((t) => t.password === password)) {
+        return true
+      }
+    } catch (err) {
+      this._logger.error(err as string)
+      return false
     }
     return false
   }
@@ -135,41 +179,80 @@ export class LivechatProsodyAuth {
    * @param user the user
    */
   public async getUserTokens (user: MUserDefault): Promise<LivechatToken[] | undefined> {
+    if (!user || !user.id) {
+      return undefined
+    }
+    if (user.blocked) {
+      return undefined
+    }
     const normalizedUsername = this._normalizeUsername(user)
     if (!normalizedUsername) {
       return undefined
     }
     const nickname: string | undefined = await getUserNickname(this._options, user)
     const jid = normalizedUsername + '@' + this._prosodyDomain
-    const tokens = await this._getJIDTokens(jid)
-    for (const token of tokens) {
-      token.nickname = nickname
+    const tokensInfo = await this._getTokensInfoForJID(jid)
+    if (!tokensInfo) { return [] }
+
+    if (tokensInfo.userId !== user.id) {
+      return undefined
+    }
+
+    const tokens = []
+    for (const token of tokensInfo.tokens) {
+      // Cloning, and adding the nickname.
+      tokens.push(
+        Object.assign({}, token, {
+          nickname
+        })
+      )
     }
     return tokens
   }
 
   public async createUserToken (user: MUserDefault, label: string): Promise<LivechatToken | undefined> {
+    if (!user || !user.id) {
+      return undefined
+    }
+    if (user.blocked) {
+      return undefined
+    }
     const normalizedUsername = this._normalizeUsername(user)
     if (!normalizedUsername) {
       return undefined
     }
     const nickname: string | undefined = await getUserNickname(this._options, user)
     const jid = normalizedUsername + '@' + this._prosodyDomain
-    const token = await this._createJIDToken(jid, label)
+    const token = await this._createToken(user.id, jid, label)
+
     token.nickname = nickname
     return token
   }
 
   public async revokeUserToken (user: MUserDefault, id: number): Promise<boolean> {
+    if (!user || !user.id) {
+      return false
+    }
+    if (user.blocked) {
+      return false
+    }
     const normalizedUsername = this._normalizeUsername(user)
     if (!normalizedUsername) {
       return false
     }
     const jid = normalizedUsername + '@' + this._prosodyDomain
-    let tokens = await this._getJIDTokens(jid)
+    const tokensInfo = await this._getTokensInfoForJID(jid)
 
-    tokens = tokens.filter(t => t.id !== id)
-    await this._saveJIDTokens(jid, tokens)
+    if (!tokensInfo) {
+      // No saved token, consider ok.
+      return true
+    }
+
+    if (tokensInfo.userId !== user.id) {
+      return false
+    }
+
+    await this._saveTokens(user.id, jid, tokensInfo.tokens.filter(t => t.id !== id))
     return true
   }
 
@@ -190,7 +273,7 @@ export class LivechatProsodyAuth {
   }
 
   private _normalizeUsername (user: MUserDefault): string | undefined {
-    if (!user) {
+    if (!user || !user.id) {
       return undefined
     }
     if (user.blocked) {
@@ -204,15 +287,25 @@ export class LivechatProsodyAuth {
     return normalizedUsername
   }
 
-  private _getAndClean (user: string): Password | undefined {
-    const entry = this._passwords.get(user)
+  private _getAndClean (normalizedUsername: string): Password | undefined {
+    const entry = this._passwords.get(normalizedUsername)
     if (entry) {
       if (entry.validity > Date.now()) {
         return entry
       }
-      this._passwords.delete(user)
+      this._passwords.delete(normalizedUsername)
     }
     return undefined
+  }
+
+  private async _userIdValid (userId: number): Promise<boolean> {
+    try {
+      const user = await this._options.peertubeHelpers.user.loadById(userId)
+      if (!user || user.blocked) { return false }
+      return true
+    } catch (err) {
+      return false
+    }
   }
 
   private _jidTokenPath (jid: string): string {
@@ -223,22 +316,22 @@ export class LivechatProsodyAuth {
     return path.join(this._tokensPath, jid + '.json')
   }
 
-  private async _getJIDTokens (jid: string): Promise<LivechatToken[]> {
+  private async _getTokensInfoForJID (jid: string): Promise<LivechatTokenInfos | undefined> {
     try {
-      const cached = this._jidTokens.get(jid)
+      const cached = this._tokensInfoByJID.get(jid)
       if (cached) {
         return cached
       }
 
       const filePath = this._jidTokenPath(jid)
       const content = await fs.promises.readFile(filePath)
-      const json = JSON.parse(content.toString()) as SavedLivechatToken[]
-      if (!Array.isArray(json)) {
+      const json = JSON.parse(content.toString()) as SavedUserData
+      if ((typeof json !== 'object') || (typeof json.userId !== 'number') || (!Array.isArray(json.tokens))) {
         throw new Error('Invalid token file content')
       }
 
       const tokens: LivechatToken[] = []
-      for (const entry of json) {
+      for (const entry of json.tokens) {
         const token: LivechatToken = {
           jid,
           password: await this._decrypt(entry.encryptedPassword),
@@ -249,24 +342,29 @@ export class LivechatProsodyAuth {
         tokens.push(token)
       }
 
-      this._jidTokens.set(jid, tokens)
-      return tokens
+      const d = {
+        userId: json.userId,
+        tokens
+      }
+      this._tokensInfoByJID.set(jid, d)
+      return d
     } catch (err: any) {
       if (('code' in err) && err.code === 'ENOENT') {
         // User has no token, this is normal.
-        this._jidTokens.set(jid, [])
-        return []
+        this._tokensInfoByJID.set(jid, undefined)
+        return undefined
       }
       throw err
     }
   }
 
-  private async _createJIDToken (jid: string, label: string): Promise<LivechatToken> {
-    const tokens = await this._getJIDTokens(jid)
+  private async _createToken (userId: number, jid: string, label: string): Promise<LivechatToken> {
+    const tokensInfo = (await this._getTokensInfoForJID(jid)) ?? { userId, tokens: [] }
+
     // Using Date.now result as id, so we are pretty sure to not have 2 tokens with the same id.
     const now = Date.now()
     const id = now
-    if (tokens.find(t => t.id === id)) {
+    if (tokensInfo.tokens.find(t => t.id === id)) {
       throw new Error('There is already a token with this id.')
     }
 
@@ -279,16 +377,24 @@ export class LivechatProsodyAuth {
       password,
       label
     }
-    tokens.push(newToken)
-    await this._saveJIDTokens(jid, tokens)
+    tokensInfo.tokens.push(newToken)
+    await this._saveTokens(userId, jid, tokensInfo.tokens)
     return newToken
   }
 
-  private async _saveJIDTokens (jid: string, tokens: LivechatToken[]): Promise<void> {
-    this._jidTokens.set(jid, tokens)
-    const toSave: SavedLivechatToken[] = []
+  private async _saveTokens (userId: number, jid: string, tokens: LivechatToken[]): Promise<void> {
+    const ti = {
+      userId,
+      tokens
+    }
+    this._tokensInfoByJID.set(jid, ti)
+
+    const toSave: SavedUserData = {
+      userId,
+      tokens: []
+    }
     for (const t of tokens) {
-      toSave.push({
+      toSave.tokens.push({
         id: t.id,
         date: t.date,
         encryptedPassword: await this._encrypt(t.password),
