@@ -18,6 +18,7 @@ export type LiveChatSettings = SettingEntries & {
   'prosody-room-allow-s2s': boolean
   'converse-theme': ConverseJSTheme
   'prosody-room-type': string
+  'livechat-token-disabled': boolean
 }
 
 export class PtContext {

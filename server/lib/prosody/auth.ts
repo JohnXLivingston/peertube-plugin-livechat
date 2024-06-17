@@ -63,6 +63,7 @@ let singleton: LivechatProsodyAuth | undefined
 export class LivechatProsodyAuth {
   private readonly _options: RegisterServerOptions
   private readonly _prosodyDomain: string
+  private _userTokensEnabled: boolean
   private readonly _tokensPath: string
   private readonly _passwords: Map<string, Password> = new Map()
   private readonly _tokensInfoByJID: Map<string, LivechatTokenInfos | undefined> = new Map()
@@ -80,9 +81,10 @@ export class LivechatProsodyAuth {
     outputEncoding: 'hex' as Encoding
   }
 
-  constructor (options: RegisterServerOptions, prosodyDomain: string, secretKey: string) {
+  constructor (options: RegisterServerOptions, prosodyDomain: string, userTokensEnabled: boolean, secretKey: string) {
     this._options = options
     this._prosodyDomain = prosodyDomain
+    this._userTokensEnabled = userTokensEnabled
     this._secretKey = secretKey
     this._tokensPath = path.join(
       options.peertubeHelpers.plugin.getDataDirectoryPath(),
@@ -131,18 +133,20 @@ export class LivechatProsodyAuth {
     if (entry) {
       return true
     }
-    try {
-      const tokensInfo = await this._getTokensInfoForJID(normalizedUsername + '@' + this._prosodyDomain)
-      if (!tokensInfo || !tokensInfo.tokens.length) {
+    if (this._userTokensEnabled) {
+      try {
+        const tokensInfo = await this._getTokensInfoForJID(normalizedUsername + '@' + this._prosodyDomain)
+        if (!tokensInfo || !tokensInfo.tokens.length) {
+          return false
+        }
+        // Checking that the user is valid:
+        if (await this._userIdValid(tokensInfo.userId)) {
+          return true
+        }
+      } catch (err) {
+        this._logger.error(err as string)
         return false
       }
-      // Checking that the user is valid:
-      if (await this._userIdValid(tokensInfo.userId)) {
-        return true
-      }
-    } catch (err) {
-      this._logger.error(err as string)
-      return false
     }
     return false
   }
@@ -152,23 +156,25 @@ export class LivechatProsodyAuth {
     if (entry && entry.password === password) {
       return true
     }
-    try {
-      const tokensInfo = await this._getTokensInfoForJID(normalizedUsername + '@' + this._prosodyDomain)
-      if (!tokensInfo || !tokensInfo.tokens.length) {
-        return false
-      }
-      // Checking that the user is valid:
-      if (!await this._userIdValid(tokensInfo.userId)) {
-        return false
-      }
+    if (this._userTokensEnabled) {
+      try {
+        const tokensInfo = await this._getTokensInfoForJID(normalizedUsername + '@' + this._prosodyDomain)
+        if (!tokensInfo || !tokensInfo.tokens.length) {
+          return false
+        }
+        // Checking that the user is valid:
+        if (!await this._userIdValid(tokensInfo.userId)) {
+          return false
+        }
 
-      // Is the password in tokens?
-      if (tokensInfo.tokens.find((t) => t.password === password)) {
-        return true
+        // Is the password in tokens?
+        if (tokensInfo.tokens.find((t) => t.password === password)) {
+          return true
+        }
+      } catch (err) {
+        this._logger.error(err as string)
+        return false
       }
-    } catch (err) {
-      this._logger.error(err as string)
-      return false
     }
     return false
   }
@@ -179,6 +185,9 @@ export class LivechatProsodyAuth {
    * @param user the user
    */
   public async getUserTokens (user: MUserDefault): Promise<LivechatToken[] | undefined> {
+    if (!this._userTokensEnabled) {
+      return undefined
+    }
     if (!user || !user.id) {
       return undefined
     }
@@ -210,7 +219,22 @@ export class LivechatProsodyAuth {
     return tokens
   }
 
+  /**
+   * Enable or disable user tokens. Must be called when the settings change.
+   * @param enabled
+   */
+  public setUserTokensEnabled (enabled: boolean): void {
+    this._userTokensEnabled = !!enabled
+    if (!this.userRegistered) {
+      // Empty the cache:
+      this._tokensInfoByJID.clear()
+    }
+  }
+
   public async createUserToken (user: MUserDefault, label: string): Promise<LivechatToken | undefined> {
+    if (!this._userTokensEnabled) {
+      return undefined
+    }
     if (!user || !user.id) {
       return undefined
     }
@@ -230,6 +254,9 @@ export class LivechatProsodyAuth {
   }
 
   public async revokeUserToken (user: MUserDefault, id: number): Promise<boolean> {
+    if (!this._userTokensEnabled) {
+      return false
+    }
     if (!user || !user.id) {
       return false
     }
@@ -448,12 +475,13 @@ export class LivechatProsodyAuth {
       await options.storageManager.storeData('livechat-prosody-auth-secretkey', secretKey)
     }
 
-    singleton = new LivechatProsodyAuth(options, prosodyDomain, secretKey)
+    const userTokenDisabled = await options.settingsManager.getSetting('livechat-token-disabled')
+
+    singleton = new LivechatProsodyAuth(options, prosodyDomain, !userTokenDisabled, secretKey)
     return singleton
   }
 
   public static async destroySingleton (): Promise<void> {
-    // TODO: sync to disk
     singleton = undefined
   }
 }

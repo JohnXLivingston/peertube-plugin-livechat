@@ -111,7 +111,12 @@ export class ShareChatElement extends LivechatElement {
     // Note: for dockEnabled, we check:
     // * that the user is logged in
     // * that the video is local (for remote video, tests case are too complicated, and it's not the main use case, so…)
-    this.dockEnabled = !isAnonymousUser(this.ptContext.ptOptions) && this._video.isLocal
+    // * settings is not disabled
+    this.dockEnabled = (
+      !isAnonymousUser(this.ptContext.ptOptions) &&
+      this._video.isLocal &&
+      !settings['livechat-token-disabled']
+    )
     this.autocolorsAvailable = isAutoColorsAvailable(settings['converse-theme'])
 
     this._restorePreviousState()

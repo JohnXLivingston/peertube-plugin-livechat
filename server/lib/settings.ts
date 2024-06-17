@@ -9,6 +9,7 @@ import { RoomChannel } from './room-channel'
 import { BotsCtl } from './bots/ctl'
 import { ExternalAuthOIDC, ExternalAuthOIDCType } from './external-auth/oidc'
 import { Emojis } from './emojis'
+import { LivechatProsodyAuth } from './prosody/auth'
 import { loc } from './loc'
 const escapeHTML = require('escape-html')
 
@@ -21,6 +22,7 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
   initImportantNotesSettings(options)
   initChatSettings(options)
   initFederationSettings(options)
+  initAuth(options)
   initExternalAuth(options)
   initAdvancedChannelCustomizationSettings(options)
   initChatBehaviourSettings(options)
@@ -72,6 +74,8 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
     // recreating a Emojis singleton
     await Emojis.destroySingleton()
     await Emojis.initSingleton(options)
+
+    LivechatProsodyAuth.singleton().setUserTokensEnabled(!settings['livechat-token-disabled'])
 
     peertubeHelpers.logger.info('Saving settings, ensuring prosody is running')
     await ensureProsodyRunning(options)
@@ -178,6 +182,35 @@ function initFederationSettings ({ registerSetting }: RegisterServerOptions): vo
     type: 'input-checkbox',
     default: false,
     private: true
+  })
+}
+
+/**
+ * Initialize settings related to authentication.
+ * @param options peertube server options
+ */
+function initAuth (options: RegisterServerOptions): void {
+  const registerSetting = options.registerSetting
+
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('auth_description')
+  })
+
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('experimental_warning')
+  })
+
+  registerSetting({
+    name: 'livechat-token-disabled',
+    label: loc('livechat_token_disabled_label'),
+    descriptionHTML: loc('livechat_token_disabled_description'),
+    type: 'input-checkbox',
+    default: false,
+    private: false
   })
 }
 

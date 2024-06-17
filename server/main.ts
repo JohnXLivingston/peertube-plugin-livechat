@@ -52,7 +52,7 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await initSettings(options)
 
   await Emojis.initSingleton(options) // after settings, before routes
-  await LivechatProsodyAuth.initSingleton(options)
+  await LivechatProsodyAuth.initSingleton(options) // after settings, before routes
 
   await initCustomFields(options)
   await initRouters(options)

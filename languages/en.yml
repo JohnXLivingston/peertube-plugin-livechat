@@ -536,3 +536,11 @@ token_action_create: Create a new token
 token_action_revoke: Revoke the token
 token_default_label: Token generated from the web interface
 token_action_revoke_confirm: Are you sure you want to revoke this token?
+auth_description: |
+  <h3>Authentication</h3>
+livechat_token_disabled_label: 'Disable livechat tokens'
+livechat_token_disabled_description: |
+  Users can generate long term tokens to connect to the chat.
+  These tokens can for example be used to include the chat in OBS web docks.
+  Check <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/user/obs" target="_blank">the documentation</a> for more information.
+  You can disable this feature by checking this setting.

@@ -24,6 +24,12 @@ Following settings concern the federation with other Peertube instances, and oth
 
 {{% livechat_label federation_dont_publish_remotely_description %}}
 
+## Authentication
+
+### {{% livechat_label livechat_token_disabled_label %}}
+
+In case you have any trouble with the long term authentication tokens, you can disable the feature here.
+
 ## External Authentication
 
 See the detailed documentation page:
