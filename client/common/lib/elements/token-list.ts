@@ -42,6 +42,10 @@ export class LivechatTokenListElement extends LivechatElement {
     return new Task(this, {
       task: async () => {
         this.tokenList = await this._tokenListService.fetchTokenList()
+        if (this.mode === 'select' && this.tokenList.length) {
+          this.currentSelectedToken = this.tokenList[0]
+          this.dispatchEvent(new CustomEvent('update', {}))
+        }
         this.actionDisabled = false
       },
       args: () => []
@@ -57,13 +61,17 @@ export class LivechatTokenListElement extends LivechatElement {
   }
 
   public selectToken (ev: Event, token: LivechatToken): void {
-    ev.preventDefault()
     if (!this.tokenList?.includes(token)) { return }
     this.currentSelectedToken = token
+    this.requestUpdate('tokenList')
     this.dispatchEvent(new CustomEvent('update', {}))
   }
 
   public async revokeToken (token: LivechatToken): Promise<void> {
+    const confirmMsg = await this.ptTranslate(LOC_TOKEN_ACTION_REVOKE_CONFIRM)
+    // Note: we can't use peertube showModal to confirm if we already are in a modal...
+    if (!window.confirm(confirmMsg)) { return }
+
     this.actionDisabled = true
     try {
       await this._tokenListService.revokeToken(token)

@@ -167,8 +167,13 @@ function _tplShareChatEmbedOptions (el: ShareChatElement): TemplateResult {
   `
 }
 
-function _tplShareChatDockOptions (_el: ShareChatElement): TemplateResult {
-  return html`<livechat-token-list mode="select"></livechat-token-list>`
+function _tplShareChatDockOptions (el: ShareChatElement): TemplateResult {
+  return html`<livechat-token-list
+    mode="select"
+    @update=${(_e: CustomEvent) => {
+      el.requestUpdate()
+    }}
+  ></livechat-token-list>`
 }
 
 function _tplShareChatXMPPOptions (_el: ShareChatElement): TemplateResult {

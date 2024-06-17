@@ -10,6 +10,18 @@
 livechat-token-list {
   table {
     @include tables.data-table;
+
+    width: 100%;
+
+    tr th:first-child,
+    tr th:last-child {
+      width: 50px;
+    }
+
+    label {
+      // Reset some styles set by peertube
+      font-weight: inherit;
+    }
   }
 
   .livechat-create-token {

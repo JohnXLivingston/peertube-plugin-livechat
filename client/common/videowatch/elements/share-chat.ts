@@ -4,6 +4,7 @@
 
 import type { Video } from '@peertube/peertube-types'
 import type { LiveChatSettings } from '../../lib/contexts/peertube'
+import type { LivechatTokenListElement } from '../../lib/elements/token-list'
 import { html, PropertyValues, TemplateResult } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { LivechatElement } from '../../lib/elements/livechat'
@@ -222,29 +223,37 @@ export class ShareChatElement extends LivechatElement {
   }
 
   protected _computeUrlDock (): ComputedUrl {
-    return {
-      shareString: '',
-      openUrl: undefined
+    const tokenList: LivechatTokenListElement | null = this.querySelector('livechat-token-list')
+    const token = tokenList?.currentSelectedToken
+    if (!token) {
+      return {
+        shareString: '',
+        openUrl: undefined
+      }
     }
-    // const uriOptions: UriOptions = {
-    //   ignoreAutoColors: true,
-    //   permanent: true
-    // }
+    const uriOptions: UriOptions = {
+      ignoreAutoColors: true,
+      permanent: true
+    }
 
-    // // Note: for the "embed" case, the url is always the same as the iframe.
-    // // So we use getIframeUri to compte, and just change the finale result if we really want the iframe.
-    // const url = getIframeUri(this.ptContext.ptOptions, this._settings, this._video, uriOptions)
-    // if (!url) {
-    //   return {
-    //     shareString: '',
-    //     openUrl: undefined
-    //   }
-    // }
+    let url = getIframeUri(this.ptContext.ptOptions, this._settings, this._video, uriOptions)
+    if (!url) {
+      return {
+        shareString: '',
+        openUrl: undefined
+      }
+    }
 
-    // return {
-    //   shareString: url,
-    //   openUrl: url
-    // }
+    url += '#?p=' + encodeURIComponent(token.password)
+    url += '&j=' + encodeURIComponent(token.jid)
+    if (token.nickname) {
+      url += '&n=' + encodeURIComponent(token.nickname)
+    }
+
+    return {
+      shareString: url,
+      openUrl: url
+    }
   }
 
   protected _computeUrlEmbed (): ComputedUrl {

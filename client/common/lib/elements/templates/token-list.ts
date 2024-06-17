@@ -16,7 +16,6 @@ export function tplTokenList (el: LivechatTokenListElement): TemplateResult {
         <tr>
           <th scope="col"></th>
           <th scope="col">${ptTr(LOC_TOKEN_LABEL)}</th>
-          <th scope="col">${ptTr(LOC_TOKEN_JID)}</th>
           <th scope="col">${ptTr(LOC_TOKEN_PASSWORD)}</th>
           <th scope="col"></th>
         </tr>
@@ -24,19 +23,29 @@ export function tplTokenList (el: LivechatTokenListElement): TemplateResult {
       <tbody>
         ${
           repeat(el.tokenList ?? [], (token) => token.id, (token) => {
-            html`<tr>
+            return html`<tr>
               <td>${
                 el.mode === 'select'
                 ? html`<input
                   type="radio"
-                  ?selected=${el.currentSelectedToken?.id === token.id}
-                  @click=${el.selectToken}
+                  name="livechat-token"
+                  value=${token.id}
+                  id=${`livechat-token-radio-${token.id}`}
+                  ?checked=${el.currentSelectedToken?.id === token.id}
+                  @click=${(ev: Event) => el.selectToken(ev, token)}
                 />`
                 : ''
               }</td>
-              <td>${token.label}</td>
-              <td>${token.jid}</td>
-              <td>${token.password}</td>
+              <td>
+                <label for=${`livechat-token-radio-${token.id}`}>
+                  ${token.label}
+                </label>
+              </td>
+              <td>
+                <label for=${`livechat-token-radio-${token.id}`}>
+                  ${token.password}
+                </label>
+              </td>
               <td>
                 <button type="button"
                   class="livechat-revoke-token"

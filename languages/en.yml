@@ -531,8 +531,8 @@ share_chat_dock_tips: |
   Please note that these tokens have no expiration date.
 
 token_label: Label
-token_jid: Username
 token_password: Password token
 token_action_create: Create a new token
 token_action_revoke: Revoke the token
 token_default_label: Token generated from the web interface
+token_action_revoke_confirm: Are you sure you want to revoke this token?
