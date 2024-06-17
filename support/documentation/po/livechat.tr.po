@@ -1866,6 +1866,17 @@ msgstr ""
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
 msgstr ""
 
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, no-wrap
+msgid "Authentication"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "In case you have any trouble with the long term authentication tokens, you can disable the feature here."
+msgstr ""
+
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "See the detailed documentation page:"
@@ -2919,7 +2930,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" generated a file than you can then import on another channel."
+msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" button generates a file than you can then import on another channel."
 msgstr ""
 
 #. type: Plain text

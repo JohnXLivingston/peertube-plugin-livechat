@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-10 19:27+0200\n"
+"POT-Creation-Date: 2024-06-17 15:31+0200\n"
 "PO-Revision-Date: 2024-06-13 07:38+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1952,6 +1950,18 @@ msgstr "Föderation"
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
 msgstr "Die folgenden Einstellungen betreffen die Föderation mit anderen Peertube Instanzen und anderer Fediverse-Software."
 
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy, no-wrap
+#| msgid "External Authentication"
+msgid "Authentication"
+msgstr "Externe Authentifizierung"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "In case you have any trouble with the long term authentication tokens, you can disable the feature here."
+msgstr ""
+
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "See the detailed documentation page:"
@@ -3013,21 +3023,15 @@ msgstr "Importieren / Exportieren"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" generated a file than you can then import on another channel."
-msgstr ""
-"Auf der Kanalkonfigurationsseite gibt es eine \"{{% livechat_label "
-"action_import %}}\"- und eine \"{{% livechat_label action_export %}}\"-"
-"Schaltfläche.  Die \"{{% livechat_label action_export %}}\"-Schaltfläche "
-"generiert eine Datei, die in einen anderen Kanal importiert werden kann."
+#, fuzzy
+#| msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" generated a file than you can then import on another channel."
+msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" button generates a file than you can then import on another channel."
+msgstr "Auf der Kanalkonfigurationsseite gibt es eine \"{{% livechat_label action_import %}}\"- und eine \"{{% livechat_label action_export %}}\"-Schaltfläche.  Die \"{{% livechat_label action_export %}}\"-Schaltfläche generiert eine Datei, die in einen anderen Kanal importiert werden kann."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "You can also generate a file to import from any other source (for example you can import your Twitch custom emojis).  The file must be a valid JSON file, using the following format:"
-msgstr ""
-"Sie können auch eine Datei generieren, die Sie aus einer anderen Quelle "
-"importieren (z. B. können Sie Ihre benutzerdefinierten Twitch-Emojis "
-"importieren).  Bei der Datei muss es sich um eine gültige JSON-Datei "
-"handeln, die das folgende Format hat:"
+msgstr "Sie können auch eine Datei generieren, die Sie aus einer anderen Quelle importieren (z. B. können Sie Ihre benutzerdefinierten Twitch-Emojis importieren).  Bei der Datei muss es sich um eine gültige JSON-Datei handeln, die das folgende Format hat:"
 
 #. type: Fenced code block (json)
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3050,11 +3054,7 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "The `sn` attribute is the short name code.  The `url` attribute can be any image url than your browser can access, or a [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) representing the file you want to import."
-msgstr ""
-"Das Attribut `sn` ist der Kurznamencode.  Das Attribut \"url\" kann eine "
-"beliebige Bild-URL sein, auf die Ihr Browser zugreifen kann, oder eine "
-"[Daten-URL] (https://developer.mozilla.org/en-US/docs/Web/HTTP/"
-"Basics_of_HTTP/Data_URLs), die die zu importierende Datei darstellt."
+msgstr "Das Attribut `sn` ist der Kurznamencode.  Das Attribut \"url\" kann eine beliebige Bild-URL sein, auf die Ihr Browser zugreifen kann, oder eine [Daten-URL] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs), die die zu importierende Datei darstellt."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md

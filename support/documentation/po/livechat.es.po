@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-10 19:27+0200\n"
+"POT-Creation-Date: 2024-06-17 15:31+0200\n"
 "PO-Revision-Date: 2024-04-16 21:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -1918,6 +1918,18 @@ msgstr ""
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
 msgstr ""
 
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy, no-wrap
+#| msgid "Documentation"
+msgid "Authentication"
+msgstr "Documentación"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "In case you have any trouble with the long term authentication tokens, you can disable the feature here."
+msgstr ""
+
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "See the detailed documentation page:"
@@ -2976,7 +2988,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" generated a file than you can then import on another channel."
+msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" button generates a file than you can then import on another channel."
 msgstr ""
 
 #. type: Plain text

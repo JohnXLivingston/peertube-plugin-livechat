@@ -6,17 +6,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-10 19:27+0200\n"
+"POT-Creation-Date: 2024-06-17 15:31+0200\n"
 "PO-Revision-Date: 2024-06-14 07:03+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
+"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.5.5\n"
 
 #. type: Yaml Front Matter Hash Value: description
@@ -1890,6 +1888,18 @@ msgstr "Federacija"
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
 msgstr ""
 
+#. type: Title ##
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy, no-wrap
+#| msgid "Documentation"
+msgid "Authentication"
+msgstr "Dokumentacija"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "In case you have any trouble with the long term authentication tokens, you can disable the feature here."
+msgstr ""
+
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "See the detailed documentation page:"
@@ -2889,9 +2899,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
-msgstr ""
-"[Prilagođeni emojiji](/peertube-plugin-livechat/documentation/user/streamers/"
-"emojis)"
+msgstr "[Prilagođeni emojiji](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -2949,7 +2957,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" generated a file than you can then import on another channel."
+msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" button generates a file than you can then import on another channel."
 msgstr ""
 
 #. type: Plain text
