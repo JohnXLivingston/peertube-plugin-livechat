@@ -75,8 +75,12 @@ read_only: Samo za čitanje
 show_scrollbarr: Prikaži kliznu traku
 transparent_background: Prozirna pozadina (za integraciju prijenosa, na primjer s
   OBS-om)
-tips_for_streamers: 'Savjeti za prenositelje: Za dodavanje chata u svoj OBS, generiraj
-  vezu samo za čitanje i koristi je kao izvor preglednika.'
+tips_for_streamers: 'Savjeti za prenositelje: Za dodavanje chata u svoj prijenos koristeći
+  OBS na primjer,
+
+  generiraj poveznicu samo-za-čitanje i koristi je kao izvor preglednika.
+
+  '
 generate_iframe: Generiraj iframe za ugrađivanje chata u web stranici
 chat_for_live_stream: 'Chat za prijenos uživo:'
 room_name: Ime sobe
@@ -244,3 +248,29 @@ auto_ban_anonymous_ip_label: Blokiraj IP anonimnog korisnika kada je korisniku z
   pristup chat sobi
 livechat_configuration_channel_emojis_title: Emojiji kanala
 copied: Kopirano
+login_remote_peertube_no_livechat: Dodatak za chat uživo nije instaliran na ovoj Peertube
+  instanci.
+tasks: Zadaci
+task_list_create: 'Stvori novu listu zadataka:'
+task_delete: Izbriši zadatak
+task_create: Stvori novi zadatak
+task_name: Ime zadatka
+task_description: Opis
+task_delete_confirm: Stvarno želiš izbrisati ovaj zadatak?
+task_list_pick_title: Odaberi listu zadataka
+task_list_pick_empty: Lista zadataka još ne postoji. Najprije stvori jednu listu
+livechat_emojis_file: Datoteka
+livechat_emojis_file_desc: "Datoteka emojija.\n"
+action_import: Uvezi
+action_add_entry: Dodaj unos
+action_remove_entry: Ukloni ovaj unos
+action_remove_entry_confirm: Stvarno želiš ukloniti ovaj unos?
+loading_error: Greška tijekom učitavanja podataka.
+task_list_create_error: Greška prilikom spremanja liste zadataka
+task_list_name: Ime liste zadataka
+task_list_delete: Izbriši listu zadataka
+task_list_delete_confirm: Stvarno želiš izbrisati ovu listu zadataka?
+action_export: Izvezi
+share_chat_embed: Ugradi
+token_label: Oznaka
+auth_description: "<h3>Autentifikacija</h3>\n"
