@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-17 15:31+0200\n"
-"PO-Revision-Date: 2024-06-13 07:38+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-06-18 20:10+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1952,15 +1954,16 @@ msgstr "Die folgenden Einstellungen betreffen die Föderation mit anderen Peertu
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy, no-wrap
-#| msgid "External Authentication"
+#, no-wrap
 msgid "Authentication"
-msgstr "Externe Authentifizierung"
+msgstr "Authentifizierung"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "In case you have any trouble with the long term authentication tokens, you can disable the feature here."
 msgstr ""
+"Falls Sie Probleme mit den Langzeit-Authentifizierungs-Tokens haben, können "
+"Sie diese Funktion hier deaktivieren."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -3023,10 +3026,12 @@ msgstr "Importieren / Exportieren"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" generated a file than you can then import on another channel."
 msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" button generates a file than you can then import on another channel."
-msgstr "Auf der Kanalkonfigurationsseite gibt es eine \"{{% livechat_label action_import %}}\"- und eine \"{{% livechat_label action_export %}}\"-Schaltfläche.  Die \"{{% livechat_label action_export %}}\"-Schaltfläche generiert eine Datei, die in einen anderen Kanal importiert werden kann."
+msgstr ""
+"Auf der Kanalkonfigurationsseite gibt es eine \"{{% livechat_label "
+"action_import %}}\"- und eine \"{{% livechat_label action_export %}}\"-"
+"Schaltfläche.  Die \"{{% livechat_label action_export %}}\"-Schaltfläche "
+"generiert eine Datei, die in einen anderen Kanal importiert werden kann."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
