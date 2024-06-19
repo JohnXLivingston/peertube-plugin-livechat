@@ -62,13 +62,13 @@ function _tplShareChatTab (
 
 export function tplShareChatTabs (el: ShareChatElement): TemplateResult {
   return html`
-  ${_tplShareChatTab(el, 'peertube', LOC_WEB)}
     ${_tplShareChatTab(el, 'embed', LOC_SHARE_CHAT_EMBED)}
     ${
       el.dockEnabled
         ? _tplShareChatTab(el, 'dock', LOC_SHARE_CHAT_DOCK)
         : ''
     }
+    ${_tplShareChatTab(el, 'peertube', LOC_WEB)}
     ${
       el.xmppUriEnabled
         ? _tplShareChatTab(el, 'xmpp', LOC_CONNECT_USING_XMPP)

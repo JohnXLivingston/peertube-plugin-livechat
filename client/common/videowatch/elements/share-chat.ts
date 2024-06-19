@@ -13,7 +13,8 @@ import { isAutoColorsAvailable } from 'shared/lib/autocolors'
 import { getIframeUri, getXMPPAddr, UriOptions } from '../uri'
 import { isAnonymousUser } from '../../../utils/user'
 
-const validTabNames = ['peertube', 'embed', 'dock', 'xmpp'] as const
+// First is default tab.
+const validTabNames = ['embed', 'dock', 'peertube', 'xmpp'] as const
 
 type ValidTabNames = typeof validTabNames[number]
 
@@ -54,7 +55,7 @@ export class ShareChatElement extends LivechatElement {
    * The current tab.
    */
   @property({ attribute: false })
-  public currentTab: ValidTabNames = 'peertube'
+  public currentTab: ValidTabNames = validTabNames[0]
 
   /**
    * Should we render the XMPP tab?
@@ -169,10 +170,10 @@ export class ShareChatElement extends LivechatElement {
 
     // Some sanity checks, to not be in an impossible state.
     if (!this.xmppUriEnabled && this.currentTab === 'xmpp') {
-      this.currentTab = 'peertube'
+      this.currentTab = validTabNames[0]
     }
     if (!this.dockEnabled && this.currentTab === 'dock') {
-      this.currentTab = 'peertube'
+      this.currentTab = validTabNames[0]
     }
   }
 
@@ -195,9 +196,9 @@ export class ShareChatElement extends LivechatElement {
 
   public computeUrl (): ComputedUrl {
     switch (this.currentTab) {
-      case 'peertube': return this._computeUrlPeertube()
       case 'embed': return this._computeUrlEmbed()
       case 'dock': return this._computeUrlDock()
+      case 'peertube': return this._computeUrlPeertube()
       case 'xmpp': return this._computeUrlXMPP()
       default:
         return {
