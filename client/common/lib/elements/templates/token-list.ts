@@ -16,13 +16,18 @@ export function tplTokenList (el: LivechatTokenListElement): TemplateResult {
         <tr>
           <th scope="col"></th>
           <th scope="col">${ptTr(LOC_TOKEN_LABEL)}</th>
-          <th scope="col">${ptTr(LOC_TOKEN_PASSWORD)}</th>
+          <th scope="col">${ptTr(LOC_TOKEN_DATE)}</th>
           <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
         ${
           repeat(el.tokenList ?? [], (token) => token.id, (token) => {
+            let dateStr: string = ''
+            try {
+              const date = new Date(token.date)
+              dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
+            } catch (err) {}
             return html`<tr>
               <td>${
                 el.mode === 'select'
@@ -43,7 +48,7 @@ export function tplTokenList (el: LivechatTokenListElement): TemplateResult {
               </td>
               <td>
                 <label for=${`livechat-token-radio-${token.id}`}>
-                  ${token.password}
+                  ${dateStr}
                 </label>
               </td>
               <td>

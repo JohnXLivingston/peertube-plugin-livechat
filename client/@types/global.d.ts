@@ -117,6 +117,7 @@ declare const LOC_SHARE_CHAT_DOCK: string
 declare const LOC_SHARE_CHAT_DOCK_TIPS: string
 declare const LOC_TOKEN_LABEL: string
 declare const LOC_TOKEN_PASSWORD: string
+declare const LOC_TOKEN_DATE: string
 declare const LOC_TOKEN_ACTION_CREATE: string
 declare const LOC_TOKEN_ACTION_REVOKE: string
 declare const LOC_TOKEN_DEFAULT_LABEL: string
