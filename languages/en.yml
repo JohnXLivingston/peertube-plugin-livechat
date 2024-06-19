@@ -532,6 +532,7 @@ share_chat_dock_tips: |
 
 token_label: Label
 token_password: Password token
+token_date: Date
 token_action_create: Create a new token
 token_action_revoke: Revoke the token
 token_default_label: Token generated from the web interface

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-17 15:31+0200\n"
+"POT-Creation-Date: 2024-06-19 12:16+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Kabyle <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/kab/>\n"
@@ -1118,6 +1118,11 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Now you can add this account to gateways and bridge specific live-chat channels."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
+msgid "This documentation use an anonymous account to connect the bridge to the chat.  But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account.  This is used for [OBS docks](/peertube-plugin-livechat/documentation/user/obs).  Using this feature for other purposes is not documented and not officially supported yet.  If you want to use it anyway, you can request a token by calling then `/plugins/livechat/router/api/auth/tokens` endpoint.  To get needed headers and request body, just check what happens when you generate a new token for OBS docks."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -2430,7 +2435,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "You can easily include the chat in your stream."
+msgid "You can easily include the chat in your video stream."
 msgstr ""
 
 #. type: Plain text
@@ -2488,6 +2493,85 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/obs.md
+#, no-wrap
+msgid "OBS Dock"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#: build/documentation/pot_in/documentation/user/streamers/emojis.md
+msgid "This feature comes with the livechat plugin version 10.1.0."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#: support/documentation/content/en/documentation/user/viewers.md
+msgid "This feature can be disabled by the instance's adminitrators."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "You can use OBS \"Custom browser docks\" to integrate the chat in your OBS while you are streaming.  The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don't have to enter your password in OBS."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\", and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "![Share link popup - dock tab](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "Then, copy the url, and use the \"Docks / Custom browser docks\" menu from your OBS to add a dock with this URL."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "![OBS - Dock menu](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "![OBS - Dock dialog](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "Once you have done, you will have a new dock connected to the chat with your account."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "![OBS - Dock](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "Tokens are valid to join any chat room. You don't have to generate separate tokens for each of your rooms.  You can also customize the nickame that will be used by changing the `n` parameter in the url."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "Don't share these links to anyone, as it would allow them to connect as yourself."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "If a token is compromised, or no more needed, you can revoke them."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/obs.md
+msgid "These tokens can be used for other purposes, as connecting to your account with XMPP bots or clients.  This feature is not documented yet, and not officially supported. So use with care."
 msgstr ""
 
 #. type: Title ##
@@ -2578,6 +2662,11 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "The \"{{% livechat_label share_chat_embed %}}\" tab provide some links to embed the chat in websites, or in your live stream."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can customize some options:"
 msgstr ""
 
@@ -2598,7 +2687,27 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "For more information on the \"{{% livechat_label share_chat_dock %}}\" tab, check the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "In the \"{{% livechat_label web %}}\" tab, the provided url opens the chat in the Peertube interface.  You can share this link to other users to invite them to join the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "![Share link popup - web tab](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "The \"{{% livechat_label share_chat_link %}}\" popup can also contain a \"{{% livechat_label connect_using_xmpp %}}\" tab.  This will only be available if your instance's administators have enabled an correctly configured this option.  Using this option, you can provide a link to join the chat using any [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  Using such softwares can for example facilitate moderation actions."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/basics.md
+msgid "![Share link popup - xmpp tab](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Title ##
@@ -2908,11 +3017,6 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Custom emojis"
-msgstr ""
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/emojis.md
-msgid "This feature comes with the livechat plugin version 10.1.0."
 msgstr ""
 
 #. type: Title ##
@@ -3472,11 +3576,6 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "If you haven't a Peertube account"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/viewers.md
-msgid "This feature can be disabled by the instance's adminitrators."
 msgstr ""
 
 #. type: Plain text

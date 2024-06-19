@@ -68,3 +68,12 @@ NoTLS=true
 - The setting `NoTLS=true` allows connecting to a server with self-signed certificates.
 
 Now you can add this account to gateways and bridge specific live-chat channels.
+
+{{% notice info %}}
+This documentation use an anonymous account to connect the bridge to the chat.
+But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account.
+This is used for [OBS docks](/peertube-plugin-livechat/documentation/user/obs).
+Using this feature for other purposes is not documented and not officially supported yet.
+If you want to use it anyway, you can request a token by calling then `/plugins/livechat/router/api/auth/tokens` endpoint.
+To get needed headers and request body, just check what happens when you generate a new token for OBS docks.
+{{% /notice %}}

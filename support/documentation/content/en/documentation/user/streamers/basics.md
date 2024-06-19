@@ -37,6 +37,8 @@ On top of the chat, there is a "{{% livechat_label share_chat_link %}}" button.
 This button opens a popup, where you can obtain an url to join the chat.
 This url can be shared.
 
+The "{{% livechat_label share_chat_embed %}}" tab provide some links to embed the chat in websites, or in your live stream.
+
 ![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)
 
 You can customize some options:
@@ -45,10 +47,21 @@ You can customize some options:
 * {{% livechat_label use_current_theme_color %}}: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set.
 * {{% livechat_label generate_iframe %}}: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat.
 
+For more information on the "{{% livechat_label share_chat_dock %}}" tab, check the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs).
+
+![Share link popup - dock tab](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px)
+
+In the "{{% livechat_label web %}}" tab, the provided url opens the chat in the Peertube interface.
+You can share this link to other users to invite them to join the chat.
+
+![Share link popup - web tab](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px)
+
 The "{{% livechat_label share_chat_link %}}" popup can also contain a "{{% livechat_label connect_using_xmpp %}}" tab.
 This will only be available if your instance's administators have enabled an correctly configured this option.
 Using this option, you can provide a link to join the chat using any [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).
 Using such softwares can for example facilitate moderation actions.
+
+![Share link popup - xmpp tab](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)
 
 ## Moderation
 
