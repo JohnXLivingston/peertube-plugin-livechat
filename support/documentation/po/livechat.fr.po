@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-19 12:16+0200\n"
-"PO-Revision-Date: 2024-06-08 00:29+0000\n"
+"PO-Revision-Date: 2024-06-19 10:51+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1097,10 +1098,9 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
-#, fuzzy, no-wrap
-#| msgid "Using Matterbridge"
+#, no-wrap
 msgid "Configurating Matterbridge"
-msgstr "Utiliser Matterbridge"
+msgstr "Configurer Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1969,10 +1969,9 @@ msgstr "Les paramètres suivants concernent la fédération avec d'autres instan
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy, no-wrap
-#| msgid "External Authentication"
+#, no-wrap
 msgid "Authentication"
-msgstr "Authentification externe"
+msgstr "Authentification"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2521,8 +2520,6 @@ msgstr "Overlay OBS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "You can easily include the chat in your stream."
 msgid "You can easily include the chat in your video stream."
 msgstr "Vous pouvez facilement inclure le tchat dans votre flux vidéo."
 
@@ -2592,10 +2589,8 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 10.0.0."
 msgid "This feature comes with the livechat plugin version 10.1.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.0.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.1.0."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2616,10 +2611,10 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
 msgid "![Share link popup - dock tab](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px)"
-msgstr "![Popup de partage de lien](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Popup de partage de lien - onglet dock](/peertube-plugin-livechat/images/"
+"share_dock.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2628,17 +2623,17 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![OBS - Dock menu](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px)"
-msgstr "![Menu du tchat](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![OBS - Menu dock](/peertube-plugin-livechat/images/obs_dock_menu."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![External login dialog](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
 msgid "![OBS - Dock dialog](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px)"
-msgstr "![Fenêtre de dialogue connexion avec un compte externe](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![OBS - Fenêtre de dialogue dock](/peertube-plugin-livechat/images/"
+"obs_dock_dialog.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2647,10 +2642,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
 msgid "![OBS - Dock](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px)"
-msgstr "![Partage](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![OBS - Dock](/peertube-plugin-livechat/images/obs_dock."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2785,10 +2780,11 @@ msgstr "{{% livechat_label generate_iframe %}} : à la place d'une url, vous aur
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "Please refer to the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
 msgid "For more information on the \"{{% livechat_label share_chat_dock %}}\" tab, check the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
-msgstr "Veuillez vous référer à la [documentation OBS](/peertube-plugin-livechat/fr/documentation/user/obs)."
+msgstr ""
+"Pour plus d'information sur l'onglet \"{{% livechat_label share_chat_dock %}}"
+"\", veuillez vous référer à la [documentation OBS](/peertube-plugin-livechat/"
+"fr/documentation/user/obs)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2797,10 +2793,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
 msgid "![Share link popup - web tab](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px)"
-msgstr "![Popup de partage de lien](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Fenêtre de partage de lien - onglet web](/peertube-plugin-livechat/images/"
+"share_web.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2809,10 +2805,10 @@ msgstr "La popup «{{% livechat_label share_chat_link %}}» peut également cont
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![Share XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
 msgid "![Share link popup - xmpp tab](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
-msgstr "![Partage XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Fenêtre de partage de lein - onglet XMPP](/peertube-plugin-livechat/images/"
+"share_xmpp_dialog.png?classes=shadow,border&height=200px)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3103,10 +3099,10 @@ msgstr "[Le bot de tchat](/peertube-plugin-livechat/documentation/fr/user/stream
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
-msgstr "[Le mode lent](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
+msgstr ""
+"[Emojis personnalisés](/peertube-plugin-livechat/documentation/user/"
+"streamers/emojis)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3115,10 +3111,9 @@ msgstr "Nouvelles fonctionnalités à venir..."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy, no-wrap
-#| msgid "Plugin peertube-plugin-livechat slow mode"
+#, no-wrap
 msgid "Plugin peertube-plugin-livechat custom emojis"
-msgstr "Mode lent du plugin peertube-plugin-livechat"
+msgstr "Emojis personnalisés du plugin peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3139,24 +3134,27 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
-msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), vous pouvez définir une valeur pour l'option mode lent :"
+msgstr ""
+"Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/"
+"documentation/user/streamers/channel), ouvrez l'onglet \"{{% livechat_label "
+"livechat_configuration_channel_emojis_title %}}\" :"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Channel configuration / Channel emojis configuration](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)"
-msgstr "![Configuration de la chaîne](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Configuration de la chaîne / Configuration des emojis de la chaîne"
+"](/peertube-plugin-livechat/images/channel_custom_emojis_configuration."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
-msgstr "![Configuration de la chaîne](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Configuration de la chaîne / Emojis de la chaîne](/peertube-"
+"plugin-livechat/images/channel_custom_emojis."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Title ###
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
