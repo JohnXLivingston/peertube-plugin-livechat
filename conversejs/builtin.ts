@@ -121,9 +121,11 @@ async function initConverse (
   const tryOIDC = (initConverseParams.externalAuthOIDC?.length ?? 0) > 0
 
   let auth
+  let usedLivechatToken = false
   if (chatIncludeMode === 'chat-only') {
     // In this mode, we can check if there is a token in the url.
     auth = getLivechatTokenAuthInfos()
+    if (auth) { usedLivechatToken = true }
   }
   auth ??= await getLocalAuthentInfos(authenticationUrl, tryOIDC, peertubeAuthHeader)
 
@@ -204,12 +206,24 @@ async function initConverse (
     params.livechat_mini_muc_head = true // we must replace the muc-head by the custom buttons toolbar.
   }
 
+  // We enable task list only if we are in the peertube interface, or if:
+  // * mode === chat-only + !transparent + !readonly + is using a livechat token
+  // Technically it would work in 'chat-only' mode, but i don't want to add too many things to test
+  // (and i now there is some CSS bugs in the task list).
+  let enableTask = false
   if (chatIncludeMode === 'peertube-video' || chatIncludeMode === 'peertube-fullpage') {
-    // We enable task list only if we are in the peertube interface.
-    // Technically it would work in 'chat-only' mode, but i don't want to add too many things to test
-    // (and i now there is some CSS bugs in the task list).
+    enableTask = true
+  } else if (
+    chatIncludeMode === 'chat-only' &&
+    usedLivechatToken &&
+    !initConverseParams.transparent &&
+    !initConverseParams.forceReadonly
+  ) {
+    enableTask = true
+  }
+  if (enableTask) {
     params.livechat_task_app_enabled = true
-    params.livechat_task_app_restore = chatIncludeMode === 'peertube-fullpage'
+    params.livechat_task_app_restore = chatIncludeMode === 'peertube-fullpage' || chatIncludeMode === 'chat-only'
   }
 
   try {
