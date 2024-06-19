@@ -199,7 +199,7 @@ prosody_room_allow_s2s_description: "Durch Aktivieren dieser Option ist es mögl
   über externe XMPP-Konten und XMPP-Clients eine Verbindung zu Räumen herzustellen.<br>\n
   <span class=\"peertube-plugin-livechat-warning\">\n  <b>Achtung:</b> Durch die Aktivierung
   dieser Option können zusätzliche Server- und DNS-Konfigurationen erforderlich sein.\n
-  </span>\nBitte beachten Sie die Dokumentation:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/advanced/xmpp_clients/\"\
+  </span>\nBitte beachten Sie die Dokumentation:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n  Aktivieren Sie externe XMPP-Kontoverbindungen.\n</a>\n"
 
 prosody_s2s_port_label: Prosody Server Port zu Server Port
@@ -368,7 +368,7 @@ livechat_configuration_channel_quote_label2: Nachrichten
 avatar_set_label: Avatar-Satz
 avatar_set_description: "Sie können aus mehreren verschiedenen Sets von Standard-Avataren
   wählen, die für Chat-Benutzer verwendet werden sollen.\nBitte beachten Sie die Dokumentation:\n
-  <a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/settings/\"\
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/settings/\"\
   \ target=\"_blank\">Einstellungen</a>.\n"
 avatar_set_option_sepia: Sepia (Peertube-Maskottchen)
 avatar_set_option_cat: Katzen
@@ -409,7 +409,7 @@ external_auth_custom_oidc_button_label_description: Diese Bezeichnung wird den N
   als Name der Schaltfläche zur Authentifizierung bei diesem OIDC-Anbieter angezeigt.
 external_auth_custom_oidc_description: "Sie können einen externen OpenID Connect Anbieter
   konfigurieren, der für die Anmeldung beim Chat verwendet werden kann.\nBitte lesen
-  Sie dazu die Dokumentation:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/settings/\"\
+  Sie dazu die Dokumentation:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/settings/\"\
   \ target=\"_blank\">Einstellungen</a>.\n"
 external_auth_description: "<h3>Externe Authentifizierung</h3>\nFür Benutzer, die
   kein Peertubekonto haben, können Sie verschiedene Authentifizierungsmodi auf der
@@ -499,7 +499,7 @@ share_chat_dock_tips: "Sie können einen Link generieren, der den Chat auf einer
 livechat_token_disabled_description: "Benutzer können langfristige Token erzeugen,
   um sich mit dem Chat zu verbinden.\nDiese Token können zum Beispiel verwendet werden,
   um den Chat in OBS-Webdocks einzubinden.\nWeitere Informationen finden Sie <a href=\"\
-  https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/user/obs\"\
+  https://livingston.frama.io/peertube-plugin-livechat/de/documentation/user/obs\"\
   \ target=\"_blank\">in der Dokumentation</a>.\nSie können diese Funktion deaktivieren,
   indem Sie diese Einstellung auswählen.\n"
 token_label: Beschriftung

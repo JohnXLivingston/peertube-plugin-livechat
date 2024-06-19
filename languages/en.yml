@@ -79,7 +79,7 @@ external_auth_custom_oidc_label: "Use an OpenID Connect provider"
 external_auth_custom_oidc_description: |
   You can configure an external OpenID Connect provider that could be used to log in to the chat.
   Please refer to the documentation:
-  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Settings</a>.
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Settings</a>.
 
 external_auth_custom_oidc_button_label_label: "Label for the connection button"
 external_auth_custom_oidc_button_label_description: "This label will be displayed
@@ -168,7 +168,7 @@ avatar_set_label: "Avatar set"
 avatar_set_description: |
   You can choose from several different sets the default avatars that will be used for chat users.
   Please refer to the documentation:
-  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Settings</a>.
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Settings</a>.
 avatar_set_option_sepia: "Sepia (Peertube mascot)"
 avatar_set_option_cat: "Cats"
 avatar_set_option_bird: "Birds"
@@ -261,7 +261,7 @@ prosody_room_allow_s2s_description: |
     <b>Warning</b>, enabling this option can request extra server and DNS configuration.
   </span>
   Please refer to the documentation:
-  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/" target="_blank">
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/" target="_blank">
     Enable external XMPP account connections.
   </a>
 
@@ -542,5 +542,5 @@ livechat_token_disabled_label: 'Disable livechat tokens'
 livechat_token_disabled_description: |
   Users can generate long term tokens to connect to the chat.
   These tokens can for example be used to include the chat in OBS web docks.
-  Check <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/user/obs" target="_blank">the documentation</a> for more information.
+  Check <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/user/obs" target="_blank">the documentation</a> for more information.
   You can disable this feature by checking this setting.

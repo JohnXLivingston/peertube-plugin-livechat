@@ -129,7 +129,7 @@ prosody_muc_expiration_description: "チャットルームの内容をいつま�
   </ul>\n"
 prosody_room_allow_s2s_description: "この設定を有効にすると、外部のXMPPアカウントとXMPPクライアントを利用してチャットルームに接続できるようになります。<br>\n
   <span class=\"peertube-plugin-livechat-warning\">注意しなければならないのは、この設定は追加のサーバーとDNS設定をリクエストできるようになることです。</span>\n
-  次のドキュメントを参照してください:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/ja/documentation/admin/advanced/xmpp_clients/\"\
+  次のドキュメントを参照してください:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/ja/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n  外部のXMPPアカウント接続を有効にする。\n</a>\n"
 prosody_s2s_interfaces_description: "サーバー間接続のためにリッスンするネットワークインターフェイスです。<br>\nリッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。<br>\n\
   «*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。<br>\n例:\n<ul>\n  <li>*,
@@ -207,7 +207,7 @@ livechat_configuration_channel_quote_label2: メッセージ
 livechat_configuration_channel_slow_mode_desc: "新しいチャットに適用される低速モードのデフォルト値:\n<ul>\n\
   \  <li>0: 低速モード無効</li>\n  <li>任意の整数: ユーザーはX秒毎にメッセージを送信可能 (モデレーターは無制限)</li>\n</ul>\n"
 avatar_set_description: "チャットユーザーに使用するデフォルトのアバターをいくつかのセットから選択できます。\n詳細はドキュメントを参照してください:\n
-  <a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/ja/documentation/admin/settings/\"\
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/ja/documentation/admin/settings/\"\
   \ target=\"_blank\">設定</a>\n"
 avatar_set_option_abstract: 抽象
 avatar_set_label: アバターセット
@@ -226,6 +226,6 @@ external_auth_custom_oidc_discovery_url_label: ディスカバリーURL
 external_auth_oidc_client_id_label: クライアントID
 external_auth_oidc_client_secret_label: クライアントシークレット
 external_auth_custom_oidc_description: "チャットへのログインに、外部のOpenID Connectプロバイダーを設定できます。\n
-  次のドキュメントを参照してください:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/ja/documentation/admin/settings/\"\
+  次のドキュメントを参照してください:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/ja/documentation/admin/settings/\"\
   \ target=\"_blank\">設定</a>ページ\n"
 external_auth_custom_oidc_button_label_description: このラベルは、OIDCプロバイダーを使用して認証するボタン名としてユーザーに表示されます。

@@ -10,7 +10,7 @@ declare const MUSTACHE_CONFIGURATION_HOME: string
 declare const MUSTACHE_CONFIGURATION_CHANNEL: string
 
 // Constants that begins with "LOC_" are loaded by build-client.js, reading the english locale file.
-// See the online documentation: https://johnxlivingston.github.io/peertube-plugin-livechat/contributing/translate/
+// See the online documentation: https://livingston.frama.io/peertube-plugin-livechat/contributing/translate/
 declare const LOC_ONLINE_HELP: string
 declare const LOC_OPEN_CHAT: string
 declare const LOC_OPEN_CHAT_NEW_WINDOW: string

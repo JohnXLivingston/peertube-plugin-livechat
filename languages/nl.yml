@@ -1,4 +1,4 @@
-important_note_text: "Hier vind je de documentatie van de plugin:\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/\"\
+important_note_text: "Hier vind je de documentatie van de plugin:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/nl\"\
   \ target=\"_blank\">\n  Peertube Plugin Livechat documentatie\n</a>.\n"
 federation_description: "<h3>Federatie</h3>\nDe volgende instellingen gaan over het
   federeren met andere PeerTube-exemplaren\nen andere fediverse-software.\n"

@@ -18,7 +18,7 @@ login_external_auth_alert_message: Autentifikacija neuspjela
 avatar_set_label: Skup avatara
 avatar_set_description: "Možeš odabrati između nekoliko različitih skupova zadanih
   avatara koji će se koristiti za korisnike chata.\nPogledaj dokumentaciju:\n<a href=\"\
-  https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  https://livingston.frama.io/peertube-plugin-livechat/hr/documentation/admin/settings/\"\
   \ target=\"_blank\">Postavke</a>.\n"
 avatar_set_option_sepia: Sipa (Peertube maskota)
 avatar_set_option_cat: Mačke
@@ -229,7 +229,7 @@ federation_no_remote_chat_description: "Označavanjem ove postavke tvoja instanc
   neće prikazati chatove od videa drugih instanci.\n"
 external_auth_custom_oidc_description: "Možeš konfigurirati eksternog pružatelja usluge
   OpenID Connect koji se može koristiti za prijavu na chat.\nPogledaj dokumentaciju:\n
-  <a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/hr/documentation/admin/settings/\"\
   \ target=\"_blank\">Postavke</a>.\n"
 external_auth_description: "<h3>Eksterna autentifikacija</h3>\nZa korisnike koji nemaju
   Peertube račun možeš aktivirati različite načine autentifikacije pomoću externih

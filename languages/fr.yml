@@ -212,7 +212,7 @@ prosody_room_allow_s2s_description: |
     Attention, activer cette option peut demander une configuration au niveau du serveur et des enregistrements DNS.
   </span>
   Pour en savoir plus, merci de vous référer à la documentation:
-  <a href="https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/" target="_blank">
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/" target="_blank">
     Autoriser les connexions avec des comptes XMPP externes.
   </a>
 
@@ -387,7 +387,7 @@ avatar_set_option_legacy: Anciens avatars Sepia (ceux inclus dans les versions p
 avatar_set_label: Jeu d'avatars
 avatar_set_description: "Vous pouvez choisir parmi plusieurs jeux différents les avatars
   par défaut qui seront utilisés pour les utilisateurs du tchat.\nVeuillez vous référer
-  à la documentation :\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
+  à la documentation :\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
   \ target=\"_blank\">Paramètres</a>.\n"
 avatar_set_option_abstract: Abstrait
 livechat_configuration_channel_slow_mode_label: Mode lent
@@ -422,7 +422,7 @@ external_auth_description: "<h3>Authentification externe</h3>\nPour les utilisat
   basées sur des fournisseurs d'identité externes.\n"
 external_auth_custom_oidc_description: "Vous pouvez configurer un fournisseur OpenID
   Connect externe, qui pourra être utilisé pour se connecter au tchat.\nVeuillez vous
-  référer à la documentation :\n<a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
+  référer à la documentation :\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/admin/settings/\"\
   \ target=\"_blank\">Paramètres</a>.\n"
 external_auth_oidc_client_id_label: ID Client (Client ID)
 external_auth_oidc_client_secret_label: Secret client (Client Secret)

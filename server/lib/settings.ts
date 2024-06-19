@@ -128,7 +128,7 @@ It seems that your are using a ${process.arch} CPU,
 which is not compatible with the plugin.
 Please read
 <a
-  href="https://johnxlivingston.github.io/peertube-plugin-livechat/fr/documentation/installation/cpu_compatibility/"
+  href="https://livingston.frama.io/peertube-plugin-livechat/documentation/installation/cpu_compatibility/"
   target="_blank"
 >
   this page

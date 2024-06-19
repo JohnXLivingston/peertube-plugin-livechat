@@ -139,7 +139,7 @@ prosody_room_allow_s2s_description: "Al habilitar esta opción, será posible co
   a salas utilizando cuentas XMPP externas y clientes XMPP.<br>\n<span class=\"peertube-plugin-livechat-warning\"\
   >\n<b>Advertencia</b>, habilitar esta opción puede solicitar un servidor adicional
   y una configuración de DNS.\n</span>\n Por favor, consulte la documentación:\n<a
-  href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/es/documentation/admin/advanced/xmpp_clients/\"\
+  href=\"https://livingston.frama.io/peertube-plugin-livechat/es/documentation/admin/advanced/xmpp_clients/\"\
   \ target=\"_blank\">\n   Habilitar  conexiones con cuentas XMPP externas.\n</a>\n"
 prosody_muc_expiration_description: "Aquí puede elegir cuánto tiempo el servidor conserva
   el contenido de la sala de chat. El valor puede ser:\n<ul>\n     <li><b>60</b>:
@@ -311,7 +311,7 @@ prosody_components_interfaces_description: "Las interfaces de red para escuchar 
 avatar_set_label: Conjunto de avatares
 avatar_set_description: "Puedes elegir entre varios conjuntos diferentes, los avatares
   predeterminados que se utilizarán para los usuarios del chat.\nConsulta la documentación:\n
-  <a href=\"https://johnxlivingston.github.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/es/documentation/admin/settings/\"\
   \ target=\"_blank\">Ajustes</a>.\n"
 avatar_set_option_sepia: Sepia (mascota de Peertube)
 avatar_set_option_cat: Gatos
