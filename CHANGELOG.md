@@ -1,12 +1,10 @@
-TODO: tag conversejs livechat branch, and replace commit ID in build-converse.js
-
 # Changelog
 
-## 10.1.0 (Not Released Yet)
+## 10.1.0
 
 ### New features
 
-* #130: channel custom emojis.
+* #130: Channel custom emojis.
 * #98: OBS Dock. You can now generate links to join chatrooms with your current user. This can be used to create Docks in OBS for example. This could also be used to generate authentication token to join the chat from 3rd party tools.
 * Overhauled configuration page, with more broadly customizable lists of parameters by @Murazaki ([See pull request #352](https://github.com/JohnXLivingston/peertube-plugin-livechat/pull/352)).
 * #377: new setting to listen C2S connection on non-localhost interfaces.

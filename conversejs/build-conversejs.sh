@@ -38,8 +38,8 @@ CONVERSE_COMMIT=""
 # - New config option [colorize_username](https://conversejs.org/docs/html/configuration.html#colorize_username)
 # - New loadEmojis hook, to customize emojis at runtime.
 # - Fix custom emojis path when assets_path is not the default path.
-CONVERSE_VERSION="livechat-10.0.0"
-CONVERSE_COMMIT="4402fcc3fc60f6c9334f86528c33a0b463371d12"
+CONVERSE_VERSION="livechat-10.1.0"
+# CONVERSE_COMMIT="4402fcc3fc60f6c9334f86528c33a0b463371d12"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"
