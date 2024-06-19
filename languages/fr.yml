@@ -500,3 +500,25 @@ loading_error: Une erreur s'est produite lors du chargement des données.
 action_add_entry: Ajouter une entrée
 share_chat_embed: Intégration
 share_chat_peertube_tips: Ce lien ouvrira le tchat dans l'interface Peertube.
+share_chat_dock: Dock
+token_label: Libellé
+token_password: Jeton
+token_action_create: Créer un nouveau jeton
+token_action_revoke: Révoquer le jeton
+token_default_label: Jeton généré à partir de l'interface web
+token_action_revoke_confirm: Êtes-vous sûr de vouloir révoquer ce jeton ?
+auth_description: "<h3>Authentification</h3>\n"
+livechat_token_disabled_label: Désactiver les jetons livechat
+share_chat_dock_tips: "Vous pouvez générer un lien qui ouvrira le tchat en pleine
+  page, en vous connectant avec votre compte Peertube.\nCela peut être utilisé, par
+  exemple, pour avoir un dock web dans votre OBS, de sorte que vous pouvez lire et
+  interagir avec le chat directement à partir d'OBS.\nNe partagez pas ce lien avec
+  qui que ce soit, car il leur permettrait de se connecter en votre nom.\nVous trouverez
+  ci-dessous la liste des jetons d'authentification que vous avez déjà générés.\n
+  Vous pouvez en créer un nouveau ou révoquer un jeton précédent.\nVeuillez noter
+  que ces jetons n'ont pas de date d'expiration.\n"
+livechat_token_disabled_description: "Les utilisateur⋅rices peuvent générer des jetons
+  à long terme pour se connecter au tchat.\nCes jetons peuvent par exemple être utilisés
+  pour inclure le tchat dans les docks web dans OBS.\nConsultez <a href=\"https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/user/obs\"\
+  \ target=\"_blank\">la documentation</a> pour plus d'informations.\nVous pouvez
+  désactiver cette fonctionnalité en cochant ce paramètre.\n"

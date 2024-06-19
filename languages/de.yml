@@ -488,3 +488,26 @@ copied: Kopiert
 share_chat_embed: Einbetten
 share_chat_peertube_tips: Über diesen Link wird der Chat in der Peertube-Oberfläche
   geöffnet.
+share_chat_dock_tips: "Sie können einen Link generieren, der den Chat auf einer neuen
+  Seite öffnet, mit Ihrem Peertube-Konto direkt angemeldet.\nDamit können Sie z. B.
+  ein Web-Dock in Ihrem OBS einrichten, so dass Sie den Chat direkt von OBS aus lesen
+  und mit ihm interagieren können.\nGeben Sie diesen Link nicht an andere weiter,
+  da diese sich dann als Sie selbst einloggen können.\nUnten finden Sie die Liste
+  der Authentifizierungs-Token, die Sie bereits erstellt haben.\nSie können ein neues
+  Token erstellen oder ein früheres Token widerrufen.\nBitte beachten Sie, dass diese
+  Token kein Verfallsdatum haben.\n"
+livechat_token_disabled_description: "Benutzer können langfristige Token erzeugen,
+  um sich mit dem Chat zu verbinden.\nDiese Token können zum Beispiel verwendet werden,
+  um den Chat in OBS-Webdocks einzubinden.\nWeitere Informationen finden Sie <a href=\"\
+  https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/user/obs\"\
+  \ target=\"_blank\">in der Dokumentation</a>.\nSie können diese Funktion deaktivieren,
+  indem Sie diese Einstellung auswählen.\n"
+token_label: Beschriftung
+token_password: Passwort Token
+token_action_create: Ein neuen Token erstellen
+token_action_revoke: Token widerrufen
+token_default_label: Über die Weboberfläche generierter Token
+token_action_revoke_confirm: Sind Sie sicher, dass Sie diesen Token widerrufen wollen?
+auth_description: "<h3>Authentifizierung</h3>\n"
+livechat_token_disabled_label: Livechat-Token deaktivieren
+share_chat_dock: Dock
