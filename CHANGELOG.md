@@ -3,6 +3,7 @@
 ## 10.1.1 (Not released yet)
 
 * #436: Saving emojis per batch, to avoid hitting max payload limit.
+* Fix: the emojis import function could add more entries than max allowed emoji count.
 
 ## 10.1.0
 

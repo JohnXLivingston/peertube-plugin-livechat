@@ -181,6 +181,16 @@ export class ChannelDetailsService {
   public async validateEmojisConfiguration (channelEmojis: ChannelEmojis): Promise<boolean> {
     const propertiesError: ValidationError['properties'] = {}
 
+    if (channelEmojis.customEmojis.length > maxEmojisPerChannel) {
+      // This can happen when using the import function.
+      const validationError = new ValidationError(
+        'ChannelEmojisValidationError',
+        await this._registerClientOptions.peertubeHelpers.translate(LOC_TOO_MANY_ENTRIES),
+        propertiesError
+      )
+      throw validationError
+    }
+
     const seen = new Map<string, true>()
     for (const [i, e] of channelEmojis.customEmojis.entries()) {
       propertiesError[`emojis.${i}.sn`] = []
@@ -233,7 +243,7 @@ export class ChannelDetailsService {
     let watchDog = 0
     while (i >= 0) {
       watchDog++
-      if (watchDog > maxEmojisPerChannel + 10) { // just to avoid infinite loop
+      if (watchDog > channelEmojis.customEmojis.length + 10) { // just to avoid infinite loop
         throw new Error('Seems we have sent too many emojis, this was not expected')
       }
       const data: CustomEmojiDefinition[] = customEmojis.slice(0, i + 1) // all elements until first new file

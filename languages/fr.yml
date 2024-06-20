@@ -522,3 +522,4 @@ livechat_token_disabled_description: "Les utilisateur⋅rices peuvent générer 
   pour inclure le tchat dans les docks web dans OBS.\nConsultez <a href=\"https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/user/obs\"\
   \ target=\"_blank\">la documentation</a> pour plus d'informations.\nVous pouvez
   désactiver cette fonctionnalité en cochant ce paramètre.\n"
+too_many_entries: "Trop d'entrées"
