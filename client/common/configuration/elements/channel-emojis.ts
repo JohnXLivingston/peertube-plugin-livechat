@@ -132,7 +132,6 @@ export class ChannelEmojisElement extends LivechatElement {
    */
   public async importEmojis (ev: Event): Promise<void> {
     ev.preventDefault()
-    this.actionDisabled = true
     try {
       // download a json file:
       const file = await new Promise<File>((resolve, reject) => {
@@ -152,6 +151,8 @@ export class ChannelEmojisElement extends LivechatElement {
         input.click()
         input.remove()
       })
+
+      this.actionDisabled = true
 
       const content = await new Promise<string>((resolve, reject) => {
         const fileReader = new FileReader()

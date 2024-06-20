@@ -1,5 +1,9 @@
 # Changelog
 
+## 10.1.2
+
+* Fix: clicking on the import custom emojis button, without selected any file, was resulting in a state with all action button disabled.
+
 ## 10.1.1
 
 * Fix #436: Saving emojis per batch, to avoid hitting max payload limit.
