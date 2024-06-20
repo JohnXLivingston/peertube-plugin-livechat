@@ -5,6 +5,7 @@
 * Fix #436: Saving emojis per batch, to avoid hitting max payload limit.
 * Fix: the emojis import function could add more entries than max allowed emoji count.
 * Fix #437: removing last line if empty when importing emojis.
+* Updated translations: de, sk.
 
 ## 10.1.0
 
