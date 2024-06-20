@@ -1,5 +1,9 @@
 # Changelog
 
+## 10.1.1 (Not released yet)
+
+* #436: Saving emojis per batch, to avoid hitting max payload limit.
+
 ## 10.1.0
 
 ### New features

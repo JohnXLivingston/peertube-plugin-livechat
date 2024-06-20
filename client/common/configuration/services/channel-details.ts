@@ -5,10 +5,12 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type {
-  ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions, ChannelEmojisConfiguration, ChannelEmojis
+  ChannelLiveChatInfos, ChannelConfiguration, ChannelConfigurationOptions, ChannelEmojisConfiguration, ChannelEmojis,
+  CustomEmojiDefinition
 } from 'shared/lib/types'
 import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
 import { getBaseRoute } from '../../../utils/uri'
+import { maxEmojisPerChannel } from 'shared/lib/emojis'
 
 export class ChannelDetailsService {
   public _registerClientOptions: RegisterClientOptions
@@ -213,11 +215,57 @@ export class ChannelDetailsService {
   public async saveEmojisConfiguration (
     channelId: number,
     channelEmojis: ChannelEmojis
-  ): Promise<void> {
+  ): Promise<ChannelEmojisConfiguration> {
     if (!await this.validateEmojisConfiguration(channelEmojis)) {
       throw new Error('Invalid form data')
     }
 
+    // Note: API request body size is limited to 100Kb (expressjs body-parser defaut limit, and Peertube nginx config).
+    // So we must send new emojis 1 by 1, to be sure to not reach the limit.
+    if (!channelEmojis.customEmojis.find(e => e.url.startsWith('data:'))) {
+      // No new emojis, just saving.
+      return this._saveEmojisConfiguration(channelId, channelEmojis)
+    }
+
+    let lastResult: ChannelEmojisConfiguration | undefined
+    let customEmojis: CustomEmojiDefinition[] = [...channelEmojis.customEmojis] // copy the original array
+    let i = customEmojis.findIndex(e => e.url.startsWith('data:'))
+    let watchDog = 0
+    while (i >= 0) {
+      watchDog++
+      if (watchDog > maxEmojisPerChannel + 10) { // just to avoid infinite loop
+        throw new Error('Seems we have sent too many emojis, this was not expected')
+      }
+      const data: CustomEmojiDefinition[] = customEmojis.slice(0, i + 1) // all elements until first new file
+      data.push(
+        // all remaining elements that where already uploaded (to not loose them):
+        ...customEmojis.slice(i + 1).filter((e) => !e.url.startsWith('data:'))
+      )
+      lastResult = await this._saveEmojisConfiguration(channelId, {
+        customEmojis: data
+      })
+
+      // Must inject the result in customEmojis
+      const temp = lastResult.emojis.customEmojis.slice(0, i + 1) // last element should have been replace by a http url
+      temp.push(
+        ...customEmojis.slice(i + 1) // remaining elements in the previous array
+      )
+      customEmojis = temp
+
+      // and searching again next new emojis
+      i = customEmojis.findIndex(e => e.url.startsWith('data:'))
+    }
+    if (!lastResult) {
+      // This should not happen...
+      throw new Error('Unexpected: no last result')
+    }
+    return lastResult
+  }
+
+  private async _saveEmojisConfiguration (
+    channelId: number,
+    channelEmojis: ChannelEmojis
+  ): Promise<ChannelEmojisConfiguration> {
     const response = await fetch(
       getBaseRoute(this._registerClientOptions) +
         '/api/configuration/channel/emojis/' +
@@ -230,10 +278,9 @@ export class ChannelDetailsService {
     )
 
     if (!response.ok) {
-      if (response.status === 404) {
-        // File does not exist yet, that is a normal use case.
-      }
       throw new Error('Can\'t get channel emojis options.')
     }
+
+    return response.json()
   }
 }

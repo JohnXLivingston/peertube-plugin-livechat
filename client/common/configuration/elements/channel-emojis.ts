@@ -102,9 +102,13 @@ export class ChannelEmojisElement extends LivechatElement {
 
     try {
       this.actionDisabled = true
-      await this._channelDetailsService.saveEmojisConfiguration(this.channelId, this.channelEmojisConfiguration.emojis)
+      this.channelEmojisConfiguration = await this._channelDetailsService.saveEmojisConfiguration(
+        this.channelId,
+        this.channelEmojisConfiguration.emojis
+      )
       this.validationError = undefined
       this.ptNotifier.info(await this.ptTranslate(LOC_SUCCESSFULLY_SAVED))
+      this.requestUpdate('channelEmojisConfiguration')
       this.requestUpdate('_validationError')
     } catch (error) {
       this.validationError = undefined

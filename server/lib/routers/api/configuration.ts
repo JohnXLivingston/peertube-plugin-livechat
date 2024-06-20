@@ -168,7 +168,16 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
 
         await emojis.saveChannelDefinition(channelInfos.id, emojisDefinitionSanitized, bufferInfos)
 
-        res.sendStatus(200)
+        // Reloading data, to send them back to front:
+        const channelEmojis =
+          (await emojis.channelCustomEmojisDefinition(channelInfos.id)) ??
+          emojis.emptyChannelDefinition()
+        const result: ChannelEmojisConfiguration = {
+          channel: channelInfos,
+          emojis: channelEmojis
+        }
+        res.status(200)
+        res.json(result)
       } catch (err) {
         logger.error(err)
         res.sendStatus(500)
