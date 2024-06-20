@@ -9,7 +9,9 @@ export const livechatSpecificsPlugin = {
 
     _converse.api.settings.extend({
       // if user is authenticated with an external account (to add a logout button)
-      livechat_specific_external_authent: false
+      livechat_specific_external_authent: false,
+      // if user is anonymous
+      livechat_specific_is_anonymous: false
     })
 
     _converse.api.listen.on('getHeadingButtons', (view: any, buttons: any[]) => {

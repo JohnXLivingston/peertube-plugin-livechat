@@ -1,7 +1,7 @@
 ---
 title: "Moderation"
 description: "Plugin peertube-plugin-livechat advanced moderation features"
-weight: 60
+weight: 30
 chapter: false
 ---
 
@@ -38,6 +38,30 @@ Clicking this button will give them owner access on the room.
 
 You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.
 When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.
+
+## {{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}
+
+{{% notice info %}}
+This feature comes with the livechat plugin version 10.2.0.
+{{% /notice %}}
+
+You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat.
+
+To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the "configure" menu.
+In the form, you will find a "{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}" checkbox.
+
+![Room configuration / Mute anonymous users](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px)
+
+Anonymous users won't have the message field, and will see following prompt: "{{% livechat_label muted_anonymous_message %}}"
+
+![Room configuration / Muted anonymous users](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px)
+
+When this feature is enabled, anonymous users will be assigned the "visitor" role.
+You can change their role to "participant" if you want to allow some of them to talk.
+
+If you change the room configuration, all anonymous users will be muted or unmuted.
+
+You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel).
 
 ## Roles and affiliations
 

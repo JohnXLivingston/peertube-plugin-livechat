@@ -34,7 +34,8 @@ const locKeys = [
   'task_delete_confirm',
   'task_list_pick_title',
   'task_list_pick_empty',
-  'task_list_pick_message'
+  'task_list_pick_message',
+  'muted_anonymous_message'
 ]
 
 module.exports = locKeys

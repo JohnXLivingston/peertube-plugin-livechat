@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-19 12:16+0200\n"
+"POT-Creation-Date: 2024-06-21 11:19+0200\n"
 "PO-Revision-Date: 2024-06-19 10:51+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2612,9 +2611,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Share link popup - dock tab](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Popup de partage de lien - onglet dock](/peertube-plugin-livechat/images/"
-"share_dock.png?classes=shadow,border&height=200px)"
+msgstr "![Popup de partage de lien - onglet dock](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2624,16 +2621,12 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![OBS - Dock menu](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![OBS - Menu dock](/peertube-plugin-livechat/images/obs_dock_menu."
-"png?classes=shadow,border&height=200px)"
+msgstr "![OBS - Menu dock](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![OBS - Dock dialog](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![OBS - Fenêtre de dialogue dock](/peertube-plugin-livechat/images/"
-"obs_dock_dialog.png?classes=shadow,border&height=200px)"
+msgstr "![OBS - Fenêtre de dialogue dock](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2643,9 +2636,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![OBS - Dock](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![OBS - Dock](/peertube-plugin-livechat/images/obs_dock."
-"png?classes=shadow,border&height=200px)"
+msgstr "![OBS - Dock](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2781,10 +2772,7 @@ msgstr "{{% livechat_label generate_iframe %}} : à la place d'une url, vous aur
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "For more information on the \"{{% livechat_label share_chat_dock %}}\" tab, check the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
-msgstr ""
-"Pour plus d'information sur l'onglet \"{{% livechat_label share_chat_dock %}}"
-"\", veuillez vous référer à la [documentation OBS](/peertube-plugin-livechat/"
-"fr/documentation/user/obs)."
+msgstr "Pour plus d'information sur l'onglet \"{{% livechat_label share_chat_dock %}}\", veuillez vous référer à la [documentation OBS](/peertube-plugin-livechat/fr/documentation/user/obs)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2794,9 +2782,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Share link popup - web tab](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Fenêtre de partage de lien - onglet web](/peertube-plugin-livechat/images/"
-"share_web.png?classes=shadow,border&height=200px)"
+msgstr "![Fenêtre de partage de lien - onglet web](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2806,13 +2792,11 @@ msgstr "La popup «{{% livechat_label share_chat_link %}}» peut également cont
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Share link popup - xmpp tab](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Fenêtre de partage de lein - onglet XMPP](/peertube-plugin-livechat/images/"
-"share_xmpp_dialog.png?classes=shadow,border&height=200px)"
+msgstr "![Fenêtre de partage de lein - onglet XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Moderation"
@@ -2853,7 +2837,7 @@ msgstr "Vous pouvez changer le comportement de la persistance. [Ouvrez le menu d
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgstr "![Menu du tchat](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
@@ -3089,6 +3073,13 @@ msgstr "Ici vous pouvez configurer :"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
+#, fuzzy
+#| msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
+msgstr "Veuillez vous référer à la [documentation de modération](/peertube-plugin-livechat/fr/documentation/user/streamers/moderation)."
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 msgstr "[Le mode lent](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 
@@ -3100,9 +3091,7 @@ msgstr "[Le bot de tchat](/peertube-plugin-livechat/documentation/fr/user/stream
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
-msgstr ""
-"[Emojis personnalisés](/peertube-plugin-livechat/documentation/user/"
-"streamers/emojis)"
+msgstr "[Emojis personnalisés](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3135,26 +3124,17 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
-msgstr ""
-"Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/"
-"documentation/user/streamers/channel), ouvrez l'onglet \"{{% livechat_label "
-"livechat_configuration_channel_emojis_title %}}\" :"
+msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), ouvrez l'onglet \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" :"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "![Channel configuration / Channel emojis configuration](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Configuration de la chaîne / Configuration des emojis de la chaîne"
-"](/peertube-plugin-livechat/images/channel_custom_emojis_configuration."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Configuration de la chaîne / Configuration des emojis de la chaîne](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Configuration de la chaîne / Emojis de la chaîne](/peertube-"
-"plugin-livechat/images/channel_custom_emojis."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Configuration de la chaîne / Emojis de la chaîne](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
 
 #. type: Title ###
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3202,18 +3182,18 @@ msgid "For streamers"
 msgstr "Pour les streameur⋅euses"
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advanced moderation features"
 msgstr "Fonctions de modération avancées du plugin peertube-plugin-livechat"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "This section is still incomplete."
 msgstr "Cette section est encore incomplète."
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid ""
 "This page describes the behaviour of livechat versions >= 10.0.0.\n"
@@ -3223,87 +3203,142 @@ msgstr ""
 "Il y a eu quelques changements dans la façon dont nous gérons les droits d'accès pour les administrateur⋅rices et modérateur⋅rices de Peertube.\n"
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "The chat bot"
 msgstr "Le bot de tchat"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
 msgstr "Vous pouvez utiliser un bot de tchat, qui vous aidera pour la modération. Veuillez vous référer à la [documentation du bot de tchat](/peertube-plugin-livechat/documentation/fr/user/streamers/bot) pour plus d'informations."
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Accessing moderation tools"
 msgstr "Accéder aux outils de modération"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat."
 msgstr "Vous pouvez accéder aux paramètres de la salle et aux outils de modération en utilisant le [menu déroulant du tchat](/peertube-plugin-livechat/fr/documentation/user/viewers) en haut à droite de celui-ci."
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
 msgstr "Le⋅a propriétaire de la vidéo sera le⋅a propriétaire du salon de discussion.  Cela signifie qu'iel peut configurer le salon, le supprimer, promouvoir d'autres utilisateur⋅rices en tant qu'administrateur⋅rices, ..."
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
 msgstr "Depuis la version 10.0.0 de livechat, les administrateur⋅rices et modérateur⋅rices de l'instance Peertube n'ont pas de droits particuliers par défaut sur les salons.  Cependant, iels ont un bouton spécial disponible en haut du chat : \"{{% livechat_label promote %}}\".  En cliquant sur ce bouton, iels auront un accès propriétaire à la salle."
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
 msgstr "Vous pouvez utiliser les [commandes de modération ConverseJS](https://conversejs.org/docs/html/features.html#moderating-chatrooms) pour modérer le salon. Lorsque vous ouvrez la salle de discussion en plein écran, un menu avec des commandes dédiées s'affiche en haut à droite."
 
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "This feature comes with the livechat plugin version 10.1.0."
+msgid "This feature comes with the livechat plugin version 10.2.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.1.0."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
+msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox."
+msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), ouvrez l'onglet \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" :"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgid "![Room configuration / Mute anonymous users](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px)"
+msgstr "![Tchat avec utilisateur anonyme](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "Anonymous users won't have the message field, and will see following prompt: \"{{% livechat_label muted_anonymous_message %}}\""
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgid "![Room configuration / Muted anonymous users](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px)"
+msgstr "![Tchat avec utilisateur anonyme](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "When this feature is enabled, anonymous users will be assigned the \"visitor\" role.  You can change their role to \"participant\" if you want to allow some of them to talk."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "If you change the room configuration, all anonymous users will be muted or unmuted."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
+msgid "You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel)."
+msgstr "Pour accéder à cette page, veuillez vous référer à la [documentation sur la configuration des chaînes](/peertube-plugin-livechat/fr/documentation/user/streamers/channel)."
+
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Roles and affiliations"
 msgstr "Rôles et affiliations"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "There are several roles that can be assignated to users in chat rooms: owner, moderators, member, ..."
 msgstr "Il y a différents rôles qui peuvent être assignés aux utilisateur⋅rices dans les salons de discussion : propriétaire, modérateur⋅rice, membre, ..."
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can promote users as moderators, if you need some help."
 msgstr "Vous pouvez promouvoir des utilisateur⋅rices en tant que modérateur⋅rices, si vous avez besoin d'aide."
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Delete room content"
 msgstr "Supprimer le contenu des salons"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room."
 msgstr "Vous pouvez supprimer d'anciennes salles : rejoignez la salle, et utilisez le menu en haut pour détruire la salle."
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Instance moderation"
 msgstr "Modération de l'instance"
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly."
 msgstr "En tant que modérateur⋅rice ou administrateur⋅rice de l'instance Peertube, vous allez probablement vouloir vérifier que les utilisateur⋅rices n'ont pas de comportement problématique."
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
 msgstr "Vous pouvez lister toutes les salles de discussion existantes : dans l'écran des paramètres du plugin, il y a un bouton \"Lister les salles\"."
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
 msgstr "De là, vous pouvez également vous promouvoir en tant que modérateur⋅rice de salon en utilisant le bouton \"{{% livechat_label promote %}}\" sur la droite."
 

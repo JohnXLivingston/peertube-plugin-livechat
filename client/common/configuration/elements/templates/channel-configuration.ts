@@ -127,6 +127,33 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       </p>
 
       <form livechat-configuration-channel-options role="form" @submit=${el.saveConfig} @change=${el.resetValidation}>
+
+        <livechat-configuration-section-header
+          .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_MUTE_ANONYMOUS_LABEL)}
+          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_MUTE_ANONYMOUS_DESC, true)}
+          .helpPage=${'documentation/user/streamers/moderation'}>
+        </livechat-configuration-section-header>
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
+              name="bot"
+              id="peertube-livechat-mute-anonymous"
+              @input=${(event: InputEvent) => {
+                  if (event?.target && el.channelConfiguration) {
+                    el.channelConfiguration.configuration.mute.anonymous =
+                      (event.target as HTMLInputElement).checked
+                  }
+                  el.requestUpdate('channelConfiguration')
+                }
+              }
+              value="1"
+              ?checked=${el.channelConfiguration?.configuration.mute.anonymous}
+            />
+            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_MUTE_ANONYMOUS_LABEL)}
+          </label>
+        </div>
+
         <livechat-configuration-section-header
           .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
           .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}

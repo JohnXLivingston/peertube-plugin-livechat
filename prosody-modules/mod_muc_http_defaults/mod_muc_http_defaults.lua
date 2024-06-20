@@ -4,9 +4,13 @@
 -- SPDX-License-Identifier: MIT
 -- SPDX-License-Identifier: AGPL-3.0-only
 --
--- This version contains a modification to take into account new config option "slow_mode_duration".
--- This option is introduced in the Peertube livechat plugin, by mod_muc_slow_mode.
--- There will be a XEP proposal. When done, these modifications will be submitted to the mod_muc_http_defaults maintainer.
+-- This version contains a modification to take into account new config options:
+-- * "slow_mode_duration"
+-- * "mute_anonymous"
+-- These options are introduced in the Peertube livechat plugin.
+--
+-- The "slow_mode_duration" comes with mod_muc_slow_mode.
+-- There will be a XEP proposal for this one. When done, these modifications will be submitted to the mod_muc_http_defaults maintainer.
 -- 
 
 local http = require "net.http";
@@ -113,6 +117,9 @@ local function apply_config(room, settings)
 		-- specific to peertube-plugin-livechat:
 		if (type(config.slow_mode_duration) == "number") and config.slow_mode_duration >= 0 then
 				room._data.slow_mode_duration = config.slow_mode_duration;
+		end
+		if (type(config.mute_anonymous) == "boolean") then
+			room._data.x_peertubelivechat_mute_anonymous = config.mute_anonymous;
 		end
 	elseif config ~= nil then
 		module:log("error", "Invalid config returned from API for %s: %q", room.jid, config);

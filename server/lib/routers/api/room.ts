@@ -36,14 +36,22 @@ interface RoomDefaults {
 
     // Following fields are specific to livechat (for now), and requires a customized version for mod_muc_http_defaults.
     slow_mode_duration?: number
+    mute_anonymous?: boolean
   }
   affiliations?: Affiliations
 }
 
-async function slowModeDuration (options: RegisterServerOptions, channelId: number): Promise<number> {
+async function _getChannelSpecificOptions (
+  options: RegisterServerOptions,
+  channelId: number
+): Promise<Partial<RoomDefaults['config']>> {
   const channelOptions = await getChannelConfigurationOptions(options, channelId) ??
     getDefaultChannelConfigurationOptions(options)
-  return channelOptions.slowMode.duration
+
+  return {
+    slow_mode_duration: channelOptions.slowMode.duration,
+    mute_anonymous: channelOptions.mute.anonymous
+  }
 }
 
 /**
@@ -89,12 +97,14 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
         }
 
         const roomDefaults: RoomDefaults = {
-          config: {
-            name: channelInfos.displayName,
-            description: '',
-            // subject: channelInfos.displayName
-            slow_mode_duration: await slowModeDuration(options, channelId)
-          },
+          config: Object.assign(
+            {
+              name: channelInfos.displayName,
+              description: ''
+              // subject: channelInfos.displayName
+            },
+            await _getChannelSpecificOptions(options, channelId)
+          ),
           affiliations: affiliations
         }
 
@@ -141,13 +151,15 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
         }
 
         const roomDefaults: RoomDefaults = {
-          config: {
-            name: video.name,
-            description: '',
-            language: video.language,
-            // subject: video.name
-            slow_mode_duration: await slowModeDuration(options, video.channelId)
-          },
+          config: Object.assign(
+            {
+              name: video.name,
+              description: '',
+              language: video.language
+              // subject: video.name
+            },
+            await _getChannelSpecificOptions(options, video.channelId)
+          ),
           affiliations: affiliations
         }
 

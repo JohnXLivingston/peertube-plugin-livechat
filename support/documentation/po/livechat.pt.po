@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-19 12:16+0200\n"
+"POT-Creation-Date: 2024-06-21 11:19+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/pt/>\n"
@@ -2712,7 +2712,7 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Moderation"
@@ -2753,7 +2753,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgstr ""
@@ -2989,6 +2989,11 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 msgstr ""
 
@@ -3091,18 +3096,18 @@ msgid "For streamers"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advanced moderation features"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "This section is still incomplete."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid ""
 "This page describes the behaviour of livechat versions >= 10.0.0.\n"
@@ -3110,87 +3115,132 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "The chat bot"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Accessing moderation tools"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
 msgstr ""
 
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "This feature comes with the livechat plugin version 10.2.0."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "![Room configuration / Mute anonymous users](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px)"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "Anonymous users won't have the message field, and will see following prompt: \"{{% livechat_label muted_anonymous_message %}}\""
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "![Room configuration / Muted anonymous users](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px)"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "When this feature is enabled, anonymous users will be assigned the \"visitor\" role.  You can change their role to \"participant\" if you want to allow some of them to talk."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "If you change the room configuration, all anonymous users will be muted or unmuted."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel)."
+msgstr ""
+
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Roles and affiliations"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "There are several roles that can be assignated to users in chat rooms: owner, moderators, member, ..."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can promote users as moderators, if you need some help."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Delete room content"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room."
 msgstr ""
 
 #. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Instance moderation"
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
 msgstr ""
 
 #. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
 msgstr ""
 

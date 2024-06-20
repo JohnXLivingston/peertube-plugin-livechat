@@ -1,7 +1,7 @@
 ---
 title: "Channel configuration"
 description: "Peertube channel chatrooms configuration"
-weight: 30
+weight: 20
 chapter: false
 ---
 
@@ -20,6 +20,7 @@ By clicking on a channel, you will then be able to setup some options for your c
 
 Here you can configure:
 
+* [{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value
 * [The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)
 * [The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)
 * [Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)

@@ -213,6 +213,7 @@ class ProsodyConfigContent {
 
     this.muc.add('modules_enabled', 'muc_slow_mode')
     this.muc.add('modules_enabled', 'pubsub_peertubelivechat')
+    this.muc.add('modules_enabled', 'muc_peertubelivechat_roles')
     this.muc.add('slow_mode_duration_form_position', 120)
   }
 

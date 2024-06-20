@@ -48,10 +48,14 @@ import '../custom/plugins/size/index.js'
 import '../custom/plugins/tasks/index.js'
 /* END: Removable components */
 
-// We must add our custom plugins to CORE_PLUGINS (so it is white listed):
 import { CORE_PLUGINS } from './headless/shared/constants.js'
+import { ROOM_FEATURES } from './headless/plugins/muc/constants.js'
+// We must add our custom plugins to CORE_PLUGINS (so it is white listed):
 CORE_PLUGINS.push('livechat-converse-size')
 CORE_PLUGINS.push('livechat-converse-tasks')
+// We must also add our custom ROOM_FEATURES, so that they correctly resets
+// (see headless/plugins/muc, getDiscoInfoFeatures, which loops on this const)
+ROOM_FEATURES.push('x_peertubelivechat_mute_anonymous')
 
 _converse.CustomElement = CustomElement
 

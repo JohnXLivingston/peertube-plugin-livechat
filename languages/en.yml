@@ -546,3 +546,10 @@ livechat_token_disabled_description: |
   These tokens can for example be used to include the chat in OBS web docks.
   Check <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/user/obs" target="_blank">the documentation</a> for more information.
   You can disable this feature by checking this setting.
+
+muted_anonymous_message: Only registered users can send messages.
+livechat_configuration_channel_mute_anonymous_label: "Mute anonymous users"
+livechat_configuration_channel_mute_anonymous_desc: |
+  Default value for new chatrooms.
+  For existing chatrooms, you can change the feature in the room configuration form.
+  When this feature is enabled, anonymous users can only read the chat, and not send messages.

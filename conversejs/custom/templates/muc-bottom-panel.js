@@ -79,18 +79,21 @@ class SlowMode extends CustomElement {
 api.elements.define('livechat-slow-mode', SlowMode)
 
 const tplSlowMode = (o) => {
+  if (!o.can_edit) { return html`` }
   return html`<livechat-slow-mode jid=${o.model.get('jid')}>`
 }
 
-export default (o) => {
-  if (api.settings.get('livechat_enable_viewer_mode')) {
-    const model = o.model
-    const i18nNickname = __('Nickname')
-    const i18nJoin = __('Enter groupchat')
-    const i18nHeading = __('Choose a nickname to enter')
-    // eslint-disable-next-line no-undef
-    const i18nExternalLogin = __(LOC_login_using_external_account)
-    return html`
+const tplViewerMode = (o) => {
+  if (!api.settings.get('livechat_enable_viewer_mode')) {
+    return html``
+  }
+  const model = o.model
+  const i18nNickname = __('Nickname')
+  const i18nJoin = __('Enter groupchat')
+  const i18nHeading = __('Choose a nickname to enter')
+  // eslint-disable-next-line no-undef
+  const i18nExternalLogin = __(LOC_login_using_external_account)
+  return html`
     <div class="livechat-viewer-mode-content chatroom-form-container">
         <form class="converse-form chatroom-form" @submit=${ev => setNickname(ev, model)}>
             <label>${i18nHeading}</label>
@@ -121,12 +124,38 @@ export default (o) => {
               </div>
             `
         }
-    </div>
-    ${tplSlowMode(o)}
-    ${tplMucBottomPanel(o)}`
+    </div>`
+}
+
+export default (o) => {
+  // ConverseJS 10.x does not handle properly the visitor role in unmoderated rooms.
+  // See https://github.com/conversejs/converse.js/issues/3428 for more info.
+  // So we will do a dirty hack here to fix this case.
+  // Note: ConverseJS 11.x has changed the code, and could be fixed more cleanly (or will be fixed if #3428 is fixed).
+  if (o.can_edit && o.model.getOwnRole() === 'visitor') {
+    o.can_edit = false
+  }
+
+  let mutedAnonymousMessage
+  if (
+    !o.can_edit &&
+    o.model.features?.get?.('x_peertubelivechat_mute_anonymous') &&
+    _converse.api.settings.get('livechat_specific_is_anonymous') === true
+  ) {
+    // If we are moderated because we are anonymous, we want to display a custom message.
+    // FIXME: if x_peertubelivechat_mute_anonymous changes, user are first muted/voiced, and then only the
+    //      status 104 is sent. But we don't listen to 'change:x_peertubelivechat_mute_anonymous'.
+    //      So the custom message won't be correct. But this is not a big issue.
+    // eslint-disable-next-line no-undef
+    mutedAnonymousMessage = __(LOC_muted_anonymous_message)
   }
 
   return html`
+    ${tplViewerMode(o)}
     ${tplSlowMode(o)}
-    ${tplMucBottomPanel(o)}`
+    ${
+      mutedAnonymousMessage
+        ? html`<span class="muc-bottom-panel muc-bottom-panel--muted">${mutedAnonymousMessage}</span>`
+        : tplMucBottomPanel(o)
+    }`
 }

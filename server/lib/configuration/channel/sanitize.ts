@@ -35,6 +35,14 @@ async function sanitizeChannelConfigurationOptions (
     throw new Error('Invalid data.slowMode data type')
   }
 
+  // mute not present in livechat <= 10.2.0
+  const mute = data.mute ?? {}
+  mute.anonymous ??= false
+
+  if (typeof mute !== 'object') {
+    throw new Error('Invalid data.mute data type')
+  }
+
   const result: ChannelConfigurationOptions = {
     bot: {
       enabled: _readBoolean(botData, 'enabled'),
@@ -46,6 +54,9 @@ async function sanitizeChannelConfigurationOptions (
     },
     slowMode: {
       duration: _readInteger(slowModeData, 'duration', 0, 1000)
+    },
+    mute: {
+      anonymous: _readBoolean(mute, 'anonymous')
     }
   }
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 10.2.0 (Not Released Yet)
+
+### New features
+
+* #233: new option to [mute anonymous users](https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/user/streamers/moderation/).
+
 ## 10.1.2
 
 * Fix: clicking on the import custom emojis button, without selected any file, was resulting in a state with all action button disabled.

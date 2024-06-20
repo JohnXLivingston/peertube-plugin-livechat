@@ -49,6 +49,9 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
     },
     slowMode: {
       duration: 0
+    },
+    mute: {
+      anonymous: false
     }
   }
 }

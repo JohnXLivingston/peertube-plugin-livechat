@@ -185,6 +185,7 @@ async function initConverse (
   params.livechat_enable_viewer_mode = autoViewerMode && !isAuthenticated && !isRemoteWithNicknameSet
 
   params.livechat_specific_external_authent = isAuthenticatedWithExternalAccount
+  params.livechat_specific_is_anonymous = !isAuthenticated
 
   if (tryOIDC && !isAuthenticated) {
     params.livechat_external_auth_oidc_buttons = initConverseParams.externalAuthOIDC
