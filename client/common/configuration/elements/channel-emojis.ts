@@ -174,6 +174,15 @@ export class ChannelEmojisElement extends LivechatElement {
       if (!Array.isArray(json)) {
         throw new Error('Invalid data, an array was expected')
       }
+
+      // Before adding new entries, we check if the last current line is empty,
+      // and remove it in such case.
+      // See https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/437
+      const last = this.channelEmojisConfiguration?.emojis.customEmojis.slice(-1)[0]
+      if (last && last.sn === '' && last.url === '') {
+        this.channelEmojisConfiguration?.emojis.customEmojis.pop()
+      }
+
       for (const entry of json) {
         if (typeof entry !== 'object') {
           throw new Error('Invalid data')
