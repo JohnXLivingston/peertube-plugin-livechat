@@ -1,0 +1,308 @@
+online_help: "Online pomoc"
+open_chat: "Otvoriť chat"
+open_chat_new_window: "Otvoriť chat na novom okne"
+close_chat: "Zavrieť čet"
+use_chat: "Použite chat"
+use_chat_help: "Ak je povolená, vedľa videa sa zobrazí chat."
+share_chat_link: "Zdieľať odkaz na čet"
+read_only: "Iba na čítanie"
+show_scrollbarr: ""
+transparent_background: ""
+tips_for_streamers: |
+copy: ""
+copied: ""
+link_copied: ""
+error: ""
+open: ""
+use_current_theme_color: ""
+generate_iframe: ""
+chat_for_live_stream: ""
+room_name: ""
+room_description: ""
+not_found: ""
+video: ""
+channel: ""
+last_activity: ""
+web: ""
+connect_using_xmpp: ""
+connect_using_xmpp_help: ""
+
+important_note_title: ""
+important_note_text: |
+
+diagnostic: |
+
+chat_title: ""
+
+list_rooms_label: ""
+list_rooms_description: |
+
+federation_description: |
+
+federation_no_remote_chat_label: ""
+federation_no_remote_chat_description: |
+
+federation_dont_publish_remotely_label: ""
+federation_dont_publish_remotely_description: |
+
+external_auth_description: |
+
+external_auth_custom_oidc_title: ""
+
+external_auth_custom_oidc_label: ""
+external_auth_custom_oidc_description: |
+
+external_auth_custom_oidc_button_label_label: ""
+external_auth_custom_oidc_button_label_description: ""
+
+external_auth_custom_oidc_discovery_url_label: ""
+external_auth_oidc_client_id_label: ""
+external_auth_oidc_client_secret_label: ""
+external_auth_oidc_redirect_uris_info_description: |
+
+external_auth_google_oidc_label: ''
+external_auth_google_oidc_description: |
+external_auth_facebook_oidc_label: ''
+external_auth_facebook_oidc_description: |
+
+chat_behaviour_description: ""
+
+room_type_label: ""
+room_type_description: ""
+room_type_option_video: ""
+room_type_option_channel: ""
+
+auto_display_label: ""
+auto_display_description: ""
+
+open_blank_label: ""
+open_blank_description: ""
+
+share_url_label: ""
+share_url_description: ""
+share_url_option_nobody: ""
+share_url_option_everyone: ""
+share_url_option_owner: ""
+share_url_option_owner_moderators: ""
+
+per_live_video_label: ""
+per_live_video_description: ""
+
+per_live_video_warning_description: |
+
+all_lives_label: ""
+all_lives_description: ""
+
+all_non_lives_label: ""
+all_non_lives_description: ""
+
+videos_list_label: ""
+videos_list_description: |
+
+no_anonymous_label: ""
+no_anonymous_description: |
+
+auto_ban_anonymous_ip_label: ""
+auto_ban_anonymous_ip_description: |
+
+theming_advanced_description: ""
+
+avatar_set_label: ""
+avatar_set_description: |
+avatar_set_option_sepia: ""
+avatar_set_option_cat: ""
+avatar_set_option_bird: ""
+avatar_set_option_fenec: ""
+avatar_set_option_abstract: ''
+avatar_set_option_legacy: ""
+
+converse_theme_label: ""
+converse_theme_description: ""
+converse_theme_option_peertube: ""
+converse_theme_option_default: ""
+converse_theme_option_concord: ""
+
+autocolors_label: ""
+autocolors_description: |
+
+chat_style_label: ""
+chat_style_description: |
+
+prosody_advanced_description: ""
+
+help_builtin_prosody_label: ""
+help_builtin_prosody_description: |
+
+system_prosody_label: ""
+system_prosody_description: |
+
+disable_websocket_label: ""
+disable_websocket_description: |
+
+prosody_port_label: ""
+prosody_port_description: |
+
+prosody_peertube_uri_label: ""
+prosody_peertube_uri_description: |
+
+prosody_muc_log_by_default_label: ""
+prosody_muc_log_by_default_description: |
+
+prosody_muc_expiration_label: ""
+prosody_muc_expiration_description: |
+
+prosody_room_allow_s2s_label: ""
+prosody_room_allow_s2s_description: |
+
+prosody_s2s_port_label: ""
+prosody_s2s_port_description: |
+
+prosody_s2s_interfaces_label: ""
+prosody_s2s_interfaces_description: |
+
+prosody_certificates_dir_label: ""
+prosody_certificates_dir_description: |
+
+prosody_c2s_label: ""
+prosody_c2s_description: |
+
+prosody_c2s_port_label: ""
+prosody_c2s_port_description: |
+
+
+prosody_c2s_interfaces_label: ""
+prosody_c2s_interfaces_description: |
+
+prosody_components_label: ""
+prosody_components_description: |
+
+prosody_components_port_label: ""
+prosody_components_port_description: |
+
+prosody_components_interfaces_label: ""
+prosody_components_interfaces_description: |
+
+prosody_components_list_label: ""
+prosody_components_list_description: |
+
+experimental_warning: |
+
+configuration_description: |
+
+disable_channel_configuration_label: ""
+
+save: ""
+cancel: ""
+successfully_saved: ""
+menu_configuration_label: ""
+livechat_configuration_title: ""
+livechat_configuration_desc: ""
+livechat_configuration_please_select: ""
+livechat_configuration_channel_title: ""
+livechat_configuration_channel_desc: ""
+livechat_configuration_channel_slow_mode_label: ""
+livechat_configuration_channel_slow_mode_desc: |
+livechat_configuration_channel_enable_bot_label: ""
+livechat_configuration_channel_bot_options_title: ""
+livechat_configuration_channel_forbidden_words_label: ""
+livechat_configuration_channel_forbidden_words_desc: |
+livechat_configuration_channel_forbidden_words_desc2: |
+livechat_configuration_channel_forbidden_words_reason_label: ""
+livechat_configuration_channel_forbidden_words_reason_desc: ""
+livechat_configuration_channel_forbidden_words_regexp_label: ""
+livechat_configuration_channel_forbidden_words_regexp_desc: ""
+livechat_configuration_channel_forbidden_words_label_label: ""
+livechat_configuration_channel_forbidden_words_label_desc: ""
+livechat_configuration_channel_forbidden_words_applytomoderators_label: ""
+livechat_configuration_channel_forbidden_words_applytomoderators_desc: |
+livechat_configuration_channel_forbidden_words_comments_label: ""
+livechat_configuration_channel_forbidden_words_comments_desc: |
+livechat_configuration_channel_quote_label: ""
+livechat_configuration_channel_quote_desc: |
+livechat_configuration_channel_quote_label2: ""
+livechat_configuration_channel_quote_desc2: |
+livechat_configuration_channel_quote_delay_label: ""
+livechat_configuration_channel_quote_delay_desc: |
+livechat_configuration_channel_command_label: ""
+livechat_configuration_channel_command_desc: |
+livechat_configuration_channel_command_cmd_label: ""
+livechat_configuration_channel_command_cmd_desc: |
+livechat_configuration_channel_command_message_label: ""
+livechat_configuration_channel_command_message_desc: ""
+livechat_configuration_channel_for_more_info: |
+livechat_configuration_channel_banned_jids_label: ""
+livechat_configuration_channel_bot_nickname: ""
+
+validation_error: ""
+invalid_value: ""
+invalid_value_missing: ""
+invalid_value_wrong_type: ""
+invalid_value_wrong_format: ""
+invalid_value_not_in_range: ""
+invalid_value_file_too_big: ""
+invalid_value_duplicate: ""
+
+slow_mode_info: ""
+
+chatroom_not_accessible: ""
+
+login_using_external_account: ""
+login_remote_peertube: ""
+login_remote_peertube_url: ""
+login_remote_peertube_searching: ""
+login_remote_peertube_url_invalid: ""
+login_remote_peertube_no_livechat: ""
+login_remote_peertube_video_not_found: ""
+login_remote_peertube_video_not_found_try_anyway: ""
+login_remote_peertube_video_not_found_try_anyway_button: ""
+login_remote_peertube_video_open_failed: ""
+login_external_auth_alert_message: ""
+
+tasks: ''
+task_list_create: ''
+task_list_create_error: ''
+task_list_name: ''
+task_list_delete: ''
+task_list_delete_confirm: ''
+task_create: ''
+task_name: ''
+task_description: ''
+task_delete: ''
+task_delete_confirm: ''
+task_list_pick_title: ''
+task_list_pick_empty: ''
+task_list_pick_message: |
+
+promote: ''
+
+livechat_configuration_channel_emojis_title: ''
+livechat_configuration_channel_emojis_desc: |
+livechat_emojis_shortname: ''
+livechat_emojis_shortname_desc: |
+livechat_emojis_file: ''
+livechat_emojis_file_desc: |
+
+action_import: ''
+action_export: ''
+action_import_emojis_info: ''
+
+action_add_entry: ''
+action_remove_entry: ''
+action_remove_entry_confirm: ''
+
+loading_error: ''
+share_chat_embed: ''
+share_chat_peertube_tips: ''
+share_chat_dock: ''
+share_chat_dock_tips: |
+
+token_label: ''
+token_password: ''
+token_date: ''
+token_action_create: ''
+token_action_revoke: ''
+token_default_label: ''
+token_action_revoke_confirm: ''
+auth_description: |
+livechat_token_disabled_label: ''
+livechat_token_disabled_description: |

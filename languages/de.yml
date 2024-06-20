@@ -511,3 +511,4 @@ token_action_revoke_confirm: Sind Sie sicher, dass Sie diesen Token widerrufen w
 auth_description: "<h3>Authentifizierung</h3>\n"
 livechat_token_disabled_label: Livechat-Token deaktivieren
 share_chat_dock: Dock
+token_date: Datum
