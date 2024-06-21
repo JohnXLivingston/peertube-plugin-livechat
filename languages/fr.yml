@@ -523,3 +523,13 @@ livechat_token_disabled_description: "Les utilisateur⋅rices peuvent générer 
   \ target=\"_blank\">la documentation</a> pour plus d'informations.\nVous pouvez
   désactiver cette fonctionnalité en cochant ce paramètre.\n"
 too_many_entries: "Trop d'entrées"
+livechat_configuration_channel_mute_anonymous_desc: "Valeur par défaut pour les nouveaux
+  salons de discussion.\nPour les salons existants, vous pouvez changer la fonctionnalité
+  via le formulaire de configuration du salon.\nQuand la fonctionnalité est active,
+  les utilisateur⋅rices anonymes ne peuvent que lire le tchat, et ne peuvent pas envoyer
+  de messages.\n"
+livechat_configuration_channel_mute_anonymous_label: Silencier les utilisateur⋅rices
+  anonymes
+muted_anonymous_message: Seuls les utilisateur⋅rices enregistré⋅es peuvent envoyer
+  des messages.
+token_date: Date
