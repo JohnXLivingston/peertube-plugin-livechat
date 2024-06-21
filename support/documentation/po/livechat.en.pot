@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-21 11:19+0200\n"
+"POT-Creation-Date: 2024-06-21 12:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2836,7 +2836,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #, markdown-text
-msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\", and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
+msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\" feature, and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
 msgstr ""
 
 #. type: Plain text

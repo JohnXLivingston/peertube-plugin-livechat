@@ -53,7 +53,7 @@ This feature can be disabled by the instance's adminitrators.
 You can use OBS "Custom browser docks" to integrate the chat in your OBS while you are streaming.
 The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don't have to enter your password in OBS.
 
-To do so, just use the "{{% livechat_label share_chat_link %}}", and open the "{{% livechat_label share_chat_dock %}}" tab.
+To do so, just use the "{{% livechat_label share_chat_link %}}" feature, and open the "{{% livechat_label share_chat_dock %}}" tab.
 From there, you can create a new token using the "+" button.
 
 ![Share link popup - dock tab](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px)

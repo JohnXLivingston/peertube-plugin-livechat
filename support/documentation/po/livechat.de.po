@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-21 11:19+0200\n"
+"POT-Creation-Date: 2024-06-21 12:01+0200\n"
 "PO-Revision-Date: 2024-06-20 11:44+0000\n"
 "Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
@@ -2593,7 +2593,9 @@ msgstr "Sie können OBS \"Benutzerdefinierte Browser-Docks\" verwenden, um den C
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\", and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
+#, fuzzy
+#| msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\", and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
+msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\" feature, and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
 msgstr "Verwenden Sie dazu einfach \"{{% livechat_label share_chat_link %}}\", und öffnen Sie die Registerkarte \"{{% livechat_label share_chat_dock %}}\".  Von dort aus können Sie mit der Schaltfläche \"+\" ein neuen Token erstellen."
 
 #. type: Plain text

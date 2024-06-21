@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-21 11:19+0200\n"
+"POT-Creation-Date: 2024-06-21 12:01+0200\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/zh_Hant/>\n"
@@ -2520,7 +2520,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\", and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
+msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\" feature, and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
 msgstr ""
 
 #. type: Plain text
