@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-21 11:19+0200\n"
-"PO-Revision-Date: 2024-06-19 10:51+0000\n"
+"PO-Revision-Date: 2024-06-21 09:59+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1084,16 +1085,28 @@ msgstr "Vous pouvez également utiliser `*` pour écouter sur toutes les interfa
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Then you need to open the C2S port (by default `52822`, but check the plugin settings to get the current value) in your firewall so that it can be reached from the internet.  If you don't want to use C2S connections for anything else than your Matterbridge service, you should restrict access to this port to your Matterbridge server IP."
 msgstr ""
+"Ensuite, vous devez ouvrir le port C2S (par défaut `52822`, mais vérifiez "
+"les paramètres du plugin pour obtenir la valeur actuelle) dans votre pare-"
+"feu afin qu'il soit accessible depuis l'internet.  Si vous ne souhaitez pas "
+"utiliser les connexions C2S pour autre chose que votre service Matterbridge, "
+"vous devriez restreindre l'accès à ce port à l'IP de votre serveur "
+"Matterbridge."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You also need to add DNS records (A and AAAA) for `anon.example.org` and `room.example.org` (replace `example.org` by your actual domain name)."
 msgstr ""
+"Vous devez également ajouter des enregistrements DNS (A et AAAA) pour `anon."
+"example.org` et `room.example.org` (remplacez `example.org` par votre nom de "
+"domaine actuel)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In case you are using a port other than `5222` (XMPP standard port) you also need to set the [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) to the correct port."
 msgstr ""
+"Si vous utilisez un port autre que `5222` (port standard XMPP), vous devez "
+"également définir l'enregistrement SRV [xmpp-client](https://prosody.im/doc/"
+"dns#srv_records) sur le port correct."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1105,11 +1118,14 @@ msgstr "Configurer Matterbridge"
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In the version 1.22.4, Matterbridge added support for XMPP anonymous connections needed to connect to the built-in prosody."
 msgstr ""
+"Dans la version 1.22.4, Matterbridge a ajouté la prise en charge des "
+"connexions anonymes XMPP, nécessaires pour se connecter au serveur Prosody "
+"intégré."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "So in the TOML config file put:"
-msgstr ""
+msgstr "Ainsi, dans le fichier de configuration TOML, il faut mettre :"
 
 #. type: Fenced code block (TOML)
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1123,41 +1139,66 @@ msgid ""
 "RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
 "NoTLS=true\n"
 msgstr ""
+"[xmpp.mypeertube]\n"
+"Anonymous=true\n"
+"Server=\"anon.example.org:52822\"\n"
+"Muc=\"room.example.org\"\n"
+"Nick=\"Matterbridge\"\n"
+"RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
+"NoTLS=true\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name."
-msgstr ""
+msgstr "Remplacez `example.org` par le nom de domaine de votre instance."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `52822` by the actual port if you changed it."
-msgstr ""
+msgstr "Remplacez `52822` par le port actuel si vous l'avez changé."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "`mypeertube` can be replaced by another name."
-msgstr ""
+msgstr "`mypeertube` peut être remplacé par un autre nom."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Using `peertube` as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification."
 msgstr ""
+"L'utilisation de `peertube` comme pseudonyme (Nick) fournira l'icône "
+"PeerTube pour les messages superposés, ce qui peut également être fait avec "
+"la modification de la configuration de la superposition."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The setting `NoTLS=true` allows connecting to a server with self-signed certificates."
 msgstr ""
+"Le paramètre `NoTLS=true` permet de se connecter à un serveur avec des "
+"certificats auto-signés."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Now you can add this account to gateways and bridge specific live-chat channels."
 msgstr ""
+"Vous pouvez désormais ajouter ce compte aux passerelles et faire le pont des "
+"canaux de tchat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This documentation use an anonymous account to connect the bridge to the chat.  But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account.  This is used for [OBS docks](/peertube-plugin-livechat/documentation/user/obs).  Using this feature for other purposes is not documented and not officially supported yet.  If you want to use it anyway, you can request a token by calling then `/plugins/livechat/router/api/auth/tokens` endpoint.  To get needed headers and request body, just check what happens when you generate a new token for OBS docks."
 msgstr ""
+"Cette documentation utilise un compte anonyme pour connecter la passerelle "
+"au tchat.  Mais depuis la version 10.1.0 de livechat, il existe une nouvelle "
+"façon de générer un jeton d'authentification à long terme, qui permet de se "
+"connecter en utilisant son compte.  Ceci est utilisé pour les [docks OBS"
+"](/peertube-plugin-livechat/fr/documentation/user/obs).  L'utilisation de "
+"cette fonctionnalité à d'autres fins n'est pas documentée et n'est pas "
+"encore officiellement supportée.  Si vous voulez l'utiliser quand même, vous "
+"pouvez demander un jeton en appelant le point de terminaison `/plugins/"
+"livechat/router/api/auth/tokens`.  Pour obtenir les en-têtes  et le corps de "
+"requête nécessaires, regardez simplement ce qui se passe lorsque vous "
+"générez un nouveau jeton pour les docks OBS."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1976,6 +2017,8 @@ msgstr "Authentification"
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "In case you have any trouble with the long term authentication tokens, you can disable the feature here."
 msgstr ""
+"Si vous avez des problèmes avec les jetons d'authentification à long terme, "
+"vous pouvez désactiver cette fonctionnalité ici."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2583,7 +2626,7 @@ msgstr "Remarque : vous pouvez personnaliser les couleurs. Ce n'est pas encore d
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "OBS Dock"
-msgstr ""
+msgstr "Dock OBS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2601,11 +2644,20 @@ msgstr "Cette fonction peut être désactivée par les administrateur⋅rices de
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "You can use OBS \"Custom browser docks\" to integrate the chat in your OBS while you are streaming.  The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don't have to enter your password in OBS."
 msgstr ""
+"Vous pouvez utiliser les \"Dock internet personnalisés\" d'OBS pour intégrer "
+"le tchat dans votre OBS pendant le direct.  Le plugin livechat offre la "
+"possibilité de créer un jeton à long terme qui peut vous identifier "
+"automatiquement pour rejoindre le tchat, de sorte que vous n'ayez pas à "
+"entrer votre mot de passe dans OBS."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\", and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
 msgstr ""
+"Pour ce faire, il suffit d'utiliser la fonctionnalité \"{{% livechat_label "
+"share_chat_link %}}\" et d'ouvrir l'onglet \"{{% livechat_label "
+"share_chat_dock %}}\".  À partir de là, vous pouvez créer un nouveau jeton "
+"en utilisant le bouton \"+\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
