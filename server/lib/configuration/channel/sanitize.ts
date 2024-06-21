@@ -4,6 +4,7 @@
 
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ChannelConfigurationOptions } from '../../../../shared/lib/types'
+import { channelTermsMaxLength } from '../../../../shared/lib/constants'
 
 /**
  * Sanitize data so that they can safely be used/stored for channel configuration configuration.
@@ -43,6 +44,16 @@ async function sanitizeChannelConfigurationOptions (
     throw new Error('Invalid data.mute data type')
   }
 
+  // terms not present in livechat <= 10.2.0
+  let terms = data.terms
+  if (terms !== undefined && (typeof terms !== 'string')) {
+    throw new Error('Invalid data.terms data type')
+  }
+  if (terms && terms.length > channelTermsMaxLength) {
+    throw new Error('data.terms value too long')
+  }
+  if (terms === '') { terms = undefined }
+
   const result: ChannelConfigurationOptions = {
     bot: {
       enabled: _readBoolean(botData, 'enabled'),
@@ -58,6 +69,9 @@ async function sanitizeChannelConfigurationOptions (
     mute: {
       anonymous: _readBoolean(mute, 'anonymous')
     }
+  }
+  if (terms !== undefined) {
+    result.terms = terms
   }
 
   return result

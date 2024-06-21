@@ -129,6 +129,36 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       <form livechat-configuration-channel-options role="form" @submit=${el.saveConfig} @change=${el.resetValidation}>
 
         <livechat-configuration-section-header
+          .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TERMS_LABEL)}
+          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TERMS_DESC, true)}
+          .helpPage=${'documentation/user/streamers/channel'}>
+        </livechat-configuration-section-header>
+        <div class="form-group">
+          <textarea
+            name="terms"
+            id="peertube-livechat-terms"
+            .value=${el.channelConfiguration?.configuration.terms ?? ''}
+            maxlength=${el.termsMaxLength()}
+            class=${classMap(
+                Object.assign(
+                  { 'form-control': true },
+                  el.getInputValidationClass('terms')
+                )
+              )}
+            @change=${(event: Event) => {
+                if (event?.target && el.channelConfiguration) {
+                  let value: string | undefined = (event.target as HTMLTextAreaElement).value
+                  if (value === '') { value = undefined }
+                  el.channelConfiguration.configuration.terms = value
+                }
+                el.requestUpdate('channelConfiguration')
+              }
+            }
+          ></textarea>
+          ${el.renderFeedback('peertube-livechat-terms-feedback', 'terms')}
+        </div>
+
+        <livechat-configuration-section-header
           .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_MUTE_ANONYMOUS_LABEL)}
           .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_MUTE_ANONYMOUS_DESC, true)}
           .helpPage=${'documentation/user/streamers/moderation'}>

@@ -45,6 +45,11 @@ diagnostic: |
 
 chat_title: "<h3>Chat</h3>"
 
+chat_terms_label: "Terms & Conditions"
+chat_terms_description: |
+  These terms & conditions will be shown to all users when then join chatrooms.
+  Streamers can also configure terms & conditions for their channels, that will be shown right after these global terms & conditions.
+
 list_rooms_label: "List existing rooms"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">List rooms</a>
@@ -455,6 +460,7 @@ invalid_value_wrong_format: "Value is in the wrong format."
 invalid_value_not_in_range: "Value is not in authorized range."
 invalid_value_file_too_big: "File size is too big (max size: %s)."
 invalid_value_duplicate: "Duplicate value"
+invalid_value_too_long: "Value too long"
 too_many_entries: "Too many entries"
 
 slow_mode_info: "Slow mode is enabled, users can send a message every %1$s seconds."
@@ -553,3 +559,6 @@ livechat_configuration_channel_mute_anonymous_desc: |
   Default value for new chatrooms.
   For existing chatrooms, you can change the feature in the room configuration form.
   When this feature is enabled, anonymous users can only read the chat, and not send messages.
+livechat_configuration_channel_terms_label: "Channel's chat terms & conditions"
+livechat_configuration_channel_terms_desc: |
+  You can configure a "terms & conditions" message that will be shown to users joining your chatrooms.

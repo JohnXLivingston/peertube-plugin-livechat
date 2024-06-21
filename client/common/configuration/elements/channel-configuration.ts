@@ -14,6 +14,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ptTr } from '../../lib/directives/translation'
 import { Task } from '@lit/task'
 import { provide } from '@lit/context'
+import { channelTermsMaxLength } from 'shared/lib/constants'
 
 @customElement('livechat-channel-configuration')
 export class ChannelConfigurationElement extends LivechatElement {
@@ -49,6 +50,10 @@ export class ChannelConfigurationElement extends LivechatElement {
       },
       args: () => []
     })
+  }
+
+  public termsMaxLength (): number {
+    return channelTermsMaxLength
   }
 
   /**
@@ -120,7 +125,11 @@ export class ChannelConfigurationElement extends LivechatElement {
     const validationErrorTypes: ValidationErrorType[] | undefined =
       this.validationError?.properties[`${propertyName}`] ?? undefined
 
+    // FIXME: this code is duplicated in dymamic table form
     if (validationErrorTypes && validationErrorTypes.length !== 0) {
+      if (validationErrorTypes.includes(ValidationErrorType.Missing)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_MISSING)}`)
+      }
       if (validationErrorTypes.includes(ValidationErrorType.WrongType)) {
         errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_WRONG_TYPE)}`)
       }
@@ -129,6 +138,9 @@ export class ChannelConfigurationElement extends LivechatElement {
       }
       if (validationErrorTypes.includes(ValidationErrorType.NotInRange)) {
         errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_NOT_IN_RANGE)}`)
+      }
+      if (validationErrorTypes.includes(ValidationErrorType.TooLong)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_TOO_LONG)}`)
       }
 
       return html`<div id=${feedbackId} class="invalid-feedback">${errorMessages}</div>`

@@ -101,11 +101,12 @@ interface ChannelConfigurationOptions {
   slowMode: {
     duration: number
   }
-  mute: {
+  mute: { // comes with Livechat 10.2.0
     anonymous: boolean
     // TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/127
     // nonFollowers: boolean (or a number of seconds?)
   }
+  terms?: string // comes with Livechat 10.2.0
 }
 
 interface ChannelForbiddenWords {

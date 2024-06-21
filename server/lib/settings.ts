@@ -149,6 +149,14 @@ function initChatSettings ({ registerSetting }: RegisterServerOptions): void {
     descriptionHTML: loc('chat_title')
   })
   registerSetting({
+    name: 'chat-terms',
+    private: true,
+    label: loc('chat_terms_label'),
+    type: 'input-textarea',
+    default: '',
+    descriptionHTML: loc('chat_terms_description')
+  })
+  registerSetting({
     name: 'prosody-list-rooms',
     label: loc('list_rooms_label'),
     type: 'html',

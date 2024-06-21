@@ -52,7 +52,8 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
     },
     mute: {
       anonymous: false
-    }
+    },
+    terms: undefined
   }
 }
 

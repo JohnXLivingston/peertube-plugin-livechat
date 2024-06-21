@@ -672,6 +672,7 @@ export class DynamicTableFormElement extends LivechatElement {
     const validationErrorTypes: ValidationErrorType[] | undefined =
       this.validation?.[`${this.validationPrefix}.${originalIndex}.${propertyName}`]
 
+    // FIXME: this code is duplicated in channel-configuration
     if (validationErrorTypes !== undefined && validationErrorTypes.length !== 0) {
       if (validationErrorTypes.includes(ValidationErrorType.Missing)) {
         errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_MISSING)}`)
@@ -687,6 +688,9 @@ export class DynamicTableFormElement extends LivechatElement {
       }
       if (validationErrorTypes.includes(ValidationErrorType.Duplicate)) {
         errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_DUPLICATE)}`)
+      }
+      if (validationErrorTypes.includes(ValidationErrorType.TooLong)) {
+        errorMessages.push(html`${ptTr(LOC_INVALID_VALUE_TOO_LONG)}`)
       }
 
       return html`<div id="${inputId}-feedback" class="invalid-feedback">${errorMessages}</div>`

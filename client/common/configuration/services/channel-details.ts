@@ -11,6 +11,7 @@ import type {
 import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
 import { getBaseRoute } from '../../../utils/uri'
 import { maxEmojisPerChannel } from 'shared/lib/emojis'
+import { channelTermsMaxLength } from 'shared/lib/constants'
 
 export class ChannelDetailsService {
   public _registerClientOptions: RegisterClientOptions
@@ -26,6 +27,10 @@ export class ChannelDetailsService {
 
   validateOptions = async (channelConfigurationOptions: ChannelConfigurationOptions): Promise<boolean> => {
     const propertiesError: ValidationError['properties'] = {}
+
+    if (channelConfigurationOptions.terms && channelConfigurationOptions.terms.length > channelTermsMaxLength) {
+      propertiesError.terms = [ValidationErrorType.TooLong]
+    }
 
     const botConf = channelConfigurationOptions.bot
     const slowModeDuration = channelConfigurationOptions.slowMode.duration

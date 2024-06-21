@@ -5,6 +5,7 @@
 ### New features
 
 * #233: new option to [mute anonymous users](https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/user/streamers/moderation/).
+* #18: terms & conditions. You can configure terms&conditions on your instance that will be shown to each joining users. Streamers can also add terms&conditions in their channels options.
 
 ## 10.1.2
 
