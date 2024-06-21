@@ -229,3 +229,4 @@ external_auth_custom_oidc_description: "チャットへのログインに、外�
   次のドキュメントを参照してください:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/ja/documentation/admin/settings/\"\
   \ target=\"_blank\">設定</a>ページ\n"
 external_auth_custom_oidc_button_label_description: このラベルは、OIDCプロバイダーを使用して認証するボタン名としてユーザーに表示されます。
+copied: コピーしました
