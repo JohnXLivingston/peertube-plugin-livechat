@@ -32,7 +32,7 @@ The file must be a valid JSON file, using the following format:
 ```json
 [
   {
-    "sn": ":short_name",
+    "sn": ":short_name:",
     "url": "https://example.com/image.png"
   }
 ]
