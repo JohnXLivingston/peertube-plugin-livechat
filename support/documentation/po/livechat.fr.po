@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-21 12:07+0200\n"
-"PO-Revision-Date: 2024-06-21 10:06+0000\n"
+"PO-Revision-Date: 2024-06-21 10:14+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3159,7 +3160,7 @@ msgstr "Vous pouvez également générer un fichier à importer à partir de n'i
 
 #. type: Fenced code block (json)
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "[\n"
 "  {\n"
@@ -3168,11 +3169,22 @@ msgid ""
 "  }\n"
 "]\n"
 msgstr ""
+"[\n"
+"  {\n"
+"    \"sn\": \":short_name:\",\n"
+"    \"url\": \"https://example.com/image.png\"\n"
+"  }\n"
+"]\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "The `sn` attribute is the short name code.  The `url` attribute can be any image url than your browser can access, or a [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) representing the file you want to import."
 msgstr ""
+"L'attribut `sn` est le code du nom court.  L'attribut `url` peut être "
+"n'importe quelle url d'image à laquelle votre navigateur peut accéder, ou "
+"une [URL de données](https://developer.mozilla.org/fr-FR/docs/Web/HTTP/"
+"Basics_of_HTTP/Data_URLs) représentant le fichier que vous souhaitez "
+"importer."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
@@ -3246,58 +3258,73 @@ msgstr "Vous pouvez utiliser les [commandes de modération ConverseJS](https://c
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 10.1.0."
 msgid "This feature comes with the livechat plugin version 10.2.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.1.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.2.0."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat."
 msgstr ""
+"Vous pouvez empêcher les utilisateur⋅rices anonymes d'envoyer des messages. "
+"Dans ce cas, seuls les utilisateur⋅rices enregistré⋅es pourront parler dans "
+"le tchat."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox."
-msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), ouvrez l'onglet \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" :"
+msgstr ""
+"Pour activer ou désactiver cette fonctionnalité, utilisez le [menu déroulant "
+"du chat](/peertube-plugin-livechat/fr/documentation/user/viewers), puis "
+"ouvrez le menu \"configurer\".  Dans le formulaire, vous trouverez une case "
+"à cocher \"{{% livechat_label "
+"livechat_configuration_channel_mute_anonymous_label %}}\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
 msgid "![Room configuration / Mute anonymous users](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px)"
-msgstr "![Tchat avec utilisateur anonyme](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Configuration du salon / Silencier les utilisateur⋅rices anonymes"
+"](/peertube-plugin-livechat/images/configure_mute_anonymous."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Anonymous users won't have the message field, and will see following prompt: \"{{% livechat_label muted_anonymous_message %}}\""
 msgstr ""
+"Les utilisateur⋅rices anonymes n'auront pas le champ message, et verront "
+"l'invite suivante : \"{{% livechat_label muted_anonymous_message %}}\""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
 msgid "![Room configuration / Muted anonymous users](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px)"
-msgstr "![Tchat avec utilisateur anonyme](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Configuraton du salon / Utilisateur⋅rice anonyme silencié](/peertube-"
+"plugin-livechat/images/anonymous_muted."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "When this feature is enabled, anonymous users will be assigned the \"visitor\" role.  You can change their role to \"participant\" if you want to allow some of them to talk."
 msgstr ""
+"Lorsque cette fonction est activée, les utilisateur⋅rices anonymes se voient "
+"attribuer le rôle de \"visiteur\".  Vous pouvez changer leur rôle en "
+"\"participant⋅e\" si vous voulez permettre à certain⋅es d'entre elleux de "
+"parler."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "If you change the room configuration, all anonymous users will be muted or unmuted."
 msgstr ""
+"Si vous modifiez la configuration de la salle, tous les utilisateur⋅rices "
+"anonymes seront mis en sourdine ou à nouveau autorisé⋅e à parler."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
 msgid "You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel)."
-msgstr "Pour accéder à cette page, veuillez vous référer à la [documentation sur la configuration des chaînes](/peertube-plugin-livechat/fr/documentation/user/streamers/channel)."
+msgstr ""
+"Vous pouvez choisir d'activer ou de désactiver cette fonctionnalité pour les "
+"nouveaux salons de discussion sur la [page de configuration de la chaîne"
+"](/peertube-plugin-livechat/fr/documentation/user/streamers/channel)."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
