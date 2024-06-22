@@ -512,3 +512,10 @@ auth_description: "<h3>Authentifizierung</h3>\n"
 livechat_token_disabled_label: Livechat-Token deaktivieren
 share_chat_dock: Dock
 token_date: Datum
+too_many_entries: Zu viele Einträge
+livechat_configuration_channel_mute_anonymous_label: Anonyme Benutzer stummschalten
+muted_anonymous_message: Nur registrierte Benutzer können Nachrichten versenden.
+livechat_configuration_channel_mute_anonymous_desc: "Standardwert für neue Chaträume.\n
+  Für bestehende Chaträume können Sie die Funktion im Raumkonfigurationsformular ändern.\n
+  Wenn diese Funktion aktiviert ist, können anonyme Benutzer den Chat nur lesen, aber
+  keine Nachrichten senden.\n"
