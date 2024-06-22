@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-21 12:07+0200\n"
-"PO-Revision-Date: 2024-06-20 11:44+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-06-22 11:54+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2593,10 +2595,12 @@ msgstr "Sie können OBS \"Benutzerdefinierte Browser-Docks\" verwenden, um den C
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\", and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
 msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\" feature, and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
-msgstr "Verwenden Sie dazu einfach \"{{% livechat_label share_chat_link %}}\", und öffnen Sie die Registerkarte \"{{% livechat_label share_chat_dock %}}\".  Von dort aus können Sie mit der Schaltfläche \"+\" ein neuen Token erstellen."
+msgstr ""
+"Verwenden Sie dazu einfach die \"{{% livechat_label share_chat_link %}}\" "
+"Funktion, und öffnen Sie die Registerkarte \"{{% livechat_label "
+"share_chat_dock %}}\".  Von dort aus können Sie mit der Schaltfläche \"+\" "
+"ein neuen Token erstellen."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3064,10 +3068,11 @@ msgstr "Hier können Sie konfigurieren:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
 msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
-msgstr "Bitte lesen Sie die [Moderationsdokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/moderation)."
+msgstr ""
+"[{{% livechat_label livechat_configuration_channel_mute_anonymous_label "
+"%}}](/peertube-plugin-livechat/de/documentation/user/streamers/moderation) "
+"Standardwert"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3145,14 +3150,7 @@ msgstr "Sie können auch eine Datei generieren, die Sie aus einer anderen Quelle
 
 #. type: Fenced code block (json)
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "[\n"
-#| "  {\n"
-#| "    \"sn\": \":short_name\",\n"
-#| "    \"url\": \"https://example.com/image.png\"\n"
-#| "  }\n"
-#| "]\n"
+#, no-wrap
 msgid ""
 "[\n"
 "  {\n"
@@ -3163,7 +3161,7 @@ msgid ""
 msgstr ""
 "[\n"
 "  {\n"
-"    \"sn\": \":short_name\",\n"
+"    \"sn\": \":short_name:\",\n"
 "    \"url\": \"https://example.com/image.png\"\n"
 "  }\n"
 "]\n"
@@ -3245,58 +3243,72 @@ msgstr "Sie können [ConverseJS Moderationsbefehle](https://conversejs.org/docs/
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 10.1.0."
 msgid "This feature comes with the livechat plugin version 10.2.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.1.0 verfügbar sein."
+msgstr ""
+"Diese Funktion wird mit dem Livechatplugin Version 10.2.0 verfügbar sein."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat."
 msgstr ""
+"Sie können anonyme Benutzer daran hindern, Nachrichten zu senden. In diesem "
+"Fall können nur registrierte Benutzer im Chat schreiben."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox."
-msgstr "Öffnen Sie auf der [Kanal Konfigurationsseite](/peertube-plugin-livechat/de/documentation/user/streamers/channel) die Registerkarte \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\":"
+msgstr ""
+"Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das "
+"[Chat-Dropdown-Menü](/peertube-plugin-livechat/de/documentation/user/viewers)"
+", öffnen Sie das Menü \"Konfigurieren\".  In dem Formular finden Sie eine "
+"Checkbox \"{{% livechat_label "
+"livechat_configuration_channel_mute_anonymous_label %}}\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
 msgid "![Room configuration / Mute anonymous users](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px)"
-msgstr "![Chat mit einem anonymen Benutzer](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Raumkonfiguration / Anonyme Benutzer stummschalten](/peertube-"
+"plugin-livechat/images/configure_mute_anonymous."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Anonymous users won't have the message field, and will see following prompt: \"{{% livechat_label muted_anonymous_message %}}\""
 msgstr ""
+"Anonyme Benutzer haben das Nachrichtenfeld nicht und sehen folgende "
+"Aufforderung: \"{{% livechat_label muted_anonymous_message %}}\""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
 msgid "![Room configuration / Muted anonymous users](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px)"
-msgstr "![Chat mit einem anonymen Benutzer](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Raumkonfiguration / Stummgeschaltete anonyme Benutzer](/peertube-"
+"plugin-livechat/images/anonymous_muted."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "When this feature is enabled, anonymous users will be assigned the \"visitor\" role.  You can change their role to \"participant\" if you want to allow some of them to talk."
 msgstr ""
+"Wenn diese Funktion aktiviert ist, wird anonymen Benutzern die Rolle "
+"\"Besucher\" zugewiesen.  Sie können deren Rolle in \"Teilnehmer\" ändern, "
+"wenn Sie einigen von ihnen erlauben wollen, zu schreiben."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "If you change the room configuration, all anonymous users will be muted or unmuted."
 msgstr ""
+"Wenn Sie die Raumkonfiguration ändern, werden alle anonymen Benutzer "
+"stummgeschaltet oder die Stummschaltung aufgehoben."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
 msgid "You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel)."
-msgstr "Um auf diese Seite zuzugreifen, sehen Sie sich die [Kanal Konfigurations Dokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/channel) an."
+msgstr ""
+"Sie können diese Funktion für neue Chaträume auf der [Kanal-"
+"Konfigurationsseite](/peertube-plugin-livechat/de/documentation/user/"
+"streamers/channel) aktivieren oder deaktivieren."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
