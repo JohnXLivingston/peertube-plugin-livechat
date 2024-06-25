@@ -2,5 +2,6 @@
 Die Benutzerdokumentation zu diesen Funktionen finden Sie auf der Seite Benutzerdokumentation.
 Die Aktivierung dieser Funktionen erfordert Konfigurationsänderungen auf dem Server und in den DNS-Einträgen. Es ist nicht möglich, dies nur über die Peertube-Schnittstelle zu konfigurieren, und es erfordert einige grundlegende Systemadministrationskenntnisse.</description></item><item><title>Matterbridge benutzen</title><link>https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/advanced/matterbridge/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://johnxlivingston.github.io/peertube-plugin-livechat/de/documentation/admin/advanced/matterbridge/</guid><description>Das Folgende basiert auf einem Tutorial zur Verwendung von Matterbridge mit dem Plugin: Matterbridge + Peertube
 Anforderungen PeerTube plugin livechat Version 3.2.0 oder höher. Matterbridge Version 1.22.4 oder höher. Am einfachsten ist es, wenn die PeerTube-Instanz und Matterbridge auf demselben Server laufen.
-Nur interne Verbindungen (EInfach) Sie müssen Aktivieren von Client-Server-Verbindungen in den Einstellungen des Livechat-Plugins aktivieren.
+Nur interne Verbindungen (EInfach) Sie müssen `SPDX-FileCopyrightText: 2024 John Livingston https://www.john-livingston.fr/
+SPDX-License-Identifier: AGPL-3.0-only ` in den Einstellungen des Livechat-Plugins aktivieren.
 Dadurch können XMPP-Clients von localhost eine Verbindung zum Prosody XMPP-Server herstellen.</description></item></channel></rss>
