@@ -34,7 +34,8 @@
   }
 }
 
-.livechat-readonly .conversejs {
+.livechat-readonly,
+body[livechat-viewer-mode="on"] {
   livechat-converse-muc-terms {
     display: none !important;
   }
