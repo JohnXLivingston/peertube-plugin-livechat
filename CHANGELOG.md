@@ -4,8 +4,8 @@
 
 ### New features
 
-* #233: new option to [mute anonymous users](https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/user/streamers/moderation/).
-* #18: terms & conditions. You can configure terms&conditions on your instance that will be shown to each joining users. Streamers can also add terms&conditions in their channels options.
+* #233: new option to [mute anonymous users](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/moderation/).
+* #18: terms & conditions. You can configure terms&conditions on your instance that will be shown to each joining users. Streamers can also add [terms&conditions in their channels options](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/terms/).
 
 ## 10.1.2
 
@@ -52,7 +52,7 @@
 
 ### New features
 
-* #177: streamer's task/to-do lists: streamers, and their room's moderators, can handle task lists directly. This can be used to handle viewers questions, moderation actions, ... More info in the [tasks documentation](https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/user/streamers/tasks/).
+* #177: streamer's task/to-do lists: streamers, and their room's moderators, can handle task lists directly. This can be used to handle viewers questions, moderation actions, ... More info in the [tasks documentation](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/tasks/).
 * #385: new way of managing chat access rights. Now streamers are owner of their chat rooms. Peertube admins/moderators are not by default, so that their identities are not leaking. But they have a button to promote as chat room owner, if they need to take action. Please note that there is a migration script that will remove all Peertube admins/moderators affiliations (unless they are video/channel's owner). They can get this access back using the button.
 * #385: the slow mode duration on the channel option page is now a default value for new rooms. Streamers can change the value room per room in the room's configuration.
 
