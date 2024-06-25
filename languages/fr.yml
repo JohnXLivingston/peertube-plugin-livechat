@@ -485,8 +485,10 @@ invalid_value_duplicate: Valeur en double
 livechat_configuration_channel_emojis_title: Émojis de la chaîne
 livechat_emojis_shortname: Nom court
 livechat_emojis_shortname_desc: "Vous pouvez utiliser l'émojis en utilisant \":nom_court:\"\
-  .\nLe nom court peut seulement contenir des caractères alphanumériques des underscores
-  et des tirets.\n"
+  .\nLe nom court peut commencer et/ou finir par des deux-points (:), et seulement
+  contenir des caractères alphanumériques des underscores et des tirets.\nIl est fortement
+  recommandé de les commencer par des deux-points, pour que les utilisateur⋅rices
+  puissent utiliser l'autocomplétion (en tapant \":\" puis en pressant TABULATION).\n"
 livechat_emojis_file: Fichier
 livechat_emojis_file_desc: "Le fichier de l'émoji.\n"
 action_export: Exporter
@@ -539,3 +541,7 @@ chat_terms_description: "Ces conditions d'utilisation seront affichées à tous 
   utilisateur⋅rices lorsqu'iels rejoindront les salons de discussion.\nLes streameur⋅euses
   peuvent également configurer des conditions d'utilisation pour leurs canaux, qui
   seront affichées juste après les conditions de l'instance.\n"
+livechat_configuration_channel_terms_label: Conditions d'utilisation tchat de la chaîne
+livechat_configuration_channel_terms_desc: "Vous pouvez configurer un message de \"\
+  conditions d'utilisation\" qui sera affiché aux utilisateur⋅rices qui rejoignent
+  vos salons de discussion.\n"
