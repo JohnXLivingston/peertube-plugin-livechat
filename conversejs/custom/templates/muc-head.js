@@ -72,7 +72,7 @@ function getPeertubeButtons () {
 
 export default (el) => {
   if (!api.settings.get('livechat_mini_muc_head')) {
-    // original Template (this settings comes with livechatMiniMucHeadPlugin)
+    // original Template (this setting comes with livechatMiniMucHeadPlugin)
     return html`${tplMucHead(el)}`
   }
 

@@ -30,7 +30,7 @@ To enable this feature, you will need to set up your server and DNS records, so 
 ### Plugin settings
 
 Start by going to the livechat plugin settings of your instance, then enable the setting "Enable connection to room using external XMPP accounts".
-By checking this settings, new settings appear below.
+By checking this setting, new settings appear below.
 
 First of all, the "Prosody server to server port" field.
 This one defaults to 5269, which is the standard port for this service.

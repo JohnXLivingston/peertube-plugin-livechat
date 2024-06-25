@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-25 13:19+0200\n"
+"POT-Creation-Date: 2024-06-25 17:22+0200\n"
 "PO-Revision-Date: 2024-06-22 11:54+0000\n"
 "Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
@@ -1226,7 +1226,9 @@ msgstr "Plugin Einstellungen"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this settings, new settings appear below."
+#, fuzzy
+#| msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this settings, new settings appear below."
+msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this setting, new settings appear below."
 msgstr "Beginne mit den Einstellungen des Livechat-Plugins deiner Instanz und aktiviere die Einstellung \"Verbindung zum Raum über externe XMPP-Konten aktivieren\". Wenn Sie diese Einstellung aktivieren, erscheinen unterhalb neue Einstellungen."
 
 #. type: Plain text
@@ -1947,7 +1949,7 @@ msgstr "Um auf diese Seite zuzugreifen, sehen Sie sich die [Kanal Konfigurations
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "Changing this settings will restart the chat server, and all users will be disconnected for a short time."
+msgid "Changing this setting will restart the chat server, and all users will be disconnected for a short time."
 msgstr ""
 
 #. type: Plain text
@@ -2022,7 +2024,9 @@ msgstr "Sie können zum Beispiel eine schreibgeschützte URL generieren und dies
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "This settings allows you to choose who can access this modal."
+#, fuzzy
+#| msgid "This settings allows you to choose who can access this modal."
+msgid "This setting allows you to choose who can access this modal."
 msgstr "Mit diesen Einstellungen können Sie festlegen, wer auf diese Schaltfläche zugreifen kann."
 
 #. type: Plain text
@@ -2156,13 +2160,16 @@ msgstr "Das Plugin wird mit einem AppImage geliefert, das zum Ausführen des [Pr
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "This settings should only be used if the plugin is broken, and waiting for a patch."
+#, fuzzy
+#| msgid "This settings should only be used if the plugin is broken, and waiting for a patch."
+msgid "This setting should only be used if the plugin is broken, and waiting for a patch."
 msgstr "Diese Einstellung sollte nur verwendet werden, wenn das Plugin defekt ist und auf einen Patch wartet."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, no-wrap
-msgid "If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
+#, fuzzy, no-wrap
+#| msgid "If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
+msgid "If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
 msgstr "Wenn diese Einstellung leer gelassen wird und Sie Peertube >= 5.1 oder später verwenden, wird das Plugin die Werte aus Ihrer Peertube-Konfigurationsdatei verwenden, um zu erraten, auf welcher Schnittstelle und welchem Port die Anfrage erfolgen muss.\n"
 
 #. type: Plain text
@@ -2182,7 +2189,9 @@ msgstr "Zum Beispiel kann diese Option einer Instanz von Matterbridge (sobald si
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "This settings enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
+#, fuzzy
+#| msgid "This settings enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
+msgid "This setting enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
 msgstr "Diese Einstellung ermöglicht es externen XMPP-Komponenten, sich mit dem Server zu verbinden. Standardmäßig erlaubt diese Option **nur Verbindungen von localhost-Komponenten**. Sie müssen den Wert \"{{% livechat_label prosody_components_interfaces_label %}}\" ändern, um an anderen Netzwerkschnittstellen zu lauschen."
 
 #. type: Plain text
@@ -2426,7 +2435,9 @@ msgstr "Versuchen Sie in diesem Fall, die \"{{% livechat_label prosody_peertube_
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-msgid "Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
+#, fuzzy
+#| msgid "Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
+msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgstr "Weitere Informationen finden Sie in der Hilfe für [diese Einstellungen](/peertube-plugin-livechat/de/documentation/admin/settings/)."
 
 #. type: Title ###

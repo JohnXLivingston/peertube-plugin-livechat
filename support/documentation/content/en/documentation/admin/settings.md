@@ -14,7 +14,7 @@ This section describes the plugin settings page.
 For more information on this feature, check the documentation for [channel's terms & conditions](/peertube-plugin-livechat/documentation/user/streamers/terms).
 
 {{% notice info %}}
-Changing this settings will restart the chat server, and all users will be disconnected for a short time.
+Changing this setting will restart the chat server, and all users will be disconnected for a short time.
 {{% /notice %}}
 
 ## {{% livechat_label "list_rooms_label" %}}
@@ -76,7 +76,7 @@ The chat can be customized (readonly mode, use the current theme, ...).
 
 You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!
 
-This settings allows you to choose who can access this modal.
+This setting allows you to choose who can access this modal.
 
 ### {{% livechat_label per_live_video_label %}}
 
@@ -167,7 +167,7 @@ You can choose which theme to use for ConverseJS:
 The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).
 If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package.
 
-This settings should only be used if the plugin is broken, and waiting for a patch.
+This setting should only be used if the plugin is broken, and waiting for a patch.
 
 ### {{% livechat_label disable_websocket_label %}}
 
@@ -181,7 +181,7 @@ This settings should only be used if the plugin is broken, and waiting for a pat
 
 {{% livechat_label prosody_peertube_uri_description %}}
 
-If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
+If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
 
 In last resort, it will use your Peertube public URI.
 So, any API Call will go throught your Nginx server.
@@ -231,7 +231,7 @@ As example, this option can allow an instance of Matterbridge (once it could use
 
 ### {{% livechat_label prosody_components_label %}}
 
-This settings enable XMPP external components to connect to the server.
+This setting enable XMPP external components to connect to the server.
 By default, this option **only allows connections from localhost components**.
 You have to change the "{{% livechat_label prosody_components_interfaces_label %}}" value to listen on other network interfaces.
 

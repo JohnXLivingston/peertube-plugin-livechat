@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-25 13:19+0200\n"
+"POT-Creation-Date: 2024-06-25 17:22+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Kabyle <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/kab/>\n"
@@ -1185,7 +1185,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this settings, new settings appear below."
+msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this setting, new settings appear below."
 msgstr ""
 
 #. type: Plain text
@@ -1880,7 +1880,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "Changing this settings will restart the chat server, and all users will be disconnected for a short time."
+msgid "Changing this setting will restart the chat server, and all users will be disconnected for a short time."
 msgstr ""
 
 #. type: Plain text
@@ -1955,7 +1955,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "This settings allows you to choose who can access this modal."
+msgid "This setting allows you to choose who can access this modal."
 msgstr ""
 
 #. type: Plain text
@@ -2086,13 +2086,13 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "This settings should only be used if the plugin is broken, and waiting for a patch."
+msgid "This setting should only be used if the plugin is broken, and waiting for a patch."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
-msgid "If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
+msgid "If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2112,7 +2112,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "This settings enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
+msgid "This setting enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
 msgstr ""
 
 #. type: Plain text
@@ -2351,7 +2351,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-msgid "Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
+msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgstr ""
 
 #. type: Title ###
