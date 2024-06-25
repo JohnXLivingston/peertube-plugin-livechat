@@ -7,6 +7,10 @@
 * #233: new option to [mute anonymous users](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/moderation/).
 * #18: terms & conditions. You can configure terms&conditions on your instance that will be shown to each joining users. Streamers can also add [terms&conditions in their channels options](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/terms/).
 
+### Minor changes and fixes
+
+* Fix #449: Remove the constraint for custom emojis shortnames to have ":" at the beginning and at the end.
+
 ## 10.1.2
 
 * Fix: clicking on the import custom emojis button, without selected any file, was resulting in a state with all action button disabled.

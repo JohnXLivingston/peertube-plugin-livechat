@@ -91,12 +91,6 @@ export function tplChannelEmojis (el: ChannelEmojisElement): TemplateResult {
               el.resetValidation(e)
               if (el.channelEmojisConfiguration) {
                 el.channelEmojisConfiguration.emojis.customEmojis = e.detail
-                // Fixing missing ':' for shortnames:
-                for (const desc of el.channelEmojisConfiguration.emojis.customEmojis) {
-                  if (desc.sn === '') { continue }
-                  if (!desc.sn.startsWith(':')) { desc.sn = ':' + desc.sn }
-                  if (!desc.sn.endsWith(':')) { desc.sn += ':' }
-                }
                 el.requestUpdate('channelEmojisConfiguration')
               }
             }

@@ -512,7 +512,8 @@ livechat_configuration_channel_emojis_desc: |
 livechat_emojis_shortname: 'Short name'
 livechat_emojis_shortname_desc: |
   You can use emojis using ":shortname:".
-  The short name can only contain alphanumerical characters, underscores and hyphens.
+  The short name can start and/or end by a colon (:), and only contain alphanumerical characters, underscores and hyphens.
+  It is strongly recommended to start them by a colon, so that users can use autocompletion (by typing ":" then press TAB).
 livechat_emojis_file: 'File'
 livechat_emojis_file_desc: |
   The emoji file.

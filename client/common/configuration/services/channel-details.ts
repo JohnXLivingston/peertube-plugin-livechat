@@ -201,7 +201,7 @@ export class ChannelDetailsService {
       propertiesError[`emojis.${i}.sn`] = []
       if (e.sn === '') {
         propertiesError[`emojis.${i}.sn`].push(ValidationErrorType.Missing)
-      } else if (!/^:[\w-]+:$/.test(e.sn)) {
+      } else if (!/^:?[\w-]+:?$/.test(e.sn)) { // optional ':' at the beggining and at the end
         propertiesError[`emojis.${i}.sn`].push(ValidationErrorType.WrongFormat)
       } else if (seen.has(e.sn)) {
         propertiesError[`emojis.${i}.sn`].push(ValidationErrorType.Duplicate)

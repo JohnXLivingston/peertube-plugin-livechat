@@ -193,9 +193,7 @@ export class ChannelEmojisElement extends LivechatElement {
         }
 
         const url = await this._convertImageToDataUrl(entry.url)
-        let sn = entry.sn as string
-        if (!sn.startsWith(':')) { sn = ':' + sn }
-        if (!sn.endsWith(':')) { sn += ':' }
+        const sn = entry.sn as string
 
         const item: ChannelEmojisConfiguration['emojis']['customEmojis'][0] = {
           sn,

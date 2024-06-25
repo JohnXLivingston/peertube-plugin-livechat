@@ -141,7 +141,7 @@ export class Emojis {
    * @param sn short name
    */
   public validShortName (sn: any): boolean {
-    if ((typeof sn !== 'string') || !/^:[\w-]+:$/.test(sn)) {
+    if ((typeof sn !== 'string') || !/^:?[\w-]+:?$/.test(sn)) {
       this.logger.debug('Short name invalid: ' + (typeof sn === 'string' ? sn : '???'))
       return false
     }
