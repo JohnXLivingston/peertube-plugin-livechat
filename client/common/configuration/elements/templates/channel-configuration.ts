@@ -131,7 +131,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
         <livechat-configuration-section-header
           .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TERMS_LABEL)}
           .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TERMS_DESC, true)}
-          .helpPage=${'documentation/user/streamers/channel'}>
+          .helpPage=${'documentation/user/streamers/terms'}>
         </livechat-configuration-section-header>
         <div class="form-group">
           <textarea

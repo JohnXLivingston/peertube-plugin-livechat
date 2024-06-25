@@ -7,6 +7,16 @@ chapter: false
 
 This section describes the plugin settings page.
 
+## {{% livechat_label livechat_configuration_channel_terms_label %}}
+
+{{% livechat_label livechat_configuration_channel_terms_desc %}}
+
+For more information on this feature, check the documentation for [channel's terms & conditions](/peertube-plugin-livechat/documentation/user/streamers/terms).
+
+{{% notice info %}}
+Changing this settings will restart the chat server, and all users will be disconnected for a short time.
+{{% /notice %}}
+
 ## {{% livechat_label "list_rooms_label" %}}
 
 When pressing the «List rooms» button, all existing chatrooms will be listed.

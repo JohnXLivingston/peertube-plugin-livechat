@@ -1,7 +1,7 @@
 ---
 title: "Slow mode"
 description: "Plugin peertube-plugin-livechat slow mode"
-weight: 31
+weight: 32
 chapter: false
 ---
 
