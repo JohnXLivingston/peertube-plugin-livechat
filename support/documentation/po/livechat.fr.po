@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-21 12:07+0200\n"
-"PO-Revision-Date: 2024-06-21 10:14+0000\n"
+"PO-Revision-Date: 2024-06-23 08:04+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -3160,7 +3160,7 @@ msgstr "Vous pouvez également générer un fichier à importer à partir de n'i
 
 #. type: Fenced code block (json)
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "[\n"
 "  {\n"
