@@ -119,6 +119,7 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
           // FIXME: this piece of code should not be in this file (nothing to do with initChannelConfiguration,
           //   but will be more efficient to add here, as we already tested hasChat).
           // Note: no need to await here, would only degrade performances.
+          // FIXME: should also update livechat_muc_terms if channel has changed.
           updateProsodyRoom(options, video.uuid, {
             name: video.name
           }).then(

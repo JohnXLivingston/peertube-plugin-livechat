@@ -14,6 +14,9 @@ local get_room_from_jid = rawget(mod_muc, "get_room_from_jid");
 
 module:depends"http";
 
+local mod_muc_peertubelivechat_terms = module:depends"muc_peertubelivechat_terms";
+local set_muc_terms = rawget(mod_muc_peertubelivechat_terms, "set_muc_terms");
+
 function check_auth(routes)
   local function check_request_auth(event)
     local apikey = module:get_option_string("peertubelivechat_manage_rooms_apikey", "")
@@ -92,6 +95,12 @@ local function update_room(event)
     if room._data.slow_mode_duration ~= config.slow_mode_duration then
       room._data.slow_mode_duration = config.slow_mode_duration;
       must104 = true;
+    end
+  end
+  if (type(config.livechat_muc_terms) == "string") then
+    -- to easily detect if the value is given or not, we consider that the caller passes "" when terms must be deleted.
+    if set_muc_terms then
+      set_muc_terms(room, config.livechat_muc_terms or nil);
     end
   end
   if type(config.removeAffiliationsFor) == "table" then

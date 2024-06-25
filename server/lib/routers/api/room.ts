@@ -37,6 +37,7 @@ interface RoomDefaults {
     // Following fields are specific to livechat (for now), and requires a customized version for mod_muc_http_defaults.
     slow_mode_duration?: number
     mute_anonymous?: boolean
+    livechat_muc_terms?: string
   }
   affiliations?: Affiliations
 }
@@ -50,7 +51,8 @@ async function _getChannelSpecificOptions (
 
   return {
     slow_mode_duration: channelOptions.slowMode.duration,
-    mute_anonymous: channelOptions.mute.anonymous
+    mute_anonymous: channelOptions.mute.anonymous,
+    livechat_muc_terms: channelOptions.terms
   }
 }
 

@@ -121,6 +121,11 @@ local function apply_config(room, settings)
 		if (type(config.mute_anonymous) == "boolean") then
 			room._data.x_peertubelivechat_mute_anonymous = config.mute_anonymous;
 		end
+		if (type(config.livechat_muc_terms) == "string") then
+			-- we don't need to use set_muc_terms here, as this is called for a newly created room
+			-- (and thus we don't need to broadcast changes)
+			room._data.livechat_muc_terms = config.livechat_muc_terms;
+		end
 	elseif config ~= nil then
 		module:log("error", "Invalid config returned from API for %s: %q", room.jid, config);
 		return nil, "format", { field = "config" };

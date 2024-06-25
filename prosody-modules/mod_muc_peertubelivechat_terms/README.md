@@ -29,6 +29,6 @@ The nickname that will be used by service messages.
 This module reserves the nickname, so than nobody can use it in MUC rooms
 (we don't want any user to spoof this nickname).
 
-### muc_terms
+### muc_terms_global
 
 The global terms.
