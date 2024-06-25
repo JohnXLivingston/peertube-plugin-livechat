@@ -108,7 +108,7 @@ class RoomChannel {
    * @return Returns true if the data where found and valid. If there is no data (or no valid data), returns false.
    */
   public async readData (): Promise<boolean> {
-    // Reading the data file (see https://livingston.frama.io/peertube-plugin-livechat/fr/technical/data/)
+    // Reading the data file (see https://livingston.frama.io/peertube-plugin-livechat/technical/data/)
 
     let content: string
     try {
