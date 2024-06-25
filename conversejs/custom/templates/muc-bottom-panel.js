@@ -63,7 +63,7 @@ class SlowMode extends CustomElement {
         LOC_slow_mode_info,
         this.model.config.get('slow_mode_duration')
       )}
-      <i class="livechat-hide-slow-mode-info-box" @click=${this.closeSlowModeInfoBox}>
+      <i class="livechat-hide-slow-mode-info-box" @click=${this.closeSlowModeInfoBox} title=${__('Close')}>
         <converse-icon class="fa fa-times" size="1em"></converse-icon>
       </i>
     </div>`

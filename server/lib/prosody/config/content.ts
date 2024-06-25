@@ -7,7 +7,30 @@ import type { ExternalComponent } from './components'
 import { BotConfiguration } from '../../configuration/bot'
 import { userInfo } from 'os'
 
-type ConfigEntryValue = boolean | number | string | ConfigEntryValue[]
+/**
+ * Use this class to construct a string that will be writen as a multiline Lua string.
+ */
+class ConfigEntryValueMultiLineString extends String {
+  public serialize (): string {
+    const s = this.toString()
+    let i = 0
+    // Lua multiline strings can be escaped by [[ ]], or [==[ ]==] with any number of =
+    // http://lua-users.org/wiki/StringsTutorial
+    // So, to have a proper value, we will check if the string contains [[ or ]],
+    // and try again by adding "=" until we do not found the pattern.
+    while (true) {
+      const opening = '[' + '='.repeat(i) + '['
+      const closing = ']' + '='.repeat(i) + ']'
+      if (!s.includes(opening) && !s.includes(closing)) {
+        break
+      }
+      i++
+    }
+    return '[' + '='.repeat(i) + '[' + s + ']' + '='.repeat(i) + ']'
+  }
+}
+
+type ConfigEntryValue = boolean | number | string | ConfigEntryValueMultiLineString | ConfigEntryValue[]
 
 type ConfigEntries = Map<string, ConfigEntryValue>
 
@@ -33,6 +56,9 @@ type ConfigLogExpiration =
   ConfigLogExpirationNever | ConfigLogExpirationPeriod | ConfigLogExpirationSeconds | ConfigLogExpirationError
 
 function writeValue (value: ConfigEntryValue): string {
+  if (value instanceof ConfigEntryValueMultiLineString) {
+    return value.serialize() + ';\n'
+  }
   if (typeof value === 'boolean') {
     return value.toString() + ';\n'
   }
@@ -151,7 +177,7 @@ class ProsodyConfigContent {
   log: string
   prosodyDomain: string
 
-  constructor (paths: ProsodyFilePaths, prosodyDomain: string) {
+  constructor (paths: ProsodyFilePaths, prosodyDomain: string, chatTerms?: string) {
     this.paths = paths
     this.global = new ProsodyConfigGlobal()
     this.log = ''
@@ -212,9 +238,16 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_history_length', 20)
 
     this.muc.add('modules_enabled', 'muc_slow_mode')
+    this.muc.add('slow_mode_duration_form_position', 120)
+
     this.muc.add('modules_enabled', 'pubsub_peertubelivechat')
     this.muc.add('modules_enabled', 'muc_peertubelivechat_roles')
-    this.muc.add('slow_mode_duration_form_position', 120)
+
+    this.muc.add('modules_enabled', 'muc_peertubelivechat_terms')
+    this.muc.set('muc_terms_service_nickname', 'Peertube')
+    if (chatTerms) {
+      this.muc.set('muc_terms', new ConfigEntryValueMultiLineString(chatTerms))
+    }
   }
 
   useAnonymous (autoBanIP: boolean): void {

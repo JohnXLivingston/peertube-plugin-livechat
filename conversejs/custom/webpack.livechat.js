@@ -40,6 +40,7 @@ module.exports = merge(prod, {
     alias: {
       './templates/muc-bottom-panel.js': path.resolve('custom/templates/muc-bottom-panel.js'),
       './templates/muc-head.js': path.resolve(__dirname, 'custom/templates/muc-head.js'),
+      './templates/muc.js': path.resolve(__dirname, 'custom/templates/muc.js'),
       '../../templates/background_logo.js$': path.resolve(__dirname, 'custom/templates/background_logo.js'),
       './templates/muc-chatarea.js': path.resolve('custom/templates/muc-chatarea.js'),
 

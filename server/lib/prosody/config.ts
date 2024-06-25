@@ -175,7 +175,8 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'chat-no-anonymous',
     'auto-ban-anonymous-ip',
     'federation-dont-publish-remotely',
-    'disable-channel-configuration'
+    'disable-channel-configuration',
+    'chat-terms'
   ])
 
   const valuesToHideInDiagnostic = new Map<string, string>()
@@ -199,6 +200,9 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   let certificates: ProsodyConfigCertificates = false
   const useBots = !settings['disable-channel-configuration']
   const bots: ProsodyConfig['bots'] = {}
+  const chatTerms = (typeof settings['chat-terms'] === 'string') && settings['chat-terms']
+    ? settings['chat-terms']
+    : undefined
 
   let useExternal: boolean = false
   try {
@@ -260,7 +264,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const roomApiUrl = baseApiUrl + 'room?apikey=' + apikey + '&jid={room.jid|jid_node}'
   const testApiUrl = baseApiUrl + 'test?apikey=' + apikey
 
-  const config = new ProsodyConfigContent(paths, prosodyDomain)
+  const config = new ProsodyConfigContent(paths, prosodyDomain, chatTerms)
   if (!disableAnon) {
     config.useAnonymous(autoBanIP)
   }
