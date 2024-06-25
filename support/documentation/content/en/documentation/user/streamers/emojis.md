@@ -21,6 +21,8 @@ On the [channel configuration page](/peertube-plugin-livechat/documentation/user
 
 ![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)
 
+{{% livechat_label livechat_emojis_shortname_desc %}}
+
 ### Import / Export
 
 On the channel configuration page, there are an "{{% livechat_label action_import %}}" and an "{{% livechat_label action_export %}}" button.
