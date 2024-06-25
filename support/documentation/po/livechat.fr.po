@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-25 17:22+0200\n"
-"PO-Revision-Date: 2024-06-25 15:20+0000\n"
+"PO-Revision-Date: 2024-06-25 15:37+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1226,10 +1227,12 @@ msgstr "Paramètres du plugin"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy
-#| msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this settings, new settings appear below."
 msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this setting, new settings appear below."
-msgstr "Commencez par aller dans les paramètres du plugin livechat de votre instance, puis activez le paramètre «Autoriser les connexions aux salons via des comptes XMPP externes». En cochant celui-ci, de nouveaux champs apparaissent en dessous."
+msgstr ""
+"Commencez par aller dans les paramètres du plugin livechat de votre "
+"instance, puis activez le paramètre «Autoriser les connexions aux salons via "
+"des comptes XMPP externes». En cochant celui-ci, de nouveaux champs "
+"apparaissent en dessous."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1967,6 +1970,8 @@ msgstr "Pour plus d'informations sur cette fonctionnalité, veuillez vous réfé
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Changing this setting will restart the chat server, and all users will be disconnected for a short time."
 msgstr ""
+"La modification de ce paramètre redémarre le serveur de tchat et tous les "
+"utilisateur⋅rices seront déconnecté⋅es pendant une courte période."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2040,10 +2045,9 @@ msgstr "Vous pouvez par exemple générer une URL en lecture seule et l'utiliser
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "This settings allows you to choose who can access this modal."
 msgid "This setting allows you to choose who can access this modal."
-msgstr "Ce paramètre vous permet de choisir qui peut accéder à cette fenêtre modale."
+msgstr ""
+"Ce paramètre vous permet de choisir qui peut accéder à cette fenêtre modale."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2176,17 +2180,20 @@ msgstr "Le plugin est livré avec une AppImage qui est utilisée pour exécuter 
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "This settings should only be used if the plugin is broken, and waiting for a patch."
 msgid "This setting should only be used if the plugin is broken, and waiting for a patch."
-msgstr "Ce paramètre ne devrait être utilisé que si le plugin est cassé et en attente d'un correctif."
+msgstr ""
+"Ce paramètre ne devrait être utilisé que si le plugin est cassé et en "
+"attente d'un correctif."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy, no-wrap
-#| msgid "If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
+#, no-wrap
 msgid "If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
-msgstr "Si ce paramètre est laissé vide, et que vous utilisez Peertube >= 5.1, le plugin va utiliser les valeurs de votre fichier de configuration Peertube pour devenir sur quelle interface et quel port les requêtes doivent être faites.\n"
+msgstr ""
+"Si ce paramètre est laissé vide, et que vous utilisez Peertube >= 5.1, le "
+"plugin va utiliser les valeurs de votre fichier de configuration Peertube "
+"pour devenir sur quelle interface et quel port les requêtes doivent être "
+"faites.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2205,10 +2212,13 @@ msgstr "Par exemple, cette option peut permettre à une instance Matterbridge (u
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "This settings enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
 msgid "This setting enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
-msgstr "Ce paramètre permet aux composants externes XMPP de se connecter au serveur. Par défaut cette option **n'autorise que les connexions des composants sur localhost**. Vous devez changer la valeur du paramètre «{{% livechat_label prosody_components_interfaces_label %}}» pour écouter sur d'autres interfaces réseau."
+msgstr ""
+"Ce paramètre permet aux composants externes XMPP de se connecter au serveur. "
+"Par défaut cette option **n'autorise que les connexions des composants sur "
+"localhost**. Vous devez changer la valeur du paramètre «{{% livechat_label "
+"prosody_components_interfaces_label %}}» pour écouter sur d'autres "
+"interfaces réseau."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2451,10 +2461,10 @@ msgstr "Dans ce cas, essayez de changer le paramètre \"{{% livechat_label proso
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "Check the help for [this settings](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
-msgstr "Veuillez vous référer à la page d'aide [pour ce paramètre](/peertube-plugin-livechat/fr/documentation/admin/settings)."
+msgstr ""
+"Veuillez vous référer à la page d'aide [pour ce paramètre](/peertube-"
+"plugin-livechat/fr/documentation/admin/settings)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -3101,10 +3111,10 @@ msgstr "Ici vous pouvez configurer :"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
 msgid "[{{% livechat_label livechat_configuration_channel_terms_label %}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
-msgstr "Valeur par défaut pour [{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/fr/documentation/user/streamers/moderation)"
+msgstr ""
+"[{{% livechat_label livechat_configuration_channel_terms_label "
+"%}}](/peertube-plugin-livechat/fr/documentation/user/streamers/terms)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3723,91 +3733,114 @@ msgstr "Grâce à cette fonctionnalité, vous pouvez par exemple demander à vos
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "Peertube channel chatrooms configuration"
+#, no-wrap
 msgid "Configure channel's chat terms & conditions"
-msgstr "Configuration des salons de discussion des chaînes Peertube"
+msgstr "Configurer les conditions d'utilisation des tchats de la chaîne"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 #, no-wrap
 msgid "Terms & conditions"
-msgstr ""
+msgstr "Conditions d'utilisation"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "Channel configuration"
+#, no-wrap
 msgid "Configuration"
-msgstr "Configuration de la chaîne"
+msgstr "Configuration"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "You can add terms & conditions to your channel.  These terms will be shown to all users joining the chat."
 msgstr ""
+"Vous pouvez ajouter des conditions d'utilisation à votre chaîne.  Ces "
+"conditions seront affichées à tous les utilisateur⋅rices qui rejoignent le "
+"tchat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
 msgid "To configure the terms & conditions, go to the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel):"
-msgstr "Pour accéder à cette page, veuillez vous référer à la [documentation sur la configuration des chaînes](/peertube-plugin-livechat/fr/documentation/user/streamers/channel)."
+msgstr ""
+"Pour configurer les conditions d'utilisation, veuillez vous rendre sur [la "
+"page de configuration de la chaîne](/peertube-plugin-livechat/fr/"
+"documentation/user/streamers/channel) :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Channel configuration / Terms](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px)"
-msgstr "![Configuration de la chaîne](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Configuration de la chaîne / Conditions d'utilisation](/peertube-"
+"plugin-livechat/images/channel_terms_config."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "URL in the message will be clickable.  You can also do some styling: [Message Styling](https://xmpp.org/extensions/xep-0393.html)."
 msgstr ""
+"L'URL du message sera cliquable.  Vous pouvez aussi mettre en forme : ["
+"Message Styling](https://xmpp.org/extensions/xep-0393.html)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "For viewers"
+#, no-wrap
 msgid "Viewers"
-msgstr "Pour les spectateur⋅rices"
+msgstr "Spectateur⋅rices"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "When joining the chat, viewers will see the terms:"
 msgstr ""
+"Lorsqu'iels rejoignent le tchat, les spectateur⋅rices verrons les conditions "
+":"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
 msgid "![Terms](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
-msgstr "![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Conditions d'utilisation](/peertube-plugin-livechat/images/terms."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Peertube instance's admin can also set global terms & conditions.  If so, these terms will be shown above your channel's terms."
 msgstr ""
+"L'administrateur⋅rice de l'instance Peertube peut également définir des "
+"conditions générales.  Si c'est le cas, ces conditions seront affichées au-"
+"dessus de celles de votre chaîne."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Anonymous users will only see the terms & conditions once they have chosen their nickname (in other words: once they are able to talk)."
 msgstr ""
+"Les utilisateur⋅rices anonymes ne verront les conditions d'utilisation "
+"qu'une fois qu'iels auront choisi leur pseudonyme (en d'autres termes : une "
+"fois qu'iels seront en mesure de parler)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "You can change the terms content at any time, it will be instantly updated for all viewers."
 msgstr ""
+"Vous pouvez modifier le contenu des conditions à tout moment, il sera "
+"instantanément mis à jour pour tous les téléspectateur⋅rices."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Users can hide the terms & conditions.  When doing so, terms won't be shown again, unless you change the content."
 msgstr ""
+"Les utilisateur⋅rices peuvent masquer les conditions d'utilisation.  Dans ce "
+"cas, les conditions ne s'afficheront plus, sauf si vous en modifiez le "
+"contenu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, comming from a \"Peertube\" account.  When you update terms, they will receive a new message with the update terms content."
 msgstr ""
+"Si votre instance Peertube permet de rejoindre le tchat avec des [clients "
+"XMPP](https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/"
+"admin/advanced/xmpp_clients/), les utilisateur⋅rices utilisant ces clients "
+"verront les conditions comme des messages de tchat provenant d'un compte "
+"\"Peertube\".  Lorsque vous mettez à jour les conditions, iels recevront un "
+"nouveau message avec le contenu des conditions d'utilisation mis à jour."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
