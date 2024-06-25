@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-21 12:07+0200\n"
+"POT-Creation-Date: 2024-06-25 13:19+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/pt/>\n"
@@ -1875,6 +1875,16 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
+msgid "For more information on this feature, check the documentation for [channel's terms & conditions](/peertube-plugin-livechat/documentation/user/streamers/terms)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "Changing this settings will restart the chat server, and all users will be disconnected for a short time."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
 msgid "When pressing the «List rooms» button, all existing chatrooms will be listed.  You can then find them and moderated them."
 msgstr ""
 
@@ -2989,6 +2999,11 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
+msgid "[{{% livechat_label livechat_configuration_channel_terms_label %}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
 msgstr ""
 
@@ -3153,6 +3168,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "This feature comes with the livechat plugin version 10.2.0."
 msgstr ""
 
@@ -3591,6 +3607,85 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+#, no-wrap
+msgid "Configure channel's chat terms & conditions"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+#, no-wrap
+msgid "Terms & conditions"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+#, no-wrap
+msgid "Configuration"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "You can add terms & conditions to your channel.  These terms will be shown to all users joining the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "To configure the terms & conditions, go to the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel):"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "![Channel configuration / Terms](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "URL in the message will be clickable.  You can also do some styling: [Message Styling](https://xmpp.org/extensions/xep-0393.html)."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+#, no-wrap
+msgid "Viewers"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "When joining the chat, viewers will see the terms:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "![Terms](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "Peertube instance's admin can also set global terms & conditions.  If so, these terms will be shown above your channel's terms."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "Anonymous users will only see the terms & conditions once they have chosen their nickname (in other words: once they are able to talk)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "You can change the terms content at any time, it will be instantly updated for all viewers."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "Users can hide the terms & conditions.  When doing so, terms won't be shown again, unless you change the content."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+msgid "If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, comming from a \"Peertube\" account.  When you update terms, they will receive a new message with the update terms content."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
