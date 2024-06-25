@@ -356,7 +356,7 @@ class RoomChannel {
         // This can be done without waiting for the API call to finish, but we don't want to send thousands of
         // API calls at the same time. So storing data in a map, and we well launch it sequentially at the end
         prosodyRoomUpdates.set(roomJID, {
-          livechat_muc_terms: channelConfigurationOptions.terms
+          livechat_muc_terms: channelConfigurationOptions.terms ?? '' // must pass a string, else wont update
         })
 
         this.roomConfToUpdate.delete(roomJID)

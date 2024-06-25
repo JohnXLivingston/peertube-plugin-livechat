@@ -39,7 +39,9 @@ function get_muc_terms(room)
 end
 
 function set_muc_terms(room, terms)
-  terms = terms or nil;
+  if terms == "" then
+    terms = nil;
+  end
 
   if get_muc_terms(room) == terms then return false; end
 
