@@ -533,3 +533,9 @@ livechat_configuration_channel_mute_anonymous_label: Silencier les utilisateur�
 muted_anonymous_message: Seuls les utilisateur⋅rices enregistré⋅es peuvent envoyer
   des messages.
 token_date: Date
+chat_terms_label: Conditions d'utilisation
+invalid_value_too_long: Valeur trop longue
+chat_terms_description: "Ces conditions d'utilisation seront affichées à tous les
+  utilisateur⋅rices lorsqu'iels rejoindront les salons de discussion.\nLes streameur⋅euses
+  peuvent également configurer des conditions d'utilisation pour leurs canaux, qui
+  seront affichées juste après les conditions de l'instance.\n"
