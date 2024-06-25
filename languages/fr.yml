@@ -484,7 +484,7 @@ invalid_value_file_too_big: 'La taille du fichier est trop grande (taille maximu
 invalid_value_duplicate: Valeur en double
 livechat_configuration_channel_emojis_title: Émojis de la chaîne
 livechat_emojis_shortname: Nom court
-livechat_emojis_shortname_desc: "Vous pouvez utiliser l'émojis en utilisant \":nom_court:\"\
+livechat_emojis_shortname_desc: "Vous pouvez utiliser l'émojis dans le tchat en utilisant \":nom_court:\"\
   .\nLe nom court peut commencer et/ou finir par des deux-points (:), et seulement
   contenir des caractères alphanumériques des underscores et des tirets.\nIl est fortement
   recommandé de les commencer par des deux-points, pour que les utilisateur⋅rices
