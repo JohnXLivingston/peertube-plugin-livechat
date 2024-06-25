@@ -16,11 +16,14 @@ local jid_escape = require "util.jid".escape;
 local jid_resource = require "util.jid".resource;
 local st = require "util.stanza";
 local id = require "util.id";
+local datetime = require "util.datetime";
 
 local service_nickname = module:get_option_string("muc_terms_service_nickname", "Service");
 local global_terms = module:get_option_string("muc_terms_global", "");
 
 local function create_terms_message(room, type, terms)
+  -- Note: we can't send the message from "room.jid": XMPP clients such as Gajim would ignore them.
+  -- So we use a service_nickname.
   local from = room.jid .. '/' .. jid_escape(service_nickname);
   module:log("debug", "Creating %s terms message from %s (room %s)", type, from, room);
   local msg = st.message({
@@ -28,8 +31,14 @@ local function create_terms_message(room, type, terms)
     from = from,
     id = id.medium()
   }, terms)
-    :tag('x-livechat-terms', { type = type }):up(); -- adding a custom tag to specify that it is a "terms" message, so that frontend can display it with a special template.
+    :tag('x-livechat-terms', { type = type }):up() -- adding a custom tag to specify that it is a "terms" message, so that frontend can display it with a special template.
+    :tag("delay", { xmlns = "urn:xmpp:delay", from = host, stamp = datetime.datetime() }):up(); -- adding a delay to trick the moderation bot (see below)
 
+  -- concerning the delay tag:
+  -- We are sending message to rooms from non-existant occupants.
+  -- If the message contains something that should be moderated by the livechat moderation bot,
+  -- it could generate some error logs (the bot will not find the user in the occupant list).
+  -- At time of writing, the xmppjs-chat-bot ignore delayed message... so we use this hack to trick the bot.
   return msg;
 end
 
