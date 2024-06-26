@@ -8,8 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-06-25 17:22+0200\n"
-"PO-Revision-Date: 2024-06-25 15:37+0000\n"
-"Last-Translator: John Livingston <git@john-livingston.fr>\n"
+"PO-Revision-Date: 2024-06-26 12:40+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
@@ -1945,15 +1946,18 @@ msgstr "Dieser Abschnitt beschreibt die Seite mit den Plugin Einstellungen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
 msgid "For more information on this feature, check the documentation for [channel's terms & conditions](/peertube-plugin-livechat/documentation/user/streamers/terms)."
-msgstr "Um auf diese Seite zuzugreifen, sehen Sie sich die [Kanal Konfigurations Dokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/channel) an."
+msgstr ""
+"Weitere Informationen zu dieser Funktion finden Sie in der Dokumentation zu "
+"den [Kanal-Nutzungsbedingungen](/peertube-plugin-livechat/de/documentation/"
+"user/streamers/terms)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Changing this setting will restart the chat server, and all users will be disconnected for a short time."
 msgstr ""
+"Wenn Sie diese Einstellung ändern, wird der Chatserver neu gestartet, und "
+"alle Benutzer werden für kurze Zeit getrennt."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -3094,10 +3098,10 @@ msgstr "Hier können Sie konfigurieren:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
 msgid "[{{% livechat_label livechat_configuration_channel_terms_label %}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
-msgstr "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/de/documentation/user/streamers/moderation) Standardwert"
+msgstr ""
+"[{{% livechat_label livechat_configuration_channel_terms_label "
+"%}}](/peertube-plugin-livechat/de/documentation/user/streamers/terms)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3716,91 +3720,110 @@ msgstr "Mit dieser Funktion können Sie z. B. Ihre Moderatoren bitten, alle Chat
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "Peertube channel chatrooms configuration"
+#, no-wrap
 msgid "Configure channel's chat terms & conditions"
-msgstr "Peertube Kanal Chaträume Konfiguration"
+msgstr "Konfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 #, no-wrap
 msgid "Terms & conditions"
-msgstr ""
+msgstr "Nutzungsbedingungen"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "Channel configuration"
+#, no-wrap
 msgid "Configuration"
-msgstr "Kanalkonfiguration"
+msgstr "Konfiguration"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "You can add terms & conditions to your channel.  These terms will be shown to all users joining the chat."
 msgstr ""
+"Sie können Ihrem Kanal Nutzungsbedingungen hinzufügen.  Diese "
+"Nutzungsbedingungen werden allen Benutzern angezeigt, die den Chat betreten."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
 msgid "To configure the terms & conditions, go to the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel):"
-msgstr "Um auf diese Seite zuzugreifen, sehen Sie sich die [Kanal Konfigurations Dokumentation](/peertube-plugin-livechat/de/documentation/user/streamers/channel) an."
+msgstr ""
+"Um die Nutzungsbedingungen zu konfigurieren, gehen Sie auf die [Kanal-"
+"Konfigurationsseite](/peertube-plugin-livechat/de/documentation/user/"
+"streamers/channel):"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Channel configuration / Terms](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px)"
-msgstr "![Kanalkonfiguration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Kanalkonfiguration / Nutzungsbedingungen](/peertube-plugin-livechat/images/"
+"channel_terms_config.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "URL in the message will be clickable.  You can also do some styling: [Message Styling](https://xmpp.org/extensions/xep-0393.html)."
 msgstr ""
+"Die URL in der Nachricht wird anklickbar sein.  Sie können die Nachricht "
+"auch etwas gestalten: [Message Styling](https://xmpp.org/extensions/xep-0393."
+"html)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "For viewers"
+#, no-wrap
 msgid "Viewers"
-msgstr "Für Zuschauer"
+msgstr "Zuschauer"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "When joining the chat, viewers will see the terms:"
-msgstr ""
+msgstr "Wenn Sie dem Chat beitreten, sehen die Zuschauer die Bedingungen:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
 msgid "![Terms](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
-msgstr "![Vögel](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Bedingungen](/peertube-plugin-livechat/images/terms."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Peertube instance's admin can also set global terms & conditions.  If so, these terms will be shown above your channel's terms."
 msgstr ""
+"Der Administrator der Peertube-Instanz kann auch globale Nutzungsbedingungen "
+"festlegen.  Wenn dies der Fall ist, werden diese Bedingungen über den "
+"Bedingungen Ihres Kanals angezeigt."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Anonymous users will only see the terms & conditions once they have chosen their nickname (in other words: once they are able to talk)."
 msgstr ""
+"Anonyme Nutzer sehen die Nutzungsbedingungen erst, wenn sie ihren Nickname "
+"gewählt haben (mit anderen Worten: wenn sie schreiben können)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "You can change the terms content at any time, it will be instantly updated for all viewers."
 msgstr ""
+"Sie können den Inhalt der Nutzungsbedingungen jederzeit ändern, er wird dann "
+"sofort für alle Betrachter aktualisiert."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Users can hide the terms & conditions.  When doing so, terms won't be shown again, unless you change the content."
 msgstr ""
+"Benutzer können die Nutzungsbedingungen ausblenden.  Wenn Sie dies tun, "
+"werden die Bedingungen nicht mehr angezeigt, es sei denn, Sie ändern den "
+"Inhalt."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, comming from a \"Peertube\" account.  When you update terms, they will receive a new message with the update terms content."
 msgstr ""
+"Wenn Ihre Peertube-Instanz die Teilnahme am Chat mit [XMPP-Clients] "
+"(https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/"
+"advanced/xmpp_clients/) erlaubt, sehen die Benutzer, die solche Clients "
+"verwenden, die Bedingungen als Chat-Nachrichten, die von einem \"Peertube\"-"
+"Konto kommen.  Wenn Sie die Bedingungen aktualisieren, erhalten sie eine "
+"neue Nachricht mit dem Inhalt der aktualisierten Bedingungen."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
