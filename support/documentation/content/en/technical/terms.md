@@ -49,6 +49,10 @@ This also ensure clients will not drop the message because there is no occupant 
 
 When muc terms are updated, the new terms will be broadcasted.
 
+To avoid anyone spoofing terms & conditions, incoming message stanza are filtered, and any `x-livechat-terms` tag will be removed.
+
+Message history is disabled for message containing the `x-livechat-terms`, so that messages broadcasted when the terms change are not stored by muc_mam modume ("Message Archiving Management").
+
 ## Frontend
 
 For standard XMPP clients, terms will be shown as delayed messages.

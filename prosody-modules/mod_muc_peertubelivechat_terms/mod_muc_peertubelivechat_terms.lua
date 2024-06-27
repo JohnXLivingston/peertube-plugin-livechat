@@ -116,3 +116,11 @@ module:hook("muc-occupant-groupchat", function(event)
     return child;
   end);
 end, 100);
+
+-- don't save terms messages in history
+module:hook("muc-message-is-historic", function(event)
+  local stanza = event.stanza;
+  if (stanza:get_child("x-livechat-terms")) then
+    return false, "hint";
+  end
+end, 1);
