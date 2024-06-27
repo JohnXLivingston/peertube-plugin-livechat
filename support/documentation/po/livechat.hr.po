@@ -7,15 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-06-25 17:22+0200\n"
-"PO-Revision-Date: 2024-06-18 20:10+0000\n"
+"PO-Revision-Date: 2024-06-25 19:17+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
+"Language-Team: Croatian <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.5.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.6.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1905,10 +1907,9 @@ msgstr ""
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy, no-wrap
-#| msgid "Documentation"
+#, no-wrap
 msgid "Authentication"
-msgstr "Dokumentacija"
+msgstr "Autentifikacija"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1929,7 +1930,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Channel advanced configuration"
-msgstr ""
+msgstr "Napredna konfiguracija kanala"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2081,7 +2082,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat server advanced settings"
-msgstr ""
+msgstr "Napredne postavke chat servera"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2132,10 +2133,9 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
-#, fuzzy, no-wrap
-#| msgid "Write documentation"
+#, no-wrap
 msgid "Plugin documentation"
-msgstr "Piši dokumentaciju"
+msgstr "Dokumentacija dodataka"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2307,7 +2307,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Diagnostic tool"
-msgstr ""
+msgstr "Alat za dijagnozu"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2359,10 +2359,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
 msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
-msgstr "[Prilagođeni emojiji](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
+msgstr ""
+"Za više informacija pogledaj stranicu pomoći za [ovu postavku](/peertube-"
+"plugin-livechat/documentation/admin/settings/)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2401,7 +2401,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "IMPORTANT NOTE"
-msgstr ""
+msgstr "VAŽNA NAPOMENA"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
@@ -3634,14 +3634,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 #, no-wrap
 msgid "Terms & conditions"
-msgstr ""
+msgstr "Uvjeti i odredbe"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "Channel configuration"
+#, no-wrap
 msgid "Configuration"
-msgstr "Konfiguracija kanala"
+msgstr "Konfiguracija"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
@@ -3650,10 +3649,10 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
 msgid "To configure the terms & conditions, go to the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel):"
-msgstr "[Prilagođeni emojiji](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
+msgstr ""
+"Za konfiguriranje uvjeta i odredbi idi na [stranicu za konfiguraciju kanala"
+"](/peertube-plugin-livechat/documentation/user/streamers/channel):"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
