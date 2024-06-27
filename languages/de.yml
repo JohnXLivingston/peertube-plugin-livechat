@@ -468,8 +468,11 @@ invalid_value_file_too_big: 'Die Datei ist zu groß (maximale Größe: %s).'
 invalid_value_duplicate: Doppelter Wert
 livechat_configuration_channel_emojis_title: Kanal-Emojis
 livechat_emojis_shortname: Kurzname
-livechat_emojis_shortname_desc: "Sie können Emojis mit \":Kurzname:\" verwenden.\n
-  Der Kurzname darf nur alphanumerische Zeichen, Unterstriche und Bindestriche enthalten.\n"
+livechat_emojis_shortname_desc: "Sie können Emojis im Chat mit \":Kurzname:\" verwenden.\n
+  Der Kurzname kann mit einem Doppelpunkt (:) beginnen und/oder enden und darf nur
+  alphanumerische Zeichen, Unterstriche und Bindestriche enthalten.\nEs wird dringend
+  empfohlen, sie mit einem Doppelpunkt zu beginnen, damit die Benutzer die automatische
+  Vervollständigung nutzen können (indem sie \":\" eingeben und dann TAB drücken).\n"
 livechat_configuration_channel_emojis_desc: "Sie können benutzerdefinierte Emojis
   für Ihren Kanal konfigurieren.\nDiese Emojis werden in der Emoji-Auswahl verfügbar
   sein.\nBenutzer können sie auch mit ihrem Kurznamen verwenden (z. B. indem sie \"\
@@ -519,3 +522,12 @@ livechat_configuration_channel_mute_anonymous_desc: "Standardwert für neue Chat
   Für bestehende Chaträume können Sie die Funktion im Raumkonfigurationsformular ändern.\n
   Wenn diese Funktion aktiviert ist, können anonyme Benutzer den Chat nur lesen, aber
   keine Nachrichten senden.\n"
+chat_terms_label: Nutzungsbedingungen
+chat_terms_description: "Diese Nutzungsbedingungen werden allen Nutzern angezeigt,
+  wenn sie Chaträumen beitreten.\nStreamer können auch Bedingungen für ihre Kanäle
+  konfigurieren, die direkt nach diesen globalen Bedingungen angezeigt werden.\n"
+invalid_value_too_long: Wert zu lang
+livechat_configuration_channel_terms_label: Chat Nutzungsbedingungen und Konditionen
+  des Kanals
+livechat_configuration_channel_terms_desc: "Sie können eine \"Nutzungsbedingungen\"\
+  -Nachricht konfigurieren, die Benutzern angezeigt wird, die Ihren Chaträumen beitreten.\n"
