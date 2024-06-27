@@ -248,6 +248,8 @@ class ProsodyConfigContent {
     if (chatTerms) {
       this.muc.set('muc_terms_global', new ConfigEntryValueMultiLineString(chatTerms))
     }
+
+    this.muc.add('modules_enabled', 'muc_poll')
   }
 
   useAnonymous (autoBanIP: boolean): void {

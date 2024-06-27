@@ -563,3 +563,5 @@ livechat_configuration_channel_mute_anonymous_desc: |
 livechat_configuration_channel_terms_label: "Channel's chat terms & conditions"
 livechat_configuration_channel_terms_desc: |
   You can configure a "terms & conditions" message that will be shown to users joining your chatrooms.
+
+new_poll: Create a new poll
