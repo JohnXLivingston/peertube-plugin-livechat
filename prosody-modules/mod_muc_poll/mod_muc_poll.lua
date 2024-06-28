@@ -21,9 +21,63 @@ local function get_form_layout(room, stanza)
 
   table.insert(form, {
     name = "muc#roompoll_question";
+    type = "text-single";
     label = "Question";
+    desc = "The poll question.";
     value = "";
   });
+  table.insert(form, {
+    name = "muc#roompoll_duration";
+    type = "text-single";
+    datatype = "xs:integer";
+    range_min = 1;
+    label = "Poll duration (in minutes)";
+    desc = "The number of minutes to run the poll.";
+    value = "";
+  });
+  table.insert(form, {
+    name = "muc#roompoll_anonymous";
+    type = "text-single";
+    label = "Anonymous results";
+    desc = "By enabling this, user's votes won't be publicly shown in the room.";
+    value = "";
+  });
+  table.insert(form, {
+    name = "muc#roompoll_choice1";
+    type = "text-single";
+    label = "Choice 1";
+    desc = "";
+    value = "";
+  });
+  table.insert(form, {
+    name = "muc#roompoll_choice2";
+    type = "text-single";
+    label = "Choice 2";
+    desc = "";
+    value = "";
+  });
+  table.insert(form, {
+    name = "muc#roompoll_choice3";
+    type = "text-single";
+    label = "Choice 3";
+    desc = "";
+    value = "";
+  });
+  table.insert(form, {
+    name = "muc#roompoll_choice4";
+    type = "text-single";
+    label = "Choice 4";
+    desc = "";
+    value = "";
+  });
+  table.insert(form, {
+    name = "muc#roompoll_choice5";
+    type = "text-single";
+    label = "Choice 5";
+    desc = "";
+    value = "";
+  });
+
   return form;
 end
 
