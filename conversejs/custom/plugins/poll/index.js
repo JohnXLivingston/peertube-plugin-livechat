@@ -5,6 +5,8 @@
 import { _converse, converse } from '../../../src/headless/core.js'
 import { getHeadingButtons } from './utils.js'
 // import { XMLNS_POLL } from './constants.js'
+import './modals/poll-form.js'
+import './components/poll-form-view.js'
 
 converse.plugins.add('livechat-converse-poll', {
   dependencies: ['converse-muc', 'converse-disco'],
