@@ -18,6 +18,7 @@ local get_room_from_jid = mod_muc.get_room_from_jid;
 local xmlns_poll = module:require("constants").xmlns_poll;
 local send_form = module:require("form").send_form;
 local process_form = module:require("form").process_form;
+local handle_groupchat = module:require("poll").handle_groupchat;
 
 -- new poll creation, get form
 module:hook("iq-get/bare/" .. xmlns_poll .. ":query", function (event)
@@ -66,3 +67,6 @@ end);
 module:hook("muc-disco#info", function (event)
 	event.reply:tag("feature", { var = xmlns_poll }):up();
 end);
+
+-- on groupchat messages, we check if this is a vote for the current poll
+module:hook("muc-occupant-groupchat", handle_groupchat);
