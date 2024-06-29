@@ -20,13 +20,9 @@ export function tplPollForm (el) {
 
             ${el.form_fields}
 
-            ${
-              el.modal
-                ? html`` // no need for submit button, the modal will have one in the footer
-                : html`<fieldset class="buttons form-group">
-                    <input type="submit" class="btn btn-primary" value="${i18nOk}" />
-                  </fieldset>`
-            }
+            <fieldset class="buttons form-group">
+              <input type="submit" class="btn btn-primary" value="${i18nOk}" />
+            </fieldset>
           </form>`
         : ''
     }`

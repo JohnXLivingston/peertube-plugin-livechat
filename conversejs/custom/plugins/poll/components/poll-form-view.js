@@ -72,6 +72,7 @@ export default class MUCPollFormView extends CustomElement {
 
       const iq = $iq({
         type: 'set',
+        to: this.model.get('jid'),
         id: u.getUniqueId()
       }).c('query', { xmlns: XMLNS_POLL })
 
@@ -83,9 +84,19 @@ export default class MUCPollFormView extends CustomElement {
       await api.sendIQ(iq)
 
       if (this.modal) {
-        this.modal.hide()
+        this.modal.onHide()
       }
     } catch (err) {
+      if (u.isErrorStanza(err)) {
+        // Checking if there is a text error that we can show to the user.
+        if (sizzle('error bad-request', err).length) {
+          const text = sizzle('error text', err)
+          if (text.length) {
+            this.alert_message = __('Error') + ': ' + text[0].textContent
+            return
+          }
+        }
+      }
       console.error(err)
       this.alert_message = __('Error')
     }
