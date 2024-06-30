@@ -90,22 +90,27 @@ local function schedule_poll_end (room_jid, timestamp)
   end);
 end
 
-local function create_poll(room, fields)
-  module:log("debug", "Creating a new poll for room %s", room.jid);
+local function create_poll(room, fields, occupant)
+  module:log("debug", "Creating a new poll for room %s, by %s", room.jid, occupant.bare_jid);
   room._data.current_poll = fields;
   room._data.current_poll.end_timestamp = get_time() + (60 * fields["muc#roompoll_duration"]);
   room._data.current_poll.votes_by_occupant = {};
   room._data.current_poll.votes_by_choices = {};
+  room._data.current_poll.choices = {};
   room._data.current_poll.already_ended = false;
+  room._data.current_poll.occupant_bare_jid = occupant.bare_jid;
+  room._data.current_poll.occupant_nick = occupant.nick;
+  room._data.current_poll.occupant_id = room:get_occupant_id(occupant);
   for field, _ in pairs(fields) do
     local c = field:match("^muc#roompoll_choice(%d+)$");
     if c then
       if fields["muc#roompoll_choice" .. c]:find("%S") then
         room._data.current_poll.votes_by_choices[c] = 0;
+        room._data.current_poll.choices[c] = fields["muc#roompoll_choice" .. c];
       end
     end
   end
-  poll_start_message(room);
+  room._data.current_poll.start_message_id = poll_start_message(room);
   schedule_poll_end(room.jid, room._data.current_poll.end_timestamp);
 end
 
