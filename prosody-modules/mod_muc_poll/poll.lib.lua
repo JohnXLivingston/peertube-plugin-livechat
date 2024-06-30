@@ -3,14 +3,91 @@
 
 local st = require "util.stanza";
 local get_time = require "util.time".now;
+local timer = require "util.timer";
+local mod_muc = module:depends"muc";
+local get_room_from_jid = mod_muc.get_room_from_jid;
+local poll_start_message = module:require("message").poll_start_message;
+local poll_end_message = module:require("message").poll_end_message;
+local schedule_poll_update_message = module:require("message").schedule_poll_update_message;
+
+local scheduled_end = {};
+
+local function schedule_poll_purge(room_jid)
+  module:log("debug", "Scheduling a purge for poll %s", room_jid);
+  timer.add_task(30, function ()
+    module:log("info", "Must purge poll for room %s", room_jid);
+    -- We dont pass room, because here it could have been removed from memory.
+    -- So we must relad the room from the JID in any case.
+    local room = get_room_from_jid(room_jid);
+    if not room then
+      module:log("debug", "Room %s not found, was maybe destroyed", room_jid);
+      return;
+    end
+    -- we must check if the poll is ended (could be a new poll!)
+    if not room._data.current_poll then
+      module:log("debug", "Room %s has no current poll to purge", room_jid);
+      return;
+    end
+    if not room._data.current_poll.already_ended then
+      module:log("debug", "Room %s has has a poll that is not ended, must be a new one", room_jid);
+      return;
+    end
+    module:log("info", "Purging poll for room %s", room_jid);
+    room._data.current_poll = nil;
+  end);
+end
 
 local function end_current_poll (room)
   if not room._data.current_poll then
     return;
   end
-  -- TODO: compute and send last result.
+
+  if room._data.current_poll.already_ended then
+    -- this can happen if the server was restarted before the purge
+    schedule_poll_purge(room.jid);
+    return;
+  end
+
   module:log("debug", "Ending the current poll for room %s", room.jid);
-  room._data.current_poll = nil;
+  room._data.current_poll.already_ended = true;
+
+  if scheduled_end[room.jid] then
+    module:log("debug", "Stopping the end timer for the poll");
+    timer.stop(scheduled_end[room_jid]);
+    scheduled_end[room_jid] = nil;
+  end
+  poll_end_message(room);
+  -- TODO: store the result somewhere, to keep track?
+
+  -- We don't remove the poll immediatly. Indeed, if the vote is anonymous,
+  -- we don't want to expose votes from late users.
+  schedule_poll_purge(room.jid);
+end
+
+local function schedule_poll_end (room_jid, timestamp)
+  local delay = timestamp - get_time();
+  if delay <= 0 then
+    delay = 1;
+  end
+  module:log("debug", "Must schedule a poll end in %i for room %s", delay, room_jid);
+
+  if scheduled_end[room_jid] then
+    module:log("debug", "There is already a timer for the %s poll end, rescheduling", room_jid);
+    timer.reschedule(scheduled_end[room_jid], delay);
+    return;
+  end
+  scheduled_end[room_jid] = timer.add_task(delay, function ()
+    module:log("debug", "Its time to end the poll for room %s", room_jid);
+    scheduled_end[room_jid] = nil;
+    -- We dont pass room, because here it could have been removed from memory.
+    -- So we must relad the room from the JID in any case.
+    local room = get_room_from_jid(room_jid);
+    if not room then
+      module:log("debug", "Room %s not found, was probably destroyed", room_jid);
+      return; -- room was probably destroyed
+    end
+    end_current_poll(room);
+  end);
 end
 
 local function create_poll(room, fields)
@@ -19,6 +96,7 @@ local function create_poll(room, fields)
   room._data.current_poll.end_timestamp = get_time() + (60 * fields["muc#roompoll_duration"]);
   room._data.current_poll.votes_by_occupant = {};
   room._data.current_poll.votes_by_choices = {};
+  room._data.current_poll.already_ended = false;
   for field, _ in pairs(fields) do
     local c = field:match("^muc#roompoll_choice(%d+)$");
     if c then
@@ -27,7 +105,8 @@ local function create_poll(room, fields)
       end
     end
   end
-  -- TODO: create and send poll message.
+  poll_start_message(room);
+  schedule_poll_end(room.jid, room._data.current_poll.end_timestamp);
 end
 
 local function handle_groupchat(event)
@@ -49,7 +128,7 @@ local function handle_groupchat(event)
 
   -- Ok, seems it is a vote.
 
-  if get_time() > room._data.current_poll.end_timestamp then
+  if get_time() >= room._data.current_poll.end_timestamp then
     module:log("debug", "Got a vote for a finished poll, not counting it.");
     -- Note: we keep bouncing messages a few seconds/minutes after the poll end
     -- to be sure any user that send the vote too late won't expose his choice.
@@ -80,10 +159,22 @@ local function handle_groupchat(event)
 
   -- Ok, we can count the vote.
   local occupant = event.occupant;
-  local id = occupant.jid; -- FIXME: is this the correct value? or bare_jid?
-  module:log("debug", "Counting a new vote for room %s: choice %i, voter %s", room.jid, choice, id);
+  if not occupant then
+    module:log("warn", "No occupant in the event, dont know how to count the vote");
+    return
+  end
 
-  -- TODO: count the vote.
+  local occupant_bare_id = occupant.bare_jid;
+  module:log("debug", "Counting a new vote for room %s: choice %i, voter %s", room.jid, choice, occupant_bare_id);
+  -- counting the vote:
+  if room._data.current_poll.votes_by_occupant[occupant_bare_id] ~= nil then
+    module:log("debug", "Occupant %s has already voted for current room %s vote, reassigning his vote.", occupant_bare_id);
+    room._data.current_poll.votes_by_choices[room._data.current_poll.votes_by_occupant[occupant_bare_id]] = room._data.current_poll.votes_by_choices[room._data.current_poll.votes_by_occupant[occupant_bare_id]] - 1;
+  end
+  room._data.current_poll.votes_by_choices[choice] = room._data.current_poll.votes_by_choices[choice] + 1;
+  room._data.current_poll.votes_by_occupant[occupant_bare_id] = choice;
+
+  schedule_poll_update_message(room);
 
   -- When the poll is anonymous, we bounce the messages (but count the votes).
   local must_bounce = room._data.current_poll["muc#roompoll_anonymous"] == true;
@@ -101,8 +192,33 @@ local function handle_groupchat(event)
   end
 end
 
+local function room_restored(event)
+  local room = event.room;
+  if not room._data.current_poll then
+    return;
+  end
+
+  module:log("info", "Restoring room %s with current ongoing poll.", room.jid);
+  local now = get_time();
+  if now >= room._data.current_poll.end_timestamp then
+    module:log("info", "Current poll is over for room %s, ending it", room.jid);
+    end_current_poll(room);
+    return;
+  end
+
+  if scheduled_end[room.jid] then
+    module:log("info", "Poll for room %s is not finished yet, the end is still scheduled", room.jid);
+  else
+    module:log("info", "Poll for room %s is not finished yet, rescheduling the end", room.jid);
+    schedule_poll_end(room.jid, room._data.current_poll.end_timestamp);
+  end
+  -- just in case, we can also reschedule an update message
+  schedule_poll_update_message(room);
+end
+
 return {
   end_current_poll = end_current_poll;
   create_poll = create_poll;
   handle_groupchat = handle_groupchat;
+  room_restored = room_restored;
 };

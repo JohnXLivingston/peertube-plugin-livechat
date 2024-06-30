@@ -43,6 +43,7 @@ local function get_form_layout(room, stanza)
     type = "boolean";
     label = "Anonymous results";
     desc = "By enabling this, user's votes won't be publicly shown in the room.";
+    value = true;
   });
   table.insert(form, {
     name = "muc#roompoll_choice1";
