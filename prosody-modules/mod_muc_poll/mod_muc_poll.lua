@@ -47,21 +47,29 @@ end);
 module:hook("iq-set/bare/" .. xmlns_poll .. ":query", function (event)
   local origin, stanza = event.origin, event.stanza;
   local room_jid = stanza.attr.to;
-  module:log("debug", "Received a form submission for the poll form");
+  local from = stanza.attr.from;
+  module:log("debug", "Received a form submission for the poll form on %s from %s", room_jid, from);
   local room = get_room_from_jid(room_jid);
   if not room then
     origin.send(st.error_reply(stanza, "cancel", "item-not-found"));
     return true;
   end
-  local from = jid_bare(stanza.attr.from);
 
-  local from_affiliation = room:get_affiliation(from);
+  local occupant = room:get_occupant_by_real_jid(from);
+  if not occupant then
+    module:log("debug", "No occupant, ignoring...");
+    origin.send(st.error_reply(stanza, "auth", "forbidden"))
+    return true;
+  end
+
+  local from_bare = jid_bare(stanza.attr.from);
+  local from_affiliation = room:get_affiliation(from_bare);
   if (from_affiliation ~= "owner" and from_affiliation ~= "admin") then
     origin.send(st.error_reply(stanza, "auth", "forbidden"))
     return true;
   end
 
-  return process_form(room, origin, stanza);
+  return process_form(room, origin, stanza, occupant);
 end);
 
 -- Discovering support

@@ -102,7 +102,7 @@ local function dataform_error_message(err)
 end
 
 
-local function process_form(room, origin, stanza)
+local function process_form(room, origin, stanza, occupant)
   if not stanza.tags[1] then
     origin.send(st.error_reply(stanza, "modify", "bad-request"));
     return true;
@@ -141,7 +141,7 @@ local function process_form(room, origin, stanza)
   end_current_poll(room);
 
   -- create the new poll
-  create_poll(room, fields);
+  create_poll(room, fields, occupant);
 
   origin.send(st.reply(stanza));
   return true;
