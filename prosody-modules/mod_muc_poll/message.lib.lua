@@ -3,10 +3,18 @@
 
 local id = require "util.id";
 local st = require "util.stanza";
-local format = require"util.format".format;
+local timer = require "util.timer";
 local xmlns_occupant_id = "urn:xmpp:occupant-id:0";
+local xmlns_replace = "urn:xmpp:message-correct:0";
 
-local function build_poll_message(room, message_id)
+local mod_muc = module:depends"muc";
+local get_room_from_jid = mod_muc.get_room_from_jid;
+
+local debounce_delay = 10; -- number of seconds during which we must group votes to avoid flood.
+local scheduled_updates = {};
+
+-- construct the poll message stanza
+local function build_poll_message(room, message_id, is_end_message)
   local current_poll = room._data.current_poll;
   if not current_poll then
     return nil;
@@ -14,6 +22,10 @@ local function build_poll_message(room, message_id)
   local from = room.jid .. '/' .. current_poll.occupant_nick;
 
   local content = current_poll["muc#roompoll_question"] .. "\n";
+
+  if is_end_message then
+    content = content .. "This poll is now over.\n";
+  end
 
   local total = 0;
   for choice, nb in pairs(current_poll.votes_by_choices) do
@@ -23,12 +35,15 @@ local function build_poll_message(room, message_id)
     content = content .. choice .. ': ' .. label;
     if total > 0 then
       local nb = current_poll.votes_by_choices[choice] or 0;
-      local percent = format("%d.%d%d", nb * 100 / total);
+      local percent = string.format("%.2f", nb * 100 / total);
       content = content .. " (" .. nb .. "/" .. total .. " = " .. percent .. "%)";
     end
     content = content .. "\n";
   end
-  content = content .. "Send a message with an exclamation mark followed by your choice number to vote. Example: !1\n";
+
+  if not is_end_message then
+    content = content .. "Send a message with an exclamation mark followed by your choice number to vote. Example: !1\n";
+  end
 
   local msg = st.message({
     type = "groupchat",
@@ -44,32 +59,67 @@ local function build_poll_message(room, message_id)
   return msg;
 end
 
+-- sends a message when the poll starts.
 local function poll_start_message(room)
   if not room._data.current_poll then
     return nil;
   end
   module:log("debug", "Sending the start message for room %s poll", room.jid);
   local message_id = id.medium();
-  local msg = build_poll_message(room, message_id);
+  local msg = build_poll_message(room, message_id, false);
   room:broadcast_message(msg);
   return message_id;
 end
 
-local function schedule_poll_update_message(room)
-  -- TODO
+-- Send the poll update message
+local function send_poll_update_message(room)
+  if not room._data.current_poll then
+    return nil;
+  end
+  module:log("debug", "Sending an update message for room %s poll", room.jid);
+  local message_id = id.medium(); -- generate a new id
+  local msg = build_poll_message(room, message_id, false);
 
-  -- if not room._data.current_poll then
-  --   return nil;
-  -- end
-  -- module:log("debug", "Sending an update message for room %s poll", room.jid);
-  -- local message_id = id.medium();
-  -- local msg = build_poll_message(room, message_id);
-  -- room:broadcast_message(msg);
-  -- return message_id;
+  -- the update message is a <replace> message (see XEP-0308).
+  msg:tag('replace', {
+    xmlns = xmlns_replace;
+    id = room._data.current_poll.start_message_id;
+  }):up();
+
+  room:broadcast_message(msg);
+  return message_id;
 end
 
+-- Schedule an update of the start message.
+-- We do not send this update each time someone vote,
+-- to avoid flooding.
+local function schedule_poll_update_message(room_jid)
+  if scheduled_updates[room_jid] then
+    -- already a running timer, we can ignore to debounce.
+    return;
+  end
+  scheduled_updates[room_jid] = timer.add_task(debounce_delay, function()
+    scheduled_updates[room_jid] = nil;
+    -- We dont pass room, because here it could have been removed from memory.
+    -- So we must relad the room from the JID in any case.
+    local room = get_room_from_jid(room_jid);
+    if not room then
+      return;
+    end
+    send_poll_update_message(room);
+  end);
+end
+
+-- Send a new message when the poll is over, with the result.
 local function poll_end_message(room)
-  -- TODO
+  if not room._data.current_poll then
+    return nil;
+  end
+  module:log("debug", "Sending the end message for room %s poll", room.jid);
+  local message_id = id.medium(); -- generate a new id
+  local msg = build_poll_message(room, message_id, true);
+  room:broadcast_message(msg);
+  return message_id;
 end
 
 return {

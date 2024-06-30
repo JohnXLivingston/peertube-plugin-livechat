@@ -56,7 +56,9 @@ local function end_current_poll (room)
     timer.stop(scheduled_end[room_jid]);
     scheduled_end[room_jid] = nil;
   end
+
   poll_end_message(room);
+
   -- TODO: store the result somewhere, to keep track?
 
   -- We don't remove the poll immediatly. Indeed, if the vote is anonymous,
@@ -173,18 +175,18 @@ local function handle_groupchat(event)
   module:log("debug", "Counting a new vote for room %s: choice %i, voter %s", room.jid, choice, occupant_bare_id);
   -- counting the vote:
   if room._data.current_poll.votes_by_occupant[occupant_bare_id] ~= nil then
-    module:log("debug", "Occupant %s has already voted for current room %s vote, reassigning his vote.", occupant_bare_id);
+    module:log("debug", "Occupant %s has already voted for current room %s vote, reassigning his vote.", occupant_bare_id, room.jid);
     room._data.current_poll.votes_by_choices[room._data.current_poll.votes_by_occupant[occupant_bare_id]] = room._data.current_poll.votes_by_choices[room._data.current_poll.votes_by_occupant[occupant_bare_id]] - 1;
   end
   room._data.current_poll.votes_by_choices[choice] = room._data.current_poll.votes_by_choices[choice] + 1;
   room._data.current_poll.votes_by_occupant[occupant_bare_id] = choice;
 
-  schedule_poll_update_message(room);
+  schedule_poll_update_message(room.jid);
 
   -- When the poll is anonymous, we bounce the messages (but count the votes).
   local must_bounce = room._data.current_poll["muc#roompoll_anonymous"] == true;
   if must_bounce then
-    module:log("debug", "Invalid vote, bouncing it.");
+    module:log("debug", "Anonymous votes, bouncing it.");
     origin.send(st.error_reply(
       stanza,
       -- error_type
@@ -218,7 +220,7 @@ local function room_restored(event)
     schedule_poll_end(room.jid, room._data.current_poll.end_timestamp);
   end
   -- just in case, we can also reschedule an update message
-  schedule_poll_update_message(room);
+  schedule_poll_update_message(room.jid);
 end
 
 return {
