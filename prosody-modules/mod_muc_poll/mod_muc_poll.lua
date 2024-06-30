@@ -19,6 +19,7 @@ local xmlns_poll = module:require("constants").xmlns_poll;
 local send_form = module:require("form").send_form;
 local process_form = module:require("form").process_form;
 local handle_groupchat = module:require("poll").handle_groupchat;
+local room_restored = module:require("poll").room_restored;
 
 -- new poll creation, get form
 module:hook("iq-get/bare/" .. xmlns_poll .. ":query", function (event)
@@ -68,5 +69,10 @@ module:hook("muc-disco#info", function (event)
 	event.reply:tag("feature", { var = xmlns_poll }):up();
 end);
 
--- on groupchat messages, we check if this is a vote for the current poll
-module:hook("muc-occupant-groupchat", handle_groupchat);
+-- On groupchat messages, we check if this is a vote for the current poll.
+-- Note: we use a high priority, so it will be handled before the slow mode.
+module:hook("muc-occupant-groupchat", handle_groupchat, 1000);
+
+-- when a room is restored (after a server restart for example),
+-- we must resume any current poll
+module:hook("muc-room-restored", room_restored);
