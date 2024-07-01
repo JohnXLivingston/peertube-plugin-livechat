@@ -545,3 +545,12 @@ livechat_configuration_channel_terms_label: Conditions d'utilisation tchat de la
 livechat_configuration_channel_terms_desc: "Vous pouvez configurer un message de \"\
   conditions d'utilisation\" qui sera affiché aux utilisateur⋅rices qui rejoignent
   vos salons de discussion.\n"
+
+
+new_poll: Créer un nouveau sondage
+poll_title: Nouveau sondage
+poll_instructions: Complétez et soumettez ce formulaire pour créer un nouveau sondage. Ceci mettra fin au sondage précédent le cas échéant.
+poll_question: Question
+poll_duration: Durée du sondage (en minutes)
+poll_anonymous_results: Résultats anonymes
+poll_choice_n: Choix {{N}}

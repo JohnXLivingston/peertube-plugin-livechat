@@ -565,3 +565,9 @@ livechat_configuration_channel_terms_desc: |
   You can configure a "terms & conditions" message that will be shown to users joining your chatrooms.
 
 new_poll: Create a new poll
+poll_title: New poll
+poll_instructions: Complete and submit this form to create a new poll. This will end and replace any existing poll.
+poll_question: Question
+poll_duration: Poll duration (in minutes)
+poll_anonymous_results: Anonymous results
+poll_choice_n: Choice {{N}}
