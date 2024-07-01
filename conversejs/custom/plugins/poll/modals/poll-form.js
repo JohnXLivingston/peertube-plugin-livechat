@@ -7,7 +7,6 @@ import BaseModal from 'plugins/modal/modal.js'
 import { api } from '@converse/headless/core'
 import { modal_close_button as ModalCloseButton } from 'plugins/modal/templates/buttons.js'
 import { html } from 'lit'
-import 'livechat-external-login-content.js'
 
 class PollFormModal extends BaseModal {
   initialize () {

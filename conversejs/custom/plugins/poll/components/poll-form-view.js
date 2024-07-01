@@ -25,6 +25,8 @@ export default class MUCPollFormView extends CustomElement {
     }
   }
 
+  _fieldTranslationMap = new Map()
+
   async initialize () {
     this.alert_message = undefined
     if (!this.model) {
@@ -32,6 +34,7 @@ export default class MUCPollFormView extends CustomElement {
       return
     }
     try {
+      this._initFieldTranslations()
       const stanza = await this._fetchPollForm()
       const query = stanza.querySelector('query')
       const xform = sizzle(`x[xmlns="${Strophe.NS.XFORM}"]`, query)[0]
@@ -39,9 +42,12 @@ export default class MUCPollFormView extends CustomElement {
         throw Error('Missing xform in stanza')
       }
 
-      this.title = xform.querySelector('title')?.textContent ?? ''
-      this.instructions = xform.querySelector('instructions')?.textContent ?? ''
+      // eslint-disable-next-line no-undef
+      this.title = __(LOC_poll_title) // xform.querySelector('title')?.textContent ?? ''
+      // eslint-disable-next-line no-undef
+      this.instructions = __(LOC_poll_instructions) // xform.querySelector('instructions')?.textContent ?? ''
       this.form_fields = Array.from(xform.querySelectorAll('field')).map(field => {
+        this._translateField(field)
         return u.xForm2TemplateResult(field, stanza)
       })
     } catch (err) {
@@ -61,6 +67,30 @@ export default class MUCPollFormView extends CustomElement {
         type: 'get'
       }).c('query', { xmlns: XMLNS_POLL })
     )
+  }
+
+  _initFieldTranslations () {
+    // eslint-disable-next-line no-undef
+    this._fieldTranslationMap.set('muc#roompoll_question', __(LOC_poll_question))
+    // eslint-disable-next-line no-undef
+    this._fieldTranslationMap.set('muc#roompoll_duration', __(LOC_poll_duration))
+    // eslint-disable-next-line no-undef
+    this._fieldTranslationMap.set('muc#roompoll_anonymous_results', __(LOC_poll_anonymous_results))
+    for (let i = 1; i <= 10; i++) {
+      this._fieldTranslationMap.set(
+        'muc#roompoll_choice' + i.toString(),
+        // eslint-disable-next-line no-undef
+        __(LOC_poll_choice_n).replace('{{N}}', i.toString())
+      )
+    }
+  }
+
+  _translateField (field) {
+    const v = field.getAttribute('var')
+    const label = this._fieldTranslationMap.get(v)
+    if (label) {
+      field.setAttribute('label', label)
+    }
   }
 
   async formSubmit (ev) {
