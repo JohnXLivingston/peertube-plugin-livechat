@@ -10,7 +10,7 @@ local xmlns_replace = "urn:xmpp:message-correct:0";
 local mod_muc = module:depends"muc";
 local get_room_from_jid = mod_muc.get_room_from_jid;
 
-local debounce_delay = 10; -- number of seconds during which we must group votes to avoid flood.
+local debounce_delay = 5; -- number of seconds during which we must group votes to avoid flood.
 local scheduled_updates = {};
 
 -- construct the poll message stanza
@@ -31,10 +31,11 @@ local function build_poll_message(room, message_id, is_end_message)
   for choice, nb in pairs(current_poll.votes_by_choices) do
     total = total + nb;
   end
-  for choice, label in pairs(current_poll.choices) do
+  for _, choice_desc in ipairs(current_poll.choices_ordered) do
+    local choice, label = choice_desc.number, choice_desc.label;
     content = content .. choice .. ': ' .. label;
     if total > 0 then
-      local nb = current_poll.votes_by_choices[choice] or 0;
+      local nb = current_poll.votes_by_choices["" .. choice] or 0;
       local percent = string.format("%.2f", nb * 100 / total);
       content = content .. " (" .. nb .. "/" .. total .. " = " .. percent .. "%)";
     end
@@ -76,6 +77,11 @@ local function send_poll_update_message(room)
   if not room._data.current_poll then
     return nil;
   end
+  if room._data.current_poll.already_ended then
+    module:log("debug", "Cancelling the update message for room %s poll, because already_ended==true.", room.jid);
+    return nil;
+  end
+
   module:log("debug", "Sending an update message for room %s poll", room.jid);
   local message_id = id.medium(); -- generate a new id
   local msg = build_poll_message(room, message_id, false);

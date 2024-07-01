@@ -98,7 +98,7 @@ local function create_poll(room, fields, occupant)
   room._data.current_poll.end_timestamp = get_time() + (60 * fields["muc#roompoll_duration"]);
   room._data.current_poll.votes_by_occupant = {};
   room._data.current_poll.votes_by_choices = {};
-  room._data.current_poll.choices = {};
+  room._data.current_poll.choices_ordered = {}; -- choices labels with numerical index, so we can have correct order
   room._data.current_poll.already_ended = false;
   room._data.current_poll.occupant_bare_jid = occupant.bare_jid;
   room._data.current_poll.occupant_nick = occupant.nick;
@@ -108,10 +108,20 @@ local function create_poll(room, fields, occupant)
     if c then
       if fields["muc#roompoll_choice" .. c]:find("%S") then
         room._data.current_poll.votes_by_choices[c] = 0;
-        room._data.current_poll.choices[c] = fields["muc#roompoll_choice" .. c];
+        table.insert(room._data.current_poll.choices_ordered, {
+          number = c;
+          label = fields["muc#roompoll_choice" .. c];
+        });
       end
     end
   end
+  table.sort(room._data.current_poll.choices_ordered, function(a, b)
+    if a.number == b.number then
+      return 0;
+    end
+    return tonumber(a.number) < tonumber(b.number);
+  end);
+
   room._data.current_poll.start_message_id = poll_start_message(room);
   schedule_poll_end(room.jid, room._data.current_poll.end_timestamp);
 end
