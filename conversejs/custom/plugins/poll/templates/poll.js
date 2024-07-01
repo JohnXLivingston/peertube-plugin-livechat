@@ -37,8 +37,11 @@ function _tplChoice (el, currentPoll, choice) {
                 @click=${ev => {
                   ev.preventDefault()
                   if (currentPoll.over) { return }
-                  // TODO
+
                   console.info('User has voted for choice: ', choice)
+                  el.model.sendMessage({
+                    body: '!' + choice.choice
+                  })
                 }}
               >
                 ${i18nChoiceN}
