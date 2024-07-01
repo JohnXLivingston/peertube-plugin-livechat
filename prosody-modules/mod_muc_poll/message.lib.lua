@@ -62,7 +62,7 @@ local function build_poll_message(room, message_id, is_end_message)
   }):up();
 
   -- now we must add some custom XML data, so that compatible clients can display the poll as they want:
-  -- <x-poll xmlns="http://jabber.org/protocol/muc#x-poll-message" id="I9UWyoxsz4BN" votes="1" over="">
+  -- <x-poll xmlns="http://jabber.org/protocol/muc#x-poll-message" id="I9UWyoxsz4BN" votes="1" end="1719842224" over="">
   --     <x-poll-question>Poll question</x-poll-question>
   --     <x-poll-choice choice="1" votes="0">Choice 1 label</x-poll-choice>
   --     <x-poll-choice choice="2" votes="1">Choice 2 label</x-poll-choice>
@@ -74,6 +74,7 @@ local function build_poll_message(room, message_id, is_end_message)
     id = current_poll.poll_id,
     votes = "" .. total
   };
+  message_attrs["end"] = string.format("%i", current_poll.end_timestamp);
   if current_poll.already_ended then
     message_attrs["over"] = "";
   end
@@ -175,9 +176,23 @@ local function remove_specific_tags_from_groupchat(event)
   end);
 end
 
+-- when a new session is opened, we must send the current poll to the client
+local function handle_new_occupant_session(event)
+	local room = event.room;
+  if not room._data.current_poll then
+    return;
+  end
+  if room._data.current_poll.already_ended then
+    return;
+  end
+  schedule_poll_update_message(room.jid);
+  -- FIXME: for now we just schedule a new poll update. But we should only send a message to the new occupant.
+end
+
 return {
   poll_start_message = poll_start_message;
   poll_end_message = poll_end_message;
   schedule_poll_update_message = schedule_poll_update_message;
   remove_specific_tags_from_groupchat = remove_specific_tags_from_groupchat;
+  handle_new_occupant_session = handle_new_occupant_session;
 };

@@ -42,7 +42,9 @@ const locKeys = [
   'poll_anonymous_results',
   'poll_choice_n',
   'poll_title',
-  'poll_instructions'
+  'poll_instructions',
+  'poll_end',
+  'poll'
 ]
 
 module.exports = locKeys
