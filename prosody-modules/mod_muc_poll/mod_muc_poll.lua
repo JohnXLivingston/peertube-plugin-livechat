@@ -19,7 +19,8 @@ local xmlns_poll = module:require("constants").xmlns_poll;
 local send_form = module:require("form").send_form;
 local process_form = module:require("form").process_form;
 local handle_groupchat = module:require("poll").handle_groupchat;
-local remove_specific_tags_from_groupchat = module:require("message").remove_specific_tags_from_groupchat
+local remove_specific_tags_from_groupchat = module:require("message").remove_specific_tags_from_groupchat;
+local handle_new_occupant_session = module:require("message").handle_new_occupant_session;
 local room_restored = module:require("poll").room_restored;
 
 -- new poll creation, get form
@@ -85,7 +86,11 @@ module:hook("muc-occupant-groupchat", handle_groupchat, 1000);
 -- security check: we must remove all specific tags, to be sure nobody tries to spoof polls!
 module:hook("muc-occupant-groupchat", remove_specific_tags_from_groupchat, 1000);
 
-
 -- when a room is restored (after a server restart for example),
 -- we must resume any current poll
 module:hook("muc-room-restored", room_restored);
+
+-- when a new session is opened, we must send the current poll to the client
+-- Note: it should be in the MAM. But it is easier for clients to ignore delayed messages
+-- when displaying polls (to ignore old polls).
+module:hook("muc-occupant-session-new", handle_new_occupant_session);

@@ -1,0 +1,76 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+.conversejs {
+  livechat-converse-muc-poll {
+    background-color: var(--peertube-main-background);
+    color: var(--peertube-main-foreground);
+
+    & > div {
+      border: 1px solid var(--peertube-menu-background);
+      margin: 5px;
+      padding: 5px;
+
+      p.livechat-poll-question {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      p.livechat-poll-end {
+        text-align: right;
+      }
+
+      table {
+        text-align: left;
+        vertical-align: middle;
+        width: 100%;
+
+        td:first-child {
+          padding-right: 0.5rem;
+          white-space: nowrap;
+        }
+
+        td.livechat-poll-choice-label {
+          width: 100%;
+        }
+
+        td:last-child {
+          white-space: nowrap;
+          width: 120px;
+        }
+      }
+
+      .livechat-progress-bar {
+        background-color: var(--peertube-menu-background);
+        border: 1px solid var(--peertube-menu-background);
+        color: var(--peertube-menu-foreground);
+        height: 1.25rem;
+        font-size: 0.75rem;
+        margin: 0;
+        position: relative;
+        width: 100px;
+
+        div {
+          background-color: var(--peertube-button-background);
+          float: left;
+          height: 100%;
+          position: absolute;
+          z-index: 1;
+        }
+
+        p {
+          display: inline;
+          height: 100%;
+          text-align: center;
+          position: absolute;
+          white-space: nowrap;
+          width: 100%;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}

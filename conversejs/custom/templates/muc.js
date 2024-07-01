@@ -21,6 +21,7 @@ export default (o) => {
                 </converse-muc-heading>
                 <livechat-converse-muc-terms .model=${o.model} termstype="global"></livechat-converse-muc-terms>
                 <livechat-converse-muc-terms .model=${o.model} termstype="muc"></livechat-converse-muc-terms>
+                <livechat-converse-muc-poll .model=${o.model}></livechat-converse-muc-poll>
                 <div class="chat-body chatroom-body row no-gutters">${getChatRoomBodyTemplate(o)}</div>`
               : ''}
       </div>`
