@@ -159,8 +159,25 @@ local function poll_end_message(room)
   return message_id;
 end
 
+-- security check: we must remove all specific tags, to be sure nobody tries to spoof polls!
+local function remove_specific_tags_from_groupchat(event)
+  event.stanza:maptags(function (child)
+    if child.name == poll_message_tag then
+      return nil;
+    end
+    if child.name == poll_question_tag then
+      return nil;
+    end
+    if child.name == poll_choice_tag then
+      return nil;
+    end
+    return child;
+  end);
+end
+
 return {
   poll_start_message = poll_start_message;
   poll_end_message = poll_end_message;
   schedule_poll_update_message = schedule_poll_update_message;
+  remove_specific_tags_from_groupchat = remove_specific_tags_from_groupchat;
 };

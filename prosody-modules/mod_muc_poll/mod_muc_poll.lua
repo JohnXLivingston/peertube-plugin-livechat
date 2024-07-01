@@ -19,6 +19,7 @@ local xmlns_poll = module:require("constants").xmlns_poll;
 local send_form = module:require("form").send_form;
 local process_form = module:require("form").process_form;
 local handle_groupchat = module:require("poll").handle_groupchat;
+local remove_specific_tags_from_groupchat = module:require("message").remove_specific_tags_from_groupchat
 local room_restored = module:require("poll").room_restored;
 
 -- new poll creation, get form
@@ -80,6 +81,10 @@ end);
 -- On groupchat messages, we check if this is a vote for the current poll.
 -- Note: we use a high priority, so it will be handled before the slow mode.
 module:hook("muc-occupant-groupchat", handle_groupchat, 1000);
+
+-- security check: we must remove all specific tags, to be sure nobody tries to spoof polls!
+module:hook("muc-occupant-groupchat", remove_specific_tags_from_groupchat, 1000);
+
 
 -- when a room is restored (after a server restart for example),
 -- we must resume any current poll
