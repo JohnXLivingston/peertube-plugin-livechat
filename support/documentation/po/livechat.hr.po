@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-06-25 17:22+0200\n"
-"PO-Revision-Date: 2024-06-25 19:17+0000\n"
+"PO-Revision-Date: 2024-07-01 20:41+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -3010,20 +3010,25 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
 msgid "[{{% livechat_label livechat_configuration_channel_terms_label %}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
-msgstr "[Prilagođeni emojiji](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
+msgstr ""
+"[{{% livechat_label livechat_configuration_channel_terms_label "
+"%}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
 msgstr ""
+"[{{% livechat_label livechat_configuration_channel_mute_anonymous_label "
+"%}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) "
+"standardna vrijednost"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 msgstr ""
+"[Spori modus](/peertube-plugin-livechat/documentation/user/streamers/"
+"slow_mode)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
