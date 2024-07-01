@@ -23,7 +23,7 @@ export default class MUCPollView extends CustomElement {
 
   render () {
     const currentPoll = this.model?.get('current_poll')
-    return tplPoll(this.model, currentPoll)
+    return tplPoll(this, currentPoll)
   }
 }
 

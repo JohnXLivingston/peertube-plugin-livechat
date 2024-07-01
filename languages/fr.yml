@@ -553,4 +553,4 @@ poll_instructions: Complétez et soumettez ce formulaire pour créer un nouveau 
 poll_question: Question
 poll_duration: Durée du sondage (en minutes)
 poll_anonymous_results: Résultats anonymes
-poll_choice_n: Choix {{N}}
+poll_choice_n: 'Choix {{N}} :'

@@ -571,5 +571,5 @@ poll_instructions: Complete and submit this form to create a new poll. This will
 poll_question: Question
 poll_duration: Poll duration (in minutes)
 poll_anonymous_results: Anonymous results
-poll_choice_n: Choice {{N}}
+poll_choice_n: 'Choice {{N}}:'
 poll_end: 'Poll ends at:'
