@@ -6,6 +6,10 @@ local st = require "util.stanza";
 local timer = require "util.timer";
 local xmlns_occupant_id = "urn:xmpp:occupant-id:0";
 local xmlns_replace = "urn:xmpp:message-correct:0";
+local xmlns_poll_message = module:require("constants").xmlns_poll_message;
+local poll_message_tag = module:require("constants").poll_message_tag;
+local poll_question_tag = module:require("constants").poll_question_tag;
+local poll_choice_tag = module:require("constants").poll_choice_tag;
 
 local mod_muc = module:depends"muc";
 local get_room_from_jid = mod_muc.get_room_from_jid;
@@ -35,7 +39,7 @@ local function build_poll_message(room, message_id, is_end_message)
     local choice, label = choice_desc.number, choice_desc.label;
     content = content .. choice .. ': ' .. label;
     if total > 0 then
-      local nb = current_poll.votes_by_choices["" .. choice] or 0;
+      local nb = current_poll.votes_by_choices[choice] or 0;
       local percent = string.format("%.2f", nb * 100 / total);
       content = content .. " (" .. nb .. "/" .. total .. " = " .. percent .. "%)";
     end
@@ -56,6 +60,33 @@ local function build_poll_message(room, message_id, is_end_message)
     xmlns = xmlns_occupant_id,
     id = current_poll.occupant_id
   }):up();
+
+  -- now we must add some custom XML data, so that compatible clients can display the poll as they want:
+  -- <x-poll xmlns="http://jabber.org/protocol/muc#x-poll-message" id="I9UWyoxsz4BN" votes="1" over="">
+  --     <x-poll-question>Poll question</x-poll-question>
+  --     <x-poll-choice choice="1" votes="0">Choice 1 label</x-poll-choice>
+  --     <x-poll-choice choice="2" votes="1">Choice 2 label</x-poll-choice>
+  --     <x-poll-choice choice="3" votes="0">Choice 3 label</x-poll-choice>
+  --     <x-poll-choice choice="4" votes="0">Choice 4 label</x-poll-choice>
+  -- </x-poll>
+  local message_attrs = {
+    xmlns = xmlns_poll_message,
+    id = current_poll.poll_id,
+    votes = "" .. total
+  };
+  if current_poll.already_ended then
+    message_attrs["over"] = "";
+  end
+  msg:tag(poll_message_tag, message_attrs):text_tag(poll_question_tag, current_poll["muc#roompoll_question"], {});
+  for _, choice_desc in ipairs(current_poll.choices_ordered) do
+    local choice, label = choice_desc.number, choice_desc.label;
+    local nb = current_poll.votes_by_choices[choice] or 0;
+    msg:text_tag(poll_choice_tag, label, {
+      votes = "" .. nb,
+      choice = choice
+    });
+  end
+  msg:up();
 
   return msg;
 end

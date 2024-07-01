@@ -1,6 +1,7 @@
 -- SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
 -- SPDX-License-Identifier: AGPL-3.0-only
 
+local id = require "util.id";
 local st = require "util.stanza";
 local get_time = require "util.time".now;
 local timer = require "util.timer";
@@ -95,6 +96,7 @@ end
 local function create_poll(room, fields, occupant)
   module:log("debug", "Creating a new poll for room %s, by %s", room.jid, occupant.bare_jid);
   room._data.current_poll = fields;
+  room._data.current_poll.poll_id = id.short();
   room._data.current_poll.end_timestamp = get_time() + (60 * fields["muc#roompoll_duration"]);
   room._data.current_poll.votes_by_occupant = {};
   room._data.current_poll.votes_by_choices = {};
