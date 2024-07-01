@@ -13,6 +13,11 @@ class PollFormModal extends BaseModal {
     super.initialize()
   }
 
+  onHide () {
+    super.onHide()
+    api.modal.remove('livechat-converse-poll-form-modal')
+  }
+
   renderModal () {
     return html`<livechat-converse-poll-form .model=${this.model} .modal=${this}></livechat-converse-poll-form>`
   }
