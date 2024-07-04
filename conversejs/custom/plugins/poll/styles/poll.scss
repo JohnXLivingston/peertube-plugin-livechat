@@ -30,6 +30,10 @@
       p.livechat-poll-question {
         text-align: center;
         font-weight: bold;
+
+        span {
+          cursor: pointer; // because a click toggles
+        }
       }
 
       p.livechat-poll-instructions {
@@ -118,6 +122,11 @@ body[livechat-viewer-mode="on"] {
 
       &.livechat-poll-over {
         // stop showing poll when over in readonly mode
+        display: none !important;
+      }
+
+      p.livechat-poll-instructions {
+        // No need for instruction in readonly mode
         display: none !important;
       }
     }

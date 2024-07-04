@@ -33,7 +33,8 @@ export default class MUCPollView extends CustomElement {
     return tplPoll(this, currentPoll)
   }
 
-  toggle () {
+  toggle (ev) {
+    ev.preventDefault()
     this.collapsed = !this.collapsed
   }
 

@@ -104,7 +104,9 @@ export function tplPoll (el, currentPoll) {
               size="1em"></converse-icon>
           </button>`
       }
-      ${currentPoll.question}
+      <span @click=${el.toggle}>
+        ${currentPoll.question}
+      </span>
     </p>
     ${
       el.collapsed
