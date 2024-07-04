@@ -248,8 +248,6 @@ class ProsodyConfigContent {
     if (chatTerms) {
       this.muc.set('muc_terms_global', new ConfigEntryValueMultiLineString(chatTerms))
     }
-
-    this.muc.add('modules_enabled', 'muc_poll')
   }
 
   useAnonymous (autoBanIP: boolean): void {
@@ -530,6 +528,14 @@ class ProsodyConfigContent {
     if (configurationPaths.moderation?.globalDir) {
       this.bot.set('livechat_bot_conf_folder', configurationPaths.moderation.globalDir)
     }
+  }
+
+  /**
+   * Enable the poll feature.
+   */
+  usePoll (): void {
+    this.muc.add('modules_enabled', 'muc_poll')
+    this.muc.set('poll_groupchat_votes_priority', 1000)
   }
 
   addMucAdmins (jids: string[]): void {

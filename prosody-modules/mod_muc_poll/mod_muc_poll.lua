@@ -23,6 +23,9 @@ local remove_specific_tags_from_groupchat = module:require("message").remove_spe
 local handle_new_occupant_session = module:require("message").handle_new_occupant_session;
 local room_restored = module:require("poll").room_restored;
 
+local poll_groupchat_votes_priority = module:get_option_number("poll_groupchat_votes_priority") or 500;
+
+
 -- new poll creation, get form
 module:hook("iq-get/bare/" .. xmlns_poll .. ":query", function (event)
   local origin, stanza = event.origin, event.stanza;
@@ -81,7 +84,7 @@ end);
 
 -- On groupchat messages, we check if this is a vote for the current poll.
 -- Note: we use a high priority, so it will be handled before the slow mode.
-module:hook("muc-occupant-groupchat", handle_groupchat, 1000);
+module:hook("muc-occupant-groupchat", handle_groupchat, poll_groupchat_votes_priority);
 
 -- security check: we must remove all specific tags, to be sure nobody tries to spoof polls!
 module:hook("muc-occupant-groupchat", remove_specific_tags_from_groupchat, 1000);

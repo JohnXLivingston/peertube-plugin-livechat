@@ -17,18 +17,21 @@ local get_room_from_jid = mod_muc.get_room_from_jid;
 local debounce_delay = 5; -- number of seconds during which we must group votes to avoid flood.
 local scheduled_updates = {};
 
+local string_poll_over = module:get_option_string("poll_string_over") or "This poll is now over.";
+local string_poll_vote_instructions = module:get_option_string("poll_string_vote_instructions") or "Send a message with an exclamation mark followed by your choice number to vote. Example: !1";
+
 -- construct the poll message stanza
 local function build_poll_message(room, message_id, is_end_message)
   local current_poll = room._data.current_poll;
   if not current_poll then
     return nil;
   end
-  local from = room.jid .. '/' .. current_poll.occupant_nick;
+  local from = current_poll.occupant_nick; -- this is in fact room.jid/nickname
 
   local content = current_poll["muc#roompoll_question"] .. "\n";
 
   if is_end_message then
-    content = content .. "This poll is now over.\n";
+    content = content .. string_poll_over .. "\n";
   end
 
   local total = 0;
@@ -47,7 +50,7 @@ local function build_poll_message(room, message_id, is_end_message)
   end
 
   if not is_end_message then
-    content = content .. "Send a message with an exclamation mark followed by your choice number to vote. Example: !1\n";
+    content = content .. string_poll_vote_instructions .. "\n";
   end
 
   local msg = st.message({

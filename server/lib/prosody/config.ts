@@ -366,6 +366,8 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     }
   }
 
+  config.usePoll()
+
   config.useTestModule(apikey, testApiUrl)
 
   const debugMucAdminJids = debugMucAdmins(options)

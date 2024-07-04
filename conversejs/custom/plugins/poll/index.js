@@ -69,9 +69,14 @@ converse.plugins.add('livechat-converse-poll', {
         if (!attrs.current_poll) {
           return this.__super__.onMessage(attrs)
         }
-        // We intercept poll messages, so they won't show up in the chat as classic messages.
-        if (attrs.is_delayed) {
-          console.info('Got a delayed poll message, just dropping')
+        // We intercept poll messages, to show the banner.
+        // Note: we also show the message in the chat.
+        if (attrs.is_delayed || attrs.is_archived) {
+          if (attrs.current_poll.over) {
+            console.info('Got a delayed/archived poll message for an poll that is over, just displaying in the chat')
+            return this.__super__.onMessage(attrs)
+          }
+          console.info('Got a delayed/archived poll message, just dropping')
           return
         }
 
@@ -79,6 +84,11 @@ converse.plugins.add('livechat-converse-poll', {
         this.set('current_poll', attrs.current_poll)
         // this will be displayed by the livechat-converse-muc-poll custom element,
         // which is inserted in the DOM by the muc.js template overload.
+        if (attrs.current_poll.over) {
+          console.info('The poll is over, displaying the message in the chat')
+          return this.__super__.onMessage(attrs)
+        }
+        // Dropping the message.
       }
     }
   }
