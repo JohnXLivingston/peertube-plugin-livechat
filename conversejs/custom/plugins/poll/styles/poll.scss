@@ -23,6 +23,12 @@
         padding-right: 0.25em;
       }
 
+      .livechat-poll-close {
+        background: unset;
+        border: 0;
+        float: right;
+      }
+
       p.livechat-poll-question {
         text-align: center;
         font-weight: bold;

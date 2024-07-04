@@ -82,6 +82,12 @@ export function tplPoll (el, currentPoll) {
 
   return html`<div class="${currentPoll.over ? 'livechat-poll-over' : ''}">
     <p class="livechat-poll-question">
+      ${currentPoll.over
+        ? html`<button class="livechat-poll-close" @click=${el.closePoll} title="${__('Close')}">
+            <converse-icon class="fa fa-times" size="1em"></converse-icon>
+          </button>`
+        : ''
+      }
       ${el.collapsed
         ? html`
           <button @click=${el.toggle} class="livechat-poll-toggle">

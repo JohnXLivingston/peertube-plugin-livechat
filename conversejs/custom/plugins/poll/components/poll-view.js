@@ -53,6 +53,11 @@ export default class MUCPollView extends CustomElement {
       body: '!' + choice.choice
     })
   }
+
+  closePoll (ev) {
+    ev.preventDefault()
+    this.model.set('current_poll', undefined)
+  }
 }
 
 api.elements.define('livechat-converse-muc-poll', MUCPollView)

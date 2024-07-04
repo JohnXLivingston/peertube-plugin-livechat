@@ -71,7 +71,7 @@ converse.plugins.add('livechat-converse-poll', {
           return this.__super__.onMessage(attrs)
         }
         // We intercept poll messages, to show the banner.
-        // Note: we also show the message in the chat.
+        // Note: we also show poll end messages in the chat, so that the user don't loose the result.
         if (attrs.is_delayed || attrs.is_archived) {
           if (attrs.current_poll.over) {
             console.info('Got a delayed/archived poll message for an poll that is over, just displaying in the chat')

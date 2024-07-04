@@ -13,6 +13,7 @@ local schedule_poll_update_message = module:require("message").schedule_poll_upd
 
 local string_poll_invalid_choice = module:get_option_string("poll_string_invalid_choice") or "This choice is not valid.";
 local string_poll_anonymous_vote_ok = module:get_option_string("poll_string_anonymous_vote_ok") or "You vote is taken into account. Votes are anonymous, it will not be shown to other participants.";
+local string_poll_over = module:get_option_string("poll_string_over") or "This poll is now over.";
 
 local scheduled_end = {};
 
@@ -160,7 +161,7 @@ local function handle_groupchat(event)
       "cancel",
       -- error_condition = 'not-allowed' (see RFC 6120 Defined Error Conditions https://xmpp.org/rfcs/rfc6120.html#stanzas-error-conditions)
       "not-allowed",
-      "This poll is over."
+      string_poll_over
       ));
     return true; -- stop!
   end

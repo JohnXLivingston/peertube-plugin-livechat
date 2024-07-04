@@ -157,6 +157,11 @@ local function poll_end_message(room)
     return nil;
   end
   module:log("debug", "Sending the end message for room %s poll", room.jid);
+  if scheduled_updates[room.jid] then
+    module:log("debug", "Cancelling an update message for the poll %s", room.jid);
+    timer.stop(scheduled_updates[room.jid]);
+    scheduled_updates[room.jid] = nil;
+  end
   local message_id = id.medium(); -- generate a new id
   local msg = build_poll_message(room, message_id, true);
   room:broadcast_message(msg);
