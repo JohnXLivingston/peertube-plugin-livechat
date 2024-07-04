@@ -13,10 +13,23 @@
       border: 1px solid var(--peertube-menu-background);
       margin: 5px;
       padding: 5px;
+      max-height: 150px;
+      overflow-y: scroll;
+
+      .livechat-poll-toggle {
+        background: unset;
+        border: 0;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+      }
 
       p.livechat-poll-question {
         text-align: center;
         font-weight: bold;
+      }
+
+      p.livechat-poll-instructions {
+        text-align: right;
       }
 
       p.livechat-poll-end {
@@ -69,6 +82,31 @@
           white-space: nowrap;
           width: 100%;
           z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+body[livechat-viewer-mode="on"] {
+  livechat-converse-muc-poll {
+    /* Dont display the poll before user choose a nickname */
+    display: none !important;
+  }
+}
+
+.livechat-readonly {
+  .conversejs {
+    livechat-converse-muc-poll {
+      /* stylelint-disable-next-line no-descending-specificity */
+      & > div {
+        // In readonly mode, dont impose max-height
+        max-height: initial !important;
+        overflow-y: visible !important;
+
+        &.livechat-poll-over {
+          // stop showing poll when over in readonly mode
+          display: none !important;
         }
       }
     }

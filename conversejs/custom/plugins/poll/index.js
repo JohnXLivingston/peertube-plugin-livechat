@@ -45,6 +45,7 @@ converse.plugins.add('livechat-converse-poll', {
         votes: parseInt(poll.getAttribute('votes') ?? 0),
         over: poll.hasAttribute('over'),
         endDate: endDate,
+        time: attrs.time, // this is to be sure that we update the custom element (needed to re-enable buttons)
         choices: choices.map(c => {
           return {
             label: c.textContent,
@@ -81,9 +82,10 @@ converse.plugins.add('livechat-converse-poll', {
         }
 
         console.info('Got a poll message, setting it as the current_poll')
-        this.set('current_poll', attrs.current_poll)
         // this will be displayed by the livechat-converse-muc-poll custom element,
         // which is inserted in the DOM by the muc.js template overload.
+        this.set('current_poll', attrs.current_poll)
+
         if (attrs.current_poll.over) {
           console.info('The poll is over, displaying the message in the chat')
           return this.__super__.onMessage(attrs)

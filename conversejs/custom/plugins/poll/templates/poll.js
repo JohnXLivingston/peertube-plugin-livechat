@@ -6,6 +6,18 @@ import { html } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { __ } from 'i18n'
 
+function _tplPollInstructions (el, currentPoll) {
+  if (currentPoll.over) {
+    return html``
+  }
+
+  // eslint-disable-next-line no-undef
+  const i18nPollInstructions = __(LOC_poll_vote_instructions)
+  return html`<p class="livechat-poll-instructions">
+      ${i18nPollInstructions}
+    </p>`
+}
+
 function _tplPollEnd (el, currentPoll) {
   if (!currentPoll.endDate) {
     return html``
@@ -36,13 +48,9 @@ function _tplChoice (el, currentPoll, choice) {
               <button type="button" class="btn btn-primary btn-sm"
                 @click=${ev => {
                   ev.preventDefault()
-                  if (currentPoll.over) { return }
-
-                  console.info('User has voted for choice: ', choice)
-                  el.model.sendMessage({
-                    body: '!' + choice.choice
-                  })
+                  el.voteFor(choice)
                 }}
+                ?disabled=${el.buttonDisabled}
               >
                 ${i18nChoiceN}
               </button>`
@@ -72,11 +80,36 @@ export function tplPoll (el, currentPoll) {
     return html``
   }
 
-  return html`<div>
-    <p class="livechat-poll-question">${currentPoll.question}</p>
-    <table><tbody>
-      ${repeat(currentPoll.choices ?? [], (c) => c.choice, (c) => _tplChoice(el, currentPoll, c))}
-    </tbody></table>
-    ${_tplPollEnd(el, currentPoll)}
+  return html`<div class="${currentPoll.over ? 'livechat-poll-over' : ''}">
+    <p class="livechat-poll-question">
+      ${el.collapsed
+        ? html`
+          <button @click=${el.toggle} class="livechat-poll-toggle">
+            <converse-icon
+              color="var(--muc-toolbar-btn-color)"
+              class="fa fa-angle-right"
+              size="1em"></converse-icon>
+          </button>`
+        : html`
+          <button @click=${el.toggle} class="livechat-poll-toggle">
+            <converse-icon
+              color="var(--muc-toolbar-btn-color)"
+              class="fa fa-angle-down"
+              size="1em"></converse-icon>
+          </button>`
+      }
+      ${currentPoll.question}
+    </p>
+    ${
+      el.collapsed
+        ? ''
+        : html`
+          <table><tbody>
+            ${repeat(currentPoll.choices ?? [], (c) => c.choice, (c) => _tplChoice(el, currentPoll, c))}
+          </tbody></table>
+          ${_tplPollInstructions(el, currentPoll)}
+          ${_tplPollEnd(el, currentPoll)}
+        `
+    }
   </div>`
 }

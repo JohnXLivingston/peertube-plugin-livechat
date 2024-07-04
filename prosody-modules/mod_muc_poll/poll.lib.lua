@@ -11,6 +11,9 @@ local poll_start_message = module:require("message").poll_start_message;
 local poll_end_message = module:require("message").poll_end_message;
 local schedule_poll_update_message = module:require("message").schedule_poll_update_message;
 
+local string_poll_invalid_choice = module:get_option_string("poll_string_invalid_choice") or "This choice is not valid.";
+local string_poll_anonymous_vote_ok = module:get_option_string("poll_string_anonymous_vote_ok") or "You vote is taken into account. Votes are anonymous, it will not be shown to other participants.";
+
 local scheduled_end = {};
 
 local function schedule_poll_purge(room_jid)
@@ -171,7 +174,7 @@ local function handle_groupchat(event)
       "cancel",
       -- error_condition = 'not-allowed' (see RFC 6120 Defined Error Conditions https://xmpp.org/rfcs/rfc6120.html#stanzas-error-conditions)
       "bad-request",
-      "This choice is not valid."
+      string_poll_invalid_choice
     ));
     return true; -- stop!
   end
@@ -205,7 +208,7 @@ local function handle_groupchat(event)
       "continue",
       -- error_condition
       "undefined-condition",
-      "You vote is taken into account. Votes are anonymous, it will not be shown to other participants."
+      string_poll_anonymous_vote_ok
     ));
     return true; -- stop!
   end

@@ -573,3 +573,5 @@ poll_duration: Poll duration (in minutes)
 poll_anonymous_results: Anonymous results
 poll_choice_n: 'Choice {{N}}:'
 poll_end: 'Poll ends at:'
+poll_vote_instructions: |
+  To vote, click on your choice or send a message with an exclamation mark followed by your choice number (Example: !1)
