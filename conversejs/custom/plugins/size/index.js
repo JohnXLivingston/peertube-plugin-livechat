@@ -43,17 +43,25 @@ function start () {
 
 function stop () {
   rootResizeObserver.disconnect()
-  document.querySelector('converse-root')?.removeAttribute('livechat-converse-root-width')
+  const root = document.querySelector('converse-root')
+  if (root) {
+    root.removeAttribute('livechat-converse-root-width')
+    root.removeAttribute('livechat-converse-root-height')
+  }
 }
 
 function handle (el) {
   const rect = el.getBoundingClientRect()
+  const height = rect.height > 576 ? 'high' : (rect.height > 250 ? 'medium' : 'small')
   const width = rect.width > 576 ? 'large' : (rect.width > 250 ? 'medium' : 'small')
-  const previous = el.getAttribute('livechat-converse-root-width')
-  if (width === previous) { return }
+  const previousHeight = el.getAttribute('livechat-converse-root-height')
+  const previousWidth = el.getAttribute('livechat-converse-root-width')
+  if (width === previousWidth && height === previousHeight) { return }
 
   el.setAttribute('livechat-converse-root-width', width)
+  el.setAttribute('livechat-converse-root-height', height)
   api.trigger('livechatSizeChanged', {
+    height: height,
     width: width
   })
 }

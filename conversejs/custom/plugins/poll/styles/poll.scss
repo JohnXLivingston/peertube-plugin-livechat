@@ -13,8 +13,6 @@
       border: 1px solid var(--peertube-menu-background);
       margin: 5px;
       padding: 5px;
-      max-height: 150px;
-      overflow-y: scroll;
 
       .livechat-poll-toggle {
         background: unset;
@@ -92,6 +90,15 @@
       }
     }
   }
+
+  &[livechat-converse-root-height="small"],
+  &[livechat-converse-root-height="medium"] {
+    /* stylelint-disable-next-line no-descending-specificity */
+    livechat-converse-muc-poll > div {
+      max-height: 150px;
+      overflow-y: scroll;
+    }
+  }
 }
 
 body[livechat-viewer-mode="on"] {
@@ -103,17 +110,15 @@ body[livechat-viewer-mode="on"] {
 
 .livechat-readonly {
   .conversejs {
-    livechat-converse-muc-poll {
-      /* stylelint-disable-next-line no-descending-specificity */
-      & > div {
-        // In readonly mode, dont impose max-height
-        max-height: initial !important;
-        overflow-y: visible !important;
+    /* stylelint-disable-next-line no-descending-specificity */
+    livechat-converse-muc-poll > div {
+      // In readonly mode, dont impose max-height
+      max-height: initial !important;
+      overflow-y: visible !important;
 
-        &.livechat-poll-over {
-          // stop showing poll when over in readonly mode
-          display: none !important;
-        }
+      &.livechat-poll-over {
+        // stop showing poll when over in readonly mode
+        display: none !important;
       }
     }
   }
