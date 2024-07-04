@@ -17,6 +17,10 @@ const locContent: Map<string, string> = new Map<string, string>()
  * - We are using keys to identify strings
  * - the `loc` function gets the english segment for the key
  * - the build-languages.js script builds all needed files.
+ *
+ * The loc function is also used to customize some labels on Prosody backend.
+ * The front-end will then replace english strings by their translation.
+ * (see mod_muc_poll for example).
  * @param key The key to translate
  */
 function loc (key: string): string {

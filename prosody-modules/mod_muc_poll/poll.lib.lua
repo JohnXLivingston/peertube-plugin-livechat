@@ -12,7 +12,7 @@ local poll_end_message = module:require("message").poll_end_message;
 local schedule_poll_update_message = module:require("message").schedule_poll_update_message;
 
 local string_poll_invalid_choice = module:get_option_string("poll_string_invalid_choice") or "This choice is not valid.";
-local string_poll_anonymous_vote_ok = module:get_option_string("poll_string_anonymous_vote_ok") or "Your vote is taken into account. Votes are anonymous, it will not be shown to other participants.";
+local string_poll_anonymous_vote_ok = module:get_option_string("poll_string_anonymous_vote_ok") or "Your vote is taken into account. Votes are anonymous, they will not be shown to other participants.";
 local string_poll_over = module:get_option_string("poll_string_over") or "This poll is now over.";
 
 local scheduled_end = {};

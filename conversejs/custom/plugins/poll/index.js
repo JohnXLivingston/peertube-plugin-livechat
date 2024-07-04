@@ -5,6 +5,7 @@
 import { _converse, converse } from '../../../src/headless/core.js'
 import { getHeadingButtons } from './utils.js'
 import { POLL_MESSAGE_TAG, POLL_QUESTION_TAG, POLL_CHOICE_TAG } from './constants.js'
+import { __ } from 'i18n'
 import './modals/poll-form.js'
 import './components/poll-view.js'
 import './components/poll-form-view.js'
@@ -24,6 +25,23 @@ converse.plugins.add('livechat-converse-poll', {
     _converse.api.listen.on('getHeadingButtons', getHeadingButtons)
 
     _converse.api.listen.on('parseMUCMessage', (stanza, attrs) => {
+      // Localizing specific error messages
+      if (attrs.is_error) {
+        // eslint-disable-next-line no-undef, camelcase
+        if (attrs.error_text === LOC_poll_is_over) {
+          // eslint-disable-next-line no-undef
+          attrs.error_text = __(LOC_poll_is_over)
+          // eslint-disable-next-line no-undef, camelcase
+        } else if (attrs.error_text === LOC_poll_choice_invalid) {
+          // eslint-disable-next-line no-undef
+          attrs.error_text = __(LOC_poll_choice_invalid)
+          // eslint-disable-next-line no-undef, camelcase
+        } else if (attrs.error_text === LOC_poll_anonymous_vote_ok) {
+          // eslint-disable-next-line no-undef
+          attrs.error_text = __(LOC_poll_anonymous_vote_ok)
+        }
+      }
+
       // Checking if there is any poll data in the message.
       const poll = sizzle(POLL_MESSAGE_TAG, stanza)?.[0]
       if (!poll) {
@@ -55,10 +73,15 @@ converse.plugins.add('livechat-converse-poll', {
         })
       }
 
+      // We will also translate some strings here.
+      // eslint-disable-next-line no-undef
+      const body = (attrs.body ?? '').replace(LOC_poll_is_over, __(LOC_poll_is_over))
+
       return Object.assign(
         attrs,
         {
-          current_poll: currentPoll
+          current_poll: currentPoll,
+          body
         }
       )
     })

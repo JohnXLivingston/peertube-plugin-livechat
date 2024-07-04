@@ -5,6 +5,7 @@
 import type { ProsodyFilePaths } from './paths'
 import type { ExternalComponent } from './components'
 import { BotConfiguration } from '../../configuration/bot'
+import { loc } from '../../loc'
 import { userInfo } from 'os'
 
 /**
@@ -536,6 +537,9 @@ class ProsodyConfigContent {
   usePoll (): void {
     this.muc.add('modules_enabled', 'muc_poll')
     this.muc.set('poll_groupchat_votes_priority', 1000)
+    this.muc.set('poll_string_over', loc('poll_is_over'))
+    this.muc.set('poll_string_invalid_choice', loc('poll_choice_invalid'))
+    this.muc.set('poll_string_anonymous_vote_ok', loc('poll_anonymous_vote_ok'))
   }
 
   addMucAdmins (jids: string[]): void {

@@ -554,3 +554,10 @@ poll_question: Question
 poll_duration: Durée du sondage (en minutes)
 poll_anonymous_results: Résultats anonymes
 poll_choice_n: 'Choix {{N}} :'
+poll_end: 'Fin du sondage :'
+poll_vote_instructions: |
+  Pour voter, cliquez sur votre choix, ou envoyez un message avec un point d'exclamation suivi de votre choix (Exemple: !1).
+
+poll_is_over: Ce sondage est à présent terminé.
+poll_choice_invalid: Ce choix n'est pas valide.
+poll_anonymous_vote_ok: Votre vote a été pris en compte. Les votes sont anonymes, ils ne seront pas montrés aux autres participant⋅es.

@@ -30,4 +30,4 @@ Here are the existing strings and default values:
 * poll_string_over: This poll is now over.
 * poll_string_vote_instructions: Send a message with an exclamation mark followed by your choice number to vote. Example: !1
 * poll_string_invalid_choice: This choice is not valid.
-* poll_string_anonymous_vote_ok: Your vote is taken into account. Votes are anonymous, it will not be shown to other participants.
+* poll_string_anonymous_vote_ok: Your vote is taken into account. Votes are anonymous, they will not be shown to other participants.
