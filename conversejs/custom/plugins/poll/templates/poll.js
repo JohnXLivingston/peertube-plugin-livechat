@@ -31,9 +31,9 @@ function _tplPollEnd (el, currentPoll) {
     </p>`
 }
 
-function _tplChoice (el, currentPoll, choice) {
+function _tplChoice (el, currentPoll, choice, canVote) {
   // eslint-disable-next-line no-undef
-  const i18nChoiceN = __(LOC_poll_choice_n).replace('{{N}}', choice.choice)
+  const i18nChoiceN = '' + choice.choice + ':'
 
   const votes = choice.votes
   const totalVotes = currentPoll.votes
@@ -42,7 +42,7 @@ function _tplChoice (el, currentPoll, choice) {
     <tr>
       <td>
         ${
-          currentPoll.over
+          currentPoll.over || !canVote
             ? html`${i18nChoiceN}`
             : html`
               <button type="button" class="btn btn-primary btn-sm"
@@ -75,7 +75,7 @@ function _tplChoice (el, currentPoll, choice) {
     </tr>`
 }
 
-export function tplPoll (el, currentPoll) {
+export function tplPoll (el, currentPoll, canVote) {
   if (!currentPoll) {
     return html``
   }
@@ -113,7 +113,7 @@ export function tplPoll (el, currentPoll) {
         ? ''
         : html`
           <table><tbody>
-            ${repeat(currentPoll.choices ?? [], (c) => c.choice, (c) => _tplChoice(el, currentPoll, c))}
+            ${repeat(currentPoll.choices ?? [], (c) => c.choice, (c) => _tplChoice(el, currentPoll, c, canVote))}
           </tbody></table>
           ${_tplPollInstructions(el, currentPoll)}
           ${_tplPollEnd(el, currentPoll)}

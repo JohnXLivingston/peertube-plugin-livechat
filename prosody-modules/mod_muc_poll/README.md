@@ -20,7 +20,7 @@ All above configurations are optional.
 The priority for the hook that will take into account votes.
 You can change this, if you have some specific hook that should be done after/before counting votes (slow mode, firewall, ...).
 
-Default: 500
+Default: 40 (Prosody checks visitor role with priority of 50, we want this to be after).
 
 ## Strings
 

@@ -23,7 +23,7 @@ local remove_specific_tags_from_groupchat = module:require("message").remove_spe
 local handle_new_occupant_session = module:require("message").handle_new_occupant_session;
 local room_restored = module:require("poll").room_restored;
 
-local poll_groupchat_votes_priority = module:get_option_number("poll_groupchat_votes_priority") or 500;
+local poll_groupchat_votes_priority = module:get_option_number("poll_groupchat_votes_priority") or 40;
 
 
 -- new poll creation, get form

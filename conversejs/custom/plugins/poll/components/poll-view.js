@@ -4,7 +4,7 @@
 
 import { tplPoll } from '../templates/poll.js'
 import { CustomElement } from 'shared/components/element.js'
-import { api } from '@converse/headless/core'
+import { converse, api } from '@converse/headless/core'
 import '../styles/poll.scss'
 
 export default class MUCPollView extends CustomElement {
@@ -30,7 +30,9 @@ export default class MUCPollView extends CustomElement {
 
   render () {
     const currentPoll = this.model?.get('current_poll')
-    return tplPoll(this, currentPoll)
+    const entered = this.model.session.get('connection_status') === converse.ROOMSTATUS.ENTERED
+    const canVote = entered && this.model.getOwnRole() !== 'visitor'
+    return tplPoll(this, currentPoll, canVote)
   }
 
   toggle (ev) {
