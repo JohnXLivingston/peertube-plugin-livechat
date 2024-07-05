@@ -4,11 +4,14 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-livechat-converse-poll-form-modal {
-  /* Special case: when the form is in a modal */
+.conversejs {
+  livechat-converse-poll-form-modal {
+    /* Special case: when the form is in a modal */
 
-  .converse-form {
-    max-height: 50vh;
-    overflow-y: scroll;
+    .converse-form {
+      max-height: 50vh;
+      overflow-y: scroll;
+      padding-top: 0;
+    }
   }
 }
