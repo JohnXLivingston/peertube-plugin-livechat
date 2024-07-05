@@ -46,6 +46,7 @@ const locKeys = [
   'poll_end',
   'poll',
   'poll_vote_instructions',
+  'poll_vote_instructions_xmpp',
   'poll_is_over',
   'poll_choice_invalid',
   'poll_anonymous_vote_ok'

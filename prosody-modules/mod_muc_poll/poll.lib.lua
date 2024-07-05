@@ -128,7 +128,7 @@ local function create_poll(room, fields, occupant)
     return tonumber(a.number) < tonumber(b.number);
   end);
 
-  room._data.current_poll.start_message_id = poll_start_message(room);
+  poll_start_message(room);
   schedule_poll_end(room.jid, room._data.current_poll.end_timestamp);
 end
 

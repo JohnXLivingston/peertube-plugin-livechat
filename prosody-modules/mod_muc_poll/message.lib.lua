@@ -20,13 +20,12 @@ local scheduled_updates = {};
 local string_poll_over = module:get_option_string("poll_string_over") or "This poll is now over.";
 local string_poll_vote_instructions = module:get_option_string("poll_string_vote_instructions") or "Send a message with an exclamation mark followed by your choice number to vote. Example: !1";
 
--- construct the poll message stanza
-local function build_poll_message(room, message_id, is_end_message)
+-- Build the content for poll start and end messages (that will go to the message <body>)
+local function build_poll_message_content(room, is_end_message)
   local current_poll = room._data.current_poll;
   if not current_poll then
     return nil;
   end
-  local from = current_poll.occupant_nick; -- this is in fact room.jid/nickname
 
   local content = current_poll["muc#roompoll_question"] .. "\n";
 
@@ -41,7 +40,8 @@ local function build_poll_message(room, message_id, is_end_message)
   for _, choice_desc in ipairs(current_poll.choices_ordered) do
     local choice, label = choice_desc.number, choice_desc.label;
     content = content .. choice .. ': ' .. label;
-    if total > 0 then
+    -- if vote over, and at least 1 vote, we add the results.
+    if is_end_message and total > 0 then
       local nb = current_poll.votes_by_choices[choice] or 0;
       local percent = string.format("%.2f", nb * 100 / total);
       content = content .. " (" .. nb .. "/" .. total .. " = " .. percent .. "%)";
@@ -53,16 +53,37 @@ local function build_poll_message(room, message_id, is_end_message)
     content = content .. string_poll_vote_instructions .. "\n";
   end
 
+  return content;
+end
+
+-- construct the poll message stanza.
+-- Note: content can be nil, for updates messages.
+local function build_poll_message(room, content)
+  local current_poll = room._data.current_poll;
+  if not current_poll then
+    return nil;
+  end
+
+  local from = current_poll.occupant_nick; -- this is in fact room.jid/nickname
+
   local msg = st.message({
     type = "groupchat",
     from = from,
-    id = message_id
+    id = id.long()
   }, content);
 
   msg:tag("occupant-id", {
     xmlns = xmlns_occupant_id,
     id = current_poll.occupant_id
   }):up();
+
+  if content == nil then
+    -- No content, this is an update message.
+    -- Adding some hints (XEP-0334):
+    msg:tag("no-copy", { xmlns = "urn:xmpp:hints" }):up();
+    msg:tag("no-store", { xmlns = "urn:xmpp:hints" }):up();
+    msg:tag("no-permanent-store", { xmlns = "urn:xmpp:hints" }):up();
+  end
 
   -- now we must add some custom XML data, so that compatible clients can display the poll as they want:
   -- <x-poll xmlns="http://jabber.org/protocol/muc#x-poll-message" id="I9UWyoxsz4BN" votes="1" end="1719842224" over="">
@@ -72,6 +93,11 @@ local function build_poll_message(room, message_id, is_end_message)
   --     <x-poll-choice choice="3" votes="0">Choice 3 label</x-poll-choice>
   --     <x-poll-choice choice="4" votes="0">Choice 4 label</x-poll-choice>
   -- </x-poll>
+  local total = 0;
+  for choice, nb in pairs(current_poll.votes_by_choices) do
+    total = total + nb;
+  end
+
   local message_attrs = {
     xmlns = xmlns_poll_message,
     id = current_poll.poll_id,
@@ -85,6 +111,7 @@ local function build_poll_message(room, message_id, is_end_message)
   for _, choice_desc in ipairs(current_poll.choices_ordered) do
     local choice, label = choice_desc.number, choice_desc.label;
     local nb = current_poll.votes_by_choices[choice] or 0;
+    total = total + nb;
     msg:text_tag(poll_choice_tag, label, {
       votes = "" .. nb,
       choice = choice
@@ -101,10 +128,9 @@ local function poll_start_message(room)
     return nil;
   end
   module:log("debug", "Sending the start message for room %s poll", room.jid);
-  local message_id = id.medium();
-  local msg = build_poll_message(room, message_id, false);
+  local content = build_poll_message_content(room, false);
+  local msg = build_poll_message(room, content);
   room:broadcast_message(msg);
-  return message_id;
 end
 
 -- Send the poll update message
@@ -118,17 +144,9 @@ local function send_poll_update_message(room)
   end
 
   module:log("debug", "Sending an update message for room %s poll", room.jid);
-  local message_id = id.medium(); -- generate a new id
-  local msg = build_poll_message(room, message_id, false);
-
-  -- the update message is a <replace> message (see XEP-0308).
-  msg:tag('replace', {
-    xmlns = xmlns_replace;
-    id = room._data.current_poll.start_message_id;
-  }):up();
+  local msg = build_poll_message(room, nil);
 
   room:broadcast_message(msg);
-  return message_id;
 end
 
 -- Schedule an update of the start message.
@@ -162,10 +180,9 @@ local function poll_end_message(room)
     timer.stop(scheduled_updates[room.jid]);
     scheduled_updates[room.jid] = nil;
   end
-  local message_id = id.medium(); -- generate a new id
-  local msg = build_poll_message(room, message_id, true);
+  local content = build_poll_message_content(room, true);
+  local msg = build_poll_message(room, content);
   room:broadcast_message(msg);
-  return message_id;
 end
 
 -- security check: we must remove all specific tags, to be sure nobody tries to spoof polls!
@@ -187,14 +204,23 @@ end
 -- when a new session is opened, we must send the current poll to the client
 local function handle_new_occupant_session(event)
 	local room = event.room;
+  local occupant = event.occupant;
+  local origin = event.origin;
+  if not occupant then
+    return;
+  end
   if not room._data.current_poll then
     return;
   end
   if room._data.current_poll.already_ended then
     return;
   end
-  schedule_poll_update_message(room.jid);
-  -- FIXME: for now we just schedule a new poll update. But we should only send a message to the new occupant.
+
+  -- Sending an update message to the new occupant.
+  module:log("debug", "Sending a poll update message to new occupant %s", occupant.jid);
+  local msg = build_poll_message(room, nil);
+  msg.attr.to = occupant.jid;
+  origin.send(msg);
 end
 
 return {

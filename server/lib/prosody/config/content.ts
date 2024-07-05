@@ -540,6 +540,7 @@ class ProsodyConfigContent {
     this.muc.set('poll_string_over', loc('poll_is_over'))
     this.muc.set('poll_string_invalid_choice', loc('poll_choice_invalid'))
     this.muc.set('poll_string_anonymous_vote_ok', loc('poll_anonymous_vote_ok'))
+    this.muc.set('poll_string_vote_instructions', loc('poll_vote_instructions_xmpp'))
   }
 
   addMucAdmins (jids: string[]): void {

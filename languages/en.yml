@@ -575,6 +575,8 @@ poll_choice_n: 'Choice {{N}}:'
 poll_end: 'Poll ends at:'
 poll_vote_instructions: |
   To vote, click on your choice or send a message with an exclamation mark followed by your choice number (Example: !1).
+poll_vote_instructions_xmpp: |
+  Send a message with an exclamation mark followed by your choice number to vote. Example: !1
 poll_is_over: This poll is now over.
 poll_choice_invalid: This choice is not valid.
 poll_anonymous_vote_ok: Your vote is taken into account. Votes are anonymous, they will not be shown to other participants.

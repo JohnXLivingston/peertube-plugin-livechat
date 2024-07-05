@@ -96,4 +96,4 @@ module:hook("muc-room-restored", room_restored);
 -- when a new session is opened, we must send the current poll to the client
 -- Note: it should be in the MAM. But it is easier for clients to ignore delayed messages
 -- when displaying polls (to ignore old polls).
-module:hook("muc-occupant-session-new", handle_new_occupant_session);
+module:hook("muc-occupant-session-new", handle_new_occupant_session, 10); -- must be after subject (20, see Prosody code)

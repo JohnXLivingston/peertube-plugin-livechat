@@ -74,8 +74,11 @@ converse.plugins.add('livechat-converse-poll', {
       }
 
       // We will also translate some strings here.
-      // eslint-disable-next-line no-undef
-      const body = (attrs.body ?? '').replace(LOC_poll_is_over, __(LOC_poll_is_over))
+      const body = (attrs.body ?? '')
+        // eslint-disable-next-line no-undef
+        .replace(LOC_poll_is_over, __(LOC_poll_is_over))
+        // eslint-disable-next-line no-undef
+        .replace(LOC_poll_vote_instructions_xmpp, __(LOC_poll_vote_instructions)) // changing instructions on the fly
 
       return Object.assign(
         attrs,
@@ -93,15 +96,11 @@ converse.plugins.add('livechat-converse-poll', {
         if (!attrs.current_poll) {
           return this.__super__.onMessage(attrs)
         }
+
         // We intercept poll messages, to show the banner.
-        // Note: we also show poll end messages in the chat, so that the user don't loose the result.
-        if (attrs.is_delayed || attrs.is_archived) {
-          if (attrs.current_poll.over) {
-            console.info('Got a delayed/archived poll message for an poll that is over, just displaying in the chat')
-            return this.__super__.onMessage(attrs)
-          }
-          console.info('Got a delayed/archived poll message, just dropping')
-          return
+        // We just drop archived messages, to not show the banner for finished polls.
+        if (attrs.is_archived) {
+          return this.__super__.onMessage(attrs)
         }
 
         console.info('Got a poll message, setting it as the current_poll')
@@ -109,11 +108,7 @@ converse.plugins.add('livechat-converse-poll', {
         // which is inserted in the DOM by the muc.js template overload.
         this.set('current_poll', attrs.current_poll)
 
-        if (attrs.current_poll.over) {
-          console.info('The poll is over, displaying the message in the chat')
-          return this.__super__.onMessage(attrs)
-        }
-        // Dropping the message.
+        return this.__super__.onMessage(attrs)
       }
     }
   }
