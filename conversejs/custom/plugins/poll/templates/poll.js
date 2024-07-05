@@ -6,8 +6,8 @@ import { html } from 'lit'
 import { repeat } from 'lit/directives/repeat.js'
 import { __ } from 'i18n'
 
-function _tplPollInstructions (el, currentPoll) {
-  if (currentPoll.over) {
+function _tplPollInstructions (el, currentPoll, canVote) {
+  if (currentPoll.over || !canVote) {
     return html``
   }
 
@@ -115,7 +115,7 @@ export function tplPoll (el, currentPoll, canVote) {
           <table><tbody>
             ${repeat(currentPoll.choices ?? [], (c) => c.choice, (c) => _tplChoice(el, currentPoll, c, canVote))}
           </tbody></table>
-          ${_tplPollInstructions(el, currentPoll)}
+          ${_tplPollInstructions(el, currentPoll, canVote)}
           ${_tplPollEnd(el, currentPoll)}
         `
     }

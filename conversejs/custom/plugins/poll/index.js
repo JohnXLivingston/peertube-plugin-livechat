@@ -16,11 +16,6 @@ converse.plugins.add('livechat-converse-poll', {
   dependencies: ['converse-muc', 'converse-disco'],
 
   initialize () {
-    // _converse.api.listen.on('chatRoomInitialized', muc => {
-    //   muc.features.on('change:' + XMLNS_POLL, () => {
-    //     // TODO: refresh headingbuttons?
-    //   })
-    // })
     // adding the poll actions in the MUC heading buttons:
     _converse.api.listen.on('getHeadingButtons', getHeadingButtons)
 

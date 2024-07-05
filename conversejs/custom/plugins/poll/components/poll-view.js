@@ -4,7 +4,7 @@
 
 import { tplPoll } from '../templates/poll.js'
 import { CustomElement } from 'shared/components/element.js'
-import { converse, api } from '@converse/headless/core'
+import { converse, _converse, api } from '@converse/headless/core'
 import '../styles/poll.scss'
 
 export default class MUCPollView extends CustomElement {
@@ -24,6 +24,13 @@ export default class MUCPollView extends CustomElement {
     }
     this.listenTo(this.model, 'change:current_poll', () => {
       this.buttonDisabled = false
+      this.requestUpdate()
+    })
+    this.listenTo(this.model.occupants, 'change:role', occupant => {
+      if (occupant.get('jid') !== _converse.bare_jid) { // only for myself
+        return
+      }
+      // visitors cant vote. So we must refresh the polls results when current occupant role changes.
       this.requestUpdate()
     })
   }
