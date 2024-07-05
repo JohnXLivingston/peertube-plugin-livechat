@@ -2360,9 +2360,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
-msgstr ""
-"Za više informacija pogledaj stranicu pomoći za [ovu postavku](/peertube-"
-"plugin-livechat/documentation/admin/settings/)."
+msgstr "Za više informacija pogledaj stranicu pomoći za [ovu postavku](/peertube-plugin-livechat/hr/documentation/admin/settings/)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -3013,21 +3011,21 @@ msgstr ""
 msgid "[{{% livechat_label livechat_configuration_channel_terms_label %}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
 msgstr ""
 "[{{% livechat_label livechat_configuration_channel_terms_label "
-"%}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
+"%}}](/peertube-plugin-livechat/hr/documentation/user/streamers/terms)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
 msgstr ""
 "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label "
-"%}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) "
+"%}}](/peertube-plugin-livechat/hr/documentation/user/streamers/moderation) "
 "standardna vrijednost"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 msgstr ""
-"[Spori modus](/peertube-plugin-livechat/documentation/user/streamers/"
+"[Spori modus](/peertube-plugin-livechat/hr/documentation/user/streamers/"
 "slow_mode)"
 
 #. type: Bullet: '* '
@@ -3038,7 +3036,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
-msgstr "[Prilagođeni emojiji](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
+msgstr "[Prilagođeni emojiji](/peertube-plugin-livechat/hr/documentation/user/streamers/emojis)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3657,7 +3655,7 @@ msgstr ""
 msgid "To configure the terms & conditions, go to the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel):"
 msgstr ""
 "Za konfiguriranje uvjeta i odredbi idi na [stranicu za konfiguraciju kanala"
-"](/peertube-plugin-livechat/documentation/user/streamers/channel):"
+"](/peertube-plugin-livechat/hr/documentation/user/streamers/channel):"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
