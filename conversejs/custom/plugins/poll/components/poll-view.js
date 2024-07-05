@@ -47,7 +47,7 @@ export default class MUCPollView extends CustomElement {
     this.collapsed = !this.collapsed
   }
 
-  voteFor (choice) {
+  async voteFor (choice) {
     if (this.buttonDisabled) { return }
 
     const currentPoll = this.model?.get('current_poll')
@@ -59,9 +59,18 @@ export default class MUCPollView extends CustomElement {
     this.buttonDisabled = true
     this.requestUpdate()
 
-    this.model.sendMessage({
+    await this.model.sendMessage({
       body: '!' + choice.choice
     })
+
+    // Dispatching an event.
+    // When in Peertube interface, this will open a Peertube notifier with a message.
+    // FIXME: we should only trigger this on the message echo or bounce,
+    // but seems ConverseJs does not provide any promise for that.
+    const event = new Event('livechat-poll-vote', {
+      bubbles: true
+    })
+    this.dispatchEvent(event)
   }
 
   closePoll (ev) {

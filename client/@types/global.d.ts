@@ -128,3 +128,5 @@ declare const LOC_TOKEN_ACTION_CREATE: string
 declare const LOC_TOKEN_ACTION_REVOKE: string
 declare const LOC_TOKEN_DEFAULT_LABEL: string
 declare const LOC_TOKEN_ACTION_REVOKE_CONFIRM: string
+
+declare const LOC_POLL_VOTE_OK: string

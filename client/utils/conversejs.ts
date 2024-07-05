@@ -17,6 +17,8 @@ declare global {
   }
 }
 
+let pollListenerInitiliazed: boolean = false
+
 /**
  * load the ConverseJS CSS.
  * @param url CSS url
@@ -163,6 +165,15 @@ async function displayConverseJS (
     throw new Error('Can\'t get room configuration.')
   }
   const converseJSParams: InitConverseJSParams = await (response).json()
+
+  if (!pollListenerInitiliazed) {
+    // First time we got here, initiliaze this event:
+    const i18nVoteOk = await clientOptions.peertubeHelpers.translate(LOC_POLL_VOTE_OK)
+    pollListenerInitiliazed = true
+    document.addEventListener('livechat-poll-vote', () => {
+      clientOptions.peertubeHelpers.notifier.success(i18nVoteOk)
+    })
+  }
 
   await loadConverseJS(converseJSParams)
   await window.initConverse(converseJSParams, chatIncludeMode, authHeader ?? null)
