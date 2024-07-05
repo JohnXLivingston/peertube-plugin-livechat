@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-06-25 17:22+0200\n"
+"POT-Creation-Date: 2024-07-05 13:27+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Swedish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/sv/>\n"
@@ -3168,6 +3168,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/polls.md
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "This feature comes with the livechat plugin version 10.2.0."
 msgstr ""
@@ -3258,6 +3259,183 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "You can create polls to ask viewers their opinion."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "Polls"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "Create a poll"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "You can create a new poll by using the \"{{% livechat_label new_poll %}}\" action in the chat top menu:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "![Poll form](/peertube-plugin-livechat/images/polls_form.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "This poll feature should not be considered as a reliable voting system.  It is easy to cheat.  There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat.  Votes are never fully anonymous, someone having access to the server could see who voted for what choice."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "Poll form"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Fill the form fields:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "\"{{% livechat_label poll_question %}}\": the question to ask to you viewers"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "\"{{% livechat_label poll_duration %}}\": the duration for which viewers can vote"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "\"{{% livechat_label poll_anonymous_results %}}\": if checked, votes won't be publicly visible in the chat"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "\"Choice N\": choices that will be presented to viewers"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "You must at least fill the two first choices fields."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Once you submit the form, the poll will instantly start."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "If there was a previous unfinished poll, it will end and its result will be shown."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+#, no-wrap
+msgid "Access rights"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Every room's admins can create a new poll."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "When you promote someone as room admin or owner, they gets instant access to the \"{{% livechat_label new_poll %}}\" action."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "When you remove admin or owner rights to someone, they can't create new poll. But any existing poll will continue until it ends."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Every user that is not muted can vote.  This means that you can prevent anonymous users to vote by using the [\"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" feature](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "Poll workflow"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "When the polls starts, a first message will be sent in the chat, from the account of the user creating the poll."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "A banner will also appear to show the poll, and will be updated regularly with the current votes."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "![Poll start](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Viewers can then vote by clicking on their choice, or by sending message like \"!1\" in the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Votes counts will be updated regularly in the banner."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Viewers can change their vote at any time, just by making a new choice.  Their precedent choice will be replaced by the new one."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "![Poll votes](/peertube-plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Anonymous viewers can only vote once they have choosen their nickname."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "If \"{{% livechat_label poll_anonymous_results %}}\" is checked, votes won't be shown to other users.  If unchecked, votes will be publicly visible as you will see message like \"!1\" in the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "For viewers using XMPP clients or outdated livechat plugin versions, the banner will not be visible.  But they will see the message in the chat and will be able to vote by sending messages with their choices."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "When the poll ends, a new message will be sent in the chat, with the results."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "![Poll end](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "The only way to get old polls results is to search for the poll end message in the chat.  For now, polls results are not saved by any other means.  So don't forget to note polls results if you want to keep them."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -3460,12 +3638,6 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "To have more space and better readability, open the chat in full-page mode."
-msgstr ""
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, no-wrap
-msgid "Access rights"
 msgstr ""
 
 #. type: Plain text

@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-06-25 17:22+0200\n"
+"POT-Creation-Date: 2024-07-05 13:27+0200\n"
 "PO-Revision-Date: 2024-06-26 12:40+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1229,11 +1227,7 @@ msgstr "Plugin Einstellungen"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this setting, new settings appear below."
-msgstr ""
-"Beginne mit den Einstellungen des Livechat-Plugins deiner Instanz und "
-"aktiviere die Einstellung \"Verbindung zum Raum über externe XMPP-Konten "
-"aktivieren\". Wenn Sie diese Einstellung aktivieren, erscheinen unterhalb "
-"neue Einstellungen."
+msgstr "Beginne mit den Einstellungen des Livechat-Plugins deiner Instanz und aktiviere die Einstellung \"Verbindung zum Raum über externe XMPP-Konten aktivieren\". Wenn Sie diese Einstellung aktivieren, erscheinen unterhalb neue Einstellungen."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1947,17 +1941,12 @@ msgstr "Dieser Abschnitt beschreibt die Seite mit den Plugin Einstellungen."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "For more information on this feature, check the documentation for [channel's terms & conditions](/peertube-plugin-livechat/documentation/user/streamers/terms)."
-msgstr ""
-"Weitere Informationen zu dieser Funktion finden Sie in der Dokumentation zu "
-"den [Kanal-Nutzungsbedingungen](/peertube-plugin-livechat/de/documentation/"
-"user/streamers/terms)."
+msgstr "Weitere Informationen zu dieser Funktion finden Sie in der Dokumentation zu den [Kanal-Nutzungsbedingungen](/peertube-plugin-livechat/de/documentation/user/streamers/terms)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Changing this setting will restart the chat server, and all users will be disconnected for a short time."
-msgstr ""
-"Wenn Sie diese Einstellung ändern, wird der Chatserver neu gestartet, und "
-"alle Benutzer werden für kurze Zeit getrennt."
+msgstr "Wenn Sie diese Einstellung ändern, wird der Chatserver neu gestartet, und alle Benutzer werden für kurze Zeit getrennt."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2032,9 +2021,7 @@ msgstr "Sie können zum Beispiel eine schreibgeschützte URL generieren und dies
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting allows you to choose who can access this modal."
-msgstr ""
-"Mit dieser Einstellung können Sie festlegen, wer auf diese Schaltfläche "
-"zugreifen kann."
+msgstr "Mit dieser Einstellung können Sie festlegen, wer auf diese Schaltfläche zugreifen kann."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2168,19 +2155,13 @@ msgstr "Das Plugin wird mit einem AppImage geliefert, das zum Ausführen des [Pr
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting should only be used if the plugin is broken, and waiting for a patch."
-msgstr ""
-"Diese Einstellung sollte nur verwendet werden, wenn das Plugin defekt ist "
-"und auf einen Patch wartet."
+msgstr "Diese Einstellung sollte nur verwendet werden, wenn das Plugin defekt ist und auf einen Patch wartet."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
-msgstr ""
-"Wenn diese Einstellung leer gelassen wird und Sie Peertube >= 5.1 oder "
-"später verwenden, wird das Plugin die Werte aus Ihrer Peertube-"
-"Konfigurationsdatei verwenden, um zu erraten, auf welcher Schnittstelle und "
-"welchem Port die Anfrage erfolgen muss.\n"
+msgstr "Wenn diese Einstellung leer gelassen wird und Sie Peertube >= 5.1 oder später verwenden, wird das Plugin die Werte aus Ihrer Peertube-Konfigurationsdatei verwenden, um zu erraten, auf welcher Schnittstelle und welchem Port die Anfrage erfolgen muss.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2200,12 +2181,7 @@ msgstr "Zum Beispiel kann diese Option einer Instanz von Matterbridge (sobald si
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
-msgstr ""
-"Diese Einstellung ermöglicht es externen XMPP-Komponenten, sich mit dem "
-"Server zu verbinden. Standardmäßig erlaubt diese Option **nur Verbindungen "
-"von localhost-Komponenten**. Sie müssen den Wert \"{{% livechat_label "
-"prosody_components_interfaces_label %}}\" ändern, um an anderen "
-"Netzwerkschnittstellen zu lauschen."
+msgstr "Diese Einstellung ermöglicht es externen XMPP-Komponenten, sich mit dem Server zu verbinden. Standardmäßig erlaubt diese Option **nur Verbindungen von localhost-Komponenten**. Sie müssen den Wert \"{{% livechat_label prosody_components_interfaces_label %}}\" ändern, um an anderen Netzwerkschnittstellen zu lauschen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2449,9 +2425,7 @@ msgstr "Versuchen Sie in diesem Fall, die \"{{% livechat_label prosody_peertube_
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
-msgstr ""
-"Weitere Informationen finden Sie in der Hilfe für [diese Einstellung"
-"](/peertube-plugin-livechat/de/documentation/admin/settings/)."
+msgstr "Weitere Informationen finden Sie in der Hilfe für [diese Einstellung](/peertube-plugin-livechat/de/documentation/admin/settings/)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -3099,9 +3073,7 @@ msgstr "Hier können Sie konfigurieren:"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[{{% livechat_label livechat_configuration_channel_terms_label %}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
-msgstr ""
-"[{{% livechat_label livechat_configuration_channel_terms_label "
-"%}}](/peertube-plugin-livechat/de/documentation/user/streamers/terms)"
+msgstr "[{{% livechat_label livechat_configuration_channel_terms_label %}}](/peertube-plugin-livechat/de/documentation/user/streamers/terms)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3277,6 +3249,7 @@ msgstr "Sie können [ConverseJS Moderationsbefehle](https://conversejs.org/docs/
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/polls.md
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "This feature comes with the livechat plugin version 10.2.0."
 msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.2.0 verfügbar sein."
@@ -3368,6 +3341,198 @@ msgstr "Sie können alle bestehenden Chaträume auflisten: in den Einstellungen 
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
 msgstr "Von dort aus kannst du dich auch als Moderator des Raums bewerben, indem du die Schaltfläche \"{{% livechat_label promote %}}\" auf der rechten Seite benutzt."
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "You can create polls to ask viewers their opinion."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "Polls"
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, fuzzy, no-wrap
+#| msgid "Create tasks"
+msgid "Create a poll"
+msgstr "Aufgaben erstellen"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, fuzzy
+#| msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the top chat menu:"
+msgid "You can create a new poll by using the \"{{% livechat_label new_poll %}}\" action in the chat top menu:"
+msgstr "Um die Aufgabenanwendung zu öffnen, gibt es eine Schaltfläche \"{{% livechat_label \"Aufgaben\" %}}\" im oberen Chatmenü:"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, fuzzy
+#| msgid "![Task form](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)"
+msgid "![Poll form](/peertube-plugin-livechat/images/polls_form.png?classes=shadow,border&height=200px)"
+msgstr "![Aufgabenformular](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "This poll feature should not be considered as a reliable voting system.  It is easy to cheat.  There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat.  Votes are never fully anonymous, someone having access to the server could see who voted for what choice."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "Poll form"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Fill the form fields:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "\"{{% livechat_label poll_question %}}\": the question to ask to you viewers"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "\"{{% livechat_label poll_duration %}}\": the duration for which viewers can vote"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "\"{{% livechat_label poll_anonymous_results %}}\": if checked, votes won't be publicly visible in the chat"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "\"Choice N\": choices that will be presented to viewers"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "You must at least fill the two first choices fields."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Once you submit the form, the poll will instantly start."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "If there was a previous unfinished poll, it will end and its result will be shown."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+#, no-wrap
+msgid "Access rights"
+msgstr "Zugriffsrechte"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Every room's admins can create a new poll."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, fuzzy
+#| msgid "When you promote someone as room admin or owner, they gets instant access to the Task Application.  When you remove admin or owner rights to someone, they instantly lose access to the Task Application."
+msgid "When you promote someone as room admin or owner, they gets instant access to the \"{{% livechat_label new_poll %}}\" action."
+msgstr "Wenn Sie jemanden zum Raumadministrator oder -besitzer befördern, erhält dieser sofortigen Zugriff auf die Aufgabenanwendung.  Wenn Sie jemandem die Admin- oder Eigentümerrechte entziehen, verliert er sofort den Zugang zur Aufgabenanwendung."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "When you remove admin or owner rights to someone, they can't create new poll. But any existing poll will continue until it ends."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, fuzzy
+#| msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
+msgid "Every user that is not muted can vote.  This means that you can prevent anonymous users to vote by using the [\"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" feature](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
+msgstr "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/de/documentation/user/streamers/moderation) Standardwert"
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, no-wrap
+msgid "Poll workflow"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "When the polls starts, a first message will be sent in the chat, from the account of the user creating the poll."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "A banner will also appear to show the poll, and will be updated regularly with the current votes."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, fuzzy
+#| msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
+msgid "![Poll start](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
+msgstr "![Katzen](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Viewers can then vote by clicking on their choice, or by sending message like \"!1\" in the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Votes counts will be updated regularly in the banner."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Viewers can change their vote at any time, just by making a new choice.  Their precedent choice will be replaced by the new one."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, fuzzy
+#| msgid "![Terms](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
+msgid "![Poll votes](/peertube-plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px)"
+msgstr "![Bedingungen](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "Anonymous viewers can only vote once they have choosen their nickname."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "If \"{{% livechat_label poll_anonymous_results %}}\" is checked, votes won't be shown to other users.  If unchecked, votes will be publicly visible as you will see message like \"!1\" in the chat."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "For viewers using XMPP clients or outdated livechat plugin versions, the banner will not be visible.  But they will see the message in the chat and will be able to vote by sending messages with their choices."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "When the poll ends, a new message will be sent in the chat, with the results."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#, fuzzy
+#| msgid "![Terms](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
+msgid "![Poll end](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
+msgstr "![Bedingungen](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+msgid "The only way to get old polls results is to search for the poll end message in the chat.  For now, polls results are not saved by any other means.  So don't forget to note polls results if you want to keep them."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3571,12 +3736,6 @@ msgstr "![Aufgabenanwendung](/peertube-plugin-livechat/images/task_app_fullpage_
 msgid "To have more space and better readability, open the chat in full-page mode."
 msgstr "Um mehr Platz und eine bessere Lesbarkeit zu erhalten, öffnen Sie den Chat im neuen Fenster."
 
-#. type: Title ###
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, no-wrap
-msgid "Access rights"
-msgstr "Zugriffsrechte"
-
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Every room's admins have access to the Task Application (read and write access)."
@@ -3739,32 +3898,22 @@ msgstr "Konfiguration"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "You can add terms & conditions to your channel.  These terms will be shown to all users joining the chat."
-msgstr ""
-"Sie können Ihrem Kanal Nutzungsbedingungen hinzufügen.  Diese "
-"Nutzungsbedingungen werden allen Benutzern angezeigt, die den Chat betreten."
+msgstr "Sie können Ihrem Kanal Nutzungsbedingungen hinzufügen.  Diese Nutzungsbedingungen werden allen Benutzern angezeigt, die den Chat betreten."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "To configure the terms & conditions, go to the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel):"
-msgstr ""
-"Um die Nutzungsbedingungen zu konfigurieren, gehen Sie auf die [Kanal-"
-"Konfigurationsseite](/peertube-plugin-livechat/de/documentation/user/"
-"streamers/channel):"
+msgstr "Um die Nutzungsbedingungen zu konfigurieren, gehen Sie auf die [Kanal-Konfigurationsseite](/peertube-plugin-livechat/de/documentation/user/streamers/channel):"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "![Channel configuration / Terms](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Kanalkonfiguration / Nutzungsbedingungen](/peertube-plugin-livechat/images/"
-"channel_terms_config.png?classes=shadow,border&height=400px)"
+msgstr "![Kanalkonfiguration / Nutzungsbedingungen](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "URL in the message will be clickable.  You can also do some styling: [Message Styling](https://xmpp.org/extensions/xep-0393.html)."
-msgstr ""
-"Die URL in der Nachricht wird anklickbar sein.  Sie können die Nachricht "
-"auch etwas gestalten: [Message Styling](https://xmpp.org/extensions/xep-0393."
-"html)."
+msgstr "Die URL in der Nachricht wird anklickbar sein.  Sie können die Nachricht auch etwas gestalten: [Message Styling](https://xmpp.org/extensions/xep-0393.html)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/terms.md
@@ -3780,50 +3929,32 @@ msgstr "Wenn Sie dem Chat beitreten, sehen die Zuschauer die Bedingungen:"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "![Terms](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Bedingungen](/peertube-plugin-livechat/images/terms."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Bedingungen](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Peertube instance's admin can also set global terms & conditions.  If so, these terms will be shown above your channel's terms."
-msgstr ""
-"Der Administrator der Peertube-Instanz kann auch globale Nutzungsbedingungen "
-"festlegen.  Wenn dies der Fall ist, werden diese Bedingungen über den "
-"Bedingungen Ihres Kanals angezeigt."
+msgstr "Der Administrator der Peertube-Instanz kann auch globale Nutzungsbedingungen festlegen.  Wenn dies der Fall ist, werden diese Bedingungen über den Bedingungen Ihres Kanals angezeigt."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Anonymous users will only see the terms & conditions once they have chosen their nickname (in other words: once they are able to talk)."
-msgstr ""
-"Anonyme Nutzer sehen die Nutzungsbedingungen erst, wenn sie ihren Nickname "
-"gewählt haben (mit anderen Worten: wenn sie schreiben können)."
+msgstr "Anonyme Nutzer sehen die Nutzungsbedingungen erst, wenn sie ihren Nickname gewählt haben (mit anderen Worten: wenn sie schreiben können)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "You can change the terms content at any time, it will be instantly updated for all viewers."
-msgstr ""
-"Sie können den Inhalt der Nutzungsbedingungen jederzeit ändern, er wird dann "
-"sofort für alle Betrachter aktualisiert."
+msgstr "Sie können den Inhalt der Nutzungsbedingungen jederzeit ändern, er wird dann sofort für alle Betrachter aktualisiert."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Users can hide the terms & conditions.  When doing so, terms won't be shown again, unless you change the content."
-msgstr ""
-"Benutzer können die Nutzungsbedingungen ausblenden.  Wenn Sie dies tun, "
-"werden die Bedingungen nicht mehr angezeigt, es sei denn, Sie ändern den "
-"Inhalt."
+msgstr "Benutzer können die Nutzungsbedingungen ausblenden.  Wenn Sie dies tun, werden die Bedingungen nicht mehr angezeigt, es sei denn, Sie ändern den Inhalt."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, comming from a \"Peertube\" account.  When you update terms, they will receive a new message with the update terms content."
-msgstr ""
-"Wenn Ihre Peertube-Instanz die Teilnahme am Chat mit [XMPP-Clients] "
-"(https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/"
-"advanced/xmpp_clients/) erlaubt, sehen die Benutzer, die solche Clients "
-"verwenden, die Bedingungen als Chat-Nachrichten, die von einem \"Peertube\"-"
-"Konto kommen.  Wenn Sie die Bedingungen aktualisieren, erhalten sie eine "
-"neue Nachricht mit dem Inhalt der aktualisierten Bedingungen."
+msgstr "Wenn Ihre Peertube-Instanz die Teilnahme am Chat mit [XMPP-Clients] (https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/advanced/xmpp_clients/) erlaubt, sehen die Benutzer, die solche Clients verwenden, die Bedingungen als Chat-Nachrichten, die von einem \"Peertube\"-Konto kommen.  Wenn Sie die Bedingungen aktualisieren, erhalten sie eine neue Nachricht mit dem Inhalt der aktualisierten Bedingungen."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
