@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-07-05 13:27+0200\n"
+"POT-Creation-Date: 2024-07-05 13:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3876,7 +3876,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 #, markdown-text
-msgid "![Poll end](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
+msgid "![Poll end](/peertube-plugin-livechat/images/polls_end.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text

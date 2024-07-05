@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-07-05 13:27+0200\n"
+"POT-Creation-Date: 2024-07-05 13:36+0200\n"
 "PO-Revision-Date: 2023-07-17 14:21+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: Italian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/it/>\n"
@@ -3430,7 +3430,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
-msgid "![Poll end](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
+msgid "![Poll end](/peertube-plugin-livechat/images/polls_end.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text

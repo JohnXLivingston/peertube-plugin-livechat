@@ -79,7 +79,7 @@ But they will see the message in the chat and will be able to vote by sending me
 
 When the poll ends, a new message will be sent in the chat, with the results.
 
-![Poll end](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)
+![Poll end](/peertube-plugin-livechat/images/polls_end.png?classes=shadow,border&height=200px)
 
 {{% notice info %}}
 The only way to get old polls results is to search for the poll end message in the chat.

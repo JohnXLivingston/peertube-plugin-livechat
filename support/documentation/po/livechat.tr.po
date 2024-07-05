@@ -3411,7 +3411,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
-msgid "![Poll end](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
+msgid "![Poll end](/peertube-plugin-livechat/images/polls_end.png?classes=shadow,border&height=200px)"
 msgstr ""
 
 #. type: Plain text
