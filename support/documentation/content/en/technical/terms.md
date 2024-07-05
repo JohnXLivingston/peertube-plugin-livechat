@@ -25,6 +25,9 @@ Here is an example of sent messages:
   <x-livechat-terms type="global" />
   <delay xmlns="urn:xmpp:delay" stamp="2024-06-25T11:02:25Z" />
   <stanza-id by="8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.p1.localhost" xmlns="urn:xmpp:sid:0" id="InoL5fonvOoR8X9gOlAYsz_N" />
+  <no-copy xmlns='urn:xmpp:hints'/>
+  <no-store xmlns='urn:xmpp:hints'/>
+  <no-permanent-store xmlns='urn:xmpp:hints'/>
 </message>
 
 <message xmlns="jabber:client" id="_iRSEs061gi5GBjF7zGh7f-M" type="groupchat" to="root@p1.localhost/QH1H89H1" from="8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.p1.localhost/Peertube">
@@ -32,6 +35,9 @@ Here is an example of sent messages:
   <x-livechat-terms type="muc" />
   <delay xmlns="urn:xmpp:delay" stamp="2024-06-25T11:02:25Z" />
   <stanza-id by="8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.p1.localhost" xmlns="urn:xmpp:sid:0" id="InoL5fonvOoR8X9gOlAYsz_N" />
+  <no-copy xmlns='urn:xmpp:hints'/>
+  <no-store xmlns='urn:xmpp:hints'/>
+  <no-permanent-store xmlns='urn:xmpp:hints'/>
 </message>
 ```
 
@@ -46,6 +52,8 @@ We must do so, because without nickname, some XMPP clients won't show the messag
 
 We also add a `delay` tag, to trick the moderation bot (see comments in code).
 This also ensure clients will not drop the message because there is no occupant with this name.
+
+We also add some `urn:xmpp:hints` to avoid storing or copying these messages.
 
 When muc terms are updated, the new terms will be broadcasted.
 

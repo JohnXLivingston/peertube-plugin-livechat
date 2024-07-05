@@ -32,8 +32,10 @@ local function create_terms_message(room, type, terms)
     id = id.medium()
   }, terms)
     :tag('x-livechat-terms', { type = type }):up() -- adding a custom tag to specify that it is a "terms" message, so that frontend can display it with a special template.
-    :tag("delay", { xmlns = "urn:xmpp:delay", from = from, stamp = datetime.datetime() }):up(); -- adding a delay to trick the moderation bot (see below)
-
+    :tag("delay", { xmlns = "urn:xmpp:delay", from = from, stamp = datetime.datetime() }):up() -- adding a delay to trick the moderation bot (see below)
+    :tag("no-copy", { xmlns = "urn:xmpp:hints" }):up()
+    :tag("no-store", { xmlns = "urn:xmpp:hints" }):up()
+    :tag("no-permanent-store", { xmlns = "urn:xmpp:hints" }):up();
   -- concerning the delay tag:
   -- We are sending message to rooms from non-existant occupants.
   -- If the message contains something that should be moderated by the livechat moderation bot,

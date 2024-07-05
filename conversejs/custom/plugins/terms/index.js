@@ -36,6 +36,11 @@ converse.plugins.add('livechat-converse-terms', {
           console.error('Invalid x-livechat-terms type: ', type)
           return
         }
+        if (attrs.is_archived) {
+          // This should not happen, as we add some no-store hints. But, just in case.
+          console.info('Dropping an archived x-livechat-terms message')
+          return
+        }
         // console.info('Received a x-livechat-terms message', attrs)
         const options = {}
         options['x_livechat_terms_' + type] = attrs
