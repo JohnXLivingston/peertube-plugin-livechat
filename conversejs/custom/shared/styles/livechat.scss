@@ -134,7 +134,8 @@ body.livechat-transparent {
   .chat-body,
   .conversejs .chatroom .box-flyout,
   .conversejs .chatbox .chat-content,
-  .conversejs .chatbox .chat-content .chat-content__notifications {
+  .conversejs .chatbox .chat-content .chat-content__notifications,
+  livechat-converse-muc-poll {
     background-color: rgba(0 0 0 / 0%) !important;
   }
 
