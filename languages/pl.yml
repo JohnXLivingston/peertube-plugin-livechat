@@ -33,3 +33,42 @@ help_builtin_prosody_label: Serwer Prosody
 disable_websocket_label: Wyłącz Websocket
 prosody_port_label: Port Prosody
 prosody_certificates_dir_label: Folder certyfikatów
+poll_title: Nowa ankieta
+theming_advanced_description: <h3>Zmiana motywu</h3>
+livechat_configuration_channel_command_cmd_label: Polecenie
+livechat_configuration_channel_command_message_label: Wiadomość
+livechat_configuration_channel_title: Opcje kanałów
+tasks: Zadania
+promote: Zostań moderatorem
+external_auth_facebook_oidc_label: Użyj Facebooka
+login_external_auth_alert_message: Uwierzytelnianie nie powiodło się
+cancel: Anuluj
+menu_configuration_label: Czaty
+successfully_saved: Pomyślnie zapisano
+livechat_configuration_channel_bot_nickname: Pseudonim bota
+livechat_configuration_channel_forbidden_words_comments_label: Komentarze
+invalid_value: Nieprawidłowa wartość.
+livechat_configuration_channel_slow_mode_label: Tryb spowolniony
+action_export: Eksportuj
+livechat_configuration_channel_command_label: Polecenie bota
+token_label: Etykieta
+livechat_emojis_file: Plik
+livechat_emojis_shortname: Skrócona nazwa
+save: Zapisz
+avatar_set_option_bird: Ptaki
+external_auth_google_oidc_label: Użyj Google
+task_name: Nazwa zadania
+avatar_set_option_cat: Koty
+task_description: Opis
+task_delete: Usuń zadanie
+livechat_configuration_channel_forbidden_words_reason_label: Powód
+livechat_configuration_channel_forbidden_words_label_label: Etykieta
+copied: Skopiowano
+autocolors_label: Automatyczne wykrywanie kolorów
+livechat_configuration_channel_quote_label2: Wiadomości
+action_import: Importuj
+auth_description: "<h3>Uwierzytelnianie</h3>\n"
+poll: Ankieta
+poll_question: Pytanie
+poll_anonymous_results: Anonimowe wyniki
+poll_choice_n: 'Wybór {{N}}:'
