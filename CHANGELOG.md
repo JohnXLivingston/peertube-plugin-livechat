@@ -1,6 +1,6 @@
 # Changelog
 
-## 10.2.0 (Not Released Yet)
+## 10.2.0
 
 ### New features
 
@@ -11,6 +11,7 @@
 ### Minor changes and fixes
 
 * Fix #449: Remove the constraint for custom emojis shortnames to have ":" at the beginning and at the end.
+* Translations updates: french, german, crotian, polish, slovak.
 
 ## 10.1.2
 
