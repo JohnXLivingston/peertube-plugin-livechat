@@ -531,3 +531,23 @@ livechat_configuration_channel_terms_label: Chat Nutzungsbedingungen und Konditi
   des Kanals
 livechat_configuration_channel_terms_desc: "Sie können eine \"Nutzungsbedingungen\"\
   -Nachricht konfigurieren, die Benutzern angezeigt wird, die Ihren Chaträumen beitreten.\n"
+poll_vote_instructions_xmpp: 'Senden Sie eine Nachricht mit einem Ausrufezeichen,
+  gefolgt von Ihrer Wahlnummer, um abzustimmen. Beispiel: !1'
+new_poll: Eine neue Umfrage erstellen
+poll_instructions: Füllen Sie dieses Formular aus und senden Sie es ab, um eine neue
+  Umfrage zu erstellen. Damit wird eine bestehende Umfrage beendet und ersetzt.
+poll_vote_instructions: 'Um abzustimmen, klicken Sie auf Ihre Wahl oder senden Sie
+  eine Nachricht mit einem Ausrufezeichen gefolgt von der Nummer Ihrer Wahl (Beispiel:
+  !1).'
+poll_anonymous_vote_ok: Ihre Stimme wird berücksichtigt. Die Stimmen sind anonym,
+  sie werden den anderen Teilnehmern nicht angezeigt.
+poll: Umfrage
+poll_title: Neue Umfrage
+poll_is_over: Diese Umfrage ist nun beendet.
+poll_question: Frage
+poll_duration: Umfragezeit (in Minuten)
+poll_anonymous_results: Anonyme Ergebnisse
+poll_choice_n: 'Wahl {{N}}:'
+poll_end: 'Die Umfrage endet am:'
+poll_choice_invalid: Diese Wahl ist nicht gültig.
+poll_vote_ok: Ihre Stimme wurde berücksichtigt, die Zähler werden in Kürze aktualisiert.
