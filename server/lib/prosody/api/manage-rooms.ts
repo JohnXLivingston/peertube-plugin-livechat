@@ -64,6 +64,7 @@ async function updateProsodyRoom (
   data: {
     name?: string
     slow_mode_duration?: number
+    moderation_delay?: number
     livechat_muc_terms?: string
     addAffiliations?: Affiliations
     removeAffiliationsFor?: string[]
@@ -92,6 +93,9 @@ async function updateProsodyRoom (
   }
   if (('slow_mode_duration' in data) && data.slow_mode_duration !== undefined) {
     apiData.slow_mode_duration = data.slow_mode_duration
+  }
+  if (('moderation_delay' in data) && data.moderation_delay !== undefined) {
+    apiData.moderation_delay = data.moderation_delay
   }
   if ('livechat_muc_terms' in data) {
     apiData.livechat_muc_terms = data.livechat_muc_terms ?? ''

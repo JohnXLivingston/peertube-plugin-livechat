@@ -97,6 +97,11 @@ local function update_room(event)
       must104 = true;
     end
   end
+  if type(config.moderation_delay) == "number" then
+    if room._data.moderation_delay ~= config.moderation_delay then
+      room._data.moderation_delay = config.moderation_delay;
+    end
+  end
   if (type(config.livechat_muc_terms) == "string") then
     -- to easily detect if the value is given or not, we consider that the caller passes "" when terms must be deleted.
     if set_muc_terms then

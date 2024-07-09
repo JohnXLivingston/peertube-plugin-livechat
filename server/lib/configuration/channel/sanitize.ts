@@ -36,6 +36,9 @@ async function sanitizeChannelConfigurationOptions (
     throw new Error('Invalid data.slowMode data type')
   }
 
+  const moderationData = data.moderation ?? {} // comes with livechat 10.3.0
+  moderationData.delay ??= 0
+
   // mute not present in livechat <= 10.2.0
   const mute = data.mute ?? {}
   mute.anonymous ??= false
@@ -68,6 +71,9 @@ async function sanitizeChannelConfigurationOptions (
     },
     mute: {
       anonymous: _readBoolean(mute, 'anonymous')
+    },
+    moderation: {
+      delay: _readInteger(moderationData, 'delay', 0, 60)
     }
   }
   if (terms !== undefined) {

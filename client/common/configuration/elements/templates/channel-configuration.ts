@@ -220,6 +220,41 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
         </div>
 
         <livechat-configuration-section-header
+          .label=${ptTr(LOC_MODERATION_DELAY)}
+          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_MODERATION_DELAY_DESC, true)}
+          .helpPage=${'documentation/user/streamers/moderation_delay'}>
+        </livechat-configuration-section-header>
+        <div class="form-group">
+          <label>
+            ${ptTr(LOC_MODERATION_DELAY)}
+            <input
+              type="number"
+              name="moderation_delay"
+              class=${classMap(
+                Object.assign(
+                  { 'form-control': true },
+                  el.getInputValidationClass('moderation.delay')
+                )
+              )}
+              min="0"
+              max="60"
+              id="peertube-livechat-moderation-delay"
+              aria-describedby="peertube-livechat-moderation-delay-feedback"
+              @input=${(event: InputEvent) => {
+                  if (event?.target && el.channelConfiguration) {
+                    el.channelConfiguration.configuration.moderation.delay =
+                      Number((event.target as HTMLInputElement).value)
+                  }
+                  el.requestUpdate('channelConfiguration')
+                }
+              }
+              value="${el.channelConfiguration?.configuration.moderation.delay ?? ''}"
+            />
+          </label>
+          ${el.renderFeedback('peertube-livechat-moderation-delay-feedback', 'moderation.delay')}
+        </div>
+
+        <livechat-configuration-section-header
           .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_BOT_OPTIONS_TITLE)}
           .description=${''}
           .helpPage=${'documentation/user/streamers/channel'}>

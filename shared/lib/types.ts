@@ -107,6 +107,9 @@ interface ChannelConfigurationOptions {
     // nonFollowers: boolean (or a number of seconds?)
   }
   terms?: string // comes with Livechat 10.2.0
+  moderation: { // comes with Livechat 10.3.0
+    delay: number
+  }
 }
 
 interface ChannelForbiddenWords {

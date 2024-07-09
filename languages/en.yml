@@ -579,3 +579,11 @@ poll_is_over: This poll is now over.
 poll_choice_invalid: This choice is not valid.
 poll_anonymous_vote_ok: Your vote is taken into account. Votes are anonymous, they will not be shown to other participants.
 poll_vote_ok: Your vote has been taking into account, the counters will be updated in a moment.
+
+moderation_delay: Moderation delay
+livechat_configuration_channel_moderation_delay_desc: |
+  Moderation delay default value:
+  <ul>
+    <li>0: moderation delay disabled</li>
+    <li>Any positive integer: messages will be delayed for X seconds for non-moderator participants, allowing moderators to delete message before any user can read it.</li>
+  </ul>

@@ -34,8 +34,10 @@ export class ChannelDetailsService {
 
     const botConf = channelConfigurationOptions.bot
     const slowModeDuration = channelConfigurationOptions.slowMode.duration
+    const moderationDelay = channelConfigurationOptions.moderation.delay
 
     propertiesError['slowMode.duration'] = []
+    propertiesError['moderation.delay'] = []
 
     if (
       (typeof slowModeDuration !== 'number') ||
@@ -47,6 +49,18 @@ export class ChannelDetailsService {
       slowModeDuration > 1000
     ) {
       propertiesError['slowMode.duration'].push(ValidationErrorType.NotInRange)
+    }
+
+    if (
+      (typeof moderationDelay !== 'number') ||
+      isNaN(moderationDelay)
+    ) {
+      propertiesError['moderation.delay'].push(ValidationErrorType.WrongType)
+    } else if (
+      moderationDelay < 0 ||
+      moderationDelay > 60
+    ) {
+      propertiesError['moderation.delay'].push(ValidationErrorType.NotInRange)
     }
 
     // If !bot.enabled, we don't have to validate these fields:

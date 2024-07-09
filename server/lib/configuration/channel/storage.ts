@@ -53,6 +53,9 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
     mute: {
       anonymous: false
     },
+    moderation: {
+      delay: 0
+    },
     terms: undefined
   }
 }

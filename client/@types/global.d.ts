@@ -130,3 +130,6 @@ declare const LOC_TOKEN_DEFAULT_LABEL: string
 declare const LOC_TOKEN_ACTION_REVOKE_CONFIRM: string
 
 declare const LOC_POLL_VOTE_OK: string
+
+declare const LOC_MODERATION_DELAY: string
+declare const LOC_LIVECHAT_CONFIGURATION_CHANNEL_MODERATION_DELAY_DESC: string
