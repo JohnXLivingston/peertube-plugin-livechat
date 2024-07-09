@@ -1,7 +1,7 @@
 ---
 title: "Moderation"
 description: "Plugin peertube-plugin-livechat advanced moderation features"
-weight: 30
+weight: 300
 chapter: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Some basics"
 description: "Some basics about how to setup and use the chat for your live stream"
-weight: 10
+weight: 100
 chapter: false
 ---
 

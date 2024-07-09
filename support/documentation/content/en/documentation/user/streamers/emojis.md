@@ -1,7 +1,7 @@
 ---
 title: "Custom emojis"
 description: "Plugin peertube-plugin-livechat custom emojis"
-weight: 33
+weight: 330
 chapter: false
 ---
 

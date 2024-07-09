@@ -1,7 +1,7 @@
 ---
 title: "Terms & conditions"
 description: "Configure channel's chat terms & conditions"
-weight: 31
+weight: 310
 chapter: false
 ---
 

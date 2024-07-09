@@ -1,7 +1,7 @@
 ---
 title: "Tasks / To-do lists"
 description: "You can handle tasks and task lists with your moderation team."
-weight: 35
+weight: 350
 chapter: false
 ---
 

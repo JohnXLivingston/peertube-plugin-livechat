@@ -2,6 +2,10 @@
 
 ## 10.3.0 (Not Released Yet)
 
+### New features
+
+* #132: [moderation delay](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/moderation_delay/).
+
 ### Minor changes and fixes
 
 * Translations updates: german.

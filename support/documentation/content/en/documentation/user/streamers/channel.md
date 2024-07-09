@@ -1,7 +1,7 @@
 ---
 title: "Channel configuration"
 description: "Peertube channel chatrooms configuration"
-weight: 20
+weight: 200
 chapter: false
 ---
 

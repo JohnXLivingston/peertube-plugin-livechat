@@ -1,7 +1,7 @@
 ---
 title: "Chat bot"
 description: "Chat bot setup"
-weight: 40
+weight: 400
 chapter: false
 ---
 

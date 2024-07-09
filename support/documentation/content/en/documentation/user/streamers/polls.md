@@ -1,7 +1,7 @@
 ---
 title: "Polls"
 description: "You can create polls to ask viewers their opinion."
-weight: 33
+weight: 330
 chapter: false
 ---
 
