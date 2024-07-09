@@ -249,6 +249,9 @@ class ProsodyConfigContent {
     if (chatTerms) {
       this.muc.set('muc_terms_global', new ConfigEntryValueMultiLineString(chatTerms))
     }
+
+    this.muc.add('modules_enabled', 'muc_moderation_delay')
+    this.muc.add('moderation_delay_form_position', 118)
   }
 
   useAnonymous (autoBanIP: boolean): void {
