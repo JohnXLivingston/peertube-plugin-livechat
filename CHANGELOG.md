@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Translations updates: german.
+
 ## 10.2.0
 
 ### New features
