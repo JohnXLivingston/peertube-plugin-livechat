@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-07-05 13:36+0200\n"
+"POT-Creation-Date: 2024-07-09 16:34+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Hungarian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hu/>\n"
@@ -3111,6 +3111,85 @@ msgid "For streamers"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, no-wrap
+msgid "Plugin peertube-plugin-livechat moderation delay"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, no-wrap
+msgid "Moderation delay"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "This feature comes with the livechat plugin version 10.3.0."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Introduction"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "When this feature is enabled, moderators will see all messages without any delay.  Chat participants won't see that their own messages are delayed."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "Please note that messages sent by moderators will also be delayed, to avoid them to respond to messages that are not even visible by other participants."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, no-wrap
+msgid "Moderation delay option"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This value will apply as a default value for all your channel's chatrooms."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "Setting the value to `0` will disable the feature."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "Setting the value to a positive integer will set the delay, in seconds, to apply to messages.  Please avoid setting the value too high.  Ideally it should not exceed a few seconds (4 or 5 seconds for example)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the moderation delay value in the configuration form."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advanced moderation features"
@@ -3455,14 +3534,6 @@ msgstr ""
 msgid "This feature comes with the livechat plugin version 8.3.0."
 msgstr ""
 
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-#: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "Introduction"
-msgstr ""
-
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "As a streamer, you can choose to rate limit your viewers messages in the chat."
@@ -3507,16 +3578,6 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This value will apply as a default value for all your channel's chatrooms."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "Setting the value to `0` will disable the feature."
 msgstr ""
 
 #. type: Plain text

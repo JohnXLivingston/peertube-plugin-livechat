@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-05 13:36+0200\n"
+"POT-Creation-Date: 2024-07-09 16:34+0200\n"
 "PO-Revision-Date: 2024-07-05 12:03+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3209,6 +3208,96 @@ msgid "For streamers"
 msgstr "Pour les streameur⋅euses"
 
 #. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, fuzzy, no-wrap
+#| msgid "Plugin peertube-plugin-livechat advanced moderation features"
+msgid "Plugin peertube-plugin-livechat moderation delay"
+msgstr "Fonctions de modération avancées du plugin peertube-plugin-livechat"
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, fuzzy, no-wrap
+#| msgid "Moderation"
+msgid "Moderation delay"
+msgstr "Modération"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, fuzzy
+#| msgid "This feature comes with the livechat plugin version 10.1.0."
+msgid "This feature comes with the livechat plugin version 10.3.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.1.0."
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+#: support/documentation/content/en/intro/_index.md
+#, no-wrap
+msgid "Introduction"
+msgstr "Introduction"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "When this feature is enabled, moderators will see all messages without any delay.  Chat participants won't see that their own messages are delayed."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "Please note that messages sent by moderators will also be delayed, to avoid them to respond to messages that are not even visible by other participants."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, fuzzy, no-wrap
+#| msgid "Moderation"
+msgid "Moderation delay option"
+msgstr "Modération"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, fuzzy
+#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
+msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
+msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), vous pouvez définir une valeur pour l'option mode lent :"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, fuzzy
+#| msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr "![Configuration de la chaîne / Mode lent](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "This value will apply as a default value for all your channel's chatrooms."
+msgstr "Cette valeur va s'appliquer comme valeur par défaut pour tous les salons de discussion de votre chaîne."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
+msgid "Setting the value to `0` will disable the feature."
+msgstr "La valeur `0` désactive la fonctionnalité."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "Setting the value to a positive integer will set the delay, in seconds, to apply to messages.  Please avoid setting the value too high.  Ideally it should not exceed a few seconds (4 or 5 seconds for example)."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#, fuzzy
+#| msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the slow mode value in the configuration form."
+msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the moderation delay value in the configuration form."
+msgstr "Pour modifier la valeur d'un salon déjà existant, il suffit d'ouvrir le menu \"configuration\" du salon (en haut de la fenêtre de tchat), et de modifier la valeur du mode lent dans le formulaire de configuration."
+
+#. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advanced moderation features"
@@ -3365,8 +3454,7 @@ msgstr "De là, vous pouvez également vous promouvoir en tant que modérateur�
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 #, no-wrap
 msgid "You can create polls to ask viewers their opinion."
-msgstr ""
-"Vous pouvez créer des sondages pour demander l'avis des spectateur⋅rices."
+msgstr "Vous pouvez créer des sondages pour demander l'avis des spectateur⋅rices."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3383,26 +3471,17 @@ msgstr "Créer un sondage"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "You can create a new poll by using the \"{{% livechat_label new_poll %}}\" action in the chat top menu:"
-msgstr ""
-"Vous pouvez créer un nouveau sondage en utilisant l'action \"{{% "
-"livechat_label new_poll %}}\" dans le menu du tchat :"
+msgstr "Vous pouvez créer un nouveau sondage en utilisant l'action \"{{% livechat_label new_poll %}}\" dans le menu du tchat :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "![Poll form](/peertube-plugin-livechat/images/polls_form.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Formulaire de sondage](/peertube-plugin-livechat/images/polls_form."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Formulaire de sondage](/peertube-plugin-livechat/images/polls_form.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "This poll feature should not be considered as a reliable voting system.  It is easy to cheat.  There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat.  Votes are never fully anonymous, someone having access to the server could see who voted for what choice."
-msgstr ""
-"Cette fonctionnalité de sondage ne doit pas être considérée comme un système "
-"de vote fiable.  Il est facile de tricher.  Aucun mécanisme n'empêche les "
-"utilisateur⋅rices anonymes de voter plusieurs fois en rechargeant simplement "
-"le tchat.  Les votes ne sont jamais totalement anonymes, quelqu'un ayant "
-"accès au serveur peut voir qui a voté pour quel choix."
+msgstr "Cette fonctionnalité de sondage ne doit pas être considérée comme un système de vote fiable.  Il est facile de tricher.  Aucun mécanisme n'empêche les utilisateur⋅rices anonymes de voter plusieurs fois en rechargeant simplement le tchat.  Les votes ne sont jamais totalement anonymes, quelqu'un ayant accès au serveur peut voir qui a voté pour quel choix."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3418,23 +3497,17 @@ msgstr "Remplir les champs du formulaire :"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "\"{{% livechat_label poll_question %}}\": the question to ask to you viewers"
-msgstr ""
-"\"{{% livechat_label poll_question %}}\" : la question à poser aux "
-"spectateur⋅rices"
+msgstr "\"{{% livechat_label poll_question %}}\" : la question à poser aux spectateur⋅rices"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "\"{{% livechat_label poll_duration %}}\": the duration for which viewers can vote"
-msgstr ""
-"\"{{% livechat_label poll_duration %}}\" : durée pendant laquelle les "
-"spectateur⋅rices peuvent voter"
+msgstr "\"{{% livechat_label poll_duration %}}\" : durée pendant laquelle les spectateur⋅rices peuvent voter"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "\"{{% livechat_label poll_anonymous_results %}}\": if checked, votes won't be publicly visible in the chat"
-msgstr ""
-"\"{{% livechat_label poll_anonymous_results %}}\" : si cette case est "
-"cochée, les votes ne seront pas visibles publiquement dans le tchat"
+msgstr "\"{{% livechat_label poll_anonymous_results %}}\" : si cette case est cochée, les votes ne seront pas visibles publiquement dans le tchat"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3449,16 +3522,12 @@ msgstr "Vous devez au moins remplir les deux premier choix."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "Once you submit the form, the poll will instantly start."
-msgstr ""
-"Une fois que vous aurez soumis le formulaire, le sondage commencera "
-"instantanément."
+msgstr "Une fois que vous aurez soumis le formulaire, le sondage commencera instantanément."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "If there was a previous unfinished poll, it will end and its result will be shown."
-msgstr ""
-"Si un sondage précédent était inachevé, il se terminera et son résultat sera "
-"affiché."
+msgstr "Si un sondage précédent était inachevé, il se terminera et son résultat sera affiché."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3470,34 +3539,22 @@ msgstr "Droits d'accès"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "Every room's admins can create a new poll."
-msgstr ""
-"Les administrateur⋅rices de chaque salon peuvent créer un nouveau sondage."
+msgstr "Les administrateur⋅rices de chaque salon peuvent créer un nouveau sondage."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "When you promote someone as room admin or owner, they gets instant access to the \"{{% livechat_label new_poll %}}\" action."
-msgstr ""
-"Lorsque vous promouvez quelqu'un en tant qu'administrateur⋅rice ou "
-"propriétaire du salon, iel obtient un accès instantané à l'action \"{{% "
-"livechat_label new_poll %}}\"."
+msgstr "Lorsque vous promouvez quelqu'un en tant qu'administrateur⋅rice ou propriétaire du salon, iel obtient un accès instantané à l'action \"{{% livechat_label new_poll %}}\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "When you remove admin or owner rights to someone, they can't create new poll. But any existing poll will continue until it ends."
-msgstr ""
-"Lorsque vous retirez les droits d'administrateur⋅rice ou de propriétaire à "
-"quelqu'un, cette personne ne peut plus créer de nouveaux sondages. Mais un "
-"éventuel sondage existant continuera jusqu'à ce qu'il se termine."
+msgstr "Lorsque vous retirez les droits d'administrateur⋅rice ou de propriétaire à quelqu'un, cette personne ne peut plus créer de nouveaux sondages. Mais un éventuel sondage existant continuera jusqu'à ce qu'il se termine."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "Every user that is not muted can vote.  This means that you can prevent anonymous users to vote by using the [\"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" feature](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
-msgstr ""
-"Tous les utilisateur⋅rices qui ne sont pas en sourdine peuvent voter.  Cela "
-"signifie que vous pouvez empêcher les utilisateur⋅rices anonymes de voter en "
-"utilisant la fonctionnalité [\"{{% livechat_label "
-"livechat_configuration_channel_mute_anonymous_label %}}\"](/peertube-"
-"plugin-livechat/fr/documentation/user/streamers/moderation)."
+msgstr "Tous les utilisateur⋅rices qui ne sont pas en sourdine peuvent voter.  Cela signifie que vous pouvez empêcher les utilisateur⋅rices anonymes de voter en utilisant la fonctionnalité [\"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\"](/peertube-plugin-livechat/fr/documentation/user/streamers/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3508,30 +3565,22 @@ msgstr "Flux de travail des sondages"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "When the polls starts, a first message will be sent in the chat, from the account of the user creating the poll."
-msgstr ""
-"Lorsque les sondages commencent, un premier message est envoyé dans le "
-"tchat, à partir du compte de l'utilisateur⋅rice qui a créé le sondage."
+msgstr "Lorsque les sondages commencent, un premier message est envoyé dans le tchat, à partir du compte de l'utilisateur⋅rice qui a créé le sondage."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "A banner will also appear to show the poll, and will be updated regularly with the current votes."
-msgstr ""
-"Une bannière apparaîtra également pour indiquer le sondage en cours, et sera "
-"régulièrement mise à jour avec les votes en cours."
+msgstr "Une bannière apparaîtra également pour indiquer le sondage en cours, et sera régulièrement mise à jour avec les votes en cours."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "![Poll start](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Début du sondage](/peertube-plugin-livechat/images/polls_start."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Début du sondage](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "Viewers can then vote by clicking on their choice, or by sending message like \"!1\" in the chat."
-msgstr ""
-"Les spectateur⋅rices peuvent ensuite voter en cliquant sur leur choix, ou en "
-"envoyant un message du type \"!1\" dans le tchat."
+msgstr "Les spectateur⋅rices peuvent ensuite voter en cliquant sur leur choix, ou en envoyant un message du type \"!1\" dans le tchat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3541,64 +3590,42 @@ msgstr "Le décompte des votes sera mis à jour régulièrement dans la bannièr
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "Viewers can change their vote at any time, just by making a new choice.  Their precedent choice will be replaced by the new one."
-msgstr ""
-"Les spectateur⋅rices peuvent modifier leur vote à tout moment, en faisant un "
-"nouveau choix.  Le choix précédent sera remplacé par le nouveau."
+msgstr "Les spectateur⋅rices peuvent modifier leur vote à tout moment, en faisant un nouveau choix.  Le choix précédent sera remplacé par le nouveau."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "![Poll votes](/peertube-plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Votes](/peertube-plugin-livechat/images/polls_votes."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Votes](/peertube-plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "Anonymous viewers can only vote once they have choosen their nickname."
-msgstr ""
-"Les spectateur⋅rices anonymes ne peuvent voter que lorsqu'iels ont choisi "
-"leur pseudonyme."
+msgstr "Les spectateur⋅rices anonymes ne peuvent voter que lorsqu'iels ont choisi leur pseudonyme."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "If \"{{% livechat_label poll_anonymous_results %}}\" is checked, votes won't be shown to other users.  If unchecked, votes will be publicly visible as you will see message like \"!1\" in the chat."
-msgstr ""
-"Si \"{{% livechat_label poll_anonymous_results %}}\" est coché, les votes ne "
-"seront pas montrés aux autres utilisateur⋅rices.  Si cette option n'est pas "
-"cochée, les votes seront visibles publiquement sous forme de messages du "
-"type \"!1\" dans le tchat."
+msgstr "Si \"{{% livechat_label poll_anonymous_results %}}\" est coché, les votes ne seront pas montrés aux autres utilisateur⋅rices.  Si cette option n'est pas cochée, les votes seront visibles publiquement sous forme de messages du type \"!1\" dans le tchat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "For viewers using XMPP clients or outdated livechat plugin versions, the banner will not be visible.  But they will see the message in the chat and will be able to vote by sending messages with their choices."
-msgstr ""
-"Pour les spectateur⋅rices utilisant des clients XMPP ou des versions "
-"obsolètes du plugin livechat, la bannière ne sera pas visible.  Mais iels "
-"verront le message dans le tchat et pourront voter en envoyant des messages "
-"avec leurs choix."
+msgstr "Pour les spectateur⋅rices utilisant des clients XMPP ou des versions obsolètes du plugin livechat, la bannière ne sera pas visible.  Mais iels verront le message dans le tchat et pourront voter en envoyant des messages avec leurs choix."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "When the poll ends, a new message will be sent in the chat, with the results."
-msgstr ""
-"À la fin du sondage, un nouveau message sera envoyé dans le tchat, avec les "
-"résultats."
+msgstr "À la fin du sondage, un nouveau message sera envoyé dans le tchat, avec les résultats."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "![Poll end](/peertube-plugin-livechat/images/polls_end.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Fin du sondage](/peertube-plugin-livechat/images/polls_end."
-"png?classes=shadow,border&height=200px)"
+msgstr "![Fin du sondage](/peertube-plugin-livechat/images/polls_end.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "The only way to get old polls results is to search for the poll end message in the chat.  For now, polls results are not saved by any other means.  So don't forget to note polls results if you want to keep them."
-msgstr ""
-"Le seul moyen d'obtenir les résultats d'anciens sondages est de rechercher "
-"le message de fin de sondage dans le tchat.  Pour l'instant, les résultats "
-"des sondages ne sont pas sauvegardés par d'autres moyens.  N'oubliez donc "
-"pas de noter les résultats des sondages si vous souhaitez les conserver."
+msgstr "Le seul moyen d'obtenir les résultats d'anciens sondages est de rechercher le message de fin de sondage dans le tchat.  Pour l'instant, les résultats des sondages ne sont pas sauvegardés par d'autres moyens.  N'oubliez donc pas de noter les résultats des sondages si vous souhaitez les conserver."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3616,14 +3643,6 @@ msgstr "Mode lent"
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "This feature comes with the livechat plugin version 8.3.0."
 msgstr "Cette fonctionnalité arrive avec le plugin livechat version 8.3.0."
-
-#. type: Yaml Front Matter Hash Value: title
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-#: support/documentation/content/en/intro/_index.md
-#, no-wrap
-msgid "Introduction"
-msgstr "Introduction"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3670,16 +3689,6 @@ msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/f
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 msgstr "![Configuration de la chaîne / Mode lent](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This value will apply as a default value for all your channel's chatrooms."
-msgstr "Cette valeur va s'appliquer comme valeur par défaut pour tous les salons de discussion de votre chaîne."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "Setting the value to `0` will disable the feature."
-msgstr "La valeur `0` désactive la fonctionnalité."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
