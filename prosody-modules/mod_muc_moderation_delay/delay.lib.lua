@@ -14,8 +14,9 @@ local xmlns_moderated_1 = "urn:xmpp:message-moderate:1";
 local xmlns_retract_1 = "urn:xmpp:message-retract:1";
 local xmlns_st_id = "urn:xmpp:sid:0";
 
-local queued_messages_retracted = {};
+local queued_stanza_id_timers = {};
 
+-- tests if a stanza is a retractation message.
 local function is_retractation_for_stanza_id(stanza)
   -- XEP 0425 was revised in 2023. For now, mod_muc_moderation uses the previous version.
   -- But we will make the code compatible with both.
@@ -40,10 +41,12 @@ local function is_retractation_for_stanza_id(stanza)
   return nil;
 end
 
+-- handler for muc-broadcast-message
 local function handle_broadcast_message(event)
   local room, stanza = event.room, event.stanza;
   local delay = get_moderation_delay(room);
   if delay == nil then
+    -- feature disabled on the room, go for it.
     return;
   end
 
@@ -56,9 +59,10 @@ local function handle_broadcast_message(event)
   local retracted_stanza_id = is_retractation_for_stanza_id(stanza);
   if retracted_stanza_id then
     module:log("debug", "Got a retractation message for %s", retracted_stanza_id);
-    if queued_messages_retracted[retracted_stanza_id] == false then
+    if queued_stanza_id_timers[retracted_stanza_id] then
       module:log("info", "Got a retractation message, for message %s that is currently waiting for broadcast. Cancelling.", retracted_stanza_id);
-      queued_messages_retracted[retracted_stanza_id] = true;
+      timer.stop(queued_stanza_id_timers[retracted_stanza_id]);
+      queued_stanza_id_timers[retracted_stanza_id] = nil;
       -- and we continue...
     end
   end
@@ -91,9 +95,6 @@ local function handle_broadcast_message(event)
   -- * room moderators
   -- * the user that sent the message (if they don't get the echo quickly, their clients could have weird behaviours)
   module:log("debug", "Message %s / %s must be delayed by %i seconds, sending first broadcast wave.", id, stanza_id, delay);
-  if stanza_id then
-    queued_messages_retracted[stanza_id] = false;
-  end
   local moderator_role_value = valid_roles["moderator"];
   local cond_func = function (nick, occupant)
     if valid_roles[occupant.role or "none"] >= moderator_role_value then
@@ -108,22 +109,16 @@ local function handle_broadcast_message(event)
   local cloned_stanza = st.clone(stanza); -- we must clone, to send a copy for the second wave.
   room:broadcast(stanza, cond_func);
 
-  timer.add_task(delay, function ()
-    if stanza_id then
-      if queued_messages_retracted[stanza_id] == true then
-        module:log("info", "Message %s was retracted during the delay, cancelling the broadcast.", stanza_id);
-        queued_messages_retracted[stanza_id] = nil;
-        return;
-      end
-
-      queued_messages_retracted[stanza_id] = nil;
-    end
-  
+  local task = timer.add_task(delay, function ()
     module:log("debug", "Message %s has been delayed, sending to remaining participants.", id);
     room:broadcast(cloned_stanza, function (nick, occupant)
       return not cond_func(nick, occupant);
     end);
   end);
+  if stanza_id then
+    -- store it, so we can stop timer if there is a retractation.
+    queued_stanza_id_timers[stanza_id] = task;
+  end
 
   return true; -- stop the default broadcast_message processing.
 end
