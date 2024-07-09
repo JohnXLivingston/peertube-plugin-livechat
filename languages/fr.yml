@@ -567,3 +567,9 @@ poll_vote_ok: Votre vote a été pris en compte, les compteurs seront mis à jou
 poll_vote_instructions_xmpp: Envoyez un message avec un point d'exclamation suivi
   du numéro de votre choix pour voter. Exemple : !1
 poll: Sondage
+livechat_configuration_channel_moderation_delay_desc: "Valeur par défaut du délai
+  de modération :\n<ul>\n  <li>0 : délai de modération désactivé</li>\n  <li>Tout
+  nombre entier positif : les messages seront retardés de X secondes pour les participant⋅es
+  non modérateur⋅rices, ce qui permet à ces derniers de supprimer les messages avant
+  qu'un utilisateur⋅rice ne puisse le lire.</li>\n</ul>\n"
+moderation_delay: Délai de modération
