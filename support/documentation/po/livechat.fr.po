@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-07-10 11:24+0200\n"
-"PO-Revision-Date: 2024-07-09 14:43+0000\n"
+"PO-Revision-Date: 2024-07-10 09:47+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3290,6 +3291,11 @@ msgstr "Pour modifier la valeur d'un salon déjà existant, il suffit d'ouvrir l
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants.  However, messages sent after they joined will be delayed correctly."
 msgstr ""
+"Actuellement, cette fonctionnalité présente un bogue connu : les utilisateur⋅"
+"rices qui rejoignent le tchat recevront tous les messages, même ceux qui "
+"sont encore en attente pour les autres participant⋅es.  Cependant, les "
+"messages envoyés après qu'iels aient rejoint le chat seront retardés "
+"correctement."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
