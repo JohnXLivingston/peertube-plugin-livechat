@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-07-09 16:34+0200\n"
+"POT-Creation-Date: 2024-07-10 11:24+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Greek <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/el/>\n"
@@ -3187,6 +3187,11 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the moderation delay value in the configuration form."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants.  However, messages sent after they joined will be delayed correctly."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description

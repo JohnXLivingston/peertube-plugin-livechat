@@ -33,3 +33,8 @@ Please avoid setting the value too high.
 Ideally it should not exceed a few seconds (4 or 5 seconds for example).
 
 To modify the value for an already existing room, just open the room "configuration" menu (on top of the chat window), and change the moderation delay value in the configuration form.
+
+{{% notice warning %}}
+Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants.
+However, messages sent after they joined will be delayed correctly.
+{{% /notice %}}

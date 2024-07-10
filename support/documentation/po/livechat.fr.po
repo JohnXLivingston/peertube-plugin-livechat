@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-09 16:34+0200\n"
+"POT-Creation-Date: 2024-07-10 11:24+0200\n"
 "PO-Revision-Date: 2024-07-09 14:43+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3237,27 +3236,17 @@ msgstr "Introduction"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants."
-msgstr ""
-"En tant que streameur⋅euse, vous pouvez choisir d'appliquer un délai aux "
-"messages dans le tchat, afin de laisser un peu de temps aux modérateur⋅rices "
-"pour supprimer des messages avant même qu'ils ne soient lus par les autres "
-"participant⋅es."
+msgstr "En tant que streameur⋅euse, vous pouvez choisir d'appliquer un délai aux messages dans le tchat, afin de laisser un peu de temps aux modérateur⋅rices pour supprimer des messages avant même qu'ils ne soient lus par les autres participant⋅es."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "When this feature is enabled, moderators will see all messages without any delay.  Chat participants won't see that their own messages are delayed."
-msgstr ""
-"Lorsque cette fonction est activée, les modérateur⋅rices voient tous les "
-"messages sans délai.  Les participant⋅es au tchat ne verront pas que leurs "
-"propres messages sont retardés."
+msgstr "Lorsque cette fonction est activée, les modérateur⋅rices voient tous les messages sans délai.  Les participant⋅es au tchat ne verront pas que leurs propres messages sont retardés."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Please note that messages sent by moderators will also be delayed, to avoid them to respond to messages that are not even visible by other participants."
-msgstr ""
-"Veuillez noter que les messages envoyés par les modérateur⋅rices seront "
-"également retardés, afin d'éviter qu'ils ne répondent à des messages qui ne "
-"sont même pas encore visibles par les autres participant⋅es."
+msgstr "Veuillez noter que les messages envoyés par les modérateur⋅rices seront également retardés, afin d'éviter qu'ils ne répondent à des messages qui ne sont même pas encore visibles par les autres participant⋅es."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3268,18 +3257,12 @@ msgstr "Option de délai de modération"
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
-msgstr ""
-"Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/"
-"documentation/user/streamers/channel), vous pouvez définir une valeur pour "
-"l'option \"{{% livechat_label moderation_delay %}}\" :"
+msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), vous pouvez définir une valeur pour l'option \"{{% livechat_label moderation_delay %}}\" :"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Configuration de la chaîne / Délai de modération](/peertube-"
-"plugin-livechat/images/moderation_delay_channel_option."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Configuration de la chaîne / Délai de modération](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3296,19 +3279,17 @@ msgstr "La valeur `0` désactive la fonctionnalité."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Setting the value to a positive integer will set the delay, in seconds, to apply to messages.  Please avoid setting the value too high.  Ideally it should not exceed a few seconds (4 or 5 seconds for example)."
-msgstr ""
-"Fixer cette valeur à un nombre entier positif permet de régler le délai, en "
-"secondes, à appliquer aux messages.  Évitez de fixer une valeur trop "
-"élevée.  Idéalement, elle ne devrait pas dépasser quelques secondes (4 ou 5 "
-"secondes par exemple)."
+msgstr "Fixer cette valeur à un nombre entier positif permet de régler le délai, en secondes, à appliquer aux messages.  Évitez de fixer une valeur trop élevée.  Idéalement, elle ne devrait pas dépasser quelques secondes (4 ou 5 secondes par exemple)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the moderation delay value in the configuration form."
+msgstr "Pour modifier la valeur d'un salon déjà existant, il suffit d'ouvrir le menu \"configuration\" du salon (en haut de la fenêtre de tchat), et de modifier la valeur du délai de modération dans le formulaire de configuration."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+msgid "Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants.  However, messages sent after they joined will be delayed correctly."
 msgstr ""
-"Pour modifier la valeur d'un salon déjà existant, il suffit d'ouvrir le menu "
-"\"configuration\" du salon (en haut de la fenêtre de tchat), et de modifier "
-"la valeur du délai de modération dans le formulaire de configuration."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
