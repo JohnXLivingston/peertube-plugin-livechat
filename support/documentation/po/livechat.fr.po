@@ -4041,7 +4041,7 @@ msgstr "Les utilisateur⋅rices peuvent masquer les conditions d'utilisation.  D
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-msgid "If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, comming from a \"Peertube\" account.  When you update terms, they will receive a new message with the update terms content."
+msgid "If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, coming from a \"Peertube\" account.  When you update terms, they will receive a new message with the update terms content."
 msgstr "Si votre instance Peertube permet de rejoindre le tchat avec des [clients XMPP](https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/), les utilisateur⋅rices utilisant ces clients verront les conditions comme des messages de tchat provenant d'un compte \"Peertube\".  Lorsque vous mettez à jour les conditions, iels recevront un nouveau message avec le contenu des conditions d'utilisation mis à jour."
 
 #. type: Yaml Front Matter Hash Value: description

@@ -106,7 +106,7 @@ Note: Standards XMPP clients won't be able to show the progress.
 When a user joins the MUC, a similar message will be sent to this user (and this user only, to the new occupant session to be more specific).
 This is done so that any compatible client can immediatly show the poll.
 
-Note: clients should ignored `x-poll` data from archived messages, and only consider data comming from unarchived messages.
+Note: clients should ignored `x-poll` data from archived messages, and only consider data coming from unarchived messages.
 Otherwise they could show some outdated data.
 
 ### Poll end
@@ -162,4 +162,4 @@ If so, and if message are not archived, it creates or updates the poll banner.
 
 When clicking on a choice in the banner, it just sends a message in the chat ("!1" for example).
 
-As the backend does no localization, it also translate on the fly the english sentences comming from the backend (in the form definition, in poll start/end message, and in bounce/error messages).
+As the backend does no localization, it also translate on the fly the english sentences coming from the backend (in the form definition, in poll start/end message, and in bounce/error messages).

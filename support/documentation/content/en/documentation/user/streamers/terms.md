@@ -42,6 +42,6 @@ Users can hide the terms & conditions.
 When doing so, terms won't be shown again, unless you change the content.
 
 {{% notice info %}}
-If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, comming from a "Peertube" account.
+If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, coming from a "Peertube" account.
 When you update terms, they will receive a new message with the update terms content.
 {{% /notice %}}
