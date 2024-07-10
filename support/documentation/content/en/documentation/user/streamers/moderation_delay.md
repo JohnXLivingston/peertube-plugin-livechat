@@ -38,3 +38,9 @@ To modify the value for an already existing room, just open the room "configurat
 Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants.
 However, messages sent after they joined will be delayed correctly.
 {{% /notice %}}
+
+## In the chat
+
+As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime.
+
+![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)

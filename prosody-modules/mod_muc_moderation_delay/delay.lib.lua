@@ -2,11 +2,13 @@
 -- SPDX-License-Identifier: AGPL-3.0-only
 local st = require "util.stanza";
 local timer = require "util.timer";
+local get_time = require "util.time".now;
 local get_moderation_delay = module:require("config").get_moderation_delay;
 
 local muc_util = module:require "muc/util";
 local valid_roles = muc_util.valid_roles;
 
+local moderation_delay_tag = "moderation-delay";
 local xmlns_fasten = "urn:xmpp:fasten:0";
 local xmlns_moderated_0 = "urn:xmpp:message-moderate:0";
 local xmlns_retract_0 = "urn:xmpp:message-retract:0";
@@ -96,23 +98,44 @@ local function handle_broadcast_message(event)
   -- * the user that sent the message (if they don't get the echo quickly, their clients could have weird behaviours)
   module:log("debug", "Message %s / %s must be delayed by %i seconds, sending first broadcast wave.", id, stanza_id, delay);
   local moderator_role_value = valid_roles["moderator"];
-  local cond_func = function (nick, occupant)
+
+  local cloned_stanza = st.clone(stanza); -- we must clone, to send a copy for the second wave.
+
+  -- first of all, if the initiator occupant is not moderator, me must send to them.
+  -- (delaying the echo message could have some quircks in some xmpp clients)
+  if stanza.attr.from then
+    local from_occupant = room:get_occupant_by_nick(stanza.attr.from);
+    if from_occupant and valid_roles[from_occupant.role or "none"] < moderator_role_value then
+      module:log("debug", "Message %s / %s must be sent separatly to it initialior %s.", id, stanza_id, delay, stanza.attr.from);
+      room:route_to_occupant(from_occupant, stanza);
+    end
+  end
+
+  -- adding a tag, so that moderators can know that this message is delayed.
+  stanza:tag(moderation_delay_tag, {
+    delay = "" .. delay;
+    waiting = string.format("%i", get_time() + delay);
+  }):up();
+
+  -- then, sending to moderators (and only moderators):
+  room:broadcast(stanza, function (nick, occupant)
     if valid_roles[occupant.role or "none"] >= moderator_role_value then
       return true;
     end
-    if nick == stanza.attr.from then
-      return true;
-    end
     return false;
-  end;
-
-  local cloned_stanza = st.clone(stanza); -- we must clone, to send a copy for the second wave.
-  room:broadcast(stanza, cond_func);
+  end);
 
   local task = timer.add_task(delay, function ()
     module:log("debug", "Message %s has been delayed, sending to remaining participants.", id);
     room:broadcast(cloned_stanza, function (nick, occupant)
-      return not cond_func(nick, occupant);
+      if valid_roles[occupant.role or "none"] >= moderator_role_value then
+        return false;
+      end
+      if nick == stanza.attr.from then
+        -- we already sent it to them (because they are moderator, or because we sent them separately)
+        return false;
+      end
+      return true;
     end);
   end);
   if stanza_id then

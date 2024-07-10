@@ -20,6 +20,7 @@ import { livechatSpecificsPlugin } from './lib/plugins/livechat-specific'
 import { livechatViewerModePlugin } from './lib/plugins/livechat-viewer-mode'
 import { livechatMiniMucHeadPlugin } from './lib/plugins/livechat-mini-muc-head'
 import { livechatEmojisPlugin } from './lib/plugins/livechat-emojis'
+import { moderationDelayPlugin } from './lib/plugins/moderation-delay'
 
 declare global {
   interface Window {
@@ -30,6 +31,10 @@ declare global {
       }
       emojis: any
       livechatDisconnect?: Function
+      env: {
+        html: Function
+        sizzle: Function
+      }
     }
     initConversePlugins: typeof initConversePlugins
     initConverse: typeof initConverse
@@ -66,6 +71,8 @@ function initConversePlugins (peertubeEmbedded: boolean): void {
 
   // Viewer mode (anonymous accounts, before they have chosen their nickname).
   converse.plugins.add('livechatViewerModePlugin', livechatViewerModePlugin)
+
+  converse.plugins.add('converse-moderation-delay', moderationDelayPlugin)
 }
 window.initConversePlugins = initConversePlugins
 
