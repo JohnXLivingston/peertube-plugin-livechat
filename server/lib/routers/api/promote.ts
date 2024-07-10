@@ -20,7 +20,7 @@ async function initPromoteApiRouter (options: RegisterServerOptions, router: Rou
         const user = await options.peertubeHelpers.user.getAuthUser(res)
 
         if (!user || !await isUserAdminOrModerator(options, res)) {
-          logger.warn('Current user tries to access the promote API for which he has no right.')
+          logger.warn('Current user tries to access the promote API for which they has no right.')
           res.sendStatus(403)
           return
         }

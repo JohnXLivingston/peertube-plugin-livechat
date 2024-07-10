@@ -28,7 +28,7 @@ const got = require('got')
  * - server B: server that follows ours (or used to watch V, without following A)
  * - user from B connect to the B XMPP server
  * - server B has server A connection informations (got it using ActivityPub)
- * - but, when using Websocket S2S, server A needs information from B, that he never receives
+ * - but, when using Websocket S2S, server A needs information from B, that it never receives
  *
  * Indeed, the XMPP S2S dialback mecanism will try to connect back to
  * server A, and transmit a secret key, to ensure that all incomming connection

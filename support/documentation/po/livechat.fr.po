@@ -3342,7 +3342,7 @@ msgstr "Vous pouvez accéder aux paramètres de la salle et aux outils de modér
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
+msgid "The video owner will be owner of the chat room.  This means they can configure the room, delete it, promote other users as admins, ..."
 msgstr "Le⋅a propriétaire de la vidéo sera le⋅a propriétaire du salon de discussion.  Cela signifie qu'iel peut configurer le salon, le supprimer, promouvoir d'autres utilisateur⋅rices en tant qu'administrateur⋅rices, ..."
 
 #. type: Plain text

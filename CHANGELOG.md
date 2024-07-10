@@ -759,7 +759,7 @@ Moreover, they don't seem to be used much.
 ### Features
 
 * Builtin prosody use a working dir provided by Peertube (needs Peertube >= 3.2.0)
-* Starting with Peertube 3.2.0, builtin prosody save room history on server. So when a user connects, he can get previously send messages.
+* Starting with Peertube 3.2.0, builtin prosody save room history on server. So when a user connects, they can get previously send messages.
 * Starting with Peertube 3.2.0, builtin prosody also activate mod_muc_moderation, enabling moderators to moderate messages.
 * Prosody log level will be the same as the Peertube's one.
 * Prosody log rotation every 24 hour.
@@ -796,7 +796,7 @@ Moreover, they don't seem to be used much.
 ## v2.1.3
 
 * Fix: 2.1.0 was in fact correct... Did not work on my preprod env because of... a Livebox bug...
-* Fix: if the video owner is already owner of the chatroom, he should not be downgraded to admin.
+* Fix: if the video owner is already owner of the chatroom, they should not be downgraded to admin.
 
 ## v2.1.2
 

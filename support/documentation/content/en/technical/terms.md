@@ -15,7 +15,7 @@ The `mod_muc_peertubelivechat_terms` prosody modules handles the terms configura
 It has a configuration option for the global terms.
 It also adds muc terms in the room data.
 
-When a new occupant session is opened, this modules sends him messages containing the global and muc terms (if set).
+When a new occupant session is opened, this modules sends them messages containing the global and muc terms (if set).
 
 Here is an example of sent messages:
 

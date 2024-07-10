@@ -329,7 +329,7 @@ module:hook("muc-room-destroyed", function(event)
 end);
 
 -- When a user lose its admin/owner affilation, and is still subscribed to the node,
--- we must unsubscribe him.
+-- we must unsubscribe them.
 module:hook("muc-set-affiliation", function(event)
 	local previous_affiliation = event.previous_affiliation;
 	local new_affiliation = event.affiliation;
@@ -374,7 +374,7 @@ module:hook("muc-occupant-left", function (event)
 
 	module:log(
 		"debug",
-		"Occupant %q has left room %q, we must unsubscribe him/her for pubsub nodes.",
+		"Occupant %q has left room %q, we must unsubscribe them for pubsub nodes.",
 		occupant.bare_jid, room_jid
 	);
 	for node in pairs(service.nodes) do

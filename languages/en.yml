@@ -243,7 +243,7 @@ prosody_peertube_uri_description: |
 prosody_muc_log_by_default_label: "Log rooms content by default"
 prosody_muc_log_by_default_description: |
   If checked, room contents will be saved by default.
-  Any user who joins a room will see what was written before he joins.<br>
+  Any user who joins a room will see what was written before they joins.<br>
   Please note that it is always possible to enable/disable the content
   archiving for a specific room, by editing its properties.
 

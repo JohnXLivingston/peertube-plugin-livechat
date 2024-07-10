@@ -85,7 +85,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     if (!(await fs.promises.stat(settings['prosody-certificates-dir'] as string)).isDirectory()) {
       // We can throw an exception here...
       // Because if the user input a wrong directory, the plugin will not register,
-      // and he will never be able to fix the conf
+      // and they will never be able to fix the conf.
       logger.error('Certificate directory does not exist or is not a directory')
       certsDir = undefined
     } else {

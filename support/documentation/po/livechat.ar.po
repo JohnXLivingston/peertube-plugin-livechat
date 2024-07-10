@@ -3245,7 +3245,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
+msgid "The video owner will be owner of the chat room.  This means they can configure the room, delete it, promote other users as admins, ..."
 msgstr ""
 
 #. type: Plain text

@@ -57,7 +57,7 @@ let singleton: LivechatProsodyAuth | undefined
  *
  * The livechat tokens password are encrypted in data files.
  * The associated secret key is in the database.
- * This is to ensure an additional security level: if an attacker has access to file system, he also must have access
+ * This is to ensure an additional security level: if an attacker has access to file system, they also must have access
  * to DB to get the secret key and decrypt passwords.
  */
 export class LivechatProsodyAuth {

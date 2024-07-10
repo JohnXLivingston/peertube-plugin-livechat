@@ -41,7 +41,7 @@ function getCheckConfigurationChannelMiddleware (options: RegisterServerOptions)
     } else if (await isUserAdminOrModerator(options, res)) {
       logger.debug('Current user is an instance moderator or admin')
     } else {
-      logger.warn('Current user tries to access a channel for which he has no right.')
+      logger.warn('Current user tries to access a channel for which they has no right.')
       res.sendStatus(403)
       return
     }

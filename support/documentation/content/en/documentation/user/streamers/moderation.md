@@ -27,7 +27,7 @@ You can access room settings and moderation tools using the [chat dropdown menu]
 
 {{% notice tip %}}
 The video owner will be owner of the chat room.
-This means he can configure the room, delete it, promote other users as admins, ...
+This means they can configure the room, delete it, promote other users as admins, ...
 {{% /notice %}}
 
 {{% notice tip %}}

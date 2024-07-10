@@ -171,7 +171,7 @@ async function generateAvatars (part) {
 
 async function generateBotsAvatars () {
   {
-    // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+    // Moderation bot avatar: choosing some parts, and turning it so it is facing left.
     const inputDir = path.join('./assets/images/avatars/', 'sepia')
     const botOutputDir = './dist/server/bot_avatars/sepia/'
     fs.mkdirSync(botOutputDir, { recursive: true })
@@ -196,7 +196,7 @@ async function generateBotsAvatars () {
   }
 
   {
-    // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+    // Moderation bot avatar: choosing some parts, and turning it so it is facing left.
     const inputDir = path.join('./assets/images/avatars/', 'cat')
     const botOutputDir = './dist/server/bot_avatars/cat/'
     fs.mkdirSync(botOutputDir, { recursive: true })
@@ -220,7 +220,7 @@ async function generateBotsAvatars () {
   }
 
   {
-    // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+    // Moderation bot avatar: choosing some parts, and turning it so it is facing left.
     const inputDir = path.join('./assets/images/avatars/', 'bird')
     const botOutputDir = './dist/server/bot_avatars/bird/'
     fs.mkdirSync(botOutputDir, { recursive: true })
@@ -246,7 +246,7 @@ async function generateBotsAvatars () {
   }
 
   {
-    // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+    // Moderation bot avatar: choosing some parts, and turning it so it is facing left.
     const inputDir = './assets/images/avatars/fenec'
     const botOutputDir = './dist/server/bot_avatars/fenec/'
     fs.mkdirSync(botOutputDir, { recursive: true })
@@ -273,7 +273,7 @@ async function generateBotsAvatars () {
   }
 
   {
-    // Moderation bot avatar: choosing some parts, and turning it so he is facing left.
+    // Moderation bot avatar: choosing some parts, and turning it so it is facing left.
     const inputDir = './assets/images/avatars/abstract'
     const botOutputDir = './dist/server/bot_avatars/abstract/'
     fs.mkdirSync(botOutputDir, { recursive: true })
