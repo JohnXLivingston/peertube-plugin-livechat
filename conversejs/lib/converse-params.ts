@@ -96,6 +96,7 @@ function defaultConverseParams (
     prune_messages_above: 100, // only keep 100 message in history.
     pruning_behavior: 'unscrolled',
     colorize_username: true,
+    send_chat_markers: [],
 
     // This is a specific settings, that is used in ConverseJS customization, to force avatars loading in readonly mode.
     livechat_load_all_vcards: !!forceReadonly,

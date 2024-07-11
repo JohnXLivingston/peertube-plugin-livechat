@@ -9,6 +9,7 @@
 ### Minor changes and fixes
 
 * Translations updates: german.
+* Performance: don't send markers, even if requested by the sender.
 
 ## 10.2.0
 
