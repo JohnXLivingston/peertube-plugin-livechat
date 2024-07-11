@@ -42,7 +42,7 @@ export const moderationDelayPlugin = {
 
           // Ok... We will add some info about how many remains...
           r.pretty_time = window.converse.env.html`
-            ${r.pretty_time}&nbsp;-&nbsp;${Math.round(remains)}⏱
+            ${r.pretty_time}<span aria-hidden="true">&nbsp;-&nbsp;${Math.round(remains)}⏱</span>
           `
           // and we must update in 1 second...
           setTimeout(() => this.requestUpdate(), 1000)
