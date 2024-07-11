@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-07-10 16:54+0200\n"
-"PO-Revision-Date: 2024-07-10 09:47+0000\n"
+"PO-Revision-Date: 2024-07-11 07:38+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3293,22 +3294,24 @@ msgstr "Actuellement, cette fonctionnalité présente un bogue connu : les uti
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy, no-wrap
-#| msgid "Share the chat"
+#, no-wrap
 msgid "In the chat"
-msgstr "Partager le tchat"
+msgstr "Dans le tchat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime."
 msgstr ""
+"En tant que modérateur⋅rice, vous verrez le temps restant (en secondes) "
+"avant que le message ne soit diffusé, juste à côté de l'horodatage du "
+"message."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
-msgstr "![Configuration de la chaîne / Délai de modération](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Timer du délai de modération](/peertube-plugin-livechat/images/"
+"moderation_delay_timer.png?classes=shadow,border)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
