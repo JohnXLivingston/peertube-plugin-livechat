@@ -551,3 +551,9 @@ poll_choice_n: 'Wahl {{N}}:'
 poll_end: 'Die Umfrage endet am:'
 poll_choice_invalid: Diese Wahl ist nicht gültig.
 poll_vote_ok: Ihre Stimme wurde berücksichtigt, die Zähler werden in Kürze aktualisiert.
+moderation_delay: Moderationsverzögerung
+livechat_configuration_channel_moderation_delay_desc: "Standardwert der Moderationsverzögerung:\n\
+  <ul>\n  <li>0: Moderationsverzögerung deaktiviert</li>\n  <li>Beliebige positive
+  ganze Zahl: Nachrichten werden für Nicht-Moderator-Teilnehmer um X Sekunden verzögert,
+  so dass Moderatoren die Nachricht löschen können, bevor ein anderer Benutzer sie
+  lesen kann.</li>\n</ul>\n"
