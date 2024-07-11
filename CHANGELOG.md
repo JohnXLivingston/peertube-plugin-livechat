@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Moderation delay: fix accessibility on the timer shown to moderators.
+
 ## 10.3.0
 
 ### New features
