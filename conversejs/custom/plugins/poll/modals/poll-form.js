@@ -4,7 +4,7 @@
 
 import { __ } from 'i18n'
 import BaseModal from 'plugins/modal/modal.js'
-import { api } from '@converse/headless/core'
+import { api } from '@converse/headless'
 import { modal_close_button as ModalCloseButton } from 'plugins/modal/templates/buttons.js'
 import { html } from 'lit'
 

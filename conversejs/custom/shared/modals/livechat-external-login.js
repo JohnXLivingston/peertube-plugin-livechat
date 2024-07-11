@@ -4,7 +4,7 @@
 
 import { __ } from 'i18n'
 import BaseModal from 'plugins/modal/modal.js'
-import { api } from '@converse/headless/core'
+import { api } from '@converse/headless'
 import { html } from 'lit'
 import 'livechat-external-login-content.js'
 

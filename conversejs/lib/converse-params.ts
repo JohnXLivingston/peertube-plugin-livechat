@@ -97,6 +97,7 @@ function defaultConverseParams (
     pruning_behavior: 'unscrolled',
     colorize_username: true,
     send_chat_markers: [],
+    reuse_scram_keys: false, // for now we don't use this.
 
     // This is a specific settings, that is used in ConverseJS customization, to force avatars loading in readonly mode.
     livechat_load_all_vcards: !!forceReadonly,

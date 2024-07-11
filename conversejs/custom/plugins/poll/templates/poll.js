@@ -63,7 +63,7 @@ function _tplChoice (el, currentPoll, choice, canVote) {
         <div class="livechat-progress-bar">
           <div
             role="progressbar"
-            style="width: ${percent}%;"
+            style=${'width: ' + percent + '%;'}
             aria-valuenow="${percent}" aria-valuemin="0" aria-valuemax="100"
           ></div>
           <p>

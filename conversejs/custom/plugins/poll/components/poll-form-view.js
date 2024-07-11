@@ -4,7 +4,7 @@
 import { XMLNS_POLL } from '../constants.js'
 import { tplPollForm } from '../templates/poll-form.js'
 import { CustomElement } from 'shared/components/element.js'
-import { converse, api } from '@converse/headless/core'
+import { converse, api } from '@converse/headless'
 import { webForm2xForm } from '@converse/headless/utils/form'
 import { __ } from 'i18n'
 import '../styles/poll-form.scss'

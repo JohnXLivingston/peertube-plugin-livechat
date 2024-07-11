@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { __ } from 'i18n'
-import { _converse, api } from '@converse/headless/core'
+import { _converse, api } from '@converse/headless'
 import { html } from 'lit'
 import tplMucBottomPanel from '../../src/plugins/muc-views/templates/muc-bottom-panel.js'
 import { CustomElement } from 'shared/components/element.js'

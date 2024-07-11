@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { XMLNS_POLL } from './constants.js'
-import { _converse, api } from '../../../src/headless/core.js'
+import { _converse, api } from '../../../src/headless/index.js'
 import { __ } from 'i18n'
 
 export function getHeadingButtons (view, buttons) {

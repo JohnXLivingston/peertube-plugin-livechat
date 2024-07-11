@@ -4,7 +4,7 @@
 
 import { XMLNS_TASKLIST, XMLNS_TASK } from './constants.js'
 import { PubSubManager } from '../../shared/lib/pubsub-manager.js'
-import { converse, _converse, api } from '../../../src/headless/core.js'
+import { converse, _converse, api } from '../../../src/headless/index.js'
 import { __ } from 'i18n'
 
 export function getHeadingButtons (view, buttons) {

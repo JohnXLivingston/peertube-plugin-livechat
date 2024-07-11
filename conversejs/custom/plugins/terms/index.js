@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { converse, api } from '../../../src/headless/core.js'
+import { converse, api } from '../../../src/headless/index.js'
 import './components/muc-terms.js'
 
 const { sizzle } = converse.env

@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { _converse, converse } from '../../../src/headless/core.js'
+import { _converse, converse } from '../../../src/headless/index.js'
 import { ChatRoomTaskLists } from './task-lists.js'
 import { ChatRoomTaskList } from './task-list.js'
 import { ChatRoomTasks } from './tasks.js'

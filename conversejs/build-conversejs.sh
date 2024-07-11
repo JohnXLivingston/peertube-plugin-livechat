@@ -15,10 +15,10 @@ set -x
 
 # Set CONVERSE_VERSION and CONVERSE_REPO to select which repo and tag/commit/branch use.
 # Defaults values:
-CONVERSE_VERSION="v10.1.6"
+CONVERSE_VERSION="v11.0.0"
 CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 # You can eventually set CONVERSE_COMMIT to a specific commit ID, if you want to apply some patches.
-CONVERSE_COMMIT=""
+CONVERSE_COMMIT="ef86863cbd983f0c2de6c3b81105800bcbb804d4"
 
 # 2014-01-16: we are using a custom version, to wait for some PR to be apply upstream.
 # This version includes following changes:
@@ -38,9 +38,9 @@ CONVERSE_COMMIT=""
 # - New config option [colorize_username](https://conversejs.org/docs/html/configuration.html#colorize_username)
 # - New loadEmojis hook, to customize emojis at runtime.
 # - Fix custom emojis path when assets_path is not the default path.
-CONVERSE_VERSION="livechat-10.1.0"
-# CONVERSE_COMMIT="4402fcc3fc60f6c9334f86528c33a0b463371d12"
-CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
+# CONVERSE_VERSION="livechat-10.1.0"
+# # CONVERSE_COMMIT="4402fcc3fc60f6c9334f86528c33a0b463371d12"
+# CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"

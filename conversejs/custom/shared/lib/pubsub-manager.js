@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { converse, _converse, api } from '../../../src/headless/core.js'
+import { converse, _converse, api } from '../../../src/headless/index.js'
 const { $build, Strophe, $iq, sizzle } = converse.env
 
 /**
@@ -50,7 +50,7 @@ export class PubSubManager {
   async start () {
     // FIXME: handle errors. Find a way to display to user that this failed.
 
-    this.stanzaHandler = _converse.connection.addHandler(
+    this.stanzaHandler = api.connection.get().addHandler(
       (message) => {
         try {
           this._handleMessage(message)
@@ -79,7 +79,7 @@ export class PubSubManager {
     // Note: no need to unsubscribe from the pubsub node, the backend will do when users leave the room.
 
     if (this.stanzaHandler) {
-      _converse.connection.deleteHandler(this.stanzaHandler)
+      api.connection.get().deleteHandler(this.stanzaHandler)
       this.stanzaHandler = undefined
     }
   }

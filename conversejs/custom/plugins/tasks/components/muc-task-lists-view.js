@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { CustomElement } from 'shared/components/element.js'
-import { api } from '@converse/headless/core'
+import { api } from '@converse/headless'
 import tplMucTaskLists from '../templates/muc-task-lists'
 import { __ } from 'i18n'
 

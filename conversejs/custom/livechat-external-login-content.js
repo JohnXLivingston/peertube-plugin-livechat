@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { api } from '@converse/headless/core.js'
+import { api } from '@converse/headless/index.js'
 import { CustomElement } from 'shared/components/element.js'
 import { tplExternalLoginModal } from 'templates/livechat-external-login-modal.js'
 import { __ } from 'i18n'
