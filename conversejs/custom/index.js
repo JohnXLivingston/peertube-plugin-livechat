@@ -8,12 +8,11 @@
  * @description This files will override the original ConverseJS index.js file.
  */
 
-import '@converse/headless'
 import './i18n/index.js'
 import 'shared/registry.js'
 import { CustomElement } from 'shared/components/element'
 import { VIEW_PLUGINS } from './shared/constants.js'
-import { _converse, converse } from '@converse/headless/core'
+import { _converse, converse } from '@converse/headless'
 
 import 'shared/styles/index.scss'
 
@@ -50,6 +49,9 @@ import '../custom/plugins/terms/index.js'
 import '../custom/plugins/poll/index.js'
 /* END: Removable components */
 
+// Running some specific livechat patches:
+import '../custom/livechat-patch-vcard.js'
+
 import { CORE_PLUGINS } from './headless/shared/constants.js'
 import { ROOM_FEATURES } from './headless/plugins/muc/constants.js'
 // We must add our custom plugins to CORE_PLUGINS (so it is white listed):
@@ -61,7 +63,7 @@ CORE_PLUGINS.push('livechat-converse-poll')
 // (see headless/plugins/muc, getDiscoInfoFeatures, which loops on this const)
 ROOM_FEATURES.push('x_peertubelivechat_mute_anonymous')
 
-_converse.CustomElement = CustomElement
+_converse.exports.CustomElement = CustomElement
 
 const initialize = converse.initialize
 

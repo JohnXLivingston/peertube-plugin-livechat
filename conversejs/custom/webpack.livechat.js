@@ -44,7 +44,7 @@ module.exports = merge(prod, {
       '../../templates/background_logo.js$': path.resolve(__dirname, 'custom/templates/background_logo.js'),
       './templates/muc-chatarea.js': path.resolve('custom/templates/muc-chatarea.js'),
 
-      '../templates/icons.js': path.resolve(__dirname, 'custom/shared/components/font-awesome.js'),
+      './templates/icons.js': path.resolve(__dirname, 'custom/shared/components/font-awesome.js'),
 
       'shared/styles/index.scss$': path.resolve(__dirname, 'custom/shared/styles/livechat.scss'),
 

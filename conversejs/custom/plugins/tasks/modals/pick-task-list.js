@@ -4,7 +4,7 @@
 
 import BaseModal from 'plugins/modal/modal.js'
 import tplPickTaskList from './templates/pick-task-list.js'
-import { api } from '@converse/headless/core'
+import { api } from '@converse/headless'
 import { __ } from 'i18n'
 
 export default class PickTaskListModal extends BaseModal {

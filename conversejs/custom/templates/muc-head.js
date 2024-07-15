@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { html } from 'lit'
-import { api } from '@converse/headless/core'
+import { api } from '@converse/headless'
 import { until } from 'lit/directives/until.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'

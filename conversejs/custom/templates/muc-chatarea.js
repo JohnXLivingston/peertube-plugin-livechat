@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { api } from '@converse/headless/core'
+import { api } from '@converse/headless'
 import tplMUCChatarea from '../../src/plugins/muc-views/templates/muc-chatarea.js'
 import { html } from 'lit'
 

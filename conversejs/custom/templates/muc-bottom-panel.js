@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { __ } from 'i18n'
-import { _converse, api } from '@converse/headless/core'
+import { _converse, api } from '@converse/headless'
 import { html } from 'lit'
 import tplMucBottomPanel from '../../src/plugins/muc-views/templates/muc-bottom-panel.js'
 import { CustomElement } from 'shared/components/element.js'
@@ -79,7 +79,7 @@ class SlowMode extends CustomElement {
 api.elements.define('livechat-slow-mode', SlowMode)
 
 const tplSlowMode = (o) => {
-  if (!o.can_edit) { return html`` }
+  if (!o.can_post) { return html`` }
   return html`<livechat-slow-mode jid=${o.model.get('jid')}>`
 }
 
@@ -128,17 +128,9 @@ const tplViewerMode = (o) => {
 }
 
 export default (o) => {
-  // ConverseJS 10.x does not handle properly the visitor role in unmoderated rooms.
-  // See https://github.com/conversejs/converse.js/issues/3428 for more info.
-  // So we will do a dirty hack here to fix this case.
-  // Note: ConverseJS 11.x has changed the code, and could be fixed more cleanly (or will be fixed if #3428 is fixed).
-  if (o.can_edit && o.model.getOwnRole() === 'visitor') {
-    o.can_edit = false
-  }
-
   let mutedAnonymousMessage
   if (
-    !o.can_edit &&
+    !o.can_post &&
     o.model.features?.get?.('x_peertubelivechat_mute_anonymous') &&
     _converse.api.settings.get('livechat_specific_is_anonymous') === true
   ) {

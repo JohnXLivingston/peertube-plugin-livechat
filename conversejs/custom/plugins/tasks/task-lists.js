@@ -7,9 +7,9 @@ import { ChatRoomTaskList } from './task-list'
 import { initStorage } from '@converse/headless/utils/storage.js'
 
 /**
- * A list of {@link _converse.ChatRoomTaskList} instances, representing task lists associated to a MUC.
+ * A list of {@link _converse.exports.ChatRoomTaskList} instances, representing task lists associated to a MUC.
  * @class
- * @namespace _converse.ChatRoomTaskLists
+ * @namespace _converse.exports.ChatRoomTaskLists
  * @memberOf _converse
  */
 class ChatRoomTaskLists extends Collection {

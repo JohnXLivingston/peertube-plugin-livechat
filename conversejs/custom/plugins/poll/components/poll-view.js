@@ -4,7 +4,7 @@
 
 import { tplPoll } from '../templates/poll.js'
 import { CustomElement } from 'shared/components/element.js'
-import { converse, _converse, api } from '@converse/headless/core'
+import { converse, _converse, api } from '@converse/headless'
 import '../styles/poll.scss'
 
 export default class MUCPollView extends CustomElement {

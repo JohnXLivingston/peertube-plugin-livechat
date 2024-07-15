@@ -15,7 +15,7 @@ export const livechatSpecificsPlugin = {
     })
 
     _converse.api.listen.on('getHeadingButtons', (view: any, buttons: any[]) => {
-      if (view.model.get('type') !== _converse.CHATROOMS_TYPE) {
+      if (view.model.get('type') !== _converse.constants.CHATROOMS_TYPE) {
         // only on MUC.
         return buttons
       }
@@ -52,6 +52,71 @@ export const livechatSpecificsPlugin = {
 
       return buttons
     })
+
+    _converse.api.listen.on('getToolbarButtons', (toolbarEl: any, buttons: any[]) => {
+      // We will replace the toggle occupant button, to change its appearance.
+      // First, we must find it. We search from the end, because usually it is the last one.
+      let toggleOccupantButton: any
+      for (const button of buttons.reverse()) {
+        if (button.strings?.find((s: string) => s.includes('toggle_occupants'))) { // searching the classname
+          console.debug('[livechatSpecificsPlugin] found the toggle occupants button', button)
+          toggleOccupantButton = button
+          break
+        }
+      }
+      if (!toggleOccupantButton) {
+        console.debug('[livechatSpecificsPlugin] Did not found the toggle occupants button')
+        return buttons
+      }
+
+      buttons = buttons.filter(b => b !== toggleOccupantButton)
+      // Replacing by the new button...
+      // Note: we don't need to test conditions, we know the button was here.
+      const i18nHideOccupants = _converse.__('Hide participants')
+      const i18nShowOccupants = _converse.__('Show participants')
+      const html = window.converse.env.html
+      const icon = toolbarEl.hidden_occupants
+        ? html`<converse-icon
+                color="var(--muc-toolbar-btn-color)"
+                class="fa fa-angle-double-left"
+                size="1em">
+            </converse-icon>
+            <converse-icon
+                color="var(--muc-toolbar-btn-color)"
+                class="fa users"
+                size="1em">
+            </converse-icon>`
+        : html`<converse-icon
+                color="var(--muc-toolbar-btn-color)"
+                class="fa users"
+                size="1em">
+            </converse-icon>
+            <converse-icon
+                color="var(--muc-toolbar-btn-color)"
+                class="fa fa-angle-double-right"
+                size="1em">
+            </converse-icon>`
+      buttons.push(html`
+          <button class="toggle_occupants right"
+                  title="${toolbarEl.hidden_occupants ? i18nShowOccupants : i18nHideOccupants}"
+                  @click=${toolbarEl.toggleOccupants}>
+                  ${icon}
+          </button>`
+      )
+      return buttons
+    })
+
+    // Overriding the MUCHeading custom element, to customize the destroyMUC function:
+    const MUCHeading = _converse.api.elements.registry['converse-muc-heading']
+    if (MUCHeading) {
+      class MUCHeadingOverloaded extends MUCHeading {
+        async destroy (ev: Event): Promise<void> {
+          ev.preventDefault()
+          await destroyMUC(_converse, this.model) // here we call a custom version of destroyMUC
+        }
+      }
+      _converse.api.elements.define('converse-muc-heading', MUCHeadingOverloaded)
+    }
 
     _converse.api.listen.on('chatRoomViewInitialized', function (this: any, _model: any): void {
       // Remove the spinner if present...
@@ -117,7 +182,7 @@ export const livechatSpecificsPlugin = {
   },
   overrides: {
     ChatRoom: {
-      getActionInfoMessage: function (this: any, code: string, nick: string, actor: any): any {
+      getActionInfoMessage: function getActionInfoMessage (this: any, code: string, nick: string, actor: any): any {
         if (code === '303') {
           // When there is numerous anonymous users joining at the same time,
           // they can all change their nicknames at the same time, generating a log of action messages.
@@ -130,6 +195,12 @@ export const livechatSpecificsPlugin = {
           }
         }
         return this.__super__.getActionInfoMessage(code, nick, actor)
+      },
+      canPostMessages: function canPostMessages (this: any) {
+        // ConverseJS does not handle properly the visitor role in unmoderated rooms.
+        // See https://github.com/conversejs/converse.js/issues/3428 for more info.
+        // FIXME: if #3428 is fixed, remove this override.
+        return this.isEntered() && this.getOwnRole() !== 'visitor'
       }
     },
     ChatRoomMessage: {
@@ -182,4 +253,27 @@ function getOpenPromise (): any {
     }
   )
   return promise
+}
+
+async function destroyMUC (_converse: any, model: any): Promise<void> {
+  const __ = _converse.__
+  const messages = [__('Are you sure you want to destroy this groupchat?')]
+  // Note: challenge and newjid make no sens for peertube-plugin-livechat,
+  // we remove them comparing to the original function.
+  let fields = [
+    {
+      name: 'reason',
+      label: __('Optional reason for destroying this groupchat'),
+      placeholder: __('Reason'),
+      value: undefined
+    }
+  ]
+  try {
+    fields = await _converse.api.confirm(__('Confirm'), messages, fields)
+    const reason = fields.filter(f => f.name === 'reason').pop()?.value
+    const newjid = undefined
+    return model.sendDestroyIQ(reason, newjid).then(() => model.close())
+  } catch (e) {
+    console.error(e)
+  }
 }

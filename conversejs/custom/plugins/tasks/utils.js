@@ -4,12 +4,12 @@
 
 import { XMLNS_TASKLIST, XMLNS_TASK } from './constants.js'
 import { PubSubManager } from '../../shared/lib/pubsub-manager.js'
-import { converse, _converse, api } from '../../../src/headless/core.js'
+import { converse, _converse, api } from '../../../src/headless/index.js'
 import { __ } from 'i18n'
 
 export function getHeadingButtons (view, buttons) {
   const muc = view.model
-  if (muc.get('type') !== _converse.CHATROOMS_TYPE) {
+  if (muc.get('type') !== _converse.constants.CHATROOMS_TYPE) {
     // only on MUC.
     return buttons
   }
@@ -74,8 +74,8 @@ function _initChatRoomTaskLists (mucModel) {
     return
   }
 
-  mucModel.tasklists = new _converse.ChatRoomTaskLists(undefined, { chatroom: mucModel })
-  mucModel.tasks = new _converse.ChatRoomTasks(undefined, { chatroom: mucModel })
+  mucModel.tasklists = new _converse.exports.ChatRoomTaskLists(undefined, { chatroom: mucModel })
+  mucModel.tasks = new _converse.exports.ChatRoomTasks(undefined, { chatroom: mucModel })
 
   mucModel.taskManager = new PubSubManager(
     mucModel.get('jid'),
@@ -127,7 +127,7 @@ function _destroyChatRoomTaskLists (mucModel) {
 }
 
 export function initOrDestroyChatRoomTaskLists (mucModel) {
-  if (mucModel.get('type') !== _converse.CHATROOMS_TYPE) {
+  if (mucModel.get('type') !== _converse.constants.CHATROOMS_TYPE) {
     // only on MUC.
     return _destroyChatRoomTaskLists(mucModel)
   }

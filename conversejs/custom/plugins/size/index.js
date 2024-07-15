@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { _converse, converse, api } from '../../../src/headless/core.js'
+import { _converse, converse, api } from '../../../src/headless/index.js'
 
 /**
  * This plugin computes the available width of converse-root, and adds classes

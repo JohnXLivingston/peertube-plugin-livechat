@@ -5,6 +5,10 @@
 import { converseLocalizedHelpUrl } from '../../../shared/lib/help'
 import { html } from 'lit'
 import { __ } from 'i18n'
+import { converse } from '@converse/headless'
+
+const u = converse.env.utils
+
 export function tplPollForm (el) {
   const i18nOk = __('Ok')
   // eslint-disable-next-line no-undef
@@ -13,10 +17,18 @@ export function tplPollForm (el) {
     page: 'documentation/user/streamers/polls'
   })
 
+  let formFieldTemplates
+  if (el.xform) {
+    const fields = el.xform.fields
+    formFieldTemplates = fields.map(field => {
+      return u.xFormField2TemplateResult(field)
+    })
+  }
+
   return html`
     ${el.alert_message ? html`<div class="error">${el.alert_message}</div>` : ''}
     ${
-      el.form_fields
+      formFieldTemplates
         ? html`
           <form class="converse-form" @submit=${ev => el.formSubmit(ev)}>
             <p class="title">
@@ -30,7 +42,7 @@ export function tplPollForm (el) {
             <p class="form-help instructions">${el.instructions}</p>
             <div class="form-errors hidden"></div>
 
-            ${el.form_fields}
+            ${formFieldTemplates}
 
             <fieldset class="buttons form-group">
               <input type="submit" class="btn btn-primary" value="${i18nOk}" />

@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { _converse, converse } from '../../../src/headless/core.js'
+import { _converse, converse } from '../../../src/headless/index.js'
 import { ChatRoomTaskLists } from './task-lists.js'
 import { ChatRoomTaskList } from './task-list.js'
 import { ChatRoomTasks } from './tasks.js'
@@ -18,9 +18,14 @@ converse.plugins.add('livechat-converse-tasks', {
   dependencies: ['converse-muc', 'converse-disco', 'converse-pubsub'],
 
   initialize () {
-    _converse.ChatRoomTaskLists = ChatRoomTaskLists
-    _converse.ChatRoomTaskList = ChatRoomTaskList
-    _converse.ChatRoomTasks = ChatRoomTasks
+    Object.assign(
+      _converse.exports,
+      {
+        ChatRoomTaskLists,
+        ChatRoomTaskList,
+        ChatRoomTasks
+      }
+    )
 
     _converse.api.settings.extend({
       livechat_task_app_enabled: false,

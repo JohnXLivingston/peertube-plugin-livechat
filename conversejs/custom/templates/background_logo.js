@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { html } from 'lit'
-import { api } from '@converse/headless/core.js'
+import { api } from '@converse/headless/index.js'
 
 export default () => html`
     <div class="inner-content converse-brand row">

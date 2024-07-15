@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { _converse, converse } from '../../../src/headless/core.js'
+import { _converse, converse } from '../../../src/headless/index.js'
 import { getHeadingButtons } from './utils.js'
 import { POLL_MESSAGE_TAG, POLL_QUESTION_TAG, POLL_CHOICE_TAG } from './constants.js'
 import { __ } from 'i18n'

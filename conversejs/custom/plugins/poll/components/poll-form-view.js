@@ -4,7 +4,7 @@
 import { XMLNS_POLL } from '../constants.js'
 import { tplPollForm } from '../templates/poll-form.js'
 import { CustomElement } from 'shared/components/element.js'
-import { converse, api } from '@converse/headless/core'
+import { converse, api, parsers } from '@converse/headless'
 import { webForm2xForm } from '@converse/headless/utils/form'
 import { __ } from 'i18n'
 import '../styles/poll-form.scss'
@@ -18,7 +18,6 @@ export default class MUCPollFormView extends CustomElement {
     return {
       model: { type: Object, attribute: true },
       modal: { type: Object, attribute: true },
-      form_fields: { type: Object, attribute: false },
       alert_message: { type: Object, attribute: false },
       title: { type: String, attribute: false },
       instructions: { type: String, attribute: false }
@@ -26,6 +25,8 @@ export default class MUCPollFormView extends CustomElement {
   }
 
   _fieldTranslationMap = new Map()
+
+  xform = undefined
 
   async initialize () {
     this.alert_message = undefined
@@ -36,20 +37,18 @@ export default class MUCPollFormView extends CustomElement {
     try {
       this._initFieldTranslations()
       const stanza = await this._fetchPollForm()
-      const query = stanza.querySelector('query')
-      const xform = sizzle(`x[xmlns="${Strophe.NS.XFORM}"]`, query)[0]
+      const xform = parsers.parseXForm(stanza)
       if (!xform) {
         throw Error('Missing xform in stanza')
       }
+
+      xform.fields?.map(f => this._translateField(f))
+      this.xform = xform
 
       // eslint-disable-next-line no-undef
       this.title = __(LOC_poll_title) // xform.querySelector('title')?.textContent ?? ''
       // eslint-disable-next-line no-undef
       this.instructions = __(LOC_poll_instructions) // xform.querySelector('instructions')?.textContent ?? ''
-      this.form_fields = Array.from(xform.querySelectorAll('field')).map(field => {
-        this._translateField(field)
-        return u.xForm2TemplateResult(field, stanza)
-      })
     } catch (err) {
       console.error(err)
       this.alert_message = __('Error')
@@ -86,10 +85,10 @@ export default class MUCPollFormView extends CustomElement {
   }
 
   _translateField (field) {
-    const v = field.getAttribute('var')
+    const v = field.var
     const label = this._fieldTranslationMap.get(v)
     if (label) {
-      field.setAttribute('label', label)
+      field.label = label
     }
   }
 
