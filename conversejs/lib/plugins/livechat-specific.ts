@@ -56,7 +56,7 @@ export const livechatSpecificsPlugin = {
     _converse.api.listen.on('getToolbarButtons', (toolbarEl: any, buttons: any[]) => {
       // We will replace the toggle occupant button, to change its appearance.
       // First, we must find it. We search from the end, because usually it is the last one.
-      let toggleOccupantButton
+      let toggleOccupantButton: any
       for (const button of buttons.reverse()) {
         if (button.strings?.find((s: string) => s.includes('toggle_occupants'))) { // searching the classname
           console.debug('[livechatSpecificsPlugin] found the toggle occupants button', button)
@@ -105,6 +105,18 @@ export const livechatSpecificsPlugin = {
       )
       return buttons
     })
+
+    // Overriding the MUCHeading custom element, to customize the destroyMUC function:
+    const MUCHeading = _converse.api.elements.registry['converse-muc-heading']
+    if (MUCHeading) {
+      class MUCHeadingOverloaded extends MUCHeading {
+        async destroy (ev: Event): Promise<void> {
+          ev.preventDefault()
+          await destroyMUC(_converse, this.model) // here we call a custom version of destroyMUC
+        }
+      }
+      _converse.api.elements.define('converse-muc-heading', MUCHeadingOverloaded)
+    }
 
     _converse.api.listen.on('chatRoomViewInitialized', function (this: any, _model: any): void {
       // Remove the spinner if present...
@@ -241,4 +253,27 @@ function getOpenPromise (): any {
     }
   )
   return promise
+}
+
+async function destroyMUC (_converse: any, model: any): Promise<void> {
+  const __ = _converse.__
+  const messages = [__('Are you sure you want to destroy this groupchat?')]
+  // Note: challenge and newjid make no sens for peertube-plugin-livechat,
+  // we remove them comparing to the original function.
+  let fields = [
+    {
+      name: 'reason',
+      label: __('Optional reason for destroying this groupchat'),
+      placeholder: __('Reason'),
+      value: undefined
+    }
+  ]
+  try {
+    fields = await _converse.api.confirm(__('Confirm'), messages, fields)
+    const reason = fields.filter(f => f.name === 'reason').pop()?.value
+    const newjid = undefined
+    return model.sendDestroyIQ(reason, newjid).then(() => model.close())
+  } catch (e) {
+    console.error(e)
+  }
 }

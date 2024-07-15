@@ -8,7 +8,6 @@
  * @description This files will override the original ConverseJS index.js file.
  */
 
-import '@converse/headless'
 import './i18n/index.js'
 import 'shared/registry.js'
 import { CustomElement } from 'shared/components/element'
