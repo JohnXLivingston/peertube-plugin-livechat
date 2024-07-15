@@ -16,7 +16,7 @@ export const livechatMiniMucHeadPlugin = {
     })
 
     _converse.api.listen.on('getHeadingButtons', (view: any, buttons: any[]) => {
-      if (view.model.get('type') !== _converse.CHATROOMS_TYPE) {
+      if (view.model.get('type') !== _converse.constants.CHATROOMS_TYPE) {
         // only on MUC.
         return buttons
       }

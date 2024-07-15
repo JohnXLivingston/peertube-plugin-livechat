@@ -18,7 +18,7 @@ set -x
 CONVERSE_VERSION="v11.0.0"
 CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 # You can eventually set CONVERSE_COMMIT to a specific commit ID, if you want to apply some patches.
-CONVERSE_COMMIT="ef86863cbd983f0c2de6c3b81105800bcbb804d4"
+CONVERSE_COMMIT="46313ad92c1a861bcb50b9653859cfa9a960ae4a"
 
 # 2014-01-16: we are using a custom version, to wait for some PR to be apply upstream.
 # This version includes following changes:

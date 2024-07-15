@@ -15,7 +15,7 @@ export const livechatSpecificsPlugin = {
     })
 
     _converse.api.listen.on('getHeadingButtons', (view: any, buttons: any[]) => {
-      if (view.model.get('type') !== _converse.CHATROOMS_TYPE) {
+      if (view.model.get('type') !== _converse.constants.CHATROOMS_TYPE) {
         // only on MUC.
         return buttons
       }
@@ -114,11 +114,6 @@ export const livechatSpecificsPlugin = {
       // We are probably on a dev instance, so we will add _converse in window:
       (window as any)._livechatConverse = _converse
     }
-
-    // Temporary Fix, because v11 removes some constants from _converse.
-    // TODO: remove this line, and replace by something else.
-    // Waiting for response to https://github.com/conversejs/converse.js/issues/3440
-    _converse.CHATROOMS_TYPE = 'chatroom'
   },
   overrides: {
     ChatRoom: {

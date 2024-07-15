@@ -8,7 +8,7 @@ import { __ } from 'i18n'
 
 export function getHeadingButtons (view, buttons) {
   const muc = view.model
-  if (muc.get('type') !== _converse.CHATROOMS_TYPE) {
+  if (muc.get('type') !== _converse.constants.CHATROOMS_TYPE) {
     // only on MUC.
     return buttons
   }
