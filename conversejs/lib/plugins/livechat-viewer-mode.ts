@@ -17,11 +17,11 @@ export const livechatViewerModePlugin = {
       livechat_external_auth_reconnect_mode: undefined
     })
 
-    const originalGetDefaultMUCNickname = _converse.getDefaultMUCNickname
+    const originalGetDefaultMUCNickname = _converse.exports.getDefaultMUCNickname
     if (!originalGetDefaultMUCNickname) {
       console.error('[livechatViewerModePlugin] getDefaultMUCNickname is not initialized.')
     } else {
-      Object.assign(_converse, {
+      Object.assign(_converse.exports, {
         getDefaultMUCNickname: function (this: any): any {
           if (!_converse.api.settings.get('livechat_enable_viewer_mode')) {
             return originalGetDefaultMUCNickname.apply(this, arguments)
