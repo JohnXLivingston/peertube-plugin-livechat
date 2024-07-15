@@ -74,8 +74,8 @@ function _initChatRoomTaskLists (mucModel) {
     return
   }
 
-  mucModel.tasklists = new _converse.ChatRoomTaskLists(undefined, { chatroom: mucModel })
-  mucModel.tasks = new _converse.ChatRoomTasks(undefined, { chatroom: mucModel })
+  mucModel.tasklists = new _converse.exports.ChatRoomTaskLists(undefined, { chatroom: mucModel })
+  mucModel.tasks = new _converse.exports.ChatRoomTasks(undefined, { chatroom: mucModel })
 
   mucModel.taskManager = new PubSubManager(
     mucModel.get('jid'),

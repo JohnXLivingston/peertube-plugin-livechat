@@ -18,9 +18,14 @@ converse.plugins.add('livechat-converse-tasks', {
   dependencies: ['converse-muc', 'converse-disco', 'converse-pubsub'],
 
   initialize () {
-    _converse.ChatRoomTaskLists = ChatRoomTaskLists
-    _converse.ChatRoomTaskList = ChatRoomTaskList
-    _converse.ChatRoomTasks = ChatRoomTasks
+    Object.assign(
+      _converse.exports,
+      {
+        ChatRoomTaskLists,
+        ChatRoomTaskList,
+        ChatRoomTasks
+      }
+    )
 
     _converse.api.settings.extend({
       livechat_task_app_enabled: false,

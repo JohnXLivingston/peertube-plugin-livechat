@@ -7,7 +7,7 @@ import { Model } from '@converse/skeletor/src/model.js'
 /**
  * A chat room task list.
  * @class
- * @namespace _converse.ChatRoomTaskList
+ * @namespace _converse.exports.ChatRoomTaskList
  * @memberof _converse
  */
 class ChatRoomTaskList extends Model {
