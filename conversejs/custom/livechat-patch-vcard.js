@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 // Here we are patching the vCard plugin, to add some specific optimizations.
 
 import { _converse, api } from '@converse/headless/index.js'
