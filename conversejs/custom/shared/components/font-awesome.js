@@ -4,7 +4,7 @@
 
 /* eslint-disable max-len */
 import { html } from 'lit'
-import tplIcons from '../../../src/shared/templates/icons.js'
+import tplIcons from '../../../src/shared/components/templates/icons.js'
 
 export default () => {
   // Here we are adding some additonal icons to ConverseJS defaults

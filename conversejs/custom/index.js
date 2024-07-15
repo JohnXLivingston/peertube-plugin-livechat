@@ -61,7 +61,7 @@ CORE_PLUGINS.push('livechat-converse-poll')
 // (see headless/plugins/muc, getDiscoInfoFeatures, which loops on this const)
 ROOM_FEATURES.push('x_peertubelivechat_mute_anonymous')
 
-_converse.CustomElement = CustomElement
+_converse.exports.CustomElement = CustomElement
 
 const initialize = converse.initialize
 
