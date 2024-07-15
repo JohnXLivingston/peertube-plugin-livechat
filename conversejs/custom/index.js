@@ -50,6 +50,9 @@ import '../custom/plugins/terms/index.js'
 import '../custom/plugins/poll/index.js'
 /* END: Removable components */
 
+// Running some specific livechat patches:
+import '../custom/livechat-patch-vcard.js'
+
 import { CORE_PLUGINS } from './headless/shared/constants.js'
 import { ROOM_FEATURES } from './headless/plugins/muc/constants.js'
 // We must add our custom plugins to CORE_PLUGINS (so it is white listed):
