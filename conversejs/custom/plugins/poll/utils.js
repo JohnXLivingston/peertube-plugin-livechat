@@ -32,7 +32,7 @@ export function getHeadingButtons (view, buttons) {
       api.modal.show('livechat-converse-poll-form-modal', { model: muc })
     },
     a_class: '',
-    icon_class: 'fa-list-check', // FIXME
+    icon_class: 'fa-square-poll-horizontal',
     name: 'muc-create-poll'
   })
 
