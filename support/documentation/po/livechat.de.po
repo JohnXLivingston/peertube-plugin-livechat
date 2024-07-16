@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-07-10 16:54+0200\n"
-"PO-Revision-Date: 2024-07-05 19:12+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-07-12 09:10+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3272,25 +3274,30 @@ msgstr "Um den Wert für einen bereits bestehenden Raum zu ändern, öffnen Sie 
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants.  However, messages sent after they joined will be delayed correctly."
 msgstr ""
+"Derzeit gibt es bei dieser Funktion einen bekannten Fehler: Benutzer, die "
+"dem Chat beitreten, erhalten alle Nachrichten, auch solche, die noch für "
+"andere Teilnehmer ausstehen.  Allerdings werden Nachrichten, die nach dem "
+"Beitritt gesendet werden, korrekt verzögert."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy, no-wrap
-#| msgid "Share the chat"
+#, no-wrap
 msgid "In the chat"
-msgstr "Teilen Sie den Chat"
+msgstr "Im Chat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime."
 msgstr ""
+"Als Moderator sehen Sie neben dem Datum der Nachricht auch die verbleibende "
+"Zeit (in Sekunden), bevor die Nachricht veröffentlicht wird."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
-msgstr "![Kanalkonfiguration / Moderationsverzögerung](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Moderationsverzögerungstimer](/peertube-plugin-livechat/images/"
+"moderation_delay_timer.png?classes=shadow,border)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3337,10 +3344,11 @@ msgstr "Über das [Chat Dropdown Menü](/peertube-plugin-livechat/de/documentati
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "The video owner will be owner of the chat room.  This means he can configure the room, delete it, promote other users as admins, ..."
 msgid "The video owner will be owner of the chat room.  This means they can configure the room, delete it, promote other users as admins, ..."
-msgstr "Der Videobesitzer ist der Besitzer des Chatraums.  Das bedeutet, er kann den Raum konfigurieren, löschen, andere Benutzer als Administratoren befördern, ..."
+msgstr ""
+"Der Videobesitzer ist der Besitzer des Chatraums.  Das bedeutet, er kann den "
+"Raum konfigurieren, löschen, andere Benutzer als Administratoren befördern, "
+"..."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
