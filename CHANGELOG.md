@@ -6,6 +6,8 @@
 
 * Updating ConverseJS, to use upstream (v11 WIP). This comes with many improvments and new features.
 
+## 10.3.1
+
 ### Minor changes and fixes
 
 * Moderation delay: fix accessibility on the timer shown to moderators.
