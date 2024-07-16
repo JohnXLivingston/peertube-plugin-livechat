@@ -29,6 +29,7 @@ CONVERSE_COMMIT="7d65ef8d30a1f3949dbc590b6d27a9d786bf819f"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 # 2024-07-15, fix MUC save.
 CONVERSE_COMMIT="58c682b9ba09038beb961e9d8f804c270408ea69"
+CONVERSE_COMMIT="bbee0e4e8d2dc43636385cf4cca34f3604f59520"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
