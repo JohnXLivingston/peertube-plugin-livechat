@@ -1,0 +1,190 @@
+muted_anonymous_message: Mesazhe mund të dërgojnë vetëm përdorues të regjistruar.
+moderation_delay: Vonesë moderimi
+share_url_label: Shfaq butonin “Ndani me të tjerët lidhje fjalosjeje”
+no_anonymous_label: Fshihe fjalosjen për përdorues anonimë
+theming_advanced_description: <h3>Aplikim temash</h3>
+login_remote_peertube_url_invalid: URL PeerTube e pavlefshme.
+tasks: Punë
+task_list_create: 'Krijoni një listë të re punësh:'
+task_list_create_error: Gabim teksa ruhej lista e punëve
+task_list_delete_confirm: Jeni i sigurt se doni të fshihet kjo listë punësh?
+avatar_set_option_abstract: Abstrakte
+prosody_s2s_interfaces_label: Ndërfaqe rrjeti shërbyes te shërbyes
+per_live_video_label: Përdoruesit mund të aktivizojnë fjalosje për transmetimet e
+  tyre të drejtpërdrejta
+successfully_saved: U ruajtën me sukses
+livechat_configuration_channel_quote_delay_label: Dërgoje çdo X minuta
+livechat_configuration_title: Formësoni dhoma fjalosjeje të transmetimit tuaj të drejtpërdrejtë
+avatar_set_label: Grup avatarësh
+prosody_s2s_port_label: Portë Prosody shërbyes te shërbyes
+prosody_c2s_label: Aktivizo lidhje klient te shërbyes
+livechat_configuration_channel_bot_options_title: Mundësi roboti moderimi
+livechat_configuration_channel_forbidden_words_label: Fjalë, ose shprehje të ndaluara
+livechat_configuration_channel_forbidden_words_regexp_label: Konsideroji shprehje
+  të rregullta
+livechat_configuration_channel_command_label: Urdhër roboti
+prosody_c2s_interfaces_label: Ndërfaqe rrjeti klient te shërbyes
+livechat_configuration_channel_command_message_label: Mesazh
+task_list_name: Emër liste punësh
+promote: Bëhuni moderator
+open_chat: Hapni fjalosje
+open_chat_new_window: Hap fjalosjen në dritare të re
+read_only: Vetëm për lexim
+show_scrollbarr: Shfaq rrëshqitës
+close_chat: Mbylle fjalosjen
+use_chat: Përdorni fjalosjen
+use_chat_help: Në u aktivizoftë, në krah të videos do të ketë një fjalosje.
+share_chat_link: Ndajeni lidhjen e fjalosjes me të tjerët
+copy: Kopjoje
+copied: U kopjua
+use_current_theme_color: Përdor ngjyra të temës së tanishme
+room_name: Emër dhome
+room_description: Përshkrim dhome
+not_found: S’u gjet
+video: Video
+important_note_title: <h3>Shënim të rëndësishme</h3>
+chat_terms_label: Terma & Kushte
+channel: Kanal
+last_activity: Veprimtaria e fundit
+connect_using_xmpp: Lidhu duke përdorur XMPP
+connect_using_xmpp_help: Mund të lidheni me dhomën duke përdorur një llogari të jashtme
+  XMPP dhe klientin tuaj të parapëlqyer XMPP.
+list_rooms_label: Paraqit dhoma ekzistuese
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Paraqit dhomat</a>\n"
+external_auth_description: "<h3>Mirëfilltësim së jashtmi</h3>\nPër përdorues që s’kanë
+  llogari Peertube, mund të aktivizoni mënyra të ndryshme mirëfilltësimi, bazuar në
+  shërbyes të largët mirëfilltësimesh.\n"
+external_auth_custom_oidc_button_label_label: Etiketë për butonin e lidhjes
+external_auth_oidc_client_id_label: ID Klienti
+external_auth_oidc_client_secret_label: E fshehtë klienti
+external_auth_facebook_oidc_label: Përdor Facebook
+open_blank_description: Do të ketë një buton për hapje dritareje fjalosjeje në një
+  dritare të re.
+room_type_option_video: Çdo video ka dhomën e vet të fjalosjes
+share_url_option_nobody: Mos e shfaq për ndonjë
+room_type_option_channel: Dhomat e fjalosjes grupohen sipas kanaleve
+share_url_option_everyone: Shfaqe për këdo
+videos_list_label: Aktivizo fjalosje për këto video
+avatar_set_option_sepia: Sepia (simboli i PeerTube-it)
+converse_theme_label: Temë ConverseJS
+converse_theme_option_peertube: Temë PeerTube
+converse_theme_option_default: Tema Parazgjedhje ConverseJS
+system_prosody_label: Përdor Prosody sistemi
+disable_websocket_label: Çaktivizo Websocket-in
+prosody_peertube_uri_label: URL Peertube për thirrje API
+cancel: Anuloje
+livechat_configuration_channel_slow_mode_label: Mënyra ngadalë
+livechat_configuration_channel_enable_bot_label: Aktivizo robot moderimi
+prosody_muc_expiration_description: "Këtu mund të zgjidhni se për sa kohë mbahet lënda
+  e dhomës së fjalosjes nga shërbyesi. Vlera mund të jetë:\n<ul>\n    <li><b>60</b>:
+  lënda do të ruhet për 60 <b>sekonda</b>. 60-n mund ta zëvendësoni me çfarëdo vlere
+  numër të plotë.</li>\n    <li><b>1d</b>: lënda do të ruhet për 1 <b>ditë</b>. 1-shin
+  mund ta zëvendësoni me çfarëdo vlere numër të plotë.</li>\n    <li><b>1w</b>: lënda
+  do të ruhet për 1 <b>javë</b>. 1-shin mund ta zëvendësoni me çfarëdo vlere numër
+  të plotë.</li>\n    <li><b>1m</b>: lënda do të ruhet për 1 <b>muaj</b>. 1-shin mund
+  ta zëvendësoni me çfarëdo vlere numër të plotë.</li>\n    <li><b>1y</b>: lënda do
+  të ruhet për 1 <b>vit</b>. 1-shin mund ta zëvendësoni me çfarëdo vlere numër të
+  plotë.</li>\n    <li><b>never</b>: lënda nuk skadon kurrë dhe do të mbahet përgjithnjë.</li>\n\
+  </ul>\n"
+livechat_configuration_channel_forbidden_words_reason_label: Arsye
+livechat_configuration_channel_forbidden_words_comments_label: Komente
+livechat_configuration_channel_quote_label2: Mesazhe
+livechat_configuration_channel_command_message_desc: Mesazhi për t’u dërguar.
+livechat_configuration_channel_banned_jids_label: Përdorues dhe rregullsi të dëbuara
+validation_error: Pati një gabim gjatë vleftësimit.
+invalid_value: Vlerë e pavlefshme.
+invalid_value_missing: Kjo vlerë është e domosdoshme.
+invalid_value_wrong_type: Vlera është e një lloji të gabuar.
+invalid_value_wrong_format: Vlera është në format të gabuar.
+invalid_value_not_in_range: Vlerë jo brenda intervalit të autorizuar.
+invalid_value_duplicate: Vlerë e përsëdytur
+invalid_value_too_long: Vlerë shumë e gjatë
+too_many_entries: Shumë zëra
+chatroom_not_accessible: Kjo dhomë fjalosjeje s’ekziston, ose s’lejoheni të hyni në
+  të.
+login_using_external_account: Bëni hyrjen duke përdorur një llogari të jashtme
+login_remote_peertube_url: URL e instancës tuaj Peertube
+login_remote_peertube_video_not_found: Kjo video s’është në këtë instancë Peertube.
+login_external_auth_alert_message: Mirëfilltësimi dështoi
+task_list_delete: Fshi listë punësh
+task_create: Krijoni një punë të re
+task_name: Emër pune
+task_description: Përshkrim
+task_delete_confirm: Jeni i sigurt se doni të fshihet kjo punë?
+task_list_pick_title: Ju lutemi, zgjidhni një listë punësh
+livechat_configuration_channel_emojis_title: Emoxhi kanali
+livechat_emojis_shortname: Emër i shkurtër
+livechat_emojis_file_desc: "Kartela e emoji-t.\n"
+action_export: Eksportoje
+action_remove_entry_confirm: Jeni i sigurt se doni të hiqet ky zë?
+loading_error: Ndodhi gabim teksa ngarkoheshin të dhëna.
+token_password: Token fjalëkalimi
+token_date: Datë
+token_action_revoke: Hiqe token-in
+token_default_label: Token i prodhuar nga ndërfaqja web
+token_action_create: Krijoni një token të ri
+token_action_revoke_confirm: Jeni i sigurt se doni të hiqet ky token?
+livechat_configuration_channel_mute_anonymous_label: Heshto përdorues anonimë
+livechat_configuration_channel_terms_label: Terma & kushte kanali fjalosjeje
+new_poll: Krijoni një pyetësor të ri
+poll_title: Pyetësor i ri
+poll_question: Pyetje
+poll_duration: Kohëzgjatje pyetësori (në minuta)
+poll_anonymous_results: Përfundime anonime
+poll_is_over: Ky pyetësor tanimë ka përfunduar.
+poll_choice_invalid: Kjo zgjedhje s’është e vlefshme.
+chat_behaviour_description: <h3>Sjellje fjalosjeje</h3>
+room_type_label: Lloj dhome
+auto_display_description: Kur shihet një video, dritarja e fjalosjes do të hapet vetvetiu.
+open_blank_label: Shfaq butonin “hape në dritare të re”
+all_lives_label: Aktivizo fjalosje për krejt të drejtpërdrejtat
+converse_theme_description: Ju lutemi, zgjidhni temën converseJS që doni të përdoret.
+prosody_port_label: Portë Prosody
+prosody_muc_log_by_default_label: Regjistro ç’bëhet në dhomë, si parazgjedhje
+prosody_room_allow_s2s_label: Aktivizoni lidhje te dhoma duke përdorur llogari të
+  jashtme XMPP
+prosody_certificates_dir_label: Dosje dëshmish
+livechat_configuration_channel_forbidden_words_label_label: Etiketë
+task_delete: Fshije punën
+avatar_set_option_bird: Zogj
+autocolors_label: Pikasje e vetvetishme ngjyrash
+help_builtin_prosody_label: Shërbyes Prosody
+prosody_c2s_port_label: Klient Prosody te portë shërbyesi
+prosody_components_list_label: Përbërës të jashtëm
+prosody_components_port_label: Portë përbërësish Prosody të jashtëm
+livechat_configuration_channel_command_cmd_label: Urdhër
+livechat_configuration_channel_title: Mundësi kanali
+prosody_muc_expiration_label: Skadim regjistrash dhome
+livechat_configuration_channel_quote_label: Kohëmatës
+livechat_configuration_channel_bot_nickname: Nofkë roboti
+federation_no_remote_chat_label: Mos shfaq fjalosje nga larg
+federation_no_remote_chat_description: "Duke i vënë shenjë këtij rregullimi, instanca
+  juaj s’do të shfaqë kurrë fjalosje prej videosh të largëta.\n"
+federation_dont_publish_remotely_label: Mos boto hollësifjalosjeje
+auto_display_label: Hape vetvetiu fjalosjen
+livechat_emojis_file: Kartelë
+action_import: Importoje
+share_url_option_owner: Shfaq të zotin e videos
+avatar_set_option_cat: Mace
+share_chat_embed: Trupëzojeni
+share_chat_peertube_tips: Kjo lidhje do ta hapë fjalosjen brenda ndërfaqes së Peertube-it.
+auth_description: "<h3>Mirëfilltësim</h3>\n"
+external_auth_google_oidc_label: Përdor Google
+save: Ruaje
+chat_title: <h3>Fjalosje</h3>
+action_add_entry: Shtoni një zë
+action_remove_entry: Hiqe këtë zë
+token_label: Etiketë
+poll: Pyetësor
+poll_choice_n: 'Zgjedhje {{N}}:'
+poll_end: 'Pyetësori përfundon më:'
+link_copied: Lidhja u kopjua
+error: Gabim
+open: Hape
+web: Web
+online_help: Ndihmë në Internet
+federation_description: "<h3>Federim</h3>\nRregulliemt vijuese kanë të bëjnë me federimin
+  me instanca të tjera\nPeertube dhe programe të tjera fediversi.\n"
+invalid_value_file_too_big: 'Madhësia e kartelës është shumë e madhe (madhësi maksimum:
+  %s).'
