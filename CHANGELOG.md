@@ -6,6 +6,10 @@
 
 * Updating ConverseJS, to use upstream (v11 WIP). This comes with many improvments and new features.
 
+### Minor changes and fixes
+
+* New translation: Albanian
+
 ## 10.3.1
 
 ### Minor changes and fixes
