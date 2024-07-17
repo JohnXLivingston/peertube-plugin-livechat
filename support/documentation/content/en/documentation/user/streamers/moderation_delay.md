@@ -39,6 +39,10 @@ Currently, this feature has one known bug: users that join the chat will get all
 However, messages sent after they joined will be delayed correctly.
 {{% /notice %}}
 
+{{% notice tip %}}
+You can combine a short [moderation delay](/peertube-plugin-livechat/documentation/user/streamers/moderation_delay) (1 second for example) with the [moderation bot](/peertube-plugin-livechat/documentation/user/streamers/bot) to delete messages containing swear words before any non-moderator user will see them.
+{{% /notice %}}
+
 ## In the chat
 
 As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime.

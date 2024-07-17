@@ -35,6 +35,10 @@ See the [contribution guide](/peertube-plugin-livechat/contributing/) for more i
 These words are case insensitive.
 {{% /notice %}}
 
+{{% notice tip %}}
+You can combine a short [moderation delay](/peertube-plugin-livechat/documentation/user/streamers/moderation_delay) (1 second for example) with the [moderation bot](/peertube-plugin-livechat/documentation/user/streamers/bot) to delete messages containing swear words before any non-moderator user will see them.
+{{% /notice %}}
+
 {{% notice warning %}}
 This features is still experimental.
 There might be some issues with non-latin alphabets.
