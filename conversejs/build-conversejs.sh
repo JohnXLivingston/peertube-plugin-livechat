@@ -31,6 +31,7 @@ CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 CONVERSE_COMMIT="58c682b9ba09038beb961e9d8f804c270408ea69"
 CONVERSE_COMMIT="bbee0e4e8d2dc43636385cf4cca34f3604f59520"
 CONVERSE_COMMIT="86c0522551afb418f8c34e81e381f0f0f4b57903"
+CONVERSE_COMMIT="1281b492a62d7e5626fc297657097fab8a48eebc"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
