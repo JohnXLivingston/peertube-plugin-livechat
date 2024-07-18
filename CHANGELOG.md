@@ -1,5 +1,11 @@
 # Changelog
 
+## 10.3.2
+
+### Minor changes and fixes
+
+* Fix #477: ended polls never disappear when archiving is disabled (and no more than 20 new messages).
+
 ## 10.3.1
 
 ### Minor changes and fixes
