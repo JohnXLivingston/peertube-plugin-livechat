@@ -27,11 +27,8 @@ CONVERSE_COMMIT="7d65ef8d30a1f3949dbc590b6d27a9d786bf819f"
 # CONVERSE_VERSION="livechat"
 # # CONVERSE_COMMIT="4402fcc3fc60f6c9334f86528c33a0b463371d12"
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
-# 2024-07-15, fix MUC save.
-CONVERSE_COMMIT="58c682b9ba09038beb961e9d8f804c270408ea69"
-CONVERSE_COMMIT="bbee0e4e8d2dc43636385cf4cca34f3604f59520"
-CONVERSE_COMMIT="86c0522551afb418f8c34e81e381f0f0f4b57903"
-CONVERSE_COMMIT="1281b492a62d7e5626fc297657097fab8a48eebc"
+# 2024-07-18, including some fixes that are not merged yet.
+CONVERSE_COMMIT="74696f298b8c49ed6feaf29d52bebc854aae48c7"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
