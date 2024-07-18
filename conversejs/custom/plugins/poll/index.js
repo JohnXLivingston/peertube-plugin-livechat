@@ -12,6 +12,8 @@ import './components/poll-form-view.js'
 
 const { sizzle } = converse.env
 
+const delayedTimeout = 2 // for delayed poll message, how long must the be considered as valid.
+
 converse.plugins.add('livechat-converse-poll', {
   dependencies: ['converse-muc', 'converse-disco'],
 
@@ -96,6 +98,23 @@ converse.plugins.add('livechat-converse-poll', {
         // We just drop archived messages, to not show the banner for finished polls.
         if (attrs.is_archived) {
           return this.__super__.onMessage(attrs)
+        }
+        if (attrs.is_delayed) {
+          // When archiving is disabled, the "history" mechanism is still available:
+          // Last X (20 by default) messages will be kept, and sent to users.
+          // The only thing that differentiates such messages is that they are delayed.
+          // We can't just ignore all delayed messages, because if one day we enable SMACKS
+          // (to handle deconnections on poor network), there could be some legitimate delayed messages.
+          // So we will only ignore the poll if it was sent more than X minutes ago.
+          console.debug('Got a delayed poll message, checking if old or not')
+          const d = new Date()
+          d.setMinutes(d.getMinutes() - delayedTimeout)
+          if (attrs.time < d.toISOString()) {
+            console.debug(
+              `Poll message was delayed fore more than ${delayedTimeout} minutes (${attrs.time} < ${d.toISOString()}).`
+            )
+            return this.__super__.onMessage(attrs)
+          }
         }
 
         console.info('Got a poll message, setting it as the current_poll')
