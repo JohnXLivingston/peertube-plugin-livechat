@@ -188,3 +188,59 @@ federation_description: "<h3>Federim</h3>\nRregulliemt vijuese kanë të bëjnë
   me instanca të tjera\nPeertube dhe programe të tjera fediversi.\n"
 invalid_value_file_too_big: 'Madhësia e kartelës është shumë e madhe (madhësi maksimum:
   %s).'
+all_non_lives_description: Në iu vëntë shenjë, fjalosja do të jetë e aktivizuar për
+  krejt videot që s’janë transmetimet e drejtpërdrejta.
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
+external_auth_custom_oidc_label: Përdorni një shërbim OpenID Connect
+external_auth_custom_oidc_button_label_description: Kjo etiketë do t’ju shfaqet përdoruesve,
+  si etiketa e butonit për kryerje mirëfilltësimi me këtë shërbim OIDC.
+per_live_video_description: Në iu vëntë shenjë, krejt videot e transmetuara drejtpërdrejt
+  do të kenë një kutizë te vetitë e tyre, për aktivizim fjalosjeje.
+livechat_configuration_channel_moderation_delay_desc: "Vlerë parazgjedhjeje vonese
+  moderimi:\n<ul>\n  <li>0: vonesë moderimi e çaktivizuar</li>\n  <li>Çfarëdo numër
+  i plotë pozitiv: mesazhet do të vonohen për X sekonda për pjesëmarrës që s’janë
+  moderatorë, duke u lejuar moderatorëve të fshijnë mesazhe para se të mund t’i lexojë
+  cilido përdorues.</li>\n</ul>\n"
+all_lives_description: Në iu vëntë shenjë, fjalosja do të jetë e aktivizuar për krejt
+  transmetimet e drejtpërdrejta.
+all_non_lives_label: Aktivizo fjalosje për krejt transmetimet jo të drejtpërdrejta
+room_type_description: Këtu mund të zgjidhni të keni dhoma më vete për çdo video,
+  ose t’i gruponi sipas kanalesh.
+share_url_option_owner_moderators: Shfaqe për të zotin e videos dhe moderatorët e
+  instancës
+poll_vote_instructions: 'Që të votoni, klikoni mbi zgjedhjen tuaj, ose dërgoni një
+  mesazh me një pikëçuditje pasuar nga numri që keni zgjedhur (Shembull: !1).'
+external_auth_custom_oidc_description: "Mund të formësoni një shërbim të jashtëm OpenID
+  që mund të përdoret për të bërë hyrjen te fjalosja.\nJu lutemi, shihni te dokumentimi:\n
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Rregullime</a>.\n"
+external_auth_google_oidc_description: "Aktivizimi i kësaj shton një buton “hyrje
+  me Google”.\nJu duhet të formësoni një aplikacion Google OAuth.\n"
+external_auth_facebook_oidc_description: "Aktivizimi i kësaj shton një buton “hyrje
+  me Facebook”.\nJu duhet të formësoni një aplikacion Facebook OAuth.\n"
+share_url_description: Do të ketë një buton për dhënien e URL-së së fjalosjes (mund
+  të përdoret për integrim OBS, për shembull).
+avatar_set_description: "Avatarët parazgjedhje që do të përdoren për përdoruesit i
+  fjalosjes mund t’i zgjidhni nga disa grupe të ndryshme.\nJu lutemi, shihni te dokumentimi:\n
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Rregullime</a>.\n"
+livechat_configuration_channel_mute_anonymous_desc: "Vlerë parazgjedhje për dhoma
+  të reja fjalosjeje.\nPër dhoma ekzistuese, mund të ndryshoni veçorinë te formulari
+  i formësimit të dhomave.\nKur kjo veçori është e aktivizuar, përdoruesit anonimë
+  vetëm se do të lexojnë fjalosjen dhe s’mund të dërgojnë mesazhe.\n"
+transparent_background: Sfond i tejdukshëm (për integrim transmetimi, me OBS për shembull)
+livechat_configuration_channel_emojis_desc: "Mund të formësoni emoxhi vetjake për
+  kanalin tuaj.\nKëto emoxhi do të jenë të përdorshëm që nga zgjedhësi i tyre.\nPërdoruesit
+  mund t’i përdoren edhe përmes emrit të shkurtër përkatës (për shembull, duke shkruar
+  \":emrineshkurtër:\").\n"
+important_note_text: "Dokumentimin e shtojcës mund ta gjeni këtu:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n  Dokumentim Shtojce Peertube Livechat\n</a>.\n"
+action_import_emojis_info: Nëse të dhënat e importuara janë në rregull, mos harroni
+  të ruani formularin.
+livechat_configuration_channel_terms_desc: "Mund të formësoni një ndarje “terma &
+  kushte” që do t’u shfaqet përdoruesve që hyjnë në dhomat tuaja.\n"
+poll_vote_instructions_xmpp: 'Që të votoni, dërgoni një mesazh me një pikëçuditje
+  pasuar nga numri që keni zgjedhur. Shembull: !1'
+poll_anonymous_vote_ok: Vota juaj është marrë parasysh. Votat janë anonime, s’do t’u
+  shfaqen pjesëmarrësve të tjerë.
+poll_vote_ok: Vota juaj është marrë parasysh, numëratorët do të përditësohen në çast.
