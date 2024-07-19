@@ -209,8 +209,8 @@ share_url_description: Postojat će gumb za dijeljenje URL-a chata (može se na 
   koristiti za OBS integraciju).
 per_live_video_description: Ako je označeno, sva videa uživo imat će potvrdni okvir
   u svojim svojstvima za aktiviranje web chata.
-per_live_video_label: Korisnici mogu aktivirati chat za svoja videa uživo
-all_lives_label: Aktiviraj chat za sva videa uživo
+per_live_video_label: Korisnici mogu aktivirati chat za svoje prijenose uživo
+all_lives_label: Aktiviraj chat za sve prijenose uživo
 no_anonymous_label: Sakrij chat za anonimne korisnike
 theming_advanced_description: <h3>Izgled</h3>
 chat_style_description: "Dodatni stilovi koji se dodaju atributu stila iframea. <br>\n
@@ -234,15 +234,15 @@ external_auth_custom_oidc_description: "Možeš konfigurirati eksternog pružate
 external_auth_description: "<h3>Eksterna autentifikacija</h3>\nZa korisnike koji nemaju
   Peertube račun možeš aktivirati različite načine autentifikacije pomoću externih
   pružatelja usluge autentifikacije.\n"
-all_lives_description: Ako je označeno, chat će se aktivirati za sva videa uživo.
-all_non_lives_description: Ako je označeno, chat će se aktivirati za sva videa koja
-  nisu uživo.
-all_non_lives_label: Aktiviraj chat za sva videa koja nisu uživo
+all_lives_description: Ako je označeno, chat će se aktivirati za sve prijenose uživo.
+all_non_lives_description: Ako je označeno, chat će se aktivirati za sve prijenose
+  koji nisu uživo.
+all_non_lives_label: Aktiviraj chat za sve prijenose koji nisu uživo
 converse_theme_option_concord: ConverseJS concord tema
 chat_style_label: Atribut stila ifreama za chat
 prosody_muc_log_by_default_description: "Ako je označeno, sadržaj sobe će se standardno
   spremati.\nSvaki korisnik koji se pridruži sobi vidjet će što je napisano prije
-  nego što se pridruži.<br>\nArhiviranje sadržaja se uvijek moguće aktivirati/deaktivirati\n
+  nego što se pridruži.<br>\nArhiviranje sadržaja se uvijek može aktivirati/deaktivirati\n
   za određenu sobu, uređivanjem njezinih svojstava.\n"
 auto_ban_anonymous_ip_label: Blokiraj IP anonimnog korisnika kada je korisniku zabranjen
   pristup chat sobi
@@ -275,3 +275,72 @@ share_chat_embed: Ugradi
 token_label: Oznaka
 auth_description: "<h3>Autentifikacija</h3>\n"
 chat_terms_label: Uvjeti i odredbe
+muted_anonymous_message: Samo registrirani korisnici mogu slati poruke.
+livechat_configuration_channel_mute_anonymous_label: Isključi zvuk anonimnih korisnika
+login_remote_peertube_video_not_found_try_anyway: U nekim slučajevima, video se ipak
+  može dohvatiti ako se povežeš s eksternom instancom.
+livechat_configuration_channel_moderation_delay_desc: "Standardna vrijednost odgode
+  moderiranja:\n<ul>\n   <li>0: odgoda moderiranja je deaktivirana</li>\n   <li>Bilo
+  koji pozitivni cijeli broj: poruke će se odgoditi za X sekundi za sudionike koji
+  nisu moderatori, dopuštajući moderatorima da izbrišu poruku prije nego što je bilo
+  koji korisnik može pročitati.</li>\n</ul>\n"
+moderation_delay: Odgoda moderiranja
+livechat_configuration_channel_forbidden_words_label_desc: Oznaka za ovo pravilo zabranjenih
+  riječi
+livechat_configuration_channel_emojis_desc: "Možeš konfigurirati prilagođene emojije
+  za svoj kanal.\nOvi emojiji će biti dostupni u alatu za biranje emojija.\nKorisnici
+  ih također mogu koristiti sa svojim kratkim imenom (na primjer tako da napišu \"\
+  :shortname:\").\n"
+livechat_emojis_shortname_desc: "Emotikone možeš koristiti u chatu koristeći \":shortname:\"\
+  .\nKratko ime može započeti i/ili završiti dvotočkom (:) te koristiti samo alfanumeričke
+  znakove, podvlake i crtice.\nPreporuča se započeti ih dvotočkom, kako bi korisnici
+  mogli koristiti automatsko dovršavanje (upisivanjem \":\" i pritiskom tipke tabulatora).\n"
+validation_error: Došlo je do greške tijekom provjere valjanosti.
+help_builtin_prosody_description: "Ovaj dodatak koristi Prosody XMPP server za upravljanje
+  sobama za razgovor.<br>\nOvaj dodatak dolazi s Prosody AppImage koji će se koristiti
+  za pokretanje usluge.\n"
+livechat_configuration_channel_terms_desc: "Možeš konfigurirati poruku „uvjeti i odredbe”
+  koja će se prikazati korisnicima koji se pridružuju tvojim chat sobama.\n"
+poll_vote_instructions_xmpp: 'Pošalji poruku s uskličnikom i brojem izbora za glasanje.
+  Primjer: !1'
+invalid_value_file_too_big: 'Datoteka je prevelika (maksimalna veličina: %s).'
+per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n  Postavka „Korisnici mogu aktivirati chat za svoje prijenose uživo” je aktivirana.\n\
+  \  Postavka je redundanta s postavkom „Aktiviraj chat za sve prijenose uživo”.\n\
+  </span>\n"
+new_poll: Stvori novu anketu
+invalid_value_missing: Ova je vrijednost obavezna.
+invalid_value_wrong_type: Neispravna vrsta vrijednost.
+invalid_value_wrong_format: Neispravan format vrijednosti.
+invalid_value_not_in_range: Vrijednost ne odgovara dopuštenom rasponu.
+invalid_value_duplicate: Dupla vrijednost
+too_many_entries: Previše unosa
+promote: Postani moderator
+livechat_emojis_shortname: Kratko ime
+action_import_emojis_info: Ako su uvezeni podaci u redu, ne zaboravi spremiti obrazac.
+share_chat_peertube_tips: Ova će poveznica otvoriti chat unutar Peertube sučelja.
+token_password: Token lozinke
+token_date: Datum
+token_action_create: Stvori novi token
+token_default_label: Token generiran iz web sučelja
+token_action_revoke: Opozovi token
+token_action_revoke_confirm: Stvarno želiš opozvati ovaj token?
+livechat_token_disabled_label: Deaktiviraj tokene za chat uživo
+invalid_value_too_long: Vrijednost je predugačka
+livechat_configuration_channel_terms_label: Uvjeti i odredbe kanala chata
+poll: Anketa
+poll_title: Nova anketa
+poll_instructions: Ispuni i pošalji ovaj obrazac za izradu nove ankete. Ovo će zamijeniti
+  sve postojeće ankete.
+poll_question: Pitanje
+poll_duration: Trajanje ankete (u minutama)
+poll_anonymous_results: Anonimni rezultati
+poll_choice_n: 'Izbor {{N}}:'
+poll_end: 'Anketa završava:'
+poll_vote_instructions: 'Za glasanje klikni na svoj izbor ili pošalji poruku s uskličnikom
+  iza kojeg slijedi broj tvog izbora (Primjer: !1).'
+poll_is_over: Ova anketa je sada završena.
+poll_choice_invalid: Ovaj izbor nije valjan.
+poll_anonymous_vote_ok: Tvoje se glasanje uzima u obzir. Glasanja su anonimna, neće
+  se prikazati drugim sudionicima.
+poll_vote_ok: Tvoje se glasanje uzima u obzir. Brojači će se uskoro aktualizirati.
