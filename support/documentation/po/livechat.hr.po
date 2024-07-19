@@ -7,15 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-07-17 10:53+0200\n"
-"PO-Revision-Date: 2024-07-01 20:41+0000\n"
+"PO-Revision-Date: 2024-07-19 17:45+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
+"Language-Team: Croatian <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.6.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1854,10 +1856,9 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/_index.md
-#, fuzzy, no-wrap
-#| msgid "Write documentation"
+#, no-wrap
 msgid "Admin documentation"
-msgstr "Piši dokumentaciju"
+msgstr "Dokumentacija za administratore"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2094,10 +2095,13 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy, no-wrap
-#| msgid "If this settings is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
+#, no-wrap
 msgid "If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
-msgstr "Ako je ova postavka ostavljena prazna i koristiš Peertube verziju ≥ 5.1 ili noviju, dodatak će koristiti vrijednosti iz tvoje Peertube konfiguracijske datoteke kako bi pogodio na kojem sučelju i priključku treba izvršiti zahtjev.\n"
+msgstr ""
+"Ako je ova postavka ostavljena prazna i koristiš Peertube verziju ≥ 5.1 ili "
+"noviju, dodatak će koristiti vrijednosti iz tvoje Peertube konfiguracijske "
+"datoteke kako bi pogodio na kojem sučelju i priključku treba izvršiti "
+"zahtjev.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2422,10 +2426,9 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/_index.md
-#, fuzzy, no-wrap
-#| msgid "Write documentation"
+#, no-wrap
 msgid "User documentation"
-msgstr "Piši dokumentaciju"
+msgstr "Dokumentacija za korisnike"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3082,7 +3085,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Import / Export"
-msgstr ""
+msgstr "Uvoz / Izvoz"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3110,6 +3113,10 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "The `sn` attribute is the short name code.  The `url` attribute can be any image url than your browser can access, or a [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) representing the file you want to import."
 msgstr ""
+"Atribut `sn` je kod kratkog imena. Atribut `url` može biti bilo koji url "
+"slike kojem tvoj preglednik može pristupiti ili [URL "
+"podataka](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/"
+"Data_URLs) koji predstavlja datoteku koju želiš uvesti."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
@@ -3131,17 +3138,14 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy, no-wrap
-#| msgid "Federation"
+#, no-wrap
 msgid "Moderation delay"
-msgstr "Federacija"
+msgstr "Odgoda moderiranja"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 10.1.0."
 msgid "This feature comes with the livechat plugin version 10.3.0."
-msgstr "Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.1.0."
+msgstr "Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.3.0."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3150,7 +3154,7 @@ msgstr "Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.1.0."
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Introduction"
-msgstr ""
+msgstr "Uvod"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3171,19 +3175,23 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "Moderation delay option"
-msgstr ""
+msgstr "Opcije odgode moderiranja"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy
-#| msgid "To configure the terms & conditions, go to the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel):"
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
-msgstr "Za konfiguriranje uvjeta i odredbi idi na [stranicu za konfiguraciju kanala](/peertube-plugin-livechat/hr/documentation/user/streamers/channel):"
+msgstr ""
+"Na [stranici za konfiguraciju kanala](/peertube-plugin-livechat/hr/"
+"documentation/user/streamers/channel) možeš postaviti opciju „{{% "
+"livechat_label moderation_delay %}}”:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgstr ""
+"![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/"
+"images/moderation_delay_channel_option."
+"png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3227,6 +3235,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgstr ""
+"![Timer odgode moderiranja](/peertube-plugin-livechat/images/"
+"moderation_delay_timer.png?classes=shadow,border)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3288,10 +3298,8 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 10.1.0."
 msgid "This feature comes with the livechat plugin version 10.2.0."
-msgstr "Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.1.0."
+msgstr "Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.2.0."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3484,10 +3492,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
-#, fuzzy
-#| msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
 msgid "Every user that is not muted can vote.  This means that you can prevent anonymous users to vote by using the [\"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" feature](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
-msgstr "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/hr/documentation/user/streamers/moderation) standardna vrijednost"
+msgstr ""
+"Svaki korisnik koji nije isključen može glasati. To znači da možeš "
+"spriječiti anonimne korisnike da glasaju pomoću funkcije [\"{{% "
+"livechat_label livechat_configuration_channel_mute_anonymous_label "
+"%}}\"](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/polls.md
