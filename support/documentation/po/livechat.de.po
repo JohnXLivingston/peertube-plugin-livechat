@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-07-17 10:53+0200\n"
-"PO-Revision-Date: 2024-07-12 09:10+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-07-24 09:23+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2966,6 +2968,11 @@ msgstr "Bei diesen Wörtern wird die Groß- und Kleinschreibung nicht berücksic
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "You can combine a short [moderation delay](/peertube-plugin-livechat/documentation/user/streamers/moderation_delay) (1 second for example) with the [moderation bot](/peertube-plugin-livechat/documentation/user/streamers/bot) to delete messages containing swear words before any non-moderator user will see them."
 msgstr ""
+"Sie können eine kurze [Moderationsverzögerung](/peertube-plugin-livechat/de/"
+"documentation/user/streamers/moderation_delay) (z.B. 1 Sekunde) mit dem "
+"[Moderations-Chatbot](/peertube-plugin-livechat/de/documentation/user/"
+"streamers/bot) kombinieren, um Nachrichten mit Schimpfwörtern zu löschen, "
+"bevor ein Nicht-Moderator sie sieht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
