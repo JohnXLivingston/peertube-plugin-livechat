@@ -7,7 +7,7 @@ share_chat_link: チャットリンクを共有
 read_only: 読み取り専用にする
 show_scrollbarr: スクロールバーを表示する
 transparent_background: 透過型背景にする (OBSなどを使用したストリーミング連携に最適)
-tips_for_streamers: "ストリーマーの方へ: OBSにチャットを追加する場合は、読み取り専用のチャットリンクを生成し、ブラウザソースで読み込んでください。"
+tips_for_streamers: "ストリーマーの方へ: OBSなどを使用して動画ストリームにチャットを埋め込む場合は、読み取り専用のチャットリンクを生成し、ブラウザソースで読み込んでください。\n"
 copy: コピー
 link_copied: リンクをコピーしました
 error: エラー
@@ -230,3 +230,4 @@ external_auth_custom_oidc_description: "チャットへのログインに、外�
   \ target=\"_blank\">設定</a>ページ\n"
 external_auth_custom_oidc_button_label_description: このラベルは、OIDCプロバイダーを使用して認証するボタン名としてユーザーに表示されます。
 copied: コピーしました
+chat_terms_label: 利用規約
