@@ -7,7 +7,6 @@ import { customizeToolbar } from './livechat-specific/toolbar'
 import { initReconnectionStuff } from './livechat-specific/reconnection'
 import { chatRoomOverrides } from './livechat-specific/chatroom'
 import { chatRoomMessageOverrides } from './livechat-specific/chatroom-message'
-import { chatRoomOccupantsOverrides } from './livechat-specific/chatroom-occupants'
 
 export const livechatSpecificsPlugin = {
   dependencies: ['converse-muc', 'converse-muc-views'],
@@ -38,7 +37,6 @@ export const livechatSpecificsPlugin = {
   },
   overrides: {
     ChatRoom: chatRoomOverrides(),
-    ChatRoomMessage: chatRoomMessageOverrides(),
-    ChatRoomOccupants: chatRoomOccupantsOverrides()
+    ChatRoomMessage: chatRoomMessageOverrides()
   }
 }

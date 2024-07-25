@@ -23,6 +23,26 @@ export function chatRoomOverrides (): {[key: string]: Function} {
       // See https://github.com/conversejs/converse.js/issues/3428 for more info.
       // FIXME: if #3428 is fixed, remove this override.
       return this.isEntered() && this.getOwnRole() !== 'visitor'
+    },
+    initOccupants: function initOccupants (this: any) {
+      const r = this.__super__.initOccupants()
+
+      const originalComparatorFunction: Function = this.occupants.comparator
+      this.occupants.comparator = function (this: any, occupant1: any, occupant2: any): Number {
+        // Overriding Occupants comparators, to display anonymous users at the end of the list.
+        const nick1: string = occupant1.getDisplayName()
+        const nick2: string = occupant2.getDisplayName()
+        const b1 = nick1.startsWith('Anonymous ')
+        const b2 = nick2.startsWith('Anonymous ')
+        if (b1 === b2) {
+          // Both startswith anonymous, or non of it: fallback to the standard comparator.
+          return originalComparatorFunction.call(this, occupant1, occupant2)
+        }
+        // Else: Anonymous always last.
+        return b1 ? 1 : -1
+      }
+
+      return r
     }
   }
 }
