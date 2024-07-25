@@ -93,13 +93,16 @@ abstract class ProsodyConfigBlock {
     this.entries.set(name, value)
   }
 
-  add (name: string, value: ConfigEntryValue): void {
+  add (name: string, value: ConfigEntryValue, allowDuplicate?: boolean): void {
     if (!this.entries.has(name)) {
       this.entries.set(name, [])
     }
     let entry = this.entries.get(name) as ConfigEntryValue
     if (!Array.isArray(entry)) {
       entry = [entry]
+    }
+    if (!allowDuplicate && entry.includes(value)) {
+      return
     }
     entry.push(value)
     this.entries.set(name, entry)
@@ -239,7 +242,7 @@ class ProsodyConfigContent {
     this.muc.set('muc_room_default_history_length', 20)
 
     this.muc.add('modules_enabled', 'muc_slow_mode')
-    this.muc.add('slow_mode_duration_form_position', 120)
+    this.muc.set('slow_mode_duration_form_position', 120)
 
     this.muc.add('modules_enabled', 'pubsub_peertubelivechat')
     this.muc.add('modules_enabled', 'muc_peertubelivechat_roles')
@@ -251,7 +254,7 @@ class ProsodyConfigContent {
     }
 
     this.muc.add('modules_enabled', 'muc_moderation_delay')
-    this.muc.add('moderation_delay_form_position', 118)
+    this.muc.set('moderation_delay_form_position', 118)
   }
 
   useAnonymous (autoBanIP: boolean): void {
@@ -445,7 +448,7 @@ class ProsodyConfigContent {
 
   useMucHttpDefault (url: string): void {
     this.muc.add('modules_enabled', 'muc_http_defaults')
-    this.muc.add('muc_create_api_url', url)
+    this.muc.set('muc_create_api_url', url)
 
     // restrict_room_creation: we can override the 'local' value.
     // Indeed, when muc_http_default is used, room creation will be managed by api.
@@ -517,7 +520,7 @@ class ProsodyConfigContent {
    */
   useBotsVirtualHost (botAvatarPath: string, botAvatarFiles: string[]): void {
     this.bot = new ProsodyConfigVirtualHost('bot.' + this.prosodyDomain)
-    this.bot.set('modules_enabled', ['ping'])
+    this.bot.set('modules_enabled', ['ping', 'tls'])
     this.bot.set('authentication', 'peertubelivechat_bot')
 
     // For now, just using random_vcard_peertubelivechat to set bot avatar

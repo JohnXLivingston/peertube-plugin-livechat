@@ -1,5 +1,12 @@
 # Changelog
 
+## 10.3.3
+
+### Minor changes and fixes
+
+* Fix #481: Moderation bot was not able to connect when remote chat was disabled.
+* Some cleaning in code generating Prosody configuration file.
+
 ## 10.3.2
 
 ### Minor changes and fixes
