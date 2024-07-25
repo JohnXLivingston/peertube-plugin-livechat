@@ -102,14 +102,23 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   }
 
   let avatarSet: AvatarSet = (settings['avatar-set'] ?? 'sepia') as AvatarSet
-  if (!['sepia', 'cat', 'bird', 'fenec', 'abstract', 'legacy'].includes(avatarSet)) {
-    logger.error('Invalid avatar-set setting, using sepia as default')
-    avatarSet = 'sepia'
+  let avatarsDir
+  let avatarsFiles
+  let botAvatarsDir
+  let botAvatarsFiles
+  if (avatarSet === 'none') {
+    botAvatarsDir = path.resolve(__dirname, '../../bot_avatars/', 'sepia') // fallback to default avatars for the bot
+    botAvatarsFiles = await _listAvatars(botAvatarsDir)
+  } else {
+    if (!['sepia', 'cat', 'bird', 'fenec', 'abstract', 'legacy'].includes(avatarSet)) {
+      logger.error('Invalid avatar-set setting, using sepia as default')
+      avatarSet = 'sepia'
+    }
+    avatarsDir = path.resolve(__dirname, '../../avatars/', avatarSet)
+    avatarsFiles = await _listAvatars(avatarsDir)
+    botAvatarsDir = path.resolve(__dirname, '../../bot_avatars/', avatarSet)
+    botAvatarsFiles = await _listAvatars(botAvatarsDir)
   }
-  const avatarsDir = path.resolve(__dirname, '../../avatars/', avatarSet)
-  const avatarsFiles = await _listAvatars(avatarsDir)
-  const botAvatarsDir = path.resolve(__dirname, '../../bot_avatars/', avatarSet)
-  const botAvatarsFiles = await _listAvatars(botAvatarsDir)
 
   return {
     dir: dir,
@@ -356,7 +365,9 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
 
   config.useManageRoomsApi(apikey)
   config.usePeertubeVCards(basePeertubeUrl)
-  config.useAnonymousRandomVCards(paths.avatars, paths.avatarsFiles)
+  if (paths.avatars && paths.avatarsFiles) {
+    config.useAnonymousRandomVCards(paths.avatars, paths.avatarsFiles)
+  }
 
   if (useBots) {
     config.useBotsVirtualHost(paths.botAvatars, paths.botAvatarsFiles)

@@ -13,7 +13,7 @@ import { LivechatProsodyAuth } from './prosody/auth'
 import { loc } from './loc'
 const escapeHTML = require('escape-html')
 
-type AvatarSet = 'sepia' | 'cat' | 'bird' | 'fenec' | 'abstract' | 'legacy'
+type AvatarSet = 'sepia' | 'cat' | 'bird' | 'fenec' | 'abstract' | 'legacy' | 'none'
 
 async function initSettings (options: RegisterServerOptions): Promise<void> {
   const { peertubeHelpers, settingsManager } = options
@@ -510,7 +510,8 @@ function initThemingSettings ({ registerSetting }: RegisterServerOptions): void 
       { value: 'bird', label: loc('avatar_set_option_bird') },
       { value: 'fenec', label: loc('avatar_set_option_fenec') },
       { value: 'abstract', label: loc('avatar_set_option_abstract') },
-      { value: 'legacy', label: loc('avatar_set_option_legacy') }
+      { value: 'legacy', label: loc('avatar_set_option_legacy') },
+      { value: 'none', label: loc('avatar_set_option_none') }
     ] as Array<{
       value: AvatarSet
       label: string

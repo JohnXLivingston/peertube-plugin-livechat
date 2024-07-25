@@ -181,6 +181,7 @@ avatar_set_option_fenec: "Fenecs (Mobilizon mascot)"
 avatar_set_option_abstract: Abstract
 avatar_set_option_legacy: "Legacy Sepia avatars (those included in previous plugin
   versions)"
+avatar_set_option_none: None
 
 converse_theme_label: "ConverseJS theme"
 converse_theme_description: "Please choose the converseJS theme you want to use."

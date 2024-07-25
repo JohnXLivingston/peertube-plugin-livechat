@@ -12,8 +12,8 @@ interface ProsodyFilePaths {
   certs?: string
   certsDirIsCustom: boolean
   modules: string
-  avatars: string
-  avatarsFiles: string[]
+  avatars?: string
+  avatarsFiles?: string[]
   botAvatars: string
   botAvatarsFiles: string[]
   exec?: string

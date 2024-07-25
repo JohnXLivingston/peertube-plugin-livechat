@@ -87,8 +87,8 @@ class ExternalAuthOIDC {
   private readonly redirectUrl: string
   private readonly connectUrl: string
   private readonly externalVirtualhost: string
-  private readonly avatarsDir: string
-  private readonly avatarsFiles: string[]
+  private readonly avatarsDir: string | undefined
+  private readonly avatarsFiles: string[] | undefined
 
   private readonly encryptionOptions = {
     algorithm: 'aes256' as string,
@@ -129,8 +129,8 @@ class ExternalAuthOIDC {
     connectUrl: string
     redirectUrl: string
     externalVirtualhost: string
-    avatarsDir: string
-    avatarsFiles: string[]
+    avatarsDir?: string
+    avatarsFiles?: string[]
   }) {
     this.logger = {
       debug: (s) => params.logger.debug('[ExternalAuthOIDC] ' + s),
@@ -591,8 +591,8 @@ class ExternalAuthOIDC {
    */
   private async getRandomAvatar (): Promise<undefined | ExternalAccountInfos['avatar']> {
     try {
-      if (!this.avatarsDir || !this.avatarsFiles.length) {
-        throw new Error('Seems there is no default avatars')
+      if (!this.avatarsDir || !this.avatarsFiles?.length) {
+        return undefined
       }
 
       const file = this.avatarsFiles[Math.floor(Math.random() * this.avatarsFiles.length)]
