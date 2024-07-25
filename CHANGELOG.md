@@ -8,7 +8,8 @@
 
 ### Minor changes and fixes
 
-* New translation: Albanian
+* New translation: Albanian.
+* Translation updates: Crotian, Japanese.
 
 ## 10.3.2
 
