@@ -2,6 +2,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+import { customizeHeading } from './livechat-specific/heading'
+import { customizeToolbar } from './livechat-specific/toolbar'
+import { initReconnectionStuff } from './livechat-specific/reconnection'
+import { chatRoomOverrides } from './livechat-specific/chatroom'
+import { chatRoomMessageOverrides } from './livechat-specific/chatroom-message'
+import { chatRoomOccupantsOverrides } from './livechat-specific/chatroom-occupants'
+
 export const livechatSpecificsPlugin = {
   dependencies: ['converse-muc', 'converse-muc-views'],
   initialize: function (this: any) {
@@ -14,166 +21,15 @@ export const livechatSpecificsPlugin = {
       livechat_specific_is_anonymous: false
     })
 
-    _converse.api.listen.on('getHeadingButtons', (view: any, buttons: any[]) => {
-      if (view.model.get('type') !== _converse.constants.CHATROOMS_TYPE) {
-        // only on MUC.
-        return buttons
-      }
-
-      if (_converse.api.settings.get('livechat_specific_external_authent')) {
-        // Adding a logout button
-        buttons.push({
-          i18n_text: _converse.__('Log out'),
-          handler: async (ev: Event) => {
-            ev.preventDefault()
-            ev.stopPropagation()
-
-            const messages = [_converse.__('Are you sure you want to leave this groupchat?')]
-            const result = await _converse.api.confirm(_converse.__('Confirm'), messages)
-            if (!result) { return }
-
-            // Deleting access token in sessionStorage.
-            window.sessionStorage.removeItem('peertube-plugin-livechat-external-auth-oidc-token')
-
-            const reconnectMode = _converse.api.settings.get('livechat_external_auth_reconnect_mode')
-            if (reconnectMode === 'button-close-open') {
-              const button = document.getElementsByClassName('peertube-plugin-livechat-button-close')[0]
-              if ((button as HTMLAnchorElement).click) { (button as HTMLAnchorElement).click() }
-              return
-            }
-
-            window.location.reload()
-          },
-          a_class: 'close-chatbox-button',
-          icon_class: 'fa-sign-out-alt',
-          name: 'signout'
-        })
-      }
-
-      return buttons
-    })
-
-    _converse.api.listen.on('getToolbarButtons', (toolbarEl: any, buttons: any[]) => {
-      // We will replace the toggle occupant button, to change its appearance.
-      // First, we must find it. We search from the end, because usually it is the last one.
-      let toggleOccupantButton: any
-      for (const button of buttons.reverse()) {
-        if (button.strings?.find((s: string) => s.includes('toggle_occupants'))) { // searching the classname
-          console.debug('[livechatSpecificsPlugin] found the toggle occupants button', button)
-          toggleOccupantButton = button
-          break
-        }
-      }
-      if (!toggleOccupantButton) {
-        console.debug('[livechatSpecificsPlugin] Did not found the toggle occupants button')
-        return buttons
-      }
-
-      buttons = buttons.filter(b => b !== toggleOccupantButton)
-      // Replacing by the new button...
-      // Note: we don't need to test conditions, we know the button was here.
-      const i18nHideOccupants = _converse.__('Hide participants')
-      const i18nShowOccupants = _converse.__('Show participants')
-      const html = window.converse.env.html
-      const icon = toolbarEl.hidden_occupants
-        ? html`<converse-icon
-                color="var(--muc-toolbar-btn-color)"
-                class="fa fa-angle-double-left"
-                size="1em">
-            </converse-icon>
-            <converse-icon
-                color="var(--muc-toolbar-btn-color)"
-                class="fa users"
-                size="1em">
-            </converse-icon>`
-        : html`<converse-icon
-                color="var(--muc-toolbar-btn-color)"
-                class="fa users"
-                size="1em">
-            </converse-icon>
-            <converse-icon
-                color="var(--muc-toolbar-btn-color)"
-                class="fa fa-angle-double-right"
-                size="1em">
-            </converse-icon>`
-      buttons.push(html`
-          <button class="toggle_occupants right"
-                  title="${toolbarEl.hidden_occupants ? i18nShowOccupants : i18nHideOccupants}"
-                  @click=${toolbarEl.toggleOccupants}>
-                  ${icon}
-          </button>`
-      )
-      return buttons
-    })
-
-    // Overriding the MUCHeading custom element, to customize the destroyMUC function:
-    const MUCHeading = _converse.api.elements.registry['converse-muc-heading']
-    if (MUCHeading) {
-      class MUCHeadingOverloaded extends MUCHeading {
-        async destroy (ev: Event): Promise<void> {
-          ev.preventDefault()
-          await destroyMUC(_converse, this.model) // here we call a custom version of destroyMUC
-        }
-      }
-      _converse.api.elements.define('converse-muc-heading', MUCHeadingOverloaded)
-    }
+    customizeHeading(this)
+    customizeToolbar(this)
 
     _converse.api.listen.on('chatRoomViewInitialized', function (this: any, _model: any): void {
       // Remove the spinner if present...
       document.getElementById('livechat-loading-spinner')?.remove()
     })
 
-    // Adding a method on window.converse, so we can close the chat on navigation-end event
-    // (when chatIncludeMode is peertube-*)
-    window.converse.livechatDisconnect = function livechatDisconnect () {
-      if (_converse.api.connection.connected()) {
-        console.log('[livechatSpecificsPlugin] disconnecting converseJS...')
-        _converse.api.user.logout()
-      }
-    }
-
-    // To reconnect ConverseJS when joining another room (or the same one),
-    // we store the relevant closure function:
-    window.reconnectConverse = function reconnectConverse (params: any): void {
-      console.log('[livechatSpecificsPlugin] reconnecting converseJS...')
-
-      // The new room to join:
-      _converse.api.settings.set('auto_join_rooms', params.auto_join_rooms)
-      _converse.api.settings.set('notify_all_room_messages', params.notify_all_room_messages)
-
-      // update connection parameters (in case the user logged in after the first chat)
-      for (const k of [
-        'bosh_service_url', 'websocket_url',
-        'authentication', 'nickname', 'muc_nickname_from_jid', 'auto_login', 'jid', 'password', 'keepalive'
-      ]) {
-        _converse.api.settings.set(k, params[k])
-      }
-
-      // update other settings
-      for (const k of [
-        'hide_muc_participants',
-        'livechat_enable_viewer_mode',
-        'livechat_external_auth_oidc_buttons',
-        'livechat_external_auth_reconnect_mode',
-        'livechat_mini_muc_head',
-        'livechat_specific_external_authent',
-        'livechat_task_app_enabled',
-        'livechat_task_app_restore',
-        'livechat_custom_emojis_url',
-        'emoji_categories'
-      ]) {
-        _converse.api.settings.set(k, params[k])
-      }
-
-      // We also unload emojis, in case there are custom emojis.
-      window.converse.emojis = {
-        initialized: false,
-        initialized_promise: getOpenPromise()
-      }
-
-      // Then login.
-      _converse.api.user.login()
-    }
+    initReconnectionStuff(this)
 
     if (window.location.protocol === 'http:') {
       // We are probably on a dev instance, so we will add _converse in window:
@@ -181,99 +37,8 @@ export const livechatSpecificsPlugin = {
     }
   },
   overrides: {
-    ChatRoom: {
-      getActionInfoMessage: function getActionInfoMessage (this: any, code: string, nick: string, actor: any): any {
-        if (code === '303') {
-          // When there is numerous anonymous users joining at the same time,
-          // they can all change their nicknames at the same time, generating a log of action messages.
-          // To mitigate this, will don't display nickname changes if the previous nick is something like
-          // 'Anonymous 12345'.
-          if (/^Anonymous \d+$/.test(nick)) {
-            // To avoid displaying the message, we just have to return an empty one
-            // (createInfoMessage will ignore if !data.message).
-            return null
-          }
-        }
-        return this.__super__.getActionInfoMessage(code, nick, actor)
-      },
-      canPostMessages: function canPostMessages (this: any) {
-        // ConverseJS does not handle properly the visitor role in unmoderated rooms.
-        // See https://github.com/conversejs/converse.js/issues/3428 for more info.
-        // FIXME: if #3428 is fixed, remove this override.
-        return this.isEntered() && this.getOwnRole() !== 'visitor'
-      }
-    },
-    ChatRoomMessage: {
-      /* By default, ConverseJS groups messages from the same users for a 10 minutes period.
-       * This make no sense in a livechat room. So we override isFollowup to ignore. */
-      isFollowup: function isFollowup () { return false }
-    },
-    ChatRoomOccupants: {
-      comparator: function (this: any, occupant1: any, occupant2: any): Number {
-        // Overriding Occupants comparators, to display anonymous users at the end of the list.
-        const nick1: string = occupant1.getDisplayName()
-        const nick2: string = occupant2.getDisplayName()
-        const b1 = nick1.startsWith('Anonymous ')
-        const b2 = nick2.startsWith('Anonymous ')
-        if (b1 === b2) {
-          // Both startswith anonymous, or non of it: fallback to the standard comparator.
-          return this.__super__.comparator(occupant1, occupant2)
-        }
-        // Else: Anonymous always last.
-        return b1 ? 1 : -1
-      }
-    }
-  }
-}
-
-// FIXME: this function is copied from @converse. Should not do so.
-function getOpenPromise (): any {
-  const wrapper: any = {
-    isResolved: false,
-    isPending: true,
-    isRejected: false
-  }
-  const promise: any = new Promise((resolve, reject) => {
-    wrapper.resolve = resolve
-    wrapper.reject = reject
-  })
-  Object.assign(promise, wrapper)
-  promise.then(
-    function (v: any) {
-      promise.isResolved = true
-      promise.isPending = false
-      promise.isRejected = false
-      return v
-    },
-    function (e: any) {
-      promise.isResolved = false
-      promise.isPending = false
-      promise.isRejected = true
-      throw (e)
-    }
-  )
-  return promise
-}
-
-async function destroyMUC (_converse: any, model: any): Promise<void> {
-  const __ = _converse.__
-  const messages = [__('Are you sure you want to destroy this groupchat?')]
-  // Note: challenge and newjid make no sens for peertube-plugin-livechat,
-  // we remove them comparing to the original function.
-  let fields = [
-    {
-      name: 'reason',
-      label: __('Optional reason for destroying this groupchat'),
-      placeholder: __('Reason'),
-      value: undefined
-    }
-  ]
-  try {
-    fields = await _converse.api.confirm(__('Confirm'), messages, fields)
-    const reason = fields.filter(f => f.name === 'reason').pop()?.value
-    const newjid = undefined
-    return model.sendDestroyIQ(reason, newjid).then(() => model.close())
-  } catch (e) {
-    console.error(e)
+    ChatRoom: chatRoomOverrides(),
+    ChatRoomMessage: chatRoomMessageOverrides(),
+    ChatRoomOccupants: chatRoomOccupantsOverrides()
   }
 }
