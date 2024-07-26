@@ -573,3 +573,4 @@ livechat_configuration_channel_moderation_delay_desc: "Valeur par défaut du dé
   non modérateur⋅rices, ce qui permet à ces derniers de supprimer les messages avant
   qu'un utilisateur⋅rice ne puisse le lire.</li>\n</ul>\n"
 moderation_delay: Délai de modération
+avatar_set_option_none: Aucun
