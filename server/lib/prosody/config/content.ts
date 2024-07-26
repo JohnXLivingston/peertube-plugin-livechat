@@ -255,6 +255,9 @@ class ProsodyConfigContent {
 
     this.muc.add('modules_enabled', 'muc_moderation_delay')
     this.muc.set('moderation_delay_form_position', 118)
+
+    this.muc.add('modules_enabled', 'muc_anonymize_moderation_actions')
+    this.muc.set('anonymize_moderation_actions_form_position', 117)
   }
 
   useAnonymous (autoBanIP: boolean): void {

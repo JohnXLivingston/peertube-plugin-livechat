@@ -39,6 +39,7 @@ interface RoomDefaults {
     mute_anonymous?: boolean
     livechat_muc_terms?: string
     moderation_delay?: number
+    anonymize_moderation_actions?: boolean
   }
   affiliations?: Affiliations
 }
@@ -54,7 +55,8 @@ async function _getChannelSpecificOptions (
     slow_mode_duration: channelOptions.slowMode.duration,
     mute_anonymous: channelOptions.mute.anonymous,
     livechat_muc_terms: channelOptions.terms,
-    moderation_delay: channelOptions.moderation.delay
+    moderation_delay: channelOptions.moderation.delay,
+    anonymize_moderation_actions: channelOptions.moderation.anonymize
   }
 }
 

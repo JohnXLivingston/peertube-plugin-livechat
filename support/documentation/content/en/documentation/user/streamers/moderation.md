@@ -73,6 +73,19 @@ This section is still incomplete.
 
 You can promote users as moderators, if you need some help.
 
+## {{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}
+
+{{% notice info %}}
+This feature comes with the livechat plugin version 11.0.0.
+{{% /notice %}}
+
+It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants."
+
+To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the "configure" menu.
+In the form, you will find a "{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}" checkbox.
+
+You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel).
+
 ## Delete room content
 
 You can delete old rooms: join the room, and use the menu on the top to destroy the room.

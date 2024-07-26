@@ -8,6 +8,7 @@
 -- * "slow_mode_duration"
 -- * "mute_anonymous"
 -- * "moderation_delay"
+-- * "anonymize_moderation_actions"
 -- These options are introduced in the Peertube livechat plugin.
 --
 -- The "slow_mode_duration" comes with mod_muc_slow_mode.
@@ -131,6 +132,9 @@ local function apply_config(room, settings)
 			-- we don't need to use set_muc_terms here, as this is called for a newly created room
 			-- (and thus we don't need to broadcast changes)
 			room._data.livechat_muc_terms = config.livechat_muc_terms;
+		end
+		if (type(config.anonymize_moderation_actions) == "boolean") then
+			room._data.anonymize_moderation_actions = config.anonymize_moderation_actions;
 		end
 	elseif config ~= nil then
 		module:log("error", "Invalid config returned from API for %s: %q", room.jid, config);

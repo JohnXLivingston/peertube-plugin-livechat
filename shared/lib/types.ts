@@ -109,6 +109,7 @@ interface ChannelConfigurationOptions {
   terms?: string // comes with Livechat 10.2.0
   moderation: { // comes with Livechat 10.3.0
     delay: number
+    anonymize: boolean // comes with Livechat 11.0.0
   }
 }
 

@@ -588,3 +588,8 @@ livechat_configuration_channel_moderation_delay_desc: |
     <li>0: moderation delay disabled</li>
     <li>Any positive integer: messages will be delayed for X seconds for non-moderator participants, allowing moderators to delete message before any user can read it.</li>
   </ul>
+
+livechat_configuration_channel_anonymize_moderation_label: "Anonymize moderation actions"
+livechat_configuration_channel_anonymize_moderation_desc: |
+    Anonymize moderation actions default value for new rooms.
+    When this is enabled, moderation actions will be anonymized, to avoid disclosing who is banning/kicking/… occupants.

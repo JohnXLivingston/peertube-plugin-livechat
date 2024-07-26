@@ -6,6 +6,7 @@
 
 * Updating ConverseJS, to use upstream (v11 WIP). This comes with many improvments and new features.
 * #146: copy message button for moderators.
+* #137: option to hide moderator name who made actions (kick, ban, message moderation, ...).
 
 ### Minor changes and fixes
 

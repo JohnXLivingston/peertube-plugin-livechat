@@ -167,7 +167,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
           <label>
             <input
               type="checkbox"
-              name="bot"
+              name="mute_anonymous"
               id="peertube-livechat-mute-anonymous"
               @input=${(event: InputEvent) => {
                   if (event?.target && el.channelConfiguration) {
@@ -252,6 +252,32 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
             />
           </label>
           ${el.renderFeedback('peertube-livechat-moderation-delay-feedback', 'moderation.delay')}
+        </div>
+
+        <livechat-configuration-section-header
+          .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ANONYMIZE_MODERATION_LABEL)}
+          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ANONYMIZE_MODERATION_DESC, true)}
+          .helpPage=${'documentation/user/streamers/moderation'}>
+        </livechat-configuration-section-header>
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
+              name="anonymize-moderation"
+              id="peertube-livechat-anonymize-moderation"
+              @input=${(event: InputEvent) => {
+                  if (event?.target && el.channelConfiguration) {
+                    el.channelConfiguration.configuration.moderation.anonymize =
+                      (event.target as HTMLInputElement).checked
+                  }
+                  el.requestUpdate('channelConfiguration')
+                }
+              }
+              value="1"
+              ?checked=${el.channelConfiguration?.configuration.moderation.anonymize}
+            />
+            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ANONYMIZE_MODERATION_LABEL)}
+          </label>
         </div>
 
         <livechat-configuration-section-header

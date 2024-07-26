@@ -38,6 +38,7 @@ async function sanitizeChannelConfigurationOptions (
 
   const moderationData = data.moderation ?? {} // comes with livechat 10.3.0
   moderationData.delay ??= 0
+  moderationData.anonymize ??= false // comes with livechat 11.0.0
 
   // mute not present in livechat <= 10.2.0
   const mute = data.mute ?? {}
@@ -73,7 +74,8 @@ async function sanitizeChannelConfigurationOptions (
       anonymous: _readBoolean(mute, 'anonymous')
     },
     moderation: {
-      delay: _readInteger(moderationData, 'delay', 0, 60)
+      delay: _readInteger(moderationData, 'delay', 0, 60),
+      anonymize: _readBoolean(moderationData, 'anonymize')
     }
   }
   if (terms !== undefined) {

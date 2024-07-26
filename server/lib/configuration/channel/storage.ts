@@ -54,7 +54,8 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
       anonymous: false
     },
     moderation: {
-      delay: 0
+      delay: 0,
+      anonymize: false
     },
     terms: undefined
   }
