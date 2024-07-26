@@ -167,7 +167,7 @@ async function displayConverseJS (
   const converseJSParams: InitConverseJSParams = await (response).json()
 
   if (!pollListenerInitiliazed) {
-    // First time we got here, initiliaze this event:
+    // First time we got here, initialize this event:
     const i18nVoteOk = await clientOptions.peertubeHelpers.translate(LOC_POLL_VOTE_OK)
     pollListenerInitiliazed = true
     document.addEventListener('livechat-poll-vote', () => {

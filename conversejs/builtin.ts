@@ -34,6 +34,7 @@ declare global {
       env: {
         html: Function
         sizzle: Function
+        dayjs: Function
       }
     }
     initConversePlugins: typeof initConversePlugins
