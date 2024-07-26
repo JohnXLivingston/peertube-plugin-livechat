@@ -557,3 +557,4 @@ livechat_configuration_channel_moderation_delay_desc: "Standardwert der Moderati
   ganze Zahl: Nachrichten werden für Nicht-Moderator-Teilnehmer um X Sekunden verzögert,
   so dass Moderatoren die Nachricht löschen können, bevor ein anderer Benutzer sie
   lesen kann.</li>\n</ul>\n"
+avatar_set_option_none: Nichts
