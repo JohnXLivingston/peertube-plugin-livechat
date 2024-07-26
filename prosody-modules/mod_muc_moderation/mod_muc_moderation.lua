@@ -27,6 +27,7 @@ end
 -- Namespaces
 local xmlns_fasten = "urn:xmpp:fasten:0";
 local xmlns_moderate = "urn:xmpp:message-moderate:0";
+local xmlns_occupant_id = "urn:xmpp:occupant-id:0";
 local xmlns_retract = "urn:xmpp:message-retract:0";
 
 -- Discovering support
@@ -34,41 +35,30 @@ module:hook("muc-disco#info", function (event)
 	event.reply:tag("feature", { var = xmlns_moderate }):up();
 end);
 
--- Main handling
-module:hook("iq-set/bare/" .. xmlns_fasten .. ":apply-to", function (event)
-	local stanza, origin = event.stanza, event.origin;
+-- TODO error registry, requires Prosody 0.12+
 
-	-- Collect info we need
-	local apply_to = stanza.tags[1];
-	local moderate_tag = apply_to:get_child("moderate", xmlns_moderate);
-	if not moderate_tag then return end -- some other kind of fastening?
-
-	local reason = moderate_tag:get_child_text("reason");
-	local retract = moderate_tag:get_child("retract", xmlns_retract);
-
-	local room_jid = stanza.attr.to;
+-- moderate : function (string, string, string, boolean, string) : boolean, enum, enum, string
+local function moderate(actor, room_jid, stanza_id, retract, reason)
 	local room_node = jid.split(room_jid);
 	local room = mod_muc.get_room_from_jid(room_jid);
 
-	local stanza_id = apply_to.attr.id;
-
-	-- Permissions
-	local actor = stanza.attr.from;
+	-- Permissions is based on role, which is a property of a current occupant,
+	-- so check if the actor is an occupant, otherwise if they have a reserved
+	-- nickname that can be used to retrieve the role.
 	local actor_nick = room:get_occupant_jid(actor);
-	local affiliation = room:get_affiliation(actor);
-	-- Retrieve their current role, iff they are in the room, otherwise what they
-	-- would have based on affiliation.
-	local role = room:get_role(actor_nick) or room:get_default_role(affiliation);
-	if valid_roles[role or "none"] < valid_roles.moderator then
-		origin.send(st.error_reply(stanza, "auth", "forbidden", "You need a role of at least 'moderator'"));
-		return true;
-	end
-
 	if not actor_nick then
 		local reserved_nickname = room:get_affiliation_data(jid.bare(actor), "reserved_nickname");
 		if reserved_nickname then
 			actor_nick = room.jid .. "/" .. reserved_nickname;
 		end
+	end
+
+	-- Retrieve their current role, iff they are in the room, otherwise what they
+	-- would have based on affiliation.
+	local affiliation = room:get_affiliation(actor);
+	local role = room:get_role(actor_nick) or room:get_default_role(affiliation);
+	if valid_roles[role or "none"] < valid_roles.moderator then
+		return false, "auth", "forbidden", "You need a role of at least 'moderator'";
 	end
 
 	-- Original stanza to base tombstone on
@@ -84,13 +74,13 @@ module:hook("iq-set/bare/" .. xmlns_fasten .. ":apply-to", function (event)
 			end
 		end
 	end
+
 	if not original then
 		if err == "item-not-found" then
-			origin.send(st.error_reply(stanza, "modify", "item-not-found"));
+			return false, "modify", "item-not-found";
 		else
-			origin.send(st.error_reply(stanza, "wait", "internal-server-error"));
+			return false, "wait", "internal-server-error";
 		end
-		return true;
 	end
 
 
@@ -106,25 +96,71 @@ module:hook("iq-set/bare/" .. xmlns_fasten .. ":apply-to", function (event)
 		announcement:text_tag("reason", reason);
 	end
 
+	local moderated_occupant_id = original:get_child("occupant-id", xmlns_occupant_id);
+	if room.get_occupant_id and moderated_occupant_id then
+		announcement:add_direct_child(moderated_occupant_id);
+	end
+
+	local actor_occupant = room:get_occupant_by_real_jid(actor) or room:new_occupant(jid.bare(actor), actor_nick);
+	if room.get_occupant_id then
+		-- This isn't a regular broadcast message going through the events occupant_id.lib hooks so we do this here
+		announcement:add_direct_child(st.stanza("occupant-id", { xmlns = xmlns_occupant_id; id = room:get_occupant_id(actor_occupant) }))
+	end
+
 	if muc_log_archive.set and retract then
 		local tombstone = st.message({ from = original.attr.from, type = "groupchat", id = original.attr.id })
 			:tag("moderated", { xmlns = xmlns_moderate, by = actor_nick })
 				:tag("retracted", { xmlns = xmlns_retract, stamp = dt.datetime() }):up();
 
+		if room.get_occupant_id then
+			tombstone:add_direct_child(st.stanza("occupant-id", { xmlns = xmlns_occupant_id; id = room:get_occupant_id(actor_occupant) }))
+
+			if moderated_occupant_id then
+				-- Copy occupant id from moderated message
+				tombstone:add_child(moderated_occupant_id);
+			end
+		end
+
 		if reason then
 			tombstone:text_tag("reason", reason);
 		end
+		tombstone:reset();
 
 		local was_replaced = muc_log_archive:set(room_node, stanza_id, tombstone);
 		if not was_replaced then
-			origin.send(st.error_reply(stanza, "wait", "internal-server-error"));
-			return true;
+			return false, "wait", "internal-server-error";
 		end
 	end
 
 	-- Done, tell people about it
 	module:log("info", "Message with id '%s' in room %s moderated by %s, reason: %s", stanza_id, room_jid, actor, reason);
 	room:broadcast_message(announcement);
+
+	return true;
+end
+
+-- Main handling
+module:hook("iq-set/bare/" .. xmlns_fasten .. ":apply-to", function (event)
+	local stanza, origin = event.stanza, event.origin;
+
+	local actor = stanza.attr.from;
+	local room_jid = stanza.attr.to;
+
+	-- Collect info we need
+	local apply_to = stanza.tags[1];
+	local moderate_tag = apply_to:get_child("moderate", xmlns_moderate);
+	if not moderate_tag then return end -- some other kind of fastening?
+
+	local reason = moderate_tag:get_child_text("reason");
+	local retract = moderate_tag:get_child("retract", xmlns_retract);
+
+	local stanza_id = apply_to.attr.id;
+
+	local ok, error_type, error_condition, error_text = moderate(actor, room_jid, stanza_id, retract, reason);
+	if not ok then
+		origin.send(st.error_reply(stanza, error_type, error_condition, error_text));
+		return true;
+	end
 
 	origin.send(st.reply(stanza));
 	return true;

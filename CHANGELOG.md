@@ -12,6 +12,7 @@
 * Avatar set for anonymous users: new 'none' choice (that will fallback to Converse new colorized avatars).
 * New translation: Albanian.
 * Translation updates: Crotian, Japanese.
+* Updated mod_muc_moderation to upstream.
 
 ## 10.3.3
 

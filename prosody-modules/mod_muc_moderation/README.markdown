@@ -1,7 +1,9 @@
-<!--
+---
 SPDX-FileCopyrightText: 2015-2021 Kim Alvefur
 SPDX-License-Identifier: MIT
--->
+summary: Let moderators remove spam and abuse messages
+---
+
 # Introduction
 
 This module implements [XEP-0425: Message Moderation].
@@ -16,7 +18,7 @@ role in the channel / group chat.
 Example [MUC component][doc:chatrooms] configuration:
 
 ``` {.lua}
-VirtualHost "channels.example.com" "muc"
+Component "channels.example.com" "muc"
 modules_enabled = {
     "muc_mam",
     "muc_moderation",
@@ -25,20 +27,19 @@ modules_enabled = {
 
 # Compatibility
 
--   Should work with Prosody 0.11.x and later.
--   Tested with trunk rev `52c6dfa04dba`.
--   Message tombstones requires a compatible storage module implementing
-    a new message replacement API.
+-   Basic functionality with Prosody 0.11.x and later
+-   Full functionality with Prosody 0.12.x and `internal` or `sql`
+    storage^[Replacing moderated messages with tombstones requires new storage API methods.]
+-   Works with [mod_storage_xmlarchive]
 
 ## Clients
 
--   Tested with [Converse.js](https://conversejs.org/)
-    [v6.0.1](https://github.com/conversejs/converse.js/releases/tag/v6.0.1)
+-   [Converse.js](https://conversejs.org/)
+-   [Gajim](https://dev.gajim.org/gajim/gajim/-/issues/10107)
+-   [clix](https://code.zash.se/clix/rev/6c1953fbe0fa)
 
 ### Feature requests
 
-- [Conv](https://github.com/iNPUTmice/Conversations/issues/3722)[ersa](https://github.com/iNPUTmice/Conversations/issues/3920)[tions](https://github.com/iNPUTmice/Conversations/issues/4227)
-- [Dino](https://github.com/dino/dino/issues/1133)
-- [Gajim](https://dev.gajim.org/gajim/gajim/-/issues/10107)
-- [Poezio](https://lab.louiz.org/poezio/poezio/-/issues/3543)
-- [Profanity](https://github.com/profanity-im/profanity/issues/1336)
+-   [Conversations](https://codeberg.org/iNPUTmice/Conversations/issues/20)
+-   [Dino](https://github.com/dino/dino/issues/1133)
+-   [Profanity](https://github.com/profanity-im/profanity/issues/1336)
