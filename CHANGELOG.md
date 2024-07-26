@@ -5,6 +5,7 @@
 ### New features
 
 * Updating ConverseJS, to use upstream (v11 WIP). This comes with many improvments and new features.
+* #146: copy message button for moderators.
 
 ### Minor changes and fixes
 
