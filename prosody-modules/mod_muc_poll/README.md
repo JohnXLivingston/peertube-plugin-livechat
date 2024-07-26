@@ -13,16 +13,16 @@ There will probably be a XEP proposal for this module behaviour. When done, this
 ## Configuration
 
 Just enable the module on your MUC component.
-All above configurations are optional.
+All following configurations are optional.
 
-## poll_groupchat_votes_priority
+### poll_groupchat_votes_priority
 
 The priority for the hook that will take into account votes.
 You can change this, if you have some specific hook that should be done after/before counting votes (slow mode, firewall, ...).
 
 Default: 40 (Prosody checks visitor role with priority of 50, we want this to be after).
 
-## Strings
+### Strings
 
 You can change some defaults strings, if you want for example to localize the poll messages.
 Here are the existing strings and default values:

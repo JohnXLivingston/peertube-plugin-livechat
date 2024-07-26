@@ -6,8 +6,9 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 With this module, you can apply a delay to groupchat messages delivery, so that room moderators can moderate them before other participants receives them.
 
-This module is part of peertube-plugin-livechat, and is under the same LICENSE.
+This module is part of peertube-plugin-livechat, and is under AGPL-3.0.-only license.
 This module can work on any Prosody server (version >= 0.12.x).
+This module is still experimental.
 
 ## Configuration
 
