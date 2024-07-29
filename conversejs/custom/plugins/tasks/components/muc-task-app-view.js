@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { api } from '@converse/headless'
-import { MUCApp } from '../../../shared/components/muc-app.js'
+import { MUCApp } from '../../../shared/components/muc-app/index.js'
 import { tplMUCTaskApp } from '../templates/muc-task-app.js'
 
 /**

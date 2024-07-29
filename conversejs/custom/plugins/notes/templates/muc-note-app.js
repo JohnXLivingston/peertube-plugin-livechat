@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { converseLocalizedHelpUrl } from '../../../shared/lib/help'
+import { tplMUCApp } from '../../../shared/components/muc-app/templates/muc-app.js'
 import { html } from 'lit'
 import { __ } from 'i18n'
 
@@ -28,19 +29,11 @@ export function tplMUCNoteApp (el, mucModel) {
     page: 'documentation/user/streamers/notes'
   })
 
-  return html`
-    <div class="livechat-converse-muc-app-header">
-      <h5>${i18nNotes}</h5>
-      <a href="${helpUrl}" target="_blank"><converse-icon
-          class="fa fa-circle-question"
-          size="1em"
-          title="${i18nHelp}"
-      ></converse-icon></a>
-      <button class="livechat-converse-muc-app-close" @click=${el.toggleApp} title="${__('Close')}">
-          <converse-icon class="fa fa-times" size="1em"></converse-icon>
-      </button>
-    </div>
-    <div class="livechat-converse-muc-app-body">
-      <livechat-converse-muc-notes .model=${mucModel.notes}></livechat-converse-muc-notes>
-    </div>`
+  return tplMUCApp(
+    el,
+    i18nNotes,
+    helpUrl,
+    i18nHelp,
+    html`<livechat-converse-muc-notes .model=${mucModel.notes}></livechat-converse-muc-notes>`
+  )
 }
