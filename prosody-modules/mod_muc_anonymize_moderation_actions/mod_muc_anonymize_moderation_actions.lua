@@ -48,7 +48,11 @@ local function remove_moderate_actor(event)
   local moderated = announcement:find("{urn:xmpp:fasten:0}apply-to/{urn:xmpp:message-moderate:0}moderated");
   if moderated then
     module:log("debug", "We must anonymize the moderation announcement for stanza %s", event.stanza_id);
-    moderated.attr.by = nil;
+    -- FIXME: XEP-0245 has changed.
+    -- urn:xmpp:message-moderate:0 requires a "by" attribute
+    -- urn:xmpp:message-moderate:1 do not require the "by" attribute
+    -- So, for now, settings the room jid, as we only implement urn:xmpp:message-moderate:0.
+    moderated.attr.by = room.jid;
     moderated:remove_children("occupant-id", "urn:xmpp:occupant-id:0");
   end
 
@@ -56,7 +60,11 @@ local function remove_moderate_actor(event)
     local moderated = tombstone:get_child("moderated", "urn:xmpp:message-moderate:0");
     if moderated then
       module:log("debug", "We must anonymize the moderation tombstone for stanza %s", event.stanza_id);
-      moderated.attr.by = nil;
+      -- FIXME: XEP-0245 has changed.
+      -- urn:xmpp:message-moderate:0 requires a "by" attribute
+      -- urn:xmpp:message-moderate:1 do not require the "by" attribute
+      -- So, for now, settings the room jid, as we only implement urn:xmpp:message-moderate:0.
+      moderated.attr.by = room.jid;
       moderated:remove_children("occupant-id", "urn:xmpp:occupant-id:0");
     end
   end
