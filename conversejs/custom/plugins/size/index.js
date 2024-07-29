@@ -4,6 +4,8 @@
 
 import { _converse, converse, api } from '../../../src/headless/index.js'
 
+let currentSize
+
 /**
  * This plugin computes the available width of converse-root, and adds classes
  * and events so we can adapt the display of some elements to the current
@@ -16,6 +18,27 @@ converse.plugins.add('livechat-converse-size', {
   dependencies: [],
 
   initialize () {
+    Object.assign(api, {
+      livechat_size: {
+        current: () => {
+          return currentSize
+        },
+        width_is: (sizes) => {
+          if (!Array.isArray(sizes)) {
+            sizes = [sizes]
+          }
+          if (!currentSize) { return false }
+          return sizes.includes(currentSize.width)
+        },
+        height_is: (sizes) => {
+          if (!Array.isArray(sizes)) {
+            sizes = [sizes]
+          }
+          if (!currentSize) { return false }
+          return sizes.includes(currentSize.height)
+        }
+      }
+    })
     _converse.api.listen.on('connected', start)
     _converse.api.listen.on('reconnected', start)
     _converse.api.listen.on('disconnected', stop)
@@ -42,6 +65,7 @@ function start () {
 }
 
 function stop () {
+  currentSize = undefined
   rootResizeObserver.disconnect()
   const root = document.querySelector('converse-root')
   if (root) {
@@ -60,8 +84,9 @@ function handle (el) {
 
   el.setAttribute('livechat-converse-root-width', width)
   el.setAttribute('livechat-converse-root-height', height)
-  api.trigger('livechatSizeChanged', {
+  currentSize = {
     height: height,
     width: width
-  })
+  }
+  api.trigger('livechatSizeChanged', Object.assign({}, currentSize)) // cloning...
 }

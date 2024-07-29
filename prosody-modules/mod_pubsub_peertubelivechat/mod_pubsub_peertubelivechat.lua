@@ -15,6 +15,7 @@
 
 -- Implemented nodes:
 -- * livechat-tasks: contains tasklist and task items, specific to livechat plugin.
+-- * livechat-notes: contains notes, specific to livechat plugin.
 
 -- There are some other tricks in this module:
 -- * unsubscribing users that have left the room (the front-end will subscribe again when needed)
@@ -39,7 +40,8 @@ local xmlns_pubsub = "http://jabber.org/protocol/pubsub";
 local xmlns_pubsub_event = "http://jabber.org/protocol/pubsub#event";
 local xmlns_pubsub_owner = "http://jabber.org/protocol/pubsub#owner";
 local xmlns_tasklist = "urn:peertube-plugin-livechat:tasklist";
-local xmlns_task = "urn:peertube-plugin-livechat:task"
+local xmlns_task = "urn:peertube-plugin-livechat:task";
+local xmlns_note = "urn:peertube-plugin-livechat:note";
 
 local lib_pubsub = module:require "pubsub";
 
@@ -389,4 +391,5 @@ end);
 module:hook("muc-disco#info", function (event)
 	event.reply:tag("feature", { var = xmlns_task }):up();
 	event.reply:tag("feature", { var = xmlns_tasklist }):up();
+	event.reply:tag("feature", { var = xmlns_note }):up();
 end);

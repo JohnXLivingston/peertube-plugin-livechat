@@ -49,7 +49,8 @@ const locKeys = [
   'poll_vote_instructions_xmpp',
   'poll_is_over',
   'poll_choice_invalid',
-  'poll_anonymous_vote_ok'
+  'poll_anonymous_vote_ok',
+  'moderator_notes'
 ]
 
 module.exports = locKeys

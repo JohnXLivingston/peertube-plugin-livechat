@@ -13,5 +13,10 @@ export default (o) => {
         ? html`<livechat-converse-muc-task-app .model=${o.model}></livechat-converse-muc-task-app>`
         : ''
     }
+    ${
+      o?.model && api.settings.get('livechat_note_app_enabled')
+        ? html`<livechat-converse-muc-note-app .model=${o.model}></livechat-converse-muc-note-app>`
+        : ''
+    }
     ${tplMUCChatarea(o)}`
 }

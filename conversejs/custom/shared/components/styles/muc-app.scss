@@ -5,7 +5,7 @@
  */
 
 .conversejs {
-  livechat-converse-muc-task-app {
+  .livechat-converse-muc-app {
     border: var(--occupants-border-left);
     display: flex;
     flex-flow: column nowrap;
@@ -42,8 +42,8 @@
 
   &[livechat-converse-root-width="small"],
   &[livechat-converse-root-width="medium"] {
-    converse-muc-chatarea livechat-converse-muc-task-app:not(.hidden) ~ * {
-      // on small and medium width, we hide all subsequent siblings of the task app
+    converse-muc-chatarea .livechat-converse-muc-app:not(.hidden) ~ * {
+      // on small and medium width, we hide all subsequent siblings of the app
       // (when app is not hidden)
       display: none !important;
     }
