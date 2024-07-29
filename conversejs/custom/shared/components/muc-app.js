@@ -51,6 +51,16 @@ export class MUCApp extends CustomElement {
     return ''
   }
 
+  updated () {
+    if (this.innerText.trim() === '') {
+      this.classList.add('hidden') // we must do this, otherwise will have CSS side effects
+    } else {
+      this.classList.remove('hidden')
+    }
+
+    super.updated()
+  }
+
   toggleApp () {
     this.show = !this.show
     if (this.sessionStorangeShowKey) {

@@ -9,21 +9,16 @@ import { __ } from 'i18n'
 export function tplMUCNoteApp (el, mucModel) {
   if (!mucModel) {
     // should not happen
-    el.classList.add('hidden') // we must do this, otherwise will have CSS side effects
     return html``
   }
   if (!mucModel.notes) {
     // too soon, not initialized yet (this will happen)
-    el.classList.add('hidden') // we must do this, otherwise will have CSS side effects
     return html``
   }
 
   if (!el.show) {
-    el.classList.add('hidden')
     return html``
   }
-
-  el.classList.remove('hidden')
 
   // eslint-disable-next-line no-undef
   const i18nNotes = __(LOC_moderator_notes)
