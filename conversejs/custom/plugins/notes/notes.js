@@ -27,11 +27,20 @@ class ChatRoomNotes extends Collection {
     this.on('change:order', () => this.sort())
   }
 
-  // async createNote (data) {
-  //   console.log('Creating note...')
-  //   await this.chatroom.NoteManager.createItem(this, Object.assign({}, data))
-  //   console.log('Note created.')
-  // }
+  async createNote (data) {
+    data = Object.assign({}, data)
+
+    if (!data.order) {
+      data.order = 0 + Math.max(
+        0,
+        ...(this.map(n => n.get('order') ?? 0).filter(o => !isNaN(o)))
+      )
+    }
+
+    console.log('Creating note...')
+    await this.chatroom.noteManager.createItem(this, data)
+    console.log('Note created.')
+  }
 }
 
 export {

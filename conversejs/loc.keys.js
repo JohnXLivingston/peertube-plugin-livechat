@@ -50,7 +50,12 @@ const locKeys = [
   'poll_is_over',
   'poll_choice_invalid',
   'poll_anonymous_vote_ok',
-  'moderator_notes'
+  'moderator_notes',
+  'moderator_notes_create_error',
+  'moderator_note_create',
+  'moderator_note_description',
+  'moderator_note_delete',
+  'moderator_note_delete_confirm'
 ]
 
 module.exports = locKeys

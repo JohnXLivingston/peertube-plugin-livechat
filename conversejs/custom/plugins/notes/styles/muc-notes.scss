@@ -1,0 +1,21 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+.conversejs {
+  .notes-actions {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: right;
+    width: 100%;
+  }
+
+  .notes-action {
+    background: unset;
+    border: 0;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
+}

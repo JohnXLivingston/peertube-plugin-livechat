@@ -86,7 +86,6 @@ function _initChatRoomNotes (mucModel) {
         xmlns: XMLNS_NOTE,
         collection: mucModel.notes,
         fields: {
-          name: String,
           description: String
         },
         attributes: {

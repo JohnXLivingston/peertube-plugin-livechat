@@ -48,9 +48,6 @@ local lib_pubsub = module:require "pubsub";
 local mod_muc = module:depends"muc";
 local get_room_from_jid = mod_muc.get_room_from_jid;
 
-local muc_util = module:require "muc/util";
-local valid_roles = muc_util.valid_roles;
-
 -- room_jid => object passed to module:add_items()
 local mep_service_items = {};
 
