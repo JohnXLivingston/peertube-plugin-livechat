@@ -107,29 +107,48 @@ local function moderate(actor, room_jid, stanza_id, retract, reason)
 		announcement:add_direct_child(moderated_occupant_id);
 	end
 
+	announcement:reset();
+
+	local tombstone = nil;
 	if muc_log_archive.set and retract then
-		local tombstone = st.message({ from = original.attr.from, type = "groupchat", id = original.attr.id })
+		tombstone = st.message({ from = original.attr.from, type = "groupchat", id = original.attr.id })
 			:tag("moderated", { xmlns = xmlns_moderate, by = actor_nick })
-				:tag("retracted", { xmlns = xmlns_retract, stamp = dt.datetime() });
-
-		if room.get_occupant_id then
-			tombstone:add_child(st.stanza("occupant-id", { xmlns = xmlns_occupant_id; id = room:get_occupant_id(actor_occupant) }));
-		end
-
-		tombstone:up();
-
-		if room.get_occupant_id then
-			if moderated_occupant_id then
-				-- Copy occupant id from moderated message
-				tombstone:add_child(moderated_occupant_id);
-			end
-		end
+				:tag("retracted", { xmlns = xmlns_retract, stamp = dt.datetime() }):up();
 
 		if reason then
 			tombstone:text_tag("reason", reason);
 		end
-		tombstone:reset();
 
+		if room.get_occupant_id then
+			if actor_occupant then
+				tombstone:add_child(st.stanza("occupant-id", { xmlns = xmlns_occupant_id; id = room:get_occupant_id(actor_occupant) }));
+			end
+
+			if moderated_occupant_id then
+				-- Copy occupant id from moderated message
+				tombstone:add_direct_child(moderated_occupant_id);
+			end
+		end
+		tombstone:reset();
+	end
+
+	-- fire an event, that can be used to cancel the moderation, or modify stanzas.
+	local event = {
+		room = room;
+		announcement = announcement;
+		tombstone = tombstone;
+		stanza_id = stanza_id;
+		retract = retract;
+		reason = reason;
+		actor = actor;
+		actor_nick = actor_nick;
+	};
+	if module:fire_event("muc-moderate-message", event) then
+		-- TODO: allow to change the error message?
+		return false, "wait", "internal-server-error";
+	end
+
+	if tombstone then
 		local was_replaced = muc_log_archive:set(room_node, stanza_id, tombstone);
 		if not was_replaced then
 			return false, "wait", "internal-server-error";

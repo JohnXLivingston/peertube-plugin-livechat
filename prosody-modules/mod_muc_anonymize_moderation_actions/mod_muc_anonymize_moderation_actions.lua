@@ -39,6 +39,30 @@ local function remove_actor(event)
   end
 end
 
+local function remove_moderate_actor(event)
+  local room, announcement, tombstone = event.room, event.announcement, event.tombstone;
+  if not get_anonymize_moderation_actions(room) then
+    return;
+  end
+
+  local moderated = announcement:find("{urn:xmpp:fasten:0}apply-to/{urn:xmpp:message-moderate:0}moderated");
+  if moderated then
+    module:log("debug", "We must anonymize the moderation announcement for stanza %s", event.stanza_id);
+    moderated.attr.by = nil;
+    moderated:remove_children("occupant-id", "urn:xmpp:occupant-id:0");
+  end
+
+  if tombstone then
+    local moderated = tombstone:get_child("moderated", "urn:xmpp:message-moderate:0");
+    if moderated then
+      module:log("debug", "We must anonymize the moderation tombstone for stanza %s", event.stanza_id);
+      moderated.attr.by = nil;
+      moderated:remove_children("occupant-id", "urn:xmpp:occupant-id:0");
+    end
+  end
+end
+
 module:hook("muc-config-submitted/muc#roomconfig_anonymize_moderation_actions", config_submitted);
 module:hook("muc-config-form", add_form_option, form_position);
 module:hook("muc-broadcast-presence", remove_actor);
+module:hook("muc-moderate-message", remove_moderate_actor);
