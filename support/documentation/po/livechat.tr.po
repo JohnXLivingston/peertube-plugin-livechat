@@ -3316,6 +3316,21 @@ msgstr ""
 msgid "You can promote users as moderators, if you need some help."
 msgstr ""
 
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "This feature comes with the livechat plugin version 11.0.0."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/ occupants.\""
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
+msgstr ""
+
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap

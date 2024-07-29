@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-07-17 10:53+0200\n"
+"POT-Creation-Date: 2024-07-29 14:58+0200\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Ukrainian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/uk/>\n"
@@ -3333,6 +3333,21 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can promote users as moderators, if you need some help."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "This feature comes with the livechat plugin version 11.0.0."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.\""
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
 msgstr ""
 
 #. type: Title ##

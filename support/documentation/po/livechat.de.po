@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-17 10:53+0200\n"
+"POT-Creation-Date: 2024-07-29 14:58+0200\n"
 "PO-Revision-Date: 2024-07-24 09:23+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2967,12 +2965,7 @@ msgstr "Bei diesen Wörtern wird die Groß- und Kleinschreibung nicht berücksic
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "You can combine a short [moderation delay](/peertube-plugin-livechat/documentation/user/streamers/moderation_delay) (1 second for example) with the [moderation bot](/peertube-plugin-livechat/documentation/user/streamers/bot) to delete messages containing swear words before any non-moderator user will see them."
-msgstr ""
-"Sie können eine kurze [Moderationsverzögerung](/peertube-plugin-livechat/de/"
-"documentation/user/streamers/moderation_delay) (z.B. 1 Sekunde) mit dem "
-"[Moderations-Chatbot](/peertube-plugin-livechat/de/documentation/user/"
-"streamers/bot) kombinieren, um Nachrichten mit Schimpfwörtern zu löschen, "
-"bevor ein Nicht-Moderator sie sieht."
+msgstr "Sie können eine kurze [Moderationsverzögerung](/peertube-plugin-livechat/de/documentation/user/streamers/moderation_delay) (z.B. 1 Sekunde) mit dem [Moderations-Chatbot](/peertube-plugin-livechat/de/documentation/user/streamers/bot) kombinieren, um Nachrichten mit Schimpfwörtern zu löschen, bevor ein Nicht-Moderator sie sieht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3422,6 +3415,25 @@ msgstr "Es gibt verschiedene Rollen, die Benutzern in Chaträumen zugewiesen wer
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can promote users as moderators, if you need some help."
 msgstr "Sie können Benutzer zu Moderatoren befördern, wenn Sie Hilfe benötigen."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "This feature comes with the livechat plugin version 10.0.0."
+msgid "This feature comes with the livechat plugin version 11.0.0."
+msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.\""
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, fuzzy
+#| msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox."
+msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
+msgstr "Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das [Chat-Dropdown-Menü](/peertube-plugin-livechat/de/documentation/user/viewers), öffnen Sie das Menü \"Konfigurieren\".  In dem Formular finden Sie eine Checkbox \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\"."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
