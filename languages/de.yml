@@ -558,3 +558,7 @@ livechat_configuration_channel_moderation_delay_desc: "Standardwert der Moderati
   so dass Moderatoren die Nachricht löschen können, bevor ein anderer Benutzer sie
   lesen kann.</li>\n</ul>\n"
 avatar_set_option_none: Nichts
+livechat_configuration_channel_anonymize_moderation_label: Moderationsaktionen anonymisieren
+livechat_configuration_channel_anonymize_moderation_desc: "Moderationsaktionen anonymisieren
+  Standardwert für neue Räume.\nWenn dies aktiviert ist, werden Moderationsaktionen
+  anonymisiert, um zu vermeiden, dass bekannt wird, wer Teilnehmer bannt/verweist/....\n"
