@@ -48,23 +48,33 @@ export function getMessageActionButtons (messageActionsEl, buttons) {
     return buttons
   }
 
-  // TODO: button to create a note from a message.
-  // // eslint-disable-next-line no-undef
-  // const i18nCreate = __(LOC_task_create)
+  if (messageModel.occupant) {
+    // eslint-disable-next-line no-undef
+    const i18nCreate = __(LOC_moderator_note_create_for_participant)
 
-  // buttons.push({
-  //   i18n_text: i18nCreate,
-  //   handler: async (ev) => {
-  //     ev.preventDefault()
-  //     api.modal.show('livechat-converse-pick-task-list-modal', {
-  //       muc,
-  //       message: messageModel
-  //     }, ev)
-  //   },
-  //   button_class: '',
-  //   icon_class: 'fa fa-list-check',
-  //   name: 'muc-task-create-from-message'
-  // })
+    buttons.push({
+      i18n_text: i18nCreate,
+      handler: async (ev) => {
+        ev.preventDefault()
+        const appElement = document.querySelector('livechat-converse-muc-note-app')
+        if (!appElement) {
+          throw new Error('Cant find Note App Element')
+        }
+        await appElement.showApp()
+        await appElement.updateComplete // waiting for the app to be open
+
+        const notesElement = appElement.querySelector('livechat-converse-muc-notes')
+        if (!notesElement) {
+          throw new Error('Cant find Notes Element')
+        }
+        await notesElement.updateComplete
+        notesElement.openCreateNoteForm(undefined, messageModel.occupant)
+      },
+      button_class: '',
+      icon_class: 'fa fa-note-sticky',
+      name: 'muc-note-create-for-occupant'
+    })
+  }
 
   return buttons
 }

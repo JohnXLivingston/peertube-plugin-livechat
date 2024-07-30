@@ -11,6 +11,7 @@ import { initOrDestroyChatRoomNotes, getHeadingButtons, getMessageActionButtons 
 import './components/muc-note-app-view.js'
 import './components/muc-notes-view.js'
 import './components/muc-note-view.js'
+import './components/muc-note-occupant-view.js'
 
 converse.plugins.add('livechat-converse-notes', {
   dependencies: ['converse-muc', 'converse-disco', 'converse-pubsub'],

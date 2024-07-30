@@ -55,7 +55,8 @@ const locKeys = [
   'moderator_note_create',
   'moderator_note_description',
   'moderator_note_delete',
-  'moderator_note_delete_confirm'
+  'moderator_note_delete_confirm',
+  'moderator_note_create_for_participant'
 ]
 
 module.exports = locKeys

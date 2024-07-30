@@ -50,12 +50,32 @@ function _tplNoteForm (note) {
     </fieldset>`
 }
 
-export function tplMucCreateNoteForm (notesEl) {
+function _tplNoteOccupantFormFields (occupant) {
+  if (!occupant) { return '' }
+  return html`
+    <input type="hidden" name="occupant_nick" value=${occupant.get('nick')} />
+    <input type="hidden" name="occupant_jid" value=${occupant.get('jid')} />
+    <input type="hidden" name="occupant_id" value=${occupant.get('occupant_id')} />
+  `
+}
+
+export function tplMucCreateNoteForm (notesEl, occupant) {
   const i18nOk = __('Ok')
   const i18nCancel = __('Cancel')
 
   return html`
     <form class="notes-create-note converse-form" @submit=${notesEl.submitCreateNote}>
+      ${
+        occupant
+          ? html`
+            ${_tplNoteOccupantFormFields(occupant)}
+            <livechat-converse-muc-note-occupant
+              full_display=${true}
+              .model=${occupant}
+            ></livechat-converse-muc-note-occupant>
+          `
+          : ''
+      }
       ${_tplNoteForm(undefined)}
       <fieldset class="form-group">
         <input type="submit" class="btn btn-primary" value="${i18nOk}" />

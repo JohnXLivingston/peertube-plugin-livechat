@@ -76,6 +76,14 @@ export class MUCApp extends CustomElement {
     }
   }
 
+  showApp () {
+    if (!this.show) { return this.toggleApp() }
+  }
+
+  hideApp () {
+    if (this.show) { return this.toggleApp() }
+  }
+
   _closeOtherApps () {
     document.querySelectorAll('.livechat-converse-muc-app').forEach((el) => {
       if (el !== this && el.show) {

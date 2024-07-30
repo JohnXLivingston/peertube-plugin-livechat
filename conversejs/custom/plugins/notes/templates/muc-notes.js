@@ -14,7 +14,7 @@ export default function tplMucNotes (el, notes) {
 
   return html`
     ${
-      el.create_note_opened ? tplMucCreateNoteForm(el) : tplCreateButton(el)
+      el.create_note_opened ? tplMucCreateNoteForm(el, el.create_note_for_occupant) : tplCreateButton(el)
     }
     ${
       repeat(notes, (note) => note.get('id'), (note) => {
