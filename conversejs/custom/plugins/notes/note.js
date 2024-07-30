@@ -22,6 +22,28 @@ class ChatRoomNote extends Model {
   async deleteItem () {
     return this.collection.chatroom.noteManager.deleteItems([this])
   }
+
+  getAboutOccupant () {
+    const occupants = this.collection.chatroom?.occupants
+    if (!occupants?.findOccupant) { return undefined }
+
+    if (this.get('about_occupant_id')) {
+      const o = occupants.findOccupant({ occupant_id: this.get('about_occupant_id') })
+      if (o) { return o }
+    }
+
+    if (!this.get('about_nick') && !this.get('about_jid')) {
+      return undefined
+    }
+
+    const o = occupants.findOccupant({
+      nick: this.get('about_nick'),
+      jid: this.get('about_jid')
+    })
+    if (o) { return o }
+
+    return undefined
+  }
 }
 
 export {

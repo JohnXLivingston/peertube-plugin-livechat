@@ -123,6 +123,7 @@ export class PubSubManager {
       if (v === undefined) { continue }
       data[field] = v
     }
+    this._additionalModelToData(item, data)
 
     console.log('Saving item...')
     await this._save(type, data, id)
@@ -177,6 +178,8 @@ export class PubSubManager {
       if (!(fieldName in data)) { continue }
       item.c(fieldName).t(data[fieldName]).up()
     }
+
+    this._additionalDataToItemNode(data, item)
 
     await api.pubsub.publish(this.roomJID, this.node, item)
   }
@@ -336,6 +339,7 @@ export class PubSubManager {
         }
       }
     }
+    this._additionalParseItemNode(itemNode, type, data)
     return data
   }
 
@@ -351,4 +355,19 @@ export class PubSubManager {
   _typeFromCollection (collection) {
     return Object.values(this.types).find(type => type.collection === collection)
   }
+
+  /**
+   * Overload to add some custom code for model to data conversion.
+   */
+  _additionalModelToData (_item, _data) {}
+
+  /**
+   * Overload to add some custom code for data to stanza conversion.
+   */
+  _additionalDataToItemNode (_data, _item) {}
+
+  /**
+   * Overload to add some custom code item parsing.
+   */
+  _additionalParseItemNode (_itemNode, _type, _data) {}
 }

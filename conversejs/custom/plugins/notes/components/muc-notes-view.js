@@ -76,7 +76,10 @@ export default class MUCNotesView extends DraggablesCustomElement {
       })
 
       await this.model.createNote({
-        description: description
+        description: description,
+        about_jid: ev.target.about_jid?.value || undefined,
+        about_nick: ev.target.about_nick?.value || undefined,
+        about_occupant_id: ev.target.about_occupant_id?.value || undefined
       })
 
       this.closeCreateNoteForm()

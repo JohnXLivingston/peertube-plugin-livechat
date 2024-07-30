@@ -9,10 +9,20 @@ export function tplMucNote (el, note) {
   // eslint-disable-next-line no-undef
   const i18nDelete = __(LOC_moderator_note_delete)
 
+  const aboutOccupant = note.getAboutOccupant()
+
   return !el.edit
     ? html`
       <div draggable="true" class="note-line draggables-line">
         <div class="note-description">${note.get('description') ?? ''}</div>
+        ${
+            aboutOccupant
+              ? html`
+                <livechat-converse-muc-note-occupant
+                    .model=${aboutOccupant}
+                  ></livechat-converse-muc-note-occupant>`
+              : ''
+        }
         <button class="note-action" title="${__('Edit')}"
           @click=${el.toggleEdit}
         >
@@ -27,6 +37,16 @@ export function tplMucNote (el, note) {
     : html`
       <div class="note-line draggables-line">
         <form class="converse-form" @submit=${el.saveNote}>
+          ${
+            aboutOccupant
+              ? html`
+                <livechat-converse-muc-note-occupant
+                  full_display=${true}
+                  .model=${aboutOccupant}
+                ></livechat-converse-muc-note-occupant>
+              `
+              : ''
+          }
           ${_tplNoteForm(note)}
           <fieldset class="form-group">
             <input type="submit" class="btn btn-primary" value="${__('Ok')}" />
@@ -53,9 +73,9 @@ function _tplNoteForm (note) {
 function _tplNoteOccupantFormFields (occupant) {
   if (!occupant) { return '' }
   return html`
-    <input type="hidden" name="occupant_nick" value=${occupant.get('nick')} />
-    <input type="hidden" name="occupant_jid" value=${occupant.get('jid')} />
-    <input type="hidden" name="occupant_id" value=${occupant.get('occupant_id')} />
+    <input type="hidden" name="about_nick" value=${occupant.get('nick')} />
+    <input type="hidden" name="about_jid" value=${occupant.get('jid')} />
+    <input type="hidden" name="about_occupant_id" value=${occupant.get('occupant_id')} />
   `
 }
 

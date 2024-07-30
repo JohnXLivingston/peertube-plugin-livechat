@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { XMLNS_NOTE } from './constants.js'
-import { PubSubManager } from '../../shared/lib/pubsub-manager.js'
+import { NotePubSubManager } from './note-pubsub-manager.js'
 import { converse, _converse, api } from '../../../src/headless/index.js'
 import { __ } from 'i18n'
 
@@ -87,7 +87,7 @@ function _initChatRoomNotes (mucModel) {
 
   mucModel.notes = new _converse.exports.ChatRoomNotes(undefined, { chatroom: mucModel })
 
-  mucModel.noteManager = new PubSubManager(
+  mucModel.noteManager = new NotePubSubManager(
     mucModel.get('jid'),
     'livechat-notes', // the node name
     {
