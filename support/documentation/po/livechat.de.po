@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-07-29 14:58+0200\n"
-"PO-Revision-Date: 2024-07-24 09:23+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-07-30 06:49+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3418,22 +3420,26 @@ msgstr "Sie können Benutzer zu Moderatoren befördern, wenn Sie Hilfe benötige
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 10.0.0."
 msgid "This feature comes with the livechat plugin version 11.0.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein."
+msgstr ""
+"Diese Funktion wird mit dem Livechatplugin Version 11.0.0 verfügbar sein."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.\""
 msgstr ""
+"Es ist möglich, Moderationsaktionen zu anonymisieren, um zu vermeiden, dass "
+"bekannt wird, wer Teilnehmer bannt/verweist/....\""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox."
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
-msgstr "Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das [Chat-Dropdown-Menü](/peertube-plugin-livechat/de/documentation/user/viewers), öffnen Sie das Menü \"Konfigurieren\".  In dem Formular finden Sie eine Checkbox \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\"."
+msgstr ""
+"Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das "
+"[Chat-Dropdown-Menü](/peertube-plugin-livechat/de/documentation/user/viewers)"
+", öffnen Sie das Menü \"Konfigurieren\".  In dem Formular finden Sie eine "
+"Checkbox \"{{% livechat_label "
+"livechat_configuration_channel_anonymize_moderation_label %}}\"."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
