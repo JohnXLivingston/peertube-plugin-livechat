@@ -18,17 +18,14 @@ set -x
 CONVERSE_VERSION="v11.0.0"
 CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 # You can eventually set CONVERSE_COMMIT to a specific commit ID, if you want to apply some patches.
-# 2024-07-15: using Converse upstream (v11 WIP).
-CONVERSE_COMMIT="46313ad92c1a861bcb50b9653859cfa9a960ae4a"
-# 2024-07-15, FIXME: the following commit includes a quick fix for Converse/#3443, waiting for upstream to be fixed.
-CONVERSE_COMMIT="7d65ef8d30a1f3949dbc590b6d27a9d786bf819f"
+# 2024-07-30: using Converse upstream (v11 WIP).
+CONVERSE_COMMIT="9ddf6e7b7a83fdc04c8b55f0f470e59c09283a39"
 
 # It is possible to use another repository, if we want some customization that are not upstream (yet):
 # CONVERSE_VERSION="livechat"
 # # CONVERSE_COMMIT="4402fcc3fc60f6c9334f86528c33a0b463371d12"
-CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
-# 2024-07-18, including some fixes that are not merged yet.
-CONVERSE_COMMIT="74696f298b8c49ed6feaf29d52bebc854aae48c7"
+# CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
+# CONVERSE_COMMIT="xxxx"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
