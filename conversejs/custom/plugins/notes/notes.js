@@ -14,7 +14,6 @@ import { initStorage } from '@converse/headless/utils/storage.js'
  */
 class ChatRoomNotes extends Collection {
   model = ChatRoomNote
-  comparator = 'order'
 
   initialize (models, options) {
     this.model = ChatRoomNote // don't know why, must do it again here
@@ -27,11 +26,18 @@ class ChatRoomNotes extends Collection {
     this.on('change:order', () => this.sort())
   }
 
+  comparator (n1, n2) {
+    // must reverse order
+    const o1 = n1.get('order') ?? 0
+    const o2 = n2.get('order') ?? 0
+    return o1 < o2 ? 1 : o1 > o2 ? -1 : 0
+  }
+
   async createNote (data) {
     data = Object.assign({}, data)
 
     if (!data.order) {
-      data.order = 0 + Math.max(
+      data.order = 1 + Math.max(
         0,
         ...(this.map(n => n.get('order') ?? 0).filter(o => !isNaN(o)))
       )

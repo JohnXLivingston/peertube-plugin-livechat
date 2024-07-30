@@ -107,9 +107,11 @@ export default class MUCNotesView extends DraggablesCustomElement {
     }
 
     let newOrder = targetNote.get('order') ?? 0
-    if (!onTopHalf) { newOrder = Math.max(0, newOrder + 1) }
+    if (onTopHalf) { newOrder = Math.max(0, newOrder + 1) } // reverse order!
 
-    this._saveOrders(this.model, note, newOrder)
+    // Warning: the order of the collection is reversed!
+    // _saveOrders needs it in ascending order!
+    this._saveOrders(Array.from(this.model).reverse(), note, newOrder)
   }
 }
 

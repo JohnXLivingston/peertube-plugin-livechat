@@ -15,6 +15,7 @@
 * New translation: Albanian.
 * Translation updates: Crotian, Japanese.
 * Updated mod_muc_moderation to upstream.
+* Fix new task ordering.
 
 ## 10.3.3
 
