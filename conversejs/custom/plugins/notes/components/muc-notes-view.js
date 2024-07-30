@@ -2,16 +2,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { CustomElement } from 'shared/components/element.js'
 import { api } from '@converse/headless'
 import tplMucNotes from '../templates/muc-notes'
 import { __ } from 'i18n'
+import { DraggablesCustomElement } from '../../../shared/components/draggables/index.js'
 
 import '../styles/muc-notes.scss'
 
-export default class MUCNotesView extends CustomElement {
-  currentDraggedNote = null
-
+export default class MUCNotesView extends DraggablesCustomElement {
   static get properties () {
     return {
       model: { type: Object, attribute: true },
@@ -27,16 +25,16 @@ export default class MUCNotesView extends CustomElement {
       return
     }
 
+    this.draggableTagName = 'livechat-converse-muc-note'
+    this.droppableTagNames = ['livechat-converse-muc-note']
+    this.droppableAlwaysBottomTagNames = []
+
     // Adding or removing a new note: we must update.
     this.listenTo(this.model, 'add', () => this.requestUpdate())
     this.listenTo(this.model, 'remove', () => this.requestUpdate())
     this.listenTo(this.model, 'sort', () => this.requestUpdate())
 
-    // this._handleDragStartBinded = this._handleDragStart.bind(this)
-    // this._handleDragOverBinded = this._handleDragOver.bind(this)
-    // this._handleDragLeaveBinded = this._handleDragLeave.bind(this)
-    // this._handleDragEndBinded = this._handleDragEnd.bind(this)
-    // this._handleDropBinded = this._handleDrop.bind(this)
+    await super.initialize()
   }
 
   render () {
@@ -89,6 +87,29 @@ export default class MUCNotesView extends CustomElement {
         el.classList.remove('disabled')
       })
     }
+  }
+
+  _dropDone (draggedEl, droppedOnEl, onTopHalf) {
+    super._dropDone(...arguments)
+    console.log('[livechat note drag&drop] Note dropped...')
+
+    const note = draggedEl.model
+    if (!note) {
+      throw new Error('No model for the draggedEl')
+    }
+    const targetNote = droppedOnEl.model
+    if (!targetNote) {
+      throw new Error('No model for the droppedOnEl')
+    }
+    if (note === targetNote) {
+      console.log('[livechat note drag&drop] Note dropped on itself, nothing to do')
+      return
+    }
+
+    let newOrder = targetNote.get('order') ?? 0
+    if (!onTopHalf) { newOrder = Math.max(0, newOrder + 1) }
+
+    this._saveOrders(this.model, note, newOrder)
   }
 }
 

@@ -1,0 +1,19 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+.conversejs {
+  // FIXME: the use of ">" only works if the draggables-lines is a direct
+  // child of the element.
+  // We should find a better way to do this (and that will not break for nested
+  // elements, like task in tast-list).
+  .livechat-drag-bottom-half > .draggables-line {
+    border-bottom: 4px solid blue;
+  }
+
+  .livechat-drag-top-half > .draggables-line {
+    border-top: 4px solid blue;
+  }
+}

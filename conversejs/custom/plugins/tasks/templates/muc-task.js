@@ -13,7 +13,7 @@ export function tplMucTask (el, task) {
   const doneId = 'livechat-task-done-id-' + task.get('id')
   return !el.edit
     ? html`
-      <div draggable="true" class="task-line" ?task-is-done=${done}>
+      <div draggable="true" class="task-line draggables-line" ?task-is-done=${done}>
         <div class="form-check">
           <input
             id="${doneId}"
@@ -42,7 +42,7 @@ export function tplMucTask (el, task) {
         </button>
       </div>`
     : html`
-      <div class="task-line">
+      <div class="task-line draggables-line">
         <form class="converse-form" @submit=${el.saveTask}>
           ${_tplTaskForm(task)}
           <fieldset class="form-group">

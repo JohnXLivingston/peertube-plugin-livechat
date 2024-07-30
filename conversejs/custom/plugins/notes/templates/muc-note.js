@@ -11,7 +11,7 @@ export function tplMucNote (el, note) {
 
   return !el.edit
     ? html`
-      <div draggable="true" class="note-line">
+      <div draggable="true" class="note-line draggables-line">
         <div class="note-description">${note.get('description') ?? ''}</div>
         <button class="note-action" title="${__('Edit')}"
           @click=${el.toggleEdit}
@@ -25,7 +25,7 @@ export function tplMucNote (el, note) {
         </button>
       </div>`
     : html`
-      <div class="note-line">
+      <div class="note-line draggables-line">
         <form class="converse-form" @submit=${el.saveNote}>
           ${_tplNoteForm(note)}
           <fieldset class="form-group">

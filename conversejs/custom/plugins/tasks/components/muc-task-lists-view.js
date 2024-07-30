@@ -2,17 +2,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import { CustomElement } from 'shared/components/element.js'
 import { api } from '@converse/headless'
 import tplMucTaskLists from '../templates/muc-task-lists'
 import { __ } from 'i18n'
+import { DraggablesCustomElement } from '../../../shared/components/draggables/index.js'
 
 import '../styles/muc-task-lists.scss'
-import '../styles/muc-task-drag.scss'
 
-export default class MUCTaskListsView extends CustomElement {
-  currentDraggedTask = null
-
+export default class MUCTaskListsView extends DraggablesCustomElement {
   static get properties () {
     return {
       model: { type: Object, attribute: true },
@@ -27,40 +24,20 @@ export default class MUCTaskListsView extends CustomElement {
       return
     }
 
+    this.draggableTagName = 'livechat-converse-muc-task'
+    this.droppableTagNames = ['livechat-converse-muc-task', 'livechat-converse-muc-task-list']
+    this.droppableAlwaysBottomTagNames = ['livechat-converse-muc-task-list']
+
     // Adding or removing a new task list: we must update.
     this.listenTo(this.model, 'add', () => this.requestUpdate())
     this.listenTo(this.model, 'remove', () => this.requestUpdate())
     this.listenTo(this.model, 'sort', () => this.requestUpdate())
 
-    this._handleDragStartBinded = this._handleDragStart.bind(this)
-    this._handleDragOverBinded = this._handleDragOver.bind(this)
-    this._handleDragLeaveBinded = this._handleDragLeave.bind(this)
-    this._handleDragEndBinded = this._handleDragEnd.bind(this)
-    this._handleDropBinded = this._handleDrop.bind(this)
+    return super.initialize()
   }
 
   render () {
     return tplMucTaskLists(this, this.model)
-  }
-
-  connectedCallback () {
-    super.connectedCallback()
-    this.currentDraggedTask = null
-    this.addEventListener('dragstart', this._handleDragStartBinded)
-    this.addEventListener('dragover', this._handleDragOverBinded)
-    this.addEventListener('dragleave', this._handleDragLeaveBinded)
-    this.addEventListener('dragend', this._handleDragEndBinded)
-    this.addEventListener('drop', this._handleDropBinded)
-  }
-
-  disconnectedCallback () {
-    super.disconnectedCallback()
-    this.currentDraggedTask = null
-    this.removeEventListener('dragstart', this._handleDragStartBinded)
-    this.removeEventListener('dragover', this._handleDragOverBinded)
-    this.removeEventListener('dragleave', this._handleDragLeaveBinded)
-    this.removeEventListener('dragend', this._handleDragEndBinded)
-    this.removeEventListener('drop', this._handleDropBinded)
   }
 
   async submitCreateTaskList (ev) {
@@ -96,15 +73,7 @@ export default class MUCTaskListsView extends CustomElement {
     }
   }
 
-  _getParentTaskEl (target) {
-    return target.closest?.('livechat-converse-muc-task')
-  }
-
-  _getParentTaskOrTaskListEl (target) {
-    return target.closest?.('livechat-converse-muc-task, livechat-converse-muc-task-list')
-  }
-
-  _isATaskEl (target) {
+  isATaskEl (target) {
     return target.nodeName?.toLowerCase() === 'livechat-converse-muc-task'
   }
 
@@ -112,71 +81,18 @@ export default class MUCTaskListsView extends CustomElement {
     return target.nodeName?.toLowerCase() === 'livechat-converse-muc-task-list'
   }
 
-  _isOnTopHalf (ev, taskEl) {
-    const y = ev.clientY
-    const bounding = taskEl.getBoundingClientRect()
-    return (y <= bounding.y + (bounding.height / 2))
-  }
-
-  _resetDropOver () {
-    document.querySelectorAll('.livechat-drag-bottom-half, .livechat-drag-top-half').forEach(
-      el => el.classList.remove('livechat-drag-bottom-half', 'livechat-drag-top-half')
-    )
-  }
-
-  _handleDragStart (ev) {
-    // The draggable=true is on a livechat-converse-muc-task child
-    const possibleTaskEl = ev.target.parentElement
-    if (!this._isATaskEl(possibleTaskEl)) { return }
-    console.log('[livechat task drag&drop] Starting to drag a task...')
-    this.currentDraggedTask = possibleTaskEl
-    this._resetDropOver()
-  }
-
-  _handleDragOver (ev) {
-    if (!this.currentDraggedTask) { return }
-    const taskOrTaskListEl = this._getParentTaskOrTaskListEl(ev.target)
-    if (!taskOrTaskListEl) { return }
-
-    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event says we should preventDefault
-    ev.preventDefault()
-
-    // Are we on the top or bottom part of the taskEl?
-    // Note: for task list, we always add the task in the task list, so no need to test here.
-    const topHalf = this._isATaskEl(taskOrTaskListEl) ? this._isOnTopHalf(ev, taskOrTaskListEl) : false
-    taskOrTaskListEl.classList.add(topHalf ? 'livechat-drag-top-half' : 'livechat-drag-bottom-half')
-    taskOrTaskListEl.classList.remove(topHalf ? 'livechat-drag-bottom-half' : 'livechat-drag-top-half')
-  }
-
-  _handleDragLeave (ev) {
-    if (!this.currentDraggedTask) { return }
-    const taskOrTaskListEl = this._getParentTaskOrTaskListEl(ev.target)
-    if (!taskOrTaskListEl) { return }
-    taskOrTaskListEl.classList.remove('livechat-drag-bottom-half', 'livechat-drag-top-half')
-  }
-
-  _handleDragEnd (_ev) {
-    this.currentDraggedTask = null
-    this._resetDropOver()
-  }
-
-  _handleDrop (_ev) {
-    if (!this.currentDraggedTask) { return }
-
-    const droppedOnEl = document.querySelector('.livechat-drag-bottom-half, .livechat-drag-top-half')
-    const droppedOntaskOrTaskListEl = this._getParentTaskOrTaskListEl(droppedOnEl)
-    if (!droppedOntaskOrTaskListEl) { return }
-
+  _dropDone (draggedEl, droppedOnEl, onTopHalf) {
+    super._dropDone(...arguments)
     console.log('[livechat task drag&drop] Task dropped...')
 
-    const task = this.currentDraggedTask.model
+    const task = draggedEl.model
 
     let newOrder, targetTasklist
-    if (this.isATaskListEl(droppedOntaskOrTaskListEl)) {
+    if (this.isATaskListEl(droppedOnEl)) {
       // We dropped on a task list, we must add as first entry.
       newOrder = 0
 
-      targetTasklist = droppedOntaskOrTaskListEl.model
+      targetTasklist = droppedOnEl.model
       if (task.get('list') !== targetTasklist.get('id')) {
         console.log('[livechat task drag&drop] Changing task list...')
         task.set('list', targetTasklist.get('id'))
@@ -185,9 +101,9 @@ export default class MUCTaskListsView extends CustomElement {
         console.log('[livechat task drag&drop] Task dropped on tasklist, but already first item, nothing to do')
         return
       }
-    } else if (this._isATaskEl(droppedOntaskOrTaskListEl)) {
+    } else if (this.isATaskEl(droppedOnEl)) {
       // We dropped on a task, we must get its order (+1 if !onTopHalf)
-      const droppedOnTask = droppedOntaskOrTaskListEl.model
+      const droppedOnTask = droppedOnEl.model
       if (task === droppedOnTask) {
         // But of course, if dropped on itself there is nothing to do.
         console.log('[livechat task drag&drop] Task dropped on itself, nothing to do')
@@ -199,9 +115,8 @@ export default class MUCTaskListsView extends CustomElement {
         task.set('list', droppedOnTask.get('list'))
       }
 
-      const topHalf = droppedOnEl.classList.contains('livechat-drag-top-half')
       newOrder = droppedOnTask.get('order') ?? 0
-      if (!topHalf) { newOrder = Math.max(0, newOrder + 1) }
+      if (!onTopHalf) { newOrder = Math.max(0, newOrder + 1) }
 
       if (typeof newOrder !== 'number' || isNaN(newOrder)) {
         console.error(
@@ -217,45 +132,7 @@ export default class MUCTaskListsView extends CustomElement {
       return
     }
 
-    if (typeof newOrder !== 'number' || isNaN(newOrder)) {
-      console.error('[livechat task drag&drop] Computed new order is not a number, aborting.')
-      return
-    }
-    console.log('[livechat task drag&drop] Task new order will be ' + newOrder)
-
-    console.log('[livechat task drag&drop] Reordering tasks...')
-    let currentOrder = newOrder + 1
-    for (const t of targetTasklist.getTasks()) {
-      if (t === task) {
-        console.log('[livechat task drag&drop] Skipping the currently moved task')
-        continue
-      }
-
-      let order = t.get('order') ?? 0
-      if (typeof order !== 'number' || isNaN(order)) {
-        console.error('[livechat task drag&drop] Found a task with an invalid order, fixing it.')
-        order = currentOrder // this will cause the code bellow to increment task order
-      }
-      if (order < newOrder) { continue }
-
-      currentOrder++
-      if (order > currentOrder) {
-        console.log(
-          `Task "${t.get('name')}" as already on order greater than ${currentOrder.toString()}, stoping.`
-        )
-        break
-      }
-
-      console.log(`Changing order of task "${t.get('name')}" to ${currentOrder}`)
-      t.set('order', currentOrder)
-      t.saveItem() // TODO: handle errors?
-    }
-
-    console.log('[livechat task drag&drop] Setting new order on the moved task')
-    task.set('order', newOrder)
-    task.saveItem() // TODO: handle errors?
-
-    this._resetDropOver()
+    this._saveOrders(targetTasklist.getTasks(), task, newOrder)
   }
 }
 
