@@ -7,7 +7,7 @@ import { api } from '@converse/headless'
 import { getAuthorStyle } from '../../../../src/utils/color.js'
 import { __ } from 'i18n'
 
-export function tplMucNoteOccupant (el, occupant) {
+export function tplMucNoteOccupant (el, occupant, note) {
   const authorStyle = getAuthorStyle(occupant)
   const jid = occupant.get('jid')
   const occupantId = occupant.get('occupant_id')
@@ -28,6 +28,13 @@ export function tplMucNoteOccupant (el, occupant) {
     ${
       el.full_display
         ? html`<ul aria-hidden="true">
+            ${
+              // user changed nick: display the original nick
+              note && note.get('about_nick') && note.get('about_nick') !== occupant.get('nick')
+                // eslint-disable-next-line no-undef
+                ? html`<li title=${__(LOC_moderator_note_original_nick)}>${note.get('about_nick')}</li>`
+                : ''
+            }
             ${jid ? html`<li title=${__('XMPP Address')}>${jid}</li>` : ''}
             ${occupantId ? html`<li title=${__('Occupant Id')}>${occupantId}</li>` : ''}
           </ul>`

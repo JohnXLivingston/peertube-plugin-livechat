@@ -12,6 +12,7 @@ export default class MUCNoteOccupantView extends CustomElement {
   static get properties () {
     return {
       model: { type: Object, attribute: true },
+      note: { type: Object, attribute: true }, // optional associated note
       full_display: { type: Boolean, attribute: true }
     }
   }
@@ -21,7 +22,7 @@ export default class MUCNoteOccupantView extends CustomElement {
   }
 
   render () {
-    return tplMucNoteOccupant(this, this.model)
+    return tplMucNoteOccupant(this, this.model, this.note)
   }
 }
 

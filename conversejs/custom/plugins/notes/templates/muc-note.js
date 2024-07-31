@@ -24,6 +24,7 @@ export function tplMucNote (el, note) {
                   <livechat-converse-muc-note-occupant
                     .full_display=${el.is_ocupant_filter}
                     .model=${aboutOccupant}
+                    .note=${note}
                   ></livechat-converse-muc-note-occupant>`
                 : ''
           }
@@ -60,6 +61,7 @@ export function tplMucNote (el, note) {
                 <livechat-converse-muc-note-occupant
                   full_display=${true}
                   .model=${aboutOccupant}
+                  .note=${note}
                 ></livechat-converse-muc-note-occupant>
               `
               : ''

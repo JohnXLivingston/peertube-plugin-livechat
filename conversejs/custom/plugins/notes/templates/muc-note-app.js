@@ -26,7 +26,7 @@ export function tplMUCNoteApp (el, mucModel) {
   // eslint-disable-next-line no-undef
   const i18nHelp = __(LOC_online_help)
   const helpUrl = converseLocalizedHelpUrl({
-    page: 'documentation/user/streamers/notes'
+    page: 'documentation/user/streamers/moderator_notes'
   })
 
   return tplMUCApp(
