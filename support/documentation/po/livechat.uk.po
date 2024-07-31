@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-07-31 22:48+0200\n"
+"POT-Creation-Date: 2024-07-31 23:19+0200\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Ukrainian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/uk/>\n"
@@ -3486,6 +3486,27 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "When you promote someone as room admin or owner, they gets instant access to this Application.  When you remove admin or owner rights to someone, they instantly lose access to this Application."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, no-wrap
+msgid "Scope"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "Notes are only available in the room in which you have created them."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "Chatrooms can be releated to video or channel.  If you want to keep notes from one video to another, please consider using rooms associated to channels."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "Currently the video vs channel rooms is an instance-wide settings.  Only Peertube admins can change it, and it applies to all chatrooms.  In the future, this choice will be added in your channel's options."
 msgstr ""
 
 #. type: Title ###

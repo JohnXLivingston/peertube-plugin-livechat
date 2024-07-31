@@ -47,6 +47,19 @@ Every room's admins have access to this Application (read and write access).
 When you promote someone as room admin or owner, they gets instant access to this Application.
 When you remove admin or owner rights to someone, they instantly lose access to this Application.
 
+### Scope
+
+Notes are only available in the room in which you have created them.
+
+Chatrooms can be releated to video or channel.
+If you want to keep notes from one video to another, please consider using rooms associated to channels.
+
+{{% notice warning %}}
+Currently the video vs channel rooms is an instance-wide settings.
+Only Peertube admins can change it, and it applies to all chatrooms.
+In the future, this choice will be added in your channel's options.
+{{% /notice %}}
+
 ### Notes
 
 #### Create/Edit Notes

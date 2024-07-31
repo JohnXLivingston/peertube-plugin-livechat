@@ -7,7 +7,7 @@
 * Updating ConverseJS, to use upstream (v11 WIP). This comes with many improvments and new features.
 * #146: copy message button for moderators.
 * #137: option to hide moderator name who made actions (kick, ban, message moderation, ...).
-* #144: [moderator notes](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/moderator_notes/).
+* #144: [moderator notes](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/moderation_notes/).
 
 ### Minor changes and fixes
 
