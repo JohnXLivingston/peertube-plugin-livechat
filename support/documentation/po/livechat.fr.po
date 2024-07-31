@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-07-29 14:58+0200\n"
+"POT-Creation-Date: 2024-07-31 22:48+0200\n"
 "PO-Revision-Date: 2024-07-18 15:05+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -3232,6 +3232,7 @@ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.3.0."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #: support/documentation/content/en/intro/_index.md
@@ -3436,6 +3437,7 @@ msgstr "Vous pouvez promouvoir des utilisateur⋅rices en tant que modérateur�
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, fuzzy
 #| msgid "This feature comes with the livechat plugin version 10.0.0."
 msgid "This feature comes with the livechat plugin version 11.0.0."
@@ -3484,6 +3486,246 @@ msgstr "Vous pouvez lister toutes les salles de discussion existantes : dans l'�
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
 msgstr "De là, vous pouvez également vous promouvoir en tant que modérateur⋅rice de salon en utilisant le bouton \"{{% livechat_label promote %}}\" sur la droite."
+
+#. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy, no-wrap
+#| msgid "Plugin peertube-plugin-livechat moderation delay"
+msgid "Plugin peertube-plugin-livechat moderation notes"
+msgstr "Plugin peertube-plugin-livechat délai de modération"
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy, no-wrap
+#| msgid "Moderation"
+msgid "Moderation notes"
+msgstr "Modération"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "The livechat plugin includes a Task Application: a kind of \"to-do list\" feature where you can create task lists and add tasks to them.  Every room's admins have access to these tasks, so you can edit them collaboratively."
+msgid "The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants.  Every room's admins have access to these notes, so they can edit them collaboratively."
+msgstr "Le plugin livechat comprend une Application de Tâches : une sorte de \"liste de choses à faire\" où vous pouvez créer des listes de tâches et y ajouter des tâches.  Les administrateur⋅rices de chaque salon de discussion ont accès à ces tâches, ce qui vous permet de les modifier de manière collaborative."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "You can for example use the Task Application to:"
+msgid "You can for example use this Application to:"
+msgstr "Vous pouvez par exemple utiliser l'Application de Tâches pour :"
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "share some notes between moderators"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "take notes about participants that were kicked or caused troubles"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+msgid "..."
+msgstr "..."
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy, no-wrap
+#| msgid "Using the Task Application"
+msgid "Using the Moderator Notes Application"
+msgstr "Utilisation de l'Application Tâches"
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy, no-wrap
+#| msgid "Opening the Task Application"
+msgid "Opening the Moderator Notes Application"
+msgstr "Ouverture de l'Application Tâche"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the top chat menu:"
+msgid "To open the Moderator Notes Application, there is a \"{{% livechat_label \"moderator_notes\" %}}\" button in the top chat menu:"
+msgstr "Pour ouvrir l'Application Tâches, il y a un bouton «{{% livechat_label tasks %}}» dans le menu haut du tchat :"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
+msgid "![Opening the Moderator Notes Application](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px)"
+msgstr "![Ouvrir l'Application Tâche](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
+msgid "![Opening the Moderator Notes Application](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px)"
+msgstr "![Ouvrir l'Application Tâche](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "Clicking this button will toggle the Task Application display:"
+msgid "Clicking this button will toggle the Application display:"
+msgstr "En cliquant sur ce bouton, l'affichage de l'Application de Tâches bascule :"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "![Task Application](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px)"
+msgid "![Moderator Notes Application](/peertube-plugin-livechat/images/moderator_notes_app_video_1.png?classes=shadow,border&height=200px)"
+msgstr "![Application Tâches](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "![Task Application](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px)"
+msgid "![Moderator Notes Application](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px)"
+msgstr "![Application Tâches](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+msgid "To have more space and better readability, open the chat in full-page mode."
+msgstr "Pour avoir plus d'espace et une meilleure lisibilité, ouvrez le tchat en mode pleine page."
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#: support/documentation/content/en/documentation/user/streamers/polls.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+#, no-wrap
+msgid "Access rights"
+msgstr "Droits d'accès"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "Every room's admins have access to the Task Application (read and write access)."
+msgid "Every room's admins have access to this Application (read and write access)."
+msgstr "Les administrateur⋅rices de chaque salon de discussion ont accès à l'application de tâches (accès en lecture et en écriture)."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "When you promote someone as room admin or owner, they gets instant access to the Task Application.  When you remove admin or owner rights to someone, they instantly lose access to the Task Application."
+msgid "When you promote someone as room admin or owner, they gets instant access to this Application.  When you remove admin or owner rights to someone, they instantly lose access to this Application."
+msgstr "Lorsque vous promouvez quelqu'un en tant qu'administrateur⋅rice ou propriétaire d'un salon, iel obtient un accès instantané à l'Application Tâches.  Lorsque vous retirez les droits d'admin ou de propriétaire à quelqu'un, iel perd instantanément l'accès à l'Application Tâches."
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, no-wrap
+msgid "Notes"
+msgstr "Remarques"
+
+#. type: Title ####
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy, no-wrap
+#| msgid "Create tasks"
+msgid "Create/Edit Notes"
+msgstr "Créer des tâches"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "You can use the form at the bottom to create a new task list.  You can also edit existing task lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks."
+msgid "You can use the plus button on the top to create a new note.  You can also edit existing notes using the edit button, or delate any note."
+msgstr "Vous pouvez utiliser le formulaire en bas de page pour créer une nouvelle liste de tâches.  Vous pouvez également modifier les listes de tâches existantes à l'aide du bouton \"modifier\" ou supprimer n'importe quelle liste de tâches. La suppression d'une liste de tâches entraîne la suppression de toutes les tâches qu'elle contient."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+msgid "All modification are instantly visible in all your browser tabs, and for all room's admins."
+msgstr "Toutes les modifications sont instantanément visibles dans tous les onglets de votre navigateur, et pour tous les administrateur⋅rices du salon."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "You can create a note associated to a participant in several ways:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "using the \"{{% livechat_label moderator_note_create_for_participant %}}\" action in the dropdown menu besides chat messages"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "When a note is associated to a participant, you will see their nickname and avatar on the top of the note."
+msgstr ""
+
+#. type: Title ####
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, no-wrap
+msgid "Notes filtering"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "You can filter notes to find all notes related to a given participant in several ways:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "click on the \"{{% livechat_label moderator_note_search_for_participant %}}\" button that is available on notes to find all notes related to the same participant"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "click on the \"{{% livechat_label moderator_note_search_for_participant %}}\" button in the dropdown menu besides chat messages"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "You can remove the filter by clicking on the close button."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgid "![Moderator Notes Application - filtering](/peertube-plugin-livechat/images/moderation_notes_filters.png?classes=shadow,border&height=200px)"
+msgstr "![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "When you filters notes on a participant, there are several informations that are shown at the right of the participant nickname:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "if the current nickname is different than the nickname when you created the note, the original nickname will be shown"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "you will see the [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) of the participant"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "you will also see the [occupant-id](https://xmpp.org/extensions/xep-0421.html) of the participant"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "The search result will also include all notes related to participants who had the same nickname.  So you can also take note for anonymous users (who don't have any consistent JID or occupant-id).  You can differenciate them by comparing JID and occupant-id."
+msgstr ""
+
+#. type: Title ####
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, no-wrap
+msgid "Sorting notes"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, fuzzy
+#| msgid "You can sort tasks, or move tasks from one list to another, simply using drag & drop."
+msgid "You can sort notes simply using drag & drop."
+msgstr "Vous pouvez trier les tâches ou les déplacer d'une liste à l'autre par simple \"glisser-déposer\"."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3563,13 +3805,6 @@ msgstr "Une fois que vous aurez soumis le formulaire, le sondage commencera inst
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "If there was a previous unfinished poll, it will end and its result will be shown."
 msgstr "Si un sondage précédent était inachevé, il se terminera et son résultat sera affiché."
-
-#. type: Title ###
-#: support/documentation/content/en/documentation/user/streamers/polls.md
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, no-wrap
-msgid "Access rights"
-msgstr "Droits d'accès"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3794,11 +4029,6 @@ msgstr "préparez une liste des thèmes que vous souhaitez aborder lors de votre
 msgid "highlight questions from your viewers, so you can come back to them later without forgetting to answer them"
 msgstr "mettre en évidence les questions de vos spectateur⋅rices, afin que vous puissiez y revenir plus tard sans oublier d'y répondre"
 
-#. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "..."
-msgstr "..."
-
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
@@ -3843,11 +4073,6 @@ msgstr "![Application Tâches](/peertube-plugin-livechat/images/task_app_fullpag
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "To have more space and better readability, open the chat in full-page mode."
-msgstr "Pour avoir plus d'espace et une meilleure lisibilité, ouvrez le tchat en mode pleine page."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Every room's admins have access to the Task Application (read and write access)."
 msgstr "Les administrateur⋅rices de chaque salon de discussion ont accès à l'application de tâches (accès en lecture et en écriture)."
 
@@ -3881,11 +4106,6 @@ msgstr "Les listes de tâches sont triées par ordre alphabétique."
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Task lists](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px)"
 msgstr "![Listes de Tâches](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px)"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "All modification are instantly visible in all your browser tabs, and for all room's admins."
-msgstr "Toutes les modifications sont instantanément visibles dans tous les onglets de votre navigateur, et pour tous les administrateur⋅rices du salon."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4646,10 +4866,6 @@ msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XM
 
 #~ msgid "If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue.  Since Peertube version 5.0.0, there are some additional configuration to do on the server side.  Check with the instance administrators that they did not forgot to apply changes listes in the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."
 #~ msgstr "Si tout est OK d'après l'outil de diagnostique, mais que la fenêtre de tchat reste vide : cela peut être un soucis Websocket. Depuis la version 5.0.0 de Peertube, il y a de la configuration supplémentaire à faire du côté du serveur. Vérifiez avec les administrateur⋅rices de votre instance s'iels n'ont pas oublié d'appliquer les changements listés dans les [notes de version 5.0.0 de Peertube](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."
-
-#, no-wrap
-#~ msgid "Notes"
-#~ msgstr "Remarques"
 
 #, fuzzy
 #~ msgid "| | | |---|---| | ![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px) | ![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px) |"
