@@ -12,6 +12,8 @@ import { Model } from '@converse/skeletor/src/model.js'
  */
 class ChatRoomNote extends Model {
   idAttribute = 'id'
+  _aboutOccupantCache = null
+  _aboutOccupantCacheFor = null
 
   async saveItem () {
     console.log('Saving note ' + this.get('id') + '...')
@@ -27,22 +29,51 @@ class ChatRoomNote extends Model {
     const occupants = this.collection.chatroom?.occupants
     if (!occupants?.findOccupant) { return undefined }
 
-    if (this.get('about_occupant_id')) {
-      const o = occupants.findOccupant({ occupant_id: this.get('about_occupant_id') })
-      if (o) { return o }
-    }
+    const nick = this.get('about_nick')
+    const jid = this.get('about_jid')
+    const occupantId = this.get('about_occupant_id')
 
-    if (!this.get('about_nick') && !this.get('about_jid')) {
+    if (!nick && !jid && !occupantId) {
+      this._aboutOccupantCache = null
+      this._aboutOccupantCacheFor = null
       return undefined
     }
 
-    const o = occupants.findOccupant({
-      nick: this.get('about_nick'),
-      jid: this.get('about_jid')
-    })
-    if (o) { return o }
+    // Keeping some cache, to avoid intensive search on each rendering.
+    const cacheKey = `${occupantId ?? ''} ${jid ?? ''} ${nick ?? ''}`
+    if (this._aboutOccupantCacheFor === cacheKey && this._aboutOccupantCache) {
+      return this._aboutOccupantCache
+    }
 
-    return undefined
+    this._aboutOccupantCacheFor = cacheKey
+
+    if (occupantId) {
+      const o = occupants.findOccupant({ occupant_id: occupantId })
+      if (o) {
+        this._aboutOccupantCache = o
+        return o
+      }
+    }
+
+    if (jid) {
+      const o = occupants.findOccupant({
+        jid,
+        nick
+      })
+      if (o) {
+        this._aboutOccupantCache = o
+        return o
+      }
+    }
+
+    // If we don't find it, maybe it is a user that has spoken a long time ago (or never spoked).
+    // In such case, we must create a dummy occupant:
+    this._aboutOccupantCache = occupants.create({
+      nick,
+      occupant_id: occupantId,
+      jid
+    })
+    return this._aboutOccupantCache
   }
 }
 
