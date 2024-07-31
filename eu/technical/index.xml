@@ -8,4 +8,9 @@ It has a configuration option for the global terms. It also adds muc terms in th
 When a new occupant session is opened, this modules sends them messages containing the global and muc terms (if set).</description></item><item><title>Tasks overview</title><link>https://johnxlivingston.github.io/peertube-plugin-livechat/eu/technical/tasks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://johnxlivingston.github.io/peertube-plugin-livechat/eu/technical/tasks/</guid><description>The livechat plugin includes a Task Application. The present document describes how this is implemented.
 Basics This features relies on XEP-0060: Publish-Subscribe. This XEP provide a way to store and retrieve items, and to receive push notifications when an item is created/deleted/modified.
 There is a Prosody Module, mod_pubsub_peertubelivechat, to implement some specific use of the pubsub mechanism.
+This module is also used for Moderator Notes.
+We use the JID+NodeID addressing to specify some nodes related to each MUC room.</description></item><item><title>Moderator notes overview</title><link>https://johnxlivingston.github.io/peertube-plugin-livechat/eu/technical/moderation_notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://johnxlivingston.github.io/peertube-plugin-livechat/eu/technical/moderation_notes/</guid><description>The livechat plugin includes a Moderation Notes Application. The present document describes how this is implemented.
+Basics This features relies on XEP-0060: Publish-Subscribe. This XEP provide a way to store and retrieve items, and to receive push notifications when an item is created/deleted/modified.
+There is a Prosody Module, mod_pubsub_peertubelivechat, to implement some specific use of the pubsub mechanism.
+This module is also used for Tasks.
 We use the JID+NodeID addressing to specify some nodes related to each MUC room.</description></item></channel></rss>
