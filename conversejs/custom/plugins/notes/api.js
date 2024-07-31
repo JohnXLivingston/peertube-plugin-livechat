@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+//
+// SPDX-License-Identifier: AGPL-3.0-only
+
 async function openNotes () {
   const appElement = document.querySelector('livechat-converse-muc-note-app')
   if (!appElement) {
