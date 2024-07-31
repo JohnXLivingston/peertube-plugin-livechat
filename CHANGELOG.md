@@ -16,6 +16,7 @@
 * Translation updates: Crotian, Japanese.
 * Updated mod_muc_moderation to upstream.
 * Fix new task ordering.
+* Fix: clicking on the current user nickname in message history was failing to open the profile modal.
 
 ## 10.3.3
 

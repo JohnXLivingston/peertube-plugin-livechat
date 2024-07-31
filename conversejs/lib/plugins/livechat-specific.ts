@@ -8,6 +8,7 @@ import { initReconnectionStuff } from './livechat-specific/reconnection'
 import { chatRoomOverrides } from './livechat-specific/chatroom'
 import { chatRoomMessageOverrides } from './livechat-specific/chatroom-message'
 import { customizeMessageAction } from './livechat-specific/message-action'
+import { customizeProfileModal } from './livechat-specific/profile'
 
 export const livechatSpecificsPlugin = {
   dependencies: ['converse-muc', 'converse-muc-views'],
@@ -24,6 +25,7 @@ export const livechatSpecificsPlugin = {
     customizeHeading(this)
     customizeToolbar(this)
     customizeMessageAction(this)
+    customizeProfileModal(this)
 
     _converse.api.listen.on('chatRoomViewInitialized', function (this: any, _model: any): void {
       // Remove the spinner if present...
