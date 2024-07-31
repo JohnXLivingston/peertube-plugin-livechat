@@ -20,8 +20,11 @@
       column-gap: 0.25em;
       width: 100%;
 
-      .note-description {
+      .note-content {
         flex-grow: 2;
+      }
+
+      .note-description {
         white-space: pre-wrap;
       }
 

@@ -18,8 +18,8 @@ set -x
 CONVERSE_VERSION="v11.0.0"
 CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 # You can eventually set CONVERSE_COMMIT to a specific commit ID, if you want to apply some patches.
-# 2024-07-30: using Converse upstream (v11 WIP).
-CONVERSE_COMMIT="9ddf6e7b7a83fdc04c8b55f0f470e59c09283a39"
+# 2024-07-31: using Converse upstream (v11 WIP).
+CONVERSE_COMMIT="2f8cfc02d04bb6191b3b9facb706e475836279f5"
 # # 2024-07-31: testing the jcbrand/bootstrap5 branch
 # CONVERSE_COMMIT="e5edeec997d53a8720470a49685be123e8688e1c"
 

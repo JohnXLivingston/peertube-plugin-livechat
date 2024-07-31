@@ -18,4 +18,21 @@
     padding-left: 0.25em;
     padding-right: 0.25em;
   }
+
+  .notes-filters {
+    border: 1px solid var(--chatroom-head-bg-color);
+    border-radius: 4px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.25em 0;
+    padding: 0.25em;
+    column-gap: 0.25em;
+    width: 100%;
+
+    livechat-converse-muc-note-occupant {
+      flex-grow: 2;
+    }
+  }
 }

@@ -7,6 +7,7 @@ import { XMLNS_NOTE } from './constants.js'
 import { ChatRoomNote } from './note.js'
 import { ChatRoomNotes } from './notes.js'
 import { initOrDestroyChatRoomNotes, getHeadingButtons, getMessageActionButtons } from './utils.js'
+import notesApi from './api.js'
 
 import './components/muc-note-app-view.js'
 import './components/muc-notes-view.js'
@@ -28,6 +29,10 @@ converse.plugins.add('livechat-converse-notes', {
     _converse.api.settings.extend({
       livechat_note_app_enabled: false,
       livechat_note_app_restore: false // should we open the app by default if it was previously oppened?
+    })
+
+    Object.assign(_converse.api, {
+      livechat_notes: notesApi
     })
 
     _converse.api.listen.on('chatRoomInitialized', muc => {

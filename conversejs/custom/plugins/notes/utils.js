@@ -51,28 +51,29 @@ export function getMessageActionButtons (messageActionsEl, buttons) {
   if (messageModel.occupant) {
     // eslint-disable-next-line no-undef
     const i18nCreate = __(LOC_moderator_note_create_for_participant)
+    // eslint-disable-next-line no-undef
+    const i18nSearch = __(LOC_moderator_note_search_for_participant)
 
     buttons.push({
       i18n_text: i18nCreate,
       handler: async (ev) => {
         ev.preventDefault()
-        const appElement = document.querySelector('livechat-converse-muc-note-app')
-        if (!appElement) {
-          throw new Error('Cant find Note App Element')
-        }
-        await appElement.showApp()
-        await appElement.updateComplete // waiting for the app to be open
-
-        const notesElement = appElement.querySelector('livechat-converse-muc-notes')
-        if (!notesElement) {
-          throw new Error('Cant find Notes Element')
-        }
-        await notesElement.updateComplete
-        notesElement.openCreateNoteForm(undefined, messageModel.occupant)
+        await api.livechat_notes.openCreateNoteForm(messageModel.occupant)
       },
       button_class: '',
       icon_class: 'fa fa-note-sticky',
       name: 'muc-note-create-for-occupant'
+    })
+
+    buttons.push({
+      i18n_text: i18nSearch,
+      handler: async (ev) => {
+        ev.preventDefault()
+        await api.livechat_notes.searchNotesAbout(messageModel.occupant)
+      },
+      button_class: '',
+      icon_class: 'fa fa-magnifying-glass',
+      name: 'muc-note-search-for-occupant'
     })
   }
 

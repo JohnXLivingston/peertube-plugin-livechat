@@ -2,26 +2,43 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+import { api } from '@converse/headless'
 import { html } from 'lit'
 import { __ } from 'i18n'
 
 export function tplMucNote (el, note) {
   // eslint-disable-next-line no-undef
   const i18nDelete = __(LOC_moderator_note_delete)
+  // eslint-disable-next-line no-undef
+  const i18nSearch = __(LOC_moderator_note_search_for_participant)
 
   const aboutOccupant = note.getAboutOccupant()
 
   return !el.edit
     ? html`
       <div draggable="true" class="note-line draggables-line">
-        <div class="note-description">${note.get('description') ?? ''}</div>
-        ${
-            aboutOccupant
-              ? html`
-                <livechat-converse-muc-note-occupant
+        <div class="note-content">
+          ${
+              aboutOccupant
+                ? html`
+                  <livechat-converse-muc-note-occupant
+                    .full_display=${el.is_ocupant_filter}
                     .model=${aboutOccupant}
                   ></livechat-converse-muc-note-occupant>`
-              : ''
+                : ''
+          }
+          <div class="note-description">${note.get('description') ?? ''}</div>
+        </div>
+        ${
+          aboutOccupant && el.is_ocupant_filter
+            ? ''
+            : html`
+              <button type="button" class="note-action" @click=${ev => {
+                ev.preventDefault()
+                api.livechat_notes.searchNotesAbout(aboutOccupant)
+              }}>
+                <converse-icon class="fa fa-magnifying-glass" size="1em" title=${i18nSearch}></converse-icon>
+              </button>`
         }
         <button class="note-action" title="${__('Edit')}"
           @click=${el.toggleEdit}

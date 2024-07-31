@@ -15,7 +15,8 @@ export default class MUCNotesView extends DraggablesCustomElement {
       model: { type: Object, attribute: true },
       create_note_error_message: { type: String, attribute: false },
       create_note_opened: { type: Boolean, attribute: false },
-      create_note_for_occupant: { type: Object, attribute: false }
+      create_note_about_occupant: { type: Object, attribute: false },
+      occupant_filter: { type: Object, attribute: false }
     }
   }
 
@@ -45,7 +46,11 @@ export default class MUCNotesView extends DraggablesCustomElement {
   async openCreateNoteForm (ev, occupant) {
     ev?.preventDefault?.()
     this.create_note_opened = true
-    this.create_note_for_occupant = occupant ?? undefined
+    this.create_note_about_occupant = occupant ?? undefined
+    if (this.create_note_about_occupant === undefined && this.occupant_filter) {
+      // if we have a current filter, we can use it for the new note.
+      this.create_note_about_occupant = this.occupant_filter
+    }
     await this.updateComplete
     const textarea = this.querySelector('.notes-create-note textarea[name="description"]')
     if (textarea) {
@@ -56,7 +61,11 @@ export default class MUCNotesView extends DraggablesCustomElement {
   closeCreateNoteForm (ev) {
     ev?.preventDefault?.()
     this.create_note_opened = false
-    this.create_note_for_occupant = undefined
+    this.create_note_about_occupant = undefined
+  }
+
+  filterNotes (filters) {
+    this.occupant_filter = filters?.occupant || undefined
   }
 
   async submitCreateNote (ev) {

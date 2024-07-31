@@ -13,7 +13,8 @@ export default class MUCNoteView extends CustomElement {
   static get properties () {
     return {
       model: { type: Object, attribute: true },
-      edit: { type: Boolean, attribute: false }
+      edit: { type: Boolean, attribute: false },
+      is_ocupant_filter: { type: Boolean, attribute: true }
     }
   }
 

@@ -27,7 +27,7 @@ export function tplMucNoteOccupant (el, occupant) {
     </a>
     ${
       el.full_display
-        ? html`<ul>
+        ? html`<ul aria-hidden="true">
             ${jid ? html`<li title=${__('XMPP Address')}>${jid}</li>` : ''}
             ${occupantId ? html`<li title=${__('Occupant Id')}>${occupantId}</li>` : ''}
           </ul>`
