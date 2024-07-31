@@ -16,10 +16,12 @@ This XEP provide a way to store and retrieve items, and to receive push notifica
 
 There is a Prosody Module, [mod_pubsub_peertubelivechat](https://github.com/JohnXLivingston/peertube-plugin-livechat/tree/main/prosody-modules/mod_pubsub_peertubelivechat), to implement some specific use of the pubsub mechanism.
 
+This module is also used for [Moderator Notes](/peertube-plugin-livechat/technical/moderation_notes/).
+
 We use the [JID+NodeID addressing](https://xmpp.org/extensions/xep-0060.html#addressing-jidnode) to specify some nodes related to each MUC room.
 The JID is the MUC room JID, the NodeID is functionnality we want to address.
-For now, this modules only implement one such node: "livechat-tasks", to handle tasks and task lists.
-But the module code anticipates futur uses.
+
+This modules implement the "livechat-tasks" node, to handle tasks and task lists.
 
 The "livechat-tasks" node contains two type of objects: Task and TaskList (XML Namespaces: `urn:peertube-plugin-livechat:tasklist` and `urn:peertube-plugin-livechat:task`). Tasks have an attribute containing their task list id.
 
