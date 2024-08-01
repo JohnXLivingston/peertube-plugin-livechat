@@ -8,6 +8,7 @@
 * #146: copy message button for moderators.
 * #137: option to hide moderator name who made actions (kick, ban, message moderation, ...).
 * #144: [moderator notes](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/moderation_notes/).
+* #145: action for moderators to find all messages from a given participant.
 
 ### Minor changes and fixes
 

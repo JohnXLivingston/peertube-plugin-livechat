@@ -44,6 +44,7 @@ import './plugins/singleton/index.js'
 import './plugins/fullscreen/index.js'
 
 import '../custom/plugins/size/index.js'
+import '../custom/plugins/mam-search/index.js'
 import '../custom/plugins/notes/index.js'
 import '../custom/plugins/tasks/index.js'
 import '../custom/plugins/terms/index.js'
@@ -61,6 +62,7 @@ CORE_PLUGINS.push('livechat-converse-tasks')
 CORE_PLUGINS.push('livechat-converse-terms')
 CORE_PLUGINS.push('livechat-converse-poll')
 CORE_PLUGINS.push('livechat-converse-notes')
+CORE_PLUGINS.push('livechat-converse-mam-search')
 // We must also add our custom ROOM_FEATURES, so that they correctly resets
 // (see headless/plugins/muc, getDiscoInfoFeatures, which loops on this const)
 ROOM_FEATURES.push('x_peertubelivechat_mute_anonymous')

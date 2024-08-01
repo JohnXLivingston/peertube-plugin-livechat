@@ -258,6 +258,8 @@ class ProsodyConfigContent {
 
     this.muc.add('modules_enabled', 'muc_anonymize_moderation_actions')
     this.muc.set('anonymize_moderation_actions_form_position', 117)
+
+    this.muc.add('modules_enabled', 'muc_mam_search')
   }
 
   useAnonymous (autoBanIP: boolean): void {

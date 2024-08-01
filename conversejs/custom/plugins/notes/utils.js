@@ -43,39 +43,41 @@ export function getMessageActionButtons (messageActionsEl, buttons) {
     return buttons
   }
 
+  if (!messageModel.occupant) {
+    return buttons
+  }
+
   const muc = messageModel.collection?.chatbox
   if (!muc?.notes) {
     return buttons
   }
 
-  if (messageModel.occupant) {
-    // eslint-disable-next-line no-undef
-    const i18nCreate = __(LOC_moderator_note_create_for_participant)
-    // eslint-disable-next-line no-undef
-    const i18nSearch = __(LOC_moderator_note_search_for_participant)
+  // eslint-disable-next-line no-undef
+  const i18nCreate = __(LOC_moderator_note_create_for_participant)
+  // eslint-disable-next-line no-undef
+  const i18nSearch = __(LOC_moderator_note_search_for_participant)
 
-    buttons.push({
-      i18n_text: i18nCreate,
-      handler: async (ev) => {
-        ev.preventDefault()
-        await api.livechat_notes.openCreateNoteForm(messageModel.occupant)
-      },
-      button_class: '',
-      icon_class: 'fa fa-note-sticky',
-      name: 'muc-note-create-for-occupant'
-    })
+  buttons.push({
+    i18n_text: i18nCreate,
+    handler: async (ev) => {
+      ev.preventDefault()
+      await api.livechat_notes.openCreateNoteForm(messageModel.occupant)
+    },
+    button_class: '',
+    icon_class: 'fa fa-note-sticky',
+    name: 'muc-note-create-for-occupant'
+  })
 
-    buttons.push({
-      i18n_text: i18nSearch,
-      handler: async (ev) => {
-        ev.preventDefault()
-        await api.livechat_notes.searchNotesAbout(messageModel.occupant)
-      },
-      button_class: '',
-      icon_class: 'fa fa-magnifying-glass',
-      name: 'muc-note-search-for-occupant'
-    })
-  }
+  buttons.push({
+    i18n_text: i18nSearch,
+    handler: async (ev) => {
+      ev.preventDefault()
+      await api.livechat_notes.searchNotesAbout(messageModel.occupant)
+    },
+    button_class: '',
+    icon_class: 'fa fa-magnifying-glass',
+    name: 'muc-note-search-for-occupant'
+  })
 
   return buttons
 }
