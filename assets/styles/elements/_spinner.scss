@@ -15,9 +15,9 @@ livechat-spinner,
     height: 48px;
     margin: 20px;
     /* stylelint-disable-next-line custom-property-pattern */
-    border: 5px solid var(--greyBackgroundColor);
+    border: 5px solid var(--greyBackgroundColor) !important; // !important is required for it to work in ConverseJS
     /* stylelint-disable-next-line custom-property-pattern */
-    border-bottom-color: var(--mainColor);
+    border-bottom-color: var(--mainColor) !important; // !important is required for it to work in ConverseJS
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;

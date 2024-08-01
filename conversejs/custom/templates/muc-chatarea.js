@@ -18,5 +18,10 @@ export default (o) => {
         ? html`<livechat-converse-muc-note-app .model=${o.model}></livechat-converse-muc-note-app>`
         : ''
     }
+    ${
+      o?.model && api.settings.get('livechat_mam_search_app_enabled')
+        ? html`<livechat-converse-muc-mam-search-app .model=${o.model}></livechat-converse-muc-mam-search-app>`
+        : ''
+    }
     ${tplMUCChatarea(o)}`
 }

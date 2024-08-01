@@ -220,27 +220,23 @@ async function initConverse (
   // Technically it would work in 'chat-only' mode, but i don't want to add too many things to test
   // (and i now there is some CSS bugs in the task list).
   // Same for the moderator notes app.
-  let enableTask = false
-  let enableModeratorNotes = false
+  let enableApps = false
   if (chatIncludeMode === 'peertube-video' || chatIncludeMode === 'peertube-fullpage') {
-    enableTask = true
-    enableModeratorNotes = true
+    enableApps = true
   } else if (
     chatIncludeMode === 'chat-only' &&
     usedLivechatToken &&
     !initConverseParams.transparent &&
     !initConverseParams.forceReadonly
   ) {
-    enableTask = true
-    enableModeratorNotes = true
+    enableApps = true
   }
-  if (enableTask) {
+  if (enableApps) {
     params.livechat_task_app_enabled = true
     params.livechat_task_app_restore = chatIncludeMode === 'peertube-fullpage' || chatIncludeMode === 'chat-only'
-  }
-  if (enableModeratorNotes) {
     params.livechat_note_app_enabled = true
     params.livechat_note_app_restore = chatIncludeMode === 'peertube-fullpage' || chatIncludeMode === 'chat-only'
+    params.livechat_mam_search_app_enabled = true
   }
 
   try {

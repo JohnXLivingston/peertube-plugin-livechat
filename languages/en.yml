@@ -605,4 +605,5 @@ moderator_note_search_for_participant: 'Search notes about this participant'
 moderator_note_filters: 'Search filters'
 moderator_note_original_nick: 'Nickname of the participant at the time of the note creation'
 
-search_occupant_message: 'Search all message from this participant'
+search_occupant_message: 'Search all messages from this participant'
+message_search: 'Message search'

@@ -95,6 +95,18 @@ async function query (options) {
   return { messages }
 }
 
+async function showMessagesFrom (occupant) {
+  const appElement = document.querySelector('livechat-converse-muc-mam-search-app')
+  if (!appElement) {
+    throw new Error('Cant find Search App Element')
+  }
+  appElement.searchFrom(occupant)
+  await appElement.showApp()
+  await appElement.updateComplete // waiting for the app to be open
+  return appElement
+}
+
 export default {
-  query
+  query,
+  showMessagesFrom
 }

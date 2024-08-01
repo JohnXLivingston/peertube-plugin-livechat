@@ -60,7 +60,8 @@ const locKeys = [
   'moderator_note_search_for_participant',
   'moderator_note_filters',
   'moderator_note_original_nick',
-  'search_occupant_message'
+  'search_occupant_message',
+  'message_search'
 ]
 
 module.exports = locKeys
