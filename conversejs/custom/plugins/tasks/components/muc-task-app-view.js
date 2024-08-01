@@ -10,8 +10,8 @@ import { tplMUCTaskApp } from '../templates/muc-task-app.js'
  * Custom Element to display the Task Application.
  */
 export default class MUCTaskApp extends MUCApp {
-  enableSettingName = 'livechat_task_app_restore'
-  sessionStorangeShowKey = 'livechat-converse-task-app-show'
+  restoreSettingName = 'livechat_task_app_restore'
+  sessionStorageRestoreKey = 'livechat-converse-task-app-show'
 
   render () {
     return tplMUCTaskApp(this, this.model)

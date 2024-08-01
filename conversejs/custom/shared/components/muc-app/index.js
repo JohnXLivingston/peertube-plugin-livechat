@@ -11,8 +11,8 @@ import './styles/muc-app.scss'
  * This is an abstract class, should not be called directly.
  */
 export class MUCApp extends CustomElement {
-  enableSettingName = undefined // must be overloaded
-  sessionStorangeShowKey = undefined // must be overloaded
+  restoreSettingName = undefined // must be overloaded
+  sessionStorageRestoreKey = undefined // must be overloaded
 
   static get properties () {
     return {
@@ -23,10 +23,10 @@ export class MUCApp extends CustomElement {
 
   async initialize () {
     this.classList.add('livechat-converse-muc-app')
-    this.show = this.enableSettingName &&
-      api.settings.get(this.enableSettingName) &&
-      this.sessionStorangeShowKey &&
-      (window.sessionStorage?.getItem?.(this.sessionStorangeShowKey) === '1')
+    this.show = this.restoreSettingName &&
+      api.settings.get(this.restoreSettingName) &&
+      this.sessionStorageRestoreKey &&
+      (window.sessionStorage?.getItem?.(this.sessionStorageRestoreKey) === '1')
 
     // we listen for livechatSizeChanged event,
     // and close all apps except the first if small or medium width.
@@ -63,8 +63,8 @@ export class MUCApp extends CustomElement {
 
   toggleApp () {
     this.show = !this.show
-    if (this.sessionStorangeShowKey) {
-      window.sessionStorage?.setItem?.(this.sessionStorangeShowKey, this.show ? '1' : '')
+    if (this.sessionStorageRestoreKey) {
+      window.sessionStorage?.setItem?.(this.sessionStorageRestoreKey, this.show ? '1' : '')
     }
 
     if (

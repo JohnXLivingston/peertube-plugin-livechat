@@ -10,8 +10,8 @@ import { tplMUCNoteApp } from '../templates/muc-note-app.js'
  * Custom Element to display the Notes Application.
  */
 export default class MUCNoteApp extends MUCApp {
-  enableSettingName = 'livechat_note_app_restore'
-  sessionStorangeShowKey = 'livechat-converse-note-app-show'
+  restoreSettingName = 'livechat_note_app_restore'
+  sessionStorageRestoreKey = 'livechat-converse-note-app-show'
 
   render () {
     return tplMUCNoteApp(this, this.model)
