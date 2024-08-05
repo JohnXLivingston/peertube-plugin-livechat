@@ -8,6 +8,7 @@ import mamSearchApi from './api.js'
 
 import './components/muc-mam-search-app-view.js'
 import './components/muc-mam-search-occupant-view.js'
+import './components/muc-mam-search-message-view.js'
 
 converse.plugins.add('livechat-converse-mam-search', {
   dependencies: ['converse-muc', 'converse-muc-views'],

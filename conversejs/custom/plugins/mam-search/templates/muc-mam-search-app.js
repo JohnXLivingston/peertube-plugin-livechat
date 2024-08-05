@@ -19,20 +19,17 @@ function tplContent (el, mucModel, occupantModel) {
         `
         : ''
     }
+    <hr>
     ${
       el.results
-        ? repeat(el.results, (message) => message.id, message => tplMessage(message))
+        ? repeat(el.results, (message) => message.id, message => {
+            return html`<livechat-converse-muc-mam-search-message
+              .message=${message} .mucModel=${mucModel} .searchOccupantModel=${occupantModel}
+            ></livechat-converse-muc-mam-search-message>`
+          })
         : html`<livechat-spinner></livechat-spinner>`
     }
   `
-}
-
-function tplMessage (model) {
-  return html`
-  <converse-chat-message
-    jid="${this.model.get('jid')}"
-    mid="${model.get('id')}"
-  ></converse-chat-message>`
 }
 
 export function tplMamSearchApp (el, mucModel, occupantModel) {

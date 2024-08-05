@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { api } from '@converse/headless'
-import { Collection } from '@converse/skeletor'
 import { parseMUCMessage } from '@converse/headless/plugins/muc/parsers.js'
 import { MUCApp } from '../../../shared/components/muc-app/index.js'
 import { tplMamSearchApp } from '../templates/muc-mam-search-app.js'
@@ -42,12 +41,10 @@ export default class MUCMamSearchApp extends MUCApp {
       this.occupant = occupant // in case user did simultaneous requests
 
       const messages = await Promise.all(results.messages.map(s => parseMUCMessage(s, this.model)))
-      const col = new Collection()
-      for (const message of messages) {
-        // FIXME: this does not work for now, the collection is not properly initiated (no storage engine)
-        col.create(message)
-      }
-      this.results = col
+      // Note: we are not using MUCMessage objects, because we don't want the objects
+      // used here to interract with objects in the chat rooms.
+      // We could have a lot of unwanted sideeffects.
+      this.results = messages.reverse()
     })
   }
 }

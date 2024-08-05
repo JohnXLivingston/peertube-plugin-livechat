@@ -1,0 +1,31 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+.conversejs {
+  livechat-converse-muc-mam-search-message {
+    border: 1px solid var(--chatroom-head-bg-color);
+    border-radius: 4px;
+    display: block;
+    margin: 0.25em 0;
+    padding: 0.25em;
+    width: 100%;
+
+    converse-rich-text {
+      color: var(--message-text-color);
+      font-size: var(--message-font-size);
+      padding: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .livechat-message-date {
+      font-size: 0.75em;
+      list-style: none;
+      text-align: right;
+    }
+  }
+}
