@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-07-31 23:19+0200\n"
+"POT-Creation-Date: 2024-08-05 12:07+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Russian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ru/>\n"
@@ -3355,6 +3355,44 @@ msgstr ""
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
+msgid "Participant message history search"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "As a room admin or owner, you can search all messages sent by a given participant."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "To do so, you have several ways:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides chat messages"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "![Message history search](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px)"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#: support/documentation/content/en/documentation/user/streamers/tasks.md
+msgid "To have more space and better readability, open the chat in full-page mode."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "The search result will also include all messages related to participants who had the same nickname.  You can differenciate them by comparing [JID](https://xmpp.org/extensions/xep-0029.html) and [occupant-id](https://xmpp.org/extensions/xep-0421.html)."
+msgstr ""
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, no-wrap
 msgid "Delete room content"
 msgstr ""
 
@@ -3462,12 +3500,6 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Moderator Notes Application](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px)"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "To have more space and better readability, open the chat in full-page mode."
 msgstr ""
 
 #. type: Title ###

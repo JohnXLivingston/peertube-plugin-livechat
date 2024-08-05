@@ -86,6 +86,27 @@ In the form, you will find a "{{% livechat_label livechat_configuration_channel_
 
 You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel).
 
+## Participant message history search
+
+{{% notice info %}}
+This feature comes with the livechat plugin version 11.0.0.
+{{% /notice %}}
+
+As a room admin or owner, you can search all messages sent by a given participant.
+
+To do so, you have several ways:
+
+* using the "{{% livechat_label search_occupant_message %}}" action in the dropdown menu besides chat messages
+
+![Message history search](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px)
+
+{{% notice tip %}}
+To have more space and better readability, open the chat in full-page mode.
+{{% /notice %}}
+
+The search result will also include all messages related to participants who had the same nickname.
+You can differenciate them by comparing [JID](https://xmpp.org/extensions/xep-0029.html) and [occupant-id](https://xmpp.org/extensions/xep-0421.html).
+
 ## Delete room content
 
 You can delete old rooms: join the room, and use the menu on the top to destroy the room.

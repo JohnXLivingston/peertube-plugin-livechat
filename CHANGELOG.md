@@ -2,6 +2,8 @@
 
 ## 11.0.0 (Not Released Yet)
 
+TODO: actions related to #144 and #145 must be added in the occupant list (waiting for some work on Converse to do this).
+
 ### New features
 
 * Updating ConverseJS, to use upstream (v11 WIP). This comes with many improvments and new features.
