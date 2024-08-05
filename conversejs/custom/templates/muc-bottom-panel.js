@@ -97,7 +97,7 @@ const tplViewerMode = (o) => {
     <div class="livechat-viewer-mode-content chatroom-form-container">
         <form class="converse-form chatroom-form" @submit=${ev => setNickname(ev, model)}>
             <label>${i18nHeading}</label>
-            <fieldset class="form-group">
+            <fieldset>
               <input type="text"
                   required
                   name="nick"
@@ -105,7 +105,7 @@ const tplViewerMode = (o) => {
                   class="form-control"
                   placeholder="${i18nNickname}"/>
             </fieldset>
-            <fieldset class="form-group">
+            <fieldset>
                 <input type="submit" class="btn btn-primary" name="join" value="${i18nJoin}"/>
             </fieldset>
         </form>

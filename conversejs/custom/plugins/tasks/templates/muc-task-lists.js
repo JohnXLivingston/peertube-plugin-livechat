@@ -24,7 +24,7 @@ export default function tplMucTaskLists (el, tasklists) {
       })
     }
     <form class="converse-form" @submit=${el.submitCreateTaskList}>
-      <div class="form-group">
+      <fieldset>
         <label>
           ${i18nCreateTaskList}
           <input type="text" value="" class="form-control" name="name" placeholder="${i18nTaskListName}" />
@@ -34,6 +34,6 @@ export default function tplMucTaskLists (el, tasklists) {
           ? ''
           : html`<div class="invalid-feedback d-block">${el.create_tasklist_error_message}</div>`
         }
-      </div>
+      </fieldset>
     </form>`
 }

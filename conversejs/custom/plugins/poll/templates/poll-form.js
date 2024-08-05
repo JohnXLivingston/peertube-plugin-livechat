@@ -44,7 +44,7 @@ export function tplPollForm (el) {
 
             ${formFieldTemplates}
 
-            <fieldset class="buttons form-group">
+            <fieldset class="buttons">
               <input type="submit" class="btn btn-primary" value="${i18nOk}" />
             </fieldset>
           </form>`

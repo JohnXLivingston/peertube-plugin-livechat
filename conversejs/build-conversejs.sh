@@ -18,16 +18,18 @@ set -x
 CONVERSE_VERSION="v11.0.0"
 CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 # You can eventually set CONVERSE_COMMIT to a specific commit ID, if you want to apply some patches.
-# 2024-07-31: using Converse upstream (v11 WIP).
-CONVERSE_COMMIT="2f8cfc02d04bb6191b3b9facb706e475836279f5"
-# # 2024-07-31: testing the jcbrand/bootstrap5 branch
-# CONVERSE_COMMIT="e5edeec997d53a8720470a49685be123e8688e1c"
+# 2024-08-05: using Converse upstream (v11 WIP).
+CONVERSE_COMMIT="5017efb780973d704f237c478ba52b23d901e1bf"
 
 # It is possible to use another repository, if we want some customization that are not upstream (yet):
 # CONVERSE_VERSION="livechat"
 # # CONVERSE_COMMIT="4402fcc3fc60f6c9334f86528c33a0b463371d12"
 # CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 # CONVERSE_COMMIT="xxxx"
+
+# 2024-08-06: including fix waiting for merge:
+CONVERSE_VERSION="livechat_converse_11"
+CONVERSE_COMMIT="f69b96439ac15d0fc9c138319e2d635ab28be071"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"

@@ -67,7 +67,7 @@ export function tplMucNote (el, note) {
               : ''
           }
           ${_tplNoteForm(note)}
-          <fieldset class="form-group">
+          <fieldset>
             <input type="submit" class="btn btn-primary" value="${__('Ok')}" />
             <input type="button" class="btn btn-secondary button-cancel"
               value="${__('Cancel')}" @click=${el.toggleEdit}
@@ -81,7 +81,7 @@ function _tplNoteForm (note) {
   // eslint-disable-next-line no-undef
   const i18nNoteDesc = __(LOC_moderator_note_description)
 
-  return html`<fieldset class="form-group">
+  return html`<fieldset>
       <textarea
         class="form-control" name="description"
         placeholder="${i18nNoteDesc}"
@@ -116,7 +116,7 @@ export function tplMucCreateNoteForm (notesEl, occupant) {
           : ''
       }
       ${_tplNoteForm(undefined)}
-      <fieldset class="form-group">
+      <fieldset>
         <input type="submit" class="btn btn-primary" value="${i18nOk}" />
         <input type="button" class="btn btn-secondary button-cancel"
           value="${i18nCancel}" @click=${notesEl.closeCreateNoteForm}

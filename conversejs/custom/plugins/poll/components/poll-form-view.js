@@ -113,7 +113,7 @@ export default class MUCPollFormView extends CustomElement {
       await api.sendIQ(iq)
 
       if (this.modal) {
-        this.modal.onHide()
+        this.modal.close()
       }
     } catch (err) {
       if (u.isErrorStanza(err)) {

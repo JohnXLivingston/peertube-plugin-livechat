@@ -71,8 +71,7 @@ function defaultConverseParams (
     visible_toolbar_buttons: {
       call: false,
       spoiler: false,
-      emoji: true,
-      toggle_occupants: true
+      emoji: true
     },
     theme: theme || 'peertube',
     dark_theme: theme || 'peertube', // dark theme should be the same as theme

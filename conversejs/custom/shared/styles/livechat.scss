@@ -60,7 +60,7 @@ body.livechat-readonly.livechat-noscroll {
   }
 }
 
-// Viewer mode
+// Viewer mode (before the user has chosen its nickname)
 .livechat-viewer-mode-content {
   display: none;
 
@@ -73,7 +73,7 @@ body.livechat-readonly.livechat-noscroll {
     gap: 0.5em 10px;
     align-items: baseline;
 
-    .form-group,
+    fieldset,
     label {
       margin-bottom: 0 !important; // replaced by the gap on .livechat-viewer-mode-content
     }
@@ -171,7 +171,8 @@ body.converse-embedded {
 #peertube-plugin-livechat-container {
   converse-muc-message-form {
     // For an unknown reason, message field in truncated... so adding a bottom margin.
-    margin-bottom: 6px;
+    // We also add left and right margin, as Converse v11 adds a g-0 class on converse-muc-chatarea
+    margin: 0 1px 6px 5px;
   }
 }
 
@@ -186,5 +187,39 @@ body.converse-embedded {
     // But this tricks breaks selects that are not in a .peertube-select-container.
     // So we must revert appearance:
     appearance: revert !important;
+  }
+
+  .toolbar-buttons {
+    // Converse v11 removed the toggle_occupant button on the right.
+    // To add it back, we must ensure that this toolbar takes all the width, and
+    // that the toggle-occupants button is on the right.
+    flex-grow: 2;
+
+    .toggle-occupants {
+      // Cancelling the flex-grow from btn-group
+      flex-grow: 0 !important;
+
+      // This margin-left trick is to align the button on the right.
+      margin-left: auto !important;
+      order: 99;
+    }
+  }
+
+  // These CSS are tricks: Converse v11 tries to hide the MUC when screen width is under 768px.
+  // We don't want that, so we cancel the d-none.
+  // FIXME: these hacks should be temporary, waiting for some improvement on Converse.
+  converse-muc-chatarea {
+    .chat-area.d-none {
+      display: flex !important;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    converse-muc-sidebar {
+      width: auto !important;
+
+      .occupants {
+        width: 100%;
+      }
+    }
   }
 }

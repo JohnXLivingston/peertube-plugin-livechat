@@ -35,6 +35,7 @@ body.converse-embedded converse-root.theme-peertube {
   --foreground: var(--peertube-main-foreground);
   --background: var(--peertube-main-background);
   --subdued-color: #a8aba1;
+  --muc-color: var(--peertube-button-background);
   --green: #3aa569; // only in this file
   --redder-orange: #e77051; // only in this file
   --orange: #e7a151; // only in this file
@@ -55,7 +56,6 @@ body.converse-embedded converse-root.theme-peertube {
   --text-shadow-color: var(--peertube-main-background); // FIXME: should be a little different from background
   --text-color: var(--peertube-input-foreground);
   --controlbox-text-color: var(--peertube-input-foreground); // Note: controlbox is not used
-  --text-color-lighten-15-percent: var(--peertube-input-foreground);
   --message-text-color: var(--peertube-input-foreground);
   --message-receipt-color: var(--green);
   --save-button-color: var(--green);
@@ -73,7 +73,6 @@ body.converse-embedded converse-root.theme-peertube {
   --chat-correcting-color: var(--peertube-grey-background);
   --chat-head-color-dark: #1e9652; // should not be used in this plugin
   --chat-head-color-darker: #0e763b; // should not be used in this plugin
-  --chat-head-color-lighten-50-percent: #e7f7ee;  // should not be used in this plugin
   --chat-head-color: var(--green);
   --chat-head-text-color: var(--peertube-input-foreground);
   --chat-toolbar-btn-color: var(--peertube-button-background);
@@ -106,7 +105,6 @@ body.converse-embedded converse-root.theme-peertube {
   --controlbox-pane-background-color: #333;
   --controlbox-pane-bg-hover-color: #464646;
   --panel-divider-color: #333;
-  --chat-gutter: 0.5em;
   --minimized-chats-width: 130px;
   --mobile-chat-width: 100%;
   --mobile-chat-height: 400px;
@@ -119,9 +117,10 @@ body.converse-embedded converse-root.theme-peertube {
   --chatroom-badge-color: var(--peertube-button-background);
   --chatroom-badge-hover-color: var(--peertube-button-background);
   --chatroom-correcting-color: var(--peertube-grey-background);
-  --chatroom-head-bg-color-dark: #d24e2b;
+  --chatroom-head-bg-color-dark: var(--peertube-button-background);
   --chatroom-head-bg-color: var(--peertube-menu-background);
-  --chatroom-head-border-bottom: 1px solid var(--peertube-grey-foreground);
+  --chatroom-head-border-bottom: 0.15em solid var(--peertube-grey-foreground);
+  --chatroom-head-fg-color: var(--subdued-color);
   --chatroom-head-button-color: #999;
   --chatroom-head-color: var(--peertube-menu-foreground);
   --chatroom-head-description-border-left: 1px solid #ddd;
@@ -163,6 +162,7 @@ body.converse-embedded converse-root.theme-peertube {
   --fullpage-chat-width: 100%;
   --fullpage-emoji-picker-height: 300px;
   --fullpage-max-chat-textarea-height: 15em;
+  --overlayed-chat-gutter: 1em;
   --overlayed-chat-head-height: 55px;
   --overlayed-chat-height: 450px;
   --overlayed-chat-width: 300px;

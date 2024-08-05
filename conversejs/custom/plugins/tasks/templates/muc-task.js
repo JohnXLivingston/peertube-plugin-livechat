@@ -45,7 +45,7 @@ export function tplMucTask (el, task) {
       <div class="task-line draggables-line">
         <form class="converse-form" @submit=${el.saveTask}>
           ${_tplTaskForm(task)}
-          <fieldset class="form-group">
+          <fieldset>
             <input type="submit" class="btn btn-primary" value="${__('Ok')}" />
             <input type="button" class="btn btn-secondary button-cancel"
               value="${__('Cancel')}" @click=${el.toggleEdit}
@@ -61,7 +61,7 @@ function _tplTaskForm (task) {
   // eslint-disable-next-line no-undef
   const i18nTaskDesc = __(LOC_task_description)
 
-  return html`<fieldset class="form-group">
+  return html`<fieldset>
       <input type="text" name="name"
         class="form-control" value="${task ? task.get('name') : ''}"
         placeholder="${i18nTaskName}"
@@ -80,7 +80,7 @@ export function tplMucAddTaskForm (tasklistEl, _tasklist) {
   return html`
     <form class="task-list-add-task converse-form" @submit=${tasklistEl.submitAddTask}>
       ${_tplTaskForm(undefined)}
-      <fieldset class="form-group">
+      <fieldset>
         <input type="submit" class="btn btn-primary" value="${i18nOk}" />
         <input type="button" class="btn btn-secondary button-cancel"
           value="${i18nCancel}" @click=${tasklistEl.closeAddTaskForm}

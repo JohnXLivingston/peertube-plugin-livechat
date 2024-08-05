@@ -17,12 +17,12 @@ export default (o) => {
           ${
             o.model
               ? html`
-                <converse-muc-heading jid="${o.model.get('jid')}" class="chat-head chat-head-chatroom row no-gutters">
+                <converse-muc-heading jid="${o.model.get('jid')}" class="chat-head chat-head-chatroom row g-0">
                 </converse-muc-heading>
                 <livechat-converse-muc-terms .model=${o.model} termstype="global"></livechat-converse-muc-terms>
                 <livechat-converse-muc-terms .model=${o.model} termstype="muc"></livechat-converse-muc-terms>
                 <livechat-converse-muc-poll .model=${o.model}></livechat-converse-muc-poll>
-                <div class="chat-body chatroom-body row no-gutters">${getChatRoomBodyTemplate(o)}</div>`
+                <div class="chat-body chatroom-body row g-0">${getChatRoomBodyTemplate(o)}</div>`
               : ''}
       </div>`
 }

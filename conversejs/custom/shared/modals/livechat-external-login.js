@@ -20,8 +20,8 @@ class ExternalLoginModal extends BaseModal {
     return __(LOC_login_using_external_account)
   }
 
-  onHide () {
-    super.onHide()
+  close () {
+    super.close()
     // kill the externalAuthGetResult handler if still there
     try {
       if (window.externalAuthGetResult) { window.externalAuthGetResult() }

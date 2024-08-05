@@ -16,23 +16,7 @@ export function customizeToolbar (plugin: any): void {
 function getToolbarButtons (this: any, toolbarEl: any, buttons: any[]): any {
   const _converse = this._converse
 
-  // We will replace the toggle occupant button, to change its appearance.
-  // First, we must find it. We search from the end, because usually it is the last one.
-  let toggleOccupantButton: any
-  for (const button of buttons.reverse()) {
-    if (button.strings?.find((s: string) => s.includes('toggle_occupants'))) { // searching the classname
-      console.debug('[livechatSpecificsPlugin] found the toggle occupants button', button)
-      toggleOccupantButton = button
-      break
-    }
-  }
-  if (!toggleOccupantButton) {
-    console.debug('[livechatSpecificsPlugin] Did not found the toggle occupants button')
-    return buttons
-  }
-
-  buttons = buttons.filter(b => b !== toggleOccupantButton)
-  // Replacing by the new button...
+  // Adding a toggle_occupants button.
   // Note: we don't need to test conditions, we know the button was here.
   const i18nHideOccupants = _converse.__('Hide participants')
   const i18nShowOccupants = _converse.__('Show participants')
@@ -59,9 +43,14 @@ function getToolbarButtons (this: any, toolbarEl: any, buttons: any[]): any {
             size="1em">
         </converse-icon>`
   buttons.push(html`
-      <button class="toggle_occupants right"
+      <button class="toggle-occupants btn"
               title="${toolbarEl.hidden_occupants ? i18nShowOccupants : i18nHideOccupants}"
-              @click=${toolbarEl.toggleOccupants}>
+              @click=${(ev?: Event) => {
+                ev?.preventDefault()
+                toolbarEl.model.save({
+                  hidden_occupants: !toolbarEl.model.get('hidden_occupants')
+                })
+              }}>
               ${icon}
       </button>`
   )

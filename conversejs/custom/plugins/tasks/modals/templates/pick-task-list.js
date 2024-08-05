@@ -19,22 +19,22 @@ export default function (el) {
 
   return html`
     <form class="converse-form converse-form--modal confirm" action="#" @submit=${ev => el.onPick(ev)}>
-        <div class="form-group">
-            <select class="form-control" name="tasklist">
-              ${
-                repeat(muc.tasklists, (tasklist) => tasklist.get('id'), (tasklist) => {
-                  return html`<option value="${tasklist.get('id')}">${tasklist.get('name')}</option>`
-                })
-              }
-            </select>
-            <small class="form-text text-muted">
-              ${i18nMessage}
-            </small>
-        </div>
+        <fieldset>
+          <select class="form-control" name="tasklist">
+            ${
+              repeat(muc.tasklists, (tasklist) => tasklist.get('id'), (tasklist) => {
+                return html`<option value="${tasklist.get('id')}">${tasklist.get('name')}</option>`
+              })
+            }
+          </select>
+          <small class="form-text text-muted">
+            ${i18nMessage}
+          </small>
+        </fieldset>
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">${__('OK')}</button>
-            <input type="button" class="btn btn-secondary" data-dismiss="modal" value="${__('Cancel')}"/>
-        </div>
+        <fieldset>
+          <button type="submit" class="btn btn-primary">${__('OK')}</button>
+          <input type="button" class="btn btn-secondary" data-dismiss="modal" value="${__('Cancel')}"/>
+        </fieldset>
     </form>`
 }

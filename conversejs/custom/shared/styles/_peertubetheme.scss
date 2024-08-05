@@ -8,7 +8,7 @@
   .dropdown-menu {
     // Fixing all dropdown colors
     --text-color: #212529; // default bootstrap color for dropdown-items
-    --text-color-lighten-15-percent: #8c8c8c; // default ConverseJS theme color
+    --inverse-link-color: #8c8c8c; // default ConverseJS theme color
 
     background-color: #fff; // this is the default bootstrap color, used by ConverseJS
 
@@ -27,6 +27,7 @@
       border: 1px dashed var(--peertube-menu-background);
       color: var(--peertube-main-foreground);
       background-color: var(--peertube-main-background);
+      margin: 0 5px;
 
       .livechat-hide-slow-mode-info-box {
         cursor: pointer;
