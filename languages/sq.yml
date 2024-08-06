@@ -244,3 +244,4 @@ poll_vote_instructions_xmpp: 'Që të votoni, dërgoni një mesazh me një pikë
 poll_anonymous_vote_ok: Vota juaj është marrë parasysh. Votat janë anonime, s’do t’u
   shfaqen pjesëmarrësve të tjerë.
 poll_vote_ok: Vota juaj është marrë parasysh, numëratorët do të përditësohen në çast.
+moderator_notes: Shënime moderimi
