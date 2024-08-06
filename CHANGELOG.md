@@ -20,6 +20,7 @@ TODO: actions related to #144 and #145 must be added in the occupant list (waiti
 * Updated mod_muc_moderation to upstream.
 * Fix new task ordering.
 * Fix: clicking on the current user nickname in message history was failing to open the profile modal.
+* Fix: increase chat height on small screens, try to better detect the device viewport size and orientation.
 
 ## 10.3.3
 

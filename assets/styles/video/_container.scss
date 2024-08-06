@@ -18,16 +18,29 @@
 /* Note: livechat-viewer-mode-content (the form where anonymous users can
     choose nickname or log in with external account), can be something like
     ~180px height (at time of writing).
-    We must ensure that the 200px limit for converse-muc and converse-root is
+    We must ensure that the px height limit for converse-muc and converse-root is
     always higher than livechat-viewer-mode-content max size.
+  Note: We also must ensure that when the user has choosen its nickname, and there is an
+    ongoing poll, the user can see the chat when the poll is folded.
 */
 #peertube-plugin-livechat-container converse-root {
   display: block;
   border: 1px solid black;
-  min-height: max(30vh, 200px); // Always at least 200px, and ideally at least 30% of viewport.
+  min-height: max(30vh, 300px); // Always at least 200px, and ideally at least 30% of viewport.
   height: 100%;
 
   converse-muc {
-    min-height: max(30vh, 200px);
+    min-height: max(30vh, 300px);
+  }
+
+  @media screen and (orientation: portrait) and (max-width: 767px) {
+    /* On small screen, and when portrait mode, we are givint the chat more vertical space.
+        It should go under the video.
+     */
+    min-height: max(50vh, 300px);
+
+    converse-muc {
+      min-height: max(50vh, 300px);
+    }
   }
 }
