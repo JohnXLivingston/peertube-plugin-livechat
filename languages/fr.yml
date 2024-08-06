@@ -574,3 +574,22 @@ livechat_configuration_channel_moderation_delay_desc: "Valeur par défaut du dé
   qu'un utilisateur⋅rice ne puisse le lire.</li>\n</ul>\n"
 moderation_delay: Délai de modération
 avatar_set_option_none: Aucun
+livechat_configuration_channel_anonymize_moderation_label: Anonymiser les actions
+  de modération
+livechat_configuration_channel_anonymize_moderation_desc: "Anonymiser les actions
+  de modération : valeur par défaut pour les nouveaux salons.\nLorsque cette option
+  est activée, les actions de modération sont rendues anonymes, afin d'éviter de révéler
+  qui bannit/expulse/... les occupants.\n"
+moderator_notes_create_error: Erreur lors de l'enregistrement de la note
+moderator_note_description: Description
+moderator_note_delete: Supprimer la note
+moderator_note_delete_confirm: Êtes-vous sûr de vouloir supprimer cette note ?
+moderator_note_search_for_participant: Recherche de notes sur ce⋅tte participant⋅e
+moderator_note_filters: Filtres de recherche
+moderator_note_original_nick: Pseudonyme du participant⋅e au moment de la création
+  de la note
+moderator_note_create: Créer une nouvelle note
+moderator_note_create_for_participant: Créer une nouvelle note sur ce⋅tte participant⋅e
+moderator_notes: Notes de modération
+message_search: Recherche de messages
+search_occupant_message: Rechercher tous les messages de ce⋅tte participant⋅e
