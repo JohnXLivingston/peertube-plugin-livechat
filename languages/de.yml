@@ -565,8 +565,8 @@ livechat_configuration_channel_anonymize_moderation_desc: "Moderationsaktionen a
 moderator_notes_create_error: Fehler beim Speichern der Notiz
 moderator_note_description: Beschreibung
 moderator_note_delete: Notiz löschen
-moderator_note_create_for_participant: Erstellen Sie eine neue Notiz zu diesem Teilnehmer
-moderator_note_search_for_participant: Suche Notizen zu diesem Teilnehmer
+moderator_note_create_for_participant: Erstellen Sie eine neue Notiz
+moderator_note_search_for_participant: Suche Notizen
 moderator_note_filters: Suchfilter
 moderator_note_original_nick: Nickname des Teilnehmers zum Zeitpunkt der Erstellung
   der Notiz
@@ -574,4 +574,4 @@ moderator_note_create: Eine neue Notiz erstellen
 moderator_note_delete_confirm: Sind Sie sicher, dass Sie diese Notiz löschen wollen?
 moderator_notes: Moderationsnotizen
 message_search: Suche nach Nachrichten
-search_occupant_message: Alle Nachrichten dieses Teilnehmers suchen
+search_occupant_message: Alle Nachrichten suchen
