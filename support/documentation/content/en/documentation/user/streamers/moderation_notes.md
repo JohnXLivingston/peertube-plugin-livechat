@@ -73,6 +73,7 @@ All modification are instantly visible in all your browser tabs, and for all roo
 
 You can create a note associated to a participant in several ways:
 
+* using the "{{% livechat_label moderator_note_create_for_participant %}}" action in the dropdown menu besides participants in the sidebar
 * using the "{{% livechat_label moderator_note_create_for_participant %}}" action in the dropdown menu besides chat messages
 
 When a note is associated to a participant, you will see their nickname and avatar on the top of the note.
@@ -82,6 +83,7 @@ When a note is associated to a participant, you will see their nickname and avat
 You can filter notes to find all notes related to a given participant in several ways:
 
 * click on the "{{% livechat_label moderator_note_search_for_participant %}}" button that is available on notes to find all notes related to the same participant
+* click on the "{{% livechat_label moderator_note_search_for_participant %}}" button in the dropdown menu besides participants in the sidebar
 * click on the "{{% livechat_label moderator_note_search_for_participant %}}" button in the dropdown menu besides chat messages
 
 You can remove the filter by clicking on the close button.

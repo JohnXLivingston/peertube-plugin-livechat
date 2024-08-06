@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-08-05 12:07+0200\n"
+"POT-Creation-Date: 2024-08-06 17:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3805,6 +3805,12 @@ msgstr ""
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, markdown-text
+msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides participants in the sidebar"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#, markdown-text
 msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides chat messages"
 msgstr ""
 
@@ -4033,6 +4039,12 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, markdown-text
+msgid "using the \"{{% livechat_label moderator_note_create_for_participant %}}\" action in the dropdown menu besides participants in the sidebar"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, markdown-text
 msgid "using the \"{{% livechat_label moderator_note_create_for_participant %}}\" action in the dropdown menu besides chat messages"
 msgstr ""
 
@@ -4058,6 +4070,12 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, markdown-text
 msgid "click on the \"{{% livechat_label moderator_note_search_for_participant %}}\" button that is available on notes to find all notes related to the same participant"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+#, markdown-text
+msgid "click on the \"{{% livechat_label moderator_note_search_for_participant %}}\" button in the dropdown menu besides participants in the sidebar"
 msgstr ""
 
 #. type: Bullet: '* '

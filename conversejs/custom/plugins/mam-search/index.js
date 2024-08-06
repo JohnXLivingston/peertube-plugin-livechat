@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import { api, converse } from '../../../src/headless/index.js'
-import { getMessageActionButtons } from './utils.js'
+import { getMessageActionButtons, getOccupantActionButtons } from './utils.js'
 import mamSearchApi from './api.js'
 
 import './components/muc-mam-search-app-view.js'
@@ -23,8 +23,10 @@ converse.plugins.add('livechat-converse-mam-search', {
       livechat_mam_search_app_enabled: false
     })
 
-    // Adding buttons on message:
+    // Adding buttons on messages:
     _converse.api.listen.on('getMessageActionButtons', getMessageActionButtons)
+    // Adding buttons on occupants:
+    _converse.api.listen.on('getOccupantActionButtons', getOccupantActionButtons)
 
     // FIXME: should we listen to any event (feature/affiliation change?, mam_enabled?) to refresh messageActionButtons?
   }

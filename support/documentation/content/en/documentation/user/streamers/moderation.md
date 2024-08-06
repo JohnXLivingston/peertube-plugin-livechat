@@ -96,6 +96,7 @@ As a room admin or owner, you can search all messages sent by a given participan
 
 To do so, you have several ways:
 
+* using the "{{% livechat_label search_occupant_message %}}" action in the dropdown menu besides participants in the sidebar
 * using the "{{% livechat_label search_occupant_message %}}" action in the dropdown menu besides chat messages
 
 ![Message history search](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px)

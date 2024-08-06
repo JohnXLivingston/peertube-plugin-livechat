@@ -30,6 +30,8 @@ CONVERSE_COMMIT="5017efb780973d704f237c478ba52b23d901e1bf"
 # 2024-08-06: including fix waiting for merge:
 CONVERSE_VERSION="livechat_converse_11"
 CONVERSE_COMMIT="1625f9b6ee81fa9ebd8df5cba306bde478f1943b"
+# 2024-08-06: including new getOccupantActionButtons hook (waiting for merge in Converse upstream)
+CONVERSE_COMMIT="f7434616c9e48de1a05a42b63394655d292c76f6"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"

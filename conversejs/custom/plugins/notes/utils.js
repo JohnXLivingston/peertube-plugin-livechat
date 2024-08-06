@@ -82,6 +82,43 @@ export function getMessageActionButtons (messageActionsEl, buttons) {
   return buttons
 }
 
+export function getOccupantActionButtons (occupant, buttons) {
+  const muc = occupant.collection?.chatroom
+  if (!muc?.notes) {
+    // We dont have access.
+    return buttons
+  }
+
+  // eslint-disable-next-line no-undef
+  const i18nCreate = __(LOC_moderator_note_create_for_participant)
+  // eslint-disable-next-line no-undef
+  const i18nSearch = __(LOC_moderator_note_search_for_participant)
+
+  buttons.push({
+    i18n_text: i18nCreate,
+    handler: async (ev) => {
+      ev.preventDefault()
+      await api.livechat_notes.openCreateNoteForm(occupant)
+    },
+    button_class: '',
+    icon_class: 'fa fa-note-sticky',
+    name: 'muc-note-create-for-occupant'
+  })
+
+  buttons.push({
+    i18n_text: i18nSearch,
+    handler: async (ev) => {
+      ev.preventDefault()
+      await api.livechat_notes.searchNotesAbout(occupant)
+    },
+    button_class: '',
+    icon_class: 'fa fa-magnifying-glass',
+    name: 'muc-note-search-for-occupant'
+  })
+
+  return buttons
+}
+
 function _initChatRoomNotes (mucModel) {
   if (mucModel.noteManager) {
     // already initiliazed

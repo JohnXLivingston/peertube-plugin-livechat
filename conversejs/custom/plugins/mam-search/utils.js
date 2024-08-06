@@ -52,6 +52,43 @@ function getMessageActionButtons (messageActionsEl, buttons) {
   return buttons
 }
 
+function getOccupantActionButtons (occupant, buttons) {
+  if (!api.settings.get('livechat_mam_search_app_enabled')) {
+    return buttons
+  }
+
+  const muc = occupant.collection?.chatroom
+  if (!muc) {
+    return buttons
+  }
+
+  if (!muc.features?.get?.(XMLNS_MAM_SEARCH)) {
+    return buttons
+  }
+
+  const myself = muc.getOwnOccupant()
+  if (!myself || !['admin', 'owner'].includes(myself.get('affiliation'))) {
+    return buttons
+  }
+
+  // eslint-disable-next-line no-undef
+  const i18nSearch = __(LOC_search_occupant_message)
+
+  buttons.push({
+    i18n_text: i18nSearch,
+    handler: async (ev) => {
+      ev.preventDefault()
+      api.livechat_mam_search.showMessagesFrom(occupant)
+    },
+    button_class: '',
+    icon_class: 'fa fa-magnifying-glass',
+    name: 'muc-mam-search'
+  })
+
+  return buttons
+}
+
 export {
-  getMessageActionButtons
+  getMessageActionButtons,
+  getOccupantActionButtons
 }

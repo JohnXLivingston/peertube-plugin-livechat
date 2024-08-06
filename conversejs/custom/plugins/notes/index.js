@@ -6,7 +6,9 @@ import { _converse, converse } from '../../../src/headless/index.js'
 import { XMLNS_NOTE } from './constants.js'
 import { ChatRoomNote } from './note.js'
 import { ChatRoomNotes } from './notes.js'
-import { initOrDestroyChatRoomNotes, getHeadingButtons, getMessageActionButtons } from './utils.js'
+import {
+  initOrDestroyChatRoomNotes, getHeadingButtons, getMessageActionButtons, getOccupantActionButtons
+} from './utils.js'
 import notesApi from './api.js'
 
 import './components/muc-note-app-view.js'
@@ -59,7 +61,9 @@ converse.plugins.add('livechat-converse-notes', {
     // adding the "Notes" button in the MUC heading buttons:
     _converse.api.listen.on('getHeadingButtons', getHeadingButtons)
 
-    // Adding buttons on message:
+    // Adding buttons on messages:
     _converse.api.listen.on('getMessageActionButtons', getMessageActionButtons)
+    // Adding buttons on occupants:
+    _converse.api.listen.on('getOccupantActionButtons', getOccupantActionButtons)
   }
 })
