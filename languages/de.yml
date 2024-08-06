@@ -572,4 +572,6 @@ moderator_note_original_nick: Nickname des Teilnehmers zum Zeitpunkt der Erstell
   der Notiz
 moderator_note_create: Eine neue Notiz erstellen
 moderator_note_delete_confirm: Sind Sie sicher, dass Sie diese Notiz löschen wollen?
-moderator_notes: Moderatornotizen
+moderator_notes: Moderationsnotizen
+message_search: Suche nach Nachrichten
+search_occupant_message: Alle Nachrichten dieses Teilnehmers suchen
