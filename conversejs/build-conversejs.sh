@@ -29,7 +29,7 @@ CONVERSE_COMMIT="5017efb780973d704f237c478ba52b23d901e1bf"
 
 # 2024-08-06: including fix waiting for merge:
 CONVERSE_VERSION="livechat_converse_11"
-CONVERSE_COMMIT="f69b96439ac15d0fc9c138319e2d635ab28be071"
+CONVERSE_COMMIT="5ec9e7481231ba3b1960181d699a0389f4775ac5"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
