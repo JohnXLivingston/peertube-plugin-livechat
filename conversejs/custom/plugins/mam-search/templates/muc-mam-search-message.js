@@ -20,6 +20,7 @@ export function tplMucMamSearchMessage (el, mucModel, searchOccupantModel, messa
         ? html`
           <livechat-converse-muc-mam-search-occupant
             .model=${occupant}
+            .message=${message}
           ></livechat-converse-muc-mam-search-occupant>`
         : ''
     }

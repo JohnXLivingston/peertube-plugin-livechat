@@ -105,6 +105,12 @@ To do so, you have several ways:
 To have more space and better readability, open the chat in full-page mode.
 {{% /notice %}}
 
+In the search results, there are several informations that are shown at the right of the participant nickname:
+
+* if the current nickname is different than the nickname when the participant has sent the message, the original nickname will be shown
+* you will see the [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) of the participant
+* you will also see the [occupant-id](https://xmpp.org/extensions/xep-0421.html) of the participant
+
 The search result will also include all messages related to participants who had the same nickname.
 You can differenciate them by comparing [JID](https://xmpp.org/extensions/xep-0029.html) and [occupant-id](https://xmpp.org/extensions/xep-0421.html).
 

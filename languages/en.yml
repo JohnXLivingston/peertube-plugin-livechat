@@ -613,3 +613,4 @@ moderator_note_original_nick: 'Nickname of the participant at the time of the no
 
 search_occupant_message: 'Search all messages'
 message_search: 'Message search'
+message_search_original_nick: Nickname of the participant when the message was sent

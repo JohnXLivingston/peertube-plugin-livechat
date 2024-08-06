@@ -11,7 +11,8 @@ import '../styles/muc-mam-search-occupant.scss'
 export default class MUCMamSearchOccupantView extends CustomElement {
   static get properties () {
     return {
-      model: { type: Object, attribute: true }
+      model: { type: Object, attribute: true },
+      message: { type: Object, attribute: true } // optional message.
     }
   }
 
@@ -20,7 +21,7 @@ export default class MUCMamSearchOccupantView extends CustomElement {
   }
 
   render () {
-    return tplMucMamSearchOccupant(this, this.model)
+    return tplMucMamSearchOccupant(this, this.model, this.message)
   }
 }
 

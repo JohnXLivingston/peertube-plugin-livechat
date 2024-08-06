@@ -7,7 +7,7 @@ import { api } from '@converse/headless'
 import { getAuthorStyle } from '../../../../src/utils/color.js'
 import { __ } from 'i18n'
 
-export function tplMucMamSearchOccupant (el, occupant) {
+export function tplMucMamSearchOccupant (el, occupant, message) {
   const authorStyle = getAuthorStyle(occupant)
   const jid = occupant.get('jid')
   const occupantId = occupant.get('occupant_id')
@@ -26,6 +26,13 @@ export function tplMucMamSearchOccupant (el, occupant) {
       <span style=${authorStyle}>${occupant.getDisplayName()}</span>
     </a>
     <ul aria-hidden="true">
+      ${
+        // user changed nick: display the original nick
+        message && message.nick !== undefined && message.nick !== occupant.get('nick')
+          // eslint-disable-next-line no-undef
+          ? html`<li title=${__(LOC_message_search_original_nick)}>${message.nick}</li>`
+          : ''
+      }
       ${jid ? html`<li title=${__('XMPP Address')}>${jid}</li>` : ''}
       ${occupantId ? html`<li title=${__('Occupant Id')}>${occupantId}</li>` : ''}
     </ul>`

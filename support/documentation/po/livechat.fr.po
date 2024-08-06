@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-06 17:32+0200\n"
+"POT-Creation-Date: 2024-08-06 17:53+0200\n"
 "PO-Revision-Date: 2024-07-18 15:05+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -3498,6 +3498,28 @@ msgstr "Pour avoir plus d'espace et une meilleure lisibilité, ouvrez le tchat e
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "In the search results, there are several informations that are shown at the right of the participant nickname:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+msgid "if the current nickname is different than the nickname when the participant has sent the message, the original nickname will be shown"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "you will see the [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) of the participant"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "you will also see the [occupant-id](https://xmpp.org/extensions/xep-0421.html) of the participant"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "The search result will also include all messages related to participants who had the same nickname.  You can differenciate them by comparing [JID](https://xmpp.org/extensions/xep-0029.html) and [occupant-id](https://xmpp.org/extensions/xep-0421.html)."
 msgstr ""
 
@@ -3768,16 +3790,6 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "if the current nickname is different than the nickname when you created the note, the original nickname will be shown"
-msgstr ""
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-msgid "you will see the [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) of the participant"
-msgstr ""
-
-#. type: Bullet: '* '
-#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-msgid "you will also see the [occupant-id](https://xmpp.org/extensions/xep-0421.html) of the participant"
 msgstr ""
 
 #. type: Plain text
