@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-08-05 12:07+0200\n"
-"PO-Revision-Date: 2024-07-30 06:49+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft."
-"org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-"
-"livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-08-06 09:45+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5446,9 +5446,9 @@ msgstr ""
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Participant message history search"
-msgstr "Teilnehmerliste"
+msgstr "Im Nachrichtenverlauf eines Teilnehmers suchen"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -5456,11 +5456,13 @@ msgid ""
 "As a room admin or owner, you can search all messages sent by a given "
 "participant."
 msgstr ""
+"Als Raumadministrator oder -besitzer können Sie alle von einem bestimmten "
+"Teilnehmer gesendeten Nachrichten durchsuchen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "To do so, you have several ways:"
-msgstr ""
+msgstr "Dazu haben Sie mehrere Möglichkeiten:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -5468,16 +5470,17 @@ msgid ""
 "using the \"{{% livechat_label search_occupant_message %}}\" action in the "
 "dropdown menu besides chat messages"
 msgstr ""
+"die Aktion \"{{% livechat_label search_occupant_message %}}\" im Dropdown-"
+"Menü neben den Chat-Nachrichten verwenden"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
 msgid ""
 "![Message history search](/peertube-plugin-livechat/images/message_search."
 "png?classes=shadow,border&height=200px)"
 msgstr ""
-"![Umfrage Start](/peertube-plugin-livechat/images/polls_start.png?"
-"classes=shadow,border&height=200px)"
+"![Nachrichtenverlaufssuche](/peertube-plugin-livechat/images/message_search."
+"png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -5497,6 +5500,10 @@ msgid ""
 "(https://xmpp.org/extensions/xep-0029.html) and [occupant-id](https://xmpp."
 "org/extensions/xep-0421.html)."
 msgstr ""
+"Das Suchergebnis enthält auch alle Nachrichten, die sich auf Teilnehmer "
+"beziehen, die denselben Spitznamen hatten.  Sie können sie unterscheiden, "
+"indem Sie [JID](https://xmpp.org/extensions/xep-0029.html) und [occupant-"
+"id](https://xmpp.org/extensions/xep-0421.html) vergleichen."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
