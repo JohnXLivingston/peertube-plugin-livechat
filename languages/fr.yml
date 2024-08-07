@@ -593,3 +593,5 @@ moderator_note_create_for_participant: Créer une nouvelle note
 moderator_notes: Notes de modération
 message_search: Recherche de messages
 search_occupant_message: Rechercher tous les messages
+message_search_original_nick: Pseudonyme du participant⋅e au moment de l'envoi du
+  message
