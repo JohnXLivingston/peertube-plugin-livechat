@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-08-06 17:53+0200\n"
-"PO-Revision-Date: 2024-07-18 15:05+0000\n"
+"PO-Revision-Date: 2024-08-12 10:07+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3438,10 +3439,8 @@ msgstr "Vous pouvez promouvoir des utilisateur⋅rices en tant que modérateur�
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 10.0.0."
 msgid "This feature comes with the livechat plugin version 11.0.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.0.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
