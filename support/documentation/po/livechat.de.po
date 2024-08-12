@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-08-06 17:53+0200\n"
-"PO-Revision-Date: 2024-08-06 09:45+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-08-07 07:41+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3451,10 +3453,10 @@ msgstr "Dazu haben Sie mehrere Möglichkeiten:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides chat messages"
 msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides participants in the sidebar"
-msgstr "die Aktion \"{{% livechat_label search_occupant_message %}}\" im Dropdown-Menü neben den Chat-Nachrichten verwenden"
+msgstr ""
+"die Aktion \"{{% livechat_label search_occupant_message %}}\" im Dropdown-"
+"Menü neben den Teilnehmern in der Seitenleiste verwenden"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3475,17 +3477,18 @@ msgstr "Um mehr Platz und eine bessere Lesbarkeit zu erhalten, öffnen Sie den C
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "When you filters notes on a participant, there are several informations that are shown at the right of the participant nickname:"
 msgid "In the search results, there are several informations that are shown at the right of the participant nickname:"
-msgstr "Wenn Sie Notizen zu einem Teilnehmer filtern, werden rechts neben dem Spitznamen des Teilnehmers verschiedene Informationen angezeigt:"
+msgstr ""
+"In den Suchergebnissen werden rechts neben dem Spitznamen des Teilnehmers "
+"verschiedene Informationen angezeigt:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "if the current nickname is different than the nickname when you created the note, the original nickname will be shown"
 msgid "if the current nickname is different than the nickname when the participant has sent the message, the original nickname will be shown"
-msgstr "wenn der aktuelle Spitzname nicht mit dem Spitznamen übereinstimmt, unter dem Sie die Notiz erstellt haben, wird der ursprüngliche Spitzname angezeigt"
+msgstr ""
+"wenn der aktuelle Nickname nicht mit dem Nicknamen übereinstimmt, unter dem "
+"der Teilnehmer die Nachricht gesendet hat, wird der ursprüngliche Nickname "
+"angezeigt"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3685,10 +3688,10 @@ msgstr "Sie können eine Notiz zu einem Teilnehmer auf verschiedene Weise erstel
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "using the \"{{% livechat_label moderator_note_create_for_participant %}}\" action in the dropdown menu besides chat messages"
 msgid "using the \"{{% livechat_label moderator_note_create_for_participant %}}\" action in the dropdown menu besides participants in the sidebar"
-msgstr "Verwendung der Aktion \"{{% livechat_label moderator_note_create_for_participant %}}\" im Dropdown-Menü neben den Chat-Nachrichten"
+msgstr ""
+"die Aktion \"{{% livechat_label moderator_note_create_for_participant %}}\" "
+"im Dropdown-Menü neben den Teilnehmern in der Seitenleiste verwenden"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3718,10 +3721,11 @@ msgstr "Klicken Sie auf die Schaltfläche \"{{% livechat_label moderator_note_se
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "click on the \"{{% livechat_label moderator_note_search_for_participant %}}\" button in the dropdown menu besides chat messages"
 msgid "click on the \"{{% livechat_label moderator_note_search_for_participant %}}\" button in the dropdown menu besides participants in the sidebar"
-msgstr "Klicken Sie auf die Schaltfläche \"{{% livechat_label moderator_note_search_for_participant %}}\" im Dropdown-Menü neben den Chat-Nachrichten"
+msgstr ""
+"auf die Schaltfläche \"{{% livechat_label "
+"moderator_note_search_for_participant %}}\" im Dropdown-Menü neben den "
+"Teilnehmern in der Seitenleiste klicken"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
