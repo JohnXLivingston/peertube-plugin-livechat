@@ -192,6 +192,17 @@ interface LivechatToken {
   date: number
 }
 
+interface AdminFirewallConfigurationFile {
+  name: string
+  content: string
+  enabled: boolean
+}
+
+interface AdminFirewallConfiguration {
+  enabled: boolean
+  files: AdminFirewallConfigurationFile[]
+}
+
 export type {
   ConverseJSTheme,
   InitConverseJSParams,
@@ -212,5 +223,7 @@ export type {
   ChannelEmojis,
   ChannelEmojisConfiguration,
   ProsodyAuthentInfos,
-  LivechatToken
+  LivechatToken,
+  AdminFirewallConfiguration,
+  AdminFirewallConfigurationFile
 }

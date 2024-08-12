@@ -22,6 +22,7 @@ interface ProsodyFilePaths {
   execCtlArgs: string[]
   appImageToExtract?: string
   appImageExtractPath: string
+  modFirewallFiles: string
 }
 
 export {

@@ -18,6 +18,7 @@ import { getRemoteServerInfosDir } from '../federation/storage'
 import { BotConfiguration } from '../configuration/bot'
 import { debugMucAdmins } from '../debug'
 import { ExternalAuthOIDC } from '../external-auth/oidc'
+import { listModFirewallFiles } from '../firewall/config'
 
 async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
@@ -139,7 +140,8 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
     execCtl,
     execCtlArgs,
     appImageToExtract,
-    appImageExtractPath
+    appImageExtractPath,
+    modFirewallFiles: path.resolve(dir, 'mod_firewall_config')
   }
 }
 
@@ -185,7 +187,8 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'auto-ban-anonymous-ip',
     'federation-dont-publish-remotely',
     'disable-channel-configuration',
-    'chat-terms'
+    'chat-terms',
+    'prosody-firewall-enabled'
   ])
 
   const valuesToHideInDiagnostic = new Map<string, string>()
@@ -378,6 +381,13 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   }
 
   config.usePoll()
+
+  if (settings['prosody-firewall-enabled'] === true) {
+    const modFirewallFiles = await listModFirewallFiles(options, paths.modFirewallFiles)
+    // We load the module, even if there is no configuration file.
+    // So we will be sure that a Prosody reload is enought to take into account any change.
+    config.useModFirewall(modFirewallFiles)
+  }
 
   config.useTestModule(apikey, testApiUrl)
 

@@ -1,0 +1,17 @@
+# This is a simple ruleset to block all traffic from servers
+# on the JabberSPAM blocklist. Even traffic from existing user
+# contacts will be blocked.
+#
+# Example config (make sure "firewall" is in modules_enabled):
+#
+#   firewall_scripts = { "module:scripts/jabberspam-simple-blocklist.pfw" }
+#
+# For a more advanced ruleset, consider using spam-blocking.pfw
+# and spam-blocklists.pfw.
+
+%LIST blocklist: https://cdn.jsdelivr.net/gh/jabberspam/blacklist/blacklist.txt
+
+::deliver
+
+CHECK LIST: blocklist contains $<@from|host>
+BOUNCE=policy-violation (Your server is blocked due to spam)

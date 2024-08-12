@@ -32,3 +32,7 @@ License: AGPL-3.0-only
 Files: .github/PULL_REQUEST_TEMPLATE.md
 Copyright: 2024 John Livingston <https://www.john-livingston.fr/>
 License: AGPL-3.0-only
+
+Files: prosody-modules/mod_firewall/*
+Copyright: Prosody Community Modules <https://modules.prosody.im/mod_firewall>
+License: MIT

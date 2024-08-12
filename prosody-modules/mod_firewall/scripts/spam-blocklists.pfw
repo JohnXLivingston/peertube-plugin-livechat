@@ -1,0 +1,20 @@
+# This script depends on spam-blocking.pfw also being loaded
+# Any traffic that is not explicitly blocked or allowed by other
+# rules will be checked against the JabberSPAM server blocklist
+
+%LIST blocklist: https://cdn.jsdelivr.net/gh/jabberspam/blacklist/blacklist.txt
+
+::user/spam_handle_unknown_custom
+
+CHECK LIST: blocklist contains $<@from|host>
+BOUNCE=policy-violation (Your server is blocked due to spam)
+
+::user/spam_check_muc_invite_custom
+
+# Check the server we received the invitation from
+CHECK LIST: blocklist contains $<@from|host>
+BOUNCE=policy-violation (Your server is blocked due to spam)
+
+# Check the inviter's JID against the blocklist, too
+CHECK LIST: blocklist contains $<{http://jabber.org/protocol/muc#user}x/invite@from|host>
+BOUNCE=policy-violation (Your server is blocked due to spam)

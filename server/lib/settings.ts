@@ -11,6 +11,7 @@ import { ExternalAuthOIDC, ExternalAuthOIDCType } from './external-auth/oidc'
 import { Emojis } from './emojis'
 import { LivechatProsodyAuth } from './prosody/auth'
 import { loc } from './loc'
+import { canEditFirewallConfig } from './firewall/config'
 const escapeHTML = require('escape-html')
 
 type AvatarSet = 'sepia' | 'cat' | 'bird' | 'fenec' | 'abstract' | 'legacy' | 'none'
@@ -27,7 +28,7 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
   initAdvancedChannelCustomizationSettings(options)
   initChatBehaviourSettings(options)
   initThemingSettings(options)
-  initChatServerAdvancedSettings(options)
+  await initChatServerAdvancedSettings(options)
 
   await ExternalAuthOIDC.initSingletons(options)
   const loadOidcs = (): void => {
@@ -555,7 +556,9 @@ function initThemingSettings ({ registerSetting }: RegisterServerOptions): void 
  * Registers settings related to the "Chat server advanded settings" section.
  * @param param0 server options
  */
-function initChatServerAdvancedSettings ({ registerSetting }: RegisterServerOptions): void {
+async function initChatServerAdvancedSettings (options: RegisterServerOptions): Promise<void> {
+  const { registerSetting } = options
+
   registerSetting({
     name: 'prosody-advanced',
     type: 'html',
@@ -723,6 +726,23 @@ function initChatServerAdvancedSettings ({ registerSetting }: RegisterServerOpti
     private: true,
     descriptionHTML: loc('prosody_components_list_description')
   })
+
+  registerSetting({
+    name: 'prosody-firewall-enabled',
+    label: loc('prosody_firewall_label'),
+    type: 'input-checkbox',
+    default: false,
+    private: true,
+    descriptionHTML: loc('prosody_firewall_description')
+  })
+  if (await canEditFirewallConfig(options)) {
+    registerSetting({
+      type: 'html',
+      name: 'prosody-firewall-configure-button',
+      private: true,
+      descriptionHTML: loc('prosody_firewall_configure_button')
+    })
+  }
 }
 
 export {

@@ -254,3 +254,9 @@ More informations on Prosody external components [here](https://prosody.im/doc/c
 #### {{% livechat_label prosody_components_list_label %}}
 
 {{% livechat_label prosody_components_list_description %}}
+
+### {{% livechat_label prosody_firewall_label %}}
+
+You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server.
+
+For more information, please check [the documentation](/peertube-plugin-livechat/documentation/admin/mod_firewall/).

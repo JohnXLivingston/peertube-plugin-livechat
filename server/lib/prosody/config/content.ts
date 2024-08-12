@@ -553,6 +553,15 @@ class ProsodyConfigContent {
     this.muc.set('poll_string_vote_instructions', loc('poll_vote_instructions_xmpp'))
   }
 
+  /**
+   * Enable mod_firewall.
+   * @param files file paths to load (ordered)
+   */
+  useModFirewall (files: string[]): void {
+    this.global.add('modules_enabled', 'firewall')
+    this.global.set('firewall_scripts', files)
+  }
+
   addMucAdmins (jids: string[]): void {
     for (const jid of jids) {
       this.muc.add('admins', jid)

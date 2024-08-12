@@ -1,7 +1,7 @@
 ---
 title: "Advanced usage"
 description: "Some advanced features"
-weight: 20
+weight: 40
 chapter: false
 ---
 

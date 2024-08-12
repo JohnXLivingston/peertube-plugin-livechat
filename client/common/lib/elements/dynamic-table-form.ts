@@ -64,7 +64,7 @@ interface DynamicTableRowData {
 
 interface DynamicFormHeaderCellData {
   colName: TemplateResult | DirectiveResult
-  description: TemplateResult | DirectiveResult
+  description?: TemplateResult | DirectiveResult
   headerClassList?: string[]
 }
 
@@ -236,7 +236,7 @@ export class DynamicTableFormElement extends LivechatElement {
       classList.push(...headerCellData.headerClassList)
     }
     return html`<th scope="col" class=${classList.join(' ')}>
-      ${headerCellData.description}
+      ${headerCellData.description ?? ''}
     </th>`
   }
 

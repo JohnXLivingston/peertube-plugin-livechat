@@ -270,6 +270,8 @@ function register (clientOptions: RegisterClientOptions): void {
           return !(options.formValues['chat-all-lives'] === true && options.formValues['chat-per-live-video'] === true)
         case 'auto-ban-anonymous-ip':
           return options.formValues['chat-no-anonymous'] !== false
+        case 'prosody-firewall-configure-button':
+          return options.formValues['prosody-firewall-enabled'] !== true
       }
 
       if (name?.startsWith('external-auth-')) {

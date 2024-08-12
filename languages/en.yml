@@ -614,3 +614,24 @@ moderator_note_original_nick: 'Nickname of the participant at the time of the no
 search_occupant_message: 'Search all messages'
 message_search: 'Message search'
 message_search_original_nick: Nickname of the participant when the message was sent
+
+prosody_firewall_label: 'Enable Prosody mod_firewall'
+prosody_firewall_description: |
+  You can enable <a href="https://modules.prosody.im/mod_firewall" target="_blank">mod_firewall</a> on your Prosody server.
+  For more information, please check <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/" target="_blank">the documentation</a>.
+prosody_firewall_configure_button: |
+  <a class="peertube-button-link orange-button" href="/p/livechat/admin/firewall" target="_blank">Configure mod_firewall</a>
+
+prosody_firewall_configuration: Prosody mod_firewall configuration
+prosody_firewall_configuration_help: |
+  Here you can configure Prosody <a href="https://modules.prosody.im/mod_firewall" target="_blank">mod_firewall</a> module.
+  You can create multiple configuration files bellow, and change their order.
+  Don't hesitate to share your configurations with the community (for example by adding some examples in the plugin documentation).
+prosody_firewall_disabled_warning: |
+  Warning: mod_firewall is disabled in the livechat <a href="/admin/plugins/show/peertube-plugin-livechat" target="_blank">plugin settings</a>, you have to enable it if you want this configuration to be taken into account.
+prosody_firewall_file_enabled: Enabled
+prosody_firewall_name: Name
+prosody_firewall_name_desc: |
+  Can only contain: alphanumerical characters, underscores and hyphens.
+  Scripts will be loaded in alphabetical order.
+prosody_firewall_content: File content

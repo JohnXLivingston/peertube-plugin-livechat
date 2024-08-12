@@ -1,0 +1,94 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+/* stylelint-disable custom-property-pattern */
+
+@use "sass:color";
+@use "../../variables";
+
+.peertube-plugin-livechat-admin-firewall {
+  h1 {
+    padding-top: 40px;
+
+    /* See Peertube sub-menu-h1 mixin */
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--greyBackgroundColor);
+    padding-bottom: 15px;
+  }
+
+  textarea[name^="_content_"] {
+    min-height: 10rem;
+  }
+
+  input[type="submit"],
+  input[type="reset"],
+  button[type="submit"],
+  button[type="reset"] {
+    // Peertube rounded-line-height-1-5 mixins
+    line-height: variables.$button-calc-line-height;
+
+    // Peertube peertube-button mixin
+    padding: 4px 13px;
+    border: 0;
+    font-weight: variables.$font-semibold;
+    border-radius: 3px !important;
+    text-align: center;
+    cursor: pointer;
+    font-size: variables.$button-font-size;
+  }
+
+  input[type="submit"],
+  button[type="submit"] {
+    // Peertube orange-button mixin
+    &,
+    &:active,
+    &:focus {
+      color: #fff;
+      background-color: var(--mainColor);
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: var(--mainHoverColor);
+    }
+
+    &[disabled],
+    &.disabled {
+      cursor: default;
+      color: #fff;
+      background-color: var(--inputBorderColor);
+    }
+  }
+
+  input[type="reset"],
+  button[type="reset"] {
+    // Peertube grey-button mixin
+    background-color: var(--greyBackgroundColor);
+    color: var(--greyForegroundColor);
+
+    &:hover,
+    &:active,
+    &:focus,
+    &[disabled],
+    &.disabled {
+      color: var(--greyForegroundColor);
+      background-color: var(--greySecondaryBackgroundColor);
+    }
+
+    &[disabled],
+    &.disabled {
+      cursor: default;
+    }
+  }
+
+  .peertube-livechat-admin-firewall-col-name {
+    width: 25%;
+  }
+
+  .peertube-livechat-admin-firewall-col-content {
+    width: 65%;
+  }
+}

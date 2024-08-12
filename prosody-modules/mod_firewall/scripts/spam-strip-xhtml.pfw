@@ -1,0 +1,5 @@
+# Strip XHTML-IM from messages received from strangers
+
+::user/spam_check_message_custom
+
+STRIP=html http://jabber.org/protocol/xhtml-im

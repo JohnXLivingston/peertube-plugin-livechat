@@ -8,6 +8,7 @@ import { registerConfiguration } from './common/configuration/register'
 import { registerVideoWatch } from './common/videowatch/register'
 import { registerRoom } from './common/room/register'
 import { initPtContext } from './common/lib/contexts/peertube'
+import { registerAdminFirewall } from './common/admin/firewall/register'
 import './common/lib/elements' // Import shared elements.
 
 async function register (clientOptions: RegisterClientOptions): Promise<void> {
@@ -69,7 +70,8 @@ async function register (clientOptions: RegisterClientOptions): Promise<void> {
   await Promise.all([
     registerVideoWatch(),
     registerRoom(clientOptions),
-    registerConfiguration(clientOptions)
+    registerConfiguration(clientOptions),
+    registerAdminFirewall(clientOptions)
   ])
 }
 

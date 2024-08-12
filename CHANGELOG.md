@@ -2,7 +2,9 @@
 
 ## 11.0.0 (Not Released Yet)
 
-TODO: actions related to #144 and #145 must be added in the occupant list (waiting for some work on Converse to do this).
+### Importante Notes
+
+With the new [mod_firewall](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/) feature, Peertube admins can write firewall rules for the Prosody server. These rules could be used to run arbitrary code on the server. If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory. Check the documentation for more information. This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.
 
 ### New features
 
@@ -11,6 +13,7 @@ TODO: actions related to #144 and #145 must be added in the occupant list (waiti
 * #137: option to hide moderator name who made actions (kick, ban, message moderation, ...).
 * #144: [moderator notes](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/moderation_notes/).
 * #145: action for moderators to find all messages from a given participant.
+* #97: option to use and configure [mod_firewall](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/) at the server level.
 
 ### Minor changes and fixes
 

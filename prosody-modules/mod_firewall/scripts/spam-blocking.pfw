@@ -1,0 +1,182 @@
+#### Anti-spam ruleset ###########################################
+#
+# This script provides some foundational anti-spam rules. It aims
+# to PASS stanzas that are definitely not spam, and DROP stanzas
+# that are very likely spam.
+#
+# It does not do any form of content filtering,
+# but this can be implemented by other scripts and
+# modules as desired using the chains documented below.
+#
+#
+# The following chains are available as extension
+# points:
+#
+# ::user/spam_check_custom
+#   Apply additional rules to all stanzas before they are checked.
+#   Mainly useful to PASS stanzas that you do not want to be
+#   filtered.
+#
+# ::user/spam_check_message_custom
+#   Apply additional rules to messages from strangers, aiming to
+#   PASS stanzas that are not spam and jump to ::user/spam_reject
+#   for stanzas that are considered spam.
+#
+# ::user/spam_check_message_content_custom
+#   Apply additional rules to messages that may be spam, based on
+#   message content rules. These may contain more intensive rules,
+#   so are executed after all other checks. Rules should jump to
+#   ::user/spam_reject if a message is considered spam.
+#
+# ::user/spam_check_presence_custom
+#   Apply additional rules to presence that may be spam.
+#
+# ::user/spam_check_subscription_request_custom
+#   Apply additional rules to subscription requests.
+#
+# ::user/spam_handle_unknown_custom
+#   Override default handling of stanzas that weren't explicitly
+#   passed or rejected by the anti-spam checks.
+#
+# ::user/spam_reject_custom
+#   Override default handling of stanzas that have
+#   been recognised as spam (default is to bounce
+#   a policy-violation error). 
+#
+##################################################################
+
+#### Entry point for all incoming stanzas ########################
+::deliver
+
+# Override this if you want to prevent certain stanzas going through
+# the normal spam_check chain
+JUMP_CHAIN=user/spam_check_custom
+
+# Run the default spam_check chain
+JUMP_CHAIN=user/spam_check
+
+##################################################################
+
+#### General spam-checking rules (all stanzas) ###################
+::user/spam_check
+
+# Pass stanzas that a user sends to their own account
+TO SELF?
+PASS.
+
+# Pass stanzas that are addressed to a valid full JID
+TO FULL JID?
+PASS.
+
+# Pass stanzas from contacts
+SUBSCRIBED?
+PASS.
+
+# Run extra rules that apply to messages only
+KIND: message
+JUMP CHAIN=user/spam_check_message
+
+# Run extra rules that apply to presence stanzas only
+KIND: presence
+JUMP CHAIN=user/spam_check_presence
+
+JUMP CHAIN=user/spam_handle_unknown
+
+# Default is to allow, override this with
+# the 'user/spam_handle_unknown' chain
+PASS.
+
+#### Rules for messages ##########################################
+::user/spam_check_message
+
+JUMP CHAIN=user/spam_check_message_custom
+
+# Type 'groupchat' messages addressed to an offline full JID are harmless,
+# and should be routed normally to handle MUC 'ghosts' correctly
+TO: <*>@<*>/<*>
+TYPE: groupchat
+PASS.
+
+# Mediated MUC invitations are naturally from 'strangers' and have special
+# handling. We lean towards accepting them, unless overridden by custom rules.
+NOT FROM FULL JID?
+INSPECT: {http://jabber.org/protocol/muc#user}x/invite
+JUMP CHAIN=user/spam_check_muc_invite
+
+# Non-chat message types often generate pop-ups in clients,
+# so we won't accept them from strangers
+NOT TYPE: chat
+JUMP CHAIN=user/spam_reject
+
+JUMP CHAIN=user/spam_check_message_content
+
+# This chain can be used by other scripts
+# and modules that analyze message content
+JUMP CHAIN=user/spam_check_message_content_custom
+
+##################################################################
+
+#### Rules for presence stanzas ##################################
+::user/spam_check_presence
+
+JUMP CHAIN=user/spam_check_presence_custom
+
+# Presence to offline full JIDs is harmless, and should be routed
+# normally to handle MUC 'ghosts' correctly
+TO: <*>@<*>/<*>
+PASS.
+
+# These may be received if rosters get out of sync and are harmless
+# because they will not be routed to the client unless necessary
+TYPE: unsubscribe|unsubscribed
+PASS.
+
+# We don't want to receive presence from random strangers,
+# but still allow subscription requests
+NOT TYPE: subscribe|subscribed
+DROP.
+
+# This chain can be used by other scripts
+# and modules to filter subscription requests
+JUMP CHAIN=user/spam_check_subscription_request
+
+JUMP CHAIN=user/spam_check_subscription_request_custom
+
+##################################################################
+
+#### Rules for MUC invitations ###################################
+
+::user/spam_check_muc_invite
+
+# This chain can be used to inspect the invitation and determine
+# the appropriate action. Otherwise, we proceed with the default
+# action below.
+JUMP CHAIN=user/spam_check_muc_invite_custom
+
+# Allow mediated MUC invitations by default
+PASS.
+
+#### Stanzas reaching this chain will be rejected ################
+::user/spam_reject
+
+# This chain can be used by other scripts
+# and modules to override the default behaviour
+# when rejecting spam stanzas
+JUMP CHAIN=user/spam_reject_custom
+
+LOG=Rejecting suspected spam: $(stanza:top_tag())
+BOUNCE=policy-violation
+
+##################################################################
+
+#### Stanzas that may be spam, but we're not sure either way #####
+::user/spam_handle_unknown
+
+# This chain can be used by other scripts
+# and modules to apply additional checks, or to
+# override the default behaviour
+JUMP CHAIN=user/spam_handle_unknown_custom
+
+#LOG=[debug] Spam check allowing: $(stanza:top_tag())
+
+##################################################################

@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-12 12:08+0200\n"
+"POT-Creation-Date: 2024-08-13 10:29+0200\n"
 "PO-Revision-Date: 2024-08-12 11:25+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1941,6 +1940,105 @@ msgid "Admin documentation"
 msgstr "Documentation administrateur⋅rice"
 
 #. type: Yaml Front Matter Hash Value: description
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#, no-wrap
+msgid "Advanced firewall rules for the Prosody server"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#, no-wrap
+msgid "Prosody mod_firewall"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#: build/documentation/pot_in/documentation/user/streamers/moderation.md
+#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
+msgid "This feature comes with the livechat plugin version 11.0.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#: build/documentation/pot_in/documentation/admin/settings.md
+msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+msgid "Doing so, Peertube admins will be able to define advanced firewall rules."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+msgid "These rules could be used to run arbitrary code on the server.  If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.  You can still use mod_firewall by editing files directly on the server."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#, fuzzy, no-wrap
+#| msgid "Edit tasks"
+msgid "Edit rules"
+msgstr "Modifier les tâches"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#, fuzzy
+#| msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
+msgid "First, you must enable the feature in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
+msgstr "Veuillez vous référer à la page d'aide [pour ce paramètre](/peertube-plugin-livechat/fr/documentation/admin/settings)."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+msgid "Just bellow the settings, you will find a \"Configure mod_firewall\" button.  This button will open a configuration page."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#, fuzzy
+#| msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgid "![Mod_firewall configuration](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px)"
+msgstr "![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#, fuzzy
+#| msgid "Here you can configure:"
+msgid "Here you can add several configuration files."
+msgstr "Ici vous pouvez configurer :"
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+msgid "You can enable/disable each files."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+msgid "Files will be loaded in the alphabetical order.  You can use a number as prefix to easily choose the order."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+msgid "You can also edit these firewall rules directly on the server, in the `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` directory.  File names must only contains alphanumerical characters, underscores and hyphens.  The extension must be `.pfw`, or `.pfw.disabled` if you want to disable a file.  Please be sure that the peertube system user has write access to these files, else the web editing interface will fail."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+msgid "When you save the configuration, the server will automatically reload it, and your rules will apply immediatly.  You can check that there is no parsing error in the Prosody error log.  To do so, you can read the `plugins/data/peertube-plugin-livechat/prosody/prosody.err` file, or use the [diagnostic tool](/peertube-plugin-livechat/documentation/installation/troubleshooting/) that will show last Prosody errors."
+msgstr ""
+
+#. type: Title ##
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+#, no-wrap
+msgid "Examples"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/admin/mod_firewall.md
+msgid "Don't hesitate to share your rules.  To do so, you can for example edit this [page](/peertube-plugin-livechat/contributing/document/#write-documentation)."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Plugin Peertube Livechat settings"
@@ -2211,6 +2309,13 @@ msgstr "Cette fonction pourrait être utilisée pour connecter des ponts ou des 
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "More informations on Prosody external components [here](https://prosody.im/doc/components)."
 msgstr "Plus d'informations sur les composants externes de Prosody [ici] (https://prosody.im/doc/components)."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/admin/settings.md
+#, fuzzy
+#| msgid "For the user documentation, see [user documentation](/peertube-plugin-livechat/documentation/user/viewers/)"
+msgid "For more information, please check [the documentation](/peertube-plugin-livechat/documentation/admin/mod_firewall/)."
+msgstr "Pour la documentation utilisateur⋅rice, veuillez vous référer à la page [de documentation utilisateur⋅rice](/peertube-plugin-livechat/fr/documentation/user/viewers/)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
@@ -3438,26 +3543,13 @@ msgstr "Vous pouvez promouvoir des utilisateur⋅rices en tant que modérateur�
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-msgid "This feature comes with the livechat plugin version 11.0.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants."
-msgstr ""
-"Il est possible d'anonymiser les actions de modération, afin d'éviter de "
-"divulguer qui bannit/expulse/... les participant⋅es."
+msgstr "Il est possible d'anonymiser les actions de modération, afin d'éviter de divulguer qui bannit/expulse/... les participant⋅es."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
-msgstr ""
-"Pour activer ou désactiver cette fonctionnalité, utilisez le [menu déroulant "
-"du chat](/peertube-plugin-livechat/fr/documentation/user/viewers), puis "
-"ouvrez le menu \"configurer\".  Dans le formulaire, vous trouverez une case "
-"à cocher \"{{% livechat_label "
-"livechat_configuration_channel_anonymize_moderation_label %}}\"."
+msgstr "Pour activer ou désactiver cette fonctionnalité, utilisez le [menu déroulant du chat](/peertube-plugin-livechat/fr/documentation/user/viewers), puis ouvrez le menu \"configurer\".  Dans le formulaire, vous trouverez une case à cocher \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\"."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3468,9 +3560,7 @@ msgstr "Recherche dans l'historique des messages des participant⋅es"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "As a room admin or owner, you can search all messages sent by a given participant."
-msgstr ""
-"En tant qu'administrateur⋅rice ou propriétaire d'un sallon, vous pouvez "
-"rechercher tous les messages envoyés par un⋅e participant⋅e donné⋅e."
+msgstr "En tant qu'administrateur⋅rice ou propriétaire d'un sallon, vous pouvez rechercher tous les messages envoyés par un⋅e participant⋅e donné⋅e."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3480,23 +3570,17 @@ msgstr "Pour ce faire, plusieurs possibilités s'offrent à vous :"
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides participants in the sidebar"
-msgstr ""
-"utiliser l'action \"{{% livechat_label search_occupant_message %}}\" dans le "
-"menu déroulant à côté des participant⋅es dans la barre latérale"
+msgstr "utiliser l'action \"{{% livechat_label search_occupant_message %}}\" dans le menu déroulant à côté des participant⋅es dans la barre latérale"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides chat messages"
-msgstr ""
-"utilisation de l'action \"{{% livechat_label search_occupant_message %}}\" "
-"dans le menu déroulant à côté des messages de tchat"
+msgstr "utilisation de l'action \"{{% livechat_label search_occupant_message %}}\" dans le menu déroulant à côté des messages de tchat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "![Message history search](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px)"
-msgstr ""
-"![Recherche dans l'historique des messages](/peertube-plugin-livechat/images/"
-"message_search.png?classes=shadow,border&height=200px)"
+msgstr "![Recherche dans l'historique des messages](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3508,32 +3592,24 @@ msgstr "Pour avoir plus d'espace et une meilleure lisibilité, ouvrez le tchat e
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "In the search results, there are several informations that are shown at the right of the participant nickname:"
-msgstr ""
-"Dans les résultats de la recherche, plusieurs informations sont affichées à "
-"droite du pseudo de la personne participante :"
+msgstr "Dans les résultats de la recherche, plusieurs informations sont affichées à droite du pseudo de la personne participante :"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "if the current nickname is different than the nickname when the participant has sent the message, the original nickname will be shown"
-msgstr ""
-"si le pseudonyme actuel est différent du pseudonyme utilisé lorsque le⋅a "
-"participant⋅e a envoyé le message, le pseudonyme original sera affiché"
+msgstr "si le pseudonyme actuel est différent du pseudonyme utilisé lorsque le⋅a participant⋅e a envoyé le message, le pseudonyme original sera affiché"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "you will see the [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) of the participant"
-msgstr ""
-"vous verrez le [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) "
-"de la personne participante"
+msgstr "vous verrez le [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) de la personne participante"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "you will also see the [occupant-id](https://xmpp.org/extensions/xep-0421.html) of the participant"
-msgstr ""
-"vous verrez également l'[occupant](-id)[https://xmpp.org/extensions/xep-0421."
-"html) de la personne participante"
+msgstr "vous verrez également l'[occupant](-id)[https://xmpp.org/extensions/xep-0421.html) de la personne participante"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
