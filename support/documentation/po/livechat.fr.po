@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-06 17:53+0200\n"
+"POT-Creation-Date: 2024-08-12 12:08+0200\n"
 "PO-Revision-Date: 2024-08-12 10:07+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3444,7 +3443,7 @@ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.\""
+msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants."
 msgstr ""
 
 #. type: Plain text

@@ -3325,7 +3325,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/ occupants.\""
+msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/ occupants."
 msgstr ""
 
 #. type: Plain text

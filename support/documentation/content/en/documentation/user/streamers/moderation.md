@@ -79,7 +79,7 @@ You can promote users as moderators, if you need some help.
 This feature comes with the livechat plugin version 11.0.0.
 {{% /notice %}}
 
-It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants."
+It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.
 
 To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the "configure" menu.
 In the form, you will find a "{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}" checkbox.
