@@ -41,6 +41,8 @@ You can also edit these firewall rules directly on the server, in the `plugins/d
 File names must only contains alphanumerical characters, underscores and hyphens.
 The extension must be `.pfw`, or `.pfw.disabled` if you want to disable a file.
 Please be sure that the peertube system user has write access to these files, else the web editing interface will fail.
+Once you have edited these files, you must reload prosody.
+This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube.
 {{% /notice %}}
 
 When you save the configuration, the server will automatically reload it, and your rules will apply immediatly.

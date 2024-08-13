@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-08-13 10:29+0200\n"
+"POT-Creation-Date: 2024-08-13 10:49+0200\n"
 "PO-Revision-Date: 2024-04-16 21:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -1962,7 +1962,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-msgid "You can also edit these firewall rules directly on the server, in the `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` directory.  File names must only contains alphanumerical characters, underscores and hyphens.  The extension must be `.pfw`, or `.pfw.disabled` if you want to disable a file.  Please be sure that the peertube system user has write access to these files, else the web editing interface will fail."
+msgid "You can also edit these firewall rules directly on the server, in the `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` directory.  File names must only contains alphanumerical characters, underscores and hyphens.  The extension must be `.pfw`, or `.pfw.disabled` if you want to disable a file.  Please be sure that the peertube system user has write access to these files, else the web editing interface will fail.  Once you have edited these files, you must reload prosody.  This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube."
 msgstr ""
 
 #. type: Plain text
