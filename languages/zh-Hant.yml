@@ -1,0 +1,174 @@
+no_anonymous_description: "若勾選，匿名 Peertube 用戶將看不到聊天資訊。\n此功能仍處於實驗階段。\n如果您啟用了它，強烈建議您也勾選「不發布聊天訊息」。\n\
+  否則，某些第三方工具可能會嘗試開啟聊天，並出現不可預測的行為。\n"
+external_auth_custom_oidc_description: "您可以設定可用於登入聊天的外部 OpenID Connect 提供者。\n請參考檔案：\n
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">設定</a>。\n"
+room_type_option_video: 每個影片都有自己的網路聊天室
+login_external_auth_alert_message: 驗證失敗
+task_list_pick_empty: 現在沒有任何任務，請創建第一個
+task_list_pick_message: "選擇任務清單後，將建立新任務。\n若要查看任務，請使用頂部選單開啟任務應用程式。\n即時聊天外掛檔案中的更多資訊。\n"
+livechat_configuration_channel_enable_bot_label: 啟用審核機器人
+login_remote_peertube_video_not_found: 該影片在此 Peertube 實例上不可用。
+menu_configuration_label: 聊天室
+livechat_configuration_title: 您的直播聊天室設定
+livechat_configuration_desc: 您可以在此處為與直播相關的聊天室設定一些進階選項。
+system_prosody_description: "警告：如果您不確定自己在做什麼，請不要檢查此設定。\n透過檢查此設置，您的 Peertube 將使用系統附帶的
+  Prosody 伺服器，\n而不是嵌入的 AppImage。\n僅當您遇到嵌入式 Prosody 問題時才使用此選項。\n"
+configuration_description: "<h3>頻道進階組態</h3>\n以下設定涉及進階頻道選項：\n使用者將能夠在他們的頻道上新增客製化，\n\
+  啟動審核機器人，...\n"
+disable_websocket_label: 停用 Websocket
+save: 儲存
+successfully_saved: 存檔成功
+livechat_configuration_please_select: 請在下面選擇您的頻道之一，以設定其聊天選項。
+livechat_configuration_channel_title: 頻道選項
+livechat_configuration_channel_desc: 您可以在此處為此頻道設定一些選項（審核策略，...）。
+livechat_configuration_channel_forbidden_words_label: 禁止使用的單字或句子
+livechat_configuration_channel_forbidden_words_desc: "您可以組態一些由機器人自動審核的單字（包含此類單字的訊息將立即刪除）。\n\
+  您也可以新增一個可選原因，該原因將顯示在已刪除郵件的位置。\n檔案頁面上提供了幾個範例。\n"
+livechat_configuration_channel_forbidden_words_desc2: "每行只能一個單字或句子。如果將多個單字放在一行上，它將只配取到包含整行的訊息。\n"
+livechat_configuration_channel_command_cmd_label: 命令
+livechat_configuration_channel_for_more_info: "有關如何設定此功能的更多資訊，請按一下幫助按鈕參考檔案。\n"
+livechat_configuration_channel_banned_jids_label: 禁止的使用者和模式
+validation_error: 驗證時出現錯誤。
+invalid_value: 無效的值。
+invalid_value_missing: 該欄必填。
+invalid_value_wrong_type: 該欄不接受這種型別。
+invalid_value_wrong_format: 錯誤的格式。
+invalid_value_not_in_range: 值不在符合範圍內。
+invalid_value_file_too_big: '檔案太大(max size: %s).'
+invalid_value_duplicate: 重覆值
+too_many_entries: 太多項目
+chatroom_not_accessible: 這個聊天室不存在或者您無法訪問。
+login_using_external_account: 使用外部帳戶登入
+login_remote_peertube: 使用另一個 Peertube 實例上的帳號登入：
+login_remote_peertube_url: 您的Peertube實例網址
+login_remote_peertube_searching: 在 Peertube 實例上搜尋影片...
+login_remote_peertube_video_not_found_try_anyway: 在某些情況下，如果您連接到遠端實例，仍然可以檢索視訊。
+login_remote_peertube_video_not_found_try_anyway_button: 無論如何嘗試在 Peertube 實例上打開影片
+login_remote_peertube_video_open_failed: 您的瀏覽器阻止了遠端實例的啟動，請嘗試手動開啟此連結：
+tasks: 任務
+task_list_create: '創建新任務清單:'
+task_list_create_error: 儲存任務清單時發生錯誤
+task_list_name: 任務清單名稱
+task_create: 創建新任務
+task_name: 任務名稱
+task_description: 任務用途
+task_delete: 刪除任務
+task_delete_confirm: 您確定要刪除此任務?
+task_list_pick_title: 請選擇任務清單
+promote: 成為版主
+livechat_configuration_channel_emojis_title: 頻道emojis
+livechat_configuration_channel_bot_options_title: 審核機器人選項
+livechat_configuration_channel_forbidden_words_reason_label: 原因
+livechat_configuration_channel_command_message_desc: 發送訊息。
+slow_mode_info: 限速模式已啟用，使用者可以每 %1$s 秒發送一則訊息。
+disable_channel_configuration_label: 停用進階頻道設定和聊天機器人
+cancel: 取消
+livechat_configuration_channel_forbidden_words_reason_desc: 除已刪除訊息外還顯示的原因
+error: 錯誤
+use_current_theme_color: 使用當前主題顏色
+chat_title: <h3>聊天</h3>
+federation_no_remote_chat_description: "透過檢查此設置，您的實例將永遠不會顯示來自遠端視訊的聊天。\n"
+federation_dont_publish_remotely_label: 不公開聊天資訊
+all_lives_label: 所有直播啟動聊天室
+no_anonymous_label: 隱藏匿名使用者的聊天
+converse_theme_label: ConverseJS 主題
+converse_theme_description: 請選擇您要使用的 converseJS 主題。
+converse_theme_option_default: 預設ConverseJS主題
+chat_style_label: 聊天 iframe 風格屬性
+prosody_peertube_uri_label: Peertube API呼叫網址
+task_list_delete: 刪除任務清單
+task_list_delete_confirm: 您確定要刪除此任務清單?
+federation_description: "<h3>聯盟</h3>\n以下設定涉及與其他 Peertube 實例的聯合，\n和其他聯邦多元化軟體。\n"
+chat_terms_label: 條款及條件
+list_rooms_label: 列出現有聊天室
+federation_no_remote_chat_label: 不顯示遠端聊天
+external_auth_description: "<h3>外部身份驗證</h3>\n對於沒有 Peertube 帳戶的用戶，您可以基於遠端身份驗證提供者啟用各種身份驗證模式。\n"
+prosody_advanced_description: <h3>聊天伺服器進階設定</h3>
+invalid_value_too_long: 值超出範圍
+login_remote_peertube_no_livechat: 此 Peertube 實例上未安裝即時聊天外掛程式。
+login_remote_peertube_url_invalid: 無效的Peertube網址。
+theming_advanced_description: <h3>主題</h3>
+link_copied: 連結已複製
+show_scrollbarr: 顯示聊天捲軸
+transparent_background: 透明背景（用於串流媒體整合，例如OBS）
+room_type_option_channel: 網路聊天室按頻道分組
+auto_display_label: 自動開啟聊天
+share_url_option_everyone: 任何人皆可看到
+share_url_option_owner: 只對影片擁有者顯示
+livechat_configuration_channel_slow_mode_label: 限速模式
+livechat_configuration_channel_slow_mode_desc: "限速模式預設值：\n<ul>\n <li>0：停用限速模式</li>\n
+  <li>任何正整數：使用者可以每 X 秒發送一條訊息（審核者不受限制）</li>\n</ul>\n"
+prosody_firewall_name: 名字
+prosody_firewall_file_enabled: 啟用
+livechat_configuration_channel_emojis_desc: "您可以為您的頻道組態自訂表情符號。\n這些表情符號將在表情符號選擇器中提供。\n\
+  使用者也可以透過其短名稱來使用它們（例如透過編寫“:shortname:”）。\n"
+livechat_emojis_shortname: 簡稱
+livechat_emojis_file: 檔案
+action_import: 匯入
+action_export: 匯出
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >列出聊天室</a>\n"
+autocolors_description: "嘗試自動偵測使用者目前主題的顏色。\n啟用此設定後，外掛程式會嘗試自動偵測顏色以套用至聊天主題。\n如果這對於您的某些
+  Peertube 主題無法正常運作，您可以停用此選項。\n您可以向官方報告該錯誤\n<a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
+  \ target=\"_blank\">\n 問題追蹤器\n</a>。不要忘記指定哪個主題不起作用。\n"
+prosody_firewall_content: 檔案內容
+prosody_firewall_disabled_warning: "警告：mod_firewall 在即時聊天<a href=\"/admin/plugins/show/peertube-plugin-livechat\"\
+  \ target=\"_blank\">外掛設定</a>中被停用，如果您希望此組態生效，則必須啟用它予以考慮。\n"
+disable_websocket_description: "當 Peertube >= 5.0.0 時，外掛嘗試使用 Websocket 連線進行聊天。\n如果使用者的瀏覽器或連線不相容，瀏覽器將自動轉而使用
+  BOSH 協定。\n<br>\n但在極少數情況下，這可能會失敗。例如，如果您在 Peertube 前面有一個反向代理，但它不\n允許外掛的 Websocket
+  連線。\n在這種情況下，您可以檢查此設定以停用 Websocket 連線。\n"
+prosody_firewall_name_desc: "只能包含：字母數字字元、底線和連字元。\n指令將按字母順序讀取。\n"
+open_chat: 開始聊天
+copy: 複製
+federation_dont_publish_remotely_description: "透過檢查此設置，您的實例將不會在 fediverse 上發布聊天訊息。\n
+  遠端 Peertube 實例不會意識到它們是與您的視訊關聯的聊天室。\n<b>請注意</b>：如果您已經進行過聊天，則該資訊可能已經發布。\n您必須等待下一次視訊更新，訊息才會取消發布。\n
+  此外，如果您停用此設置，則必須等待視訊更新後才能顯示資訊。\n再次發布。當現場活動恢復或停止時，會發生此更新。\n<b>請注意</b>：此設定僅影響透過 ActivityPub
+  協定發布資訊。\n它不會阻止遠端應用程式檢測聊天的存在並嘗試連接到它。\n"
+auto_ban_anonymous_ip_description: "透過啟用此選項，每次匿名用戶被禁止進入聊天室時，其 IP 也將被聊天伺服器禁止。\n警告：如果您的執行個體開放註冊，任何使用者都可以建立陷阱房間、邀請使用者加入，並自動禁止所有匿名使用者的
+  IP。\n禁止的IP清單不會被存儲，它會在伺服器重新啟動或更改某些外掛的設定時被清除。\n被禁止的IP會記錄在Prosody伺服器日誌檔案中，因此伺服器管理員最終可以使用一些外部工具（如fail2ban）來更廣泛地禁止IP。\n"
+avatar_set_description: "您可以從多個不同的設定中選擇將用於聊天使用者的預設頭像。\n請參考檔案：\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">設定</a>。\n"
+avatar_set_option_sepia: 棕褐色（Peertube 吉祥物）
+converse_theme_option_peertube: Peertube主題
+autocolors_label: 自動色彩檢測
+open_chat_new_window: 在新視窗開啟聊天
+close_chat: 關閉聯天
+tips_for_streamers: "給直播主的提示：例如，要使用 OBS 將聊天嵌入到視訊直播中，\n產生唯讀連結並將其供瀏覽器使用。\n"
+chat_terms_description: "這些條款和條件將在所有使用者加入聊天室時顯示。\n直播主還可以為其頻道配置條款和條件，這些條款和條件將立即顯示在這些全域條款和條件之後。\n"
+auto_display_description: 觀看影片時，聊天視窗會自動開啟。
+open_blank_label: 顯示“在新視窗中開啟”按鈕
+open_blank_description: 此按鈕可在新視窗中開啟網路聊天。
+share_url_label: 顯示「共享聊天連結」按鈕
+share_url_description: 用於共享聊天 URL 的按鈕（例如，可用於 OBS 整合）。
+share_url_option_nobody: 無人可見
+share_url_option_owner_moderators: 只有影片擁有者與管理者可見
+auto_ban_anonymous_ip_label: 當用戶被禁止進入聊天室時，禁止匿名用戶的 IP
+copied: 已複製
+generate_iframe: 產生 iframe 以將聊天嵌入到網站中
+chat_for_live_stream: '直播聊天:'
+use_chat: 使用聊天功能
+use_chat_help: 如果啟用，影片旁邊將會出現聊天視窗。
+share_chat_link: 分享聊天連結
+read_only: 唯讀
+external_auth_custom_oidc_button_label_label: 連接按鈕的標籤
+external_auth_custom_oidc_button_label_description: 此標籤將作為向該 OIDC 提供者進行身份驗證的按鈕標籤顯示給使用者。
+external_auth_custom_oidc_discovery_url_label: OIDC_custom_dicovery_url
+room_type_label: 聊天室類型
+room_type_description: 您可以在此處選擇為每個影片設定單獨的聊天室，或按頻道對它們進行分組。
+video: 影片
+channel: 頻道
+last_activity: 最後異動
+important_note_title: <h3>注意事項</h3>
+online_help: 線上幫助
+not_found: 未找到
+important_note_text: "您可以在這裡找到外掛文件：\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n Peertube 外掛即時聊天檔案\n</a>。\n"
+diagnostic: "在尋求協助之前，請使用診斷工具：\n<a class=\"peertube-plugin-livechat-launch-diagnostic\"\
+  >啟動診斷</a>\n（如果此按鈕沒有開啟新視窗，請嘗試重新整理頁面）。\n"
+room_description: 聊天室說明
+room_name: 聊天室名稱
+per_live_video_label: 使用者在直播時可啟用聊天
+per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n 您已啟用「使用者可以自已啟用聊天室」設定。\n 它與“啟動所有直播都有聊天室”設定是互斥的。\n</span>\n"
+all_lives_description: 若勾選，則所有直播都啟用聊天室。
