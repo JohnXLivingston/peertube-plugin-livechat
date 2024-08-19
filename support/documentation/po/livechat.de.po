@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-13 10:49+0200\n"
+"POT-Creation-Date: 2024-08-19 10:58+0200\n"
 "PO-Revision-Date: 2024-08-15 09:38+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1388,7 +1386,9 @@ msgstr "Sie müssen diese Zertifikate dann in einem Ordner ablegen, auf den der 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
+#, fuzzy
+#| msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
+msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
 msgstr "Wenn Sie das Programm ProsodyCtl verwenden möchten, um Zertifikate zu importieren, ist es (sobald Peertube gestartet ist) mit folgendem Befehl verfügbar (passen Sie den Pfad zu Ihrem Peertube-Datenordner an und ersetzen Sie \"xxx\" durch die Argumente, die Sie an prosodyctl übergeben wollen): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
 
 #. type: Plain text
@@ -1946,31 +1946,17 @@ msgstr "Diese Funktion wird mit dem Livechatplugin Version 11.0.0 verfügbar sei
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
-msgstr ""
-"Sie können [mod_firewall](https://modules.prosody.im/mod_firewall) auf Ihrem "
-"Prosody-Server aktivieren."
+msgstr "Sie können [mod_firewall](https://modules.prosody.im/mod_firewall) auf Ihrem Prosody-Server aktivieren."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Doing so, Peertube admins will be able to define advanced firewall rules."
-msgstr ""
-"Auf diese Weise können Peertube-Administratoren erweiterte Firewall-Regeln "
-"definieren."
+msgstr "Auf diese Weise können Peertube-Administratoren erweiterte Firewall-Regeln definieren."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "These rules could be used to run arbitrary code on the server.  If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.  You can still use mod_firewall by editing files directly on the server."
-msgstr ""
-"Diese Regeln könnten verwendet werden, um beliebigen Code auf dem Server "
-"auszuführen.  Wenn Sie ein Hosting-Anbieter sind und Peertube-"
-"Administratoren nicht erlauben wollen, solche Regeln zu schreiben, können "
-"Sie die Online-Bearbeitung deaktivieren, indem Sie eine "
-"`disable_mod_firewall_editing`-Datei im Plugin-Verzeichnis erstellen (`"
-"plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  Dies "
-"ist ein Opt-Out, da Peertube-Administratoren bereits beliebigen Code "
-"ausführen können, indem sie ein beliebiges Plugin installieren.  Sie können "
-"mod_firewall immer noch verwenden, indem Sie Dateien direkt auf dem Server "
-"bearbeiten."
+msgstr "Diese Regeln könnten verwendet werden, um beliebigen Code auf dem Server auszuführen.  Wenn Sie ein Hosting-Anbieter sind und Peertube-Administratoren nicht erlauben wollen, solche Regeln zu schreiben, können Sie die Online-Bearbeitung deaktivieren, indem Sie eine `disable_mod_firewall_editing`-Datei im Plugin-Verzeichnis erstellen (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  Dies ist ein Opt-Out, da Peertube-Administratoren bereits beliebigen Code ausführen können, indem sie ein beliebiges Plugin installieren.  Sie können mod_firewall immer noch verwenden, indem Sie Dateien direkt auf dem Server bearbeiten."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -1981,24 +1967,17 @@ msgstr "Regeln bearbeiten"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "First, you must enable the feature in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
-msgstr ""
-"Zuerst müssen Sie die Funktion in den [Plugin-Einstellungen](/peertube-"
-"plugin-livechat/de/documentation/admin/settings) aktivieren."
+msgstr "Zuerst müssen Sie die Funktion in den [Plugin-Einstellungen](/peertube-plugin-livechat/de/documentation/admin/settings) aktivieren."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Just bellow the settings, you will find a \"Configure mod_firewall\" button.  This button will open a configuration page."
-msgstr ""
-"Direkt unter den Einstellungen finden Sie die Schaltfläche \"Configure "
-"mod_firewall\".  Mit dieser Schaltfläche wird eine Konfigurationsseite "
-"geöffnet."
+msgstr "Direkt unter den Einstellungen finden Sie die Schaltfläche \"Configure mod_firewall\".  Mit dieser Schaltfläche wird eine Konfigurationsseite geöffnet."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "![Mod_firewall configuration](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px)"
-msgstr ""
-"![Mod_firewall Konfiguration](/peertube-plugin-livechat/images/mod_firewall."
-"png?classes=shadow,border&height=400px)"
+msgstr "![Mod_firewall Konfiguration](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2013,37 +1992,17 @@ msgstr "Sie können jede Datei aktivieren/deaktivieren."
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Files will be loaded in the alphabetical order.  You can use a number as prefix to easily choose the order."
-msgstr ""
-"Die Dateien werden in alphabetischer Reihenfolge geladen.  Sie können eine "
-"Zahl als Präfix verwenden, um die Reihenfolge einfach zu wählen."
+msgstr "Die Dateien werden in alphabetischer Reihenfolge geladen.  Sie können eine Zahl als Präfix verwenden, um die Reihenfolge einfach zu wählen."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "You can also edit these firewall rules directly on the server, in the `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` directory.  File names must only contains alphanumerical characters, underscores and hyphens.  The extension must be `.pfw`, or `.pfw.disabled` if you want to disable a file.  Please be sure that the peertube system user has write access to these files, else the web editing interface will fail.  Once you have edited these files, you must reload prosody.  This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube."
-msgstr ""
-"Sie können diese Firewall-Regeln auch direkt auf dem Server im Verzeichnis `"
-"plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` "
-"bearbeiten.  Die Dateinamen dürfen nur alphanumerische Zeichen, Unterstriche "
-"und Bindestriche enthalten.  Die Erweiterung muss `.pfw` sein, oder `.pfw."
-"disabled`, wenn Sie eine Datei deaktivieren wollen.  Vergewissern Sie sich, "
-"dass der Peertube-Systembenutzer Schreibrechte für diese Dateien hat, sonst "
-"schlägt die Bearbeitung über die Webschnittstelle fehl.  Nachdem Sie diese "
-"Dateien bearbeitet haben, müssen Sie prosody neu laden.  Dies kann durch "
-"Speichern der Plugin-Einstellungen, durch Speichern der mod_firewall-"
-"Konfiguration im Web-Interface oder durch einen Neustart von Peertube "
-"geschehen."
+msgstr "Sie können diese Firewall-Regeln auch direkt auf dem Server im Verzeichnis `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` bearbeiten.  Die Dateinamen dürfen nur alphanumerische Zeichen, Unterstriche und Bindestriche enthalten.  Die Erweiterung muss `.pfw` sein, oder `.pfw.disabled`, wenn Sie eine Datei deaktivieren wollen.  Vergewissern Sie sich, dass der Peertube-Systembenutzer Schreibrechte für diese Dateien hat, sonst schlägt die Bearbeitung über die Webschnittstelle fehl.  Nachdem Sie diese Dateien bearbeitet haben, müssen Sie prosody neu laden.  Dies kann durch Speichern der Plugin-Einstellungen, durch Speichern der mod_firewall-Konfiguration im Web-Interface oder durch einen Neustart von Peertube geschehen."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "When you save the configuration, the server will automatically reload it, and your rules will apply immediatly.  You can check that there is no parsing error in the Prosody error log.  To do so, you can read the `plugins/data/peertube-plugin-livechat/prosody/prosody.err` file, or use the [diagnostic tool](/peertube-plugin-livechat/documentation/installation/troubleshooting/) that will show last Prosody errors."
-msgstr ""
-"Wenn Sie die Konfiguration speichern, wird der Server sie automatisch neu "
-"laden, und Ihre Regeln werden sofort angewendet.  Sie können im Prosody-"
-"Fehlerprotokoll überprüfen, ob ein Parsing-Fehler aufgetreten ist.  Dazu "
-"können Sie die Datei `plugins/data/peertube-plugin-livechat/prosody/prosody."
-"err` lesen oder das [Diagnose-Tool](/peertube-plugin-livechat/de/"
-"documentation/installation/troubleshooting/) verwenden, das die letzten "
-"Prosody-Fehler anzeigt."
+msgstr "Wenn Sie die Konfiguration speichern, wird der Server sie automatisch neu laden, und Ihre Regeln werden sofort angewendet.  Sie können im Prosody-Fehlerprotokoll überprüfen, ob ein Parsing-Fehler aufgetreten ist.  Dazu können Sie die Datei `plugins/data/peertube-plugin-livechat/prosody/prosody.err` lesen oder das [Diagnose-Tool](/peertube-plugin-livechat/de/documentation/installation/troubleshooting/) verwenden, das die letzten Prosody-Fehler anzeigt."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2054,10 +2013,7 @@ msgstr "Beispiele"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Don't hesitate to share your rules.  To do so, you can for example edit this [page](/peertube-plugin-livechat/contributing/document/#write-documentation)."
-msgstr ""
-"Zögern Sie nicht, Ihre Regeln zu teilen.  Um dies zu tun, können Sie zum "
-"Beispiel diese [Seite](/peertube-plugin-livechat/contributing/document/"
-"#write-documentation) bearbeiten."
+msgstr "Zögern Sie nicht, Ihre Regeln zu teilen.  Um dies zu tun, können Sie zum Beispiel diese [Seite](/peertube-plugin-livechat/contributing/document/#write-documentation) bearbeiten."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2334,9 +2290,7 @@ msgstr "Weitere Informationen zu den externen Komponenten von Prosody finden Sie
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "For more information, please check [the documentation](/peertube-plugin-livechat/documentation/admin/mod_firewall/)."
-msgstr ""
-"Weitere Informationen finden Sie in [der Dokumentation](/peertube-"
-"plugin-livechat/de/documentation/admin/mod_firewall/)."
+msgstr "Weitere Informationen finden Sie in [der Dokumentation](/peertube-plugin-livechat/de/documentation/admin/mod_firewall/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md

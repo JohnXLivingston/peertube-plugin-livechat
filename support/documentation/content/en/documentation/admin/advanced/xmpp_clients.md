@@ -113,7 +113,7 @@ You must then place these certificates in a folder that will be accessible to th
 
 {{% notice tip %}}
 If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing "xxx" with the arguments you wish to pass to
-prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`
+prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`
 {{% /notice %}}
 
 The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary.
