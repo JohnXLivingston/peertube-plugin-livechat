@@ -33,7 +33,7 @@ CONVERSE_COMMIT="1625f9b6ee81fa9ebd8df5cba306bde478f1943b"
 # 2024-08-06: including new getOccupantActionButtons hook (waiting for merge in Converse upstream)
 CONVERSE_COMMIT="5b35bd31c7e26c1f5396cd65eef69293d8b388c1"
 # 2024-08-20: accessibility fixes
-CONVERSE_COMMIT="7b00a2e0b4a13cea7800f4f100c2673785f94486"
+CONVERSE_COMMIT="7377080988e7838047dcedf48cd8610d492c9ba7"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
