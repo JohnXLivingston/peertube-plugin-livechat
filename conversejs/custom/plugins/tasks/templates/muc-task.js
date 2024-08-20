@@ -30,12 +30,12 @@ export function tplMucTask (el, task) {
           </label>
         </div>
         <div class="task-description">${task.get('description') ?? ''}</div>
-        <button class="task-action" title="${__('Edit')}"
+        <button type="button" class="task-action" title="${__('Edit')}"
           @click=${el.toggleEdit}
         >
           <converse-icon class="fa fa-edit" size="1em"></converse-icon>
         </button>
-        <button class="task-action" title="${i18nDelete}"
+        <button type="button" class="task-action" title="${i18nDelete}"
           @click=${el.deleteTask}
         >
           <converse-icon class="fa fa-trash-alt" size="1em"></converse-icon>

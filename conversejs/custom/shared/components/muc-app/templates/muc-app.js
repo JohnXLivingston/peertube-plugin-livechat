@@ -14,7 +14,7 @@ export function tplMUCApp (el, i18nTitle, helpUrl, i18nHelp, content) {
           size="1em"
           title="${i18nHelp}"
       ></converse-icon></a>
-      <button class="livechat-converse-muc-app-close" @click=${el.toggleApp} title="${__('Close')}">
+      <button type="button" class="livechat-converse-muc-app-close" @click=${el.toggleApp} title="${__('Close')}">
           <converse-icon class="fa fa-times" size="1em"></converse-icon>
       </button>
     </div>

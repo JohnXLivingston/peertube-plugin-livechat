@@ -25,7 +25,7 @@ function tplFilters (el) {
             ></livechat-converse-muc-note-occupant>`
           : ''
       }
-      <button class="notes-action" @click=${(ev) => {
+      <button type="button" class="notes-action" @click=${(ev) => {
         ev?.preventDefault()
         el.filterNotes({})
       }} title="${__('Close')}">
@@ -85,7 +85,7 @@ function tplCreateButton (el) {
   const i18nCreateNote = __(LOC_moderator_note_create)
   return html`
     <div class="notes-actions">
-      <button class="notes-action" title="${i18nCreateNote}" @click=${el.openCreateNoteForm}>
+      <button type="button" class="notes-action" title="${i18nCreateNote}" @click=${el.openCreateNoteForm}>
         <converse-icon class="fa fa-plus" size="1em"></converse-icon>
       </button>
     </div>`

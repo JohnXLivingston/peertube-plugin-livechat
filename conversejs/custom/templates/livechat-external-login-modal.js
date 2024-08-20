@@ -117,7 +117,7 @@ export const tplExternalLoginModal = (el, o) => {
               <div class="livechat-external-login-modal-external-auth-oidc-block">
                 ${
                   externalButtons.map(button => html`
-                    <button
+                    <button type="button"
                       class="btn btn-primary ${button.class}"
                       @click=${
                         (ev) => {
@@ -187,7 +187,9 @@ export const tplExternalLoginModal = (el, o) => {
             // eslint-disable-next-line no-undef
             __(LOC_login_remote_peertube_video_not_found_try_anyway)
           }
-          <button class="btn btn-primary" @click=${() => el.openUrlTargetTop(o.remote_peertube_try_anyway_url)}>${
+          <button type="button" class="btn btn-primary"
+            @click=${() => el.openUrlTargetTop(o.remote_peertube_try_anyway_url)}
+          >${
             // eslint-disable-next-line no-undef
             __(LOC_login_remote_peertube_video_not_found_try_anyway_button)
           }</button>

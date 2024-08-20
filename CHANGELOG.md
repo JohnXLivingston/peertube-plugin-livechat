@@ -17,6 +17,7 @@ With the new [mod_firewall](https://livingston.frama.io/peertube-plugin-livechat
 
 ### Minor changes and fixes
 
+* #118: improved accessibility.
 * Avatar set for anonymous users: new 'none' choice (that will fallback to Converse new colorized avatars).
 * New translation: Albanian.
 * Translation updates: Crotian, Japanese, traditional Chinese.

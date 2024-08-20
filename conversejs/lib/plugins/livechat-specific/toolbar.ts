@@ -43,7 +43,7 @@ function getToolbarButtons (this: any, toolbarEl: any, buttons: any[]): any {
             size="1em">
         </converse-icon>`
   buttons.push(html`
-      <button class="toggle-occupants btn"
+      <button class="toggle-occupants btn" type="button"
               title="${toolbarEl.hidden_occupants ? i18nShowOccupants : i18nHideOccupants}"
               @click=${(ev?: Event) => {
                 ev?.preventDefault()

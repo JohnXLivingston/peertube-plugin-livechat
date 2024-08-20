@@ -83,21 +83,21 @@ export function tplPoll (el, currentPoll, canVote) {
   return html`<div class="${currentPoll.over ? 'livechat-poll-over' : ''}">
     <p class="livechat-poll-question">
       ${currentPoll.over
-        ? html`<button class="livechat-poll-close" @click=${el.closePoll} title="${__('Close')}">
+        ? html`<button type="button" class="livechat-poll-close" @click=${el.closePoll} title="${__('Close')}">
             <converse-icon class="fa fa-times" size="1em"></converse-icon>
           </button>`
         : ''
       }
       ${el.collapsed
         ? html`
-          <button @click=${el.toggle} class="livechat-poll-toggle">
+          <button type="button" @click=${el.toggle} class="livechat-poll-toggle">
             <converse-icon
               color="var(--muc-toolbar-btn-color)"
               class="fa fa-angle-right"
               size="1em"></converse-icon>
           </button>`
         : html`
-          <button @click=${el.toggle} class="livechat-poll-toggle">
+          <button type="button" @click=${el.toggle} class="livechat-poll-toggle">
             <converse-icon
               color="var(--muc-toolbar-btn-color)"
               class="fa fa-angle-down"

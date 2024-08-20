@@ -41,12 +41,12 @@ export function tplMucNote (el, note) {
                 <converse-icon class="fa fa-magnifying-glass" size="1em" title=${i18nSearch}></converse-icon>
               </button>`
         }
-        <button class="note-action" title="${__('Edit')}"
+        <button type="button" class="note-action" title="${__('Edit')}"
           @click=${el.toggleEdit}
         >
           <converse-icon class="fa fa-edit" size="1em"></converse-icon>
         </button>
-        <button class="note-action" title="${i18nDelete}"
+        <button type="button" class="note-action" title="${i18nDelete}"
           @click=${el.deleteNote}
         >
           <converse-icon class="fa fa-trash-alt" size="1em"></converse-icon>

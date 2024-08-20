@@ -117,7 +117,7 @@ const tplViewerMode = (o) => {
             : html`
               <hr>
               <div class="livechat-viewer-mode-external-login">
-                <button class="btn btn-primary" @click=${ev => {
+                <button type="button" class="btn btn-primary" @click=${ev => {
                   ev.preventDefault()
                   api.modal.show('converse-livechat-external-login')
                 }}>${i18nExternalLogin}</button>
