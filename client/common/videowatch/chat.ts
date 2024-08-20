@@ -46,6 +46,8 @@ async function initChat (video: Video): Promise<void> {
   container.setAttribute('id', 'peertube-plugin-livechat-container')
   container.setAttribute('peertube-plugin-livechat-state', 'initializing')
   container.setAttribute('peertube-plugin-livechat-current-url', window.location.href)
+  container.role = 'region'
+  container.ariaLabel = await ptContext.ptOptions.peertubeHelpers.translate(LOC_CHAT)
   placeholder.append(container)
 
   try {
