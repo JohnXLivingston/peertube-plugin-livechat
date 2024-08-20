@@ -42,6 +42,23 @@ function displayButton (dbo: displayButtonOptions): void {
   if ('href' in dbo) {
     button.href = dbo.href
   }
+
+  if (!button.href || button.href === '#') {
+    // No href => it is not a link.
+    button.role = 'button'
+    button.tabIndex = 0
+
+    // We must also ensure that the enter key is triggering the onclick
+    if (button.onclick) {
+      button.onkeydown = ev => {
+        if (ev.key === 'Enter') {
+          ev.preventDefault()
+          button.click()
+        }
+      }
+    }
+  }
+
   if (('targetBlank' in dbo) && dbo.targetBlank) {
     button.target = '_blank'
   }
@@ -52,6 +69,10 @@ function displayButton (dbo: displayButtonOptions): void {
       tmp.innerHTML = svg.trim()
       const svgDom = tmp.firstChild
       if (svgDom) {
+        if ('ariaHidden' in (svgDom as HTMLElement)) {
+          // Icon must be hidden for screen readers.
+          (svgDom as HTMLElement).ariaHidden = 'true'
+        }
         button.prepend(svgDom)
       }
     } catch (err) {
