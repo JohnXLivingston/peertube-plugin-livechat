@@ -56,4 +56,11 @@ body a.highlight:focus {
     opacity: .85;
 }
 
+/* Accessibility fix: To avoid breadcrumbs to be truncated when there is a zoom,
+  we cancel the `white-space: nowrap` of the relearn theme.
+*/
+.breadcrumbs {
+  white-space: normal;
+}
+
 </style>
