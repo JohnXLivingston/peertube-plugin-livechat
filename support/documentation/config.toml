@@ -14,7 +14,8 @@ home = [ "HTML", "RSS", "SEARCH"]
 [params]
   showVisitedLinks = true
   disableSearch = false
-  disableLandingPageButton = true
+  disableLandingPageButton = false
+  landingPageName = "<i class='fa-fw fas fa-home'></i> Livechat"
   themeVariant = "red"
 
   [params.author]
