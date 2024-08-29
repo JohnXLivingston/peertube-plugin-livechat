@@ -50,7 +50,7 @@ export class ChannelHomeElement extends LivechatElement {
         <ul class="peertube-plugin-livechat-configuration-home-channels">
         ${this._channels?.map((channel) => html`
           <li>
-            <a href="${channel.livechatConfigurationUri}">
+            <a href="${channel.livechatConfigurationUri}" aria-hidden="true">
               ${channel.avatar
                 ? html`<img class="avatar channel" src="${channel.avatar.path}">`
                 : html`<div class="avatar channel initial gray"></div>`
