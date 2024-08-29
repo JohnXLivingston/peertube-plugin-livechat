@@ -32,149 +32,185 @@ weight = 20
 
 [Languages]
   [Languages.en]
+  weight = 1
   title = "Peertube plugin livechat documentation"
   languageName = "English"
   contentDir = "content/en"
 
   [Languages.ar]
+  weight = 2
   languageName = "العربية"
   contentDir = "content/translations/ar"
 
   [Languages.ca]
+  weight = 3
   languageName = "Català"
   contentDir = "content/translations/ca"
 
   [Languages.cs]
+  weight = 4
   languageName = "Čeština"
   contentDir = "content/translations/cs"
 
   [Languages.de]
+  weight = 5
   title = "Peertube Plugin Livechat Dokumentation"
   languageName = "Deutsch"
   contentDir = "content/translations/de"
 
   [Languages.el]
+  weight = 6
   languageName = "ελληνικά"
   contentDir = "content/translations/el"
 
   [Languages.eo]
+  weight = 7
   languageName = "Esperanto"
   contentDir = "content/translations/eo"
 
   [Languages.es]
+  weight = 8
   languageName = "Español"
   contentDir = "content/translations/es"
 
   [Languages.eu]
+  weight = 9
   languageName = "Euskara"
   contentDir = "content/translations/eu"
 
   [Languages.fa]
+  weight = 10
   languageName = "فارسی"
   contentDir = "content/translations/fa"
 
   [Languages.fi]
+  weight = 11
   languageName = "Suomi"
   contentDir = "content/translations/fi"
 
   [Languages.fr]
+  weight = 12
   title = "Documentation plugin Peertube livechat"
   languageName = "Français"
   contentDir = "content/translations/fr"
 
   [Languages.gd]
+  weight = 13
   languageName = "Gàidhlig"
   contentDir = "content/translations/gd"
 
   [Languages.gl]
+  weight = 14
   languageName = "Galego"
   contentDir = "content/translations/gl"
 
   [Languages.hr]
+  weight = 15
   languageName = "Hrvatski"
   contentDir = "content/translations/hr"
 
   [Languages.hu]
+  weight = 16
   languageName = "Magyar"
   contentDir = "content/translations/hu"
 
   [Languages.is]
+  weight = 17
   languageName = "Íslenska"
   contentDir = "content/translations/is"
 
   [Languages.it]
+  weight = 18
   languageName = "Italiano"
   contentDir = "content/translations/it"
 
   [Languages.ja]
+  weight = 19
   title = "PeerTube ライブチャットプラグイン"
   languageName = "日本語バージョン"
   contentDir = "content/translations/ja"
 
   [Languages.kab]
+  weight = 20
   languageName = "Taqbaylit"
   contentDir = "content/translations/kab"
 
   [Languages.nb]
+  weight = 21
   languageName = "Norsk bokmål"
   contentDir = "content/translations/nb"
 
   [Languages.nl]
+  weight = 22
   languageName = "Nederlands"
   contentDir = "content/translations/nl"
 
   [Languages.nn]
+  weight = 23
   languageName = "Norsk nynorsk"
   contentDir = "content/translations/nn"
 
   [Languages.oc]
+  weight = 24
   languageName = "Occitan"
   contentDir = "content/translations/oc"
 
   [Languages.pl]
+  weight = 25
   languageName = "Polski"
   contentDir = "content/translations/pl"
 
   [Languages.pt]
+  weight = 26
   languageName = "uguês"
   contentDir = "content/translations/pt"
 
   [Languages.ru]
+  weight = 27
   languageName = "Pусский"
   contentDir = "content/translations/ru"
 
   [Languages.sq]
+  weight = 28
   languageName = "Shqip"
   contentDir = "content/translations/sq"
 
   [Languages.sv]
+  weight = 29
   languageName = "Svenska"
   contentDir = "content/translations/sv"
 
   [Languages.th]
+  weight = 30
   languageName = "ไทย"
   contentDir = "content/translations/th"
 
   [Languages.tr]
+  weight = 31
   languageName = "Türkçe"
   contentDir = "content/translations/tr"
 
   [Languages.tok]
+  weight = 32
   languageName = "Toki Pona"
   contentDir = "content/translations/tok"
 
   [Languages.uk]
+  weight = 33
   languageName = "украї́нська мо́ва"
   contentDir = "content/translations/uk"
 
   [Languages.vi]
+  weight = 34
   languageName = "Tiếng Việt"
   contentDir = "content/translations/vi"
 
   [Languages.zh-Hans]
+  weight = 35
   languageName = "简体中文（中国）"
   contentDir = "content/translations/zh-Hans"
 
   [Languages.zh-Hant]
+  weight = 36
   languageName = "繁體中文（台灣"
   contentDir = "content/translations/zh-Hant"
