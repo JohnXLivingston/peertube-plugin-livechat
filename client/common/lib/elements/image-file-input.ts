@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
-
 import { LivechatElement } from './livechat'
 import { html } from 'lit'
+import type { DirectiveResult } from 'lit/directive'
 import { customElement, property } from 'lit/decorators.js'
-
+import { ifDefined } from 'lit/directives/if-defined.js'
 /**
  * Special element to upload image files.
  * If no current value, displays an input type="file" field.
@@ -30,12 +30,15 @@ export class ImageFileInputElement extends LivechatElement {
   public maxSize?: number
 
   @property({ attribute: false })
+  public inputTitle?: string | DirectiveResult
+
+  @property({ attribute: false })
   public accept: string[] = ['image/jpg', 'image/png', 'image/gif']
 
   protected override render = (): unknown => {
     return html`
       ${this.value
-        ? html`<img src=${this.value} @click=${(ev: Event) => {
+        ? html`<img src=${this.value} alt=${ifDefined(this.inputTitle)} @click=${(ev: Event) => {
           ev.preventDefault()
           const upload: HTMLInputElement | null | undefined = this.parentElement?.querySelector('input[type="file"]')
           upload?.click()
@@ -44,6 +47,7 @@ export class ImageFileInputElement extends LivechatElement {
       }
       <input
         type="file"
+        title=${ifDefined(this.inputTitle)}
         accept="${this.accept.join(',')}"
         class="form-control"
         style=${this.value ? 'display: none;' : ''}

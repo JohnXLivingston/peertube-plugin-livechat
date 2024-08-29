@@ -12,6 +12,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { animate, fadeOut, fadeIn } from '@lit-labs/motion'
 import { repeat } from 'lit/directives/repeat.js'
+import type { DirectiveResult } from 'lit/directive'
 
 // FIXME: find a better way to store this image.
 // This content comes from the file assets/images/copy.svg, after svgo cleaning.
@@ -48,7 +49,7 @@ export class TagsInputElement extends LivechatElement {
   private _inputValue?: string = ''
 
   @property({ attribute: false })
-  public inputPlaceholder?: string = ''
+  public inputTitle?: string | DirectiveResult = ''
 
   @property({ attribute: false })
   public datalist?: string[]
@@ -166,7 +167,7 @@ export class TagsInputElement extends LivechatElement {
         @input=${(e: InputEvent) => this._handleInputEvent(e)}
         @change=${(e: Event) => e.stopPropagation()}
         .value=${this._inputValue ?? ''}
-        placeholder=${ifDefined(this.inputPlaceholder)} />
+        title=${ifDefined(this.inputTitle)} />
         ${(this.datalist)
           ? html`<datalist id="${this.id ?? 'tags-input'}-datalist">
             ${(this.datalist ?? []).map((value) => html`<option value=${value}>`)}

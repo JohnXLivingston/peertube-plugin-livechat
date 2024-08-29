@@ -135,6 +135,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
         </livechat-configuration-section-header>
         <div class="form-group">
           <textarea
+            .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TERMS_LABEL) as any}
             name="terms"
             id="peertube-livechat-terms"
             .value=${el.channelConfiguration?.configuration.terms ?? ''}

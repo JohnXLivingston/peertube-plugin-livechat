@@ -47,11 +47,11 @@ interface CellDataSchema {
   minlength?: number
   maxlength?: number
   size?: number
-  label?: TemplateResult | string
   options?: { [key: string]: string }
   datalist?: DynamicTableAcceptedTypes[]
   separator?: string
   inputType?: DynamicTableAcceptedInputTypes
+  inputTitle?: string
   default?: DynamicTableAcceptedTypes
   colClassList?: string[] // CSS classes to add to the <td> element.
 }
@@ -295,6 +295,7 @@ export class DynamicTableFormElement extends LivechatElement {
     const inputId =
       `peertube-livechat-${this.formName.replace(/_/g, '-')}-${propertyName.toString().replace(/_/g, '-')}-${rowId}`
 
+    const inputTitle: DirectiveResult | undefined = propertySchema.inputTitle ?? this.header[propertyName]?.colName
     const feedback = this._renderFeedback(inputId, propertyName, originalIndex)
 
     switch (propertySchema.default?.constructor) {
@@ -320,6 +321,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderInput(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               propertyValue as string,
@@ -332,6 +334,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderTextarea(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               propertyValue as string,
@@ -344,6 +347,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderSelect(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               propertyValue as string,
@@ -356,6 +360,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderImageFileInput(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               propertyValue?.toString(),
@@ -376,6 +381,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderInput(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               (propertyValue as Date).toISOString(),
@@ -394,6 +400,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderInput(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               propertyValue as string,
@@ -411,6 +418,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderCheckbox(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               propertyValue as boolean,
@@ -446,6 +454,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderInput(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               (propertyValue)?.join(propertySchema.separator ?? ',') ??
@@ -461,6 +470,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderTextarea(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               (propertyValue)?.join(propertySchema.separator ?? ',') ??
@@ -476,6 +486,7 @@ export class DynamicTableFormElement extends LivechatElement {
             formElement = html`${this._renderTagsInput(rowId,
               inputId,
               inputName,
+              inputTitle,
               propertyName,
               propertySchema,
               propertyValue,
@@ -501,6 +512,7 @@ export class DynamicTableFormElement extends LivechatElement {
   _renderInput = (rowId: number,
     inputId: string,
     inputName: string,
+    inputTitle: string | DirectiveResult | undefined,
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: string,
@@ -515,6 +527,7 @@ export class DynamicTableFormElement extends LivechatElement {
         )
       )}
       id=${inputId}
+      title=${ifDefined(inputTitle)}
       aria-describedby="${inputId}-feedback"
       list=${ifDefined(propertySchema.datalist ? inputId + '-datalist' : undefined)}
       min=${ifDefined(propertySchema.min)}
@@ -534,6 +547,7 @@ export class DynamicTableFormElement extends LivechatElement {
   _renderTagsInput = (rowId: number,
     inputId: string,
     inputName: string,
+    inputTitle: string | DirectiveResult | undefined,
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: Array<string | number>,
@@ -547,7 +561,7 @@ export class DynamicTableFormElement extends LivechatElement {
         )
       )}
       id=${inputId}
-      .inputPlaceholder=${propertySchema.label as any}
+      .inputTitle=${inputTitle as any}
       aria-describedby="${inputId}-feedback"
       .min=${propertySchema.min}
       .max=${propertySchema.max}
@@ -563,6 +577,7 @@ export class DynamicTableFormElement extends LivechatElement {
   _renderTextarea = (rowId: number,
     inputId: string,
     inputName: string,
+    inputTitle: string | DirectiveResult | undefined,
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: string,
@@ -576,6 +591,7 @@ export class DynamicTableFormElement extends LivechatElement {
         )
       )}
       id=${inputId}
+      title=${ifDefined(inputTitle)}
       aria-describedby="${inputId}-feedback"
       min=${ifDefined(propertySchema.min)}
       max=${ifDefined(propertySchema.max)}
@@ -588,6 +604,7 @@ export class DynamicTableFormElement extends LivechatElement {
   _renderCheckbox = (rowId: number,
     inputId: string,
     inputName: string,
+    inputTitle: string | DirectiveResult | undefined,
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: boolean,
@@ -602,6 +619,7 @@ export class DynamicTableFormElement extends LivechatElement {
         )
       )}
       id=${inputId}
+      title=${ifDefined(inputTitle)}
       aria-describedby="${inputId}-feedback"
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       value="1"
@@ -611,6 +629,7 @@ export class DynamicTableFormElement extends LivechatElement {
   _renderSelect = (rowId: number,
     inputId: string,
     inputName: string,
+    inputTitle: string | DirectiveResult | undefined,
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: string,
@@ -623,11 +642,12 @@ export class DynamicTableFormElement extends LivechatElement {
         )
       )}
       id=${inputId}
+      title=${ifDefined(inputTitle)}
       aria-describedby="${inputId}-feedback"
       aria-label=${inputName}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
     >
-      <option ?selected=${!propertyValue}>${propertySchema.label ?? 'Choose your option'}</option>
+      <option ?selected=${!propertyValue}>${inputTitle ?? ''}</option>
       ${Object.entries(propertySchema.options ?? {})
         ?.map(([value, name]) =>
           html`<option ?selected=${propertyValue === value} value=${value}>${name}</option>`
@@ -638,6 +658,7 @@ export class DynamicTableFormElement extends LivechatElement {
   _renderImageFileInput = (rowId: number,
     inputId: string,
     inputName: string,
+    inputTitle: string | DirectiveResult | undefined,
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: string,
@@ -647,6 +668,7 @@ export class DynamicTableFormElement extends LivechatElement {
       .name=${inputName}
       class=${classMap(this._getInputValidationClass(propertyName, originalIndex))}
       id=${inputId}
+      .inputTitle=${inputTitle as any}
       aria-describedby="${inputId}-feedback"
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue}
