@@ -1,16 +1,13 @@
-/*
- * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
- *
- * SPDX-License-Identifier: AGPL-3.0-only
- */
+<style>
 
 :root {
   /* more contrast than the default theme. */
   --MAIN-TEXT-color:#000; /* Color of text by default */
   --MAIN-TITLES-TEXT-color: #222; /* Color of titles h2-h3-h4-h5 */
+  --MAIN-TITLES-H1-color: #222; /* text color of h1 titles */
   --MAIN-LINK-color:#f31c1c; /* Color of links */
   --MAIN-LINK-HOVER-color:#d01616; /* Color of hovered links */
-  --MAIN-ANCHOR-color: #f31c1c; /* color of anchors on titles */
+  /* --MAIN-BG-color: rgba( 255, 255, 255, 1 ); /* color of text by default */
 
   --MENU-HOME-LINK-color: #fff; /* Color of the home button text */
   --MENU-HOME-LINK-HOVER-color: #e6e6e6; /* Color of the hovered home button text */
@@ -18,9 +15,9 @@
   --MENU-HEADER-BG-color:#dc1010; /* Background color of menu header */
   --MENU-HEADER-BORDER-color:#e23131; /*Color of menu header border */
 
+  --MENU-SEARCH-color: #fab0b0; /* Override search field icons color */
   --MENU-SEARCH-BG-color:#b90000; /* Search field background color (by default borders + icons) */
-  --MENU-SEARCH-BOX-color: #ef2020; /* Override search field border color */
-  --MENU-SEARCH-BOX-ICONS-color: #fab0b0; /* Override search field icons color */
+  --MENU-SEARCH-BORDER-color: #ef2020; /* Override search field border color */
 
   --MENU-SECTIONS-ACTIVE-BG-color:#2b2020; /* Background color of the active section and its childs */
   --MENU-SECTIONS-BG-color:#312525; /* Background color of other sections */
@@ -30,7 +27,7 @@
   --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
 
   --MENU-VISITED-color: #ff3333; /* Color of 'page visited' icons in menu */
-  --MENU-SECTION-HR-color: #2b2020; /* Color of <hr> separator in menu */
+  --MENU-SECTION-SEPARATOR-color: #2b2020; /* Color of <hr> separator in menu */
 }
 
 div.notices p {
@@ -43,8 +40,10 @@ div.notices p {
  So we will underline links, and let the a.highlight animation double underline on hovering.
  Si hugo-theme.css, a.highlight, for more information on about it is done.
  */
-#body a.highlight,
-#body a.highlight:hover,
-#body a.highlight:focus {
+body a.highlight,
+body a.highlight:hover,
+body a.highlight:focus {
   text-decoration: underline;
 }
+
+</style>

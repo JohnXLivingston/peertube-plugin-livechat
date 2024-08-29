@@ -1,3 +1,8 @@
+---
+title: "Peertube livechat"
+description: "Peertube plugin livechat documentation"
+---
+
 # PeerTube plugin livechat
 
 {{% notice tip %}}

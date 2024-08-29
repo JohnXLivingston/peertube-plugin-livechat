@@ -2,6 +2,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
-[submodule "documentation/themes/hugo-theme-learn"]
-	path = support/documentation/themes/hugo-theme-learn
-	url = https://github.com/matcornic/hugo-theme-learn.git
+[submodule "support/documentation/themes/hugo-theme-relearn"]
+	path = support/documentation/themes/hugo-theme-relearn
+	url = https://github.com/McShelby/hugo-theme-relearn.git

@@ -17,7 +17,10 @@ The documentation source code is in the `support/documentation/content` folder.
 The documentation is generated using [Hugo](https://gohugo.io/).
 You have to install it on your computer if you want to preview your work.
 
-The used theme is [hugo-theme-learn](https://learn.netlify.app/).
+The minimum required version for Hugo is 0.121.0.
+It was tested using version 0.132.2.
+
+The used theme is [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).
 You should read its documentation before starting editing the documentation.
 
 When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.
