@@ -541,7 +541,8 @@ chat_terms_description: "Ces conditions d'utilisation seront affichées à tous 
   utilisateur⋅rices lorsqu'iels rejoindront les salons de discussion.\nLes streameur⋅euses
   peuvent également configurer des conditions d'utilisation pour leurs canaux, qui
   seront affichées juste après les conditions de l'instance.\n"
-livechat_configuration_channel_terms_label: Conditions d'utilisation tchat de la chaîne
+livechat_configuration_channel_terms_label: Conditions d'utilisation du tchat de la
+  chaîne
 livechat_configuration_channel_terms_desc: "Vous pouvez configurer un message de \"\
   conditions d'utilisation\" qui sera affiché aux utilisateur⋅rices qui rejoignent
   vos salons de discussion.\n"
@@ -595,3 +596,27 @@ message_search: Recherche de messages
 search_occupant_message: Rechercher tous les messages
 message_search_original_nick: Pseudonyme du participant⋅e au moment de l'envoi du
   message
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+  \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Configurer mod_firewall</a>\n"
+prosody_firewall_configuration: Configuration de mod_firewall pour Prosody
+prosody_firewall_label: Activer mod_firewall pour Prosody
+prosody_firewall_description: "Vous pouvez activer <a href=\"https://modules.prosody.im/mod_firewall\"\
+  \ target=\"_blank\">mod_firewall</a> sur votre serveur Prosody.\nPour plus d'informations,
+  veuillez consulter <a href=\"https://livingston.frama.io/peertube-plugin-livechat/fr/documentation/admin/mod_firewall/\"\
+  \ target=\"_blank\">la documentation</a>.\n"
+prosody_firewall_configuration_help: "Ici vous pouvez configurer le module Prosody
+  <a href=\"https://modules.prosody.im/mod_firewall\" target=\"_blank\">mod_firewall</a>.\n
+  Vous pouvez créer plusieurs fichiers de configuration ci-dessous, et changer leur
+  ordre.\nN'hésitez pas à partager vos configurations avec la communauté (par exemple
+  en ajoutant des exemples dans la documentation du plugin).\n"
+prosody_firewall_disabled_warning: "Attention : mod_firewall est désactivé dans les
+  <a href=\"/admin/plugins/show/peertube-plugin-livechat\" target=\"_blank\">paramètres
+  du plugin livechat</a> , vous devez l'activer si vous voulez que cette configuration
+  soit prise en compte.\n"
+prosody_firewall_file_enabled: Activé
+prosody_firewall_name: Nom
+prosody_firewall_name_desc: "Ne peut contenir que des caractères alphanumériques,
+  des traits de soulignement et des traits d'union.\nLes scripts seront chargés par
+  ordre alphabétique.\n"
+prosody_firewall_content: Contenu du fichier
+chat: Tchat

@@ -231,3 +231,148 @@ external_auth_custom_oidc_description: "チャットへのログインに、外�
 external_auth_custom_oidc_button_label_description: このラベルは、OIDCプロバイダーを使用して認証するボタン名としてユーザーに表示されます。
 copied: コピーしました
 chat_terms_label: 利用規約
+tasks: タスク
+task_list_create: '新規タスクリストを作成:'
+task_list_name: タスクリスト名
+task_list_create_error: タスクリストを保存中にエラーが発生しました
+task_delete_confirm: このタスクを削除してもよろしいですか？
+task_delete: タスクを削除
+external_auth_oidc_redirect_uris_info_description: "<strong>Callback/Redirect URI:</strong>\n\
+  外部アプリケーション上に認証されたリダイレクションURIを設定したい場合は、このURLを追加してください:\n"
+external_auth_google_oidc_label: Googleを使用
+login_using_external_account: 外部アカウントを使用してログイン
+login_remote_peertube: 'ほかのPeerTubeインスタンスのアカウントを使用してログイン:'
+login_remote_peertube_url: あなたのPeerTubeインスタンスURL
+login_remote_peertube_url_invalid: 無効なPeerTube URLです。
+login_remote_peertube_no_livechat: このPeerTubeインスタンスには、ライブチャットプラグインがインストールされていません。
+login_remote_peertube_video_not_found_try_anyway_button: PeerTubeインスタンスで動画を開く
+livechat_configuration_channel_anonymize_moderation_label: モデレーション操作を匿名か
+moderator_notes_create_error: ノートを保存中にエラーが発生しました
+moderator_note_create: 新規ノートを作成
+moderator_note_description: 概要
+moderator_note_delete: ノートを削除
+moderator_note_delete_confirm: このノートを削除してもよろしいですか？
+moderator_note_create_for_participant: 新規ノートを作成
+moderator_note_filters: フィルタ検索
+moderator_note_original_nick: ノート作成時の参加者のニックネーム
+prosody_c2s_interfaces_label: クライアントとサーバー間のネットワークインタフェース
+login_remote_peertube_video_not_found: この動画はこのPeerTubeインスタンス上では利用できません。
+avatar_set_option_none: なし
+validation_error: 検証中にエラーが発生しました。
+invalid_value_missing: この項目は必須です。
+invalid_value_wrong_type: 誤った形式の値です。
+too_many_entries: エントリーが多すぎます
+chatroom_not_accessible: このチャットルームは存在しないか、アクセス権限がありません。
+login_remote_peertube_searching: PeerTubeインスタンス上の動画を検索中...
+login_remote_peertube_video_open_failed: 'お使いのブラウザーはリモートインスタンスを開くことがブロックされています。このリンクを手動で開いてください:'
+task_list_delete: タスクリストを削除
+task_list_delete_confirm: このタスクリストを削除してもよろしいですか？
+task_create: 新規タスクを作成
+task_name: タスク名
+task_list_pick_title: タスクリストを選択してください
+livechat_emojis_shortname: 短縮名
+livechat_emojis_shortname_desc: "チャット上で、絵文字を\":shortname:\"で使用できます。\n短縮名は、先頭と末尾にコロン(:)があり、英数字、アンダーバー、ハイフンのみが含まれている必要があります。\n\
+  自動補完(\":\"を入力後、Tabキーを押下)を利用できるようコロンから入力することを強くお勧めします。\n"
+livechat_emojis_file: ファイル
+promote: モデレーターにする
+livechat_emojis_file_desc: "絵文字に使用するファイルです。\n"
+action_import: インポート
+action_export: エクスポート
+action_import_emojis_info: インポートしたデータが問題ない場合、フォームを保存することを忘れないでください。
+action_remove_entry: このエントリーを削除
+action_remove_entry_confirm: このエントリーを削除してもよろしいですか？
+loading_error: データの読み込み中にエラーが発生しました。
+share_chat_embed: 埋め込み
+share_chat_peertube_tips: このリンクで、PeerTubeインスタンス内でチャットが開きます。
+token_password: パスワードトークン
+token_date: 日付
+token_action_create: 新規トークンを作成
+token_action_revoke: トークンを無効化
+token_default_label: Web UIから生成されたトークン
+livechat_token_disabled_description: "ユーザーはチャットに接続するための長期的なトークンを生成できます。\nこれらのトークンは、OBSのカスタムブラウザドックなどで使用できます。\n
+  詳細は、<a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/user/obs\"\
+  \ target=\"_blank\">ドキュメント</a>をご確認ください。\nこの設定にチェックをつけることで、この機能を無効にできます。\n"
+muted_anonymous_message: 登録済みユーザーのみがメッセージを送信できます。
+livechat_configuration_channel_mute_anonymous_label: 匿名ユーザーをミュート
+livechat_configuration_channel_mute_anonymous_desc: "新規チャットルームのデフォルト値です。\n既存のチャットルームは、ルーム設定フォーム内の機能で変更できます。\n\
+  この設定が有効の場合、匿名ユーザーはチャットは閲覧のみ可能で、メッセージの送信はできません。\n"
+livechat_configuration_channel_terms_label: チャンネルのチャットルームの利用規約
+livechat_configuration_channel_terms_desc: "ユーザーがチャットルームに参加する際に表示される\"利用規約\"メッセージを設定します。\n"
+new_poll: 新規投票を作成
+poll: 投票
+poll_title: 新規投票
+poll_instructions: 投票を作成するには、内容を設定して送信してください。既存の投票は終了し、この投票で置き換えられます。
+poll_question: 質問
+poll_duration: 投票期間 (分)
+poll_anonymous_results: 匿名の結果
+poll_choice_n: '選択肢 {{N}}:'
+poll_end: '投票は次で終了:'
+poll_vote_instructions: '投票するには、選択肢をクリックするか、感嘆符(!)を付与した後に選択肢番号を入力してメッセージを送信してください（例:
+  !1）。'
+poll_vote_instructions_xmpp: '投票するには、感嘆符(!)を付与した後に選択肢番号を入力してメッセージを送信してください。例: !1'
+poll_is_over: この投票は終了しました。
+poll_vote_ok: あなたの投票は受け付けられ、まもなくカウンターが更新されます。
+moderation_delay: モデレーションの遅延時間
+livechat_configuration_channel_moderation_delay_desc: "モデレーションの遅延時間のデフォルト値:\n<ul>\n\
+  \  <li>0: モデレーション遅延無効</li>\n  <li>任意の整数値n: モデレーター以外の参加者からのメッセージはn秒後に表示されるようになり、モデレーターはメッセージが他の参加者に読まれる前に削除することができます。</li>\n\
+  </ul>\n"
+livechat_configuration_channel_forbidden_words_label_label: ラベル
+livechat_configuration_channel_forbidden_words_label_desc: この禁止語規則のラベル
+login_remote_peertube_video_not_found_try_anyway: 場合によっては、外部インスタンスに接続できれば動画を取得できることがあります。
+login_external_auth_alert_message: 認証に失敗しました
+invalid_value_not_in_range: 値が許可された範囲にありません。
+search_occupant_message: 全てのメッセージを検索
+message_search: メッセージ検索
+chat_terms_description: "この利用規約はチャットルームに参加する際に全てのユーザーに表示されます。\n配信者はこの利用規約に加えて、チャンネル独自の利用規約を設定できます。チャンネル独自の利用規約は全てのユーザー向けの利用規約の右側に表示されます。\n"
+invalid_value_too_long: 値が大きすぎます
+moderator_notes: モデレーションノート
+moderator_note_search_for_participant: ノートを検索
+message_search_original_nick: メッセージ送信時の参加者のニックネーム
+prosody_firewall_label: Prosody mod_firewallを有効にする
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+  \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">mod_firewallを設定</a>\n"
+prosody_firewall_file_enabled: 有効
+prosody_firewall_name: 名前
+prosody_firewall_name_desc: "次の値のみ利用可能: 英数字、アンダーバー、ハイフン。\nスクリプトは、英字順で読み込まれます。\n"
+prosody_firewall_content: ファイルコンテンツ
+token_label: ラベル
+task_description: 概要
+livechat_configuration_channel_emojis_title: チャンネルの絵文字
+invalid_value_file_too_big: 'ファイルサイズが大きすぎます(最大ファイルサイズ: %s)。'
+action_add_entry: エントリーを追加
+share_chat_dock: ドック
+livechat_token_disabled_label: ライブチャットトークンを無効化
+token_action_revoke_confirm: 子のトークンを無効化してよろしいですか？
+auth_description: "<h3>認証</h3>\n"
+poll_choice_invalid: この選択肢は無効です。
+poll_anonymous_vote_ok: あなたの投票を受け付けました。投票は匿名で行われ、他の参加者には表示されません。
+task_list_pick_message: "タスクリストを選択すると、新しいタスクが作成されます。\nタスクを確認するには、トップメニューからタスクアプリケーションを開いてください。\n\
+  詳細については、ライブチャットプラグインのドキュメントを参照してください。\n"
+share_chat_dock_tips: "チャットページを新規ページかつPeerTubeアカウントにログインした状態で開くリンクを生成できます。\n例えばこのリンクをOBSのカスタムブラウザドックに設定し、OBS上から直接チャットを読んだり、反応することができるようになります。\n\
+  このリンクは、あなた自身として接続するため、外部には絶対に公開しないでください。\n既に生成した認証トークンのリストを以下から見つけてください。\n新しいトークンを生成したり、既に生成済みのトークンを無効化できます。\n\
+  これらのトークンには有効期限はありません。\n"
+livechat_configuration_channel_anonymize_moderation_desc: "新しいルームに対するモデレーションアクションの匿名化をデフォルトにします。
+  \nこれを有効にすると、誰がユーザーを追放、キックなどのモデレーションアクションを実施したのかを匿名化します。\n"
+prosody_firewall_description: "お使いのProsodyサーバーの<a href=\"https://modules.prosody.im/mod_firewall\"\
+  \ target=\"_blank\">mod_firewall</a>を有効にできます。\n詳しくは、<a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/\"\
+  \ target=\"_blank\">ドキュメント</a>をご確認ください。\n"
+prosody_firewall_configuration: Prosody mod_firewallの設定
+prosody_firewall_configuration_help: "ここでProsody <a href=\"https://modules.prosody.im/mod_firewall\"\
+  \ target=\"_blank\">mod_firewall</a>モジュールの設定が可能です。\n複数の設定ファイルを作成し、以下から順番を変更できます。\n\
+  最適な設定が出来たら、コミュニティメンバーと設定を共有してみてください（プラグインドキュメントに掲載させていただくこともあります）。\n"
+prosody_firewall_disabled_warning: "警告: mod_firewallは、ライブチャットの<a href=\"/admin/plugins/show/peertube-plugin-livechat\"\
+  \ target=\"_blank\">プラグイン設定</a>で無効になっており、この設定を反映するには、機能を有効にする必要があります。\n"
+task_list_pick_empty: タスクリストが存在しません。新規作成してください
+external_auth_facebook_oidc_label: Facebookを使用
+external_auth_facebook_oidc_description: "有効にすると\"Facebookでログイン\"ボタンを追加します。\nFacebook
+  OAuthアプリケーションの設定が必要です。\n"
+external_auth_google_oidc_description: "有効にすると\"Googleでログイン\"ボタンを追加します。\nGoogle OAuthアプリケーションの設定が必要です。\n"
+prosody_c2s_interfaces_description: "クライアントとサーバー間接続のためにリッスンするネットワークインターフェイスです。<br>\n\
+  この設定は、より高度な設定が可能なユーザー向けに提供されています。設定内容を完全に理解できていない場合は変更しないでください。<br>\nリッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。<br>\n\
+  «*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。<br>\n例:\n<ul>\n  <li>*,
+  ::</li>\n  <li>*</li>\n  <li>127.0.0.1, ::1</li>\n  <li>127.0.0.1, ::1, 172.18.0.42</li>\n\
+  </ul>\n"
+invalid_value_wrong_format: 誤ったフォーマットの値です。
+invalid_value_duplicate: 重複した値です
+livechat_configuration_channel_emojis_desc: "チャンネルのカスタム絵文字を設定できます。\nこれらの絵文字は、絵文字ピッカーから利用できます。\n\
+  絵文字は、短縮名でも使用できます。（例えば\":shortname:\"）\n"
