@@ -29,3 +29,67 @@ use_current_theme_color: استخدم ألوان الحلة الحالية
 connect_using_xmpp: للاتصال عبر XMPP
 important_note_title: <h3>ملاحظات هامة</h3>
 chat_title: <h3>الدردشة</h3>
+moderator_note_delete: حذف الملاحظة
+task_list_name: اسم قائمة المهام
+tasks: المهام
+avatar_set_option_cat: قطط
+avatar_set_option_bird: عصافير
+avatar_set_label: مجموعة الصور الرمزية
+system_prosody_label: استخدم خدمة Prosody المثبتة على النظام
+menu_configuration_label: غرف المحادثات
+livechat_configuration_channel_command_label: سطر أوامر الروبوت
+livechat_configuration_channel_command_cmd_label: سطر الأمر
+moderator_note_description: الوصف
+moderator_notes: ملاحظات الإشراف
+moderator_note_filters: عوامل تصفية البحث
+livechat_configuration_channel_forbidden_words_label_label: الملصقة
+avatar_set_option_none: لا شيء
+successfully_saved: تم الحفظ بنجاح
+livechat_configuration_channel_slow_mode_label: الوضع البطيء
+livechat_configuration_channel_forbidden_words_reason_label: السبب
+livechat_configuration_channel_bot_options_title: خيارات روبوت الإشراف
+livechat_configuration_channel_forbidden_words_comments_label: التعليقات
+livechat_configuration_channel_command_message_label: رسالة
+livechat_configuration_channel_bot_nickname: الاسم المستعار للروبوت
+task_name: اسم المهمة
+task_list_delete: حذف قائمة المهام
+livechat_emojis_shortname: الإسم القصير
+livechat_emojis_file: الملف
+livechat_emojis_file_desc: "ملف الوجوه التعبيرية.\n"
+share_chat_embed: الإدماج
+action_remove_entry: احذف هذا الإدخال
+poll: استطلاع رأي
+message_search: البحث عن رسائل
+search_occupant_message: البحث عن كل الرسائل
+livechat_configuration_channel_title: خيارات القناة
+moderator_note_search_for_participant: البحث عن ملاحظة
+copied: تم نسخه
+token_label: ملصقة
+autocolors_label: استكشاف تلقائي للألوان
+show_scrollbarr: إظهار شريط التمرير
+livechat_configuration_channel_emojis_title: الوجوه التعبيرية الخاصة بالقناة
+poll_choice_n: 'الخيار {{N}}:'
+poll_end: 'ينتهي استطلاع الرأي :'
+chat: المحادثة
+livechat_configuration_channel_quote_label2: الرسائل
+task_description: الوصف
+action_import: استيراد
+action_export: تصدير
+token_date: التاريخ
+poll_question: سؤال
+prosody_firewall_file_enabled: مفعّل
+prosody_firewall_name: الاسم
+invalid_value: القيمة غير صالحة.
+task_delete: حذف المهمة
+poll_title: استطلاع رأي جديد
+prosody_firewall_content: محتوى الملف
+livechat_configuration_channel_enable_bot_label: تفعيل روبوت الإشراف
+action_add_entry: إضافة إدخال
+cancel: ألغِ
+save: حِفْظ
+external_auth_google_oidc_label: استخدم جوجل
+external_auth_facebook_oidc_label: استخدم فايسبوك
+chat_terms_label: شروط الاستخدام
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >قائمة الغرف</a>\n"
+online_help: المساعدة على الويب
