@@ -23,7 +23,7 @@ Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/
 
 You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat.
 
-![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
+![Screenshot of the dropdown menu at the top of the chat. Several entries are available.](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px "Chat menu")
 
 {{% notice tip %}}
 The video owner will be owner of the chat room.
@@ -50,11 +50,11 @@ You can prevent anonymous users to send messages. In such case, only registered 
 To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the "configure" menu.
 In the form, you will find a "{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}" checkbox.
 
-![Room configuration / Mute anonymous users](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px)
+![Screenshot of the room configuration form. There is a "{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}" checkbox.](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px "Room configuration / Mute anonymous users")
 
 Anonymous users won't have the message field, and will see following prompt: "{{% livechat_label muted_anonymous_message %}}"
 
-![Room configuration / Muted anonymous users](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px)
+![Screenshot of a chat session. The current user has no message field. There is a message: "{{% livechat_label muted_anonymous_message %}}"](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px "Room configuration / Muted anonymous users")
 
 When this feature is enabled, anonymous users will be assigned the "visitor" role.
 You can change their role to "participant" if you want to allow some of them to talk.
@@ -99,7 +99,7 @@ To do so, you have several ways:
 * using the "{{% livechat_label search_occupant_message %}}" action in the dropdown menu besides participants in the sidebar
 * using the "{{% livechat_label search_occupant_message %}}" action in the dropdown menu besides chat messages
 
-![Message history search](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px)
+![Screenshot of a chat session. The moderator has open the message menu, and there is a "{{% livechat_label search_occupant_message %}}" button.](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px "Message history search")
 
 {{% notice tip %}}
 To have more space and better readability, open the chat in full-page mode.

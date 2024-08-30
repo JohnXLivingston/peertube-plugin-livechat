@@ -12,18 +12,18 @@ In the current page, you will find some advices to handle your live chats using 
 
 You can easily include the chat in your video stream.
 
-![Embeding the chat in a live stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube live, replay, with the chat included at the bottom of the video stream.](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px "Embeding the chat in a live stream")
 
 You can use the "{{% livechat_label share_chat_link %}}" feature to generate an URL to your chat.
 This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
 
 Check the "{{% livechat_label read_only %}}" checkbox in the modal.
 
-![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)
+![Screenshot of the "{{% livechat_label share_chat_link %}}" dialog, where the "{{% livechat_label read_only %}}" option is checked.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px "Share link popup")
 
 Then use this link as a "web browser source" in OBS.
 
-![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)
+![Screenshot of the OBS software, where the chat was added as web browser source.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px "Embeding the chat in OBS")
 
 You can use the "{{% livechat_label transparent_background %}}" option to have a transparent background in OBS.
 If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:
@@ -56,17 +56,17 @@ The livechat plugin offers a way to create long term token that can identify you
 To do so, just use the "{{% livechat_label share_chat_link %}}" feature, and open the "{{% livechat_label share_chat_dock %}}" tab.
 From there, you can create a new token using the "+" button.
 
-![Share link popup - dock tab](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px)
+![Screenshot of the "{{% livechat_label share_chat_link %}}" dialog, on the "{{% livechat_label share_chat_dock %}} tab. A token was generated, and is selectionable."](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px "Share link popup - dock tab")
 
 Then, copy the url, and use the "Docks / Custom browser docks" menu from your OBS to add a dock with this URL.
 
-![OBS - Dock menu](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px)
+![Screenshot of the OBS Dock menu, with a "Custom Browser Docks" entry.](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px "OBS - Dock menu")
 
-![OBS - Dock dialog](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px)
+![Screenshot of the OBS Custom Browser Docks dialog, with a new dock called "My chat".](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px "OBS - Dock dialog")
 
 Once you have done, you will have a new dock connected to the chat with your account.
 
-![OBS - Dock](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px)
+![Screenshot of OBS with a new dock including the chat. The user is logged in with their Peertube account, and can chat directly from OBS.](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px "OBS - Dock")
 
 {{% notice tip %}}
 Tokens are valid to join any chat room. You don't have to generate separate tokens for each of your rooms.

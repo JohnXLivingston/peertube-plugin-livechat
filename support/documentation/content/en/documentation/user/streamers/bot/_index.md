@@ -12,7 +12,7 @@ This feature comes with the livechat plugin version 8.0.0, and can be disabled b
 You can enable a chat bot on your chatrooms.
 The bot configuration is made channel per channel, and will apply to all related videos' chatrooms.
 
-![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)
+![Screenshot of the channel options. There is a form with multiple fields.](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px "Channel configuration")
 
 To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel).
 

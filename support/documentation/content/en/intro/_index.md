@@ -13,14 +13,14 @@ By default, once you have installed the plugin on your Peertube instance, a chat
 
 On the following screenshot, you can see a classic Peertube video page, with a chat room on the right (click on the picture to view it full screen):
 
-![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube video page, with a web chat on the right of the video.](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px "Chat screenshot")
 
 The chat room will be accessible for all viewers, even those who don't have an account on your instance. Those "anonymous" users just have to choose a nickname before they can begin talking in the chat.
 
 By default, the chat is displayed next to the video.
 But you can open it in another browser tab, using the button on top of it :
 
-![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)
+![Screenshot of a chat using the full web page.](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px "Fullscreen chat screenshot")
 
 {{% notice tip %}}
 You can test the livechat plugin with this [demo page](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).
@@ -31,7 +31,7 @@ You can test the livechat plugin with this [demo page](https://www.yiny.org/w/39
 As a Peertube administrator, you can setup this plugin on your instance simply by using the Peertube plugin marketplace included in the administration interface.
 Search for "livechat", then click "install": that's it!
 
-![Livechat installation](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)
+![Screenshot of Peertube plugins admin page. The search fields contains "livechat", and the search results show the livechat plugin.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px "Livechat installation")
 
 ## Livechat capabilities
 
@@ -76,11 +76,11 @@ This is for example useful for replays.
 
 In the following screenshot, you can see a live replay, where the chat content is embeded on bottom of the video:
 
-![Embeding the chat in a live stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube live, replay, with the chat included at the bottom of the video stream.](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px "Embeding the chat in a live stream")
 
 In the following screenshot, you can see an OBS setup, where the chat is included as a source in the current scene (background color can be changed, and can be transparent):
 
-![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)
+![Screenshot of the OBS software, where the chat was added as web browser source.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px "Embeding the chat in OBS")
 
 ## Other usages
 

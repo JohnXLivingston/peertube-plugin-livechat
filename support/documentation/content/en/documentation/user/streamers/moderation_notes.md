@@ -26,15 +26,15 @@ You can for example use this Application to:
 
 To open the Moderator Notes Application, there is a "{{% livechat_label "moderator_notes" %}}" button in the top chat menu:
 
-![Opening the Moderator Notes Application](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a "{{% livechat_label "moderator_notes" %}}" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px "Opening the Moderator Notes Application")
 
-![Opening the Moderator Notes Application](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a "{{% livechat_label "moderator_notes" %}}" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px "Opening the Moderator Notes Application")
 
 Clicking this button will toggle the Application display:
 
-![Moderator Notes Application](/peertube-plugin-livechat/images/moderator_notes_app_video_1.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube video, with the chat on the right. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_video_1.png?classes=shadow,border&height=200px "Moderator Notes Application")
 
-![Moderator Notes Application](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube chat, fullscreen. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px "Moderator Notes Application")
 
 {{% notice tip %}}
 To have more space and better readability, open the chat in full-page mode.
@@ -88,7 +88,7 @@ You can filter notes to find all notes related to a given participant in several
 
 You can remove the filter by clicking on the close button.
 
-![Moderator Notes Application - filtering](/peertube-plugin-livechat/images/moderation_notes_filters.png?classes=shadow,border&height=200px)
+![Screenshot of the note application, with a filter enabled for user "Mike". The only notes that are shown are the notes for the Mike user.](/peertube-plugin-livechat/images/moderation_notes_filters.png?classes=shadow,border&height=200px "Moderator Notes Application - filtering")
 
 When you filters notes on a participant, there are several informations that are shown at the right of the participant nickname:
 

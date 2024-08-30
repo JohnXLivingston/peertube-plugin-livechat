@@ -26,7 +26,7 @@ This limitation does not apply to moderators.
 
 On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:
 
-![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)
+![Screenshot of the channel options form, with a slow mode field.](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px "Channel configuration / Slow Mode")
 
 This value will apply as a default value for all your channel's chatrooms.
 
@@ -40,7 +40,7 @@ To modify the value for an already existing room, just open the room "configurat
 
 If the slow mode is enabled, users will be informed by a message.
 
-![Slow mode infobox](/peertube-plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px)
+![Screenshot of a chat session. There is a banner on the bottom of the chat, indicating that the slow mode is enabled, and that users can send a message every 2 seconds.](/peertube-plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px "Slow mode infobox")
 
 When they send a message, the input field will be disabled for X seconds (where X is the slow mode duration).
 

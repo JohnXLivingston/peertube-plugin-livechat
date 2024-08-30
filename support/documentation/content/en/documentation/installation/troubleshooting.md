@@ -15,11 +15,11 @@ If the chat does not work, there is a diagnostic tool in the plugin's settings p
 
 Open the plugin settings, and click on the "launch diagnostic" button.
 
-![Launch diagnostic](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px)
+![Screenshot of the plugin's settings page, with a "launch diagnostic" button.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px "Launch diagnostic")
 
 If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the [Bug tracking documentation page](/peertube-plugin-livechat/issues/) if you can't find any response.
 
-![Diagnostic result](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px)
+![Screenshot of the diagnostic result page. This gives a lot of information, with status for different test suites.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px "Diagnostic result")
 
 ## Chat does not load
 

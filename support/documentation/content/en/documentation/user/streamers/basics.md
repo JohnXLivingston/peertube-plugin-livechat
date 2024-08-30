@@ -14,12 +14,12 @@ Information in this section are only true in the default case.
 
 When you create or modify a Peertube live, there is a "plugin settings" tab:
 
-![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)
+![Screenshot of the Peertube new live form.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px "New live")
 
 In the "plugin settings" tab, there is a "{{% livechat_label use_chat %}}" checkbox.
 Just check or uncheck it to enable or disable the chat associated to your video.
 
-![Activate the chat](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)
+![Screenshot of the form, with a "{{% livechat_label use_chat %}}" checkbox.](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px "Activate the chat")
 
 {{% notice tip %}}
 There can be other settings in this tab, depending on plugins installed on your Peertube instance.
@@ -39,7 +39,7 @@ This url can be shared.
 
 The "{{% livechat_label share_chat_embed %}}" tab provide some links to embed the chat in websites, or in your live stream.
 
-![Share link popup](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px)
+![Screenshot of the "{{% livechat_label share_chat_link %}}" dialog, where the "{{% livechat_label read_only %}}" option is checked.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px "Share link popup")
 
 You can customize some options:
 
@@ -49,19 +49,19 @@ You can customize some options:
 
 For more information on the "{{% livechat_label share_chat_dock %}}" tab, check the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs).
 
-![Share link popup - dock tab](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px)
+![Screenshot of the "{{% livechat_label share_chat_link %}}" dialog, on the "{{% livechat_label share_chat_dock %}} tab. A token was generated, and is selectionable."](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px "Share link popup - dock tab")
 
 In the "{{% livechat_label web %}}" tab, the provided url opens the chat in the Peertube interface.
 You can share this link to other users to invite them to join the chat.
 
-![Share link popup - web tab](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px)
+![Screenshot of the "{{% livechat_label share_chat_link %}}" dialog, on the "{{% livechat_label web %}} tab. There is a url you can copy.](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px "Share link popup - web tab")
 
 The "{{% livechat_label share_chat_link %}}" popup can also contain a "{{% livechat_label connect_using_xmpp %}}" tab.
 This will only be available if your instance's administators have enabled an correctly configured this option.
 Using this option, you can provide a link to join the chat using any [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).
 Using such softwares can for example facilitate moderation actions.
 
-![Share link popup - xmpp tab](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)
+![Screenshot of the "{{% livechat_label share_chat_link %}}" dialog, on the "{{% livechat_label connect_using_xmpp %}}" tab.](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px "{{% livechat_label connect_using_xmpp %}}")
 
 ## Moderation
 
@@ -80,11 +80,11 @@ User joining will see messages posted before their arrival.
 You can change the persistence behaviour.
 [Open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), and click on "Configure".
 
-![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)
+![Screenshot of the dropdown menu at the top of the chat. Several entries are available.](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px "Chat menu")
 
 There are several options that can be changed.
 
-![Configure chat room](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)
+![Screenshot of the chat configuration form.](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px "Configure chat room")
 
 You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message.
 

@@ -7,9 +7,9 @@ chapter: false
 
 {{% livechat_label livechat_configuration_channel_forbidden_words_desc %}}
 
-![Forbidden words configuration](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)
+![Screenshot of the channel options page, with several fields to configure the forbidden words.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px "Forbidden words configuration")
 
-![Deleted message](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)
+![Screenshot of a chat message that was deleted, with the following reason: "No url allowed".](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px "Deleted message")
 
 You can fill several "{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}" fields.
 When a user sends a message that match the configured criteria, the message will automatically be deleted.

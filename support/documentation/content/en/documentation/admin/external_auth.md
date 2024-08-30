@@ -14,9 +14,9 @@ Such "external account users" will be easier to moderate than anonymous accounts
 
 This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval).
 
-![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube video page, with a chat on the right. At the bottom of the chat, there is a "{{% livechat_label login_using_external_account %}}" button.](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px "{{% livechat_label login_using_external_account %}} button")
 
-![External login dialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)
+![Screenshot of a dialog with an "OpenID Connect" button.](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px "External login dialog - OpenID Connect")
 
 This page will describe available authentication methods.
 
@@ -49,7 +49,7 @@ You will now have to fill some settings.
 
 This is the button label in the following screenshot:
 
-![External login dialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)
+![Screenshot of a dialog with an "OpenID Connect" button.](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px "External login dialog - OpenID Connect")
 
 For now, it is not possible to localize this label.
 

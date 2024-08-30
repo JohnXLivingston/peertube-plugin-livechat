@@ -22,7 +22,7 @@ Please note that messages sent by moderators will also be delayed, to avoid them
 
 On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the "{{% livechat_label moderation_delay %}}" option:
 
-![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)
+![Screenshot of the channel option form, with a field to configure the moderation delay.](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px "Channel configuration / Moderation delay")
 
 This value will apply as a default value for all your channel's chatrooms.
 
@@ -47,4 +47,4 @@ You can combine a short [moderation delay](/peertube-plugin-livechat/documentati
 
 As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime.
 
-![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)
+![Screenshot of a chat message. A timer is displayed next to the message datetime. The timer is in seconds.](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border "Moderation delay timer")

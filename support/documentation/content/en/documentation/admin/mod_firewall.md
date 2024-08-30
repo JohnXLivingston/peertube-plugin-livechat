@@ -27,7 +27,7 @@ First, you must enable the feature in the [plugin settings](/peertube-plugin-liv
 Just bellow the settings, you will find a "Configure mod_firewall" button.
 This button will open a configuration page.
 
-![Mod_firewall configuration](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px)
+![Screenshot of the "{{% livechat_label prosody_firewall_configuration %}}" form.](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px "{{% livechat_label prosody_firewall_configuration %}}")
 
 Here you can add several configuration files.
 

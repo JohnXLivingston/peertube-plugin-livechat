@@ -29,7 +29,7 @@ chats using any XMPP account.
 To get the address of the room you want to join, you can use the "share chat"
 button that is located above the chat:
 
-![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)
+![Screenshot of the chat, with a share button on the top.](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px "Share button")
 
 {{% notice info %}}
 By default, the share button is only visible to the owner of the video,
@@ -37,9 +37,9 @@ and the admins/moderators of the instance.
 However, admins can decide to display this button for everyone.
 {{% /notice %}}
 
-Then, choose "Connect using XMPP":
+Then, choose "{{% livechat_label connect_using_xmpp %}}":
 
-![Share XMPP](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)
+![Screenshot of the "{{% livechat_label share_chat_link %}}" dialog, on the "{{% livechat_label connect_using_xmpp %}}" tab.](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px "{{% livechat_label connect_using_xmpp %}}")
 
 Then you just have to click on "open" or copy/paste the address of the chat room into your XMPP client
 (using the "join a room" feature).

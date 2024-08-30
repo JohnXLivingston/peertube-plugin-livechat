@@ -16,7 +16,7 @@ These terms will be shown to all users joining the chat.
 
 To configure the terms & conditions, go to the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel):
 
-![Channel configuration / Terms](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px)
+![Screenshot of the channel options form, with a field to configure your terms and conditions.](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px "Channel configuration / Terms")
 
 URL in the message will be clickable.
 You can also do some styling: [Message Styling](https://xmpp.org/extensions/xep-0393.html).
@@ -25,7 +25,7 @@ You can also do some styling: [Message Styling](https://xmpp.org/extensions/xep-
 
 When joining the chat, viewers will see the terms:
 
-![Terms](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px)
+![Screenshot of a chat session. On the top of the chat, there are terms and conditions for both the server and the channel.](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px "Terms")
 
 {{% notice info %}}
 Peertube instance's admin can also set global terms & conditions.

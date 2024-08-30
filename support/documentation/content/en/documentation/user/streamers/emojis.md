@@ -15,11 +15,11 @@ Streamers can add custom emojis to their channels.
 
 On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the "{{% livechat_label livechat_configuration_channel_emojis_title %}}" tab:
 
-![Channel configuration / Channel emojis configuration](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)
+![Screenshot of the emoji configuration page. There is a form where you can add new emojis.](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px "Channel configuration / Channel emojis configuration")
 
 {{% livechat_label livechat_configuration_channel_emojis_desc %}}
 
-![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)
+![Screenshot of a chat session, with messages containing custom emojis. The emoji picker is open, and shows custom emojis.](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px "Channel configuration / Channel emojis")
 
 {{% livechat_label livechat_emojis_shortname_desc %}}
 

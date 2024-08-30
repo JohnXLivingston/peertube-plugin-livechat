@@ -3,14 +3,12 @@ title: "Peertube livechat"
 description: "Peertube plugin livechat documentation"
 ---
 
-# PeerTube plugin livechat
-
 {{% notice tip %}}
 You can use the language selector in the left menu to view this documentation in different languages.
 Some translations are missing or incomplete. In this case, you'll see the English version of the text.
 {{% /notice %}}
 
-![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)
+![Screenshot of a Peertube video page, with a web chat on the right of the video.](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px "Chat screenshot")
 
 Welcome the **Peertube Livechat Plugin** documentation.
 
