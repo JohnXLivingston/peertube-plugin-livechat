@@ -376,3 +376,4 @@ invalid_value_wrong_format: 誤ったフォーマットの値です。
 invalid_value_duplicate: 重複した値です
 livechat_configuration_channel_emojis_desc: "チャンネルのカスタム絵文字を設定できます。\nこれらの絵文字は、絵文字ピッカーから利用できます。\n\
   絵文字は、短縮名でも使用できます。（例えば\":shortname:\"）\n"
+chat: チャット
