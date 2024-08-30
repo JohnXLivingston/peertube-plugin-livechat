@@ -8,15 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-08-19 10:58+0200\n"
-"PO-Revision-Date: 2024-08-15 09:38+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-08-20 08:49+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.7\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1386,10 +1388,16 @@ msgstr "Sie müssen diese Zertifikate dann in einem Ordner ablegen, auf den der 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy
-#| msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
 msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
-msgstr "Wenn Sie das Programm ProsodyCtl verwenden möchten, um Zertifikate zu importieren, ist es (sobald Peertube gestartet ist) mit folgendem Befehl verfügbar (passen Sie den Pfad zu Ihrem Peertube-Datenordner an und ersetzen Sie \"xxx\" durch die Argumente, die Sie an prosodyctl übergeben wollen): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
+msgstr ""
+"Wenn Sie das Programm ProsodyCtl verwenden möchten, um Zertifikate zu "
+"importieren, ist es (sobald Peertube gestartet ist) mit folgendem Befehl "
+"verfügbar (passen Sie den Pfad zu Ihrem Peertube-Datenordner an und ersetzen "
+"Sie \"xxx\" durch die Argumente, die Sie an prosodyctl übergeben wollen): `"
+"sudo -u peertube /var/www/peertube/storage/plugins/data/"
+"peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --"
+"config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
+"prosody/prosody.cfg.lua xxx`"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
