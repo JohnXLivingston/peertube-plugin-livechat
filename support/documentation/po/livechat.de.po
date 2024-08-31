@@ -8,9 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-08-30 16:24+0200\n"
-"PO-Revision-Date: 2024-08-20 08:49+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-08-31 17:22+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -459,13 +461,16 @@ msgstr "Die Dokumentation wird mit [Hugo](https://gohugo.io/) erstellt.  Sie mü
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The minimum required version for Hugo is 0.121.0.  It was tested using version 0.132.2."
 msgstr ""
+"Die erforderliche Mindestversion für Hugo ist 0.121.0.  Es wurde mit Version "
+"0.132.2 getestet."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
-#| msgid "The used theme is [hugo-theme-learn](https://learn.netlify.app/).  You should read its documentation before starting editing the documentation."
 msgid "The used theme is [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).  You should read its documentation before starting editing the documentation."
-msgstr "Das verwendete Thema ist [hugo-theme-learn](https://learn.netlify.app/). Sie sollten dessen Dokumentation lesen, bevor Sie mit der Bearbeitung der Dokumentation beginnen."
+msgstr ""
+"Das verwendete Thema ist [hugo-theme-learn](https://mcshelby.github.io/hugo-"
+"theme-relearn). Sie sollten dessen Dokumentation lesen, bevor Sie mit der "
+"Bearbeitung der Dokumentation beginnen."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -1776,14 +1781,22 @@ msgstr "Dies ermöglicht es den Nutzern auch, dem Chat beizutreten, ohne ein Pee
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of a Peertube video page, with a chat on the right. At the bottom of the chat, there is a \"{{% livechat_label login_using_external_account %}}\" button.](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px \"{{% livechat_label login_using_external_account %}} button\")"
 msgstr ""
+"![Screenshot einer Peertube-Videoseite, mit einem Chat auf der rechten "
+"Seite. Am unteren Ende des Chats befindet sich die Schaltfläche \"{{% "
+"livechat_label login_using_external_account %}}\".](/peertube-"
+"plugin-livechat/images/"
+"external_login_button.png?classes=shadow,border&height=200px \"{{% "
+"livechat_label login_using_external_account %}} button\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![External login dialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a dialog with an \"OpenID Connect\" button.](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px \"External login dialog - OpenID Connect\")"
-msgstr "![Externer Anmeldedialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Dialogs mit einer Schaltfläche \"OpenID Connect\""
+".](/peertube-plugin-livechat/images/"
+"external_login_dialog_oidc.png?classes=shadow,border&height=200px \"Externer "
+"Anmeldedialog - OpenID Connect\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1983,10 +1996,12 @@ msgstr "Direkt unter den Einstellungen finden Sie die Schaltfläche \"Configure 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#, fuzzy
-#| msgid "![Mod_firewall configuration](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the \"{{% livechat_label prosody_firewall_configuration %}}\" form.](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label prosody_firewall_configuration %}}\")"
-msgstr "![Mod_firewall Konfiguration](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot des Formulars \"{{% livechat_label "
+"prosody_firewall_configuration %}}\".](/peertube-plugin-livechat/images/"
+"mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label "
+"prosody_firewall_configuration %}}\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2166,10 +2181,10 @@ msgstr "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube 
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)"
 msgid "![Sepia avatar example](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
-msgstr "![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Sepia Avatar Beispiel](/peertube-plugin-livechat/images/"
+"avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2178,10 +2193,10 @@ msgstr "{{% livechat_label avatar_set_option_cat %}}: [David Revoy's Katzen Avat
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
 msgid "![Cats avatar example](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Cats\")"
-msgstr "![Katzen](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Katzen AvatarBeispiel](/peertube-plugin-livechat/images/"
+"avatar_cat.png?classes=shadow,border&height=40px \"Katzen\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2190,10 +2205,10 @@ msgstr "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's Vögel Ava
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
 msgid "![Birds avatar example](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
-msgstr "![Vögel](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Vogel Avatar Beispiel](/peertube-plugin-livechat/images/"
+"avatar_bird.png?classes=shadow,border&height=40px \"Vögel\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2202,10 +2217,10 @@ msgstr "{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's Fenec/Mob
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
 msgid "![Fenecs avatar example](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
-msgstr "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Fenecs Avatar Beispiel](/peertube-plugin-livechat/images/"
+"avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2214,10 +2229,10 @@ msgstr "{{% livechat_label avatar_set_option_abstract %}}: [David Revoy's Abstra
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Abstracts](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px)"
 msgid "![Abstracts avatar example](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
-msgstr "![Abstrakt](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Abstrakt Avatar Beispiel](/peertube-plugin-livechat/images/"
+"avatar_abstract.png?classes=shadow,border&height=40px \"Abstrakt\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2226,10 +2241,10 @@ msgstr "{{% livechat_label avatar_set_option_legacy %}}: Basierend auf [David Re
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Legacy](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)"
 msgid "![Legacy avatar example](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
-msgstr "![Alte Avatare](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)"
+msgstr ""
+"![Alte Avatare Beispiel](/peertube-plugin-livechat/images/"
+"avatar_legacy.jpg?classes=shadow,border&height=40px \"Alte Avatare\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2506,10 +2521,12 @@ msgstr "Öffnen Sie die Plugin-Einstellungen, und klicken Sie auf die Schaltflä
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "![Launch diagnostic](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the plugin's settings page, with a \"launch diagnostic\" button.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px \"Launch diagnostic\")"
-msgstr "![Diagnose starten](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Einstellungsseite des Plugins, mit einer Schaltfläche "
+"\"Diagnose starten\".](/peertube-plugin-livechat/images/"
+"launch_diagnostic.png?classes=shadow,border&height=200px \"Diagnose starten\""
+")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2518,10 +2535,12 @@ msgstr "Wenn auf der Diagnoseseite ein Fehler auftritt, können Sie auf dieser S
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "![Diagnostic result](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the diagnostic result page. This gives a lot of information, with status for different test suites.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px \"Diagnostic result\")"
-msgstr "![Diagnoseergebnis](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Seite mit den Diagnoseergebnissen. Dies gibt eine Menge "
+"Informationen, mit Status für verschiedene Testsuiten.](/peertube-"
+"plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px "
+"\"Diagnoseergebnisse\")"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2648,10 +2667,12 @@ msgstr "Sie können den Chat ganz einfach in Ihren Videostream integrieren."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Embeding the chat in a live stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube live, replay, with the chat included at the bottom of the video stream.](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px \"Embeding the chat in a live stream\")"
-msgstr "![Einbetten des Chats in einen Live-Stream](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot einer Peertube Live-Übertragung, bei der der Chat am unteren "
+"Ende des Video-Streams eingebettet ist.](/peertube-plugin-livechat/images/"
+"embed_chat_in_livestream.png?classes=shadow,border&height=200px \"Einbettung "
+"des Chats in einen Live-Stream\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2666,9 +2687,12 @@ msgstr "Aktivieren Sie das Kontrollkästchen \"{{% livechat_label read_only %}}\
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, where the \"{{% livechat_label read_only %}}\" option is checked.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px \"Share link popup\")"
-msgstr "![Livechat-Installation](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des \"{{% livechat_label share_chat_link %}}\"-Dialogs, in dem "
+"die Option \"{{% livechat_label read_only %}}\" aktiviert ist](/peertube-"
+"plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px "
+"\"Link teilen popup\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2678,10 +2702,12 @@ msgstr "Verwenden Sie dann diesen Link als \"Webbrowser-Quelle\" in OBS."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Embeding the chat in OBS](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the OBS software, where the chat was added as web browser source.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px \"Embeding the chat in OBS\")"
-msgstr "![Den Chat in OBS einbetten](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der OBS-Software, wo der Chat als Webbrowser-Quelle hinzugefügt "
+"wurde.](/peertube-plugin-livechat/images/"
+"embed_chat_in_obs.png?classes=shadow,border&height=200px \"Den Chat in OBS "
+"einbetten\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2740,6 +2766,11 @@ msgstr "Verwenden Sie dazu einfach die \"{{% livechat_label share_chat_link %}}\
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label share_chat_dock %}} tab. A token was generated, and is selectionable.\"](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px \"Share link popup - dock tab\")"
 msgstr ""
+"![Screenshot des \"{{% livechat_label share_chat_link %}}\"-Dialogs auf der "
+"Registerkarte \"{{% livechat_label share_chat_dock %}}\". Ein Token wurde "
+"generiert und ist auswählbar.\"](/peertube-plugin-livechat/images/"
+"share_dock.png?classes=shadow,border&height=200px \"Link teilen popup - Dock "
+"Registerkarte\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2748,17 +2779,19 @@ msgstr "Kopieren Sie dann die URL und verwenden Sie das Menü \"Docks / Benutzer
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![OBS - Dock menu](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the OBS Dock menu, with a \"Custom Browser Docks\" entry.](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px \"OBS - Dock menu\")"
-msgstr "![OBS - Dock Menü](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des OBS Dock Menüs mit dem Eintrag \"Benutzerdefinierte Browser-"
+"Docks\"](/peertube-plugin-livechat/images/"
+"obs_dock_menu.png?classes=shadow,border&height=200px \"OBS - Dock menu\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![OBS - Dock dialog](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the OBS Custom Browser Docks dialog, with a new dock called \"My chat\".](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS - Dock dialog\")"
-msgstr "![OBS - Dock-Dialog](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des OBS Custom Browser Docks Dialogs, mit einem neuen Dock "
+"namens \"Mein Chat\"](/peertube-plugin-livechat/images/"
+"obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS - Dock Dialog\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2769,6 +2802,10 @@ msgstr "Danach haben Sie ein neues Dock, das mit dem Chat und Ihrem Konto verbun
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![Screenshot of OBS with a new dock including the chat. The user is logged in with their Peertube account, and can chat directly from OBS.](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px \"OBS - Dock\")"
 msgstr ""
+"![Screenshot von OBS mit einem neuen Dock inklusive Chat. Der Nutzer ist mit "
+"seinem Peertube-Account eingeloggt und kann direkt von OBS aus chatten"
+".](/peertube-plugin-livechat/images/"
+"obs_dock.png?classes=shadow,border&height=200px \"OBS - Dock\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2831,10 +2868,11 @@ msgstr "Wenn Sie eine Peertube Live-Stream erstellen oder ändern, gibt es eine 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![New live](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the Peertube new live form.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"New live\")"
-msgstr "![Neuer Live-Stream](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des Peertube-Formulars für die Live-Übertragung (/peertube-"
+"plugin-livechat/images/new_live.png?classes=shadow,border&height=200px "
+"\"Neuer Livestream\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2843,10 +2881,12 @@ msgstr "Auf der Registerkarte \"Plugin-Einstellungen\" gibt es ein Kontrollkäst
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![Activate the chat](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the form, with a \"{{% livechat_label use_chat %}}\" checkbox.](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px \"Activate the chat\")"
-msgstr "![Den Chat aktivieren](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des Formulars mit dem Kontrollkästchen \"{{% livechat_label "
+"use_chat %}}\"](/peertube-plugin-livechat/images/"
+"new_live_activate_chat.png?classes=shadow,border&height=200px \"Chat "
+"aktivieren\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2919,6 +2959,11 @@ msgstr "Auf der Registerkarte \"{{% livechat_label web %}}\" öffnet die angegeb
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label web %}} tab. There is a url you can copy.](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px \"Share link popup - web tab\")"
 msgstr ""
+"![Screenshot des \"{{% livechat_label share_chat_link %}}\"-Dialogs auf der "
+"Registerkarte \"{{% livechat_label web %}}\". Es gibt eine Url, die Sie "
+"kopieren können](/peertube-plugin-livechat/images/"
+"share_web.png?classes=shadow,border&height=200px Link teilen popup - Web "
+"Registerkarte\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2928,10 +2973,13 @@ msgstr "Das \"{{% livechat_label share_chat_link %}}\" Popup-Fenster kann auch e
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, fuzzy
-#| msgid "![Share link popup - xmpp tab](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label connect_using_xmpp %}}\" tab.](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px \"{{% livechat_label connect_using_xmpp %}}\")"
-msgstr "![Link teilen Fenster - xmpp Reiter](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des \"{{% livechat_label share_chat_link %}}\"-Dialogs, auf der "
+"Registerkarte \"{{% livechat_label connect_using_xmpp %}}\".](/peertube-"
+"plugin-livechat/images/"
+"share_xmpp_dialog.png?classes=shadow,border&height=200px \"{{% "
+"livechat_label connect_using_xmpp %}}\")"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2978,10 +3026,11 @@ msgstr "Sie können das Dauerhaftigkeitsverhalten ändern.  [Öffnen Sie das Cha
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Chat menu](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the dropdown menu at the top of the chat. Several entries are available.](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px \"Chat menu\")"
-msgstr "![Chat Menü](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des Dropdown-Menüs oben im Chat. Es sind mehrere Einträge "
+"verfügbar. ](/peertube-plugin-livechat/images/"
+"top_menu.png?classes=shadow,border&height=200px \"Chat Menü\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2990,10 +3039,11 @@ msgstr "Es gibt mehrere Optionen, die geändert werden können."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![Configure chat room](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the chat configuration form.](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px \"Configure chat room\")"
-msgstr "![Chatraum konfigurieren](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des Chat-Konfigurationsformulars.](/peertube-plugin-livechat/"
+"images/configure.png?classes=shadow,border&height=200px \"Chatraum "
+"konfigurieren\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3040,10 +3090,11 @@ msgstr "Befehle"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
-#, fuzzy
-#| msgid "![Commands configuration](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel options page, with some fields to configure the bot commands.](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px \"Commands configuration\")"
-msgstr "![Befehlskonfiguration](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot der Seite mit den Kanaloptionen, mit einigen Feldern zur "
+"Konfiguration der Chatbot-Befehle.](/peertube-plugin-livechat/images/"
+"bot_commands.png?classes=shadow,border&height=400px \"Befehlskonfiguration\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -3064,17 +3115,21 @@ msgstr "Verbotene Wörter"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "![Forbidden words configuration](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel options page, with several fields to configure the forbidden words.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Forbidden words configuration\")"
-msgstr "![Konfiguration der verbotenen Wörter](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot der Seite mit den Kanaloptionen, mit mehreren Feldern zur "
+"Konfiguration der verbotenen Wörter.](/peertube-plugin-livechat/images/"
+"bot_forbidden_words.png?classes=shadow,border&height=400px \"Konfiguration "
+"der verbotenen Wörter\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "![Deleted message](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
 msgid "![Screenshot of a chat message that was deleted, with the following reason: \"No url allowed\".](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px \"Deleted message\")"
-msgstr "![Gelöschte Nachricht](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px)"
+msgstr ""
+"![Screenshot einer Chat-Nachricht, die mit folgender Begründung gelöscht "
+"wurde: \"Keine URL erlaubt\".](/peertube-plugin-livechat/images/"
+"bot_deleted_message.png?classes=shadow,border&height=100px \"Gelöschte "
+"Nachricht\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3154,10 +3209,12 @@ msgstr "Sie können einen Chatbot für Ihre Chaträume aktivieren.  Die Chatbotk
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "![Channel configuration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel options. There is a form with multiple fields.](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px \"Channel configuration\")"
-msgstr "![Kanalkonfiguration](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot der Kanaloptionen; es gibt ein Formular mit mehreren Feldern"
+".](/peertube-plugin-livechat/images/"
+"channel_configuration.png?classes=shadow,border&height=400px "
+"\"Kanalkonfiguration\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -3193,10 +3250,11 @@ msgstr "Wenn sich kein Benutzer im Chatraum befindet, sendet der Chatbot keine N
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
-#, fuzzy
-#| msgid "![Timers configuration](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the channel options page, with some fields to configure a new timer.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px \"Timers configuration\")"
-msgstr "[Konfiguration der Timer](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Seite mit den Kanaloptionen, mit einigen Feldern zur "
+"Konfiguration eines neuen Timers.](/peertube-plugin-livechat/images/"
+"bot_quotes.png?classes=shadow,border&height=200px \"Timer konfiguration\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3217,10 +3275,11 @@ msgstr "Im linken Menü von Peertube gibt es einen Eintrag \"{{% livechat_label 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "![Room configuration / Muted anonymous users](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the chatrooms configuration page. The page list the user's channels.](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px \"Chatrooms menu\")"
-msgstr "![Raumkonfiguration / Stummgeschaltete anonyme Benutzer](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot der Konfigurationsseite für Chaträume. Die Seite listet die "
+"Kanäle des Benutzers auf.](/peertube-plugin-livechat/images/"
+"chatrooms_menu.png?classes=shadow,border&height=400px \"Chaträume Menü\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3292,17 +3351,22 @@ msgstr "Öffnen Sie auf der [Kanal Konfigurationsseite](/peertube-plugin-livecha
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "![Channel configuration / Channel emojis configuration](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the emoji configuration page. There is a form where you can add new emojis.](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px \"Channel configuration / Channel emojis configuration\")"
-msgstr "![Kanal-Konfiguration / Kanal-Emojis-Konfiguration](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot der Emoji-Konfigurationsseite. Es gibt ein Formular, in dem Sie "
+"neue Emojis hinzufügen können.](/peertube-plugin-livechat/images/"
+"channel_custom_emojis_configuration.png?classes=shadow,border&height=400px "
+"\"Kanalkonfiguration / Kanal Emojis Konfiguration\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
-#, fuzzy
-#| msgid "![Channel configuration / Channel emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of a chat session, with messages containing custom emojis. The emoji picker is open, and shows custom emojis.](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px \"Channel configuration / Channel emojis\")"
-msgstr "![Kanal-Konfiguration / Kanal-Emojis](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot einer Chatsitzung mit Nachrichten, die benutzerdefinierte "
+"Emojis enthalten. Die Emoji-Auswahl ist geöffnet und zeigt "
+"benutzerdefinierte Emojis.](/peertube-plugin-livechat/images/"
+"channel_custom_emojis.png?classes=shadow,border&height=400px "
+"\"Kanalkonfiguration / Kanal Emojis\")"
 
 #. type: Title ###
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3410,10 +3474,12 @@ msgstr "Auf der [Kanal Konfigurationsseite](/peertube-plugin-livechat/de/documen
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel option form, with a field to configure the moderation delay.](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px \"Channel configuration / Moderation delay\")"
-msgstr "![Kanalkonfiguration / Moderationsverzögerung](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot des Formulars für die Kanaloptionen, mit einem Feld zur "
+"Konfiguration der Moderationsverzögerung.](/peertube-plugin-livechat/images/"
+"moderation_delay_channel_option.png?classes=shadow,border&height=400px "
+"\"Kanalkonfiguration / Moderationsverzögerung\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3455,10 +3521,12 @@ msgstr "Als Moderator sehen Sie neben dem Datum der Nachricht auch die verbleibe
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a chat message. A timer is displayed next to the message datetime. The timer is in seconds.](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border \"Moderation delay timer\")"
-msgstr "![Moderationsverzögerungstimer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Screenshot einer Chat-Nachricht. Neben dem Datum der Nachricht wird ein "
+"Timer angezeigt. Der Timer ist in Sekunden.](/peertube-plugin-livechat/"
+"images/moderation_delay_timer.png?classes=shadow,border "
+"\"Moderationsverzögerungstimer\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3537,10 +3605,13 @@ msgstr "Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das 
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#, fuzzy
-#| msgid "![Room configuration / Mute anonymous users](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the room configuration form. There is a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox.](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px \"Room configuration / Mute anonymous users\")"
-msgstr "![Raumkonfiguration / Anonyme Benutzer stummschalten](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot des Raumkonfigurationsformulars. Es gibt ein \"{{% "
+"livechat_label livechat_configuration_channel_mute_anonymous_label %}}\""
+"-Kontrollkästchen.](/peertube-plugin-livechat/images/"
+"configure_mute_anonymous.png?classes=shadow,border&height=400px "
+"\"Raumkonfiguration / Anonyme Benutzer stummschalten\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3551,6 +3622,11 @@ msgstr "Anonyme Benutzer haben das Nachrichtenfeld nicht und sehen folgende Auff
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "![Screenshot of a chat session. The current user has no message field. There is a message: \"{{% livechat_label muted_anonymous_message %}}\"](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px \"Room configuration / Muted anonymous users\")"
 msgstr ""
+"![Screenshot einer Chatsitzung. Der aktuelle Benutzer hat kein "
+"Nachrichtenfeld. Es gibt eine Nachricht: \"{{% livechat_label "
+"muted_anonymous_message %}}\"](/peertube-plugin-livechat/images/"
+"anonymous_muted.png?classes=shadow,border&height=400px \"Raumkonfiguration / "
+"Stummgeschaltete anonyme Benutzer\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3623,6 +3699,11 @@ msgstr "die Aktion \"{{% livechat_label search_occupant_message %}}\" im Dropdow
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "![Screenshot of a chat session. The moderator has open the message menu, and there is a \"{{% livechat_label search_occupant_message %}}\" button.](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px \"Message history search\")"
 msgstr ""
+"![Screenshot einer Chatsitzung. Der Moderator hat das Nachrichtenmenü "
+"geöffnet, und es gibt eine Schaltfläche \"{{% livechat_label "
+"search_occupant_message %}}\".](/peertube-plugin-livechat/images/"
+"message_search.png?classes=shadow,border&height=200px "
+"\"Nachrichtenverlaufssuche\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3747,17 +3828,23 @@ msgstr "Um die Anwendung Moderationsnotizen zu öffnen, gibt es eine Schaltfläc
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Opening the Moderator Notes Application](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "[Öffnen der Moderationsnotizen-Anwendung](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Peertube-Videos, mit dem Chat auf der rechten Seite. Das "
+"obere Menü des Chats ist geöffnet, mit einer \"{{% livechat_label "
+"\"moderator_notes\" %}}\"-Schaltfläche.](/peertube-plugin-livechat/images/"
+"moderation_notes_open_app_video.png?classes=shadow,border&height=200px "
+"\"Öffnen des Moderator Notizen Programms\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Opening the Moderator Notes Application](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "[Öffnen der Anwendung Moderationsnotizen](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Peertube-Chats, Vollbild. Das obere Menü des Chats ist "
+"geöffnet, mit einer \"{{% livechat_label \"moderator_notes\" %}}\""
+"-Schaltfläche.](/peertube-plugin-livechat/images/"
+"moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px "
+"\"Öffnen des Moderator Notizen Programms\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3768,13 +3855,21 @@ msgstr "Wenn Sie auf diese Schaltfläche klicken, wird die Anzeige der Anwendung
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_video_1.png?classes=shadow,border&height=200px \"Moderator Notes Application\")"
 msgstr ""
+"![Screenshot eines Peertube-Videos, mit dem Chat auf der rechten Seite. Die "
+"Anwendung für Moderationsnotizen ist geöffnet. Es gibt mehrere Notizen, "
+"einige davon sind mit Benutzern verknüpft.](/peertube-plugin-livechat/images/"
+"moderator_notes_app_video_1.png?classes=shadow,border&height=200px "
+"\"Moderator Notizen Programm\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Moderator Notes Application](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px \"Moderator Notes Application\")"
-msgstr "![Moderationsnotizen Anwendung](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Peertube-Chats, Vollbild. Die Anwendung für "
+"Moderationsnotizen ist geöffnet. Es gibt mehrere Notizen, einige davon sind "
+"mit Benutzern verknüpft.](/peertube-plugin-livechat/images/"
+"moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px "
+"\"Moderator Notizen Programm\")"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3891,10 +3986,13 @@ msgstr "Sie können den Filter entfernen, indem Sie auf die Schaltfläche \"Schl
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Moderator Notes Application - filtering](/peertube-plugin-livechat/images/moderation_notes_filters.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the note application, with a filter enabled for user \"Mike\". The only notes that are shown are the notes for the Mike user.](/peertube-plugin-livechat/images/moderation_notes_filters.png?classes=shadow,border&height=200px \"Moderator Notes Application - filtering\")"
-msgstr "![Moderationsnotizen Anwendung - Filtern](/peertube-plugin-livechat/images/moderation_notes_filters.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Notizen-Anwendung, mit einem aktivierten Filter für den "
+"Benutzer \"Mike\". Es werden nur die Notizen für den Benutzer \"Mike\" "
+"angezeigt.](/peertube-plugin-livechat/images/"
+"moderation_notes_filters.png?classes=shadow,border&height=200px \"Moderator "
+"Notizen Programm - Filtern\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3949,6 +4047,10 @@ msgstr "Sie können eine neue Umfrage erstellen, indem Sie die Aktion \"{{% live
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "![Screenshot of a \"{{% livechat_label new_poll %}}\" form. The form contains several fields: question, duration, choices, …](/peertube-plugin-livechat/images/polls_form.png?classes=shadow,border&height=200px \"Poll form\")"
 msgstr ""
+"![Screenshot eines \"{{% livechat_label new_poll %}}\"-Formulars. Das "
+"Formular enthält mehrere Felder: Frage, Dauer, Auswahlmöglichkeiten, "
+"...](/peertube-plugin-livechat/images/"
+"polls_form.png?classes=shadow,border&height=200px \"Umfrageformular\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -4041,6 +4143,11 @@ msgstr "Außerdem wird ein Banner erscheinen, das die Umfrage anzeigt und regelm
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "![Screenshot of a chat session. In the chat, there is a message with the poll question, and the different choices. There is also a banner on the top of the chat, where you can see the question, and the number of votes for each answers.](/peertube-plugin-livechat/images/polls_start.png?classes=shadow,border&height=200px \"Poll start\")"
 msgstr ""
+"![Screenshot einer Chatsitzung. Im Chat gibt es eine Nachricht mit der Frage "
+"und den verschiedenen Wahlmöglichkeiten. Außerdem gibt es ein Banner am "
+"oberen Rand des Chats, auf dem die Frage und die Anzahl der Stimmen für die "
+"einzelnen Antworten zu sehen sind.](/peertube-plugin-livechat/images/"
+"polls_start.png?classes=shadow,border&height=200px \"Umfragestart\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -4059,10 +4166,12 @@ msgstr "Die Zuschauer können ihre Wahl jederzeit ändern, indem sie einfach ein
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
-#, fuzzy
-#| msgid "![Poll votes](/peertube-plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a chat session, with an ongoing poll. The current user has just voted by sending \"!1\".](/peertube-plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px \"Poll votes\")"
-msgstr "![Abstimmungen](/peertube-plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot einer Chatsitzung mit einer laufenden Umfrage. Der aktuelle "
+"Benutzer hat gerade abgestimmt, indem er \"!1\" gesendet hat.](/peertube-"
+"plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px "
+"\"Umfrage abstimmen\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -4088,6 +4197,12 @@ msgstr "Wenn die Umfrage beendet ist, wird im Chat eine neue Nachricht mit den E
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "![Screenshot of a chat session, with poll that has ended. The banner no more accept new votes. There is a message in the chat with the poll results. For each choice, there is the number of votes, and the percentage of the total it represents.](/peertube-plugin-livechat/images/polls_end.png?classes=shadow,border&height=200px \"Poll end\")"
 msgstr ""
+"![Screenshot einer Chatsitzung, mit einer Umfrage, die beendet wurde. Das "
+"banner nimmt keine neuen Stimmen mehr an. Im Chat erscheint eine Nachricht "
+"mit den Ergebnissen der Umfrage. Für jede Wahl gibt es die Anzahl der "
+"Stimmen und den prozentualen Anteil an der Gesamtzahl.](/peertube-"
+"plugin-livechat/images/polls_end.png?classes=shadow,border&height=200px "
+"\"Umfrageende\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -4154,10 +4269,12 @@ msgstr "Auf der [Kanal Konfigurations Seite](/peertube-plugin-livechat/de/docume
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, fuzzy
-#| msgid "![Channel configuration / Slow Mode](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel options form, with a slow mode field.](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px \"Channel configuration / Slow Mode\")"
-msgstr "![Kanalkonfiguration / Langsamer Modus](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot des Formulars für die Kanaloptionen, mit einem Feld für den "
+"langsamen Modus.](/peertube-plugin-livechat/images/"
+"slow_mode_channel_option.png?classes=shadow,border&height=400px "
+"\"Kanalkonfiguration / Langsamer Modus\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -4185,6 +4302,11 @@ msgstr "Wenn der langsame Modus aktiviert ist, wird der Benutzer durch eine Nach
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "![Screenshot of a chat session. There is a banner on the bottom of the chat, indicating that the slow mode is enabled, and that users can send a message every 2 seconds.](/peertube-plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px \"Slow mode infobox\")"
 msgstr ""
+"![Screenshot einer Chatsitzung. Am unteren Rand des Chats befindet sich ein "
+"Banner, das darauf hinweist, dass der langsame Modus aktiviert ist und die "
+"Benutzer alle 2 Sekunden eine Nachricht senden können.](/peertube-"
+"plugin-livechat/images/slow_mode.png?classes=shadow,border&height=400px "
+"\"Langsamer Modus Infobox\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -4247,17 +4369,23 @@ msgstr "Um die Aufgabenanwendung zu öffnen, gibt es eine Schaltfläche \"{{% li
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label tasks %}}\" button.](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px \"Opening the Task Application\")"
-msgstr "[Öffnen der Aufgabenanwendung](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Peertube-Videos, mit dem Chat auf der rechten Seite. Das "
+"obere Menü des Chats ist geöffnet, mit einer Schaltfläche \"{{% "
+"livechat_label tasks %}}\".](/peertube-plugin-livechat/images/"
+"task_open_app_video.png?classes=shadow,border&height=200px \"Öffnen der "
+"Aufgabenanwendung\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label tasks %}}\" button.](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Task Application\")"
-msgstr "[Öffnen der Aufgabenanwendung](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Peertube-Chats, Vollbild. Das obere Menü des Chats ist "
+"geöffnet, mit der Schaltfläche \"{{% livechat_label tasks %}}\".](/peertube-"
+"plugin-livechat/images/"
+"task_open_app_fullpage.png?classes=shadow,border&height=200px \"Öffnen der "
+"Aufgabenanwendung\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4266,17 +4394,23 @@ msgstr "Wenn Sie auf diese Schaltfläche klicken, wird die Anzeige der Aufgabena
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube video, with the chat on the right. The Task application is open. There is a task list, and a form to create a new task.](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px \"Task Application\")"
-msgstr "[Öffnen der Aufgabenanwendung](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Peertube-Videos, mit dem Chat auf der rechten Seite. Die "
+"Aufgabenanwendung ist geöffnet. Es gibt eine Aufgabenliste und ein Formular, "
+"um eine neue Aufgabe zu erstellen.](/peertube-plugin-livechat/images/"
+"task_app_video_1.png?classes=shadow,border&height=200px \"Aufgabenanwendung\""
+")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Opening the Task Application](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube chat, fullscreen.  The Task application is open. There is a task list, and a form to create a new task.](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px \"Task Application\")"
-msgstr "[Öffnen der Aufgabenanwendung](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Peertube-Chats, Vollbild.  Die Aufgabenanwendung ist "
+"geöffnet. Es gibt eine Aufgabenliste und ein Formular, um eine neue Aufgabe "
+"zu erstellen.](/peertube-plugin-livechat/images/"
+"task_app_fullpage_1.png?classes=shadow,border&height=200px "
+"\"Aufgabenanwendung\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4311,10 +4445,12 @@ msgstr "Die Aufgabenlisten sind alphabetisch sortiert."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Task lists](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a chat session, with the Task application. There are several task lists.](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px \"Task lists\")"
-msgstr "![Aufgabenlisten](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot einer Chatsitzung mit der Aufgabenanwendung. Es gibt mehrere "
+"Aufgabenlisten.](/peertube-plugin-livechat/images/"
+"task_app_task_lists.png?classes=shadow,border&height=200px \"Aufgabenlisten\""
+")"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4335,17 +4471,21 @@ msgstr "Sie können eine Aufgabe über die Schaltfläche rechts neben der Aufgab
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Task form](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the task application. Under the first task list, there is a form to create a new task.](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px \"Task form\")"
-msgstr "![Aufgabenformular](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Aufgabenanwendung. Unter der ersten Aufgabenliste befindet "
+"sich ein Formular zum Erstellen einer neuen Aufgabe.](/peertube-"
+"plugin-livechat/images/"
+"task_app_task_form.png?classes=shadow,border&height=200px \"Aufgabenformular"
+"\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Task created](/peertube-plugin-livechat/images/task_app_task_1.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the task application. Under the first task list, a new task was created.](/peertube-plugin-livechat/images/task_app_task_1.png?classes=shadow,border&height=200px \"Task created\")"
-msgstr "![Aufgabe erstellt](/peertube-plugin-livechat/images/task_app_task_1.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Aufgabenanwendung. Unter der ersten Aufgabenliste wurde "
+"eine neue Aufgabe erstellt.](/peertube-plugin-livechat/images/"
+"task_app_task_1.png?classes=shadow,border&height=200px \"Aufgabe erstellt\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4365,10 +4505,12 @@ msgstr "Aufgaben können durch direktes Anklicken des Kontrollkästchens in der 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Drag and drop to move to another list](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the task application. Under task lists, there are several tasks. Some of them are checked, other not.](/peertube-plugin-livechat/images/task_app_task_2.png?classes=shadow,border&height=200px \"Tasks\")"
-msgstr "![Drag und Drop zum Verschieben zu einer anderen Liste](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Aufgabenanwendung. Unter den Aufgabenlisten gibt es mehrere "
+"Aufgaben. Einige von ihnen sind markiert, andere nicht.](/peertube-"
+"plugin-livechat/images/"
+"task_app_task_2.png?classes=shadow,border&height=200px \"Aufgaben\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4383,17 +4525,21 @@ msgstr "Sie können Aufgaben sortieren oder von einer Liste in eine andere versc
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Drag and drop to sort](/peertube-plugin-livechat/images/task_drag_drop.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the task application. There is a task that is dragged over another.](/peertube-plugin-livechat/images/task_drag_drop.png?classes=shadow,border&height=200px \"Drag and drop to sort\")"
-msgstr "![Drag und Drop zum Sortieren](/peertube-plugin-livechat/images/task_drag_drop.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Aufgabenanwendung. Eine Aufgabe wird über eine andere "
+"gezogen](/peertube-plugin-livechat/images/"
+"task_drag_drop.png?classes=shadow,border&height=200px \"Drag und drop zum "
+"sortieren\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Drag and drop to move to another list](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the task application. There is a task that is dragged over another task list.](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px \"Drag and drop to move to another list\")"
-msgstr "![Drag und Drop zum Verschieben zu einer anderen Liste](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Aufgabenanwendung. Es gibt eine Aufgabe, die über eine "
+"andere Aufgabenliste gezogen wird.](/peertube-plugin-livechat/images/"
+"task_drag_drop_task_list.png?classes=shadow,border&height=200px \"Drag und "
+"drop zum verschieben zu einer anderen Liste\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4408,24 +4554,33 @@ msgstr "Sie können eine Aufgabe aus einer Nachricht in einem Chat erstellen, in
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Create task from message](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a chat session. The menu besides a message is open, with a button to create a new task.](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px \"Create task from message\")"
-msgstr "![Aufgabe aus einer Nachricht erstellen](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot einer Chatsitzung. Das Menü neben einer Nachricht ist geöffnet, "
+"mit einer Schaltfläche zum Erstellen einer neuen Aufgabe.](/peertube-"
+"plugin-livechat/images/"
+"task_from_message_1.png?classes=shadow,border&height=200px \"Aufgabe aus "
+"einer Nachricht erstellen\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Choose the task list](/peertube-plugin-livechat/images/task_from_message_2.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a dialog, where you can choose in which task list you want to add the new task.](/peertube-plugin-livechat/images/task_from_message_2.png?classes=shadow,border&height=200px \"Choose the task list\")"
-msgstr "![Aufgabenliste auswählen](/peertube-plugin-livechat/images/task_from_message_2.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Dialogs, in dem Sie auswählen können, in welcher "
+"Aufgabenliste Sie die neue Aufgabe hinzufügen möchten.](/peertube-"
+"plugin-livechat/images/"
+"task_from_message_2.png?classes=shadow,border&height=200px \"Aufgabenliste "
+"auswählen\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Create task from message](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the task application. A new task was added in the \"chat questions\" task list, with the user's nickname, and the message as content.](/peertube-plugin-livechat/images/task_from_message_3.png?classes=shadow,border&height=200px \"Task created\")"
-msgstr "![Aufgabe aus einer Nachricht erstellen](/peertube-plugin-livechat/images/task_from_message_1.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Aufgabenanwendung. Eine neue Aufgabe wurde in der "
+"Aufgabenliste \"Chat-Fragen\" hinzugefügt, mit dem Spitznamen des Benutzers "
+"und der Nachricht als Inhalt.](/peertube-plugin-livechat/images/"
+"task_from_message_3.png?classes=shadow,border&height=200px \"Aufgabe "
+"erstellt\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4462,10 +4617,12 @@ msgstr "Um die Nutzungsbedingungen zu konfigurieren, gehen Sie auf die [Kanal-Ko
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "![Channel configuration / Terms](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel options form, with a field to configure your terms and conditions.](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px \"Channel configuration / Terms\")"
-msgstr "![Kanalkonfiguration / Nutzungsbedingungen](/peertube-plugin-livechat/images/channel_terms_config.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Screenshot des Formulars für die Kanaloptionen mit einem Feld für die "
+"Konfiguration der Nutzungsbedingungen.](/peertube-plugin-livechat/images/"
+"channel_terms_config.png?classes=shadow,border&height=400px "
+"\"Kanalkonfiguration / Nutzungsbedingungen\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
@@ -4485,10 +4642,11 @@ msgstr "Wenn Sie dem Chat beitreten, sehen die Zuschauer die Bedingungen:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy
-#| msgid "![Joining chat when not connected](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a chat session. On the top of the chat, there are terms and conditions for both the server and the channel.](/peertube-plugin-livechat/images/terms.png?classes=shadow,border&height=400px \"Terms\")"
-msgstr "![Dem Chat beitreten, wenn nicht verbunden](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot einer Chatsitzung. Am oberen Rand des Chats stehen die "
+"Bedingungen für den Server und den Kanal.](/peertube-plugin-livechat/images/"
+"terms.png?classes=shadow,border&height=400px \"Nutzungsbedingungen\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
@@ -4536,10 +4694,11 @@ msgstr "Wenn Sie ein Peertube-Video ansehen, bei dem der Chat aktiviert ist, seh
 #: support/documentation/content/en/documentation/user/viewers.md
 #: support/documentation/content/en/_index.md
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a Peertube video page, with a web chat on the right of the video.](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px \"Chat screenshot\")"
-msgstr "![Chat screenshot](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot einer Peertube-Videoseite mit einem Web-Chat rechts neben dem "
+"Video.](/peertube-plugin-livechat/images/"
+"chat.png?classes=shadow,border&height=200px \"Chat Bildschirmfoto\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4559,10 +4718,13 @@ msgstr "Wenn Sie auf der Peertube-Instanz, auf der Sie das Video ansehen, nicht 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Chat with an anonymous user](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a chat. In the participant list, there is John Livingston, and an anonymous account using \"Anonymous 212873\" nickname.](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px \"Chat with an anonymous user\")"
-msgstr "![Chat mit einem anonymen Benutzer](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot eines Chats. In der Teilnehmerliste gibt es John Livingston und "
+"einen anonymen Account mit dem Nicknamen \"Anonymous 212873\".](/peertube-"
+"plugin-livechat/images/"
+"chat_with_anonymous.png?classes=shadow,border&height=200px \"Chat mit einem "
+"anonymen Benutzer\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4571,10 +4733,12 @@ msgstr "Bevor Sie im Chatraum sprechen können, müssen Sie einen Spitznamen in 
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Joining chat when not connected](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the chat. The current user is not logged in, and must choose a nickname before being able to write in the chat.](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px \"Joining chat when not connected\")"
-msgstr "![Dem Chat beitreten, wenn nicht verbunden](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des Chats. Der aktuelle Benutzer ist nicht eingeloggt und muss "
+"einen Spitznamen wählen, bevor er im Chat schreiben kann.](/peertube-"
+"plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px "
+"\"Chat beitreten, wenn nicht verbunden\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4626,10 +4790,13 @@ msgstr "Wenn Sie ein Peertube Konto haben, aber nicht auf der aktuellen Instanz,
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![External login dialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the \"{{% livechat_label login_using_external_account %}}\" dialog. There is a field where you can enter a Peertube url.](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px \"External login dialog\")"
-msgstr "![Externer Anmeldedialog - OpenID Connect](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des Dialogs \"{{% livechat_label login_using_external_account "
+"%}}\". Es gibt ein Feld, in das Sie eine Peertube-URL eingeben können"
+".](/peertube-plugin-livechat/images/"
+"external_login_dialog.png?classes=shadow,border&height=200px \"Externer "
+"Anmeldedialog\")"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4670,10 +4837,12 @@ msgstr "Um die Liste der Teilnehmer zu sehen, öffnen Sie einfach das rechte Men
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Participants list](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a chat session, with on the right the list of participants.](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px \"Participants list\")"
-msgstr "![Teilnehmerliste](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot einer Chatsitzung, rechts die Liste der Teilnehmer](/peertube-"
+"plugin-livechat/images/"
+"open_participants_list.png?classes=shadow,border&height=200px "
+"\"Teilnehmerliste\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4705,10 +4874,11 @@ msgstr "Oben im Chat gibt es eine Schaltfläche, um den Chat im Vollbildmodus zu
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of a chat using the full web page.](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px \"Fullscreen chat screenshot\")"
-msgstr "![Fullscreen chat screenshot](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des Chats über die gesamte Webseite.](/peertube-plugin-livechat/"
+"images/fullscreen.png?classes=shadow,border&height=200px \"Vollbild Chat "
+"Bildschirmfoto\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4765,10 +4935,11 @@ msgstr "Um die Adresse des Raums, dem Sie beitreten möchten, zu erhalten, könn
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, fuzzy
-#| msgid "![Share button](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of the chat, with a share button on the top.](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px \"Share button\")"
-msgstr "![Teilen Schaltfläche](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot des Chats mit einer Schaltfläche zum Teilen am oberen Rand"
+".](/peertube-plugin-livechat/images/"
+"share_button.png?classes=shadow,border&height=200px \"Teilen Schaltfläche\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -4777,10 +4948,8 @@ msgstr "Standardmäßig ist die Schaltfläche \"Freigeben\" nur für den Eigent�
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, fuzzy
-#| msgid "Then, choose \"Connect using XMPP\":"
 msgid "Then, choose \"{{% livechat_label connect_using_xmpp %}}\":"
-msgstr "Wählen Sie dann \"Verbinden über XMPP\":"
+msgstr "Wählen Sie dann \"{{% livechat_label connect_using_xmpp %}}\":"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -4789,17 +4958,15 @@ msgstr "Dann müssen Sie nur noch auf \"Öffnen\" klicken oder die Adresse des C
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
-#| msgid "Plugin peertube-plugin-livechat user documentation"
+#, no-wrap
 msgid "Peertube plugin livechat documentation"
-msgstr "Plugin peertube-plugin-livechat Benutzer Dokumentation"
+msgstr "Peertube Plugin Livechat Dokumentation"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
-#| msgid "PeerTube plugin livechat"
+#, no-wrap
 msgid "Peertube livechat"
-msgstr "PeerTube plugin livechat"
+msgstr "Peertube livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
@@ -4875,10 +5042,13 @@ msgstr "Als Peertube-Administrator können Sie dieses Plugin auf Ihrer Instanz e
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Livechat installation](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of Peertube plugins admin page. The search fields contains \"livechat\", and the search results show the livechat plugin.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px \"Livechat installation\")"
-msgstr "![Livechat-Installation](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Screenshot der Peertube Plugin Administrator Seite. Die Suchfelder "
+"enthalten \"livechat\", und die Suchergebnisse zeigen das Livechat-Plugin"
+".](/peertube-plugin-livechat/images/"
+"installation.png?classes=shadow,border&height=200px \"Livechat installation\""
+")"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
