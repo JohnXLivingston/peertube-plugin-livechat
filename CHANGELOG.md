@@ -20,7 +20,7 @@ With the new [mod_firewall](https://livingston.frama.io/peertube-plugin-livechat
 * #118: improved accessibility.
 * Avatar set for anonymous users: new 'none' choice (that will fallback to Converse new colorized avatars).
 * New translation: Albanian.
-* Translation updates: Crotian, Japanese, traditional Chinese.
+* Translation updates: Crotian, Japanese, traditional Chinese, Arabic, Galician.
 * Updated mod_muc_moderation to upstream.
 * Fix new task ordering.
 * Fix: clicking on the current user nickname in message history was failing to open the profile modal.
