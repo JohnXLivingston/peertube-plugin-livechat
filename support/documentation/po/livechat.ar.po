@@ -7,15 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-08-30 16:24+0200\n"
-"PO-Revision-Date: 2024-01-17 11:38+0000\n"
+"PO-Revision-Date: 2024-08-30 20:08+0000\n"
 "Last-Translator: ButterflyOfFire <butterflyoffire@protonmail.com>\n"
-"Language-Team: Arabic <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ar/>\n"
+"Language-Team: Arabic <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.3.1\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : (n%100>=3 "
+"&& n%100<=10) ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Generator: Weblate 5.7\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -91,22 +93,22 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Git"
-msgstr ""
+msgstr "جيت"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NodeJS"
-msgstr ""
+msgstr "NodeJS"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NPM"
-msgstr ""
+msgstr "NPM"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Typescript"
-msgstr ""
+msgstr "Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -116,7 +118,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`git`"
-msgstr ""
+msgstr "`git`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -131,7 +133,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`build-essential`"
-msgstr ""
+msgstr "`build-essential`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -146,7 +148,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`reuse`"
-msgstr ""
+msgstr "`reuse`"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -484,7 +486,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Preview"
-msgstr ""
+msgstr "معاينة"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -544,7 +546,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Write documentation"
-msgstr ""
+msgstr "كتابة الدليل"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -601,7 +603,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Publication"
-msgstr ""
+msgstr "النشر"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -656,7 +658,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "How to"
-msgstr ""
+msgstr "كيف ذلك"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -695,10 +697,9 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
-#, fuzzy, no-wrap
-#| msgid "Translations"
+#, no-wrap
 msgid "ConverseJS translations"
-msgstr "الترجمات"
+msgstr "ترجمات ConverseJS"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -809,7 +810,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Documentation translation"
-msgstr ""
+msgstr "ترجمة الدليل"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -897,7 +898,7 @@ msgstr ""
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Credits"
-msgstr ""
+msgstr "المُساهِمون في المشروع"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -948,13 +949,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Some advanced features"
-msgstr ""
+msgstr "بعض الميزات المتقدمة"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Advanced usage"
-msgstr ""
+msgstr "استخدام متقدم"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -966,7 +967,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge"
-msgstr ""
+msgstr "استخدم Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1072,7 +1073,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Configurating Matterbridge"
-msgstr ""
+msgstr "ضبط Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1188,7 +1189,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Plugin settings"
-msgstr ""
+msgstr "إعدادات الملحق"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1230,7 +1231,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "DNS"
-msgstr ""
+msgstr "نظام أسماء النطاقات"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1317,7 +1318,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Using trusted certificates"
-msgstr ""
+msgstr "استخدام شهادات موثوق فيها"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1668,7 +1669,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Troubleshooting"
-msgstr ""
+msgstr "في حال مشكلة"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1686,7 +1687,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "External Authentication"
-msgstr ""
+msgstr "استيثاق خارجي"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1844,7 +1845,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #, no-wrap
 msgid "More to come"
-msgstr ""
+msgstr "المزيد لاحقا…"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1859,10 +1860,9 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/_index.md
-#, fuzzy, no-wrap
-#| msgid "Documentation"
+#, no-wrap
 msgid "Admin documentation"
-msgstr "المستندات"
+msgstr "مستندات الإدارة"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -1903,7 +1903,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Edit rules"
-msgstr ""
+msgstr "تعديل القواعد"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -1949,7 +1949,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Examples"
-msgstr ""
+msgstr "أمثلة"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -1966,7 +1966,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Settings"
-msgstr ""
+msgstr "الإعدادات"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -1993,7 +1993,7 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Federation"
-msgstr ""
+msgstr "الفديرالية"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2002,10 +2002,9 @@ msgstr ""
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy, no-wrap
-#| msgid "Documentation"
+#, no-wrap
 msgid "Authentication"
-msgstr "المستندات"
+msgstr "الإستيثاق"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2026,7 +2025,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Channel advanced configuration"
-msgstr ""
+msgstr "ضبط متقدم للقناة"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2082,7 +2081,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Theming"
-msgstr ""
+msgstr "تخصيص المظهر"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2233,10 +2232,9 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
-#, fuzzy, no-wrap
-#| msgid "Documentation"
+#, no-wrap
 msgid "Plugin documentation"
-msgstr "المستندات"
+msgstr "مستندات الملحق"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2367,7 +2365,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Installation guide"
-msgstr ""
+msgstr "دليل التثبيت"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
@@ -2406,7 +2404,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Diagnostic tool"
-msgstr ""
+msgstr "أدوات الفحص"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2465,7 +2463,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Websocket"
-msgstr ""
+msgstr "Websocket"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2498,7 +2496,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "IMPORTANT NOTE"
-msgstr ""
+msgstr "ملاحظة هامة"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
@@ -2523,10 +2521,9 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/_index.md
-#, fuzzy, no-wrap
-#| msgid "Documentation"
+#, no-wrap
 msgid "User documentation"
-msgstr "المستندات"
+msgstr "دليل المستخدم"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2713,7 +2710,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Some basics"
-msgstr ""
+msgstr "بعض الأساسيات"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2766,7 +2763,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Share the chat"
-msgstr ""
+msgstr "إعادة نشر المحادثة"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2835,7 +2832,7 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Moderation"
-msgstr ""
+msgstr "الإشراف"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2928,7 +2925,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 #, no-wrap
 msgid "Commands"
-msgstr ""
+msgstr "الأوامر"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -2950,7 +2947,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #, no-wrap
 msgid "Forbidden words"
-msgstr ""
+msgstr "المصطلحات الممنوعة"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3017,14 +3014,14 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #, no-wrap
 msgid "Chat bot setup"
-msgstr ""
+msgstr "ضبط روبوت المحادثة"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Chat bot"
-msgstr ""
+msgstr "روبوت محادثة"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -3089,10 +3086,9 @@ msgstr "معلومات عامة"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy, no-wrap
-#| msgid "General information"
+#, no-wrap
 msgid "Channel configuration"
-msgstr "معلومات عامة"
+msgstr "ضبط القناة"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3154,13 +3150,13 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Custom emojis"
-msgstr ""
+msgstr "الإيموجي المخصصة"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Channel emojis"
-msgstr ""
+msgstr "الوجوه التعبيرية الخاصة بالقناة"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3225,7 +3221,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/_index.md
 #, no-wrap
 msgid "For streamers"
-msgstr ""
+msgstr "للناشرين على المباشر"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3351,7 +3347,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "The chat bot"
-msgstr ""
+msgstr "روبوت المحادثة"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3362,7 +3358,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Accessing moderation tools"
-msgstr ""
+msgstr "الوصول إلى أدوات الإشراف"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3537,7 +3533,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Instance moderation"
-msgstr ""
+msgstr "الإشراف على الخادم"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3564,7 +3560,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Moderation notes"
-msgstr ""
+msgstr "ملاحظات الإشراف"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3590,7 +3586,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3640,7 +3636,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Access rights"
-msgstr ""
+msgstr "صلاحيات الوصول"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3656,7 +3652,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Scope"
-msgstr ""
+msgstr "النطاق"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3677,7 +3673,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Notes"
-msgstr ""
+msgstr "الملاحظات"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3771,7 +3767,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Sorting notes"
-msgstr ""
+msgstr "ترتيب الملاحظات"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3788,7 +3784,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 #, no-wrap
 msgid "Polls"
-msgstr ""
+msgstr "استطلاعات الرأي"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -3958,7 +3954,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, no-wrap
 msgid "Slow mode"
-msgstr ""
+msgstr "الوضع البطيء"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -3999,7 +3995,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, no-wrap
 msgid "Slow mode option"
-msgstr ""
+msgstr "ميزة الوضع البطيء"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -4136,7 +4132,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Task lists"
-msgstr ""
+msgstr "قائمة المهام"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4162,13 +4158,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Tasks"
-msgstr ""
+msgstr "المهام"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Create tasks"
-msgstr ""
+msgstr "إنشاء مهام"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4189,7 +4185,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Edit tasks"
-msgstr ""
+msgstr "تعديل المهام"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4273,10 +4269,9 @@ msgstr ""
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "General information"
+#, no-wrap
 msgid "Configuration"
-msgstr "معلومات عامة"
+msgstr "الضبط"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
@@ -4302,7 +4297,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 #, no-wrap
 msgid "Viewers"
-msgstr ""
+msgstr "مشاهدون"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
@@ -4349,7 +4344,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Joining chat rooms"
-msgstr ""
+msgstr "الإلتحاق بغرف المحادثة"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4451,7 +4446,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Chatting"
-msgstr ""
+msgstr "الدردشة"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4477,7 +4472,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Participants list"
-msgstr ""
+msgstr "قائمة المشاركين"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4531,7 +4526,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Changing nickname"
-msgstr ""
+msgstr "تغيير الكنية"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4673,7 +4668,7 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Installation"
-msgstr ""
+msgstr "التثبيت"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -4761,7 +4756,7 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Other usages"
-msgstr ""
+msgstr "استخدامات أخرى"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
