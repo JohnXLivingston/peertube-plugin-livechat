@@ -600,3 +600,4 @@ prosody_firewall_name_desc: "Darf nur folgende Zeichen enthalten: alphanumerisch
   Zeichen, Unterstriche und Bindestriche.\nDie Skripte werden in alphabetischer Reihenfolge
   geladen.\n"
 prosody_firewall_content: Dateiinhalt
+chat: Chat
