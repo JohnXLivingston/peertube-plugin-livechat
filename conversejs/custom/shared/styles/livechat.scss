@@ -204,7 +204,10 @@ body.converse-embedded {
       order: 99;
     }
   }
+}
 
+/* stylelint-disable-next-line no-descending-specificity */
+#conversejs { // here we use the id have gretter priority
   // These CSS are tricks: Converse v11 tries to hide the MUC when screen width is under 768px.
   // We don't want that, so we cancel the d-none.
   // FIXME: these hacks should be temporary, waiting for some improvement on Converse.
@@ -215,7 +218,10 @@ body.converse-embedded {
 
     /* stylelint-disable-next-line no-descending-specificity */
     converse-muc-sidebar {
-      width: auto !important;
+      // we must not use !important for flex, it would break resizing.
+      // That's why we use #conversejs insteand of .conversejs for this block.
+      flex: 0 0 min(400px, 50%);
+      min-width: min(200px, 50%) !important;
 
       .occupants {
         width: 100%;
