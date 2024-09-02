@@ -34,6 +34,8 @@ body.converse-fullscreen.theme-peertube,
 body.converse-embedded converse-root.theme-peertube {
   --foreground: var(--peertube-main-foreground);
   --background: var(--peertube-main-background);
+  --badge-color: var(--background);
+  --button-hover-text-color: var(--background);
   --subdued-color: #a8aba1;
   --muc-color: var(--peertube-button-background);
   --green: #3aa569; // only in this file
@@ -41,6 +43,7 @@ body.converse-embedded converse-root.theme-peertube {
   --orange: #e7a151; // only in this file
   --light-blue: #578ea9; // only in this file
   --lighter-blue: #85b47b; // only in this file
+  --chat-color: var(--green); // FIXME: copied from Converse. Is there side effects?
   --chat-status-online: var(--green);
   --chat-status-busy: var(--redder-orange);
   --chat-status-away: var(--orange);
