@@ -28,13 +28,14 @@
   border: 1px solid black;
   min-height: max(30vh, 300px); // Always at least 200px, and ideally at least 30% of viewport.
   height: 100%;
+  min-width: min(400px, 25vw);
 
   converse-muc {
     min-height: max(30vh, 300px);
   }
 
   @media screen and (orientation: portrait) and (max-width: 767px) {
-    /* On small screen, and when portrait mode, we are givint the chat more vertical space.
+    /* On small screen, and when portrait mode, we are giving the chat more vertical space.
         It should go under the video.
      */
     min-height: max(50vh, 300px);

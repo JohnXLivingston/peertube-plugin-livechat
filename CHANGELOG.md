@@ -29,6 +29,7 @@ The cyberpunk theme was removed from ConverseJS. If you had it set in the plugin
 * Fix: increase chat height on small screens, try to better detect the device viewport size and orientation.
 * Converse theme: removed concord, added cyberpunk
 * Fixed Converse theme settings localization.
+* Fix: improved minimum chat width.
 
 ## 10.3.3
 

@@ -16,8 +16,6 @@ import { localizedHelpUrl } from '../../utils/help'
 import { getBaseRoute } from '../../utils/uri'
 import { displayConverseJS } from '../../utils/conversejs'
 
-let savedMyPluginFlexGrow: string | undefined
-
 /**
  * Initialize the chat for the current video
  * @param video the video
@@ -25,7 +23,6 @@ let savedMyPluginFlexGrow: string | undefined
 async function initChat (video: Video): Promise<void> {
   const ptContext = getPtContext()
   const logger = ptContext.logger
-  savedMyPluginFlexGrow = undefined
 
   if (!video) {
     logger.error('No video provided')
@@ -355,19 +352,6 @@ function _hackStyles (on: boolean): void {
         buttons.classList.remove('peertube-plugin-livechat-buttons-open')
       }
     })
-    const myPluginPlaceholder: HTMLElement | null = document.querySelector('my-plugin-placeholder')
-    if (on) {
-      // Saving current style attributes and maximazing space for the chat
-      if (myPluginPlaceholder) {
-        savedMyPluginFlexGrow = myPluginPlaceholder.style.flexGrow // Should be "", but can be anything else.
-        myPluginPlaceholder.style.flexGrow = '1'
-      }
-    } else {
-      // restoring values...
-      if (savedMyPluginFlexGrow !== undefined && myPluginPlaceholder) {
-        myPluginPlaceholder.style.flexGrow = savedMyPluginFlexGrow
-      }
-    }
   } catch (err) {
     getPtContext().logger.error(`Failed hacking styles:  '${err as string}'`)
   }
