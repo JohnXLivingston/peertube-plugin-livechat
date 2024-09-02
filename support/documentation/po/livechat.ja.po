@@ -2220,7 +2220,7 @@ msgstr ""
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "ConverseJS concord theme: this is a theme provided by ConverseJS."
+msgid "ConverseJS cyberpunk theme: this is a theme provided by ConverseJS."
 msgstr ""
 
 #. type: Title ##

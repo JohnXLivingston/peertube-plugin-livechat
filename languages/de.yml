@@ -121,7 +121,7 @@ converse_theme_description: "Bitte wählen Sie, welches ConverseJS Thema Sie nut
   möchten."
 converse_theme_option_peertube: "Peertube Thema"
 converse_theme_option_default: "Default ConverseJS Thema"
-converse_theme_option_concord: "ConverseJS Concord Thema"
+converse_theme_option_cyberpunk: "ConverseJS Cyberpunk Thema"
 
 autocolors_label: "Automatische Farberkennung"
 autocolors_description: |

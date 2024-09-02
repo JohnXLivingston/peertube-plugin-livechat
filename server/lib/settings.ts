@@ -526,9 +526,9 @@ function initThemingSettings ({ registerSetting }: RegisterServerOptions): void 
     default: 'peertube' as ConverseJSTheme,
     private: false,
     options: [
-      { value: 'peertube', label: loc('peertube') },
-      { value: 'default', label: loc('default') },
-      { value: 'concord', label: loc('concord') }
+      { value: 'peertube', label: loc('converse_theme_option_peertube') },
+      { value: 'default', label: loc('converse_theme_option_default') },
+      { value: 'cyberpunk', label: loc('converse_theme_option_cyberpunk') }
     ] as Array<{value: ConverseJSTheme, label: string}>,
     descriptionHTML: loc('converse_theme_description')
   })

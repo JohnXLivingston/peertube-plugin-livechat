@@ -150,7 +150,7 @@ You can choose which theme to use for ConverseJS:
 
 - Peertube theme: this is a special theme, made especially for peertube's integration.
 - Default ConverseJS theme: this is the default ConverseJS theme.
-- ConverseJS concord theme: this is a theme provided by ConverseJS.
+- ConverseJS cyberpunk theme: this is a theme provided by ConverseJS.
 
 ### {{% livechat_label autocolors_label %}}
 

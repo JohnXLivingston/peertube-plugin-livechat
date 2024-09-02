@@ -6,6 +6,8 @@
 
 With the new [mod_firewall](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/) feature, Peertube admins can write firewall rules for the Prosody server. These rules could be used to run arbitrary code on the server. If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory. Check the documentation for more information. This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.
 
+The cyberpunk theme was removed from ConverseJS. If you had it set in the plugin settings, it will fallback to the Peertube theme.
+
 ### New features
 
 * Updating ConverseJS, to use upstream (v11 WIP). This comes with many improvments and new features.
@@ -25,6 +27,8 @@ With the new [mod_firewall](https://livingston.frama.io/peertube-plugin-livechat
 * Fix new task ordering.
 * Fix: clicking on the current user nickname in message history was failing to open the profile modal.
 * Fix: increase chat height on small screens, try to better detect the device viewport size and orientation.
+* Converse theme: removed concord, added cyberpunk
+* Fixed Converse theme settings localization.
 
 ## 10.3.3
 

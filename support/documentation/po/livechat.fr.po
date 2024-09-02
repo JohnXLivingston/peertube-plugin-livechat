@@ -2278,8 +2278,8 @@ msgstr "Thème ConverseJS par défaut : c'est le thème ConverseJS par défaut."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
-msgid "ConverseJS concord theme: this is a theme provided by ConverseJS."
-msgstr "Thème ConverseJS concord : il s'agit d'un thème fourni par ConverseJS."
+msgid "ConverseJS cyberpunk theme: this is a theme provided by ConverseJS."
+msgstr "Thème ConverseJS cyberpunk : il s'agit d'un thème fourni par ConverseJS."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md

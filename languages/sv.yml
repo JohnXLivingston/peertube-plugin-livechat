@@ -28,7 +28,7 @@ room_type_description: Här kan du välja om du vill ha separata rum för varje 
 theming_advanced_description: <h3>Utseende</h3>
 converse_theme_option_peertube: PeerTubes tema
 converse_theme_option_default: ConverseJS standardtema
-converse_theme_option_concord: ConverseJS-temat concord
+converse_theme_option_cyberpunk: ConverseJS-temat cyberpunk
 autocolors_label: Automatisk färgigenkänning
 save: Spara
 cancel: Avbryt

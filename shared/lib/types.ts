@@ -13,7 +13,7 @@ interface ActorImage {
   updatedAt: Date | string
 }
 
-type ConverseJSTheme = 'peertube' | 'default' | 'concord'
+type ConverseJSTheme = 'peertube' | 'default' | 'cyberpunk'
 
 interface InitConverseJSParams {
   peertubeVideoOriginalUrl?: string

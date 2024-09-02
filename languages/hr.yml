@@ -238,7 +238,7 @@ all_lives_description: Ako je označeno, chat će se aktivirati za sve prijenose
 all_non_lives_description: Ako je označeno, chat će se aktivirati za sve prijenose
   koji nisu uživo.
 all_non_lives_label: Aktiviraj chat za sve prijenose koji nisu uživo
-converse_theme_option_concord: ConverseJS concord tema
+converse_theme_option_cyberpunk: ConverseJS cyberpunk tema
 chat_style_label: Atribut stila ifreama za chat
 prosody_muc_log_by_default_description: "Ako je označeno, sadržaj sobe će se standardno
   spremati.\nSvaki korisnik koji se pridruži sobi vidjet će što je napisano prije

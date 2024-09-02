@@ -103,7 +103,7 @@ no_anonymous_description: "Si se marca, los usuarios anónimos de Peertube no ve
   el chat.\nFuncionalidad en desarrollo.\nSi la activas, es muy recomendable marcar
   también \"No publicar información del chat\".\nDe lo contrario, algunas herramientas
   de terceros podrían intentar abrir el chat , generando comportamientos imprevistos.\n"
-converse_theme_option_concord: Tema concord de ConverseJS
+converse_theme_option_cyberpunk: Tema cyberpunk de ConverseJS
 help_builtin_prosody_description: "Este plugin utiliza el servidor XMPP Prosody para
   manejar salas de chat.<br>\nEste plugin viene con una AppImage de Prosody, que se
   utilizará para ejecutar el servicio.\n"

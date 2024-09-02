@@ -70,7 +70,7 @@ converse_theme_label: ConverseJSのテーマ
 converse_theme_description: 使用したいconverseJSのテーマを選択してください。
 converse_theme_option_peertube: PeerTubeのテーマ
 converse_theme_option_default: デフォルトのConverseJSテーマ
-converse_theme_option_concord: ConverseJS concordテーマ
+converse_theme_option_cyberpunk: ConverseJS cyberpunkテーマ
 autocolors_label: 色を自動検出
 chat_style_label: チャットのiframeスタイル属性
 chat_style_description: "追加のスタイル設定をiframeスタイルの属性に追加します。<br>\n例）height:400px;\n"

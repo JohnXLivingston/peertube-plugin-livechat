@@ -120,7 +120,7 @@ converse_theme_label: "Tema ConverseJS"
 converse_theme_description: "Scegli il tema converseJS che desideri utilizzare."
 converse_theme_option_peertube: "Tema Peertube"
 converse_theme_option_default: "Tema predefinito di ConverseJS"
-converse_theme_option_concord: "Tema “Concord“ di ConverseJS"
+converse_theme_option_cyberpunk: "Tema “cyberpunk“ di ConverseJS"
 
 autocolors_label: "Rilevamento automatico dei colori"
 autocolors_description: |
