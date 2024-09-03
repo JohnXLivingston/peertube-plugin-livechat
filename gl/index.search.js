@@ -139,7 +139,7 @@ Abstract: David Revoy’s Abstract avatar generator, CC-By license
 Legacy Sepia avatars (those included in previous plugin versions): Based on David Revoy' work, AGPL-v3 license
 If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
 ConverseJS theme You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS concord theme: this is a theme provided by ConverseJS. Automatic color detection Try to autodetect colors from user’s current theme. When this setting is enabled, the plugin tries to auto-detect colors to apply to the chat theme. If this is not correctly working for some of your Peertube theme, you can disable this option. You can report the bug on the official issue tracker . Don’t forget to specify which theme is not working.
+Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Automatic color detection Try to autodetect colors from user’s current theme. When this setting is enabled, the plugin tries to auto-detect colors to apply to the chat theme. If this is not correctly working for some of your Peertube theme, you can disable this option. You can report the bug on the official issue tracker . Don’t forget to specify which theme is not working.
 Webchat iframe style attribute Additional styles to be added on the iframe style attribute. Example: height:400px;
 Chat server advanced settings Use system Prosody The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
 This setting should only be used if the plugin is broken, and waiting for a patch.
@@ -430,7 +430,7 @@ Quickly rebuild and install the plugin When you do modification, you don’t hav
 When the plugin is already installed on your dev instance, and you haven’t changed any dependency, you can quickly install your work by following these steps:
 re-build necessary parts of the plugin (client, styles, …), overwrite the data/plugins/node_modules/peertube-plugin-livechat/dist/ content of your dev instance by the content of the plugin’s dist folder, change recursively plugins/node_modules/peertube-plugin-livechat/dist/ files owner to your peertube user, restart your instance. Performance tests The livechat-perf-test repository contains some tools to make performance tests. It can be used to evaluate code improvements, or find bottlenecks.`,description:"Develop",tags:[],title:"Develop",uri:"/peertube-plugin-livechat/gl/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`OBS is a popular Free And Open Source streaming software, with advanced capacities for your live streams. In the current page, you will find some advices to handle your live chats using OBS.
 OBS Overlay You can easily include the chat in your video stream.
-You can use the “Compartir ligazón ao chat” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
+You can use the “Compartir ligazón á charla” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
 Check the “Só lectura” checkbox in the modal.
 Then use this link as a “web browser source” in OBS.
 You can use the “Fondo transparente (para integración coa retransmisión, por exemplo con OBS)” option to have a transparent background in OBS. If you want to customize the background transparency, you can add this CSS in your OBS browser source’s settings:
@@ -439,7 +439,7 @@ Note: you can entirely customize chat colors. This is undocumented yet, but you 
 OBS Dock Info This feature comes with the livechat plugin version 10.1.0.
 Warning This feature can be disabled by the instance’s adminitrators.
 You can use OBS “Custom browser docks” to integrate the chat in your OBS while you are streaming. The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don’t have to enter your password in OBS.
-To do so, just use the “Compartir ligazón ao chat” feature, and open the “Dock” tab. From there, you can create a new token using the “+” button.
+To do so, just use the “Compartir ligazón á charla” feature, and open the “Dock” tab. From there, you can create a new token using the “+” button.
 Then, copy the url, and use the “Docks / Custom browser docks” menu from your OBS to add a dock with this URL.
 Once you have done, you will have a new dock connected to the chat with your account.
 Tip Tokens are valid to join any chat room. You don’t have to generate separate tokens for each of your rooms. You can also customize the nickame that will be used by changing the n parameter in the url.
@@ -676,16 +676,16 @@ Thanks to NlNet and the NGI0 Entrust fund for the financial support.
 Thanks to Octopuce for the financial support.
 And thanks to all individual contributors who have made a donation via my liberapay page.`,description:"Plugin Credits",tags:[],title:"Credits",uri:"/peertube-plugin-livechat/gl/credits/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:`Enabling the chat for you live streams Warning Instance administrators can choose to disable or enable chat in specific cases. Information in this section are only true in the default case.
 When you create or modify a Peertube live, there is a “plugin settings” tab:
-In the “plugin settings” tab, there is a “Usar chat” checkbox. Just check or uncheck it to enable or disable the chat associated to your video.
+In the “plugin settings” tab, there is a “Usar charla” checkbox. Just check or uncheck it to enable or disable the chat associated to your video.
 Tip There can be other settings in this tab, depending on plugins installed on your Peertube instance.
 Per channel chat On the instance level, Peertube’s administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel. Please contact your instance’s administrators for more information on how they configure the livechat plugin.
-Share the chat On top of the chat, there is a “Compartir ligazón ao chat” button.
+Share the chat On top of the chat, there is a “Compartir ligazón á charla” button.
 This button opens a popup, where you can obtain an url to join the chat. This url can be shared.
 The “Embed” tab provide some links to embed the chat in websites, or in your live stream.
 You can customize some options:
-Só lectura: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the OBS documentation). Usar esquema de cores actual: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set. Crear un iframe para incrustar o chat nun sitio web: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat. For more information on the “Dock” tab, check the OBS documentation.
+Só lectura: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the OBS documentation). Usar esquema de cores actual: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set. Crear un marco para incrustar a charla nun sitio web: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat. For more information on the “Dock” tab, check the OBS documentation.
 In the “Web” tab, the provided url opens the chat in the Peertube interface. You can share this link to other users to invite them to join the chat.
-The “Compartir ligazón ao chat” popup can also contain a “Conectar usando XMPP” tab. This will only be available if your instance’s administators have enabled an correctly configured this option. Using this option, you can provide a link to join the chat using any XMPP client software. Using such softwares can for example facilitate moderation actions.
+The “Compartir ligazón á charla” popup can also contain a “Conectar usando XMPP” tab. This will only be available if your instance’s administators have enabled an correctly configured this option. Using this option, you can provide a link to join the chat using any XMPP client software. Using such softwares can for example facilitate moderation actions.
 Moderation Please refer to the moderation documentation.
 Include the chat in your video stream Please refer to the OBS documentation.
 Chat persistence By default, the chat is persistent. This means that the room content will be kept for a while. User joining will see messages posted before their arrival.
@@ -695,7 +695,7 @@ You can for example set the default and maximum number of messages to return to 
 You can also uncheck “enable archiving”: if unchecked, messages will be pruned if the server restarts.
 By unchecking “Persistent”, the room will be cleared if there is no more participant.
 Delete the chat content If you want to delete the chat content, open the chat dropdown menu, then click on “Destroy”. A popup will open, asking a confirmation.
-The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the “Usar chat” feature activated.`,description:"Some basics about how to setup and use the chat for your live stream",tags:[],title:"Some basics",uri:"/peertube-plugin-livechat/gl/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
+The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the “Usar charla” feature activated.`,description:"Some basics about how to setup and use the chat for your live stream",tags:[],title:"Some basics",uri:"/peertube-plugin-livechat/gl/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
 In the Peertube left menu, there is a “Chatrooms” entry:
 This “Chatrooms” link takes you to a list of your channels. By clicking on a channel, you will then be able to setup some options for your channels:
 Here you can configure:

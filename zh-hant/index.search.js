@@ -139,7 +139,7 @@ Abstract: David Revoy’s Abstract avatar generator, CC-By license
 Legacy Sepia avatars (those included in previous plugin versions): Based on David Revoy' work, AGPL-v3 license
 If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
 ConverseJS 主題 You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS concord theme: this is a theme provided by ConverseJS. 自動色彩檢測 嘗試自動偵測使用者目前主題的顏色。 啟用此設定後，外掛程式會嘗試自動偵測顏色以套用至聊天主題。 如果這對於您的某些 Peertube 主題無法正常運作，您可以停用此選項。 您可以向官方報告該錯誤 問題追蹤器 。不要忘記指定哪個主題不起作用。
+Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. 自動色彩檢測 嘗試自動偵測使用者目前主題的顏色。 啟用此設定後，外掛程式會嘗試自動偵測顏色以套用至聊天主題。 如果這對於您的某些 Peertube 主題無法正常運作，您可以停用此選項。 您可以向官方報告該錯誤 問題追蹤器 。不要忘記指定哪個主題不起作用。
 聊天 iframe 風格屬性 Additional styles to be added on the iframe style attribute. Example: height:400px;
 Chat server advanced settings Use system Prosody The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
 This setting should only be used if the plugin is broken, and waiting for a patch.

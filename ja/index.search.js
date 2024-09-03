@@ -118,7 +118,7 @@ Fenecs (Mobilizonのマスコットキャラクター): David Revoy’s fenec/mo
 以前のSepia アバター(以前のプラグインバージョンに含まれていたもの): Based on David Revoy' work, AGPL-v3 license
 If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
 ConverseJSのテーマ You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS concord theme: this is a theme provided by ConverseJS. 色を自動検出 ユーザーの現在のテーマから色を自動検出します。 この設定が有効の場合、プラグインは色を自動検出し、チャットのテーマに適用します。 この設定がお使いのPeerTubeテーマでうまく動作しない場合は、この設定を無効にできます。 発見したバグは、公式の issue トラッカー から報告をお願いします。 どのテーマで動作しなかったかも合わせて報告をお願いします。
+Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. 色を自動検出 ユーザーの現在のテーマから色を自動検出します。 この設定が有効の場合、プラグインは色を自動検出し、チャットのテーマに適用します。 この設定がお使いのPeerTubeテーマでうまく動作しない場合は、この設定を無効にできます。 発見したバグは、公式の issue トラッカー から報告をお願いします。 どのテーマで動作しなかったかも合わせて報告をお願いします。
 チャットのiframeスタイル属性 追加のスタイル設定をiframeスタイルの属性に追加します。 例）height:400px;
 Chat server advanced settings システムのProsodyを使用する The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
 This setting should only be used if the plugin is broken, and waiting for a patch.

@@ -99,7 +99,7 @@ Abstrakt: David Revoy’s Abstrakt Avatargenerator, CC-By Lizenz
 Ältere Sepia-Avatare (die in früheren Plugin-Versionen enthalten waren): Basierend auf David Revoys Arbeit, AGPL-v3 Lizenz
 Wenn Sie die Änderung nicht sofort sehen können, könnte es an Ihrem Browser-Cache liegen. Löschen Sie einfach den Sitzungsspeicher Ihres Browsers, oder starten Sie ihn neu.
 ConverseJS Thema Sie können wählen, welches Thema Sie für ConverseJS verwenden möchten:
-Peertube theme: Dies ist ein spezielles Thema, das speziell für die Integration von Peertube entwickelt wurde. Default ConverseJS theme: Dies ist das standard ConverseJS Thema. ConverseJS concord theme: Dies ist ein von ConverseJS bereitgestelltes Thema. Automatische Farberkennung Versucht, die Farben des aktuellen Themas des Benutzers automatisch zu erkennen. Wenn diese Einstellung aktiviert ist, versucht das Plugin, die Farben für das Chat-Thema automatisch zu erkennen. Wenn dies für einige Ihrer Peertube-Themen nicht korrekt funktioniert, können Sie diese Option deaktivieren. Sie können den Fehler im offiziellen Issue Tracker melden. Vergessen Sie nicht anzugeben, welches Thema nicht funktioniert.
+Peertube theme: Dies ist ein spezielles Thema, das speziell für die Integration von Peertube entwickelt wurde. Default ConverseJS theme: Dies ist das standard ConverseJS Thema. ConverseJS cyberpunk theme: Dies ist ein von ConverseJS bereitgestelltes Thema. Automatische Farberkennung Versucht, die Farben des aktuellen Themas des Benutzers automatisch zu erkennen. Wenn diese Einstellung aktiviert ist, versucht das Plugin, die Farben für das Chat-Thema automatisch zu erkennen. Wenn dies für einige Ihrer Peertube-Themen nicht korrekt funktioniert, können Sie diese Option deaktivieren. Sie können den Fehler im offiziellen Issue Tracker melden. Vergessen Sie nicht anzugeben, welches Thema nicht funktioniert.
 Webchat Iframe Stil-Attribut Sie können einige benutzerdefinierte Stile hinzufügen, die dem Iframe hinzugefügt werden. Zum Beispiel eine benutzerdefinierte Breite: width:400px;
 Erweiterte Einstellungen des Chatservers System Prosody benutzen Das Plugin wird mit einem AppImage geliefert, das zum Ausführen des Prosody XMPP-Servers verwendet wird. Wenn dieses AppImage nicht funktioniert, können Sie auf das Prosody-Paket zurückgreifen, das für Ihren Server gepackt ist. Installieren Sie einfach das Paket prosody.
 Diese Einstellung sollte nur verwendet werden, wenn das Plugin defekt ist und auf einen Patch wartet.
@@ -452,8 +452,8 @@ Falls Sie ein eigenes Peertube Docker Paket genutzt haben, welches Prosody einge
 Bitte benutzen Sie den main-Zweig.
 Der Quellcode der Dokumentation befindet sich im Ordner support/documentation/content.
 Die Dokumentation wird mit Hugo erstellt. Sie müssen es auf Ihrem Computer installieren, wenn Sie eine Vorschau Ihrer Arbeit sehen wollen.
-The minimum required version for Hugo is 0.121.0. It was tested using version 0.132.2.
-The used theme is hugo-theme-relearn. You should read its documentation before starting editing the documentation.
+Die erforderliche Mindestversion für Hugo ist 0.121.0. Es wurde mit Version 0.132.2 getestet.
+Das verwendete Thema ist hugo-theme-learn. Sie sollten dessen Dokumentation lesen, bevor Sie mit der Bearbeitung der Dokumentation beginnen.
 Wenn eine neue Pluginversion veröffentlicht oder die Dokumentation aktualisiert wird, führen die Plugin Verwalter den main-Zweig mit dem documentation-Zweig zusammen. Dadurch werden Github- und Gitlab-Pipelines ausgelöst und die veröffentlichte Dokumentation aktualisiert.
 Übersätzungen Die Hauptsprache ist Englisch (Code en).
 Der Ordner support/documentation/content/en enthält nur englische Dokumentationsdateien.
@@ -577,7 +577,7 @@ Melden Sie sich bei Ihrem Peertube-Konto an Warnung Diese Funktion ist noch nich
 Verbindung über ein externes XMPP-Konto Wenn diese Funktion in Ihrer Instanz aktiviert ist, können Sie mit jedem XMPP-Konto eine Verbindung zu Peertube Chats über ein beliebiges XMPP-Konto verbinden.
 Um die Adresse des Raums, dem Sie beitreten möchten, zu erhalten, können Sie die Schaltfläche “Chat teilen” verwenden die sich über dem Chat befindet:
 Info Standardmäßig ist die Schaltfläche “Freigeben” nur für den Eigentümer des Videos und die Admins/Moderatoren der Instanz. Administratoren können jedoch festlegen, dass diese Schaltfläche für alle angezeigt wird.
-Then, choose “Mit XMPP verbinden”:
+Wählen Sie dann “Mit XMPP verbinden”:
 Dann müssen Sie nur noch auf “Öffnen” klicken oder die Adresse des Chatraums in Ihren XMPP-Client kopieren/einfügen (mit der Funktion “einem Raum beitreten”).`,description:"Verbindung zum Chat über einen XMPP-Client",tags:[],title:"XMPP Clients",uri:"/peertube-plugin-livechat/de/documentation/user/xmpp_clients/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`You can set terms & conditions on the instance level (called “global terms”), or at the streamers’ channels level (called “muc terms”, as it is related to muc rooms).
 Backend The mod_muc_peertubelivechat_terms prosody modules handles the terms configuration.
 It has a configuration option for the global terms. It also adds muc terms in the room data.
@@ -676,6 +676,7 @@ Vielen Dank an NlNet und die NGI0 Entrust fund für die finanzielle Unterstützu
 Vielen Dank an Octopuce für die finanzielle Unterstützung.
 Und vielen Dank an alle Einzelspender, die über meine [Liberapay Seite] (https://liberapay.com/JohnLivingston/) gespendet haben.`,description:"Impressum des Plugins",tags:[],title:"Impressum",uri:"/peertube-plugin-livechat/de/credits/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:`Aktivieren Sie den Chat für Ihre Live-Streams Warnung Instanzadministratoren können den Chat in bestimmten Fällen deaktivieren oder aktivieren. Die Informationen in diesem Abschnitt gelten nur für den Standardfall.
 Wenn Sie eine Peertube Live-Stream erstellen oder ändern, gibt es eine Registerkarte “Plugin-Einstellungen”:
+![Screenshot des Peertube-Formulars für die Live-Übertragung (/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px “Neuer Livestream”)
 Auf der Registerkarte “Plugin-Einstellungen” gibt es ein Kontrollkästchen “Chat nutzen”. Aktivieren oder deaktivieren Sie es einfach, um den mit Ihrem Video verbundenen Chat zu aktivieren oder zu deaktivieren.
 Tipp Je nachdem, welche Plugins auf Ihrer Peertube-Instanz installiert sind, können sich auf dieser Registerkarte weitere Einstellungen befinden.
 Chat pro Kanal Auf der Instanz-Ebene können die Peertube-Administratoren wählen, ob die Chat-Räume pro Video einzigartig sind, oder ob es einen einzigartigen Chat-Raum pro Kanal gibt. Bitte kontaktieren Sie die Administratoren Ihrer Instanz für weitere Informationen zur Konfiguration des Livechat-Plugins.
@@ -685,6 +686,7 @@ Auf der Registerkarte “Einbetten” finden Sie einige Links zum Einbetten des 
 Sie können einige Optionen individuell anpassen:
 Nur-Lesen: Sie können den Chat nur lesen, nicht schreiben. Dies ist nützlich, um den Inhalt des Chats in Ihren Live-Stream einzubinden (siehe die OBS Dokumentation). Die derzeitigen Themenfarben nutzen: wenn diese Option aktiviert ist, werden die Farben des aktuellen Themas zur URL hinzugefügt, so dass jeder Benutzer, der den Link öffnet, dieselbe Farbe erhält. IFrame-Element erstellen, um den Chat in eine Webseite zu integrieren: Anstelle einer URL erhalten Sie ein HTML-Snippet, das Sie in Ihre Website einfügen können, um den Chat einzubetten. Weitere Informationen über die Registerkarte “Dock” finden Sie in der OBS-Dokumentation.
 Auf der Registerkarte “Web” öffnet die angegebene URL den Chat in der Peertube-Oberfläche. Sie können diesen Link an andere Benutzer weitergeben, um sie zum Chat einzuladen.
+![Screenshot des “Chat Link teilen”-Dialogs auf der Registerkarte “Web”. Es gibt eine Url, die Sie kopieren können](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px Link teilen popup - Web Registerkarte")
 Das “Chat Link teilen” Popup-Fenster kann auch einen “Mit XMPP verbinden” Reiter enthalten. Dieser ist nur verfügbar, wenn die Administratoren Ihrer Instanz diese Option aktiviert und korrekt konfiguriert haben. Mit dieser Option können Sie einen Link bereitstellen, um dem Chat mit einer beliebigen XMPP-Client-Software beizutreten. Die Verwendung solcher Software kann zum Beispiel Moderationsmaßnahmen erleichtern.
 Moderation Bitte lesen Sie die Moderationsdokumentation.
 Einbindung des Chats in den Videostream Bitte lesen Sie die OBS-Dokumentation.
@@ -896,4 +898,4 @@ UmfragenPolls technical documentation
 Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview
 Kontaktieren Sie michDen Autor kontaktieren
-ImpressumImpressum des Plugins`,description:"Peertube plugin livechat documentation",tags:[],title:"Peertube livechat",uri:"/peertube-plugin-livechat/de/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Stichworte",uri:"/peertube-plugin-livechat/de/tags/index.html"}]
+ImpressumImpressum des Plugins`,description:"Peertube Plugin Livechat Dokumentation",tags:[],title:"Peertube livechat",uri:"/peertube-plugin-livechat/de/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Stichworte",uri:"/peertube-plugin-livechat/de/tags/index.html"}]
