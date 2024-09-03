@@ -1,6 +1,6 @@
 # Changelog
 
-## 11.0.0 (Not Released Yet)
+## 11.0.0
 
 ### Importante Notes
 
