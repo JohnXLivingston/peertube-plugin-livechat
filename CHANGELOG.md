@@ -1,5 +1,11 @@
 # Changelog
 
+## 11.0.1
+
+### Minor changes and fixes
+
+* Fix "send message" button that was sending the message twice.
+
 ## 11.0.0
 
 ### Importante Notes
