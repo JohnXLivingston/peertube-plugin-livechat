@@ -403,6 +403,7 @@ export class Emojis {
    */
   public async getChannelEmojisOnlyRegexp (channelId: number): Promise<string | undefined> {
     const parts = [...this.commonEmojisCodes]
+
     if (await this.channelHasCustomEmojis(channelId)) {
       const def = await this.channelCustomEmojisDefinition(channelId)
       if (def) {
@@ -411,19 +412,8 @@ export class Emojis {
     }
 
     // Note: validShortName should ensure we won't put special chars.
-    // And for the common emojis, we assume that there is no special regexp chars (other that +, which will be escaped).
-    const regexp = '^\\s*(?:(?:' + parts.map((s) => s.replace(/[+]/g, '\\$&')).join('|') + ')\\s*)+\\s*$'
-
-    // As a safety net, we check if it is a valid javascript regexp.
-    try {
-      const s = new RegExp(regexp)
-      if (!s) {
-        throw new Error('Can\'t create the RegExp from ' + regexp)
-      }
-    } catch (err) {
-      this.logger.error('Invalid Emoji Only regexp for channel ' + channelId.toString() + ': ' + regexp)
-      return undefined
-    }
+    // And for the common emojis, we assume that there is no special regexp chars
+    const regexp = '^\\s*(?:(?:' + parts.join('|') + ')\\s*)+\\s*$'
 
     return regexp
   }
@@ -489,7 +479,7 @@ async function _getConverseEmojiCodes (options: RegisterServerOptions): Promise<
       if (key === 'custom') { continue } // These are not used.
       r.push(
         ...Object.values(block)
-          .map((d: any) => d.cp ? _convert(d.cp) : d.sn)
+          .map((d: any) => d.cp ? _emojiCpToRegexp(d.cp) : d.sn)
           .filter((sn: string) => sn && sn !== '')
       )
     }
@@ -503,38 +493,19 @@ async function _getConverseEmojiCodes (options: RegisterServerOptions): Promise<
 }
 
 /**
- * Converts unicode code points and code pairs to their respective characters.
+ * Converts unicode code points and code pairs to the corresponding Regexp class.
  * See ConverseJS emoji/utils.js for more info.
  * @param {string} unicode
  */
-function _convert (unicode: string): string {
+function _emojiCpToRegexp (unicode: string): string {
   if (unicode.includes('-')) {
     const parts = []
     const s = unicode.split('-')
 
     for (let i = 0; i < s.length; i++) {
-      const part = parseInt(s[i], 16)
-      if (part >= 0x10000 && part <= 0x10FFFF) {
-        const hi = Math.floor((part - 0x10000) / 0x400) + 0xD800
-        const lo = ((part - 0x10000) % 0x400) + 0xDC00
-        parts.push(String.fromCharCode(hi) + String.fromCharCode(lo))
-      } else {
-        parts.push(String.fromCharCode(part))
-      }
+      parts.push('\\x{' + s[i] + '}')
     }
     return parts.join('')
   }
-  return _fromCodePoint(unicode)
-}
-
-function _fromCodePoint (codepoint: string): string {
-  let code = typeof codepoint === 'string' ? parseInt(codepoint, 16) : codepoint
-  if (code < 0x10000) {
-    return String.fromCharCode(code)
-  }
-  code -= 0x10000
-  return String.fromCharCode(
-    0xD800 + (code >> 10),
-    0xDC00 + (code & 0x3FF)
-  )
+  return '\\x{' + unicode + '}'
 }

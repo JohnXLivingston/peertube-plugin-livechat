@@ -11,7 +11,8 @@
 local st = require "util.stanza";
 local jid_bare = require "util.jid".bare;
 
-local rex = require "rex_pcre2"; -- We are using PCRE2 (Perl Compatible Regular Expression)
+local rex = require "rex_onig"; -- We are using Oniguruma because PCRE2 does not handle long regexp.
+rex.setdefaultsyntax ("PERL");
 
 -- Plugin dependencies
 local mod_muc = module:depends "muc";
@@ -87,7 +88,7 @@ function handle_groupchat(event)
     if (r == nil) then
       return;
     end
-    room.x_peertubelivechat_emoji_only_compiled_regexp = rex.new(r, "i");
+    room.x_peertubelivechat_emoji_only_compiled_regexp = rex.new(r, "i", "UTF8");
   end
 
   -- only consider messages with body (ie: ignore chatstate and other non-text xmpp messages)

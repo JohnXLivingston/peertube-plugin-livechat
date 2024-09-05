@@ -115,7 +115,7 @@ async function updateProsodyRoom (
     apiData.removeAffiliationsFor = data.removeAffiliationsFor
   }
   try {
-    logger.debug('Calling update room API on url: ' + apiUrl + ', with data: ' + JSON.stringify(apiData))
+    logger.debug('Calling update room API on url: ' + apiUrl)
     const result = await got(apiUrl, {
       method: 'POST',
       headers: {
