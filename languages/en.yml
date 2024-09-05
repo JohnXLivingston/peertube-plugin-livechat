@@ -636,3 +636,5 @@ prosody_firewall_name_desc: |
   Can only contain: alphanumerical characters, underscores and hyphens.
   Scripts will be loaded in alphabetical order.
 prosody_firewall_content: File content
+
+emoji_only_info: Emoji only mode is enabled, you can only use emoji in your messages.

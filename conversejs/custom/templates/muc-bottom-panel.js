@@ -83,6 +83,20 @@ const tplSlowMode = (o) => {
   return html`<livechat-slow-mode jid=${o.model.get('jid')}>`
 }
 
+const tplEmojiOnly = (o) => {
+  if (!o.can_post) { return html`` }
+  if (!o.model.features?.get?.('x_peertubelivechat_emoji_only_mode')) {
+    return ''
+  }
+  return html`<div class="livechat-emoji-only-info-box">
+      <converse-icon class="fa fa-info-circle" size="1.2em"></converse-icon>
+      ${
+        // eslint-disable-next-line no-undef
+        __(LOC_emoji_only_info)
+      }
+    </div>`
+}
+
 const tplViewerMode = (o) => {
   if (!api.settings.get('livechat_enable_viewer_mode')) {
     return html``
@@ -145,6 +159,7 @@ export default (o) => {
   return html`
     ${tplViewerMode(o)}
     ${tplSlowMode(o)}
+    ${tplEmojiOnly(o)}
     ${
       mutedAnonymousMessage
         ? html`<span class="muc-bottom-panel muc-bottom-panel--muted">${mutedAnonymousMessage}</span>`

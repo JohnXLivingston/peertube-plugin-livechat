@@ -15,6 +15,7 @@ import {
   getChannelConfigurationOptions,
   getDefaultChannelConfigurationOptions
 } from '../../configuration/channel/storage'
+import { Emojis } from '../../emojis'
 
 // See here for description: https://modules.prosody.im/mod_muc_http_defaults.html
 interface RoomDefaults {
@@ -37,6 +38,8 @@ interface RoomDefaults {
     // Following fields are specific to livechat (for now), and requires a customized version for mod_muc_http_defaults.
     slow_mode_duration?: number
     mute_anonymous?: boolean
+    livechat_emoji_only?: boolean
+    livechat_emoji_only_regexp?: string
     livechat_muc_terms?: string
     moderation_delay?: number
     anonymize_moderation_actions?: boolean
@@ -51,9 +54,12 @@ async function _getChannelSpecificOptions (
   const channelOptions = await getChannelConfigurationOptions(options, channelId) ??
     getDefaultChannelConfigurationOptions(options)
 
+  const emojiOnlyRegexp = await Emojis.singletonSafe()?.getChannelEmojisOnlyRegexp(channelId)
+
   return {
     slow_mode_duration: channelOptions.slowMode.duration,
     mute_anonymous: channelOptions.mute.anonymous,
+    livechat_emoji_only_regexp: emojiOnlyRegexp,
     livechat_muc_terms: channelOptions.terms,
     moderation_delay: channelOptions.moderation.delay,
     anonymize_moderation_actions: channelOptions.moderation.anonymize

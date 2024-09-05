@@ -10,12 +10,12 @@ set -euo pipefail
 # This script download the Prosody AppImage from the https://github.com/JohnXLivingston/prosody-appimage project.
 
 repo_base_url='https://github.com/JohnXLivingston/prosody-appimage/releases/download'
-wanted_release='v0.12.3-1'
+wanted_release='v0.12.4-2'
 
 x86_64_filename='prosody-x86_64.AppImage'
-x86_64_sha256sum='f4af9bfefa2f804ad7e8b03a68f04194abb801f070ae620b3d4bcedb144e8523'
+x86_64_sha256sum='664d9f3b1ea6dc5fdbe29ef8e8b4c0655abdff697e8c94bfecc894ef2c2fea08'
 aarch64_filename='prosody-aarch64.AppImage'
-aarch64_sha256sum='878c5be719e1e36a84d637fd2bd44e3059aa91ddb6906ad05f1dd0334078df09'
+aarch64_sha256sum='9911c0d581a92a817e9795a7944773a07e85151127233a2e551eb07dc4c44fb5'
 
 download_dir="$(pwd)/vendor/prosody-appimage"
 dist_dir="$(pwd)/dist/server/prosody"

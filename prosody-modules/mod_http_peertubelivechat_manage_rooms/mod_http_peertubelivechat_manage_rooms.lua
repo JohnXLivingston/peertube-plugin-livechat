@@ -16,6 +16,9 @@ module:depends"http";
 
 local mod_muc_peertubelivechat_terms = module:depends"muc_peertubelivechat_terms";
 local set_muc_terms = rawget(mod_muc_peertubelivechat_terms, "set_muc_terms");
+local mod_muc_peertubelivechat_restrict_message = module:depends"muc_peertubelivechat_restrict_message";
+local set_peertubelivechat_emoji_only_mode = rawget(mod_muc_peertubelivechat_restrict_message, "set_peertubelivechat_emoji_only_mode");
+local set_peertubelivechat_emoji_only_regexp = rawget(mod_muc_peertubelivechat_restrict_message, "set_peertubelivechat_emoji_only_regexp");
 
 function check_auth(routes)
   local function check_request_auth(event)
@@ -100,6 +103,16 @@ local function update_room(event)
   if type(config.moderation_delay) == "number" then
     if room._data.moderation_delay ~= config.moderation_delay then
       room._data.moderation_delay = config.moderation_delay;
+    end
+  end
+  if type(config.livechat_emoji_only) == "boolean" then
+    if set_peertubelivechat_emoji_only_mode then
+      set_peertubelivechat_emoji_only_mode(room, config.livechat_emoji_only)
+    end
+  end
+  if type(config.livechat_emoji_only_regexp) == "string" then
+    if set_peertubelivechat_emoji_only_mode then
+      set_peertubelivechat_emoji_only_regexp(room, config.livechat_emoji_only_regexp)
     end
   end
   if (type(config.livechat_muc_terms) == "string") then

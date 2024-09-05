@@ -65,6 +65,8 @@ async function updateProsodyRoom (
     name?: string
     slow_mode_duration?: number
     moderation_delay?: number
+    livechat_emoji_only?: boolean
+    livechat_emoji_only_regexp?: string
     livechat_muc_terms?: string
     addAffiliations?: Affiliations
     removeAffiliationsFor?: string[]
@@ -99,6 +101,12 @@ async function updateProsodyRoom (
   }
   if ('livechat_muc_terms' in data) {
     apiData.livechat_muc_terms = data.livechat_muc_terms ?? ''
+  }
+  if ('livechat_emoji_only' in data) {
+    apiData.livechat_emoji_only = data.livechat_emoji_only ?? false
+  }
+  if ('livechat_emoji_only_regexp' in data) {
+    apiData.livechat_emoji_only_regexp = data.livechat_emoji_only_regexp ?? ''
   }
   if (('addAffiliations' in data) && data.addAffiliations !== undefined) {
     apiData.addAffiliations = data.addAffiliations

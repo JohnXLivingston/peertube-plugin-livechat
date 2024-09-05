@@ -23,6 +23,7 @@ export class Emojis {
   protected channelBasePath: string
   protected channelBaseUri: string
   protected readonly channelCache = new Map<number, boolean>()
+  protected readonly commonEmojisCodes: string[]
   protected readonly logger: {
     debug: (s: string) => void
     info: (s: string) => void
@@ -30,9 +31,10 @@ export class Emojis {
     error: (s: string) => void
   }
 
-  constructor (options: RegisterServerOptions) {
+  constructor (options: RegisterServerOptions, commonEmojisCodes: string[]) {
     const logger = options.peertubeHelpers.logger
     this.options = options
+    this.commonEmojisCodes = commonEmojisCodes
     this.channelBasePath = path.join(
       options.peertubeHelpers.plugin.getDataDirectoryPath(),
       'emojis',
@@ -138,9 +140,11 @@ export class Emojis {
 
   /**
    * Test if short name is valid.
+   *
    * @param sn short name
    */
   public validShortName (sn: any): boolean {
+    // Important note: do not change this without checking if it can breaks getChannelEmojisOnlyRegexp.
     if ((typeof sn !== 'string') || !/^:?[\w-]+:?$/.test(sn)) {
       this.logger.debug('Short name invalid: ' + (typeof sn === 'string' ? sn : '???'))
       return false
@@ -391,6 +395,40 @@ export class Emojis {
   }
 
   /**
+   * Returns a string representing a regular expression (Perl Compatible RE) that can validate that a message
+   * contains only emojis (for this channel).
+   * This is used for the emoji only mode (test are made on the Prosody server).
+   *
+   * @param channelId channel id
+   */
+  public async getChannelEmojisOnlyRegexp (channelId: number): Promise<string | undefined> {
+    const parts = [...this.commonEmojisCodes]
+    if (await this.channelHasCustomEmojis(channelId)) {
+      const def = await this.channelCustomEmojisDefinition(channelId)
+      if (def) {
+        parts.push(...def.customEmojis.map(d => d.sn))
+      }
+    }
+
+    // Note: validShortName should ensure we won't put special chars.
+    // And for the common emojis, we assume that there is no special regexp chars (other that +, which will be escaped).
+    const regexp = '^\\s*(?:(?:' + parts.map((s) => s.replace(/[+]/g, '\\$&')).join('|') + ')\\s*)+\\s*$'
+
+    // As a safety net, we check if it is a valid javascript regexp.
+    try {
+      const s = new RegExp(regexp)
+      if (!s) {
+        throw new Error('Can\'t create the RegExp from ' + regexp)
+      }
+    } catch (err) {
+      this.logger.error('Invalid Emoji Only regexp for channel ' + channelId.toString() + ': ' + regexp)
+      return undefined
+    }
+
+    return regexp
+  }
+
+  /**
    * Returns the singleton, of thrown an exception if it is not initialized yet.
    * Please note that this singleton won't exist if feature is disabled.
    * @returns the singleton
@@ -416,10 +454,14 @@ export class Emojis {
    */
   public static async initSingleton (options: RegisterServerOptions): Promise<void> {
     const disabled = await options.settingsManager.getSetting('disable-channel-configuration')
+
+    // Loading common emojis codes
+    const commonEmojisCodes = await _getConverseEmojiCodes(options)
+
     if (disabled) {
       singleton = undefined
     } else {
-      singleton = new Emojis(options)
+      singleton = new Emojis(options, commonEmojisCodes)
     }
   }
 
@@ -430,4 +472,69 @@ export class Emojis {
     if (!singleton) { return }
     singleton = undefined
   }
+}
+
+async function _getConverseEmojiCodes (options: RegisterServerOptions): Promise<string[]> {
+  try {
+    // build-converse.sh copy the file emoji.json to /dist/converse-emoji.json
+    const converseEmojiDefPath = path.join(__dirname, '..', '..', '..', 'converse-emoji.json')
+    options.peertubeHelpers.logger.debug('Loading Converse Emojis from file ' + converseEmojiDefPath)
+
+    const converseEmojis: {[key: string]: any} = JSON.parse(
+      await (await fs.promises.readFile(converseEmojiDefPath)).toString()
+    )
+
+    const r = []
+    for (const [key, block] of Object.entries(converseEmojis)) {
+      if (key === 'custom') { continue } // These are not used.
+      r.push(
+        ...Object.values(block)
+          .map((d: any) => d.cp ? _convert(d.cp) : d.sn)
+          .filter((sn: string) => sn && sn !== '')
+      )
+    }
+    return r
+  } catch (err) {
+    options.peertubeHelpers.logger.error(
+      'Failed to load Converse Emojis file, emoji only mode will be buggy. ' + (err as string)
+    )
+    return []
+  }
+}
+
+/**
+ * Converts unicode code points and code pairs to their respective characters.
+ * See ConverseJS emoji/utils.js for more info.
+ * @param {string} unicode
+ */
+function _convert (unicode: string): string {
+  if (unicode.includes('-')) {
+    const parts = []
+    const s = unicode.split('-')
+
+    for (let i = 0; i < s.length; i++) {
+      const part = parseInt(s[i], 16)
+      if (part >= 0x10000 && part <= 0x10FFFF) {
+        const hi = Math.floor((part - 0x10000) / 0x400) + 0xD800
+        const lo = ((part - 0x10000) % 0x400) + 0xDC00
+        parts.push(String.fromCharCode(hi) + String.fromCharCode(lo))
+      } else {
+        parts.push(String.fromCharCode(part))
+      }
+    }
+    return parts.join('')
+  }
+  return _fromCodePoint(unicode)
+}
+
+function _fromCodePoint (codepoint: string): string {
+  let code = typeof codepoint === 'string' ? parseInt(codepoint, 16) : codepoint
+  if (code < 0x10000) {
+    return String.fromCharCode(code)
+  }
+  code -= 0x10000
+  return String.fromCharCode(
+    0xD800 + (code >> 10),
+    0xDC00 + (code & 0x3FF)
+  )
 }

@@ -40,6 +40,7 @@ if [ -n "$CONVERSE_COMMIT" ]; then
 fi
 converse_build_dir="$rootdir/build/conversejs"
 converse_destination_dir="$rootdir/dist/client/conversejs"
+converse_emoji_destination="$rootdir/dist/converse-emoji.json"
 
 if [[ ! -d $src_dir ]]; then
   echo "$0 must be called from the plugin livechat root dir."
@@ -118,6 +119,9 @@ cd $rootdir
 
 echo "Copying ConverseJS dist files..."
 mkdir -p "$converse_destination_dir" && cp -r $converse_build_dir/dist/* "$converse_destination_dir/"
+
+echo "Copying ConverseJS original emoji.json file..." # this is needed for some backend code.
+cp "$converse_build_dir/src/headless/plugins/emoji/emoji.json" "$converse_emoji_destination"
 
 echo "ConverseJS OK."
 

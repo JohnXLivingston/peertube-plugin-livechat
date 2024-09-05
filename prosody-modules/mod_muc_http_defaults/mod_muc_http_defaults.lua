@@ -9,6 +9,9 @@
 -- * "mute_anonymous"
 -- * "moderation_delay"
 -- * "anonymize_moderation_actions"
+-- * "livechat_emoji_only"
+-- * "livechat_emoji_only_regexp"
+-- * "livechat_muc_terms"
 -- These options are introduced in the Peertube livechat plugin.
 --
 -- The "slow_mode_duration" comes with mod_muc_slow_mode.
@@ -127,6 +130,12 @@ local function apply_config(room, settings)
 		end
 		if (type(config.mute_anonymous) == "boolean") then
 			room._data.x_peertubelivechat_mute_anonymous = config.mute_anonymous;
+		end
+		if (type(config.livechat_emoji_only) == "boolean") then
+			room._data.x_peertubelivechat_emoji_only_mode = config.livechat_emoji_only;
+		end
+		if (type(config.livechat_emoji_only_regexp) == "string" and config.livechat_emoji_only_regexp ~= "") then
+			room._data.x_peertubelivechat_emoji_only_regexp = config.emoji_only_regexp;
 		end
 		if (type(config.livechat_muc_terms) == "string") then
 			-- we don't need to use set_muc_terms here, as this is called for a newly created room

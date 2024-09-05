@@ -1,5 +1,11 @@
 # Changelog
 
+## 11.1.0 (Not Released Yet)
+
+### New features
+
+* #131: Emoji only mode.
+
 ## 11.0.1
 
 ### Minor changes and fixes

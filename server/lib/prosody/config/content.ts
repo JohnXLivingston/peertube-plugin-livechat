@@ -260,6 +260,8 @@ class ProsodyConfigContent {
     this.muc.set('anonymize_moderation_actions_form_position', 117)
 
     this.muc.add('modules_enabled', 'muc_mam_search')
+
+    this.muc.add('modules_enabled', 'muc_peertubelivechat_restrict_message')
   }
 
   useAnonymous (autoBanIP: boolean): void {

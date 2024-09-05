@@ -66,6 +66,7 @@ CORE_PLUGINS.push('livechat-converse-mam-search')
 // We must also add our custom ROOM_FEATURES, so that they correctly resets
 // (see headless/plugins/muc, getDiscoInfoFeatures, which loops on this const)
 ROOM_FEATURES.push('x_peertubelivechat_mute_anonymous')
+ROOM_FEATURES.push('x_peertubelivechat_emoji_only_mode')
 
 _converse.exports.CustomElement = CustomElement
 

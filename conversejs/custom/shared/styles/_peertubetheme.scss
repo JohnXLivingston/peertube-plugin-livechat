@@ -35,6 +35,14 @@
       }
     }
 
+    // Emoji only info box
+    .livechat-emoji-only-info-box {
+      border: 1px dashed var(--peertube-menu-background);
+      color: var(--peertube-main-foreground);
+      background-color: var(--peertube-main-background);
+      margin: 0 5px;
+    }
+
     converse-chat-toolbar {
       border-top: none !important; // removing border, to avoid confusing the toolbar with an input field.
       color: var(--peertube-main-foreground);
