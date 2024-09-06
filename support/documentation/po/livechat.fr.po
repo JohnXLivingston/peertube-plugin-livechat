@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-08-30 16:24+0200\n"
+"POT-Creation-Date: 2024-09-06 12:33+0200\n"
 "PO-Revision-Date: 2024-08-12 11:25+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -3371,6 +3371,57 @@ msgid "The `sn` attribute is the short name code.  The `url` attribute can be an
 msgstr "L'attribut `sn` est le code du nom court.  L'attribut `url` peut être n'importe quelle url d'image à laquelle votre navigateur peut accéder, ou une [URL de données](https://developer.mozilla.org/fr-FR/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) représentant le fichier que vous souhaitez importer."
 
 #. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy, no-wrap
+#| msgid "Plugin peertube-plugin-livechat slow mode"
+msgid "Plugin peertube-plugin-livechat emojis only mode"
+msgstr "Mode lent du plugin peertube-plugin-livechat"
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, no-wrap
+msgid "Emojis only mode"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy
+#| msgid "This feature comes with the livechat plugin version 11.0.0."
+msgid "This feature comes with the livechat plugin version 11.1.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy
+#| msgid "This can be really usefull to:"
+msgid "This mode can be usefull for example:"
+msgstr "Cela peut s'avérer très utile pour :"
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "To avoid spam or offensive message when you are not here to moderate."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "When there are too many speaking participants, and you can't no more moderate correctly."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy
+#| msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
+msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label emoji_only_mode_title %}}\" checkbox."
+msgstr "Pour activer ou désactiver cette fonctionnalité, utilisez le [menu déroulant du chat](/peertube-plugin-livechat/fr/documentation/user/viewers), puis ouvrez le menu \"configurer\".  Dans le formulaire, vous trouverez une case à cocher \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\"."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy
+#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
+msgid "If you want to enable it for all your chatrooms at once, open the [channel emojis configuration page](/peertube-plugin-livechat/documentation/user/streamers/emojis/), and use the \"{{% livechat_label emoji_only_enable_all_rooms %}}\" button."
+msgstr "Sur la [page de configuration de la chaîne](/peertube-plugin-livechat/fr/documentation/user/streamers/channel), vous pouvez définir une valeur pour l'option \"{{% livechat_label moderation_delay %}}\" :"
+
+#. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
 #, no-wrap
 msgid "How to setup the chat for your live stream"
@@ -3972,8 +4023,9 @@ msgstr "Vous pouvez trier les tâches ou les déplacer d'une liste à l'autre pa
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/polls.md
-#, no-wrap
-msgid "You can create polls to ask viewers their opinion."
+#, fuzzy, no-wrap
+#| msgid "You can create polls to ask viewers their opinion."
+msgid "You can create polls to ask viewers their opinion"
 msgstr "Vous pouvez créer des sondages pour demander l'avis des spectateur⋅rices."
 
 #. type: Yaml Front Matter Hash Value: title

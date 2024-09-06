@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-08-30 16:24+0200\n"
+"POT-Creation-Date: 2024-09-06 12:33+0200\n"
 "PO-Revision-Date: 2023-07-17 10:53+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Vietnamese <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/vi/>\n"
@@ -3208,6 +3208,48 @@ msgid "The `sn` attribute is the short name code.  The `url` attribute can be an
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, no-wrap
+msgid "Plugin peertube-plugin-livechat emojis only mode"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, no-wrap
+msgid "Emojis only mode"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "This feature comes with the livechat plugin version 11.1.0."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "This mode can be usefull for example:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "To avoid spam or offensive message when you are not here to moderate."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "When there are too many speaking participants, and you can't no more moderate correctly."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label emoji_only_mode_title %}}\" checkbox."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "If you want to enable it for all your chatrooms at once, open the [channel emojis configuration page](/peertube-plugin-livechat/documentation/user/streamers/emojis/), and use the \"{{% livechat_label emoji_only_enable_all_rooms %}}\" button."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
 #, no-wrap
 msgid "How to setup the chat for your live stream"
@@ -3773,7 +3815,7 @@ msgstr ""
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 #, no-wrap
-msgid "You can create polls to ask viewers their opinion."
+msgid "You can create polls to ask viewers their opinion"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title

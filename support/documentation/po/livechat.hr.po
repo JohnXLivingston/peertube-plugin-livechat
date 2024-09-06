@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-08-30 16:24+0200\n"
+"POT-Creation-Date: 2024-09-06 12:33+0200\n"
 "PO-Revision-Date: 2024-07-19 17:45+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -3262,6 +3262,53 @@ msgid "The `sn` attribute is the short name code.  The `url` attribute can be an
 msgstr "Atribut `sn` je kod kratkog imena. Atribut `url` može biti bilo koji url slike kojem tvoj preglednik može pristupiti ili [URL podataka](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) koji predstavlja datoteku koju želiš uvesti."
 
 #. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy, no-wrap
+#| msgid "Plugin documentation"
+msgid "Plugin peertube-plugin-livechat emojis only mode"
+msgstr "Dokumentacija dodataka"
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, no-wrap
+msgid "Emojis only mode"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy
+#| msgid "This feature comes with the livechat plugin version 10.0.0."
+msgid "This feature comes with the livechat plugin version 11.1.0."
+msgstr "Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.0.0."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "This mode can be usefull for example:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "To avoid spam or offensive message when you are not here to moderate."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "When there are too many speaking participants, and you can't no more moderate correctly."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label emoji_only_mode_title %}}\" checkbox."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy
+#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
+msgid "If you want to enable it for all your chatrooms at once, open the [channel emojis configuration page](/peertube-plugin-livechat/documentation/user/streamers/emojis/), and use the \"{{% livechat_label emoji_only_enable_all_rooms %}}\" button."
+msgstr "Na [stranici za konfiguraciju kanala](/peertube-plugin-livechat/hr/documentation/user/streamers/channel) možeš postaviti opciju „{{% livechat_label moderation_delay %}}”:"
+
+#. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
 #, no-wrap
 msgid "How to setup the chat for your live stream"
@@ -3840,7 +3887,7 @@ msgstr ""
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 #, no-wrap
-msgid "You can create polls to ask viewers their opinion."
+msgid "You can create polls to ask viewers their opinion"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
