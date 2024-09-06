@@ -120,9 +120,10 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
           //   but will be more efficient to add here, as we already tested hasChat).
           // Note: no need to await here, would only degrade performances.
           // FIXME: should also update livechat_muc_terms if channel has changed.
-          // FIXME: should also update livechat_emoji_only_regexp if channel has changed.
           updateProsodyRoom(options, video.uuid, {
-            name: video.name
+            name: video.name,
+            // In case the channel changed:
+            livechat_custom_emoji_regexp: await Emojis.singletonSafe()?.getChannelCustomEmojisRegexp(video.channelId)
           }).then(
             () => {},
             (err) => logger.error(err)

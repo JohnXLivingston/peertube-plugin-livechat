@@ -19,6 +19,7 @@ local mod_muc = module:depends "muc";
 local muc_util = module:require "muc/util";
 local valid_roles = muc_util.valid_roles;
 
+local common_emoji_regexp = assert(module:get_option_string('peertubelivechat_restrict_message_common_emoji_regexp'), 'Common emoji regexp is mandatory');
 
 function get_peertubelivechat_emoji_only_mode(room)
   return room._data.x_peertubelivechat_emoji_only_mode;
@@ -31,17 +32,17 @@ function set_peertubelivechat_emoji_only_mode(room, emoji_only)
   return true;
 end
 
-function get_peertubelivechat_emoji_only_regexp(room)
-  return room._data.x_peertubelivechat_emoji_only_regexp;
+function get_peertubelivechat_custom_emoji_regexp(room)
+  return room._data.x_peertubelivechat_custom_emoji_regexp;
 end
 
-function set_peertubelivechat_emoji_only_regexp(room, emoji_only_regexp)
+function set_peertubelivechat_custom_emoji_regexp(room, emoji_only_regexp)
   if (emoji_only_regexp ~= nil and type(emoji_only_regexp) ~= "string") then
     return false;
   end
   if emoji_only_regexp == "" then emoji_only_regexp = nil; end
-  if get_peertubelivechat_emoji_only_regexp(room) == emoji_only_regexp then return false; end
-  room._data.x_peertubelivechat_emoji_only_regexp = emoji_only_regexp;
+  if get_peertubelivechat_custom_emoji_regexp(room) == emoji_only_regexp then return false; end
+  room._data.x_peertubelivechat_custom_emoji_regexp = emoji_only_regexp;
 
   -- and we must decache the compile regexp
   room.x_peertubelivechat_emoji_only_compiled_regexp = nil;
@@ -49,25 +50,23 @@ function set_peertubelivechat_emoji_only_regexp(room, emoji_only_regexp)
 end
 
 module:hook("muc-disco#info", function(event)
-  if get_peertubelivechat_emoji_only_mode(event.room) and get_peertubelivechat_emoji_only_regexp(event.room) ~= nil then
+  if get_peertubelivechat_emoji_only_mode(event.room) then
     event.reply:tag("feature", {var = "x_peertubelivechat_emoji_only_mode"}):up();
   end
 end);
 
 module:hook("muc-config-form", function(event)
-  if (get_peertubelivechat_emoji_only_regexp(event.room) ~= nil) then
-    table.insert(event.form, {
-      name = "muc#roomconfig_x_peertubelivechat_emoji_only_mode";
-      type = "boolean";
-      label = "Emoji only mode";
-      desc = "Occupants will only be able to send emoji. This does not affect moderators.";
-      value = get_peertubelivechat_emoji_only_mode(event.room);
-    });
-  end
-end, 121);
+  table.insert(event.form, {
+    name = "muc#roomconfig_x_peertubelivechat_emoji_only_mode";
+    type = "boolean";
+    label = "Emoji only mode";
+    desc = "Occupants will only be able to send emoji. This does not affect moderators.";
+    value = get_peertubelivechat_emoji_only_mode(event.room);
+  });
+end, 122);
 
 module:hook("muc-config-submitted/muc#roomconfig_x_peertubelivechat_emoji_only_mode", function(event)
-  if get_peertubelivechat_emoji_only_regexp(event.room) ~= nil and set_peertubelivechat_emoji_only_mode(event.room, event.value) then
+  if set_peertubelivechat_emoji_only_mode(event.room, event.value) then
     event.status_codes["104"] = true;
   end
 end);
@@ -84,10 +83,14 @@ function handle_groupchat(event)
 
   if not room.x_peertubelivechat_emoji_only_compiled_regexp then
     -- compute the regexp on first access
-    local r = get_peertubelivechat_emoji_only_regexp(room);
-    if (r == nil) then
-      return;
+    local r = get_peertubelivechat_custom_emoji_regexp(room);
+    if (r == nil or r == "") then
+      r = common_emoji_regexp;
+    else
+      r = r .. "|" .. common_emoji_regexp;
     end
+    r = "^\\s*(?:(?:" .. r .. ")\\s*)+\\s*$"
+
     room.x_peertubelivechat_emoji_only_compiled_regexp = rex.new(r, "i", "UTF8");
   end
 

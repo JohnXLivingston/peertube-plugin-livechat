@@ -171,13 +171,13 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
         await emojis.saveChannelDefinition(channelInfos.id, emojisDefinitionSanitized, bufferInfos)
 
         // We must update the emoji only regexp on the Prosody server.
-        const emojisOnlyRegexp = await emojis.getChannelEmojisOnlyRegexp(channelInfos.id)
+        const customEmojisRegexp = await emojis.getChannelCustomEmojisRegexp(channelInfos.id)
         const roomJIDs = RoomChannel.singleton().getChannelRoomJIDs(channelInfos.id)
         for (const roomJID of roomJIDs) {
           // No need to await here
           logger.info(`Updating room ${roomJID} emoji only regexp...`)
           updateProsodyRoom(options, roomJID, {
-            livechat_emoji_only_regexp: emojisOnlyRegexp
+            livechat_custom_emoji_regexp: customEmojisRegexp
           }).then(
             () => {},
             (err) => logger.error(err)

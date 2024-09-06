@@ -144,7 +144,7 @@ export class Emojis {
    * @param sn short name
    */
   public validShortName (sn: any): boolean {
-    // Important note: do not change this without checking if it can breaks getChannelEmojisOnlyRegexp.
+    // Important note: do not change this without checking if it can breaks getChannelCustomEmojisRegexp.
     if ((typeof sn !== 'string') || !/^:?[\w-]+:?$/.test(sn)) {
       this.logger.debug('Short name invalid: ' + (typeof sn === 'string' ? sn : '???'))
       return false
@@ -395,14 +395,13 @@ export class Emojis {
   }
 
   /**
-   * Returns a string representing a regular expression (Perl Compatible RE) that can validate that a message
-   * contains only emojis (for this channel).
+   * Returns a string representing a regular expression validating channel custom emojis.
    * This is used for the emoji only mode (test are made on the Prosody server).
    *
    * @param channelId channel id
    */
-  public async getChannelEmojisOnlyRegexp (channelId: number): Promise<string | undefined> {
-    const parts = [...this.commonEmojisCodes]
+  public async getChannelCustomEmojisRegexp (channelId: number): Promise<string | undefined> {
+    const parts = []
 
     if (await this.channelHasCustomEmojis(channelId)) {
       const def = await this.channelCustomEmojisDefinition(channelId)
@@ -411,11 +410,17 @@ export class Emojis {
       }
     }
 
-    // Note: validShortName should ensure we won't put special chars.
-    // And for the common emojis, we assume that there is no special regexp chars
-    const regexp = '^\\s*(?:(?:' + parts.join('|') + ')\\s*)+\\s*$'
+    if (parts.length === 0) {
+      return undefined
+    }
 
-    return regexp
+    // Note: validShortName should ensure we won't put special chars.
+    return parts.join('|')
+  }
+
+  public getCommonEmojisRegexp (): string {
+    // We assume that there is no special regexp chars (should only contains unicode emojis)
+    return this.commonEmojisCodes.join('|')
   }
 
   /**

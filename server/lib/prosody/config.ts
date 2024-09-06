@@ -19,6 +19,7 @@ import { BotConfiguration } from '../configuration/bot'
 import { debugMucAdmins } from '../debug'
 import { ExternalAuthOIDC } from '../external-auth/oidc'
 import { listModFirewallFiles } from '../firewall/config'
+import { Emojis } from '../emojis'
 
 async function getWorkingDir (options: RegisterServerOptions): Promise<string> {
   const peertubeHelpers = options.peertubeHelpers
@@ -389,6 +390,13 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     config.useModFirewall(modFirewallFiles)
   }
 
+  const commonEmojisRegexp = Emojis.singletonSafe()?.getCommonEmojisRegexp()
+  if (commonEmojisRegexp) {
+    config.useRestrictMessage(commonEmojisRegexp)
+  } else {
+    logger.error('Fail to load common emojis regexp, disabling restrict message module.')
+  }
+
   config.useTestModule(apikey, testApiUrl)
 
   const debugMucAdminJids = debugMucAdmins(options)
@@ -500,6 +508,11 @@ function getProsodyConfigContentForDiagnostic (config: ProsodyConfig, content?: 
     // replaceAll not available, using trick:
     r = r.split(value).join(`***${key}***`)
   }
+  // We also replace `peertubelivechat_restrict_message_common_emoji_regexp` because it could be a very long line
+  r = r.replace(
+    /^(?:(\s*peertubelivechat_restrict_message_common_emoji_regexp\s*=\s*.{0,10}).*)$/gm,
+    '$1 ***long line truncated***'
+  )
   return r
 }
 

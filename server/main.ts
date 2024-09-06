@@ -18,6 +18,7 @@ import { BotConfiguration } from './lib/configuration/bot'
 import { BotsCtl } from './lib/bots/ctl'
 import { ExternalAuthOIDC } from './lib/external-auth/oidc'
 import { migrateMUCAffiliations } from './lib/prosody/migration/migrateV10'
+import { updateProsodyChannelEmojisRegex } from './lib/prosody/migration/migrageV11-1'
 import { Emojis } from './lib/emojis'
 import { LivechatProsodyAuth } from './lib/prosody/auth'
 import decache from 'decache'
@@ -87,11 +88,24 @@ async function register (options: RegisterServerOptions): Promise<any> {
     // livechat v10.0.0: we must migrate MUC affiliations (but we don't have to wait)
     // we do this after the preBotPromise, just to avoid doing both at the same time.
     preBotPromise.then(() => {
-      migrateMUCAffiliations(options).then(
+      const p = migrateMUCAffiliations(options).then(
         () => {},
         (err) => {
           logger.error(err)
-        })
+        }
+      )
+
+      // livechat v11.1: we must send channel emojis regexp to Prosody rooms
+      p.finally(
+        () => {
+          updateProsodyChannelEmojisRegex(options).then(
+            () => {},
+            (err: any) => {
+              logger.error(err)
+            }
+          )
+        }
+      )
     }, () => {})
   } catch (error) {
     options.peertubeHelpers.logger.error('Error when launching Prosody: ' + (error as string))

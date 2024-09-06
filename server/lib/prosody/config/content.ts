@@ -260,8 +260,6 @@ class ProsodyConfigContent {
     this.muc.set('anonymize_moderation_actions_form_position', 117)
 
     this.muc.add('modules_enabled', 'muc_mam_search')
-
-    this.muc.add('modules_enabled', 'muc_peertubelivechat_restrict_message')
   }
 
   useAnonymous (autoBanIP: boolean): void {
@@ -562,6 +560,18 @@ class ProsodyConfigContent {
   useModFirewall (files: string[]): void {
     this.global.add('modules_enabled', 'firewall')
     this.global.set('firewall_scripts', files)
+  }
+
+  /**
+   * Enable and configure the restrict message module.
+   * @param commonEmojiRegexp A regexp to match common emojis.
+   */
+  useRestrictMessage (commonEmojiRegexp: string): void {
+    this.muc.add('modules_enabled', 'muc_peertubelivechat_restrict_message')
+    this.muc.set(
+      'peertubelivechat_restrict_message_common_emoji_regexp',
+      new ConfigEntryValueMultiLineString(commonEmojiRegexp)
+    )
   }
 
   addMucAdmins (jids: string[]): void {
