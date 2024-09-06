@@ -154,8 +154,6 @@ auto_ban_anonymous_ip_description: "このオプションを有効にすると�
 livechat_configuration_channel_desc: このチャンネルの設定を開始できます（モデレートポリシーなど）。
 livechat_configuration_channel_forbidden_words_desc: "Botにより自動的にモデレーションする単語を設定できます（単語が含まれるメッセージは即座に削除されます）。\n\
   削除されたメッセージの箇所に表示する、削除された理由を設定することもできます。\nいくつかの例をドキュメントで提供していますので、必要があれば確認してください。\n"
-livechat_configuration_channel_forbidden_words_applytomoderators_desc: "デフォルトでは、モデレーターのメッセージは禁止単語・語句が含まれていても削除されません。\n\
-  このオプションを有効にすると、モデレーターからのメッセージも削除されるようになります。\n"
 save: 保存
 prosody_components_interfaces_description: "外部コンポーネント接続のためにリッスンするネットワークインターフェイスです。<br>\n
   リッスンするIPのリストをコンマ区切りで入力してください。（スペースは除かれます）<br>\n全IPv4インタフェースでリッスンする場合は、 «*»、IPv6の場合は、«::»
@@ -177,11 +175,11 @@ livechat_configuration_channel_enable_bot_label: モデレーターBotを有効�
 livechat_configuration_channel_bot_options_title: モデレーターBotの設定
 livechat_configuration_channel_forbidden_words_label: 禁止単語または語句
 livechat_configuration_channel_forbidden_words_desc2: "単語または語句を1行ごとに記載してください。複数の単語を1行に記載した場合、記載したすべての内容を含むメッセージのみが一致するようになります。\n"
-livechat_configuration_channel_forbidden_words_reason_label: 理由
-livechat_configuration_channel_forbidden_words_reason_desc: 削除理由
+livechat_configuration_channel_retractation_reason_label: 理由
+livechat_configuration_channel_retractation_reason_desc: 削除理由
 livechat_configuration_channel_forbidden_words_regexp_label: 正規表現
 livechat_configuration_channel_forbidden_words_regexp_desc: このオプションを有効にすると、正規表現として処理します。
-livechat_configuration_channel_forbidden_words_applytomoderators_label: モデレーターからのメッセージも対象にする
+livechat_configuration_applytomoderators_label: モデレーターからのメッセージも対象にする
 livechat_configuration_channel_quote_label: タイマー
 livechat_configuration_channel_quote_desc2: "メッセージ1つに対して1行で入力してください。\n複数のメッセージが入力されている場合、X分おきにランダムに選択されます。\n"
 livechat_configuration_channel_command_message_label: メッセージ

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-09-06 12:33+0200\n"
+"POT-Creation-Date: 2024-09-07 12:38+0200\n"
 "PO-Revision-Date: 2024-08-12 11:25+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -3226,6 +3226,41 @@ msgid "![Screenshot of the channel options page, with some fields to configure a
 msgstr "![Configuration des messages pré-enregistrés](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px)"
 
 #. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#, fuzzy, no-wrap
+#| msgid "The bot can automatically moderate messages containing forbidden words."
+msgid "The bot can automatically moderate messages containing too many special characters."
+msgstr "Le bot peut automatiquement modérer les messages contenant des mots interdits."
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#, no-wrap
+msgid "Special characters"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+#, fuzzy
+#| msgid "This feature comes with the livechat plugin version 11.0.0."
+msgid "This feature comes with the livechat plugin version 11.1.0."
+msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+#, no-wrap
+msgid "Configuration"
+msgstr "Configuration"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#, fuzzy
+#| msgid "![Forbidden words configuration](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
+msgid "![Screenshot of the channel options page, with several fields to configure the option \"Forbid special characters\".](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
+msgstr "![Configuration des mots interdits](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px)"
+
+#. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 #, no-wrap
 msgid "Peertube channel chatrooms configuration"
@@ -3382,13 +3417,6 @@ msgstr "Mode lent du plugin peertube-plugin-livechat"
 #, no-wrap
 msgid "Emojis only mode"
 msgstr ""
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 11.0.0."
-msgid "This feature comes with the livechat plugin version 11.1.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
@@ -4543,12 +4571,6 @@ msgstr "Configurer les conditions d'utilisation des tchats de la chaîne"
 #, no-wrap
 msgid "Terms & conditions"
 msgstr "Conditions d'utilisation"
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/terms.md
-#, no-wrap
-msgid "Configuration"
-msgstr "Configuration"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md

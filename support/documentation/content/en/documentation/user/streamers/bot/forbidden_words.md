@@ -1,7 +1,7 @@
 ---
 title: "Forbidden words"
 description: "The bot can automatically moderate messages containing forbidden words."
-weight: 10
+weight: 20
 chapter: false
 ---
 
@@ -49,13 +49,13 @@ You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livec
 
 By checking this option, each line of the "{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression).
 
-## {{% livechat_label livechat_configuration_channel_forbidden_words_applytomoderators_label %}}
+## {{% livechat_label livechat_configuration_applytomoderators_label %}}
 
-{{% livechat_label livechat_configuration_channel_forbidden_words_applytomoderators_desc %}}
+{{% livechat_label livechat_configuration_applytomoderators_desc %}}
 
-## {{% livechat_label livechat_configuration_channel_forbidden_words_reason_label %}}
+## {{% livechat_label livechat_configuration_channel_retractation_reason_label %}}
 
-{{% livechat_label livechat_configuration_channel_forbidden_words_reason_desc %}}
+{{% livechat_label livechat_configuration_channel_retractation_reason_desc %}}
 
 ## {{% livechat_label livechat_configuration_channel_forbidden_words_comments_label %}}
 

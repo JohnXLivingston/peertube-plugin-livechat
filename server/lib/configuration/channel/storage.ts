@@ -44,6 +44,12 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
       enabled: false,
       nickname: 'Sepia',
       forbiddenWords: [],
+      forbidSpecialChars: {
+        enabled: false,
+        reason: '',
+        tolerance: 0,
+        applyToModerators: false
+      },
       quotes: [],
       commands: []
     },
@@ -113,6 +119,11 @@ function channelConfigurationOptionsToBotRoomConf (
     handlersIds.set(id, true)
     handlers.push(_getForbiddenWordsHandler(id, v))
   })
+  if (channelConfigurationOptions.bot.forbidSpecialChars.enabled) {
+    const id = 'forbid_special_chars'
+    handlersIds.set(id, true)
+    handlers.push(_getForbidSpecialCharsHandler(id, channelConfigurationOptions.bot.forbidSpecialChars))
+  }
   channelConfigurationOptions.bot.quotes.forEach((v, i) => {
     const id = 'quote_' + i.toString()
     handlersIds.set(id, true)
@@ -199,6 +210,46 @@ function _getForbiddenWordsHandler (
   handler.options.rules.push(rule)
 
   handler.options.applyToModerators = !!forbiddenWords.applyToModerators
+  return handler
+}
+
+function _getForbidSpecialCharsHandler (
+  id: string,
+  forbidSpecialChars: ChannelConfigurationOptions['bot']['forbidSpecialChars']
+): ConfigHandler {
+  const handler: ConfigHandler = {
+    type: 'moderate',
+    id,
+    enabled: true,
+    options: {
+      rules: []
+    }
+  }
+
+  // The regexp to find one invalid character:
+  // (Note: Emoji_Modifier and Emoji_Component should not be matched alones, but seems a reasonnable compromise to avoid
+  // complex regex).
+  let regexp = '[^' +
+    '\\s\\p{Letter}\\p{Number}\\p{Punctuation}\\p{Currency_Symbol}\\p{Emoji}\\p{Emoji_Component}\\p{Emoji_Modifier}' +
+    ']'
+
+  if (forbidSpecialChars.tolerance > 0) {
+    // we must repeat !
+    const a = []
+    for (let i = 0; i <= forbidSpecialChars.tolerance; i++) { // N+1 values
+      a.push(regexp)
+    }
+    regexp = a.join('.*')
+  }
+
+  const rule: any = {
+    name: id,
+    regexp,
+    modifiers: 'us',
+    reason: forbidSpecialChars.reason
+  }
+  handler.options.rules.push(rule)
+  handler.options.applyToModerators = !!forbidSpecialChars.applyToModerators
   return handler
 }
 

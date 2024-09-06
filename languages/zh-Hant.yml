@@ -59,12 +59,12 @@ task_list_pick_title: 請選擇任務清單
 promote: 成為版主
 livechat_configuration_channel_emojis_title: 頻道emojis
 livechat_configuration_channel_bot_options_title: 審核機器人選項
-livechat_configuration_channel_forbidden_words_reason_label: 原因
+livechat_configuration_channel_retractation_reason_label: 原因
 livechat_configuration_channel_command_message_desc: 發送訊息。
 slow_mode_info: 限速模式已啟用，使用者可以每 %1$s 秒發送一則訊息。
 disable_channel_configuration_label: 停用進階頻道設定和聊天機器人
 cancel: 取消
-livechat_configuration_channel_forbidden_words_reason_desc: 除已刪除訊息外還顯示的原因
+livechat_configuration_channel_retractation_reason_desc: 除已刪除訊息外還顯示的原因
 error: 錯誤
 use_current_theme_color: 使用當前主題顏色
 chat_title: <h3>聊天</h3>

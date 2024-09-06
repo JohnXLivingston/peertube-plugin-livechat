@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-09-06 12:33+0200\n"
+"POT-Creation-Date: 2024-09-07 12:38+0200\n"
 "PO-Revision-Date: 2024-09-07 06:09+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3150,6 +3148,39 @@ msgid "![Screenshot of the channel options page, with some fields to configure a
 msgstr "![Screenshot der Seite mit den Kanaloptionen, mit einigen Feldern zur Konfiguration eines neuen Timers.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px \"Timer konfiguration\")"
 
 #. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#, fuzzy, no-wrap
+#| msgid "The bot can automatically moderate messages containing forbidden words."
+msgid "The bot can automatically moderate messages containing too many special characters."
+msgstr "Der Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten."
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#, no-wrap
+msgid "Special characters"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "This feature comes with the livechat plugin version 11.1.0."
+msgstr "Diese Funktion wird mit dem Livechatplugin Version 11.1.0 verfügbar sein."
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+#, no-wrap
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#, fuzzy
+#| msgid "![Screenshot of the channel options page, with several fields to configure the forbidden words.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Forbidden words configuration\")"
+msgid "![Screenshot of the channel options page, with several fields to configure the option \"Forbid special characters\".](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
+msgstr "![Screenshot der Seite mit den Kanaloptionen, mit mehreren Feldern zur Konfiguration der verbotenen Wörter.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Konfiguration der verbotenen Wörter\")"
+
+#. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 #, no-wrap
 msgid "Peertube channel chatrooms configuration"
@@ -3302,46 +3333,28 @@ msgstr "Nur Emojis-Modus"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-msgid "This feature comes with the livechat plugin version 11.1.0."
-msgstr ""
-"Diese Funktion wird mit dem Livechatplugin Version 11.1.0 verfügbar sein."
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "This mode can be usefull for example:"
 msgstr "Dieser Modus kann sehr nützlich sein, um beispielsweise:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "To avoid spam or offensive message when you are not here to moderate."
-msgstr ""
-"Um Spam oder beleidigende Nachrichten zu vermeiden, wenn Sie nicht hier "
-"sind, um zu moderieren."
+msgstr "Um Spam oder beleidigende Nachrichten zu vermeiden, wenn Sie nicht hier sind, um zu moderieren."
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "When there are too many speaking participants, and you can't no more moderate correctly."
-msgstr ""
-"Wenn zu viele Teilnehmer schreiben und Sie nicht mehr richtig moderieren "
-"können."
+msgstr "Wenn zu viele Teilnehmer schreiben und Sie nicht mehr richtig moderieren können."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label emoji_only_mode_title %}}\" checkbox."
-msgstr ""
-"Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das "
-"[Chat-Dropdown-Menü](/peertube-plugin-livechat/de/documentation/user/viewers)"
-", öffnen Sie das Menü \"Konfigurieren\".  In dem Formular finden Sie eine "
-"Checkbox \"{{% livechat_label emoji_only_mode_title %}}\"."
+msgstr "Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das [Chat-Dropdown-Menü](/peertube-plugin-livechat/de/documentation/user/viewers), öffnen Sie das Menü \"Konfigurieren\".  In dem Formular finden Sie eine Checkbox \"{{% livechat_label emoji_only_mode_title %}}\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "If you want to enable it for all your chatrooms at once, open the [channel emojis configuration page](/peertube-plugin-livechat/documentation/user/streamers/emojis/), and use the \"{{% livechat_label emoji_only_enable_all_rooms %}}\" button."
-msgstr ""
-"Wenn Sie es für alle Ihre Chaträume auf einmal aktivieren möchten, öffnen "
-"Sie die [Kanal Emojis Konfigurationsseite](/peertube-plugin-livechat/de/"
-"documentation/user/streamers/emojis/), und benutzen Sie die \"{{% "
-"livechat_label emoji_only_enable_all_rooms %}}\" Schaltfläche."
+msgstr "Wenn Sie es für alle Ihre Chaträume auf einmal aktivieren möchten, öffnen Sie die [Kanal Emojis Konfigurationsseite](/peertube-plugin-livechat/de/documentation/user/streamers/emojis/), und benutzen Sie die \"{{% livechat_label emoji_only_enable_all_rooms %}}\" Schaltfläche."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
@@ -3912,8 +3925,7 @@ msgstr "Sie können Notizen einfach per Drag & Drop sortieren."
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 #, no-wrap
 msgid "You can create polls to ask viewers their opinion"
-msgstr ""
-"Sie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen"
+msgstr "Sie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -4400,12 +4412,6 @@ msgstr "Konfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal"
 #, no-wrap
 msgid "Terms & conditions"
 msgstr "Nutzungsbedingungen"
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/terms.md
-#, no-wrap
-msgid "Configuration"
-msgstr "Konfiguration"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md

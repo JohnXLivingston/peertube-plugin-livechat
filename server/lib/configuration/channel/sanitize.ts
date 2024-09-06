@@ -44,6 +44,14 @@ async function sanitizeChannelConfigurationOptions (
   const mute = data.mute ?? {}
   mute.anonymous ??= false
 
+  // forbidSpecialChars comes with livechat 11.1.0
+  botData.forbidSpecialChars ??= {
+    enabled: false,
+    reason: '',
+    tolerance: 0,
+    applyToModerators: false
+  }
+
   if (typeof mute !== 'object') {
     throw new Error('Invalid data.mute data type')
   }
@@ -63,6 +71,7 @@ async function sanitizeChannelConfigurationOptions (
       enabled: _readBoolean(botData, 'enabled'),
       nickname: _readSimpleInput(botData, 'nickname', true),
       forbiddenWords: await _readForbiddenWords(botData),
+      forbidSpecialChars: await _readForbidSpecialChars(botData),
       quotes: _readQuotes(botData),
       commands: _readCommands(botData)
       // TODO: bannedJIDs
@@ -225,6 +234,21 @@ async function _readForbiddenWords (botData: any): Promise<ChannelConfigurationO
       reason,
       comments
     })
+  }
+  return result
+}
+
+async function _readForbidSpecialChars (
+  botData: any
+): Promise<ChannelConfigurationOptions['bot']['forbidSpecialChars']> {
+  if (typeof botData.forbidSpecialChars !== 'object') {
+    throw new Error('Invalid forbidSpecialChars data')
+  }
+  const result: ChannelConfigurationOptions['bot']['forbidSpecialChars'] = {
+    enabled: _readBoolean(botData.forbidSpecialChars, 'enabled'),
+    reason: _readSimpleInput(botData.forbidSpecialChars, 'reason'),
+    tolerance: _readInteger(botData.forbidSpecialChars, 'tolerance', 0, 10),
+    applyToModerators: _readBoolean(botData.forbidSpecialChars, 'applyToModerators')
   }
   return result
 }

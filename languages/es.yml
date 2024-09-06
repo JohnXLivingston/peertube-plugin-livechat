@@ -261,18 +261,15 @@ livechat_configuration_channel_forbidden_words_label: Palabras o expresiones pro
 livechat_configuration_channel_forbidden_words_desc2: "Una palabra o expresión por
   línea. Si pones varias palabras en una línea, solo coincidirá con los mensajes que
   contengan la secuencia completa.\n"
-livechat_configuration_channel_forbidden_words_reason_label: Motivo
-livechat_configuration_channel_forbidden_words_reason_desc: Motivo para mostrar además
+livechat_configuration_channel_retractation_reason_label: Motivo
+livechat_configuration_channel_retractation_reason_desc: Motivo para mostrar además
   de eliminar los mensajes
 livechat_configuration_channel_forbidden_words_regexp_label: Considéralo como expresiones
   regulares
 livechat_configuration_channel_forbidden_words_regexp_desc: Marcando esta opción,
   puedes usar expresiones regulares.
-livechat_configuration_channel_forbidden_words_applytomoderators_label: Moderar también
+livechat_configuration_applytomoderators_label: Moderar también
   los mensajes de los moderadores
-livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Por defecto,
-  los mensajes de los moderadores no se borrarán cuando contengan palabras prohibidas.\n
-  Al marcar esta opción, los mensajes de los moderadores también se eliminarán.\n"
 livechat_configuration_channel_forbidden_words_comments_label: Comentarios
 livechat_configuration_channel_quote_label: Temporizador
 livechat_configuration_channel_quote_desc: "Puedes configurar varios temporizadores

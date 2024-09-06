@@ -96,6 +96,7 @@ interface ChannelConfigurationOptions {
     forbiddenWords: ChannelForbiddenWords[]
     quotes: ChannelQuotes[]
     commands: ChannelCommands[]
+    forbidSpecialChars: ChannelForbidSpecialChars
     // TODO: bannedJIDs: string[]
   }
   slowMode: {
@@ -130,6 +131,13 @@ interface ChannelQuotes {
 interface ChannelCommands {
   command: string
   message: string
+}
+
+interface ChannelForbidSpecialChars {
+  enabled: boolean
+  tolerance: number
+  reason: string
+  applyToModerators: boolean
 }
 
 interface ChannelConfiguration {

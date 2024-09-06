@@ -37,7 +37,7 @@ menu_configuration_label: Chattrum
 livechat_configuration_title: Anpassa din sändnings chattrum
 livechat_configuration_channel_title: Kanalinställningar
 livechat_configuration_channel_forbidden_words_label: Förbjudna ord och uttryck
-livechat_configuration_channel_forbidden_words_reason_label: Anledning
+livechat_configuration_channel_retractation_reason_label: Anledning
 livechat_configuration_channel_quote_label: Timer
 livechat_configuration_channel_quote_delay_label: Skicka var X:e minut
 livechat_configuration_channel_command_message_desc: Meddelandet som ska skickas.

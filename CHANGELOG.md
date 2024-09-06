@@ -5,6 +5,7 @@
 ### New features
 
 * #131: Emoji only mode.
+* #517: new option for the moderation bot: forbid messages with too many special characters.
 
 ### Minor changes and fixes
 

@@ -409,8 +409,8 @@ livechat_configuration_channel_forbidden_words_desc: |
   Several examples are provided on the documentation page.
 livechat_configuration_channel_forbidden_words_desc2: |
   One word or expression per line. If you put multiple words on one line, it will only match messages containing the whole sequence.
-livechat_configuration_channel_forbidden_words_reason_label: "Reason"
-livechat_configuration_channel_forbidden_words_reason_desc: "Reason to display besides
+livechat_configuration_channel_retractation_reason_label: "Reason"
+livechat_configuration_channel_retractation_reason_desc: "Reason to display besides
   deleted messages"
 livechat_configuration_channel_forbidden_words_regexp_label: "Consider as regular
   expressions"
@@ -419,10 +419,10 @@ livechat_configuration_channel_forbidden_words_regexp_desc: "By checking this op
 livechat_configuration_channel_forbidden_words_label_label: "Label"
 livechat_configuration_channel_forbidden_words_label_desc: "Label for this forbidden
   words rule"
-livechat_configuration_channel_forbidden_words_applytomoderators_label: "Also moderate
+livechat_configuration_applytomoderators_label: "Also moderate
   messages from moderators"
-livechat_configuration_channel_forbidden_words_applytomoderators_desc: |
-  By default, moderator messages will not be deleted when containing forbidden words.
+livechat_configuration_applytomoderators_desc: |
+  By default, moderator messages will not be affected by this feature.
   By checking this option, messages from moderators will also be deleted.
 livechat_configuration_channel_forbidden_words_comments_label: "Comments"
 livechat_configuration_channel_forbidden_words_comments_desc: |
@@ -653,3 +653,10 @@ emoji_only_mode_desc_3: |
   To enable or disable this mode, you can use the room configuration form.
   If you want to enable it for all your chatrooms at once, you can use the button bellow.
 emoji_only_enable_all_rooms: Enable the emoji only mode on all channel's chatrooms
+
+livechat_configuration_channel_special_chars_label: "Forbid special characters"
+livechat_configuration_channel_special_chars_desc: |
+  By enabling this option, the moderation bot will automatically delete messages containing more than X special characters.
+  Special characters are those that don't fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
+livechat_configuration_channel_special_chars_tolerance_label: Tolérance
+livechat_configuration_channel_special_chars_tolerance_desc: Number of special characters to accept before deleting messages.

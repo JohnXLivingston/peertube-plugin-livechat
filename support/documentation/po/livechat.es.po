@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-09-06 12:33+0200\n"
+"POT-Creation-Date: 2024-09-07 12:38+0200\n"
 "PO-Revision-Date: 2024-04-16 21:38+0000\n"
 "Last-Translator: rnek0 <rnek0@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: Spanish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/es/>\n"
@@ -3114,6 +3114,37 @@ msgid "![Screenshot of the channel options page, with some fields to configure a
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#, no-wrap
+msgid "The bot can automatically moderate messages containing too many special characters."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#, no-wrap
+msgid "Special characters"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
+msgid "This feature comes with the livechat plugin version 11.1.0."
+msgstr ""
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+#, fuzzy, no-wrap
+#| msgid "General information"
+msgid "Configuration"
+msgstr "Información general"
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+msgid "![Screenshot of the channel options page, with several fields to configure the option \"Forbid special characters\".](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 #, fuzzy, no-wrap
 #| msgid "General information"
@@ -3259,11 +3290,6 @@ msgstr "Redactar la documentación"
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 #, no-wrap
 msgid "Emojis only mode"
-msgstr ""
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-msgid "This feature comes with the livechat plugin version 11.1.0."
 msgstr ""
 
 #. type: Plain text
@@ -4346,13 +4372,6 @@ msgstr "Información general"
 #, no-wrap
 msgid "Terms & conditions"
 msgstr ""
-
-#. type: Title ##
-#: support/documentation/content/en/documentation/user/streamers/terms.md
-#, fuzzy, no-wrap
-#| msgid "General information"
-msgid "Configuration"
-msgstr "Información general"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md

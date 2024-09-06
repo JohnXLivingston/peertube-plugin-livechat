@@ -96,6 +96,19 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
           req.body.bot = channelOptions.bot
           req.body.bot.enabled = false
         }
+        // TODO: Same for forbidSpecialChars: if disabled, don't save reason and tolerance
+        //   (disabling for now, because it is not acceptable to load twice the channel configuration.
+        //   Must find better way)
+        // if (req.body.bot?.enabled === true && req.body.bot.forbidSpecialChars?.enabled === false) {
+        //   logger.debug('Bot disabled, loading the previous bot conf to not override hidden fields')
+        //   const channelOptions =
+        //     await getChannelConfigurationOptions(options, channelInfos.id) ??
+        //     getDefaultChannelConfigurationOptions(options)
+        //   req.body.bot.forbidSpecialChars.reason = channelOptions.bot.forbidSpecialChars.reason
+        //   req.body.bot.forbidSpecialChars.tolerance = channelOptions.bot.forbidSpecialChars.tolerance
+        //   req.body.bot.forbidSpecialChars.applyToModerators = channelOptions.bot.forbidSpecialChars.applyToModerators
+        //   req.body.bot.forbidSpecialChars.enabled = false
+        // }
         channelOptions = await sanitizeChannelConfigurationOptions(options, channelInfos.id, req.body)
       } catch (err) {
         logger.warn(err)

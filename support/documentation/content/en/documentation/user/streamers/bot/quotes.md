@@ -1,7 +1,7 @@
 ---
 title: "Timers"
 description: "The bot can send periodically some messages."
-weight: 20
+weight: 30
 chapter: false
 ---
 

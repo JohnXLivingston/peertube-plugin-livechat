@@ -61,7 +61,7 @@ task_name: Nazwa zadania
 avatar_set_option_cat: Koty
 task_description: Opis
 task_delete: Usuń zadanie
-livechat_configuration_channel_forbidden_words_reason_label: Powód
+livechat_configuration_channel_retractation_reason_label: Powód
 livechat_configuration_channel_forbidden_words_label_label: Etykieta
 copied: Skopiowano
 autocolors_label: Automatyczne wykrywanie kolorów

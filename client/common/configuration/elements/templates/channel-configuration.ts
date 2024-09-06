@@ -20,16 +20,16 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_DESC)
       },
       applyToModerators: {
-        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_LABEL),
-        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_APPLYTOMODERATORS_DESC)
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_LABEL),
+        description: ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_DESC)
       },
       label: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL_LABEL),
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL_DESC)
       },
       reason: {
-        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_LABEL),
-        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REASON_DESC)
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_RETRACTATION_REASON_LABEL),
+        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_RETRACTATION_REASON_DESC)
       },
       comments: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_LABEL),
@@ -336,6 +336,126 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
             />
             ${el.renderFeedback('peertube-livechat-bot-nickname-feedback', 'bot.nickname')}
           </div>
+
+          <livechat-configuration-section-header
+            .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SPECIAL_CHARS_LABEL)}
+            .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SPECIAL_CHARS_DESC)}
+            .helpPage=${'documentation/user/streamers/bot/special_chars'}>
+          </livechat-configuration-section-header>
+          <div class="form-group">
+            <label>
+              <input
+                type="checkbox"
+                name="forbid_special_chars"
+                id="peertube-livechat-forbid-special-chars"
+                @input=${(event: InputEvent) => {
+                    if (event?.target && el.channelConfiguration) {
+                      el.channelConfiguration.configuration.bot.forbidSpecialChars.enabled =
+                        (event.target as HTMLInputElement).checked
+                    }
+                    el.requestUpdate('channelConfiguration')
+                  }
+                }
+                value="1"
+                ?checked=${el.channelConfiguration?.configuration.bot.forbidSpecialChars.enabled}
+              />
+              ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SPECIAL_CHARS_LABEL)}
+            </label>
+          </div>
+          ${!el.channelConfiguration?.configuration.bot.forbidSpecialChars.enabled
+            ? ''
+            : html`
+              <div class="form-group">
+                <label>
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SPECIAL_CHARS_TOLERANCE_LABEL)}
+                  <input
+                    type="number"
+                    name="special_chars_tolerance"
+                    class=${classMap(
+                      Object.assign(
+                        { 'form-control': true },
+                        el.getInputValidationClass('bot.forbidSpecialChars.tolerance')
+                      )
+                    )}
+                    min="0"
+                    max="10"
+                    id="peertube-livechat-forbid-special-chars-tolerance"
+                    aria-describedby="peertube-livechat-forbid-special-chars-tolerance-feedback"
+                    @input=${(event: InputEvent) => {
+                        if (event?.target && el.channelConfiguration) {
+                          el.channelConfiguration.configuration.bot.forbidSpecialChars.tolerance =
+                            Number((event.target as HTMLInputElement).value)
+                        }
+                        el.requestUpdate('channelConfiguration')
+                      }
+                    }
+                    value="${el.channelConfiguration?.configuration.bot.forbidSpecialChars.tolerance ?? '0'}"
+                  />
+                </label>
+                <small class="form-text text-muted">
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SPECIAL_CHARS_TOLERANCE_DESC)}
+                </small>
+                ${el.renderFeedback('peertube-livechat-forbid-special-chars-tolerance-feedback',
+                  'bot.forbidSpecialChars.tolerance')
+                }
+              </div>
+              <div class="form-group">
+                <label>
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_RETRACTATION_REASON_LABEL)}
+                  <input
+                    type="text"
+                    name="special_chars_reason"
+                    class=${classMap(
+                      Object.assign(
+                        { 'form-control': true },
+                        el.getInputValidationClass('bot.forbidSpecialChars.reason')
+                      )
+                    )}
+                    id="peertube-livechat-forbid-special-chars-reason"
+                    aria-describedby="peertube-livechat-forbid-special-chars-reason-feedback"
+                    @input=${(event: InputEvent) => {
+                        if (event?.target && el.channelConfiguration) {
+                          el.channelConfiguration.configuration.bot.forbidSpecialChars.reason =
+                            (event.target as HTMLInputElement).value
+                        }
+                        el.requestUpdate('channelConfiguration')
+                      }
+                    }
+                    value="${el.channelConfiguration?.configuration.bot.forbidSpecialChars.reason ?? ''}"
+                  />
+                </label>
+                <small class="form-text text-muted">
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_RETRACTATION_REASON_DESC)}
+                </small>
+                ${el.renderFeedback('peertube-livechat-forbid-special-chars-reason-feedback',
+                  'bot.forbidSpecialChars.reason')
+                }
+              </div>
+              <div class="form-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="forbid_special_chars_applyToModerators"
+                    id="peertube-livechat-forbid-special-chars-applyToModerators"
+                    @input=${(event: InputEvent) => {
+                        if (event?.target && el.channelConfiguration) {
+                          el.channelConfiguration.configuration.bot.forbidSpecialChars.applyToModerators =
+                            (event.target as HTMLInputElement).checked
+                        }
+                        el.requestUpdate('channelConfiguration')
+                      }
+                    }
+                    value="1"
+                    ?checked=${el.channelConfiguration?.configuration.bot.forbidSpecialChars.applyToModerators}
+                  />
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_LABEL)}
+                </label>
+                <small class="form-text text-muted">
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_DESC)}
+                </small>
+              </div>
+              `
+          }
 
           <livechat-configuration-section-header
             .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}

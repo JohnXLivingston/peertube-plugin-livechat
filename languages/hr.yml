@@ -54,17 +54,14 @@ livechat_configuration_channel_forbidden_words_regexp_label: Tretiraj kao regula
   izraze
 livechat_configuration_channel_forbidden_words_regexp_desc: Označavanjem ove opcije
   možeš koristiti regularne izraze.
-livechat_configuration_channel_forbidden_words_applytomoderators_label: Također moderiraj
+livechat_configuration_applytomoderators_label: Također moderiraj
   porukama moderatora
 livechat_configuration_channel_quote_label: Timer
 livechat_configuration_channel_forbidden_words_desc: "Možeš konfigurirati neke riječi
   koje će bot automatski moderirati (poruke koje sadrže takve riječi će se odmah izbrisati).\n
   Možeš dodati i opcionalni razlog koji će se prikazati na mjestu izbrisanih poruka.\n
   Stranica dokumentacije sadrži nekoliko primjera.\n"
-livechat_configuration_channel_forbidden_words_reason_label: Razlog
-livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Poruke moderatora
-  se standardno neće izbrisati ako sadrže zabranjene riječi.\nOznačavanjem ove opcije
-  će se poruke moderatora također izbrisati.\n"
+livechat_configuration_channel_retractation_reason_label: Razlog
 slow_mode_info: Spori način rada je omogućen. Korisnici mogu slati poruku svakih %1$s
   sekundi.
 open_chat: Otvori chat

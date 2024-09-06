@@ -67,9 +67,25 @@ export class ChannelDetailsService {
     // The backend will ignore those values.
     if (botConf.enabled) {
       propertiesError['bot.nickname'] = []
+      propertiesError['bot.forbidSpecialChars.tolerance'] = []
 
       if (/[^\p{L}\p{N}\p{Z}_-]/u.test(botConf.nickname ?? '')) {
         propertiesError['bot.nickname'].push(ValidationErrorType.WrongFormat)
+      }
+
+      if (botConf.forbidSpecialChars.enabled) {
+        const forbidSpecialCharsTolerance = channelConfigurationOptions.bot.forbidSpecialChars.tolerance
+        if (
+          (typeof forbidSpecialCharsTolerance !== 'number') ||
+          isNaN(forbidSpecialCharsTolerance)
+        ) {
+          propertiesError['bot.forbidSpecialChars.tolerance'].push(ValidationErrorType.WrongType)
+        } else if (
+          forbidSpecialCharsTolerance < 0 ||
+          forbidSpecialCharsTolerance > 10
+        ) {
+          propertiesError['bot.forbidSpecialChars.tolerance'].push(ValidationErrorType.NotInRange)
+        }
       }
 
       for (const [i, fw] of botConf.forbiddenWords.entries()) {

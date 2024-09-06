@@ -315,14 +315,14 @@ livechat_configuration_channel_forbidden_words_label: Mots ou expressions interd
 livechat_configuration_channel_forbidden_words_desc2: "Un mot ou une expression par
   ligne. Si vous mettez plusieurs mots sur une même ligne, seuls les messages contenant
   la séquence entière seront supprimés.\n"
-livechat_configuration_channel_forbidden_words_reason_label: Raison
-livechat_configuration_channel_forbidden_words_reason_desc: Raison à affiche à côté
+livechat_configuration_channel_retractation_reason_label: Raison
+livechat_configuration_channel_retractation_reason_desc: Raison à affiche à côté
   des messages supprimés
 livechat_configuration_channel_forbidden_words_regexp_label: Considérer comme une
   expression régulière
 livechat_configuration_channel_forbidden_words_regexp_desc: En cochant cette option,
   vous pouvez utiliser des expressions régulières.
-livechat_configuration_channel_forbidden_words_applytomoderators_label: Également
+livechat_configuration_applytomoderators_label: Également
   modérer les messages des modérateur⋅rices
 livechat_configuration_channel_quote_label: Timer
 livechat_configuration_channel_quote_desc: "Vous pouvez configurer quelques timers
@@ -351,9 +351,8 @@ livechat_configuration_channel_forbidden_words_desc: "Vous pouvez configurer que
   mots seront instantanément supprimés).\nVous pouvez aussi ajouter une raison optionnelle,
   qui sera affichée à la place des messages supprimés.\nQuelques exemples de configuration
   sont fournis sur la page de documentation.\n"
-livechat_configuration_channel_forbidden_words_applytomoderators_desc: "Par défaut,
-  les messages des modérateur⋅rices ne seront pas supprimés quand ils contiennent
-  des mots interdits.\nEn cochant cette option, leur messages seront également supprimé.\n"
+livechat_configuration_applytomoderators_desc: "Par défaut,
+  les messages des modérateur⋅rices ne seront pas affectés par cette fonctionnalité.\nEn cochant cette option, leur messages seront également supprimés.\n"
 livechat_configuration_channel_command_desc: "Vous pouvez configurer le bot pour répondre
   à des commandes.\nUne commande est un message qui commence par un \"!\", comme par
   exemple \"!help\" qui appellera la commande \"help\".\n"

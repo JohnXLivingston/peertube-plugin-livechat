@@ -87,7 +87,7 @@ prosody_muc_expiration_description: "Këtu mund të zgjidhni se për sa kohë mb
   të ruhet për 1 <b>vit</b>. 1-shin mund ta zëvendësoni me çfarëdo vlere numër të
   plotë.</li>\n    <li><b>never</b>: lënda nuk skadon kurrë dhe do të mbahet përgjithnjë.</li>\n\
   </ul>\n"
-livechat_configuration_channel_forbidden_words_reason_label: Arsye
+livechat_configuration_channel_retractation_reason_label: Arsye
 livechat_configuration_channel_forbidden_words_comments_label: Komente
 livechat_configuration_channel_quote_label2: Mesazhe
 livechat_configuration_channel_command_message_desc: Mesazhi për t’u dërguar.
