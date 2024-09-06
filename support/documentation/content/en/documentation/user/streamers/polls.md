@@ -1,7 +1,7 @@
 ---
 title: "Polls"
-description: "You can create polls to ask viewers their opinion."
-weight: 330
+description: "You can create polls to ask viewers their opinion"
+weight: 340
 chapter: false
 ---
 
