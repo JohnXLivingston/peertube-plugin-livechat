@@ -144,3 +144,9 @@ declare const LOC_PROSODY_FIREWALL_FILE_ENABLED: string
 declare const LOC_PROSODY_FIREWALL_NAME: string
 declare const LOC_PROSODY_FIREWALL_NAME_DESC: string
 declare const LOC_PROSODY_FIREWALL_CONTENT: string
+
+declare const LOC_EMOJI_ONLY_MODE_TITLE: string
+declare const LOC_EMOJI_ONLY_MODE_DESC_1: string
+declare const LOC_EMOJI_ONLY_MODE_DESC_2: string
+declare const LOC_EMOJI_ONLY_MODE_DESC_3: string
+declare const LOC_EMOJI_ONLY_ENABLE_ALL_ROOMS: string

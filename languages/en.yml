@@ -638,3 +638,18 @@ prosody_firewall_name_desc: |
 prosody_firewall_content: File content
 
 emoji_only_info: Emoji only mode is enabled, you can only use emoji in your messages.
+emoji_only_mode_title: Emojis only mode
+emoji_only_mode_desc_1: |
+  You can enable an "Emojy only mode" in your chatrooms.
+  When this mode is enabled, participants can only send emojis (standard, or channel custom emojis).
+  Moderators are not affected by this limitation.
+emoji_only_mode_desc_2: |
+  This mode can be usefull for Example:
+  <ul>
+    <li>To avoid spam or offensive message when you are not here to moderate.</li>
+    <li>When there are too many speaking participants, and you can't no more moderate correctly.</li>
+  </ul>
+emoji_only_mode_desc_3: |
+  To enable or disable this mode, you can use the room configuration form.
+  If you want to enable it for all your rooms at once, you can use the button bellow.
+emoji_only_enable_all_rooms: Enable the emoji only mode on all channel's chatrooms

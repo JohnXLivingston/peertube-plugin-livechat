@@ -107,7 +107,9 @@ local function update_room(event)
   end
   if type(config.livechat_emoji_only) == "boolean" then
     if set_peertubelivechat_emoji_only_mode then
-      set_peertubelivechat_emoji_only_mode(room, config.livechat_emoji_only)
+      if set_peertubelivechat_emoji_only_mode(room, config.livechat_emoji_only) then
+        must104 = true;
+      end
     end
   end
   if type(config.livechat_custom_emoji_regexp) == "string" then

@@ -256,6 +256,21 @@ export class ChannelEmojisElement extends LivechatElement {
     }
   }
 
+  public async enableEmojisOnlyModeOnAllRooms (ev: Event): Promise<void> {
+    ev.preventDefault()
+    if (!this._channelDetailsService || !this.channelId) {
+      this.ptNotifier.error(await this.ptTranslate(LOC_ERROR))
+      return
+    }
+    try {
+      await this._channelDetailsService.enableEmojisOnlyModeOnAllRooms(this.channelId)
+      this.ptNotifier.info(await this.ptTranslate(LOC_SUCCESSFULLY_SAVED))
+    } catch (err) {
+      console.error(err)
+      this.ptNotifier.error(await this.ptTranslate(LOC_ERROR))
+    }
+  }
+
   /**
    * Takes an url (or dataUrl), download the image, and converts to dataUrl.
    * @param url the url

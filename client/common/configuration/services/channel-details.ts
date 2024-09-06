@@ -312,4 +312,23 @@ export class ChannelDetailsService {
 
     return response.json()
   }
+
+  public async enableEmojisOnlyModeOnAllRooms (channelId: number): Promise<void> {
+    const response = await fetch(
+      getBaseRoute(this._registerClientOptions) +
+        '/api/configuration/channel/emojis/' +
+        encodeURIComponent(channelId) +
+        '/enable_emoji_only',
+      {
+        method: 'POST',
+        headers: this._headers
+      }
+    )
+
+    if (!response.ok) {
+      throw new Error('Can\'t enable Emojis Only Mode on all rooms.')
+    }
+
+    return response.json()
+  }
 }

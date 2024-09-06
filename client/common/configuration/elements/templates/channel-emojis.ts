@@ -45,13 +45,14 @@ export function tplChannelEmojis (el: ChannelEmojisElement): TemplateResult {
 
       <livechat-channel-tabs .active=${'emojis'} .channelId=${el.channelId}></livechat-channel-tabs>
 
+      <h2>${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_EMOJIS_TITLE)}</h2>
+
       <p>
         ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_EMOJIS_DESC)}
         <livechat-help-button .page=${'documentation/user/streamers/emojis'}>
         </livechat-help-button>
       </p>
 
-      
       <form role="form" @submit=${el.saveEmojis} @change=${el.resetValidation}>
         <div class="peertube-plugin-livechat-configuration-actions">
           ${
@@ -106,5 +107,23 @@ export function tplChannelEmojis (el: ChannelEmojisElement): TemplateResult {
           </button>
         </div>
       </form>
+
+      <h2>${ptTr(LOC_EMOJI_ONLY_MODE_TITLE)}</h2>
+
+      <p>
+        ${ptTr(LOC_EMOJI_ONLY_MODE_DESC_1, true)}
+      </p>
+      <p>
+        ${ptTr(LOC_EMOJI_ONLY_MODE_DESC_2, true)}
+      </p>
+      <p>
+        ${ptTr(LOC_EMOJI_ONLY_MODE_DESC_3, true)}
+      </p>
+
+      <div class="peertube-plugin-livechat-configuration-actions">
+        <button type="button" @click=${el.enableEmojisOnlyModeOnAllRooms}>
+          ${ptTr(LOC_EMOJI_ONLY_ENABLE_ALL_ROOMS)}
+        </button>
+      </div>
     </div>`
 }

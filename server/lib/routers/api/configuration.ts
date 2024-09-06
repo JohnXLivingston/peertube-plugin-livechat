@@ -200,6 +200,44 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
       }
     }
   ]))
+
+  router.post('/configuration/channel/emojis/:channelId/enable_emoji_only', asyncMiddleware([
+    checkConfigurationEnabledMiddleware(options),
+    getCheckConfigurationChannelMiddleware(options),
+    async (req: Request, res: Response, _next: NextFunction): Promise<void> => {
+      try {
+        if (!res.locals.channelInfos) {
+          throw new Error('Missing channelInfos in res.locals, should not happen')
+        }
+
+        const emojis = Emojis.singleton()
+        const channelInfos = res.locals.channelInfos as ChannelInfos
+
+        logger.info(`Enabling emoji only mode on each channel ${channelInfos.id} rooms ...`)
+
+        // We can also update the EmojisRegexp, just in case.
+        const customEmojisRegexp = await emojis.getChannelCustomEmojisRegexp(channelInfos.id)
+        const roomJIDs = RoomChannel.singleton().getChannelRoomJIDs(channelInfos.id)
+        for (const roomJID of roomJIDs) {
+          // No need to await here
+          logger.info(`Enabling emoji only mode on room ${roomJID} ...`)
+          updateProsodyRoom(options, roomJID, {
+            livechat_emoji_only: true,
+            livechat_custom_emoji_regexp: customEmojisRegexp
+          }).then(
+            () => {},
+            (err) => logger.error(err)
+          )
+        }
+
+        res.status(200)
+        res.json({ ok: true })
+      } catch (err) {
+        logger.error(err)
+        res.sendStatus(500)
+      }
+    }
+  ]))
 }
 
 export {
