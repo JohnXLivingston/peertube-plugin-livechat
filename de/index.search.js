@@ -30,7 +30,8 @@ NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
 ModerationsverzögerungPlugin peertube-plugin-livechat Moderationsverzögerung
 Benutzerdefinierte EmojisPlugin peertube-plugin-livechat benutzerdefinierte Emojis
-UmfragenSie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen.
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+UmfragenYou can create polls to ask viewers their opinion
 Aufgaben / To-do-ListenSie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten.
 ModerationsnotizenPlugin peertube-plugin-livechat Moderationnotizen
 ChatbotChatbot Einrichtung
@@ -48,7 +49,8 @@ NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
 ModerationsverzögerungPlugin peertube-plugin-livechat Moderationsverzögerung
 Benutzerdefinierte EmojisPlugin peertube-plugin-livechat benutzerdefinierte Emojis
-UmfragenSie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen.
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+UmfragenYou can create polls to ask viewers their opinion
 Aufgaben / To-do-ListenSie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten.
 ModerationsnotizenPlugin peertube-plugin-livechat Moderationnotizen
 ChatbotChatbot Einrichtung
@@ -704,7 +706,8 @@ NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
 ModerationsverzögerungPlugin peertube-plugin-livechat Moderationsverzögerung
 Benutzerdefinierte EmojisPlugin peertube-plugin-livechat benutzerdefinierte Emojis
-UmfragenSie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen.
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+UmfragenYou can create polls to ask viewers their opinion
 Aufgaben / To-do-ListenSie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten.
 ModerationsnotizenPlugin peertube-plugin-livechat Moderationnotizen
 ChatbotChatbot Einrichtung
@@ -783,7 +786,11 @@ Sie können benutzerdefinierte Emojis für Ihren Kanal konfigurieren. Diese Emoj
 Sie können Emojis im Chat mit “:Kurzname:” verwenden. Der Kurzname kann mit einem Doppelpunkt (:) beginnen und/oder enden und darf nur alphanumerische Zeichen, Unterstriche und Bindestriche enthalten. Es wird dringend empfohlen, sie mit einem Doppelpunkt zu beginnen, damit die Benutzer die automatische Vervollständigung nutzen können (indem sie “:” eingeben und dann TAB drücken).
 Importieren / Exportieren Auf der Kanalkonfigurationsseite gibt es eine “Importieren”- und eine “Exportieren”-Schaltfläche. Die “Exportieren”-Schaltfläche generiert eine Datei, die in einen anderen Kanal importiert werden kann.
 Sie können auch eine Datei generieren, die Sie aus einer anderen Quelle importieren (z. B. können Sie Ihre benutzerdefinierten Twitch-Emojis importieren). Bei der Datei muss es sich um eine gültige JSON-Datei handeln, die das folgende Format hat:
-[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] Das Attribut sn ist der Kurznamencode. Das Attribut “url” kann eine beliebige Bild-URL sein, auf die Ihr Browser zugreifen kann, oder eine [Daten-URL] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs), die die zu importierende Datei darstellt.`,description:"Plugin peertube-plugin-livechat benutzerdefinierte Emojis",tags:[],title:"Benutzerdefinierte Emojis",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 10.2.0 verfügbar sein.
+[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] Das Attribut sn ist der Kurznamencode. Das Attribut “url” kann eine beliebige Bild-URL sein, auf die Ihr Browser zugreifen kann, oder eine [Daten-URL] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs), die die zu importierende Datei darstellt.`,description:"Plugin peertube-plugin-livechat benutzerdefinierte Emojis",tags:[],title:"Benutzerdefinierte Emojis",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info This feature comes with the livechat plugin version 11.1.0.
+Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
+This mode can be usefull for example:
+To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Emojis only mode” checkbox.
+If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 10.2.0 verfügbar sein.
 Eine Umfrage erstellen Sie können eine neue Umfrage erstellen, indem Sie die Aktion “Eine neue Umfrage erstellen” im oberen Menü des Chats verwenden:
 Warnung Diese Abstimmungsfunktion sollte nicht als zuverlässiges Abstimmungssystem betrachtet werden. Es ist leicht zu betrügen. Es gibt keinen Mechanismus, der anonyme Benutzer daran hindert, mehrfach abzustimmen, indem sie einfach den Chat neu laden. Abstimmungen sind nie vollständig anonym, jemand mit Zugang zum Server könnte sehen, wer für welche Wahl gestimmt hat.
 Umfrageformular Füllen Sie die Formularfelder aus:
@@ -803,7 +810,7 @@ Tipp Anonyme Nutzer können nur abstimmen, wenn sie ihren Nicknamen gewählt hab
 Wenn “Anonyme Ergebnisse” aktiviert ist, werden die Stimmen anderen Benutzern nicht angezeigt. Wenn diese Option nicht aktiviert ist, sind die Abstimmungen öffentlich sichtbar, da Ihnen Meldungen wie “!1” im Chat angezeigt werden.
 Info Für Nutzer, die XMPP-Clients oder veraltete Livechat-Plugin-Versionen verwenden, wird das Banner nicht sichtbar sein. Sie sehen jedoch die Nachricht im Chat und können ihre Stimme abgeben, indem sie Nachrichten mit ihrer Wahl senden.
 Wenn die Umfrage beendet ist, wird im Chat eine neue Nachricht mit den Ergebnissen gesendet.
-Info Die einzige Möglichkeit, alte Umfrageergebnisse zu erhalten, ist die Suche nach der Nachricht über das Ende der Umfrage im Chat. Im Moment werden die Umfrageergebnisse nicht auf andere Weise gespeichert. Vergessen Sie also nicht, die Umfrageergebnisse zu notieren, wenn Sie sie behalten wollen.`,description:"Sie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen.",tags:[],title:"Umfragen",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein.
+Info Die einzige Möglichkeit, alte Umfrageergebnisse zu erhalten, ist die Suche nach der Nachricht über das Ende der Umfrage im Chat. Im Moment werden die Umfrageergebnisse nicht auf andere Weise gespeichert. Vergessen Sie also nicht, die Umfrageergebnisse zu notieren, wenn Sie sie behalten wollen.`,description:"You can create polls to ask viewers their opinion",tags:[],title:"Umfragen",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein.
 Einführung Das Livechat Plugin enthält eine Aufgabenanwendung: eine Art “To-Do-Liste”, mit der Sie Aufgabenlisten erstellen und Aufgaben zu ihnen hinzufügen können. Die Administratoren eines jeden Raums haben Zugriff auf diese Aufgaben, sodass Sie sie gemeinsam bearbeiten können.
 Sie können die Aufgabenanwendung zum Beispiel verwenden, um:
 eine Liste der Themen vorzubereiten, die Sie während Ihres Livestreams besprechen möchten, damit Sie nichts vergessen Fragen Ihrer Zuschauer markieren, damit Sie später darauf zurückkommen können, ohne zu vergessen, sie zu beantworten … Aufgabenanwendung nutzen Aufgabenanwendung öffnen Um die Aufgabenanwendung zu öffnen, gibt es eine Schaltfläche "" im oberen Chatmenü:
@@ -866,7 +873,8 @@ NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
 ModerationsverzögerungPlugin peertube-plugin-livechat Moderationsverzögerung
 Benutzerdefinierte EmojisPlugin peertube-plugin-livechat benutzerdefinierte Emojis
-UmfragenSie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen.
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+UmfragenYou can create polls to ask viewers their opinion
 Aufgaben / To-do-ListenSie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten.
 ModerationsnotizenPlugin peertube-plugin-livechat Moderationnotizen
 ChatbotChatbot Einrichtung

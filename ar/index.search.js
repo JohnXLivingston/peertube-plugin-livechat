@@ -136,8 +136,9 @@ XMPP ClientsConnect to chat using a XMPP client
 Terms & conditionsConfigure channel's chat terms & conditions
 الوضع البطيءPlugin peertube-plugin-livechat slow mode
 Moderation delayPlugin peertube-plugin-livechat moderation delay
-استطلاعات الرأيYou can create polls to ask viewers their opinion.
 الإيموجي المخصصةPlugin peertube-plugin-livechat custom emojis
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+استطلاعات الرأيYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 ملاحظات الإشرافPlugin peertube-plugin-livechat moderation notes
 روبوت محادثةضبط روبوت المحادثة
@@ -175,8 +176,9 @@ XMPP ClientsConnect to chat using a XMPP client
 Terms & conditionsConfigure channel's chat terms & conditions
 الوضع البطيءPlugin peertube-plugin-livechat slow mode
 Moderation delayPlugin peertube-plugin-livechat moderation delay
-استطلاعات الرأيYou can create polls to ask viewers their opinion.
 الإيموجي المخصصةPlugin peertube-plugin-livechat custom emojis
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+استطلاعات الرأيYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 ملاحظات الإشرافPlugin peertube-plugin-livechat moderation notes
 روبوت محادثةضبط روبوت المحادثة
@@ -705,8 +707,9 @@ Channel’s chat terms & conditions Mute anonymous users default value The slow 
 Terms & conditionsConfigure channel's chat terms & conditions
 الوضع البطيءPlugin peertube-plugin-livechat slow mode
 Moderation delayPlugin peertube-plugin-livechat moderation delay
-استطلاعات الرأيYou can create polls to ask viewers their opinion.
 الإيموجي المخصصةPlugin peertube-plugin-livechat custom emojis
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+استطلاعات الرأيYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 ملاحظات الإشرافPlugin peertube-plugin-livechat moderation notes
 روبوت محادثةضبط روبوت المحادثة
@@ -774,7 +777,18 @@ Setting the value to a positive integer will set the delay, in seconds, to apply
 To modify the value for an already existing room, just open the room “configuration” menu (on top of the chat window), and change the moderation delay value in the configuration form.
 تحذير Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants. However, messages sent after they joined will be delayed correctly.
 بقشيش You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
-In the chat As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime.`,description:"Plugin peertube-plugin-livechat moderation delay",tags:[],title:"Moderation delay",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/moderation_delay/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` معلومات This feature comes with the livechat plugin version 10.2.0.
+In the chat As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime.`,description:"Plugin peertube-plugin-livechat moderation delay",tags:[],title:"Moderation delay",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/moderation_delay/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` معلومات This feature comes with the livechat plugin version 10.1.0.
+الوجوه التعبيرية الخاصة بالقناة Streamers can add custom emojis to their channels.
+On the channel configuration page, open the “الوجوه التعبيرية الخاصة بالقناة” tab:
+You can configure custom emojis for your channel. These emojis will be available in the emoji picker. Users can also use them by with their short name (for example by writing “:shortname:”).
+You can use emojis in the chat using “:shortname:”. The short name can start and/or end by a colon (:), and only contain alphanumerical characters, underscores and hyphens. It is strongly recommended to start them by a colon, so that users can use autocompletion (by typing “:” then press TAB).
+Import / Export On the channel configuration page, there are an “استيراد” and an “تصدير” button. The “تصدير” button generates a file than you can then import on another channel.
+You can also generate a file to import from any other source (for example you can import your Twitch custom emojis). The file must be a valid JSON file, using the following format:
+[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] The sn attribute is the short name code. The url attribute can be any image url than your browser can access, or a Data URL representing the file you want to import.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"الإيموجي المخصصة",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` معلومات This feature comes with the livechat plugin version 11.1.0.
+Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
+This mode can be usefull for example:
+To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Emojis only mode” checkbox.
+If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` معلومات This feature comes with the livechat plugin version 10.2.0.
 Create a poll You can create a new poll by using the “Create a new poll” action in the chat top menu:
 تحذير This poll feature should not be considered as a reliable voting system. It is easy to cheat. There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat. Votes are never fully anonymous, someone having access to the server could see who voted for what choice.
 Poll form Fill the form fields:
@@ -794,14 +808,7 @@ Viewers can change their vote at any time, just by making a new choice. Their pr
 If “Anonymous results” is checked, votes won’t be shown to other users. If unchecked, votes will be publicly visible as you will see message like “!1” in the chat.
 معلومات For viewers using XMPP clients or outdated livechat plugin versions, the banner will not be visible. But they will see the message in the chat and will be able to vote by sending messages with their choices.
 When the poll ends, a new message will be sent in the chat, with the results.
-معلومات The only way to get old polls results is to search for the poll end message in the chat. For now, polls results are not saved by any other means. So don’t forget to note polls results if you want to keep them.`,description:"You can create polls to ask viewers their opinion.",tags:[],title:"استطلاعات الرأي",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` معلومات This feature comes with the livechat plugin version 10.1.0.
-الوجوه التعبيرية الخاصة بالقناة Streamers can add custom emojis to their channels.
-On the channel configuration page, open the “الوجوه التعبيرية الخاصة بالقناة” tab:
-You can configure custom emojis for your channel. These emojis will be available in the emoji picker. Users can also use them by with their short name (for example by writing “:shortname:”).
-You can use emojis in the chat using “:shortname:”. The short name can start and/or end by a colon (:), and only contain alphanumerical characters, underscores and hyphens. It is strongly recommended to start them by a colon, so that users can use autocompletion (by typing “:” then press TAB).
-Import / Export On the channel configuration page, there are an “استيراد” and an “تصدير” button. The “تصدير” button generates a file than you can then import on another channel.
-You can also generate a file to import from any other source (for example you can import your Twitch custom emojis). The file must be a valid JSON file, using the following format:
-[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] The sn attribute is the short name code. The url attribute can be any image url than your browser can access, or a Data URL representing the file you want to import.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"الإيموجي المخصصة",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` معلومات This feature comes with the livechat plugin version 10.0.0.
+معلومات The only way to get old polls results is to search for the poll end message in the chat. For now, polls results are not saved by any other means. So don’t forget to note polls results if you want to keep them.`,description:"You can create polls to ask viewers their opinion",tags:[],title:"استطلاعات الرأي",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` معلومات This feature comes with the livechat plugin version 10.0.0.
 مقدمة The livechat plugin includes a Task Application: a kind of “to-do list” feature where you can create task lists and add tasks to them. Every room’s admins have access to these tasks, so you can edit them collaboratively.
 You can for example use the Task Application to:
 prepare a list of themes you want to discuss during your livestream, so you can be sure you won’t forget anything highlight questions from your viewers, so you can come back to them later without forgetting to answer them … Using the Task Application Opening the Task Application To open the Task Application, there is a “المهام” button in the top chat menu:
@@ -863,8 +870,9 @@ XMPP ClientsConnect to chat using a XMPP client
 Terms & conditionsConfigure channel's chat terms & conditions
 الوضع البطيءPlugin peertube-plugin-livechat slow mode
 Moderation delayPlugin peertube-plugin-livechat moderation delay
-استطلاعات الرأيYou can create polls to ask viewers their opinion.
 الإيموجي المخصصةPlugin peertube-plugin-livechat custom emojis
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+استطلاعات الرأيYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 ملاحظات الإشرافPlugin peertube-plugin-livechat moderation notes
 روبوت محادثةضبط روبوت المحادثة

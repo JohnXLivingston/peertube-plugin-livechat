@@ -52,7 +52,8 @@ Conditions d'utilisationConfigurer les conditions d'utilisation des tchats de la
 Mode lentMode lent du plugin peertube-plugin-livechat
 Délai de modérationPlugin peertube-plugin-livechat délai de modération
 Emojis personnalisésEmojis personnalisés du plugin peertube-plugin-livechat
-SondagesVous pouvez créer des sondages pour demander l'avis des spectateur⋅rices.
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+SondagesYou can create polls to ask viewers their opinion
 Tâches / listes de choses à faireVous pouvez gérer les tâches et les listes de tâches avec votre équipe de modération.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Bot de tchatConfiguration du bot de tchat
@@ -77,7 +78,8 @@ Conditions d'utilisationConfigurer les conditions d'utilisation des tchats de la
 Mode lentMode lent du plugin peertube-plugin-livechat
 Délai de modérationPlugin peertube-plugin-livechat délai de modération
 Emojis personnalisésEmojis personnalisés du plugin peertube-plugin-livechat
-SondagesVous pouvez créer des sondages pour demander l'avis des spectateur⋅rices.
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+SondagesYou can create polls to ask viewers their opinion
 Tâches / listes de choses à faireVous pouvez gérer les tâches et les listes de tâches avec votre équipe de modération.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Bot de tchatConfiguration du bot de tchat
@@ -706,7 +708,8 @@ Conditions d'utilisationConfigurer les conditions d'utilisation des tchats de la
 Mode lentMode lent du plugin peertube-plugin-livechat
 Délai de modérationPlugin peertube-plugin-livechat délai de modération
 Emojis personnalisésEmojis personnalisés du plugin peertube-plugin-livechat
-SondagesVous pouvez créer des sondages pour demander l'avis des spectateur⋅rices.
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+SondagesYou can create polls to ask viewers their opinion
 Tâches / listes de choses à faireVous pouvez gérer les tâches et les listes de tâches avec votre équipe de modération.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Bot de tchatConfiguration du bot de tchat
@@ -781,7 +784,11 @@ Vous pouvez configurer des émojis personnalisés pour votre chaîne. Ces émoji
 Vous pouvez utiliser l’émojis dans le tchat en utilisant “:nom_court:”. Le nom court peut commencer et/ou finir par des deux-points (:), et seulement contenir des caractères alphanumériques des underscores et des tirets. Il est fortement recommandé de les commencer par des deux-points, pour que les utilisateur⋅rices puissent utiliser l’autocomplétion (en tapant “:” puis en pressant TABULATION).
 Importation / Exportation Sur la page de configuration de la chaîne, il y a un bouton “Importer” et un bouton “Exporter”. Le bouton “Exporter” génère un fichier que vous pouvez ensuite importer dans la configuration d’une autre chaîne.
 Vous pouvez également générer un fichier à importer à partir de n’importe quelle autre source (par exemple, vous pouvez importer vos émojis personnalisés Twitch). Le fichier doit être un fichier JSON valide, au format suivant :
-[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] L’attribut sn est le code du nom court. L’attribut url peut être n’importe quelle url d’image à laquelle votre navigateur peut accéder, ou une URL de données représentant le fichier que vous souhaitez importer.`,description:"Emojis personnalisés du plugin peertube-plugin-livechat",tags:[],title:"Emojis personnalisés",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice > Pour les streameur⋅euses",content:` Information Cette fonctionnalité arrive avec le plugin livechat version 10.2.0.
+[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] L’attribut sn est le code du nom court. L’attribut url peut être n’importe quelle url d’image à laquelle votre navigateur peut accéder, ou une URL de données représentant le fichier que vous souhaitez importer.`,description:"Emojis personnalisés du plugin peertube-plugin-livechat",tags:[],title:"Emojis personnalisés",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice > Pour les streameur⋅euses",content:` Information This feature comes with the livechat plugin version 11.1.0.
+Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
+This mode can be usefull for example:
+To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Emojis only mode” checkbox.
+If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice > Pour les streameur⋅euses",content:` Information Cette fonctionnalité arrive avec le plugin livechat version 10.2.0.
 Créer un sondage Vous pouvez créer un nouveau sondage en utilisant l’action “Créer un nouveau sondage” dans le menu du tchat :
 Avertissement Cette fonctionnalité de sondage ne doit pas être considérée comme un système de vote fiable. Il est facile de tricher. Aucun mécanisme n’empêche les utilisateur⋅rices anonymes de voter plusieurs fois en rechargeant simplement le tchat. Les votes ne sont jamais totalement anonymes, quelqu’un ayant accès au serveur peut voir qui a voté pour quel choix.
 Formulaire de sondage Remplir les champs du formulaire :
@@ -801,7 +808,7 @@ Astuce Les spectateur⋅rices anonymes ne peuvent voter que lorsqu’iels ont ch
 Si “Résultats anonymes” est coché, les votes ne seront pas montrés aux autres utilisateur⋅rices. Si cette option n’est pas cochée, les votes seront visibles publiquement sous forme de messages du type “!1” dans le tchat.
 Information Pour les spectateur⋅rices utilisant des clients XMPP ou des versions obsolètes du plugin livechat, la bannière ne sera pas visible. Mais iels verront le message dans le tchat et pourront voter en envoyant des messages avec leurs choix.
 À la fin du sondage, un nouveau message sera envoyé dans le tchat, avec les résultats.
-Information Le seul moyen d’obtenir les résultats d’anciens sondages est de rechercher le message de fin de sondage dans le tchat. Pour l’instant, les résultats des sondages ne sont pas sauvegardés par d’autres moyens. N’oubliez donc pas de noter les résultats des sondages si vous souhaitez les conserver.`,description:"Vous pouvez créer des sondages pour demander l'avis des spectateur⋅rices.",tags:[],title:"Sondages",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice > Pour les streameur⋅euses",content:` Information Cette fonctionnalité arrive avec le plugin livechat version 10.0.0.
+Information Le seul moyen d’obtenir les résultats d’anciens sondages est de rechercher le message de fin de sondage dans le tchat. Pour l’instant, les résultats des sondages ne sont pas sauvegardés par d’autres moyens. N’oubliez donc pas de noter les résultats des sondages si vous souhaitez les conserver.`,description:"You can create polls to ask viewers their opinion",tags:[],title:"Sondages",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice > Pour les streameur⋅euses",content:` Information Cette fonctionnalité arrive avec le plugin livechat version 10.0.0.
 Introduction Le plugin livechat comprend une Application de Tâches : une sorte de “liste de choses à faire” où vous pouvez créer des listes de tâches et y ajouter des tâches. Les administrateur⋅rices de chaque salon de discussion ont accès à ces tâches, ce qui vous permet de les modifier de manière collaborative.
 Vous pouvez par exemple utiliser l’Application de Tâches pour :
 préparez une liste des thèmes que vous souhaitez aborder lors de votre direct, afin d’être sûr de ne rien oublier mettre en évidence les questions de vos spectateur⋅rices, afin que vous puissiez y revenir plus tard sans oublier d’y répondre … Utilisation de l’Application Tâches Ouverture de l’Application Tâche Pour ouvrir l’Application Tâches, il y a un bouton «Tâches» dans le menu haut du tchat :
@@ -864,7 +871,8 @@ Conditions d'utilisationConfigurer les conditions d'utilisation des tchats de la
 Mode lentMode lent du plugin peertube-plugin-livechat
 Délai de modérationPlugin peertube-plugin-livechat délai de modération
 Emojis personnalisésEmojis personnalisés du plugin peertube-plugin-livechat
-SondagesVous pouvez créer des sondages pour demander l'avis des spectateur⋅rices.
+Emojis only modePlugin peertube-plugin-livechat emojis only mode
+SondagesYou can create polls to ask viewers their opinion
 Tâches / listes de choses à faireVous pouvez gérer les tâches et les listes de tâches avec votre équipe de modération.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Bot de tchatConfiguration du bot de tchat
