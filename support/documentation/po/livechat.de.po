@@ -8,15 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-09-06 12:33+0200\n"
-"PO-Revision-Date: 2024-08-31 17:22+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-09-07 06:09+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.7\n"
+"X-Generator: Weblate 5.7.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -3288,54 +3290,58 @@ msgstr "Das Attribut `sn` ist der Kurznamencode.  Das Attribut \"url\" kann eine
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy, no-wrap
-#| msgid "Plugin peertube-plugin-livechat slow mode"
+#, no-wrap
 msgid "Plugin peertube-plugin-livechat emojis only mode"
-msgstr "Plugin peertube-plugin-livechat Langsamer Modus"
+msgstr "Plugin peertube-plugin-livechat nur Emojis Modus"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 #, no-wrap
 msgid "Emojis only mode"
-msgstr ""
+msgstr "Nur Emojis-Modus"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 11.0.0."
 msgid "This feature comes with the livechat plugin version 11.1.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 11.0.0 verfügbar sein."
+msgstr ""
+"Diese Funktion wird mit dem Livechatplugin Version 11.1.0 verfügbar sein."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy
-#| msgid "This can be really usefull to:"
 msgid "This mode can be usefull for example:"
-msgstr "Dies kann sehr nützlich sein, um:"
+msgstr "Dieser Modus kann sehr nützlich sein, um beispielsweise:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "To avoid spam or offensive message when you are not here to moderate."
 msgstr ""
+"Um Spam oder beleidigende Nachrichten zu vermeiden, wenn Sie nicht hier "
+"sind, um zu moderieren."
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "When there are too many speaking participants, and you can't no more moderate correctly."
 msgstr ""
+"Wenn zu viele Teilnehmer schreiben und Sie nicht mehr richtig moderieren "
+"können."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy
-#| msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label emoji_only_mode_title %}}\" checkbox."
-msgstr "Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das [Chat-Dropdown-Menü](/peertube-plugin-livechat/de/documentation/user/viewers), öffnen Sie das Menü \"Konfigurieren\".  In dem Formular finden Sie eine Checkbox \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\"."
+msgstr ""
+"Um diese Funktion zu aktivieren oder zu deaktivieren, verwenden Sie das "
+"[Chat-Dropdown-Menü](/peertube-plugin-livechat/de/documentation/user/viewers)"
+", öffnen Sie das Menü \"Konfigurieren\".  In dem Formular finden Sie eine "
+"Checkbox \"{{% livechat_label emoji_only_mode_title %}}\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy
-#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
 msgid "If you want to enable it for all your chatrooms at once, open the [channel emojis configuration page](/peertube-plugin-livechat/documentation/user/streamers/emojis/), and use the \"{{% livechat_label emoji_only_enable_all_rooms %}}\" button."
-msgstr "Auf der [Kanal Konfigurationsseite](/peertube-plugin-livechat/de/documentation/user/streamers/channel) können Sie die Option \"{{% livechat_label moderation_delay %}}\" einstellen:"
+msgstr ""
+"Wenn Sie es für alle Ihre Chaträume auf einmal aktivieren möchten, öffnen "
+"Sie die [Kanal Emojis Konfigurationsseite](/peertube-plugin-livechat/de/"
+"documentation/user/streamers/emojis/), und benutzen Sie die \"{{% "
+"livechat_label emoji_only_enable_all_rooms %}}\" Schaltfläche."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
@@ -3904,10 +3910,10 @@ msgstr "Sie können Notizen einfach per Drag & Drop sortieren."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/polls.md
-#, fuzzy, no-wrap
-#| msgid "You can create polls to ask viewers their opinion."
+#, no-wrap
 msgid "You can create polls to ask viewers their opinion"
-msgstr "Sie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen."
+msgstr ""
+"Sie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu fragen"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/polls.md
