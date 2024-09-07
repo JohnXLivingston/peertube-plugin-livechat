@@ -6,6 +6,10 @@
 
 * #131: Emoji only mode.
 
+### Minor changes and fixes
+
+* Various translation updates.
+
 ## 11.0.1
 
 ### Minor changes and fixes
