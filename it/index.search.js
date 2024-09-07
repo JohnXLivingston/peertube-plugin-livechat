@@ -96,7 +96,9 @@ Informazione Changing this setting will restart the chat server, and all users w
 Elenco delle chat room esistenti When pressing the «List rooms» button, all existing chatrooms will be listed. You can then find them and moderated them.
 Federation Following settings concern the federation with other Peertube instances, and other fediverse softwares.
 Non visualizzare le chat remote Selezionando questa impostazione la vostra istanza non visualizzerà mai chat da video remoti.
-Non pubblicare le informazioni sulla chat Selezionando questo parametro, la vostra istanza non pubblicherà le informazioni della chat sul fediverso. Le istanze Peertube remote non sapranno che una chat è associata ai video. Attenzione: se erano già in corso delle chat, è possibile che le informazioni siano già state pubblicate. Dovrete attendere il prossimo aggiornamento dei video perché le informazioni non vengano pubblicate. Allo stesso modo, se si disattiva questa impostazione, bisognerà attendere l’aggiornamento dei video prima di poter pubblicare nuovamente le informazioni. Questo aggiornamento avviene, tra l’altro, quando una trasmissione in diretta riprende o si interrompe. Attenzione: questo parametro influisce solo sulla pubblicazione di informazioni tramite il protocollo ActivityPub. Non impedisce a un’applicazione remota di rilevare in altro modo la presenza della chat e di tentare di connettersi ad essa.
+Non pubblicare le informazioni sulla chat Selezionando questo parametro, la vostra istanza non pubblicherà le informazioni della chat sul fediverso. Le istanze Peertube remote non sapranno che una chat è associata ai video.
+Attenzione: se erano già in corso delle chat, è possibile che le informazioni siano già state pubblicate. Dovrete attendere il prossimo aggiornamento dei video perché le informazioni non vengano pubblicate. Allo stesso modo, se si disattiva questa impostazione, bisognerà attendere l’aggiornamento dei video prima di poter pubblicare nuovamente le informazioni. Questo aggiornamento avviene, tra l’altro, quando una trasmissione in diretta riprende o si interrompe.
+Attenzione: questo parametro influisce solo sulla pubblicazione di informazioni tramite il protocollo ActivityPub. Non impedisce a un’applicazione remota di rilevare in altro modo la presenza della chat e di tentare di connettersi ad essa.
 Authentication Disable livechat tokens In case you have any trouble with the long term authentication tokens, you can disable the feature here.
 External Authentication See the detailed documentation page:
 External Authentication
@@ -126,33 +128,63 @@ Abstract: David Revoy’s Abstract avatar generator, CC-By license
 Legacy Sepia avatars (those included in previous plugin versions): Based on David Revoy' work, AGPL-v3 license
 If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
 Tema ConverseJS You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Rilevamento automatico dei colori Cerca di rilevare automaticamente i colori dal tema corrente dell’utente. Se selezionata, il plugin cercherà di rilevare automaticamente i colori del tema corrente dell’utente e li applicherà al tema della chat. Se questo non funzionasse correttamente per alcuni temi di Peertube, disattiva questa opzione. Puoi segnalare i bug riscontrati nella gestione errori ufficiale . Non dimenticare di indicare il tema difettoso.
-Attributi di stile dell’iframe della chat Stili aggiuntivi da applicare all’iframe della chat. Esempio: height:400px;
+Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Rilevamento automatico dei colori Cerca di rilevare automaticamente i colori dal tema corrente dell’utente.
+Se selezionata, il plugin cercherà di rilevare automaticamente i colori del tema corrente dell’utente e li applicherà al tema della chat.
+Se questo non funzionasse correttamente per alcuni temi di Peertube, disattiva questa opzione. Puoi segnalare i bug riscontrati nella gestione errori ufficiale . Non dimenticare di indicare il tema difettoso.
+Attributi di stile dell’iframe della chat Stili aggiuntivi da applicare all’iframe della chat.
+Esempio: height:400px;
 Chat server advanced settings Usa il server Prosody installato sul sistema The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
 This setting should only be used if the plugin is broken, and waiting for a patch.
 Disattiva Websocket Con Peertube >= 5.0.0, questo plugin cercherà di utilizzare il protocollo Websocket per le connessioni alla chat. Se il browser o la connessione dell’utente non sono compatibili, il browser passerà automaticamente al protocollo BOSH. Tuttavia, in rari casi, questo potrebbe non funzionare. Ad esempio, se hai un reverse proxy di fronte a Peertube che non consente le connessioni tramite Websocket. In tal caso, puoi selezionare quest’opzione per disattivare le connessioni Websocket.
-Porta per Prosody La porta che sarà utilizzata dal server Prosody. Cambiala se questa porta è già in uso sul tuo server. Puoi chiudere tramite il tuo firewall l’accesso a questa porta dall’esterno. Nota: questo potrebbe cambiare prossimamente, poiché è prevista l’aggiunta di parametri per attivare le connessioni esterne.
-URL di Peertube per le chiamate API Ti preghiamo di non toccare questa impostazione se non sei sicurə di quello che stai facendo. In rari casi il server Prosody potrebbe non essere in grado di chiamare l’API di Peertube utilizzando il suo url pubblico. Puoi allora utilizzare questo parametro per personalizzare l’url che i moduli Prosody utilizzeranno per le API di Peertube (ad esempio «http://localhost:9000» o «http://127.0.0.1:9000»).
+Porta per Prosody La porta che sarà utilizzata dal server Prosody.
+Cambiala se questa porta è già in uso sul tuo server.
+Puoi chiudere tramite il tuo firewall l’accesso a questa porta dall’esterno.
+Nota: questo potrebbe cambiare prossimamente, poiché è prevista l’aggiunta di parametri per attivare le connessioni esterne.
+URL di Peertube per le chiamate API Ti preghiamo di non toccare questa impostazione se non sei sicurə di quello che stai facendo.
+In rari casi il server Prosody potrebbe non essere in grado di chiamare l’API di Peertube utilizzando il suo url pubblico. Puoi allora utilizzare questo parametro per personalizzare l’url che i moduli Prosody utilizzeranno per le API di Peertube (ad esempio «http://localhost:9000» o «http://127.0.0.1:9000»).
 If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
 In last resort, it will use your Peertube public URI. So, any API Call will go throught your Nginx server. This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP. In such case, try changing the “URL di Peertube per le chiamate API” settings, by setting http://127.0.0.1:9000 (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don’t know).
 Registra automaticamente il contenuto delle chat room Se selezionata, i contenuti della chat room saranno registrati automaticamente. Ogni utente che entrerà in una chat room vedrà allora tutto quello che è stato scritto prima del suo arrivo. Nota: puoi sempre attivare/disattivare la registrazione dei contenuti per una specifica chat room, modificandone le proprietà.
 Scadenza dei registri delle chat room Scegli per quanto tempo il contenuto della chat room sarà conservato sul server. Il valore può essere:
-Abilitare la connessione a questa stanza usando profili XMPP esterni Abilitando questa opzione, sarà possibile connettersi alle stanze utilizzando account XMPP esterni tramite client XMPP. Si noti che l’attivazione di questa opzione può richiedere la configurazione del server e dei record DNS. Per saperne di più, consultare la documentazione: Permettere connessioni con account XMPP esterni. Porta Prosody da server a server La porta che verrà utilizzata per le connessioni XMPP s2s (da server a server). Si dovrebbe usare la porta standard 5269. Altrimenti sarà necessario impostare un record DNS specifico .
-Interfacce di rete da server a server Le interfacce di rete su cui ascoltare per le connessioni da server a server. Elenco di IP su cui ascoltare, separati da virgole (gli spazi saranno eliminati). È possibile utilizzare “*” per ascoltare su tutte le interfacce IPv4 e «::» per tutte le IPv6. Esempi:
-Cartella dei certificati Se questo campo è vuoto, il plugin genererà e utilizzerà certificati autofirmati. Se si desidera utilizzare altri certificati, è sufficiente specificare la cartella in cui Prosody può trovarli. Nota: l’utente “peertube” deve avere accesso in lettura a questa cartella.
-Abilitare le connessioni dal client al server Consenti ai clienti XMPP a connettersi al server Prosody incorporato nel plugin. Questa opzione consente unicamente le connessioni dei clienti sul localhost.
+60: il contenuto verrà registrato per 60 secondi. Puoi sostituire 60 con qualsiasi valore intero. 1d: il contenuto verrà registrato per 1 giorno. Puoi sostituire 1 con qualsiasi valore intero. 1w: il contenuto verrà registrato per 1 settimana. Puoi sostituire 1 con qualsiasi valore intero. 1m: il contenuto verrà registrato per 1 mese. Puoi sostituire 1 con qualsiasi valore intero. 1y: il contenuto verrà registrato per 1 anno. Puoi sostituire 1 con qualsiasi valore intero. never: il contenuto non sarà mai cancellato. Abilitare la connessione a questa stanza usando profili XMPP esterni Abilitando questa opzione, sarà possibile connettersi alle stanze utilizzando account XMPP esterni tramite client XMPP.
+Si noti che l’attivazione di questa opzione può richiedere la configurazione del server e dei record DNS. Per saperne di più, consultare la documentazione: Permettere connessioni con account XMPP esterni. Porta Prosody da server a server La porta che verrà utilizzata per le connessioni XMPP s2s (da server a server).
+Si dovrebbe usare la porta standard 5269. Altrimenti sarà necessario impostare un record DNS specifico .
+Interfacce di rete da server a server Le interfacce di rete su cui ascoltare per le connessioni da server a server.
+Elenco di IP su cui ascoltare, separati da virgole (gli spazi saranno eliminati).
+È possibile utilizzare “*” per ascoltare su tutte le interfacce IPv4 e «::» per tutte le IPv6.
+Esempi:
+*, :: * 127.0.0.1, ::1 172.18.0.42 Cartella dei certificati Se questo campo è vuoto, il plugin genererà e utilizzerà certificati autofirmati.
+Se si desidera utilizzare altri certificati, è sufficiente specificare la cartella in cui Prosody può trovarli. Nota: l’utente “peertube” deve avere accesso in lettura a questa cartella.
+Abilitare le connessioni dal client al server Consenti ai clienti XMPP a connettersi al server Prosody incorporato nel plugin.
+Questa opzione consente unicamente le connessioni dei clienti sul localhost.
 This setting enable XMPP clients to connect to the built-in Prosody server. For now, this option only allows connections from localhost clients.
 As example, this option can allow an instance of Matterbridge (once it could use anonymous login) on the same machine to bridge your chat with another services like a Matrix room.
-Porta di connessione dei client al server Prosody Questa è la porta che verrà utilizzata dal modulo “c2s” (client to server) del server Prosody incorporato nel plugin. I clienti XMPP dovranno utilizzare questa porta per connettersi. Cambiala se questa porta è già in uso sul tuo server. Per ora, puoi chiudere l’accesso a questa porta dall’esterno, tramite il tuo firewall (Prosody ascolta solo il localhost). Nota: questo potrebbe cambiare prossimamente, poiché è prevista l’aggiunta di una funzione per attivare le connessioni dall’esterno.
-Client to server network interfaces The network interfaces to listen on for client to server connections. This setting is provided for advanced users. Don’t change this setting if you don’t fully understand what it means. List of IP to listen on, coma separated (spaces will be stripped). You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6. Examples:
-Abilita le componenti esterne personalizzate di Prosody This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody external components network interfaces” value to listen on other network interfaces.
+Porta di connessione dei client al server Prosody Questa è la porta che verrà utilizzata dal modulo “c2s” (client to server) del server Prosody incorporato nel plugin.
+I clienti XMPP dovranno utilizzare questa porta per connettersi.
+Cambiala se questa porta è già in uso sul tuo server.
+Per ora, puoi chiudere l’accesso a questa porta dall’esterno, tramite il tuo firewall (Prosody ascolta solo il localhost).
+Nota: questo potrebbe cambiare prossimamente, poiché è prevista l’aggiunta di una funzione per attivare le connessioni dall’esterno.
+Client to server network interfaces The network interfaces to listen on for client to server connections.
+This setting is provided for advanced users. Don’t change this setting if you don’t fully understand what it means.
+List of IP to listen on, coma separated (spaces will be stripped).
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
+Examples:
+*, :: * 127.0.0.1, ::1 127.0.0.1, ::1, 172.18.0.42 Abilita le componenti esterne personalizzate di Prosody This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody external components network interfaces” value to listen on other network interfaces.
 This feature could be used to connect bridges or bots.
 More informations on Prosody external components here.
-Abilita le componenti esterne personalizzate di Prosody Abilita l’uso di componenti XMPP esterne. Sono consentite solo le connessioni dal localhost. Questa funzione può essere utilizzata, ad esempio, per collegare dei bot alle chat room.
-Porta di connessione delle componenti XMPP al server Prosody Questa è la porta che verrà utilizzata dalle componenti XMPP per connettersi al server Prosody. Cambiala se questa porta è già in uso sul tuo server. Per ora, puoi chiudere l’accesso a questa porta dall’esterno, tramite il tuo firewall (Prosody ascolta solo il localhost). Nota: questo potrebbe cambiare prossimamente, poiché è prevista l’aggiunta di una funzione per attivare le connessioni dall’esterno.
-Prosody external components network interfaces The network interfaces to listen on for external components connections. List of IP to listen on, coma separated (spaces will be stripped). You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6. Examples:
-Componenti esterne Componenti esterne da dichiarare:
-Enable Prosody mod_firewall You can enable mod_firewall on your Prosody server.
+Abilita le componenti esterne personalizzate di Prosody Abilita l’uso di componenti XMPP esterne.
+Sono consentite solo le connessioni dal localhost.
+Questa funzione può essere utilizzata, ad esempio, per collegare dei bot alle chat room.
+Porta di connessione delle componenti XMPP al server Prosody Questa è la porta che verrà utilizzata dalle componenti XMPP per connettersi al server Prosody.
+Cambiala se questa porta è già in uso sul tuo server.
+Per ora, puoi chiudere l’accesso a questa porta dall’esterno, tramite il tuo firewall (Prosody ascolta solo il localhost).
+Nota: questo potrebbe cambiare prossimamente, poiché è prevista l’aggiunta di una funzione per attivare le connessioni dall’esterno.
+Prosody external components network interfaces The network interfaces to listen on for external components connections.
+List of IP to listen on, coma separated (spaces will be stripped).
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
+Examples:
+*, :: * 127.0.0.1, ::1 172.18.0.42 Componenti esterne Componenti esterne da dichiarare:
+Una per riga Usa il formato «nome_componente:passphrase_segreta» (gli spazi verranno eliminati). Puoi aggiungere commenti: tutto ciò che segue il carattere # verrà eliminato, e le righe vuote ignorate. Il nome elle componenti può contenere solo caratteri alfanumerici latini e punti. Se il nome contiene solo caratteri alfanumerici, sarà seguito dal dominio XMPP come suffisso. Ad esempio, «bridge» diventerà «bridge.tuo_dominio.tld». Puoi anche specificare un nome di dominio completo, ma assicurati di configurare correttamente il tuo DNS. Usa solo caratteri alfanumerici per la passphrase segreta (usa almeno 15 caratteri). Enable Prosody mod_firewall You can enable mod_firewall on your Prosody server.
 For more information, please check the documentation.`,description:"Plugin Peertube Livechat settings",tags:[],title:"Settings",uri:"/peertube-plugin-livechat/it/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
 assets assets/images The assets/images folder contains all icons files used by the plugin.

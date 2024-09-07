@@ -131,28 +131,55 @@ Peertube theme: this is a special theme, made especially for peertube’s integr
 Chat server advanced settings Use system Prosody The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
 This setting should only be used if the plugin is broken, and waiting for a patch.
 停用 Websocket 當 Peertube >= 5.0.0 時，外掛嘗試使用 Websocket 連線進行聊天。 如果使用者的瀏覽器或連線不相容，瀏覽器將自動轉而使用 BOSH 協定。 但在極少數情況下，這可能會失敗。例如，如果您在 Peertube 前面有一個反向代理，但它不 允許外掛的 Websocket 連線。 在這種情況下，您可以檢查此設定以停用 Websocket 連線。
-Prosody port The port that will be used by the Prosody server. Change it if this port is already in use on your server. You can close this port on your firewall, it will not be accessed from the outer world. Note: this might change in a near future, as it is planned to add a feature to activate external connections.
-Peertube API呼叫網址 Please let this setting empty if you don’t know what you are doing. In some rare cases, Prosody can’t call Peertube’s API from its public URI. You can use this field to customize Peertube’s URI for Prosody modules (for example, with «http://localhost:9000» or «http://127.0.0.1:9000»).
+Prosody port The port that will be used by the Prosody server.
+Change it if this port is already in use on your server.
+You can close this port on your firewall, it will not be accessed from the outer world.
+Note: this might change in a near future, as it is planned to add a feature to activate external connections.
+Peertube API呼叫網址 Please let this setting empty if you don’t know what you are doing.
+In some rare cases, Prosody can’t call Peertube’s API from its public URI. You can use this field to customize Peertube’s URI for Prosody modules (for example, with «http://localhost:9000» or «http://127.0.0.1:9000»).
 If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
 In last resort, it will use your Peertube public URI. So, any API Call will go throught your Nginx server. This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP. In such case, try changing the “Peertube API呼叫網址” settings, by setting http://127.0.0.1:9000 (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don’t know).
-Log rooms content by default If checked, room contents will be saved by default. Any user who joins a room will see what was written before they joins. Please note that it is always possible to enable/disable the content archiving for a specific room, by editing its properties.
+Log rooms content by default If checked, room contents will be saved by default. Any user who joins a room will see what was written before they joins.
+Please note that it is always possible to enable/disable the content archiving for a specific room, by editing its properties.
 Room logs expiration You can choose here how long the chatting room’s content is kept by the server. The value can be:
-Enable connection to room using external XMPP accounts By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients. Warning, enabling this option can request extra server and DNS configuration. Please refer to the documentation: Enable external XMPP account connections. Prosody server to server port The port that will be used for XMPP s2s (server to server) connections. You should use the standard 5269 port. Otherwise you should setup a specific DNS record .
-Server to server network interfaces The network interfaces to listen on for server to server connections. List of IP to listen on, coma separated (spaces will be stripped). You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6. Examples:
-Certificates folder If this field is empty, the plugin will generate and use self-signed certificates. If you want to use other certificates, just specify here the folder where Prosody can find them. Note: the “peertube” user must have read access to this folder.
-Enable client to server connections Enable XMPP clients to connect to the built-in Prosody server. This option alone only allows connections from localhost clients.
+60: the content will be saved for 60 seconds. You can replace 60 by any integer value. 1d: the content will be saved for 1 day. You can replace 1 by any integer value. 1w: the content will be saved for 1 week. You can replace 1 by any integer value. 1m: the content will be saved for 1 month. You can replace 1 by any integer value. 1y: the content will be saved for 1 year. You can replace 1 by any integer value. never: the content will never expire, and will be kept forever. Enable connection to room using external XMPP accounts By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients.
+Warning, enabling this option can request extra server and DNS configuration. Please refer to the documentation: Enable external XMPP account connections. Prosody server to server port The port that will be used for XMPP s2s (server to server) connections.
+You should use the standard 5269 port. Otherwise you should setup a specific DNS record .
+Server to server network interfaces The network interfaces to listen on for server to server connections.
+List of IP to listen on, coma separated (spaces will be stripped).
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
+Examples:
+*, :: * 127.0.0.1, ::1 172.18.0.42 Certificates folder If this field is empty, the plugin will generate and use self-signed certificates.
+If you want to use other certificates, just specify here the folder where Prosody can find them. Note: the “peertube” user must have read access to this folder.
+Enable client to server connections Enable XMPP clients to connect to the built-in Prosody server.
+This option alone only allows connections from localhost clients.
 This setting enable XMPP clients to connect to the built-in Prosody server. For now, this option only allows connections from localhost clients.
 As example, this option can allow an instance of Matterbridge (once it could use anonymous login) on the same machine to bridge your chat with another services like a Matrix room.
-Prosody client to server port The port that will be used by the c2s module of the built-in Prosody server. XMPP clients shall use this port to connect. Change it if this port is already in use on your server. You can keep this port closed on your firewall for now, it will not be accessed from the outer world. Note: this might change in a near future, as it is planned to add a feature to activate external connections.
-Client to server network interfaces The network interfaces to listen on for client to server connections. This setting is provided for advanced users. Don’t change this setting if you don’t fully understand what it means. List of IP to listen on, coma separated (spaces will be stripped). You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6. Examples:
-Enable custom Prosody external components This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody external components network interfaces” value to listen on other network interfaces.
+Prosody client to server port The port that will be used by the c2s module of the built-in Prosody server.
+XMPP clients shall use this port to connect.
+Change it if this port is already in use on your server.
+You can keep this port closed on your firewall for now, it will not be accessed from the outer world.
+Note: this might change in a near future, as it is planned to add a feature to activate external connections.
+Client to server network interfaces The network interfaces to listen on for client to server connections.
+This setting is provided for advanced users. Don’t change this setting if you don’t fully understand what it means.
+List of IP to listen on, coma separated (spaces will be stripped).
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
+Examples:
+*, :: * 127.0.0.1, ::1 127.0.0.1, ::1, 172.18.0.42 Enable custom Prosody external components This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody external components network interfaces” value to listen on other network interfaces.
 This feature could be used to connect bridges or bots.
 More informations on Prosody external components here.
-Enable custom Prosody external components Enable the use of external XMPP components. This option alone only allows connections from localhost. You have to setup the listening interfaces and open the port on your firewall to make it available from remote servers. This feature can, for example, be used to connect some bots to the chatting rooms.
-Prosody external components port The port that will be used by XMPP components to connect to the Prosody server. Change it if this port is already in use on your server. You can keep this port closed on your firewall if you don’t allow access on interfaces other than localhost.
-Prosody external components network interfaces The network interfaces to listen on for external components connections. List of IP to listen on, coma separated (spaces will be stripped). You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6. Examples:
-External components The external components to declare:
-Enable Prosody mod_firewall You can enable mod_firewall on your Prosody server.
+Enable custom Prosody external components Enable the use of external XMPP components.
+This option alone only allows connections from localhost. You have to setup the listening interfaces and open the port on your firewall to make it available from remote servers.
+This feature can, for example, be used to connect some bots to the chatting rooms.
+Prosody external components port The port that will be used by XMPP components to connect to the Prosody server.
+Change it if this port is already in use on your server.
+You can keep this port closed on your firewall if you don’t allow access on interfaces other than localhost.
+Prosody external components network interfaces The network interfaces to listen on for external components connections.
+List of IP to listen on, coma separated (spaces will be stripped).
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
+Examples:
+*, :: * 127.0.0.1, ::1 172.18.0.42 External components The external components to declare:
+One per line. Use the format «component_name:component_secret» (spaces will be trimmed). You can add comments: everything after the # character will be stripped off, and empty lines ignored. The name can only contain latin alphanumeric characters and dots. If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain. For example, «bridge» will become «bridge.your_domain.tld». You can also specify a full domain name, but you have to make sure to configure your DNS correctly. Only use alphanumeric characters in the secret passphrase (use at least 15 characters). Enable Prosody mod_firewall You can enable mod_firewall on your Prosody server.
 For more information, please check the documentation.`,description:"Plugin Peertube Livechat settings",tags:[],title:"Settings",uri:"/peertube-plugin-livechat/zh-hant/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
 assets assets/images The assets/images folder contains all icons files used by the plugin.

@@ -96,7 +96,9 @@ Info Changing this setting will restart the chat server, and all users will be d
 Paraqit dhoma ekzistuese When pressing the «List rooms» button, all existing chatrooms will be listed. You can then find them and moderated them.
 Federation Following settings concern the federation with other Peertube instances, and other fediverse softwares.
 Mos shfaq fjalosje nga larg Duke i vënë shenjë këtij rregullimi, instanca juaj s’do të shfaqë kurrë fjalosje prej videosh të largëta.
-Mos boto hollësifjalosjeje By checking this setting, your instance will not publish chat information on the fediverse. Remote Peertube instances will not be aware that they are chat rooms associated to your videos. Please note: if you already had chats in progress, it is possible that the information has already been published. You will have to wait for the next video update before the information is unpublished. Also, if you disable this setting, you’ll have to wait for the videos to be updated before the information are published again. This update happens among others when a live event resumes or stops. Please note: this setting only affects the publication of information via the ActivityPub protocol. It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.
+Mos boto hollësifjalosjeje By checking this setting, your instance will not publish chat information on the fediverse. Remote Peertube instances will not be aware that they are chat rooms associated to your videos.
+Please note: if you already had chats in progress, it is possible that the information has already been published. You will have to wait for the next video update before the information is unpublished. Also, if you disable this setting, you’ll have to wait for the videos to be updated before the information are published again. This update happens among others when a live event resumes or stops.
+Please note: this setting only affects the publication of information via the ActivityPub protocol. It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.
 Authentication Disable livechat tokens In case you have any trouble with the long term authentication tokens, you can disable the feature here.
 External Authentication See the detailed documentation page:
 External Authentication
@@ -126,33 +128,62 @@ Abstrakte: David Revoy’s Abstract avatar generator, CC-By license
 Legacy Sepia avatars (those included in previous plugin versions): Based on David Revoy' work, AGPL-v3 license
 If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
 Temë ConverseJS You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Pikasje e vetvetishme ngjyrash Try to autodetect colors from user’s current theme. When this setting is enabled, the plugin tries to auto-detect colors to apply to the chat theme. If this is not correctly working for some of your Peertube theme, you can disable this option. You can report the bug on the official issue tracker . Don’t forget to specify which theme is not working.
+Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Pikasje e vetvetishme ngjyrash Try to autodetect colors from user’s current theme.
+When this setting is enabled, the plugin tries to auto-detect colors to apply to the chat theme.
+If this is not correctly working for some of your Peertube theme, you can disable this option. You can report the bug on the official issue tracker . Don’t forget to specify which theme is not working.
 Webchat iframe style attribute Additional styles to be added on the iframe style attribute. Example: height:400px;
 Chat server advanced settings Përdor Prosody sistemi The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
 This setting should only be used if the plugin is broken, and waiting for a patch.
 Çaktivizo Websocket-in With Peertube >= 5.0.0, this plugin try to use Websocket connection for chatting. If the user’s browser or connection is incompatible, the browser will automatically fall back on the BOSH protocol. But in rare case, this can fail. For example, if you have a reverse proxy in front of Peertube that does not allow Websocket connection for plugins. In this case, you can check this setting to disable Websocket connections.
-Portë Prosody The port that will be used by the Prosody server. Change it if this port is already in use on your server. You can close this port on your firewall, it will not be accessed from the outer world. Note: this might change in a near future, as it is planned to add a feature to activate external connections.
-URL Peertube për thirrje API Please let this setting empty if you don’t know what you are doing. In some rare cases, Prosody can’t call Peertube’s API from its public URI. You can use this field to customize Peertube’s URI for Prosody modules (for example, with «http://localhost:9000» or «http://127.0.0.1:9000»).
+Portë Prosody The port that will be used by the Prosody server.
+Change it if this port is already in use on your server.
+You can close this port on your firewall, it will not be accessed from the outer world.
+Note: this might change in a near future, as it is planned to add a feature to activate external connections.
+URL Peertube për thirrje API Please let this setting empty if you don’t know what you are doing.
+In some rare cases, Prosody can’t call Peertube’s API from its public URI. You can use this field to customize Peertube’s URI for Prosody modules (for example, with «http://localhost:9000» or «http://127.0.0.1:9000»).
 If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
 In last resort, it will use your Peertube public URI. So, any API Call will go throught your Nginx server. This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP. In such case, try changing the “URL Peertube për thirrje API” settings, by setting http://127.0.0.1:9000 (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don’t know).
-Regjistro ç’bëhet në dhomë, si parazgjedhje If checked, room contents will be saved by default. Any user who joins a room will see what was written before they joins. Please note that it is always possible to enable/disable the content archiving for a specific room, by editing its properties.
+Regjistro ç’bëhet në dhomë, si parazgjedhje If checked, room contents will be saved by default. Any user who joins a room will see what was written before they joins.
+Please note that it is always possible to enable/disable the content archiving for a specific room, by editing its properties.
 Skadim regjistrash dhome Këtu mund të zgjidhni se për sa kohë mbahet lënda e dhomës së fjalosjes nga shërbyesi. Vlera mund të jetë:
-Aktivizoni lidhje te dhoma duke përdorur llogari të jashtme XMPP By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients. Warning, enabling this option can request extra server and DNS configuration. Please refer to the documentation: Enable external XMPP account connections. Portë Prosody shërbyes te shërbyes The port that will be used for XMPP s2s (server to server) connections. You should use the standard 5269 port. Otherwise you should setup a specific DNS record .
-Ndërfaqe rrjeti shërbyes te shërbyes The network interfaces to listen on for server to server connections. List of IP to listen on, coma separated (spaces will be stripped). You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6. Examples:
-Dosje dëshmish If this field is empty, the plugin will generate and use self-signed certificates. If you want to use other certificates, just specify here the folder where Prosody can find them. Note: the “peertube” user must have read access to this folder.
-Aktivizo lidhje klient te shërbyes Enable XMPP clients to connect to the built-in Prosody server. This option alone only allows connections from localhost clients.
+60: lënda do të ruhet për 60 sekonda. 60-n mund ta zëvendësoni me çfarëdo vlere numër të plotë. 1d: lënda do të ruhet për 1 ditë. 1-shin mund ta zëvendësoni me çfarëdo vlere numër të plotë. 1w: lënda do të ruhet për 1 javë. 1-shin mund ta zëvendësoni me çfarëdo vlere numër të plotë. 1m: lënda do të ruhet për 1 muaj. 1-shin mund ta zëvendësoni me çfarëdo vlere numër të plotë. 1y: lënda do të ruhet për 1 vit. 1-shin mund ta zëvendësoni me çfarëdo vlere numër të plotë. never: lënda nuk skadon kurrë dhe do të mbahet përgjithnjë. Aktivizoni lidhje te dhoma duke përdorur llogari të jashtme XMPP By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients.
+Warning, enabling this option can request extra server and DNS configuration. Please refer to the documentation: Enable external XMPP account connections. Portë Prosody shërbyes te shërbyes The port that will be used for XMPP s2s (server to server) connections.
+You should use the standard 5269 port. Otherwise you should setup a specific DNS record .
+Ndërfaqe rrjeti shërbyes te shërbyes The network interfaces to listen on for server to server connections.
+List of IP to listen on, coma separated (spaces will be stripped).
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
+Examples:
+*, :: * 127.0.0.1, ::1 172.18.0.42 Dosje dëshmish If this field is empty, the plugin will generate and use self-signed certificates.
+If you want to use other certificates, just specify here the folder where Prosody can find them. Note: the “peertube” user must have read access to this folder.
+Aktivizo lidhje klient te shërbyes Enable XMPP clients to connect to the built-in Prosody server.
+This option alone only allows connections from localhost clients.
 This setting enable XMPP clients to connect to the built-in Prosody server. For now, this option only allows connections from localhost clients.
 As example, this option can allow an instance of Matterbridge (once it could use anonymous login) on the same machine to bridge your chat with another services like a Matrix room.
-Klient Prosody te portë shërbyesi The port that will be used by the c2s module of the built-in Prosody server. XMPP clients shall use this port to connect. Change it if this port is already in use on your server. You can keep this port closed on your firewall for now, it will not be accessed from the outer world. Note: this might change in a near future, as it is planned to add a feature to activate external connections.
-Ndërfaqe rrjeti klient te shërbyes The network interfaces to listen on for client to server connections. This setting is provided for advanced users. Don’t change this setting if you don’t fully understand what it means. List of IP to listen on, coma separated (spaces will be stripped). You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6. Examples:
-Enable custom Prosody external components This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody external components network interfaces” value to listen on other network interfaces.
+Klient Prosody te portë shërbyesi The port that will be used by the c2s module of the built-in Prosody server.
+XMPP clients shall use this port to connect.
+Change it if this port is already in use on your server.
+You can keep this port closed on your firewall for now, it will not be accessed from the outer world.
+Note: this might change in a near future, as it is planned to add a feature to activate external connections.
+Ndërfaqe rrjeti klient te shërbyes The network interfaces to listen on for client to server connections.
+This setting is provided for advanced users. Don’t change this setting if you don’t fully understand what it means.
+List of IP to listen on, coma separated (spaces will be stripped).
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
+Examples:
+*, :: * 127.0.0.1, ::1 127.0.0.1, ::1, 172.18.0.42 Enable custom Prosody external components This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody external components network interfaces” value to listen on other network interfaces.
 This feature could be used to connect bridges or bots.
 More informations on Prosody external components here.
-Enable custom Prosody external components Enable the use of external XMPP components. This option alone only allows connections from localhost. You have to setup the listening interfaces and open the port on your firewall to make it available from remote servers. This feature can, for example, be used to connect some bots to the chatting rooms.
-Portë përbërësish Prosody të jashtëm The port that will be used by XMPP components to connect to the Prosody server. Change it if this port is already in use on your server. You can keep this port closed on your firewall if you don’t allow access on interfaces other than localhost.
-Prosody external components network interfaces The network interfaces to listen on for external components connections. List of IP to listen on, coma separated (spaces will be stripped). You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6. Examples:
-Përbërës të jashtëm The external components to declare:
-Enable Prosody mod_firewall You can enable mod_firewall on your Prosody server.
+Enable custom Prosody external components Enable the use of external XMPP components.
+This option alone only allows connections from localhost. You have to setup the listening interfaces and open the port on your firewall to make it available from remote servers.
+This feature can, for example, be used to connect some bots to the chatting rooms.
+Portë përbërësish Prosody të jashtëm The port that will be used by XMPP components to connect to the Prosody server.
+Change it if this port is already in use on your server.
+You can keep this port closed on your firewall if you don’t allow access on interfaces other than localhost.
+Prosody external components network interfaces The network interfaces to listen on for external components connections.
+List of IP to listen on, coma separated (spaces will be stripped).
+You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
+Examples:
+*, :: * 127.0.0.1, ::1 172.18.0.42 Përbërës të jashtëm The external components to declare:
+One per line. Use the format «component_name:component_secret» (spaces will be trimmed). You can add comments: everything after the # character will be stripped off, and empty lines ignored. The name can only contain latin alphanumeric characters and dots. If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain. For example, «bridge» will become «bridge.your_domain.tld». You can also specify a full domain name, but you have to make sure to configure your DNS correctly. Only use alphanumeric characters in the secret passphrase (use at least 15 characters). Enable Prosody mod_firewall You can enable mod_firewall on your Prosody server.
 For more information, please check the documentation.`,description:"Plugin Peertube Livechat settings",tags:[],title:"Settings",uri:"/peertube-plugin-livechat/sq/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
 assets assets/images The assets/images folder contains all icons files used by the plugin.

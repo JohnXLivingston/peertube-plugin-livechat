@@ -75,7 +75,9 @@ For more information on this feature, check the documentation for channel’s te
 既に存在するルームリスト When pressing the «List rooms» button, all existing chatrooms will be listed. You can then find them and moderated them.
 Federation Following settings concern the federation with other Peertube instances, and other fediverse softwares.
 外部チャットを表示しない この設定を有効にすると、あなたのインスタンスはリモート動画のチャットを表示しないようになります。
-チャット情報を公開しない この設定を有効にすると、あなたのインスタンスはFediverse上にチャット情報を公開しないようになります。 リモートのPeerTubeインスタンスは、チャットルームがあなたの動画に関連付いていることを認識しなくなります。 注意: 進行中のチャットが既に存在する場合、既にチャット情報が公開されている可能性があります。 チャット情報が非公開になるまで、次の動画の更新を待つ必要があります。 また、この設定を無効にすると、再度チャット情報が公開されるようになるまで、次の動画の更新を待つ必要があります。 この更新は、主にライブ配信が再開したり、停止したときに発生します。 注意: この設定は、ActivityPubプロトコルを経由した情報の公開のみ影響します。 リモート アプリケーションがチャットの存在を検出し、それに接続しようとすることを妨げるものではありません。
+チャット情報を公開しない この設定を有効にすると、あなたのインスタンスはFediverse上にチャット情報を公開しないようになります。 リモートのPeerTubeインスタンスは、チャットルームがあなたの動画に関連付いていることを認識しなくなります。
+注意: 進行中のチャットが既に存在する場合、既にチャット情報が公開されている可能性があります。 チャット情報が非公開になるまで、次の動画の更新を待つ必要があります。 また、この設定を無効にすると、再度チャット情報が公開されるようになるまで、次の動画の更新を待つ必要があります。 この更新は、主にライブ配信が再開したり、停止したときに発生します。
+注意: この設定は、ActivityPubプロトコルを経由した情報の公開のみ影響します。 リモート アプリケーションがチャットの存在を検出し、それに接続しようとすることを妨げるものではありません。
 Authentication ライブチャットトークンを無効化 In case you have any trouble with the long term authentication tokens, you can disable the feature here.
 External Authentication See the detailed documentation page:
 External Authentication
@@ -105,33 +107,63 @@ Fenecs (Mobilizonのマスコットキャラクター): David Revoy’s fenec/mo
 以前のSepia アバター(以前のプラグインバージョンに含まれていたもの): Based on David Revoy' work, AGPL-v3 license
 If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
 ConverseJSのテーマ You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. 色を自動検出 ユーザーの現在のテーマから色を自動検出します。 この設定が有効の場合、プラグインは色を自動検出し、チャットのテーマに適用します。 この設定がお使いのPeerTubeテーマでうまく動作しない場合は、この設定を無効にできます。 発見したバグは、公式の issue トラッカー から報告をお願いします。 どのテーマで動作しなかったかも合わせて報告をお願いします。
-チャットのiframeスタイル属性 追加のスタイル設定をiframeスタイルの属性に追加します。 例）height:400px;
+Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. 色を自動検出 ユーザーの現在のテーマから色を自動検出します。
+この設定が有効の場合、プラグインは色を自動検出し、チャットのテーマに適用します。
+この設定がお使いのPeerTubeテーマでうまく動作しない場合は、この設定を無効にできます。 発見したバグは、公式の issue トラッカー から報告をお願いします。 どのテーマで動作しなかったかも合わせて報告をお願いします。
+チャットのiframeスタイル属性 追加のスタイル設定をiframeスタイルの属性に追加します。
+例）height:400px;
 Chat server advanced settings システムのProsodyを使用する The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
 This setting should only be used if the plugin is broken, and waiting for a patch.
 Websocketを無効にする PeerTube v5.0.0以降をお使いの場合、本プラグインはチャットの接続にWebsocketを使用するようになります。 ユーザーのブラウザーにWebsocketとの互換性がない場合は、ブラウザーは自動的にBOSHプロトコルに切り替えます。 ただし希に、プロトコルの切替に失敗することがあります。例えば、PeerTubeの前に、プラグインに対してWebsocketを許可していないリバースプロキシを使用している場合などが、これに該当します。 この場合、この設定を有効にすることでWebsocket接続を使用しないようになります。
-Prosodyポート番号 Prosodyサーバーによって使用されるポート番号です。 このポートを既にサーバーが使用している場合に変更してください。 このポートをファイアウォールなどで封じることで、外部からアクセスを禁止できます。 注: 外部接続を有効にする機能の追加が予定されている為、この設定は近い将来変更される可能性があります。
-API呼び出しのためのPeerTube URL この設定が何を意味するのか分からない場合は、空欄のままにしてください。 一部の特殊なケースで、公開URIからProsodyを呼び出せない場合があります。 Prosodyモジュールを呼び出すPeerTubeのURIをここでカスタマイズできます。 (たとえば、«http://localhost:9000»または«http://127.0.0.1:9000»など)。
+Prosodyポート番号 Prosodyサーバーによって使用されるポート番号です。
+このポートを既にサーバーが使用している場合に変更してください。
+このポートをファイアウォールなどで封じることで、外部からアクセスを禁止できます。
+注: 外部接続を有効にする機能の追加が予定されている為、この設定は近い将来変更される可能性があります。
+API呼び出しのためのPeerTube URL この設定が何を意味するのか分からない場合は、空欄のままにしてください。
+一部の特殊なケースで、公開URIからProsodyを呼び出せない場合があります。 Prosodyモジュールを呼び出すPeerTubeのURIをここでカスタマイズできます。 (たとえば、«http://localhost:9000»または«http://127.0.0.1:9000»など)。
 If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
 In last resort, it will use your Peertube public URI. So, any API Call will go throught your Nginx server. This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP. In such case, try changing the “API呼び出しのためのPeerTube URL” settings, by setting http://127.0.0.1:9000 (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don’t know).
-デフォルトでルームの内容を残す チェックを入れると、ルームの内容がデフォルトで保存されるようになります。 ユーザーがルームに入る前に交わされていたチャットの内容などが確認できるようになります。 プロパティを編集することで、特定のルームのコンテンツのみをアーカイブするなどの変更が いつでもできることを覚えておいてください。
+デフォルトでルームの内容を残す チェックを入れると、ルームの内容がデフォルトで保存されるようになります。 ユーザーがルームに入る前に交わされていたチャットの内容などが確認できるようになります。
+プロパティを編集することで、特定のルームのコンテンツのみをアーカイブするなどの変更が いつでもできることを覚えておいてください。
 ルームログの有効期限 チャットルームの内容をいつまでサーバーに保管しておくかを選択できます。 値によって次のようになります:
-外部のXMPPアカウントを使用してのルーム接続を有効にする この設定を有効にすると、外部のXMPPアカウントとXMPPクライアントを利用してチャットルームに接続できるようになります。 注意しなければならないのは、この設定は追加のサーバーとDNS設定をリクエストできるようになることです。 次のドキュメントを参照してください: 外部のXMPPアカウント接続を有効にする。 Prosodyサーバー間のポート番号 XMPP s2s(サーバー間)接続で使用されるポート番号です。 通常は、ポート5269を使用します。 それ以外にしたい場合は 特定のDNSレコードを設定する 必要があります。
-サーバー間ネットワークインターフェイス サーバー間接続のためにリッスンするネットワークインターフェイスです。 リッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。 «*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。 例:
-証明書フォルダー この欄が空欄の場合、プラグインは自己証明書を生成し、使用するようになります。 他の証明書を使用したい場合は、ここに証明書が入ったProsodyがアクセス可能な フォルダを指定します。 注意: “peertube"というユーザーがこのフォルダーにアクセス可能である必要があります。
-クライアントからサーバー接続を有効にする XMPPクライアントから内蔵のProsodyサーバーへの接続を有効にします。 この設定のみにすると、localhostクライアントからの接続のみ許可されます。
+60: 内容は、60 秒保存されます。 60をお好みの数字に変更できます。 1d: 内容は、1日保存されます。1をお好みの数字に変更できます。 1w: 内容は、1週間保存されます。1をお好みの数字に変更できます。 1m: 内容は、1ヶ月保存されます。1をお好みの数字に変更できます。 1y: 内容は、1年保存されます。1をお好みの数字に変更できます。 永久: 内容に有効期限はなく、永久保管されます。 外部のXMPPアカウントを使用してのルーム接続を有効にする この設定を有効にすると、外部のXMPPアカウントとXMPPクライアントを利用してチャットルームに接続できるようになります。
+注意しなければならないのは、この設定は追加のサーバーとDNS設定をリクエストできるようになることです。 次のドキュメントを参照してください: 外部のXMPPアカウント接続を有効にする。 Prosodyサーバー間のポート番号 XMPP s2s(サーバー間)接続で使用されるポート番号です。
+通常は、ポート5269を使用します。 それ以外にしたい場合は 特定のDNSレコードを設定する 必要があります。
+サーバー間ネットワークインターフェイス サーバー間接続のためにリッスンするネットワークインターフェイスです。
+リッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。
+«*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。
+例:
+*, :: * 127.0.0.1, ::1 172.18.0.42 証明書フォルダー この欄が空欄の場合、プラグインは自己証明書を生成し、使用するようになります。
+他の証明書を使用したい場合は、ここに証明書が入ったProsodyがアクセス可能な フォルダを指定します。 注意: “peertube"というユーザーがこのフォルダーにアクセス可能である必要があります。
+クライアントからサーバー接続を有効にする XMPPクライアントから内蔵のProsodyサーバーへの接続を有効にします。
+この設定のみにすると、localhostクライアントからの接続のみ許可されます。
 This setting enable XMPP clients to connect to the built-in Prosody server. For now, this option only allows connections from localhost clients.
 As example, this option can allow an instance of Matterbridge (once it could use anonymous login) on the same machine to bridge your chat with another services like a Matrix room.
-Prosodyクライアントからサーバーへの接続ポート番号 内蔵のProsodyサーバーのc2sモジュールで使用されるポート番号です。 XMPPクライアントは、このポート番号を使用して接続します。 このポートが既にサーバー上で使用されている場合に変更してください。 現時点では、このポートをファイアウォールにより閉じておくことができます。外部からアクセスされることはありません。 注: 外部接続を有効にする機能の追加が予定されている為、この設定は近い将来変更される可能性があります。
-クライアントとサーバー間のネットワークインタフェース クライアントとサーバー間接続のためにリッスンするネットワークインターフェイスです。 この設定は、より高度な設定が可能なユーザー向けに提供されています。設定内容を完全に理解できていない場合は変更しないでください。 リッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。 «*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。 例:
-カスタムProsody外部コンポーネントを有効にする This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody外部コンポーネントネットワークインタフェース” value to listen on other network interfaces.
+Prosodyクライアントからサーバーへの接続ポート番号 内蔵のProsodyサーバーのc2sモジュールで使用されるポート番号です。
+XMPPクライアントは、このポート番号を使用して接続します。
+このポートが既にサーバー上で使用されている場合に変更してください。
+現時点では、このポートをファイアウォールにより閉じておくことができます。外部からアクセスされることはありません。
+注: 外部接続を有効にする機能の追加が予定されている為、この設定は近い将来変更される可能性があります。
+クライアントとサーバー間のネットワークインタフェース クライアントとサーバー間接続のためにリッスンするネットワークインターフェイスです。
+この設定は、より高度な設定が可能なユーザー向けに提供されています。設定内容を完全に理解できていない場合は変更しないでください。
+リッスンするIPのリストをコンマ区切り(スペースは削除されます)で指定してください。
+«*»を指定することで全てのIPv4アドレス、«::»を指定することで全てのIPv6アドレスをリッスンします。
+例:
+*, :: * 127.0.0.1, ::1 127.0.0.1, ::1, 172.18.0.42 カスタムProsody外部コンポーネントを有効にする This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody外部コンポーネントネットワークインタフェース” value to listen on other network interfaces.
 This feature could be used to connect bridges or bots.
 More informations on Prosody external components here.
-カスタムProsody外部コンポーネントを有効にする 外部XMPPコンポーネントの使用を有効にします。 この設定のみでは、localhostからの接続のみが許可されます。 リッスン用のインタフェースの準備とリモートサーバーからの接続を受け付けるように、ファイアウォールとポートの開放を行う必要があります。 この機能により、例えばbotなどがチャットルームに接続できるようにすることができます。
-Prosody外部コンポーネントポート番号 XMPPコンポーネントがProsodyサーバーに接続する際に使用されるポート番号です。 このポートが既にサーバー上で使用されている場合に変更してください。 localhost以外からのアクセスを許可しない場合は、引き続きファイアウォールでこのポートを閉じておくことができます。
-Prosody外部コンポーネントネットワークインタフェース 外部コンポーネント接続のためにリッスンするネットワークインターフェイスです。 リッスンするIPのリストをコンマ区切りで入力してください。（スペースは除かれます） 全IPv4インタフェースでリッスンする場合は、 «*»、IPv6の場合は、«::» が使用できます。 例:
-外部コンポーネント 外部コンポーネントを宣言するには:
-Prosody mod_firewallを有効にする You can enable mod_firewall on your Prosody server.
+カスタムProsody外部コンポーネントを有効にする 外部XMPPコンポーネントの使用を有効にします。
+この設定のみでは、localhostからの接続のみが許可されます。 リッスン用のインタフェースの準備とリモートサーバーからの接続を受け付けるように、ファイアウォールとポートの開放を行う必要があります。
+この機能により、例えばbotなどがチャットルームに接続できるようにすることができます。
+Prosody外部コンポーネントポート番号 XMPPコンポーネントがProsodyサーバーに接続する際に使用されるポート番号です。
+このポートが既にサーバー上で使用されている場合に変更してください。
+localhost以外からのアクセスを許可しない場合は、引き続きファイアウォールでこのポートを閉じておくことができます。
+Prosody外部コンポーネントネットワークインタフェース 外部コンポーネント接続のためにリッスンするネットワークインターフェイスです。
+リッスンするIPのリストをコンマ区切りで入力してください。（スペースは除かれます）
+全IPv4インタフェースでリッスンする場合は、 «*»、IPv6の場合は、«::» が使用できます。
+例:
+*, :: * 127.0.0.1, ::1 172.18.0.42 外部コンポーネント 外部コンポーネントを宣言するには:
+コンポーネント1つにつき1行 «component_name:component_secret»のフォーマットを使用します。(スペースは取り除かれます) コメントを記載可能: #移行の文字は全てコメントと扱われます。空行は無視されます。 名前には、ラテン英数字とドット(.)のみが使用できます。 名前に英数字のみ使用されている場合、接頭辞にXMPPドメインが追加されます。 例えば、«bridge»という名前をつけた場合、«bridge.your_domain.tld»となります。 完全なドメイン名を指定することもできますが、DNSが正しく設定されていることを確認してください。 秘密のパスフレーズには、英数字のみ使用してください。(最低15文字) Prosody mod_firewallを有効にする You can enable mod_firewall on your Prosody server.
 For more information, please check the documentation.`,description:"Plugin Peertube Livechat settings",tags:[],title:"Settings",uri:"/peertube-plugin-livechat/ja/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
 assets assets/images The assets/images folder contains all icons files used by the plugin.
