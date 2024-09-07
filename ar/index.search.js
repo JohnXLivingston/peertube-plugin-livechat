@@ -63,7 +63,7 @@ shared The shared folder contains comme code that will be used both on frontend 
 support/documentation The support/documentation contains the documentation source code.
 vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/ar/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر > روبوت محادثة",content:`Forbid special characters معلومات This feature comes with the livechat plugin version 11.1.0.
 الضبط By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
-Tolérance Number of special characters to accept before deleting messages.
+Tolerance Number of special characters to accept before deleting messages.
 السبب Reason to display besides deleted messages
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > المستندات > مستندات الإدارة",content:`This section describes the plugin settings page.
 Channel’s chat terms & conditions You can configure a “terms & conditions” message that will be shown to users joining your chatrooms.
