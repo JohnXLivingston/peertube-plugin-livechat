@@ -89,21 +89,7 @@ Chat dropdown menu There is a dropdown menu on the top of the chat, with some ad
 Opening full screen On top of the chat, there is a button to open the chat in fullscreen. This will open a new browser tab with the following content:
 It can be easier to chat using a full browser tab.
 Changing nickname You can change your nickname by typing /nick your_new_nickname in the message field.
-You can also change your nickname using the chat menu.`,description:"How to chat for stream viewers",tags:[],title:"For viewers",uri:"/peertube-plugin-livechat/sq/documentation/user/viewers/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure some words that will be automatically moderated by the bot (messages containing such words will be instantly deleted). You can also add an optional reason that will be displayed at the place of deleted messages. Several examples are provided on the documentation page.
-You can fill several “Fjalë, ose shprehje të ndaluara” fields. When a user sends a message that match the configured criteria, the message will automatically be deleted.
-Fjalë, ose shprehje të ndaluara In this field, you can set several words, group of words, or “regular expressions”.
-One word or expression per line. If you put multiple words on one line, it will only match messages containing the whole sequence.
-Each time a user sends a message, these words will be tested. If the message containes one of them, the message will be deleted.
-You can for example fill this field with a swear words list.
-To get some examples, please check these forbidden words suggestions.
-If you have some usefull words lists, you are welcome to contribute to this suggestion page. There are in the support/forbidden_words folder of the livechat source code. See the contribution guide for more information.
-Tip These words are case insensitive.
-Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
-Warning This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
-Konsideroji shprehje të rregullta By checking this option, each line of the “Fjalë, ose shprehje të ndaluara” field will be considered as a regular expression.
-Also moderate messages from moderators By default, moderator messages will not be deleted when containing forbidden words. By checking this option, messages from moderators will also be deleted.
-Arsye Reason to display besides deleted messages
-Komente You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/sq/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`This section describes the plugin settings page.
+You can also change your nickname using the chat menu.`,description:"How to chat for stream viewers",tags:[],title:"For viewers",uri:"/peertube-plugin-livechat/sq/documentation/user/viewers/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`This section describes the plugin settings page.
 Terma & kushte kanali fjalosjeje Mund të formësoni një ndarje “terma & kushte” që do t’u shfaqet përdoruesve që hyjnë në dhomat tuaja.
 For more information on this feature, check the documentation for channel’s terms & conditions.
 Info Changing this setting will restart the chat server, and all users will be disconnected for a short time.
@@ -187,7 +173,11 @@ Some of them are “officials” plugins, others are specific to this plugin.
 server The server folder contains the backend source code.
 shared The shared folder contains comme code that will be used both on frontend and backend.
 support/documentation The support/documentation contains the documentation source code.
-vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/sq/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Documentation > Installation guide",content:`I just installed/upgraded the plugin, but nothing happens If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, …), just try to reload the page.
+vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/sq/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`Forbid special characters Info This feature comes with the livechat plugin version 11.1.0.
+Configuration By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
+Tolérance Number of special characters to accept before deleting messages.
+Arsye Reason to display besides deleted messages
+Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/sq/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Documentation > Installation guide",content:`I just installed/upgraded the plugin, but nothing happens If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, …), just try to reload the page.
 Diagnostic tool If the chat does not work, there is a diagnostic tool in the plugin’s settings pages.
 Open the plugin settings, and click on the “launch diagnostic” button.
 If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the Bug tracking documentation page if you can’t find any response.
@@ -212,6 +202,7 @@ PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
+Special charactersThe bot can automatically moderate messages containing too many special characters.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.`,description:"Plugin peertube-plugin-livechat user documentation",tags:[],title:"User documentation",uri:"/peertube-plugin-livechat/sq/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
@@ -240,7 +231,21 @@ If you think of a standard provider that is not available, you can ask for imple
 Troubleshooting If the button does not appear for end users, there might be a configuration issue. You can try the diagnostic tool to get more information.
 Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test.
 If the button is displayed but is not working, check your Peertube logs. It could be because the remote service does not use standard scopes or attribute names.
-More to come Other authentication methods will be implemented in the future.`,description:"Plugin Peertube Livechat settings - External Authentication",tags:[],title:"External Authentication",uri:"/peertube-plugin-livechat/sq/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
+More to come Other authentication methods will be implemented in the future.`,description:"Plugin Peertube Livechat settings - External Authentication",tags:[],title:"External Authentication",uri:"/peertube-plugin-livechat/sq/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure some words that will be automatically moderated by the bot (messages containing such words will be instantly deleted). You can also add an optional reason that will be displayed at the place of deleted messages. Several examples are provided on the documentation page.
+You can fill several “Fjalë, ose shprehje të ndaluara” fields. When a user sends a message that match the configured criteria, the message will automatically be deleted.
+Fjalë, ose shprehje të ndaluara In this field, you can set several words, group of words, or “regular expressions”.
+One word or expression per line. If you put multiple words on one line, it will only match messages containing the whole sequence.
+Each time a user sends a message, these words will be tested. If the message containes one of them, the message will be deleted.
+You can for example fill this field with a swear words list.
+To get some examples, please check these forbidden words suggestions.
+If you have some usefull words lists, you are welcome to contribute to this suggestion page. There are in the support/forbidden_words folder of the livechat source code. See the contribution guide for more information.
+Tip These words are case insensitive.
+Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
+Warning This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
+Konsideroji shprehje të rregullta By checking this option, each line of the “Fjalë, ose shprehje të ndaluara” field will be considered as a regular expression.
+Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
+Arsye Reason to display besides deleted messages
+Komente You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/sq/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
 Tip To install or update the plugin, just use the Peertube web admin interface.
 Here are some other more specific instructions:
 TroubleshootingSome classic mistakes and workarounds.
@@ -257,11 +262,7 @@ Docker You will have to generate a Peertube image that includes Prosody in the s
 To generate and use such an image, please refer to the Docker documentation. The Docker file to generate the image should be:
 FROM chocobozzz/peertube:production-bullseye RUN apt -y update && apt install -y prosody && apt -y cleanYunohost You have to disable metronome (the XMPP server provided by Yunohost), and install prosody.
 This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0.
-But it may be removed in a near feature (to avoid drawbacks of this method). I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility.`,description:"For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.",tags:[],title:"Known issues: CPU Compatibility",uri:"/peertube-plugin-livechat/sq/documentation/installation/cpu_compatibility/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure several timers that will send messages at regular interval. These messages will be sent by the bot every X minutes. You can for example make the bot sent some sponsoring information every 5 minutes.
-Tip If there is no user in the chatroom, the bot won’t send any message.
-Kohëmatës You can configure several timers that will send messages at regular interval. These messages will be sent by the bot every X minutes. You can for example make the bot sent some sponsoring information every 5 minutes.
-One message per line. If multiple messages, it will pick one randomly every X minutes.
-Dërgoje çdo X minuta The bot will post the message every X minutes.`,description:"The bot can send periodically some messages.",tags:[],title:"Timers",uri:"/peertube-plugin-livechat/sq/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`You can contribute to this plugin translation. Translations are handled using the Weblate software, using Framasoft Weblate instance.
+But it may be removed in a near feature (to avoid drawbacks of this method). I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility.`,description:"For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.",tags:[],title:"Known issues: CPU Compatibility",uri:"/peertube-plugin-livechat/sq/documentation/installation/cpu_compatibility/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`You can contribute to this plugin translation. Translations are handled using the Weblate software, using Framasoft Weblate instance.
 Warning Never modify directly files in the languages folder, this could lead to conflicts.
 How to Create an account: https://weblate.framasoft.org/accounts/register/ Validate your email and follow the link sent Create your password and setup your account Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/ Choose the locale you want to translate Just translate missing sentences, or correct the ones that seems incorrect to you. Warning There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english.
 ConverseJS translations This plugin relies on ConverseJS for the chat front-end. ConverseJS has its own translations, on its own weblate instance. You can also translate directly in the code repository. For more information, check ConverseJS translations documentation.
@@ -327,7 +328,11 @@ You can enable/disable each files.
 Files will be loaded in the alphabetical order. You can use a number as prefix to easily choose the order.
 Info You can also edit these firewall rules directly on the server, in the plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/ directory. File names must only contains alphanumerical characters, underscores and hyphens. The extension must be .pfw, or .pfw.disabled if you want to disable a file. Please be sure that the peertube system user has write access to these files, else the web editing interface will fail. Once you have edited these files, you must reload prosody. This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube.
 When you save the configuration, the server will automatically reload it, and your rules will apply immediatly. You can check that there is no parsing error in the Prosody error log. To do so, you can read the plugins/data/peertube-plugin-livechat/prosody/prosody.err file, or use the diagnostic tool that will show last Prosody errors.
-Examples Don’t hesitate to share your rules. To do so, you can for example edit this page.`,description:"Advanced firewall rules for the Prosody server",tags:[],title:"Prosody mod_firewall",uri:"/peertube-plugin-livechat/sq/documentation/admin/mod_firewall/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation > Advanced usage",content:`This chat module is based on the XMPP protocol, also known as Jabber. It is therefore possible to connect to the chats using XMPP client software. This can for example be useful to facilitate moderation operations.
+Examples Don’t hesitate to share your rules. To do so, you can for example edit this page.`,description:"Advanced firewall rules for the Prosody server",tags:[],title:"Prosody mod_firewall",uri:"/peertube-plugin-livechat/sq/documentation/admin/mod_firewall/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure several timers that will send messages at regular interval. These messages will be sent by the bot every X minutes. You can for example make the bot sent some sponsoring information every 5 minutes.
+Tip If there is no user in the chatroom, the bot won’t send any message.
+Kohëmatës You can configure several timers that will send messages at regular interval. These messages will be sent by the bot every X minutes. You can for example make the bot sent some sponsoring information every 5 minutes.
+One message per line. If multiple messages, it will pick one randomly every X minutes.
+Dërgoje çdo X minuta The bot will post the message every X minutes.`,description:"The bot can send periodically some messages.",tags:[],title:"Timers",uri:"/peertube-plugin-livechat/sq/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation > Advanced usage",content:`This chat module is based on the XMPP protocol, also known as Jabber. It is therefore possible to connect to the chats using XMPP client software. This can for example be useful to facilitate moderation operations.
 For the user documentation associated with these features, please refer to the user documentation page.
 Info Enabling these features requires configuration changes on the server, and on the DNS records. It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills.
 Login to your Peertube account Warning This feature is not yet available, and will come in a future version of the plugin.
@@ -713,6 +718,7 @@ PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
+Special charactersThe bot can automatically moderate messages containing too many special characters.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/sq/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Warning This section is still incomplete.
@@ -848,6 +854,7 @@ Sorting notes You can sort notes simply using drag & drop.`,description:"Plugin 
 You can enable a chat bot on your chatrooms. The bot configuration is made channel per channel, and will apply to all related videos’ chatrooms.
 To access this page, check the channel configuration documentation.
 Once there, you can enable the bot, and setup several options:
+Special charactersThe bot can automatically moderate messages containing too many special characters.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.
