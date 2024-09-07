@@ -658,5 +658,5 @@ livechat_configuration_channel_special_chars_label: "Forbid special characters"
 livechat_configuration_channel_special_chars_desc: |
   By enabling this option, the moderation bot will automatically delete messages containing more than X special characters.
   Special characters are those that don't fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
-livechat_configuration_channel_special_chars_tolerance_label: Tolérance
+livechat_configuration_channel_special_chars_tolerance_label: Tolerance
 livechat_configuration_channel_special_chars_tolerance_desc: Number of special characters to accept before deleting messages.
