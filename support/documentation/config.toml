@@ -31,6 +31,10 @@ name = "<i class='fab fa-git'></i> Framagit repository"
 url = "https://framagit.org/Livingston/peertube-plugin-livechat"
 weight = 20
 
+[markup]
+  [markup.goldmark.renderer]
+    unsafe=true
+
 [Languages]
   [Languages.en]
   weight = 1
