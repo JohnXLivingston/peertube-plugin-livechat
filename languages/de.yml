@@ -601,3 +601,19 @@ prosody_firewall_name_desc: "Darf nur folgende Zeichen enthalten: alphanumerisch
   geladen.\n"
 prosody_firewall_content: Dateiinhalt
 chat: Chat
+emoji_only_info: Wenn der Modus "Nur Emoji" aktiviert ist, können Sie nur Emoji in
+  Ihren Nachrichten verwenden.
+emoji_only_mode_title: Nur Emojis-Modus
+emoji_only_mode_desc_1: "Sie können in Ihren Chaträumen einen \"Nur-Emoji-Modus\"
+  aktivieren.\nWenn dieser Modus aktiviert ist, können die Teilnehmer nur Emojis (Standard-
+  oder kanalangepasste Emojis) senden.\nModeratoren sind von dieser Einschränkung
+  nicht betroffen.\n"
+emoji_only_mode_desc_3: "Um diesen Modus zu aktivieren oder zu deaktivieren, können
+  Sie das Raumkonfigurationsformular verwenden.\nWenn Sie ihn für alle Ihre Chaträume
+  auf einmal aktivieren möchten, können Sie die Schaltfläche unten verwenden.\n"
+emoji_only_enable_all_rooms: Aktiviere den Modus "Nur Emoji" in allen Chaträumen des
+  Kanals
+emoji_only_mode_desc_2: "Dieser Modus kann zum Beispiel nützlich sein:\n<ul>\n  <li>um
+  Spam oder beleidigende Nachrichten zu vermeiden, wenn Sie nicht hier sind, um zu
+  moderieren.</li>\n  <li>wenn es zu viele sprechende Teilnehmer gibt, und Sie nicht
+  mehr richtig moderieren können.</li>\n</ul>\n"
