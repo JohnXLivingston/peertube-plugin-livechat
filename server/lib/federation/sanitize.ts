@@ -169,7 +169,7 @@ function sanitizePeertubeLiveChatServerInfos (
  */
 function sanitizeCustomEmojisUrl (
   options: RegisterServerOptions,
-  customEmojisUrl: any,
+  customEmojisUrl: unknown,
   referenceUrl?: string
 ): string | undefined {
   let checkHost: undefined | string
@@ -206,8 +206,8 @@ interface URLConstraints {
   domain?: string
 }
 
-function _validUrl (s: string, constraints: URLConstraints): boolean {
-  if ((typeof s) !== 'string') { return false }
+function _validUrl (s: unknown, constraints: URLConstraints): s is string {
+  if (typeof s !== 'string') { return false }
   if (s === '') { return false }
   let url: URL
   try {
@@ -265,13 +265,13 @@ function _validateHost (s: any, mustBeSubDomainOf?: string): false | string {
   }
 }
 
-function _readReferenceUrl (s: any): undefined | string {
+function _readReferenceUrl (s: unknown): undefined | string {
   try {
     if (typeof s !== 'string') { return undefined }
     if (!s.startsWith('https://') && !s.startsWith('http://')) {
       s = 'http://' + s
     }
-    const url = new URL(s)
+    const url = new URL(s as string)
     const host = url.hostname
     // Just to avoid some basic spoofing, we must check that host is not simply something like "com".
     // We will check if there is at least one dot. This test is not perfect, but can limit spoofing cases.
@@ -283,16 +283,16 @@ function _readReferenceUrl (s: any): undefined | string {
 }
 
 function _sanitizePeertubeLiveChatInfosV0 (
-  options: RegisterServerOptions, chatInfos: any, referenceUrl?: string
+  options: RegisterServerOptions, chatInfos: unknown, referenceUrl?: string
 ): LiveChatJSONLDAttributeV1 {
   const logger = options.peertubeHelpers.logger
   logger.debug('We are have to migrate data from the old JSONLD format')
 
   if (chatInfos === false) { return false }
-  if (typeof chatInfos !== 'object') { return false }
+  if (!_assertObjectType(chatInfos)) { return false}
 
   if (chatInfos.type !== 'xmpp') { return false }
-  if ((typeof chatInfos.jid) !== 'string') { return false }
+  if (typeof chatInfos.jid !== 'string') { return false }
 
   // no link? invalid! dropping all.
   if (!Array.isArray(chatInfos.links)) { return false }
@@ -327,10 +327,10 @@ function _sanitizePeertubeLiveChatInfosV0 (
   }
 
   for (const link of chatInfos.links) {
-    if ((typeof link) !== 'object') { continue }
+    if (!_assertObjectType(link) || (typeof link.type !== 'string')) { continue }
     if (['xmpp-bosh-anonymous', 'xmpp-websocket-anonymous'].includes(link.type)) {
-      if ((typeof link.jid) !== 'string') { continue }
-      if ((typeof link.url) !== 'string') { continue }
+      if (typeof link.jid !== 'string') { continue }
+      if (typeof link.url !== 'string') { continue }
 
       if (
         !_validUrl(link.url, {
@@ -370,6 +370,10 @@ function sanitizeXMPPHostFromInstanceUrl (_options: RegisterServerOptions, s: an
   } catch (_err) {
     return false
   }
+}
+
+function _assertObjectType (data: unknown): data is Record<string, unknown> {
+  return !!data && (typeof data === 'object') && Object.keys(data).every(k => typeof k === 'string')
 }
 
 export {

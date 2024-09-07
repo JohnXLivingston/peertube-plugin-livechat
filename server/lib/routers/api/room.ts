@@ -86,7 +86,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
       // Now, we have two different room type: per video or per channel.
       if (settings['prosody-room-type'] === 'channel') {
         const matches = jid.match(/^channel\.(\d+)$/)
-        if (!matches || !matches[1]) {
+        if (!matches?.[1]) {
           logger.warn(`Invalid channel room jid '${jid}'.`)
           res.sendStatus(403)
           return
@@ -117,7 +117,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
             },
             await _getChannelSpecificOptions(options, channelId)
           ),
-          affiliations: affiliations
+          affiliations
         }
 
         RoomChannel.singleton().link(channelId, jid)
@@ -172,7 +172,7 @@ async function initRoomApiRouter (options: RegisterServerOptions, router: Router
             },
             await _getChannelSpecificOptions(options, video.channelId)
           ),
-          affiliations: affiliations
+          affiliations
         }
 
         RoomChannel.singleton().link(video.channelId, jid)

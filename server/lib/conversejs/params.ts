@@ -100,7 +100,7 @@ async function getConverseJSParams (
               externalAuthOIDC ??= []
               externalAuthOIDC.push({
                 type: oidc.type,
-                buttonLabel: buttonLabel,
+                buttonLabel,
                 url: authUrl
               })
             }
@@ -127,7 +127,7 @@ async function getConverseJSParams (
     localWebsocketServiceUrl: localWsUri,
     remoteBoshServiceUrl: remoteConnectionInfos?.anonymous?.boshUri ?? null,
     remoteWebsocketServiceUrl: remoteConnectionInfos?.anonymous?.wsUri ?? null,
-    authenticationUrl: authenticationUrl,
+    authenticationUrl,
     autoViewerMode,
     theme: converseJSTheme,
     forceReadonly,
@@ -150,7 +150,7 @@ function _interfaceParams (
     transparent: InitConverseJSParams['transparent']
     converseJSTheme: InitConverseJSParams['theme']
   } {
-  let autoViewerMode: boolean = false
+  let autoViewerMode = false
   const forceReadonly: boolean | 'noscroll' = params.readonly ?? false
   if (!forceReadonly) {
     autoViewerMode = true // auto join the chat in viewer mode, if not logged in

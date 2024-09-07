@@ -5,7 +5,7 @@
       "es6": true
   },
   "extends": [
-    "standard-with-typescript"
+    "eslint-config-love"
   ],
   "globals": {},
   "parser": "@typescript-eslint/parser",

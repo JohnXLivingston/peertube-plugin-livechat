@@ -10,6 +10,9 @@
 ### Minor changes and fixes
 
 * Various translation updates.
+* Using Typescript 5.5.4, and Eslint 8.57.0 (with new ruleset).
+* Fix race condition in bot/ctl.
+* Various type improvements.
 
 ## 11.0.1
 

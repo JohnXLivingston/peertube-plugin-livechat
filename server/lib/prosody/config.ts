@@ -123,7 +123,7 @@ async function getProsodyFilePaths (options: RegisterServerOptions): Promise<Pro
   }
 
   return {
-    dir: dir,
+    dir,
     pid: path.resolve(dir, 'prosody.pid'),
     error: path.resolve(dir, 'prosody.err'),
     log: path.resolve(dir, 'prosody.log'),
@@ -217,7 +217,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     ? settings['chat-terms']
     : undefined
 
-  let useExternal: boolean = false
+  let useExternal = false
   try {
     const oidcs = ExternalAuthOIDC.allSingletons()
     for (const oidc of oidcs) {
@@ -377,7 +377,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     config.useBotsVirtualHost(paths.botAvatars, paths.botAvatarsFiles)
     bots.moderation = await BotConfiguration.singleton().getModerationBotGlobalConf()
     if (bots.moderation?.connection?.password && typeof bots.moderation.connection.password === 'string') {
-      valuesToHideInDiagnostic.set('BotPassword', bots.moderation.connection.password)
+      valuesToHideInDiagnostic.set('BotPassword', bots.moderation.connection.password as string)
     }
   }
 

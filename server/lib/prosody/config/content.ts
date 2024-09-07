@@ -97,7 +97,7 @@ abstract class ProsodyConfigBlock {
     if (!this.entries.has(name)) {
       this.entries.set(name, [])
     }
-    let entry = this.entries.get(name) as ConfigEntryValue
+    let entry = this.entries.get(name) ?? []
     if (!Array.isArray(entry)) {
       entry = [entry]
     }
@@ -112,7 +112,7 @@ abstract class ProsodyConfigBlock {
     if (!this.entries.has(name)) {
       return
     }
-    let entry = this.entries.get(name) as ConfigEntryValue
+    let entry = this.entries.get(name) ?? []
     if (!Array.isArray(entry)) {
       entry = [entry]
     }

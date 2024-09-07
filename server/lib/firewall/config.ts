@@ -75,7 +75,7 @@ export async function listModFirewallFiles (
     })
 
     return files.map(f => path.join(dir, f.name)).sort()
-  } catch (err) {
+  } catch (_err) {
     // should be that the directory does not exists
     return []
   }
@@ -148,7 +148,7 @@ export async function sanitizeModFirewallConfig (
       throw new Error('Invalid data in data.files (content)')
     }
 
-    if (entry.name.length > maxFirewallNameLength || !firewallNameRegexp.test(entry.name)) {
+    if (entry.name.length > maxFirewallNameLength || !firewallNameRegexp.test(entry.name as string)) {
       throw new Error('Invalid name in data.files')
     }
     if (entry.content.length > maxFirewallFileSize) {

@@ -36,11 +36,11 @@ class RoomChannel {
 
   protected room2Channel: Map<string, number> = new Map<string, number>()
   protected channel2Rooms: Map<number, Map<string, true>> = new Map<number, Map<string, true>>()
-  protected needSync: boolean = false
+  protected needSync = false
   protected roomConfToUpdate: Map<string, true> = new Map<string, true>()
 
   protected syncTimeout: ReturnType<typeof setTimeout> | undefined
-  protected isWriting: boolean = false
+  protected isWriting = false
 
   constructor (params: {
     options: RegisterServerOptions
@@ -113,7 +113,7 @@ class RoomChannel {
     let content: string
     try {
       content = (await fs.promises.readFile(this.dataFilePath)).toString()
-    } catch (err) {
+    } catch (_err) {
       this.logger.info('Failed reading room-channel data file (' + this.dataFilePath + '), assuming it does not exists')
       return false
     }
@@ -122,7 +122,7 @@ class RoomChannel {
     let data: any
     try {
       data = JSON.parse(content)
-    } catch (err) {
+    } catch (_err) {
       this.logger.error('Unable to parse the content of the room-channel data file, will start with an empty database.')
       return false
     }
@@ -233,7 +233,7 @@ class RoomChannel {
         }
 
         await fillVideoCustomFields(this.options, video)
-        const hasChat = await videoHasWebchat({
+        const hasChat = videoHasWebchat({
           'chat-per-live-video': !!settings['chat-per-live-video'],
           'chat-all-lives': !!settings['chat-all-lives'],
           'chat-all-non-lives': !!settings['chat-all-non-lives'],
@@ -405,7 +405,7 @@ class RoomChannel {
       this.syncTimeout = undefined
       this.logger.info('Running scheduled sync')
       this.sync().then(() => {}, (err) => {
-        this.logger.error(err)
+        this.logger.error(err as string)
         // We will not re-schedule the sync, to avoid flooding error log if there is an issue with the server
       })
     }, 100)

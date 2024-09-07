@@ -39,7 +39,7 @@ function startProsodyCertificatesRenewCheck (options: RegisterServerOptions, con
   }, checkInterval)
 
   renew = {
-    timer: timer
+    timer
   }
 }
 

@@ -139,9 +139,9 @@ async function prosodyCtl (
       reject(new Error('Missing prosodyctl command executable'))
       return
     }
-    let d: string = ''
-    let e: string = ''
-    let m: string = ''
+    let d = ''
+    let e = ''
+    let m = ''
     const cmdArgs = [
       ...filePaths.execCtlArgs,
       '--config',
@@ -196,7 +196,7 @@ async function prosodyCtl (
     // (else it can cause trouble by cleaning AppImage extract too soon)
     spawned.on('close', (code) => {
       resolve({
-        code: code,
+        code,
         stdout: d,
         sterr: e,
         message: m
@@ -399,8 +399,8 @@ async function ensureProsodyRunning (
     })
   }
   logger.info('Waiting for the prosody process to launch')
-  let count: number = 0
-  let processStarted: boolean = false
+  let count = 0
+  let processStarted = false
   while (!processStarted && count < 5) {
     count++
     await sleep(500)
@@ -418,8 +418,8 @@ async function ensureProsodyRunning (
     return
   }
   logger.info('Prosody is running')
-  await startProsodyLogRotate(options, filePaths)
-  await startProsodyCertificatesRenewCheck(options, config)
+  startProsodyLogRotate(options, filePaths)
+  startProsodyCertificatesRenewCheck(options, config)
 }
 
 async function ensureProsodyNotRunning (options: RegisterServerOptions): Promise<void> {

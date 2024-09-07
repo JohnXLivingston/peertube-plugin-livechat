@@ -7,7 +7,7 @@ import { getProsodyDomain } from './domain'
 import { getUserNameByChannelId } from '../../database/channel'
 import { BotConfiguration } from '../../configuration/bot'
 
-interface Affiliations { [jid: string]: 'outcast' | 'none' | 'member' | 'admin' | 'owner' }
+type Affiliations = Record<string, 'outcast' | 'none' | 'member' | 'admin' | 'owner'>
 
 async function _getCommonAffiliations (options: RegisterServerOptions, _prosodyDomain: string): Promise<Affiliations> {
   const r: Affiliations = {}

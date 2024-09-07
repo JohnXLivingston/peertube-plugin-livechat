@@ -238,7 +238,7 @@ class ExternalAuthOIDC {
         this.logger.debug('OIDC Discovery url is valid: ' + uri.toString())
 
         this.providerHostName = uri.hostname
-      } catch (err) {
+      } catch (_err) {
         errors.push('Invalid discovery url')
       }
     }
@@ -349,10 +349,16 @@ class ExternalAuthOIDC {
     if (!encryptedCodeVerifier) {
       throw new Error('Received callback but code verifier not found in request cookies.')
     }
+    if (typeof encryptedCodeVerifier !== 'string') {
+      throw new Error('Invalid code-verifier type.')
+    }
 
     const encryptedState = req.cookies[this.cookieNamePrefix + 'state']
     if (!encryptedState) {
       throw new Error('Received callback but state not found in request cookies.')
+    }
+    if (typeof encryptedState !== 'string') {
+      throw new Error('Invalid state data type')
     }
 
     const codeVerifier = await this.decrypt(encryptedCodeVerifier)
@@ -451,7 +457,7 @@ class ExternalAuthOIDC {
     const decipher = createDecipheriv(algorithm, this.secretKey, iv)
 
     // FIXME: dismiss the "as any" below (dont understand why Typescript is not happy without)
-    return decipher.update(encrypted as any, outputEncoding, inputEncoding) + decipher.final(inputEncoding)
+    return decipher.update(encrypted.toString(), outputEncoding, inputEncoding) + decipher.final(inputEncoding)
   }
 
   /**
@@ -491,8 +497,11 @@ class ExternalAuthOIDC {
       if (typeof o.nickname !== 'string' || o.nickname === '') {
         throw new Error('No nickname')
       }
+      if (typeof o.expire !== 'string' || o.expire === '') {
+        throw new Error('Invalid expire data type')
+      }
 
-      const expire = new Date(Date.parse(o.expire))
+      const expire = new Date(Date.parse(o.expire as string))
       if (!(expire instanceof Date) || isNaN(expire.getTime())) {
         throw new Error('Invalid expire date')
       }
@@ -548,7 +557,7 @@ class ExternalAuthOIDC {
       if (!(field in userInfos)) { continue }
       if (typeof userInfos[field] !== 'string') { continue }
       if (userInfos[field] === '') { continue }
-      return userInfos[field] as string
+      return userInfos[field]
     }
     return undefined
   }
@@ -571,7 +580,7 @@ class ExternalAuthOIDC {
         responseType: 'buffer'
       }).buffer()
 
-      const mimeType = await getMimeTypeFromArrayBuffer(buf)
+      const mimeType = getMimeTypeFromArrayBuffer(buf as ArrayBuffer)
       if (!mimeType) {
         throw new Error('Failed to get the avatar file type')
       }
@@ -603,7 +612,7 @@ class ExternalAuthOIDC {
       const filePath = path.resolve(this.avatarsDir, file)
       const buf = await fs.promises.readFile(filePath)
 
-      const mimeType = await getMimeTypeFromArrayBuffer(buf)
+      const mimeType = getMimeTypeFromArrayBuffer(buf)
       if (!mimeType) {
         throw new Error('Failed to get the default avatar file type')
       }
@@ -778,7 +787,7 @@ class ExternalAuthOIDC {
       const m = token.match(/^(\w+)-/)
       if (!m) { return null }
       return ExternalAuthOIDC.singleton(m[1])
-    } catch (err) {
+    } catch (_err) {
       return null
     }
   }

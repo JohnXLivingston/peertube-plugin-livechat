@@ -189,7 +189,7 @@ class BotConfiguration {
         })).toString()
 
         config = JSON.parse(content)
-      } catch (err) {
+      } catch (_err) {
         this.logger.info('Error reading the moderation bot global configuration file, assuming it does not exists.')
         config = undefined
       }
@@ -275,7 +275,7 @@ class BotConfiguration {
       content = (await fs.promises.readFile(filePath, {
         encoding: 'utf-8'
       })).toString()
-    } catch (err) {
+    } catch (_err) {
       this.logger.debug('Failed to read room conf file, assuming it does not exists')
       this.roomConfCache.set(roomJID, null)
       return null
@@ -284,7 +284,7 @@ class BotConfiguration {
     let json: RoomConf
     try {
       json = JSON.parse(content) as RoomConf
-    } catch (err) {
+    } catch (_err) {
       this.logger.error(`Error parsing JSON file ${filePath}, assuming empty`)
       this.roomConfCache.set(roomJID, null)
       return null

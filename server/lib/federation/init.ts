@@ -21,7 +21,7 @@ export async function initFederation (options: RegisterServerOptions): Promise<v
 
   registerHook({
     target: 'filter:activity-pub.activity.context.build.result',
-    handler: async (jsonld: any) => {
+    handler: async (jsonld: any[]) => {
       return videoContextBuildJSONLD(options, jsonld)
     }
   })

@@ -45,7 +45,7 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
 
       const body: any = params.body
       const video: Video | undefined = params.video
-      if (!video || !video.id) {
+      if (!video?.id) {
         return
       }
       if (!body.pluginData) return
@@ -115,7 +115,7 @@ async function fillVideoRemoteLiveChat (
   const infos = await getVideoLiveChatInfos(options, video)
   if (!infos) { return }
 
-  let ok: boolean = false
+  let ok = false
   // We must check if there is a compatible connection protocol...
   if (anonymousConnectionInfos(infos)) {
     // Connection ok using a remote anonymous account. That's enought.

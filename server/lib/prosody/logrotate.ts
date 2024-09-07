@@ -10,7 +10,7 @@ import { reloadProsody } from './ctl'
 type Rotate = (file: string, options: {
   count?: number
   compress?: boolean
-}, cb: Function) => void
+}, cb: (err: any) => void) => void
 const rotate: Rotate = require('log-rotate')
 
 interface ProsodyLogRotate {
@@ -27,9 +27,10 @@ async function _rotate (options: RegisterServerOptions, path: string): Promise<v
     rotate(path, { count: 14, compress: false }, (err: any) => {
       if (err) {
         options.peertubeHelpers.logger.error('Failed to rotate file ' + path, err)
-        return resolve()
+        resolve()
+        return
       }
-      return resolve()
+      resolve()
     })
   })
   return p
@@ -79,7 +80,7 @@ function startProsodyLogRotate (options: RegisterServerOptions, paths: ProsodyFi
   }, checkInterval)
 
   logRotate = {
-    timer: timer,
+    timer,
     lastRotation: Date.now()
   }
 }

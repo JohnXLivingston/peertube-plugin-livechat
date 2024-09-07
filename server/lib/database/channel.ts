@@ -61,7 +61,7 @@ interface ChannelInfos {
 async function getChannelInfosById (
   options: RegisterServerOptions,
   channelId: number,
-  restrictToLocalChannels: boolean = false
+  restrictToLocalChannels = false
 ): Promise<ChannelInfos | null> {
   if (!channelId) {
     throw new Error('Missing channelId')

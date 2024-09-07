@@ -65,8 +65,8 @@ export class LivechatProsodyAuth {
   private readonly _prosodyDomain: string
   private _userTokensEnabled: boolean
   private readonly _tokensPath: string
-  private readonly _passwords: Map<string, Password> = new Map()
-  private readonly _tokensInfoByJID: Map<string, LivechatTokenInfos | undefined> = new Map()
+  private readonly _passwords = new Map<string, Password>()
+  private readonly _tokensInfoByJID = new Map<string, LivechatTokenInfos | undefined>()
   private readonly _secretKey: string
   protected readonly _logger: {
     debug: (s: string) => void
@@ -122,8 +122,8 @@ export class LivechatProsodyAuth {
     const nickname: string | undefined = await getUserNickname(this._options, user)
     return {
       jid: normalizedUsername + '@' + this._prosodyDomain,
-      password: password,
-      nickname: nickname,
+      password,
+      nickname,
       type: 'peertube'
     }
   }
@@ -136,7 +136,7 @@ export class LivechatProsodyAuth {
     if (this._userTokensEnabled) {
       try {
         const tokensInfo = await this._getTokensInfoForJID(normalizedUsername + '@' + this._prosodyDomain)
-        if (!tokensInfo || !tokensInfo.tokens.length) {
+        if (!tokensInfo?.tokens.length) {
           return false
         }
         // Checking that the user is valid:
@@ -159,7 +159,7 @@ export class LivechatProsodyAuth {
     if (this._userTokensEnabled) {
       try {
         const tokensInfo = await this._getTokensInfoForJID(normalizedUsername + '@' + this._prosodyDomain)
-        if (!tokensInfo || !tokensInfo.tokens.length) {
+        if (!tokensInfo?.tokens.length) {
           return false
         }
         // Checking that the user is valid:
@@ -247,7 +247,7 @@ export class LivechatProsodyAuth {
     }
     const nickname: string | undefined = await getUserNickname(this._options, user)
     const jid = normalizedUsername + '@' + this._prosodyDomain
-    const token = await this._createToken(user.id, jid, label)
+    const token = await this._createToken(user.id as number, jid, label)
 
     token.nickname = nickname
     return token
@@ -279,7 +279,7 @@ export class LivechatProsodyAuth {
       return false
     }
 
-    await this._saveTokens(user.id, jid, tokensInfo.tokens.filter(t => t.id !== id))
+    await this._saveTokens(user.id as number, jid, tokensInfo.tokens.filter(t => t.id !== id))
     return true
   }
 
@@ -293,8 +293,8 @@ export class LivechatProsodyAuth {
 
     const password = generatePassword(20)
     this._passwords.set(normalizedUsername, {
-      password: password,
-      validity: validity
+      password,
+      validity
     })
     return password
   }
@@ -330,7 +330,7 @@ export class LivechatProsodyAuth {
       const user = await this._options.peertubeHelpers.user.loadById(userId)
       if (!user || user.blocked) { return false }
       return true
-    } catch (err) {
+    } catch (_err) {
       return false
     }
   }
@@ -381,7 +381,7 @@ export class LivechatProsodyAuth {
         this._tokensInfoByJID.set(jid, undefined)
         return undefined
       }
-      throw err
+      throw err as Error
     }
   }
 
@@ -456,7 +456,7 @@ export class LivechatProsodyAuth {
     const decipher = createDecipheriv(algorithm, this._secretKey, iv)
 
     // FIXME: dismiss the "as any" below (dont understand why Typescript is not happy without)
-    return decipher.update(encrypted as any, outputEncoding, inputEncoding) + decipher.final(inputEncoding)
+    return decipher.update(encrypted.toString(), outputEncoding, inputEncoding) + decipher.final(inputEncoding)
   }
 
   public static singleton (): LivechatProsodyAuth {

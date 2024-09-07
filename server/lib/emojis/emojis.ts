@@ -114,7 +114,7 @@ export class Emojis {
         // File does not exist, this is normal.
         return undefined
       }
-      throw err
+      throw err as Error
     }
     return JSON.parse(content.toString())
   }
@@ -316,7 +316,7 @@ export class Emojis {
     }
 
     const result: ChannelEmojis = {
-      customEmojis: customEmojis
+      customEmojis
     }
     return [result, buffersInfos]
   }
@@ -387,7 +387,7 @@ export class Emojis {
       })
     } catch (err: any) {
       if (!(('code' in err) && err.code === 'ENOENT')) {
-        this.logger.error(err)
+        this.logger.error(err as string)
       }
     } finally {
       this.channelCache.delete(channelId)
@@ -475,15 +475,17 @@ async function _getConverseEmojiCodes (options: RegisterServerOptions): Promise<
     const converseEmojiDefPath = path.join(__dirname, '..', '..', '..', 'converse-emoji.json')
     options.peertubeHelpers.logger.debug('Loading Converse Emojis from file ' + converseEmojiDefPath)
 
-    const converseEmojis: {[key: string]: any} = JSON.parse(
-      await (await fs.promises.readFile(converseEmojiDefPath)).toString()
+    const converseEmojis: Record<string, any> = JSON.parse(
+      (await fs.promises.readFile(converseEmojiDefPath)).toString()
     )
 
     const r = []
     for (const [key, block] of Object.entries(converseEmojis)) {
       if (key === 'custom') { continue } // These are not used.
       r.push(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         ...Object.values(block)
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           .map((d: any) => d.cp ? _emojiCpToRegexp(d.cp) : d.sn)
           .filter((sn: string) => sn && sn !== '')
       )

@@ -140,7 +140,7 @@ function channelConfigurationOptionsToBotRoomConf (
     for (const handler of previousRoomConf.handlers) {
       if (!handlersIds.has(handler.id)) {
         // cloning to avoid issues...
-        const disabledHandler = JSON.parse(JSON.stringify(handler))
+        const disabledHandler = JSON.parse(JSON.stringify(handler)) as typeof handler
         disabledHandler.enabled = false
         handlers.push(disabledHandler)
       }

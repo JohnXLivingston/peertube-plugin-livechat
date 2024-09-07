@@ -59,7 +59,7 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
 
       logger.info(`Channel ${channelId} deleted, removing 'custom emojis' related stuff.`)
       try {
-        Emojis.singletonSafe()?.deleteChannelDefinition(channelId)
+        await Emojis.singletonSafe()?.deleteChannelDefinition(channelId)
       } catch (err) {
         logger.error(err)
       }
@@ -87,7 +87,7 @@ async function initChannelConfiguration (options: RegisterServerOptions): Promis
         ])
 
         await fillVideoCustomFields(options, video)
-        const hasChat = await videoHasWebchat({
+        const hasChat = videoHasWebchat({
           'chat-per-live-video': !!settings['chat-per-live-video'],
           'chat-all-lives': !!settings['chat-all-lives'],
           'chat-all-non-lives': !!settings['chat-all-non-lives'],

@@ -147,7 +147,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         const additionnalMessage: string = escapeHTML(err.livechatError?.message as string ?? '')
         const message: string = escapeHTML(loc('chatroom_not_accessible'))
 
-        res.status(code)
+        res.status(typeof code === 'number' ? code : 500)
         res.send(`<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN"><html>
           <head><title>${message}</title></head>
           <body>
@@ -272,7 +272,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
       res.status(200)
       const r: ProsodyListRoomsResult = {
         ok: true,
-        rooms: rooms
+        rooms
       }
       res.json(r)
     }

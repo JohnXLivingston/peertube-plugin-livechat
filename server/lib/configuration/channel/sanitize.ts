@@ -17,31 +17,36 @@ import { channelTermsMaxLength } from '../../../../shared/lib/constants'
 async function sanitizeChannelConfigurationOptions (
   _options: RegisterServerOptions,
   _channelId: number | string,
-  data: any
+  data: unknown
 ): Promise<ChannelConfigurationOptions> {
-  if (typeof data !== 'object') {
+  if (!_assertObjectType(data)) {
     throw new Error('Invalid data type')
   }
 
-  const botData = data.bot
-  if (typeof botData !== 'object') {
+  const botData = data.bot ?? {}
+  if (!_assertObjectType(botData)) {
     throw new Error('Invalid data.bot data type')
   }
 
   // slowMode not present in livechat <= 8.2.0:
   const slowModeData = data.slowMode ?? {}
-  slowModeData.duration ??= slowModeData.defaultDuration ?? 0 // v8.3.0 to 8.3.2: was in defaultDuration
-
-  if (typeof slowModeData !== 'object') {
+  if (!_assertObjectType(slowModeData)) {
     throw new Error('Invalid data.slowMode data type')
   }
+  slowModeData.duration ??= slowModeData.defaultDuration ?? 0 // v8.3.0 to 8.3.2: was in defaultDuration
 
   const moderationData = data.moderation ?? {} // comes with livechat 10.3.0
+  if (!_assertObjectType(moderationData)) {
+    throw new Error('Invalid data.moderation data type')
+  }
   moderationData.delay ??= 0
   moderationData.anonymize ??= false // comes with livechat 11.0.0
 
   // mute not present in livechat <= 10.2.0
   const mute = data.mute ?? {}
+  if (!_assertObjectType(mute)) {
+    throw new Error('Invalid data.mute data type')
+  }
   mute.anonymous ??= false
 
   // forbidSpecialChars comes with livechat 11.1.0
@@ -51,13 +56,12 @@ async function sanitizeChannelConfigurationOptions (
     tolerance: 0,
     applyToModerators: false
   }
-
-  if (typeof mute !== 'object') {
-    throw new Error('Invalid data.mute data type')
+  if (!_assertObjectType(botData.forbidSpecialChars)) {
+    throw new Error('Invalid data.forbidSpecialChars data type')
   }
 
   // terms not present in livechat <= 10.2.0
-  let terms = data.terms
+  let terms = data.terms ?? undefined
   if (terms !== undefined && (typeof terms !== 'string')) {
     throw new Error('Invalid data.terms data type')
   }
@@ -94,7 +98,11 @@ async function sanitizeChannelConfigurationOptions (
   return result
 }
 
-function _readBoolean (data: any, f: string): boolean {
+function _assertObjectType (data: unknown): data is Record<string, unknown> {
+  return !!data && (typeof data === 'object') && Object.keys(data).every(k => typeof k === 'string')
+}
+
+function _readBoolean (data: Record<string, unknown>, f: string): boolean {
   if (!(f in data)) {
     return false
   }
@@ -104,11 +112,11 @@ function _readBoolean (data: any, f: string): boolean {
   return data[f]
 }
 
-function _readInteger (data: any, f: string, min: number, max: number): number {
+function _readInteger (data: Record<string, unknown>, f: string, min: number, max: number): number {
   if (!(f in data)) {
     throw new Error('Missing integer value for field ' + f)
   }
-  const v = parseInt(data[f])
+  const v = typeof data[f] === 'number' ? Math.trunc(data[f]) : parseInt(data[f] as string)
   if (isNaN(v)) {
     throw new Error('Invalid value type for field ' + f)
   }
@@ -121,7 +129,7 @@ function _readInteger (data: any, f: string, min: number, max: number): number {
   return v
 }
 
-function _readSimpleInput (data: any, f: string, strict?: boolean, noSpace?: boolean): string {
+function _readSimpleInput (data: Record<string, unknown>, f: string, strict?: boolean, noSpace?: boolean): string {
   if (!(f in data)) {
     return ''
   }
@@ -130,7 +138,7 @@ function _readSimpleInput (data: any, f: string, strict?: boolean, noSpace?: boo
   }
   // Removing control characters.
   // eslint-disable-next-line no-control-regex
-  let s = (data[f] as string).replace(/[\u0000-\u001F\u007F-\u009F]/g, '')
+  let s = data[f].replace(/[\u0000-\u001F\u007F-\u009F]/g, '')
   if (strict) {
     // Replacing all invalid characters, no need to throw an error..
     s = s.replace(/[^\p{L}\p{N}\p{Z}_-]$/gu, '')
@@ -141,7 +149,7 @@ function _readSimpleInput (data: any, f: string, strict?: boolean, noSpace?: boo
   return s
 }
 
-function _readStringArray (data: any, f: string): string[] {
+function _readStringArray (data: Record<string, unknown>, f: string): string[] {
   if (!(f in data)) {
     return []
   }
@@ -162,7 +170,7 @@ function _readStringArray (data: any, f: string): string[] {
   return result
 }
 
-function _readMultiLineString (data: any, f: string): string {
+function _readMultiLineString (data: Record<string, unknown>, f: string): string {
   if (!(f in data)) {
     return ''
   }
@@ -171,11 +179,11 @@ function _readMultiLineString (data: any, f: string): string {
   }
   // Removing control characters (must authorize \u001A: line feed)
   // eslint-disable-next-line no-control-regex
-  const s = (data[f] as string).replace(/[\u0000-\u0009\u001B-\u001F\u007F-\u009F]/g, '')
+  const s = data[f].replace(/[\u0000-\u0009\u001B-\u001F\u007F-\u009F]/g, '')
   return s
 }
 
-async function _readRegExpArray (data: any, f: string): Promise<string[]> {
+async function _readRegExpArray (data: Record<string, unknown>, f: string): Promise<string[]> {
   // Note: this function can instanciate a lot of RegExp.
   // To avoid freezing the server, we make it async, and will validate each regexp in a separate tick.
   if (!(f in data)) {
@@ -195,11 +203,11 @@ async function _readRegExpArray (data: any, f: string): Promise<string[]> {
     }
     // value must be a valid regexp
     try {
-      async function _validate (): Promise<void> {
+      async function _validate (v: string): Promise<void> {
         // eslint-disable-next-line no-new
         new RegExp(v)
       }
-      await _validate()
+      await _validate(v)
     } catch (_err) {
       throw new Error('Invalid value in field ' + f)
     }
@@ -208,12 +216,17 @@ async function _readRegExpArray (data: any, f: string): Promise<string[]> {
   return result
 }
 
-async function _readForbiddenWords (botData: any): Promise<ChannelConfigurationOptions['bot']['forbiddenWords']> {
+async function _readForbiddenWords (
+  botData: Record<string, unknown>
+): Promise<ChannelConfigurationOptions['bot']['forbiddenWords']> {
   if (!Array.isArray(botData.forbiddenWords)) {
     throw new Error('Invalid forbiddenWords data')
   }
   const result: ChannelConfigurationOptions['bot']['forbiddenWords'] = []
   for (const fw of botData.forbiddenWords) {
+    if (!_assertObjectType(fw)) {
+      throw new Error('Invalid entry in botData.forbiddenWords')
+    }
     const regexp = !!fw.regexp
     let entries
     if (regexp) {
@@ -239,9 +252,9 @@ async function _readForbiddenWords (botData: any): Promise<ChannelConfigurationO
 }
 
 async function _readForbidSpecialChars (
-  botData: any
+  botData: Record<string, unknown>
 ): Promise<ChannelConfigurationOptions['bot']['forbidSpecialChars']> {
-  if (typeof botData.forbidSpecialChars !== 'object') {
+  if (!_assertObjectType(botData.forbidSpecialChars)) {
     throw new Error('Invalid forbidSpecialChars data')
   }
   const result: ChannelConfigurationOptions['bot']['forbidSpecialChars'] = {
@@ -253,12 +266,15 @@ async function _readForbidSpecialChars (
   return result
 }
 
-function _readQuotes (botData: any): ChannelConfigurationOptions['bot']['quotes'] {
+function _readQuotes (botData: Record<string, unknown>): ChannelConfigurationOptions['bot']['quotes'] {
   if (!Array.isArray(botData.quotes)) {
     throw new Error('Invalid quotes data')
   }
   const result: ChannelConfigurationOptions['bot']['quotes'] = []
   for (const qs of botData.quotes) {
+    if (!_assertObjectType(qs)) {
+      throw new Error('Invalid entry in botData.quotes')
+    }
     const messages = _readStringArray(qs, 'messages')
     const delay = _readInteger(qs, 'delay', 1, 6000)
 
@@ -270,12 +286,15 @@ function _readQuotes (botData: any): ChannelConfigurationOptions['bot']['quotes'
   return result
 }
 
-function _readCommands (botData: any): ChannelConfigurationOptions['bot']['commands'] {
+function _readCommands (botData: Record<string, unknown>): ChannelConfigurationOptions['bot']['commands'] {
   if (!Array.isArray(botData.commands)) {
     throw new Error('Invalid commands data')
   }
   const result: ChannelConfigurationOptions['bot']['commands'] = []
   for (const cs of botData.commands) {
+    if (!_assertObjectType(cs)) {
+      throw new Error('Invalid entry in botData.commands')
+    }
     const message = _readSimpleInput(cs, 'message')
     const command = _readSimpleInput(cs, 'command', false, true)
 

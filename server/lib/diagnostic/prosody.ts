@@ -235,7 +235,7 @@ export async function diagProsody (test: string, options: RegisterServerOptions)
       title: 'Prosody error log (last 50 lines)',
       message: logLines.join('\n')
     })
-  } catch (error) {
+  } catch (_err) {
     // Error should be because file does not exists. This is not an error case, just ignoring.
   }
 

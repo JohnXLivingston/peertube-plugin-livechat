@@ -88,7 +88,7 @@ class BotsCtl {
     moderationBotProcess.stderr?.on('data', (data) => {
       // change error level for non-relevant errors:
       data = data.toString()
-      if (/Warning.*NODE_TLS_REJECT_UNAUTHORIZED.*'0'.*TLS/.test(data)) {
+      if (/Warning.*NODE_TLS_REJECT_UNAUTHORIZED.*'0'.*TLS/.test(data as string)) {
         this.logger.debug(`ModerationBot stderr: ${data as string}`)
         return
       }
@@ -123,9 +123,11 @@ class BotsCtl {
     }
     const p = new Promise<void>((resolve, reject) => {
       try {
-        if (!this.moderationBotProcess) { resolve() }
-        const moderationBotProcess: ReturnType<typeof child_process.spawn> =
-          this.moderationBotProcess as ReturnType<typeof child_process.spawn>
+        if (!this.moderationBotProcess) {
+          resolve()
+          return
+        }
+        const moderationBotProcess: ReturnType<typeof child_process.spawn> = this.moderationBotProcess
 
         let resolved = false
         // Trying to kill, and force kill if it takes more than X seconds

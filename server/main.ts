@@ -105,7 +105,7 @@ async function register (options: RegisterServerOptions): Promise<any> {
             }
           )
         }
-      )
+      ).catch(() => {})
     }, () => {})
   } catch (error) {
     options.peertubeHelpers.logger.error('Error when launching Prosody: ' + (error as string))

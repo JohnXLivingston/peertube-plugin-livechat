@@ -87,7 +87,7 @@ function _getProsodyDebuggerOptions (options: RegisterServerOptions, json: any):
   if (!json.debug_prosody.debugger_path) { return undefined }
   if (typeof json.debug_prosody.debugger_path !== 'string') { return undefined }
 
-  const mobdebugPath = json.debug_prosody.debugger_path
+  const mobdebugPath = json.debug_prosody.debugger_path as string
 
   if (!fs.statSync(mobdebugPath).isDirectory()) {
     options.peertubeHelpers.logger.error('There should be a debugger, but cant find it. Path should be: ', mobdebugPath)

@@ -26,7 +26,7 @@ export async function diagVideo (test: string, { settingsManager }: RegisterServ
     result.messages.push('Displaying «open in new window» button')
   }
 
-  let atLeastOne: boolean = false
+  let atLeastOne = false
   if (videoSettings['chat-per-live-video']) {
     result.messages.push('Chat can be enabled on live videos.')
     atLeastOne = true

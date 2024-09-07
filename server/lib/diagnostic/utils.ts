@@ -28,7 +28,7 @@ export interface TestResult {
 
 export function newResult (test: string): TestResult {
   return {
-    test: test,
+    test,
     ok: false,
     messages: [],
     debug: [],
