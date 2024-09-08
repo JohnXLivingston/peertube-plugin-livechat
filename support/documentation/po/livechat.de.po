@@ -8,15 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-09-07 12:38+0200\n"
-"PO-Revision-Date: 2024-09-07 06:09+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-09-09 19:39+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.7.1\n"
+"X-Generator: Weblate 5.7.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -3149,16 +3151,17 @@ msgstr "![Screenshot der Seite mit den Kanaloptionen, mit einigen Feldern zur Ko
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
-#, fuzzy, no-wrap
-#| msgid "The bot can automatically moderate messages containing forbidden words."
+#, no-wrap
 msgid "The bot can automatically moderate messages containing too many special characters."
-msgstr "Der Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten."
+msgstr ""
+"Der Chatbot kann automatisch Nachrichten moderieren, die zu viele "
+"Sonderzeichen enthalten."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #, no-wrap
 msgid "Special characters"
-msgstr ""
+msgstr "Sonderzeichen"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
@@ -3175,10 +3178,13 @@ msgstr "Konfiguration"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
-#, fuzzy
-#| msgid "![Screenshot of the channel options page, with several fields to configure the forbidden words.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Forbidden words configuration\")"
 msgid "![Screenshot of the channel options page, with several fields to configure the option \"Forbid special characters\".](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
-msgstr "![Screenshot der Seite mit den Kanaloptionen, mit mehreren Feldern zur Konfiguration der verbotenen Wörter.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Konfiguration der verbotenen Wörter\")"
+msgstr ""
+"![Screenshot der Seite mit den Kanaloptionen, mit mehreren Feldern zur "
+"Konfiguration der Option \"Sonderzeichen verbieten\".](/peertube-"
+"plugin-livechat/images/"
+"forbid_special_chars_configuration.png?classes=shadow,border&height=400px "
+"\"Sonderzeichen verbieten Konfiguration\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
