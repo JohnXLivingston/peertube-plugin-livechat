@@ -289,7 +289,7 @@ function _sanitizePeertubeLiveChatInfosV0 (
   logger.debug('We are have to migrate data from the old JSONLD format')
 
   if (chatInfos === false) { return false }
-  if (!_assertObjectType(chatInfos)) { return false}
+  if (!_assertObjectType(chatInfos)) { return false }
 
   if (chatInfos.type !== 'xmpp') { return false }
   if (typeof chatInfos.jid !== 'string') { return false }

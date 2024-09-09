@@ -46,7 +46,7 @@ async function register (clientOptions: RegisterClientOptions): Promise<void> {
   ])
   const webchatFieldOptions: RegisterClientFormFieldOptions = {
     name: 'livechat-active',
-    label: label,
+    label,
     descriptionHTML: description,
     type: 'input-checkbox',
     default: true,

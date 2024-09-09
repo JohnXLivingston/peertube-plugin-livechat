@@ -27,11 +27,11 @@ interface DebugContent {
 }
 
 type DebugNumericValue = 'renewCertCheckInterval'
-| 'renewSelfSignedCertInterval'
-| 'logRotateEvery'
-| 'logRotateCheckInterval'
-| 'remoteServerInfosMaxAge'
-| 'externalAccountPruneInterval'
+  | 'renewSelfSignedCertInterval'
+  | 'logRotateEvery'
+  | 'logRotateCheckInterval'
+  | 'remoteServerInfosMaxAge'
+  | 'externalAccountPruneInterval'
 
 type DebugBooleanValue = 'alwaysPublishXMPPRoom' | 'enablePodcastChatTagForNonLive' | 'useOpenSSL'
 

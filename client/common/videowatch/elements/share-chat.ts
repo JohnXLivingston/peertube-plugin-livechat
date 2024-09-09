@@ -14,7 +14,7 @@ import { getIframeUri, getXMPPAddr, UriOptions } from '../uri'
 import { isAnonymousUser } from '../../../utils/user'
 
 // First is default tab.
-const validTabNames = ['embed', 'dock', 'peertube', 'xmpp'] as const
+const validTabNames: string[] = ['embed', 'dock', 'peertube', 'xmpp'] as const
 
 type ValidTabNames = typeof validTabNames[number]
 
@@ -61,49 +61,49 @@ export class ShareChatElement extends LivechatElement {
    * Should we render the XMPP tab?
    */
   @property({ attribute: false })
-  public xmppUriEnabled: boolean = false
+  public xmppUriEnabled = false
 
   /**
    * Should we render the Dock tab?
    */
   @property({ attribute: false })
-  public dockEnabled: boolean = false
+  public dockEnabled = false
 
   /**
    * Can we use autocolors?
    */
   @property({ attribute: false })
-  public autocolorsAvailable: boolean = false
+  public autocolorsAvailable = false
 
   /**
    * In the Embed tab, should we generated an iframe link.
    */
   @property({ attribute: false })
-  public embedIFrame: boolean = false
+  public embedIFrame = false
 
   /**
    * In the Embed tab, should we generated a read-only chat link.
    */
   @property({ attribute: false })
-  public embedReadOnly: boolean = false
+  public embedReadOnly = false
 
   /**
    * Read-only, with scrollbar?
    */
   @property({ attribute: false })
-  public embedReadOnlyScrollbar: boolean = false
+  public embedReadOnlyScrollbar = false
 
   /**
    * Read-only, transparent background?
    */
   @property({ attribute: false })
-  public embedReadOnlyTransparentBackground: boolean = false
+  public embedReadOnlyTransparentBackground = false
 
   /**
    * In the Embed tab, should we use current theme color?
    */
   @property({ attribute: false })
-  public embedAutocolors: boolean = false
+  public embedAutocolors = false
 
   protected override firstUpdated (changedProperties: PropertyValues): void {
     super.firstUpdated(changedProperties)
@@ -156,7 +156,7 @@ export class ShareChatElement extends LivechatElement {
         return
       }
       this.logger.log('Restoring previous state')
-      if (validTabNames.includes(v.currentTab)) {
+      if (validTabNames.includes(v.currentTab as string)) {
         this.currentTab = v.currentTab
       }
       this.embedIFrame = !!v.embedIFrame

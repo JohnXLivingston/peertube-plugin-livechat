@@ -14,7 +14,7 @@ module.exports = {
       // extending the kebab-case to accept ConverseJS class names.
       '^([a-z][a-z0-9]*)(-[a-z0-9]+)*((__|--)[a-z]+(-[a-z0-9]+)*)?$',
       {
-        message: 'Expected class selector to be kebab-case, or ConverseJS-style.',
+        message: 'Expected class selector to be kebab-case, or ConverseJS-style.'
       }
     ]
   }

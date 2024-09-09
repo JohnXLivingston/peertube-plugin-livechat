@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import type { ChannelConfigurationElement } from '../channel-configuration'
 import type { DynamicFormHeader, DynamicFormSchema } from '../../../lib/elements/dynamic-table-form'
 import { ptTr } from '../../../lib/directives/translation'
@@ -9,7 +12,7 @@ import { html, TemplateResult } from 'lit'
 import { classMap } from 'lit/directives/class-map.js'
 
 export function tplChannelConfiguration (el: ChannelConfigurationElement): TemplateResult {
-  const tableHeaderList: {[key: string]: DynamicFormHeader} = {
+  const tableHeaderList: Record<string, DynamicFormHeader> = {
     forbiddenWords: {
       entries: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
@@ -57,7 +60,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       }
     }
   }
-  const tableSchema: {[key: string]: DynamicFormSchema} = {
+  const tableSchema: Record<string, DynamicFormSchema> = {
     forbiddenWords: {
       entries: {
         inputType: 'tags',

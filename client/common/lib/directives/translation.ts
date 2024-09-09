@@ -13,8 +13,8 @@ import { getPtContext } from '../contexts/peertube'
 export class TranslationDirective extends AsyncDirective {
   private readonly _peertubeHelpers: RegisterClientHelpers
 
-  private _translatedValue: string = ''
-  private _localizationId: string = ''
+  private _translatedValue = ''
+  private _localizationId = ''
 
   private _allowUnsafeHTML = false
 
@@ -25,7 +25,7 @@ export class TranslationDirective extends AsyncDirective {
     this._asyncUpdateTranslation().then(() => {}, () => {})
   }
 
-  public override render = (locId: string, allowHTML: boolean = false): TemplateResult | string => {
+  public override render = (locId: string, allowHTML = false): TemplateResult | string => {
     this._localizationId = locId // TODO Check current component for context (to infer the prefix)
 
     this._allowUnsafeHTML = allowHTML

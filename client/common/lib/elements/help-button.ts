@@ -18,7 +18,7 @@ export class HelpButtonElement extends LivechatElement {
   public buttonTitle: string | DirectiveResult = ptTr(LOC_ONLINE_HELP)
 
   @property({ attribute: false })
-  public page: string = ''
+  public page = ''
 
   @state()
   public url: URL = new URL('https://lmddgtfy.net/')

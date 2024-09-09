@@ -243,7 +243,10 @@ function register (clientOptions: RegisterClientOptions): void {
             }
           } catch (error: any) {
             console.error(error)
-            peertubeHelpers.notifier.error(error.toString(), await peertubeHelpers.translate(LOC_LOADING_ERROR))
+            peertubeHelpers.notifier.error(
+              (error as Error).toString(),
+              await peertubeHelpers.translate(LOC_LOADING_ERROR)
+            )
           }
         }
       })

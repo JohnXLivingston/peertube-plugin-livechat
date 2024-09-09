@@ -234,14 +234,14 @@ async function _connectionInfos (
   params: GetConverseJSParamsParams,
   roomInfos: RoomInfos
 ): Promise<{
-    prosodyDomain: string
-    localAnonymousJID: string
-    localBoshUri: string
-    localWsUri: string | null
-    remoteConnectionInfos: WCRemoteConnectionInfos | undefined
-    roomJID: string
-    customEmojisUrl?: string
-  } | InitConverseJSParamsError> {
+  prosodyDomain: string
+  localAnonymousJID: string
+  localBoshUri: string
+  localWsUri: string | null
+  remoteConnectionInfos: WCRemoteConnectionInfos | undefined
+  roomJID: string
+  customEmojisUrl?: string
+} | InitConverseJSParamsError> {
   const { video, remoteChatInfos, channelId, roomKey } = roomInfos
 
   const prosodyDomain = await getProsodyDomain(options)

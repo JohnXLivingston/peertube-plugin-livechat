@@ -71,8 +71,7 @@ async function shareChatUrl (
       addedNodes.forEach(node => {
         if ((node as HTMLElement).localName === 'ngb-modal-window') {
           logger.info('Detecting a new modal, checking if this is the good one...')
-          if (!(node as HTMLElement).querySelector) { return }
-          const title = (node as HTMLElement).querySelector('.modal-title')
+          const title = (node as HTMLElement).querySelector?.('.modal-title')
           if (!(title?.textContent === labelShare)) {
             return
           }

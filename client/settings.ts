@@ -156,12 +156,12 @@ function launchTests (): void {
         'content-type': 'application/json;charset=UTF-8'
       }),
       body: JSON.stringify({
-        test: test
+        test
       })
     })
     if (!response.ok) {
       return {
-        test: test,
+        test,
         messages: [response.statusText ?? 'Unknown error'],
         ok: false
       }
@@ -169,7 +169,7 @@ function launchTests (): void {
     const data = await response.json()
     if ((typeof data) !== 'object') {
       return {
-        test: test,
+        test,
         messages: ['Incorrect reponse type: ' + (typeof data)],
         ok: false
       }
@@ -190,6 +190,7 @@ function launchTests (): void {
     waiting.innerHTML = '<i>Testing...</i>'
     ul.append(waiting)
     if ((typeof result.next) === 'function') {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
       const r: Result = (result.next as Function)()
       waiting.remove()
       await machine(r)

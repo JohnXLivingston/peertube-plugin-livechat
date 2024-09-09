@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 // This content comes from the file assets/images/plus-square.svg, from the Feather icons set https://feathericons.com/
-export const AddSVG: string =
+export const AddSVG =
   `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
   aria-hidden="true"
   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -14,7 +14,7 @@ export const AddSVG: string =
   </svg>`
 
 // This content comes from the file assets/images/x-square.svg, from the Feather icons set https://feathericons.com/
-export const RemoveSVG: string =
+export const RemoveSVG =
   `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
   aria-hidden="true"
   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

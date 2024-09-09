@@ -4,7 +4,7 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 
-function getBaseRoute ({ peertubeHelpers }: RegisterClientOptions, permanent: boolean = false): string {
+function getBaseRoute ({ peertubeHelpers }: RegisterClientOptions, permanent = false): string {
   if (permanent) {
     return '/plugins/livechat/router'
   }

@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import type { ShareChatElement } from '../share-chat'
 import { html, TemplateResult } from 'lit'
 import { ptTr } from '../../../lib/directives/translation'

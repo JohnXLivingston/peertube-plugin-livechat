@@ -30,7 +30,7 @@ export class ChannelEmojisElement extends LivechatElement {
   public validationError?: ValidationError
 
   @state()
-  public actionDisabled: boolean = false
+  public actionDisabled = false
 
   private _asyncTaskRender: Task
 
@@ -192,7 +192,7 @@ export class ChannelEmojisElement extends LivechatElement {
           throw new Error('Invalid data')
         }
 
-        const url = await this._convertImageToDataUrl(entry.url)
+        const url = await this._convertImageToDataUrl(entry.url as string)
         const sn = entry.sn as string
 
         const item: ChannelEmojisConfiguration['emojis']['customEmojis'][0] = {
@@ -211,7 +211,7 @@ export class ChannelEmojisElement extends LivechatElement {
         await this.ptTranslate(LOC_ACTION_IMPORT_EMOJIS_INFO)
       )
     } catch (err: any) {
-      this.ptNotifier.error(err.toString(), await this.ptTranslate(LOC_ERROR))
+      this.ptNotifier.error((err as Error).toString(), await this.ptTranslate(LOC_ERROR))
     } finally {
       this.actionDisabled = false
     }
@@ -250,7 +250,7 @@ export class ChannelEmojisElement extends LivechatElement {
       a.remove()
     } catch (err: any) {
       this.logger.error(err)
-      this.ptNotifier.error(err.toString())
+      this.ptNotifier.error((err as Error).toString())
     } finally {
       this.actionDisabled = false
     }

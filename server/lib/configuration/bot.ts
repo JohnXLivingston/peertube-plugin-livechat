@@ -13,7 +13,7 @@ let singleton: BotConfiguration | undefined
 
 type RoomConfCache =
   null // already loaded, but file does not exist
-  | RoomConf // loaded, and contains the room conf
+    | RoomConf // loaded, and contains the room conf
 
 type ChannelCommonRoomConf = Omit<RoomConf, 'local' | 'domain'>
 

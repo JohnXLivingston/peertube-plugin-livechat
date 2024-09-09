@@ -162,7 +162,8 @@ export class ChannelDetailsService {
     }
 
     for (const channel of channels.data) {
-      channel.livechatConfigurationUri = '/p/livechat/configuration/channel?channelId=' + encodeURIComponent(channel.id)
+      channel.livechatConfigurationUri =
+        '/p/livechat/configuration/channel?channelId=' + encodeURIComponent(channel.id as string | number)
 
       // Note: since Peertube v6.0.0, channel.avatar is dropped, and we have to use channel.avatars.
       // So, if !channel.avatar, we will search a suitable one in channel.avatars, and fill channel.avatar.
@@ -196,10 +197,11 @@ export class ChannelDetailsService {
   }
 
   public async fetchEmojisConfiguration (channelId: number): Promise<ChannelEmojisConfiguration> {
+    const url = getBaseRoute(this._registerClientOptions) +
+      '/api/configuration/channel/emojis/' +
+      encodeURIComponent(channelId)
     const response = await fetch(
-      getBaseRoute(this._registerClientOptions) +
-        '/api/configuration/channel/emojis/' +
-        encodeURIComponent(channelId),
+      url,
       {
         method: 'GET',
         headers: this._headers
@@ -311,10 +313,11 @@ export class ChannelDetailsService {
     channelId: number,
     channelEmojis: ChannelEmojis
   ): Promise<ChannelEmojisConfiguration> {
+    const url = getBaseRoute(this._registerClientOptions) +
+      '/api/configuration/channel/emojis/' +
+      encodeURIComponent(channelId)
     const response = await fetch(
-      getBaseRoute(this._registerClientOptions) +
-        '/api/configuration/channel/emojis/' +
-        encodeURIComponent(channelId),
+      url,
       {
         method: 'POST',
         headers: this._headers,
@@ -330,11 +333,12 @@ export class ChannelDetailsService {
   }
 
   public async enableEmojisOnlyModeOnAllRooms (channelId: number): Promise<void> {
+    const url = getBaseRoute(this._registerClientOptions) +
+      '/api/configuration/channel/emojis/' +
+      encodeURIComponent(channelId) +
+      '/enable_emoji_only'
     const response = await fetch(
-      getBaseRoute(this._registerClientOptions) +
-        '/api/configuration/channel/emojis/' +
-        encodeURIComponent(channelId) +
-        '/enable_emoji_only',
+      url,
       {
         method: 'POST',
         headers: this._headers

@@ -60,8 +60,8 @@ async function initChat (video: Video): Promise<void> {
       return
     }
 
-    let showShareUrlButton: boolean = false
-    let showPromote: boolean = false
+    let showShareUrlButton = false
+    let showPromote = false
     if (video.isLocal) { // No need for shareButton on remote chats.
       const chatShareUrl = settings['chat-share-url'] ?? ''
       if (chatShareUrl === 'everyone') {
@@ -187,9 +187,10 @@ async function _insertChatDom (
           callback: async () => {
             try {
               // First we must get the room JID (can be video.uuid@ or channel.id@)
+              const url = getBaseRoute(ptContext.ptOptions) + '/api/configuration/room/' +
+                encodeURIComponent(video.uuid)
               const response = await fetch(
-                getBaseRoute(ptContext.ptOptions) + '/api/configuration/room/' +
-                  encodeURIComponent(video.uuid),
+                url,
                 {
                   method: 'GET',
                   headers: peertubeHelpers.getAuthHeader()
@@ -303,7 +304,7 @@ async function _openChat (video: Video): Promise<void | false> {
 
     // Loading converseJS...
     await displayConverseJS(ptContext.ptOptions, container, roomkey, 'peertube-video', false)
-  } catch (err) {
+  } catch (_err) {
     // Displaying an error page.
     if (container) {
       const message = document.createElement('div')

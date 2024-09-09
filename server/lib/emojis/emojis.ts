@@ -78,12 +78,13 @@ export class Emojis {
     if (!await this.channelHasCustomEmojis(channelId)) {
       return undefined
     }
+    const route = getBaseRouterRoute(this.options) +
+      'emojis/channel/' +
+      encodeURIComponent(channelId) +
+      '/definition'
     return canonicalizePluginUri(
       this.options,
-      getBaseRouterRoute(this.options) +
-        'emojis/channel/' +
-        encodeURIComponent(channelId) +
-        '/definition',
+      route,
       {
         removePluginVersion: true
       }

@@ -187,8 +187,8 @@ function _getForbiddenWordsHandler (
   } else {
     // Here we must add word-breaks and escape entries.
     // We join all entries in one Regexp (for the same reason as above).
-    rule.regexp = '(?:' +
-      forbiddenWords.entries.map(s => {
+    rule.regexp = '(?:' + forbiddenWords.entries.map(
+      s => {
         s = _stringToWordRegexp(s)
         // Must add the \b...
         // ... but... won't work if the first (or last) char is an emoji.
@@ -201,7 +201,8 @@ function _getForbiddenWordsHandler (
         }
         // FIXME: this solution wont work for non-latin charsets.
         return s
-      }).join(')|(?:') + ')'
+      }
+    ).join(')|(?:') + ')'
   }
 
   if (forbiddenWords.reason) {

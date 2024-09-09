@@ -32,7 +32,7 @@ export class ChannelConfigurationElement extends LivechatElement {
   public validationError?: ValidationError
 
   @state()
-  public actionDisabled: boolean = false
+  public actionDisabled = false
 
   private _asyncTaskRender: Task
 
@@ -113,7 +113,7 @@ export class ChannelConfigurationElement extends LivechatElement {
     }
   }
 
-  public readonly getInputValidationClass = (propertyName: string): { [key: string]: boolean } => {
+  public readonly getInputValidationClass = (propertyName: string): Record<string, boolean> => {
     const validationErrorTypes: ValidationErrorType[] | undefined =
       this.validationError?.properties[`${propertyName}`]
     return validationErrorTypes ? (validationErrorTypes.length ? { 'is-invalid': true } : { 'is-valid': true }) : {}

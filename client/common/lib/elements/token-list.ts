@@ -27,7 +27,7 @@ export class LivechatTokenListElement extends LivechatElement {
   public currentSelectedToken?: LivechatToken
 
   @property({ attribute: false })
-  public actionDisabled: boolean = false
+  public actionDisabled = false
 
   private readonly _tokenListService: TokenListService
   private readonly _asyncTaskRender: Task
@@ -83,7 +83,7 @@ export class LivechatTokenListElement extends LivechatElement {
       this.dispatchEvent(new CustomEvent('update', {}))
     } catch (err: any) {
       this.logger.error(err)
-      this.ptNotifier.error(err.toString(), await this.ptTranslate(LOC_ERROR))
+      this.ptNotifier.error((err as Error).toString(), await this.ptTranslate(LOC_ERROR))
     } finally {
       this.actionDisabled = false
     }
@@ -102,7 +102,7 @@ export class LivechatTokenListElement extends LivechatElement {
       this.dispatchEvent(new CustomEvent('update', {}))
     } catch (err: any) {
       this.logger.error(err)
-      this.ptNotifier.error(err.toString(), await this.ptTranslate(LOC_ERROR))
+      this.ptNotifier.error((err as Error).toString(), await this.ptTranslate(LOC_ERROR))
     } finally {
       this.actionDisabled = false
     }

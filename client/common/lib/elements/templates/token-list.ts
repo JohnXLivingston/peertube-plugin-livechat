@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import type { LivechatTokenListElement } from '../token-list'
 import { html, TemplateResult } from 'lit'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
@@ -23,11 +26,11 @@ export function tplTokenList (el: LivechatTokenListElement): TemplateResult {
       <tbody>
         ${
           repeat(el.tokenList ?? [], (token) => token.id, (token) => {
-            let dateStr: string = ''
+            let dateStr = ''
             try {
               const date = new Date(token.date)
               dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
-            } catch (err) {}
+            } catch (_err) {}
             return html`<tr>
               <td>${
                 el.mode === 'select'

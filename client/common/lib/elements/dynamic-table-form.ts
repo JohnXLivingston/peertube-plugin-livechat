@@ -3,6 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import type { TagsInputElement } from './tags-input'
 import type { DirectiveResult } from 'lit/directive'
 import { ValidationErrorType } from '../models/validation'
@@ -20,26 +23,26 @@ import { AddSVG, RemoveSVG } from '../buttons'
 type DynamicTableAcceptedTypes = number | string | boolean | Date | Array<number | string>
 
 type DynamicTableAcceptedInputTypes = 'textarea'
-| 'select'
-| 'checkbox'
-| 'range'
-| 'color'
-| 'date'
-| 'datetime'
-| 'datetime-local'
-| 'email'
-| 'file'
-| 'image'
-| 'month'
-| 'number'
-| 'password'
-| 'tel'
-| 'text'
-| 'time'
-| 'url'
-| 'week'
-| 'tags'
-| 'image-file'
+  | 'select'
+  | 'checkbox'
+  | 'range'
+  | 'color'
+  | 'date'
+  | 'datetime'
+  | 'datetime-local'
+  | 'email'
+  | 'file'
+  | 'image'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week'
+  | 'tags'
+  | 'image-file'
 
 interface CellDataSchema {
   min?: number
@@ -47,7 +50,7 @@ interface CellDataSchema {
   minlength?: number
   maxlength?: number
   size?: number
-  options?: { [key: string]: string }
+  options?: Record<string, string>
   datalist?: DynamicTableAcceptedTypes[]
   separator?: string
   inputType?: DynamicTableAcceptedInputTypes
@@ -59,7 +62,7 @@ interface CellDataSchema {
 interface DynamicTableRowData {
   _id: number
   _originalIndex: number
-  row: { [key: string]: DynamicTableAcceptedTypes }
+  row: Record<string, DynamicTableAcceptedTypes>
 }
 
 interface DynamicFormHeaderCellData {
@@ -68,10 +71,8 @@ interface DynamicFormHeaderCellData {
   headerClassList?: string[]
 }
 
-export interface DynamicFormHeader {
-  [key: string]: DynamicFormHeaderCellData
-}
-export interface DynamicFormSchema { [key: string]: CellDataSchema }
+export type DynamicFormHeader = Record<string, DynamicFormHeaderCellData>
+export type DynamicFormSchema = Record<string, CellDataSchema>
 
 @customElement('livechat-dynamic-table-form')
 export class DynamicTableFormElement extends LivechatElement {
@@ -85,19 +86,19 @@ export class DynamicTableFormElement extends LivechatElement {
   public maxLines?: number = undefined
 
   @property()
-  public validation?: {[key: string]: ValidationErrorType[] }
+  public validation?: Record<string, ValidationErrorType[]>
 
   @property({ attribute: false })
-  public validationPrefix: string = ''
+  public validationPrefix = ''
 
   @property({ attribute: false })
-  public rows: Array<{ [key: string]: DynamicTableAcceptedTypes }> = []
+  public rows: Array<Record<string, DynamicTableAcceptedTypes>> = []
 
   @state()
   public _rowsById: DynamicTableRowData[] = []
 
   @property({ attribute: false })
-  public formName: string = ''
+  public formName = ''
 
   @state()
   private _lastRowId = 1
@@ -112,7 +113,7 @@ export class DynamicTableFormElement extends LivechatElement {
     }
   }
 
-  private readonly _getDefaultRow = (): { [key: string]: DynamicTableAcceptedTypes } => {
+  private readonly _getDefaultRow = (): Record<string, DynamicTableAcceptedTypes> => {
     this._updateLastRowId()
     return Object.fromEntries([...Object.entries(this.schema).map((entry) => [entry[0], entry[1].default ?? ''])])
   }
@@ -245,11 +246,11 @@ export class DynamicTableFormElement extends LivechatElement {
 
     return html`<tr id=${inputId}>
       ${Object.keys(this.header)
-              .sort((k1, k2) => this.columnOrder.indexOf(k1) - this.columnOrder.indexOf(k2))
-              .map(key => this.renderDataCell(key,
-              rowData.row[key] ?? this.schema[key].default,
-              rowData._id,
-              rowData._originalIndex))}
+        .sort((k1, k2) => this.columnOrder.indexOf(k1) - this.columnOrder.indexOf(k2))
+        .map(key => this.renderDataCell(key,
+        rowData.row[key] ?? this.schema[key].default,
+        rowData._id,
+        rowData._originalIndex))}
       <td class="form-group">
         <button type="button"
           class="dynamic-table-remove-row"
@@ -457,8 +458,7 @@ export class DynamicTableFormElement extends LivechatElement {
               inputTitle,
               propertyName,
               propertySchema,
-              (propertyValue)?.join(propertySchema.separator ?? ',') ??
-                propertyValue ?? propertySchema.default ?? '',
+              (propertyValue)?.join(propertySchema.separator ?? ',') ?? propertyValue ?? propertySchema.default ?? '',
               originalIndex)}
               ${feedback}
               `
@@ -473,8 +473,7 @@ export class DynamicTableFormElement extends LivechatElement {
               inputTitle,
               propertyName,
               propertySchema,
-              (propertyValue)?.join(propertySchema.separator ?? ',') ??
-                propertyValue ?? propertySchema.default ?? '',
+              (propertyValue)?.join(propertySchema.separator ?? ',') ?? propertyValue ?? propertySchema.default ?? '',
               originalIndex)}
               ${feedback}
               `
@@ -498,8 +497,10 @@ export class DynamicTableFormElement extends LivechatElement {
     }
 
     if (!formElement) {
-      this.logger.warn(`value type '${(propertyValue.constructor.toString())}' is incompatible` +
-        `with field type '${propertySchema.inputType as string}' for form entry '${propertyName.toString()}'.`)
+      this.logger.warn(
+        `value type '${(propertyValue.constructor.toString())}' is incompatible` +
+        `with field type '${propertySchema.inputType as string}' for form entry '${propertyName.toString()}'.`
+      )
     }
 
     const classList = ['form-group']
@@ -678,7 +679,7 @@ export class DynamicTableFormElement extends LivechatElement {
   }
 
   _getInputValidationClass = (propertyName: string,
-    originalIndex: number): { [key: string]: boolean } => {
+    originalIndex: number): Record<string, boolean> => {
     const validationErrorTypes: ValidationErrorType[] | undefined =
       this.validation?.[`${this.validationPrefix}.${originalIndex}.${propertyName}`]
 

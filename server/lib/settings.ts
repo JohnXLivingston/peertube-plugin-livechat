@@ -529,7 +529,7 @@ function initThemingSettings ({ registerSetting }: RegisterServerOptions): void 
       { value: 'peertube', label: loc('converse_theme_option_peertube') },
       { value: 'default', label: loc('converse_theme_option_default') },
       { value: 'cyberpunk', label: loc('converse_theme_option_cyberpunk') }
-    ] as Array<{value: ConverseJSTheme, label: string}>,
+    ] as Array<{ value: ConverseJSTheme, label: string }>,
     descriptionHTML: loc('converse_theme_description')
   })
 

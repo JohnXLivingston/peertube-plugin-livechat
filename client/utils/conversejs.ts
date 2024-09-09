@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { InitConverseJSParams, ChatPeertubeIncludeMode } from 'shared/lib/types'
@@ -17,7 +18,7 @@ declare global {
   }
 }
 
-let pollListenerInitiliazed: boolean = false
+let pollListenerInitiliazed = false
 
 /**
  * load the ConverseJS CSS.
@@ -152,10 +153,11 @@ async function displayConverseJS (
 
   const authHeader = peertubeHelpers.getAuthHeader()
 
+  const url = getBaseRoute(clientOptions) + '/api/configuration/room/' +
+    encodeURIComponent(roomKey) +
+    (forceType ? '?forcetype=1' : '')
   const response = await fetch(
-    getBaseRoute(clientOptions) + '/api/configuration/room/' +
-      encodeURIComponent(roomKey) +
-      (forceType ? '?forcetype=1' : ''),
+    url,
     {
       method: 'GET',
       headers: authHeader

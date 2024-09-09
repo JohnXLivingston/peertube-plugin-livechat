@@ -4,6 +4,7 @@
 
 import type { RegisterClientOptions } from '@peertube/peertube-types/client'
 import type { Video } from '@peertube/peertube-types'
+import type { LiveChatSettings } from '../lib/contexts/peertube'
 import { AutoColors, isAutoColorsAvailable } from 'shared/lib/autocolors'
 import { getBaseRoute } from '../../utils/uri'
 import { logger } from '../../utils/logger'
@@ -17,7 +18,7 @@ interface UriOptions {
 }
 
 function getIframeUri (
-  registerOptions: RegisterClientOptions, settings: any, video: Video, uriOptions: UriOptions = {}
+  registerOptions: RegisterClientOptions, settings: LiveChatSettings, video: Video, uriOptions: UriOptions = {}
 ): string | null {
   if (!settings) {
     logger.error('Settings are not initialized, too soon to compute the iframeUri')

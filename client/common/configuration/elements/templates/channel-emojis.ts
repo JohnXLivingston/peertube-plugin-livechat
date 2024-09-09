@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import type { ChannelEmojisElement } from '../channel-emojis'
 import type { DynamicFormHeader, DynamicFormSchema } from '../../../lib/elements/dynamic-table-form'
 import { maxEmojisPerChannel } from 'shared/lib/emojis'

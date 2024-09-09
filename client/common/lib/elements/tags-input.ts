@@ -3,6 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import { LivechatElement } from './livechat'
 import { ptTr } from '../directives/translation'
 import { html } from 'lit'
@@ -21,10 +24,11 @@ import type { DirectiveResult } from 'lit/directive'
 // Then replace the main color by «currentColor»
 const copySVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 4.233 4.233">
   <g style="stroke-width:1.00021;stroke-miterlimit:4;stroke-dasharray:none">` +
-    // eslint-disable-next-line max-len
+    // eslint-disable-next-line max-len, @stylistic/indent-binary-ops
     '<path style="opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m4.084 4.046-.616.015-.645-.004a.942.942 0 0 1-.942-.942v-4.398a.94.94 0 0 1 .942-.943H7.22a.94.94 0 0 1 .942.943l-.006.334-.08.962" transform="matrix(.45208 0 0 .45208 -.528 1.295)"/>' +
     // eslint-disable-next-line max-len
     '<path style="opacity:.998;fill:none;fill-opacity:1;stroke:currentColor;stroke-width:1.17052;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M8.434 5.85c-.422.009-1.338.009-1.76.01-.733.004-2.199 0-2.199 0a.94.94 0 0 1-.942-.941V.52a.94.94 0 0 1 .942-.942h4.398a.94.94 0 0 1 .943.942s.004 1.466 0 2.2c-.003.418-.019 1.251-.006 1.67.024.812-.382 1.439-1.376 1.46z" transform="matrix(.45208 0 0 .45208 -.528 1.295)"/>' +
+  // eslint-disable-next-line @stylistic/indent-binary-ops
   `</g>
 </svg>`
 
@@ -64,10 +68,10 @@ export class TagsInputElement extends LivechatElement {
   private readonly _isPressingKey: string[] = []
 
   @property({ attribute: false })
-  public separator: string = '\n'
+  public separator = '\n'
 
   @property({ attribute: false })
-  public animDuration: number = 200
+  public animDuration = 200
 
   /**
    * Overloading the standard focus method.
@@ -245,8 +249,9 @@ export class TagsInputElement extends LivechatElement {
           if (!this._isPressingKey.includes(e.key)) {
             this._isPressingKey.push(e.key)
 
-            if ((target.selectionStart === target.selectionEnd) &&
-                 target.selectionStart === 0) {
+            if (
+              (target.selectionStart === target.selectionEnd) && target.selectionStart === 0
+            ) {
               this._handleDeleteTag((this._searchedTagsIndex.length)
                 ? this._searchedTagsIndex.slice(-1)[0]
                 : (this.value.length - 1))
@@ -259,8 +264,9 @@ export class TagsInputElement extends LivechatElement {
           if (!this._isPressingKey.includes(e.key)) {
             this._isPressingKey.push(e.key)
 
-            if ((target.selectionStart === target.selectionEnd) &&
-                 target.selectionStart === target.value.length) {
+            if (
+              (target.selectionStart === target.selectionEnd) && target.selectionStart === target.value.length
+            ) {
               this._handleDeleteTag((this._searchedTagsIndex.length)
                 ? this._searchedTagsIndex[0]
                 : 0)

@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import type { AdminFirewallElement } from '../elements/admin-firewall'
 import type { TemplateResult } from 'lit'
 import type { DynamicFormHeader, DynamicFormSchema } from '../../../lib/elements/dynamic-table-form'
