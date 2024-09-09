@@ -453,11 +453,11 @@ class ExternalAuthOIDC {
 
     const encryptedArray = data.split(':')
     const iv = Buffer.from(encryptedArray[0], outputEncoding)
-    const encrypted = Buffer.from(encryptedArray[1], outputEncoding)
+    const encrypted = encryptedArray[1]
     const decipher = createDecipheriv(algorithm, this.secretKey, iv)
 
-    // FIXME: dismiss the "as any" below (dont understand why Typescript is not happy without)
-    return decipher.update(encrypted.toString(), outputEncoding, inputEncoding) + decipher.final(inputEncoding)
+    // here we must revert outputEncoding and inputEncoding, as were are decrypting.
+    return decipher.update(encrypted, outputEncoding, inputEncoding) + decipher.final(inputEncoding)
   }
 
   /**

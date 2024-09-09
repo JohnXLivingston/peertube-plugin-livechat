@@ -54,7 +54,7 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
         const redirectUrl = await oidc.initAuthenticationProcess(req, res)
         res.redirect(redirectUrl)
       } catch (err) {
-        logger.error('[oidc router] Failed to process the OIDC callback: ' + (err as string))
+        logger.error('[oidc router] Failed to process the OIDC connect call: ' + (err as string))
         next()
       }
     }
