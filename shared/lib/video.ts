@@ -44,7 +44,7 @@ function videoHasWebchat (settings: VideoHasWebchatSettings, video: SharedVideo)
     if (video.remote) return false
   }
 
-  if (settings['chat-per-live-video'] && video.isLive && video.pluginData && video.pluginData['livechat-active']) {
+  if (settings['chat-per-live-video'] && video.isLive && video.pluginData?.['livechat-active']) {
     return true
   }
 

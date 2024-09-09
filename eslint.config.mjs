@@ -2,12 +2,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-// FIXME:
-// * lint shared
-// * lint conversejs
-// * use eslint-plugin-lit
-// * delete old .eslintrc.json files
-
 import love from 'eslint-config-love'
 import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
@@ -23,9 +17,7 @@ export default tseslint.config(
       'build/',
       'vendor/',
       'support/documentation', 'support',
-      'build-*js',
-
-      'shared' // FIXME
+      'build-*js'
     ]
   },
   eslint.configs.recommended,
@@ -132,7 +124,10 @@ export default tseslint.config(
     }
   },
   {
-    files: ['server/**/*.js', 'server/**/*.ts'], // only ts?
+    files: [
+      'server/**/*.js', 'server/**/*.ts'
+      // 'shared/**/*.js', 'shared/**/*.ts' // we also inlcude shared files here.
+    ],
     languageOptions: {
       ecmaVersion: 6,
       globals: {
@@ -157,13 +152,15 @@ export default tseslint.config(
       parserOptions: {
         ecmaVersion: 2018,
         project: [
-          './server/tsconfig.json',
-          './client/tsconfig.json'
+          './server/tsconfig.json'
+          // './client/tsconfig.json' // FIXME: dont really know what is necessary here.
         ],
-        projectService: {
-          allowDefaultProject: 'shared/**/*.ts',
-          defaultProject: './server/tsconfig.json'
-        }
+        // FIXME: how to make projectService work?
+        projectService: false
+        // projectService: {
+        //   allowDefaultProject: ['shared/lib/*.js', 'shared/lib/*.ts'],
+        //   defaultProject: './server/tsconfig.json'
+        // }
       }
     }
   },
