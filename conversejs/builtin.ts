@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
+
 import type { InitConverseJSParams, ChatIncludeMode, ExternalAuthResult } from 'shared/lib/types'
 import { inIframe } from './lib/utils'
 import { initDom } from './lib/dom'
@@ -39,7 +41,7 @@ declare global {
     }
     initConversePlugins: typeof initConversePlugins
     initConverse: typeof initConverse
-    reconnectConverse?: (room: string) => void
+    reconnectConverse?: (params: any) => void
     externalAuthGetResult?: (data: ExternalAuthResult) => void
   }
 }
@@ -86,7 +88,7 @@ window.initConversePlugins = initConversePlugins
 async function initConverse (
   initConverseParams: InitConverseJSParams,
   chatIncludeMode: ChatIncludeMode = 'chat-only',
-  peertubeAuthHeader?: { [header: string]: string } | null
+  peertubeAuthHeader?: Record<string, string> | null
 ): Promise<void> {
   // First, fixing relative websocket urls.
   if (initConverseParams.localWebsocketServiceUrl?.startsWith('/')) {
@@ -121,9 +123,9 @@ async function initConverse (
   params.view_mode = chatIncludeMode === 'chat-only' ? 'fullscreen' : 'embedded'
   params.allow_url_history_change = chatIncludeMode === 'chat-only'
 
-  let isAuthenticated: boolean = false
-  let isAuthenticatedWithExternalAccount: boolean = false
-  let isRemoteWithNicknameSet: boolean = false
+  let isAuthenticated = false
+  let isAuthenticatedWithExternalAccount = false
+  let isRemoteWithNicknameSet = false
 
   // OIDC (OpenID Connect):
   const tryOIDC = (initConverseParams.externalAuthOIDC?.length ?? 0) > 0

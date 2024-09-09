@@ -4,7 +4,7 @@
 
 import type { ProsodyAuthentInfos } from 'shared/lib/types'
 
-interface AuthHeader { [key: string]: string }
+type AuthHeader = Record<string, string>
 
 async function getLocalAuthentInfos (
   authenticationUrl: string,
@@ -66,7 +66,7 @@ async function getLocalAuthentInfos (
           {
             'content-type': 'application/json;charset=UTF-8'
           }
-        )
+        ) as HeadersInit
       )
     })
 
@@ -104,7 +104,7 @@ async function getLocalAuthentInfos (
 function getLivechatTokenAuthInfos (): ProsodyAuthentInfos | undefined {
   try {
     const hash = window.location.hash
-    if (!hash || !hash.startsWith('#?')) { return undefined }
+    if (!hash?.startsWith('#?')) { return undefined }
     // We try to read the hash as a queryString.
     const u = new URL('http://localhost' + hash.substring(1))
     const jid = u.searchParams.get('j')

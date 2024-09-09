@@ -22,11 +22,11 @@ export const livechatViewerModePlugin = {
       console.error('[livechatViewerModePlugin] getDefaultMUCNickname is not initialized.')
     } else {
       Object.assign(_converse.exports, {
-        getDefaultMUCNickname: function (this: any): any {
+        getDefaultMUCNickname: function (this: any, ...args: any[]): any {
           if (!_converse.api.settings.get('livechat_enable_viewer_mode')) {
-            return originalGetDefaultMUCNickname.apply(this, arguments)
+            return originalGetDefaultMUCNickname.apply(this, args)
           }
-          return originalGetDefaultMUCNickname.apply(this, arguments) ??
+          return originalGetDefaultMUCNickname.apply(this, args) ??
             getPreviousAnonymousNick() ??
             randomNick('Anonymous')
         }
@@ -72,8 +72,8 @@ export const livechatViewerModePlugin = {
       // Note: when previousNickname is set, model.get('nick') has not the nick yet...
       // It will only come after receiving a presence stanza.
       // So we use previousNickname before trying to read the model.
-      const nick = getPreviousAnonymousNick() ?? (model?.get ? model.get('nick') : '')
-      refreshViewerMode(nick && !/^Anonymous /.test(nick))
+      const nick = getPreviousAnonymousNick() ?? (model?.get ? model.get('nick') as string : '')
+      refreshViewerMode(!!nick && !/^Anonymous /.test(nick))
     })
   }
 }

@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import { html } from 'lit'
 import { __ } from 'i18n'
 
@@ -20,7 +23,8 @@ export function tplMucTask (el, task) {
             type="checkbox"
             class="form-check-input"
             .checked=${done === true}
-            @click=${(_ev) => {
+            @click=${(ev) => {
+              ev?.preventDefault()
               task.set('done', !done)
               task.saveItem()
             }}

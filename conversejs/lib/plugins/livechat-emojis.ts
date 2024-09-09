@@ -17,19 +17,19 @@ export const livechatEmojisPlugin = {
       livechat_custom_emojis_url: false
     })
 
-    _converse.api.listen.on('loadEmojis', async (_context: Object, json: any) => {
-      const url = _converse.api.settings.get('livechat_custom_emojis_url')
+    _converse.api.listen.on('loadEmojis', async (_context: object, json: Record<string, Record<string, unknown>>) => {
+      const url = _converse.api.settings.get('livechat_custom_emojis_url') as string | undefined
       if (!url) {
         return json
       }
 
-      let customs
+      let customs: CustomEmojiDefinition[] | undefined
       try {
         customs = await loadCustomEmojis(url)
       } catch (err) {
         console.error(err)
       }
-      if (customs === undefined || !customs?.length) {
+      if (!customs?.length) {
         return json
       }
 
@@ -51,7 +51,7 @@ export const livechatEmojisPlugin = {
 
         // We must also remove any existing emojis in category other than custom
         for (const type of Object.keys(json)) {
-          const v: {[key: string]: any} = json[type]
+          const v: Record<string, any> = json[type]
           if (type !== 'custom' && type !== 'modifiers' && (def.sn in v)) {
             // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
             delete v[def.sn]

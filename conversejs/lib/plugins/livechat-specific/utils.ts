@@ -25,7 +25,7 @@ export function getOpenPromise (): any {
       promise.isResolved = false
       promise.isPending = false
       promise.isRejected = true
-      throw (e)
+      throw (e as Error)
     }
   )
   return promise

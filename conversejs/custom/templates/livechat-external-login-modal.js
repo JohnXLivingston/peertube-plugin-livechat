@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import { _converse, api } from '@converse/headless'
 import { __ } from 'i18n'
 import { html } from 'lit'
@@ -28,8 +31,9 @@ function externalLoginClickHandler (ev, el, externalAuthOIDCUrl) {
 
     console.log('Received an external authentication result...', data)
     if (!data.ok) {
-      // eslint-disable-next-line no-undef
-      el.external_auth_oidc_alert_message = __(LOC_login_external_auth_alert_message) +
+      el.external_auth_oidc_alert_message =
+        // eslint-disable-next-line no-undef
+        __(LOC_login_external_auth_alert_message) +
         (data.message ? ` (${data.message})` : '')
       return
     }

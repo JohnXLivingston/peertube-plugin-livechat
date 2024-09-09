@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import { api } from '@converse/headless'
 import tplMUCChatarea from '../../src/plugins/muc-views/templates/muc-chatarea.js'
 import { html } from 'lit'

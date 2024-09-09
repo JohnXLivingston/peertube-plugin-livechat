@@ -19,7 +19,7 @@ export function customizeMessageAction (plugin: any): void {
         try {
           txt += this.model.getDisplayName() as string
           txt += ' - '
-          const date = new Date(this.model.get('edited') || this.model.get('time'))
+          const date = new Date((this.model.get('edited') || this.model.get('time')) as string)
           txt += date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
           txt += '\n'
         } catch {}

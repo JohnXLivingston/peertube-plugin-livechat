@@ -2,7 +2,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-export function chatRoomOverrides (): {[key: string]: Function} {
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+export function chatRoomOverrides (): Record<string, Function> {
   return {
     getActionInfoMessage: function getActionInfoMessage (this: any, code: string, nick: string, actor: any): any {
       if (code === '303') {
@@ -27,8 +28,9 @@ export function chatRoomOverrides (): {[key: string]: Function} {
     initOccupants: function initOccupants (this: any) {
       const r = this.__super__.initOccupants()
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
       const originalComparatorFunction: Function = this.occupants.comparator
-      this.occupants.comparator = function (this: any, occupant1: any, occupant2: any): Number {
+      this.occupants.comparator = function (this: any, occupant1: any, occupant2: any): number {
         // Overriding Occupants comparators, to display anonymous users at the end of the list.
         const nick1: string = occupant1.getDisplayName()
         const nick2: string = occupant2.getDisplayName()

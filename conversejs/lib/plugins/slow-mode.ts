@@ -21,7 +21,13 @@ export const slowModePlugin = {
         return
       }
 
-      const slowModeDuration = parseInt(chatbox?.config?.get('slow_mode_duration'))
+      const slowModeDurationRaw = chatbox?.config?.get('slow_mode_duration') ?? NaN
+      const slowModeDuration =
+        typeof slowModeDurationRaw === 'string'
+          ? parseInt(slowModeDurationRaw)
+          : typeof slowModeDurationRaw === 'number'
+            ? Math.trunc(slowModeDurationRaw)
+            : NaN
       if (!(slowModeDuration > 0)) { // undefined, NaN, ...  are not considered > 0.
         return
       }

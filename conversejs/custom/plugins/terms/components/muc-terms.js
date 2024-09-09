@@ -2,6 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 import { CustomElement } from 'shared/components/element.js'
 import { api } from '@converse/headless'
 import { html } from 'lit'

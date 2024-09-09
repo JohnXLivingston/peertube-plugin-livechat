@@ -6,6 +6,7 @@
 // * lint shared
 // * lint conversejs
 // * use eslint-plugin-lit
+// * delete old .eslintrc.json files
 
 import love from 'eslint-config-love'
 import eslint from '@eslint/js'
@@ -24,8 +25,7 @@ export default tseslint.config(
       'support/documentation', 'support',
       'build-*js',
 
-      'shared',
-      'conversejs'
+      'shared' // FIXME
     ]
   },
   eslint.configs.recommended,
@@ -55,7 +55,8 @@ export default tseslint.config(
     files: ['**/*.ts'],
     rules: {
       '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
-      '@typescript-eslint/no-unused-vars': [2, { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
       '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: false }],
       '@typescript-eslint/no-var-requires': 'off',
@@ -83,8 +84,45 @@ export default tseslint.config(
           code: 120,
           comments: 120
         }
-      ],
-      'no-unused-vars': 'off'
+      ]
+    }
+  },
+  {
+    files: ['**/*.js'],
+    rules: {
+      // Disabling typescript-eslint rules for JS files (did not find a simplier way...)
+      '@typescript-eslint/no-empty-function': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-floating-promises': 'off',
+      '@typescript-eslint/no-misused-promises': 'off',
+      '@typescript-eslint/no-var-requires': 'off',
+      '@typescript-eslint/strict-boolean-expressions': 'off',
+      '@typescript-eslint/return-await': 'off',
+      '@typescript-eslint/no-invalid-void-type': 'off',
+      '@typescript-eslint/triple-slash-reference': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/init-declarations': 'off',
+      '@typescript-eslint/consistent-type-imports': 'off',
+      '@typescript-eslint/consistent-type-exports': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/unbound-method': 'off',
+      '@typescript-eslint/prefer-promise-reject-errors': 'off',
+      '@typescript-eslint/max-params': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/no-confusing-void-expression': 'off',
+      '@typescript-eslint/class-methods-use-this': 'off',
+      '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+
+      'max-params': 'off',
+      'init-declarations': 'off',
+      'no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
+      'max-len': [
+        'error',
+        {
+          code: 120,
+          comments: 120
+        }
+      ]
     }
   },
   {
@@ -108,7 +146,7 @@ export default tseslint.config(
     }
   },
   {
-    files: ['shared/**/*.js', 'shared/**/*.ts'], // only ts?
+    files: ['shared/**/*.js', 'shared/**/*.ts'],
     languageOptions: {
       ecmaVersion: 6,
       globals: {
@@ -130,7 +168,7 @@ export default tseslint.config(
     }
   },
   {
-    files: ['client/**/*.js', 'client/**/*.ts'], // only ts?
+    files: ['client/**/*.js', 'client/**/*.ts', 'conversejs/**/*.js', 'conversejs/**/*.ts'],
     languageOptions: {
       ecmaVersion: 6,
       globals: {
@@ -139,7 +177,10 @@ export default tseslint.config(
       parser: typescriptParser,
       parserOptions: {
         ecmaVersion: 2018,
-        project: './client/tsconfig.json'
+        project: [
+          './client/tsconfig.json',
+          './conversejs/tsconfig.json'
+        ]
       }
     },
     // FIXME: not sure elintLit works.
@@ -148,6 +189,14 @@ export default tseslint.config(
     },
     rules: {
       ...eslintLit.configs['flat/recommended'].rules
+    }
+  },
+  {
+    files: ['conversejs/build-*.js', 'conversejs/loc.keys.js', 'conversejs/custom/webpack.livechat.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node
+      }
     }
   }
 )

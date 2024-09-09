@@ -2,7 +2,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-export function chatRoomMessageOverrides (): {[key: string]: Function} {
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+export function chatRoomMessageOverrides (): Record<string, Function> {
   return {
     /* By default, ConverseJS groups messages from the same users for a 10 minutes period.
      * This make no sense in a livechat room. So we override isFollowup to ignore. */

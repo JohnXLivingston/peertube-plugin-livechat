@@ -4,6 +4,9 @@
 // SPDX-License-Identifier: MPL-2.0
 // SPDX-License-Identifier: AGPL-3.0-only
 
+// FIXME: @stylistic/indent is buggy with strings literrals.
+/* eslint-disable @stylistic/indent */
+
 // Must import the original muc.js, because it imports some custom elements files.
 import '../../src/plugins/muc-views/templates/muc.js'
 import { getChatRoomBodyTemplate } from '../../src/plugins/muc-views/utils.js'
