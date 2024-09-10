@@ -35,7 +35,7 @@ UmfragenSie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu f
 Aufgaben / To-do-ListenSie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten.
 ModerationsnotizenPlugin peertube-plugin-livechat Moderationnotizen
 ChatbotChatbot Einrichtung
-Special charactersThe bot can automatically moderate messages containing too many special characters.
+SonderzeichenDer Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten.
 Verbotene WörterDer Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.
 TimerDer Chatbot kann in regelmäßigen Abständen einige Nachrichten senden.
 BefehleDer Chatbot kann auf verschiedene Befehle reagieren.`,description:"Plugin peertube-plugin-livechat Benutzer Dokumentation",tags:[],title:"Benutzer Dokumentation",uri:"/peertube-plugin-livechat/de/documentation/user/index.html"},{breadcrumb:"Peertube livechat",content:` Benutzer DokumentationPlugin peertube-plugin-livechat Benutzer Dokumentation
@@ -189,7 +189,11 @@ Chat Dropdown Menü Es gibt ein Dropdownmenü am oberen Rand des Chats, das eini
 Vollbild öffnen Oben im Chat gibt es eine Schaltfläche, um den Chat im Vollbildmodus zu öffnen. Dadurch wird eine neue Browser-Registerkarte mit dem folgenden Inhalt geöffnet:
 Es kann einfacher sein, in einer seperaten Browser-Registerkarte zu chatten.
 Spitznamen ändern Sie können Ihren Spitznamen ändern, indem Sie /nick ihr_neuer_spitzname in das Nachrichtenfeld eingeben.
-Sie können Ihren Spitznamen auch über das Chatmenü ändern.`,description:"Wie man chattet für Live-Stream Zuschauer",tags:[],title:"Für Zuschauer",uri:"/peertube-plugin-livechat/de/documentation/user/viewers/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
+Sie können Ihren Spitznamen auch über das Chatmenü ändern.`,description:"Wie man chattet für Live-Stream Zuschauer",tags:[],title:"Für Zuschauer",uri:"/peertube-plugin-livechat/de/documentation/user/viewers/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer > Chatbot",content:`Sonderzeichen verbieten Info Diese Funktion wird mit dem Livechatplugin Version 11.1.0 verfügbar sein.
+Konfiguration Wenn Sie diese Option aktivieren, wird der Moderationsbot automatisch Nachrichten löschen, die mehr als X Sonderzeichen enthalten. Sonderzeichen sind Zeichen, die nicht in eine der folgenden Kategorien passen: Buchstaben, Zahlen, Satzzeichen, Währungssymbole, Emojis.
+Toleranz Anzahl der Sonderzeichen, die vor dem Löschen von Nachrichten akzeptiert werden.
+Grund Anzuzeigender Grund anstelle der gelöschen Nachricht
+Auch Nachrichten von Moderatoren moderieren Standardmäßig sind Nachrichten von Moderatoren von dieser Funktion nicht betroffen. Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.`,description:"Der Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten.",tags:[],title:"Sonderzeichen",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
 assets assets/images The assets/images folder contains all icons files used by the plugin.
 There is also the assets/images/avatars folders, which contains avatars used for anonymous chat users. These files are used to generate multiple avatars (see the build-avatars.js script for more information).
@@ -209,11 +213,7 @@ Some of them are “officials” plugins, others are specific to this plugin.
 server The server folder contains the backend source code.
 shared The shared folder contains comme code that will be used both on frontend and backend.
 support/documentation The support/documentation contains the documentation source code.
-vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/de/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer > Chatbot",content:`Forbid special characters Info Diese Funktion wird mit dem Livechatplugin Version 11.1.0 verfügbar sein.
-Konfiguration By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
-Tolerance Number of special characters to accept before deleting messages.
-Grund Anzuzeigender Grund anstelle der gelöschen Nachricht
-Auch Nachrichten von Moderatoren moderieren By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Beitragen",content:` Tipp Dieser Verhaltenskodex basiert auf dem Contributor Covenant, Version 2.1, verfügbar unter https://www.contributor-covenant.org/version/2/1/code_of_conduct.html. Übersetzungen sind unter https://www.contributor-covenant.org/translations verfügbar. Fälle von beleidigendem, belästigendem oder anderweitig inakzeptablem Verhalten können den für die Durchsetzung verantwortlichen Gemeinschaftsleitern per E-Mail an git.[at].john-livingston.fr gemeldet werden.
+vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/de/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Beitragen",content:` Tipp Dieser Verhaltenskodex basiert auf dem Contributor Covenant, Version 2.1, verfügbar unter https://www.contributor-covenant.org/version/2/1/code_of_conduct.html. Übersetzungen sind unter https://www.contributor-covenant.org/translations verfügbar. Fälle von beleidigendem, belästigendem oder anderweitig inakzeptablem Verhalten können den für die Durchsetzung verantwortlichen Gemeinschaftsleitern per E-Mail an git.[at].john-livingston.fr gemeldet werden.
 Our Pledge We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
 We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
 Our Standards Examples of behavior that contributes to a positive environment for our community include:
@@ -339,7 +339,7 @@ Tipp Bei diesen Wörtern wird die Groß- und Kleinschreibung nicht berücksichti
 Tipp Sie können eine kurze Moderationsverzögerung (z.B. 1 Sekunde) mit dem Moderations-Chatbot kombinieren, um Nachrichten mit Schimpfwörtern zu löschen, bevor ein Nicht-Moderator sie sieht.
 Warnung Diese Funktion ist noch experimentell. Es könnte einige Probleme mit nicht-lateinischen Alphabeten geben. Sie können ein Problem öffnen, um Ihre Probleme zu melden.
 Als reguläre Ausdrücke (regex) betrachten Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes “Verbotene Wörter oder Ausdrücke” als regulärer Ausdruck betrachtet.
-Auch Nachrichten von Moderatoren moderieren By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
+Auch Nachrichten von Moderatoren moderieren Standardmäßig sind Nachrichten von Moderatoren von dieser Funktion nicht betroffen. Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.
 Grund Anzuzeigender Grund anstelle der gelöschen Nachricht
 Kommentare Sie können hier einige Kommentare zu dieser Regel hinzufügen, um sich daran zu erinnern, wie und warum Sie sie erstellt haben. Diese Kommentare sind rein indikativ und haben keinen Einfluss auf das Verhalten des Chatbots.`,description:"Der Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.",tags:[],title:"Verbotene Wörter",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentation",content:` EinstellungenPlugin Peertube Livechat Einstellungen
 Externe AuthentifizierungPlugin Peertube Livechat Einstellungen - Externe Authentifizierung
@@ -745,7 +745,7 @@ UmfragenSie können Umfragen erstellen, um die Zuschauer nach ihrer Meinung zu f
 Aufgaben / To-do-ListenSie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbeiten.
 ModerationsnotizenPlugin peertube-plugin-livechat Moderationnotizen
 ChatbotChatbot Einrichtung
-Special charactersThe bot can automatically moderate messages containing too many special characters.
+SonderzeichenDer Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten.
 Verbotene WörterDer Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.
 TimerDer Chatbot kann in regelmäßigen Abständen einige Nachrichten senden.
 BefehleDer Chatbot kann auf verschiedene Befehle reagieren.`,description:"So richten Sie den Chat für Ihren Live-Stream ein",tags:[],title:"Für Streamer",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 8.0.0 geliefert und kann von den Administratoren Ihrer Instanz deaktiviert werden.
@@ -885,7 +885,7 @@ Notizen sortieren Sie können Notizen einfach per Drag & Drop sortieren.`,descri
 Sie können einen Chatbot für Ihre Chaträume aktivieren. Die Chatbotkonfiguration wird für jeden Kanal vorgenommen und gilt für alle Chaträume der zugehörigen Videos.
 Um auf diese Seite zuzugreifen, sehen Sie sich die Kanal Konfigurations Dokumentation an.
 Dort können Sie den Chatbot aktivieren und verschiedene Optionen einstellen:
-Special charactersThe bot can automatically moderate messages containing too many special characters.
+SonderzeichenDer Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten.
 Verbotene WörterDer Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.
 TimerDer Chatbot kann in regelmäßigen Abständen einige Nachrichten senden.
 BefehleDer Chatbot kann auf verschiedene Befehle reagieren.
