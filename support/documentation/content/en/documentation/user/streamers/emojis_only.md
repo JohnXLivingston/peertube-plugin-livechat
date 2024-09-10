@@ -5,9 +5,7 @@ weight: 335
 chapter: false
 ---
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 11.1.0.
-{{% /notice %}}
+{{% livechat_version_notice  11.1.0 %}}
 
 ## {{% livechat_label emoji_only_mode_title %}}
 

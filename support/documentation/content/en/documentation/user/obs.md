@@ -42,9 +42,7 @@ You must use valid CSS color values, and they must be properly URL encoded.
 
 ## OBS Dock
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 10.1.0.
-{{% /notice %}}
+{{% livechat_version_notice 10.1.0 %}}
 
 {{% notice warning %}}
 This feature can be disabled by the instance's adminitrators.

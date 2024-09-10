@@ -7,9 +7,7 @@ chapter: false
 
 ## {{% livechat_label livechat_configuration_channel_special_chars_label %}}
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 11.1.0.
-{{% /notice %}}
+{{% livechat_version_notice 11.1.0 %}}
 
 ### Configuration
 

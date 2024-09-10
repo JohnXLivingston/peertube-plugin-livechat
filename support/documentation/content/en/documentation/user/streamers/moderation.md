@@ -41,9 +41,7 @@ When you open the chat room in full screen, there will also be a menu with dedic
 
 ## {{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 10.2.0.
-{{% /notice %}}
+{{% livechat_version_notice  10.2.0 %}}
 
 You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat.
 
@@ -75,9 +73,7 @@ You can promote users as moderators, if you need some help.
 
 ## {{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 11.0.0.
-{{% /notice %}}
+{{% livechat_version_notice 11.0.0 %}}
 
 It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.
 
@@ -88,9 +84,7 @@ You can choose to enable or disable this feature for new chatrooms on the [chann
 
 ## Participant message history search
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 11.0.0.
-{{% /notice %}}
+{{% livechat_version_notice 11.0.0 %}}
 
 As a room admin or owner, you can search all messages sent by a given participant.
 

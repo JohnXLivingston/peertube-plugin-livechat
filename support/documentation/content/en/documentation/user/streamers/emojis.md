@@ -5,9 +5,7 @@ weight: 330
 chapter: false
 ---
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 10.1.0.
-{{% /notice %}}
+{{% livechat_version_notice  10.1.0 %}}
 
 ## Channel emojis
 

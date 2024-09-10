@@ -5,9 +5,7 @@ weight: 355
 chapter: false
 ---
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 11.0.0.
-{{% /notice %}}
+{{% livechat_version_notice  11.0.0 %}}
 
 ## Introduction
 

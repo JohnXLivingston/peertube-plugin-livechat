@@ -5,9 +5,7 @@ weight: 30
 chapter: false
 ---
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 11.0.0.
-{{% /notice %}}
+{{% livechat_version_notice 11.0.0 %}}
 
 You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server.
 

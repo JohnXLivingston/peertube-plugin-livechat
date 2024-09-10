@@ -660,3 +660,5 @@ livechat_configuration_channel_special_chars_desc: |
   Special characters are those that don't fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
 livechat_configuration_channel_special_chars_tolerance_label: Tolerance
 livechat_configuration_channel_special_chars_tolerance_desc: Number of special characters to accept before deleting messages.
+
+features_comes_with: This feature comes with the livechat plugin version X.X.X.

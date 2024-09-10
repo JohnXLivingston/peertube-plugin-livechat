@@ -59,9 +59,7 @@ To do so, just open the video on your instance (you can for example copy/paste t
 
 ## If you have a Peertube account on another Peertube instance
 
-{{% notice info %}}
-This feature comes with the livechat plugin version 9.0.0.
-{{% /notice %}}
+{{% livechat_version_notice  9.0.0 %}}
 
 If you have a Peertube account, but not on the current instance, there is a "{{% livechat_label login_using_external_account %}}" button.
 This button will open a dialog where you can enter your Peertube instance URL.
