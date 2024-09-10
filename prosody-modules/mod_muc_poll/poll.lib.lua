@@ -72,7 +72,7 @@ local function end_current_poll (room)
 end
 
 local function schedule_poll_end (room_jid, timestamp)
-  local delay = timestamp - get_time();
+  local delay = timestamp - math.floor(get_time());
   if delay <= 0 then
     delay = 1;
   end
@@ -101,7 +101,7 @@ local function create_poll(room, fields, occupant)
   module:log("debug", "Creating a new poll for room %s, by %s", room.jid, occupant.bare_jid);
   room._data.current_poll = fields;
   room._data.current_poll.poll_id = id.short();
-  room._data.current_poll.end_timestamp = get_time() + (60 * fields["muc#roompoll_duration"]);
+  room._data.current_poll.end_timestamp = math.floor(get_time()) + (60 * fields["muc#roompoll_duration"]);
   room._data.current_poll.votes_by_occupant = {};
   room._data.current_poll.votes_by_choices = {};
   room._data.current_poll.choices_ordered = {}; -- choices labels with numerical index, so we can have correct order
@@ -151,7 +151,7 @@ local function handle_groupchat(event)
 
   -- Ok, seems it is a vote.
 
-  if get_time() >= room._data.current_poll.end_timestamp then
+  if math.floor(get_time()) >= room._data.current_poll.end_timestamp then
     module:log("debug", "Got a vote for a finished poll, not counting it.");
     -- Note: we keep bouncing messages a few seconds/minutes after the poll end
     -- to be sure any user that send the vote too late won't expose his choice.
@@ -222,7 +222,7 @@ local function room_restored(event)
   end
 
   module:log("info", "Restoring room %s with current ongoing poll.", room.jid);
-  local now = get_time();
+  local now = math.floor(get_time());
   if now >= room._data.current_poll.end_timestamp then
     module:log("info", "Current poll is over for room %s, ending it", room.jid);
     end_current_poll(room);

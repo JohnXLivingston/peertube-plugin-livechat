@@ -88,7 +88,7 @@ local function handle_broadcast_message(event)
   end
   local id = stanza.attr.id;
   if not id then
-    -- message should alway have an id, but just in case...
+    -- message should always have an id, but just in case...
     module:log("warn", "Message has no id, wont delay it.");
     return;
   end
@@ -106,7 +106,7 @@ local function handle_broadcast_message(event)
   if stanza.attr.from then
     local from_occupant = room:get_occupant_by_nick(stanza.attr.from);
     if from_occupant and valid_roles[from_occupant.role or "none"] < moderator_role_value then
-      module:log("debug", "Message %s / %s must be sent separatly to it initialior %s.", id, stanza_id, delay, stanza.attr.from);
+      module:log("debug", "Message %s / %s must be sent separatly to it initiator %s.", id, stanza_id, delay, stanza.attr.from);
       room:route_to_occupant(from_occupant, stanza);
     end
   end
@@ -114,7 +114,7 @@ local function handle_broadcast_message(event)
   -- adding a tag, so that moderators can know that this message is delayed.
   stanza:tag(moderation_delay_tag, {
     delay = "" .. delay;
-    waiting = string.format("%i", get_time() + delay);
+    waiting = string.format("%i", math.floor(get_time() + delay));
   }):up();
 
   -- then, sending to moderators (and only moderators):
