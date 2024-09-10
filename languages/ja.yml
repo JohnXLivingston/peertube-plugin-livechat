@@ -375,3 +375,18 @@ invalid_value_duplicate: 重複した値です
 livechat_configuration_channel_emojis_desc: "チャンネルのカスタム絵文字を設定できます。\nこれらの絵文字は、絵文字ピッカーから利用できます。\n\
   絵文字は、短縮名でも使用できます。（例えば\":shortname:\"）\n"
 chat: チャット
+emoji_only_mode_title: 絵文字のみモード
+emoji_only_mode_desc_1: "チャットルームで\"絵文字のみモード\"を有効にできます。\nこのモードが有効な時は、参加者は絵文字（標準またはチャンネル専用のカスタム絵文字）のみを送信できます。\n\
+  モデレーターはこの制限の影響を受けません。\n"
+emoji_only_enable_all_rooms: 絵文字のみモードを全てのチャンネルのチャットルームに適用する
+emoji_only_info: 絵文字のみモードが有効な場合、メッセージ内で絵文字のみ使用できます。
+emoji_only_mode_desc_2: "このモードは次のような場合に効果があります:\n<ul>\n  <li>スパムまたはモデレーターがいない場合に攻撃的なメッセージを抑止するため。</li>\n\
+  \  <li>多数の参加者が存在し、正確なモデレーションが実施できない場合のため。</li>\n</ul>\n"
+livechat_configuration_channel_special_chars_tolerance_label: 許容範囲
+emoji_only_mode_desc_3: "この機能の設定切り替えは、ルーム設定フォームから可能です。\n一度にあなたの全てのチャットルームにこの設定を適用する場合は、以下のボタンをクリックしてください。\n"
+livechat_configuration_channel_special_chars_desc: "このオプションを有効にすると、モデレーションBotは、X文字以上の特殊文字が含まれるメッセージを自動的に削除します。\n\
+  特殊文字は、文字、数字、句読点記号、通貨記号、絵文字のいずれにも当てはまらないものを指します。\n"
+livechat_configuration_applytomoderators_desc: "初期状態では、モデレーターメッセージはこの機能の影響を受けません。\n\
+  このオプションを有効にすると、モデレーターからのメッセージも削除されるようになります。\n"
+livechat_configuration_channel_special_chars_label: 特殊文字を禁止する
+livechat_configuration_channel_special_chars_tolerance_desc: 削除しない特殊文字の文字数を指定してください。

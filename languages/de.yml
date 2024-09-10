@@ -353,8 +353,7 @@ livechat_configuration_channel_quote_delay_desc: "Der Chatbot wird die Nachricht
 livechat_configuration_channel_command_desc: "Sie können den Chatbot so konfigurieren,
   dass er auf Befehle reagiert.\nEin Befehl ist eine Nachricht, die mit einem \"!\"\
   \ beginnt, wie zum Beispiel \"!help\" den Befehl \"help\" aufruft.\n"
-livechat_configuration_applytomoderators_label: Auch Nachrichten
-  von Moderatoren moderieren
+livechat_configuration_applytomoderators_label: Auch Nachrichten von Moderatoren moderieren
 invalid_value: Ungültiger Wert.
 livechat_configuration_channel_forbidden_words_comments_label: Kommentare
 livechat_configuration_channel_forbidden_words_comments_desc: "Sie können hier einige
@@ -614,3 +613,14 @@ emoji_only_mode_desc_2: "Dieser Modus kann zum Beispiel nützlich sein:\n<ul>\n 
   Spam oder beleidigende Nachrichten zu vermeiden, wenn Sie nicht hier sind, um zu
   moderieren.</li>\n  <li>wenn es zu viele sprechende Teilnehmer gibt, und Sie nicht
   mehr richtig moderieren können.</li>\n</ul>\n"
+livechat_configuration_applytomoderators_desc: "Standardmäßig sind Nachrichten von
+  Moderatoren von dieser Funktion nicht betroffen.\nWenn Sie diese Option aktivieren,
+  werden auch Nachrichten von Moderatoren gelöscht.\n"
+livechat_configuration_channel_special_chars_label: Sonderzeichen verbieten
+livechat_configuration_channel_special_chars_tolerance_label: Toleranz
+livechat_configuration_channel_special_chars_tolerance_desc: Anzahl der Sonderzeichen,
+  die vor dem Löschen von Nachrichten akzeptiert werden.
+livechat_configuration_channel_special_chars_desc: "Wenn Sie diese Option aktivieren,
+  wird der Moderationsbot automatisch Nachrichten löschen, die mehr als X Sonderzeichen
+  enthalten.\nSonderzeichen sind Zeichen, die nicht in eine der folgenden Kategorien
+  passen: Buchstaben, Zahlen, Satzzeichen, Währungssymbole, Emojis.\n"
