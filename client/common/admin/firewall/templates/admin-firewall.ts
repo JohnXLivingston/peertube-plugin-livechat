@@ -67,7 +67,7 @@ export function tplAdminFirewall (el: AdminFirewallElement): TemplateResult {
           .maxLines=${maxFirewallFiles}
           .validation=${el.validationError?.properties}
           .validationPrefix=${'files'}
-          .rows=${el.firewallConfiguration?.files}
+          .rows=${el.firewallConfiguration?.files ?? []}
           @update=${(e: CustomEvent) => {
               el.resetValidation(e)
               if (el.firewallConfiguration) {

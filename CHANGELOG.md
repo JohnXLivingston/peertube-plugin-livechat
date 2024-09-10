@@ -13,6 +13,7 @@
 * Using Typescript 5.5.4, and Eslint 8.57.0 (with new ruleset).
 * Fix race condition in bot/ctl.
 * Various type improvements.
+* Update dependencies.
 
 ## 11.0.1
 

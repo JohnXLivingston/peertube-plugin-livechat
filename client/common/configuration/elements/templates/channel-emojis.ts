@@ -90,7 +90,7 @@ export function tplChannelEmojis (el: ChannelEmojisElement): TemplateResult {
           .maxLines=${maxEmojisPerChannel}
           .validation=${el.validationError?.properties}
           .validationPrefix=${'emojis'}
-          .rows=${el.channelEmojisConfiguration?.emojis.customEmojis}
+          .rows=${el.channelEmojisConfiguration?.emojis.customEmojis ?? []}
           @update=${(e: CustomEvent) => {
               el.resetValidation(e)
               if (el.channelEmojisConfiguration) {

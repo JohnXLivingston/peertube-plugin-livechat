@@ -124,10 +124,7 @@ export default tseslint.config(
     }
   },
   {
-    files: [
-      'server/**/*.js', 'server/**/*.ts'
-      // 'shared/**/*.js', 'shared/**/*.ts' // we also inlcude shared files here.
-    ],
+    files: ['server/**/*.js', 'server/**/*.ts'],
     languageOptions: {
       ecmaVersion: 6,
       globals: {
@@ -136,7 +133,8 @@ export default tseslint.config(
       parser: typescriptParser,
       parserOptions: {
         ecmaVersion: 2018,
-        project: './server/tsconfig.json'
+        project: './server/tsconfig.json',
+        projectService: true
       }
     }
   },

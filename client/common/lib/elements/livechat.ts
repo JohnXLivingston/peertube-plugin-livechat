@@ -26,7 +26,7 @@ export class LivechatElement extends LitElement {
     this.logger = this.ptContext.logger.createLogger(this.tagName.toLowerCase())
   }
 
-  protected override createRenderRoot = (): Element | ShadowRoot => {
+  protected override createRenderRoot = (): HTMLElement | DocumentFragment => {
     return this
   }
 }

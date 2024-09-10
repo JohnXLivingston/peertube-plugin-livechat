@@ -324,7 +324,7 @@ async function enableProxyRoute (
     target: 'http://localhost:' + prosodyProxyInfo.port + '/http-bind',
     ignorePath: true
   })
-  currentHttpBindProxy.on('error', (err, req, res) => {
+  currentHttpBindProxy.on('error', (err, req, res: any) => { // FIXME: remove the `any`.
     // We must handle errors, otherwise Peertube server crashes!
     logger.error(
       'The http bind proxy got an error ' +
@@ -346,7 +346,7 @@ async function enableProxyRoute (
     ignorePath: true,
     ws: true
   })
-  currentWebsocketProxy.on('error', (err, req, res) => {
+  currentWebsocketProxy.on('error', (err, req, res: any) => { // FIXME: remove the `any`.
     // We must handle errors, otherwise Peertube server crashes!
     logger.error(
       'The websocket proxy got an error ' +
@@ -368,7 +368,7 @@ async function enableProxyRoute (
     ignorePath: true,
     ws: true
   })
-  currentS2SWebsocketProxy.on('error', (err, req, res) => {
+  currentS2SWebsocketProxy.on('error', (err, req, res: any) => { // FIXME: remove the `any`.
     // We must handle errors, otherwise Peertube server crashes!
     logger.error(
       'The s2s websocket proxy got an error ' +

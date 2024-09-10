@@ -9,9 +9,9 @@
 
 livechat-token-list {
   table {
-    @include tables.data-table;
-
     width: 100%;
+
+    @include tables.data-table;
 
     tr th:first-child,
     tr th:last-child {
