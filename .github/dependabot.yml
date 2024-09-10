@@ -1,0 +1,27 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: typescript
+    versions: # linting libs are not ready for 5.6
+    - "version-update:semver-minor"
+    - "version-update:semver-major"
+  - dependency-name: "@tsconfig/node12" # breaks the config, must see why before updating
+    versions:
+    - "version-update:semver-major"
+  - dependency-name: "@types/nodes" # must be set to the Peertube required version.
+  - dependency-name: "@peertube/peertube-types" # must be set to the Peertube required version.
+  - dependency-name: eslint
+    versions:
+    - "version-update:semver-major"
+  - dependency-name: got
+    versions:
+    - "version-update:semver-major" # breaking changes, must adapt code.
+  - dependency-name: "@typescript-eslint/parser"
+    versions: # for now 8.5.0 is broken because of the lack of ./tsconfig.json file. Must fix conf.
+    - "version-update:semver-minor"
+    - "version-update:semver-major"
