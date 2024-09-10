@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-09-07 12:38+0200\n"
+"POT-Creation-Date: 2024-09-10 12:33+0200\n"
 "PO-Revision-Date: 2024-09-09 19:39+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1942,13 +1940,6 @@ msgstr "Prosody mod_firewall"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-msgid "This feature comes with the livechat plugin version 11.0.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 11.0.0 verfügbar sein."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/mod_firewall.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
 msgstr "Sie können [mod_firewall](https://modules.prosody.im/mod_firewall) auf Ihrem Prosody-Server aktivieren."
@@ -2690,12 +2681,6 @@ msgstr "OBS Dock"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#: build/documentation/pot_in/documentation/user/streamers/emojis.md
-msgid "This feature comes with the livechat plugin version 10.1.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.1.0 verfügbar sein."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
 msgstr "Diese Funktion kann von den Administratoren der Instanz deaktiviert werden."
@@ -3153,21 +3138,13 @@ msgstr "![Screenshot der Seite mit den Kanaloptionen, mit einigen Feldern zur Ko
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #, no-wrap
 msgid "The bot can automatically moderate messages containing too many special characters."
-msgstr ""
-"Der Chatbot kann automatisch Nachrichten moderieren, die zu viele "
-"Sonderzeichen enthalten."
+msgstr "Der Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #, no-wrap
 msgid "Special characters"
 msgstr "Sonderzeichen"
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
-#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-msgid "This feature comes with the livechat plugin version 11.1.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 11.1.0 verfügbar sein."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
@@ -3179,12 +3156,7 @@ msgstr "Konfiguration"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 msgid "![Screenshot of the channel options page, with several fields to configure the option \"Forbid special characters\".](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
-msgstr ""
-"![Screenshot der Seite mit den Kanaloptionen, mit mehreren Feldern zur "
-"Konfiguration der Option \"Sonderzeichen verbieten\".](/peertube-"
-"plugin-livechat/images/"
-"forbid_special_chars_configuration.png?classes=shadow,border&height=400px "
-"\"Sonderzeichen verbieten Konfiguration\")"
+msgstr "![Screenshot der Seite mit den Kanaloptionen, mit mehreren Feldern zur Konfiguration der Option \"Sonderzeichen verbieten\".](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Sonderzeichen verbieten Konfiguration\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3386,11 +3358,6 @@ msgstr "Plugin peertube-plugin-livechat Moderationsverzögerung"
 msgid "Moderation delay"
 msgstr "Moderationsverzögerung"
 
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-msgid "This feature comes with the livechat plugin version 10.3.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.3.0 verfügbar sein."
-
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3532,13 +3499,6 @@ msgstr "Ab livechat v10.0.0 haben Admins und Moderatoren der Peertube-Instanz st
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
 msgstr "Sie können [ConverseJS Moderationsbefehle](https://conversejs.org/docs/html/features.html#moderating-chatrooms) verwenden, um den Raum zu moderieren. Wenn Sie den Chat-Raum im Vollbildmodus öffnen, finden Sie oben rechts ein Menü mit speziellen Befehlen."
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers/polls.md
-#: support/documentation/content/en/documentation/user/streamers/terms.md
-msgid "This feature comes with the livechat plugin version 10.2.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.2.0 verfügbar sein."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -4111,11 +4071,6 @@ msgstr "Langsamer Modus"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This feature comes with the livechat plugin version 8.3.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 8.3.0 verfügbar sein."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "As a streamer, you can choose to rate limit your viewers messages in the chat."
 msgstr "Als Streamer haben Sie die Möglichkeit, die Anzahl der Nachrichten Ihrer Zuschauer im Chat zeitlich zu begrenzen."
 
@@ -4203,11 +4158,6 @@ msgstr "Sie können Aufgaben und Aufgabenlisten mit Ihrem Moderationsteam bearbe
 #, no-wrap
 msgid "Tasks / To-do lists"
 msgstr "Aufgaben / To-do-Listen"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "This feature comes with the livechat plugin version 10.0.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4572,11 +4522,6 @@ msgstr "Wenn Sie ein Live-Video auf einer Instanz ansehen, auf der Sie kein Kont
 #, no-wrap
 msgid "If you have a Peertube account on another Peertube instance"
 msgstr "Wenn Sie ein Peertube Konto auf einer anderen Peertube Instanz haben"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/viewers.md
-msgid "This feature comes with the livechat plugin version 9.0.0."
-msgstr "Diese Funktion wird mit dem Livechatplugin Version 9.0.0 verfügbar sein."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4954,6 +4899,30 @@ msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-pl
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
+
+#~ msgid "This feature comes with the livechat plugin version 11.0.0."
+#~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 11.0.0 verfügbar sein."
+
+#~ msgid "This feature comes with the livechat plugin version 10.1.0."
+#~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.1.0 verfügbar sein."
+
+#~ msgid "This feature comes with the livechat plugin version 11.1.0."
+#~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 11.1.0 verfügbar sein."
+
+#~ msgid "This feature comes with the livechat plugin version 10.3.0."
+#~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.3.0 verfügbar sein."
+
+#~ msgid "This feature comes with the livechat plugin version 10.2.0."
+#~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.2.0 verfügbar sein."
+
+#~ msgid "This feature comes with the livechat plugin version 8.3.0."
+#~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 8.3.0 verfügbar sein."
+
+#~ msgid "This feature comes with the livechat plugin version 10.0.0."
+#~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 10.0.0 verfügbar sein."
+
+#~ msgid "This feature comes with the livechat plugin version 9.0.0."
+#~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 9.0.0 verfügbar sein."
 
 #~ msgid "![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
 #~ msgstr "![Externes Anmelden Schaltfläche](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"

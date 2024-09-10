@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-09-07 12:38+0200\n"
+"POT-Creation-Date: 2024-09-10 12:33+0200\n"
 "PO-Revision-Date: 2024-08-12 11:25+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -1964,13 +1964,6 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-msgid "This feature comes with the livechat plugin version 11.0.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/mod_firewall.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
 msgstr ""
@@ -2742,12 +2735,6 @@ msgstr "Dock OBS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#: build/documentation/pot_in/documentation/user/streamers/emojis.md
-msgid "This feature comes with the livechat plugin version 10.1.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.1.0."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
 msgstr "Cette fonction peut être désactivée par les administrateur⋅rices de l'instance."
@@ -3238,14 +3225,6 @@ msgstr "Le bot peut automatiquement modérer les messages contenant des mots int
 msgid "Special characters"
 msgstr ""
 
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
-#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy
-#| msgid "This feature comes with the livechat plugin version 11.0.0."
-msgid "This feature comes with the livechat plugin version 11.1.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
-
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #: support/documentation/content/en/documentation/user/streamers/terms.md
@@ -3473,11 +3452,6 @@ msgstr "Plugin peertube-plugin-livechat délai de modération"
 msgid "Moderation delay"
 msgstr "Délai de modération"
 
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-msgid "This feature comes with the livechat plugin version 10.3.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.3.0."
-
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3623,13 +3597,6 @@ msgstr "Depuis la version 10.0.0 de livechat, les administrateur⋅rices et mod�
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
 msgstr "Vous pouvez utiliser les [commandes de modération ConverseJS](https://conversejs.org/docs/html/features.html#moderating-chatrooms) pour modérer le salon. Lorsque vous ouvrez la salle de discussion en plein écran, un menu avec des commandes dédiées s'affiche en haut à droite."
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers/polls.md
-#: support/documentation/content/en/documentation/user/streamers/terms.md
-msgid "This feature comes with the livechat plugin version 10.2.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.2.0."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -4236,11 +4203,6 @@ msgstr "Mode lent"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This feature comes with the livechat plugin version 8.3.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 8.3.0."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "As a streamer, you can choose to rate limit your viewers messages in the chat."
 msgstr "En tant que streameur⋅euse, vous pouvez choisir de limiter la fréquence des messages de vos spectateur⋅rices dans le tchat."
 
@@ -4330,11 +4292,6 @@ msgstr "Vous pouvez gérer les tâches et les listes de tâches avec votre équi
 #, no-wrap
 msgid "Tasks / To-do lists"
 msgstr "Tâches / listes de choses à faire"
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "This feature comes with the livechat plugin version 10.0.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.0.0."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4738,11 +4695,6 @@ msgstr "Si vous avez un compte Peertube sur une autre instance Peertube"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
-msgid "This feature comes with the livechat plugin version 9.0.0."
-msgstr "Cette fonctionnalité arrive avec le plugin livechat version 9.0.0."
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you have a Peertube account, but not on the current instance, there is a \"{{% livechat_label login_using_external_account %}}\" button.  This button will open a dialog where you can enter your Peertube instance URL.  Once you entered it, it will check if the livechat plugin is available on the remote instance, and if the video is available.  If it is the case, you will be redirected to the video on the remote instance."
 msgstr "Si vous avez un compte Peertube, mais pas sur l'instance courante, il y a un bouton \"{{% livechat_label login_using_external_account %}}\". Ce bouton va ouvrir un fenêtre de dialogue où vous pourrez entrer l'URL de votre instance Peertube. Une fois celle-ci entrée, cela vérifiera sur le plugin livechat est disponible sur l'instance distante, et si la vidéo y est disponible. Dans ce cas, vous serez redirigé vers la vidéo sur l'instance distante."
 
@@ -5131,6 +5083,32 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter."
+
+#~ msgid "This feature comes with the livechat plugin version 11.0.0."
+#~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
+
+#~ msgid "This feature comes with the livechat plugin version 10.1.0."
+#~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.1.0."
+
+#, fuzzy
+#~| msgid "This feature comes with the livechat plugin version 11.0.0."
+#~ msgid "This feature comes with the livechat plugin version 11.1.0."
+#~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."
+
+#~ msgid "This feature comes with the livechat plugin version 10.3.0."
+#~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.3.0."
+
+#~ msgid "This feature comes with the livechat plugin version 10.2.0."
+#~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.2.0."
+
+#~ msgid "This feature comes with the livechat plugin version 8.3.0."
+#~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 8.3.0."
+
+#~ msgid "This feature comes with the livechat plugin version 10.0.0."
+#~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 10.0.0."
+
+#~ msgid "This feature comes with the livechat plugin version 9.0.0."
+#~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 9.0.0."
 
 #~ msgid "![External login button](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"
 #~ msgstr "![Bouton connexion avec compte externe](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px)"

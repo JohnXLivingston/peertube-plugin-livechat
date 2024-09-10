@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-09-07 12:38+0200\n"
+"POT-Creation-Date: 2024-09-10 12:33+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Esperanto <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/eo/>\n"
@@ -1875,13 +1875,6 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-msgid "This feature comes with the livechat plugin version 11.0.0."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/admin/mod_firewall.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
 msgstr ""
@@ -2615,12 +2608,6 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#: build/documentation/pot_in/documentation/user/streamers/emojis.md
-msgid "This feature comes with the livechat plugin version 10.1.0."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
 msgstr ""
@@ -3086,12 +3073,6 @@ msgstr ""
 msgid "Special characters"
 msgstr ""
 
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
-#: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-msgid "This feature comes with the livechat plugin version 11.1.0."
-msgstr ""
-
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #: support/documentation/content/en/documentation/user/streamers/terms.md
@@ -3298,11 +3279,6 @@ msgstr ""
 msgid "Moderation delay"
 msgstr ""
 
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-msgid "This feature comes with the livechat plugin version 10.3.0."
-msgstr ""
-
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3441,13 +3417,6 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
-msgstr ""
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/moderation.md
-#: support/documentation/content/en/documentation/user/streamers/polls.md
-#: support/documentation/content/en/documentation/user/streamers/terms.md
-msgid "This feature comes with the livechat plugin version 10.2.0."
 msgstr ""
 
 #. type: Plain text
@@ -4021,11 +3990,6 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-msgid "This feature comes with the livechat plugin version 8.3.0."
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "As a streamer, you can choose to rate limit your viewers messages in the chat."
 msgstr ""
 
@@ -4112,11 +4076,6 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Tasks / To-do lists"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/streamers/tasks.md
-msgid "This feature comes with the livechat plugin version 10.0.0."
 msgstr ""
 
 #. type: Plain text
@@ -4481,11 +4440,6 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "If you have a Peertube account on another Peertube instance"
-msgstr ""
-
-#. type: Plain text
-#: support/documentation/content/en/documentation/user/viewers.md
-msgid "This feature comes with the livechat plugin version 9.0.0."
 msgstr ""
 
 #. type: Plain text
