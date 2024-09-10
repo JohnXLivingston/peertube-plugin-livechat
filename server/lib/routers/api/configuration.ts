@@ -96,7 +96,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
           req.body.bot = channelOptions.bot
           req.body.bot.enabled = false
         }
-        // TODO: Same for forbidSpecialChars: if disabled, don't save reason and tolerance
+        // TODO: Same for forbidSpecialChars/noDuplicate: if disabled, don't save reason and tolerance
         //   (disabling for now, because it is not acceptable to load twice the channel configuration.
         //   Must find better way)
         // if (req.body.bot?.enabled === true && req.body.bot.forbidSpecialChars?.enabled === false) {
@@ -108,6 +108,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
         //   req.body.bot.forbidSpecialChars.tolerance = channelOptions.bot.forbidSpecialChars.tolerance
         //   req.body.bot.forbidSpecialChars.applyToModerators = channelOptions.bot.forbidSpecialChars.applyToModerators
         //   req.body.bot.forbidSpecialChars.enabled = false
+        //    ... NoDuplicate...
         // }
         channelOptions = await sanitizeChannelConfigurationOptions(options, channelInfos.id, req.body)
       } catch (err) {

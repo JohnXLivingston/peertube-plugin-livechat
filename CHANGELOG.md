@@ -2,9 +2,13 @@
 
 ## 11.1.0 (Not Released Yet)
 
+TODO Before releasing:
+* update ConverseJS with latest merges.
+
 ### New features
 
 * #131: Emoji only mode.
+* #516: new option for the moderation bot: forbid duplicate messages.
 * #517: new option for the moderation bot: forbid messages with too many special characters.
 
 ### Minor changes and fixes

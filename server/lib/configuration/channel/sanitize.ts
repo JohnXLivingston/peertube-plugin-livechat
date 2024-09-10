@@ -57,7 +57,18 @@ async function sanitizeChannelConfigurationOptions (
     applyToModerators: false
   }
   if (!_assertObjectType(botData.forbidSpecialChars)) {
-    throw new Error('Invalid data.forbidSpecialChars data type')
+    throw new Error('Invalid data.bot.forbidSpecialChars data type')
+  }
+
+  // noDuplicate comes with livechat 11.1.0
+  botData.noDuplicate ??= {
+    enabled: false,
+    reason: '',
+    delay: 60,
+    applyToModerators: false
+  }
+  if (!_assertObjectType(botData.noDuplicate)) {
+    throw new Error('Invalid data.bot.noDuplicate data type')
   }
 
   // terms not present in livechat <= 10.2.0
@@ -76,6 +87,7 @@ async function sanitizeChannelConfigurationOptions (
       nickname: _readSimpleInput(botData, 'nickname', true),
       forbiddenWords: await _readForbiddenWords(botData),
       forbidSpecialChars: await _readForbidSpecialChars(botData),
+      noDuplicate: await _readNoDuplicate(botData),
       quotes: _readQuotes(botData),
       commands: _readCommands(botData)
       // TODO: bannedJIDs
@@ -262,6 +274,21 @@ async function _readForbidSpecialChars (
     reason: _readSimpleInput(botData.forbidSpecialChars, 'reason'),
     tolerance: _readInteger(botData.forbidSpecialChars, 'tolerance', 0, 10),
     applyToModerators: _readBoolean(botData.forbidSpecialChars, 'applyToModerators')
+  }
+  return result
+}
+
+async function _readNoDuplicate (
+  botData: Record<string, unknown>
+): Promise<ChannelConfigurationOptions['bot']['noDuplicate']> {
+  if (!_assertObjectType(botData.noDuplicate)) {
+    throw new Error('Invalid forbidSpecialChars data')
+  }
+  const result: ChannelConfigurationOptions['bot']['noDuplicate'] = {
+    enabled: _readBoolean(botData.noDuplicate, 'enabled'),
+    reason: _readSimpleInput(botData.noDuplicate, 'reason'),
+    delay: _readInteger(botData.noDuplicate, 'delay', 0, 24 * 3600),
+    applyToModerators: _readBoolean(botData.noDuplicate, 'applyToModerators')
   }
   return result
 }

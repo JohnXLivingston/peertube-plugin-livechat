@@ -50,6 +50,12 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
         tolerance: 0,
         applyToModerators: false
       },
+      noDuplicate: {
+        enabled: false,
+        reason: '',
+        delay: 60,
+        applyToModerators: false
+      },
       quotes: [],
       commands: []
     },
@@ -123,6 +129,11 @@ function channelConfigurationOptionsToBotRoomConf (
     const id = 'forbid_special_chars'
     handlersIds.set(id, true)
     handlers.push(_getForbidSpecialCharsHandler(id, channelConfigurationOptions.bot.forbidSpecialChars))
+  }
+  if (channelConfigurationOptions.bot.noDuplicate.enabled) {
+    const id = 'no_duplicate'
+    handlersIds.set(id, true)
+    handlers.push(_getNoDuplicateHandler(id, channelConfigurationOptions.bot.noDuplicate))
   }
   channelConfigurationOptions.bot.quotes.forEach((v, i) => {
     const id = 'quote_' + i.toString()
@@ -251,6 +262,23 @@ function _getForbidSpecialCharsHandler (
   }
   handler.options.rules.push(rule)
   handler.options.applyToModerators = !!forbidSpecialChars.applyToModerators
+  return handler
+}
+
+function _getNoDuplicateHandler (
+  id: string,
+  noDuplicate: ChannelConfigurationOptions['bot']['noDuplicate']
+): ConfigHandler {
+  const handler: ConfigHandler = {
+    type: 'no-duplicate',
+    id,
+    enabled: true,
+    options: {
+      reason: noDuplicate.reason,
+      delay: noDuplicate.delay,
+      applyToModerators: !!noDuplicate.applyToModerators
+    }
+  }
   return handler
 }
 

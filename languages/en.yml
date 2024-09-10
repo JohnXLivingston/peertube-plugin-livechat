@@ -662,3 +662,11 @@ livechat_configuration_channel_special_chars_tolerance_label: Tolerance
 livechat_configuration_channel_special_chars_tolerance_desc: Number of special characters to accept before deleting messages.
 
 feature_comes_with: This feature comes with the livechat plugin version X.X.X.
+
+livechat_configuration_channel_no_duplicate_label: "No duplicate message"
+livechat_configuration_channel_no_duplicate_desc: |
+  By enabling this options, the moderation bot will automatically moderate duplicate messages.
+  That means if a user send the same message twice within X seconds, the second message will be deleted.
+livechat_configuration_channel_no_duplicate_delay_label: Time interval
+livechat_configuration_channel_no_duplicate_delay_desc: |
+  The interval, in seconds, during which a user can't send again the same message.

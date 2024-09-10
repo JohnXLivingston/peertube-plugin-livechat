@@ -68,6 +68,7 @@ export class ChannelDetailsService {
     if (botConf.enabled) {
       propertiesError['bot.nickname'] = []
       propertiesError['bot.forbidSpecialChars.tolerance'] = []
+      propertiesError['bot.noDuplicate.delay'] = []
 
       if (/[^\p{L}\p{N}\p{Z}_-]/u.test(botConf.nickname ?? '')) {
         propertiesError['bot.nickname'].push(ValidationErrorType.WrongFormat)
@@ -85,6 +86,21 @@ export class ChannelDetailsService {
           forbidSpecialCharsTolerance > 10
         ) {
           propertiesError['bot.forbidSpecialChars.tolerance'].push(ValidationErrorType.NotInRange)
+        }
+      }
+
+      if (botConf.noDuplicate.enabled) {
+        const noDuplicateDelay = channelConfigurationOptions.bot.noDuplicate.delay
+        if (
+          (typeof noDuplicateDelay !== 'number') ||
+          isNaN(noDuplicateDelay)
+        ) {
+          propertiesError['bot.noDuplicate.delay'].push(ValidationErrorType.WrongType)
+        } else if (
+          noDuplicateDelay < 0 ||
+          noDuplicateDelay > 24 * 3600
+        ) {
+          propertiesError['bot.noDuplicate.delay'].push(ValidationErrorType.NotInRange)
         }
       }
 

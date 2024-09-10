@@ -461,6 +461,126 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
           }
 
           <livechat-configuration-section-header
+            .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_NO_DUPLICATE_LABEL)}
+            .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_NO_DUPLICATE_DESC)}
+            .helpPage=${'documentation/user/streamers/bot/no_duplicate'}>
+          </livechat-configuration-section-header>
+          <div class="form-group">
+            <label>
+              <input
+                type="checkbox"
+                name="no_duplicate"
+                id="peertube-livechat-no-duplicate"
+                @input=${(event: InputEvent) => {
+                    if (event?.target && el.channelConfiguration) {
+                      el.channelConfiguration.configuration.bot.noDuplicate.enabled =
+                        (event.target as HTMLInputElement).checked
+                    }
+                    el.requestUpdate('channelConfiguration')
+                  }
+                }
+                value="1"
+                ?checked=${el.channelConfiguration?.configuration.bot.noDuplicate.enabled}
+              />
+              ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_NO_DUPLICATE_LABEL)}
+            </label>
+          </div>
+          ${!el.channelConfiguration?.configuration.bot.noDuplicate.enabled
+            ? ''
+            : html`
+              <div class="form-group">
+                <label>
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_NO_DUPLICATE_DELAY_LABEL)}
+                  <input
+                    type="number"
+                    name="no_duplicate_delay"
+                    class=${classMap(
+                      Object.assign(
+                        { 'form-control': true },
+                        el.getInputValidationClass('bot.noDuplicate.delay')
+                      )
+                    )}
+                    min="0"
+                    max="10"
+                    id="peertube-livechat-no-duplicate-delay"
+                    aria-describedby="peertube-livechat-no-duplicate-delay-feedback"
+                    @input=${(event: InputEvent) => {
+                        if (event?.target && el.channelConfiguration) {
+                          el.channelConfiguration.configuration.bot.noDuplicate.delay =
+                            Number((event.target as HTMLInputElement).value)
+                        }
+                        el.requestUpdate('channelConfiguration')
+                      }
+                    }
+                    value="${el.channelConfiguration?.configuration.bot.noDuplicate.delay ?? '0'}"
+                  />
+                </label>
+                <small class="form-text text-muted">
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_NO_DUPLICATE_DELAY_DESC)}
+                </small>
+                ${el.renderFeedback('peertube-livechat-no-duplicate-delay-feedback',
+                  'bot.noDuplicate.delay')
+                }
+              </div>
+              <div class="form-group">
+                <label>
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_RETRACTATION_REASON_LABEL)}
+                  <input
+                    type="text"
+                    name="no_duplicate_reason"
+                    class=${classMap(
+                      Object.assign(
+                        { 'form-control': true },
+                        el.getInputValidationClass('bot.noDuplicate.reason')
+                      )
+                    )}
+                    id="peertube-livechat-no-duplicate-reason"
+                    aria-describedby="peertube-livechat-no-duplicate-reason-feedback"
+                    @input=${(event: InputEvent) => {
+                        if (event?.target && el.channelConfiguration) {
+                          el.channelConfiguration.configuration.bot.noDuplicate.reason =
+                            (event.target as HTMLInputElement).value
+                        }
+                        el.requestUpdate('channelConfiguration')
+                      }
+                    }
+                    value="${el.channelConfiguration?.configuration.bot.noDuplicate.reason ?? ''}"
+                  />
+                </label>
+                <small class="form-text text-muted">
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_RETRACTATION_REASON_DESC)}
+                </small>
+                ${el.renderFeedback('peertube-livechat-no-duplicate-reason-feedback',
+                  'bot.noDuplicate.reason')
+                }
+              </div>
+              <div class="form-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="no_duplicate_applyToModerators"
+                    id="peertube-livechat-no-duplicate-applyToModerators"
+                    @input=${(event: InputEvent) => {
+                        if (event?.target && el.channelConfiguration) {
+                          el.channelConfiguration.configuration.bot.noDuplicate.applyToModerators =
+                            (event.target as HTMLInputElement).checked
+                        }
+                        el.requestUpdate('channelConfiguration')
+                      }
+                    }
+                    value="1"
+                    ?checked=${el.channelConfiguration?.configuration.bot.noDuplicate.applyToModerators}
+                  />
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_LABEL)}
+                </label>
+                <small class="form-text text-muted">
+                  ${ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_DESC)}
+                </small>
+              </div>
+              `
+          }
+
+          <livechat-configuration-section-header
             .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
             .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
             .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>

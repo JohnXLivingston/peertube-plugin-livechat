@@ -97,6 +97,7 @@ interface ChannelConfigurationOptions {
     quotes: ChannelQuotes[]
     commands: ChannelCommands[]
     forbidSpecialChars: ChannelForbidSpecialChars
+    noDuplicate: ChannelNoDuplicate
     // TODO: bannedJIDs: string[]
   }
   slowMode: {
@@ -137,6 +138,13 @@ interface ChannelForbidSpecialChars {
   enabled: boolean
   tolerance: number
   reason: string
+  applyToModerators: boolean
+}
+
+interface ChannelNoDuplicate {
+  enabled: boolean
+  reason: string
+  delay: number
   applyToModerators: boolean
 }
 
