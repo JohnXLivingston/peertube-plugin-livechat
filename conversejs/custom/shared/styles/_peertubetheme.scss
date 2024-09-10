@@ -198,7 +198,7 @@
   }
 
   // Bigger occupants sidebar when width is not big enough.
-  @media screen and (max-width: 576px) {
+  @media screen and (width <= 576px) {
     .chatroom .box-flyout .chatroom-body .occupants {
       min-width: 50%;
     }

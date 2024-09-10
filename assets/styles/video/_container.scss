@@ -34,7 +34,7 @@
     min-height: max(30vh, 300px);
   }
 
-  @media screen and (orientation: portrait) and (max-width: 767px) {
+  @media screen and (orientation: portrait) and (width <= 767px) {
     /* On small screen, and when portrait mode, we are giving the chat more vertical space.
         It should go under the video.
      */
