@@ -93,10 +93,16 @@ To facilitate translators work, avoid making too long paragraphs.
 For now, it is not possible to use Markdown tables: the translation tools will break them.
 
 {{% notice warning %}}
-There may be links to documentation elsewhere on the web.
+There may be links to this documentation elsewhere on the web.
 Try not to change the urls of the documentation pages.
 Or at the very least, put links to the new location on the previous url.
 {{% /notice %}}
+
+When a new feature is released, you can use the `livechat_version_notice` short code to display an infobox with the version with which the features is available.
+This short code takes the version number as parameter.
+Here is an example:
+
+{{% livechat_version_notice 12.0.0 %}}
 
 ### What if I can't use hugo and/or po4a?
 
