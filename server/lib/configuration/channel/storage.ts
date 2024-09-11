@@ -7,6 +7,10 @@ import type { ChannelConfigurationOptions } from '../../../../shared/lib/types'
 import type { ChannelCommonRoomConf } from '../../configuration/bot'
 import { RoomChannel } from '../../room-channel'
 import { sanitizeChannelConfigurationOptions } from '../../configuration/channel/sanitize'
+import {
+  forbidSpecialCharsDefaultTolerance,
+  noDuplicateDefaultDelay
+} from '../../../../shared/lib/constants'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -47,13 +51,13 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
       forbidSpecialChars: {
         enabled: false,
         reason: '',
-        tolerance: 0,
+        tolerance: forbidSpecialCharsDefaultTolerance,
         applyToModerators: false
       },
       noDuplicate: {
         enabled: false,
         reason: '',
-        delay: 60,
+        delay: noDuplicateDefaultDelay,
         applyToModerators: false
       },
       quotes: [],

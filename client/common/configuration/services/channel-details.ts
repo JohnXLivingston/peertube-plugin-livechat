@@ -11,7 +11,7 @@ import type {
 import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
 import { getBaseRoute } from '../../../utils/uri'
 import { maxEmojisPerChannel } from 'shared/lib/emojis'
-import { channelTermsMaxLength } from 'shared/lib/constants'
+import { channelTermsMaxLength, noDuplicateMaxDelay, forbidSpecialCharsMaxTolerance } from 'shared/lib/constants'
 
 export class ChannelDetailsService {
   public _registerClientOptions: RegisterClientOptions
@@ -83,7 +83,7 @@ export class ChannelDetailsService {
           propertiesError['bot.forbidSpecialChars.tolerance'].push(ValidationErrorType.WrongType)
         } else if (
           forbidSpecialCharsTolerance < 0 ||
-          forbidSpecialCharsTolerance > 10
+          forbidSpecialCharsTolerance > forbidSpecialCharsMaxTolerance
         ) {
           propertiesError['bot.forbidSpecialChars.tolerance'].push(ValidationErrorType.NotInRange)
         }
@@ -98,7 +98,7 @@ export class ChannelDetailsService {
           propertiesError['bot.noDuplicate.delay'].push(ValidationErrorType.WrongType)
         } else if (
           noDuplicateDelay < 0 ||
-          noDuplicateDelay > 24 * 3600
+          noDuplicateDelay > noDuplicateMaxDelay
         ) {
           propertiesError['bot.noDuplicate.delay'].push(ValidationErrorType.NotInRange)
         }

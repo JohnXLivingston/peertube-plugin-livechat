@@ -4,7 +4,13 @@
 
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { ChannelConfigurationOptions } from '../../../../shared/lib/types'
-import { channelTermsMaxLength } from '../../../../shared/lib/constants'
+import {
+  channelTermsMaxLength,
+  forbidSpecialCharsMaxTolerance,
+  forbidSpecialCharsDefaultTolerance,
+  noDuplicateDefaultDelay,
+  noDuplicateMaxDelay
+} from '../../../../shared/lib/constants'
 
 /**
  * Sanitize data so that they can safely be used/stored for channel configuration configuration.
@@ -53,7 +59,7 @@ async function sanitizeChannelConfigurationOptions (
   botData.forbidSpecialChars ??= {
     enabled: false,
     reason: '',
-    tolerance: 0,
+    tolerance: forbidSpecialCharsDefaultTolerance,
     applyToModerators: false
   }
   if (!_assertObjectType(botData.forbidSpecialChars)) {
@@ -64,7 +70,7 @@ async function sanitizeChannelConfigurationOptions (
   botData.noDuplicate ??= {
     enabled: false,
     reason: '',
-    delay: 60,
+    delay: noDuplicateDefaultDelay,
     applyToModerators: false
   }
   if (!_assertObjectType(botData.noDuplicate)) {
@@ -272,7 +278,7 @@ async function _readForbidSpecialChars (
   const result: ChannelConfigurationOptions['bot']['forbidSpecialChars'] = {
     enabled: _readBoolean(botData.forbidSpecialChars, 'enabled'),
     reason: _readSimpleInput(botData.forbidSpecialChars, 'reason'),
-    tolerance: _readInteger(botData.forbidSpecialChars, 'tolerance', 0, 10),
+    tolerance: _readInteger(botData.forbidSpecialChars, 'tolerance', 0, forbidSpecialCharsMaxTolerance),
     applyToModerators: _readBoolean(botData.forbidSpecialChars, 'applyToModerators')
   }
   return result
@@ -287,7 +293,7 @@ async function _readNoDuplicate (
   const result: ChannelConfigurationOptions['bot']['noDuplicate'] = {
     enabled: _readBoolean(botData.noDuplicate, 'enabled'),
     reason: _readSimpleInput(botData.noDuplicate, 'reason'),
-    delay: _readInteger(botData.noDuplicate, 'delay', 0, 24 * 3600),
+    delay: _readInteger(botData.noDuplicate, 'delay', 0, noDuplicateMaxDelay),
     applyToModerators: _readBoolean(botData.noDuplicate, 'applyToModerators')
   }
   return result

@@ -10,6 +10,7 @@ import type { DynamicFormHeader, DynamicFormSchema } from '../../../lib/elements
 import { ptTr } from '../../../lib/directives/translation'
 import { html, TemplateResult } from 'lit'
 import { classMap } from 'lit/directives/class-map.js'
+import { noDuplicateMaxDelay, forbidSpecialCharsMaxTolerance } from 'shared/lib/constants'
 
 export function tplChannelConfiguration (el: ChannelConfigurationElement): TemplateResult {
   const tableHeaderList: Record<string, DynamicFormHeader> = {
@@ -381,7 +382,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                       )
                     )}
                     min="0"
-                    max="10"
+                    max="${forbidSpecialCharsMaxTolerance}"
                     id="peertube-livechat-forbid-special-chars-tolerance"
                     aria-describedby="peertube-livechat-forbid-special-chars-tolerance-feedback"
                     @input=${(event: InputEvent) => {
@@ -501,7 +502,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                       )
                     )}
                     min="0"
-                    max="10"
+                    max="${noDuplicateMaxDelay.toString()}"
                     id="peertube-livechat-no-duplicate-delay"
                     aria-describedby="peertube-livechat-no-duplicate-delay-feedback"
                     @input=${(event: InputEvent) => {
