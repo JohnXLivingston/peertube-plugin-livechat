@@ -1,16 +1,9 @@
 {
-	"extends": "@tsconfig/node12/tsconfig.json",
+	"extends": "@tsconfig/node16/tsconfig.json",
 	"compilerOptions": {
-		"moduleResolution": "node", // Tell tsc to look in node_modules for modules
-		"strict": true, // That implies alwaysStrict, noImplicitAny, noImplicitThis
-
-		"alwaysStrict": true, // should already be true because of strict:true
-		"noImplicitAny": true, // should already be true because of strict:true
-		"noImplicitThis": true, // should already be true because of strict:true
 		"noImplicitReturns": true,
     "noImplicitOverride": true,
-		"strictBindCallApply": true, // should already be true because of strict:true
-		"noUnusedLocals": false, // works better as a linter error/warning
+		"noUnusedLocals": true,
 		"removeComments": true,
 		"sourceMap": true,
 

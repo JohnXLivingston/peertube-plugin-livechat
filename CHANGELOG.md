@@ -5,6 +5,11 @@
 TODO Before releasing:
 * update ConverseJS with latest merges.
 
+### Importante Notes
+
+This version requires Peertube 5.2.0 or superior.
+It also requires NodeJS 16 or superior (same as Peertube 5.2.0.)
+
 ### New features
 
 * #131: Emoji only mode.

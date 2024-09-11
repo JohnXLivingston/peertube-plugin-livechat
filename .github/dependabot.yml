@@ -13,9 +13,6 @@ updates:
   - dependency-name: typescript
     versions:
     - ">=5.6.0" # linting libs are not ready for 5.6
-  - dependency-name: "@tsconfig/node12"
-    versions:
-    - ">=2.0.0" # breaks the config, must see why before updating
   - dependency-name: "@types/nodes"
     versions:
     - ">=17.0.0" # must be set to the Peertube required version.
