@@ -29,8 +29,8 @@ CONVERSE_COMMIT="9952046d580bc2930e29833f4c9987a3d4c95bc2"
 
 # 2024-09-03: include badges short label and quick fix for sendMessage button
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
-CONVERSE_VERSION="livechat-11.0.1"
-CONVERSE_COMMIT=""
+CONVERSE_VERSION="livechat-12.0.0"
+CONVERSE_COMMIT="a910586fa83bd64db7182add6fc4bbf71cef0ae8"
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"

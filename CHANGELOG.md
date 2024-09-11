@@ -18,6 +18,7 @@ It also requires NodeJS 16 or superior (same as Peertube 5.2.0.)
 
 ### Minor changes and fixes
 
+* Updating ConverseJS (v11 WIP) with latest fixes.
 * Various translation updates.
 * Using Typescript 5.5.4, and Eslint 8.57.0 (with new ruleset).
 * Fix race condition in bot/ctl.
