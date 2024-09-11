@@ -419,8 +419,7 @@ livechat_configuration_channel_forbidden_words_regexp_desc: "By checking this op
 livechat_configuration_channel_forbidden_words_label_label: "Label"
 livechat_configuration_channel_forbidden_words_label_desc: "Label for this forbidden
   words rule"
-livechat_configuration_applytomoderators_label: "Also moderate
-  messages from moderators"
+livechat_configuration_applytomoderators_label: "Also moderate messages from moderators"
 livechat_configuration_applytomoderators_desc: |
   By default, moderator messages will not be affected by this feature.
   By checking this option, messages from moderators will also be deleted.
@@ -659,7 +658,8 @@ livechat_configuration_channel_special_chars_desc: |
   By enabling this option, the moderation bot will automatically delete messages containing more than X special characters.
   Special characters are those that don't fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
 livechat_configuration_channel_special_chars_tolerance_label: Tolerance
-livechat_configuration_channel_special_chars_tolerance_desc: Number of special characters to accept before deleting messages.
+livechat_configuration_channel_special_chars_tolerance_desc: Number of special characters
+  to accept in a message without deleting it.
 
 feature_comes_with: This feature comes with the livechat plugin version X.X.X.
 
