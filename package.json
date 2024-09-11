@@ -35,7 +35,7 @@
     "log-rotate": "^0.2.8",
     "openid-client": "^5.7.0",
     "validate-color": "^2.2.4",
-    "xmppjs-chat-bot": "^0.4.0"
+    "xmppjs-chat-bot": "^0.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
