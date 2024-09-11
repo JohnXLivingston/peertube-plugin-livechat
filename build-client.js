@@ -15,7 +15,7 @@ const clientFiles = [
   'admin-plugin-client-plugin'
 ]
 
-function loadLocs() {
+function loadLocs(globalFile) {
   // Loading english strings, so we can inject them as constants.
   const refFile = path.resolve(__dirname, 'dist', 'languages', 'en.reference.json')
   if (!fs.existsSync(refFile)) {
@@ -25,7 +25,6 @@ function loadLocs() {
 
   // Reading client/@types/global.d.ts, to have a list of needed localized strings.
   const r = {}
-  const globalFile = path.resolve(__dirname, 'client', '@types', 'global.d.ts')
   const globalFileContent = '' + fs.readFileSync(globalFile)
   const matches = globalFileContent.matchAll(/^declare const LOC_(\w+)\b/gm)
   for (const match of matches) {
@@ -41,7 +40,7 @@ function loadLocs() {
 const define = Object.assign({
   PLUGIN_CHAT_PACKAGE_NAME: JSON.stringify(packagejson.name),
   PLUGIN_CHAT_SHORT_NAME: JSON.stringify(packagejson.name.replace(/^peertube-plugin-/, ''))
-}, loadLocs())
+}, loadLocs(path.resolve(__dirname, 'client', '@types', 'global.d.ts')))
 
 const configs = clientFiles.map(f => ({
   entryPoints: [ path.resolve(__dirname, 'client', f + '.ts') ],
@@ -59,8 +58,14 @@ const configs = clientFiles.map(f => ({
   outfile: path.resolve(__dirname, 'dist/client', f + '.js'),
 }))
 
+const defineBuiltin = Object.assign(
+  {},
+  loadLocs(path.resolve(__dirname, 'conversejs', 'lib', '@types', 'global.d.ts'))
+)
+
 configs.push({
   entryPoints: ["./conversejs/builtin.ts"],
+  define: defineBuiltin,
   bundle: true,
   minify: true,
   sourcemap,

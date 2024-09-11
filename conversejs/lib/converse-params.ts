@@ -86,7 +86,8 @@ function defaultConverseParams (
       'livechatDisconnectOnUnloadPlugin',
       'converse-slow-mode',
       'livechatEmojis',
-      'converse-moderation-delay'
+      'converse-moderation-delay',
+      'livechatAnnouncementsPlugin'
     ],
     show_retraction_warning: false, // No need to use this warning (except if we open to external clients?)
     muc_show_info_messages: mucShowInfoMessages,

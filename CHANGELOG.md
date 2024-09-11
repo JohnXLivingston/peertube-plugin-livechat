@@ -3,7 +3,7 @@
 ## 12.0.0 (Not Released Yet)
 
 TODO Before releasing:
-* update ConverseJS with latest merges.
+* update ConverseJS with latest merges (there are currently some known bugs).
 
 ### Importante Notes
 
@@ -15,6 +15,7 @@ It also requires NodeJS 16 or superior (same as Peertube 5.2.0.)
 * #131: Emoji only mode.
 * #516: new option for the moderation bot: forbid duplicate messages.
 * #517: new option for the moderation bot: forbid messages with too many special characters.
+* #518: moderators can send announcements and highlighted messages.
 
 ### Minor changes and fixes
 

@@ -63,7 +63,10 @@ const locKeys = [
   'search_occupant_message',
   'message_search',
   'message_search_original_nick',
-  'emoji_only_info'
+  'emoji_only_info',
+  'announcements_message_type_standard',
+  'announcements_message_type_announcement',
+  'announcements_message_type_highlight'
 ]
 
 module.exports = locKeys

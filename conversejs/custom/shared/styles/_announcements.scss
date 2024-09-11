@@ -1,0 +1,42 @@
+/*
+ * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+// FIXME: this should be with the livechat-announcement plugin.
+// But for now, there is no way to build scss from there.
+
+#conversejs {
+  .message.chat-msg {
+    &.livechat-announcement {
+      --livechat-announcement-color: #000;
+      --livechat-announcement-background-color: #dbf2d8;
+      --livechat-announcement-border-color: #2ab218;
+
+      converse-chat-message-body::first-line {
+        // Different color for the title line
+        color: #FFF;
+        background-color: #2ab218;
+        text-align: center;
+      }
+    }
+
+    &.livechat-highlight {
+      --livechat-announcement-color: #000;
+      --livechat-announcement-background-color: #dce8fa;
+      --livechat-announcement-border-color: #3075e5;
+    }
+
+    &.livechat-announcement,
+    &.livechat-highlight {
+      converse-chat-message-body {
+        border: 2px solid var(--livechat-announcement-border-color);
+        color: var(--livechat-announcement-color);
+        background-color: var(--livechat-announcement-background-color);
+        min-width: 50%;
+        padding: 2em;
+      }
+    }
+  }
+}

@@ -23,6 +23,7 @@ import { livechatViewerModePlugin } from './lib/plugins/livechat-viewer-mode'
 import { livechatMiniMucHeadPlugin } from './lib/plugins/livechat-mini-muc-head'
 import { livechatEmojisPlugin } from './lib/plugins/livechat-emojis'
 import { moderationDelayPlugin } from './lib/plugins/moderation-delay'
+import { livechatAnnouncementsPlugin } from './lib/plugins/livechat-announcements'
 
 declare global {
   interface Window {
@@ -37,6 +38,7 @@ declare global {
         html: Function
         sizzle: Function
         dayjs: Function
+        __: Function
       }
     }
     initConversePlugins: typeof initConversePlugins
@@ -76,6 +78,8 @@ function initConversePlugins (peertubeEmbedded: boolean): void {
   converse.plugins.add('livechatViewerModePlugin', livechatViewerModePlugin)
 
   converse.plugins.add('converse-moderation-delay', moderationDelayPlugin)
+
+  converse.plugins.add('livechatAnnouncementsPlugin', livechatAnnouncementsPlugin)
 }
 window.initConversePlugins = initConversePlugins
 

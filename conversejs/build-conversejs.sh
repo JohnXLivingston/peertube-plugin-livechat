@@ -18,8 +18,8 @@ set -x
 CONVERSE_VERSION="v11.0.0"
 CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 # You can eventually set CONVERSE_COMMIT to a specific commit ID, if you want to apply some patches.
-# 2024-09-02: using Converse upstream (v11 WIP).
-CONVERSE_COMMIT="9952046d580bc2930e29833f4c9987a3d4c95bc2"
+# 2024-09-11: using Converse upstream (v11 WIP).
+CONVERSE_COMMIT="b5452466b90ff646e9ba5aa19e572a8ba958db83"
 
 # It is possible to use another repository, if we want some customization that are not upstream (yet):
 # CONVERSE_VERSION="livechat"
@@ -30,7 +30,7 @@ CONVERSE_COMMIT="9952046d580bc2930e29833f4c9987a3d4c95bc2"
 # 2024-09-03: include badges short label and quick fix for sendMessage button
 CONVERSE_REPO="https://github.com/JohnXLivingston/converse.js"
 CONVERSE_VERSION="livechat-12.0.0"
-CONVERSE_COMMIT="a910586fa83bd64db7182add6fc4bbf71cef0ae8"
+# CONVERSE_COMMIT=""
 
 rootdir="$(pwd)"
 src_dir="$rootdir/conversejs"
