@@ -24,6 +24,7 @@ It also requires NodeJS 16 or superior (same as Peertube 5.2.0.)
 * Fix race condition in bot/ctl.
 * Various type improvements.
 * Update dependencies.
+* Fix emoji picker colors and size.
 
 ## 11.0.1
 

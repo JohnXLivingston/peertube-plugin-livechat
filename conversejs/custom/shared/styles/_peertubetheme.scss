@@ -51,6 +51,10 @@
 
     // Fixing emoji colors for some emoji like «motorcycle»
     converse-emoji-picker {
+      // Must set display block. Without this, Converse defined max-width will not apply.
+      // Don't really know why it is working in pure ConverseJs and not in livechat.
+      display: block;
+
       .emoji-picker {
         .insert-emoji {
           a {
@@ -60,13 +64,17 @@
       }
 
       .emoji-picker__header {
-        color: var(--peertube-main-background);
-        background-color: var(--peertube-main-foreground);
+        background-color: var(--peertube-main-background);
+        color: var(--peertube-main-foreground);
+
+        .emoji-search {
+          color: currentcolor;
+        }
 
         ul {
           .emoji-category {
-            color: var(--peertube-main-background);
-            background-color: var(--peertube-main-foreground);
+            background-color: var(--peertube-main-background);
+            color: var(--peertube-main-foreground);
 
             a {
               color: currentcolor;

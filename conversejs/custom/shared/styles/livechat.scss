@@ -229,3 +229,27 @@ body.converse-embedded {
     }
   }
 }
+
+// When livechat has not many height, must reduce the emoji picker height.
+/* stylelint-disable-next-line no-duplicate-selectors */
+#conversejs {
+  &[livechat-converse-root-height="small"] {
+    converse-emoji-picker {
+      converse-emoji-picker-content {
+        .emoji-picker__lists {
+          height: 2em;
+        }
+      }
+    }
+  }
+
+  &[livechat-converse-root-height="medium"] {
+    converse-emoji-picker {
+      converse-emoji-picker-content {
+        .emoji-picker__lists {
+          height: 4em;
+        }
+      }
+    }
+  }
+}
