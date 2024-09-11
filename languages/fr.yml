@@ -316,14 +316,14 @@ livechat_configuration_channel_forbidden_words_desc2: "Un mot ou une expression 
   ligne. Si vous mettez plusieurs mots sur une même ligne, seuls les messages contenant
   la séquence entière seront supprimés.\n"
 livechat_configuration_channel_retractation_reason_label: Raison
-livechat_configuration_channel_retractation_reason_desc: Raison à affiche à côté
-  des messages supprimés
+livechat_configuration_channel_retractation_reason_desc: Raison à affiche à côté des
+  messages supprimés
 livechat_configuration_channel_forbidden_words_regexp_label: Considérer comme une
   expression régulière
 livechat_configuration_channel_forbidden_words_regexp_desc: En cochant cette option,
   vous pouvez utiliser des expressions régulières.
-livechat_configuration_applytomoderators_label: Également
-  modérer les messages des modérateur⋅rices
+livechat_configuration_applytomoderators_label: Également modérer les messages des
+  modérateur⋅rices
 livechat_configuration_channel_quote_label: Timer
 livechat_configuration_channel_quote_desc: "Vous pouvez configurer quelques timers
   qui enverrons des messages à intervalle régulier.\nCes messages seront envoyés par
@@ -351,8 +351,9 @@ livechat_configuration_channel_forbidden_words_desc: "Vous pouvez configurer que
   mots seront instantanément supprimés).\nVous pouvez aussi ajouter une raison optionnelle,
   qui sera affichée à la place des messages supprimés.\nQuelques exemples de configuration
   sont fournis sur la page de documentation.\n"
-livechat_configuration_applytomoderators_desc: "Par défaut,
-  les messages des modérateur⋅rices ne seront pas affectés par cette fonctionnalité.\nEn cochant cette option, leur messages seront également supprimés.\n"
+livechat_configuration_applytomoderators_desc: "Par défaut, les messages des modérateur⋅rices
+  ne seront pas affectés par cette fonctionnalité.\nEn cochant cette option, leur
+  messages seront également supprimés.\n"
 livechat_configuration_channel_command_desc: "Vous pouvez configurer le bot pour répondre
   à des commandes.\nUne commande est un message qui commence par un \"!\", comme par
   exemple \"!help\" qui appellera la commande \"help\".\n"
@@ -620,3 +621,35 @@ prosody_firewall_name_desc: "Ne peut contenir que des caractères alphanumériqu
 prosody_firewall_content: Contenu du fichier
 chat: Tchat
 feature_comes_with: Cette fonctionnalité arrive avec le plugin livechat version X.X.X.
+emoji_only_mode_title: Mode Émojis Uniquement
+emoji_only_mode_desc_3: "Pour activer ou désactiver ce mode, vous pouvez utiliser
+  le formulaire de configuration du salon.\nSi vous souhaitez l'activer pour tous
+  vos salons de discussion en même temps, vous pouvez utiliser le bouton ci-dessous.\n"
+livechat_configuration_channel_special_chars_label: Interdire les caractères spéciaux
+livechat_configuration_channel_special_chars_desc: "En activant cette option, le robot
+  de modération supprimera automatiquement les messages contenant plus de X caractères
+  spéciaux.\nLes caractères spéciaux sont ceux qui n'entrent pas dans l'une de ces
+  catégories : lettres, chiffres, symboles de ponctuation, symboles monétaires, émojis.\n"
+livechat_configuration_channel_special_chars_tolerance_desc: Nombre de caractères
+  spéciaux à accepter dans un message avant de le supprimer.
+livechat_configuration_channel_special_chars_tolerance_label: Tolérance
+livechat_configuration_channel_no_duplicate_delay_label: Intervalle de temps
+livechat_configuration_channel_no_duplicate_delay_desc: "Intervalle, en secondes,
+  pendant lequel un⋅e utilisateur⋅rice ne peut pas renvoyer le même message.\n"
+emoji_only_info: Le mode Émoji Uniquement est activé, vous ne pouvez utiliser que
+  des émoji dans vos messages.
+emoji_only_mode_desc_1: "Vous pouvez activer un mode \"Émoji Uniquement\" dans vos
+  salons de discussion.\nLorsque ce mode est activé, les participant⋅es ne peuvent
+  envoyer que des émojis (standards ou émojis personnalisés de votre chaîne).\nLes
+  modérateur⋅rices ne sont pas concerné⋅es par cette limitation.\n"
+emoji_only_mode_desc_2: "Ce mode peut être utile par exemple :\n<ul>\n  <li>Pour éviter
+  le spam ou les messages offensants lorsque vous n'êtes pas là pour modérer.</li>\n\
+  \  <li>Lorsqu'il y a trop de participant⋅es qui parlent, et que vous ne pouvez plus
+  modérer correctement.</li>\n</ul>\n"
+emoji_only_enable_all_rooms: Activer le mode Émoji Uniquement sur tous les salons
+  de discussion de la chaîne
+livechat_configuration_channel_no_duplicate_label: Pas de message en double
+livechat_configuration_channel_no_duplicate_desc: "En activant cette option, le robot
+  de modération modérera automatiquement les messages en double.\nCela signifie que
+  si un⋅e utilisateur⋅rice envoie deux fois le même message en l'espace de X secondes,
+  le deuxième message sera supprimé.\n"

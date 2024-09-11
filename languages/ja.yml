@@ -391,3 +391,8 @@ livechat_configuration_applytomoderators_desc: "初期状態では、モデレ�
 livechat_configuration_channel_special_chars_label: 特殊文字を禁止する
 livechat_configuration_channel_special_chars_tolerance_desc: 削除しない特殊文字の文字数を指定してください。
 feature_comes_with: この機能は、livechatプラグイン バージョン X.X.Xにて登場します。
+livechat_configuration_channel_no_duplicate_delay_label: 間隔
+livechat_configuration_channel_no_duplicate_delay_desc: "ユーザーが同じメッセージを再度送信するために空けなければいけない時間を秒単位で指定してください。\n"
+livechat_configuration_channel_no_duplicate_label: 重複したメッセージはありません
+livechat_configuration_channel_no_duplicate_desc: "このオプションを有効にすると、モデレーションBotが重複したメッセージに自動的に対応します。\n\
+  これは、もしユーザーが同じメッセージX秒以内に2回送信した場合に、2回目のメッセージを削除します。\n"
