@@ -63,6 +63,7 @@ Tasks / To-do listsYou can handle tasks and task lists with your moderation team
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
 Special charactersThe bot can automatically moderate messages containing too many special characters.
+No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.`,description:"Plugin peertube-plugin-livechat user documentation",tags:[],title:"Dokumentacija za korisnike",uri:"/peertube-plugin-livechat/hr/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike",content:`Joining chat rooms When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:
@@ -222,7 +223,7 @@ Some of them are “officials” plugins, others are specific to this plugin.
 server The server folder contains the backend source code.
 shared The shared folder contains comme code that will be used both on frontend and backend.
 support/documentation The support/documentation contains the documentation source code.
-vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/hr/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers > Chat bot",content:`Forbid special characters Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.1.0. Konfiguracija By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
+vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/hr/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers > Chat bot",content:`Forbid special characters Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Konfiguracija By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
 Tolerance Number of special characters to accept before deleting messages.
 Razlog Reason to display besides deleted messages
 Također moderiraj porukama moderatora By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Installation guide",content:`I just installed/upgraded the plugin, but nothing happens If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, …), just try to reload the page.
@@ -234,7 +235,10 @@ In such case, try changing the “Peertube URL za API pozive” settings, by set
 Za više informacija pogledaj stranicu pomoći za ovu postavku.
 Websocket If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue. Since Peertube version 5.0.0, there are some additional configuration to do on the server side. Check with the instance administrators that they did not forgot to apply changes listed in the Peertube v5.0.0 release notes.
 You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection.
-If you can’t fix this immediatly, you can disable Websocket by unchecking “Onemogući Websocket” in the plugin setting page. In such case, you should also check “Nemoj objaviti podatke chata”, as chat federation won’t work without Websocket.`,description:"Some classic mistakes and workarounds.",tags:[],title:"Troubleshooting",uri:"/peertube-plugin-livechat/hr/documentation/installation/troubleshooting/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za administratore",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
+If you can’t fix this immediatly, you can disable Websocket by unchecking “Onemogući Websocket” in the plugin setting page. In such case, you should also check “Nemoj objaviti podatke chata”, as chat federation won’t work without Websocket.`,description:"Some classic mistakes and workarounds.",tags:[],title:"Troubleshooting",uri:"/peertube-plugin-livechat/hr/documentation/installation/troubleshooting/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers > Chat bot",content:`No duplicate message Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Konfiguracija By enabling this options, the moderation bot will automatically moderate duplicate messages. That means if a user send the same message twice within X seconds, the second message will be deleted.
+Time interval The interval, in seconds, during which a user can’t send again the same message.
+Razlog Reason to display besides deleted messages
+Također moderiraj porukama moderatora By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"No duplicate message",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za administratore",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
 You can enable some external authentication methods to allow user to create chat accounts. In such case their nickname and avatar will be automatically initialized with the remote account information.
 Such “external account users” will be easier to moderate than anonymous accounts.
 This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval).
@@ -493,12 +497,12 @@ Dokumentacija se prevodi pomoću Weblate platforme (pogledaj Prevođenje dokumen
 Dodaj novi jezik U datoteci support/documentation/config.tomlkopiraj i izmjeni odjeljak [Languages.fr].
 Ako prijevodi nisu potpuni, nedostajući izrazi će se prikazati na engleskom jeziku.
 Pregled Za pregledavanje tvojih izmjena pokreni naredbu:
-hugo serve -s support/documentation/Then open your browser on the address http://localhost:1313/peertube-plugin-livechat/. This page will automatically refresh on each modification.
+hugo serve -s support/documentation/ Then open your browser on the address http://localhost:1313/peertube-plugin-livechat/. This page will automatically refresh on each modification.
 Update localization files and generate documentation translations For now, you only have the english version. To update documentation strings, and generate translations, you have to run the doc-translate.sh script.
 Za to moraš imati po4a (verzija ≥ 0.69) na tvom računalu.
 Warning Some linux distro (like Debian Bullseye for example) have too old version of po4a. Please make sure to install a compatible version. If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from https://packages.debian.org, and install it manually.
 To handle translations, just do:
-npm run doc:translateYou can then preview the result using hugo serve -s support/documentation/, and using the language selector.
+npm run doc:translate You can then preview the result using hugo serve -s support/documentation/, and using the language selector.
 Piši dokumentaciju Uredi engleske datoteke u mapi support/documentation/content/en.
 Then, before commiting, always run npm run doc:translate, so that changes in english files can be propagated to the support/documentation/po/livechat.en.pot file.
 Za korištenje izraza aplikacije možeš koristiti kratki kod livechat_label. Pogledaj ovdje: Prijevod dokumentacije.
@@ -506,8 +510,9 @@ It is possible to prevent a file from beeing translating, using livechatnotransl
 Please use the livechatnotranslation option for technical documentation. We don’t want technical documentation to be translated, to avoid issues because of a wrong translation.
 To facilitate translators work, avoid making too long paragraphs.
 For now, it is not possible to use Markdown tables: the translation tools will break them.
-Warning There may be links to documentation elsewhere on the web. Try not to change the urls of the documentation pages. Or at the very least, put links to the new location on the previous url.
-What if I can’t use hugo and/or po4a? Just edit english markdown files, and specify that you can’t build translations when you make your Pull Request.
+Warning There may be links to this documentation elsewhere on the web. Try not to change the urls of the documentation pages. Or at the very least, put links to the new location on the previous url.
+When a new feature is released, you can use the livechat_version_notice short code to display an infobox with the version with which the features is available. This short code takes the version number as parameter. Here is an example:
+Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. What if I can’t use hugo and/or po4a? Just edit english markdown files, and specify that you can’t build translations when you make your Pull Request.
 Publication Publishing the documentation is automatic, as soon as the changes are merged into the documentation branch.`,description:"Document the plugin, or translate the documentation.",tags:[],title:"Dokumentacija",uri:"/peertube-plugin-livechat/hr/contributing/document/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The livechat plugin stores some data on the server, in the /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/ folder. This page describes these data.
 prosody The prosody folder is used by the Prosody XMPP server to store its data and logs.
 prosodyAppImage This plugin uses the Prosoxy XMPP server in background. This server code is embedded as an AppImage.
@@ -742,6 +747,7 @@ Tasks / To-do listsYou can handle tasks and task lists with your moderation team
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
 Special charactersThe bot can automatically moderate messages containing too many special characters.
+No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
@@ -810,7 +816,7 @@ Možeš konfigurirati prilagođene emojije za svoj kanal. Ovi emojiji će biti d
 Emotikone možeš koristiti u chatu koristeći “:shortname:”. Kratko ime može započeti i/ili završiti dvotočkom (:) te koristiti samo alfanumeričke znakove, podvlake i crtice. Preporuča se započeti ih dvotočkom, kako bi korisnici mogli koristiti automatsko dovršavanje (upisivanjem “:” i pritiskom tipke tabulatora).
 Uvoz / Izvoz On the channel configuration page, there are an “Uvezi” and an “Izvezi” button. The “Izvezi” button generates a file than you can then import on another channel.
 You can also generate a file to import from any other source (for example you can import your Twitch custom emojis). The file must be a valid JSON file, using the following format:
-[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] Atribut sn je kod kratkog imena. Atribut url može biti bilo koji url slike kojem tvoj preglednik može pristupiti ili URL podataka koji predstavlja datoteku koju želiš uvesti.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Prilagođeni emojiji",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.1.0. Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
+[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] Atribut sn je kod kratkog imena. Atribut url može biti bilo koji url slike kojem tvoj preglednik može pristupiti ili URL podataka koji predstavlja datoteku koju želiš uvesti.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Prilagođeni emojiji",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
 This mode can be usefull for example:
 To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Emojis only mode” checkbox.
 If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.2.0. Create a poll You can create a new poll by using the “Stvori novu anketu” action in the chat top menu:
@@ -871,6 +877,7 @@ You can enable a chat bot on your chatrooms. The bot configuration is made chann
 To access this page, check the channel configuration documentation.
 Once there, you can enable the bot, and setup several options:
 Special charactersThe bot can automatically moderate messages containing too many special characters.
+No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.

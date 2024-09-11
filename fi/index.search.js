@@ -203,7 +203,7 @@ Some of them are “officials” plugins, others are specific to this plugin.
 server The server folder contains the backend source code.
 shared The shared folder contains comme code that will be used both on frontend and backend.
 support/documentation The support/documentation contains the documentation source code.
-vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/fi/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`Forbid special characters Info This feature comes with the livechat plugin version 11.1.0. Configuration By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
+vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/fi/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`Forbid special characters Info This feature comes with the livechat plugin version 12.0.0. Configuration By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
 Tolerance Number of special characters to accept before deleting messages.
 Reason Reason to display besides deleted messages
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/fi/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Documentation > Installation guide",content:`I just installed/upgraded the plugin, but nothing happens If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, …), just try to reload the page.
@@ -232,9 +232,13 @@ Tasks / To-do listsYou can handle tasks and task lists with your moderation team
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
 Special charactersThe bot can automatically moderate messages containing too many special characters.
+No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.`,description:"Plugin peertube-plugin-livechat user documentation",tags:[],title:"User documentation",uri:"/peertube-plugin-livechat/fi/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
+CommandsThe bot can respond to several commands.`,description:"Plugin peertube-plugin-livechat user documentation",tags:[],title:"User documentation",uri:"/peertube-plugin-livechat/fi/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`No duplicate message Info This feature comes with the livechat plugin version 12.0.0. Configuration By enabling this options, the moderation bot will automatically moderate duplicate messages. That means if a user send the same message twice within X seconds, the second message will be deleted.
+Time interval The interval, in seconds, during which a user can’t send again the same message.
+Reason Reason to display besides deleted messages
+Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"No duplicate message",uri:"/peertube-plugin-livechat/fi/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
 You can enable some external authentication methods to allow user to create chat accounts. In such case their nickname and avatar will be automatically initialized with the remote account information.
 Such “external account users” will be easier to moderate than anonymous accounts.
 This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval).
@@ -493,12 +497,12 @@ Documentation is translated using Weblate (see the translation documentation). T
 Add a new language In the support/documentation/config.toml file, please copy and modify the [Languages.fr] section.
 If the translations are not complete, it does not matter, english will be used for missing strings.
 Preview To preview your modifications, just run:
-hugo serve -s support/documentation/Then open your browser on the address http://localhost:1313/peertube-plugin-livechat/. This page will automatically refresh on each modification.
+hugo serve -s support/documentation/ Then open your browser on the address http://localhost:1313/peertube-plugin-livechat/. This page will automatically refresh on each modification.
 Update localization files and generate documentation translations For now, you only have the english version. To update documentation strings, and generate translations, you have to run the doc-translate.sh script.
 To do so, make sure you have po4a (version >= 0.69) installed on your computer.
 Varoitus Some linux distro (like Debian Bullseye for example) have too old version of po4a. Please make sure to install a compatible version. If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from https://packages.debian.org, and install it manually.
 To handle translations, just do:
-npm run doc:translateYou can then preview the result using hugo serve -s support/documentation/, and using the language selector.
+npm run doc:translate You can then preview the result using hugo serve -s support/documentation/, and using the language selector.
 Write documentation Just edit the english files in support/documentation/content/en.
 Then, before commiting, always run npm run doc:translate, so that changes in english files can be propagated to the support/documentation/po/livechat.en.pot file.
 You can use the livechat_label short code to use application strings. See here: Documentation translation.
@@ -506,8 +510,9 @@ It is possible to prevent a file from beeing translating, using livechatnotransl
 Please use the livechatnotranslation option for technical documentation. We don’t want technical documentation to be translated, to avoid issues because of a wrong translation.
 To facilitate translators work, avoid making too long paragraphs.
 For now, it is not possible to use Markdown tables: the translation tools will break them.
-Varoitus There may be links to documentation elsewhere on the web. Try not to change the urls of the documentation pages. Or at the very least, put links to the new location on the previous url.
-What if I can’t use hugo and/or po4a? Just edit english markdown files, and specify that you can’t build translations when you make your Pull Request.
+Varoitus There may be links to this documentation elsewhere on the web. Try not to change the urls of the documentation pages. Or at the very least, put links to the new location on the previous url.
+When a new feature is released, you can use the livechat_version_notice short code to display an infobox with the version with which the features is available. This short code takes the version number as parameter. Here is an example:
+Info This feature comes with the livechat plugin version 12.0.0. What if I can’t use hugo and/or po4a? Just edit english markdown files, and specify that you can’t build translations when you make your Pull Request.
 Publication Publishing the documentation is automatic, as soon as the changes are merged into the documentation branch.`,description:"Document the plugin, or translate the documentation.",tags:[],title:"Documentation",uri:"/peertube-plugin-livechat/fi/contributing/document/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The livechat plugin stores some data on the server, in the /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/ folder. This page describes these data.
 prosody The prosody folder is used by the Prosody XMPP server to store its data and logs.
 prosodyAppImage This plugin uses the Prosoxy XMPP server in background. This server code is embedded as an AppImage.
@@ -746,6 +751,7 @@ Tasks / To-do listsYou can handle tasks and task lists with your moderation team
 Moderation notesPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
 Special charactersThe bot can automatically moderate messages containing too many special characters.
+No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/fi/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Varoitus This section is still incomplete.
@@ -810,7 +816,7 @@ You can configure custom emojis for your channel. These emojis will be available
 You can use emojis in the chat using “:shortname:”. The short name can start and/or end by a colon (:), and only contain alphanumerical characters, underscores and hyphens. It is strongly recommended to start them by a colon, so that users can use autocompletion (by typing “:” then press TAB).
 Import / Export On the channel configuration page, there are an “Import” and an “Export” button. The “Export” button generates a file than you can then import on another channel.
 You can also generate a file to import from any other source (for example you can import your Twitch custom emojis). The file must be a valid JSON file, using the following format:
-[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] The sn attribute is the short name code. The url attribute can be any image url than your browser can access, or a Data URL representing the file you want to import.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Custom emojis",uri:"/peertube-plugin-livechat/fi/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 11.1.0. Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
+[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] The sn attribute is the short name code. The url attribute can be any image url than your browser can access, or a Data URL representing the file you want to import.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Custom emojis",uri:"/peertube-plugin-livechat/fi/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 12.0.0. Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
 This mode can be usefull for example:
 To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Emojis only mode” checkbox.
 If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/fi/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 10.2.0. Create a poll You can create a new poll by using the “Create a new poll” action in the chat top menu:
@@ -871,6 +877,7 @@ You can enable a chat bot on your chatrooms. The bot configuration is made chann
 To access this page, check the channel configuration documentation.
 Once there, you can enable the bot, and setup several options:
 Special charactersThe bot can automatically moderate messages containing too many special characters.
+No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.
