@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-09-10 12:33+0200\n"
+"POT-Creation-Date: 2024-09-11 10:35+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Icelandic <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/is/>\n"
@@ -583,7 +583,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-msgid "There may be links to documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
+msgid "There may be links to this documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/contributing/document/_index.md
+msgid "When a new feature is released, you can use the `livechat_version_notice` short code to display an infobox with the version with which the features is available.  This short code takes the version number as parameter.  Here is an example:"
 msgstr ""
 
 #. type: Title ###
@@ -3040,6 +3045,31 @@ msgid "The bot will reload instantly when you save the page."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
+#: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
+#, no-wrap
+msgid "The bot can automatically moderate duplicate messages."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
+#, no-wrap
+msgid "No duplicate message"
+msgstr ""
+
+#. type: Title ##
+#: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
+#: support/documentation/content/en/documentation/user/streamers/terms.md
+#, no-wrap
+msgid "Configuration"
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
+msgid "![Screenshot of the channel options page, with several fields to configure the \"No duplicate message\" option.](/peertube-plugin-livechat/images/bot_no_duplicate.png?classes=shadow,border&height=400px \"No duplicate message configuration\")"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
 msgid "The bot can send periodically some messages."
@@ -3073,16 +3103,9 @@ msgstr ""
 msgid "Special characters"
 msgstr ""
 
-#. type: Title ##
-#: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
-#: support/documentation/content/en/documentation/user/streamers/terms.md
-#, no-wrap
-msgid "Configuration"
-msgstr ""
-
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
-msgid "![Screenshot of the channel options page, with several fields to configure the option \"Forbid special characters\".](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
+msgid "![Screenshot of the channel options page, with several fields to configure the \"Forbid special characters\" option.](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
