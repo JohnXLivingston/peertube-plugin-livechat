@@ -2,7 +2,7 @@
 {{- partial "shortcodes/notice.html" (dict
   "page"    .Page
   "color"   (.Get "color")
-  "content" (replace (i18n "features_comes_with") "X.X.X" ($.Get 0))
+  "content" (replace (i18n "feature_comes_with") "X.X.X" ($.Get 0))
   "icon"    (.Get "icon" | default (.Get 2))
   "style"   ("info")
   "title"   (.Get "title" | default (.Get 1))

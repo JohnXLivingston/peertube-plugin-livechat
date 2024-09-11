@@ -624,4 +624,4 @@ livechat_configuration_channel_special_chars_desc: "Wenn Sie diese Option aktivi
   wird der Moderationsbot automatisch Nachrichten löschen, die mehr als X Sonderzeichen
   enthalten.\nSonderzeichen sind Zeichen, die nicht in eine der folgenden Kategorien
   passen: Buchstaben, Zahlen, Satzzeichen, Währungssymbole, Emojis.\n"
-features_comes_with: Diese Funktion wird mit dem Livechatplugin Version X.X.X verfügbar sein.
+feature_comes_with: Diese Funktion wird mit dem Livechatplugin Version X.X.X verfügbar sein.

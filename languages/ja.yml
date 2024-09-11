@@ -390,4 +390,4 @@ livechat_configuration_applytomoderators_desc: "初期状態では、モデレ�
   このオプションを有効にすると、モデレーターからのメッセージも削除されるようになります。\n"
 livechat_configuration_channel_special_chars_label: 特殊文字を禁止する
 livechat_configuration_channel_special_chars_tolerance_desc: 削除しない特殊文字の文字数を指定してください。
-features_comes_with: この機能は、livechatプラグイン バージョン X.X.Xにて登場します。
+feature_comes_with: この機能は、livechatプラグイン バージョン X.X.Xにて登場します。

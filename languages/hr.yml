@@ -341,4 +341,4 @@ poll_choice_invalid: Ovaj izbor nije valjan.
 poll_anonymous_vote_ok: Tvoje se glasanje uzima u obzir. Glasanja su anonimna, neće
   se prikazati drugim sudionicima.
 poll_vote_ok: Tvoje se glasanje uzima u obzir. Brojači će se uskoro aktualizirati.
-features_comes_with: Ova je funkcija dostupna s dodatkom za chat uživo verzije X.X.X.
+feature_comes_with: Ova je funkcija dostupna s dodatkom za chat uživo verzije X.X.X.

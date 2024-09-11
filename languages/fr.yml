@@ -619,4 +619,4 @@ prosody_firewall_name_desc: "Ne peut contenir que des caractères alphanumériqu
   ordre alphabétique.\n"
 prosody_firewall_content: Contenu du fichier
 chat: Tchat
-features_comes_with: Cette fonctionnalité arrive avec le plugin livechat version X.X.X.
+feature_comes_with: Cette fonctionnalité arrive avec le plugin livechat version X.X.X.
