@@ -55,7 +55,7 @@ async function sanitizeChannelConfigurationOptions (
   }
   mute.anonymous ??= false
 
-  // forbidSpecialChars comes with livechat 11.1.0
+  // forbidSpecialChars comes with livechat 12.0.0
   botData.forbidSpecialChars ??= {
     enabled: false,
     reason: '',
@@ -66,7 +66,7 @@ async function sanitizeChannelConfigurationOptions (
     throw new Error('Invalid data.bot.forbidSpecialChars data type')
   }
 
-  // noDuplicate comes with livechat 11.1.0
+  // noDuplicate comes with livechat 12.0.0
   botData.noDuplicate ??= {
     enabled: false,
     reason: '',

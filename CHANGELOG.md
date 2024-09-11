@@ -1,6 +1,6 @@
 # Changelog
 
-## 11.1.0 (Not Released Yet)
+## 12.0.0 (Not Released Yet)
 
 TODO Before releasing:
 * update ConverseJS with latest merges.

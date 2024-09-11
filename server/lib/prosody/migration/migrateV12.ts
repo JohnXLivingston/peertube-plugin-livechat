@@ -9,7 +9,7 @@ import * as fs from 'fs'
 import { Emojis } from '../../emojis'
 
 /**
- * Livechat v11.1.0: we must send channel custom emojis regexp to Prosody.
+ * Livechat v12.0.0: we must send channel custom emojis regexp to Prosody.
  *
  * This script will only be launched one time.
  */

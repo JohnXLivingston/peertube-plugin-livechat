@@ -5,7 +5,7 @@ weight: 335
 chapter: false
 ---
 
-{{% livechat_version_notice  11.1.0 %}}
+{{% livechat_version_notice 12.0.0 %}}
 
 ## {{% livechat_label emoji_only_mode_title %}}
 

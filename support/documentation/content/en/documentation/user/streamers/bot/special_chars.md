@@ -7,7 +7,7 @@ chapter: false
 
 ## {{% livechat_label livechat_configuration_channel_special_chars_label %}}
 
-{{% livechat_version_notice 11.1.0 %}}
+{{% livechat_version_notice 12.0.0 %}}
 
 ### Configuration
 
