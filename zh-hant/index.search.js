@@ -47,6 +47,7 @@ XMPP ClientsConnect to chat using a XMPP client
 For streamersHow to setup the chat for your live stream
 Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
@@ -200,7 +201,7 @@ server The server folder contains the backend source code.
 shared The shared folder contains comme code that will be used both on frontend and backend.
 support/documentation The support/documentation contains the documentation source code.
 vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/zh-hant/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`Forbid special characters 資訊 This feature comes with the livechat plugin version 12.0.0. Configuration By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
-Tolerance Number of special characters to accept before deleting messages.
+Tolerance Number of special characters to accept in a message without deleting it.
 原因 除已刪除訊息外還顯示的原因
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/zh-hant/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Documentation > Installation guide",content:`I just installed/upgraded the plugin, but nothing happens If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, …), just try to reload the page.
 Diagnostic tool If the chat does not work, there is a diagnostic tool in the plugin’s settings pages.
@@ -217,6 +218,7 @@ XMPP ClientsConnect to chat using a XMPP client
 For streamersHow to setup the chat for your live stream
 Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
@@ -736,6 +738,7 @@ This “聊天室” link takes you to a list of your channels. By clicking on a
 Here you can configure:
 Channel’s chat terms & conditions Mute anonymous users default value The slow mode The chat bot Custom emojis More features to come… `,description:"Peertube channel chatrooms configuration",tags:[],title:"Channel configuration",uri:"/peertube-plugin-livechat/zh-hant/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:` Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
@@ -750,7 +753,12 @@ Special charactersThe bot can automatically moderate messages containing too man
 No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/zh-hant/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` 警告 This section is still incomplete.
+CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/zh-hant/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` 資訊 This feature comes with the livechat plugin version 12.0.0. Room owners and administrators can send special announcements in the chat.
+These messages will be more visible than standard messages.
+To send announcements, owners and administrators will have a “Message type” selector on the top of the message field:
+There are several message types:
+Standard: to send a standard message. Highlight: these messages will simply be highlighted in a blue box. Announcement: these messages will be in a green box, and a bold “Announcement” title will be added. Warning: these messages will be in a rend box, and a bold “Announcement” title will be added. 資訊 User that are not owner or administrator of the chatroom can’t send such messages.
+警告 Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"Announcements",uri:"/peertube-plugin-livechat/zh-hant/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` 警告 This section is still incomplete.
 警告 This page describes the behaviour of livechat versions >= 10.0.0. There were some changes in the way we manage access rights for Peertube administrators and moderators.
 The chat bot You can use a chat bot, that will help you for moderation. Check the chat bot documentation for more information.
 Accessing moderation tools You can access room settings and moderation tools using the chat dropdown menu at the top of the chat.
@@ -892,6 +900,7 @@ XMPP ClientsConnect to chat using a XMPP client
 For streamersHow to setup the chat for your live stream
 Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode

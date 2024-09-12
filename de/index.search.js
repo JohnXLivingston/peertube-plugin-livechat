@@ -25,6 +25,7 @@ XMPP ClientsVerbindung zum Chat über einen XMPP-Client
 Für StreamerSo richten Sie den Chat für Ihren Live-Stream ein
 Einige GrundlagenEinige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream
 KanalkonfigurationPeertube Kanal Chaträume Konfiguration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat Erweiterte Moderationsfunktionen
 NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
@@ -46,6 +47,7 @@ XMPP ClientsVerbindung zum Chat über einen XMPP-Client
 Für StreamerSo richten Sie den Chat für Ihren Live-Stream ein
 Einige GrundlagenEinige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream
 KanalkonfigurationPeertube Kanal Chaträume Konfiguration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat Erweiterte Moderationsfunktionen
 NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
@@ -736,6 +738,7 @@ Wenn Sie das Häkchen bei “Dauerhaft” entfernen, wird der Raum gelöscht, we
 Löschen des Chat Inhalts Wenn Sie den Inhalt des Chats löschen möchten, öffnen Sie deas Dropdown Menü des Chats und klicken Sie auf “Löschen”. Es öffnet sich ein Popup-Fenster, das eine Bestätigung verlangt.
 Der Chat wird automatisch neu erstellt, wenn jemand versucht, ihm beizutreten, solange das Video existiert und die Funktion “Chat nutzen” aktiviert ist.`,description:"Einige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream",tags:[],title:"Einige Grundlagen",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation",content:` Einige GrundlagenEinige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream
 KanalkonfigurationPeertube Kanal Chaträume Konfiguration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat Erweiterte Moderationsfunktionen
 NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
@@ -754,7 +757,12 @@ BefehleDer Chatbot kann auf verschiedene Befehle reagieren.`,description:"So ric
 Im linken Menü von Peertube gibt es einen Eintrag “Chaträume”:
 Dieser “Chaträume” Link führt Sie zu einer Liste Ihrer Kanäle. Wenn Sie auf einen Kanal klicken, können Sie einige Optionen für Ihre Kanäle einrichten:
 Hier können Sie konfigurieren:
-Chat Nutzungsbedingungen und Konditionen des Kanals Anonyme Benutzer stummschalten Standardwert Der langsame Modus Den Chatbot Benutzerdefinierte Emojis Weitere Funktionen werden folgen… `,description:"Peertube Kanal Chaträume Konfiguration",tags:[],title:"Kanalkonfiguration",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Warnung Dieser Abschnitt ist noch unvollständig.
+Chat Nutzungsbedingungen und Konditionen des Kanals Anonyme Benutzer stummschalten Standardwert Der langsame Modus Den Chatbot Benutzerdefinierte Emojis Weitere Funktionen werden folgen… `,description:"Peertube Kanal Chaträume Konfiguration",tags:[],title:"Kanalkonfiguration",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 12.0.0 verfügbar sein. Room owners and administrators can send special announcements in the chat.
+These messages will be more visible than standard messages.
+To send announcements, owners and administrators will have a “Message type” selector on the top of the message field:
+There are several message types:
+Standard: to send a standard message. Highlight: these messages will simply be highlighted in a blue box. Announcement: these messages will be in a green box, and a bold “Announcement” title will be added. Warning: these messages will be in a rend box, and a bold “Announcement” title will be added. Info User that are not owner or administrator of the chatroom can’t send such messages.
+Warnung Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"Announcements",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Warnung Dieser Abschnitt ist noch unvollständig.
 Warnung Diese Seite beschreibt das Verhalten von Livechat-Versionen >= 10.0.0. Es gab einige Änderungen in der Art und Weise, wie wir die Zugriffsrechte für Peertube-Administratoren und -Moderatoren verwalten.
 Der Chatbot Sie können einen Chatbot verwenden, der Sie bei der Moderation unterstützt. Weitere Informationen finden Sie in der Chatbot Dokumentation.
 Zugang zu den Moderationswerkzeugen Über das Chat Dropdown Menü am oberen Rand des Chats haben Sie Zugriff auf die Raumeinstellungen und Moderationswerkzeuge.
@@ -896,6 +904,7 @@ XMPP ClientsVerbindung zum Chat über einen XMPP-Client
 Für StreamerSo richten Sie den Chat für Ihren Live-Stream ein
 Einige GrundlagenEinige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream
 KanalkonfigurationPeertube Kanal Chaträume Konfiguration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat Erweiterte Moderationsfunktionen
 NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus

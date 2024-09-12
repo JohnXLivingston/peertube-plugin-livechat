@@ -26,6 +26,7 @@ XMPP ClientsConnect to chat using a XMPP client
 For streamersHow to setup the chat for your live stream
 Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
@@ -201,6 +202,7 @@ XMPP ClientsConnect to chat using a XMPP client
 For streamersHow to setup the chat for your live stream
 Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
@@ -236,8 +238,8 @@ Consequence: A temporary ban from any sort of interaction or public communicatio
 Consequence: A permanent ban from any sort of public interaction within the community.
 Attribution This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
 Community Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.
-For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"コントリビューター規約の行動規範",tags:[],title:"コード規約",uri:"/peertube-plugin-livechat/ja/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`No duplicate message 情報 この機能は、livechatプラグイン バージョン 12.0.0にて登場します。 Configuration By enabling this options, the moderation bot will automatically moderate duplicate messages. That means if a user send the same message twice within X seconds, the second message will be deleted.
-Time interval The interval, in seconds, during which a user can’t send again the same message.
+For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"コントリビューター規約の行動規範",tags:[],title:"コード規約",uri:"/peertube-plugin-livechat/ja/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`重複したメッセージはありません 情報 この機能は、livechatプラグイン バージョン 12.0.0にて登場します。 Configuration このオプションを有効にすると、モデレーションBotが重複したメッセージに自動的に対応します。 これは、もしユーザーが同じメッセージX秒以内に2回送信した場合に、2回目のメッセージを削除します。
+間隔 ユーザーが同じメッセージを再度送信するために空けなければいけない時間を秒単位で指定してください。
 理由 削除理由
 モデレーターからのメッセージも対象にする 初期状態では、モデレーターメッセージはこの機能の影響を受けません。 このオプションを有効にすると、モデレーターからのメッセージも削除されるようになります。`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"No duplicate message",uri:"/peertube-plugin-livechat/ja/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
 You can enable some external authentication methods to allow user to create chat accounts. In such case their nickname and avatar will be automatically initialized with the remote account information.
@@ -741,6 +743,7 @@ This “チャットルーム” link takes you to a list of your channels. By c
 Here you can configure:
 チャンネルのチャットルームの利用規約 匿名ユーザーをミュート default value The slow mode The chat bot Custom emojis More features to come… `,description:"Peertube channel chatrooms configuration",tags:[],title:"Channel configuration",uri:"/peertube-plugin-livechat/ja/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:` Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
@@ -755,7 +758,12 @@ Special charactersThe bot can automatically moderate messages containing too man
 No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/ja/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` 警告 This section is still incomplete.
+CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/ja/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` 情報 この機能は、livechatプラグイン バージョン 12.0.0にて登場します。 Room owners and administrators can send special announcements in the chat.
+These messages will be more visible than standard messages.
+To send announcements, owners and administrators will have a “Message type” selector on the top of the message field:
+There are several message types:
+Standard: to send a standard message. Highlight: these messages will simply be highlighted in a blue box. Announcement: these messages will be in a green box, and a bold “Announcement” title will be added. Warning: these messages will be in a rend box, and a bold “Announcement” title will be added. 情報 User that are not owner or administrator of the chatroom can’t send such messages.
+警告 Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"Announcements",uri:"/peertube-plugin-livechat/ja/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` 警告 This section is still incomplete.
 警告 This page describes the behaviour of livechat versions >= 10.0.0. There were some changes in the way we manage access rights for Peertube administrators and moderators.
 The chat bot You can use a chat bot, that will help you for moderation. Check the chat bot documentation for more information.
 Accessing moderation tools You can access room settings and moderation tools using the chat dropdown menu at the top of the chat.
@@ -897,6 +905,7 @@ XMPP ClientsConnect to chat using a XMPP client
 For streamersHow to setup the chat for your live stream
 Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
+AnnouncementsRoom owners and administrators can send special announcements in the chat.
 ModerationPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
