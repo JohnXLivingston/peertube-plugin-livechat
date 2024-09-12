@@ -671,6 +671,8 @@ livechat_configuration_channel_no_duplicate_delay_label: Time interval
 livechat_configuration_channel_no_duplicate_delay_desc: |
   The interval, in seconds, during which a user can't send again the same message.
 
-announcements_message_type_standard: Standard message
+announcements_message_type: Message type
+announcements_message_type_standard: Standard
 announcements_message_type_announcement: Announcement
-announcements_message_type_highlight: Highlighted message
+announcements_message_type_highlight: Highlight
+announcements_message_type_warning: Warning
