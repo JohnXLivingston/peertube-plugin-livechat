@@ -45,6 +45,8 @@ export const livechatAnnouncementsPlugin = {
 
 /**
  * Overloads the MUCMessageForm to handle the announcement type field (if present) when sending a message.
+ *
+ * Also hides the announcement type field if we are correcting a previous message.
  */
 function overrideMUCMessageForm (_converse: any, current: Current): void {
   const MUCMessageForm = _converse.api.elements.registry['converse-muc-message-form']
@@ -60,6 +62,27 @@ function overrideMUCMessageForm (_converse: any, current: Current): void {
           console.log(err)
         }
         current.announcementType = undefined
+      }
+
+      insertIntoTextArea (...args: any[]): void {
+        super.insertIntoTextArea(...args)
+        try {
+          // FIXME: doing this here is not very clean.
+          //  But that's how ConverseJS adds or removes the 'correction' class to the textarea.
+          const textarea = this.querySelector('.chat-textarea')
+          if (!textarea) { return }
+          const correcting = window.converse.env.u.hasClass('correcting', textarea)
+          const announcementForm = this.querySelector('.livechat-announcements-form')
+          const announcementSelect = this.querySelector('[name=livechat-announcements]')
+          if (correcting) {
+            if (announcementSelect) { announcementSelect.selectedIndex = 0 }
+            if (announcementForm) { announcementForm.style.display = 'none' }
+          } else {
+            if (announcementForm) { announcementForm.style.display = 'block' }
+          }
+        } catch (err) {
+          console.error(err)
+        }
       }
     }
     _converse.api.elements.define('converse-muc-message-form', MUCMessageFormloaded)

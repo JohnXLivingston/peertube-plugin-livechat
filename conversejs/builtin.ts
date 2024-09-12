@@ -39,6 +39,11 @@ declare global {
         sizzle: Function
         dayjs: Function
         __: Function
+        u: {
+          hasClass: Function
+          addClass: Function
+          removeClass: Function
+        }
       }
     }
     initConversePlugins: typeof initConversePlugins
