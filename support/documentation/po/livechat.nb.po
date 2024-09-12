@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-09-11 10:35+0200\n"
+"POT-Creation-Date: 2024-09-12 12:53+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nb_NO/>\n"
@@ -2687,6 +2687,68 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.  The compatibility with this plugin was added in recent versions."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+#, no-wrap
+msgid "Room owners and administrators can send special announcements in the chat."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+#, no-wrap
+msgid "Announcements"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "These messages will be more visible than standard messages."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "To send announcements, owners and administrators will have a \"{{% livechat_label announcements_message_type %}}\" selector on the top of the message field:"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "![Screenshot of a chat session. On top of the message field, there is a \"{{% livechat_label announcements_message_type %}}\" selector. In the chat, we can see three types of announcements: a highlighted message, an announcement, and a warning. Each of these announcements have a special color to distinguish them. The announcement and the warning have also bold titles.](/peertube-plugin-livechat/images/announcements.png?classes=shadow,border&height=400px \"Announcements\")"
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "There are several message types:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "**{{% livechat_label announcements_message_type_standard %}}**: to send a standard message."
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "**{{% livechat_label announcements_message_type_highlight %}}**: these messages will simply be highlighted in a blue box."
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "**{{% livechat_label announcements_message_type_announcement %}}**: these messages will be in a green box, and a bold \"{{% livechat_label announcements_message_type_announcement %}}\" title will be added."
+msgstr ""
+
+#. type: Bullet: '* '
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "**{{% livechat_label announcements_message_type_warning %}}**: these messages will be in a rend box, and a bold \"{{% livechat_label announcements_message_type_announcement %}}\" title will be added."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "User that are not owner or administrator of the chatroom can't send such messages."
+msgstr ""
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/user/streamers/announcements.md
+msgid "Note: Standards XMPP clients will display announcements as standard messages."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
