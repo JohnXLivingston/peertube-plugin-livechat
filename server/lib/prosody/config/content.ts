@@ -246,6 +246,7 @@ class ProsodyConfigContent {
 
     this.muc.add('modules_enabled', 'pubsub_peertubelivechat')
     this.muc.add('modules_enabled', 'muc_peertubelivechat_roles')
+    this.muc.add('modules_enabled', 'muc_peertubelivechat_announcements')
 
     this.muc.add('modules_enabled', 'muc_peertubelivechat_terms')
     this.muc.set('muc_terms_service_nickname', 'Peertube')
