@@ -125,7 +125,7 @@ function initImportantNotesSettings ({ registerSetting }: RegisterServerOptions)
       // Note: the following text as a variable in it.
       //   Not translating it: it should be very rare.
       descriptionHTML: `<span class="peertube-plugin-livechat-warning">
-It seems that your are using a ${process.arch} CPU, 
+It seems that your are using a ${process.arch} CPU,
 which is not compatible with the plugin.
 Please read
 <a
