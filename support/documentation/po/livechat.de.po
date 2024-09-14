@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-09-09 19:39+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft."
-"org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-"
-"livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2024-09-15 01:49+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4441,17 +4441,19 @@ msgstr ""
 #, no-wrap
 msgid "Room owners and administrators can send special announcements in the chat."
 msgstr ""
+"Raumbesitzer und Administratoren können spezielle Ankündigungen in den Chat "
+"senden."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 #, no-wrap
 msgid "Announcements"
-msgstr ""
+msgstr "Ankündigungen"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "These messages will be more visible than standard messages."
-msgstr ""
+msgstr "Diese Meldungen sind deutlicher sichtbar als Standardmeldungen."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
@@ -4460,6 +4462,9 @@ msgid ""
 "livechat_label announcements_message_type %}}\" selector on the top of the "
 "message field:"
 msgstr ""
+"Um Ankündigungen zu senden, haben Besitzer und Administratoren einen \"{{% "
+"livechat_label announcements_message_type %}}\"-Selektor am oberen Rand des "
+"Nachrichtenfeldes:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
@@ -4472,11 +4477,18 @@ msgid ""
 "titles.](/peertube-plugin-livechat/images/announcements.png?classes=shadow,"
 "border&height=400px \"Announcements\")"
 msgstr ""
+"![Screenshot einer Chatsitzung. Über dem Nachrichtenfeld befindet sich ein "
+"Selektor \"{{% livechat_label announcements_message_type %}}\". Im Chat "
+"werden drei Arten von Ankündigungen angezeigt: eine hervorgehobene "
+"Nachricht, eine Ankündigung und eine Warnung. Jede dieser Ankündigungen hat "
+"eine spezielle Farbe, um sie zu unterscheiden. Die Ankündigung und die "
+"Warnung haben außerdem fette Titel](/peertube-plugin-livechat/images/"
+"announcements.png?classes=shadow,border&height=400px \"Ankündigungen\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "There are several message types:"
-msgstr ""
+msgstr "Es gibt verschiedene Nachrichtentypen:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
@@ -4484,6 +4496,8 @@ msgid ""
 "**{{% livechat_label announcements_message_type_standard %}}**: to send a "
 "standard message."
 msgstr ""
+"**{{% livechat_label announcements_message_type_standard %}}**: zum Senden "
+"einer Standardnachricht."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
@@ -4491,6 +4505,8 @@ msgid ""
 "**{{% livechat_label announcements_message_type_highlight %}}**: these "
 "messages will simply be highlighted in a blue box."
 msgstr ""
+"**{{% livechat_label announcements_message_type_highlight %}}**: diese "
+"Nachrichten werden einfach in einem blauen Kasten hervorgehoben."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
@@ -4499,6 +4515,10 @@ msgid ""
 "messages will be in a green box, and a bold \"{{% livechat_label "
 "announcements_message_type_announcement %}}\" title will be added."
 msgstr ""
+"**{{% livechat_label announcements_message_type_announcement %}}**: diese "
+"Nachrichten werden in einem grünen Kasten angezeigt und ein fetter \"{{% "
+"livechat_label announcements_message_type_announcement %}}\" Titel wird "
+"hinzugefügt."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
@@ -4507,22 +4527,27 @@ msgid ""
 "messages will be in a rend box, and a bold \"{{% livechat_label "
 "announcements_message_type_announcement %}}\" title will be added."
 msgstr ""
+"**{{% livechat_label announcements_message_type_warning %}}**: diese "
+"Nachrichten werden in einer roten Kästchen angezeigt, und ein fetter \"{{% "
+"livechat_label announcements_message_type_announcement %}}\" Titel wird "
+"hinzugefügt."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
-#, fuzzy
 msgid ""
 "User that are not owner or administrator of the chatroom can't send such "
 "messages."
 msgstr ""
-"Wenn sich kein Benutzer im Chatraum befindet, sendet der Chatbot keine "
-"Nachricht."
+"Benutzer, die nicht Eigentümer oder Administrator des Chatraums sind, können "
+"keine solchen Nachrichten senden."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid ""
 "Note: Standards XMPP clients will display announcements as standard messages."
 msgstr ""
+"Hinweis: Standard-XMPP-Clients zeigen Ankündigungen als Standardnachrichten "
+"an."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/basics.md
