@@ -634,3 +634,8 @@ livechat_configuration_channel_no_duplicate_desc: "Wenn Sie diese Option aktivie
 livechat_configuration_channel_no_duplicate_delay_label: Zeitintervall
 livechat_configuration_channel_no_duplicate_delay_desc: "Das Intervall in Sekunden,
   in dem ein Benutzer die gleiche Nachricht nicht erneut senden kann.\n"
+announcements_message_type: Art der Nachricht
+announcements_message_type_standard: Standard
+announcements_message_type_announcement: Ankündigung
+announcements_message_type_highlight: Highlight
+announcements_message_type_warning: Warnung
