@@ -619,10 +619,23 @@ livechat_configuration_applytomoderators_desc: "Standardmäßig sind Nachrichten
 livechat_configuration_channel_special_chars_label: Sonderzeichen verbieten
 livechat_configuration_channel_special_chars_tolerance_label: Toleranz
 livechat_configuration_channel_special_chars_tolerance_desc: Anzahl der Sonderzeichen,
-  die vor dem Löschen von Nachrichten akzeptiert werden.
+  die in einer Nachricht akzeptiert werden, ohne sie zu löschen.
 livechat_configuration_channel_special_chars_desc: "Wenn Sie diese Option aktivieren,
   wird der Moderationsbot automatisch Nachrichten löschen, die mehr als X Sonderzeichen
   enthalten.\nSonderzeichen sind Zeichen, die nicht in eine der folgenden Kategorien
   passen: Buchstaben, Zahlen, Satzzeichen, Währungssymbole, Emojis.\n"
 feature_comes_with: Diese Funktion wird mit dem Livechatplugin Version X.X.X verfügbar
   sein.
+livechat_configuration_channel_no_duplicate_label: Keine doppelten Nachrichten
+livechat_configuration_channel_no_duplicate_desc: "Wenn Sie diese Option aktivieren,
+  wird der Chatbot automatisch doppelte Nachrichten moderieren.\nDas heißt, wenn ein
+  Benutzer die gleiche Nachricht zweimal innerhalb von X Sekunden sendet, wird die
+  zweite Nachricht gelöscht.\n"
+livechat_configuration_channel_no_duplicate_delay_label: Zeitintervall
+livechat_configuration_channel_no_duplicate_delay_desc: "Das Intervall in Sekunden,
+  in dem ein Benutzer die gleiche Nachricht nicht erneut senden kann.\n"
+announcements_message_type: Art der Nachricht
+announcements_message_type_standard: Standard
+announcements_message_type_announcement: Ankündigung
+announcements_message_type_highlight: Highlight
+announcements_message_type_warning: Warnung

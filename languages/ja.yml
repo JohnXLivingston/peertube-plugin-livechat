@@ -244,7 +244,7 @@ login_remote_peertube_url: あなたのPeerTubeインスタンスURL
 login_remote_peertube_url_invalid: 無効なPeerTube URLです。
 login_remote_peertube_no_livechat: このPeerTubeインスタンスには、ライブチャットプラグインがインストールされていません。
 login_remote_peertube_video_not_found_try_anyway_button: PeerTubeインスタンスで動画を開く
-livechat_configuration_channel_anonymize_moderation_label: モデレーション操作を匿名か
+livechat_configuration_channel_anonymize_moderation_label: モデレーション操作を匿名化
 moderator_notes_create_error: ノートを保存中にエラーが発生しました
 moderator_note_create: 新規ノートを作成
 moderator_note_description: 概要
@@ -396,3 +396,8 @@ livechat_configuration_channel_no_duplicate_delay_desc: "ユーザーが同じ�
 livechat_configuration_channel_no_duplicate_label: 重複したメッセージはありません
 livechat_configuration_channel_no_duplicate_desc: "このオプションを有効にすると、モデレーションBotが重複したメッセージに自動的に対応します。\n\
   これは、もしユーザーが同じメッセージX秒以内に2回送信した場合に、2回目のメッセージを削除します。\n"
+announcements_message_type: メッセージタイプ
+announcements_message_type_standard: 標準
+announcements_message_type_announcement: アナウンス
+announcements_message_type_highlight: ハイライト
+announcements_message_type_warning: 警告

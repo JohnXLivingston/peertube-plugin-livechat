@@ -247,3 +247,6 @@ poll_vote_ok: Vota juaj është marrë parasysh, numëratorët do të përditës
 moderator_notes: Shënime moderimi
 chat: Fjalosje
 converse_theme_option_cyberpunk: Temë ConverseJS Cyberpunk
+livechat_configuration_channel_special_chars_tolerance_desc: Numër shenjash speciale
+  për t’u pranuar në një mesazh, pa e fshirë atë.
+announcements_message_type: Lloj mesazhi
