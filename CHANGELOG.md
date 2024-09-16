@@ -4,6 +4,7 @@
 
 TODO Before releasing:
 * update ConverseJS with latest merges (there are currently some known bugs).
+* as the Prosody version changes, check these stress test https://github.com/JohnXLivingston/livechat-perf-test/tree/main/tests/33-prosody-gc and apply the correct gc parameter.
 
 ### Importante Notes
 
