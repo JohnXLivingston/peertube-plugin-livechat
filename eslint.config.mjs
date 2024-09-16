@@ -70,6 +70,7 @@ export default tseslint.config(
       '@typescript-eslint/no-confusing-void-expression': 'off',
       '@typescript-eslint/class-methods-use-this': 'off',
       '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+      '@typescript-eslint/no-magic-numbers': 'off',
       'max-len': [
         'error',
         {
@@ -104,6 +105,7 @@ export default tseslint.config(
       '@typescript-eslint/no-confusing-void-expression': 'off',
       '@typescript-eslint/class-methods-use-this': 'off',
       '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+      '@typescript-eslint/no-magic-numbers': 'off',
 
       'max-params': 'off',
       'init-declarations': 'off',
