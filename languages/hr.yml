@@ -54,8 +54,7 @@ livechat_configuration_channel_forbidden_words_regexp_label: Tretiraj kao regula
   izraze
 livechat_configuration_channel_forbidden_words_regexp_desc: Označavanjem ove opcije
   možeš koristiti regularne izraze.
-livechat_configuration_applytomoderators_label: Također moderiraj
-  porukama moderatora
+livechat_configuration_applytomoderators_label: Također moderiraj porukama moderatora
 livechat_configuration_channel_quote_label: Timer
 livechat_configuration_channel_forbidden_words_desc: "Možeš konfigurirati neke riječi
   koje će bot automatski moderirati (poruke koje sadrže takve riječi će se odmah izbrisati).\n
@@ -342,3 +341,87 @@ poll_anonymous_vote_ok: Tvoje se glasanje uzima u obzir. Glasanja su anonimna, n
   se prikazati drugim sudionicima.
 poll_vote_ok: Tvoje se glasanje uzima u obzir. Brojači će se uskoro aktualizirati.
 feature_comes_with: Ova je funkcija dostupna s dodatkom za chat uživo verzije X.X.X.
+emoji_only_info: Kad je modus „Samo emoji” aktiviran, u svojim porukama možeš koristiti
+  samo emojije.
+emoji_only_mode_title: „Samo emoji” modus
+emoji_only_mode_desc_1: "U svojim chat sobama možeš aktivirati „Samo emoji” modus.\n
+  Kad je taj modus aktiviran, sudionici mogu slati samo emojije (standardne ili prilagođene
+  emojije kanala).\nOvo ograničenje ne vrijedi za moderatore.\n"
+emoji_only_mode_desc_3: "Za aktiviranje ili deaktiviranje ovog modusa možeš koristiti
+  obrazac za konfiguraciju sobe.\nAko ga želiš aktivirati za sve svoje chat sobe odjednom
+  koristi donji gumb.\n"
+emoji_only_enable_all_rooms: Aktiviraj „Samo emoji” modus u svim chat sobama kanala
+task_list_pick_message: "Nakon što odabereš popis zadataka, stvorit će se novi zadatak.\n
+  Za prikaz zadatka otvori aplikaciju zadataka koristeći gornji izbornik.\nViše informacija
+  u dokumentaciji dodatka za chat uživo.\n"
+livechat_configuration_channel_retractation_reason_desc: Razlog koji se prikazuje
+  pored izbrisanih poruka
+livechat_configuration_applytomoderators_desc: "Ova funkcija standardno neće utjecati
+  na poruke moderatora.\nOznačavanjem ove opcije će se izbrisati i poruke moderatora.\n"
+livechat_configuration_channel_special_chars_label: Zabrani posebne znakove
+livechat_configuration_channel_special_chars_tolerance_label: Tolerancija
+livechat_configuration_channel_special_chars_tolerance_desc: Dozvoljen broj posebnih
+  znakova u poruci bez da se poruka izbriše.
+livechat_configuration_channel_no_duplicate_label: Bez duplih poruka
+livechat_configuration_channel_no_duplicate_delay_label: Vremenski interval
+livechat_configuration_channel_no_duplicate_delay_desc: "Interval u sekundama, tijekom
+  kojeg korisnik ne može ponovo poslati istu poruku.\n"
+livechat_configuration_channel_no_duplicate_desc: "Aktiviranjem ove opcije, bot za
+  moderiranje će automatski moderirati duple poruke.\nTo znači da ako korisnik pošalje
+  istu poruku dva puta unutar X sekundi, druga će se poruka izbrisati.\n"
+livechat_configuration_channel_anonymize_moderation_label: Anonimiziraj radnje moderiranja
+livechat_configuration_channel_anonymize_moderation_desc: "Standardna vrijednost za
+  anonimiziranje radnji moderiranja za nove sobe.\nKada je ovo aktivirano, radnje
+  moderiranja bit će anonimizirane, kako bi se izbjeglo otkrivanje tko isključuje/izbacuje/…
+  sudionike.\n"
+announcements_message_type: Vrsta poruke
+announcements_message_type_standard: Standardna
+announcements_message_type_announcement: Najava
+announcements_message_type_highlight: Istaknuto
+announcements_message_type_warning: Upozorenje
+moderator_notes_create_error: Greška prilikom spremanja bilješke
+moderator_note_create: Stvori novu bilješku
+moderator_note_delete: Izbriši bilješku
+moderator_note_description: Opis
+moderator_note_delete_confirm: Stvarno želiš izbrisati ovu bilješku?
+moderator_note_create_for_participant: Stvori novu bilješku
+moderator_note_search_for_participant: Pretraži bilješke
+moderator_note_filters: Filtri pretrage
+moderator_note_original_nick: Nadimak sudionika u trenutku izrade bilješke
+avatar_set_option_none: Bez
+search_occupant_message: Pretraži sve poruke
+message_search: Pretraživanje poruka
+moderator_notes: Bilješke moderiranja
+livechat_configuration_channel_mute_anonymous_desc: "Standardna vrijednost za nove
+  chat sobe.\nZa postojeće chat sobe funkciju možeš promijeniti u obrascu za konfiguraciju
+  sobe.\nKada je ova funkcija aktivirana, anonimni korisnici mogu samo čitati chat,
+  ali ne mogu slati poruke.\n"
+emoji_only_mode_desc_2: "Ovaj modus može biti koristan na primjer:\n<ul>\n  <li>za
+  izbjegavanje neželjenih ili uvredljivih poruka kada nisi tu da moderiraš.</li>\n\
+  \  <li>kada postoji previše sudionika koji govore i ne možeš više ispravno moderirati.</li>\n\
+  </ul>\n"
+livechat_configuration_channel_special_chars_desc: "Aktiviranjem ove opcije, bot za
+  moderiranje će automatski izbrisati poruke koje sadrže više od X posebnih znakova.\n
+  Posebni znakovi su znakovi koji se ne uklapaju u nijednu od ovih kategorija: slova,
+  brojevi, znakovi interpunkcije, znakovi valuta, emojiji.\n"
+message_search_original_nick: Nadimak sudionika kada je poruka poslana
+prosody_firewall_label: Aktiviraj Prosody mod_firewall
+prosody_firewall_description: "<a href=\"https://modules.prosody.im/mod_firewall\"\
+  \ target=\"_blank\">mod_firewall</a> možeš aktivirati na svom Prosody serveru.\n
+  Za više informacija pročitaj <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/\"\
+  \ target=\"_blank\">dokumentaciju</a>.\n"
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+  \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Kofiguriraj mod_firewall</a>\n"
+prosody_firewall_configuration: Prosody mod_firewall konfiguracija
+prosody_firewall_configuration_help: "Ovdje možeš konfigurirati modul Prosody <a href=\"\
+  https://modules.prosody.im/mod_firewall\" target=\"_blank\">mod_firewall</a>.\n
+  U nastavku možeš stvoriti više konfiguracijskih datoteka i promijeniti njihov redoslijed.\n
+  Nemoj se ustručavati dijeliti svoje konfiguracije sa zajednicom (na primjer dodavanjem
+  nekih primjera u dokumentaciju dodatka).\n"
+prosody_firewall_file_enabled: Aktivirano
+prosody_firewall_name: Ime
+prosody_firewall_content: Sadržaj datoteke
+share_chat_dock: Dock
+chat: Chat
+prosody_firewall_name_desc: "Smije sadržati samo alfanumeričke znakove, podvlake i
+  crtice.\nSkripta će se učitavati abecednim redom.\n"
