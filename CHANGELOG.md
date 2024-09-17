@@ -19,6 +19,7 @@ If you use the "system Prosody", you should update to Prosody 0.12.4, and Lua 5.
 * #516: new option for the moderation bot: forbid duplicate messages.
 * #517: new option for the moderation bot: forbid messages with too many special characters.
 * #518: moderators can send announcements and highlighted messages.
+* #127: new option to limit talking into the chat to peertube channel followers.
 
 ### Minor changes and fixes
 

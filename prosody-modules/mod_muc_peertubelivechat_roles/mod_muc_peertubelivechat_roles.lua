@@ -42,13 +42,60 @@ local function set_peertubelivechat_mute_anonymous(room, mute_anonymous)
   return true;
 end
 
+-- mute_non_followers: nil or an integer value.
+-- nil: features disabled
+-- integer: the number of minutes the user must be following the peertube channel.
+local function get_peertubelivechat_mute_non_followers(room)
+  return room._data.x_peertubelivechat_mute_non_followers;
+end
+
+local function set_peertubelivechat_mute_non_followers(room, mute_non_followers)
+  if mute_non_followers ~= nil then
+    mute_non_followers = assert(tonumber(mute_non_followers), "");
+    if mute_non_followers < 0 then
+      mute_non_followers = 0;
+    end
+  end
+  if get_peertubelivechat_mute_non_followers(room) == mute_non_followers then return false; end
+
+  room._data.x_peertubelivechat_mute_non_followers = mute_non_followers;
+
+  if mute_non_followers ~= nil then
+    -- We must also mute anonymous
+    set_peertubelivechat_mute_anonymous(room, true);
+  end
+
+  return true
+end
+
 module:hook("muc-disco#info", function(event)
   if get_peertubelivechat_mute_anonymous(event.room) then
     event.reply:tag("feature", {var = "x_peertubelivechat_mute_anonymous"}):up();
   end
+  local mute_non_followers = get_peertubelivechat_mute_non_followers(event.room);
+  if mute_non_followers ~= nil then
+    table.insert(event.form, {
+      name = "muc#roominfo_x_peertubelivechat_mute_non_followers";
+      value = "";
+    });
+    event.formdata["muc#roominfo_x_peertubelivechat_mute_non_followers"] = mute_non_followers;
+  end
 end);
 
 module:hook("muc-config-form", function(event)
+  table.insert(event.form, {
+    name = "muc#roomconfig_x_peertubelivechat_mute_non_followers";
+    type = "text-single";
+    label = "Only users following your Peertube account since X minutes can talk.";
+    desc =
+      "Users will be muted by default. Only users following your Peertube account for at least X minutes will be able to talk. "
+      .. "Let empty to disable the feature. "
+      .. "Enabling this feature will also mute anonymous users.";
+    value = get_peertubelivechat_mute_non_followers(event.room);
+    datatype = "xs:integer";
+    range_min = 0;
+    required = false;
+  });
   table.insert(event.form, {
     name = "muc#roomconfig_x_peertubelivechat_mute_anonymous";
     type = "boolean";
@@ -64,8 +111,14 @@ module:hook("muc-config-submitted/muc#roomconfig_x_peertubelivechat_mute_anonymo
   end
 end);
 
+module:hook("muc-config-submitted/muc#roomconfig_x_peertubelivechat_mute_non_followers", function(event)
+  if set_peertubelivechat_mute_non_followers(event.room, event.value) then
+    event.status_codes["104"] = true;
+  end
+end);
+
 -- Note: muc-get-default-role does not get any occupant info.
--- So we want use this hook to set default roles.
+-- So we won't use this hook to set default roles.
 -- We will do something a little hacky...: change the role in a high priority muc-occupant-pre-join hook!
 module:hook("muc-occupant-pre-join", function(event)
   local occupant = event.occupant;
