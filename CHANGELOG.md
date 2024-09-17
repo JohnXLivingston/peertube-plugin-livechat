@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### New features
+
+* #127: new option to limit talking into the chat to peertube channel followers.
+
 ## 12.0.0
 
 ### Importante Notes
