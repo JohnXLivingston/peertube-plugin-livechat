@@ -12,6 +12,9 @@ local function set_moderation_delay(room, delay)
   end
   if delay ~= nil then
     delay = assert(tonumber(delay), "Moderation delay is not a valid number");
+    if delay > 60 then
+      delay = 60;
+    end
     if delay < 0 then
       delay = nil;
     end

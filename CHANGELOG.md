@@ -30,6 +30,7 @@ If you use the "system Prosody", you should update to Prosody 0.12.4, and Lua 5.
 * Various type improvements.
 * Update dependencies.
 * Fix emoji picker colors and size.
+* Fix: moderation delay max value was not correctly handled.
 
 ## 11.0.1
 
