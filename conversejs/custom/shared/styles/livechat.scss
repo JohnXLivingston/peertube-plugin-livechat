@@ -203,6 +203,7 @@ body.converse-embedded {
       // This margin-left trick is to align the button on the right.
       margin-left: auto !important;
       order: 99;
+      white-space: nowrap;
     }
   }
 }
