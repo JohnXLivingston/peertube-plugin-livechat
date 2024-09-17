@@ -600,6 +600,17 @@ class ProsodyConfigContent {
     let content = ''
     content += this.global.write()
     content += this.log + '\n'
+
+    // Add some performance tweaks for Prosody 0.12.4+lua5.4.
+    // See https://github.com/JohnXLivingston/livechat-perf-test/tree/main/tests/33-prosody-gc
+    content += `
+gc = {
+  mode = "generational";
+  minor_threshold = 5;
+  major_threshold = 50;
+};
+`
+
     content += '\n\n'
     if (this.authenticated) {
       content += this.authenticated.write()

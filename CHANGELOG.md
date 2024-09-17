@@ -9,7 +9,9 @@ TODO Before releasing:
 ### Importante Notes
 
 This version requires Peertube 5.2.0 or superior.
-It also requires NodeJS 16 or superior (same as Peertube 5.2.0.)
+It also requires NodeJS 16 or superior (same as Peertube 5.2.0.).
+
+If you use the "system Prosody", you should update to Prosody 0.12.4, and Lua 5.4.
 
 ### New features
 
@@ -21,6 +23,7 @@ It also requires NodeJS 16 or superior (same as Peertube 5.2.0.)
 ### Minor changes and fixes
 
 * Updating ConverseJS (v11 WIP) with latest fixes.
+* Updating Prosody AppImage to Prosody 0.12.4 + Lua 5.4.
 * Various translation updates.
 * Using Typescript 5.5.4, and Eslint 8.57.0 (with new ruleset).
 * Fix race condition in bot/ctl.
