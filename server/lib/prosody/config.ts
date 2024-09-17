@@ -276,6 +276,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const authApiUrl = baseApiUrl + 'user' // FIXME: should be protected by apikey, but mod_auth_http cant handle params
   const roomApiUrl = baseApiUrl + 'room?apikey=' + apikey + '&jid={room.jid|jid_node}'
   const testApiUrl = baseApiUrl + 'test?apikey=' + apikey
+  const followApiUrl = baseApiUrl + 'follow?apikey=' + apikey
 
   const config = new ProsodyConfigContent(paths, prosodyDomain, chatTerms)
   if (!disableAnon) {
@@ -368,6 +369,7 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   config.useDefaultPersistent()
 
   config.useManageRoomsApi(apikey)
+  config.useLivechatRoles(followApiUrl)
   config.usePeertubeVCards(basePeertubeUrl)
   if (paths.avatars && paths.avatarsFiles) {
     config.useAnonymousRandomVCards(paths.avatars, paths.avatarsFiles)

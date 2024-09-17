@@ -245,7 +245,6 @@ class ProsodyConfigContent {
     this.muc.set('slow_mode_duration_form_position', 120)
 
     this.muc.add('modules_enabled', 'pubsub_peertubelivechat')
-    this.muc.add('modules_enabled', 'muc_peertubelivechat_roles')
     this.muc.add('modules_enabled', 'muc_peertubelivechat_announcements')
 
     this.muc.add('modules_enabled', 'muc_peertubelivechat_terms')
@@ -573,6 +572,15 @@ class ProsodyConfigContent {
       'peertubelivechat_restrict_message_common_emoji_regexp',
       new ConfigEntryValueMultiLineString(commonEmojiRegexp)
     )
+  }
+
+  /**
+   * Enable and configure mod_muc_peertubelivechat_roles
+   * @param followApiUrl the follow API url (with ApiKey parameter)
+   */
+  useLivechatRoles (followApiUrl: string): void {
+    this.muc.add('modules_enabled', 'muc_peertubelivechat_roles')
+    this.muc.set('peertubelivechat_roles_follow_api_url', followApiUrl)
   }
 
   addMucAdmins (jids: string[]): void {

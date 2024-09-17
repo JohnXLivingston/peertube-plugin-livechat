@@ -15,6 +15,7 @@ import { initConfigurationApiRouter } from './api/configuration'
 import { initPromoteApiRouter } from './api/promote'
 import { initEmojisRouter } from './emojis'
 import { initAdminFirewallApiRouter } from './api/admin/firewall'
+import { initFollowApiRouter } from './api/follow'
 
 /**
  * Initiate API routes
@@ -36,6 +37,7 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
   ]))
 
   await initRoomApiRouter(options, router)
+  await initFollowApiRouter(options, router)
 
   await initAuthApiRouter(options, router)
   await initUserAuthApiRouter(options, router)
