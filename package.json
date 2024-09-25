@@ -59,7 +59,7 @@
     "commander": "^12.1.0",
     "esbuild": "^0.23.1",
     "eslint": "^8.57.0",
-    "eslint-config-love": "^66.0.0",
+    "eslint-config-love": "^71.0.0",
     "eslint-plugin-lit": "^1.15.0",
     "globals": "^15.9.0",
     "lit": "^3.2.0",
