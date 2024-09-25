@@ -38,7 +38,7 @@
     "xmppjs-chat-bot": "^0.5.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.10.0",
+    "@eslint/js": "^9.11.1",
     "@lit-labs/motion": "^1.0.7",
     "@lit/context": "^1.1.2",
     "@lit/task": "^1.0.1",
