@@ -72,3 +72,52 @@ poll: Ankieta
 poll_question: Pytanie
 poll_anonymous_results: Anonimowe wyniki
 poll_choice_n: 'Wybór {{N}}:'
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
+external_auth_custom_oidc_label: Użycie dostawcy OpenID Connect
+external_auth_custom_oidc_button_label_label: Etykieta przycisku połączenia
+federation_dont_publish_remotely_label: Nie publikuj informacji o czacie
+federation_no_remote_chat_description: "Zaznaczenie tego ustawienia spowoduje, że
+  instancja nigdy nie będzie wyświetlać czatów ze zdalnych filmów.\n"
+transparent_background: Przezroczyste tło (do integracji z transmisją, na przykład
+  z OBS)
+external_auth_custom_oidc_button_label_description: Ta etykieta będzie wyświetlana
+  użytkownikom jako etykieta przycisku do uwierzytelniania u tego dostawcy OIDC.
+chat: Czat
+external_auth_description: "<h3>Uwierzytelnianie zewnętrzne</h3>\nDla użytkowników,
+  którzy nie mają konta Peertube, można włączyć różne tryby uwierzytelniania w oparciu
+  o zdalnych dostawców uwierzytelniania.\n"
+external_auth_custom_oidc_description: "Można skonfigurować zewnętrznego dostawcę
+  OpenID Connect, który może być używany do logowania się do czatu.\nWięcej informacji
+  można znaleźć w dokumentacji:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Ustawienia</a>.\n"
+chat_terms_label: Regulamin
+chat_terms_description: "Poniższy regulamin będzie wyświetlany wszystkim użytkownikom
+  po dołączeniu do pokojów rozmów.\nStreamerzy mogą również skonfigurować swoje regulaminy
+  dla swoich kanałów, które będą wyświetlane zaraz po tych globalnych zasadach i warunkach.\n"
+use_current_theme_color: Użyj bieżących kolorów motywu
+federation_dont_publish_remotely_description: "Zaznaczenie tego ustawienia spowoduje,
+  że Twoja instancja nie będzie publikować informacji o czacie na fediwersum.\nZdalne
+  instancje Peertube nie będą wiedziały, że są czatami powiązanymi z Twoimi filmami.<br>\n
+  <b>Uwaga</b>: jeśli już istnieją czaty, możliwe, że informacje zostały już opublikowane.\n
+  Będziesz musiał poczekać na następną aktualizację wideo, zanim informacje zostaną
+  cofnięte.\nPonadto, jeśli wyłączysz to ustawienie, będziesz musiał poczekać na aktualizację
+  filmów, zanim informacje\nzostaną ponownie opublikowane. Aktualizacja ta następuje
+  między innymi po wznowieniu lub zakończeniu transmisji na żywo.<br>\n<b>Uwaga</b>:
+  to ustawienie wpływa tylko na publikację informacji za pośrednictwem protokołu ActivityPub.\n
+  Nie zapobiegnie ono wykryciu obecności czatu i próby połączenia się z nim przez
+  zdalną aplikację.\n"
+tips_for_streamers: "Wskazówki dla streamerów: Aby osadzić czat w swojej transmisji,
+  np. w OBS,\nwygeneruj link tylko do odczytu i użyj go jako źródła przeglądarki.\n"
+generate_iframe: Generuj kod iframe, aby osadzić czat na stronie internetowej
+chat_for_live_stream: 'Czat transmisji:'
+web: Przeglądarka
+connect_using_xmpp_help: Z pokojem można połączyć się za pomocą zewnętrznego konta
+  XMPP i ulubionego klienta XMPP.
+important_note_text: "Dokumentację wtyczki można znaleźć tutaj:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n  Peertube Plugin Livechat documentation\n</a>.\n"
+diagnostic: "Przed zwróceniem się o pomoc, skorzystaj z narzędzia diagnostycznego:\n
+  <a class=\"peertube-plugin-livechat-launch-diagnostic\">Uruchom diagnostykę</a>\n
+  (jeśli ten przycisk nie otwiera nowego okna, spróbuj odświeżyć stronę).\n"
+federation_no_remote_chat_label: Nie wyświetlaj zdalnych czatów
+federation_description: "<h3>Federacja</h3>\nPoniższe ustawienia dotyczą federacji
+  z innymi instancjami Peertube,\ni innym oprogramowaniem fediwersum.\n"
