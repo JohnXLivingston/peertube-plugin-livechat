@@ -307,6 +307,7 @@ async function _store (options: RegisterServerOptions, filePath: string, content
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 async function _get (options: RegisterServerOptions, filePath: string): Promise<any | null> {
   const logger = options.peertubeHelpers.logger
   try {

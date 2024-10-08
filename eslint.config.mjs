@@ -71,6 +71,14 @@ export default tseslint.config(
       '@typescript-eslint/class-methods-use-this': 'off',
       '@typescript-eslint/non-nullable-type-assertion-style': 'off',
       '@typescript-eslint/no-magic-numbers': 'off',
+
+      '@typescript-eslint/no-unsafe-member-access': 'off', // FIXME: comes with eslint-config-love 84 update, and should be used.
+      '@typescript-eslint/no-unsafe-return': 'off', // FIXME: comes with eslint-config-love 84 update, and should be used.
+      '@typescript-eslint/no-unsafe-assignment': 'off', // FIXME: comes with eslint-config-love 84 update, and should be used.
+      '@typescript-eslint/no-unsafe-call': 'off', // FIXME: comes with eslint-config-love 84 update, and should be used.
+
+      '@typescript-eslint/no-unnecessary-condition': 'off', // FIXME: comes with eslint-config-love 84 update, but seems buggy (false positive).
+
       'max-len': [
         'error',
         {
