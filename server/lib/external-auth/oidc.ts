@@ -757,6 +757,7 @@ class ExternalAuthOIDC {
    * @throws Error
    * @returns the singleton
    */
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   public static singleton (singletonType: ExternalAuthOIDCType | string): ExternalAuthOIDC {
     if (!singletons) {
       throw new Error('ExternalAuthOIDC singletons are not initialized yet')

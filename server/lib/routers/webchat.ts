@@ -142,6 +142,7 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         res.status(200)
         res.type('html')
         res.send(page)
+      // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
       } catch (err: LivechatError | any) {
         const code = err.livechatError?.code ?? 500
         const additionnalMessage: string = escapeHTML(err.livechatError?.message as string ?? '')

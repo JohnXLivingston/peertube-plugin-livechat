@@ -115,7 +115,7 @@ export class ChannelConfigurationElement extends LivechatElement {
 
   public readonly getInputValidationClass = (propertyName: string): Record<string, boolean> => {
     const validationErrorTypes: ValidationErrorType[] | undefined =
-      this.validationError?.properties[`${propertyName}`]
+      this.validationError?.properties[propertyName]
     return validationErrorTypes ? (validationErrorTypes.length ? { 'is-invalid': true } : { 'is-valid': true }) : {}
   }
 
@@ -123,7 +123,7 @@ export class ChannelConfigurationElement extends LivechatElement {
     propertyName: string): TemplateResult | typeof nothing => {
     const errorMessages: TemplateResult[] = []
     const validationErrorTypes: ValidationErrorType[] | undefined =
-      this.validationError?.properties[`${propertyName}`] ?? undefined
+      this.validationError?.properties[propertyName] ?? undefined
 
     // FIXME: this code is duplicated in dymamic table form
     if (validationErrorTypes && validationErrorTypes.length !== 0) {
