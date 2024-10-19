@@ -1,0 +1,40 @@
+open_chat_new_window: Otevřít chat v novém okně
+open_chat: Otevřít chat
+close_chat: Zavřít chat
+use_current_theme_color: Použít aktuální barvy motivu
+not_found: Nenalezeno
+video: Video
+web: Web
+important_note_title: <h3>Důležité poznámky</h3>
+chat: Chat
+last_activity: Poslední aktivita
+use_chat: Použití chatu
+use_chat_help: Pokud je to povoleno, vedle videa se zobrazí chat.
+share_chat_link: Sdílet odkaz na chat
+read_only: Pouze pro čtení
+link_copied: Odkaz zkopírován
+error: Chyba
+chat_terms_label: Podmínky a pravidla
+show_scrollbarr: Zobrazit posuvník
+transparent_background: Průhledné pozadí (pro integraci streamu, například s OBS)
+copy: Kopírovat
+copied: Zkopírováno
+open: Otevřít
+generate_iframe: Vytvoření iframe pro vložení chatu do webové stránky
+chat_for_live_stream: 'Chat pro živý stream:'
+room_name: Název místnosti
+room_description: Popis místnosti
+connect_using_xmpp: Připojení pomocí XMPP
+connect_using_xmpp_help: K místnosti se můžete připojit pomocí externího účtu XMPP
+  a svého oblíbeného klienta XMPP.
+important_note_text: "Dokumentaci pluginu naleznete zde:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n Dokumentace k zásuvnému modulu Peertube Livechat\n</a>.\n"
+diagnostic: "Než požádáte o pomoc, použijte prosím diagnostický nástroj:\n<a class=\"\
+  peertube-plugin-livechat-launch-diagnostic\">Spustit diagnostiku</a>\n(pokud toto
+  tlačítko neotevře nové okno, zkuste stránku obnovit).\n"
+chat_title: <h3>Chat</h3>
+online_help: Online nápověda
+tips_for_streamers: "Tipy pro streamery: Chcete-li například vložit chat do svého
+  videostreamu pomocí OBS, \nvygenerujte odkaz pouze pro čtení a použijte jej jako
+  zdroj v prohlížeči.\n"
+channel: Kanál
