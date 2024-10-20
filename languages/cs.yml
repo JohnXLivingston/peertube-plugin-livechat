@@ -38,3 +38,118 @@ tips_for_streamers: "Tipy pro streamery: Chcete-li například vložit chat do s
   videostreamu pomocí OBS, \nvygenerujte odkaz pouze pro čtení a použijte jej jako
   zdroj v prohlížeči.\n"
 channel: Kanál
+external_auth_custom_oidc_button_label_label: Popisek pro tlačítko připojení
+external_auth_custom_oidc_label: Použití poskytovatele služby OpenID Connect
+external_auth_custom_oidc_discovery_url_label: Discovery URL
+auto_display_label: Automatické otevření chatu
+converse_theme_option_peertube: Motiv Peertube
+converse_theme_option_cyberpunk: Motiv ConverseJS Cyberpunk
+external_auth_oidc_client_id_label: Client ID
+external_auth_oidc_client_secret_label: Client secret
+external_auth_google_oidc_label: Použít Google
+external_auth_oidc_redirect_uris_info_description: "<strong>URI zpětného volání/přesměrování:</strong>\n
+  Pokud chcete nakonfigurovat URI autorizovaného přesměrování na externí aplikaci,
+  přidejte tuto adresu URL:\n"
+all_lives_description: Pokud je zaškrtnuto, bude chat povolen pro všechny živé přenosy.
+per_live_video_description: Pokud je zaškrtnuto, budou mít všechna živá videa ve svých
+  vlastnostech zaškrtávací políčko pro povolení webového chatu.
+all_non_lives_description: Pokud je zaškrtnuto, bude chat povolen pro všechna videa,
+  která nejsou živá.
+avatar_set_option_legacy: Starší avatary Sepia (ty, které byly součástí předchozích
+  verzí zásuvného modulu)
+chat_behaviour_description: <h3>Chování na chatu</h3>
+auto_display_description: Při sledování videa se automaticky otevře okno chatu.
+share_url_option_owner: Zobrazit majiteli videa
+share_url_option_everyone: Zobrazit pro každého
+all_lives_label: Aktivace chatu pro všechny živé přenosy
+no_anonymous_description: "Pokud je zaškrtnuto, anonymní uživatelé Peertube chat neuvidí.\n
+  Tato funkce je stále experimentální.\nPokud jste ji povolili, důrazně doporučujeme
+  zaškrtnout také možnost \"Nezveřejňovat informace o chatu\".\nV opačném případě
+  by se některé nástroje třetích stran mohly pokusit chat otevřít a chovat se nepředvídatelně.\n"
+theming_advanced_description: <h3>Témata</h3>
+converse_theme_option_default: Výchozí motiv ConverseJS
+avatar_set_option_none: Žádné
+converse_theme_label: Motiv ConverseJS
+converse_theme_description: Vyberte si motiv converseJS, který chcete použít.
+videos_list_label: Aktivovat chat pro tato videa
+avatar_set_option_fenec: Fenek (maskot Mobilizon)
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Seznam místností</a>\n"
+room_type_label: Typ místnosti
+list_rooms_label: Seznam stávajících místností
+federation_dont_publish_remotely_description: "Zaškrtnutím tohoto nastavení vaše instance
+  nebude publikovat informace o chatu na fediverse.\nVzdálené instance Peertube nebudou
+  vědět, že se jedná o chatovací místnosti spojené s vašimi videi.<br>\n<b>Upozornění</b>:
+  pokud jste již chatovali, je možné, že informace již byly zveřejněny.\nNež bude
+  zveřejnění informací zrušeno, budete muset počkat na další aktualizaci videa.\n
+  Pokud toto nastavení zakážete, budete muset počkat, až budou videa aktualizována,
+  než budou informace\nznovu zveřejněno. K této aktualizaci dojde mimo jiné, když
+  se živý přenos obnoví nebo zastaví.<br>\n<b>Upozornění</b>: toto nastavení ovlivňuje
+  pouze zveřejňování informací prostřednictvím protokolu ActivityPub.\nNezabrání vzdálené
+  aplikaci, aby jinak zjistila přítomnost chatů a pokusila se k ní připojit.\n"
+external_auth_custom_oidc_title: <h4>Připojení OpenID</h4>
+avatar_set_option_sepia: Sépie (maskot Peertube)
+avatar_set_option_abstract: Abstrakt
+external_auth_description: "<h3>Externí ověřování</h3>\nPro uživatele, kteří nemají
+  účet na Peertube, můžete povolit různé režimy ověřování na základě poskytovatelů
+  vzdáleného ověřování.\n"
+external_auth_custom_oidc_button_label_description: Tento popisek se zobrazí uživatelům
+  jako popisek tlačítka pro ověření u tohoto poskytovatele OIDC.
+share_url_option_nobody: Zobrazit pro nikoho
+share_url_option_owner_moderators: Zobrazit pro majitele videa a moderátory instance
+per_live_video_label: Uživatelé si mohou aktivovat chat pro své živé přenosy
+federation_no_remote_chat_label: Nezobrazovat vzdálené chaty
+federation_no_remote_chat_description: "Pokud toto nastavení zaškrtnete, vaše instance
+  nebude nikdy zobrazovat chaty ze vzdálených videí.\n"
+external_auth_facebook_oidc_label: Použít Facebook
+open_blank_label: Zobrazit tlačítko "otevřít v novém okně"
+open_blank_description: K dispozici bude tlačítko pro otevření webového chatu v novém
+  okně.
+per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n Povolili jste nastavení «Uživatelé mohou aktivovat chat pro svůj živé přenosy».\n
+  S nastavením «Aktivovat chat pro všechny živé přenosy» je redundantní.\n</span>\n"
+all_non_lives_label: Aktivace chatu pro všechny neživé přenosy
+videos_list_description: "Videa UUID, pro která chceme webový chat.\nMohou to být
+  neživá videa. Jeden na řádek. <br />\nMůžete přidávat komentáře: vše za znakem #
+  bude odstraněno a prázdné řádky budou ignorovány.<br />\nNepřidávejte soukromá videa,
+  UUID budou odeslána do frontendu.\n"
+avatar_set_label: Sada Avatarů
+avatar_set_description: "Můžete si vybrat z několika různých sad výchozích avatarů,
+  které budou použity pro uživatele chatu.\nPodívejte se prosím na dokumentaci:\n
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Nastavení</a>.\n"
+external_auth_facebook_oidc_description: "Povolením této funkce se přidá tlačítko
+  \"přihlásit se pomocí Facebooku\".\nMusíte nakonfigurovat aplikaci Facebook OAuth.\n"
+share_url_label: Zobrazení tlačítka "sdílet odkaz na chat"
+share_url_description: K dispozici bude tlačítko pro sdílení url adresy chatu (lze
+  použít například pro integraci OBS).
+no_anonymous_label: Skrytí chatu pro anonymní uživatele
+auto_ban_anonymous_ip_label: Zakázat IP adresu anonymního uživatele, když je uživatel
+  vykázán z chatovací místnosti
+auto_ban_anonymous_ip_description: "Povolením této možnosti bude při každém zákazu
+  anonymního uživatele v chatovací místnosti jeho IP adresa rovněž zakázána na chatovacím
+  serveru.\nUpozornění: Pokud je vaše instance otevřená pro registraci, může kterýkoli
+  uživatel vytvořit místnost v pasti, pozvat uživatele, aby se k ní připojili, a automaticky
+  zakázat všechny IP adresy anonymních uživatelů.\nSeznam zakázaných IP se neukládá,
+  vymaže se při restartu serveru nebo při změně nastavení některého zásuvného modulu.\n
+  Zakázané IP jsou zaznamenány v logovacích souborech serveru Prosody, takže správci
+  serveru mohou případně použít některé externí nástroje (jako fail2ban) pro širší
+  zakázání IP.\n"
+avatar_set_option_cat: Kočky
+avatar_set_option_bird: Ptáci
+chat_terms_description: "Tyto podmínky se zobrazí všem uživatelům, když se připojí
+  k chatovacím místnostem.\nStreameři mohou také nastavit podmínky pro své kanály,
+  které se zobrazí hned po těchto globálních podmínkách.\n"
+external_auth_custom_oidc_description: "Můžete nakonfigurovat externího poskytovatele
+  OpenID Connect, který by mohl být použit k přihlášení do chatu.\nPodívejte se prosím
+  na dokumentaci:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Nastavení</a>.\n"
+federation_dont_publish_remotely_label: Nezveřejňujte informace z chatu
+room_type_description: Zde si můžete vybrat, zda chcete mít pro každé video samostatnou
+  místnost, nebo zda je chcete seskupit podle kanálů.
+room_type_option_video: Každé video má vlastní webchatovou místnost
+room_type_option_channel: Místnosti webového chatu jsou seskupeny podle kanálů
+federation_description: "<h3>Federace</h3>\nNásledující nastavení se týkají federace
+  s jinými instancemi Peertube,\na dalšími fediverzními softwary.\n"
+external_auth_google_oidc_description: "Povolením této funkce se přidá tlačítko \"\
+  Přihlásit se pomocí Google\".\nMusíte nakonfigurovat aplikaci Google OAuth.\n"
