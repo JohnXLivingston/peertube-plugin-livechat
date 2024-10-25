@@ -274,3 +274,18 @@ prosody_components_list_description: "Externí komponenty, které je třeba dekl
   Můžete také zadat úplný název domény, ale musíte se ujistit, že jste správně nakonfigurovali
   DNS.\n </li>\n <li>V tajné přístupové frázi používejte pouze alfanumerické znaky
   (použijte alespoň 15 znaků).</li>\n</ul>\n"
+livechat_configuration_desc: Zde můžete nakonfigurovat některé pokročilé možnosti
+  pro chatovací místnosti přidružené k živým přenosům.
+save: Uložit
+cancel: Zrušit
+disable_channel_configuration_label: Zakázat pokročilou konfiguraci kanálu a chatbota
+successfully_saved: Úspěšně uloženo
+menu_configuration_label: Chatovací místnosti
+configuration_description: "<h3>Pokročilá konfigurace kanálu</h3>\nNásledující nastavení
+  se týkají pokročilých možností kanálu:\nuživatelé budou moci přidat některá přizpůsobení
+  na svých kanálech,\naktivovat moderačního bota, ...\n"
+livechat_configuration_title: Konfigurace vašich chatovacích místností
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Experimentální
+  funkce:</b> tato funkce je stále experimentální.\n"
+livechat_configuration_please_select: Vyberte prosím níže jeden z vašich kanálů a
+  nastavte jeho možnosti chatování.
