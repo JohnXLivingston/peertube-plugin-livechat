@@ -198,3 +198,15 @@ prosody_peertube_uri_description: "Pokud nevíte, co děláte, nechte prosím to
   z jeho veřejného URI.\nToto pole můžete použít k přizpůsobení URI Peertube pro moduly
   Prosody\n(například pomocí „http://localhost:9000“ nebo „http://127.0.0.1:9000“).\n"
 chat_style_label: Atribut stylu iframe webového chatu
+prosody_room_allow_s2s_label: Povolení připojení k místnosti pomocí externích účtů
+  XMPP
+prosody_muc_expiration_description: "Zde můžete zvolit, jak dlouho bude obsah chatovací
+  místnosti na serveru uchováván. Hodnota může být:\n<ul>\n<li><b>60</b>: obsah bude
+  uložen po dobu 60 <b>sekund</b>. Hodnotu 60 můžete nahradit libovolnou celočíselnou
+  hodnotou.</li>\n<li><b>1d</b>: obsah bude uložen po dobu 1 <b>dne</b>. Hodnotu 1
+  můžete nahradit libovolnou celočíselnou hodnotou.</li>\n<li><b>1w</b>: obsah bude
+  uložen na 1 <b>týden</b>. Hodnotu 1 můžete nahradit libovolnou celočíselnou hodnotou.</li>\n
+  <li><b>1m</b>: obsah bude uložen na 1 <b>měsíc</b>. 1 můžete nahradit libovolnou
+  celočíselnou hodnotou.</li>\n<li><b>1y</b>: obsah bude uložen po dobu 1 <b>roku</b>.
+  1 můžete nahradit libovolnou celočíselnou hodnotou.</li>\n<li><b>nikdy</b>: obsah
+  nikdy nevyprší a bude uchováván navždy.</li>\n</ul>\n"
