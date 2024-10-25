@@ -241,3 +241,27 @@ prosody_room_allow_s2s_description: "Povolením této možnosti se bude možné 
 prosody_s2s_port_description: "Port, který bude použit pro připojení XMPP s2s (server
   to server).<br>\nMěli byste použít standardní port 5269.\nV opačném případě byste
   měli <a href=„https://prosody.im/doc/s2s“>\nnastavit konkrétní záznam DNS\n</a>.\n"
+prosody_components_list_label: Externí komponenty
+prosody_c2s_interfaces_description: "Síťová rozhraní, na kterých bude naslouchat připojení
+  klienta k serveru.<br>\nToto nastavení je určeno pro pokročilé uživatele. Toto nastavení
+  neměňte, pokud plně nerozumíte tomu, co znamená.<br>\nSeznam IP adres k poslechu,
+  oddělené čárkou (mezery budou odstraněny).<br>\nMůžete použít «*» pro poslech na
+  všech rozhraních IPv4 a «::» pro všechna IPv6.<br>\nPříklady:\n<ul>\n <li>*, ::</li>\n
+  <li>*</li>\n <li>127.0.0.1, ::1</li>\n <li>127.0.0.1, ::1, 172.18.0.42</li>\n</ul>\n"
+prosody_components_label: Povolit vlastní externí součásti Prosody
+prosody_components_interfaces_description: "Síťová rozhraní pro naslouchání připojení
+  externích komponent.<br>\nSeznam IP adres k poslechu, oddělené čárkou (mezery budou
+  odstraněny).<br>\nMůžete použít «*» pro poslech na všech rozhraních IPv4 a «::»
+  pro všechna IPv6.<br>\nPříklady:\n<ul>\n <li>*, ::</li>\n <li>*</li>\n <li>127.0.0.1,
+  ::1</li>\n <li>172.18.0.42</li>\n</ul>\n"
+prosody_components_interfaces_label: Síťová rozhraní externích komponent Prosody
+prosody_components_port_description: "Port, který budou komponenty XMPP používat pro
+  připojení k serveru Prosody.<br>\nZměňte jej, pokud se tento port již na vašem serveru
+  používá.<br>\nPokud nepovolíte přístup jiným rozhraním než localhost, můžete tento
+  port ponechat na vašem firewallu uzavřený.\n"
+prosody_components_description: "Povolte použití externích komponent XMPP.<br>\nTato
+  možnost sama o sobě umožňuje připojení pouze z localhost.\nMusíte nastavit naslouchací
+  rozhraní a otevřít port na vašem firewallu, abyste jej zpřístupnili ze vzdálených
+  serverů.<br>\nTuto funkci lze například použít k připojení některých robotů k chatovacím
+  místnostem.\n"
+prosody_components_port_label: Port pro externí komponenty Prosody
