@@ -153,3 +153,48 @@ federation_description: "<h3>Federace</h3>\nNásledující nastavení se týkaj�
   s jinými instancemi Peertube,\na dalšími fediverzními softwary.\n"
 external_auth_google_oidc_description: "Povolením této funkce se přidá tlačítko \"\
   Přihlásit se pomocí Google\".\nMusíte nakonfigurovat aplikaci Google OAuth.\n"
+prosody_muc_log_by_default_description: "Pokud je zaškrtnuto, obsah místnosti se ve
+  výchozím nastavení uloží.\nKaždý uživatel, který se připojí k místnosti, uvidí,
+  co bylo napsáno před jeho připojením.<br>\nVezměte prosím na vědomí, že je vždy
+  možné obsah zapnout/vypnout.\narchivaci pro konkrétní místnost úpravou jejích vlastností.\n"
+disable_websocket_label: Zakázat Websocket
+prosody_port_label: Prosody port
+autocolors_label: Automatická detekce barev
+autocolors_description: "Pokus o automatickou detekci barev podle aktuálního motivu
+  uživatele.<br>\nPokud je toto nastavení povoleno, zásuvný modul se pokusí automaticky
+  detekovat barvy, které se použijí v tématu chatu.<br>\nPokud to pro některé téma
+  Peertube nefunguje správně, můžete tuto možnost zakázat.\nChybu můžete nahlásit
+  na oficiálním <a href=„https://github.com/JohnXLivingston/peertube-plugin-livechat/issues“
+  target=„_blank“>\nsledovači problémů\n</a>. Nezapomeňte uvést, který motiv nefunguje.\n"
+disable_websocket_description: "S Peertube &gt;= 5.0.0, tento plugin se snaží používat
+  Websocket připojení pro chatování.\nPokud je prohlížeč nebo připojení uživatele
+  nekompatibilní, prohlížeč automaticky přejde zpět na protokol BOSH.\n<br>\nVe výjimečných
+  případech však může dojít k selhání. Například pokud máte před Peertube reverzní
+  proxy server, který nepovoluje \nWebsocket připojení pro zásuvné moduly.\nV takovém
+  případě můžete zaškrtnutím tohoto nastavení zakázat připojení Websocket.\n"
+prosody_muc_log_by_default_label: Obsah přihlašovacích místností ve výchozím nastavení
+prosody_muc_expiration_label: Vypršení platnosti protokolů místností
+system_prosody_label: Použití systému Prosody
+help_builtin_prosody_description: "Tento zásuvný modul používá k obsluze chatovacích
+  místností server XMPP Prosody.<br>\nTento zásuvný modul je dodáván s obrazem aplikace
+  Prosody, který se používá ke spuštění služby.\n"
+prosody_peertube_uri_label: URL Peertube pro volání API
+chat_style_description: "Další styly, které mají být přidány do atributu stylu iframe.
+  <br>\nPříklad: height:400px;\n"
+system_prosody_description: "Upozornění: toto nastavení nezkoušejte, pokud si nejste
+  jisti, co děláte.<br>\nZaškrtnutím tohoto nastavení bude váš Peertube používat server
+  Prosody, který je dodáván s vaším systémem,\n a ne vestavěný AppImage.<br>\nToto
+  nastavení použijte pouze v případě, že se setkáte s problémy s vestavěným serverem
+  Prosody.\n"
+prosody_port_description: "Port, který bude používat server Prosody.<br>\nZměňte jej,
+  pokud je tento port na vašem serveru již používán.<br>\nTento port můžete na svém
+  firewallu zavřít, nebude k němu přístup z vnějšího světa.<br>\nPoznámka: toto se
+  může v blízké budoucnosti změnit, protože se plánuje přidání funkce pro aktivaci
+  připojení zvenčí.\n"
+prosody_advanced_description: <h3>Pokročilé nastavení serveru chatu</h3>
+help_builtin_prosody_label: Prosody server
+prosody_peertube_uri_description: "Pokud nevíte, co děláte, nechte prosím toto nastavení
+  prázdné.<br>\nV některých vzácných případech nemůže Prosody volat rozhraní API Peertube
+  z jeho veřejného URI.\nToto pole můžete použít k přizpůsobení URI Peertube pro moduly
+  Prosody\n(například pomocí „http://localhost:9000“ nebo „http://127.0.0.1:9000“).\n"
+chat_style_label: Atribut stylu iframe webového chatu
