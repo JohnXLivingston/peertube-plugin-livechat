@@ -210,3 +210,34 @@ prosody_muc_expiration_description: "Zde můžete zvolit, jak dlouho bude obsah 
   celočíselnou hodnotou.</li>\n<li><b>1y</b>: obsah bude uložen po dobu 1 <b>roku</b>.
   1 můžete nahradit libovolnou celočíselnou hodnotou.</li>\n<li><b>nikdy</b>: obsah
   nikdy nevyprší a bude uchováván navždy.</li>\n</ul>\n"
+prosody_c2s_label: Povolení připojení klienta k serveru
+prosody_c2s_port_label: Port klienta Prosody na server
+prosody_c2s_interfaces_label: Síťová rozhraní mezi klientem a serverem
+prosody_s2s_port_label: Server Prosody na port serveru
+prosody_s2s_interfaces_label: Síťová rozhraní mezi servery
+prosody_c2s_description: "Povolení připojení klientů XMPP k vestavěnému serveru Prosody.<br>\n
+  Pouze tato volba umožňuje připojení pouze klientům localhost.\n"
+prosody_s2s_interfaces_description: "Síťová rozhraní, na kterých se má naslouchat
+  pro připojení serveru k serveru.<br>\nSeznam IP adres pro naslouchání, oddělených
+  čárkami (mezery budou odstraněny).<br>\nMůžete použít „*“ pro naslouchání na všech
+  rozhraních IPv4 a „::“ pro všechna rozhraní IPv6.<br>\nPříklady:\n<ul>\nPříklady:
+  <li>*, ::</li>\n<li>*</li>\n<li>127.0.0.1, ::1</li>\n<li>172.18.0.42</li>\n</ul>\n"
+prosody_certificates_dir_description: "Pokud je toto pole prázdné, zásuvný modul bude
+  generovat a používat certifikáty podepsané vlastním podpisem.<br>\nPokud chcete
+  použít jiné certifikáty, stačí zde zadat složku, kde je \nProsody najde. Poznámka:
+  uživatel „peertube“ musí mít k této složce přístup pro čtení.\n"
+prosody_c2s_port_description: "Port, který bude používat modul c2s integrovaného serveru
+  Prosody.<br>\nKlienti XMPP budou pro připojení používat tento port.<br>\nZměňte
+  jej, pokud je tento port na vašem serveru již používán.<br>\nTento port můžete prozatím
+  nechat na svém firewallu zavřený, nebude k němu přístup z vnějšího světa.<br>\n
+  Poznámka: to se může v blízké budoucnosti změnit, protože se plánuje přidání funkce
+  pro aktivaci připojení zvenčí.\n"
+prosody_certificates_dir_label: Složka certifikátů
+prosody_room_allow_s2s_description: "Povolením této možnosti se bude možné připojit
+  k místnostem pomocí externích účtů XMPP a klientů XMPP.<br>\n<span class=„peertube-plugin-livechat-warning“>\n
+  <b>Upozornění</b>, povolení této možnosti může vyžadovat další konfiguraci serveru
+  a DNS.\n</span>\nPodívejte se prosím do dokumentace:\n<a href=„https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/“
+  target=„_blank“>.\nPovolení externího připojení k účtu XMPP.\n</a>\n"
+prosody_s2s_port_description: "Port, který bude použit pro připojení XMPP s2s (server
+  to server).<br>\nMěli byste použít standardní port 5269.\nV opačném případě byste
+  měli <a href=„https://prosody.im/doc/s2s“>\nnastavit konkrétní záznam DNS\n</a>.\n"
