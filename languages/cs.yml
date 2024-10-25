@@ -265,3 +265,12 @@ prosody_components_description: "Povolte použití externích komponent XMPP.<br
   serverů.<br>\nTuto funkci lze například použít k připojení některých robotů k chatovacím
   místnostem.\n"
 prosody_components_port_label: Port pro externí komponenty Prosody
+prosody_components_list_description: "Externí komponenty, které je třeba deklarovat:\n
+  <ul>\n <li>Jedna na řádek.</li>\n <li>Použijte formát «název_komponenty:tajné_komponenty»
+  (mezery budou oříznuty).</li>\n <li>Můžete přidávat komentáře: vše za znakem # bude
+  odstraněno a prázdné řádky budou ignorovány.</li>\n <li>Název může obsahovat pouze
+  latinské alfanumerické znaky a tečky.</li>\n <li>\n Pokud název obsahuje pouze alfanumerické
+  znaky, bude doplněn o doménu XMPP.\n Například „most“ se změní na „most.vaše_doména.tld“.\n
+  Můžete také zadat úplný název domény, ale musíte se ujistit, že jste správně nakonfigurovali
+  DNS.\n </li>\n <li>V tajné přístupové frázi používejte pouze alfanumerické znaky
+  (použijte alespoň 15 znaků).</li>\n</ul>\n"
