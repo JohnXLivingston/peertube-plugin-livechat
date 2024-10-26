@@ -289,3 +289,49 @@ experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Experi
   funkce:</b> tato funkce je stále experimentální.\n"
 livechat_configuration_please_select: Vyberte prosím níže jeden z vašich kanálů a
   nastavte jeho možnosti chatování.
+livechat_configuration_channel_retractation_reason_label: Důvod
+livechat_configuration_channel_retractation_reason_desc: Důvod zobrazení kromě smazaných
+  zpráv
+livechat_configuration_applytomoderators_label: Také moderovat zprávy od moderátorů
+livechat_configuration_applytomoderators_desc: "Ve výchozím nastavení se tato funkce
+  na zprávy moderátora nevztahuje.\nZaškrtnutím této možnosti budou zprávy od moderátorů
+  rovněž odstraněny.\n"
+livechat_configuration_channel_forbidden_words_label_label: Štítek
+livechat_configuration_channel_forbidden_words_desc: "Můžete nastavit některá slova,
+  která bude bot automaticky moderovat (zprávy obsahující tato slova budou okamžitě
+  odstraněny).\nMůžete také přidat volitelný důvod, který se zobrazí na místě smazaných
+  zpráv.\nNa stránce s dokumentací je uvedeno několik příkladů.\n"
+livechat_configuration_channel_forbidden_words_label_desc: Označení tohoto pravidla
+  pro zakázaná slova
+livechat_configuration_channel_quote_label: Časovač
+livechat_configuration_channel_quote_desc2: "Jedna zpráva na řádek.\nPokud je zpráv
+  více, vybere se jedna náhodně každých X minut.\n"
+livechat_configuration_channel_quote_delay_label: Odeslat každých X minut
+livechat_configuration_channel_quote_delay_desc: "Bot bude zprávu odesílat každých
+  X minut.\n"
+livechat_configuration_channel_desc: Zde můžete nastavit některé možnosti pro tento
+  kanál (zásady moderování, ...).
+livechat_configuration_channel_title: Možnosti kanálů
+livechat_configuration_channel_enable_bot_label: Povolení moderačního bota
+livechat_configuration_channel_bot_options_title: Možnosti moderačního bota
+livechat_configuration_channel_forbidden_words_label: Zakázaná slova nebo výrazy
+livechat_configuration_channel_forbidden_words_desc2: "Jedno slovo nebo výraz na řádek.
+  Pokud na jeden řádek vložíte více slov, budou se porovnávat pouze zprávy obsahující
+  celou sekvenci.\n"
+livechat_configuration_channel_forbidden_words_regexp_desc: Zaškrtnutím této možnosti
+  můžete použít regulární výrazy.
+livechat_configuration_channel_forbidden_words_regexp_label: Považujte za regulární
+  výrazy
+livechat_configuration_channel_quote_desc: "Můžete nakonfigurovat několik časovačů,
+  které budou odesílat zprávy v pravidelných intervalech.\nTyto zprávy bude bot odesílat
+  každých X minut.\nMůžete například nastavit, aby bot odesílal každých 5 minut nějaké
+  informace o sponzorování.\n"
+livechat_configuration_channel_quote_label2: Zprávy
+livechat_configuration_channel_slow_mode_desc: "Výchozí hodnota pomalého režimu:\n
+  <ul>\n<li>0: pomalý režim vypnut</li>\n<li>Jakékoli kladné celé číslo: uživatelé
+  mohou odeslat zprávu každých X sekund (moderátoři nejsou omezeni)</li>\n</ul>\n"
+livechat_configuration_channel_forbidden_words_comments_desc: "Můžete sem přidat komentář
+  k tomuto pravidlu, abyste si pamatovali, jak a proč jste ho vytvořili.\nTyto komentáře
+  jsou čistě orientační a nemají žádný vliv na chování bota.\n"
+livechat_configuration_channel_slow_mode_label: Pomalý režim
+livechat_configuration_channel_forbidden_words_comments_label: Komentáře
