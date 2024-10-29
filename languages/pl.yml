@@ -121,3 +121,9 @@ diagnostic: "Przed zwróceniem się o pomoc, skorzystaj z narzędzia diagnostycz
 federation_no_remote_chat_label: Nie wyświetlaj zdalnych czatów
 federation_description: "<h3>Federacja</h3>\nPoniższe ustawienia dotyczą federacji
   z innymi instancjami Peertube,\ni innym oprogramowaniem fediwersum.\n"
+room_type_option_video: Każdy film ma swój własny pokój rozmowy
+room_type_description: Możesz tutaj wybrać oddzielne pokoje dla każdego filmu lub
+  pogrupować je według kanałów.
+room_type_option_channel: Pokoje rozmów internetowych są pogrupowane według kanałów
+auto_display_label: Automatycznie otwórz rozmowę
+auto_display_description: Podczas oglądania filmu okno rozmów otworzy się automatycznie.
