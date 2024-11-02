@@ -342,3 +342,91 @@ livechat_configuration_channel_command_cmd_desc: "Příkaz bez počátečního \
 livechat_configuration_channel_for_more_info: "Další informace o konfiguraci této
   funkce naleznete v dokumentaci kliknutím na tlačítko nápovědy.\n"
 livechat_configuration_channel_command_cmd_label: Příkaz
+share_chat_dock_tips: "Můžete si vygenerovat odkaz, který otevře chat na celé stránce,
+  přihlášený pomocí účtu Peertube.\nToho lze využít například k tomu, abyste měli
+  v OBS webový dok, takže můžete chat číst a komunikovat s ním přímo z OBS.\nTento
+  odkaz nikomu nesdělujte, protože by mu umožnil připojit se jako vy.\nNíže naleznete
+  seznam již vygenerovaných autentizačních tokenů.\nMůžete si vytvořit nový nebo zrušit
+  jakýkoli předchozí token.\nUpozorňujeme, že tyto tokeny nemají žádné datum platnosti.\n"
+tasks: Úkoly
+task_list_create: 'Vytvořit nový seznam úkolů:'
+task_create: Vytvořit nový úkol
+task_name: Název úkolu
+task_description: Popis
+slow_mode_info: Je povolen pomalý režim, uživatelé mohou odeslat zprávu každých %1$s
+  sekund.
+task_delete_confirm: Opravdu chcete tento úkol odstranit?
+invalid_value_wrong_type: Hodnota je nesprávného typu.
+livechat_configuration_channel_banned_jids_label: Zakázaní uživatelé a vzory
+livechat_configuration_channel_bot_nickname: Přezdívka Bota
+invalid_value_missing: Tato hodnota je vyžadována.
+validation_error: Při ověřování došlo k chybě.
+too_many_entries: Příliš mnoho položek
+login_using_external_account: Přihlášení pomocí externího účtu
+login_remote_peertube_url: URL adresa vaší instance Peertube
+login_remote_peertube: 'Přihlaste se pomocí účtu na jiné instanci Peertube:'
+login_remote_peertube_video_not_found: Toto video není na této instanci Peertube k
+  dispozici.
+login_remote_peertube_searching: Hledání videa na Peertube instanci...
+login_remote_peertube_url_invalid: Neplatná URL adresa Peertube.
+login_remote_peertube_no_livechat: Zásuvný modul livechat není v této instanci Peertube
+  nainstalován.
+login_remote_peertube_video_not_found_try_anyway: V některých případech lze video
+  načíst i po připojení ke vzdálené instanci.
+login_remote_peertube_video_not_found_try_anyway_button: Přesto zkuste otevřít video
+  na instanci Peertube
+login_external_auth_alert_message: Ověření se nezdařilo
+task_list_create_error: Chyba při ukládání seznamu úkolů
+task_list_name: Název seznamu úkolů
+task_delete: Smazat úkol
+task_list_pick_title: Vyberte seznam úkolů
+token_label: Štítek
+token_password: Token s heslem
+token_date: Datum
+token_action_create: Vytvořit nový token
+token_action_revoke: Odvolání tokenu
+invalid_value_file_too_big: 'Velikost souboru je příliš velká (maximální velikost:
+  %s).'
+task_list_pick_message: "Po výběru seznamu úkolů se vytvoří nový úkol.\nChcete-li
+  úkol zobrazit, otevřete aplikaci úkolů pomocí horního menu.\nVíce informací naleznete
+  v dokumentaci k zásuvnému modulu livechat.\n"
+invalid_value_wrong_format: Hodnota je v nesprávném formátu.
+livechat_emojis_file: Soubor
+action_import_emojis_info: Pokud jsou importovaná data v pořádku, nezapomeňte formulář
+  uložit.
+token_action_revoke_confirm: Opravdu chcete tento token odvolat?
+auth_description: "<h3>Autentifikace</h3>\n"
+livechat_token_disabled_label: Zakázat tokeny livechatu
+invalid_value_not_in_range: Hodnota není v povoleném rozsahu.
+invalid_value_duplicate: Duplicitní hodnota
+task_list_delete: Smazat seznam úkolů
+task_list_delete_confirm: Opravdu chcete tento seznam úkolů smazat?
+task_list_pick_empty: Zatím neexistuje žádný seznam úkolů, nejprve si ho vytvořte
+promote: Staňte se moderátorem
+livechat_configuration_channel_emojis_title: Emotikony kanálu
+livechat_configuration_channel_emojis_desc: "Pro svůj kanál můžete nakonfigurovat
+  vlastní emotikony.\nTyto emotikony budou k dispozici ve výběru emotikonů.\nUživatelé
+  je mohou používat také pomocí jejich krátkého názvu (například napsáním \":shortname:\"\
+  ).\n"
+livechat_emojis_shortname: Zkrácený název
+livechat_emojis_shortname_desc: "V chatu můžete používat emotikony pomocí \":shortname:\"\
+  .\nKrátký název může začínat a/nebo končit dvojtečkou (:) a může obsahovat pouze
+  alfanumerické znaky, podtržítka a pomlčky.\nDůrazně doporučujeme začínat je dvojtečkou,
+  aby uživatelé mohli používat automatické doplňování (zadáním \":\" a následným stisknutím
+  klávesy TAB).\n"
+livechat_emojis_file_desc: "Soubor emotikonů.\n"
+action_import: Import
+action_add_entry: Přidat položku
+action_remove_entry: Odebrat tuto položku
+action_remove_entry_confirm: Opravdu chcete tuto položku odstranit?
+loading_error: Při načítání dat došlo k chybě.
+share_chat_embed: Vložit
+share_chat_peertube_tips: Tento odkaz otevře chat v rozhraní Peertube.
+share_chat_dock: Dock
+token_default_label: Token generovaný z webového rozhraní
+login_remote_peertube_video_open_failed: 'Váš prohlížeč zablokoval otevření ve vzdálené
+  instanci, zkuste prosím otevřít tento odkaz ručně:'
+invalid_value_too_long: Hodnota je příliš dlouhá
+action_export: Export
+invalid_value: Neplatná hodnota.
+chatroom_not_accessible: Tato chatovací místnost neexistuje nebo k ní nemáte přístup.
