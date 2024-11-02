@@ -335,3 +335,10 @@ livechat_configuration_channel_forbidden_words_comments_desc: "Můžete sem při
   jsou čistě orientační a nemají žádný vliv na chování bota.\n"
 livechat_configuration_channel_slow_mode_label: Pomalý režim
 livechat_configuration_channel_forbidden_words_comments_label: Komentáře
+livechat_configuration_channel_command_message_desc: Zpráva k odeslání.
+livechat_configuration_channel_command_message_label: Zpráva
+livechat_configuration_channel_command_cmd_desc: "Příkaz bez počátečního \"!\". Například
+  \"help\", \"sponzor\", ...\n"
+livechat_configuration_channel_for_more_info: "Další informace o konfiguraci této
+  funkce naleznete v dokumentaci kliknutím na tlačítko nápovědy.\n"
+livechat_configuration_channel_command_cmd_label: Příkaz
