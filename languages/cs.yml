@@ -161,11 +161,11 @@ disable_websocket_label: Zakázat Websocket
 prosody_port_label: Prosody port
 autocolors_label: Automatická detekce barev
 autocolors_description: "Pokus o automatickou detekci barev podle aktuálního motivu
-  uživatele.<br>\nPokud je toto nastavení povoleno, zásuvný modul se pokusí automaticky
+  uživatele.<br>\nPokud je toto nastavení povoleno, \nzásuvný modul se pokusí automaticky
   detekovat barvy, které se použijí v tématu chatu.<br>\nPokud to pro některé téma
   Peertube nefunguje správně, můžete tuto možnost zakázat.\nChybu můžete nahlásit
-  na oficiálním <a href=„https://github.com/JohnXLivingston/peertube-plugin-livechat/issues“
-  target=„_blank“>\nsledovači problémů\n</a>. Nezapomeňte uvést, který motiv nefunguje.\n"
+  na oficiálním <a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
+  \ target=\"_blank\">\nsledovači problémů\n</a>. Nezapomeňte uvést, který motiv nefunguje.\n"
 disable_websocket_description: "S Peertube &gt;= 5.0.0, tento plugin se snaží používat
   Websocket připojení pro chatování.\nPokud je prohlížeč nebo připojení uživatele
   nekompatibilní, prohlížeč automaticky přejde zpět na protokol BOSH.\n<br>\nVe výjimečných
@@ -439,8 +439,8 @@ livechat_configuration_channel_anonymize_moderation_desc: "Anonymizovat výchoz�
   moderačních akcí pro nové místnosti.\nPokud je tato možnost povolena, budou moderátorské
   akce anonymizovány, aby se zabránilo prozrazení toho, kdo banuje/vyhazuje/... obyvatele.\n"
 prosody_firewall_description: "Na serveru Prosody můžete povolit <a href=\"https://modules.prosody.im/mod_firewall\"\
-  \ target=\"_blank\">mod_firewall</a>.\nDalší informace naleznete <a href=„https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/“
-  target=„_blank“>v dokumentaci</a>.\n"
+  \ target=\"_blank\">mod_firewall</a>.\nDalší informace naleznete <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/\"\
+  \ target=\"_blank\">v dokumentaci</a>.\n"
 muted_anonymous_message: Zprávy mohou posílat pouze registrovaní uživatelé.
 livechat_configuration_channel_mute_anonymous_label: Ztlumit anonymní uživatele
 moderation_delay: Zpoždění moderování
@@ -528,3 +528,21 @@ livechat_configuration_channel_special_chars_desc: "Pokud tuto možnost povolít
   znaky jsou ty, které nepatří do jedné z těchto kategorií: písmena, číslice, interpunkční
   znaménka, symboly měn, emotikony.\n"
 livechat_configuration_channel_special_chars_tolerance_label: Tolerance
+livechat_configuration_channel_special_chars_tolerance_desc: Počet speciálních znaků,
+  které lze ve zprávě přijmout, aniž by došlo k jejímu vymazání.
+feature_comes_with: Tato funkce je součástí pluginu livechat verze X.X.X.
+livechat_configuration_channel_no_duplicate_label: Žádné duplicitní zprávy
+livechat_configuration_channel_no_duplicate_desc: "Povolením této možnosti bude moderovací
+  robot automaticky upravovat duplicitní zprávy.\nTo znamená, že pokud uživatel odešle
+  stejnou zprávu dvakrát během X sekund, druhá zpráva bude odstraněna.\n"
+livechat_configuration_channel_no_duplicate_delay_label: Časový interval
+livechat_configuration_channel_no_duplicate_delay_desc: "Interval v sekundách, během
+  kterého uživatel nemůže znovu odeslat stejnou zprávu.\n"
+announcements_message_type: Typ zprávy
+announcements_message_type_standard: Standardní
+announcements_message_type_announcement: Oznámení
+announcements_message_type_highlight: Zvýrazněná
+announcements_message_type_warning: Upozornění
+poll_anonymous_results: Anonymní výsledky
+poll_choice_n: 'Možnost {{N}}:'
+poll_end: 'Anketa končí v:'
