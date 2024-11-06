@@ -430,3 +430,86 @@ invalid_value_too_long: Hodnota je příliš dlouhá
 action_export: Export
 invalid_value: Neplatná hodnota.
 chatroom_not_accessible: Tato chatovací místnost neexistuje nebo k ní nemáte přístup.
+prosody_firewall_configuration_help: "Zde můžete konfigurovat modul Prosody <a href=\"\
+  https://modules.prosody.im/mod_firewall\" target=\"_blank\">mod_firewall</a>.\n
+  Níže můžete vytvořit více konfiguračních souborů a měnit jejich pořadí.\nNeváhejte
+  se o své konfigurace podělit s komunitou (například přidáním příkladů do dokumentace
+  zásuvného modulu).\n"
+livechat_configuration_channel_anonymize_moderation_desc: "Anonymizovat výchozí hodnotu
+  moderačních akcí pro nové místnosti.\nPokud je tato možnost povolena, budou moderátorské
+  akce anonymizovány, aby se zabránilo prozrazení toho, kdo banuje/vyhazuje/... obyvatele.\n"
+prosody_firewall_description: "Na serveru Prosody můžete povolit <a href=\"https://modules.prosody.im/mod_firewall\"\
+  \ target=\"_blank\">mod_firewall</a>.\nDalší informace naleznete <a href=„https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/“
+  target=„_blank“>v dokumentaci</a>.\n"
+muted_anonymous_message: Zprávy mohou posílat pouze registrovaní uživatelé.
+livechat_configuration_channel_mute_anonymous_label: Ztlumit anonymní uživatele
+moderation_delay: Zpoždění moderování
+livechat_configuration_channel_moderation_delay_desc: "Výchozí hodnota zpoždění moderování:\n
+  <ul>\n<li>0: zpoždění moderace vypnuto</li>\n<li>Ljakékoli kladné celé číslo: zprávy
+  budou pro účastníky, kteří nejsou moderátory, zpožděny o X sekund, což moderátorům
+  umožní smazat zprávu dříve, než si ji přečte kterýkoli uživatel.</li>\n</ul>\n"
+emoji_only_info: Pokud je povolen režim pouze emoji, můžete ve zprávách používat pouze
+  emoji.
+emoji_only_mode_title: Režim pouze pro emoji
+emoji_only_mode_desc_1: "V chatovacích místnostech můžete povolit režim \"Pouze emoji\"\
+  .\nKdyž je tento režim povolen, mohou účastníci posílat pouze emoji (standardní
+  nebo vlastní emoji kanálu).\nModerátorů se toto omezení netýká.\n"
+livechat_configuration_channel_anonymize_moderation_label: Anonymizovat moderátorské
+  akce
+moderator_notes: Moderátorské poznámky
+moderator_notes_create_error: Chyba při ukládání poznámky
+moderator_note_create: Vytvoření nové poznámky
+moderator_note_description: Popis
+moderator_note_delete: Smazat poznámku
+moderator_note_filters: Vyhledávací filtry
+moderator_note_original_nick: Přezdívka účastníka v době vytvoření poznámky
+livechat_configuration_channel_command_desc: "Bota můžete nakonfigurovat tak, aby
+  reagoval na příkazy.\nPříkaz je zpráva začínající znakem \"!\", například \"!help\"\
+  , která vyvolá příkaz \"help\".\n"
+new_poll: Vytvoření nové ankety
+poll: Anketa
+poll_title: Nová anketa
+poll_vote_instructions: 'Chcete-li hlasovat, klikněte na svou volbu nebo pošlete zprávu
+  s vykřičníkem a číslem volby (příklad: !1).'
+poll_vote_instructions_xmpp: 'Pro hlasování pošlete zprávu s vykřičníkem, za kterou
+  následuje číslo vaší volby. Příklad: !1'
+poll_choice_invalid: Tato volba není platná.
+poll_is_over: Tato anketa je nyní u konce.
+poll_anonymous_vote_ok: Váš hlas je zohledněn. Hlasy jsou anonymní, nebudou zobrazeny
+  ostatním účastníkům.
+poll_vote_ok: Váš hlas byl vzat v úvahu, počítadla budou za chvíli aktualizována.
+livechat_configuration_channel_terms_desc: "Můžete nakonfigurovat zprávu \"podmínky\"\
+  , která se zobrazí uživatelům, kteří se připojí k vašim chatovacím místnostem.\n"
+search_occupant_message: Vyhledat všechny zprávy
+message_search: Hledání zpráv
+message_search_original_nick: Přezdívka účastníka v době odeslání zprávy
+prosody_firewall_label: Povolit mod_firewall Prosody
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+  \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Konfigurace mod_firewall</a>\n"
+prosody_firewall_configuration: Konfigurace mod_firewall Prosody
+prosody_firewall_disabled_warning: "Varování: mod_firewall je zakázán v nastavení
+  <a href=\"/admin/plugins/show/peertube-plugin-livechat\" target=\"_blank\">pluginu</a>,
+  pokud chcete, aby byla tato konfigurace zohledněna, musíte ji povolit.\n"
+prosody_firewall_file_enabled: Povoleno
+prosody_firewall_name: Název
+prosody_firewall_name_desc: "Může obsahovat pouze: alfanumerické znaky, podtržítka
+  a pomlčky.\nSkripty se načítají v abecedním pořadí.\n"
+prosody_firewall_content: Obsah souboru
+livechat_configuration_channel_command_label: Příkaz Bota
+livechat_token_disabled_description: "Uživatelé mohou generovat dlouhodobé tokeny
+  pro připojení k chatu.\nTyto tokeny lze například použít k zahrnutí chatu do webových
+  doků OBS.\nDalší informace najdete v <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/user/obs\"\
+  \ target=\"_blank\">dokumentaci</a>.\nTuto funkci můžete zakázat zaškrtnutím tohoto
+  nastavení.\n"
+livechat_configuration_channel_mute_anonymous_desc: "Výchozí hodnota pro nové chatovací
+  místnosti.\nU stávajících chatovacích místností můžete tuto funkci změnit ve formuláři
+  pro konfiguraci místnosti.\nKdyž je tato funkce povolena, anonymní uživatelé mohou
+  chat pouze číst, nikoli však odesílat zprávy.\n"
+livechat_configuration_channel_terms_label: Podmínky chatu kanálu
+poll_instructions: Vyplněním a odesláním tohoto formuláře vytvoříte novou anketu.
+  Tím se ukončí a nahradí všechny stávající ankety.
+poll_question: Otázka
+poll_duration: Doba trvání ankety (v minutách)
+moderator_note_delete_confirm: Opravdu chcete tuto poznámku smazat?
+moderator_note_create_for_participant: Vytvořit novou poznámku
+moderator_note_search_for_participant: Hledání poznámek
