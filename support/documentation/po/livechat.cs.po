@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-11-12 18:42+0000\n"
+"PO-Revision-Date: 2024-11-12 20:31+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -312,21 +312,33 @@ msgstr "Režim ladění"
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a debug mode for this plugin, that shorten some delay.  For example, some log files will rotate every two minutes, instead of once per day.  This permit to test more easily certain actions, for which it could normally take hours or days to wait."
 msgstr ""
+"Pro tento zásuvný modul existuje režim ladění, který zkracuje určité "
+"zpoždění.  Například některé soubory protokolu se budou otáčet každé dvě "
+"minuty místo jednou denně.  To umožňuje snadněji testovat některé akce, na "
+"které by se normálně čekalo hodiny nebo dny."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation)."
 msgstr ""
+"Pro zapnutí tohoto režimu stačí vytvořit soubor `/var/www/peertube/storage/"
+"plugins/data/peertube-plugin-livechat/debug_mode` (nahradit `/var/www/"
+"peertube/storage/` správnou cestou ve vaší instalaci)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The simple existence of this file is sufficient to trigger the debug mode.  To make sure it's taken into account, you can restart your Peertube instance."
 msgstr ""
+"Ke spuštění režimu ladění stačí pouhá existence tohoto souboru.  Chcete-li "
+"se ujistit, že je brán v úvahu, můžete restartovat instanci Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This file can contain some JSON to enable more advanced options.  To have a list of existing parameters, check `server/lib/debug.ts`.  Restart Peertube after each content modification."
 msgstr ""
+"Tento soubor může obsahovat některé JSON, které umožňují pokročilejší "
+"možnosti.  Seznam existujících parametrů naleznete v souboru `server/lib/"
+"debug.ts`.  Po každé úpravě obsahu restartujte Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
