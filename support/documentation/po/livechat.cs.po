@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-11-07 01:15+0000\n"
+"PO-Revision-Date: 2024-11-12 18:42+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.8.2\n"
+"X-Generator: Weblate 5.8.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -114,7 +114,7 @@ msgstr "Doporučujeme seznámit se s následujícími pojmy:"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -184,7 +184,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Clone the repository, buid the plugin, and create your feature branch:"
-msgstr ""
+msgstr "Klonujte úložiště, vytvořte zásuvný modul a vytvořte větev kódu:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -210,26 +210,61 @@ msgid ""
 "git push --set-upstream me my_development\n"
 "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
 msgstr ""
+"# Klonování úložiště. Nezapomeňte na --recursive pro klonování podmodulů.\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --"
+"recursive\n"
+"\n"
+"cd peertube-plugin-livechat\n"
+"\n"
+"# Nainstalujte závislosti NPM a poprvé sestavte modul:\n"
+"Npm install\n"
+"\n"
+"# Sestavte zásuvný modul po úpravě:\n"
+"npm run build\n"
+"\n"
+"# Pokud máte fork z repozitáře, přidejte jej jako vzdálený (příklad):\n"
+"git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat."
+"git\n"
+"\n"
+"# Vytvořte místní větev pro svůj vývoj a zkontrolujteji (příklad):\n"
+"git checkout my_development # Poznámka: pokud je přidružena nějaká "
+"záležitost, použijte jako název větve fix_1234 (kde 1234 je číslo issue).\n"
+"# Chcete-li navrhnout své úpravy, odešlete svou větev do úložiště (příklad):"
+"\n"
+"git push --set-upstream me my_development\n"
+"# Poté přejděte do svého úložiště github pomocí webového prohlížeče a "
+"navrhněte žádost o stažení (viz další pokyny níže).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.  Once you are ready for a code review before merge, submit a Pull Request.  In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\"."
 msgstr ""
+"Jakmile jste připraveni ukázat svůj kód a požádat o zpětnou vazbu, odešlete "
+"*návrh* žádosti o stažení.  Jakmile jste připraveni na kontrolu kódu před "
+"sloučením, odešlete žádost o stažení.  V každém případě prosíme o propojení "
+"vašeho PR s problémy, které řeší, pomocí syntaxe GitHubu: \"fixes #"
+"issue_number\"."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder."
 msgstr ""
+"Kód front-endu je ve složce `client`, kód back-endu ve složce `server`. Ve "
+"složce `shared` je několik sdílených kódů."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 msgstr ""
+"Obecné pokyny (vývoj zásuvných modulů, sestavení, instalace, ...) naleznete "
+"v dokumentaci [Peertube](https://docs.joinpeertube.org/contribute-"
+"plugins?id=write-a-plugintheme)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "You can build the plugin with extra debug features simply by using:"
 msgstr ""
+"Zásuvný modul můžete sestavit s dalšími funkcemi ladění jednoduše pomocí:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -241,23 +276,37 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin is [REUSE](https://reuse.software/) compliant: it uses SPDX headers to identify licensing information of its source code.  More information on the [REUSE](https://reuse.software/) website.  You can use the [reuse](https://reuse.readthedocs.io/en/stable/readme.html#) command line tool to help you update headers.  The `npm run lint` command will use the `reuse` command to check compliance.  Don't forget to add your copyright information in SPDX headers when you modify some code."
 msgstr ""
+"Tento zásuvný modul je v souladu s [REUSE](https://reuse.software/): používá "
+"hlavičky SPDX k identifikaci licenčních informací svého zdrojového kódu.  "
+"Více informací naleznete na webových stránkách [REUSE](https://reuse."
+"software/).  K aktualizaci hlaviček můžete použít nástroj příkazového řádku "
+"[reuse](https://reuse.readthedocs.io/en/stable/readme.html#).  Příkaz `npm "
+"run lint` použije ke kontrole shody příkaz `reuse`.  Nezapomeňte do hlaviček "
+"SPDX přidat informace o autorských právech, když upravujete nějaký kód."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "ESBuild vs Typescript"
-msgstr ""
+msgstr "ESBuild vs Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
 msgstr ""
+"Tento zásuvný modul používá ESBuild pro generování frontend kódu, stejně "
+"jako oficiální zásuvný modul `peertube-plugin-quickstart`.  ESBuild si "
+"poradí s Typescriptem, ale nekontroluje typy (viz [dokumentace "
+"ESBuild](https://esbuild.github.io/content-types/#typescript)).  Proto "
+"nejprve zkompilujeme Typescript s volbou `-noEmit`, jen abychom "
+"zkontrolovali typy (`check:client:ts` v souboru package.json).  Pokud je vše "
+"v pořádku, spustíme ESBuild a vygenerujeme zkompilovaný javascript."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Debug Mode"
-msgstr ""
+msgstr "Režim ladění"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
