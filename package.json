@@ -38,13 +38,13 @@
     "xmppjs-chat-bot": "^0.5.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.12.0",
+    "@eslint/js": "^9.15.0",
     "@lit-labs/motion": "^1.0.7",
     "@lit/context": "^1.1.3",
     "@lit/task": "^1.0.1",
     "@peertube/feed": "^5.1.3",
     "@peertube/peertube-types": "^5.2.0",
-    "@stylistic/eslint-plugin": "^2.9.0",
+    "@stylistic/eslint-plugin": "^2.11.0",
     "@tsconfig/node16": "^16.1.3",
     "@types/async": "^3.2.24",
     "@types/escape-html": "^1.0.4",
@@ -52,7 +52,7 @@
     "@types/express": "^5.0.0",
     "@types/got": "^9.6.12",
     "@types/http-proxy": "^1.17.15",
-    "@types/node": "^16.18.113",
+    "@types/node": "^16.18.119",
     "@types/winston": "^2.4.4",
     "@types/xmpp__jid": "^1.3.5",
     "@typescript-eslint/parser": "^8.4.0",
@@ -61,19 +61,19 @@
     "eslint": "^8.57.1",
     "eslint-config-love": "^84.1.1",
     "eslint-plugin-lit": "^1.15.0",
-    "globals": "^15.11.0",
+    "globals": "^15.12.0",
     "lit": "^3.2.1",
     "lit-analyzer": "^2.0.3",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.79.5",
+    "sass": "^1.81.0",
     "sharp": "^0.33.5",
     "stylelint": "^16.10.0",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-standard-scss": "^13.1.0",
     "svgo": "^3.3.2",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.8.1",
-    "yaml": "^2.6.0"
+    "typescript-eslint": "^8.15.0",
+    "yaml": "^2.6.1"
   },
   "engine": {
     "peertube": ">=5.2.0"
