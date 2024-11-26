@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-11-15 21:03+0000\n"
+"PO-Revision-Date: 2024-11-26 23:02+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.8.3\n"
+"X-Generator: Weblate 5.8.4\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -373,11 +373,15 @@ msgstr "Prosody debugger"
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 msgstr ""
+"Prosody AppImage je možné připojit ke vzdálenému debuggeru pomocí "
+"[MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.  Then, add this in the `debub_mode` file:"
 msgstr ""
+"Chcete-li tak učinit, musíte nastavit MobDebug ve složce, ke které má "
+"přístup uživatel `peertube`. Pak to přidejte do souboru `debub_mode`:"
 
 #. type: Fenced code block (json)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -391,63 +395,93 @@ msgid ""
 "  }\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"debug_prosody\": {\n"
+"    \"debugger_path\": \"/the_path_to_mobdebug/src\",\n"
+"    \"host\": \"localhost\",\n"
+"    \"port\": \"8172\"\n"
+"  }\n"
+"}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is."
 msgstr ""
+"`host` a `port` jsou volitelné. `debugger_path` musí ukazovat na složku, kde "
+"je soubor `.lua` `MobDebug`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Restart Peertube."
-msgstr ""
+msgstr "Restartujte Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Start your debugger server."
-msgstr ""
+msgstr "Spusťte svůj ladicí server."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  This call does not need any authentication.  It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  You can even configure your debug server to launch this request automatically."
 msgstr ""
+"Aby se Prosody připojil k debuggeru, zavolejte API `http://your_instance.tld/"
+"plugins/livechat/router/api/restart_prosody?debugger=true`. Tento hovor "
+"nevyžaduje žádné ověření. Lze to provést z příkazového řádku, například "
+"pomocí `curl http://your_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`. Můžete dokonce nakonfigurovat svůj ladicí "
+"server tak, aby tento požadavek spouštěl automaticky."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Prosody will then restart, connecting to the debugger."
-msgstr ""
+msgstr "Prosody se poté restartuje a připojí se k debuggeru."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quick dev environment using Docker"
-msgstr ""
+msgstr "Rychlé vývojářské prostředí pomocí Dockeru"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker."
 msgstr ""
+"Na [fóru Peertube] je výukový program ve francouzštině (https://framacolibri."
+"org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-"
+"rapidement-en-utilisant-docker -et-qui-permet-de-tester-la-federation/17631)"
+", který vysvětluje, jak rychle vytvořit prostředí pro vývojáře pomocí Docker."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev)."
 msgstr ""
+"Bylo z toho vytvořeno repo, podívejte se na [pt-plugin-dev](https://codeberg."
+"org/mose/pt-plugin-dev)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
 msgstr ""
+"Poznámka: Z neznámého důvodu nemůže Prosody rozlišit adresy DNS kontejnerů "
+"při použití knihovny lua-unbound. V pluginu je špinavý hack: stačí vytvořit "
+"soubor `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` ve vašem "
+"docker-volume a restartovat kontejnery."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quickly rebuild and install the plugin"
-msgstr ""
+msgstr "Rychle znovu sestavte a nainstalujte plugin"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When you do modification, you don't have to always rebuild the full project, and reinstall the plugin on your dev environment.  You can build only the modified part (for example, if you only modified client files: `npm run build:client`).  Check the `package.json` files for available build scripts."
 msgstr ""
+"Když provádíte úpravy, nemusíte vždy znovu sestavovat celý projekt a znovu "
+"instalovat plugin do vašeho vývojového prostředí. Můžete sestavit pouze "
+"upravenou součást (pokud jste například upravili pouze soubory klienta: `npm "
+"spustit build:client`). V souborech `package.json` vyhledejte dostupné "
+"skripty sestavení."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
