@@ -66,15 +66,16 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
       for (const link of links) {
         if (typeof link !== 'object') { continue }
         if (!('key' in link)) { continue }
-        if (link.key !== 'in-my-library') { continue }
-        myLibraryLinks = link
-        break
+        if (link.key === 'in-my-library' || link.key === 'my-video-space') {
+          myLibraryLinks = link
+          break
+        }
       }
       if (!myLibraryLinks) { return links }
       if (!Array.isArray(myLibraryLinks.links)) { return links }
 
       const label = await peertubeHelpers.translate(LOC_MENU_CONFIGURATION_LABEL)
-      myLibraryLinks.links.push({
+      myLibraryLinks.links.unshift({
         label,
         shortLabel: label,
         path: '/p/livechat/configuration',

@@ -15,7 +15,7 @@
 
     /* See Peertube sub-menu-h1 mixin */
     font-size: 1.3rem;
-    border-bottom: 2px solid var(--greyBackgroundColor);
+    border-bottom: 2px solid var(--bg-secondary-400, var(--greyBackgroundColor));
     padding-bottom: 15px;
   }
 
@@ -42,45 +42,49 @@
 
   input[type="submit"],
   button[type="submit"] {
-    // Peertube orange-button mixin
     &,
     &:active,
+    &.active,
     &:focus {
-      color: #fff;
-      background-color: var(--mainColor);
+      color: var(--on-primary, #fff);
+      background-color: var(--primary, var(--mainColor));
+      border: 1px solid var(--primary, var(--mainColor));
     }
 
     &:hover {
-      color: #fff;
-      background-color: var(--mainHoverColor);
+      color: var(--on-primary, #fff);
+      background-color: var(--primary-400, var(--mainHoverColor));
     }
 
-    &[disabled],
-    &.disabled {
-      cursor: default;
-      color: #fff;
-      background-color: var(--inputBorderColor);
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.6;
     }
   }
 
   input[type="reset"],
   button[type="reset"] {
-    // Peertube grey-button mixin
-    background-color: var(--greyBackgroundColor);
-    color: var(--greyForegroundColor);
+    color: var(--fg, var(--mainForegroundColor));
+    background-color: transparent;
+    border: 1px solid var(--bg-secondary-500, var(--inputBorderColor)) !important;
 
-    &:hover,
     &:active,
+    &.active,
     &:focus,
-    &[disabled],
-    &.disabled {
-      color: var(--greyForegroundColor);
-      background-color: var(--greySecondaryBackgroundColor);
+    &:focus-visible {
+      color: var(--fg, var(--mainForegroundColor));
+      background-color: var(--bg-secondary-500, var(--inputBorderColor));
+      border-color: var(--bg-secondary-500, var(--inputBorderColor));
     }
 
-    &[disabled],
-    &.disabled {
-      cursor: default;
+    &:hover {
+      color: var(--fg, var(--mainForegroundColor));
+      background-color: var(--bg-secondary-450, var(--inputBorderColor));
+    }
+
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.8;
     }
   }
 

@@ -21,7 +21,7 @@ $small-view: 800px;
 
     /* See Peertube sub-menu-h1 mixin */
     font-size: 1.3rem;
-    border-bottom: 2px solid var(--greyBackgroundColor);
+    border-bottom: 2px solid var(--bg-secondary-400, var(--greyBackgroundColor));
     padding-bottom: 15px;
   }
 
@@ -29,7 +29,7 @@ $small-view: 800px;
   &.peertube-plugin-livechat-configuration-channel {
     .peertube-plugin-livechat-configuration-channel-info {
       /* stylelint-disable-next-line value-keyword-case */
-      color: var(--mainForegroundColor);
+      color: var(--fg, var(--mainForegroundColor));
 
       span:first-child {
         /* See Peertube .video-channel-display-name */
@@ -48,7 +48,7 @@ $small-view: 800px;
     h2 {
       // See Peertube settings-big-title mixin
       text-transform: uppercase;
-      color: var(--mainColor);
+      color: var(--primary, var(--mainColor));
       font-weight: variables.$font-bold;
       font-size: 1rem;
       margin-bottom: 10px;
@@ -82,35 +82,35 @@ $small-view: 800px;
       &:active,
       &:focus {
         color: #fff;
-        background-color: var(--mainColor);
+        background-color: var(--primary, var(--mainColor));
       }
 
       &:hover {
         color: #fff;
-        background-color: var(--mainHoverColor);
+        background-color: var(--fg-400, var(--mainHoverColor));
       }
 
       &[disabled],
       &.disabled {
         cursor: default;
         color: #fff;
-        background-color: var(--inputBorderColor);
+        background-color: var(--input-border-color, var(--inputBorderColor));
       }
     }
 
     input[type="reset"],
     button[type="reset"] {
       // Peertube grey-button mixin
-      background-color: var(--greyBackgroundColor);
-      color: var(--greyForegroundColor);
+      background-color: var(--bg-secondary-400, var(--greyBackgroundColor));
+      color: var(--fg-400, var(--greyForegroundColor));
 
       &:hover,
       &:active,
       &:focus,
       &[disabled],
       &.disabled {
-        color: var(--greyForegroundColor);
-        background-color: var(--greySecondaryBackgroundColor);
+        color: var(--fg-400, var(--greyForegroundColor));
+        background-color: var(--bg-secondary-300, var(--greySecondaryBackgroundColor));
       }
 
       &[disabled],
@@ -178,7 +178,7 @@ $small-view: 800px;
             display: flex;
             align-items: baseline;
             /* stylelint-disable-next-line value-keyword-case */
-            color: var(--mainForegroundColor);
+            color: var(--fg, var(--mainForegroundColor));
 
             &:hover,
             &:focus,

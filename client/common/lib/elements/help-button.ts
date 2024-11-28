@@ -38,7 +38,7 @@ export class HelpButtonElement extends LivechatElement {
         href="${this.url.href}"
         target=_blank
         title="${this.buttonTitle}"
-        class="orange-button peertube-button-link"
+        class="primary-button orange-button peertube-button-link"
       >${unsafeHTML(helpButtonSVG())}</a>`
     })
   }

@@ -27,7 +27,7 @@ type displayButtonOptions = displayButtonOptionsCallback | displayButtonOptionsH
 function displayButton (dbo: displayButtonOptions): void {
   const button = document.createElement('a')
   button.classList.add(
-    'orange-button', 'peertube-button-link',
+    'primary-button', 'orange-button', 'peertube-button-link',
     'peertube-plugin-livechat-button',
     'peertube-plugin-livechat-button-' + dbo.name
   )

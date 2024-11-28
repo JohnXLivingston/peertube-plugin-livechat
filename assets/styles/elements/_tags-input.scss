@@ -51,14 +51,14 @@ livechat-tags-input {
     transition-duration: 0.3s;
 
     @supports (scrollbar-width: auto) {
-      scrollbar-color: var(--greyForegroundColor) transparent;
+      scrollbar-color: var(--fg-400, var(--greyForegroundColor)) transparent;
       scrollbar-width: thin;
     }
   }
 
   .livechat-tags-container,
   .livechat-tags-searched {
-    border-bottom: 1px dashed var(--greyForegroundColor);
+    border-bottom: 1px dashed var(--fg-400, var(--greyForegroundColor));
 
     &.livechat-empty {
       height: 0;
@@ -104,7 +104,7 @@ livechat-tags-input {
       text-align: center;
       font-size: 10px;
       margin-left: var(--tag-padding-horizontal);
-      color: var(--mainColor);
+      color: var(--primary, var(--mainColor));
       border-radius: 50%;
       background: #fff;
       cursor: pointer;
@@ -118,19 +118,19 @@ livechat-tags-input {
     &:active,
     &:focus {
       color: #fff;
-      background-color: var(--mainColor);
+      background-color: var(--primary, var(--mainColor));
 
       .livechat-tag-close {
-        color: var(--mainColor);
+        color: var(--primary, var(--mainColor));
       }
     }
 
     &:hover {
       color: #fff;
-      background-color: var(--mainHoverColor);
+      background-color: var(--fg-400, var(--mainHoverColor));
 
       .livechat-tag-close {
-        color: var(--mainHoverColor);
+        color: var(--fg-400, var(--mainHoverColor));
       }
     }
 
@@ -138,10 +138,10 @@ livechat-tags-input {
     &.disabled {
       cursor: default;
       color: #fff;
-      background-color: var(--inputBorderColor);
+      background-color: var(--input-border-color, var(--inputBorderColor));
 
       .livechat-tag-close {
-        color: var(--inputBorderColor);
+        color: var(--input-border-color, var(--inputBorderColor));
       }
     }
 

@@ -19,7 +19,7 @@ table.peertube-plugin-livechat-prosody-list-rooms tr:nth-child(even) {
 
 table.peertube-plugin-livechat-prosody-list-rooms th {
   /* stylelint-disable-next-line custom-property-pattern */
-  background-color: var(--mainHoverColor);
+  background-color: var(--fg-400, var(--mainHoverColor));
   border: 1px solid black;
   /* stylelint-disable-next-line custom-property-pattern */
   color: var(--mainBackgroundColor);
