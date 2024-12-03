@@ -20,6 +20,8 @@ CONVERSE_REPO="https://github.com/conversejs/converse.js.git"
 # You can eventually set CONVERSE_COMMIT to a specific commit ID, if you want to apply some patches.
 # 2024-09-17: using Converse upstream (v11 WIP).
 CONVERSE_COMMIT="07dc6f4f5da5890b02a46a8a2f2d0498649786bc"
+# 2024-12-03: using Converse upstream (v11 WIP).
+CONVERSE_COMMIT="8f32df723e3aa392db02326dc6a3279c9497b6fb"
 
 # It is possible to use another repository, if we want some customization that are not upstream (yet):
 # CONVERSE_VERSION="livechat"
