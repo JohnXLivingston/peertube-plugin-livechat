@@ -1,0 +1,548 @@
+open_chat_new_window: Otevřít chat v novém okně
+open_chat: Otevřít chat
+close_chat: Zavřít chat
+use_current_theme_color: Použít aktuální barvy motivu
+not_found: Nenalezeno
+video: Video
+web: Web
+important_note_title: <h3>Důležité poznámky</h3>
+chat: Chat
+last_activity: Poslední aktivita
+use_chat: Použití chatu
+use_chat_help: Pokud je to povoleno, vedle videa se zobrazí chat.
+share_chat_link: Sdílet odkaz na chat
+read_only: Pouze pro čtení
+link_copied: Odkaz zkopírován
+error: Chyba
+chat_terms_label: Podmínky a pravidla
+show_scrollbarr: Zobrazit posuvník
+transparent_background: Průhledné pozadí (pro integraci streamu, například s OBS)
+copy: Kopírovat
+copied: Zkopírováno
+open: Otevřít
+generate_iframe: Vytvoření iframe pro vložení chatu do webové stránky
+chat_for_live_stream: 'Chat pro živý stream:'
+room_name: Název místnosti
+room_description: Popis místnosti
+connect_using_xmpp: Připojení pomocí XMPP
+connect_using_xmpp_help: K místnosti se můžete připojit pomocí externího účtu XMPP
+  a svého oblíbeného klienta XMPP.
+important_note_text: "Dokumentaci pluginu naleznete zde:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n Dokumentace k zásuvnému modulu Peertube Livechat\n</a>.\n"
+diagnostic: "Než požádáte o pomoc, použijte prosím diagnostický nástroj:\n<a class=\"\
+  peertube-plugin-livechat-launch-diagnostic\">Spustit diagnostiku</a>\n(pokud toto
+  tlačítko neotevře nové okno, zkuste stránku obnovit).\n"
+chat_title: <h3>Chat</h3>
+online_help: Online nápověda
+tips_for_streamers: "Tipy pro streamery: Chcete-li například vložit chat do svého
+  videostreamu pomocí OBS, \nvygenerujte odkaz pouze pro čtení a použijte jej jako
+  zdroj v prohlížeči.\n"
+channel: Kanál
+external_auth_custom_oidc_button_label_label: Popisek pro tlačítko připojení
+external_auth_custom_oidc_label: Použití poskytovatele služby OpenID Connect
+external_auth_custom_oidc_discovery_url_label: Discovery URL
+auto_display_label: Automatické otevření chatu
+converse_theme_option_peertube: Motiv Peertube
+converse_theme_option_cyberpunk: Motiv ConverseJS Cyberpunk
+external_auth_oidc_client_id_label: Client ID
+external_auth_oidc_client_secret_label: Client secret
+external_auth_google_oidc_label: Použít Google
+external_auth_oidc_redirect_uris_info_description: "<strong>URI zpětného volání/přesměrování:</strong>\n
+  Pokud chcete nakonfigurovat URI autorizovaného přesměrování na externí aplikaci,
+  přidejte tuto adresu URL:\n"
+all_lives_description: Pokud je zaškrtnuto, bude chat povolen pro všechny živé přenosy.
+per_live_video_description: Pokud je zaškrtnuto, budou mít všechna živá videa ve svých
+  vlastnostech zaškrtávací políčko pro povolení webového chatu.
+all_non_lives_description: Pokud je zaškrtnuto, bude chat povolen pro všechna videa,
+  která nejsou živá.
+avatar_set_option_legacy: Starší avatary Sepia (ty, které byly součástí předchozích
+  verzí zásuvného modulu)
+chat_behaviour_description: <h3>Chování na chatu</h3>
+auto_display_description: Při sledování videa se automaticky otevře okno chatu.
+share_url_option_owner: Zobrazit majiteli videa
+share_url_option_everyone: Zobrazit pro každého
+all_lives_label: Aktivace chatu pro všechny živé přenosy
+no_anonymous_description: "Pokud je zaškrtnuto, anonymní uživatelé Peertube chat neuvidí.\n
+  Tato funkce je stále experimentální.\nPokud jste ji povolili, důrazně doporučujeme
+  zaškrtnout také možnost \"Nezveřejňovat informace o chatu\".\nV opačném případě
+  by se některé nástroje třetích stran mohly pokusit chat otevřít a chovat se nepředvídatelně.\n"
+theming_advanced_description: <h3>Témata</h3>
+converse_theme_option_default: Výchozí motiv ConverseJS
+avatar_set_option_none: Žádné
+converse_theme_label: Motiv ConverseJS
+converse_theme_description: Vyberte si motiv converseJS, který chcete použít.
+videos_list_label: Aktivovat chat pro tato videa
+avatar_set_option_fenec: Fenek (maskot Mobilizon)
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Seznam místností</a>\n"
+room_type_label: Typ místnosti
+list_rooms_label: Seznam stávajících místností
+federation_dont_publish_remotely_description: "Zaškrtnutím tohoto nastavení vaše instance
+  nebude publikovat informace o chatu na fediverse.\nVzdálené instance Peertube nebudou
+  vědět, že se jedná o chatovací místnosti spojené s vašimi videi.<br>\n<b>Upozornění</b>:
+  pokud jste již chatovali, je možné, že informace již byly zveřejněny.\nNež bude
+  zveřejnění informací zrušeno, budete muset počkat na další aktualizaci videa.\n
+  Pokud toto nastavení zakážete, budete muset počkat, až budou videa aktualizována,
+  než budou informace\nznovu zveřejněno. K této aktualizaci dojde mimo jiné, když
+  se živý přenos obnoví nebo zastaví.<br>\n<b>Upozornění</b>: toto nastavení ovlivňuje
+  pouze zveřejňování informací prostřednictvím protokolu ActivityPub.\nNezabrání vzdálené
+  aplikaci, aby jinak zjistila přítomnost chatů a pokusila se k ní připojit.\n"
+external_auth_custom_oidc_title: <h4>Připojení OpenID</h4>
+avatar_set_option_sepia: Sépie (maskot Peertube)
+avatar_set_option_abstract: Abstrakt
+external_auth_description: "<h3>Externí ověřování</h3>\nPro uživatele, kteří nemají
+  účet na Peertube, můžete povolit různé režimy ověřování na základě poskytovatelů
+  vzdáleného ověřování.\n"
+external_auth_custom_oidc_button_label_description: Tento popisek se zobrazí uživatelům
+  jako popisek tlačítka pro ověření u tohoto poskytovatele OIDC.
+share_url_option_nobody: Zobrazit pro nikoho
+share_url_option_owner_moderators: Zobrazit pro majitele videa a moderátory instance
+per_live_video_label: Uživatelé si mohou aktivovat chat pro své živé přenosy
+federation_no_remote_chat_label: Nezobrazovat vzdálené chaty
+federation_no_remote_chat_description: "Pokud toto nastavení zaškrtnete, vaše instance
+  nebude nikdy zobrazovat chaty ze vzdálených videí.\n"
+external_auth_facebook_oidc_label: Použít Facebook
+open_blank_label: Zobrazit tlačítko "otevřít v novém okně"
+open_blank_description: K dispozici bude tlačítko pro otevření webového chatu v novém
+  okně.
+per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n Povolili jste nastavení «Uživatelé mohou aktivovat chat pro svůj živé přenosy».\n
+  S nastavením «Aktivovat chat pro všechny živé přenosy» je redundantní.\n</span>\n"
+all_non_lives_label: Aktivace chatu pro všechny neživé přenosy
+videos_list_description: "Videa UUID, pro která chceme webový chat.\nMohou to být
+  neživá videa. Jeden na řádek. <br />\nMůžete přidávat komentáře: vše za znakem #
+  bude odstraněno a prázdné řádky budou ignorovány.<br />\nNepřidávejte soukromá videa,
+  UUID budou odeslána do frontendu.\n"
+avatar_set_label: Sada Avatarů
+avatar_set_description: "Můžete si vybrat z několika různých sad výchozích avatarů,
+  které budou použity pro uživatele chatu.\nPodívejte se prosím na dokumentaci:\n
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Nastavení</a>.\n"
+external_auth_facebook_oidc_description: "Povolením této funkce se přidá tlačítko
+  \"přihlásit se pomocí Facebooku\".\nMusíte nakonfigurovat aplikaci Facebook OAuth.\n"
+share_url_label: Zobrazení tlačítka "sdílet odkaz na chat"
+share_url_description: K dispozici bude tlačítko pro sdílení url adresy chatu (lze
+  použít například pro integraci OBS).
+no_anonymous_label: Skrytí chatu pro anonymní uživatele
+auto_ban_anonymous_ip_label: Zakázat IP adresu anonymního uživatele, když je uživatel
+  vykázán z chatovací místnosti
+auto_ban_anonymous_ip_description: "Povolením této možnosti bude při každém zákazu
+  anonymního uživatele v chatovací místnosti jeho IP adresa rovněž zakázána na chatovacím
+  serveru.\nUpozornění: Pokud je vaše instance otevřená pro registraci, může kterýkoli
+  uživatel vytvořit místnost v pasti, pozvat uživatele, aby se k ní připojili, a automaticky
+  zakázat všechny IP adresy anonymních uživatelů.\nSeznam zakázaných IP se neukládá,
+  vymaže se při restartu serveru nebo při změně nastavení některého zásuvného modulu.\n
+  Zakázané IP jsou zaznamenány v logovacích souborech serveru Prosody, takže správci
+  serveru mohou případně použít některé externí nástroje (jako fail2ban) pro širší
+  zakázání IP.\n"
+avatar_set_option_cat: Kočky
+avatar_set_option_bird: Ptáci
+chat_terms_description: "Tyto podmínky se zobrazí všem uživatelům, když se připojí
+  k chatovacím místnostem.\nStreameři mohou také nastavit podmínky pro své kanály,
+  které se zobrazí hned po těchto globálních podmínkách.\n"
+external_auth_custom_oidc_description: "Můžete nakonfigurovat externího poskytovatele
+  OpenID Connect, který by mohl být použit k přihlášení do chatu.\nPodívejte se prosím
+  na dokumentaci:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Nastavení</a>.\n"
+federation_dont_publish_remotely_label: Nezveřejňujte informace z chatu
+room_type_description: Zde si můžete vybrat, zda chcete mít pro každé video samostatnou
+  místnost, nebo zda je chcete seskupit podle kanálů.
+room_type_option_video: Každé video má vlastní webchatovou místnost
+room_type_option_channel: Místnosti webového chatu jsou seskupeny podle kanálů
+federation_description: "<h3>Federace</h3>\nNásledující nastavení se týkají federace
+  s jinými instancemi Peertube,\na dalšími fediverzními softwary.\n"
+external_auth_google_oidc_description: "Povolením této funkce se přidá tlačítko \"\
+  Přihlásit se pomocí Google\".\nMusíte nakonfigurovat aplikaci Google OAuth.\n"
+prosody_muc_log_by_default_description: "Pokud je zaškrtnuto, obsah místnosti se ve
+  výchozím nastavení uloží.\nKaždý uživatel, který se připojí k místnosti, uvidí,
+  co bylo napsáno před jeho připojením.<br>\nVezměte prosím na vědomí, že je vždy
+  možné obsah zapnout/vypnout.\narchivaci pro konkrétní místnost úpravou jejích vlastností.\n"
+disable_websocket_label: Zakázat Websocket
+prosody_port_label: Prosody port
+autocolors_label: Automatická detekce barev
+autocolors_description: "Pokus o automatickou detekci barev podle aktuálního motivu
+  uživatele.<br>\nPokud je toto nastavení povoleno, \nzásuvný modul se pokusí automaticky
+  detekovat barvy, které se použijí v tématu chatu.<br>\nPokud to pro některé téma
+  Peertube nefunguje správně, můžete tuto možnost zakázat.\nChybu můžete nahlásit
+  na oficiálním <a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
+  \ target=\"_blank\">\nsledovači problémů\n</a>. Nezapomeňte uvést, který motiv nefunguje.\n"
+disable_websocket_description: "S Peertube &gt;= 5.0.0, tento plugin se snaží používat
+  Websocket připojení pro chatování.\nPokud je prohlížeč nebo připojení uživatele
+  nekompatibilní, prohlížeč automaticky přejde zpět na protokol BOSH.\n<br>\nVe výjimečných
+  případech však může dojít k selhání. Například pokud máte před Peertube reverzní
+  proxy server, který nepovoluje \nWebsocket připojení pro zásuvné moduly.\nV takovém
+  případě můžete zaškrtnutím tohoto nastavení zakázat připojení Websocket.\n"
+prosody_muc_log_by_default_label: Obsah přihlašovacích místností ve výchozím nastavení
+prosody_muc_expiration_label: Vypršení platnosti protokolů místností
+system_prosody_label: Použití systému Prosody
+help_builtin_prosody_description: "Tento zásuvný modul používá k obsluze chatovacích
+  místností server XMPP Prosody.<br>\nTento zásuvný modul je dodáván s obrazem aplikace
+  Prosody, který se používá ke spuštění služby.\n"
+prosody_peertube_uri_label: URL Peertube pro volání API
+chat_style_description: "Další styly, které mají být přidány do atributu stylu iframe.
+  <br>\nPříklad: height:400px;\n"
+system_prosody_description: "Upozornění: toto nastavení nezkoušejte, pokud si nejste
+  jisti, co děláte.<br>\nZaškrtnutím tohoto nastavení bude váš Peertube používat server
+  Prosody, který je dodáván s vaším systémem,\n a ne vestavěný AppImage.<br>\nToto
+  nastavení použijte pouze v případě, že se setkáte s problémy s vestavěným serverem
+  Prosody.\n"
+prosody_port_description: "Port, který bude používat server Prosody.<br>\nZměňte jej,
+  pokud je tento port na vašem serveru již používán.<br>\nTento port můžete na svém
+  firewallu zavřít, nebude k němu přístup z vnějšího světa.<br>\nPoznámka: toto se
+  může v blízké budoucnosti změnit, protože se plánuje přidání funkce pro aktivaci
+  připojení zvenčí.\n"
+prosody_advanced_description: <h3>Pokročilé nastavení serveru chatu</h3>
+help_builtin_prosody_label: Prosody server
+prosody_peertube_uri_description: "Pokud nevíte, co děláte, nechte prosím toto nastavení
+  prázdné.<br>\nV některých vzácných případech nemůže Prosody volat rozhraní API Peertube
+  z jeho veřejného URI.\nToto pole můžete použít k přizpůsobení URI Peertube pro moduly
+  Prosody\n(například pomocí „http://localhost:9000“ nebo „http://127.0.0.1:9000“).\n"
+chat_style_label: Atribut stylu iframe webového chatu
+prosody_room_allow_s2s_label: Povolení připojení k místnosti pomocí externích účtů
+  XMPP
+prosody_muc_expiration_description: "Zde můžete zvolit, jak dlouho bude obsah chatovací
+  místnosti na serveru uchováván. Hodnota může být:\n<ul>\n<li><b>60</b>: obsah bude
+  uložen po dobu 60 <b>sekund</b>. Hodnotu 60 můžete nahradit libovolnou celočíselnou
+  hodnotou.</li>\n<li><b>1d</b>: obsah bude uložen po dobu 1 <b>dne</b>. Hodnotu 1
+  můžete nahradit libovolnou celočíselnou hodnotou.</li>\n<li><b>1w</b>: obsah bude
+  uložen na 1 <b>týden</b>. Hodnotu 1 můžete nahradit libovolnou celočíselnou hodnotou.</li>\n
+  <li><b>1m</b>: obsah bude uložen na 1 <b>měsíc</b>. 1 můžete nahradit libovolnou
+  celočíselnou hodnotou.</li>\n<li><b>1y</b>: obsah bude uložen po dobu 1 <b>roku</b>.
+  1 můžete nahradit libovolnou celočíselnou hodnotou.</li>\n<li><b>nikdy</b>: obsah
+  nikdy nevyprší a bude uchováván navždy.</li>\n</ul>\n"
+prosody_c2s_label: Povolení připojení klienta k serveru
+prosody_c2s_port_label: Port klienta Prosody na server
+prosody_c2s_interfaces_label: Síťová rozhraní mezi klientem a serverem
+prosody_s2s_port_label: Server Prosody na port serveru
+prosody_s2s_interfaces_label: Síťová rozhraní mezi servery
+prosody_c2s_description: "Povolení připojení klientů XMPP k vestavěnému serveru Prosody.<br>\n
+  Pouze tato volba umožňuje připojení pouze klientům localhost.\n"
+prosody_s2s_interfaces_description: "Síťová rozhraní, na kterých se má naslouchat
+  pro připojení serveru k serveru.<br>\nSeznam IP adres pro naslouchání, oddělených
+  čárkami (mezery budou odstraněny).<br>\nMůžete použít „*“ pro naslouchání na všech
+  rozhraních IPv4 a „::“ pro všechna rozhraní IPv6.<br>\nPříklady:\n<ul>\nPříklady:
+  <li>*, ::</li>\n<li>*</li>\n<li>127.0.0.1, ::1</li>\n<li>172.18.0.42</li>\n</ul>\n"
+prosody_certificates_dir_description: "Pokud je toto pole prázdné, zásuvný modul bude
+  generovat a používat certifikáty podepsané vlastním podpisem.<br>\nPokud chcete
+  použít jiné certifikáty, stačí zde zadat složku, kde je \nProsody najde. Poznámka:
+  uživatel „peertube“ musí mít k této složce přístup pro čtení.\n"
+prosody_c2s_port_description: "Port, který bude používat modul c2s integrovaného serveru
+  Prosody.<br>\nKlienti XMPP budou pro připojení používat tento port.<br>\nZměňte
+  jej, pokud je tento port na vašem serveru již používán.<br>\nTento port můžete prozatím
+  nechat na svém firewallu zavřený, nebude k němu přístup z vnějšího světa.<br>\n
+  Poznámka: to se může v blízké budoucnosti změnit, protože se plánuje přidání funkce
+  pro aktivaci připojení zvenčí.\n"
+prosody_certificates_dir_label: Složka certifikátů
+prosody_room_allow_s2s_description: "Povolením této možnosti se bude možné připojit
+  k místnostem pomocí externích účtů XMPP a klientů XMPP.<br>\n<span class=„peertube-plugin-livechat-warning“>\n
+  <b>Upozornění</b>, povolení této možnosti může vyžadovat další konfiguraci serveru
+  a DNS.\n</span>\nPodívejte se prosím do dokumentace:\n<a href=„https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/“
+  target=„_blank“>.\nPovolení externího připojení k účtu XMPP.\n</a>\n"
+prosody_s2s_port_description: "Port, který bude použit pro připojení XMPP s2s (server
+  to server).<br>\nMěli byste použít standardní port 5269.\nV opačném případě byste
+  měli <a href=„https://prosody.im/doc/s2s“>\nnastavit konkrétní záznam DNS\n</a>.\n"
+prosody_components_list_label: Externí komponenty
+prosody_c2s_interfaces_description: "Síťová rozhraní, na kterých bude naslouchat připojení
+  klienta k serveru.<br>\nToto nastavení je určeno pro pokročilé uživatele. Toto nastavení
+  neměňte, pokud plně nerozumíte tomu, co znamená.<br>\nSeznam IP adres k poslechu,
+  oddělené čárkou (mezery budou odstraněny).<br>\nMůžete použít «*» pro poslech na
+  všech rozhraních IPv4 a «::» pro všechna IPv6.<br>\nPříklady:\n<ul>\n <li>*, ::</li>\n
+  <li>*</li>\n <li>127.0.0.1, ::1</li>\n <li>127.0.0.1, ::1, 172.18.0.42</li>\n</ul>\n"
+prosody_components_label: Povolit vlastní externí součásti Prosody
+prosody_components_interfaces_description: "Síťová rozhraní pro naslouchání připojení
+  externích komponent.<br>\nSeznam IP adres k poslechu, oddělené čárkou (mezery budou
+  odstraněny).<br>\nMůžete použít «*» pro poslech na všech rozhraních IPv4 a «::»
+  pro všechna IPv6.<br>\nPříklady:\n<ul>\n <li>*, ::</li>\n <li>*</li>\n <li>127.0.0.1,
+  ::1</li>\n <li>172.18.0.42</li>\n</ul>\n"
+prosody_components_interfaces_label: Síťová rozhraní externích komponent Prosody
+prosody_components_port_description: "Port, který budou komponenty XMPP používat pro
+  připojení k serveru Prosody.<br>\nZměňte jej, pokud se tento port již na vašem serveru
+  používá.<br>\nPokud nepovolíte přístup jiným rozhraním než localhost, můžete tento
+  port ponechat na vašem firewallu uzavřený.\n"
+prosody_components_description: "Povolte použití externích komponent XMPP.<br>\nTato
+  možnost sama o sobě umožňuje připojení pouze z localhost.\nMusíte nastavit naslouchací
+  rozhraní a otevřít port na vašem firewallu, abyste jej zpřístupnili ze vzdálených
+  serverů.<br>\nTuto funkci lze například použít k připojení některých robotů k chatovacím
+  místnostem.\n"
+prosody_components_port_label: Port pro externí komponenty Prosody
+prosody_components_list_description: "Externí komponenty, které je třeba deklarovat:\n
+  <ul>\n <li>Jedna na řádek.</li>\n <li>Použijte formát «název_komponenty:tajné_komponenty»
+  (mezery budou oříznuty).</li>\n <li>Můžete přidávat komentáře: vše za znakem # bude
+  odstraněno a prázdné řádky budou ignorovány.</li>\n <li>Název může obsahovat pouze
+  latinské alfanumerické znaky a tečky.</li>\n <li>\n Pokud název obsahuje pouze alfanumerické
+  znaky, bude doplněn o doménu XMPP.\n Například „most“ se změní na „most.vaše_doména.tld“.\n
+  Můžete také zadat úplný název domény, ale musíte se ujistit, že jste správně nakonfigurovali
+  DNS.\n </li>\n <li>V tajné přístupové frázi používejte pouze alfanumerické znaky
+  (použijte alespoň 15 znaků).</li>\n</ul>\n"
+livechat_configuration_desc: Zde můžete nakonfigurovat některé pokročilé možnosti
+  pro chatovací místnosti přidružené k živým přenosům.
+save: Uložit
+cancel: Zrušit
+disable_channel_configuration_label: Zakázat pokročilou konfiguraci kanálu a chatbota
+successfully_saved: Úspěšně uloženo
+menu_configuration_label: Chatovací místnosti
+configuration_description: "<h3>Pokročilá konfigurace kanálu</h3>\nNásledující nastavení
+  se týkají pokročilých možností kanálu:\nuživatelé budou moci přidat některá přizpůsobení
+  na svých kanálech,\naktivovat moderačního bota, ...\n"
+livechat_configuration_title: Konfigurace vašich chatovacích místností
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Experimentální
+  funkce:</b> tato funkce je stále experimentální.\n"
+livechat_configuration_please_select: Vyberte prosím níže jeden z vašich kanálů a
+  nastavte jeho možnosti chatování.
+livechat_configuration_channel_retractation_reason_label: Důvod
+livechat_configuration_channel_retractation_reason_desc: Důvod zobrazení kromě smazaných
+  zpráv
+livechat_configuration_applytomoderators_label: Také moderovat zprávy od moderátorů
+livechat_configuration_applytomoderators_desc: "Ve výchozím nastavení se tato funkce
+  na zprávy moderátora nevztahuje.\nZaškrtnutím této možnosti budou zprávy od moderátorů
+  rovněž odstraněny.\n"
+livechat_configuration_channel_forbidden_words_label_label: Štítek
+livechat_configuration_channel_forbidden_words_desc: "Můžete nastavit některá slova,
+  která bude bot automaticky moderovat (zprávy obsahující tato slova budou okamžitě
+  odstraněny).\nMůžete také přidat volitelný důvod, který se zobrazí na místě smazaných
+  zpráv.\nNa stránce s dokumentací je uvedeno několik příkladů.\n"
+livechat_configuration_channel_forbidden_words_label_desc: Označení tohoto pravidla
+  pro zakázaná slova
+livechat_configuration_channel_quote_label: Časovač
+livechat_configuration_channel_quote_desc2: "Jedna zpráva na řádek.\nPokud je zpráv
+  více, vybere se jedna náhodně každých X minut.\n"
+livechat_configuration_channel_quote_delay_label: Odeslat každých X minut
+livechat_configuration_channel_quote_delay_desc: "Bot bude zprávu odesílat každých
+  X minut.\n"
+livechat_configuration_channel_desc: Zde můžete nastavit některé možnosti pro tento
+  kanál (zásady moderování, ...).
+livechat_configuration_channel_title: Možnosti kanálů
+livechat_configuration_channel_enable_bot_label: Povolení moderačního bota
+livechat_configuration_channel_bot_options_title: Možnosti moderačního bota
+livechat_configuration_channel_forbidden_words_label: Zakázaná slova nebo výrazy
+livechat_configuration_channel_forbidden_words_desc2: "Jedno slovo nebo výraz na řádek.
+  Pokud na jeden řádek vložíte více slov, budou se porovnávat pouze zprávy obsahující
+  celou sekvenci.\n"
+livechat_configuration_channel_forbidden_words_regexp_desc: Zaškrtnutím této možnosti
+  můžete použít regulární výrazy.
+livechat_configuration_channel_forbidden_words_regexp_label: Považujte za regulární
+  výrazy
+livechat_configuration_channel_quote_desc: "Můžete nakonfigurovat několik časovačů,
+  které budou odesílat zprávy v pravidelných intervalech.\nTyto zprávy bude bot odesílat
+  každých X minut.\nMůžete například nastavit, aby bot odesílal každých 5 minut nějaké
+  informace o sponzorování.\n"
+livechat_configuration_channel_quote_label2: Zprávy
+livechat_configuration_channel_slow_mode_desc: "Výchozí hodnota pomalého režimu:\n
+  <ul>\n<li>0: pomalý režim vypnut</li>\n<li>Jakékoli kladné celé číslo: uživatelé
+  mohou odeslat zprávu každých X sekund (moderátoři nejsou omezeni)</li>\n</ul>\n"
+livechat_configuration_channel_forbidden_words_comments_desc: "Můžete sem přidat komentář
+  k tomuto pravidlu, abyste si pamatovali, jak a proč jste ho vytvořili.\nTyto komentáře
+  jsou čistě orientační a nemají žádný vliv na chování bota.\n"
+livechat_configuration_channel_slow_mode_label: Pomalý režim
+livechat_configuration_channel_forbidden_words_comments_label: Komentáře
+livechat_configuration_channel_command_message_desc: Zpráva k odeslání.
+livechat_configuration_channel_command_message_label: Zpráva
+livechat_configuration_channel_command_cmd_desc: "Příkaz bez počátečního \"!\". Například
+  \"help\", \"sponzor\", ...\n"
+livechat_configuration_channel_for_more_info: "Další informace o konfiguraci této
+  funkce naleznete v dokumentaci kliknutím na tlačítko nápovědy.\n"
+livechat_configuration_channel_command_cmd_label: Příkaz
+share_chat_dock_tips: "Můžete si vygenerovat odkaz, který otevře chat na celé stránce,
+  přihlášený pomocí účtu Peertube.\nToho lze využít například k tomu, abyste měli
+  v OBS webový dok, takže můžete chat číst a komunikovat s ním přímo z OBS.\nTento
+  odkaz nikomu nesdělujte, protože by mu umožnil připojit se jako vy.\nNíže naleznete
+  seznam již vygenerovaných autentizačních tokenů.\nMůžete si vytvořit nový nebo zrušit
+  jakýkoli předchozí token.\nUpozorňujeme, že tyto tokeny nemají žádné datum platnosti.\n"
+tasks: Úkoly
+task_list_create: 'Vytvořit nový seznam úkolů:'
+task_create: Vytvořit nový úkol
+task_name: Název úkolu
+task_description: Popis
+slow_mode_info: Je povolen pomalý režim, uživatelé mohou odeslat zprávu každých %1$s
+  sekund.
+task_delete_confirm: Opravdu chcete tento úkol odstranit?
+invalid_value_wrong_type: Hodnota je nesprávného typu.
+livechat_configuration_channel_banned_jids_label: Zakázaní uživatelé a vzory
+livechat_configuration_channel_bot_nickname: Přezdívka Bota
+invalid_value_missing: Tato hodnota je vyžadována.
+validation_error: Při ověřování došlo k chybě.
+too_many_entries: Příliš mnoho položek
+login_using_external_account: Přihlášení pomocí externího účtu
+login_remote_peertube_url: URL adresa vaší instance Peertube
+login_remote_peertube: 'Přihlaste se pomocí účtu na jiné instanci Peertube:'
+login_remote_peertube_video_not_found: Toto video není na této instanci Peertube k
+  dispozici.
+login_remote_peertube_searching: Hledání videa na Peertube instanci...
+login_remote_peertube_url_invalid: Neplatná URL adresa Peertube.
+login_remote_peertube_no_livechat: Zásuvný modul livechat není v této instanci Peertube
+  nainstalován.
+login_remote_peertube_video_not_found_try_anyway: V některých případech lze video
+  načíst i po připojení ke vzdálené instanci.
+login_remote_peertube_video_not_found_try_anyway_button: Přesto zkuste otevřít video
+  na instanci Peertube
+login_external_auth_alert_message: Ověření se nezdařilo
+task_list_create_error: Chyba při ukládání seznamu úkolů
+task_list_name: Název seznamu úkolů
+task_delete: Smazat úkol
+task_list_pick_title: Vyberte seznam úkolů
+token_label: Štítek
+token_password: Token s heslem
+token_date: Datum
+token_action_create: Vytvořit nový token
+token_action_revoke: Odvolání tokenu
+invalid_value_file_too_big: 'Velikost souboru je příliš velká (maximální velikost:
+  %s).'
+task_list_pick_message: "Po výběru seznamu úkolů se vytvoří nový úkol.\nChcete-li
+  úkol zobrazit, otevřete aplikaci úkolů pomocí horního menu.\nVíce informací naleznete
+  v dokumentaci k zásuvnému modulu livechat.\n"
+invalid_value_wrong_format: Hodnota je v nesprávném formátu.
+livechat_emojis_file: Soubor
+action_import_emojis_info: Pokud jsou importovaná data v pořádku, nezapomeňte formulář
+  uložit.
+token_action_revoke_confirm: Opravdu chcete tento token odvolat?
+auth_description: "<h3>Autentifikace</h3>\n"
+livechat_token_disabled_label: Zakázat tokeny livechatu
+invalid_value_not_in_range: Hodnota není v povoleném rozsahu.
+invalid_value_duplicate: Duplicitní hodnota
+task_list_delete: Smazat seznam úkolů
+task_list_delete_confirm: Opravdu chcete tento seznam úkolů smazat?
+task_list_pick_empty: Zatím neexistuje žádný seznam úkolů, nejprve si ho vytvořte
+promote: Staňte se moderátorem
+livechat_configuration_channel_emojis_title: Emotikony kanálu
+livechat_configuration_channel_emojis_desc: "Pro svůj kanál můžete nakonfigurovat
+  vlastní emotikony.\nTyto emotikony budou k dispozici ve výběru emotikonů.\nUživatelé
+  je mohou používat také pomocí jejich krátkého názvu (například napsáním \":shortname:\"\
+  ).\n"
+livechat_emojis_shortname: Zkrácený název
+livechat_emojis_shortname_desc: "V chatu můžete používat emotikony pomocí \":shortname:\"\
+  .\nKrátký název může začínat a/nebo končit dvojtečkou (:) a může obsahovat pouze
+  alfanumerické znaky, podtržítka a pomlčky.\nDůrazně doporučujeme začínat je dvojtečkou,
+  aby uživatelé mohli používat automatické doplňování (zadáním \":\" a následným stisknutím
+  klávesy TAB).\n"
+livechat_emojis_file_desc: "Soubor emotikonů.\n"
+action_import: Import
+action_add_entry: Přidat položku
+action_remove_entry: Odebrat tuto položku
+action_remove_entry_confirm: Opravdu chcete tuto položku odstranit?
+loading_error: Při načítání dat došlo k chybě.
+share_chat_embed: Vložit
+share_chat_peertube_tips: Tento odkaz otevře chat v rozhraní Peertube.
+share_chat_dock: Dock
+token_default_label: Token generovaný z webového rozhraní
+login_remote_peertube_video_open_failed: 'Váš prohlížeč zablokoval otevření ve vzdálené
+  instanci, zkuste prosím otevřít tento odkaz ručně:'
+invalid_value_too_long: Hodnota je příliš dlouhá
+action_export: Export
+invalid_value: Neplatná hodnota.
+chatroom_not_accessible: Tato chatovací místnost neexistuje nebo k ní nemáte přístup.
+prosody_firewall_configuration_help: "Zde můžete konfigurovat modul Prosody <a href=\"\
+  https://modules.prosody.im/mod_firewall\" target=\"_blank\">mod_firewall</a>.\n
+  Níže můžete vytvořit více konfiguračních souborů a měnit jejich pořadí.\nNeváhejte
+  se o své konfigurace podělit s komunitou (například přidáním příkladů do dokumentace
+  zásuvného modulu).\n"
+livechat_configuration_channel_anonymize_moderation_desc: "Anonymizovat výchozí hodnotu
+  moderačních akcí pro nové místnosti.\nPokud je tato možnost povolena, budou moderátorské
+  akce anonymizovány, aby se zabránilo prozrazení toho, kdo banuje/vyhazuje/... obyvatele.\n"
+prosody_firewall_description: "Na serveru Prosody můžete povolit <a href=\"https://modules.prosody.im/mod_firewall\"\
+  \ target=\"_blank\">mod_firewall</a>.\nDalší informace naleznete <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/\"\
+  \ target=\"_blank\">v dokumentaci</a>.\n"
+muted_anonymous_message: Zprávy mohou posílat pouze registrovaní uživatelé.
+livechat_configuration_channel_mute_anonymous_label: Ztlumit anonymní uživatele
+moderation_delay: Zpoždění moderování
+livechat_configuration_channel_moderation_delay_desc: "Výchozí hodnota zpoždění moderování:\n
+  <ul>\n<li>0: zpoždění moderace vypnuto</li>\n<li>Ljakékoli kladné celé číslo: zprávy
+  budou pro účastníky, kteří nejsou moderátory, zpožděny o X sekund, což moderátorům
+  umožní smazat zprávu dříve, než si ji přečte kterýkoli uživatel.</li>\n</ul>\n"
+emoji_only_info: Pokud je povolen režim pouze emoji, můžete ve zprávách používat pouze
+  emoji.
+emoji_only_mode_title: Režim pouze pro emoji
+emoji_only_mode_desc_1: "V chatovacích místnostech můžete povolit režim \"Pouze emoji\"\
+  .\nKdyž je tento režim povolen, mohou účastníci posílat pouze emoji (standardní
+  nebo vlastní emoji kanálu).\nModerátorů se toto omezení netýká.\n"
+livechat_configuration_channel_anonymize_moderation_label: Anonymizovat moderátorské
+  akce
+moderator_notes: Moderátorské poznámky
+moderator_notes_create_error: Chyba při ukládání poznámky
+moderator_note_create: Vytvoření nové poznámky
+moderator_note_description: Popis
+moderator_note_delete: Smazat poznámku
+moderator_note_filters: Vyhledávací filtry
+moderator_note_original_nick: Přezdívka účastníka v době vytvoření poznámky
+livechat_configuration_channel_command_desc: "Bota můžete nakonfigurovat tak, aby
+  reagoval na příkazy.\nPříkaz je zpráva začínající znakem \"!\", například \"!help\"\
+  , která vyvolá příkaz \"help\".\n"
+new_poll: Vytvoření nové ankety
+poll: Anketa
+poll_title: Nová anketa
+poll_vote_instructions: 'Chcete-li hlasovat, klikněte na svou volbu nebo pošlete zprávu
+  s vykřičníkem a číslem volby (příklad: !1).'
+poll_vote_instructions_xmpp: 'Pro hlasování pošlete zprávu s vykřičníkem, za kterou
+  následuje číslo vaší volby. Příklad: !1'
+poll_choice_invalid: Tato volba není platná.
+poll_is_over: Tato anketa je nyní u konce.
+poll_anonymous_vote_ok: Váš hlas je zohledněn. Hlasy jsou anonymní, nebudou zobrazeny
+  ostatním účastníkům.
+poll_vote_ok: Váš hlas byl vzat v úvahu, počítadla budou za chvíli aktualizována.
+livechat_configuration_channel_terms_desc: "Můžete nakonfigurovat zprávu \"podmínky\"\
+  , která se zobrazí uživatelům, kteří se připojí k vašim chatovacím místnostem.\n"
+search_occupant_message: Vyhledat všechny zprávy
+message_search: Hledání zpráv
+message_search_original_nick: Přezdívka účastníka v době odeslání zprávy
+prosody_firewall_label: Povolit mod_firewall Prosody
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+  \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Konfigurace mod_firewall</a>\n"
+prosody_firewall_configuration: Konfigurace mod_firewall Prosody
+prosody_firewall_disabled_warning: "Varování: mod_firewall je zakázán v nastavení
+  <a href=\"/admin/plugins/show/peertube-plugin-livechat\" target=\"_blank\">pluginu</a>,
+  pokud chcete, aby byla tato konfigurace zohledněna, musíte ji povolit.\n"
+prosody_firewall_file_enabled: Povoleno
+prosody_firewall_name: Název
+prosody_firewall_name_desc: "Může obsahovat pouze: alfanumerické znaky, podtržítka
+  a pomlčky.\nSkripty se načítají v abecedním pořadí.\n"
+prosody_firewall_content: Obsah souboru
+livechat_configuration_channel_command_label: Příkaz Bota
+livechat_token_disabled_description: "Uživatelé mohou generovat dlouhodobé tokeny
+  pro připojení k chatu.\nTyto tokeny lze například použít k zahrnutí chatu do webových
+  doků OBS.\nDalší informace najdete v <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/user/obs\"\
+  \ target=\"_blank\">dokumentaci</a>.\nTuto funkci můžete zakázat zaškrtnutím tohoto
+  nastavení.\n"
+livechat_configuration_channel_mute_anonymous_desc: "Výchozí hodnota pro nové chatovací
+  místnosti.\nU stávajících chatovacích místností můžete tuto funkci změnit ve formuláři
+  pro konfiguraci místnosti.\nKdyž je tato funkce povolena, anonymní uživatelé mohou
+  chat pouze číst, nikoli však odesílat zprávy.\n"
+livechat_configuration_channel_terms_label: Podmínky chatu kanálu
+poll_instructions: Vyplněním a odesláním tohoto formuláře vytvoříte novou anketu.
+  Tím se ukončí a nahradí všechny stávající ankety.
+poll_question: Otázka
+poll_duration: Doba trvání ankety (v minutách)
+moderator_note_delete_confirm: Opravdu chcete tuto poznámku smazat?
+moderator_note_create_for_participant: Vytvořit novou poznámku
+moderator_note_search_for_participant: Hledání poznámek
+emoji_only_mode_desc_2: "Tento režim může být užitečný například:\n<ul>\n<li> Abyste
+  zabránili spamu nebo urážlivým zprávám, když zde nejste, abyste je moderovali.</li>\n
+  <li>Když je příliš mnoho hovořících účastníků a vy už nemůžete správně moderovat.</li>\n\
+  </ul>\n"
+emoji_only_mode_desc_3: "Chcete-li tento režim povolit nebo zakázat, můžete použít
+  konfigurační formulář místnosti.\nPokud jej chcete povolit pro všechny své chatovací
+  místnosti najednou, můžete použít tlačítko níže.\n"
+emoji_only_enable_all_rooms: Povolení režimu pouze emoji ve všech chatovacích místnostech
+  kanálu
+livechat_configuration_channel_special_chars_label: Zákaz speciálních znaků
+livechat_configuration_channel_special_chars_desc: "Pokud tuto možnost povolíte, moderátor
+  bude automaticky mazat zprávy obsahující více než X speciálních znaků.\nSpeciální
+  znaky jsou ty, které nepatří do jedné z těchto kategorií: písmena, číslice, interpunkční
+  znaménka, symboly měn, emotikony.\n"
+livechat_configuration_channel_special_chars_tolerance_label: Tolerance
+livechat_configuration_channel_special_chars_tolerance_desc: Počet speciálních znaků,
+  které lze ve zprávě přijmout, aniž by došlo k jejímu vymazání.
+feature_comes_with: Tato funkce je součástí pluginu livechat verze X.X.X.
+livechat_configuration_channel_no_duplicate_label: Žádné duplicitní zprávy
+livechat_configuration_channel_no_duplicate_desc: "Povolením této možnosti bude moderovací
+  robot automaticky upravovat duplicitní zprávy.\nTo znamená, že pokud uživatel odešle
+  stejnou zprávu dvakrát během X sekund, druhá zpráva bude odstraněna.\n"
+livechat_configuration_channel_no_duplicate_delay_label: Časový interval
+livechat_configuration_channel_no_duplicate_delay_desc: "Interval v sekundách, během
+  kterého uživatel nemůže znovu odeslat stejnou zprávu.\n"
+announcements_message_type: Typ zprávy
+announcements_message_type_standard: Standardní
+announcements_message_type_announcement: Oznámení
+announcements_message_type_highlight: Zvýrazněná
+announcements_message_type_warning: Upozornění
+poll_anonymous_results: Anonymní výsledky
+poll_choice_n: 'Možnost {{N}}:'
+poll_end: 'Anketa končí v:'
