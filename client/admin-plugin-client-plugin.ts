@@ -143,7 +143,7 @@ function register (clientOptions: RegisterClientOptions): void {
                   lastActivityEl.textContent = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
                 }
                 const promoteButton = document.createElement('a')
-                promoteButton.classList.add('orange-button', 'peertube-button-link')
+                promoteButton.classList.add('primary-button', 'orange-button', 'peertube-button-link')
                 promoteButton.style.margin = '5px'
                 promoteButton.onclick = async () => {
                   await fetch(

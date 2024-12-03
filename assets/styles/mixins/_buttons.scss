@@ -54,7 +54,7 @@ $bs-green: #39cc0b;
   &.disabled {
     cursor: default;
     color: #fff;
-    background-color: var(--inputBorderColor);
+    background-color: var(--input-border-color, var(--inputBorderColor));
   }
 }
 
@@ -67,7 +67,7 @@ $bs-green: #39cc0b;
   &:active,
   &:focus {
     color: #fff;
-    background-color: var(--mainColor);
+    background-color: var(--primary, var(--mainColor));
   }
 
   &:focus,
@@ -77,13 +77,13 @@ $bs-green: #39cc0b;
 
   &:hover {
     color: #fff;
-    background-color: var(--mainHoverColor);
+    background-color: var(--fg-400, var(--mainHoverColor));
   }
 
   &[disabled],
   &.disabled {
     cursor: default;
     color: #fff;
-    background-color: var(--inputBorderColor);
+    background-color: var(--input-border-color, var(--inputBorderColor));
   }
 }

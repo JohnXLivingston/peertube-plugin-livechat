@@ -56,7 +56,7 @@ livechat-share-chat {
       &.livechat-shareurl-suboptions-disabled {
         label {
           /* stylelint-disable-next-line custom-property-pattern */
-          color: var(--greyForegroundColor);
+          color: var(--fg-400, var(--greyForegroundColor));
         }
       }
     }

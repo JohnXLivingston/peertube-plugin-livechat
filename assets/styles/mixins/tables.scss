@@ -13,7 +13,7 @@
   text-align: center;
 
   tr {
-    border: 1px var(--greyBackgroundColor) solid;
+    border: 1px var(--bg-secondary-400, var(--greyBackgroundColor)) solid;
   }
 
   td,
@@ -34,6 +34,6 @@
   }
 
   tbody tr:nth-child(odd) {
-    background-color: var(--greySecondaryBackgroundColor);
+    background-color: var(--bg-secondary-300, var(--greySecondaryBackgroundColor));
   }
 }
