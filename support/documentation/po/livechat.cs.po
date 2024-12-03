@@ -7,131 +7,154 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2023-07-17 10:52+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
+"PO-Revision-Date: 2024-11-26 23:02+0000\n"
+"Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
+"Language-Team: Czech <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18.2\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.8.4\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact the author"
-msgstr ""
+msgstr "Kontakt na autora"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact me"
-msgstr ""
+msgstr "Kontaktujte mě"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
 msgstr ""
+"Máte-li jakékoli dotazy nebo chcete-li si o tomto zásuvném modulu promluvit, "
+"můžete se připojit k této místnosti XMPP pomocí libovolného klienta Jabber: "
+"[plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room."
+"im.yiny.org?join)."
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
 msgstr ""
+"Pokud chcete projekt finančně podpořit, můžete mě kontaktovat na e-mailové "
+"adrese git.[at].john-livingston.fr nebo se podívejte na můj [Liberapay "
+"profil](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Contributor Covenant Code of Conduct"
-msgstr ""
+msgstr "Kodex chování smluvních partnerů"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Code of Conduct"
-msgstr ""
+msgstr "Kodex chování"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
 msgstr ""
+"Tento kodex chování je převzat z dokumentu [Contributor Covenant](https://www"
+".contributor-covenant.org), verze 2.1, který je k dispozici na adrese "
+"[https://www.contributor-covenant.org/version/2/1/code_of_conduct."
+"html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)"
+". Překlady jsou k dispozici na adrese [https://www.contributor-covenant.org/"
+"translations](https://www.contributor-covenant.org/translations). Případy "
+"urážlivého, obtěžujícího nebo jinak nepřijatelného chování lze hlásit "
+"vedoucím komunity odpovědným za jejich prosazování na e-mailovou adresu "
+"git.[at].john-livingston.fr."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Develop"
-msgstr ""
+msgstr "Vývoj"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue."
 msgstr ""
+"Vždy mluvte o funkcích, které chcete vyvinout, tím, že vytvoříte/najdete a "
+"okomentujete problém, který řeší váš problém, než na něm začnete pracovat, a "
+"informujte komunitu o tom, že začínáte kódovat tím, že problém prohlásíte za "
+"problém."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Pull Request must be done on the `main` branch."
-msgstr ""
+msgstr "Žádost o stažení musí být provedena na větvi `main`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated."
 msgstr ""
+"Do března 2023 byly příspěvky prováděny na větvi `develop`. Tento postup je "
+"nyní zastaralý."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prerequisite for building this plugin"
-msgstr ""
+msgstr "Předpoklad pro vytvoření tohoto zásuvného modulu"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is highly recommended to be familiar with following concepts:"
-msgstr ""
+msgstr "Doporučujeme seznámit se s následujícími pojmy:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NodeJS"
-msgstr ""
+msgstr "NodeJS"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NPM"
-msgstr ""
+msgstr "NPM"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Typescript"
-msgstr ""
+msgstr "Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To build the plugin, you must have following packages:"
-msgstr ""
+msgstr "Pro sestavení pluginu musíte mít následující balíčky:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`git`"
-msgstr ""
+msgstr "`git`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`npm` (>=8.x)"
-msgstr ""
+msgstr "`npm` (>=8.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`nodejs` (>=14.x)"
-msgstr ""
+msgstr "`nodejs` (>=14.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`build-essential`"
-msgstr ""
+msgstr "`build-essential`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -146,17 +169,22 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`reuse`"
-msgstr ""
+msgstr "`reuse`"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
 msgstr ""
+"Upozorňujeme, že tento zásuvný modul potřebuje pro server Prosody XMPP "
+"obrázek aplikace. Tento AppImage poskytuje vedlejší projekt [Prosody "
+"AppImage](https://github.com/JohnXLivingston/prosody-appimage). Skript "
+"`build-prosody.sh` stáhne binární soubory připojené k tomuto vzdálenému "
+"úložišti a zkontroluje, zda je jejich hashsum sha256 správný."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Clone the repository, buid the plugin, and create your feature branch:"
-msgstr ""
+msgstr "Klonujte úložiště, vytvořte zásuvný modul a vytvořte větev kódu:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -182,26 +210,61 @@ msgid ""
 "git push --set-upstream me my_development\n"
 "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
 msgstr ""
+"# Klonování úložiště. Nezapomeňte na --recursive pro klonování podmodulů.\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --"
+"recursive\n"
+"\n"
+"cd peertube-plugin-livechat\n"
+"\n"
+"# Nainstalujte závislosti NPM a poprvé sestavte modul:\n"
+"Npm install\n"
+"\n"
+"# Sestavte zásuvný modul po úpravě:\n"
+"npm run build\n"
+"\n"
+"# Pokud máte fork z repozitáře, přidejte jej jako vzdálený (příklad):\n"
+"git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat."
+"git\n"
+"\n"
+"# Vytvořte místní větev pro svůj vývoj a zkontrolujteji (příklad):\n"
+"git checkout my_development # Poznámka: pokud je přidružena nějaká "
+"záležitost, použijte jako název větve fix_1234 (kde 1234 je číslo issue).\n"
+"# Chcete-li navrhnout své úpravy, odešlete svou větev do úložiště (příklad):"
+"\n"
+"git push --set-upstream me my_development\n"
+"# Poté přejděte do svého úložiště github pomocí webového prohlížeče a "
+"navrhněte žádost o stažení (viz další pokyny níže).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.  Once you are ready for a code review before merge, submit a Pull Request.  In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\"."
 msgstr ""
+"Jakmile jste připraveni ukázat svůj kód a požádat o zpětnou vazbu, odešlete "
+"*návrh* žádosti o stažení.  Jakmile jste připraveni na kontrolu kódu před "
+"sloučením, odešlete žádost o stažení.  V každém případě prosíme o propojení "
+"vašeho PR s problémy, které řeší, pomocí syntaxe GitHubu: \"fixes #"
+"issue_number\"."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder."
 msgstr ""
+"Kód front-endu je ve složce `client`, kód back-endu ve složce `server`. Ve "
+"složce `shared` je několik sdílených kódů."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 msgstr ""
+"Obecné pokyny (vývoj zásuvných modulů, sestavení, instalace, ...) naleznete "
+"v dokumentaci [Peertube](https://docs.joinpeertube.org/contribute-"
+"plugins?id=write-a-plugintheme)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "You can build the plugin with extra debug features simply by using:"
 msgstr ""
+"Zásuvný modul můžete sestavit s dalšími funkcemi ladění jednoduše pomocí:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -213,75 +276,112 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin is [REUSE](https://reuse.software/) compliant: it uses SPDX headers to identify licensing information of its source code.  More information on the [REUSE](https://reuse.software/) website.  You can use the [reuse](https://reuse.readthedocs.io/en/stable/readme.html#) command line tool to help you update headers.  The `npm run lint` command will use the `reuse` command to check compliance.  Don't forget to add your copyright information in SPDX headers when you modify some code."
 msgstr ""
+"Tento zásuvný modul je v souladu s [REUSE](https://reuse.software/): používá "
+"hlavičky SPDX k identifikaci licenčních informací svého zdrojového kódu.  "
+"Více informací naleznete na webových stránkách [REUSE](https://reuse."
+"software/).  K aktualizaci hlaviček můžete použít nástroj příkazového řádku "
+"[reuse](https://reuse.readthedocs.io/en/stable/readme.html#).  Příkaz `npm "
+"run lint` použije ke kontrole shody příkaz `reuse`.  Nezapomeňte do hlaviček "
+"SPDX přidat informace o autorských právech, když upravujete nějaký kód."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "ESBuild vs Typescript"
-msgstr ""
+msgstr "ESBuild vs Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
 msgstr ""
+"Tento zásuvný modul používá ESBuild pro generování frontend kódu, stejně "
+"jako oficiální zásuvný modul `peertube-plugin-quickstart`.  ESBuild si "
+"poradí s Typescriptem, ale nekontroluje typy (viz [dokumentace "
+"ESBuild](https://esbuild.github.io/content-types/#typescript)).  Proto "
+"nejprve zkompilujeme Typescript s volbou `-noEmit`, jen abychom "
+"zkontrolovali typy (`check:client:ts` v souboru package.json).  Pokud je vše "
+"v pořádku, spustíme ESBuild a vygenerujeme zkompilovaný javascript."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Debug Mode"
-msgstr ""
+msgstr "Režim ladění"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a debug mode for this plugin, that shorten some delay.  For example, some log files will rotate every two minutes, instead of once per day.  This permit to test more easily certain actions, for which it could normally take hours or days to wait."
 msgstr ""
+"Pro tento zásuvný modul existuje režim ladění, který zkracuje určité "
+"zpoždění.  Například některé soubory protokolu se budou otáčet každé dvě "
+"minuty místo jednou denně.  To umožňuje snadněji testovat některé akce, na "
+"které by se normálně čekalo hodiny nebo dny."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation)."
 msgstr ""
+"Pro zapnutí tohoto režimu stačí vytvořit soubor `/var/www/peertube/storage/"
+"plugins/data/peertube-plugin-livechat/debug_mode` (nahradit `/var/www/"
+"peertube/storage/` správnou cestou ve vaší instalaci)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The simple existence of this file is sufficient to trigger the debug mode.  To make sure it's taken into account, you can restart your Peertube instance."
 msgstr ""
+"Ke spuštění režimu ladění stačí pouhá existence tohoto souboru.  Chcete-li "
+"se ujistit, že je brán v úvahu, můžete restartovat instanci Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This file can contain some JSON to enable more advanced options.  To have a list of existing parameters, check `server/lib/debug.ts`.  Restart Peertube after each content modification."
 msgstr ""
+"Tento soubor může obsahovat některé JSON, které umožňují pokročilejší "
+"možnosti.  Seznam existujících parametrů naleznete v souboru `server/lib/"
+"debug.ts`.  Po každé úpravě obsahu restartujte Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Don't enable this mode on a production server, neither on a public server.  This could cause security issues."
 msgstr ""
+"Tento režim nepovolujte na produkčním serveru, ani na veřejném serveru.  "
+"Mohlo by to způsobit bezpečnostní problémy."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Restart Prosody"
-msgstr ""
+msgstr "Restart Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.  This call don't need any authentificaiton.  It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`."
 msgstr ""
+"Když je povolen režim ladění, můžete pomocí tohoto volání API restartovat "
+"aplikaci Prosody: `http://your_instance.tld/plugins/livechat/router/api/"
+"restart_prosody`.  Toto volání nepotřebuje žádné ověření.  Lze jej provést z "
+"příkazového řádku, například pomocí příkazu `curl http://your_instance.tld/"
+"plugins/livechat/router/api/restart_prosody`."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prosody debugger"
-msgstr ""
+msgstr "Prosody debugger"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 msgstr ""
+"Prosody AppImage je možné připojit ke vzdálenému debuggeru pomocí "
+"[MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.  Then, add this in the `debub_mode` file:"
 msgstr ""
+"Chcete-li tak učinit, musíte nastavit MobDebug ve složce, ke které má "
+"přístup uživatel `peertube`. Pak to přidejte do souboru `debub_mode`:"
 
 #. type: Fenced code block (json)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -295,63 +395,93 @@ msgid ""
 "  }\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"debug_prosody\": {\n"
+"    \"debugger_path\": \"/the_path_to_mobdebug/src\",\n"
+"    \"host\": \"localhost\",\n"
+"    \"port\": \"8172\"\n"
+"  }\n"
+"}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is."
 msgstr ""
+"`host` a `port` jsou volitelné. `debugger_path` musí ukazovat na složku, kde "
+"je soubor `.lua` `MobDebug`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Restart Peertube."
-msgstr ""
+msgstr "Restartujte Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Start your debugger server."
-msgstr ""
+msgstr "Spusťte svůj ladicí server."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  This call does not need any authentication.  It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  You can even configure your debug server to launch this request automatically."
 msgstr ""
+"Aby se Prosody připojil k debuggeru, zavolejte API `http://your_instance.tld/"
+"plugins/livechat/router/api/restart_prosody?debugger=true`. Tento hovor "
+"nevyžaduje žádné ověření. Lze to provést z příkazového řádku, například "
+"pomocí `curl http://your_instance.tld/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`. Můžete dokonce nakonfigurovat svůj ladicí "
+"server tak, aby tento požadavek spouštěl automaticky."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Prosody will then restart, connecting to the debugger."
-msgstr ""
+msgstr "Prosody se poté restartuje a připojí se k debuggeru."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quick dev environment using Docker"
-msgstr ""
+msgstr "Rychlé vývojářské prostředí pomocí Dockeru"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker."
 msgstr ""
+"Na [fóru Peertube] je výukový program ve francouzštině (https://framacolibri."
+"org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-"
+"rapidement-en-utilisant-docker -et-qui-permet-de-tester-la-federation/17631)"
+", který vysvětluje, jak rychle vytvořit prostředí pro vývojáře pomocí Docker."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev)."
 msgstr ""
+"Bylo z toho vytvořeno repo, podívejte se na [pt-plugin-dev](https://codeberg."
+"org/mose/pt-plugin-dev)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
 msgstr ""
+"Poznámka: Z neznámého důvodu nemůže Prosody rozlišit adresy DNS kontejnerů "
+"při použití knihovny lua-unbound. V pluginu je špinavý hack: stačí vytvořit "
+"soubor `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` ve vašem "
+"docker-volume a restartovat kontejnery."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quickly rebuild and install the plugin"
-msgstr ""
+msgstr "Rychle znovu sestavte a nainstalujte plugin"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When you do modification, you don't have to always rebuild the full project, and reinstall the plugin on your dev environment.  You can build only the modified part (for example, if you only modified client files: `npm run build:client`).  Check the `package.json` files for available build scripts."
 msgstr ""
+"Když provádíte úpravy, nemusíte vždy znovu sestavovat celý projekt a znovu "
+"instalovat plugin do vašeho vývojového prostředí. Můžete sestavit pouze "
+"upravenou součást (pokud jste například upravili pouze soubory klienta: `npm "
+"spustit build:client`). V souborech `package.json` vyhledejte dostupné "
+"skripty sestavení."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
