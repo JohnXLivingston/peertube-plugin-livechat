@@ -1,5 +1,11 @@
 # Changelog
 
+## 12.0.1
+
+### Minor changes and fixes
+
+* Fix custom emojis vs upper/lower case.
+
 ## 12.0.0
 
 ### Importante Notes
