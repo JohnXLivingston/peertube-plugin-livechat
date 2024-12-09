@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-11-26 23:02+0000\n"
+"PO-Revision-Date: 2024-12-09 19:37+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -487,11 +487,14 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When the plugin is already installed on your dev instance, and you haven't changed any dependency, you can quickly install your work by following these steps:"
 msgstr ""
+"Pokud je zásuvný modul již nainstalován v instanci dev a nezměnili jste "
+"žádnou závislost, můžete rychle nainstalovat svou práci podle následujících "
+"kroků:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "re-build necessary parts of the plugin (client, styles, ...),"
-msgstr ""
+msgstr "znovu sestavit potřebné části zásuvného modulu (klient, styly, ...),"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
