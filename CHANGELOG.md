@@ -2,6 +2,8 @@
 
 ## 12.0.2
 
+### Minor changes and fixes
+
 * Fix task list label styling.
 * Translations updates.
 
