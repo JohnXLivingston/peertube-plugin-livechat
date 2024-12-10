@@ -25,7 +25,7 @@ XMPP ClientsVerbindung zum Chat über einen XMPP-Client
 Für StreamerSo richten Sie den Chat für Ihren Live-Stream ein
 Einige GrundlagenEinige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream
 KanalkonfigurationPeertube Kanal Chaträume Konfiguration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
+AnkündigungenRaumbesitzer und Administratoren können spezielle Ankündigungen in den Chat senden.
 ModerationPlugin peertube-plugin-livechat Erweiterte Moderationsfunktionen
 NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
@@ -37,7 +37,7 @@ Aufgaben / To-do-ListenSie können Aufgaben und Aufgabenlisten mit Ihrem Moderat
 ModerationsnotizenPlugin peertube-plugin-livechat Moderationnotizen
 ChatbotChatbot Einrichtung
 SonderzeichenDer Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten.
-No duplicate messageThe bot can automatically moderate duplicate messages.
+Keine doppelten NachrichtenDer Bot kann automatisch doppelte Nachrichten moderieren.
 Verbotene WörterDer Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.
 TimerDer Chatbot kann in regelmäßigen Abständen einige Nachrichten senden.
 BefehleDer Chatbot kann auf verschiedene Befehle reagieren.`,description:"Plugin peertube-plugin-livechat Benutzer Dokumentation",tags:[],title:"Benutzer Dokumentation",uri:"/peertube-plugin-livechat/de/documentation/user/index.html"},{breadcrumb:"Peertube livechat",content:` Benutzer DokumentationPlugin peertube-plugin-livechat Benutzer Dokumentation
@@ -47,7 +47,7 @@ XMPP ClientsVerbindung zum Chat über einen XMPP-Client
 Für StreamerSo richten Sie den Chat für Ihren Live-Stream ein
 Einige GrundlagenEinige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream
 KanalkonfigurationPeertube Kanal Chaträume Konfiguration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
+AnkündigungenRaumbesitzer und Administratoren können spezielle Ankündigungen in den Chat senden.
 ModerationPlugin peertube-plugin-livechat Erweiterte Moderationsfunktionen
 NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
@@ -192,7 +192,7 @@ Vollbild öffnen Oben im Chat gibt es eine Schaltfläche, um den Chat im Vollbil
 Es kann einfacher sein, in einer seperaten Browser-Registerkarte zu chatten.
 Spitznamen ändern Sie können Ihren Spitznamen ändern, indem Sie /nick ihr_neuer_spitzname in das Nachrichtenfeld eingeben.
 Sie können Ihren Spitznamen auch über das Chatmenü ändern.`,description:"Wie man chattet für Live-Stream Zuschauer",tags:[],title:"Für Zuschauer",uri:"/peertube-plugin-livechat/de/documentation/user/viewers/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer > Chatbot",content:`Sonderzeichen verbieten Info Diese Funktion wird mit dem Livechatplugin Version 12.0.0 verfügbar sein. Konfiguration Wenn Sie diese Option aktivieren, wird der Moderationsbot automatisch Nachrichten löschen, die mehr als X Sonderzeichen enthalten. Sonderzeichen sind Zeichen, die nicht in eine der folgenden Kategorien passen: Buchstaben, Zahlen, Satzzeichen, Währungssymbole, Emojis.
-Toleranz Anzahl der Sonderzeichen, die vor dem Löschen von Nachrichten akzeptiert werden.
+Toleranz Anzahl der Sonderzeichen, die in einer Nachricht akzeptiert werden, ohne sie zu löschen.
 Grund Anzuzeigender Grund anstelle der gelöschen Nachricht
 Auch Nachrichten von Moderatoren moderieren Standardmäßig sind Nachrichten von Moderatoren von dieser Funktion nicht betroffen. Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.`,description:"Der Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten.",tags:[],title:"Sonderzeichen",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
@@ -235,10 +235,10 @@ Consequence: A temporary ban from any sort of interaction or public communicatio
 Consequence: A permanent ban from any sort of public interaction within the community.
 Attribution This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
 Community Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.
-For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"Vereinbarung über Verhaltenskodex für Mitwirkende",tags:[],title:"Verhaltenskodex",uri:"/peertube-plugin-livechat/de/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer > Chatbot",content:`No duplicate message Info Diese Funktion wird mit dem Livechatplugin Version 12.0.0 verfügbar sein. Konfiguration By enabling this options, the moderation bot will automatically moderate duplicate messages. That means if a user send the same message twice within X seconds, the second message will be deleted.
-Time interval The interval, in seconds, during which a user can’t send again the same message.
+For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"Vereinbarung über Verhaltenskodex für Mitwirkende",tags:[],title:"Verhaltenskodex",uri:"/peertube-plugin-livechat/de/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer > Chatbot",content:`Keine doppelten Nachrichten Info Diese Funktion wird mit dem Livechatplugin Version 12.0.0 verfügbar sein. Konfiguration Wenn Sie diese Option aktivieren, wird der Chatbot automatisch doppelte Nachrichten moderieren. Das heißt, wenn ein Benutzer die gleiche Nachricht zweimal innerhalb von X Sekunden sendet, wird die zweite Nachricht gelöscht.
+Zeitintervall Das Intervall in Sekunden, in dem ein Benutzer die gleiche Nachricht nicht erneut senden kann.
 Grund Anzuzeigender Grund anstelle der gelöschen Nachricht
-Auch Nachrichten von Moderatoren moderieren Standardmäßig sind Nachrichten von Moderatoren von dieser Funktion nicht betroffen. Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"No duplicate message",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Admin Dokumentation",content:`Benutzer, die nicht mit Ihrer Peertube-Instanz verbunden sind, treten dem Chat mit “anonymen Konten” bei (sie können einen Spitznamen frei wählen und bekommen einen zufälligen Avatar zugewiesen).
+Auch Nachrichten von Moderatoren moderieren Standardmäßig sind Nachrichten von Moderatoren von dieser Funktion nicht betroffen. Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.`,description:"Der Bot kann automatisch doppelte Nachrichten moderieren.",tags:[],title:"Keine doppelten Nachrichten",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Admin Dokumentation",content:`Benutzer, die nicht mit Ihrer Peertube-Instanz verbunden sind, treten dem Chat mit “anonymen Konten” bei (sie können einen Spitznamen frei wählen und bekommen einen zufälligen Avatar zugewiesen).
 Sie können einige externe Authentifizierungsmethoden aktivieren, damit die Benutzer Chat-Konten erstellen können. In diesem Fall werden ihr Nickname und Avatar automatisch mit den Informationen des entfernten Kontos initialisiert.
 Solche “Nutzer mit externen Konten” sind leichter zu moderieren als anonyme Konten.
 Dies ermöglicht es den Nutzern auch, dem Chat beizutreten, ohne ein Peertube-Konto zu erstellen (z. B. wenn Ihre Instanz die Registrierung geschlossen hat, oder ohne auf die Genehmigung des Kontos zu warten).
@@ -512,8 +512,8 @@ Es ist möglich zu verhindern, dass eine Datei übersetzt wird, indem man livech
 Bitte verwenden Sie die Option livechatnotranslation für technische Dokumentation. Wir möchten nicht, dass die technische Dokumentation übersetzt wird, um Probleme aufgrund einer falschen Übersetzung zu vermeiden.
 Um den Übersetzern die Arbeit zu erleichtern, sollten Sie zu lange Absätze vermeiden.
 Im Moment ist es nicht möglich, Markdown-Tabellen zu verwenden: Die Übersetzungswerkzeuge würden sie nicht korrekt darstellen.
-Warnung There may be links to this documentation elsewhere on the web. Try not to change the urls of the documentation pages. Or at the very least, put links to the new location on the previous url.
-When a new feature is released, you can use the livechat_version_notice short code to display an infobox with the version with which the features is available. This short code takes the version number as parameter. Here is an example:
+Warnung Möglicherweise gibt es Links zu dieser Dokumentation an anderer Stelle im Web. Versuchen Sie nicht, die URLs der Dokumentationsseiten zu ändern. Oder setzen Sie zumindest Links zum neuen Ort auf die vorherige URL.
+Wenn eine neue Funktion veröffentlicht wird, können Sie den Shortcode livechat_version_notice verwenden, um eine Infobox mit der Version anzuzeigen, mit der die Funktion verfügbar ist. Dieser Shortcode nimmt die Versionsnummer als Parameter. Hier ist ein Beispiel:
 Info Diese Funktion wird mit dem Livechatplugin Version 12.0.0 verfügbar sein. Was ist, wenn ich hugo und/oder po4a nicht verwenden kann? Bearbeiten Sie einfach die englischen Markdown-Dateien und geben Sie an, dass Sie keine Übersetzungen erstellen können, wenn Sie Ihren Pull Request stellen.
 Veröffentlichung Die Veröffentlichung der Dokumentation erfolgt automatisch, sobald die Änderungen in den documentation Zweig eingefügt wurden.`,description:"Dokumentieren Sie das Plugin, oder übersetzen Sie die Dokumentation.",tags:[],title:"Dokumentation",uri:"/peertube-plugin-livechat/de/contributing/document/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Admin Dokumentation > Fortgeschrittene Nutzung",content:`Das Folgende basiert auf einem Tutorial zur Verwendung von Matterbridge mit dem Plugin: Matterbridge + Peertube
 Anforderungen PeerTube plugin livechat Version 3.2.0 oder höher. Matterbridge Version 1.22.4 oder höher. Am einfachsten ist es, wenn die PeerTube-Instanz und Matterbridge auf demselben Server laufen.
@@ -738,7 +738,7 @@ Wenn Sie das Häkchen bei “Dauerhaft” entfernen, wird der Raum gelöscht, we
 Löschen des Chat Inhalts Wenn Sie den Inhalt des Chats löschen möchten, öffnen Sie deas Dropdown Menü des Chats und klicken Sie auf “Löschen”. Es öffnet sich ein Popup-Fenster, das eine Bestätigung verlangt.
 Der Chat wird automatisch neu erstellt, wenn jemand versucht, ihm beizutreten, solange das Video existiert und die Funktion “Chat nutzen” aktiviert ist.`,description:"Einige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream",tags:[],title:"Einige Grundlagen",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation",content:` Einige GrundlagenEinige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream
 KanalkonfigurationPeertube Kanal Chaträume Konfiguration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
+AnkündigungenRaumbesitzer und Administratoren können spezielle Ankündigungen in den Chat senden.
 ModerationPlugin peertube-plugin-livechat Erweiterte Moderationsfunktionen
 NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus
@@ -750,19 +750,19 @@ Aufgaben / To-do-ListenSie können Aufgaben und Aufgabenlisten mit Ihrem Moderat
 ModerationsnotizenPlugin peertube-plugin-livechat Moderationnotizen
 ChatbotChatbot Einrichtung
 SonderzeichenDer Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten.
-No duplicate messageThe bot can automatically moderate duplicate messages.
+Keine doppelten NachrichtenDer Bot kann automatisch doppelte Nachrichten moderieren.
 Verbotene WörterDer Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.
 TimerDer Chatbot kann in regelmäßigen Abständen einige Nachrichten senden.
 BefehleDer Chatbot kann auf verschiedene Befehle reagieren.`,description:"So richten Sie den Chat für Ihren Live-Stream ein",tags:[],title:"Für Streamer",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 8.0.0 geliefert und kann von den Administratoren Ihrer Instanz deaktiviert werden.
 Im linken Menü von Peertube gibt es einen Eintrag “Chaträume”:
 Dieser “Chaträume” Link führt Sie zu einer Liste Ihrer Kanäle. Wenn Sie auf einen Kanal klicken, können Sie einige Optionen für Ihre Kanäle einrichten:
 Hier können Sie konfigurieren:
-Chat Nutzungsbedingungen und Konditionen des Kanals Anonyme Benutzer stummschalten Standardwert Der langsame Modus Den Chatbot Benutzerdefinierte Emojis Weitere Funktionen werden folgen… `,description:"Peertube Kanal Chaträume Konfiguration",tags:[],title:"Kanalkonfiguration",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 12.0.0 verfügbar sein. Room owners and administrators can send special announcements in the chat.
-These messages will be more visible than standard messages.
-To send announcements, owners and administrators will have a “Message type” selector on the top of the message field:
-There are several message types:
-Standard: to send a standard message. Highlight: these messages will simply be highlighted in a blue box. Announcement: these messages will be in a green box, and a bold “Announcement” title will be added. Warning: these messages will be in a rend box, and a bold “Announcement” title will be added. Info User that are not owner or administrator of the chatroom can’t send such messages.
-Warnung Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"Announcements",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Warnung Dieser Abschnitt ist noch unvollständig.
+Chat Nutzungsbedingungen und Konditionen des Kanals Anonyme Benutzer stummschalten Standardwert Der langsame Modus Den Chatbot Benutzerdefinierte Emojis Weitere Funktionen werden folgen… `,description:"Peertube Kanal Chaträume Konfiguration",tags:[],title:"Kanalkonfiguration",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Info Diese Funktion wird mit dem Livechatplugin Version 12.0.0 verfügbar sein. Raumbesitzer und Administratoren können spezielle Ankündigungen in den Chat senden.
+Diese Meldungen sind deutlicher sichtbar als Standardmeldungen.
+Um Ankündigungen zu senden, haben Besitzer und Administratoren einen “Art der Nachricht”-Selektor am oberen Rand des Nachrichtenfeldes:
+Es gibt verschiedene Nachrichtentypen:
+Standard: zum Senden einer Standardnachricht. Highlight: diese Nachrichten werden einfach in einem blauen Kasten hervorgehoben. Ankündigung: diese Nachrichten werden in einem grünen Kasten angezeigt und ein fetter “Ankündigung” Titel wird hinzugefügt. Warnung: diese Nachrichten werden in einer roten Kästchen angezeigt, und ein fetter “Ankündigung” Titel wird hinzugefügt. Info Benutzer, die nicht Eigentümer oder Administrator des Chatraums sind, können keine solchen Nachrichten senden.
+Warnung Hinweis: Standard-XMPP-Clients zeigen Ankündigungen als Standardnachrichten an.`,description:"Raumbesitzer und Administratoren können spezielle Ankündigungen in den Chat senden.",tags:[],title:"Ankündigungen",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Dokumentation > Benutzer Dokumentation > Für Streamer",content:` Warnung Dieser Abschnitt ist noch unvollständig.
 Warnung Diese Seite beschreibt das Verhalten von Livechat-Versionen >= 10.0.0. Es gab einige Änderungen in der Art und Weise, wie wir die Zugriffsrechte für Peertube-Administratoren und -Moderatoren verwalten.
 Der Chatbot Sie können einen Chatbot verwenden, der Sie bei der Moderation unterstützt. Weitere Informationen finden Sie in der Chatbot Dokumentation.
 Zugang zu den Moderationswerkzeugen Über das Chat Dropdown Menü am oberen Rand des Chats haben Sie Zugriff auf die Raumeinstellungen und Moderationswerkzeuge.
@@ -885,7 +885,7 @@ Sie können einen Chatbot für Ihre Chaträume aktivieren. Die Chatbotkonfigurat
 Um auf diese Seite zuzugreifen, sehen Sie sich die Kanal Konfigurations Dokumentation an.
 Dort können Sie den Chatbot aktivieren und verschiedene Optionen einstellen:
 SonderzeichenDer Chatbot kann automatisch Nachrichten moderieren, die zu viele Sonderzeichen enthalten.
-No duplicate messageThe bot can automatically moderate duplicate messages.
+Keine doppelten NachrichtenDer Bot kann automatisch doppelte Nachrichten moderieren.
 Verbotene WörterDer Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.
 TimerDer Chatbot kann in regelmäßigen Abständen einige Nachrichten senden.
 BefehleDer Chatbot kann auf verschiedene Befehle reagieren.
@@ -904,7 +904,7 @@ XMPP ClientsVerbindung zum Chat über einen XMPP-Client
 Für StreamerSo richten Sie den Chat für Ihren Live-Stream ein
 Einige GrundlagenEinige grundlegende Informationen zur Einrichtung und Nutzung des Chats für Ihren Livestream
 KanalkonfigurationPeertube Kanal Chaträume Konfiguration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
+AnkündigungenRaumbesitzer und Administratoren können spezielle Ankündigungen in den Chat senden.
 ModerationPlugin peertube-plugin-livechat Erweiterte Moderationsfunktionen
 NutzungsbedingungenKonfigurieren Sie die Chat-Nutzungsbedingungen für den Kanal
 Langsamer ModusPlugin peertube-plugin-livechat Langsamer Modus

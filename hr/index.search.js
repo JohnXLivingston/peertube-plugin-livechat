@@ -32,10 +32,10 @@ Uvjeti i odredbeConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
 Odgoda moderiranjaPlugin peertube-plugin-livechat moderation delay
 Prilagođeni emojijiPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
+„Samo emoji” modusPlugin peertube-plugin-livechat emojis only mode
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
-Moderation notesPlugin peertube-plugin-livechat moderation notes
+Bilješke moderiranjaPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
 Installation guidePlugin peertube-plugin-livechat installation guide
 TroubleshootingSome classic mistakes and workarounds.
@@ -59,13 +59,13 @@ Uvjeti i odredbeConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
 Odgoda moderiranjaPlugin peertube-plugin-livechat moderation delay
 Prilagođeni emojijiPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
+„Samo emoji” modusPlugin peertube-plugin-livechat emojis only mode
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
-Moderation notesPlugin peertube-plugin-livechat moderation notes
+Bilješke moderiranjaPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
 Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
+Bez duplih porukaThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.`,description:"Plugin peertube-plugin-livechat user documentation",tags:[],title:"Dokumentacija za korisnike",uri:"/peertube-plugin-livechat/hr/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike",content:`Joining chat rooms When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:
@@ -204,7 +204,7 @@ List of IP to listen on, coma separated (spaces will be stripped).
 You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
 Examples:
 *, :: * 127.0.0.1, ::1 172.18.0.42 Eksterne komponente The external components to declare:
-One per line. Use the format «component_name:component_secret» (spaces will be trimmed). You can add comments: everything after the # character will be stripped off, and empty lines ignored. The name can only contain latin alphanumeric characters and dots. If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain. For example, «bridge» will become «bridge.your_domain.tld». You can also specify a full domain name, but you have to make sure to configure your DNS correctly. Only use alphanumeric characters in the secret passphrase (use at least 15 characters). Enable Prosody mod_firewall You can enable mod_firewall on your Prosody server.
+One per line. Use the format «component_name:component_secret» (spaces will be trimmed). You can add comments: everything after the # character will be stripped off, and empty lines ignored. The name can only contain latin alphanumeric characters and dots. If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain. For example, «bridge» will become «bridge.your_domain.tld». You can also specify a full domain name, but you have to make sure to configure your DNS correctly. Only use alphanumeric characters in the secret passphrase (use at least 15 characters). Aktiviraj Prosody mod_firewall You can enable mod_firewall on your Prosody server.
 For more information, please check the documentation.`,description:"Plugin Peertube Livechat settings",tags:[],title:"Postavke",uri:"/peertube-plugin-livechat/hr/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
 assets assets/images The assets/images folder contains all icons files used by the plugin.
@@ -225,10 +225,10 @@ Some of them are “officials” plugins, others are specific to this plugin.
 server The server folder contains the backend source code.
 shared The shared folder contains comme code that will be used both on frontend and backend.
 support/documentation The support/documentation contains the documentation source code.
-vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/hr/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers > Chat bot",content:`Forbid special characters Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Konfiguracija By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
-Tolerance Number of special characters to accept in a message without deleting it.
-Razlog Reason to display besides deleted messages
-Također moderiraj porukama moderatora By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Installation guide",content:`I just installed/upgraded the plugin, but nothing happens If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, …), just try to reload the page.
+vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/hr/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers > Chat bot",content:`Zabrani posebne znakove Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Konfiguracija Aktiviranjem ove opcije, bot za moderiranje će automatski izbrisati poruke koje sadrže više od X posebnih znakova. Posebni znakovi su znakovi koji se ne uklapaju u nijednu od ovih kategorija: slova, brojevi, znakovi interpunkcije, znakovi valuta, emojiji.
+Tolerancija Dozvoljen broj posebnih znakova u poruci bez da se poruka izbriše.
+Razlog Razlog koji se prikazuje pored izbrisanih poruka
+Također moderiraj porukama moderatora Ova funkcija standardno neće utjecati na poruke moderatora. Označavanjem ove opcije će se izbrisati i poruke moderatora.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Installation guide",content:`I just installed/upgraded the plugin, but nothing happens If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, …), just try to reload the page.
 Alat za dijagnozu If the chat does not work, there is a diagnostic tool in the plugin’s settings pages.
 Open the plugin settings, and click on the “launch diagnostic” button.
 If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the Bug tracking documentation page if you can’t find any response.
@@ -237,10 +237,10 @@ In such case, try changing the “Peertube URL za API pozive” settings, by set
 Za više informacija pogledaj stranicu pomoći za ovu postavku.
 Websocket If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue. Since Peertube version 5.0.0, there are some additional configuration to do on the server side. Check with the instance administrators that they did not forgot to apply changes listed in the Peertube v5.0.0 release notes.
 You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection.
-If you can’t fix this immediatly, you can disable Websocket by unchecking “Onemogući Websocket” in the plugin setting page. In such case, you should also check “Nemoj objaviti podatke chata”, as chat federation won’t work without Websocket.`,description:"Some classic mistakes and workarounds.",tags:[],title:"Troubleshooting",uri:"/peertube-plugin-livechat/hr/documentation/installation/troubleshooting/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers > Chat bot",content:`No duplicate message Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Konfiguracija By enabling this options, the moderation bot will automatically moderate duplicate messages. That means if a user send the same message twice within X seconds, the second message will be deleted.
-Time interval The interval, in seconds, during which a user can’t send again the same message.
-Razlog Reason to display besides deleted messages
-Također moderiraj porukama moderatora By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"No duplicate message",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za administratore",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
+If you can’t fix this immediatly, you can disable Websocket by unchecking “Onemogući Websocket” in the plugin setting page. In such case, you should also check “Nemoj objaviti podatke chata”, as chat federation won’t work without Websocket.`,description:"Some classic mistakes and workarounds.",tags:[],title:"Troubleshooting",uri:"/peertube-plugin-livechat/hr/documentation/installation/troubleshooting/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers > Chat bot",content:`Bez duplih poruka Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Konfiguracija Aktiviranjem ove opcije, bot za moderiranje će automatski moderirati duple poruke. To znači da ako korisnik pošalje istu poruku dva puta unutar X sekundi, druga će se poruka izbrisati.
+Vremenski interval Interval u sekundama, tijekom kojeg korisnik ne može ponovo poslati istu poruku.
+Razlog Razlog koji se prikazuje pored izbrisanih poruka
+Također moderiraj porukama moderatora Ova funkcija standardno neće utjecati na poruke moderatora. Označavanjem ove opcije će se izbrisati i poruke moderatora.`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"Bez duplih poruka",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za administratore",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
 You can enable some external authentication methods to allow user to create chat accounts. In such case their nickname and avatar will be automatically initialized with the remote account information.
 Such “external account users” will be easier to moderate than anonymous accounts.
 This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval).
@@ -278,8 +278,8 @@ Tip These words are case insensitive.
 Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 Warning This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 Tretiraj kao regularne izraze By checking this option, each line of the “Zabranjene riječi i izrazi” field will be considered as a regular expression.
-Također moderiraj porukama moderatora By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
-Razlog Reason to display besides deleted messages
+Također moderiraj porukama moderatora Ova funkcija standardno neće utjecati na poruke moderatora. Označavanjem ove opcije će se izbrisati i poruke moderatora.
+Razlog Razlog koji se prikazuje pored izbrisanih poruka
 Komentari Ovdje možeš dodati neke komentare o ovom pravilu, kao podsjetnik kako i zašto si ga stvorio/la. Ovi komentari su čisto indikativni i ne utječu na ponašanje bota.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
 Tip To install or update the plugin, just use the Peertube web admin interface.
 Here are some other more specific instructions:
@@ -744,13 +744,13 @@ Uvjeti i odredbeConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
 Odgoda moderiranjaPlugin peertube-plugin-livechat moderation delay
 Prilagođeni emojijiPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
+„Samo emoji” modusPlugin peertube-plugin-livechat emojis only mode
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
-Moderation notesPlugin peertube-plugin-livechat moderation notes
+Bilješke moderiranjaPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
 Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
+Bez duplih porukaThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
@@ -759,9 +759,9 @@ This “Chat sobe” link takes you to a list of your channels. By clicking on a
 Here you can configure:
 Uvjeti i odredbe kanala chata Isključi zvuk anonimnih korisnika standardna vrijednost Spori modus The chat bot Prilagođeni emojiji More features to come… `,description:"Peertube channel chatrooms configuration",tags:[],title:"Konfiguracija kanala",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Room owners and administrators can send special announcements in the chat.
 These messages will be more visible than standard messages.
-To send announcements, owners and administrators will have a “Message type” selector on the top of the message field:
+To send announcements, owners and administrators will have a “Vrsta poruke” selector on the top of the message field:
 There are several message types:
-Standard: to send a standard message. Highlight: these messages will simply be highlighted in a blue box. Announcement: these messages will be in a green box, and a bold “Announcement” title will be added. Warning: these messages will be in a rend box, and a bold “Announcement” title will be added. Info User that are not owner or administrator of the chatroom can’t send such messages.
+Standardna: to send a standard message. Istaknuto: these messages will simply be highlighted in a blue box. Najava: these messages will be in a green box, and a bold “Najava” title will be added. Upozorenje: these messages will be in a rend box, and a bold “Najava” title will be added. Info User that are not owner or administrator of the chatroom can’t send such messages.
 Warning Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"Announcements",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Warning This section is still incomplete.
 Warning This page describes the behaviour of livechat versions >= 10.0.0. There were some changes in the way we manage access rights for Peertube administrators and moderators.
 The chat bot You can use a chat bot, that will help you for moderation. Check the chat bot documentation for more information.
@@ -778,12 +778,12 @@ You can choose to enable or disable this feature for new chatrooms on the channe
 Roles and affiliations There are several roles that can be assignated to users in chat rooms: owner, moderators, member, …
 Warning This section is still incomplete.
 You can promote users as moderators, if you need some help.
-Anonymize moderation actions Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.0.0. It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.
-To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Anonymize moderation actions” checkbox.
+Anonimiziraj radnje moderiranja Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.0.0. It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.
+To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Anonimiziraj radnje moderiranja” checkbox.
 You can choose to enable or disable this feature for new chatrooms on the channel configuration page.
 Participant message history search Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.0.0. As a room admin or owner, you can search all messages sent by a given participant.
 To do so, you have several ways:
-using the “Search all messages” action in the dropdown menu besides participants in the sidebar using the “Search all messages” action in the dropdown menu besides chat messages Tip To have more space and better readability, open the chat in full-page mode.
+using the “Pretraži sve poruke” action in the dropdown menu besides participants in the sidebar using the “Pretraži sve poruke” action in the dropdown menu besides chat messages Tip To have more space and better readability, open the chat in full-page mode.
 In the search results, there are several informations that are shown at the right of the participant nickname:
 if the current nickname is different than the nickname when the participant has sent the message, the original nickname will be shown you will see the JID (Jabber ID) of the participant you will also see the occupant-id of the participant The search result will also include all messages related to participants who had the same nickname. You can differenciate them by comparing JID and occupant-id.
 Delete room content You can delete old rooms: join the room, and use the menu on the top to destroy the room.
@@ -824,10 +824,10 @@ Možeš konfigurirati prilagođene emojije za svoj kanal. Ovi emojiji će biti d
 Emotikone možeš koristiti u chatu koristeći “:shortname:”. Kratko ime može započeti i/ili završiti dvotočkom (:) te koristiti samo alfanumeričke znakove, podvlake i crtice. Preporuča se započeti ih dvotočkom, kako bi korisnici mogli koristiti automatsko dovršavanje (upisivanjem “:” i pritiskom tipke tabulatora).
 Uvoz / Izvoz On the channel configuration page, there are an “Uvezi” and an “Izvezi” button. The “Izvezi” button generates a file than you can then import on another channel.
 You can also generate a file to import from any other source (for example you can import your Twitch custom emojis). The file must be a valid JSON file, using the following format:
-[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] Atribut sn je kod kratkog imena. Atribut url može biti bilo koji url slike kojem tvoj preglednik može pristupiti ili URL podataka koji predstavlja datoteku koju želiš uvesti.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Prilagođeni emojiji",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
+[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] Atribut sn je kod kratkog imena. Atribut url može biti bilo koji url slike kojem tvoj preglednik može pristupiti ili URL podataka koji predstavlja datoteku koju želiš uvesti.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Prilagođeni emojiji",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. „Samo emoji” modus U svojim chat sobama možeš aktivirati „Samo emoji” modus. Kad je taj modus aktiviran, sudionici mogu slati samo emojije (standardne ili prilagođene emojije kanala). Ovo ograničenje ne vrijedi za moderatore.
 This mode can be usefull for example:
-To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Emojis only mode” checkbox.
-If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.2.0. Create a poll You can create a new poll by using the “Stvori novu anketu” action in the chat top menu:
+To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “„Samo emoji” modus” checkbox.
+If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Aktiviraj „Samo emoji” modus u svim chat sobama kanala” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"„Samo emoji” modus",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.2.0. Create a poll You can create a new poll by using the “Stvori novu anketu” action in the chat top menu:
 Warning This poll feature should not be considered as a reliable voting system. It is easy to cheat. There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat. Votes are never fully anonymous, someone having access to the server could see who voted for what choice.
 Poll form Fill the form fields:
 “Pitanje”: the question to ask to you viewers “Trajanje ankete (u minutama)”: the duration for which viewers can vote “Anonimni rezultati”: if checked, votes won’t be publicly visible in the chat “Choice N”: choices that will be presented to viewers You must at least fill the two first choices fields.
@@ -864,7 +864,7 @@ Sorting tasks / change task list You can sort tasks, or move tasks from one list
 Create a task from a chat message You can create a task from a message in a chat, using the “Stvori novi zadatak” button in the dropdown menu at the right of the message. This will open a dialog box where you can choose which task list you want to add the task into. The task name will be the user nickname, and the task description the message content.
 Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered.`,description:"You can handle tasks and task lists with your moderation team.",tags:[],title:"Tasks / To-do lists",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/tasks/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.0.0. Uvod The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants. Every room’s admins have access to these notes, so they can edit them collaboratively.
 You can for example use this Application to:
-share some notes between moderators take notes about participants that were kicked or caused troubles … Using the Moderator Notes Application Opening the Moderator Notes Application To open the Moderator Notes Application, there is a “Moderation notes” button in the top chat menu:
+share some notes between moderators take notes about participants that were kicked or caused troubles … Using the Moderator Notes Application Opening the Moderator Notes Application To open the Moderator Notes Application, there is a “Bilješke moderiranja” button in the top chat menu:
 Clicking this button will toggle the Application display:
 Tip To have more space and better readability, open the chat in full-page mode.
 Access rights Every room’s admins have access to this Application (read and write access).
@@ -875,17 +875,17 @@ Warning Currently the video vs channel rooms is an instance-wide settings. Only 
 Notes Create/Edit Notes You can use the plus button on the top to create a new note. You can also edit existing notes using the edit button, or delate any note.
 Tip All modification are instantly visible in all your browser tabs, and for all room’s admins.
 You can create a note associated to a participant in several ways:
-using the “Create a new note” action in the dropdown menu besides participants in the sidebar using the “Create a new note” action in the dropdown menu besides chat messages When a note is associated to a participant, you will see their nickname and avatar on the top of the note.
+using the “Stvori novu bilješku” action in the dropdown menu besides participants in the sidebar using the “Stvori novu bilješku” action in the dropdown menu besides chat messages When a note is associated to a participant, you will see their nickname and avatar on the top of the note.
 Notes filtering You can filter notes to find all notes related to a given participant in several ways:
-click on the “Search notes” button that is available on notes to find all notes related to the same participant click on the “Search notes” button in the dropdown menu besides participants in the sidebar click on the “Search notes” button in the dropdown menu besides chat messages You can remove the filter by clicking on the close button.
+click on the “Pretraži bilješke” button that is available on notes to find all notes related to the same participant click on the “Pretraži bilješke” button in the dropdown menu besides participants in the sidebar click on the “Pretraži bilješke” button in the dropdown menu besides chat messages You can remove the filter by clicking on the close button.
 When you filters notes on a participant, there are several informations that are shown at the right of the participant nickname:
 if the current nickname is different than the nickname when you created the note, the original nickname will be shown you will see the JID (Jabber ID) of the participant you will also see the occupant-id of the participant The search result will also include all notes related to participants who had the same nickname. So you can also take note for anonymous users (who don’t have any consistent JID or occupant-id). You can differenciate them by comparing JID and occupant-id.
-Sorting notes You can sort notes simply using drag & drop.`,description:"Plugin peertube-plugin-livechat moderation notes",tags:[],title:"Moderation notes",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/moderation_notes/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
+Sorting notes You can sort notes simply using drag & drop.`,description:"Plugin peertube-plugin-livechat moderation notes",tags:[],title:"Bilješke moderiranja",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/moderation_notes/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
 You can enable a chat bot on your chatrooms. The bot configuration is made channel per channel, and will apply to all related videos’ chatrooms.
 To access this page, check the channel configuration documentation.
 Once there, you can enable the bot, and setup several options:
 Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
+Bez duplih porukaThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
 CommandsThe bot can respond to several commands.
@@ -910,10 +910,10 @@ Uvjeti i odredbeConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
 Odgoda moderiranjaPlugin peertube-plugin-livechat moderation delay
 Prilagođeni emojijiPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
+„Samo emoji” modusPlugin peertube-plugin-livechat emojis only mode
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
-Moderation notesPlugin peertube-plugin-livechat moderation notes
+Bilješke moderiranjaPlugin peertube-plugin-livechat moderation notes
 Chat botChat bot setup
 Installation guidePlugin peertube-plugin-livechat installation guide
 TroubleshootingSome classic mistakes and workarounds.

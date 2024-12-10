@@ -95,17 +95,17 @@ For more information on this feature, check the documentation for channel’s te
 Info Changing this setting will restart the chat server, and all users will be disconnected for a short time.
 Lista istniejących pomieszczeń When pressing the «List rooms» button, all existing chatrooms will be listed. You can then find them and moderated them.
 Federation Following settings concern the federation with other Peertube instances, and other fediverse softwares.
-Don’t display remote chats By checking this setting, your instance will never display chats from remote videos.
-Don’t publish chat information By checking this setting, your instance will not publish chat information on the fediverse. Remote Peertube instances will not be aware that they are chat rooms associated to your videos.
-Please note: if you already had chats in progress, it is possible that the information has already been published. You will have to wait for the next video update before the information is unpublished. Also, if you disable this setting, you’ll have to wait for the videos to be updated before the information are published again. This update happens among others when a live event resumes or stops.
-Please note: this setting only affects the publication of information via the ActivityPub protocol. It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.
+Nie wyświetlaj zdalnych czatów Zaznaczenie tego ustawienia spowoduje, że instancja nigdy nie będzie wyświetlać czatów ze zdalnych filmów.
+Nie publikuj informacji o czacie Zaznaczenie tego ustawienia spowoduje, że Twoja instancja nie będzie publikować informacji o czacie na fediwersum. Zdalne instancje Peertube nie będą wiedziały, że są czatami powiązanymi z Twoimi filmami.
+Uwaga: jeśli już istnieją czaty, możliwe, że informacje zostały już opublikowane. Będziesz musiał poczekać na następną aktualizację wideo, zanim informacje zostaną cofnięte. Ponadto, jeśli wyłączysz to ustawienie, będziesz musiał poczekać na aktualizację filmów, zanim informacje zostaną ponownie opublikowane. Aktualizacja ta następuje między innymi po wznowieniu lub zakończeniu transmisji na żywo.
+Uwaga: to ustawienie wpływa tylko na publikację informacji za pośrednictwem protokołu ActivityPub. Nie zapobiegnie ono wykryciu obecności czatu i próby połączenia się z nim przez zdalną aplikację.
 Authentication Disable livechat tokens In case you have any trouble with the long term authentication tokens, you can disable the feature here.
 External Authentication See the detailed documentation page:
 External Authentication
 Channel advanced configuration Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 Disable the advanced channel configuration and the chatbot If you encounter any issue with this feature, you can disable it.
-Chat behaviour Typ pokoju You can choose here to have separate rooms for each video, or to group them by channel.
-Automatically open the chat When watching a video, the chatbox will automatically open.
+Chat behaviour Typ pokoju Możesz tutaj wybrać oddzielne pokoje dla każdego filmu lub pogrupować je według kanałów.
+Automatycznie otwórz rozmowę Podczas oglądania filmu okno rozmów otworzy się automatycznie.
 Show the «open in new window» button There will be a button for opening the web chat in a new window.
 Show the «share chat link» button This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat. The chat can be customized (readonly mode, use the current theme, …).
 You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!
@@ -216,7 +216,7 @@ In such case, try changing the “Peertube url for API calls” settings, by set
 Check the help for this setting for more information.
 Websocket If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue. Since Peertube version 5.0.0, there are some additional configuration to do on the server side. Check with the instance administrators that they did not forgot to apply changes listed in the Peertube v5.0.0 release notes.
 You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection.
-If you can’t fix this immediatly, you can disable Websocket by unchecking “Wyłącz Websocket” in the plugin setting page. In such case, you should also check “Don’t publish chat information”, as chat federation won’t work without Websocket.`,description:"Some classic mistakes and workarounds.",tags:[],title:"Troubleshooting",uri:"/peertube-plugin-livechat/pl/documentation/installation/troubleshooting/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` For viewersHow to chat for stream viewers
+If you can’t fix this immediatly, you can disable Websocket by unchecking “Wyłącz Websocket” in the plugin setting page. In such case, you should also check “Nie publikuj informacji o czacie”, as chat federation won’t work without Websocket.`,description:"Some classic mistakes and workarounds.",tags:[],title:"Troubleshooting",uri:"/peertube-plugin-livechat/pl/documentation/installation/troubleshooting/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` For viewersHow to chat for stream viewers
 OBSDocumentation to stream the chat content using OBS.
 XMPP ClientsConnect to chat using a XMPP client
 For streamersHow to setup the chat for your live stream
@@ -250,10 +250,10 @@ OpenID Connect Ostrzeżenie This feature is still experimental. This feature is 
 You can configure one external OpenID Connect compatible provider.
 Doing so, you can for example use your website for Single Sign-On.
 Popular CMS softwares (Wordpess, …) offers plugins implementing OpenID Connect.
-To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect). Then go to the plugin settings, and enable “Use an OpenID Connect provider”.
+To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect). Then go to the plugin settings, and enable “Użycie dostawcy OpenID Connect”.
 Note: if you want to restrict allowed redirection urls on the provider side (best security practice), the plugin will show you the url to allow. Just copy it in your OpenID Connect application configuration.
 You will now have to fill some settings.
-Label for the connection button This label will be displayed to users, as the button label to authenticate with this OIDC provider.
+Etykieta przycisku połączenia Ta etykieta będzie wyświetlana użytkownikom jako etykieta przycisku do uwierzytelniania u tego dostawcy OIDC.
 This is the button label in the following screenshot:
 For now, it is not possible to localize this label.
 Discovery URL Your OpenID Connect provider must implement the discovery URL. Just set here the discovery url, that should be something like https://example.com/.well-known/openid-configuration.
@@ -474,7 +474,7 @@ OBS Overlay You can easily include the chat in your video stream.
 You can use the “Udostępnij link do czatu” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
 Check the “Tylko do odczytu” checkbox in the modal.
 Then use this link as a “web browser source” in OBS.
-You can use the “Transparent background (for stream integration, with OBS for example)” option to have a transparent background in OBS. If you want to customize the background transparency, you can add this CSS in your OBS browser source’s settings:
+You can use the “Przezroczyste tło (do integracji z transmisją, na przykład z OBS)” option to have a transparent background in OBS. If you want to customize the background transparency, you can add this CSS in your OBS browser source’s settings:
 :root { --livechat-transparent: rgba(255 255 255 / 90%) !important; } In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values.
 Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL. You must use valid CSS color values, and they must be properly URL encoded.
 OBS Dock Info This feature comes with the livechat plugin version 10.1.0. Ostrzeżenie This feature can be disabled by the instance’s adminitrators.
@@ -724,8 +724,8 @@ Share the chat On top of the chat, there is a “Udostępnij link do czatu” bu
 This button opens a popup, where you can obtain an url to join the chat. This url can be shared.
 The “Embed” tab provide some links to embed the chat in websites, or in your live stream.
 You can customize some options:
-Tylko do odczytu: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the OBS documentation). Use current theme colors: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set. Generate an iframe to embed the chat in a website: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat. For more information on the “Dock” tab, check the OBS documentation.
-In the “Web” tab, the provided url opens the chat in the Peertube interface. You can share this link to other users to invite them to join the chat.
+Tylko do odczytu: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the OBS documentation). Użyj bieżących kolorów motywu: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set. Generuj kod iframe, aby osadzić czat na stronie internetowej: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat. For more information on the “Dock” tab, check the OBS documentation.
+In the “Przeglądarka” tab, the provided url opens the chat in the Peertube interface. You can share this link to other users to invite them to join the chat.
 The “Udostępnij link do czatu” popup can also contain a “Połącz przy użyciu XMPP” tab. This will only be available if your instance’s administators have enabled an correctly configured this option. Using this option, you can provide a link to join the chat using any XMPP client software. Using such softwares can for example facilitate moderation actions.
 Moderation Please refer to the moderation documentation.
 Include the chat in your video stream Please refer to the OBS documentation.

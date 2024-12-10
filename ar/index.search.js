@@ -78,7 +78,7 @@ Please note: this setting only affects the publication of information via the Ac
 External Authentication
 ضبط متقدم للقناة Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 Disable the advanced channel configuration and the chatbot If you encounter any issue with this feature, you can disable it.
-Chat behaviour نوع قناة الدردشة You can choose here to have separate rooms for each video, or to group them by channel.
+السلوك في الدردشة نوع قناة الدردشة You can choose here to have separate rooms for each video, or to group them by channel.
 فتح قناة الدردشة تلقائيا When watching a video, the chatbox will automatically open.
 Show the «open in new window» button There will be a button for opening the web chat in a new window.
 Show the «share chat link» button This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat. The chat can be customized (readonly mode, use the current theme, …).
@@ -165,7 +165,7 @@ XMPP ClientsConnect to chat using a XMPP client
 للناشرين على المباشرHow to setup the chat for your live stream
 بعض الأساسياتSome basics about how to setup and use the chat for your live stream
 ضبط القناةPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
+الإعلاناتRoom owners and administrators can send special announcements in the chat.
 الإشرافPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 الوضع البطيءPlugin peertube-plugin-livechat slow mode
@@ -192,7 +192,7 @@ XMPP ClientsConnect to chat using a XMPP client
 للناشرين على المباشرHow to setup the chat for your live stream
 بعض الأساسياتSome basics about how to setup and use the chat for your live stream
 ضبط القناةPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
+الإعلاناتRoom owners and administrators can send special announcements in the chat.
 الإشرافPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 الوضع البطيءPlugin peertube-plugin-livechat slow mode
@@ -274,7 +274,7 @@ On non-docker Peertube installation For standard installation, you just have to 
 For example, on Debian/Ubuntu:
 sudo apt install prosodyYou can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run). For example, on Debian/Ubuntu (and other Systemd based linux distributions):
 sudo systemctl disable prosody && sudo systemctl stop prosodyWarning: do not disable Prosody if it is used for another service on your server, like for example Jitsi.
-Docker You will have to generate a Peertube image that includes Prosody in the same container that Peertube. I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround.
+دوكر You will have to generate a Peertube image that includes Prosody in the same container that Peertube. I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround.
 To generate and use such an image, please refer to the Docker documentation. The Docker file to generate the image should be:
 FROM chocobozzz/peertube:production-bullseye RUN apt -y update && apt install -y prosody && apt -y cleanYunohost You have to disable metronome (the XMPP server provided by Yunohost), and install prosody.
 This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0.
@@ -370,7 +370,7 @@ Connection using an external XMPP account To enable this feature, you will need 
 First of all, the “Prosody server to server port” field. This one defaults to 5269, which is the standard port for this service. You can however change to another port, if this is already in use on your server.
 Next, the field “Server to server network interfaces” field allows you to specify which network interfaces the server should listen on. The default value “*, ::” indicates to listen on all IP addresses. You can change these values, if you wish to listen on only certain IP addresses. The syntax is explained next to the setting.
 For the “Certificate folder” setting, you can leave it empty. In this case, the plugin will automatically generate self-signed certificates. Some XMPP servers may refuse to connect, depending on their configuration. In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module. It is up to you to generate and renew them. See bellow for more information.
-Firewall You must open the configured port (5269 by default) on your firewall.
+الجدار الناري You must open the configured port (5269 by default) on your firewall.
 If you are using Docker for your Peertube, you need to modify the docker-compose.yml file to open port 5269 of the peertube container, so that the outer world can connect to it.
 نظام أسماء النطاقات You need to add DNS records allowing remote servers to find “room.your_instance.tld” and “external.your_instance.tld” components.
 The easiest way to do this is to add SRV records for the “room” and “external” subdomain:
@@ -468,7 +468,7 @@ For general instructions (developping plugins, building, installation, …), ple
 You can build the plugin with extra debug features simply by using:
 NODE_ENV=dev npm run buildThis plugin is REUSE compliant: it uses SPDX headers to identify licensing information of its source code. More information on the REUSE website. You can use the reuse command line tool to help you update headers. The npm run lint command will use the reuse command to check compliance. Don’t forget to add your copyright information in SPDX headers when you modify some code.
 ESBuild vs Typescript This plugin uses ESBuild for frontend code generation, as the official peertube-plugin-quickstart plugin. ESBuild can handle Typescript, but does not check types (see ESBuild documentation). That’s why we first compile Typescript with the -noEmit option, just to check types (check:client:ts in package.json file). Then, if everything is okay, we run ESBuild to generate the compiled javascript.
-Debug Mode There is a debug mode for this plugin, that shorten some delay. For example, some log files will rotate every two minutes, instead of once per day. This permit to test more easily certain actions, for which it could normally take hours or days to wait.
+وضع التفحص There is a debug mode for this plugin, that shorten some delay. For example, some log files will rotate every two minutes, instead of once per day. This permit to test more easily certain actions, for which it could normally take hours or days to wait.
 To enable this mode, you juste have to create the /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode file (replacing /var/www/peertube/storage/ by the correct path on your installation).
 The simple existence of this file is sufficient to trigger the debug mode. To make sure it’s taken into account, you can restart your Peertube instance.
 This file can contain some JSON to enable more advanced options. To have a list of existing parameters, check server/lib/debug.ts. Restart Peertube after each content modification.
@@ -742,7 +742,7 @@ This “غرف المحادثات” link takes you to a list of your channels. 
 Here you can configure:
 Channel’s chat terms & conditions Mute anonymous users default value The slow mode The chat bot Custom emojis More features to come… `,description:"Peertube channel chatrooms configuration",tags:[],title:"ضبط القناة",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم",content:` بعض الأساسياتSome basics about how to setup and use the chat for your live stream
 ضبط القناةPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
+الإعلاناتRoom owners and administrators can send special announcements in the chat.
 الإشرافPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 الوضع البطيءPlugin peertube-plugin-livechat slow mode
@@ -762,7 +762,7 @@ These messages will be more visible than standard messages.
 To send announcements, owners and administrators will have a “Message type” selector on the top of the message field:
 There are several message types:
 Standard: to send a standard message. Highlight: these messages will simply be highlighted in a blue box. Announcement: these messages will be in a green box, and a bold “Announcement” title will be added. Warning: these messages will be in a rend box, and a bold “Announcement” title will be added. معلومات User that are not owner or administrator of the chatroom can’t send such messages.
-تحذير Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"Announcements",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` تحذير This section is still incomplete.
+تحذير Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"الإعلانات",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > المستندات > دليل المستخدم > للناشرين على المباشر",content:` تحذير This section is still incomplete.
 تحذير This page describes the behaviour of livechat versions >= 10.0.0. There were some changes in the way we manage access rights for Peertube administrators and moderators.
 روبوت المحادثة You can use a chat bot, that will help you for moderation. Check the chat bot documentation for more information.
 الوصول إلى أدوات الإشراف You can access room settings and moderation tools using the chat dropdown menu at the top of the chat.
@@ -904,7 +904,7 @@ XMPP ClientsConnect to chat using a XMPP client
 للناشرين على المباشرHow to setup the chat for your live stream
 بعض الأساسياتSome basics about how to setup and use the chat for your live stream
 ضبط القناةPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
+الإعلاناتRoom owners and administrators can send special announcements in the chat.
 الإشرافPlugin peertube-plugin-livechat advanced moderation features
 Terms & conditionsConfigure channel's chat terms & conditions
 الوضع البطيءPlugin peertube-plugin-livechat slow mode

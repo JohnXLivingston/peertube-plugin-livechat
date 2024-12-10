@@ -707,7 +707,7 @@ PollsPolls technical documentation
 Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/uk/technical/index.html"},{breadcrumb:"Peertube livechat",content:`If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: plugin-livechat-support@room.im.yiny.org.
-If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my Liberapay profile.`,description:"Contact the author",tags:[],title:"Contact me",uri:"/peertube-plugin-livechat/uk/contact/index.html"},{breadcrumb:"Peertube livechat",content:`package.json, COPYRIGHT and LICENSE files contain the license information for this software and its dependencies.
+If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my Liberapay profile.`,description:"Зв'язатися з автором",tags:[],title:"Зв'язатися зі мною",uri:"/peertube-plugin-livechat/uk/contact/index.html"},{breadcrumb:"Peertube livechat",content:`package.json, COPYRIGHT and LICENSE files contain the license information for this software and its dependencies.
 The plugin is maintained by John Livingston.
 Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the online Sepia Avatar Generator.
 Thanks to Framasoft for making Peertube possible, for the financial support, and for hosting the project translations on their Weblate instance.
@@ -942,5 +942,5 @@ PollsPolls technical documentation
 Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview
-Contact meContact the author
+Зв'язатися зі мноюЗв'язатися з автором
 CreditsPlugin Credits`,description:"Peertube plugin livechat documentation",tags:[],title:"Peertube livechat",uri:"/peertube-plugin-livechat/uk/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Tags",uri:"/peertube-plugin-livechat/uk/tags/index.html"}]
