@@ -3,6 +3,7 @@
 ## 12.0.2
 
 * Fix task list label styling.
+* Translations updates.
 
 ## 12.0.1
 
