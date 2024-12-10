@@ -19,7 +19,7 @@ builddoctranslations:
 
 pages:
   stage: deploy
-  image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+  image: registry.gitlab.com/pages/hugo/hugo_extended:0.132.2
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
     GIT_SUBMODULE_PATHS: support/documentation/themes/hugo-theme-relearn
