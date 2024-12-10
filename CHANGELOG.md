@@ -1,5 +1,9 @@
 # Changelog
 
+## 12.0.2
+
+* Fix task list label styling.
+
 ## 12.0.1
 
 ### Minor changes and fixes

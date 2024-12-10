@@ -39,7 +39,7 @@ export default function tplMucTaskList (el, tasklist) {
       ${!el.edit
         ? html`
           <div class="task-list-name">
-            <a @click=${el.toggleTasks}>${tasklist.get('name')}</a>
+            <a @click=${el.toggleTasks}><label>${tasklist.get('name')}</label></a>
           </div>
           <button type="button" class="task-list-action" title="${i18nCreateTask}" @click=${el.openAddTaskForm}>
             <converse-icon class="fa fa-plus" size="1em"></converse-icon>

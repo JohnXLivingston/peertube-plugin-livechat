@@ -34,6 +34,11 @@
       .task-list-name {
         flex-grow: 2;
 
+        label {
+          // Cancelling the Peertube margin-bottom on labels
+          margin: 0;
+        }
+
         form {
           display: flex;
           flex-flow: row nowrap;
