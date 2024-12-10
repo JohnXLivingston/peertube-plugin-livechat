@@ -327,7 +327,7 @@ moderator_notes: モデレーションノート
 moderator_note_search_for_participant: ノートを検索
 message_search_original_nick: メッセージ送信時の参加者のニックネーム
 prosody_firewall_label: Prosody mod_firewallを有効にする
-prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button secondary-button\"\
   \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">mod_firewallを設定</a>\n"
 prosody_firewall_file_enabled: 有効
 prosody_firewall_name: 名前

@@ -596,7 +596,7 @@ message_search: Recherche de messages
 search_occupant_message: Rechercher tous les messages
 message_search_original_nick: Pseudonyme du participant⋅e au moment de l'envoi du
   message
-prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button secondary-button\"\
   \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Configurer mod_firewall</a>\n"
 prosody_firewall_configuration: Configuration de mod_firewall pour Prosody
 prosody_firewall_label: Activer mod_firewall pour Prosody

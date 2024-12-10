@@ -578,7 +578,7 @@ prosody_firewall_description: "Sie können <a href=\"https://modules.prosody.im/
   \ target=\"_blank\">mod_firewall</a> auf Ihrem Prosody-Server aktivieren.\nWeitere
   Informationen finden Sie unter <a href=\"https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/mod_firewall/\"\
   \ target=\"_blank\">in der Dokumentation</a>.\n"
-prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button secondary-button\"\
   \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">mod_firewall konfigurieren</a>\n"
 prosody_firewall_configuration: Prosody mod_firewall Konfiguration
 prosody_firewall_configuration_help: "Hier können Sie das Modul Prosody <a href=\"\

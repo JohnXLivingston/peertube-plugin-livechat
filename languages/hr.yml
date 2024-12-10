@@ -410,7 +410,7 @@ prosody_firewall_description: "<a href=\"https://modules.prosody.im/mod_firewall
   \ target=\"_blank\">mod_firewall</a> možeš aktivirati na svom Prosody serveru.\n
   Za više informacija pročitaj <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/\"\
   \ target=\"_blank\">dokumentaciju</a>.\n"
-prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button secondary-button\"\
   \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Kofiguriraj mod_firewall</a>\n"
 prosody_firewall_configuration: Prosody mod_firewall konfiguracija
 prosody_firewall_configuration_help: "Ovdje možeš konfigurirati modul Prosody <a href=\"\

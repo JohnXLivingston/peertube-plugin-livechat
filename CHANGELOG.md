@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Fix styling for "configure mod_firewall" button + Peertube v7.0.0 compatibility
+
 ## 12.0.2
 
 ### Minor changes and fixes

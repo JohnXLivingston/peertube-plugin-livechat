@@ -484,7 +484,7 @@ search_occupant_message: Vyhledat všechny zprávy
 message_search: Hledání zpráv
 message_search_original_nick: Přezdívka účastníka v době odeslání zprávy
 prosody_firewall_label: Povolit mod_firewall Prosody
-prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button\"\
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button secondary-button\"\
   \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Konfigurace mod_firewall</a>\n"
 prosody_firewall_configuration: Konfigurace mod_firewall Prosody
 prosody_firewall_disabled_warning: "Varování: mod_firewall je zakázán v nastavení
