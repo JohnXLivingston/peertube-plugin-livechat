@@ -157,6 +157,7 @@
     "kab": "./dist/languages/kab.json",
     "pl-PL": "./dist/languages/pl.json",
     "zh-Hans-CN": "./dist/languages/zh-Hans.json",
-    "zh-Hans-TW": "./dist/languages/zh-Hant.json"
+    "zh-Hans-TW": "./dist/languages/zh-Hant.json",
+    "sk-SK": "./dist/languages/sk.json"
   }
 }
