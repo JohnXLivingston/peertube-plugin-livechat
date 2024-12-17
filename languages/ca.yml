@@ -100,3 +100,11 @@ federation_description: "<h3>Federació</h3>\nLa configuració següent es refer
   la federació amb altres instàncies de Peertube,\ni un altre programari federal.\n"
 external_auth_facebook_oidc_description: "En activar aquesta opció s'afegeix un botó
   «iniciar sessió amb Facebook».\nHeu de configurar una aplicació OAuth de Facebook.\n"
+share_url_option_everyone: Mostrar a tots
+share_url_option_owner_moderators: Mostrar per al propietari del vídeo i els moderadors
+  de la instància
+share_url_option_owner: Mostrar per al propietari del vídeo
+share_url_description: Hi haurà un botó per compartir l'enllaç al xat (per exemple
+  es pot utilitzar per a la integració a OBS).
+per_live_video_label: Els usuaris poden activar el xat per als seus directes
+share_url_option_nobody: No mostrar a ningú
