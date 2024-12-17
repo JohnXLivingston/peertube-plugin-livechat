@@ -201,3 +201,18 @@ prosody_peertube_uri_description: "No toqueu aquest paràmetre si no sabeu què 
   l'URL que utilitzaran els mòduls de Prosody\nAPI de Peertube (per exemple, posant
   «http://localhost:9000» ó «http://127.0.0.1:9000»).\n"
 prosody_muc_log_by_default_label: Desa registres de les sales per defecte
+prosody_muc_expiration_label: Caducitat dels registres de la sala
+prosody_muc_expiration_description: "Podeu triar quant de temps es conserva el contingut
+  de les sales al servidor. El valor pot ser:\n<ul>\n     <li><b>60</b>: el contingut
+  es desarà durant 60 <b>segons</b>.  Podeu substituir 60 per qualsevol valor enter.</li>\n\
+  \     <li><b>1d</b>: el contingut es desarà durant 1 <b>dia</b>.  Podeu substituir
+  1 per qualsevol valor enter.</li>\n     <li><b>1s</b>: el contingut es desarà durant
+  1 <b>setmana</b>.  Podeu substituir 1 per qualsevol valor enter.</li>\n     <li><b>1m</b>:
+  el contingut es desarà durant 1 <b>mes</b>.  Podeu substituir 1 per qualsevol valor
+  enter.</li>\n     <li><b>1a</b>: el contingut es desarà durant 1 <b>any</b>.  Podeu
+  substituir 1 per qualsevol valor enter.</li>\n     <li><b>mai</b>: el contingut
+  no se suprimirà mai.</li>\n </ul>\n"
+prosody_muc_log_by_default_description: "Si està marcat el contingut de les sales
+  es desarà per defecte.\nQuan un usuari s'uneix a una sala, podrà veure què s'ha
+  dit abans.<br>\nTingueu en compte que sempre és possible activar/desactivar aquesta
+  funcionalitat\nper a una sala específica, canviant-ne la configuració.\n"
