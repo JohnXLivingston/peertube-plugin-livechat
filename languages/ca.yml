@@ -216,3 +216,5 @@ prosody_muc_log_by_default_description: "Si està marcat el contingut de les sal
   es desarà per defecte.\nQuan un usuari s'uneix a una sala, podrà veure què s'ha
   dit abans.<br>\nTingueu en compte que sempre és possible activar/desactivar aquesta
   funcionalitat\nper a una sala específica, canviant-ne la configuració.\n"
+prosody_room_allow_s2s_label: Permetre la connexió a les sales mitjançant comptes
+  XMPP externs
