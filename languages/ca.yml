@@ -218,3 +218,361 @@ prosody_muc_log_by_default_description: "Si està marcat el contingut de les sal
   funcionalitat\nper a una sala específica, canviant-ne la configuració.\n"
 prosody_room_allow_s2s_label: Permetre la connexió a les sales mitjançant comptes
   XMPP externs
+prosody_c2s_label: Activar les connexions client-servidor
+livechat_configuration_channel_command_label: Ordre per al bot
+muted_anonymous_message: Només les persones registrades poden enviar missatges.
+emoji_only_info: 'El mode «Només emojis» està habilitat: als vostres missatges només
+  podeu utilitzar emojis.'
+emoji_only_mode_title: Mode «Només emojis»
+emoji_only_mode_desc_1: "Podeu activar el mode «Només emojis» a les vostres sales
+  de xat.\nQuan aquest mode està activat, les participants només poden enviar emojis
+  (emojis estàndard o personalitzats des del vostre canal).\nLes persones moderadores
+  no es veuen afectades per aquesta limitació.\n"
+emoji_only_mode_desc_3: "Per activar o desactivar aquest mode, podeu utilitzar el
+  formulari de configuració de la sala.\nSi voleu activar-lo per a totes les vostres
+  sales de xat alhora, podeu utilitzar el botó següent.\n"
+emoji_only_enable_all_rooms: Activa el mode «Només emojis» a totes les sales de xat
+  del canal
+task_list_create: 'Crear una nova llista de tasques:'
+tasks: Tasques
+task_create: Crea una tasca nova
+task_name: Nom de la tasca
+livechat_configuration_channel_quote_delay_desc: "El bot enviarà el missatge cada
+  X minuts\n"
+livechat_configuration_channel_quote_desc2: "Un missatge per línia.\nSi hi ha diversos
+  missatges, el bot en triarà un de manera aleatòria cada X minuts.\n"
+login_remote_peertube_no_livechat: El complement Livechat no està instal·lat en aquesta
+  instància de Peertube.
+login_external_auth_alert_message: L'autenticació ha fallat
+livechat_configuration_channel_retractation_reason_label: Motiu
+livechat_configuration_channel_retractation_reason_desc: Motiu per mostrar al costat
+  dels missatges suprimits
+livechat_configuration_applytomoderators_label: Moderar també els missatges de les
+  persones que moderen
+livechat_configuration_channel_special_chars_label: Prohibir caràcters especials
+livechat_configuration_channel_special_chars_tolerance_label: Tolerància
+livechat_configuration_channel_special_chars_tolerance_desc: Nombre màxim de caràcters
+  especials que s'accepten en un missatge sense suprimir-lo.
+prosody_room_allow_s2s_description: "En activar aquesta opció serà possible connectar-se
+  a sales mitjançant comptes XMPP externs amb clients XMPP.<br>\n<span class=\"peertube-plugin-livechat-warning\"\
+  >\n   <b>Avís</b>, l'habilitació d'aquesta opció pot requerir una configuració a
+  nivell de servidor i registres DNS.\n</span>\nPer obtenir més informació, consulteu
+  la documentació:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/en/documentation/admin/advanced/xmpp_clients/\"\
+  \ target=\"_blank\">\n   Permet connexions amb comptes XMPP externs.\n</a>\n"
+prosody_c2s_port_description: "Port que s'utilitzarà per a les connexions XMPP c2s
+  (client a servidor).<br>\nEls clients XMPP hauran d'utilitzar aquest port per connectar-se.<br>\n
+  Canvieu aquest port si ja està en ús al servidor.<br>\nDe moment podeu mantenir
+  aquest port tancat al vostre tallafoc, serà inaccessible des de l'exterior (Prosody
+  només escolta l'host local).<br>\nNota: això pot canviar aviat, ja que hi ha plans
+  per afegir una funció per habilitar connexions externes.\n"
+prosody_components_list_description: "Components externs a declarar:\n<ul>\n   <li>Un
+  per línia.</li>\n   <li>Utilitzeu el format «nom_component:contrasenya_component»
+  (s'eliminaran espais).</li>\n   <li>Podeu afegir comentaris: s'eliminarà tot el
+  que hi ha després d'un caràcter # i s'ignoraran les línies buides.</li>\n   <li>El
+  nom només pot contenir caràcters alfanumèrics llatins i punts.</li>\n   <li>\n \
+  \    Si el nom només conté caràcters alfanumèrics, se li sufixarà el domini XMPP.\n\
+  \     Per exemple, «bridge“ es convertirà en «bridge.el_vostre_domini.cat».\n  \
+  \   També podeu especificar un nom de domini complet, però haureu d'assegurar-vos
+  que la vostra configuració de DNS sigui correcta.\n   </li>\n   <li>Utilitzeu només
+  caràcters alfanumèrics a la contrasenya secreta (utilitzeu almenys 15 caràcters).</li>\n
+  </ul>\n"
+livechat_configuration_applytomoderators_desc: "Per defecte els missatges de moderadores
+  no es veuran afectats per aquesta funció.\nEn marcar aquesta opció llurs missatges
+  també s'eliminaran.\n"
+login_remote_peertube_video_not_found: Aquest vídeo no està disponible en aquesta
+  instància de Peertube.
+task_list_create_error: Error en desar la llista de tasques
+share_chat_dock_tips: "Podeu generar un enllaç que obrirà el xat a pàgina completa,
+  iniciant sessió amb el vostre compte de Peertube.\nAixò es pot utilitzar, per exemple,
+  per tenir un bastidor web al vostre OBS, de manera que pugueu llegir i interactuar
+  amb el xat directament des de l'OBS.\nNo compartiu aquest enllaç amb ningú, ja que
+  els permetrà iniciar sessió en nom vostre.\nA continuació es mostra la llista de
+  fitxes d'autenticació que ja heu generat.\nPodeu crear-ne un de nou o revocar qualsevol
+  fitxa anterior.\nTingueu en compte que aquestes fitxes no tenen data de caducitat.\n"
+livechat_token_disabled_description: "Les persones usuàries poden generar fitxes a
+  llarg termini per iniciar sessió al xat.\nAquestes fitxes es poden utilitzar, per
+  exemple, per incloure xat als bastidors web a OBS.\nConsulteu la <a href=\"https://livingston.frama.io/peertube-plugin-livechat/en/documentation/user/obs\"\
+  \ target=\"_blank\">documentació</a> per obtenir més informació.\nPodeu desactivar
+  aquesta funció marcant aquesta configuració.\n"
+moderation_delay: Retard de moderació
+livechat_configuration_channel_moderation_delay_desc: "Valor per defecte del temps
+  de moderació:\n<ul>\n   <li>0: temps d'espera de moderació desactivat</li>\n   <li>Qualsevol
+  nombre sencer positiu: els missatges es retardaran X segons per les persones no
+  moderadores, cosa que els permetrà suprimir missatges abans que algú els pugui llegir.</li
+  >\n</ul>\n"
+livechat_configuration_channel_anonymize_moderation_desc: "Anonimitzar les accions
+  de moderació: per defecte per a sales noves.\nQuan aquesta opció està activada,
+  les accions de moderació es fan anònimes, per tal d'evitar revelar qui està bandejant/expulsant/...
+  els ocupants.\n"
+emoji_only_mode_desc_2: "Aquest mode pot ser útil per exemple:\n<ul>\n   <li>Per evitar
+  correu brossa o missatges ofensius quan no hi sou per moderar.</li>\n   <li>Quan
+  hi ha massa participants parlant i ja no podeu moderar correctament.</li>\n</ul>\n"
+livechat_configuration_channel_special_chars_desc: "En activar aquesta opció el bot
+  de moderació suprimirà automàticament els missatges que continguin més de X caràcters
+  especials.\nEls caràcters especials són aquells que no entren en cap d'aquestes
+  categories: lletres, números, símbols de puntuació, símbols de moneda, emojis.\n"
+feature_comes_with: Aquesta funció arriba amb la versió del complement Livechat X.X.X.
+livechat_configuration_channel_no_duplicate_label: No hi ha missatges duplicats
+livechat_configuration_channel_no_duplicate_desc: "En activar aquesta opció el bot
+  de moderació moderarà automàticament les publicacions duplicades.\nAixò vol dir
+  que si un usuari envia el mateix missatge dues vegades en X segons, el segon missatge
+  s'eliminarà.\n"
+livechat_configuration_channel_no_duplicate_delay_label: Interval de temps
+livechat_configuration_channel_no_duplicate_delay_desc: "Interval, en segons, durant
+  el qual un usuari no pot tornar a enviar el mateix missatge.\n"
+prosody_s2s_port_description: "El port que s'utilitza per a les connexions XMPP s2s
+  (servidor a servidor).<br>\nEs recomana utilitzar el port estàndard 5269.\nEn cas
+  contrari, haureu de <a href=\"https://prosody.im/doc/s2s\">\n   configurar un registre
+  DNS específic\n</a>.\n"
+prosody_certificates_dir_label: Directori de certificats
+prosody_c2s_description: "Permetre que els clients XMPP es connectin al servidor de
+  Prosody.<br>\nAquesta opció sola només permet connexions de client a l'host local.\n"
+prosody_c2s_port_label: Port de client a servidor Prosody
+livechat_configuration_title: Configureu les sales de xat de directes
+menu_configuration_label: Sales de xat
+prosody_components_port_label: Port per a components externs de Prosody
+livechat_configuration_please_select: Seleccioneu a continuació un dels vostres canals
+  per configurar-ne les opcions de xat.
+livechat_configuration_channel_command_desc: "Podeu configurar el bot perquè respongui
+  a les ordres.\nUna ordre és un missatge que comença amb un «!», com ara «!ajut»
+  que cridarà l'ordre «ajut».\n"
+livechat_configuration_channel_command_message_desc: El missatge a enviar.
+livechat_configuration_channel_command_cmd_label: Ordre
+livechat_configuration_channel_command_message_label: Missatge
+livechat_configuration_channel_command_cmd_desc: "L'ordre, sense el «!» al principi.
+  Per exemple «ajut», «patrocinador»…\n"
+livechat_configuration_channel_anonymize_moderation_label: Anonimitzar les accions
+  de moderació
+announcements_message_type: Tipus de missatge
+announcements_message_type_standard: Estàndard
+announcements_message_type_announcement: Anunci
+announcements_message_type_warning: Avís
+announcements_message_type_highlight: Destacat
+moderator_notes_create_error: Error en desar la nota
+moderator_note_create: Crear una nota nova
+moderator_note_description: Descripció
+moderator_note_delete: Suprimir la nota
+moderator_note_delete_confirm: Esteu segur que voleu suprimir aquesta nota?
+moderator_note_filters: Filtres de cerca
+prosody_c2s_interfaces_label: Interfícies de xarxa client-servidor
+chatroom_not_accessible: Aquesta sala de xat no existeix o no tens accés.
+livechat_configuration_channel_forbidden_words_label_label: Etiqueta
+livechat_configuration_channel_forbidden_words_label_desc: Etiqueta per a aquesta
+  regla de paraules prohibides
+invalid_value_not_in_range: El valor no es troba a l'interval permès.
+task_list_pick_message: "Un cop seleccioneu una llista de tasques, es crearà una nova
+  tasca.\nPer veure la tasca, obriu l'aplicació de tasques mitjançant el menú superior.\n
+  Més informació a la documentació del mòdul de xat en viu.\n"
+prosody_s2s_port_label: Port Prosody de servidor a servidor
+prosody_components_list_label: Components externs
+prosody_s2s_interfaces_description: "Les interfícies de xarxa per escoltar les connexions
+  s2s (servidor servidor).<br>\nUna llista d'IP separades per comes (s'eliminaran
+  espais).\nPodeu utilitzar «*» per escoltar a tots els IPv4 i «::» a tots els IPv6.<br>\n
+  Exemples de configuració possibles:\n<ul>\n   <li>*,::</li>\n   <li>*</li>\n   <li>127.0.0.1,::1</li>\n\
+  \   <li>172.18.0.42</li>\n</ul>\n"
+prosody_components_interfaces_description: "Interfícies de xarxa per escoltar components
+  externs.<br>\nÉs una llista d'IP separades per comes (s'eliminaran espais).\nPodeu
+  utilitzar «*» per escoltar a tots els IPv4 i «::» a tots els IPv6.<br>\nExemples:\n\
+  <ul>\n   <li>*,::</li>\n   <li>*</li>\n   <li>127.0.0.1,::1</li>\n   <li>172.18.0.42</li>\n\
+  </ul>\n"
+prosody_components_description: "Habilita l'ús de components XMPP externs.<br>\nAquesta
+  opció sola només permet connexions des de l'host local.<br>\nHeu de configurar les
+  interfícies per escoltar i obrir els ports del vostre tallafoc perquè això estigui
+  disponible per als servidors remots.<br>\nAquesta característica es pot utilitzar,
+  per exemple, per connectar robots a sales.\n"
+livechat_configuration_channel_title: Opcions de canal
+livechat_configuration_channel_desc: Aquí podeu configurar algunes opcions per a aquest
+  canal (polítiques de moderació, etc.).
+livechat_configuration_channel_slow_mode_desc: "Mode lent predeterminat:\n<ul>\n \
+  \  <li>0: mode lent desactivat</li>\n   <li>Qualsevol nombre enter positiu: els
+  usuaris poden enviar un missatge cada X segons (els moderadors no estan limitats)</li>\n\
+  </ul>\n"
+livechat_configuration_channel_forbidden_words_desc2: "Una paraula o expressió per
+  línia. Si poseu diverses paraules a la mateixa línia, només s'eliminaran els missatges
+  que continguin tota la seqüència.\n"
+livechat_configuration_channel_forbidden_words_desc: "Podeu configurar algunes paraules
+  que seran moderades automàticament pel bot (les publicacions que continguin aquestes
+  paraules s'eliminaran a l'instant).\nTambé podeu afegir un motiu opcional, que es
+  mostrarà en lloc dels missatges suprimits.\nAlguns exemples de configuració es proporcionen
+  a la pàgina de documentació.\n"
+livechat_configuration_channel_forbidden_words_regexp_desc: Si marqueu aquesta opció
+  podeu utilitzar expressions regulars.
+livechat_configuration_channel_forbidden_words_regexp_label: Tracta com una expressió
+  regular
+livechat_configuration_channel_quote_delay_label: Enviar cada X minuts
+livechat_configuration_channel_for_more_info: "Per obtenir més informació sobre com
+  configurar aquesta funció, consulteu la documentació fent clic al botó d'ajuda.\n"
+validation_error: S'ha produït un error durant la validació.
+invalid_value_missing: Aquest valor és obligatori.
+invalid_value_wrong_format: El format del valor no és correcte.
+invalid_value_duplicate: Valor duplicat
+login_remote_peertube: 'Inicieu la sessió amb un compte en una altra instància de
+  Peertube:'
+too_many_entries: Massa entrades
+slow_mode_info: El mode lent està activat, sols poden enviar un missatge cada %1$s
+  segons.
+login_using_external_account: Inicieu sessió amb un compte extern
+login_remote_peertube_url: URL de la vostra instància de Peertube
+login_remote_peertube_searching: Cercant el vídeo a la instància de Peertube…
+login_remote_peertube_url_invalid: URL de Peertube no vàlid.
+login_remote_peertube_video_not_found_try_anyway_button: Proveu d'obrir el vídeo a
+  la instància de Peertube de totes maneres
+task_list_name: Nom de la llista de tasques
+promote: Esdevenir moderador/a
+livechat_configuration_channel_emojis_title: Emojis del canal
+livechat_emojis_file: Arxiu
+livechat_emojis_shortname_desc: "Podeu utilitzar emoji al xat amb «:short_name:».\n
+  El nom curt pot començar i/o acabar amb dos punts (:) i només contenir caràcters
+  alfanumèrics, guions baixos i guions.\nÉs molt recomanable iniciar-los amb dos punts,
+  de manera que els usuaris puguin utilitzar l'autocompleció (escrivint «:» i després
+  prement TAB).\n"
+action_import: Importar
+loading_error: Error en carregar les dades.
+share_chat_embed: Encastar
+share_chat_peertube_tips: Aquest enllaç obrirà el xat a la interfície de Peertube.
+token_action_create: Crear una nova fitxa
+token_action_revoke: Revoca la fitxa
+token_default_label: Fitxa generada des de la interfície web
+livechat_token_disabled_label: Desactivar les fitxes de Livechat
+livechat_configuration_channel_mute_anonymous_label: Silenciar persones anònimes
+livechat_configuration_channel_mute_anonymous_desc: "Per defecte per a sales de xat
+  noves.\nPer a les habitacions existents, podeu canviar la funcionalitat mitjançant
+  el formulari de configuració de la sala.\nQuan la funció està activa, les persones
+  anònimes només poden llegir el xat i no poden enviar missatges.\n"
+livechat_configuration_channel_terms_label: Condicions d'ús del xat del canal
+livechat_configuration_channel_terms_desc: "Podeu configurar un missatge de «condicions
+  del servei» que es mostrarà a les persones que s'uneixin a les vostres sales de
+  xat.\n"
+new_poll: Crear una enquesta nova
+poll: Enquesta
+poll_title: Nova enquesta
+poll_question: Pregunta
+poll_duration: Durada de l'enquesta (en minuts)
+poll_instructions: Omple i envia aquest formulari per crear una enquesta nova. Això
+  finalitzarà i substituirà l'enquesta anterior si escau.
+poll_vote_instructions_xmpp: "Envieu un missatge amb un signe d'exclamació seguit
+  del número que trieu per votar. Exemple: !1"
+poll_end: "Final de l'enquesta:"
+poll_vote_instructions: "Per votar, feu clic a la vostra elecció o envieu un missatge
+  amb un signe d'exclamació seguit de la vostra elecció (Exemple: !1)."
+poll_anonymous_vote_ok: S'ha tingut en compte el teu vot. Els vots són anònims, no
+  es mostraran als altres participants.
+task_delete_confirm: Esteu segur que voleu suprimir aquesta tasca?
+login_remote_peertube_video_not_found_try_anyway: En alguns casos, el vídeo encara
+  es pot recuperar si us connecteu a la instància remota.
+search_occupant_message: Cerca tots els missatges
+message_search: Cerca missatges
+prosody_components_port_description: "El port que cal utilitzar per als components
+  XMPP.<br>\nCanvieu aquest port si ja està en ús al vostre servidor.<br>\nPodeu mantenir
+  aquest port tancat al vostre tallafoc si no permeteu l'accés a interfícies diferents
+  de l'host local.\n"
+prosody_components_interfaces_label: Interfícies de xarxa per a components externs
+  de Prosody
+disable_channel_configuration_label: Desactivar la configuració avançada del canal
+  i el bot de moderació
+livechat_configuration_channel_enable_bot_label: Habilitar el bot de moderación
+livechat_configuration_channel_bot_options_title: Opcions del bot de moderació
+livechat_configuration_channel_forbidden_words_label: Paraules o expressions prohibides
+moderator_notes: Notes de moderació
+moderator_note_create_for_participant: Crear una nota nova
+moderator_note_search_for_participant: Cerca notes
+message_search_original_nick: Àlies de la participant en el moment d'enviar el missatge
+livechat_configuration_channel_forbidden_words_comments_label: Comentaris
+prosody_firewall_label: Activar mod_firewall per a Prosody
+prosody_firewall_description: "Podeu activar <a href=\"https://modules.prosody.im/mod_firewall\"\
+  \ target=\"_blank\">mod_firewall</a> al vostre servidor de Prosody.\nPer obtenir
+  més informació, consulteu la <a href=\"https://livingston.frama.io/peertube-plugin-livechat/en/documentation/admin/mod_firewall/\"\
+  \ target=\"_blank\">documentació</a> .\n"
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button
+  secondary-button\" href=\"/p/livechat/admin/firewall\" target=\"_blank\">Configurar
+  mod_firewall</a>\n"
+prosody_firewall_configuration: Configuració de mod_firewall per a Prosody
+prosody_firewall_configuration_help: "Aquí podeu configurar el mòdul Prosody <a href=\"\
+  https://modules.prosody.im/mod_firewall\" target=\"_blank\">mod_firewall</a>.\n
+  Podeu crear diversos fitxers de configuració a continuació i canviar-ne l'ordre.\n
+  No dubteu a compartir les vostres configuracions amb la comunitat (per exemple,
+  afegint exemples a la documentació del complement).\n"
+prosody_firewall_disabled_warning: "Avís: el mod_firewall està desactivat a la <a
+  href=\"/admin/plugins/show/peertube-plugin-livechat\" target=\"_blank\">configuració
+  del complement Livechat</a>, l'heu d'activar si voleu que es prengui en compte aquesta
+  configuració.\n"
+invalid_value_file_too_big: 'El fitxer és massa gran (mida màxima: %s).'
+share_chat_dock: Bastidor
+auth_description: "<h3>Autenticació</h3>\n"
+token_action_revoke_confirm: Esteu segur que voleu revocar aquesta fitxa?
+login_remote_peertube_video_open_failed: "El vostre navegador ha bloquejat l'obertura
+  a la instància remota; proveu d'obrir manualment aquest enllaç:"
+livechat_configuration_channel_banned_jids_label: Motius de persones bandejades
+prosody_c2s_interfaces_description: "Les interfícies de xarxa per escoltar les connexions
+  c2s (client a servidor).<br>\nAquesta configuració es proporciona als usuaris avançats.
+  No canvieu aquesta configuració si no enteneu completament el que significa.<br<\n
+  Ès una llista d'IP separades per comes (s'eliminaran espais).<br>\nPodem utilitzar
+  «*» per escoltar a tots els IPv4 i «::» a tots els IPv6.<br>\nExemples:\n<ul>\n\
+  \   <li>*,::</li>\n   <li>*</li>\n   <li>127.0.0.1,::1</li>\n   <li>127.0.0.1,::1,
+  172.18.0.42</li>\n</ul>\n"
+livechat_configuration_channel_forbidden_words_comments_desc: "Podeu afegir alguns
+  comentaris sobre aquesta regla aquí, per recordar-vos com i per què la vau crear.\n
+  Aquests comentaris són purament orientatius i no tenen cap influència en el comportament
+  del bot.\n"
+livechat_configuration_channel_quote_label: Temporitzador
+livechat_configuration_channel_quote_label2: Missatges
+livechat_configuration_channel_bot_nickname: Àlies del bot
+task_list_delete_confirm: Esteu segur que voleu suprimir aquesta llista de tasques?
+livechat_emojis_shortname: Nom curt
+livechat_emojis_file_desc: "El fitxer de l'emoji.\n"
+action_remove_entry: Suprimir aquesta entrada
+action_remove_entry_confirm: Esteu segur que voleu suprimir aquesta entrada?
+token_label: Etiqueta
+token_password: Fitxa
+token_date: Data
+invalid_value_wrong_type: El valor no és del tipus correcte.
+livechat_configuration_channel_slow_mode_label: Mode lent
+prosody_certificates_dir_description: "Si aquest camp està buit, el complement generarà
+  i utilitzarà certificats autofirmats.<br>\nSi voleu utilitzar altres certificats,
+  només heu d'especificar aquí la carpeta on\nProsody els pot trobar. Nota: l'usuari
+  «peertube» ha de tenir accés de lectura a aquesta carpeta.\n"
+livechat_configuration_channel_quote_desc: "Podeu configurar uns quants temporitzadors
+  que enviaran missatges a intervals regulars.\nAquests missatges seran enviats pel
+  bot cada X minuts.\nPer exemple, podeu fer que el bot enviï informació de patrocini
+  cada 5 minuts.\n"
+invalid_value: Valor no vàlid.
+prosody_components_label: Activar els components externs personalitzats de Prosody
+experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Característica
+  experimental:</b> aquesta funció encara és experimental.\n"
+configuration_description: "<h3>Configuració avançada del canal</h3>\nLa configuració
+  següent es refereix a les opcions avançades del canal:\nels usuaris podran personalitzar
+  determinades opcions per als canals,\nactivar el bot de moderació,...\n"
+successfully_saved: Desat amb èxit
+livechat_configuration_desc: Aquí podeu configurar algunes opcions avançades per a
+  les sales de xat associades a les vostres emissions en directe.
+invalid_value_too_long: Valor massa llarg
+task_list_delete: Suprimir la llista de tasques
+task_description: Descripció
+task_delete: Suprimir la tasca
+task_list_pick_title: Seleccioneu una llista de tasques
+task_list_pick_empty: No hi ha cap llista de tasques pendents en aquest moment, si
+  us plau, creeu-ne una
+livechat_configuration_channel_emojis_desc: "Pots configurar emojis personalitzats
+  per al teu canal.\nAquests emojis estaran disponibles al selector d'emojis.\nLes
+  persones usuàries també poden utilitzar-los amb el seu nom curt (per exemple, escrivint
+  «:short_name:»).\n"
+action_export: Exportar
+action_import_emojis_info: Si les dades importades són correctes, no oblideu desar
+  el formulari.
+action_add_entry: Afegir una entrada
+poll_anonymous_results: Resultats anònims
+poll_choice_n: 'Opció {{N}}:'
+poll_is_over: Aquesta enquesta ja s'ha acabat.
+poll_choice_invalid: L'elecció no és vàlida.
+poll_vote_ok: S'ha tingut en compte el vostre vot, els comptadors s'actualitzaran
+  en breu.
+moderator_note_original_nick: Àlies de la participant en el moment de la creació de
+  la nota
+prosody_firewall_file_enabled: Activat
+prosody_firewall_name: Nom
+prosody_firewall_name_desc: "Només pot contenir caràcters alfanumèrics, guions baixos
+  i guions.\nEls scripts es carregaran per ordre alfabètic.\n"
+prosody_firewall_content: Contingut del fitxer
+save: Desar
+cancel: Cancel·lar
+prosody_s2s_interfaces_label: Interfícies de xarxa per a connexions servidor a servidor
