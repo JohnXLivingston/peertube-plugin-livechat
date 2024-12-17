@@ -1,3 +1,112 @@
 open_chat: Obre el xat
 open_chat_new_window: Obre el xat en una finestra nova
 close_chat: Tanca el xat
+auto_display_description: Quan es miri un vídeo el xat s'obrirà automàticament.
+external_auth_oidc_client_secret_label: Secret de client (Client Secret)
+external_auth_oidc_redirect_uris_info_description: "<strong>URL de retorn:</strong>\n
+  Si voleu configurar els URL de retorn permesos per a l'aplicació externa, afegiu
+  aquest URL:\n"
+external_auth_oidc_client_id_label: ID de client (Client ID)
+federation_dont_publish_remotely_description: "En acceptar aquesta configuració, la
+  vostra instància no publicarà la informació del xat al fediverse.\nLes instàncies
+  remotes de Peertube no estaran al corrent de l'existència de sales de xat associades
+  als vostres vídeos.<br>\n<b>Tingueu en compte</b>: si ja teniu xats en progrés,
+  és possible que la informació ja hagi estat publicada.\nHaureu d'esperar a la propera
+  actualització del vídeo abans que la informació sigui ocultada.\nA més, si desactiveu
+  aquesta opció, haureu d'esperar a la propera actualització del vídeo abans que la
+  informació\nsigui publicada una altra vegada. Aquesta actualització succeeix, entre
+  d'altres, quan un esdeveniment en viu reprèn o s'atura.<br>\n<b>Tingueu en compte</b>:
+  aquesta configuració només afecta la publicació d'informació mitjançant el protocol
+  ActivityPub.\nNo impedirà que una aplicació remota detecti la presència de xats
+  i que intenti connectar-s'hi.\n"
+external_auth_custom_oidc_description: "Podeu configurar un proveïdor extern d'OpenID
+  Connect que es podrà utilitzar per iniciar sessió al xat.\nConsulteu la documentació:\n
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Configuració</a>.\n"
+use_chat: Habilitar el xat
+read_only: Només lectura
+show_scrollbarr: Mostrar la barra de desplaçament
+transparent_background: Fons transparent (per a la integració en directes, amb OBS
+  per exemple)
+last_activity: Última activitat
+not_found: No trobat
+room_description: Descripció de la sala
+video: Vídeo
+channel: Canal
+web: Web
+connect_using_xmpp_help: Podeu connectar-vos a la sala mitjançant un compte XMPP extern
+  i el vostre client XMPP preferit.
+federation_no_remote_chat_label: No mostrar xats remots
+chat_behaviour_description: <h3>Comportament del xat</h3>
+room_type_description: Podeu triar tenir diferents sales per a cada vídeo o agrupar-les
+  per canal.
+share_url_label: Mostrar el botó «Comparteix l'enllaç de la sala“
+open_blank_label: Mostrar el botó «obriu en una finestra nova»
+open_blank_description: Hi haurà un botó per obrir el xat en una finestra nova.
+chat_terms_label: Condicions d'ús
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
+external_auth_custom_oidc_label: Utilitzeu un proveïdor OpenID Connect
+external_auth_google_oidc_description: "Si activeu aquesta opció, s'afegeix un botó
+  «iniciar sessió amb Google».\nHeu de configurar una aplicació de Google OAuth.\n"
+external_auth_facebook_oidc_label: Utilitzar Facebook
+connect_using_xmpp: Connectar fent servir XMPP
+chat_title: <h3>Xat</h3>
+external_auth_custom_oidc_button_label_description: Aquesta etiqueta es mostrarà als
+  usuaris, com l'etiqueta del botó de connexió OpenID Connect.
+external_auth_custom_oidc_discovery_url_label: URL de descoberta (Discovery URL)
+room_type_label: Tipus de sala
+use_current_theme_color: Utilitzeu els colors del tema actual
+chat: Xat
+chat_terms_description: "Aquestes condicions d'ús es mostraran a tots els usuaris
+  quan s'uneixin a les sales de xat.\nEls «streamers» també poden configurar les condicions
+  del servei per als seus canals, que es mostraran just després de les condicions
+  de la instància.\n"
+external_auth_description: "<h3>Autenticació externa</h3>\nPer als usuaris que no
+  tenen un compte de Peertube podeu activar diversos mètodes d'autenticació basats
+  en proveïdors d'identitat externs.\n"
+external_auth_google_oidc_label: Utilitzar Google
+use_chat_help: Quan s'activa mostra el xat al costat del vídeo.
+share_chat_link: Comparteix l'enllaç de la sala de xat
+important_note_title: <h3>Notes importants</h3>
+important_note_text: "Podeu trobar la documentació del complement aquí:\n<a href=\"\
+  https://livingston.frama.io/peertube-plugin-livechat/\" target=\"_blank\">\n  Documentació
+  del connector Peertube Livechat\n</a>.\n"
+diagnostic: "Abans de demanar ajuda, utilitzeu l'eina de diagnòstic:\n<a class=\"\
+  peertube-plugin-livechat-launch-diagnostic\">Diagnòstic d'inici</a>\n(si aquest
+  botó no obre una finestra nova, actualitzeu la pàgina).\n"
+federation_no_remote_chat_description: "Marcant aquest paràmetre, la vostra instància
+  no mostrarà mai els xats dels vídeos remots.\n"
+federation_dont_publish_remotely_label: No publiqueu informació de xat
+room_type_option_video: Cada vídeo té la seva pròpia sala de xat
+room_type_option_channel: Les sales de xat s'agrupen per canal
+auto_display_label: Obrir el xat automàticament
+tips_for_streamers: "Consell per als streamers: per integrar el xat a la vostra transmissió
+  en directe, utilitzant per exemple OBS, genereu un enllaç de «només lectura» i utilitzeu-lo
+  com a «font del navegador web».\n"
+copy: Copiar
+copied: Copiat
+link_copied: Enllaç copiat
+error: Error
+open: Obrir
+generate_iframe: Generar un iframe per integrar el xat en un lloc web
+list_rooms_label: Llistar sales existents
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Llistar sales</a>\n"
+external_auth_custom_oidc_button_label_label: Etiqueta per al botó d'inici de sessió
+online_help: Ajuda en línia
+chat_for_live_stream: 'Xat per al directe:'
+room_name: Nom de la sala
+federation_description: "<h3>Federació</h3>\nLa configuració següent es refereix a
+  la federació amb altres instàncies de Peertube,\ni un altre programari federal.\n"
+external_auth_facebook_oidc_description: "En activar aquesta opció s'afegeix un botó
+  «iniciar sessió amb Facebook».\nHeu de configurar una aplicació OAuth de Facebook.\n"
+share_url_option_everyone: Mostrar a tots
+share_url_option_owner_moderators: Mostrar per al propietari del vídeo i els moderadors
+  de la instància
+share_url_option_owner: Mostrar per al propietari del vídeo
+share_url_description: Hi haurà un botó per compartir l'enllaç al xat (per exemple
+  es pot utilitzar per a la integració a OBS).
+per_live_video_label: Els usuaris poden activar el xat per als seus directes
+share_url_option_nobody: No mostrar a ningú
+per_live_video_description: Si es marca tots els vídeos en directe tindran una casella
+  a les propietats per activar el xat.
