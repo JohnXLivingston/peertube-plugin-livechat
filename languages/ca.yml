@@ -51,17 +51,17 @@ external_auth_google_oidc_description: "Si activeu aquesta opció, s'afegeix un 
 external_auth_facebook_oidc_label: Utilitzar Facebook
 connect_using_xmpp: Connectar fent servir XMPP
 chat_title: <h3>Xat</h3>
-external_auth_custom_oidc_button_label_description: Aquesta etiqueta es mostrarà als
-  usuaris, com l'etiqueta del botó de connexió OpenID Connect.
+external_auth_custom_oidc_button_label_description: Aquesta etiqueta serà visible,
+  com també l'etiqueta del botó de connexió OpenID Connect.
 external_auth_custom_oidc_discovery_url_label: URL de descoberta (Discovery URL)
 room_type_label: Tipus de sala
 use_current_theme_color: Utilitzeu els colors del tema actual
 chat: Xat
-chat_terms_description: "Aquestes condicions d'ús es mostraran a tots els usuaris
+chat_terms_description: "Aquestes condicions d'ús es mostraran a totes les persones
   quan s'uneixin a les sales de xat.\nEls «streamers» també poden configurar les condicions
   del servei per als seus canals, que es mostraran just després de les condicions
   de la instància.\n"
-external_auth_description: "<h3>Autenticació externa</h3>\nPer als usuaris que no
+external_auth_description: "<h3>Autenticació externa</h3>\nPer les persones que no
   tenen un compte de Peertube podeu activar diversos mètodes d'autenticació basats
   en proveïdors d'identitat externs.\n"
 external_auth_google_oidc_label: Utilitzar Google
@@ -106,7 +106,40 @@ share_url_option_owner_moderators: Mostrar per al propietari del vídeo i els mo
 share_url_option_owner: Mostrar per al propietari del vídeo
 share_url_description: Hi haurà un botó per compartir l'enllaç al xat (per exemple
   es pot utilitzar per a la integració a OBS).
-per_live_video_label: Els usuaris poden activar el xat per als seus directes
+per_live_video_label: Les persones poden activar el xat per als seus directes
 share_url_option_nobody: No mostrar a ningú
 per_live_video_description: Si es marca tots els vídeos en directe tindran una casella
   a les propietats per activar el xat.
+all_non_lives_description: Si està marcat hi haurà un xat per a tots els vídeos que
+  no siguin en directe.
+avatar_set_label: Conjunt d'avatars
+all_lives_label: Activar el xat per a tots els directes
+per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n   Heu activat la configuració «Les usuàries poden habilitar el xat per llurs
+  directes\".\n   Això és redundant amb «Activa el xat per a tots els directes».\n\
+  </span>\n"
+videos_list_description: "Poseu aquí els UUID dels vídeos per als quals vols forçar
+  l'activació del xat.\nPoden ser en directe o no. Un UUID per línia.<br />\nPodeu
+  afegir comentaris: s'eliminarà tot el que hi ha després del caràcter # i s'ignoraran
+  les línies buides.<br />\nNo afegiu vídeos privats perquè l'UUID es revelaria.\n"
+all_non_lives_label: Activar xat per als vídeos que no són en directe
+videos_list_label: Activar el xat per a aquests vídeos
+no_anonymous_label: Amagar xat per a persones anònimes
+theming_advanced_description: <h3>Personalització de temes</h3>
+auto_ban_anonymous_ip_label: Prohibir la IP de persones anònimes quan se'ls bandeja
+  d'alguna sala
+no_anonymous_description: "Si està marcat, les persones que no hagin iniciat sessió
+  no veuran els xats.\nAquesta característica encara és experimental.\nSi l'heu activada,
+  és molt recomanable que també marqueu «No publicar informació de xat».\nEn cas contrari,
+  determinades eines de tercers no podrien intentar obrir el xat i tindrien resultats
+  impredictibles.\n"
+all_lives_description: Si està marcat hi haurà un xat a tots els directes.
+auto_ban_anonymous_ip_description: "En activar aquesta opció cada vegada que una persona
+  anònima és bandejada d'una habitació, la seva IP també quedarà prohibida del servidor
+  de xat.\nAvís: si la vostra instància està oberta per a registres, algú podria crear
+  una sala trampa, convidar-hi persones i prohibir automàticament les IP de les anònimes.\n
+  La llista d'IP prohibides no es desa i s'eliminarà quan es reiniciï el servidor
+  o si canvieu determinades configuracions del complement.\nLes IP prohibides es registren
+  als registres del servidor de Prosody, de manera que els administradors del servidor
+  poden utilitzar opcionalment eines externes (com ara fail2ban) per prohibir les
+  IP de manera més àmplia.\n"
