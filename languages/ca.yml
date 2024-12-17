@@ -108,3 +108,5 @@ share_url_description: Hi haurà un botó per compartir l'enllaç al xat (per ex
   es pot utilitzar per a la integració a OBS).
 per_live_video_label: Els usuaris poden activar el xat per als seus directes
 share_url_option_nobody: No mostrar a ningú
+per_live_video_description: Si es marca tots els vídeos en directe tindran una casella
+  a les propietats per activar el xat.
