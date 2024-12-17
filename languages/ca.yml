@@ -194,3 +194,10 @@ prosody_port_description: "El port que utilitzarà el servidor Prosody.<br>\nCan
   vostre tallafoc, el món exterior no hi accedirà.<br>\nNota: això pot canviar en
   un futur proper, ja que hi ha plans per afegir paràmetres per permetre connexions
   externes.\n"
+prosody_peertube_uri_label: URL de Peertube per a peticions d'API
+prosody_peertube_uri_description: "No toqueu aquest paràmetre si no sabeu què feu.<br>\n
+  En casos excepcionals, el servidor de Prosody no pot alcançar l'API de Peertube
+  mitjançant l'URL públic.\nPodeu utilitzar aquesta configuració per personalitzar
+  l'URL que utilitzaran els mòduls de Prosody\nAPI de Peertube (per exemple, posant
+  «http://localhost:9000» ó «http://127.0.0.1:9000»).\n"
+prosody_muc_log_by_default_label: Desa registres de les sales per defecte
