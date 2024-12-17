@@ -143,3 +143,54 @@ auto_ban_anonymous_ip_description: "En activar aquesta opció cada vegada que un
   als registres del servidor de Prosody, de manera que els administradors del servidor
   poden utilitzar opcionalment eines externes (com ara fail2ban) per prohibir les
   IP de manera més àmplia.\n"
+autocolors_label: Detecció de color automàtica
+converse_theme_option_cyberpunk: Tema Cyberpunk de ConverseJS
+chat_style_description: "Estils addicionals per aplicar a l'iframe de xat.<br>\nExemple:
+  height:400px;\n"
+disable_websocket_description: "Amb Peertube &gt;= 5.0.0, aquest complement intentarà
+  utilitzar Websocket per a connexions de xat.\nSi el navegador o la connexió utilitzada
+  no és compatible, el navegador canviarà automàticament al protocol BOSH.\n<br>\n
+  Però, en casos rars, pot fallar. Per exemple, si teniu un servidor intermediari
+  invers davant del vostre Peertube\nque no permet connexions Websocket.\nEn aquest
+  cas podeu marcar aquesta opció per desactivar les connexions Websocket.\n"
+avatar_set_description: "Podeu triar entre diversos conjunts diferents els avatars
+  predeterminats que s'utilitzaran per als usuaris de xat.\nConsulteu la documentació:\n
+  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/\"\
+  \ target=\"_blank\">Configuració</a>.\n"
+avatar_set_option_fenec: Fennecs (mascota de Mobilizon)
+avatar_set_option_legacy: Avatars antics de Sepia (els inclosos en versions anteriors
+  del complement)
+avatar_set_option_sepia: Sepia (mascota de Peertube)
+avatar_set_option_cat: Gats
+avatar_set_option_bird: Ocells
+avatar_set_option_abstract: Abstracte
+prosody_port_label: Port de Prosody
+avatar_set_option_none: Cap
+converse_theme_label: Tema ConverseJS
+converse_theme_description: Si us plau, trieu el tema ConverseJS que voleu utilitzar.
+converse_theme_option_peertube: Tema Peertube
+chat_style_label: Atribut d'estil iframe de xat
+help_builtin_prosody_label: Servidor Prosody
+prosody_advanced_description: <h3>Configuració avançada del servidor de xat</h3>
+help_builtin_prosody_description: "Aquest complement utilitza el servidor XMPP Prosody
+  per gestionar les sales de xat.<br>\nAquest complement inclou una AppImage de Prosody,
+  que s'utilitzarà per executar el servei.\n"
+disable_websocket_label: Desactivar Websocket
+system_prosody_description: "Avís: no marqueu aquest paràmetre si no esteu segurs
+  del que esteu fent.<br>\nSi activeu aquesta opció Peertube utilitzarà l'executable
+  Prosody proporcionat\npel sistema, no l'AppImage integrada.<br>\nUtilitzeu aquesta
+  opció només si teniu problemes amb l'AppImage integrada.\n"
+converse_theme_option_default: Tema predeterminat de ConverseJS
+system_prosody_label: Utilitzeu el servidor Prosody instal·lat al sistema
+autocolors_description: "Intenta detectar automàticament els colors del tema actual.<br>\n
+  Quan aquesta opció està activada el complement prova de detectar automàticament
+  els colors per aplicar-los al tema del xat.<br>\nSi això no funciona correctament
+  per a alguns dels vostres temes de Peertube, podeu desactivar aquesta opció.\nPodeu
+  informar d'errors al\n<a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
+  \ target=\"_blank\">\n   gestor de tiquets\n</a>. No oblideu especificar per a quin
+  tema no funciona.\n"
+prosody_port_description: "El port que utilitzarà el servidor Prosody.<br>\nCanvieu-lo
+  si aquest port ja s'utilitza al vostre servidor.<br>\nPodeu tancar aquest port al
+  vostre tallafoc, el món exterior no hi accedirà.<br>\nNota: això pot canviar en
+  un futur proper, ja que hi ha plans per afegir paràmetres per permetre connexions
+  externes.\n"
