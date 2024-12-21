@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-12-09 19:37+0000\n"
+"PO-Revision-Date: 2024-12-22 02:09+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.9.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -500,129 +500,160 @@ msgstr "znovu sestavit potřebné části zásuvného modulu (klient, styly, ...
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "overwrite the `data/plugins/node_modules/peertube-plugin-livechat/dist/` content of your dev instance by the content of the plugin's `dist` folder,"
 msgstr ""
+"přepište obsah složky `data/plugins/node_modules/peertube-plugin-livechat/"
+"dist/` ve své instanci dev obsahem složky `dist` pluginu,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "change recursively `plugins/node_modules/peertube-plugin-livechat/dist/` files owner to your `peertube` user,"
 msgstr ""
+"změňte rekurzivně vlastníka souborů `plugins/node_modules/"
+"peertube-plugin-livechat/dist/` na svého uživatele `peertube`,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "restart your instance."
-msgstr ""
+msgstr "restartujte instanci."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Performance tests"
-msgstr ""
+msgstr "Výkonnostní testy"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvements, or find bottlenecks."
 msgstr ""
+"Úložiště [livechat-perf-test](https://github.com/JohnXLivingston/livechat-"
+"perf-test) obsahuje několik nástrojů pro provádění testů výkonu.  Lze je "
+"použít k vyhodnocení vylepšení kódu nebo k nalezení úzkých míst."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Document the plugin, or translate the documentation."
-msgstr ""
+msgstr "Zdokumentujte zásuvný modul nebo přeložte dokumentaci."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/document/_index.md
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentace"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "General information"
-msgstr ""
+msgstr "Základní informace"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Always inform the community before working (by creating a new issue, or commenting an existing one).  This is to avoid that two persons are working on the same thing, and prevent conflicts."
 msgstr ""
+"Před zahájením práce vždy informujte komunitu (vytvořením nového problému "
+"nebo komentářem k již existujícímu problému).  Tím se vyhnete tomu, aby dvě "
+"osoby pracovaly na stejné věci, a předejdete konfliktům."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation work has to be merged in the `main` branch."
-msgstr ""
+msgstr "Práce na dokumentaci musí být začleněna do větve `main`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation source code is in the `support/documentation/content` folder."
 msgstr ""
+"Zdrojový kód dokumentace se nachází ve složce `support/documentation/"
+"content`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation is generated using [Hugo](https://gohugo.io/).  You have to install it on your computer if you want to preview your work."
 msgstr ""
+"Dokumentace je generována pomocí [Hugo](https://gohugo.io/).  Pokud si "
+"chcete svou práci prohlédnout, musíte si ji nainstalovat do počítače."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The minimum required version for Hugo is 0.121.0.  It was tested using version 0.132.2."
 msgstr ""
+"Minimální požadovaná verze pro Hugo je 0.121.0.  Testováno bylo s verzí 0.132"
+".2."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The used theme is [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).  You should read its documentation before starting editing the documentation."
 msgstr ""
+"Použitý motiv je [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-"
+"relearn).  Než začnete upravovat dokumentaci, měli byste si přečíst jeho "
+"dokumentaci."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.  This will trigger github and gitlab pipelines, and update published documentation."
 msgstr ""
+"Při vydání nové verze zásuvného modulu nebo při aktualizaci dokumentace "
+"správci zásuvných modulů sloučí větev `main` do větve `documentation`.  Tím "
+"se spustí pipelines github a gitlab a aktualizuje se zveřejněná dokumentace."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Translations"
-msgstr ""
+msgstr "Překlady"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The principal language is english (`en` code)."
-msgstr ""
+msgstr "Základním jazykem je angličtina (kód `en`)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The `support/documentation/content/en` folder contains only english documentation files."
 msgstr ""
+"Složka `support/documentation/content/en` obsahuje pouze anglické "
+"dokumentační soubory."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page."
 msgstr ""
+"Dokumentace je přeložena pomocí Weblate (viz [translation documentation"
+"](/peertube-plugin-livechat/contributing/translate/)).  K tomu používáme "
+"nástroj [po4a](https://po4a.org/), jak uvidíme dále na této stránce."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Add a new language"
-msgstr ""
+msgstr "Přidání nového jazyka"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section."
 msgstr ""
+"V souboru `support/documentation/config.toml` zkopírujte a upravte část "
+"`[Languages.fr]`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "If the translations are not complete, it does not matter, english will be used for missing strings."
 msgstr ""
+"Pokud překlady nejsou kompletní, nevadí, pro chybějící řetězce se použije "
+"angličtina."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Preview"
-msgstr ""
+msgstr "Náhled"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To preview your modifications, just run:"
-msgstr ""
+msgstr "Chcete-li zobrazit náhled úprav, spusťte:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -634,33 +665,46 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).  This page will automatically refresh on each modification."
 msgstr ""
+"Poté otevřete prohlížeč na adrese [http://localhost:1313/"
+"peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/)"
+".  Tato stránka se automaticky obnoví při každé změně."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Update localization files and generate documentation translations"
-msgstr ""
+msgstr "Aktualizace lokalizačních souborů a generování překladů dokumentace"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, you only have the english version.  To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script."
 msgstr ""
+"Prozatím máte k dispozici pouze anglickou verzi.  Chcete-li aktualizovat "
+"dokumentační řetězce a generovat překlady, musíte spustit skript `doc-"
+"translate.sh`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.\n"
 msgstr ""
+"Za tímto účelem se ujistěte, že máte v počítači nainstalován program `po4a` ("
+"verze >= 0.69).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.  Please make sure to install a compatible version.  If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually."
 msgstr ""
+"Některé linuxové distribuce (například Debian Bullseye) mají příliš starou "
+"verzi `po4a`.  Ujistěte se, že jste nainstalovali kompatibilní verzi.  Pokud "
+"používáte například Debian Bullseye, můžete si stáhnout soubor Bookworm "
+"po4a.deb z [https://packages.debian.org](https://packages.debian.org/"
+"bookworm/all/po4a/download) a nainstalovat jej ručně."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To handle translations, just do:"
-msgstr ""
+msgstr "Pro zpracování překladů stačí provést:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -672,302 +716,378 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector."
 msgstr ""
+"Výsledek si pak můžete prohlédnout pomocí příkazu `hugo serve -s support/"
+"documentation/` a pomocí voliče jazyka."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Write documentation"
-msgstr ""
+msgstr "Psaní dokumentace"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit the english files in `support/documentation/content/en`."
-msgstr ""
+msgstr "Stačí upravit anglické soubory v `support/documentation/content/en`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file."
 msgstr ""
+"Před odevzdáním pak vždy spusťte `npm run doc:translate`, aby se změny v "
+"českých souborech mohly promítnout do souboru `support/documentation/po/"
+"livechat.en.pot`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can use the `livechat_label` short code to use application strings.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 msgstr ""
+"Pro použití aplikačních řetězců můžete použít zkrácený kód `livechat_label`"
+".  Viz zde: [Překlad dokumentace](/peertube-plugin-livechat/contributing/"
+"translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 msgstr ""
+"Je možné zabránit překladu souboru pomocí `livechatnotranslation: true` v "
+"sekci Yaml Font Matter.  Viz zde: [Překlad dokumentace](/peertube-"
+"plugin-livechat/contributing/translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Please use the `livechatnotranslation` option for technical documentation.  We don't want technical documentation to be translated, to avoid issues because of a wrong translation."
 msgstr ""
+"Pro technickou dokumentaci použijte možnost `livechatnotranslation`.  "
+"Nechceme, aby byla technická dokumentace překládána, abychom se vyhnuli "
+"problémům kvůli špatnému překladu."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To facilitate translators work, avoid making too long paragraphs."
 msgstr ""
+"Abyste překladatelům usnadnili práci, vyhněte se příliš dlouhým odstavcům."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
 msgstr ""
+"Prozatím není možné používat tabulky Markdown: překladatelské nástroje je "
+"rozbijí."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "There may be links to this documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
 msgstr ""
+"Odkazy na tuto dokumentaci mohou být k dispozici i jinde na webu.  Snažte se "
+"neměnit URL adresy stránek dokumentace.  Nebo alespoň umístěte odkazy na "
+"nové umístění na předchozí url."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new feature is released, you can use the `livechat_version_notice` short code to display an infobox with the version with which the features is available.  This short code takes the version number as parameter.  Here is an example:"
 msgstr ""
+"Když je vydána nová funkce, můžete použít krátký kód "
+"`livechat_version_notice` pro zobrazení infoboxu s verzí, ve které je funkce "
+"dostupná.  Tento krátký kód bere jako parametr číslo verze.  Zde je příklad:"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "What if I can't use hugo and/or po4a?"
-msgstr ""
+msgstr "Co když nemohu používat hugo a/nebo po4a?"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request."
 msgstr ""
+"Stačí upravit anglické soubory markdown a při zadávání žádosti o stažení "
+"zadat, že nelze vytvářet překlady."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Publication"
-msgstr ""
+msgstr "Zveřejnění"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch."
 msgstr ""
+"Zveřejnění dokumentace je automatické, jakmile jsou změny začleněny do větve "
+"`documentation`."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
 #, no-wrap
 msgid "Give your feedback"
-msgstr ""
+msgstr "Poskytněte zpětnou vazbu"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
 msgid "You don't need to know how to code to start contributing to this plugin! Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ..."
 msgstr ""
+"Nemusíte umět kódovat, abyste mohli začít přispívat do tohoto pluginu! Velmi "
+"cenné jsou i další příspěvky, mezi které patří: můžete testovat software a "
+"hlásit chyby, můžete poskytnout zpětnou vazbu, funkce, které vás zajímají, "
+"uživatelské rozhraní, design, ..."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/_index.md
 #, no-wrap
 msgid "Contributing"
-msgstr ""
+msgstr "Přispívání"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/_index.md
 msgid "Interested in contributing? Awesome!"
-msgstr ""
+msgstr "Máte zájem přispět? Skvělé!"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate the plugin"
-msgstr ""
+msgstr "Přeložte zásuvný modul"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate"
-msgstr ""
+msgstr "Překládání"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can contribute to this plugin translation.  Translations are handled using the [Weblate](https://weblate.org/) software, using [Framasoft Weblate instance](https://weblate.framasoft.org/)."
 msgstr ""
+"Můžete přispět k překladu tohoto pluginu.  Překlady jsou zpracovávány pomocí "
+"softwaru [Weblate](https://weblate.org/) s použitím [Framasoft Weblate "
+"instance](https://weblate.framasoft.org/)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never modify directly files in the `languages` folder, this could lead to conflicts."
 msgstr ""
+"Nikdy neupravujte přímo soubory ve složce `languages`, mohlo by to vést ke "
+"konfliktům."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "How to"
-msgstr ""
+msgstr "Jak na to"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Create an account: https://weblate.framasoft.org/accounts/register/"
-msgstr ""
+msgstr "Vytvořte si účet: https://weblate.framasoft.org/accounts/register/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Validate your email and follow the link sent"
-msgstr ""
+msgstr "Ověřte svůj e-mail a postupujte podle zaslaného odkazu"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Create your password and setup your account"
-msgstr ""
+msgstr "Vytvořte si heslo a nastavte svůj účet"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 msgstr ""
+"Přejděte na stránku projektu zásuvného modulu: https://weblate.framasoft.org/"
+"projects/peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Choose the locale you want to translate"
-msgstr ""
+msgstr "Vyberte jazyk, do kterého chcete překládat"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Just translate missing sentences, or correct the ones that seems incorrect to you."
 msgstr ""
+"Stačí přeložit chybějící věty nebo opravit ty, které se vám zdají nesprávné."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english."
 msgstr ""
+"Mohou tam být nějaké \"velmi technické\" řetězce. Pokud si nejste "
+"stoprocentně jisti jejich významem nebo překladem, raději je nepřekládejte, "
+"aby se zobrazily v angličtině."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "ConverseJS translations"
-msgstr ""
+msgstr "Překlady ConverseJS"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "This plugin relies on [ConverseJS](https://conversejs.org/) for the chat front-end.  ConverseJS has its own translations, on its own [weblate instance](https://hosted.weblate.org/projects/conversejs/#languages).  You can also translate directly in the code repository.  For more information, check [ConverseJS translations documentation](https://conversejs.org/docs/html/translations.html)."
 msgstr ""
+"Tento zásuvný modul se spoléhá na [ConverseJS](https://conversejs.org/) pro "
+"front-end chatu.  ConverseJS má vlastní překlady na vlastní instanci "
+"[weblate](https://hosted.weblate.org/projects/conversejs/#languages).  "
+"Překládat můžete také přímo v úložišti kódu.  Další informace naleznete v "
+"dokumentaci [ConverseJS translations](https://conversejs.org/docs/html/"
+"translations.html)."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding a new locale"
-msgstr ""
+msgstr "Přidání nového jazyka"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
 msgstr ""
+"Pokud si myslíte, že chybí nějaký jazyk, zkontrolujte prosím nejprve, zda je "
+"v Peertube zpracován.  Pokud ano, můžete [otevřít problém](https://github."
+"com/JohnXLivingston/peertube-plugin-livechat/issues) a požádat o něj."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding new strings / use translations in the code"
-msgstr ""
+msgstr "Přidání nových řetězců / použití překladů v kódu"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are working on new features, and need new strings, you can create them directly in Weblate.  The english version is mandatory. Start with it."
 msgstr ""
+"Pokud pracujete na nových funkcích a potřebujete nové řetězce, můžete je "
+"vytvořit přímo ve Weblate.  Anglická verze je povinná. Začněte s ní."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Each string is linked to a key (for example `use_chat`).  Choose an explicit key in english, lower case."
 msgstr ""
+"Každý řetězec je spojen s klíčem (například `use_chat`).  Zvolte explicitní "
+"klíč v angličtině, malá písmena."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files, but avoid to commit these changes (to minimize conflict risks)."
 msgstr ""
+"Pokud potřebujete otestovat nové řetězce, aniž byste čekali na sloučení "
+"Weblate, můžete upravit soubory `languages/*.yml`, ale tyto změny "
+"neodevzdávejte (abyste minimalizovali riziko konfliktu)."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Use translations in front-end code"
-msgstr ""
+msgstr "Použití překladů ve front-end kódu"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.  The constant name must:"
 msgstr ""
+"Před použitím řetězce ve front-endu je třeba deklarovat novou konstantu v `"
+"client/@types/global.d.ts`.  Název konstanty musí:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "start with the prefix \"LOC_\""
-msgstr ""
+msgstr "začít předponou \"LOC_\""
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "use the string key, upper cased"
-msgstr ""
+msgstr "použít řetězcový klíč, psaný velkými písmeny"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "you just have to declare its type, not its value"
-msgstr ""
+msgstr "stačí deklarovat jeho typ, nikoliv hodnotu"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "For example, to use \"use_chat\", you have to declare:"
-msgstr ""
+msgstr "Chcete-li například použít příkaz \"use_chat\", musíte deklarovat:"
 
 #. type: Fenced code block (typescript)
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "declare const LOC_USE_CHAT: string\n"
-msgstr ""
+msgstr "declare const LOC_USE_CHAT: string\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The `build-client.js` script will read the `client/@types/global.d.ts`, search for such constants, and load their values from the languages files."
 msgstr ""
+"Skript `build-client.js` přečte soubor `client/@types/global.d.ts`, vyhledá "
+"takové konstanty a načte jejich hodnoty ze souborů jazyků."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code."
 msgstr ""
+"Nyní můžete ve svém kódu jednoduše zavolat `peertubeHelpers."
+"translate(LOC_USE_CHAT)`."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Use translations in back-end code"
-msgstr ""
+msgstr "Použití překladů v kódu back-endu"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "In theory, the only parts of the backend code where you need localization is the settings declaration and standardized data (ActivityPub, RSS, ...).  Here we need to get english strings from the translation key."
 msgstr ""
+"Teoreticky jediné části backendového kódu, kde je potřeba lokalizace, jsou "
+"deklarace nastavení a standardizovaná data (ActivityPub, RSS, ...).  Zde "
+"potřebujeme získat anglické řetězce z překladového klíče."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Note: you should never need another language translation from backend code.  Localization must be done on front-end."
 msgstr ""
+"Poznámka: Nikdy byste neměli potřebovat další jazykový překlad z "
+"backendového kódu.  Lokalizace musí být provedena na front-endu."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a `lib/loc.ts` module providing a `loc()` function.  Just pass it the key to have the english string: `loc('diagnostic')`'."
 msgstr ""
+"Existuje modul `lib/loc.ts`, který poskytuje funkci `loc()`.  Stačí jí "
+"předat klíč, abyste získali český řetězec: `loc('diagnostic')`'."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Documentation translation"
-msgstr ""
+msgstr "Překlad dokumentace"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The documentation translation is done using the corresponding Weblate component."
-msgstr ""
+msgstr "Překlad dokumentace se provádí pomocí příslušné komponenty Weblate."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a specific \"Hugo shortcodes\" you can use to display an application string.  Saying you want to display the name of the button \"open_chat_new_window\", you can use this in the documentation markdown file:"
 msgstr ""
+"K zobrazení aplikačního řetězce můžete použít specifické \"zkratky Hugo\".  "
+"Řekněme, že chcete zobrazit název tlačítka \"open_chat_new_window\", můžete "
+"jej použít v dokumentačním souboru markdown:"
 
 #. type: Fenced code block (hugo)
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "{{%/* livechat_label open_chat_new_window */%}}\n"
-msgstr ""
+msgstr "{{%/* livechat_label open_chat_new_window */%}}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can also prevent a whole page from being translating by adding `livechatnotranslation: true` in the Yaml Font Matter section:"
 msgstr ""
+"Můžete také zabránit překladu celé stránky přidáním `livechatnotranslation: "
+"true` do sekce Yaml Font Matter:"
 
 #. type: Fenced code block (yaml)
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -986,48 +1106,68 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never translate a string in the `livechat.en.pot` file, it would be ignored.  Instead, edit directly the markdown files."
 msgstr ""
+"Nikdy nepřekládejte řetězec v souboru `livechat.en.pot`, byl by ignorován.  "
+"Místo toho upravujte přímo soubory markdown."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If a string contains a link, you can change it for the correct link in the translated language.  For example, for a link to this documentation, you can add the language code in the url."
 msgstr ""
+"Pokud řetězec obsahuje odkaz, můžete jej změnit na správný odkaz v "
+"přeloženém jazyce.  Například pro odkaz na tuto dokumentaci můžete do url "
+"přidat kód jazyka."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Some strings are block of code.  Don't translate code.  But you can translate comments, or parameters if relevant."
 msgstr ""
+"Některé řetězce jsou bloky kódu.  Nepřekládejte kód.  Můžete však přeložit "
+"komentáře nebo parametry, pokud je to relevantní."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are not sure, just don't translate, and ask what to do."
-msgstr ""
+msgstr "Pokud si nejste jisti, nepřekládejte a zeptejte se, co máte dělat."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The tool I use to handle translations for the documentation can have strange behaviours. When I add sentences that looks like other existing sentences, it sometimes copies existing translations. So, when you have translations marked as \"to check\", please make sure it doesn't copy a string that has nothing to do with the english one before validating."
 msgstr ""
+"Nástroj, který používám ke zpracování překladů dokumentace, se může chovat "
+"podivně. Když přidám věty, které vypadají jako jiné existující věty, někdy "
+"zkopíruje existující překlady. Takže když máte překlady označené jako \"ke "
+"kontrole\", ujistěte se prosím, že před validací nezkopíruje řetězec, který "
+"nemá s tím anglickým nic společného."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are now sure about the context of a string, you can check the string location in the weblate's right pane, and open the corresponding documentation page.  For example, for a string located in the file `support/documentation/content/en/documentation/user/streamers.md`, the corresponding url is `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`."
 msgstr ""
+"Pokud jste si nyní jisti kontextem řetězce, můžete zkontrolovat umístění "
+"řetězce v pravém podokně weblate a otevřít příslušnou stránku dokumentace.  "
+"Například pro řetězec umístěný v souboru `support/documentation/content/en/"
+"documentation/user/streamers.md` je odpovídající url adresa "
+"`https://livingston.frama.io/peertube-plugin-livechat/documentation/user/"
+"streamers/`."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Generic recommandations"
-msgstr ""
+msgstr "Obecná doporučení"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
 msgstr ""
+"Prosím, buďte ve svých formulacích vstřícní a respektujte [kodex chování"
+"](/peertube-plugin-livechat/contributing/codeofconduct/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Plugin Credits"
-msgstr ""
+msgstr "Kredity zásuvných modulů"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/credits/_index.md
