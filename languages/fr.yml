@@ -326,9 +326,9 @@ livechat_configuration_applytomoderators_label: Également modérer les messages
   modérateur⋅rices
 livechat_configuration_channel_quote_label: Timer
 livechat_configuration_channel_quote_desc: "Vous pouvez configurer quelques timers
-  qui enverrons des messages à intervalle régulier.\nCes messages seront envoyés par
+  qui enverront des messages à intervalle régulier.\nCes messages seront envoyés par
   le bot toutes les X minutes.\nVous pouvez par exemple faire en sorte que le bot
-  envoi des informations de sponsoring toutes les 5 minutes.\n"
+  envoie des informations de sponsoring toutes les 5 minutes.\n"
 livechat_configuration_channel_quote_desc2: "Un message par ligne.\nS'il y a plusieurs
   messages, le bot en choisira un aléatoirement toutes les X minutes.\n"
 livechat_configuration_channel_quote_delay_label: Envoyer toutes les X minutes
@@ -596,8 +596,9 @@ message_search: Recherche de messages
 search_occupant_message: Rechercher tous les messages
 message_search_original_nick: Pseudonyme du participant⋅e au moment de l'envoi du
   message
-prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button secondary-button\"\
-  \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Configurer mod_firewall</a>\n"
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button
+  secondary-button\" href=\"/p/livechat/admin/firewall\" target=\"_blank\">Configurer
+  mod_firewall</a>\n"
 prosody_firewall_configuration: Configuration de mod_firewall pour Prosody
 prosody_firewall_label: Activer mod_firewall pour Prosody
 prosody_firewall_description: "Vous pouvez activer <a href=\"https://modules.prosody.im/mod_firewall\"\
