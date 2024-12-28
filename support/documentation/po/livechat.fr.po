@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-12-27 19:20+0000\n"
-"Last-Translator: Antoin <80nj0ur@orange.fr>\n"
+"PO-Revision-Date: 2024-12-28 13:20+0000\n"
+"Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
@@ -458,7 +458,6 @@ msgstr "La documentation est générée via l'outils [Hugo](https://gohugo.io/).
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
 msgid "The minimum required version for Hugo is 0.121.0.  It was tested using version 0.132.2."
 msgstr ""
 "La version minimale requise de Hugo est 0.121.0. Nous avons testé avec la "
@@ -466,10 +465,11 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
-#| msgid "The used theme is [hugo-theme-learn](https://learn.netlify.app/).  You should read its documentation before starting editing the documentation."
 msgid "The used theme is [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).  You should read its documentation before starting editing the documentation."
-msgstr "Le thème utilisé est [hugo-theme-learn](https://learn.netlify.app/). Il est recommandé d'en lire la documentation avant de commencer."
+msgstr ""
+"Le thème utilisé est [hugo-theme-relearn](https://mcshelby.github.io/hugo-"
+"theme-relearn). Il est recommandé d'en lire la documentation avant de "
+"commencer."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -616,14 +616,14 @@ msgstr "Pour l'instant il n'est pas possible d'utiliser des tableaux Markdown 
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
-#| msgid "There may be links to documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
 msgid "There may be links to this documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
-msgstr "Il peut y avoir des liens vers la documentation ailleurs sur le web. Essayez de ne pas changer les urls des pages de documentation. Ou au moins, mettez des liens vers les nouvelles pages dans les anciennes urls."
+msgstr ""
+"Il peut y avoir des liens vers cette documentation ailleurs sur le web. "
+"Essayez de ne pas changer les urls des pages de documentation. Ou au moins, "
+"mettez des liens vers les nouvelles pages dans les anciennes urls."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
 msgid "When a new feature is released, you can use the `livechat_version_notice` short code to display an infobox with the version with which the features is available.  This short code takes the version number as parameter.  Here is an example:"
 msgstr ""
 "Lorsqu'une nouvelle fonctionnalité est disponible, vous pouvez utiliser "
@@ -1974,9 +1974,9 @@ msgstr "Configurations avancées du pare-feu pour le serveur Prosody."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Prosody mod_firewall"
-msgstr "Prosody mod_firewall"
+msgstr "mod_firewall Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
