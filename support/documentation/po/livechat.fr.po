@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-12-28 13:20+0000\n"
+"PO-Revision-Date: 2024-12-30 23:43+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -2052,8 +2052,8 @@ msgstr "Vous pouvez activer/désactiver chaque fichier."
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Files will be loaded in the alphabetical order.  You can use a number as prefix to easily choose the order."
 msgstr ""
-"Les fichiers sont chargés dans l'ordre alphabétique.  Vous pouvez donc "
-"ajouter des nombres devant les noms pour choisir l'ordre."
+"Les fichiers sont chargés dans l'ordre alphabétique.  Vous pouvez  utiliser "
+"des préfixes numériques pour facilement en définir l'ordre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
