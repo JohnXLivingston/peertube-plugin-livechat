@@ -1,31 +1,31 @@
-chat: ''
-online_help: ""
-open_chat: ""
-open_chat_new_window: ""
-close_chat: ""
-use_chat: ""
-use_chat_help: ""
-share_chat_link: ""
-read_only: ""
-show_scrollbarr: ""
+chat: 'Chat'
+online_help: "Ajuda Online"
+open_chat: "Abrir chat"
+open_chat_new_window: "Abrir chat em nova janela"
+close_chat: "Fechar chat"
+use_chat: "Usar chat"
+use_chat_help: "Se habilitado, haverá um chat próximo ao vídeo"
+share_chat_link: "Compartilhar link do chat"
+read_only: "Somente leitura"
+show_scrollbarr: "Exibir barra de rolagem"
 transparent_background: ""
 tips_for_streamers: |
-copy: ""
-copied: ""
-link_copied: ""
-error: ""
-open: ""
-use_current_theme_color: ""
-generate_iframe: ""
+copy: "Copiar"
+copied: "Copiado"
+link_copied: "Link copiado"
+error: "Erro"
+open: "Abrir"
+use_current_theme_color: "Utilizar cores do tema atual"
+generate_iframe: "Gerar um iframe para embutir o chat em uma página"
 chat_for_live_stream: ""
-room_name: ""
-room_description: ""
-not_found: ""
-video: ""
-channel: ""
-last_activity: ""
-web: ""
-connect_using_xmpp: ""
+room_name: "Nome da sala"
+room_description: "Descrição da sala"
+not_found: "Não encontrado"
+video: "Vídeo"
+channel: "Canal"
+last_activity: "Última atividade"
+web: "Web"
+connect_using_xmpp: "Conectar usando XMPP"
 connect_using_xmpp_help: ""
 
 important_note_title: ""
@@ -33,20 +33,21 @@ important_note_text: |
 
 diagnostic: |
 
-chat_title: ""
+chat_title: "<h3>Chat</h3>"
 
-chat_terms_label: ""
+chat_terms_label: "Termos e Condições"
 chat_terms_description: |
 
-list_rooms_label: ""
+list_rooms_label: "Listar salas existentes"
 list_rooms_description: |
+  <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Listar salas</a>
 
 federation_description: |
 
 federation_no_remote_chat_label: ""
 federation_no_remote_chat_description: |
 
-federation_dont_publish_remotely_label: ""
+federation_dont_publish_remotely_label: "Não publicar informações do chat"
 federation_dont_publish_remotely_description: |
 
 external_auth_description: |
@@ -64,19 +65,19 @@ external_auth_oidc_client_id_label: ""
 external_auth_oidc_client_secret_label: ""
 external_auth_oidc_redirect_uris_info_description: |
 
-external_auth_google_oidc_label: ''
+external_auth_google_oidc_label: 'Usar Google'
 external_auth_google_oidc_description: |
-external_auth_facebook_oidc_label: ''
+external_auth_facebook_oidc_label: 'Usar Facebook'
 external_auth_facebook_oidc_description: |
 
 chat_behaviour_description: ""
 
-room_type_label: ""
+room_type_label: "Tipo de sala"
 room_type_description: ""
-room_type_option_video: ""
+room_type_option_video: "Cada vídeo tem sua própria sala de chat"
 room_type_option_channel: ""
 
-auto_display_label: ""
+auto_display_label: "Abrir chat automaticamente"
 auto_display_description: ""
 
 open_blank_label: ""
@@ -84,17 +85,18 @@ open_blank_description: ""
 
 share_url_label: ""
 share_url_description: ""
-share_url_option_nobody: ""
-share_url_option_everyone: ""
-share_url_option_owner: ""
-share_url_option_owner_moderators: ""
+share_url_option_nobody: "Exibir para ninguém"
+share_url_option_everyone: "Exibir para todos"
+share_url_option_owner: "Exibir para o proprietário do vídeo"
+share_url_option_owner_moderators: "Exibir para o proprietário do vídeo e moderadores
+  da instância"
 
 per_live_video_label: ""
 per_live_video_description: ""
 
 per_live_video_warning_description: |
 
-all_lives_label: ""
+all_lives_label: "Ativar chat para todas as transmissões"
 all_lives_description: ""
 
 all_non_lives_label: ""
@@ -113,17 +115,17 @@ theming_advanced_description: ""
 
 avatar_set_label: ""
 avatar_set_description: |
-avatar_set_option_sepia: ""
-avatar_set_option_cat: ""
-avatar_set_option_bird: ""
+avatar_set_option_sepia: "Sepia (mascote do Peertube)"
+avatar_set_option_cat: "Gatos"
+avatar_set_option_bird: "Pássaros"
 avatar_set_option_fenec: ""
-avatar_set_option_abstract: ''
+avatar_set_option_abstract: 'Abstrato'
 avatar_set_option_legacy: ""
 avatar_set_option_none: ''
 
 converse_theme_label: ""
 converse_theme_description: ""
-converse_theme_option_peertube: ""
+converse_theme_option_peertube: "Tema do Peertube"
 converse_theme_option_default: ""
 converse_theme_option_cyberpunk: ""
 
@@ -141,7 +143,7 @@ help_builtin_prosody_description: |
 system_prosody_label: ""
 system_prosody_description: |
 
-disable_websocket_label: ""
+disable_websocket_label: "Desabilitar Websocket"
 disable_websocket_description: |
 
 prosody_port_label: ""
@@ -187,7 +189,7 @@ prosody_components_port_description: |
 prosody_components_interfaces_label: ""
 prosody_components_interfaces_description: |
 
-prosody_components_list_label: ""
+prosody_components_list_label: "Componentes externos"
 prosody_components_list_description: |
 
 experimental_warning: |
@@ -196,14 +198,14 @@ configuration_description: |
 
 disable_channel_configuration_label: ""
 
-save: ""
-cancel: ""
+save: "Salvar"
+cancel: "Cancelar"
 successfully_saved: ""
 menu_configuration_label: ""
 livechat_configuration_title: ""
 livechat_configuration_desc: ""
 livechat_configuration_please_select: ""
-livechat_configuration_channel_title: ""
+livechat_configuration_channel_title: "Opções de canal"
 livechat_configuration_channel_desc: ""
 livechat_configuration_channel_slow_mode_label: ""
 livechat_configuration_channel_slow_mode_desc: |
@@ -212,7 +214,7 @@ livechat_configuration_channel_bot_options_title: ""
 livechat_configuration_channel_forbidden_words_label: ""
 livechat_configuration_channel_forbidden_words_desc: |
 livechat_configuration_channel_forbidden_words_desc2: |
-livechat_configuration_channel_retractation_reason_label: ""
+livechat_configuration_channel_retractation_reason_label: "Motivo"
 livechat_configuration_channel_retractation_reason_desc: ""
 livechat_configuration_channel_forbidden_words_regexp_label: ""
 livechat_configuration_channel_forbidden_words_regexp_desc: ""
@@ -220,26 +222,26 @@ livechat_configuration_channel_forbidden_words_label_label: ""
 livechat_configuration_channel_forbidden_words_label_desc: ""
 livechat_configuration_applytomoderators_label: ""
 livechat_configuration_applytomoderators_desc: |
-livechat_configuration_channel_forbidden_words_comments_label: ""
+livechat_configuration_channel_forbidden_words_comments_label: "Comentários"
 livechat_configuration_channel_forbidden_words_comments_desc: |
 livechat_configuration_channel_quote_label: ""
 livechat_configuration_channel_quote_desc: |
-livechat_configuration_channel_quote_label2: ""
+livechat_configuration_channel_quote_label2: "Mensagens"
 livechat_configuration_channel_quote_desc2: |
 livechat_configuration_channel_quote_delay_label: ""
 livechat_configuration_channel_quote_delay_desc: |
 livechat_configuration_channel_command_label: ""
 livechat_configuration_channel_command_desc: |
-livechat_configuration_channel_command_cmd_label: ""
+livechat_configuration_channel_command_cmd_label: "Comando"
 livechat_configuration_channel_command_cmd_desc: |
-livechat_configuration_channel_command_message_label: ""
+livechat_configuration_channel_command_message_label: "Mensagem"
 livechat_configuration_channel_command_message_desc: ""
 livechat_configuration_channel_for_more_info: |
 livechat_configuration_channel_banned_jids_label: ""
 livechat_configuration_channel_bot_nickname: ""
 
 validation_error: ""
-invalid_value: ""
+invalid_value: "Valor inválido."
 invalid_value_missing: ""
 invalid_value_wrong_type: ""
 invalid_value_wrong_format: ""
@@ -265,7 +267,7 @@ login_remote_peertube_video_not_found_try_anyway_button: ""
 login_remote_peertube_video_open_failed: ""
 login_external_auth_alert_message: ""
 
-tasks: ''
+tasks: 'Tarefas'
 task_list_create: ''
 task_list_create_error: ''
 task_list_name: ''
@@ -273,9 +275,9 @@ task_list_delete: ''
 task_list_delete_confirm: ''
 task_create: ''
 task_name: ''
-task_description: ''
-task_delete: ''
-task_delete_confirm: ''
+task_description: 'Descrição'
+task_delete: 'Excluir tarefa'
+task_delete_confirm: 'Você está certo que quer excluir esta tarefa?'
 task_list_pick_title: ''
 task_list_pick_empty: ''
 task_list_pick_message: |
@@ -286,11 +288,11 @@ livechat_configuration_channel_emojis_title: ''
 livechat_configuration_channel_emojis_desc: |
 livechat_emojis_shortname: ''
 livechat_emojis_shortname_desc: |
-livechat_emojis_file: ''
+livechat_emojis_file: 'Arquivo'
 livechat_emojis_file_desc: |
 
-action_import: ''
-action_export: ''
+action_import: 'Importar'
+action_export: 'Exportar'
 action_import_emojis_info: ''
 
 action_add_entry: ''
@@ -298,14 +300,14 @@ action_remove_entry: ''
 action_remove_entry_confirm: ''
 
 loading_error: ''
-share_chat_embed: ''
+share_chat_embed: 'Embutido'
 share_chat_peertube_tips: ''
 share_chat_dock: ''
 share_chat_dock_tips: |
 
 token_label: ''
 token_password: ''
-token_date: ''
+token_date: 'Data'
 token_action_create: ''
 token_action_revoke: ''
 token_default_label: ''
@@ -320,15 +322,15 @@ livechat_configuration_channel_mute_anonymous_desc: |
 livechat_configuration_channel_terms_label: ""
 livechat_configuration_channel_terms_desc: |
 
-new_poll: ''
-poll: ''
-poll_title: ''
+new_poll: 'Criar uma nova enquete'
+poll: 'Enquete'
+poll_title: 'Nova enquete'
 poll_instructions: ''
-poll_question: ''
-poll_duration: ''
-poll_anonymous_results: ''
+poll_question: 'Questão'
+poll_duration: 'Duração da enquete (em minutos)'
+poll_anonymous_results: 'Resultados anônimos'
 poll_choice_n: ''
-poll_end: ''
+poll_end: 'Enquete termina em:'
 poll_vote_instructions: ""
 poll_vote_instructions_xmpp: ""
 poll_is_over: ''
@@ -345,7 +347,7 @@ livechat_configuration_channel_anonymize_moderation_desc: |
 moderator_notes: ''
 moderator_notes_create_error: ''
 moderator_note_create: ''
-moderator_note_description: ''
+moderator_note_description: 'Descrição'
 moderator_note_delete: ''
 moderator_note_delete_confirm: ''
 moderator_note_create_for_participant: ''
@@ -365,9 +367,9 @@ prosody_firewall_configuration: ''
 prosody_firewall_configuration_help: |
 prosody_firewall_disabled_warning: |
 prosody_firewall_file_enabled: ''
-prosody_firewall_name: ''
+prosody_firewall_name: 'Nome'
 prosody_firewall_name_desc: |
-prosody_firewall_content: ''
+prosody_firewall_content: 'Conteúdo do arquivo'
 
 emoji_only_info: ''
 emoji_only_mode_title: ''
@@ -378,18 +380,18 @@ emoji_only_enable_all_rooms: ''
 
 livechat_configuration_channel_special_chars_label: ""
 livechat_configuration_channel_special_chars_desc: |
-livechat_configuration_channel_special_chars_tolerance_label: ''
+livechat_configuration_channel_special_chars_tolerance_label: 'Tolerância'
 livechat_configuration_channel_special_chars_tolerance_desc: ''
 
 feature_comes_with: ''
 
 livechat_configuration_channel_no_duplicate_label: ""
 livechat_configuration_channel_no_duplicate_desc: |
-livechat_configuration_channel_no_duplicate_delay_label: ''
+livechat_configuration_channel_no_duplicate_delay_label: 'Intervalo de tempo'
 livechat_configuration_channel_no_duplicate_delay_desc: |
 
 announcements_message_type: ''
-announcements_message_type_standard: ''
-announcements_message_type_announcement: ''
+announcements_message_type_standard: 'Padrão'
+announcements_message_type_announcement: 'Anúncio'
 announcements_message_type_highlight: ''
 announcements_message_type_warning: ''
