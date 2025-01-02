@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-12-22 02:09+0000\n"
+"PO-Revision-Date: 2025-01-02 22:18+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -1173,7 +1173,7 @@ msgstr "Kredity zásuvných modulů"
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Credits"
-msgstr ""
+msgstr "Kredity"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -1184,41 +1184,58 @@ msgstr ""
 #: support/documentation/content/en/credits/_index.md
 msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/)."
 msgstr ""
+"Zásuvný modul spravuje [John Livingston](https://www.john-livingston.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
 msgstr ""
+"Děkujeme Davidu Revoyovi za jeho práci na maskotovi Peertube, "
+"[Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  Návrh postavy "
+"je pod licencí CC-By a soubory SVG použité k vytvoření některých log a "
+"avatarů v tomto pluginu jsou pod licencí GPLv3.0.  Soubory PNG jsou pod "
+"licencemi CC-By a pocházejí z [online generátoru avatarů Sepia](https://www."
+"peppercarrot.com/extras/html/2023_peertube-generator/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org)."
 msgstr ""
+"Děkujeme [Framasoft](https://framasoft.org) za umožnění "
+"[Peertube](https://joinpeertube.org/), za finanční podporu a za hostování "
+"překladů projektu na jejich [Weblate instance](https://weblate.framasoft."
+"org)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support."
-msgstr ""
+msgstr "Děkujeme [ritimo](https://www.ritimo.org/) za finanční podporu."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support."
 msgstr ""
+"Za finanční podporu děkujeme společnostem [Code Lutin](https://www.codelutin."
+"com/) a [Rétribution Copie Publique](https://copiepublique.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
 msgstr ""
+"Děkujeme [NlNet](https://nlnet.nl/) a [NGI0 Entrust fund](https://nlnet.nl/"
+"entrust/) za finanční podporu."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
-msgstr ""
+msgstr "Děkujeme [Octopuce](https://www.octopuce.fr/) za finanční podporu."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
 msgstr ""
+"A děkuji všem individuálním přispěvatelům, kteří přispěli prostřednictvím mé "
+"[liberapay stránky](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
