@@ -6,6 +6,7 @@
 
 * Translations updates.
 * Slovak translation integration.
+* Differenciate pt-PT and pt-BR translations.
 * Fix styling for "configure mod_firewall" button + Peertube v7.0.0 compatibility
 
 ## 12.0.2
