@@ -26,12 +26,20 @@ channel: "Canal"
 last_activity: "Última atividade"
 web: "Web"
 connect_using_xmpp: "Conectar usando XMPP"
-connect_using_xmpp_help: ""
+connect_using_xmpp_help: "Você pode se conectar a sala utilizando uma conta externa
+  XMPP e o seu cliente XMPP favorito."
 
-important_note_title: ""
+important_note_title: "<h3>Notas importantes</h3>"
 important_note_text: |
+  Você pode encontrar a documentação do plugin em:
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/" target="_blank">
+    Documentação do Peertube Plugin Livechat
+  </a>.
 
 diagnostic: |
+  Antes de solicitar ajuda, por favor utilize a ferramenta de diagnóstico:
+  <a class="peertube-plugin-livechat-launch-diagnostic">Abrir diagnóstico</a>
+  (se este botão não estiver abrindo uma nova janela, tente por favor recarregar a página).
 
 chat_title: "<h3>Chat</h3>"
 
@@ -44,8 +52,9 @@ list_rooms_description: |
 
 federation_description: |
 
-federation_no_remote_chat_label: ""
+federation_no_remote_chat_label: "Não exibir chats remotos"
 federation_no_remote_chat_description: |
+  Ao selecionar esta configuração, sua instância nunca irá exibir chats de vídeos remotos.
 
 federation_dont_publish_remotely_label: "Não publicar informações do chat"
 federation_dont_publish_remotely_description: |
@@ -70,7 +79,7 @@ external_auth_google_oidc_description: |
 external_auth_facebook_oidc_label: 'Usar Facebook'
 external_auth_facebook_oidc_description: |
 
-chat_behaviour_description: ""
+chat_behaviour_description: "<h3>Comportamento do chat</h3>"
 
 room_type_label: "Tipo de sala"
 room_type_description: ""
@@ -102,10 +111,10 @@ all_lives_description: ""
 all_non_lives_label: ""
 all_non_lives_description: ""
 
-videos_list_label: ""
+videos_list_label: "Ativar chat para estes vídeos"
 videos_list_description: |
 
-no_anonymous_label: ""
+no_anonymous_label: "Ocultar chat para usuários anônimos"
 no_anonymous_description: |
 
 auto_ban_anonymous_ip_label: ""
@@ -155,7 +164,7 @@ prosody_peertube_uri_description: |
 prosody_muc_log_by_default_label: ""
 prosody_muc_log_by_default_description: |
 
-prosody_muc_expiration_label: ""
+prosody_muc_expiration_label: "Expiração dos logs de sala"
 prosody_muc_expiration_description: |
 
 prosody_room_allow_s2s_label: ""
@@ -167,7 +176,7 @@ prosody_s2s_port_description: |
 prosody_s2s_interfaces_label: ""
 prosody_s2s_interfaces_description: |
 
-prosody_certificates_dir_label: ""
+prosody_certificates_dir_label: "Pasta dos certificados"
 prosody_certificates_dir_description: |
 
 prosody_c2s_label: ""
@@ -201,22 +210,23 @@ disable_channel_configuration_label: ""
 save: "Salvar"
 cancel: "Cancelar"
 successfully_saved: ""
-menu_configuration_label: ""
+menu_configuration_label: "Salas de chat"
 livechat_configuration_title: ""
 livechat_configuration_desc: ""
 livechat_configuration_please_select: ""
 livechat_configuration_channel_title: "Opções de canal"
 livechat_configuration_channel_desc: ""
-livechat_configuration_channel_slow_mode_label: ""
+livechat_configuration_channel_slow_mode_label: "Modo lento"
 livechat_configuration_channel_slow_mode_desc: |
-livechat_configuration_channel_enable_bot_label: ""
-livechat_configuration_channel_bot_options_title: ""
-livechat_configuration_channel_forbidden_words_label: ""
+livechat_configuration_channel_enable_bot_label: "Ativar bot de moderação"
+livechat_configuration_channel_bot_options_title: "Opções do bot de moderação"
+livechat_configuration_channel_forbidden_words_label: "Expressões ou palavras proibidas"
 livechat_configuration_channel_forbidden_words_desc: |
 livechat_configuration_channel_forbidden_words_desc2: |
 livechat_configuration_channel_retractation_reason_label: "Motivo"
 livechat_configuration_channel_retractation_reason_desc: ""
-livechat_configuration_channel_forbidden_words_regexp_label: ""
+livechat_configuration_channel_forbidden_words_regexp_label: "Considerar como expressões
+  regulares"
 livechat_configuration_channel_forbidden_words_regexp_desc: ""
 livechat_configuration_channel_forbidden_words_label_label: ""
 livechat_configuration_channel_forbidden_words_label_desc: ""
@@ -224,72 +234,81 @@ livechat_configuration_applytomoderators_label: ""
 livechat_configuration_applytomoderators_desc: |
 livechat_configuration_channel_forbidden_words_comments_label: "Comentários"
 livechat_configuration_channel_forbidden_words_comments_desc: |
-livechat_configuration_channel_quote_label: ""
+livechat_configuration_channel_quote_label: "Temporizador"
 livechat_configuration_channel_quote_desc: |
+  Você pode configurar vários temporizadores que irão enviar mensagens em um intervalo de tempo regular.
+  Estas mensagens serão enviadas pelo bot a cada X minutos.
+  Você pode por exemplo, fazer com que o bot envie alguma informação de patrocínio a cada 5 minutos.
 livechat_configuration_channel_quote_label2: "Mensagens"
 livechat_configuration_channel_quote_desc2: |
-livechat_configuration_channel_quote_delay_label: ""
+livechat_configuration_channel_quote_delay_label: "Enviar a cada X minutos"
 livechat_configuration_channel_quote_delay_desc: |
-livechat_configuration_channel_command_label: ""
+  O bot irá enviar a mensagem a cada X minutos.
+livechat_configuration_channel_command_label: "Comando de bot"
 livechat_configuration_channel_command_desc: |
 livechat_configuration_channel_command_cmd_label: "Comando"
 livechat_configuration_channel_command_cmd_desc: |
+  O comando, sem iniciar com “!”. Por exemplo "ajuda", "financie", …
 livechat_configuration_channel_command_message_label: "Mensagem"
 livechat_configuration_channel_command_message_desc: ""
 livechat_configuration_channel_for_more_info: |
 livechat_configuration_channel_banned_jids_label: ""
-livechat_configuration_channel_bot_nickname: ""
+livechat_configuration_channel_bot_nickname: "Nickname do bot"
 
-validation_error: ""
+validation_error: "Ocorreu um erro durante a validação."
 invalid_value: "Valor inválido."
-invalid_value_missing: ""
-invalid_value_wrong_type: ""
-invalid_value_wrong_format: ""
+invalid_value_missing: "Este valor é requerido."
+invalid_value_wrong_type: "Valor está com o tipo errado."
+invalid_value_wrong_format: "Valor está com o formato errado."
 invalid_value_not_in_range: ""
-invalid_value_file_too_big: ""
-invalid_value_duplicate: ""
-invalid_value_too_long: ""
+invalid_value_file_too_big: "Tamanho do arquivo está muito grande (tamanho máximo:
+  %s)."
+invalid_value_duplicate: "Valor duplicado"
+invalid_value_too_long: "Valor muito longo"
 too_many_entries: ""
 
-slow_mode_info: ""
+slow_mode_info: "Modo lento está habilitado. Usuários podem enviar uma mensagem a
+  cada %1$s segundos."
 
-chatroom_not_accessible: ""
+chatroom_not_accessible: "Esta sala de chat não existe, ou está inacessível para você."
 
 login_using_external_account: ""
 login_remote_peertube: ""
 login_remote_peertube_url: ""
-login_remote_peertube_searching: ""
+login_remote_peertube_searching: "Buscando o vídeo na instância do Peertube…"
 login_remote_peertube_url_invalid: ""
 login_remote_peertube_no_livechat: ""
-login_remote_peertube_video_not_found: ""
+login_remote_peertube_video_not_found: "Este vídeo não está disponível nesta instância
+  de Peertube"
 login_remote_peertube_video_not_found_try_anyway: ""
 login_remote_peertube_video_not_found_try_anyway_button: ""
 login_remote_peertube_video_open_failed: ""
-login_external_auth_alert_message: ""
+login_external_auth_alert_message: "Autenticação falhou"
 
 tasks: 'Tarefas'
-task_list_create: ''
-task_list_create_error: ''
-task_list_name: ''
-task_list_delete: ''
-task_list_delete_confirm: ''
-task_create: ''
-task_name: ''
+task_list_create: 'Criar uma nova lista de tarefas:'
+task_list_create_error: 'Erro ao salvar a lista de tarefas'
+task_list_name: 'Nome da lista de tarefas'
+task_list_delete: 'Apagar lista de tarefas'
+task_list_delete_confirm: 'Você está certo que quer excluir esta lista de tarefas?'
+task_create: 'Criar nova tarefa'
+task_name: 'Nome da tarefa'
 task_description: 'Descrição'
 task_delete: 'Excluir tarefa'
 task_delete_confirm: 'Você está certo que quer excluir esta tarefa?'
-task_list_pick_title: ''
-task_list_pick_empty: ''
+task_list_pick_title: 'Por favor, escolha uma lista de tarefas'
+task_list_pick_empty: 'Ainda não existe uma lista de tarefas. Por favor, crie a primeira'
 task_list_pick_message: |
 
-promote: ''
+promote: 'Tornar-se moderador'
 
-livechat_configuration_channel_emojis_title: ''
+livechat_configuration_channel_emojis_title: 'Emojis do canal'
 livechat_configuration_channel_emojis_desc: |
-livechat_emojis_shortname: ''
+livechat_emojis_shortname: 'Nome curto'
 livechat_emojis_shortname_desc: |
 livechat_emojis_file: 'Arquivo'
 livechat_emojis_file_desc: |
+  Arquivo do emoji
 
 action_import: 'Importar'
 action_export: 'Exportar'
@@ -313,11 +332,12 @@ token_action_revoke: ''
 token_default_label: ''
 token_action_revoke_confirm: ''
 auth_description: |
+  <h3>Autenticação</h3>
 livechat_token_disabled_label: ''
 livechat_token_disabled_description: |
 
-muted_anonymous_message: ''
-livechat_configuration_channel_mute_anonymous_label: ""
+muted_anonymous_message: 'Apenas usuários registrados podem enviar mensagens'
+livechat_configuration_channel_mute_anonymous_label: "Mutar usuários anônimos"
 livechat_configuration_channel_mute_anonymous_desc: |
 livechat_configuration_channel_terms_label: ""
 livechat_configuration_channel_terms_desc: |
@@ -329,7 +349,7 @@ poll_instructions: ''
 poll_question: 'Questão'
 poll_duration: 'Duração da enquete (em minutos)'
 poll_anonymous_results: 'Resultados anônimos'
-poll_choice_n: ''
+poll_choice_n: 'Escolha {{N}}:'
 poll_end: 'Enquete termina em:'
 poll_vote_instructions: ""
 poll_vote_instructions_xmpp: ""
@@ -344,19 +364,19 @@ livechat_configuration_channel_moderation_delay_desc: |
 livechat_configuration_channel_anonymize_moderation_label: ""
 livechat_configuration_channel_anonymize_moderation_desc: |
 
-moderator_notes: ''
-moderator_notes_create_error: ''
-moderator_note_create: ''
+moderator_notes: 'Notas de moderação'
+moderator_notes_create_error: 'Erro ao salvar nota'
+moderator_note_create: 'Criar uma nova nota'
 moderator_note_description: 'Descrição'
-moderator_note_delete: ''
-moderator_note_delete_confirm: ''
-moderator_note_create_for_participant: ''
-moderator_note_search_for_participant: ''
-moderator_note_filters: ''
+moderator_note_delete: 'Apagar nota'
+moderator_note_delete_confirm: 'Você está certo que quer excluir esta nota?'
+moderator_note_create_for_participant: 'Criar uma nova nota'
+moderator_note_search_for_participant: 'Buscar notas'
+moderator_note_filters: 'Filtros de busca'
 moderator_note_original_nick: ''
 
-search_occupant_message: ''
-message_search: ''
+search_occupant_message: 'Buscar todas as mensagens'
+message_search: 'Busca de mensagens'
 message_search_original_nick: ''
 
 prosody_firewall_label: ''
@@ -366,32 +386,53 @@ prosody_firewall_configure_button: |
 prosody_firewall_configuration: ''
 prosody_firewall_configuration_help: |
 prosody_firewall_disabled_warning: |
-prosody_firewall_file_enabled: ''
+prosody_firewall_file_enabled: 'Habilitado'
 prosody_firewall_name: 'Nome'
 prosody_firewall_name_desc: |
+  Pode conter apenas: caracteres alfanuméricos, sublinhaso e hífens.
+  Scripts serão carregados em order alfabética.
 prosody_firewall_content: 'Conteúdo do arquivo'
 
-emoji_only_info: ''
-emoji_only_mode_title: ''
+emoji_only_info: 'Modo apenas emoji está habilitado. Você pode apenas utilizar emojis
+  em suas mensagens.'
+emoji_only_mode_title: 'Modo apenas emoji'
 emoji_only_mode_desc_1: |
+  Você pode habilitar o "Modo apenas amoji" em suas slas de chat.
+  Quando este modo está habilitado, os participantes podem apenas enviar amojis (padrões, ou cusomizados do canal).
+  Moderadores não são afetados por esta limitação.
 emoji_only_mode_desc_2: |
+  Este modo pode ser útil por exemplo:
+  <ul>
+    <li>Para evitar spam ou mensagens ofensiva, quando você não está disponível para moderar.</li>
+    <li>Quando existem muitos participantes conversando, e você não consegue mais moderá-los corretamente.</li>
+  </ul>
 emoji_only_mode_desc_3: |
-emoji_only_enable_all_rooms: ''
+  Para habilitar ou desabilitar este modo, você pode usar o formulário de configuração da sala.
+  Se você quer habilitar este modo em todas as salas de chat de uma vez, você pode utilizar o botão abaixo.
+emoji_only_enable_all_rooms: 'Habilitar o modo apenas emoji em todas as salas de chat
+  dos canais'
 
-livechat_configuration_channel_special_chars_label: ""
+livechat_configuration_channel_special_chars_label: "Proibir caracteres especiais"
 livechat_configuration_channel_special_chars_desc: |
+  Ao habilitar esta opção, o bot de moderação irá excluir automaticamente mensagens que contenham mais do que X caracteres especiais.
+  Caracteres especiais são aqueles que não se enquadram em nenhuma dessas categorias: letras, números, símbolos de pontuação, símbolos de moeda, emojis.
 livechat_configuration_channel_special_chars_tolerance_label: 'Tolerância'
-livechat_configuration_channel_special_chars_tolerance_desc: ''
+livechat_configuration_channel_special_chars_tolerance_desc: 'Número de caracteres
+  especiais que podem ser aceitos em uma mensagem, sem excluí-la.'
 
-feature_comes_with: ''
+feature_comes_with: 'Esta funcionalidade está disponível com o plugin livechat versão
+  X.X.X.'
 
-livechat_configuration_channel_no_duplicate_label: ""
+livechat_configuration_channel_no_duplicate_label: "Sem mensagens duplicadas"
 livechat_configuration_channel_no_duplicate_desc: |
+  Ao habilitar esta opção, o bot de moderação irá moderar automaticamente mensagens duplicadas.
+  Isso significa que, se um usuário enviar a mesma mensagem duas vezes no período de X segundos, a segunda mensagem será excluída.
 livechat_configuration_channel_no_duplicate_delay_label: 'Intervalo de tempo'
 livechat_configuration_channel_no_duplicate_delay_desc: |
+  O intervalo, em segundos, em que o usuário não pode enviar novamente a mesma mensagem.
 
-announcements_message_type: ''
+announcements_message_type: 'Tipo de mensagem'
 announcements_message_type_standard: 'Padrão'
 announcements_message_type_announcement: 'Anúncio'
-announcements_message_type_highlight: ''
-announcements_message_type_warning: ''
+announcements_message_type_highlight: 'Destaque'
+announcements_message_type_warning: 'Aviso'
