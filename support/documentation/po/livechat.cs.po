@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-02 22:18+0000\n"
+"PO-Revision-Date: 2025-01-02 22:25+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -1241,13 +1241,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Some advanced features"
-msgstr ""
+msgstr "Některé pokročilé funkce"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Advanced usage"
-msgstr ""
+msgstr "Pokročilé používání"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
