@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-02 22:25+0000\n"
+"PO-Revision-Date: 2025-01-02 22:49+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -1253,77 +1253,92 @@ msgstr "Pokročilé používání"
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge to bridge with other chats"
-msgstr ""
+msgstr "Používání služby Matterbridge k propojení s jinými chaty"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge"
-msgstr ""
+msgstr "Používání Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The following is based on a tutorial to use Matterbridge with the plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
 msgstr ""
+"Následující text vychází z návodu pro použití zásuvného modulu Matterbridge:["
+"Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/"
+"-/blob/master/documentation/peertube.md)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Requirements"
-msgstr ""
+msgstr "Požadavky"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 or later."
 msgstr ""
+"[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-"
+"plugin-livechat) verze 3.2.0 nebo novější."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 or later."
 msgstr ""
+"[Matterbridge](https://github.com/42wim/matterbridge) verze 1.22.4 nebo "
+"novější."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The easiest is if the PeerTube instance and Matterbridge run on the same server."
 msgstr ""
+"Nejjednodušší je, pokud instance PeerTube a Matterbridge běží na stejném "
+"serveru."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Internal connections only (basic)"
-msgstr ""
+msgstr "Pouze interní připojení (základní)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You will need to enable `{{% livechat_label prosody_c2s_label %}}` in the livechat plugin settings."
 msgstr ""
+"V nastavení pluginu livechat je třeba povolit `{{% livechat_label "
+"prosody_c2s_label %}}`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This will allow localhost XMPP clients to connect to the Prosody XMPP server."
 msgstr ""
+"To umožní klientům XMPP na hostitelském serveru připojit se k serveru "
+"Prosody XMPP."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You may need to add some line to your `/etc/hosts`:"
-msgstr ""
+msgstr "Možná budete muset přidat nějaký řádek do `/etc/hosts`:"
 
 #. type: Fenced code block
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "127.0.0.1       anon.example.org room.example.org\n"
-msgstr ""
+msgstr "127.0.0.1       anon.example.org room.example.org\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
 msgstr ""
+"Nahraďte `example.org` skutečným názvem domény vaší instance. Poté můžete "
+"pokračovat v níže uvedené konfiguraci Matterbridge."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Allow external connections (advanced)"
-msgstr ""
+msgstr "Povolit externí připojení (pokročilé)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
