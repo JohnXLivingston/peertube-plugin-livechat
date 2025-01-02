@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-08-12 11:25+0000\n"
+"PO-Revision-Date: 2024-12-30 23:43+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.9.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -459,13 +460,16 @@ msgstr "La documentation est générée via l'outils [Hugo](https://gohugo.io/).
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The minimum required version for Hugo is 0.121.0.  It was tested using version 0.132.2."
 msgstr ""
+"La version minimale requise de Hugo est 0.121.0. Nous avons testé avec la "
+"version 0.132.2."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
-#| msgid "The used theme is [hugo-theme-learn](https://learn.netlify.app/).  You should read its documentation before starting editing the documentation."
 msgid "The used theme is [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).  You should read its documentation before starting editing the documentation."
-msgstr "Le thème utilisé est [hugo-theme-learn](https://learn.netlify.app/). Il est recommandé d'en lire la documentation avant de commencer."
+msgstr ""
+"Le thème utilisé est [hugo-theme-relearn](https://mcshelby.github.io/hugo-"
+"theme-relearn). Il est recommandé d'en lire la documentation avant de "
+"commencer."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -612,15 +616,20 @@ msgstr "Pour l'instant il n'est pas possible d'utiliser des tableaux Markdown 
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
-#, fuzzy
-#| msgid "There may be links to documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
 msgid "There may be links to this documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
-msgstr "Il peut y avoir des liens vers la documentation ailleurs sur le web. Essayez de ne pas changer les urls des pages de documentation. Ou au moins, mettez des liens vers les nouvelles pages dans les anciennes urls."
+msgstr ""
+"Il peut y avoir des liens vers cette documentation ailleurs sur le web. "
+"Essayez de ne pas changer les urls des pages de documentation. Ou au moins, "
+"mettez des liens vers les nouvelles pages dans les anciennes urls."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new feature is released, you can use the `livechat_version_notice` short code to display an infobox with the version with which the features is available.  This short code takes the version number as parameter.  Here is an example:"
 msgstr ""
+"Lorsqu'une nouvelle fonctionnalité est disponible, vous pouvez utiliser "
+"`livechat_version_notice` pour afficher une boite d'information avec la "
+"version dans laquelle cette fonctionnalité est disponible. Ce code prend le "
+"numéro de version comme paramètre.  Voici un exemple :"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
@@ -1959,31 +1968,45 @@ msgstr "Documentation administrateur⋅rice"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Advanced firewall rules for the Prosody server"
-msgstr ""
+msgstr "Configurations avancées du pare-feu pour le serveur Prosody."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Prosody mod_firewall"
-msgstr ""
+msgstr "mod_firewall Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
 msgstr ""
+"Vous pouvez activer [mod_firewall](https://modules.prosody.im/mod_firewall) "
+"sur votre serveur Prosody."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Doing so, Peertube admins will be able to define advanced firewall rules."
 msgstr ""
+"Ainsi, les administrateurs de Peertube pourront définir des règles avancées "
+"de pare-feu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
+#, fuzzy
 msgid "These rules could be used to run arbitrary code on the server.  If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.  You can still use mod_firewall by editing files directly on the server."
 msgstr ""
+"Ces règles pouraient être utilisées pour exécuter un code arbitraire sur le "
+"serveur.  Si vous êtes un hébergeur, et que vous ne voulez pas permettre aux "
+"administrateurs de Peertube d'écrire de telles règles, vous pouvez "
+"désactiver l'édition en ligne en créant un fichier "
+"`disable_mod_firewall_editing` dans le répertoire du plugin (`plugins/data/"
+"peertube-plugin-livechat/disable_mod_firewall_editing`).  Il s'agit d'une "
+"dérogation, car les administrateurs de Peertube peuvent déjà exécuter du "
+"code arbitraire en installant n'importe quel plugin.  Vous pouvez toujours "
+"utiliser mod_firewall en éditant des fichiers directement sur le serveur."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2003,6 +2026,8 @@ msgstr "Veuillez vous référer à la page d'aide [pour ce paramètre](/peertube
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Just bellow the settings, you will find a \"Configure mod_firewall\" button.  This button will open a configuration page."
 msgstr ""
+"Juste en dessous des paramètres, vous trouverez un bouton « Configurer "
+"mod_firewall ».  Ce bouton ouvrira une page de configuration."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2021,12 +2046,14 @@ msgstr "Ici vous pouvez configurer :"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "You can enable/disable each files."
-msgstr ""
+msgstr "Vous pouvez activer/désactiver chaque fichier."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Files will be loaded in the alphabetical order.  You can use a number as prefix to easily choose the order."
 msgstr ""
+"Les fichiers sont chargés dans l'ordre alphabétique.  Vous pouvez  utiliser "
+"des préfixes numériques pour facilement en définir l'ordre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
