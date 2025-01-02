@@ -65,7 +65,7 @@ Mise à jour depuis une version antérieure à 6.0.0Notes importantes pour la mi
 Documentation administrateur⋅riceAdministration du Plugin Peertube Livechat
 ParamètresParamètres du Plugin Peertube Livechat
 Authentification externeParamètres du Plugin Peertube Livechat - Authentification Externe
-Prosody mod_firewallAdvanced firewall rules for the Prosody server
+mod_firewall ProsodyAdvanced firewall rules for the Prosody server
 Usage avancéQuelques fonctionnalités avancées
 Clients XMPPAutoriser la connexion en utilisant des clients XMPP
 Utiliser MatterbridgeUtiliser Matterbridge pour faire un pont vers d'autres tchats`,description:"Documentation du plugin",tags:[],title:"Documentation",uri:"/peertube-plugin-livechat/fr/documentation/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` Pour les spectateur⋅ricesComment tchater pour les spectateur⋅rices
@@ -190,7 +190,7 @@ Interfaces réseau pour les composants Prosody externes Les interfaces réseau s
 Une liste d’IP séparées par des virgules (les espaces seront retirés). On pourra utiliser «*» pour écouter sur toutes les IPv4, et «::» pour toutes les IPv6.
 Exemples :
 *,:: * 127.0.0.1,::1 172.18.0.42 Composants externes Les composants externes à déclarer :
-Un par ligne. Utilisez le format «nom_du_composant:passphrase_secrete» (les espaces seront retirés). Vous pouvez ajouter des commentaires: tout ce qui se trouve après un caractère # sera retiré, et les lignes vides ignorées. Le nom ne peut contenir que des caractères alphanumériques latins et des points. Si le nom ne contient que des caractères alphanumériques, il sera suffixé avec le domaine XMPP. Par exemple, «bridge» deviendra «bridge.votre_domaine.tld». Vous pouvez aussi spécifier un nom de domaine complet, mais vous devrez vous assurer que votre configuration DNS est correcte. N'utilisez que des caractères alphanumériques dans la passphrase secrète (utilisez au moins 15 caractères). Activer mod_firewall pour Prosody You can enable mod_firewall on your Prosody server.
+Un par ligne. Utilisez le format «nom_du_composant:passphrase_secrete» (les espaces seront retirés). Vous pouvez ajouter des commentaires: tout ce qui se trouve après un caractère # sera retiré, et les lignes vides ignorées. Le nom ne peut contenir que des caractères alphanumériques latins et des points. Si le nom ne contient que des caractères alphanumériques, il sera suffixé avec le domaine XMPP. Par exemple, «bridge» deviendra «bridge.votre_domaine.tld». Vous pouvez aussi spécifier un nom de domaine complet, mais vous devrez vous assurer que votre configuration DNS est correcte. N'utilisez que des caractères alphanumériques dans la passphrase secrète (utilisez au moins 15 caractères). Activer mod_firewall pour Prosody Vous pouvez activer mod_firewall sur votre serveur Prosody.
 For more information, please check the documentation.`,description:"Paramètres du Plugin Peertube Livechat",tags:[],title:"Paramètres",uri:"/peertube-plugin-livechat/fr/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice",content:`Rejoindre les salons de discussion Quand vous regardez une vidéo Peertube qui a le tchat activé, vous le verrez à coté de celle-ci :
 Il y a deux cas d’usages légèrement différents, dépendant de si vous avez un compte sur l’instance Peertube ou non. Voir plus bas pour plus d’informations.
 Si vous n’avez pas de compte Peertube Avertissement Cette fonction peut être désactivée par les administrateur⋅rices de l’instance.
@@ -415,24 +415,24 @@ docker-compose down; docker-comopse up -dDans les paramètres du plugin livechat
 /etc/letsencrypt/liveSauvegardez les paramètres du plugin et vérifiez que Prosody peut voir les certificats :
 docker-compose exec -u peertube \\ peertube \\ /data/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun \\ prosodyctl \\ --config /data/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\ check certsEn cas de problème Si cela ne fonctionne pas, vous pouvez utiliser l’outils de diagnostic (un bouton se trouve en haut de la page des paramètres du plugin), et notamment regarder ce que dit la section «Prosody check».`,description:"Autoriser la connexion en utilisant des clients XMPP",tags:[],title:"Clients XMPP",uri:"/peertube-plugin-livechat/fr/documentation/admin/advanced/xmpp_clients/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` ParamètresParamètres du Plugin Peertube Livechat
 Authentification externeParamètres du Plugin Peertube Livechat - Authentification Externe
-Prosody mod_firewallAdvanced firewall rules for the Prosody server
+mod_firewall ProsodyAdvanced firewall rules for the Prosody server
 Usage avancéQuelques fonctionnalités avancées
 Clients XMPPAutoriser la connexion en utilisant des clients XMPP
 Utiliser MatterbridgeUtiliser Matterbridge pour faire un pont vers d'autres tchats`,description:"Administration du Plugin Peertube Livechat",tags:[],title:"Documentation administrateur⋅rice",uri:"/peertube-plugin-livechat/fr/documentation/admin/index.html"},{breadcrumb:"Peertube livechat > Contribuer",content:"Vous n’avez pas besoin de coder pour commencer à contribuer à ce plugin ! Les autres formes de contributions sont également précieuses, parmis lesquelles : vous pouvez tester le plugin et remonter les bugs que vous rencontrez, partager vos retours d’expérience, proposer des fonctionnalités qui vous intéressent, remonter vos remarques sur l’interface, le design, etc.",description:"Donnez vos retours",tags:[],title:"Donnez vos retours",uri:"/peertube-plugin-livechat/fr/contributing/feedback/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice > Pour les streameur⋅euses > Bot de tchat",content:`Vous pouvez configurer quelques timers qui enverront des messages à intervalle régulier. Ces messages seront envoyés par le bot toutes les X minutes. Vous pouvez par exemple faire en sorte que le bot envoie des informations de sponsoring toutes les 5 minutes.
 Astuce S’il n’y a pas d’utilisateur⋅rice dans le salon, le bot n’enverra pas de message.
 Timer Vous pouvez configurer quelques timers qui enverront des messages à intervalle régulier. Ces messages seront envoyés par le bot toutes les X minutes. Vous pouvez par exemple faire en sorte que le bot envoie des informations de sponsoring toutes les 5 minutes.
 Un message par ligne. S’il y a plusieurs messages, le bot en choisira un aléatoirement toutes les X minutes.
-Envoyer toutes les X minutes Le bot enverra les messages toutes les X minutes`,description:"Le bot peut envoyer des messages périodiquement.",tags:[],title:"Messages pré-enregistrés",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation administrateur⋅rice",content:` Information Cette fonctionnalité arrive avec le plugin livechat version 11.0.0. You can enable mod_firewall on your Prosody server.
-Doing so, Peertube admins will be able to define advanced firewall rules.
+Envoyer toutes les X minutes Le bot enverra les messages toutes les X minutes`,description:"Le bot peut envoyer des messages périodiquement.",tags:[],title:"Messages pré-enregistrés",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation administrateur⋅rice",content:` Information Cette fonctionnalité arrive avec le plugin livechat version 11.0.0. Vous pouvez activer mod_firewall sur votre serveur Prosody.
+Ainsi, les administrateurs de Peertube pourront définir des règles avancées de pare-feu.
 Avertissement These rules could be used to run arbitrary code on the server. If you are a hosting provider, and you don’t want to allow Peertube admins to write such rules, you can disable the online editing by creating a disable_mod_firewall_editing file in the plugin directory (plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing). This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin. You can still use mod_firewall by editing files directly on the server.
 Edit rules First, you must enable the feature in the plugin settings.
-Just bellow the settings, you will find a “Configure mod_firewall” button. This button will open a configuration page.
+Juste en dessous des paramètres, vous trouverez un bouton « Configurer mod_firewall ». Ce bouton ouvrira une page de configuration.
 Here you can add several configuration files.
-You can enable/disable each files.
-Files will be loaded in the alphabetical order. You can use a number as prefix to easily choose the order.
+Vous pouvez activer/désactiver chaque fichier.
+Les fichiers sont chargés dans l’ordre alphabétique. Vous pouvez utiliser des préfixes numériques pour facilement en définir l’ordre.
 Information You can also edit these firewall rules directly on the server, in the plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/ directory. File names must only contains alphanumerical characters, underscores and hyphens. The extension must be .pfw, or .pfw.disabled if you want to disable a file. Please be sure that the peertube system user has write access to these files, else the web editing interface will fail. Once you have edited these files, you must reload prosody. This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube.
 When you save the configuration, the server will automatically reload it, and your rules will apply immediatly. You can check that there is no parsing error in the Prosody error log. To do so, you can read the plugins/data/peertube-plugin-livechat/prosody/prosody.err file, or use the diagnostic tool that will show last Prosody errors.
-Examples Don’t hesitate to share your rules. To do so, you can for example edit this page.`,description:"Advanced firewall rules for the Prosody server",tags:[],title:"Prosody mod_firewall",uri:"/peertube-plugin-livechat/fr/documentation/admin/mod_firewall/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice > Pour les streameur⋅euses > Bot de tchat",content:`Vous pouvez configurer le bot pour répondre à des commandes. Une commande est un message qui commence par un “!”, comme par exemple “!help” qui appellera la commande “help”.
+Examples Don’t hesitate to share your rules. To do so, you can for example edit this page.`,description:"Advanced firewall rules for the Prosody server",tags:[],title:"mod_firewall Prosody",uri:"/peertube-plugin-livechat/fr/documentation/admin/mod_firewall/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation utilisateur⋅rice > Pour les streameur⋅euses > Bot de tchat",content:`Vous pouvez configurer le bot pour répondre à des commandes. Une commande est un message qui commence par un “!”, comme par exemple “!help” qui appellera la commande “help”.
 Vous pouvez paramétrer différentes commandes.
 Commande La commande, sans le “!” au début. Par exemple “help”, “sponsor”, …
 Message Le message à envoyer.`,description:"Le bot peut répondre à différentes commandes.",tags:[],title:"Commandes",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Contribuer",content:`Toujours annoncer les fonctionnalités sur lesquelles vous voulez travailler en créant un ticket ou en commentant un ticket existant, avant de commencer à travailler dessus.Et annoncez clairement à la communauté que vous commencez à travailler dessus. Ceci afin d’éviter que plusieurs personnes travaillent sur la même chose et entrent en conflit.
@@ -488,8 +488,8 @@ Utiliser MatterbridgeUtiliser Matterbridge pour faire un pont vers d'autres tcha
 Le travail de documentation se fait sur la branche main.
 Le code source de la documentation se trouve dans le dossier support/documentation/content du dépot de code.
 La documentation est générée via l’outils Hugo. Celui-ci doit être installé sur votre machine pour pouvoir prévisualiser la documentation.
-The minimum required version for Hugo is 0.121.0. It was tested using version 0.132.2.
-The used theme is hugo-theme-relearn. You should read its documentation before starting editing the documentation.
+La version minimale requise de Hugo est 0.121.0. Nous avons testé avec la version 0.132.2.
+Le thème utilisé est hugo-theme-relearn. Il est recommandé d’en lire la documentation avant de commencer.
 Quand une version du plugin est publiée, ou quand la documentation est mise à jour, les mainteneur⋅euses du plugin fusionnerons la branche main dans la branche documentation. Ce qui aura pour effet de déclencher les pipelines github et gitlab pour mettre à jour les versions publiées.
 Traductions La langue principale est l’anglais (code en).
 Le dossier support/documentation/content/enne contient que les fichiers de documentation en anglais.
@@ -510,8 +510,8 @@ Il est possible d’empêcher un fichier d’être traduit, en utilisant livecha
 Veuillez utiliser l’option livechatnotranslation pour la documentation technique. Nous ne voulons pas traduire la documentation technique, afin d’éviter les problèmes liés à une mauvaise traduction.
 Pour faciliter le travail des traducteur⋅rices, évitez de faire des paragraphes trop longs.
 Pour l’instant il n’est pas possible d’utiliser des tableaux Markdown : les outils de translation ne savent pas les gérer.
-Avertissement There may be links to this documentation elsewhere on the web. Try not to change the urls of the documentation pages. Or at the very least, put links to the new location on the previous url.
-When a new feature is released, you can use the livechat_version_notice short code to display an infobox with the version with which the features is available. This short code takes the version number as parameter. Here is an example:
+Avertissement Il peut y avoir des liens vers cette documentation ailleurs sur le web. Essayez de ne pas changer les urls des pages de documentation. Ou au moins, mettez des liens vers les nouvelles pages dans les anciennes urls.
+Lorsqu’une nouvelle fonctionnalité est disponible, vous pouvez utiliser livechat_version_notice pour afficher une boite d’information avec la version dans laquelle cette fonctionnalité est disponible. Ce code prend le numéro de version comme paramètre. Voici un exemple :
 Information Cette fonctionnalité arrive avec le plugin livechat version 12.0.0. Que faire si je ne peux pas utiliser hugo et/ou po4a ? Il suffit d’éditer les fichiers markdown en anglais, et de spécifier que vous ne pouvez pas compiler les traductions lorsque vous faites votre Pull Request.
 Publication La publication de la documentation est automatique, dès que les modifications sont fusionnées dans la branche documentation.`,description:"Documenter le plugin, ou traduire la documentation.",tags:[],title:"Documentation",uri:"/peertube-plugin-livechat/fr/contributing/document/index.html"},{breadcrumb:"Peertube livechat > Documentation > Documentation d'installation",content:`IMPORTANT NOTE Depuis la version v6.0.0, ce plugin ne nécessite plus l’installation de Prosody.
 Si vous utilisiez ce plugin avant, et que vous aviez installé Prosody manuellement, vous pouvez le désinstaller en tout sécurité.
@@ -920,7 +920,7 @@ Mise à jour depuis une version antérieure à 6.0.0Notes importantes pour la mi
 Documentation administrateur⋅riceAdministration du Plugin Peertube Livechat
 ParamètresParamètres du Plugin Peertube Livechat
 Authentification externeParamètres du Plugin Peertube Livechat - Authentification Externe
-Prosody mod_firewallAdvanced firewall rules for the Prosody server
+mod_firewall ProsodyAdvanced firewall rules for the Prosody server
 Usage avancéQuelques fonctionnalités avancées
 Clients XMPPAutoriser la connexion en utilisant des clients XMPP
 Utiliser MatterbridgeUtiliser Matterbridge pour faire un pont vers d'autres tchats
