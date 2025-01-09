@@ -8,8 +8,10 @@ use_chat_help: "Se habilitado, haverá um chat próximo ao vídeo"
 share_chat_link: "Compartilhar link do chat"
 read_only: "Somente leitura"
 show_scrollbarr: "Exibir barra de rolagem"
-transparent_background: ""
+transparent_background: "Fundo transparente (para integração com sistemas de transmissão,
+  como por exemplo OBS)"
 tips_for_streamers: |
+  Dica para streamers: Para embutir o chat na sua transmissão de vídeo, usando OBS por exemplo, gere um link somente-leitura e o utiliza como a fonte no navegador.
 copy: "Copiar"
 copied: "Copiado"
 link_copied: "Link copiado"
@@ -17,7 +19,7 @@ error: "Erro"
 open: "Abrir"
 use_current_theme_color: "Utilizar cores do tema atual"
 generate_iframe: "Gerar um iframe para embutir o chat em uma página"
-chat_for_live_stream: ""
+chat_for_live_stream: "Chat para transmissão ao vivo:"
 room_name: "Nome da sala"
 room_description: "Descrição da sala"
 not_found: "Não encontrado"
@@ -45,6 +47,8 @@ chat_title: "<h3>Chat</h3>"
 
 chat_terms_label: "Termos e Condições"
 chat_terms_description: |
+  Estes termos e condições serão exibidos para todos usuários ao entrarem nas salas de chat.
+  Streamers podem configurar termos e condições para os seus canais, que serão exibidos logo em seguida aos termos e condições globais.
 
 list_rooms_label: "Listar salas existentes"
 list_rooms_description: |
@@ -58,16 +62,29 @@ federation_no_remote_chat_description: |
 
 federation_dont_publish_remotely_label: "Não publicar informações do chat"
 federation_dont_publish_remotely_description: |
+  Ao selecionar esta configuração, sua instância não irá publicar informação de chat no fediverso.
+  Instâncias remotas do Peertube não estarão cientes de que elas são salas de chat associadas aos seus vídeos.<br>
+  <b>Atenção</b>: se você já possui chats em andamento, é possível que esta informação já tenha sido publicada.
+  Você deverá aguardar até a próxima atualização do vídeo antes que a informação seja despublicada.
+  Também, se você desabilitar esta configuração, você deverá aguardar os vídeos serem atualizados antes que a informação seja publicada novamente. Esta atualização acontece sobre as outras quando um evento ao vivo retorna ou se encerra.<br>
+  <b>Atenção</b>: esta configuração apenas afeta a publicação de informação via protocolo ActivityPub.
+  Não irá impedir uma aplicação remota de detectar a presenção de chats de outra maneira, e de tentar conectar-se a ele.
 
 external_auth_description: |
+  <h3>Autenticação externa</h3>
+  Para usuários que não possui uma conta no Peertube, você pode habilitar vários modos de autenticação baseados em provedores de autenticação remotos.
 
-external_auth_custom_oidc_title: ""
+external_auth_custom_oidc_title: "<h4>OpenID Connect</h4>"
 
-external_auth_custom_oidc_label: ""
+external_auth_custom_oidc_label: "Usar um provedor OpenID Connect"
 external_auth_custom_oidc_description: |
+  Você pode configurar um provedor externo de OpenID Connect que poderá ser utilizado para autenticar-se ao chat.
+  Por favor, consulte a documentação:
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Configurações</a>.
 
-external_auth_custom_oidc_button_label_label: ""
-external_auth_custom_oidc_button_label_description: ""
+external_auth_custom_oidc_button_label_label: "Etiqueta para o botão de conexão"
+external_auth_custom_oidc_button_label_description: "Esta etiqueta será exibida aos
+  usuários, como o etiqueta do botão a ser autenticado com esse provedor OIDC."
 
 external_auth_custom_oidc_discovery_url_label: ""
 external_auth_oidc_client_id_label: ""
@@ -82,17 +99,18 @@ external_auth_facebook_oidc_description: |
 chat_behaviour_description: "<h3>Comportamento do chat</h3>"
 
 room_type_label: "Tipo de sala"
-room_type_description: ""
+room_type_description: "Você pode escolher aqui ter salas separadas para cada vídeo
+  ou agrupá-las por canal."
 room_type_option_video: "Cada vídeo tem sua própria sala de chat"
-room_type_option_channel: ""
+room_type_option_channel: "Salas de chat são agrupadas por canal"
 
 auto_display_label: "Abrir chat automaticamente"
 auto_display_description: ""
 
-open_blank_label: ""
+open_blank_label: "Exibir o botão «abrir em nova janela»"
 open_blank_description: ""
 
-share_url_label: ""
+share_url_label: "Exibir o botão «compartilhar link do chat»"
 share_url_description: ""
 share_url_option_nobody: "Exibir para ninguém"
 share_url_option_everyone: "Exibir para todos"
@@ -100,7 +118,7 @@ share_url_option_owner: "Exibir para o proprietário do vídeo"
 share_url_option_owner_moderators: "Exibir para o proprietário do vídeo e moderadores
   da instância"
 
-per_live_video_label: ""
+per_live_video_label: "Usuários podem ativar o chat para suas transmissões ao vivo"
 per_live_video_description: ""
 
 per_live_video_warning_description: |
@@ -120,25 +138,26 @@ no_anonymous_description: |
 auto_ban_anonymous_ip_label: ""
 auto_ban_anonymous_ip_description: |
 
-theming_advanced_description: ""
+theming_advanced_description: "<h3>Temas</h3>"
 
 avatar_set_label: ""
 avatar_set_description: |
 avatar_set_option_sepia: "Sepia (mascote do Peertube)"
 avatar_set_option_cat: "Gatos"
 avatar_set_option_bird: "Pássaros"
-avatar_set_option_fenec: ""
+avatar_set_option_fenec: "Fenecs (mascote do Mobilizon)"
 avatar_set_option_abstract: 'Abstrato'
 avatar_set_option_legacy: ""
-avatar_set_option_none: ''
+avatar_set_option_none: 'Nenhum'
 
-converse_theme_label: ""
-converse_theme_description: ""
+converse_theme_label: "Tema do ConverseJS"
+converse_theme_description: "Por favor, escolha o tema do ConverseJS que você deseja
+  utilizar."
 converse_theme_option_peertube: "Tema do Peertube"
-converse_theme_option_default: ""
-converse_theme_option_cyberpunk: ""
+converse_theme_option_default: "Tema padrão do ConverseJS"
+converse_theme_option_cyberpunk: "Tema Cyberpunk do ConverseJS"
 
-autocolors_label: ""
+autocolors_label: "Detecção automática de cor"
 autocolors_description: |
 
 chat_style_label: ""
@@ -146,22 +165,22 @@ chat_style_description: |
 
 prosody_advanced_description: ""
 
-help_builtin_prosody_label: ""
+help_builtin_prosody_label: "Servidor Prosody"
 help_builtin_prosody_description: |
 
-system_prosody_label: ""
+system_prosody_label: "Usar Prosody do sistema"
 system_prosody_description: |
 
 disable_websocket_label: "Desabilitar Websocket"
 disable_websocket_description: |
 
-prosody_port_label: ""
+prosody_port_label: "Porta do Prosody"
 prosody_port_description: |
 
-prosody_peertube_uri_label: ""
+prosody_peertube_uri_label: "URL do Peertube para chamada de API"
 prosody_peertube_uri_description: |
 
-prosody_muc_log_by_default_label: ""
+prosody_muc_log_by_default_label: "Logar conteúdo das salas por padrão"
 prosody_muc_log_by_default_description: |
 
 prosody_muc_expiration_label: "Expiração dos logs de sala"
@@ -179,15 +198,33 @@ prosody_s2s_interfaces_description: |
 prosody_certificates_dir_label: "Pasta dos certificados"
 prosody_certificates_dir_description: |
 
-prosody_c2s_label: ""
+prosody_c2s_label: "Habilitar conexões de cliente para servidor"
 prosody_c2s_description: |
+  Habilite os clientes XMPP para se conectarem ao servidor Prosody integrado.<br>
+  Esta opção sozinha permite apenas conexões em localhost.
 
 prosody_c2s_port_label: ""
 prosody_c2s_port_description: |
+  A porta que será usada pelo módulo c2s do servidor Prosody integrado.<br>
+  Os clientes XMPP devem usar essa porta para se conectar.<br>
+  Altere-o se esta porta já estiver em uso em seu servidor.<br>
+  Você pode manter esta porta fechada em seu firewall por enquanto, ela não será acessada do mundo exterior.<br>
+  Nota: isso pode mudar em um futuro próximo, pois está planejado adicionar um recurso para ativar conexões externas.
 
 
 prosody_c2s_interfaces_label: ""
 prosody_c2s_interfaces_description: |
+  As interfaces de rede para escutar conexões de cliente para servidor.<br>
+  Esta configuração é fornecida para usuários avançados. Não altere essa configuração se você não entender completamente o que ela significa.<br>
+  Lista de IP para ouvir, separados por vírgula (os espaços serão removidos).<br>
+  Você pode usar «*» para escutar em todas as interfaces IPv4 e «::» para todas as interfaces Ipv6.<br>
+  Exemplos:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>127.0.0.1, ::1, 172.18.0.42</li>
+  </ul>
 
 prosody_components_label: ""
 prosody_components_description: |
@@ -272,11 +309,11 @@ slow_mode_info: "Modo lento está habilitado. Usuários podem enviar uma mensage
 
 chatroom_not_accessible: "Esta sala de chat não existe, ou está inacessível para você."
 
-login_using_external_account: ""
-login_remote_peertube: ""
-login_remote_peertube_url: ""
+login_using_external_account: "Autenticar-se usando uma conta externa"
+login_remote_peertube: "Autenticarse usando uma conta em outra instância do Peertube:"
+login_remote_peertube_url: "URL da sua instância do Peertube"
 login_remote_peertube_searching: "Buscando o vídeo na instância do Peertube…"
-login_remote_peertube_url_invalid: ""
+login_remote_peertube_url_invalid: "URL do Peertube inválida"
 login_remote_peertube_no_livechat: ""
 login_remote_peertube_video_not_found: "Este vídeo não está disponível nesta instância
   de Peertube"
@@ -299,6 +336,9 @@ task_delete_confirm: 'Você está certo que quer excluir esta tarefa?'
 task_list_pick_title: 'Por favor, escolha uma lista de tarefas'
 task_list_pick_empty: 'Ainda não existe uma lista de tarefas. Por favor, crie a primeira'
 task_list_pick_message: |
+  Depois de escolher uma lista de tarefas, uma nova tarefa será criada.
+  Para ver a tarefa, abra o aplicativo de tarefas usando o menu superior.
+  Mais informações na documentação do plugin livechat.
 
 promote: 'Tornar-se moderador'
 
@@ -312,11 +352,12 @@ livechat_emojis_file_desc: |
 
 action_import: 'Importar'
 action_export: 'Exportar'
-action_import_emojis_info: ''
+action_import_emojis_info: 'Se os dados importados estiverem corretos, não se esqueça
+  de salvar o formulário.'
 
-action_add_entry: ''
-action_remove_entry: ''
-action_remove_entry_confirm: ''
+action_add_entry: 'Adicionar uma entrada'
+action_remove_entry: 'Remover esta entrada'
+action_remove_entry_confirm: 'Você está certo de que deseja remover esta entrada?'
 
 loading_error: ''
 share_chat_embed: 'Embutido'
