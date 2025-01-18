@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-03 03:10+0000\n"
+"PO-Revision-Date: 2025-01-18 19:02+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.9.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1101,6 +1101,13 @@ msgid ""
 "  livechatnotranslation: true\n"
 "  ---\n"
 msgstr ""
+"  ---\n"
+"  title: \"Třetí strana\"\n"
+"  description: \"Zobrazení livechatu pomocí softwaru třetí strany.\"\n"
+"  weight: 20\n"
+"  chapter: false\n"
+"  livechatnotranslation: true\n"
+"  ---\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1179,6 +1186,12 @@ msgstr "Kredity"
 #: support/documentation/content/en/credits/_index.md
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies."
 msgstr ""
+"Soubory [package.json](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github."
+"com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) a "
+"[LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
+"main/LICENSE) obsahují licenční informace pro tento software a jeho "
+"závislosti."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -1352,11 +1365,15 @@ msgstr ""
 #, no-wrap
 msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
 msgstr ""
+"Ve verzích livechatu >= 10.1.0 byla přidána nová volba `Síťová rozhraní "
+"klienta a serveru`, která umožňuje tuto volbu změnit.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "It allows to add a list of IPs to listen on, coma separated (spaces will be stripped)."
 msgstr ""
+"Umožňuje přidat seznam IP adres pro poslech, oddělených čárkami (mezery "
+"budou odstraněny)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -5210,3 +5227,5 @@ msgstr ""
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr ""
+"Pokud jste webdesignér nebo odborník na ConverseJS/Prosody/XMPP a chcete "
+"pomoci tento plugin vylepšit, jste vítáni."
