@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-18 19:02+0000\n"
+"PO-Revision-Date: 2025-01-18 21:45+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -1399,7 +1399,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Configurating Matterbridge"
-msgstr ""
+msgstr "Konfigurace Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1409,7 +1409,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "So in the TOML config file put:"
-msgstr ""
+msgstr "Do konfiguračního souboru TOML tedy vložte:"
 
 #. type: Fenced code block (TOML)
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1423,75 +1423,107 @@ msgid ""
 "RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
 "NoTLS=true\n"
 msgstr ""
+"[xmpp.mypeertube]\n"
+"Anonymous=true\n"
+"Server=\"anon.example.org:52822\"\n"
+"Muc=\"room.example.org\"\n"
+"Nick=\"Matterbridge\"\n"
+"RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
+"NoTLS=true\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name."
-msgstr ""
+msgstr "Nahraďte `example.org` skutečným názvem domény vaší instance."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `52822` by the actual port if you changed it."
-msgstr ""
+msgstr "Nahraďte `52822` skutečným portem, pokud jste jej změnili."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "`mypeertube` can be replaced by another name."
-msgstr ""
+msgstr "`mypeertube` lze nahradit jiným názvem."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Using `peertube` as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification."
 msgstr ""
+"Použití `peertube` jako Nick zajistí vložení ikony PeerTube pro překryvné "
+"zprávy, lze také provést pomocí úpravy konfigurace překryvu."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The setting `NoTLS=true` allows connecting to a server with self-signed certificates."
 msgstr ""
+"Nastavení `NoTLS=true` umožňuje připojit se k serveru s certifikáty "
+"podepsanými samotným uživatelem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Now you can add this account to gateways and bridge specific live-chat channels."
 msgstr ""
+"Nyní můžete tento účet přidat k branám a přemostit konkrétní kanály živého "
+"chatu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This documentation use an anonymous account to connect the bridge to the chat.  But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account.  This is used for [OBS docks](/peertube-plugin-livechat/documentation/user/obs).  Using this feature for other purposes is not documented and not officially supported yet.  If you want to use it anyway, you can request a token by calling then `/plugins/livechat/router/api/auth/tokens` endpoint.  To get needed headers and request body, just check what happens when you generate a new token for OBS docks."
 msgstr ""
+"Tato dokumentace používá anonymní účet pro připojení bridge k chatu.  Od "
+"verze livechat v10.1.0 však existuje nový způsob generování dlouhodobého "
+"ověřovacího tokenu, který umožňuje připojení pomocí vašeho účtu.  To se "
+"používá pro [OBS doky](/peertube-plugin-livechat/dokumentace/uživatel/obs).  "
+"Použití této funkce pro jiné účely není zdokumentováno a zatím není "
+"oficiálně podporováno.  Pokud ji přesto chcete použít, můžete si vyžádat "
+"token zavoláním koncového bodu `/plugins/livechat/router/api/auth/tokens`.  "
+"Chcete-li získat potřebné hlavičky a tělo požadavku, stačí se podívat, co se "
+"děje při generování nového tokenu pro doky OBS."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Allow connections using XMPP clients"
-msgstr ""
+msgstr "Povolení připojení pomocí klientů XMPP"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "XMPP clients"
-msgstr ""
+msgstr "Klienti XMPP"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This chat module is based on the XMPP protocol, also known as Jabber.  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can for example be useful to facilitate moderation operations."
 msgstr ""
+"Tento chatovací modul je založen na protokolu XMPP, známém také jako "
+"Jabber.  Proto je možné se k chatům připojit pomocí [klientského softwaru "
+"XMPP](https://en.wikipedia.org/wiki/XMPP#Clients).  To může být užitečné "
+"například pro usnadnění moderátorských operací."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgstr ""
+"Uživatelskou dokumentaci související s těmito funkcemi naleznete na stránce ["
+"uživatelská dokumentace](/peertube-plugin-livechat/documentation/user/"
+"xmpp_clients/)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enabling these features requires configuration changes on the server, and on the DNS records.  It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills."
 msgstr ""
+"Povolení těchto funkcí vyžaduje změny konfigurace na serveru a v záznamech "
+"DNS.  To není možné konfigurovat pouze z rozhraní Peertube a vyžaduje to "
+"základní systémové některé základní systémové administrátorské dovednosti."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Login to your Peertube account"
-msgstr ""
+msgstr "Přihlášení k účtu Peertube"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
