@@ -7,131 +7,155 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2023-07-17 10:52+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Catalan <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
+"PO-Revision-Date: 2025-01-20 12:11+0000\n"
+"Last-Translator: fran secs <fransecs@gmail.com>\n"
+"Language-Team: Catalan <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact the author"
-msgstr ""
+msgstr "Contactar amb l'autor"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact me"
-msgstr ""
+msgstr "Contacteu amb mi"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
 msgstr ""
+"Si teniu cap pregunta o voleu parlar sobre aquest connector, podeu unir-vos "
+"a aquesta sala XMPP amb qualsevol client de Jabber: [plugin-livechat-"
+"support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny."
+"org?join)."
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
 msgstr ""
+"Si voleu donar suport econòmic al projecte, podeu contactar amb mi per "
+"correu electrònic a git.[at].john-livingston.fr, o consultar el meu [perfil "
+"de Liberapay](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Contributor Covenant Code of Conduct"
-msgstr ""
+msgstr "Convenció de codi de conducta per col·laboradors/es"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Code of Conduct"
-msgstr ""
+msgstr "Codi de conducta"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
 msgstr ""
+"Aquest codi de conducta està adaptat de [Contributor Covenant](https://www."
+"contributor-covenant.org), versió 2.1, disponible a [https://www.contributor-"
+"covenant.org/version/2/1/code_of_conduct .html](https://www.contributor-"
+"covenant.org/version/2/1/code_of_conduct.html). Les traduccions estan "
+"disponibles a [https://www.contributor-covenant.org/translations](https://www"
+".contributor-covenant.org/translations).  Els casos de comportament abusiu, "
+"assetjador o altres comportaments inacceptables es poden informar als líders "
+"de la comunitat responsables de fer complir el codi de conducta a git.[at"
+"].john-livingston.fr."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Develop"
-msgstr ""
+msgstr "Desenvolupar"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue."
 msgstr ""
+"Anuncieu sempre les funcions en què voleu treballar creant un tiquet o "
+"comentant-ne un d'existent, abans de començar a treballar-hi, i anunciar "
+"clarament a la comunitat que esteu començant a treballar-hi. Això és per "
+"evitar que diverses persones treballin en el mateix i entrin en conflicte."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Pull Request must be done on the `main` branch."
-msgstr ""
+msgstr "Les «Pull Request» s'han de fer a la branca `main`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated."
 msgstr ""
+"Fins al març de 2023, s'havia de contribuir a la branca `develop`. Aquest "
+"procediment ja està obsolet."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prerequisite for building this plugin"
-msgstr ""
+msgstr "Requisits previs per compilar aquest connector"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is highly recommended to be familiar with following concepts:"
-msgstr ""
+msgstr "És molt recomanable estar familiaritzat/da amb els conceptes següents:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NodeJS"
-msgstr ""
+msgstr "NodeJS"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NPM"
-msgstr ""
+msgstr "NPM"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Typescript"
-msgstr ""
+msgstr "Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To build the plugin, you must have following packages:"
 msgstr ""
+"Per construir el connector cal que tingueu instal·lats els paquets següents:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`git`"
-msgstr ""
+msgstr "`git`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`npm` (>=8.x)"
-msgstr ""
+msgstr "`npm` (>=8.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`nodejs` (>=14.x)"
-msgstr ""
+msgstr "`nodejs` (>=14.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`build-essential`"
-msgstr ""
+msgstr "`build-essential`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -146,17 +170,24 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`reuse`"
-msgstr ""
+msgstr "`reuse`"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
 msgstr ""
+"Tingueu en compte que aquest connector necessita una AppImage del servidor "
+"XMPP Prosody. Aquesta AppImage la proporciona el projecte [Prosody "
+"AppImage](https://github.com/JohnXLivingston/prosody-appimage). L'script "
+"`build-prosody.sh` baixa els binaris connectats a aquest repositori remot i "
+"verifica que les sumes de verificació sha256 siguin correctes."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Clone the repository, buid the plugin, and create your feature branch:"
 msgstr ""
+"Cloneu el repositori, construïu el connector i creeu la vostra branca de "
+"funcionalitat:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -182,26 +213,68 @@ msgid ""
 "git push --set-upstream me my_development\n"
 "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
 msgstr ""
+"# Clonar el repositori. No oblideu el --recursive, per clonar els submòduls."
+"\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --"
+"recursive\n"
+"\n"
+"cd peertube-plugin-livechat\n"
+"\n"
+"# Instal·lar les dependències NPM i compilar el connector per primera vegada:"
+"\n"
+"npm install\n"
+"\n"
+"# Compilar el connector després d'una modificació:\n"
+"npm run build\n"
+"\n"
+"# Si teniu una bifurcació del repositori, afegiu-la de manera remota "
+"(exemple):\n"
+"git remote add me git@github.com:EL_MEU_COMPTE_GITHUB/peertube-plugin-"
+"livechat.git\n"
+"\n"
+"# Creeu una sucursal local per als vostres desenvolupaments i col·loqueu-vos-"
+"hi (exemple):\n"
+"git checkout meu_desenvolupament # Nota: si hi ha associat un tiquet, "
+"utilitzeu el nom fix_1234 (on 1234 és el número de tiquet)\n"
+"# Per proposar les vostres modificacions envieu la vostra branca al vostre "
+"repositori (exemple):\n"
+"git push --set-upstream me meu_desenvolupament\n"
+"# A continuació, aneu al vostre repositori github amb el vostre navegador "
+"web per proposar la «Pull Request» (vegeu les instruccions addicionals a "
+"continuació)\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.  Once you are ready for a code review before merge, submit a Pull Request.  In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\"."
 msgstr ""
+"Quan estigueu preparat/da per mostrar el vostre codi i demanar comentaris, "
+"envieu una «Pull Request» *esborrany*. Quan estigueu preparat/da per a una "
+"revisió del codi abans de la fusió, envieu una «Pull Request». En tots els "
+"casos, enllaceu la vostra PR amb el tiquet en qüestió mitjançant la sintaxi "
+"de GitHub: «fixes #issue_NombreTiquet»."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder."
 msgstr ""
+"El codi del «front-end» es troba a la carpeta `client`. El codi del «back-"
+"end» a `server`. Hi ha codi compartit entre els dos a `shared`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 msgstr ""
+"Per a instruccions genèriques sobre el desenvolupament de connectors ("
+"construcció, instal·lació, etc.), consulteu la [documentació de "
+"Peertube](https://docs.joinpeertube.org/contribute-"
+"plugins?id=write-a-plugintheme)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "You can build the plugin with extra debug features simply by using:"
 msgstr ""
+"Podeu construir el connector amb informació de depuració addicional "
+"mitjançant:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -213,75 +286,114 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin is [REUSE](https://reuse.software/) compliant: it uses SPDX headers to identify licensing information of its source code.  More information on the [REUSE](https://reuse.software/) website.  You can use the [reuse](https://reuse.readthedocs.io/en/stable/readme.html#) command line tool to help you update headers.  The `npm run lint` command will use the `reuse` command to check compliance.  Don't forget to add your copyright information in SPDX headers when you modify some code."
 msgstr ""
+"Aquest connector compleix amb l'estàndard [REUSE](https://reuse.software/): "
+"utilitza capçaleres SPDX per identificar la informació de llicència del seu "
+"codi font. Més informació al lloc web [REUSE](https://reuse.software/). "
+"Podeu utilitzar l'eina de línia d'ordres [reuse](https://reuse.readthedocs."
+"io/en/stable/readme.html#) per ajudar-vos a actualitzar les capçaleres. "
+"L'ordre `npm run lint` utilitzarà l'ordre `reuse` per comprovar el "
+"compliment. No oblideu afegir la vostra informació de copyright a les "
+"capçaleres SPDX quan canvieu el codi."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "ESBuild vs Typescript"
-msgstr ""
+msgstr "ESBuild vs Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
 msgstr ""
+"Aquest connector utilitza ESBuild per compilar el codi del «front-end», com "
+"el connector oficial `peertube-plugin-quickstart`. ESBuild pot gestionar "
+"Typescript, però no verifica els tipus (vegeu [documentació "
+"d'ESBuild](https://esbuild.github.io/content-types/#typescript)). És per "
+"això que primer compilem Typescript amb l'opció `-noEmit`, només per "
+"comprovar els tipus (`check:client:ts` al fitxer package.json). Aleshores, "
+"si tot està bé, iniciem ESBuild per generar el javascript compilat."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Debug Mode"
-msgstr ""
+msgstr "Mode de depuració"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a debug mode for this plugin, that shorten some delay.  For example, some log files will rotate every two minutes, instead of once per day.  This permit to test more easily certain actions, for which it could normally take hours or days to wait."
 msgstr ""
+"Hi ha un mode de depuració per al connector, que escurçarà el temps "
+"necessari per a determinades accions. Per exemple, rotarà els registres cada "
+"dos minuts, en lloc de cada dia. Això facilita la prova de determinades "
+"accions, per a les quals normalment hauríeu d'esperar hores o dies."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation)."
 msgstr ""
+"Per activar aquest mode només cal que creeu un fitxer `/var/www/peertube/"
+"storage/plugins/data/peertube-plugin-livechat/debug_mode` (adaptant `/var/"
+"www/peertube/storage/` a la vostra instal·lació si escau) ."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The simple existence of this file is sufficient to trigger the debug mode.  To make sure it's taken into account, you can restart your Peertube instance."
 msgstr ""
+"La mera existència d'aquest fitxer és suficient per activar el mode de "
+"depuració. Per assegurar-vos que es té en compte, podeu reiniciar la vostra "
+"instància de Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This file can contain some JSON to enable more advanced options.  To have a list of existing parameters, check `server/lib/debug.ts`.  Restart Peertube after each content modification."
 msgstr ""
+"Aquest fitxer també pot contenir JSON que pot activar altres opcions més "
+"avançades. Per obtenir-ne una llista, podeu consultar el codi a `server/lib/"
+"debug.ts`. Reinicieu Peertube després de cada modificació del seu contingut."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Don't enable this mode on a production server, neither on a public server.  This could cause security issues."
 msgstr ""
+"No activeu mai aquest mode en un servidor de producció, ni tan sols en un "
+"servidor públic. Això podria suposar problemes de seguretat."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Restart Prosody"
-msgstr ""
+msgstr "Reiniciar Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.  This call don't need any authentificaiton.  It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`."
 msgstr ""
+"Per reiniciar Prosody quan el mode de depuració estigui activat, podeu "
+"cridar l'API `http://la_vostra_instancia.cat/plugins/livechat/router/api/"
+"restart_prosody`. Aquesta crida no necessita autenticació. Es pot fer des "
+"d'una línia d'ordres, per exemple amb `curl http://la_vostra_instancia.cat/"
+"plugins/livechat/router/api/restart_prosody`."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prosody debugger"
-msgstr ""
+msgstr "Depurador de Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 msgstr ""
+"És possible connectar l'AppImage Prosody a un depurador remot mitjançant "
+"[MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.  Then, add this in the `debub_mode` file:"
 msgstr ""
+"Per fer-ho, col·loqueu MobDebug en una carpeta accessible per l'usuari "
+"`peertube`. A continuació afegiu això al fitxer `debug_mode` del connector:"
 
 #. type: Fenced code block (json)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -295,201 +407,272 @@ msgid ""
 "  }\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"debug_prosody\": {\n"
+"    \"debugger_path\": \"/el_cami_a_mobdebug/src\",\n"
+"    \"host\": \"localhost\",\n"
+"    \"port\": \"8172\"\n"
+"  }\n"
+"}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is."
 msgstr ""
+"`host` i `port` són opcionals. `debugger_path` ha d'apuntar a la carpeta on "
+"es troba el fitxer `.lua` de `MobDebug`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Restart Peertube."
-msgstr ""
+msgstr "Reiniciar Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Start your debugger server."
-msgstr ""
+msgstr "Inicieu el vostre servidor de depuració."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  This call does not need any authentication.  It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  You can even configure your debug server to launch this request automatically."
 msgstr ""
+"Perquè Prosody es connecti al depurador, crideu a l'API "
+"`http://la_vostra_instancia.cat/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`. Aquesta crida no necessita autenticació. Es "
+"pot fer des d'una línia d'ordres, per exemple amb `curl "
+"http://la_vostra_instancia.cat/plugins/livechat/router/api/"
+"restart_prosody?debugger=true`. Fins i tot podeu configurar el vostre "
+"servidor de depuració per executar aquesta ordre automàticament."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Prosody will then restart, connecting to the debugger."
-msgstr ""
+msgstr "Aleshores Prosody es reiniciarà, connectant-se al depurador."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quick dev environment using Docker"
-msgstr ""
+msgstr "Entorn de desenvolupament ràpid mitjançant Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker."
 msgstr ""
+"Hi ha un tutorial, en francès, disponible al [fòrum "
+"Peertube](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-"
+"developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui "
+"-allows-to-test-the-federation/17631) que explica com configurar ràpidament "
+"un entorn de desenvolupament amb Docker."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev)."
 msgstr ""
+"S'ha creat un repositori basat en aquest tutorial: [pt-plugin-"
+"dev](https://codeberg.org/mose/pt-plugin-dev)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
 msgstr ""
+"Nota: per algun motiu desconegut Prosody no pot resoldre les adreces DNS "
+"dels contenidors quan s'utilitza la biblioteca lua-unbound. Per evitar-ho hi "
+"ha una «nyapa»: només cal que creeu un fitxer `/data/plugins/data/"
+"peertube-plugin-livechat/no_lua_unbound` als vostres volums docker i "
+"reinicieu-los."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quickly rebuild and install the plugin"
-msgstr ""
+msgstr "Reconstruir i instal·lar el connector ràpidament"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When you do modification, you don't have to always rebuild the full project, and reinstall the plugin on your dev environment.  You can build only the modified part (for example, if you only modified client files: `npm run build:client`).  Check the `package.json` files for available build scripts."
 msgstr ""
+"Quan feu canvis no cal que reconstruïu tot el projecte i torneu a instal·lar "
+"el connector al vostre entorn de desenvolupament; podeu crear només la part "
+"modificada (per exemple, si només heu modificat els fitxers del client: `npm "
+"run build:client`). Trobareu la llista dels scripts de compilació "
+"disponibles al fitxer `package.json`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When the plugin is already installed on your dev instance, and you haven't changed any dependency, you can quickly install your work by following these steps:"
 msgstr ""
+"Quan el connector ja està instal·lat a la vostra instància de "
+"desenvolupament i si no heu modificat cap dependència, podeu instal·lar "
+"ràpidament el vostre treball seguint els passos següents:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "re-build necessary parts of the plugin (client, styles, ...),"
-msgstr ""
+msgstr "reconstruir les parts necessàries del connector (client, estils, ...),"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "overwrite the `data/plugins/node_modules/peertube-plugin-livechat/dist/` content of your dev instance by the content of the plugin's `dist` folder,"
 msgstr ""
+"sobreescriure el contingut de `data/plugins/node_modules/"
+"peertube-plugin-livechat/dist/` de la vostra instància de desenvolupament "
+"amb el contingut de la carpeta `dist` del connector,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "change recursively `plugins/node_modules/peertube-plugin-livechat/dist/` files owner to your `peertube` user,"
 msgstr ""
+"canviar recursivament el propietari dels fitxers `plugins/node_modules/"
+"peertube-plugin-livechat/dist/` al vostre usuari `peertube`,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "restart your instance."
-msgstr ""
+msgstr "reiniciar la vostra instància."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Performance tests"
-msgstr ""
+msgstr "Proves de rendiment"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvements, or find bottlenecks."
 msgstr ""
+"El repositori [livechat-perf-test](https://github.com/JohnXLivingston/"
+"livechat-perf-test) conté algunes eines per realitzar proves de rendiment. "
+"Es poden utilitzar per avaluar millores del codi font o trobar colls "
+"d'ampolla."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Document the plugin, or translate the documentation."
-msgstr ""
+msgstr "Documentar el connector o traduir la documentació."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/document/_index.md
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Documentation"
-msgstr ""
+msgstr "Documentació"
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "General information"
-msgstr ""
+msgstr "Informació general"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Always inform the community before working (by creating a new issue, or commenting an existing one).  This is to avoid that two persons are working on the same thing, and prevent conflicts."
 msgstr ""
+"Anuncia't sempre abans de començar a treballar (creant un tiquet o comentant "
+"un tiquet existent). Això és per evitar que diverses persones treballin en "
+"el mateix i entrin en conflicte."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation work has to be merged in the `main` branch."
-msgstr ""
+msgstr "El treball de documentació ha de fusionar-se a la branca `main`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation source code is in the `support/documentation/content` folder."
 msgstr ""
+"El codi font de la documentació es troba a la carpeta `support/documentation/"
+"content` del repositori."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation is generated using [Hugo](https://gohugo.io/).  You have to install it on your computer if you want to preview your work."
 msgstr ""
+"La documentació es genera mitjançant les eines [Hugo](https://gohugo.io/), "
+"l'heu d'instal·lar a la vostra màquina per poder previsualitzar la "
+"documentació."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The minimum required version for Hugo is 0.121.0.  It was tested using version 0.132.2."
 msgstr ""
+"La versió mínima requerida d'Hugo és la 0.121.0. Hem provat amb la versió 0."
+"132.2."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The used theme is [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).  You should read its documentation before starting editing the documentation."
 msgstr ""
+"El tema utilitzat és [hugo-theme-relearn](https://mcshelby.github.io/hugo-"
+"theme-relearn). Es recomana llegir la seva documentació abans de començar."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.  This will trigger github and gitlab pipelines, and update published documentation."
 msgstr ""
+"Quan es publica una versió del connector o quan s'actualitza la "
+"documentació, els responsables del connector fusionaran la branca `main` amb "
+"la branca `documentation`. Això activarà les canonades github i gitlab i "
+"n'actualitzarà les versions publicades."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Translations"
-msgstr ""
+msgstr "Traduccions"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The principal language is english (`en` code)."
-msgstr ""
+msgstr "L'idioma principal és l'anglès (codi `en`)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The `support/documentation/content/en` folder contains only english documentation files."
 msgstr ""
+"La carpeta `support/documentation/content/en` només conté fitxers de "
+"documentació en anglès."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page."
 msgstr ""
+"La documentació es tradueix mitjançant Weblate (vegeu [documentació de "
+"traducció](/peertube-plugin-livechat/en/contributing/translate/)). Per fer-"
+"ho, utilitzem l'eina [po4a](https://po4a.org), com veurem més endavant en "
+"aquesta pàgina."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Add a new language"
-msgstr ""
+msgstr "Afegir un nou idioma"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section."
 msgstr ""
+"Al fitxer `support/documentation/config.toml`, inspira't en la secció "
+"`[Languages.fr]` per declarar el nou idioma."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "If the translations are not complete, it does not matter, english will be used for missing strings."
 msgstr ""
+"Si les traduccions no estan completes, està bé, s'utilitzarà la versió en "
+"anglès per a les cadenes que falten."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Preview"
-msgstr ""
+msgstr "Previsualitzar"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To preview your modifications, just run:"
-msgstr ""
+msgstr "Per previsualitzar les vostres modificacions només cal executar:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -501,33 +684,47 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).  This page will automatically refresh on each modification."
 msgstr ""
+"A continuació obriu el vostre navegador a [http://localhost:1313/"
+"peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/). "
+"Aquesta pàgina s'actualitzarà automàticament amb cada modificació."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Update localization files and generate documentation translations"
 msgstr ""
+"Actualitzar els fitxers de localització i generar traduccions de la "
+"documentació"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, you only have the english version.  To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script."
 msgstr ""
+"De moment només teniu la versió en anglès. Per actualitzar les cadenes i "
+"generar les traduccions, heu d'executar l'script `doc-translate.sh`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.\n"
 msgstr ""
+"Per fer-ho, assegureu-vos que teniu instal·lat `po4a` (versió >= 0.69) al "
+"vostre ordinador.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.  Please make sure to install a compatible version.  If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually."
 msgstr ""
+"Algunes distribucions de Linux (com ara Debian Bullseye) tenen una versió "
+"anterior de `po4a`. Assegureu-vos d'instal·lar-me una debcompatible. Si "
+"utilitzeu Debian Bullseye podeu descarregar el fitxer Bookworm po4a.deb des "
+"de [https://packages.debian.org](https://packages.debian.org/bookworm/all/"
+"po4a/download), i instal·lar-lo manualment."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To handle translations, just do:"
-msgstr ""
+msgstr "Per gestionar les traduccions només cal fer el següent:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -539,175 +736,228 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector."
 msgstr ""
+"A continuació podeu previsualitzar el resultat utilitzant `hugo serve -s "
+"support/documentation/` i utilitzant el selector d'idioma."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Write documentation"
-msgstr ""
+msgstr "Escriure documentació"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit the english files in `support/documentation/content/en`."
-msgstr ""
+msgstr "Editeu només fitxers en anglès a `support/documentation/content/en`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file."
 msgstr ""
+"Aleshores, abans de fer `commit`, executeu sempre `npm run doc:translate`, "
+"de manera que els canvis en els fitxers en anglès es puguin propagar al "
+"fitxer `support/documentation/po/livechat.en.pot`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can use the `livechat_label` short code to use application strings.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 msgstr ""
+"Podeu utilitzar el codi curt `livechat_label` per utilitzar cadenes de "
+"l'aplicació. Vegeu aquí: [Traducció de la documentació](/peertube-"
+"plugin-livechat/contributing/translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 msgstr ""
+"És possible evitar que es tradueixi un fitxer utilitzant "
+"`livechatnotranslation: true` a la secció Yaml Font Matter. Vegeu aquí: ["
+"Traducció de la documentació](/peertube-plugin-livechat/contributing/"
+"translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Please use the `livechatnotranslation` option for technical documentation.  We don't want technical documentation to be translated, to avoid issues because of a wrong translation."
 msgstr ""
+"Si us plau, utilitzeu l'opció `livechatnotranslation` per a la documentació "
+"tècnica. No volem traduir documentació tècnica, per tal d'evitar problemes "
+"relacionats amb una traducció deficient."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To facilitate translators work, avoid making too long paragraphs."
 msgstr ""
+"Per facilitar la feina dels traductors eviteu fer paràgrafs massa llargs."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
 msgstr ""
+"De moment no és possible utilitzar les taules Markdown: les eines de "
+"traducció no saben com gestionar-les."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "There may be links to this documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
 msgstr ""
+"És possible que hi hagi enllaços a aquesta documentació en altres llocs del "
+"web. Intenteu no canviar els URL de les pàgines de documentació. O almenys "
+"posar enllaços a les pàgines noves als URL antics."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new feature is released, you can use the `livechat_version_notice` short code to display an infobox with the version with which the features is available.  This short code takes the version number as parameter.  Here is an example:"
 msgstr ""
+"Quan hi hagi una funció nova disponible, podeu utilitzar "
+"`livechat_version_notice` per mostrar un quadre d'informació amb la versió "
+"en què aquesta funció està disponible. Aquest codi pren el número de versió "
+"com a paràmetre. Aquí teniu un exemple:"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "What if I can't use hugo and/or po4a?"
-msgstr ""
+msgstr "Què he de fer si no puc utilitzar hugo i/o po4a?"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request."
 msgstr ""
+"Simplement editeu els fitxers de reducció en anglès i en fer «Pull Request» "
+"especifiqueu que no podeu compilar les traduccions."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Publication"
-msgstr ""
+msgstr "Publicació"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch."
 msgstr ""
+"La publicació de la documentació és automàtica, tan bon punt les "
+"modificacions es fusionen a la branca `documentació`."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
 #, no-wrap
 msgid "Give your feedback"
-msgstr ""
+msgstr "Doneu la vostra opinió"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
 msgid "You don't need to know how to code to start contributing to this plugin! Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ..."
 msgstr ""
+"No cal que codifiqueu per començar a contribuir a aquest connector! També "
+"són valuoses altres formes de contribució, com ara: podeu provar el "
+"connector i informar de qualsevol error que trobeu, compartir els vostres "
+"comentaris, proposar funcions que us interessen, informar dels vostres "
+"comentaris sobre la interfície, el disseny, etc."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/_index.md
 #, no-wrap
 msgid "Contributing"
-msgstr ""
+msgstr "Contribuir"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/_index.md
 msgid "Interested in contributing? Awesome!"
-msgstr ""
+msgstr "Us interessa contribuir? Genial!"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate the plugin"
-msgstr ""
+msgstr "Traduir el plugin"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate"
-msgstr ""
+msgstr "Traduir"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can contribute to this plugin translation.  Translations are handled using the [Weblate](https://weblate.org/) software, using [Framasoft Weblate instance](https://weblate.framasoft.org/)."
 msgstr ""
+"Podeu contribuir a la traducció d'aquest connector de Peertube. Les "
+"traduccions les gestiona el programari [Weblate](https://weblate.org/), "
+"mitjançant [la instància de Framasoft Weblate](https://weblate.framasoft.org/"
+")."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never modify directly files in the `languages` folder, this could lead to conflicts."
 msgstr ""
+"No modifiqueu mai directament els fitxers de la carpeta `languages` del "
+"connector, correu el risc de crear conflictes."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "How to"
-msgstr ""
+msgstr "Com fer"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Create an account: https://weblate.framasoft.org/accounts/register/"
-msgstr ""
+msgstr "Creeu un compte: https://weblate.framasoft.org/accounts/register/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Validate your email and follow the link sent"
-msgstr ""
+msgstr "Valideu la vostra adreça electrònica fent clic a l'enllaç rebut"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Create your password and setup your account"
-msgstr ""
+msgstr "Trieu la vostra contrasenya i configureu el vostre compte"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 msgstr ""
+"Aneu al projecte del connector de xat: https://weblate.framasoft.org/"
+"projects/peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Choose the locale you want to translate"
-msgstr ""
+msgstr "Trieu l'idioma que voleu traduir"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Just translate missing sentences, or correct the ones that seems incorrect to you."
 msgstr ""
+"Només cal afegir les traduccions que falten o corregir les que semblin "
+"incorrectes."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english."
 msgstr ""
+"Pot haver-hi cadenes «bastant tècniques». Si no teniu certesa del "
+"significat, o de la traducció, és millor no traduir-lo; de manera que es "
+"mostrarà la versió en anglès."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "ConverseJS translations"
-msgstr ""
+msgstr "Traduccions de ConverseJS"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "This plugin relies on [ConverseJS](https://conversejs.org/) for the chat front-end.  ConverseJS has its own translations, on its own [weblate instance](https://hosted.weblate.org/projects/conversejs/#languages).  You can also translate directly in the code repository.  For more information, check [ConverseJS translations documentation](https://conversejs.org/docs/html/translations.html)."
 msgstr ""
+"Aquest connector es basa en [ConverseJS](https://conversejs.org/) per a la "
+"visualització del xat. ConverseJS té les seves traduccions a la pròpia ["
+"instància de Weblate](https://hosted.weblate.org/projects/conversejs/"
+"#languages). També podeu traduir directament al repositori de codi. Per "
+"obtenir més informació, consulteu la [documentació de traducció de "
+"ConverseJS](https://conversejs.org/docs/html/translations.html)."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
