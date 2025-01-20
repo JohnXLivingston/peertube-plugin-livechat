@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-20 22:19+0000\n"
+"PO-Revision-Date: 2025-01-21 00:08+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -1034,71 +1034,91 @@ msgstr "només heu de declarar-ne el tipus, no el valor"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "For example, to use \"use_chat\", you have to declare:"
-msgstr ""
+msgstr "Per exemple, per utilitzar «use_chat», heu de declarar:"
 
 #. type: Fenced code block (typescript)
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "declare const LOC_USE_CHAT: string\n"
-msgstr ""
+msgstr "declare const LOC_USE_CHAT: string\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The `build-client.js` script will read the `client/@types/global.d.ts`, search for such constants, and load their values from the languages files."
 msgstr ""
+"L'script `build-client.js` llegirà el fitxer `client/@types/global.d.ts`, "
+"cercarà aquestes constants i carregarà els seus valors des del fitxer "
+"d'idioma."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code."
 msgstr ""
+"Ara podeu utilitzar `peertubeHelpers.translate(LOC_USE_CHAT)` al vostre codi."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Use translations in back-end code"
-msgstr ""
+msgstr "Utilitzar traduccions al «back-end»"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "In theory, the only parts of the backend code where you need localization is the settings declaration and standardized data (ActivityPub, RSS, ...).  Here we need to get english strings from the translation key."
 msgstr ""
+"En teoria les úniques parts del codi que necessiten traduccions són les "
+"declaracions de paràmetres i la generació de dades estandarditzades ("
+"ActivityPub, RSS, ...). Aquí hem de recuperar les cadenes en anglès de les "
+"claus de traducció."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Note: you should never need another language translation from backend code.  Localization must be done on front-end."
 msgstr ""
+"Nota: mai no hauríeu de necessitar idiomes diferents de l'anglès per al codi "
+"del «back-end». Les traduccions s'han de fer a la part del «front-end»."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a `lib/loc.ts` module providing a `loc()` function.  Just pass it the key to have the english string: `loc('diagnostic')`'."
 msgstr ""
+"Hi ha un mòdul `lib/loc.ts` que proporciona una funció `loc()`. Només cal "
+"passar la clau per recuperar la cadena en anglès: `loc('diagnostic')`."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Documentation translation"
-msgstr ""
+msgstr "Traducció de documentació"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The documentation translation is done using the corresponding Weblate component."
 msgstr ""
+"La traducció de la documentació es fa mitjançant el component Weblate "
+"corresponent."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a specific \"Hugo shortcodes\" you can use to display an application string.  Saying you want to display the name of the button \"open_chat_new_window\", you can use this in the documentation markdown file:"
 msgstr ""
+"Hi ha un «codi curt Hugo» específic que us permet mostrar una cadena de "
+"l'aplicació. Per exemple, si voleu mostrar l'etiqueta del botó "
+"«open_chat_new_window» podeu utilitzar el codi següent al fitxer de "
+"documentació:"
 
 #. type: Fenced code block (hugo)
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "{{%/* livechat_label open_chat_new_window */%}}\n"
-msgstr ""
+msgstr "{{%/* livechat_label open_chat_new_window */%}}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can also prevent a whole page from being translating by adding `livechatnotranslation: true` in the Yaml Font Matter section:"
 msgstr ""
+"També podeu evitar que es tradueixi una pàgina sencera afegint "
+"`livechatnotranslation:true` a la secció Yaml Font Matter del fitxer:"
 
 #. type: Fenced code block (yaml)
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1112,69 +1132,104 @@ msgid ""
 "  livechatnotranslation: true\n"
 "  ---\n"
 msgstr ""
+"  ---\n"
+"  title: \"Third party\"\n"
+"  description: \"Displaying the livechat with 3rd party software.\"\n"
+"  weight: 20\n"
+"  chapter: false\n"
+"  livechatnotranslation: true\n"
+"  ---\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never translate a string in the `livechat.en.pot` file, it would be ignored.  Instead, edit directly the markdown files."
 msgstr ""
+"No traduïu mai una cadena al fitxer `livechat.en.pot`, això s'ignorarà. En "
+"lloc d'això editeu el fitxer «markdown» directament."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If a string contains a link, you can change it for the correct link in the translated language.  For example, for a link to this documentation, you can add the language code in the url."
 msgstr ""
+"Si una cadena conté un enllaç podeu canviar-lo a l'enllaç correcte en "
+"l'idioma de destinació. Per exemple, si és un enllaç a la documentació podeu "
+"afegir el codi d'idioma a l'URL."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Some strings are block of code.  Don't translate code.  But you can translate comments, or parameters if relevant."
 msgstr ""
+"Algunes cadenes són blocs de codi. No els traduïu. Tanmateix, podeu traduir "
+"els comentaris, o els paràmetres si és rellevant."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are not sure, just don't translate, and ask what to do."
-msgstr ""
+msgstr "En cas de dubte no traduïu i pregunteu què fer."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The tool I use to handle translations for the documentation can have strange behaviours. When I add sentences that looks like other existing sentences, it sometimes copies existing translations. So, when you have translations marked as \"to check\", please make sure it doesn't copy a string that has nothing to do with the english one before validating."
 msgstr ""
+"Les eines utilitzades per gestionar les traduccions de documentació poden "
+"tenir un comportament estrany. Quan s'afegeix una frase semblant una altra "
+"existent, de vegades copiarà les traduccions. Per tant, quan tingueu "
+"traduccions marcades com a «per comprovar», si us plau assegureu-vos que no "
+"hagi copiat cap traducció que no tingui res a veure amb la versió en anglès "
+"abans de validar."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are now sure about the context of a string, you can check the string location in the weblate's right pane, and open the corresponding documentation page.  For example, for a string located in the file `support/documentation/content/en/documentation/user/streamers.md`, the corresponding url is `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`."
 msgstr ""
+"Si no esteu segurs del context d'una cadena de text podeu comprovar la "
+"ubicació de la cadena d'origen al tauler dret de Weblate i obrir la pàgina "
+"de documentació corresponent. Per exemple, per a un canal situat al fitxer `"
+"support/documentation/content/en/documentation/user/streamers.md`, l'URL "
+"corresponent és `https://livingston.frama.io/peertube-plugin-livechat/ "
+"documentation/user/streamers/`."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Generic recommandations"
-msgstr ""
+msgstr "Recomanacions genèriques"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
 msgstr ""
+"Si us plau sigueu inclusius/ves en les vostres paraules i respecteu el [codi "
+"de conducta](/peertube-plugin-livechat/contributing/codeofconduct/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Plugin Credits"
-msgstr ""
+msgstr "Crèdits del connector"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Credits"
-msgstr ""
+msgstr "Crèdits"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies."
 msgstr ""
+"Els fitxers [package.json](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github."
+"com/JohnXLivingston/peertube-plugin -livechat/blob/main/COPYRIGHT.md) i "
+"[LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
+"main/LICENSE) contenen la informació de la llicència d'aquest programari i "
+"les seves dependències (en anglès)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/)."
 msgstr ""
+"El connector el manté [John Livingston](https://www.john-livingston.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
