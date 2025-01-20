@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-20 12:11+0000\n"
+"PO-Revision-Date: 2025-01-20 22:19+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -963,59 +963,73 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding a new locale"
-msgstr ""
+msgstr "Afegir un idioma nou"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
 msgstr ""
+"Si l'idioma que us interessa no és present, primer assegureu-vos que sigui "
+"compatible amb PeerTube. Si és així, podeu [obrir un tiquet](https://github."
+"com/JohnXLivingston/peertube-plugin-livechat/issues) per sol·licitar que "
+"s'afegeixi."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding new strings / use translations in the code"
-msgstr ""
+msgstr "Afegir noves cadenes / utilitzar traduccions al codi"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are working on new features, and need new strings, you can create them directly in Weblate.  The english version is mandatory. Start with it."
 msgstr ""
+"Si esteu treballant en una funció nova i necessiteu noves cadenes, creeu-los "
+"directament a Weblate. La versió en anglès és obligatòria, comenceu per "
+"aquesta."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Each string is linked to a key (for example `use_chat`).  Choose an explicit key in english, lower case."
 msgstr ""
+"Cada cadena està enllaçada a una clau (p. ex., `use_chat`). Trieu una clau "
+"en anglès, prou explícita i en minúscula."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files, but avoid to commit these changes (to minimize conflict risks)."
 msgstr ""
+"Si necessiteu provar les vostres localitzacions sense esperar la fusió de "
+"Weblate, podeu modificar els fitxers `languages/*.yml`, però eviteu fer-ne "
+"«commit» (per minimitzar el risc de conflictes)."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Use translations in front-end code"
-msgstr ""
+msgstr "Utilitzar traduccions al codi del «front-end»"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.  The constant name must:"
 msgstr ""
+"Abans d'utilitzar una cadena al «front-end» heu de declarar una constant "
+"nova a `client/@types/global.d.ts`. La constant ha de:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "start with the prefix \"LOC_\""
-msgstr ""
+msgstr "començar amb el prefix «LOC_»"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "use the string key, upper cased"
-msgstr ""
+msgstr "utilitzar la clau de la cadena, en majúscules"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "you just have to declare its type, not its value"
-msgstr ""
+msgstr "només heu de declarar-ne el tipus, no el valor"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
