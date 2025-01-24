@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-21 00:08+0000\n"
+"PO-Revision-Date: 2025-01-24 21:54+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -1235,176 +1235,228 @@ msgstr ""
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
 msgstr ""
+"Gràcies a David Revoy pel seu treball a la mascota de Peertube, "
+"[Sepia](https://www.davidrevoy.com/index.php?tag/peertube). El disseny del "
+"personatge està sota llicència CC-By i els fitxers SVG utilitzats per crear "
+"alguns logotips i avatars en aquest connector són GPLv3.0. Els fitxers PNG "
+"estan sota llicències CC-By i provenen del [generador d'avatars Sepia en "
+"línia](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org)."
 msgstr ""
+"Gràcies a [Framasoft](https://framasoft.org) per fer possible "
+"[Peertube](https://joinpeertube.org/), pel suport financer i per allotjar "
+"les traduccions del projecte a [la seva instància Weblate] (https: //weblate."
+"framasoft.org)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support."
-msgstr ""
+msgstr "Gràcies a [ritimo](https://www.ritimo.org/) pel suport financer."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support."
 msgstr ""
+"Gràcies a [Code Lutin](https://www.codelutin.com/) i [Rétribution Copie "
+"Publique](https://copiepublique.fr) pel suport financer."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
 msgstr ""
+"Gràcies a [NlNet](https://nlnet.nl/) i [NGI0 Entrust fund](https://nlnet.nl/"
+"entrust/) pel suport financer."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
-msgstr ""
+msgstr "Gràcies a [Octopuce](https://www.octopuce.fr/) pel suport financer."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
 msgstr ""
+"I gràcies per totes les col·laboracions individuals fetes a través de la "
+"meva [pàgina de liberapay] (https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Some advanced features"
-msgstr ""
+msgstr "Algunes funcions avançades"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Advanced usage"
-msgstr ""
+msgstr "Ús avançat"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge to bridge with other chats"
-msgstr ""
+msgstr "Emprar Matterbridge per fer de pont amb altres xats"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge"
-msgstr ""
+msgstr "Utilitzar Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The following is based on a tutorial to use Matterbridge with the plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
 msgstr ""
+"El següent es basa en un tutorial per utilitzar Matterbridge amb el "
+"connector: [Matterbridge + Peertube](https://gitlab.com/refrac/"
+"obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Requirements"
-msgstr ""
+msgstr "Requisits"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 or later."
 msgstr ""
+"[Livechat connector de PeerTube](https://github.com/JohnXLivingston/peertube-"
+"plugin-livechat) versió 3.2.0 o posterior."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 or later."
 msgstr ""
+"[Matterbridge](https://github.com/42wim/matterbridge) versió 1.22.4 o "
+"posterior."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The easiest is if the PeerTube instance and Matterbridge run on the same server."
 msgstr ""
+"El més fàcil és si la instància PeerTube i Matterbridge s'executen al mateix "
+"servidor."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Internal connections only (basic)"
-msgstr ""
+msgstr "Només connexions internes (versió simple)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You will need to enable `{{% livechat_label prosody_c2s_label %}}` in the livechat plugin settings."
 msgstr ""
+"Haureu d'habilitar `{{% livechat_label prosody_c2s_label %}}` a la "
+"configuració del connector livechat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This will allow localhost XMPP clients to connect to the Prosody XMPP server."
 msgstr ""
+"Això permetrà els clients XMPP locals connectar al servidor XMPP Prosody."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You may need to add some line to your `/etc/hosts`:"
-msgstr ""
+msgstr "És possible que hàgiu d'afegir alguna línia al vostre `/etc/hosts`:"
 
 #. type: Fenced code block
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "127.0.0.1       anon.example.org room.example.org\n"
-msgstr ""
+msgstr "127.0.0.1       anon.exemple.cat room.exemple.cat\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
 msgstr ""
+"Substituïu `exemple.cat` pel nom de domini de la vostra instància. A "
+"continuació, podeu continuar amb la configuració de Matterbridge a "
+"continuació."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Allow external connections (advanced)"
-msgstr ""
+msgstr "Permetre connexions externes (avançat)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "By default, the internal Prosody XMPP server only listens on localhost (127.0.0.1)."
 msgstr ""
+"De manera predeterminada el servidor XMPP Prosody intern només escolta a "
+"l'host local (127.0.0.1)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
 msgstr ""
+"A les versions de livechat >= 10.1.0, s'ha afegit una nova crida d'opció «"
+"interfícies de client a servidor» per permetre que això es pugui canviar.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "It allows to add a list of IPs to listen on, coma separated (spaces will be stripped)."
 msgstr ""
+"Això afegeix una llista d'adreces IP per escoltar separades per comes ("
+"s'eliminaran espais)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You can also use `*` to listen on all IPv4 interfaces, and `::` for all IPv6. Doing so allows external access to the client to server interface."
 msgstr ""
+"També podeu utilitzar `*` per escoltar a totes les interfícies IPv4 i `::` "
+"per a totes les interfícies IPv6. Això permet l'accés extern a la interfície "
+"client-servidor."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Then you need to open the C2S port (by default `52822`, but check the plugin settings to get the current value) in your firewall so that it can be reached from the internet.  If you don't want to use C2S connections for anything else than your Matterbridge service, you should restrict access to this port to your Matterbridge server IP."
 msgstr ""
+"A continuació heu d'obrir el port C2S (per defecte `52822`, però comproveu "
+"la configuració del connector per obtenir el valor actual) al vostre "
+"tallafoc perquè sigui accessible des d'Internet. Si no voleu utilitzar "
+"connexions C2S per a res que no sigui el vostre servei Matterbridge, hauríeu "
+"de restringir l'accés a aquest port a la IP del vostre servidor Matterbridge."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You also need to add DNS records (A and AAAA) for `anon.example.org` and `room.example.org` (replace `example.org` by your actual domain name)."
 msgstr ""
+"També heu d'afegir registres DNS (A i AAAA) per a «anon.exemple.cat» i «room."
+"exemple.cat» (substituïu «exemple.cat» pel vostre nom de domini actual)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In case you are using a port other than `5222` (XMPP standard port) you also need to set the [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) to the correct port."
 msgstr ""
+"Si utilitzeu un port diferent de `5222` (port estàndard XMPP), també heu de "
+"configurar el registre SRV [xmpp-client](https://prosody.im/doc/"
+"dns#srv_records) al port correcte."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Configurating Matterbridge"
-msgstr ""
+msgstr "Configurar Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In the version 1.22.4, Matterbridge added support for XMPP anonymous connections needed to connect to the built-in prosody."
 msgstr ""
+"A la versió 1.22.4, Matterbridge va afegir suport per a connexions anònimes "
+"XMPP, necessàries per connectar-se al servidor Prosody integrat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "So in the TOML config file put:"
-msgstr ""
+msgstr "Per tant, al fitxer de configuració TOML heu de posar:"
 
 #. type: Fenced code block (TOML)
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1418,21 +1470,28 @@ msgid ""
 "RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
 "NoTLS=true\n"
 msgstr ""
+"[xmpp.elmeupeertube]\n"
+"Anonymous=true\n"
+"Server=\"anon.exemple.cat:52822\"\n"
+"Muc=\"room.exemple.cat\"\n"
+"Nick=\"Matterbridge\"\n"
+"RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
+"NoTLS=true\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name."
-msgstr ""
+msgstr "Substituïu `exemple.cat` pel nom de domini de la vostra instància."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `52822` by the actual port if you changed it."
-msgstr ""
+msgstr "Substituïu `52822` pel port actual si l'heu canviat."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "`mypeertube` can be replaced by another name."
-msgstr ""
+msgstr "`elmeupeertube` es pot substituir per un altre nom."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
