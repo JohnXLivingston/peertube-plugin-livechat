@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-25 22:29+0000\n"
+"PO-Revision-Date: 2025-01-26 20:33+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -2592,129 +2592,166 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "When you save the configuration, the server will automatically reload it, and your rules will apply immediatly.  You can check that there is no parsing error in the Prosody error log.  To do so, you can read the `plugins/data/peertube-plugin-livechat/prosody/prosody.err` file, or use the [diagnostic tool](/peertube-plugin-livechat/documentation/installation/troubleshooting/) that will show last Prosody errors."
 msgstr ""
+"Quan deseu la configuració, el servidor la tornarà a carregar automàticament "
+"i les vostres regles s'aplicaran immediatament. Podeu comprovar que no hi "
+"hagi cap error d'anàlisi al registre d'errors de Prosody. Per fer-ho, podeu "
+"llegir el fitxer `plugins/data/peertube-plugin-livechat/prosody/prosody.err` "
+"o utilitzar l'[eina de diagnòstic](/peertube-plugin-livechat/documentation/"
+"installation/troubleshooting/) que mostra els últims errors de Prosody."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Don't hesitate to share your rules.  To do so, you can for example edit this [page](/peertube-plugin-livechat/contributing/document/#write-documentation)."
 msgstr ""
+"No dubteu a compartir les vostres normes. Per fer-ho, podeu, per exemple, "
+"editar aquesta [pàgina](/peertube-plugin-livechat/contributing/document/"
+"#write-documentation)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Plugin Peertube Livechat settings"
-msgstr ""
+msgstr "Configuració del connector Livechat de PeerTube"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Settings"
-msgstr ""
+msgstr "Configuració"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This section describes the plugin settings page."
-msgstr ""
+msgstr "Aquesta secció descriu la pàgina de configuració del connector."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "For more information on this feature, check the documentation for [channel's terms & conditions](/peertube-plugin-livechat/documentation/user/streamers/terms)."
 msgstr ""
+"Per obtenir més informació sobre aquesta funció, consulteu la documentació ["
+"condicions d'ús del canal](/peertube-plugin-livechat/ca/documentation/user/"
+"streamers/terms)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Changing this setting will restart the chat server, and all users will be disconnected for a short time."
 msgstr ""
+"Si canvieu aquesta configuració, es reiniciarà el servidor de xat i tots els "
+"usuaris es desconnectaran durant un breu període de temps."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "When pressing the «List rooms» button, all existing chatrooms will be listed.  You can then find them and moderated them."
 msgstr ""
+"Quan premeu el botó «Llista de sales» s'enumeren totes les sales de xat "
+"existents, a continuació les podeu trobar i moderar."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Federation"
-msgstr ""
+msgstr "Federació"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
 msgstr ""
+"La configuració següent es refereix a la federació amb altres instàncies de "
+"PeerTube i altres programes del fedivers."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Authentication"
-msgstr ""
+msgstr "Autenticació"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "In case you have any trouble with the long term authentication tokens, you can disable the feature here."
 msgstr ""
+"Si teniu problemes amb les fitxes d'autenticació a llarg termini, podeu "
+"desactivar aquesta funció aquí."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "See the detailed documentation page:"
-msgstr ""
+msgstr "Vegeu la pàgina de documentació detallada:"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "[External Authentication](/peertube-plugin-livechat/documentation/admin/external_auth/)"
 msgstr ""
+"[Autenticació externa](/peertube-plugin-livechat/ca/documentation/admin/"
+"external_auth/)"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Channel advanced configuration"
-msgstr ""
+msgstr "Configuració avançada del canal"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, ..."
 msgstr ""
+"La configuració següent es refereix a les opcions avançades del canal: els "
+"usuaris podran personalitzar els seus canals, activar el bot de moderació, "
+"etc."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "If you encounter any issue with this feature, you can disable it."
-msgstr ""
+msgstr "Si teniu un problema amb aquesta funció, podeu desactivar-la."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat behaviour"
-msgstr ""
+msgstr "Comportament del xat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.  The chat can be customized (readonly mode, use the current theme, ...)."
 msgstr ""
+"Aquesta funció us permet habilitar una finestra modal «comparteix l'enllaç "
+"de xat». Amb aquest modal podeu generar URL per unir-vos al xat. El xat es "
+"pot personalitzar (mode de només lectura, ús del tema actual, etc.)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!"
 msgstr ""
+"Per exemple, podeu generar un URL de només lectura i utilitzar-lo a OBS per "
+"integrar el xat a la vostra emissió en directe!"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting allows you to choose who can access this modal."
 msgstr ""
+"Aquesta configuració us permet triar qui pot accedir a aquesta finestra "
+"modal."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "The video owner will be able to activate web chats."
-msgstr ""
+msgstr "El propietari del vídeo podrà activar el xat en línia."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Note: for now this feature simply hide the chat.  In a future release, the chat will be replaced by a message saying «please log in to [...]».  See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information."
 msgstr ""
+"Nota: de moment, aquesta funcionalitat simplement amaga el xat. En una "
+"versió futura, el xat serà substituït per un missatge que especifiqui «si us "
+"plau connectar-vos […]». Consulteu les notes de la versió [5.7."
+"0](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/"
+"CHANGELOG.md#570) per obtenir més informació."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2724,187 +2761,274 @@ msgid ""
 "If you enable this feature, and are using a custom reverse proxy on front of Peertube, please make sure that your setup is correctly configured to forward real user's IPs to Peertube.\n"
 "Otherwise it could block all anonymous users at once.\n"
 msgstr ""
+"**Nota important**:\n"
+"Si activeu aquesta funció i utilitzeu un servidor intermediari invers "
+"personalitzat davant de PeerTube, assegureu-vos que l'heu configurat "
+"correctament per reenviar IP d'usuari real a PeerTube.\n"
+"En cas contrari podria bloquejar tots els usuaris anònims alhora.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Theming"
-msgstr ""
+msgstr "Tematització"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose from several different sets the default avatars that will be used for chat users."
 msgstr ""
+"Podeu triar entre diversos jocs diferents els avatars predeterminats que "
+"s'utilitzaran per als usuaris de xat."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_sepia %}}: [Generador d'avatars "
+"PeerTube de David Revoy](https://www.peppercarrot.com/extras/html/"
+"2023_peertube-generator/), Llicència [CC-By](https://creativecommons .org/"
+"licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Sepia avatar example](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 msgstr ""
+"![Exemple d'avatar sèpia](/peertube-plugin-livechat/images/"
+"avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_cat %}}: [Generador d'avatars de xat "
+"per David Revoy](https://www.peppercarrot.com/extras/html/2016_cat-generator/"
+"), Llicència [CC-By](https: //creativecommons .org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Cats avatar example](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Cats\")"
 msgstr ""
+"![Exemple d'avatar de gats](/peertube-plugin-livechat/images/"
+"avatar_cat.png?classes=shadow,border&height=40px \"Gats\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_bird %}}: [Generador d'avatars d'ocells "
+"de David Revoy](https://www.peppercarrot.com/extras/html/2019_bird-generator/"
+"), Llicència [CC-By](https://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Birds avatar example](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
 msgstr ""
+"![Exemple d'avatar d'ocells](/peertube-plugin-livechat/images/"
+"avatar_bird.png?classes=shadow,border&height=40px \"Ocells\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_fenec %}}: [Generador d'avatar fenec/"
+"mobilizon de David Revoy](https://www.peppercarrot.com/extras/html/"
+"2020_mobilizon-generator/), Llicència [CC-By](https://creativecommons.org/"
+"licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Fenecs avatar example](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
 msgstr ""
+"![Exemple d'avatar de fenecs](/peertube-plugin-livechat/images/"
+"avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_abstract %}}: [David Revoy's Abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_abstract %}}: [Generador d'avatars "
+"abstractes de David Revoy](https://www.peppercarrot.com/extras/html/"
+"2017_abstract-generator/index.php), llicència [CC-By]( https: "
+"//creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Abstracts avatar example](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
 msgstr ""
+"![Exemple d'avatar abstracte](/peertube-plugin-livechat/images/"
+"avatar_abstract.png?classes=shadow,border&height=40px \"Abstracte\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_legacy %}}: Based on [David Revoy' work](https://www.davidrevoy.com), [AGPL-v3](https://www.gnu.org/licenses/agpl-3.0.en.html) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_legacy %}}: basat en el treball de ["
+"David Revoy](https://www.davidrevoy.com), llicència [AGPL-v3](https://www.gnu"
+".org/licenses/agpl -3.0.fr.html)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Legacy avatar example](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
 msgstr ""
+"![Exemple d'avatar Legacy](/peertube-plugin-livechat/images/"
+"avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "If you can't see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it."
 msgstr ""
+"Si no veieu el canvi immediatament, es pot deure a la memòria cau del vostre "
+"navegador. Esborreu l'emmagatzematge de la sessió del navegador o reinicieu-"
+"lo."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose which theme to use for ConverseJS:"
-msgstr ""
+msgstr "Podeu triar el tema que voleu utilitzar per a ConverseJS:"
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Peertube theme: this is a special theme, made especially for peertube's integration."
 msgstr ""
+"Tema PeerTube: aquest és un tema especial, dissenyat específicament per a la "
+"integració a PeerTube."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Default ConverseJS theme: this is the default ConverseJS theme."
 msgstr ""
+"Tema de ConverseJS predeterminat: aquest és el tema per defecte de "
+"ConverseJS."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "ConverseJS cyberpunk theme: this is a theme provided by ConverseJS."
 msgstr ""
+"Tema cyberpunk de ConverseJS: aquest és un tema proporcionat per ConverseJS."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat server advanced settings"
-msgstr ""
+msgstr "Configuració avançada del xat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).  If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package."
 msgstr ""
+"El connector ve amb una AppImage que s'utilitza per executar el [servidor "
+"XMPP Prosody](https://prosody.im). Si aquesta AppImage no funciona, podeu "
+"recórrer a la versió de Prosody empaquetada per al vostre servidor. "
+"Simplement instal·leu el paquet `prosody`."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting should only be used if the plugin is broken, and waiting for a patch."
 msgstr ""
+"Aquesta configuració només s'ha d'utilitzar si el connector està trencat i "
+"s'espera una solució."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
 msgstr ""
+"Si aquest paràmetre es deixa buit i utilitzeu PeerTube >= 5.1, el connector "
+"utilitzarà els valors del vostre fitxer de configuració de PeerTube per "
+"determinar en quina interfície i port s'han de fer les sol·licituds.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "In last resort, it will use your Peertube public URI.  So, any API Call will go throught your Nginx server.  This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP.  In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
 msgstr ""
+"Com a últim recurs, utilitzarà l'URI públic de la vostra instància. Així, "
+"les crides a l'API passaran per Nginx. Això pot fallar en alguns casos: per "
+"exemple, si esteu en un contenidor Docker per al qual el nom d'amfitrió "
+"públic no es resol a la IP correcta. En aquest cas, proveu de canviar el "
+"paràmetre \"{{% livechat_label prosody_peertube_uri_label %}}\", posant "
+"`http://127.0.0.1:9000` (si és el port 9000 que fa servir el vostre "
+"PeerTube, pregunteu als administradors de la vostra instància si no ho "
+"sabeu)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting enable XMPP clients to connect to the built-in Prosody server.  For now, this option **only allows connections from localhost clients**."
 msgstr ""
+"Aquesta configuració permet als clients XMPP connectar-se al servidor "
+"Prosody incrustat. Actualment aquesta opció **només permet connexions de "
+"client a localhost**."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room."
 msgstr ""
+"Per exemple, aquesta opció pot permetre que una instància de Matterbridge ("
+"un cop pugui utilitzar una connexió anònima) *a la mateixa màquina* vinculi "
+"el vostre xat a altres serveis, com ara una sala de Matrix."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
 msgstr ""
+"Aquesta configuració permet que els components XMPP externs es connectin al "
+"servidor. Per defecte, aquesta opció **només permet connexions de components "
+"a localhost**. Heu de canviar el valor del paràmetre “{{% livechat_label "
+"prosody_components_interfaces_label %}}” per escoltar a altres interfícies "
+"de xarxa."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This feature could be used to connect bridges or bots."
-msgstr ""
+msgstr "Aquesta funció es pot utilitzar per connectar ponts o robots."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "More informations on Prosody external components [here](https://prosody.im/doc/components)."
 msgstr ""
+"Més informació sobre els components externs de Prosody [aquí](https://prosody"
+".im/doc/components)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "For more information, please check [the documentation](/peertube-plugin-livechat/documentation/admin/mod_firewall/)."
 msgstr ""
+"Per obtenir més informació, consulteu [la documentació](/peertube-"
+"plugin-livechat/documentation/admin/mod_firewall/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Plugin documentation"
-msgstr ""
+msgstr "Documentació del connector"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
 msgstr ""
+"De moment, el connector només admet les arquitectures de CPU x86_64 i arm64. "
+"Si us plau, trobareu instruccions per fer-lo funcionar en altres "
+"arquitectures de CPU aquí."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Known issues: CPU Compatibility"
-msgstr ""
+msgstr "Problemes coneguts: compatibilitat de CPU"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.  It is not compatible with other CPU architectures."
 msgstr ""
+"L'AppImage Prosody inclòs al connector només funciona amb CPU x86_64 i "
+"arm64. No és compatible amb altres arquitectures de CPU."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "To use the plugin, you will have to manually install Prosody on your server (see below)."
 msgstr ""
+"Per utilitzar el connector haureu d'instal·lar manualment Prosody al vostre "
+"servidor (vegeu més avall)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2913,27 +3037,34 @@ msgid ""
 "Note: the plugin requires Prosody >= 0.12.0.\n"
 "If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.\n"
 msgstr ""
+"Nota: la versió de Prosody hade ser superior o igual a 0.12.0.\n"
+"Si utilitzeu una versió anterior, pot haver-hi errors a la federació de xat "
+"i altres comportaments inesperats.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "Once it is done, you have to check `Use system Prosody` in the plugin settings."
 msgstr ""
+"Un cop fet això haureu de comprovar el paràmetre `Utilitzar Prosody del "
+"sistema` del connector."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "On non-docker Peertube installation"
-msgstr ""
+msgstr "Instal·lació diferent de Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "For standard installation, you just have to install the official `prosody` package for your linux distribution."
 msgstr ""
+"Per a instal·lacions estàndard només heu d'instal·lar el paquet `prosody` "
+"disponible oficialment per a la vostra distribució de Linux."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "For example, on Debian/Ubuntu:"
-msgstr ""
+msgstr "Per exemple, a Debian/Ubuntu:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2945,6 +3076,10 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "You can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run).  For example, on Debian/Ubuntu (and other Systemd based linux distributions):"
 msgstr ""
+"A continuació podeu desactivar el servei que s'inicïi automàticament quan "
+"instal·leu el paquet (el connector iniciarà el seu propi procés de Prosody i "
+"no necessita que el servei s'executi al servidor). Per exemple, a Debian/"
+"Ubuntu (i altres distribucions basades en Systemd):"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2956,22 +3091,29 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "Warning: do not disable Prosody if it is used for another service on your server, like for example Jitsi."
 msgstr ""
+"Avís: no desactiveu Prosody si l'utilitza un altre servei del vostre "
+"servidor, per exemple, per Jitsi."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Docker"
-msgstr ""
+msgstr "Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "You will have to generate a Peertube image that includes Prosody in the same container that Peertube.  I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround."
 msgstr ""
+"Haureu de generar una imatge de PeerTube que inclogui Prosody al mateix "
+"contenidor que Peertube. Sé que aquesta no és la manera estàndard de fer les "
+"coses amb Docker, però tingueu en compte que aquesta és una solució temporal."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "To generate and use such an image, please refer to the Docker documentation.  The Docker file to generate the image should be:"
 msgstr ""
+"Per generar aquesta imatge, consulteu la documentació de Docker. El fitxer "
+"Docker per generar la imatge hauria de ser:"
 
 #. type: Fenced code block (Docker)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2992,169 +3134,231 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "You have to disable `metronome` (the XMPP server provided by Yunohost), and install `prosody`."
 msgstr ""
+"Heu de desactivar `metronome` (el servidor XMPP utilitzat per Yunohost) i "
+"instal·lar `prosody`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0."
 msgstr ""
+"Això ja ho fa l'aplicació Yunohost PeerTube, ja que era un requisit previ "
+"per a les versions de connectors anteriors a la v6.0.0."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "But it may be removed in a near feature (to avoid drawbacks of this method).  I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility."
 msgstr ""
+"Però es pot eliminar de l'aplicació Yunohost PeerTube en un futur proper ("
+"per evitar els inconvenients d'aquest mètode). Necessito parlar amb l'equip "
+"de Yunohost per decidir la manera correcta de fer-ho per minimitzar les "
+"molèsties i maximitzar la compatibilitat."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat installation guide"
-msgstr ""
+msgstr "Instal·lació el connector peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Installation guide"
-msgstr ""
+msgstr "Guia d'instal·lació"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 #: support/documentation/content/en/_index.md
 msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md)."
 msgstr ""
+"Abans d'actualitzar el connector a una nova versió principal, llegiu les "
+"notes de la versió i la llista de possibles canvis no compatibles amb "
+"versions anteriors: [CHANGELOG](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/CHANGELOG.md)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 msgid "To install or update the plugin, **just use the Peertube web admin interface**."
 msgstr ""
+"Per instal·lar o actualitzar aquest connector, **només feu servir la vostra "
+"interfície web d'administració de PeerTube**."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 msgid "Here are some other more specific instructions:"
-msgstr ""
+msgstr "A continuació es mostren més instruccions:"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Some classic mistakes and workarounds."
-msgstr ""
+msgstr "Alguns errors comuns i solucions alternatives."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "I just installed/upgraded the plugin, but nothing happens"
-msgstr ""
+msgstr "Acabo d'instal·lar/actualitzar el connector, però no passa res"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, ...), just try to reload the page."
 msgstr ""
+"Si acabeu d'instal·lar/actualitzar el connector i no passa res (no hi ha "
+"xat, cap configuració, els botons no funcionen a la configuració, etc.), "
+"només heu de provar de tornar a carregar la pàgina."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Diagnostic tool"
-msgstr ""
+msgstr "Eina de diagnòstic"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If the chat does not work, there is a diagnostic tool in the plugin's settings pages."
 msgstr ""
+"Si el xat no funciona hi ha una eina de diagnòstic a la pàgina de "
+"configuració del connector."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Open the plugin settings, and click on the \"launch diagnostic\" button."
 msgstr ""
+"Obriu la configuració del connector i feu clic al botó «Executar "
+"diagnòstics»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "![Screenshot of the plugin's settings page, with a \"launch diagnostic\" button.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px \"Launch diagnostic\")"
 msgstr ""
+"![Captura de pantalla de la pàgina de configuració del connector, amb un "
+"botó de \"diagnòstic d'inici\".](/peertube-plugin-livechat/images/"
+"launch_diagnostic.png?classes=shadow,border&height=200px \"Executar "
+"diagnòstic\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the [Bug tracking documentation page](/peertube-plugin-livechat/issues/) if you can't find any response."
 msgstr ""
+"Si hi ha un error a la pàgina de diagnòstic podeu buscar una solució en "
+"aquesta pàgina, o si no trobeu una resposta, consultar [la pàgina de "
+"documentació \"desenvolupaments / errors\"](/peertube-plugin -livechat/ca/"
+"issues/)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "![Screenshot of the diagnostic result page. This gives a lot of information, with status for different test suites.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px \"Diagnostic result\")"
 msgstr ""
+"![Captura de pantalla de la pàgina de resultats del diagnòstic. Això "
+"proporciona molta informació, amb l'estat de diferents conjunts de proves"
+".](/peertube-plugin-livechat/images/"
+"diagnostic.png?classes=shadow,border&height=200px \"Resultat del diagnòstic\""
+")"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Chat does not load"
-msgstr ""
+msgstr "El xat no es carrega"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Internal API calls"
-msgstr ""
+msgstr "Crides internes a l'API"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "In some case (like for some Docker Peertube installation), the diagnostic tools displays an error for the test called \"API Prosody -> Peertube is KO\".\n"
 msgstr ""
+"En alguns casos (com les instal·lacions de PeerTube a Docker), l'eina de "
+"diagnòstic mostra un error anomenat «API Prosody -> PeerTube està KO».\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
 msgstr ""
+"En aqueix cas, proveu de canviar el paràmetre «{{% livechat_label "
+"prosody_peertube_uri_label %}}», posant `http://127.0.0.1:9000` (assumint és "
+"el port 9000 el que fa servir el vostre PeerTube, pregunteu als "
+"administradors de la instància si no ho sabeu)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgstr ""
+"Consulteu la pàgina d'ajuda [per a aquesta configuració](/peertube-"
+"plugin-livechat/ca/documentation/admin/settings)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Websocket"
-msgstr ""
+msgstr "Websocket"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue.  Since Peertube version 5.0.0, there are some additional configuration to do on the server side.  Check with the instance administrators that they did not forgot to apply changes listed in the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."
 msgstr ""
+"Si tot està bé segons l'eina de diagnòstic, però la finestra de xat roman "
+"buida: això pot ser un problema de Websocket. Des de la versió 5.0.0 de "
+"PeerTube, hi ha una configuració addicional per fer al costat del servidor. "
+"Consulteu amb els administradors de la vostra instància si no s'han oblidat "
+"d'aplicar els canvis enumerats a les [Notes de la versió de Peertube 5.0."
+"0](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500) ."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection."
 msgstr ""
+"Podeu confirmar si es tracta d'un problema de Websocket obrint la consola "
+"del vostre navegador i comprovant si hi ha cap registre d'errors que "
+"mencioni una connexió de Websocket fallida."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If you can't fix this immediatly, you can disable Websocket by unchecking \"{{% livechat_label disable_websocket_label %}}\" in the plugin setting page.  In such case, you should also check \"{{% livechat_label federation_dont_publish_remotely_label %}}\", as chat federation won't work without Websocket."
 msgstr ""
+"Si no podeu solucionar-ho immediatament, podeu desactivar Websocket "
+"desmarcant «{{% livechat_label disable_websocket_label %}}» a la pàgina de "
+"configuració del connector. En aquest cas, també hauríeu de desmarcar «{{% "
+"livechat_label federation_dont_publish_remotely_label %}}», perquè la "
+"federació de xat no funcionarà sense Websocket."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "Important notes when upgrading for an older version."
 msgstr ""
+"Notes importants per a l'actualització des d'una versió anterior del "
+"connector."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "Upgrade from version older than 6.0.0"
-msgstr ""
+msgstr "Actualització des d'una versió anterior a la 6.0.0"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "IMPORTANT NOTE"
-msgstr ""
+msgstr "NOTA IMPORTANT"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 msgid "Since version v6.0.0, this plugin does not need any Prosody installation."
 msgstr ""
+"Des de la versió v6.0.0, aquest connector no necessita cap instal·lació de "
+"Prosody."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 msgid "If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody."
 msgstr ""
+"Si utilitzàveu aquest connector abans i heu instal·lat Prosody manualment, "
+"podeu desinstal·lar-lo amb seguretat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
