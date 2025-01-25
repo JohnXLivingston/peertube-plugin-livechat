@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-24 21:54+0000\n"
+"PO-Revision-Date: 2025-01-25 22:29+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -1298,7 +1298,7 @@ msgstr "Ús avançat"
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge to bridge with other chats"
-msgstr "Emprar Matterbridge per fer de pont amb altres xats"
+msgstr "Emprar Matterbridge per fer de passarel·la amb altres xats"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1376,8 +1376,7 @@ msgstr "127.0.0.1       anon.exemple.cat room.exemple.cat\n"
 msgid "Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
 msgstr ""
 "Substituïu `exemple.cat` pel nom de domini de la vostra instància. A "
-"continuació, podeu continuar amb la configuració de Matterbridge a "
-"continuació."
+"continuació, podeu continuar amb la configuració de Matterbridge següent."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1497,186 +1496,253 @@ msgstr "`elmeupeertube` es pot substituir per un altre nom."
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Using `peertube` as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification."
 msgstr ""
+"L'ús de `peertube` com a àlies (Nick) proporcionarà la icona PeerTube per "
+"als missatges superposats, que també es pot fer canviant la configuració de "
+"la superposició."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The setting `NoTLS=true` allows connecting to a server with self-signed certificates."
 msgstr ""
+"El paràmetre `NoTLS=true` us permet connectar-vos a un servidor amb "
+"certificats autofirmats."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Now you can add this account to gateways and bridge specific live-chat channels."
 msgstr ""
+"Ara podeu afegir aquest compte a passarel·les i que faci de pont entre "
+"canals de xat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This documentation use an anonymous account to connect the bridge to the chat.  But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account.  This is used for [OBS docks](/peertube-plugin-livechat/documentation/user/obs).  Using this feature for other purposes is not documented and not officially supported yet.  If you want to use it anyway, you can request a token by calling then `/plugins/livechat/router/api/auth/tokens` endpoint.  To get needed headers and request body, just check what happens when you generate a new token for OBS docks."
 msgstr ""
+"Aquesta documentació utilitza un compte anònim per connectar la passarel·la "
+"al xat. Però des de la versió 10.1.0 del livechat, hi ha una nova manera de "
+"generar una fitxa d'autenticació a llarg termini, que us permet iniciar "
+"sessió amb el vostre compte. S'utilitza per a [OBS docks](/peertube-"
+"plugin-livechat/ca/documentation/user/obs). L'ús d'aquesta funció per a "
+"altres finalitats no està documentat i encara no s'admet oficialment. Si el "
+"voleu utilitzar de totes maneres, podeu sol·licitar una fitxa cridant a `/"
+"plugins/livechat/router/api/auth/tokens`. Per obtenir les capçaleres "
+"necessàries i el cos de la sol·licitud, només cal que mireu què passa quan "
+"genereu una nova fitxa per a OBS docks."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Allow connections using XMPP clients"
-msgstr ""
+msgstr "Permetre la connexió mitjançant clients XMPP"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "XMPP clients"
-msgstr ""
+msgstr "Clients XMPP"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This chat module is based on the XMPP protocol, also known as Jabber.  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can for example be useful to facilitate moderation operations."
 msgstr ""
+"Aquest mòdul de xat es basa en el protocol XMPP, també conegut com Jabber. "
+"Per tant, és possible connectar-se als xats mitjançant [programari client "
+"XMPP](https://fr.wikipedia.org/wiki/Clients_XMPP). Això pot ser útil, per "
+"exemple, per facilitar les operacions de moderació."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgstr ""
+"Per obtenir la documentació d'usuari associada a aquestes funcions, "
+"consulteu la [pàgina de documentació de l'usuari](/peertube-plugin-livechat/"
+"ca/documentation/user/xmpp_clients/)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enabling these features requires configuration changes on the server, and on the DNS records.  It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills."
 msgstr ""
+"L'habilitació d'aquestes funcions requereix canvis de configuració al "
+"servidor i als registres DNS. No és possible activar-los només des de la "
+"interfície PeerTube, i això requereix unes habilitats bàsiques "
+"d'administració del sistema."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Login to your Peertube account"
-msgstr ""
+msgstr "Iniciar sessió amb el vostre compte de PeerTube"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "This feature is not yet available, and will come in a future version of the plugin."
 msgstr ""
+"Aquesta funcionalitat encara no està disponible i arribarà en una versió "
+"futura del connector."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Connection using an external XMPP account"
-msgstr ""
+msgstr "Iniciar sessió amb un compte XMPP extern"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the [Prosody server](https://prosody.im) that this plugin uses internally."
 msgstr ""
+"Per habilitar aquesta funció haureu de configurar el vostre servidor i els "
+"registres DNS, de manera que els clients XMPP puguin trobar i accedir al "
+"servidor [Prosody](https://prosody.im) que aquest connector utilitza "
+"internament."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Plugin settings"
-msgstr ""
+msgstr "Configuració del connector"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this setting, new settings appear below."
 msgstr ""
+"Comenceu anant a la configuració del connector de livechat de la vostra "
+"instància i, a continuació, activeu la configuració «Permetre connexions a "
+"les sales mitjançant comptes XMPP externs». En marcar-ho, apareixen nous "
+"camps a continuació."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First of all, the \"Prosody server to server port\" field.  This one defaults to 5269, which is the standard port for this service.  You can however change to another port, if this is already in use on your server."
 msgstr ""
+"Primer, el camp «Port per a connexions de servidor Prosody a servidor». El "
+"valor predeterminat és 5269, que és el port estàndard per a aquest servei. "
+"Tanmateix, podeu canviar a un altre port, si aquest ja s'utilitza al vostre "
+"servidor."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Next, the field \"Server to server network interfaces\" field allows you to specify which network interfaces the server should listen on.  The default value \"*, ::\" indicates to listen on all IP addresses.  You can change these values, if you wish to listen on only certain IP addresses.  The syntax is explained next to the setting."
 msgstr ""
+"A continuació, el camp «Interfícies de xarxa per a connexions de servidor a "
+"servidor» us permet indicar a quines interfícies de xarxa ha d'escoltar el "
+"servidor. El valor predeterminat «*, ::» indica que s'escolta a totes les "
+"adreces IP. Podeu canviar aquests valors, si voleu escoltar només en "
+"determinades IP. La sintaxi s'explica al costat del camp."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the \"Certificate folder\" setting, you can leave it empty.  In this case, the plugin will automatically generate self-signed certificates.  Some XMPP servers may refuse to connect, depending on their configuration.  In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.  It is up to you to generate and renew them.  See bellow for more information."
 msgstr ""
+"Quant al camp «Carpeta de certificats», podeu deixar-lo buit. En aquest cas, "
+"el connector generarà automàticament certificats autofirmats. Alguns "
+"servidors XMPP poden negar-se a connectar-se, depenent de llur configuració. "
+"En aquest cas, podeu indicar aquí una ruta al servidor, en la qual heu de "
+"col·locar els certificats per ser utilitzats pel mòdul. Depèn de vosaltres "
+"generar-los i renovar-los. Més informació a continuació."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Firewall"
-msgstr ""
+msgstr "Tallafoc"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You must open the configured port (5269 by default) on your firewall."
-msgstr ""
+msgstr "Heu d'obrir el port configurat (5269 per defecte) al vostre tallafoc."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you are using Docker for your Peertube, you need to modify the `docker-compose.yml` file to open port 5269 of the `peertube` container, so that the outer world can connect to it."
 msgstr ""
+"Si utilitzeu Docker per al vostre PeerTube heu de modificar el fitxer "
+"`docker-compose.yml` per obrir el port 5269 del contenidor `peertube` al món "
+"exterior."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You need to add [DNS records](https://prosody.im/doc/dns) allowing remote servers to find \"room.your_instance.tld\" and \"external.your_instance.tld\" components."
 msgstr ""
+"Heu d'afegir [registres DNS](https://prosody.im/doc/dns) per permetre que "
+"els servidors remots trobin els components «room.exemple.cat» i «external."
+"exemple.cat»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The easiest way to do this is to add SRV records for the \"room\" and \"external\" [subdomain](https://prosody.im/doc/dns#subdomains):"
 msgstr ""
+"La manera més senzilla de fer-ho és afegir registres SRV per als "
+"[subdominis](https://prosody.im/doc/dns#subdomains) «room» i «external»:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
 msgstr ""
+"nom del registre: _xmpp-server._tcp.room.exemple.cat. (substituïu «exemple."
+"cat» per la URI de la vostra instància)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "TTL: 3600"
-msgstr ""
+msgstr "TTL: 3600"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "class: IN"
-msgstr ""
+msgstr "class: IN"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "SRV: 0"
-msgstr ""
+msgstr "SRV: 0"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "priority: 0"
-msgstr ""
+msgstr "priority: 0"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "weight: 5"
-msgstr ""
+msgstr "weight: 5"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "port: 5269 (adapt if your changed the default port)"
-msgstr ""
+msgstr "port: 5269 (adapteu-lo si heu canviat el port)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "target: your_instance.tld. (replace by your instance uri)"
-msgstr ""
+msgstr "target: exemple.cat. (substituïu-lo per la URI de la vostra instància)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "record name: _xmpp-server._tcp.external.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
 msgstr ""
+"record name: _xmpp-server._tcp.external.exemple.cat. (substituïu «exemple.ca»"
+" per la URI de la vostra instància)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Be careful to keep the dot after \"your_instance.tld\"."
-msgstr ""
+msgstr "Aneu amb compte de mantindre el punt després d'«exemple.cat»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Using the `dig` command to check your records, you should get a result similar to this:"
 msgstr ""
+"Si utilitzeu l'ordre `dig` per comprovar els vostres registres, hauríeu "
+"d'obtenir un resultat semblant a aquest:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1688,79 +1754,128 @@ msgid ""
 "$ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV\n"
 "0 5 5269 videos.john-livingston.fr.\n"
 msgstr ""
+"$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
+"0 5 5269 videos.john-livingston.fr.\n"
+"\n"
+"$ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV\n"
+"0 5 5269 videos.john-livingston.fr.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).  Of course, you can also add this record if you use the standard port. It will also work."
 msgstr ""
+"Si **no utilitzeu el port estàndard `5269`**, també heu d'afegir un registre "
+"SRV per a `_xmpp-server._tcp.exemple.cat.` (igual que a dalt, sense el "
+"prefix `room.`). Per descomptat, també podeu afegir aquest registre si feu "
+"servir el port estàndard. També funcionarà."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Using trusted certificates"
-msgstr ""
+msgstr "Ús de certificats de confiança"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons."
 msgstr ""
+"Els certificats autodignats que el connector utilitza de manera "
+"predeterminada poden no ser adequats per a tots els servidors XMPP. De fet, "
+"poden rebutjar-los per motius de seguretat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "It is possible to use certificates validated by a certification authority.  However, this requires advanced system administration knowledge.  Indeed, due to the multitude of possible use cases, it is impossible to document all situations here.  This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a \"basic\" situation (manual installation of Peertube, using letsencrypt).  If you are in another situation (Docker installation, certificates signed by another authority, etc...), you will have to adapt this approach by yourself."
 msgstr ""
+"És possible utilitzar certificats validats per una autoritat de "
+"certificació. Tanmateix, això requereix coneixements avançats "
+"d'administració de sistemes. De fet, donada la multitud de casos possibles, "
+"aquí és impossible documentar totes les situacions. Per tant, aquesta "
+"documentació simplement explicarà l'objectiu a assolir i donarà un exemple "
+"que només serà adequat per a una situació «bàsica» (instal·lació manual de "
+"PeerTube, amb l'ús de letsencrypt). Si us trobeu en una altra situació "
+"(instal·lació de Docker, certificats signats per una altra autoritat, etc.), "
+"haureu d'adaptar l'enfocament."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Basic principle"
-msgstr ""
+msgstr "Principi bàsic"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "It is up to you to generate valid certificates for domains `your_instance.tld` and `room.your_instance.tld`.  You can use any [method supported by Prosody](https://prosody.im/doc/certificates)."
 msgstr ""
+"Depèn de vosaltres generar certificats vàlids per als dominis `exemple.cat i "
+"`room.exemple.cat`. Podeu utilitzar qualsevol [mètode compatible amb "
+"Prosody](https://prosody.im/doc/certificates)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You must then place these certificates in a folder that will be accessible to the `peertube` user, and specify this folder in the plugin setting \"Certificate folder\"."
 msgstr ""
+"A continuació, heu de col·locar aquests certificats en una carpeta la qual "
+"serà accessible per l'usuari `peertube`, i després indicar aquesta carpeta "
+"al paràmetre del connector «Carpetes de certificats»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
 msgstr ""
+"Si voleu utilitzar la utilitat ProsodyCtl per importar certificats, aquesta "
+"utilitat està disponible (un cop iniciat PeerTube) mitjançant l'ordre "
+"següent (adaptant el camí a la carpeta de dades de PeerTube i substituint "
+"«xxx» amb els arguments que voleu passar a prosodyctl ): `sudo -u peertube /"
+"var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
+"prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/"
+"storage/plugins/data/peertube-plugin-livechat/prosody /prosody.cfg.lua xxx`"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary."
 msgstr ""
+"El connector comprovarà un cop al dia si s'ha modificat algun fitxer en "
+"aquesta carpeta i tornarà a carregar Prosody si cal."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Method for the simple case"
-msgstr ""
+msgstr "Mètode per al cas simple"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We assume here that your Peertube installation is \"classic\" (no use of Docker), and that the certificates are generated by letsencrypt, using the certbot tool."
 msgstr ""
+"Suposem aquí que la vostra instal·lació de Peertube és «clàssica» (no fa "
+"servir Docker) i que els certificats es generen mitjançant letsencrypt, "
+"utilitzant l'eina certbot."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the MUC (XMPP chat rooms) component.  Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain."
 msgstr ""
+"En primer lloc haurem de crear un certificat per al subdomini `room.exemple."
+"cat`: aquest és l'URI del component MUC (sales de xat XMPP). Fins i tot si "
+"les connexions es fan a `exemple.cat`, necessitarem un certificat vàlid per "
+"a aquest subdomini."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry)."
 msgstr ""
+"Així que comenceu configurant una entrada DNS per a `room.exemple.cat`, que "
+"apunta al vostre servidor. Podeu fer una entrada CNAME (o una entrada A i "
+"una entrada AAAA)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Next, we'll use nginx (already installed for your Peertube) to generate the certbot certificate.  We will create a new site. In the file `/etc/nginx/site-available/room.peertube`, add:"
 msgstr ""
+"A continuació, utilitzarem nginx (ja instal·lat per al vostre PeerTube) per "
+"generar el certificat de certbot. Anem a crear un nou lloc. Al fitxer `/etc/"
+"nginx/site-available/room.peertube`, afegiu:"
 
 #. type: Fenced code block (nginx)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1778,11 +1893,22 @@ msgid ""
 "  location / { return 301 https://your_instance.tld; }\n"
 "}\n"
 msgstr ""
+"server {\n"
+"  listen 80;\n"
+"  listen [::]:80;\n"
+"  server_name room.exemple.cat;\n"
+"\n"
+"  location /.well-known/acme-challenge/ {\n"
+"    default_type \"text/plain\";\n"
+"    root /var/www/certbot;\n"
+"  }\n"
+"  location / { return 301 https://exemple.cat;; }\n"
+"}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Then enable the site:"
-msgstr ""
+msgstr "Aleshores activeu el lloc:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1796,6 +1922,10 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Then we prepare the folder in which we will later import the certificates.  We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:"
 msgstr ""
+"A continuació preparem el fitxer al qual més tard importarem els "
+"certificats. Suposem aquí que ja teniu el connector actiu. Crearem la "
+"següent carpeta (si encara no existeix), amb l'usuari `peertube` per "
+"assegurar-nos que no hi ha cap problema de permisos:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1807,21 +1937,31 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Now you have to configure this folder in the plugin settings, for the parameter \"Certificate folders\".  It's important to do this now, otherwise the certificate import script will put the certificates in the wrong folder."
 msgstr ""
+"Ara heu de configurar aquesta carpeta a la configuració del connector, per a "
+"«Carpetes de certificats». És important fer-ho abans de continuar, en cas "
+"contrari, l'script d'importació de certificats els col·locarà al lloc "
+"equivocat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We will configure certbot to import the generated certificates into the Prosody folder.  We can use the ProsodyCtl utility packaged in the plugin."
 msgstr ""
+"Configurarem certbot perquè importi els certificats generats a la carpeta "
+"Prosody. Podrem utilitzar la utilitat ProsodyCtl empaquetada al connector."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: for it to be available, the plugin must have been started at least once."
 msgstr ""
+"Nota: perquè estigui disponible, el connector s'ha d'haver iniciat almenys "
+"una vegada."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` containing:"
 msgstr ""
+"Crearem un fitxer `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` que "
+"conté:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1834,11 +1974,19 @@ msgid ""
 "  cert import \\\n"
 "  room.your_instance.tld your_instance.tld /etc/letsencrypt/live\n"
 msgstr ""
+"#!/bin/sh\n"
+"/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
+"prosodyAppImage/squashfs-root/AppRun prosodyctl \\\n"
+"  --root \\\n"
+"  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
+"prosody/prosody.cfg.lua \\\n"
+"  cert import \\\n"
+"  room.exemple.cat exemple.cat /etc/letsencrypt/live\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Then we ask to generate the certificate:"
-msgstr ""
+msgstr "Aleshores demanem generar el certificat:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1850,42 +1998,54 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If certbot offers you several methods to generate the certificate, choose \"nginx\"."
 msgstr ""
+"Si certbot us ofereix diversos mètodes per generar el certificat, trieu "
+"«nginx»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Normally you should now find the certificates in the configured folder."
 msgstr ""
+"Normalment ara hauríeu de trobar els certificats a la carpeta configurada."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube."
 msgstr ""
+"Nota: la primera vegada que ho feu, haureu de tornar a carregar Prosody. La "
+"manera més senzilla de fer-ho és reiniciar PeerTube."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Method for the Docker case"
-msgstr ""
+msgstr "Mètode quan s'utilitza Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube."
 msgstr ""
+"Aquest mètode funciona amb la [guia de Docker](https://docs.joinpeertube.org/"
+"install/docker) oficial de PeerTube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry).  This is necessary for Let's Encrypt to validate the domain for certificate generation."
 msgstr ""
+"Primer, assegureu-vos de crear una entrada DNS per a `room.exemple.cat`, que "
+"apunta al vostre servidor. Podeu utilitzar una entrada CNAME (o una entrada "
+"A i una entrada AAAA). Això és necessari perquè «Let's Encrypt» validi el "
+"domini per a la generació de certificats."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the directory where your `docker-compose.yml` file exists."
 msgstr ""
+"Introduïu el directori on es troba el vostre fitxer `docker-compose.yml`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Open a shell in the certbot container:"
-msgstr ""
+msgstr "Obriu un shell al contenidor de certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1896,7 +2056,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Run certbot:"
-msgstr ""
+msgstr "Executeu certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1908,6 +2068,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You will be presented with a series of prompts. Enter `2` for the authentication type:"
 msgstr ""
+"Se us presentarà una sèrie d'indicacions. Introduïu «2» per al tipus "
+"d'autenticació:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1920,7 +2082,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the domain name `room.your_instance.tld`:"
-msgstr ""
+msgstr "Introduïu el nom de domini `room.domini.cat`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1932,6 +2094,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:"
 msgstr ""
+"Introduïu el directori on el servidor web PeerTube serveix les sol·licituds "
+"de «Let's Encrypt», `/var/www/certbot`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1942,7 +2106,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You should see output like the following:"
-msgstr ""
+msgstr "Hauríeu d'obtenir un resultat semblant al següent:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1957,6 +2121,11 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.  *Note*: This will also make the files readable to the group with id 999 on the host system.  Check the groups on your system to assess this as a risk before running this command."
 msgstr ""
+"Executeu l'ordre següent dins del contenidor de certbot per donar accés de "
+"lectura als nous certificats i claus privades al grup `peertube`. *Nota*: "
+"Aquesta ordre també farà que els fitxers siguin llegibles per al grup amb ID "
+"999 al sistema amfitrió. Comproveu els grups del vostre sistema per avaluar "
+"el risc abans d'executar aquesta ordre."
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1972,7 +2141,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Exit the certbot container:"
-msgstr ""
+msgstr "Sortiu del contenidor de certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1984,6 +2153,9 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.  This is the same as the above, but to be automatically executed after every certificate renewal."
 msgstr ""
+"Editeu el vostre fitxer `docker-compose.yml`, canviant la línia `entrypoint` "
+"sota el servei `certbot` a la següent. És el mateix que l'anterior, però "
+"s'ha d'executar automàticament després de cada renovació del certificat."
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1995,6 +2167,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.  It should look something like this:"
 msgstr ""
+"Continuant editant `docker-compose.yml`, afegiu el volum certbot al "
+"contenidor peertube. Hauria de ser així:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2007,7 +2181,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Restart your services:"
-msgstr ""
+msgstr "Reinicieu els vostres serveis:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2019,17 +2193,21 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:"
 msgstr ""
+"A la configuració de livechat dins l'administració de PeerTube establiu el "
+"directori de certificats de la següent manera:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "/etc/letsencrypt/live\n"
-msgstr ""
+msgstr "/etc/letsencrypt/live\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Save the plugin settings and verify Prosody can see the certificates:"
 msgstr ""
+"Deseu la configuració del connector i comproveu que Prosody pugui veure els "
+"certificats:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2049,73 +2227,98 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Resolució de problemes"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section."
 msgstr ""
+"Si això no funciona, podeu utilitzar les eines de diagnòstic (un botó es "
+"troba a la part superior de la pàgina de configuració del connector) i, en "
+"particular, mireu què diu la secció «Comprovació de Prosody\"."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #, no-wrap
 msgid "Plugin Peertube Livechat settings - External Authentication"
-msgstr ""
+msgstr "Configuració del connector de Peertube Livechat - Autenticació externa"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "External Authentication"
-msgstr ""
+msgstr "Autenticació externa"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Users that are not connected to your Peertube instance are joining the chat using \"anonymous accounts\" (they can freely choose a nickname, and will be assigned a random avatar)."
 msgstr ""
+"Els comptes que no estiguin connectats a la vostra instància de PeerTube "
+"s'uneixen al xat mitjançant «comptes anònims» (poden triar lliurement un "
+"sobrenom i se'ls assignarà un avatar aleatori)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You can enable some external authentication methods to allow user to create chat accounts.  In such case their nickname and avatar will be automatically initialized with the remote account information."
 msgstr ""
+"Podeu habilitar mètodes d'autenticació externs per permetre la creació "
+"comptes per xatejar. En aquest cas, l'àlies i l'avatar s'inicialitzaran "
+"automàticament amb la informació del compte remot."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Such \"external account users\" will be easier to moderate than anonymous accounts."
 msgstr ""
+"Aquests «comptes externs» seran més fàcils de moderar que els comptes "
+"anònims."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval)."
 msgstr ""
+"Això també permet al compte unir-se al xat sense crear un compte de PeerTube "
+"(per exemple, en cas que la vostra instància hagi tancat el registre, o "
+"sense esperar l'aprovació del compte)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of a Peertube video page, with a chat on the right. At the bottom of the chat, there is a \"{{% livechat_label login_using_external_account %}}\" button.](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px \"{{% livechat_label login_using_external_account %}} button\")"
 msgstr ""
+"![Captura de pantalla d'una pàgina de vídeo de PeerTube, amb un xat a la "
+"dreta. A la part inferior del xat, hi ha un botó \"{{% livechat_label "
+"login_using_external_account %}}\".](/peertube-plugin-livechat/images/"
+"external_login_button.png?classes=shadow,border&height=200px \"{{% "
+"livechat_label login_account_external_using %}}\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of a dialog with an \"OpenID Connect\" button.](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px \"External login dialog - OpenID Connect\")"
 msgstr ""
+"![Captura de pantalla d'un diàleg amb un botó \"OpenID Connect\".](/peertube-"
+"plugin-livechat/images/"
+"external_login_dialog_oidc.png?classes=shadow,border&height=200px \"Diàleg "
+"d'inici de sessió extern - OpenID Connect\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "This page will describe available authentication methods."
-msgstr ""
+msgstr "Aquesta pàgina descriu els mètodes d'autenticació disponibles."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "For the user documentation, see [user documentation](/peertube-plugin-livechat/documentation/user/viewers/)"
 msgstr ""
+"Per obtenir la documentació d'usuari consulteu la pàgina [documentació "
+"d'usuari](/peertube-plugin-livechat/ca/documentation/user/viewers/)"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #, no-wrap
 msgid "OpenID Connect"
-msgstr ""
+msgstr "OpenID Connect"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2124,194 +2327,266 @@ msgid ""
 "This feature is still experimental.\n"
 "This feature is available with the plugin version >= 9.0.0.\n"
 msgstr ""
+"Aquesta característica encara és experimental.\n"
+"Aquesta funció arriba amb la versió de livechat >= 9.0.0.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You can configure one external [OpenID Connect](https://openid.net/developers/how-connect-works/) compatible provider."
 msgstr ""
+"Podeu configurar un proveïdor extern compatible amb [OpenID "
+"Connect](https://openid.net/developers/how-connect-works/)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Doing so, you can for example use your website for Single Sign-On."
 msgstr ""
+"Per exemple, podeu utilitzar el vostre lloc web per a l'inici de sessió únic."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Popular CMS softwares (Wordpess, ...) offers plugins implementing OpenID Connect."
 msgstr ""
+"El programari CMS més popular (Wordpess, etc.) ofereix mòduls que "
+"implementen OpenID Connect."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect).  Then go to the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings), and enable \"{{% livechat_label external_auth_custom_oidc_label %}}\"."
 msgstr ""
+"Per habilitar aquesta funció, primer heu de crear un client al costat del "
+"vostre proveïdor (consulteu la documentació per habilitar OpenID Connect). A "
+"continuació, aneu a [Configuració del connector](/peertube-plugin-livechat/"
+"ca/documentation/admin/settings) i activeu «{{% livechat_label "
+"external_auth_custom_oidc_label %}}»."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if you want to restrict allowed redirection urls on the provider side (best security practice), the plugin will show you the url to allow.  Just copy it in your OpenID Connect application configuration."
 msgstr ""
+"Nota: si voleu restringir els URL de redirecció autoritzats al costat del "
+"proveïdor (bones pràctiques de seguretat), el connector us indicarà l'URL "
+"per autoritzar. Simplement copieu-lo a la configuració de la vostra "
+"aplicació OpenID Connect."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You will now have to fill some settings."
-msgstr ""
+msgstr "Ara heu d'omplir alguns paràmetres."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "This is the button label in the following screenshot:"
-msgstr ""
+msgstr "Aquesta és l'etiqueta del botó a la captura de pantalla següent:"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "For now, it is not possible to localize this label."
-msgstr ""
+msgstr "De moment no és possible localitzar aquesta etiqueta."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Your OpenID Connect provider must implement the [discovery URL](https://openid.net/specs/openid-connect-discovery-1_0.html).  Just set here the discovery url, that should be something like `https://example.com/.well-known/openid-configuration`."
 msgstr ""
+"El vostre proveïdor d'OpenID Connect ha d'implementar l'[URL de "
+"descoberta](https://openid.net/specs/openid-connect-discovery-1_0.html). "
+"Establiu aquí l'URL de descobriment, que hauria de ser com `https://exemple."
+"cat/.well-known/openid-configuration`."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if your provider use the standard `/.well-known/openid-configuration` path, you can omit it.  For example `https://accounts.google.com` will work."
 msgstr ""
+"Nota: si el vostre proveïdor utilitza el camí estàndard `/.well-known/openid-"
+"configuration`, podeu ometre-lo. Per exemple, `https://accounts.google.com` "
+"funcionarà."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Your application Client ID."
-msgstr ""
+msgstr "L'identificador de client de la vostra aplicació (ID de client)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You application Client secret."
-msgstr ""
+msgstr "La clau secreta de la vostra aplicació (client secret)."
 
 #. type: Title ###
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #, no-wrap
 msgid "Google, Facebook, ..."
-msgstr ""
+msgstr "Google, Facebook, ..."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "In addition to that, you can also configure one or several \"standard\" Open ID Connect provider (Google, Facebook, ...)."
 msgstr ""
+"A més d'això, també podeu configurar un o més proveïdors «estàndard» d'Open "
+"ID Connect (Google, Facebook, etc.)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "For these providers, discovery url and button label are preset.  You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret."
 msgstr ""
+"Per a aquests proveïdors, l'URL de descoberta i l'etiqueta del botó estan "
+"predefinits. Només cal que creeu una aplicació OAuth2 al costat del "
+"proveïdor i configureu l'identificador i el secret del client."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
 msgstr ""
+"Si teniu en compte un proveïdor estàndard que no està disponible, podeu sol·"
+"licitar la implementació [obrint un nou tiquet](https://github.com/"
+"JohnXLivingston/peertube-plugin-livechat/issues)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If the button does not appear for end users, there might be a configuration issue.  You can try the [diagnostic tool](/peertube-plugin-livechat/documentation/installation/troubleshooting/) to get more information."
 msgstr ""
+"Si el botó no apareix és visible pot haver-hi un problema de configuració. "
+"Podeu provar l'[eina de diagnòstic](/peertube-plugin-livechat/ca/"
+"documentation/installation/troubleshooting/) per obtenir més informació."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test."
 msgstr ""
+"Nota: si heu iniciat sessió al vostre compte de PeerTube, el botó no "
+"apareixerà mai. Utilitzeu una finestra d'incògnit per provar."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If the button is displayed but is not working, check your Peertube logs.  It could be because the remote service does not use standard scopes or attribute names."
 msgstr ""
+"Si el botó apareix però no funciona, comproveu els registres de Peertube. "
+"Això podria ser perquè el servei remot no utilitza àmbits ni noms d'atributs "
+"estàndard."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #, no-wrap
 msgid "More to come"
-msgstr ""
+msgstr "Més per vindre…"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Other authentication methods will be implemented in the future."
-msgstr ""
+msgstr "Altres mètodes d'autenticació s'implementaran en el futur."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/_index.md
 #, no-wrap
 msgid "Plugin Peertube Livechat administration"
-msgstr ""
+msgstr "Administració del connector PeerTube Livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/_index.md
 #, no-wrap
 msgid "Admin documentation"
-msgstr ""
+msgstr "Documentació d'administració"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Advanced firewall rules for the Prosody server"
-msgstr ""
+msgstr "Regles avançades del tallafoc per al servidor Prosody"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Prosody mod_firewall"
-msgstr ""
+msgstr "mod_firewall Prosody"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
 msgstr ""
+"Podeu habilitar [mod_firewall](https://modules.prosody.im/mod_firewall) al "
+"vostre servidor de Prosody."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Doing so, Peertube admins will be able to define advanced firewall rules."
 msgstr ""
+"Això permetrà a l'administració de PeerTube definir regles avançades del "
+"tallafoc."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "These rules could be used to run arbitrary code on the server.  If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.  You can still use mod_firewall by editing files directly on the server."
 msgstr ""
+"Aquestes regles es podrien utilitzar per executar codi arbitrari al "
+"servidor. Si sou un proveïdor d'allotjament i no voleu permetre que els "
+"administradors de PeerTube escriguin aquestes regles, podeu desactivar "
+"l'edició en línia creant un fitxer `disable_mod_firewall_editing` al "
+"directori de connectors (`plugins/data/peertube-plugin-livechat/"
+"disable_mod_firewall_editing`). Això és deshabilitar, ja que els "
+"administradors de PeerTube ja poden executar codi arbitrari només instal·"
+"lant qualsevol connector. Encara podeu utilitzar mod_firewall editant "
+"fitxers directament al servidor."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Edit rules"
-msgstr ""
+msgstr "Editar les regles"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "First, you must enable the feature in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
 msgstr ""
+"Primer, heu d'habilitar la funció a [Configuració del connector](/peertube-"
+"plugin-livechat/documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Just bellow the settings, you will find a \"Configure mod_firewall\" button.  This button will open a configuration page."
 msgstr ""
+"Just a sota de la configuració trobareu el botó «Configura mod_firewall». "
+"Aquest botó obrirà una pàgina de configuració."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "![Screenshot of the \"{{% livechat_label prosody_firewall_configuration %}}\" form.](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label prosody_firewall_configuration %}}\")"
 msgstr ""
+"![Captura de pantalla del formulari \"{{% livechat_label "
+"prosody_firewall_configuration %}}\".](/peertube-plugin-livechat/images/"
+"mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label "
+"prosody_firewall %}}_configuration\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Here you can add several configuration files."
-msgstr ""
+msgstr "Aquí podeu afegir diversos fitxers de configuració."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "You can enable/disable each files."
-msgstr ""
+msgstr "Podeu activar/desactivar cada fitxer."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Files will be loaded in the alphabetical order.  You can use a number as prefix to easily choose the order."
 msgstr ""
+"Els fitxers es carreguen per ordre alfabètic. Podeu utilitzar prefixos "
+"numèrics per configurar fàcilment l'ordre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "You can also edit these firewall rules directly on the server, in the `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` directory.  File names must only contains alphanumerical characters, underscores and hyphens.  The extension must be `.pfw`, or `.pfw.disabled` if you want to disable a file.  Please be sure that the peertube system user has write access to these files, else the web editing interface will fail.  Once you have edited these files, you must reload prosody.  This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube."
 msgstr ""
+"També podeu editar aquestes regles del tallafoc directament al servidor, al "
+"directori `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/"
+"`. Els noms dels fitxers només han de contenir caràcters alfanumèrics, "
+"guions baixos i guions. L'extensió ha de ser `.pfw`, o `.pfw.disabled` si "
+"voleu desactivar un fitxer. Assegureu-vos que el compte del sistema peertube "
+"tingui accés d'escriptura a aquests fitxers, en cas contrari, la interfície "
+"d'edició web fallarà. Un cop hàgiu editat aquests fitxers, heu de tornar a "
+"carregar Prosody. Això es pot fer desant la configuració del connector, "
+"desant la configuració del mod_firewall a la interfície web o reiniciant "
+"Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
