@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-19 17:06+0000\n"
+"PO-Revision-Date: 2025-01-29 09:13+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -1959,42 +1959,52 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If certbot offers you several methods to generate the certificate, choose \"nginx\"."
 msgstr ""
+"Pokud vám certbot nabídne několik způsobů generování certifikátu, vyberte "
+"možnost \"nginx\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Normally you should now find the certificates in the configured folder."
-msgstr ""
+msgstr "Nyní byste měli najít certifikáty v nakonfigurované složce."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube."
 msgstr ""
+"Poznámka: při prvním použití je nutné znovu načíst aplikaci Prosody. "
+"Nejjednodušší způsob, jak to udělat, je restartovat Peertube."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Method for the Docker case"
-msgstr ""
+msgstr "Metoda pro řešení Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube."
 msgstr ""
+"Tato metoda funguje s oficiálně podporovaným [Docker guide](https://docs."
+"joinpeertube.org/install/docker) od PeerTube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry).  This is necessary for Let's Encrypt to validate the domain for certificate generation."
 msgstr ""
+"Nejprve vytvořte položku DNS pro `room.your_instance.tld`, která bude "
+"ukazovat na váš server.  Můžete použít položku CNAME (nebo položku A a "
+"položku AAAA).  To je nutné, aby aplikace Let's Encrypt ověřila doménu pro "
+"generování certifikátu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the directory where your `docker-compose.yml` file exists."
-msgstr ""
+msgstr "Zadejte adresář, ve kterém se nachází váš soubor `docker-compose.yml`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Open a shell in the certbot container:"
-msgstr ""
+msgstr "Otevřete shell v kontejneru certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2005,7 +2015,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Run certbot:"
-msgstr ""
+msgstr "Spusťte certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2016,7 +2026,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You will be presented with a series of prompts. Enter `2` for the authentication type:"
-msgstr ""
+msgstr "Zobrazí se řada výzev. Jako typ ověření zadejte `2`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2029,7 +2039,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the domain name `room.your_instance.tld`:"
-msgstr ""
+msgstr "Zadejte název domény `room.your_instance.tld`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2041,6 +2051,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:"
 msgstr ""
+"Zadejte adresář, do kterého webový server PeerTube doručuje požadavky na "
+"Let's Encrypt, `/var/www/certbot`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2051,7 +2063,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You should see output like the following:"
-msgstr ""
+msgstr "Měli byste vidět následující výstup:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2066,6 +2078,11 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.  *Note*: This will also make the files readable to the group with id 999 on the host system.  Check the groups on your system to assess this as a risk before running this command."
 msgstr ""
+"Spusťte níže uvedený příkaz uvnitř kontejneru certbot, abyste skupině "
+"peertube poskytli přístup ke čtení nových certifikátů a soukromých klíčů.  "
+"*Poznámka*: Tímto způsobem budou soubory přístupné ke čtení také skupině s "
+"id 999 v hostitelském systému.  Před spuštěním tohoto příkazu zkontrolujte "
+"skupiny ve svém systému a vyhodnoťte to jako riziko."
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2081,7 +2098,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Exit the certbot container:"
-msgstr ""
+msgstr "Ukončení kontejneru certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2093,6 +2110,9 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.  This is the same as the above, but to be automatically executed after every certificate renewal."
 msgstr ""
+"Upravte soubor `docker-compose.yml` a změňte řádek `entrypoint` pod službou "
+"`certbot` na následující.  Je to stejné jako výše, ale má se to provádět "
+"automaticky po každém obnovení certifikátu."
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2104,6 +2124,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.  It should look something like this:"
 msgstr ""
+"Pokračujte v úpravě souboru `docker-compose.yml` a přidejte svazek "
+"certifikátů certbot do kontejneru peertube.  Mělo by to vypadat nějak takto:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2116,7 +2138,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Restart your services:"
-msgstr ""
+msgstr "Restartujte služby:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
