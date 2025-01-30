@@ -1,0 +1,51 @@
+share_chat_link: Jaa linkki keskusteluun
+transparent_background: Läpinäkyvä tausta (striimauksen integrointiin, esimerkiksi
+  OBS:llä)
+use_current_theme_color: Käytä teeman värejä
+connect_using_xmpp: Yhdistä käyttäen XMPP:tä
+connect_using_xmpp_help: Voit liittyä huoneeseen käyttämällä ulkoista XMPP-tiliä ja
+  suosikki XMPP-asiakasohjelmaa.
+important_note_text: "Löydät lisäosan dokumentaation täältä:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
+  \ target=\"_blank\">\n  Peertube Plugin Livechat documentation\n</a>.\n"
+diagnostic: "Ennen kuin pyydät apua, käytä diagnostiikkatyökalua:\n<a class=\"peertube-plugin-livechat-launch-diagnostic\"\
+  >Käynnistä diagnostiikka</a>\n(Jos tämä painike ei avaa uutta ikkunaa, yritä päivittää
+  sivu).\n"
+list_rooms_description: "<a class=\"peertube-plugin-livechat-prosody-list-rooms-btn\"\
+  >Listaa huoneet</a>\n"
+use_chat: Käytä keskustelua
+use_chat_help: Jos tämä on käytössä, videon vieressä on keskustelu.
+video: Video
+channel: Kanava
+important_note_title: <h3>Huomioitavaa</h3>
+chat_terms_label: Käyttöehdot
+chat_terms_description: "Nämä käyttöehdot näytetään kaikille käyttäjille, kun he liittyvät
+  chattihuoneisiin.\nStriimaajat voivat myös määrittää omat käyttöehdot kanavalleen,
+  jotka näytetään näiden globaalien käyttöehtojen jälkeen.\n"
+federation_no_remote_chat_label: Älä näytä etäkeskusteluja
+open_chat: Avaa keskustelu
+open_chat_new_window: Avaa keskustelu uudessa ikkunassa
+close_chat: Sulje keskustelu
+tips_for_streamers: "Vinkkejä striimaajille: Upottaaksesi chatin videostriimiisi,\n
+  esimerkiksi OBS:ssä, luo vain luku -linkki ja käytä sitä selainlähteenä.\n"
+link_copied: Linkki kopioiotu
+generate_iframe: Luo iframe keskustelun upottamiseksi verkkosivulle
+chat_title: <h3>Keskustelu</h3>
+chat: Keskustelu
+federation_no_remote_chat_description: "Tämän asetuksen valitsemalla instanssisi ei
+  koskaan näytä keskustelua etävideoista.\n"
+show_scrollbarr: Näytä vierityspalkki
+read_only: Vain luku
+copy: Kopioi
+error: Virhe
+open: Avaa
+last_activity: Viimeksi aktiivinen
+web: Webbi
+copied: Kopioitu
+room_name: Huoneen nimi
+list_rooms_label: Listaa olemassaolevat huoneet
+chat_for_live_stream: 'Live striimin keskustelu:'
+room_description: Huoneen kuvaus
+not_found: Ei löytynyt
+online_help: Apua online
+federation_description: "<h3>Federointi</h3>\nSeuraavat asetukset koskevat federointia
+  muiden Peertube-instanssien\nja muiden fediverse-ohjelmistojen kanssa.\n"
