@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-29 09:13+0000\n"
+"PO-Revision-Date: 2025-01-30 05:04+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -4488,51 +4488,60 @@ msgstr "Mode només emojis"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "This mode can be usefull for example:"
-msgstr ""
+msgstr "Aquest mode pot ser útil per exemple:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "To avoid spam or offensive message when you are not here to moderate."
 msgstr ""
+"Per evitar correu brossa o missatges ofensius quan no esteu aquí per moderar."
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "When there are too many speaking participants, and you can't no more moderate correctly."
-msgstr ""
+msgstr "Quan hi ha massa participants parlant i no podeu moderar correctament."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label emoji_only_mode_title %}}\" checkbox."
 msgstr ""
+"Per habilitar o deshabilitar aquesta funció, utilitzeu el [menú desplegable "
+"del xat](/peertube-plugin-livechat/documentation/user/viewers), obriu el "
+"menú «configurar». Al formulari trobareu una casella de selecció «{{% "
+"livechat_label emoji_only_mode_title %}}»."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "If you want to enable it for all your chatrooms at once, open the [channel emojis configuration page](/peertube-plugin-livechat/documentation/user/streamers/emojis/), and use the \"{{% livechat_label emoji_only_enable_all_rooms %}}\" button."
 msgstr ""
+"Si voleu activar-lo per a totes les vostres sales de xat alhora, obriu la ["
+"pàgina de configuració d'emojis del canal](/peertube-plugin-livechat/ca/"
+"documentation/user/streamers/emojis/) i utilitzeu el botó «{{% "
+"livechat_label emoji_only_enable_all_rooms %}}»."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
 #, no-wrap
 msgid "How to setup the chat for your live stream"
-msgstr ""
+msgstr "Com configurar el xat per a les vostres emissions en directe"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/_index.md
 #, no-wrap
 msgid "For streamers"
-msgstr ""
+msgstr "Per a streamers"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation delay"
-msgstr ""
+msgstr "Retard de moderació del connector peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "Moderation delay"
-msgstr ""
+msgstr "Retard de moderació"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -4542,92 +4551,128 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Introduction"
-msgstr ""
+msgstr "Introducció"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants."
 msgstr ""
+"Com a streamer podeu optar per aplicar un retard als missatges del xat, per "
+"donar temps a la moderació perquè esborri missatges abans que els altres "
+"participants els llegeixin."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "When this feature is enabled, moderators will see all messages without any delay.  Chat participants won't see that their own messages are delayed."
 msgstr ""
+"Quan aquesta funció està activada la moderació veu tots els missatges sense "
+"demora. La resta de participants del xat no veuran que els seus propis "
+"missatges es retarden."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Please note that messages sent by moderators will also be delayed, to avoid them to respond to messages that are not even visible by other participants."
 msgstr ""
+"Tingueu en compte que els missatges enviats per la moderació també es "
+"retardaran, per evitar que respongui a missatges que encara no són visibles "
+"per als altres participants."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "Moderation delay option"
-msgstr ""
+msgstr "Opció de retard de moderació"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
 msgstr ""
+"A la [pàgina de configuració del canal](/peertube-plugin-livechat/ca/"
+"documentation/user/streamers/channel), podeu establir un valor per a l'opció "
+"«{{% livechat_label moderation_delay %}}»:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "![Screenshot of the channel option form, with a field to configure the moderation delay.](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px \"Channel configuration / Moderation delay\")"
 msgstr ""
+"![Captura de pantalla del formulari d'opció del canal, amb un camp per "
+"configurar el retard de moderació.](/peertube-plugin-livechat/images/"
+"moderation_delay_channel_option.png?classes=shadow,border&height=400px "
+"\"Configuració del canal / Retard de moderació\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "This value will apply as a default value for all your channel's chatrooms."
 msgstr ""
+"Aquest valor s'aplicarà com a predeterminat a totes les sales de xat del "
+"vostre canal."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "Setting the value to `0` will disable the feature."
-msgstr ""
+msgstr "El valor `0` desactiva la funció."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Setting the value to a positive integer will set the delay, in seconds, to apply to messages.  Please avoid setting the value too high.  Ideally it should not exceed a few seconds (4 or 5 seconds for example)."
 msgstr ""
+"Establir aquest valor en un nombre enter positiu us permet definir el "
+"retard, en segons, per aplicar als missatges. Eviteu configurar el valor "
+"massa alt. Idealment, no hauria de superar uns quants segons (4 ó 5 segons "
+"per exemple)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the moderation delay value in the configuration form."
 msgstr ""
+"Per modificar el valor d'una sala ja existent, només cal que obriu el menú "
+"de «configuració» de la sala (a la part superior de la finestra de xat) i "
+"modifiqueu el valor del període de moderació al formulari de configuració."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants.  However, messages sent after they joined will be delayed correctly."
 msgstr ""
+"Actualment aquesta funció té un error conegut: els usuaris que s'uneixin al "
+"xat rebran tots els missatges, fins i tot els que encara estiguin pendents "
+"per als altres participants. Tanmateix, els missatges enviats després d"
+"'haver-se unit al xat es retardaran correctament."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "In the chat"
-msgstr ""
+msgstr "Al xat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime."
 msgstr ""
+"Com a moderador/a, veureu el temps restant (en segons) abans que s'emeti el "
+"missatge, just al costat de la marca de temps del missatge."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "![Screenshot of a chat message. A timer is displayed next to the message datetime. The timer is in seconds.](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border \"Moderation delay timer\")"
 msgstr ""
+"![Captura de pantalla d'un missatge de xat. Es mostra un temporitzador al "
+"costat de la data i hora del missatge. El temporitzador és en segons"
+".](/peertube-plugin-livechat/images/"
+"moderation_delay_timer.png?classes=shadow,border \"Temporitzador de retard "
+"de moderació\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advanced moderation features"
-msgstr ""
+msgstr "Funcions de moderació avançades del connector peertube-plugin-livechat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "This section is still incomplete."
-msgstr ""
+msgstr "Aquesta secció encara està incompleta."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -4636,140 +4681,210 @@ msgid ""
 "This page describes the behaviour of livechat versions >= 10.0.0.\n"
 "There were some changes in the way we manage access rights for Peertube administrators and moderators.\n"
 msgstr ""
+"Aquesta pàgina descriu el comportament de les versions de livechat >= 10.0.0."
+"\n"
+"Hi ha hagut alguns canvis en la manera com gestiona els drets d'accés "
+"l'administració i la moderació de Peertube.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "The chat bot"
-msgstr ""
+msgstr "El bot de xat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
 msgstr ""
+"Podeu utilitzar un bot de xat, que us ajudarà amb la moderació. Consulteu la "
+"[documentació del bot de xat](/peertube-plugin-livechat/ca/documentation/"
+"user/streamers/bot) per obtenir més informació."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Accessing moderation tools"
-msgstr ""
+msgstr "Accedint a les eines de moderació"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat."
 msgstr ""
+"Podeu accedir a la configuració de la sala i a les eines de moderació "
+"mitjançant el [menú desplegable del xat](/peertube-plugin-livechat/ca/"
+"documentation/user/viewers) a la part superior dreta."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "The video owner will be owner of the chat room.  This means they can configure the room, delete it, promote other users as admins, ..."
 msgstr ""
+"L'am@ del vídeo serà l'am@ de la sala de xat. Això vol dir que pot "
+"configurar la sala, eliminar-la, promocionar altres comptes a "
+"l'administració…"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
 msgstr ""
+"Des de la versió 10.0.0 del livechat, els/les membres de l'administració i "
+"moderació de la instància de Peertube no tenen drets específics per defecte "
+"a les sales. Tanmateix, tenen un botó especial disponible a la part superior "
+"del xat: «{{% livechat_label promote %}}“. En fer clic en aquest botó "
+"tindran accés com a propietari/a a la sala."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
 msgstr ""
+"Podeu utilitzar les [ordres de moderació de ConverseJS](https://conversejs."
+"org/docs/html/features.html#moderating-chatrooms) per moderar la sala. Quan "
+"obriu la sala de xat a pantalla completa apareix un menú amb ordres "
+"dedicades a la part superior dreta."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat."
 msgstr ""
+"Podeu evitar que anònims/es enviïn missatges. En aqueix cas només els "
+"comptes registrats podran parlar al xat."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox."
 msgstr ""
+"Per activar o desactivar aquesta funció, utilitzeu el [menú desplegable de "
+"xat](/peertube-plugin-livechat/ca/documentation/user/viewers) i, a "
+"continuació, obriu el menú «configurar». Al formulari trobareu una casella "
+"de selecció «{{% livechat_label "
+"livechat_configuration_channel_mute_anonymous_label %}}»."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "![Screenshot of the room configuration form. There is a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox.](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px \"Room configuration / Mute anonymous users\")"
 msgstr ""
+"![Captura de pantalla del formulari de configuració de la sala. Hi ha una "
+"casella de selecció \"{{% livechat_label "
+"livechat_configuration_channel_mute_anonymous_label %}}\".](/peertube-"
+"plugin-livechat/images/"
+"configure_mute_anonymous.png?classes=shadow,border&height=400px "
+"\"Configuració de la sala / Silenciar anònims/es\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Anonymous users won't have the message field, and will see following prompt: \"{{% livechat_label muted_anonymous_message %}}\""
 msgstr ""
+"Els/les anònims/es no tindran el camp de missatge i veuran el següent "
+"missatge: «{{% livechat_label muted_anonymous_message %}}»"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "![Screenshot of a chat session. The current user has no message field. There is a message: \"{{% livechat_label muted_anonymous_message %}}\"](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px \"Room configuration / Muted anonymous users\")"
 msgstr ""
+"![Captura de pantalla d'una sessió de xat. L'usuari/a actual no té cap camp "
+"de missatge. Hi ha un missatge: \"{{% livechat_label muted_anonymous_message "
+"%}}\"](/peertube-plugin-livechat/images/"
+"anonymous_muted.png?classes=shadow,border&height=400px \"Configuració de la "
+"sala / Anònims/es silenciats/des\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "When this feature is enabled, anonymous users will be assigned the \"visitor\" role.  You can change their role to \"participant\" if you want to allow some of them to talk."
 msgstr ""
+"Quan aquesta funció està habilitada, els/les anònims/es se'ls assigna la "
+"funció de «visitant». Podeu canviar llur rol a «participant» si voleu "
+"permetre que alguns d'ells parlin."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "If you change the room configuration, all anonymous users will be muted or unmuted."
 msgstr ""
+"Si canvieu la configuració de la sala, els/les anònims/es seran silenciats/"
+"des o tornaran a poder parlar."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel)."
 msgstr ""
+"Podeu triar activar o desactivar aquesta funció per a sales de xat noves a "
+"la [pàgina de configuració del canal](/peertube-plugin-livechat/ca/"
+"documentation/user/streamers/channel)."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Roles and affiliations"
-msgstr ""
+msgstr "Rols i afiliacions"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "There are several roles that can be assignated to users in chat rooms: owner, moderators, member, ..."
 msgstr ""
+"Hi ha diferents rols que es poden assignar a les persones a les sales de xat:"
+" propietària, moderadora, membre…"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can promote users as moderators, if you need some help."
-msgstr ""
+msgstr "Si necessiteu ajuda podeu promocionar usuaris/es a moderadors/es."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants."
 msgstr ""
+"És possible anonimitzar les accions de moderació per tal d'evitar revelar "
+"qui està bandejant/expulsant… participants."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
 msgstr ""
+"Per activar o desactivar aquesta funció, utilitzeu el [menú desplegable de "
+"xat](/peertube-plugin-livechat/ca/documentation/user/viewers) i, a "
+"continuació, obriu el menú «configurar». Al formulari trobareu una casella "
+"de selecció «{{% livechat_label "
+"livechat_configuration_channel_anonymize_moderation_label %}}»."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Participant message history search"
-msgstr ""
+msgstr "Cerca l'historial de missatges de participants"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "As a room admin or owner, you can search all messages sent by a given participant."
 msgstr ""
+"Com a administrador/a o propietari/a de la sala, podeu cercar tots els "
+"missatges enviats per un/a participant determinat/da."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "To do so, you have several ways:"
-msgstr ""
+msgstr "Per fer-ho teniu a la vostra disposició diverses possibilitats:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides participants in the sidebar"
 msgstr ""
+"utilitzeu l'acció «{{% livechat_label search_occupant_message %}}» al menú "
+"desplegable al costat dels/les participants a la barra lateral"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides chat messages"
 msgstr ""
+"utilitzant l'acció «{{% livechat_label search_occupant_message %}}» al menú "
+"desplegable al costat dels missatges de xat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "![Screenshot of a chat session. The moderator has open the message menu, and there is a \"{{% livechat_label search_occupant_message %}}\" button.](/peertube-plugin-livechat/images/message_search.png?classes=shadow,border&height=200px \"Message history search\")"
 msgstr ""
+"![Captura de pantalla d'una sessió de xat. La moderació ha obert el menú de "
+"missatges i hi ha un botó \"{{% livechat_label search_occupant_message "
+"%}}\".](/peertube-plugin-livechat/images/"
+"message_search.png?classes=shadow,border&height=200px \"Cerca de l'historial "
+"de missatges\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -4777,145 +4892,195 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "To have more space and better readability, open the chat in full-page mode."
 msgstr ""
+"Per tindre més espai i una millor llegibilitat obriu el xat en mode de "
+"pàgina completa."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "In the search results, there are several informations that are shown at the right of the participant nickname:"
 msgstr ""
+"Als resultats de la cerca es mostren diverses informacions a la dreta del "
+"sobrenom de la persona participant:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "if the current nickname is different than the nickname when the participant has sent the message, the original nickname will be shown"
 msgstr ""
+"si l'àlies actual és diferent de l'àlies utilitzat quan el/la participant va "
+"enviar el missatge, es mostrarà l'àlies original"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "you will see the [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) of the participant"
 msgstr ""
+"veureu el [JID (Jabber ID)](https://xmpp.org/extensions/xep-0029.html) de la "
+"persona participant"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "you will also see the [occupant-id](https://xmpp.org/extensions/xep-0421.html) of the participant"
 msgstr ""
+"també veureu l'[ocupant-id](https://xmpp.org/extensions/xep-0421.html) de la "
+"persona participant"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "The search result will also include all messages related to participants who had the same nickname.  You can differenciate them by comparing [JID](https://xmpp.org/extensions/xep-0029.html) and [occupant-id](https://xmpp.org/extensions/xep-0421.html)."
 msgstr ""
+"El resultat de la cerca també inclourà tots els missatges de participants "
+"que tenien el mateix àlies. Podeu diferenciar-los comparant el "
+"[JID](https://xmpp.org/extensions/xep-0029.html) i l'[ocupant-"
+"id](https://xmpp.org/extensions/xep-0421.html)."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Delete room content"
-msgstr ""
+msgstr "Suprimir contingut de les sales"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can delete old rooms: join the room, and use the menu on the top to destroy the room."
 msgstr ""
+"Podeu suprimir sales antigues: uneix-vos a la sala i utilitzeu el menú de la "
+"part superior per destruir la sala."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Instance moderation"
-msgstr ""
+msgstr "Moderació de la instància"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly."
 msgstr ""
+"Com a moderador/a o administrador/a de la instància de PeerTube probablement "
+"voldreu comprovar que els/les participants no presenten un comportament "
+"problemàtic."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms»."
 msgstr ""
+"Podeu llistar totes les sales de xat existents: a la pantalla de "
+"configuració del connector, hi ha un botó «Llistar sales»."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "From there, you can also promote yourself as room moderator by using the \"{{% livechat_label promote %}}\" button on the right."
 msgstr ""
+"Des d'aquí també podeu promocionar-vos com a moderador/a del canal "
+"mitjançant el botó «{{% livechat_label promote %}}» de la dreta."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation notes"
-msgstr ""
+msgstr "Notes de moderació del connector peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Moderation notes"
-msgstr ""
+msgstr "Notes de moderació"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants.  Every room's admins have access to these notes, so they can edit them collaboratively."
 msgstr ""
+"El connector livechat inclou una aplicació de notes de moderació: podeu "
+"escriure algunes notes, que es podrien associar als/les participants del "
+"xat. L'equip dadministració de cada sala té accés a aquestes notes, de "
+"manera que pot editar-les de manera col·laborativa."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "You can for example use this Application to:"
-msgstr ""
+msgstr "Per exemple, podeu utilitzar aquesta aplicació per:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "share some notes between moderators"
-msgstr ""
+msgstr "compartir algunes notes entre moderadors/es"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "take notes about participants that were kicked or caused troubles"
 msgstr ""
+"prendre notes sobre participants expulsats/des o que han causat problemes"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Using the Moderator Notes Application"
-msgstr ""
+msgstr "Ús de l'aplicació Notes de moderació"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Opening the Moderator Notes Application"
-msgstr ""
+msgstr "Obrint l'aplicació Notes de moderació"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "To open the Moderator Notes Application, there is a \"{{% livechat_label \"moderator_notes\" %}}\" button in the top chat menu:"
 msgstr ""
+"Per obrir l'aplicació Notes de moderació, hi ha un botó «{{% livechat_label "
+"\"moderator_notes\" %}}» al menú de xat superior:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
 msgstr ""
+"![Captura de pantalla d'un vídeo de PeerTube, amb el xat a la dreta. El menú "
+"superior del xat està obert, amb un botó «{{% livechat_label "
+"\"moderator_notes\" %}}».](/peertube-plugin-livechat/images/"
+"moderation_notes_open_app_video.png?classes=shadow,border&height=200px "
+"\"Obrir l'aplicació Notes de moderació\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
 msgstr ""
+"![Captura de pantalla d'un xat de Peertube, pantalla completa. S'obre el "
+"menú superior del xat, amb un botó «{{% livechat_label \"moderator_notes\" "
+"%}}».](/peertube-plugin-livechat/images/"
+"moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px "
+"\"Obrir l'aplicació Notes de moderació\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "Clicking this button will toggle the Application display:"
-msgstr ""
+msgstr "Si feu clic a aquest botó es canviarà la visualització de l'aplicació:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_video_1.png?classes=shadow,border&height=200px \"Moderator Notes Application\")"
 msgstr ""
+"![Captura de pantalla d'un vídeo de PeerTube, amb el xat a la dreta. "
+"L'aplicació Notes de moderació està oberta. Hi ha diverses notes, algunes "
+"d'elles estan associades a participants.](/peertube-plugin-livechat/images/"
+"moderator_notes_app_video_1.png?classes=shadow,border&height=200px "
+"\"Aplicació Notes de moderació\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube chat, fullscreen. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px \"Moderator Notes Application\")"
 msgstr ""
+"![Captura de pantalla d'un xat de PeerTube, pantalla completa. L'aplicació "
+"Notes de moderació està oberta. Hi ha diverses notes, algunes d'elles estan "
+"associades a participants.](/peertube-plugin-livechat/images/"
+"moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px "
+"\"Aplicació Notes de moderació\")"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -4923,28 +5088,34 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Access rights"
-msgstr ""
+msgstr "Drets d'accés"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "Every room's admins have access to this Application (read and write access)."
 msgstr ""
+"L'administració de cada sala té accés a aquesta aplicació (de lectura i "
+"escriptura)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "When you promote someone as room admin or owner, they gets instant access to this Application.  When you remove admin or owner rights to someone, they instantly lose access to this Application."
 msgstr ""
+"Quan promocioneu algú a administrador/a o propietari/a de la sala, obté "
+"accés instantani a aquesta aplicació. Quan suprimiu els drets d'"
+"administrador/a o de propietari/a d'algú, perd instantàniament l'accés a "
+"aquesta aplicació."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Scope"
-msgstr ""
+msgstr "Àmbit"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "Notes are only available in the room in which you have created them."
-msgstr ""
+msgstr "Les notes només estan disponibles a la sala on les heu creades."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
