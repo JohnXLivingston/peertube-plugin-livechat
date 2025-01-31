@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-31 17:37+0000\n"
+"PO-Revision-Date: 2025-02-01 08:09+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -639,7 +639,7 @@ msgstr ""
 msgid "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page."
 msgstr ""
 "La documentació es tradueix mitjançant Weblate (vegeu [documentació de "
-"traducció](/peertube-plugin-livechat/en/contributing/translate/)). Per fer-"
+"traducció](/peertube-plugin-livechat/ca/contributing/translate/)). Per fer-"
 "ho, utilitzem l'eina [po4a](https://po4a.org), com veurem més endavant en "
 "aquesta pàgina."
 
@@ -764,7 +764,7 @@ msgid "You can use the `livechat_label` short code to use application strings.  
 msgstr ""
 "Podeu utilitzar el codi curt `livechat_label` per utilitzar cadenes de "
 "l'aplicació. Vegeu aquí: [Traducció de la documentació](/peertube-"
-"plugin-livechat/contributing/translate/#documentation-translation)."
+"plugin-livechat/ca/contributing/translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -772,7 +772,7 @@ msgid "It is possible to prevent a file from beeing translating, using `livechat
 msgstr ""
 "És possible evitar que es tradueixi un fitxer utilitzant "
 "`livechatnotranslation: true` a la secció Yaml Font Matter. Vegeu aquí: ["
-"Traducció de la documentació](/peertube-plugin-livechat/contributing/"
+"Traducció de la documentació](/peertube-plugin-livechat/ca/contributing/"
 "translate/#documentation-translation)."
 
 #. type: Plain text
@@ -1200,7 +1200,7 @@ msgstr "Recomanacions genèriques"
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
 msgstr ""
 "Si us plau sigueu inclusius/ves en les vostres paraules i respecteu el [codi "
-"de conducta](/peertube-plugin-livechat/contributing/codeofconduct/)."
+"de conducta](/peertube-plugin-livechat/ca/contributing/codeofconduct/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
@@ -2479,7 +2479,7 @@ msgstr "Altres mètodes d'autenticació s'implementaran en el futur."
 #: support/documentation/content/en/documentation/admin/_index.md
 #, no-wrap
 msgid "Plugin Peertube Livechat administration"
-msgstr "Administració del connector PeerTube Livechat"
+msgstr "Administració del connector de PeerTube Livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/_index.md
@@ -2612,7 +2612,7 @@ msgstr "Exemples"
 msgid "Don't hesitate to share your rules.  To do so, you can for example edit this [page](/peertube-plugin-livechat/contributing/document/#write-documentation)."
 msgstr ""
 "No dubteu a compartir les vostres normes. Per fer-ho, podeu, per exemple, "
-"editar aquesta [pàgina](/peertube-plugin-livechat/contributing/document/"
+"editar aquesta [pàgina](/peertube-plugin-livechat/ca/contributing/document/"
 "#write-documentation)."
 
 #. type: Yaml Front Matter Hash Value: description
@@ -2872,8 +2872,8 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Legacy avatar example](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
 msgstr ""
-"![Exemple d'avatar Legacy](/peertube-plugin-livechat/images/"
-"avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
+"![Exemple d'avatar «llegat»](/peertube-plugin-livechat/images/"
+"avatar_legacy.jpg?classes=shadow,border&height=40px \"Llegat\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -3159,7 +3159,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat installation guide"
-msgstr "Instal·lació el connector peertube-plugin-livechat"
+msgstr "Instal·lació el connector Livechat de PeerTube"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/_index.md
@@ -3373,7 +3373,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/_index.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat user documentation"
-msgstr "Documentació d'usuari per al connector peertube-plugin-livechat"
+msgstr "Documentació d'usuari per al connector Livechat de PeerTube"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/_index.md
@@ -3417,7 +3417,7 @@ msgstr "Podeu incloure fàcilment el xat al vostre flux de vídeo."
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of a Peertube live, replay, with the chat included at the bottom of the video stream.](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px \"Embeding the chat in a live stream\")"
 msgstr ""
-"![Captura de pantalla d'un Peertube en directe, reproducció, amb el xat "
+"![Captura de pantalla d'un PeerTube en directe, reproducció, amb el xat "
 "inclòs a la part inferior del flux de vídeo.](/peertube-plugin-livechat/"
 "images/embed_chat_in_livestream.png?classes=shadow,border&height=200px "
 "\"Incrustar el xat en un directe\")"
@@ -3435,7 +3435,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Check the \"{{% livechat_label read_only %}}\" checkbox in the modal."
 msgstr ""
-"Marqueu la casella de selecció «{{% livechat_label read_only %}}» al modal."
+"Marqueu la casella de selecció «{{% livechat_label read_only %}}» a la "
+"finestra modal."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3516,7 +3517,7 @@ msgid "You can use OBS \"Custom browser docks\" to integrate the chat in your OB
 msgstr ""
 "Podeu utilitzar els «acoblaments de navegador personalitzats» d'OBS per "
 "integrar el xat al vostre OBS durant l'emissió en directe. El connector de "
-"livechat ofereix la possibilitat de crear una fitxa a llarg termini que us "
+"Livechat ofereix la possibilitat de crear una fitxa a llarg termini que us "
 "pugui identificar automàticament per unir-vos al xat, de manera que no cal "
 "que introduïu la vostra contrasenya a OBS."
 
@@ -3577,7 +3578,7 @@ msgstr ""
 msgid "![Screenshot of OBS with a new dock including the chat. The user is logged in with their Peertube account, and can chat directly from OBS.](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px \"OBS - Dock\")"
 msgstr ""
 "![Captura de pantalla d'OBS amb un nou acoblament inclòs el xat. La persona "
-"ha iniciat sessió amb el seu compte de Peertube i pot xatejar directament "
+"ha iniciat sessió amb el seu compte de PeerTube i pot xatejar directament "
 "des d'OBS.](/peertube-plugin-livechat/images/"
 "obs_dock.png?classes=shadow,border&height=200px \"OBS - Acoblament\")"
 
@@ -3795,7 +3796,7 @@ msgstr ""
 "A nivell d'instància l'administració pot triar si les sales de xat són "
 "úniques per vídeo o si seran úniques per canal. Poseu-vos en contacte amb "
 "l'administració de la vostra instància per obtenir més informació sobre com "
-"es configura el connector livechat."
+"es configura el connector Livechat."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -4172,7 +4173,7 @@ msgstr "Bot de xat"
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance's admins."
 msgstr ""
-"Aquesta funció s'inclou a la versió 8.0.0 del connector de livechat i "
+"Aquesta funció s'inclou a la versió 8.0.0 del connector Livechat i "
 "l'administració de la instància la pot desactivar."
 
 #. type: Plain text
@@ -4377,7 +4378,7 @@ msgstr "Noves funcions properament…"
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat custom emojis"
-msgstr "Emojis personalitzats del connector peertube-plugin-livechat"
+msgstr "Emojis personalitzats del connector Livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -4477,7 +4478,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat emojis only mode"
-msgstr "Connector peertube-plugin-livechat en mode només emojis"
+msgstr "Connector Livechat en mode només emojis"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
@@ -4535,7 +4536,7 @@ msgstr "Per a streamers"
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation delay"
-msgstr "Retard de moderació del connector peertube-plugin-livechat"
+msgstr "Retard de moderació del connector Livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -4667,7 +4668,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advanced moderation features"
-msgstr "Funcions de moderació avançades del connector peertube-plugin-livechat"
+msgstr "Funcions de moderació avançades del connector Livechat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -4681,10 +4682,10 @@ msgid ""
 "This page describes the behaviour of livechat versions >= 10.0.0.\n"
 "There were some changes in the way we manage access rights for Peertube administrators and moderators.\n"
 msgstr ""
-"Aquesta pàgina descriu el comportament de les versions de livechat >= 10.0.0."
+"Aquesta pàgina descriu el comportament de les versions de Livechat >= 10.0.0."
 "\n"
 "Hi ha hagut alguns canvis en la manera com gestiona els drets d'accés "
-"l'administració i la moderació de Peertube.\n"
+"l'administració i la moderació de PeerTube.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -4726,8 +4727,8 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
 msgstr ""
-"Des de la versió 10.0.0 del livechat, els/les membres de l'administració i "
-"moderació de la instància de Peertube no tenen drets específics per defecte "
+"Des de la versió 10.0.0 de Livechat, els/les membres de l'administració i "
+"moderació de la instància de PeerTube no tenen drets específics per defecte "
 "a les sales. Tanmateix, tenen un botó especial disponible a la part superior "
 "del xat: «{{% livechat_label promote %}}“. En fer clic en aquest botó "
 "tindran accés com a propietari/a a la sala."
@@ -4979,7 +4980,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation notes"
-msgstr "Notes de moderació del connector peertube-plugin-livechat"
+msgstr "Notes de moderació del connector Livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -4991,9 +4992,9 @@ msgstr "Notes de moderació"
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants.  Every room's admins have access to these notes, so they can edit them collaboratively."
 msgstr ""
-"El connector livechat inclou una aplicació de notes de moderació: podeu "
+"El connector Livechat inclou una aplicació de notes de moderació: podeu "
 "escriure algunes notes, que es podrien associar als/les participants del "
-"xat. L'equip dadministració de cada sala té accés a aquestes notes, de "
+"xat. L'equip d'administració de cada sala té accés a aquestes notes, de "
 "manera que pot editar-les de manera col·laborativa."
 
 #. type: Plain text
@@ -5051,7 +5052,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
 msgstr ""
-"![Captura de pantalla d'un xat de Peertube, pantalla completa. S'obre el "
+"![Captura de pantalla d'un xat de PeerTube, pantalla completa. S'obre el "
 "menú superior del xat, amb un botó «{{% livechat_label \"moderator_notes\" "
 "%}}».](/peertube-plugin-livechat/images/"
 "moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px "
@@ -5474,7 +5475,7 @@ msgstr ""
 msgid "For viewers using XMPP clients or outdated livechat plugin versions, the banner will not be visible.  But they will see the message in the chat and will be able to vote by sending messages with their choices."
 msgstr ""
 "Per a les persones que utilitzen clients XMPP o versions obsoletes del "
-"connector livechat el bàner no serà visible. Però veuran el missatge al xat "
+"connector Livechat el bàner no serà visible. Però veuran el missatge al xat "
 "i podran votar enviant missatges amb les seves eleccions."
 
 #. type: Plain text
@@ -5506,7 +5507,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat slow mode"
-msgstr "Mode lent del connector peertube-plugin-livechat"
+msgstr "Mode lent del connector Livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -5633,7 +5634,7 @@ msgstr "Tasques / llistes de coses a fer"
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "The livechat plugin includes a Task Application: a kind of \"to-do list\" feature where you can create task lists and add tasks to them.  Every room's admins have access to these tasks, so you can edit them collaboratively."
 msgstr ""
-"El connector livechat inclou una aplicació de tasques: una mena de «llista "
+"El connector Livechat inclou una aplicació de tasques: una mena de «llista "
 "de tasques pendents» on podeu crear llistes de tasques pendents i afegir-hi "
 "tasques. L'administració de cada sala de xat té accés a aquestes tasques, la "
 "qual cosa els permet editar-les de manera col·laborativa."
@@ -6142,7 +6143,7 @@ msgid "If you are watching a live on an instance on which you have no account, b
 msgstr ""
 "Si esteu veient una emissió en directe en una instància en què no teniu cap "
 "compte, però teniu un compte de PeerTube en una altra instància: sempre que "
-"el connector livechat estigui instal·lat en ambdues instàncies podeu unir-"
+"el connector Livechat estigui instal·lat en ambdues instàncies podeu unir-"
 "vos al xat amb el vostre compte . Per fer-ho obriu el vídeo a la vostra "
 "instància (per exemple, podeu copiar/enganxar l'URL del vídeo al camp de "
 "cerca de la vostra instància)."
@@ -6160,7 +6161,7 @@ msgstr ""
 "Si teniu un compte de PeerTube, però no a la instància actual, hi ha un botó "
 "«{{% livechat_label login_using_external_account %}}». Aquest botó obrirà "
 "una finestra de diàleg on podeu introduir l'URL de la vostra instància. Un "
-"cop fet es comprovarà si el connector livechat està disponible a la "
+"cop fet es comprovarà si el connector Livechat està disponible a la "
 "instància remota i si el vídeo hi està disponible. En aquest cas se us "
 "redirigirà al vídeo de la instància remota."
 
@@ -6378,13 +6379,13 @@ msgstr ""
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "Peertube plugin livechat documentation"
-msgstr "Documentació del connector de PeerTube livechat"
+msgstr "Documentació del connector Livechat de PeerTube"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "Peertube livechat"
-msgstr "PeerTube livechat"
+msgstr "Livechat de PeerTube"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
@@ -6398,7 +6399,8 @@ msgstr ""
 #: support/documentation/content/en/_index.md
 msgid "Welcome the **Peertube Livechat Plugin** documentation."
 msgstr ""
-"Us donem la benvinguda a la documentació de **PeerTube Livechat Plugin**."
+"Us donem la benvinguda a la documentació del **Connector Livechat de "
+"PeerTube**."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
@@ -6429,7 +6431,7 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "What is the livechat plugin?"
-msgstr "Què és el connector livechat?"
+msgstr "Què és el connector Livechat?"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -6487,7 +6489,7 @@ msgid "As a Peertube administrator, you can setup this plugin on your instance s
 msgstr ""
 "Com a administrador/a de PeerTube podeu instal·lar aquest connector a la "
 "vostra instància simplement utilitzant la botiga de complements inclosa a la "
-"interfície d'administració. Cerqueu «livechat» i feu clic a «instal·lar»: i "
+"interfície d'administració. Cerqueu «livechat» i feu clic a «Instal·lar»: i "
 "ja ho teniu!"
 
 #. type: Plain text
@@ -6496,15 +6498,15 @@ msgid "![Screenshot of Peertube plugins admin page. The search fields contains \
 msgstr ""
 "![Captura de pantalla de la pàgina d'administració dels connectors de "
 "PeerTube. Els camps de cerca contenen «livechat» i els resultats de la cerca "
-"mostren el connector «livechat».](/peertube-plugin-livechat/images/"
+"mostren el connector Livechat.](/peertube-plugin-livechat/images/"
 "installation.png?classes=shadow,border&height=200px \"Instal·lació de "
-"«livechat»\")"
+"Livechat\")"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Livechat capabilities"
-msgstr "Possibilitats de «livechat»"
+msgstr "Possibilitats de Livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -6544,15 +6546,15 @@ msgid "Some times, you have to protect your community from bad people.  As an in
 msgstr ""
 "De vegades heu de protegir la vostra comunitat de la gent dolenta. Com a "
 "administrador/a de la instància podeu optar per no permetre la federació del "
-"connector «livechat». Si algú d'una altra instància es comporta malament, "
-"els/les streamers, la moderació i l'administració tenen la facultat de "
-"bandejar o silenciar."
+"connector Livechat. Si algú d'una altra instància es comporta malament, els/"
+"les streamers, la moderació i l'administració tenen la facultat de bandejar "
+"o silenciar."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).  Check its documentation for more information."
 msgstr ""
-"Aquest connector ve amb un [bot de xat](/peertube-plugin-livechat/fr/"
+"Aquest connector ve amb un [bot de xat](/peertube-plugin-livechat/ca/"
 "documentation/user/streamers/bot/) integrat. Consulteu la documentació per a "
 "més informació."
 
