@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-31 02:18+0000\n"
+"PO-Revision-Date: 2025-01-31 07:16+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -5987,26 +5987,41 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Peertube instance's admin can also set global terms & conditions.  If so, these terms will be shown above your channel's terms."
 msgstr ""
+"L'administració de la instància de PeerTube també pot establir condicions "
+"d'ús. Si ho fa aquestes condicions es mostraran a sobre de les del vostre "
+"canal."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Anonymous users will only see the terms & conditions once they have chosen their nickname (in other words: once they are able to talk)."
 msgstr ""
+"Les persones anònimes només veuran les condicions d'ús un cop hagin escollit "
+"el seu àlies (és a dir, un cop puguin parlar)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "You can change the terms content at any time, it will be instantly updated for all viewers."
 msgstr ""
+"Podeu canviar el contingut de les condicions en qualsevol moment, "
+"s'actualitzarà a l'instant per a totes les persones."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "Users can hide the terms & conditions.  When doing so, terms won't be shown again, unless you change the content."
 msgstr ""
+"Es poden ocultar les condicions d'ús. En aquest cas ja no es mostraran, tret "
+"que modifiqueu el seu contingut."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, coming from a \"Peertube\" account.  When you update terms, they will receive a new message with the update terms content."
 msgstr ""
+"Si la vostra instància de PeerTube us permet unir-vos al xat amb [clients "
+"XMPP](/peertube-plugin-livechat/ca/documentation/admin/advanced/xmpp_clients/"
+"), les persones que utilitzin aquests clients veuran les condicions com a "
+"missatges de xat procedents d'un compte «PeerTube». Quan actualitzeu les "
+"condicions, rebran un missatge nou amb el contingut actualitzat de les "
+"condicions del servei."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
