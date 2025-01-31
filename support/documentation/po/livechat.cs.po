@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2024-12-22 02:09+0000\n"
-"Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
+"PO-Revision-Date: 2025-01-31 02:18+0000\n"
+"Last-Translator: Fjuro <fjuro@alius.cz>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.9.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -628,7 +628,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Add a new language"
-msgstr "Přidání nového jazyka"
+msgstr "Přidat nový jazyk"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -1101,6 +1101,13 @@ msgid ""
 "  livechatnotranslation: true\n"
 "  ---\n"
 msgstr ""
+"  ---\n"
+"  title: \"Třetí strana\"\n"
+"  description: \"Zobrazení livechatu pomocí softwaru třetí strany.\"\n"
+"  weight: 20\n"
+"  chapter: false\n"
+"  livechatnotranslation: true\n"
+"  ---\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1173,192 +1180,251 @@ msgstr "Kredity zásuvných modulů"
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Credits"
-msgstr ""
+msgstr "Kredity"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies."
 msgstr ""
+"Soubory [package.json](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github."
+"com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) a "
+"[LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
+"main/LICENSE) obsahují licenční informace pro tento software a jeho "
+"závislosti."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/)."
 msgstr ""
+"Zásuvný modul spravuje [John Livingston](https://www.john-livingston.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
 msgstr ""
+"Děkujeme Davidu Revoyovi za jeho práci na maskotovi Peertube, "
+"[Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  Návrh postavy "
+"je pod licencí CC-By a soubory SVG použité k vytvoření některých log a "
+"avatarů v tomto pluginu jsou pod licencí GPLv3.0.  Soubory PNG jsou pod "
+"licencemi CC-By a pocházejí z [online generátoru avatarů Sepia](https://www."
+"peppercarrot.com/extras/html/2023_peertube-generator/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org)."
 msgstr ""
+"Děkujeme [Framasoft](https://framasoft.org) za umožnění "
+"[Peertube](https://joinpeertube.org/), za finanční podporu a za hostování "
+"překladů projektu na jejich [Weblate instance](https://weblate.framasoft."
+"org)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [ritimo](https://www.ritimo.org/) for the financial support."
-msgstr ""
+msgstr "Děkujeme [ritimo](https://www.ritimo.org/) za finanční podporu."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support."
 msgstr ""
+"Za finanční podporu děkujeme společnostem [Code Lutin](https://www.codelutin."
+"com/) a [Rétribution Copie Publique](https://copiepublique.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
 msgstr ""
+"Děkujeme [NlNet](https://nlnet.nl/) a [NGI0 Entrust fund](https://nlnet.nl/"
+"entrust/) za finanční podporu."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Octopuce](https://www.octopuce.fr/) for the financial support."
-msgstr ""
+msgstr "Děkujeme [Octopuce](https://www.octopuce.fr/) za finanční podporu."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
 msgstr ""
+"A děkuji všem individuálním přispěvatelům, kteří přispěli prostřednictvím mé "
+"[liberapay stránky](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Some advanced features"
-msgstr ""
+msgstr "Některé pokročilé funkce"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Advanced usage"
-msgstr ""
+msgstr "Pokročilé používání"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge to bridge with other chats"
-msgstr ""
+msgstr "Používání služby Matterbridge k propojení s jinými chaty"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Using Matterbridge"
-msgstr ""
+msgstr "Používání Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The following is based on a tutorial to use Matterbridge with the plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
 msgstr ""
+"Následující text vychází z návodu pro použití zásuvného modulu Matterbridge:["
+"Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/"
+"-/blob/master/documentation/peertube.md)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Requirements"
-msgstr ""
+msgstr "Požadavky"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 or later."
 msgstr ""
+"[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-"
+"plugin-livechat) verze 3.2.0 nebo novější."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 or later."
 msgstr ""
+"[Matterbridge](https://github.com/42wim/matterbridge) verze 1.22.4 nebo "
+"novější."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The easiest is if the PeerTube instance and Matterbridge run on the same server."
 msgstr ""
+"Nejjednodušší je, pokud instance PeerTube a Matterbridge běží na stejném "
+"serveru."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Internal connections only (basic)"
-msgstr ""
+msgstr "Pouze interní připojení (základní)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You will need to enable `{{% livechat_label prosody_c2s_label %}}` in the livechat plugin settings."
 msgstr ""
+"V nastavení pluginu livechat je třeba povolit `{{% livechat_label "
+"prosody_c2s_label %}}`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This will allow localhost XMPP clients to connect to the Prosody XMPP server."
 msgstr ""
+"To umožní klientům XMPP na hostitelském serveru připojit se k serveru "
+"Prosody XMPP."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You may need to add some line to your `/etc/hosts`:"
-msgstr ""
+msgstr "Možná budete muset přidat nějaký řádek do `/etc/hosts`:"
 
 #. type: Fenced code block
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "127.0.0.1       anon.example.org room.example.org\n"
-msgstr ""
+msgstr "127.0.0.1       anon.example.org room.example.org\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
 msgstr ""
+"Nahraďte `example.org` skutečným názvem domény vaší instance. Poté můžete "
+"pokračovat v níže uvedené konfiguraci Matterbridge."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Allow external connections (advanced)"
-msgstr ""
+msgstr "Povolit externí připojení (pokročilé)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "By default, the internal Prosody XMPP server only listens on localhost (127.0.0.1)."
 msgstr ""
+"Ve výchozím nastavení interní server Prosody XMPP naslouchá pouze na serveru "
+"localhost (127.0.0.1)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
 msgstr ""
+"Ve verzích livechatu >= 10.1.0 byla přidána nová volba `Síťová rozhraní "
+"klienta a serveru`, která umožňuje tuto volbu změnit.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "It allows to add a list of IPs to listen on, coma separated (spaces will be stripped)."
 msgstr ""
+"Umožňuje přidat seznam IP adres pro poslech, oddělených čárkami (mezery "
+"budou odstraněny)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You can also use `*` to listen on all IPv4 interfaces, and `::` for all IPv6. Doing so allows external access to the client to server interface."
 msgstr ""
+"Můžete také použít `*` pro naslouchání na všech rozhraních IPv4 a `::` pro "
+"všechna rozhraní IPv6. Tímto způsobem umožníte externí přístup k rozhraní "
+"mezi klientem a serverem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Then you need to open the C2S port (by default `52822`, but check the plugin settings to get the current value) in your firewall so that it can be reached from the internet.  If you don't want to use C2S connections for anything else than your Matterbridge service, you should restrict access to this port to your Matterbridge server IP."
 msgstr ""
+"Pak je třeba otevřít port C2S (ve výchozím nastavení `52822`, ale aktuální "
+"hodnotu zjistíte v nastavení zásuvného modulu) ve firewallu, aby byl "
+"přístupný z internetu.  Pokud nechcete používat připojení C2S pro nic jiného "
+"než pro službu Matterbridge, měli byste omezit přístup k tomuto portu na IP "
+"adresu vašeho serveru Matterbridge."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You also need to add DNS records (A and AAAA) for `anon.example.org` and `room.example.org` (replace `example.org` by your actual domain name)."
 msgstr ""
+"Je také třeba přidat záznamy DNS (A a AAAA) pro `anon.example.org` a `room."
+"example.org` (`example.org` nahraďte skutečným názvem domény)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In case you are using a port other than `5222` (XMPP standard port) you also need to set the [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) to the correct port."
 msgstr ""
+"V případě, že používáte jiný port než `5222` (standardní port XMPP), musíte "
+"také nastavit [xmpp-client SRV record](https://prosody.im/doc/"
+"dns#srv_records) na správný port."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Configurating Matterbridge"
-msgstr ""
+msgstr "Konfigurace Matterbridge"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In the version 1.22.4, Matterbridge added support for XMPP anonymous connections needed to connect to the built-in prosody."
 msgstr ""
+"Ve verzi 1.22.4 přidal Matterbridge podporu anonymních připojení XMPP "
+"potřebných k připojení k vestavěnému prosodiu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "So in the TOML config file put:"
-msgstr ""
+msgstr "Do konfiguračního souboru TOML tedy vložte:"
 
 #. type: Fenced code block (TOML)
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1372,206 +1438,274 @@ msgid ""
 "RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
 "NoTLS=true\n"
 msgstr ""
+"[xmpp.mypeertube]\n"
+"Anonymous=true\n"
+"Server=\"anon.example.org:52822\"\n"
+"Muc=\"room.example.org\"\n"
+"Nick=\"Matterbridge\"\n"
+"RemoteNickFormat=\"[{PROTOCOL}] <{NICK}> \"\n"
+"NoTLS=true\n"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name."
-msgstr ""
+msgstr "Nahraďte `example.org` skutečným názvem domény vaší instance."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `52822` by the actual port if you changed it."
-msgstr ""
+msgstr "Nahraďte `52822` skutečným portem, pokud jste jej změnili."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "`mypeertube` can be replaced by another name."
-msgstr ""
+msgstr "`mypeertube` lze nahradit jiným názvem."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Using `peertube` as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification."
 msgstr ""
+"Použití `peertube` jako Nick zajistí vložení ikony PeerTube pro překryvné "
+"zprávy, lze také provést pomocí úpravy konfigurace překryvu."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The setting `NoTLS=true` allows connecting to a server with self-signed certificates."
 msgstr ""
+"Nastavení `NoTLS=true` umožňuje připojit se k serveru s certifikáty "
+"podepsanými samotným uživatelem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Now you can add this account to gateways and bridge specific live-chat channels."
 msgstr ""
+"Nyní můžete tento účet přidat k branám a přemostit konkrétní kanály živého "
+"chatu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This documentation use an anonymous account to connect the bridge to the chat.  But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account.  This is used for [OBS docks](/peertube-plugin-livechat/documentation/user/obs).  Using this feature for other purposes is not documented and not officially supported yet.  If you want to use it anyway, you can request a token by calling then `/plugins/livechat/router/api/auth/tokens` endpoint.  To get needed headers and request body, just check what happens when you generate a new token for OBS docks."
 msgstr ""
+"Tato dokumentace používá anonymní účet pro připojení bridge k chatu.  Od "
+"verze livechat v10.1.0 však existuje nový způsob generování dlouhodobého "
+"ověřovacího tokenu, který umožňuje připojení pomocí vašeho účtu.  To se "
+"používá pro [OBS doky](/peertube-plugin-livechat/dokumentace/uživatel/obs).  "
+"Použití této funkce pro jiné účely není zdokumentováno a zatím není "
+"oficiálně podporováno.  Pokud ji přesto chcete použít, můžete si vyžádat "
+"token zavoláním koncového bodu `/plugins/livechat/router/api/auth/tokens`.  "
+"Chcete-li získat potřebné hlavičky a tělo požadavku, stačí se podívat, co se "
+"děje při generování nového tokenu pro doky OBS."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Allow connections using XMPP clients"
-msgstr ""
+msgstr "Povolení připojení pomocí klientů XMPP"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "XMPP clients"
-msgstr ""
+msgstr "Klienti XMPP"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This chat module is based on the XMPP protocol, also known as Jabber.  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can for example be useful to facilitate moderation operations."
 msgstr ""
+"Tento chatovací modul je založen na protokolu XMPP, známém také jako "
+"Jabber.  Proto je možné se k chatům připojit pomocí [klientského softwaru "
+"XMPP](https://en.wikipedia.org/wiki/XMPP#Clients).  To může být užitečné "
+"například pro usnadnění moderátorských operací."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 msgstr ""
+"Uživatelskou dokumentaci související s těmito funkcemi naleznete na stránce ["
+"uživatelská dokumentace](/peertube-plugin-livechat/documentation/user/"
+"xmpp_clients/)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enabling these features requires configuration changes on the server, and on the DNS records.  It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills."
 msgstr ""
+"Povolení těchto funkcí vyžaduje změny konfigurace na serveru a v záznamech "
+"DNS.  To není možné konfigurovat pouze z rozhraní Peertube a vyžaduje to "
+"základní systémové některé základní systémové administrátorské dovednosti."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Login to your Peertube account"
-msgstr ""
+msgstr "Přihlášení k účtu Peertube"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "This feature is not yet available, and will come in a future version of the plugin."
 msgstr ""
+"Tato funkce zatím není k dispozici a objeví se v některé z budoucích verzí "
+"zásuvného modulu."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Connection using an external XMPP account"
-msgstr ""
+msgstr "Připojení pomocí externího účtu XMPP"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the [Prosody server](https://prosody.im) that this plugin uses internally."
 msgstr ""
+"Chcete-li tuto funkci povolit, musíte nastavit svůj server a záznamy DNS "
+"tak, aby klienti XMPP mohli najít [Prosody server](https://prosody.im), "
+"který tento zásuvný modul interně používá, a získat k němu přístup."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Plugin settings"
-msgstr ""
+msgstr "Nastavení zásuvného modulu"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this setting, new settings appear below."
 msgstr ""
+"Začněte tím, že přejdete do nastavení pluginu livechat své instance a "
+"povolíte nastavení \"Povolit připojení k místnosti pomocí externích účtů "
+"XMPP\".  Zaškrtnutím tohoto nastavení se níže zobrazí nová nastavení."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First of all, the \"Prosody server to server port\" field.  This one defaults to 5269, which is the standard port for this service.  You can however change to another port, if this is already in use on your server."
 msgstr ""
+"Především pole \"Prosody server to server port\".  To je ve výchozím "
+"nastavení 5269, což je standardní port pro tuto službu.  Můžete jej však "
+"změnit na jiný port, pokud je na vašem serveru již používán."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Next, the field \"Server to server network interfaces\" field allows you to specify which network interfaces the server should listen on.  The default value \"*, ::\" indicates to listen on all IP addresses.  You can change these values, if you wish to listen on only certain IP addresses.  The syntax is explained next to the setting."
 msgstr ""
+"V dalším poli \"Síťová rozhraní serveru\" můžete zadat, na kterých síťových "
+"rozhraních má server naslouchat.  Výchozí hodnota \"*, ::\" znamená, že se "
+"má naslouchat na všech IP adresách.  Pokud si přejete naslouchat pouze na "
+"určitých IP adresách, můžete tyto hodnoty změnit.  Syntaxe je vysvětlena "
+"vedle nastavení."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the \"Certificate folder\" setting, you can leave it empty.  In this case, the plugin will automatically generate self-signed certificates.  Some XMPP servers may refuse to connect, depending on their configuration.  In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.  It is up to you to generate and renew them.  See bellow for more information."
 msgstr ""
+"Nastavení \"Složka certifikátu\" můžete ponechat prázdné.  V takovém případě "
+"bude zásuvný modul automaticky generovat certifikáty podepsané vlastním "
+"podpisem.  Některé servery XMPP se mohou v závislosti na své konfiguraci "
+"odmítnout připojit.  V takovém případě zde můžete uvést cestu na serveru, do "
+"které je třeba umístit certifikáty, které má modul používat.  Je na vás, "
+"abyste je vygenerovali a obnovili.  Další informace naleznete níže."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Firewall"
-msgstr ""
+msgstr "Firewall"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You must open the configured port (5269 by default) on your firewall."
 msgstr ""
+"Na bráně firewall musíte otevřít nakonfigurovaný port (ve výchozím nastavení "
+"5269)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you are using Docker for your Peertube, you need to modify the `docker-compose.yml` file to open port 5269 of the `peertube` container, so that the outer world can connect to it."
 msgstr ""
+"Pokud používáte Docker pro svůj Peertube, je třeba upravit soubor `docker-"
+"compose.yml` tak, aby byl otevřen port 5269 kontejneru `peertube`, aby se k "
+"němu mohl připojit vnější svět."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You need to add [DNS records](https://prosody.im/doc/dns) allowing remote servers to find \"room.your_instance.tld\" and \"external.your_instance.tld\" components."
 msgstr ""
+"Je třeba přidat [záznamy DNS](https://prosody.im/doc/dns) umožňující "
+"vzdáleným serverům najít komponenty \"room.your_instance.tld\" a \"external."
+"your_instance.tld\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The easiest way to do this is to add SRV records for the \"room\" and \"external\" [subdomain](https://prosody.im/doc/dns#subdomains):"
 msgstr ""
+"Nejjednodušší je přidat záznamy SRV pro \"room\" a \"external\" "
+"[subdoménu](https://prosody.im/doc/dns#subdomains):"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
 msgstr ""
+"název záznamu: _xmpp-server._tcp.room.your_instance.tld. (nahraďte "
+"\"your_instance.tld\" uri vaší instance)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "TTL: 3600"
-msgstr ""
+msgstr "TTL: 3600"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "class: IN"
-msgstr ""
+msgstr "class: IN"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "SRV: 0"
-msgstr ""
+msgstr "SRV: 0"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "priority: 0"
-msgstr ""
+msgstr "priority: 0"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "weight: 5"
-msgstr ""
+msgstr "weight: 5"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "port: 5269 (adapt if your changed the default port)"
-msgstr ""
+msgstr "port: 5269 (přizpůsobte, pokud jste změnili výchozí port)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "target: your_instance.tld. (replace by your instance uri)"
-msgstr ""
+msgstr "cíl: your_instance.tld. (nahraďte uri vaší instance)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "record name: _xmpp-server._tcp.external.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
 msgstr ""
+"název záznamu: _xmpp-server._tcp.external.your_instance.tld. (nahraďte "
+"\"your_instance.tld\" uri vaší instance)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Be careful to keep the dot after \"your_instance.tld\"."
-msgstr ""
+msgstr "Dejte pozor, abyste za \"your_instance.tld\" ponechali tečku."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Using the `dig` command to check your records, you should get a result similar to this:"
-msgstr ""
+msgstr "Při kontrole záznamů příkazem `dig` byste měli získat podobný výsledek:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1583,79 +1717,127 @@ msgid ""
 "$ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV\n"
 "0 5 5269 videos.john-livingston.fr.\n"
 msgstr ""
+"$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV\n"
+"0 5 5269 videos.john-livingston.fr.\n"
+"\n"
+"$ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV\n"
+"0 5 5269 videos.john-livingston.fr.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).  Of course, you can also add this record if you use the standard port. It will also work."
 msgstr ""
+"Pokud **nepoužíváte standardní port `5269`**, musíte také přidat záznam SRV "
+"pro `_xmpp-server._tcp.your_instance.tld.` (stejně jako výše, jen bez "
+"předpony `room.`).  Tento záznam můžete samozřejmě přidat i v případě, že "
+"používáte standardní port. Bude to také fungovat."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Using trusted certificates"
-msgstr ""
+msgstr "Použití důvěryhodných certifikátů"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons."
 msgstr ""
+"Certifikáty s vlastním podpisem, které tento zásuvný modul ve výchozím "
+"nastavení používá, mohou být některými servery XMPP z bezpečnostních důvodů "
+"odmítnuty."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "It is possible to use certificates validated by a certification authority.  However, this requires advanced system administration knowledge.  Indeed, due to the multitude of possible use cases, it is impossible to document all situations here.  This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a \"basic\" situation (manual installation of Peertube, using letsencrypt).  If you are in another situation (Docker installation, certificates signed by another authority, etc...), you will have to adapt this approach by yourself."
 msgstr ""
+"Je možné používat certifikáty ověřené certifikační autoritou.  To však "
+"vyžaduje pokročilé znalosti správy systému.  Vzhledem k množství možných "
+"případů použití zde skutečně není možné zdokumentovat všechny situace.  Tato "
+"dokumentace proto pouze vysvětlí cíl, kterého je třeba dosáhnout, a uvede "
+"příklad, který bude vhodný pouze pro \"základní\" situaci (ruční instalace "
+"Peertube pomocí letsencrypt).  Pokud se nacházíte v jiné situaci (instalace "
+"Dockeru, certifikáty podepsané jinou autoritou atd...), budete si muset "
+"tento postup přizpůsobit sami."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Basic principle"
-msgstr ""
+msgstr "Základní princip"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "It is up to you to generate valid certificates for domains `your_instance.tld` and `room.your_instance.tld`.  You can use any [method supported by Prosody](https://prosody.im/doc/certificates)."
 msgstr ""
+"Je na vás, abyste vygenerovali platné certifikáty pro domény `vase_instance."
+"tld` a `room.your_instance.tld`.  Můžete použít jakoukoli [metodu "
+"podporovanou Prosody](https://prosody.im/doc/certificates)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You must then place these certificates in a folder that will be accessible to the `peertube` user, and specify this folder in the plugin setting \"Certificate folder\"."
 msgstr ""
+"Tyto certifikáty pak musíte umístit do složky, která bude přístupná "
+"uživateli `peertube`, a tuto složku zadat v nastavení pluginu \"Certificate "
+"folder\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
 msgstr ""
+"Pokud chcete k importu certifikátů použít nástroj ProsodyCtl, je tento "
+"nástroj k dispozici (po spuštění Peertube) pomocí následujícího příkazu ("
+"upravte cestu k datové složce Peertube a nahraďte \"xxx\" argumenty, které "
+"chcete předat prosodyctl): `sudo -u peertube /var/www/peertube/storage/"
+"plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun "
+"prosodyctl --config /var/www/peertube/storage/plugins/data/"
+"peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary."
 msgstr ""
+"Zásuvný modul bude jednou denně kontrolovat, zda v této složce nebyly "
+"změněny nějaké soubory, a v případě potřeby znovu načte aplikaci Prosody."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Method for the simple case"
-msgstr ""
+msgstr "Metoda pro jednoduchý případ"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We assume here that your Peertube installation is \"classic\" (no use of Docker), and that the certificates are generated by letsencrypt, using the certbot tool."
 msgstr ""
+"Předpokládáme, že vaše instalace Peertube je \"klasická\" (bez použití "
+"Dockeru) a že certifikáty jsou generovány nástrojem letsencrypt pomocí "
+"nástroje certbot."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the MUC (XMPP chat rooms) component.  Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain."
 msgstr ""
+"Nejprve musíme vytvořit certifikát pro subdoménu `room.your_instance.tld` : "
+"to je uri komponenty MUC (chatovací místnosti XMPP).  I když jsou spojení "
+"navázána na `vaše_instance.tld`, budeme potřebovat platný certifikát pro "
+"tuto subdoménu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry)."
 msgstr ""
+"Začněte tedy nastavením položky DNS pro `room.your_instance.tld`, která "
+"ukazuje na váš server.  Můžete použít položku CNAME (nebo položku A a "
+"položku AAAA)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Next, we'll use nginx (already installed for your Peertube) to generate the certbot certificate.  We will create a new site. In the file `/etc/nginx/site-available/room.peertube`, add:"
 msgstr ""
+"Dále použijeme nginx (již nainstalovaný pro Peertube) k vygenerování "
+"certifikátu certbot.  Vytvoříme nový web. Do souboru `/etc/nginx/"
+"site-available/room.peertube` přidejte:"
 
 #. type: Fenced code block (nginx)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1673,11 +1855,22 @@ msgid ""
 "  location / { return 301 https://your_instance.tld; }\n"
 "}\n"
 msgstr ""
+"server {\n"
+"  listen 80;\n"
+"  listen [::]:80;\n"
+"  server_name room.your_instance.tld;\n"
+"\n"
+"  location /.well-known/acme-challenge/ {\n"
+"    default_type \"text/plain\";\n"
+"    root /var/www/certbot;\n"
+"  }\n"
+"  location / { return 301 https://your_instance.tld; }\n"
+"}\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Then enable the site:"
-msgstr ""
+msgstr "Poté web povolte:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1691,6 +1884,10 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Then we prepare the folder in which we will later import the certificates.  We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:"
 msgstr ""
+"Poté připravíme složku, do které budeme později importovat certifikáty.  "
+"Předpokládáme, že zásuvný modul již máte aktivní. Vytvoříme následující "
+"složku (pokud již neexistuje) s uživatelem `peertube`, abychom se ujistili, "
+"že nedojde k problémům s právy:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1702,21 +1899,30 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Now you have to configure this folder in the plugin settings, for the parameter \"Certificate folders\".  It's important to do this now, otherwise the certificate import script will put the certificates in the wrong folder."
 msgstr ""
+"Nyní je třeba tuto složku nakonfigurovat v nastavení zásuvného modulu v "
+"parametru \"Složky certifikátů\".  Je důležité to provést nyní, jinak skript "
+"pro import certifikátů vloží certifikáty do nesprávné složky."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We will configure certbot to import the generated certificates into the Prosody folder.  We can use the ProsodyCtl utility packaged in the plugin."
 msgstr ""
+"Nakonfigurujeme certbot tak, aby vygenerované certifikáty importoval do "
+"složky Prosody.  Můžeme použít nástroj ProsodyCtl přibalený v zásuvném "
+"modulu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: for it to be available, the plugin must have been started at least once."
 msgstr ""
+"Poznámka: aby byl zásuvný modul k dispozici, musí být alespoň jednou spuštěn."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` containing:"
 msgstr ""
+"Vytvoříme soubor `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` "
+"obsahující:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1729,11 +1935,19 @@ msgid ""
 "  cert import \\\n"
 "  room.your_instance.tld your_instance.tld /etc/letsencrypt/live\n"
 msgstr ""
+"#!/bin/sh\n"
+"/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
+"prosodyAppImage/squashfs-root/AppRun prosodyctl \\\n"
+"  --root \\\n"
+"  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
+"prosody/prosody.cfg.lua \\\n"
+"  cert import \\\n"
+"  room.your_instance.tld your_instance.tld /etc/letsencrypt/live\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Then we ask to generate the certificate:"
-msgstr ""
+msgstr "Poté požádáme o vygenerování certifikátu:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1745,42 +1959,52 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If certbot offers you several methods to generate the certificate, choose \"nginx\"."
 msgstr ""
+"Pokud vám certbot nabídne několik způsobů generování certifikátu, vyberte "
+"možnost \"nginx\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Normally you should now find the certificates in the configured folder."
-msgstr ""
+msgstr "Nyní byste měli najít certifikáty v nakonfigurované složce."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube."
 msgstr ""
+"Poznámka: při prvním použití je nutné znovu načíst aplikaci Prosody. "
+"Nejjednodušší způsob, jak to udělat, je restartovat Peertube."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Method for the Docker case"
-msgstr ""
+msgstr "Metoda pro řešení Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube."
 msgstr ""
+"Tato metoda funguje s oficiálně podporovaným [Docker guide](https://docs."
+"joinpeertube.org/install/docker) od PeerTube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry).  This is necessary for Let's Encrypt to validate the domain for certificate generation."
 msgstr ""
+"Nejprve vytvořte položku DNS pro `room.your_instance.tld`, která bude "
+"ukazovat na váš server.  Můžete použít položku CNAME (nebo položku A a "
+"položku AAAA).  To je nutné, aby aplikace Let's Encrypt ověřila doménu pro "
+"generování certifikátu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the directory where your `docker-compose.yml` file exists."
-msgstr ""
+msgstr "Zadejte adresář, ve kterém se nachází váš soubor `docker-compose.yml`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Open a shell in the certbot container:"
-msgstr ""
+msgstr "Otevřete shell v kontejneru certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1791,7 +2015,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Run certbot:"
-msgstr ""
+msgstr "Spusťte certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1802,7 +2026,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You will be presented with a series of prompts. Enter `2` for the authentication type:"
-msgstr ""
+msgstr "Zobrazí se řada výzev. Jako typ ověření zadejte `2`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1815,7 +2039,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the domain name `room.your_instance.tld`:"
-msgstr ""
+msgstr "Zadejte název domény `room.your_instance.tld`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1827,6 +2051,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:"
 msgstr ""
+"Zadejte adresář, do kterého webový server PeerTube doručuje požadavky na "
+"Let's Encrypt, `/var/www/certbot`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1837,7 +2063,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You should see output like the following:"
-msgstr ""
+msgstr "Měli byste vidět následující výstup:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1852,6 +2078,11 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.  *Note*: This will also make the files readable to the group with id 999 on the host system.  Check the groups on your system to assess this as a risk before running this command."
 msgstr ""
+"Spusťte níže uvedený příkaz uvnitř kontejneru certbot, abyste skupině "
+"peertube poskytli přístup ke čtení nových certifikátů a soukromých klíčů.  "
+"*Poznámka*: Tímto způsobem budou soubory přístupné ke čtení také skupině s "
+"id 999 v hostitelském systému.  Před spuštěním tohoto příkazu zkontrolujte "
+"skupiny ve svém systému a vyhodnoťte to jako riziko."
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1867,7 +2098,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Exit the certbot container:"
-msgstr ""
+msgstr "Ukončení kontejneru certbot:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1879,6 +2110,9 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.  This is the same as the above, but to be automatically executed after every certificate renewal."
 msgstr ""
+"Upravte soubor `docker-compose.yml` a změňte řádek `entrypoint` pod službou "
+"`certbot` na následující.  Je to stejné jako výše, ale má se to provádět "
+"automaticky po každém obnovení certifikátu."
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1890,6 +2124,8 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.  It should look something like this:"
 msgstr ""
+"Pokračujte v úpravě souboru `docker-compose.yml` a přidejte svazek "
+"certifikátů certbot do kontejneru peertube.  Mělo by to vypadat nějak takto:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1902,7 +2138,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Restart your services:"
-msgstr ""
+msgstr "Restartujte služby:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -5176,3 +5412,5 @@ msgstr ""
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr ""
+"Pokud jste webdesignér nebo odborník na ConverseJS/Prosody/XMPP a chcete "
+"pomoci tento plugin vylepšit, jste vítáni."
