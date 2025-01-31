@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-01-31 07:16+0000\n"
+"PO-Revision-Date: 2025-01-31 17:37+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -919,8 +919,8 @@ msgstr "Trieu la vostra contrasenya i configureu el vostre compte"
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 msgstr ""
-"Aneu al projecte del connector de xat: https://weblate.framasoft.org/"
-"projects/peertube-livechat/peertube-plugin-livechat/"
+"Aneu al projecte del connector: https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1133,8 +1133,8 @@ msgid ""
 "  ---\n"
 msgstr ""
 "  ---\n"
-"  title: \"Terceres parts\"\n"
-"  description: \"Mostrant el livechat amb programari de terceres parts.\"\n"
+"  title: \"Third party\"\n"
+"  description: \"Displaying the livechat with 3rd party software.\"\n"
 "  weight: 20\n"
 "  chapter: false\n"
 "  livechatnotranslation: true\n"
@@ -1324,7 +1324,7 @@ msgstr "Requisits"
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 or later."
 msgstr ""
-"[Livechat connector de PeerTube](https://github.com/JohnXLivingston/peertube-"
+"[Connector de PeerTube Livechat](https://github.com/JohnXLivingston/peertube-"
 "plugin-livechat) versió 3.2.0 o posterior."
 
 #. type: Bullet: '- '
@@ -1352,7 +1352,7 @@ msgstr "Només connexions internes (versió simple)"
 msgid "You will need to enable `{{% livechat_label prosody_c2s_label %}}` in the livechat plugin settings."
 msgstr ""
 "Haureu d'habilitar `{{% livechat_label prosody_c2s_label %}}` a la "
-"configuració del connector livechat."
+"configuració del connector Livechat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1396,7 +1396,7 @@ msgstr ""
 #, no-wrap
 msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
 msgstr ""
-"A les versions de livechat >= 10.1.0, s'ha afegit una nova crida d'opció «"
+"A les versions de Livechat >= 10.1.0, s'ha afegit una nova crida d'opció «"
 "interfícies de client a servidor» per permetre que això es pugui canviar.\n"
 
 #. type: Plain text
@@ -1519,7 +1519,7 @@ msgstr ""
 msgid "This documentation use an anonymous account to connect the bridge to the chat.  But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account.  This is used for [OBS docks](/peertube-plugin-livechat/documentation/user/obs).  Using this feature for other purposes is not documented and not officially supported yet.  If you want to use it anyway, you can request a token by calling then `/plugins/livechat/router/api/auth/tokens` endpoint.  To get needed headers and request body, just check what happens when you generate a new token for OBS docks."
 msgstr ""
 "Aquesta documentació utilitza un compte anònim per connectar la passarel·la "
-"al xat. Però des de la versió 10.1.0 del livechat, hi ha una nova manera de "
+"al xat. Però des de la versió 10.1.0 del Livechat, hi ha una nova manera de "
 "generar una fitxa d'autenticació a llarg termini, que us permet iniciar "
 "sessió amb el vostre compte. S'utilitza per a [OBS docks](/peertube-"
 "plugin-livechat/ca/documentation/user/obs). L'ús d'aquesta funció per a "
@@ -1609,7 +1609,7 @@ msgstr "Configuració del connector"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this setting, new settings appear below."
 msgstr ""
-"Comenceu anant a la configuració del connector de livechat de la vostra "
+"Comenceu anant a la configuració del connector de Livechat de la vostra "
 "instància i, a continuació, activeu la configuració «Permetre connexions a "
 "les sales mitjançant comptes XMPP externs». En marcar-ho, apareixen nous "
 "camps a continuació."
@@ -2194,7 +2194,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:"
 msgstr ""
-"A la configuració de livechat dins l'administració de PeerTube establiu el "
+"A la configuració de Livechat dins l'administració de PeerTube establiu el "
 "directori de certificats de la següent manera:"
 
 #. type: Fenced code block (text)
@@ -2329,7 +2329,7 @@ msgid ""
 "This feature is available with the plugin version >= 9.0.0.\n"
 msgstr ""
 "Aquesta característica encara és experimental.\n"
-"Aquesta funció arriba amb la versió de livechat >= 9.0.0.\n"
+"Aquesta funció arriba amb la versió de Livechat >= 9.0.0.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -5518,8 +5518,8 @@ msgstr "Mode lent"
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "As a streamer, you can choose to rate limit your viewers messages in the chat."
 msgstr ""
-"Com a streamer podeu optar per limitar la freqüència dels missatges dels/les "
-"participants al xat."
+"Com a streamer podeu optar per limitar la freqüència dels missatges d'"
+"espectadors/es al xat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -5654,7 +5654,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "highlight questions from your viewers, so you can come back to them later without forgetting to answer them"
 msgstr ""
-"ressaltar les preguntes de participants, perquè pugueu tornar-hi més tard "
+"ressaltar les preguntes d'espectadors/es, perquè pugueu tornar-hi més tard "
 "sense oblidar-vos de respondre-les"
 
 #. type: Title ##
@@ -6027,18 +6027,19 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "How to chat for stream viewers"
-msgstr ""
+msgstr "Com xatejar per a espectadors/es de l'emissió"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Joining chat rooms"
-msgstr ""
+msgstr "Unir-se a sales de xat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:"
 msgstr ""
+"Quan mireu un vídeo de PeerTube que té el xat activat, el veureu al costat:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -6046,449 +6047,641 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of a Peertube video page, with a web chat on the right of the video.](/peertube-plugin-livechat/images/chat.png?classes=shadow,border&height=200px \"Chat screenshot\")"
 msgstr ""
+"![Captura de pantalla d'una pàgina de vídeo de PeerTube, amb un xat web a la "
+"dreta del vídeo.](/peertube-plugin-livechat/images/"
+"chat.png?classes=shadow,border&height=200px \"Captura de pantalla del xat\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "There are two slightly different use cases, depending on wether or not you have an account on the Peertube instance.  See bellow for more informations."
 msgstr ""
+"Hi ha dos casos d'ús lleugerament diferents, depenent de si teniu un compte "
+"a la instància de PeerTube o no. Vegeu a continuació per obtenir més "
+"informació."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "If you haven't a Peertube account"
-msgstr ""
+msgstr "Si no teniu un compte de PeerTube"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are not logged in on the Peertube instance where you are watching the video, you will automatically join the chat.  You will be assigned a random nickname (something like \"Anonymous 12345\")."
 msgstr ""
+"Si no esteu identificat a la instància de PeerTube on esteu veient el vídeo, "
+"us unireu automàticament al xat. Se us assignarà un àlies aleatori (com ara «"
+"Anònim 12345»)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of a chat. In the participant list, there is John Livingston, and an anonymous account using \"Anonymous 212873\" nickname.](/peertube-plugin-livechat/images/chat_with_anonymous.png?classes=shadow,border&height=200px \"Chat with an anonymous user\")"
 msgstr ""
+"![Captura de pantalla d'un xat. A la llista de participants hi ha John "
+"Livingston i un compte anònim amb l'àlies «Anonymous 212873».](/peertube-"
+"plugin-livechat/images/"
+"chat_with_anonymous.png?classes=shadow,border&height=200px \"Xat amb un "
+"àlies anònim\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "Before being able to speak in the chat room, you have to enter a nickname in the field on the bottom of the window."
 msgstr ""
+"Abans de poder parlar a la sala haureu de triar un àlies al camp de la part "
+"inferior de la finestra."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of the chat. The current user is not logged in, and must choose a nickname before being able to write in the chat.](/peertube-plugin-livechat/images/chat_anonymous.png?classes=shadow,border&height=200px \"Joining chat when not connected\")"
 msgstr ""
+"![Captura de pantalla del xat. La persona no ha iniciat sessió i ha de triar "
+"un àlies abans de poder escriure al xat.](/peertube-plugin-livechat/images/"
+"chat_anonymous.png?classes=shadow,border&height=200px \"Entrar al xat sense "
+"haver iniciat sessió\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Log in using an external authentication provider"
-msgstr ""
+msgstr "Iniciar la sessió amb un proveïdor d'autenticació extern"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "The Peertube instance can configure external authentication providers (Mastodon accounts, Google accounts, ...).  In such case, you will see a \"{{% livechat_label login_using_external_account %}}\" button, that will open a dialog modal.  In this dialog modal, there will be some buttons to connect using a remote account."
 msgstr ""
+"La instància de PeerTube pot configurar proveïdors d'autenticació externs ("
+"comptes de Mastodon, comptes de Google, etc.). En aquest cas, veureu un botó "
+"«{{% livechat_label login_using_external_account %}}», que obrirà un diàleg "
+"modal en què hi haurà botons per iniciar sessió amb un compte remot."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "Once you signed in the remote account, and have granted access, your nickname and avatar (if available) will be automatically fetched.  No other data will be stored.  These data will be automatically deleted several hours after your quit the chat."
 msgstr ""
+"Un cop inicieu sessió al compte remot es recuperaran automàticament el "
+"vostre àlies i l'avatar (si escau). No s'emmagatzemarà cap altra dada. "
+"Aquestes dades s'eliminaran automàticament unes quantes hores després de "
+"sortir del xat."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "If you have a Peertube account"
-msgstr ""
+msgstr "Si teniu un compte de PeerTube"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are connected with your Peertube account, you will automatically join the room, using your Peertube nickname and avatar."
 msgstr ""
+"Si heu iniciat sessió amb el vostre compte de PeerTube unireu automàticament "
+"a la sala, utilitzant el vostre àlies i avatar de PeerTube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the livechat plugin is installed on both instances, it is possible to join the chat using your account.  To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance)."
 msgstr ""
+"Si esteu veient una emissió en directe en una instància en què no teniu cap "
+"compte, però teniu un compte de PeerTube en una altra instància: sempre que "
+"el connector livechat estigui instal·lat en ambdues instàncies podeu unir-"
+"vos al xat amb el vostre compte . Per fer-ho obriu el vídeo a la vostra "
+"instància (per exemple, podeu copiar/enganxar l'URL del vídeo al camp de "
+"cerca de la vostra instància)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "If you have a Peertube account on another Peertube instance"
-msgstr ""
+msgstr "Si teniu un compte de PeerTube en una altra instància"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you have a Peertube account, but not on the current instance, there is a \"{{% livechat_label login_using_external_account %}}\" button.  This button will open a dialog where you can enter your Peertube instance URL.  Once you entered it, it will check if the livechat plugin is available on the remote instance, and if the video is available.  If it is the case, you will be redirected to the video on the remote instance."
 msgstr ""
+"Si teniu un compte de PeerTube, però no a la instància actual, hi ha un botó "
+"«{{% livechat_label login_using_external_account %}}». Aquest botó obrirà "
+"una finestra de diàleg on podeu introduir l'URL de la vostra instància. Un "
+"cop fet es comprovarà si el connector livechat està disponible a la "
+"instància remota i si el vídeo hi està disponible. En aquest cas se us "
+"redirigirà al vídeo de la instància remota."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of the \"{{% livechat_label login_using_external_account %}}\" dialog. There is a field where you can enter a Peertube url.](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px \"External login dialog\")"
 msgstr ""
+"![Captura de pantalla del diàleg «{{% livechat_label "
+"login_using_external_account %}}». Hi ha un camp on podeu introduir un URL "
+"de PeerTube.](/peertube-plugin-livechat/images/"
+"external_login_dialog.png?classes=shadow,border&height=200px \"Diàleg "
+"d'inici de sessió extern\")"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Chatting"
-msgstr ""
+msgstr "Xatejant"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "To send messages, just type them in the \"message\" field on the bottom of the screen.  You can send them by pressing the enter key on your keyboard, or by clicking on the \"send\" button."
 msgstr ""
+"Per enviar missatges simplement escriviu-los al camp «missatge» a la part "
+"inferior de la pantalla. Podeu enviar-los prement la tecla Intro del vostre "
+"teclat o fent clic al botó «enviar»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "If you want to add line breaks in your messages, you can use the \"shift+enter\" key combination."
 msgstr ""
+"Si voleu afegir salts de línia als vostres missatges podeu utilitzar la "
+"combinació de tecles «majúscules + intro»."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can add emojis to your messages.  You can for example use the emojis menu, or directly type emojis shortcuts like `:smiley:`."
 msgstr ""
+"Podeu afegir emojis als missatges. Per exemple, podeu utilitzar el menú "
+"d'emojis o escriure directament dreceres com `:smiley:`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can mention other participants.  To do so, you can type the first nickname letters, then press the tab key.  You can also type `@`: this will directly open the menu.  You can also click on a nickname in the participants list to insert it in the message field."
 msgstr ""
+"Podeu esmentar altres participants. Per fer-ho, podeu escriure les primeres "
+"lletres del sobrenom i, a continuació, prémer la tecla de tabulació. També "
+"podeu escriure el caràcter `@`: això obrirà un menú directament. També podeu "
+"fer clic a un sobrenom a la llista de participants per inserir-lo al camp "
+"d'entrada del missatge."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Participants list"
-msgstr ""
+msgstr "Llista de participants"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "To see the list of participants, just open the right menu:"
 msgstr ""
+"Per veure la llista de participants només cal que obriu el menú de la dreta:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of a chat session, with on the right the list of participants.](/peertube-plugin-livechat/images/open_participants_list.png?classes=shadow,border&height=200px \"Participants list\")"
 msgstr ""
+"![Captura de pantalla d'una sessió de xat, amb la llista de participants a "
+"la dreta.](/peertube-plugin-livechat/images/"
+"open_participants_list.png?classes=shadow,border&height=200px \"Llista de "
+"participants\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can see that some participants have special rights (moderator, owner, ...)."
 msgstr ""
+"Podeu veure que alguns/es participants tenen drets especials (moderació, "
+"propietat, etc.)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Chat dropdown menu"
-msgstr ""
+msgstr "Menú desplegable de xat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "There is a dropdown menu on the top of the chat, with some advanced features.  This is especially useful for [moderation features](/peertube-plugin-livechat/documentation/user/streamers/moderation).  Available features depends on your access level."
 msgstr ""
+"Hi ha un menú desplegable a sobre del xat que inclou algunes funcions "
+"avançades. Això és especialment útil per a [funcions de moderació](/peertube-"
+"plugin-livechat/ca/documentation/user/streamers/moderation). Les funcions "
+"disponibles depenen del vostre nivell d'accés."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Opening full screen"
-msgstr ""
+msgstr "Obrint a pantalla completa"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "On top of the chat, there is a button to open the chat in fullscreen.  This will open a new browser tab with the following content:"
 msgstr ""
+"A sobre del xat hi ha un botó que us permet obrir-lo a pantalla completa. "
+"Això obrirà una nova pestanya del navegador amb el contingut següent:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of a chat using the full web page.](/peertube-plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px \"Fullscreen chat screenshot\")"
 msgstr ""
+"![Captura de pantalla d'un xat amb la pàgina web completa.](/peertube-"
+"plugin-livechat/images/fullscreen.png?classes=shadow,border&height=200px "
+"\"Captura de pantalla de xat a pantalla completa\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "It can be easier to chat using a full browser tab."
-msgstr ""
+msgstr "Pot ser més fàcil xatejar amb una pestanya completa del navegador."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
 #, no-wrap
 msgid "Changing nickname"
-msgstr ""
+msgstr "Canviant l'àlies"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can change your nickname by typing `/nick your_new_nickname` in the message field."
 msgstr ""
+"Podeu canviar el vostre àlies escrivint `/nick nou_àlies` al camp del "
+"missatge."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can also change your nickname using the chat menu."
 msgstr ""
+"També podeu canviar el vostre àlies mitjançant el menú desplegable del xat."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Connect to chat using a XMPP client"
-msgstr ""
+msgstr "Connectar al xat amb un client XMPP"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "XMPP Clients"
-msgstr ""
+msgstr "Clients XMPP"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "This chat plugin relies on the XMPP protocol (also known as Jabber).  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can be useful for example to facilitate moderation operations."
 msgstr ""
+"Aquest mòdul de xat es basa en el protocol XMPP, també conegut com Jabber. "
+"Per tant, és possible connectar-se als xats mitjançant [programari client "
+"XMPP](https://ca.wikipedia.org/wiki/"
+"Extensible_Messaging_and_Presence_Protocol#Clients). Això pot ser útil, per "
+"exemple, per facilitar les operacions de moderació."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "The features described on this page must be enabled and configured by your Peertube instance's administrators. You may therefore not have access to them."
 msgstr ""
+"Les funcions descrites en aquesta pàgina han de ser habilitades i "
+"configurades per l'administració de la vostra instància de PeerTube. Per "
+"tant, és possible que no hi tingueu accés."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "If this feature is enabled on your instance, you can connect to Peertube chats using any XMPP account."
 msgstr ""
+"Si aquesta funció està activada a la vostra instància podeu connectar-vos "
+"als xats de PeerTube mitjançant qualsevol compte XMPP."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "To get the address of the room you want to join, you can use the \"share chat\" button that is located above the chat:"
 msgstr ""
+"Per obtenir l'adreça de la sala per unir-vos podeu utilitzar el botó "
+"«compartir» que es troba a sobre del xat:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "![Screenshot of the chat, with a share button on the top.](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px \"Share button\")"
 msgstr ""
+"![Captura de pantalla del xat, amb un botó per compartir a la part superior"
+".](/peertube-plugin-livechat/images/"
+"share_button.png?classes=shadow,border&height=200px \"Botó per compartir\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "By default, the share button is only visible to the owner of the video, and the admins/moderators of the instance.  However, admins can decide to display this button for everyone."
 msgstr ""
+"De manera predeterminada el botó de compartir només és visible per a la "
+"propietat del vídeo i l'administració/moderació de la instància. Tanmateix, "
+"l'administració pot decidir mostrar aquest botó a tothom."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "Then, choose \"{{% livechat_label connect_using_xmpp %}}\":"
-msgstr ""
+msgstr "A continuació trieu «{{% livechat_label connect_using_xmpp %}}»:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "Then you just have to click on \"open\" or copy/paste the address of the chat room into your XMPP client (using the \"join a room\" feature)."
 msgstr ""
+"Aleshores només cal que feu clic a «obrir» o bé copiar/enganxar l'adreça de "
+"la sala al vostre client XMPP (emprant la funcionalitat «unir-vos a una "
+"sala»)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "Peertube plugin livechat documentation"
-msgstr ""
+msgstr "Documentació del connector de PeerTube livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "Peertube livechat"
-msgstr ""
+msgstr "PeerTube livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "You can use the language selector in the left menu to view this documentation in different languages.  Some translations are missing or incomplete. In this case, you'll see the English version of the text."
 msgstr ""
+"Podeu utilitzar el selector d'idiomes del menú esquerre per veure aquesta "
+"documentació en diferents idiomes. Falten algunes traduccions o estan "
+"incompletes, en aqueix cas en veureu la versió en anglès."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "Welcome the **Peertube Livechat Plugin** documentation."
 msgstr ""
+"Us donem la benvinguda a la documentació de **PeerTube Livechat Plugin**."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "[Peertube](https://joinpeertube.org/) is a decentralized streaming platform, that can provide both live streaming and VOD (Video On Demand) features.  The present plugin adds chatting capatibilities to your Peertube installation, allowing viewers to interract with streamers."
 msgstr ""
+"[PeerTube](https://joinpeertube.org/) és una plataforma d'emissió "
+"descentralitzada, que pot emetre en directe i vídeo sota demanda (VOD: Video "
+"On Demand). Aquest connector us permet afegir capacitat de xat a la vostra "
+"instal·lació de PeerTube, permetent interaccions amb els streamers."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "To have a glimpse on this plugin capabilities, checkout the [introduction](/peertube-plugin-livechat/intro/). For more precise informations, please find bellow the summary of this documentation."
 msgstr ""
+"Per obtenir una visió general de les possibilitats d'aquest connector feu "
+"una ullada a [la introducció](/peertube-plugin-livechat/ca/intro/). Per "
+"obtenir informació més específica trobareu el resum d'aquesta documentació a "
+"continuació."
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
 msgid "You can use the searchbox in the left menu to quickly find specific documentation parts."
 msgstr ""
+"Podeu utilitzar la barra de cerca del menú esquerre per trobar ràpidament "
+"documentació específica."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "What is the livechat plugin?"
-msgstr ""
+msgstr "Què és el connector livechat?"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This [Peertube](https://joinpeertube.org/) plugin is meant to provide a chat system for Peertube videos."
 msgstr ""
+"Aquest connector per a [PeerTube](https://joinpeertube.org/) proveeix un "
+"sistema de xat per als vídeos."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "By default, once you have installed the plugin on your Peertube instance, a chat room will automatically be created for each live stream."
 msgstr ""
+"Per defecte, un cop instal·lat el connector a la instància de PeerTube es "
+"crearà automàticament una sala de xat per a cada emissió en directe."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "On the following screenshot, you can see a classic Peertube video page, with a chat room on the right (click on the picture to view it full screen):"
 msgstr ""
+"A la captura de pantalla següent podeu veure una pàgina de vídeo clàssica de "
+"PeerTube, amb una sala de xat a la dreta (feu clic a la imatge per veure-la "
+"a pantalla completa):"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "The chat room will be accessible for all viewers, even those who don't have an account on your instance. Those \"anonymous\" users just have to choose a nickname before they can begin talking in the chat."
 msgstr ""
+"Els i les espectadors/es podran accedir a la sala, encara que no tinguin un "
+"compte a la vostra instància. Aquests «anònims/es» només hauran de triar un "
+"àlies abans de poder parlar al xat."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "By default, the chat is displayed next to the video.  But you can open it in another browser tab, using the button on top of it :"
 msgstr ""
+"De manera predeterminada el xat es mostra al costat del vídeo. Però podeu "
+"obrir-lo en una altra pestanya del navegador fent servir el botó de dalt:"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can test the livechat plugin with this [demo page](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
 msgstr ""
+"Podeu provar el connector de xat en directe mitjançant aquesta [pàgina de "
+"demostració] (https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Installation"
-msgstr ""
+msgstr "Instal·lació"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "As a Peertube administrator, you can setup this plugin on your instance simply by using the Peertube plugin marketplace included in the administration interface.  Search for \"livechat\", then click \"install\": that's it!"
 msgstr ""
+"Com a administrador/a de PeerTube podeu instal·lar aquest connector a la "
+"vostra instància simplement utilitzant la botiga de complements inclosa a la "
+"interfície d'administració. Cerqueu «livechat» i feu clic a «instal·lar»: i "
+"ja ho teniu!"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of Peertube plugins admin page. The search fields contains \"livechat\", and the search results show the livechat plugin.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px \"Livechat installation\")"
 msgstr ""
+"![Captura de pantalla de la pàgina d'administració dels connectors de "
+"PeerTube. Els camps de cerca contenen «livechat» i els resultats de la cerca "
+"mostren el connector «livechat».](/peertube-plugin-livechat/images/"
+"installation.png?classes=shadow,border&height=200px \"Instal·lació de "
+"«livechat»\")"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Livechat capabilities"
-msgstr ""
+msgstr "Possibilitats de «livechat»"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "The plugin has many advanced features.  As it is using the [XMPP](https://xmpp.org/) standard \"under the hood\", it is possible for Peertube administrators to allow advanced usages (connection using XMPP clients, chatbots, bridge to other chat protocols, ...).  More information in the relevant sections of this documentation."
 msgstr ""
+"El connector té moltes funcions avançades. Utilitza l'estàndard "
+"[XMPP](https://xmpp.org/) «sota el capó», que permet a l'administració "
+"habilitar funcions avançades (connectar mitjançant clients XMPP, bots de "
+"xat, passarel·la amb altres protocols…). Més informació als apartats "
+"corresponents d'aquesta documentació."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "Peertube is part of the fediverse: you can create a network of Peertube instances, sharing content between them."
 msgstr ""
+"PeerTube forma part del fedivers: podeu crear una xarxa d'instàncies de "
+"PeerTube, compartint contingut entre elles."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This plugin can handle federation: when viewing a livestream from a remote instance, you will join the chat room with your local account.  You will be automatically connected with your current nickname and avatar."
 msgstr ""
+"Aquest connector és capaç de gestionar la federació: quan mireu un directe "
+"des d'una instància remota, us unireu al xat amb el vostre compte local. "
+"Iniciareu la sessió automàticament amb el vostre àlies i avatar."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "Of course, for the federation to work, the plugin must be installed on both instances."
 msgstr ""
+"Per descomptat, perquè la federació funcioni el connector s'ha d'instal·lar "
+"en ambdues instàncies."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "Some times, you have to protect your community from bad people.  As an instance administrator, you can choose to disallow federation for the livechat plugin.  If remote actors behave badly, streamers, moderators and administrators can ban or mute users."
 msgstr ""
+"De vegades heu de protegir la vostra comunitat de la gent dolenta. Com a "
+"administrador/a de la instància podeu optar per no permetre la federació del "
+"connector «livechat». Si algú d'una altra instància es comporta malament, "
+"els/les streamers, la moderació i l'administració tenen la facultat de "
+"bandejar o silenciar."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).  Check its documentation for more information."
 msgstr ""
+"Aquest connector ve amb un [bot de xat](/peertube-plugin-livechat/fr/"
+"documentation/user/streamers/bot/) integrat. Consulteu la documentació per a "
+"més informació."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can also plug in any other XMPP chat bot, using [XMPP External Components](https://prosody.im/doc/components).  To do so, you just have to configure External Components access in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
 msgstr ""
+"També podeu connectar qualsevol altre bot de xat XMPP mitjançant [Components "
+"externs XMPP](https://prosody.im/doc/components). Per fer-ho només heu de "
+"configurar l'accés als components externs a la [configuració del connector"
+"](/peertube-plugin-livechat/ca/documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "When joining a room, you will see previous messages.  Even those sent before you joined the room."
 msgstr ""
+"Quan us uniu a una sala veureu missatges antics, fins i tot els enviats "
+"abans que hi entréssiu."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This behaviour can be changed room by room, and default retention duration can be chosen by instance's administrators."
 msgstr ""
+"Aquest comportament pot canviar segons la sala, i l'administració de la "
+"instància pot triar la durada de la conservació."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Integrate the chat in your live stream"
-msgstr ""
+msgstr "Integrar el xat a les vostres emissions en directe"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "When using software as [OBS](https://obsproject.com) for you live stream, you can embed the chat in the video stream.  This is for example useful for replays."
 msgstr ""
+"Quan utilitzeu programari com [OBS](https://obsproject.com) per a la vostra "
+"emissió en directe podeu inserir el xat al vídeo. Això és útil per a les "
+"repeticions, per exemple."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "In the following screenshot, you can see a live replay, where the chat content is embeded on bottom of the video:"
 msgstr ""
+"A la captura de pantalla següent podeu veure una emissió en directe on el "
+"contingut del xat s'inclou a la part inferior del vídeo:"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "In the following screenshot, you can see an OBS setup, where the chat is included as a source in the current scene (background color can be changed, and can be transparent):"
 msgstr ""
+"A la següent captura de pantalla podeu veure una configuració OBS, on el xat "
+"s'inclou com a font a l'escena actual (el color de fons es pot canviar i pot "
+"ser transparent):"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Other usages"
-msgstr ""
+msgstr "Altres usos"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "By default, each streamer will be able to activate/deactivate the chat for their live streams."
 msgstr ""
+"Per defecte cada streamer pot activar/desactivar el xat per a les seves "
+"emissions en directe."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "But on the instance level, administrators can choose to activate the chat for all videos (live and/or VOD)."
 msgstr ""
+"Però a nivell d'instància l'administració pot optar per habilitar el xat per "
+"a tots els vídeos (directes i/o vídeo sota demanda)."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can even activate the chat for specific VOD videos.  This is how the [demo](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae) page works: it is not a live stream, but I have activated the chat specifically for this video."
 msgstr ""
+"També podeu habilitar el xat per a vídeos específics sota demanda. Així és "
+"com funciona la pàgina [demo](https://www.yiny.org/w/399a8d13-d4cf-"
+"4ef2-b843-98530a8ccbae): no està en directe, però s'ha activat el xat "
+"específicament per a aquest vídeo."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking / New features requests"
-msgstr ""
+msgstr "Seguiment d'errors / sol·licituds de noves funcions"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking & new features"
-msgstr ""
+msgstr "Seguiment d'errors / Noves funcions"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french."
 msgstr ""
+"Si teniu sol·licituds de funcions, errors o dificultats per instal·lar i "
+"utilitzar el connector, podeu utilitzar el [Seguidor de problemes de "
+"Github](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). "
+"Si és possible escriviu en anglès; però també s'acceptarà el francès."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "To have a glimpse to the roadmap for upcoming features, please refer to:"
 msgstr ""
+"Per obtenir una visió general del full de ruta per a les properes funcions, "
+"podeu consultar:"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1)."
 msgstr ""
+"aquest [projecte a github](https://github.com/users/JohnXLivingston/projects/"
+"1)."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones)."
 msgstr ""
+"[fites a github](https://github.com/JohnXLivingston/peertube-plugin-livechat/"
+"milestones)."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr ""
+"Si us dediqueu al disseny web o teniu experiència en ConverseJS/Prosody/XMPP "
+"i voleu participar en l'evolució d'aquest connector, us animem a fer-ho."
