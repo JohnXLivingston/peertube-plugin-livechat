@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-02-01 08:09+0000\n"
+"PO-Revision-Date: 2025-02-19 21:50+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.10\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -2625,7 +2625,7 @@ msgstr "Configuració del connector Livechat de PeerTube"
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Settings"
-msgstr "Configuració"
+msgstr "Ajustaments"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
