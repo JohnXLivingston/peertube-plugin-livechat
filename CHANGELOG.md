@@ -7,7 +7,8 @@
 * Translations updates.
 * Slovak translation integration.
 * Differenciate pt-PT and pt-BR translations.
-* Fix styling for "configure mod_firewall" button + Peertube v7.0.0 compatibility
+* Fix styling for "configure mod_firewall" button + Peertube v7.0.0 compatibility.
+* Fix #648: workaround for a regression in Firefox that breaks the scrollbar (Thanks [Raph](https://github.com/raphgilles) for the workaround!).
 
 ## 12.0.2
 

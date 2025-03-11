@@ -255,3 +255,12 @@ body.converse-embedded {
     }
   }
 }
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+#conversejs {
+  converse-chat-content {
+    // Workaround for a regression in Firefox 136.
+    // See https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/648
+    justify-content: normal !important;
+  }
+}
