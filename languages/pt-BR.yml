@@ -252,18 +252,53 @@ prosody_muc_log_by_default_description: |
 
 prosody_muc_expiration_label: "Expiração dos logs de sala"
 prosody_muc_expiration_description: |
+  Você pode escolher aqui por quanto tempo o conteúdo da sala de bate-papo será mantido pelo servidor. O valor pode ser:
+  <ul>
+      <li><b>60</b>: o conteúdo será salvo por 60 <b>segundos</b>. Você pode substituir 60 por qualquer valor inteiro.</li>
+      <li><b>1d</b>: o conteúdo será salvo por 1 <b>dia</b>. Você pode substituir 1 por qualquer valor inteiro.</li>
+      <li><b>1s</b>: o conteúdo será salvo por 1 <b>semana</b>. Você pode substituir 1 por qualquer valor inteiro.</li>
+      <li><b>1m</b>: o conteúdo será salvo por 1 <b>mês</b>. Você pode substituir 1 por qualquer valor inteiro.</li>
+      <li><b>1a</b>: o conteúdo será salvo por 1 <b>ano</b>. Você pode substituir 1 por qualquer valor inteiro.</li>
+      <li><b>nunca</b>: o conteúdo jamais expirará, sendo mantido para sempre.</li>
+  </ul>
 
 prosody_room_allow_s2s_label: "Habilitar conexão à sala usando contas XMPP externas"
 prosody_room_allow_s2s_description: |
+  Ao habilitar esta opção, será possível conectar-se a salas usando contas XMPP externas e clientes XMPP.<br>
+  <span class="peertube-plugin-livechat-warning">
+    <b>Aviso</b>, habilitar esta opção pode demandar configuração extra de servidor e DNS.
+  </span>
+  Consulte a documentação:
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/" target="_blank">
+    Habilitar conexões de contas XMPP externas.
+  </a>
 
 prosody_s2s_port_label: "Porta do servidor Prosody para o servidor"
 prosody_s2s_port_description: |
+  A porta que será usada para conexões XMPP s2s (servidor para servidor).<br>
+  Você deve usar a porta padrão 5269.
+  Caso contrário, você deve <a href="https://prosody.im/doc/s2s">
+    configurar um registro de DNS específico
+  </a>.
 
 prosody_s2s_interfaces_label: "Interfaces de rede de servidor para servidor"
 prosody_s2s_interfaces_description: |
+  As interfaces de rede para escutar conexões entre servidores.<br>
+  Lista de IPs para escutar, separados por vírgulas (os espaços serão removidos).<br>
+  Você pode usar «*» para escutar em todas as interfaces IPv4 e «::» para todas as IPv6.<br>
+  Examplos:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>172.18.0.42</li>
+  </ul>
 
 prosody_certificates_dir_label: "Pasta dos certificados"
 prosody_certificates_dir_description: |
+  Se este campo estiver vazio, o plugin irá gerar e usar certificados autoassinados.<br>
+  Caso queira utilizar outros certificados, basta especificar aqui a pasta onde o
+  Prosody pode encontrá-los. Observação: o usuário "peertube" deve ter acesso de leitura a esta pasta.
 
 prosody_c2s_label: "Habilitar conexões de cliente para servidor"
 prosody_c2s_description: |
@@ -295,16 +330,46 @@ prosody_c2s_interfaces_description: |
 
 prosody_components_label: "Habilitar componentes externos personalizados do Prosody"
 prosody_components_description: |
+  Habilitar o uso de componentes XMPP externos.<br>
+  Esta opção por si só permite conexões apenas do localhost.
+  Você precisa configurar as interfaces de escuta e abrir a porta no seu firewall para torná-lo disponível em servidores remotos.<br>
+  Este recurso pode, por exemplo, ser usado para conectar alguns bots às salas de bate-papo.
 
 prosody_components_port_label: "Porta de componentes externos do Prosody"
 prosody_components_port_description: |
+  A porta que será usada pelos componentes XMPP para se conectar ao servidor Prosody.<br>
+  Altere-a se esta porta já estiver em uso no seu servidor.<br>
+  Você pode manter esta porta fechada no seu firewall se não permitir acesso em interfaces diferentes do host local.
 
 prosody_components_interfaces_label: "Interfaces de rede de componentes externos da
   Prosody"
 prosody_components_interfaces_description: |
+  As interfaces de rede para escutar conexões de componentes externos.<br>
+  Lista de IPs para escutar, separados por vírgulas (os espaços serão removidos).<br>
+  Você pode usar «*» para escutar em todas as interfaces IPv4 e «::» para todas as IPv6.<br>
+  Examplos:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>172.18.0.42</li>
+  </ul>
 
 prosody_components_list_label: "Componentes externos"
 prosody_components_list_description: |
+  Os componentes externos a declarar:
+  <ul>
+    <li>Um por linha.</li>
+    <li>Use o formato «nome_do_componente:segredo_do_componente» (os espaços serão cortados).</li>
+    <li>Você pode adicionar comentários: tudo após o caractere # será removido e as linhas vazias serão ignoradas.</li>
+    <li>O nome só pode conter caracteres alfanuméricos latinos e pontos.</li>
+    <li>
+      Se o nome contiver apenas caracteres alfanuméricos, ele será sufixado com o domínio XMPP.
+      Por exemplo, «ponte» se tornará «ponte.seu_dominio.tld».
+      Você também pode especificar um nome de domínio completo, mas certifique-se de configurar seu DNS corretamente.
+    </li>
+    <li>Use apenas caracteres alfanuméricos na frase secreta (use pelo menos 15 caracteres).</li>
+  </ul>
 
 experimental_warning: |
   &lt;b class="peertube-plugin-livechat-experimental"&gt;Recurso experimental:&lt;/b&gt; este recurso ainda é experimental.
@@ -332,6 +397,11 @@ livechat_configuration_channel_desc: "Você pode configurar aqui algumas opçõe
   este canal (políticas de moderação, ...)."
 livechat_configuration_channel_slow_mode_label: "Modo lento"
 livechat_configuration_channel_slow_mode_desc: |
+  Valor padrão do modo lento:
+  <ul>
+    <li>0: modo lento desativado</li>
+    <li>Qualquer número inteiro positivo: os usuários podem enviar uma mensagem a cada X segundos (os moderadores não são limitados)</li>
+  </ul>
 livechat_configuration_channel_enable_bot_label: "Ativar bot de moderação"
 livechat_configuration_channel_bot_options_title: "Opções do bot de moderação"
 livechat_configuration_channel_forbidden_words_label: "Expressões ou palavras proibidas"
@@ -496,8 +566,9 @@ livechat_configuration_channel_mute_anonymous_desc: |
   Valor padrão para novas salas de bate-papo.
   Para salas de bate-papo existentes, você pode alterar o recurso no formulário de configuração da sala.
   Quando esse recurso está habilitado, usuários anônimos podem apenas ler o bate-papo e não enviar mensagens.
-livechat_configuration_channel_terms_label: ""
+livechat_configuration_channel_terms_label: "Termos e condições do chat do canal"
 livechat_configuration_channel_terms_desc: |
+  Você pode configurar uma mensagem de "termos e condições" que será exibida aos usuários que entrarem em suas salas de bate-papo.
 
 new_poll: 'Criar uma nova enquete'
 poll: 'Enquete'
@@ -522,6 +593,11 @@ poll_vote_ok: 'Seu voto foi levado em consideração, os contadores serão atual
 
 moderation_delay: 'Atraso de moderação'
 livechat_configuration_channel_moderation_delay_desc: |
+  Valor padrão de atraso de moderação:
+  <ul>
+    <li>0: atraso de moderação desabilitado</li>
+    <li>Qualquer número inteiro positivo: as mensagens serão atrasadas por X segundos para participantes não moderadores, permitindo que os moderadores excluam as mensagens antes que qualquer usuário possa lê-las.</li>
+  </ul>
 
 livechat_configuration_channel_anonymize_moderation_label: "Anonimizar ações de moderação"
 livechat_configuration_channel_anonymize_moderation_desc: |
