@@ -245,6 +245,10 @@ prosody_peertube_uri_description: |
 
 prosody_muc_log_by_default_label: "Logar conteúdo das salas por padrão"
 prosody_muc_log_by_default_description: |
+  Se marcado, o conteúdo da sala será salvo por padrão.
+  Qualquer usuário que entrar em uma sala verá o que foi escrito antes de entrar.<br>
+  Observe que sempre é possível ativar/desativar o arquivamento
+  de conteúdo para uma sala específica, editando as propriedades.
 
 prosody_muc_expiration_label: "Expiração dos logs de sala"
 prosody_muc_expiration_description: |
