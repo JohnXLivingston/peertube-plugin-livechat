@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
 #

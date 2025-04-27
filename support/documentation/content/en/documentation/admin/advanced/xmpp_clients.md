@@ -170,7 +170,7 @@ Note: for it to be available, the plugin must have been started at least once.
 We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` containing:
 
 ```bash
-#!/bin/sh
+#!/usr/bin/env sh
 /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \
   --root \
   --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \

@@ -1,4 +1,4 @@
-#!/bin/env node
+#!/usr/bin/env node
 
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
 //

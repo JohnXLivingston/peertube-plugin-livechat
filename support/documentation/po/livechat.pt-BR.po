@@ -1940,7 +1940,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid ""
-"#!/bin/sh\n"
+"#!/usr/bin/env sh\n"
 "/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \\\n"
 "  --root \\\n"
 "  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\\n"
