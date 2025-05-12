@@ -1,6 +1,6 @@
 # Changelog
 
-## 12.0.4 Not Released Yet
+## 12.0.4
 
 ### Minor changes and fixes
 
