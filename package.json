@@ -33,7 +33,7 @@
     "got": "^11.8.6",
     "http-proxy": "^1.18.1",
     "log-rotate": "^0.2.8",
-    "openid-client": "^5.7.0",
+    "openid-client": "^5.7.1",
     "validate-color": "^2.2.4",
     "xmppjs-chat-bot": "^0.5.0"
   },
