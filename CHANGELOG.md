@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Fix #660: don't send headers twice on emoji router errors.
+* Fix shebangs (for NixOS compatibility).
 
 ## 12.0.3
 

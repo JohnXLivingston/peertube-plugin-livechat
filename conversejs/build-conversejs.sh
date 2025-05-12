@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+# SPDX-FileCopyrightText: 2025 Mehdi Benadel <https://mehdibenadel.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
@@ -91,7 +92,7 @@ mv "$converse_build_dir/custom/index.js" "$converse_build_dir/src/"
 cp "$src_dir/loc.keys.js" "$converse_build_dir/"
 
 echo "Patching i18n files to add custom labels..."
-/bin/env node conversejs/build-conversejs-patch-i18n.js
+/usr/bin/env node conversejs/build-conversejs-patch-i18n.js
 
 if [[ ! -d "$converse_build_dir/node_modules" ]]; then
   echo "Missing node_modules directory, seems we have to call the makefile..."
