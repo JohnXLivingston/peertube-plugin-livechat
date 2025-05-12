@@ -102,6 +102,54 @@ const tplEmojiOnly = (o) => {
     </div>`
 }
 
+class BackToLastMsg extends CustomElement {
+  static get properties () {
+    return {
+      jid: { type: String }
+    }
+  }
+
+  show = false
+
+  async connectedCallback () {
+    super.connectedCallback()
+    this.model = _converse.chatboxes.get(this.jid)
+    await this.model.initialized
+
+    let scrolled = this.model.ui.get('scrolled')
+    let hasUnreadMsg = this.model.get('num_unread_general') > 0
+    this.listenTo(this.model.ui, 'change:scrolled', () => {
+      scrolled = this.model.ui.get('scrolled')
+      this.show = scrolled && !hasUnreadMsg
+      this.requestUpdate()
+    })
+    this.listenTo(this.model, 'change:num_unread_general', () => {
+      hasUnreadMsg = this.model.get('num_unread_general') > 0
+      // Do not show the element if there is new messages since there is another element for that
+      this.show = scrolled && !hasUnreadMsg
+      this.requestUpdate()
+    })
+  }
+
+  onClick (ev) {
+    ev?.preventDefault()
+    const chatContainer = document.querySelector('converse-chat-content')
+    chatContainer?.scrollTo({ top: chatContainer.scrollHeight })
+  }
+
+  render () {
+    return this.show
+      ? html`<div class="livechat-back-to-last-msg new-msgs-indicator" @click=${this.onClick}>
+          ▼ ${
+            // eslint-disable-next-line no-undef
+            __(LOC_back_to_last_msg)
+          } ▼
+        </div>`
+      : ''
+  }
+}
+api.elements.define('livechat-back-to-last-msg', BackToLastMsg)
+
 const tplViewerMode = (o) => {
   if (!api.settings.get('livechat_enable_viewer_mode')) {
     return html``
@@ -165,6 +213,7 @@ export default (o) => {
     ${tplViewerMode(o)}
     ${tplSlowMode(o)}
     ${tplEmojiOnly(o)}
+    <livechat-back-to-last-msg jid=${o.model.get('jid')}></livechat-back-to-last-msg>
     ${
       mutedAnonymousMessage
         ? html`<span class="muc-bottom-panel muc-bottom-panel--muted">${mutedAnonymousMessage}</span>`
