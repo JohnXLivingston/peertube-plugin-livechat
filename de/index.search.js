@@ -412,7 +412,7 @@ sudo -u peertube mkdir /var/www/peertube/storage/plugins/data/peertube-plugin-li
 Wir werden certbot so konfigurieren, dass die generierten Zertifikate in den Prosody Ordner importiert werden. Wir können das Programm ProsodyCtl verwenden, das im Plugin enthalten ist.
 Hinweis: Damit es verfügbar ist, muss das Plugin mindestens einmal gestartet worden sein.
 Wir werden eine Datei /etc/letsencrypt/renewal-hooks/deploy/prosody.sh erstellen, die Folgendes enthält:
-#!/bin/sh /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \\ --root \\ --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\ cert import \\ room.your_instance.tld your_instance.tld /etc/letsencrypt/liveDann bitten wir um die Erstellung des Zertifikats:
+#!/usr/bin/env sh /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \\ --root \\ --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\ cert import \\ room.your_instance.tld your_instance.tld /etc/letsencrypt/liveDann bitten wir um die Erstellung des Zertifikats:
 certbot -d room.videos.john-livingston.frWenn certbot Ihnen mehrere Methoden zur Erstellung des Zertifikats anbietet, wählen Sie “nginx”.
 Normalerweise sollten Sie die Zertifikate nun in dem konfigurierten Ordner finden.
 Hinweis: Wenn Sie dies zum ersten Mal tun, müssen Sie Prosody neu laden. Der einfachste Weg, dies zu tun, ist, Peertube neu zu starten.

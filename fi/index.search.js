@@ -93,9 +93,9 @@ You can also change your nickname using the chat menu.`,description:"How to chat
 Channel’s chat terms & conditions You can configure a “terms & conditions” message that will be shown to users joining your chatrooms.
 For more information on this feature, check the documentation for channel’s terms & conditions.
 Info Changing this setting will restart the chat server, and all users will be disconnected for a short time.
-List existing rooms When pressing the «List rooms» button, all existing chatrooms will be listed. You can then find them and moderated them.
+Listaa olemassaolevat huoneet When pressing the «List rooms» button, all existing chatrooms will be listed. You can then find them and moderated them.
 Federation Following settings concern the federation with other Peertube instances, and other fediverse softwares.
-Don’t display remote chats By checking this setting, your instance will never display chats from remote videos.
+Älä näytä etäkeskusteluja Tämän asetuksen valitsemalla instanssisi ei koskaan näytä keskustelua etävideoista.
 Don’t publish chat information By checking this setting, your instance will not publish chat information on the fediverse. Remote Peertube instances will not be aware that they are chat rooms associated to your videos.
 Please note: if you already had chats in progress, it is possible that the information has already been published. You will have to wait for the next video update before the information is unpublished. Also, if you disable this setting, you’ll have to wait for the videos to be updated before the information are published again. This update happens among others when a live event resumes or stops.
 Please note: this setting only affects the publication of information via the ActivityPub protocol. It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.
@@ -414,7 +414,7 @@ sudo -u peertube mkdir /var/www/peertube/storage/plugins/data/peertube-plugin-li
 We will configure certbot to import the generated certificates into the Prosody folder. We can use the ProsodyCtl utility packaged in the plugin.
 Note: for it to be available, the plugin must have been started at least once.
 We will create a file /etc/letsencrypt/renewal-hooks/deploy/prosody.sh containing:
-#!/bin/sh /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \\ --root \\ --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\ cert import \\ room.your_instance.tld your_instance.tld /etc/letsencrypt/liveThen we ask to generate the certificate:
+#!/usr/bin/env sh /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \\ --root \\ --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\ cert import \\ room.your_instance.tld your_instance.tld /etc/letsencrypt/liveThen we ask to generate the certificate:
 certbot -d room.videos.john-livingston.frIf certbot offers you several methods to generate the certificate, choose “nginx”.
 Normally you should now find the certificates in the configured folder.
 Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube.
@@ -471,15 +471,15 @@ Quickly rebuild and install the plugin When you do modification, you don’t hav
 When the plugin is already installed on your dev instance, and you haven’t changed any dependency, you can quickly install your work by following these steps:
 re-build necessary parts of the plugin (client, styles, …), overwrite the data/plugins/node_modules/peertube-plugin-livechat/dist/ content of your dev instance by the content of the plugin’s dist folder, change recursively plugins/node_modules/peertube-plugin-livechat/dist/ files owner to your peertube user, restart your instance. Performance tests The livechat-perf-test repository contains some tools to make performance tests. It can be used to evaluate code improvements, or find bottlenecks.`,description:"Develop",tags:[],title:"Develop",uri:"/peertube-plugin-livechat/fi/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`OBS is a popular Free And Open Source streaming software, with advanced capacities for your live streams. In the current page, you will find some advices to handle your live chats using OBS.
 OBS Overlay You can easily include the chat in your video stream.
-You can use the “Share chat link” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
-Check the “Read-only” checkbox in the modal.
+You can use the “Jaa linkki keskusteluun” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
+Check the “Vain luku” checkbox in the modal.
 Then use this link as a “web browser source” in OBS.
-You can use the “Transparent background (for stream integration, with OBS for example)” option to have a transparent background in OBS. If you want to customize the background transparency, you can add this CSS in your OBS browser source’s settings:
+You can use the “Läpinäkyvä tausta (striimauksen integrointiin, esimerkiksi OBS:llä)” option to have a transparent background in OBS. If you want to customize the background transparency, you can add this CSS in your OBS browser source’s settings:
 :root { --livechat-transparent: rgba(255 255 255 / 90%) !important; } In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values.
 Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL. You must use valid CSS color values, and they must be properly URL encoded.
 OBS Dock Info This feature comes with the livechat plugin version 10.1.0. Varoitus This feature can be disabled by the instance’s adminitrators.
 You can use OBS “Custom browser docks” to integrate the chat in your OBS while you are streaming. The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don’t have to enter your password in OBS.
-To do so, just use the “Share chat link” feature, and open the “Dock” tab. From there, you can create a new token using the “+” button.
+To do so, just use the “Jaa linkki keskusteluun” feature, and open the “Dock” tab. From there, you can create a new token using the “+” button.
 Then, copy the url, and use the “Docks / Custom browser docks” menu from your OBS to add a dock with this URL.
 Once you have done, you will have a new dock connected to the chat with your account.
 Vihje Tokens are valid to join any chat room. You don’t have to generate separate tokens for each of your rooms. You can also customize the nickame that will be used by changing the n parameter in the url.
@@ -618,7 +618,7 @@ Login to your Peertube account Varoitus This feature is not yet available, and w
 Connection using an external XMPP account If this feature is enabled on your instance, you can connect to Peertube chats using any XMPP account.
 To get the address of the room you want to join, you can use the “share chat” button that is located above the chat:
 Info By default, the share button is only visible to the owner of the video, and the admins/moderators of the instance. However, admins can decide to display this button for everyone.
-Then, choose “Connect using XMPP”:
+Then, choose “Yhdistä käyttäen XMPP:tä”:
 Then you just have to click on “open” or copy/paste the address of the chat room into your XMPP client (using the “join a room” feature).`,description:"Connect to chat using a XMPP client",tags:[],title:"XMPP Clients",uri:"/peertube-plugin-livechat/fi/documentation/user/xmpp_clients/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The poll system relies on two thinks:
 mod_muc_polls Prosody module on the backend polls Converse plugin on the frontend Backend mod_muc_polls is a Prosody modules that implements polls in MUC. This module could be used on any Prosody server, and has no code specific to the livechat plugin.
 The way this module works could be standardized one day, by writing a XEP.
@@ -717,16 +717,16 @@ Thanks to NlNet and the NGI0 Entrust fund for the financial support.
 Thanks to Octopuce for the financial support.
 And thanks to all individual contributors who have made a donation via my liberapay page.`,description:"Plugin Credits",tags:[],title:"Credits",uri:"/peertube-plugin-livechat/fi/credits/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:`Enabling the chat for you live streams Varoitus Instance administrators can choose to disable or enable chat in specific cases. Information in this section are only true in the default case.
 When you create or modify a Peertube live, there is a “plugin settings” tab:
-In the “plugin settings” tab, there is a “Use chat” checkbox. Just check or uncheck it to enable or disable the chat associated to your video.
+In the “plugin settings” tab, there is a “Käytä keskustelua” checkbox. Just check or uncheck it to enable or disable the chat associated to your video.
 Vihje There can be other settings in this tab, depending on plugins installed on your Peertube instance.
 Per channel chat On the instance level, Peertube’s administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel. Please contact your instance’s administrators for more information on how they configure the livechat plugin.
-Share the chat On top of the chat, there is a “Share chat link” button.
+Share the chat On top of the chat, there is a “Jaa linkki keskusteluun” button.
 This button opens a popup, where you can obtain an url to join the chat. This url can be shared.
 The “Embed” tab provide some links to embed the chat in websites, or in your live stream.
 You can customize some options:
-Read-only: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the OBS documentation). Use current theme colors: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set. Generate an iframe to embed the chat in a website: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat. For more information on the “Dock” tab, check the OBS documentation.
-In the “Web” tab, the provided url opens the chat in the Peertube interface. You can share this link to other users to invite them to join the chat.
-The “Share chat link” popup can also contain a “Connect using XMPP” tab. This will only be available if your instance’s administators have enabled an correctly configured this option. Using this option, you can provide a link to join the chat using any XMPP client software. Using such softwares can for example facilitate moderation actions.
+Vain luku: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the OBS documentation). Käytä teeman värejä: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set. Luo iframe keskustelun upottamiseksi verkkosivulle: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat. For more information on the “Dock” tab, check the OBS documentation.
+In the “Webbi” tab, the provided url opens the chat in the Peertube interface. You can share this link to other users to invite them to join the chat.
+The “Jaa linkki keskusteluun” popup can also contain a “Yhdistä käyttäen XMPP:tä” tab. This will only be available if your instance’s administators have enabled an correctly configured this option. Using this option, you can provide a link to join the chat using any XMPP client software. Using such softwares can for example facilitate moderation actions.
 Moderation Please refer to the moderation documentation.
 Include the chat in your video stream Please refer to the OBS documentation.
 Chat persistence By default, the chat is persistent. This means that the room content will be kept for a while. User joining will see messages posted before their arrival.
@@ -736,7 +736,7 @@ You can for example set the default and maximum number of messages to return to 
 You can also uncheck “enable archiving”: if unchecked, messages will be pruned if the server restarts.
 By unchecking “Persistent”, the room will be cleared if there is no more participant.
 Delete the chat content If you want to delete the chat content, open the chat dropdown menu, then click on “Destroy”. A popup will open, asking a confirmation.
-The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the “Use chat” feature activated.`,description:"Some basics about how to setup and use the chat for your live stream",tags:[],title:"Some basics",uri:"/peertube-plugin-livechat/fi/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
+The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the “Käytä keskustelua” feature activated.`,description:"Some basics about how to setup and use the chat for your live stream",tags:[],title:"Some basics",uri:"/peertube-plugin-livechat/fi/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
 In the Peertube left menu, there is a “Chatrooms” entry:
 This “Chatrooms” link takes you to a list of your channels. By clicking on a channel, you will then be able to setup some options for your channels:
 Here you can configure:

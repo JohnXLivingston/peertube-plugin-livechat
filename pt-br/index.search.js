@@ -1,25 +1,28 @@
-var relearn_search_index=[{breadcrumb:"Peertube livechat",content:`What is the livechat plugin? This Peertube plugin is meant to provide a chat system for Peertube videos.
-By default, once you have installed the plugin on your Peertube instance, a chat room will automatically be created for each live stream.
-On the following screenshot, you can see a classic Peertube video page, with a chat room on the right (click on the picture to view it full screen):
-The chat room will be accessible for all viewers, even those who don’t have an account on your instance. Those “anonymous” users just have to choose a nickname before they can begin talking in the chat.
-By default, the chat is displayed next to the video. But you can open it in another browser tab, using the button on top of it :
-Tip You can test the livechat plugin with this demo page.
-Installation As a Peertube administrator, you can setup this plugin on your instance simply by using the Peertube plugin marketplace included in the administration interface. Search for “livechat”, then click “install”: that’s it!
-Livechat capabilities The plugin has many advanced features. As it is using the XMPP standard “under the hood”, it is possible for Peertube administrators to allow advanced usages (connection using XMPP clients, chatbots, bridge to other chat protocols, …). More information in the relevant sections of this documentation.
-Federation Peertube is part of the fediverse: you can create a network of Peertube instances, sharing content between them.
-This plugin can handle federation: when viewing a livestream from a remote instance, you will join the chat room with your local account. You will be automatically connected with your current nickname and avatar.
-Of course, for the federation to work, the plugin must be installed on both instances.
-Moderation Some times, you have to protect your community from bad people. As an instance administrator, you can choose to disallow federation for the livechat plugin. If remote actors behave badly, streamers, moderators and administrators can ban or mute users.
-Chat bot This plugin comes with a built-in chat bot. Check its documentation for more information.
-You can also plug in any other XMPP chat bot, using XMPP External Components. To do so, you just have to configure External Components access in the plugin settings.
-Chat persistence When joining a room, you will see previous messages. Even those sent before you joined the room.
-This behaviour can be changed room by room, and default retention duration can be chosen by instance’s administrators.
-Integrate the chat in your live stream When using software as OBS for you live stream, you can embed the chat in the video stream. This is for example useful for replays.
-In the following screenshot, you can see a live replay, where the chat content is embeded on bottom of the video:
-In the following screenshot, you can see an OBS setup, where the chat is included as a source in the current scene (background color can be changed, and can be transparent):
-Other usages By default, each streamer will be able to activate/deactivate the chat for their live streams.
-But on the instance level, administrators can choose to activate the chat for all videos (live and/or VOD).
-You can even activate the chat for specific VOD videos. This is how the demo page works: it is not a live stream, but I have activated the chat specifically for this video.`,description:"Introduction",tags:[],title:"Introduction",uri:"/peertube-plugin-livechat/pt-br/intro/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:` Tip This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html. Translations are available at https://www.contributor-covenant.org/translations. Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.
+var relearn_search_index=[{breadcrumb:"Bate-papo ao vivo do Peertube",content:`O que é o plugin LiveChat? Este plugin Peertube foi criado para fornecer um sistema de bate-papo para vídeos do Peertube.
+Por padrão, depois de instalar o plugin na sua instância do Peertube, uma sala de bate-papo será criada automaticamente para cada transmissão ao vivo.
+Na captura de tela a seguir, você pode ver uma página de vídeo clássica do Peertube, com uma sala de bate-papo à direita (clique na imagem para vê-la em tela cheia):
+A sala de bate-papo estará acessível a todos os espectadores, mesmo aqueles que não possuem uma conta na sua instância. Os usuários “anônimos” só precisam escolher um apelido antes de poderem começar a conversar no bate-papo.
+Por padrão, o chat é exibido ao lado do vídeo. Mas você pode abri-lo em outra aba do navegador, usando o botão na parte superior:
+Tip Você pode testar o plugin livechat com esta página de demonstração.
+Instalação Como administrador do Peertube, você pode configurar este plugin na sua instância simplesmente usando o marketplace de plugins do Peertube incluído na interface de administração. Pesquise por “livechat” e clique em “instalar”: pronto!
+Capacidades de chat ao vivo O plugin possui muitos recursos avançados. Como utiliza o padrão XMPP “por baixo dos panos”, os administradores do Peertube podem permitir usos avançados (conexão usando clientes XMPP, chatbots, ponte para outros protocolos de bate-papo, etc.). Mais informações nas seções relevantes desta documentação.
+Federação O Peertube faz parte do fediverse: você pode criar uma rede de instâncias do Peertube, compartilhando conteúdo entre elas.
+Este plugin pode lidar com federação: ao assistir a uma transmissão ao vivo de uma instância remota, você entrará na sala de bate-papo com sua conta local. Você será conectado automaticamente com seu apelido e avatar atuais.
+Claro que, para que a federação funcione, o plugin deve ser instalado em ambas as instâncias.
+Moderação Às vezes, você precisa proteger sua comunidade de pessoas mal-intencionadas. Como administrador da instância, você pode optar por proibir a federação para o plugin de chat ao vivo. Se atores remotos se comportarem mal, streamers, moderadores e administradores podem banir ou silenciar usuários.
+Bot de bate-papo Este plugin vem com um [bot de bate-papo] integrado (/peertube-plugin-livechat/documentation/user/streamers/bot/). Consulte a documentação para mais informações.
+Você também pode conectar qualquer outro bot de bate-papo XMPP usando Componentes Externos XMPP. Para isso, basta configurar o acesso aos Componentes Externos nas configurações do plugin.
+Persistência de bate-papo Ao entrar em uma sala, você verá mensagens anteriores, inclusive aquelas enviadas antes de você entrar na sala.
+Esse comportamento pode ser alterado em cada sala, e a duração de retenção padrão pode ser escolhida pelos administradores da instância.
+Integre o chat na sua transmissão ao vivo Ao usar o software OBS para sua transmissão ao vivo, você pode incorporar o bate-papo na transmissão de vídeo. Isso é útil, por exemplo, para replays.
+Na captura de tela a seguir, você pode ver uma repetição ao vivo, onde o conteúdo do bate-papo está incorporado na parte inferior do vídeo:
+Na captura de tela a seguir, você pode ver uma configuração do OBS, onde o bate-papo é incluído como uma fonte na cena atual (a cor de fundo pode ser alterada e pode ser transparente):
+Outros usos Por padrão, cada streamer poderá ativar/desativar o chat para suas transmissões ao vivo.
+Mas no nível da instância, os administradores podem optar por ativar o chat para todos os vídeos (ao vivo e/ou VOD).
+Você pode até ativar o chat para vídeos VOD específicos. É assim que a página demo funciona: não é uma transmissão ao vivo, mas ativei o chat especificamente para este vídeo.`,description:"Introdução",tags:[],title:"Introdução",uri:"/peertube-plugin-livechat/pt-br/intro/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers > Bot de bate-papo",content:`Proibir caracteres especiais Info Esta funcionalidade está disponível com o plugin livechat versão 12.0.0. Configuração Ao habilitar esta opção, o bot de moderação irá excluir automaticamente mensagens que contenham mais do que X caracteres especiais. Caracteres especiais são aqueles que não se enquadram em nenhuma dessas categorias: letras, números, símbolos de pontuação, símbolos de moeda, emojis.
+Tolerância Número de caracteres especiais que podem ser aceitos em uma mensagem, sem excluí-la.
+Motivo Motivo para exibir além das mensagens excluídas
+Também modere mensagens de moderadores Por padrão, as mensagens dos moderadores não serão afetadas por este recurso. Ao marcar esta opção, as mensagens dos moderadores também serão excluídas.`,description:"O bot pode moderar automaticamente mensagens que contenham muitos caracteres especiais.",tags:[],title:"Caracteres especiais",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Contribuindo",content:` Tip Este Código de Conduta é uma adaptação do Contributor Covenant, versão 2.1, disponível em https://www.contributor-covenant.org/version/2/1/code_of_conduct.html. As traduções estão disponíveis em https://www.contributor-covenant.org/translations. Casos de comportamento abusivo, assediador ou de outra forma inaceitável podem ser denunciados aos líderes da comunidade responsáveis pela aplicação da lei por e-mail para git.[at].john-livingston.fr.
 Our Pledge We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
 We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
 Our Standards Examples of behavior that contributes to a positive environment for our community include:
@@ -40,151 +43,181 @@ Consequence: A temporary ban from any sort of interaction or public communicatio
 Consequence: A permanent ban from any sort of public interaction within the community.
 Attribution This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
 Community Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.
-For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"Contributor Covenant Code of Conduct",tags:[],title:"Code of Conduct",uri:"/peertube-plugin-livechat/pt-br/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat",content:` User documentationPlugin peertube-plugin-livechat user documentation
-For viewersHow to chat for stream viewers
-OBSDocumentation to stream the chat content using OBS.
-XMPP ClientsConnect to chat using a XMPP client
-For streamersHow to setup the chat for your live stream
-Some basicsSome basics about how to setup and use the chat for your live stream
-Channel configurationPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
-ModerationPlugin peertube-plugin-livechat advanced moderation features
-Terms & conditionsConfigure channel's chat terms & conditions
-Slow modePlugin peertube-plugin-livechat slow mode
-Moderation delayPlugin peertube-plugin-livechat moderation delay
-Custom emojisPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
-PollsYou can create polls to ask viewers their opinion
-Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
-Moderation notesPlugin peertube-plugin-livechat moderation notes
-Chat botChat bot setup
-Installation guidePlugin peertube-plugin-livechat installation guide
-TroubleshootingSome classic mistakes and workarounds.
-Known issues: CPU CompatibilityFor now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.
-Upgrade from version older than 6.0.0Important notes when upgrading for an older version.
-Admin documentationPlugin Peertube Livechat administration
-SettingsPlugin Peertube Livechat settings
-External AuthenticationPlugin Peertube Livechat settings - External Authentication
-Prosody mod_firewallAdvanced firewall rules for the Prosody server
-Advanced usageSome advanced features
-XMPP clientsAllow connections using XMPP clients
-Using MatterbridgeUsing Matterbridge to bridge with other chats`,description:"Plugin documentation",tags:[],title:"Documentation",uri:"/peertube-plugin-livechat/pt-br/documentation/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`Joining chat rooms When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:
-There are two slightly different use cases, depending on wether or not you have an account on the Peertube instance. See bellow for more informations.
-If you haven’t a Peertube account Warning This feature can be disabled by the instance’s adminitrators.
-If you are not logged in on the Peertube instance where you are watching the video, you will automatically join the chat. You will be assigned a random nickname (something like “Anonymous 12345”).
-Before being able to speak in the chat room, you have to enter a nickname in the field on the bottom of the window.
-Log in using an external authentication provider Warning This feature can be disabled by the instance’s adminitrators.
-The Peertube instance can configure external authentication providers (Mastodon accounts, Google accounts, …). In such case, you will see a “Log in using an external account” button, that will open a dialog modal. In this dialog modal, there will be some buttons to connect using a remote account.
-Once you signed in the remote account, and have granted access, your nickname and avatar (if available) will be automatically fetched. No other data will be stored. These data will be automatically deleted several hours after your quit the chat.
-If you have a Peertube account If you are connected with your Peertube account, you will automatically join the room, using your Peertube nickname and avatar.
-Tip If you are watching a live on an instance on which you have no account, but you have an account on another instance: if the livechat plugin is installed on both instances, it is possible to join the chat using your account. To do so, just open the video on your instance (you can for example copy/paste the video url in the search field of your instance).
-If you have a Peertube account on another Peertube instance Info This feature comes with the livechat plugin version 9.0.0. If you have a Peertube account, but not on the current instance, there is a “Log in using an external account” button. This button will open a dialog where you can enter your Peertube instance URL. Once you entered it, it will check if the livechat plugin is available on the remote instance, and if the video is available. If it is the case, you will be redirected to the video on the remote instance.
-Chatting To send messages, just type them in the “message” field on the bottom of the screen. You can send them by pressing the enter key on your keyboard, or by clicking on the “send” button.
-If you want to add line breaks in your messages, you can use the “shift+enter” key combination.
-You can add emojis to your messages. You can for example use the emojis menu, or directly type emojis shortcuts like :smiley:.
-You can mention other participants. To do so, you can type the first nickname letters, then press the tab key. You can also type @: this will directly open the menu. You can also click on a nickname in the participants list to insert it in the message field.
-Participants list To see the list of participants, just open the right menu:
-You can see that some participants have special rights (moderator, owner, …).
-Chat dropdown menu There is a dropdown menu on the top of the chat, with some advanced features. This is especially useful for moderation features. Available features depends on your access level.
-Opening full screen On top of the chat, there is a button to open the chat in fullscreen. This will open a new browser tab with the following content:
-It can be easier to chat using a full browser tab.
-Changing nickname You can change your nickname by typing /nick your_new_nickname in the message field.
-You can also change your nickname using the chat menu.`,description:"How to chat for stream viewers",tags:[],title:"For viewers",uri:"/peertube-plugin-livechat/pt-br/documentation/user/viewers/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`This section describes the plugin settings page.
-Channel’s chat terms & conditions You can configure a “terms & conditions” message that will be shown to users joining your chatrooms.
+For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"Código de Conduta do Pacto do Colaborador",tags:[],title:"Código de Conduta",uri:"/peertube-plugin-livechat/pt-br/contributing/codeofconduct/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do administrador",content:`Esta seção descreve a página de configurações do plugin.
+Termos e condições do chat do canal Você pode configurar uma mensagem de “termos e condições” que será exibida aos usuários que entrarem em suas salas de bate-papo.
 For more information on this feature, check the documentation for channel’s terms & conditions.
-Info Changing this setting will restart the chat server, and all users will be disconnected for a short time.
-Listar salas existentes When pressing the «List rooms» button, all existing chatrooms will be listed. You can then find them and moderated them.
-Federation Following settings concern the federation with other Peertube instances, and other fediverse softwares.
-Don’t display remote chats By checking this setting, your instance will never display chats from remote videos.
-Não publicar informações do chat By checking this setting, your instance will not publish chat information on the fediverse. Remote Peertube instances will not be aware that they are chat rooms associated to your videos.
-Please note: if you already had chats in progress, it is possible that the information has already been published. You will have to wait for the next video update before the information is unpublished. Also, if you disable this setting, you’ll have to wait for the videos to be updated before the information are published again. This update happens among others when a live event resumes or stops.
-Please note: this setting only affects the publication of information via the ActivityPub protocol. It will not prevent a remote application from otherwise detecting the presence of chats, and trying to connect to it.
-Authentication Disable livechat tokens In case you have any trouble with the long term authentication tokens, you can disable the feature here.
-External Authentication See the detailed documentation page:
-External Authentication
-Channel advanced configuration Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
-Disable the advanced channel configuration and the chatbot If you encounter any issue with this feature, you can disable it.
-Chat behaviour Tipo de sala You can choose here to have separate rooms for each video, or to group them by channel.
-Abrir chat automaticamente When watching a video, the chatbox will automatically open.
-Show the «open in new window» button There will be a button for opening the web chat in a new window.
-Show the «share chat link» button This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat. The chat can be customized (readonly mode, use the current theme, …).
-You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!
-This setting allows you to choose who can access this modal.
-Users can activate the chat for their lives If checked, all live videos will have a checkbox in their properties for enabling the web chat.
-The video owner will be able to activate web chats.
-Ativar chat para todas as transmissões If checked, the chat will be enabled for all lives.
-Activate chat for all non-lives Activate chat for all non-lives
-Activate chat for these videos Activate chat for these videos
-Hide the chat for anonymous users If checked, anonymous Peertube users won’t see the chat. This feature is still experimental. If you enabled it, it is highly recommended to also check “Don’t publish chat information”. Otherwise, some third party tools could try to open the chat, and have unpredictable behaviours.
-Note: for now this feature simply hide the chat. In a future release, the chat will be replaced by a message saying «please log in to […]». See v5.7.0 Release Notes for more information.
-Ban anonymous user’s IP when user is banned from a chatroom By enabling this option, each time an anonymous user is banned from a chatroom, it’s IP will also be banned from the chat server. Warning: if your instance is open to registration, any user could create a trapped-room, invite users to join, and automatically ban all anonymous user’s IPs. The banned IP list is not stored, it will be cleared on server restart, or when you change some plugin’s settings. The banned IP are logged in the Prosody server log files, so server’s administrators can eventually use some external tools (like fail2ban) to ban IPs more widely.
-Important note: If you enable this feature, and are using a custom reverse proxy on front of Peertube, please make sure that your setup is correctly configured to forward real user’s IPs to Peertube. Otherwise it could block all anonymous users at once.
-Theming Avatar set You can choose from several different sets the default avatars that will be used for chat users.
-Sepia (mascote do Peertube): David Revoy’s Peertube avatar generator, CC-By license
-Gatos: David Revoy’s cat avatar generator, CC-By license
-Pássaros: David Revoy’s bird avatar generator, CC-By license
-Fenecs (Mobilizon mascot): David Revoy’s fenec/mobilizon avatar generator, CC-By license
-Abstrato: David Revoy’s Abstract avatar generator, CC-By license
-Legacy Sepia avatars (those included in previous plugin versions): Based on David Revoy' work, AGPL-v3 license
-If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
-ConverseJS theme You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Automatic color detection Try to autodetect colors from user’s current theme.
-When this setting is enabled, the plugin tries to auto-detect colors to apply to the chat theme.
-If this is not correctly working for some of your Peertube theme, you can disable this option. You can report the bug on the official issue tracker . Don’t forget to specify which theme is not working.
-Webchat iframe style attribute Additional styles to be added on the iframe style attribute. Example: height:400px;
-Chat server advanced settings Use system Prosody The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
-This setting should only be used if the plugin is broken, and waiting for a patch.
-Desabilitar Websocket With Peertube >= 5.0.0, this plugin try to use Websocket connection for chatting. If the user’s browser or connection is incompatible, the browser will automatically fall back on the BOSH protocol. But in rare case, this can fail. For example, if you have a reverse proxy in front of Peertube that does not allow Websocket connection for plugins. In this case, you can check this setting to disable Websocket connections.
-Prosody port The port that will be used by the Prosody server.
-Change it if this port is already in use on your server.
-You can close this port on your firewall, it will not be accessed from the outer world.
-Note: this might change in a near future, as it is planned to add a feature to activate external connections.
-Peertube url for API calls Please let this setting empty if you don’t know what you are doing.
-In some rare cases, Prosody can’t call Peertube’s API from its public URI. You can use this field to customize Peertube’s URI for Prosody modules (for example, with «http://localhost:9000» or «http://127.0.0.1:9000»).
+Info Alterar esta configuração reiniciará o servidor de bate-papo e todos os usuários serão desconectados por um curto período.
+Listar salas existentes Ao clicar no botão “Listar salas”, todas as salas de bate-papo existentes serão listadas. Você poderá encontrá-las e moderá-las.
+Federação As configurações a seguir dizem respeito à federação com outras instâncias do Peertube e outros softwares diversos.
+Não exibir chats remotos Ao selecionar esta configuração, sua instância nunca irá exibir chats de vídeos remotos.
+Não publicar informações do chat Ao selecionar esta configuração, sua instância não irá publicar informação de chat no fediverso. Instâncias remotas do Peertube não estarão cientes de que elas são salas de chat associadas aos seus vídeos.
+Atenção: se você já possui chats em andamento, é possível que esta informação já tenha sido publicada. Você deverá aguardar até a próxima atualização do vídeo antes que a informação seja despublicada. Também, se você desabilitar esta configuração, você deverá aguardar os vídeos serem atualizados antes que a informação seja publicada novamente. Esta atualização acontece sobre as outras quando um evento ao vivo retorna ou se encerra.
+Atenção: esta configuração apenas afeta a publicação de informação via protocolo ActivityPub. Não irá impedir uma aplicação remota de detectar a presenção de chats de outra maneira, e de tentar conectar-se a ele.
+Autenticação Desativar tokens de chat ao vivo Caso você tenha algum problema com os tokens de autenticação de longo prazo, você pode desabilitar o recurso aqui.
+Autenticação externa Veja a página de documentação detalhada:
+Autenticação externa
+Configuração avançada do canal As configurações a seguir dizem respeito às opções avançadas do canal: os usuários poderão adicionar alguma personalização em seus canais, ativar o bot de moderação, …
+Desabilite a configuração avançada do canal e o chatbot Caso encontre algum problema com esse recurso, você pode desativá-lo.
+Comportamento de bate-papo Tipo de sala Você pode escolher aqui ter salas separadas para cada vídeo ou agrupá-las por canal.
+Abrir chat automaticamente Ao assistir a um vídeo, a caixa de bate-papo será aberta automaticamente.
+Exibir o botão «abrir em nova janela» Haverá um botão para abrir o chat da web em uma nova janela.
+Exibir o botão «compartilhar link do chat» Este recurso permite o modal “compartilhar link de bate-papo”. Com este modal, você pode gerar URLs para entrar no bate-papo. O bate-papo pode ser personalizado (modo somente leitura, usar o tema atual, …).
+Você pode, por exemplo, gerar uma URL somente leitura e usá-la no OBS para integrar o chat na sua transmissão ao vivo!
+Esta configuração permite que você escolha quem pode acessar este modal.
+Usuários podem ativar o chat para suas transmissões ao vivo Se marcada, todos os vídeos ao vivo terão uma caixa de seleção em suas propriedades para habilitar o bate-papo na web.
+O proprietário do vídeo poderá ativar chats na web.
+Ativar chat para todas as transmissões Se marcado, o bate-papo será habilitado para todas as vidas.
+Ativar chat para todos os não-vivos Ativar chat para todos os não-vivos
+Ativar chat para estes vídeos Ativar chat para estes vídeos
+Ocultar chat para usuários anônimos Se marcado, usuários anônimos do Peertube não verão o chat. Este recurso ainda é experimental. Se você o habilitou, é altamente recomendável também marcar “Não publicar informações do chat”. Caso contrário, algumas ferramentas de terceiros podem tentar abrir o chat e apresentar comportamentos imprevisíveis.
+Observação: por enquanto, este recurso simplesmente oculta o chat. Em uma versão futura, o chat será substituído por uma mensagem dizendo “faça login em […]”. Consulte Notas da versão v5.7.0 para obter mais informações.
+Banir o IP de um usuário anônimo quando ele for banido de uma sala de bate-papo Ao habilitar esta opção, cada vez que um usuário anônimo for banido de uma sala de bate-papo, seu IP também será banido do servidor de bate-papo. Aviso: se sua instância estiver aberta para registro, qualquer usuário poderá criar uma sala com armadilha, convidar usuários para participar e banir automaticamente todos os IPs de usuários anônimos. A lista de IPs banidos não é armazenada, ela será apagada na reinicialização do servidor ou quando você alterar as configurações de algum plugin. Os IPs banidos são registrados nos arquivos de log do servidor Prosody, para que os administradores do servidor possam eventualmente usar algumas ferramentas externas (como o fail2ban) para banir IPs de forma mais ampla.
+Observação importante: Se você habilitar esse recurso e estiver usando um proxy reverso personalizado na frente do Peertube, certifique-se de que sua configuração esteja configurada corretamente para encaminhar IPs de usuários reais para o Peertube. Caso contrário, ele poderá bloquear todos os usuários anônimos de uma só vez.
+Tematização Conjunto de avatares Você pode escolher entre vários conjuntos diferentes de avatares padrões que serão usados pelos usuários do bate-papo.
+Sepia (mascote do Peertube): Gerador de avatar Peertube de David Revoy, licença CC-By
+Gatos: Gerador de avatar de gato de David Revoy, CC-By licença
+Pássaros: Gerador de avatar de pássaros de David Revoy, licença CC-By
+Fenecs (mascote do Mobilizon): Gerador de avatar fenec/mobilizon de David Revoy, licença CC-By
+Abstrato: Gerador de avatar abstrato de David Revoy, licença CC-By
+Avatares Sepia legados (aqueles incluídos em versões anteriores do plugin): Baseado no trabalho de David Revoy, licença AGPL-v3
+Se você não conseguir ver a alteração imediatamente, pode ser por causa do cache do seu navegador. Basta limpar o armazenamento de sessão do navegador ou reiniciá-lo.
+Tema do ConverseJS Você pode escolher qual tema usar para o ConverseJS:
+Tema Peertube: este é um tema especial, feito especialmente para integração com o Peertube. Tema padrão do ConverseJS: este é o tema padrão do ConverseJS. Tema cyberpunk do ConverseJS: este é um tema fornecido pelo ConverseJS. Detecção automática de cor Tentar detectar automaticamente as cores do tema atual do usuário.
+Quando esta configuração está ativada, o plugin tenta detectar automaticamente as cores para aplicar ao tema do chat.
+Se isso não estiver funcionando corretamente em algum dos seus temas do Peertube, você pode desativar esta opção. Você pode relatar o bug no rastreador de problemas oficial de problemas . Não se esqueça de especificar qual tema não está funcionando.
+Atributo de estilo iframe do Webchat Estilos adicionais a serem adicionados no atributo de estilo iframe. Exemplo: altura:400px;
+Configurações avançadas do servidor de bate-papo Usar Prosody do sistema O plugin vem com uma AppImage que é usada para executar o servidor Prosody XMPP. Se esta AppImage não estiver funcionando, você pode recorrer ao Prosody que vem empacotado para o seu servidor. Basta instalar o pacote prosody.
+Esta configuração só deve ser usada se o plugin estiver quebrado e aguardando um patch.
+Desabilitar Websocket Com Peertube >= 5.0.0, este plugin tenta usar a conexão Websocket para bate-papo. Se o navegador ou a conexão do usuário for incompatível, o navegador retornará automaticamente ao protocolo BOSH. Mas em casos raros, isso pode falhar. Por exemplo, se você tiver um proxy reverso na frente do Peertube que não permita conexão Websocket para plugins. Neste caso, você pode verificar esta configuração para desabilitar conexões Websocket.
+Porta do Prosody A porta que será usada pelo servidor Prosody.
+Altere-a se esta porta já estiver em uso no seu servidor.
+Você pode fechar esta porta no seu firewall, ela não será acessada do mundo externo.
+Nota: isso pode mudar em um futuro próximo, pois está planejado adicionar um recurso para ativar conexões externas.
+URL do Peertube para chamada de API Deixe esta configuração em branco se você não sabe o que está fazendo.
+Em alguns casos raros, o Prosody não consegue chamar a API do Peertube a partir de seu URI público. Você pode usar este campo para personalizar o URI do Peertube para o módulo Prosodys (por exemplo, com «http://localhost:9000» ou «http://127.0.0.1:9000»).
 If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
-In last resort, it will use your Peertube public URI. So, any API Call will go throught your Nginx server. This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP. In such case, try changing the “Peertube url for API calls” settings, by setting http://127.0.0.1:9000 (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don’t know).
-Log rooms content by default If checked, room contents will be saved by default. Any user who joins a room will see what was written before they joins.
-Please note that it is always possible to enable/disable the content archiving for a specific room, by editing its properties.
-Room logs expiration You can choose here how long the chatting room’s content is kept by the server. The value can be:
-60: the content will be saved for 60 seconds. You can replace 60 by any integer value. 1d: the content will be saved for 1 day. You can replace 1 by any integer value. 1w: the content will be saved for 1 week. You can replace 1 by any integer value. 1m: the content will be saved for 1 month. You can replace 1 by any integer value. 1y: the content will be saved for 1 year. You can replace 1 by any integer value. never: the content will never expire, and will be kept forever. Enable connection to room using external XMPP accounts By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients.
-Warning, enabling this option can request extra server and DNS configuration. Please refer to the documentation: Enable external XMPP account connections. Prosody server to server port The port that will be used for XMPP s2s (server to server) connections.
-You should use the standard 5269 port. Otherwise you should setup a specific DNS record .
-Server to server network interfaces The network interfaces to listen on for server to server connections.
-List of IP to listen on, coma separated (spaces will be stripped).
-You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
-Examples:
-*, :: * 127.0.0.1, ::1 172.18.0.42 Certificates folder If this field is empty, the plugin will generate and use self-signed certificates.
-If you want to use other certificates, just specify here the folder where Prosody can find them. Note: the “peertube” user must have read access to this folder.
-Enable client to server connections Enable XMPP clients to connect to the built-in Prosody server.
-This option alone only allows connections from localhost clients.
-This setting enable XMPP clients to connect to the built-in Prosody server. For now, this option only allows connections from localhost clients.
-As example, this option can allow an instance of Matterbridge (once it could use anonymous login) on the same machine to bridge your chat with another services like a Matrix room.
-Prosody client to server port The port that will be used by the c2s module of the built-in Prosody server.
-XMPP clients shall use this port to connect.
-Change it if this port is already in use on your server.
-You can keep this port closed on your firewall for now, it will not be accessed from the outer world.
-Note: this might change in a near future, as it is planned to add a feature to activate external connections.
-Client to server network interfaces The network interfaces to listen on for client to server connections.
-This setting is provided for advanced users. Don’t change this setting if you don’t fully understand what it means.
-List of IP to listen on, coma separated (spaces will be stripped).
-You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
-Examples:
-*, :: * 127.0.0.1, ::1 127.0.0.1, ::1, 172.18.0.42 Enable custom Prosody external components This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Prosody external components network interfaces” value to listen on other network interfaces.
-This feature could be used to connect bridges or bots.
-More informations on Prosody external components here.
-Enable custom Prosody external components Enable the use of external XMPP components.
-This option alone only allows connections from localhost. You have to setup the listening interfaces and open the port on your firewall to make it available from remote servers.
-This feature can, for example, be used to connect some bots to the chatting rooms.
-Prosody external components port The port that will be used by XMPP components to connect to the Prosody server.
-Change it if this port is already in use on your server.
-You can keep this port closed on your firewall if you don’t allow access on interfaces other than localhost.
-Prosody external components network interfaces The network interfaces to listen on for external components connections.
-List of IP to listen on, coma separated (spaces will be stripped).
-You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
-Examples:
-*, :: * 127.0.0.1, ::1 172.18.0.42 Componentes externos The external components to declare:
-One per line. Use the format «component_name:component_secret» (spaces will be trimmed). You can add comments: everything after the # character will be stripped off, and empty lines ignored. The name can only contain latin alphanumeric characters and dots. If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain. For example, «bridge» will become «bridge.your_domain.tld». You can also specify a full domain name, but you have to make sure to configure your DNS correctly. Only use alphanumeric characters in the secret passphrase (use at least 15 characters). Enable Prosody mod_firewall You can enable mod_firewall on your Prosody server.
-For more information, please check the documentation.`,description:"Plugin Peertube Livechat settings",tags:[],title:"Settings",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
+Em último caso, ele usará o URI público do Peertube. Portanto, qualquer chamada de API passará pelo seu servidor Nginx. Isso pode falhar em alguns casos: por exemplo, se você estiver em um contêiner Docker, onde o nome do host público não resolve para o IP correto. Nesse caso, tente alterar as configurações de “URL do Peertube para chamada de API” definindo http://127.0.0.1:9000 (assumindo que 9000 é a porta na qual o Peertube escuta, pergunte aos administradores da sua instância se você não souber).
+Logar conteúdo das salas por padrão Se marcado, o conteúdo da sala será salvo por padrão. Qualquer usuário que entrar em uma sala verá o que foi escrito antes de entrar.
+Observe que sempre é possível ativar/desativar o arquivamento de conteúdo para uma sala específica, editando as propriedades.
+Expiração dos logs de sala Você pode escolher aqui por quanto tempo o conteúdo da sala de bate-papo será mantido pelo servidor. O valor pode ser:
+60: o conteúdo será salvo por 60 segundos. Você pode substituir 60 por qualquer valor inteiro. 1d: o conteúdo será salvo por 1 dia. Você pode substituir 1 por qualquer valor inteiro. 1s: o conteúdo será salvo por 1 semana. Você pode substituir 1 por qualquer valor inteiro. 1m: o conteúdo será salvo por 1 mês. Você pode substituir 1 por qualquer valor inteiro. 1a: o conteúdo será salvo por 1 ano. Você pode substituir 1 por qualquer valor inteiro. nunca: o conteúdo jamais expirará, sendo mantido para sempre. Habilitar conexão à sala usando contas XMPP externas Ao habilitar esta opção, será possível conectar-se a salas usando contas XMPP externas e clientes XMPP.
+Aviso, habilitar esta opção pode demandar configuração extra de servidor e DNS. Consulte a documentação: Habilitar conexões de contas XMPP externas. Porta do servidor Prosody para o servidor A porta que será usada para conexões XMPP s2s (servidor para servidor).
+Você deve usar a porta padrão 5269. Caso contrário, você deve configurar um registro de DNS específico .
+Interfaces de rede de servidor para servidor As interfaces de rede para escutar conexões entre servidores.
+Lista de IPs para escutar, separados por vírgulas (os espaços serão removidos).
+Você pode usar «*» para escutar em todas as interfaces IPv4 e «::» para todas as IPv6.
+Examplos:
+*, :: * 127.0.0.1, ::1 172.18.0.42 Pasta dos certificados Se este campo estiver vazio, o plugin irá gerar e usar certificados autoassinados.
+Caso queira utilizar outros certificados, basta especificar aqui a pasta onde o Prosody pode encontrá-los. Observação: o usuário “peertube” deve ter acesso de leitura a esta pasta.
+Habilitar conexões de cliente para servidor Habilite os clientes XMPP para se conectarem ao servidor Prosody integrado.
+Esta opção sozinha permite apenas conexões em localhost.
+Esta configuração permite que clientes XMPP se conectem ao servidor Prosody integrado. Por enquanto, esta opção permite conexões apenas de clientes de host local.
+Por exemplo, esta opção pode permitir que uma instância do Matterbridge (que poderia usar login anônimo) na mesma máquina faça uma ponte entre seu bate-papo e outros serviços, como uma sala Matrix.
+Porta do cliente para o servidor Prosody A porta que será usada pelo módulo c2s do servidor Prosody integrado.
+Os clientes XMPP devem usar essa porta para se conectar.
+Altere-o se esta porta já estiver em uso em seu servidor.
+Você pode manter esta porta fechada em seu firewall por enquanto, ela não será acessada do mundo exterior.
+Nota: isso pode mudar em um futuro próximo, pois está planejado adicionar um recurso para ativar conexões externas.
+Interfaces de rede cliente-servidor As interfaces de rede para escutar conexões de cliente para servidor.
+Esta configuração é fornecida para usuários avançados. Não altere essa configuração se você não entender completamente o que ela significa.
+Lista de IP para ouvir, separados por vírgula (os espaços serão removidos).
+Você pode usar «*» para escutar em todas as interfaces IPv4 e «::» para todas as interfaces Ipv6.
+Exemplos:
+*, :: * 127.0.0.1, ::1 127.0.0.1, ::1, 172.18.0.42 Habilitar componentes externos personalizados do Prosody Esta configuração permite que componentes externos XMPP se conectem ao servidor. Por padrão, esta opção permite conexões apenas de componentes do host local. Você precisa alterar o valor “Interfaces de rede de componentes externos da Prosody” para escutar em outras interfaces de rede.
+Esse recurso pode ser usado para conectar pontes ou bots.
+Mais informações sobre os componentes externos do Prosody aqui.
+Habilitar componentes externos personalizados do Prosody Habilitar o uso de componentes XMPP externos.
+Esta opção por si só permite conexões apenas do localhost. Você precisa configurar as interfaces de escuta e abrir a porta no seu firewall para torná-lo disponível em servidores remotos.
+Este recurso pode, por exemplo, ser usado para conectar alguns bots às salas de bate-papo.
+Porta de componentes externos do Prosody A porta que será usada pelos componentes XMPP para se conectar ao servidor Prosody.
+Altere-a se esta porta já estiver em uso no seu servidor.
+Você pode manter esta porta fechada no seu firewall se não permitir acesso em interfaces diferentes do host local.
+Interfaces de rede de componentes externos da Prosody As interfaces de rede para escutar conexões de componentes externos.
+Lista de IPs para escutar, separados por vírgulas (os espaços serão removidos).
+Você pode usar «*» para escutar em todas as interfaces IPv4 e «::» para todas as IPv6.
+Examplos:
+*, :: * 127.0.0.1, ::1 172.18.0.42 Componentes externos Os componentes externos a declarar:
+Um por linha. Use o formato «nome_do_componente:segredo_do_componente» (os espaços serão cortados). Você pode adicionar comentários: tudo após o caractere # será removido e as linhas vazias serão ignoradas. O nome só pode conter caracteres alfanuméricos latinos e pontos. Se o nome contiver apenas caracteres alfanuméricos, ele será sufixado com o domínio XMPP. Por exemplo, «ponte» se tornará «ponte.seu_dominio.tld». Você também pode especificar um nome de domínio completo, mas certifique-se de configurar seu DNS corretamente. Use apenas caracteres alfanuméricos na frase secreta (use pelo menos 15 caracteres). Habilitar Prosody mod_firewall Você pode habilitar mod_firewall no seu servidor Prosody.
+Para mais informações, consulte a documentação.`,description:"Configurações do plugin Peertube Livechat",tags:[],title:"Configurações",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/settings/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube",content:` Documentação do usuárioDocumentação do usuário do plugin peertube-plugin-livechat
+Para espectadoresComo conversar com espectadores de transmissão
+OBSDocumentação para transmitir o conteúdo do bate-papo usando o OBS.
+Clientes XMPPConecte-se ao chat usando um cliente XMPP
+Para streamersComo configurar o chat para sua transmissão ao vivo
+Alguns princípios básicosAlgumas noções básicas sobre como configurar e usar o chat para sua transmissão ao vivo
+Configuração de canalConfiguração de salas de chat do canal Peertube
+AnúnciosProprietários e administradores de salas podem enviar anúncios especiais no chat.
+ModeraçãoRecursos avançados de moderação do plugin peertube-plugin-livechat
+Terms & conditionsConfigure channel's chat terms & conditions
+Modo lentoPlugin peertube-plugin-livechat modo lento
+Atraso de moderaçãoAtraso de moderação do plugin peertube-plugin-livechat
+Emojis personalizadosPlugin peertube-plugin-livechat emojis personalizados
+Modo somente emojisPlugin peertube-plugin-livechat modo apenas emojis
+PesquisasVocê pode criar enquetes para perguntar a opinião dos espectadores
+Tarefas / Listas de tarefasVocê pode gerenciar tarefas e listas de tarefas com sua equipe de moderação.
+Notas de moderaçãoNotas de moderação do plugin peertube-plugin-livechat
+Bot de bate-papoConfiguração do bot de bate-papo
+Guia de instalaçãoGuia de instalação do plugin peertube-plugin-livechat
+Solução de problemasAlguns erros clássicos e soluções alternativas.
+Problemas conhecidos: compatibilidade da CPUPor enquanto, o plugin funciona apenas para arquiteturas de CPU x86_64 e arm64. Aqui estão algumas instruções para outras arquiteturas de CPU.
+Atualização de versão anterior à 6.0.0Notas importantes ao atualizar para uma versão mais antiga.
+Documentação do administradorAdministração do plugin Peertube Livechat
+ConfiguraçõesConfigurações do plugin Peertube Livechat
+Autenticação externaConfigurações do plugin Peertube Livechat - Autenticação externa
+Prosódia mod_firewallRegras avançadas de firewall para o servidor Prosody
+Uso avançadoAlguns recursos avançados
+Clientes XMPPPermitir conexões usando clientes XMPP
+Usando MatterbridgeUsando o Matterbridge para fazer a ponte com outros chats`,description:"Documentação do plugin",tags:[],title:"Documentação",uri:"/peertube-plugin-livechat/pt-br/documentation/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação",content:` Para espectadoresComo conversar com espectadores de transmissão
+OBSDocumentação para transmitir o conteúdo do bate-papo usando o OBS.
+Clientes XMPPConecte-se ao chat usando um cliente XMPP
+Para streamersComo configurar o chat para sua transmissão ao vivo
+Alguns princípios básicosAlgumas noções básicas sobre como configurar e usar o chat para sua transmissão ao vivo
+Configuração de canalConfiguração de salas de chat do canal Peertube
+AnúnciosProprietários e administradores de salas podem enviar anúncios especiais no chat.
+ModeraçãoRecursos avançados de moderação do plugin peertube-plugin-livechat
+Terms & conditionsConfigure channel's chat terms & conditions
+Modo lentoPlugin peertube-plugin-livechat modo lento
+Atraso de moderaçãoAtraso de moderação do plugin peertube-plugin-livechat
+Emojis personalizadosPlugin peertube-plugin-livechat emojis personalizados
+Modo somente emojisPlugin peertube-plugin-livechat modo apenas emojis
+PesquisasVocê pode criar enquetes para perguntar a opinião dos espectadores
+Tarefas / Listas de tarefasVocê pode gerenciar tarefas e listas de tarefas com sua equipe de moderação.
+Notas de moderaçãoNotas de moderação do plugin peertube-plugin-livechat
+Bot de bate-papoConfiguração do bot de bate-papo
+Caracteres especiaisO bot pode moderar automaticamente mensagens que contenham muitos caracteres especiais.
+Nenhuma mensagem duplicadaO bot pode moderar automaticamente mensagens duplicadas.
+Palavras proibidasO bot pode moderar automaticamente mensagens contendo palavras proibidas.
+TemporizadoresO bot pode enviar periodicamente algumas mensagens.
+ComandosO bot pode responder a vários comandos.`,description:"Documentação do usuário do plugin peertube-plugin-livechat",tags:[],title:"Documentação do usuário",uri:"/peertube-plugin-livechat/pt-br/documentation/user/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário",content:`Entrando em salas de bate-papo Ao assistir a um vídeo do Peertube com o chat ativado, você verá o chat ao lado do vídeo:
+Existem dois casos de uso ligeiramente diferentes, dependendo se você possui ou não uma conta na instância do Peertube. Veja abaixo para mais informações.
+Se você não tem uma conta no Peertube Warning Esse recurso pode ser desabilitado pelos administradores da instância.
+Se você não estiver logado na instância do Peertube onde está assistindo ao vídeo, você entrará automaticamente no chat. Você receberá um apelido aleatório (algo como “Anônimo 12345”).
+Antes de poder falar na sala de bate-papo, você precisa digitar um apelido no campo na parte inferior da janela.
+Faça login usando um provedor de autenticação externo Warning Esse recurso pode ser desabilitado pelos administradores da instância.
+A instância do Peertube pode configurar provedores de autenticação externos (contas Mastodon, contas Google, etc.). Nesse caso, você verá um botão “Autenticar-se usando uma conta externa”, que abrirá uma janela de diálogo. Nessa janela, haverá alguns botões para conectar-se usando uma conta remota.
+Após fazer login na conta remota e conceder acesso, seu apelido e avatar (se disponível) serão recuperados automaticamente. Nenhum outro dado será armazenado. Esses dados serão excluídos automaticamente algumas horas após você sair do chat.
+Se você tem uma conta no Peertube Se você estiver conectado à sua conta do Peertube, você entrará automaticamente na sala, usando seu apelido e avatar do Peertube.
+Tip Se você estiver assistindo a uma transmissão ao vivo em uma instância na qual não possui conta, mas possui uma conta em outra instância: se o plugin de chat ao vivo estiver instalado em ambas as instâncias, é possível entrar no chat usando sua conta. Para isso, basta abrir o vídeo na sua instância (você pode, por exemplo, copiar/colar a URL do vídeo no campo de busca da sua instância).
+Se você tiver uma conta Peertube em outra instância Peertube Info Esta funcionalidade está disponível com o plugin livechat versão 9.0.0. Se você possui uma conta no Peertube, mas não na instância atual, há um botão “Autenticar-se usando uma conta externa”. Este botão abrirá uma caixa de diálogo onde você pode inserir a URL da sua instância do Peertube. Após a inserção, o recurso verificará se o plugin de chat ao vivo está disponível na instância remota e se o vídeo está disponível. Se for o caso, você será redirecionado para o vídeo na instância remota.
+Bate-papo Para enviar mensagens, basta digitá-las no campo “mensagem” na parte inferior da tela. Você pode enviá-las pressionando a tecla Enter no seu teclado ou clicando no botão “enviar”.
+Se quiser adicionar quebras de linha em suas mensagens, você pode usar a combinação de teclas “shift+enter”.
+Você pode adicionar emojis às suas mensagens. Você pode, por exemplo, usar o menu de emojis ou digitar diretamente atalhos de emojis como :smiley:.
+Você pode mencionar outros participantes. Para isso, digite as primeiras letras do apelido e pressione a tecla Tab. Você também pode digitar @: isso abrirá o menu diretamente. Você também pode clicar em um apelido na lista de participantes para inseri-lo no campo de mensagem.
+Lista de participantes Para ver a lista de participantes, basta abrir o menu à direita:
+Você pode ver que alguns participantes têm direitos especiais (moderador, proprietário, …).
+Menu suspenso de bate-papo Há um menu suspenso na parte superior do chat, com alguns recursos avançados. Isso é especialmente útil para recursos de moderação. Os recursos disponíveis dependem do seu nível de acesso.
+Abrindo em tela cheia Na parte superior do chat, há um botão para abrir o chat em tela cheia. Isso abrirá uma nova aba do navegador com o seguinte conteúdo:
+Pode ser mais fácil bater papo usando uma aba inteira do navegador.
+Mudando o apelido Você pode alterar seu apelido digitando /nick seu_novo_apelido no campo de mensagem.
+Você também pode alterar seu apelido usando o menu de bate-papo.`,description:"Como conversar com espectadores de transmissão",tags:[],title:"Para espectadores",uri:"/peertube-plugin-livechat/pt-br/documentation/user/viewers/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Guia de instalação",content:`Acabei de instalar/atualizar o plugin, mas nada acontece Se você acabou de instalar/atualizar o plugin, mas nada acontece (sem bate-papo, sem configurações, os botões na página de configurações não funcionam, …), tente recarregar a página.
+Ferramenta de diagnóstico Se o chat não funcionar, há uma ferramenta de diagnóstico nas páginas de configurações do plugin.
+Abra as configurações do plugin e clique no botão “iniciar diagnóstico”.
+Se houver algum erro na página de diagnóstico, você pode procurar uma solução nesta página ou consultar a Página de documentação de rastreamento de bugs se não encontrar nenhuma resposta.
+O chat não carrega Chamadas de API internas In some case (like for some Docker Peertube installation), the diagnostic tools displays an error for the test called “API Prosody -> Peertube is KO”.
+Nesse caso, tente alterar as configurações de “URL do Peertube para chamada de API”, definindo http://127.0.0.1:9000 (assumindo que 9000 é a porta na qual o Peertube escuta, pergunte aos administradores da sua instância se você não souber).
+Verifique a ajuda para esta configuração para obter mais informações.
+Websocket Se tudo estiver correto nas ferramentas de diagnóstico, mas as janelas de bate-papo permanecerem vazias: pode ser um problema de Websocket. Desde a versão 5.0.0 do Peertube, há algumas configurações adicionais a serem feitas no lado do servidor. Verifique com os administradores da instância se eles não se esqueceram de aplicar as alterações listadas nas Notas de lançamento do Peertube v5.0.0.
+Você pode confirmar que é um problema de Websocket abrindo o console do navegador e verificando os logs de erros que falam sobre falha na conexão do Websocket.
+Se não conseguir corrigir isso imediatamente, você pode desativar o Websocket desmarcando “Desabilitar Websocket” na página de configurações do plugin. Nesse caso, você também deve marcar “Não publicar informações do chat”, pois a federação de chat não funcionará sem o Websocket.`,description:"Alguns erros clássicos e soluções alternativas.",tags:[],title:"Solução de problemas",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/troubleshooting/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
 assets assets/images The assets/images folder contains all icons files used by the plugin.
 There is also the assets/images/avatars folders, which contains avatars used for anonymous chat users. These files are used to generate multiple avatars (see the build-avatars.js script for more information).
@@ -204,101 +237,68 @@ Some of them are “officials” plugins, others are specific to this plugin.
 server The server folder contains the backend source code.
 shared The shared folder contains comme code that will be used both on frontend and backend.
 support/documentation The support/documentation contains the documentation source code.
-vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/pt-br/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`Forbid special characters Info This feature comes with the livechat plugin version 12.0.0. Configuration By enabling this option, the moderation bot will automatically delete messages containing more than X special characters. Special characters are those that don’t fit into one of these categories: letters, numbers, punctuation symbols, currency symbols, emojis.
-Tolerância Number of special characters to accept in a message without deleting it.
-Motivo Reason to display besides deleted messages
-Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Documentation > Installation guide",content:`I just installed/upgraded the plugin, but nothing happens If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, …), just try to reload the page.
-Diagnostic tool If the chat does not work, there is a diagnostic tool in the plugin’s settings pages.
-Open the plugin settings, and click on the “launch diagnostic” button.
-If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the Bug tracking documentation page if you can’t find any response.
-Chat does not load Internal API calls In some case (like for some Docker Peertube installation), the diagnostic tools displays an error for the test called “API Prosody -> Peertube is KO”.
-In such case, try changing the “Peertube url for API calls” settings, by setting http://127.0.0.1:9000 (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don’t know).
-Check the help for this setting for more information.
-Websocket If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue. Since Peertube version 5.0.0, there are some additional configuration to do on the server side. Check with the instance administrators that they did not forgot to apply changes listed in the Peertube v5.0.0 release notes.
-You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection.
-If you can’t fix this immediatly, you can disable Websocket by unchecking “Desabilitar Websocket” in the plugin setting page. In such case, you should also check “Não publicar informações do chat”, as chat federation won’t work without Websocket.`,description:"Some classic mistakes and workarounds.",tags:[],title:"Troubleshooting",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/troubleshooting/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` For viewersHow to chat for stream viewers
-OBSDocumentation to stream the chat content using OBS.
-XMPP ClientsConnect to chat using a XMPP client
-For streamersHow to setup the chat for your live stream
-Some basicsSome basics about how to setup and use the chat for your live stream
-Channel configurationPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
-ModerationPlugin peertube-plugin-livechat advanced moderation features
-Terms & conditionsConfigure channel's chat terms & conditions
-Slow modePlugin peertube-plugin-livechat slow mode
-Moderation delayPlugin peertube-plugin-livechat moderation delay
-Custom emojisPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
-PollsYou can create polls to ask viewers their opinion
-Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
-Moderation notesPlugin peertube-plugin-livechat moderation notes
-Chat botChat bot setup
-Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
-Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
-TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.`,description:"Plugin peertube-plugin-livechat user documentation",tags:[],title:"User documentation",uri:"/peertube-plugin-livechat/pt-br/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`No duplicate message Info This feature comes with the livechat plugin version 12.0.0. Configuration By enabling this options, the moderation bot will automatically moderate duplicate messages. That means if a user send the same message twice within X seconds, the second message will be deleted.
-Intervalo de tempo The interval, in seconds, during which a user can’t send again the same message.
-Motivo Reason to display besides deleted messages
-Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"No duplicate message",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
-You can enable some external authentication methods to allow user to create chat accounts. In such case their nickname and avatar will be automatically initialized with the remote account information.
-Such “external account users” will be easier to moderate than anonymous accounts.
-This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval).
-This page will describe available authentication methods.
-For the user documentation, see user documentation
-OpenID Connect Warning This feature is still experimental. This feature is available with the plugin version >= 9.0.0.
-You can configure one external OpenID Connect compatible provider.
-Doing so, you can for example use your website for Single Sign-On.
-Popular CMS softwares (Wordpess, …) offers plugins implementing OpenID Connect.
-To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect). Then go to the plugin settings, and enable “Use an OpenID Connect provider”.
-Note: if you want to restrict allowed redirection urls on the provider side (best security practice), the plugin will show you the url to allow. Just copy it in your OpenID Connect application configuration.
-You will now have to fill some settings.
-Label for the connection button This label will be displayed to users, as the button label to authenticate with this OIDC provider.
-This is the button label in the following screenshot:
-For now, it is not possible to localize this label.
-Discovery URL Your OpenID Connect provider must implement the discovery URL. Just set here the discovery url, that should be something like https://example.com/.well-known/openid-configuration.
-Note: if your provider use the standard /.well-known/openid-configuration path, you can omit it. For example https://accounts.google.com will work.
-Client ID Your application Client ID.
-Client secret You application Client secret.
-Google, Facebook, … In addition to that, you can also configure one or several “standard” Open ID Connect provider (Google, Facebook, …).
-For these providers, discovery url and button label are preset. You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret.
-If you think of a standard provider that is not available, you can ask for implementation by opening a new issue.
-Troubleshooting If the button does not appear for end users, there might be a configuration issue. You can try the diagnostic tool to get more information.
-Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test.
-If the button is displayed but is not working, check your Peertube logs. It could be because the remote service does not use standard scopes or attribute names.
-More to come Other authentication methods will be implemented in the future.`,description:"Plugin Peertube Livechat settings - External Authentication",tags:[],title:"External Authentication",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure some words that will be automatically moderated by the bot (messages containing such words will be instantly deleted). You can also add an optional reason that will be displayed at the place of deleted messages. Several examples are provided on the documentation page.
-You can fill several “Forbidden words or expressions” fields. When a user sends a message that match the configured criteria, the message will automatically be deleted.
-Forbidden words or expressions In this field, you can set several words, group of words, or “regular expressions”.
-One word or expression per line. If you put multiple words on one line, it will only match messages containing the whole sequence.
-Each time a user sends a message, these words will be tested. If the message containes one of them, the message will be deleted.
-You can for example fill this field with a swear words list.
-To get some examples, please check these forbidden words suggestions.
-If you have some usefull words lists, you are welcome to contribute to this suggestion page. There are in the support/forbidden_words folder of the livechat source code. See the contribution guide for more information.
-Tip These words are case insensitive.
-Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
-Warning This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
-Consider as regular expressions By checking this option, each line of the “Forbidden words or expressions” field will be considered as a regular expression.
-Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
-Motivo Reason to display besides deleted messages
-Comentários You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
-Tip To install or update the plugin, just use the Peertube web admin interface.
-Here are some other more specific instructions:
-TroubleshootingSome classic mistakes and workarounds.
-Known issues: CPU CompatibilityFor now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.
-Upgrade from version older than 6.0.0Important notes when upgrading for an older version.`,description:"Plugin peertube-plugin-livechat installation guide",tags:[],title:"Installation guide",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/index.html"},{breadcrumb:"Peertube livechat > Documentation > Installation guide",content:`The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU. It is not compatible with other CPU architectures.
-To use the plugin, you will have to manually install Prosody on your server (see below).
+vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/pt-br/technical/sourcecode/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers > Bot de bate-papo",content:`Sem mensagens duplicadas Info Esta funcionalidade está disponível com o plugin livechat versão 12.0.0. Configuração Ao habilitar esta opção, o bot de moderação irá moderar automaticamente mensagens duplicadas. Isso significa que, se um usuário enviar a mesma mensagem duas vezes no período de X segundos, a segunda mensagem será excluída.
+Intervalo de tempo O intervalo, em segundos, em que o usuário não pode enviar novamente a mesma mensagem.
+Motivo Motivo para exibir além das mensagens excluídas
+Também modere mensagens de moderadores Por padrão, as mensagens dos moderadores não serão afetadas por este recurso. Ao marcar esta opção, as mensagens dos moderadores também serão excluídas.`,description:"O bot pode moderar automaticamente mensagens duplicadas.",tags:[],title:"Nenhuma mensagem duplicada",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do administrador",content:`Usuários que não estão conectados à sua instância do Peertube estão entrando no bate-papo usando “contas anônimas” (eles podem escolher livremente um apelido e receberão um avatar aleatório).
+Você pode habilitar alguns métodos de autenticação externa para permitir que os usuários criem contas de bate-papo. Nesse caso, o apelido e o avatar serão inicializados automaticamente com as informações da conta remota.
+Esses “usuários de contas externas” serão mais fáceis de moderar do que contas anônimas.
+Isso também permite que o usuário participe do chat sem criar uma conta no Peertube (caso sua instância tenha fechado o registro, por exemplo, ou sem esperar pela aprovação da conta).
+Esta página descreverá os métodos de autenticação disponíveis.
+Para a documentação do usuário, consulte documentação do usuário
+Conexão OpenID Warning This feature is still experimental. This feature is available with the plugin version >= 9.0.0.
+Você pode configurar um provedor externo compatível com OpenID Connect.
+Fazendo isso, você pode, por exemplo, usar seu site para Single Sign-On.
+Softwares CMS populares (Wordpess, …) oferecem plugins que implementam o OpenID Connect.
+Para habilitar este recurso, primeiro você precisa criar um cliente no seu provedor (consulte a documentação relacionada para habilitar o OpenID Connect). Em seguida, acesse as configurações do plugin e habilite “Usar um provedor OpenID Connect”.
+Observação: se você quiser restringir URLs de redirecionamento permitidas no lado do provedor (melhor prática de segurança), o plugin mostrará a URL permitida. Basta copiá-la na configuração do seu aplicativo OpenID Connect.
+Agora você terá que preencher algumas configurações.
+Etiqueta para o botão de conexão Esta etiqueta será exibida aos usuários, como o etiqueta do botão a ser autenticado com esse provedor OIDC.
+Este é o rótulo do botão na captura de tela a seguir:
+Por enquanto, não é possível localizar este rótulo.
+URL de descoberta Seu provedor OpenID Connect deve implementar a URL de descoberta. Basta definir aqui a URL de descoberta, que deve ser algo como https://example.com/.well-known/openid-configuration.
+Observação: se o seu provedor usar o caminho padrão /.well-known/openid-configuration, você pode omiti-lo. Por exemplo, https://accounts.google.com funcionará.
+ID do cliente ID do cliente do seu aplicativo.
+Segredo do cliente Seu aplicativo Cliente secreto.
+Google, Facebook, … Além disso, você também pode configurar um ou vários provedores “padrão” do Open ID Connect (Google, Facebook, …).
+Para esses provedores, a URL de descoberta e o rótulo do botão são predefinidos. Basta criar uma aplicação OAuth2 no lado do provedor e configurar o ID do Cliente e o Segredo do Cliente.
+Se você pensar em um provedor padrão que não está disponível, você pode solicitar a implementação abrindo um novo problema.
+Solução de problemas Se o botão não aparecer para os usuários finais, pode haver um problema de configuração. Você pode tentar a ferramenta de diagnóstico para obter mais informações.
+Observação: se você estiver conectado à sua conta do Peertube, o botão nunca será exibido. Portanto, use uma janela privada do navegador para testar.
+Se o botão for exibido, mas não funcionar, verifique seus logs do Peertube. Pode ser que o serviço remoto não use escopos ou nomes de atributos padrão.
+Mais por vir Outros métodos de autenticação serão implementados no futuro.`,description:"Configurações do plugin Peertube Livechat - Autenticação externa",tags:[],title:"Autenticação externa",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/external_auth/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação",content:` Info Antes de atualizar para uma versão principal, leia as notas de versão e a lista de alterações significativas: CHANGELOG.
+Tip Para instalar ou atualizar o plugin, basta usar a interface de administração web do Peertube.
+Aqui estão algumas outras instruções mais específicas:
+Solução de problemasAlguns erros clássicos e soluções alternativas.
+Problemas conhecidos: compatibilidade da CPUPor enquanto, o plugin funciona apenas para arquiteturas de CPU x86_64 e arm64. Aqui estão algumas instruções para outras arquiteturas de CPU.
+Atualização de versão anterior à 6.0.0Notas importantes ao atualizar para uma versão mais antiga.`,description:"Guia de instalação do plugin peertube-plugin-livechat",tags:[],title:"Guia de instalação",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers > Bot de bate-papo",content:`Você pode configurar algumas palavras que serão moderadas automaticamente pelo bot (mensagens contendo tais palavras serão excluídas instantaneamente). Você também pode adicionar um motivo opcional que será exibido no lugar das mensagens excluídas. Vários exemplos são fornecidos na página de documentação.
+Você pode preencher vários campos “Expressões ou palavras proibidas”. Quando um usuário enviar uma mensagem que corresponda aos critérios configurados, a mensagem será excluída automaticamente.
+Expressões ou palavras proibidas Neste campo, você pode definir várias palavras, grupos de palavras ou “expressões regulares”.
+Uma palavra ou expressão por linha. Se você colocar várias palavras em uma linha, serão encontradas apenas mensagens que contenham a sequência completa.
+Cada vez que um usuário enviar uma mensagem, essas palavras serão testadas. Se a mensagem contiver uma delas, ela será excluída.
+Você pode, por exemplo, preencher este campo com uma lista de palavrões.
+Para obter alguns exemplos, verifique estas sugestões de palavras proibidas.
+Se você tiver alguma lista de palavras úteis, sinta-se à vontade para contribuir com esta página de sugestões. Elas estão na pasta support/forbidden_words do código-fonte do chat ao vivo. Consulte o guia de contribuição para obter mais informações.
+Tip Essas palavras não diferenciam maiúsculas de minúsculas.
+Tip Você pode combinar um curto atraso de moderação (1 segundo, por exemplo) com o bot de moderação para excluir mensagens contendo palavrões antes que qualquer usuário não moderador as veja.
+Warning Este recurso ainda é experimental. Pode haver alguns problemas com alfabetos não latinos. Você pode abrir um problema para relatar seus problemas.
+Considerar como expressões regulares Ao marcar esta opção, cada linha do campo “Expressões ou palavras proibidas” será considerada como uma expressão regular.
+Também modere mensagens de moderadores Por padrão, as mensagens dos moderadores não serão afetadas por este recurso. Ao marcar esta opção, as mensagens dos moderadores também serão excluídas.
+Motivo Motivo para exibir além das mensagens excluídas
+Comentários Você pode adicionar aqui alguns comentários sobre esta regra, para lembrar como e por que você a criou. Esses comentários são puramente indicativos e não têm influência no comportamento do bot.`,description:"O bot pode moderar automaticamente mensagens contendo palavras proibidas.",tags:[],title:"Palavras proibidas",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Guia de instalação",content:`O Prosody AppImage incluído no plugin funciona apenas em CPUs x86_64 e arm64. Não é compatível com outras arquiteturas de CPU.
+Para usar o plugin, você terá que instalar manualmente o Prosody no seu servidor (veja abaixo).
 Note: the plugin requires Prosody >= 0.12.0. If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.
-Once it is done, you have to check Use system Prosody in the plugin settings.
-On non-docker Peertube installation For standard installation, you just have to install the official prosody package for your linux distribution.
-For example, on Debian/Ubuntu:
-sudo apt install prosodyYou can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run). For example, on Debian/Ubuntu (and other Systemd based linux distributions):
-sudo systemctl disable prosody && sudo systemctl stop prosodyWarning: do not disable Prosody if it is used for another service on your server, like for example Jitsi.
-Docker You will have to generate a Peertube image that includes Prosody in the same container that Peertube. I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround.
-To generate and use such an image, please refer to the Docker documentation. The Docker file to generate the image should be:
-FROM chocobozzz/peertube:production-bullseye RUN apt -y update && apt install -y prosody && apt -y cleanYunohost You have to disable metronome (the XMPP server provided by Yunohost), and install prosody.
-This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0.
-But it may be removed in a near feature (to avoid drawbacks of this method). I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility.`,description:"For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.",tags:[],title:"Known issues: CPU Compatibility",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/cpu_compatibility/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:` Warning This page describes experimental features. These features are available with the plugin version >= 7.2.0.
-Introduction Peertube is part of the Fediverse. So Peertube video can be watched from other Peertube instances, and from various other softwares:
+Uma vez feito isso, você deve marcar Usar Prosódia do Sistema nas configurações do plugin.
+Na instalação do Peertube não Docker Para instalação padrão, você só precisa instalar o pacote oficial prosody para sua distribuição Linux.
+Por exemplo, no Debian/Ubuntu:
+sudo apt install prosodyVocê pode então desabilitar o serviço que inicia automaticamente ao instalar o Prosody (o plugin iniciará um processo Prosody, não há necessidade de executar o serviço). Por exemplo, no Debian/Ubuntu (e outras distribuições Linux baseadas em Systemd):
+sudo systemctl disable prosody && sudo systemctl stop prosodyAviso: não desabilite o Prosody se ele for usado para outro serviço no seu servidor, como por exemplo o Jitsi.
+Docker Você precisará gerar uma imagem do Peertube que inclua o Prosody no mesmo contêiner do Peertube. Sei que essa não é a maneira padrão de fazer isso com o Docker, mas lembre-se de que é uma solução temporária.
+Para gerar e usar essa imagem, consulte a documentação do Docker. O arquivo Docker para gerar a imagem deve ser:
+FROM chocobozzz/peertube:production-bullseye RUN apt -y update && apt install -y prosody && apt -y cleanYunohost Você precisa desabilitar o metronome (o servidor XMPP fornecido pela Yunohost) e instalar o prosody.
+Isso já é feito pelo aplicativo Yunohost Peertube, pois era necessário para o plugin antes da versão v6.0.0.
+Mas pode ser removido em breve (para evitar as desvantagens deste método). Preciso discutir com a equipe da Yunohost para decidir como podemos minimizar as desvantagens e maximizar a compatibilidade.`,description:"Por enquanto, o plugin funciona apenas para arquiteturas de CPU x86_64 e arm64. Aqui estão algumas instruções para outras arquiteturas de CPU.",tags:[],title:"Problemas conhecidos: compatibilidade da CPU",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/cpu_compatibility/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Technical documentation",content:` Warning This page describes experimental features. These features are available with the plugin version >= 7.2.0.
+Introdução Peertube is part of the Fediverse. So Peertube video can be watched from other Peertube instances, and from various other softwares:
 from a Mastodon (or other fediverse application) instance, from a mobile app (Fedilab, Tusky, …), from desktop fediverse app, … This livechat plugin is using well known standards, so it is possible to join chat rooms even when not viewing the video on Peertube.
 There are basically 2 ways to join the chat room associated to a video:
 opening a web page (with an url like https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535), using a XMPP client (and joining a room like xmpp://8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.yourinstance.tld?join) Warning Joining the chat using a XMPP client is not always possible. It requires some DNS and server configuration. It will only be possible if instance’s admins have correctly setup the external XMPP clients connection feature.
@@ -323,199 +323,201 @@ By default, here is an example of what you will get:
 <podcast:liveItem status="live" start="2023-07-06T18:00:00.000Z"> <title>The video title</title> <guid isPermaLink="false">e32b4890-983b-4ce5-8b46-f2d6bc1d8819_2023-07-06T18:00:00.000Z</guid> <link>https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535</link> <podcast:socialInteract uri="https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535" protocol="activitypub" accountUrl="https://yourinstance.tld/a/youraccount" /> <enclosure url="https://yourinstance.tld/path/to/video/master.m3u8" type="application/x-mpegURL" /> <podcast:alternateEnclosure type="application/x-mpegURL" lang="en" title="HLS" default="true"> <podcast:source uri="https://yourinstance.tld/path/to/video/master.m3u8" /> </podcast:alternateEnclosure> <itunes:image href="https://yourinstance.tld/lazy-static/previews/8df24108-6e70-4fc8-b1cc-f2db7fcdd535.jpg" /> <podcast:chat server="yourinstance.tld" protocol="xmpp" embedUrl="https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535" /> </podcast:liveItem>In case the instance has activated the external XMPP clients connection feature:
 <podcast:liveItem status="live" start="2023-07-06T18:00:00.000Z"> <title>The video title</title> <guid isPermaLink="false">e32b4890-983b-4ce5-8b46-f2d6bc1d8819_2023-07-06T18:00:00.000Z</guid> <link>https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535</link> <podcast:socialInteract uri="https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535" protocol="activitypub" accountUrl="https://yourinstance.tld/a/youraccount" /> <enclosure url="https://yourinstance.tld/path/to/video/master.m3u8" type="application/x-mpegURL" /> <podcast:alternateEnclosure type="application/x-mpegURL" lang="en" title="HLS" default="true"> <podcast:source uri="https://yourinstance.tld/path/to/video/master.m3u8" /> </podcast:alternateEnclosure> <itunes:image href="https://yourinstance.tld/lazy-static/previews/8df24108-6e70-4fc8-b1cc-f2db7fcdd535.jpg" /> <podcast:chat server="yourinstance.tld" protocol="xmpp" space="8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.yourinstance.tld" embedUrl="https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535" /> </podcast:liveItem>Algorithm If you want to display the chat in a web page or in an iframe, here is what you should do:
 get the Podcast RSS feed for the channel, if there is no <podcast:liveItem> element under the <channel>, stop. find the <podcast:liveItem> you are looking for <podcast:socialInteract> can be used to cross-reference the items with ActivityPub if there is no <podcast:chat> element under the <podcast:liveItem>, stop. loop through the <podcast:chat> values (if <podcast:chat> is not an array, just iterate on this single value) there should only be one, but you should expect to handle several just in case search for the first entry protocol === xmpp and an embedUrl attribute if found, open this embedUrl If you want to open the chat room using the XMPP protocol:
-get the Podcast RSS feed for the channel, if there is no <podcast:liveItem> element under the <channel>, stop. find the <podcast:liveItem> you are looking for <podcast:socialInteract> can be used to cross-reference the items with ActivityPub loop through the <podcast:chat> values (if <podcast:chat> is not an array, just iterate on this single value) there should only be one, but you should expect to handle several just in case search for the first entry protocol === xmpp and a space attribute space should be an XMPP JID for a MUC if found, open this XMPP JID with your client after converting it to a join URI, or connect to the XMPP room at that address `,description:"Displaying the livechat with 3rd party software.",tags:[],title:"Third party",uri:"/peertube-plugin-livechat/pt-br/technical/thirdparty/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`You can contribute to this plugin translation. Translations are handled using the Weblate software, using Framasoft Weblate instance.
-Warning Never modify directly files in the languages folder, this could lead to conflicts.
-How to Create an account: https://weblate.framasoft.org/accounts/register/ Validate your email and follow the link sent Create your password and setup your account Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/ Choose the locale you want to translate Just translate missing sentences, or correct the ones that seems incorrect to you. Warning There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english.
-ConverseJS translations This plugin relies on ConverseJS for the chat front-end. ConverseJS has its own translations, on its own weblate instance. You can also translate directly in the code repository. For more information, check ConverseJS translations documentation.
-Adding a new locale If you think there is a missing locale, please check first if it is handled in Peertube. If so, you can open an issue to ask for it.
-Adding new strings / use translations in the code If you are working on new features, and need new strings, you can create them directly in Weblate. The english version is mandatory. Start with it.
-Each string is linked to a key (for example use_chat). Choose an explicit key in english, lower case.
-If you have to test new strings without waiting for a Weblate merge, you can modify languages/*.yml files, but avoid to commit these changes (to minimize conflict risks).
-Use translations in front-end code Before using a string in front-end, you need to declare a new constant in client/@types/global.d.ts. The constant name must:
-start with the prefix “LOC_” use the string key, upper cased you just have to declare its type, not its value For example, to use “use_chat”, you have to declare:
-declare const LOC_USE_CHAT: stringThe build-client.js script will read the client/@types/global.d.ts, search for such constants, and load their values from the languages files.
-Now, you can simply call peertubeHelpers.translate(LOC_USE_CHAT) in your code.
-Use translations in back-end code In theory, the only parts of the backend code where you need localization is the settings declaration and standardized data (ActivityPub, RSS, …). Here we need to get english strings from the translation key.
-Note: you should never need another language translation from backend code. Localization must be done on front-end.
-There is a lib/loc.ts module providing a loc() function. Just pass it the key to have the english string: loc('diagnostic')'.
-Documentation translation The documentation translation is done using the corresponding Weblate component.
-There is a specific “Hugo shortcodes” you can use to display an application string. Saying you want to display the name of the button “open_chat_new_window”, you can use this in the documentation markdown file:
-{{% livechat_label open_chat_new_window %}}You can also prevent a whole page from being translating by adding livechatnotranslation: true in the Yaml Font Matter section:
---- title: "Third party" description: "Displaying the livechat with 3rd party software." weight: 20 chapter: false livechatnotranslation: true ---Never translate a string in the livechat.en.pot file, it would be ignored. Instead, edit directly the markdown files.
-If a string contains a link, you can change it for the correct link in the translated language. For example, for a link to this documentation, you can add the language code in the url.
-Some strings are block of code. Don’t translate code. But you can translate comments, or parameters if relevant.
-If you are not sure, just don’t translate, and ask what to do.
-The tool I use to handle translations for the documentation can have strange behaviours. When I add sentences that looks like other existing sentences, it sometimes copies existing translations. So, when you have translations marked as “to check”, please make sure it doesn’t copy a string that has nothing to do with the english one before validating.
-If you are now sure about the context of a string, you can check the string location in the weblate’s right pane, and open the corresponding documentation page. For example, for a string located in the file support/documentation/content/en/documentation/user/streamers.md, the corresponding url is https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/.
-Generic recommandations Please be inclusive in your wordings, and please respect the code of coduct.`,description:"Translate the plugin",tags:[],title:"Translate",uri:"/peertube-plugin-livechat/pt-br/contributing/translate/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` SettingsPlugin Peertube Livechat settings
-External AuthenticationPlugin Peertube Livechat settings - External Authentication
-Prosody mod_firewallAdvanced firewall rules for the Prosody server
-Advanced usageSome advanced features
-XMPP clientsAllow connections using XMPP clients
-Using MatterbridgeUsing Matterbridge to bridge with other chats`,description:"Plugin Peertube Livechat administration",tags:[],title:"Admin documentation",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:"You don’t need to know how to code to start contributing to this plugin! Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, …",description:"Give your feedback",tags:[],title:"Give your feedback",uri:"/peertube-plugin-livechat/pt-br/contributing/feedback/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:` Info This feature comes with the livechat plugin version 11.0.0. You can enable mod_firewall on your Prosody server.
-Doing so, Peertube admins will be able to define advanced firewall rules.
-Warning These rules could be used to run arbitrary code on the server. If you are a hosting provider, and you don’t want to allow Peertube admins to write such rules, you can disable the online editing by creating a disable_mod_firewall_editing file in the plugin directory (plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing). This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin. You can still use mod_firewall by editing files directly on the server.
-Edit rules First, you must enable the feature in the plugin settings.
-Just bellow the settings, you will find a “Configure mod_firewall” button. This button will open a configuration page.
-Here you can add several configuration files.
-You can enable/disable each files.
-Files will be loaded in the alphabetical order. You can use a number as prefix to easily choose the order.
-Info You can also edit these firewall rules directly on the server, in the plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/ directory. File names must only contains alphanumerical characters, underscores and hyphens. The extension must be .pfw, or .pfw.disabled if you want to disable a file. Please be sure that the peertube system user has write access to these files, else the web editing interface will fail. Once you have edited these files, you must reload prosody. This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube.
-When you save the configuration, the server will automatically reload it, and your rules will apply immediatly. You can check that there is no parsing error in the Prosody error log. To do so, you can read the plugins/data/peertube-plugin-livechat/prosody/prosody.err file, or use the diagnostic tool that will show last Prosody errors.
-Examples Don’t hesitate to share your rules. To do so, you can for example edit this page.`,description:"Advanced firewall rules for the Prosody server",tags:[],title:"Prosody mod_firewall",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/mod_firewall/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure several timers that will send messages at regular interval. These messages will be sent by the bot every X minutes. You can for example make the bot sent some sponsoring information every 5 minutes.
-Tip If there is no user in the chatroom, the bot won’t send any message.
-Timer You can configure several timers that will send messages at regular interval. These messages will be sent by the bot every X minutes. You can for example make the bot sent some sponsoring information every 5 minutes.
-One message per line. If multiple messages, it will pick one randomly every X minutes.
-Send every X minutes The bot will post the message every X minutes.`,description:"The bot can send periodically some messages.",tags:[],title:"Timers",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation > Advanced usage",content:`This chat module is based on the XMPP protocol, also known as Jabber. It is therefore possible to connect to the chats using XMPP client software. This can for example be useful to facilitate moderation operations.
-For the user documentation associated with these features, please refer to the user documentation page.
-Info Enabling these features requires configuration changes on the server, and on the DNS records. It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills.
-Login to your Peertube account Warning This feature is not yet available, and will come in a future version of the plugin.
-Connection using an external XMPP account To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the Prosody server that this plugin uses internally.
-Plugin settings Start by going to the livechat plugin settings of your instance, then enable the setting “Enable connection to room using external XMPP accounts”. By checking this setting, new settings appear below.
-First of all, the “Prosody server to server port” field. This one defaults to 5269, which is the standard port for this service. You can however change to another port, if this is already in use on your server.
-Next, the field “Server to server network interfaces” field allows you to specify which network interfaces the server should listen on. The default value “*, ::” indicates to listen on all IP addresses. You can change these values, if you wish to listen on only certain IP addresses. The syntax is explained next to the setting.
-For the “Certificate folder” setting, you can leave it empty. In this case, the plugin will automatically generate self-signed certificates. Some XMPP servers may refuse to connect, depending on their configuration. In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module. It is up to you to generate and renew them. See bellow for more information.
-Firewall You must open the configured port (5269 by default) on your firewall.
-If you are using Docker for your Peertube, you need to modify the docker-compose.yml file to open port 5269 of the peertube container, so that the outer world can connect to it.
-DNS You need to add DNS records allowing remote servers to find “room.your_instance.tld” and “external.your_instance.tld” components.
-The easiest way to do this is to add SRV records for the “room” and “external” subdomain:
-record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)
+get the Podcast RSS feed for the channel, if there is no <podcast:liveItem> element under the <channel>, stop. find the <podcast:liveItem> you are looking for <podcast:socialInteract> can be used to cross-reference the items with ActivityPub loop through the <podcast:chat> values (if <podcast:chat> is not an array, just iterate on this single value) there should only be one, but you should expect to handle several just in case search for the first entry protocol === xmpp and a space attribute space should be an XMPP JID for a MUC if found, open this XMPP JID with your client after converting it to a join URI, or connect to the XMPP room at that address `,description:"Displaying the livechat with 3rd party software.",tags:[],title:"Third party",uri:"/peertube-plugin-livechat/pt-br/technical/thirdparty/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Contribuindo",content:`Você pode contribuir para a tradução deste plugin. As traduções são feitas usando o software Weblate, utilizando a instância Framasoft Weblate.
+Warning Nunca modifique diretamente os arquivos na pasta languages, isso pode causar conflitos.
+Como fazer Crie uma conta: https://weblate.framasoft.org/accounts/register/ Valide seu e-mail e siga o link enviado Crie sua senha e configure sua conta Acesse a página do projeto do plugin: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/ Selecione o local que você deseja traduzir Apenas traduza as frases que faltam ou corrija aquelas que parecem incorretas para você. Warning Pode haver algumas sequências de caracteres “muito técnicas”. Se você não tiver 100% de certeza do significado ou da sua tradução, é melhor não traduzi-la, para que ela seja exibida em inglês.
+Traduções do ConverseJS Este plugin utiliza o ConverseJS para o front-end de bate-papo. O ConverseJS possui suas próprias traduções, em sua própria instância do Weblate. Você também pode traduzir diretamente no repositório de código. Para mais informações, consulte a documentação de traduções do ConverseJS.
+Adicionando uma nova localidade Se você acha que há alguma localidade faltando, verifique primeiro se ela é gerenciada no Peertube. Se for o caso, você pode abrir um problema para solicitá-la.
+Adicionar novas strings / usar traduções no código Se você estiver trabalhando em novos recursos e precisar de novas strings, poderá criá-las diretamente no Weblate. A versão em inglês é obrigatória. Comece por ela.
+Cada string está vinculada a uma chave (por exemplo, use_chat). Escolha uma chave explícita, em inglês, com letras minúsculas.
+Se você precisar testar novas strings sem esperar por uma mesclagem do Weblate, você pode modificar os arquivos languages/*.yml, mas evite confirmar essas alterações (para minimizar os riscos de conflito).
+Use traduções no código front-end Antes de usar uma string no front-end, você precisa declarar uma nova constante em client/@types/global.d.ts. O nome da constante deve:
+comece com o prefixo “LOC_” use a tecla string, em maiúsculas você só precisa declarar seu tipo, não seu valor Por exemplo, para usar “use_chat”, você deve declarar:
+declarar const LOC_USE_CHAT: stringO script build-client.js lerá client/@types/global.d.ts, procurará por tais constantes e carregará seus valores dos arquivos de idiomas.
+Agora, você pode simplesmente chamar peertubeHelpers.translate(LOC_USE_CHAT) no seu código.
+Use traduções no código de back-end Em teoria, as únicas partes do código de backend onde você precisa de localização são a declaração de configurações e os dados padronizados (ActivityPub, RSS, …). Aqui, precisamos obter strings em inglês da chave de tradução.
+Observação: você nunca deve precisar de outra tradução de idioma do código do backend. A localização deve ser feita no frontend.
+Existe um módulo lib/loc.ts que fornece uma função loc(). Basta passar a chave para obter a string em inglês: loc('diagnostic')'.
+Tradução de documentação A tradução da documentação é feita usando o componente Weblate correspondente.
+Existe um “Hugo shortcodes” específico que você pode usar para exibir uma string de aplicativo. Se você quiser exibir o nome do botão “open_chat_new_window”, pode usar isso no arquivo markdown da documentação:
+{{% rótulo_do_chat_ao_vivo abrir_nova_janela_do_chat %}}Você também pode impedir que uma página inteira seja traduzida adicionando livechatnotranslation: true na seção Yaml Font Matter:
+--- título: "Terceiros" descrição: "Exibindo o chat ao vivo com software de terceiros." peso: 20 capítulo: falso livechatnotranslation: verdadeiro ---Nunca traduza uma string no arquivo livechat.en.pot, pois ela será ignorada. Em vez disso, edite diretamente os arquivos markdown.
+Se uma string contiver um link, você poderá alterá-lo para o link correto no idioma traduzido. Por exemplo, para um link para esta documentação, você pode adicionar o código do idioma na URL.
+Algumas strings são blocos de código. Não traduza o código. Mas você pode traduzir comentários ou parâmetros, se relevante.
+Se não tiver certeza, simplesmente não traduza e pergunte o que fazer.
+A ferramenta que utilizo para gerenciar traduções da documentação pode apresentar comportamentos estranhos. Quando adiciono frases que se parecem com outras frases existentes, às vezes ela copia traduções existentes. Portanto, quando houver traduções marcadas como “para verificar”, certifique-se de que ela não copie uma string que não tenha nada a ver com a em inglês antes de validar.
+Se você tiver certeza sobre o contexto de uma string, pode verificar a localização da string no painel direito do Weblate e abrir a página de documentação correspondente. Por exemplo, para uma string localizada no arquivo support/documentation/content/en/documentation/user/streamers.md, a URL correspondente é https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/.
+Recomendações genéricas Por favor, seja inclusivo em suas formulações e respeite o código de conduta.`,description:"Traduzir o plugin",tags:[],title:"Traduzir",uri:"/peertube-plugin-livechat/pt-br/contributing/translate/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do administrador > Uso avançado",content:`Este módulo de bate-papo é baseado no protocolo XMPP, também conhecido como Jabber. Portanto, é possível conectar-se aos bate-papos usando software cliente XMPP. Isso pode ser útil, por exemplo, para facilitar as operações de moderação.
+Para obter a documentação do usuário associada a esses recursos, consulte a página de documentação do usuário.
+Info A ativação desses recursos requer alterações de configuração no servidor e nos registros DNS. Não é possível configurar isso apenas pela interface do Peertube e requer algumas habilidades básicas de administração do sistema.
+Entre na sua conta Peertube Warning Este recurso ainda não está disponível e estará disponível em uma versão futura do plugin.
+Conexão usando uma conta XMPP externa Para habilitar esse recurso, você precisará configurar seu servidor e registros DNS para que os clientes XMPP possam encontrar e acessar o servidor Prosody que este plugin usa internamente.
+Configurações do plugin Comece acessando as configurações do plugin de chat ao vivo da sua instância e ative a opção “Habilitar conexão com a sala usando contas XMPP externas”. Ao marcar esta opção, as novas configurações serão exibidas abaixo.
+Primeiro, o campo “Porta de servidor Prosody para servidor”. O padrão é 5269, que é a porta padrão para este serviço. No entanto, você pode alterar para outra porta, se ela já estiver em uso no seu servidor.
+Em seguida, o campo “Interfaces de rede entre servidores” permite especificar em quais interfaces de rede o servidor deve escutar. O valor padrão “*, ::” indica que todos os endereços IP devem ser escutados. Você pode alterar esses valores se desejar escutar apenas determinados endereços IP. A sintaxe é explicada ao lado da configuração.
+Para a configuração “Pasta de certificados”, você pode deixá-la vazia. Nesse caso, o plugin gerará automaticamente certificados autoassinados. Alguns servidores XMPP podem se recusar a conectar, dependendo de sua configuração. Nesse caso, você pode indicar aqui um caminho no servidor, no qual deverá colocar os certificados a serem usados pelo módulo. Cabe a você gerá-los e renová-los. Veja abaixo para mais informações.
+Firewall Você deve abrir a porta configurada (5269 por padrão) no seu firewall.
+Se você estiver usando o Docker para seu Peertube, precisará modificar o arquivo docker-compose.yml para abrir a porta 5269 do contêiner peertube, para que o mundo externo possa se conectar a ele.
+DNS Você precisa adicionar registros DNS permitindo que servidores remotos encontrem os componentes “room.your_instance.tld” e “external.your_instance.tld”.
+A maneira mais fácil de fazer isso é adicionar registros SRV para o “room” e o “external” subdomínio:
+nome do registro: _xmpp-server._tcp.room.your_instance.tld. (substitua «your_instance.tld» pelo URI da sua instância)
 TTL: 3600
-class: IN
+classe: IN
 SRV: 0
-priority: 0
-weight: 5
-port: 5269 (adapt if your changed the default port)
-target: your_instance.tld. (replace by your instance uri)
-record name: _xmpp-server._tcp.external.your_instance.tld. (replace «your_instance.tld» by your instance uri)
+prioridade: 0
+peso: 5
+porta: 5269 (adaptar se você alterou a porta padrão)
+alvo: your_instance.tld. (substitua pelo uri da sua instância)
+nome do registro: _xmpp-server._tcp.external.your_instance.tld. (substitua «your_instance.tld» pelo uri da sua instância)
 TTL: 3600
-class: IN
+classe: IN
 SRV: 0
-priority: 0
-weight: 5
-port: 5269 (adapt if your changed the default port)
-target: your_instance.tld. (replace by your instance uri)
-Be careful to keep the dot after “your_instance.tld”.
-Using the dig command to check your records, you should get a result similar to this:
-$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV 0 5 5269 videos.john-livingston.fr. $ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV 0 5 5269 videos.john-livingston.fr.If you are not using the standard 5269 port, you must also add a SRV record for _xmpp-server._tcp.your_instance.tld. (same as above, just without the room. prefix). Of course, you can also add this record if you use the standard port. It will also work.
-Using trusted certificates The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons.
-It is possible to use certificates validated by a certification authority. However, this requires advanced system administration knowledge. Indeed, due to the multitude of possible use cases, it is impossible to document all situations here. This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a “basic” situation (manual installation of Peertube, using letsencrypt). If you are in another situation (Docker installation, certificates signed by another authority, etc…), you will have to adapt this approach by yourself.
-Basic principle It is up to you to generate valid certificates for domains your_instance.tld and room.your_instance.tld. You can use any method supported by Prosody.
-You must then place these certificates in a folder that will be accessible to the peertube user, and specify this folder in the plugin setting “Certificate folder”.
-Tip If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing “xxx” with the arguments you wish to pass to prosodyctl): sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx
-The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary.
-Method for the simple case We assume here that your Peertube installation is “classic” (no use of Docker), and that the certificates are generated by letsencrypt, using the certbot tool.
-First of all, we’ll have to create a certificate for the subdomain room.your_instance.tld : this is the uri of the MUC (XMPP chat rooms) component. Even if the connections are made on your_instance.tld, we will need a valid certificate for this subdomain.
-So start by setting up a DNS entry for room.your_instance.tld, which points to your server. You can use a CNAME entry (or an A entry and a AAAA entry).
-Next, we’ll use nginx (already installed for your Peertube) to generate the certbot certificate. We will create a new site. In the file /etc/nginx/site-available/room.peertube, add:
-server { listen 80; listen [::]:80; server_name room.your_instance.tld; location /.well-known/acme-challenge/ { default_type "text/plain"; root /var/www/certbot; } location / { return 301 https://your_instance.tld; } }Then enable the site:
-ln -s /etc/nginx/sites-available/room.peertube /etc/nginx/sites-enabled/ systemc reload nginxThen we prepare the folder in which we will later import the certificates. We assume here that you already have the plugin active. We will create the following folder (if it doesn’t already exist), with the user peertube to make sure there are no permissions issues:
-sudo -u peertube mkdir /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/certsNow you have to configure this folder in the plugin settings, for the parameter “Certificate folders”. It’s important to do this now, otherwise the certificate import script will put the certificates in the wrong folder.
-We will configure certbot to import the generated certificates into the Prosody folder. We can use the ProsodyCtl utility packaged in the plugin.
-Note: for it to be available, the plugin must have been started at least once.
-We will create a file /etc/letsencrypt/renewal-hooks/deploy/prosody.sh containing:
-#!/bin/sh /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \\ --root \\ --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\ cert import \\ room.your_instance.tld your_instance.tld /etc/letsencrypt/liveThen we ask to generate the certificate:
-certbot -d room.videos.john-livingston.frIf certbot offers you several methods to generate the certificate, choose “nginx”.
-Normally you should now find the certificates in the configured folder.
-Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube.
-Method for the Docker case This method works with the officially supported Docker guide from PeerTube.
-First, ensure you create a DNS entry for room.your_instance.tld, which points to your server. You can use a CNAME entry (or an A entry and a AAAA entry). This is necessary for Let’s Encrypt to validate the domain for certificate generation.
-Enter the directory where your docker-compose.yml file exists.
-Open a shell in the certbot container:
-docker exec -it certbot /bin/shRun certbot:
-certbotYou will be presented with a series of prompts. Enter 2 for the authentication type:
-How would you like to authenticate with the ACME CA? Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2Enter the domain name room.your_instance.tld:
-Please enter the domain name(s) you would like on your certificate (comma and/or space separated) (Enter 'c' to cancel): room.your_instance.tldEnter the directory where the PeerTube webserver serves requests for Let’s Encrypt, /var/www/certbot:
-Input the webroot for <room.your_instance.tld>: (Enter 'c' to cancel): /var/www/certbotYou should see output like the following:
-Successfully received certificate. Certificate is saved at: /etc/letsencrypt/live/room.your_instance.tld/fullchain.pem Key is saved at: /etc/letsencrypt/live/room.your_instance.tld/privkey.pemRun the below command inside the certbot container to give read access to the new certs and private keys to the peertube group. Note: This will also make the files readable to the group with id 999 on the host system. Check the groups on your system to assess this as a risk before running this command.
-chown -R root:999 /etc/letsencrypt/live; \\ chmod 750 /etc/letsencrypt/live; \\ chown -R root:999 /etc/letsencrypt/archive; \\ chmod 750 /etc/letsencrypt/archive; \\ find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} \\;Exit the certbot container:
-exitModify your docker-compose.yml file, changing the entrypoint line under the certbot service to the following. This is the same as the above, but to be automatically executed after every certificate renewal.
-entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; chown -R root:999 /etc/letsencrypt/live; chmod 750 /etc/letsencrypt/live; chown -R root:999 /etc/letsencrypt/archive; chmod 750 /etc/letsencrypt/archive; find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} +; sleep 12h & wait $\${!}; done;"Continuing to modify docker-compose.yml, add the certbot certificate volume into the peertube container. It should look something like this:
-volumes: - ./docker-volume/certbot/conf:/etc/letsencryptRestart your services:
-docker-compose down; docker-comopse up -dIn the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:
-/etc/letsencrypt/liveSave the plugin settings and verify Prosody can see the certificates:
-docker-compose exec -u peertube \\ peertube \\ /data/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun \\ prosodyctl \\ --config /data/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\ check certsTroubleshooting If you can’t make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section.`,description:"Allow connections using XMPP clients",tags:[],title:"XMPP clients",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/advanced/xmpp_clients/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:` XMPP clientsAllow connections using XMPP clients
-Using MatterbridgeUsing Matterbridge to bridge with other chats`,description:"Some advanced features",tags:[],title:"Advanced usage",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/advanced/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure the bot to respond to commands. A command is a message starting with a “!”, like for example “!help” that calls the “help” command.
-You can setup several commands.
-Comando The command, without the starting “!”. For example “help”, “sponsor”, …
-Mensagem The message to send.`,description:"The bot can respond to several commands.",tags:[],title:"Commands",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue.
-Pull Request must be done on the main branch.
-Note Until march 2023, contribution were made on the develop branch. This procedure is now deprecated.
-Prerequisite for building this plugin It is highly recommended to be familiar with following concepts:
-Git NodeJS NPM Typescript To build the plugin, you must have following packages:
-git npm (>=8.x) nodejs (>=14.x) build-essential coreutils wget reuse Please note that this plugin needs an AppImage for the Prosody XMPP server. This AppImage is provided by the Prosody AppImage sideproject. The build-prosody.sh script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct.
-Develop Clone the repository, buid the plugin, and create your feature branch:
-# Clone the repository. Dont forget the --recursive to clone submodules. git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive cd peertube-plugin-livechat # Install NPM dependencies and build the module for the first time: npm install # Build the plugin after a modification: npm run build # If you have a fork from the repository, add it as remote (example): git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git # Create a local branch for you developments, and checkout it (example): git checkout my_development # Note: if an issue is associated, use fix_1234 as your branch name (where 1234 is the issue's number) # To propose your modifications, push your branch to your repository (example): git push --set-upstream me my_development # Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)Once you are ready to show your code to ask for feedback, submit a draft Pull Request. Once you are ready for a code review before merge, submit a Pull Request. In any case, please link your PR to the issues it solves by using the GitHub syntax: “fixes #issue_number”.
-The front-end code is in the client folder, the back-end code in server. There are some shared code in shared folder.
-For general instructions (developping plugins, building, installation, …), please refer to the Peertube documentation.
-You can build the plugin with extra debug features simply by using:
-NODE_ENV=dev npm run buildThis plugin is REUSE compliant: it uses SPDX headers to identify licensing information of its source code. More information on the REUSE website. You can use the reuse command line tool to help you update headers. The npm run lint command will use the reuse command to check compliance. Don’t forget to add your copyright information in SPDX headers when you modify some code.
-ESBuild vs Typescript This plugin uses ESBuild for frontend code generation, as the official peertube-plugin-quickstart plugin. ESBuild can handle Typescript, but does not check types (see ESBuild documentation). That’s why we first compile Typescript with the -noEmit option, just to check types (check:client:ts in package.json file). Then, if everything is okay, we run ESBuild to generate the compiled javascript.
-Debug Mode There is a debug mode for this plugin, that shorten some delay. For example, some log files will rotate every two minutes, instead of once per day. This permit to test more easily certain actions, for which it could normally take hours or days to wait.
-To enable this mode, you juste have to create the /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode file (replacing /var/www/peertube/storage/ by the correct path on your installation).
-The simple existence of this file is sufficient to trigger the debug mode. To make sure it’s taken into account, you can restart your Peertube instance.
-This file can contain some JSON to enable more advanced options. To have a list of existing parameters, check server/lib/debug.ts. Restart Peertube after each content modification.
-Warning Don’t enable this mode on a production server, neither on a public server. This could cause security issues.
-Restart Prosody When debug mode is enabled, you can restart Prosody using this API call: http://your_instance.tld/plugins/livechat/router/api/restart_prosody. This call don’t need any authentificaiton. It can be done from a command line, for example using curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody.
-Prosody debugger It is possible to connect the Prosody AppImage to a remote debugger using MobDebug.
-To do so, you have to setup MobDebug in a folder that can be accessed by the peertube user. Then, add this in the debub_mode file:
-{ "debug_prosody": { "debugger_path": "/the_path_to_mobdebug/src", "host": "localhost", "port": "8172" } }host and port are optional. debugger_path must point to the folder where the MobDebug .lua file is.
-Restart Peertube.
-Start your debugger server.
-For Prosody to connect to the debugger, call the API http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true. This call does not need any authentication. It can be done from a command line, for example with curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true. You can even configure your debug server to launch this request automatically.
-Prosody will then restart, connecting to the debugger.
-Quick dev environment using Docker There is a tutorial, in french, on the Peertube forum that explains how to quickly build a dev env using Docker.
-A repo was made out of it, check out pt-plugin-dev.
-Note: for an unknown reason, Prosody can’t resolve containers DNS address when using the lua-unbound library. There is a dirty hack in the plugin: just create a /data/plugins/data/peertube-plugin-livechat/no_lua_unbound file in your docker-volumes, then restart containers.
-Quickly rebuild and install the plugin When you do modification, you don’t have to always rebuild the full project, and reinstall the plugin on your dev environment. You can build only the modified part (for example, if you only modified client files: npm run build:client). Check the package.json files for available build scripts.
-When the plugin is already installed on your dev instance, and you haven’t changed any dependency, you can quickly install your work by following these steps:
-re-build necessary parts of the plugin (client, styles, …), overwrite the data/plugins/node_modules/peertube-plugin-livechat/dist/ content of your dev instance by the content of the plugin’s dist folder, change recursively plugins/node_modules/peertube-plugin-livechat/dist/ files owner to your peertube user, restart your instance. Performance tests The livechat-perf-test repository contains some tools to make performance tests. It can be used to evaluate code improvements, or find bottlenecks.`,description:"Develop",tags:[],title:"Develop",uri:"/peertube-plugin-livechat/pt-br/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`OBS is a popular Free And Open Source streaming software, with advanced capacities for your live streams. In the current page, you will find some advices to handle your live chats using OBS.
-OBS Overlay You can easily include the chat in your video stream.
-You can use the “Compartilhar link do chat” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
-Check the “Somente leitura” checkbox in the modal.
-Then use this link as a “web browser source” in OBS.
-You can use the “Transparent background (for stream integration, with OBS for example)” option to have a transparent background in OBS. If you want to customize the background transparency, you can add this CSS in your OBS browser source’s settings:
-:root { --livechat-transparent: rgba(255 255 255 / 90%) !important; } In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values.
-Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL. You must use valid CSS color values, and they must be properly URL encoded.
-OBS Dock Info This feature comes with the livechat plugin version 10.1.0. Warning This feature can be disabled by the instance’s adminitrators.
-You can use OBS “Custom browser docks” to integrate the chat in your OBS while you are streaming. The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don’t have to enter your password in OBS.
-To do so, just use the “Compartilhar link do chat” feature, and open the “Dock” tab. From there, you can create a new token using the “+” button.
-Then, copy the url, and use the “Docks / Custom browser docks” menu from your OBS to add a dock with this URL.
-Once you have done, you will have a new dock connected to the chat with your account.
-Tip Tokens are valid to join any chat room. You don’t have to generate separate tokens for each of your rooms. You can also customize the nickame that will be used by changing the n parameter in the url.
-Don’t share these links to anyone, as it would allow them to connect as yourself.
-If a token is compromised, or no more needed, you can revoke them.
-Info These tokens can be used for other purposes, as connecting to your account with XMPP bots or clients. This feature is not documented yet, and not officially supported. So use with care.
-Mixing multiple chats in your live stream You can use the social_stream browser extension to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, …) and include their contents in your live stream. The compatibility with this plugin was added in recent versions.`,description:"Documentation to stream the chat content using OBS.",tags:[],title:"OBS",uri:"/peertube-plugin-livechat/pt-br/documentation/user/obs/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`General information Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are working on the same thing, and prevent conflicts.
-Documentation work has to be merged in the main branch.
-The documentation source code is in the support/documentation/content folder.
-The documentation is generated using Hugo. You have to install it on your computer if you want to preview your work.
-The minimum required version for Hugo is 0.121.0. It was tested using version 0.132.2.
-The used theme is hugo-theme-relearn. You should read its documentation before starting editing the documentation.
-When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the main branch to the documentation branch. This will trigger github and gitlab pipelines, and update published documentation.
-Translations The principal language is english (en code).
-The support/documentation/content/en folder contains only english documentation files.
-Documentation is translated using Weblate (see the translation documentation). To do so, we use the po4a tool, as we will se later in this page.
-Add a new language In the support/documentation/config.toml file, please copy and modify the [Languages.fr] section.
-If the translations are not complete, it does not matter, english will be used for missing strings.
-Preview To preview your modifications, just run:
-hugo serve -s support/documentation/ Then open your browser on the address http://localhost:1313/peertube-plugin-livechat/. This page will automatically refresh on each modification.
-Update localization files and generate documentation translations For now, you only have the english version. To update documentation strings, and generate translations, you have to run the doc-translate.sh script.
+prioridade: 0
+peso: 5
+porta: 5269 (adaptar se você alterou a porta padrão)
+alvo: your_instance.tld. (substitua pelo uri da sua instância)
+Tenha cuidado para manter o ponto depois de “your_instance.tld”.
+Usando o comando dig para verificar seus registros, você deverá obter um resultado semelhante a este:
+$ dig +short _xmpp-server._tcp.room.videos.john-livingston.fr. SRV 0 5 5269 vídeos.john-livingston.fr. $ dig +short _xmpp-server._tcp.external.videos.john-livingston.fr. SRV 0 5 5269 vídeos.john-livingston.fr.Se você não estiver usando a porta padrão 5269, também precisará adicionar um registro SRV para _xmpp-server._tcp.your_instance.tld. (o mesmo que acima, mas sem o prefixo room.). É claro que você também pode adicionar este registro se usar a porta padrão. Também funcionará.
+Usando certificados confiáveis Os certificados autoassinados que este plugin usa por padrão podem ser rejeitados por alguns servidores XMPP, por motivos de segurança.
+É possível usar certificados validados por uma autoridade certificadora. No entanto, isso requer conhecimentos avançados de administração de sistemas. De fato, devido à multiplicidade de casos de uso possíveis, é impossível documentar todas as situações aqui. Esta documentação, portanto, explicará apenas o objetivo a ser alcançado e fornecerá um exemplo adequado apenas para uma situação “básica” (instalação manual do Peertube, usando letsencrypt). Se você estiver em outra situação (instalação do Docker, certificados assinados por outra autoridade, etc.), terá que adaptar essa abordagem por conta própria.
+Princípio básico Cabe a você gerar certificados válidos para os domínios sua_instância.tld e room.sua_instância.tld. Você pode usar qualquer método suportado pelo Prosody.
+Você deve então colocar esses certificados em uma pasta que seja acessível ao usuário peertube e especificar essa pasta na configuração do plugin “Pasta de certificados”.
+Tip Se você quiser usar o utilitário ProsodyCtl para importar certificados, este utilitário estará disponível (após o Peertube ser iniciado) usando o seguinte comando (adaptando o caminho para sua pasta de dados do Peertube e substituindo “xxx” pelos argumentos que você deseja passar para o prosodyctl): sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx
+O plugin verificará uma vez por dia se algum arquivo foi modificado nesta pasta e recarregará o Prosody, se necessário.
+Método para o caso simples Assumimos aqui que sua instalação do Peertube é “clássica” (sem uso do Docker) e que os certificados são gerados pelo letsencrypt, usando a ferramenta certbot.
+Primeiramente, precisamos criar um certificado para o subdomínio room.your_instance.tld: este é o URI do componente MUC (salas de bate-papo XMPP). Mesmo que as conexões sejam feitas em your_instance.tld, precisaremos de um certificado válido para este subdomínio.
+Comece configurando uma entrada DNS para room.your_instance.tld, que aponta para o seu servidor. Você pode usar uma entrada CNAME (ou uma entrada A e uma entrada AAAA).
+Em seguida, usaremos o nginx (já instalado no seu Peertube) para gerar o certificado certbot. Criaremos um novo site. No arquivo /etc/nginx/site-available/room.peertube, adicione:
+servidor { ouvir 80; ouvir [::]:80; nome_do_servidor sala.sua_instância.tld; localização /.well-known/acme-challenge/ { tipo_padrão "texto/simples"; raiz /var/www/certbot; } localização / { retornar 301 https://sua_instância.tld; } }Em seguida, habilite o site:
+ln -s /etc/nginx/sites-available/room.peertube /etc/nginx/sites-enabled/ systemc reload nginxEm seguida, preparamos a pasta para a qual importaremos os certificados. Presumimos que você já tenha o plugin ativo. Criaremos a seguinte pasta (se ainda não existir), com o usuário peertube, para garantir que não haja problemas de permissão:
+sudo -u peertube mkdir /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/certsAgora você precisa configurar esta pasta nas configurações do plugin, no parâmetro “Pastas de certificados”. É importante fazer isso agora, caso contrário, o script de importação de certificados colocará os certificados na pasta errada.
+Configuraremos o certbot para importar os certificados gerados para a pasta Prosody. Podemos usar o utilitário ProsodyCtl incluído no plugin.
+Observação: para estar disponível, o plugin deve ter sido iniciado pelo menos uma vez.
+Criaremos um arquivo /etc/letsencrypt/renewal-hooks/deploy/prosody.sh contendo:
+#!/bin/sh /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl &#13; --root &#13; --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua &#13; cert import &#13; room.sua_instância.tld sua_instância.tld /etc/letsencrypt/liveEntão pedimos para gerar o certificado:
+certbot -d room.videos.john-livingston.frSe o certbot oferecer vários métodos para gerar o certificado, escolha “nginx”.
+Normalmente, agora você deve encontrar os certificados na pasta configurada.
+Observação: na primeira vez que fizer isso, você precisará reiniciar o Prosody. A maneira mais fácil de fazer isso é reiniciar o Peertube.
+Método para o caso Docker Este método funciona com o guia Docker oficialmente suportado do PeerTube.
+Primeiro, certifique-se de criar uma entrada DNS para room.your_instance.tld, que aponta para o seu servidor. Você pode usar uma entrada CNAME (ou uma entrada A e uma entrada AAAA). Isso é necessário para que o Let’s Encrypt valide o domínio para geração do certificado.
+Entre no diretório onde seu arquivo docker-compose.yml está.
+Abra um shell no contêiner certbot:
+docker exec -it certbot /bin/shExecute o certbot:
+certbotSerão apresentadas uma série de prompts. Digite 2 para o tipo de autenticação:
+How would you like to authenticate with the ACME CA? Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2Digite o nome de domínio room.your_instance.tld:
+Please enter the domain name(s) you would like on your certificate (comma and/or space separated) (Enter 'c' to cancel): room.your_instance.tldEntre no diretório onde o servidor web PeerTube atende solicitações para o Let’s Encrypt, /var/www/certbot:
+Input the webroot for <room.your_instance.tld>: (Enter 'c' to cancel): /var/www/certbotVocê deverá ver uma saída como esta:
+Successfully received certificate. Certificate is saved at: /etc/letsencrypt/live/room.your_instance.tld/fullchain.pem Key is saved at: /etc/letsencrypt/live/room.your_instance.tld/privkey.pemExecute o comando abaixo dentro do contêiner certbot para conceder acesso de leitura aos novos certificados e chaves privadas do grupo peertube. Observação: Isso também tornará os arquivos legíveis para o grupo com ID 999 no sistema host. Verifique os grupos em seu sistema para avaliar se isso representa um risco antes de executar este comando.
+chown -R root:999 /etc/letsencrypt/live; \\ chmod 750 /etc/letsencrypt/live; \\ chown -R root:999 /etc/letsencrypt/archive; \\ chmod 750 /etc/letsencrypt/archive; \\ find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} \\;Saia do contêiner certbot:
+exitModifique seu arquivo docker-compose.yml, alterando a linha entrypoint no serviço certbot para o seguinte. É o mesmo que o anterior, mas será executado automaticamente após cada renovação de certificado.
+entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; chown -R root:999 /etc/letsencrypt/live; chmod 750 /etc/letsencrypt/live; chown -R root:999 /etc/letsencrypt/archive; chmod 750 /etc/letsencrypt/archive; find /etc/letsencrypt/ -name 'privkey*' -exec chmod 0640 {} +; sleep 12h & wait $\${!}; done;"Continuando a modificar docker-compose.yml, adicione o volume do certificado certbot ao contêiner peertube. Deve ficar algo assim:
+volumes: - ./docker-volume/certbot/conf:/etc/letsencryptReinicie seus serviços:
+docker-compose down; docker-comopse up -dNas configurações do plugin de chat ao vivo nas configurações de administração do PeerTube, defina o diretório do certificado como o seguinte:
+/etc/letsencrypt/liveSalve as configurações do plugin e verifique se o Prosody pode ver os certificados:
+docker-compose exec -u peertube \\ peertube \\ /data/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun \\ prosodyctl \\ --config /data/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\ check certsSolução de problemas Se não conseguir fazer funcionar, você pode usar a ferramenta de diagnóstico (há um botão no topo da página de configurações do plugin) e dar uma olhada na seção «Verificação de prosódia».`,description:"Permitir conexões usando clientes XMPP",tags:[],title:"Clientes XMPP",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/advanced/xmpp_clients/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Contribuindo",content:"Você não precisa saber programar para começar a contribuir com este plugin! Outras contribuições também são muito valiosas, entre elas: você pode testar o software e relatar bugs, dar feedback, recursos de seu interesse, interface de usuário, design, etc.",description:"Dê seu feedback",tags:[],title:"Dê seu feedback",uri:"/peertube-plugin-livechat/pt-br/contributing/feedback/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação",content:` ConfiguraçõesConfigurações do plugin Peertube Livechat
+Autenticação externaConfigurações do plugin Peertube Livechat - Autenticação externa
+Prosódia mod_firewallRegras avançadas de firewall para o servidor Prosody
+Uso avançadoAlguns recursos avançados
+Clientes XMPPPermitir conexões usando clientes XMPP
+Usando MatterbridgeUsando o Matterbridge para fazer a ponte com outros chats`,description:"Administração do plugin Peertube Livechat",tags:[],title:"Documentação do administrador",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do administrador",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 11.0.0. Você pode habilitar mod_firewall no seu servidor Prosody.
+Ao fazer isso, os administradores do Peertube poderão definir regras avançadas de firewall.
+Warning Essas regras podem ser usadas para executar código arbitrário no servidor. Se você for um provedor de hospedagem e não quiser permitir que os administradores do Peertube criem tais regras, você pode desativar a edição online criando um arquivo disable_mod_firewall_editing no diretório do plugin (plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing). Isso é uma opção de desativação, pois os administradores do Peertube já podem executar código arbitrário simplesmente instalando qualquer plugin. Você ainda pode usar o mod_firewall editando arquivos diretamente no servidor.
+Editar regras Primeiro, você deve habilitar o recurso nas configurações do plugin.
+Logo abaixo das configurações, você encontrará o botão “Configurar mod_firewall”. Este botão abrirá uma página de configuração.
+Aqui você pode adicionar vários arquivos de configuração.
+Você pode ativar/desativar cada arquivo.
+Os arquivos serão carregados em ordem alfabética. Você pode usar um número como prefixo para escolher a ordem facilmente.
+Info Você também pode editar essas regras de firewall diretamente no servidor, no diretório plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/. Os nomes dos arquivos devem conter apenas caracteres alfanuméricos, sublinhados e hífens. A extensão deve ser .pfw ou .pfw.disabled se desejar desabilitar um arquivo. Certifique-se de que o usuário do sistema peertube tenha acesso de gravação a esses arquivos, caso contrário, a interface de edição web falhará. Após editar esses arquivos, você deve recarregar o prosody. Isso pode ser feito salvando as configurações do plugin, salvando a configuração do mod_firewall na interface web ou reiniciando o Peertube.
+Ao salvar a configuração, o servidor a recarregará automaticamente e suas regras serão aplicadas imediatamente. Você pode verificar se não há erros de análise no log de erros do Prosody. Para isso, leia o arquivo plugins/data/peertube-plugin-livechat/prosody/prosody.err ou use a ferramenta de diagnóstico que mostrará os últimos erros do Prosody.
+Exemplos Não hesite em compartilhar suas regras. Para isso, você pode, por exemplo, editar esta página.`,description:"Regras avançadas de firewall para o servidor Prosody",tags:[],title:"Prosódia mod_firewall",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/mod_firewall/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers > Bot de bate-papo",content:`Você pode configurar vários temporizadores que irão enviar mensagens em um intervalo de tempo regular. Estas mensagens serão enviadas pelo bot a cada X minutos. Você pode por exemplo, fazer com que o bot envie alguma informação de patrocínio a cada 5 minutos.
+Tip Se não houver nenhum usuário na sala de bate-papo, o bot não enviará nenhuma mensagem.
+Temporizador Você pode configurar vários temporizadores que irão enviar mensagens em um intervalo de tempo regular. Estas mensagens serão enviadas pelo bot a cada X minutos. Você pode por exemplo, fazer com que o bot envie alguma informação de patrocínio a cada 5 minutos.
+Uma mensagem por linha. Se houver várias mensagens, ele escolherá uma aleatoriamente a cada X minutos.
+Enviar a cada X minutos O bot irá enviar a mensagem a cada X minutos.`,description:"O bot pode enviar periodicamente algumas mensagens.",tags:[],title:"Temporizadores",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers > Bot de bate-papo",content:`Você pode configurar o bot para responder a comandos. Um comando é uma mensagem que começa com “!”, como por exemplo “!help” que chama o comando “help”.
+Você pode configurar vários comandos.
+Comando O comando, sem iniciar com “!”. Por exemplo “ajuda”, “financie”, …
+Mensagem A mensagem a ser enviada.`,description:"O bot pode responder a vários comandos.",tags:[],title:"Comandos",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Contribuindo",content:`Fale sempre sobre os recursos que você quer desenvolver, criando/encontrando e comentando o problema que o aborda antes de começar a trabalhar nele, e informe à comunidade que você começou a codificar reivindicando o problema.
+O Pull Request deve ser feito no branch main.
+Note Até março de 2023, as contribuições eram feitas no branch develop. Este procedimento está obsoleto.
+Pré-requisito para construir este plugin É altamente recomendável estar familiarizado com os seguintes conceitos:
+Git NodeJS NPM Texto datilografado Para construir o plugin, você deve ter os seguintes pacotes:
+git npm (>=8.x) nodejs (>=14.x) construção-essencial coreutils wget reutilização Observe que este plugin precisa de uma AppImage para o servidor Prosody XMPP. Esta AppImage é fornecida pelo projeto paralelo Prosody AppImage. O script build-prosody.sh baixa os binários anexados a este repositório remoto e verifica se seus hashsums sha256 estão corretos.
+Desenvolver Clone o repositório, construa o plugin e crie seu branch de recurso:
+# Clone o repositório. Não se esqueça de usar --recursive para clonar submódulos. git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive cd peertube-plugin-livechat # Instale as dependências do NPM e compile o módulo pela primeira vez: npm install # Compile o plugin após uma modificação: npm run build # Se você tiver um fork do repositório, adicione-o como remoto (exemplo): git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git # Crie uma ramificação local para seus desenvolvimentos e faça check-out dela (exemplo): git checkout my_development # Observação: se um problema estiver associado, use fix_1234 como nome do seu branch (onde 1234 é o número do issue) # Para propor suas modificações, envie seu branch para seu repositório (exemplo): git push --set-upstream me my_development # Em seguida, vá para seu repositório github com seu navegador da web para propor o Pull Request (veja instruções adicionais abaixo)Quando estiver pronto para mostrar seu código e solicitar feedback, envie um rascunho de Pull Request. Quando estiver pronto para uma revisão de código antes da mesclagem, envie um Pull Request. De qualquer forma, vincule seu PR aos problemas que ele resolve usando a sintaxe do GitHub: “fixes #issue_number”.
+O código do front-end está na pasta client, o código do back-end em server. Há alguns códigos compartilhados na pasta shared.
+Para instruções gerais (desenvolvimento de plugins, construção, instalação, …), consulte a documentação do Peertube.
+Você pode construir o plugin com recursos extras de depuração simplesmente usando:
+NODE_ENV=dev npm run buildEste plugin é compatível com REUSE: ele usa cabeçalhos SPDX para identificar informações de licenciamento de seu código-fonte. Mais informações no site REUSE. Você pode usar a ferramenta de linha de comando reuse para ajudar a atualizar os cabeçalhos. O comando npm run lint usará o comando reuse para verificar a conformidade. Não se esqueça de adicionar suas informações de direitos autorais nos cabeçalhos SPDX ao modificar algum código.
+ESBuild vs Typescript Este plugin usa o ESBuild para geração de código frontend, como o plugin oficial peertube-plugin-quickstart. O ESBuild pode lidar com Typescript, mas não verifica os tipos (consulte a documentação do ESBuild). É por isso que primeiro compilamos o Typescript com a opção -noEmit, apenas para verificar os tipos (check:client:ts no arquivo package.json). Em seguida, se tudo estiver correto, executamos o ESBuild para gerar o JavaScript compilado.
+Modo de depuração Este plugin possui um modo de depuração que reduz um pouco o atraso. Por exemplo, alguns arquivos de log serão atualizados a cada dois minutos, em vez de uma vez por dia. Isso permite testar com mais facilidade determinadas ações, que normalmente levariam horas ou dias para serem concluídas.
+Para habilitar este modo, você só precisa criar o arquivo /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode (substituindo /var/www/peertube/storage/ pelo caminho correto na sua instalação).
+A simples existência deste arquivo é suficiente para acionar o modo de depuração. Para garantir que ele seja levado em consideração, você pode reiniciar sua instância do Peertube.
+Este arquivo pode conter JSON para habilitar opções mais avançadas. Para obter uma lista dos parâmetros existentes, consulte server/lib/debug.ts. Reinicie o Peertube após cada modificação de conteúdo.
+Warning Não habilite este modo em um servidor de produção, nem em um servidor público. Isso pode causar problemas de segurança.
+Reiniciar Prosódia Quando o modo de depuração estiver ativado, você pode reiniciar o Prosody usando esta chamada de API: http://your_instance.tld/plugins/livechat/router/api/restart_prosody. Esta chamada não requer autenticação. Pode ser feita a partir de uma linha de comando, por exemplo, usando curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody.
+Depurador de prosódia É possível conectar o Prosody AppImage a um depurador remoto usando MobDebug.
+Para isso, você precisa configurar o MobDebug em uma pasta acessível ao usuário peertube. Em seguida, adicione isto ao arquivo debub_mode:
+{ "debug_prosody": { "debugger_path": "/o_caminho_para_o_mobdebug/src", "host": "localhost", "porta": "8172" } }host e port são opcionais. debugger_path deve apontar para a pasta onde está o arquivo .lua MobDebug.
+Reinicie o Peertube.
+Inicie seu servidor depurador.
+Para que o Prosody se conecte ao depurador, chame a API http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true. Essa chamada não requer autenticação. Ela pode ser feita a partir de uma linha de comando, por exemplo, com curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true. Você pode até configurar seu servidor de depuração para iniciar essa solicitação automaticamente.
+O Prosody será reiniciado, conectando-se ao depurador.
+Ambiente de desenvolvimento rápido usando Docker Há um tutorial, em francês, no fórum Peertube que explica como construir rapidamente um ambiente de desenvolvimento usando o Docker.
+Um repositório foi criado a partir dele, confira pt-plugin-dev.
+Observação: por um motivo desconhecido, o Prosody não consegue resolver o endereço DNS dos contêineres ao usar a biblioteca lua-unbound. Há um truque sujo no plugin: basta criar um arquivo /data/plugins/data/peertube-plugin-livechat/no_lua_unbound no seu docker-volumes e reiniciar os contêineres.
+Reconstrua e instale o plugin rapidamente Ao fazer modificações, você não precisa sempre reconstruir o projeto inteiro e reinstalar o plugin no seu ambiente de desenvolvimento. Você pode compilar apenas a parte modificada (por exemplo, se você modificou apenas os arquivos do cliente: npm run build:client). Verifique os arquivos package.json para ver os scripts de compilação disponíveis.
+Quando o plugin já estiver instalado na sua instância de desenvolvimento e você não tiver alterado nenhuma dependência, você pode instalar seu trabalho rapidamente seguindo estas etapas:
+reconstruir partes necessárias do plugin (cliente, estilos, …), sobrescrever o conteúdo data/plugins/node_modules/peertube-plugin-livechat/dist/ da sua instância dev pelo conteúdo da pasta dist do plugin, alterar recursivamente o proprietário dos arquivos plugins/node_modules/peertube-plugin-livechat/dist/ para seu usuário peertube, reinicie sua instância. Testes de desempenho O repositório livechat-perf-test contém algumas ferramentas para realizar testes de desempenho. Ele pode ser usado para avaliar melhorias no código ou encontrar gargalos.`,description:"Desenvolver",tags:[],title:"Desenvolver",uri:"/peertube-plugin-livechat/pt-br/contributing/develop/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário",content:`OBS é um software de streaming popular, gratuito e de código aberto, com recursos avançados para suas transmissões ao vivo. Nesta página, você encontrará algumas dicas para gerenciar seus chats ao vivo usando o OBS.
+Sobreposição OBS Você pode facilmente incluir o bate-papo no seu fluxo de vídeo.
+Você pode usar o recurso “Compartilhar link do chat” para gerar uma URL para o seu chat. Este botão deve estar próximo ao chat se você for o proprietário do vídeo (a menos que tenha sido desativado pelos administradores do seu servidor).
+Marque a caixa de seleção “Somente leitura” no modal.
+Em seguida, use este link como uma “fonte do navegador da web” no OBS.
+Você pode usar a opção “Fundo transparente (para integração com sistemas de transmissão, como por exemplo OBS)” para ter um fundo transparente no OBS. Se quiser personalizar a transparência do fundo, adicione este CSS nas configurações do código-fonte do navegador do OBS:
+:root { --livechat-transparent: rgba(255 255 255 / 90%) !important; } No trecho CSS anterior, você pode, é claro, alterar a cor ou a transparência, adaptando os valores da cor.
+Observação: você pode personalizar totalmente as cores do chat. Isso ainda não está documentado, mas você pode tentar o seguinte: no modal, marque a opção “usar cores do tema atual” e tente alterar manualmente os valores de cor na URL. Você deve usar valores de cor CSS válidos, e eles devem estar codificados corretamente na URL.
+Doca OBS Info Esta funcionalidade está disponível com o plugin livechat versão 10.1.0. Warning Esse recurso pode ser desabilitado pelos administradores da instância.
+Você pode usar os “Docks de navegador personalizados” do OBS para integrar o chat ao seu OBS durante a transmissão. O plugin de chat ao vivo oferece uma maneira de criar um token de longo prazo que pode identificá-lo automaticamente para entrar no chat, para que você não precise digitar sua senha no OBS.
+Para isso, basta usar o recurso “Compartilhar link do chat” e abrir a aba “Doca”. A partir daí, você pode criar um novo token usando o botão “+”.
+Em seguida, copie a URL e use o menu “Docks / Docks de navegador personalizados” do seu OBS para adicionar um dock com essa URL.
+Depois de fazer isso, você terá um novo dock conectado ao bate-papo com sua conta.
+Tip Tokens são válidos para entrar em qualquer sala de bate-papo. Você não precisa gerar tokens separados para cada uma das suas salas. Você também pode personalizar o apelido que será usado alterando o parâmetro n na URL.
+Não compartilhe esses links com ninguém, pois isso permitirá que eles se conectem como se fossem você.
+Se um token for comprometido ou não for mais necessário, você pode revogá-lo.
+Info Esses tokens podem ser usados para outros fins, como conectar-se à sua conta com bots ou clientes XMPP. Este recurso ainda não está documentado e não possui suporte oficial. Portanto, use com cuidado.
+Misturando vários chats em sua transmissão ao vivo Você pode usar a extensão de navegador social_stream para misturar várias fontes de bate-papo (do Peertube, Twitch, YouTube, Facebook, …) e incluir seus conteúdos na sua transmissão ao vivo. A compatibilidade com este plugin foi adicionada em versões recentes.`,description:"Documentação para transmitir o conteúdo do bate-papo usando o OBS.",tags:[],title:"OBS",uri:"/peertube-plugin-livechat/pt-br/documentation/user/obs/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do administrador",content:` Clientes XMPPPermitir conexões usando clientes XMPP
+Usando MatterbridgeUsando o Matterbridge para fazer a ponte com outros chats`,description:"Alguns recursos avançados",tags:[],title:"Uso avançado",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/advanced/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Guia de instalação",content:`NOTA IMPORTANTE Desde a versão v6.0.0, este plugin não necessita de instalação do Prosody.
+Se você estava usando este plugin antes desta versão e se instalou o Prosody manualmente, você pode desinstalá-lo com segurança.
+Se você estava usando a imagem do Docker personalizada do Peertube que está incorporando o Prosody, você pode voltar para a imagem oficial do Peertube.`,description:"Notas importantes ao atualizar para uma versão mais antiga.",tags:[],title:"Atualização de versão anterior à 6.0.0",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/upgrade_before_6.0.0/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Contribuindo",content:`informações gerais Sempre informe a comunidade antes de trabalhar (criando um novo problema ou comentando um existente). Isso evita que duas pessoas trabalhem na mesma coisa e previne conflitos.
+O trabalho de documentação deve ser mesclado no branch main.
+O código-fonte da documentação está na pasta support/documentation/content.
+A documentação é gerada usando Hugo. Você precisa instalá-lo no seu computador se quiser visualizar seu trabalho.
+A versão mínima necessária para o Hugo é 0.121.0. Ele foi testado com a versão 0.132.2.
+O tema usado é hugo-theme-relearn. Você deve ler a documentação antes de começar a editá-la.
+Quando uma nova versão do plugin é lançada ou quando a documentação é atualizada, os mantenedores do plugin mesclam a ramificação “main” com a ramificação “documentation”. Isso acionará os pipelines do GitHub e do GitLab e atualizará a documentação publicada.
+Traduções O idioma principal é o inglês (código en).
+A pasta support/documentation/content/en contém apenas arquivos de documentação em inglês.
+A documentação é traduzida usando o Weblate (veja a documentação de tradução). Para isso, usamos a ferramenta po4a, como veremos mais adiante nesta página.
+Adicionar um novo idioma No arquivo support/documentation/config.toml, copie e modifique a seção [Languages.fr].
+Se as traduções não estiverem completas, não importa, o inglês será usado para as strings faltantes.
+Pré-visualização Para visualizar suas modificações, basta executar:
+hugo serve -s support/documentation/ Em seguida, abra seu navegador no endereço http://localhost:1313/peertube-plugin-livechat/. Esta página será atualizada automaticamente a cada modificação.
+Atualizar arquivos de localização e gerar traduções de documentação Por enquanto, você só tem a versão em inglês. Para atualizar as strings de documentação e gerar traduções, você precisa executar o script doc-translate.sh.
 To do so, make sure you have po4a (version >= 0.69) installed on your computer.
-Warning Some linux distro (like Debian Bullseye for example) have too old version of po4a. Please make sure to install a compatible version. If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from https://packages.debian.org, and install it manually.
-To handle translations, just do:
-npm run doc:translate You can then preview the result using hugo serve -s support/documentation/, and using the language selector.
-Write documentation Just edit the english files in support/documentation/content/en.
-Then, before commiting, always run npm run doc:translate, so that changes in english files can be propagated to the support/documentation/po/livechat.en.pot file.
-You can use the livechat_label short code to use application strings. See here: Documentation translation.
-It is possible to prevent a file from beeing translating, using livechatnotranslation: true in the Yaml Font Matter section. See here: Documentation translation.
-Please use the livechatnotranslation option for technical documentation. We don’t want technical documentation to be translated, to avoid issues because of a wrong translation.
-To facilitate translators work, avoid making too long paragraphs.
-For now, it is not possible to use Markdown tables: the translation tools will break them.
-Warning There may be links to this documentation elsewhere on the web. Try not to change the urls of the documentation pages. Or at the very least, put links to the new location on the previous url.
-When a new feature is released, you can use the livechat_version_notice short code to display an infobox with the version with which the features is available. This short code takes the version number as parameter. Here is an example:
-Info This feature comes with the livechat plugin version 12.0.0. What if I can’t use hugo and/or po4a? Just edit english markdown files, and specify that you can’t build translations when you make your Pull Request.
-Publication Publishing the documentation is automatic, as soon as the changes are merged into the documentation branch.`,description:"Document the plugin, or translate the documentation.",tags:[],title:"Documentation",uri:"/peertube-plugin-livechat/pt-br/contributing/document/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The livechat plugin stores some data on the server, in the /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/ folder. This page describes these data.
+Warning Algumas distribuições Linux (como o Debian Bullseye, por exemplo) possuem versões muito antigas do po4a. Certifique-se de instalar uma versão compatível. Se você estiver usando o Debian Bullseye, por exemplo, pode baixar o arquivo Bookworm po4a.deb em https://packages.debian.org e instalá-lo manualmente.
+Para lidar com traduções, basta fazer:
+npm run doc:translate Você pode então visualizar o resultado usando hugo serve -s support/documentation/ e usar o seletor de idioma.
+Escrever documentação Basta editar os arquivos em inglês em support/documentation/content/en.
+Então, antes de confirmar, sempre execute npm run doc:translate, para que as alterações nos arquivos em inglês possam ser propagadas para o arquivo support/documentation/po/livechat.en.pot.
+Você pode usar o código curto livechat_label para usar strings de aplicativo. Veja aqui: Tradução da documentação.
+É possível impedir que um arquivo seja traduzido usando livechatnotranslation: true na seção Yaml Font Matter. Veja aqui: Tradução da documentação.
+Use a opção livechatnotranslation para documentação técnica. Não queremos que a documentação técnica seja traduzida para evitar problemas devido a uma tradução incorreta.
+Para facilitar o trabalho dos tradutores, evite fazer parágrafos muito longos.
+Por enquanto, não é possível usar tabelas Markdown: as ferramentas de tradução irão quebrá-las.
+Warning Pode haver links para esta documentação em outros lugares da web. Tente não alterar os URLs das páginas de documentação. Ou, pelo menos, insira links para o novo local no URL anterior.
+Quando um novo recurso é lançado, você pode usar o código curto livechat_version_notice para exibir uma infobox com a versão em que o recurso está disponível. Este código curto recebe o número da versão como parâmetro. Veja um exemplo:
+Info Esta funcionalidade está disponível com o plugin livechat versão 12.0.0. E se eu não puder usar hugo e/ou po4a? Basta editar os arquivos markdown em inglês e especificar que você não pode criar traduções ao fazer seu Pull Request.
+Publicação A publicação da documentação é automática, assim que as alterações são mescladas na ramificação documentation.`,description:"Documente o plugin ou traduza a documentação.",tags:[],title:"Documentação",uri:"/peertube-plugin-livechat/pt-br/contributing/document/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Technical documentation",content:`The livechat plugin stores some data on the server, in the /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/ folder. This page describes these data.
 prosody The prosody folder is used by the Prosody XMPP server to store its data and logs.
 prosodyAppImage This plugin uses the Prosoxy XMPP server in background. This server code is embedded as an AppImage.
 When the plugin starts, it deflate this AppImage in the prosodyAppImage folder.
@@ -543,30 +545,35 @@ Note: this includes the bot username and password. Don’t let it leak.
 bot/muc_domain/rooms The bot/muc_domain/rooms folder contains room configuration files. See the xmppjs-chat-bot package help for more information.
 emojis/channel The emojis/channel folder contains custom emojis definitions for channels.
 For example, the channel 1 will contain:
-emojis/channel/1/definition.json: the JSON file containing the emojis definitions emojis/channel/1/files/42.png: N image files (png, jpg, …), using numbers as filenames. tokens The tokens folder contains long term token to connect to the chat. See the LivechatProsodyAuth class for more information.`,description:"Data files and folders used on the server",tags:[],title:"Plugin storage",uri:"/peertube-plugin-livechat/pt-br/technical/data/index.html"},{breadcrumb:"Peertube livechat > Documentation > Installation guide",content:`IMPORTANT NOTE Since version v6.0.0, this plugin does not need any Prosody installation.
-If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody.
-If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image.`,description:"Important notes when upgrading for an older version.",tags:[],title:"Upgrade from version older than 6.0.0",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/upgrade_before_6.0.0/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation > Advanced usage",content:`The following is based on a tutorial to use Matterbridge with the plugin: Matterbridge + Peertube
-Requirements PeerTube plugin livechat version 3.2.0 or later. Matterbridge version 1.22.4 or later. The easiest is if the PeerTube instance and Matterbridge run on the same server.
-Internal connections only (basic) You will need to enable Enable client to server connections in the livechat plugin settings.
-This will allow localhost XMPP clients to connect to the Prosody XMPP server.
-You may need to add some line to your /etc/hosts:
-127.0.0.1 anon.example.org room.example.org Replace example.org by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below.
-Allow external connections (advanced) By default, the internal Prosody XMPP server only listens on localhost (127.0.0.1).
+emojis/channel/1/definition.json: the JSON file containing the emojis definitions emojis/channel/1/files/42.png: N image files (png, jpg, …), using numbers as filenames. tokens The tokens folder contains long term token to connect to the chat. See the LivechatProsodyAuth class for more information.`,description:"Data files and folders used on the server",tags:[],title:"Plugin storage",uri:"/peertube-plugin-livechat/pt-br/technical/data/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do administrador > Uso avançado",content:`O seguinte é baseado em um tutorial para usar o Matterbridge com o plugin: Matterbridge + Peertube
+Requisitos Plugin PeerTube livechat versão 3.2.0 ou posterior. Matterbridge versão 1.22.4 ou posterior. O mais fácil é se a instância do PeerTube e o Matterbridge forem executados no mesmo servidor.
+Somente conexões internas (básicas) Você precisará habilitar Habilitar conexões de cliente para servidor nas configurações do plugin de chat ao vivo.
+Isso permitirá que clientes XMPP do host local se conectem ao servidor Prosody XMPP.
+Talvez você precise adicionar alguma linha ao seu /etc/hosts:
+127.0.0.1 anon.example.org room.example.org Substitua example.org pelo nome de domínio da sua instância. Depois disso, você pode continuar com a configuração do Matterbridge abaixo.
+Permitir conexões externas (avançado) Por padrão, o servidor interno Prosody XMPP escuta apenas no host local (127.0.0.1).
 On livechat versions >= 10.1.0 a new option call Client to server network interfaces was added to allow changing this.
-It allows to add a list of IPs to listen on, coma separated (spaces will be stripped).
-You can also use * to listen on all IPv4 interfaces, and :: for all IPv6. Doing so allows external access to the client to server interface.
-Then you need to open the C2S port (by default 52822, but check the plugin settings to get the current value) in your firewall so that it can be reached from the internet. If you don’t want to use C2S connections for anything else than your Matterbridge service, you should restrict access to this port to your Matterbridge server IP.
-You also need to add DNS records (A and AAAA) for anon.example.org and room.example.org (replace example.org by your actual domain name).
-In case you are using a port other than 5222 (XMPP standard port) you also need to set the xmpp-client SRV record to the correct port.
-Configurating Matterbridge In the version 1.22.4, Matterbridge added support for XMPP anonymous connections needed to connect to the built-in prosody.
-So in the TOML config file put:
-[xmpp.mypeertube] Anonymous=true Server="anon.example.org:52822" Muc="room.example.org" Nick="Matterbridge" RemoteNickFormat="[{PROTOCOL}] <{NICK}> " NoTLS=true Replace example.org by your actual instance domain name. Replace 52822 by the actual port if you changed it. mypeertube can be replaced by another name. Using peertube as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification. The setting NoTLS=true allows connecting to a server with self-signed certificates. Now you can add this account to gateways and bridge specific live-chat channels.
-Info This documentation use an anonymous account to connect the bridge to the chat. But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account. This is used for OBS docks. Using this feature for other purposes is not documented and not officially supported yet. If you want to use it anyway, you can request a token by calling then /plugins/livechat/router/api/auth/tokens endpoint. To get needed headers and request body, just check what happens when you generate a new token for OBS docks.`,description:"Using Matterbridge to bridge with other chats",tags:[],title:"Using Matterbridge",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/advanced/matterbridge/index.html"},{breadcrumb:"Peertube livechat",content:`Interested in contributing? Awesome!
-Code of ConductContributor Covenant Code of Conduct
-TranslateTranslate the plugin
-Give your feedbackGive your feedback
-DevelopDevelop
-DocumentationDocument the plugin, or translate the documentation.`,description:"Contributing",tags:[],title:"Contributing",uri:"/peertube-plugin-livechat/pt-br/contributing/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The livechat plugin includes a “slow mode” feature, to rate limit the number of messages that a user can send to a given MUC room. At time of writing, there were no XEP to describe such feature. Please find below a XEP draft, that will be submitted for review.
+Permite adicionar uma lista de IPs para escutar, separados por vírgulas (os espaços serão removidos).
+Você também pode usar * para escutar em todas as interfaces IPv4 e :: para todas as IPv6. Isso permite acesso externo à interface cliente-servidor.
+Em seguida, você precisa abrir a porta C2S (por padrão, 52822, mas verifique as configurações do plugin para obter o valor atual) no seu firewall para que ela possa ser acessada pela internet. Se você não quiser usar conexões C2S para nada além do seu serviço Matterbridge, restrinja o acesso a essa porta ao IP do seu servidor Matterbridge.
+Você também precisa adicionar registros DNS (A e AAAA) para anon.example.org e room.example.org (substitua example.org pelo seu nome de domínio real).
+Caso você esteja usando uma porta diferente de 5222 (porta padrão XMPP), você também precisa definir o registro SRV do cliente xmpp para a porta correta.
+Configurando o Matterbridge Na versão 1.22.4, o Matterbridge adicionou suporte para conexões anônimas XMPP necessárias para conectar à prosódia integrada.
+Então no arquivo de configuração TOML coloque:
+[xmpp.mypeertube] Anonymous=true Server="anon.example.org:52822" Muc="room.example.org" Nick="Matterbridge" RemoteNickFormat="[{PROTOCOL}] <{NICK}> " NoTLS=true Substitua example.org pelo nome de domínio da sua instância real. Substitua 52822 pela porta real, caso você a tenha alterado. mypeertube pode ser substituído por outro nome. Usar peertube como Nick fornecerá o ícone do PeerTube para mensagens de sobreposição, o que também pode ser feito com modificações na configuração da sobreposição. A configuração NoTLS=true permite conectar a um servidor com certificados autoassinados. Agora você pode adicionar esta conta a gateways e conectar canais de bate-papo ao vivo específicos.
+Info Esta documentação utiliza uma conta anônima para conectar a ponte ao chat. Mas, desde o LiveChat v10.1.0, existe uma nova maneira de gerar um token de autenticação de longo prazo, que permite a conexão usando sua conta. Isso é usado para docas OBS. O uso desse recurso para outros fins não está documentado e ainda não é oficialmente suportado. Se você quiser usá-lo mesmo assim, pode solicitar um token chamando o endpoint /plugins/livechat/router/api/auth/tokens. Para obter os cabeçalhos e o corpo da solicitação necessários, basta verificar o que acontece quando você gera um novo token para docas OBS.`,description:"Usando o Matterbridge para fazer a ponte com outros chats",tags:[],title:"Usando Matterbridge",uri:"/peertube-plugin-livechat/pt-br/documentation/admin/advanced/matterbridge/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário",content:`Este plugin de bate-papo utiliza o protocolo XMPP (também conhecido como Jabber). Portanto, é possível conectar-se aos bate-papos usando software cliente XMPP. Isso pode ser útil, por exemplo, para facilitar as operações de moderação.
+Info Os recursos descritos nesta página devem ser habilitados e configurados pelos administradores da sua instância do Peertube. Portanto, você pode não ter acesso a eles.
+Entre na sua conta Peertube Warning Este recurso ainda não está disponível e estará disponível em uma versão futura do plugin.
+Conexão usando uma conta XMPP externa Se esse recurso estiver habilitado na sua instância, você poderá se conectar aos chats do Peertube usando qualquer conta XMPP.
+Para obter o endereço da sala na qual deseja entrar, você pode usar o botão “compartilhar chat” localizado acima do chat:
+Info Por padrão, o botão de compartilhamento fica visível apenas para o proprietário do vídeo e os administradores/moderadores da instância. No entanto, os administradores podem optar por exibir este botão para todos.
+Em seguida, escolha “Conectar usando XMPP”:
+Depois, basta clicar em “abrir” ou copiar/colar o endereço da sala de bate-papo no seu cliente XMPP (usando o recurso “entrar em uma sala”).`,description:"Conecte-se ao chat usando um cliente XMPP",tags:[],title:"Clientes XMPP",uri:"/peertube-plugin-livechat/pt-br/documentation/user/xmpp_clients/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube",content:`Interessado em contribuir? Ótimo!
+Código de CondutaCódigo de Conduta do Pacto do Colaborador
+TraduzirTraduzir o plugin
+Dê seu feedbackDê seu feedback
+DesenvolverDesenvolver
+DocumentaçãoDocumente o plugin ou traduza a documentação.`,description:"Contribuindo",tags:[],title:"Contribuindo",uri:"/peertube-plugin-livechat/pt-br/contributing/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Technical documentation",content:`The livechat plugin includes a “slow mode” feature, to rate limit the number of messages that a user can send to a given MUC room. At time of writing, there were no XEP to describe such feature. Please find below a XEP draft, that will be submitted for review.
 Warning Work In Progress, this page is not done yet. For an updated version of this document, you can check the draft XEP XMP file.
 XEP: MUC Slow Mode Abstract: This specification describes a way to rate limit messages a single user can send to a MUC room, from the room configuration to the server and client handling of such a feature.
 Author: John Livingston
@@ -612,14 +619,7 @@ Website: https://www.john-livingston.fr
 Appendix C: Legal Notices TO BE DONE
 Appendix D: Relation to XMPP The Extensible Messaging and Presence Protocol (XMPP) is defined in the XMPP Core (RFC 6120) and XMPP IM (RFC 6121) specifications contributed by the XMPP Standards Foundation to the Internet Standards Process, which is managed by the Internet Engineering Task Force in accordance with RFC 2026. Any protocol defined in this document has been developed outside the Internet Standards Process and is to be understood as an extension to XMPP rather than as an evolution, development, or modification of XMPP itself.
 Appendix E: Discussion Venue TO BE DONE
-Appendix F: Requirements Conformance The following requirements keywords as used in this document are to be interpreted as described in RFC 2119: “MUST”, “SHALL”, “REQUIRED”; “MUST NOT”, “SHALL NOT”; “SHOULD”, “RECOMMENDED”; “SHOULD NOT”, “NOT RECOMMENDED”; “MAY”, “OPTIONAL”.`,description:"MUC Slow mode XEP",tags:[],title:"MUC Slow mode",uri:"/peertube-plugin-livechat/pt-br/technical/slow_mode/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`This chat plugin relies on the XMPP protocol (also known as Jabber). It is therefore possible to connect to the chats using XMPP client software. This can be useful for example to facilitate moderation operations.
-Info The features described on this page must be enabled and configured by your Peertube instance’s administrators. You may therefore not have access to them.
-Login to your Peertube account Warning This feature is not yet available, and will come in a future version of the plugin.
-Connection using an external XMPP account If this feature is enabled on your instance, you can connect to Peertube chats using any XMPP account.
-To get the address of the room you want to join, you can use the “share chat” button that is located above the chat:
-Info By default, the share button is only visible to the owner of the video, and the admins/moderators of the instance. However, admins can decide to display this button for everyone.
-Then, choose “Conectar usando XMPP”:
-Then you just have to click on “open” or copy/paste the address of the chat room into your XMPP client (using the “join a room” feature).`,description:"Connect to chat using a XMPP client",tags:[],title:"XMPP Clients",uri:"/peertube-plugin-livechat/pt-br/documentation/user/xmpp_clients/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The poll system relies on two thinks:
+Appendix F: Requirements Conformance The following requirements keywords as used in this document are to be interpreted as described in RFC 2119: “MUST”, “SHALL”, “REQUIRED”; “MUST NOT”, “SHALL NOT”; “SHOULD”, “RECOMMENDED”; “SHOULD NOT”, “NOT RECOMMENDED”; “MAY”, “OPTIONAL”.`,description:"MUC Slow mode XEP",tags:[],title:"MUC Slow mode",uri:"/peertube-plugin-livechat/pt-br/technical/slow_mode/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Technical documentation",content:`The poll system relies on two thinks:
 mod_muc_polls Prosody module on the backend polls Converse plugin on the frontend Backend mod_muc_polls is a Prosody modules that implements polls in MUC. This module could be used on any Prosody server, and has no code specific to the livechat plugin.
 The way this module works could be standardized one day, by writing a XEP.
 Poll creation This module adds the http://jabber.org/protocol/muc#x-poll disco features on muc-disco#info.
@@ -652,7 +652,7 @@ It uses standards XMPP forms to get the poll creation form and submit it.
 It uses the parseMUCMessage hook to check if messages have x-poll data.
 If so, and if message are not archived, it creates or updates the poll banner.
 When clicking on a choice in the banner, it just sends a message in the chat ("!1" for example).
-As the backend does no localization, it also translate on the fly the english sentences coming from the backend (in the form definition, in poll start/end message, and in bounce/error messages).`,description:"Polls technical documentation",tags:[],title:"Polls",uri:"/peertube-plugin-livechat/pt-br/technical/polls/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`You can set terms & conditions on the instance level (called “global terms”), or at the streamers’ channels level (called “muc terms”, as it is related to muc rooms).
+As the backend does no localization, it also translate on the fly the english sentences coming from the backend (in the form definition, in poll start/end message, and in bounce/error messages).`,description:"Polls technical documentation",tags:[],title:"Pesquisas",uri:"/peertube-plugin-livechat/pt-br/technical/polls/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Technical documentation",content:`You can set terms & conditions on the instance level (called “global terms”), or at the streamers’ channels level (called “muc terms”, as it is related to muc rooms).
 Backend The mod_muc_peertubelivechat_terms prosody modules handles the terms configuration.
 It has a configuration option for the global terms. It also adds muc terms in the room data.
 When a new occupant session is opened, this modules sends them messages containing the global and muc terms (if set).
@@ -669,9 +669,9 @@ Frontend For standard XMPP clients, terms will be shown as delayed messages.
 For the livechat frontend, there is a livechat-converse-terms Converse plugin that will intercept these messages, and prevent them to be shown in the chat history.
 It will also create infobox at the top of the chat to display the terms content. If muc terms are updated, the new terms will be shown.
 Users can hide the terms. To remember that a user has already hidden the terms, we store the content in localStorage. We will only show terms again if the content in this localStorage changes. We do so for both global terms and muc terms, in two separate localStorage keys. The keys in localstorage does not depends on the room JID or the origin peertube instance. This means that message will be shown again:
-if terms are modified if the user switch to another channel if the user switch to a video from a different peertube instance `,description:"Terms&Conditions implementation",tags:[],title:"Terms&Conditions",uri:"/peertube-plugin-livechat/pt-br/technical/terms/index.html"},{breadcrumb:"Peertube livechat",content:`If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the Github issue tracker. If possible, try using english or french.
-To have a glimpse to the roadmap for upcoming features, please refer to:
-this github project. the milestones on github. If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome.`,description:"Bug tracking / New features requests",tags:[],title:"Bug tracking & new features",uri:"/peertube-plugin-livechat/pt-br/issues/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The livechat plugin includes a Task Application. The present document describes how this is implemented.
+if terms are modified if the user switch to another channel if the user switch to a video from a different peertube instance `,description:"Terms&Conditions implementation",tags:[],title:"Terms&Conditions",uri:"/peertube-plugin-livechat/pt-br/technical/terms/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube",content:`Se você tiver novas solicitações de recursos, bugs ou dificuldades para configurar o plugin, pode usar o Rastreador de problemas do GitHub. Se possível, tente usar inglês ou francês.
+Para ter uma ideia do roteiro dos próximos recursos, consulte:
+este projeto github. os marcos no github. Se você é um webdesigner ou especialista em ConverseJS/Prosody/XMPP e quer ajudar a melhorar este plugin, seja bem-vindo.`,description:"Rastreamento de bugs / Solicitações de novos recursos",tags:[],title:"Bug tracking & new features",uri:"/peertube-plugin-livechat/pt-br/issues/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Technical documentation",content:`The livechat plugin includes a Task Application. The present document describes how this is implemented.
 Basics This features relies on XEP-0060: Publish-Subscribe. This XEP provide a way to store and retrieve items, and to receive push notifications when an item is created/deleted/modified.
 There is a Prosody Module, mod_pubsub_peertubelivechat, to implement some specific use of the pubsub mechanism.
 This module is also used for Moderator Notes.
@@ -685,9 +685,9 @@ Here is the worflow to create/modify/delete items:
 the frontend send a publish request. backend checks rights. backend sends notifications to all subscribers, including the current users. On the front-end PubSubManager receives the notification, and dispatch it to the relevant component. Unsubscribing When users leaves a MUC room, they are automatically unsubscribed from the “livechat-tasks” node related to this room.
 When users lose the owner/admin affiliation, they are removed from the “livechat-tasks” node subscriptions.
 Items Here we describes the content of node items.
-Task lists Item tag: tasklist XML Namespace: urn:peertube-plugin-livechat:tasklist item childs: name: the text content is the task list name Example: here is an example of IQ stanza to create a task-list item.
-<iq from="user@example.com" id="45cf7543-67bf-4d03-bb5d-a55038a0512a:sendIQ" to="035fcc4b-072f-4827-b296-6998b04e3456@room.example.com" type="set" xmlns="jabber:client" > <pubsub xmlns="http://jabber.org/protocol/pubsub"> <publish node="livechat-tasks"> <item> <tasklist xmlns="urn:peertube-plugin-livechat:tasklist"> <name>Task List Name</name> </tasklist> </item> </publish> </pubsub> </iq>Tasks Item tag: task XML Namespace: urn:peertube-plugin-livechat:task item attributes: done: if present and equal to “true”, means that the task is done list: the list id order: the order of the task in the task list item childs: name: the text content is the task name description: the text content is the task description Example: here is an example of IQ stanza to create a task-list item.
-<iq from="user@example.com" id="9fd9a162-1b6c-4b38-a2a1-2485b34f0d8d:sendIQ" to="035fcc4b-072f-4827-b296-6998b04e3456@room.example.com" type="set" xmlns="jabber:client" > <pubsub xmlns="http://jabber.org/protocol/pubsub"> <publish node="livechat-tasks"> <item> <task list="8302c024-c16e-4fbd-aca7-c94cdb2025de" order="0" done="true" xmlns="urn:peertube-plugin-livechat:task" > <name>The task name</name> <description>here is the description</description> </task> </item> </publish> </pubsub> </iq>Note: in the above example, we added done="true" just for the example. Don’t add the attribute if you want not the task to be marked as done (or if you want to undone the task).`,description:"Task Application technical overview",tags:[],title:"Tasks overview",uri:"/peertube-plugin-livechat/pt-br/technical/tasks/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The livechat plugin includes a Moderation Notes Application. The present document describes how this is implemented.
+Listas de tarefas Item tag: tasklist XML Namespace: urn:peertube-plugin-livechat:tasklist item childs: name: the text content is the task list name Example: here is an example of IQ stanza to create a task-list item.
+<iq from="user@example.com" id="45cf7543-67bf-4d03-bb5d-a55038a0512a:sendIQ" to="035fcc4b-072f-4827-b296-6998b04e3456@room.example.com" type="set" xmlns="jabber:client" > <pubsub xmlns="http://jabber.org/protocol/pubsub"> <publish node="livechat-tasks"> <item> <tasklist xmlns="urn:peertube-plugin-livechat:tasklist"> <name>Task List Name</name> </tasklist> </item> </publish> </pubsub> </iq>Tarefas Item tag: task XML Namespace: urn:peertube-plugin-livechat:task item attributes: done: if present and equal to “true”, means that the task is done list: the list id order: the order of the task in the task list item childs: name: the text content is the task name description: the text content is the task description Example: here is an example of IQ stanza to create a task-list item.
+<iq from="user@example.com" id="9fd9a162-1b6c-4b38-a2a1-2485b34f0d8d:sendIQ" to="035fcc4b-072f-4827-b296-6998b04e3456@room.example.com" type="set" xmlns="jabber:client" > <pubsub xmlns="http://jabber.org/protocol/pubsub"> <publish node="livechat-tasks"> <item> <task list="8302c024-c16e-4fbd-aca7-c94cdb2025de" order="0" done="true" xmlns="urn:peertube-plugin-livechat:task" > <name>The task name</name> <description>here is the description</description> </task> </item> </publish> </pubsub> </iq>Note: in the above example, we added done="true" just for the example. Don’t add the attribute if you want not the task to be marked as done (or if you want to undone the task).`,description:"Task Application technical overview",tags:[],title:"Tasks overview",uri:"/peertube-plugin-livechat/pt-br/technical/tasks/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Technical documentation",content:`The livechat plugin includes a Moderation Notes Application. The present document describes how this is implemented.
 Basics This features relies on XEP-0060: Publish-Subscribe. This XEP provide a way to store and retrieve items, and to receive push notifications when an item is created/deleted/modified.
 There is a Prosody Module, mod_pubsub_peertubelivechat, to implement some specific use of the pubsub mechanism.
 This module is also used for Tasks.
@@ -699,248 +699,248 @@ Workflow / Unsubscribing This is basically the same as for Tasks.
 Items Here we describes the content of note items.
 Item tag: note XML Namespace: urn:peertube-plugin-livechat:note item attributes: order: the order of the note in the note list item childs: description: the text content of the note note-about: an optional tag, if the note is associated to a participant The note-about tag, if present, has following structure:
 Item tag: note-about XML Namespace: none item attributes: jid: the JID of the occupant nick the nick of the occupant, at time of note creation item childs: occupant-id: see XEP-0421. Example:
-<iq from="user@example.com" id="64da7e38-4dd5-4f55-b46f-297232232971:sendIQ" to="035fcc4b-072f-4827-b296-6998b04e3456@room.example.com" type="set" xmlns="jabber:client"> <pubsub xmlns="http://jabber.org/protocol/pubsub"> <publish node="livechat-notes"> <item id="8ab78df9-a7b9-4315-943d-c340935482af"> <note order="11" xmlns="urn:peertube-plugin-livechat:note" > <description>Some text.</description> <note-about jid="khkecy3nkddwxdllgzdub-dv@anon.p1.localhost" nick="Mickey" > <occupant-id id="ga4mR2IKEvRKuzN1gJYVafCTbY1gNvgNvNReqdVKexI=" xmlns="urn:xmpp:occupant-id:0" /> </note-about> </note> </item> </publish> </pubsub> </iq>`,description:"Moderator Notes Application technical overview",tags:[],title:"Moderator notes overview",uri:"/peertube-plugin-livechat/pt-br/technical/moderation_notes/index.html"},{breadcrumb:"Peertube livechat",content:` Source codeSource code organization
+<iq from="user@example.com" id="64da7e38-4dd5-4f55-b46f-297232232971:sendIQ" to="035fcc4b-072f-4827-b296-6998b04e3456@room.example.com" type="set" xmlns="jabber:client"> <pubsub xmlns="http://jabber.org/protocol/pubsub"> <publish node="livechat-notes"> <item id="8ab78df9-a7b9-4315-943d-c340935482af"> <note order="11" xmlns="urn:peertube-plugin-livechat:note" > <description>Some text.</description> <note-about jid="khkecy3nkddwxdllgzdub-dv@anon.p1.localhost" nick="Mickey" > <occupant-id id="ga4mR2IKEvRKuzN1gJYVafCTbY1gNvgNvNReqdVKexI=" xmlns="urn:xmpp:occupant-id:0" /> </note-about> </note> </item> </publish> </pubsub> </iq>`,description:"Moderator Notes Application technical overview",tags:[],title:"Moderator notes overview",uri:"/peertube-plugin-livechat/pt-br/technical/moderation_notes/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube",content:` Source codeSource code organization
 Third partyDisplaying the livechat with 3rd party software.
 Plugin storageData files and folders used on the server
 MUC Slow modeMUC Slow mode XEP
-PollsPolls technical documentation
+PesquisasPolls technical documentation
 Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
-Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/pt-br/technical/index.html"},{breadcrumb:"Peertube livechat",content:`If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: plugin-livechat-support@room.im.yiny.org.
-If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my Liberapay profile.`,description:"Contact the author",tags:[],title:"Contact me",uri:"/peertube-plugin-livechat/pt-br/contact/index.html"},{breadcrumb:"Peertube livechat",content:`package.json, COPYRIGHT and LICENSE files contain the license information for this software and its dependencies.
-The plugin is maintained by John Livingston.
-Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the online Sepia Avatar Generator.
-Thanks to Framasoft for making Peertube possible, for the financial support, and for hosting the project translations on their Weblate instance.
-Thanks to ritimo for the financial support.
-Thanks to Code Lutin and Rétribution Copie Publique for the financial support.
-Thanks to NlNet and the NGI0 Entrust fund for the financial support.
-Thanks to Octopuce for the financial support.
-And thanks to all individual contributors who have made a donation via my liberapay page.`,description:"Plugin Credits",tags:[],title:"Credits",uri:"/peertube-plugin-livechat/pt-br/credits/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:`Enabling the chat for you live streams Warning Instance administrators can choose to disable or enable chat in specific cases. Information in this section are only true in the default case.
-When you create or modify a Peertube live, there is a “plugin settings” tab:
-In the “plugin settings” tab, there is a “Usar chat” checkbox. Just check or uncheck it to enable or disable the chat associated to your video.
-Tip There can be other settings in this tab, depending on plugins installed on your Peertube instance.
-Per channel chat On the instance level, Peertube’s administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel. Please contact your instance’s administrators for more information on how they configure the livechat plugin.
-Share the chat On top of the chat, there is a “Compartilhar link do chat” button.
-This button opens a popup, where you can obtain an url to join the chat. This url can be shared.
-The “Embutido” tab provide some links to embed the chat in websites, or in your live stream.
-You can customize some options:
-Somente leitura: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the OBS documentation). Utilizar cores do tema atual: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set. Gerar um iframe para embutir o chat em uma página: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat. For more information on the “Dock” tab, check the OBS documentation.
-In the “Web” tab, the provided url opens the chat in the Peertube interface. You can share this link to other users to invite them to join the chat.
-The “Compartilhar link do chat” popup can also contain a “Conectar usando XMPP” tab. This will only be available if your instance’s administators have enabled an correctly configured this option. Using this option, you can provide a link to join the chat using any XMPP client software. Using such softwares can for example facilitate moderation actions.
-Moderation Please refer to the moderation documentation.
-Include the chat in your video stream Please refer to the OBS documentation.
-Chat persistence By default, the chat is persistent. This means that the room content will be kept for a while. User joining will see messages posted before their arrival.
-You can change the persistence behaviour. Open the chat dropdown menu, and click on “Configure”.
-There are several options that can be changed.
-You can for example set the default and maximum number of messages to return to 0, so that new incomers won’t see any previously sent message.
-You can also uncheck “enable archiving”: if unchecked, messages will be pruned if the server restarts.
-By unchecking “Persistent”, the room will be cleared if there is no more participant.
-Delete the chat content If you want to delete the chat content, open the chat dropdown menu, then click on “Destroy”. A popup will open, asking a confirmation.
-The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the “Usar chat” feature activated.`,description:"Some basics about how to setup and use the chat for your live stream",tags:[],title:"Some basics",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
-In the Peertube left menu, there is a “Chatrooms” entry:
-This “Chatrooms” link takes you to a list of your channels. By clicking on a channel, you will then be able to setup some options for your channels:
-Here you can configure:
-Channel’s chat terms & conditions Mute anonymous users default value The slow mode The chat bot Custom emojis More features to come… `,description:"Peertube channel chatrooms configuration",tags:[],title:"Channel configuration",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:` Some basicsSome basics about how to setup and use the chat for your live stream
-Channel configurationPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
-ModerationPlugin peertube-plugin-livechat advanced moderation features
+Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/pt-br/technical/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube",content:`Se você tiver alguma dúvida ou quiser conversar sobre este plugin, você pode entrar nesta sala XMPP com qualquer cliente Jabber: plugin-livechat-support@room.im.yiny.org.
+Se você quiser apoiar o projeto financeiramente, pode entrar em contato comigo por e-mail em git.[at].john-livingston.fr ou conferir meu perfil do Liberapay.`,description:"Entre em contato com o autor",tags:[],title:"Entre em contato comigo",uri:"/peertube-plugin-livechat/pt-br/contact/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube",content:`Os arquivos package.json, COPYRIGHT e LICENSE contêm as informações de licença deste software e suas dependências.
+O plugin é mantido por John Livingston.
+Agradecimentos a David Revoy por seu trabalho no mascote do Peertube, Sepia. O design do personagem está sob licença CC-By, e os arquivos SVG usados para criar alguns logotipos e avatares neste plugin são GPLv3.0. Os arquivos PNG estão sob licença CC-By e vêm do Gerador de Avatares Sepia online.
+Obrigado a Framasoft por tornar Peertube possível, pelo suporte financeiro e por hospedar as traduções do projeto em sua instância Weblate.
+Obrigado a ritimo pelo apoio financeiro.
+Obrigado a Code Lutin e Rétribution Copie Publique pelo apoio financeiro.
+Obrigado a NlNet e ao fundo NGI0 Entrust pelo apoio financeiro.
+Obrigado a Octopuce pelo apoio financeiro.
+E obrigado a todos os colaboradores individuais que fizeram uma doação através da minha página liberapay.`,description:"Créditos do plugin",tags:[],title:"Créditos",uri:"/peertube-plugin-livechat/pt-br/credits/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:`Habilitando o chat para suas transmissões ao vivo Warning Os administradores de instância podem optar por desabilitar ou habilitar o chat em casos específicos. As informações nesta seção são verdadeiras apenas no caso padrão.
+Ao criar ou modificar um Peertube ao vivo, há uma aba “configurações do plugin”:
+Na aba “Configurações do plugin”, há uma caixa de seleção “Usar chat”. Basta marcá-la ou desmarcá-la para ativar ou desativar o bate-papo associado ao seu vídeo.
+Tip Pode haver outras configurações nesta aba, dependendo dos plugins instalados na sua instância do Peertube.
+Bate-papo por canal No nível da instância, os administradores do Peertube podem escolher se as salas de bate-papo serão exclusivas para cada vídeo ou se haverá uma sala de bate-papo exclusiva para cada canal. Entre em contato com os administradores da sua instância para obter mais informações sobre como configurar o plugin de bate-papo ao vivo.
+Compartilhe o bate-papo No topo do chat, há um botão “Compartilhar link do chat”.
+Este botão abre um pop-up, onde você pode obter uma URL para entrar no chat. Essa URL pode ser compartilhada.
+A aba “Embutido” fornece alguns links para incorporar o bate-papo em sites ou na sua transmissão ao vivo.
+Você pode personalizar algumas opções:
+Somente leitura: você só poderá ler o chat, não escrever. Isso é útil para incluir o conteúdo do chat na sua transmissão ao vivo (consulte a documentação do OBS). Utilizar cores do tema atual: se marcado, as cores do seu tema atual serão adicionadas à URL, para que qualquer usuário que abrir o link tenha o mesmo conjunto de cores. Gerar um iframe para embutir o chat em uma página: em vez de uma URL, você obterá um snippet HTML que pode adicionar ao seu site para incorporar o chat. Para mais informações sobre a aba “Doca”, verifique a documentação do OBS.
+Na aba “Web”, o URL fornecido abre o chat na interface do Peertube. Você pode compartilhar este link com outros usuários para convidá-los a participar do chat.
+O pop-up “Compartilhar link do chat” também pode conter uma aba “Conectar usando XMPP”. Isso só estará disponível se os administradores da sua instância tiverem habilitado e configurado corretamente esta opção. Usando esta opção, você pode fornecer um link para entrar no chat usando qualquer software cliente XMPP. O uso desses softwares pode, por exemplo, facilitar ações de moderação.
+Moderação Consulte a documentação de moderação.
+Inclua o bate-papo no seu fluxo de vídeo Consulte a documentação do OBS.
+Persistência de bate-papo Por padrão, o chat é persistente. Isso significa que o conteúdo da sala será mantido por um tempo. Os usuários que entrarem verão as mensagens publicadas antes de entrarem.
+Você pode alterar o comportamento de persistência. Abra o menu suspenso do bate-papo e clique em “Configurar”.
+Há várias opções que podem ser alteradas.
+Você pode, por exemplo, definir o número padrão e máximo de mensagens para retornar a 0, para que novos usuários não vejam nenhuma mensagem enviada anteriormente.
+Você também pode desmarcar “Habilitar arquivamento”: se desmarcado, as mensagens serão removidas se o servidor for reiniciado.
+Ao desmarcar “Persistente”, a sala será limpa se não houver mais participantes.
+Excluir o conteúdo do bate-papo Se quiser excluir o conteúdo do chat, abra o menu suspenso do chat e clique em “Destruir”. Um pop-up será aberto, solicitando confirmação.
+O bate-papo será recriado automaticamente sempre que alguém tentar entrar, desde que o vídeo exista e tenha o recurso “Usar chat” ativado.`,description:"Algumas noções básicas sobre como configurar e usar o chat para sua transmissão ao vivo",tags:[],title:"Alguns princípios básicos",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/basics/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Este recurso vem com o plugin LiveChat versão 8.0.0 e pode ser desabilitado pelos administradores da sua instância.
+No menu esquerdo do Peertube, há uma entrada “Salas de chat”:
+Este link “Salas de chat” leva você a uma lista dos seus canais. Ao clicar em um canal, você poderá configurar algumas opções para ele:
+Aqui você pode configurar:
+Termos e condições do chat do canal Mutar usuários anônimos valor padrão O modo lento O bot de bate-papo Emojis personalizados Mais recursos em breve… `,description:"Configuração de salas de chat do canal Peertube",tags:[],title:"Configuração de canal",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/channel/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário",content:` Alguns princípios básicosAlgumas noções básicas sobre como configurar e usar o chat para sua transmissão ao vivo
+Configuração de canalConfiguração de salas de chat do canal Peertube
+AnúnciosProprietários e administradores de salas podem enviar anúncios especiais no chat.
+ModeraçãoRecursos avançados de moderação do plugin peertube-plugin-livechat
 Terms & conditionsConfigure channel's chat terms & conditions
-Slow modePlugin peertube-plugin-livechat slow mode
-Moderation delayPlugin peertube-plugin-livechat moderation delay
-Custom emojisPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
-PollsYou can create polls to ask viewers their opinion
-Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
-Moderation notesPlugin peertube-plugin-livechat moderation notes
-Chat botChat bot setup
-Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
-Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
-TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 12.0.0. Room owners and administrators can send special announcements in the chat.
-These messages will be more visible than standard messages.
-To send announcements, owners and administrators will have a “Message type” selector on the top of the message field:
-There are several message types:
-Padrão: to send a standard message. Highlight: these messages will simply be highlighted in a blue box. Anúncio: these messages will be in a green box, and a bold “Anúncio” title will be added. Warning: these messages will be in a rend box, and a bold “Anúncio” title will be added. Info User that are not owner or administrator of the chatroom can’t send such messages.
-Warning Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"Announcements",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Warning This section is still incomplete.
+Modo lentoPlugin peertube-plugin-livechat modo lento
+Atraso de moderaçãoAtraso de moderação do plugin peertube-plugin-livechat
+Emojis personalizadosPlugin peertube-plugin-livechat emojis personalizados
+Modo somente emojisPlugin peertube-plugin-livechat modo apenas emojis
+PesquisasVocê pode criar enquetes para perguntar a opinião dos espectadores
+Tarefas / Listas de tarefasVocê pode gerenciar tarefas e listas de tarefas com sua equipe de moderação.
+Notas de moderaçãoNotas de moderação do plugin peertube-plugin-livechat
+Bot de bate-papoConfiguração do bot de bate-papo
+Caracteres especiaisO bot pode moderar automaticamente mensagens que contenham muitos caracteres especiais.
+Nenhuma mensagem duplicadaO bot pode moderar automaticamente mensagens duplicadas.
+Palavras proibidasO bot pode moderar automaticamente mensagens contendo palavras proibidas.
+TemporizadoresO bot pode enviar periodicamente algumas mensagens.
+ComandosO bot pode responder a vários comandos.`,description:"Como configurar o chat para sua transmissão ao vivo",tags:[],title:"Para streamers",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 12.0.0. Proprietários e administradores de salas podem enviar anúncios especiais no chat.
+Essas mensagens serão mais visíveis do que as mensagens padrão.
+Para enviar anúncios, proprietários e administradores terão um seletor “Tipo de mensagem” na parte superior do campo de mensagem:
+Existem vários tipos de mensagens:
+Padrão: para enviar uma mensagem padrão. Destaque: essas mensagens serão simplesmente destacadas em uma caixa azul. Anúncio: essas mensagens estarão em uma caixa verde e um título em negrito “Anúncio” será adicionado. Aviso: essas mensagens estarão em uma caixa de recorte e um título em negrito “Anúncio” será adicionado. Info Usuários que não são proprietários ou administradores da sala de bate-papo não podem enviar tais mensagens.
+Warning Observação: os clientes XMPP padrão exibirão anúncios como mensagens padrão.`,description:"Proprietários e administradores de salas podem enviar anúncios especiais no chat.",tags:[],title:"Anúncios",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Warning Esta seção ainda está incompleta.
 Warning This page describes the behaviour of livechat versions >= 10.0.0. There were some changes in the way we manage access rights for Peertube administrators and moderators.
-The chat bot You can use a chat bot, that will help you for moderation. Check the chat bot documentation for more information.
-Accessing moderation tools You can access room settings and moderation tools using the chat dropdown menu at the top of the chat.
-Tip The video owner will be owner of the chat room. This means they can configure the room, delete it, promote other users as admins, …
-Tip Starting with livechat v10.0.0, Peertube instance’s admins and moderators have no special rights on rooms by default. However, they have a special button available on top of the chat: “Become moderator”. Clicking this button will give them owner access on the room.
-You can use ConverseJS moderation commands to moderate the room. When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.
-Mute anonymous users Info This feature comes with the livechat plugin version 10.2.0. You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat.
-To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Mute anonymous users” checkbox.
-Anonymous users won’t have the message field, and will see following prompt: “Only registered users can send messages.”
-When this feature is enabled, anonymous users will be assigned the “visitor” role. You can change their role to “participant” if you want to allow some of them to talk.
-If you change the room configuration, all anonymous users will be muted or unmuted.
-You can choose to enable or disable this feature for new chatrooms on the channel configuration page.
-Roles and affiliations There are several roles that can be assignated to users in chat rooms: owner, moderators, member, …
-Warning This section is still incomplete.
-You can promote users as moderators, if you need some help.
-Anonymize moderation actions Info This feature comes with the livechat plugin version 11.0.0. It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.
-To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Anonymize moderation actions” checkbox.
-You can choose to enable or disable this feature for new chatrooms on the channel configuration page.
-Participant message history search Info This feature comes with the livechat plugin version 11.0.0. As a room admin or owner, you can search all messages sent by a given participant.
-To do so, you have several ways:
-using the “Search all messages” action in the dropdown menu besides participants in the sidebar using the “Search all messages” action in the dropdown menu besides chat messages Tip To have more space and better readability, open the chat in full-page mode.
-In the search results, there are several informations that are shown at the right of the participant nickname:
-if the current nickname is different than the nickname when the participant has sent the message, the original nickname will be shown you will see the JID (Jabber ID) of the participant you will also see the occupant-id of the participant The search result will also include all messages related to participants who had the same nickname. You can differenciate them by comparing JID and occupant-id.
-Delete room content You can delete old rooms: join the room, and use the menu on the top to destroy the room.
-Instance moderation As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly.
-You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».
-From there, you can also promote yourself as room moderator by using the “Become moderator” button on the right.`,description:"Plugin peertube-plugin-livechat advanced moderation features",tags:[],title:"Moderation",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/moderation/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 10.2.0. Configuration You can add terms & conditions to your channel. These terms will be shown to all users joining the chat.
+O bot de bate-papo Você pode usar um bot de bate-papo para ajudar na moderação. Consulte a documentação do bot de bate-papo para mais informações.
+Acessando ferramentas de moderação Você pode acessar as configurações da sala e as ferramentas de moderação usando o menu suspenso do bate-papo na parte superior do bate-papo.
+Tip O proprietário do vídeo será o proprietário da sala de bate-papo. Isso significa que ele pode configurar a sala, excluí-la, promover outros usuários como administradores, etc.
+Tip A partir do Livechat v10.0.0, os administradores e moderadores da instância do Peertube não têm direitos especiais nas salas por padrão. No entanto, eles têm um botão especial disponível na parte superior do chat: “Tornar-se moderador”. Clicar neste botão dará a eles acesso de proprietário à sala.
+Você pode usar comandos de moderação do ConverseJS para moderar a sala. Ao abrir a sala de bate-papo em tela cheia, também haverá um menu com comandos dedicados no canto superior direito.
+Mutar usuários anônimos Info Esta funcionalidade está disponível com o plugin livechat versão 10.2.0. Você pode impedir que usuários anônimos enviem mensagens. Nesse caso, apenas usuários registrados poderão conversar no chat.
+Para ativar ou desativar este recurso, use o menu suspenso do bate-papo, abra o menu “configurar”. No formulário, você encontrará uma caixa de seleção “Mutar usuários anônimos”.
+Usuários anônimos não terão o campo de mensagem e verão o seguinte prompt: “Apenas usuários registrados podem enviar mensagens”
+Quando este recurso estiver ativado, usuários anônimos receberão a função de “visitante”. Você pode alterar a função deles para “participante” se quiser permitir que alguns deles falem.
+Se você alterar a configuração da sala, todos os usuários anônimos serão silenciados ou ativados.
+Você pode escolher habilitar ou desabilitar esse recurso para novas salas de bate-papo na página de configuração do canal.
+Funções e afiliações Existem várias funções que podem ser atribuídas aos usuários em salas de bate-papo: proprietário, moderadores, membro, …
+Warning Esta seção ainda está incompleta.
+Você pode promover usuários como moderadores, se precisar de ajuda.
+Anonimizar ações de moderação Info Esta funcionalidade está disponível com o plugin livechat versão 11.0.0. É possível tornar anônimas as ações de moderação, para evitar revelar quem está banindo/expulsando/… ocupantes.
+Para ativar ou desativar este recurso, use o menu suspenso do bate-papo, abra o menu “configurar”. No formulário, você encontrará uma caixa de seleção “Anonimizar ações de moderação”.
+Você pode escolher habilitar ou desabilitar esse recurso para novas salas de bate-papo na página de configuração do canal.
+Pesquisa de histórico de mensagens do participante Info Esta funcionalidade está disponível com o plugin livechat versão 11.0.0. Como administrador ou proprietário de uma sala, você pode pesquisar todas as mensagens enviadas por um determinado participante.
+Para fazer isso, você tem várias maneiras:
+usando a ação “Buscar todas as mensagens” no menu suspenso, além dos participantes na barra lateral usando a ação “Buscar todas as mensagens” no menu suspenso, além das mensagens de bate-papo Tip Para ter mais espaço e melhor legibilidade, abra o chat em modo de página inteira.
+Nos resultados da pesquisa, há diversas informações que são mostradas à direita do apelido do participante:
+se o apelido atual for diferente do apelido quando o participante enviou a mensagem, o apelido original será mostrado você verá o JID (Jabber ID) do participante você também verá o occupant-id do participante O resultado da pesquisa também incluirá todas as mensagens relacionadas aos participantes que tinham o mesmo apelido. Você pode diferenciá-los comparando JID e occupant-id.
+Excluir conteúdo da sala Você pode excluir salas antigas: entre na sala e use o menu no topo para destruí-la.
+Moderação de instância Como moderador ou administrador da instância do Peertube, você provavelmente precisará verificar se seus usuários não estão se comportando mal.
+Você pode listar todas as salas de bate-papo existentes: na tela de configurações do plugin, há um botão «Listar salas».
+A partir daí, você também pode se promover como moderador da sala usando o botão “Tornar-se moderador” à direita.`,description:"Recursos avançados de moderação do plugin peertube-plugin-livechat",tags:[],title:"Moderação",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/moderation/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 10.2.0. Configuração You can add terms & conditions to your channel. These terms will be shown to all users joining the chat.
 To configure the terms & conditions, go to the channel configuration page:
-URL in the message will be clickable. You can also do some styling: Message Styling.
-Viewers When joining the chat, viewers will see the terms:
+A URL na mensagem será clicável. Você também pode personalizar: Estilo da Mensagem.
+Espectadores Ao entrar no chat, os espectadores verão os termos:
 Info Peertube instance’s admin can also set global terms & conditions. If so, these terms will be shown above your channel’s terms.
 Info Anonymous users will only see the terms & conditions once they have chosen their nickname (in other words: once they are able to talk).
-You can change the terms content at any time, it will be instantly updated for all viewers.
+Você pode alterar o conteúdo dos termos a qualquer momento, ele será atualizado instantaneamente para todos os espectadores.
 Users can hide the terms & conditions. When doing so, terms won’t be shown again, unless you change the content.
-Info If your Peertube instance allows joining chat with XMPP clients, users using such clients will see the terms as chat messages, coming from a “Peertube” account. When you update terms, they will receive a new message with the update terms content.`,description:"Configure channel's chat terms & conditions",tags:[],title:"Terms & conditions",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/terms/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 8.3.0. Introduction As a streamer, you can choose to rate limit your viewers messages in the chat.
-This can be really usefull to:
-avoid message flooding avoid unreadable chat if there are many viewers talking You can set a number of seconds that users will have to wait after sending a message, before sending another.
-This limitation does not apply to moderators.
-Slow mode option On the channel configuration page, you can set the slow mode option:
-This value will apply as a default value for all your channel’s chatrooms.
-Setting the value to 0 will disable the feature.
-Setting the value to a positive integer will set the period during which users will not be able to post additional messages.
-To modify the value for an already existing room, just open the room “configuration” menu (on top of the chat window), and change the slow mode value in the configuration form.
-For viewers If the slow mode is enabled, users will be informed by a message.
-When they send a message, the input field will be disabled for X seconds (where X is the slow mode duration).
-This limitation does not apply to moderators.`,description:"Plugin peertube-plugin-livechat slow mode",tags:[],title:"Slow mode",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/slow_mode/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 10.3.0. Introduction As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants.
-When this feature is enabled, moderators will see all messages without any delay. Chat participants won’t see that their own messages are delayed.
-Please note that messages sent by moderators will also be delayed, to avoid them to respond to messages that are not even visible by other participants.
-Moderation delay option On the channel configuration page, you can set the “Moderation delay” option:
-This value will apply as a default value for all your channel’s chatrooms.
-Setting the value to 0 will disable the feature.
-Setting the value to a positive integer will set the delay, in seconds, to apply to messages. Please avoid setting the value too high. Ideally it should not exceed a few seconds (4 or 5 seconds for example).
-To modify the value for an already existing room, just open the room “configuration” menu (on top of the chat window), and change the moderation delay value in the configuration form.
-Warning Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants. However, messages sent after they joined will be delayed correctly.
-Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
-In the chat As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime.`,description:"Plugin peertube-plugin-livechat moderation delay",tags:[],title:"Moderation delay",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/moderation_delay/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 10.1.0. Channel emojis Streamers can add custom emojis to their channels.
-On the channel configuration page, open the “Channel emojis” tab:
-You can configure custom emojis for your channel. These emojis will be available in the emoji picker. Users can also use them by with their short name (for example by writing “:shortname:”).
-You can use emojis in the chat using “:shortname:”. The short name can start and/or end by a colon (:), and only contain alphanumerical characters, underscores and hyphens. It is strongly recommended to start them by a colon, so that users can use autocompletion (by typing “:” then press TAB).
-Import / Export On the channel configuration page, there are an “Importar” and an “Exportar” button. The “Exportar” button generates a file than you can then import on another channel.
-You can also generate a file to import from any other source (for example you can import your Twitch custom emojis). The file must be a valid JSON file, using the following format:
-[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] The sn attribute is the short name code. The url attribute can be any image url than your browser can access, or a Data URL representing the file you want to import.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Custom emojis",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 12.0.0. Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
-This mode can be usefull for example:
-To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Emojis only mode” checkbox.
-If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 10.2.0. Create a poll You can create a new poll by using the “Criar uma nova enquete” action in the chat top menu:
-Warning This poll feature should not be considered as a reliable voting system. It is easy to cheat. There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat. Votes are never fully anonymous, someone having access to the server could see who voted for what choice.
-Poll form Fill the form fields:
-“Questão”: the question to ask to you viewers “Duração da enquete (em minutos)”: the duration for which viewers can vote “Resultados anônimos”: if checked, votes won’t be publicly visible in the chat “Choice N”: choices that will be presented to viewers You must at least fill the two first choices fields.
-Once you submit the form, the poll will instantly start.
-If there was a previous unfinished poll, it will end and its result will be shown.
-Access rights Every room’s admins can create a new poll.
-When you promote someone as room admin or owner, they gets instant access to the “Criar uma nova enquete” action.
-When you remove admin or owner rights to someone, they can’t create new poll. But any existing poll will continue until it ends.
-Every user that is not muted can vote. This means that you can prevent anonymous users to vote by using the “Mute anonymous users” feature.
-Poll workflow When the polls starts, a first message will be sent in the chat, from the account of the user creating the poll.
-A banner will also appear to show the poll, and will be updated regularly with the current votes.
-Viewers can then vote by clicking on their choice, or by sending message like “!1” in the chat.
-Votes counts will be updated regularly in the banner.
-Viewers can change their vote at any time, just by making a new choice. Their precedent choice will be replaced by the new one.
-Tip Anonymous viewers can only vote once they have choosen their nickname.
-If “Resultados anônimos” is checked, votes won’t be shown to other users. If unchecked, votes will be publicly visible as you will see message like “!1” in the chat.
-Info For viewers using XMPP clients or outdated livechat plugin versions, the banner will not be visible. But they will see the message in the chat and will be able to vote by sending messages with their choices.
-When the poll ends, a new message will be sent in the chat, with the results.
-Info The only way to get old polls results is to search for the poll end message in the chat. For now, polls results are not saved by any other means. So don’t forget to note polls results if you want to keep them.`,description:"You can create polls to ask viewers their opinion",tags:[],title:"Polls",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 10.0.0. Introduction The livechat plugin includes a Task Application: a kind of “to-do list” feature where you can create task lists and add tasks to them. Every room’s admins have access to these tasks, so you can edit them collaboratively.
-You can for example use the Task Application to:
-prepare a list of themes you want to discuss during your livestream, so you can be sure you won’t forget anything highlight questions from your viewers, so you can come back to them later without forgetting to answer them … Using the Task Application Opening the Task Application To open the Task Application, there is a “Tarefas” button in the top chat menu:
-Clicking this button will toggle the Task Application display:
-Tip To have more space and better readability, open the chat in full-page mode.
-Access rights Every room’s admins have access to the Task Application (read and write access).
-When you promote someone as room admin or owner, they gets instant access to the Task Application. When you remove admin or owner rights to someone, they instantly lose access to the Task Application.
-Task lists By default, there is one task list that has the same name as your livestream.
-You can use the form at the bottom to create a new task list. You can also edit existing task lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks.
-Task lists are sorted alphabetically.
-Tip All modification are instantly visible in all your browser tabs, and for all room’s admins.
-Tasks Create tasks You can create a task using the button on the right of task lists. This opens a form with two fields: a mandatory task name, and an optional description.
-Edit tasks Tasks can be edited by using the edit button on the right.
-Tasks can be marked complete (or uncomplete) by clicking directly on the checkbox in the list.
-Sorting tasks / change task list You can sort tasks, or move tasks from one list to another, simply using drag & drop.
-Create a task from a chat message You can create a task from a message in a chat, using the “Create a new task” button in the dropdown menu at the right of the message. This will open a dialog box where you can choose which task list you want to add the task into. The task name will be the user nickname, and the task description the message content.
-Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered.`,description:"You can handle tasks and task lists with your moderation team.",tags:[],title:"Tasks / To-do lists",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/tasks/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 11.0.0. Introduction The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants. Every room’s admins have access to these notes, so they can edit them collaboratively.
-You can for example use this Application to:
-share some notes between moderators take notes about participants that were kicked or caused troubles … Using the Moderator Notes Application Opening the Moderator Notes Application To open the Moderator Notes Application, there is a “Moderation notes” button in the top chat menu:
-Clicking this button will toggle the Application display:
-Tip To have more space and better readability, open the chat in full-page mode.
-Access rights Every room’s admins have access to this Application (read and write access).
-When you promote someone as room admin or owner, they gets instant access to this Application. When you remove admin or owner rights to someone, they instantly lose access to this Application.
-Scope Notes are only available in the room in which you have created them.
-Chatrooms can be releated to video or channel. If you want to keep notes from one video to another, please consider using rooms associated to channels.
-Warning Currently the video vs channel rooms is an instance-wide settings. Only Peertube admins can change it, and it applies to all chatrooms. In the future, this choice will be added in your channel’s options.
-Notes Create/Edit Notes You can use the plus button on the top to create a new note. You can also edit existing notes using the edit button, or delate any note.
-Tip All modification are instantly visible in all your browser tabs, and for all room’s admins.
-You can create a note associated to a participant in several ways:
-using the “Create a new note” action in the dropdown menu besides participants in the sidebar using the “Create a new note” action in the dropdown menu besides chat messages When a note is associated to a participant, you will see their nickname and avatar on the top of the note.
-Notes filtering You can filter notes to find all notes related to a given participant in several ways:
-click on the “Search notes” button that is available on notes to find all notes related to the same participant click on the “Search notes” button in the dropdown menu besides participants in the sidebar click on the “Search notes” button in the dropdown menu besides chat messages You can remove the filter by clicking on the close button.
-When you filters notes on a participant, there are several informations that are shown at the right of the participant nickname:
-if the current nickname is different than the nickname when you created the note, the original nickname will be shown you will see the JID (Jabber ID) of the participant you will also see the occupant-id of the participant The search result will also include all notes related to participants who had the same nickname. So you can also take note for anonymous users (who don’t have any consistent JID or occupant-id). You can differenciate them by comparing JID and occupant-id.
-Sorting notes You can sort notes simply using drag & drop.`,description:"Plugin peertube-plugin-livechat moderation notes",tags:[],title:"Moderation notes",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/moderation_notes/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
-You can enable a chat bot on your chatrooms. The bot configuration is made channel per channel, and will apply to all related videos’ chatrooms.
-To access this page, check the channel configuration documentation.
-Once there, you can enable the bot, and setup several options:
-Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
-Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
-TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.
-The bot will reload instantly when you save the page.`,description:"Chat bot setup",tags:[],title:"Chat bot",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Categories",uri:"/peertube-plugin-livechat/pt-br/categories/index.html"},{breadcrumb:"",content:` Tip You can use the language selector in the left menu to view this documentation in different languages. Some translations are missing or incomplete. In this case, you’ll see the English version of the text.
-Welcome the Peertube Livechat Plugin documentation.
-Peertube is a decentralized streaming platform, that can provide both live streaming and VOD (Video On Demand) features. The present plugin adds chatting capatibilities to your Peertube installation, allowing viewers to interract with streamers.
-To have a glimpse on this plugin capabilities, checkout the introduction. For more precise informations, please find bellow the summary of this documentation.
-Tip You can use the searchbox in the left menu to quickly find specific documentation parts.
-Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
-IntroductionIntroduction
-DocumentationPlugin documentation
-User documentationPlugin peertube-plugin-livechat user documentation
-For viewersHow to chat for stream viewers
-OBSDocumentation to stream the chat content using OBS.
-XMPP ClientsConnect to chat using a XMPP client
-For streamersHow to setup the chat for your live stream
-Some basicsSome basics about how to setup and use the chat for your live stream
-Channel configurationPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
-ModerationPlugin peertube-plugin-livechat advanced moderation features
+Info Se a sua instância do Peertube permitir a participação em chats com clientes XMPP, os usuários que utilizam esses clientes verão os termos como mensagens de chat, provenientes de uma conta “Peertube”. Ao atualizar os termos, eles receberão uma nova mensagem com o conteúdo da atualização.`,description:"Configure channel's chat terms & conditions",tags:[],title:"Terms & conditions",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/terms/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 8.3.0. Introdução Como streamer, você pode escolher limitar a classificação das mensagens dos seus espectadores no chat.
+Isso pode ser muito útil para:
+evitar inundação de mensagens evite bate-papo ilegível se houver muitos espectadores falando Você pode definir um número de segundos que os usuários terão que esperar após enviar uma mensagem antes de enviar outra.
+Esta limitação não se aplica aos moderadores.
+Opção de modo lento Na página de configuração do canal, você pode definir a opção de modo lento:
+Este valor será aplicado como valor padrão para todas as salas de bate-papo do seu canal.
+Definir o valor como 0 desabilitará o recurso.
+Definir o valor como um número inteiro positivo definirá o período durante o qual os usuários não poderão postar mensagens adicionais.
+Para modificar o valor de uma sala já existente, basta abrir o menu “configuração” da sala (na parte superior da janela de bate-papo) e alterar o valor do modo lento no formulário de configuração.
+Para espectadores Se o modo lento estiver ativado, os usuários serão informados por uma mensagem.
+Quando eles enviam uma mensagem, o campo de entrada será desabilitado por X segundos (onde X é a duração do modo lento).
+Esta limitação não se aplica aos moderadores.`,description:"Plugin peertube-plugin-livechat modo lento",tags:[],title:"Modo lento",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/slow_mode/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 10.3.0. Introdução Como streamer, você pode optar por atrasar as mensagens no chat, para dar tempo aos moderadores de excluírem as mensagens antes que elas possam ser lidas pelos outros participantes.
+Quando este recurso estiver ativado, os moderadores verão todas as mensagens sem atraso. Os participantes do chat não verão que suas próprias mensagens estão atrasadas.
+Observe que as mensagens enviadas pelos moderadores também serão atrasadas, para evitar que eles respondam a mensagens que nem são visíveis para os outros participantes.
+Opção de atraso de moderação Na página de configuração do canal, você pode definir a opção “Atraso de moderação”:
+Este valor será aplicado como valor padrão para todas as salas de bate-papo do seu canal.
+Definir o valor como 0 desabilitará o recurso.
+Definir o valor como um número inteiro positivo definirá o atraso, em segundos, a ser aplicado às mensagens. Evite definir um valor muito alto. O ideal é que não exceda alguns segundos (4 ou 5 segundos, por exemplo).
+Para modificar o valor de uma sala já existente, basta abrir o menu “configuração” da sala (na parte superior da janela de bate-papo) e alterar o valor do atraso de moderação no formulário de configuração.
+Warning Atualmente, este recurso apresenta um bug conhecido: usuários que entram no chat receberão todas as mensagens, mesmo as que ainda estão pendentes para outros participantes. No entanto, as mensagens enviadas após a entrada serão atrasadas corretamente.
+Tip Você pode combinar um curto atraso de moderação (1 segundo, por exemplo) com o bot de moderação para excluir mensagens contendo palavrões antes que qualquer usuário não moderador as veja.
+No chat Como moderador, você verá o tempo restante (em segundos) antes da mensagem ser transmitida, ao lado da data e hora da mensagem.`,description:"Atraso de moderação do plugin peertube-plugin-livechat",tags:[],title:"Atraso de moderação",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/moderation_delay/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 10.1.0. Emojis do canal Os streamers podem adicionar emojis personalizados aos seus canais.
+Na página de configuração do canal, abra a aba “Emojis do canal”:
+Você pode configurar emojis personalizados para seu canal. Esses emojis estarão disponíveis no seletor de emojis. Os usuários também podem usá-los com seus nomes curtos (por exemplo, escrevendo “:shortname:”).
+Você pode usar emojis no chat usando “:shortname:”. O nome curto pode começar e/ou terminar com dois pontos (:) e conter apenas caracteres alfanuméricos, sublinhados e hifens. É altamente recomendável iniciá-los com dois pontos, para que os usuários possam usar o preenchimento automático (digitando “:” e pressionando TAB).
+Importação / Exportação Na página de configuração do canal, há um botão “Importar” e um botão “Exportar”. O botão “Exportar” gera um arquivo que você pode importar para outro canal.
+Você também pode gerar um arquivo para importar de qualquer outra fonte (por exemplo, você pode importar seus emojis personalizados do Twitch). O arquivo deve ser um arquivo JSON válido, usando o seguinte formato:
+[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] O atributo sn é o código do nome abreviado. O atributo url pode ser qualquer URL de imagem que seu navegador possa acessar ou uma URL de dados representando o arquivo que você deseja importar.`,description:"Plugin peertube-plugin-livechat emojis personalizados",tags:[],title:"Emojis personalizados",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 12.0.0. Modo apenas emoji Você pode habilitar o “Modo apenas amoji” em suas slas de chat. Quando este modo está habilitado, os participantes podem apenas enviar amojis (padrões, ou cusomizados do canal). Moderadores não são afetados por esta limitação.
+Este modo pode ser útil por exemplo:
+Para evitar spam ou mensagens ofensivas quando você não estiver aqui para moderar. Quando há muitos participantes falando e você não consegue mais moderar corretamente. Para ativar ou desativar este recurso, use o menu suspenso do bate-papo, abra o menu “configurar”. No formulário, você encontrará uma caixa de seleção “Modo apenas emoji”.
+Se você quiser habilitá-lo para todas as suas salas de bate-papo de uma só vez, abra a página de configuração de emojis do canal e use o botão “Habilitar o modo apenas emoji em todas as salas de chat dos canais”.`,description:"Plugin peertube-plugin-livechat modo apenas emojis",tags:[],title:"Modo somente emojis",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 10.2.0. Criar uma enquete Você pode criar uma nova enquete usando a ação “Criar uma nova enquete” no menu superior do chat:
+Warning Este recurso de enquete não deve ser considerado um sistema de votação confiável. É fácil trapacear. Não há mecanismo que impeça usuários anônimos de votar várias vezes apenas recarregando o chat. Os votos nunca são totalmente anônimos; alguém com acesso ao servidor pode ver quem votou em qual opção.
+Formulário de enquete Preencha os campos do formulário:
+“Questão”: a pergunta a ser feita aos espectadores “Duração da enquete (em minutos)”: a duração pela qual os espectadores podem votar “Resultados anônimos”: se marcado, os votos não serão visíveis publicamente no chat “Choice N”: escolhas que serão apresentadas aos espectadores Você deve preencher pelo menos os dois primeiros campos de escolha.
+Depois de enviar o formulário, a enquete começará imediatamente.
+Se houver uma enquete anterior não concluída, ela será encerrada e seu resultado será exibido.
+Direitos de acesso Os administradores de cada sala podem criar uma nova enquete.
+Quando você promove alguém como administrador ou proprietário da sala, essa pessoa ganha acesso instantâneo à ação “Criar uma nova enquete”.
+Ao remover os direitos de administrador ou proprietário de alguém, essa pessoa não poderá criar uma nova enquete. Mas qualquer enquete existente continuará até o seu término.
+Qualquer usuário que não esteja silenciado pode votar. Isso significa que você pode impedir que usuários anônimos votem usando o recurso “Mutar usuários anônimos”.
+Fluxo de trabalho de enquete Quando a enquete começar, uma primeira mensagem será enviada no chat, a partir da conta do usuário que criou a enquete.
+Um banner também aparecerá para mostrar a enquete e será atualizado regularmente com os votos atuais.
+Os espectadores podem então votar clicando em sua escolha ou enviando uma mensagem como “!1” no chat.
+A contagem de votos será atualizada regularmente no banner.
+Os espectadores podem alterar seu voto a qualquer momento, bastando fazer uma nova escolha. A escolha anterior será substituída pela nova.
+Tip Espectadores anônimos só podem votar depois de escolherem seu apelido.
+Se a opção “Resultados anônimos” estiver marcada, os votos não serão exibidos para outros usuários. Se desmarcada, os votos ficarão visíveis publicamente, pois você verá uma mensagem como “!1” no chat.
+Info Para espectadores que usam clientes XMPP ou versões desatualizadas do plugin de chat ao vivo, o banner não ficará visível. Mas eles verão a mensagem no chat e poderão votar enviando mensagens com suas escolhas.
+Quando a enquete terminar, uma nova mensagem será enviada no chat, com os resultados.
+Info A única maneira de obter resultados de enquetes antigas é procurar a mensagem de encerramento da enquete no chat. Por enquanto, os resultados das enquetes não são salvos por nenhum outro meio. Portanto, não se esqueça de anotar os resultados das enquetes se quiser mantê-los.`,description:"Você pode criar enquetes para perguntar a opinião dos espectadores",tags:[],title:"Pesquisas",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/polls/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 10.0.0. Introdução O plugin de chat ao vivo inclui um Aplicativo de Tarefas: um tipo de recurso de “lista de tarefas” onde você pode criar listas de tarefas e adicionar tarefas a elas. Os administradores de cada sala têm acesso a essas tarefas, para que você possa editá-las de forma colaborativa.
+Você pode, por exemplo, usar o aplicativo de tarefas para:
+prepare uma lista de temas que você quer discutir durante sua transmissão ao vivo, para ter certeza de que não vai esquecer nada destaque as perguntas dos seus espectadores, para que você possa retornar a elas mais tarde sem se esquecer de respondê-las … Usando o aplicativo de tarefas Abrindo o aplicativo de tarefas Para abrir o aplicativo de tarefas, há um botão “Tarefas” no menu de bate-papo superior:
+Clicar neste botão alternará a exibição do aplicativo de tarefas:
+Tip Para ter mais espaço e melhor legibilidade, abra o chat em modo de página inteira.
+Direitos de acesso Os administradores de cada sala têm acesso ao aplicativo de tarefas (acesso de leitura e gravação).
+Ao promover alguém como administrador ou proprietário de uma sala, essa pessoa obtém acesso instantâneo ao Aplicativo de Tarefas. Ao remover os direitos de administrador ou proprietário de alguém, essa pessoa perde instantaneamente o acesso ao Aplicativo de Tarefas.
+Listas de tarefas Por padrão, há uma lista de tarefas que tem o mesmo nome da sua transmissão ao vivo.
+Você pode usar o formulário na parte inferior para criar uma nova lista de tarefas. Você também pode editar listas de tarefas existentes usando o botão de edição ou excluir qualquer lista de tarefas. Excluir uma lista de tarefas também excluirá todas as suas tarefas.
+As listas de tarefas são classificadas em ordem alfabética.
+Tip Todas as modificações ficam instantaneamente visíveis em todas as abas do seu navegador e para todos os administradores da sala.
+Tarefas Criar tarefas Você pode criar uma tarefa usando o botão à direita da lista de tarefas. Isso abrirá um formulário com dois campos: um nome de tarefa obrigatório e uma descrição opcional.
+Editar tarefas As tarefas podem ser editadas usando o botão de edição à direita.
+As tarefas podem ser marcadas como concluídas (ou incompletas) clicando diretamente na caixa de seleção na lista.
+Classificando tarefas / alterando lista de tarefas You can sort tasks, or move tasks from one list to another, simply using drag & drop.
+Criar uma tarefa a partir de uma mensagem de bate-papo Você pode criar uma tarefa a partir de uma mensagem em um chat, usando o botão “Criar nova tarefa” no menu suspenso à direita da mensagem. Isso abrirá uma caixa de diálogo onde você pode escolher em qual lista de tarefas deseja adicionar a tarefa. O nome da tarefa será o apelido do usuário e a descrição da tarefa, o conteúdo da mensagem.
+Usando esse recurso, por exemplo, você pode pedir aos seus moderadores para destacar todas as perguntas do chat, para que você possa vê-las rapidamente durante sua transmissão ao vivo e marcá-las como respondidas.`,description:"Você pode gerenciar tarefas e listas de tarefas com sua equipe de moderação.",tags:[],title:"Tarefas / Listas de tarefas",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/tasks/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Esta funcionalidade está disponível com o plugin livechat versão 11.0.0. Introdução O plugin de chat ao vivo inclui um aplicativo de notas do moderador: você pode escrever algumas notas, que podem ser associadas aos participantes do chat. Os administradores de cada sala têm acesso a essas notas, para que possam editá-las de forma colaborativa.
+Você pode, por exemplo, usar este aplicativo para:
+compartilhar algumas notas entre os moderadores tomar notas sobre os participantes que foram expulsos ou causaram problemas … Usando o aplicativo Notas do moderador Abrindo o aplicativo Notas do Moderador Para abrir o aplicativo Notas do Moderador, há um botão “Notas de moderação” no menu superior do chat:
+Clicar neste botão alternará a exibição do aplicativo:
+Tip Para ter mais espaço e melhor legibilidade, abra o chat em modo de página inteira.
+Direitos de acesso Todos os administradores de sala têm acesso a este aplicativo (acesso de leitura e gravação).
+Ao promover alguém como administrador ou proprietário de uma sala, essa pessoa obtém acesso instantâneo a este Aplicativo. Ao remover os direitos de administrador ou proprietário de alguém, essa pessoa perde instantaneamente o acesso a este Aplicativo.
+Escopo As notas só ficam disponíveis na sala em que você as criou.
+As salas de bate-papo podem ser vinculadas a um vídeo ou canal. Se você quiser manter anotações de um vídeo para outro, considere usar salas vinculadas a canais.
+Warning Atualmente, a configuração para salas de vídeo e canais é válida para toda a instância. Somente administradores do Peertube podem alterá-la, e ela se aplica a todas as salas de bate-papo. Futuramente, essa opção será adicionada às opções do seu canal.
+Notas Criar/Editar Notas Você pode usar o botão de adição na parte superior para criar uma nova nota. Você também pode editar notas existentes usando o botão de edição ou excluir qualquer nota.
+Tip Todas as modificações ficam instantaneamente visíveis em todas as abas do seu navegador e para todos os administradores da sala.
+Você pode criar uma nota associada a um participante de várias maneiras:
+usando a ação “Criar uma nova nota” no menu suspenso, além dos participantes na barra lateral usando a ação “Criar uma nova nota” no menu suspenso, além das mensagens de bate-papo Quando uma nota é associada a um participante, você verá o apelido e o avatar dele na parte superior da nota.
+Filtragem de notas Você pode filtrar notas para encontrar todas as notas relacionadas a um determinado participante de várias maneiras:
+clique no botão “Buscar notas” disponível nas notas para encontrar todas as notas relacionadas ao mesmo participante clique no botão “Buscar notas” no menu suspenso ao lado dos participantes na barra lateral clique no botão “Buscar notas” no menu suspenso ao lado das mensagens de bate-papo Você pode remover o filtro clicando no botão Fechar.
+Ao filtrar notas sobre um participante, várias informações são exibidas à direita do apelido do participante:
+se o apelido atual for diferente do apelido quando você criou a nota, o apelido original será mostrado você verá o JID (Jabber ID) do participante você também verá o occupant-id do participante O resultado da pesquisa também incluirá todas as notas relacionadas aos participantes que tinham o mesmo apelido. Assim, você também pode anotar usuários anônimos (que não possuem um JID ou ID de ocupante consistente). Você pode diferenciá-los comparando o JID e o ID de ocupante.
+Classificando notas You can sort notes simply using drag & drop.`,description:"Notas de moderação do plugin peertube-plugin-livechat",tags:[],title:"Notas de moderação",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/moderation_notes/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers",content:` Info Este recurso vem com o plugin LiveChat versão 8.0.0 e pode ser desabilitado pelos administradores da sua instância.
+Você pode habilitar um bot de bate-papo em suas salas de bate-papo. A configuração do bot é feita canal por canal e será aplicada a todas as salas de bate-papo com vídeos relacionados.
+Para acessar esta página, verifique a documentação de configuração do canal.
+Uma vez lá, você pode habilitar o bot e configurar diversas opções:
+Caracteres especiaisO bot pode moderar automaticamente mensagens que contenham muitos caracteres especiais.
+Nenhuma mensagem duplicadaO bot pode moderar automaticamente mensagens duplicadas.
+Palavras proibidasO bot pode moderar automaticamente mensagens contendo palavras proibidas.
+TemporizadoresO bot pode enviar periodicamente algumas mensagens.
+ComandosO bot pode responder a vários comandos.
+O bot será recarregado instantaneamente quando você salvar a página.`,description:"Configuração do bot de bate-papo",tags:[],title:"Bot de bate-papo",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/index.html"},{breadcrumb:"",content:` Tip Você pode usar o seletor de idiomas no menu à esquerda para visualizar esta documentação em diferentes idiomas. Algumas traduções estão ausentes ou incompletas. Neste caso, você verá a versão em inglês do texto.
+Bem-vindo à documentação do Peertube Livechat Plugin.
+Peertube é uma plataforma de streaming descentralizada que oferece recursos de transmissão ao vivo e VOD (Vídeo sob Demanda). Este plugin adiciona recursos de bate-papo à sua instalação do Peertube, permitindo que os espectadores interajam com os streamers.
+Para ter uma ideia dos recursos deste plugin, confira a introdução. Para informações mais precisas, veja abaixo o resumo desta documentação.
+Tip Você pode usar a caixa de pesquisa no menu à esquerda para encontrar rapidamente partes específicas da documentação.
+Info Antes de atualizar para uma versão principal, leia as notas de versão e a lista de alterações significativas: CHANGELOG.
+IntroduçãoIntrodução
+DocumentaçãoDocumentação do plugin
+Documentação do usuárioDocumentação do usuário do plugin peertube-plugin-livechat
+Para espectadoresComo conversar com espectadores de transmissão
+OBSDocumentação para transmitir o conteúdo do bate-papo usando o OBS.
+Clientes XMPPConecte-se ao chat usando um cliente XMPP
+Para streamersComo configurar o chat para sua transmissão ao vivo
+Alguns princípios básicosAlgumas noções básicas sobre como configurar e usar o chat para sua transmissão ao vivo
+Configuração de canalConfiguração de salas de chat do canal Peertube
+AnúnciosProprietários e administradores de salas podem enviar anúncios especiais no chat.
+ModeraçãoRecursos avançados de moderação do plugin peertube-plugin-livechat
 Terms & conditionsConfigure channel's chat terms & conditions
-Slow modePlugin peertube-plugin-livechat slow mode
-Moderation delayPlugin peertube-plugin-livechat moderation delay
-Custom emojisPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
-PollsYou can create polls to ask viewers their opinion
-Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
-Moderation notesPlugin peertube-plugin-livechat moderation notes
-Chat botChat bot setup
-Installation guidePlugin peertube-plugin-livechat installation guide
-TroubleshootingSome classic mistakes and workarounds.
-Known issues: CPU CompatibilityFor now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.
-Upgrade from version older than 6.0.0Important notes when upgrading for an older version.
-Admin documentationPlugin Peertube Livechat administration
-SettingsPlugin Peertube Livechat settings
-External AuthenticationPlugin Peertube Livechat settings - External Authentication
-Prosody mod_firewallAdvanced firewall rules for the Prosody server
-Advanced usageSome advanced features
-XMPP clientsAllow connections using XMPP clients
-Using MatterbridgeUsing Matterbridge to bridge with other chats
-ContributingContributing
-Code of ConductContributor Covenant Code of Conduct
-TranslateTranslate the plugin
-Give your feedbackGive your feedback
-DevelopDevelop
-DocumentationDocument the plugin, or translate the documentation.
-Bug tracking & new featuresBug tracking / New features requests
+Modo lentoPlugin peertube-plugin-livechat modo lento
+Atraso de moderaçãoAtraso de moderação do plugin peertube-plugin-livechat
+Emojis personalizadosPlugin peertube-plugin-livechat emojis personalizados
+Modo somente emojisPlugin peertube-plugin-livechat modo apenas emojis
+PesquisasVocê pode criar enquetes para perguntar a opinião dos espectadores
+Tarefas / Listas de tarefasVocê pode gerenciar tarefas e listas de tarefas com sua equipe de moderação.
+Notas de moderaçãoNotas de moderação do plugin peertube-plugin-livechat
+Bot de bate-papoConfiguração do bot de bate-papo
+Guia de instalaçãoGuia de instalação do plugin peertube-plugin-livechat
+Solução de problemasAlguns erros clássicos e soluções alternativas.
+Problemas conhecidos: compatibilidade da CPUPor enquanto, o plugin funciona apenas para arquiteturas de CPU x86_64 e arm64. Aqui estão algumas instruções para outras arquiteturas de CPU.
+Atualização de versão anterior à 6.0.0Notas importantes ao atualizar para uma versão mais antiga.
+Documentação do administradorAdministração do plugin Peertube Livechat
+ConfiguraçõesConfigurações do plugin Peertube Livechat
+Autenticação externaConfigurações do plugin Peertube Livechat - Autenticação externa
+Prosódia mod_firewallRegras avançadas de firewall para o servidor Prosody
+Uso avançadoAlguns recursos avançados
+Clientes XMPPPermitir conexões usando clientes XMPP
+Usando MatterbridgeUsando o Matterbridge para fazer a ponte com outros chats
+ContribuindoContribuindo
+Código de CondutaCódigo de Conduta do Pacto do Colaborador
+TraduzirTraduzir o plugin
+Dê seu feedbackDê seu feedback
+DesenvolverDesenvolver
+DocumentaçãoDocumente o plugin ou traduza a documentação.
+Bug tracking & new featuresRastreamento de bugs / Solicitações de novos recursos
 Technical documentationTechnical documentation
 Source codeSource code organization
 Third partyDisplaying the livechat with 3rd party software.
 Plugin storageData files and folders used on the server
 MUC Slow modeMUC Slow mode XEP
-PollsPolls technical documentation
+PesquisasPolls technical documentation
 Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview
-Contact meContact the author
-CreditsPlugin Credits`,description:"Peertube plugin livechat documentation",tags:[],title:"Peertube livechat",uri:"/peertube-plugin-livechat/pt-br/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Tags",uri:"/peertube-plugin-livechat/pt-br/tags/index.html"}]
+Entre em contato comigoEntre em contato com o autor
+CréditosCréditos do plugin`,description:"Documentação do plugin Peertube livechat",tags:[],title:"Bate-papo ao vivo do Peertube",uri:"/peertube-plugin-livechat/pt-br/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube",content:"",description:"",tags:[],title:"Categories",uri:"/peertube-plugin-livechat/pt-br/categories/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube",content:"",description:"",tags:[],title:"Tags",uri:"/peertube-plugin-livechat/pt-br/tags/index.html"}]
