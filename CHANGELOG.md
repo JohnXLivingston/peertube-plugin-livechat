@@ -1,5 +1,11 @@
 # Changelog
 
+## (???) Not Released Yet
+
+### Minor changes and fixes
+
+* Fix #660: don't send headers twice on emoji router errors.
+
 ## 12.0.3
 
 ### Minor changes and fixes

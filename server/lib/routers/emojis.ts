@@ -78,7 +78,9 @@ export async function initEmojisRouter (
           },
           (err) => {
             if (err) {
-              res.sendStatus(404)
+              if (!res.headersSent) {
+                res.sendStatus(404)
+              }
             }
           }
         )
