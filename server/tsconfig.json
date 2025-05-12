@@ -2,7 +2,7 @@
 	"extends": "@tsconfig/node16/tsconfig.json",
 	"compilerOptions": {
 		"noImplicitReturns": true,
-    "noImplicitOverride": true,
+		"noImplicitOverride": true,
 		"noUnusedLocals": true,
 		"removeComments": true,
 		"sourceMap": true,
