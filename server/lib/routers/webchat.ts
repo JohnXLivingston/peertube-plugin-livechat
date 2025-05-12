@@ -89,17 +89,29 @@ async function initWebchatRouter (options: RegisterServerOptionsV5): Promise<Rou
         ) {
           peertubeHelpers.logger.debug('Trying to load AutoColors...')
           const autocolors: AutoColors = {
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             mainForeground: req.query._ac_mainForeground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             mainBackground: req.query._ac_mainBackground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             greyForeground: req.query._ac_greyForeground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             greyBackground: req.query._ac_greyBackground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             menuForeground: req.query._ac_menuForeground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             menuBackground: req.query._ac_menuBackground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             inputForeground: req.query._ac_inputForeground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             inputBackground: req.query._ac_inputBackground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             buttonForeground: req.query._ac_buttonForeground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             buttonBackground: req.query._ac_buttonBackground?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             link: req.query._ac_link?.toString() ?? '',
+            // eslint-disable-next-line @typescript-eslint/no-base-to-string
             linkHover: req.query._ac_linkHover?.toString() ?? ''
           }
           if (!Object.values(autocolors).find(c => c !== '')) {

@@ -78,7 +78,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-call': 'off', // FIXME: comes with eslint-config-love 84 update, and should be used.
 
       '@typescript-eslint/no-unnecessary-condition': 'off', // FIXME: comes with eslint-config-love 84 update, but seems buggy (false positive).
-
+      '@typescript-eslint/prefer-nullish-coalescing': 'off', // disabling, because many false positive (where i want "" to act as false)
       'max-len': [
         'error',
         {

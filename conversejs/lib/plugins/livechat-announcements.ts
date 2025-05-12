@@ -54,7 +54,7 @@ function overrideMUCMessageForm (_converse: any, current: Current): void {
     class MUCMessageFormloaded extends MUCMessageForm {
       async onFormSubmitted (ev?: Event): Promise<void> {
         const announcementSelect = this.querySelector('[name=livechat-announcements]')
-        current.announcementType = announcementSelect?.selectedOptions?.[0]?.value || undefined
+        current.announcementType = announcementSelect?.selectedOptions?.[0]?.value ?? undefined
         try {
           await super.onFormSubmitted(ev)
           if (announcementSelect) { announcementSelect.selectedIndex = 0 } // set back to default
@@ -173,7 +173,7 @@ function onGetOutgoingMessageAttributes (
   chatbox: any,
   attrs: any
 ): Parameters<typeof onGetOutgoingMessageAttributes>[3] {
-  if (!current.announcementType) { return attrs }
+  if (!current.announcementType) { return attrs } // undefined or ""
 
   const { __ } = _converse
   attrs.livechat_announcement_type = current.announcementType
