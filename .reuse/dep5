@@ -19,12 +19,10 @@ License: AGPL-3.0-only
 
 Files: support/documentation/po/*
 Copyright: 2024 John Livingston <https://www.john-livingston.fr/>
-Copyright: 2025 Mehdi Benadel <https://mehdibenadel.com>
 License: AGPL-3.0-only
 
 Files: support/documentation/content/en/*
 Copyright: 2024 John Livingston <https://www.john-livingston.fr/>
-Copyright: 2025 Mehdi Benadel <https://mehdibenadel.com>
 License: AGPL-3.0-only
 
 Files: .github/ISSUE_TEMPLATE/*
