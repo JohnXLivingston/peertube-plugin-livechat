@@ -38,3 +38,6 @@ updates:
   - dependency-name: "@typescript-eslint/parser"
     versions:
     - ">=8.5.0" # for now 8.5.0 is broken because of the lack of ./tsconfig.json file. Must fix conf.
+  - dependency-name: "eslint-config-love"
+    versions:
+    - ">=85.0.0" # Versions goes up to 118 very quickly. Too much breaking changes. We must do this progressively.
