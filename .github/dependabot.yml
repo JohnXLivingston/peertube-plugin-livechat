@@ -41,3 +41,6 @@ updates:
   - dependency-name: "eslint-config-love"
     versions:
     - ">=85.0.0" # Versions goes up to 118 very quickly. Too much breaking changes. We must do this progressively.
+  - dependency-name: "openid-client"
+    versions:
+    - ">=6.0.0" # this is a complete rewrite. We have to check if it is compatible.
