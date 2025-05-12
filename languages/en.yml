@@ -676,3 +676,9 @@ announcements_message_type_standard: Standard
 announcements_message_type_announcement: Announcement
 announcements_message_type_highlight: Highlight
 announcements_message_type_warning: Warning
+
+converse_theme_warning_description: |
+  <span class="peertube-plugin-livechat-warning">
+    It is strongly recommanded to keep the "Peertube theme", in combinaison with the "Automatic color detection" feature.
+    Otherwise some user may experience issues depending on the Peertube theme they use.
+  </span>

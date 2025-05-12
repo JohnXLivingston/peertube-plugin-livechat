@@ -8,6 +8,7 @@
 * Fix shebangs (for NixOS compatibility).
 * Translations updates.
 * Updating various dependencies.
+* Adding a warning in settings if theme is not set to Peertube or if autocolors are disabled.
 
 ## 12.0.3
 

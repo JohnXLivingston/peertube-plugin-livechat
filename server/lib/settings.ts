@@ -532,7 +532,6 @@ function initThemingSettings ({ registerSetting }: RegisterServerOptions): void 
     ] as Array<{ value: ConverseJSTheme, label: string }>,
     descriptionHTML: loc('converse_theme_description')
   })
-
   registerSetting({
     name: 'converse-autocolors',
     label: loc('autocolors_label'),
@@ -540,6 +539,12 @@ function initThemingSettings ({ registerSetting }: RegisterServerOptions): void 
     default: true,
     private: false,
     descriptionHTML: loc('autocolors_description')
+  })
+  registerSetting({
+    name: 'converse-theme-warning',
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('converse_theme_warning_description')
   })
 
   registerSetting({

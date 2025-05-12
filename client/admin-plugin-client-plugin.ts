@@ -269,6 +269,9 @@ function register (clientOptions: RegisterClientOptions): void {
           return options.formValues['prosody-components'] !== true
         case 'converse-autocolors':
           return options.formValues['converse-theme'] !== 'peertube'
+        case 'converse-theme-warning':
+          return options.formValues['converse-theme'] === 'peertube' &&
+            options.formValues['converse-autocolors'] === true
         case 'chat-per-live-video-warning':
           return !(options.formValues['chat-all-lives'] === true && options.formValues['chat-per-live-video'] === true)
         case 'auto-ban-anonymous-ip':
