@@ -32,6 +32,9 @@ updates:
   - dependency-name: eslint
     versions:
     - ">=9.0.0" # not ready for v9, missing dependencies.
+  - dependency-name: "@stylistic/eslint-plugin"
+    versions:
+    - ">=4.0.0" # needs eslint >= 9.0.0
   - dependency-name: got
     versions:
     - ">=12.0.0" # breaking changes, must adapt code.
