@@ -39,9 +39,7 @@ export class PtContext {
    * Keep them in cache after first request.
    */
   public async getSettings (): Promise<LiveChatSettings> {
-    if (!this._settings) {
-      this._settings = await this.ptOptions.peertubeHelpers.getSettings() as LiveChatSettings
-    }
+    this._settings ??= await this.ptOptions.peertubeHelpers.getSettings() as LiveChatSettings
     return this._settings
   }
 }
