@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-02-03 09:01+0000\n"
+"PO-Revision-Date: 2025-04-26 00:24+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.11\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -2725,6 +2725,8 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose from several different sets the default avatars that will be used for chat users."
 msgstr ""
+"Můžete si vybrat z několika různých sad výchozích avatarů, které budou "
+"použity pro uživatele chatu."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
