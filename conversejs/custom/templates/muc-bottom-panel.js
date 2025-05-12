@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+// SPDX-FileCopyrightText: 2025 Nicolas Chesnais <https://autre.space>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
@@ -22,6 +23,7 @@ async function setNickname (ev, model) {
   _converse.api.trigger('livechatViewerModeSetNickname', model, nick, {
     synchronous: true
   })
+  document.querySelector('.chat-textarea')?.focus()
 }
 
 class SlowMode extends CustomElement {
