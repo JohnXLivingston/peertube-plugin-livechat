@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+// SPDX-FileCopyrightText: 2025 Nicolas Chesnais <https://autre.space>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
@@ -11,6 +12,7 @@ import './styles/draggables.scss'
  */
 export class DraggablesCustomElement extends CustomElement {
   currentDragged = null
+  droppableEl = null
 
   /**
    * The tag name for draggable elements.
@@ -37,6 +39,9 @@ export class DraggablesCustomElement extends CustomElement {
     this._handleDragLeaveBinded = this._handleDragLeave.bind(this)
     this._handleDragEndBinded = this._handleDragEnd.bind(this)
     this._handleDropBinded = this._handleDrop.bind(this)
+    this._handleTouchStartBinded = this._handleTouchStart.bind(this)
+    this._handleTouchMoveBinded = this._handleTouchMove.bind(this)
+    this._handleTouchEndBinded = this._handleTouchEnd.bind(this)
 
     return super.initialize()
   }
@@ -44,21 +49,29 @@ export class DraggablesCustomElement extends CustomElement {
   connectedCallback () {
     super.connectedCallback()
     this.currentDragged = null
+    this.droppableEl = null
     this.addEventListener('dragstart', this._handleDragStartBinded)
     this.addEventListener('dragover', this._handleDragOverBinded)
     this.addEventListener('dragleave', this._handleDragLeaveBinded)
     this.addEventListener('dragend', this._handleDragEndBinded)
     this.addEventListener('drop', this._handleDropBinded)
+    this.addEventListener('touchstart', this._handleTouchStartBinded)
+    this.addEventListener('touchmove', this._handleTouchMoveBinded)
+    this.addEventListener('touchend', this._handleTouchEndBinded)
   }
 
   disconnectedCallback () {
     super.disconnectedCallback()
     this.currentDragged = null
+    this.droppableEl = null
     this.removeEventListener('dragstart', this._handleDragStartBinded)
     this.removeEventListener('dragover', this._handleDragOverBinded)
     this.removeEventListener('dragleave', this._handleDragLeaveBinded)
     this.removeEventListener('dragend', this._handleDragEndBinded)
     this.removeEventListener('drop', this._handleDropBinded)
+    this.removeEventListener('touchstart', this._handleTouchStartBinded)
+    this.removeEventListener('touchmove', this._handleTouchMoveBinded)
+    this.removeEventListener('touchend', this._handleTouchEndBinded)
   }
 
   _isADraggableEl (target) {
@@ -69,8 +82,7 @@ export class DraggablesCustomElement extends CustomElement {
     return target.closest?.(this.droppableTagNames.join(','))
   }
 
-  _isOnTopHalf (ev, el) {
-    const y = ev.clientY
+  _isOnTopHalf (y, el) {
     const bounding = el.getBoundingClientRect()
     return (y <= bounding.y + (bounding.height / 2))
   }
@@ -81,13 +93,39 @@ export class DraggablesCustomElement extends CustomElement {
     )
   }
 
+  _setCurrentDragged (draggedEl) {
+    console.log('[livechat drag&drop] Starting to drag a ' + this.draggableTagName + '...')
+    this.currentDragged = draggedEl
+    this._resetDropOver()
+  }
+
+  _setDroppableClasses (droppableEl, y) {
+    // Are we on the top or bottom part of the droppableEl?
+    let topHalf = false
+    if (!this.droppableAlwaysBottomTagNames.includes(droppableEl.nodeName.toLowerCase())) {
+      topHalf = this._isOnTopHalf(y, droppableEl)
+    }
+    droppableEl.classList.add(topHalf ? 'livechat-drag-top-half' : 'livechat-drag-bottom-half')
+    droppableEl.classList.remove(topHalf ? 'livechat-drag-bottom-half' : 'livechat-drag-top-half')
+  }
+
+  _tryToDrop (droppedOnEl) {
+    if (!droppedOnEl) return
+
+    console.log('[livechat drag&drop] ' + this.draggableTagName + ' dropped...')
+    try {
+      this._dropDone(this.currentDragged, droppedOnEl, droppedOnEl.classList.contains('livechat-drag-top-half'))
+    } catch (err) {
+      console.error(err)
+    }
+    this._resetDropOver()
+  }
+
   _handleDragStart (ev) {
     // The draggable=true is on a child bode
     const possibleEl = ev.target.parentElement
     if (!this._isADraggableEl(possibleEl)) { return }
-    console.log('[livechat drag&drop] Starting to drag a ' + this.draggableTagName + '...')
-    this.currentDragged = possibleEl
-    this._resetDropOver()
+    this._setCurrentDragged(possibleEl)
   }
 
   _handleDragOver (ev) {
@@ -97,14 +135,7 @@ export class DraggablesCustomElement extends CustomElement {
 
     // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event says we should preventDefault
     ev.preventDefault()
-
-    // Are we on the top or bottom part of the droppableEl?
-    let topHalf = false
-    if (!this.droppableAlwaysBottomTagNames.includes(droppableEl.nodeName.toLowerCase())) {
-      topHalf = this._isOnTopHalf(ev, droppableEl)
-    }
-    droppableEl.classList.add(topHalf ? 'livechat-drag-top-half' : 'livechat-drag-bottom-half')
-    droppableEl.classList.remove(topHalf ? 'livechat-drag-bottom-half' : 'livechat-drag-top-half')
+    this._setDroppableClasses(droppableEl, ev.clientY)
   }
 
   _handleDragLeave (ev) {
@@ -124,16 +155,33 @@ export class DraggablesCustomElement extends CustomElement {
 
     let droppedOnEl = document.querySelector('.livechat-drag-bottom-half, .livechat-drag-top-half')
     droppedOnEl = this._getParentDroppableEl(droppedOnEl)
-    if (!droppedOnEl) { return }
+    this._tryToDrop(droppedOnEl)
+  }
 
-    console.log('[livechat drag&drop] ' + this.draggableTagName + ' dropped...')
+  _handleTouchStart (ev) {
+    const possibleEl = this._getParentDroppableEl(ev.target)
+    if (!possibleEl) return
+    this._setCurrentDragged(possibleEl)
+  }
 
-    try {
-      this._dropDone(this.currentDragged, droppedOnEl, droppedOnEl.classList.contains('livechat-drag-top-half'))
-    } catch (err) {
-      console.error(err)
-    }
+  _handleTouchMove (ev) {
+    if (!this.currentDragged) return
+
+    const { clientX, clientY } = ev.touches[0]
+    const droppableEl = this._getParentDroppableEl(document.elementFromPoint(clientX, clientY))
+    if (!droppableEl || droppableEl === this.droppableEl) return
+
+    this.droppableEl = droppableEl
     this._resetDropOver()
+    this._setDroppableClasses(droppableEl, clientY)
+  }
+
+  _handleTouchEnd (_ev) {
+    if (!this.currentDragged || !this.droppableEl) return
+
+    this._tryToDrop(this.droppableEl)
+    this.currentDragged = null
+    this.droppableEl = null
   }
 
   /**
