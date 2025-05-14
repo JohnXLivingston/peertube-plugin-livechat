@@ -158,6 +158,11 @@
       vertical-align: -0.45em !important;
     }
 
+    // Trick to enlarge a single custom emoji with no text in message
+    &[text^=":"][text$=":"] img.emoji:only-child {
+      max-height: 2.5em !important;
+    }
+
     // underline links in chat messages
     a[href] {
       text-decoration: underline;
