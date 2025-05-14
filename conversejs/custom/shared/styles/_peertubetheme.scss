@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ * SPDX-FileCopyrightText: 2025 Nicolas Chesnais <https://autre.space>
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
@@ -149,11 +150,12 @@
       background-color: var(--peertube-grey-background) !important;
     }
 
-    // Changing size for emojis, to have bigger custom emojis
+    // Resize custom emojis to text height
     img.emoji {
       width: unset !important;
       height: unset !important;
-      max-height: 3em !important; // and no max-width
+      max-height: 1.5em !important; // and no max-width
+      vertical-align: -0.45em !important;
     }
 
     // underline links in chat messages
