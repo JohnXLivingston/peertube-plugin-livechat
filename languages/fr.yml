@@ -654,3 +654,4 @@ livechat_configuration_channel_no_duplicate_desc: "En activant cette option, le 
   de modération modérera automatiquement les messages en double.\nCela signifie que
   si un⋅e utilisateur⋅rice envoie deux fois le même message en l'espace de X secondes,
   le deuxième message sera supprimé.\n"
+back_to_last_msg: Retourner au dernier message

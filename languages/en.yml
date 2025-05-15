@@ -682,3 +682,4 @@ converse_theme_warning_description: |
     It is strongly recommanded to keep the "Peertube theme", in combinaison with the "Automatic color detection" feature.
     Otherwise some user may experience issues depending on the Peertube theme they use.
   </span>
+back_to_last_msg: Go back to last message

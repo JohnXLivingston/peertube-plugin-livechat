@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+ * SPDX-FileCopyrightText: 2025 Nicolas Chesnais <https://autre.space>
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
@@ -15,5 +16,9 @@
 
   .livechat-drag-top-half > .draggables-line {
     border-top: 4px solid blue;
+  }
+
+  [draggable="true"] {
+    touch-action: none;
   }
 }
