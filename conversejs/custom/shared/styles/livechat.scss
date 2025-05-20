@@ -227,6 +227,21 @@ body.converse-embedded {
 
       .occupants {
         width: 100%;
+
+        // Put occupants filters items on a single line
+        converse-list-filter form > div {
+          display: flex;
+          align-items: center;
+
+          .filter-by {
+            margin-right: 4px;
+          }
+
+          // Let search input take the whole width when displayed
+          .btn-group:has(+ select.hidden) {
+            width: 100%;
+          }
+        }
       }
     }
   }
