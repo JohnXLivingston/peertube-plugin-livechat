@@ -111,7 +111,7 @@ all_non_lives_description: "Si coché, il y aura un tchat pour toutes les vidéo
 
 videos_list_label: "Activer le tchat pour ces vidéos"
 videos_list_description: |
-  Mettez ici les UUIDs des vidéos pour lesquelles vous voulez forcer l'activation du tchat.
+  Mettez ici les UUIDs des vidéos pour lesquelles vous voulez forcer l'activation du tchat (UUID court ou UUIDv4).
   Cela peut être des directs, ou non. Un UUID par ligne. <br />
   Vous pouvez ajouter des commentaires : tout ce qui se trouve après le caractère # sera retiré, et les lignes vides ignorées. <br />
   N'ajoutez pas de vidéos privées, les UUIDs fuiteraient.
