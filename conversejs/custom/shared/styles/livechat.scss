@@ -264,3 +264,13 @@ body.converse-embedded {
     justify-content: normal !important;
   }
 }
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.conversejs {
+  converse-muc {
+    .muc-bottom-panel, converse-muc-bottom-panel {
+      // Fixing a color (Converse use a hardcoded "white", which does not work with Peertube v7 new theme)
+      color: var(--peertube-menu-foreground) !important;
+    }
+  }
+}
