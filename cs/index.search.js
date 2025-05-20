@@ -113,8 +113,9 @@ Toto nastavení umožňuje zvolit, kdo bude mít přístup k tomuto modálnímu 
 Uživatelé si mohou aktivovat chat pro své živé přenosy Pokud je zaškrtnuto, budou mít všechna živá videa ve svých vlastnostech zaškrtávací políčko pro povolení webového chatu.
 Vlastník videa bude moci aktivovat webové chaty.
 Aktivace chatu pro všechny živé přenosy Pokud je zaškrtnuto, bude chat povolen pro všechny živé přenosy.
-Aktivace chatu pro všechny neživé přenosy Aktivace chatu pro všechny neživé přenosy
-Aktivovat chat pro tato videa Aktivovat chat pro tato videa
+Aktivace chatu pro všechny neživé přenosy Pokud je zaškrtnuto, bude chat povolen pro všechna videa, která nejsou živá.
+Aktivovat chat pro tato videa Videa UUID, pro která chceme webový chat. Mohou to být neživá videa. Jeden na řádek. Můžete přidávat komentáře: vše za znakem # bude odstraněno a prázdné řádky budou ignorovány.
+Nepřidávejte soukromá videa, UUID budou odeslána do frontendu.
 Skrytí chatu pro anonymní uživatele Pokud je zaškrtnuto, anonymní uživatelé Peertube chat neuvidí. Tato funkce je stále experimentální. Pokud jste ji povolili, důrazně doporučujeme zaškrtnout také možnost “Nezveřejňovat informace o chatu”. V opačném případě by se některé nástroje třetích stran mohly pokusit chat otevřít a chovat se nepředvídatelně.
 Poznámka: Prozatím tato funkce pouze skrývá chat. V některé z budoucích verzí bude chat nahrazen zprávou “přihlaste se prosím do […]”. Další informace naleznete v poznámkách k vydání verze 5.7.0.
 Zakázat IP adresu anonymního uživatele, když je uživatel vykázán z chatovací místnosti Povolením této možnosti bude při každém zákazu anonymního uživatele v chatovací místnosti jeho IP adresa rovněž zakázána na chatovacím serveru. Upozornění: Pokud je vaše instance otevřená pro registraci, může kterýkoli uživatel vytvořit místnost v pasti, pozvat uživatele, aby se k ní připojili, a automaticky zakázat všechny IP adresy anonymních uživatelů. Seznam zakázaných IP se neukládá, vymaže se při restartu serveru nebo při změně nastavení některého zásuvného modulu. Zakázané IP jsou zaznamenány v logovacích souborech serveru Prosody, takže správci serveru mohou případně použít některé externí nástroje (jako fail2ban) pro širší zakázání IP.

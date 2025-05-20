@@ -43,8 +43,10 @@ Aquesta configuració us permet triar qui pot accedir a aquesta finestra modal.
 Les persones poden activar el xat per als seus directes Si es marca tots els vídeos en directe tindran una casella a les propietats per activar el xat.
 El propietari del vídeo podrà activar el xat en línia.
 Activar el xat per a tots els directes Si està marcat hi haurà un xat a tots els directes.
-Activar xat per als vídeos que no són en directe Activar xat per als vídeos que no són en directe
-Activar el xat per a aquests vídeos Activar el xat per a aquests vídeos
+Activar xat per als vídeos que no són en directe Si està marcat hi haurà un xat per a tots els vídeos que no siguin en directe.
+Activar el xat per a aquests vídeos Poseu aquí els UUID dels vídeos per als quals vols forçar l’activació del xat. Poden ser en directe o no. Un UUID per línia.
+Podeu afegir comentaris: s’eliminarà tot el que hi ha després del caràcter # i s’ignoraran les línies buides.
+No afegiu vídeos privats perquè l’UUID es revelaria.
 Amagar xat per a persones anònimes Si està marcat, les persones que no hagin iniciat sessió no veuran els xats. Aquesta característica encara és experimental. Si l’heu activada, és molt recomanable que també marqueu «No publicar informació de xat». En cas contrari, determinades eines de tercers no podrien intentar obrir el xat i tindrien resultats impredictibles.
 Nota: de moment, aquesta funcionalitat simplement amaga el xat. En una versió futura, el xat serà substituït per un missatge que especifiqui «si us plau connectar-vos […]». Consulteu les notes de la versió 5.7.0 per obtenir més informació.
 Prohibir la IP de persones anònimes quan se’ls bandeja d’alguna sala En activar aquesta opció cada vegada que una persona anònima és bandejada d’una habitació, la seva IP també quedarà prohibida del servidor de xat. Avís: si la vostra instància està oberta per a registres, algú podria crear una sala trampa, convidar-hi persones i prohibir automàticament les IP de les anònimes. La llista d’IP prohibides no es desa i s’eliminarà quan es reiniciï el servidor o si canvieu determinades configuracions del complement. Les IP prohibides es registren als registres del servidor de Prosody, de manera que els administradors del servidor poden utilitzar opcionalment eines externes (com ara fail2ban) per prohibir les IP de manera més àmplia.

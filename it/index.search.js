@@ -113,8 +113,10 @@ This setting allows you to choose who can access this modal.
 Lз utentə possono attivare la chat per i loro video in diretta Se selezionata, tutti i video in diretta avranno una casella di controllo nelle loro proprietà per attivare/disattivare la chat.
 The video owner will be able to activate web chats.
 Attiva la chat per tutti i video in diretta Se selezionata, la chat sarà attivata per tutti i video in diretta.
-Attiva la chat per tutti i video che non sono dirette Attiva la chat per tutti i video che non sono dirette
-Attiva la chat per questi video Attiva la chat per questi video
+Attiva la chat per tutti i video che non sono dirette Se selezionata, la chat sarà attivata per tutti i video non in diretta.
+Attiva la chat per questi video Inserisci gli UUID dei video per i quali desideri forzare l’attivazione della chat (uno per riga). Questi possono essere dei video in diretta o no.
+Puoi anche inserire dei commenti: tutto ciò che si trova dopo il carattere # verrà eliminato e le righe vuote saranno ignorate.
+Non aggiungere video privati: gli UUID sarebbero inviati al frontend e dunque esposti a tutti gli utenti.
 Nascondi la chat per gli utenti anonimi (non connessi) Se selezionata, gli utenti anonimi (non connessi) non vedranno la chat.
 Note: for now this feature simply hide the chat. In a future release, the chat will be replaced by a message saying «please log in to […]». See v5.7.0 Release Notes for more information.
 Ban anonymous user’s IP when user is banned from a chatroom By enabling this option, each time an anonymous user is banned from a chatroom, it’s IP will also be banned from the chat server. Warning: if your instance is open to registration, any user could create a trapped-room, invite users to join, and automatically ban all anonymous user’s IPs. The banned IP list is not stored, it will be cleared on server restart, or when you change some plugin’s settings. The banned IP are logged in the Prosody server log files, so server’s administrators can eventually use some external tools (like fail2ban) to ban IPs more widely.

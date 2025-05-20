@@ -67,8 +67,9 @@ Esta configuração permite que você escolha quem pode acessar este modal.
 Usuários podem ativar o chat para suas transmissões ao vivo Se marcada, todos os vídeos ao vivo terão uma caixa de seleção em suas propriedades para habilitar o bate-papo na web.
 O proprietário do vídeo poderá ativar chats na web.
 Ativar chat para todas as transmissões Se marcado, o bate-papo será habilitado para todas as vidas.
-Ativar chat para todos os não-vivos Ativar chat para todos os não-vivos
-Ativar chat para estes vídeos Ativar chat para estes vídeos
+Ativar chat para todos os não-vivos Se marcado, o bate-papo será habilitado para todos os vídeos que não sejam ao vivo.
+Ativar chat para estes vídeos UUIDs de vídeos para os quais queremos um bate-papo na web. Podem ser vídeos não ao vivo. Um por linha. Você pode adicionar comentários: tudo após o caractere # será removido e as linhas vazias serão ignoradas.
+Não adicione vídeos privados, os UUIDs serão enviados para o frontend.
 Ocultar chat para usuários anônimos Se marcado, usuários anônimos do Peertube não verão o chat. Este recurso ainda é experimental. Se você o habilitou, é altamente recomendável também marcar “Não publicar informações do chat”. Caso contrário, algumas ferramentas de terceiros podem tentar abrir o chat e apresentar comportamentos imprevisíveis.
 Observação: por enquanto, este recurso simplesmente oculta o chat. Em uma versão futura, o chat será substituído por uma mensagem dizendo “faça login em […]”. Consulte Notas da versão v5.7.0 para obter mais informações.
 Banir o IP de um usuário anônimo quando ele for banido de uma sala de bate-papo Ao habilitar esta opção, cada vez que um usuário anônimo for banido de uma sala de bate-papo, seu IP também será banido do servidor de bate-papo. Aviso: se sua instância estiver aberta para registro, qualquer usuário poderá criar uma sala com armadilha, convidar usuários para participar e banir automaticamente todos os IPs de usuários anônimos. A lista de IPs banidos não é armazenada, ela será apagada na reinicialização do servidor ou quando você alterar as configurações de algum plugin. Os IPs banidos são registrados nos arquivos de log do servidor Prosody, para que os administradores do servidor possam eventualmente usar algumas ferramentas externas (como o fail2ban) para banir IPs de forma mais ampla.

@@ -113,8 +113,9 @@ This setting allows you to choose who can access this modal.
 Users can activate the chat for their lives If checked, all live videos will have a checkbox in their properties for enabling the web chat.
 The video owner will be able to activate web chats.
 Activate chat for all lives If checked, the chat will be enabled for all lives.
-Activate chat for all non-lives Activate chat for all non-lives
-Activate chat for these videos Activate chat for these videos
+Activate chat for all non-lives If checked, the chat will be enabled for all video that are not lives.
+Activate chat for these videos Videos UUIDs for which we want a web chat. Can be non-live videos. One per line. You can add comments: everything after the # character will be stripped off, and empty lines ignored.
+Don’t add private videos, the UUIDs will be sent to the frontend.
 Hide the chat for anonymous users If checked, anonymous Peertube users won’t see the chat. This feature is still experimental. If you enabled it, it is highly recommended to also check “Don’t publish chat information”. Otherwise, some third party tools could try to open the chat, and have unpredictable behaviours.
 Note: for now this feature simply hide the chat. In a future release, the chat will be replaced by a message saying «please log in to […]». See v5.7.0 Release Notes for more information.
 Ban anonymous user’s IP when user is banned from a chatroom By enabling this option, each time an anonymous user is banned from a chatroom, it’s IP will also be banned from the chat server. Warning: if your instance is open to registration, any user could create a trapped-room, invite users to join, and automatically ban all anonymous user’s IPs. The banned IP list is not stored, it will be cleared on server restart, or when you change some plugin’s settings. The banned IP are logged in the Prosody server log files, so server’s administrators can eventually use some external tools (like fail2ban) to ban IPs more widely.

@@ -111,8 +111,9 @@ This setting allows you to choose who can access this modal.
 使用者在直播時可啟用聊天 If checked, all live videos will have a checkbox in their properties for enabling the web chat.
 The video owner will be able to activate web chats.
 所有直播啟動聊天室 若勾選，則所有直播都啟用聊天室。
-Activate chat for all non-lives Activate chat for all non-lives
-Activate chat for these videos Activate chat for these videos
+Activate chat for all non-lives If checked, the chat will be enabled for all video that are not lives.
+Activate chat for these videos Videos UUIDs for which we want a web chat. Can be non-live videos. One per line. You can add comments: everything after the # character will be stripped off, and empty lines ignored.
+Don’t add private videos, the UUIDs will be sent to the frontend.
 隱藏匿名使用者的聊天 若勾選，匿名 Peertube 用戶將看不到聊天資訊。 此功能仍處於實驗階段。 如果您啟用了它，強烈建議您也勾選「不發布聊天訊息」。 否則，某些第三方工具可能會嘗試開啟聊天，並出現不可預測的行為。
 Note: for now this feature simply hide the chat. In a future release, the chat will be replaced by a message saying «please log in to […]». See v5.7.0 Release Notes for more information.
 當用戶被禁止進入聊天室時，禁止匿名用戶的 IP 透過啟用此選項，每次匿名用戶被禁止進入聊天室時，其 IP 也將被聊天伺服器禁止。 警告：如果您的執行個體開放註冊，任何使用者都可以建立陷阱房間、邀請使用者加入，並自動禁止所有匿名使用者的 IP。 禁止的IP清單不會被存儲，它會在伺服器重新啟動或更改某些外掛的設定時被清除。 被禁止的IP會記錄在Prosody伺服器日誌檔案中，因此伺服器管理員最終可以使用一些外部工具（如fail2ban）來更廣泛地禁止IP。
