@@ -13,7 +13,7 @@ import tplMucBottomPanel from '../../src/plugins/muc-views/templates/muc-bottom-
 import { CustomElement } from 'shared/components/element.js'
 import 'shared/modals/livechat-external-login.js'
 
-async function setNickname (ev, model) {
+async function setNicknameAndFocus (ev, model) {
   ev.preventDefault()
   const nick = ev.target.nick.value.trim()
   if (!nick) {
@@ -162,7 +162,7 @@ const tplViewerMode = (o) => {
   const i18nExternalLogin = __(LOC_login_using_external_account)
   return html`
     <div class="livechat-viewer-mode-content chatroom-form-container">
-        <form class="converse-form chatroom-form" @submit=${ev => setNickname(ev, model)}>
+        <form class="converse-form chatroom-form" @submit=${ev => setNicknameAndFocus(ev, model)}>
             <label>${i18nHeading}</label>
             <fieldset>
               <input type="text"

@@ -57,8 +57,8 @@ function getToolbarButtons (this: any, toolbarEl: any, buttons: any[]): any {
 
                 // Hide offline occupants by default
                 const sideBarEl = document.querySelector('converse-muc-sidebar') as unknown as any
-                sideBarEl.model.set('filter_visible', true)
-                sideBarEl.filter.set('type', 'state')
+                sideBarEl?.model.set('filter_visible', true)
+                sideBarEl?.filter.set('type', 'state')
               }}>
               ${icon}
       </button>`
