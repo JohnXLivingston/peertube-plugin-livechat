@@ -90,11 +90,11 @@ The video owner will be able to activate web chats.
 
 ### {{% livechat_label all_non_lives_label %}}
 
-{{% livechat_label all_non_lives_label %}}
+{{% livechat_label all_non_lives_description %}}
 
 ### {{% livechat_label videos_list_label %}}
 
-{{% livechat_label videos_list_label %}}
+{{% livechat_label videos_list_description %}}
 
 ### {{% livechat_label no_anonymous_label %}}
 
