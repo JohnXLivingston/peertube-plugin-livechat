@@ -1,5 +1,17 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Fix #329: auto focus message field after anonymous user has entered nickname.
+* Fix #392: add draggable items touch screen handling
+* Fix #506: hide offline users by default in occupant list
+* Fix #547: add button to go to the end of the chat
+* Fix #503: set custom emojis max height to text height + bigger when posted alone
+* Fix: Converse bottom panel messages not visible on new Peertube v7 theme (for example for muted users)
+* Fix #75: New short video urls makes it difficult to use the settings «Activate chat for these videos».
+
 ## 12.0.4
 
 ### Minor changes and fixes

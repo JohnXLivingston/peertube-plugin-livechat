@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+// SPDX-FileCopyrightText: 2025 Nicolas Chesnais <https://autre.space>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
@@ -12,7 +13,7 @@ import tplMucBottomPanel from '../../src/plugins/muc-views/templates/muc-bottom-
 import { CustomElement } from 'shared/components/element.js'
 import 'shared/modals/livechat-external-login.js'
 
-async function setNickname (ev, model) {
+async function setNicknameAndFocus (ev, model) {
   ev.preventDefault()
   const nick = ev.target.nick.value.trim()
   if (!nick) {
@@ -22,6 +23,7 @@ async function setNickname (ev, model) {
   _converse.api.trigger('livechatViewerModeSetNickname', model, nick, {
     synchronous: true
   })
+  document.querySelector('.chat-textarea')?.focus()
 }
 
 class SlowMode extends CustomElement {
@@ -100,6 +102,54 @@ const tplEmojiOnly = (o) => {
     </div>`
 }
 
+class BackToLastMsg extends CustomElement {
+  static get properties () {
+    return {
+      jid: { type: String }
+    }
+  }
+
+  show = false
+
+  async connectedCallback () {
+    super.connectedCallback()
+    this.model = _converse.chatboxes.get(this.jid)
+    await this.model.initialized
+
+    let scrolled = this.model.ui.get('scrolled')
+    let hasUnreadMsg = this.model.get('num_unread_general') > 0
+    this.listenTo(this.model.ui, 'change:scrolled', () => {
+      scrolled = this.model.ui.get('scrolled')
+      this.show = scrolled && !hasUnreadMsg
+      this.requestUpdate()
+    })
+    this.listenTo(this.model, 'change:num_unread_general', () => {
+      hasUnreadMsg = this.model.get('num_unread_general') > 0
+      // Do not show the element if there is new messages since there is another element for that
+      this.show = scrolled && !hasUnreadMsg
+      this.requestUpdate()
+    })
+  }
+
+  onClick (ev) {
+    ev?.preventDefault()
+    const chatContainer = document.querySelector('converse-chat-content')
+    chatContainer?.scrollTo({ top: chatContainer.scrollHeight })
+  }
+
+  render () {
+    return this.show
+      ? html`<div class="livechat-back-to-last-msg new-msgs-indicator" @click=${this.onClick}>
+          ▼ ${
+            // eslint-disable-next-line no-undef
+            __(LOC_back_to_last_msg)
+          } ▼
+        </div>`
+      : ''
+  }
+}
+api.elements.define('livechat-back-to-last-msg', BackToLastMsg)
+
 const tplViewerMode = (o) => {
   if (!api.settings.get('livechat_enable_viewer_mode')) {
     return html``
@@ -112,7 +162,7 @@ const tplViewerMode = (o) => {
   const i18nExternalLogin = __(LOC_login_using_external_account)
   return html`
     <div class="livechat-viewer-mode-content chatroom-form-container">
-        <form class="converse-form chatroom-form" @submit=${ev => setNickname(ev, model)}>
+        <form class="converse-form chatroom-form" @submit=${ev => setNicknameAndFocus(ev, model)}>
             <label>${i18nHeading}</label>
             <fieldset>
               <input type="text"
@@ -163,6 +213,7 @@ export default (o) => {
     ${tplViewerMode(o)}
     ${tplSlowMode(o)}
     ${tplEmojiOnly(o)}
+    <livechat-back-to-last-msg jid=${o.model.get('jid')}></livechat-back-to-last-msg>
     ${
       mutedAnonymousMessage
         ? html`<span class="muc-bottom-panel muc-bottom-panel--muted">${mutedAnonymousMessage}</span>`

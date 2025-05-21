@@ -149,7 +149,7 @@ all_non_lives_description: "If checked, the chat will be enabled for all video t
 
 videos_list_label: "Activate chat for these videos"
 videos_list_description: |
-  Videos UUIDs for which we want a web chat.
+  Videos UUIDs for which we want a web chat (short UUID or UUIDv4).
   Can be non-live videos. One per line. <br />
   You can add comments: everything after the # character will be stripped off, and empty lines ignored.<br />
   Don't add private videos, the UUIDs will be sent to the frontend.
@@ -682,3 +682,4 @@ converse_theme_warning_description: |
     It is strongly recommanded to keep the "Peertube theme", in combinaison with the "Automatic color detection" feature.
     Otherwise some user may experience issues depending on the Peertube theme they use.
   </span>
+back_to_last_msg: Go back to last message

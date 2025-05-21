@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+// SPDX-FileCopyrightText: 2025 Nicolas Chesnais <https://autre.space>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
@@ -68,7 +69,8 @@ const locKeys = [
   'announcements_message_type_standard',
   'announcements_message_type_announcement',
   'announcements_message_type_highlight',
-  'announcements_message_type_warning'
+  'announcements_message_type_warning',
+  'back_to_last_msg'
 ]
 
 module.exports = locKeys

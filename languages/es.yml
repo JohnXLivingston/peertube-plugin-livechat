@@ -152,7 +152,7 @@ prosody_muc_expiration_description: "Aquí puede elegir cuánto tiempo el servid
   durante 1 <b>año</b>. Puede reemplazar 1 por cualquier valor entero.</li>\n    \
   \ <li><b>nunca</b>: el contenido nunca caducará y se mantendrá para siempre.</li>\n\
   </ul>\n"
-videos_list_description: "UUIDs de los videos para los cuales se desea un chat web.\n
+videos_list_description: "UUIDs de los videos para los cuales se desea un chat web (corto UUID o UUIDv4).\n
   Pueden ser videos no en vivo. Una por línea. <br />\nPuede agregar comentarios:
   todo lo que este detras del caracter # no sera interpretado y las líneas vacías
   ignoradas. <br />\nNo agregue videos privados, los UUID se enviarán al frontend.\n"

@@ -227,6 +227,21 @@ body.converse-embedded {
 
       .occupants {
         width: 100%;
+
+        // Put occupants filters items on a single line
+        converse-list-filter form > div {
+          display: flex;
+          align-items: center;
+
+          .filter-by {
+            margin-right: 4px;
+          }
+
+          // Let search input take the whole width when displayed
+          .btn-group:has(+ select.hidden) {
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -262,5 +277,15 @@ body.converse-embedded {
     // Workaround for a regression in Firefox 136.
     // See https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/648
     justify-content: normal !important;
+  }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.conversejs {
+  converse-muc {
+    .muc-bottom-panel, converse-muc-bottom-panel {
+      // Fixing a color (Converse use a hardcoded "white", which does not work with Peertube v7 new theme)
+      color: var(--peertube-menu-foreground) !important;
+    }
   }
 }

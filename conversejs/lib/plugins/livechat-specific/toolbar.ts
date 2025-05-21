@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+// SPDX-FileCopyrightText: 2025 Nicolas Chesnais <https://autre.space>
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
@@ -53,6 +54,11 @@ function getToolbarButtons (this: any, toolbarEl: any, buttons: any[]): any {
                 toolbarEl.model.save({
                   hidden_occupants: !toolbarEl.model.get('hidden_occupants')
                 })
+
+                // Hide offline occupants by default
+                const sideBarEl = document.querySelector('converse-muc-sidebar') as unknown as any
+                sideBarEl?.model.set('filter_visible', true)
+                sideBarEl?.filter.set('type', 'state')
               }}>
               ${icon}
       </button>`
