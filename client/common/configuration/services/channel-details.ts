@@ -121,6 +121,15 @@ export class ChannelDetailsService {
         }
       }
 
+      for (const [i, q] of botConf.quotes.entries()) {
+        propertiesError[`bot.quotes.${i}.delay`] = []
+        if ((typeof q.delay !== 'number') || isNaN(q.delay)) {
+          propertiesError[`bot.quotes.${i}.delay`].push(ValidationErrorType.WrongFormat)
+        } else if (q.delay <= 0) {
+          propertiesError[`bot.quotes.${i}.delay`].push(ValidationErrorType.NotInRange)
+        }
+      }
+
       for (const [i, cd] of botConf.commands.entries()) {
         propertiesError[`bot.commands.${i}.command`] = []
 
