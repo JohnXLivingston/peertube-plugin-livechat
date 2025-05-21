@@ -53,7 +53,7 @@ local function remove_moderate_actor(event)
     -- urn:xmpp:message-moderate:1 do not require the "by" attribute
     -- So, for now, settings the room jid, as we only implement urn:xmpp:message-moderate:0.
     moderated.attr.by = room.jid;
-    moderated:remove_children("occupant-id", "urn:xmpp:occupant-id:0");
+    announcement:remove_children("occupant-id", "urn:xmpp:occupant-id:0");
   end
 
   if tombstone then

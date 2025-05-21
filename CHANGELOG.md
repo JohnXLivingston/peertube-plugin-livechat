@@ -25,6 +25,7 @@ Users must save the form to be sure to apply the correct value.
 * Fix tasks: checkbox state does not change when clicked.
 * Fix: bot timer can't be negative or null.
 * Fix #626: Bot timer was buggy, using seconds as delay instead of minutes.
+* Fix: message deletion were not properly anonymized when using "Anonymize moderation actions" option.
 
 ## 12.0.4
 
