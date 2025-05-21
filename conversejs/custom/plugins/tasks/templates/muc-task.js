@@ -23,8 +23,7 @@ export function tplMucTask (el, task) {
             type="checkbox"
             class="form-check-input"
             .checked=${done === true}
-            @click=${(ev) => {
-              ev?.preventDefault()
+            @click=${(_ev) => {
               task.set('done', !done)
               task.saveItem()
             }}

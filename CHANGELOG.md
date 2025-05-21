@@ -13,7 +13,8 @@
 * Fix #503: set custom emojis max height to text height + bigger when posted alone
 * Fix: Converse bottom panel messages not visible on new Peertube v7 theme (for example for muted users)
 * Fix #75: New short video urls makes it difficult to use the settings «Activate chat for these videos».
-* Fix: moderation notes: fix filter button wrongly displayed on notes without associated occupant.
+* Fix moderation notes: fix filter button wrongly displayed on notes without associated occupant.
+* Fix tasks: checkbox state does not change when clicked.
 
 ## 12.0.4
 
