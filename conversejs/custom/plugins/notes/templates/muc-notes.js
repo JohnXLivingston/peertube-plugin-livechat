@@ -77,7 +77,7 @@ export default function tplMucNotes (el, notes) {
           ? ''
           : html`<livechat-converse-muc-note
             .model=${note}
-            .is_ocupant_filter=${!!el.occupant_filter}
+            .is_occupant_filter=${!!el.occupant_filter}
           ></livechat-converse-muc-note>`
       })
     }`

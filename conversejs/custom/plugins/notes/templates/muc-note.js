@@ -25,7 +25,7 @@ export function tplMucNote (el, note) {
               aboutOccupant
                 ? html`
                   <livechat-converse-muc-note-occupant
-                    .full_display=${el.is_ocupant_filter}
+                    .full_display=${el.is_occupant_filter}
                     .model=${aboutOccupant}
                     .note=${note}
                   ></livechat-converse-muc-note-occupant>`
@@ -34,7 +34,7 @@ export function tplMucNote (el, note) {
           <div class="note-description">${note.get('description') ?? ''}</div>
         </div>
         ${
-          aboutOccupant && el.is_ocupant_filter
+          !aboutOccupant || el.is_occupant_filter
             ? ''
             : html`
               <button type="button" class="note-action" @click=${ev => {
