@@ -576,3 +576,7 @@ prosody_firewall_content: Contingut del fitxer
 save: Desar
 cancel: Cancel·lar
 prosody_s2s_interfaces_label: Interfícies de xarxa per a connexions servidor a servidor
+converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n  Es recomana fermament mantenir el \"tema Peertube\", en combinació amb la funció
+  \"Detecció automàtica del color\".\n  En cas contrari algunes persones poden experimentar
+  problemes segons el tema Peertube que utilitzen.\n</span>\n"

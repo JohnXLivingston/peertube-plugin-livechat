@@ -654,4 +654,14 @@ livechat_configuration_channel_no_duplicate_desc: "En activant cette option, le 
   de modération modérera automatiquement les messages en double.\nCela signifie que
   si un⋅e utilisateur⋅rice envoie deux fois le même message en l'espace de X secondes,
   le deuxième message sera supprimé.\n"
+announcements_message_type: Type de message
+announcements_message_type_standard: Standard
+announcements_message_type_announcement: Annonce
+announcements_message_type_highlight: Mise en évidence
+announcements_message_type_warning: Avertissement
+converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n  Il est fortement recommandé de garder le «Thème Peertube», en combinaison avec
+  la fonctionnalité «Détection automatique des couleurs».\n  Sinon certain⋅es utilisateur⋅rices
+  pourraient rencontrer des problèmes selon le thème qu'iels utilisent pour Peertube.\n\
+  </span>\n"
 back_to_last_msg: Retourner au dernier message

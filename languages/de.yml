@@ -578,8 +578,9 @@ prosody_firewall_description: "Sie können <a href=\"https://modules.prosody.im/
   \ target=\"_blank\">mod_firewall</a> auf Ihrem Prosody-Server aktivieren.\nWeitere
   Informationen finden Sie unter <a href=\"https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/mod_firewall/\"\
   \ target=\"_blank\">in der Dokumentation</a>.\n"
-prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button secondary-button\"\
-  \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">mod_firewall konfigurieren</a>\n"
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button
+  secondary-button\" href=\"/p/livechat/admin/firewall\" target=\"_blank\">mod_firewall
+  konfigurieren</a>\n"
 prosody_firewall_configuration: Prosody mod_firewall Konfiguration
 prosody_firewall_configuration_help: "Hier können Sie das Modul Prosody <a href=\"\
   https://modules.prosody.im/mod_firewall\" target=\"_blank\">mod_firewall</a> konfigurieren.\n
@@ -639,3 +640,7 @@ announcements_message_type_standard: Standard
 announcements_message_type_announcement: Ankündigung
 announcements_message_type_highlight: Highlight
 announcements_message_type_warning: Warnung
+converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n  Es wird empfohlen das \"Peertube Thema\" in Verbindung mit der \"Automatische
+  Farberkennung\" Funktion zu verwenden.\n  Andernfalls könnten bei einigen Benutzern,
+  je nach genutztem Peertube Thema, Probleme auftreten. \n</span>\n"
