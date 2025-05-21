@@ -118,10 +118,10 @@ per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warn
   >\n   Heu activat la configuració «Les usuàries poden habilitar el xat per llurs
   directes\".\n   Això és redundant amb «Activa el xat per a tots els directes».\n\
   </span>\n"
-videos_list_description: "Poseu aquí els UUID dels vídeos per als quals vols forçar
-  l'activació del xat.\nPoden ser en directe o no. Un UUID per línia.<br />\nPodeu
-  afegir comentaris: s'eliminarà tot el que hi ha després del caràcter # i s'ignoraran
-  les línies buides.<br />\nNo afegiu vídeos privats perquè l'UUID es revelaria.\n"
+videos_list_description: "UUID de vídeos per als quals volem un xat web (UUID abreujat
+  o UUIDv4).\nPoden ser vídeos que no siguin en directe. Un per línia. <br />\nPodeu
+  afegir comentaris: tot el que hi hagi després del caràcter # s'eliminarà i les línies
+  buides s'ignoraran.<br />\nNo afegiu vídeos privats, els UUID s'enviaran al frontend.\n"
 all_non_lives_label: Activar xat per als vídeos que no són en directe
 videos_list_label: Activar el xat per a aquests vídeos
 no_anonymous_label: Amagar xat per a persones anònimes
@@ -580,3 +580,4 @@ converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warn
   >\n  Es recomana fermament mantenir el \"tema Peertube\", en combinació amb la funció
   \"Detecció automàtica del color\".\n  En cas contrari algunes persones poden experimentar
   problemes segons el tema Peertube que utilitzen.\n</span>\n"
+back_to_last_msg: Tornar a l'últim missatge
