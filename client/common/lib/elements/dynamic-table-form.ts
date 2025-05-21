@@ -753,6 +753,9 @@ export class DynamicTableFormElement extends LivechatElement {
             .split(propertySchema.separator)
         }
         break
+      case Number:
+        rowById.row[propertyName] = Number(value)
+        break
       default:
         rowById.row[propertyName] = value
         break
