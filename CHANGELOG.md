@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Translations updates.
+* Dependencies updates.
 * Fix #329: auto focus message field after anonymous user has entered nickname.
 * Fix #392: add draggable items touch screen handling
 * Fix #506: hide offline users by default in occupant list
