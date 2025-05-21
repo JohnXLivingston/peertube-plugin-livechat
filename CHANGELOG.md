@@ -1,6 +1,14 @@
 # Changelog
 
-## ??? (Not Released Yet)
+## 13.0.0 (Not Released Yet)
+
+### Breaking changes
+
+There was a regression some months ago in the "bot timer" functionnality.
+In the channels settings, the delay between two quotes is supposed to be in minutes, but in fact we applied seconds.
+We don't have any way to detect if the user meant seconds or minutes when they configured their channels (it depends if it was before or after the regression).
+So we encourage all streamers to go through their channel settings, check the frequency of their bot timers (if enabled), set them to the correct value, and save the form.
+Users must save the form to be sure to apply the correct value.
 
 ### Minor changes and fixes
 
@@ -16,6 +24,7 @@
 * Fix moderation notes: fix filter button wrongly displayed on notes without associated occupant.
 * Fix tasks: checkbox state does not change when clicked.
 * Fix: bot timer can't be negative or null.
+* Fix #626: Bot timer was buggy, using seconds as delay instead of minutes.
 
 ## 12.0.4
 

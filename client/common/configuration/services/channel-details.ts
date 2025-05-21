@@ -151,6 +151,29 @@ export class ChannelDetailsService {
     return true
   }
 
+  frontToBack = (channelConfigurationOptions: ChannelConfigurationOptions): ChannelConfigurationOptions => {
+    // // This is a dirty hack, because backend wants seconds for botConf.quotes.delay, and front wants minutes.
+    const c = JSON.parse(JSON.stringify(channelConfigurationOptions)) as ChannelConfigurationOptions // clone
+    c.bot?.quotes.forEach(q => {
+      if (typeof q.delay === 'number') {
+        q.delay = Math.round(q.delay * 60)
+      }
+    })
+    return c
+  }
+
+  backToFront = (channelConfiguration: any): ChannelConfiguration => {
+    // This is a dirty hack, because backend wants seconds for botConf.quotes.delay, and front wants minutes.
+    const c = JSON.parse(JSON.stringify(channelConfiguration)) as ChannelConfiguration // clone
+    c.configuration.bot?.quotes.forEach(q => {
+      if (typeof q.delay === 'number') {
+        q.delay = Math.round(q.delay / 60)
+        if (q.delay < 1) { q.delay = 1 }
+      }
+    })
+    return c
+  }
+
   saveOptions = async (channelId: number,
     channelConfigurationOptions: ChannelConfigurationOptions): Promise<Response> => {
     if (!await this.validateOptions(channelConfigurationOptions)) {
@@ -162,7 +185,9 @@ export class ChannelDetailsService {
       {
         method: 'POST',
         headers: this._headers,
-        body: JSON.stringify(channelConfigurationOptions)
+        body: JSON.stringify(
+          this.frontToBack(channelConfigurationOptions)
+        )
       }
     )
 
@@ -218,7 +243,7 @@ export class ChannelDetailsService {
       throw new Error('Can\'t get channel configuration options.')
     }
 
-    return response.json()
+    return this.backToFront(await response.json())
   }
 
   public async fetchEmojisConfiguration (channelId: number): Promise<ChannelEmojisConfiguration> {
