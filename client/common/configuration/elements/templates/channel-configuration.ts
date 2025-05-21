@@ -97,7 +97,8 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       },
       delay: {
         inputType: 'number',
-        default: 10
+        default: 10,
+        min: 1
       }
     },
     commands: {
