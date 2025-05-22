@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-04-26 00:24+0000\n"
-"Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
+"PO-Revision-Date: 2025-05-22 17:48+0000\n"
+"Last-Translator: Fjuro <git@alius.cz>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1942,7 +1942,7 @@ msgstr ""
 "  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
 "prosody/prosody.cfg.lua \\\n"
 "  cert import \\\n"
-"  room.your_instance.tld your_instance.tld /etc/letsencrypt/live\n"
+"  room.vase_instance.tld vase_instance.tld /etc/letsencrypt/live\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
