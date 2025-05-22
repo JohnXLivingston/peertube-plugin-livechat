@@ -16,7 +16,7 @@ import { loadLoc } from './lib/loc'
 import { RoomChannel } from './lib/room-channel'
 import { BotConfiguration } from './lib/configuration/bot'
 import { BotsCtl } from './lib/bots/ctl'
-import { ExternalAuthOIDC } from './lib/external-auth/oidc'
+import { ExternalAuth } from './lib/external-auth'
 import { migrateMUCAffiliations } from './lib/prosody/migration/migrateV10'
 import { updateProsodyChannelEmojisRegex } from './lib/prosody/migration/migrateV12'
 import { Emojis } from './lib/emojis'
@@ -129,7 +129,7 @@ async function unregister (): Promise<any> {
 
   await RoomChannel.destroySingleton()
   await BotConfiguration.destroySingleton()
-  await ExternalAuthOIDC.destroySingletons()
+  await ExternalAuth.destroySingletons()
   await Emojis.destroySingleton()
   await LivechatProsodyAuth.destroySingleton()
 

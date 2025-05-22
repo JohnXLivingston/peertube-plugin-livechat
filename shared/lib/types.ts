@@ -37,8 +37,9 @@ interface InitConverseJSParams {
   transparent: boolean
   forceDefaultHideMucParticipants?: boolean
   autofocus?: boolean
-  externalAuthOIDC?: Array<{
-    type: ExternalAuthOIDCType
+  externalAuth?: Array<{
+    type: ExternalAuthType
+    provider: ExternalAuthProvider
     buttonLabel: string
     url: string
   }>
@@ -175,7 +176,8 @@ interface ExternalAuthResultError {
 
 type ExternalAuthResult = ExternalAuthResultError | ExternalAuthResultOk
 
-type ExternalAuthOIDCType = 'custom' | 'google' | 'facebook'
+type ExternalAuthType = 'oidc' | 'oauth'
+type ExternalAuthProvider = 'custom' | 'google' | 'facebook' | 'mastodon' | 'twitch' | 'github' | 'gitlab'
 
 interface CustomEmojiDefinition {
   sn: string
@@ -193,7 +195,7 @@ interface ChannelEmojisConfiguration {
 }
 
 interface ProsodyAuthentInfos {
-  type: 'peertube' | 'oidc' | 'livechat-token'
+  type: 'peertube' | 'oauth' | 'oidc' | 'livechat-token'
   jid: string
   password: string
   nickname?: string
@@ -234,7 +236,8 @@ export type {
   ExternalAuthResultError,
   ExternalAuthResultOk,
   ExternalAuthResult,
-  ExternalAuthOIDCType,
+  ExternalAuthType,
+  ExternalAuthProvider,
   CustomEmojiDefinition,
   ChannelEmojis,
   ChannelEmojisConfiguration,

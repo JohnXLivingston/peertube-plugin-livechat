@@ -280,10 +280,12 @@ function register (clientOptions: RegisterClientOptions): void {
           return options.formValues['prosody-firewall-enabled'] !== true
       }
 
-      if (name?.startsWith('external-auth-')) {
-        const m = name.match(/^external-auth-(\w+)-oidc-/)
+      const externalAuthPrefix = 'external-auth'
+
+      if (name?.startsWith(`${externalAuthPrefix}-`)) {
+        const m = name.match(`/^${externalAuthPrefix}-(\\w+)-(\\w+)-/`)
         if (m) {
-          return options.formValues['external-auth-' + m[1] + '-oidc'] !== true
+          return options.formValues[`${externalAuthPrefix}-${m[1]}-${m[2]}`] !== true
         }
       }
 

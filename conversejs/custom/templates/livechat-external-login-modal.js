@@ -9,13 +9,13 @@ import { _converse, api } from '@converse/headless'
 import { __ } from 'i18n'
 import { html } from 'lit'
 
-function externalLoginClickHandler (ev, el, externalAuthOIDCUrl) {
+function externalLoginClickHandler (ev, el, externalAuthUrl) {
   ev.preventDefault()
 
   el.clearAlert()
 
   const popup = window.open(
-    externalAuthOIDCUrl,
+    externalAuthUrl,
     'livechat-external-auth',
     'popup'
   )
@@ -31,7 +31,7 @@ function externalLoginClickHandler (ev, el, externalAuthOIDCUrl) {
 
     console.log('Received an external authentication result...', data)
     if (!data.ok) {
-      el.external_auth_oidc_alert_message =
+      el.external_auth_alert_message =
         // eslint-disable-next-line no-undef
         __(LOC_login_external_auth_alert_message) +
         (data.message ? ` (${data.message})` : '')
@@ -79,7 +79,7 @@ export const tplExternalLoginModal = (el, o) => {
   // eslint-disable-next-line no-undef
   const i18nRemotePeertubeUrl = __(LOC_login_remote_peertube_url)
   const i18nRemotePeertubeOpen = __('OK')
-  const buttonsDefinitions = api.settings.get('livechat_external_auth_oidc_buttons')
+  const buttonsDefinitions = api.settings.get('livechat_external_auth_buttons')
 
   const externalButtonsBlocks = []
   if (Array.isArray(buttonsDefinitions) && buttonsDefinitions.length) {
@@ -105,7 +105,7 @@ export const tplExternalLoginModal = (el, o) => {
         externalButtons.push({
           label,
           url,
-          class: 'livechat-external-login-modal-external-auth-oidc-type-' + type
+          class: 'livechat-external-login-modal-external-auth-type-' + type
         })
       }
       externalButtonsBlocks.push(externalButtons)
@@ -115,10 +115,10 @@ export const tplExternalLoginModal = (el, o) => {
   return html`<div class="modal-body livechat-external-login-modal">
     ${!externalButtonsBlocks.length || !window.sessionStorage
       ? ''
-      : html`<div class="livechat-external-login-modal-external-auth-oidc">
+      : html`<div class="livechat-external-login-modal-external-auth">
           ${
             externalButtonsBlocks.map(externalButtons => html`
-              <div class="livechat-external-login-modal-external-auth-oidc-block">
+              <div class="livechat-external-login-modal-external-auth-block">
                 ${
                   externalButtons.map(button => html`
                     <button type="button"
@@ -137,9 +137,9 @@ export const tplExternalLoginModal = (el, o) => {
             `)
           }
 
-          ${!o.external_auth_oidc_alert_message
+          ${!o.external_auth_alert_message
             ? ''
-            : html`<div class="invalid-feedback d-block">${o.external_auth_oidc_alert_message}</div>`
+            : html`<div class="invalid-feedback d-block">${o.external_auth_alert_message}</div>`
           }
         </div>
         <hr>

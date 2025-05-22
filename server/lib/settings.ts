@@ -7,7 +7,7 @@ import type { ConverseJSTheme } from '../../shared/lib/types'
 import { ensureProsodyRunning } from './prosody/ctl'
 import { RoomChannel } from './room-channel'
 import { BotsCtl } from './bots/ctl'
-import { ExternalAuthOIDC, ExternalAuthOIDCType } from './external-auth/oidc'
+import { ExternalAuth, ExternalAuthType, ExternalAuthProvider } from './external-auth'
 import { Emojis } from './emojis'
 import { LivechatProsodyAuth } from './prosody/auth'
 import { loc } from './loc'
@@ -30,26 +30,27 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
   initThemingSettings(options)
   await initChatServerAdvancedSettings(options)
 
-  await ExternalAuthOIDC.initSingletons(options)
-  const loadOidcs = (): void => {
-    const oidcs = ExternalAuthOIDC.allSingletons()
-    for (const oidc of oidcs) {
+  await ExternalAuth.initSingletons(options)
+  const loadAuths = (): void => {
+    const auths = ExternalAuth.allSingletons()
+    for (const auth of auths) {
       try {
-        const type = oidc.type
-        oidc.isOk().then(
+        const type = auth.type
+        const provider = auth.provider
+        auth.isOk().then(
           () => {
-            logger.info(`Loading External Auth OIDC ${type}...`)
-            oidc.load().then(
+            logger.info(`Loading External Auth '${type}' '${provider}'...`)
+            auth.load().then(
               () => {
-                logger.info(`External Auth OIDC ${type} loaded`)
+                logger.info(`External Auth '${type}' '${provider}' loaded`)
               },
               () => {
-                logger.error(`Loading the External Auth OIDC ${type} failed`)
+                logger.error(`Loading the External Auth '${type}' '${provider}' failed`)
               }
             )
           },
           () => {
-            logger.info(`No valid External Auth OIDC ${type}, nothing loaded`)
+            logger.info(`No valid External Auth '${type}' '${provider}', nothing loaded`)
           }
         )
       } catch (err) {
@@ -58,7 +59,7 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
       }
     }
   }
-  loadOidcs() // we don't have to wait (can take time, it will do external http requests)
+  loadAuths() // we don't have to wait (can take time, it will do external http requests)
 
   let currentProsodyRoomtype = (await settingsManager.getSettings(['prosody-room-type']))['prosody-room-type']
 
@@ -68,9 +69,9 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
     // To avoid race condition, we will just stop and start the bots at every settings saving.
     await BotsCtl.destroySingleton()
     await BotsCtl.initSingleton(options)
-    loadOidcs() // we don't have to wait (can take time, it will do external http requests)
+    loadAuths() // we don't have to wait (can take time, it will do external http requests)
 
-    await ExternalAuthOIDC.initSingletons(options)
+    await ExternalAuth.initSingletons(options)
 
     // recreating a Emojis singleton
     await Emojis.destroySingleton()
@@ -229,123 +230,74 @@ function initAuth (options: RegisterServerOptions): void {
  */
 function initExternalAuth (options: RegisterServerOptions): void {
   const registerSetting = options.registerSetting
-
-  registerSetting({
-    type: 'html',
-    private: true,
-    descriptionHTML: loc('external_auth_description')
-  })
-
-  registerSetting({
-    type: 'html',
-    private: true,
-    descriptionHTML: loc('external_auth_custom_oidc_title')
-  })
-
-  registerSetting({
-    type: 'html',
-    private: true,
-    descriptionHTML: loc('experimental_warning')
-  })
-
-  registerSetting({
-    name: 'external-auth-custom-oidc',
-    label: loc('external_auth_custom_oidc_label'),
-    descriptionHTML: loc('external_auth_custom_oidc_description'),
-    type: 'input-checkbox',
-    default: false,
-    private: true
-  })
-
-  registerSetting({
-    type: 'html',
-    name: 'external-auth-custom-oidc-redirect-uris-info',
-    private: true,
-    descriptionHTML: loc('external_auth_oidc_redirect_uris_info_description')
-  })
-  registerSetting({
-    type: 'html',
-    name: 'external-auth-custom-oidc-redirect-uris',
-    private: true,
-    descriptionHTML: `<ul><li>${escapeHTML(ExternalAuthOIDC.redirectUrl(options, 'custom')) as string}</li></ul>`
-  })
-
-  registerSetting({
-    name: 'external-auth-custom-oidc-button-label',
-    label: loc('external_auth_custom_oidc_button_label_label'),
-    descriptionHTML: loc('external_auth_custom_oidc_button_label_description'),
-    type: 'input',
-    default: '',
-    private: true
-  })
-  registerSetting({
-    name: 'external-auth-custom-oidc-discovery-url',
-    label: loc('external_auth_custom_oidc_discovery_url_label'),
-    // descriptionHTML: loc('external_auth_custom_oidc_discovery_url_description'),
-    type: 'input',
-    private: true
-  })
-  registerSetting({
-    name: 'external-auth-custom-oidc-client-id',
-    label: loc('external_auth_oidc_client_id_label'),
-    // descriptionHTML: loc('external_auth_oidc_client_id_description'),
-    type: 'input',
-    private: true
-  })
-  registerSetting({
-    name: 'external-auth-custom-oidc-client-secret',
-    label: loc('external_auth_oidc_client_secret_label'),
-    // descriptionHTML: loc('external_auth_oidc_client_secret_description'),
-    type: 'input-password',
-    private: true
-  })
-
   // FIXME: adding settings for these?
   // - scope (default: 'openid profile')
   // - user-name property
   // - display-name property
   // - picture property
 
+  const externalAuthNamePrefix = 'external-auth'
+  const externalAuthLabelPrefix = 'external_auth'
+
   // Standard providers....
-  for (const provider of ['google', 'facebook']) {
+  for (const [type, provider] of [['oidc', 'custom'], ['oidc', 'google'], ['oidc', 'facebook'], ['oauth', 'custom']]) {
     let redirectUrl
     try {
-      redirectUrl = ExternalAuthOIDC.redirectUrl(options, provider as ExternalAuthOIDCType)
+      redirectUrl = ExternalAuth.redirectUrl(options, type as ExternalAuthType, provider as ExternalAuthProvider)
     } catch (err) {
       options.peertubeHelpers.logger.error('Cant load redirect url for provider ' + provider)
       options.peertubeHelpers.logger.error(err)
       continue
     }
     registerSetting({
-      name: 'external-auth-' + provider + '-oidc',
-      label: loc('external_auth_' + provider + '_oidc_label'),
-      descriptionHTML: loc('external_auth_' + provider + '_oidc_description'),
+      name: `${externalAuthNamePrefix}-${provider}-${type}`,
+      label: loc(`${externalAuthLabelPrefix}_${provider}_${type}_label`),
+      descriptionHTML: loc(`external_auth_${provider}_${type}_description`),
       type: 'input-checkbox',
       default: false,
       private: true
     })
     registerSetting({
       type: 'html',
-      name: 'external-auth-' + provider + '-oidc-redirect-uris-info',
+      name: `${externalAuthNamePrefix}-${provider}-${type}-redirect-uris-info`,
       private: true,
       descriptionHTML: loc('external_auth_oidc_redirect_uris_info_description')
     })
     registerSetting({
       type: 'html',
-      name: 'external-auth-' + provider + '-oidc-redirect-uris',
+      name: `${externalAuthNamePrefix}-${provider}-${type}-redirect-uris`,
       private: true,
       descriptionHTML: `<ul><li>${escapeHTML(redirectUrl) as string}</li></ul>`
     })
+
+    if (type === 'custom') {
+      registerSetting({
+        name: `${externalAuthNamePrefix}-${provider}-${type}-button-label`,
+        label: loc(`${externalAuthLabelPrefix}_${provider}_${type}_button_label_label`),
+        descriptionHTML: loc('external_auth_custom_oidc_button_label_description'),
+        type: 'input',
+        default: '',
+        private: true
+      })
+      registerSetting({
+        name: `${externalAuthNamePrefix}-${provider}-${type}-discovery-url`,
+        label: loc(`${externalAuthLabelPrefix}_${provider}_${type}_discovery_url_label`),
+        // descriptionHTML: loc('external_auth_custom_oidc_discovery_url_description'),
+        type: 'input',
+        private: true
+      })
+    }
+
     registerSetting({
-      name: 'external-auth-' + provider + '-oidc-client-id',
-      label: loc('external_auth_oidc_client_id_label'),
+      name: `${externalAuthNamePrefix}-${provider}-${type}-client-id`,
+      label: loc(`${externalAuthLabelPrefix}_${type}_client_id_label`),
       // descriptionHTML: loc('external_auth_' + provider + '_oidc_client_id_description'),
       type: 'input',
       private: true
     })
     registerSetting({
-      name: 'external-auth-' + provider + '-oidc-client-secret',
-      label: loc('external_auth_oidc_client_secret_label'),
+      name: `${externalAuthNamePrefix}-${provider}-${type}-client-secret`,
+      label: loc(`${externalAuthLabelPrefix}_${type}_client_secret_label`),
       // descriptionHTML: loc('external_auth_' + provider + '_oidc_client_secret_description'),
       type: 'input-password',
       private: true

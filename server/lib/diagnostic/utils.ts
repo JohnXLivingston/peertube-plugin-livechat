@@ -4,6 +4,7 @@
 
 type NextValue = 'backend' | 'debug' | 'webchat-video' | 'prosody'
   | 'external-auth-custom-oidc' | 'external-auth-google-oidc' | 'external-auth-facebook-oidc'
+  | 'external-auth-custom-oauth'
   | 'everything-ok'
 
 interface MessageWithLevel {

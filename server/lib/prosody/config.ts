@@ -17,7 +17,7 @@ import { parseExternalComponents } from './config/components'
 import { getRemoteServerInfosDir } from '../federation/storage'
 import { BotConfiguration } from '../configuration/bot'
 import { debugMucAdmins } from '../debug'
-import { ExternalAuthOIDC } from '../external-auth/oidc'
+import { ExternalAuth } from '../external-auth'
 import { listModFirewallFiles } from '../firewall/config'
 import { Emojis } from '../emojis'
 
@@ -219,10 +219,10 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
 
   let useExternal = false
   try {
-    const oidcs = ExternalAuthOIDC.allSingletons()
-    for (const oidc of oidcs) {
-      if (await oidc.isOk()) {
-        // At least one external authentcation => we must enable the external virtual host.
+    const auths = ExternalAuth.allSingletons()
+    for (const auth of auths) {
+      if (await auth.isOk()) {
+        // At least one external authentication => we must enable the external virtual host.
         useExternal = true
         break
       }

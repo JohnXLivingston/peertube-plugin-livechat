@@ -6,12 +6,12 @@ import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Router, Request, Response, NextFunction } from 'express'
 import type { ExternalAuthResult } from '../../../shared/lib/types'
 import { asyncMiddleware } from '../middlewares/async'
-import { ExternalAuthOIDC } from '../external-auth/oidc'
+import { ExternalAuth } from '../external-auth'
 import { ExternalAuthenticationError } from '../external-auth/error'
 import { ensureUser } from '../prosody/api/manage-users'
 
 /**
- * When using a popup for OIDC, writes the HTML/Javascript to close the popup
+ * When using a popup for external auth, writes the HTML/Javascript to close the popup
  * and send the result to the parent window.
  * @param result the result to send to the parent window
  */
@@ -32,29 +32,30 @@ function popupResultHTML (result: ExternalAuthResult): string {
         }
       </script>
     </body>
-  </html> `
+  </html>`
 }
 
-async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> {
+async function initAuthRouter (options: RegisterServerOptions): Promise<Router> {
   const { peertubeHelpers, getRouter } = options
   const router = getRouter()
   const logger = peertubeHelpers.logger
 
-  router.get('/:type?/connect', asyncMiddleware(
+  router.get('/:type/:provider?/connect', asyncMiddleware(
     async (req: Request, res: Response, next: NextFunction) => {
-      const singletonType = req.params.type ?? 'custom'
-      logger.info('[oidc router] OIDC connect call (' + singletonType + ')')
+      const type = req.params.type
+      const provider = req.params.provider ?? 'custom'
+      logger.info(`[auth router] external auth connect call (${type}, ${provider})`)
       try {
-        const oidc = ExternalAuthOIDC.singleton(singletonType)
-        const oidcClient = await oidc.load()
-        if (!oidcClient) {
-          throw new Error('[oidc router] External Auth OIDC not loaded yet')
+        const auth = ExternalAuth.singleton(type, provider)
+        const authClient = await auth.load()
+        if (!authClient) {
+          throw new Error('[auth router] External Auth not loaded yet')
         }
 
-        const redirectUrl = await oidc.initAuthenticationProcess(req, res)
+        const redirectUrl = await auth.initAuthenticationProcess(req, res)
         res.redirect(redirectUrl)
       } catch (err) {
-        logger.error('[oidc router] Failed to process the OIDC connect call: ' + (err as string))
+        logger.error('[auth router] Failed to process the external auth connect call: ' + (err as string))
         next()
       }
     }
@@ -62,16 +63,17 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
 
   const cbHandler = asyncMiddleware(
     async (req: Request, res: Response, _next: NextFunction) => {
-      const singletonType = req.params.type ?? 'custom'
-      logger.info('[oidc router] OIDC callback call (' + singletonType + ')')
+      const type = req.params.type
+      const provider = req.params.provider ?? 'custom'
+      logger.info(`[auth router] external auth callback call (${type}, ${provider})`)
       try {
-        const oidc = ExternalAuthOIDC.singleton(singletonType)
-        const oidcClient = await oidc.load()
-        if (!oidcClient) {
-          throw new Error('[oidc router] External Auth OIDC not loaded yet')
+        const auth = ExternalAuth.singleton(type, provider)
+        const authClient = await auth.load()
+        if (!authClient) {
+          throw new Error('[auth router] External Auth not loaded yet')
         }
 
-        const externalAccountInfos = await oidc.validateAuthenticationProcess(req)
+        const externalAccountInfos = await auth.validateAuthenticationProcess(req)
         logger.debug('external account infos: ' + JSON.stringify(
           Object.assign(
             {},
@@ -98,7 +100,7 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
           token: externalAccountInfos.token
         }))
       } catch (err) {
-        logger.error('[oidc router] Failed to process the OIDC callback: ' + (err as string))
+        logger.error('[auth router] Failed to process the external auth callback: ' + (err as string))
         const message = err instanceof ExternalAuthenticationError ? err.message : undefined
         res.status(500)
         res.send(popupResultHTML({
@@ -108,12 +110,12 @@ async function initOIDCRouter (options: RegisterServerOptions): Promise<Router> 
       }
     }
   )
-  router.get('/:type?/cb', cbHandler)
-  router.post('/:type?/cb', cbHandler)
+  router.get('/:type/:provider?/cb', cbHandler)
+  router.post('/:type/:provider?/cb', cbHandler)
 
   return router
 }
 
 export {
-  initOIDCRouter
+  initAuthRouter
 }

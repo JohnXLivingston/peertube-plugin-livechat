@@ -8,7 +8,7 @@ import { TestResult, newResult } from './utils'
 import { diagDebug } from './debug'
 import { diagProsody } from './prosody'
 import { diagVideo } from './video'
-import { diagExternalAuthOIDC } from './external-auth-oidc'
+import { diagExternalAuth } from './external-auth'
 import { helpUrl } from '../../../shared/lib/help'
 
 export async function diag (test: string, options: RegisterServerOptions): Promise<TestResult> {
@@ -23,11 +23,13 @@ export async function diag (test: string, options: RegisterServerOptions): Promi
   } else if (test === 'prosody') {
     result = await diagProsody(test, options)
   } else if (test === 'external-auth-custom-oidc') {
-    result = await diagExternalAuthOIDC(test, options, 'custom', 'external-auth-google-oidc')
+    result = await diagExternalAuth(test, options, 'oidc', 'custom', 'external-auth-custom-oidc')
   } else if (test === 'external-auth-google-oidc') {
-    result = await diagExternalAuthOIDC(test, options, 'google', 'external-auth-facebook-oidc')
+    result = await diagExternalAuth(test, options, 'oidc', 'google', 'external-auth-google-oidc')
   } else if (test === 'external-auth-facebook-oidc') {
-    result = await diagExternalAuthOIDC(test, options, 'facebook', 'everything-ok')
+    result = await diagExternalAuth(test, options, 'oidc', 'facebook', 'external-auth-facebook-oidc')
+  } else if (test === 'external-auth-custom-oauth') {
+    result = await diagExternalAuth(test, options, 'oauth', 'custom', 'external-auth-custom-oauth')
   } else if (test === 'everything-ok') {
     result = newResult(test)
     result.label = 'Everything seems fine'
