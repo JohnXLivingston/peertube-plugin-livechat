@@ -136,8 +136,8 @@ async function initConverse (
   let isAuthenticatedWithExternalAccount = false
   let isRemoteWithNicknameSet = false
 
-  // OIDC (OpenID Connect):
-  const tryOIDC = (initConverseParams.externalAuthOIDC?.length ?? 0) > 0
+  // External Auth like OIDC (OpenID Connect) or OAuth:
+  const tryExternalAuth = (initConverseParams.externalAuth?.length ?? 0) > 0
 
   let auth
   let usedLivechatToken = false
@@ -146,7 +146,7 @@ async function initConverse (
     auth = getLivechatTokenAuthInfos()
     if (auth) { usedLivechatToken = true }
   }
-  auth ??= await getLocalAuthentInfos(authenticationUrl, tryOIDC, peertubeAuthHeader)
+  auth ??= await getLocalAuthentInfos(authenticationUrl, tryExternalAuth, peertubeAuthHeader)
 
   if (auth) {
     if (!isRemoteChat) {
@@ -206,11 +206,11 @@ async function initConverse (
   params.livechat_specific_external_authent = isAuthenticatedWithExternalAccount
   params.livechat_specific_is_anonymous = !isAuthenticated
 
-  if (tryOIDC && !isAuthenticated) {
-    params.livechat_external_auth_oidc_buttons = initConverseParams.externalAuthOIDC
+  if (tryExternalAuth && !isAuthenticated) {
+    params.livechat_external_auth_buttons = initConverseParams.externalAuth
   }
 
-  if (tryOIDC) { // also needed when authenticated (for the signout button)
+  if (tryExternalAuth) { // also needed when authenticated (for the signout button)
     switch (chatIncludeMode) {
       case 'peertube-video':
         params.livechat_external_auth_reconnect_mode = 'button-close-open'

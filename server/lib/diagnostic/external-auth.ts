@@ -4,39 +4,40 @@
 
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import { newResult, TestResult } from './utils'
-import { ExternalAuthOIDC, ExternalAuthOIDCType } from '../external-auth/oidc'
+import { ExternalAuth, ExternalAuthType, ExternalAuthProvider } from '../external-auth'
 
-export async function diagExternalAuthOIDC (
+export async function diagExternalAuth (
   test: string,
   _options: RegisterServerOptions,
-  singletonType: ExternalAuthOIDCType,
+  type: ExternalAuthType,
+  provider: ExternalAuthProvider,
   next: TestResult['next']
 ): Promise<TestResult> {
   const result = newResult(test)
-  result.label = 'Test External Auth OIDC: ' + singletonType
+  result.label = 'Test External Auth : ' + provider
   result.next = next
 
   try {
-    const oidc = ExternalAuthOIDC.singleton(singletonType)
+    const auth = ExternalAuth.singleton(type, provider)
 
-    if (oidc.isDisabledBySettings()) {
+    if (auth.isDisabledBySettings()) {
       result.ok = true
       result.messages.push('Feature disabled in plugins settings.')
       return result
     }
 
-    result.messages.push('Discovery URL: ' + (oidc.getDiscoveryUrl() ?? 'undefined'))
+    result.messages.push('Discovery URL: ' + (auth.getDiscoveryUrl() ?? 'undefined'))
 
-    const oidcErrors = await oidc.check()
-    if (oidcErrors.length) {
+    const authErrors = await auth.check()
+    if (authErrors.length) {
       result.messages.push({
         level: 'error',
-        message: 'The ExternalAuthOIDC singleton got some errors:'
+        message: 'The ExternalAuth singleton got some errors:'
       })
-      for (const oidcError of oidcErrors) {
+      for (const authError of authErrors) {
         result.messages.push({
           level: 'error',
-          message: oidcError
+          message: authError
         })
       }
       return result
@@ -44,15 +45,15 @@ export async function diagExternalAuthOIDC (
   } catch (err) {
     result.messages.push({
       level: 'error',
-      message: 'Error while retrieving the ExternalAuthOIDC singleton:' + (err as string)
+      message: 'Error while retrieving the ExternalAuth singleton:' + (err as string)
     })
     return result
   }
 
-  const oidc = ExternalAuthOIDC.singleton(singletonType)
-  const oidcClient = await oidc.load()
-  if (oidcClient) {
-    result.messages.push('Discovery URL loaded: ' + JSON.stringify(oidcClient.issuer.metadata))
+  const auth = ExternalAuth.singleton(type, provider)
+  const authClient = await auth.load()
+  if (authClient) {
+    result.messages.push('Discovery URL loaded: ' + JSON.stringify(authClient.issuer.metadata))
   } else {
     result.messages.push({
       level: 'error',

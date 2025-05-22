@@ -42,7 +42,7 @@ export function initReconnectionStuff (plugin: any): void {
     for (const k of [
       'hide_muc_participants',
       'livechat_enable_viewer_mode',
-      'livechat_external_auth_oidc_buttons',
+      'livechat_external_auth_buttons',
       'livechat_external_auth_reconnect_mode',
       'livechat_mini_muc_head',
       'livechat_specific_external_authent',
