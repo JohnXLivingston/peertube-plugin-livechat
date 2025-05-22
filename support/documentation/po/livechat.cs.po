@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-05-22 17:48+0000\n"
-"Last-Translator: Fjuro <git@alius.cz>\n"
+"PO-Revision-Date: 2025-05-22 22:47+0000\n"
+"Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
@@ -2719,7 +2719,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Theming"
-msgstr ""
+msgstr "Vytváření témat"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2732,11 +2732,17 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_sepia %}}: "
+"[David Revoy's Peertube avatar generator](https://www.peppercarrot.com/"
+"extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/"
+"licenses/by/4.0/) licence"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Sepia avatar example](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 msgstr ""
+"![Příklad sepia avatar](/peertube-plugin-livechat/images/"
+"avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
