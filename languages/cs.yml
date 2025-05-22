@@ -109,10 +109,10 @@ per_live_video_warning_description: "<span class=\"peertube-plugin-livechat-warn
   >\n Povolili jste nastavení «Uživatelé mohou aktivovat chat pro svůj živé přenosy».\n
   S nastavením «Aktivovat chat pro všechny živé přenosy» je redundantní.\n</span>\n"
 all_non_lives_label: Aktivace chatu pro všechny neživé přenosy
-videos_list_description: "Videa UUID, pro která chceme webový chat.\nMohou to být
-  neživá videa. Jeden na řádek. <br />\nMůžete přidávat komentáře: vše za znakem #
-  bude odstraněno a prázdné řádky budou ignorovány.<br />\nNepřidávejte soukromá videa,
-  UUID budou odeslána do frontendu.\n"
+videos_list_description: "UUID videí, pro která chceme webový chat (krátká UUID nebo
+  UUIDv4).\nMohou to být videa, která nejsou živě. Jedno na řádek. <br />\nMůžete
+  přidávat komentáře: vše za znakem # bude odstraněno a prázdné řádky budou ignorovány.<br
+  />\nNepřidávejte soukromá videa, UUID budou odeslána do frontendu.\n"
 avatar_set_label: Sada Avatarů
 avatar_set_description: "Můžete si vybrat z několika různých sad výchozích avatarů,
   které budou použity pro uživatele chatu.\nPodívejte se prosím na dokumentaci:\n
@@ -547,3 +547,8 @@ announcements_message_type_warning: Upozornění
 poll_anonymous_results: Anonymní výsledky
 poll_choice_n: 'Možnost {{N}}:'
 poll_end: 'Anketa končí v:'
+converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n  Je silně doporučeno ponechat „motiv PeerTube“ v kombinaci s funkcí„Automatická
+  detekce barvy“.\n  V opačném případě mohou někteří uživatelé zaznamenat problémy
+  v závislosti na tom, jaký motiv PeerTube používají.\n</span>\n"
+back_to_last_msg: Přejít zpět na poslední zprávu
