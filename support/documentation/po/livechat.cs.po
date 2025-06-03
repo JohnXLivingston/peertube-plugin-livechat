@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2024-09-12 12:53+0200\n"
-"PO-Revision-Date: 2025-05-22 22:47+0000\n"
+"PO-Revision-Date: 2025-06-03 22:35+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -2898,11 +2898,16 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.  It is not compatible with other CPU architectures."
 msgstr ""
+"Aplikace Prosody AppImage obsažená v pluginu bude fungovat pouze na "
+"procesorech x86_64 a arm64.  Není kompatibilní s jinými architekturami "
+"procesorů."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "To use the plugin, you will have to manually install Prosody on your server (see below)."
 msgstr ""
+"Chcete-li plugin používat, budete muset ručně nainstalovat Prosody na svůj "
+"server (viz níže)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -3033,137 +3038,180 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Some classic mistakes and workarounds."
-msgstr ""
+msgstr "Některé klasické chyby a jejich řešení."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "I just installed/upgraded the plugin, but nothing happens"
-msgstr ""
+msgstr "Právě jsem nainstaloval/aktualizoval plugin, ale nic se neděje"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, ...), just try to reload the page."
 msgstr ""
+"Pokud jste právě nainstalovali/aktualizovali plugin, ale nic se neděje ("
+"žádný chat, žádná nastavení, tlačítka na stránce nastavení nefungují, ...), "
+"zkuste stránku znovu načíst."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Diagnostic tool"
-msgstr ""
+msgstr "Diagnostický nástroj"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If the chat does not work, there is a diagnostic tool in the plugin's settings pages."
 msgstr ""
+"Pokud chat nefunguje, v nastavení pluginu je k dispozici diagnostický "
+"nástroj."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Open the plugin settings, and click on the \"launch diagnostic\" button."
 msgstr ""
+"Otevřete nastavení pluginu a klikněte na tlačítko „spustit diagnostiku“."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "![Screenshot of the plugin's settings page, with a \"launch diagnostic\" button.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px \"Launch diagnostic\")"
 msgstr ""
+"![Screenshot stránky nastavení pluginu s tlačítkem „spustit diagnostiku“.]"
+"(/peertube-plugin-livechat/images/"
+"launch_diagnostic.png?classes=shadow,border&height=200px „Spustit "
+"diagnostiku“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the [Bug tracking documentation page](/peertube-plugin-livechat/issues/) if you can't find any response."
 msgstr ""
+"Pokud se na diagnostické stránce vyskytne chyba, můžete na této stránce "
+"vyhledat řešení nebo se podívat na [stránku dokumentace pro sledování chyb]"
+"(/peertube-plugin-livechat/issues/), pokud nenajdete žádnou odpověď."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "![Screenshot of the diagnostic result page. This gives a lot of information, with status for different test suites.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px \"Diagnostic result\")"
 msgstr ""
+"![Screenshot stránky s diagnostickými výsledky. Obsahuje mnoho informací, "
+"včetně stavu různých testovacích sad.](/peertube-plugin-livechat/images/"
+"diagnostic.png?classes=shadow,border&height=200px „Diagnostické výsledky“)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Chat does not load"
-msgstr ""
+msgstr "Chat se nenačítá"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Internal API calls"
-msgstr ""
+msgstr "Interní volání API"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "In some case (like for some Docker Peertube installation), the diagnostic tools displays an error for the test called \"API Prosody -> Peertube is KO\".\n"
 msgstr ""
+"V některých případech (například u některých instalací Docker Peertube) "
+"diagnostické nástroje zobrazují chybu u testu s názvem „API Prosody -> "
+"Peertube is KO“.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
 msgstr ""
+"V takovém případě zkuste změnit nastavení „{{% livechat_label "
+"prosody_peertube_uri_label %}}“ nastavením `http://127.0.0.1:9000` (za "
+"předpokladu, že 9000 je port, na kterém Peertube naslouchá; pokud to nevíte, "
+"zeptejte se správců vaší instance)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgstr ""
+"Další informace najdete v nápovědě k [tomuto nastavení](/peertube-"
+"plugin-livechat/documentation/admin/settings/)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Websocket"
-msgstr ""
+msgstr "Websocket"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue.  Since Peertube version 5.0.0, there are some additional configuration to do on the server side.  Check with the instance administrators that they did not forgot to apply changes listed in the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."
 msgstr ""
+"Pokud je vše v diagnostických nástrojích v pořádku, ale okna chatu zůstávají "
+"prázdná, může se jednat o problém s Websocketem.  Od verze Peertube 5.0.0 je "
+"třeba provést některé další konfigurace na straně serveru. Ověřte u správců "
+"instance, zda nezapomněli provést změny uvedené v "
+"[poznámkách k vydání Peertube v5.0.0](https://github.com/Chocobozzz/PeerTube/"
+"blob/master/CHANGELOG.md#v500)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection."
 msgstr ""
+"Můžete potvrdit, že se jedná o problém s Websocketem, otevřením konzole "
+"prohlížeče a zkontrolováním chybových protokolů, které hovoří o selhání "
+"připojení Websocketu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If you can't fix this immediatly, you can disable Websocket by unchecking \"{{% livechat_label disable_websocket_label %}}\" in the plugin setting page.  In such case, you should also check \"{{% livechat_label federation_dont_publish_remotely_label %}}\", as chat federation won't work without Websocket."
 msgstr ""
+"Pokud tento problém nemůžete okamžitě vyřešit, můžete Websocket deaktivovat "
+"odškrtnutím políčka „{{% livechat_label disable_websocket_label %}}“ na "
+"stránce nastavení pluginu.  V takovém případě byste měli zaškrtnout také "
+"políčko „{{% livechat_label federation_dont_publish_remotely_label %}}“, "
+"protože bez Websocketu nebude fungovat federace chatů."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "Important notes when upgrading for an older version."
-msgstr ""
+msgstr "Důležité poznámky při aktualizaci starší verze."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "Upgrade from version older than 6.0.0"
-msgstr ""
+msgstr "Aktualizace z verze starší než 6.0.0"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 #, no-wrap
 msgid "IMPORTANT NOTE"
-msgstr ""
+msgstr "DŮLEŽITÁ POZNÁMKA"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 msgid "Since version v6.0.0, this plugin does not need any Prosody installation."
-msgstr ""
+msgstr "Od verze v6.0.0 tento plugin nevyžaduje žádnou instalaci Prosody."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 msgid "If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody."
 msgstr ""
+"Pokud jste tento plugin používali před touto verzí a pokud jste Prosody "
+"nainstalovali ručně, můžete Prosody bezpečně odinstalovat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 msgid "If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image."
 msgstr ""
+"Pokud jste používali vlastní obraz Peertube docker, který obsahuje Prosody, "
+"můžete se vrátit k oficiálnímu obrazu Peertube."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/_index.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat user documentation"
-msgstr ""
+msgstr "Dokumentace pro uživatele pluginu peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/_index.md
@@ -3223,29 +3271,40 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Check the \"{{% livechat_label read_only %}}\" checkbox in the modal."
-msgstr ""
+msgstr "Zaškrtněte políčko „{{% livechat_label read_only %}}“ v modálním okně."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, where the \"{{% livechat_label read_only %}}\" option is checked.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px \"Share link popup\")"
 msgstr ""
+"![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“, kde "
+"je zaškrtnuta možnost „{{% livechat_label read_only %}}“.](/peertube-"
+"plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px "
+"„Vyskakovací okno pro sdílení odkazu“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Then use this link as a \"web browser source\" in OBS."
-msgstr ""
+msgstr "Poté použijte tento odkaz jako „zdroj webového prohlížeče“ v OBS."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of the OBS software, where the chat was added as web browser source.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px \"Embeding the chat in OBS\")"
 msgstr ""
+"![Screenshot softwaru OBS, kde byl chat přidán jako zdroj webového prohlížeče"
+".](/peertube-plugin-livechat/images/"
+"embed_chat_in_obs.png?classes=shadow,border&height=200px „Vložení chatu do "
+"OBS“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "You can use the \"{{% livechat_label transparent_background %}}\" option to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
 msgstr ""
+"Můžete použít možnost „{{% livechat_label transparent_background %}}“, "
+"abyste v OBS měli průhledné pozadí.  Pokud chcete přizpůsobit průhlednost "
+"pozadí, můžete do nastavení zdroje prohlížeče OBS přidat tento CSS kód:"
 
 #. type: Fenced code block (css)
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3422,7 +3481,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Some basics"
-msgstr ""
+msgstr "Některé základní informace"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
