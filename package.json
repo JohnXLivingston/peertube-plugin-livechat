@@ -36,7 +36,7 @@
     "openid-client": "^5.7.1",
     "short-uuid": "^5.2.0",
     "validate-color": "^2.2.4",
-    "xmppjs-chat-bot": "^0.5.0"
+    "xmppjs-chat-bot": "^0.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",
@@ -73,7 +73,7 @@
     "stylelint-config-standard-scss": "^14.0.0",
     "svgo": "^3.3.2",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.33.0",
+    "typescript-eslint": "^8.33.1",
     "yaml": "^2.8.0"
   },
   "engine": {
