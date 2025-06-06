@@ -16,8 +16,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
   const tableHeaderList: Record<string, DynamicFormHeader> = {
     forbiddenWords: {
       entries: {
-        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL),
-        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC2)
+        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)
       },
       regexp: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_LABEL),

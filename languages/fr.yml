@@ -312,9 +312,6 @@ livechat_configuration_channel_desc: Vous pouvez configurer ici quelques options
 livechat_configuration_channel_enable_bot_label: Activer le bot de modération
 livechat_configuration_channel_bot_options_title: Options du bot de modération
 livechat_configuration_channel_forbidden_words_label: Mots ou expressions interdites
-livechat_configuration_channel_forbidden_words_desc2: "Un mot ou une expression par
-  ligne. Si vous mettez plusieurs mots sur une même ligne, seuls les messages contenant
-  la séquence entière seront supprimés.\n"
 livechat_configuration_channel_retractation_reason_label: Raison
 livechat_configuration_channel_retractation_reason_desc: Raison à affiche à côté des
   messages supprimés

@@ -387,9 +387,6 @@ livechat_configuration_channel_slow_mode_desc: "Mode lent predeterminat:\n<ul>\n
   \  <li>0: mode lent desactivat</li>\n   <li>Qualsevol nombre enter positiu: els
   usuaris poden enviar un missatge cada X segons (els moderadors no estan limitats)</li>\n\
   </ul>\n"
-livechat_configuration_channel_forbidden_words_desc2: "Una paraula o expressió per
-  línia. Si poseu diverses paraules a la mateixa línia, només s'eliminaran els missatges
-  que continguin tota la seqüència.\n"
 livechat_configuration_channel_forbidden_words_desc: "Podeu configurar algunes paraules
   que seran moderades automàticament pel bot (les publicacions que continguin aquestes
   paraules s'eliminaran a l'instant).\nTambé podeu afegir un motiu opcional, que es

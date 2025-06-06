@@ -258,9 +258,6 @@ livechat_configuration_channel_title: Opciones de canal
 livechat_configuration_channel_enable_bot_label: Habilitar el bot de moderación
 livechat_configuration_channel_bot_options_title: Opciones del bot de moderación
 livechat_configuration_channel_forbidden_words_label: Palabras o expresiones prohibidas
-livechat_configuration_channel_forbidden_words_desc2: "Una palabra o expresión por
-  línea. Si pones varias palabras en una línea, solo coincidirá con los mensajes que
-  contengan la secuencia completa.\n"
 livechat_configuration_channel_retractation_reason_label: Motivo
 livechat_configuration_channel_retractation_reason_desc: Motivo para mostrar además
   de eliminar los mensajes

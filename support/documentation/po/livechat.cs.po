@@ -6,11 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-09-12 12:53+0200\n"
+"POT-Creation-Date: 2025-06-06 17:07+0200\n"
 "PO-Revision-Date: 2025-06-03 22:35+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
-"Language-Team: Czech <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
+"Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,19 +32,12 @@ msgstr "Kontaktujte mě"
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
-msgstr ""
-"Máte-li jakékoli dotazy nebo chcete-li si o tomto zásuvném modulu promluvit, "
-"můžete se připojit k této místnosti XMPP pomocí libovolného klienta Jabber: "
-"[plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room."
-"im.yiny.org?join)."
+msgstr "Máte-li jakékoli dotazy nebo chcete-li si o tomto zásuvném modulu promluvit, můžete se připojit k této místnosti XMPP pomocí libovolného klienta Jabber: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
-msgstr ""
-"Pokud chcete projekt finančně podpořit, můžete mě kontaktovat na e-mailové "
-"adrese git.[at].john-livingston.fr nebo se podívejte na můj [Liberapay "
-"profil](https://liberapay.com/JohnLivingston/)."
+msgstr "Pokud chcete projekt finančně podpořit, můžete mě kontaktovat na e-mailové adrese git.[at].john-livingston.fr nebo se podívejte na můj [Liberapay profil](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -62,16 +54,7 @@ msgstr "Kodex chování"
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
-msgstr ""
-"Tento kodex chování je převzat z dokumentu [Contributor Covenant](https://www"
-".contributor-covenant.org), verze 2.1, který je k dispozici na adrese "
-"[https://www.contributor-covenant.org/version/2/1/code_of_conduct."
-"html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html)"
-". Překlady jsou k dispozici na adrese [https://www.contributor-covenant.org/"
-"translations](https://www.contributor-covenant.org/translations). Případy "
-"urážlivého, obtěžujícího nebo jinak nepřijatelného chování lze hlásit "
-"vedoucím komunity odpovědným za jejich prosazování na e-mailovou adresu "
-"git.[at].john-livingston.fr."
+msgstr "Tento kodex chování je převzat z dokumentu [Contributor Covenant](https://www.contributor-covenant.org), verze 2.1, který je k dispozici na adrese [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html). Překlady jsou k dispozici na adrese [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations). Případy urážlivého, obtěžujícího nebo jinak nepřijatelného chování lze hlásit vedoucím komunity odpovědným za jejich prosazování na e-mailovou adresu git.[at].john-livingston.fr."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -82,11 +65,7 @@ msgstr "Vývoj"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue."
-msgstr ""
-"Vždy mluvte o funkcích, které chcete vyvinout, tím, že vytvoříte/najdete a "
-"okomentujete problém, který řeší váš problém, než na něm začnete pracovat, a "
-"informujte komunitu o tom, že začínáte kódovat tím, že problém prohlásíte za "
-"problém."
+msgstr "Vždy mluvte o funkcích, které chcete vyvinout, tím, že vytvoříte/najdete a okomentujete problém, který řeší váš problém, než na něm začnete pracovat, a informujte komunitu o tom, že začínáte kódovat tím, že problém prohlásíte za problém."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -96,9 +75,7 @@ msgstr "Žádost o stažení musí být provedena na větvi `main`."
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated."
-msgstr ""
-"Do března 2023 byly příspěvky prováděny na větvi `develop`. Tento postup je "
-"nyní zastaralý."
+msgstr "Do března 2023 byly příspěvky prováděny na větvi `develop`. Tento postup je nyní zastaralý."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -174,12 +151,7 @@ msgstr "`reuse`"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
-msgstr ""
-"Upozorňujeme, že tento zásuvný modul potřebuje pro server Prosody XMPP "
-"obrázek aplikace. Tento AppImage poskytuje vedlejší projekt [Prosody "
-"AppImage](https://github.com/JohnXLivingston/prosody-appimage). Skript "
-"`build-prosody.sh` stáhne binární soubory připojené k tomuto vzdálenému "
-"úložišti a zkontroluje, zda je jejich hashsum sha256 správný."
+msgstr "Upozorňujeme, že tento zásuvný modul potřebuje pro server Prosody XMPP obrázek aplikace. Tento AppImage poskytuje vedlejší projekt [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage). Skript `build-prosody.sh` stáhne binární soubory připojené k tomuto vzdálenému úložišti a zkontroluje, zda je jejich hashsum sha256 správný."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -211,8 +183,7 @@ msgid ""
 "# Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)\n"
 msgstr ""
 "# Klonování úložiště. Nezapomeňte na --recursive pro klonování podmodulů.\n"
-"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --"
-"recursive\n"
+"git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive\n"
 "\n"
 "cd peertube-plugin-livechat\n"
 "\n"
@@ -223,48 +194,33 @@ msgstr ""
 "npm run build\n"
 "\n"
 "# Pokud máte fork z repozitáře, přidejte jej jako vzdálený (příklad):\n"
-"git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat."
-"git\n"
+"git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git\n"
 "\n"
 "# Vytvořte místní větev pro svůj vývoj a zkontrolujteji (příklad):\n"
-"git checkout my_development # Poznámka: pokud je přidružena nějaká "
-"záležitost, použijte jako název větve fix_1234 (kde 1234 je číslo issue).\n"
-"# Chcete-li navrhnout své úpravy, odešlete svou větev do úložiště (příklad):"
-"\n"
+"git checkout my_development # Poznámka: pokud je přidružena nějaká záležitost, použijte jako název větve fix_1234 (kde 1234 je číslo issue).\n"
+"# Chcete-li navrhnout své úpravy, odešlete svou větev do úložiště (příklad):\n"
 "git push --set-upstream me my_development\n"
-"# Poté přejděte do svého úložiště github pomocí webového prohlížeče a "
-"navrhněte žádost o stažení (viz další pokyny níže).\n"
+"# Poté přejděte do svého úložiště github pomocí webového prohlížeče a navrhněte žádost o stažení (viz další pokyny níže).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Once you are ready to show your code to ask for feedback, submit a *draft* Pull Request.  Once you are ready for a code review before merge, submit a Pull Request.  In any case, please link your PR to the issues it solves by using the GitHub syntax: \"fixes #issue_number\"."
-msgstr ""
-"Jakmile jste připraveni ukázat svůj kód a požádat o zpětnou vazbu, odešlete "
-"*návrh* žádosti o stažení.  Jakmile jste připraveni na kontrolu kódu před "
-"sloučením, odešlete žádost o stažení.  V každém případě prosíme o propojení "
-"vašeho PR s problémy, které řeší, pomocí syntaxe GitHubu: \"fixes #"
-"issue_number\"."
+msgstr "Jakmile jste připraveni ukázat svůj kód a požádat o zpětnou vazbu, odešlete *návrh* žádosti o stažení.  Jakmile jste připraveni na kontrolu kódu před sloučením, odešlete žádost o stažení.  V každém případě prosíme o propojení vašeho PR s problémy, které řeší, pomocí syntaxe GitHubu: \"fixes #issue_number\"."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The front-end code is in the `client` folder, the back-end code in `server`. There are some shared code in `shared` folder."
-msgstr ""
-"Kód front-endu je ve složce `client`, kód back-endu ve složce `server`. Ve "
-"složce `shared` je několik sdílených kódů."
+msgstr "Kód front-endu je ve složce `client`, kód back-endu ve složce `server`. Ve složce `shared` je několik sdílených kódů."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For general instructions (developping plugins, building, installation, ...), please refer to the [Peertube documentation](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
-msgstr ""
-"Obecné pokyny (vývoj zásuvných modulů, sestavení, instalace, ...) naleznete "
-"v dokumentaci [Peertube](https://docs.joinpeertube.org/contribute-"
-"plugins?id=write-a-plugintheme)."
+msgstr "Obecné pokyny (vývoj zásuvných modulů, sestavení, instalace, ...) naleznete v dokumentaci [Peertube](https://docs.joinpeertube.org/contribute-plugins?id=write-a-plugintheme)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "You can build the plugin with extra debug features simply by using:"
-msgstr ""
-"Zásuvný modul můžete sestavit s dalšími funkcemi ladění jednoduše pomocí:"
+msgstr "Zásuvný modul můžete sestavit s dalšími funkcemi ladění jednoduše pomocí:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -275,14 +231,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin is [REUSE](https://reuse.software/) compliant: it uses SPDX headers to identify licensing information of its source code.  More information on the [REUSE](https://reuse.software/) website.  You can use the [reuse](https://reuse.readthedocs.io/en/stable/readme.html#) command line tool to help you update headers.  The `npm run lint` command will use the `reuse` command to check compliance.  Don't forget to add your copyright information in SPDX headers when you modify some code."
-msgstr ""
-"Tento zásuvný modul je v souladu s [REUSE](https://reuse.software/): používá "
-"hlavičky SPDX k identifikaci licenčních informací svého zdrojového kódu.  "
-"Více informací naleznete na webových stránkách [REUSE](https://reuse."
-"software/).  K aktualizaci hlaviček můžete použít nástroj příkazového řádku "
-"[reuse](https://reuse.readthedocs.io/en/stable/readme.html#).  Příkaz `npm "
-"run lint` použije ke kontrole shody příkaz `reuse`.  Nezapomeňte do hlaviček "
-"SPDX přidat informace o autorských právech, když upravujete nějaký kód."
+msgstr "Tento zásuvný modul je v souladu s [REUSE](https://reuse.software/): používá hlavičky SPDX k identifikaci licenčních informací svého zdrojového kódu.  Více informací naleznete na webových stránkách [REUSE](https://reuse.software/).  K aktualizaci hlaviček můžete použít nástroj příkazového řádku [reuse](https://reuse.readthedocs.io/en/stable/readme.html#).  Příkaz `npm run lint` použije ke kontrole shody příkaz `reuse`.  Nezapomeňte do hlaviček SPDX přidat informace o autorských právech, když upravujete nějaký kód."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -293,14 +242,7 @@ msgstr "ESBuild vs Typescript"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This plugin uses ESBuild for frontend code generation, as the official `peertube-plugin-quickstart` plugin.  ESBuild can handle Typescript, but does not check types (see [ESBuild documentation](https://esbuild.github.io/content-types/#typescript)).  That's why we first compile Typescript with the `-noEmit` option, just to check types (`check:client:ts` in package.json file).  Then, if everything is okay, we run ESBuild to generate the compiled javascript."
-msgstr ""
-"Tento zásuvný modul používá ESBuild pro generování frontend kódu, stejně "
-"jako oficiální zásuvný modul `peertube-plugin-quickstart`.  ESBuild si "
-"poradí s Typescriptem, ale nekontroluje typy (viz [dokumentace "
-"ESBuild](https://esbuild.github.io/content-types/#typescript)).  Proto "
-"nejprve zkompilujeme Typescript s volbou `-noEmit`, jen abychom "
-"zkontrolovali typy (`check:client:ts` v souboru package.json).  Pokud je vše "
-"v pořádku, spustíme ESBuild a vygenerujeme zkompilovaný javascript."
+msgstr "Tento zásuvný modul používá ESBuild pro generování frontend kódu, stejně jako oficiální zásuvný modul `peertube-plugin-quickstart`.  ESBuild si poradí s Typescriptem, ale nekontroluje typy (viz [dokumentace ESBuild](https://esbuild.github.io/content-types/#typescript)).  Proto nejprve zkompilujeme Typescript s volbou `-noEmit`, jen abychom zkontrolovali typy (`check:client:ts` v souboru package.json).  Pokud je vše v pořádku, spustíme ESBuild a vygenerujeme zkompilovaný javascript."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -311,41 +253,27 @@ msgstr "Režim ladění"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a debug mode for this plugin, that shorten some delay.  For example, some log files will rotate every two minutes, instead of once per day.  This permit to test more easily certain actions, for which it could normally take hours or days to wait."
-msgstr ""
-"Pro tento zásuvný modul existuje režim ladění, který zkracuje určité "
-"zpoždění.  Například některé soubory protokolu se budou otáčet každé dvě "
-"minuty místo jednou denně.  To umožňuje snadněji testovat některé akce, na "
-"které by se normálně čekalo hodiny nebo dny."
+msgstr "Pro tento zásuvný modul existuje režim ladění, který zkracuje určité zpoždění.  Například některé soubory protokolu se budou otáčet každé dvě minuty místo jednou denně.  To umožňuje snadněji testovat některé akce, na které by se normálně čekalo hodiny nebo dny."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To enable this mode, you juste have to create the `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` file (replacing `/var/www/peertube/storage/` by the correct path on your installation)."
-msgstr ""
-"Pro zapnutí tohoto režimu stačí vytvořit soubor `/var/www/peertube/storage/"
-"plugins/data/peertube-plugin-livechat/debug_mode` (nahradit `/var/www/"
-"peertube/storage/` správnou cestou ve vaší instalaci)."
+msgstr "Pro zapnutí tohoto režimu stačí vytvořit soubor `/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode` (nahradit `/var/www/peertube/storage/` správnou cestou ve vaší instalaci)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The simple existence of this file is sufficient to trigger the debug mode.  To make sure it's taken into account, you can restart your Peertube instance."
-msgstr ""
-"Ke spuštění režimu ladění stačí pouhá existence tohoto souboru.  Chcete-li "
-"se ujistit, že je brán v úvahu, můžete restartovat instanci Peertube."
+msgstr "Ke spuštění režimu ladění stačí pouhá existence tohoto souboru.  Chcete-li se ujistit, že je brán v úvahu, můžete restartovat instanci Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "This file can contain some JSON to enable more advanced options.  To have a list of existing parameters, check `server/lib/debug.ts`.  Restart Peertube after each content modification."
-msgstr ""
-"Tento soubor může obsahovat některé JSON, které umožňují pokročilejší "
-"možnosti.  Seznam existujících parametrů naleznete v souboru `server/lib/"
-"debug.ts`.  Po každé úpravě obsahu restartujte Peertube."
+msgstr "Tento soubor může obsahovat některé JSON, které umožňují pokročilejší možnosti.  Seznam existujících parametrů naleznete v souboru `server/lib/debug.ts`.  Po každé úpravě obsahu restartujte Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Don't enable this mode on a production server, neither on a public server.  This could cause security issues."
-msgstr ""
-"Tento režim nepovolujte na produkčním serveru, ani na veřejném serveru.  "
-"Mohlo by to způsobit bezpečnostní problémy."
+msgstr "Tento režim nepovolujte na produkčním serveru, ani na veřejném serveru.  Mohlo by to způsobit bezpečnostní problémy."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -356,12 +284,7 @@ msgstr "Restart Prosody"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When debug mode is enabled, you can restart Prosody using this API call: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.  This call don't need any authentificaiton.  It can be done from a command line, for example using `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`."
-msgstr ""
-"Když je povolen režim ladění, můžete pomocí tohoto volání API restartovat "
-"aplikaci Prosody: `http://your_instance.tld/plugins/livechat/router/api/"
-"restart_prosody`.  Toto volání nepotřebuje žádné ověření.  Lze jej provést z "
-"příkazového řádku, například pomocí příkazu `curl http://your_instance.tld/"
-"plugins/livechat/router/api/restart_prosody`."
+msgstr "Když je povolen režim ladění, můžete pomocí tohoto volání API restartovat aplikaci Prosody: `http://your_instance.tld/plugins/livechat/router/api/restart_prosody`.  Toto volání nepotřebuje žádné ověření.  Lze jej provést z příkazového řádku, například pomocí příkazu `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody`."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -372,16 +295,12 @@ msgstr "Prosody debugger"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is possible to connect the Prosody AppImage to a remote debugger using [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
-msgstr ""
-"Prosody AppImage je možné připojit ke vzdálenému debuggeru pomocí "
-"[MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
+msgstr "Prosody AppImage je možné připojit ke vzdálenému debuggeru pomocí [MobDebug](https://luarocks.org/modules/paulclinger/mobdebug)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To do so, you have to setup MobDebug in a folder that can be accessed by the `peertube` user.  Then, add this in the `debub_mode` file:"
-msgstr ""
-"Chcete-li tak učinit, musíte nastavit MobDebug ve složce, ke které má "
-"přístup uživatel `peertube`. Pak to přidejte do souboru `debub_mode`:"
+msgstr "Chcete-li tak učinit, musíte nastavit MobDebug ve složce, ke které má přístup uživatel `peertube`. Pak to přidejte do souboru `debub_mode`:"
 
 #. type: Fenced code block (json)
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -406,9 +325,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`host` and `port` are optional. `debugger_path` must point to the folder where the `MobDebug` `.lua` file is."
-msgstr ""
-"`host` a `port` jsou volitelné. `debugger_path` musí ukazovat na složku, kde "
-"je soubor `.lua` `MobDebug`."
+msgstr "`host` a `port` jsou volitelné. `debugger_path` musí ukazovat na složku, kde je soubor `.lua` `MobDebug`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -423,13 +340,7 @@ msgstr "Spusťte svůj ladicí server."
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "For Prosody to connect to the debugger, call the API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  This call does not need any authentication.  It can be done from a command line, for example with `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`.  You can even configure your debug server to launch this request automatically."
-msgstr ""
-"Aby se Prosody připojil k debuggeru, zavolejte API `http://your_instance.tld/"
-"plugins/livechat/router/api/restart_prosody?debugger=true`. Tento hovor "
-"nevyžaduje žádné ověření. Lze to provést z příkazového řádku, například "
-"pomocí `curl http://your_instance.tld/plugins/livechat/router/api/"
-"restart_prosody?debugger=true`. Můžete dokonce nakonfigurovat svůj ladicí "
-"server tak, aby tento požadavek spouštěl automaticky."
+msgstr "Aby se Prosody připojil k debuggeru, zavolejte API `http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`. Tento hovor nevyžaduje žádné ověření. Lze to provést z příkazového řádku, například pomocí `curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true`. Můžete dokonce nakonfigurovat svůj ladicí server tak, aby tento požadavek spouštěl automaticky."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -445,27 +356,17 @@ msgstr "Rychlé vývojářské prostředí pomocí Dockeru"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "There is a tutorial, in french, on the [Peertube forum](https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker-et-qui-permet-de-tester-la-federation/17631) that explains how to quickly build a dev env using Docker."
-msgstr ""
-"Na [fóru Peertube] je výukový program ve francouzštině (https://framacolibri."
-"org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-"
-"rapidement-en-utilisant-docker -et-qui-permet-de-tester-la-federation/17631)"
-", který vysvětluje, jak rychle vytvořit prostředí pro vývojáře pomocí Docker."
+msgstr "Na [fóru Peertube] je výukový program ve francouzštině (https://framacolibri.org/t/tutoriel-creer-un-environnement-de-developpement-de-plugin-peertube-rapidement-en-utilisant-docker -et-qui-permet-de-tester-la-federation/17631), který vysvětluje, jak rychle vytvořit prostředí pro vývojáře pomocí Docker."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "A repo was made out of it, check out [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev)."
-msgstr ""
-"Bylo z toho vytvořeno repo, podívejte se na [pt-plugin-dev](https://codeberg."
-"org/mose/pt-plugin-dev)."
+msgstr "Bylo z toho vytvořeno repo, podívejte se na [pt-plugin-dev](https://codeberg.org/mose/pt-plugin-dev)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Note: for an unknown reason, Prosody can't resolve containers DNS address when using the lua-unbound library.  There is a dirty hack in the plugin: just create a `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` file in your docker-volumes, then restart containers."
-msgstr ""
-"Poznámka: Z neznámého důvodu nemůže Prosody rozlišit adresy DNS kontejnerů "
-"při použití knihovny lua-unbound. V pluginu je špinavý hack: stačí vytvořit "
-"soubor `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` ve vašem "
-"docker-volume a restartovat kontejnery."
+msgstr "Poznámka: Z neznámého důvodu nemůže Prosody rozlišit adresy DNS kontejnerů při použití knihovny lua-unbound. V pluginu je špinavý hack: stačí vytvořit soubor `/data/plugins/data/peertube-plugin-livechat/no_lua_unbound` ve vašem docker-volume a restartovat kontejnery."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -476,20 +377,12 @@ msgstr "Rychle znovu sestavte a nainstalujte plugin"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When you do modification, you don't have to always rebuild the full project, and reinstall the plugin on your dev environment.  You can build only the modified part (for example, if you only modified client files: `npm run build:client`).  Check the `package.json` files for available build scripts."
-msgstr ""
-"Když provádíte úpravy, nemusíte vždy znovu sestavovat celý projekt a znovu "
-"instalovat plugin do vašeho vývojového prostředí. Můžete sestavit pouze "
-"upravenou součást (pokud jste například upravili pouze soubory klienta: `npm "
-"spustit build:client`). V souborech `package.json` vyhledejte dostupné "
-"skripty sestavení."
+msgstr "Když provádíte úpravy, nemusíte vždy znovu sestavovat celý projekt a znovu instalovat plugin do vašeho vývojového prostředí. Můžete sestavit pouze upravenou součást (pokud jste například upravili pouze soubory klienta: `npm spustit build:client`). V souborech `package.json` vyhledejte dostupné skripty sestavení."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "When the plugin is already installed on your dev instance, and you haven't changed any dependency, you can quickly install your work by following these steps:"
-msgstr ""
-"Pokud je zásuvný modul již nainstalován v instanci dev a nezměnili jste "
-"žádnou závislost, můžete rychle nainstalovat svou práci podle následujících "
-"kroků:"
+msgstr "Pokud je zásuvný modul již nainstalován v instanci dev a nezměnili jste žádnou závislost, můžete rychle nainstalovat svou práci podle následujících kroků:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -499,16 +392,12 @@ msgstr "znovu sestavit potřebné části zásuvného modulu (klient, styly, ...
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "overwrite the `data/plugins/node_modules/peertube-plugin-livechat/dist/` content of your dev instance by the content of the plugin's `dist` folder,"
-msgstr ""
-"přepište obsah složky `data/plugins/node_modules/peertube-plugin-livechat/"
-"dist/` ve své instanci dev obsahem složky `dist` pluginu,"
+msgstr "přepište obsah složky `data/plugins/node_modules/peertube-plugin-livechat/dist/` ve své instanci dev obsahem složky `dist` pluginu,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "change recursively `plugins/node_modules/peertube-plugin-livechat/dist/` files owner to your `peertube` user,"
-msgstr ""
-"změňte rekurzivně vlastníka souborů `plugins/node_modules/"
-"peertube-plugin-livechat/dist/` na svého uživatele `peertube`,"
+msgstr "změňte rekurzivně vlastníka souborů `plugins/node_modules/peertube-plugin-livechat/dist/` na svého uživatele `peertube`,"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -524,10 +413,7 @@ msgstr "Výkonnostní testy"
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "The [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) repository contains some tools to make performance tests.  It can be used to evaluate code improvements, or find bottlenecks."
-msgstr ""
-"Úložiště [livechat-perf-test](https://github.com/JohnXLivingston/livechat-"
-"perf-test) obsahuje několik nástrojů pro provádění testů výkonu.  Lze je "
-"použít k vyhodnocení vylepšení kódu nebo k nalezení úzkých míst."
+msgstr "Úložiště [livechat-perf-test](https://github.com/JohnXLivingston/livechat-perf-test) obsahuje několik nástrojů pro provádění testů výkonu.  Lze je použít k vyhodnocení vylepšení kódu nebo k nalezení úzkých míst."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/document/_index.md
@@ -551,10 +437,7 @@ msgstr "Základní informace"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Always inform the community before working (by creating a new issue, or commenting an existing one).  This is to avoid that two persons are working on the same thing, and prevent conflicts."
-msgstr ""
-"Před zahájením práce vždy informujte komunitu (vytvořením nového problému "
-"nebo komentářem k již existujícímu problému).  Tím se vyhnete tomu, aby dvě "
-"osoby pracovaly na stejné věci, a předejdete konfliktům."
+msgstr "Před zahájením práce vždy informujte komunitu (vytvořením nového problému nebo komentářem k již existujícímu problému).  Tím se vyhnete tomu, aby dvě osoby pracovaly na stejné věci, a předejdete konfliktům."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -564,39 +447,27 @@ msgstr "Práce na dokumentaci musí být začleněna do větve `main`."
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation source code is in the `support/documentation/content` folder."
-msgstr ""
-"Zdrojový kód dokumentace se nachází ve složce `support/documentation/"
-"content`."
+msgstr "Zdrojový kód dokumentace se nachází ve složce `support/documentation/content`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The documentation is generated using [Hugo](https://gohugo.io/).  You have to install it on your computer if you want to preview your work."
-msgstr ""
-"Dokumentace je generována pomocí [Hugo](https://gohugo.io/).  Pokud si "
-"chcete svou práci prohlédnout, musíte si ji nainstalovat do počítače."
+msgstr "Dokumentace je generována pomocí [Hugo](https://gohugo.io/).  Pokud si chcete svou práci prohlédnout, musíte si ji nainstalovat do počítače."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The minimum required version for Hugo is 0.121.0.  It was tested using version 0.132.2."
-msgstr ""
-"Minimální požadovaná verze pro Hugo je 0.121.0.  Testováno bylo s verzí 0.132"
-".2."
+msgstr "Minimální požadovaná verze pro Hugo je 0.121.0.  Testováno bylo s verzí 0.132.2."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The used theme is [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).  You should read its documentation before starting editing the documentation."
-msgstr ""
-"Použitý motiv je [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-"
-"relearn).  Než začnete upravovat dokumentaci, měli byste si přečíst jeho "
-"dokumentaci."
+msgstr "Použitý motiv je [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).  Než začnete upravovat dokumentaci, měli byste si přečíst jeho dokumentaci."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the `main` branch to the `documentation` branch.  This will trigger github and gitlab pipelines, and update published documentation."
-msgstr ""
-"Při vydání nové verze zásuvného modulu nebo při aktualizaci dokumentace "
-"správci zásuvných modulů sloučí větev `main` do větve `documentation`.  Tím "
-"se spustí pipelines github a gitlab a aktualizuje se zveřejněná dokumentace."
+msgstr "Při vydání nové verze zásuvného modulu nebo při aktualizaci dokumentace správci zásuvných modulů sloučí větev `main` do větve `documentation`.  Tím se spustí pipelines github a gitlab a aktualizuje se zveřejněná dokumentace."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -612,17 +483,12 @@ msgstr "Základním jazykem je angličtina (kód `en`)."
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The `support/documentation/content/en` folder contains only english documentation files."
-msgstr ""
-"Složka `support/documentation/content/en` obsahuje pouze anglické "
-"dokumentační soubory."
+msgstr "Složka `support/documentation/content/en` obsahuje pouze anglické dokumentační soubory."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Documentation is translated using Weblate (see the [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  To do so, we use the [po4a tool](https://po4a.org/), as we will se later in this page."
-msgstr ""
-"Dokumentace je přeložena pomocí Weblate (viz [translation documentation"
-"](/peertube-plugin-livechat/contributing/translate/)).  K tomu používáme "
-"nástroj [po4a](https://po4a.org/), jak uvidíme dále na této stránce."
+msgstr "Dokumentace je přeložena pomocí Weblate (viz [translation documentation](/peertube-plugin-livechat/contributing/translate/)).  K tomu používáme nástroj [po4a](https://po4a.org/), jak uvidíme dále na této stránce."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -633,16 +499,12 @@ msgstr "Přidat nový jazyk"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "In the `support/documentation/config.toml` file, please copy and modify the `[Languages.fr]` section."
-msgstr ""
-"V souboru `support/documentation/config.toml` zkopírujte a upravte část "
-"`[Languages.fr]`."
+msgstr "V souboru `support/documentation/config.toml` zkopírujte a upravte část `[Languages.fr]`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "If the translations are not complete, it does not matter, english will be used for missing strings."
-msgstr ""
-"Pokud překlady nejsou kompletní, nevadí, pro chybějící řetězce se použije "
-"angličtina."
+msgstr "Pokud překlady nejsou kompletní, nevadí, pro chybějící řetězce se použije angličtina."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -664,10 +526,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Then open your browser on the address [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).  This page will automatically refresh on each modification."
-msgstr ""
-"Poté otevřete prohlížeč na adrese [http://localhost:1313/"
-"peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/)"
-".  Tato stránka se automaticky obnoví při každé změně."
+msgstr "Poté otevřete prohlížeč na adrese [http://localhost:1313/peertube-plugin-livechat/](http://localhost:1313/peertube-plugin-livechat/).  Tato stránka se automaticky obnoví při každé změně."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -678,28 +537,18 @@ msgstr "Aktualizace lokalizačních souborů a generování překladů dokumenta
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, you only have the english version.  To update documentation strings, and generate translations, you have to run the `doc-translate.sh` script."
-msgstr ""
-"Prozatím máte k dispozici pouze anglickou verzi.  Chcete-li aktualizovat "
-"dokumentační řetězce a generovat překlady, musíte spustit skript `doc-"
-"translate.sh`."
+msgstr "Prozatím máte k dispozici pouze anglickou verzi.  Chcete-li aktualizovat dokumentační řetězce a generovat překlady, musíte spustit skript `doc-translate.sh`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "To do so, make sure you have `po4a` (version >= 0.69) installed on your computer.\n"
-msgstr ""
-"Za tímto účelem se ujistěte, že máte v počítači nainstalován program `po4a` ("
-"verze >= 0.69).\n"
+msgstr "Za tímto účelem se ujistěte, že máte v počítači nainstalován program `po4a` (verze >= 0.69).\n"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Some linux distro (like Debian Bullseye for example) have too old version of `po4a`.  Please make sure to install a compatible version.  If you are using Debian Bullseye for example, you can download the Bookworm po4a.deb file from [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download), and install it manually."
-msgstr ""
-"Některé linuxové distribuce (například Debian Bullseye) mají příliš starou "
-"verzi `po4a`.  Ujistěte se, že jste nainstalovali kompatibilní verzi.  Pokud "
-"používáte například Debian Bullseye, můžete si stáhnout soubor Bookworm "
-"po4a.deb z [https://packages.debian.org](https://packages.debian.org/"
-"bookworm/all/po4a/download) a nainstalovat jej ručně."
+msgstr "Některé linuxové distribuce (například Debian Bullseye) mají příliš starou verzi `po4a`.  Ujistěte se, že jste nainstalovali kompatibilní verzi.  Pokud používáte například Debian Bullseye, můžete si stáhnout soubor Bookworm po4a.deb z [https://packages.debian.org](https://packages.debian.org/bookworm/all/po4a/download) a nainstalovat jej ručně."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -715,9 +564,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector."
-msgstr ""
-"Výsledek si pak můžete prohlédnout pomocí příkazu `hugo serve -s support/"
-"documentation/` a pomocí voliče jazyka."
+msgstr "Výsledek si pak můžete prohlédnout pomocí příkazu `hugo serve -s support/documentation/` a pomocí voliče jazyka."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -733,63 +580,42 @@ msgstr "Stačí upravit anglické soubory v `support/documentation/content/en`."
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Then, before commiting, always run `npm run doc:translate`, so that changes in english files can be propagated to the `support/documentation/po/livechat.en.pot` file."
-msgstr ""
-"Před odevzdáním pak vždy spusťte `npm run doc:translate`, aby se změny v "
-"českých souborech mohly promítnout do souboru `support/documentation/po/"
-"livechat.en.pot`."
+msgstr "Před odevzdáním pak vždy spusťte `npm run doc:translate`, aby se změny v českých souborech mohly promítnout do souboru `support/documentation/po/livechat.en.pot`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can use the `livechat_label` short code to use application strings.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
-msgstr ""
-"Pro použití aplikačních řetězců můžete použít zkrácený kód `livechat_label`"
-".  Viz zde: [Překlad dokumentace](/peertube-plugin-livechat/contributing/"
-"translate/#documentation-translation)."
+msgstr "Pro použití aplikačních řetězců můžete použít zkrácený kód `livechat_label`.  Viz zde: [Překlad dokumentace](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "It is possible to prevent a file from beeing translating, using `livechatnotranslation: true` in the Yaml Font Matter section.  See here: [Documentation translation](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
-msgstr ""
-"Je možné zabránit překladu souboru pomocí `livechatnotranslation: true` v "
-"sekci Yaml Font Matter.  Viz zde: [Překlad dokumentace](/peertube-"
-"plugin-livechat/contributing/translate/#documentation-translation)."
+msgstr "Je možné zabránit překladu souboru pomocí `livechatnotranslation: true` v sekci Yaml Font Matter.  Viz zde: [Překlad dokumentace](/peertube-plugin-livechat/contributing/translate/#documentation-translation)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Please use the `livechatnotranslation` option for technical documentation.  We don't want technical documentation to be translated, to avoid issues because of a wrong translation."
-msgstr ""
-"Pro technickou dokumentaci použijte možnost `livechatnotranslation`.  "
-"Nechceme, aby byla technická dokumentace překládána, abychom se vyhnuli "
-"problémům kvůli špatnému překladu."
+msgstr "Pro technickou dokumentaci použijte možnost `livechatnotranslation`.  Nechceme, aby byla technická dokumentace překládána, abychom se vyhnuli problémům kvůli špatnému překladu."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To facilitate translators work, avoid making too long paragraphs."
-msgstr ""
-"Abyste překladatelům usnadnili práci, vyhněte se příliš dlouhým odstavcům."
+msgstr "Abyste překladatelům usnadnili práci, vyhněte se příliš dlouhým odstavcům."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "For now, it is not possible to use Markdown tables: the translation tools will break them."
-msgstr ""
-"Prozatím není možné používat tabulky Markdown: překladatelské nástroje je "
-"rozbijí."
+msgstr "Prozatím není možné používat tabulky Markdown: překladatelské nástroje je rozbijí."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "There may be links to this documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
-msgstr ""
-"Odkazy na tuto dokumentaci mohou být k dispozici i jinde na webu.  Snažte se "
-"neměnit URL adresy stránek dokumentace.  Nebo alespoň umístěte odkazy na "
-"nové umístění na předchozí url."
+msgstr "Odkazy na tuto dokumentaci mohou být k dispozici i jinde na webu.  Snažte se neměnit URL adresy stránek dokumentace.  Nebo alespoň umístěte odkazy na nové umístění na předchozí url."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new feature is released, you can use the `livechat_version_notice` short code to display an infobox with the version with which the features is available.  This short code takes the version number as parameter.  Here is an example:"
-msgstr ""
-"Když je vydána nová funkce, můžete použít krátký kód "
-"`livechat_version_notice` pro zobrazení infoboxu s verzí, ve které je funkce "
-"dostupná.  Tento krátký kód bere jako parametr číslo verze.  Zde je příklad:"
+msgstr "Když je vydána nová funkce, můžete použít krátký kód `livechat_version_notice` pro zobrazení infoboxu s verzí, ve které je funkce dostupná.  Tento krátký kód bere jako parametr číslo verze.  Zde je příklad:"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
@@ -800,9 +626,7 @@ msgstr "Co když nemohu používat hugo a/nebo po4a?"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request."
-msgstr ""
-"Stačí upravit anglické soubory markdown a při zadávání žádosti o stažení "
-"zadat, že nelze vytvářet překlady."
+msgstr "Stačí upravit anglické soubory markdown a při zadávání žádosti o stažení zadat, že nelze vytvářet překlady."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -813,9 +637,7 @@ msgstr "Zveřejnění"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch."
-msgstr ""
-"Zveřejnění dokumentace je automatické, jakmile jsou změny začleněny do větve "
-"`documentation`."
+msgstr "Zveřejnění dokumentace je automatické, jakmile jsou změny začleněny do větve `documentation`."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
@@ -826,11 +648,7 @@ msgstr "Poskytněte zpětnou vazbu"
 #. type: Plain text
 #: support/documentation/content/en/contributing/feedback/_index.md
 msgid "You don't need to know how to code to start contributing to this plugin! Other contributions are very valuable too, among which: you can test the software and report bugs, you can give feedback, features that you are interested in, user interface, design, ..."
-msgstr ""
-"Nemusíte umět kódovat, abyste mohli začít přispívat do tohoto pluginu! Velmi "
-"cenné jsou i další příspěvky, mezi které patří: můžete testovat software a "
-"hlásit chyby, můžete poskytnout zpětnou vazbu, funkce, které vás zajímají, "
-"uživatelské rozhraní, design, ..."
+msgstr "Nemusíte umět kódovat, abyste mohli začít přispívat do tohoto pluginu! Velmi cenné jsou i další příspěvky, mezi které patří: můžete testovat software a hlásit chyby, můžete poskytnout zpětnou vazbu, funkce, které vás zajímají, uživatelské rozhraní, design, ..."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/_index.md
@@ -858,17 +676,12 @@ msgstr "Překládání"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can contribute to this plugin translation.  Translations are handled using the [Weblate](https://weblate.org/) software, using [Framasoft Weblate instance](https://weblate.framasoft.org/)."
-msgstr ""
-"Můžete přispět k překladu tohoto pluginu.  Překlady jsou zpracovávány pomocí "
-"softwaru [Weblate](https://weblate.org/) s použitím [Framasoft Weblate "
-"instance](https://weblate.framasoft.org/)."
+msgstr "Můžete přispět k překladu tohoto pluginu.  Překlady jsou zpracovávány pomocí softwaru [Weblate](https://weblate.org/) s použitím [Framasoft Weblate instance](https://weblate.framasoft.org/)."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never modify directly files in the `languages` folder, this could lead to conflicts."
-msgstr ""
-"Nikdy neupravujte přímo soubory ve složce `languages`, mohlo by to vést ke "
-"konfliktům."
+msgstr "Nikdy neupravujte přímo soubory ve složce `languages`, mohlo by to vést ke konfliktům."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -894,9 +707,7 @@ msgstr "Vytvořte si heslo a nastavte svůj účet"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
-msgstr ""
-"Přejděte na stránku projektu zásuvného modulu: https://weblate.framasoft.org/"
-"projects/peertube-livechat/peertube-plugin-livechat/"
+msgstr "Přejděte na stránku projektu zásuvného modulu: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -906,16 +717,12 @@ msgstr "Vyberte jazyk, do kterého chcete překládat"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Just translate missing sentences, or correct the ones that seems incorrect to you."
-msgstr ""
-"Stačí přeložit chybějící věty nebo opravit ty, které se vám zdají nesprávné."
+msgstr "Stačí přeložit chybějící věty nebo opravit ty, které se vám zdají nesprávné."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english."
-msgstr ""
-"Mohou tam být nějaké \"velmi technické\" řetězce. Pokud si nejste "
-"stoprocentně jisti jejich významem nebo překladem, raději je nepřekládejte, "
-"aby se zobrazily v angličtině."
+msgstr "Mohou tam být nějaké \"velmi technické\" řetězce. Pokud si nejste stoprocentně jisti jejich významem nebo překladem, raději je nepřekládejte, aby se zobrazily v angličtině."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -926,13 +733,7 @@ msgstr "Překlady ConverseJS"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "This plugin relies on [ConverseJS](https://conversejs.org/) for the chat front-end.  ConverseJS has its own translations, on its own [weblate instance](https://hosted.weblate.org/projects/conversejs/#languages).  You can also translate directly in the code repository.  For more information, check [ConverseJS translations documentation](https://conversejs.org/docs/html/translations.html)."
-msgstr ""
-"Tento zásuvný modul se spoléhá na [ConverseJS](https://conversejs.org/) pro "
-"front-end chatu.  ConverseJS má vlastní překlady na vlastní instanci "
-"[weblate](https://hosted.weblate.org/projects/conversejs/#languages).  "
-"Překládat můžete také přímo v úložišti kódu.  Další informace naleznete v "
-"dokumentaci [ConverseJS translations](https://conversejs.org/docs/html/"
-"translations.html)."
+msgstr "Tento zásuvný modul se spoléhá na [ConverseJS](https://conversejs.org/) pro front-end chatu.  ConverseJS má vlastní překlady na vlastní instanci [weblate](https://hosted.weblate.org/projects/conversejs/#languages).  Překládat můžete také přímo v úložišti kódu.  Další informace naleznete v dokumentaci [ConverseJS translations](https://conversejs.org/docs/html/translations.html)."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -943,10 +744,7 @@ msgstr "Přidání nového jazyka"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
-msgstr ""
-"Pokud si myslíte, že chybí nějaký jazyk, zkontrolujte prosím nejprve, zda je "
-"v Peertube zpracován.  Pokud ano, můžete [otevřít problém](https://github."
-"com/JohnXLivingston/peertube-plugin-livechat/issues) a požádat o něj."
+msgstr "Pokud si myslíte, že chybí nějaký jazyk, zkontrolujte prosím nejprve, zda je v Peertube zpracován.  Pokud ano, můžete [otevřít problém](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) a požádat o něj."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -957,24 +755,17 @@ msgstr "Přidání nových řetězců / použití překladů v kódu"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are working on new features, and need new strings, you can create them directly in Weblate.  The english version is mandatory. Start with it."
-msgstr ""
-"Pokud pracujete na nových funkcích a potřebujete nové řetězce, můžete je "
-"vytvořit přímo ve Weblate.  Anglická verze je povinná. Začněte s ní."
+msgstr "Pokud pracujete na nových funkcích a potřebujete nové řetězce, můžete je vytvořit přímo ve Weblate.  Anglická verze je povinná. Začněte s ní."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Each string is linked to a key (for example `use_chat`).  Choose an explicit key in english, lower case."
-msgstr ""
-"Každý řetězec je spojen s klíčem (například `use_chat`).  Zvolte explicitní "
-"klíč v angličtině, malá písmena."
+msgstr "Každý řetězec je spojen s klíčem (například `use_chat`).  Zvolte explicitní klíč v angličtině, malá písmena."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you have to test new strings without waiting for a Weblate merge, you can modify `languages/*.yml` files, but avoid to commit these changes (to minimize conflict risks)."
-msgstr ""
-"Pokud potřebujete otestovat nové řetězce, aniž byste čekali na sloučení "
-"Weblate, můžete upravit soubory `languages/*.yml`, ale tyto změny "
-"neodevzdávejte (abyste minimalizovali riziko konfliktu)."
+msgstr "Pokud potřebujete otestovat nové řetězce, aniž byste čekali na sloučení Weblate, můžete upravit soubory `languages/*.yml`, ale tyto změny neodevzdávejte (abyste minimalizovali riziko konfliktu)."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -985,9 +776,7 @@ msgstr "Použití překladů ve front-end kódu"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Before using a string in front-end, you need to declare a new constant in `client/@types/global.d.ts`.  The constant name must:"
-msgstr ""
-"Před použitím řetězce ve front-endu je třeba deklarovat novou konstantu v `"
-"client/@types/global.d.ts`.  Název konstanty musí:"
+msgstr "Před použitím řetězce ve front-endu je třeba deklarovat novou konstantu v `client/@types/global.d.ts`.  Název konstanty musí:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1018,16 +807,12 @@ msgstr "declare const LOC_USE_CHAT: string\n"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The `build-client.js` script will read the `client/@types/global.d.ts`, search for such constants, and load their values from the languages files."
-msgstr ""
-"Skript `build-client.js` přečte soubor `client/@types/global.d.ts`, vyhledá "
-"takové konstanty a načte jejich hodnoty ze souborů jazyků."
+msgstr "Skript `build-client.js` přečte soubor `client/@types/global.d.ts`, vyhledá takové konstanty a načte jejich hodnoty ze souborů jazyků."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Now, you can simply call `peertubeHelpers.translate(LOC_USE_CHAT)` in your code."
-msgstr ""
-"Nyní můžete ve svém kódu jednoduše zavolat `peertubeHelpers."
-"translate(LOC_USE_CHAT)`."
+msgstr "Nyní můžete ve svém kódu jednoduše zavolat `peertubeHelpers.translate(LOC_USE_CHAT)`."
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1038,24 +823,17 @@ msgstr "Použití překladů v kódu back-endu"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "In theory, the only parts of the backend code where you need localization is the settings declaration and standardized data (ActivityPub, RSS, ...).  Here we need to get english strings from the translation key."
-msgstr ""
-"Teoreticky jediné části backendového kódu, kde je potřeba lokalizace, jsou "
-"deklarace nastavení a standardizovaná data (ActivityPub, RSS, ...).  Zde "
-"potřebujeme získat anglické řetězce z překladového klíče."
+msgstr "Teoreticky jediné části backendového kódu, kde je potřeba lokalizace, jsou deklarace nastavení a standardizovaná data (ActivityPub, RSS, ...).  Zde potřebujeme získat anglické řetězce z překladového klíče."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Note: you should never need another language translation from backend code.  Localization must be done on front-end."
-msgstr ""
-"Poznámka: Nikdy byste neměli potřebovat další jazykový překlad z "
-"backendového kódu.  Lokalizace musí být provedena na front-endu."
+msgstr "Poznámka: Nikdy byste neměli potřebovat další jazykový překlad z backendového kódu.  Lokalizace musí být provedena na front-endu."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a `lib/loc.ts` module providing a `loc()` function.  Just pass it the key to have the english string: `loc('diagnostic')`'."
-msgstr ""
-"Existuje modul `lib/loc.ts`, který poskytuje funkci `loc()`.  Stačí jí "
-"předat klíč, abyste získali český řetězec: `loc('diagnostic')`'."
+msgstr "Existuje modul `lib/loc.ts`, který poskytuje funkci `loc()`.  Stačí jí předat klíč, abyste získali český řetězec: `loc('diagnostic')`'."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1071,10 +849,7 @@ msgstr "Překlad dokumentace se provádí pomocí příslušné komponenty Webla
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There is a specific \"Hugo shortcodes\" you can use to display an application string.  Saying you want to display the name of the button \"open_chat_new_window\", you can use this in the documentation markdown file:"
-msgstr ""
-"K zobrazení aplikačního řetězce můžete použít specifické \"zkratky Hugo\".  "
-"Řekněme, že chcete zobrazit název tlačítka \"open_chat_new_window\", můžete "
-"jej použít v dokumentačním souboru markdown:"
+msgstr "K zobrazení aplikačního řetězce můžete použít specifické \"zkratky Hugo\".  Řekněme, že chcete zobrazit název tlačítka \"open_chat_new_window\", můžete jej použít v dokumentačním souboru markdown:"
 
 #. type: Fenced code block (hugo)
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1085,9 +860,7 @@ msgstr "{{%/* livechat_label open_chat_new_window */%}}\n"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "You can also prevent a whole page from being translating by adding `livechatnotranslation: true` in the Yaml Font Matter section:"
-msgstr ""
-"Můžete také zabránit překladu celé stránky přidáním `livechatnotranslation: "
-"true` do sekce Yaml Font Matter:"
+msgstr "Můžete také zabránit překladu celé stránky přidáním `livechatnotranslation: true` do sekce Yaml Font Matter:"
 
 #. type: Fenced code block (yaml)
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1112,24 +885,17 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never translate a string in the `livechat.en.pot` file, it would be ignored.  Instead, edit directly the markdown files."
-msgstr ""
-"Nikdy nepřekládejte řetězec v souboru `livechat.en.pot`, byl by ignorován.  "
-"Místo toho upravujte přímo soubory markdown."
+msgstr "Nikdy nepřekládejte řetězec v souboru `livechat.en.pot`, byl by ignorován.  Místo toho upravujte přímo soubory markdown."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If a string contains a link, you can change it for the correct link in the translated language.  For example, for a link to this documentation, you can add the language code in the url."
-msgstr ""
-"Pokud řetězec obsahuje odkaz, můžete jej změnit na správný odkaz v "
-"přeloženém jazyce.  Například pro odkaz na tuto dokumentaci můžete do url "
-"přidat kód jazyka."
+msgstr "Pokud řetězec obsahuje odkaz, můžete jej změnit na správný odkaz v přeloženém jazyce.  Například pro odkaz na tuto dokumentaci můžete do url přidat kód jazyka."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Some strings are block of code.  Don't translate code.  But you can translate comments, or parameters if relevant."
-msgstr ""
-"Některé řetězce jsou bloky kódu.  Nepřekládejte kód.  Můžete však přeložit "
-"komentáře nebo parametry, pokud je to relevantní."
+msgstr "Některé řetězce jsou bloky kódu.  Nepřekládejte kód.  Můžete však přeložit komentáře nebo parametry, pokud je to relevantní."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1139,23 +905,12 @@ msgstr "Pokud si nejste jisti, nepřekládejte a zeptejte se, co máte dělat."
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The tool I use to handle translations for the documentation can have strange behaviours. When I add sentences that looks like other existing sentences, it sometimes copies existing translations. So, when you have translations marked as \"to check\", please make sure it doesn't copy a string that has nothing to do with the english one before validating."
-msgstr ""
-"Nástroj, který používám ke zpracování překladů dokumentace, se může chovat "
-"podivně. Když přidám věty, které vypadají jako jiné existující věty, někdy "
-"zkopíruje existující překlady. Takže když máte překlady označené jako \"ke "
-"kontrole\", ujistěte se prosím, že před validací nezkopíruje řetězec, který "
-"nemá s tím anglickým nic společného."
+msgstr "Nástroj, který používám ke zpracování překladů dokumentace, se může chovat podivně. Když přidám věty, které vypadají jako jiné existující věty, někdy zkopíruje existující překlady. Takže když máte překlady označené jako \"ke kontrole\", ujistěte se prosím, že před validací nezkopíruje řetězec, který nemá s tím anglickým nic společného."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are now sure about the context of a string, you can check the string location in the weblate's right pane, and open the corresponding documentation page.  For example, for a string located in the file `support/documentation/content/en/documentation/user/streamers.md`, the corresponding url is `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`."
-msgstr ""
-"Pokud jste si nyní jisti kontextem řetězce, můžete zkontrolovat umístění "
-"řetězce v pravém podokně weblate a otevřít příslušnou stránku dokumentace.  "
-"Například pro řetězec umístěný v souboru `support/documentation/content/en/"
-"documentation/user/streamers.md` je odpovídající url adresa "
-"`https://livingston.frama.io/peertube-plugin-livechat/documentation/user/"
-"streamers/`."
+msgstr "Pokud jste si nyní jisti kontextem řetězce, můžete zkontrolovat umístění řetězce v pravém podokně weblate a otevřít příslušnou stránku dokumentace.  Například pro řetězec umístěný v souboru `support/documentation/content/en/documentation/user/streamers.md` je odpovídající url adresa `https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/`."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -1166,9 +921,7 @@ msgstr "Obecná doporučení"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Please be inclusive in your wordings, and please respect the [code of coduct](/peertube-plugin-livechat/contributing/codeofconduct/)."
-msgstr ""
-"Prosím, buďte ve svých formulacích vstřícní a respektujte [kodex chování"
-"](/peertube-plugin-livechat/contributing/codeofconduct/)."
+msgstr "Prosím, buďte ve svých formulacích vstřícní a respektujte [kodex chování](/peertube-plugin-livechat/contributing/codeofconduct/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/credits/_index.md
@@ -1185,39 +938,22 @@ msgstr "Kredity"
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies."
-msgstr ""
-"Soubory [package.json](https://github.com/JohnXLivingston/"
-"peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github."
-"com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) a "
-"[LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
-"main/LICENSE) obsahují licenční informace pro tento software a jeho "
-"závislosti."
+msgstr "Soubory [package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) a [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) obsahují licenční informace pro tento software a jeho závislosti."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/)."
-msgstr ""
-"Zásuvný modul spravuje [John Livingston](https://www.john-livingston.fr/)."
+msgstr "Zásuvný modul spravuje [John Livingston](https://www.john-livingston.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
-msgstr ""
-"Děkujeme Davidu Revoyovi za jeho práci na maskotovi Peertube, "
-"[Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  Návrh postavy "
-"je pod licencí CC-By a soubory SVG použité k vytvoření některých log a "
-"avatarů v tomto pluginu jsou pod licencí GPLv3.0.  Soubory PNG jsou pod "
-"licencemi CC-By a pocházejí z [online generátoru avatarů Sepia](https://www."
-"peppercarrot.com/extras/html/2023_peertube-generator/)."
+msgstr "Děkujeme Davidu Revoyovi za jeho práci na maskotovi Peertube, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  Návrh postavy je pod licencí CC-By a soubory SVG použité k vytvoření některých log a avatarů v tomto pluginu jsou pod licencí GPLv3.0.  Soubory PNG jsou pod licencemi CC-By a pocházejí z [online generátoru avatarů Sepia](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org)."
-msgstr ""
-"Děkujeme [Framasoft](https://framasoft.org) za umožnění "
-"[Peertube](https://joinpeertube.org/), za finanční podporu a za hostování "
-"překladů projektu na jejich [Weblate instance](https://weblate.framasoft."
-"org)."
+msgstr "Děkujeme [Framasoft](https://framasoft.org) za umožnění [Peertube](https://joinpeertube.org/), za finanční podporu a za hostování překladů projektu na jejich [Weblate instance](https://weblate.framasoft.org)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -1227,16 +963,12 @@ msgstr "Děkujeme [ritimo](https://www.ritimo.org/) za finanční podporu."
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Code Lutin](https://www.codelutin.com/) and [Rétribution Copie Publique](https://copiepublique.fr/) for the financial support."
-msgstr ""
-"Za finanční podporu děkujeme společnostem [Code Lutin](https://www.codelutin."
-"com/) a [Rétribution Copie Publique](https://copiepublique.fr/)."
+msgstr "Za finanční podporu děkujeme společnostem [Code Lutin](https://www.codelutin.com/) a [Rétribution Copie Publique](https://copiepublique.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [NlNet](https://nlnet.nl/) and the [NGI0 Entrust fund](https://nlnet.nl/entrust/) for the financial support."
-msgstr ""
-"Děkujeme [NlNet](https://nlnet.nl/) a [NGI0 Entrust fund](https://nlnet.nl/"
-"entrust/) za finanční podporu."
+msgstr "Děkujeme [NlNet](https://nlnet.nl/) a [NGI0 Entrust fund](https://nlnet.nl/entrust/) za finanční podporu."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -1246,9 +978,7 @@ msgstr "Děkujeme [Octopuce](https://www.octopuce.fr/) za finanční podporu."
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
-msgstr ""
-"A děkuji všem individuálním přispěvatelům, kteří přispěli prostřednictvím mé "
-"[liberapay stránky](https://liberapay.com/JohnLivingston/)."
+msgstr "A děkuji všem individuálním přispěvatelům, kteří přispěli prostřednictvím mé [liberapay stránky](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
@@ -1277,10 +1007,7 @@ msgstr "Používání Matterbridge"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The following is based on a tutorial to use Matterbridge with the plugin: [Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
-msgstr ""
-"Následující text vychází z návodu pro použití zásuvného modulu Matterbridge:["
-"Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/"
-"-/blob/master/documentation/peertube.md)"
+msgstr "Následující text vychází z návodu pro použití zásuvného modulu Matterbridge:[Matterbridge + Peertube](https://gitlab.com/refrac/obs-matterbridge-overlay/-/blob/master/documentation/peertube.md)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1291,23 +1018,17 @@ msgstr "Požadavky"
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) version 3.2.0 or later."
-msgstr ""
-"[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-"
-"plugin-livechat) verze 3.2.0 nebo novější."
+msgstr "[PeerTube plugin livechat](https://github.com/JohnXLivingston/peertube-plugin-livechat) verze 3.2.0 nebo novější."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "[Matterbridge](https://github.com/42wim/matterbridge) version 1.22.4 or later."
-msgstr ""
-"[Matterbridge](https://github.com/42wim/matterbridge) verze 1.22.4 nebo "
-"novější."
+msgstr "[Matterbridge](https://github.com/42wim/matterbridge) verze 1.22.4 nebo novější."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The easiest is if the PeerTube instance and Matterbridge run on the same server."
-msgstr ""
-"Nejjednodušší je, pokud instance PeerTube a Matterbridge běží na stejném "
-"serveru."
+msgstr "Nejjednodušší je, pokud instance PeerTube a Matterbridge běží na stejném serveru."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1318,16 +1039,12 @@ msgstr "Pouze interní připojení (základní)"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You will need to enable `{{% livechat_label prosody_c2s_label %}}` in the livechat plugin settings."
-msgstr ""
-"V nastavení pluginu livechat je třeba povolit `{{% livechat_label "
-"prosody_c2s_label %}}`."
+msgstr "V nastavení pluginu livechat je třeba povolit `{{% livechat_label prosody_c2s_label %}}`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This will allow localhost XMPP clients to connect to the Prosody XMPP server."
-msgstr ""
-"To umožní klientům XMPP na hostitelském serveru připojit se k serveru "
-"Prosody XMPP."
+msgstr "To umožní klientům XMPP na hostitelském serveru připojit se k serveru Prosody XMPP."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1343,9 +1060,7 @@ msgstr "127.0.0.1       anon.example.org room.example.org\n"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `example.org` by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below."
-msgstr ""
-"Nahraďte `example.org` skutečným názvem domény vaší instance. Poté můžete "
-"pokračovat v níže uvedené konfiguraci Matterbridge."
+msgstr "Nahraďte `example.org` skutečným názvem domény vaší instance. Poté můžete pokračovat v níže uvedené konfiguraci Matterbridge."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1356,57 +1071,38 @@ msgstr "Povolit externí připojení (pokročilé)"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "By default, the internal Prosody XMPP server only listens on localhost (127.0.0.1)."
-msgstr ""
-"Ve výchozím nastavení interní server Prosody XMPP naslouchá pouze na serveru "
-"localhost (127.0.0.1)."
+msgstr "Ve výchozím nastavení interní server Prosody XMPP naslouchá pouze na serveru localhost (127.0.0.1)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
-msgstr ""
-"Ve verzích livechatu >= 10.1.0 byla přidána nová volba `Síťová rozhraní "
-"klienta a serveru`, která umožňuje tuto volbu změnit.\n"
+msgstr "Ve verzích livechatu >= 10.1.0 byla přidána nová volba `Síťová rozhraní klienta a serveru`, která umožňuje tuto volbu změnit.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "It allows to add a list of IPs to listen on, coma separated (spaces will be stripped)."
-msgstr ""
-"Umožňuje přidat seznam IP adres pro poslech, oddělených čárkami (mezery "
-"budou odstraněny)."
+msgstr "Umožňuje přidat seznam IP adres pro poslech, oddělených čárkami (mezery budou odstraněny)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You can also use `*` to listen on all IPv4 interfaces, and `::` for all IPv6. Doing so allows external access to the client to server interface."
-msgstr ""
-"Můžete také použít `*` pro naslouchání na všech rozhraních IPv4 a `::` pro "
-"všechna rozhraní IPv6. Tímto způsobem umožníte externí přístup k rozhraní "
-"mezi klientem a serverem."
+msgstr "Můžete také použít `*` pro naslouchání na všech rozhraních IPv4 a `::` pro všechna rozhraní IPv6. Tímto způsobem umožníte externí přístup k rozhraní mezi klientem a serverem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Then you need to open the C2S port (by default `52822`, but check the plugin settings to get the current value) in your firewall so that it can be reached from the internet.  If you don't want to use C2S connections for anything else than your Matterbridge service, you should restrict access to this port to your Matterbridge server IP."
-msgstr ""
-"Pak je třeba otevřít port C2S (ve výchozím nastavení `52822`, ale aktuální "
-"hodnotu zjistíte v nastavení zásuvného modulu) ve firewallu, aby byl "
-"přístupný z internetu.  Pokud nechcete používat připojení C2S pro nic jiného "
-"než pro službu Matterbridge, měli byste omezit přístup k tomuto portu na IP "
-"adresu vašeho serveru Matterbridge."
+msgstr "Pak je třeba otevřít port C2S (ve výchozím nastavení `52822`, ale aktuální hodnotu zjistíte v nastavení zásuvného modulu) ve firewallu, aby byl přístupný z internetu.  Pokud nechcete používat připojení C2S pro nic jiného než pro službu Matterbridge, měli byste omezit přístup k tomuto portu na IP adresu vašeho serveru Matterbridge."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You also need to add DNS records (A and AAAA) for `anon.example.org` and `room.example.org` (replace `example.org` by your actual domain name)."
-msgstr ""
-"Je také třeba přidat záznamy DNS (A a AAAA) pro `anon.example.org` a `room."
-"example.org` (`example.org` nahraďte skutečným názvem domény)."
+msgstr "Je také třeba přidat záznamy DNS (A a AAAA) pro `anon.example.org` a `room.example.org` (`example.org` nahraďte skutečným názvem domény)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In case you are using a port other than `5222` (XMPP standard port) you also need to set the [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) to the correct port."
-msgstr ""
-"V případě, že používáte jiný port než `5222` (standardní port XMPP), musíte "
-"také nastavit [xmpp-client SRV record](https://prosody.im/doc/"
-"dns#srv_records) na správný port."
+msgstr "V případě, že používáte jiný port než `5222` (standardní port XMPP), musíte také nastavit [xmpp-client SRV record](https://prosody.im/doc/dns#srv_records) na správný port."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1417,9 +1113,7 @@ msgstr "Konfigurace Matterbridge"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "In the version 1.22.4, Matterbridge added support for XMPP anonymous connections needed to connect to the built-in prosody."
-msgstr ""
-"Ve verzi 1.22.4 přidal Matterbridge podporu anonymních připojení XMPP "
-"potřebných k připojení k vestavěnému prosodiu."
+msgstr "Ve verzi 1.22.4 přidal Matterbridge podporu anonymních připojení XMPP potřebných k připojení k vestavěnému prosodiu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1464,37 +1158,22 @@ msgstr "`mypeertube` lze nahradit jiným názvem."
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Using `peertube` as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification."
-msgstr ""
-"Použití `peertube` jako Nick zajistí vložení ikony PeerTube pro překryvné "
-"zprávy, lze také provést pomocí úpravy konfigurace překryvu."
+msgstr "Použití `peertube` jako Nick zajistí vložení ikony PeerTube pro překryvné zprávy, lze také provést pomocí úpravy konfigurace překryvu."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "The setting `NoTLS=true` allows connecting to a server with self-signed certificates."
-msgstr ""
-"Nastavení `NoTLS=true` umožňuje připojit se k serveru s certifikáty "
-"podepsanými samotným uživatelem."
+msgstr "Nastavení `NoTLS=true` umožňuje připojit se k serveru s certifikáty podepsanými samotným uživatelem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Now you can add this account to gateways and bridge specific live-chat channels."
-msgstr ""
-"Nyní můžete tento účet přidat k branám a přemostit konkrétní kanály živého "
-"chatu."
+msgstr "Nyní můžete tento účet přidat k branám a přemostit konkrétní kanály živého chatu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "This documentation use an anonymous account to connect the bridge to the chat.  But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account.  This is used for [OBS docks](/peertube-plugin-livechat/documentation/user/obs).  Using this feature for other purposes is not documented and not officially supported yet.  If you want to use it anyway, you can request a token by calling then `/plugins/livechat/router/api/auth/tokens` endpoint.  To get needed headers and request body, just check what happens when you generate a new token for OBS docks."
-msgstr ""
-"Tato dokumentace používá anonymní účet pro připojení bridge k chatu.  Od "
-"verze livechat v10.1.0 však existuje nový způsob generování dlouhodobého "
-"ověřovacího tokenu, který umožňuje připojení pomocí vašeho účtu.  To se "
-"používá pro [OBS doky](/peertube-plugin-livechat/dokumentace/uživatel/obs).  "
-"Použití této funkce pro jiné účely není zdokumentováno a zatím není "
-"oficiálně podporováno.  Pokud ji přesto chcete použít, můžete si vyžádat "
-"token zavoláním koncového bodu `/plugins/livechat/router/api/auth/tokens`.  "
-"Chcete-li získat potřebné hlavičky a tělo požadavku, stačí se podívat, co se "
-"děje při generování nového tokenu pro doky OBS."
+msgstr "Tato dokumentace používá anonymní účet pro připojení bridge k chatu.  Od verze livechat v10.1.0 však existuje nový způsob generování dlouhodobého ověřovacího tokenu, který umožňuje připojení pomocí vašeho účtu.  To se používá pro [OBS doky](/peertube-plugin-livechat/dokumentace/uživatel/obs).  Použití této funkce pro jiné účely není zdokumentováno a zatím není oficiálně podporováno.  Pokud ji přesto chcete použít, můžete si vyžádat token zavoláním koncového bodu `/plugins/livechat/router/api/auth/tokens`.  Chcete-li získat potřebné hlavičky a tělo požadavku, stačí se podívat, co se děje při generování nového tokenu pro doky OBS."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1511,27 +1190,17 @@ msgstr "Klienti XMPP"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This chat module is based on the XMPP protocol, also known as Jabber.  It is therefore possible to connect to the chats using [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  This can for example be useful to facilitate moderation operations."
-msgstr ""
-"Tento chatovací modul je založen na protokolu XMPP, známém také jako "
-"Jabber.  Proto je možné se k chatům připojit pomocí [klientského softwaru "
-"XMPP](https://en.wikipedia.org/wiki/XMPP#Clients).  To může být užitečné "
-"například pro usnadnění moderátorských operací."
+msgstr "Tento chatovací modul je založen na protokolu XMPP, známém také jako Jabber.  Proto je možné se k chatům připojit pomocí [klientského softwaru XMPP](https://en.wikipedia.org/wiki/XMPP#Clients).  To může být užitečné například pro usnadnění moderátorských operací."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the user documentation associated with these features, please refer to the [user documentation page](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
-msgstr ""
-"Uživatelskou dokumentaci související s těmito funkcemi naleznete na stránce ["
-"uživatelská dokumentace](/peertube-plugin-livechat/documentation/user/"
-"xmpp_clients/)."
+msgstr "Uživatelskou dokumentaci související s těmito funkcemi naleznete na stránce [uživatelská dokumentace](/peertube-plugin-livechat/documentation/user/xmpp_clients/)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enabling these features requires configuration changes on the server, and on the DNS records.  It is not possible to configure this only from the Peertube interface, and it requires some basic system some basic system admin skills."
-msgstr ""
-"Povolení těchto funkcí vyžaduje změny konfigurace na serveru a v záznamech "
-"DNS.  To není možné konfigurovat pouze z rozhraní Peertube a vyžaduje to "
-"základní systémové některé základní systémové administrátorské dovednosti."
+msgstr "Povolení těchto funkcí vyžaduje změny konfigurace na serveru a v záznamech DNS.  To není možné konfigurovat pouze z rozhraní Peertube a vyžaduje to základní systémové některé základní systémové administrátorské dovednosti."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1544,9 +1213,7 @@ msgstr "Přihlášení k účtu Peertube"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "This feature is not yet available, and will come in a future version of the plugin."
-msgstr ""
-"Tato funkce zatím není k dispozici a objeví se v některé z budoucích verzí "
-"zásuvného modulu."
+msgstr "Tato funkce zatím není k dispozici a objeví se v některé z budoucích verzí zásuvného modulu."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1558,10 +1225,7 @@ msgstr "Připojení pomocí externího účtu XMPP"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "To enable this feature, you will need to set up your server and DNS records, so that XMPP clients can find and access the [Prosody server](https://prosody.im) that this plugin uses internally."
-msgstr ""
-"Chcete-li tuto funkci povolit, musíte nastavit svůj server a záznamy DNS "
-"tak, aby klienti XMPP mohli najít [Prosody server](https://prosody.im), "
-"který tento zásuvný modul interně používá, a získat k němu přístup."
+msgstr "Chcete-li tuto funkci povolit, musíte nastavit svůj server a záznamy DNS tak, aby klienti XMPP mohli najít [Prosody server](https://prosody.im), který tento zásuvný modul interně používá, a získat k němu přístup."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1572,39 +1236,22 @@ msgstr "Nastavení zásuvného modulu"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Start by going to the livechat plugin settings of your instance, then enable the setting \"Enable connection to room using external XMPP accounts\".  By checking this setting, new settings appear below."
-msgstr ""
-"Začněte tím, že přejdete do nastavení pluginu livechat své instance a "
-"povolíte nastavení \"Povolit připojení k místnosti pomocí externích účtů "
-"XMPP\".  Zaškrtnutím tohoto nastavení se níže zobrazí nová nastavení."
+msgstr "Začněte tím, že přejdete do nastavení pluginu livechat své instance a povolíte nastavení \"Povolit připojení k místnosti pomocí externích účtů XMPP\".  Zaškrtnutím tohoto nastavení se níže zobrazí nová nastavení."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First of all, the \"Prosody server to server port\" field.  This one defaults to 5269, which is the standard port for this service.  You can however change to another port, if this is already in use on your server."
-msgstr ""
-"Především pole \"Prosody server to server port\".  To je ve výchozím "
-"nastavení 5269, což je standardní port pro tuto službu.  Můžete jej však "
-"změnit na jiný port, pokud je na vašem serveru již používán."
+msgstr "Především pole \"Prosody server to server port\".  To je ve výchozím nastavení 5269, což je standardní port pro tuto službu.  Můžete jej však změnit na jiný port, pokud je na vašem serveru již používán."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Next, the field \"Server to server network interfaces\" field allows you to specify which network interfaces the server should listen on.  The default value \"*, ::\" indicates to listen on all IP addresses.  You can change these values, if you wish to listen on only certain IP addresses.  The syntax is explained next to the setting."
-msgstr ""
-"V dalším poli \"Síťová rozhraní serveru\" můžete zadat, na kterých síťových "
-"rozhraních má server naslouchat.  Výchozí hodnota \"*, ::\" znamená, že se "
-"má naslouchat na všech IP adresách.  Pokud si přejete naslouchat pouze na "
-"určitých IP adresách, můžete tyto hodnoty změnit.  Syntaxe je vysvětlena "
-"vedle nastavení."
+msgstr "V dalším poli \"Síťová rozhraní serveru\" můžete zadat, na kterých síťových rozhraních má server naslouchat.  Výchozí hodnota \"*, ::\" znamená, že se má naslouchat na všech IP adresách.  Pokud si přejete naslouchat pouze na určitých IP adresách, můžete tyto hodnoty změnit.  Syntaxe je vysvětlena vedle nastavení."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "For the \"Certificate folder\" setting, you can leave it empty.  In this case, the plugin will automatically generate self-signed certificates.  Some XMPP servers may refuse to connect, depending on their configuration.  In this case, you can indicate here a path on the server, in which you must place certificates to be used by the module.  It is up to you to generate and renew them.  See bellow for more information."
-msgstr ""
-"Nastavení \"Složka certifikátu\" můžete ponechat prázdné.  V takovém případě "
-"bude zásuvný modul automaticky generovat certifikáty podepsané vlastním "
-"podpisem.  Některé servery XMPP se mohou v závislosti na své konfiguraci "
-"odmítnout připojit.  V takovém případě zde můžete uvést cestu na serveru, do "
-"které je třeba umístit certifikáty, které má modul používat.  Je na vás, "
-"abyste je vygenerovali a obnovili.  Další informace naleznete níže."
+msgstr "Nastavení \"Složka certifikátu\" můžete ponechat prázdné.  V takovém případě bude zásuvný modul automaticky generovat certifikáty podepsané vlastním podpisem.  Některé servery XMPP se mohou v závislosti na své konfiguraci odmítnout připojit.  V takovém případě zde můžete uvést cestu na serveru, do které je třeba umístit certifikáty, které má modul používat.  Je na vás, abyste je vygenerovali a obnovili.  Další informace naleznete níže."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1615,17 +1262,12 @@ msgstr "Firewall"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You must open the configured port (5269 by default) on your firewall."
-msgstr ""
-"Na bráně firewall musíte otevřít nakonfigurovaný port (ve výchozím nastavení "
-"5269)."
+msgstr "Na bráně firewall musíte otevřít nakonfigurovaný port (ve výchozím nastavení 5269)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you are using Docker for your Peertube, you need to modify the `docker-compose.yml` file to open port 5269 of the `peertube` container, so that the outer world can connect to it."
-msgstr ""
-"Pokud používáte Docker pro svůj Peertube, je třeba upravit soubor `docker-"
-"compose.yml` tak, aby byl otevřen port 5269 kontejneru `peertube`, aby se k "
-"němu mohl připojit vnější svět."
+msgstr "Pokud používáte Docker pro svůj Peertube, je třeba upravit soubor `docker-compose.yml` tak, aby byl otevřen port 5269 kontejneru `peertube`, aby se k němu mohl připojit vnější svět."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1636,24 +1278,17 @@ msgstr "DNS"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You need to add [DNS records](https://prosody.im/doc/dns) allowing remote servers to find \"room.your_instance.tld\" and \"external.your_instance.tld\" components."
-msgstr ""
-"Je třeba přidat [záznamy DNS](https://prosody.im/doc/dns) umožňující "
-"vzdáleným serverům najít komponenty \"room.your_instance.tld\" a \"external."
-"your_instance.tld\"."
+msgstr "Je třeba přidat [záznamy DNS](https://prosody.im/doc/dns) umožňující vzdáleným serverům najít komponenty \"room.your_instance.tld\" a \"external.your_instance.tld\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The easiest way to do this is to add SRV records for the \"room\" and \"external\" [subdomain](https://prosody.im/doc/dns#subdomains):"
-msgstr ""
-"Nejjednodušší je přidat záznamy SRV pro \"room\" a \"external\" "
-"[subdoménu](https://prosody.im/doc/dns#subdomains):"
+msgstr "Nejjednodušší je přidat záznamy SRV pro \"room\" a \"external\" [subdoménu](https://prosody.im/doc/dns#subdomains):"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "record name: _xmpp-server._tcp.room.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
-msgstr ""
-"název záznamu: _xmpp-server._tcp.room.your_instance.tld. (nahraďte "
-"\"your_instance.tld\" uri vaší instance)"
+msgstr "název záznamu: _xmpp-server._tcp.room.your_instance.tld. (nahraďte \"your_instance.tld\" uri vaší instance)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1693,9 +1328,7 @@ msgstr "cíl: your_instance.tld. (nahraďte uri vaší instance)"
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "record name: _xmpp-server._tcp.external.your_instance.tld. (replace «your_instance.tld» by your instance uri)"
-msgstr ""
-"název záznamu: _xmpp-server._tcp.external.your_instance.tld. (nahraďte "
-"\"your_instance.tld\" uri vaší instance)"
+msgstr "název záznamu: _xmpp-server._tcp.external.your_instance.tld. (nahraďte \"your_instance.tld\" uri vaší instance)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1726,11 +1359,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you are **not using the standard `5269` port**, you must also add a SRV record for `_xmpp-server._tcp.your_instance.tld.` (same as above, just without the `room.` prefix).  Of course, you can also add this record if you use the standard port. It will also work."
-msgstr ""
-"Pokud **nepoužíváte standardní port `5269`**, musíte také přidat záznam SRV "
-"pro `_xmpp-server._tcp.your_instance.tld.` (stejně jako výše, jen bez "
-"předpony `room.`).  Tento záznam můžete samozřejmě přidat i v případě, že "
-"používáte standardní port. Bude to také fungovat."
+msgstr "Pokud **nepoužíváte standardní port `5269`**, musíte také přidat záznam SRV pro `_xmpp-server._tcp.your_instance.tld.` (stejně jako výše, jen bez předpony `room.`).  Tento záznam můžete samozřejmě přidat i v případě, že používáte standardní port. Bude to také fungovat."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1741,23 +1370,12 @@ msgstr "Použití důvěryhodných certifikátů"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The self-signed certificates that this plugin uses by default can be rejected by some XMPP servers, for security reasons."
-msgstr ""
-"Certifikáty s vlastním podpisem, které tento zásuvný modul ve výchozím "
-"nastavení používá, mohou být některými servery XMPP z bezpečnostních důvodů "
-"odmítnuty."
+msgstr "Certifikáty s vlastním podpisem, které tento zásuvný modul ve výchozím nastavení používá, mohou být některými servery XMPP z bezpečnostních důvodů odmítnuty."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "It is possible to use certificates validated by a certification authority.  However, this requires advanced system administration knowledge.  Indeed, due to the multitude of possible use cases, it is impossible to document all situations here.  This documentation will therefore only explain the goal to be reached, and give an example which will only be suitable for a \"basic\" situation (manual installation of Peertube, using letsencrypt).  If you are in another situation (Docker installation, certificates signed by another authority, etc...), you will have to adapt this approach by yourself."
-msgstr ""
-"Je možné používat certifikáty ověřené certifikační autoritou.  To však "
-"vyžaduje pokročilé znalosti správy systému.  Vzhledem k množství možných "
-"případů použití zde skutečně není možné zdokumentovat všechny situace.  Tato "
-"dokumentace proto pouze vysvětlí cíl, kterého je třeba dosáhnout, a uvede "
-"příklad, který bude vhodný pouze pro \"základní\" situaci (ruční instalace "
-"Peertube pomocí letsencrypt).  Pokud se nacházíte v jiné situaci (instalace "
-"Dockeru, certifikáty podepsané jinou autoritou atd...), budete si muset "
-"tento postup přizpůsobit sami."
+msgstr "Je možné používat certifikáty ověřené certifikační autoritou.  To však vyžaduje pokročilé znalosti správy systému.  Vzhledem k množství možných případů použití zde skutečně není možné zdokumentovat všechny situace.  Tato dokumentace proto pouze vysvětlí cíl, kterého je třeba dosáhnout, a uvede příklad, který bude vhodný pouze pro \"základní\" situaci (ruční instalace Peertube pomocí letsencrypt).  Pokud se nacházíte v jiné situaci (instalace Dockeru, certifikáty podepsané jinou autoritou atd...), budete si muset tento postup přizpůsobit sami."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1768,37 +1386,22 @@ msgstr "Základní princip"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "It is up to you to generate valid certificates for domains `your_instance.tld` and `room.your_instance.tld`.  You can use any [method supported by Prosody](https://prosody.im/doc/certificates)."
-msgstr ""
-"Je na vás, abyste vygenerovali platné certifikáty pro domény `vase_instance."
-"tld` a `room.your_instance.tld`.  Můžete použít jakoukoli [metodu "
-"podporovanou Prosody](https://prosody.im/doc/certificates)."
+msgstr "Je na vás, abyste vygenerovali platné certifikáty pro domény `vase_instance.tld` a `room.your_instance.tld`.  Můžete použít jakoukoli [metodu podporovanou Prosody](https://prosody.im/doc/certificates)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You must then place these certificates in a folder that will be accessible to the `peertube` user, and specify this folder in the plugin setting \"Certificate folder\"."
-msgstr ""
-"Tyto certifikáty pak musíte umístit do složky, která bude přístupná "
-"uživateli `peertube`, a tuto složku zadat v nastavení pluginu \"Certificate "
-"folder\"."
+msgstr "Tyto certifikáty pak musíte umístit do složky, která bude přístupná uživateli `peertube`, a tuto složku zadat v nastavení pluginu \"Certificate folder\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
-msgstr ""
-"Pokud chcete k importu certifikátů použít nástroj ProsodyCtl, je tento "
-"nástroj k dispozici (po spuštění Peertube) pomocí následujícího příkazu ("
-"upravte cestu k datové složce Peertube a nahraďte \"xxx\" argumenty, které "
-"chcete předat prosodyctl): `sudo -u peertube /var/www/peertube/storage/"
-"plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun "
-"prosodyctl --config /var/www/peertube/storage/plugins/data/"
-"peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
+msgstr "Pokud chcete k importu certifikátů použít nástroj ProsodyCtl, je tento nástroj k dispozici (po spuštění Peertube) pomocí následujícího příkazu (upravte cestu k datové složce Peertube a nahraďte \"xxx\" argumenty, které chcete předat prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "The plugin will check once a day to see if any files have been modified in this folder, and reload Prosody if necessary."
-msgstr ""
-"Zásuvný modul bude jednou denně kontrolovat, zda v této složce nebyly "
-"změněny nějaké soubory, a v případě potřeby znovu načte aplikaci Prosody."
+msgstr "Zásuvný modul bude jednou denně kontrolovat, zda v této složce nebyly změněny nějaké soubory, a v případě potřeby znovu načte aplikaci Prosody."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1809,35 +1412,22 @@ msgstr "Metoda pro jednoduchý případ"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We assume here that your Peertube installation is \"classic\" (no use of Docker), and that the certificates are generated by letsencrypt, using the certbot tool."
-msgstr ""
-"Předpokládáme, že vaše instalace Peertube je \"klasická\" (bez použití "
-"Dockeru) a že certifikáty jsou generovány nástrojem letsencrypt pomocí "
-"nástroje certbot."
+msgstr "Předpokládáme, že vaše instalace Peertube je \"klasická\" (bez použití Dockeru) a že certifikáty jsou generovány nástrojem letsencrypt pomocí nástroje certbot."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First of all, we'll have to create a certificate for the subdomain `room.your_instance.tld` : this is the uri of the MUC (XMPP chat rooms) component.  Even if the connections are made on `your_instance.tld`, we will need a valid certificate for this subdomain."
-msgstr ""
-"Nejprve musíme vytvořit certifikát pro subdoménu `room.your_instance.tld` : "
-"to je uri komponenty MUC (chatovací místnosti XMPP).  I když jsou spojení "
-"navázána na `vaše_instance.tld`, budeme potřebovat platný certifikát pro "
-"tuto subdoménu."
+msgstr "Nejprve musíme vytvořit certifikát pro subdoménu `room.your_instance.tld` : to je uri komponenty MUC (chatovací místnosti XMPP).  I když jsou spojení navázána na `vaše_instance.tld`, budeme potřebovat platný certifikát pro tuto subdoménu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "So start by setting up a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry)."
-msgstr ""
-"Začněte tedy nastavením položky DNS pro `room.your_instance.tld`, která "
-"ukazuje na váš server.  Můžete použít položku CNAME (nebo položku A a "
-"položku AAAA)."
+msgstr "Začněte tedy nastavením položky DNS pro `room.your_instance.tld`, která ukazuje na váš server.  Můžete použít položku CNAME (nebo položku A a položku AAAA)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Next, we'll use nginx (already installed for your Peertube) to generate the certbot certificate.  We will create a new site. In the file `/etc/nginx/site-available/room.peertube`, add:"
-msgstr ""
-"Dále použijeme nginx (již nainstalovaný pro Peertube) k vygenerování "
-"certifikátu certbot.  Vytvoříme nový web. Do souboru `/etc/nginx/"
-"site-available/room.peertube` přidejte:"
+msgstr "Dále použijeme nginx (již nainstalovaný pro Peertube) k vygenerování certifikátu certbot.  Vytvoříme nový web. Do souboru `/etc/nginx/site-available/room.peertube` přidejte:"
 
 #. type: Fenced code block (nginx)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1883,11 +1473,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Then we prepare the folder in which we will later import the certificates.  We assume here that you already have the plugin active. We will create the following folder (if it doesn't already exist), with the user `peertube` to make sure there are no permissions issues:"
-msgstr ""
-"Poté připravíme složku, do které budeme později importovat certifikáty.  "
-"Předpokládáme, že zásuvný modul již máte aktivní. Vytvoříme následující "
-"složku (pokud již neexistuje) s uživatelem `peertube`, abychom se ujistili, "
-"že nedojde k problémům s právy:"
+msgstr "Poté připravíme složku, do které budeme později importovat certifikáty.  Předpokládáme, že zásuvný modul již máte aktivní. Vytvoříme následující složku (pokud již neexistuje) s uživatelem `peertube`, abychom se ujistili, že nedojde k problémům s právy:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1898,31 +1484,22 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Now you have to configure this folder in the plugin settings, for the parameter \"Certificate folders\".  It's important to do this now, otherwise the certificate import script will put the certificates in the wrong folder."
-msgstr ""
-"Nyní je třeba tuto složku nakonfigurovat v nastavení zásuvného modulu v "
-"parametru \"Složky certifikátů\".  Je důležité to provést nyní, jinak skript "
-"pro import certifikátů vloží certifikáty do nesprávné složky."
+msgstr "Nyní je třeba tuto složku nakonfigurovat v nastavení zásuvného modulu v parametru \"Složky certifikátů\".  Je důležité to provést nyní, jinak skript pro import certifikátů vloží certifikáty do nesprávné složky."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We will configure certbot to import the generated certificates into the Prosody folder.  We can use the ProsodyCtl utility packaged in the plugin."
-msgstr ""
-"Nakonfigurujeme certbot tak, aby vygenerované certifikáty importoval do "
-"složky Prosody.  Můžeme použít nástroj ProsodyCtl přibalený v zásuvném "
-"modulu."
+msgstr "Nakonfigurujeme certbot tak, aby vygenerované certifikáty importoval do složky Prosody.  Můžeme použít nástroj ProsodyCtl přibalený v zásuvném modulu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: for it to be available, the plugin must have been started at least once."
-msgstr ""
-"Poznámka: aby byl zásuvný modul k dispozici, musí být alespoň jednou spuštěn."
+msgstr "Poznámka: aby byl zásuvný modul k dispozici, musí být alespoň jednou spuštěn."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "We will create a file `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` containing:"
-msgstr ""
-"Vytvoříme soubor `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` "
-"obsahující:"
+msgstr "Vytvoříme soubor `/etc/letsencrypt/renewal-hooks/deploy/prosody.sh` obsahující:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1936,11 +1513,9 @@ msgid ""
 "  room.your_instance.tld your_instance.tld /etc/letsencrypt/live\n"
 msgstr ""
 "#!/usr/bin/env sh\n"
-"/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
-"prosodyAppImage/squashfs-root/AppRun prosodyctl \\\n"
+"/var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl \\\n"
 "  --root \\\n"
-"  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
-"prosody/prosody.cfg.lua \\\n"
+"  --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua \\\n"
 "  cert import \\\n"
 "  room.vase_instance.tld vase_instance.tld /etc/letsencrypt/live\n"
 
@@ -1958,9 +1533,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If certbot offers you several methods to generate the certificate, choose \"nginx\"."
-msgstr ""
-"Pokud vám certbot nabídne několik způsobů generování certifikátu, vyberte "
-"možnost \"nginx\"."
+msgstr "Pokud vám certbot nabídne několik způsobů generování certifikátu, vyberte možnost \"nginx\"."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1970,9 +1543,7 @@ msgstr "Nyní byste měli najít certifikáty v nakonfigurované složce."
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Note: the first time you do this, you will have to reload Prosody. The easiest way to do this is to restart Peertube."
-msgstr ""
-"Poznámka: při prvním použití je nutné znovu načíst aplikaci Prosody. "
-"Nejjednodušší způsob, jak to udělat, je restartovat Peertube."
+msgstr "Poznámka: při prvním použití je nutné znovu načíst aplikaci Prosody. Nejjednodušší způsob, jak to udělat, je restartovat Peertube."
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1983,18 +1554,12 @@ msgstr "Metoda pro řešení Docker"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "This method works with the officially supported [Docker guide](https://docs.joinpeertube.org/install/docker) from PeerTube."
-msgstr ""
-"Tato metoda funguje s oficiálně podporovaným [Docker guide](https://docs."
-"joinpeertube.org/install/docker) od PeerTube."
+msgstr "Tato metoda funguje s oficiálně podporovaným [Docker guide](https://docs.joinpeertube.org/install/docker) od PeerTube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry).  This is necessary for Let's Encrypt to validate the domain for certificate generation."
-msgstr ""
-"Nejprve vytvořte položku DNS pro `room.your_instance.tld`, která bude "
-"ukazovat na váš server.  Můžete použít položku CNAME (nebo položku A a "
-"položku AAAA).  To je nutné, aby aplikace Let's Encrypt ověřila doménu pro "
-"generování certifikátu."
+msgstr "Nejprve vytvořte položku DNS pro `room.your_instance.tld`, která bude ukazovat na váš server.  Můžete použít položku CNAME (nebo položku A a položku AAAA).  To je nutné, aby aplikace Let's Encrypt ověřila doménu pro generování certifikátu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2050,9 +1615,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the directory where the PeerTube webserver serves requests for Let's Encrypt, `/var/www/certbot`:"
-msgstr ""
-"Zadejte adresář, do kterého webový server PeerTube doručuje požadavky na "
-"Let's Encrypt, `/var/www/certbot`:"
+msgstr "Zadejte adresář, do kterého webový server PeerTube doručuje požadavky na Let's Encrypt, `/var/www/certbot`:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2077,12 +1640,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.  *Note*: This will also make the files readable to the group with id 999 on the host system.  Check the groups on your system to assess this as a risk before running this command."
-msgstr ""
-"Spusťte níže uvedený příkaz uvnitř kontejneru certbot, abyste skupině "
-"peertube poskytli přístup ke čtení nových certifikátů a soukromých klíčů.  "
-"*Poznámka*: Tímto způsobem budou soubory přístupné ke čtení také skupině s "
-"id 999 v hostitelském systému.  Před spuštěním tohoto příkazu zkontrolujte "
-"skupiny ve svém systému a vyhodnoťte to jako riziko."
+msgstr "Spusťte níže uvedený příkaz uvnitř kontejneru certbot, abyste skupině peertube poskytli přístup ke čtení nových certifikátů a soukromých klíčů.  *Poznámka*: Tímto způsobem budou soubory přístupné ke čtení také skupině s id 999 v hostitelském systému.  Před spuštěním tohoto příkazu zkontrolujte skupiny ve svém systému a vyhodnoťte to jako riziko."
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2109,10 +1667,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Modify your `docker-compose.yml` file, changing the `entrypoint` line under the `certbot` service to the following.  This is the same as the above, but to be automatically executed after every certificate renewal."
-msgstr ""
-"Upravte soubor `docker-compose.yml` a změňte řádek `entrypoint` pod službou "
-"`certbot` na následující.  Je to stejné jako výše, ale má se to provádět "
-"automaticky po každém obnovení certifikátu."
+msgstr "Upravte soubor `docker-compose.yml` a změňte řádek `entrypoint` pod službou `certbot` na následující.  Je to stejné jako výše, ale má se to provádět automaticky po každém obnovení certifikátu."
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2123,9 +1678,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Continuing to modify `docker-compose.yml`, add the certbot certificate volume into the peertube container.  It should look something like this:"
-msgstr ""
-"Pokračujte v úpravě souboru `docker-compose.yml` a přidejte svazek "
-"certifikátů certbot do kontejneru peertube.  Mělo by to vypadat nějak takto:"
+msgstr "Pokračujte v úpravě souboru `docker-compose.yml` a přidejte svazek certifikátů certbot do kontejneru peertube.  Mělo by to vypadat nějak takto:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2149,9 +1702,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "In the livechat plugin settings from your PeerTube administration settings, set the certificate directory to the following:"
-msgstr ""
-"V nastavení pluginu livechat v administraci PeerTube nastavte adresář "
-"certifikátu na následující hodnotu:"
+msgstr "V nastavení pluginu livechat v administraci PeerTube nastavte adresář certifikátu na následující hodnotu:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2162,8 +1713,7 @@ msgstr "/etc/letsencrypt/live\n"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Save the plugin settings and verify Prosody can see the certificates:"
-msgstr ""
-"Uložte nastavení zásuvného modulu a ověřte, zda Prosody vidí certifikáty:"
+msgstr "Uložte nastavení zásuvného modulu a ověřte, zda Prosody vidí certifikáty:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -2188,10 +1738,7 @@ msgstr "Odstraňování potíží"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you can't make it work, you can use the diagnostic tool (there is a button on top of the plugin settings page), and take a close look on the «Prosody check» section."
-msgstr ""
-"Pokud se vám to nedaří, můžete použít diagnostický nástroj (tlačítko je v "
-"horní části stránky s nastavením zásuvného modulu) a podívat se na část "
-"\"Kontrola Prosody\"."
+msgstr "Pokud se vám to nedaří, můžete použít diagnostický nástroj (tlačítko je v horní části stránky s nastavením zásuvného modulu) a podívat se na část \"Kontrola Prosody\"."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2209,18 +1756,12 @@ msgstr "Externí ověřování"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Users that are not connected to your Peertube instance are joining the chat using \"anonymous accounts\" (they can freely choose a nickname, and will be assigned a random avatar)."
-msgstr ""
-"Uživatelé, kteří nejsou připojeni k vaší instanci Peertube, se připojují k "
-"chatu pomocí \"anonymních účtů\" (mohou si libovolně zvolit přezdívku a bude "
-"jim přidělen náhodný avatar)."
+msgstr "Uživatelé, kteří nejsou připojeni k vaší instanci Peertube, se připojují k chatu pomocí \"anonymních účtů\" (mohou si libovolně zvolit přezdívku a bude jim přidělen náhodný avatar)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You can enable some external authentication methods to allow user to create chat accounts.  In such case their nickname and avatar will be automatically initialized with the remote account information."
-msgstr ""
-"Můžete povolit některé externí metody ověřování, které umožní uživateli "
-"vytvářet účty chatu.  V takovém případě se jejich přezdívka a avatar "
-"automaticky inicializují pomocí informací o vzdáleném účtu."
+msgstr "Můžete povolit některé externí metody ověřování, které umožní uživateli vytvářet účty chatu.  V takovém případě se jejich přezdívka a avatar automaticky inicializují pomocí informací o vzdáleném účtu."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2230,31 +1771,19 @@ msgstr "Takové \"externí uživatele\" bude snazší moderovat než anonymní �
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "This also allows user to join the chat without creating Peertube account (in case your instance has closed registration for example, or without waiting for account approval)."
-msgstr ""
-"To také umožňuje uživateli připojit se k chatu bez vytvoření účtu Peertube ("
-"například v případě, že vaše instance má uzavřenou registraci, nebo bez "
-"čekání na schválení účtu)."
+msgstr "To také umožňuje uživateli připojit se k chatu bez vytvoření účtu Peertube (například v případě, že vaše instance má uzavřenou registraci, nebo bez čekání na schválení účtu)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of a Peertube video page, with a chat on the right. At the bottom of the chat, there is a \"{{% livechat_label login_using_external_account %}}\" button.](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px \"{{% livechat_label login_using_external_account %}} button\")"
-msgstr ""
-"![Snímek obrazovky stránky s videem na Peertube, s chatem vpravo. V dolní "
-"části chatu je tlačítko \"{{% livechat_label login_using_external_account "
-"%}}\"](/peertube-plugin-livechat/images/"
-"external_login_button.png?classes=shadow,border&height=200px \"{{% "
-"livechat_label login_using_external_account %}}\")"
+msgstr "![Snímek obrazovky stránky s videem na Peertube, s chatem vpravo. V dolní části chatu je tlačítko \"{{% livechat_label login_using_external_account %}}\"](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px \"{{% livechat_label login_using_external_account %}}\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of a dialog with an \"OpenID Connect\" button.](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px \"External login dialog - OpenID Connect\")"
-msgstr ""
-"![Snímek obrazovky dialogu s tlačítkem \"OpenID Connect\"](/peertube-"
-"plugin-livechat/images/"
-"external_login_dialog_oidc.png?classes=shadow,border&height=200px \"Externí "
-"přihlašovací dialog - OpenID Connect\")"
+msgstr "![Snímek obrazovky dialogu s tlačítkem \"OpenID Connect\"](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px \"Externí přihlašovací dialog - OpenID Connect\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2264,9 +1793,7 @@ msgstr "Na této stránce jsou popsány dostupné metody ověřování."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "For the user documentation, see [user documentation](/peertube-plugin-livechat/documentation/user/viewers/)"
-msgstr ""
-"Uživatelskou dokumentaci naleznete v části [uživatelská dokumentace"
-"](/peertube-plugin-livechat/documentation/user/viewers/)"
+msgstr "Uživatelskou dokumentaci naleznete v části [uživatelská dokumentace](/peertube-plugin-livechat/documentation/user/viewers/)"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2287,41 +1814,27 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "You can configure one external [OpenID Connect](https://openid.net/developers/how-connect-works/) compatible provider."
-msgstr ""
-"Můžete nakonfigurovat jednoho externího poskytovatele kompatibilního s ["
-"OpenID Connect](https://openid.net/developers/how-connect-works/)."
+msgstr "Můžete nakonfigurovat jednoho externího poskytovatele kompatibilního s [OpenID Connect](https://openid.net/developers/how-connect-works/)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Doing so, you can for example use your website for Single Sign-On."
-msgstr ""
-"Díky tomu můžete například použít své webové stránky pro jednotné přihlášení."
+msgstr "Díky tomu můžete například použít své webové stránky pro jednotné přihlášení."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Popular CMS softwares (Wordpess, ...) offers plugins implementing OpenID Connect."
-msgstr ""
-"Oblíbené softwary CMS (Wordpess, ...) nabízejí pluginy implementující OpenID "
-"Connect."
+msgstr "Oblíbené softwary CMS (Wordpess, ...) nabízejí pluginy implementující OpenID Connect."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "To enable this feature, first you have to create a client on your provider side (check the related documentation for enabling OpenID Connect).  Then go to the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings), and enable \"{{% livechat_label external_auth_custom_oidc_label %}}\"."
-msgstr ""
-"Chcete-li tuto funkci povolit, musíte nejprve vytvořit klienta na straně "
-"poskytovatele (podívejte se do související dokumentace pro povolení služby "
-"OpenID Connect).  Poté přejděte do [nastavení pluginu](/peertube-"
-"plugin-livechat/documentation/admin/settings) a povolte \"{{% livechat_label "
-"external_auth_custom_oidc_label %}}\"."
+msgstr "Chcete-li tuto funkci povolit, musíte nejprve vytvořit klienta na straně poskytovatele (podívejte se do související dokumentace pro povolení služby OpenID Connect).  Poté přejděte do [nastavení pluginu](/peertube-plugin-livechat/documentation/admin/settings) a povolte \"{{% livechat_label external_auth_custom_oidc_label %}}\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if you want to restrict allowed redirection urls on the provider side (best security practice), the plugin will show you the url to allow.  Just copy it in your OpenID Connect application configuration."
-msgstr ""
-"Poznámka: pokud chcete na straně poskytovatele omezit povolené adresy "
-"přesměrování (nejlepší bezpečnostní postup), zásuvný modul vám zobrazí url, "
-"které chcete povolit.  Stačí ji zkopírovat do konfigurace aplikace OpenID "
-"Connect."
+msgstr "Poznámka: pokud chcete na straně poskytovatele omezit povolené adresy přesměrování (nejlepší bezpečnostní postup), zásuvný modul vám zobrazí url, které chcete povolit.  Stačí ji zkopírovat do konfigurace aplikace OpenID Connect."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2341,19 +1854,12 @@ msgstr "Prozatím není možné tento štítek lokalizovat."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Your OpenID Connect provider must implement the [discovery URL](https://openid.net/specs/openid-connect-discovery-1_0.html).  Just set here the discovery url, that should be something like `https://example.com/.well-known/openid-configuration`."
-msgstr ""
-"Váš poskytovatel služby OpenID Connect musí implementovat [discovery "
-"URL](https://openid.net/specs/openid-connect-discovery-1_0.html).  Zde stačí "
-"nastavit url adresu zjišťování, která by měla být něco jako `https://example."
-"com/.well-known/openid-configuration`."
+msgstr "Váš poskytovatel služby OpenID Connect musí implementovat [discovery URL](https://openid.net/specs/openid-connect-discovery-1_0.html).  Zde stačí nastavit url adresu zjišťování, která by měla být něco jako `https://example.com/.well-known/openid-configuration`."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if your provider use the standard `/.well-known/openid-configuration` path, you can omit it.  For example `https://accounts.google.com` will work."
-msgstr ""
-"Poznámka: pokud váš poskytovatel používá standardní cestu `/.well-known/"
-"openid-configuration`, můžete ji vynechat.  Například `https://accounts."
-"google.com` bude fungovat."
+msgstr "Poznámka: pokud váš poskytovatel používá standardní cestu `/.well-known/openid-configuration`, můžete ji vynechat.  Například `https://accounts.google.com` bude fungovat."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2374,49 +1880,32 @@ msgstr "Google, Facebook, ..."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "In addition to that, you can also configure one or several \"standard\" Open ID Connect provider (Google, Facebook, ...)."
-msgstr ""
-"Kromě toho můžete také nakonfigurovat jednoho nebo více \"standardních\" "
-"poskytovatelů Open ID Connect (Google, Facebook, ...)."
+msgstr "Kromě toho můžete také nakonfigurovat jednoho nebo více \"standardních\" poskytovatelů Open ID Connect (Google, Facebook, ...)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "For these providers, discovery url and button label are preset.  You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret."
-msgstr ""
-"U těchto poskytovatelů je přednastavena url adresa zjišťování a popisek "
-"tlačítka.  Stačí vytvořit aplikaci OAuth2 na straně poskytovatele a "
-"nakonfigurovat Client ID a Client Secret."
+msgstr "U těchto poskytovatelů je přednastavena url adresa zjišťování a popisek tlačítka.  Stačí vytvořit aplikaci OAuth2 na straně poskytovatele a nakonfigurovat Client ID a Client Secret."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
-msgstr ""
-"Pokud vás napadne standardní poskytovatel, který není k dispozici, můžete "
-"požádat o jeho implementaci [otevřením nového vydání](https://github.com/"
-"JohnXLivingston/peertube-plugin-livechat/issues)."
+msgstr "Pokud vás napadne standardní poskytovatel, který není k dispozici, můžete požádat o jeho implementaci [otevřením nového vydání](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If the button does not appear for end users, there might be a configuration issue.  You can try the [diagnostic tool](/peertube-plugin-livechat/documentation/installation/troubleshooting/) to get more information."
-msgstr ""
-"Pokud se tlačítko koncovým uživatelům nezobrazuje, může se jednat o problém "
-"s konfigurací.  Pro získání dalších informací můžete vyzkoušet [diagnostický "
-"nástroj](/peertube-plugin-livechat/documentation/installation/"
-"troubleshooting/)."
+msgstr "Pokud se tlačítko koncovým uživatelům nezobrazuje, může se jednat o problém s konfigurací.  Pro získání dalších informací můžete vyzkoušet [diagnostický nástroj](/peertube-plugin-livechat/documentation/installation/troubleshooting/)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test."
-msgstr ""
-"Poznámka: pokud jste připojeni k účtu Peertube, tlačítko se nikdy nezobrazí. "
-"K testování proto použijte soukromé okno prohlížeče."
+msgstr "Poznámka: pokud jste připojeni k účtu Peertube, tlačítko se nikdy nezobrazí. K testování proto použijte soukromé okno prohlížeče."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If the button is displayed but is not working, check your Peertube logs.  It could be because the remote service does not use standard scopes or attribute names."
-msgstr ""
-"Pokud se tlačítko zobrazí, ale nefunguje, zkontrolujte protokoly Peertube.  "
-"Může to být způsobeno tím, že vzdálená služba nepoužívá standardní obory "
-"nebo názvy atributů."
+msgstr "Pokud se tlačítko zobrazí, ale nefunguje, zkontrolujte protokoly Peertube.  Může to být způsobeno tím, že vzdálená služba nepoužívá standardní obory nebo názvy atributů."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2457,28 +1946,17 @@ msgstr "Prosody mod_firewall"
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
-msgstr ""
-"Na serveru Prosody můžete povolit [mod_firewall](https://modules.prosody.im/"
-"mod_firewall)."
+msgstr "Na serveru Prosody můžete povolit [mod_firewall](https://modules.prosody.im/mod_firewall)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Doing so, Peertube admins will be able to define advanced firewall rules."
-msgstr ""
-"Správci Peertube tak budou moci definovat pokročilá pravidla brány firewall."
+msgstr "Správci Peertube tak budou moci definovat pokročilá pravidla brány firewall."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "These rules could be used to run arbitrary code on the server.  If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.  You can still use mod_firewall by editing files directly on the server."
-msgstr ""
-"Tato pravidla lze použít ke spuštění libovolného kódu na serveru.  Pokud "
-"jste poskytovatelem hostingu a nechcete umožnit správcům Peertube psát "
-"taková pravidla, můžete online editaci zakázat vytvořením souboru "
-"`disable_mod_firewall_editing` v adresáři pluginu (`plugins/data/"
-"peertube-plugin-livechat/disable_mod_firewall_editing`).  To je opt-out, "
-"protože administrátoři Peertube již mohou spouštět libovolný kód pouhou "
-"instalací libovolného zásuvného modulu.  Mod_firewall můžete stále používat "
-"úpravou souborů přímo na serveru."
+msgstr "Tato pravidla lze použít ke spuštění libovolného kódu na serveru.  Pokud jste poskytovatelem hostingu a nechcete umožnit správcům Peertube psát taková pravidla, můžete online editaci zakázat vytvořením souboru `disable_mod_firewall_editing` v adresáři pluginu (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  To je opt-out, protože administrátoři Peertube již mohou spouštět libovolný kód pouhou instalací libovolného zásuvného modulu.  Mod_firewall můžete stále používat úpravou souborů přímo na serveru."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2489,25 +1967,17 @@ msgstr "Úprava pravidel"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "First, you must enable the feature in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
-msgstr ""
-"Nejprve je nutné funkci povolit v [nastavení pluginu](/peertube-"
-"plugin-livechat/documentation/admin/settings)."
+msgstr "Nejprve je nutné funkci povolit v [nastavení pluginu](/peertube-plugin-livechat/documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Just bellow the settings, you will find a \"Configure mod_firewall\" button.  This button will open a configuration page."
-msgstr ""
-"Hned pod nastavením najdete tlačítko \"Configure mod_firewall\".  Toto "
-"tlačítko otevře konfigurační stránku."
+msgstr "Hned pod nastavením najdete tlačítko \"Configure mod_firewall\".  Toto tlačítko otevře konfigurační stránku."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "![Screenshot of the \"{{% livechat_label prosody_firewall_configuration %}}\" form.](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label prosody_firewall_configuration %}}\")"
-msgstr ""
-"![Snímek obrazovky formuláře \"{{% livechat_label "
-"prosody_firewall_configuration %}}\"](/peertube-plugin-livechat/images/"
-"mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label "
-"prosody_firewall_configuration %}}\")"
+msgstr "![Snímek obrazovky formuláře \"{{% livechat_label prosody_firewall_configuration %}}\"](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label prosody_firewall_configuration %}}\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2522,34 +1992,17 @@ msgstr "Jednotlivé soubory můžete povolit/zakázat."
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Files will be loaded in the alphabetical order.  You can use a number as prefix to easily choose the order."
-msgstr ""
-"Soubory se načítají v abecedním pořadí.  Pro snadnou volbu pořadí můžete "
-"použít číslo jako předponu."
+msgstr "Soubory se načítají v abecedním pořadí.  Pro snadnou volbu pořadí můžete použít číslo jako předponu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "You can also edit these firewall rules directly on the server, in the `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` directory.  File names must only contains alphanumerical characters, underscores and hyphens.  The extension must be `.pfw`, or `.pfw.disabled` if you want to disable a file.  Please be sure that the peertube system user has write access to these files, else the web editing interface will fail.  Once you have edited these files, you must reload prosody.  This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube."
-msgstr ""
-"Tato pravidla brány firewall můžete také upravit přímo na serveru v adresáři "
-"`plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/`.  Názvy "
-"souborů musí obsahovat pouze alfanumerické znaky, podtržítka a pomlčky.  "
-"Přípona musí být `.pfw` nebo `.pfw.disabled`, pokud chcete soubor zakázat.  "
-"Ujistěte se, že uživatel systému peertube má k těmto souborům právo zápisu, "
-"jinak webové editační rozhraní selže.  Jakmile tyto soubory upravíte, musíte "
-"znovu načíst prosody.  To lze provést uložením nastavení zásuvného modulu "
-"nebo uložením konfigurace mod_firewall ve webovém rozhraní nebo "
-"restartováním Peertube."
+msgstr "Tato pravidla brány firewall můžete také upravit přímo na serveru v adresáři `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/`.  Názvy souborů musí obsahovat pouze alfanumerické znaky, podtržítka a pomlčky.  Přípona musí být `.pfw` nebo `.pfw.disabled`, pokud chcete soubor zakázat.  Ujistěte se, že uživatel systému peertube má k těmto souborům právo zápisu, jinak webové editační rozhraní selže.  Jakmile tyto soubory upravíte, musíte znovu načíst prosody.  To lze provést uložením nastavení zásuvného modulu nebo uložením konfigurace mod_firewall ve webovém rozhraní nebo restartováním Peertube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "When you save the configuration, the server will automatically reload it, and your rules will apply immediatly.  You can check that there is no parsing error in the Prosody error log.  To do so, you can read the `plugins/data/peertube-plugin-livechat/prosody/prosody.err` file, or use the [diagnostic tool](/peertube-plugin-livechat/documentation/installation/troubleshooting/) that will show last Prosody errors."
-msgstr ""
-"Po uložení konfigurace ji server automaticky načte a vaše pravidla se "
-"okamžitě použijí.  V protokolu chyb Prosody můžete zkontrolovat, zda nedošlo "
-"k chybě při parsování.  Za tímto účelem si můžete přečíst soubor `plugins/"
-"data/peertube-plugin-livechat/prosody/prosody.err` nebo použít [diagnostický "
-"nástroj](/peertube-plugin-livechat/documentation/installation/"
-"troubleshooting/), který zobrazí poslední chyby Prosody."
+msgstr "Po uložení konfigurace ji server automaticky načte a vaše pravidla se okamžitě použijí.  V protokolu chyb Prosody můžete zkontrolovat, zda nedošlo k chybě při parsování.  Za tímto účelem si můžete přečíst soubor `plugins/data/peertube-plugin-livechat/prosody/prosody.err` nebo použít [diagnostický nástroj](/peertube-plugin-livechat/documentation/installation/troubleshooting/), který zobrazí poslední chyby Prosody."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2560,10 +2013,7 @@ msgstr "Příklady"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Don't hesitate to share your rules.  To do so, you can for example edit this [page](/peertube-plugin-livechat/contributing/document/#write-documentation)."
-msgstr ""
-"Neváhejte se podělit o svá pravidla.  Můžete tak učinit například úpravou "
-"této [stránky](/peertube-plugin-livechat/contributing/document/#write-"
-"documentation)."
+msgstr "Neváhejte se podělit o svá pravidla.  Můžete tak učinit například úpravou této [stránky](/peertube-plugin-livechat/contributing/document/#write-documentation)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2585,23 +2035,17 @@ msgstr "Tato část popisuje stránku nastavení zásuvného modulu."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "For more information on this feature, check the documentation for [channel's terms & conditions](/peertube-plugin-livechat/documentation/user/streamers/terms)."
-msgstr ""
-"Další informace o této funkci najdete v dokumentaci pro [podmínky kanálu"
-"](/peertube-plugin-livechat/documentation/user/streamers/terms)."
+msgstr "Další informace o této funkci najdete v dokumentaci pro [podmínky kanálu](/peertube-plugin-livechat/documentation/user/streamers/terms)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Changing this setting will restart the chat server, and all users will be disconnected for a short time."
-msgstr ""
-"Změnou tohoto nastavení se restartuje chatovací server a všichni uživatelé "
-"budou na krátkou dobu odpojeni."
+msgstr "Změnou tohoto nastavení se restartuje chatovací server a všichni uživatelé budou na krátkou dobu odpojeni."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "When pressing the «List rooms» button, all existing chatrooms will be listed.  You can then find them and moderated them."
-msgstr ""
-"Po stisknutí tlačítka \"Seznam místností\" se zobrazí seznam všech "
-"existujících chatovacích místností.  Poté je můžete vyhledat a moderovat."
+msgstr "Po stisknutí tlačítka \"Seznam místností\" se zobrazí seznam všech existujících chatovacích místností.  Poté je můžete vyhledat a moderovat."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2613,9 +2057,7 @@ msgstr "Federace"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Following settings concern the federation with other Peertube instances, and other fediverse softwares."
-msgstr ""
-"Následující nastavení se týkají federace s ostatními instancemi Peertube a "
-"dalšími softwary fediverse."
+msgstr "Následující nastavení se týkají federace s ostatními instancemi Peertube a dalšími softwary fediverse."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2626,9 +2068,7 @@ msgstr "Ověřování"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "In case you have any trouble with the long term authentication tokens, you can disable the feature here."
-msgstr ""
-"V případě potíží s dlouhodobými ověřovacími tokeny můžete tuto funkci "
-"zakázat."
+msgstr "V případě potíží s dlouhodobými ověřovacími tokeny můžete tuto funkci zakázat."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2638,9 +2078,7 @@ msgstr "Viz stránka s podrobnou dokumentací:"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "[External Authentication](/peertube-plugin-livechat/documentation/admin/external_auth/)"
-msgstr ""
-"[Externí ověřování](/peertube-plugin-livechat/documentation/admin/"
-"external_auth/)"
+msgstr "[Externí ověřování](/peertube-plugin-livechat/documentation/admin/external_auth/)"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2651,9 +2089,7 @@ msgstr "Pokročilá konfigurace kanálu"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, ..."
-msgstr ""
-"Následující nastavení se týkají pokročilých možností kanálů: uživatelé budou "
-"moci přidat některé úpravy na svých kanálech, aktivovat moderačního bota, ..."
+msgstr "Následující nastavení se týkají pokročilých možností kanálů: uživatelé budou moci přidat některé úpravy na svých kanálech, aktivovat moderačního bota, ..."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2669,23 +2105,17 @@ msgstr "Chování v chatu"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat.  The chat can be customized (readonly mode, use the current theme, ...)."
-msgstr ""
-"Tato funkce umožňuje zobrazit modal \"sdílet odkaz na chat\". Pomocí tohoto "
-"modálního okna můžete generovat adresy URL pro připojení k chatu.  Chat lze "
-"přizpůsobit (režim pouze pro čtení, použití aktuálního tématu, ...)."
+msgstr "Tato funkce umožňuje zobrazit modal \"sdílet odkaz na chat\". Pomocí tohoto modálního okna můžete generovat adresy URL pro připojení k chatu.  Chat lze přizpůsobit (režim pouze pro čtení, použití aktuálního tématu, ...)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!"
-msgstr ""
-"Můžete například vygenerovat adresu URL určenou pouze pro čtení a použít ji "
-"v OBS k integraci chatu do živého vysílání!"
+msgstr "Můžete například vygenerovat adresu URL určenou pouze pro čtení a použít ji v OBS k integraci chatu do živého vysílání!"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting allows you to choose who can access this modal."
-msgstr ""
-"Toto nastavení umožňuje zvolit, kdo bude mít přístup k tomuto modálnímu oknu."
+msgstr "Toto nastavení umožňuje zvolit, kdo bude mít přístup k tomuto modálnímu oknu."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2695,11 +2125,7 @@ msgstr "Vlastník videa bude moci aktivovat webové chaty."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Note: for now this feature simply hide the chat.  In a future release, the chat will be replaced by a message saying «please log in to [...]».  See [v5.7.0 Release Notes](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570) for more information."
-msgstr ""
-"Poznámka: Prozatím tato funkce pouze skrývá chat.  V některé z budoucích "
-"verzí bude chat nahrazen zprávou \"přihlaste se prosím do [...]\".  Další "
-"informace naleznete v [poznámkách k vydání verze 5.7.0](https://github.com/"
-"JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570)."
+msgstr "Poznámka: Prozatím tato funkce pouze skrývá chat.  V některé z budoucích verzí bude chat nahrazen zprávou \"přihlaste se prosím do [...]\".  Další informace naleznete v [poznámkách k vydání verze 5.7.0](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md#570)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2710,9 +2136,7 @@ msgid ""
 "Otherwise it could block all anonymous users at once.\n"
 msgstr ""
 "**Důležitá poznámka**:\n"
-"Pokud tuto funkci povolíte a používáte vlastní reverzní proxy server před "
-"Peertube, ujistěte se, že je vaše nastavení správně nakonfigurováno tak, aby "
-"předávalo IP adresy skutečných uživatelů na Peertube.\n"
+"Pokud tuto funkci povolíte a používáte vlastní reverzní proxy server před Peertube, ujistěte se, že je vaše nastavení správně nakonfigurováno tak, aby předávalo IP adresy skutečných uživatelů na Peertube.\n"
 "Jinak by mohlo dojít k zablokování všech anonymních uživatelů najednou.\n"
 
 #. type: Title ##
@@ -2724,25 +2148,17 @@ msgstr "Vytváření témat"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose from several different sets the default avatars that will be used for chat users."
-msgstr ""
-"Můžete si vybrat z několika různých sad výchozích avatarů, které budou "
-"použity pro uživatele chatu."
+msgstr "Můžete si vybrat z několika různých sad výchozích avatarů, které budou použity pro uživatele chatu."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_sepia %}}: "
-"[David Revoy's Peertube avatar generator](https://www.peppercarrot.com/"
-"extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/"
-"licenses/by/4.0/) licence"
+msgstr "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) licence"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Sepia avatar example](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
-msgstr ""
-"![Příklad sepia avatar](/peertube-plugin-livechat/images/"
-"avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
+msgstr "![Příklad sepia avatar](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2897,17 +2313,12 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "The Prosody AppImage included in the plugin will only work on x86_64 and arm64 CPU.  It is not compatible with other CPU architectures."
-msgstr ""
-"Aplikace Prosody AppImage obsažená v pluginu bude fungovat pouze na "
-"procesorech x86_64 a arm64.  Není kompatibilní s jinými architekturami "
-"procesorů."
+msgstr "Aplikace Prosody AppImage obsažená v pluginu bude fungovat pouze na procesorech x86_64 a arm64.  Není kompatibilní s jinými architekturami procesorů."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "To use the plugin, you will have to manually install Prosody on your server (see below)."
-msgstr ""
-"Chcete-li plugin používat, budete muset ručně nainstalovat Prosody na svůj "
-"server (viz níže)."
+msgstr "Chcete-li plugin používat, budete muset ručně nainstalovat Prosody na svůj server (viz níže)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -3049,10 +2460,7 @@ msgstr "Právě jsem nainstaloval/aktualizoval plugin, ale nic se neděje"
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If you have just installed/upgraded the plugin, but nothing happens (no chat, no settings, buttons in the settings page does not work, ...), just try to reload the page."
-msgstr ""
-"Pokud jste právě nainstalovali/aktualizovali plugin, ale nic se neděje ("
-"žádný chat, žádná nastavení, tlačítka na stránce nastavení nefungují, ...), "
-"zkuste stránku znovu načíst."
+msgstr "Pokud jste právě nainstalovali/aktualizovali plugin, ale nic se neděje (žádný chat, žádná nastavení, tlačítka na stránce nastavení nefungují, ...), zkuste stránku znovu načíst."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -3063,40 +2471,27 @@ msgstr "Diagnostický nástroj"
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If the chat does not work, there is a diagnostic tool in the plugin's settings pages."
-msgstr ""
-"Pokud chat nefunguje, v nastavení pluginu je k dispozici diagnostický "
-"nástroj."
+msgstr "Pokud chat nefunguje, v nastavení pluginu je k dispozici diagnostický nástroj."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Open the plugin settings, and click on the \"launch diagnostic\" button."
-msgstr ""
-"Otevřete nastavení pluginu a klikněte na tlačítko „spustit diagnostiku“."
+msgstr "Otevřete nastavení pluginu a klikněte na tlačítko „spustit diagnostiku“."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "![Screenshot of the plugin's settings page, with a \"launch diagnostic\" button.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px \"Launch diagnostic\")"
-msgstr ""
-"![Screenshot stránky nastavení pluginu s tlačítkem „spustit diagnostiku“.]"
-"(/peertube-plugin-livechat/images/"
-"launch_diagnostic.png?classes=shadow,border&height=200px „Spustit "
-"diagnostiku“)"
+msgstr "![Screenshot stránky nastavení pluginu s tlačítkem „spustit diagnostiku“.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px „Spustit diagnostiku“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If there is any error in the diagnostic page, you can search in this page for a solution, or refer to the [Bug tracking documentation page](/peertube-plugin-livechat/issues/) if you can't find any response."
-msgstr ""
-"Pokud se na diagnostické stránce vyskytne chyba, můžete na této stránce "
-"vyhledat řešení nebo se podívat na [stránku dokumentace pro sledování chyb]"
-"(/peertube-plugin-livechat/issues/), pokud nenajdete žádnou odpověď."
+msgstr "Pokud se na diagnostické stránce vyskytne chyba, můžete na této stránce vyhledat řešení nebo se podívat na [stránku dokumentace pro sledování chyb](/peertube-plugin-livechat/issues/), pokud nenajdete žádnou odpověď."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "![Screenshot of the diagnostic result page. This gives a lot of information, with status for different test suites.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px \"Diagnostic result\")"
-msgstr ""
-"![Screenshot stránky s diagnostickými výsledky. Obsahuje mnoho informací, "
-"včetně stavu různých testovacích sad.](/peertube-plugin-livechat/images/"
-"diagnostic.png?classes=shadow,border&height=200px „Diagnostické výsledky“)"
+msgstr "![Screenshot stránky s diagnostickými výsledky. Obsahuje mnoho informací, včetně stavu různých testovacích sad.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px „Diagnostické výsledky“)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -3114,26 +2509,17 @@ msgstr "Interní volání API"
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "In some case (like for some Docker Peertube installation), the diagnostic tools displays an error for the test called \"API Prosody -> Peertube is KO\".\n"
-msgstr ""
-"V některých případech (například u některých instalací Docker Peertube) "
-"diagnostické nástroje zobrazují chybu u testu s názvem „API Prosody -> "
-"Peertube is KO“.\n"
+msgstr "V některých případech (například u některých instalací Docker Peertube) diagnostické nástroje zobrazují chybu u testu s názvem „API Prosody -> Peertube is KO“.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
-msgstr ""
-"V takovém případě zkuste změnit nastavení „{{% livechat_label "
-"prosody_peertube_uri_label %}}“ nastavením `http://127.0.0.1:9000` (za "
-"předpokladu, že 9000 je port, na kterém Peertube naslouchá; pokud to nevíte, "
-"zeptejte se správců vaší instance)."
+msgstr "V takovém případě zkuste změnit nastavení „{{% livechat_label prosody_peertube_uri_label %}}“ nastavením `http://127.0.0.1:9000` (za předpokladu, že 9000 je port, na kterém Peertube naslouchá; pokud to nevíte, zeptejte se správců vaší instance)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
-msgstr ""
-"Další informace najdete v nápovědě k [tomuto nastavení](/peertube-"
-"plugin-livechat/documentation/admin/settings/)."
+msgstr "Další informace najdete v nápovědě k [tomuto nastavení](/peertube-plugin-livechat/documentation/admin/settings/)."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -3144,31 +2530,17 @@ msgstr "Websocket"
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If everything is fine in the diagnostic tools, but chat windows remains empty: it can be a Websocket issue.  Since Peertube version 5.0.0, there are some additional configuration to do on the server side.  Check with the instance administrators that they did not forgot to apply changes listed in the [Peertube v5.0.0 release notes](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."
-msgstr ""
-"Pokud je vše v diagnostických nástrojích v pořádku, ale okna chatu zůstávají "
-"prázdná, může se jednat o problém s Websocketem.  Od verze Peertube 5.0.0 je "
-"třeba provést některé další konfigurace na straně serveru. Ověřte u správců "
-"instance, zda nezapomněli provést změny uvedené v "
-"[poznámkách k vydání Peertube v5.0.0](https://github.com/Chocobozzz/PeerTube/"
-"blob/master/CHANGELOG.md#v500)."
+msgstr "Pokud je vše v diagnostických nástrojích v pořádku, ale okna chatu zůstávají prázdná, může se jednat o problém s Websocketem.  Od verze Peertube 5.0.0 je třeba provést některé další konfigurace na straně serveru. Ověřte u správců instance, zda nezapomněli provést změny uvedené v [poznámkách k vydání Peertube v5.0.0](https://github.com/Chocobozzz/PeerTube/blob/master/CHANGELOG.md#v500)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "You can confirm that it is a Websocket issue by opening your browser console, and checking for error logs talking about failed Websocket connection."
-msgstr ""
-"Můžete potvrdit, že se jedná o problém s Websocketem, otevřením konzole "
-"prohlížeče a zkontrolováním chybových protokolů, které hovoří o selhání "
-"připojení Websocketu."
+msgstr "Můžete potvrdit, že se jedná o problém s Websocketem, otevřením konzole prohlížeče a zkontrolováním chybových protokolů, které hovoří o selhání připojení Websocketu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If you can't fix this immediatly, you can disable Websocket by unchecking \"{{% livechat_label disable_websocket_label %}}\" in the plugin setting page.  In such case, you should also check \"{{% livechat_label federation_dont_publish_remotely_label %}}\", as chat federation won't work without Websocket."
-msgstr ""
-"Pokud tento problém nemůžete okamžitě vyřešit, můžete Websocket deaktivovat "
-"odškrtnutím políčka „{{% livechat_label disable_websocket_label %}}“ na "
-"stránce nastavení pluginu.  V takovém případě byste měli zaškrtnout také "
-"políčko „{{% livechat_label federation_dont_publish_remotely_label %}}“, "
-"protože bez Websocketu nebude fungovat federace chatů."
+msgstr "Pokud tento problém nemůžete okamžitě vyřešit, můžete Websocket deaktivovat odškrtnutím políčka „{{% livechat_label disable_websocket_label %}}“ na stránce nastavení pluginu.  V takovém případě byste měli zaškrtnout také políčko „{{% livechat_label federation_dont_publish_remotely_label %}}“, protože bez Websocketu nebude fungovat federace chatů."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
@@ -3196,16 +2568,12 @@ msgstr "Od verze v6.0.0 tento plugin nevyžaduje žádnou instalaci Prosody."
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 msgid "If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody."
-msgstr ""
-"Pokud jste tento plugin používali před touto verzí a pokud jste Prosody "
-"nainstalovali ručně, můžete Prosody bezpečně odinstalovat."
+msgstr "Pokud jste tento plugin používali před touto verzí a pokud jste Prosody nainstalovali ručně, můžete Prosody bezpečně odinstalovat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/upgrade_before_6.0.0.md
 msgid "If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image."
-msgstr ""
-"Pokud jste používali vlastní obraz Peertube docker, který obsahuje Prosody, "
-"můžete se vrátit k oficiálnímu obrazu Peertube."
+msgstr "Pokud jste používali vlastní obraz Peertube docker, který obsahuje Prosody, můžete se vrátit k oficiálnímu obrazu Peertube."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/_index.md
@@ -3234,10 +2602,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "[OBS](https://obsproject.com) is a popular Free And Open Source streaming software, with advanced capacities for your live streams.  In the current page, you will find some advices to handle your live chats using OBS."
-msgstr ""
-"[OBS](https://obsproject.com) je oblíbený bezplatný a open source "
-"streamovací software s pokročilými možnostmi pro vaše živé přenosy.  Na této "
-"stránce najdete několik rad, jak zvládnout živé chaty pomocí OBS."
+msgstr "[OBS](https://obsproject.com) je oblíbený bezplatný a open source streamovací software s pokročilými možnostmi pro vaše živé přenosy.  Na této stránce najdete několik rad, jak zvládnout živé chaty pomocí OBS."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3254,19 +2619,12 @@ msgstr "Chat můžete snadno zahrnout do videostreamu."
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of a Peertube live, replay, with the chat included at the bottom of the video stream.](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px \"Embeding the chat in a live stream\")"
-msgstr ""
-"![Snímek obrazovky živého vysílání Peertube, opakovaný záznam s chatem v "
-"dolní části videopřenosu](/peertube-plugin-livechat/images/"
-"embed_chat_in_livestream.png?classes=shadow,border&height=200px \"Vložení "
-"chatu do živého vysílání\")"
+msgstr "![Snímek obrazovky živého vysílání Peertube, opakovaný záznam s chatem v dolní části videopřenosu](/peertube-plugin-livechat/images/embed_chat_in_livestream.png?classes=shadow,border&height=200px \"Vložení chatu do živého vysílání\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "You can use the \"{{% livechat_label share_chat_link %}}\" feature to generate an URL to your chat.  This button should be near the chat if you are the video owner (unless it was desactivated by your server admins)."
-msgstr ""
-"Pro vygenerování adresy URL chatu můžete použít funkci \"{{% livechat_label "
-"share_chat_link %}}\".  Toto tlačítko by mělo být v blízkosti chatu, pokud "
-"jste vlastníkem videa (pokud nebylo deaktivováno správci vašeho serveru)."
+msgstr "Pro vygenerování adresy URL chatu můžete použít funkci \"{{% livechat_label share_chat_link %}}\".  Toto tlačítko by mělo být v blízkosti chatu, pokud jste vlastníkem videa (pokud nebylo deaktivováno správci vašeho serveru)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3277,11 +2635,7 @@ msgstr "Zaškrtněte políčko „{{% livechat_label read_only %}}“ v modáln�
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, where the \"{{% livechat_label read_only %}}\" option is checked.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px \"Share link popup\")"
-msgstr ""
-"![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“, kde "
-"je zaškrtnuta možnost „{{% livechat_label read_only %}}“.](/peertube-"
-"plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px "
-"„Vyskakovací okno pro sdílení odkazu“)"
+msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“, kde je zaškrtnuta možnost „{{% livechat_label read_only %}}“.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3292,19 +2646,12 @@ msgstr "Poté použijte tento odkaz jako „zdroj webového prohlížeče“ v O
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of the OBS software, where the chat was added as web browser source.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px \"Embeding the chat in OBS\")"
-msgstr ""
-"![Screenshot softwaru OBS, kde byl chat přidán jako zdroj webového prohlížeče"
-".](/peertube-plugin-livechat/images/"
-"embed_chat_in_obs.png?classes=shadow,border&height=200px „Vložení chatu do "
-"OBS“)"
+msgstr "![Screenshot softwaru OBS, kde byl chat přidán jako zdroj webového prohlížeče.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px „Vložení chatu do OBS“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "You can use the \"{{% livechat_label transparent_background %}}\" option to have a transparent background in OBS.  If you want to customize the background transparency, you can add this CSS in your OBS browser source's settings:"
-msgstr ""
-"Můžete použít možnost „{{% livechat_label transparent_background %}}“, "
-"abyste v OBS měli průhledné pozadí.  Pokud chcete přizpůsobit průhlednost "
-"pozadí, můžete do nastavení zdroje prohlížeče OBS přidat tento CSS kód:"
+msgstr "Můžete použít možnost „{{% livechat_label transparent_background %}}“, abyste v OBS měli průhledné pozadí.  Pokud chcete přizpůsobit průhlednost pozadí, můžete do nastavení zdroje prohlížeče OBS přidat tento CSS kód:"
 
 #. type: Fenced code block (css)
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3732,17 +3079,17 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
+msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" lines.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
+msgid "Here you can configure several words, group of words, or \"regular expressions\"."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
+msgid "Each time a user sends a message, these words will be tested.  If the message contains one of them, the message will be deleted."
 msgstr ""
 
 #. type: Plain text
@@ -3779,6 +3126,11 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
@@ -5622,6 +4974,4 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
-msgstr ""
-"Pokud jste webdesignér nebo odborník na ConverseJS/Prosody/XMPP a chcete "
-"pomoci tento plugin vylepšit, jste vítáni."
+msgstr "Pokud jste webdesignér nebo odborník na ConverseJS/Prosody/XMPP a chcete pomoci tento plugin vylepšit, jste vítáni."

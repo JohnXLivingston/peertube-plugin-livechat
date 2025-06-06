@@ -407,8 +407,6 @@ livechat_configuration_channel_forbidden_words_desc: |
   You can configure some words that will be automatically moderated by the bot (messages containing such words will be instantly deleted).
   You can also add an optional reason that will be displayed at the place of deleted messages.
   Several examples are provided on the documentation page.
-livechat_configuration_channel_forbidden_words_desc2: |
-  One word or expression per line. If you put multiple words on one line, it will only match messages containing the whole sequence.
 livechat_configuration_channel_retractation_reason_label: "Reason"
 livechat_configuration_channel_retractation_reason_desc: "Reason to display besides
   deleted messages"

@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-09-12 12:53+0200\n"
+"POT-Creation-Date: 2025-06-06 17:07+0200\n"
 "PO-Revision-Date: 2024-12-30 23:43+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -459,17 +458,12 @@ msgstr "La documentation est générée via l'outils [Hugo](https://gohugo.io/).
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The minimum required version for Hugo is 0.121.0.  It was tested using version 0.132.2."
-msgstr ""
-"La version minimale requise de Hugo est 0.121.0. Nous avons testé avec la "
-"version 0.132.2."
+msgstr "La version minimale requise de Hugo est 0.121.0. Nous avons testé avec la version 0.132.2."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "The used theme is [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn).  You should read its documentation before starting editing the documentation."
-msgstr ""
-"Le thème utilisé est [hugo-theme-relearn](https://mcshelby.github.io/hugo-"
-"theme-relearn). Il est recommandé d'en lire la documentation avant de "
-"commencer."
+msgstr "Le thème utilisé est [hugo-theme-relearn](https://mcshelby.github.io/hugo-theme-relearn). Il est recommandé d'en lire la documentation avant de commencer."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -617,19 +611,12 @@ msgstr "Pour l'instant il n'est pas possible d'utiliser des tableaux Markdown 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "There may be links to this documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
-msgstr ""
-"Il peut y avoir des liens vers cette documentation ailleurs sur le web. "
-"Essayez de ne pas changer les urls des pages de documentation. Ou au moins, "
-"mettez des liens vers les nouvelles pages dans les anciennes urls."
+msgstr "Il peut y avoir des liens vers cette documentation ailleurs sur le web. Essayez de ne pas changer les urls des pages de documentation. Ou au moins, mettez des liens vers les nouvelles pages dans les anciennes urls."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "When a new feature is released, you can use the `livechat_version_notice` short code to display an infobox with the version with which the features is available.  This short code takes the version number as parameter.  Here is an example:"
-msgstr ""
-"Lorsqu'une nouvelle fonctionnalité est disponible, vous pouvez utiliser "
-"`livechat_version_notice` pour afficher une boite d'information avec la "
-"version dans laquelle cette fonctionnalité est disponible. Ce code prend le "
-"numéro de version comme paramètre.  Voici un exemple :"
+msgstr "Lorsqu'une nouvelle fonctionnalité est disponible, vous pouvez utiliser `livechat_version_notice` pour afficher une boite d'information avec la version dans laquelle cette fonctionnalité est disponible. Ce code prend le numéro de version comme paramètre.  Voici un exemple :"
 
 #. type: Title ###
 #: support/documentation/content/en/contributing/document/_index.md
@@ -1982,31 +1969,18 @@ msgstr "mod_firewall Prosody"
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can enable [mod_firewall](https://modules.prosody.im/mod_firewall) on your Prosody server."
-msgstr ""
-"Vous pouvez activer [mod_firewall](https://modules.prosody.im/mod_firewall) "
-"sur votre serveur Prosody."
+msgstr "Vous pouvez activer [mod_firewall](https://modules.prosody.im/mod_firewall) sur votre serveur Prosody."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Doing so, Peertube admins will be able to define advanced firewall rules."
-msgstr ""
-"Ainsi, les administrateurs de Peertube pourront définir des règles avancées "
-"de pare-feu."
+msgstr "Ainsi, les administrateurs de Peertube pourront définir des règles avancées de pare-feu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, fuzzy
 msgid "These rules could be used to run arbitrary code on the server.  If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.  You can still use mod_firewall by editing files directly on the server."
-msgstr ""
-"Ces règles pouraient être utilisées pour exécuter un code arbitraire sur le "
-"serveur.  Si vous êtes un hébergeur, et que vous ne voulez pas permettre aux "
-"administrateurs de Peertube d'écrire de telles règles, vous pouvez "
-"désactiver l'édition en ligne en créant un fichier "
-"`disable_mod_firewall_editing` dans le répertoire du plugin (`plugins/data/"
-"peertube-plugin-livechat/disable_mod_firewall_editing`).  Il s'agit d'une "
-"dérogation, car les administrateurs de Peertube peuvent déjà exécuter du "
-"code arbitraire en installant n'importe quel plugin.  Vous pouvez toujours "
-"utiliser mod_firewall en éditant des fichiers directement sur le serveur."
+msgstr "Ces règles pouraient être utilisées pour exécuter un code arbitraire sur le serveur.  Si vous êtes un hébergeur, et que vous ne voulez pas permettre aux administrateurs de Peertube d'écrire de telles règles, vous pouvez désactiver l'édition en ligne en créant un fichier `disable_mod_firewall_editing` dans le répertoire du plugin (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  Il s'agit d'une dérogation, car les administrateurs de Peertube peuvent déjà exécuter du code arbitraire en installant n'importe quel plugin.  Vous pouvez toujours utiliser mod_firewall en éditant des fichiers directement sur le serveur."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2025,9 +1999,7 @@ msgstr "Veuillez vous référer à la page d'aide [pour ce paramètre](/peertube
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Just bellow the settings, you will find a \"Configure mod_firewall\" button.  This button will open a configuration page."
-msgstr ""
-"Juste en dessous des paramètres, vous trouverez un bouton « Configurer "
-"mod_firewall ».  Ce bouton ouvrira une page de configuration."
+msgstr "Juste en dessous des paramètres, vous trouverez un bouton « Configurer mod_firewall ».  Ce bouton ouvrira une page de configuration."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2051,9 +2023,7 @@ msgstr "Vous pouvez activer/désactiver chaque fichier."
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Files will be loaded in the alphabetical order.  You can use a number as prefix to easily choose the order."
-msgstr ""
-"Les fichiers sont chargés dans l'ordre alphabétique.  Vous pouvez  utiliser "
-"des préfixes numériques pour facilement en définir l'ordre."
+msgstr "Les fichiers sont chargés dans l'ordre alphabétique.  Vous pouvez  utiliser des préfixes numériques pour facilement en définir l'ordre."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -3190,17 +3160,23 @@ msgstr "![Messages supprimés](/peertube-plugin-livechat/images/bot_deleted_mess
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
+#, fuzzy
+#| msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
+msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" lines.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
 msgstr "Vous pouvez remplir plusieurs champs «{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\"». Quand un⋅e utilisateur⋅rice envoie un message qui correspond à l'un des critère configuré, le message sera automatiquement supprimé."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
+#, fuzzy
+#| msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
+msgid "Here you can configure several words, group of words, or \"regular expressions\"."
 msgstr "Dans ce champs, vous pouvez mettre plusieurs mots, groupes de mots, ou «expressions régulières»."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
+#, fuzzy
+#| msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
+msgid "Each time a user sends a message, these words will be tested.  If the message contains one of them, the message will be deleted."
 msgstr "Chaque fois qu'un⋅e utilisateur⋅rice envoi un message, ces mots seront testés. Si le message contient l'un d'entre eux, le message sera supprimé."
 
 #. type: Plain text
@@ -3238,6 +3214,11 @@ msgstr "Cette fonction est encore expérimentale. Il pourrait y avoir quelques p
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
 msgstr "En cochant cette option, chaque ligne du champs «{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}» sera considéré comme une [expression régulière](https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re)."
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md

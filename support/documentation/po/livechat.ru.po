@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2024-09-12 12:53+0200\n"
+"POT-Creation-Date: 2025-06-06 17:07+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Russian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ru/>\n"
@@ -3012,17 +3012,17 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
+msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" lines.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
+msgid "Here you can configure several words, group of words, or \"regular expressions\"."
 msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
+msgid "Each time a user sends a message, these words will be tested.  If the message contains one of them, the message will be deleted."
 msgstr ""
 
 #. type: Plain text
@@ -3059,6 +3059,11 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
+msgstr ""
+
+#. type: Plain text
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
+msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description

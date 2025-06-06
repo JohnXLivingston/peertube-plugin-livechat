@@ -14,6 +14,7 @@ This version mitigates the attack by using the [RE2](https://github.com/google/r
 ### Breaking changes
 
 #### Bot timers
+
 There was a regression some months ago in the "bot timer" functionnality.
 In the channels settings, the delay between two quotes is supposed to be in minutes, but in fact we applied seconds.
 We don't have any way to detect if the user meant seconds or minutes when they configured their channels (it depends if it was before or after the regression).
@@ -24,6 +25,8 @@ Users must save the form to be sure to apply the correct value.
 
 When using regular expressions for the forbidden words, the chat bot now uses the [RE2](https://github.com/google/re2) regular expression library.
 This library does not support all character classes, and all regular expressions that was previously possible (with the Javascript RegExp class).
+
+For more information about the accepted regular expression, please refer to the [documentation](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/bot/forbidden_words/#consider-as-regular-expressions).
 
 If you configured such regular expressions, the bot will just ignore them, and log an error.
 When saving channel's preference, if such regular expression is used, an error will be shown.

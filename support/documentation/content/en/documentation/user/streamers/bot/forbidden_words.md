@@ -11,17 +11,15 @@ chapter: false
 
 ![Screenshot of a chat message that was deleted, with the following reason: "No url allowed".](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px "Deleted message")
 
-You can fill several "{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}" fields.
+You can fill several "{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}" lines.
 When a user sends a message that match the configured criteria, the message will automatically be deleted.
 
 ## {{% livechat_label livechat_configuration_channel_forbidden_words_label %}}
 
-In this field, you can set several words, group of words, or "regular expressions".
-
-{{% livechat_label livechat_configuration_channel_forbidden_words_desc2 %}}
+Here you can configure several words, group of words, or "regular expressions".
 
 Each time a user sends a message, these words will be tested.
-If the message containes one of them, the message will be deleted.
+If the message contains one of them, the message will be deleted.
 
 You can for example fill this field with a swear words list.
 
@@ -48,6 +46,10 @@ You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livec
 ## {{% livechat_label livechat_configuration_channel_forbidden_words_regexp_label %}}
 
 By checking this option, each line of the "{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression).
+
+Please note that not all regular expression are accepted.
+Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.
+Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations.
 
 ## {{% livechat_label livechat_configuration_applytomoderators_label %}}
 

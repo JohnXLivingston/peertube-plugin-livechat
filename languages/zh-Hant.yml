@@ -25,7 +25,6 @@ livechat_configuration_channel_desc: 您可以在此處為此頻道設定一些�
 livechat_configuration_channel_forbidden_words_label: 禁止使用的單字或句子
 livechat_configuration_channel_forbidden_words_desc: "您可以組態一些由機器人自動審核的單字（包含此類單字的訊息將立即刪除）。\n\
   您也可以新增一個可選原因，該原因將顯示在已刪除郵件的位置。\n檔案頁面上提供了幾個範例。\n"
-livechat_configuration_channel_forbidden_words_desc2: "每行只能一個單字或句子。如果將多個單字放在一行上，它將只配取到包含整行的訊息。\n"
 livechat_configuration_channel_command_cmd_label: 命令
 livechat_configuration_channel_for_more_info: "有關如何設定此功能的更多資訊，請按一下幫助按鈕參考檔案。\n"
 livechat_configuration_channel_banned_jids_label: 禁止的使用者和模式

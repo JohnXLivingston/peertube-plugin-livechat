@@ -275,9 +275,6 @@ prosody_certificates_dir_description: "Wenn dieses Feld leer ist, erzeugt und ve
   Der Benutzer \"peertube\" muss Lesezugriff auf diesen Ordner haben.\n"
 online_help: Online Hilfe
 livechat_configuration_channel_enable_bot_label: Moderationsbot aktivieren
-livechat_configuration_channel_forbidden_words_desc2: "Ein Wort oder Ausdruck pro
-  Zeile. Wenn Sie mehrere Wörter in eine Zeile schreiben, werden nur Nachrichten gefunden,
-  die die gesamte Sequenz enthalten.\n"
 livechat_configuration_channel_forbidden_words_desc: "Sie können einige Wörter konfigurieren,
   die vom Chatbot automatisch moderiert werden (Nachrichten, die solche Wörter enthalten,
   werden sofort gelöscht).\nSie können auch einen optionalen Grund hinzufügen, der

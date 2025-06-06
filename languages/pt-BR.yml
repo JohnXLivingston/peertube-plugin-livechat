@@ -409,8 +409,6 @@ livechat_configuration_channel_forbidden_words_desc: |
   Você pode configurar algumas palavras que serão moderadas automaticamente pelo bot (mensagens contendo tais palavras serão excluídas instantaneamente).
   Você também pode adicionar um motivo opcional que será exibido no lugar das mensagens excluídas.
   Vários exemplos são fornecidos na página de documentação.
-livechat_configuration_channel_forbidden_words_desc2: |
-  Uma palavra ou expressão por linha. Se você colocar várias palavras em uma linha, serão encontradas apenas mensagens que contenham a sequência completa.
 livechat_configuration_channel_retractation_reason_label: "Motivo"
 livechat_configuration_channel_retractation_reason_desc: "Motivo para exibir além
   das mensagens excluídas"

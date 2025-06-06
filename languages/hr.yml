@@ -9,9 +9,6 @@ prosody_peertube_uri_label: Peertube URL za API pozive
 save: Spremi
 cancel: Odustani
 menu_configuration_label: Chat sobe
-livechat_configuration_channel_forbidden_words_desc2: "Jedna riječ ili izraz po retku.
-  Ako upišeš više riječi u jedan redak, pronaći će samo poruke koje sadrže cijeli
-  niz.\n"
 login_remote_peertube_searching: Traženje videa na Peertube instanci …
 login_remote_peertube_video_not_found: Ovaj video nije dostupan na ovoj Peertube instanci.
 login_external_auth_alert_message: Autentifikacija neuspjela
