@@ -11,6 +11,8 @@ Such attack would only make the bot unresponsive, and won't affect the Peertube 
 
 This version mitigates the attack by using the [RE2](https://github.com/google/re2) regular expression library.
 
+Thanks [NlNet](https://nlnet.nl/) for funding the security audit.
+
 ### Breaking changes
 
 #### Bot timers
