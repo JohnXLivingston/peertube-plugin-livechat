@@ -19,6 +19,7 @@ import { BotsCtl } from './lib/bots/ctl'
 import { ExternalAuthOIDC } from './lib/external-auth/oidc'
 import { migrateMUCAffiliations } from './lib/prosody/migration/migrateV10'
 import { updateProsodyChannelEmojisRegex } from './lib/prosody/migration/migrateV12'
+import { updateForbidSpecialCharsHandler } from './lib/prosody/migration/migrateV13'
 import { Emojis } from './lib/emojis'
 import { LivechatProsodyAuth } from './lib/prosody/auth'
 import decache from 'decache'
@@ -38,6 +39,15 @@ async function register (options: RegisterServerOptions): Promise<any> {
 
   // First: load languages files, so we can localize strings.
   await loadLoc()
+
+  try {
+    // livechat v13 migration:
+    // we must change the config for forbidden special chars. We must do this before BotConfiguration.initSingleton.
+    await updateForbidSpecialCharsHandler(options)
+  } catch (err: any) {
+    logger.error(err)
+  }
+
   // Then load the BotConfiguration singleton
   await BotConfiguration.initSingleton(options)
   // Then load the RoomChannel singleton

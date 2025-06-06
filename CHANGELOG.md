@@ -2,13 +2,31 @@
 
 ## 13.0.0 (Not Released Yet)
 
+### Security Fix
+
+Severity: low.
+
+[Radically Open Security](radicallyopensecurity.com) reported a security vulnerability: a malicious user can forge a malicious Regular Expression to cause a [ReDOS](https://en.wikipedia.org/wiki/ReDoS) on the Chat Bot.
+Such attack would only make the bot unresponsive, and won't affect the Peertube server or the XMPP server.
+
+This version mitigates the attack by using the [RE2](https://github.com/google/re2) regular expression library.
+
 ### Breaking changes
 
+#### Bot timers
 There was a regression some months ago in the "bot timer" functionnality.
 In the channels settings, the delay between two quotes is supposed to be in minutes, but in fact we applied seconds.
 We don't have any way to detect if the user meant seconds or minutes when they configured their channels (it depends if it was before or after the regression).
 So we encourage all streamers to go through their channel settings, check the frequency of their bot timers (if enabled), set them to the correct value, and save the form.
 Users must save the form to be sure to apply the correct value.
+
+#### Bot forbidden words
+
+When using regular expressions for the forbidden words, the chat bot now uses the [RE2](https://github.com/google/re2) regular expression library.
+This library does not support all character classes, and all regular expressions that was previously possible (with the Javascript RegExp class).
+
+If you configured such regular expressions, the bot will just ignore them, and log an error.
+When saving channel's preference, if such regular expression is used, an error will be shown.
 
 ### Minor changes and fixes
 

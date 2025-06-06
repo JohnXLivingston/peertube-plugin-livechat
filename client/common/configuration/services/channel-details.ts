@@ -192,6 +192,14 @@ export class ChannelDetailsService {
     )
 
     if (!response.ok) {
+      let e
+      try {
+        // checking if there are some json data in the response, with custom error message.
+        e = await response.json()
+      } catch (_err) {}
+      if (e?.validationErrorMessage && (typeof e.validationErrorMessage === 'string')) {
+        throw new Error('Failed to save configuration options: ' + e.validationErrorMessage)
+      }
       throw new Error('Failed to save configuration options.')
     }
 

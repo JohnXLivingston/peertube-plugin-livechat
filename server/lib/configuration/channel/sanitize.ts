@@ -11,6 +11,9 @@ import {
   noDuplicateDefaultDelay,
   noDuplicateMaxDelay
 } from '../../../../shared/lib/constants'
+import * as RE2 from 're2'
+
+type SanitizeMode = 'validation' | 'read'
 
 /**
  * Sanitize data so that they can safely be used/stored for channel configuration configuration.
@@ -19,11 +22,13 @@ import {
  * @param options Peertube server options
  * @param _channelInfos Channel infos
  * @param data Input data
+ * @param mode Sanitization mode. 'validation': when verifiying user input. 'read': when reading from disk.
  */
 async function sanitizeChannelConfigurationOptions (
   _options: RegisterServerOptions,
   _channelId: number | string,
-  data: unknown
+  data: unknown,
+  mode: SanitizeMode
 ): Promise<ChannelConfigurationOptions> {
   if (!_assertObjectType(data)) {
     throw new Error('Invalid data type')
@@ -91,7 +96,7 @@ async function sanitizeChannelConfigurationOptions (
     bot: {
       enabled: _readBoolean(botData, 'enabled'),
       nickname: _readSimpleInput(botData, 'nickname', true),
-      forbiddenWords: await _readForbiddenWords(botData),
+      forbiddenWords: await _readForbiddenWords(botData, mode),
       forbidSpecialChars: await _readForbidSpecialChars(botData),
       noDuplicate: await _readNoDuplicate(botData),
       quotes: _readQuotes(botData),
@@ -201,7 +206,7 @@ function _readMultiLineString (data: Record<string, unknown>, f: string): string
   return s
 }
 
-async function _readRegExpArray (data: Record<string, unknown>, f: string): Promise<string[]> {
+async function _readRegExpArray (data: Record<string, unknown>, f: string, mode: SanitizeMode): Promise<string[]> {
   // Note: this function can instanciate a lot of RegExp.
   // To avoid freezing the server, we make it async, and will validate each regexp in a separate tick.
   if (!(f in data)) {
@@ -219,15 +224,28 @@ async function _readRegExpArray (data: Record<string, unknown>, f: string): Prom
       // ignore empty values
       continue
     }
-    // value must be a valid regexp
+    // value must be a valid RE2 regexp
     try {
       async function _validate (v: string): Promise<void> {
-        // eslint-disable-next-line no-new
-        new RegExp(v)
+        // Before livechat v13, the bot was using RegExp.
+        // Now it is using RE2, to avoid ReDOS attacks.
+        // RE2 does not accept all regular expressions.
+        // So, here come the question about settings saved before...
+        // So we introduce the "mode" parameter.
+        // When reading from disk, we want to be more permissive.
+        // When validating frontend data, we want to be more restrictive.
+        // Note: the bot will simply ignore any invalid RE2 expression, and generate an error log on loading.
+        if (mode === 'read') {
+          // eslint-disable-next-line no-new
+          new RegExp(v)
+        } else {
+          // eslint-disable-next-line no-new, new-cap
+          new RE2.default(v)
+        }
       }
       await _validate(v)
-    } catch (_err) {
-      throw new Error('Invalid value in field ' + f)
+    } catch (err: any) {
+      throw new ChannelConfigurationValidationError('Invalid value in field ' + f, err.toString() as string)
     }
     result.push(v)
   }
@@ -235,7 +253,8 @@ async function _readRegExpArray (data: Record<string, unknown>, f: string): Prom
 }
 
 async function _readForbiddenWords (
-  botData: Record<string, unknown>
+  botData: Record<string, unknown>,
+  mode: SanitizeMode
 ): Promise<ChannelConfigurationOptions['bot']['forbiddenWords']> {
   if (!Array.isArray(botData.forbiddenWords)) {
     throw new Error('Invalid forbiddenWords data')
@@ -248,7 +267,7 @@ async function _readForbiddenWords (
     const regexp = !!fw.regexp
     let entries
     if (regexp) {
-      entries = await _readRegExpArray(fw, 'entries')
+      entries = await _readRegExpArray(fw, 'entries', mode)
     } else {
       entries = _readStringArray(fw, 'entries')
     }
@@ -337,6 +356,18 @@ function _readCommands (botData: Record<string, unknown>): ChannelConfigurationO
     })
   }
   return result
+}
+
+class ChannelConfigurationValidationError extends Error {
+  /**
+   * The message for the frontend.
+   */
+  public validationErrorMessage: string
+
+  constructor (message: string | undefined, validationErrorMessage: string) {
+    super(message)
+    this.validationErrorMessage = validationErrorMessage
+  }
 }
 
 export {
