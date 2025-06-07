@@ -102,7 +102,7 @@ all_non_lives_description: "Wenn diese Option aktiviert ist, wird der Chat für 
 
 videos_list_label: "Chat für diese Videos aktivieren"
 videos_list_description: |
-  Videos UUIDs, für die wir einen Webchat wollen.
+  Videos UUIDs, für die wir einen Webchat wollen (kurz UUID oder UUIDv4).
   Es können auch Nicht-Livestream-Videos sein. Ein Video pro Zeile. <br />
   Sie können Kommentare hinzufügen: alles nach dem #-Zeichen wird entfernt, und leere Zeilen werden ignoriert. <br />
   Fügen Sie keine privaten Videos hinzu, die UUIDs werden an das Frontend gesendet.
@@ -641,3 +641,4 @@ converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warn
   >\n  Es wird empfohlen das \"Peertube Thema\" in Verbindung mit der \"Automatische
   Farberkennung\" Funktion zu verwenden.\n  Andernfalls könnten bei einigen Benutzern,
   je nach genutztem Peertube Thema, Probleme auftreten. \n</span>\n"
+back_to_last_msg: Zur letzten Nachricht zurückkehren
