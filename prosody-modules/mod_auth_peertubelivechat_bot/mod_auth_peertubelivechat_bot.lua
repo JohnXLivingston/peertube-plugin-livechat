@@ -1,7 +1,7 @@
 -- SPDX-FileCopyrightText: 2008-2013 Matthew Wild
 -- SPDX-FileCopyrightText: 2008-2013 Waqas Hussain
 -- SPDX-FileCopyrightText: 2014 Kim Alvefur
--- SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+-- SPDX-FileCopyrightText: 2024-2025 John Livingston <https://www.john-livingston.fr/>
 --
 -- SPDX-License-Identifier: MIT
 -- SPDX-License-Identifier: AGPL-3.0-only

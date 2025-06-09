@@ -1,5 +1,5 @@
 -- SPDX-FileCopyrightText: 2021 Kim Alvefur
--- SPDX-FileCopyrightText: 2024 John Livingston
+-- SPDX-FileCopyrightText: 2024-2025 John Livingston
 --
 -- SPDX-License-Identifier: MIT
 -- SPDX-License-Identifier: AGPL-3.0-only

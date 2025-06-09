@@ -1,5 +1,5 @@
 -- SPDX-FileCopyrightText: 2012-2014 Florian Zeitz
--- SPDX-FileCopyrightText: 2023-2024 John Livingston <https://www.john-livingston.fr/>
+-- SPDX-FileCopyrightText: 2023-2024-2025 John Livingston <https://www.john-livingston.fr/>
 --
 -- SPDX-License-Identifier: MIT
 -- SPDX-License-Identifier: AGPL-3.0-only

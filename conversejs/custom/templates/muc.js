@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2013-2024 JC Brand <https://github.com/conversejs/converse.js/>
-// SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+// SPDX-FileCopyrightText: 2024-2025 John Livingston <https://www.john-livingston.fr/>
 //
 // SPDX-License-Identifier: MPL-2.0
 // SPDX-License-Identifier: AGPL-3.0-only

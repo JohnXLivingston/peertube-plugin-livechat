@@ -1,6 +1,6 @@
 -- mod_muc_anonymize_moderation_actions
 --
--- SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>
+-- SPDX-FileCopyrightText: 2024-2025 John Livingston <https://www.john-livingston.fr/>
 -- SPDX-License-Identifier: AGPL-3.0-only
 
 -- form_position: the position in the room config form (this value will be passed as priority for the "muc-config-form" hook).

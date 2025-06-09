@@ -5091,7 +5091,7 @@ msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind u
 #, fuzzy, no-wrap
 #~ msgid ""
 #~ "<!--\n"
-#~ "SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>\n"
+#~ "SPDX-FileCopyrightText: 2024-2025 John Livingston <https://www.john-livingston.fr/>\n"
 #~ msgstr "Das Plugin wird von [John Livingston](https://www.john-livingston.fr/) betrieben."
 
 #, fuzzy

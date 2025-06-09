@@ -5275,7 +5275,7 @@ msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XM
 #~| msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/)."
 #~ msgid ""
 #~ "<!--\n"
-#~ "SPDX-FileCopyrightText: 2024 John Livingston <https://www.john-livingston.fr/>\n"
+#~ "SPDX-FileCopyrightText: 2024-2025 John Livingston <https://www.john-livingston.fr/>\n"
 #~ msgstr "Le plugin est maintenu par [John Livingston](https://www.john-livingston.fr/)."
 
 #, fuzzy
