@@ -1,6 +1,6 @@
 # Changelog
 
-## 13.0.0 (Not Released Yet)
+## 13.0.0
 
 ### Security Fix
 
@@ -26,29 +26,29 @@ Users must save the form to be sure to apply the correct value.
 #### Bot forbidden words
 
 When using regular expressions for the forbidden words, the chat bot now uses the [RE2](https://github.com/google/re2) regular expression library.
-This library does not support all character classes, and all regular expressions that was previously possible (with the Javascript RegExp class).
+This library does not support all character classes, and all regular expressions that were previously possible (with the Javascript RegExp class).
 
 For more information about the accepted regular expression, please refer to the [documentation](https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/bot/forbidden_words/#consider-as-regular-expressions).
 
-If you configured such regular expressions, the bot will just ignore them, and log an error.
-When saving channel's preference, if such regular expression is used, an error will be shown.
+If you configured non-compatible regular expressions, the bot will just ignore them, and log an error.
+When saving channel's preference, if non-compatible regular expression is used, an error will be shown.
 
 ### Minor changes and fixes
 
 * Translations updates.
 * Dependencies updates.
-* Fix #329: auto focus message field after anonymous user has entered nickname.
-* Fix #392: add draggable items touch screen handling
-* Fix #506: hide offline users by default in occupant list
-* Fix #547: add button to go to the end of the chat
-* Fix #503: set custom emojis max height to text height + bigger when posted alone
-* Fix: Converse bottom panel messages not visible on new Peertube v7 theme (for example for muted users)
+* Fix #329: auto focus message field after anonymous user has entered nickname (Thanks [Axolotle](https://github.com/axolotle).
+* Fix #392: add draggable items touch screen handling (Thanks [Axolotle](https://github.com/axolotle).
+* Fix #506: hide offline users by default in occupant list (Thanks [Axolotle](https://github.com/axolotle).
+* Fix #547: add button to go to the end of the chat (Thanks [Axolotle](https://github.com/axolotle).
+* Fix #503: set custom emojis max height to text height + bigger when posted alone (Thanks [Axolotle](https://github.com/axolotle).
+* Fix: Converse bottom panel messages not visible on new Peertube v7 theme (for example for muted users).
 * Fix #75: New short video urls makes it difficult to use the settings «Activate chat for these videos».
 * Fix moderation notes: fix filter button wrongly displayed on notes without associated occupant.
 * Fix tasks: checkbox state does not change when clicked.
 * Fix: bot timer can't be negative or null.
 * Fix #626: Bot timer was buggy, using seconds as delay instead of minutes.
-* Fix: message deletion were not properly anonymized when using "Anonymize moderation actions" option.
+* Fix: message deletions were not properly anonymized when using "Anonymize moderation actions" option.
 
 ## 12.0.4
 
