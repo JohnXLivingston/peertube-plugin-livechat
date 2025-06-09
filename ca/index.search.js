@@ -44,9 +44,8 @@ Les persones poden activar el xat per als seus directes Si es marca tots els ví
 El propietari del vídeo podrà activar el xat en línia.
 Activar el xat per a tots els directes Si està marcat hi haurà un xat a tots els directes.
 Activar xat per als vídeos que no són en directe Si està marcat hi haurà un xat per a tots els vídeos que no siguin en directe.
-Activar el xat per a aquests vídeos Poseu aquí els UUID dels vídeos per als quals vols forçar l’activació del xat. Poden ser en directe o no. Un UUID per línia.
-Podeu afegir comentaris: s’eliminarà tot el que hi ha després del caràcter # i s’ignoraran les línies buides.
-No afegiu vídeos privats perquè l’UUID es revelaria.
+Activar el xat per a aquests vídeos UUID de vídeos per als quals volem un xat web (UUID abreujat o UUIDv4). Poden ser vídeos que no siguin en directe. Un per línia. Podeu afegir comentaris: tot el que hi hagi després del caràcter # s’eliminarà i les línies buides s’ignoraran.
+No afegiu vídeos privats, els UUID s’enviaran al frontend.
 Amagar xat per a persones anònimes Si està marcat, les persones que no hagin iniciat sessió no veuran els xats. Aquesta característica encara és experimental. Si l’heu activada, és molt recomanable que també marqueu «No publicar informació de xat». En cas contrari, determinades eines de tercers no podrien intentar obrir el xat i tindrien resultats impredictibles.
 Nota: de moment, aquesta funcionalitat simplement amaga el xat. En una versió futura, el xat serà substituït per un missatge que especifiqui «si us plau connectar-vos […]». Consulteu les notes de la versió 5.7.0 per obtenir més informació.
 Prohibir la IP de persones anònimes quan se’ls bandeja d’alguna sala En activar aquesta opció cada vegada que una persona anònima és bandejada d’una habitació, la seva IP també quedarà prohibida del servidor de xat. Avís: si la vostra instància està oberta per a registres, algú podria crear una sala trampa, convidar-hi persones i prohibir automàticament les IP de les anònimes. La llista d’IP prohibides no es desa i s’eliminarà quan es reiniciï el servidor o si canvieu determinades configuracions del complement. Les IP prohibides es registren als registres del servidor de Prosody, de manera que els administradors del servidor poden utilitzar opcionalment eines externes (com ara fail2ban) per prohibir les IP de manera més àmplia.
@@ -273,9 +272,8 @@ A continuació es mostren més instruccions:
 Resolució de problemesAlguns errors comuns i solucions alternatives.
 Problemes coneguts: compatibilitat de CPUDe moment, el connector només admet les arquitectures de CPU x86_64 i arm64. Si us plau, trobareu instruccions per fer-lo funcionar en altres arquitectures de CPU aquí.
 Actualització des d'una versió anterior a la 6.0.0Notes importants per a l'actualització des d'una versió anterior del connector.`,description:"Instal·lació el connector Livechat de PeerTube",tags:[],title:"Guia d'instal·lació",uri:"/peertube-plugin-livechat/ca/documentation/installation/index.html"},{breadcrumb:"Livechat de PeerTube > Documentació > Documentació d'usuari > Per a streamers > Bot de xat",content:`Podeu configurar algunes paraules que seran moderades automàticament pel bot (les publicacions que continguin aquestes paraules s’eliminaran a l’instant). També podeu afegir un motiu opcional, que es mostrarà en lloc dels missatges suprimits. Alguns exemples de configuració es proporcionen a la pàgina de documentació.
-Podeu omplir diversos camps «Paraules o expressions prohibides». Quan s’envia un missatge que coincideix amb un dels criteris configurats s’eliminarà automàticament.
-Paraules o expressions prohibides En aquest camp podeu posar diversos mots, grups de paraules o «expressions regulars».
-Una paraula o expressió per línia. Si poseu diverses paraules a la mateixa línia, només s’eliminaran els missatges que continguin tota la seqüència.
+Podeu omplir diverses línies «Paraules o expressions prohibides». Quan s’envia un missatge que coincideix amb un dels criteris configurats s’eliminarà automàticament.
+Paraules o expressions prohibides Aquí podeu configurar diversos mots, grups de paraules o «expressions regulars».
 Cada vegada que algú envia un missatge aquestes paraules seran comprovades. Si el missatge conté algun d’aquests el missatge s’eliminarà.
 Per exemple, podeu omplir aquest camp amb una llista d’insults.
 Per obtenir alguns exemples, consulteu suggeriments de paraules prohibides.
@@ -284,6 +282,7 @@ Tip Aquests mots no distingeixen entre majúscules i minúscules.
 Tip Podeu combinar un retard de moderació breu (1 segon per exemple) amb el bot de moderació per eliminar les publicacions que contenen insults abans que fins i tot un usuari que no sigui moderador les vegi.
 Warning Aquesta característica encara és experimental. Pot ser que hi hagi problemes amb els alfabets no llatins. Si és així podeu obrir un tiquet per informar del vostre problema.
 Tracta com una expressió regular En marcar aquesta opció cada línia del camp «Paraules o expressions prohibides» es considerarà com una expressió regular.
+Tingueu en compte que no totes les expressions regulars s’accepten. Per sota utilitzem la biblioteca node-re2. Consulteu node-re2 i la documentació de RE2 per obtenir més informació sobre la sintaxi acceptada i les limitacions.
 Moderar també els missatges de les persones que moderen Per defecte els missatges de moderadores no es veuran afectats per aquesta funció. En marcar aquesta opció llurs missatges també s’eliminaran.
 Motiu Motiu per mostrar al costat dels missatges suprimits
 Comentaris Podeu afegir alguns comentaris sobre aquesta regla aquí, per recordar-vos com i per què la vau crear. Aquests comentaris són purament orientatius i no tenen cap influència en el comportament del bot.`,description:"El bot pot moderar automàticament els missatges que contenen mots prohibits.",tags:[],title:"Mots prohibits",uri:"/peertube-plugin-livechat/ca/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Livechat de PeerTube > Documentació > Guia d'instal·lació",content:`L’AppImage Prosody inclòs al connector només funciona amb CPU x86_64 i arm64. No és compatible amb altres arquitectures de CPU.

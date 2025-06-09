@@ -135,7 +135,7 @@ Korisnici mogu aktivirati chat za svoje prijenose uživo Ako je označeno, sva v
 The video owner will be able to activate web chats.
 Aktiviraj chat za sve prijenose uživo Ako je označeno, chat će se aktivirati za sve prijenose uživo.
 Aktiviraj chat za sve prijenose koji nisu uživo Ako je označeno, chat će se aktivirati za sve prijenose koji nisu uživo.
-Aktiviraj chat za ova videa Videos UUIDs for which we want a web chat. Can be non-live videos. One per line. You can add comments: everything after the # character will be stripped off, and empty lines ignored.
+Aktiviraj chat za ova videa Videos UUIDs for which we want a web chat (short UUID or UUIDv4). Can be non-live videos. One per line. You can add comments: everything after the # character will be stripped off, and empty lines ignored.
 Don’t add private videos, the UUIDs will be sent to the frontend.
 Sakrij chat za anonimne korisnike If checked, anonymous Peertube users won’t see the chat. This feature is still experimental. If you enabled it, it is highly recommended to also check “Don’t publish chat information”. Otherwise, some third party tools could try to open the chat, and have unpredictable behaviours.
 Note: for now this feature simply hide the chat. In a future release, the chat will be replaced by a message saying «please log in to […]». See v5.7.0 Release Notes for more information.
@@ -268,10 +268,9 @@ Troubleshooting If the button does not appear for end users, there might be a co
 Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test.
 If the button is displayed but is not working, check your Peertube logs. It could be because the remote service does not use standard scopes or attribute names.
 More to come Other authentication methods will be implemented in the future.`,description:"Plugin Peertube Livechat settings - External Authentication",tags:[],title:"External Authentication",uri:"/peertube-plugin-livechat/hr/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers > Chat bot",content:`Možeš konfigurirati neke riječi koje će bot automatski moderirati (poruke koje sadrže takve riječi će se odmah izbrisati). Možeš dodati i opcionalni razlog koji će se prikazati na mjestu izbrisanih poruka. Stranica dokumentacije sadrži nekoliko primjera.
-You can fill several “Zabranjene riječi i izrazi” fields. When a user sends a message that match the configured criteria, the message will automatically be deleted.
-Zabranjene riječi i izrazi In this field, you can set several words, group of words, or “regular expressions”.
-Jedna riječ ili izraz po retku. Ako upišeš više riječi u jedan redak, pronaći će samo poruke koje sadrže cijeli niz.
-Each time a user sends a message, these words will be tested. If the message containes one of them, the message will be deleted.
+You can fill several “Zabranjene riječi i izrazi” lines. When a user sends a message that match the configured criteria, the message will automatically be deleted.
+Zabranjene riječi i izrazi Here you can configure several words, group of words, or “regular expressions”.
+Each time a user sends a message, these words will be tested. If the message contains one of them, the message will be deleted.
 You can for example fill this field with a swear words list.
 To get some examples, please check these forbidden words suggestions.
 If you have some usefull words lists, you are welcome to contribute to this suggestion page. There are in the support/forbidden_words folder of the livechat source code. See the contribution guide for more information.
@@ -279,6 +278,7 @@ Tip These words are case insensitive.
 Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 Warning This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 Tretiraj kao regularne izraze By checking this option, each line of the “Zabranjene riječi i izrazi” field will be considered as a regular expression.
+Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
 Također moderiraj porukama moderatora Ova funkcija standardno neće utjecati na poruke moderatora. Označavanjem ove opcije će se izbrisati i poruke moderatora.
 Razlog Razlog koji se prikazuje pored izbrisanih poruka
 Komentari Ovdje možeš dodati neke komentare o ovom pravilu, kao podsjetnik kako i zašto si ga stvorio/la. Ovi komentari su čisto indikativni i ne utječu na ponašanje bota.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.

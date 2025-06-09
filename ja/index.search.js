@@ -269,10 +269,9 @@ Troubleshooting If the button does not appear for end users, there might be a co
 Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test.
 If the button is displayed but is not working, check your Peertube logs. It could be because the remote service does not use standard scopes or attribute names.
 More to come Other authentication methods will be implemented in the future.`,description:"Plugin Peertube Livechat settings - External Authentication",tags:[],title:"External Authentication",uri:"/peertube-plugin-livechat/ja/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`Botにより自動的にモデレーションする単語を設定できます（単語が含まれるメッセージは即座に削除されます）。 削除されたメッセージの箇所に表示する、削除された理由を設定することもできます。 いくつかの例をドキュメントで提供していますので、必要があれば確認してください。
-You can fill several “禁止単語または語句” fields. When a user sends a message that match the configured criteria, the message will automatically be deleted.
-禁止単語または語句 In this field, you can set several words, group of words, or “regular expressions”.
-単語または語句を1行ごとに記載してください。複数の単語を1行に記載した場合、記載したすべての内容を含むメッセージのみが一致するようになります。
-Each time a user sends a message, these words will be tested. If the message containes one of them, the message will be deleted.
+You can fill several “禁止単語または語句” lines. When a user sends a message that match the configured criteria, the message will automatically be deleted.
+禁止単語または語句 Here you can configure several words, group of words, or “regular expressions”.
+Each time a user sends a message, these words will be tested. If the message contains one of them, the message will be deleted.
 You can for example fill this field with a swear words list.
 To get some examples, please check these forbidden words suggestions.
 If you have some usefull words lists, you are welcome to contribute to this suggestion page. There are in the support/forbidden_words folder of the livechat source code. See the contribution guide for more information.
@@ -280,6 +279,7 @@ If you have some usefull words lists, you are welcome to contribute to this sugg
 ヒント You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 警告 This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 正規表現 By checking this option, each line of the “禁止単語または語句” field will be considered as a regular expression.
+Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
 モデレーターからのメッセージも対象にする 初期状態では、モデレーターメッセージはこの機能の影響を受けません。 このオプションを有効にすると、モデレーターからのメッセージも削除されるようになります。
 理由 削除理由
 コメント このルールに関するコメントを追加できます。作成した方法や理由を覚えておくために役立ちます。 これらのコメントは単なる参考情報であり、Botの動作には影響しません。`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/ja/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` 情報 メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、変更をご確認ください : 変更履歴.

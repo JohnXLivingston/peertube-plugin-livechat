@@ -112,7 +112,7 @@ This setting allows you to choose who can access this modal.
 The video owner will be able to activate web chats.
 所有直播啟動聊天室 若勾選，則所有直播都啟用聊天室。
 Activate chat for all non-lives If checked, the chat will be enabled for all video that are not lives.
-Activate chat for these videos Videos UUIDs for which we want a web chat. Can be non-live videos. One per line. You can add comments: everything after the # character will be stripped off, and empty lines ignored.
+Activate chat for these videos Videos UUIDs for which we want a web chat (short UUID or UUIDv4). Can be non-live videos. One per line. You can add comments: everything after the # character will be stripped off, and empty lines ignored.
 Don’t add private videos, the UUIDs will be sent to the frontend.
 隱藏匿名使用者的聊天 若勾選，匿名 Peertube 用戶將看不到聊天資訊。 此功能仍處於實驗階段。 如果您啟用了它，強烈建議您也勾選「不發布聊天訊息」。 否則，某些第三方工具可能會嘗試開啟聊天，並出現不可預測的行為。
 Note: for now this feature simply hide the chat. In a future release, the chat will be replaced by a message saying «please log in to […]». See v5.7.0 Release Notes for more information.
@@ -264,10 +264,9 @@ Troubleshooting If the button does not appear for end users, there might be a co
 Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test.
 If the button is displayed but is not working, check your Peertube logs. It could be because the remote service does not use standard scopes or attribute names.
 More to come Other authentication methods will be implemented in the future.`,description:"Plugin Peertube Livechat settings - External Authentication",tags:[],title:"External Authentication",uri:"/peertube-plugin-livechat/zh-hant/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`您可以組態一些由機器人自動審核的單字（包含此類單字的訊息將立即刪除）。 您也可以新增一個可選原因，該原因將顯示在已刪除郵件的位置。 檔案頁面上提供了幾個範例。
-You can fill several “禁止使用的單字或句子” fields. When a user sends a message that match the configured criteria, the message will automatically be deleted.
-禁止使用的單字或句子 In this field, you can set several words, group of words, or “regular expressions”.
-每行只能一個單字或句子。如果將多個單字放在一行上，它將只配取到包含整行的訊息。
-Each time a user sends a message, these words will be tested. If the message containes one of them, the message will be deleted.
+You can fill several “禁止使用的單字或句子” lines. When a user sends a message that match the configured criteria, the message will automatically be deleted.
+禁止使用的單字或句子 Here you can configure several words, group of words, or “regular expressions”.
+Each time a user sends a message, these words will be tested. If the message contains one of them, the message will be deleted.
 You can for example fill this field with a swear words list.
 To get some examples, please check these forbidden words suggestions.
 If you have some usefull words lists, you are welcome to contribute to this suggestion page. There are in the support/forbidden_words folder of the livechat source code. See the contribution guide for more information.
@@ -275,6 +274,7 @@ If you have some usefull words lists, you are welcome to contribute to this sugg
 提示 You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 警告 This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 Consider as regular expressions By checking this option, each line of the “禁止使用的單字或句子” field will be considered as a regular expression.
+Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
 原因 除已刪除訊息外還顯示的原因
 Comments You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/zh-hant/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` 資訊 Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.

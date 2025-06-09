@@ -273,10 +273,9 @@ Aqui estão algumas outras instruções mais específicas:
 Solução de problemasAlguns erros clássicos e soluções alternativas.
 Problemas conhecidos: compatibilidade da CPUPor enquanto, o plugin funciona apenas para arquiteturas de CPU x86_64 e arm64. Aqui estão algumas instruções para outras arquiteturas de CPU.
 Atualização de versão anterior à 6.0.0Notas importantes ao atualizar para uma versão mais antiga.`,description:"Guia de instalação do plugin peertube-plugin-livechat",tags:[],title:"Guia de instalação",uri:"/peertube-plugin-livechat/pt-br/documentation/installation/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Documentação do usuário > Para streamers > Bot de bate-papo",content:`Você pode configurar algumas palavras que serão moderadas automaticamente pelo bot (mensagens contendo tais palavras serão excluídas instantaneamente). Você também pode adicionar um motivo opcional que será exibido no lugar das mensagens excluídas. Vários exemplos são fornecidos na página de documentação.
-Você pode preencher vários campos “Expressões ou palavras proibidas”. Quando um usuário enviar uma mensagem que corresponda aos critérios configurados, a mensagem será excluída automaticamente.
-Expressões ou palavras proibidas Neste campo, você pode definir várias palavras, grupos de palavras ou “expressões regulares”.
-Uma palavra ou expressão por linha. Se você colocar várias palavras em uma linha, serão encontradas apenas mensagens que contenham a sequência completa.
-Cada vez que um usuário enviar uma mensagem, essas palavras serão testadas. Se a mensagem contiver uma delas, ela será excluída.
+You can fill several “Expressões ou palavras proibidas” lines. When a user sends a message that match the configured criteria, the message will automatically be deleted.
+Expressões ou palavras proibidas Here you can configure several words, group of words, or “regular expressions”.
+Each time a user sends a message, these words will be tested. If the message contains one of them, the message will be deleted.
 Você pode, por exemplo, preencher este campo com uma lista de palavrões.
 Para obter alguns exemplos, verifique estas sugestões de palavras proibidas.
 Se você tiver alguma lista de palavras úteis, sinta-se à vontade para contribuir com esta página de sugestões. Elas estão na pasta support/forbidden_words do código-fonte do chat ao vivo. Consulte o guia de contribuição para obter mais informações.
@@ -284,6 +283,7 @@ Tip Essas palavras não diferenciam maiúsculas de minúsculas.
 Tip Você pode combinar um curto atraso de moderação (1 segundo, por exemplo) com o bot de moderação para excluir mensagens contendo palavrões antes que qualquer usuário não moderador as veja.
 Warning Este recurso ainda é experimental. Pode haver alguns problemas com alfabetos não latinos. Você pode abrir um problema para relatar seus problemas.
 Considerar como expressões regulares Ao marcar esta opção, cada linha do campo “Expressões ou palavras proibidas” será considerada como uma expressão regular.
+Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
 Também modere mensagens de moderadores Por padrão, as mensagens dos moderadores não serão afetadas por este recurso. Ao marcar esta opção, as mensagens dos moderadores também serão excluídas.
 Motivo Motivo para exibir além das mensagens excluídas
 Comentários Você pode adicionar aqui alguns comentários sobre esta regra, para lembrar como e por que você a criou. Esses comentários são puramente indicativos e não têm influência no comportamento do bot.`,description:"O bot pode moderar automaticamente mensagens contendo palavras proibidas.",tags:[],title:"Palavras proibidas",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Guia de instalação",content:`O Prosody AppImage incluído no plugin funciona apenas em CPUs x86_64 e arm64. Não é compatível com outras arquiteturas de CPU.

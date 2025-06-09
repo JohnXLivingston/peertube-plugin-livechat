@@ -270,10 +270,9 @@ Troubleshooting If the button does not appear for end users, there might be a co
 Note: if you are connected to your Peertube account, the button will never show. So use a private browser window to test.
 If the button is displayed but is not working, check your Peertube logs. It could be because the remote service does not use standard scopes or attribute names.
 More to come Other authentication methods will be implemented in the future.`,description:"Plugin Peertube Livechat settings - External Authentication",tags:[],title:"External Authentication",uri:"/peertube-plugin-livechat/it/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure some words that will be automatically moderated by the bot (messages containing such words will be instantly deleted). You can also add an optional reason that will be displayed at the place of deleted messages. Several examples are provided on the documentation page.
-You can fill several “Forbidden words or expressions” fields. When a user sends a message that match the configured criteria, the message will automatically be deleted.
-Forbidden words or expressions In this field, you can set several words, group of words, or “regular expressions”.
-One word or expression per line. If you put multiple words on one line, it will only match messages containing the whole sequence.
-Each time a user sends a message, these words will be tested. If the message containes one of them, the message will be deleted.
+You can fill several “Forbidden words or expressions” lines. When a user sends a message that match the configured criteria, the message will automatically be deleted.
+Forbidden words or expressions Here you can configure several words, group of words, or “regular expressions”.
+Each time a user sends a message, these words will be tested. If the message contains one of them, the message will be deleted.
 You can for example fill this field with a swear words list.
 To get some examples, please check these forbidden words suggestions.
 If you have some usefull words lists, you are welcome to contribute to this suggestion page. There are in the support/forbidden_words folder of the livechat source code. See the contribution guide for more information.
@@ -281,6 +280,7 @@ Suggerimento These words are case insensitive.
 Suggerimento You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 Attenzione This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 Consider as regular expressions By checking this option, each line of the “Forbidden words or expressions” field will be considered as a regular expression.
+Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
 Reason Reason to display besides deleted messages
 Comments You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/it/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` Informazione Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
