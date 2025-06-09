@@ -8,15 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-06 17:07+0200\n"
-"PO-Revision-Date: 2024-09-15 01:49+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2025-06-07 08:38+0000\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
+"\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -3085,24 +3087,27 @@ msgstr "![Screenshot einer Chat-Nachricht, die mit folgender Begründung gelösc
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
 msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" lines.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
-msgstr "Sie können mehrere \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\"-Felder ausfüllen.  Wenn ein Benutzer eine Nachricht sendet, die den konfigurierten Kriterien entspricht, wird die Nachricht automatisch gelöscht."
+msgstr ""
+"Sie können mehrere \"{{% livechat_label "
+"livechat_configuration_channel_forbidden_words_label %}}\"-Zeilen "
+"ausfüllen.  Wenn ein Benutzer eine Nachricht sendet, die den konfigurierten "
+"Kriterien entspricht, wird die Nachricht automatisch gelöscht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
 msgid "Here you can configure several words, group of words, or \"regular expressions\"."
-msgstr "In diesem Feld können Sie mehrere Wörter, Wortgruppen oder \"reguläre Ausdrücke\" (regex) eingeben."
+msgstr ""
+"Hier können Sie mehrere Wörter, Wortgruppen oder \"reguläre Ausdrücke\" "
+"(regex) konfigurieren."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
 msgid "Each time a user sends a message, these words will be tested.  If the message contains one of them, the message will be deleted."
-msgstr "Jedes Mal, wenn ein Benutzer eine Nachricht sendet, werden diese Wörter getestet.  Wenn die Nachricht eines dieser Wörter enthält, wird die Nachricht gelöscht."
+msgstr ""
+"Jedes Mal, wenn ein Benutzer eine Nachricht sendet, werden diese Wörter "
+"getestet.  Wenn die Nachricht eines dieser Wörter enthält, wird die "
+"Nachricht gelöscht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3144,6 +3149,12 @@ msgstr "Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% livec
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
 msgstr ""
+"Bitte beachten Sie, dass nicht alle \"regulären Ausdrücke (regex) akzeptiert "
+"werden.  Im Hintergrund verwenden wir die Bibliothek [node-re2](https://"
+"github.com/uhop/node-re2).  Weitere Informationen über die akzeptierte "
+"Syntax und die Einschränkungen finden Sie unter [node-re2](https://"
+"github.com/uhop/node-re2) und der [RE2 Dokumentation](https://github.com/"
+"google/re2/wiki/Syntax)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md

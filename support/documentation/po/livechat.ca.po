@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-06-06 17:07+0200\n"
-"PO-Revision-Date: 2025-02-19 21:50+0000\n"
+"PO-Revision-Date: 2025-06-08 22:46+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
-"Language-Team: Catalan <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
+"Language-Team: Catalan <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -3081,24 +3082,26 @@ msgstr "![Captura de pantalla d'un missatge de xat que s'ha suprimit, amb el mot
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
 msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" lines.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
-msgstr "Podeu omplir diversos camps «{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}». Quan s'envia un missatge que coincideix amb un dels criteris configurats s'eliminarà automàticament."
+msgstr ""
+"Podeu omplir diverses línies «{{% livechat_label "
+"livechat_configuration_channel_forbidden_words_label %}}». Quan s'envia un "
+"missatge que coincideix amb un dels criteris configurats s'eliminarà "
+"automàticament."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
 msgid "Here you can configure several words, group of words, or \"regular expressions\"."
-msgstr "En aquest camp podeu posar diversos mots, grups de paraules o «expressions regulars»."
+msgstr ""
+"Aquí podeu configurar diversos mots, grups de paraules o «expressions "
+"regulars»."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "Each time a user sends a message, these words will be tested.  If the message containes one of them, the message will be deleted."
 msgid "Each time a user sends a message, these words will be tested.  If the message contains one of them, the message will be deleted."
-msgstr "Cada vegada que algú envia un missatge aquestes paraules seran comprovades. Si el missatge conté algun d'aquests el missatge s'eliminarà."
+msgstr ""
+"Cada vegada que algú envia un missatge aquestes paraules seran comprovades. "
+"Si el missatge conté algun d'aquests el missatge s'eliminarà."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3140,6 +3143,11 @@ msgstr "En marcar aquesta opció cada línia del camp «{{% livechat_label livec
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
 msgstr ""
+"Tingueu en compte que no totes les expressions regulars s'accepten. Per sota "
+"utilitzem la biblioteca [node-re2](https://github.com/uhop/node-re2). "
+"Consulteu [node-re2](https://github.com/uhop/node-re2) i la "
+"[documentació de RE2](https://github.com/google/re2/wiki/Syntax) per obtenir "
+"més informació sobre la sintaxi acceptada i les limitacions."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md

@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-06 17:07+0200\n"
-"PO-Revision-Date: 2024-12-30 23:43+0000\n"
+"PO-Revision-Date: 2025-06-06 16:26+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Weblate 5.9.1\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -4963,17 +4964,15 @@ msgstr "Il vous suffit ensuite, soit de cliquer sur «ouvrir», soit de copier/c
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
-#| msgid "Plugin peertube-plugin-livechat user documentation"
+#, no-wrap
 msgid "Peertube plugin livechat documentation"
-msgstr "Documentation utilisateur⋅rice du plugin peertube-plugin-livechat"
+msgstr "Documentation du plugin peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
-#| msgid "PeerTube plugin livechat"
+#, no-wrap
 msgid "Peertube livechat"
-msgstr "PeerTube plugin livechat"
+msgstr "Peertube plugin livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
@@ -5049,10 +5048,13 @@ msgstr "En tant qu'administrateur⋅rice Peertube, vous pouvez installer ce plug
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Livechat installation](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
 msgid "![Screenshot of Peertube plugins admin page. The search fields contains \"livechat\", and the search results show the livechat plugin.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px \"Livechat installation\")"
-msgstr "![Installation livechat](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px)"
+msgstr ""
+"![Capture d'écran de la page d'administration du plugin Peertube. Le champs "
+"de recherche contient \"livechat\", and les résultats de la recherche "
+"montrent le plugin livechat.](/peertube-plugin-livechat/images/"
+"installation.png?classes=shadow,border&height=200px \"Installation livechat\""
+")"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
