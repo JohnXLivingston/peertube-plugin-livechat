@@ -2,6 +2,8 @@
 
 ## 13.0.0
 
+**Important note**: if you got an error on updating the plugin, please try to restart Peertube and install it again.
+
 ### Security Fix
 
 Severity: low.
