@@ -68,14 +68,14 @@
     "lit": "^3.3.0",
     "lit-analyzer": "^2.0.3",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.89.1",
+    "sass": "^1.89.2",
     "sharp": "^0.34.2",
     "stylelint": "^16.20.0",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "svgo": "^3.3.2",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.33.1",
+    "typescript-eslint": "^8.34.0",
     "yaml": "^2.8.0"
   },
   "engine": {
