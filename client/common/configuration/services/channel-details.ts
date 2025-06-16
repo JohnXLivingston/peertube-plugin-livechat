@@ -11,7 +11,86 @@ import type {
 import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
 import { getBaseRoute } from '../../../utils/uri'
 import { maxEmojisPerChannel } from 'shared/lib/emojis'
-import { channelTermsMaxLength, noDuplicateMaxDelay, forbidSpecialCharsMaxTolerance } from 'shared/lib/constants'
+import {
+  channelTermsMaxLength,
+  noDuplicateMaxDelay,
+  forbidSpecialCharsMaxTolerance,
+  forbidSpecialCharsDefaultTolerance,
+  noDuplicateDefaultDelay
+} from 'shared/lib/constants'
+
+export const instanceConfig: ChannelConfigurationOptions<'instance'> = {
+  bot: {
+    enabled: { value: true, forced: true },
+    nickname: { value: 'instance', forced: false },
+    instanceForbiddenWords: [
+      { uuid: '1', entries: ['instance'], enabled: true, forced: true },
+      { uuid: '2', entries: ['entries'], enabled: true, forced: false }
+    ],
+    forbidSpecialChars: {
+      enabled: true,
+      reason: 'meh',
+      tolerance: forbidSpecialCharsDefaultTolerance,
+      applyToModerators: false,
+      forced: true
+    },
+    noDuplicate: {
+      enabled: false,
+      reason: '',
+      delay: noDuplicateDefaultDelay,
+      applyToModerators: false,
+      forced: true
+    },
+    instanceQuotes: [{ uuid: '10', messages: ['lel'], delay: 10, enabled: true, forced: false }],
+    instanceCommands: [{ uuid: '10', command: ':lel', message: 'hello', enabled: true, forced: false }]
+  },
+  slowMode: {
+    duration: { value: 0, forced: false }
+  },
+  mute: {
+    anonymous: { value: false, forced: false }
+  },
+  moderation: {
+    delay: { value: 10, forced: true },
+    anonymize: { value: false, forced: false }
+  },
+  terms: { value: undefined, forced: false }
+}
+
+export function mergeConfig (
+  instanceConfig: ChannelConfigurationOptions<'instance'>,
+  normalConfig: ChannelConfigurationOptions
+): ChannelConfigurationOptions {
+  function merge (instance: any, local: any): any {
+    if (Array.isArray(instance)) {
+      return instance.map((value) => {
+        const localItem = local?.find((item: any) => item.uuid === value.uuid)
+        if (value.forced || !localItem) return value
+        return { ...value, enabled: localItem.enabled }
+      })
+    } else if (typeof instance === 'object') {
+      if ('forced' in instance) {
+        if (instance.forced) {
+          if ('value' in instance) return instance.value
+          else {
+            const { _forced, ...rest } = instance
+            return rest
+          }
+        } else {
+          return local
+        }
+      } else {
+        const keysNotInA = Object.keys(local as Record<string, any>).filter((k) => !(k in instance))
+        return Object.fromEntries([
+          ...Object.entries(instance as Record<string, any>).map(([k, v]) => [k, merge(v, local[k])]),
+          ...keysNotInA.map((k) => [k, local[k]])
+        ])
+      }
+    }
+  }
+
+  return merge(instanceConfig, normalConfig)
+}
 
 export class ChannelDetailsService {
   public _registerClientOptions: RegisterClientOptions
@@ -251,7 +330,21 @@ export class ChannelDetailsService {
       throw new Error('Can\'t get channel configuration options.')
     }
 
-    return this.backToFront(await response.json())
+    const config = this.backToFront(await response.json())
+
+    return {
+      channel: config.channel,
+      configuration: mergeConfig(instanceConfig, config.configuration),
+      instanceConfiguration: instanceConfig
+    }
+  }
+
+  public async fetchInstanceConfiguration (): Promise<ChannelConfiguration<'instance'>> {
+    return {
+      channel: { id: 0, displayName: 'Instance wide configuration', name: 'instance' },
+      configuration: instanceConfig,
+      instanceConfiguration: undefined
+    }
   }
 
   public async fetchEmojisConfiguration (channelId: number): Promise<ChannelEmojisConfiguration> {
