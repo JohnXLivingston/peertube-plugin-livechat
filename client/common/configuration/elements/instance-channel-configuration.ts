@@ -5,25 +5,22 @@
 
 import type { ChannelConfiguration } from 'shared/lib/types'
 import { ChannelDetailsService } from '../services/channel-details'
-import { channelConfigurationContext, channelDetailsServiceContext } from '../contexts/channel'
+import { channelDetailsServiceContext, instanceChannelConfigurationContext } from '../contexts/channel'
 import { LivechatElement } from '../../lib/elements/livechat'
 import { ValidationError, ValidationErrorType } from '../../lib/models/validation'
-import { tplChannelConfiguration } from './templates/channel-configuration'
+import { tplInstanceChannelConfiguration } from './templates/instance-channel-configuration'
 import { TemplateResult, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, state } from 'lit/decorators.js'
 import { ptTr } from '../../lib/directives/translation'
 import { Task } from '@lit/task'
 import { provide } from '@lit/context'
 import { channelTermsMaxLength } from 'shared/lib/constants'
 
-@customElement('livechat-channel-configuration')
-export class ChannelConfigurationElement extends LivechatElement {
-  @property({ attribute: false })
-  public channelId?: number
-
-  @provide({ context: channelConfigurationContext })
+@customElement('livechat-instance-channel-configuration')
+export class InstanceChannelConfigurationElement extends LivechatElement {
+  @provide({ context: instanceChannelConfigurationContext })
   @state()
-  public channelConfiguration?: ChannelConfiguration
+  public channelConfiguration?: ChannelConfiguration<'instance'>
 
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService?: ChannelDetailsService
@@ -45,7 +42,7 @@ export class ChannelConfigurationElement extends LivechatElement {
     return new Task(this, {
       task: async () => {
         this._channelDetailsService = new ChannelDetailsService(this.ptOptions)
-        this.channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
+        this.channelConfiguration = await this._channelDetailsService.fetchInstanceConfiguration()
         this.actionDisabled = false // in case of reset
       },
       args: () => []
@@ -153,7 +150,7 @@ export class ChannelConfigurationElement extends LivechatElement {
     return this._asyncTaskRender.render({
       pending: () => html`<livechat-spinner></livechat-spinner>`,
       error: () => html`<livechat-error></livechat-error>`,
-      complete: () => tplChannelConfiguration(this)
+      complete: () => tplInstanceChannelConfiguration(this)
     })
   }
 }

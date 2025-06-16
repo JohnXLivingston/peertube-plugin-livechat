@@ -89,33 +89,59 @@ interface ChannelLiveChatInfos extends ChannelInfos {
   livechatConfigurationUri: string
 }
 
-interface ChannelConfigurationOptions {
+type Forcible<T, Mode extends 'instance' | 'normal'> = Mode extends 'instance'
+  ? T extends Record<string, any>
+    ? T & { forced: boolean }
+    : { value: T, forced: boolean }
+  : Mode extends 'normal'
+    ? T
+    : never
+
+export type InstanceActivatable<
+  T extends Record<string, any>,
+  Mode extends 'instance' | 'normal'
+> = Mode extends 'instance'
+  ? T & { forced: boolean }
+  : {
+      uuid: string
+      enabled: boolean
+    }
+
+interface ChannelConfigurationOptions<Mode extends 'instance' | 'normal' = 'normal'> {
   bot: {
-    enabled: boolean
-    nickname?: string
-    forbiddenWords: ChannelForbiddenWords[]
-    quotes: ChannelQuotes[]
-    commands: ChannelCommands[]
-    forbidSpecialChars: ChannelForbidSpecialChars
-    noDuplicate: ChannelNoDuplicate
+    enabled: Forcible<boolean, Mode>
+    nickname: Forcible<string | undefined, Mode>
+    forbidSpecialChars: Forcible<ChannelForbidSpecialChars, Mode>
+    noDuplicate: Forcible<ChannelNoDuplicate, Mode>
+    instanceForbiddenWords: Array<InstanceActivatable<ChannelForbiddenWords, Mode>>
+    instanceQuotes: Array<InstanceActivatable<ChannelQuotes, Mode>>
+    instanceCommands: Array<InstanceActivatable<ChannelCommands, Mode>>
     // TODO: bannedJIDs: string[]
-  }
+  } & (Mode extends 'normal'
+    ? {
+        forbiddenWords: ChannelForbiddenWords[]
+        quotes: ChannelQuotes[]
+        commands: ChannelCommands[]
+      }
+    : unknown)
   slowMode: {
-    duration: number
+    duration: Forcible<number, Mode>
   }
   mute: { // comes with Livechat 10.2.0
-    anonymous: boolean
+    anonymous: Forcible<boolean, Mode>
     // TODO: https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/127
     // nonFollowers: boolean (or a number of seconds?)
   }
-  terms?: string // comes with Livechat 10.2.0
+  terms: Forcible<string | undefined, Mode> // comes with Livechat 10.2.0
   moderation: { // comes with Livechat 10.3.0
-    delay: number
-    anonymize: boolean // comes with Livechat 11.0.0
+    delay: Forcible<number, Mode>
+    anonymize: Forcible<boolean, Mode> // comes with Livechat 11.0.0
   }
 }
 
 interface ChannelForbiddenWords {
+  uuid: string
+  enabled: boolean
   entries: string[]
   regexp?: boolean
   applyToModerators?: boolean
@@ -125,11 +151,15 @@ interface ChannelForbiddenWords {
 }
 
 interface ChannelQuotes {
+  uuid: string
+  enabled: boolean
   messages: string[]
   delay: number
 }
 
 interface ChannelCommands {
+  uuid: string
+  enabled: boolean
   command: string
   message: string
 }
@@ -148,9 +178,10 @@ interface ChannelNoDuplicate {
   applyToModerators: boolean
 }
 
-interface ChannelConfiguration {
+interface ChannelConfiguration<Mode extends 'instance' | 'normal' = 'normal'> {
   channel: ChannelInfos
-  configuration: ChannelConfigurationOptions
+  configuration: ChannelConfigurationOptions<Mode>
+  instanceConfiguration: Mode extends 'normal' ? ChannelConfigurationOptions<'instance'> : undefined
 }
 
 type ChatPeertubeIncludeMode = 'peertube-fullpage' | 'peertube-video'

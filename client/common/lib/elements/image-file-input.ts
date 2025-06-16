@@ -39,6 +39,9 @@ export class ImageFileInputElement extends LivechatElement {
   @property({ attribute: false })
   public accept: string[] = ['image/jpg', 'image/png', 'image/gif']
 
+  @property({ attribute: false })
+  public disabled?: boolean = false
+
   protected override render = (): unknown => {
     return html`
       ${this.value
@@ -55,6 +58,7 @@ export class ImageFileInputElement extends LivechatElement {
         accept="${this.accept.join(',')}"
         class="form-control"
         style=${this.value ? 'display: none;' : ''}
+        ?disabled=${this.disabled}
         @change=${async (ev: Event) => this._upload(ev)}
       />
     `
