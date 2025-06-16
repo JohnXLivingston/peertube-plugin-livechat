@@ -20,9 +20,9 @@ import { LivechatElement } from './livechat'
 import { ptTr } from '../directives/translation'
 import { AddSVG, RemoveSVG } from '../buttons'
 
-type DynamicTableAcceptedTypes = number | string | boolean | Date | Array<number | string>
+export type DynamicTableAcceptedTypes = number | string | boolean | Date | Array<number | string>
 
-type DynamicTableAcceptedInputTypes = 'textarea'
+export type DynamicTableAcceptedInputTypes = 'textarea'
   | 'select'
   | 'checkbox'
   | 'range'
@@ -44,7 +44,7 @@ type DynamicTableAcceptedInputTypes = 'textarea'
   | 'tags'
   | 'image-file'
 
-interface CellDataSchema {
+export interface CellDataSchema {
   min?: number
   max?: number
   minlength?: number
@@ -65,7 +65,7 @@ interface DynamicTableRowData {
   row: Record<string, DynamicTableAcceptedTypes>
 }
 
-interface DynamicFormHeaderCellData {
+export interface DynamicFormHeaderCellData {
   colName: TemplateResult | DirectiveResult
   description?: TemplateResult | DirectiveResult
   headerClassList?: string[]
@@ -101,13 +101,13 @@ export class DynamicTableFormElement extends LivechatElement {
   public formName = ''
 
   @state()
-  private _lastRowId = 1
+  protected _lastRowId = 1
 
   @property({ attribute: false })
-  private columnOrder: string[] = []
+  protected columnOrder: string[] = []
 
   // fixes situations when list has been reinitialized or changed outside of CustomElement
-  private readonly _updateLastRowId = (): void => {
+  protected _updateLastRowId = (): void => {
     for (const rowById of this._rowsById) {
       this._lastRowId = Math.max(this._lastRowId, rowById._id + 1)
     }
@@ -204,7 +204,7 @@ export class DynamicTableFormElement extends LivechatElement {
     `
   }
 
-  private readonly _renderHeader = (): TemplateResult => {
+  protected _renderHeader = (): TemplateResult => {
     const columns = Object.entries(this.header)
       .sort(([k1, _1], [k2, _2]) => this.columnOrder.indexOf(k1) - this.columnOrder.indexOf(k2))
     return html`<thead>
@@ -263,7 +263,7 @@ export class DynamicTableFormElement extends LivechatElement {
     </tr>`
   }
 
-  private readonly _renderFooter = (): TemplateResult => {
+  protected _renderFooter = (): TemplateResult => {
     if (this.maxLines && this._rowsById.length >= this.maxLines) {
       return html``
     }
@@ -745,7 +745,7 @@ export class DynamicTableFormElement extends LivechatElement {
     }
   }
 
-  _updatePropertyFromValue = (event: Event,
+  protected _updatePropertyFromValue = (event: Event,
     propertyName: string,
     propertySchema: CellDataSchema,
     rowId: number): void => {
