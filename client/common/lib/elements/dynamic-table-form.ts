@@ -287,7 +287,8 @@ export class DynamicTableFormElement extends LivechatElement {
   renderDataCell = (propertyName: string,
     propertyValue: DynamicTableAcceptedTypes,
     rowId: number,
-    originalIndex: number): TemplateResult => {
+    originalIndex: number,
+    disabled?: boolean): TemplateResult => {
     const propertySchema = this.schema[propertyName] ?? {}
 
     let formElement
@@ -326,7 +327,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               propertyValue as string,
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -339,7 +341,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               propertyValue as string,
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -352,7 +355,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               propertyValue as string,
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -365,7 +369,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               propertyValue?.toString(),
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -386,7 +391,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               (propertyValue as Date).toISOString(),
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -405,7 +411,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               propertyValue as string,
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -423,7 +430,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               propertyValue as boolean,
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -459,7 +467,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               (propertyValue)?.join(propertySchema.separator ?? ',') ?? propertyValue ?? propertySchema.default ?? '',
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -474,7 +483,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               (propertyValue)?.join(propertySchema.separator ?? ',') ?? propertyValue ?? propertySchema.default ?? '',
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -489,7 +499,8 @@ export class DynamicTableFormElement extends LivechatElement {
               propertyName,
               propertySchema,
               propertyValue,
-              originalIndex)}
+              originalIndex,
+              disabled)}
               ${feedback}
               `
             break
@@ -517,7 +528,8 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: string,
-    originalIndex: number): TemplateResult => {
+    originalIndex: number,
+    disabled?: boolean): TemplateResult => {
     return html`<input
       type=${propertySchema.inputType as any}
       name=${inputName}
@@ -535,6 +547,7 @@ export class DynamicTableFormElement extends LivechatElement {
       max=${ifDefined(propertySchema.max)}
       minlength=${ifDefined(propertySchema.minlength)}
       maxlength=${ifDefined(propertySchema.maxlength)}
+      ?disabled=${disabled}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue}
     />
@@ -552,7 +565,8 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: Array<string | number>,
-    originalIndex: number): TemplateResult => {
+    originalIndex: number,
+    disabled?: boolean): TemplateResult => {
     return html`<livechat-tags-input
       .name=${inputName}
       class=${classMap(
@@ -570,6 +584,7 @@ export class DynamicTableFormElement extends LivechatElement {
       .maxlength=${propertySchema.maxlength}
       .datalist=${propertySchema.datalist as any}
       .separator=${propertySchema.separator ?? '\n'}
+      .disabled=${disabled}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue as any}
       ></livechat-tags-input>`
@@ -582,7 +597,8 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: string,
-    originalIndex: number): TemplateResult => {
+    originalIndex: number,
+    disabled?: boolean): TemplateResult => {
     return html`<textarea
       name=${inputName}
       class=${classMap(
@@ -598,6 +614,7 @@ export class DynamicTableFormElement extends LivechatElement {
       max=${ifDefined(propertySchema.max)}
       minlength=${ifDefined(propertySchema.minlength)}
       maxlength=${ifDefined(propertySchema.maxlength)}
+      ?disabled=${disabled}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue}></textarea>`
   }
@@ -609,7 +626,8 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: boolean,
-    originalIndex: number): TemplateResult => {
+    originalIndex: number,
+    disabled?: boolean): TemplateResult => {
     return html`<input
       type="checkbox"
       name=${inputName}
@@ -622,6 +640,7 @@ export class DynamicTableFormElement extends LivechatElement {
       id=${inputId}
       title=${ifDefined(inputTitle)}
       aria-describedby="${inputId}-feedback"
+      ?disabled=${disabled}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       value="1"
       ?checked=${propertyValue} />`
@@ -634,7 +653,8 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: string,
-    originalIndex: number): TemplateResult => {
+    originalIndex: number,
+    disabled?: boolean): TemplateResult => {
     return html`<select
       class=${classMap(
         Object.assign(
@@ -646,6 +666,7 @@ export class DynamicTableFormElement extends LivechatElement {
       title=${ifDefined(inputTitle)}
       aria-describedby="${inputId}-feedback"
       aria-label=${inputName}
+      ?disabled=${disabled}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
     >
       <option ?selected=${!propertyValue}>${inputTitle ?? ''}</option>
@@ -663,7 +684,8 @@ export class DynamicTableFormElement extends LivechatElement {
     propertyName: string,
     propertySchema: CellDataSchema,
     propertyValue: string,
-    originalIndex: number
+    originalIndex: number,
+    disabled?: boolean
   ): TemplateResult => {
     return html`<livechat-image-file-input
       .name=${inputName}
@@ -671,6 +693,7 @@ export class DynamicTableFormElement extends LivechatElement {
       id=${inputId}
       .inputTitle=${inputTitle as any}
       aria-describedby="${inputId}-feedback"
+      .disabled=${disabled}
       @change=${(event: Event) => this._updatePropertyFromValue(event, propertyName, propertySchema, rowId)}
       .value=${propertyValue}
       .maxSize=${maxSize}

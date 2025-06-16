@@ -8,7 +8,7 @@
 
 import { LivechatElement } from './livechat'
 import { ptTr } from '../directives/translation'
-import { html } from 'lit'
+import { html, nothing } from 'lit'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -73,6 +73,9 @@ export class TagsInputElement extends LivechatElement {
   @property({ attribute: false })
   public animDuration = 200
 
+  @property({ attribute: false })
+  public disabled?: boolean = false
+
   /**
    * Overloading the standard focus method.
    */
@@ -115,13 +118,14 @@ export class TagsInputElement extends LivechatElement {
                   out: fadeOut
                 })}>
                 <span class='livechat-tag-name'>${tag}</span>
-                <span class='livechat-tag-close'
-                      @click=${() => this._handleDeleteTag(index)}></span>
+                ${!this.disabled
+                  ? html`<span class='livechat-tag-close' @click=${() => this._handleDeleteTag(index)}></span>`
+                  : nothing}
               </li>`
             )}
           </ul>
           ${
-            this.value?.length === 0
+            this.value?.length === 0 || this.disabled
               ? ''
               : html`<button
                 type="button"
@@ -150,9 +154,9 @@ export class TagsInputElement extends LivechatElement {
                 out: fadeOut
               })}>
               <span class='livechat-tag-name'>${this.value[index]}</span>
-              <span class='livechat-tag-close'
-                    @click=${() => this._handleDeleteTag(index)}>
-              </span>
+              ${!this.disabled
+                  ? html`<span class='livechat-tag-close' @click=${() => this._handleDeleteTag(index)}></span>`
+                  : nothing}
             </li>`
           )}
         </ul>
@@ -165,6 +169,7 @@ export class TagsInputElement extends LivechatElement {
         max=${ifDefined(this.max)}
         minlength=${ifDefined(this.minlength)}
         maxlength=${ifDefined(this.maxlength)}
+        ?disabled=${this.disabled}
         @paste=${(e: ClipboardEvent) => this._handlePaste(e)}
         @keydown=${(e: KeyboardEvent) => this._handleKeyDown(e)}
         @keyup=${(e: KeyboardEvent) => this._handleKeyUp(e)}
