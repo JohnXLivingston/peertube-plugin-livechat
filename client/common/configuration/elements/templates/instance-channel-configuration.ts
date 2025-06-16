@@ -37,6 +37,13 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
       comments: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_LABEL),
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_DESC)
+      },
+      enabled: {
+        colName: 'Enable'
+      },
+      forced: {
+        colName: 'Force',
+        description: 'Forbid those words on all channels, if unchecked: channels owners can choose to apply it.'
       }
     },
     quotes: {
@@ -47,6 +54,13 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
       delay: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_LABEL),
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_DESC)
+      },
+      enabled: {
+        colName: 'Enable'
+      },
+      forced: {
+        colName: 'Force',
+        description: 'Force the use of those messages on all channels or let owners choose.'
       }
     },
     commands: {
@@ -57,6 +71,14 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
       message: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_LABEL),
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_DESC)
+      },
+      enabled: {
+        colName: 'Enable'
+      },
+      forced: {
+        colName: 'Force',
+        description:
+          'Force the avaibility of this command on all channels or let channel owners choose which to activate.'
       }
     }
   }
@@ -86,6 +108,14 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
       comments: {
         inputType: 'textarea',
         default: ''
+      },
+      enabled: {
+        inputType: 'checkbox',
+        default: true
+      },
+      forced: {
+        inputType: 'checkbox',
+        default: false
       }
     },
     quotes: {
@@ -98,6 +128,14 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
         inputType: 'number',
         default: 10,
         min: 1
+      },
+      enabled: {
+        inputType: 'checkbox',
+        default: true
+      },
+      forced: {
+        inputType: 'checkbox',
+        default: false
       }
     },
     commands: {
@@ -108,9 +146,19 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
       message: {
         inputType: 'text',
         default: ''
+      },
+      enabled: {
+        inputType: 'checkbox',
+        default: true
+      },
+      forced: {
+        inputType: 'checkbox',
+        default: false
       }
     }
+
   }
+  console.log('COUCOU')
 
   return html`
     <div class="margin-content peertube-plugin-livechat-configuration
@@ -122,8 +170,9 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
         </span>
       </h1>
 
-      <livechat-channel-tabs .active=${'configuration'} .channelId=${el.channelId}></livechat-channel-tabs>
+      <livechat-channel-tabs .active=${'configuration'}></livechat-channel-tabs>
 
+      <pre>INSTANCE${JSON.stringify(el.channelConfiguration?.configuration, undefined, 2)}</pre>
       <p>
         ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)}
         <livechat-help-button .page=${'documentation/user/streamers/channel'}>
@@ -142,7 +191,7 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
             .title=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TERMS_LABEL) as any}
             name="terms"
             id="peertube-livechat-terms"
-            .value=${el.channelConfiguration?.configuration.terms ?? ''}
+            .value=${el.channelConfiguration?.configuration.terms.value ?? ''}
             maxlength=${el.termsMaxLength()}
             class=${classMap(
                 Object.assign(
@@ -154,13 +203,19 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
                 if (event?.target && el.channelConfiguration) {
                   let value: string | undefined = (event.target as HTMLTextAreaElement).value
                   if (value === '') { value = undefined }
-                  el.channelConfiguration.configuration.terms = value
+                  el.channelConfiguration.configuration.terms.value = value
                 }
                 el.requestUpdate('channelConfiguration')
               }
             }
           ></textarea>
           ${el.renderFeedback('peertube-livechat-terms-feedback', 'terms')}
+          <livechat-form-checkbox
+            id="peertube-livechat-terms-forced"
+            .label=${'Force'}
+            .description=${'If forced, terms will be prepend on all channels terms.'}
+            .value=${el.channelConfiguration?.configuration.terms.forced}
+          ></livechat-form-checkbox>
         </div>
 
         <livechat-configuration-section-header
@@ -176,17 +231,23 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
               id="peertube-livechat-mute-anonymous"
               @input=${(event: InputEvent) => {
                   if (event?.target && el.channelConfiguration) {
-                    el.channelConfiguration.configuration.mute.anonymous =
+                    el.channelConfiguration.configuration.mute.anonymous.value =
                       (event.target as HTMLInputElement).checked
                   }
                   el.requestUpdate('channelConfiguration')
                 }
               }
               value="1"
-              ?checked=${el.channelConfiguration?.configuration.mute.anonymous}
+              ?checked=${el.channelConfiguration?.configuration.mute.anonymous.value}
             />
             ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_MUTE_ANONYMOUS_LABEL)}
           </label>
+          <livechat-form-checkbox
+            id="peertube-livechat-mute-anonymous-forced"
+            class="ms-2"
+            .label=${'Force'}
+            .value=${el.channelConfiguration?.configuration.mute.anonymous.forced}
+          ></livechat-form-checkbox>
         </div>
 
         <livechat-configuration-section-header
@@ -212,16 +273,22 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
               aria-describedby="peertube-livechat-slowmode-duration-feedback"
               @input=${(event: InputEvent) => {
                   if (event?.target && el.channelConfiguration) {
-                    el.channelConfiguration.configuration.slowMode.duration =
+                    el.channelConfiguration.configuration.slowMode.duration.value =
                       Number((event.target as HTMLInputElement).value)
                   }
                   el.requestUpdate('channelConfiguration')
                 }
               }
-              value="${el.channelConfiguration?.configuration.slowMode.duration ?? ''}"
+              value="${el.channelConfiguration?.configuration.slowMode.duration.value ?? ''}"
             />
           </label>
           ${el.renderFeedback('peertube-livechat-slowmode-duration-feedback', 'slowMode.duration')}
+          <livechat-form-checkbox
+            id="peertube-livechat-slowmode-duration-forced"
+            class="ms-2"
+            .label=${'Force'}
+            .value=${el.channelConfiguration?.configuration.slowMode.duration.forced}
+          ></livechat-form-checkbox>
         </div>
 
         <livechat-configuration-section-header
@@ -247,16 +314,22 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
               aria-describedby="peertube-livechat-moderation-delay-feedback"
               @input=${(event: InputEvent) => {
                   if (event?.target && el.channelConfiguration) {
-                    el.channelConfiguration.configuration.moderation.delay =
+                    el.channelConfiguration.configuration.moderation.delay.value =
                       Number((event.target as HTMLInputElement).value)
                   }
                   el.requestUpdate('channelConfiguration')
                 }
               }
-              value="${el.channelConfiguration?.configuration.moderation.delay ?? ''}"
+              value="${el.channelConfiguration?.configuration.moderation.delay.value ?? ''}"
             />
           </label>
           ${el.renderFeedback('peertube-livechat-moderation-delay-feedback', 'moderation.delay')}
+          <livechat-form-checkbox
+            id="peertube-livechat-moderation-delay-forced"
+            class="ms-2"
+            .label=${'Force'}
+            .value=${el.channelConfiguration?.configuration.moderation.delay.forced}
+          ></livechat-form-checkbox>
         </div>
 
         <livechat-configuration-section-header
@@ -272,17 +345,23 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
               id="peertube-livechat-anonymize-moderation"
               @input=${(event: InputEvent) => {
                   if (event?.target && el.channelConfiguration) {
-                    el.channelConfiguration.configuration.moderation.anonymize =
+                    el.channelConfiguration.configuration.moderation.anonymize.value =
                       (event.target as HTMLInputElement).checked
                   }
                   el.requestUpdate('channelConfiguration')
                 }
               }
               value="1"
-              ?checked=${el.channelConfiguration?.configuration.moderation.anonymize}
+              ?checked=${el.channelConfiguration?.configuration.moderation.anonymize.value}
             />
             ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ANONYMIZE_MODERATION_LABEL)}
           </label>
+          <livechat-form-checkbox
+            id="peertube-livechat-anonymize-moderation-forced"
+            class="ms-2"
+            .label=${'Force'}
+            .value=${el.channelConfiguration?.configuration.moderation.anonymize.forced}
+          ></livechat-form-checkbox>
         </div>
 
         <livechat-configuration-section-header
@@ -298,20 +377,26 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
               id="peertube-livechat-bot"
               @input=${(event: InputEvent) => {
                   if (event?.target && el.channelConfiguration) {
-                    el.channelConfiguration.configuration.bot.enabled =
+                    el.channelConfiguration.configuration.bot.enabled.value =
                       (event.target as HTMLInputElement).checked
                   }
                   el.requestUpdate('channelConfiguration')
                 }
               }
               value="1"
-              ?checked=${el.channelConfiguration?.configuration.bot.enabled}
+              ?checked=${el.channelConfiguration?.configuration.bot.enabled.value}
             />
             ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
           </label>
+          <livechat-form-checkbox
+            id="peertube-livechat-bot"
+            class="ms-2"
+            .label=${'Force'}
+            .value=${el.channelConfiguration?.configuration.bot.enabled.forced}
+          ></livechat-form-checkbox>
         </div>
 
-        ${!el.channelConfiguration?.configuration.bot.enabled
+        ${!el.channelConfiguration?.configuration.bot.enabled.value
           ? ''
           : html`<div class="form-group">
             <label for="peertube-livechat-bot-nickname">
@@ -330,15 +415,20 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
               aria-describedby="peertube-livechat-bot-nickname-feedback"
               @input=${(event: InputEvent) => {
                   if (event?.target && el.channelConfiguration) {
-                    el.channelConfiguration.configuration.bot.nickname =
+                    el.channelConfiguration.configuration.bot.nickname.value =
                     (event.target as HTMLInputElement).value
                   }
                   el.requestUpdate('channelConfiguration')
                 }
               }
-              value="${el.channelConfiguration?.configuration.bot.nickname ?? ''}"
+              value="${el.channelConfiguration?.configuration.bot.nickname.value ?? ''}"
             />
             ${el.renderFeedback('peertube-livechat-bot-nickname-feedback', 'bot.nickname')}
+            <livechat-form-checkbox
+              id="peertube-livechat-bot-nickname"
+              .label=${'Force'}
+              .value=${el.channelConfiguration?.configuration.bot.nickname.forced}
+            ></livechat-form-checkbox>
           </div>
 
           <livechat-configuration-section-header
@@ -365,6 +455,12 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
               />
               ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SPECIAL_CHARS_LABEL)}
             </label>
+            <livechat-form-checkbox
+              id="peertube-livechat-forbid-special-chars"
+              class="ms-2"
+              .label=${'Force'}
+              .value=${el.channelConfiguration?.configuration.bot.forbidSpecialChars.forced}
+            ></livechat-form-checkbox>
           </div>
           ${!el.channelConfiguration?.configuration.bot.forbidSpecialChars.enabled
             ? ''
@@ -485,6 +581,12 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
               />
               ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_NO_DUPLICATE_LABEL)}
             </label>
+            <livechat-form-checkbox
+              id="peertube-livechat-no-duplicate"
+              class="ms-2"
+              .label=${'Force'}
+              .value=${el.channelConfiguration?.configuration.bot.noDuplicate.forced}
+            ></livechat-form-checkbox>
           </div>
           ${!el.channelConfiguration?.configuration.bot.noDuplicate.enabled
             ? ''
@@ -591,11 +693,11 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
             .schema=${tableSchema.forbiddenWords}
             .validation=${el.validationError?.properties}
             .validationPrefix=${'bot.forbiddenWords'}
-            .rows=${el.channelConfiguration?.configuration.bot.forbiddenWords}
+            .rows=${el.channelConfiguration?.configuration.bot.instanceForbiddenWords}
             @update=${(e: CustomEvent) => {
                 el.resetValidation(e)
                 if (el.channelConfiguration) {
-                  el.channelConfiguration.configuration.bot.forbiddenWords = e.detail
+                  el.channelConfiguration.configuration.bot.instanceForbiddenWords = e.detail
                   el.requestUpdate('channelConfiguration')
                 }
               }
@@ -613,11 +715,11 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
             .schema=${tableSchema.quotes}
             .validation=${el.validationError?.properties}
             .validationPrefix=${'bot.quotes'}
-            .rows=${el.channelConfiguration?.configuration.bot.quotes}
+            .rows=${el.channelConfiguration?.configuration.bot.instanceQuotes}
             @update=${(e: CustomEvent) => {
                 el.resetValidation(e)
                 if (el.channelConfiguration) {
-                  el.channelConfiguration.configuration.bot.quotes = e.detail
+                  el.channelConfiguration.configuration.bot.instanceQuotes = e.detail
                   el.requestUpdate('channelConfiguration')
                 }
               }
@@ -635,11 +737,11 @@ export function tplInstanceChannelConfiguration (el: InstanceChannelConfiguratio
             .schema=${tableSchema.commands}
             .validation=${el.validationError?.properties}
             .validationPrefix=${'bot.commands'}
-            .rows=${el.channelConfiguration?.configuration.bot.commands}
+            .rows=${el.channelConfiguration?.configuration.bot.instanceCommands}
             @update=${(e: CustomEvent) => {
                 el.resetValidation(e)
                 if (el.channelConfiguration) {
-                  el.channelConfiguration.configuration.bot.commands = e.detail
+                  el.channelConfiguration.configuration.bot.instanceCommands = e.detail
                   el.requestUpdate('channelConfiguration')
                 }
               }

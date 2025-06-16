@@ -37,6 +37,9 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       comments: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_LABEL),
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_COMMENTS_DESC)
+      },
+      enabled: {
+        colName: 'Enable'
       }
     },
     quotes: {
@@ -47,6 +50,9 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       delay: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_LABEL),
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DELAY_DESC)
+      },
+      enabled: {
+        colName: 'Enable'
       }
     },
     commands: {
@@ -57,6 +63,9 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       message: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_LABEL),
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_MESSAGE_DESC)
+      },
+      enabled: {
+        colName: 'Enable'
       }
     }
   }
@@ -86,6 +95,10 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       comments: {
         inputType: 'textarea',
         default: ''
+      },
+      enabled: {
+        inputType: 'checkbox',
+        default: true
       }
     },
     quotes: {
@@ -98,6 +111,10 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
         inputType: 'number',
         default: 10,
         min: 1
+      },
+      enabled: {
+        inputType: 'checkbox',
+        default: true
       }
     },
     commands: {
@@ -108,6 +125,10 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       message: {
         inputType: 'text',
         default: ''
+      },
+      enabled: {
+        inputType: 'checkbox',
+        default: true
       }
     }
   }
@@ -123,6 +144,8 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
       </h1>
 
       <livechat-channel-tabs .active=${'configuration'} .channelId=${el.channelId}></livechat-channel-tabs>
+
+      <pre>CHANNEL${JSON.stringify(el.channelConfiguration?.configuration, undefined, 2)}</pre>
 
       <p>
         ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_DESC)}
@@ -159,6 +182,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                 el.requestUpdate('channelConfiguration')
               }
             }
+            ?disabled=${el.channelConfiguration?.instanceConfiguration.terms.forced}
           ></textarea>
           ${el.renderFeedback('peertube-livechat-terms-feedback', 'terms')}
         </div>
@@ -184,6 +208,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
               }
               value="1"
               ?checked=${el.channelConfiguration?.configuration.mute.anonymous}
+              ?disabled=${el.channelConfiguration?.instanceConfiguration.mute.anonymous.forced}
             />
             ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_MUTE_ANONYMOUS_LABEL)}
           </label>
@@ -219,6 +244,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                 }
               }
               value="${el.channelConfiguration?.configuration.slowMode.duration ?? ''}"
+              ?disabled=${el.channelConfiguration?.instanceConfiguration.slowMode.duration.forced}
             />
           </label>
           ${el.renderFeedback('peertube-livechat-slowmode-duration-feedback', 'slowMode.duration')}
@@ -254,6 +280,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                 }
               }
               value="${el.channelConfiguration?.configuration.moderation.delay ?? ''}"
+              ?disabled=${el.channelConfiguration?.instanceConfiguration.moderation.delay.forced}
             />
           </label>
           ${el.renderFeedback('peertube-livechat-moderation-delay-feedback', 'moderation.delay')}
@@ -280,6 +307,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
               }
               value="1"
               ?checked=${el.channelConfiguration?.configuration.moderation.anonymize}
+              ?disabled=${el.channelConfiguration?.instanceConfiguration.moderation.anonymize.forced}
             />
             ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ANONYMIZE_MODERATION_LABEL)}
           </label>
@@ -306,6 +334,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
               }
               value="1"
               ?checked=${el.channelConfiguration?.configuration.bot.enabled}
+              ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.enabled.forced}
             />
             ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_ENABLE_BOT_LABEL)}
           </label>
@@ -337,6 +366,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                 }
               }
               value="${el.channelConfiguration?.configuration.bot.nickname ?? ''}"
+              ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.nickname.forced}
             />
             ${el.renderFeedback('peertube-livechat-bot-nickname-feedback', 'bot.nickname')}
           </div>
@@ -362,6 +392,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                 }
                 value="1"
                 ?checked=${el.channelConfiguration?.configuration.bot.forbidSpecialChars.enabled}
+                ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.forbidSpecialChars.forced}
               />
               ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SPECIAL_CHARS_LABEL)}
             </label>
@@ -394,6 +425,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                       }
                     }
                     value="${el.channelConfiguration?.configuration.bot.forbidSpecialChars.tolerance ?? '0'}"
+                    ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.forbidSpecialChars.forced}
                   />
                 </label>
                 <small class="form-text text-muted">
@@ -426,6 +458,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                       }
                     }
                     value="${el.channelConfiguration?.configuration.bot.forbidSpecialChars.reason ?? ''}"
+                    ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.forbidSpecialChars.forced}
                   />
                 </label>
                 <small class="form-text text-muted">
@@ -451,6 +484,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                     }
                     value="1"
                     ?checked=${el.channelConfiguration?.configuration.bot.forbidSpecialChars.applyToModerators}
+                    ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.forbidSpecialChars.forced}
                   />
                   ${ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_LABEL)}
                 </label>
@@ -482,6 +516,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                 }
                 value="1"
                 ?checked=${el.channelConfiguration?.configuration.bot.noDuplicate.enabled}
+                ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.noDuplicate.forced}
               />
               ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_NO_DUPLICATE_LABEL)}
             </label>
@@ -514,6 +549,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                       }
                     }
                     value="${el.channelConfiguration?.configuration.bot.noDuplicate.delay ?? '0'}"
+                    ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.noDuplicate.forced}
                   />
                 </label>
                 <small class="form-text text-muted">
@@ -546,6 +582,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                       }
                     }
                     value="${el.channelConfiguration?.configuration.bot.noDuplicate.reason ?? ''}"
+                    ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.noDuplicate.forced}
                   />
                 </label>
                 <small class="form-text text-muted">
@@ -571,6 +608,7 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
                     }
                     value="1"
                     ?checked=${el.channelConfiguration?.configuration.bot.noDuplicate.applyToModerators}
+                    ?disabled=${el.channelConfiguration?.instanceConfiguration.bot.noDuplicate.forced}
                   />
                   ${ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_LABEL)}
                 </label>
@@ -581,11 +619,27 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
               `
           }
 
+
           <livechat-configuration-section-header
             .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)}
             .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_DESC)}
             .helpPage=${'documentation/user/streamers/bot/forbidden_words'}>
           </livechat-configuration-section-header>
+          <livechat-table-form-enable
+            .header=${tableHeaderList.forbiddenWords}
+            .schema=${tableSchema.forbiddenWords}
+            .values=${el.channelConfiguration?.configuration.bot.instanceForbiddenWords}
+            .rows=${el.channelConfiguration?.instanceConfiguration.bot.instanceForbiddenWords}
+            @update=${(e: CustomEvent) => {
+                el.resetValidation(e)
+                if (el.channelConfiguration) {
+                  el.channelConfiguration.configuration.bot.instanceForbiddenWords = e.detail
+                  el.requestUpdate('channelConfiguration')
+                }
+              }
+            }
+            .formName=${'instance-forbidden-words'}
+          ></livechat-table-form-enable>
           <livechat-dynamic-table-form
             .header=${tableHeaderList.forbiddenWords}
             .schema=${tableSchema.forbiddenWords}
@@ -608,6 +662,21 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
             .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_QUOTE_DESC)}
             .helpPage=${'documentation/user/streamers/bot/quotes'}>
           </livechat-configuration-section-header>
+          <livechat-table-form-enable
+            .header=${tableHeaderList.quotes}
+            .schema=${tableSchema.quotes}
+            .values=${el.channelConfiguration?.configuration.bot.instanceQuotes}
+            .rows=${el.channelConfiguration?.instanceConfiguration.bot.instanceQuotes}
+            @update=${(e: CustomEvent) => {
+                el.resetValidation(e)
+                if (el.channelConfiguration) {
+                  el.channelConfiguration.configuration.bot.instanceQuotes = e.detail
+                  el.requestUpdate('channelConfiguration')
+                }
+              }
+            }
+            .formName=${'instance-quote'}
+          ></livechat-table-form-enable>
           <livechat-dynamic-table-form
             .header=${tableHeaderList.quotes}
             .schema=${tableSchema.quotes}
@@ -630,6 +699,21 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
             .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_COMMAND_DESC)}
             .helpPage=${'documentation/user/streamers/bot/commands'}>
           </livechat-configuration-section-header>
+          <livechat-table-form-enable
+            .header=${tableHeaderList.commands}
+            .schema=${tableSchema.commands}
+            .values=${el.channelConfiguration?.configuration.bot.instanceCommands}
+            .rows=${el.channelConfiguration?.instanceConfiguration.bot.instanceCommands}
+            @update=${(e: CustomEvent) => {
+                el.resetValidation(e)
+                if (el.channelConfiguration) {
+                  el.channelConfiguration.configuration.bot.instanceCommands = e.detail
+                  el.requestUpdate('channelConfiguration')
+                }
+              }
+            }
+            .formName=${'instance-command'}
+          ></livechat-table-form-enable>
           <livechat-dynamic-table-form
             .header=${tableHeaderList.commands}
             .schema=${tableSchema.commands}
