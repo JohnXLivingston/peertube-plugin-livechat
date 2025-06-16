@@ -8,5 +8,7 @@ import { ChannelDetailsService } from '../services/channel-details'
 
 export const channelConfigurationContext =
   createContext<ChannelConfiguration | undefined>(Symbol('channel-configuration'))
+export const instanceChannelConfigurationContext =
+  createContext<ChannelConfiguration<'instance'> | undefined>(Symbol('instance-channel-configuration'))
 export const channelDetailsServiceContext =
   createContext<ChannelDetailsService | undefined>(Symbol('channel-configuration-service'))

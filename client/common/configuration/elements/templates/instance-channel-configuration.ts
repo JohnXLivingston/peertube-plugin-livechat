@@ -5,14 +5,14 @@
 // FIXME: @stylistic/indent is buggy with strings literrals.
 /* eslint-disable @stylistic/indent */
 
-import type { ChannelConfigurationElement } from '../channel-configuration'
+import type { InstanceChannelConfigurationElement } from '../instance-channel-configuration'
 import type { DynamicFormHeader, DynamicFormSchema } from '../../../lib/elements/dynamic-table-form'
 import { ptTr } from '../../../lib/directives/translation'
 import { html, TemplateResult } from 'lit'
 import { classMap } from 'lit/directives/class-map.js'
 import { noDuplicateMaxDelay, forbidSpecialCharsMaxTolerance } from 'shared/lib/constants'
 
-export function tplChannelConfiguration (el: ChannelConfigurationElement): TemplateResult {
+export function tplInstanceChannelConfiguration (el: InstanceChannelConfigurationElement): TemplateResult {
   const tableHeaderList: Record<string, DynamicFormHeader> = {
     forbiddenWords: {
       entries: {

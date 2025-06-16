@@ -6,5 +6,6 @@
 // Add here all your elements, the main JS file will import them all.
 import './channel-home'
 import './channel-configuration'
+import './instance-channel-configuration'
 import './channel-emojis'
 import './channel-tabs'

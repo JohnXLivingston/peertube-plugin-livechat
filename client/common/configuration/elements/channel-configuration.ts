@@ -83,34 +83,34 @@ export class ChannelConfigurationElement extends LivechatElement {
    */
   public readonly saveConfig = async (event?: Event): Promise<void> => {
     event?.preventDefault()
-    if (this._channelDetailsService && this.channelConfiguration) {
-      this.actionDisabled = true
-      this._channelDetailsService.saveOptions(this.channelConfiguration.channel.id,
-        this.channelConfiguration.configuration)
-        .then(() => {
-          this.validationError = undefined
-          this.ptTranslate(LOC_SUCCESSFULLY_SAVED).then((msg) => {
-            this.ptNotifier.info(msg)
-          }, () => {})
-          this.requestUpdate('_validationError')
-        })
-        .catch(async (error: Error) => {
-          this.validationError = undefined
-          if (error instanceof ValidationError) {
-            this.validationError = error
-          }
-          this.logger.warn(`A validation error occurred in saving configuration. ${error.name}: ${error.message}`)
-          this.ptNotifier.error(
-            error.message
-              ? error.message
-              : await this.ptTranslate(LOC_ERROR)
-          )
-          this.requestUpdate('_validationError')
-        })
-        .finally(() => {
-          this.actionDisabled = false
-        })
-    }
+    // if (this._channelDetailsService && this.channelConfiguration) {
+    //   this.actionDisabled = true
+    //   this._channelDetailsService.saveOptions(this.channelConfiguration.channel.id,
+    //     this.channelConfiguration.configuration)
+    //     .then(() => {
+    //       this.validationError = undefined
+    //       this.ptTranslate(LOC_SUCCESSFULLY_SAVED).then((msg) => {
+    //         this.ptNotifier.info(msg)
+    //       }, () => {})
+    //       this.requestUpdate('_validationError')
+    //     })
+    //     .catch(async (error: Error) => {
+    //       this.validationError = undefined
+    //       if (error instanceof ValidationError) {
+    //         this.validationError = error
+    //       }
+    //       this.logger.warn(`A validation error occurred in saving configuration. ${error.name}: ${error.message}`)
+    //       this.ptNotifier.error(
+    //         error.message
+    //           ? error.message
+    //           : await this.ptTranslate(LOC_ERROR)
+    //       )
+    //       this.requestUpdate('_validationError')
+    //     })
+    //     .finally(() => {
+    //       this.actionDisabled = false
+    //     })
+    // }
   }
 
   public readonly getInputValidationClass = (propertyName: string): Record<string, boolean> => {
