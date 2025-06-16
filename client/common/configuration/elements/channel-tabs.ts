@@ -20,13 +20,15 @@ export class ChannelHomeElement extends LivechatElement {
   public active?: string
 
   protected override render = (): TemplateResult => {
+    const linkPart = this.channelId ? '?channelId=' + encodeURIComponent(this.channelId) : '-instance'
+
     return html`
       <a
         class=${classMap({
           'sub-menu-entry': true,
           active: this.active === 'configuration'
         })}
-        href=${'/p/livechat/configuration/channel?channelId=' + encodeURIComponent(this.channelId ?? '')}
+        href=${'/p/livechat/configuration/channel' + linkPart}
       >
         ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_TITLE)}
       </a>
@@ -35,7 +37,7 @@ export class ChannelHomeElement extends LivechatElement {
           'sub-menu-entry': true,
           active: this.active === 'emojis'
         })}
-        href=${'/p/livechat/configuration/emojis?channelId=' + encodeURIComponent(this.channelId ?? '')}
+        href=${'/p/livechat/configuration/emojis' + linkPart}
       >
         ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_EMOJIS_TITLE)}
       </a>

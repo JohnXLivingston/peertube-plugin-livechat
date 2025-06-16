@@ -25,6 +25,16 @@ async function registerConfiguration (clientOptions: RegisterClientOptions): Pro
   })
 
   registerClientRoute({
+    route: 'livechat/configuration/channel-instance',
+    onMount: async ({ rootEl }) => {
+      render(html`
+        <livechat-instance-channel-configuration .registerClientOptions=${clientOptions}>
+        </livechat-instance-channel-configuration>
+      `, rootEl)
+    }
+  })
+
+  registerClientRoute({
     route: 'livechat/configuration/channel',
     onMount: async ({ rootEl }) => {
       const urlParams = new URLSearchParams(window.location.search)
