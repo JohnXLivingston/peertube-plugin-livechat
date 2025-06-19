@@ -77,7 +77,7 @@ action_import: استيراد
 action_export: تصدير
 token_date: التاريخ
 poll_question: سؤال
-prosody_firewall_file_enabled: مفعّل
+enabled: مفعّل
 prosody_firewall_name: الاسم
 invalid_value: القيمة غير صالحة.
 task_delete: حذف المهمة

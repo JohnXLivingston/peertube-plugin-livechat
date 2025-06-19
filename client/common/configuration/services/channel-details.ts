@@ -151,9 +151,18 @@ export class ChannelDetailsService {
     return true
   }
 
-  frontToBack = (channelConfigurationOptions: ChannelConfigurationOptions): ChannelConfigurationOptions => {
-    // // This is a dirty hack, because backend wants seconds for botConf.quotes.delay, and front wants minutes.
+  frontToBack = (
+    channelConfigurationOptions: ChannelConfigurationOptions,
+    enableUsersRegexp: boolean
+  ): ChannelConfigurationOptions => {
     const c = JSON.parse(JSON.stringify(channelConfigurationOptions)) as ChannelConfigurationOptions // clone
+
+    if (!enableUsersRegexp) {
+      c.bot?.forbiddenWords.forEach(fw => {
+        fw.regexp = false // force to false
+      })
+    }
+    // This is a dirty hack, because backend wants seconds for botConf.quotes.delay, and front wants minutes.
     c.bot?.quotes.forEach(q => {
       if (typeof q.delay === 'number') {
         q.delay = Math.round(q.delay * 60)
@@ -175,7 +184,8 @@ export class ChannelDetailsService {
   }
 
   saveOptions = async (channelId: number,
-    channelConfigurationOptions: ChannelConfigurationOptions): Promise<Response> => {
+    channelConfigurationOptions: ChannelConfigurationOptions,
+    enableUsersRegexp: boolean): Promise<Response> => {
     if (!await this.validateOptions(channelConfigurationOptions)) {
       throw new Error('Invalid form data')
     }
@@ -186,7 +196,7 @@ export class ChannelDetailsService {
         method: 'POST',
         headers: this._headers,
         body: JSON.stringify(
-          this.frontToBack(channelConfigurationOptions)
+          this.frontToBack(channelConfigurationOptions, enableUsersRegexp)
         )
       }
     )

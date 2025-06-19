@@ -631,7 +631,7 @@ prosody_firewall_configuration_help: |
   Não hesite em compartilhar suas configurações com a comunidade (por exemplo, adicionando alguns exemplos na documentação do plugin).
 prosody_firewall_disabled_warning: |
   Aviso: o mod_firewall está desabilitado nas configurações do plugin &lt;a href="/admin/plugins/show/peertube-plugin-livechat" target="_blank"&gt;do livechat&lt;/a&gt;, você precisa habilitá-lo se quiser que essa configuração seja levada em consideração.
-prosody_firewall_file_enabled: 'Habilitado'
+enabled: 'Habilitado'
 prosody_firewall_name: 'Nome'
 prosody_firewall_name_desc: |
   Pode conter apenas: caracteres alfanuméricos, sublinhaso e hífens.

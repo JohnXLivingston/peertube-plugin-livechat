@@ -110,7 +110,7 @@ async function initConfigurationApiRouter (options: RegisterServerOptions, route
         //   req.body.bot.forbidSpecialChars.enabled = false
         //    ... NoDuplicate...
         // }
-        channelOptions = await sanitizeChannelConfigurationOptions(options, channelInfos.id, req.body, 'validation')
+        channelOptions = await sanitizeChannelConfigurationOptions(options, channelInfos.id, req.body)
       } catch (err: any) {
         logger.warn(err.message as string)
         if (err.validationErrorMessage && (typeof err.validationErrorMessage === 'string')) {

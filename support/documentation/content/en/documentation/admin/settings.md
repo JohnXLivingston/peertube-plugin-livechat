@@ -55,6 +55,10 @@ users will be able to add some customization on their channels, activate the mod
 
 If you encounter any issue with this feature, you can disable it.
 
+### {{% livechat_label enable_users_regexp %}}
+
+{{% livechat_label enable_users_regexp_description %}}
+
 ## Chat behaviour
 
 ### {{% livechat_label room_type_label %}}

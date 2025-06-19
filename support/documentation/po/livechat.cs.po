@@ -6,11 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2025-06-06 17:07+0200\n"
+"POT-Creation-Date: 2025-06-19 17:09+0200\n"
 "PO-Revision-Date: 2025-06-08 22:46+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
-"Language-Team: Czech <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
+"Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2688,61 +2687,38 @@ msgstr "Tuto funkci mohou správci instance deaktivovat."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "You can use OBS \"Custom browser docks\" to integrate the chat in your OBS while you are streaming.  The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don't have to enter your password in OBS."
-msgstr ""
-"Můžete použít OBS „Custom browser docks“ (Vlastní dokovací okna prohlížeče) "
-"k integraci chatu do OBS během streamování.  Plugin livechat nabízí možnost "
-"vytvořit dlouhodobý token, který vás automaticky identifikuje pro připojení "
-"k chatu, takže nemusíte zadávat heslo v OBS."
+msgstr "Můžete použít OBS „Custom browser docks“ (Vlastní dokovací okna prohlížeče) k integraci chatu do OBS během streamování.  Plugin livechat nabízí možnost vytvořit dlouhodobý token, který vás automaticky identifikuje pro připojení k chatu, takže nemusíte zadávat heslo v OBS."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "To do so, just use the \"{{% livechat_label share_chat_link %}}\" feature, and open the \"{{% livechat_label share_chat_dock %}}\" tab.  From there, you can create a new token using the \"+\" button."
-msgstr ""
-"K tomu stačí použít funkci „{{% livechat_label share_chat_link %}}“ a "
-"otevřít kartu „{{% livechat_label share_chat_dock %}}“.  Odtud můžete pomocí "
-"tlačítka „+“ vytvořit nový token."
+msgstr "K tomu stačí použít funkci „{{% livechat_label share_chat_link %}}“ a otevřít kartu „{{% livechat_label share_chat_dock %}}“.  Odtud můžete pomocí tlačítka „+“ vytvořit nový token."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label share_chat_dock %}} tab. A token was generated, and is selectionable.\"](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px \"Share link popup - dock tab\")"
-msgstr ""
-"![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na "
-"kartě „{{% livechat_label share_chat_dock %}}“. Byl vygenerován token, který "
-"lze vybrat.“](/peertube-plugin-livechat/images/"
-"share_dock.png?classes=shadow,border&height=200px „Vyskakovací okno pro "
-"sdílení odkazu – karta doku“)"
+msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na kartě „{{% livechat_label share_chat_dock %}}“. Byl vygenerován token, který lze vybrat.“](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu – karta doku“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Then, copy the url, and use the \"Docks / Custom browser docks\" menu from your OBS to add a dock with this URL."
-msgstr ""
-"Poté zkopírujte adresu URL a pomocí nabídky „Docks / Custom browser docks“ ("
-"Doky / Vlastní doky prohlížeče) ve vašem OBS přidejte dok s touto adresou."
+msgstr "Poté zkopírujte adresu URL a pomocí nabídky „Docks / Custom browser docks“ (Doky / Vlastní doky prohlížeče) ve vašem OBS přidejte dok s touto adresou."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![Screenshot of the OBS Dock menu, with a \"Custom Browser Docks\" entry.](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px \"OBS - Dock menu\")"
-msgstr ""
-"![Screenshot nabídky OBS Dock s položkou „Custom Browser Docks“ (Vlastní "
-"dokovací prohlížeče).](/peertube-plugin-livechat/images/"
-"obs_dock_menu.png?classes=shadow,border&height=200px „OBS – nabídka Dock“)"
+msgstr "![Screenshot nabídky OBS Dock s položkou „Custom Browser Docks“ (Vlastní dokovací prohlížeče).](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px „OBS – nabídka Dock“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![Screenshot of the OBS Custom Browser Docks dialog, with a new dock called \"My chat\".](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS - Dock dialog\")"
-msgstr ""
-"![Screenshot dialogového okna OBS Custom Browser Docks s novým dokem "
-"nazvaným „My chat“.](/peertube-plugin-livechat/images/"
-"obs_dock_dialog.png?classes=shadow,border&height=200px „OBS – dialogové okno "
-"Dock“)"
+msgstr "![Screenshot dialogového okna OBS Custom Browser Docks s novým dokem nazvaným „My chat“.](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px „OBS – dialogové okno Dock“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Once you have done, you will have a new dock connected to the chat with your account."
-msgstr ""
-"Jakmile to uděláte, budete mít nové dokovací okno připojené k chatu s vaším "
-"účtem."
+msgstr "Jakmile to uděláte, budete mít nové dokovací okno připojené k chatu s vaším účtem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -3154,8 +3130,10 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
-msgstr ""
+#, fuzzy
+#| msgid "This feature can be disabled by the instance's adminitrators."
+msgid "This feature is optional and can be disabled by admins."
+msgstr "Tuto funkci mohou správci instance deaktivovat."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md

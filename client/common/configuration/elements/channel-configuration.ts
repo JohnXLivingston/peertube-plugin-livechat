@@ -25,6 +25,9 @@ export class ChannelConfigurationElement extends LivechatElement {
   @state()
   public channelConfiguration?: ChannelConfiguration
 
+  @property({ attribute: false })
+  public enableUsersRegexp?: boolean
+
   @provide({ context: channelDetailsServiceContext })
   private _channelDetailsService?: ChannelDetailsService
 
@@ -46,6 +49,7 @@ export class ChannelConfigurationElement extends LivechatElement {
       task: async () => {
         this._channelDetailsService = new ChannelDetailsService(this.ptOptions)
         this.channelConfiguration = await this._channelDetailsService.fetchConfiguration(this.channelId ?? 0)
+        this.enableUsersRegexp = !!(await this.ptOptions.peertubeHelpers.getSettings())['enable-users-regexp']
         this.actionDisabled = false // in case of reset
       },
       args: () => []
@@ -85,8 +89,10 @@ export class ChannelConfigurationElement extends LivechatElement {
     event?.preventDefault()
     if (this._channelDetailsService && this.channelConfiguration) {
       this.actionDisabled = true
-      this._channelDetailsService.saveOptions(this.channelConfiguration.channel.id,
-        this.channelConfiguration.configuration)
+      this._channelDetailsService.saveOptions(
+        this.channelConfiguration.channel.id,
+        this.channelConfiguration.configuration,
+        this.enableUsersRegexp ?? false)
         .then(() => {
           this.validationError = undefined
           this.ptTranslate(LOC_SUCCESSFULLY_SAVED).then((msg) => {

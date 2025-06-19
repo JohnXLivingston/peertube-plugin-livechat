@@ -627,7 +627,7 @@ prosody_firewall_configuration_help: |
   Don't hesitate to share your configurations with the community (for example by adding some examples in the plugin documentation).
 prosody_firewall_disabled_warning: |
   Warning: mod_firewall is disabled in the livechat <a href="/admin/plugins/show/peertube-plugin-livechat" target="_blank">plugin settings</a>, you have to enable it if you want this configuration to be taken into account.
-prosody_firewall_file_enabled: Enabled
+enabled: Enabled
 prosody_firewall_name: Name
 prosody_firewall_name_desc: |
   Can only contain: alphanumerical characters, underscores and hyphens.
@@ -681,3 +681,8 @@ converse_theme_warning_description: |
     Otherwise some user may experience issues depending on the Peertube theme they use.
   </span>
 back_to_last_msg: Go back to last message
+enable_users_regexp: Enable regular expressions for channel's forbidden words
+enable_users_regexp_description: |
+  When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot.
+  You should not enable this feature if you don't trust your users (those who can create chat rooms, in other words: those who can create live streams).
+  A malicious user could create a specially crafted regular expression, and cause a bot denial of service.

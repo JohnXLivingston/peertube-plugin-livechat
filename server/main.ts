@@ -20,6 +20,7 @@ import { ExternalAuthOIDC } from './lib/external-auth/oidc'
 import { migrateMUCAffiliations } from './lib/prosody/migration/migrateV10'
 import { updateProsodyChannelEmojisRegex } from './lib/prosody/migration/migrateV12'
 import { updateForbidSpecialCharsHandler } from './lib/prosody/migration/migrateV13'
+import { mustMigrateV14 } from './lib/prosody/migration/migratev14'
 import { Emojis } from './lib/emojis'
 import { LivechatProsodyAuth } from './lib/prosody/auth'
 import decache from 'decache'
@@ -52,8 +53,10 @@ async function register (options: RegisterServerOptions): Promise<any> {
   await BotConfiguration.initSingleton(options)
   // Then load the RoomChannel singleton
   const roomChannelSingleton = await RoomChannel.initSingleton(options)
-  // roomChannelNeedsDataInit: if true, means that the data file does not exist (or is invalid), so we must initiate it
-  const roomChannelNeedsDataInit = !await roomChannelSingleton.readData()
+  // roomChannelNeedsDataInit: if true, means that we must rebuild the data file
+  // (for example because it does not exist (or is invalid), so we must initiate it)
+  let roomChannelNeedsDataRebuild = !await roomChannelSingleton.readData()
+  if (await mustMigrateV14(options)) { roomChannelNeedsDataRebuild = true }
 
   // BotsCtl.initSingleton() will force reload the bots conf files, so must be done before generating Prosody Conf.
   await BotsCtl.initSingleton(options)
@@ -76,8 +79,8 @@ async function register (options: RegisterServerOptions): Promise<any> {
     await ensureProsodyRunning(options)
 
     let preBotPromise: Promise<void>
-    if (roomChannelNeedsDataInit) {
-      logger.info('The RoomChannel singleton has not found any data, we must rebuild')
+    if (roomChannelNeedsDataRebuild) {
+      logger.info('The RoomChannel singleton must rebuild data')
       // no need to wait here, can be done without await.
       preBotPromise = roomChannelSingleton.rebuildData().then(
         () => { logger.info('RoomChannel singleton rebuild done') },

@@ -47,9 +47,7 @@ You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livec
 
 By checking this option, each line of the "{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression).
 
-Please note that not all regular expression are accepted.
-Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.
-Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations.
+This feature is optional and can be disabled by admins.
 
 ## {{% livechat_label livechat_configuration_applytomoderators_label %}}
 

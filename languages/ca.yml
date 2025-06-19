@@ -565,7 +565,7 @@ poll_vote_ok: S'ha tingut en compte el vostre vot, els comptadors s'actualitzara
   en breu.
 moderator_note_original_nick: Àlies de la participant en el moment de la creació de
   la nota
-prosody_firewall_file_enabled: Activat
+enabled: Activat
 prosody_firewall_name: Nom
 prosody_firewall_name_desc: "Només pot contenir caràcters alfanumèrics, guions baixos
   i guions.\nEls scripts es carregaran per ordre alfabètic.\n"

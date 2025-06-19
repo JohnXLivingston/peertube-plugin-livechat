@@ -99,7 +99,7 @@ livechat_configuration_channel_slow_mode_label: 限速模式
 livechat_configuration_channel_slow_mode_desc: "限速模式預設值：\n<ul>\n <li>0：停用限速模式</li>\n
   <li>任何正整數：使用者可以每 X 秒發送一條訊息（審核者不受限制）</li>\n</ul>\n"
 prosody_firewall_name: 名字
-prosody_firewall_file_enabled: 啟用
+enabled: 啟用
 livechat_configuration_channel_emojis_desc: "您可以為您的頻道組態自訂表情符號。\n這些表情符號將在表情符號選擇器中提供。\n\
   使用者也可以透過其短名稱來使用它們（例如透過編寫“:shortname:”）。\n"
 livechat_emojis_shortname: 簡稱

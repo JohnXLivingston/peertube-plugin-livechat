@@ -15,13 +15,22 @@ import { noDuplicateMaxDelay, forbidSpecialCharsMaxTolerance } from 'shared/lib/
 export function tplChannelConfiguration (el: ChannelConfigurationElement): TemplateResult {
   const tableHeaderList: Record<string, DynamicFormHeader> = {
     forbiddenWords: {
+      enabled: {
+        colName: ptTr(LOC_ENABLED)
+      },
       entries: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_LABEL)
       },
-      regexp: {
-        colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_LABEL),
-        description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_DESC)
-      },
+      ...(
+        el.enableUsersRegexp
+          ? {
+            regexp: {
+              colName: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_LABEL),
+              description: ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_FORBIDDEN_WORDS_REGEXP_DESC)
+            }
+          }
+          : {}
+      ),
       applyToModerators: {
         colName: ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_LABEL),
         description: ptTr(LOC_LIVECHAT_CONFIGURATION_APPLYTOMODERATORS_DESC)
@@ -62,15 +71,25 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
   }
   const tableSchema: Record<string, DynamicFormSchema> = {
     forbiddenWords: {
+      enabled: {
+        inputType: 'checkbox',
+        default: true
+      },
       entries: {
         inputType: 'tags',
         default: [],
         separator: '\n'
       },
-      regexp: {
-        inputType: 'checkbox',
-        default: false
-      },
+      ...(
+        el.enableUsersRegexp
+          ? {
+            regexp: {
+              inputType: 'checkbox',
+              default: false
+            }
+          }
+          : {}
+      ),
       applyToModerators: {
         inputType: 'checkbox',
         default: false

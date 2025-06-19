@@ -11,9 +11,6 @@ import {
   noDuplicateDefaultDelay,
   noDuplicateMaxDelay
 } from '../../../../shared/lib/constants'
-import * as RE2 from 're2'
-
-type SanitizeMode = 'validation' | 'read'
 
 /**
  * Sanitize data so that they can safely be used/stored for channel configuration configuration.
@@ -25,10 +22,9 @@ type SanitizeMode = 'validation' | 'read'
  * @param mode Sanitization mode. 'validation': when verifiying user input. 'read': when reading from disk.
  */
 async function sanitizeChannelConfigurationOptions (
-  _options: RegisterServerOptions,
+  options: RegisterServerOptions,
   _channelId: number | string,
-  data: unknown,
-  mode: SanitizeMode
+  data: unknown
 ): Promise<ChannelConfigurationOptions> {
   if (!_assertObjectType(data)) {
     throw new Error('Invalid data type')
@@ -96,7 +92,7 @@ async function sanitizeChannelConfigurationOptions (
     bot: {
       enabled: _readBoolean(botData, 'enabled'),
       nickname: _readSimpleInput(botData, 'nickname', true),
-      forbiddenWords: await _readForbiddenWords(botData, mode),
+      forbiddenWords: await _readForbiddenWords(options, botData),
       forbidSpecialChars: await _readForbidSpecialChars(botData),
       noDuplicate: await _readNoDuplicate(botData),
       quotes: _readQuotes(botData),
@@ -206,7 +202,7 @@ function _readMultiLineString (data: Record<string, unknown>, f: string): string
   return s
 }
 
-async function _readRegExpArray (data: Record<string, unknown>, f: string, mode: SanitizeMode): Promise<string[]> {
+async function _readRegExpArray (data: Record<string, unknown>, f: string): Promise<string[]> {
   // Note: this function can instanciate a lot of RegExp.
   // To avoid freezing the server, we make it async, and will validate each regexp in a separate tick.
   if (!(f in data)) {
@@ -224,24 +220,11 @@ async function _readRegExpArray (data: Record<string, unknown>, f: string, mode:
       // ignore empty values
       continue
     }
-    // value must be a valid RE2 regexp
+    // value must be a valid regexp
     try {
       async function _validate (v: string): Promise<void> {
-        // Before livechat v13, the bot was using RegExp.
-        // Now it is using RE2, to avoid ReDOS attacks.
-        // RE2 does not accept all regular expressions.
-        // So, here come the question about settings saved before...
-        // So we introduce the "mode" parameter.
-        // When reading from disk, we want to be more permissive.
-        // When validating frontend data, we want to be more restrictive.
-        // Note: the bot will simply ignore any invalid RE2 expression, and generate an error log on loading.
-        if (mode === 'read') {
-          // eslint-disable-next-line no-new
-          new RegExp(v)
-        } else {
-          // eslint-disable-next-line no-new, new-cap
-          new RE2.default(v)
-        }
+        // eslint-disable-next-line no-new
+        new RegExp(v)
       }
       await _validate(v)
     } catch (err: any) {
@@ -253,9 +236,11 @@ async function _readRegExpArray (data: Record<string, unknown>, f: string, mode:
 }
 
 async function _readForbiddenWords (
-  botData: Record<string, unknown>,
-  mode: SanitizeMode
+  options: RegisterServerOptions,
+  botData: Record<string, unknown>
 ): Promise<ChannelConfigurationOptions['bot']['forbiddenWords']> {
+  const enableUsersRegexp = (await options.settingsManager.getSetting('enable-users-regexp')) === true
+
   if (!Array.isArray(botData.forbiddenWords)) {
     throw new Error('Invalid forbiddenWords data')
   }
@@ -265,9 +250,10 @@ async function _readForbiddenWords (
       throw new Error('Invalid entry in botData.forbiddenWords')
     }
     const regexp = !!fw.regexp
+
     let entries
     if (regexp) {
-      entries = await _readRegExpArray(fw, 'entries', mode)
+      entries = await _readRegExpArray(fw, 'entries')
     } else {
       entries = _readStringArray(fw, 'entries')
     }
@@ -276,7 +262,17 @@ async function _readForbiddenWords (
     const reason = fw.reason ? _readSimpleInput(fw, 'reason') : undefined
     const comments = fw.comments ? _readMultiLineString(fw, 'comments') : undefined
 
+    // Enabled was introduced in v14. So we must set to true if not present.
+    let enabled = !('enabled' in fw) ? true : _readBoolean(fw, 'enabled')
+    if (enabled && regexp && !enableUsersRegexp) {
+      // here we don't fail, we just change the value.
+      // This is usefull when the settings changes:
+      // RoomChannel.singleton().rebuildData() will automatically update data.
+      enabled = false
+    }
+
     result.push({
+      enabled,
       regexp,
       entries,
       applyToModerators,

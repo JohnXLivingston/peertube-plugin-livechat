@@ -7,12 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-06 17:07+0200\n"
+"POT-Creation-Date: 2025-06-19 17:09+0200\n"
 "PO-Revision-Date: 2025-06-07 08:38+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3088,26 +3086,17 @@ msgstr "![Screenshot einer Chat-Nachricht, die mit folgender Begründung gelösc
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" lines.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
-msgstr ""
-"Sie können mehrere \"{{% livechat_label "
-"livechat_configuration_channel_forbidden_words_label %}}\"-Zeilen "
-"ausfüllen.  Wenn ein Benutzer eine Nachricht sendet, die den konfigurierten "
-"Kriterien entspricht, wird die Nachricht automatisch gelöscht."
+msgstr "Sie können mehrere \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\"-Zeilen ausfüllen.  Wenn ein Benutzer eine Nachricht sendet, die den konfigurierten Kriterien entspricht, wird die Nachricht automatisch gelöscht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "Here you can configure several words, group of words, or \"regular expressions\"."
-msgstr ""
-"Hier können Sie mehrere Wörter, Wortgruppen oder \"reguläre Ausdrücke\" "
-"(regex) konfigurieren."
+msgstr "Hier können Sie mehrere Wörter, Wortgruppen oder \"reguläre Ausdrücke\" (regex) konfigurieren."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "Each time a user sends a message, these words will be tested.  If the message contains one of them, the message will be deleted."
-msgstr ""
-"Jedes Mal, wenn ein Benutzer eine Nachricht sendet, werden diese Wörter "
-"getestet.  Wenn die Nachricht eines dieser Wörter enthält, wird die "
-"Nachricht gelöscht."
+msgstr "Jedes Mal, wenn ein Benutzer eine Nachricht sendet, werden diese Wörter getestet.  Wenn die Nachricht eines dieser Wörter enthält, wird die Nachricht gelöscht."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3147,14 +3136,10 @@ msgstr "Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% livec
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
-msgstr ""
-"Bitte beachten Sie, dass nicht alle \"regulären Ausdrücke (regex) akzeptiert "
-"werden.  Im Hintergrund verwenden wir die Bibliothek [node-re2](https://"
-"github.com/uhop/node-re2).  Weitere Informationen über die akzeptierte "
-"Syntax und die Einschränkungen finden Sie unter [node-re2](https://"
-"github.com/uhop/node-re2) und der [RE2 Dokumentation](https://github.com/"
-"google/re2/wiki/Syntax)."
+#, fuzzy
+#| msgid "This feature can be disabled by the instance's adminitrators."
+msgid "This feature is optional and can be disabled by admins."
+msgstr "Diese Funktion kann von den Administratoren der Instanz deaktiviert werden."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -5006,6 +4991,9 @@ msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-pl
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
+
+#~ msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
+#~ msgstr "Bitte beachten Sie, dass nicht alle \"regulären Ausdrücke (regex) akzeptiert werden.  Im Hintergrund verwenden wir die Bibliothek [node-re2](https://github.com/uhop/node-re2).  Weitere Informationen über die akzeptierte Syntax und die Einschränkungen finden Sie unter [node-re2](https://github.com/uhop/node-re2) und der [RE2 Dokumentation](https://github.com/google/re2/wiki/Syntax)."
 
 #~ msgid "This feature comes with the livechat plugin version 11.0.0."
 #~ msgstr "Diese Funktion wird mit dem Livechatplugin Version 11.0.0 verfügbar sein."

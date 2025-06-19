@@ -15,7 +15,7 @@ import { html } from 'lit'
 export function tplAdminFirewall (el: AdminFirewallElement): TemplateResult {
   const tableHeaderList: DynamicFormHeader = {
     enabled: {
-      colName: ptTr(LOC_PROSODY_FIREWALL_FILE_ENABLED)
+      colName: ptTr(LOC_ENABLED)
     },
     name: {
       colName: ptTr(LOC_PROSODY_FIREWALL_NAME),

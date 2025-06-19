@@ -38,7 +38,7 @@ async function getChannelConfigurationOptions (
   const content = await fs.promises.readFile(filePath, {
     encoding: 'utf-8'
   })
-  const sanitized = await sanitizeChannelConfigurationOptions(options, channelId, JSON.parse(content), 'read')
+  const sanitized = await sanitizeChannelConfigurationOptions(options, channelId, JSON.parse(content))
   return sanitized
 }
 
@@ -188,7 +188,7 @@ function _getForbiddenWordsHandler (
     return handler
   }
 
-  handler.enabled = true
+  handler.enabled = forbiddenWords.enabled
   const rule: any = {
     name: id
   }
@@ -262,7 +262,6 @@ function _getForbidSpecialCharsHandler (
     name: id,
     regexp,
     modifiers: 'us',
-    regexp_engine: 'regexp', // FIXME: node-re2 is not compatible with \p{Emoji} and co, so we ensure to use RegExp here
     reason: forbidSpecialChars.reason
   }
   handler.options.rules.push(rule)

@@ -488,7 +488,7 @@ prosody_firewall_configuration: Konfigurace mod_firewall Prosody
 prosody_firewall_disabled_warning: "Varování: mod_firewall je zakázán v nastavení
   <a href=\"/admin/plugins/show/peertube-plugin-livechat\" target=\"_blank\">pluginu</a>,
   pokud chcete, aby byla tato konfigurace zohledněna, musíte ji povolit.\n"
-prosody_firewall_file_enabled: Povoleno
+enabled: Povoleno
 prosody_firewall_name: Název
 prosody_firewall_name_desc: "Může obsahovat pouze: alfanumerické znaky, podtržítka
   a pomlčky.\nSkripty se načítají v abecedním pořadí.\n"

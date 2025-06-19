@@ -415,7 +415,7 @@ prosody_firewall_configuration_help: "Ovdje možeš konfigurirati modul Prosody 
   U nastavku možeš stvoriti više konfiguracijskih datoteka i promijeniti njihov redoslijed.\n
   Nemoj se ustručavati dijeliti svoje konfiguracije sa zajednicom (na primjer dodavanjem
   nekih primjera u dokumentaciju dodatka).\n"
-prosody_firewall_file_enabled: Aktivirano
+enabled: Aktivirano
 prosody_firewall_name: Ime
 prosody_firewall_content: Sadržaj datoteke
 share_chat_dock: Dock

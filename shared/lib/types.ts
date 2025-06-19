@@ -116,6 +116,7 @@ interface ChannelConfigurationOptions {
 }
 
 interface ChannelForbiddenWords {
+  enabled: boolean
   entries: string[]
   regexp?: boolean
   applyToModerators?: boolean

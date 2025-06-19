@@ -588,7 +588,7 @@ prosody_firewall_disabled_warning: "Warnung: mod_firewall ist in den livechat <a
   /admin/plugins/show/peertube-plugin-livechat\" target=\"_blank\">Plugin-Einstellungen
   </a> deaktiviert, du musst es aktivieren, wenn du willst, dass diese Konfiguration
   beachtet wird.\n"
-prosody_firewall_file_enabled: Aktiviert
+enabled: Aktiviert
 prosody_firewall_name: Name
 prosody_firewall_name_desc: "Darf nur folgende Zeichen enthalten: alphanumerische
   Zeichen, Unterstriche und Bindestriche.\nDie Skripte werden in alphabetischer Reihenfolge

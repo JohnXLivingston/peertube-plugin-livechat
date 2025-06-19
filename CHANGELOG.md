@@ -1,5 +1,34 @@
 # Changelog
 
+## 14.0.0 (Not Released Yet)
+
+**Important note**: if you got an error on updating the plugin, please try to restart Peertube and install it again.
+
+### Breaking changes
+
+The livechat v13 introduced a new library to handle regular expressions in forbidden words, to avoid
+[ReDOS](https://en.wikipedia.org/wiki/ReDoS) attacks.
+Unfortunately, this library was not able to install itself properly on some systems, and some admins were not able
+to install the livechat plugin.
+
+That's why we have disabled this library in v14, and introduce a new settings to enable regexp in forbidden words.
+By default this settings is disabled, and your users won't be able to use regexp in their forbidden words.
+
+The risk by enabling this feature is that a malicious user could cause a denial of service for the chat bot, by using a
+special crafted regular expression in their channel options, and sending a special crafter message in one of their
+rooms. If you trust your users (those who have rights to livestream), you can enable the settings. Otherwise it is not
+recommanded. See the documentation for more informations.
+
+If you had users using regular expressions, those "forbidden words" list are disabled when updating the livechat plugin.
+To restore them, you must first enable the "Enable regular expressions for channel's forbidden words" settings, then
+your users have to go to their channel's chatroom options and enable them again.
+
+### Minor changes and fixes
+
+* Channel's forbidden words: new "enable" column.
+* New settings to enable regular expressions for channel forbidden words.
+* "Channel advanced configuration" settings: removing the "experimental feature" label.
+
 ## 13.0.0
 
 **Important note**: if you got an error on updating the plugin, please try to restart Peertube and install it again.

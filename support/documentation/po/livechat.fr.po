@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-06 17:07+0200\n"
+"POT-Creation-Date: 2025-06-19 17:09+0200\n"
 "PO-Revision-Date: 2025-06-06 16:26+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3218,8 +3217,10 @@ msgstr "En cochant cette option, chaque ligne du champs «{{% livechat_label liv
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
-msgstr ""
+#, fuzzy
+#| msgid "This feature can be disabled by the instance's adminitrators."
+msgid "This feature is optional and can be disabled by admins."
+msgstr "Cette fonction peut être désactivée par les administrateur⋅rices de l'instance."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -5049,12 +5050,7 @@ msgstr "En tant qu'administrateur⋅rice Peertube, vous pouvez installer ce plug
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of Peertube plugins admin page. The search fields contains \"livechat\", and the search results show the livechat plugin.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px \"Livechat installation\")"
-msgstr ""
-"![Capture d'écran de la page d'administration du plugin Peertube. Le champs "
-"de recherche contient \"livechat\", and les résultats de la recherche "
-"montrent le plugin livechat.](/peertube-plugin-livechat/images/"
-"installation.png?classes=shadow,border&height=200px \"Installation livechat\""
-")"
+msgstr "![Capture d'écran de la page d'administration du plugin Peertube. Le champs de recherche contient \"livechat\", and les résultats de la recherche montrent le plugin livechat.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px \"Installation livechat\")"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md

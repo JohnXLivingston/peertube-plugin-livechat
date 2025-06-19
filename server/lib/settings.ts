@@ -60,7 +60,9 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
   }
   loadOidcs() // we don't have to wait (can take time, it will do external http requests)
 
-  let currentProsodyRoomtype = (await settingsManager.getSettings(['prosody-room-type']))['prosody-room-type']
+  const tmpSettings = await settingsManager.getSettings(['prosody-room-type', 'enable-users-regexp'])
+  let currentProsodyRoomtype = tmpSettings['prosody-room-type']
+  let currentUsersRegexp = tmpSettings['enable-users-regexp']
 
   // ********** settings changes management
   settingsManager.onSettingsChange(async (settings: any) => {
@@ -84,8 +86,12 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
     await BotsCtl.singleton().start()
 
     // In case prosody-room-type changed, we must rebuild room-channel links.
-    if (settings['prosody-room-type'] !== currentProsodyRoomtype) {
-      peertubeHelpers.logger.info('Setting prosody-room-type has changed value, must rebuild room-channel infos')
+    // In case enable-users-regexp becomes false, we must rebuild to make sure regexp lines are disabled
+    if (
+      settings['prosody-room-type'] !== currentProsodyRoomtype ||
+      (currentUsersRegexp && !settings['enable-users-regexp'])
+    ) {
+      peertubeHelpers.logger.info('Settings changed, must rebuild room-channel infos')
       // doing it without waiting, could be long!
       RoomChannel.singleton().rebuildData().then(
         () => peertubeHelpers.logger.info('Room-channel info rebuild ok.'),
@@ -93,6 +99,7 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
       )
     }
     currentProsodyRoomtype = settings['prosody-room-type']
+    currentUsersRegexp = settings['enable-users-regexp']
   })
 }
 
@@ -364,14 +371,22 @@ function initAdvancedChannelCustomizationSettings ({ registerSetting }: Register
     descriptionHTML: loc('configuration_description')
   })
   registerSetting({
-    type: 'html',
-    private: true,
-    descriptionHTML: loc('experimental_warning')
-  })
-  registerSetting({
     name: 'disable-channel-configuration',
     label: loc('disable_channel_configuration_label'),
     // descriptionHTML: loc('disable_channel_configuration_description'),
+    type: 'input-checkbox',
+    default: false,
+    private: false
+  })
+  registerSetting({
+    // For now (v14), this settings is used to enable/disable regexp for forbidden words.
+    // This settings is basically here to say if you trust your users or not concerning regexp
+    // (because there is a risk of ReDOS on the chatbot).
+    // This settings could be used for other purpose later on (if we implement regexp anywhere else).
+    // So we use a pretty standard name, `enable-users-regexp`, that could apply for other uses.
+    name: 'enable-users-regexp',
+    label: loc('enable_users_regexp'),
+    descriptionHTML: loc('enable_users_regexp_description'),
     type: 'input-checkbox',
     default: false,
     private: false
