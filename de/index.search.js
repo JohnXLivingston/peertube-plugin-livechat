@@ -83,6 +83,7 @@ Externe Authentifizierung Siehe die ausführliche Dokumentationsseite:
 Externe Authentifizierung
 Erweiterte Kanaleinstellungen Die folgenden Einstellungen betreffen die erweiterten Kanaloptionen: Nutzer können ihre Kanäle individuell anpassen, den Moderationsbot aktivieren, …
 Die erweiterten Kanalkonfiguration und den Chatbot deaktivieren Wenn Sie Probleme mit dieser Funktion haben, können Sie sie deaktivieren.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chatverhalten Raumtyp Sie können hier wählen, ob Sie für jedes Video einen eigenen Raum haben möchten oder ob Sie sie nach Kanälen gruppieren möchten.
 Chat automatisch öffnen Wenn ausgewählt wird der Chat geladen, sobald Sie auf der Videoseite sind.
 Zeige den «Chat in neuem Fenster öffnen» Knopf Es wird einen Knopf zum Öffnen des Webchats in einem neuen Fenster geben.
@@ -342,7 +343,7 @@ Tipp Bei diesen Wörtern wird die Groß- und Kleinschreibung nicht berücksichti
 Tipp Sie können eine kurze Moderationsverzögerung (z.B. 1 Sekunde) mit dem Moderations-Chatbot kombinieren, um Nachrichten mit Schimpfwörtern zu löschen, bevor ein Nicht-Moderator sie sieht.
 Warnung Diese Funktion ist noch experimentell. Es könnte einige Probleme mit nicht-lateinischen Alphabeten geben. Sie können ein Problem öffnen, um Ihre Probleme zu melden.
 Als reguläre Ausdrücke (regex) betrachten Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes “Verbotene Wörter oder Ausdrücke” als regulärer Ausdruck betrachtet.
-Bitte beachten Sie, dass nicht alle “regulären Ausdrücke (regex) akzeptiert werden. Im Hintergrund verwenden wir die Bibliothek node-re2. Weitere Informationen über die akzeptierte Syntax und die Einschränkungen finden Sie unter node-re2 und der RE2 Dokumentation.
+This feature is optional and can be disabled by admins.
 Auch Nachrichten von Moderatoren moderieren Standardmäßig sind Nachrichten von Moderatoren von dieser Funktion nicht betroffen. Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.
 Grund Anzuzeigender Grund anstelle der gelöschen Nachricht
 Kommentare Sie können hier einige Kommentare zu dieser Regel hinzufügen, um sich daran zu erinnern, wie und warum Sie sie erstellt haben. Diese Kommentare sind rein indikativ und haben keinen Einfluss auf das Verhalten des Chatbots.`,description:"Der Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.",tags:[],title:"Verbotene Wörter",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentation",content:` EinstellungenPlugin Peertube Livechat Einstellungen

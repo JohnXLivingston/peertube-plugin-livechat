@@ -113,6 +113,7 @@ Authentification externe Voir la page de documentation détaillée :
 Authentification Externe
 Configuration avancée de la chaîne Les paramètres suivants concernent les options de chaîne avancées : les utilisateur⋅rices pourront personnaliser leurs chaînes, activer le bot de modération, …
 Désactiver la configuration avancée des chaînes et le bot de modération Si vous rencontrez un problème avec cette fonctionnalité, vous pouvez la désactiver.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Comportement en chat Type de salon Vous pouvez choisir d’avoir des salons séparés pour chaque vidéo, ou de les grouper par chaîne.
 Ouvrir automatiquement le tchat Quand on regarde une vidéo, le tchat va automatiquement s’ouvrir.
 Montrer le bouton «ouvrir dans une nouvelle fenêtre» Il y aura un bouton pour ouvrir le tchat dans une nouvelle fenêtre.
@@ -280,7 +281,7 @@ Astuce Ces mots ne sont pas sensibles à la casse.
 Astuce Vous pouvez combiner un délai de modération court (1 seconde par exemple) avec le bot dé modération pour supprimer les messages contenant des gros mots avant même qu’un⋅e utilisateur⋅rice non-modérateur⋅rice ne les voie.
 Avertissement Cette fonction est encore expérimentale. Il pourrait y avoir quelques problèmes avec les alphabets non-latin. Si c’est le cas, vous pouvez ouvrir un ticket pour signaler votre problème.
 Considérer comme une expression régulière En cochant cette option, chaque ligne du champs «Mots ou expressions interdites» sera considéré comme une expression régulière.
-Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
+This feature is optional and can be disabled by admins.
 Également modérer les messages des modérateur⋅rices Par défaut, les messages des modérateur⋅rices ne seront pas affectés par cette fonctionnalité. En cochant cette option, leur messages seront également supprimés.
 Raison Raison à affiche à côté des messages supprimés
 Commentaires Vous pouvez ajouter ici quelques commentaires sur cette règle, pour vous rappeler comment et pourquoi vous l’avez créé. Ces commentaires sont purement indicatifs, et n’ont pas d’influence sur le comportement du bot.`,description:"Le bot peut automatiquement modérer les messages contenant des mots interdits.",tags:[],title:"Mots interdits",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube plugin livechat > Documentation > Documentation d'installation",content:`L’AppImage Prosody inclue dans le plugin ne fonctionne que sur des CPU x86_64 et arm64. Elle n’est pas compatible avec d’autres architectures CPU.

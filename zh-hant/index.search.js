@@ -102,6 +102,7 @@ External Authentication See the detailed documentation page:
 External Authentication
 Channel advanced configuration Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 停用進階頻道設定和聊天機器人 If you encounter any issue with this feature, you can disable it.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chat behaviour 聊天室類型 您可以在此處選擇為每個影片設定單獨的聊天室，或按頻道對它們進行分組。
 自動開啟聊天 觀看影片時，聊天視窗會自動開啟。
 顯示“在新視窗中開啟”按鈕 此按鈕可在新視窗中開啟網路聊天。
@@ -274,7 +275,7 @@ If you have some usefull words lists, you are welcome to contribute to this sugg
 提示 You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 警告 This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 Consider as regular expressions By checking this option, each line of the “禁止使用的單字或句子” field will be considered as a regular expression.
-Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
+This feature is optional and can be disabled by admins.
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
 原因 除已刪除訊息外還顯示的原因
 Comments You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/zh-hant/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` 資訊 Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.

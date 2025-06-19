@@ -125,6 +125,7 @@ External Authentication See the detailed documentation page:
 External Authentication
 Napredna konfiguracija kanala Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 Onemogući naprednu konfiguraciju kanala i chatbota If you encounter any issue with this feature, you can disable it.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chat behaviour Vrsta sobe Ovdje možeš odabrati želiš li zasebne sobe za svaki video ili ih grupirati po kanalu.
 Automatski otvori chat Prilikom gledanja videa automatski će se otvoriti prozor za chat.
 Prikaži gumb „Otvori u novom prozoru” U novom prozoru će se pojavit gumb za otvaranje web chata.
@@ -278,7 +279,7 @@ Tip These words are case insensitive.
 Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 Warning This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 Tretiraj kao regularne izraze By checking this option, each line of the “Zabranjene riječi i izrazi” field will be considered as a regular expression.
-Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
+This feature is optional and can be disabled by admins.
 Također moderiraj porukama moderatora Ova funkcija standardno neće utjecati na poruke moderatora. Označavanjem ove opcije će se izbrisati i poruke moderatora.
 Razlog Razlog koji se prikazuje pored izbrisanih poruka
 Komentari Ovdje možeš dodati neke komentare o ovom pravilu, kao podsjetnik kako i zašto si ga stvorio/la. Ovi komentari su čisto indikativni i ne utječu na ponašanje bota.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.

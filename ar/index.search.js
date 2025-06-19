@@ -78,6 +78,7 @@ Please note: this setting only affects the publication of information via the Ac
 External Authentication
 ضبط متقدم للقناة Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 Disable the advanced channel configuration and the chatbot If you encounter any issue with this feature, you can disable it.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 السلوك في الدردشة نوع قناة الدردشة You can choose here to have separate rooms for each video, or to group them by channel.
 فتح قناة الدردشة تلقائيا When watching a video, the chatbox will automatically open.
 Show the «open in new window» button There will be a button for opening the web chat in a new window.
@@ -316,7 +317,7 @@ If you have some usefull words lists, you are welcome to contribute to this sugg
 بقشيش You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 تحذير This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 Consider as regular expressions By checking this option, each line of the “Forbidden words or expressions” field will be considered as a regular expression.
-Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
+This feature is optional and can be disabled by admins.
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
 السبب Reason to display besides deleted messages
 التعليقات You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"المصطلحات الممنوعة",uri:"/peertube-plugin-livechat/ar/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > المساهمة",content:`You can contribute to this plugin translation. Translations are handled using the Weblate software, using Framasoft Weblate instance.

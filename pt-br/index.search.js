@@ -58,6 +58,7 @@ Autenticação externa Veja a página de documentação detalhada:
 Autenticação externa
 Configuração avançada do canal As configurações a seguir dizem respeito às opções avançadas do canal: os usuários poderão adicionar alguma personalização em seus canais, ativar o bot de moderação, …
 Desabilite a configuração avançada do canal e o chatbot Caso encontre algum problema com esse recurso, você pode desativá-lo.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Comportamento de bate-papo Tipo de sala Você pode escolher aqui ter salas separadas para cada vídeo ou agrupá-las por canal.
 Abrir chat automaticamente Ao assistir a um vídeo, a caixa de bate-papo será aberta automaticamente.
 Exibir o botão «abrir em nova janela» Haverá um botão para abrir o chat da web em uma nova janela.
@@ -283,7 +284,7 @@ Tip Essas palavras não diferenciam maiúsculas de minúsculas.
 Tip Você pode combinar um curto atraso de moderação (1 segundo, por exemplo) com o bot de moderação para excluir mensagens contendo palavrões antes que qualquer usuário não moderador as veja.
 Warning Este recurso ainda é experimental. Pode haver alguns problemas com alfabetos não latinos. Você pode abrir um problema para relatar seus problemas.
 Considerar como expressões regulares Ao marcar esta opção, cada linha do campo “Expressões ou palavras proibidas” será considerada como uma expressão regular.
-Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
+This feature is optional and can be disabled by admins.
 Também modere mensagens de moderadores Por padrão, as mensagens dos moderadores não serão afetadas por este recurso. Ao marcar esta opção, as mensagens dos moderadores também serão excluídas.
 Motivo Motivo para exibir além das mensagens excluídas
 Comentários Você pode adicionar aqui alguns comentários sobre esta regra, para lembrar como e por que você a criou. Esses comentários são puramente indicativos e não têm influência no comportamento do bot.`,description:"O bot pode moderar automaticamente mensagens contendo palavras proibidas.",tags:[],title:"Palavras proibidas",uri:"/peertube-plugin-livechat/pt-br/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Bate-papo ao vivo do Peertube > Documentação > Guia de instalação",content:`O Prosody AppImage incluído no plugin funciona apenas em CPUs x86_64 e arm64. Não é compatível com outras arquiteturas de CPU.

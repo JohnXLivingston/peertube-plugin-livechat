@@ -83,6 +83,7 @@ External Authentication See the detailed documentation page:
 External Authentication
 Channel advanced configuration Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 高度なチャンネル設定とチャットボットを無効にする If you encounter any issue with this feature, you can disable it.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chat behaviour ルームタイプ 動画ごとにチャットルームを分けるか、チャンネルで1つのチャットルームにするかを選択できます。
 自動的にチャットを開く 動画を視聴している際に、チャットボックスが自動的に開かれます。
 «新規ウィンドウで開く»ボタンを表示する 新規ウィンドウでチャットを開くボタンを表示します。
@@ -279,7 +280,7 @@ If you have some usefull words lists, you are welcome to contribute to this sugg
 ヒント You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 警告 This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 正規表現 By checking this option, each line of the “禁止単語または語句” field will be considered as a regular expression.
-Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
+This feature is optional and can be disabled by admins.
 モデレーターからのメッセージも対象にする 初期状態では、モデレーターメッセージはこの機能の影響を受けません。 このオプションを有効にすると、モデレーターからのメッセージも削除されるようになります。
 理由 削除理由
 コメント このルールに関するコメントを追加できます。作成した方法や理由を覚えておくために役立ちます。 これらのコメントは単なる参考情報であり、Botの動作には影響しません。`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/ja/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` 情報 メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、変更をご確認ください : 変更履歴.

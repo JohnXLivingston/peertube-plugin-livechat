@@ -34,6 +34,7 @@ Autenticació externa Vegeu la pàgina de documentació detallada:
 Autenticació externa
 Configuració avançada del canal La configuració següent es refereix a les opcions avançades del canal: els usuaris podran personalitzar els seus canals, activar el bot de moderació, etc.
 Desactivar la configuració avançada del canal i el bot de moderació Si teniu un problema amb aquesta funció, podeu desactivar-la.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Comportament del xat Tipus de sala Podeu triar tenir diferents sales per a cada vídeo o agrupar-les per canal.
 Obrir el xat automàticament Quan es miri un vídeo el xat s’obrirà automàticament.
 Mostrar el botó «obriu en una finestra nova» Hi haurà un botó per obrir el xat en una finestra nova.
@@ -282,7 +283,7 @@ Tip Aquests mots no distingeixen entre majúscules i minúscules.
 Tip Podeu combinar un retard de moderació breu (1 segon per exemple) amb el bot de moderació per eliminar les publicacions que contenen insults abans que fins i tot un usuari que no sigui moderador les vegi.
 Warning Aquesta característica encara és experimental. Pot ser que hi hagi problemes amb els alfabets no llatins. Si és així podeu obrir un tiquet per informar del vostre problema.
 Tracta com una expressió regular En marcar aquesta opció cada línia del camp «Paraules o expressions prohibides» es considerarà com una expressió regular.
-Tingueu en compte que no totes les expressions regulars s’accepten. Per sota utilitzem la biblioteca node-re2. Consulteu node-re2 i la documentació de RE2 per obtenir més informació sobre la sintaxi acceptada i les limitacions.
+This feature is optional and can be disabled by admins.
 Moderar també els missatges de les persones que moderen Per defecte els missatges de moderadores no es veuran afectats per aquesta funció. En marcar aquesta opció llurs missatges també s’eliminaran.
 Motiu Motiu per mostrar al costat dels missatges suprimits
 Comentaris Podeu afegir alguns comentaris sobre aquesta regla aquí, per recordar-vos com i per què la vau crear. Aquests comentaris són purament orientatius i no tenen cap influència en el comportament del bot.`,description:"El bot pot moderar automàticament els missatges que contenen mots prohibits.",tags:[],title:"Mots prohibits",uri:"/peertube-plugin-livechat/ca/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Livechat de PeerTube > Documentació > Guia d'instal·lació",content:`L’AppImage Prosody inclòs al connector només funciona amb CPU x86_64 i arm64. No és compatible amb altres arquitectures de CPU.

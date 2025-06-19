@@ -105,6 +105,7 @@ Externí ověřování Viz stránka s podrobnou dokumentací:
 Externí ověřování
 Pokročilá konfigurace kanálu Následující nastavení se týkají pokročilých možností kanálů: uživatelé budou moci přidat některé úpravy na svých kanálech, aktivovat moderačního bota, …
 Zakázat pokročilou konfiguraci kanálu a chatbota Pokud s touto funkcí narazíte na nějaký problém, můžete ji zakázat.
+Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chování v chatu Typ místnosti Zde si můžete vybrat, zda chcete mít pro každé video samostatnou místnost, nebo zda je chcete seskupit podle kanálů.
 Automatické otevření chatu Při sledování videa se automaticky otevře okno chatu.
 Zobrazit tlačítko “otevřít v novém okně” K dispozici bude tlačítko pro otevření webového chatu v novém okně.
@@ -281,7 +282,7 @@ Tip These words are case insensitive.
 Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 Varování This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
 Považujte za regulární výrazy By checking this option, each line of the “Zakázaná slova nebo výrazy” field will be considered as a regular expression.
-Please note that not all regular expression are accepted. Under the hood, we are using the node-re2 library. Please check node-re2 and RE2 documentation for more information about the accepted syntax and the limitations.
+This feature is optional and can be disabled by admins.
 Také moderovat zprávy od moderátorů Ve výchozím nastavení se tato funkce na zprávy moderátora nevztahuje. Zaškrtnutím této možnosti budou zprávy od moderátorů rovněž odstraněny.
 Důvod Důvod zobrazení kromě smazaných zpráv
 Komentáře Můžete sem přidat komentář k tomuto pravidlu, abyste si pamatovali, jak a proč jste ho vytvořili. Tyto komentáře jsou čistě orientační a nemají žádný vliv na chování bota.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentace",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
