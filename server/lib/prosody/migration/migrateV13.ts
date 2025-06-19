@@ -5,6 +5,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 
 /**
+ * **DEPRECATED**
  * Livechat v13.0.0: now using xmppjs-chat-bot 0.6.0, which replaced RegExp by RE2.
  *  we must change the forbidspecialchar regexp configuration, to be compatible.
  * Livechat v14.0.0: we removed RE2 because of some incompatibility issues.
