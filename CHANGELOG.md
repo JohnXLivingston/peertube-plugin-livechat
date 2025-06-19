@@ -28,6 +28,7 @@ your users have to go to their channel's chatroom options and enable them again.
 * Channel's forbidden words: new "enable" column.
 * New settings to enable regular expressions for channel forbidden words.
 * "Channel advanced configuration" settings: removing the "experimental feature" label.
+* NPM packages security fixes.
 
 ## 13.0.0
 
