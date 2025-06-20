@@ -549,3 +549,9 @@ converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warn
   detekce barvy“.\n  V opačném případě mohou někteří uživatelé zaznamenat problémy
   v závislosti na tom, jaký motiv PeerTube používají.\n</span>\n"
 back_to_last_msg: Přejít zpět na poslední zprávu
+enable_users_regexp_description: "Po povolení této funkce budou moci streameři používat
+  regulární výrazy při nastavování chatového bota.\nTuto možnost nepovolujte, pokud
+  nedůvěřujete svým uživatelům (těm, kteří mohou vytvářet chatovací místnosti, jinými
+  slovy: ti, kteří mohou vytvářet živé přenosy).\nZlomyslný uživatel by mohl vytvořit
+  speciálně upravený regulární výraz a způsobit botovi odmítnutí služby.\n"
+enable_users_regexp: Povolit regulární výrazy pro zakázaná slova v chatovacích místnostech
