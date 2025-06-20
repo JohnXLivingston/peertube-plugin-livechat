@@ -662,3 +662,12 @@ converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warn
   pourraient rencontrer des problèmes selon le thème qu'iels utilisent pour Peertube.\n\
   </span>\n"
 back_to_last_msg: Retourner au dernier message
+enable_users_regexp_description: "En activant cette fonctionnalité, les streameur⋅euses
+  pourront utiliser des expressions régulières lors de la configuration du tchat bot.\n
+  Vous ne devriez pas activer cette fonctionnalité si vous ne faites pas confiance
+  à vos utilisateur⋅rices (celleux qui peuvent créer des salons de discussion, en
+  d'autres termes : celeux qui peuvent créer des directs).\nUn⋅e utilisateur⋅rice
+  malveillant⋅e pourrait créer une expression régulière spécialement forgée et provoquer
+  un déni de service du bot.\n"
+enable_users_regexp: Activer les expressions régulières pour les mots interdits des
+  salons de discussion
