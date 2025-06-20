@@ -45,9 +45,11 @@ You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livec
 
 ## {{% livechat_label livechat_configuration_channel_forbidden_words_regexp_label %}}
 
-By checking this option, each line of the "{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression).
+{{% notice warning %}}
+This feature can be disabled by the instance's adminitrators.
+{{% /notice %}}
 
-This feature is optional and can be disabled by admins.
+By checking this option, each line of the "{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression).
 
 ## {{% livechat_label livechat_configuration_applytomoderators_label %}}
 

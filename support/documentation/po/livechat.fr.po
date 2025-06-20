@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-19 17:09+0200\n"
+"POT-Creation-Date: 2025-06-20 09:17+0200\n"
 "PO-Revision-Date: 2025-06-06 16:26+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
@@ -2739,6 +2739,7 @@ msgstr "Dock OBS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
 msgstr "Cette fonction peut être désactivée par les administrateur⋅rices de l'instance."
@@ -3214,13 +3215,6 @@ msgstr "Cette fonction est encore expérimentale. Il pourrait y avoir quelques p
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
 msgstr "En cochant cette option, chaque ligne du champs «{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}» sera considéré comme une [expression régulière](https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re)."
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "This feature can be disabled by the instance's adminitrators."
-msgid "This feature is optional and can be disabled by admins."
-msgstr "Cette fonction peut être désactivée par les administrateur⋅rices de l'instance."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -5181,6 +5175,11 @@ msgstr "les [jalons sur github](https://github.com/JohnXLivingston/peertube-plug
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Si vous êtes webdesigner ou avez une expertise en ConverseJS/Prosody/XMPP et souhaitez participer à l'évolution de ce plugin, n'hésitez pas à me contacter."
+
+#, fuzzy
+#~| msgid "This feature can be disabled by the instance's adminitrators."
+#~ msgid "This feature is optional and can be disabled by admins."
+#~ msgstr "Cette fonction peut être désactivée par les administrateur⋅rices de l'instance."
 
 #~ msgid "This feature comes with the livechat plugin version 11.0.0."
 #~ msgstr "Cette fonctionnalité arrive avec le plugin livechat version 11.0.0."

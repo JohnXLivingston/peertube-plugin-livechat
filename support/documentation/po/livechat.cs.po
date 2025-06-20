@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2025-06-19 17:09+0200\n"
+"POT-Creation-Date: 2025-06-20 09:17+0200\n"
 "PO-Revision-Date: 2025-06-08 22:46+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -2680,6 +2680,7 @@ msgstr "OBS Dock"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
 msgstr "Tuto funkci mohou správci instance deaktivovat."
@@ -3127,13 +3128,6 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
 msgstr ""
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "This feature can be disabled by the instance's adminitrators."
-msgid "This feature is optional and can be disabled by admins."
-msgstr "Tuto funkci mohou správci instance deaktivovat."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -4977,3 +4971,8 @@ msgstr ""
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Pokud jste webdesignér nebo odborník na ConverseJS/Prosody/XMPP a chcete pomoci tento plugin vylepšit, jste vítáni."
+
+#, fuzzy
+#~| msgid "This feature can be disabled by the instance's adminitrators."
+#~ msgid "This feature is optional and can be disabled by admins."
+#~ msgstr "Tuto funkci mohou správci instance deaktivovat."

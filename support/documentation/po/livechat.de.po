@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-19 17:09+0200\n"
+"POT-Creation-Date: 2025-06-20 09:17+0200\n"
 "PO-Revision-Date: 2025-06-07 08:38+0000\n"
 "Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
@@ -2686,6 +2686,7 @@ msgstr "OBS Dock"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
 msgstr "Diese Funktion kann von den Administratoren der Instanz deaktiviert werden."
@@ -3133,13 +3134,6 @@ msgstr "Diese Funktion ist noch experimentell.  Es könnte einige Probleme mit n
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
 msgstr "Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" als [regulärer Ausdruck](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck) betrachtet."
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "This feature can be disabled by the instance's adminitrators."
-msgid "This feature is optional and can be disabled by admins."
-msgstr "Diese Funktion kann von den Administratoren der Instanz deaktiviert werden."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -4991,6 +4985,11 @@ msgstr "[Meilensteine auf Github](https://github.com/JohnXLivingston/peertube-pl
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr "Wenn Sie ein Webdesigner oder ein ConverseJS/Prosody/XMPP-Experte sind und helfen wollen, dieses Plugin zu verbessern, sind Sie gerne willkommen."
+
+#, fuzzy
+#~| msgid "This feature can be disabled by the instance's adminitrators."
+#~ msgid "This feature is optional and can be disabled by admins."
+#~ msgstr "Diese Funktion kann von den Administratoren der Instanz deaktiviert werden."
 
 #~ msgid "Please note that not all regular expression are accepted.  Under the hood, we are using the [node-re2](https://github.com/uhop/node-re2) library.  Please check [node-re2](https://github.com/uhop/node-re2) and [RE2 documentation](https://github.com/google/re2/wiki/Syntax) for more information about the accepted syntax and the limitations."
 #~ msgstr "Bitte beachten Sie, dass nicht alle \"regulären Ausdrücke (regex) akzeptiert werden.  Im Hintergrund verwenden wir die Bibliothek [node-re2](https://github.com/uhop/node-re2).  Weitere Informationen über die akzeptierte Syntax und die Einschränkungen finden Sie unter [node-re2](https://github.com/uhop/node-re2) und der [RE2 Dokumentation](https://github.com/google/re2/wiki/Syntax)."

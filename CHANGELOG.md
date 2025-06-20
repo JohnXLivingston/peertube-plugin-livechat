@@ -1,5 +1,11 @@
 # Changelog
 
+## ??? (Not Released Yet)
+
+### Minor changes and fixes
+
+* Translations updates.
+
 ## 14.0.0
 
 **Important note**: if you got an error on updating the plugin, please try to restart Peertube and install it again.

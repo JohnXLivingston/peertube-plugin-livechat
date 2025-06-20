@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2025-06-19 17:09+0200\n"
+"POT-Creation-Date: 2025-06-20 09:17+0200\n"
 "PO-Revision-Date: 2023-07-17 10:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Occitan <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/oc/>\n"
@@ -2613,6 +2613,7 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
+#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "This feature can be disabled by the instance's adminitrators."
 msgstr ""
@@ -3059,11 +3060,6 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
-msgstr ""
-
-#. type: Plain text
-#: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-msgid "This feature is optional and can be disabled by admins."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
