@@ -342,8 +342,8 @@ Wenn Sie einige nützliche Wörterlisten haben, können Sie die gerne zu dieser 
 Tipp Bei diesen Wörtern wird die Groß- und Kleinschreibung nicht berücksichtigt.
 Tipp Sie können eine kurze Moderationsverzögerung (z.B. 1 Sekunde) mit dem Moderations-Chatbot kombinieren, um Nachrichten mit Schimpfwörtern zu löschen, bevor ein Nicht-Moderator sie sieht.
 Warnung Diese Funktion ist noch experimentell. Es könnte einige Probleme mit nicht-lateinischen Alphabeten geben. Sie können ein Problem öffnen, um Ihre Probleme zu melden.
-Als reguläre Ausdrücke (regex) betrachten Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes “Verbotene Wörter oder Ausdrücke” als regulärer Ausdruck betrachtet.
-This feature is optional and can be disabled by admins.
+Als reguläre Ausdrücke (regex) betrachten Warnung Diese Funktion kann von den Administratoren der Instanz deaktiviert werden.
+Wenn Sie diese Option aktivieren, wird jede Zeile des Feldes “Verbotene Wörter oder Ausdrücke” als regulärer Ausdruck betrachtet.
 Auch Nachrichten von Moderatoren moderieren Standardmäßig sind Nachrichten von Moderatoren von dieser Funktion nicht betroffen. Wenn Sie diese Option aktivieren, werden auch Nachrichten von Moderatoren gelöscht.
 Grund Anzuzeigender Grund anstelle der gelöschen Nachricht
 Kommentare Sie können hier einige Kommentare zu dieser Regel hinzufügen, um sich daran zu erinnern, wie und warum Sie sie erstellt haben. Diese Kommentare sind rein indikativ und haben keinen Einfluss auf das Verhalten des Chatbots.`,description:"Der Chatbot kann automatisch Nachrichten moderieren, die verbotene Wörter enthalten.",tags:[],title:"Verbotene Wörter",uri:"/peertube-plugin-livechat/de/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentation",content:` EinstellungenPlugin Peertube Livechat Einstellungen

@@ -280,8 +280,8 @@ Si vous avez des listes de mots utiles, vous êtes les bienvenu⋅es pour contri
 Astuce Ces mots ne sont pas sensibles à la casse.
 Astuce Vous pouvez combiner un délai de modération court (1 seconde par exemple) avec le bot dé modération pour supprimer les messages contenant des gros mots avant même qu’un⋅e utilisateur⋅rice non-modérateur⋅rice ne les voie.
 Avertissement Cette fonction est encore expérimentale. Il pourrait y avoir quelques problèmes avec les alphabets non-latin. Si c’est le cas, vous pouvez ouvrir un ticket pour signaler votre problème.
-Considérer comme une expression régulière En cochant cette option, chaque ligne du champs «Mots ou expressions interdites» sera considéré comme une expression régulière.
-This feature is optional and can be disabled by admins.
+Considérer comme une expression régulière Avertissement Cette fonction peut être désactivée par les administrateur⋅rices de l’instance.
+En cochant cette option, chaque ligne du champs «Mots ou expressions interdites» sera considéré comme une expression régulière.
 Également modérer les messages des modérateur⋅rices Par défaut, les messages des modérateur⋅rices ne seront pas affectés par cette fonctionnalité. En cochant cette option, leur messages seront également supprimés.
 Raison Raison à affiche à côté des messages supprimés
 Commentaires Vous pouvez ajouter ici quelques commentaires sur cette règle, pour vous rappeler comment et pourquoi vous l’avez créé. Ces commentaires sont purement indicatifs, et n’ont pas d’influence sur le comportement du bot.`,description:"Le bot peut automatiquement modérer les messages contenant des mots interdits.",tags:[],title:"Mots interdits",uri:"/peertube-plugin-livechat/fr/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube plugin livechat > Documentation > Documentation d'installation",content:`L’AppImage Prosody inclue dans le plugin ne fonctionne que sur des CPU x86_64 et arm64. Elle n’est pas compatible avec d’autres architectures CPU.

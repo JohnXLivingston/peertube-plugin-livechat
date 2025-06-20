@@ -277,8 +277,8 @@ If you have some usefull words lists, you are welcome to contribute to this sugg
 Consejo These words are case insensitive.
 Consejo You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
 Aviso This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
-Considéralo como expresiones regulares By checking this option, each line of the “Palabras o expresiones prohibidas” field will be considered as a regular expression.
-This feature is optional and can be disabled by admins.
+Considéralo como expresiones regulares Aviso This feature can be disabled by the instance’s adminitrators.
+By checking this option, each line of the “Palabras o expresiones prohibidas” field will be considered as a regular expression.
 Moderar también los mensajes de los moderadores By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
 Motivo Motivo para mostrar además de eliminar los mensajes
 Comentarios Puedes añadir aquí algunos comentarios sobre esta regla, para recordar cómo y por qué la creaste. Estos comentarios son puramente indicativos, y no influyen en el comportamiento del bot.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/es/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentación",content:` Información Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
