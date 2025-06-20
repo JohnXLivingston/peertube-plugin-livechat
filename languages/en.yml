@@ -681,7 +681,7 @@ converse_theme_warning_description: |
     Otherwise some user may experience issues depending on the Peertube theme they use.
   </span>
 back_to_last_msg: Go back to last message
-enable_users_regexp: Enable regular expressions for channel's forbidden words
+enable_users_regexp: Enable regular expressions for chatrooms' forbidden words
 enable_users_regexp_description: |
   When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot.
   You should not enable this feature if you don't trust your users (those who can create chat rooms, in other words: those who can create live streams).
