@@ -642,3 +642,10 @@ converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warn
   Farberkennung\" Funktion zu verwenden.\n  Andernfalls könnten bei einigen Benutzern,
   je nach genutztem Peertube Thema, Probleme auftreten. \n</span>\n"
 back_to_last_msg: Zur letzten Nachricht zurückkehren
+enable_users_regexp_description: "Wenn Sie diese Funktion aktivieren, können Streamer
+  bei der Konfiguration des Chatbots reguläre Ausdrücke verwenden.\nSie sollten diese
+  Funktion nicht aktivieren, wenn Sie Ihren Nutzern nicht vertrauen (d. h. denjenigen,
+  die Chaträume erstellen können, mit anderen Worten: denjenigen, die Live-Streams
+  erstellen können).\nEin böswilliger Benutzer könnte einen speziell gestalteten regulären
+  Ausdruck erstellen und einen Denial-of-Service (DoS) des Bots verursachen.\n"
+enable_users_regexp: Aktivieren regulärer Ausdrücke für verbotene Wörter in Chaträumen
