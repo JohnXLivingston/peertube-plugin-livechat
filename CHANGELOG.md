@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Translations updates.
+* Fix #736: wrong format in Peertube accounts API result can prevent users to log in chat.
 
 ## 14.0.0
 

@@ -37,7 +37,9 @@ local function read_avatar_url(ret)
           module:log("debug", "User avatar path (Peertube >= v6, width 48): %s", peertube_url .. avatar.path);
           return peertube_url .. avatar.path;
         end
-        if (avatar.width < min_width) then;
+        -- https://github.com/JohnXLivingston/peertube-plugin-livechat/issues/736
+        -- seems that in some case, avatar.width is a table... So we check that it is a number.
+        if (type(avatar.width) == 'number' and avatar.width < min_width) then;
           min_path = avatar.path;
           min_width = avatar.width;
         end
