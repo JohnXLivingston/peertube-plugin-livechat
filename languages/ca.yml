@@ -579,7 +579,7 @@ converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warn
   problemes segons el tema Peertube que utilitzen.\n</span>\n"
 back_to_last_msg: Tornar a l'últim missatge
 enable_users_regexp: Habilitar les expressions regulars per a les paraules prohibides
-  del canal
+  de les sales
 enable_users_regexp_description: "Quan s'activa aquesta funció les streamers podran
   utilitzar expressions regulars en configurar el bot de xat.\nNo hauríeu d'activar
   aquesta funció si no confieu en els vostres usuari(e)s (qui poden crear sales de
