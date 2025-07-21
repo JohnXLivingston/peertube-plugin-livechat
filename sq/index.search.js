@@ -104,7 +104,7 @@ External Authentication See the detailed documentation page:
 External Authentication
 Channel advanced configuration Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 Disable the advanced channel configuration and the chatbot If you encounter any issue with this feature, you can disable it.
-Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
+Enable regular expressions for chatrooms’ forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chat behaviour Lloj dhome Këtu mund të zgjidhni të keni dhoma më vete për çdo video, ose t’i gruponi sipas kanalesh.
 Hape vetvetiu fjalosjen Kur shihet një video, dritarja e fjalosjes do të hapet vetvetiu.
 Shfaq butonin “hape në dritare të re” Do të ketë një buton për hapje dritareje fjalosjeje në një dritare të re.

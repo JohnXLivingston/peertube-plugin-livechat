@@ -83,7 +83,7 @@ Externe Authentifizierung Siehe die ausführliche Dokumentationsseite:
 Externe Authentifizierung
 Erweiterte Kanaleinstellungen Die folgenden Einstellungen betreffen die erweiterten Kanaloptionen: Nutzer können ihre Kanäle individuell anpassen, den Moderationsbot aktivieren, …
 Die erweiterten Kanalkonfiguration und den Chatbot deaktivieren Wenn Sie Probleme mit dieser Funktion haben, können Sie sie deaktivieren.
-Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
+Aktivieren regulärer Ausdrücke für verbotene Wörter in Chaträumen Wenn Sie diese Funktion aktivieren, können Streamer bei der Konfiguration des Chatbots reguläre Ausdrücke verwenden. Sie sollten diese Funktion nicht aktivieren, wenn Sie Ihren Nutzern nicht vertrauen (d. h. denjenigen, die Chaträume erstellen können, mit anderen Worten: denjenigen, die Live-Streams erstellen können). Ein böswilliger Benutzer könnte einen speziell gestalteten regulären Ausdruck erstellen und einen Denial-of-Service (DoS) des Bots verursachen.
 Chatverhalten Raumtyp Sie können hier wählen, ob Sie für jedes Video einen eigenen Raum haben möchten oder ob Sie sie nach Kanälen gruppieren möchten.
 Chat automatisch öffnen Wenn ausgewählt wird der Chat geladen, sobald Sie auf der Videoseite sind.
 Zeige den «Chat in neuem Fenster öffnen» Knopf Es wird einen Knopf zum Öffnen des Webchats in einem neuen Fenster geben.

@@ -58,7 +58,7 @@ Autenticação externa Veja a página de documentação detalhada:
 Autenticação externa
 Configuração avançada do canal As configurações a seguir dizem respeito às opções avançadas do canal: os usuários poderão adicionar alguma personalização em seus canais, ativar o bot de moderação, …
 Desabilite a configuração avançada do canal e o chatbot Caso encontre algum problema com esse recurso, você pode desativá-lo.
-Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
+Enable regular expressions for chatrooms’ forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Comportamento de bate-papo Tipo de sala Você pode escolher aqui ter salas separadas para cada vídeo ou agrupá-las por canal.
 Abrir chat automaticamente Ao assistir a um vídeo, a caixa de bate-papo será aberta automaticamente.
 Exibir o botão «abrir em nova janela» Haverá um botão para abrir o chat da web em uma nova janela.

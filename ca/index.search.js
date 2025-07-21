@@ -34,7 +34,7 @@ Autenticació externa Vegeu la pàgina de documentació detallada:
 Autenticació externa
 Configuració avançada del canal La configuració següent es refereix a les opcions avançades del canal: els usuaris podran personalitzar els seus canals, activar el bot de moderació, etc.
 Desactivar la configuració avançada del canal i el bot de moderació Si teniu un problema amb aquesta funció, podeu desactivar-la.
-Habilitar les expressions regulars per a les paraules prohibides del canal Quan s’activa aquesta funció les streamers podran utilitzar expressions regulars en configurar el bot de xat. No hauríeu d’activar aquesta funció si no confieu en els vostres usuari(e)s (qui poden crear sales de xat, és a dir: qui poden crear directes). Una persona maliciosa podria crear una expressió regular especialment dissenyada i provocar una denegació de servei del bot.
+Habilitar les expressions regulars per a les paraules prohibides de les sales Quan s’activa aquesta funció les streamers podran utilitzar expressions regulars en configurar el bot de xat. No hauríeu d’activar aquesta funció si no confieu en els vostres usuari(e)s (qui poden crear sales de xat, és a dir: qui poden crear directes). Una persona maliciosa podria crear una expressió regular especialment dissenyada i provocar una denegació de servei del bot.
 Comportament del xat Tipus de sala Podeu triar tenir diferents sales per a cada vídeo o agrupar-les per canal.
 Obrir el xat automàticament Quan es miri un vídeo el xat s’obrirà automàticament.
 Mostrar el botó «obriu en una finestra nova» Hi haurà un botó per obrir el xat en una finestra nova.

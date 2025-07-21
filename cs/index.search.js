@@ -105,7 +105,7 @@ Externí ověřování Viz stránka s podrobnou dokumentací:
 Externí ověřování
 Pokročilá konfigurace kanálu Následující nastavení se týkají pokročilých možností kanálů: uživatelé budou moci přidat některé úpravy na svých kanálech, aktivovat moderačního bota, …
 Zakázat pokročilou konfiguraci kanálu a chatbota Pokud s touto funkcí narazíte na nějaký problém, můžete ji zakázat.
-Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
+Povolit regulární výrazy pro zakázaná slova v chatovacích místnostech Po povolení této funkce budou moci streameři používat regulární výrazy při nastavování chatového bota. Tuto možnost nepovolujte, pokud nedůvěřujete svým uživatelům (těm, kteří mohou vytvářet chatovací místnosti, jinými slovy: ti, kteří mohou vytvářet živé přenosy). Zlomyslný uživatel by mohl vytvořit speciálně upravený regulární výraz a způsobit botovi odmítnutí služby.
 Chování v chatu Typ místnosti Zde si můžete vybrat, zda chcete mít pro každé video samostatnou místnost, nebo zda je chcete seskupit podle kanálů.
 Automatické otevření chatu Při sledování videa se automaticky otevře okno chatu.
 Zobrazit tlačítko “otevřít v novém okně” K dispozici bude tlačítko pro otevření webového chatu v novém okně.

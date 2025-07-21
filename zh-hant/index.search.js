@@ -102,7 +102,7 @@ External Authentication See the detailed documentation page:
 External Authentication
 Channel advanced configuration Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 停用進階頻道設定和聊天機器人 If you encounter any issue with this feature, you can disable it.
-Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
+Enable regular expressions for chatrooms’ forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chat behaviour 聊天室類型 您可以在此處選擇為每個影片設定單獨的聊天室，或按頻道對它們進行分組。
 自動開啟聊天 觀看影片時，聊天視窗會自動開啟。
 顯示“在新視窗中開啟”按鈕 此按鈕可在新視窗中開啟網路聊天。

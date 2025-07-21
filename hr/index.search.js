@@ -125,7 +125,7 @@ External Authentication See the detailed documentation page:
 External Authentication
 Napredna konfiguracija kanala Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 Onemogući naprednu konfiguraciju kanala i chatbota If you encounter any issue with this feature, you can disable it.
-Enable regular expressions for channel’s forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
+Enable regular expressions for chatrooms’ forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chat behaviour Vrsta sobe Ovdje možeš odabrati želiš li zasebne sobe za svaki video ili ih grupirati po kanalu.
 Automatski otvori chat Prilikom gledanja videa automatski će se otvoriti prozor za chat.
 Prikaži gumb „Otvori u novom prozoru” U novom prozoru će se pojavit gumb za otvaranje web chata.
