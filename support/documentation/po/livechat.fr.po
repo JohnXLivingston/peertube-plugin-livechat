@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2025-08-19 18:20+0000\n"
-"Last-Translator: THIERNO OUSMANE BALDE <princessezenagn@gmail.com>\n"
+"PO-Revision-Date: 2025-08-20 20:20+0000\n"
+"Last-Translator: Codimp <contact@lithio.fr>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
@@ -1397,8 +1397,6 @@ msgstr "Vous devez ensuite placer ces certificats dans un dossier qui sera acces
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
-#, fuzzy
-#| msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
 msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
 msgstr ""
 "Si vous voulez utiliser l'utilitaire ProsodyCtl (pour importer des "
@@ -1407,7 +1405,8 @@ msgstr ""
 "(en adaptant le chemin vers votre dossier data Peertube, et en remplaçant "
 "«xxx» par les arguments que vous souhaitez passer à prosodyctl) : `sudo -u "
 "peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
-"prosodyAppImage/squashfs-root/AppRun prosodyctl xxx`"
+"prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/"
+"storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
