@@ -111,7 +111,7 @@ federation_dont_publish_remotely_description: "この設定を有効にすると
   チャット情報が非公開になるまで、次の動画の更新を待つ必要があります。\nまた、この設定を無効にすると、再度チャット情報が公開されるようになるまで、次の動画の更新を待つ必要があります。
   この更新は、主にライブ配信が再開したり、停止したときに発生します。<br>\n<b>注意</b>: この設定は、ActivityPubプロトコルを経由した情報の公開のみ影響します。\n
   リモート アプリケーションがチャットの存在を検出し、それに接続しようとすることを妨げるものではありません。\n"
-videos_list_description: "チャットを有効にしたい動画のUUIDを入力してください。\n非ライブ配信の動画が指定可能です。1つにつき1行で入力してください。
+videos_list_description: "チャットを有効にしたい動画のUUID (ショートUUIDまたはUUIDv4) を入力してください。\n非ライブ配信の動画が指定可能です。1つにつき1行で入力してください。
   <br />\nコメントを記載可能: #以降の文字は全てコメント扱いとなります。空行は無視されます。<br />\nUUIDがフロントエンドに送信されてしまう為、非公開動画は追加しないでください。\n"
 autocolors_description: "ユーザーの現在のテーマから色を自動検出します。<br>\nこの設定が有効の場合、プラグインは色を自動検出し、チャットのテーマに適用します。<br>\n
   この設定がお使いのPeerTubeテーマでうまく動作しない場合は、この設定を無効にできます。\n発見したバグは、公式の\n<a href=\"https://github.com/JohnXLivingston/peertube-plugin-livechat/issues\"\
@@ -400,3 +400,10 @@ announcements_message_type_standard: 標準
 announcements_message_type_announcement: アナウンス
 announcements_message_type_highlight: ハイライト
 announcements_message_type_warning: 警告
+converse_theme_warning_description: "<span class=\"peertube-plugin-livechat-warning\"\
+  >\n  Peertubeテーマは「自動色検出」機能と組み合わせて使用することが強く推奨されます。\n  利用するPeertubeテーマによっては一部のユーザーに問題が発生する可能性があります。\n\
+  </span>\n"
+back_to_last_msg: 最後のメッセージに移動
+enable_users_regexp: チャットルームの禁止ワードに正規表現を有効化する
+enable_users_regexp_description: "この機能を有効にすると、配信者はチャットボットを設定する際に正規表現を使用できるようになります。\n\
+  ただし、ユーザー（チャットルーム、ライブ配信を作成できるユーザー）を信頼できない場合は有効化すべきではありません。\n悪意のあるユーザーが細工した正規表現を作成し、ボットのサービス拒否（DoS）を引き起こす可能性があります。\n"
