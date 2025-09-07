@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2025-08-20 20:20+0000\n"
-"Last-Translator: Codimp <contact@lithio.fr>\n"
+"PO-Revision-Date: 2025-09-07 22:57+0000\n"
+"Last-Translator: Ambrine <ambrine@framasoft.org>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Weblate 5.12.2\n"
+"X-Generator: Weblate 5.13.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1804,11 +1804,10 @@ msgstr "Cela permet également à l'utilisateur⋅ice de rejoindre le tchat sans
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
 msgid "![Screenshot of a Peertube video page, with a chat on the right. At the bottom of the chat, there is a \"{{% livechat_label login_using_external_account %}}\" button.](/peertube-plugin-livechat/images/external_login_button.png?classes=shadow,border&height=200px \"{{% livechat_label login_using_external_account %}} button\")"
 msgstr ""
 "livechat_label:\n"
-"  login_using_external_account: \"Se connecter avec un compte externe\""
+" login_using_external_account: \"Se connecter avec un compte externe\""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2001,10 +2000,10 @@ msgstr "Modifier les règles"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#, fuzzy
-#| msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgid "First, you must enable the feature in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
-msgstr "Veuillez vous référer à la page d'aide [pour ce paramètre](/peertube-plugin-livechat/fr/documentation/admin/settings)."
+msgstr ""
+"Tout d'abord, veuillez activer la fonctionnalité dans les [paramètres plugin]"
+"(/peertube-plugin-livechat/fr/documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
