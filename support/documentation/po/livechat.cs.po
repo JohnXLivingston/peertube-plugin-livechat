@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2025-06-08 22:46+0000\n"
+"PO-Revision-Date: 2025-10-19 11:45+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
-"Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
+"Language-Team: Czech <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -2164,151 +2165,218 @@ msgstr "![Příklad sepia avatar](/peertube-plugin-livechat/images/avatar_sepia.
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_cat %}}: "
+"[Generátor avatarů koček Davida Revoye](https://www.peppercarrot.com/extras/"
+"html/2016_cat-generator/), licence [CC-By](https://creativecommons.org/"
+"licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Cats avatar example](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Cats\")"
 msgstr ""
+"![Příklad avatara kočky](/peertube-plugin-livechat/images/"
+"avatar_cat.png?classes=shadow,border&height=40px „Kočky”)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_bird %}}: "
+"[Generátor ptačích avatarů Davida Revoye](https://www.peppercarrot.com/"
+"extras/html/2019_bird-generator/), licence [CC-By](https://"
+"creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Birds avatar example](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
 msgstr ""
+"![Příklad avatara ptáků](/peertube-plugin-livechat/images/"
+"avatar_bird.png?classes=shadow,border&height=40px „Ptáci”)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_fenec %}}: "
+"[Generátor avatarů fenec/mobilizon od Davida Revoye](https://"
+"www.peppercarrot.com/extras/html/2020_mobilizon-generator/), licence [CC-By]"
+"(https://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Fenecs avatar example](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
 msgstr ""
+"![Příklad avatara Fenecs](/peertube-plugin-livechat/images/"
+"avatar_fenec.png?classes=shadow,border&height=40px „Fenecs”)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_abstract %}}: [David Revoy's Abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_abstract %}}: "
+"[Generátor abstraktních avatarů Davida Revoye](https://www.peppercarrot.com/"
+"extras/html/2017_abstract-generator/index.php), licence [CC-By](https://"
+"creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Abstracts avatar example](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
 msgstr ""
+"![Příklad abstraktního avatara](/peertube-plugin-livechat/images/"
+"avatar_abstract.png?classes=shadow,border&height=40px „Abtracts”)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_legacy %}}: Based on [David Revoy' work](https://www.davidrevoy.com), [AGPL-v3](https://www.gnu.org/licenses/agpl-3.0.en.html) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_legacy %}}: Na základě práce Davida "
+"Revoye (https://www.davidrevoy.com), licence AGPL-v3 (https://www.gnu.org/"
+"licenses/agpl-3.0.en.html)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Legacy avatar example](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
 msgstr ""
+"![Příklad starého avatara](/peertube-plugin-livechat/images/"
+"avatar_legacy.jpg?classes=shadow,border&height=40px „Legacy”)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "If you can't see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it."
 msgstr ""
+"Pokud změnu nevidíte okamžitě, může to být způsobeno mezipamětí vašeho "
+"prohlížeče. Stačí vymazat mezipaměť prohlížeče nebo jej restartovat."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose which theme to use for ConverseJS:"
-msgstr ""
+msgstr "Můžete si vybrat, který motiv chcete pro ConverseJS použít:"
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Peertube theme: this is a special theme, made especially for peertube's integration."
 msgstr ""
+"Téma Peertube: jedná se o speciální téma, vytvořené speciálně pro integraci "
+"Peertube."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Default ConverseJS theme: this is the default ConverseJS theme."
-msgstr ""
+msgstr "Výchozí téma ConverseJS: toto je výchozí téma ConverseJS."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "ConverseJS cyberpunk theme: this is a theme provided by ConverseJS."
 msgstr ""
+"Cyberpunkové téma ConverseJS: toto je téma poskytované společností "
+"ConverseJS."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat server advanced settings"
-msgstr ""
+msgstr "Pokročilá nastavení chatového serveru"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "The plugin comes with an AppImage that is used to run the [Prosody XMPP server](https://prosody.im).  If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the `prosody` package."
 msgstr ""
+"Plugin obsahuje AppImage, který se používá ke spuštění [Prosody XMPP serveru]"
+"(https://prosody.im).  Pokud tento AppImage nefunguje, můžete se vrátit k "
+"Prosody, která je zabalena pro váš server. Stačí nainstalovat balíček "
+"`prosody`."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting should only be used if the plugin is broken, and waiting for a patch."
 msgstr ""
+"Toto nastavení by mělo být použito pouze v případě, že je plugin nefunkční a "
+"čeká se na opravu."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.\n"
 msgstr ""
+"Pokud toto nastavení ponecháte prázdné a používáte Peertube >= 5.1 nebo "
+"novější, plugin použije hodnoty z vašeho konfiguračního souboru Peertube k "
+"odhadnutí, na kterém rozhraní a portu má být požadavek proveden.\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "In last resort, it will use your Peertube public URI.  So, any API Call will go throught your Nginx server.  This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP.  In such case, try changing the \"{{% livechat_label prosody_peertube_uri_label %}}\" settings, by setting `http://127.0.0.1:9000` (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don't know)."
 msgstr ""
+"V krajním případě použije vaši veřejnou URI Peertube.  Takže jakékoli volání "
+"API projde vaším serverem Nginx.  V některých případech to může selhat: "
+"například pokud jste v kontejneru Docker, kde se veřejné jméno hostitele "
+"nepřekládá na správnou IP adresu.  V takovém případě zkuste změnit nastavení "
+"„{{% livechat_label prosody_peertube_uri_label %}}“ nastavením "
+"„http://127.0.0.1:9000“ (za předpokladu, že 9000 je port, na kterém Peertube "
+"naslouchá; pokud to nevíte, zeptejte se správců vaší instance)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting enable XMPP clients to connect to the built-in Prosody server.  For now, this option **only allows connections from localhost clients**."
 msgstr ""
+"Toto nastavení umožňuje klientům XMPP připojit se k vestavěnému serveru "
+"Prosody.  Prozatím tato možnost **umožňuje pouze připojení od klientů "
+"localhost**."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "As example, this option can allow an instance of Matterbridge (once it could use anonymous login) *on the same machine* to bridge your chat with another services like a Matrix room."
 msgstr ""
+"Například tato možnost může umožnit instanci Matterbridge (jakmile bude moci "
+"používat anonymní přihlášení) *na stejném počítači* propojit váš chat s "
+"jinými službami, jako je například Matrix room."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This setting enable XMPP external components to connect to the server.  By default, this option **only allows connections from localhost components**.  You have to change the \"{{% livechat_label prosody_components_interfaces_label %}}\" value to listen on other network interfaces."
 msgstr ""
+"Toto nastavení umožňuje externím komponentám XMPP připojit se k serveru.  Ve "
+"výchozím nastavení tato možnost **povoluje pouze připojení z komponent "
+"localhost**.  Chcete-li naslouchat na jiných síťových rozhraních, musíte "
+"změnit hodnotu „{{% livechat_label prosody_components_interfaces_label %}}“."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "This feature could be used to connect bridges or bots."
-msgstr ""
+msgstr "Tuto funkci lze použít k propojení přemostění nebo botů."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "More informations on Prosody external components [here](https://prosody.im/doc/components)."
 msgstr ""
+"Více informací o externích komponentách Prosody [zde](https://prosody.im/doc/"
+"components)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "For more information, please check [the documentation](/peertube-plugin-livechat/documentation/admin/mod_firewall/)."
 msgstr ""
+"Další informace naleznete v [dokumentaci](/peertube-plugin-livechat/"
+"documentation/admin/mod_firewall/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
 #, no-wrap
 msgid "Plugin documentation"
-msgstr ""
+msgstr "Dokumentace k pluginu"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures."
 msgstr ""
+"Prozatím plugin funguje pouze pro architektury procesorů x86_64 a arm64. Zde "
+"je několik pokynů pro jiné architektury procesorů."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Known issues: CPU Compatibility"
-msgstr ""
+msgstr "Známé problémy: Kompatibilita procesoru"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2327,27 +2395,34 @@ msgid ""
 "Note: the plugin requires Prosody >= 0.12.0.\n"
 "If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.\n"
 msgstr ""
+"Poznámka: plugin vyžaduje Prosody >= 0.12.0.\n"
+"Pokud používáte starší verzi, Chat Federation může být nefunkční a může "
+"docházet k neočekávanému chování.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "Once it is done, you have to check `Use system Prosody` in the plugin settings."
 msgstr ""
+"Jakmile je to hotovo, musíte v nastavení pluginu zaškrtnout políčko „Použít "
+"systém Prosody“."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "On non-docker Peertube installation"
-msgstr ""
+msgstr "Instalace Peertube bez Dockeru"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "For standard installation, you just have to install the official `prosody` package for your linux distribution."
 msgstr ""
+"Pro standardní instalaci stačí nainstalovat oficiální balíček `prosody` pro "
+"vaši distribuci Linuxu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "For example, on Debian/Ubuntu:"
-msgstr ""
+msgstr "Například v Debianu/Ubuntu:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2359,6 +2434,10 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "You can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run).  For example, on Debian/Ubuntu (and other Systemd based linux distributions):"
 msgstr ""
+"Poté můžete deaktivovat službu, která se spouští automaticky při instalaci "
+"Prosody (plugin spustí proces Prosody, není tedy nutné, aby služba běžela).  "
+"Například v Debian/Ubuntu (a dalších linuxových distribucích založených na "
+"Systemd):"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2370,22 +2449,29 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "Warning: do not disable Prosody if it is used for another service on your server, like for example Jitsi."
 msgstr ""
+"Upozornění: nevypínejte Prosody, pokud je používána pro jinou službu na "
+"vašem serveru, jako například Jitsi."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Docker"
-msgstr ""
+msgstr "Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "You will have to generate a Peertube image that includes Prosody in the same container that Peertube.  I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround."
 msgstr ""
+"Budete muset vygenerovat obraz Peertube, který obsahuje Prosody ve stejném "
+"kontejneru jako Peertube.  Vím, že to není standardní způsob, jak to udělat "
+"s Dockerem, ale mějte na paměti, že se jedná o dočasné řešení."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "To generate and use such an image, please refer to the Docker documentation.  The Docker file to generate the image should be:"
 msgstr ""
+"Informace o vytvoření a použití takového obrazu naleznete v dokumentaci "
+"Dockeru.  Soubor Docker pro vytvoření obrazu by měl být:"
 
 #. type: Fenced code block (Docker)
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2406,44 +2492,56 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "You have to disable `metronome` (the XMPP server provided by Yunohost), and install `prosody`."
 msgstr ""
+"Musíte deaktivovat `metronome` (XMPP server poskytovaný Yunohost) a "
+"nainstalovat `prosody`."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0."
 msgstr ""
+"To již zajišťuje aplikace Yunohost Peertube, protože to bylo vyžadováno pro "
+"plugin před verzí v6.0.0."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 msgid "But it may be removed in a near feature (to avoid drawbacks of this method).  I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility."
 msgstr ""
+"Ale může být odstraněna v blízké funkci (aby se předešlo nevýhodám této "
+"metody). Musím to prodiskutovat s týmem Yunohost, abychom se rozhodli, jak "
+"můžeme minimalizovat nevýhody a maximalizovat kompatibilitu."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat installation guide"
-msgstr ""
+msgstr "Průvodce instalací pluginu peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Installation guide"
-msgstr ""
+msgstr "Instalační příručka"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 #: support/documentation/content/en/_index.md
 msgid "Before updating to a major release, please read the release notes and breaking changes list : [CHANGELOG](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/CHANGELOG.md)."
 msgstr ""
+"Před aktualizací na hlavní verzi si přečtěte poznámky k verzi a seznam "
+"zásadních změn: [CHANGELOG](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/CHANGELOG.md)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 msgid "To install or update the plugin, **just use the Peertube web admin interface**."
 msgstr ""
+"Chcete-li plugin nainstalovat nebo aktualizovat, **stačí použít webové "
+"rozhraní Peertube**."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
 msgid "Here are some other more specific instructions:"
-msgstr ""
+msgstr "Zde je několik dalších konkrétnějších pokynů:"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2666,11 +2764,18 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values."
 msgstr ""
+"V předchozím úryvku CSS můžete samozřejmě změnit barvu nebo průhlednost "
+"úpravou hodnot barev."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL.  You must use valid CSS color values, and they must be properly URL encoded."
 msgstr ""
+"Poznámka: barvy chatu lze zcela přizpůsobit. Tato funkce zatím není "
+"zdokumentována, ale můžete zkusit následující postup: v modálním okně "
+"zaškrtněte políčko „použít aktuální barvy motivu“ a poté zkuste ručně změnit "
+"hodnoty barev v adrese URL.  Musíte použít platné hodnoty barev CSS, které "
+"musí být správně zakódovány v adrese URL."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2725,105 +2830,140 @@ msgstr "Jakmile to uděláte, budete mít nové dokovací okno připojené k cha
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![Screenshot of OBS with a new dock including the chat. The user is logged in with their Peertube account, and can chat directly from OBS.](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px \"OBS - Dock\")"
 msgstr ""
+"![Screenshot OBS s novým dokem včetně chatu. Uživatel je přihlášený ke svému "
+"účtu Peertube a může chatovat přímo z OBS.](/peertube-plugin-livechat/images/"
+"obs_dock.png?classes=shadow,border&height=200px „OBS – Dock”)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Tokens are valid to join any chat room. You don't have to generate separate tokens for each of your rooms.  You can also customize the nickame that will be used by changing the `n` parameter in the url."
 msgstr ""
+"Tokeny jsou platné pro vstup do jakékoli chatovací místnosti. Nemusíte "
+"generovat samostatné tokeny pro každou z vašich místností.  Můžete také "
+"přizpůsobit přezdívku, která bude použita, změnou parametru `n` v adrese URL."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "Don't share these links to anyone, as it would allow them to connect as yourself."
 msgstr ""
+"Tyto odkazy nikomu nesdílejte, protože by se tak mohli připojit jako vy."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "If a token is compromised, or no more needed, you can revoke them."
-msgstr ""
+msgstr "Pokud je token ohrožen nebo již není potřebný, můžete jej zrušit."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "These tokens can be used for other purposes, as connecting to your account with XMPP bots or clients.  This feature is not documented yet, and not officially supported. So use with care."
 msgstr ""
+"Tyto tokeny lze použít i k jiným účelům, například k připojení k vašemu účtu "
+"pomocí botů nebo klientů XMPP.  Tato funkce zatím není zdokumentována a není "
+"oficiálně podporována. Používejte ji proto s opatrností."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/obs.md
 #, no-wrap
 msgid "Mixing multiple chats in your live stream"
-msgstr ""
+msgstr "Míchání více chatů ve vašem živém vysílání"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "You can use the [social_stream browser extension](https://github.com/steveseguin/social_stream#readme) to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, ...) and include their contents in your live stream.  The compatibility with this plugin was added in recent versions."
 msgstr ""
+"Můžete použít [rozšíření prohlížeče social_stream](https://github.com/"
+"steveseguin/social_stream#readme) k mixování více zdrojů chatu (z Peertube, "
+"Twitch, Youtube, Facebook, ...) a zahrnout jejich obsah do svého živého "
+"vysílání.  Kompatibilita s tímto pluginem byla přidána v nedávných verzích."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 #, no-wrap
 msgid "Room owners and administrators can send special announcements in the chat."
-msgstr ""
+msgstr "Majitelé a správci místností mohou v chatu zasílat speciální oznámení."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 #, no-wrap
 msgid "Announcements"
-msgstr ""
+msgstr "Oznámení"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "These messages will be more visible than standard messages."
-msgstr ""
+msgstr "Tyto zprávy budou viditelnější než standardní zprávy."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "To send announcements, owners and administrators will have a \"{{% livechat_label announcements_message_type %}}\" selector on the top of the message field:"
 msgstr ""
+"Pro odesílání oznámení budou mít majitelé a správci v horní části pole pro "
+"zprávy k dispozici volič „{{% livechat_label announcements_message_type %}}“:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "![Screenshot of a chat session. On top of the message field, there is a \"{{% livechat_label announcements_message_type %}}\" selector. In the chat, we can see three types of announcements: a highlighted message, an announcement, and a warning. Each of these announcements have a special color to distinguish them. The announcement and the warning have also bold titles.](/peertube-plugin-livechat/images/announcements.png?classes=shadow,border&height=400px \"Announcements\")"
 msgstr ""
+"![Screenshot chatové relace. Nad polem pro zprávy se nachází selektor „{{% "
+"livechat_label announcements_message_type %}}“. V chatu můžeme vidět tři "
+"typy oznámení: zvýrazněnou zprávu, oznámení a varování. Každé z těchto "
+"oznámení má speciální barvu, aby se dalo snadno rozlišit. Oznámení a "
+"varování mají také tučně zvýrazněné nadpisy.](/peertube-plugin-livechat/"
+"images/announcements.png?classes=shadow,border&height=400px „Oznámení”)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "There are several message types:"
-msgstr ""
+msgstr "Existuje několik typů zpráv:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "**{{% livechat_label announcements_message_type_standard %}}**: to send a standard message."
 msgstr ""
+"**{{% livechat_label announcements_message_type_standard %}}**: pro odeslání "
+"standardní zprávy."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "**{{% livechat_label announcements_message_type_highlight %}}**: these messages will simply be highlighted in a blue box."
 msgstr ""
+"**{{% livechat_label announcements_message_type_highlight %}}**: tyto zprávy "
+"budou jednoduše zvýrazněny v modrém rámečku."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "**{{% livechat_label announcements_message_type_announcement %}}**: these messages will be in a green box, and a bold \"{{% livechat_label announcements_message_type_announcement %}}\" title will be added."
 msgstr ""
+"**{{% livechat_label announcements_message_type_announcement %}}**: tyto "
+"zprávy budou zobrazeny v zeleném rámečku a bude k nim přidán tučný nadpis „{{"
+"% livechat_label announcements_message_type_announcement %}}“."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "**{{% livechat_label announcements_message_type_warning %}}**: these messages will be in a rend box, and a bold \"{{% livechat_label announcements_message_type_announcement %}}\" title will be added."
 msgstr ""
+"**{{% livechat_label announcements_message_type_warning %}}**: tyto zprávy "
+"budou v rámečku a bude k nim přidán tučný nadpis „{{% livechat_label "
+"announcements_message_type_announcement %}}“."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "User that are not owner or administrator of the chatroom can't send such messages."
 msgstr ""
+"Uživatelé, kteří nejsou vlastníky nebo správci chatovací místnosti, nemohou "
+"takové zprávy odesílat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "Note: Standards XMPP clients will display announcements as standard messages."
 msgstr ""
+"Poznámka: Standardní klienti XMPP zobrazují oznámení jako standardní zprávy."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Some basics about how to setup and use the chat for your live stream"
-msgstr ""
+msgstr "Základní informace o nastavení a používání chatu pro živé vysílání"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2835,115 +2975,170 @@ msgstr "Některé základní informace"
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Enabling the chat for you live streams"
-msgstr ""
+msgstr "Povolení chatu pro vaše živé přenosy"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "Instance administrators can choose to disable or enable chat in specific cases.  Information in this section are only true in the default case."
 msgstr ""
+"Správci instancí mohou v konkrétních případech chat zakázat nebo povolit.  "
+"Informace v této části platí pouze pro výchozí případ."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "When you create or modify a Peertube live, there is a \"plugin settings\" tab:"
 msgstr ""
+"Při vytváření nebo úpravách živého vysílání Peertube se zobrazí záložka „"
+"Nastavení pluginu“:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the Peertube new live form.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"New live\")"
 msgstr ""
+"![Screenshot nového živého formuláře Peertube.](/peertube-plugin-livechat/"
+"images/new_live.png?classes=shadow,border&height=200px „Nové živé vysílání“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "In the \"plugin settings\" tab, there is a \"{{% livechat_label use_chat %}}\" checkbox.  Just check or uncheck it to enable or disable the chat associated to your video."
 msgstr ""
+"Na kartě „Nastavení pluginu“ se nachází zaškrtávací políčko „{{% "
+"livechat_label use_chat %}}“.  Stačí jej zaškrtnout nebo odškrtnout, abyste "
+"povolili nebo zakázali chat spojený s vaším videem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the form, with a \"{{% livechat_label use_chat %}}\" checkbox.](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px \"Activate the chat\")"
 msgstr ""
+"![Screenshot formuláře s zaškrtávacím políčkem „{{% livechat_label use_chat "
+"%}}“.](/peertube-plugin-livechat/images/"
+"new_live_activate_chat.png?classes=shadow,border&height=200px „Aktivovat "
+"chat“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "There can be other settings in this tab, depending on plugins installed on your Peertube instance."
 msgstr ""
+"V této záložce mohou být další nastavení, v závislosti na pluginech "
+"nainstalovaných ve vaší instanci Peertube."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Per channel chat"
-msgstr ""
+msgstr "Chat podle kanálu"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "On the instance level, Peertube's administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel.  Please contact your instance's administrators for more information on how they configure the livechat plugin."
 msgstr ""
+"Na úrovni instance mohou administrátoři Peertube zvolit, zda budou chatovací "
+"místnosti jedinečné pro každé video, nebo zda bude existovat jedna jedinečná "
+"chatovací místnost pro každý kanál.  Pro více informací o konfiguraci "
+"pluginu livechat kontaktujte administrátory vaší instance."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Share the chat"
-msgstr ""
+msgstr "Sdílet chat"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "On top of the chat, there is a \"{{% livechat_label share_chat_link %}}\" button."
 msgstr ""
+"V horní části chatu se nachází tlačítko „{{% livechat_label share_chat_link "
+"%}}“."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "This button opens a popup, where you can obtain an url to join the chat.  This url can be shared."
 msgstr ""
+"Toto tlačítko otevře vyskakovací okno, kde získáte adresu URL pro připojení "
+"k chatu.  Tuto adresu URL lze sdílet."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "The \"{{% livechat_label share_chat_embed %}}\" tab provide some links to embed the chat in websites, or in your live stream."
 msgstr ""
+"Záložka „{{% livechat_label share_chat_embed %}}“ obsahuje odkazy pro "
+"vložení chatu na webové stránky nebo do živého přenosu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can customize some options:"
-msgstr ""
+msgstr "Můžete přizpůsobit některé možnosti:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "{{% livechat_label read_only %}}: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs))."
 msgstr ""
+"{{% livechat_label read_only %}}: budete moci chat pouze číst, nikoli psát. "
+"To je užitečné pro zahrnutí obsahu chatu do vašeho živého přenosu (viz "
+"[dokumentace OBS](/peertube-plugin-livechat/documentation/user/obs))."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "{{% livechat_label use_current_theme_color %}}: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set."
 msgstr ""
+"{{% livechat_label use_current_theme_color %}}: pokud je zaškrtnuto, budou "
+"barvy vašeho aktuálního motivu přidány do adresy URL, takže každý uživatel, "
+"který otevře odkaz, bude mít nastaveny stejné barvy."
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "{{% livechat_label generate_iframe %}}: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat."
 msgstr ""
+"{{% livechat_label generate_iframe %}}: namísto URL adresy získáte HTML kód, "
+"který můžete přidat na svůj web a vložit tak chat."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "For more information on the \"{{% livechat_label share_chat_dock %}}\" tab, check the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
 msgstr ""
+"Další informace o záložce „{{% livechat_label share_chat_dock %}}“ najdete v "
+"[dokumentaci OBS](/peertube-plugin-livechat/documentation/user/obs)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "In the \"{{% livechat_label web %}}\" tab, the provided url opens the chat in the Peertube interface.  You can share this link to other users to invite them to join the chat."
 msgstr ""
+"Na záložce „{{% livechat_label web %}}“ se pomocí zadané adresy URL otevře "
+"chat v rozhraní Peertube.  Tento odkaz můžete sdílet s ostatními uživateli a "
+"pozvat je tak k účasti na chatu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label web %}} tab. There is a url you can copy.](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px \"Share link popup - web tab\")"
 msgstr ""
+"![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na "
+"kartě „{{% livechat_label web %}}“. Zde je URL adresa, kterou můžete "
+"zkopírovat.](/peertube-plugin-livechat/images/"
+"share_web.png?classes=shadow,border&height=200px „Vyskakovací okno pro "
+"sdílení odkazu – karta web”)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "The \"{{% livechat_label share_chat_link %}}\" popup can also contain a \"{{% livechat_label connect_using_xmpp %}}\" tab.  This will only be available if your instance's administators have enabled an correctly configured this option.  Using this option, you can provide a link to join the chat using any [XMPP client software](https://en.wikipedia.org/wiki/XMPP#Clients).  Using such softwares can for example facilitate moderation actions."
 msgstr ""
+"Vyskakovací okno „{{% livechat_label share_chat_link %}}“ může také "
+"obsahovat kartu „{{% livechat_label connect_using_xmpp %}}“.  Ta bude k "
+"dispozici pouze v případě, že správci vaší instance tuto možnost povolili a "
+"správně nakonfigurovali.  Pomocí této možnosti můžete poskytnout odkaz pro "
+"připojení k chatu pomocí libovolného [XMPP klientského softwaru](https://"
+"en.wikipedia.org/wiki/XMPP#Clients).  Použití takového softwaru může "
+"například usnadnit moderování."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label connect_using_xmpp %}}\" tab.](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px \"{{% livechat_label connect_using_xmpp %}}\")"
 msgstr ""
+"![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na "
+"záložce „{{% livechat_label connect_using_xmpp %}}“.] (/peertube-"
+"plugin-livechat/images/"
+"share_xmpp_dialog.png?classes=shadow,border&height=200px „{{% livechat_label "
+"connect_using_xmpp %}}“)"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2951,40 +3146,49 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Moderation"
-msgstr ""
+msgstr "Moderování"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "Please refer to the [moderation documentation](/peertube-plugin-livechat/documentation/user/streamers/moderation)."
 msgstr ""
+"Viz [dokumentace k moderování](/peertube-plugin-livechat/documentation/user/"
+"streamers/moderation)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Include the chat in your video stream"
-msgstr ""
+msgstr "Zahrňte chat do svého videostreamu"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "Please refer to the [OBS documentation](/peertube-plugin-livechat/documentation/user/obs)."
 msgstr ""
+"Viz [dokumentace OBS](/peertube-plugin-livechat/documentation/user/obs)."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Chat persistence"
-msgstr ""
+msgstr "Trvalost chatu"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "By default, the chat is persistent.  This means that the room content will be kept for a while.  User joining will see messages posted before their arrival."
 msgstr ""
+"Ve výchozím nastavení je chat trvalý.  To znamená, že obsah místnosti bude "
+"po určitou dobu uchován.  Uživatelé, kteří se připojí, uvidí zprávy "
+"zveřejněné před jejich příchodem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can change the persistence behaviour.  [Open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), and click on \"Configure\"."
 msgstr ""
+"Chování trvalosti můžete změnit.  [Otevřete rozbalovací nabídku chatu]"
+"(/peertube-plugin-livechat/documentation/user/viewers) a klikněte na "
+"„Konfigurovat“."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2992,53 +3196,71 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of the dropdown menu at the top of the chat. Several entries are available.](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px \"Chat menu\")"
 msgstr ""
+"![Screenshot rozbalovacího menu v horní části chatu. K dispozici je několik "
+"položek.](/peertube-plugin-livechat/images/"
+"top_menu.png?classes=shadow,border&height=200px „Menu chatu”)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "There are several options that can be changed."
-msgstr ""
+msgstr "Existuje několik možností, které lze změnit."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the chat configuration form.](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px \"Configure chat room\")"
 msgstr ""
+"![Screenshot formuláře pro konfiguraci chatu.](/peertube-plugin-livechat/"
+"images/configure.png?classes=shadow,border&height=200px „Konfigurace "
+"chatovací místnosti“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can for example set the default and maximum number of messages to return to 0, so that new incomers won't see any previously sent message."
 msgstr ""
+"Můžete například nastavit výchozí a maximální počet zpráv, které se mají "
+"vrátit, na 0, aby noví příchozí neviděli žádné dříve odeslané zprávy."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "You can also uncheck \"enable archiving\": if unchecked, messages will be pruned if the server restarts."
 msgstr ""
+"Můžete také zrušit zaškrtnutí políčka „povolit archivaci“: pokud není "
+"zaškrtnuto, zprávy budou po restartu serveru odstraněny."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "By unchecking \"Persistent\", the room will be cleared if there is no more participant."
 msgstr ""
+"Odškrtnutím políčka „Trvalé“ bude místnost vymazána, pokud v ní již nebudou "
+"žádní účastníci."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #, no-wrap
 msgid "Delete the chat content"
-msgstr ""
+msgstr "Smazat obsah chatu"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "If you want to delete the chat content, [open the chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), then click on \"Destroy\".  A popup will open, asking a confirmation."
 msgstr ""
+"Pokud chcete smazat obsah chatu, [otevřete rozbalovací nabídku chatu]"
+"(/peertube-plugin-livechat/documentation/user/viewers) a klikněte na "
+"„Destroy“ (Zničit).  Otevře se vyskakovací okno s žádostí o potvrzení."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the \"{{% livechat_label use_chat %}}\" feature activated."
 msgstr ""
+"Chat se bude automaticky obnovovat pokaždé, když se někdo pokusí připojit, "
+"pokud video existuje a je aktivována funkce "
+"\"{{% livechat_label use_chat %}}\"."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 #, no-wrap
 msgid "The bot can respond to several commands."
-msgstr ""
+msgstr "Bot může reagovat na několik příkazů."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
