@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2025-10-19 11:45+0000\n"
+"PO-Revision-Date: 2025-10-20 12:45+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -3266,147 +3266,193 @@ msgstr "Bot může reagovat na několik příkazů."
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 #, no-wrap
 msgid "Commands"
-msgstr ""
+msgstr "Příkazy"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 msgid "![Screenshot of the channel options page, with some fields to configure the bot commands.](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px \"Commands configuration\")"
 msgstr ""
+"![Screenshot stránky s možnostmi kanálu, s některými poli pro konfiguraci "
+"příkazů bota.](/peertube-plugin-livechat/images/"
+"bot_commands.png?classes=shadow,border&height=400px „Konfigurace příkazů”)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 msgid "You can setup several commands."
-msgstr ""
+msgstr "Můžete nastavit několik příkazů."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #, no-wrap
 msgid "The bot can automatically moderate messages containing forbidden words."
-msgstr ""
+msgstr "Bot může automaticky moderovat zprávy obsahující zakázaná slova."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #, no-wrap
 msgid "Forbidden words"
-msgstr ""
+msgstr "Zakázaná slova"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Screenshot of the channel options page, with several fields to configure the forbidden words.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Forbidden words configuration\")"
 msgstr ""
+"![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci "
+"zakázaných slov.](/peertube-plugin-livechat/images/"
+"bot_forbidden_words.png?classes=shadow,border&height=400px „Konfigurace "
+"zakázaných slov”)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Screenshot of a chat message that was deleted, with the following reason: \"No url allowed\".](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px \"Deleted message\")"
 msgstr ""
+"![Screenshot smazané chatové zprávy s následujícím důvodem: „URL adresy "
+"nejsou povoleny“.](/peertube-plugin-livechat/images/"
+"bot_deleted_message.png?classes=shadow,border&height=100px „Smazaná zpráva“)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" lines.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
 msgstr ""
+"Můžete vyplnit několik řádků „{{% livechat_label "
+"livechat_configuration_channel_forbidden_words_label %}}“.  Když uživatel "
+"odešle zprávu, která odpovídá nastaveným kritériím, bude tato zpráva "
+"automaticky smazána."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "Here you can configure several words, group of words, or \"regular expressions\"."
 msgstr ""
+"Zde můžete nakonfigurovat několik slov, skupinu slov nebo „regulární výrazy“."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "Each time a user sends a message, these words will be tested.  If the message contains one of them, the message will be deleted."
 msgstr ""
+"Pokaždé, když uživatel odešle zprávu, budou tato slova zkontrolována.  Pokud "
+"zpráva obsahuje některé z nich, bude smazána."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "You can for example fill this field with a swear words list."
-msgstr ""
+msgstr "Toto pole můžete například vyplnit seznamem sprostých slov."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "To get some examples, please check these [forbidden words suggestions](https://framagit.org/Livingston/peertube-plugin-livechat/-/tree/main/support/forbidden_words)."
 msgstr ""
+"Několik příkladů najdete v těchto [návrzích zakázaných slov](https://"
+"framagit.org/Livingston/peertube-plugin-livechat/-/tree/main/support/"
+"forbidden_words)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "If you have some usefull words lists, you are welcome to contribute to this suggestion page.  There are in the `support/forbidden_words` folder of the livechat source code.  See the [contribution guide](/peertube-plugin-livechat/contributing/) for more information."
 msgstr ""
+"Pokud máte nějaké užitečné seznamy slov, můžete je přidat na tuto stránku s "
+"návrhy.  Najdete je ve složce `support/forbidden_words` zdrojového kódu "
+"livechatu.  Více informací najdete v [průvodci pro přispěvatele](/peertube-"
+"plugin-livechat/contributing/)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "These words are case insensitive."
-msgstr ""
+msgstr "U těchto slov se nerozlišují velká a malá písmena."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "You can combine a short [moderation delay](/peertube-plugin-livechat/documentation/user/streamers/moderation_delay) (1 second for example) with the [moderation bot](/peertube-plugin-livechat/documentation/user/streamers/bot) to delete messages containing swear words before any non-moderator user will see them."
 msgstr ""
+"Můžete kombinovat krátké [zpoždění moderování](/peertube-plugin-livechat/"
+"documentation/user/streamers/moderation_delay) (například 1 sekundu) s "
+"[moderátorským botem](/peertube-plugin-livechat/documentation/user/streamers/"
+"bot), aby byly zprávy obsahující vulgární výrazy smazány dříve, než je uvidí "
+"uživatelé, kteří nejsou moderátory."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "This features is still experimental.  There might be some issues with non-latin alphabets.  You can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to report your problems."
 msgstr ""
+"Tato funkce je stále ve fázi testování.  Mohou se vyskytnout problémy s "
+"nelatinskými abecedami.  Problémy můžete nahlásit [zde](https://github.com/"
+"JohnXLivingston/peertube-plugin-livechat/issues)."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "By checking this option, each line of the \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" field will be considered as a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)."
 msgstr ""
+"Zaškrtnutím této možnosti bude každý řádek pole „{{% livechat_label "
+"livechat_configuration_channel_forbidden_words_label %}}“ považován za "
+"[regulární výraz](https://en.wikipedia.org/wiki/Regular_expression)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #, no-wrap
 msgid "Chat bot setup"
-msgstr ""
+msgstr "Nastavení chatovacího robota"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Chat bot"
-msgstr ""
+msgstr "Chat bot"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance's admins."
 msgstr ""
+"Tato funkce je součástí pluginu livechat verze 8.0.0 a může být deaktivována "
+"správci vaší instance."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "You can enable a chat bot on your chatrooms.  The bot configuration is made channel per channel, and will apply to all related videos' chatrooms."
 msgstr ""
+"V chatovacích místnostech můžete aktivovat chatovacího robota.  Konfigurace "
+"robota se provádí pro každý kanál zvlášť a bude platit pro všechny chatovací "
+"místnosti souvisejících videí."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "![Screenshot of the channel options. There is a form with multiple fields.](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px \"Channel configuration\")"
 msgstr ""
+"![Screenshot možností kanálu. Je zde formulář s několika poli.](/peertube-"
+"plugin-livechat/images/"
+"channel_configuration.png?classes=shadow,border&height=400px „Konfigurace "
+"kanálu”)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "To access this page, check the [channel configuration documentation](/peertube-plugin-livechat/documentation/user/streamers/channel)."
 msgstr ""
+"Pro přístup na tuto stránku zkontrolujte [dokumentaci ke konfiguraci kanálu]"
+"(/peertube-plugin-livechat/documentation/user/streamers/channel)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "Once there, you can enable the bot, and setup several options:"
-msgstr ""
+msgstr "Jakmile tam budete, můžete bota aktivovat a nastavit několik možností:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 msgid "The bot will reload instantly when you save the page."
-msgstr ""
+msgstr "Bot se okamžitě znovu načte, jakmile stránku uložíte."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
 #, no-wrap
 msgid "The bot can automatically moderate duplicate messages."
-msgstr ""
+msgstr "Bot může automaticky moderovat duplicitní zprávy."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
 #, no-wrap
 msgid "No duplicate message"
-msgstr ""
+msgstr "Žádné duplicitní zprávy"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
@@ -3414,167 +3460,218 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 #, no-wrap
 msgid "Configuration"
-msgstr ""
+msgstr "Konfigurace"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
 msgid "![Screenshot of the channel options page, with several fields to configure the \"No duplicate message\" option.](/peertube-plugin-livechat/images/bot_no_duplicate.png?classes=shadow,border&height=400px \"No duplicate message configuration\")"
 msgstr ""
+"![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci "
+"možnosti „Žádné duplicitní zprávy“.](/peertube-plugin-livechat/images/"
+"bot_no_duplicate.png?classes=shadow,border&height=400px „Konfigurace "
+"možnosti Žádné duplicitní zprávy“)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
 msgid "The bot can send periodically some messages."
-msgstr ""
+msgstr "Bot může pravidelně odesílat některé zprávy."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
 msgid "Timers"
-msgstr ""
+msgstr "Časovače"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "If there is no user in the chatroom, the bot won't send any message."
 msgstr ""
+"Pokud v chatovací místnosti není žádný uživatel, bot neodešle žádnou zprávu."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "![Screenshot of the channel options page, with some fields to configure a new timer.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px \"Timers configuration\")"
 msgstr ""
+"![Screenshot stránky s možnostmi kanálu, s některými poli pro konfiguraci "
+"nového časovače.](/peertube-plugin-livechat/images/"
+"bot_quotes.png?classes=shadow,border&height=200px „Konfigurace časovačů”)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #, no-wrap
 msgid "The bot can automatically moderate messages containing too many special characters."
 msgstr ""
+"Bot může automaticky moderovat zprávy obsahující příliš mnoho speciálních "
+"znaků."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #, no-wrap
 msgid "Special characters"
-msgstr ""
+msgstr "Speciální znaky"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 msgid "![Screenshot of the channel options page, with several fields to configure the \"Forbid special characters\" option.](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
 msgstr ""
+"![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci "
+"možnosti „Zakázat speciální znaky“.](/peertube-plugin-livechat/images/"
+"forbid_special_chars_configuration.png?classes=shadow,border&height=400px „"
+"Konfigurace zakázání speciálních znaků“)"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 #, no-wrap
 msgid "Peertube channel chatrooms configuration"
-msgstr ""
+msgstr "Konfigurace chatovacích místností kanálu Peertube"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 #, no-wrap
 msgid "Channel configuration"
-msgstr ""
+msgstr "Konfigurace kanálu"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "In the Peertube left menu, there is a \"{{% livechat_label menu_configuration_label %}}\" entry:"
 msgstr ""
+"V levém menu Peertube je položka „{{% livechat_label "
+"menu_configuration_label %}}“:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "![Screenshot of the chatrooms configuration page. The page list the user's channels.](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px \"Chatrooms menu\")"
 msgstr ""
+"![Screenshot stránky s nastavením chatovacích místností. Stránka obsahuje "
+"seznam kanálů uživatele.](/peertube-plugin-livechat/images/"
+"chatrooms_menu.png?classes=shadow,border&height=400px „Nabídka chatovacích "
+"místností”)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "This \"{{% livechat_label menu_configuration_label %}}\" link takes you to a list of your channels.  By clicking on a channel, you will then be able to setup some options for your channels:"
 msgstr ""
+"Tento odkaz „{{% livechat_label menu_configuration_label %}}“ vás přenese na "
+"seznam vašich kanálů.  Kliknutím na kanál budete moci nastavit některé "
+"možnosti pro vaše kanály:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "Here you can configure:"
-msgstr ""
+msgstr "Zde můžete nakonfigurovat:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[{{% livechat_label livechat_configuration_channel_terms_label %}}](/peertube-plugin-livechat/documentation/user/streamers/terms)"
 msgstr ""
+"[{{% livechat_label livechat_configuration_channel_terms_label %}}]"
+"(/peertube-plugin-livechat/documentation/user/streamers/terms)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) default value"
 msgstr ""
+"[{{% livechat_label livechat_configuration_channel_mute_anonymous_label "
+"%}}](/peertube-plugin-livechat/documentation/user/streamers/moderation) "
+"výchozí hodnota"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
 msgstr ""
+"[Pomalý režim](/peertube-plugin-livechat/documentation/user/streamers/"
+"slow_mode)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
 msgstr ""
+"[Chatovací robot](/peertube-plugin-livechat/documentation/user/streamers/bot)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[Custom emojis](/peertube-plugin-livechat/documentation/user/streamers/emojis)"
 msgstr ""
+"[Vlastní emodži](/peertube-plugin-livechat/documentation/user/streamers/"
+"emojis)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "More features to come..."
-msgstr ""
+msgstr "Další funkce budou brzy k dispozici..."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat custom emojis"
-msgstr ""
+msgstr "Plugin peertube-plugin-livechat vlastní emodži"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Custom emojis"
-msgstr ""
+msgstr "Vlastní emodži"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Channel emojis"
-msgstr ""
+msgstr "Emodži kanálu"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "Streamers can add custom emojis to their channels."
-msgstr ""
+msgstr "Streamerové mohou do svých kanálů přidávat vlastní emodži."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
 msgstr ""
+"Na [stránce konfigurace kanálu](/peertube-plugin-livechat/documentation/user/"
+"streamers/channel) otevřete záložku „{{% livechat_label "
+"livechat_configuration_channel_emojis_title %}}“:"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "![Screenshot of the emoji configuration page. There is a form where you can add new emojis.](/peertube-plugin-livechat/images/channel_custom_emojis_configuration.png?classes=shadow,border&height=400px \"Channel configuration / Channel emojis configuration\")"
 msgstr ""
+"![Screenshot stránky s nastavením emodži. Je zde formulář, kde můžete přidat "
+"nové emodži.](/peertube-plugin-livechat/images/"
+"channel_custom_emojis_configuration.png?classes=shadow,border&height=400px „"
+"Nastavení kanálu / Nastavení emodži kanálu“)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "![Screenshot of a chat session, with messages containing custom emojis. The emoji picker is open, and shows custom emojis.](/peertube-plugin-livechat/images/channel_custom_emojis.png?classes=shadow,border&height=400px \"Channel configuration / Channel emojis\")"
 msgstr ""
+"![Screenshot chatové relace se zprávami obsahujícími vlastní emodži. Výběr "
+"emodži je otevřený a zobrazuje vlastní emodži.](/peertube-plugin-livechat/"
+"images/channel_custom_emojis.png?classes=shadow,border&height=400px „"
+"Konfigurace kanálu / Emodži kanálu“)"
 
 #. type: Title ###
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 #, no-wrap
 msgid "Import / Export"
-msgstr ""
+msgstr "Import / Export"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "On the channel configuration page, there are an \"{{% livechat_label action_import %}}\" and an \"{{% livechat_label action_export %}}\" button.  The \"{{% livechat_label action_export %}}\" button generates a file than you can then import on another channel."
 msgstr ""
+"Na stránce konfigurace kanálu se nachází tlačítka „{{% livechat_label "
+"action_import %}}“ a „{{% livechat_label action_export %}}“. Tlačítko „{{% "
+"livechat_label action_export %}}“ vygeneruje soubor, který můžete následně "
+"importovat do jiného kanálu."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "You can also generate a file to import from any other source (for example you can import your Twitch custom emojis).  The file must be a valid JSON file, using the following format:"
 msgstr ""
+"Můžete také vygenerovat soubor pro import z jakéhokoli jiného zdroje ("
+"například můžete importovat své vlastní emodži z Twitche).  Soubor musí být "
+"platný soubor JSON v následujícím formátu:"
 
 #. type: Fenced code block (json)
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3587,72 +3684,94 @@ msgid ""
 "  }\n"
 "]\n"
 msgstr ""
+"[\n"
+"  {\n"
+"    \"sn\": \":short_name:\",\n"
+"    \"url\": \"https://example.com/image.png\"\n"
+"  }\n"
+"]\n"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "The `sn` attribute is the short name code.  The `url` attribute can be any image url than your browser can access, or a [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) representing the file you want to import."
 msgstr ""
+"Atribut `sn` je zkratka názvu.  Atribut `url` může být libovolná adresa URL "
+"obrázku, ke které má váš prohlížeč přístup, nebo [Data URL](https://"
+"developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) "
+"představující soubor, který chcete importovat."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat emojis only mode"
-msgstr ""
+msgstr "Plugin peertube-plugin-livechat režim pouze emodži"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 #, no-wrap
 msgid "Emojis only mode"
-msgstr ""
+msgstr "Režim pouze emodži"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "This mode can be usefull for example:"
-msgstr ""
+msgstr "Tento režim může být užitečný například:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "To avoid spam or offensive message when you are not here to moderate."
 msgstr ""
+"Aby se zabránilo spamu nebo urážlivým zprávám, když nejste přítomni a "
+"nemůžete je moderovat."
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "When there are too many speaking participants, and you can't no more moderate correctly."
 msgstr ""
+"Když je příliš mnoho účastníků, kteří mluví, a vy už nemůžete správně "
+"moderovat."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label emoji_only_mode_title %}}\" checkbox."
 msgstr ""
+"Chcete-li tuto funkci povolit nebo zakázat, použijte "
+"[rozbalovací nabídku chatu](/peertube-plugin-livechat/documentation/user/"
+"viewers) a otevřete nabídku „konfigurovat“.  Ve formuláři najdete "
+"zaškrtávací políčko „{{% livechat_label emoji_only_mode_title %}}“."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
 msgid "If you want to enable it for all your chatrooms at once, open the [channel emojis configuration page](/peertube-plugin-livechat/documentation/user/streamers/emojis/), and use the \"{{% livechat_label emoji_only_enable_all_rooms %}}\" button."
 msgstr ""
+"Pokud chcete tuto funkci povolit pro všechny své chatovací místnosti "
+"najednou, otevřete [stránku konfigurace emodži kanálu](/peertube-"
+"plugin-livechat/documentation/user/streamers/emojis/) a použijte tlačítko „{{"
+"% livechat_label emoji_only_enable_all_rooms %}}“."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
 #, no-wrap
 msgid "How to setup the chat for your live stream"
-msgstr ""
+msgstr "Jak nastavit chat pro živé vysílání"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/_index.md
 #, no-wrap
 msgid "For streamers"
-msgstr ""
+msgstr "Pro streamery"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat moderation delay"
-msgstr ""
+msgstr "Zpoždění moderování pluginu peertube-plugin-livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "Moderation delay"
-msgstr ""
+msgstr "Zpoždění moderování"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3662,12 +3781,14 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Introduction"
-msgstr ""
+msgstr "Úvod"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants."
 msgstr ""
+"Jako streamer můžete zvolit zpoždění zpráv v chatu, aby měli moderátoři čas "
+"smazat zprávy dříve, než je ostatní účastníci stačí přečíst."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -4011,16 +4132,28 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "To open the Moderator Notes Application, there is a \"{{% livechat_label \"moderator_notes\" %}}\" button in the top chat menu:"
 msgstr ""
+"Pro otevření aplikace Moderator Notes (Poznámky moderátora) je v horním menu "
+"chatu tlačítko „{{% livechat_label „moderator_notes“ %}}“:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
 msgstr ""
+"![Screenshot videa Peertube s chatem na pravé straně. Horní menu chatu je "
+"otevřené a obsahuje tlačítko „{{% livechat_label „moderator_notes“ "
+"%}}“.](/peertube-plugin-livechat/images/"
+"moderation_notes_open_app_video.png?classes=shadow,border&height=200px „"
+"Otevření aplikace Moderator Notes“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
 msgstr ""
+"![Screenshot z chatu Peertube, celá obrazovka. Otevřené horní menu chatu s "
+"tlačítkem „{{% livechat_label „moderator_notes“ %}}“.](/peertube-"
+"plugin-livechat/images/"
+"moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px „"
+"Otevření aplikace Moderator Notes“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
