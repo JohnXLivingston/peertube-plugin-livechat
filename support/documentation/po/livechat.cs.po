@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2025-10-20 12:45+0000\n"
+"PO-Revision-Date: 2025-10-21 17:45+0000\n"
 "Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -3629,8 +3629,8 @@ msgstr "Streamerové mohou do svých kanálů přidávat vlastní emodži."
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), open the \"{{% livechat_label livechat_configuration_channel_emojis_title %}}\" tab:"
 msgstr ""
 "Na [stránce konfigurace kanálu](/peertube-plugin-livechat/documentation/user/"
-"streamers/channel) otevřete záložku „{{% livechat_label "
-"livechat_configuration_channel_emojis_title %}}“:"
+"streamers/channel) otevřete záložku "
+"\"{{% livechat_label livechat_configuration_channel_emojis_title %}}\":"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3638,8 +3638,8 @@ msgid "![Screenshot of the emoji configuration page. There is a form where you c
 msgstr ""
 "![Screenshot stránky s nastavením emodži. Je zde formulář, kde můžete přidat "
 "nové emodži.](/peertube-plugin-livechat/images/"
-"channel_custom_emojis_configuration.png?classes=shadow,border&height=400px „"
-"Nastavení kanálu / Nastavení emodži kanálu“)"
+"channel_custom_emojis_configuration.png?classes=shadow,border&height=400px "
+"\"Channel configuration / Channel emojis configuration\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3647,8 +3647,8 @@ msgid "![Screenshot of a chat session, with messages containing custom emojis. T
 msgstr ""
 "![Screenshot chatové relace se zprávami obsahujícími vlastní emodži. Výběr "
 "emodži je otevřený a zobrazuje vlastní emodži.](/peertube-plugin-livechat/"
-"images/channel_custom_emojis.png?classes=shadow,border&height=400px „"
-"Konfigurace kanálu / Emodži kanálu“)"
+"images/channel_custom_emojis.png?classes=shadow,border&height=400px "
+"\"Channel configuration / Channel emojis\")"
 
 #. type: Title ###
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
@@ -3738,7 +3738,7 @@ msgstr ""
 "Chcete-li tuto funkci povolit nebo zakázat, použijte "
 "[rozbalovací nabídku chatu](/peertube-plugin-livechat/documentation/user/"
 "viewers) a otevřete nabídku „konfigurovat“.  Ve formuláři najdete "
-"zaškrtávací políčko „{{% livechat_label emoji_only_mode_title %}}“."
+"zaškrtávací políčko \"{{% livechat_label emoji_only_mode_title %}}\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
@@ -3746,8 +3746,8 @@ msgid "If you want to enable it for all your chatrooms at once, open the [channe
 msgstr ""
 "Pokud chcete tuto funkci povolit pro všechny své chatovací místnosti "
 "najednou, otevřete [stránku konfigurace emodži kanálu](/peertube-"
-"plugin-livechat/documentation/user/streamers/emojis/) a použijte tlačítko „{{"
-"% livechat_label emoji_only_enable_all_rooms %}}“."
+"plugin-livechat/documentation/user/streamers/emojis/) a použijte tlačítko "
+"\"{{% livechat_label emoji_only_enable_all_rooms %}}\"."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
@@ -3794,81 +3794,111 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "When this feature is enabled, moderators will see all messages without any delay.  Chat participants won't see that their own messages are delayed."
 msgstr ""
+"Když je tato funkce zapnutá, moderátoři uvidí všechny zprávy bez zpoždění. "
+"Účastníci chatu neuvidí, že jejich vlastní zprávy jsou zpožděné."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Please note that messages sent by moderators will also be delayed, to avoid them to respond to messages that are not even visible by other participants."
 msgstr ""
+"Vezměte prosím na vědomí, že zprávy odeslané moderátory budou také zpožděny, "
+"aby se zabránilo tomu, že budou odpovídat na zprávy, které nejsou ostatním "
+"účastníkům ani viditelné."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "Moderation delay option"
-msgstr ""
+msgstr "Možnost zpoždění moderování"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
 msgstr ""
+"Na [stránce konfigurace kanálu](/peertube-plugin-livechat/documentation/user/"
+"streamers/channel) můžete nastavit možnost „{{% livechat_label "
+"moderation_delay %}}“:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "![Screenshot of the channel option form, with a field to configure the moderation delay.](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px \"Channel configuration / Moderation delay\")"
 msgstr ""
+"![Screenshot formuláře s možnostmi kanálu, s polem pro nastavení zpoždění "
+"moderování.](/peertube-plugin-livechat/images/"
+"moderation_delay_channel_option.png?classes=shadow,border&height=400px „"
+"Konfigurace kanálu / Zpoždění moderování“)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "This value will apply as a default value for all your channel's chatrooms."
 msgstr ""
+"Tato hodnota bude platit jako výchozí hodnota pro všechny chatovací "
+"místnosti vašeho kanálu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "Setting the value to `0` will disable the feature."
-msgstr ""
+msgstr "Nastavením hodnoty na `0` se tato funkce deaktivuje."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Setting the value to a positive integer will set the delay, in seconds, to apply to messages.  Please avoid setting the value too high.  Ideally it should not exceed a few seconds (4 or 5 seconds for example)."
 msgstr ""
+"Nastavením hodnoty na kladné celé číslo nastavíte zpoždění v sekundách, "
+"které se bude vztahovat na zprávy.  Nenastavujte příliš vysokou hodnotu.  "
+"Ideálně by neměla přesáhnout několik sekund (například 4 nebo 5 sekund)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "To modify the value for an already existing room, just open the room \"configuration\" menu (on top of the chat window), and change the moderation delay value in the configuration form."
 msgstr ""
+"Chcete-li změnit hodnotu pro již existující místnost, stačí otevřít nabídku "
+"\"konfigurace\" místnosti (v horní části okna chatu) a změnit hodnotu "
+"zpoždění moderování v konfiguračním formuláři."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants.  However, messages sent after they joined will be delayed correctly."
 msgstr ""
+"V současné době má tato funkce jednu známou chybu: uživatelé, kteří se "
+"připojí k chatu, obdrží všechny zprávy, i ty, které jsou pro ostatní "
+"účastníky stále čekající.  Zprávy odeslané po jejich připojení však budou "
+"správně zpožděny."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #, no-wrap
 msgid "In the chat"
-msgstr ""
+msgstr "V chatu"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime."
 msgstr ""
+"Jako moderátor uvidíte zbývající čas (v sekundách) do vysílání zprávy hned "
+"vedle data a času zprávy."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "![Screenshot of a chat message. A timer is displayed next to the message datetime. The timer is in seconds.](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border \"Moderation delay timer\")"
 msgstr ""
+"![Screenshot chatové zprávy. Vedle data a času zprávy je zobrazen časovač. "
+"Časovač je v sekundách.](/peertube-plugin-livechat/images/"
+"moderation_delay_timer.png?classes=shadow,border "
+"\"Časovač zpoždění moderování\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Plugin peertube-plugin-livechat advanced moderation features"
-msgstr ""
+msgstr "Plugin peertube-plugin-livechat pokročilé funkce moderování"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "This section is still incomplete."
-msgstr ""
+msgstr "Tato část je stále neúplná."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3877,130 +3907,190 @@ msgid ""
 "This page describes the behaviour of livechat versions >= 10.0.0.\n"
 "There were some changes in the way we manage access rights for Peertube administrators and moderators.\n"
 msgstr ""
+"Tato stránka popisuje chování verzí livechatu >= 10.0.0.\n"
+"Došlo k několika změnám ve způsobu, jakým spravujeme přístupová práva pro "
+"administrátory a moderátory Peertube.\n"
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "The chat bot"
-msgstr ""
+msgstr "Chatovací robot"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use a chat bot, that will help you for moderation.  Check [the chat bot documentation](/peertube-plugin-livechat/documentation/user/streamers/bot) for more information."
 msgstr ""
+"Můžete použít chatovacího robota, který vám pomůže s moderováním.  Více "
+"informací najdete v [dokumentaci k chatovacímu robotovi](/peertube-"
+"plugin-livechat/documentation/user/streamers/bot)."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Accessing moderation tools"
-msgstr ""
+msgstr "Přístup k nástrojům pro moderování"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can access room settings and moderation tools using the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers) at the top of the chat."
 msgstr ""
+"K nastavení místnosti a nástrojům pro moderování se dostanete pomocí "
+"[rozbalovacího menu chatu](/peertube-plugin-livechat/documentation/user/"
+"viewers) v horní části chatu."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "The video owner will be owner of the chat room.  This means they can configure the room, delete it, promote other users as admins, ..."
 msgstr ""
+"Vlastník videa bude vlastníkem chatovací místnosti.  To znamená, že může "
+"místnost konfigurovat, mazat, povyšovat jiné uživatele na administrátory atd."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Starting with livechat v10.0.0, Peertube instance's admins and moderators have no special rights on rooms by default.  However, they have a special button available on top of the chat: \"{{% livechat_label promote %}}\".  Clicking this button will give them owner access on the room."
 msgstr ""
+"Počínaje verzí livechat v10.0.0 nemají administrátoři a moderátoři instance "
+"Peertube ve výchozím nastavení žádná zvláštní práva v místnostech.  Mají "
+"však k dispozici speciální tlačítko v horní části chatu: "
+"\"{{% livechat_label promote %}}\".  Kliknutím na toto tlačítko získají "
+"přístup vlastníka k místnosti."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can use [ConverseJS moderation commands](https://conversejs.org/docs/html/features.html#moderating-chatrooms) to moderate the room.  When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right."
 msgstr ""
+"K moderování místnosti můžete použít [moderační příkazy ConverseJS](https://"
+"conversejs.org/docs/html/features.html#moderating-chatrooms).  Když otevřete "
+"chatovací místnost na celou obrazovku, v pravém horním rohu se zobrazí také "
+"nabídka se speciálními příkazy."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat."
 msgstr ""
+"Můžete zabránit anonymním uživatelům v odesílání zpráv. V takovém případě "
+"budou moci v chatu komunikovat pouze registrovaní uživatelé."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox."
 msgstr ""
+"Chcete-li tuto funkci povolit nebo zakázat, použijte "
+"[rozbalovací nabídku chatu](/peertube-plugin-livechat/documentation/user/"
+"viewers) a otevřete nabídku  \"konfigurace\".  Ve formuláři najdete "
+"zaškrtávací políčko \"{{% livechat_label "
+"livechat_configuration_channel_mute_anonymous_label %}}\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "![Screenshot of the room configuration form. There is a \"{{% livechat_label livechat_configuration_channel_mute_anonymous_label %}}\" checkbox.](/peertube-plugin-livechat/images/configure_mute_anonymous.png?classes=shadow,border&height=400px \"Room configuration / Mute anonymous users\")"
 msgstr ""
+"![Screenshot formuláře pro konfiguraci místnosti. Je zde zaškrtávací políčko "
+"\"{{% livechat_label livechat_configuration_channel_mute_anonymous_label "
+"%}}\".](/peertube-plugin-livechat/images/"
+"configure_mute_anonymous.png?classes=shadow,border&height=400px "
+"\"Konfigurace místnosti / Ztlumit anonymní uživatele\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "Anonymous users won't have the message field, and will see following prompt: \"{{% livechat_label muted_anonymous_message %}}\""
 msgstr ""
+"Anonymní uživatelé nebudou mít pole pro zprávu a uvidí následující výzvu: "
+"\"{{% livechat_label muted_anonymous_message %}}\""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "![Screenshot of a chat session. The current user has no message field. There is a message: \"{{% livechat_label muted_anonymous_message %}}\"](/peertube-plugin-livechat/images/anonymous_muted.png?classes=shadow,border&height=400px \"Room configuration / Muted anonymous users\")"
 msgstr ""
+"![Screenshot chatové relace. Aktuální uživatel nemá žádné pole pro zprávy. "
+"Je zde zpráva: \"{{% livechat_label muted_anonymous_message %}}\"](/peertube-"
+"plugin-livechat/images/"
+"anonymous_muted.png?classes=shadow,border&height=400px "
+"\"Konfigurace místnosti / Ztlumení anonymních uživatelů\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "When this feature is enabled, anonymous users will be assigned the \"visitor\" role.  You can change their role to \"participant\" if you want to allow some of them to talk."
 msgstr ""
+"Pokud je tato funkce povolena, anonymním uživatelům bude přiřazena role "
+"\"návštěvník\".  Pokud chcete některým z nich umožnit mluvit, můžete jejich "
+"roli změnit na \"účastník\"."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "If you change the room configuration, all anonymous users will be muted or unmuted."
 msgstr ""
+"Pokud změníte konfiguraci místnosti, všichni anonymní uživatelé budou "
+"ztlumeni nebo odztlumeni."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can choose to enable or disable this feature for new chatrooms on the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel)."
 msgstr ""
+"Tuto funkci můžete povolit nebo zakázat pro nové chatovací místnosti na "
+"[stránce konfigurace kanálu](/peertube-plugin-livechat/documentation/user/"
+"streamers/channel)."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Roles and affiliations"
-msgstr ""
+msgstr "Role a příslušnost"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "There are several roles that can be assignated to users in chat rooms: owner, moderators, member, ..."
 msgstr ""
+"V chatovacích místnostech lze uživatelům přiřadit několik rolí: vlastník, "
+"moderátoři, členové, ..."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "You can promote users as moderators, if you need some help."
-msgstr ""
+msgstr "Pokud potřebujete pomoc, můžete uživatele povýšit na moderátory."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants."
 msgstr ""
+"Je možné anonymizovat moderátorské akce, aby se zabránilo odhalení toho, kdo "
+"zakazuje/vykazuje/… účastníky."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "To enable or disable this feature, use the [chat dropdown menu](/peertube-plugin-livechat/documentation/user/viewers), open the \"configure\" menu.  In the form, you will find a \"{{% livechat_label livechat_configuration_channel_anonymize_moderation_label %}}\" checkbox."
 msgstr ""
+"Chcete-li tuto funkci povolit nebo zakázat, použijte "
+"[rozbalovací nabídku chatu](/peertube-plugin-livechat/documentation/user/"
+"viewers) a otevřete nabídku \"konfigurace\".  Ve formuláři najdete "
+"zaškrtávací políčko \"{{% livechat_label "
+"livechat_configuration_channel_anonymize_moderation_label %}}\"."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Participant message history search"
-msgstr ""
+msgstr "Vyhledávání historie zpráv účastníků"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "As a room admin or owner, you can search all messages sent by a given participant."
 msgstr ""
+"Jako správce nebo vlastník místnosti můžete prohledávat všechny zprávy "
+"odeslané daným účastníkem."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "To do so, you have several ways:"
-msgstr ""
+msgstr "K tomu máte několik možností:"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 msgid "using the \"{{% livechat_label search_occupant_message %}}\" action in the dropdown menu besides participants in the sidebar"
 msgstr ""
+"pomocí akce \"{{% livechat_label search_occupant_message %}}\" v rozevíracím "
+"menu vedle účastníků v postranním panelu"
 
 #. type: Bullet: '* '
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
