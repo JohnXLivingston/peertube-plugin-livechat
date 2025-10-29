@@ -7,15 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2024-09-16 15:14+0000\n"
+"PO-Revision-Date: 2025-10-30 13:45+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
+"Language-Team: Croatian <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.7.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -218,7 +220,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "ESBuild vs Typescript"
-msgstr ""
+msgstr "ESBuild kontra Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -271,7 +273,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prosody debugger"
-msgstr ""
+msgstr "Prosody ispravljač grešaka"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -325,7 +327,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quick dev environment using Docker"
-msgstr ""
+msgstr "Okruženje za brzi razvoj koristeći Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -346,7 +348,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Quickly rebuild and install the plugin"
-msgstr ""
+msgstr "Ponovo izgradi brzo i instaliraj dodatak"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -382,7 +384,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Performance tests"
-msgstr ""
+msgstr "Testovi performanse"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -527,7 +529,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "To handle translations, just do:"
-msgstr ""
+msgstr "Za obradu prijevoda jednostavno pokreni:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/document/_index.md
@@ -539,6 +541,8 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector."
 msgstr ""
+"Rezultat zatim možeš pregledati pomoću naredbe `hugo serve -s support/"
+"documentation/` i pomoću birača jezika."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -595,23 +599,27 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "What if I can't use hugo and/or po4a?"
-msgstr ""
+msgstr "Što ako ne mogu koristiti hugo i/ili po4a?"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request."
 msgstr ""
+"Uredi engleske markdown datoteke i navedi da ne možeš izgraditi prijevode "
+"kada pošalješ zahtjev za povlačenjem."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Publication"
-msgstr ""
+msgstr "Objavljivanje"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch."
 msgstr ""
+"Objavljivanje dokumentacije ze izvršava automatski, čim se promjene spoje u "
+"granu `documentation`."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
@@ -656,53 +664,62 @@ msgstr "Možeš doprinijeti prijevodu ovog dodatka. Za prevođenje koristimo pla
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never modify directly files in the `languages` folder, this could lead to conflicts."
 msgstr ""
+"Nikada nemoj izravno mijenjati datoteke u mapi `languages`, to bi moglo "
+"dovesti do konflikata."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "How to"
-msgstr ""
+msgstr "Kako uraditi određene radnje"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Create an account: https://weblate.framasoft.org/accounts/register/"
-msgstr ""
+msgstr "Stvori račun: https://weblate.framasoft.org/accounts/register/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Validate your email and follow the link sent"
-msgstr ""
+msgstr "Potvrdi svoju e-mail adresu i slijedi poslanu poveznicu"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Create your password and setup your account"
-msgstr ""
+msgstr "Stvori lozinku i postavi svoj račun"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 msgstr ""
+"Idi na stranicu projekta s dodacima: https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Choose the locale you want to translate"
-msgstr ""
+msgstr "Odaberi jezik koji želiš prevesti"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Just translate missing sentences, or correct the ones that seems incorrect to you."
 msgstr ""
+"Jednostavno prevedi rečenice koje nedostaju ili ispravi one koje ti se čine "
+"netočnima."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english."
 msgstr ""
+"Moguće je da postoje neki „vrlo tehnički“ izrazi. Ako ne znaš 100 % što "
+"znače ili kako su prevedeni u tvom prijevodu, bolje je da ih ne prevodiš, "
+"kako bi se prikazali na engleskom."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "ConverseJS translations"
-msgstr ""
+msgstr "ConverseJS prijevodi"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -713,28 +730,35 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding a new locale"
-msgstr "Dodavanje novog narječja"
+msgstr "Dodavanje novog jezika"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
 msgstr ""
+"Ako misliš da nedostaje jezik, najprije provjeri je li ga Peertube podržava. "
+"Ako nedostaje, možeš [otvoriti problem](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/issues) i zatražiti jezik."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Adding new strings / use translations in the code"
-msgstr ""
+msgstr "Dodavanje novih izraza / koristi prijevode u kodu"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are working on new features, and need new strings, you can create them directly in Weblate.  The english version is mandatory. Start with it."
 msgstr ""
+"Ako radiš na novim funkcijama i trebaš nove izraze, možeš ih stvoriti "
+"izravno u Weblateu. Engleska verzija je obavezna. Počni s njom."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Each string is linked to a key (for example `use_chat`).  Choose an explicit key in english, lower case."
 msgstr ""
+"Svaki izraz je povezan s ključem (na primjer `use_chat`). Odaberi "
+"eksplicitni ključ na engleskom i upiši ga malim slovima."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -813,12 +837,12 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Documentation translation"
-msgstr ""
+msgstr "Prijevod dokumentacije"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "The documentation translation is done using the corresponding Weblate component."
-msgstr ""
+msgstr "Dokumentacija se prevodi u odgovarajućoj Weblate komponenti."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -883,7 +907,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Generic recommandations"
-msgstr ""
+msgstr "Opće preporuke"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -894,23 +918,29 @@ msgstr ""
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Plugin Credits"
-msgstr ""
+msgstr "Zasluge za dodatak"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/credits/_index.md
 #, no-wrap
 msgid "Credits"
-msgstr ""
+msgstr "Zasluge"
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies."
 msgstr ""
+"Datoteke [package.json](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/blob/main/package.json), [AUTORSKA PRAVA](https://"
+"github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) "
+"i [LICENCA](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
+"main/LICENSE) sadrže informacije o licenci za ovaj softver i njegove "
+"ovisnosti."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "The plugin is maintained by [John Livingston](https://www.john-livingston.fr/)."
-msgstr ""
+msgstr "Dodatak održava [John Livingston](https://www.john-livingston.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -951,13 +981,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Some advanced features"
-msgstr ""
+msgstr "Neke napredne funkcije"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
 #, no-wrap
 msgid "Advanced usage"
-msgstr ""
+msgstr "Napredno korištenje"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1033,7 +1063,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Allow external connections (advanced)"
-msgstr ""
+msgstr "Dopusti eksterne veze (napredno)"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1075,7 +1105,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Configurating Matterbridge"
-msgstr ""
+msgstr "Konfiguriranje Matterbridgea"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1139,13 +1169,13 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Allow connections using XMPP clients"
-msgstr ""
+msgstr "Dopusti veze pomoću XMPP klijenata"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "XMPP clients"
-msgstr ""
+msgstr "XMPP klijenti"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1167,20 +1197,22 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Login to your Peertube account"
-msgstr ""
+msgstr "Prijavi se na svoj Peertube račun"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "This feature is not yet available, and will come in a future version of the plugin."
 msgstr ""
+"Ova funkcija još nije dostupna i bit će dostupna u jednoj budućoj verziji "
+"dodatka."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 #, no-wrap
 msgid "Connection using an external XMPP account"
-msgstr ""
+msgstr "Povezivanje pomoću eksternog XMPP računa"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1191,7 +1223,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Plugin settings"
-msgstr ""
+msgstr "Postavke dodatka"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1217,7 +1249,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Firewall"
-msgstr ""
+msgstr "Vatrozid"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1233,7 +1265,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1320,7 +1352,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Using trusted certificates"
-msgstr ""
+msgstr "Korištenje pouzdanih certifikata"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1336,7 +1368,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Basic principle"
-msgstr ""
+msgstr "Osnovni princip"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1362,7 +1394,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #, no-wrap
 msgid "Method for the simple case"
-msgstr ""
+msgstr "Metoda za jednostavan slučaj"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1671,7 +1703,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Ispravljanje problema"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1689,7 +1721,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "External Authentication"
-msgstr ""
+msgstr "Eksterna autentifikacija"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1851,18 +1883,18 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #, no-wrap
 msgid "More to come"
-msgstr ""
+msgstr "Uskoro više"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "Other authentication methods will be implemented in the future."
-msgstr ""
+msgstr "Druge metode autentifikacije će se implementirati u budućnosti."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/_index.md
 #, no-wrap
 msgid "Plugin Peertube Livechat administration"
-msgstr ""
+msgstr "Administracija dodatka Peertube Livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/admin/_index.md
@@ -1902,7 +1934,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Edit rules"
-msgstr ""
+msgstr "Uredi pravila"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -1952,18 +1984,21 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 #, no-wrap
 msgid "Examples"
-msgstr ""
+msgstr "Primjeri"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Don't hesitate to share your rules.  To do so, you can for example edit this [page](/peertube-plugin-livechat/contributing/document/#write-documentation)."
 msgstr ""
+"Ne ustručavaj se dijeliti svoja pravila. Za to, na primjer, možeš urediti "
+"ovu [stranicu](/peertube-plugin-livechat/contributing/document/#write-"
+"documentation)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Plugin Peertube Livechat settings"
-msgstr ""
+msgstr "Postavke dodatka Peertube Livechat"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2044,7 +2079,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Chat behaviour"
-msgstr ""
+msgstr "Ponašanje chata"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2084,109 +2119,138 @@ msgstr ""
 #: build/documentation/pot_in/documentation/admin/settings.md
 #, no-wrap
 msgid "Theming"
-msgstr ""
+msgstr "Mijenjanje izgleda pomoću tema"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose from several different sets the default avatars that will be used for chat users."
 msgstr ""
+"Možeš birati između nekoliko različitih skupova zadanih avatara koji će se "
+"koristiti za korisnike chata."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_sepia %}}: "
+"[Generator avatara Davida Revoya na Peertubeu](https://www.peppercarrot.com/"
+"extras/html/2023_peertube-generator/), licenca [CC-By](https://"
+"creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Sepia avatar example](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Primjer sepia avatara](/peertube-plugin-livechat/images/"
+"avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_cat %}}: "
+"[Generator mačjih avatara Davida Revoya](https://www.peppercarrot.com/extras/"
+"html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/"
+"4.0/) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Cats avatar example](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Cats\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Primjer mačjeg avatara](/peertube-plugin-livechat/images/"
+"avatar_cat.png?classes=shadow,border&height=40px \"Mačke\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_bird %}}: "
+"[Generator avatara ptica Davida Revoya](https://www.peppercarrot.com/extras/"
+"html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/"
+"4.0/) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Birds avatar example](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Primjer avatara ptica](/peertube-plugin-livechat/images/"
+"avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_fenec %}}: "
+"[Generator avatara Davida Revoya za lisice/mobilizon](https://"
+"www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://"
+"creativecommons.org/licenses/by/4.0/) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Fenecs avatar example](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Primjer avatara lisica](/peertube-plugin-livechat/images/"
+"avatar_fenec.png?classes=shadow,border&height=40px \"Lisice\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_abstract %}}: [David Revoy's Abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_abstract %}}: "
+"[Generator apstraktnih avatara Davida Revoya](https://www.peppercarrot.com/"
+"extras/html/2017_abstract-generator/index.php), [CC-By](https://"
+"creativecommons.org/licenses/by/4.0/) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Abstracts avatar example](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Primjer apstraktnih avatara](/peertube-plugin-livechat/images/"
+"avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_legacy %}}: Based on [David Revoy' work](https://www.davidrevoy.com), [AGPL-v3](https://www.gnu.org/licenses/agpl-3.0.en.html) license"
 msgstr ""
+"{{% livechat_label avatar_set_option_legacy %}}: Na temelju "
+"[rada Davida Revoya](https://www.davidrevoy.com), [AGPL-v3](https://"
+"www.gnu.org/licenses/agpl-3.0.en.html) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Legacy avatar example](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Primjer starog avatara](/peertube-plugin-livechat/images/"
+"avatar_legacy.jpg?classes=shadow,border&height=40px \"Stari\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "If you can't see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it."
 msgstr ""
+"Ako ne vidiš promjenu odah, to bi moglo biti zbog predmemorije tvojeg "
+"preglednika. Izbriši spremljene sesije preglednika ili ga ponovo pokreni."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose which theme to use for ConverseJS:"
-msgstr ""
+msgstr "Možeš odabrati koju temu želiš koristiti za ConverseJS:"
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Peertube theme: this is a special theme, made especially for peertube's integration."
 msgstr ""
+"Peertube tema: ovo je posebna tema, napravljena posebno za Peertubeovu "
+"integraciju."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Default ConverseJS theme: this is the default ConverseJS theme."
-msgstr ""
+msgstr "Zadana ConverseJS tema: ovo je zadana ConverseJS tema."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "ConverseJS cyberpunk theme: this is a theme provided by ConverseJS."
-msgstr ""
+msgstr "ConverseJS cyberpunk tema: ovo je tema koju pruža ConverseJS."
 
 #. type: Title ##
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2263,7 +2327,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Known issues: CPU Compatibility"
-msgstr ""
+msgstr "Poznati problemi: Kompatibilnost CPU-a"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2332,7 +2396,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
 #, no-wrap
 msgid "Docker"
-msgstr ""
+msgstr "Docker"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/cpu_compatibility.md
@@ -2384,7 +2448,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/_index.md
 #, no-wrap
 msgid "Installation guide"
-msgstr ""
+msgstr "Vodič za instalaciju"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/_index.md
@@ -2462,7 +2526,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 #, no-wrap
 msgid "Internal API calls"
-msgstr ""
+msgstr "Interni API pozivi"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2732,7 +2796,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 #, no-wrap
 msgid "Announcements"
-msgstr ""
+msgstr "Najave"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
@@ -2814,10 +2878,11 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the Peertube new live form.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"New live\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Slika ekrana obrasca za novi prijenos uživo na Peertubeu.](/peertube-"
+"plugin-livechat/images/new_live.png?classes=shadow,border&height=200px "
+"\"Novi prijenos uživo\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2920,7 +2985,7 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Moderation"
-msgstr ""
+msgstr "Moderiranje"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3017,7 +3082,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 #, no-wrap
 msgid "Commands"
-msgstr ""
+msgstr "Naredbe"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -3112,14 +3177,14 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #, no-wrap
 msgid "Chat bot setup"
-msgstr ""
+msgstr "Postavljanje Chat bota"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Chat bot"
-msgstr ""
+msgstr "Chat bot"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -3192,44 +3257,50 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 #, no-wrap
 msgid "Timers"
-msgstr ""
+msgstr "Mjerači vremena"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "If there is no user in the chatroom, the bot won't send any message."
-msgstr ""
+msgstr "Ako u chat sobi nema korisnika, bot neće slati nijednu poruku."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the channel options page, with some fields to configure a new timer.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px \"Timers configuration\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana stranice s opcijama kanala, s nekoliko polja za "
+"konfiguriranje novog mjerača vremena.](/peertube-plugin-livechat/images/"
+"bot_quotes.png?classes=shadow,border&height=200px "
+"\"Konfiguracija mjerača vremena\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #, no-wrap
 msgid "The bot can automatically moderate messages containing too many special characters."
 msgstr ""
+"Bot može automatski moderirati poruke koje sadrže previše posebnih znakova."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #, no-wrap
 msgid "Special characters"
-msgstr ""
+msgstr "Posebni znakovi"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the channel options page, with several fields to configure the \"Forbid special characters\" option.](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana stranice s opcijama kanala, s nekoliko polja za "
+"konfiguriranje opcije „Zabrani posebne znakove”.](/peertube-plugin-livechat/"
+"images/"
+"forbid_special_chars_configuration.png?classes=shadow,border&height=400px "
+"\"Konfiguracija za „Zabrani posebne znakove”\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 #, no-wrap
 msgid "Peertube channel chatrooms configuration"
-msgstr ""
+msgstr "Konfiguracija chat soba PeerTube kanala"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3395,10 +3466,8 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy
-#| msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the \"{{% livechat_label moderation_delay %}}\" option:"
 msgid "If you want to enable it for all your chatrooms at once, open the [channel emojis configuration page](/peertube-plugin-livechat/documentation/user/streamers/emojis/), and use the \"{{% livechat_label emoji_only_enable_all_rooms %}}\" button."
-msgstr "Na [stranici za konfiguraciju kanala](/peertube-plugin-livechat/hr/documentation/user/streamers/channel) možeš postaviti opciju „{{% livechat_label moderation_delay %}}”:"
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/_index.md
@@ -3535,7 +3604,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "The chat bot"
-msgstr ""
+msgstr "Chat bot"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3546,7 +3615,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Accessing moderation tools"
-msgstr ""
+msgstr "Pristup alatima za moderiranje"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3612,7 +3681,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Roles and affiliations"
-msgstr ""
+msgstr "Uloge i pripadnosti"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3638,7 +3707,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Participant message history search"
-msgstr ""
+msgstr "Pretraživanje povijesti poruka sudionika"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3703,7 +3772,7 @@ msgstr ""
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #, no-wrap
 msgid "Delete room content"
-msgstr ""
+msgstr "Izbriši sadržaj sobe"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
