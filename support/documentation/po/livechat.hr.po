@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2025-10-30 13:45+0000\n"
+"PO-Revision-Date: 2025-11-21 14:45+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -2125,8 +2125,8 @@ msgstr "Mijenjanje izgleda pomoću tema"
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose from several different sets the default avatars that will be used for chat users."
 msgstr ""
-"Možeš birati između nekoliko različitih skupova zadanih avatara koji će se "
-"koristiti za korisnike chata."
+"Možeš birati između nekoliko različitih skupova standardnih avatara koji će "
+"se koristiti za korisnike chata."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2245,7 +2245,7 @@ msgstr ""
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Default ConverseJS theme: this is the default ConverseJS theme."
-msgstr "Zadana ConverseJS tema: ovo je zadana ConverseJS tema."
+msgstr "Standardna ConverseJS tema: ovo je standardna ConverseJS tema."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -4936,17 +4936,26 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Installation"
-msgstr ""
+msgstr "Instaliranje"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "As a Peertube administrator, you can setup this plugin on your instance simply by using the Peertube plugin marketplace included in the administration interface.  Search for \"livechat\", then click \"install\": that's it!"
 msgstr ""
+"Kao administrator Peertubea, ovaj dodatak možeš postaviti na svoju instancu "
+"jednostavnim korištenjem trgovine Peertube dodataka koja je uključena u "
+"administratorskom sučelju. Potraži „livechat”, a zatim klikni „instaliraj”: "
+"to je to!"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of Peertube plugins admin page. The search fields contains \"livechat\", and the search results show the livechat plugin.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px \"Livechat installation\")"
 msgstr ""
+"![Snimka ekrana administratorske stranice Peertube dodataka. Polja za "
+"pretraživanje sadrže „livechat”, a rezultati pretraživanja prikazuju "
+"livechat dodatak.](/peertube-plugin-livechat/images/"
+"installation.png?classes=shadow,border&height=200px "
+"\"Instalacija livechat dodatka\")"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -4978,32 +4987,47 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 msgid "Some times, you have to protect your community from bad people.  As an instance administrator, you can choose to disallow federation for the livechat plugin.  If remote actors behave badly, streamers, moderators and administrators can ban or mute users."
 msgstr ""
+"Ponekad moraš zaštititi svoju zajednicu od loših ljudi. Kao administrator "
+"instance možeš zabraniti federaciju za livechat dodatak. Ako se udaljeni "
+"akteri ponašaju loše, streameri, moderatori i administratori mogu zabraniti "
+"ili isključiti korisnike."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).  Check its documentation for more information."
 msgstr ""
+"Ovaj dodatak dolazi s ugrađenim [chat botom](/peertube-plugin-livechat/"
+"documentation/user/streamers/bot/). Za više informacija pregledaj njegovu "
+"dokumentaciju."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can also plug in any other XMPP chat bot, using [XMPP External Components](https://prosody.im/doc/components).  To do so, you just have to configure External Components access in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
 msgstr ""
+"Također možeš uključiti bilo kojeg drugog XMPP chat bota koristeći "
+"[eksterne XMPP komponente](https://prosody.im/doc/components). Jednostavno "
+"konfiguriraj pristup eksternim komponentama u [postavkama dodatka](/peertube-"
+"plugin-livechat/documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "When joining a room, you will see previous messages.  Even those sent before you joined the room."
 msgstr ""
+"Nakon pridruživanja sobi vidjet ćeš prethodne poruke. Čak i one koje su "
+"poslane prije tvog pridruživanja sobi."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This behaviour can be changed room by room, and default retention duration can be chosen by instance's administrators."
 msgstr ""
+"Ovo se ponašanje može mijenjati od sobe do sobe, a administratori instance "
+"mogu odabrati standardno trajanje zadržavanja."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Integrate the chat in your live stream"
-msgstr ""
+msgstr "Integriraj chat u svoj prijenos uživo"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -5024,7 +5048,7 @@ msgstr ""
 #: support/documentation/content/en/intro/_index.md
 #, no-wrap
 msgid "Other usages"
-msgstr ""
+msgstr "Druga korištenja"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
@@ -5045,38 +5069,47 @@ msgstr ""
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking / New features requests"
-msgstr ""
+msgstr "Praćenje grešaka / Zahtjevi za nove funkcije"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/issues/_index.md
 #, no-wrap
 msgid "Bug tracking & new features"
-msgstr ""
+msgstr "Praćenje grešaka i nove funkcije"
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french."
 msgstr ""
+"Ako imaš nove zahtjeve za funkcijama, greške ili poteškoće s postavljanjem "
+"dodatka, koristi [Github alat za praćenje problema](https://github.com/"
+"JohnXLivingston/peertube-plugin-livechat/issues). Po mogućnosti koristiti "
+"engleski ili francuski jezik."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "To have a glimpse to the roadmap for upcoming features, please refer to:"
-msgstr ""
+msgstr "Za uvid u plan za nadolazeće funkcije, pogledaj:"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1)."
 msgstr ""
+"ovaj [github projekt](https://github.com/users/JohnXLivingston/projects/1)."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones)."
 msgstr ""
+"[planiranje verzija na githubu](https://github.com/JohnXLivingston/"
+"peertube-plugin-livechat/milestones)."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
 msgstr ""
+"Web dizajneri i stručnjaci za ConverseJS/Prosody/XMPP koji žele pomoći u "
+"poboljšanju ovog dodatka su dobrodošli."
 
 #, fuzzy
 #~| msgid "This feature comes with the livechat plugin version 10.0.0."
