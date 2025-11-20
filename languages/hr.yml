@@ -1,5 +1,5 @@
-login_remote_peertube_video_not_found_try_anyway_button: Svejedno pokušaj otvoriti
-  video na Peertube instanci
+login_remote_peertube_video_not_found_try_anyway_button: Svejedno pokušaj 
+  otvoriti video na Peertube instanci
 external_auth_custom_oidc_button_label_label: Oznaka za gumb povezivanja
 external_auth_custom_oidc_discovery_url_label: Discovery URL
 external_auth_oidc_client_id_label: ID klijenta
@@ -10,10 +10,11 @@ save: Spremi
 cancel: Odustani
 menu_configuration_label: Chat sobe
 login_remote_peertube_searching: Traženje videa na Peertube instanci …
-login_remote_peertube_video_not_found: Ovaj video nije dostupan na ovoj Peertube instanci.
+login_remote_peertube_video_not_found: Ovaj video nije dostupan na ovoj Peertube
+  instanci.
 login_external_auth_alert_message: Autentifikacija neuspjela
 avatar_set_label: Skup avatara
-avatar_set_description: "Možeš odabrati između nekoliko različitih skupova zadanih
+avatar_set_description: "Možeš odabrati između nekoliko različitih skupova standardnih
   avatara koji će se koristiti za korisnike chata.\nPogledaj dokumentaciju:\n<a href=\"\
   https://livingston.frama.io/peertube-plugin-livechat/hr/documentation/admin/settings/\"\
   \ target=\"_blank\">Postavke</a>.\n"
@@ -21,8 +22,8 @@ avatar_set_option_sepia: Sipa (Peertube maskota)
 avatar_set_option_cat: Mačke
 avatar_set_option_bird: Ptice
 avatar_set_option_fenec: Mala lisica (Mobilizon maskota)
-avatar_set_option_legacy: Stari Sepia avatari (avatari koji su uključeni u prethodnim
-  verzijama dodatka)
+avatar_set_option_legacy: Stari Sepia avatari (avatari koji su uključeni u 
+  prethodnim verzijama dodatka)
 successfully_saved: Uspješno spremljeno
 avatar_set_option_abstract: Sažetak
 prosody_muc_expiration_description: "Možeš odabrati koliko dugo server čuva sadržaj
@@ -39,35 +40,37 @@ prosody_certificates_dir_description: "Ako je ovo polje prazno, dodatak će gene
   i koristiti samopotpisane certifikate.<br>\nAko želiš koristiti druge certifikate,
   ovdje navedi ovdje mapu gdje ih Prosody\nmože pronaći. Napomena: „peertube” korisnik
   mora imati dozvolu za čitanje ove mape.\n"
-prosody_c2s_label: Omogući veze između klijenta i servera
+prosody_c2s_label: Aktiviraj veze između klijenta i servera
 prosody_components_list_label: Eksterne komponente
 experimental_warning: "<b class=\"peertube-plugin-livechat-experimental\">Eksperimentalna
   značajka:</b> ova je značajka još uvijek eksperimentalna.\n"
 configuration_description: "<h3>Napredna konfiguracija kanala</h3>\nSljedeće postavke
   odnose se na napredne opcije kanala:\nkorisnici će moći dodati neke prilagodbe na
   svojim kanalima,\naktivirati bot za moderiranje, …\n"
-disable_channel_configuration_label: Onemogući naprednu konfiguraciju kanala i chatbota
-livechat_configuration_channel_forbidden_words_regexp_label: Tretiraj kao regularne
-  izraze
-livechat_configuration_channel_forbidden_words_regexp_desc: Označavanjem ove opcije
-  možeš koristiti regularne izraze.
-livechat_configuration_applytomoderators_label: Također moderiraj porukama moderatora
+disable_channel_configuration_label: Deaktiviraj naprednu konfiguraciju kanala i
+  chatbota
+livechat_configuration_channel_forbidden_words_regexp_label: Tretiraj kao 
+  regularne izraze
+livechat_configuration_channel_forbidden_words_regexp_desc: Označavanjem ove 
+  opcije možeš koristiti regularne izraze.
+livechat_configuration_applytomoderators_label: Također moderiraj porukama 
+  moderatora
 livechat_configuration_channel_quote_label: Timer
 livechat_configuration_channel_forbidden_words_desc: "Možeš konfigurirati neke riječi
-  koje će bot automatski moderirati (poruke koje sadrže takve riječi će se odmah izbrisati).\n
-  Možeš dodati i opcionalni razlog koji će se prikazati na mjestu izbrisanih poruka.\n
-  Stranica dokumentacije sadrži nekoliko primjera.\n"
+  koje će bot automatski moderirati (poruke koje sadrže takve riječi će se odmah izbrisati).\n\
+  \ Možeš dodati i opcionalni razlog koji će se prikazati na mjestu izbrisanih poruka.\n\
+  \ Stranica dokumentacije sadrži nekoliko primjera.\n"
 livechat_configuration_channel_retractation_reason_label: Razlog
-slow_mode_info: Spori način rada je omogućen. Korisnici mogu slati poruku svakih %1$s
-  sekundi.
+slow_mode_info: Spori način rada je aktiviran. Korisnici mogu slati poruku 
+  svakih %1$s sekundi.
 open_chat: Otvori chat
 open_chat_new_window: Otvori chat u novom prozoru
 close_chat: Zatvori chat
 use_chat: Koristi chat
 read_only: Samo za čitanje
 show_scrollbarr: Prikaži kliznu traku
-transparent_background: Prozirna pozadina (za integraciju prijenosa, na primjer s
-  OBS-om)
+transparent_background: Prozirna pozadina (za integraciju prijenosa, na primjer 
+  s OBS-om)
 tips_for_streamers: 'Savjeti za prenositelje: Za dodavanje chata u svoj prijenos koristeći
   OBS na primjer,
 
@@ -92,33 +95,35 @@ auto_display_label: Automatski otvori chat
 share_url_option_nobody: Prikaži nikome
 open_blank_label: Prikaži gumb „Otvori u novom prozoru”
 share_url_label: Prikaži gumb „Dijeli poveznicu chata”
-share_url_option_owner_moderators: Prikaži vlasniku videa i moderatorima instance
+share_url_option_owner_moderators: Prikaži vlasniku videa i moderatorima 
+  instance
 converse_theme_label: ConverseJS tema
 converse_theme_option_peertube: Peertube tema
-converse_theme_option_default: Zadana ConverseJS tema
+converse_theme_option_default: Standardna ConverseJS tema
 autocolors_label: Automatsko prepoznavanje boja
 prosody_advanced_description: <h3>Napredne postavke Chat servera</h3>
 help_builtin_prosody_label: Prosody server
 system_prosody_label: Koristi Prosody sustav
 prosody_muc_log_by_default_label: Standardno bilježi sadržaj soba
 prosody_muc_expiration_label: Istek dnevnika soba
-prosody_room_allow_s2s_label: Omogući vezu sa sobom pomoću eksternih XMPP računa
+prosody_room_allow_s2s_label: Aktiviraj vezu sa sobom pomoću eksternih XMPP 
+  računa
 prosody_certificates_dir_label: Mapa certifikata
 online_help: Pomoć na internetu
 livechat_configuration_channel_command_message_label: Poruka
-livechat_configuration_title: Konfiguriraj svoje chat sobe za chat uživo
-livechat_configuration_desc: Ovdje možeš konfigurirati neke napredne opcije za chat
-  sobe povezane s tvojim prijenosima uživo.
-livechat_configuration_please_select: Dolje odaberi jedan od svojih kanala za postavljanje
-  chat opcija.
+livechat_configuration_title: Konfiguriraj svoje sobe za chat uživo
+livechat_configuration_desc: Ovdje možeš konfigurirati neke napredne opcije za 
+  chat sobe povezane s tvojim prijenosima uživo.
+livechat_configuration_please_select: Dolje odaberi jedan od svojih kanala za 
+  postavljanje chat opcija.
 livechat_configuration_channel_title: Opcije kanala
-livechat_configuration_channel_desc: Ovdje možeš postaviti neke opcije za ovaj kanal
-  (pravila moderiranja, …).
-livechat_configuration_channel_enable_bot_label: Omogući moderirajući bot
+livechat_configuration_channel_desc: Ovdje možeš postaviti neke opcije za ovaj 
+  kanal (pravila moderiranja, …).
+livechat_configuration_channel_enable_bot_label: Aktiviraj moderirajući bot
 livechat_configuration_channel_bot_options_title: Opcije moderirajućeg bota
 livechat_configuration_channel_forbidden_words_label: Zabranjene riječi i izrazi
 livechat_configuration_channel_command_message_desc: Poruka za slanje.
-use_chat_help: Ako je omogućeno, pored videa će se prikazati chat.
+use_chat_help: Ako je aktivirano, pored videa će se prikazati chat.
 share_chat_link: Dijeli poveznicu chata
 copy: Kopiraj
 link_copied: Poveznica je kopirana
@@ -131,8 +136,8 @@ channel: Kanal
 last_activity: Zadnja aktivnost
 web: Web
 connect_using_xmpp: Poveži se koristeći XMPP
-connect_using_xmpp_help: Možeš se povezati sa sobom koristeći eksterni XMPP račun
-  i svoj omiljeni XMPP klijent.
+connect_using_xmpp_help: Možeš se povezati sa sobom koristeći eksterni XMPP 
+  račun i svoj omiljeni XMPP klijent.
 diagnostic: "Prije nego zatražiš pomoć, upotrijebi dijagnostički alat:\n<a class=\"\
   peertube-plugin-livechat-launch-diagnostic\">Pokreni dijagnostiku</a>\n(ako ovaj
   gumb ne otvori novi prozor, pokušaj ponovo učitati stranicu).\n"
@@ -163,10 +168,10 @@ livechat_configuration_channel_banned_jids_label: Blokirani korisnici i uzorci
 livechat_configuration_channel_bot_nickname: Nadimak bota
 livechat_configuration_channel_quote_label2: Poruke
 livechat_configuration_channel_slow_mode_label: Spori način rada
-livechat_configuration_channel_slow_mode_desc: "Zadana vrijednost sporog načina rada:\n\
-  <ul>\n   <li>0: spori način rada onemogućen</li>\n   <li>Bilo koji pozitivan cijeli
-  broj: korisnici mogu slati poruke svakih X sekundi (ograničenje ne vrijedi za moderatore)</li>\n\
-  </ul>\n"
+livechat_configuration_channel_slow_mode_desc: "Standardna vrijednost sporog načina
+  rada:\n<ul>\n   <li>0: spori način rada deaktiviran</li>\n   <li>Bilo koji pozitivan
+  cijeli broj: korisnici mogu slati poruke svakih X sekundi (ograničenje ne vrijedi
+  za moderatore)</li>\n</ul>\n"
 chatroom_not_accessible: Ova chat soba ne postoji ili joj ne možeš pristupiti.
 login_using_external_account: Prijavi se pomoću eksternog računa
 login_remote_peertube: 'Prijavi se pomoću računa na jednoj drugoj Peertube instanci:'
@@ -182,38 +187,41 @@ external_auth_google_oidc_description: "Aktiviranjem ove opcije dodaje se gumb �
   s Googleom”.\nMoraš konfigurirati jednu Google OAuth aplikaciju.\n"
 external_auth_facebook_oidc_description: "Aktiviranjem ove opcije dodaje se gumb „prijava
   s Facebookom”.\nMoraš konfigurirati jednu Facebook OAuth aplikaciju.\n"
-prosody_components_label: Omogući prilagođene eksterne komponente u Prosody
+prosody_components_label: Aktiviraj prilagođene eksterne komponente u Prosody
 prosody_port_label: Prosody priključak
-disable_websocket_label: Onemogući Websocket
+disable_websocket_label: Deaktiviraj Websocket
 prosody_c2s_port_label: Prosody priključak za vezu između klijenta i servera
 prosody_s2s_interfaces_label: Mrežna sučelja za vezu između servera i servera
 prosody_c2s_interfaces_label: Mrežna sučelja za vezu između klijenta i servera
 room_type_option_video: Svaki video ima zasebnu web-chat sobu
-room_type_description: Ovdje možeš odabrati želiš li zasebne sobe za svaki video ili
-  ih grupirati po kanalu.
+room_type_description: Ovdje možeš odabrati želiš li zasebne sobe za svaki video
+  ili ih grupirati po kanalu.
 room_type_option_channel: Web-chat sobe se grupiraju po kanalu
 prosody_s2s_port_label: Prosody priključak za vezu između servera i servera
 prosody_components_port_label: Prosody priključak za eksterne komponente
-prosody_components_interfaces_label: Prosody mrežna sučelja za eksterne komponente
-auto_display_description: Prilikom gledanja videa automatski će se otvoriti prozor
-  za chat.
-open_blank_description: U novom prozoru će se pojavit gumb za otvaranje web chata.
-share_url_description: Postojat će gumb za dijeljenje URL-a chata (može se na primjer
-  koristiti za OBS integraciju).
-per_live_video_description: Ako je označeno, sva videa uživo imat će potvrdni okvir
-  u svojim svojstvima za aktiviranje web chata.
+prosody_components_interfaces_label: Prosody mrežna sučelja za eksterne 
+  komponente
+auto_display_description: Prilikom gledanja videa automatski će se otvoriti 
+  prozor za chat.
+open_blank_description: U novom prozoru će se pojavit gumb za otvaranje web 
+  chata.
+share_url_description: Postojat će gumb za dijeljenje URL-a chata (može se na 
+  primjer koristiti za OBS integraciju).
+per_live_video_description: Ako je označeno, sva videa uživo imat će potvrdni 
+  okvir u svojim svojstvima za aktiviranje web chata.
 per_live_video_label: Korisnici mogu aktivirati chat za svoje prijenose uživo
 all_lives_label: Aktiviraj chat za sve prijenose uživo
 no_anonymous_label: Sakrij chat za anonimne korisnike
 theming_advanced_description: <h3>Izgled</h3>
-chat_style_description: "Dodatni stilovi koji se dodaju atributu stila iframea. <br>\n
-  Primjer: height:400px;\n"
+chat_style_description: "Dodatni stilovi koji se dodaju atributu stila iframea. <br>\n\
+  \ Primjer: height:400px;\n"
 livechat_configuration_channel_forbidden_words_label_label: Oznaka
 converse_theme_description: Odaberi converseJS temu koju želiš koristiti.
-external_auth_custom_oidc_button_label_description: Ova će se oznaka prikazati korisnicima
-  kao oznaka gumba za autentifikaciju kod ovog pružatelja usluge OpenID Connect.
-external_auth_oidc_redirect_uris_info_description: "<strong>URI preusmjeravanja:</strong>\n
-  Ako želiš konfigurirati URI ovlaštenog preusmjeravanja na eksternoj aplikaciji,
+external_auth_custom_oidc_button_label_description: Ova će se oznaka prikazati 
+  korisnicima kao oznaka gumba za autentifikaciju kod ovog pružatelja usluge 
+  OpenID Connect.
+external_auth_oidc_redirect_uris_info_description: "<strong>URI preusmjeravanja:</strong>\n\
+  \ Ako želiš konfigurirati URI ovlaštenog preusmjeravanja na eksternoj aplikaciji,
   dodaj ovaj url:\n"
 federation_no_remote_chat_label: Nemoj prikazati chatove drugih instanci
 federation_description: "<h3>Federacija</h3>\nSljedeće postavke odnose se na federaciju
@@ -221,28 +229,29 @@ federation_description: "<h3>Federacija</h3>\nSljedeće postavke odnose se na fe
 federation_no_remote_chat_description: "Označavanjem ove postavke tvoja instanca nikada
   neće prikazati chatove od videa drugih instanci.\n"
 external_auth_custom_oidc_description: "Možeš konfigurirati eksternog pružatelja usluge
-  OpenID Connect koji se može koristiti za prijavu na chat.\nPogledaj dokumentaciju:\n
-  <a href=\"https://livingston.frama.io/peertube-plugin-livechat/hr/documentation/admin/settings/\"\
+  OpenID Connect koji se može koristiti za prijavu na chat.\nPogledaj dokumentaciju:\n\
+  \ <a href=\"https://livingston.frama.io/peertube-plugin-livechat/hr/documentation/admin/settings/\"\
   \ target=\"_blank\">Postavke</a>.\n"
 external_auth_description: "<h3>Eksterna autentifikacija</h3>\nZa korisnike koji nemaju
   Peertube račun možeš aktivirati različite načine autentifikacije pomoću externih
   pružatelja usluge autentifikacije.\n"
-all_lives_description: Ako je označeno, chat će se aktivirati za sve prijenose uživo.
-all_non_lives_description: Ako je označeno, chat će se aktivirati za sve prijenose
-  koji nisu uživo.
+all_lives_description: Ako je označeno, chat će se aktivirati za sve prijenose 
+  uživo.
+all_non_lives_description: Ako je označeno, chat će se aktivirati za sve 
+  prijenose koji nisu uživo.
 all_non_lives_label: Aktiviraj chat za sve prijenose koji nisu uživo
 converse_theme_option_cyberpunk: ConverseJS cyberpunk tema
 chat_style_label: Atribut stila ifreama za chat
 prosody_muc_log_by_default_description: "Ako je označeno, sadržaj sobe će se standardno
   spremati.\nSvaki korisnik koji se pridruži sobi vidjet će što je napisano prije
-  nego što se pridruži.<br>\nArhiviranje sadržaja se uvijek može aktivirati/deaktivirati\n
+  nego što se pridruži.<br>\nArhiviranje sadržaja se uvijek može aktivirati/deaktivirati\n\
   za određenu sobu, uređivanjem njezinih svojstava.\n"
-auto_ban_anonymous_ip_label: Blokiraj IP anonimnog korisnika kada je korisniku zabranjen
-  pristup chat sobi
+auto_ban_anonymous_ip_label: Blokiraj IP anonimnog korisnika kada je korisniku 
+  zabranjen pristup chat sobi
 livechat_configuration_channel_emojis_title: Emojiji kanala
 copied: Kopirano
-login_remote_peertube_no_livechat: Dodatak za chat uživo nije instaliran na ovoj Peertube
-  instanci.
+login_remote_peertube_no_livechat: Dodatak za chat uživo nije instaliran na ovoj
+  Peertube instanci.
 tasks: Zadaci
 task_list_create: 'Stvori novu listu zadataka:'
 task_delete: Izbriši zadatak
@@ -269,17 +278,18 @@ token_label: Oznaka
 auth_description: "<h3>Autentifikacija</h3>\n"
 chat_terms_label: Uvjeti i odredbe
 muted_anonymous_message: Samo registrirani korisnici mogu slati poruke.
-livechat_configuration_channel_mute_anonymous_label: Isključi zvuk anonimnih korisnika
-login_remote_peertube_video_not_found_try_anyway: U nekim slučajevima, video se ipak
-  može dohvatiti ako se povežeš s eksternom instancom.
+livechat_configuration_channel_mute_anonymous_label: Isključi zvuk anonimnih 
+  korisnika
+login_remote_peertube_video_not_found_try_anyway: U nekim slučajevima, video se 
+  ipak može dohvatiti ako se povežeš s eksternom instancom.
 livechat_configuration_channel_moderation_delay_desc: "Standardna vrijednost odgode
   moderiranja:\n<ul>\n   <li>0: odgoda moderiranja je deaktivirana</li>\n   <li>Bilo
   koji pozitivni cijeli broj: poruke će se odgoditi za X sekundi za sudionike koji
   nisu moderatori, dopuštajući moderatorima da izbrišu poruku prije nego što je bilo
   koji korisnik može pročitati.</li>\n</ul>\n"
 moderation_delay: Odgoda moderiranja
-livechat_configuration_channel_forbidden_words_label_desc: Oznaka za ovo pravilo zabranjenih
-  riječi
+livechat_configuration_channel_forbidden_words_label_desc: Oznaka za ovo pravilo
+  zabranjenih riječi
 livechat_configuration_channel_emojis_desc: "Možeš konfigurirati prilagođene emojije
   za svoj kanal.\nOvi emojiji će biti dostupni u alatu za biranje emojija.\nKorisnici
   ih također mogu koristiti sa svojim kratkim imenom (na primjer tako da napišu \"\
@@ -310,8 +320,10 @@ invalid_value_duplicate: Dupla vrijednost
 too_many_entries: Previše unosa
 promote: Postani moderator
 livechat_emojis_shortname: Kratko ime
-action_import_emojis_info: Ako su uvezeni podaci u redu, ne zaboravi spremiti obrazac.
-share_chat_peertube_tips: Ova će poveznica otvoriti chat unutar Peertube sučelja.
+action_import_emojis_info: Ako su uvezeni podaci u redu, ne zaboravi spremiti 
+  obrazac.
+share_chat_peertube_tips: Ova će poveznica otvoriti chat unutar Peertube 
+  sučelja.
 token_password: Token lozinke
 token_date: Datum
 token_action_create: Stvori novi token
@@ -323,8 +335,8 @@ invalid_value_too_long: Vrijednost je predugačka
 livechat_configuration_channel_terms_label: Uvjeti i odredbe kanala chata
 poll: Anketa
 poll_title: Nova anketa
-poll_instructions: Ispuni i pošalji ovaj obrazac za izradu nove ankete. Ovo će zamijeniti
-  sve postojeće ankete.
+poll_instructions: Ispuni i pošalji ovaj obrazac za izradu nove ankete. Ovo će 
+  zamijeniti sve postojeće ankete.
 poll_question: Pitanje
 poll_duration: Trajanje ankete (u minutama)
 poll_anonymous_results: Anonimni rezultati
@@ -334,31 +346,34 @@ poll_vote_instructions: 'Za glasanje klikni na svoj izbor ili pošalji poruku s 
   iza kojeg slijedi broj tvog izbora (Primjer: !1).'
 poll_is_over: Ova anketa je sada završena.
 poll_choice_invalid: Ovaj izbor nije valjan.
-poll_anonymous_vote_ok: Tvoje se glasanje uzima u obzir. Glasanja su anonimna, neće
-  se prikazati drugim sudionicima.
-poll_vote_ok: Tvoje se glasanje uzima u obzir. Brojači će se uskoro aktualizirati.
-feature_comes_with: Ova je funkcija dostupna s dodatkom za chat uživo verzije X.X.X.
-emoji_only_info: Kad je modus „Samo emoji” aktiviran, u svojim porukama možeš koristiti
-  samo emojije.
+poll_anonymous_vote_ok: Tvoje se glasanje uzima u obzir. Glasanja su anonimna, 
+  neće se prikazati drugim sudionicima.
+poll_vote_ok: Tvoje se glasanje uzima u obzir. Brojači će se uskoro 
+  aktualizirati.
+feature_comes_with: Ova je funkcija dostupna s dodatkom za chat uživo verzije 
+  X.X.X.
+emoji_only_info: Kad je modus „Samo emoji” aktiviran, u svojim porukama možeš 
+  koristiti samo emojije.
 emoji_only_mode_title: „Samo emoji” modus
-emoji_only_mode_desc_1: "U svojim chat sobama možeš aktivirati „Samo emoji” modus.\n
+emoji_only_mode_desc_1: "U svojim chat sobama možeš aktivirati „Samo emoji” modus.\n\
   Kad je taj modus aktiviran, sudionici mogu slati samo emojije (standardne ili prilagođene
   emojije kanala).\nOvo ograničenje ne vrijedi za moderatore.\n"
 emoji_only_mode_desc_3: "Za aktiviranje ili deaktiviranje ovog modusa možeš koristiti
   obrazac za konfiguraciju sobe.\nAko ga želiš aktivirati za sve svoje chat sobe odjednom
   koristi donji gumb.\n"
-emoji_only_enable_all_rooms: Aktiviraj „Samo emoji” modus u svim chat sobama kanala
-task_list_pick_message: "Nakon što odabereš popis zadataka, stvorit će se novi zadatak.\n
-  Za prikaz zadatka otvori aplikaciju zadataka koristeći gornji izbornik.\nViše informacija
-  u dokumentaciji dodatka za chat uživo.\n"
-livechat_configuration_channel_retractation_reason_desc: Razlog koji se prikazuje
-  pored izbrisanih poruka
+emoji_only_enable_all_rooms: Aktiviraj „Samo emoji” modus u svim chat sobama 
+  kanala
+task_list_pick_message: "Nakon što odabereš popis zadataka, stvorit će se novi zadatak.\n\
+  \ Za prikaz zadatka otvori aplikaciju zadataka koristeći gornji izbornik.\nViše
+  informacija u dokumentaciji dodatka za chat uživo.\n"
+livechat_configuration_channel_retractation_reason_desc: Razlog koji se 
+  prikazuje pored izbrisanih poruka
 livechat_configuration_applytomoderators_desc: "Ova funkcija standardno neće utjecati
   na poruke moderatora.\nOznačavanjem ove opcije će se izbrisati i poruke moderatora.\n"
 livechat_configuration_channel_special_chars_label: Zabrani posebne znakove
 livechat_configuration_channel_special_chars_tolerance_label: Tolerancija
-livechat_configuration_channel_special_chars_tolerance_desc: Dozvoljen broj posebnih
-  znakova u poruci bez da se poruka izbriše.
+livechat_configuration_channel_special_chars_tolerance_desc: Dozvoljen broj 
+  posebnih znakova u poruci bez da se poruka izbriše.
 livechat_configuration_channel_no_duplicate_label: Bez duplih poruka
 livechat_configuration_channel_no_duplicate_delay_label: Vremenski interval
 livechat_configuration_channel_no_duplicate_delay_desc: "Interval u sekundama, tijekom
@@ -366,7 +381,8 @@ livechat_configuration_channel_no_duplicate_delay_desc: "Interval u sekundama, t
 livechat_configuration_channel_no_duplicate_desc: "Aktiviranjem ove opcije, bot za
   moderiranje će automatski moderirati duple poruke.\nTo znači da ako korisnik pošalje
   istu poruku dva puta unutar X sekundi, druga će se poruka izbrisati.\n"
-livechat_configuration_channel_anonymize_moderation_label: Anonimiziraj radnje moderiranja
+livechat_configuration_channel_anonymize_moderation_label: Anonimiziraj radnje 
+  moderiranja
 livechat_configuration_channel_anonymize_moderation_desc: "Standardna vrijednost za
   anonimiziranje radnji moderiranja za nove sobe.\nKada je ovo aktivirano, radnje
   moderiranja bit će anonimizirane, kako bi se izbjeglo otkrivanje tko isključuje/izbacuje/…
@@ -398,23 +414,24 @@ emoji_only_mode_desc_2: "Ovaj modus može biti koristan na primjer:\n<ul>\n  <li
   \  <li>kada postoji previše sudionika koji govore i ne možeš više ispravno moderirati.</li>\n\
   </ul>\n"
 livechat_configuration_channel_special_chars_desc: "Aktiviranjem ove opcije, bot za
-  moderiranje će automatski izbrisati poruke koje sadrže više od X posebnih znakova.\n
-  Posebni znakovi su znakovi koji se ne uklapaju u nijednu od ovih kategorija: slova,
+  moderiranje će automatski izbrisati poruke koje sadrže više od X posebnih znakova.\n\
+  \ Posebni znakovi su znakovi koji se ne uklapaju u nijednu od ovih kategorija: slova,
   brojevi, znakovi interpunkcije, znakovi valuta, emojiji.\n"
 message_search_original_nick: Nadimak sudionika kada je poruka poslana
 prosody_firewall_label: Aktiviraj Prosody mod_firewall
 prosody_firewall_description: "<a href=\"https://modules.prosody.im/mod_firewall\"\
-  \ target=\"_blank\">mod_firewall</a> možeš aktivirati na svom Prosody serveru.\n
+  \ target=\"_blank\">mod_firewall</a> možeš aktivirati na svom Prosody serveru.\n\
   Za više informacija pročitaj <a href=\"https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/\"\
   \ target=\"_blank\">dokumentaciju</a>.\n"
-prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button secondary-button\"\
-  \ href=\"/p/livechat/admin/firewall\" target=\"_blank\">Kofiguriraj mod_firewall</a>\n"
+prosody_firewall_configure_button: "<a class=\"peertube-button-link orange-button
+  secondary-button\" href=\"/p/livechat/admin/firewall\" target=\"_blank\">Kofiguriraj
+  mod_firewall</a>\n"
 prosody_firewall_configuration: Prosody mod_firewall konfiguracija
 prosody_firewall_configuration_help: "Ovdje možeš konfigurirati modul Prosody <a href=\"\
-  https://modules.prosody.im/mod_firewall\" target=\"_blank\">mod_firewall</a>.\n
-  U nastavku možeš stvoriti više konfiguracijskih datoteka i promijeniti njihov redoslijed.\n
-  Nemoj se ustručavati dijeliti svoje konfiguracije sa zajednicom (na primjer dodavanjem
-  nekih primjera u dokumentaciju dodatka).\n"
+  https://modules.prosody.im/mod_firewall\" target=\"_blank\">mod_firewall</a>.\n\
+  \ U nastavku možeš stvoriti više konfiguracijskih datoteka i promijeniti njihov
+  redoslijed.\n Nemoj se ustručavati dijeliti svoje konfiguracije sa zajednicom (na
+  primjer dodavanjem nekih primjera u dokumentaciju dodatka).\n"
 enabled: Aktivirano
 prosody_firewall_name: Ime
 prosody_firewall_content: Sadržaj datoteke
