@@ -40,7 +40,7 @@ livechat_configuration_channel_command_message_label: Wiadomość
 livechat_configuration_channel_title: Opcje kanałów
 tasks: Zadania
 promote: Zostań moderatorem
-external_auth_facebook_oidc_label: Użyj Facebooka
+external_auth_facebook_oidc_label: Użyj mechanizmu logowania przez Facebooka
 login_external_auth_alert_message: Uwierzytelnianie nie powiodło się
 cancel: Anuluj
 menu_configuration_label: Czaty
@@ -56,7 +56,7 @@ livechat_emojis_file: Plik
 livechat_emojis_shortname: Skrócona nazwa
 save: Zapisz
 avatar_set_option_bird: Ptaki
-external_auth_google_oidc_label: Użyj Google
+external_auth_google_oidc_label: Użyj mechanizmu logowania przez konto Google
 task_name: Nazwa zadania
 avatar_set_option_cat: Koty
 task_description: Opis
@@ -78,10 +78,11 @@ external_auth_custom_oidc_button_label_label: Etykieta przycisku połączenia
 federation_dont_publish_remotely_label: Nie publikuj informacji o czacie
 federation_no_remote_chat_description: "Zaznaczenie tego ustawienia spowoduje, że
   instancja nigdy nie będzie wyświetlać czatów ze zdalnych filmów.\n"
-transparent_background: Przezroczyste tło (do integracji z transmisją, na przykład
-  z OBS)
-external_auth_custom_oidc_button_label_description: Ta etykieta będzie wyświetlana
-  użytkownikom jako etykieta przycisku do uwierzytelniania u tego dostawcy OIDC.
+transparent_background: Przezroczyste tło (do integracji z transmisją, na 
+  przykład z OBS)
+external_auth_custom_oidc_button_label_description: Ta etykieta będzie 
+  wyświetlana użytkownikom jako etykieta przycisku do uwierzytelniania u tego 
+  dostawcy OIDC.
 chat: Czat
 external_auth_description: "<h3>Uwierzytelnianie zewnętrzne</h3>\nDla użytkowników,
   którzy nie mają konta Peertube, można włączyć różne tryby uwierzytelniania w oparciu
@@ -97,33 +98,55 @@ chat_terms_description: "Poniższy regulamin będzie wyświetlany wszystkim uży
 use_current_theme_color: Użyj bieżących kolorów motywu
 federation_dont_publish_remotely_description: "Zaznaczenie tego ustawienia spowoduje,
   że Twoja instancja nie będzie publikować informacji o czacie na fediwersum.\nZdalne
-  instancje Peertube nie będą wiedziały, że są czatami powiązanymi z Twoimi filmami.<br>\n
-  <b>Uwaga</b>: jeśli już istnieją czaty, możliwe, że informacje zostały już opublikowane.\n
-  Będziesz musiał poczekać na następną aktualizację wideo, zanim informacje zostaną
+  instancje Peertube nie będą wiedziały, że są czatami powiązanymi z Twoimi filmami.<br>\n\
+  \ <b>Uwaga</b>: jeśli już istnieją czaty, możliwe, że informacje zostały już opublikowane.\n\
+  \ Będziesz musiał poczekać na następną aktualizację wideo, zanim informacje zostaną
   cofnięte.\nPonadto, jeśli wyłączysz to ustawienie, będziesz musiał poczekać na aktualizację
   filmów, zanim informacje\nzostaną ponownie opublikowane. Aktualizacja ta następuje
   między innymi po wznowieniu lub zakończeniu transmisji na żywo.<br>\n<b>Uwaga</b>:
-  to ustawienie wpływa tylko na publikację informacji za pośrednictwem protokołu ActivityPub.\n
-  Nie zapobiegnie ono wykryciu obecności czatu i próby połączenia się z nim przez
+  to ustawienie wpływa tylko na publikację informacji za pośrednictwem protokołu ActivityPub.\n\
+  \ Nie zapobiegnie ono wykryciu obecności czatu i próby połączenia się z nim przez
   zdalną aplikację.\n"
 tips_for_streamers: "Wskazówki dla streamerów: Aby osadzić czat w swojej transmisji,
   np. w OBS,\nwygeneruj link tylko do odczytu i użyj go jako źródła przeglądarki.\n"
 generate_iframe: Generuj kod iframe, aby osadzić czat na stronie internetowej
 chat_for_live_stream: 'Czat transmisji:'
 web: Przeglądarka
-connect_using_xmpp_help: Z pokojem można połączyć się za pomocą zewnętrznego konta
-  XMPP i ulubionego klienta XMPP.
+connect_using_xmpp_help: Z pokojem można połączyć się za pomocą zewnętrznego 
+  konta XMPP i ulubionego klienta XMPP.
 important_note_text: "Dokumentację wtyczki można znaleźć tutaj:\n<a href=\"https://livingston.frama.io/peertube-plugin-livechat/\"\
   \ target=\"_blank\">\n  Peertube Plugin Livechat documentation\n</a>.\n"
-diagnostic: "Przed zwróceniem się o pomoc, skorzystaj z narzędzia diagnostycznego:\n
-  <a class=\"peertube-plugin-livechat-launch-diagnostic\">Uruchom diagnostykę</a>\n
-  (jeśli ten przycisk nie otwiera nowego okna, spróbuj odświeżyć stronę).\n"
+diagnostic: "Przed zwróceniem się o pomoc, skorzystaj z narzędzia diagnostycznego:\n\
+  \ <a class=\"peertube-plugin-livechat-launch-diagnostic\">Uruchom diagnostykę</a>\n\
+  \ (jeśli ten przycisk nie otwiera nowego okna, spróbuj odświeżyć stronę).\n"
 federation_no_remote_chat_label: Nie wyświetlaj zdalnych czatów
 federation_description: "<h3>Federacja</h3>\nPoniższe ustawienia dotyczą federacji
   z innymi instancjami Peertube,\ni innym oprogramowaniem fediwersum.\n"
 room_type_option_video: Każdy film ma swój własny pokój rozmowy
-room_type_description: Możesz tutaj wybrać oddzielne pokoje dla każdego filmu lub
-  pogrupować je według kanałów.
-room_type_option_channel: Pokoje rozmów internetowych są pogrupowane według kanałów
+room_type_description: Możesz tutaj wybrać oddzielne pokoje dla każdego filmu 
+  lub pogrupować je według kanałów.
+room_type_option_channel: Pokoje rozmów internetowych są pogrupowane według 
+  kanałów
 auto_display_label: Automatycznie otwórz rozmowę
-auto_display_description: Podczas oglądania filmu okno rozmów otworzy się automatycznie.
+auto_display_description: Podczas oglądania filmu okno rozmów otworzy się 
+  automatycznie.
+external_auth_oidc_client_id_label: Identyfikator klienta
+external_auth_oidc_client_secret_label: Sekretny klucz klienta
+external_auth_oidc_redirect_uris_info_description: "<strong>Adres URI do przekierowań:</strong>\n\
+  Jeżeli chcesz skonfigurować przekierowanie do wybranego adresu URI na zewnętrznej
+  aplikacji, dodaj ten adres URL:\n"
+external_auth_google_oidc_description: "Włączenie tej opcji doda przycisk „zaloguj
+  się przez konto Google”.\nMusisz skonfigurować aplikację OAuth na stronie Google'a.\n"
+external_auth_facebook_oidc_description: "Włączenie tej opcji doda przycisk „zaloguj
+  się przez Facebooka”.\nMusisz skonfigurować aplikację OAuth na Facebooku.\n"
+open_blank_label: Pokaż przycisk do otwarcia w osobnym oknie
+open_blank_description: Na czacie pojawi się przycisk do jego otwarcia w osobnym
+  oknie.
+share_url_label: Pokaż przycisk do udostępniania linku do czatu
+share_url_description: Na czacie pojawi się przycisk do udostępnienia jego 
+  adresu (co może być np. wykorzystane w integracji dla programu OBS).
+share_url_option_nobody: Nie pokazuj nikomu
+share_url_option_everyone: Pokazuj każdemu
+share_url_option_owner: Pokazuj właścicielowi filmu
+share_url_option_owner_moderators: Pokazuj właścicielowi filmu oraz moderatorom 
+  instancji
