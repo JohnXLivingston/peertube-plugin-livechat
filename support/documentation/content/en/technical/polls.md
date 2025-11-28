@@ -148,7 +148,7 @@ If users are voting just after the poll ends (less than 30 seconds after the pol
 Following tags will be stripped of any incoming groupchat message: `x-poll`, `x-poll-question`, `x-poll-choice`.
 This is to avoid any poll spoofing.
 
-## Fronted
+## Frontend
 
 The poll Converse plugin does multiple things.
 
