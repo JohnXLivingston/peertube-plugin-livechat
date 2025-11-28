@@ -10,8 +10,8 @@ use_chat_help: Indien geactiveerd zal er naast de video een chat zijn.
 share_chat_link: Link naar deze chat delen
 read_only: Alleen leesbaar
 show_scrollbarr: Toon de schuifbalk
-transparent_background: Doorzichtige achtergrond (bijvoorbeeld voor stream-integratie
-  met OBS)
+transparent_background: Doorzichtige achtergrond (bijvoorbeeld voor 
+  stream-integratie met OBS)
 tips_for_streamers: 'Tips voor streamers: Om de chat aan je OBS toe te voegen genereer
   je een alleen-leesbare link en gebruik je die als een “browser source”.'
 copy: Kopiëren
@@ -19,7 +19,8 @@ link_copied: Link gekopieerd
 error: Fout
 open: Openen
 use_current_theme_color: Gebruik kleuren van huidige thema
-generate_iframe: Genereer een iframe-element om de chat in een webpagina te integreren
+generate_iframe: Genereer een iframe-element om de chat in een webpagina te 
+  integreren
 chat_for_live_stream: 'Chat voor de livestream:'
 room_name: Naam van chatroom
 room_description: Beschrijving van chatroom
@@ -29,8 +30,8 @@ channel: Kanaal
 last_activity: Laatste activiteit
 web: Web
 connect_using_xmpp: Via XMPP verbinden
-connect_using_xmpp_help: Je kan de chatroom betreden via een extern XMPP-account en
-  je favoriete XMPP-app.
+connect_using_xmpp_help: Je kan de chatroom betreden via een extern XMPP-account
+  en je favoriete XMPP-app.
 important_note_title: <h3>Belangrijke opmerkingen</h3>
 diagnostic: "Gebruik a.u.b. de diagnostische tool voordat je om hulp vraagt:\n<a class=\"\
   peertube-plugin-livechat-launch-diagnostic\">Diagnose starten</a>\n(als deze knop
@@ -44,26 +45,29 @@ federation_no_remote_chat_description: "Met deze instelling toont jouw exemplaar
 federation_no_remote_chat_label: Geen chats van andere exemplaren tonen
 federation_dont_publish_remotely_label: Chat-informatie niet openbaren
 federation_dont_publish_remotely_description: "Door deze instelling te activeren zal
-  jouw exemplaar geen informatie over chats delen met de rest van de fediverse.\n
-  Andere PeerTube-exemplaren zullen niet weten dat er chatrooms bij jouw videos zijn.<br>\n
-  <b>Pas op</b>: Als je al chats hebt lopen, dan kan het zijn dat informatie daarover
-  al gedeeld is.\nJe moet wachten op de volgende video-update voor het delen ongedaan
-  wordt gemaakt.\nBovendien, als je deze instelling de-activeert, zal je moeten wachten
-  tot de volgende video-update voor de informatie\nweer wordt gedeeld. Deze update
-  gebeurt onder andere wanneer een live-evenement verdergaat of stopt.<br>\n<b>Pas
-  op</b>: Deze instelling betreft enkel het delen van informatie via het ActivityPub-protocol.\n
-  Het voorkomt niet dat een applicatie op een andere manier de chats ontdekt, en ermee
-  probeert te verbinden.\n"
+  jouw exemplaar geen informatie over chats delen met de rest van de fediverse.\n\
+  \ Andere PeerTube-exemplaren zullen niet weten dat er chatrooms bij jouw videos
+  zijn.<br>\n <b>Pas op</b>: Als je al chats hebt lopen, dan kan het zijn dat informatie
+  daarover al gedeeld is.\nJe moet wachten op de volgende video-update voor het delen
+  ongedaan wordt gemaakt.\nBovendien, als je deze instelling de-activeert, zal je
+  moeten wachten tot de volgende video-update voor de informatie\nweer wordt gedeeld.
+  Deze update gebeurt onder andere wanneer een live-evenement verdergaat of stopt.<br>\n\
+  <b>Pas op</b>: Deze instelling betreft enkel het delen van informatie via het ActivityPub-protocol.\n\
+  \ Het voorkomt niet dat een applicatie op een andere manier de chats ontdekt, en
+  ermee probeert te verbinden.\n"
 chat_behaviour_description: <h3>Chatgedrag</h3>
 room_type_label: Kamertype
 open_blank_label: Laat de «Open in een nieuw venster» knop zien
-auto_display_description: Bij het kijken van een video zal de chat automatisch geopend
-  worden.
-open_blank_description: Er zal een knop komen om de chat in een nieuw venster te openen.
+auto_display_description: Bij het kijken van een video zal de chat automatisch 
+  geopend worden.
+open_blank_description: Er zal een knop komen om de chat in een nieuw venster te
+  openen.
 online_help: Online hulp
-room_type_description: Je kunt er hier voor kiezen om aparte kamers te hebben voor
-  elk video, of om ze per kanaal te groeperen.
+room_type_description: Je kunt er hier voor kiezen om aparte kamers te hebben 
+  voor elk video, of om ze per kanaal te groeperen.
 room_type_option_video: Elk video heeft zijn eigen gespreksruimte
 room_type_option_channel: Gesprekskamers zijn gegroepeerd per kanaal
 auto_display_label: Automatisch de chat openen
 share_url_label: Laat de «deel chat-link» knop zien
+chat: Chat
+copied: Gekopieerd
