@@ -7,131 +7,158 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2023-07-17 10:52+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Polish <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/pl/>\n"
+"PO-Revision-Date: 2025-11-28 09:45+0000\n"
+"Last-Translator: Oliwier Jaszczyszyn <oliwier.jaszczyszyn@proton.me>\n"
+"Language-Team: Polish <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact the author"
-msgstr ""
+msgstr "Skontaktuj się z autorem"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact me"
-msgstr ""
+msgstr "Skontaktuj się ze mną"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: [plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-support@room.im.yiny.org?join)."
 msgstr ""
+"Jeżeli masz jakiekolwiek pytania, albo chcesz porozmawiać o tym "
+"rozszerzeniu, możesz dołączyć do tego pokoju na XMPP poprzez jakąkolwiek "
+"aplikację kliencką obsługującą Jabbera: "
+"[plugin-livechat-support@room.im.yiny.org](xmpp:plugin-livechat-"
+"support@room.im.yiny.org?join)."
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
 msgid "If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my [Liberapay profile](https://liberapay.com/JohnLivingston/)."
 msgstr ""
+"Jeżeli chcesz wspomóc projekt finansowo, możesz skontaktować się poprzez e–"
+"maila, pisząc na adres git.[at].john-livingston.fr, albo sprawdzić mój "
+"[profil na Liberapay](https://liberapay.com/JohnLivingston/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Contributor Covenant Code of Conduct"
-msgstr ""
+msgstr "Warunki postępowania dla kontrybutorów"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Code of Conduct"
-msgstr ""
+msgstr "Warunki postępowania"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 msgid "This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, available at [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  Translations are available at [https://www.contributor-covenant.org/translations](https://www.contributor-covenant.org/translations).  Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr."
 msgstr ""
+"Te warunki postępowania są oparte o dokument [Contributor Covenant]"
+"(https://www.contributor-covenant.org) w wersji 2.1, który jest dostępny pod "
+"adresem "
+"[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html]"
+"(https://www.contributor-covenant.org/version/2/1/code_of_conduct.html).  "
+"Jego tłumaczenia są dostępne tutaj: "
+"[https://www.contributor-covenant.org/translations](https://"
+"www.contributor-covenant.org/translations).  Przykłady jakiegokolwiek "
+"nieakceptowalnego zachowania mogą być zgłoszone do administratorów "
+"społeczności, z którymi można się skontaktować przez e–maila, pisząc na "
+"adres git.[at].john-livingston.fr."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Develop"
-msgstr ""
+msgstr "Rozwijaj"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue."
 msgstr ""
+"Zawsze rozmawiaj na temat funkcji, które zamierzasz rozwijać, poprzez "
+"tworzenie/znalezienie oraz komentowanie odpowiedniego wątku dotyczącego "
+"Twojego problemu, zanim zaczniesz nad nim pracować, oraz informuj resztę "
+"społeczności o rozpoczęciu prac poprzez wyraźne oznaczenie danego wątku."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Pull Request must be done on the `main` branch."
-msgstr ""
+msgstr "Tzw. „pull request” musi być zrobiony na gałęzi `main`."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Until march 2023, contribution were made on the `develop` branch. This procedure is now deprecated."
 msgstr ""
+"Do marca 2023 roku, wszelkie kontrybucje były dodawane do gałęzi `develop`. "
+"Od tej pory uległo to zmianie."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Prerequisite for building this plugin"
-msgstr ""
+msgstr "Wymagania do kompilacji tego rozszerzenia"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is highly recommended to be familiar with following concepts:"
-msgstr ""
+msgstr "Silnie zalecanym jest znajomość poniższych zagadnień:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NodeJS"
-msgstr ""
+msgstr "NodeJS"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NPM"
-msgstr ""
+msgstr "NPM"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Typescript"
-msgstr ""
+msgstr "Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To build the plugin, you must have following packages:"
-msgstr ""
+msgstr "Żeby skompilować rozszerzenie, musisz posiadać następujące biblioteki:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`git`"
-msgstr ""
+msgstr "`git`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`npm` (>=8.x)"
-msgstr ""
+msgstr "`npm` (w wersji 8.x lub nowszej)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`nodejs` (>=14.x)"
-msgstr ""
+msgstr "`nodejs` (w wersji 14.x lub nowszej)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`build-essential`"
-msgstr ""
+msgstr "`build-essential`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -146,17 +173,24 @@ msgstr ""
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`reuse`"
-msgstr ""
+msgstr "`reuse`"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Please note that this plugin needs an AppImage for the Prosody XMPP server.  This AppImage is provided by the [Prosody AppImage](https://github.com/JohnXLivingston/prosody-appimage) sideproject.  The `build-prosody.sh` script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct."
 msgstr ""
+"Miej na uwadze to, że to rozszerzenie wymaga pliku AppImage oprogramowania "
+"Prosody, pozwalającego na uruchomienie serwera XMPP. Ten plik AppImage jest "
+"dostępny w projekcie [Prosody AppImage](https://github.com/JohnXLivingston/"
+"prosody-appimage). Skrypt o nazwie `build-prosody.sh` pobiera pliki "
+"wykonywalne załączone do tego repozytorium, i sprawdza ich hasze SHA-256 "
+"względem ich poprawności."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Clone the repository, buid the plugin, and create your feature branch:"
 msgstr ""
+"Sklonuj repozytorium, skompiluj rozszerzenie, i stwórz gałąź dla funkcji:"
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/contributing/develop/_index.md

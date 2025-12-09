@@ -7,27 +7,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-06-20 09:17+0200\n"
-"PO-Revision-Date: 2023-07-17 10:52+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Dutch <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nl/>\n"
+"PO-Revision-Date: 2025-11-29 15:33+0000\n"
+"Last-Translator: Tibbe Debats <weblate@weblate.framasoft.org>\n"
+"Language-Team: Dutch <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact the author"
-msgstr ""
+msgstr "Neem contact op met de auteur"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contact/_index.md
 #, no-wrap
 msgid "Contact me"
-msgstr ""
+msgstr "Neem contact met mij op"
 
 #. type: Plain text
 #: support/documentation/content/en/contact/_index.md
@@ -49,7 +50,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
 #, no-wrap
 msgid "Code of Conduct"
-msgstr ""
+msgstr "Gedragscode"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/codeofconduct/_index.md
@@ -70,7 +71,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Pull Request must be done on the `main` branch."
-msgstr ""
+msgstr "Pull Request moet worden gedaan op de `main` branch."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -87,51 +88,53 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "It is highly recommended to be familiar with following concepts:"
 msgstr ""
+"Het wordt ten zeerste aanbevolen om vertrouwd te zijn met de volgende "
+"concepten:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NodeJS"
-msgstr ""
+msgstr "NodeJS"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "NPM"
-msgstr ""
+msgstr "NPM"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Typescript"
-msgstr ""
+msgstr "Typescript"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "To build the plugin, you must have following packages:"
-msgstr ""
+msgstr "Om de plug-in te bouwen, moet je over de volgende pakketten beschikken:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`git`"
-msgstr ""
+msgstr "`git`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`npm` (>=8.x)"
-msgstr ""
+msgstr "`npm` (>=8.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`nodejs` (>=14.x)"
-msgstr ""
+msgstr "`nodejs` (>=14.x)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "`build-essential`"
-msgstr ""
+msgstr "`build-essential`"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/develop/_index.md
