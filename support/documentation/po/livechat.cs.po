@@ -3800,17 +3800,17 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "To open the Moderator Notes Application, there is a \"{{% livechat_label \"moderator_notes\" %}}\" button in the top chat menu:"
-msgstr "Pro otevření aplikace Moderator Notes (Poznámky moderátora) je v horním menu chatu tlačítko „{{% livechat_label „moderator_notes“ %}}“:"
+msgstr "Pro otevření aplikace Moderator Notes (Poznámky moderátora) je v horním menu chatu tlačítko „{{% livechat_label \"moderator_notes\" %}}“:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "![Screenshot videa Peertube s chatem na pravé straně. Horní menu chatu je otevřené a obsahuje tlačítko „{{% livechat_label „moderator_notes“ %}}“.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Otevření aplikace Moderator Notes\")"
+msgstr "![Screenshot videa Peertube s chatem na pravé straně. Horní menu chatu je otevřené a obsahuje tlačítko „{{% livechat_label \"moderator_notes\" %}}“.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Otevření aplikace Moderator Notes\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "![Screenshot z chatu Peertube, celá obrazovka. Otevřené horní menu chatu s tlačítkem „{{% livechat_label „moderator_notes“ %}}“.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px Otevření aplikace Moderator Notes\")"
+msgstr "![Screenshot z chatu Peertube, celá obrazovka. Otevřené horní menu chatu s tlačítkem „{{% livechat_label \"moderator_notes\" %}}“.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px Otevření aplikace Moderator Notes\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
