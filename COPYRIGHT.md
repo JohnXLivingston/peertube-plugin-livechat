@@ -20,7 +20,7 @@ Copyright holders:
 
 Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).
 The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.
-PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/).
+PNG files are under CC-By licences, and comes from the [Sepia avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), the [cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), the [bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), the [fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/) and the [abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php).
 
 Some material icons downloaded from this website where used for icons: [Material.io](https://material.io/resources/icons).
 

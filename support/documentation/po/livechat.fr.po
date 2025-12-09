@@ -7,11 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-20 09:17+0200\n"
+"POT-Creation-Date: 2025-12-09 16:18+0100\n"
 "PO-Revision-Date: 2025-12-09 15:03+0000\n"
 "Last-Translator: John Livingston <git@john-livingston.fr>\n"
-"Language-Team: French <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
+"Language-Team: French <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -949,7 +948,9 @@ msgstr "Le plugin est maintenu par [John Livingston](https://www.john-livingston
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
+#, fuzzy
+#| msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
+msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [Sepia avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), the [cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), the [bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), the [fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/) and the [abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php)."
 msgstr "Merci à David Revoy pour son travail sur la mascotte de Peertube, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube). Le design est en licence CC-By, et les fichiers SVG utilisés pour créer certains logos et avatars en GPLv3.0."
 
 #. type: Plain text
@@ -1398,15 +1399,7 @@ msgstr "Vous devez ensuite placer ces certificats dans un dossier qui sera acces
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "If you want to use the ProsodyCtl utility to import certificates, this utility is available (once Peertube is started) using the following command (adapting the path to your Peertube data folder, and replacing \"xxx\" with the arguments you wish to pass to prosodyctl): `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
-msgstr ""
-"Si vous voulez utiliser l'utilitaire ProsodyCtl (pour importer des "
-"certificats letsencrypts, générer des certificats, etc...), cet utilitaire "
-"est disponible (une fois Peertube démarré) en utilisant la commande qui suit "
-"(en adaptant le chemin vers votre dossier data Peertube, et en remplaçant "
-"«xxx» par les arguments que vous souhaitez passer à prosodyctl) : `sudo -u "
-"peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/"
-"prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/"
-"storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
+msgstr "Si vous voulez utiliser l'utilitaire ProsodyCtl (pour importer des certificats letsencrypts, générer des certificats, etc...), cet utilitaire est disponible (une fois Peertube démarré) en utilisant la commande qui suit (en adaptant le chemin vers votre dossier data Peertube, et en remplaçant «xxx» par les arguments que vous souhaitez passer à prosodyctl) : `sudo -u peertube /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosodyAppImage/squashfs-root/AppRun prosodyctl --config /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/prosody/prosody.cfg.lua xxx`"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1988,16 +1981,7 @@ msgstr "Ainsi, les administrateurs de Peertube pourront définir des règles ava
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "These rules could be used to run arbitrary code on the server.  If you are a hosting provider, and you don't want to allow Peertube admins to write such rules, you can disable the online editing by creating a `disable_mod_firewall_editing` file in the plugin directory (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin.  You can still use mod_firewall by editing files directly on the server."
-msgstr ""
-"Ces règles pourraient être utilisées pour exécuter un code arbitraire sur le "
-"serveur.  Si vous êtes un hébergeur, et que vous ne voulez pas permettre aux "
-"administrateurs de Peertube d'écrire de telles règles, vous pouvez "
-"désactiver l'édition en ligne en créant un fichier "
-"`disable_mod_firewall_editing` dans le répertoire du plugin (`plugins/data/"
-"peertube-plugin-livechat/disable_mod_firewall_editing`).  Cette option est "
-"en \"opt-out\", car les administrateurs de Peertube peuvent déjà exécuter du "
-"code arbitraire en installant n'importe quel plugin.  Vous pouvez toujours "
-"utiliser mod_firewall en éditant des fichiers directement sur le serveur."
+msgstr "Ces règles pourraient être utilisées pour exécuter un code arbitraire sur le serveur.  Si vous êtes un hébergeur, et que vous ne voulez pas permettre aux administrateurs de Peertube d'écrire de telles règles, vous pouvez désactiver l'édition en ligne en créant un fichier `disable_mod_firewall_editing` dans le répertoire du plugin (`plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing`).  Cette option est en \"opt-out\", car les administrateurs de Peertube peuvent déjà exécuter du code arbitraire en installant n'importe quel plugin.  Vous pouvez toujours utiliser mod_firewall en éditant des fichiers directement sur le serveur."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2008,9 +1992,7 @@ msgstr "Modifier les règles"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "First, you must enable the feature in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
-msgstr ""
-"Tout d'abord, veuillez activer la fonctionnalité dans les [paramètres plugin]"
-"(/peertube-plugin-livechat/fr/documentation/admin/settings)."
+msgstr "Tout d'abord, veuillez activer la fonctionnalité dans les [paramètres plugin](/peertube-plugin-livechat/fr/documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2042,18 +2024,7 @@ msgstr "Les fichiers sont chargés dans l'ordre alphabétique.  Vous pouvez  uti
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "You can also edit these firewall rules directly on the server, in the `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/` directory.  File names must only contains alphanumerical characters, underscores and hyphens.  The extension must be `.pfw`, or `.pfw.disabled` if you want to disable a file.  Please be sure that the peertube system user has write access to these files, else the web editing interface will fail.  Once you have edited these files, you must reload prosody.  This can be done by saving the plugin settings, or saving the mod_firewall configuration in the web interface, or by restarting Peertube."
-msgstr ""
-"Vous pouvez également modifier ces règles de pare-feu directement sur le "
-"serveur, dans le répertoire `plugins/data/peertube-plugin-livechat/prosody/"
-"mod_firewall_config/`. Les noms de fichiers doivent uniquement contenir des "
-"caractères alphanumériques, des traits de soulignement et des tirets. L’"
-"extension doit être `.pfw`, ou `.pfw.disabled` si vous souhaitez désactiver "
-"un fichier. Assurez-vous que l’utilisateur système `peertube` dispose des "
-"droits d’écriture sur ces fichiers, sinon l’interface web d’édition "
-"échouera. Une fois ces fichiers modifiés, vous devez recharger prosody. Cela "
-"peut être fait en enregistrant les paramètres du plugin, ou en sauvegardant "
-"la configuration de mod_firewall dans l’interface web, ou encore en "
-"redémarrant PeerTube."
+msgstr "Vous pouvez également modifier ces règles de pare-feu directement sur le serveur, dans le répertoire `plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/`. Les noms de fichiers doivent uniquement contenir des caractères alphanumériques, des traits de soulignement et des tirets. L’extension doit être `.pfw`, ou `.pfw.disabled` si vous souhaitez désactiver un fichier. Assurez-vous que l’utilisateur système `peertube` dispose des droits d’écriture sur ces fichiers, sinon l’interface web d’édition échouera. Une fois ces fichiers modifiés, vous devez recharger prosody. Cela peut être fait en enregistrant les paramètres du plugin, ou en sauvegardant la configuration de mod_firewall dans l’interface web, ou encore en redémarrant PeerTube."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md

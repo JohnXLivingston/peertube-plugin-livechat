@@ -6,17 +6,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2025-06-20 09:17+0200\n"
+"POT-Creation-Date: 2025-12-09 16:18+0100\n"
 "PO-Revision-Date: 2025-11-21 14:45+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
+"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.14.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
@@ -540,9 +538,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "You can then preview the result using `hugo serve -s support/documentation/`, and using the language selector."
-msgstr ""
-"Rezultat zatim možeš pregledati pomoću naredbe `hugo serve -s support/"
-"documentation/` i pomoću birača jezika."
+msgstr "Rezultat zatim možeš pregledati pomoću naredbe `hugo serve -s support/documentation/` i pomoću birača jezika."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -604,9 +600,7 @@ msgstr "Što ako ne mogu koristiti hugo i/ili po4a?"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Just edit english markdown files, and specify that you can't build translations when you make your Pull Request."
-msgstr ""
-"Uredi engleske markdown datoteke i navedi da ne možeš izgraditi prijevode "
-"kada pošalješ zahtjev za povlačenjem."
+msgstr "Uredi engleske markdown datoteke i navedi da ne možeš izgraditi prijevode kada pošalješ zahtjev za povlačenjem."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/document/_index.md
@@ -617,9 +611,7 @@ msgstr "Objavljivanje"
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "Publishing the documentation is automatic, as soon as the changes are merged into the `documentation` branch."
-msgstr ""
-"Objavljivanje dokumentacije ze izvršava automatski, čim se promjene spoje u "
-"granu `documentation`."
+msgstr "Objavljivanje dokumentacije ze izvršava automatski, čim se promjene spoje u granu `documentation`."
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/contributing/feedback/_index.md
@@ -663,9 +655,7 @@ msgstr "Možeš doprinijeti prijevodu ovog dodatka. Za prevođenje koristimo pla
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Never modify directly files in the `languages` folder, this could lead to conflicts."
-msgstr ""
-"Nikada nemoj izravno mijenjati datoteke u mapi `languages`, to bi moglo "
-"dovesti do konflikata."
+msgstr "Nikada nemoj izravno mijenjati datoteke u mapi `languages`, to bi moglo dovesti do konflikata."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -691,9 +681,7 @@ msgstr "Stvori lozinku i postavi svoj račun"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Go to the plugin project page: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
-msgstr ""
-"Idi na stranicu projekta s dodacima: https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat/"
+msgstr "Idi na stranicu projekta s dodacima: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -703,17 +691,12 @@ msgstr "Odaberi jezik koji želiš prevesti"
 #. type: Bullet: '* '
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Just translate missing sentences, or correct the ones that seems incorrect to you."
-msgstr ""
-"Jednostavno prevedi rečenice koje nedostaju ili ispravi one koje ti se čine "
-"netočnima."
+msgstr "Jednostavno prevedi rečenice koje nedostaju ili ispravi one koje ti se čine netočnima."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "There might be some «very technical» strings. If you are not 100% sure of the meaning, or of your translation, you better not translate it, so it will display in english."
-msgstr ""
-"Moguće je da postoje neki „vrlo tehnički“ izrazi. Ako ne znaš 100 % što "
-"znače ili kako su prevedeni u tvom prijevodu, bolje je da ih ne prevodiš, "
-"kako bi se prikazali na engleskom."
+msgstr "Moguće je da postoje neki „vrlo tehnički“ izrazi. Ako ne znaš 100 % što znače ili kako su prevedeni u tvom prijevodu, bolje je da ih ne prevodiš, kako bi se prikazali na engleskom."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -735,10 +718,7 @@ msgstr "Dodavanje novog jezika"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you think there is a missing locale, please check first if it is handled in Peertube.  If so, you can [open an issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) to ask for it."
-msgstr ""
-"Ako misliš da nedostaje jezik, najprije provjeri je li ga Peertube podržava. "
-"Ako nedostaje, možeš [otvoriti problem](https://github.com/JohnXLivingston/"
-"peertube-plugin-livechat/issues) i zatražiti jezik."
+msgstr "Ako misliš da nedostaje jezik, najprije provjeri je li ga Peertube podržava. Ako nedostaje, možeš [otvoriti problem](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) i zatražiti jezik."
 
 #. type: Title ##
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -749,16 +729,12 @@ msgstr "Dodavanje novih izraza / koristi prijevode u kodu"
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "If you are working on new features, and need new strings, you can create them directly in Weblate.  The english version is mandatory. Start with it."
-msgstr ""
-"Ako radiš na novim funkcijama i trebaš nove izraze, možeš ih stvoriti "
-"izravno u Weblateu. Engleska verzija je obavezna. Počni s njom."
+msgstr "Ako radiš na novim funkcijama i trebaš nove izraze, možeš ih stvoriti izravno u Weblateu. Engleska verzija je obavezna. Počni s njom."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
 msgid "Each string is linked to a key (for example `use_chat`).  Choose an explicit key in english, lower case."
-msgstr ""
-"Svaki izraz je povezan s ključem (na primjer `use_chat`). Odaberi "
-"eksplicitni ključ na engleskom i upiši ga malim slovima."
+msgstr "Svaki izraz je povezan s ključem (na primjer `use_chat`). Odaberi eksplicitni ključ na engleskom i upiši ga malim slovima."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -929,13 +905,7 @@ msgstr "Zasluge"
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "[package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) and [LICENSE](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) files contain the license information for this software and its dependencies."
-msgstr ""
-"Datoteke [package.json](https://github.com/JohnXLivingston/"
-"peertube-plugin-livechat/blob/main/package.json), [AUTORSKA PRAVA](https://"
-"github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) "
-"i [LICENCA](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/"
-"main/LICENSE) sadrže informacije o licenci za ovaj softver i njegove "
-"ovisnosti."
+msgstr "Datoteke [package.json](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/package.json), [AUTORSKA PRAVA](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/COPYRIGHT.md) i [LICENCA](https://github.com/JohnXLivingston/peertube-plugin-livechat/blob/main/LICENSE) sadrže informacije o licenci za ovaj softver i njegove ovisnosti."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -944,7 +914,7 @@ msgstr "Dodatak održava [John Livingston](https://www.john-livingston.fr/)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
+msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [Sepia avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), the [cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), the [bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), the [fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/) and the [abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php)."
 msgstr ""
 
 #. type: Plain text
@@ -1203,9 +1173,7 @@ msgstr "Prijavi se na svoj Peertube račun"
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "This feature is not yet available, and will come in a future version of the plugin."
-msgstr ""
-"Ova funkcija još nije dostupna i bit će dostupna u jednoj budućoj verziji "
-"dodatka."
+msgstr "Ova funkcija još nije dostupna i bit će dostupna u jednoj budućoj verziji dodatka."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1989,10 +1957,7 @@ msgstr "Primjeri"
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
 msgid "Don't hesitate to share your rules.  To do so, you can for example edit this [page](/peertube-plugin-livechat/contributing/document/#write-documentation)."
-msgstr ""
-"Ne ustručavaj se dijeliti svoja pravila. Za to, na primjer, možeš urediti "
-"ovu [stranicu](/peertube-plugin-livechat/contributing/document/#write-"
-"documentation)."
+msgstr "Ne ustručavaj se dijeliti svoja pravila. Za to, na primjer, možeš urediti ovu [stranicu](/peertube-plugin-livechat/contributing/document/#write-documentation)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2124,111 +2089,72 @@ msgstr "Mijenjanje izgleda pomoću tema"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "You can choose from several different sets the default avatars that will be used for chat users."
-msgstr ""
-"Možeš birati između nekoliko različitih skupova standardnih avatara koji će "
-"se koristiti za korisnike chata."
+msgstr "Možeš birati između nekoliko različitih skupova standardnih avatara koji će se koristiti za korisnike chata."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_sepia %}}: [David Revoy's Peertube avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_sepia %}}: "
-"[Generator avatara Davida Revoya na Peertubeu](https://www.peppercarrot.com/"
-"extras/html/2023_peertube-generator/), licenca [CC-By](https://"
-"creativecommons.org/licenses/by/4.0/)"
+msgstr "{{% livechat_label avatar_set_option_sepia %}}: [Generator avatara Davida Revoya na Peertubeu](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), licenca [CC-By](https://creativecommons.org/licenses/by/4.0/)"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Sepia avatar example](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
-msgstr ""
-"![Primjer sepia avatara](/peertube-plugin-livechat/images/"
-"avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
+msgstr "![Primjer sepia avatara](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_cat %}}: [David Revoy's cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_cat %}}: "
-"[Generator mačjih avatara Davida Revoya](https://www.peppercarrot.com/extras/"
-"html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/"
-"4.0/) licenca"
+msgstr "{{% livechat_label avatar_set_option_cat %}}: [Generator mačjih avatara Davida Revoya](https://www.peppercarrot.com/extras/html/2016_cat-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Cats avatar example](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Cats\")"
-msgstr ""
-"![Primjer mačjeg avatara](/peertube-plugin-livechat/images/"
-"avatar_cat.png?classes=shadow,border&height=40px \"Mačke\")"
+msgstr "![Primjer mačjeg avatara](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Mačke\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_bird %}}: [David Revoy's bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_bird %}}: "
-"[Generator avatara ptica Davida Revoya](https://www.peppercarrot.com/extras/"
-"html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/"
-"4.0/) licenca"
+msgstr "{{% livechat_label avatar_set_option_bird %}}: [Generator avatara ptica Davida Revoya](https://www.peppercarrot.com/extras/html/2019_bird-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Birds avatar example](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
-msgstr ""
-"![Primjer avatara ptica](/peertube-plugin-livechat/images/"
-"avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
+msgstr "![Primjer avatara ptica](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_fenec %}}: [David Revoy's fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_fenec %}}: "
-"[Generator avatara Davida Revoya za lisice/mobilizon](https://"
-"www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://"
-"creativecommons.org/licenses/by/4.0/) licenca"
+msgstr "{{% livechat_label avatar_set_option_fenec %}}: [Generator avatara Davida Revoya za lisice/mobilizon](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/), [CC-By](https://creativecommons.org/licenses/by/4.0/) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Fenecs avatar example](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
-msgstr ""
-"![Primjer avatara lisica](/peertube-plugin-livechat/images/"
-"avatar_fenec.png?classes=shadow,border&height=40px \"Lisice\")"
+msgstr "![Primjer avatara lisica](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Lisice\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_abstract %}}: [David Revoy's Abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), [CC-By](https://creativecommons.org/licenses/by/4.0/) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_abstract %}}: "
-"[Generator apstraktnih avatara Davida Revoya](https://www.peppercarrot.com/"
-"extras/html/2017_abstract-generator/index.php), [CC-By](https://"
-"creativecommons.org/licenses/by/4.0/) licenca"
+msgstr "{{% livechat_label avatar_set_option_abstract %}}: [Generator apstraktnih avatara Davida Revoya](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php), [CC-By](https://creativecommons.org/licenses/by/4.0/) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Abstracts avatar example](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
-msgstr ""
-"![Primjer apstraktnih avatara](/peertube-plugin-livechat/images/"
-"avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
+msgstr "![Primjer apstraktnih avatara](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "{{% livechat_label avatar_set_option_legacy %}}: Based on [David Revoy' work](https://www.davidrevoy.com), [AGPL-v3](https://www.gnu.org/licenses/agpl-3.0.en.html) license"
-msgstr ""
-"{{% livechat_label avatar_set_option_legacy %}}: Na temelju "
-"[rada Davida Revoya](https://www.davidrevoy.com), [AGPL-v3](https://"
-"www.gnu.org/licenses/agpl-3.0.en.html) licenca"
+msgstr "{{% livechat_label avatar_set_option_legacy %}}: Na temelju [rada Davida Revoya](https://www.davidrevoy.com), [AGPL-v3](https://www.gnu.org/licenses/agpl-3.0.en.html) licenca"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Legacy avatar example](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
-msgstr ""
-"![Primjer starog avatara](/peertube-plugin-livechat/images/"
-"avatar_legacy.jpg?classes=shadow,border&height=40px \"Stari\")"
+msgstr "![Primjer starog avatara](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Stari\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "If you can't see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it."
-msgstr ""
-"Ako ne vidiš promjenu odah, to bi moglo biti zbog predmemorije tvojeg "
-"preglednika. Izbriši spremljene sesije preglednika ili ga ponovo pokreni."
+msgstr "Ako ne vidiš promjenu odah, to bi moglo biti zbog predmemorije tvojeg preglednika. Izbriši spremljene sesije preglednika ili ga ponovo pokreni."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2238,9 +2164,7 @@ msgstr "Možeš odabrati koju temu želiš koristiti za ConverseJS:"
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "Peertube theme: this is a special theme, made especially for peertube's integration."
-msgstr ""
-"Peertube tema: ovo je posebna tema, napravljena posebno za Peertubeovu "
-"integraciju."
+msgstr "Peertube tema: ovo je posebna tema, napravljena posebno za Peertubeovu integraciju."
 
 #. type: Bullet: '- '
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2879,10 +2803,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the Peertube new live form.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"New live\")"
-msgstr ""
-"![Slika ekrana obrasca za novi prijenos uživo na Peertubeu.](/peertube-"
-"plugin-livechat/images/new_live.png?classes=shadow,border&height=200px "
-"\"Novi prijenos uživo\")"
+msgstr "![Slika ekrana obrasca za novi prijenos uživo na Peertubeu.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"Novi prijenos uživo\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3267,18 +3188,13 @@ msgstr "Ako u chat sobi nema korisnika, bot neće slati nijednu poruku."
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "![Screenshot of the channel options page, with some fields to configure a new timer.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px \"Timers configuration\")"
-msgstr ""
-"![Snimka ekrana stranice s opcijama kanala, s nekoliko polja za "
-"konfiguriranje novog mjerača vremena.](/peertube-plugin-livechat/images/"
-"bot_quotes.png?classes=shadow,border&height=200px "
-"\"Konfiguracija mjerača vremena\")"
+msgstr "![Snimka ekrana stranice s opcijama kanala, s nekoliko polja za konfiguriranje novog mjerača vremena.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px \"Konfiguracija mjerača vremena\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 #, no-wrap
 msgid "The bot can automatically moderate messages containing too many special characters."
-msgstr ""
-"Bot može automatski moderirati poruke koje sadrže previše posebnih znakova."
+msgstr "Bot može automatski moderirati poruke koje sadrže previše posebnih znakova."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
@@ -3289,12 +3205,7 @@ msgstr "Posebni znakovi"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 msgid "![Screenshot of the channel options page, with several fields to configure the \"Forbid special characters\" option.](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
-msgstr ""
-"![Snimka ekrana stranice s opcijama kanala, s nekoliko polja za "
-"konfiguriranje opcije „Zabrani posebne znakove”.](/peertube-plugin-livechat/"
-"images/"
-"forbid_special_chars_configuration.png?classes=shadow,border&height=400px "
-"\"Konfiguracija za „Zabrani posebne znakove”\")"
+msgstr "![Snimka ekrana stranice s opcijama kanala, s nekoliko polja za konfiguriranje opcije „Zabrani posebne znakove”.](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Konfiguracija za „Zabrani posebne znakove”\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -4941,21 +4852,12 @@ msgstr "Instaliranje"
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "As a Peertube administrator, you can setup this plugin on your instance simply by using the Peertube plugin marketplace included in the administration interface.  Search for \"livechat\", then click \"install\": that's it!"
-msgstr ""
-"Kao administrator Peertubea, ovaj dodatak možeš postaviti na svoju instancu "
-"jednostavnim korištenjem trgovine Peertube dodataka koja je uključena u "
-"administratorskom sučelju. Potraži „livechat”, a zatim klikni „instaliraj”: "
-"to je to!"
+msgstr "Kao administrator Peertubea, ovaj dodatak možeš postaviti na svoju instancu jednostavnim korištenjem trgovine Peertube dodataka koja je uključena u administratorskom sučelju. Potraži „livechat”, a zatim klikni „instaliraj”: to je to!"
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of Peertube plugins admin page. The search fields contains \"livechat\", and the search results show the livechat plugin.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px \"Livechat installation\")"
-msgstr ""
-"![Snimka ekrana administratorske stranice Peertube dodataka. Polja za "
-"pretraživanje sadrže „livechat”, a rezultati pretraživanja prikazuju "
-"livechat dodatak.](/peertube-plugin-livechat/images/"
-"installation.png?classes=shadow,border&height=200px "
-"\"Instalacija livechat dodatka\")"
+msgstr "![Snimka ekrana administratorske stranice Peertube dodataka. Polja za pretraživanje sadrže „livechat”, a rezultati pretraživanja prikazuju livechat dodatak.](/peertube-plugin-livechat/images/installation.png?classes=shadow,border&height=200px \"Instalacija livechat dodatka\")"
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -4986,42 +4888,27 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "Some times, you have to protect your community from bad people.  As an instance administrator, you can choose to disallow federation for the livechat plugin.  If remote actors behave badly, streamers, moderators and administrators can ban or mute users."
-msgstr ""
-"Ponekad moraš zaštititi svoju zajednicu od loših ljudi. Kao administrator "
-"instance možeš zabraniti federaciju za livechat dodatak. Ako se udaljeni "
-"akteri ponašaju loše, streameri, moderatori i administratori mogu zabraniti "
-"ili isključiti korisnike."
+msgstr "Ponekad moraš zaštititi svoju zajednicu od loših ljudi. Kao administrator instance možeš zabraniti federaciju za livechat dodatak. Ako se udaljeni akteri ponašaju loše, streameri, moderatori i administratori mogu zabraniti ili isključiti korisnike."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This plugin comes with a built-in [chat bot](/peertube-plugin-livechat/documentation/user/streamers/bot/).  Check its documentation for more information."
-msgstr ""
-"Ovaj dodatak dolazi s ugrađenim [chat botom](/peertube-plugin-livechat/"
-"documentation/user/streamers/bot/). Za više informacija pregledaj njegovu "
-"dokumentaciju."
+msgstr "Ovaj dodatak dolazi s ugrađenim [chat botom](/peertube-plugin-livechat/documentation/user/streamers/bot/). Za više informacija pregledaj njegovu dokumentaciju."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can also plug in any other XMPP chat bot, using [XMPP External Components](https://prosody.im/doc/components).  To do so, you just have to configure External Components access in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
-msgstr ""
-"Također možeš uključiti bilo kojeg drugog XMPP chat bota koristeći "
-"[eksterne XMPP komponente](https://prosody.im/doc/components). Jednostavno "
-"konfiguriraj pristup eksternim komponentama u [postavkama dodatka](/peertube-"
-"plugin-livechat/documentation/admin/settings)."
+msgstr "Također možeš uključiti bilo kojeg drugog XMPP chat bota koristeći [eksterne XMPP komponente](https://prosody.im/doc/components). Jednostavno konfiguriraj pristup eksternim komponentama u [postavkama dodatka](/peertube-plugin-livechat/documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "When joining a room, you will see previous messages.  Even those sent before you joined the room."
-msgstr ""
-"Nakon pridruživanja sobi vidjet ćeš prethodne poruke. Čak i one koje su "
-"poslane prije tvog pridruživanja sobi."
+msgstr "Nakon pridruživanja sobi vidjet ćeš prethodne poruke. Čak i one koje su poslane prije tvog pridruživanja sobi."
 
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "This behaviour can be changed room by room, and default retention duration can be chosen by instance's administrators."
-msgstr ""
-"Ovo se ponašanje može mijenjati od sobe do sobe, a administratori instance "
-"mogu odabrati standardno trajanje zadržavanja."
+msgstr "Ovo se ponašanje može mijenjati od sobe do sobe, a administratori instance mogu odabrati standardno trajanje zadržavanja."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md
@@ -5080,11 +4967,7 @@ msgstr "Praćenje grešaka i nove funkcije"
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you have new feature requests, bugs, or difficulties to setup the plugin, you can use the [Github issue tracker](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). If possible, try using english or french."
-msgstr ""
-"Ako imaš nove zahtjeve za funkcijama, greške ili poteškoće s postavljanjem "
-"dodatka, koristi [Github alat za praćenje problema](https://github.com/"
-"JohnXLivingston/peertube-plugin-livechat/issues). Po mogućnosti koristiti "
-"engleski ili francuski jezik."
+msgstr "Ako imaš nove zahtjeve za funkcijama, greške ili poteškoće s postavljanjem dodatka, koristi [Github alat za praćenje problema](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues). Po mogućnosti koristiti engleski ili francuski jezik."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
@@ -5094,22 +4977,17 @@ msgstr "Za uvid u plan za nadolazeće funkcije, pogledaj:"
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 msgid "this [github project](https://github.com/users/JohnXLivingston/projects/1)."
-msgstr ""
-"ovaj [github projekt](https://github.com/users/JohnXLivingston/projects/1)."
+msgstr "ovaj [github projekt](https://github.com/users/JohnXLivingston/projects/1)."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/issues/_index.md
 msgid "the [milestones on github](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones)."
-msgstr ""
-"[planiranje verzija na githubu](https://github.com/JohnXLivingston/"
-"peertube-plugin-livechat/milestones)."
+msgstr "[planiranje verzija na githubu](https://github.com/JohnXLivingston/peertube-plugin-livechat/milestones)."
 
 #. type: Plain text
 #: support/documentation/content/en/issues/_index.md
 msgid "If you are a webdesigner or a ConverseJS/Prosody/XMPP expert, and want to help improve this plugin, you are welcome."
-msgstr ""
-"Web dizajneri i stručnjaci za ConverseJS/Prosody/XMPP koji žele pomoći u "
-"poboljšanju ovog dodatka su dobrodošli."
+msgstr "Web dizajneri i stručnjaci za ConverseJS/Prosody/XMPP koji žele pomoći u poboljšanju ovog dodatka su dobrodošli."
 
 #, fuzzy
 #~| msgid "This feature comes with the livechat plugin version 10.0.0."
