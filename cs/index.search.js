@@ -9,38 +9,37 @@ Livechat capabilities The plugin has many advanced features. As it is using the 
 Federace Peertube is part of the fediverse: you can create a network of Peertube instances, sharing content between them.
 This plugin can handle federation: when viewing a livestream from a remote instance, you will join the chat room with your local account. You will be automatically connected with your current nickname and avatar.
 Of course, for the federation to work, the plugin must be installed on both instances.
-Moderation Some times, you have to protect your community from bad people. As an instance administrator, you can choose to disallow federation for the livechat plugin. If remote actors behave badly, streamers, moderators and administrators can ban or mute users.
+Moderování Some times, you have to protect your community from bad people. As an instance administrator, you can choose to disallow federation for the livechat plugin. If remote actors behave badly, streamers, moderators and administrators can ban or mute users.
 Chat bot This plugin comes with a built-in chat bot. Check its documentation for more information.
 You can also plug in any other XMPP chat bot, using XMPP External Components. To do so, you just have to configure External Components access in the plugin settings.
-Chat persistence When joining a room, you will see previous messages. Even those sent before you joined the room.
+Trvalost chatu When joining a room, you will see previous messages. Even those sent before you joined the room.
 This behaviour can be changed room by room, and default retention duration can be chosen by instance’s administrators.
 Integrate the chat in your live stream When using software as OBS for you live stream, you can embed the chat in the video stream. This is for example useful for replays.
 In the following screenshot, you can see a live replay, where the chat content is embeded on bottom of the video:
 In the following screenshot, you can see an OBS setup, where the chat is included as a source in the current scene (background color can be changed, and can be transparent):
-![Screenshot softwaru OBS, kde byl chat přidán jako zdroj webového prohlížeče.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px „Vložení chatu do OBS“)
 Other usages By default, each streamer will be able to activate/deactivate the chat for their live streams.
 But on the instance level, administrators can choose to activate the chat for all videos (live and/or VOD).
-You can even activate the chat for specific VOD videos. This is how the demo page works: it is not a live stream, but I have activated the chat specifically for this video.`,description:"Introduction",tags:[],title:"Introduction",uri:"/peertube-plugin-livechat/cs/intro/index.html"},{breadcrumb:"Peertube livechat",content:` Uživatelská dokumentaceDokumentace pro uživatele pluginu peertube-plugin-livechat
+You can even activate the chat for specific VOD videos. This is how the demo page works: it is not a live stream, but I have activated the chat specifically for this video.`,description:"Úvod",tags:[],title:"Úvod",uri:"/peertube-plugin-livechat/cs/intro/index.html"},{breadcrumb:"Peertube livechat",content:` Uživatelská dokumentaceDokumentace pro uživatele pluginu peertube-plugin-livechat
 For viewersHow to chat for stream viewers
 OBSDokumentace ke streamování obsahu chatu pomocí OBS.
 XMPP ClientsConnect to chat using a XMPP client
-For streamersHow to setup the chat for your live stream
-Některé základní informaceSome basics about how to setup and use the chat for your live stream
-Channel configurationPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
-ModerationPlugin peertube-plugin-livechat advanced moderation features
+Pro streameryJak nastavit chat pro živé vysílání
+Některé základní informaceZákladní informace o nastavení a používání chatu pro živé vysílání
+Konfigurace kanáluKonfigurace chatovacích místností kanálu Peertube
+OznámeníMajitelé a správci místností mohou v chatu zasílat speciální oznámení.
+ModerováníPlugin peertube-plugin-livechat pokročilé funkce moderování
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
-Moderation delayPlugin peertube-plugin-livechat moderation delay
-Custom emojisPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
+Zpoždění moderováníZpoždění moderování pluginu peertube-plugin-livechat
+Vlastní emodžiPlugin peertube-plugin-livechat vlastní emodži
+Režim pouze emodžiPlugin peertube-plugin-livechat režim pouze emodži
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
-Chat botChat bot setup
-Installation guidePlugin peertube-plugin-livechat installation guide
+Chat botNastavení chatovacího robota
+Instalační příručkaPrůvodce instalací pluginu peertube-plugin-livechat
 Odstraňování potížíNěkteré klasické chyby a jejich řešení.
-Known issues: CPU CompatibilityFor now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.
+Známé problémy: Kompatibilita procesoruProzatím plugin funguje pouze pro architektury procesorů x86_64 a arm64. Zde je několik pokynů pro jiné architektury procesorů.
 Aktualizace z verze starší než 6.0.0Důležité poznámky při aktualizaci starší verze.
 Dokumentace administrátoraSpráva pluginu Peertube Livechat
 NastaveníNastavení pluginu Peertube Livechat
@@ -48,7 +47,7 @@ Externí ověřováníNastavení pluginu Peertube Livechat - Externí ověřová
 Prosody mod_firewallPokročilá pravidla brány firewall pro server Prosody
 Pokročilé používáníNěkteré pokročilé funkce
 Klienti XMPPPovolení připojení pomocí klientů XMPP
-Používání MatterbridgePoužívání služby Matterbridge k propojení s jinými chaty`,description:"Plugin documentation",tags:[],title:"Dokumentace",uri:"/peertube-plugin-livechat/cs/documentation/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace",content:`Joining chat rooms When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:
+Používání MatterbridgePoužívání služby Matterbridge k propojení s jinými chaty`,description:"Dokumentace k pluginu",tags:[],title:"Dokumentace",uri:"/peertube-plugin-livechat/cs/documentation/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace",content:`Joining chat rooms When you are watching a Peertube video that has the chat activated, you will see the chat next to the video:
 There are two slightly different use cases, depending on wether or not you have an account on the Peertube instance. See bellow for more informations.
 If you haven’t a Peertube account Varování Tuto funkci mohou správci instance deaktivovat.
 If you are not logged in on the Peertube instance where you are watching the video, you will automatically join the chat. You will be assigned a random nickname (something like “Anonymous 12345”).
@@ -124,19 +123,19 @@ Zakázat IP adresu anonymního uživatele, když je uživatel vykázán z chatov
 Důležitá poznámka: Pokud tuto funkci povolíte a používáte vlastní reverzní proxy server před Peertube, ujistěte se, že je vaše nastavení správně nakonfigurováno tak, aby předávalo IP adresy skutečných uživatelů na Peertube. Jinak by mohlo dojít k zablokování všech anonymních uživatelů najednou.
 Vytváření témat Sada Avatarů Můžete si vybrat z několika různých sad výchozích avatarů, které budou použity pro uživatele chatu.
 Sépie (maskot Peertube): David Revoy’s Peertube avatar generator, CC-By licence
-Kočky: David Revoy’s cat avatar generator, CC-By license
-Ptáci: David Revoy’s bird avatar generator, CC-By license
-Fenek (maskot Mobilizon): David Revoy’s fenec/mobilizon avatar generator, CC-By license
-Abstrakt: David Revoy’s Abstract avatar generator, CC-By license
-Starší avatary Sepia (ty, které byly součástí předchozích verzí zásuvného modulu): Based on David Revoy' work, AGPL-v3 license
-If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
-Motiv ConverseJS You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Automatická detekce barev Pokus o automatickou detekci barev podle aktuálního motivu uživatele.
+Kočky: Generátor avatarů koček Davida Revoye, licence CC-By
+Ptáci: Generátor ptačích avatarů Davida Revoye, licence CC-By
+Fenek (maskot Mobilizon): Generátor avatarů fenec/mobilizon od Davida Revoye, licence CC-By
+Abstrakt: Generátor abstraktních avatarů Davida Revoye, licence CC-By
+Starší avatary Sepia (ty, které byly součástí předchozích verzí zásuvného modulu): Na základě práce Davida Revoye (https://www.davidrevoy.com), licence AGPL-v3 (https://www.gnu.org/licenses/agpl-3.0.en.html)
+Pokud změnu nevidíte okamžitě, může to být způsobeno mezipamětí vašeho prohlížeče. Stačí vymazat mezipaměť prohlížeče nebo jej restartovat.
+Motiv ConverseJS Můžete si vybrat, který motiv chcete pro ConverseJS použít:
+Téma Peertube: jedná se o speciální téma, vytvořené speciálně pro integraci Peertube. Výchozí téma ConverseJS: toto je výchozí téma ConverseJS. Cyberpunkové téma ConverseJS: toto je téma poskytované společností ConverseJS. Automatická detekce barev Pokus o automatickou detekci barev podle aktuálního motivu uživatele.
 Pokud je toto nastavení povoleno, zásuvný modul se pokusí automaticky detekovat barvy, které se použijí v tématu chatu.
 Pokud to pro některé téma Peertube nefunguje správně, můžete tuto možnost zakázat. Chybu můžete nahlásit na oficiálním sledovači problémů . Nezapomeňte uvést, který motiv nefunguje.
 Atribut stylu iframe webového chatu Další styly, které mají být přidány do atributu stylu iframe. Příklad: height:400px;
-Chat server advanced settings Použití systému Prosody The plugin comes with an AppImage that is used to run the Prosody XMPP server. If this AppImage is not working, you can fallback to the Prosody that is packaged for your server. Just install the prosody package.
-This setting should only be used if the plugin is broken, and waiting for a patch.
+Pokročilá nastavení chatového serveru Použití systému Prosody Plugin obsahuje AppImage, který se používá ke spuštění Prosody XMPP serveru. Pokud tento AppImage nefunguje, můžete se vrátit k Prosody, která je zabalena pro váš server. Stačí nainstalovat balíček prosody.
+Toto nastavení by mělo být použito pouze v případě, že je plugin nefunkční a čeká se na opravu.
 Zakázat Websocket S Peertube >= 5.0.0, tento plugin se snaží používat Websocket připojení pro chatování. Pokud je prohlížeč nebo připojení uživatele nekompatibilní, prohlížeč automaticky přejde zpět na protokol BOSH. Ve výjimečných případech však může dojít k selhání. Například pokud máte před Peertube reverzní proxy server, který nepovoluje Websocket připojení pro zásuvné moduly. V takovém případě můžete zaškrtnutím tohoto nastavení zakázat připojení Websocket.
 Prosody port Port, který bude používat server Prosody.
 Změňte jej, pokud je tento port na vašem serveru již používán.
@@ -144,8 +143,8 @@ Tento port můžete na svém firewallu zavřít, nebude k němu přístup z vně
 Poznámka: toto se může v blízké budoucnosti změnit, protože se plánuje přidání funkce pro aktivaci připojení zvenčí.
 URL Peertube pro volání API Pokud nevíte, co děláte, nechte prosím toto nastavení prázdné.
 V některých vzácných případech nemůže Prosody volat rozhraní API Peertube z jeho veřejného URI. Toto pole můžete použít k přizpůsobení URI Peertube pro moduly Prosody (například pomocí „http://localhost:9000“ nebo „http://127.0.0.1:9000“).
-If this setting is left empty, and you are using Peertube >= 5.1 or later, the plugin will use values from your Peertube configuration file to guess on which interface and port request have to be done.
-In last resort, it will use your Peertube public URI. So, any API Call will go throught your Nginx server. This could fail in some case: for example if you are in a Docker container, where the public hostname does not resolve to the correct IP. In such case, try changing the “URL Peertube pro volání API” settings, by setting http://127.0.0.1:9000 (assuming 9000 is the port on which Peertube listen, ask your instance administrators if you don’t know).
+Pokud toto nastavení ponecháte prázdné a používáte Peertube >= 5.1 nebo novější, plugin použije hodnoty z vašeho konfiguračního souboru Peertube k odhadnutí, na kterém rozhraní a portu má být požadavek proveden.
+V krajním případě použije vaši veřejnou URI Peertube. Takže jakékoli volání API projde vaším serverem Nginx. V některých případech to může selhat: například pokud jste v kontejneru Docker, kde se veřejné jméno hostitele nepřekládá na správnou IP adresu. V takovém případě zkuste změnit nastavení „URL Peertube pro volání API“ nastavením „http://127.0.0.1:9000“ (za předpokladu, že 9000 je port, na kterém Peertube naslouchá; pokud to nevíte, zeptejte se správců vaší instance).
 Obsah přihlašovacích místností ve výchozím nastavení Pokud je zaškrtnuto, obsah místnosti se ve výchozím nastavení uloží. Každý uživatel, který se připojí k místnosti, uvidí, co bylo napsáno před jeho připojením.
 Vezměte prosím na vědomí, že je vždy možné obsah zapnout/vypnout. archivaci pro konkrétní místnost úpravou jejích vlastností.
 Vypršení platnosti protokolů místností Zde můžete zvolit, jak dlouho bude obsah chatovací místnosti na serveru uchováván. Hodnota může být:
@@ -160,8 +159,8 @@ Příklady: *, :: * 127.0.0.1, ::1 172.18.0.42 Složka certifikátů Pokud je to
 Pokud chcete použít jiné certifikáty, stačí zde zadat složku, kde je Prosody najde. Poznámka: uživatel „peertube“ musí mít k této složce přístup pro čtení.
 Povolení připojení klienta k serveru Povolení připojení klientů XMPP k vestavěnému serveru Prosody.
 Pouze tato volba umožňuje připojení pouze klientům localhost.
-This setting enable XMPP clients to connect to the built-in Prosody server. For now, this option only allows connections from localhost clients.
-As example, this option can allow an instance of Matterbridge (once it could use anonymous login) on the same machine to bridge your chat with another services like a Matrix room.
+Toto nastavení umožňuje klientům XMPP připojit se k vestavěnému serveru Prosody. Prozatím tato možnost umožňuje pouze připojení od klientů localhost.
+Například tato možnost může umožnit instanci Matterbridge (jakmile bude moci používat anonymní přihlášení) na stejném počítači propojit váš chat s jinými službami, jako je například Matrix room.
 Port klienta Prosody na server Port, který bude používat modul c2s integrovaného serveru Prosody.
 Klienti XMPP budou pro připojení používat tento port.
 Změňte jej, pokud je tento port na vašem serveru již používán.
@@ -172,9 +171,9 @@ Toto nastavení je určeno pro pokročilé uživatele. Toto nastavení neměňte
 Seznam IP adres k poslechu, oddělené čárkou (mezery budou odstraněny).
 Můžete použít «*» pro poslech na všech rozhraních IPv4 a «::» pro všechna IPv6.
 Příklady:
-*, :: * 127.0.0.1, ::1 127.0.0.1, ::1, 172.18.0.42 Povolit vlastní externí součásti Prosody This setting enable XMPP external components to connect to the server. By default, this option only allows connections from localhost components. You have to change the “Síťová rozhraní externích komponent Prosody” value to listen on other network interfaces.
-This feature could be used to connect bridges or bots.
-More informations on Prosody external components here.
+*, :: * 127.0.0.1, ::1 127.0.0.1, ::1, 172.18.0.42 Povolit vlastní externí součásti Prosody Toto nastavení umožňuje externím komponentám XMPP připojit se k serveru. Ve výchozím nastavení tato možnost povoluje pouze připojení z komponent localhost. Chcete-li naslouchat na jiných síťových rozhraních, musíte změnit hodnotu „Síťová rozhraní externích komponent Prosody“.
+Tuto funkci lze použít k propojení přemostění nebo botů.
+Více informací o externích komponentách Prosody zde.
 Povolit vlastní externí součásti Prosody Povolte použití externích komponent XMPP.
 Tato možnost sama o sobě umožňuje připojení pouze z localhost. Musíte nastavit naslouchací rozhraní a otevřít port na vašem firewallu, abyste jej zpřístupnili ze vzdálených serverů.
 Tuto funkci lze například použít k připojení některých robotů k chatovacím místnostem.
@@ -187,12 +186,10 @@ Můžete použít «*» pro poslech na všech rozhraních IPv4 a «::» pro vše
 Příklady:
 *, :: * 127.0.0.1, ::1 172.18.0.42 Externí komponenty Externí komponenty, které je třeba deklarovat:
 Jedna na řádek. Použijte formát «název_komponenty:tajné_komponenty» (mezery budou oříznuty). Můžete přidávat komentáře: vše za znakem # bude odstraněno a prázdné řádky budou ignorovány. Název může obsahovat pouze latinské alfanumerické znaky a tečky. Pokud název obsahuje pouze alfanumerické znaky, bude doplněn o doménu XMPP. Například „most“ se změní na „most.vaše_doména.tld“. Můžete také zadat úplný název domény, ale musíte se ujistit, že jste správně nakonfigurovali DNS. V tajné přístupové frázi používejte pouze alfanumerické znaky (použijte alespoň 15 znaků). Povolit mod_firewall Prosody Na serveru Prosody můžete povolit mod_firewall.
-For more information, please check the documentation.`,description:"Nastavení pluginu Peertube Livechat",tags:[],title:"Nastavení",uri:"/peertube-plugin-livechat/cs/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Installation guide",content:`Právě jsem nainstaloval/aktualizoval plugin, ale nic se neděje Pokud jste právě nainstalovali/aktualizovali plugin, ale nic se neděje (žádný chat, žádná nastavení, tlačítka na stránce nastavení nefungují, …), zkuste stránku znovu načíst.
+Další informace naleznete v dokumentaci.`,description:"Nastavení pluginu Peertube Livechat",tags:[],title:"Nastavení",uri:"/peertube-plugin-livechat/cs/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Instalační příručka",content:`Právě jsem nainstaloval/aktualizoval plugin, ale nic se neděje Pokud jste právě nainstalovali/aktualizovali plugin, ale nic se neděje (žádný chat, žádná nastavení, tlačítka na stránce nastavení nefungují, …), zkuste stránku znovu načíst.
 Diagnostický nástroj Pokud chat nefunguje, v nastavení pluginu je k dispozici diagnostický nástroj.
 Otevřete nastavení pluginu a klikněte na tlačítko „spustit diagnostiku“.
-![Screenshot stránky nastavení pluginu s tlačítkem „spustit diagnostiku“.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px „Spustit diagnostiku“)
 Pokud se na diagnostické stránce vyskytne chyba, můžete na této stránce vyhledat řešení nebo se podívat na stránku dokumentace pro sledování chyb, pokud nenajdete žádnou odpověď.
-![Screenshot stránky s diagnostickými výsledky. Obsahuje mnoho informací, včetně stavu různých testovacích sad.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px „Diagnostické výsledky“)
 Chat se nenačítá Interní volání API V některých případech (například u některých instalací Docker Peertube) diagnostické nástroje zobrazují chybu u testu s názvem „API Prosody -> Peertube is KO“.
 V takovém případě zkuste změnit nastavení „URL Peertube pro volání API“ nastavením http://127.0.0.1:9000 (za předpokladu, že 9000 je port, na kterém Peertube naslouchá; pokud to nevíte, zeptejte se správců vaší instance).
 Další informace najdete v nápovědě k tomuto nastavení.
@@ -218,34 +215,34 @@ Some of them are “officials” plugins, others are specific to this plugin.
 server The server folder contains the backend source code.
 shared The shared folder contains comme code that will be used both on frontend and backend.
 support/documentation The support/documentation contains the documentation source code.
-vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/cs/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers > Chat bot",content:`Zákaz speciálních znaků Info Tato funkce je součástí pluginu livechat verze 12.0.0. Configuration Pokud tuto možnost povolíte, moderátor bude automaticky mazat zprávy obsahující více než X speciálních znaků. Speciální znaky jsou ty, které nepatří do jedné z těchto kategorií: písmena, číslice, interpunkční znaménka, symboly měn, emotikony.
+vendor The vendor folder is not part of the source code. It is used during the build process to download some external source code.`,description:"Source code organization",tags:[],title:"Source code",uri:"/peertube-plugin-livechat/cs/technical/sourcecode/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery > Chat bot",content:`Zákaz speciálních znaků Info Tato funkce je součástí pluginu livechat verze 12.0.0. Konfigurace Pokud tuto možnost povolíte, moderátor bude automaticky mazat zprávy obsahující více než X speciálních znaků. Speciální znaky jsou ty, které nepatří do jedné z těchto kategorií: písmena, číslice, interpunkční znaménka, symboly měn, emotikony.
 Tolerance Počet speciálních znaků, které lze ve zprávě přijmout, aniž by došlo k jejímu vymazání.
 Důvod Důvod zobrazení kromě smazaných zpráv
-Také moderovat zprávy od moderátorů Ve výchozím nastavení se tato funkce na zprávy moderátora nevztahuje. Zaškrtnutím této možnosti budou zprávy od moderátorů rovněž odstraněny.`,description:"The bot can automatically moderate messages containing too many special characters.",tags:[],title:"Special characters",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Dokumentace",content:` For viewersHow to chat for stream viewers
+Také moderovat zprávy od moderátorů Ve výchozím nastavení se tato funkce na zprávy moderátora nevztahuje. Zaškrtnutím této možnosti budou zprávy od moderátorů rovněž odstraněny.`,description:"Bot může automaticky moderovat zprávy obsahující příliš mnoho speciálních znaků.",tags:[],title:"Speciální znaky",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/special_chars/index.html"},{breadcrumb:"Peertube livechat > Dokumentace",content:` For viewersHow to chat for stream viewers
 OBSDokumentace ke streamování obsahu chatu pomocí OBS.
 XMPP ClientsConnect to chat using a XMPP client
-For streamersHow to setup the chat for your live stream
-Některé základní informaceSome basics about how to setup and use the chat for your live stream
-Channel configurationPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
-ModerationPlugin peertube-plugin-livechat advanced moderation features
+Pro streameryJak nastavit chat pro živé vysílání
+Některé základní informaceZákladní informace o nastavení a používání chatu pro živé vysílání
+Konfigurace kanáluKonfigurace chatovacích místností kanálu Peertube
+OznámeníMajitelé a správci místností mohou v chatu zasílat speciální oznámení.
+ModerováníPlugin peertube-plugin-livechat pokročilé funkce moderování
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
-Moderation delayPlugin peertube-plugin-livechat moderation delay
-Custom emojisPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
+Zpoždění moderováníZpoždění moderování pluginu peertube-plugin-livechat
+Vlastní emodžiPlugin peertube-plugin-livechat vlastní emodži
+Režim pouze emodžiPlugin peertube-plugin-livechat režim pouze emodži
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
-Chat botChat bot setup
-Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
-Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
-TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.`,description:"Dokumentace pro uživatele pluginu peertube-plugin-livechat",tags:[],title:"Uživatelská dokumentace",uri:"/peertube-plugin-livechat/cs/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers > Chat bot",content:`Žádné duplicitní zprávy Info Tato funkce je součástí pluginu livechat verze 12.0.0. Configuration Povolením této možnosti bude moderovací robot automaticky upravovat duplicitní zprávy. To znamená, že pokud uživatel odešle stejnou zprávu dvakrát během X sekund, druhá zpráva bude odstraněna.
+Chat botNastavení chatovacího robota
+Speciální znakyBot může automaticky moderovat zprávy obsahující příliš mnoho speciálních znaků.
+Žádné duplicitní zprávyBot může automaticky moderovat duplicitní zprávy.
+Zakázaná slovaBot může automaticky moderovat zprávy obsahující zakázaná slova.
+ČasovačeBot může pravidelně odesílat některé zprávy.
+PříkazyBot může reagovat na několik příkazů.`,description:"Dokumentace pro uživatele pluginu peertube-plugin-livechat",tags:[],title:"Uživatelská dokumentace",uri:"/peertube-plugin-livechat/cs/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery > Chat bot",content:`Žádné duplicitní zprávy Info Tato funkce je součástí pluginu livechat verze 12.0.0. Konfigurace Povolením této možnosti bude moderovací robot automaticky upravovat duplicitní zprávy. To znamená, že pokud uživatel odešle stejnou zprávu dvakrát během X sekund, druhá zpráva bude odstraněna.
 Časový interval Interval v sekundách, během kterého uživatel nemůže znovu odeslat stejnou zprávu.
 Důvod Důvod zobrazení kromě smazaných zpráv
-Také moderovat zprávy od moderátorů Ve výchozím nastavení se tato funkce na zprávy moderátora nevztahuje. Zaškrtnutím této možnosti budou zprávy od moderátorů rovněž odstraněny.`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"No duplicate message",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Dokumentace administrátora",content:`Uživatelé, kteří nejsou připojeni k vaší instanci Peertube, se připojují k chatu pomocí “anonymních účtů” (mohou si libovolně zvolit přezdívku a bude jim přidělen náhodný avatar).
+Také moderovat zprávy od moderátorů Ve výchozím nastavení se tato funkce na zprávy moderátora nevztahuje. Zaškrtnutím této možnosti budou zprávy od moderátorů rovněž odstraněny.`,description:"Bot může automaticky moderovat duplicitní zprávy.",tags:[],title:"Žádné duplicitní zprávy",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Dokumentace administrátora",content:`Uživatelé, kteří nejsou připojeni k vaší instanci Peertube, se připojují k chatu pomocí “anonymních účtů” (mohou si libovolně zvolit přezdívku a bude jim přidělen náhodný avatar).
 Můžete povolit některé externí metody ověřování, které umožní uživateli vytvářet účty chatu. V takovém případě se jejich přezdívka a avatar automaticky inicializují pomocí informací o vzdáleném účtu.
 Takové “externí uživatele” bude snazší moderovat než anonymní účty.
 To také umožňuje uživateli připojit se k chatu bez vytvoření účtu Peertube (například v případě, že vaše instance má uzavřenou registraci, nebo bez čekání na schválení účtu).
@@ -271,38 +268,12 @@ Pokud vás napadne standardní poskytovatel, který není k dispozici, můžete 
 Odstraňování potíží Pokud se tlačítko koncovým uživatelům nezobrazuje, může se jednat o problém s konfigurací. Pro získání dalších informací můžete vyzkoušet diagnostický nástroj.
 Poznámka: pokud jste připojeni k účtu Peertube, tlačítko se nikdy nezobrazí. K testování proto použijte soukromé okno prohlížeče.
 Pokud se tlačítko zobrazí, ale nefunguje, zkontrolujte protokoly Peertube. Může to být způsobeno tím, že vzdálená služba nepoužívá standardní obory nebo názvy atributů.
-Více se dozvíte V budoucnu budou implementovány další metody ověřování.`,description:"Nastavení pluginu Peertube Livechat - Externí ověřování",tags:[],title:"Externí ověřování",uri:"/peertube-plugin-livechat/cs/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers > Chat bot",content:`Můžete nastavit některá slova, která bude bot automaticky moderovat (zprávy obsahující tato slova budou okamžitě odstraněny). Můžete také přidat volitelný důvod, který se zobrazí na místě smazaných zpráv. Na stránce s dokumentací je uvedeno několik příkladů.
-You can fill several “Zakázaná slova nebo výrazy” lines. When a user sends a message that match the configured criteria, the message will automatically be deleted.
-Zakázaná slova nebo výrazy Here you can configure several words, group of words, or “regular expressions”.
-Each time a user sends a message, these words will be tested. If the message contains one of them, the message will be deleted.
-You can for example fill this field with a swear words list.
-To get some examples, please check these forbidden words suggestions.
-If you have some usefull words lists, you are welcome to contribute to this suggestion page. There are in the support/forbidden_words folder of the livechat source code. See the contribution guide for more information.
-Tip These words are case insensitive.
-Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
-Varování This features is still experimental. There might be some issues with non-latin alphabets. You can open an issue to report your problems.
-Považujte za regulární výrazy Varování Tuto funkci mohou správci instance deaktivovat.
-By checking this option, each line of the “Zakázaná slova nebo výrazy” field will be considered as a regular expression.
-Také moderovat zprávy od moderátorů Ve výchozím nastavení se tato funkce na zprávy moderátora nevztahuje. Zaškrtnutím této možnosti budou zprávy od moderátorů rovněž odstraněny.
-Důvod Důvod zobrazení kromě smazaných zpráv
-Komentáře Můžete sem přidat komentář k tomuto pravidlu, abyste si pamatovali, jak a proč jste ho vytvořili. Tyto komentáře jsou čistě orientační a nemají žádný vliv na chování bota.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentace",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
-Tip To install or update the plugin, just use the Peertube web admin interface.
-Here are some other more specific instructions:
+Více se dozvíte V budoucnu budou implementovány další metody ověřování.`,description:"Nastavení pluginu Peertube Livechat - Externí ověřování",tags:[],title:"Externí ověřování",uri:"/peertube-plugin-livechat/cs/documentation/admin/external_auth/index.html"},{breadcrumb:"Peertube livechat > Dokumentace",content:` Info Před aktualizací na hlavní verzi si přečtěte poznámky k verzi a seznam zásadních změn: CHANGELOG.
+Tip Chcete-li plugin nainstalovat nebo aktualizovat, stačí použít webové rozhraní Peertube.
+Zde je několik dalších konkrétnějších pokynů:
 Odstraňování potížíNěkteré klasické chyby a jejich řešení.
-Known issues: CPU CompatibilityFor now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.
-Aktualizace z verze starší než 6.0.0Důležité poznámky při aktualizaci starší verze.`,description:"Plugin peertube-plugin-livechat installation guide",tags:[],title:"Installation guide",uri:"/peertube-plugin-livechat/cs/documentation/installation/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Installation guide",content:`Aplikace Prosody AppImage obsažená v pluginu bude fungovat pouze na procesorech x86_64 a arm64. Není kompatibilní s jinými architekturami procesorů.
-Chcete-li plugin používat, budete muset ručně nainstalovat Prosody na svůj server (viz níže).
-Note: the plugin requires Prosody >= 0.12.0. If you are using an older version, Chat Federation could be broken, and it could have some unexpected behaviour.
-Once it is done, you have to check Use system Prosody in the plugin settings.
-On non-docker Peertube installation For standard installation, you just have to install the official prosody package for your linux distribution.
-For example, on Debian/Ubuntu:
-sudo apt install prosodyYou can then disable the service that starts automatically when you install Prosody (the plugin will launch a Prosody process, there is no need for the service to run). For example, on Debian/Ubuntu (and other Systemd based linux distributions):
-sudo systemctl disable prosody && sudo systemctl stop prosodyWarning: do not disable Prosody if it is used for another service on your server, like for example Jitsi.
-Docker You will have to generate a Peertube image that includes Prosody in the same container that Peertube. I know this is not the standard way to do this with Docker, but keep in mind it is a temporary workaround.
-To generate and use such an image, please refer to the Docker documentation. The Docker file to generate the image should be:
-FROM chocobozzz/peertube:production-bullseye RUN apt -y update && apt install -y prosody && apt -y cleanYunohost You have to disable metronome (the XMPP server provided by Yunohost), and install prosody.
-This is already done by the Yunohost Peertube application, as it was required for the plugin before the v6.0.0.
-But it may be removed in a near feature (to avoid drawbacks of this method). I have to discuss with Yunohost team, to decide how we can do to minimize drawbacks, and maximize compatibility.`,description:"For now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.",tags:[],title:"Known issues: CPU Compatibility",uri:"/peertube-plugin-livechat/cs/documentation/installation/cpu_compatibility/index.html"},{breadcrumb:"Peertube livechat > Přispívání",content:`Můžete přispět k překladu tohoto pluginu. Překlady jsou zpracovávány pomocí softwaru Weblate s použitím Framasoft Weblate instance.
+Známé problémy: Kompatibilita procesoruProzatím plugin funguje pouze pro architektury procesorů x86_64 a arm64. Zde je několik pokynů pro jiné architektury procesorů.
+Aktualizace z verze starší než 6.0.0Důležité poznámky při aktualizaci starší verze.`,description:"Průvodce instalací pluginu peertube-plugin-livechat",tags:[],title:"Instalační příručka",uri:"/peertube-plugin-livechat/cs/documentation/installation/index.html"},{breadcrumb:"Peertube livechat > Přispívání",content:`Můžete přispět k překladu tohoto pluginu. Překlady jsou zpracovávány pomocí softwaru Weblate s použitím Framasoft Weblate instance.
 Varování Nikdy neupravujte přímo soubory ve složce languages, mohlo by to vést ke konfliktům.
 Jak na to Vytvořte si účet: https://weblate.framasoft.org/accounts/register/ Ověřte svůj e-mail a postupujte podle zaslaného odkazu Vytvořte si heslo a nastavte svůj účet Přejděte na stránku projektu zásuvného modulu: https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat/ Vyberte jazyk, do kterého chcete překládat Stačí přeložit chybějící věty nebo opravit ty, které se vám zdají nesprávné. Varování Mohou tam být nějaké “velmi technické” řetězce. Pokud si nejste stoprocentně jisti jejich významem nebo překladem, raději je nepřekládejte, aby se zobrazily v angličtině.
 Překlady ConverseJS Tento zásuvný modul se spoléhá na ConverseJS pro front-end chatu. ConverseJS má vlastní překlady na vlastní instanci weblate. Překládat můžete také přímo v úložišti kódu. Další informace naleznete v dokumentaci ConverseJS translations.
@@ -327,7 +298,7 @@ Pokud si nejste jisti, nepřekládejte a zeptejte se, co máte dělat.
 Nástroj, který používám ke zpracování překladů dokumentace, se může chovat podivně. Když přidám věty, které vypadají jako jiné existující věty, někdy zkopíruje existující překlady. Takže když máte překlady označené jako “ke kontrole”, ujistěte se prosím, že před validací nezkopíruje řetězec, který nemá s tím anglickým nic společného.
 Pokud jste si nyní jisti kontextem řetězce, můžete zkontrolovat umístění řetězce v pravém podokně weblate a otevřít příslušnou stránku dokumentace. Například pro řetězec umístěný v souboru support/documentation/content/en/documentation/user/streamers.md je odpovídající url adresa https://livingston.frama.io/peertube-plugin-livechat/documentation/user/streamers/.
 Obecná doporučení Prosím, buďte ve svých formulacích vstřícní a respektujte kodex chování.`,description:"Přeložte zásuvný modul",tags:[],title:"Překládání",uri:"/peertube-plugin-livechat/cs/contributing/translate/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:` Varování This page describes experimental features. These features are available with the plugin version >= 7.2.0.
-Introduction Peertube is part of the Fediverse. So Peertube video can be watched from other Peertube instances, and from various other softwares:
+Úvod Peertube is part of the Fediverse. So Peertube video can be watched from other Peertube instances, and from various other softwares:
 from a Mastodon (or other fediverse application) instance, from a mobile app (Fedilab, Tusky, …), from desktop fediverse app, … This livechat plugin is using well known standards, so it is possible to join chat rooms even when not viewing the video on Peertube.
 There are basically 2 ways to join the chat room associated to a video:
 opening a web page (with an url like https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535), using a XMPP client (and joining a room like xmpp://8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.yourinstance.tld?join) Varování Joining the chat using a XMPP client is not always possible. It requires some DNS and server configuration. It will only be possible if instance’s admins have correctly setup the external XMPP clients connection feature.
@@ -352,7 +323,37 @@ By default, here is an example of what you will get:
 <podcast:liveItem status="live" start="2023-07-06T18:00:00.000Z"> <title>The video title</title> <guid isPermaLink="false">e32b4890-983b-4ce5-8b46-f2d6bc1d8819_2023-07-06T18:00:00.000Z</guid> <link>https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535</link> <podcast:socialInteract uri="https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535" protocol="activitypub" accountUrl="https://yourinstance.tld/a/youraccount" /> <enclosure url="https://yourinstance.tld/path/to/video/master.m3u8" type="application/x-mpegURL" /> <podcast:alternateEnclosure type="application/x-mpegURL" lang="en" title="HLS" default="true"> <podcast:source uri="https://yourinstance.tld/path/to/video/master.m3u8" /> </podcast:alternateEnclosure> <itunes:image href="https://yourinstance.tld/lazy-static/previews/8df24108-6e70-4fc8-b1cc-f2db7fcdd535.jpg" /> <podcast:chat server="yourinstance.tld" protocol="xmpp" embedUrl="https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535" /> </podcast:liveItem>In case the instance has activated the external XMPP clients connection feature:
 <podcast:liveItem status="live" start="2023-07-06T18:00:00.000Z"> <title>The video title</title> <guid isPermaLink="false">e32b4890-983b-4ce5-8b46-f2d6bc1d8819_2023-07-06T18:00:00.000Z</guid> <link>https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535</link> <podcast:socialInteract uri="https://yourinstance.tld/videos/watch/8df24108-6e70-4fc8-b1cc-f2db7fcdd535" protocol="activitypub" accountUrl="https://yourinstance.tld/a/youraccount" /> <enclosure url="https://yourinstance.tld/path/to/video/master.m3u8" type="application/x-mpegURL" /> <podcast:alternateEnclosure type="application/x-mpegURL" lang="en" title="HLS" default="true"> <podcast:source uri="https://yourinstance.tld/path/to/video/master.m3u8" /> </podcast:alternateEnclosure> <itunes:image href="https://yourinstance.tld/lazy-static/previews/8df24108-6e70-4fc8-b1cc-f2db7fcdd535.jpg" /> <podcast:chat server="yourinstance.tld" protocol="xmpp" space="8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.yourinstance.tld" embedUrl="https://yourinstance.tld/plugins/livechat/router/webchat/room/8df24108-6e70-4fc8-b1cc-f2db7fcdd535" /> </podcast:liveItem>Algorithm If you want to display the chat in a web page or in an iframe, here is what you should do:
 get the Podcast RSS feed for the channel, if there is no <podcast:liveItem> element under the <channel>, stop. find the <podcast:liveItem> you are looking for <podcast:socialInteract> can be used to cross-reference the items with ActivityPub if there is no <podcast:chat> element under the <podcast:liveItem>, stop. loop through the <podcast:chat> values (if <podcast:chat> is not an array, just iterate on this single value) there should only be one, but you should expect to handle several just in case search for the first entry protocol === xmpp and an embedUrl attribute if found, open this embedUrl If you want to open the chat room using the XMPP protocol:
-get the Podcast RSS feed for the channel, if there is no <podcast:liveItem> element under the <channel>, stop. find the <podcast:liveItem> you are looking for <podcast:socialInteract> can be used to cross-reference the items with ActivityPub loop through the <podcast:chat> values (if <podcast:chat> is not an array, just iterate on this single value) there should only be one, but you should expect to handle several just in case search for the first entry protocol === xmpp and a space attribute space should be an XMPP JID for a MUC if found, open this XMPP JID with your client after converting it to a join URI, or connect to the XMPP room at that address `,description:"Displaying the livechat with 3rd party software.",tags:[],title:"Third party",uri:"/peertube-plugin-livechat/cs/technical/thirdparty/index.html"},{breadcrumb:"Peertube livechat > Dokumentace",content:` NastaveníNastavení pluginu Peertube Livechat
+get the Podcast RSS feed for the channel, if there is no <podcast:liveItem> element under the <channel>, stop. find the <podcast:liveItem> you are looking for <podcast:socialInteract> can be used to cross-reference the items with ActivityPub loop through the <podcast:chat> values (if <podcast:chat> is not an array, just iterate on this single value) there should only be one, but you should expect to handle several just in case search for the first entry protocol === xmpp and a space attribute space should be an XMPP JID for a MUC if found, open this XMPP JID with your client after converting it to a join URI, or connect to the XMPP room at that address `,description:"Displaying the livechat with 3rd party software.",tags:[],title:"Third party",uri:"/peertube-plugin-livechat/cs/technical/thirdparty/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery > Chat bot",content:`Můžete nastavit některá slova, která bude bot automaticky moderovat (zprávy obsahující tato slova budou okamžitě odstraněny). Můžete také přidat volitelný důvod, který se zobrazí na místě smazaných zpráv. Na stránce s dokumentací je uvedeno několik příkladů.
+Můžete vyplnit několik řádků „Zakázaná slova nebo výrazy“. Když uživatel odešle zprávu, která odpovídá nastaveným kritériím, bude tato zpráva automaticky smazána.
+Zakázaná slova nebo výrazy Zde můžete nakonfigurovat několik slov, skupinu slov nebo „regulární výrazy“.
+Pokaždé, když uživatel odešle zprávu, budou tato slova zkontrolována. Pokud zpráva obsahuje některé z nich, bude smazána.
+Toto pole můžete například vyplnit seznamem sprostých slov.
+Několik příkladů najdete v těchto návrzích zakázaných slov.
+Pokud máte nějaké užitečné seznamy slov, můžete je přidat na tuto stránku s návrhy. Najdete je ve složce support/forbidden_words zdrojového kódu livechatu. Více informací najdete v průvodci pro přispěvatele.
+Tip U těchto slov se nerozlišují velká a malá písmena.
+Tip Můžete kombinovat krátké zpoždění moderování (například 1 sekundu) s moderátorským botem, aby byly zprávy obsahující vulgární výrazy smazány dříve, než je uvidí uživatelé, kteří nejsou moderátory.
+Varování Tato funkce je stále ve fázi testování. Mohou se vyskytnout problémy s nelatinskými abecedami. Problémy můžete nahlásit zde.
+Považujte za regulární výrazy Varování Tuto funkci mohou správci instance deaktivovat.
+Zaškrtnutím této možnosti bude každý řádek pole „Zakázaná slova nebo výrazy“ považován za regulární výraz.
+Také moderovat zprávy od moderátorů Ve výchozím nastavení se tato funkce na zprávy moderátora nevztahuje. Zaškrtnutím této možnosti budou zprávy od moderátorů rovněž odstraněny.
+Důvod Důvod zobrazení kromě smazaných zpráv
+Komentáře Můžete sem přidat komentář k tomuto pravidlu, abyste si pamatovali, jak a proč jste ho vytvořili. Tyto komentáře jsou čistě orientační a nemají žádný vliv na chování bota.`,description:"Bot může automaticky moderovat zprávy obsahující zakázaná slova.",tags:[],title:"Zakázaná slova",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Instalační příručka",content:`Aplikace Prosody AppImage obsažená v pluginu bude fungovat pouze na procesorech x86_64 a arm64. Není kompatibilní s jinými architekturami procesorů.
+Chcete-li plugin používat, budete muset ručně nainstalovat Prosody na svůj server (viz níže).
+Poznámka: plugin vyžaduje Prosody >= 0.12.0. Pokud používáte starší verzi, Chat Federation může být nefunkční a může docházet k neočekávanému chování.
+Jakmile je to hotovo, musíte v nastavení pluginu zaškrtnout políčko „Použít systém Prosody“.
+Instalace Peertube bez Dockeru Pro standardní instalaci stačí nainstalovat oficiální balíček prosody pro vaši distribuci Linuxu.
+Například v Debianu/Ubuntu:
+sudo apt install prosodyPoté můžete deaktivovat službu, která se spouští automaticky při instalaci Prosody (plugin spustí proces Prosody, není tedy nutné, aby služba běžela). Například v Debian/Ubuntu (a dalších linuxových distribucích založených na Systemd):
+sudo systemctl disable prosody && sudo systemctl stop prosodyUpozornění: nevypínejte Prosody, pokud je používána pro jinou službu na vašem serveru, jako například Jitsi.
+Docker Budete muset vygenerovat obraz Peertube, který obsahuje Prosody ve stejném kontejneru jako Peertube. Vím, že to není standardní způsob, jak to udělat s Dockerem, ale mějte na paměti, že se jedná o dočasné řešení.
+Informace o vytvoření a použití takového obrazu naleznete v dokumentaci Dockeru. Soubor Docker pro vytvoření obrazu by měl být:
+FROM chocobozzz/peertube:production-bullseye RUN apt -y update && apt install -y prosody && apt -y cleanYunohost Musíte deaktivovat metronome (XMPP server poskytovaný Yunohost) a nainstalovat prosody.
+To již zajišťuje aplikace Yunohost Peertube, protože to bylo vyžadováno pro plugin před verzí v6.0.0.
+Ale může být odstraněna v blízké funkci (aby se předešlo nevýhodám této metody). Musím to prodiskutovat s týmem Yunohost, abychom se rozhodli, jak můžeme minimalizovat nevýhody a maximalizovat kompatibilitu.`,description:"Prozatím plugin funguje pouze pro architektury procesorů x86_64 a arm64. Zde je několik pokynů pro jiné architektury procesorů.",tags:[],title:"Známé problémy: Kompatibilita procesoru",uri:"/peertube-plugin-livechat/cs/documentation/installation/cpu_compatibility/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery > Chat bot",content:`Můžete nakonfigurovat několik časovačů, které budou odesílat zprávy v pravidelných intervalech. Tyto zprávy bude bot odesílat každých X minut. Můžete například nastavit, aby bot odesílal každých 5 minut nějaké informace o sponzorování.
+Tip Pokud v chatovací místnosti není žádný uživatel, bot neodešle žádnou zprávu.
+Časovač Můžete nakonfigurovat několik časovačů, které budou odesílat zprávy v pravidelných intervalech. Tyto zprávy bude bot odesílat každých X minut. Můžete například nastavit, aby bot odesílal každých 5 minut nějaké informace o sponzorování.
+Jedna zpráva na řádek. Pokud je zpráv více, vybere se jedna náhodně každých X minut.
+Odeslat každých X minut Bot bude zprávu odesílat každých X minut.`,description:"Bot může pravidelně odesílat některé zprávy.",tags:[],title:"Časovače",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Peertube livechat > Dokumentace",content:` NastaveníNastavení pluginu Peertube Livechat
 Externí ověřováníNastavení pluginu Peertube Livechat - Externí ověřování
 Prosody mod_firewallPokročilá pravidla brány firewall pro server Prosody
 Pokročilé používáníNěkteré pokročilé funkce
@@ -435,37 +436,28 @@ Jednotlivé soubory můžete povolit/zakázat.
 Soubory se načítají v abecedním pořadí. Pro snadnou volbu pořadí můžete použít číslo jako předponu.
 Info Tato pravidla brány firewall můžete také upravit přímo na serveru v adresáři plugins/data/peertube-plugin-livechat/prosody/mod_firewall_config/. Názvy souborů musí obsahovat pouze alfanumerické znaky, podtržítka a pomlčky. Přípona musí být .pfw nebo .pfw.disabled, pokud chcete soubor zakázat. Ujistěte se, že uživatel systému peertube má k těmto souborům právo zápisu, jinak webové editační rozhraní selže. Jakmile tyto soubory upravíte, musíte znovu načíst prosody. To lze provést uložením nastavení zásuvného modulu nebo uložením konfigurace mod_firewall ve webovém rozhraní nebo restartováním Peertube.
 Po uložení konfigurace ji server automaticky načte a vaše pravidla se okamžitě použijí. V protokolu chyb Prosody můžete zkontrolovat, zda nedošlo k chybě při parsování. Za tímto účelem si můžete přečíst soubor plugins/data/peertube-plugin-livechat/prosody/prosody.err nebo použít diagnostický nástroj, který zobrazí poslední chyby Prosody.
-Příklady Neváhejte se podělit o svá pravidla. Můžete tak učinit například úpravou této stránky.`,description:"Pokročilá pravidla brány firewall pro server Prosody",tags:[],title:"Prosody mod_firewall",uri:"/peertube-plugin-livechat/cs/documentation/admin/mod_firewall/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers > Chat bot",content:`Můžete nakonfigurovat několik časovačů, které budou odesílat zprávy v pravidelných intervalech. Tyto zprávy bude bot odesílat každých X minut. Můžete například nastavit, aby bot odesílal každých 5 minut nějaké informace o sponzorování.
-Tip If there is no user in the chatroom, the bot won’t send any message.
-Časovač Můžete nakonfigurovat několik časovačů, které budou odesílat zprávy v pravidelných intervalech. Tyto zprávy bude bot odesílat každých X minut. Můžete například nastavit, aby bot odesílal každých 5 minut nějaké informace o sponzorování.
-Jedna zpráva na řádek. Pokud je zpráv více, vybere se jedna náhodně každých X minut.
-Odeslat každých X minut Bot bude zprávu odesílat každých X minut.`,description:"The bot can send periodically some messages.",tags:[],title:"Timers",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers > Chat bot",content:`Bota můžete nakonfigurovat tak, aby reagoval na příkazy. Příkaz je zpráva začínající znakem “!”, například “!help”, která vyvolá příkaz “help”.
-You can setup several commands.
-Příkaz Příkaz bez počátečního “!”. Například “help”, “sponzor”, …
-Zpráva Zpráva k odeslání.`,description:"The bot can respond to several commands.",tags:[],title:"Commands",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace",content:`OBS je oblíbený bezplatný a open source streamovací software s pokročilými možnostmi pro vaše živé přenosy. Na této stránce najdete několik rad, jak zvládnout živé chaty pomocí OBS.
+Příklady Neváhejte se podělit o svá pravidla. Můžete tak učinit například úpravou této stránky.`,description:"Pokročilá pravidla brány firewall pro server Prosody",tags:[],title:"Prosody mod_firewall",uri:"/peertube-plugin-livechat/cs/documentation/admin/mod_firewall/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace",content:`OBS je oblíbený bezplatný a open source streamovací software s pokročilými možnostmi pro vaše živé přenosy. Na této stránce najdete několik rad, jak zvládnout živé chaty pomocí OBS.
 OBS Overlay Chat můžete snadno zahrnout do videostreamu.
 Pro vygenerování adresy URL chatu můžete použít funkci “Sdílet odkaz na chat”. Toto tlačítko by mělo být v blízkosti chatu, pokud jste vlastníkem videa (pokud nebylo deaktivováno správci vašeho serveru).
 Zaškrtněte políčko „Pouze pro čtení“ v modálním okně.
-![Screenshot dialogového okna „Sdílet odkaz na chat“, kde je zaškrtnuta možnost „Pouze pro čtení“.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu“)
 Poté použijte tento odkaz jako „zdroj webového prohlížeče“ v OBS.
-![Screenshot softwaru OBS, kde byl chat přidán jako zdroj webového prohlížeče.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px „Vložení chatu do OBS“)
 Můžete použít možnost „Průhledné pozadí (pro integraci streamu, například s OBS)“, abyste v OBS měli průhledné pozadí. Pokud chcete přizpůsobit průhlednost pozadí, můžete do nastavení zdroje prohlížeče OBS přidat tento CSS kód:
-:root { --livechat-transparent: rgba(255 255 255 / 90%) !important; } In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values.
-Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL. You must use valid CSS color values, and they must be properly URL encoded.
+:root { --livechat-transparent: rgba(255 255 255 / 90%) !important; } V předchozím úryvku CSS můžete samozřejmě změnit barvu nebo průhlednost úpravou hodnot barev.
+Poznámka: barvy chatu lze zcela přizpůsobit. Tato funkce zatím není zdokumentována, ale můžete zkusit následující postup: v modálním okně zaškrtněte políčko „použít aktuální barvy motivu“ a poté zkuste ručně změnit hodnoty barev v adrese URL. Musíte použít platné hodnoty barev CSS, které musí být správně zakódovány v adrese URL.
 OBS Dock Info Tato funkce je součástí pluginu livechat verze 10.1.0. Varování Tuto funkci mohou správci instance deaktivovat.
 Můžete použít OBS „Custom browser docks“ (Vlastní dokovací okna prohlížeče) k integraci chatu do OBS během streamování. Plugin livechat nabízí možnost vytvořit dlouhodobý token, který vás automaticky identifikuje pro připojení k chatu, takže nemusíte zadávat heslo v OBS.
 K tomu stačí použít funkci „Sdílet odkaz na chat“ a otevřít kartu „Dock“. Odtud můžete pomocí tlačítka „+“ vytvořit nový token.
-![Screenshot dialogového okna „Sdílet odkaz na chat“ na kartě „Dock“. Byl vygenerován token, který lze vybrat.“](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu – karta doku“)
 Poté zkopírujte adresu URL a pomocí nabídky „Docks / Custom browser docks“ (Doky / Vlastní doky prohlížeče) ve vašem OBS přidejte dok s touto adresou.
-![Screenshot nabídky OBS Dock s položkou „Custom Browser Docks“ (Vlastní dokovací prohlížeče).](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px „OBS – nabídka Dock“)
-![Screenshot dialogového okna OBS Custom Browser Docks s novým dokem nazvaným „My chat“.](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px „OBS – dialogové okno Dock“)
 Jakmile to uděláte, budete mít nové dokovací okno připojené k chatu s vaším účtem.
-Tip Tokens are valid to join any chat room. You don’t have to generate separate tokens for each of your rooms. You can also customize the nickame that will be used by changing the n parameter in the url.
-Don’t share these links to anyone, as it would allow them to connect as yourself.
-If a token is compromised, or no more needed, you can revoke them.
-Info These tokens can be used for other purposes, as connecting to your account with XMPP bots or clients. This feature is not documented yet, and not officially supported. So use with care.
-Mixing multiple chats in your live stream You can use the social_stream browser extension to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, …) and include their contents in your live stream. The compatibility with this plugin was added in recent versions.`,description:"Dokumentace ke streamování obsahu chatu pomocí OBS.",tags:[],title:"OBS",uri:"/peertube-plugin-livechat/cs/documentation/user/obs/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Dokumentace administrátora",content:` Klienti XMPPPovolení připojení pomocí klientů XMPP
-Používání MatterbridgePoužívání služby Matterbridge k propojení s jinými chaty`,description:"Některé pokročilé funkce",tags:[],title:"Pokročilé používání",uri:"/peertube-plugin-livechat/cs/documentation/admin/advanced/index.html"},{breadcrumb:"Peertube livechat > Přispívání",content:`Vždy mluvte o funkcích, které chcete vyvinout, tím, že vytvoříte/najdete a okomentujete problém, který řeší váš problém, než na něm začnete pracovat, a informujte komunitu o tom, že začínáte kódovat tím, že problém prohlásíte za problém.
+Tip Tokeny jsou platné pro vstup do jakékoli chatovací místnosti. Nemusíte generovat samostatné tokeny pro každou z vašich místností. Můžete také přizpůsobit přezdívku, která bude použita, změnou parametru n v adrese URL.
+Tyto odkazy nikomu nesdílejte, protože by se tak mohli připojit jako vy.
+Pokud je token ohrožen nebo již není potřebný, můžete jej zrušit.
+Info Tyto tokeny lze použít i k jiným účelům, například k připojení k vašemu účtu pomocí botů nebo klientů XMPP. Tato funkce zatím není zdokumentována a není oficiálně podporována. Používejte ji proto s opatrností.
+Míchání více chatů ve vašem živém vysílání Můžete použít rozšíření prohlížeče social_stream k mixování více zdrojů chatu (z Peertube, Twitch, Youtube, Facebook, …) a zahrnout jejich obsah do svého živého vysílání. Kompatibilita s tímto pluginem byla přidána v nedávných verzích.`,description:"Dokumentace ke streamování obsahu chatu pomocí OBS.",tags:[],title:"OBS",uri:"/peertube-plugin-livechat/cs/documentation/user/obs/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Dokumentace administrátora",content:` Klienti XMPPPovolení připojení pomocí klientů XMPP
+Používání MatterbridgePoužívání služby Matterbridge k propojení s jinými chaty`,description:"Některé pokročilé funkce",tags:[],title:"Pokročilé používání",uri:"/peertube-plugin-livechat/cs/documentation/admin/advanced/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery > Chat bot",content:`Bota můžete nakonfigurovat tak, aby reagoval na příkazy. Příkaz je zpráva začínající znakem “!”, například “!help”, která vyvolá příkaz “help”.
+Můžete nastavit několik příkazů.
+Příkaz Příkaz bez počátečního “!”. Například “help”, “sponzor”, …
+Zpráva Zpráva k odeslání.`,description:"Bot může reagovat na několik příkazů.",tags:[],title:"Příkazy",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Přispívání",content:`Vždy mluvte o funkcích, které chcete vyvinout, tím, že vytvoříte/najdete a okomentujete problém, který řeší váš problém, než na něm začnete pracovat, a informujte komunitu o tom, že začínáte kódovat tím, že problém prohlásíte za problém.
 Žádost o stažení musí být provedena na větvi main.
 Poznámka Do března 2023 byly příspěvky prováděny na větvi develop. Tento postup je nyní zastaralý.
 Předpoklad pro vytvoření tohoto zásuvného modulu Doporučujeme seznámit se s následujícími pojmy:
@@ -496,7 +488,7 @@ Bylo z toho vytvořeno repo, podívejte se na pt-plugin-dev.
 Poznámka: Z neznámého důvodu nemůže Prosody rozlišit adresy DNS kontejnerů při použití knihovny lua-unbound. V pluginu je špinavý hack: stačí vytvořit soubor /data/plugins/data/peertube-plugin-livechat/no_lua_unbound ve vašem docker-volume a restartovat kontejnery.
 Rychle znovu sestavte a nainstalujte plugin Když provádíte úpravy, nemusíte vždy znovu sestavovat celý projekt a znovu instalovat plugin do vašeho vývojového prostředí. Můžete sestavit pouze upravenou součást (pokud jste například upravili pouze soubory klienta: npm spustit build:client). V souborech package.json vyhledejte dostupné skripty sestavení.
 Pokud je zásuvný modul již nainstalován v instanci dev a nezměnili jste žádnou závislost, můžete rychle nainstalovat svou práci podle následujících kroků:
-znovu sestavit potřebné části zásuvného modulu (klient, styly, …), přepište obsah složky data/plugins/node_modules/peertube-plugin-livechat/dist/ ve své instanci dev obsahem složky dist pluginu, změňte rekurzivně vlastníka souborů plugins/node_modules/peertube-plugin-livechat/dist/ na svého uživatele peertube, restartujte instanci. Výkonnostní testy Úložiště livechat-perf-test obsahuje několik nástrojů pro provádění testů výkonu. Lze je použít k vyhodnocení vylepšení kódu nebo k nalezení úzkých míst.`,description:"Vývoj",tags:[],title:"Vývoj",uri:"/peertube-plugin-livechat/cs/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Installation guide",content:`DŮLEŽITÁ POZNÁMKA Od verze v6.0.0 tento plugin nevyžaduje žádnou instalaci Prosody.
+znovu sestavit potřebné části zásuvného modulu (klient, styly, …), přepište obsah složky data/plugins/node_modules/peertube-plugin-livechat/dist/ ve své instanci dev obsahem složky dist pluginu, změňte rekurzivně vlastníka souborů plugins/node_modules/peertube-plugin-livechat/dist/ na svého uživatele peertube, restartujte instanci. Výkonnostní testy Úložiště livechat-perf-test obsahuje několik nástrojů pro provádění testů výkonu. Lze je použít k vyhodnocení vylepšení kódu nebo k nalezení úzkých míst.`,description:"Vývoj",tags:[],title:"Vývoj",uri:"/peertube-plugin-livechat/cs/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Instalační příručka",content:`DŮLEŽITÁ POZNÁMKA Od verze v6.0.0 tento plugin nevyžaduje žádnou instalaci Prosody.
 Pokud jste tento plugin používali před touto verzí a pokud jste Prosody nainstalovali ručně, můžete Prosody bezpečně odinstalovat.
 Pokud jste používali vlastní obraz Peertube docker, který obsahuje Prosody, můžete se vrátit k oficiálnímu obrazu Peertube.`,description:"Důležité poznámky při aktualizaci starší verze.",tags:[],title:"Aktualizace z verze starší než 6.0.0",uri:"/peertube-plugin-livechat/cs/documentation/installation/upgrade_before_6.0.0/index.html"},{breadcrumb:"Peertube livechat > Přispívání",content:`Základní informace Před zahájením práce vždy informujte komunitu (vytvořením nového problému nebo komentářem k již existujícímu problému). Tím se vyhnete tomu, aby dvě osoby pracovaly na stejné věci, a předejdete konfliktům.
 Práce na dokumentaci musí být začleněna do větve main.
@@ -629,6 +621,7 @@ Připojení pomocí externího účtu XMPP If this feature is enabled on your in
 To get the address of the room you want to join, you can use the “share chat” button that is located above the chat:
 Info By default, the share button is only visible to the owner of the video, and the admins/moderators of the instance. However, admins can decide to display this button for everyone.
 Then, choose “Připojení pomocí XMPP”:
+![Screenshot dialogového okna „Sdílet odkaz na chat“ na záložce „Připojení pomocí XMPP“.] (/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px “Připojení pomocí XMPP”)
 Then you just have to click on “open” or copy/paste the address of the chat room into your XMPP client (using the “join a room” feature).`,description:"Connect to chat using a XMPP client",tags:[],title:"XMPP Clients",uri:"/peertube-plugin-livechat/cs/documentation/user/xmpp_clients/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The poll system relies on two thinks:
 mod_muc_polls Prosody module on the backend polls Converse plugin on the frontend Backend mod_muc_polls is a Prosody modules that implements polls in MUC. This module could be used on any Prosody server, and has no code specific to the livechat plugin.
 The way this module works could be standardized one day, by writing a XEP.
@@ -719,89 +712,88 @@ Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/cs/technical/index.html"},{breadcrumb:"Peertube livechat",content:`Máte-li jakékoli dotazy nebo chcete-li si o tomto zásuvném modulu promluvit, můžete se připojit k této místnosti XMPP pomocí libovolného klienta Jabber: plugin-livechat-support@room.im.yiny.org.
 Pokud chcete projekt finančně podpořit, můžete mě kontaktovat na e-mailové adrese git.[at].john-livingston.fr nebo se podívejte na můj Liberapay profil.`,description:"Kontakt na autora",tags:[],title:"Kontaktujte mě",uri:"/peertube-plugin-livechat/cs/contact/index.html"},{breadcrumb:"Peertube livechat",content:`Soubory package.json, COPYRIGHT a LICENSE obsahují licenční informace pro tento software a jeho závislosti.
 Zásuvný modul spravuje John Livingston.
-Děkujeme Davidu Revoyovi za jeho práci na maskotovi Peertube, Sepia. Návrh postavy je pod licencí CC-By a soubory SVG použité k vytvoření některých log a avatarů v tomto pluginu jsou pod licencí GPLv3.0. Soubory PNG jsou pod licencemi CC-By a pocházejí z online generátoru avatarů Sepia.
+Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the Sepia avatar generator, the cat avatar generator, the bird avatar generator, the fenec/mobilizon avatar generator and the abstract avatar generator.
 Děkujeme Framasoft za umožnění Peertube, za finanční podporu a za hostování překladů projektu na jejich Weblate instance.
 Děkujeme ritimo za finanční podporu.
 Za finanční podporu děkujeme společnostem Code Lutin a Rétribution Copie Publique.
 Děkujeme NlNet a NGI0 Entrust fund za finanční podporu.
 Děkujeme Octopuce za finanční podporu.
-A děkuji všem individuálním přispěvatelům, kteří přispěli prostřednictvím mé liberapay stránky.`,description:"Kredity zásuvných modulů",tags:[],title:"Kredity",uri:"/peertube-plugin-livechat/cs/credits/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:`Enabling the chat for you live streams Varování Instance administrators can choose to disable or enable chat in specific cases. Information in this section are only true in the default case.
-When you create or modify a Peertube live, there is a “plugin settings” tab:
-In the “plugin settings” tab, there is a “Použití chatu” checkbox. Just check or uncheck it to enable or disable the chat associated to your video.
-Tip There can be other settings in this tab, depending on plugins installed on your Peertube instance.
-Per channel chat On the instance level, Peertube’s administrators can choose if chat rooms are unique per video, or if there will be an unique chat room per channel. Please contact your instance’s administrators for more information on how they configure the livechat plugin.
-Share the chat On top of the chat, there is a “Sdílet odkaz na chat” button.
-This button opens a popup, where you can obtain an url to join the chat. This url can be shared.
-The “Vložit” tab provide some links to embed the chat in websites, or in your live stream.
-![Screenshot dialogového okna „Sdílet odkaz na chat“, kde je zaškrtnuta možnost „Pouze pro čtení“.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu“)
-You can customize some options:
-Pouze pro čtení: you will only be able to read the chat, not write. This is useful to include the chat content in your live stream (see the OBS documentation). Použít aktuální barvy motivu: if checked, your current theme colors will be added to the url, so that any user that opens the link will have the same color set. Vytvoření iframe pro vložení chatu do webové stránky: instead of an url, you will obtain an HTML snippet that you can add to your website to embed the chat. For more information on the “Dock” tab, check the OBS documentation.
-![Screenshot dialogového okna „Sdílet odkaz na chat“ na kartě „Dock“. Byl vygenerován token, který lze vybrat.“](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu – karta doku“)
-In the “Web” tab, the provided url opens the chat in the Peertube interface. You can share this link to other users to invite them to join the chat.
-The “Sdílet odkaz na chat” popup can also contain a “Připojení pomocí XMPP” tab. This will only be available if your instance’s administators have enabled an correctly configured this option. Using this option, you can provide a link to join the chat using any XMPP client software. Using such softwares can for example facilitate moderation actions.
-Moderation Please refer to the moderation documentation.
-Include the chat in your video stream Please refer to the OBS documentation.
-Chat persistence By default, the chat is persistent. This means that the room content will be kept for a while. User joining will see messages posted before their arrival.
-You can change the persistence behaviour. Open the chat dropdown menu, and click on “Configure”.
-There are several options that can be changed.
-You can for example set the default and maximum number of messages to return to 0, so that new incomers won’t see any previously sent message.
-You can also uncheck “enable archiving”: if unchecked, messages will be pruned if the server restarts.
-By unchecking “Persistent”, the room will be cleared if there is no more participant.
-Delete the chat content If you want to delete the chat content, open the chat dropdown menu, then click on “Destroy”. A popup will open, asking a confirmation.
-The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the “Použití chatu” feature activated.`,description:"Some basics about how to setup and use the chat for your live stream",tags:[],title:"Některé základní informace",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace",content:` Některé základní informaceSome basics about how to setup and use the chat for your live stream
-Channel configurationPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
-ModerationPlugin peertube-plugin-livechat advanced moderation features
+A děkuji všem individuálním přispěvatelům, kteří přispěli prostřednictvím mé liberapay stránky.`,description:"Kredity zásuvných modulů",tags:[],title:"Kredity",uri:"/peertube-plugin-livechat/cs/credits/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:`Povolení chatu pro vaše živé přenosy Varování Správci instancí mohou v konkrétních případech chat zakázat nebo povolit. Informace v této části platí pouze pro výchozí případ.
+Při vytváření nebo úpravách živého vysílání Peertube se zobrazí záložka „Nastavení pluginu“:
+Na kartě „Nastavení pluginu“ se nachází zaškrtávací políčko „Použití chatu“. Stačí jej zaškrtnout nebo odškrtnout, abyste povolili nebo zakázali chat spojený s vaším videem.
+Tip V této záložce mohou být další nastavení, v závislosti na pluginech nainstalovaných ve vaší instanci Peertube.
+Chat podle kanálu Na úrovni instance mohou administrátoři Peertube zvolit, zda budou chatovací místnosti jedinečné pro každé video, nebo zda bude existovat jedna jedinečná chatovací místnost pro každý kanál. Pro více informací o konfiguraci pluginu livechat kontaktujte administrátory vaší instance.
+Sdílet chat V horní části chatu se nachází tlačítko „Sdílet odkaz na chat“.
+Toto tlačítko otevře vyskakovací okno, kde získáte adresu URL pro připojení k chatu. Tuto adresu URL lze sdílet.
+Záložka „Vložit“ obsahuje odkazy pro vložení chatu na webové stránky nebo do živého přenosu.
+Můžete přizpůsobit některé možnosti:
+Pouze pro čtení: budete moci chat pouze číst, nikoli psát. To je užitečné pro zahrnutí obsahu chatu do vašeho živého přenosu (viz dokumentace OBS). Použít aktuální barvy motivu: pokud je zaškrtnuto, budou barvy vašeho aktuálního motivu přidány do adresy URL, takže každý uživatel, který otevře odkaz, bude mít nastaveny stejné barvy. Vytvoření iframe pro vložení chatu do webové stránky: namísto URL adresy získáte HTML kód, který můžete přidat na svůj web a vložit tak chat. Další informace o záložce „Dock“ najdete v dokumentaci OBS.
+Na záložce „Web“ se pomocí zadané adresy URL otevře chat v rozhraní Peertube. Tento odkaz můžete sdílet s ostatními uživateli a pozvat je tak k účasti na chatu.
+Vyskakovací okno „Sdílet odkaz na chat“ může také obsahovat kartu „Připojení pomocí XMPP“. Ta bude k dispozici pouze v případě, že správci vaší instance tuto možnost povolili a správně nakonfigurovali. Pomocí této možnosti můžete poskytnout odkaz pro připojení k chatu pomocí libovolného XMPP klientského softwaru. Použití takového softwaru může například usnadnit moderování.
+![Screenshot dialogového okna „Sdílet odkaz na chat“ na záložce „Připojení pomocí XMPP“.] (/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px “Připojení pomocí XMPP”)
+Moderování Viz dokumentace k moderování.
+Zahrňte chat do svého videostreamu Viz dokumentace OBS.
+Trvalost chatu Ve výchozím nastavení je chat trvalý. To znamená, že obsah místnosti bude po určitou dobu uchován. Uživatelé, kteří se připojí, uvidí zprávy zveřejněné před jejich příchodem.
+Chování trvalosti můžete změnit. Otevřete rozbalovací nabídku chatu a klikněte na „Konfigurovat“.
+Existuje několik možností, které lze změnit.
+Můžete například nastavit výchozí a maximální počet zpráv, které se mají vrátit, na 0, aby noví příchozí neviděli žádné dříve odeslané zprávy.
+Můžete také zrušit zaškrtnutí políčka „povolit archivaci“: pokud není zaškrtnuto, zprávy budou po restartu serveru odstraněny.
+Odškrtnutím políčka „Trvalé“ bude místnost vymazána, pokud v ní již nebudou žádní účastníci.
+Smazat obsah chatu Pokud chcete smazat obsah chatu, otevřete rozbalovací nabídku chatu a klikněte na „Destroy“ (Zničit). Otevře se vyskakovací okno s žádostí o potvrzení.
+Chat se bude automaticky obnovovat pokaždé, když se někdo pokusí připojit, pokud video existuje a je aktivována funkce “Použití chatu”.`,description:"Základní informace o nastavení a používání chatu pro živé vysílání",tags:[],title:"Některé základní informace",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 8.0.0 a může být deaktivována správci vaší instance.
+V levém menu Peertube je položka „Chatovací místnosti“:
+Tento odkaz „Chatovací místnosti“ vás přenese na seznam vašich kanálů. Kliknutím na kanál budete moci nastavit některé možnosti pro vaše kanály:
+Zde můžete nakonfigurovat:
+Podmínky chatu kanálu Ztlumit anonymní uživatele výchozí hodnota Pomalý režim Chatovací robot Vlastní emodži Další funkce budou brzy k dispozici… `,description:"Konfigurace chatovacích místností kanálu Peertube",tags:[],title:"Konfigurace kanálu",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace",content:` Některé základní informaceZákladní informace o nastavení a používání chatu pro živé vysílání
+Konfigurace kanáluKonfigurace chatovacích místností kanálu Peertube
+OznámeníMajitelé a správci místností mohou v chatu zasílat speciální oznámení.
+ModerováníPlugin peertube-plugin-livechat pokročilé funkce moderování
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
-Moderation delayPlugin peertube-plugin-livechat moderation delay
-Custom emojisPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
+Zpoždění moderováníZpoždění moderování pluginu peertube-plugin-livechat
+Vlastní emodžiPlugin peertube-plugin-livechat vlastní emodži
+Režim pouze emodžiPlugin peertube-plugin-livechat režim pouze emodži
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
-Chat botChat bot setup
-Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
-Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
-TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.`,description:"How to setup the chat for your live stream",tags:[],title:"For streamers",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
-In the Peertube left menu, there is a “Chatovací místnosti” entry:
-This “Chatovací místnosti” link takes you to a list of your channels. By clicking on a channel, you will then be able to setup some options for your channels:
-Here you can configure:
-Podmínky chatu kanálu Ztlumit anonymní uživatele default value The slow mode The chat bot Custom emojis More features to come… `,description:"Peertube channel chatrooms configuration",tags:[],title:"Channel configuration",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 12.0.0. Room owners and administrators can send special announcements in the chat.
-These messages will be more visible than standard messages.
-To send announcements, owners and administrators will have a “Typ zprávy” selector on the top of the message field:
-There are several message types:
-Standardní: to send a standard message. Zvýrazněná: these messages will simply be highlighted in a blue box. Oznámení: these messages will be in a green box, and a bold “Oznámení” title will be added. Upozornění: these messages will be in a rend box, and a bold “Oznámení” title will be added. Info User that are not owner or administrator of the chatroom can’t send such messages.
-Varování Note: Standards XMPP clients will display announcements as standard messages.`,description:"Room owners and administrators can send special announcements in the chat.",tags:[],title:"Announcements",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Varování This section is still incomplete.
-Varování This page describes the behaviour of livechat versions >= 10.0.0. There were some changes in the way we manage access rights for Peertube administrators and moderators.
-The chat bot You can use a chat bot, that will help you for moderation. Check the chat bot documentation for more information.
-Accessing moderation tools You can access room settings and moderation tools using the chat dropdown menu at the top of the chat.
-Tip The video owner will be owner of the chat room. This means they can configure the room, delete it, promote other users as admins, …
-Tip Starting with livechat v10.0.0, Peertube instance’s admins and moderators have no special rights on rooms by default. However, they have a special button available on top of the chat: “Staňte se moderátorem”. Clicking this button will give them owner access on the room.
-You can use ConverseJS moderation commands to moderate the room. When you open the chat room in full screen, there will also be a menu with dedicated commands on the top right.
-Ztlumit anonymní uživatele Info Tato funkce je součástí pluginu livechat verze 10.2.0. You can prevent anonymous users to send messages. In such case, only registered users will be able to talk in the chat.
-To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Ztlumit anonymní uživatele” checkbox.
-Anonymous users won’t have the message field, and will see following prompt: “Zprávy mohou posílat pouze registrovaní uživatelé.”
-When this feature is enabled, anonymous users will be assigned the “visitor” role. You can change their role to “participant” if you want to allow some of them to talk.
-If you change the room configuration, all anonymous users will be muted or unmuted.
-You can choose to enable or disable this feature for new chatrooms on the channel configuration page.
-Roles and affiliations There are several roles that can be assignated to users in chat rooms: owner, moderators, member, …
-Varování This section is still incomplete.
-You can promote users as moderators, if you need some help.
-Anonymizovat moderátorské akce Info Tato funkce je součástí pluginu livechat verze 11.0.0. It is possible to anonymize moderation actions, to avoid disclosing who is banning/kicking/… occupants.
-To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Anonymizovat moderátorské akce” checkbox.
-You can choose to enable or disable this feature for new chatrooms on the channel configuration page.
-Participant message history search Info Tato funkce je součástí pluginu livechat verze 11.0.0. As a room admin or owner, you can search all messages sent by a given participant.
-To do so, you have several ways:
-using the “Vyhledat všechny zprávy” action in the dropdown menu besides participants in the sidebar using the “Vyhledat všechny zprávy” action in the dropdown menu besides chat messages Tip To have more space and better readability, open the chat in full-page mode.
+Chat botNastavení chatovacího robota
+Speciální znakyBot může automaticky moderovat zprávy obsahující příliš mnoho speciálních znaků.
+Žádné duplicitní zprávyBot může automaticky moderovat duplicitní zprávy.
+Zakázaná slovaBot může automaticky moderovat zprávy obsahující zakázaná slova.
+ČasovačeBot může pravidelně odesílat některé zprávy.
+PříkazyBot může reagovat na několik příkazů.`,description:"Jak nastavit chat pro živé vysílání",tags:[],title:"Pro streamery",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 12.0.0. Majitelé a správci místností mohou v chatu zasílat speciální oznámení.
+Tyto zprávy budou viditelnější než standardní zprávy.
+Pro odesílání oznámení budou mít majitelé a správci v horní části pole pro zprávy k dispozici volič „Typ zprávy“:
+Existuje několik typů zpráv:
+Standardní: pro odeslání standardní zprávy. Zvýrazněná: tyto zprávy budou jednoduše zvýrazněny v modrém rámečku. Oznámení: tyto zprávy budou zobrazeny v zeleném rámečku a bude k nim přidán tučný nadpis „Oznámení“. Upozornění: tyto zprávy budou v rámečku a bude k nim přidán tučný nadpis „Oznámení“. Info Uživatelé, kteří nejsou vlastníky nebo správci chatovací místnosti, nemohou takové zprávy odesílat.
+Varování Poznámka: Standardní klienti XMPP zobrazují oznámení jako standardní zprávy.`,description:"Majitelé a správci místností mohou v chatu zasílat speciální oznámení.",tags:[],title:"Oznámení",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/announcements/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Varování Tato část je stále neúplná.
+Varování Tato stránka popisuje chování verzí livechatu >= 10.0.0. Došlo k několika změnám ve způsobu, jakým spravujeme přístupová práva pro administrátory a moderátory Peertube.
+Chatovací robot Můžete použít chatovacího robota, který vám pomůže s moderováním. Více informací najdete v dokumentaci k chatovacímu robotovi.
+Přístup k nástrojům pro moderování K nastavení místnosti a nástrojům pro moderování se dostanete pomocí rozbalovacího menu chatu v horní části chatu.
+Tip Vlastník videa bude vlastníkem chatovací místnosti. To znamená, že může místnost konfigurovat, mazat, povyšovat jiné uživatele na administrátory atd.
+Tip Počínaje verzí livechat v10.0.0 nemají administrátoři a moderátoři instance Peertube ve výchozím nastavení žádná zvláštní práva v místnostech. Mají však k dispozici speciální tlačítko v horní části chatu: “Staňte se moderátorem”. Kliknutím na toto tlačítko získají přístup vlastníka k místnosti.
+K moderování místnosti můžete použít moderační příkazy ConverseJS. Když otevřete chatovací místnost na celou obrazovku, v pravém horním rohu se zobrazí také nabídka se speciálními příkazy.
+Ztlumit anonymní uživatele Info Tato funkce je součástí pluginu livechat verze 10.2.0. Můžete zabránit anonymním uživatelům v odesílání zpráv. V takovém případě budou moci v chatu komunikovat pouze registrovaní uživatelé.
+Chcete-li tuto funkci povolit nebo zakázat, použijte rozbalovací nabídku chatu a otevřete nabídku “konfigurace”. Ve formuláři najdete zaškrtávací políčko “Ztlumit anonymní uživatele”.
+Anonymní uživatelé nebudou mít pole pro zprávu a uvidí následující výzvu: “Zprávy mohou posílat pouze registrovaní uživatelé.”
+Pokud je tato funkce povolena, anonymním uživatelům bude přiřazena role “návštěvník”. Pokud chcete některým z nich umožnit mluvit, můžete jejich roli změnit na “účastník”.
+Pokud změníte konfiguraci místnosti, všichni anonymní uživatelé budou ztlumeni nebo odztlumeni.
+Tuto funkci můžete povolit nebo zakázat pro nové chatovací místnosti na stránce konfigurace kanálu.
+Role a příslušnost V chatovacích místnostech lze uživatelům přiřadit několik rolí: vlastník, moderátoři, členové, …
+Varování Tato část je stále neúplná.
+Pokud potřebujete pomoc, můžete uživatele povýšit na moderátory.
+Anonymizovat moderátorské akce Info Tato funkce je součástí pluginu livechat verze 11.0.0. Je možné anonymizovat moderátorské akce, aby se zabránilo odhalení toho, kdo zakazuje/vykazuje/… účastníky.
+Chcete-li tuto funkci povolit nebo zakázat, použijte rozbalovací nabídku chatu a otevřete nabídku “konfigurace”. Ve formuláři najdete zaškrtávací políčko “Anonymizovat moderátorské akce”.
+Tuto funkci můžete povolit nebo zakázat pro nové chatovací místnosti na stránce konfigurace kanálu.
+Vyhledávání historie zpráv účastníků Info Tato funkce je součástí pluginu livechat verze 11.0.0. Jako správce nebo vlastník místnosti můžete prohledávat všechny zprávy odeslané daným účastníkem.
+K tomu máte několik možností:
+pomocí akce “Vyhledat všechny zprávy” v rozevíracím menu vedle účastníků v postranním panelu using the “Vyhledat všechny zprávy” action in the dropdown menu besides chat messages Tip To have more space and better readability, open the chat in full-page mode.
 In the search results, there are several informations that are shown at the right of the participant nickname:
 if the current nickname is different than the nickname when the participant has sent the message, the original nickname will be shown you will see the JID (Jabber ID) of the participant you will also see the occupant-id of the participant The search result will also include all messages related to participants who had the same nickname. You can differenciate them by comparing JID and occupant-id.
 Delete room content You can delete old rooms: join the room, and use the menu on the top to destroy the room.
 Instance moderation As Peertube instance moderator or administrator, you will probably need to check that your users are not behaving badly.
 You can list all existing chatrooms: in the plugin settings screen, there is a button «List rooms».
-From there, you can also promote yourself as room moderator by using the “Staňte se moderátorem” button on the right.`,description:"Plugin peertube-plugin-livechat advanced moderation features",tags:[],title:"Moderation",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/moderation/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 10.2.0. Configuration You can add terms & conditions to your channel. These terms will be shown to all users joining the chat.
+From there, you can also promote yourself as room moderator by using the “Staňte se moderátorem” button on the right.`,description:"Plugin peertube-plugin-livechat pokročilé funkce moderování",tags:[],title:"Moderování",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/moderation/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 10.2.0. Konfigurace You can add terms & conditions to your channel. These terms will be shown to all users joining the chat.
 To configure the terms & conditions, go to the channel configuration page:
 URL in the message will be clickable. You can also do some styling: Message Styling.
 Viewers When joining the chat, viewers will see the terms:
@@ -809,37 +801,37 @@ Info Peertube instance’s admin can also set global terms & conditions. If so, 
 Info Anonymous users will only see the terms & conditions once they have chosen their nickname (in other words: once they are able to talk).
 You can change the terms content at any time, it will be instantly updated for all viewers.
 Users can hide the terms & conditions. When doing so, terms won’t be shown again, unless you change the content.
-Info If your Peertube instance allows joining chat with XMPP clients, users using such clients will see the terms as chat messages, coming from a “Peertube” account. When you update terms, they will receive a new message with the update terms content.`,description:"Configure channel's chat terms & conditions",tags:[],title:"Terms & conditions",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/terms/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 8.3.0. Introduction As a streamer, you can choose to rate limit your viewers messages in the chat.
+Info If your Peertube instance allows joining chat with XMPP clients, users using such clients will see the terms as chat messages, coming from a “Peertube” account. When you update terms, they will receive a new message with the update terms content.`,description:"Configure channel's chat terms & conditions",tags:[],title:"Terms & conditions",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/terms/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 8.3.0. Úvod As a streamer, you can choose to rate limit your viewers messages in the chat.
 This can be really usefull to:
 avoid message flooding avoid unreadable chat if there are many viewers talking You can set a number of seconds that users will have to wait after sending a message, before sending another.
 This limitation does not apply to moderators.
 Slow mode option On the channel configuration page, you can set the slow mode option:
-This value will apply as a default value for all your channel’s chatrooms.
-Setting the value to 0 will disable the feature.
+Tato hodnota bude platit jako výchozí hodnota pro všechny chatovací místnosti vašeho kanálu.
+Nastavením hodnoty na 0 se tato funkce deaktivuje.
 Setting the value to a positive integer will set the period during which users will not be able to post additional messages.
 To modify the value for an already existing room, just open the room “configuration” menu (on top of the chat window), and change the slow mode value in the configuration form.
 For viewers If the slow mode is enabled, users will be informed by a message.
 When they send a message, the input field will be disabled for X seconds (where X is the slow mode duration).
-This limitation does not apply to moderators.`,description:"Plugin peertube-plugin-livechat slow mode",tags:[],title:"Slow mode",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/slow_mode/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 10.3.0. Introduction As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants.
-When this feature is enabled, moderators will see all messages without any delay. Chat participants won’t see that their own messages are delayed.
-Please note that messages sent by moderators will also be delayed, to avoid them to respond to messages that are not even visible by other participants.
-Moderation delay option On the channel configuration page, you can set the “Zpoždění moderování” option:
-This value will apply as a default value for all your channel’s chatrooms.
-Setting the value to 0 will disable the feature.
-Setting the value to a positive integer will set the delay, in seconds, to apply to messages. Please avoid setting the value too high. Ideally it should not exceed a few seconds (4 or 5 seconds for example).
-To modify the value for an already existing room, just open the room “configuration” menu (on top of the chat window), and change the moderation delay value in the configuration form.
-Varování Currently, this feature has one known bug: users that join the chat will get all messages, even messages that are still pending for other participants. However, messages sent after they joined will be delayed correctly.
-Tip You can combine a short moderation delay (1 second for example) with the moderation bot to delete messages containing swear words before any non-moderator user will see them.
-In the chat As a moderator, you will see the remaining time (in seconds) before the message is broadcasted, just besides the message datetime.`,description:"Plugin peertube-plugin-livechat moderation delay",tags:[],title:"Moderation delay",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/moderation_delay/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 10.1.0. Channel emojis Streamers can add custom emojis to their channels.
-On the channel configuration page, open the “Emotikony kanálu” tab:
+This limitation does not apply to moderators.`,description:"Plugin peertube-plugin-livechat slow mode",tags:[],title:"Slow mode",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/slow_mode/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 10.3.0. Úvod Jako streamer můžete zvolit zpoždění zpráv v chatu, aby měli moderátoři čas smazat zprávy dříve, než je ostatní účastníci stačí přečíst.
+Když je tato funkce zapnutá, moderátoři uvidí všechny zprávy bez zpoždění. Účastníci chatu neuvidí, že jejich vlastní zprávy jsou zpožděné.
+Vezměte prosím na vědomí, že zprávy odeslané moderátory budou také zpožděny, aby se zabránilo tomu, že budou odpovídat na zprávy, které nejsou ostatním účastníkům ani viditelné.
+Možnost zpoždění moderování Na stránce konfigurace kanálu můžete nastavit možnost „Zpoždění moderování“:
+Tato hodnota bude platit jako výchozí hodnota pro všechny chatovací místnosti vašeho kanálu.
+Nastavením hodnoty na 0 se tato funkce deaktivuje.
+Nastavením hodnoty na kladné celé číslo nastavíte zpoždění v sekundách, které se bude vztahovat na zprávy. Nenastavujte příliš vysokou hodnotu. Ideálně by neměla přesáhnout několik sekund (například 4 nebo 5 sekund).
+Chcete-li změnit hodnotu pro již existující místnost, stačí otevřít nabídku “konfigurace” místnosti (v horní části okna chatu) a změnit hodnotu zpoždění moderování v konfiguračním formuláři.
+Varování V současné době má tato funkce jednu známou chybu: uživatelé, kteří se připojí k chatu, obdrží všechny zprávy, i ty, které jsou pro ostatní účastníky stále čekající. Zprávy odeslané po jejich připojení však budou správně zpožděny.
+Tip Můžete kombinovat krátké zpoždění moderování (například 1 sekundu) s moderátorským botem, aby byly zprávy obsahující vulgární výrazy smazány dříve, než je uvidí uživatelé, kteří nejsou moderátory.
+V chatu Jako moderátor uvidíte zbývající čas (v sekundách) do vysílání zprávy hned vedle data a času zprávy.`,description:"Zpoždění moderování pluginu peertube-plugin-livechat",tags:[],title:"Zpoždění moderování",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/moderation_delay/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 10.1.0. Emodži kanálu Streamerové mohou do svých kanálů přidávat vlastní emodži.
+Na stránce konfigurace kanálu otevřete záložku “Emotikony kanálu”:
 Pro svůj kanál můžete nakonfigurovat vlastní emotikony. Tyto emotikony budou k dispozici ve výběru emotikonů. Uživatelé je mohou používat také pomocí jejich krátkého názvu (například napsáním “:shortname:”).
 V chatu můžete používat emotikony pomocí “:shortname:”. Krátký název může začínat a/nebo končit dvojtečkou (:) a může obsahovat pouze alfanumerické znaky, podtržítka a pomlčky. Důrazně doporučujeme začínat je dvojtečkou, aby uživatelé mohli používat automatické doplňování (zadáním “:” a následným stisknutím klávesy TAB).
-Import / Export On the channel configuration page, there are an “Import” and an “Export” button. The “Export” button generates a file than you can then import on another channel.
-You can also generate a file to import from any other source (for example you can import your Twitch custom emojis). The file must be a valid JSON file, using the following format:
-[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] The sn attribute is the short name code. The url attribute can be any image url than your browser can access, or a Data URL representing the file you want to import.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Custom emojis",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 12.0.0. Režim pouze pro emoji V chatovacích místnostech můžete povolit režim “Pouze emoji”. Když je tento režim povolen, mohou účastníci posílat pouze emoji (standardní nebo vlastní emoji kanálu). Moderátorů se toto omezení netýká.
-This mode can be usefull for example:
-To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Režim pouze pro emoji” checkbox.
-If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Povolení režimu pouze emoji ve všech chatovacích místnostech kanálu” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 10.2.0. Create a poll You can create a new poll by using the “Vytvoření nové ankety” action in the chat top menu:
+Import / Export Na stránce konfigurace kanálu se nachází tlačítka „Import“ a „Export“. Tlačítko „Export“ vygeneruje soubor, který můžete následně importovat do jiného kanálu.
+Můžete také vygenerovat soubor pro import z jakéhokoli jiného zdroje (například můžete importovat své vlastní emodži z Twitche). Soubor musí být platný soubor JSON v následujícím formátu:
+[ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] Atribut sn je zkratka názvu. Atribut url může být libovolná adresa URL obrázku, ke které má váš prohlížeč přístup, nebo Data URL představující soubor, který chcete importovat.`,description:"Plugin peertube-plugin-livechat vlastní emodži",tags:[],title:"Vlastní emodži",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 12.0.0. Režim pouze pro emoji V chatovacích místnostech můžete povolit režim “Pouze emoji”. Když je tento režim povolen, mohou účastníci posílat pouze emoji (standardní nebo vlastní emoji kanálu). Moderátorů se toto omezení netýká.
+Tento režim může být užitečný například:
+Aby se zabránilo spamu nebo urážlivým zprávám, když nejste přítomni a nemůžete je moderovat. Když je příliš mnoho účastníků, kteří mluví, a vy už nemůžete správně moderovat. Chcete-li tuto funkci povolit nebo zakázat, použijte rozbalovací nabídku chatu a otevřete nabídku „konfigurovat“. Ve formuláři najdete zaškrtávací políčko “Režim pouze pro emoji”.
+Pokud chcete tuto funkci povolit pro všechny své chatovací místnosti najednou, otevřete stránku konfigurace emodži kanálu a použijte tlačítko “Povolení režimu pouze emoji ve všech chatovacích místnostech kanálu”.`,description:"Plugin peertube-plugin-livechat režim pouze emodži",tags:[],title:"Režim pouze emodži",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 10.2.0. Create a poll You can create a new poll by using the “Vytvoření nové ankety” action in the chat top menu:
 Varování This poll feature should not be considered as a reliable voting system. It is easy to cheat. There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat. Votes are never fully anonymous, someone having access to the server could see who voted for what choice.
 Poll form Fill the form fields:
 “Otázka”: the question to ask to you viewers “Doba trvání ankety (v minutách)”: the duration for which viewers can vote “Anonymní výsledky”: if checked, votes won’t be publicly visible in the chat “Choice N”: choices that will be presented to viewers You must at least fill the two first choices fields.
@@ -858,7 +850,7 @@ Tip Anonymous viewers can only vote once they have choosen their nickname.
 If “Anonymní výsledky” is checked, votes won’t be shown to other users. If unchecked, votes will be publicly visible as you will see message like “!1” in the chat.
 Info For viewers using XMPP clients or outdated livechat plugin versions, the banner will not be visible. But they will see the message in the chat and will be able to vote by sending messages with their choices.
 When the poll ends, a new message will be sent in the chat, with the results.
-Info The only way to get old polls results is to search for the poll end message in the chat. For now, polls results are not saved by any other means. So don’t forget to note polls results if you want to keep them.`,description:"You can create polls to ask viewers their opinion",tags:[],title:"Polls",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 10.0.0. Introduction The livechat plugin includes a Task Application: a kind of “to-do list” feature where you can create task lists and add tasks to them. Every room’s admins have access to these tasks, so you can edit them collaboratively.
+Info The only way to get old polls results is to search for the poll end message in the chat. For now, polls results are not saved by any other means. So don’t forget to note polls results if you want to keep them.`,description:"You can create polls to ask viewers their opinion",tags:[],title:"Polls",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 10.0.0. Úvod The livechat plugin includes a Task Application: a kind of “to-do list” feature where you can create task lists and add tasks to them. Every room’s admins have access to these tasks, so you can edit them collaboratively.
 You can for example use the Task Application to:
 prepare a list of themes you want to discuss during your livestream, so you can be sure you won’t forget anything highlight questions from your viewers, so you can come back to them later without forgetting to answer them … Using the Task Application Opening the Task Application To open the Task Application, there is a “Úkoly” button in the top chat menu:
 Clicking this button will toggle the Task Application display:
@@ -874,9 +866,10 @@ Edit tasks Tasks can be edited by using the edit button on the right.
 Tasks can be marked complete (or uncomplete) by clicking directly on the checkbox in the list.
 Sorting tasks / change task list You can sort tasks, or move tasks from one list to another, simply using drag & drop.
 Create a task from a chat message You can create a task from a message in a chat, using the “Vytvořit nový úkol” button in the dropdown menu at the right of the message. This will open a dialog box where you can choose which task list you want to add the task into. The task name will be the user nickname, and the task description the message content.
-Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered.`,description:"You can handle tasks and task lists with your moderation team.",tags:[],title:"Tasks / To-do lists",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/tasks/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info Tato funkce je součástí pluginu livechat verze 11.0.0. Introduction The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants. Every room’s admins have access to these notes, so they can edit them collaboratively.
+Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered.`,description:"You can handle tasks and task lists with your moderation team.",tags:[],title:"Tasks / To-do lists",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/tasks/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 11.0.0. Úvod The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants. Every room’s admins have access to these notes, so they can edit them collaboratively.
 You can for example use this Application to:
-share some notes between moderators take notes about participants that were kicked or caused troubles … Using the Moderator Notes Application Opening the Moderator Notes Application To open the Moderator Notes Application, there is a “Moderátorské poznámky” button in the top chat menu:
+share some notes between moderators take notes about participants that were kicked or caused troubles … Using the Moderator Notes Application Opening the Moderator Notes Application Pro otevření aplikace Moderator Notes (Poznámky moderátora) je v horním menu chatu tlačítko „Moderátorské poznámky“:
+![Screenshot z chatu Peertube, celá obrazovka. Otevřené horní menu chatu s tlačítkem „Moderátorské poznámky“.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px Otevření aplikace Moderator Notes")
 Clicking this button will toggle the Application display:
 Tip To have more space and better readability, open the chat in full-page mode.
 Access rights Every room’s admins have access to this Application (read and write access).
@@ -892,44 +885,44 @@ Notes filtering You can filter notes to find all notes related to a given partic
 click on the “Hledání poznámek” button that is available on notes to find all notes related to the same participant click on the “Hledání poznámek” button in the dropdown menu besides participants in the sidebar click on the “Hledání poznámek” button in the dropdown menu besides chat messages You can remove the filter by clicking on the close button.
 When you filters notes on a participant, there are several informations that are shown at the right of the participant nickname:
 if the current nickname is different than the nickname when you created the note, the original nickname will be shown you will see the JID (Jabber ID) of the participant you will also see the occupant-id of the participant The search result will also include all notes related to participants who had the same nickname. So you can also take note for anonymous users (who don’t have any consistent JID or occupant-id). You can differenciate them by comparing JID and occupant-id.
-Sorting notes You can sort notes simply using drag & drop.`,description:"Plugin peertube-plugin-livechat moderation notes",tags:[],title:"Moderation notes",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/moderation_notes/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
-You can enable a chat bot on your chatrooms. The bot configuration is made channel per channel, and will apply to all related videos’ chatrooms.
-To access this page, check the channel configuration documentation.
-Once there, you can enable the bot, and setup several options:
-Special charactersThe bot can automatically moderate messages containing too many special characters.
-No duplicate messageThe bot can automatically moderate duplicate messages.
-Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
-TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.
-The bot will reload instantly when you save the page.`,description:"Chat bot setup",tags:[],title:"Chat bot",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Kategorie",uri:"/peertube-plugin-livechat/cs/categories/index.html"},{breadcrumb:"",content:` Tip You can use the language selector in the left menu to view this documentation in different languages. Some translations are missing or incomplete. In this case, you’ll see the English version of the text.
+Sorting notes You can sort notes simply using drag & drop.`,description:"Plugin peertube-plugin-livechat moderation notes",tags:[],title:"Moderation notes",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/moderation_notes/index.html"},{breadcrumb:"Peertube livechat > Dokumentace > Uživatelská dokumentace > Pro streamery",content:` Info Tato funkce je součástí pluginu livechat verze 8.0.0 a může být deaktivována správci vaší instance.
+V chatovacích místnostech můžete aktivovat chatovacího robota. Konfigurace robota se provádí pro každý kanál zvlášť a bude platit pro všechny chatovací místnosti souvisejících videí.
+Pro přístup na tuto stránku zkontrolujte dokumentaci ke konfiguraci kanálu.
+Jakmile tam budete, můžete bota aktivovat a nastavit několik možností:
+Speciální znakyBot může automaticky moderovat zprávy obsahující příliš mnoho speciálních znaků.
+Žádné duplicitní zprávyBot může automaticky moderovat duplicitní zprávy.
+Zakázaná slovaBot může automaticky moderovat zprávy obsahující zakázaná slova.
+ČasovačeBot může pravidelně odesílat některé zprávy.
+PříkazyBot může reagovat na několik příkazů.
+Bot se okamžitě znovu načte, jakmile stránku uložíte.`,description:"Nastavení chatovacího robota",tags:[],title:"Chat bot",uri:"/peertube-plugin-livechat/cs/documentation/user/streamers/bot/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Kategorie",uri:"/peertube-plugin-livechat/cs/categories/index.html"},{breadcrumb:"",content:` Tip You can use the language selector in the left menu to view this documentation in different languages. Some translations are missing or incomplete. In this case, you’ll see the English version of the text.
 Welcome the Peertube Livechat Plugin documentation.
 Peertube is a decentralized streaming platform, that can provide both live streaming and VOD (Video On Demand) features. The present plugin adds chatting capatibilities to your Peertube installation, allowing viewers to interract with streamers.
 To have a glimpse on this plugin capabilities, checkout the introduction. For more precise informations, please find bellow the summary of this documentation.
 Tip You can use the searchbox in the left menu to quickly find specific documentation parts.
-Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
-IntroductionIntroduction
-DokumentacePlugin documentation
+Info Před aktualizací na hlavní verzi si přečtěte poznámky k verzi a seznam zásadních změn: CHANGELOG.
+ÚvodÚvod
+DokumentaceDokumentace k pluginu
 Uživatelská dokumentaceDokumentace pro uživatele pluginu peertube-plugin-livechat
 For viewersHow to chat for stream viewers
 OBSDokumentace ke streamování obsahu chatu pomocí OBS.
 XMPP ClientsConnect to chat using a XMPP client
-For streamersHow to setup the chat for your live stream
-Některé základní informaceSome basics about how to setup and use the chat for your live stream
-Channel configurationPeertube channel chatrooms configuration
-AnnouncementsRoom owners and administrators can send special announcements in the chat.
-ModerationPlugin peertube-plugin-livechat advanced moderation features
+Pro streameryJak nastavit chat pro živé vysílání
+Některé základní informaceZákladní informace o nastavení a používání chatu pro živé vysílání
+Konfigurace kanáluKonfigurace chatovacích místností kanálu Peertube
+OznámeníMajitelé a správci místností mohou v chatu zasílat speciální oznámení.
+ModerováníPlugin peertube-plugin-livechat pokročilé funkce moderování
 Terms & conditionsConfigure channel's chat terms & conditions
 Slow modePlugin peertube-plugin-livechat slow mode
-Moderation delayPlugin peertube-plugin-livechat moderation delay
-Custom emojisPlugin peertube-plugin-livechat custom emojis
-Emojis only modePlugin peertube-plugin-livechat emojis only mode
+Zpoždění moderováníZpoždění moderování pluginu peertube-plugin-livechat
+Vlastní emodžiPlugin peertube-plugin-livechat vlastní emodži
+Režim pouze emodžiPlugin peertube-plugin-livechat režim pouze emodži
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Moderation notesPlugin peertube-plugin-livechat moderation notes
-Chat botChat bot setup
-Installation guidePlugin peertube-plugin-livechat installation guide
+Chat botNastavení chatovacího robota
+Instalační příručkaPrůvodce instalací pluginu peertube-plugin-livechat
 Odstraňování potížíNěkteré klasické chyby a jejich řešení.
-Known issues: CPU CompatibilityFor now, the plugin only works out of the box for x86_64 and arm64 CPU architecture. Here are some instructions for other CPU architectures.
+Známé problémy: Kompatibilita procesoruProzatím plugin funguje pouze pro architektury procesorů x86_64 a arm64. Zde je několik pokynů pro jiné architektury procesorů.
 Aktualizace z verze starší než 6.0.0Důležité poznámky při aktualizaci starší verze.
 Dokumentace administrátoraSpráva pluginu Peertube Livechat
 NastaveníNastavení pluginu Peertube Livechat

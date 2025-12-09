@@ -19,28 +19,7 @@ In the following screenshot, you can see a live replay, where the chat content i
 In the following screenshot, you can see an OBS setup, where the chat is included as a source in the current scene (background color can be changed, and can be transparent):
 Other usages By default, each streamer will be able to activate/deactivate the chat for their live streams.
 But on the instance level, administrators can choose to activate the chat for all videos (live and/or VOD).
-You can even activate the chat for specific VOD videos. This is how the demo page works: it is not a live stream, but I have activated the chat specifically for this video.`,description:"Introduction",tags:[],title:"Introduction",uri:"/peertube-plugin-livechat/pl/intro/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:` Porada This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html. Translations are available at https://www.contributor-covenant.org/translations. Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.
-Our Pledge We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
-Our Standards Examples of behavior that contributes to a positive environment for our community include:
-Demonstrating empathy and kindness toward other people Being respectful of differing opinions, viewpoints, and experiences Giving and gracefully accepting constructive feedback Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience Focusing on what is best not just for us as individuals, but for the overall community Examples of unacceptable behavior include:
-The use of sexualized language or imagery, and sexual attention or advances of any kind Trolling, insulting or derogatory comments, and personal or political attacks Public or private harassment Publishing others’ private information, such as a physical or email address, without their explicit permission Other conduct which could reasonably be considered inappropriate in a professional setting Enforcement Responsibilities Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
-Scope This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
-Enforcement Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr. All complaints will be reviewed and investigated promptly and fairly.
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
-Enforcement Guidelines Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
-1. Correction Community Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
-Consequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
-2. Warning Community Impact: A violation through a single incident or series of actions.
-Consequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
-3. Temporary Ban Community Impact: A serious violation of community standards, including sustained inappropriate behavior.
-Consequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
-4. Permanent Ban Community Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
-Consequence: A permanent ban from any sort of public interaction within the community.
-Attribution This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
-Community Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.
-For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"Contributor Covenant Code of Conduct",tags:[],title:"Code of Conduct",uri:"/peertube-plugin-livechat/pl/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat",content:` User documentationPlugin peertube-plugin-livechat user documentation
+You can even activate the chat for specific VOD videos. This is how the demo page works: it is not a live stream, but I have activated the chat specifically for this video.`,description:"Introduction",tags:[],title:"Introduction",uri:"/peertube-plugin-livechat/pl/intro/index.html"},{breadcrumb:"Peertube livechat",content:` User documentationPlugin peertube-plugin-livechat user documentation
 For viewersHow to chat for stream viewers
 OBSDocumentation to stream the chat content using OBS.
 XMPP ClientsConnect to chat using a XMPP client
@@ -107,8 +86,8 @@ Disable the advanced channel configuration and the chatbot If you encounter any 
 Enable regular expressions for chatrooms’ forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chat behaviour Typ pokoju Możesz tutaj wybrać oddzielne pokoje dla każdego filmu lub pogrupować je według kanałów.
 Automatycznie otwórz rozmowę Podczas oglądania filmu okno rozmów otworzy się automatycznie.
-Show the «open in new window» button There will be a button for opening the web chat in a new window.
-Show the «share chat link» button This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat. The chat can be customized (readonly mode, use the current theme, …).
+Pokaż przycisk do otwarcia w osobnym oknie Na czacie pojawi się przycisk do jego otwarcia w osobnym oknie.
+Pokaż przycisk do udostępniania linku do czatu This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat. The chat can be customized (readonly mode, use the current theme, …).
 You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!
 This setting allows you to choose who can access this modal.
 Users can activate the chat for their lives If checked, all live videos will have a checkbox in their properties for enabling the web chat.
@@ -239,7 +218,28 @@ Special charactersThe bot can automatically moderate messages containing too man
 No duplicate messageThe bot can automatically moderate duplicate messages.
 Forbidden wordsThe bot can automatically moderate messages containing forbidden words.
 TimersThe bot can send periodically some messages.
-CommandsThe bot can respond to several commands.`,description:"Plugin peertube-plugin-livechat user documentation",tags:[],title:"User documentation",uri:"/peertube-plugin-livechat/pl/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`No duplicate message Info This feature comes with the livechat plugin version 12.0.0. Configuration By enabling this options, the moderation bot will automatically moderate duplicate messages. That means if a user send the same message twice within X seconds, the second message will be deleted.
+CommandsThe bot can respond to several commands.`,description:"Plugin peertube-plugin-livechat user documentation",tags:[],title:"User documentation",uri:"/peertube-plugin-livechat/pl/documentation/user/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:` Porada Te warunki postępowania są oparte o dokument Contributor Covenant w wersji 2.1, który jest dostępny pod adresem https://www.contributor-covenant.org/version/2/1/code_of_conduct.html. Jego tłumaczenia są dostępne tutaj: https://www.contributor-covenant.org/translations. Przykłady jakiegokolwiek nieakceptowalnego zachowania mogą być zgłoszone do administratorów społeczności, z którymi można się skontaktować przez e–maila, pisząc na adres git.[at].john-livingston.fr.
+Our Pledge We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+Our Standards Examples of behavior that contributes to a positive environment for our community include:
+Demonstrating empathy and kindness toward other people Being respectful of differing opinions, viewpoints, and experiences Giving and gracefully accepting constructive feedback Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience Focusing on what is best not just for us as individuals, but for the overall community Examples of unacceptable behavior include:
+The use of sexualized language or imagery, and sexual attention or advances of any kind Trolling, insulting or derogatory comments, and personal or political attacks Public or private harassment Publishing others’ private information, such as a physical or email address, without their explicit permission Other conduct which could reasonably be considered inappropriate in a professional setting Enforcement Responsibilities Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+Scope This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+Enforcement Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr. All complaints will be reviewed and investigated promptly and fairly.
+All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+Enforcement Guidelines Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+1. Correction Community Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+Consequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+2. Warning Community Impact: A violation through a single incident or series of actions.
+Consequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+3. Temporary Ban Community Impact: A serious violation of community standards, including sustained inappropriate behavior.
+Consequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+4. Permanent Ban Community Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+Consequence: A permanent ban from any sort of public interaction within the community.
+Attribution This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
+Community Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.
+For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"Warunki postępowania dla kontrybutorów",tags:[],title:"Warunki postępowania",uri:"/peertube-plugin-livechat/pl/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`No duplicate message Info This feature comes with the livechat plugin version 12.0.0. Configuration By enabling this options, the moderation bot will automatically moderate duplicate messages. That means if a user send the same message twice within X seconds, the second message will be deleted.
 Time interval The interval, in seconds, during which a user can’t send again the same message.
 Powód Reason to display besides deleted messages
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.`,description:"The bot can automatically moderate duplicate messages.",tags:[],title:"No duplicate message",uri:"/peertube-plugin-livechat/pl/documentation/user/streamers/bot/no_duplicate/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`Users that are not connected to your Peertube instance are joining the chat using “anonymous accounts” (they can freely choose a nickname, and will be assigned a random avatar).
@@ -260,8 +260,8 @@ This is the button label in the following screenshot:
 For now, it is not possible to localize this label.
 Discovery URL Your OpenID Connect provider must implement the discovery URL. Just set here the discovery url, that should be something like https://example.com/.well-known/openid-configuration.
 Note: if your provider use the standard /.well-known/openid-configuration path, you can omit it. For example https://accounts.google.com will work.
-Client ID Your application Client ID.
-Client secret You application Client secret.
+Identyfikator klienta Your application Client ID.
+Sekretny klucz klienta You application Client secret.
 Google, Facebook, … In addition to that, you can also configure one or several “standard” Open ID Connect provider (Google, Facebook, …).
 For these providers, discovery url and button label are preset. You just have to create an OAuth2 application on the provider side, and configure Client ID and Client Secret.
 If you think of a standard provider that is not available, you can ask for implementation by opening a new issue.
@@ -440,13 +440,30 @@ docker-compose exec -u peertube \\ peertube \\ /data/plugins/data/peertube-plugi
 Using MatterbridgeUsing Matterbridge to bridge with other chats`,description:"Some advanced features",tags:[],title:"Advanced usage",uri:"/peertube-plugin-livechat/pl/documentation/admin/advanced/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure the bot to respond to commands. A command is a message starting with a “!”, like for example “!help” that calls the “help” command.
 You can setup several commands.
 Polecenie The command, without the starting “!”. For example “help”, “sponsor”, …
-Wiadomość The message to send.`,description:"The bot can respond to several commands.",tags:[],title:"Commands",uri:"/peertube-plugin-livechat/pl/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue.
-Pull Request must be done on the main branch.
-Uwaga Until march 2023, contribution were made on the develop branch. This procedure is now deprecated.
-Prerequisite for building this plugin It is highly recommended to be familiar with following concepts:
-Git NodeJS NPM Typescript To build the plugin, you must have following packages:
-git npm (>=8.x) nodejs (>=14.x) build-essential coreutils wget reuse Please note that this plugin needs an AppImage for the Prosody XMPP server. This AppImage is provided by the Prosody AppImage sideproject. The build-prosody.sh script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct.
-Develop Clone the repository, buid the plugin, and create your feature branch:
+Wiadomość The message to send.`,description:"The bot can respond to several commands.",tags:[],title:"Commands",uri:"/peertube-plugin-livechat/pl/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`OBS is a popular Free And Open Source streaming software, with advanced capacities for your live streams. In the current page, you will find some advices to handle your live chats using OBS.
+OBS Overlay You can easily include the chat in your video stream.
+You can use the “Udostępnij link do czatu” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
+Check the “Tylko do odczytu” checkbox in the modal.
+Then use this link as a “web browser source” in OBS.
+You can use the “Przezroczyste tło (do integracji z transmisją, na przykład z OBS)” option to have a transparent background in OBS. If you want to customize the background transparency, you can add this CSS in your OBS browser source’s settings:
+:root { --livechat-transparent: rgba(255 255 255 / 90%) !important; } In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values.
+Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL. You must use valid CSS color values, and they must be properly URL encoded.
+OBS Dock Info This feature comes with the livechat plugin version 10.1.0. Ostrzeżenie This feature can be disabled by the instance’s adminitrators.
+You can use OBS “Custom browser docks” to integrate the chat in your OBS while you are streaming. The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don’t have to enter your password in OBS.
+To do so, just use the “Udostępnij link do czatu” feature, and open the “Dock” tab. From there, you can create a new token using the “+” button.
+Then, copy the url, and use the “Docks / Custom browser docks” menu from your OBS to add a dock with this URL.
+Once you have done, you will have a new dock connected to the chat with your account.
+Porada Tokens are valid to join any chat room. You don’t have to generate separate tokens for each of your rooms. You can also customize the nickame that will be used by changing the n parameter in the url.
+Don’t share these links to anyone, as it would allow them to connect as yourself.
+If a token is compromised, or no more needed, you can revoke them.
+Info These tokens can be used for other purposes, as connecting to your account with XMPP bots or clients. This feature is not documented yet, and not officially supported. So use with care.
+Mixing multiple chats in your live stream You can use the social_stream browser extension to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, …) and include their contents in your live stream. The compatibility with this plugin was added in recent versions.`,description:"Documentation to stream the chat content using OBS.",tags:[],title:"OBS",uri:"/peertube-plugin-livechat/pl/documentation/user/obs/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`Zawsze rozmawiaj na temat funkcji, które zamierzasz rozwijać, poprzez tworzenie/znalezienie oraz komentowanie odpowiedniego wątku dotyczącego Twojego problemu, zanim zaczniesz nad nim pracować, oraz informuj resztę społeczności o rozpoczęciu prac poprzez wyraźne oznaczenie danego wątku.
+Tzw. „pull request” musi być zrobiony na gałęzi main.
+Uwaga Do marca 2023 roku, wszelkie kontrybucje były dodawane do gałęzi develop. Od tej pory uległo to zmianie.
+Wymagania do kompilacji tego rozszerzenia Silnie zalecanym jest znajomość poniższych zagadnień:
+Git NodeJS NPM Typescript Żeby skompilować rozszerzenie, musisz posiadać następujące biblioteki:
+git npm (w wersji 8.x lub nowszej) nodejs (w wersji 14.x lub nowszej) build-essential coreutils wget reuse Miej na uwadze to, że to rozszerzenie wymaga pliku AppImage oprogramowania Prosody, pozwalającego na uruchomienie serwera XMPP. Ten plik AppImage jest dostępny w projekcie Prosody AppImage. Skrypt o nazwie build-prosody.sh pobiera pliki wykonywalne załączone do tego repozytorium, i sprawdza ich hasze SHA-256 względem ich poprawności.
+Rozwijaj Sklonuj repozytorium, skompiluj rozszerzenie, i stwórz gałąź dla funkcji:
 # Clone the repository. Dont forget the --recursive to clone submodules. git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive cd peertube-plugin-livechat # Install NPM dependencies and build the module for the first time: npm install # Build the plugin after a modification: npm run build # If you have a fork from the repository, add it as remote (example): git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git # Create a local branch for you developments, and checkout it (example): git checkout my_development # Note: if an issue is associated, use fix_1234 as your branch name (where 1234 is the issue's number) # To propose your modifications, push your branch to your repository (example): git push --set-upstream me my_development # Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)Once you are ready to show your code to ask for feedback, submit a draft Pull Request. Once you are ready for a code review before merge, submit a Pull Request. In any case, please link your PR to the issues it solves by using the GitHub syntax: “fixes #issue_number”.
 The front-end code is in the client folder, the back-end code in server. There are some shared code in shared folder.
 For general instructions (developping plugins, building, installation, …), please refer to the Peertube documentation.
@@ -471,24 +488,7 @@ A repo was made out of it, check out pt-plugin-dev.
 Note: for an unknown reason, Prosody can’t resolve containers DNS address when using the lua-unbound library. There is a dirty hack in the plugin: just create a /data/plugins/data/peertube-plugin-livechat/no_lua_unbound file in your docker-volumes, then restart containers.
 Quickly rebuild and install the plugin When you do modification, you don’t have to always rebuild the full project, and reinstall the plugin on your dev environment. You can build only the modified part (for example, if you only modified client files: npm run build:client). Check the package.json files for available build scripts.
 When the plugin is already installed on your dev instance, and you haven’t changed any dependency, you can quickly install your work by following these steps:
-re-build necessary parts of the plugin (client, styles, …), overwrite the data/plugins/node_modules/peertube-plugin-livechat/dist/ content of your dev instance by the content of the plugin’s dist folder, change recursively plugins/node_modules/peertube-plugin-livechat/dist/ files owner to your peertube user, restart your instance. Performance tests The livechat-perf-test repository contains some tools to make performance tests. It can be used to evaluate code improvements, or find bottlenecks.`,description:"Develop",tags:[],title:"Develop",uri:"/peertube-plugin-livechat/pl/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`OBS is a popular Free And Open Source streaming software, with advanced capacities for your live streams. In the current page, you will find some advices to handle your live chats using OBS.
-OBS Overlay You can easily include the chat in your video stream.
-You can use the “Udostępnij link do czatu” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
-Check the “Tylko do odczytu” checkbox in the modal.
-Then use this link as a “web browser source” in OBS.
-You can use the “Przezroczyste tło (do integracji z transmisją, na przykład z OBS)” option to have a transparent background in OBS. If you want to customize the background transparency, you can add this CSS in your OBS browser source’s settings:
-:root { --livechat-transparent: rgba(255 255 255 / 90%) !important; } In the previous CSS snippet, you can of course change the color or the transparency, by adapting the color values.
-Note: you can entirely customize chat colors. This is undocumented yet, but you can try this: in the modal, check «use curent theme colors», then you can try to manually change color values in the URL. You must use valid CSS color values, and they must be properly URL encoded.
-OBS Dock Info This feature comes with the livechat plugin version 10.1.0. Ostrzeżenie This feature can be disabled by the instance’s adminitrators.
-You can use OBS “Custom browser docks” to integrate the chat in your OBS while you are streaming. The livechat plugin offers a way to create long term token that can identify you automatically to join the chat, so you don’t have to enter your password in OBS.
-To do so, just use the “Udostępnij link do czatu” feature, and open the “Dock” tab. From there, you can create a new token using the “+” button.
-Then, copy the url, and use the “Docks / Custom browser docks” menu from your OBS to add a dock with this URL.
-Once you have done, you will have a new dock connected to the chat with your account.
-Porada Tokens are valid to join any chat room. You don’t have to generate separate tokens for each of your rooms. You can also customize the nickame that will be used by changing the n parameter in the url.
-Don’t share these links to anyone, as it would allow them to connect as yourself.
-If a token is compromised, or no more needed, you can revoke them.
-Info These tokens can be used for other purposes, as connecting to your account with XMPP bots or clients. This feature is not documented yet, and not officially supported. So use with care.
-Mixing multiple chats in your live stream You can use the social_stream browser extension to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, …) and include their contents in your live stream. The compatibility with this plugin was added in recent versions.`,description:"Documentation to stream the chat content using OBS.",tags:[],title:"OBS",uri:"/peertube-plugin-livechat/pl/documentation/user/obs/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`General information Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are working on the same thing, and prevent conflicts.
+re-build necessary parts of the plugin (client, styles, …), overwrite the data/plugins/node_modules/peertube-plugin-livechat/dist/ content of your dev instance by the content of the plugin’s dist folder, change recursively plugins/node_modules/peertube-plugin-livechat/dist/ files owner to your peertube user, restart your instance. Performance tests The livechat-perf-test repository contains some tools to make performance tests. It can be used to evaluate code improvements, or find bottlenecks.`,description:"Rozwijaj",tags:[],title:"Rozwijaj",uri:"/peertube-plugin-livechat/pl/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`General information Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are working on the same thing, and prevent conflicts.
 Documentation work has to be merged in the main branch.
 The documentation source code is in the support/documentation/content folder.
 The documentation is generated using Hugo. You have to install it on your computer if you want to preview your work.
@@ -564,10 +564,10 @@ Configurating Matterbridge In the version 1.22.4, Matterbridge added support for
 So in the TOML config file put:
 [xmpp.mypeertube] Anonymous=true Server="anon.example.org:52822" Muc="room.example.org" Nick="Matterbridge" RemoteNickFormat="[{PROTOCOL}] <{NICK}> " NoTLS=true Replace example.org by your actual instance domain name. Replace 52822 by the actual port if you changed it. mypeertube can be replaced by another name. Using peertube as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification. The setting NoTLS=true allows connecting to a server with self-signed certificates. Now you can add this account to gateways and bridge specific live-chat channels.
 Info This documentation use an anonymous account to connect the bridge to the chat. But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account. This is used for OBS docks. Using this feature for other purposes is not documented and not officially supported yet. If you want to use it anyway, you can request a token by calling then /plugins/livechat/router/api/auth/tokens endpoint. To get needed headers and request body, just check what happens when you generate a new token for OBS docks.`,description:"Using Matterbridge to bridge with other chats",tags:[],title:"Using Matterbridge",uri:"/peertube-plugin-livechat/pl/documentation/admin/advanced/matterbridge/index.html"},{breadcrumb:"Peertube livechat",content:`Interested in contributing? Awesome!
-Code of ConductContributor Covenant Code of Conduct
+Warunki postępowaniaWarunki postępowania dla kontrybutorów
 TranslateTranslate the plugin
 Give your feedbackGive your feedback
-DevelopDevelop
+RozwijajRozwijaj
 DocumentationDocument the plugin, or translate the documentation.`,description:"Contributing",tags:[],title:"Contributing",uri:"/peertube-plugin-livechat/pl/contributing/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The livechat plugin includes a “slow mode” feature, to rate limit the number of messages that a user can send to a given MUC room. At time of writing, there were no XEP to describe such feature. Please find below a XEP draft, that will be submitted for review.
 Ostrzeżenie Work In Progress, this page is not done yet. For an updated version of this document, you can check the draft XEP XMP file.
 XEP: MUC Slow Mode Abstract: This specification describes a way to rate limit messages a single user can send to a MUC room, from the room configuration to the server and client handling of such a feature.
@@ -708,10 +708,10 @@ MUC Slow modeMUC Slow mode XEP
 PollsPolls technical documentation
 Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
-Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/pl/technical/index.html"},{breadcrumb:"Peertube livechat",content:`If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: plugin-livechat-support@room.im.yiny.org.
-If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my Liberapay profile.`,description:"Contact the author",tags:[],title:"Contact me",uri:"/peertube-plugin-livechat/pl/contact/index.html"},{breadcrumb:"Peertube livechat",content:`package.json, COPYRIGHT and LICENSE files contain the license information for this software and its dependencies.
+Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/pl/technical/index.html"},{breadcrumb:"Peertube livechat",content:`Jeżeli masz jakiekolwiek pytania, albo chcesz porozmawiać o tym rozszerzeniu, możesz dołączyć do tego pokoju na XMPP poprzez jakąkolwiek aplikację kliencką obsługującą Jabbera: plugin-livechat-support@room.im.yiny.org.
+Jeżeli chcesz wspomóc projekt finansowo, możesz skontaktować się poprzez e–maila, pisząc na adres git.[at].john-livingston.fr, albo sprawdzić mój profil na Liberapay.`,description:"Skontaktuj się z autorem",tags:[],title:"Skontaktuj się ze mną",uri:"/peertube-plugin-livechat/pl/contact/index.html"},{breadcrumb:"Peertube livechat",content:`package.json, COPYRIGHT and LICENSE files contain the license information for this software and its dependencies.
 The plugin is maintained by John Livingston.
-Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the online Sepia Avatar Generator.
+Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the Sepia avatar generator, the cat avatar generator, the bird avatar generator, the fenec/mobilizon avatar generator and the abstract avatar generator.
 Thanks to Framasoft for making Peertube possible, for the financial support, and for hosting the project translations on their Weblate instance.
 Thanks to ritimo for the financial support.
 Thanks to Code Lutin and Rétribution Copie Publique for the financial support.
@@ -929,10 +929,10 @@ Advanced usageSome advanced features
 XMPP clientsAllow connections using XMPP clients
 Using MatterbridgeUsing Matterbridge to bridge with other chats
 ContributingContributing
-Code of ConductContributor Covenant Code of Conduct
+Warunki postępowaniaWarunki postępowania dla kontrybutorów
 TranslateTranslate the plugin
 Give your feedbackGive your feedback
-DevelopDevelop
+RozwijajRozwijaj
 DocumentationDocument the plugin, or translate the documentation.
 Bug tracking & new featuresBug tracking / New features requests
 Technical documentationTechnical documentation
@@ -944,5 +944,5 @@ PollsPolls technical documentation
 Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview
-Contact meContact the author
+Skontaktuj się ze mnąSkontaktuj się z autorem
 CreditsPlugin Credits`,description:"Peertube plugin livechat documentation",tags:[],title:"Peertube livechat",uri:"/peertube-plugin-livechat/pl/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Tagi",uri:"/peertube-plugin-livechat/pl/tags/index.html"}]

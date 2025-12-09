@@ -83,7 +83,7 @@ External Authentication See the detailed documentation page:
 External Authentication
 Channel advanced configuration Following settings concern the advanced channel options: users will be able to add some customization on their channels, activate the moderation bot, …
 高度なチャンネル設定とチャットボットを無効にする If you encounter any issue with this feature, you can disable it.
-Enable regular expressions for chatrooms’ forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
+チャットルームの禁止ワードに正規表現を有効化する この機能を有効にすると、配信者はチャットボットを設定する際に正規表現を使用できるようになります。 ただし、ユーザー（チャットルーム、ライブ配信を作成できるユーザー）を信頼できない場合は有効化すべきではありません。 悪意のあるユーザーが細工した正規表現を作成し、ボットのサービス拒否（DoS）を引き起こす可能性があります。
 Chat behaviour ルームタイプ 動画ごとにチャットルームを分けるか、チャンネルで1つのチャットルームにするかを選択できます。
 自動的にチャットを開く 動画を視聴している際に、チャットボックスが自動的に開かれます。
 «新規ウィンドウで開く»ボタンを表示する 新規ウィンドウでチャットを開くボタンを表示します。
@@ -94,7 +94,7 @@ This setting allows you to choose who can access this modal.
 The video owner will be able to activate web chats.
 すべてのライブ配信でチャットを有効にする チェックを入れると、すべてのライブ配信でチャットが有効になります。
 全ての非ライブ配信でチャットを有効にする チェックを入れると、ライブ配信以外のすべての動画でチャットが有効になります。
-次の動画でチャットを有効にする チャットを有効にしたい動画のUUIDを入力してください。 非ライブ配信の動画が指定可能です。1つにつき1行で入力してください。 コメントを記載可能: #以降の文字は全てコメント扱いとなります。空行は無視されます。
+次の動画でチャットを有効にする チャットを有効にしたい動画のUUID (ショートUUIDまたはUUIDv4) を入力してください。 非ライブ配信の動画が指定可能です。1つにつき1行で入力してください。 コメントを記載可能: #以降の文字は全てコメント扱いとなります。空行は無視されます。
 UUIDがフロントエンドに送信されてしまう為、非公開動画は追加しないでください。
 匿名ユーザーにチャットを非表示にする チェックを入れると、匿名のPeerTubeユーザーはチャットが見えなくなります。 この機能はまだ試験中ものです。 有効にする場合、“チャット情報を公開しない"にもチェックを入れることを推奨します。 チェックがない場合、一部のサードパーティーツールがチャットを開こうとし、予期しない挙動をする可能性があります。
 メジャーリリースのアップデート実施前に、リリースノートをお読み頂き、変更をご確認ください : 変更履歴.
@@ -712,7 +712,7 @@ Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/ja/technical/index.html"},{breadcrumb:"Peertube livechat",content:`もし、ご質問、このプラグインに関して話したいことがある場合、お好きなJabberクライアントを使って、こちらのXMPPルームに参加してください: plugin-livechat-support@room.im.yiny.org.
 もし、プロジェクトを金銭面でご支援頂ける場合は、メールにて git.[at].john-livingston.fr, までご連絡頂くか、私のLiberapay profileをご確認頂けますと幸いです。`,description:"作者に問い合わせる",tags:[],title:"お問い合わせ",uri:"/peertube-plugin-livechat/ja/contact/index.html"},{breadcrumb:"Peertube livechat",content:`package.json, COPYRIGHT and LICENSE files contain the license information for this software and its dependencies.
 The plugin is maintained by John Livingston.
-Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the online Sepia Avatar Generator.
+Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the Sepia avatar generator, the cat avatar generator, the bird avatar generator, the fenec/mobilizon avatar generator and the abstract avatar generator.
 Thanks to Framasoft for making Peertube possible, for the financial support, and for hosting the project translations on their Weblate instance.
 経済的な支援を行って頂いているritimoに感謝致します。
 経済的な支援を行って頂いているCode Lutin/Rétribution Copie Publiqueに感謝致します。

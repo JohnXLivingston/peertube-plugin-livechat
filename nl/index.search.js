@@ -19,28 +19,7 @@ In the following screenshot, you can see a live replay, where the chat content i
 In the following screenshot, you can see an OBS setup, where the chat is included as a source in the current scene (background color can be changed, and can be transparent):
 Other usages By default, each streamer will be able to activate/deactivate the chat for their live streams.
 But on the instance level, administrators can choose to activate the chat for all videos (live and/or VOD).
-You can even activate the chat for specific VOD videos. This is how the demo page works: it is not a live stream, but I have activated the chat specifically for this video.`,description:"Introduction",tags:[],title:"Introduction",uri:"/peertube-plugin-livechat/nl/intro/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:` Fooi This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html. Translations are available at https://www.contributor-covenant.org/translations. Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.
-Our Pledge We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
-Our Standards Examples of behavior that contributes to a positive environment for our community include:
-Demonstrating empathy and kindness toward other people Being respectful of differing opinions, viewpoints, and experiences Giving and gracefully accepting constructive feedback Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience Focusing on what is best not just for us as individuals, but for the overall community Examples of unacceptable behavior include:
-The use of sexualized language or imagery, and sexual attention or advances of any kind Trolling, insulting or derogatory comments, and personal or political attacks Public or private harassment Publishing others’ private information, such as a physical or email address, without their explicit permission Other conduct which could reasonably be considered inappropriate in a professional setting Enforcement Responsibilities Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
-Scope This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
-Enforcement Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr. All complaints will be reviewed and investigated promptly and fairly.
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
-Enforcement Guidelines Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
-1. Correction Community Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
-Consequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
-2. Warning Community Impact: A violation through a single incident or series of actions.
-Consequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
-3. Temporary Ban Community Impact: A serious violation of community standards, including sustained inappropriate behavior.
-Consequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
-4. Permanent Ban Community Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
-Consequence: A permanent ban from any sort of public interaction within the community.
-Attribution This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
-Community Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.
-For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"Contributor Covenant Code of Conduct",tags:[],title:"Code of Conduct",uri:"/peertube-plugin-livechat/nl/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat",content:` User documentationPlugin peertube-plugin-livechat user documentation
+You can even activate the chat for specific VOD videos. This is how the demo page works: it is not a live stream, but I have activated the chat specifically for this video.`,description:"Introduction",tags:[],title:"Introduction",uri:"/peertube-plugin-livechat/nl/intro/index.html"},{breadcrumb:"Peertube livechat",content:` User documentationPlugin peertube-plugin-livechat user documentation
 For viewersHow to chat for stream viewers
 OBSDocumentation to stream the chat content using OBS.
 XMPP ClientsConnect to chat using a XMPP client
@@ -89,7 +68,28 @@ Chat dropdown menu There is a dropdown menu on the top of the chat, with some ad
 Opening full screen On top of the chat, there is a button to open the chat in fullscreen. This will open a new browser tab with the following content:
 It can be easier to chat using a full browser tab.
 Changing nickname You can change your nickname by typing /nick your_new_nickname in the message field.
-You can also change your nickname using the chat menu.`,description:"How to chat for stream viewers",tags:[],title:"For viewers",uri:"/peertube-plugin-livechat/nl/documentation/user/viewers/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`This section describes the plugin settings page.
+You can also change your nickname using the chat menu.`,description:"How to chat for stream viewers",tags:[],title:"For viewers",uri:"/peertube-plugin-livechat/nl/documentation/user/viewers/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:` Fooi This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html. Translations are available at https://www.contributor-covenant.org/translations. Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr.
+Our Pledge We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+Our Standards Examples of behavior that contributes to a positive environment for our community include:
+Demonstrating empathy and kindness toward other people Being respectful of differing opinions, viewpoints, and experiences Giving and gracefully accepting constructive feedback Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience Focusing on what is best not just for us as individuals, but for the overall community Examples of unacceptable behavior include:
+The use of sexualized language or imagery, and sexual attention or advances of any kind Trolling, insulting or derogatory comments, and personal or political attacks Public or private harassment Publishing others’ private information, such as a physical or email address, without their explicit permission Other conduct which could reasonably be considered inappropriate in a professional setting Enforcement Responsibilities Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+Scope This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+Enforcement Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement by mail at git.[at].john-livingston.fr. All complaints will be reviewed and investigated promptly and fairly.
+All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+Enforcement Guidelines Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+1. Correction Community Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+Consequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+2. Warning Community Impact: A violation through a single incident or series of actions.
+Consequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+3. Temporary Ban Community Impact: A serious violation of community standards, including sustained inappropriate behavior.
+Consequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+4. Permanent Ban Community Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+Consequence: A permanent ban from any sort of public interaction within the community.
+Attribution This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
+Community Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.
+For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.`,description:"Contributor Covenant Code of Conduct",tags:[],title:"Gedragscode",uri:"/peertube-plugin-livechat/nl/contributing/codeofconduct/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation",content:`This section describes the plugin settings page.
 Channel’s chat terms & conditions You can configure a “terms & conditions” message that will be shown to users joining your chatrooms.
 For more information on this feature, check the documentation for channel’s terms & conditions.
 Info Changing this setting will restart the chat server, and all users will be disconnected for a short time.
@@ -441,10 +441,10 @@ Using MatterbridgeUsing Matterbridge to bridge with other chats`,description:"So
 You can setup several commands.
 Command The command, without the starting “!”. For example “help”, “sponsor”, …
 Message The message to send.`,description:"The bot can respond to several commands.",tags:[],title:"Commands",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue.
-Pull Request must be done on the main branch.
+Pull Request moet worden gedaan op de main branch.
 Notitie Until march 2023, contribution were made on the develop branch. This procedure is now deprecated.
-Prerequisite for building this plugin It is highly recommended to be familiar with following concepts:
-Git NodeJS NPM Typescript To build the plugin, you must have following packages:
+Prerequisite for building this plugin Het wordt ten zeerste aanbevolen om vertrouwd te zijn met de volgende concepten:
+Git NodeJS NPM Typescript Om de plug-in te bouwen, moet je over de volgende pakketten beschikken:
 git npm (>=8.x) nodejs (>=14.x) build-essential coreutils wget reuse Please note that this plugin needs an AppImage for the Prosody XMPP server. This AppImage is provided by the Prosody AppImage sideproject. The build-prosody.sh script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct.
 Develop Clone the repository, buid the plugin, and create your feature branch:
 # Clone the repository. Dont forget the --recursive to clone submodules. git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive cd peertube-plugin-livechat # Install NPM dependencies and build the module for the first time: npm install # Build the plugin after a modification: npm run build # If you have a fork from the repository, add it as remote (example): git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git # Create a local branch for you developments, and checkout it (example): git checkout my_development # Note: if an issue is associated, use fix_1234 as your branch name (where 1234 is the issue's number) # To propose your modifications, push your branch to your repository (example): git push --set-upstream me my_development # Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)Once you are ready to show your code to ask for feedback, submit a draft Pull Request. Once you are ready for a code review before merge, submit a Pull Request. In any case, please link your PR to the issues it solves by using the GitHub syntax: “fixes #issue_number”.
@@ -564,7 +564,7 @@ Configurating Matterbridge In the version 1.22.4, Matterbridge added support for
 So in the TOML config file put:
 [xmpp.mypeertube] Anonymous=true Server="anon.example.org:52822" Muc="room.example.org" Nick="Matterbridge" RemoteNickFormat="[{PROTOCOL}] <{NICK}> " NoTLS=true Replace example.org by your actual instance domain name. Replace 52822 by the actual port if you changed it. mypeertube can be replaced by another name. Using peertube as the Nick will provide put PeerTube icon for overlay messages, can be also done with overlay config modification. The setting NoTLS=true allows connecting to a server with self-signed certificates. Now you can add this account to gateways and bridge specific live-chat channels.
 Info This documentation use an anonymous account to connect the bridge to the chat. But since the livechat v10.1.0, there is a new way to generate long term authentication token, that allows to connect using your account. This is used for OBS docks. Using this feature for other purposes is not documented and not officially supported yet. If you want to use it anyway, you can request a token by calling then /plugins/livechat/router/api/auth/tokens endpoint. To get needed headers and request body, just check what happens when you generate a new token for OBS docks.`,description:"Using Matterbridge to bridge with other chats",tags:[],title:"Using Matterbridge",uri:"/peertube-plugin-livechat/nl/documentation/admin/advanced/matterbridge/index.html"},{breadcrumb:"Peertube livechat",content:`Interested in contributing? Awesome!
-Code of ConductContributor Covenant Code of Conduct
+GedragscodeContributor Covenant Code of Conduct
 TranslateTranslate the plugin
 Give your feedbackGive your feedback
 DevelopDevelop
@@ -709,9 +709,9 @@ PollsPolls technical documentation
 Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/nl/technical/index.html"},{breadcrumb:"Peertube livechat",content:`If you have any question, or if you want to talk about this plugin, you can join this XMPP room with any Jabber client: plugin-livechat-support@room.im.yiny.org.
-If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my Liberapay profile.`,description:"Contact the author",tags:[],title:"Contact me",uri:"/peertube-plugin-livechat/nl/contact/index.html"},{breadcrumb:"Peertube livechat",content:`package.json, COPYRIGHT and LICENSE files contain the license information for this software and its dependencies.
+If you want to support the project financially, you can contact me by mail at git.[at].john-livingston.fr, or check my Liberapay profile.`,description:"Neem contact op met de auteur",tags:[],title:"Neem contact met mij op",uri:"/peertube-plugin-livechat/nl/contact/index.html"},{breadcrumb:"Peertube livechat",content:`package.json, COPYRIGHT and LICENSE files contain the license information for this software and its dependencies.
 The plugin is maintained by John Livingston.
-Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the online Sepia Avatar Generator.
+Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the Sepia avatar generator, the cat avatar generator, the bird avatar generator, the fenec/mobilizon avatar generator and the abstract avatar generator.
 Thanks to Framasoft for making Peertube possible, for the financial support, and for hosting the project translations on their Weblate instance.
 Thanks to ritimo for the financial support.
 Thanks to Code Lutin and Rétribution Copie Publique for the financial support.
@@ -929,7 +929,7 @@ Advanced usageSome advanced features
 XMPP clientsAllow connections using XMPP clients
 Using MatterbridgeUsing Matterbridge to bridge with other chats
 ContributingContributing
-Code of ConductContributor Covenant Code of Conduct
+GedragscodeContributor Covenant Code of Conduct
 TranslateTranslate the plugin
 Give your feedbackGive your feedback
 DevelopDevelop
@@ -944,5 +944,5 @@ PollsPolls technical documentation
 Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview
-Contact meContact the author
+Neem contact met mij opNeem contact op met de auteur
 CreditsPlugin Credits`,description:"Peertube plugin livechat documentation",tags:[],title:"Peertube livechat",uri:"/peertube-plugin-livechat/nl/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Tags",uri:"/peertube-plugin-livechat/nl/tags/index.html"}]
