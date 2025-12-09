@@ -2170,7 +2170,7 @@ msgstr "{{% livechat_label avatar_set_option_cat %}}: [Generátor avatarů koče
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Cats avatar example](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Cats\")"
-msgstr "![Příklad avatara kočky](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px „Kočky”)"
+msgstr "![Příklad avatara kočky](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Kočky\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2180,7 +2180,7 @@ msgstr "{{% livechat_label avatar_set_option_bird %}}: [Generátor ptačích ava
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Birds avatar example](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
-msgstr "![Příklad avatara ptáků](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px „Ptáci”)"
+msgstr "![Příklad avatara ptáků](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Ptáci\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2190,7 +2190,7 @@ msgstr "{{% livechat_label avatar_set_option_fenec %}}: [Generátor avatarů fen
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Fenecs avatar example](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
-msgstr "![Příklad avatara Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px „Fenecs”)"
+msgstr "![Příklad avatara Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2200,7 +2200,7 @@ msgstr "{{% livechat_label avatar_set_option_abstract %}}: [Generátor abstraktn
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Abstracts avatar example](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
-msgstr "![Příklad abstraktního avatara](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px „Abtracts”)"
+msgstr "![Příklad abstraktního avatara](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2210,7 +2210,7 @@ msgstr "{{% livechat_label avatar_set_option_legacy %}}: Na základě práce Dav
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
 msgid "![Legacy avatar example](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
-msgstr "![Příklad starého avatara](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px „Legacy”)"
+msgstr "![Příklad starého avatara](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2485,7 +2485,7 @@ msgstr "Otevřete nastavení pluginu a klikněte na tlačítko „spustit diagno
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "![Screenshot of the plugin's settings page, with a \"launch diagnostic\" button.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px \"Launch diagnostic\")"
-msgstr "![Screenshot stránky nastavení pluginu s tlačítkem „spustit diagnostiku“.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px „Spustit diagnostiku“)"
+msgstr "![Screenshot stránky nastavení pluginu s tlačítkem „spustit diagnostiku“.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px \"Spustit diagnostiku\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2495,7 +2495,7 @@ msgstr "Pokud se na diagnostické stránce vyskytne chyba, můžete na této str
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "![Screenshot of the diagnostic result page. This gives a lot of information, with status for different test suites.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px \"Diagnostic result\")"
-msgstr "![Screenshot stránky s diagnostickými výsledky. Obsahuje mnoho informací, včetně stavu různých testovacích sad.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px „Diagnostické výsledky“)"
+msgstr "![Screenshot stránky s diagnostickými výsledky. Obsahuje mnoho informací, včetně stavu různých testovacích sad.](/peertube-plugin-livechat/images/diagnostic.png?classes=shadow,border&height=200px \"Diagnostické výsledky\")"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2639,7 +2639,7 @@ msgstr "Zaškrtněte políčko „{{% livechat_label read_only %}}“ v modáln�
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, where the \"{{% livechat_label read_only %}}\" option is checked.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px \"Share link popup\")"
-msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“, kde je zaškrtnuta možnost „{{% livechat_label read_only %}}“.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu“)"
+msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“, kde je zaškrtnuta možnost „{{% livechat_label read_only %}}“.](/peertube-plugin-livechat/images/share_readonly.png?classes=shadow,border&height=200px \"Vyskakovací okno pro sdílení odkazu\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2650,7 +2650,7 @@ msgstr "Poté použijte tento odkaz jako „zdroj webového prohlížeče“ v O
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
 msgid "![Screenshot of the OBS software, where the chat was added as web browser source.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px \"Embeding the chat in OBS\")"
-msgstr "![Screenshot softwaru OBS, kde byl chat přidán jako zdroj webového prohlížeče.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px „Vložení chatu do OBS“)"
+msgstr "![Screenshot softwaru OBS, kde byl chat přidán jako zdroj webového prohlížeče.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px \"Vložení chatu do OBS\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2703,7 +2703,7 @@ msgstr "K tomu stačí použít funkci „{{% livechat_label share_chat_link %}}
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label share_chat_dock %}} tab. A token was generated, and is selectionable.\"](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px \"Share link popup - dock tab\")"
-msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na kartě „{{% livechat_label share_chat_dock %}}“. Byl vygenerován token, který lze vybrat.“](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu – karta doku“)"
+msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na kartě „{{% livechat_label share_chat_dock %}}“. Byl vygenerován token, který lze vybrat.“](/peertube-plugin-livechat/images/share_dock.png?classes=shadow,border&height=200px \"Vyskakovací okno pro sdílení odkazu – karta doku\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2713,12 +2713,12 @@ msgstr "Poté zkopírujte adresu URL a pomocí nabídky „Docks / Custom browse
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![Screenshot of the OBS Dock menu, with a \"Custom Browser Docks\" entry.](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px \"OBS - Dock menu\")"
-msgstr "![Screenshot nabídky OBS Dock s položkou „Custom Browser Docks“ (Vlastní dokovací prohlížeče).](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px „OBS – nabídka Dock“)"
+msgstr "![Screenshot nabídky OBS Dock s položkou „Custom Browser Docks“ (Vlastní dokovací prohlížeče).](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px \"OBS – nabídka Dock\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![Screenshot of the OBS Custom Browser Docks dialog, with a new dock called \"My chat\".](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS - Dock dialog\")"
-msgstr "![Screenshot dialogového okna OBS Custom Browser Docks s novým dokem nazvaným „My chat“.](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px „OBS – dialogové okno Dock“)"
+msgstr "![Screenshot dialogového okna OBS Custom Browser Docks s novým dokem nazvaným „My chat“.](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS – dialogové okno Dock\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2728,7 +2728,7 @@ msgstr "Jakmile to uděláte, budete mít nové dokovací okno připojené k cha
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 msgid "![Screenshot of OBS with a new dock including the chat. The user is logged in with their Peertube account, and can chat directly from OBS.](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px \"OBS - Dock\")"
-msgstr "![Screenshot OBS s novým dokem včetně chatu. Uživatel je přihlášený ke svému účtu Peertube a může chatovat přímo z OBS.](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px „OBS – Dock”)"
+msgstr "![Screenshot OBS s novým dokem včetně chatu. Uživatel je přihlášený ke svému účtu Peertube a může chatovat přímo z OBS.](/peertube-plugin-livechat/images/obs_dock.png?classes=shadow,border&height=200px \"OBS – Dock\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2786,7 +2786,7 @@ msgstr "Pro odesílání oznámení budou mít majitelé a správci v horní č�
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
 msgid "![Screenshot of a chat session. On top of the message field, there is a \"{{% livechat_label announcements_message_type %}}\" selector. In the chat, we can see three types of announcements: a highlighted message, an announcement, and a warning. Each of these announcements have a special color to distinguish them. The announcement and the warning have also bold titles.](/peertube-plugin-livechat/images/announcements.png?classes=shadow,border&height=400px \"Announcements\")"
-msgstr "![Screenshot chatové relace. Nad polem pro zprávy se nachází selektor „{{% livechat_label announcements_message_type %}}“. V chatu můžeme vidět tři typy oznámení: zvýrazněnou zprávu, oznámení a varování. Každé z těchto oznámení má speciální barvu, aby se dalo snadno rozlišit. Oznámení a varování mají také tučně zvýrazněné nadpisy.](/peertube-plugin-livechat/images/announcements.png?classes=shadow,border&height=400px „Oznámení”)"
+msgstr "![Screenshot chatové relace. Nad polem pro zprávy se nachází selektor „{{% livechat_label announcements_message_type %}}“. V chatu můžeme vidět tři typy oznámení: zvýrazněnou zprávu, oznámení a varování. Každé z těchto oznámení má speciální barvu, aby se dalo snadno rozlišit. Oznámení a varování mají také tučně zvýrazněné nadpisy.](/peertube-plugin-livechat/images/announcements.png?classes=shadow,border&height=400px \"Oznámení\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/announcements.md
@@ -2854,7 +2854,7 @@ msgstr "Při vytváření nebo úpravách živého vysílání Peertube se zobra
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the Peertube new live form.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"New live\")"
-msgstr "![Screenshot nového živého formuláře Peertube.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px „Nové živé vysílání“)"
+msgstr "![Screenshot nového živého formuláře Peertube.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"Nové živé vysílání\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2864,7 +2864,7 @@ msgstr "Na kartě „Nastavení pluginu“ se nachází zaškrtávací políčko
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the form, with a \"{{% livechat_label use_chat %}}\" checkbox.](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px \"Activate the chat\")"
-msgstr "![Screenshot formuláře s zaškrtávacím políčkem „{{% livechat_label use_chat %}}“.](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px „Aktivovat chat“)"
+msgstr "![Screenshot formuláře s zaškrtávacím políčkem „{{% livechat_label use_chat %}}“.](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px \"Aktivovat chat\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2936,7 +2936,7 @@ msgstr "Na záložce „{{% livechat_label web %}}“ se pomocí zadané adresy 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label web %}} tab. There is a url you can copy.](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px \"Share link popup - web tab\")"
-msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na kartě „{{% livechat_label web %}}“. Zde je URL adresa, kterou můžete zkopírovat.](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px „Vyskakovací okno pro sdílení odkazu – karta web”)"
+msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na kartě „{{% livechat_label web %}}“. Zde je URL adresa, kterou můžete zkopírovat.](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px \"Vyskakovací okno pro sdílení odkazu – karta web\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2947,7 +2947,7 @@ msgstr "Vyskakovací okno „{{% livechat_label share_chat_link %}}“ může ta
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label connect_using_xmpp %}}\" tab.](/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px \"{{% livechat_label connect_using_xmpp %}}\")"
-msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na záložce „{{% livechat_label connect_using_xmpp %}}“.] (/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px „{{% livechat_label connect_using_xmpp %}}“)"
+msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na záložce „{{% livechat_label connect_using_xmpp %}}“.] (/peertube-plugin-livechat/images/share_xmpp_dialog.png?classes=shadow,border&height=200px \"{{% livechat_label connect_using_xmpp %}}\")"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2995,7 +2995,7 @@ msgstr "Chování trvalosti můžete změnit.  [Otevřete rozbalovací nabídku 
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of the dropdown menu at the top of the chat. Several entries are available.](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px \"Chat menu\")"
-msgstr "![Screenshot rozbalovacího menu v horní části chatu. K dispozici je několik položek.](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px „Menu chatu”)"
+msgstr "![Screenshot rozbalovacího menu v horní části chatu. K dispozici je několik položek.](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px \"Menu chatu\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3005,7 +3005,7 @@ msgstr "Existuje několik možností, které lze změnit."
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the chat configuration form.](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px \"Configure chat room\")"
-msgstr "![Screenshot formuláře pro konfiguraci chatu.](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px „Konfigurace chatovací místnosti“)"
+msgstr "![Screenshot formuláře pro konfiguraci chatu.](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px \"Konfigurace chatovací místnosti\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3053,7 +3053,7 @@ msgstr "Příkazy"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
 msgid "![Screenshot of the channel options page, with some fields to configure the bot commands.](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px \"Commands configuration\")"
-msgstr "![Screenshot stránky s možnostmi kanálu, s některými poli pro konfiguraci příkazů bota.](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px „Konfigurace příkazů”)"
+msgstr "![Screenshot stránky s možnostmi kanálu, s některými poli pro konfiguraci příkazů bota.](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px \"Konfigurace příkazů\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -3075,12 +3075,12 @@ msgstr "Zakázaná slova"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Screenshot of the channel options page, with several fields to configure the forbidden words.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Forbidden words configuration\")"
-msgstr "![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci zakázaných slov.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px „Konfigurace zakázaných slov”)"
+msgstr "![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci zakázaných slov.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Konfigurace zakázaných slov\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Screenshot of a chat message that was deleted, with the following reason: \"No url allowed\".](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px \"Deleted message\")"
-msgstr "![Screenshot smazané chatové zprávy s následujícím důvodem: „URL adresy nejsou povoleny“.](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px „Smazaná zpráva“)"
+msgstr "![Screenshot smazané chatové zprávy s následujícím důvodem: „URL adresy nejsou povoleny“.](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px \"Smazaná zpráva\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3161,7 +3161,7 @@ msgstr "V chatovacích místnostech můžete aktivovat chatovacího robota.  Kon
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "![Screenshot of the channel options. There is a form with multiple fields.](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px \"Channel configuration\")"
-msgstr "![Screenshot možností kanálu. Je zde formulář s několika poli.](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px „Konfigurace kanálu”)"
+msgstr "![Screenshot možností kanálu. Je zde formulář s několika poli.](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px \"Konfigurace kanálu\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -3201,7 +3201,7 @@ msgstr "Konfigurace"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
 msgid "![Screenshot of the channel options page, with several fields to configure the \"No duplicate message\" option.](/peertube-plugin-livechat/images/bot_no_duplicate.png?classes=shadow,border&height=400px \"No duplicate message configuration\")"
-msgstr "![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci možnosti „Žádné duplicitní zprávy“.](/peertube-plugin-livechat/images/bot_no_duplicate.png?classes=shadow,border&height=400px „Konfigurace možnosti Žádné duplicitní zprávy“)"
+msgstr "![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci možnosti „Žádné duplicitní zprávy“.](/peertube-plugin-livechat/images/bot_no_duplicate.png?classes=shadow,border&height=400px \"Konfigurace možnosti Žádné duplicitní zprávy\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
@@ -3223,7 +3223,7 @@ msgstr "Pokud v chatovací místnosti není žádný uživatel, bot neodešle ž
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
 msgid "![Screenshot of the channel options page, with some fields to configure a new timer.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px \"Timers configuration\")"
-msgstr "![Screenshot stránky s možnostmi kanálu, s některými poli pro konfiguraci nového časovače.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px „Konfigurace časovačů”)"
+msgstr "![Screenshot stránky s možnostmi kanálu, s některými poli pro konfiguraci nového časovače.](/peertube-plugin-livechat/images/bot_quotes.png?classes=shadow,border&height=200px \"Konfigurace časovačů\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
@@ -3240,7 +3240,7 @@ msgstr "Speciální znaky"
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/special_chars.md
 msgid "![Screenshot of the channel options page, with several fields to configure the \"Forbid special characters\" option.](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Forbid special characters configuration\")"
-msgstr "![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci možnosti „Zakázat speciální znaky“.](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px „Konfigurace zakázání speciálních znaků“)"
+msgstr "![Screenshot stránky s možnostmi kanálu, s několika poli pro konfiguraci možnosti „Zakázat speciální znaky“.](/peertube-plugin-livechat/images/forbid_special_chars_configuration.png?classes=shadow,border&height=400px \"Konfigurace zakázání speciálních znaků\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3262,7 +3262,7 @@ msgstr "V levém menu Peertube je položka „{{% livechat_label menu_configurat
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "![Screenshot of the chatrooms configuration page. The page list the user's channels.](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px \"Chatrooms menu\")"
-msgstr "![Screenshot stránky s nastavením chatovacích místností. Stránka obsahuje seznam kanálů uživatele.](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px „Nabídka chatovacích místností”)"
+msgstr "![Screenshot stránky s nastavením chatovacích místností. Stránka obsahuje seznam kanálů uživatele.](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px \"Nabídka chatovacích místností\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3481,7 +3481,7 @@ msgstr "Na [stránce konfigurace kanálu](/peertube-plugin-livechat/documentatio
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 msgid "![Screenshot of the channel option form, with a field to configure the moderation delay.](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px \"Channel configuration / Moderation delay\")"
-msgstr "![Screenshot formuláře s možnostmi kanálu, s polem pro nastavení zpoždění moderování.](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px „Konfigurace kanálu / Zpoždění moderování“)"
+msgstr "![Screenshot formuláře s možnostmi kanálu, s polem pro nastavení zpoždění moderování.](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px \"Konfigurace kanálu / Zpoždění moderování\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3805,12 +3805,12 @@ msgstr "Pro otevření aplikace Moderator Notes (Poznámky moderátora) je v hor
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "![Screenshot videa Peertube s chatem na pravé straně. Horní menu chatu je otevřené a obsahuje tlačítko „{{% livechat_label „moderator_notes“ %}}“.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px „Otevření aplikace Moderator Notes“)"
+msgstr "![Screenshot videa Peertube s chatem na pravé straně. Horní menu chatu je otevřené a obsahuje tlačítko „{{% livechat_label „moderator_notes“ %}}“.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Otevření aplikace Moderator Notes\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "![Screenshot z chatu Peertube, celá obrazovka. Otevřené horní menu chatu s tlačítkem „{{% livechat_label „moderator_notes“ %}}“.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px „Otevření aplikace Moderator Notes“)"
+msgstr "![Screenshot z chatu Peertube, celá obrazovka. Otevřené horní menu chatu s tlačítkem „{{% livechat_label „moderator_notes“ %}}“.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px Otevření aplikace Moderator Notes\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
