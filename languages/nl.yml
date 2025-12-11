@@ -65,9 +65,35 @@ open_blank_description: Er zal een knop komen om de chat in een nieuw venster te
 online_help: Online hulp
 room_type_description: Je kunt er hier voor kiezen om aparte kamers te hebben 
   voor elk video, of om ze per kanaal te groeperen.
-room_type_option_video: Elk video heeft zijn eigen gespreksruimte
+room_type_option_video: Elk video heeft zijn eigen webchatkamer
 room_type_option_channel: Gesprekskamers zijn gegroepeerd per kanaal
-auto_display_label: Automatisch de chat openen
+auto_display_label: De chat automatisch openen
 share_url_label: Laat de «deel chat-link» knop zien
 chat: Chat
 copied: Gekopieerd
+chat_terms_label: Gebruiksvoorwaarden
+external_auth_google_oidc_label: Google gebruiken
+external_auth_facebook_oidc_label: Facebook gebruiken
+all_lives_label: Chat voor alle live-uitzendingen activeren
+videos_list_label: Chat activeren voor deze video's
+all_non_lives_description: Indien aangevinkt, wordt de chat ingeschakeld voor 
+  alle video's die geen live-uitzendingen zijn.
+no_anonymous_label: De chat verbergen voor anoniemen
+avatar_set_option_sepia: Sepia (De mascotte van Peertube)
+avatar_set_option_cat: Katten
+avatar_set_option_bird: Vogels
+avatar_set_option_none: Geen
+autocolors_label: Automatische kleurdetectie
+prosody_room_allow_s2s_label: Verbinden met de kamer via externe XMPP-accounts 
+  inschakelen
+save: Opslaan
+menu_configuration_label: Chatkamers
+livechat_configuration_channel_title: Kanaalmogelijkheden
+livechat_configuration_channel_forbidden_words_comments_label: Reacties
+livechat_configuration_channel_quote_label2: Berichten
+livechat_configuration_channel_command_message_label: Bericht
+login_remote_peertube_url: De URL van je exemplaar van Peertube
+login_remote_peertube_url_invalid: Ongeldige PeerTube-URL.
+new_poll: Een nieuwe peiling maken
+poll_duration: Peilduur (in minuten)
+poll_is_over: De peiling is nu voorbij.
