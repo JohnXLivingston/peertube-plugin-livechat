@@ -13,9 +13,8 @@ async function getChannelNameById (options: RegisterServerOptions, channelId: nu
   }
   const [results] = await options.peertubeHelpers.database.query(
     'SELECT "actor"."preferredUsername"' +
-    ' FROM "videoChannel"' +
-    ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
-    ' WHERE "videoChannel"."id" = ' + channelId.toString()
+    ' FROM "actor"' +
+    ' WHERE "videoChannelId" = ' + channelId.toString()
   )
   if (!Array.isArray(results)) {
     throw new Error('getChannelNameById: query result is not an array.')
@@ -76,7 +75,7 @@ async function getChannelInfosById (
     ' "videoChannel"."name" as "channelDisplayName",' +
     ' "videoChannel"."accountId" as "ownerAccountId"' +
     ' FROM "videoChannel"' +
-    ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
+    ' INNER JOIN "actor" ON "actor"."videoChannelId" = "videoChannel"."id"' +
     ' WHERE "videoChannel"."id" = ' + channelId.toString() +
     (restrictToLocalChannels
       ? ' AND "serverId" is null '
