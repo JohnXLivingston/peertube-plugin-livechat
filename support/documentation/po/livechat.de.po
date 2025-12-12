@@ -8,9 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2025-12-11 08:45+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>"
-"\n"
+"PO-Revision-Date: 2025-12-12 14:13+0000\n"
+"Last-Translator: havi05 <havi05git@gmail.com>\n"
 "Language-Team: German <https://weblate.framasoft.org/projects/"
 "peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
@@ -674,7 +673,7 @@ msgstr "Das Plugin übersetzen"
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate"
-msgstr "Übersätzen"
+msgstr "Übersetzen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
