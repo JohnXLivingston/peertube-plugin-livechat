@@ -1,6 +1,6 @@
 # Changelog
 
-## ???
+## 14.0.2
 
 ### Minor changes and fixes
 
