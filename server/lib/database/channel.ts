@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 import type { RegisterServerOptions } from '@peertube/peertube-types'
+import { getPeertubeVersion } from '../helpers'
 
 async function getChannelNameById (options: RegisterServerOptions, channelId: number): Promise<string | null> {
   if (!channelId) {
@@ -12,10 +13,18 @@ async function getChannelNameById (options: RegisterServerOptions, channelId: nu
     throw new Error('Invalid channelId: not an integer')
   }
   const [results] = await options.peertubeHelpers.database.query(
-    'SELECT "actor"."preferredUsername"' +
-    ' FROM "videoChannel"' +
-    ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
-    ' WHERE "videoChannel"."id" = ' + channelId.toString()
+    getPeertubeVersion().major >= 8
+      ? (
+          'SELECT "actor"."preferredUsername"' +
+          ' FROM "actor"' +
+          ' WHERE "videoChannelId" = ' + channelId.toString()
+        )
+      : (
+          'SELECT "actor"."preferredUsername"' +
+          ' FROM "videoChannel"' +
+          ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
+          ' WHERE "videoChannel"."id" = ' + channelId.toString()
+        )
   )
   if (!Array.isArray(results)) {
     throw new Error('getChannelNameById: query result is not an array.')
@@ -70,18 +79,35 @@ async function getChannelInfosById (
     throw new Error('Invalid channelId: not an integer')
   }
   const [results] = await options.peertubeHelpers.database.query(
-    'SELECT' +
-    ' "actor"."preferredUsername" as "channelName",' +
-    ' "videoChannel"."id" as "channelId",' +
-    ' "videoChannel"."name" as "channelDisplayName",' +
-    ' "videoChannel"."accountId" as "ownerAccountId"' +
-    ' FROM "videoChannel"' +
-    ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
-    ' WHERE "videoChannel"."id" = ' + channelId.toString() +
-    (restrictToLocalChannels
-      ? ' AND "serverId" is null '
-      : ''
-    )
+    getPeertubeVersion().major >= 8
+      ? (
+          'SELECT' +
+          ' "actor"."preferredUsername" as "channelName",' +
+          ' "videoChannel"."id" as "channelId",' +
+          ' "videoChannel"."name" as "channelDisplayName",' +
+          ' "videoChannel"."accountId" as "ownerAccountId"' +
+          ' FROM "videoChannel"' +
+          ' INNER JOIN "actor" ON "actor"."videoChannelId" = "videoChannel"."id"' +
+          ' WHERE "videoChannel"."id" = ' + channelId.toString() +
+          (restrictToLocalChannels
+            ? ' AND "serverId" is null '
+            : ''
+          )
+        )
+      : (
+          'SELECT' +
+          ' "actor"."preferredUsername" as "channelName",' +
+          ' "videoChannel"."id" as "channelId",' +
+          ' "videoChannel"."name" as "channelDisplayName",' +
+          ' "videoChannel"."accountId" as "ownerAccountId"' +
+          ' FROM "videoChannel"' +
+          ' RIGHT JOIN "actor" ON "actor"."id" = "videoChannel"."actorId"' +
+          ' WHERE "videoChannel"."id" = ' + channelId.toString() +
+          (restrictToLocalChannels
+            ? ' AND "serverId" is null '
+            : ''
+          )
+        )
   )
   if (!Array.isArray(results)) {
     throw new Error('getChannelInfosById: query result is not an array.')

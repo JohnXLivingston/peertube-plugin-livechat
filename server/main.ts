@@ -23,6 +23,7 @@ import { updateForbidSpecialCharsHandler } from './lib/prosody/migration/migrate
 import { mustMigrateV14 } from './lib/prosody/migration/migratev14'
 import { Emojis } from './lib/emojis'
 import { LivechatProsodyAuth } from './lib/prosody/auth'
+import { initPeertubeversion } from './lib/helpers'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -37,6 +38,8 @@ async function register (options: RegisterServerOptions): Promise<any> {
   if (!options.peertubeHelpers.plugin) {
     throw new Error('Your peertube version is not correct. This plugin is not compatible with Peertube < 3.2.0.')
   }
+
+  await initPeertubeversion(options)
 
   // First: load languages files, so we can localize strings.
   await loadLoc()

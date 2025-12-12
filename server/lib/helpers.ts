@@ -107,6 +107,42 @@ async function getUserNickname (options: RegisterServerOptions, user: AuthUser):
   return undefined
 }
 
+interface PeertubeVersion {
+  version: string
+  major: number
+  minor: number
+  patch: number
+}
+
+let peertubeVersion: PeertubeVersion
+async function initPeertubeversion (options: RegisterServerOptions): Promise<void> {
+  const v = (await options.peertubeHelpers.config.getServerConfig()).serverVersion
+  const m = v.match(/^(\d+)\.(\d+)\.(\d+)/) // don't use $, in case we have something special like 8.0.0-patchX
+  if (!m) {
+    options.peertubeHelpers.logger.error('Cant decode the peertube version (' + v + '), will use 0.0.0.')
+    peertubeVersion = {
+      version: '0.0.0',
+      major: 0,
+      minor: 0,
+      patch: 0
+    }
+    return
+  }
+  peertubeVersion = {
+    version: v,
+    major: parseInt(m[1]),
+    minor: parseInt(m[2]),
+    patch: parseInt(m[3])
+  }
+}
+
+function getPeertubeVersion (): PeertubeVersion {
+  if (peertubeVersion === undefined) {
+    throw new Error('Calling getPeertubeVersion before initPeertubeversion')
+  }
+  return peertubeVersion
+}
+
 export {
   RegisterServerOptionsV5,
   getBaseRouterRoute,
@@ -118,5 +154,7 @@ export {
   pluginName,
   pluginShortName,
   pluginVersionRegexp,
-  pluginVersionWordBreakRegex
+  pluginVersionWordBreakRegex,
+  initPeertubeversion,
+  getPeertubeVersion
 }

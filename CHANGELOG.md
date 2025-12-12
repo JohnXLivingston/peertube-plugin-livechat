@@ -4,7 +4,9 @@
 
 ### Minor changes and fixes
 
+* Peertube v8.0.0 compatibility.
 * Translations updates.
+* Dependencies updates.
 
 ## 14.0.1
 
