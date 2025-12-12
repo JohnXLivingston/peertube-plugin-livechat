@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2025-06-08 22:46+0000\n"
+"PO-Revision-Date: 2025-12-11 08:45+0000\n"
 "Last-Translator: fran secs <fransecs@gmail.com>\n"
-"Language-Team: Catalan <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
+"Language-Team: Catalan <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.12.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -947,15 +948,29 @@ msgstr "El connector el manté [John Livingston](https://www.john-livingston.fr/
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, fuzzy
-#| msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
 msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [Sepia avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), the [cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), the [bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), the [fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/) and the [abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php)."
-msgstr "Gràcies a David Revoy pel seu treball a la mascota de Peertube, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube). El disseny del personatge està sota llicència CC-By i els fitxers SVG utilitzats per crear alguns logotips i avatars en aquest connector són GPLv3.0. Els fitxers PNG estan sota llicències CC-By i provenen del [generador d'avatars Sepia en línia](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
+msgstr ""
+"Gràcies a David Revoy pel seu treball sobre la mascota de Peertube, [Sepia]"
+"(https://www.davidrevoy.com/index.php?tag/peertube). El disseny dels "
+"personatges està sota llicència CC-By, i els fitxers SVG utilitzats per "
+"crear alguns logotips i avatars en aquest connector són GPLv3.0. Els fitxers "
+"PNG tenen llicències CC-By i provenen del [generador d'avatars Sepia]"
+"(https://www.peppercarrot.com/extras/html/2023_peertube-generator/), el "
+"[generador d'avatars de gat](https://www.peppercarrot.com/extras/html/"
+"2016_cat-generator/), el [generador d'avatars d'ocell](https://"
+"www.peppercarrot.com/extras/html/2019_bird-generator/), el "
+"[generador d'avatars fenec/mobilizon](https://www.peppercarrot.com/extras/"
+"html/2020_mobilizon-generator/) i el [generador d'avatars abstractes]"
+"(https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "Thanks to [Framasoft](https://framasoft.org) for making [Peertube](https://joinpeertube.org/) possible, for the financial support, and for hosting the project translations on their [Weblate instance](https://weblate.framasoft.org)."
-msgstr "Gràcies a [Framasoft](https://framasoft.org) per fer possible [Peertube](https://joinpeertube.org/), pel suport financer i per allotjar les traduccions del projecte a [la seva instància Weblate] (https: //weblate.framasoft.org)."
+msgstr ""
+"Gràcies a [Framasoft](https://framasoft.org) per fer possible [Peertube]"
+"(https://joinpeertube.org), pel suport financer i per allotjar les "
+"traduccions del projecte a [la seva instància Weblate]"
+"(https://weblate.framasoft.org)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -980,7 +995,9 @@ msgstr "Gràcies a [Octopuce](https://www.octopuce.fr/) pel suport financer."
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
-msgstr "I gràcies per totes les col·laboracions individuals fetes a través de la meva [pàgina de liberapay] (https://liberapay.com/JohnLivingston/)."
+msgstr ""
+"I gràcies per totes les col·laboracions individuals fetes a través de la "
+"meva [pàgina de liberapay](https://liberapay.com/JohnLivingston)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
@@ -1079,7 +1096,9 @@ msgstr "De manera predeterminada el servidor XMPP Prosody intern només escolta 
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "On livechat versions >= 10.1.0 a new option call `Client to server network interfaces` was added to allow changing this.\n"
-msgstr "A les versions de Livechat >= 10.1.0, s'ha afegit una nova crida d'opció «interfícies de client a servidor» per permetre que això es pugui canviar.\n"
+msgstr ""
+"A les versions de Livechat >= 10.1.0, s'ha afegit una nova crida d'opció `"
+"interfícies de client a servidor` per permetre que això es pugui canviar.\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1099,7 +1118,10 @@ msgstr "A continuació heu d'obrir el port C2S (per defecte `52822`, però compr
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "You also need to add DNS records (A and AAAA) for `anon.example.org` and `room.example.org` (replace `example.org` by your actual domain name)."
-msgstr "També heu d'afegir registres DNS (A i AAAA) per a «anon.exemple.cat» i «room.exemple.cat» (substituïu «exemple.cat» pel vostre nom de domini actual)."
+msgstr ""
+"També heu d'afegir registres DNS (A i AAAA) per a `anon.exemple.cat` i "
+"`room.exemple.cat` (substituïu `exemple.cat` pel vostre nom de domini "
+"actual)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1593,7 +1615,9 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "You will be presented with a series of prompts. Enter `2` for the authentication type:"
-msgstr "Se us presentarà una sèrie d'indicacions. Introduïu «2» per al tipus d'autenticació:"
+msgstr ""
+"Se us presentarà una sèrie d'indicacions. Introduïu `2` per al tipus "
+"d'autenticació:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1642,7 +1666,12 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Run the below command inside the certbot container to give read access to the new certs and private keys to the peertube group.  *Note*: This will also make the files readable to the group with id 999 on the host system.  Check the groups on your system to assess this as a risk before running this command."
-msgstr "Executeu l'ordre següent dins del contenidor de certbot per donar accés de lectura als nous certificats i claus privades al grup `peertube`. *Nota*: Aquesta ordre també farà que els fitxers siguin llegibles per al grup amb ID 999 al sistema amfitrió. Comproveu els grups del vostre sistema per avaluar el risc abans d'executar aquesta ordre."
+msgstr ""
+"Executeu l'ordre següent dins del contenidor de certbot per donar accés de "
+"lectura als nous certificats i claus privades al grup peertube.  *Nota*: "
+"Aquesta ordre també farà que els fitxers siguin llegibles per al grup amb ID "
+"999 al sistema amfitrió.  Comproveu els grups del vostre sistema per avaluar "
+"el risc abans d'executar aquesta ordre."
 
 #. type: Fenced code block (bash)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -4836,7 +4865,10 @@ msgstr "De manera predeterminada el xat es mostra al costat del vídeo. Però po
 #. type: Plain text
 #: support/documentation/content/en/intro/_index.md
 msgid "You can test the livechat plugin with this [demo page](https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
-msgstr "Podeu provar el connector de xat en directe mitjançant aquesta [pàgina de demostració] (https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae)."
+msgstr ""
+"Podeu provar el connector de xat en directe mitjançant aquesta "
+"[pàgina de demostració](https://www.yiny.org/w/399a8d13-d4cf-"
+"4ef2-b843-98530a8ccbae)."
 
 #. type: Title ##
 #: support/documentation/content/en/intro/_index.md

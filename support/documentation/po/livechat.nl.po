@@ -7,14 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2025-11-29 15:33+0000\n"
+"PO-Revision-Date: 2025-12-12 12:36+0000\n"
 "Last-Translator: Tibbe Debats <weblate@weblate.framasoft.org>\n"
-"Language-Team: Dutch <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nl/>\n"
+"Language-Team: Dutch <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.14.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
@@ -60,7 +61,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Develop"
-msgstr ""
+msgstr "Ontwikkelen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -229,7 +230,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/develop/_index.md
 #, no-wrap
 msgid "Debug Mode"
-msgstr ""
+msgstr "Debugmodus"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -304,7 +305,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
 msgid "Restart Peertube."
-msgstr ""
+msgstr "Peertube herstarten."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/develop/_index.md
@@ -406,7 +407,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "General information"
-msgstr ""
+msgstr "Algemene informatie"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -447,7 +448,7 @@ msgstr ""
 #: support/documentation/content/en/contributing/document/_index.md
 #, no-wrap
 msgid "Translations"
-msgstr ""
+msgstr "Vertalingen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
@@ -980,7 +981,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "Requirements"
-msgstr ""
+msgstr "Vereisten"
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1022,7 +1023,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 #, no-wrap
 msgid "127.0.0.1       anon.example.org room.example.org\n"
-msgstr ""
+msgstr "127.0.0.1       anon.example.nl kamer.example.nl\n"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md

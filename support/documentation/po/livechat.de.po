@@ -8,15 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2025-06-07 08:38+0000\n"
-"Last-Translator: Victor Hampel <v.hampel@users.noreply.weblate.framasoft.org>\n"
-"Language-Team: German <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
+"PO-Revision-Date: 2025-12-12 14:13+0000\n"
+"Last-Translator: havi05 <havi05git@gmail.com>\n"
+"Language-Team: German <https://weblate.framasoft.org/projects/"
+"peertube-livechat/peertube-plugin-livechat-documentation/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 5.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -672,7 +673,7 @@ msgstr "Das Plugin übersetzen"
 #: support/documentation/content/en/contributing/translate/_index.md
 #, no-wrap
 msgid "Translate"
-msgstr "Übersätzen"
+msgstr "Übersetzen"
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/translate/_index.md
@@ -948,10 +949,21 @@ msgstr "Das Plugin wird von [John Livingston](https://www.john-livingston.fr/) b
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
-#, fuzzy
-#| msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
 msgid "Thanks to David Revoy for his work on Peertube's mascot, [Sepia](https://www.davidrevoy.com/index.php?tag/peertube).  The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0.  PNG files are under CC-By licences, and comes from the [Sepia avatar generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/), the [cat avatar generator](https://www.peppercarrot.com/extras/html/2016_cat-generator/), the [bird avatar generator](https://www.peppercarrot.com/extras/html/2019_bird-generator/), the [fenec/mobilizon avatar generator](https://www.peppercarrot.com/extras/html/2020_mobilizon-generator/) and the [abstract avatar generator](https://www.peppercarrot.com/extras/html/2017_abstract-generator/index.php)."
-msgstr "Vielen Dank an David Revoy für seine Arbeit am Peertube-Maskottchen, [Sepia] (https://www.davidrevoy.com/index.php?tag/peertube).  Das Charakterdesign steht unter CC-By-Lizenz, und die SVG-Dateien, die zur Erstellung einiger Logos und Avatare in diesem Plugin verwendet wurden, stehen unter GPLv3.0.  Die PNG-Dateien stehen unter CC-By-Lizenzen und stammen aus dem [online Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/2023_peertube-generator/)."
+msgstr ""
+"Vielen Dank an David Revoy für seine Arbeit am Peertube-Maskottchen, [Sepia]"
+"(https://www.davidrevoy.com/index.php?tag/peertube).  Das Charakterdesign "
+"steht unter CC-By-Lizenz, und die SVG-Dateien, die zur Erstellung einiger "
+"Logos und Avatare in diesem Plugin verwendet wurden, stehen unter GPLv3.0.  "
+"Die PNG-Dateien stehen unter CC-By-Lizenzen und stammen aus dem "
+"[Sepia Avatar Generator](https://www.peppercarrot.com/extras/html/"
+"2023_peertube-generator/), dem [Katzen Avatar Generator](https://"
+"www.peppercarrot.com/extras/html/2016_cat-generator/), dem "
+"[Vogel Avatar Generator](https://www.peppercarrot.com/extras/html/"
+"2019_bird-generator/), dem [Fennek/Mobilizon Avatar Generator](https://"
+"www.peppercarrot.com/extras/html/2020_mobilizon-generator/) und dem "
+"[Abstrakt Avatar Generator](https://www.peppercarrot.com/extras/html/"
+"2017_abstract-generator/index.php)."
 
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
@@ -981,7 +993,9 @@ msgstr "Vielen Dank an [Octopuce](https://www.octopuce.fr/) für die finanzielle
 #. type: Plain text
 #: support/documentation/content/en/credits/_index.md
 msgid "And thanks to all individual contributors who have made a donation via my [liberapay page](https://liberapay.com/JohnLivingston/)."
-msgstr "Und vielen Dank an alle Einzelspender, die über meine [Liberapay Seite] (https://liberapay.com/JohnLivingston/) gespendet haben."
+msgstr ""
+"Und vielen Dank an alle Einzelspender, die über meine [Liberapay Seite]"
+"(https://liberapay.com/JohnLivingston/) gespendet haben."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/admin/advanced/_index.md
@@ -1151,7 +1165,9 @@ msgstr "Ersetzen Sie `example.org` durch den Namen Ihrer tatsächlichen Instanzd
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
 msgid "Replace `52822` by the actual port if you changed it."
-msgstr "Ersetzen Sie \"52822\" durch den tatsächlichen Port, wenn Sie ihn geändert haben."
+msgstr ""
+"Ersetzen Sie `52822` durch den tatsächlichen Port, wenn Sie ihn geändert "
+"haben."
 
 #. type: Bullet: '- '
 #: support/documentation/content/en/documentation/admin/advanced/matterbridge.md
@@ -1562,7 +1578,12 @@ msgstr "Diese Methode funktioniert mit dem offiziell unterstützten [Docker Guid
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "First, ensure you create a DNS entry for `room.your_instance.tld`, which points to your server.  You can use a CNAME entry (or an A entry and a AAAA entry).  This is necessary for Let's Encrypt to validate the domain for certificate generation."
-msgstr "Stellen Sie zunächst sicher, dass Sie einen DNS-Eintrag für \"room.ihre_instanz.tld\" erstellen, der auf Ihren Server verweist. Sie können einen CNAME-Eintrag (oder einen A-Eintrag und einen AAAA-Eintrag) verwenden. Dies ist erforderlich, damit Let's Encrypt die Domäne für die Zertifikatserstellung validieren kann."
+msgstr ""
+"Stellen Sie zunächst sicher, dass Sie einen DNS-Eintrag für "
+"`room.ihre_instanz.tld` erstellen, der auf Ihren Server verweist. Sie können "
+"einen CNAME-Eintrag (oder einen A-Eintrag und einen AAAA-Eintrag) verwenden. "
+"Dies ist erforderlich, damit Let's Encrypt die Domäne für die "
+"Zertifikatserstellung validieren kann."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1607,7 +1628,7 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
 msgid "Enter the domain name `room.your_instance.tld`:"
-msgstr "Geben Sie den Domänennamen \"room.ihre_instanz.tld\" ein:"
+msgstr "Geben Sie den Domänennamen `room.ihre_instanz.tld` ein:"
 
 #. type: Fenced code block (text)
 #: support/documentation/content/en/documentation/admin/advanced/xmpp_clients.md
@@ -1893,7 +1914,11 @@ msgstr "Bei diesen Anbietern sind die Discovery-Url und die Schaltflächenbeschr
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 msgid "If you think of a standard provider that is not available, you can ask for implementation by [opening a new issue](https://github.com/JohnXLivingston/peertube-plugin-livechat/issues)."
-msgstr "Wenn Ihnen ein Standardanbieter einfällt, der noch nicht verfügbar ist, können Sie um die Implementierung bitten, indem Sie [eine neues Problem] (https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) eröffnen."
+msgstr ""
+"Wenn Ihnen ein Standardanbieter einfällt, der noch nicht verfügbar ist, "
+"können Sie um die Implementierung bitten, indem Sie [ein neues Problem]"
+"(https://github.com/JohnXLivingston/peertube-plugin-livechat/issues) "
+"eröffnen."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2858,7 +2883,10 @@ msgstr "Wenn Sie eine Peertube Live-Stream erstellen oder ändern, gibt es eine 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the Peertube new live form.](/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"New live\")"
-msgstr "![Screenshot des Peertube-Formulars für die Live-Übertragung (/peertube-plugin-livechat/images/new_live.png?classes=shadow,border&height=200px \"Neuer Livestream\")"
+msgstr ""
+"![Screenshot des Peertube-Formulars für die Live-Übertragung](/peertube-"
+"plugin-livechat/images/new_live.png?classes=shadow,border&height=200px "
+"\"Neuer Livestream\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3383,7 +3411,11 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/emojis.md
 msgid "The `sn` attribute is the short name code.  The `url` attribute can be any image url than your browser can access, or a [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) representing the file you want to import."
-msgstr "Das Attribut `sn` ist der Kurznamencode.  Das Attribut \"url\" kann eine beliebige Bild-URL sein, auf die Ihr Browser zugreifen kann, oder eine [Daten-URL] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs), die die zu importierende Datei darstellt."
+msgstr ""
+"Das Attribut `sn` ist der Kurznamencode.  Das Attribut `url` kann eine "
+"beliebige Bild-URL sein, auf die Ihr Browser zugreifen kann, oder eine "
+"[Daten-URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/"
+"Data_URLs), die die zu importierende Datei darstellt."
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
@@ -3497,7 +3529,7 @@ msgstr "Dieser Wert gilt als Standardwert für alle Chaträume deines Kanals."
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "Setting the value to `0` will disable the feature."
-msgstr "Wird der Wert auf \"0\" gesetzt, wird die Funktion deaktiviert."
+msgstr "Wird der Wert auf `0` gesetzt, wird die Funktion deaktiviert."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -4516,7 +4548,13 @@ msgstr "Benutzer können die Nutzungsbedingungen ausblenden.  Wenn Sie dies tun,
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 msgid "If your Peertube instance allows joining chat with [XMPP clients](https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/), users using such clients will see the terms as chat messages, coming from a \"Peertube\" account.  When you update terms, they will receive a new message with the update terms content."
-msgstr "Wenn Ihre Peertube-Instanz die Teilnahme am Chat mit [XMPP-Clients] (https://livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/advanced/xmpp_clients/) erlaubt, sehen die Benutzer, die solche Clients verwenden, die Bedingungen als Chat-Nachrichten, die von einem \"Peertube\"-Konto kommen.  Wenn Sie die Bedingungen aktualisieren, erhalten sie eine neue Nachricht mit dem Inhalt der aktualisierten Bedingungen."
+msgstr ""
+"Wenn Ihre Peertube-Instanz die Teilnahme am Chat mit [XMPP-Clients](https://"
+"livingston.frama.io/peertube-plugin-livechat/de/documentation/admin/advanced/"
+"xmpp_clients/) erlaubt, sehen die Benutzer, die solche Clients verwenden, "
+"die Bedingungen als Chat-Nachrichten, die von einem \"Peertube\"-Konto "
+"kommen.  Wenn Sie die Bedingungen aktualisieren, erhalten sie eine neue "
+"Nachricht mit dem Inhalt der aktualisierten Bedingungen."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/user/viewers.md
@@ -4645,7 +4683,12 @@ msgstr "Sie können Emojis zu Ihren Nachrichten hinzufügen.  Sie können zum Be
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "You can mention other participants.  To do so, you can type the first nickname letters, then press the tab key.  You can also type `@`: this will directly open the menu.  You can also click on a nickname in the participants list to insert it in the message field."
-msgstr "Sie können andere Teilnehmer erwähnen.  Dazu können Sie die ersten Buchstaben des Spitznamens eingeben und dann die Tabulatortaste drücken.  Sie können auch \"@\" tippen: Damit öffnen Sie direkt das Menü.  Sie können auch auf einen Spitznamen in der Teilnehmerliste klicken, um ihn in das Nachrichtenfeld einzufügen."
+msgstr ""
+"Sie können andere Teilnehmer erwähnen.  Dazu können Sie die ersten "
+"Buchstaben des Spitznamens eingeben und dann die Tabulatortaste drücken.  "
+"Sie können auch `@` tippen: Damit öffnen Sie direkt das Menü.  Sie können "
+"auch auf einen Spitznamen in der Teilnehmerliste klicken, um ihn in das "
+"Nachrichtenfeld einzufügen."
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/viewers.md
