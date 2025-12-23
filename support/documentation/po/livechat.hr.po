@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2025-12-23 20:58+0000\n"
+"PO-Revision-Date: 2025-12-23 21:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -1922,10 +1922,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the \"{{% livechat_label prosody_firewall_configuration %}}\" form.](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label prosody_firewall_configuration %}}\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana „{{% livechat_label prosody_firewall_configuration %}}” "
+"obrasca.](/peertube-plugin-livechat/images/"
+"mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label "
+"prosody_firewall_configuration %}}\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2234,10 +2236,10 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgid "For more information, please check [the documentation](/peertube-plugin-livechat/documentation/admin/mod_firewall/)."
-msgstr "Za više informacija pogledaj stranicu pomoći za [ovu postavku](/peertube-plugin-livechat/hr/documentation/admin/settings/)."
+msgstr ""
+"Za više informacija pregledaj [dokumentaciju](/peertube-plugin-livechat/"
+"documentation/admin/mod_firewall/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
