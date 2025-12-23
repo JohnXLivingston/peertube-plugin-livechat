@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2025-12-23 20:57+0000\n"
+"PO-Revision-Date: 2025-12-23 20:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -1910,10 +1910,10 @@ msgstr "Uredi pravila"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#, fuzzy
-#| msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgid "First, you must enable the feature in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
-msgstr "Za više informacija pogledaj stranicu pomoći za [ovu postavku](/peertube-plugin-livechat/hr/documentation/admin/settings/)."
+msgstr ""
+"Najprije uključi funkciju u [postavkama dodatka](/peertube-plugin-livechat/"
+"documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
