@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2025-12-23 21:01+0000\n"
+"PO-Revision-Date: 2025-12-24 21:45+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -1726,8 +1726,8 @@ msgid "![Screenshot of a dialog with an \"OpenID Connect\" button.](/peertube-pl
 msgstr ""
 "![Snimka zaslona dijaloga s gumbom „OpenID Connect”](/peertube-plugin-"
 "livechat/images/"
-"external_login_dialog_oidc.png?classes=shadow,border&height=200px \"External "
-"login dialog - OpenID Connect\")"
+"external_login_dialog_oidc.png?classes=shadow,border&height=200px \"Eksterni "
+"dijalog za prijavu – OpenID Connect\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -2431,10 +2431,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the plugin's settings page, with a \"launch diagnostic\" button.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px \"Launch diagnostic\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana stranice postavki dodatka s gumbom „Pokreni dijagnozu”.](/"
+"peertube-plugin-livechat/images/"
+"launch_diagnostic.png?classes=shadow,border&height=200px \"Pokreni "
+"dijagnozu\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2598,10 +2600,12 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the OBS software, where the chat was added as web browser source.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px \"Embeding the chat in OBS\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana OBS softvera, gdje je chat dodan kao izvor web preglednika.]"
+"(/peertube-plugin-livechat/images/"
+"embed_chat_in_obs.png?classes=shadow,border&height=200px \"Ugrađivanje chata "
+"u OBS\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2663,17 +2667,20 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the OBS Dock menu, with a \"Custom Browser Docks\" entry.](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px \"OBS - Dock menu\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana OBS Dock izbornika s unosom „Prilagođeni Dockovi preglednika"
+"”.](/peertube-plugin-livechat/images/"
+"obs_dock_menu.png?classes=shadow,border&height=200px \"OBS – Dock izbornik\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the OBS Custom Browser Docks dialog, with a new dock called \"My chat\".](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS - Dock dialog\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana OBS dijaloga „Prilagođeni dockovi preglednika”, s novim "
+"dockom „Moj chat”.](/peertube-plugin-livechat/images/"
+"obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS – Dock "
+"dijalog\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -4777,16 +4784,15 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
-#| msgid "Plugin documentation"
+#, no-wrap
 msgid "Peertube plugin livechat documentation"
-msgstr "Dokumentacija dodataka"
+msgstr "Dokumentacija Peertube dodataka „livechat”"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "Peertube livechat"
-msgstr ""
+msgstr "Peertube livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
