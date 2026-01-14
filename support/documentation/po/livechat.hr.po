@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2026-01-14 12:49+0000\n"
+"PO-Revision-Date: 2026-01-14 13:45+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -3776,12 +3776,13 @@ msgstr "dijeljenje nekih bilješki između moderatora"
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "take notes about participants that were kicked or caused troubles"
 msgstr ""
+"pisanje bilješki o sudionicima koji su izbačeni ili su uzrokovali probleme"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3853,17 +3854,22 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Access rights"
-msgstr ""
+msgstr "Prava pristupa"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "Every room's admins have access to this Application (read and write access)."
 msgstr ""
+"Administratori svake sobe imaju pristup ovoj aplikaciji (prava za čitanje i "
+"pisanje)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "When you promote someone as room admin or owner, they gets instant access to this Application.  When you remove admin or owner rights to someone, they instantly lose access to this Application."
 msgstr ""
+"Postavljanjem nekoga kao administratora ili vlasnika sobe, ta osoba trenutno "
+"dobiva pristup ovoj aplikaciji. Uklanjanjem administratorskih ili vlasničkih "
+"prava, osoba trenutno gubi pristup ovoj aplikaciji."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3890,24 +3896,28 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Notes"
-msgstr ""
+msgstr "Bilješke"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Create/Edit Notes"
-msgstr ""
+msgstr "Stvori/Uredi bilješke"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "You can use the plus button on the top to create a new note.  You can also edit existing notes using the edit button, or delate any note."
 msgstr ""
+"Stvori novu bilješku pomoću gumba s plusom na gornjem rubu. Uredi postojeće "
+"bilješke pomoću gumba za uređivanje ili izbriši bilo koju bilješku."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "All modification are instantly visible in all your browser tabs, and for all room's admins."
 msgstr ""
+"Sve promjene su trenuto vidljive u svim karticama tvog preglednika i za sve "
+"administratore sobe."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3962,10 +3972,13 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the note application, with a filter enabled for user \"Mike\". The only notes that are shown are the notes for the Mike user.](/peertube-plugin-livechat/images/moderation_notes_filters.png?classes=shadow,border&height=200px \"Moderator Notes Application - filtering\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije za bilješke s uključenim filtrom za korisnika „"
+"Mike”. Prikazane su samo bilješke za korisnika Mike.](/peertube-plugin-"
+"livechat/images/"
+"moderation_notes_filters.png?classes=shadow,border&height=200px \"Aplikacija "
+"Bilješke moderatora – filtriranje\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -4293,47 +4306,64 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Using the Task Application"
-msgstr ""
+msgstr "Korištenje aplikacije Zadatak"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Opening the Task Application"
-msgstr ""
+msgstr "Otvaranje aplikacije Zadatak"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the top chat menu:"
 msgstr ""
+"Za otvaranje aplikacije Zadaci, u gornjem izborniku chata se nalazi gumb „{"
+"{% livechat_label \"tasks\" %}}”:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label tasks %}}\" button.](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px \"Opening the Task Application\")"
 msgstr ""
+"![Snimka ekrana Peertube videa, s chatom na desnoj strani. Gornji izbornik "
+"chata je otvoren s gumbom „{{% livechat_label tasks %}}”.](/peertube-plugin-"
+"livechat/images/task_open_app_video.png?classes=shadow,border&height=200px "
+"\"Otvaranje aplikacije Zadatak\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label tasks %}}\" button.](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Task Application\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Gornji izbornik "
+"chata je otvoren s gumbom „{{% livechat_label tasks %}}”.](/peertube-plugin-"
+"livechat/images/"
+"task_open_app_fullpage.png?classes=shadow,border&height=200px \"Otvaranje "
+"aplikacije Zadatak\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Clicking this button will toggle the Task Application display:"
-msgstr ""
+msgstr "Klikom na ovaj gumb se prikaz aplikacije Zadaci mijenja:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The Task application is open. There is a task list, and a form to create a new task.](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px \"Task Application\")"
 msgstr ""
+"![Snimka ekrana Peertube videa, s chatom na desnoj strani. Aplikacija "
+"Zadatak je otvorena. Postoji popis zadataka i obrazac za stvaranje novog "
+"zadatka.](/peertube-plugin-livechat/images/"
+"task_app_video_1.png?classes=shadow,border&height=200px \"Aplikacija "
+"Zadatak\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a Peertube chat, fullscreen.  The Task application is open. There is a task list, and a form to create a new task.](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px \"Task Application\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Aplikacija Zadatak "
+"je otvorena. Postoji popis zadataka i obrazac za stvaranje novog zadatka.](/"
+"peertube-plugin-livechat/images/"
+"task_app_fullpage_1.png?classes=shadow,border&height=200px \" \"Aplikacija "
+"Zadatak\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4383,42 +4413,50 @@ msgstr "Zadaci"
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Create tasks"
-msgstr ""
+msgstr "Stvori zadatke"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can create a task using the button on the right of task lists.  This opens a form with two fields: a mandatory task name, and an optional description."
 msgstr ""
+"Stvori zadatak pomoću gumba s desne strane popisa zadataka. Time se otvara "
+"obrazac s dva polja: ime zadatka (obavezno) i opis (opcionalno)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the task application. Under the first task list, there is a form to create a new task.](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px \"Task form\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije za zadatke. Ispod prvog popisa zadataka nalazi se "
+"obrazac za stvaranje novog zadatka.](/peertube-plugin-livechat/images/"
+"task_app_task_form.png?classes=shadow,border&height=200px \"Obrazac za "
+"zadatke\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the task application. Under the first task list, a new task was created.](/peertube-plugin-livechat/images/task_app_task_1.png?classes=shadow,border&height=200px \"Task created\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije za zadatke. Ispod prvog popisa zadataka je "
+"stvoren jedan novi zadatak.](/peertube-plugin-livechat/images/"
+"task_app_task_form.png?classes=shadow,border&height=200px \"Zadatak je "
+"stvoren\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Edit tasks"
-msgstr ""
+msgstr "Uredi zadatke"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Tasks can be edited by using the edit button on the right."
-msgstr ""
+msgstr "Zadaci se mogu uređivati pomoću gumba za uređivanje na desnoj strani."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Tasks can be marked complete (or uncomplete) by clicking directly on the checkbox in the list."
 msgstr ""
+"Zadaci se mogu označiti kao dovršeni (ili nedovršeni) izravnim klikom na "
+"označiva polja na popisu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
