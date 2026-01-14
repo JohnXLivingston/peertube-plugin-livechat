@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2026-01-06 22:37+0000\n"
+"PO-Revision-Date: 2026-01-14 12:49+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/hr/>\n"
@@ -1724,7 +1724,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of a dialog with an \"OpenID Connect\" button.](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px \"External login dialog - OpenID Connect\")"
 msgstr ""
-"![Snimka zaslona dijaloga s gumbom „OpenID Connect”](/peertube-plugin-"
+"![Snimka ekrana dijaloga s gumbom „OpenID Connect”](/peertube-plugin-"
 "livechat/images/"
 "external_login_dialog_oidc.png?classes=shadow,border&height=200px \"Eksterni "
 "dijalog za prijavu – OpenID Connect\")"
@@ -3758,16 +3758,19 @@ msgstr "Bilješke moderiranja"
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants.  Every room's admins have access to these notes, so they can edit them collaboratively."
 msgstr ""
+"Dodatak za chat uživo uključuje aplikaciju Bilješke moderatora: piši "
+"bilješke koje se mogu odnositi na sudionike chata. Administratori svake sobe "
+"imaju pristup tim bilješkama, tako da ih mogu zajednički uređivati."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "You can for example use this Application to:"
-msgstr ""
+msgstr "Koristi ovu aplikaciju na primjer za:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "share some notes between moderators"
-msgstr ""
+msgstr "dijeljenje nekih bilješki između moderatora"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3803,7 +3806,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
 msgstr ""
-"![Snimka zaslona Peertube videa, s chatom na desnoj strani. Gornji izbornik "
+"![Snimka ekrana Peertube videa, s chatom na desnoj strani. Gornji izbornik "
 "chata je otvoren s gumbom „{{% livechat_label \"moderator_notes\" %}}”.](/"
 "peertube-plugin-livechat/images/"
 "moderation_notes_open_app_video.png?classes=shadow,border&height=200px "
@@ -3811,27 +3814,38 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Gornji izbornik "
+"chata je otvoren s gumbom „{{% livechat_label \"moderator_notes\" %}}”.](/"
+"peertube-plugin-livechat/images/"
+"moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px "
+"\"Otvaranje aplikacije Bilješke moderatora\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "Clicking this button will toggle the Application display:"
-msgstr ""
+msgstr "Klikom na ovaj gumb se prikaz aplikacije mijenja:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_video_1.png?classes=shadow,border&height=200px \"Moderator Notes Application\")"
 msgstr ""
+"![Snimka ekrana Peertube videa, s chatom na desnoj strani. Aplikacija "
+"Bilješke moderatora je otvorena. Postoji nekoliko bilješki, od kojih su neke "
+"od njih povezane s korisnicima.](/peertube-plugin-livechat/images/"
+"moderator_notes_app_video_1.png?classes=shadow,border&height=200px "
+"\"Aplikacija Bilješke moderatora\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px \"Moderator Notes Application\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Aplikacija Bilješke "
+"moderatora je otvorena. Postoji nekoliko bilješki, od kojih su neke od njih "
+"povezane s korisnicima.](/peertube-plugin-livechat/images/"
+"moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px "
+"\"Aplikacija Bilješke moderatora\")"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
