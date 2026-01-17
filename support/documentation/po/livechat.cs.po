@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2026-01-16 21:45+0000\n"
-"Last-Translator: Jiří Podhorecký <j.podhorecky@gmail.com>\n"
+"PO-Revision-Date: 2026-01-18 11:45+0000\n"
+"Last-Translator: Fjuro <fjuro@alius.cz>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
@@ -4731,7 +4731,7 @@ msgstr "Nastavte podmínky chatu kanálu"
 #: support/documentation/content/en/documentation/user/streamers/terms.md
 #, no-wrap
 msgid "Terms & conditions"
-msgstr "Podmínky a pravidla"
+msgstr "Podmínky"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/terms.md
