@@ -521,9 +521,9 @@ poll_duration: Doba trvání ankety (v minutách)
 moderator_note_delete_confirm: Opravdu chcete tuto poznámku smazat?
 moderator_note_create_for_participant: Vytvořit novou poznámku
 moderator_note_search_for_participant: Hledání poznámek
-emoji_only_mode_desc_2: "Tento režim může být užitečný například:\n<ul>\n<li> Abyste
+emoji_only_mode_desc_2: "Tento režim může být užitečný například:\n<ul>\n  <li>Abyste
   zabránili spamu nebo urážlivým zprávám, když zde nejste, abyste je moderovali.</li>\n\
-  \ <li>Když je příliš mnoho hovořících účastníků a vy už nemůžete správně moderovat.</li>\n\
+  \  <li>Když je příliš mnoho hovořících účastníků a vy už nemůžete správně moderovat.</li>\n\
   </ul>\n"
 emoji_only_mode_desc_3: "Chcete-li tento režim povolit nebo zakázat, můžete použít
   konfigurační formulář místnosti.\nPokud jej chcete povolit pro všechny své chatovací
