@@ -7,7 +7,7 @@ import type { NextFunction, Request, Response } from 'express'
 import { initWebchatRouter } from './webchat'
 import { initSettingsRouter } from './settings'
 import { initApiRouter } from './api'
-import { initOIDCRouter } from './oidc'
+import { initAuthRouter } from './auth'
 
 async function initRouters (options: RegisterServerOptions): Promise<void> {
   const { getRouter } = options
@@ -23,7 +23,7 @@ async function initRouters (options: RegisterServerOptions): Promise<void> {
   router.use('/webchat', await initWebchatRouter(options))
   router.use('/settings', await initSettingsRouter(options))
   router.use('/api', await initApiRouter(options))
-  router.use('/oidc', await initOIDCRouter(options))
+  router.use('/auth', await initAuthRouter(options))
 }
 
 export {

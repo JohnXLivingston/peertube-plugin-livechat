@@ -7,7 +7,7 @@ import type { Router, Request, Response, NextFunction } from 'express'
 import { asyncMiddleware } from '../../middlewares/async'
 import { getProsodyDomain } from '../../prosody/config/domain'
 import { LivechatProsodyAuth } from '../../prosody/auth'
-import { ExternalAuthOIDC } from '../../external-auth/oidc'
+import { ExternalAuth } from '../../external-auth'
 
 /**
  * Instanciate the authentication API.
@@ -24,15 +24,15 @@ async function initAuthApiRouter (options: RegisterServerOptions, router: Router
         const token = req.header('X-Peertube-Plugin-Livechat-External-Auth-OIDC-Token')
         if (token) {
           try {
-            const oidc = ExternalAuthOIDC.singletonForToken(token)
-            if (oidc && await oidc.isOk()) {
-              const unserializedToken = await oidc.unserializeToken(token)
+            const auth = ExternalAuth.singletonForToken(token)
+            if (auth && await auth.isOk()) {
+              const unserializedToken = await auth.unserializeToken(token)
               if (unserializedToken) {
                 res.status(200).json({
                   jid: unserializedToken.jid,
                   password: unserializedToken.password,
                   nickname: unserializedToken.nickname,
-                  type: 'oidc'
+                  type: unserializedToken.type
                 })
                 return
               }

@@ -5,7 +5,7 @@
 import type { RegisterServerOptions } from '@peertube/peertube-types'
 import type { Request, Response, CookieOptions } from 'express'
 import type { ExternalAccountInfos, AcceptableAvatarMimeType } from './types'
-import type { ExternalAuthOIDCType } from '../../../shared/lib/types'
+import type { ExternalAuthType, ExternalAuthProvider } from '../../../shared/lib/types'
 import { ExternalAuthenticationError } from './error'
 import { getBaseRouterRoute } from '../helpers'
 import { canonicalizePluginUri } from '../uri/canonicalize'
@@ -54,14 +54,15 @@ function getMimeTypeFromArrayBuffer (arrayBuffer: ArrayBuffer): AcceptableAvatar
 type UserInfoField = 'username' | 'last_name' | 'first_name' | 'nickname' | 'picture'
 
 interface UnserializedToken {
-  type: ExternalAuthOIDCType
+  type: ExternalAuthType
+  provider: ExternalAuthProvider
   jid: string
   password: string
   nickname: string
   expire: Date
 }
 
-let singletons: Map<ExternalAuthOIDCType, ExternalAuthOIDC> | undefined
+let singletons: Map<[ExternalAuthType, ExternalAuthProvider], ExternalAuth> | undefined
 
 async function getRandomBytes (size: number): Promise<Buffer> {
   return new Promise((resolve, reject) => {
@@ -74,10 +75,11 @@ async function getRandomBytes (size: number): Promise<Buffer> {
 }
 
 /**
- * This class handles the external OpenId Connect provider, if defined.
+ * This class handles the external auth, if defined.
  */
-class ExternalAuthOIDC {
-  private readonly singletonType: ExternalAuthOIDCType
+class ExternalAuth {
+  public readonly type: ExternalAuthType
+  public readonly provider: ExternalAuthProvider
   private readonly enabled: boolean
   private readonly buttonLabel: string | undefined
   private readonly discoveryUrl: string | undefined
@@ -96,7 +98,7 @@ class ExternalAuthOIDC {
     outputEncoding: 'hex' as Encoding
   }
 
-  private readonly cookieNamePrefix: string = 'peertube-plugin-livechat-oidc-'
+  private readonly cookieNamePrefix: string = 'peertube-plugin-livechat'
   private readonly cookieOptions: CookieOptions = {
     secure: true,
     httpOnly: true,
@@ -119,7 +121,8 @@ class ExternalAuthOIDC {
 
   constructor (params: {
     logger: RegisterServerOptions['peertubeHelpers']['logger']
-    singletonType: ExternalAuthOIDCType
+    type: ExternalAuthType
+    provider: ExternalAuthProvider
     enabled: boolean
     buttonLabel: string | undefined
     discoveryUrl: string | undefined
@@ -133,13 +136,14 @@ class ExternalAuthOIDC {
     avatarsFiles?: string[]
   }) {
     this.logger = {
-      debug: (s) => params.logger.debug('[ExternalAuthOIDC] ' + s),
-      info: (s) => params.logger.info('[ExternalAuthOIDC] ' + s),
-      warn: (s) => params.logger.warn('[ExternalAuthOIDC] ' + s),
-      error: (s) => params.logger.error('[ExternalAuthOIDC] ' + s)
+      debug: (s) => params.logger.debug('[ExternalAuth] ' + s),
+      info: (s) => params.logger.info('[ExternalAuth] ' + s),
+      warn: (s) => params.logger.warn('[ExternalAuth] ' + s),
+      error: (s) => params.logger.error('[ExternalAuth] ' + s)
     }
 
-    this.singletonType = params.singletonType
+    this.type = params.type
+    this.provider = params.provider
     this.enabled = !!params.enabled
     this.secretKey = params.secretKey
     this.redirectUrl = params.redirectUrl
@@ -154,13 +158,6 @@ class ExternalAuthOIDC {
       this.clientId = params.clientId
       this.clientSecret = params.clientSecret
     }
-  }
-
-  /**
-   * This singleton type.
-   */
-  public get type (): ExternalAuthOIDCType {
-    return this.singletonType
   }
 
   /**
@@ -310,7 +307,7 @@ class ExternalAuthOIDC {
    */
   async initAuthenticationProcess (req: Request, res: Response): Promise<string> {
     if (!this.client) {
-      throw new Error('External Auth OIDC not loaded yet, too soon to call oidc.initAuthentication')
+      throw new Error('External Auth not loaded yet, too soon to call initAuthentication')
     }
 
     const codeVerifier = generators.codeVerifier()
@@ -321,15 +318,15 @@ class ExternalAuthOIDC {
     const encryptedState = await this.encrypt(state)
 
     const redirectUrl = this.client.authorizationUrl({
-      scope: 'openid profile',
+      scope: this.type ? 'openid profile' : 'profile',
       response_mode: 'form_post',
       code_challenge: codeChallenge,
       code_challenge_method: 'S256',
       state
     })
 
-    res.cookie(this.cookieNamePrefix + 'code-verifier', encryptedCodeVerifier, this.cookieOptions)
-    res.cookie(this.cookieNamePrefix + 'state', encryptedState, this.cookieOptions)
+    res.cookie(`${this.cookieNamePrefix}-${this.type}-code-verifier`, encryptedCodeVerifier, this.cookieOptions)
+    res.cookie(`${this.cookieNamePrefix}-${this.type}-state`, encryptedState, this.cookieOptions)
     return redirectUrl
   }
 
@@ -342,10 +339,10 @@ class ExternalAuthOIDC {
    */
   async validateAuthenticationProcess (req: Request): Promise<ExternalAccountInfos> {
     if (!this.client) {
-      throw new Error('External Auth OIDC not loaded yet, too soon to call oidc.validateAuthenticationProcess')
+      throw new Error('External Auth not loaded yet, too soon to call auth.validateAuthenticationProcess')
     }
 
-    const encryptedCodeVerifier = req.cookies[this.cookieNamePrefix + 'code-verifier']
+    const encryptedCodeVerifier = req.cookies[`${this.cookieNamePrefix}-${this.type}-code-verifier`]
     if (!encryptedCodeVerifier) {
       throw new Error('Received callback but code verifier not found in request cookies.')
     }
@@ -353,7 +350,7 @@ class ExternalAuthOIDC {
       throw new Error('Invalid code-verifier type.')
     }
 
-    const encryptedState = req.cookies[this.cookieNamePrefix + 'state']
+    const encryptedState = req.cookies[`${this.cookieNamePrefix}-${this.type}-state`]
     if (!encryptedState) {
       throw new Error('Received callback but state not found in request cookies.')
     }
@@ -412,14 +409,15 @@ class ExternalAuthOIDC {
     // The browser will be able to use this encrypted data with the api/configuration/room API.
     const tokenContent: UnserializedToken = {
       type: this.type,
+      provider: this.provider,
       jid,
       password,
       nickname,
       // expires in 12 hours (user will just have to do the whole process again).
       expire: (new Date(Date.now() + 12 * 3600 * 1000))
     }
-    // Token is prefixed by the type, so we can get the correct singleton for deserializing.
-    const token = this.type + '-' + await this.encrypt(JSON.stringify(tokenContent))
+    // Token is prefixed by the provider, so we can get the correct singleton for deserializing.
+    const token = this.provider + '-' + await this.encrypt(JSON.stringify(tokenContent))
 
     let avatar = await this.readUserInfoPicture(userInfo)
     if (!avatar) {
@@ -471,11 +469,11 @@ class ExternalAuthOIDC {
   public async unserializeToken (token: string): Promise<UnserializedToken | null> {
     try {
       // First, check the prefix:
-      if (!token.startsWith(this.type + '-')) {
+      if (!token.startsWith(this.provider + '-')) {
         throw new Error('Wrong token prefix')
       }
       // Removing the prefix:
-      token = token.substring(this.type.length + 1)
+      token = token.substring(this.provider.length + 1)
 
       const decrypted = await this.decrypt(token)
       const o = JSON.parse(decrypted) // can fail
@@ -484,8 +482,8 @@ class ExternalAuthOIDC {
         throw new Error('Invalid encrypted data')
       }
 
-      if (o.type !== this.type) {
-        throw new Error('Token type is not the expected one')
+      if (o.provider !== this.provider) {
+        throw new Error('Token provider is not the expected one')
       }
 
       if (typeof o.jid !== 'string' || o.jid === '') {
@@ -512,6 +510,7 @@ class ExternalAuthOIDC {
 
       return {
         type: o.type,
+        provider: o.provider,
         jid: o.jid,
         password: o.password,
         nickname: o.nickname,
@@ -688,83 +687,106 @@ class ExternalAuthOIDC {
     // FIXME: this is not optimal to call here.
     const prosodyFilePaths = await getProsodyFilePaths(options)
 
-    const settings = await options.settingsManager.getSettings([
-      'external-auth-custom-oidc',
-      'external-auth-custom-oidc-button-label',
-      'external-auth-custom-oidc-discovery-url',
-      'external-auth-custom-oidc-client-id',
-      'external-auth-custom-oidc-client-secret',
-      'external-auth-google-oidc',
-      'external-auth-google-oidc-client-id',
-      'external-auth-google-oidc-client-secret',
-      'external-auth-facebook-oidc',
-      'external-auth-facebook-oidc-client-id',
-      'external-auth-facebook-oidc-client-secret'
-    ])
+    const authSettingsPrefix = 'external-auth'
 
-    const init = async function initSingleton (
-      singletonType: ExternalAuthOIDCType,
+    const defaultAuthOptions: Array<{
+      type: ExternalAuthType
+      provider: ExternalAuthProvider
+      label?: string
+      uri?: string
+    }> = [
+      {
+        type: 'oidc',
+        provider: 'custom'
+      },
+      {
+        type: 'oidc',
+        provider: 'google',
+        label: 'Google',
+        uri: 'https://accounts.google.com'
+      },
+      {
+        type: 'oidc',
+        provider: 'facebook',
+        label: 'Facebook',
+        uri: 'https://www.facebook.com'
+      },
+      {
+        type: 'oauth',
+        provider: 'custom'
+      }
+    ]
+
+    const settingsList = defaultAuthOptions.map(({ type, provider }) => [
+      '',
+      'client-id',
+      'client-secret',
+      ...((provider === 'custom')
+        ? [
+            'button-label',
+            'discovery-url'
+          ]
+        : [])
+    ].map(x => `${authSettingsPrefix}-${provider}-${type}-${x}`)).flat()
+
+    const settings = await options.settingsManager.getSettings(settingsList)
+
+    const init = async (
+      type: ExternalAuthType,
+      provider: ExternalAuthProvider,
       buttonLabel: string | undefined,
       discoveryUrl: string | undefined
-    ): Promise<void> {
+    ): Promise<void> => {
       // Generating a secret key that will be used for the authenticatio process (can change on restart).
       const secretKey = (await getRandomBytes(16)).toString('hex')
 
-      const singleton = new ExternalAuthOIDC({
+      const singleton = new ExternalAuth({
         logger: options.peertubeHelpers.logger,
-        singletonType,
-        enabled: settings['external-auth-' + singletonType + '-oidc'] as boolean,
+        type,
+        provider,
+        enabled: settings[`${authSettingsPrefix}-${provider}-${type}`] as boolean,
         buttonLabel,
         discoveryUrl,
-        clientId: settings['external-auth-' + singletonType + '-oidc-client-id'] as string | undefined,
-        clientSecret: settings['external-auth-' + singletonType + '-oidc-client-secret'] as string | undefined,
+        clientId: settings[`${authSettingsPrefix}-${provider}-${type}-client-id`] as string | undefined,
+        clientSecret: settings[`${authSettingsPrefix}-${provider}-${type}-client-secret`] as string | undefined,
         secretKey,
-        connectUrl: ExternalAuthOIDC.connectUrl(options, singletonType),
-        redirectUrl: ExternalAuthOIDC.redirectUrl(options, singletonType),
+        connectUrl: ExternalAuth.connectUrl(options, type, provider),
+        redirectUrl: ExternalAuth.redirectUrl(options, type, provider),
         externalVirtualhost: 'external.' + prosodyDomain,
         avatarsDir: prosodyFilePaths.avatars,
         avatarsFiles: prosodyFilePaths.avatarsFiles
       })
 
-      singletons ??= new Map<ExternalAuthOIDCType, ExternalAuthOIDC>()
-      singletons.set(singletonType, singleton)
+      singletons ??= new Map<[ExternalAuthType, ExternalAuthProvider], ExternalAuth>()
+      singletons.set([type, provider], singleton)
     }
 
-    await Promise.all([
+    await Promise.all(defaultAuthOptions.map(async ({ type, provider, label, uri }) =>
       init(
-        'custom',
-        settings['external-auth-custom-oidc-button-label'] as string | undefined,
-        settings['external-auth-custom-oidc-discovery-url'] as string | undefined
-      ),
-      init(
-        'google',
-        'Google',
-        'https://accounts.google.com'
-      ),
-      init(
-        'facebook',
-        'Facebook',
-        'https://www.facebook.com'
-      )
-    ])
+        type,
+        provider,
+        label ?? settings[`${authSettingsPrefix}-${provider}-${type}-button-label`] as string | undefined,
+        uri ?? settings[`${authSettingsPrefix}-${provider}-${type}-discovery-url`] as string | undefined
+      ))
+    )
 
     startPruneTimer(options)
   }
 
   /**
    * Gets the singleton, or raise an exception if it is too soon.
-   * @param ExternalAuthOIDCType The singleton type.
+   * @param ExternalAuthProvider The singleton provider.
    * @throws Error
    * @returns the singleton
    */
   // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
-  public static singleton (singletonType: ExternalAuthOIDCType | string): ExternalAuthOIDC {
+  public static singleton (type: ExternalAuthType | string, provider: ExternalAuthProvider | string): ExternalAuth {
     if (!singletons) {
-      throw new Error('ExternalAuthOIDC singletons are not initialized yet')
+      throw new Error('ExternalAuth singletons are not initialized yet')
     }
-    const singleton = singletons.get(singletonType as ExternalAuthOIDCType)
+    const singleton = singletons.get([type as ExternalAuthType, provider as ExternalAuthProvider])
     if (!singleton) {
-      throw new Error(`ExternalAuthOIDC singleton "${singletonType}" is not initiliazed yet`)
+      throw new Error(`ExternalAuth singleton "${provider}" is not initialized yet`)
     }
     return singleton
   }
@@ -772,7 +794,7 @@ class ExternalAuthOIDC {
   /**
    * Get all initialiazed singletons.
    */
-  public static allSingletons (): ExternalAuthOIDC[] {
+  public static allSingletons (): ExternalAuth[] {
     if (!singletons) { return [] }
     return Array.from(singletons.values())
   }
@@ -783,11 +805,11 @@ class ExternalAuthOIDC {
    * Note: the token must be unserialized before supposing it is valid!
    * @param token the authentication token
    */
-  public static singletonForToken (token: string): ExternalAuthOIDC | null {
+  public static singletonForToken (token: string): ExternalAuth | null {
     try {
-      const m = token.match(/^(\w+)-/)
+      const m = token.match(/^(\w+)-(\w+)-/)
       if (!m) { return null }
-      return ExternalAuthOIDC.singleton(m[1])
+      return ExternalAuth.singleton(m[1], m[2])
     } catch (_err) {
       return null
     }
@@ -798,26 +820,38 @@ class ExternalAuthOIDC {
    * @param options Peertube server options
    * @returns the uri
    */
-  public static connectUrl (options: RegisterServerOptions, type: ExternalAuthOIDCType): string {
+  public static connectUrl (
+    options: RegisterServerOptions,
+    type: ExternalAuthType,
+    provider: ExternalAuthProvider): string {
     if (!/^\w+$/.test(type)) {
-      throw new Error('Invalid singleton type')
+      throw new Error('Invalid type')
     }
-    const path = getBaseRouterRoute(options) + 'oidc/' + type + '/connect'
+    if (!/^\w+$/.test(provider)) {
+      throw new Error('Invalid provider')
+    }
+    const path = getBaseRouterRoute(options) + type + '/' + provider + '/connect'
     return canonicalizePluginUri(options, path, {
       removePluginVersion: true
     })
   }
 
   /**
-   * Get the redirect uri to require from the remote OIDC Provider.
+   * Get the redirect uri to require from the remote auth Provider.
    * @param options Peertube server optiosn
    * @returns the uri
    */
-  public static redirectUrl (options: RegisterServerOptions, type: ExternalAuthOIDCType): string {
+  public static redirectUrl (
+    options: RegisterServerOptions,
+    type: ExternalAuthType,
+    provider: ExternalAuthProvider): string {
     if (!/^\w+$/.test(type)) {
-      throw new Error('Invalid singleton type')
+      throw new Error('Invalid type')
     }
-    const path = getBaseRouterRoute(options) + 'oidc/' + type + '/cb'
+    if (!/^\w+$/.test(provider)) {
+      throw new Error('Invalid provider')
+    }
+    const path = getBaseRouterRoute(options) + type + '/' + provider + '/cb'
     return canonicalizePluginUri(options, path, {
       removePluginVersion: true
     })
@@ -834,10 +868,10 @@ function startPruneTimer (options: RegisterServerOptions): void {
   stopPruneTimer() // just in case...
 
   const logger = {
-    debug: (s: string) => options.peertubeHelpers.logger.debug('[ExternalAuthOIDC startPruneTimer] ' + s),
-    info: (s: string) => options.peertubeHelpers.logger.info('[ExternalAuthOIDC startPruneTimer] ' + s),
-    warn: (s: string) => options.peertubeHelpers.logger.warn('[ExternalAuthOIDC startPruneTimer] ' + s),
-    error: (s: string) => options.peertubeHelpers.logger.error('[ExternalAuthOIDC startPruneTimer] ' + s)
+    debug: (s: string) => options.peertubeHelpers.logger.debug('[ExternalAuth startPruneTimer] ' + s),
+    info: (s: string) => options.peertubeHelpers.logger.info('[ExternalAuth startPruneTimer] ' + s),
+    warn: (s: string) => options.peertubeHelpers.logger.warn('[ExternalAuth startPruneTimer] ' + s),
+    error: (s: string) => options.peertubeHelpers.logger.error('[ExternalAuth startPruneTimer] ' + s)
   }
 
   // every hour (every minutes in debug mode)
@@ -849,8 +883,8 @@ function startPruneTimer (options: RegisterServerOptions): void {
     try {
       // Checking if at least one active singleton
       let ok = false
-      for (const oidc of ExternalAuthOIDC.allSingletons()) {
-        if (!await oidc.isOk()) { continue }
+      for (const auth of ExternalAuth.allSingletons()) {
+        if (!await auth.isOk()) { continue }
         ok = true
         break
       }
@@ -874,6 +908,7 @@ function stopPruneTimer (): void {
 }
 
 export {
-  ExternalAuthOIDC,
-  ExternalAuthOIDCType
+  ExternalAuth,
+  ExternalAuthType,
+  ExternalAuthProvider
 }
