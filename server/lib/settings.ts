@@ -277,7 +277,7 @@ function initExternalAuth (options: RegisterServerOptions): void {
       descriptionHTML: `<ul><li>${escapeHTML(redirectUrl) as string}</li></ul>`
     })
 
-    if (type === 'custom') {
+    if (provider === 'custom') {
       registerSetting({
         name: `${externalAuthNamePrefix}-${provider}-${type}-button-label`,
         label: loc(`${externalAuthLabelPrefix}_${provider}_${type}_button_label_label`),

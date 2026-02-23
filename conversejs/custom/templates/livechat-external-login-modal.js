@@ -85,10 +85,10 @@ export const tplExternalLoginModal = (el, o) => {
   if (Array.isArray(buttonsDefinitions) && buttonsDefinitions.length) {
     // type=custom first, if present
     // and sorting on label alphabetically
-    const customButtonsDefinitions = buttonsDefinitions.filter(b => b.type === 'custom')
+    const customButtonsDefinitions = buttonsDefinitions.filter(b => b.provider === 'custom')
       .sort((a, b) => a.buttonLabel > b.buttonLabel ? 1 : (a.buttonLabel < b.buttonLabel ? -1 : 0))
 
-    const otherButtonsDefinition = buttonsDefinitions.filter(b => b.type !== 'custom')
+    const otherButtonsDefinition = buttonsDefinitions.filter(b => b.provider !== 'custom')
       .sort((a, b) => a.buttonLabel > b.buttonLabel ? 1 : (a.buttonLabel < b.buttonLabel ? -1 : 0))
 
     for (const block of [customButtonsDefinitions, otherButtonsDefinition]) {
