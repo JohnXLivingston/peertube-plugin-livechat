@@ -177,6 +177,19 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     'prosody-room-allow-s2s',
     'prosody-s2s-port',
     'prosody-s2s-interfaces',
+    'prosody-s2s-bidi',
+    'prosody-smacks',
+    'prosody-smacks-hibernation-time',
+    'prosody-smacks-max-queue-size',
+    'prosody-smacks-enabled-s2s',
+    'prosody-smacks-s2s-resend',
+    'prosody-smacks-max-unacked-stanzas',
+    'prosody-smacks-max-ack-delay',
+    'prosody-smacks-max-old-sessions',
+    'prosody-csi',
+    'prosody-csi-important-payloads',
+    'prosody-csi-queue-size',
+    'prosody-csi-resume-inactive-delay',
     'prosody-certificates-dir',
     'prosody-room-type',
     'prosody-peertube-uri',
@@ -204,6 +217,9 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
   const enableC2S = (settings['prosody-c2s'] as boolean) || false
   // enableRoomS2S: room can be joined from remote XMPP servers (Peertube or not)
   const enableRoomS2S = (settings['prosody-room-allow-s2s'] as boolean) || false
+  const enableS2SBidi = (settings['prosody-s2s-bidi'] as boolean) || false
+  const enableSmacks = (settings['prosody-smacks'] as boolean) || false
+  const enableCSI = (settings['prosody-csi'] as (null|'csi'|'csi_simple')) || false
   const enableComponents = (settings['prosody-components'] as boolean) || false
   const prosodyDomain = await getProsodyDomain(options)
   const paths = await getProsodyFilePaths(options)
@@ -361,6 +377,46 @@ async function getProsodyConfig (options: RegisterServerOptionsV5): Promise<Pros
     }
     config.useS2S(s2sPort, s2sInterfaces, publicServerUrl, getRemoteServerInfosDir(options))
   }
+
+  if (enableS2SBidi) {
+    config.useS2SBidi()
+  }
+
+  if (enableSmacks) {
+    let smacksHibernationTime = Number(settings['prosody-smacks-hibernation-time']) || 600
+    let smacksMaxQueueSize = Number(settings['prosody-smacks-max-queue-size']) || 500
+    let smacksEnabledS2S = (settings['prosody-smacks-enabled-s2s'] as boolean) || true
+    let smacksS2SResend = (settings['prosody-smacks-s2s-resend'] as boolean) || false
+    let smacksMaxUnackedStanzas = Number(settings['prosody-smacks-max-unacked-stanzas']) || 0
+    let smacksMaxAckDelay = Number(settings['prosody-smacks-max-ack-delay']) || 30
+    let smacksMaxOldSessions = Number(settings['prosody-smacks-max-old-sessions']) || 10
+
+    config.useSmacks(
+      smacksHibernationTime,
+      smacksMaxQueueSize,
+      smacksEnabledS2S,
+      smacksS2SResend,
+      smacksMaxUnackedStanzas,
+      smacksMaxAckDelay,
+      smacksMaxOldSessions
+    )
+  }
+
+  if (enableCSI) {
+    let csiImportantPayloads = ((settings['prosody-csi-important-payloads'] as string) || '')
+        .split(',')
+        .map(s => s.trim())
+    let csiQueueSize = Number(settings['prosody-csi-queue-size']) || 256
+    let csiResumeInactiveDelay = Number(settings['prosody-csi-resume-inactive-delay']) || 5
+    
+    config.useCSI(
+      enableCSI == 'csi_simple',
+      csiImportantPayloads,
+      csiQueueSize,
+      csiResumeInactiveDelay
+    )
+  }
+
 
   const logExpiration = readLogExpiration(options, logExpirationSetting)
   config.useMam(logByDefault, logExpiration)

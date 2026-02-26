@@ -432,6 +432,54 @@ class ProsodyConfigContent {
     this.external?.add('modules_enabled', 'dialback') // same.
   }
 
+  useS2SBidi (): void {
+    this.global.add('modules_enabled', 's2s_bidi')
+  }
+
+  useSmacks ( 
+    smacksHibernationTime: number,
+    smacksMaxQueueSize: number,
+    smacksEnabledS2S: boolean,
+    smacksS2SResend: boolean,
+    smacksMaxUnackedStanzas: number,
+    smacksMaxAckDelay: number,
+    smacksMaxOldSessions: number
+  ): void {
+    this.global.add('modules_enabled', 'smacks')
+
+    this.global.set('smacks_hibernation_time', smacksHibernationTime)
+    this.global.set('smacks_max_queue_size', smacksMaxQueueSize)
+    this.global.set('smacks_enabled_s2s', smacksEnabledS2S)
+    this.global.set('smacks_s2s_resend', smacksS2SResend)
+    this.global.set('smacks_max_unacked_stanzas', smacksMaxUnackedStanzas)
+    this.global.set('smacks_max_ack_delay', smacksMaxAckDelay)
+    this.global.set('smacks_max_old_sessions', smacksMaxOldSessions)
+  }
+
+  useCSI (
+    csiSimple: boolean,
+    csiImportantPayloads: string[] | null,
+    csiQueueSize: number,
+    csiResumeInactiveDelay: number,
+  ) {
+    if (csiSimple) {
+      this.global.remove('modules_enabled', 'csi')
+      this.global.add('modules_enabled', 'csi_simple')
+
+      if (csiImportantPayloads !== null) {
+        this.global.set('csi_important_payloads', csiImportantPayloads)
+      } else {
+        this.global.set('csi_important_payloads', [])
+      }
+      this.global.set('csi_queue_size', csiQueueSize)
+      this.global.set('csi_resume_inactive_delay', csiResumeInactiveDelay)
+    }
+    else {
+      this.global.remove('modules_enabled', 'csi_simple')
+      this.global.add('modules_enabled', 'csi')
+    }
+  }
+
   useExternalComponents (
     componentsPort: string,
     componentsInterfaces: string[] | null,

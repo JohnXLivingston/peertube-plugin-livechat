@@ -676,6 +676,124 @@ async function initChatServerAdvancedSettings (options: RegisterServerOptions): 
   })
 
   registerSetting({
+    name: 'prosody-s2s-bidi',
+    label: loc('prosody_s2s_bidi_label'),
+    type: 'input',
+    default: false,
+    private: true,
+    descriptionHTML: loc('prosody_s2s_bidi_description')
+  })
+
+  registerSetting({
+    name: 'prosody-smacks',
+    label: loc('prosody_smacks_label'),
+    type: 'input',
+    default: false,
+    private: true,
+    descriptionHTML: loc('prosody_smacks_description')
+  })
+
+  registerSetting({
+    name: 'prosody-smacks-hibernation-time',
+    label: loc('prosody_smacks_hibernation_time_label'),
+    type: 'input',
+    default: '600',
+    private: true,
+    descriptionHTML: loc('prosody_smacks_hibernation_time_description')
+  })
+
+  registerSetting({
+    name: 'prosody-smacks-max-queue-size',
+    label: loc('prosody_smacks_max_queue_size_label'),
+    type: 'input',
+    default: '500',
+    private: true,
+    descriptionHTML: loc('prosody_smacks_max_queue_size_description')
+  })
+
+  registerSetting({
+    name: 'prosody-smacks-enabled-s2s',
+    label: loc('prosody_smacks_enabled_s2s_label'),
+    type: 'input',
+    default: true,
+    private: true,
+    descriptionHTML: loc('prosody_smacks_enabled_s2s_description')
+  })
+
+  registerSetting({
+    name: 'prosody-smacks-s2s-resend',
+    label: loc('prosody_smacks_s2s_resend_label'),
+    type: 'input',
+    default: false,
+    private: true,
+    descriptionHTML: loc('prosody_smacks_s2s_resend_description')
+  })
+
+  registerSetting({
+    name: 'prosody-smacks-max-unacked-stanzas',
+    label: loc('prosody_smacks_max_unacked_stanzas_label'),
+    type: 'input',
+    default: '0',
+    private: true,
+    descriptionHTML: loc('prosody_smacks_max_unacked_stanzas_description')
+  })
+
+  registerSetting({
+    name: 'prosody-smacks-max-ack-delay',
+    label: loc('prosody_smacks_max_ack_delay_label'),
+    type: 'input',
+    default: '30',
+    private: true,
+    descriptionHTML: loc('prosody_smacks_max_ack_delay_description')
+  })
+
+  registerSetting({
+    name: 'prosody-smacks-max-old-sessions',
+    label: loc('prosody_smacks_max_old_sessions_label'),
+    type: 'input',
+    default: '10',
+    private: true,
+    descriptionHTML: loc('prosody_smacks_max_old_sessions_description')
+  })
+
+  registerSetting({
+    name: 'prosody-csi',
+    label: loc('prosody_csi_label'),
+    type: 'input',
+    default: false,
+    private: true,
+    descriptionHTML: loc('prosody_csi_description')
+  })
+
+  registerSetting({
+    name: 'prosody-csi-important-payloads',
+    label: loc('prosody_csi_important_payloads_label'),
+    type: 'input',
+    default: '256',
+    private: true,
+    descriptionHTML: loc('prosody_csi_important_payloads_description')
+  })
+
+  registerSetting({
+    name: 'prosody-csi-queue-size',
+    label: loc('prosody_csi_queue_size_label'),
+    type: 'input',
+    default: '5',
+    private: true,
+    descriptionHTML: loc('prosody_csi_queue_size_description')
+  })
+
+  registerSetting({
+    name: 'prosody-csi-resume-inactive-delay',
+    label: loc('prosody_csi_resume_inactive_delay_label'),
+    type: 'input',
+    default: '*, ::',
+    private: true,
+    descriptionHTML: loc('prosody_csi_resume_inactive_delay_description')
+  })
+
+
+  registerSetting({
     name: 'prosody-certificates-dir',
     label: loc('prosody_certificates_dir_label'),
     type: 'input',
