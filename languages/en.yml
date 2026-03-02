@@ -293,6 +293,46 @@ prosody_s2s_interfaces_description: |
     <li>172.18.0.42</li>
   </ul>
 
+prosody_s2s_bidi_label: "Bidirectional server to server communication" 
+prosody_s2s_bidi_description: "Activates bidirectional server to server communication."
+prosody_smacks_label: "Stream Management (Smacks)"
+prosody_smacks_description: "Allow a client to resume a disconnected session, preventing message loss."
+prosody_smacks_hibernation_time_label: "Hibenation Time"
+prosody_smacks_hibernation_time_description: "The number of seconds a disconnected session should stay alive for (to allow reconnect)"
+prosody_smacks_max_queue_size_label: "Max Queue Size"
+prosody_smacks_max_queue_size_description: "Maximum number of unacked stanzas kept in memory."
+prosody_smacks_enabled_s2s_label: "Stream Management on Server To Server"
+prosody_smacks_enabled_s2s_description: "Enable Stream Management on server connections."
+prosody_smacks_s2s_resend_label: "Server to Server Resend"
+prosody_smacks_s2s_resend_description: "Attempt to re-send unacked messages on s2s disconnect (Experimental)."
+prosody_smacks_max_unacked_stanzas_label: "Max Unacknowledged Stanzas"
+prosody_smacks_max_unacked_stanzas_description: "How many stanzas to send before requesting acknowledgement."
+prosody_smacks_max_ack_delay_label: "Max Acknowledgement Delay"
+prosody_smacks_max_ack_delay_description: "The number of seconds an ack must be unanswered to trigger an \"smacks-ack-delayed\" event"
+prosody_smacks_max_old_sessions_label: "Max Old Sessions"
+prosody_smacks_max_old_sessions_description: "The number of allowed sessions with timed out hibernation for which the h-value is still kept (limited per user)."
+prosody_csi_label: "Client state indication"
+prosody_csi_description: "Allows client to report their active/inactive state to the server."
+
+prosody_csi_mode_none: "None"
+prosody_csi_mode_normal: "CSI (Normal Mode)"
+prosody_csi_mode_simple: "CSI (Simple Mode)"
+
+prosody_csi_important_payloads_label: "Important Payloads"
+prosody_csi_important_payloads_description: |
+  Allows specifying additional message payloads to consider as indicators of an important stanza.
+  Examples:
+  csi_important_payloads = {
+      -- Anything in this namespace:
+      "{urn:example:important-namespace}",
+      -- Specific element name and namespace:
+      "{urn:example:xmpp:priority}super-important",
+  }
+prosody_csi_queue_size_label: "Queue Size"
+prosody_csi_queue_size_description: "Controls how many stanzas are buffered before sending them all at once. Higher values lets clients conserve bandwidth and power for longer periods, at the cost of memory usage for the server and the risk that the clients connection times out."
+prosody_csi_resume_inactive_delay_label: "Resume Inactive Delay"
+prosody_csi_resume_inactive_delay_description: "The delay, in seconds, after which inactive mode is resumed after a flush has been triggered."
+
 prosody_certificates_dir_label: "Certificates folder"
 prosody_certificates_dir_description: |
   If this field is empty, the plugin will generate and use self-signed certificates.<br>

@@ -436,7 +436,7 @@ class ProsodyConfigContent {
     this.global.add('modules_enabled', 's2s_bidi')
   }
 
-  useSmacks ( 
+  useSmacks (
     smacksHibernationTime: number,
     smacksMaxQueueSize: number,
     smacksEnabledS2S: boolean,
@@ -461,7 +461,7 @@ class ProsodyConfigContent {
     csiImportantPayloads: string[] | null,
     csiQueueSize: number,
     csiResumeInactiveDelay: number,
-  ) {
+  ): void {
     if (csiSimple) {
       this.global.remove('modules_enabled', 'csi')
       this.global.add('modules_enabled', 'csi_simple')
@@ -473,8 +473,7 @@ class ProsodyConfigContent {
       }
       this.global.set('csi_queue_size', csiQueueSize)
       this.global.set('csi_resume_inactive_delay', csiResumeInactiveDelay)
-    }
-    else {
+    } else {
       this.global.remove('modules_enabled', 'csi_simple')
       this.global.add('modules_enabled', 'csi')
     }
