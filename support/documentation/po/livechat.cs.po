@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2026-01-18 11:45+0000\n"
-"Last-Translator: Fjuro <fjuro@alius.cz>\n"
+"PO-Revision-Date: 2026-03-08 13:49+0000\n"
+"Last-Translator: Fjuro <weblate@weblate.framasoft.org>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/cs/>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 5.16.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -616,7 +616,10 @@ msgstr "Prozatím není možné používat tabulky Markdown: překladatelské n�
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
 msgid "There may be links to this documentation elsewhere on the web.  Try not to change the urls of the documentation pages.  Or at the very least, put links to the new location on the previous url."
-msgstr "Odkazy na tuto dokumentaci mohou být k dispozici i jinde na webu.  Snažte se neměnit URL adresy stránek dokumentace.  Nebo alespoň umístěte odkazy na nové umístění na předchozí url."
+msgstr ""
+"Odkazy na tuto dokumentaci mohou být k dispozici i jinde na webu.  Snažte se "
+"neměnit adresy URL stránek dokumentace.  Případně alespoň umístěte odkazy na "
+"nové umístění na předchozí adresu."
 
 #. type: Plain text
 #: support/documentation/content/en/contributing/document/_index.md
