@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2026-03-08 13:49+0000\n"
+"PO-Revision-Date: 2026-03-17 08:24+0000\n"
 "Last-Translator: Fjuro <weblate@weblate.framasoft.org>\n"
 "Language-Team: Czech <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/cs/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 5.16.1\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -2961,12 +2961,20 @@ msgstr "Další informace o záložce „{{% livechat_label share_chat_dock %}}�
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "In the \"{{% livechat_label web %}}\" tab, the provided url opens the chat in the Peertube interface.  You can share this link to other users to invite them to join the chat."
-msgstr "Na záložce „{{% livechat_label web %}}“ se pomocí zadané adresy URL otevře chat v rozhraní Peertube.  Tento odkaz můžete sdílet s ostatními uživateli a pozvat je tak k účasti na chatu."
+msgstr ""
+"Na záložce „{{% livechat_label web %}}“ se pomocí zadané adresy URL otevře "
+"chat v rozhraní PeerTube.  Tento odkaz můžete sdílet s ostatními uživateli a "
+"pozvat je tak k účasti na chatu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 msgid "![Screenshot of the \"{{% livechat_label share_chat_link %}}\" dialog, on the \"{{% livechat_label web %}} tab. There is a url you can copy.](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px \"Share link popup - web tab\")"
-msgstr "![Screenshot dialogového okna „{{% livechat_label share_chat_link %}}“ na kartě „{{% livechat_label web %}}“. Zde je URL adresa, kterou můžete zkopírovat.](/peertube-plugin-livechat/images/share_web.png?classes=shadow,border&height=200px \"Vyskakovací okno pro sdílení odkazu – karta web\")"
+msgstr ""
+"![Snímek dialogového okna „{{% livechat_label share_chat_link %}}“ na kartě „"
+"{{% livechat_label web %}}“. Zde je adresa URL, kterou můžete zkopírovat.](/"
+"peertube-plugin-livechat/images/"
+"share_web.png?classes=shadow,border&height=200px \"Vyskakovací okno pro "
+"sdílení odkazu – webová karta\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3114,7 +3122,11 @@ msgstr "![Screenshot stránky s možnostmi kanálu, s několika poli pro konfigu
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
 msgid "![Screenshot of a chat message that was deleted, with the following reason: \"No url allowed\".](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px \"Deleted message\")"
-msgstr "![Screenshot smazané chatové zprávy s následujícím důvodem: „URL adresy nejsou povoleny“.](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px \"Smazaná zpráva\")"
+msgstr ""
+"![Snímek smazané chatové zprávy s následujícím důvodem: „Adresy URL nejsou "
+"povoleny“.](/peertube-plugin-livechat/images/"
+"bot_deleted_message.png?classes=shadow,border&height=100px \"Smazaná "
+"zpráva\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -4967,9 +4979,9 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/viewers.md
 msgid "![Screenshot of the \"{{% livechat_label login_using_external_account %}}\" dialog. There is a field where you can enter a Peertube url.](/peertube-plugin-livechat/images/external_login_dialog.png?classes=shadow,border&height=200px \"External login dialog\")"
 msgstr ""
-"![Screenshot dialogového okna „{{% livechat_label "
-"login_using_external_account %}}“. Obsahuje pole, do kterého můžete zadat "
-"adresu URL Peertube.](/peertube-plugin-livechat/images/"
+"![Snímek dialogového okna „{{% livechat_label login_using_external_account "
+"%}}“. Obsahuje pole, do kterého můžete zadat adresu URL PeerTube.](/peertube-"
+"plugin-livechat/images/"
 "external_login_dialog.png?classes=shadow,border&height=200px „Dialogové okno "
 "pro externí přihlášení“)"
 
