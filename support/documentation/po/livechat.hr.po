@@ -7,15 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2025-11-21 14:45+0000\n"
+"PO-Revision-Date: 2026-01-14 15:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/hr/>\n"
+"Language-Team: Croatian <https://weblate.framasoft.org/projects/peertube-"
+"livechat/peertube-plugin-livechat-documentation/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.3\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/contact/_index.md
@@ -1720,10 +1722,12 @@ msgstr ""
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of a dialog with an \"OpenID Connect\" button.](/peertube-plugin-livechat/images/external_login_dialog_oidc.png?classes=shadow,border&height=200px \"External login dialog - OpenID Connect\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana dijaloga s gumbom „OpenID Connect”](/peertube-plugin-"
+"livechat/images/"
+"external_login_dialog_oidc.png?classes=shadow,border&height=200px \"Eksterni "
+"dijalog za prijavu – OpenID Connect\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/external_auth.md
@@ -1906,10 +1910,10 @@ msgstr "Uredi pravila"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#, fuzzy
-#| msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgid "First, you must enable the feature in the [plugin settings](/peertube-plugin-livechat/documentation/admin/settings)."
-msgstr "Za više informacija pogledaj stranicu pomoći za [ovu postavku](/peertube-plugin-livechat/hr/documentation/admin/settings/)."
+msgstr ""
+"Najprije uključi funkciju u [postavkama dodatka](/peertube-plugin-livechat/"
+"documentation/admin/settings)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -1918,10 +1922,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the \"{{% livechat_label prosody_firewall_configuration %}}\" form.](/peertube-plugin-livechat/images/mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label prosody_firewall_configuration %}}\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana „{{% livechat_label prosody_firewall_configuration %}}” "
+"obrasca.](/peertube-plugin-livechat/images/"
+"mod_firewall.png?classes=shadow,border&height=400px \"{{% livechat_label "
+"prosody_firewall_configuration %}}\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/admin/mod_firewall.md
@@ -2230,10 +2236,10 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "Check the help for [this setting](/peertube-plugin-livechat/documentation/admin/settings/) for more information."
 msgid "For more information, please check [the documentation](/peertube-plugin-livechat/documentation/admin/mod_firewall/)."
-msgstr "Za više informacija pogledaj stranicu pomoći za [ovu postavku](/peertube-plugin-livechat/hr/documentation/admin/settings/)."
+msgstr ""
+"Za više informacija pregledaj [dokumentaciju](/peertube-plugin-livechat/"
+"documentation/admin/mod_firewall/)."
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/documentation/_index.md
@@ -2425,10 +2431,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the plugin's settings page, with a \"launch diagnostic\" button.](/peertube-plugin-livechat/images/launch_diagnostic.png?classes=shadow,border&height=200px \"Launch diagnostic\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana stranice postavki dodatka s gumbom „Pokreni dijagnozu”.](/"
+"peertube-plugin-livechat/images/"
+"launch_diagnostic.png?classes=shadow,border&height=200px \"Pokreni "
+"dijagnozu\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
@@ -2592,10 +2600,12 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
 #: support/documentation/content/en/intro/_index.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the OBS software, where the chat was added as web browser source.](/peertube-plugin-livechat/images/embed_chat_in_obs.png?classes=shadow,border&height=200px \"Embeding the chat in OBS\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana OBS softvera, gdje je chat dodan kao izvor web preglednika.]"
+"(/peertube-plugin-livechat/images/"
+"embed_chat_in_obs.png?classes=shadow,border&height=200px \"Ugrađivanje chata "
+"u OBS\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2657,17 +2667,20 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the OBS Dock menu, with a \"Custom Browser Docks\" entry.](/peertube-plugin-livechat/images/obs_dock_menu.png?classes=shadow,border&height=200px \"OBS - Dock menu\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana OBS Dock izbornika s unosom „Prilagođeni Dockovi preglednika"
+"”.](/peertube-plugin-livechat/images/"
+"obs_dock_menu.png?classes=shadow,border&height=200px \"OBS – Dock izbornik\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the OBS Custom Browser Docks dialog, with a new dock called \"My chat\".](/peertube-plugin-livechat/images/obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS - Dock dialog\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana OBS dijaloga „Prilagođeni dockovi preglednika”, s novim "
+"dockom „Moj chat”.](/peertube-plugin-livechat/images/"
+"obs_dock_dialog.png?classes=shadow,border&height=200px \"OBS – Dock "
+"dijalog\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/obs.md
@@ -2812,10 +2825,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the form, with a \"{{% livechat_label use_chat %}}\" checkbox.](/peertube-plugin-livechat/images/new_live_activate_chat.png?classes=shadow,border&height=200px \"Activate the chat\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana obrasca s označivim poljem „{{% livechat_label use_chat %}}"
+"”.](/peertube-plugin-livechat/images/"
+"new_live_activate_chat.png?classes=shadow,border&height=200px \"Aktiviraj "
+"chat\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2945,10 +2960,11 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/basics.md
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
 #: support/documentation/content/en/documentation/user/viewers.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the dropdown menu at the top of the chat. Several entries are available.](/peertube-plugin-livechat/images/top_menu.png?classes=shadow,border&height=200px \"Chat menu\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana padajućeg izbornika na vrhu chata. Dostupno je nekoliko "
+"unosa.](/peertube-plugin-livechat/images/"
+"top_menu.png?classes=shadow,border&height=200px \"Izbornik chata\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -2957,10 +2973,11 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the chat configuration form.](/peertube-plugin-livechat/images/configure.png?classes=shadow,border&height=200px \"Configure chat room\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana obrasca za konfiguraciju chata.](/peertube-plugin-livechat/"
+"images/configure.png?classes=shadow,border&height=200px \"Konfiguriraj sobu "
+"za chat\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/basics.md
@@ -3007,10 +3024,12 @@ msgstr "Naredbe"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the channel options page, with some fields to configure the bot commands.](/peertube-plugin-livechat/images/bot_commands.png?classes=shadow,border&height=400px \"Commands configuration\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana stranice s opcijama kanala, s nekim poljima za "
+"konfiguriranje naredbi bota.](/peertube-plugin-livechat/images/"
+"bot_commands.png?classes=shadow,border&height=400px \"Konfiguracija "
+"naredbi\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/commands.md
@@ -3031,17 +3050,21 @@ msgstr ""
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the channel options page, with several fields to configure the forbidden words.](/peertube-plugin-livechat/images/bot_forbidden_words.png?classes=shadow,border&height=400px \"Forbidden words configuration\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana stranice s opcijama kanala, s nekoliko polja za "
+"konfiguriranje zabranjenih riječi.](/peertube-plugin-livechat/images/"
+"bot_forbidden_words.png?classes=shadow,border&height=400px \"Konfiguracija "
+"zabranjenih riječi\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a chat message that was deleted, with the following reason: \"No url allowed\".](/peertube-plugin-livechat/images/bot_deleted_message.png?classes=shadow,border&height=100px \"Deleted message\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana poruke u chatu koja je izbrisana, sa sljedećim razlogom: „"
+"URL nije dopušten”.](/peertube-plugin-livechat/images/"
+"bot_deleted_message.png?classes=shadow,border&height=100px \"Izbrisana "
+"poruka\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3121,10 +3144,12 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel options. There is a form with multiple fields.](/peertube-plugin-livechat/images/channel_configuration.png?classes=shadow,border&height=400px \"Channel configuration\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana opcija kanala. Postoji obrazac s više polja.](/peertube-"
+"plugin-livechat/images/"
+"channel_configuration.png?classes=shadow,border&height=400px \"Konfiguracija "
+"kanala\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/bot/_index.md
@@ -3163,10 +3188,12 @@ msgstr "Konfiguracija"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the channel options page, with several fields to configure the \"No duplicate message\" option.](/peertube-plugin-livechat/images/bot_no_duplicate.png?classes=shadow,border&height=400px \"No duplicate message configuration\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana stranice s opcijama kanala, s nekoliko polja za "
+"konfiguriranje opcije „Bez duplih poruka”.](/peertube-plugin-livechat/images/"
+"bot_no_duplicate.png?classes=shadow,border&height=400px \"Konfiguracija "
+"opcije Bez duplih poruka\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/quotes.md
@@ -3226,10 +3253,11 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the chatrooms configuration page. The page list the user's channels.](/peertube-plugin-livechat/images/chatrooms_menu.png?classes=shadow,border&height=400px \"Chatrooms menu\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana stranice za konfiguraciju chat sobe. Stranica prikazuje "
+"korisničke kanale.](/peertube-plugin-livechat/images/"
+"chatrooms_menu.png?classes=shadow,border&height=400px \"Izbornik chat soba\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3254,7 +3282,9 @@ msgstr "[{{% livechat_label livechat_configuration_channel_mute_anonymous_label 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
 msgid "[The slow mode](/peertube-plugin-livechat/documentation/user/streamers/slow_mode)"
-msgstr "[Spori modus](/peertube-plugin-livechat/hr/documentation/user/streamers/slow_mode)"
+msgstr ""
+"[Spori način rada](/peertube-plugin-livechat/hr/documentation/user/streamers/"
+"slow_mode)"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/channel.md
@@ -3344,10 +3374,9 @@ msgstr "Atribut `sn` je kod kratkog imena. Atribut `url` može biti bilo koji ur
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
-#, fuzzy, no-wrap
-#| msgid "Plugin documentation"
+#, no-wrap
 msgid "Plugin peertube-plugin-livechat emojis only mode"
-msgstr "Dokumentacija dodataka"
+msgstr "Dodatak peertube-plugin-livechat, samo za chat putem emojija"
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/emojis_only.md
@@ -3442,10 +3471,12 @@ msgstr "Na [stranici za konfiguraciju kanala](/peertube-plugin-livechat/hr/docum
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel option form, with a field to configure the moderation delay.](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px \"Channel configuration / Moderation delay\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana obrasca za opcije kanala, s poljem za konfiguriranje odgode "
+"moderiranja.](/peertube-plugin-livechat/images/"
+"moderation_delay_channel_option.png?classes=shadow,border&height=400px "
+"\"Konfiguracija kanala / Odgoda moderiranja\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
@@ -3487,10 +3518,12 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_delay.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a chat message. A timer is displayed next to the message datetime. The timer is in seconds.](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border \"Moderation delay timer\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana chat poruke. Pored datuma i vremena poruke se prikazuje "
+"timer. Timer mjeri u sekundama.](/peertube-plugin-livechat/images/"
+"moderation_delay_timer.png?classes=shadow,border \"Timer odgode "
+"moderiranja\")"
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/moderation.md
@@ -3727,75 +3760,95 @@ msgstr "Bilješke moderiranja"
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants.  Every room's admins have access to these notes, so they can edit them collaboratively."
 msgstr ""
+"Dodatak za chat uživo uključuje aplikaciju Bilješke moderatora: piši "
+"bilješke koje se mogu odnositi na sudionike chata. Administratori svake sobe "
+"imaju pristup tim bilješkama, tako da ih mogu zajednički uređivati."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "You can for example use this Application to:"
-msgstr ""
+msgstr "Koristi ovu aplikaciju na primjer za:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "share some notes between moderators"
-msgstr ""
+msgstr "dijeljenje nekih bilješki između moderatora"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "take notes about participants that were kicked or caused troubles"
 msgstr ""
+"pisanje bilješki o sudionicima koji su izbačeni ili su uzrokovali probleme"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "..."
-msgstr ""
+msgstr "…"
 
 #. type: Title ##
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Using the Moderator Notes Application"
-msgstr ""
+msgstr "Korištenje aplikacije „Bilješke moderatora”"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Opening the Moderator Notes Application"
-msgstr ""
+msgstr "Otvaranje aplikacije „Bilješke moderatora”"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "To open the Moderator Notes Application, there is a \"{{% livechat_label \"moderator_notes\" %}}\" button in the top chat menu:"
 msgstr ""
+"Za otvaranje aplikacije „Bilješke moderatora”, u gornjem izborniku za chat "
+"se nalazi gumb „{{% livechat_label \"moderator_notes\" %}}”:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_video.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana Peertube videa, s chatom na desnoj strani. Gornji izbornik "
+"chata je otvoren s gumbom „{{% livechat_label \"moderator_notes\" %}}”.](/"
+"peertube-plugin-livechat/images/"
+"moderation_notes_open_app_video.png?classes=shadow,border&height=200px "
+"\"Otvaranje aplikacije Bilješke moderatora\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label \"moderator_notes\" %}}\" button.](/peertube-plugin-livechat/images/moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Moderator Notes Application\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Gornji izbornik "
+"chata je otvoren s gumbom „{{% livechat_label \"moderator_notes\" %}}”.](/"
+"peertube-plugin-livechat/images/"
+"moderation_notes_open_app_fullpage.png?classes=shadow,border&height=200px "
+"\"Otvaranje aplikacije Bilješke moderatora\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "Clicking this button will toggle the Application display:"
-msgstr ""
+msgstr "Klikom na ovaj gumb se prikaz aplikacije mijenja:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_video_1.png?classes=shadow,border&height=200px \"Moderator Notes Application\")"
 msgstr ""
+"![Snimka ekrana Peertube videa, s chatom na desnoj strani. Aplikacija "
+"Bilješke moderatora je otvorena. Postoji nekoliko bilješki, od kojih su neke "
+"od njih povezane s korisnicima.](/peertube-plugin-livechat/images/"
+"moderator_notes_app_video_1.png?classes=shadow,border&height=200px "
+"\"Aplikacija Bilješke moderatora\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The moderation notes application is open. There are several notes, some of them are associated to users.](/peertube-plugin-livechat/images/moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px \"Moderator Notes Application\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Aplikacija Bilješke "
+"moderatora je otvorena. Postoji nekoliko bilješki, od kojih su neke od njih "
+"povezane s korisnicima.](/peertube-plugin-livechat/images/"
+"moderator_notes_app_fullpage_1.png?classes=shadow,border&height=200px "
+"\"Aplikacija Bilješke moderatora\")"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3803,17 +3856,22 @@ msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Access rights"
-msgstr ""
+msgstr "Prava pristupa"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "Every room's admins have access to this Application (read and write access)."
 msgstr ""
+"Administratori svake sobe imaju pristup ovoj aplikaciji (prava za čitanje i "
+"pisanje)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "When you promote someone as room admin or owner, they gets instant access to this Application.  When you remove admin or owner rights to someone, they instantly lose access to this Application."
 msgstr ""
+"Postavljanjem nekoga kao administratora ili vlasnika sobe, ta osoba trenutno "
+"dobiva pristup ovoj aplikaciji. Uklanjanjem administratorskih ili vlasničkih "
+"prava, osoba trenutno gubi pristup ovoj aplikaciji."
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3840,39 +3898,49 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Notes"
-msgstr ""
+msgstr "Bilješke"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #, no-wrap
 msgid "Create/Edit Notes"
-msgstr ""
+msgstr "Stvori/Uredi bilješke"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "You can use the plus button on the top to create a new note.  You can also edit existing notes using the edit button, or delate any note."
 msgstr ""
+"Stvori novu bilješku pomoću gumba s plusom na gornjem rubu. Uredi postojeće "
+"bilješke pomoću gumba za uređivanje ili izbriši bilo koju bilješku."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "All modification are instantly visible in all your browser tabs, and for all room's admins."
 msgstr ""
+"Sve promjene su trenuto vidljive u svim karticama tvog preglednika i za sve "
+"administratore sobe."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "You can create a note associated to a participant in several ways:"
 msgstr ""
+"Bilješku koja je povezana s jednim sudionikom možeš stvoriti na nekoliko "
+"načina:"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "using the \"{{% livechat_label moderator_note_create_for_participant %}}\" action in the dropdown menu besides participants in the sidebar"
 msgstr ""
+"korištenjem radnje „{{% livechat_label moderator_note_create_for_participant "
+"%}}” u padajućem izborniku pored sudionika u bočnoj traci"
 
 #. type: Bullet: '* '
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
 msgid "using the \"{{% livechat_label moderator_note_create_for_participant %}}\" action in the dropdown menu besides chat messages"
 msgstr ""
+"korištenjem radnje „{{% livechat_label moderator_note_create_for_participant "
+"%}}” u padajućem izborniku pored chat poruka"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -3912,10 +3980,13 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the note application, with a filter enabled for user \"Mike\". The only notes that are shown are the notes for the Mike user.](/peertube-plugin-livechat/images/moderation_notes_filters.png?classes=shadow,border&height=200px \"Moderator Notes Application - filtering\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije za bilješke s uključenim filtrom za korisnika „"
+"Mike”. Prikazane su samo bilješke za korisnika Mike.](/peertube-plugin-"
+"livechat/images/"
+"moderation_notes_filters.png?classes=shadow,border&height=200px \"Aplikacija "
+"Bilješke moderatora – filtriranje\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/moderation_notes.md
@@ -4080,10 +4151,11 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a chat session, with an ongoing poll. The current user has just voted by sending \"!1\".](/peertube-plugin-livechat/images/polls_votes.png?classes=shadow,border&height=200px \"Poll votes\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana sesije chata s aktualnom anketom. Trenutačni korisnik je "
+"upravo glasao slanjem „!1”.](/peertube-plugin-livechat/images/"
+"polls_votes.png?classes=shadow,border&height=200px \"Glasovi u anketi\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/polls.md
@@ -4125,7 +4197,7 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, no-wrap
 msgid "Slow mode"
-msgstr ""
+msgstr "Spori način rada"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -4161,19 +4233,23 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 #, no-wrap
 msgid "Slow mode option"
-msgstr ""
+msgstr "Opcija sporog načina rada"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
 msgid "On the [channel configuration page](/peertube-plugin-livechat/documentation/user/streamers/channel), you can set the slow mode option:"
 msgstr ""
+"Opcija sporog načina rada se može postaviti na [stranici za konfiguraciju "
+"kanala](/peertube-plugin-livechat/documentation/user/streamers/channel):"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of the channel options form, with a slow mode field.](/peertube-plugin-livechat/images/slow_mode_channel_option.png?classes=shadow,border&height=400px \"Channel configuration / Slow Mode\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana obrasca za opcije kanala, s poljem za spori način rada.](/"
+"peertube-plugin-livechat/images/"
+"slow_mode_channel_option.png?classes=shadow,border&height=400px "
+"\"Konfiguracija kanala / Spori način rada\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/slow_mode.md
@@ -4243,47 +4319,64 @@ msgstr ""
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Using the Task Application"
-msgstr ""
+msgstr "Korištenje aplikacije Zadaci"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Opening the Task Application"
-msgstr ""
+msgstr "Otvaranje aplikacije Zadaci"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the top chat menu:"
 msgstr ""
+"Za otvaranje aplikacije Zadaci, u gornjem izborniku chata se nalazi gumb „{"
+"{% livechat_label \"tasks\" %}}”:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The chat top menu is open, with a \"{{% livechat_label tasks %}}\" button.](/peertube-plugin-livechat/images/task_open_app_video.png?classes=shadow,border&height=200px \"Opening the Task Application\")"
 msgstr ""
+"![Snimka ekrana Peertube videa, s chatom na desnoj strani. Gornji izbornik "
+"chata je otvoren s gumbom „{{% livechat_label tasks %}}”.](/peertube-plugin-"
+"livechat/images/task_open_app_video.png?classes=shadow,border&height=200px "
+"\"Otvaranje aplikacije Zadaci\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Channel configuration / Moderation delay](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
 msgid "![Screenshot of a Peertube chat, fullscreen. The chat top menu open, with a \"{{% livechat_label tasks %}}\" button.](/peertube-plugin-livechat/images/task_open_app_fullpage.png?classes=shadow,border&height=200px \"Opening the Task Application\")"
-msgstr "![Konfiguracija kanala / Odgoda moderiranja](/peertube-plugin-livechat/images/moderation_delay_channel_option.png?classes=shadow,border&height=400px)"
+msgstr ""
+"![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Gornji izbornik "
+"chata je otvoren s gumbom „{{% livechat_label tasks %}}”.](/peertube-plugin-"
+"livechat/images/"
+"task_open_app_fullpage.png?classes=shadow,border&height=200px \"Otvaranje "
+"aplikacije Zadaci\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Clicking this button will toggle the Task Application display:"
-msgstr ""
+msgstr "Klikom na ovaj gumb se prikaz aplikacije Zadaci mijenja:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "![Screenshot of a Peertube video, with the chat on the right. The Task application is open. There is a task list, and a form to create a new task.](/peertube-plugin-livechat/images/task_app_video_1.png?classes=shadow,border&height=200px \"Task Application\")"
 msgstr ""
+"![Snimka ekrana Peertube videa, s chatom na desnoj strani. Aplikacija Zadaci "
+"je otvorena. Postoji popis zadataka i obrazac za stvaranje novog zadatka.](/"
+"peertube-plugin-livechat/images/"
+"task_app_video_1.png?classes=shadow,border&height=200px \"Aplikacija "
+"Zadaci\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a Peertube chat, fullscreen.  The Task application is open. There is a task list, and a form to create a new task.](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px \"Task Application\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Aplikacija Zadaci "
+"je otvorena. Postoji popis zadataka i obrazac za stvaranje novog zadatka.](/"
+"peertube-plugin-livechat/images/"
+"task_app_fullpage_1.png?classes=shadow,border&height=200px \" \"Aplikacija "
+"Zadaci\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4314,14 +4407,16 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Task lists are sorted alphabetically."
-msgstr ""
+msgstr "Popisi zadataka su razvrstani abecednim redom."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of a chat session, with the Task application. There are several task lists.](/peertube-plugin-livechat/images/task_app_task_lists.png?classes=shadow,border&height=200px \"Task lists\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana sesije razgovora s aplikacijom Zadaci. Postoji nekoliko "
+"popisa zadataka.](/peertube-plugin-livechat/images/"
+"task_app_task_lists.png?classes=shadow,border&height=200px \"Popisi "
+"zadataka\")"
 
 #. type: Title ###
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4333,74 +4428,89 @@ msgstr "Zadaci"
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Create tasks"
-msgstr ""
+msgstr "Stvori zadatke"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can create a task using the button on the right of task lists.  This opens a form with two fields: a mandatory task name, and an optional description."
 msgstr ""
+"Stvori zadatak pomoću gumba s desne strane popisa zadataka. Time se otvara "
+"obrazac s dva polja: ime zadatka (obavezno) i opis (opcionalno)."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the task application. Under the first task list, there is a form to create a new task.](/peertube-plugin-livechat/images/task_app_task_form.png?classes=shadow,border&height=200px \"Task form\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije Zadaci. Ispod prvog popisa zadataka nalazi se "
+"obrazac za stvaranje novog zadatka.](/peertube-plugin-livechat/images/"
+"task_app_task_form.png?classes=shadow,border&height=200px \"Obrazac za "
+"zadatke\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the task application. Under the first task list, a new task was created.](/peertube-plugin-livechat/images/task_app_task_1.png?classes=shadow,border&height=200px \"Task created\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije Zadaci. Ispod prvog popisa zadataka je stvoren "
+"jedan novi zadatak.](/peertube-plugin-livechat/images/"
+"task_app_task_form.png?classes=shadow,border&height=200px \"Zadatak je "
+"stvoren\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Edit tasks"
-msgstr ""
+msgstr "Uredi zadatke"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Tasks can be edited by using the edit button on the right."
-msgstr ""
+msgstr "Zadaci se mogu uređivati pomoću gumba za uređivanje na desnoj strani."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "Tasks can be marked complete (or uncomplete) by clicking directly on the checkbox in the list."
 msgstr ""
+"Zadaci se mogu označiti kao dovršeni (ili nedovršeni) izravnim klikom na "
+"označiva polja na popisu."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the task application. Under task lists, there are several tasks. Some of them are checked, other not.](/peertube-plugin-livechat/images/task_app_task_2.png?classes=shadow,border&height=200px \"Tasks\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije Zadaci. Ispod popisa zadataka nalazi se nekoliko "
+"zadataka. Neki od njih su označeni, drugi nisu.](/peertube-plugin-livechat/"
+"images/task_app_task_2.png?classes=shadow,border&height=200px \"Zadaci\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 #, no-wrap
 msgid "Sorting tasks / change task list"
-msgstr ""
+msgstr "Razvrstavanje zadataka / promijeni popis zadataka"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can sort tasks, or move tasks from one list to another, simply using drag & drop."
 msgstr ""
+"Zadaci se mogu razvrstati ili premjestiti s jednog popisa na drugi "
+"jednostavnim povlačenjem i ispuštanjem."
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the task application. There is a task that is dragged over another.](/peertube-plugin-livechat/images/task_drag_drop.png?classes=shadow,border&height=200px \"Drag and drop to sort\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije Zadaci. Postoji zadatak koji je povučen preko "
+"drugog.](/peertube-plugin-livechat/images/"
+"task_drag_drop.png?classes=shadow,border&height=200px \"Povuci i ispusti za "
+"razvrstavanje\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the task application. There is a task that is dragged over another task list.](/peertube-plugin-livechat/images/task_drag_drop_task_list.png?classes=shadow,border&height=200px \"Drag and drop to move to another list\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana aplikacije Zadaci. Postoji zadatak koji je povučen preko "
+"jednog drugog popisa zadataka.](/peertube-plugin-livechat/images/"
+"task_drag_drop.png?classes=shadow,border&height=200px \"Povuci i ispusti za "
+"premještanje u jedan drugi popis\")"
 
 #. type: Title ####
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4749,10 +4859,11 @@ msgstr ""
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
-#, fuzzy
-#| msgid "![Moderation delay timer](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
 msgid "![Screenshot of the chat, with a share button on the top.](/peertube-plugin-livechat/images/share_button.png?classes=shadow,border&height=200px \"Share button\")"
-msgstr "![Timer odgode moderiranja](/peertube-plugin-livechat/images/moderation_delay_timer.png?classes=shadow,border)"
+msgstr ""
+"![Snimka ekrana chata s gumbom za dijeljenje na vrhu.](/peertube-plugin-"
+"livechat/images/share_button.png?classes=shadow,border&height=200px \"Gumb "
+"za dijeljenje\")"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/xmpp_clients.md
@@ -4771,16 +4882,15 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
 #: support/documentation/content/en/_index.md
-#, fuzzy, no-wrap
-#| msgid "Plugin documentation"
+#, no-wrap
 msgid "Peertube plugin livechat documentation"
-msgstr "Dokumentacija dodataka"
+msgstr "Dokumentacija Peertube dodataka „livechat”"
 
 #. type: Yaml Front Matter Hash Value: title
 #: support/documentation/content/en/_index.md
 #, no-wrap
 msgid "Peertube livechat"
-msgstr ""
+msgstr "Peertube livechat"
 
 #. type: Plain text
 #: support/documentation/content/en/_index.md
