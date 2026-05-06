@@ -77,3 +77,28 @@ chat_terms_label: Условия и положения
 chat_terms_description: "Эти положения и условия будут показаны всем пользователям
   при присоединении к чатам.\nСтримеры также могут настраивать правила и условия для
   своих каналов, которые будут отображаться сразу после этих глобальных правил и условий.\n"
+open_blank_label: Показать кнопку «открыть в новом окне»
+open_blank_description: Появится кнопка для открытия чата в новом окне.
+no_anonymous_label: Спрятать чат от анонимусов
+converse_theme_option_peertube: Тема PeerTube
+converse_theme_option_default: Тема ConverseJS по умолчанию
+converse_theme_option_cyberpunk: Тема Cyberpunk для ConverseJS
+autocolors_label: Автоопределение цвета
+autocolors_description: |
+  Попытаться автоматически определить цвета из текущей темы пользователя.<br>
+  Когда этот параметр включен, плагин пытается автоматически определить цвета, которые будут применены к теме чата.<br>
+  Если это не работает правильно для некоторых ваших тем Peertube, вы можете отключить эту опцию.
+  Вы можете сообщить об ошибке на официальном
+  <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
+    трекере проблем
+  </a>. Не забудьте указать, какая тема не работает.
+chat_style_label: Аттрибут стиля IFrame для Веб-чата
+help_builtin_prosody_label: Сервер Prosody (Jabber)
+system_prosody_label: Использовать системный Prosody
+disable_websocket_label: Отключить вебсокеты
+prosody_certificates_dir_label: Папка с сертификатами
+livechat_configuration_channel_forbidden_words_comments_label: Комментарии
+livechat_configuration_channel_bot_nickname: Имя пользователя бота
+invalid_value: Неверное значение.
+share_chat_embed: Встроить
+poll_choice_invalid: Выбор неверен.

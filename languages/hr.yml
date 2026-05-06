@@ -364,8 +364,8 @@ emoji_only_mode_desc_3: "Za aktiviranje ili deaktiviranje ovog modusa možeš ko
 emoji_only_enable_all_rooms: Aktiviraj „Samo emoji” modus u svim chat sobama 
   kanala
 task_list_pick_message: "Nakon što odabereš popis zadataka, stvorit će se novi zadatak.\n\
-  \ Za prikaz zadatka otvori aplikaciju zadataka koristeći gornji izbornik.\nViše
-  informacija u dokumentaciji dodatka za chat uživo.\n"
+  Za prikaz zadatka otvori aplikaciju Zadaci koristeći gornji izbornik.\nViše informacija
+  u dokumentaciji dodatka za chat uživo.\n"
 livechat_configuration_channel_retractation_reason_desc: Razlog koji se 
   prikazuje pored izbrisanih poruka
 livechat_configuration_applytomoderators_desc: "Ova funkcija standardno neće utjecati
