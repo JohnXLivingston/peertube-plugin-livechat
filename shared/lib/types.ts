@@ -200,6 +200,8 @@ interface ProsodyAuthentInfos {
   nickname?: string
 }
 
+type ProsodyCSIMode = 'none' | 'normal' | 'simple'
+
 interface LivechatToken {
   id: number
   label: string
@@ -240,6 +242,7 @@ export type {
   ChannelEmojis,
   ChannelEmojisConfiguration,
   ProsodyAuthentInfos,
+  ProsodyCSIMode,
   LivechatToken,
   AdminFirewallConfiguration,
   AdminFirewallConfigurationFile
