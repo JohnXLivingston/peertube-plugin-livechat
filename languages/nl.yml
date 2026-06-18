@@ -97,3 +97,10 @@ login_remote_peertube_url_invalid: Ongeldige PeerTube-URL.
 new_poll: Een nieuwe peiling maken
 poll_duration: Peilduur (in minuten)
 poll_is_over: De peiling is nu voorbij.
+chat_terms_description: |
+  Deze algemene voorwaarden worden aan alle gebruikers getoond wanneer zij een chatroom betreden.
+  Streamers kunnen ook algemene voorwaarden voor hun eigen kanalen instellen; deze zijn nu te zien na deze algemene voorwaarden.
+external_auth_description: |
+  <h3>Externe authenticatie</h3>
+  Voor gebruikers die geen PeerTube-account hebben, kun je verschillende authenticatiemodi inschakelen op basis van externe authenticatieproviders.
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
