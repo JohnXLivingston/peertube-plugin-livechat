@@ -1,6 +1,8 @@
 # Changelog
 
-## 14.0.3 (Not Released Yet)
+## 14.0.3
+
+### Minor changes and fixes
 
 * Fix chat federation on Peertube >= 8.0.0.
 * Fix CS translations, that made the documentation build fail.
