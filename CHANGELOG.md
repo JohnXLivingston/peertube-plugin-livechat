@@ -2,10 +2,11 @@
 
 ## 14.0.3 (Not Released Yet).
 
-## 14.0.2
-
 * Fix CS translations, that made the documentation build fail.
 * Translation updates.
+* Upgrading dependencies.
+
+## 14.0.2
 
 ### Minor changes and fixes
 
