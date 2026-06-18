@@ -2,12 +2,19 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { RegisterServerOptions, MVideoFullLight, MVideoAP, Video, MVideoThumbnail } from '@peertube/peertube-types'
+import type {
+  RegisterServerOptions, MVideoFullLight, MVideoAP, Video as PVideo, MVideoThumbnail
+} from '@peertube/peertube-types'
 import type { LiveChatJSONLDAttribute, LiveChatJSONLDAttributeV1, PeertubeXMPPServerInfos } from './types'
 import { sanitizePeertubeLiveChatInfos, sanitizeXMPPHostFromInstanceUrl } from './sanitize'
 import { URL } from 'url'
 import * as fs from 'fs'
 import * as path from 'path'
+
+// FIXME: In Peertube 8.0.0, video.isLocal becomes a method... So we do this hack.
+interface Video extends Omit<PVideo, 'isLocal'> {
+  isLocal: boolean | (() => boolean)
+}
 
 /*
 Important Note: we could store these data in database. For example by using storageManager.storeData.
@@ -82,7 +89,11 @@ async function getVideoLiveChatInfos (
   const cached = cache.get(video.url)
   if (cached !== undefined) { return cached }
 
-  const remote = ('remote' in video) ? video.remote : !video.isLocal
+  const remote = ('remote' in video)
+    ? video.remote
+    : (typeof video.isLocal === 'function')
+        ? !video.isLocal()
+        : !video.isLocal
   const filePath = await _getFilePath(options, remote, video.uuid, video.url)
   if (!filePath) {
     logger.error('Cant compute the file path for storing liveChat infos for video ' + video.uuid)

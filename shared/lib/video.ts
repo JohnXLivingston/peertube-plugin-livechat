@@ -26,6 +26,7 @@ interface SharedVideoFrontend extends SharedVideoBase {
 
 interface SharedVideoBackend extends SharedVideoBase {
   remote: boolean
+  isLocal?: boolean | (() => boolean) // In Peertube 8.0.0, video.isLocal is a method.
 }
 
 type SharedVideo = SharedVideoBackend | SharedVideoFrontend
@@ -39,6 +40,9 @@ type SharedVideo = SharedVideoBackend | SharedVideoFrontend
 function videoHasWebchat (settings: VideoHasWebchatSettings, video: SharedVideo): boolean {
   // Never use webchat on remote videos.
   if ('isLocal' in video) {
+    if (typeof video.isLocal === 'function') {
+      if (!video.isLocal()) return false
+    }
     if (!video.isLocal) return false
   } else {
     if (video.remote) return false
