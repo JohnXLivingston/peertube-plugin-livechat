@@ -4297,7 +4297,7 @@ msgstr "Anonymní diváci mohou hlasovat až poté, co si zvolí přezdívku."
 #: support/documentation/content/en/documentation/user/streamers/polls.md
 msgid "If \"{{% livechat_label poll_anonymous_results %}}\" is checked, votes won't be shown to other users.  If unchecked, votes will be publicly visible as you will see message like \"!1\" in the chat."
 msgstr ""
-"Pokud je zaškrtnuto „{{% livechat_label poll_anonymous_results %}“, hlasy se "
+"Pokud je zaškrtnuto „{{% livechat_label poll_anonymous_results %}}“, hlasy se "
 "ostatním uživatelům nezobrazí.  Pokud není zaškrtnuto, hlasy budou veřejně "
 "viditelné, protože v chatu se zobrazí zpráva „!1“."
 
@@ -4500,7 +4500,7 @@ msgstr "Otevření aplikace Úkoly"
 msgid "To open the Task Application, there is a \"{{% livechat_label \"tasks\" %}}\" button in the top chat menu:"
 msgstr ""
 "Pro otevření aplikace Úkoly je v horní nabídce chatu tlačítko „{{% "
-"livechat_label „tasks“ %}}“:"
+"livechat_label \"tasks\" %}}“:"
 
 #. type: Plain text
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
@@ -4695,8 +4695,8 @@ msgstr "Vytvořit úkol z chatové zprávy"
 #: support/documentation/content/en/documentation/user/streamers/tasks.md
 msgid "You can create a task from a message in a chat, using the \"{{% livechat_label \"task_create\" %}}\" button in the dropdown menu at the right of the message.  This will open a dialog box where you can choose which task list you want to add the task into.  The task name will be the user nickname, and the task description the message content."
 msgstr ""
-"Úkol můžete vytvořit ze zprávy v chatu pomocí tlačítka „{{% livechat_label „"
-"task_create“ %}}“ v rozevírací nabídce napravo od zprávy.  Otevře se "
+"Úkol můžete vytvořit ze zprávy v chatu pomocí tlačítka „{{% livechat_label \""
+"task_create\" %}}“ v rozevírací nabídce napravo od zprávy.  Otevře se "
 "dialogové okno, ve kterém můžete vybrat seznam úkolů, do kterého chcete úkol "
 "přidat.  Název úkolu bude přezdívka uživatele a popis úkolu bude obsah "
 "zprávy."
