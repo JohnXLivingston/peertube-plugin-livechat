@@ -5,6 +5,7 @@
 ## 14.0.2
 
 * Fix CS translations, that made the documentation build fail.
+* Translation updates.
 
 ### Minor changes and fixes
 
