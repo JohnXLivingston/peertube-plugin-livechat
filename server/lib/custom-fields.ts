@@ -68,7 +68,7 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
     handler: async (video: Video): Promise<Video> => {
       logger.debug('Getting a video, searching for custom fields and data')
       await fillVideoCustomFields(options, video)
-      if (!video.isLocal) {
+      if (!video.isLocal()) {
         await fillVideoRemoteLiveChat(options, video)
       }
       return video
@@ -111,7 +111,7 @@ async function fillVideoRemoteLiveChat (
   video: Video | MVideoThumbnail
 ): Promise<void> {
   if (('remote' in video) && !video.remote) { return }
-  if (('isLocal' in video) && video.isLocal) { return }
+  if (('isLocal' in video) && video.isLocal()) { return }
   const infos = await getVideoLiveChatInfos(options, video)
   if (!infos) { return }
 
