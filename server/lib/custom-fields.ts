@@ -2,9 +2,14 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-only
 
-import type { RegisterServerOptions, Video, MVideoThumbnail } from '@peertube/peertube-types'
+import type { RegisterServerOptions, Video as PVideo, MVideoThumbnail } from '@peertube/peertube-types'
 import { getVideoLiveChatInfos } from './federation/storage'
 import { anonymousConnectionInfos, compatibleRemoteAuthenticatedConnectionEnabled } from './federation/connection-infos'
+
+// FIXME: In Peertube 8.0.0, video.isLocal becomes a method... So we do this hack.
+interface Video extends Omit<PVideo, 'isLocal'> {
+  isLocal: boolean | (() => boolean)
+}
 
 async function initCustomFields (options: RegisterServerOptions): Promise<void> {
   const registerHook = options.registerHook
@@ -68,7 +73,13 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
     handler: async (video: Video): Promise<Video> => {
       logger.debug('Getting a video, searching for custom fields and data')
       await fillVideoCustomFields(options, video)
-      if (!video.isLocal) {
+      if (
+        !(
+          (typeof video.isLocal === 'function')
+            ? video.isLocal()
+            : video.isLocal
+        )
+      ) {
         await fillVideoRemoteLiveChat(options, video)
       }
       return video
@@ -81,6 +92,7 @@ async function initCustomFields (options: RegisterServerOptions): Promise<void> 
 interface LiveChatCustomFieldsVideo {
   id?: number | string
   isLive: boolean
+  isLocal?: boolean | (() => boolean) // In Peertube 8.0.0, this becomes a method...
   pluginData?: {
     'livechat-active'?: boolean
     'livechat-remote'?: boolean
@@ -111,7 +123,12 @@ async function fillVideoRemoteLiveChat (
   video: Video | MVideoThumbnail
 ): Promise<void> {
   if (('remote' in video) && !video.remote) { return }
-  if (('isLocal' in video) && video.isLocal) { return }
+  if ('isLocal' in video) {
+    if (typeof video.isLocal === 'function') {
+      if (video.isLocal()) { return }
+    }
+    if (video.isLocal) { return }
+  }
   const infos = await getVideoLiveChatInfos(options, video)
   if (!infos) { return }
 
