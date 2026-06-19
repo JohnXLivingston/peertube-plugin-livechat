@@ -1,6 +1,6 @@
 # Changelog
 
-## 14.0.4 (Not Released Yet)
+## 14.0.4
 
 ### Minor changes and fixes
 
