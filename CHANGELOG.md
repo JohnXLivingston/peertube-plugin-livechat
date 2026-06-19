@@ -5,6 +5,7 @@
 ### Minor changes and fixes
 
 * Fix chat federation on Peertube >= 8.0.0.
+* Fix moderation bot not loading on some configuration.
 
 ## 14.0.3
 
