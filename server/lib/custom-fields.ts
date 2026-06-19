@@ -126,8 +126,9 @@ async function fillVideoRemoteLiveChat (
   if ('isLocal' in video) {
     if (typeof video.isLocal === 'function') {
       if (video.isLocal()) { return }
+    } else {
+      if (video.isLocal) { return }
     }
-    if (video.isLocal) { return }
   }
   const infos = await getVideoLiveChatInfos(options, video)
   if (!infos) { return }

@@ -42,8 +42,9 @@ function videoHasWebchat (settings: VideoHasWebchatSettings, video: SharedVideo)
   if ('isLocal' in video) {
     if (typeof video.isLocal === 'function') {
       if (!video.isLocal()) return false
+    } else {
+      if (!video.isLocal) return false
     }
-    if (!video.isLocal) return false
   } else {
     if (video.remote) return false
   }
@@ -81,7 +82,11 @@ interface VideoHasRemoteWebchatSettings {
 function videoHasRemoteWebchat (settings: VideoHasRemoteWebchatSettings, video: SharedVideo): boolean {
   if (settings['federation-no-remote-chat']) { return false }
   if ('isLocal' in video) {
-    if (video.isLocal) return false
+    if (typeof video.isLocal === 'function') {
+      if (video.isLocal()) return false
+    } else {
+      if (video.isLocal) return false
+    }
   } else {
     if (!video.remote) return false
   }
