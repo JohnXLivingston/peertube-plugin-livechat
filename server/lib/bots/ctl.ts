@@ -8,6 +8,7 @@ import { BotConfiguration } from '../configuration/bot'
 import { pluginName } from '../helpers'
 import * as child_process from 'child_process'
 import * as path from 'path'
+import * as fs from 'fs'
 
 let singleton: BotsCtl | undefined
 
@@ -67,7 +68,12 @@ class BotsCtl {
     // Indeed, this will spawn subprocesses, and kill signals sent to the child
     // will not be sent to the real bot process.
     // So we will search the path of the bot executable, and launch it directly.
+
     const botExecPath = this._botExecPath()
+    if (!botExecPath) {
+      this.logger.error('Did not find the botExecPath, cant start the bot.')
+      return
+    }
     const execArgs = [
       'run',
       '-f',
@@ -195,7 +201,7 @@ class BotsCtl {
     singleton = undefined
   }
 
-  protected _botExecPath (): string {
+  protected _botExecPath (): string | undefined {
     let dir: string = __dirname
     let watchDog = 100
 
@@ -206,13 +212,26 @@ class BotsCtl {
 
     if (path.basename(dir) !== pluginName) {
       this.logger.error('Cant find the ' + pluginName + ' base dir, and so cant find the bot exec path.')
-      throw new Error('Cant find the bot exec path')
+      return undefined
     }
 
     // xmppjs-chat-bot must be ./node_modules/.bin/xmppjs-chat-bot
-    const result = path.resolve(dir, 'node_modules', '.bin', 'xmppjs-chat-bot')
-    this.logger.info(`The bot path should be ${result}`)
-    return result
+    let result = path.resolve(dir, 'node_modules', '.bin', 'xmppjs-chat-bot')
+    if (fs.existsSync(result)) {
+      this.logger.info(`The bot path is ${result}`)
+      return result
+    }
+
+    // But for some installation it could also be in ../nodes_modules/.bin.xmppjs-chat-bot
+    this.logger.debug(`${result} was not found, trying in the parent directory`)
+    result = path.resolve(dir, '..', '.bin', 'xmppjs-chat-bot')
+    if (fs.existsSync(result)) {
+      this.logger.info(`The bot path is ${result}`)
+      return result
+    }
+
+    this.logger.error('Cant find the bot exec path')
+    return undefined
   }
 }
 
