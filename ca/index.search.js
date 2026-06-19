@@ -3,7 +3,7 @@ Per defecte, un cop instal·lat el connector a la instància de PeerTube es crea
 A la captura de pantalla següent podeu veure una pàgina de vídeo clàssica de PeerTube, amb una sala de xat a la dreta (feu clic a la imatge per veure-la a pantalla completa):
 Els i les espectadors/es podran accedir a la sala, encara que no tinguin un compte a la vostra instància. Aquests «anònims/es» només hauran de triar un àlies abans de poder parlar al xat.
 De manera predeterminada el xat es mostra al costat del vídeo. Però podeu obrir-lo en una altra pestanya del navegador fent servir el botó de dalt:
-Tip Podeu provar el connector de xat en directe mitjançant aquesta [pàgina de demostració] (https://www.yiny.org/w/399a8d13-d4cf-4ef2-b843-98530a8ccbae).
+Tip Podeu provar el connector de xat en directe mitjançant aquesta pàgina de demostració.
 Instal·lació Com a administrador/a de PeerTube podeu instal·lar aquest connector a la vostra instància simplement utilitzant la botiga de complements inclosa a la interfície d’administració. Cerqueu «livechat» i feu clic a «Instal·lar»: i ja ho teniu!
 Possibilitats de Livechat El connector té moltes funcions avançades. Utilitza l’estàndard XMPP «sota el capó», que permet a l’administració habilitar funcions avançades (connectar mitjançant clients XMPP, bots de xat, passarel·la amb altres protocols…). Més informació als apartats corresponents d’aquesta documentació.
 Federació PeerTube forma part del fedivers: podeu crear una xarxa d’instàncies de PeerTube, compartint contingut entre elles.
@@ -405,7 +405,7 @@ Primer, assegureu-vos de crear una entrada DNS per a room.exemple.cat, que apunt
 Introduïu el directori on es troba el vostre fitxer docker-compose.yml.
 Obriu un shell al contenidor de certbot:
 docker exec -it certbot /bin/shExecuteu certbot:
-certbotSe us presentarà una sèrie d’indicacions. Introduïu «2» per al tipus d’autenticació:
+certbotSe us presentarà una sèrie d’indicacions. Introduïu 2 per al tipus d’autenticació:
 How would you like to authenticate with the ACME CA? Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2Introduïu el nom de domini room.domini.cat:
 Please enter the domain name(s) you would like on your certificate (comma and/or space separated) (Enter 'c' to cancel): room.your_instance.tldIntroduïu el directori on el servidor web PeerTube serveix les sol·licituds de «Let’s Encrypt», /var/www/certbot:
 Input the webroot for <room.your_instance.tld>: (Enter 'c' to cancel): /var/www/certbotHauríeu d’obtenir un resultat semblant al següent:
@@ -554,11 +554,11 @@ Això permetrà els clients XMPP locals connectar al servidor XMPP Prosody.
 És possible que hàgiu d’afegir alguna línia al vostre /etc/hosts:
 127.0.0.1 anon.exemple.cat room.exemple.cat Substituïu exemple.cat pel nom de domini de la vostra instància. A continuació, podeu continuar amb la configuració de Matterbridge següent.
 Permetre connexions externes (avançat) De manera predeterminada el servidor XMPP Prosody intern només escolta a l’host local (127.0.0.1).
-A les versions de Livechat >= 10.1.0, s’ha afegit una nova crida d’opció «interfícies de client a servidor» per permetre que això es pugui canviar.
+A les versions de Livechat >= 10.1.0, s’ha afegit una nova crida d’opció interfícies de client a servidor per permetre que això es pugui canviar.
 Això afegeix una llista d’adreces IP per escoltar separades per comes (s’eliminaran espais).
 També podeu utilitzar * per escoltar a totes les interfícies IPv4 i :: per a totes les interfícies IPv6. Això permet l’accés extern a la interfície client-servidor.
 A continuació heu d’obrir el port C2S (per defecte 52822, però comproveu la configuració del connector per obtenir el valor actual) al vostre tallafoc perquè sigui accessible des d’Internet. Si no voleu utilitzar connexions C2S per a res que no sigui el vostre servei Matterbridge, hauríeu de restringir l’accés a aquest port a la IP del vostre servidor Matterbridge.
-També heu d’afegir registres DNS (A i AAAA) per a «anon.exemple.cat» i «room.exemple.cat» (substituïu «exemple.cat» pel vostre nom de domini actual).
+També heu d’afegir registres DNS (A i AAAA) per a anon.exemple.cat i room.exemple.cat (substituïu exemple.cat pel vostre nom de domini actual).
 Si utilitzeu un port diferent de 5222 (port estàndard XMPP), també heu de configurar el registre SRV xmpp-client al port correcte.
 Configurar Matterbridge A la versió 1.22.4, Matterbridge va afegir suport per a connexions anònimes XMPP, necessàries per connectar-se al servidor Prosody integrat.
 Per tant, al fitxer de configuració TOML heu de posar:
@@ -712,13 +712,13 @@ Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview`,description:"Technical documentation",tags:[],title:"Technical documentation",uri:"/peertube-plugin-livechat/ca/technical/index.html"},{breadcrumb:"Livechat de PeerTube",content:`Si teniu cap pregunta o voleu parlar sobre aquest connector, podeu unir-vos a aquesta sala XMPP amb qualsevol client de Jabber: plugin-livechat-support@room.im.yiny.org.
 Si voleu donar suport econòmic al projecte, podeu contactar amb mi per correu electrònic a git.[at].john-livingston.fr, o consultar el meu perfil de Liberapay.`,description:"Contactar amb l'autor",tags:[],title:"Contacteu amb mi",uri:"/peertube-plugin-livechat/ca/contact/index.html"},{breadcrumb:"Livechat de PeerTube",content:`Els fitxers package.json, [COPYRIGHT](https://github.com/JohnXLivingston/peertube-plugin -livechat/blob/main/COPYRIGHT.md) i LICENSE contenen la informació de la llicència d’aquest programari i les seves dependències (en anglès).
 El connector el manté John Livingston.
-Thanks to David Revoy for his work on Peertube’s mascot, Sepia. The character design is under CC-By licence, and the SVG files used to create some logo and avatars in this plugin are GPLv3.0. PNG files are under CC-By licences, and comes from the Sepia avatar generator, the cat avatar generator, the bird avatar generator, the fenec/mobilizon avatar generator and the abstract avatar generator.
-Gràcies a Framasoft per fer possible Peertube, pel suport financer i per allotjar les traduccions del projecte a [la seva instància Weblate] (https: //weblate.framasoft.org).
+Gràcies a David Revoy pel seu treball sobre la mascota de Peertube, Sepia. El disseny dels personatges està sota llicència CC-By, i els fitxers SVG utilitzats per crear alguns logotips i avatars en aquest connector són GPLv3.0. Els fitxers PNG tenen llicències CC-By i provenen del generador d’avatars Sepia, el generador d’avatars de gat, el generador d’avatars d’ocell, el generador d’avatars fenec/mobilizon i el generador d’avatars abstractes.
+Gràcies a Framasoft per fer possible Peertube, pel suport financer i per allotjar les traduccions del projecte a la seva instància Weblate.
 Gràcies a ritimo pel suport financer.
 Gràcies a Code Lutin i Rétribution Copie Publique pel suport financer.
 Gràcies a NlNet i NGI0 Entrust fund pel suport financer.
 Gràcies a Octopuce pel suport financer.
-I gràcies per totes les col·laboracions individuals fetes a través de la meva [pàgina de liberapay] (https://liberapay.com/JohnLivingston/).`,description:"Crèdits del connector",tags:[],title:"Crèdits",uri:"/peertube-plugin-livechat/ca/credits/index.html"},{breadcrumb:"Livechat de PeerTube > Documentació > Documentació d'usuari > Per a streamers",content:`Activar el xat per a les vostres emissions en directe Warning L’administració de la instància pot optar per desactivar o activar el xat en determinats casos específics. La informació d’aquesta secció només és aplicable en el cas predeterminat.
+I gràcies per totes les col·laboracions individuals fetes a través de la meva pàgina de liberapay.`,description:"Crèdits del connector",tags:[],title:"Crèdits",uri:"/peertube-plugin-livechat/ca/credits/index.html"},{breadcrumb:"Livechat de PeerTube > Documentació > Documentació d'usuari > Per a streamers",content:`Activar el xat per a les vostres emissions en directe Warning L’administració de la instància pot optar per desactivar o activar el xat en determinats casos específics. La informació d’aquesta secció només és aplicable en el cas predeterminat.
 Quan creeu o modifiqueu un Peertube en directe hi ha una pestanya «Configuració del connector»:
 A la pestanya «Configuració del connector» hi ha una casella de selecció «Habilitar el xat». Simplement marqueu-lo o desmarqueu-lo per activar o desactivar el xat associat al vostre vídeo.
 Tip Pot haver-hi altres paràmetres en aquesta pestanya, depenent dels connectors instal·lats a la vostra instància de Peertube.

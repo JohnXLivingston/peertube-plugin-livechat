@@ -106,31 +106,31 @@ Channel advanced configuration Following settings concern the advanced channel o
 Disable the advanced channel configuration and the chatbot If you encounter any issue with this feature, you can disable it.
 Enable regular expressions for chatrooms’ forbidden words When enabling this feature, streamers will be able to use Regular Expressions when configuring the chat bot. You should not enable this feature if you don’t trust your users (those who can create chat rooms, in other words: those who can create live streams). A malicious user could create a specially crafted regular expression, and cause a bot denial of service.
 Chat behaviour Kamertype Je kunt er hier voor kiezen om aparte kamers te hebben voor elk video, of om ze per kanaal te groeperen.
-Automatisch de chat openen Bij het kijken van een video zal de chat automatisch geopend worden.
+De chat automatisch openen Bij het kijken van een video zal de chat automatisch geopend worden.
 Laat de «Open in een nieuw venster» knop zien Er zal een knop komen om de chat in een nieuw venster te openen.
 Laat de «deel chat-link» knop zien This feature enables a «share chat link» modal. With this modal, you can generate URLs to join the chat. The chat can be customized (readonly mode, use the current theme, …).
 You can for example generate a readonly URL and use it in OBS to integrate the chat in your live stream!
 This setting allows you to choose who can access this modal.
 Users can activate the chat for their lives If checked, all live videos will have a checkbox in their properties for enabling the web chat.
 The video owner will be able to activate web chats.
-Activate chat for all lives If checked, the chat will be enabled for all lives.
-Activate chat for all non-lives If checked, the chat will be enabled for all video that are not lives.
-Activate chat for these videos Videos UUIDs for which we want a web chat (short UUID or UUIDv4). Can be non-live videos. One per line. You can add comments: everything after the # character will be stripped off, and empty lines ignored.
+Chat voor alle live-uitzendingen activeren If checked, the chat will be enabled for all lives.
+Activate chat for all non-lives Indien aangevinkt, wordt de chat ingeschakeld voor alle video’s die geen live-uitzendingen zijn.
+Chat activeren voor deze video’s Videos UUIDs for which we want a web chat (short UUID or UUIDv4). Can be non-live videos. One per line. You can add comments: everything after the # character will be stripped off, and empty lines ignored.
 Don’t add private videos, the UUIDs will be sent to the frontend.
-Hide the chat for anonymous users If checked, anonymous Peertube users won’t see the chat. This feature is still experimental. If you enabled it, it is highly recommended to also check “Don’t publish chat information”. Otherwise, some third party tools could try to open the chat, and have unpredictable behaviours.
+De chat verbergen voor anoniemen If checked, anonymous Peertube users won’t see the chat. This feature is still experimental. If you enabled it, it is highly recommended to also check “Don’t publish chat information”. Otherwise, some third party tools could try to open the chat, and have unpredictable behaviours.
 Note: for now this feature simply hide the chat. In a future release, the chat will be replaced by a message saying «please log in to […]». See v5.7.0 Release Notes for more information.
 Ban anonymous user’s IP when user is banned from a chatroom By enabling this option, each time an anonymous user is banned from a chatroom, it’s IP will also be banned from the chat server. Warning: if your instance is open to registration, any user could create a trapped-room, invite users to join, and automatically ban all anonymous user’s IPs. The banned IP list is not stored, it will be cleared on server restart, or when you change some plugin’s settings. The banned IP are logged in the Prosody server log files, so server’s administrators can eventually use some external tools (like fail2ban) to ban IPs more widely.
 Important note: If you enable this feature, and are using a custom reverse proxy on front of Peertube, please make sure that your setup is correctly configured to forward real user’s IPs to Peertube. Otherwise it could block all anonymous users at once.
 Theming Avatar set You can choose from several different sets the default avatars that will be used for chat users.
-Sepia (Peertube mascot): David Revoy’s Peertube avatar generator, CC-By license
-Cats: David Revoy’s cat avatar generator, CC-By license
-Birds: David Revoy’s bird avatar generator, CC-By license
+Sepia (De mascotte van Peertube): David Revoy’s Peertube avatar generator, CC-By license
+Katten: David Revoy’s cat avatar generator, CC-By license
+Vogels: David Revoy’s bird avatar generator, CC-By license
 Fenecs (Mobilizon mascot): David Revoy’s fenec/mobilizon avatar generator, CC-By license
 Abstract: David Revoy’s Abstract avatar generator, CC-By license
 Legacy Sepia avatars (those included in previous plugin versions): Based on David Revoy' work, AGPL-v3 license
 If you can’t see the change immediatly, it could be because of your browser cache. Just clear your browser session storage, or restart it.
 ConverseJS theme You can choose which theme to use for ConverseJS:
-Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Automatic color detection Try to autodetect colors from user’s current theme.
+Peertube theme: this is a special theme, made especially for peertube’s integration. Default ConverseJS theme: this is the default ConverseJS theme. ConverseJS cyberpunk theme: this is a theme provided by ConverseJS. Automatische kleurdetectie Try to autodetect colors from user’s current theme.
 When this setting is enabled, the plugin tries to auto-detect colors to apply to the chat theme.
 If this is not correctly working for some of your Peertube theme, you can disable this option. You can report the bug on the official issue tracker . Don’t forget to specify which theme is not working.
 Webchat iframe style attribute Additional styles to be added on the iframe style attribute. Example: height:400px;
@@ -148,7 +148,7 @@ In last resort, it will use your Peertube public URI. So, any API Call will go t
 Log rooms content by default If checked, room contents will be saved by default. Any user who joins a room will see what was written before they joins.
 Please note that it is always possible to enable/disable the content archiving for a specific room, by editing its properties.
 Room logs expiration You can choose here how long the chatting room’s content is kept by the server. The value can be:
-60: the content will be saved for 60 seconds. You can replace 60 by any integer value. 1d: the content will be saved for 1 day. You can replace 1 by any integer value. 1w: the content will be saved for 1 week. You can replace 1 by any integer value. 1m: the content will be saved for 1 month. You can replace 1 by any integer value. 1y: the content will be saved for 1 year. You can replace 1 by any integer value. never: the content will never expire, and will be kept forever. Enable connection to room using external XMPP accounts By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients.
+60: the content will be saved for 60 seconds. You can replace 60 by any integer value. 1d: the content will be saved for 1 day. You can replace 1 by any integer value. 1w: the content will be saved for 1 week. You can replace 1 by any integer value. 1m: the content will be saved for 1 month. You can replace 1 by any integer value. 1y: the content will be saved for 1 year. You can replace 1 by any integer value. never: the content will never expire, and will be kept forever. Verbinden met de kamer via externe XMPP-accounts inschakelen By enabling this option, it will be possible to connect to rooms using external XMPP accounts and XMPP clients.
 Warning, enabling this option can request extra server and DNS configuration. Please refer to the documentation: Enable external XMPP account connections. Prosody server to server port The port that will be used for XMPP s2s (server to server) connections.
 You should use the standard 5269 port. Otherwise you should setup a specific DNS record .
 Server to server network interfaces The network interfaces to listen on for server to server connections.
@@ -282,7 +282,7 @@ Consider as regular expressions Waarschuwing This feature can be disabled by the
 By checking this option, each line of the “Forbidden words or expressions” field will be considered as a regular expression.
 Also moderate messages from moderators By default, moderator messages will not be affected by this feature. By checking this option, messages from moderators will also be deleted.
 Reason Reason to display besides deleted messages
-Comments You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
+Reacties You can add here some comments about this rule, to remember how and why you created it. These comments are purely indicative, and have no influence on the bot’s behavior.`,description:"The bot can automatically moderate messages containing forbidden words.",tags:[],title:"Forbidden words",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/bot/forbidden_words/index.html"},{breadcrumb:"Peertube livechat > Documentation",content:` Info Before updating to a major release, please read the release notes and breaking changes list : CHANGELOG.
 Fooi To install or update the plugin, just use the Peertube web admin interface.
 Here are some other more specific instructions:
 TroubleshootingSome classic mistakes and workarounds.
@@ -440,38 +440,7 @@ docker-compose exec -u peertube \\ peertube \\ /data/plugins/data/peertube-plugi
 Using MatterbridgeUsing Matterbridge to bridge with other chats`,description:"Some advanced features",tags:[],title:"Advanced usage",uri:"/peertube-plugin-livechat/nl/documentation/admin/advanced/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers > Chat bot",content:`You can configure the bot to respond to commands. A command is a message starting with a “!”, like for example “!help” that calls the “help” command.
 You can setup several commands.
 Command The command, without the starting “!”. For example “help”, “sponsor”, …
-Message The message to send.`,description:"The bot can respond to several commands.",tags:[],title:"Commands",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue.
-Pull Request moet worden gedaan op de main branch.
-Notitie Until march 2023, contribution were made on the develop branch. This procedure is now deprecated.
-Prerequisite for building this plugin Het wordt ten zeerste aanbevolen om vertrouwd te zijn met de volgende concepten:
-Git NodeJS NPM Typescript Om de plug-in te bouwen, moet je over de volgende pakketten beschikken:
-git npm (>=8.x) nodejs (>=14.x) build-essential coreutils wget reuse Please note that this plugin needs an AppImage for the Prosody XMPP server. This AppImage is provided by the Prosody AppImage sideproject. The build-prosody.sh script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct.
-Develop Clone the repository, buid the plugin, and create your feature branch:
-# Clone the repository. Dont forget the --recursive to clone submodules. git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive cd peertube-plugin-livechat # Install NPM dependencies and build the module for the first time: npm install # Build the plugin after a modification: npm run build # If you have a fork from the repository, add it as remote (example): git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git # Create a local branch for you developments, and checkout it (example): git checkout my_development # Note: if an issue is associated, use fix_1234 as your branch name (where 1234 is the issue's number) # To propose your modifications, push your branch to your repository (example): git push --set-upstream me my_development # Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)Once you are ready to show your code to ask for feedback, submit a draft Pull Request. Once you are ready for a code review before merge, submit a Pull Request. In any case, please link your PR to the issues it solves by using the GitHub syntax: “fixes #issue_number”.
-The front-end code is in the client folder, the back-end code in server. There are some shared code in shared folder.
-For general instructions (developping plugins, building, installation, …), please refer to the Peertube documentation.
-You can build the plugin with extra debug features simply by using:
-NODE_ENV=dev npm run buildThis plugin is REUSE compliant: it uses SPDX headers to identify licensing information of its source code. More information on the REUSE website. You can use the reuse command line tool to help you update headers. The npm run lint command will use the reuse command to check compliance. Don’t forget to add your copyright information in SPDX headers when you modify some code.
-ESBuild vs Typescript This plugin uses ESBuild for frontend code generation, as the official peertube-plugin-quickstart plugin. ESBuild can handle Typescript, but does not check types (see ESBuild documentation). That’s why we first compile Typescript with the -noEmit option, just to check types (check:client:ts in package.json file). Then, if everything is okay, we run ESBuild to generate the compiled javascript.
-Debug Mode There is a debug mode for this plugin, that shorten some delay. For example, some log files will rotate every two minutes, instead of once per day. This permit to test more easily certain actions, for which it could normally take hours or days to wait.
-To enable this mode, you juste have to create the /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode file (replacing /var/www/peertube/storage/ by the correct path on your installation).
-The simple existence of this file is sufficient to trigger the debug mode. To make sure it’s taken into account, you can restart your Peertube instance.
-This file can contain some JSON to enable more advanced options. To have a list of existing parameters, check server/lib/debug.ts. Restart Peertube after each content modification.
-Waarschuwing Don’t enable this mode on a production server, neither on a public server. This could cause security issues.
-Restart Prosody When debug mode is enabled, you can restart Prosody using this API call: http://your_instance.tld/plugins/livechat/router/api/restart_prosody. This call don’t need any authentificaiton. It can be done from a command line, for example using curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody.
-Prosody debugger It is possible to connect the Prosody AppImage to a remote debugger using MobDebug.
-To do so, you have to setup MobDebug in a folder that can be accessed by the peertube user. Then, add this in the debub_mode file:
-{ "debug_prosody": { "debugger_path": "/the_path_to_mobdebug/src", "host": "localhost", "port": "8172" } }host and port are optional. debugger_path must point to the folder where the MobDebug .lua file is.
-Restart Peertube.
-Start your debugger server.
-For Prosody to connect to the debugger, call the API http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true. This call does not need any authentication. It can be done from a command line, for example with curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true. You can even configure your debug server to launch this request automatically.
-Prosody will then restart, connecting to the debugger.
-Quick dev environment using Docker There is a tutorial, in french, on the Peertube forum that explains how to quickly build a dev env using Docker.
-A repo was made out of it, check out pt-plugin-dev.
-Note: for an unknown reason, Prosody can’t resolve containers DNS address when using the lua-unbound library. There is a dirty hack in the plugin: just create a /data/plugins/data/peertube-plugin-livechat/no_lua_unbound file in your docker-volumes, then restart containers.
-Quickly rebuild and install the plugin When you do modification, you don’t have to always rebuild the full project, and reinstall the plugin on your dev environment. You can build only the modified part (for example, if you only modified client files: npm run build:client). Check the package.json files for available build scripts.
-When the plugin is already installed on your dev instance, and you haven’t changed any dependency, you can quickly install your work by following these steps:
-re-build necessary parts of the plugin (client, styles, …), overwrite the data/plugins/node_modules/peertube-plugin-livechat/dist/ content of your dev instance by the content of the plugin’s dist folder, change recursively plugins/node_modules/peertube-plugin-livechat/dist/ files owner to your peertube user, restart your instance. Performance tests The livechat-perf-test repository contains some tools to make performance tests. It can be used to evaluate code improvements, or find bottlenecks.`,description:"Develop",tags:[],title:"Develop",uri:"/peertube-plugin-livechat/nl/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`OBS is a popular Free And Open Source streaming software, with advanced capacities for your live streams. In the current page, you will find some advices to handle your live chats using OBS.
+Bericht The message to send.`,description:"The bot can respond to several commands.",tags:[],title:"Commands",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/bot/commands/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:`OBS is a popular Free And Open Source streaming software, with advanced capacities for your live streams. In the current page, you will find some advices to handle your live chats using OBS.
 OBS Overlay You can easily include the chat in your video stream.
 You can use the “Link naar deze chat delen” feature to generate an URL to your chat. This button should be near the chat if you are the video owner (unless it was desactivated by your server admins).
 Check the “Alleen leesbaar” checkbox in the modal.
@@ -488,14 +457,45 @@ Fooi Tokens are valid to join any chat room. You don’t have to generate separa
 Don’t share these links to anyone, as it would allow them to connect as yourself.
 If a token is compromised, or no more needed, you can revoke them.
 Info These tokens can be used for other purposes, as connecting to your account with XMPP bots or clients. This feature is not documented yet, and not officially supported. So use with care.
-Mixing multiple chats in your live stream You can use the social_stream browser extension to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, …) and include their contents in your live stream. The compatibility with this plugin was added in recent versions.`,description:"Documentation to stream the chat content using OBS.",tags:[],title:"OBS",uri:"/peertube-plugin-livechat/nl/documentation/user/obs/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`General information Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are working on the same thing, and prevent conflicts.
+Mixing multiple chats in your live stream You can use the social_stream browser extension to mix multiple chat source (from Peertube, Twitch, Youtube, Facebook, …) and include their contents in your live stream. The compatibility with this plugin was added in recent versions.`,description:"Documentation to stream the chat content using OBS.",tags:[],title:"OBS",uri:"/peertube-plugin-livechat/nl/documentation/user/obs/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`Always talk about features you want to develop by creating/finding and commenting the issue tackling your problem before you start working on it, and inform the community that you begin coding by claiming the issue.
+Pull Request moet worden gedaan op de main branch.
+Notitie Until march 2023, contribution were made on the develop branch. This procedure is now deprecated.
+Prerequisite for building this plugin Het wordt ten zeerste aanbevolen om vertrouwd te zijn met de volgende concepten:
+Git NodeJS NPM Typescript Om de plug-in te bouwen, moet je over de volgende pakketten beschikken:
+git npm (>=8.x) nodejs (>=14.x) build-essential coreutils wget reuse Please note that this plugin needs an AppImage for the Prosody XMPP server. This AppImage is provided by the Prosody AppImage sideproject. The build-prosody.sh script download binaries attached to this remote repository, and checks that their sha256 hashsum are correct.
+Ontwikkelen Clone the repository, buid the plugin, and create your feature branch:
+# Clone the repository. Dont forget the --recursive to clone submodules. git clone https://github.com/JohnXLivingston/peertube-plugin-livechat.git --recursive cd peertube-plugin-livechat # Install NPM dependencies and build the module for the first time: npm install # Build the plugin after a modification: npm run build # If you have a fork from the repository, add it as remote (example): git remote add me git@github.com:MY_GITHUB_ACCOUNT/peertube-plugin-livechat.git # Create a local branch for you developments, and checkout it (example): git checkout my_development # Note: if an issue is associated, use fix_1234 as your branch name (where 1234 is the issue's number) # To propose your modifications, push your branch to your repository (example): git push --set-upstream me my_development # Then go to your github repository with your web browser to propose the Pull Request (see additional instructions below)Once you are ready to show your code to ask for feedback, submit a draft Pull Request. Once you are ready for a code review before merge, submit a Pull Request. In any case, please link your PR to the issues it solves by using the GitHub syntax: “fixes #issue_number”.
+The front-end code is in the client folder, the back-end code in server. There are some shared code in shared folder.
+For general instructions (developping plugins, building, installation, …), please refer to the Peertube documentation.
+You can build the plugin with extra debug features simply by using:
+NODE_ENV=dev npm run buildThis plugin is REUSE compliant: it uses SPDX headers to identify licensing information of its source code. More information on the REUSE website. You can use the reuse command line tool to help you update headers. The npm run lint command will use the reuse command to check compliance. Don’t forget to add your copyright information in SPDX headers when you modify some code.
+ESBuild vs Typescript This plugin uses ESBuild for frontend code generation, as the official peertube-plugin-quickstart plugin. ESBuild can handle Typescript, but does not check types (see ESBuild documentation). That’s why we first compile Typescript with the -noEmit option, just to check types (check:client:ts in package.json file). Then, if everything is okay, we run ESBuild to generate the compiled javascript.
+Debugmodus There is a debug mode for this plugin, that shorten some delay. For example, some log files will rotate every two minutes, instead of once per day. This permit to test more easily certain actions, for which it could normally take hours or days to wait.
+To enable this mode, you juste have to create the /var/www/peertube/storage/plugins/data/peertube-plugin-livechat/debug_mode file (replacing /var/www/peertube/storage/ by the correct path on your installation).
+The simple existence of this file is sufficient to trigger the debug mode. To make sure it’s taken into account, you can restart your Peertube instance.
+This file can contain some JSON to enable more advanced options. To have a list of existing parameters, check server/lib/debug.ts. Restart Peertube after each content modification.
+Waarschuwing Don’t enable this mode on a production server, neither on a public server. This could cause security issues.
+Restart Prosody When debug mode is enabled, you can restart Prosody using this API call: http://your_instance.tld/plugins/livechat/router/api/restart_prosody. This call don’t need any authentificaiton. It can be done from a command line, for example using curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody.
+Prosody debugger It is possible to connect the Prosody AppImage to a remote debugger using MobDebug.
+To do so, you have to setup MobDebug in a folder that can be accessed by the peertube user. Then, add this in the debub_mode file:
+{ "debug_prosody": { "debugger_path": "/the_path_to_mobdebug/src", "host": "localhost", "port": "8172" } }host and port are optional. debugger_path must point to the folder where the MobDebug .lua file is.
+Peertube herstarten.
+Start your debugger server.
+For Prosody to connect to the debugger, call the API http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true. This call does not need any authentication. It can be done from a command line, for example with curl http://your_instance.tld/plugins/livechat/router/api/restart_prosody?debugger=true. You can even configure your debug server to launch this request automatically.
+Prosody will then restart, connecting to the debugger.
+Quick dev environment using Docker There is a tutorial, in french, on the Peertube forum that explains how to quickly build a dev env using Docker.
+A repo was made out of it, check out pt-plugin-dev.
+Note: for an unknown reason, Prosody can’t resolve containers DNS address when using the lua-unbound library. There is a dirty hack in the plugin: just create a /data/plugins/data/peertube-plugin-livechat/no_lua_unbound file in your docker-volumes, then restart containers.
+Quickly rebuild and install the plugin When you do modification, you don’t have to always rebuild the full project, and reinstall the plugin on your dev environment. You can build only the modified part (for example, if you only modified client files: npm run build:client). Check the package.json files for available build scripts.
+When the plugin is already installed on your dev instance, and you haven’t changed any dependency, you can quickly install your work by following these steps:
+re-build necessary parts of the plugin (client, styles, …), overwrite the data/plugins/node_modules/peertube-plugin-livechat/dist/ content of your dev instance by the content of the plugin’s dist folder, change recursively plugins/node_modules/peertube-plugin-livechat/dist/ files owner to your peertube user, restart your instance. Performance tests The livechat-perf-test repository contains some tools to make performance tests. It can be used to evaluate code improvements, or find bottlenecks.`,description:"Ontwikkelen",tags:[],title:"Ontwikkelen",uri:"/peertube-plugin-livechat/nl/contributing/develop/index.html"},{breadcrumb:"Peertube livechat > Contributing",content:`Algemene informatie Always inform the community before working (by creating a new issue, or commenting an existing one). This is to avoid that two persons are working on the same thing, and prevent conflicts.
 Documentation work has to be merged in the main branch.
 The documentation source code is in the support/documentation/content folder.
 The documentation is generated using Hugo. You have to install it on your computer if you want to preview your work.
 The minimum required version for Hugo is 0.121.0. It was tested using version 0.132.2.
 The used theme is hugo-theme-relearn. You should read its documentation before starting editing the documentation.
 When a new plugin version is released, or when documentation is updated, plugin maintainers will merge the main branch to the documentation branch. This will trigger github and gitlab pipelines, and update published documentation.
-Translations The principal language is english (en code).
+Vertalingen The principal language is english (en code).
 The support/documentation/content/en folder contains only english documentation files.
 Documentation is translated using Weblate (see the translation documentation). To do so, we use the po4a tool, as we will se later in this page.
 Add a new language In the support/documentation/config.toml file, please copy and modify the [Languages.fr] section.
@@ -548,11 +548,11 @@ For example, the channel 1 will contain:
 emojis/channel/1/definition.json: the JSON file containing the emojis definitions emojis/channel/1/files/42.png: N image files (png, jpg, …), using numbers as filenames. tokens The tokens folder contains long term token to connect to the chat. See the LivechatProsodyAuth class for more information.`,description:"Data files and folders used on the server",tags:[],title:"Plugin storage",uri:"/peertube-plugin-livechat/nl/technical/data/index.html"},{breadcrumb:"Peertube livechat > Documentation > Installation guide",content:`IMPORTANT NOTE Since version v6.0.0, this plugin does not need any Prosody installation.
 If you were using this plugin before this version, and if you had installed Prosody manually, you can safely uninstall Prosody.
 If you were using the custom Peertube docker image that is embedding Prosody, you can switch back to the official Peertube image.`,description:"Important notes when upgrading for an older version.",tags:[],title:"Upgrade from version older than 6.0.0",uri:"/peertube-plugin-livechat/nl/documentation/installation/upgrade_before_6.0.0/index.html"},{breadcrumb:"Peertube livechat > Documentation > Admin documentation > Advanced usage",content:`The following is based on a tutorial to use Matterbridge with the plugin: Matterbridge + Peertube
-Requirements PeerTube plugin livechat version 3.2.0 or later. Matterbridge version 1.22.4 or later. The easiest is if the PeerTube instance and Matterbridge run on the same server.
+Vereisten PeerTube plugin livechat version 3.2.0 or later. Matterbridge version 1.22.4 or later. The easiest is if the PeerTube instance and Matterbridge run on the same server.
 Internal connections only (basic) You will need to enable Enable client to server connections in the livechat plugin settings.
 This will allow localhost XMPP clients to connect to the Prosody XMPP server.
 You may need to add some line to your /etc/hosts:
-127.0.0.1 anon.example.org room.example.org Replace example.org by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below.
+127.0.0.1 anon.example.nl kamer.example.nl Replace example.org by your actual instance domain name. Afterwards you can continue with the Matterbridge configuration below.
 Allow external connections (advanced) By default, the internal Prosody XMPP server only listens on localhost (127.0.0.1).
 On livechat versions >= 10.1.0 a new option call Client to server network interfaces was added to allow changing this.
 It allows to add a list of IPs to listen on, coma separated (spaces will be stripped).
@@ -567,7 +567,7 @@ Info This documentation use an anonymous account to connect the bridge to the ch
 GedragscodeContributor Covenant Code of Conduct
 TranslateTranslate the plugin
 Give your feedbackGive your feedback
-DevelopDevelop
+OntwikkelenOntwikkelen
 DocumentationDocument the plugin, or translate the documentation.`,description:"Contributing",tags:[],title:"Contributing",uri:"/peertube-plugin-livechat/nl/contributing/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`The livechat plugin includes a “slow mode” feature, to rate limit the number of messages that a user can send to a given MUC room. At time of writing, there were no XEP to describe such feature. Please find below a XEP draft, that will be submitted for review.
 Waarschuwing Work In Progress, this page is not done yet. For an updated version of this document, you can check the draft XEP XMP file.
 XEP: MUC Slow Mode Abstract: This specification describes a way to rate limit messages a single user can send to a MUC room, from the room configuration to the server and client handling of such a feature.
@@ -739,8 +739,8 @@ You can also uncheck “enable archiving”: if unchecked, messages will be prun
 By unchecking “Persistent”, the room will be cleared if there is no more participant.
 Delete the chat content If you want to delete the chat content, open the chat dropdown menu, then click on “Destroy”. A popup will open, asking a confirmation.
 The chat will be automatically recreated each time someone tries to join it as long as the video exists, and has the “Chat activeren” feature activated.`,description:"Some basics about how to setup and use the chat for your live stream",tags:[],title:"Some basics",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/basics/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 8.0.0, and can be disabled by your instance’s admins.
-In the Peertube left menu, there is a “Chatrooms” entry:
-This “Chatrooms” link takes you to a list of your channels. By clicking on a channel, you will then be able to setup some options for your channels:
+In the Peertube left menu, there is a “Chatkamers” entry:
+This “Chatkamers” link takes you to a list of your channels. By clicking on a channel, you will then be able to setup some options for your channels:
 Here you can configure:
 Channel’s chat terms & conditions Mute anonymous users default value The slow mode The chat bot Custom emojis More features to come… `,description:"Peertube channel chatrooms configuration",tags:[],title:"Channel configuration",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation",content:` Some basicsSome basics about how to setup and use the chat for your live stream
 Channel configurationPeertube channel chatrooms configuration
@@ -829,14 +829,14 @@ You can also generate a file to import from any other source (for example you ca
 [ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] The sn attribute is the short name code. The url attribute can be any image url than your browser can access, or a Data URL representing the file you want to import.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Custom emojis",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 12.0.0. Emojis only mode You can enable an “Emojy only mode” in your chatrooms. When this mode is enabled, participants can only send emojis (standard, or channel custom emojis). Moderators are not affected by this limitation.
 This mode can be usefull for example:
 To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “Emojis only mode” checkbox.
-If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 10.2.0. Create a poll You can create a new poll by using the “Create a new poll” action in the chat top menu:
+If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Enable the emoji only mode on all channel’s chatrooms” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"Emojis only mode",uri:"/peertube-plugin-livechat/nl/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Documentation > User documentation > For streamers",content:` Info This feature comes with the livechat plugin version 10.2.0. Create a poll You can create a new poll by using the “Een nieuwe peiling maken” action in the chat top menu:
 Waarschuwing This poll feature should not be considered as a reliable voting system. It is easy to cheat. There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat. Votes are never fully anonymous, someone having access to the server could see who voted for what choice.
 Poll form Fill the form fields:
-“Question”: the question to ask to you viewers “Poll duration (in minutes)”: the duration for which viewers can vote “Anonymous results”: if checked, votes won’t be publicly visible in the chat “Choice N”: choices that will be presented to viewers You must at least fill the two first choices fields.
+“Question”: the question to ask to you viewers “Peilduur (in minuten)”: the duration for which viewers can vote “Anonymous results”: if checked, votes won’t be publicly visible in the chat “Choice N”: choices that will be presented to viewers You must at least fill the two first choices fields.
 Once you submit the form, the poll will instantly start.
 If there was a previous unfinished poll, it will end and its result will be shown.
 Access rights Every room’s admins can create a new poll.
-When you promote someone as room admin or owner, they gets instant access to the “Create a new poll” action.
+When you promote someone as room admin or owner, they gets instant access to the “Een nieuwe peiling maken” action.
 When you remove admin or owner rights to someone, they can’t create new poll. But any existing poll will continue until it ends.
 Every user that is not muted can vote. This means that you can prevent anonymous users to vote by using the “Mute anonymous users” feature.
 Poll workflow When the polls starts, a first message will be sent in the chat, from the account of the user creating the poll.
@@ -932,7 +932,7 @@ ContributingContributing
 GedragscodeContributor Covenant Code of Conduct
 TranslateTranslate the plugin
 Give your feedbackGive your feedback
-DevelopDevelop
+OntwikkelenOntwikkelen
 DocumentationDocument the plugin, or translate the documentation.
 Bug tracking & new featuresBug tracking / New features requests
 Technical documentationTechnical documentation

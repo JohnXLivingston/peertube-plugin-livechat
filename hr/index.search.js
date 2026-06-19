@@ -29,10 +29,10 @@ Konfiguracija kanalaKonfiguracija chat soba PeerTube kanala
 NajaveRoom owners and administrators can send special announcements in the chat.
 ModeriranjePlugin peertube-plugin-livechat advanced moderation features
 Uvjeti i odredbeConfigure channel's chat terms & conditions
-Slow modePlugin peertube-plugin-livechat slow mode
+Spori način radaPlugin peertube-plugin-livechat slow mode
 Odgoda moderiranjaPlugin peertube-plugin-livechat moderation delay
 Prilagođeni emojijiPlugin peertube-plugin-livechat custom emojis
-„Samo emoji” modusPlugin peertube-plugin-livechat emojis only mode
+„Samo emoji” modusDodatak peertube-plugin-livechat, samo za chat putem emojija
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Bilješke moderiranjaPlugin peertube-plugin-livechat moderation notes
@@ -56,10 +56,10 @@ Konfiguracija kanalaKonfiguracija chat soba PeerTube kanala
 NajaveRoom owners and administrators can send special announcements in the chat.
 ModeriranjePlugin peertube-plugin-livechat advanced moderation features
 Uvjeti i odredbeConfigure channel's chat terms & conditions
-Slow modePlugin peertube-plugin-livechat slow mode
+Spori način radaPlugin peertube-plugin-livechat slow mode
 Odgoda moderiranjaPlugin peertube-plugin-livechat moderation delay
 Prilagođeni emojijiPlugin peertube-plugin-livechat custom emojis
-„Samo emoji” modusPlugin peertube-plugin-livechat emojis only mode
+„Samo emoji” modusDodatak peertube-plugin-livechat, samo za chat putem emojija
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Bilješke moderiranjaPlugin peertube-plugin-livechat moderation notes
@@ -219,7 +219,7 @@ You can use «*» to listen on all IPv4 interfaces, and «::» for all IPv6.
 Examples:
 *, :: * 127.0.0.1, ::1 172.18.0.42 Eksterne komponente The external components to declare:
 One per line. Use the format «component_name:component_secret» (spaces will be trimmed). You can add comments: everything after the # character will be stripped off, and empty lines ignored. The name can only contain latin alphanumeric characters and dots. If the name contains only alphanumeric characters, it will be suffixed with the XMPP domain. For example, «bridge» will become «bridge.your_domain.tld». You can also specify a full domain name, but you have to make sure to configure your DNS correctly. Only use alphanumeric characters in the secret passphrase (use at least 15 characters). Aktiviraj Prosody mod_firewall You can enable mod_firewall on your Prosody server.
-For more information, please check the documentation.`,description:"Postavke dodatka Peertube Livechat",tags:[],title:"Postavke",uri:"/peertube-plugin-livechat/hr/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
+Za više informacija pregledaj dokumentaciju.`,description:"Postavke dodatka Peertube Livechat",tags:[],title:"Postavke",uri:"/peertube-plugin-livechat/hr/documentation/admin/settings/index.html"},{breadcrumb:"Peertube livechat > Technical documentation",content:`This page describes the different source code folders and their content.
 build files Files in the root dir that begins with build- are files used to build the plugin. See the package.json file for more information.
 assets assets/images The assets/images folder contains all icons files used by the plugin.
 There is also the assets/images/avatars folders, which contains avatars used for anonymous chat users. These files are used to generate multiple avatars (see the build-avatars.js script for more information).
@@ -361,7 +361,7 @@ Jedna poruka po retku. Ako postoji više poruka, nasumično će odabrati jednu s
 Šalji svakih X minuta Bot će slati poruku svakih X minuta.`,description:"The bot can send periodically some messages.",tags:[],title:"Mjerači vremena",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/bot/quotes/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za administratore",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.0.0. You can enable mod_firewall on your Prosody server.
 Doing so, Peertube admins will be able to define advanced firewall rules.
 Warning These rules could be used to run arbitrary code on the server. If you are a hosting provider, and you don’t want to allow Peertube admins to write such rules, you can disable the online editing by creating a disable_mod_firewall_editing file in the plugin directory (plugins/data/peertube-plugin-livechat/disable_mod_firewall_editing). This is opt-out, as Peertube admins can already run arbitrary code just by installing any plugin. You can still use mod_firewall by editing files directly on the server.
-Uredi pravila First, you must enable the feature in the plugin settings.
+Uredi pravila Najprije uključi funkciju u postavkama dodatka.
 Just bellow the settings, you will find a “Configure mod_firewall” button. This button will open a configuration page.
 Here you can add several configuration files.
 You can enable/disable each files.
@@ -743,10 +743,10 @@ Konfiguracija kanalaKonfiguracija chat soba PeerTube kanala
 NajaveRoom owners and administrators can send special announcements in the chat.
 ModeriranjePlugin peertube-plugin-livechat advanced moderation features
 Uvjeti i odredbeConfigure channel's chat terms & conditions
-Slow modePlugin peertube-plugin-livechat slow mode
+Spori način radaPlugin peertube-plugin-livechat slow mode
 Odgoda moderiranjaPlugin peertube-plugin-livechat moderation delay
 Prilagođeni emojijiPlugin peertube-plugin-livechat custom emojis
-„Samo emoji” modusPlugin peertube-plugin-livechat emojis only mode
+„Samo emoji” modusDodatak peertube-plugin-livechat, samo za chat putem emojija
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Bilješke moderiranjaPlugin peertube-plugin-livechat moderation notes
@@ -759,7 +759,7 @@ NaredbeThe bot can respond to several commands.`,description:"How to setup the c
 In the Peertube left menu, there is a “Chat sobe” entry:
 This “Chat sobe” link takes you to a list of your channels. By clicking on a channel, you will then be able to setup some options for your channels:
 Here you can configure:
-Uvjeti i odredbe kanala chata Isključi zvuk anonimnih korisnika standardna vrijednost Spori modus The chat bot Prilagođeni emojiji More features to come… `,description:"Konfiguracija chat soba PeerTube kanala",tags:[],title:"Konfiguracija kanala",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Room owners and administrators can send special announcements in the chat.
+Uvjeti i odredbe kanala chata Isključi zvuk anonimnih korisnika standardna vrijednost Spori način rada The chat bot Prilagođeni emojiji More features to come… `,description:"Konfiguracija chat soba PeerTube kanala",tags:[],title:"Konfiguracija kanala",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/channel/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. Room owners and administrators can send special announcements in the chat.
 These messages will be more visible than standard messages.
 To send announcements, owners and administrators will have a “Vrsta poruke” selector on the top of the message field:
 There are several message types:
@@ -803,14 +803,14 @@ Info If your Peertube instance allows joining chat with XMPP clients, users usin
 This can be really usefull to:
 avoid message flooding avoid unreadable chat if there are many viewers talking You can set a number of seconds that users will have to wait after sending a message, before sending another.
 This limitation does not apply to moderators.
-Slow mode option On the channel configuration page, you can set the slow mode option:
+Opcija sporog načina rada Opcija sporog načina rada se može postaviti na stranici za konfiguraciju kanala:
 This value will apply as a default value for all your channel’s chatrooms.
 Setting the value to 0 will disable the feature.
 Setting the value to a positive integer will set the period during which users will not be able to post additional messages.
 To modify the value for an already existing room, just open the room “configuration” menu (on top of the chat window), and change the slow mode value in the configuration form.
 For viewers If the slow mode is enabled, users will be informed by a message.
 When they send a message, the input field will be disabled for X seconds (where X is the slow mode duration).
-This limitation does not apply to moderators.`,description:"Plugin peertube-plugin-livechat slow mode",tags:[],title:"Slow mode",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/slow_mode/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.3.0. Uvod As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants.
+This limitation does not apply to moderators.`,description:"Plugin peertube-plugin-livechat slow mode",tags:[],title:"Spori način rada",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/slow_mode/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.3.0. Uvod As a streamer, you can choose to delay messages in the chat, to let some time to moderators to delete messages before they can even be read by other participants.
 When this feature is enabled, moderators will see all messages without any delay. Chat participants won’t see that their own messages are delayed.
 Please note that messages sent by moderators will also be delayed, to avoid them to respond to messages that are not even visible by other participants.
 Opcije odgode moderiranja Na stranici za konfiguraciju kanala možeš postaviti opciju „Odgoda moderiranja”:
@@ -829,13 +829,13 @@ You can also generate a file to import from any other source (for example you ca
 [ { "sn": ":short_name:", "url": "https://example.com/image.png" } ] Atribut sn je kod kratkog imena. Atribut url može biti bilo koji url slike kojem tvoj preglednik može pristupiti ili URL podataka koji predstavlja datoteku koju želiš uvesti.`,description:"Plugin peertube-plugin-livechat custom emojis",tags:[],title:"Prilagođeni emojiji",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 12.0.0. „Samo emoji” modus U svojim chat sobama možeš aktivirati „Samo emoji” modus. Kad je taj modus aktiviran, sudionici mogu slati samo emojije (standardne ili prilagođene emojije kanala). Ovo ograničenje ne vrijedi za moderatore.
 This mode can be usefull for example:
 To avoid spam or offensive message when you are not here to moderate. When there are too many speaking participants, and you can’t no more moderate correctly. To enable or disable this feature, use the chat dropdown menu, open the “configure” menu. In the form, you will find a “„Samo emoji” modus” checkbox.
-If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Aktiviraj „Samo emoji” modus u svim chat sobama kanala” button.`,description:"Plugin peertube-plugin-livechat emojis only mode",tags:[],title:"„Samo emoji” modus",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.2.0. Create a poll You can create a new poll by using the “Stvori novu anketu” action in the chat top menu:
+If you want to enable it for all your chatrooms at once, open the channel emojis configuration page, and use the “Aktiviraj „Samo emoji” modus u svim chat sobama kanala” button.`,description:"Dodatak peertube-plugin-livechat, samo za chat putem emojija",tags:[],title:"„Samo emoji” modus",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/emojis_only/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.2.0. Create a poll You can create a new poll by using the “Stvori novu anketu” action in the chat top menu:
 Warning This poll feature should not be considered as a reliable voting system. It is easy to cheat. There is no mechanism to prevent anonymous users to vote multiple times by just reloading the chat. Votes are never fully anonymous, someone having access to the server could see who voted for what choice.
 Poll form Fill the form fields:
 “Pitanje”: the question to ask to you viewers “Trajanje ankete (u minutama)”: the duration for which viewers can vote “Anonimni rezultati”: if checked, votes won’t be publicly visible in the chat “Choice N”: choices that will be presented to viewers You must at least fill the two first choices fields.
 Once you submit the form, the poll will instantly start.
 If there was a previous unfinished poll, it will end and its result will be shown.
-Access rights Every room’s admins can create a new poll.
+Prava pristupa Every room’s admins can create a new poll.
 When you promote someone as room admin or owner, they gets instant access to the “Stvori novu anketu” action.
 When you remove admin or owner rights to someone, they can’t create new poll. But any existing poll will continue until it ends.
 Svaki korisnik koji nije isključen može glasati. To znači da možeš spriječiti anonimne korisnike da glasaju pomoću funkcije “Isključi zvuk anonimnih korisnika”.
@@ -850,34 +850,35 @@ Info For viewers using XMPP clients or outdated livechat plugin versions, the ba
 When the poll ends, a new message will be sent in the chat, with the results.
 Info The only way to get old polls results is to search for the poll end message in the chat. For now, polls results are not saved by any other means. So don’t forget to note polls results if you want to keep them.`,description:"You can create polls to ask viewers their opinion",tags:[],title:"Polls",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/polls/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 10.0.0. Uvod The livechat plugin includes a Task Application: a kind of “to-do list” feature where you can create task lists and add tasks to them. Every room’s admins have access to these tasks, so you can edit them collaboratively.
 You can for example use the Task Application to:
-prepare a list of themes you want to discuss during your livestream, so you can be sure you won’t forget anything highlight questions from your viewers, so you can come back to them later without forgetting to answer them … Using the Task Application Opening the Task Application To open the Task Application, there is a “Zadaci” button in the top chat menu:
-Clicking this button will toggle the Task Application display:
+prepare a list of themes you want to discuss during your livestream, so you can be sure you won’t forget anything highlight questions from your viewers, so you can come back to them later without forgetting to answer them … Korištenje aplikacije Zadaci Otvaranje aplikacije Zadaci Za otvaranje aplikacije Zadaci, u gornjem izborniku chata se nalazi gumb „Zadaci”:
+Klikom na ovaj gumb se prikaz aplikacije Zadaci mijenja:
+![Snimka ekrana Peertube chata u cjeloekranskom prikazu. Aplikacija Zadaci je otvorena. Postoji popis zadataka i obrazac za stvaranje novog zadatka.](/peertube-plugin-livechat/images/task_app_fullpage_1.png?classes=shadow,border&height=200px " “Aplikacija Zadaci”)
 Tip To have more space and better readability, open the chat in full-page mode.
-Access rights Every room’s admins have access to the Task Application (read and write access).
+Prava pristupa Every room’s admins have access to the Task Application (read and write access).
 When you promote someone as room admin or owner, they gets instant access to the Task Application. When you remove admin or owner rights to someone, they instantly lose access to the Task Application.
 Task lists By default, there is one task list that has the same name as your livestream.
 You can use the form at the bottom to create a new task list. You can also edit existing task lists using the edit button, or delete any task list. Deleting a task list will also delete all its tasks.
-Task lists are sorted alphabetically.
-Tip All modification are instantly visible in all your browser tabs, and for all room’s admins.
-Zadaci Create tasks You can create a task using the button on the right of task lists. This opens a form with two fields: a mandatory task name, and an optional description.
-Edit tasks Tasks can be edited by using the edit button on the right.
-Tasks can be marked complete (or uncomplete) by clicking directly on the checkbox in the list.
-Sorting tasks / change task list You can sort tasks, or move tasks from one list to another, simply using drag & drop.
+Popisi zadataka su razvrstani abecednim redom.
+Tip Sve promjene su trenuto vidljive u svim karticama tvog preglednika i za sve administratore sobe.
+Zadaci Stvori zadatke Stvori zadatak pomoću gumba s desne strane popisa zadataka. Time se otvara obrazac s dva polja: ime zadatka (obavezno) i opis (opcionalno).
+Uredi zadatke Zadaci se mogu uređivati pomoću gumba za uređivanje na desnoj strani.
+Zadaci se mogu označiti kao dovršeni (ili nedovršeni) izravnim klikom na označiva polja na popisu.
+Razvrstavanje zadataka / promijeni popis zadataka Zadaci se mogu razvrstati ili premjestiti s jednog popisa na drugi jednostavnim povlačenjem i ispuštanjem.
 Create a task from a chat message You can create a task from a message in a chat, using the “Stvori novi zadatak” button in the dropdown menu at the right of the message. This will open a dialog box where you can choose which task list you want to add the task into. The task name will be the user nickname, and the task description the message content.
-Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered.`,description:"You can handle tasks and task lists with your moderation team.",tags:[],title:"Tasks / To-do lists",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/tasks/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.0.0. Uvod The livechat plugin includes a Moderator Notes Application: you can write some notes, that could be associated to chat participants. Every room’s admins have access to these notes, so they can edit them collaboratively.
-You can for example use this Application to:
-share some notes between moderators take notes about participants that were kicked or caused troubles … Using the Moderator Notes Application Opening the Moderator Notes Application To open the Moderator Notes Application, there is a “Bilješke moderiranja” button in the top chat menu:
-Clicking this button will toggle the Application display:
+Using this feature, for example, you can ask your moderators to highlight all chat questions, so you can see them at a glance during your livestream, and check them as answered.`,description:"You can handle tasks and task lists with your moderation team.",tags:[],title:"Tasks / To-do lists",uri:"/peertube-plugin-livechat/hr/documentation/user/streamers/tasks/index.html"},{breadcrumb:"Peertube livechat > Dokumentacija > Dokumentacija za korisnike > For streamers",content:` Info Ova je funkcija dostupna s dodatkom za chat uživo verzije 11.0.0. Uvod Dodatak za chat uživo uključuje aplikaciju Bilješke moderatora: piši bilješke koje se mogu odnositi na sudionike chata. Administratori svake sobe imaju pristup tim bilješkama, tako da ih mogu zajednički uređivati.
+Koristi ovu aplikaciju na primjer za:
+dijeljenje nekih bilješki između moderatora pisanje bilješki o sudionicima koji su izbačeni ili su uzrokovali probleme … Korištenje aplikacije „Bilješke moderatora” Otvaranje aplikacije „Bilješke moderatora” Za otvaranje aplikacije „Bilješke moderatora”, u gornjem izborniku za chat se nalazi gumb „Bilješke moderiranja”:
+Klikom na ovaj gumb se prikaz aplikacije mijenja:
 Tip To have more space and better readability, open the chat in full-page mode.
-Access rights Every room’s admins have access to this Application (read and write access).
-When you promote someone as room admin or owner, they gets instant access to this Application. When you remove admin or owner rights to someone, they instantly lose access to this Application.
+Prava pristupa Administratori svake sobe imaju pristup ovoj aplikaciji (prava za čitanje i pisanje).
+Postavljanjem nekoga kao administratora ili vlasnika sobe, ta osoba trenutno dobiva pristup ovoj aplikaciji. Uklanjanjem administratorskih ili vlasničkih prava, osoba trenutno gubi pristup ovoj aplikaciji.
 Scope Notes are only available in the room in which you have created them.
 Chatrooms can be releated to video or channel. If you want to keep notes from one video to another, please consider using rooms associated to channels.
 Warning Currently the video vs channel rooms is an instance-wide settings. Only Peertube admins can change it, and it applies to all chatrooms. In the future, this choice will be added in your channel’s options.
-Notes Create/Edit Notes You can use the plus button on the top to create a new note. You can also edit existing notes using the edit button, or delate any note.
-Tip All modification are instantly visible in all your browser tabs, and for all room’s admins.
-You can create a note associated to a participant in several ways:
-using the “Stvori novu bilješku” action in the dropdown menu besides participants in the sidebar using the “Stvori novu bilješku” action in the dropdown menu besides chat messages When a note is associated to a participant, you will see their nickname and avatar on the top of the note.
+Bilješke Stvori/Uredi bilješke Stvori novu bilješku pomoću gumba s plusom na gornjem rubu. Uredi postojeće bilješke pomoću gumba za uređivanje ili izbriši bilo koju bilješku.
+Tip Sve promjene su trenuto vidljive u svim karticama tvog preglednika i za sve administratore sobe.
+Bilješku koja je povezana s jednim sudionikom možeš stvoriti na nekoliko načina:
+korištenjem radnje „Stvori novu bilješku” u padajućem izborniku pored sudionika u bočnoj traci korištenjem radnje „Stvori novu bilješku” u padajućem izborniku pored chat poruka When a note is associated to a participant, you will see their nickname and avatar on the top of the note.
 Notes filtering You can filter notes to find all notes related to a given participant in several ways:
 click on the “Pretraži bilješke” button that is available on notes to find all notes related to the same participant click on the “Pretraži bilješke” button in the dropdown menu besides participants in the sidebar click on the “Pretraži bilješke” button in the dropdown menu besides chat messages You can remove the filter by clicking on the close button.
 When you filters notes on a participant, there are several informations that are shown at the right of the participant nickname:
@@ -909,10 +910,10 @@ Konfiguracija kanalaKonfiguracija chat soba PeerTube kanala
 NajaveRoom owners and administrators can send special announcements in the chat.
 ModeriranjePlugin peertube-plugin-livechat advanced moderation features
 Uvjeti i odredbeConfigure channel's chat terms & conditions
-Slow modePlugin peertube-plugin-livechat slow mode
+Spori način radaPlugin peertube-plugin-livechat slow mode
 Odgoda moderiranjaPlugin peertube-plugin-livechat moderation delay
 Prilagođeni emojijiPlugin peertube-plugin-livechat custom emojis
-„Samo emoji” modusPlugin peertube-plugin-livechat emojis only mode
+„Samo emoji” modusDodatak peertube-plugin-livechat, samo za chat putem emojija
 PollsYou can create polls to ask viewers their opinion
 Tasks / To-do listsYou can handle tasks and task lists with your moderation team.
 Bilješke moderiranjaPlugin peertube-plugin-livechat moderation notes
@@ -945,4 +946,4 @@ Terms&ConditionsTerms&Conditions implementation
 Tasks overviewTask Application technical overview
 Moderator notes overviewModerator Notes Application technical overview
 Kontaktiraj meKontaktiraj autora
-ZaslugeZasluge za dodatak`,description:"Peertube plugin livechat documentation",tags:[],title:"Peertube livechat",uri:"/peertube-plugin-livechat/hr/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Tags",uri:"/peertube-plugin-livechat/hr/tags/index.html"}]
+ZaslugeZasluge za dodatak`,description:"Dokumentacija Peertube dodataka „livechat”",tags:[],title:"Peertube livechat",uri:"/peertube-plugin-livechat/hr/index.html"},{breadcrumb:"Peertube livechat",content:"",description:"",tags:[],title:"Tags",uri:"/peertube-plugin-livechat/hr/tags/index.html"}]
