@@ -13,7 +13,7 @@ export const livechatViewerModePlugin = {
       livechat_enable_viewer_mode: false,
       livechat_peertube_video_original_url: undefined,
       livechat_peertube_video_uuid: undefined,
-      livechat_external_auth_oidc_buttons: undefined,
+      livechat_external_auth_buttons: undefined,
       livechat_external_auth_reconnect_mode: undefined
     })
 

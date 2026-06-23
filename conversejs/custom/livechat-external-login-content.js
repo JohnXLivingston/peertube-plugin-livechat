@@ -10,7 +10,7 @@ import { __ } from 'i18n'
 export default class LivechatExternalLoginContentElement extends CustomElement {
   static get properties () {
     return {
-      external_auth_oidc_alert_message: { type: String, attribute: false },
+      external_auth_alert_message: { type: String, attribute: false },
       remote_peertube_state: { type: String, attribute: false },
       remote_peertube_alert_message: { type: String, attribute: false },
       remote_peertube_try_anyway_url: { type: String, attribute: false },
@@ -25,7 +25,7 @@ export default class LivechatExternalLoginContentElement extends CustomElement {
 
   render () {
     return tplExternalLoginModal(this, {
-      external_auth_oidc_alert_message: this.external_auth_oidc_alert_message,
+      external_auth_alert_message: this.external_auth_alert_message,
       remote_peertube_state: this.remote_peertube_state,
       remote_peertube_alert_message: this.remote_peertube_alert_message,
       remote_peertube_try_anyway_url: this.remote_peertube_try_anyway_url,
@@ -135,7 +135,7 @@ export default class LivechatExternalLoginContentElement extends CustomElement {
   }
 
   clearAlert () {
-    this.external_auth_oidc_alert_message = ''
+    this.external_auth_alert_message = ''
     this.remote_peertube_alert_message = ''
     this.remote_peertube_try_anyway_url = ''
     this.remote_peertube_open_failed_url = ''

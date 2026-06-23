@@ -14,7 +14,7 @@ import { getVideoLiveChatInfos } from '../federation/storage'
 import { getBaseRouterRoute, getBaseStaticRoute } from '../helpers'
 import { getProsodyDomain } from '../prosody/config/domain'
 import { getBoshUri, getWSUri } from '../uri/webchat'
-import { ExternalAuthOIDC } from '../external-auth/oidc'
+import { ExternalAuth } from '../external-auth'
 import { Emojis } from '../emojis'
 
 interface GetConverseJSParamsParams {
@@ -83,7 +83,7 @@ async function getConverseJSParams (
     roomJID
   } = connectionInfos
 
-  let externalAuthOIDC
+  let externalAuth
   if (userIsConnected !== true) {
     if (remoteConnectionInfos && !remoteConnectionInfos.externalAuthCompatible) {
       options.peertubeHelpers.logger.debug(
@@ -91,15 +91,16 @@ async function getConverseJSParams (
       )
     } else {
       try {
-        const oidcs = ExternalAuthOIDC.allSingletons()
-        for (const oidc of oidcs) {
-          if (await oidc.isOk()) {
-            const authUrl = oidc.getConnectUrl()
-            const buttonLabel = oidc.getButtonLabel()
+        const auths = ExternalAuth.allSingletons()
+        for (const auth of auths) {
+          if (await auth.isOk()) {
+            const authUrl = auth.getConnectUrl()
+            const buttonLabel = auth.getButtonLabel()
             if (authUrl && buttonLabel) {
-              externalAuthOIDC ??= []
-              externalAuthOIDC.push({
-                type: oidc.type,
+              externalAuth ??= []
+              externalAuth.push({
+                type: auth.type,
+                provider: auth.provider,
                 buttonLabel,
                 url: authUrl
               })
@@ -135,7 +136,7 @@ async function getConverseJSParams (
     // forceDefaultHideMucParticipants is for testing purpose
     // (so we can stress test with the muc participant list hidden by default)
     forceDefaultHideMucParticipants: params.forceDefaultHideMucParticipants,
-    externalAuthOIDC,
+    externalAuth,
     customEmojisUrl: connectionInfos.customEmojisUrl
   }
 }
