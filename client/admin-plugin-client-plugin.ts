@@ -261,8 +261,22 @@ function register (clientOptions: RegisterClientOptions): void {
           return options.formValues['prosody-c2s'] !== true
         case 'prosody-s2s-port':
         case 'prosody-s2s-interfaces':
+        case 'prosody-s2s-bidi':
         case 'prosody-certificates-dir':
           return options.formValues['prosody-room-allow-s2s'] !== true
+        case 'prosody-smacks-hibernation-time':
+        case 'prosody-smacks-max-queue-size':
+        case 'prosody-smacks-max-unacked-stanzas':
+        case 'prosody-smacks-max-ack-delay':
+        case 'prosody-smacks-max-old-sessions':
+          return options.formValues['prosody-smacks'] !== true
+        case 'prosody-smacks-enabled-s2s':
+        case 'prosody-smacks-s2s-resend':
+          return options.formValues['prosody-smacks'] || options.formValues['prosody-room-allow-s2s'] !== true
+        case 'prosody-csi-important-payloads':
+        case 'prosody-csi-queue-size':
+        case 'prosody-csi-resume-inactive-delay':
+          return options.formValues['prosody-csi'] !== 'simple'
         case 'prosody-components-port':
         case 'prosody-components-interfaces':
         case 'prosody-components-list':
