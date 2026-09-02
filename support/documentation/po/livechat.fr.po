@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-12-09 16:18+0100\n"
-"PO-Revision-Date: 2026-08-20 14:03+0000\n"
-"Last-Translator: Azer <contact-weblateframasoft@yfournel.eu>\n"
+"PO-Revision-Date: 2026-09-02 09:34+0000\n"
+"Last-Translator: Olivier SAUGEON <olivier.saugeon@gmail.com>\n"
 "Language-Team: French <https://weblate.framasoft.org/projects/peertube-"
 "livechat/peertube-plugin-livechat-documentation/fr/>\n"
 "Language: fr\n"
@@ -2194,10 +2194,10 @@ msgstr "{{% livechat_label avatar_set_option_sepia %}} : [Générateur d'avata
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)"
 msgid "![Sepia avatar example](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
-msgstr "![Sepia](/peertube-plugin-livechat/images/avatar_sepia.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Sepia exemple d'avatar](/peertube-plugin-livechat/images/"
+"avatar_sepia.png?classes=shadow,border&height=40px \"Sepia\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2206,10 +2206,10 @@ msgstr "{{% livechat_label avatar_set_option_cat %}} : [Générateur d'avatar 
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Cats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
 msgid "![Cats avatar example](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px \"Cats\")"
-msgstr "![Chats](/peertube-plugin-livechat/images/avatar_cat.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Chats exemple d'avatar](/peertube-plugin-livechat/images/"
+"avatar_cat.png?classes=shadow,border&height=40px \"Chats\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2218,10 +2218,10 @@ msgstr "{{% livechat_label avatar_set_option_bird %}} : [Générateur d'avatar
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Birds](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
 msgid "![Birds avatar example](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px \"Birds\")"
-msgstr "![Oiseaux](/peertube-plugin-livechat/images/avatar_bird.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Oiseaux exemple d'avatar](/peertube-plugin-livechat/images/"
+"avatar_bird.png?classes=shadow,border&height=40px \"Oiseaux\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2230,10 +2230,10 @@ msgstr "{{% livechat_label avatar_set_option_fenec %}} : [Générateur d'avata
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Fenecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
 msgid "![Fenecs avatar example](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px \"Fenecs\")"
-msgstr "![Fénnecs](/peertube-plugin-livechat/images/avatar_fenec.png?classes=shadow,border&height=40px)"
+msgstr ""
+"![Fénnecs exemple d'avatar](/peertube-plugin-livechat/images/"
+"avatar_fenec.png?classes=shadow,border&height=40px \"Fénnecs\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2242,10 +2242,10 @@ msgstr "{{% livechat_label avatar_set_option_abstract %}} : [Générateur d'av
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Abstracts](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px)"
 msgid "![Abstracts avatar example](/peertube-plugin-livechat/images/avatar_abstract.png?classes=shadow,border&height=40px \"Abtracts\")"
-msgstr "![Abstraits](/peertube-plugin-livechat/images/avatar_abstract.png ?classes=shadow,border&height=40px)"
+msgstr ""
+"![Abstraits exemple d'avatar](/peertube-plugin-livechat/images/"
+"avatar_abstract.png ?classes=shadow,border&height=40px \"Abstraits\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -2254,10 +2254,10 @@ msgstr "{{% livechat_label avatar_set_option_legacy %}} : Basé sur le travail
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
-#, fuzzy
-#| msgid "![Legacy](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)"
 msgid "![Legacy avatar example](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px \"Legacy\")"
-msgstr "![Anciens avatars](/peertube-plugin-livechat/images/avatar_legacy.jpg?classes=shadow,border&height=40px)"
+msgstr ""
+"![Ancien exemple d'avatar](/peertube-plugin-livechat/images/"
+"avatar_legacy.jpg?classes=shadow,border&height=40px \"Ancien\")"
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/admin/settings.md
@@ -3183,17 +3183,19 @@ msgstr "![Messages supprimés](/peertube-plugin-livechat/images/bot_deleted_mess
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" fields.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
 msgid "You can fill several \"{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\" lines.  When a user sends a message that match the configured criteria, the message will automatically be deleted."
-msgstr "Vous pouvez remplir plusieurs champs «{{% livechat_label livechat_configuration_channel_forbidden_words_label %}}\"». Quand un⋅e utilisateur⋅rice envoie un message qui correspond à l'un des critère configuré, le message sera automatiquement supprimé."
+msgstr ""
+"Vous pouvez remplir plusieurs lignes «{{% livechat_label "
+"livechat_configuration_channel_forbidden_words_label %}}\"». Quand un⋅e "
+"utilisateur⋅rice envoie un message qui correspond à l'un des critère "
+"configuré, le message sera automatiquement supprimé."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
-#, fuzzy
-#| msgid "In this field, you can set several words, group of words, or \"regular expressions\"."
 msgid "Here you can configure several words, group of words, or \"regular expressions\"."
-msgstr "Dans ce champs, vous pouvez mettre plusieurs mots, groupes de mots, ou «expressions régulières»."
+msgstr ""
+"Dans ce champs, vous pouvez configurer plusieurs mots, groupes de mots, ou «"
+"expressions régulières»."
 
 #. type: Plain text
 #: build/documentation/pot_in/documentation/user/streamers/bot/forbidden_words.md
@@ -3287,10 +3289,9 @@ msgstr "Le bot recharge automatiquement ses options quand vous sauvegardez la pa
 
 #. type: Yaml Front Matter Hash Value: description
 #: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
-#, fuzzy, no-wrap
-#| msgid "The bot can automatically moderate messages containing forbidden words."
+#, no-wrap
 msgid "The bot can automatically moderate duplicate messages."
-msgstr "Le bot peut automatiquement modérer les messages contenant des mots interdits."
+msgstr "Le bot peut automatiquement modérer les messages en double."
 
 #. type: Yaml Front Matter Hash Value: title
 #: build/documentation/pot_in/documentation/user/streamers/bot/no_duplicate.md
