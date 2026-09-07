@@ -6,10 +6,11 @@ use_chat_help: Se abilitato, ci sarà una chat accanto al video.
 share_chat_link: Condividi il link della chat
 read_only: In sola lettura
 show_scrollbarr: Mostra la barra di scorrimento
-transparent_background: Sfondo trasparente (per l'integrazione delle dirette con OBS,
-  ad esempio)
+transparent_background: Sfondo trasparente (per l'integrazione delle dirette con
+  OBS, ad esempio)
 tips_for_streamers: "Suggerimenti per gli streamer: per aggiungere la chat al proprio
-  OBS, genera un link della chat in sola lettura e usalo in quanto fonte “browser”."
+  stream video per esempio con OBS,\ngenera un link in sola lettura e usalo come sorgente
+  del browser.\n"
 copy: Copia
 link_copied: Link copiato
 error: Errore
@@ -41,19 +42,20 @@ list_rooms_label: "Elenco delle chat room esistenti"
 list_rooms_description: |
   <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Elenca le chat room</a>
 
-federation_description: "<h3>Federazione</h3>\nLe impostazioni seguenti riguardano
+federation_description: "<h3>Federazione</h3>\nLe seguenti impostazioni riguardano
   la federazione con altre istanze Peertube,\ne altri software del fediverso.\n"
 
 federation_no_remote_chat_label: Non visualizzare le chat remote
 federation_no_remote_chat_description: "Selezionando questa impostazione la vostra
   istanza non visualizzerà mai chat da video remoti.\n"
 
-federation_dont_publish_remotely_label: Non pubblicare le informazioni sulla chat
+federation_dont_publish_remotely_label: Non pubblicare le informazioni sulla 
+  chat
 federation_dont_publish_remotely_description: "Selezionando questo parametro, la vostra
   istanza non pubblicherà le informazioni della chat sul fediverso.\nLe istanze Peertube
   remote non sapranno che una chat è associata ai video.<br>\n<b>Attenzione</b>: se
-  erano già in corso delle chat, è possibile che le informazioni siano già state pubblicate.\n
-  Dovrete attendere il prossimo aggiornamento dei video perché le informazioni non
+  erano già in corso delle chat, è possibile che le informazioni siano già state pubblicate.\n\
+  \ Dovrete attendere il prossimo aggiornamento dei video perché le informazioni non
   vengano pubblicate.\nAllo stesso modo, se si disattiva questa impostazione, bisognerà
   attendere l'aggiornamento dei video prima di poter\npubblicare nuovamente le informazioni.
   Questo aggiornamento avviene, tra l'altro, quando una trasmissione in diretta riprende
@@ -105,14 +107,17 @@ all_non_lives_description: "Se selezionata, la chat sarà attivata per tutti i v
 
 videos_list_label: "Attiva la chat per questi video"
 videos_list_description: |
-  Inserisci gli UUID dei video per i quali desideri forzare l'attivazione della chat (uno per riga).
-  Questi possono essere dei video in diretta o no.<br />
-  Puoi anche inserire dei commenti: tutto ciò che si trova dopo il carattere # verrà eliminato e le righe vuote saranno ignorate.<br />
-  Non aggiungere video privati: gli UUID sarebbero inviati al frontend e dunque esposti a tutti gli utenti.
+  UUID dei video per i quali si vuole l'attivazione di una web chat (UUID breve o UUIDv4).
+  Possono essere dei video non in diretta. Uno per linea.<br />
+  Si possono aggiungere commenti: tutto ciò che si trova dopo il carattere # verrà eliminato e le righe vuote saranno ignorate.<br />
+  Non aggiungere video privati: gli UUID verranno inviati al frontend.
 
 no_anonymous_label: "Nascondi la chat per gli utenti anonimi (non connessi)"
-no_anonymous_description: "Se selezionata, gli utenti anonimi (non connessi) non vedranno
-  la chat."
+no_anonymous_description: "Se selezionata, gli utenti anonimi di Peertube non vedranno
+  la chat.\nQuesta funzionalità è sperimentale.\nSe viene attivata, è vivamente consigliato
+  selezionare anche \"Non pubblicare le informazioni della chat\".\nIn caso contrario,
+  alcuni strumenti di terze parti potrebbero tentare di aprire la chat, con conseguenti
+  comportamenti imprevedibili.\n"
 
 theming_advanced_description: "<h3>Personalizza l'aspetto</h3>"
 
@@ -195,8 +200,8 @@ prosody_muc_expiration_description: |
       <li><b>never</b>: il contenuto non sarà mai cancellato.</li>
   </ul>
 
-prosody_room_allow_s2s_label: Abilitare la connessione a questa stanza usando profili
-  XMPP esterni
+prosody_room_allow_s2s_label: Abilitare la connessione a questa stanza usando 
+  profili XMPP esterni
 prosody_room_allow_s2s_description: "Abilitando questa opzione, sarà possibile connettersi
   alle stanze utilizzando account XMPP esterni tramite client XMPP.<br>\n<span class=\"\
   peertube-plugin-livechat-warning\">Si noti che l'attivazione di questa opzione può
@@ -261,11 +266,48 @@ prosody_components_list_description: |
   </ul>
 web: Web
 connect_using_xmpp: Connessione con un client XMPP
-connect_using_xmpp_help: Puoi collegarti alla stanza usando un account XMPP esterno,
-  e il tuo client XMPP preferito.
+connect_using_xmpp_help: Puoi collegarti alla stanza usando un account XMPP 
+  esterno, e il tuo client XMPP preferito.
 prosody_certificates_dir_label: Cartella dei certificati
 prosody_certificates_dir_description: "Se questo campo è vuoto, il plugin genererà
   e utilizzerà certificati autofirmati.<br>\nSe si desidera utilizzare altri certificati,
   è sufficiente specificare la cartella in cui\nProsody può trovarli. Nota: l'utente
   \"peertube\" deve avere accesso in lettura a questa cartella.\n"
 chat_for_live_stream: 'Chat per la diretta:'
+chat: Chat
+online_help: Guida in linea
+copied: Copiato
+chat_terms_label: Termini e condizioni
+chat_terms_description: |
+  I presenti termini e condizioni verranno mostrato a tutti gli utenti quanto entreranno nella chat.
+  Gli streamer possono inoltre configurare i termini e le condizioni per i propri canali, verranno visualizzati subito dopo i termini e le condizioni generali.
+external_auth_description: |
+  <h3>Autenticazione esterna</h3>
+  Per gli utenti che non hanno un account Peertube, è possibile abilitare diverse modalità di autenticazione basate su provider di autenticazione remoti.
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
+external_auth_custom_oidc_label: Utilizza un provider OpenID Connect
+external_auth_custom_oidc_description: |
+  È possibile configurare un provider OpenID Connect esterno da utilizzare per accedere alla chat.
+  Si prega di consultare la documentazione:
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Impostazioni</a>.
+external_auth_custom_oidc_button_label_label: Etichetta per il pulsante di 
+  connessione
+external_auth_custom_oidc_button_label_description: Questa etichetta verrà 
+  visualizzata agli utenti come testo del pulsante per l'autenticazione con 
+  questo provider OIDC.
+external_auth_custom_oidc_discovery_url_label: URL di individuazione
+external_auth_oidc_client_id_label: ID Client
+external_auth_oidc_client_secret_label: Secret Client
+external_auth_oidc_redirect_uris_info_description: |
+  <strong>URL di callback/redirect:</strong>
+  Se si desidera configurare un URL di redirect autorizzato sull'applicazione esterna, aggiunti questo url:
+external_auth_google_oidc_label: Usa Google
+external_auth_google_oidc_description: |
+  Abilitando questa opzione si aggiunge un pulsante "login con Google".
+  È necessario configurare un'applicazione Google OAuth.
+external_auth_facebook_oidc_label: Usa Facebook
+external_auth_facebook_oidc_description: |
+  Abilitando questa opzione si aggiunge un pulsante "login con Facebook".
+  È necessario configurare un'applicazione Facebook OAuth.
+auto_ban_anonymous_ip_label: Blocca l'IP dell'utente anonimo quando l'utente è 
+  bannato da una chatroom
