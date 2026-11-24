@@ -43,6 +43,7 @@ module.exports = merge(prod, {
       './templates/muc.js': path.resolve(__dirname, 'custom/templates/muc.js'),
       '../../templates/background_logo.js$': path.resolve(__dirname, 'custom/templates/background_logo.js'),
       './templates/muc-chatarea.js': path.resolve('custom/templates/muc-chatarea.js'),
+      './templates/muc-sidebar.js': path.resolve(__dirname, 'custom/templates/muc-sidebar.js'),
 
       './templates/icons.js': path.resolve(__dirname, 'custom/shared/components/font-awesome.js'),
 

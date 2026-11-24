@@ -43,6 +43,7 @@ interface RoomDefaults {
     livechat_muc_terms?: string
     moderation_delay?: number
     anonymize_moderation_actions?: boolean
+    livechat_hide_participants?: boolean
   }
   affiliations?: Affiliations
 }
@@ -62,7 +63,8 @@ async function _getChannelSpecificOptions (
     livechat_custom_emoji_regexp: customEmojisRegexp,
     livechat_muc_terms: channelOptions.terms,
     moderation_delay: channelOptions.moderation.delay,
-    anonymize_moderation_actions: channelOptions.moderation.anonymize
+    anonymize_moderation_actions: channelOptions.moderation.anonymize,
+    livechat_hide_participants: channelOptions.participants.hideForNonModerators
   }
 }
 

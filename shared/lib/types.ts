@@ -113,6 +113,9 @@ interface ChannelConfigurationOptions {
     delay: number
     anonymize: boolean // comes with Livechat 11.0.0
   }
+  participants: { // comes with Livechat > v14.0.4
+    hideForNonModerators: boolean
+  }
 }
 
 interface ChannelForbiddenWords {

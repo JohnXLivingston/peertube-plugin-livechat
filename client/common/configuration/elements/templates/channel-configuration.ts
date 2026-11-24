@@ -209,6 +209,32 @@ export function tplChannelConfiguration (el: ChannelConfigurationElement): Templ
         </div>
 
         <livechat-configuration-section-header
+          .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_HIDE_PARTICIPANTS_LABEL)}
+          .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_HIDE_PARTICIPANTS_DESC, true)}
+          .helpPage=${'documentation/user/streamers/moderation'}>
+        </livechat-configuration-section-header>
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
+              name="hide_participants"
+              id="peertube-livechat-hide-participants"
+              @input=${(event: InputEvent) => {
+                  if (event?.target && el.channelConfiguration) {
+                    el.channelConfiguration.configuration.participants.hideForNonModerators =
+                      (event.target as HTMLInputElement).checked
+                  }
+                  el.requestUpdate('channelConfiguration')
+                }
+              }
+              value="1"
+              ?checked=${el.channelConfiguration?.configuration.participants.hideForNonModerators}
+            />
+            ${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_HIDE_PARTICIPANTS_LABEL)}
+          </label>
+        </div>
+
+        <livechat-configuration-section-header
           .label=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_LABEL)}
           .description=${ptTr(LOC_LIVECHAT_CONFIGURATION_CHANNEL_SLOW_MODE_DESC, true)}
           .helpPage=${'documentation/user/streamers/slow_mode'}>

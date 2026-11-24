@@ -37,6 +37,7 @@ const locKeys = [
   'task_list_pick_empty',
   'task_list_pick_message',
   'muted_anonymous_message',
+  'hidden_participants_notice',
   'new_poll',
   'poll_question',
   'poll_duration',
