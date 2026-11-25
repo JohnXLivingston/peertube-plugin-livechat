@@ -12,6 +12,7 @@ import { Emojis } from './emojis'
 import { LivechatProsodyAuth } from './prosody/auth'
 import { loc } from './loc'
 import { canEditFirewallConfig } from './firewall/config'
+import { isPrimaryProcess } from './horizontal-scalability'
 const escapeHTML = require('escape-html')
 
 type AvatarSet = 'sepia' | 'cat' | 'bird' | 'fenec' | 'abstract' | 'legacy' | 'none'
@@ -29,6 +30,10 @@ async function initSettings (options: RegisterServerOptions): Promise<void> {
   initChatBehaviourSettings(options)
   initThemingSettings(options)
   await initChatServerAdvancedSettings(options)
+
+  if (!isPrimaryProcess(options)) {
+    return
+  }
 
   await ExternalAuthOIDC.initSingletons(options)
   const loadOidcs = (): void => {
