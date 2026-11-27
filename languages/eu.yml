@@ -6,7 +6,8 @@ use_chat_help: Gaituta badago, txat bat agertuko da bideoaren ondoan.
 share_chat_link: Partekatu txataren esteka
 read_only: Irakurtzeko soilik
 show_scrollbarr: Erakutsi korritze-barra
-transparent_background: Atzealde gardena (zuzenekoekin integratzeko, OBSrekin kasu)
+transparent_background: Atzealde gardena (zuzenekoekin integratzeko, OBSrekin 
+  kasu)
 tips_for_streamers: "Zuzeneko bideogileentzako aholkuak: txata OBSn gehitzeko, sortu
   irakurtzeko soilik den esteka bat\neta erabili nabigatzaileko iturburu gisa.\n"
 copy: Kopiatu
@@ -24,8 +25,8 @@ channel: Kanala
 last_activity: Azken jarduera
 web: Web
 connect_using_xmpp: Konektatu XMPP erabiliz
-connect_using_xmpp_help: Gelara konekta zaitezke kanpoko XMPP kontu bat eta gogoko
-  XMPP bezeroa erabiliz.
+connect_using_xmpp_help: Gelara konekta zaitezke kanpoko XMPP kontu bat eta 
+  gogoko XMPP bezeroa erabiliz.
 online_help: Lineako laguntza
 important_note_title: <h3>Ohar garrantzitsuak</h3>
 important_note_text: "Osagarriaren dokumentazioa aurki dezakezu hemen:\n<a href=\"\
@@ -33,3 +34,590 @@ important_note_text: "Osagarriaren dokumentazioa aurki dezakezu hemen:\n<a href=
   Plugin Livechat-en dokumentazioa\n</a>.\n"
 chat: Txata
 copied: Kopiatuta
+chat_terms_label: Baldintzak
+chat_terms_description: |
+  Baldintza hauek erabiltzaile guztiei erakutsiko zaizkie txat-geletara sartzean.
+  Igorleek beren kanaletarako baldintzak ere konfigura ditzakete, eta baldintza orokor hauen ondoren erakutsiko dira.
+list_rooms_label: Zerrendatu dauden gelak
+federation_no_remote_chat_label: Ez erakutsi urruneko txatak
+federation_no_remote_chat_description: |
+  Ezarpen hau markatuz gero, zure instantziak ez ditu inoiz urruneko bideoetako txatak erakutsiko.
+federation_dont_publish_remotely_label: Ez argitaratu txataren informazioa
+federation_dont_publish_remotely_description: |
+  Ezarpen hau markatuz gero, zure instantziak ez du txataren informaziorik argitaratuko fedibertsoan.
+  Urruneko PeerTube instantziek ez dute jakingo zure bideoei lotutako txat-gelak daudenik.<br>
+  <b>Kontuan hartu</b>: dagoeneko txatak abian bazenituen, baliteke informazioa argitaratuta egotea.
+  Bideoaren hurrengo eguneraketara itxaron beharko duzu informazioa argitaratzeari uzteko.
+  Era berean, ezarpen hau desgaitzen baduzu, bideoak eguneratu arte itxaron beharko duzu informazioa
+  berriz argitaratzeko. Eguneraketa hori gertatzen da, besteak beste, zuzeneko bat berriz hasten edo gelditzen denean.<br>
+  <b>Kontuan hartu</b>: ezarpen honek ActivityPub protokoloaren bidezko informazio-argitalpenari soilik eragiten dio.
+  Ez du eragotziko urruneko aplikazio batek txatak daudela beste modu batean detektatzea eta haietara konektatzen saiatzea.
+external_auth_custom_oidc_label: Erabili OpenID Connect hornitzaile bat
+external_auth_custom_oidc_button_label_label: Konexio-botoiaren etiketa
+external_auth_custom_oidc_button_label_description: Etiketa hau erabiltzaileei 
+  erakutsiko zaie, OIDC hornitzaile honekin autentifikatzeko botoiaren etiketa 
+  gisa.
+external_auth_custom_oidc_discovery_url_label: Aurkikuntza-URLa
+external_auth_oidc_client_id_label: Bezeroaren IDa
+external_auth_oidc_client_secret_label: Bezeroaren sekretua
+external_auth_google_oidc_label: Erabili Google
+external_auth_google_oidc_description: |
+  Hau gaituz gero, "Hasi saioa Googlerekin" botoi bat gehituko da.
+  Google OAuth aplikazio bat konfiguratu behar duzu.
+external_auth_facebook_oidc_label: Erabili Facebook
+external_auth_facebook_oidc_description: |
+  Hau gaituz gero, "Hasi saioa Facebookekin" botoi bat gehituko da.
+  Facebook OAuth aplikazio bat konfiguratu behar duzu.
+room_type_label: Gela mota
+room_type_description: Hemen aukera dezakezu bideo bakoitzerako gela bereizia 
+  izatea, edo kanalka taldekatzea.
+room_type_option_video: Bideo bakoitzak bere txat-gela du
+room_type_option_channel: Txat-gelak kanalka taldekatzen dira
+auto_display_label: Ireki txata automatikoki
+auto_display_description: Bideo bat ikustean, txat-koadroa automatikoki irekiko 
+  da.
+open_blank_label: Erakutsi «ireki leiho berrian» botoia
+open_blank_description: Txata leiho berri batean irekitzeko botoi bat egongo da.
+share_url_label: Erakutsi «partekatu txataren esteka» botoia
+share_url_description: Txataren URL bat partekatzeko botoi bat egongo da (OBSn 
+  integratzeko erabil daiteke, adibidez).
+share_url_option_nobody: Ez erakutsi inori
+share_url_option_everyone: Erakutsi guztiei
+share_url_option_owner: Erakutsi bideoaren jabeari
+share_url_option_owner_moderators: Erakutsi bideoaren jabeari eta instantziako 
+  moderatzaileei
+per_live_video_label: Erabiltzaileek beren zuzenekoetarako txata gai dezakete
+per_live_video_description: Markatuta badago, zuzeneko bideo guztiek 
+  kontrol-lauki bat izango dute beren propietateetan, txata gaitzeko.
+all_lives_label: Gaitu txata zuzeneko guztietarako
+all_lives_description: Markatuta badago, txata gaituta egongo da zuzeneko 
+  guztietarako.
+all_non_lives_label: Gaitu txata zuzenekoak ez diren bideo guztietarako
+all_non_lives_description: Markatuta badago, txata gaituta egongo da zuzenekoak 
+  ez diren bideo guztietarako.
+videos_list_label: Gaitu txata bideo hauetarako
+no_anonymous_label: Ezkutatu txata erabiltzaile anonimoei
+no_anonymous_description: |
+  Markatuta badago, PeerTubeko erabiltzaile anonimoek ez dute txata ikusiko.
+  Eginbide hau esperimentala da oraindik.
+  Gaitzen baduzu, oso gomendagarria da "Ez argitaratu txataren informazioa" ere markatzea.
+  Bestela, hirugarrenen tresna batzuk txata irekitzen saia daitezke, eta portaera ezustekoak izan.
+auto_ban_anonymous_ip_label: Debekatu erabiltzaile anonimoaren IPa txat-gela 
+  batetik debekatzen denean
+auto_ban_anonymous_ip_description: |
+  Aukera hau gaituz gero, erabiltzaile anonimo bat txat-gela batetik debekatzen den bakoitzean, haren IPa ere debekatuko da txat-zerbitzarian.
+  Kontuz: zure instantzia izen-ematera irekita badago, edozein erabiltzailek tranpa-gela bat sor dezake, erabiltzaileak sartzera gonbidatu eta erabiltzaile anonimo guztien IPak automatikoki debekatu.
+  Debekatutako IPen zerrenda ez da gordetzen; zerbitzaria berrabiaraztean edo osagarriaren ezarpen batzuk aldatzean garbituko da.
+  Debekatutako IPak Prosody zerbitzariaren erregistro-fitxategietan jasotzen dira; beraz, zerbitzariaren administratzaileek kanpoko tresnak (fail2ban, adibidez) erabil ditzakete IPak modu zabalagoan debekatzeko.
+avatar_set_label: Abatar-sorta
+avatar_set_option_sepia: Sepia (PeerTuberen maskota)
+avatar_set_option_cat: Katuak
+avatar_set_option_bird: Txoriak
+avatar_set_option_fenec: Fenekak (Mobilizonen maskota)
+avatar_set_option_abstract: Abstraktuak
+avatar_set_option_legacy: Sepiaren abatar zaharrak (osagarriaren aurreko 
+  bertsioetan zeudenak)
+avatar_set_option_none: Bat ere ez
+converse_theme_label: ConverseJS gaia
+converse_theme_description: Aukeratu erabili nahi duzun ConverseJS gaia.
+converse_theme_option_peertube: PeerTube gaia
+converse_theme_option_default: ConverseJS gai lehenetsia
+converse_theme_option_cyberpunk: ConverseJS Cyberpunk gaia
+autocolors_label: Koloreen detekzio automatikoa
+autocolors_description: |
+  Saiatu koloreak automatikoki detektatzen erabiltzailearen uneko gaitik.<br>
+  Ezarpen hau gaituta dagoenean, osagarria txataren gaiari aplikatu beharreko koloreak automatikoki detektatzen saiatzen da.<br>
+  Zure PeerTube gairen batekin behar bezala ez badabil, aukera hau desgai dezakezu.
+  Akatsaren berri eman dezakezu
+  <a href="https://github.com/JohnXLivingston/peertube-plugin-livechat/issues" target="_blank">
+    arazoen jarraipen-sistema
+  </a> ofizialean. Ez ahaztu zein gaik ez duen funtzionatzen zehaztea.
+chat_style_label: Txataren iframearen style atributua
+chat_style_description: |
+  Iframearen style atributuari gehitu beharreko estilo gehigarriak. <br>
+  Adibidea: height:400px;
+help_builtin_prosody_label: Prosody zerbitzaria
+help_builtin_prosody_description: |
+  Osagarri honek Prosody XMPP zerbitzaria erabiltzen du txat-gelak kudeatzeko.<br>
+  Osagarri honek Prosody AppImage bat dakar, zerbitzua exekutatzeko erabiliko dena.
+system_prosody_label: Erabili sistemako Prosody
+system_prosody_description: |
+  Kontuz: ez markatu ezarpen hau zertan ari zaren ziur ez bazaude.<br>
+  Ezarpen hau markatuz gero, zure PeerTubek zure sistemarekin datorren Prosody zerbitzaria erabiliko du,
+  eta ez txertatutako AppImagea.<br>
+  Erabili hau soilik txertatutako Prosodyrekin arazoak badituzu.
+disable_websocket_label: Desgaitu Websocket
+disable_websocket_description: |
+  PeerTube &gt;= 5.0.0 bertsioarekin, osagarri hau Websocket konexioa erabiltzen saiatzen da txaterako.
+  Erabiltzailearen nabigatzailea edo konexioa bateraezina bada, nabigatzaileak automatikoki BOSH protokoloa erabiliko du.
+  <br>
+  Baina kasu bakanetan, horrek huts egin dezake. Adibidez, PeerTuberen aurrean alderantzizko proxy bat baduzu eta
+  osagarrientzako Websocket konexioak baimentzen ez baditu.
+  Kasu horretan, ezarpen hau marka dezakezu Websocket konexioak desgaitzeko.
+prosody_port_label: Prosody ataka
+prosody_port_description: |
+  Prosody zerbitzariak erabiliko duen ataka.<br>
+  Aldatu ataka hori zure zerbitzarian dagoeneko erabiltzen ari bada.<br>
+  Ataka hau zure suebakian itxi dezakezu, ez baita kanpotik atzituko.<br>
+  Oharra: hau alda daiteke etorkizun hurbilean, kanpoko konexioak gaitzeko eginbide bat gehitzea aurreikusita baitago.
+prosody_peertube_uri_label: API deietarako PeerTube URLa
+prosody_peertube_uri_description: |
+  Utzi ezarpen hau hutsik zertan ari zaren ez badakizu.<br>
+  Kasu bakan batzuetan, Prosodyk ezin du PeerTuberen APIa deitu haren URI publikotik.
+  Eremu hau erabil dezakezu Prosody moduluentzako PeerTuberen URIa pertsonalizatzeko
+  (adibidez, «http://localhost:9000» edo «http://127.0.0.1:9000» erabiliz).
+prosody_muc_log_by_default_label: Gorde gelen edukia lehenespenez
+prosody_muc_log_by_default_description: |
+  Markatuta badago, gelen edukia lehenespenez gordeko da.
+  Gela batera sartzen den edozein erabiltzailek ikusiko du sartu aurretik idatzitakoa.<br>
+  Kontuan hartu gela jakin baten edukiaren artxibatzea
+  beti gai/desgai daitekeela, haren propietateak editatuz.
+prosody_muc_expiration_label: Gelen erregistroen iraungitzea
+prosody_room_allow_s2s_label: Gaitu geletara kanpoko XMPP kontuekin konektatzea
+prosody_room_allow_s2s_description: |
+  Aukera hau gaituz gero, geletara konektatu ahal izango da kanpoko XMPP kontuak eta XMPP bezeroak erabiliz.<br>
+  <span class="peertube-plugin-livechat-warning">
+    <b>Kontuz</b>: aukera hau gaitzeak zerbitzariaren eta DNSaren konfigurazio gehigarria eska dezake.
+  </span>
+  Ikusi dokumentazioa:
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/advanced/xmpp_clients/" target="_blank">
+    Gaitu kanpoko XMPP kontuen konexioak.
+  </a>
+prosody_s2s_port_label: Prosodyren zerbitzaritik zerbitzarirako ataka
+prosody_s2s_port_description: |
+  XMPP s2s (zerbitzaritik zerbitzarira) konexioetarako erabiliko den ataka.<br>
+  5269 ataka estandarra erabili beharko zenuke.
+  Bestela, <a href="https://prosody.im/doc/s2s">
+    DNS erregistro berezi bat konfiguratu
+  </a> beharko zenuke.
+prosody_s2s_interfaces_label: Zerbitzaritik zerbitzarirako sare-interfazeak
+prosody_s2s_interfaces_description: |
+  Zerbitzaritik zerbitzarirako konexioak entzuteko sare-interfazeak.<br>
+  Entzun beharreko IPen zerrenda, komaz bereizita (zuriuneak kenduko dira).<br>
+  «*» erabil dezakezu IPv4 interfaze guztiak entzuteko, eta «::» IPv6 guztietarako.<br>
+  Adibideak:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>172.18.0.42</li>
+  </ul>
+prosody_certificates_dir_label: Ziurtagirien karpeta
+prosody_certificates_dir_description: |
+  Eremu hau hutsik badago, osagarriak auto-sinatutako ziurtagiriak sortu eta erabiliko ditu.<br>
+  Beste ziurtagiri batzuk erabili nahi badituzu, zehaztu hemen Prosodyk haiek aurki ditzakeen
+  karpeta. Oharra: "peertube" erabiltzaileak irakurtzeko sarbidea izan behar du karpeta honetan.
+prosody_c2s_label: Gaitu bezerotik zerbitzarirako konexioak
+prosody_c2s_description: |
+  Baimendu XMPP bezeroei barneko Prosody zerbitzarira konektatzea.<br>
+  Aukera honek, bakarrik, localhost bezeroen konexioak baino ez ditu baimentzen.
+prosody_c2s_port_label: Prosodyren bezerotik zerbitzarirako ataka
+prosody_c2s_port_description: |
+  Barneko Prosody zerbitzariaren c2s moduluak erabiliko duen ataka.<br>
+  XMPP bezeroek ataka hau erabili beharko dute konektatzeko.<br>
+  Aldatu ataka hori zure zerbitzarian dagoeneko erabiltzen ari bada.<br>
+  Oraingoz, ataka hau itxita utz dezakezu zure suebakian, ez baita kanpotik atzituko.<br>
+  Oharra: hau alda daiteke etorkizun hurbilean, kanpoko konexioak gaitzeko eginbide bat gehitzea aurreikusita baitago.
+prosody_c2s_interfaces_label: Bezerotik zerbitzarirako sare-interfazeak
+prosody_c2s_interfaces_description: |
+  Bezerotik zerbitzarirako konexioak entzuteko sare-interfazeak.<br>
+  Ezarpen hau erabiltzaile aurreratuentzat da. Ez aldatu ezarpen hau zer esan nahi duen guztiz ulertzen ez baduzu.<br>
+  Entzun beharreko IPen zerrenda, komaz bereizita (zuriuneak kenduko dira).<br>
+  «*» erabil dezakezu IPv4 interfaze guztiak entzuteko, eta «::» IPv6 guztietarako.<br>
+  Adibideak:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>127.0.0.1, ::1, 172.18.0.42</li>
+  </ul>
+prosody_components_label: Gaitu Prosodyren kanpoko osagai pertsonalizatuak
+prosody_components_description: |
+  Gaitu kanpoko XMPP osagaien erabilera.<br>
+  Aukera honek, bakarrik, localhost-eko konexioak baino ez ditu baimentzen.
+  Entzuteko interfazeak konfiguratu eta ataka zure suebakian ireki behar duzu urruneko zerbitzarietatik erabilgarri egon dadin.<br>
+  Eginbide hau, adibidez, bot batzuk txat-geletara konektatzeko erabil daiteke.
+prosody_components_port_label: Prosodyren kanpoko osagaien ataka
+prosody_components_port_description: |
+  XMPP osagaiek Prosody zerbitzarira konektatzeko erabiliko duten ataka.<br>
+  Aldatu ataka hori zure zerbitzarian dagoeneko erabiltzen ari bada.<br>
+  Ataka hau itxita utz dezakezu zure suebakian, localhost ez den beste interfazerik baimentzen ez baduzu.
+prosody_components_interfaces_label: Prosodyren kanpoko osagaien 
+  sare-interfazeak
+prosody_components_interfaces_description: |
+  Kanpoko osagaien konexioak entzuteko sare-interfazeak.<br>
+  Entzun beharreko IPen zerrenda, komaz bereizita (zuriuneak kenduko dira).<br>
+  «*» erabil dezakezu IPv4 interfaze guztiak entzuteko, eta «::» IPv6 guztietarako.<br>
+  Adibideak:
+  <ul>
+    <li>*, ::</li>
+    <li>*</li>
+    <li>127.0.0.1, ::1</li>
+    <li>172.18.0.42</li>
+  </ul>
+prosody_components_list_label: Kanpoko osagaiak
+disable_channel_configuration_label: Desgaitu kanalaren konfigurazio aurreratua 
+  eta txatbota
+save: Gorde
+cancel: Utzi
+successfully_saved: Behar bezala gorde da
+menu_configuration_label: Txat-gelak
+livechat_configuration_title: Konfiguratu zure zuzenekoen txat-gelak
+livechat_configuration_desc: Hemen zure zuzeneko igorpenei lotutako txat-gelen 
+  aukera aurreratu batzuk konfigura ditzakezu.
+livechat_configuration_please_select: Hautatu behean zure kanaletako bat, haren 
+  txat-aukerak konfiguratzeko.
+livechat_configuration_channel_title: Kanalaren aukerak
+livechat_configuration_channel_desc: Hemen kanal honetarako aukera batzuk 
+  konfigura ditzakezu (moderazio-politikak, ...).
+livechat_configuration_channel_slow_mode_label: Modu motela
+livechat_configuration_channel_enable_bot_label: Gaitu moderazio-bota
+livechat_configuration_channel_bot_options_title: Moderazio-botaren aukerak
+livechat_configuration_channel_forbidden_words_label: Debekatutako hitzak edo 
+  esapideak
+livechat_configuration_channel_forbidden_words_desc: |
+  Botak automatikoki moderatuko dituen hitz batzuk konfigura ditzakezu (hitz horiek dituzten mezuak berehala ezabatuko dira).
+  Aukerako arrazoi bat ere gehi dezakezu, ezabatutako mezuen lekuan erakutsiko dena.
+  Dokumentazioaren orrian hainbat adibide daude.
+livechat_configuration_channel_retractation_reason_label: Arrazoia
+livechat_configuration_channel_retractation_reason_desc: Ezabatutako mezuen 
+  ondoan erakutsi beharreko arrazoia
+livechat_configuration_channel_forbidden_words_regexp_label: Hartu adierazpen 
+  erregular gisa
+livechat_configuration_channel_forbidden_words_regexp_desc: Aukera hau markatuz 
+  gero, adierazpen erregularrak erabil ditzakezu.
+livechat_configuration_channel_forbidden_words_label_label: Etiketa
+livechat_configuration_channel_forbidden_words_label_desc: Debekatutako hitzen 
+  arau honen etiketa
+livechat_configuration_applytomoderators_label: Moderatu moderatzaileen mezuak 
+  ere
+livechat_configuration_applytomoderators_desc: |
+  Lehenespenez, eginbide honek ez die eragingo moderatzaileen mezuei.
+  Aukera hau markatuz gero, moderatzaileen mezuak ere ezabatuko dira.
+livechat_configuration_channel_forbidden_words_comments_label: Iruzkinak
+livechat_configuration_channel_forbidden_words_comments_desc: |
+  Arau honi buruzko iruzkin batzuk gehi ditzakezu hemen, nola eta zergatik sortu zenuen gogoratzeko.
+  Iruzkin hauek orientagarriak dira soilik, eta ez dute eraginik botaren portaeran.
+livechat_configuration_channel_quote_label: Tenporizadorea
+livechat_configuration_channel_quote_desc: |
+  Aldian-aldian mezuak bidaliko dituzten hainbat tenporizadore konfigura ditzakezu.
+  Mezu hauek botak bidaliko ditu X minuturo.
+  Adibidez, botak babesleei buruzko informazioa bidal dezake 5 minuturo.
+livechat_configuration_channel_quote_label2: Mezuak
+livechat_configuration_channel_quote_desc2: |
+  Mezu bat lerro bakoitzeko.
+  Hainbat mezu badaude, bat ausaz aukeratuko du X minuturo.
+livechat_configuration_channel_quote_delay_label: Bidali X minuturo
+livechat_configuration_channel_quote_delay_desc: |
+  Botak mezua X minuturo argitaratuko du.
+livechat_configuration_channel_command_label: Botaren komandoa
+livechat_configuration_channel_command_desc: |
+  Bota komandoei erantzuteko konfigura dezakezu.
+  Komando bat "!" batekin hasten den mezu bat da; adibidez, "!help" mezuak "help" komandoa deitzen du.
+livechat_configuration_channel_command_cmd_label: Komandoa
+livechat_configuration_channel_command_cmd_desc: |
+  Komandoa, hasierako "!" gabe. Adibidez, "help", "sponsor", ...
+livechat_configuration_channel_command_message_label: Mezua
+livechat_configuration_channel_command_message_desc: Bidali beharreko mezua.
+livechat_configuration_channel_for_more_info: |
+  Eginbide hau nola konfiguratu jakiteko, ikusi dokumentazioa laguntza-botoian klik eginez.
+livechat_configuration_channel_banned_jids_label: Debekatutako erabiltzaileak 
+  eta ereduak
+livechat_configuration_channel_bot_nickname: Botaren ezizena
+validation_error: Errore bat gertatu da balioztatzean.
+invalid_value: Balio baliogabea.
+invalid_value_missing: Balio hau beharrezkoa da.
+invalid_value_wrong_type: Balioaren mota okerra da.
+invalid_value_wrong_format: Balioaren formatua okerra da.
+invalid_value_not_in_range: Balioa ez dago baimendutako tartean.
+invalid_value_file_too_big: 'Fitxategiaren tamaina handiegia da (gehienezko tamaina:
+  %s).'
+invalid_value_duplicate: Balio bikoiztua
+invalid_value_too_long: Balio luzeegia
+too_many_entries: Sarrera gehiegi
+slow_mode_info: Modu motela gaituta dago; erabiltzaileek mezu bat bidal dezakete
+  %1$s segundoan behin.
+chatroom_not_accessible: Txat-gela hau ez dago, edo ez duzu bertarako 
+  sarbiderik.
+login_using_external_account: Hasi saioa kanpoko kontu batekin
+login_remote_peertube: 'Hasi saioa beste PeerTube instantzia bateko kontu batekin:'
+login_remote_peertube_url: Zure PeerTube instantziaren URLa
+login_remote_peertube_searching: Bideoa PeerTube instantzian bilatzen...
+login_remote_peertube_url_invalid: PeerTube URL baliogabea.
+login_remote_peertube_no_livechat: Livechat osagarria ez dago instalatuta 
+  PeerTube instantzia honetan.
+login_remote_peertube_video_not_found: Bideo hau ez dago erabilgarri PeerTube 
+  instantzia honetan.
+login_remote_peertube_video_not_found_try_anyway: Kasu batzuetan, bideoa eskura 
+  daiteke oraindik urruneko instantziara konektatzen bazara.
+login_remote_peertube_video_not_found_try_anyway_button: Saiatu hala ere bideoa 
+  PeerTube instantzian irekitzen
+login_remote_peertube_video_open_failed: 'Zure nabigatzaileak urruneko instantzian
+  irekitzea blokeatu du; saiatu esteka hau eskuz irekitzen:'
+login_external_auth_alert_message: Autentifikazioak huts egin du
+tasks: Zereginak
+task_list_create: 'Sortu zeregin-zerrenda berria:'
+task_list_create_error: Errorea zeregin-zerrenda gordetzean
+task_list_name: Zeregin-zerrendaren izena
+task_list_delete: Ezabatu zeregin-zerrenda
+task_list_delete_confirm: Ziur zaude zeregin-zerrenda hau ezabatu nahi duzula?
+task_create: Sortu zeregin berri bat
+task_name: Zereginaren izena
+task_description: Deskribapena
+task_delete: Ezabatu zeregina
+task_delete_confirm: Ziur zaude zeregin hau ezabatu nahi duzula?
+task_list_pick_title: Aukeratu zeregin-zerrenda bat
+task_list_pick_empty: Oraingoz ez dago zeregin-zerrendarik; sortu bat lehenik
+task_list_pick_message: |
+  Zeregin-zerrenda bat aukeratu ondoren, zeregin berri bat sortuko da.
+  Zeregina ikusteko, ireki zereginen aplikazioa goiko menua erabiliz.
+  Informazio gehiago livechat osagarriaren dokumentazioan.
+promote: Bihurtu moderatzaile
+livechat_configuration_channel_emojis_title: Kanalaren emojiak
+livechat_configuration_channel_emojis_desc: |
+  Emoji pertsonalizatuak konfigura ditzakezu zure kanalerako.
+  Emoji hauek emoji-hautatzailean egongo dira erabilgarri.
+  Erabiltzaileek beren izen laburrarekin ere erabil ditzakete (adibidez, ":izenlaburra:" idatziz).
+livechat_emojis_shortname: Izen laburra
+livechat_emojis_shortname_desc: |
+  Emojiak txatean erabil ditzakezu ":izenlaburra:" idatziz.
+  Izen laburra bi puntuz (:) has edo buka daiteke, eta karaktere alfanumerikoak, azpimarrak eta marratxoak soilik izan ditzake.
+  Oso gomendagarria da bi punturekin hastea, erabiltzaileek osatze automatikoa erabil dezaten (":" idatzi eta TAB sakatuz).
+livechat_emojis_file: Fitxategia
+livechat_emojis_file_desc: |
+  Emojiaren fitxategia.
+action_import: Inportatu
+action_export: Esportatu
+action_import_emojis_info: Inportatutako datuak zuzenak badira, ez ahaztu 
+  inprimakia gordetzea.
+action_add_entry: Gehitu sarrera bat
+action_remove_entry: Kendu sarrera hau
+action_remove_entry_confirm: Ziur zaude sarrera hau kendu nahi duzula?
+loading_error: Errore bat gertatu da datuak kargatzean.
+share_chat_embed: Txertatu
+share_chat_peertube_tips: Esteka honek txata PeerTuberen interfazearen barruan 
+  irekiko du.
+share_chat_dock: Panela
+share_chat_dock_tips: |
+  Txata orri osoan irekiko duen esteka bat sor dezakezu, zure PeerTube kontuarekin saioa hasita.
+  Hau erabil daiteke, adibidez, zure OBSn web-panel bat izateko, txata OBStik zuzenean irakurri eta harekin elkarreragiteko.
+  Ez partekatu esteka hau inorekin, zu zarela konektatzeko aukera emango bailieke.
+  Behean dituzu dagoeneko sortu dituzun autentifikazio-tokenen zerrenda.
+  Berri bat sor dezakezu, edo aurreko edozein token baliogabetu.
+  Kontuan hartu token hauek ez dutela iraungitze-datarik.
+token_label: Etiketa
+token_password: Pasahitz-tokena
+token_date: Data
+token_action_create: Sortu token berri bat
+token_action_revoke: Baliogabetu tokena
+token_default_label: Web-interfazetik sortutako tokena
+token_action_revoke_confirm: Ziur zaude token hau baliogabetu nahi duzula?
+livechat_token_disabled_label: Desgaitu livechat tokenak
+muted_anonymous_message: Izena emandako erabiltzaileek soilik bidal ditzakete 
+  mezuak.
+livechat_configuration_channel_mute_anonymous_label: Mututu erabiltzaile 
+  anonimoak
+livechat_configuration_channel_mute_anonymous_desc: |
+  Txat-gela berrietarako balio lehenetsia.
+  Lehendik dauden txat-geletan, eginbidea gelaren konfigurazio-inprimakian alda dezakezu.
+  Eginbide hau gaituta dagoenean, erabiltzaile anonimoek txata irakurri baino ezin dute egin, ez mezurik bidali.
+livechat_configuration_channel_terms_label: Kanalaren txataren baldintzak
+livechat_configuration_channel_terms_desc: |
+  Zure txat-geletara sartzen diren erabiltzaileei erakutsiko zaien "baldintzak" mezu bat konfigura dezakezu.
+new_poll: Sortu inkesta berri bat
+poll: Inkesta
+poll_title: Inkesta berria
+poll_instructions: Bete eta bidali inprimaki hau inkesta berri bat sortzeko. 
+  Honek lehendik dagoen edozein inkesta amaitu eta ordeztuko du.
+poll_question: Galdera
+poll_duration: Inkestaren iraupena (minututan)
+poll_anonymous_results: Emaitza anonimoak
+poll_choice_n: '{{N}}. aukera:'
+poll_end: 'Inkesta noiz amaituko den:'
+poll_vote_instructions: 'Bozkatzeko, egin klik zure aukeran edo bidali mezu bat harridura-ikurra
+  eta zure aukeraren zenbakia idatziz (adibidez: !1).'
+poll_vote_instructions_xmpp: 'Bozkatzeko, bidali mezu bat harridura-ikurra eta zure
+  aukeraren zenbakia idatziz. Adibidez: !1'
+poll_is_over: Inkesta hau amaitu da.
+poll_choice_invalid: Aukera hau ez da baliozkoa.
+poll_anonymous_vote_ok: Zure botoa kontuan hartu da. Botoak anonimoak dira; ez 
+  zaizkie beste parte-hartzaileei erakutsiko.
+poll_vote_ok: Zure botoa kontuan hartu da; kontagailuak laster eguneratuko dira.
+moderation_delay: Moderazio-atzerapena
+livechat_configuration_channel_anonymize_moderation_label: Anonimizatu 
+  moderazio-ekintzak
+livechat_configuration_channel_anonymize_moderation_desc: |
+  Gela berrietan moderazio-ekintzak anonimizatzeko balio lehenetsia.
+  Hau gaituta dagoenean, moderazio-ekintzak anonimizatu egingo dira, nork debekatzen/kanporatzen/… dituen parte-hartzaileak ez ezagutarazteko.
+moderator_notes: Moderazio-oharrak
+moderator_notes_create_error: Errorea oharra gordetzean
+moderator_note_create: Sortu ohar berri bat
+moderator_note_description: Deskribapena
+moderator_note_delete: Ezabatu oharra
+moderator_note_delete_confirm: Ziur zaude ohar hau ezabatu nahi duzula?
+moderator_note_create_for_participant: Sortu ohar berri bat
+moderator_note_search_for_participant: Bilatu oharrak
+moderator_note_filters: Bilaketa-iragazkiak
+moderator_note_original_nick: Parte-hartzailearen ezizena oharra sortu zen unean
+search_occupant_message: Bilatu mezu guztiak
+message_search: Mezu-bilaketa
+message_search_original_nick: Parte-hartzailearen ezizena mezua bidali zen unean
+prosody_firewall_label: Gaitu Prosodyren mod_firewall
+prosody_firewall_configuration: Prosodyren mod_firewall konfigurazioa
+enabled: Gaituta
+prosody_firewall_name: Izena
+prosody_firewall_name_desc: |
+  Hauek soilik izan ditzake: karaktere alfanumerikoak, azpimarrak eta marratxoak.
+  Scriptak ordena alfabetikoan kargatuko dira.
+prosody_firewall_content: Fitxategiaren edukia
+emoji_only_info: Emoji soilik modua gaituta dago; emojiak baino ezin dituzu 
+  erabili zure mezuetan.
+emoji_only_mode_title: Emoji soilik modua
+emoji_only_mode_desc_1: |
+  "Emoji soilik modua" gai dezakezu zure txat-geletan.
+  Modu hau gaituta dagoenean, parte-hartzaileek emojiak baino ezin dituzte bidali (estandarrak edo kanalaren emoji pertsonalizatuak).
+  Moderatzaileei ez die eragiten muga honek.
+emoji_only_mode_desc_3: |
+  Modu hau gaitzeko edo desgaitzeko, gelaren konfigurazio-inprimakia erabil dezakezu.
+  Zure txat-gela guztietan batera gaitu nahi baduzu, beheko botoia erabil dezakezu.
+emoji_only_enable_all_rooms: Gaitu emoji soilik modua kanalaren txat-gela 
+  guztietan
+livechat_configuration_channel_special_chars_label: Debekatu karaktere bereziak
+livechat_configuration_channel_special_chars_desc: |
+  Aukera hau gaituz gero, moderazio-botak automatikoki ezabatuko ditu X karaktere berezi baino gehiago dituzten mezuak.
+  Karaktere bereziak kategoria hauetako batean sartzen ez direnak dira: letrak, zenbakiak, puntuazio-ikurrak, moneta-ikurrak, emojiak.
+livechat_configuration_channel_special_chars_tolerance_label: Tolerantzia
+livechat_configuration_channel_special_chars_tolerance_desc: Mezu batean ezabatu
+  gabe onartu beharreko karaktere berezien kopurua.
+feature_comes_with: Eginbide hau livechat osagarriaren X.X.X bertsioarekin 
+  dator.
+livechat_configuration_channel_no_duplicate_label: Mezu bikoiztuen debekua
+livechat_configuration_channel_no_duplicate_desc: |
+  Aukera hau gaituz gero, moderazio-botak automatikoki moderatuko ditu mezu bikoiztuak.
+  Hau da, erabiltzaile batek mezu bera bi aldiz bidaltzen badu X segundoren barruan, bigarren mezua ezabatuko da.
+livechat_configuration_channel_no_duplicate_delay_label: Denbora-tartea
+livechat_configuration_channel_no_duplicate_delay_desc: |
+  Erabiltzaile batek mezu bera berriz bidali ezin duen denbora-tartea, segundotan.
+announcements_message_type: Mezu mota
+announcements_message_type_standard: Estandarra
+announcements_message_type_announcement: Iragarpena
+announcements_message_type_highlight: Nabarmendua
+announcements_message_type_warning: Abisua
+back_to_last_msg: Itzuli azken mezura
+enable_users_regexp: Gaitu adierazpen erregularrak txat-gelen debekatutako 
+  hitzetarako
+enable_users_regexp_description: |
+  Eginbide hau gaituz gero, igorleek adierazpen erregularrak erabili ahal izango dituzte txatbota konfiguratzean.
+  Ez zenuke eginbide hau gaitu behar zure erabiltzaileez fidatzen ez bazara (txat-gelak sor ditzaketenez, hau da, zuzeneko igorpenak sor ditzaketenez).
+  Erabiltzaile maltzur batek berariaz landutako adierazpen erregular bat sor dezake, eta botaren zerbitzu-ukapena eragin.
+diagnostic: |
+  Laguntza eskatu aurretik, erabili diagnostiko-tresna:
+  <a class="peertube-plugin-livechat-launch-diagnostic">Abiarazi diagnostikoa</a>
+  (botoi honek leiho berririk irekitzen ez badu, saiatu orria freskatzen).
+chat_title: <h3>Txata</h3>
+list_rooms_description: |
+  <a class="peertube-plugin-livechat-prosody-list-rooms-btn">Zerrendatu gelak</a>
+federation_description: |
+  <h3>Federazioa</h3>
+  Ezarpen hauek beste PeerTube instantzia batzuekin eta fedibertsoko
+  beste software batzuekin egiten den federazioari dagozkio.
+external_auth_description: |
+  <h3>Kanpoko autentifikazioa</h3>
+  PeerTube konturik ez duten erabiltzaileentzat, urruneko autentifikazio-hornitzaileetan oinarritutako hainbat autentifikazio modu gai ditzakezu.
+external_auth_custom_oidc_title: <h4>OpenID Connect</h4>
+external_auth_custom_oidc_description: |
+  Txatean saioa hasteko erabil daitekeen kanpoko OpenID Connect hornitzaile bat konfigura dezakezu.
+  Ikusi dokumentazioa:
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Ezarpenak</a>.
+external_auth_oidc_redirect_uris_info_description: |
+  <strong>Itzulera-/birbideratze-URIa:</strong>
+  Kanpoko aplikazioan baimendutako birbideratze-URIa konfiguratu nahi baduzu, gehitu URL hau:
+chat_behaviour_description: <h3>Txataren portaera</h3>
+per_live_video_warning_description: |
+  <span class="peertube-plugin-livechat-warning">
+    «Erabiltzaileek beren zuzenekoetarako txata gai dezakete» ezarpena gaitu duzu.
+    Erredundantea da «Gaitu txata zuzeneko guztietarako» ezarpenarekin.
+  </span>
+theming_advanced_description: <h3>Gaiak</h3>
+avatar_set_description: |
+  Txateko erabiltzaileentzat erabiliko diren abatar lehenetsiak hainbat sortaren artean aukera ditzakezu.
+  Ikusi dokumentazioa:
+  <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/settings/" target="_blank">Ezarpenak</a>.
+prosody_advanced_description: <h3>Txat-zerbitzariaren ezarpen aurreratuak</h3>
+prosody_muc_expiration_description: |
+  Hemen aukera dezakezu zerbitzariak zenbat denboraz gordeko duen txat-gelen edukia. Balioa hau izan daiteke:
+  <ul>
+      <li><b>60</b>: edukia 60 <b>segundoz</b> gordeko da. 60 edozein zenbaki osorekin ordez dezakezu.</li>
+      <li><b>1d</b>: edukia <b>egun</b> 1ez gordeko da. 1 edozein zenbaki osorekin ordez dezakezu.</li>
+      <li><b>1w</b>: edukia <b>aste</b> 1ez gordeko da. 1 edozein zenbaki osorekin ordez dezakezu.</li>
+      <li><b>1m</b>: edukia <b>hilabete</b> 1ez gordeko da. 1 edozein zenbaki osorekin ordez dezakezu.</li>
+      <li><b>1y</b>: edukia <b>urte</b> 1ez gordeko da. 1 edozein zenbaki osorekin ordez dezakezu.</li>
+      <li><b>never</b>: edukia ez da inoiz iraungiko, eta betiko gordeko da.</li>
+  </ul>
+prosody_components_list_description: |
+  Deklaratu beharreko kanpoko osagaiak:
+  <ul>
+    <li>Bat lerro bakoitzeko.</li>
+    <li>Erabili «osagaiaren_izena:osagaiaren_sekretua» formatua (zuriuneak kenduko dira).</li>
+    <li>Iruzkinak gehi ditzakezu: # karakterearen ondorengo guztia kenduko da, eta lerro hutsak ez dira kontuan hartuko.</li>
+    <li>Izenak latin karaktere alfanumerikoak eta puntuak soilik izan ditzake.</li>
+    <li>
+      Izenak karaktere alfanumerikoak soilik baditu, XMPP domeinua gehituko zaio atzizki gisa.
+      Adibidez, «bridge» «bridge.zure_domeinua.tld» bihurtuko da.
+      Domeinu-izen osoa ere zehaztu dezakezu, baina zure DNSa behar bezala konfiguratu behar duzu.
+    </li>
+    <li>Erabili karaktere alfanumerikoak soilik pasaesaldi sekretuan (erabili gutxienez 15 karaktere).</li>
+  </ul>
+experimental_warning: |
+  <b class="peertube-plugin-livechat-experimental">Eginbide esperimentala:</b> eginbide hau esperimentala da oraindik.
+configuration_description: |
+  <h3>Kanalaren konfigurazio aurreratua</h3>
+  Ezarpen hauek kanalaren aukera aurreratuei dagozkie:
+  erabiltzaileek pertsonalizazio batzuk gehitu ahal izango dituzte beren kanaletan,
+  moderazio-bota gaitu, ...
+livechat_configuration_channel_slow_mode_desc: |
+  Modu motelaren balio lehenetsia:
+  <ul>
+    <li>0: modu motela desgaituta</li>
+    <li>Edozein zenbaki oso positibo: erabiltzaileek mezu bat bidal dezakete X segundoan behin (moderatzaileak ez daude mugatuta)</li>
+  </ul>
+auth_description: |
+  <h3>Autentifikazioa</h3>
+livechat_token_disabled_description: |
+  Erabiltzaileek iraupen luzeko tokenak sor ditzakete txatera konektatzeko.
+  Token hauek, adibidez, txata OBSren web-paneletan sartzeko erabil daitezke.
+  Ikusi <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/user/obs" target="_blank">dokumentazioa</a> informazio gehiagorako.
+  Eginbide hau desgai dezakezu ezarpen hau markatuz.
+livechat_configuration_channel_moderation_delay_desc: |
+  Moderazio-atzerapenaren balio lehenetsia:
+  <ul>
+    <li>0: moderazio-atzerapena desgaituta</li>
+    <li>Edozein zenbaki oso positibo: moderatzaileak ez diren parte-hartzaileentzat mezuak X segundoz atzeratuko dira, moderatzaileek mezua ezabatu ahal izan dezaten inork irakurri aurretik.</li>
+  </ul>
+prosody_firewall_description: |
+  <a href="https://modules.prosody.im/mod_firewall" target="_blank">mod_firewall</a> gai dezakezu zure Prosody zerbitzarian.
+  Informazio gehiagorako, ikusi <a href="https://livingston.frama.io/peertube-plugin-livechat/documentation/admin/mod_firewall/" target="_blank">dokumentazioa</a>.
+prosody_firewall_configure_button: |
+  <a class="peertube-button-link orange-button secondary-button" href="/p/livechat/admin/firewall" target="_blank">Konfiguratu mod_firewall</a>
+prosody_firewall_configuration_help: |
+  Hemen Prosodyren <a href="https://modules.prosody.im/mod_firewall" target="_blank">mod_firewall</a> modulua konfigura dezakezu.
+  Behean hainbat konfigurazio-fitxategi sor ditzakezu, eta haien ordena aldatu.
+  Ez izan zalantzarik zure konfigurazioak komunitatearekin partekatzeko (adibidez, osagarriaren dokumentazioan adibide batzuk gehituz).
+prosody_firewall_disabled_warning: |
+  Kontuz: mod_firewall desgaituta dago livechat <a href="/admin/plugins/show/peertube-plugin-livechat" target="_blank">osagarriaren ezarpenetan</a>; gaitu egin behar duzu konfigurazio hau kontuan har dadin.
+emoji_only_mode_desc_2: |
+  Modu hau erabilgarria izan daiteke, adibidez:
+  <ul>
+    <li>Spama edo mezu iraingarriak saihesteko, moderatzeko bertan ez zaudenean.</li>
+    <li>Hizketan ari diren parte-hartzaile gehiegi daudenean, eta ezin duzunean jada behar bezala moderatu.</li>
+  </ul>
+converse_theme_warning_description: |
+  <span class="peertube-plugin-livechat-warning">
+    Oso gomendagarria da "PeerTube gaia" mantentzea, "Koloreen detekzio automatikoa" eginbidearekin batera.
+    Bestela, erabiltzaile batzuek arazoak izan ditzakete erabiltzen duten PeerTube gaiaren arabera.
+  </span>
+videos_list_description: |
+  Txata izatea nahi dugun bideoen UUIDak (UUID laburra edo UUIDv4).
+  Zuzenekoak ez diren bideoak izan daitezke. Bat lerro bakoitzeko. <br />
+  Iruzkinak gehi ditzakezu: # karakterearen ondorengo guztia kenduko da, eta lerro hutsak ez dira kontuan hartuko.<br />
+  Ez gehitu bideo pribaturik, UUIDak interfazera bidaliko baitira.
