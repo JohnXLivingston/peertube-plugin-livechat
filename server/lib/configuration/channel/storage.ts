@@ -73,6 +73,9 @@ function getDefaultChannelConfigurationOptions (_options: RegisterServerOptions)
       delay: 0,
       anonymize: false
     },
+    participants: {
+      hideForNonModerators: false
+    },
     terms: undefined
   }
 }

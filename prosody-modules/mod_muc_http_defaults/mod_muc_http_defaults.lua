@@ -12,13 +12,14 @@
 -- * "livechat_emoji_only"
 -- * "livechat_custom_emoji_regexp"
 -- * "livechat_muc_terms"
+-- * "livechat_hide_participants"
 -- These options are introduced in the Peertube livechat plugin.
 --
 -- The "slow_mode_duration" comes with mod_muc_slow_mode.
 -- There will be a XEP proposal for this one. When done, these modifications will be submitted to the mod_muc_http_defaults maintainer.
 --
 -- The "moderation_delay" comes with mod_muc_moderation_delay
--- 
+--
 
 local http = require "net.http";
 local async = require "util.async";
@@ -144,6 +145,9 @@ local function apply_config(room, settings)
 		end
 		if (type(config.anonymize_moderation_actions) == "boolean") then
 			room._data.anonymize_moderation_actions = config.anonymize_moderation_actions;
+		end
+		if (type(config.livechat_hide_participants) == "boolean") then
+			room._data.presence_broadcast = config.livechat_hide_participants and { moderator = true } or nil;
 		end
 	elseif config ~= nil then
 		module:log("error", "Invalid config returned from API for %s: %q", room.jid, config);

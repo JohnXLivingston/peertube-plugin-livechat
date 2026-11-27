@@ -56,6 +56,13 @@ async function sanitizeChannelConfigurationOptions (
   }
   mute.anonymous ??= false
 
+  // participants comes with livechat > v14.0.4
+  const participantsData = data.participants ?? {}
+  if (!_assertObjectType(participantsData)) {
+    throw new Error('Invalid data.participants data type')
+  }
+  participantsData.hideForNonModerators ??= false
+
   // forbidSpecialChars comes with livechat 12.0.0
   botData.forbidSpecialChars ??= {
     enabled: false,
@@ -108,6 +115,9 @@ async function sanitizeChannelConfigurationOptions (
     moderation: {
       delay: _readInteger(moderationData, 'delay', 0, 60),
       anonymize: _readBoolean(moderationData, 'anonymize')
+    },
+    participants: {
+      hideForNonModerators: _readBoolean(participantsData, 'hideForNonModerators')
     }
   }
   if (terms !== undefined) {

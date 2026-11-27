@@ -228,6 +228,12 @@ body.converse-embedded {
       .occupants {
         width: 100%;
 
+        .livechat-hidden-participants-notice {
+          font-size: 0.85em;
+          font-style: italic;
+          margin: 0.5em;
+        }
+
         // Put occupants filters items on a single line
         converse-list-filter form > div {
           display: flex;

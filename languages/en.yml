@@ -559,6 +559,14 @@ livechat_configuration_channel_mute_anonymous_desc: |
   Default value for new chatrooms.
   For existing chatrooms, you can change the feature in the room configuration form.
   When this feature is enabled, anonymous users can only read the chat, and not send messages.
+livechat_configuration_channel_hide_participants_label: "Hide the participant list from non-moderators"
+livechat_configuration_channel_hide_participants_desc: |
+  Default value for new chatrooms.
+  For existing chatrooms, you can change the feature in the room configuration form,
+  using the "Only show participants with roles" field (select only "moderator" to hide the participant list).
+  When this feature is enabled, only moderators can see the full list of participants. Other users only see moderators.
+  This also greatly reduces the server load for chatrooms with many participants.
+hidden_participants_notice: Only moderators can see the full list of participants.
 livechat_configuration_channel_terms_label: "Channel's chat terms & conditions"
 livechat_configuration_channel_terms_desc: |
   You can configure a "terms & conditions" message that will be shown to users joining your chatrooms.
