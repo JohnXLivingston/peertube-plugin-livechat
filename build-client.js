@@ -54,7 +54,7 @@ const configs = clientFiles.map(f => ({
   // See https://github.com/Chocobozzz/PeerTube/issues/5185
   sourcemap,
   format: 'esm',
-  target: 'safari11',
+  target: 'safari12',
   outfile: path.resolve(__dirname, 'dist/client', f + '.js'),
 }))
 
@@ -69,7 +69,7 @@ configs.push({
   bundle: true,
   minify: true,
   sourcemap,
-  target: 'safari11',
+  target: 'safari12',
   outfile: path.resolve(__dirname, 'dist/client/static', 'builtin.js'),
 })
 
@@ -78,7 +78,7 @@ configs.push({
   bundle: true,
   minify: true,
   sourcemap,
-  target: 'safari11',
+  target: 'safari12',
   outfile: path.resolve(__dirname, 'dist/client/settings', 'settings.js'),
 })
 
