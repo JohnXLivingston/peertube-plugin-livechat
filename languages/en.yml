@@ -44,6 +44,10 @@ diagnostic: |
   <a class="peertube-plugin-livechat-launch-diagnostic">Launch diagnostic</a>
   (if this button is not opening a new window, please try to refresh the page).
 
+restart_prosody_html: |
+  If the chat server (Prosody) does not work, you can try to restart it by clicking on:
+  <a class="peertube-plugin-livechat-restart-prosody">Restart Prosody</a>.
+
 chat_title: "<h3>Chat</h3>"
 
 chat_terms_label: "Terms & Conditions"

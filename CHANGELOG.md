@@ -5,6 +5,7 @@
 ### New features
 
 * Peertube v9.0.0 compatibility: Add horizontal scalability support - #824 (Thanks [Chocobozzz](https://github.com/Chocobozzz))
+* New "Restart chat server" button in the plugin settings.
 
 ### Minor changes and fixes
 

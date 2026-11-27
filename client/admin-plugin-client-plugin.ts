@@ -21,6 +21,7 @@ function register (clientOptions: RegisterClientOptions): void {
         console.log(`[peertube-plugin-livechat] Settings for ${npmName}, not ${PLUGIN_CHAT_PACKAGE_NAME}. Returning.`)
         return
       }
+
       console.log('[peertube-plugin-livechat] Initializing diagnostic button')
       const diagButtons = document.querySelectorAll('.peertube-plugin-livechat-launch-diagnostic')
       diagButtons.forEach(diagButton => {
@@ -29,6 +30,40 @@ function register (clientOptions: RegisterClientOptions): void {
         diagButton.setAttribute('href', getBaseRoute(clientOptions) + '/settings/diagnostic')
         diagButton.setAttribute('target', '_blank')
       })
+
+      console.log('[peertube-plugin-livechat] Initializing restart prosody button')
+      const restartButtons: NodeListOf<HTMLAnchorElement> =
+        document.querySelectorAll('.peertube-plugin-livechat-restart-prosody')
+      restartButtons.forEach(restartButton => {
+        restartButton.href = ''
+        restartButton.onclick = async (ev): Promise<void> => {
+          console.log('[peertube-plugin-livechat] Restarting prosody...')
+          ev.preventDefault()
+
+          // Detecting if we already clicked (see later to understand)
+          if (restartButton.style.textDecoration === 'none') {
+            console.error('[peertube-plugin-livechat] You already clicked on the restart prosody button, cancelling.')
+            return
+          }
+
+          // Just changing something visually, until the request is done...
+          restartButton.style.textDecoration = 'none'
+
+          const response = await fetch(getBaseRoute(clientOptions) + '/api/restart_prosody', {
+            method: 'GET',
+            headers: peertubeHelpers.getAuthHeader()
+          })
+          if (response.ok && (await response.json()).ok) {
+            peertubeHelpers.notifier.success('Prosody restarted')
+          } else {
+            peertubeHelpers.notifier.error('Error while restarting Prosody')
+          }
+
+          // Reverting the visual change
+          restartButton.style.textDecoration = ''
+        }
+      })
+
       console.log('[peertube-plugin-livechat] Initializing prosody-list-rooms button')
       const listRoomsButtons: NodeListOf<HTMLAnchorElement> =
         document.querySelectorAll('.peertube-plugin-livechat-prosody-list-rooms-btn')

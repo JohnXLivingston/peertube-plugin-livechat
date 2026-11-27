@@ -7,6 +7,7 @@ import type { Router, Request, Response, NextFunction } from 'express'
 import { asyncMiddleware } from '../middlewares/async'
 import { getCheckAPIKeyMiddleware } from '../middlewares/apikey'
 import { ensureProsodyRunning } from '../prosody/ctl'
+import { isUserAdmin } from '../helpers'
 import { isDebugMode } from '../debug'
 import { initRoomApiRouter } from './api/room'
 import { initAuthApiRouter, initUserAuthApiRouter } from './api/auth'
@@ -48,23 +49,25 @@ async function initApiRouter (options: RegisterServerOptions): Promise<Router> {
 
   await initAdminFirewallApiRouter(options, router)
 
-  if (isDebugMode(options)) {
-    // Only add this route if the debug mode is enabled at time of the server launch.
-    // Note: the isDebugMode will be tested again when the API is called.
-    // Note: we dont authenticate the user. We want this API to be callable from debug tools.
-    //       This should not be an issue, as debug_mode should only be available on dev environments.
-    router.get('/restart_prosody', asyncMiddleware(
-      async (req: Request, res: Response, _next: NextFunction) => {
-        if (!isDebugMode(options)) {
-          res.json({ ok: false })
-          return
-        }
-        const restartProsodyInDebugMode = req.query.debugger === 'true'
-        await ensureProsodyRunning(options, true, restartProsodyInDebugMode)
-        res.json({ ok: true })
+  router.get('/restart_prosody', asyncMiddleware(
+    async (req: Request, res: Response, _next: NextFunction) => {
+      // The restart_prosody endpoint is accessible in any of the 2 following case:
+      // * you are authenticated as an admin
+      // * without authentication if the debug mode is enabled.
+      // In debug mode, we want this API to be callable from debug tools.
+      // This should not be an issue, as debug_mode should only be available on dev environments.
+      const debugMode = isDebugMode(options)
+      if (!(
+        debugMode || await isUserAdmin(options, res)
+      )) {
+        res.json({ ok: false })
+        return
       }
-    ))
-  }
+      const restartProsodyInDebugMode = debugMode && req.query.debugger === 'true'
+      await ensureProsodyRunning(options, true, restartProsodyInDebugMode)
+      res.json({ ok: true })
+    }
+  ))
 
   return router
 }

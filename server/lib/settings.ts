@@ -128,6 +128,11 @@ function initImportantNotesSettings ({ registerSetting }: RegisterServerOptions)
     private: true,
     descriptionHTML: loc('diagnostic')
   })
+  registerSetting({
+    type: 'html',
+    private: true,
+    descriptionHTML: loc('restart_prosody_html')
+  })
 
   if (process.arch !== 'x64' && process.arch !== 'x86_64' && process.arch !== 'arm64') {
     registerSetting({
