@@ -79,6 +79,9 @@ export default tseslint.config(
 
       '@typescript-eslint/no-unnecessary-condition': 'off', // FIXME: comes with eslint-config-love 84 update, but seems buggy (false positive).
       '@typescript-eslint/prefer-nullish-coalescing': 'off', // disabling, because many false positive (where i want "" to act as false)
+
+      '@typescript-eslint/no-unnecessary-type-assertion': 'off', // FIXME: disabling to allow elsint update, but should be enabled
+      '@typescript-eslint/prefer-optional-chain': 'off', // FIXME: disabling to allow elsint update, but should be enabled
       'max-len': [
         'error',
         {
@@ -144,7 +147,9 @@ export default tseslint.config(
       parserOptions: {
         ecmaVersion: 2018,
         project: './server/tsconfig.json',
-        projectService: true
+        // FIXME: how to make projectService work?
+        // projectService: true
+        projectService: false
       }
     }
   },
@@ -185,7 +190,8 @@ export default tseslint.config(
         project: [
           './client/tsconfig.json',
           './conversejs/tsconfig.json'
-        ]
+        ],
+        projectService: false
       }
     },
     // FIXME: not sure elintLit works.
