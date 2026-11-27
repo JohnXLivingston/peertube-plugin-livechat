@@ -44,4 +44,6 @@ In such case, you should also check "{{% livechat_label federation_dont_publish_
 
 ### Restart the chat server
 
+{{% livechat_version_notice 15.0.0 %}}
+
 If the chat seems broken, you can restart the chat server (Prosody) from the plugin settings page: there is a button for that just under the diagnostic tool button.
