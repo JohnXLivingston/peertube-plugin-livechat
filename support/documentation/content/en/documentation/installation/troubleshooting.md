@@ -41,3 +41,7 @@ You can confirm that it is a Websocket issue by opening your browser console, an
 
 If you can't fix this immediatly, you can disable Websocket by unchecking "{{% livechat_label disable_websocket_label %}}" in the plugin setting page.
 In such case, you should also check "{{% livechat_label federation_dont_publish_remotely_label %}}", as chat federation won't work without Websocket.
+
+### Restart the chat server
+
+If the chat seems broken, you can restart the chat server (Prosody) from the plugin settings page: there is a button for that just under the diagnostic tool button.

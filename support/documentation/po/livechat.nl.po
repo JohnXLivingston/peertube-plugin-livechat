@@ -6,11 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: peertube-plugin-livechat-documentation VERSION\n"
-"POT-Creation-Date: 2025-12-09 16:18+0100\n"
+"POT-Creation-Date: 2026-11-27 15:08+0100\n"
 "PO-Revision-Date: 2025-12-12 12:36+0000\n"
 "Last-Translator: Tibbe Debats <weblate@weblate.framasoft.org>\n"
-"Language-Team: Dutch <https://weblate.framasoft.org/projects/"
-"peertube-livechat/peertube-plugin-livechat-documentation/nl/>\n"
+"Language-Team: Dutch <https://weblate.framasoft.org/projects/peertube-livechat/peertube-plugin-livechat-documentation/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2474,6 +2473,18 @@ msgstr ""
 #. type: Plain text
 #: support/documentation/content/en/documentation/installation/troubleshooting.md
 msgid "If you can't fix this immediatly, you can disable Websocket by unchecking \"{{% livechat_label disable_websocket_label %}}\" in the plugin setting page.  In such case, you should also check \"{{% livechat_label federation_dont_publish_remotely_label %}}\", as chat federation won't work without Websocket."
+msgstr ""
+
+#. type: Title ###
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+#, fuzzy, no-wrap
+#| msgid "Restart Peertube."
+msgid "Restart the chat server"
+msgstr "Peertube herstarten."
+
+#. type: Plain text
+#: support/documentation/content/en/documentation/installation/troubleshooting.md
+msgid "If the chat seems broken, you can restart the chat server (Prosody) from the plugin settings page: there is a button for that just under the diagnostic tool button."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: description
