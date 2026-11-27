@@ -6,11 +6,14 @@ import type { RegisterServerOptions, VideoObject } from '@peertube/peertube-type
 import type { VideoBuildResultContext, RemoteVideoHandlerParams } from './types'
 import { videoBuildJSONLD, videoContextBuildJSONLD } from './outgoing'
 import { readIncomingAPVideo } from './incoming'
+import { getVideoLiveChatInfos } from './storage'
+import { Emojis } from '../emojis'
+import { registerPrimaryHandler } from '../horizontal-scalability'
 
 export async function initFederation (options: RegisterServerOptions): Promise<void> {
   const logger = options.peertubeHelpers.logger
   const registerHook = options.registerHook
-  logger.info('Registring federation hooks...')
+  logger.info('Registering federation hooks...')
 
   registerHook({
     target: 'filter:activity-pub.video.json-ld.build.result',
@@ -26,16 +29,31 @@ export async function initFederation (options: RegisterServerOptions): Promise<v
     }
   })
 
+  type VideoRef = Parameters<typeof getVideoLiveChatInfos>[1]
+  registerPrimaryHandler(options, 'video-livechat-infos', async (video: VideoRef) => {
+    return getVideoLiveChatInfos(options, video)
+  })
+  registerPrimaryHandler(options, 'channel-custom-emojis-url', async (channelId: number) => {
+    return Emojis.singletonSafe()?.channelCustomEmojisUrl(channelId)
+  })
+
+  const onRemoteVideo = registerPrimaryHandler(options, 'remote-video', async (params: RemoteVideoHandlerParams) => {
+    return readIncomingAPVideo(options, params)
+  })
+  const remoteVideoHandler = async ({ video, videoAPObject }: RemoteVideoHandlerParams): Promise<void> => {
+    const peertubeLiveChat = ('peertubeLiveChat' in videoAPObject) ? videoAPObject.peertubeLiveChat : false
+    await onRemoteVideo({
+      video: { uuid: video.uuid, url: video.url, remote: video.remote },
+      videoAPObject: { peertubeLiveChat }
+    } as unknown as RemoteVideoHandlerParams)
+  }
+
   registerHook({
     target: 'action:activity-pub.remote-video.created',
-    handler: async (params: RemoteVideoHandlerParams) => {
-      return readIncomingAPVideo(options, params)
-    }
+    handler: remoteVideoHandler
   })
   registerHook({
     target: 'action:activity-pub.remote-video.updated',
-    handler: async (params: RemoteVideoHandlerParams) => {
-      return readIncomingAPVideo(options, params)
-    }
+    handler: remoteVideoHandler
   })
 }

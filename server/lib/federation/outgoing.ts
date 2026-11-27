@@ -19,6 +19,7 @@ import { fillVideoCustomFields } from '../custom-fields'
 import { Emojis } from '../emojis'
 import { loc } from '../loc'
 import { isDebugMode } from '../debug'
+import { isPrimaryProcess, readFromPrimary } from '../horizontal-scalability'
 
 /**
  * This function adds LiveChat information on video ActivityPub data if relevant.
@@ -149,13 +150,22 @@ async function videoBuildJSONLD (
     }
   }
 
+  let customEmojisUrl: string | undefined
+  try {
+    customEmojisUrl = isPrimaryProcess(options)
+      ? await Emojis.singletonSafe()?.channelCustomEmojisUrl(video.channelId)
+      : await readFromPrimary<string | undefined>(options, 'channel-custom-emojis-url', video.channelId)
+  } catch (err) {
+    logger.error(`Cannot get the custom emojis url for channel ${video.channelId}: ${err as string}`)
+  }
+
   // This is the custom format used by plugin > 6.3.0.
   const peertubeLiveChat: LiveChatJSONLDAttribute = {
     type: 'xmpp',
     jid: roomJID,
     links,
     xmppserver: serverInfos,
-    customEmojisUrl: await Emojis.singletonSafe()?.channelCustomEmojisUrl(video.channelId)
+    customEmojisUrl
   }
   Object.assign(videoJsonld, {
     peertubeLiveChat

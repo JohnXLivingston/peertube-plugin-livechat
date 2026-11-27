@@ -10,6 +10,7 @@ import { sanitizePeertubeLiveChatInfos, sanitizeXMPPHostFromInstanceUrl } from '
 import { URL } from 'url'
 import * as fs from 'fs'
 import * as path from 'path'
+import { isPrimaryProcess, readFromPrimary } from '../horizontal-scalability'
 
 // FIXME: In Peertube 8.0.0, video.isLocal becomes a method... So we do this hack.
 interface Video extends Omit<PVideo, 'isLocal'> {
@@ -48,6 +49,8 @@ async function storeVideoLiveChatInfos (
   liveChatInfos: LiveChatJSONLDAttribute
 ): Promise<void> {
   const logger = options.peertubeHelpers.logger
+
+  if (!isPrimaryProcess(options)) { return }
 
   cache.delete(video.url)
 
@@ -94,6 +97,11 @@ async function getVideoLiveChatInfos (
     : (typeof video.isLocal === 'function')
         ? !video.isLocal()
         : !video.isLocal
+
+  if (!isPrimaryProcess(options)) {
+    return readFromPrimary(options, 'video-livechat-infos', { uuid: video.uuid, url: video.url, remote })
+  }
+
   const filePath = await _getFilePath(options, remote, video.uuid, video.url)
   if (!filePath) {
     logger.error('Cant compute the file path for storing liveChat infos for video ' + video.uuid)

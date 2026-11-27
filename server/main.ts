@@ -24,6 +24,7 @@ import { mustMigrateV14 } from './lib/prosody/migration/migratev14'
 import { Emojis } from './lib/emojis'
 import { LivechatProsodyAuth } from './lib/prosody/auth'
 import { initPeertubeversion } from './lib/helpers'
+import { isPrimaryProcess } from './lib/horizontal-scalability'
 import decache from 'decache'
 
 // FIXME: Peertube unregister don't have any parameter.
@@ -43,6 +44,11 @@ async function register (options: RegisterServerOptions): Promise<any> {
 
   // First: load languages files, so we can localize strings.
   await loadLoc()
+
+  if (!isPrimaryProcess(options)) {
+    await registerSecondaryProcess(options)
+    return
+  }
 
   try {
     // livechat v13 migration:
@@ -128,7 +134,24 @@ async function register (options: RegisterServerOptions): Promise<any> {
   }
 }
 
+async function registerSecondaryProcess (options: RegisterServerOptions): Promise<void> {
+  const logger = options.peertubeHelpers.logger
+  logger.info('This is a secondary Peertube process, the chat server runs on the primary process.')
+
+  await initSettings(options)
+  await initCustomFields(options)
+  await initFederation(options)
+  await initChannelConfiguration(options)
+  await initRSS(options)
+}
+
 async function unregister (): Promise<any> {
+  if (OPTIONS && !isPrimaryProcess(OPTIONS)) {
+    unloadDebugMode()
+    _unloadModule()
+    return
+  }
+
   try {
     await BotsCtl.destroySingleton()
   } catch (_error) {} // BotsCtl will log errors.
@@ -149,6 +172,10 @@ async function unregister (): Promise<any> {
   await Emojis.destroySingleton()
   await LivechatProsodyAuth.destroySingleton()
 
+  _unloadModule()
+}
+
+function _unloadModule (): void {
   const module = __filename
   OPTIONS?.peertubeHelpers.logger.info(`Unloading module ${module}...`)
   // Peertube calls decache(plugin) on register, not unregister.
