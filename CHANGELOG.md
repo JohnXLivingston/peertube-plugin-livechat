@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.0.0 (Not Released Yet)
+
+### New features
+
+* Peertube v9.0.0 compatibility: Add horizontal scalability support - #824 (Thanks [Chocobozzz](https://github.com/Chocobozzz))
+
 ## 14.0.4
 
 ### Minor changes and fixes
