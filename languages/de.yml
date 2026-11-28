@@ -656,3 +656,6 @@ enable_users_regexp_description: "Wird diese Funktion aktiviert, können Streame
   Ausdruck erstellen und einen Denial-of-Service (DoS) des Bots verursachen.\n"
 enable_users_regexp: Aktivieren regulärer Ausdrücke für verbotene Wörter in 
   Chaträumen
+restart_prosody_html: |
+  Falls der Chat-Server (Prosody) nicht funktioniert, können Sie versuchen, ihn neu zu starten, indem Sie auf folgenden Link klicken:
+  <a class="peertube-plugin-livechat-restart-prosody">Prosody neu starten</a>.
